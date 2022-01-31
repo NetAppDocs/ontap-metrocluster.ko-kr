@@ -1,0 +1,4004 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>각 노드에서 미러링된 데이터 애그리게이트 생성</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="각 노드에서 미러링된 데이터 애그리게이트 생성" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html" />
+	<meta property="og:description" content="DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다.">
+  <meta name="keywords" content=" metrocluster, upgrade, create, mirrored, data, aggregate, node">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ko-kr/ontap-metrocluster/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-metrocluster/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-metrocluster/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-metrocluster/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-metrocluster/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/ontap-metrocluster/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/ontap-metrocluster/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ko-kr/ontap-metrocluster/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ko-kr/ontap-metrocluster/js/na-search.js'></script>
+  
+
+  
+  <script src='/ko-kr/ontap-metrocluster/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/ontap-metrocluster/js/na-utility.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ko-kr/ontap-metrocluster/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/ontap-metrocluster/js/toc.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ko-kr/ontap-metrocluster/js/version-dropdown.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/product-family.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/jszip.min.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/ontap-metrocluster/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/fullsite-sidebar/MetroCluster_문서.pdf" >
+          <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/패브릭_연결_MetroCluster를_설치합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            패브릭 연결 MetroCluster를 설치합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_설치를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 설치를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/패브릭_연결_MetroCluster_구성에_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            패브릭 연결 MetroCluster 구성에 케이블을 연결합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/Fabric_MetroCluster_구성의_일부.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            Fabric MetroCluster 구성의 일부
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성_요소를_설치하고_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 구성 요소를 설치하고 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/AFF_A900_시스템을_사용하는_경우_FC_스위치에_대한_포트_할당.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_스위치를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            FC 스위치를 구성합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/RCF_파일을_사용하여_Brocade_FC_스위치를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/RCF_파일을_사용하여_Cisco_FC_스위치를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            RCF 파일을 사용하여 Cisco FC 스위치를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/전환_중에_Brocade_6510_FC_패브릭을_공유하기_위한_하드웨어를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/7_Mode와_clustered_MetroCluster_구성_간에_스위치_패브릭을_공유할_수_있습니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            7-Mode와 clustered MetroCluster 구성 간에 스위치 패브릭을 공유할 수 있습니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스토리지_LUN을_사용하여_MetroCluster_구성을_계획_및_설치합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            스토리지 LUN을 사용하여 MetroCluster 구성을 계획 및 설치합니다
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/어레이_LUN을_사용하는_구성에서_MetroCluster_구성_요소를_설치하고_케이블로_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스토리지_LUN이_있는_MetroCluster_구성에서_FC_VI_및_HBA_포트에_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            스토리지 LUN이 있는 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성에서_스토리지_어레이를_FC_스위치에_케이블로_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 구성에서 스토리지 어레이를 FC 스위치에 케이블로 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/어레이_LUN이_있는_MetroCluster_구성에서_스위치_조닝.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/어레이_LUN이_있는_MetroCluster_구성에서_ONTAP를_설정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            어레이 LUN이 있는 MetroCluster 구성에서 ONTAP를 설정합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/디스크_및_어레이_LUN을_모두_사용하여_MetroCluster_구성을_구축합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성을 구축합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/추가_구성_및_모니터링을_위해_Active_IQ_Unified_Manager_및_ONTAP_System_Manager를_사용하는_방법.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_구성을_설치합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster IP 구성을 설치합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_설치를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 설치를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/계층_3_광역_네트워크를_사용하는_방법.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            계층 3 광역 네트워크를 사용하는 방법
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_하드웨어_구성_요소를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 하드웨어 구성 요소를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_스위치에_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster IP 스위치에 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_스위치를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster IP 스위치를 구성합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/Cisco_IP_스위치를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            Cisco IP 스위치를 구성합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/ONTAP에서_MetroCluster_소프트웨어를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            ONTAP에서 MetroCluster 소프트웨어를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/계획되지_않은_자동_전환을_위해_ONTAP_중재자_서비스를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스트레치_MetroCluster_구성을_설치합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            스트레치 MetroCluster 구성을 설치합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_설치를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 설치를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_SAS_연결_스트레치_MetroCluster_구성에_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            2노드 SAS 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_SAS_연결_스트레치_구성용_MetroCluster_구성_요소를_설치하고_케이블로_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            2노드 SAS 연결 스트레치 구성용 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_브리지_연결_스트레치_MetroCluster_구성에_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            2노드 브리지 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성_요소를_설치하고_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 구성 요소를 설치하고 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스토리지_LUN이_있는_확장_MetroCluster_구성의_연결.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            스토리지 LUN이 있는 확장 MetroCluster 구성의 연결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/추가_구성_및_모니터링을_위해_Active_IQ_Unified_Manager_및_ONTAP_System_Manager를_사용하는_방법.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_Tiebreaker_설치_및_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster Tiebreaker 설치 및 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_데이터_보호_및_재해_복구_이해.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 데이터 보호 및 재해 복구 이해
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/전환__복구__스위치백을_수행합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            전환, 복구, 스위치백을 수행합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/테스트_또는_유지_관리를_위한_스위치오버_수행.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            테스트 또는 유지 관리를 위한 스위치오버 수행
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/설정을_수정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            설정을 수정합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC_구성에서_구성을_수정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC 구성에서 구성을 수정합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성_요소를_유지보수하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 구성 요소를 유지보수하십시오
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_to_SAS_브리지_유지_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            FC-to-SAS 브리지 유지 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_스위치_유지_관리_및_교체.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            FC 스위치 유지 관리 및 교체
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/IP_스위치_유지_보수_및_교체.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            IP 스위치 유지 보수 및 교체
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC_구성에_스토리지를_핫_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC 구성에 스토리지를 핫 추가합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/SAS_스토리지를_브리지_연결_MetroCluster_FC_구성에_핫_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            SAS 스토리지를 브리지 연결 MetroCluster FC 구성에 핫 추가합니다
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/SAS_디스크_쉘프_스택에_SAS_디스크_쉘프를_핫_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_스위치에_대한_포트_할당.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            FC 스위치에 대한 포트 할당
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP로_전환합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC에서 MetroCluster IP로 전환합니다
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP_구성으로_중단_없이_전환_ONTAP_9_8_이상_.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP_구성으로_전환할_준비를_합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC에서 MetroCluster IP 구성으로 전환할 준비를 합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP_구성으로_전환.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC에서 MetroCluster IP 구성으로 전환
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_MetroCluster_FC에서_4노드_MetroCluster_IP_구성으로_중단_없이_전환_ONTAP_9_8_이상_.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            2노드 MetroCluster FC에서 4노드 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성을_업그레이드하거나_확장합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster 구성을 업그레이드하거나 확장합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_MetroCluster_FC_구성을_4노드_구성으로_확장합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            2노드 MetroCluster FC 구성을 4노드 구성으로 확장합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/각_클러스터에_새_컨트롤러_모듈을_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            각 클러스터에 새 컨트롤러 모듈을 추가합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/새_컨트롤러_모듈을_설치하고_케이블을_연결합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            새 컨트롤러 모듈을 설치하고 케이블을 연결합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/인터클러스터_LIF를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            인터클러스터 LIF를 구성합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/pages/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.pdf" >
+    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/4노드_MetroCluster_FC_구성을_8노드_구성으로_확장합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            4노드 MetroCluster FC 구성을 8노드 구성으로 확장합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/새_노드의_스위치_패브릭을_재설정하고_존_zone_합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            새 노드의 스위치 패브릭을 재설정하고 존(zone)합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/새_컨트롤러에서_ONTAP를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            새 컨트롤러에서 ONTAP를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/클러스터를_MetroCluster_구성으로_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            클러스터를 MetroCluster 구성으로 구성합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/인터클러스터_LIF를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            인터클러스터 LIF를 구성합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/pages/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.pdf" >
+    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/재해에_복구합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            재해에 복구합니다
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/멀티_컨트롤러_또는_스토리지_장애로부터_복구합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            멀티 컨트롤러 또는 스토리지 장애로부터 복구합니다
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_구성에서_스위치백을_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster IP 구성에서 스위치백을 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC_구성에서_스위치백을_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+            MetroCluster FC 구성에서 스위치백을 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/ontap-metrocluster/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/index.html">
+        MetroCluster
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/releasenotes.html">
+        릴리즈 노트
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 패브릭 연결 MetroCluster를 설치합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/index.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 설치를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_differences.html">
+        ONTAP MetroCluster 구성의 차이점
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_peering.html">
+        클러스터 피어링
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_array_luns.html">
+        네이티브 디스크 쉘프 또는 어레이 LUN을 사용하는 MetroCluster 구성에 대한 고려사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_7mt.html">
+        7-Mode에서 ONTAP로 전환할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_isls_mcfc.html">
+        ISL에 대한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_tdm_wdm.html">
+        패브릭 연결 MetroCluster 구성에서 TDM/WDM 장비를 사용하기 위한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_8510.html">
+        Brocade DCX 8510-8 스위치 사용에 대한 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_unmirrored_aggrs.html">
+        미러링되지 않은 애그리게이트를 사용할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_firewalls.html">
+        MetroCluster 사이트의 방화벽 사용
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_choosing_the_correct_installation_procedure_for_your_configuration_mcc_install.html">
+        구성에 맞는 올바른 설치 절차를 선택하십시오
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 패브릭 연결 MetroCluster 구성에 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_configure_the_mcc_hardware_components_fabric.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Fabric MetroCluster 구성의 일부</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_parts_of_a_fabric_mcc_configuration.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html">
+        MetroCluster 구성의 로컬 HA 쌍 그림
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_illustration_of_redundant_fc_to_sas_bridges.html">
+        이중 FC-to-SAS 브리지의 그림
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_redundant_fc_switch_fabrics.html">
+        이중 FC 스위치 패브릭
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_cluster_peering_network_mcc.html">
+        클러스터 피어링 네트워크의 그림
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_required_mcc_components_and_naming_conventions_fabric_mcc.html">
+        MetroCluster FC 구성 요소 및 명명 규칙이 필요합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_configuration_gathering_worksheet_for_fc_switches_and_fc_to_sas_bridges.html">
+        FC 스위치 및 FC-to-SAS 브리지에 대한 구성 워크시트
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 구성 요소를 설치하고 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_rack_the_hardware_components_mcc_fabric_and_ip.html">
+        하드웨어 구성 요소를 랙에 장착하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_controller_module_s_fc_vi_hba_ports_to_the_fc_switches_controller_to_fc_sw.html">
+        새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_isl_between_the_mcc_sites_fabric_config.html">
+        MetroCluster 사이트 간 ISL 케이블 연결
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_port_assignments_for_systems_using_two_initiator_ports.html">
+        이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">
+        ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">
+        ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당
+      </a></li><li class="subfolders "><a href="/ko-kr/ontap-metrocluster/install-fc/concept_AFF_A900_port_assign_fc_switches_ontap_9_1.html">
+        <div class="na-navbar-padding"> AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_AFF_A900_brocade_port_config.html">
+        ONTAP 9.10.1 이상을 실행하는 컨트롤러에 대한 AFF A900 Brocade 포트 사용
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_AFF_A900_brocade_port_ISLs.html">
+        ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Brocade 포트 사용량
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_AFF_A900_cisco_port_config.html">
+        ONTAP 9.10.1 이상을 실행하는 AFF A900 Cisco 포트 사용 컨트롤러
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_AFF_A900_cisco_ISLs.html">
+        ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Cisco 포트 사용량
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_cluster_interconnect_in_four_node_configurations.html">
+        8노드 또는 4노드 구성으로 클러스터 인터커넥트 케이블 연결
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_cluster_peering_connections.html">
+        클러스터 피어링 연결에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_ha_interconnect.html">
+        필요한 경우 HA 인터커넥트에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_management_and_data_connections.html">
+        관리 및 데이터 연결에 케이블을 연결합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FC 스위치를 구성합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_reset_the_brocade_fc_switch_to_factory_defaults.html">
+        Brocade FC 스위치를 출하 시 기본값으로 재설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_download_the_brocade_fc_rcf_switch_software.html">
+        Brocade FC 스위치 RCF 파일을 다운로드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_install_the_brocade_fc_switch_rcf_file.html">
+        Brocade FC 스위치 RCF 파일을 설치합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> RCF 파일을 사용하여 Cisco FC 스위치를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_reset_the_cisco_fc_switch_to_factory_defaults.html">
+        Cisco FC 스위치를 출하 시 기본값으로 재설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_download_and_install_the_cisco_fc_switch_software.html">
+        Cisco FC 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_download_and_install_the_cisco_fc_switch_rcf_files.html">
+        Cisco FC RCF 파일을 다운로드하고 설치합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html">
+        Brocade FC 스위치를 수동으로 구성해야 합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fcsw_cisco_configure_a_cisco_switch_supertask.html">
+        Cisco FC 스위치를 수동으로 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fb_new_install.html">
+        FC-to-SAS 브릿지와 SAS 디스크 쉘프를 설치합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_configure_the_mcc_hardware_for_share_a_7_mode_brocade_6510_fc_fabric_dure_transition.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_fcsw_brocade_review_brocade_license_requirements.html">
+        Brocade 라이센스 요구 사항을 검토합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_rack_the_hardware_components_mcc_fabric_and_ip.html">
+        하드웨어 구성 요소를 랙에 장착하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_cable_the_new_mcc_controllers_to_the_exist_fc_fabrics.html">
+        새 MetroCluster 컨트롤러를 기존 FC 패브릭에 연결합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 7-Mode와 clustered MetroCluster 구성 간에 스위치 패브릭을 공유할 수 있습니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_disable_one_of_the_switch_fabrics.html">
+        스위치 패브릭 중 하나를 비활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_configure_zone_and_qos.html">
+        TI 조닝을 삭제하고 IOD 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_ensure_isls_are_in_the_same_port_group_and_configure_zon.html">
+        ISL이 동일한 포트 그룹에 있는지 확인하고 조닝을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_reenable_the_switch_fabric_and_verify_operation.html">
+        스위치 패브릭을 다시 설정하고 작업을 확인합니다
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_configure_the_mcc_software_in_ontap.html">
+        ONTAP에서 MetroCluster 소프트웨어를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html">
+        MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_test_the_mcc_configuration.html">
+        MetroCluster 구성을 테스트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_when_removing_mcc_configurations.html">
+        MetroCluster 구성을 제거할 때의 고려 사항
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스토리지 LUN을 사용하여 MetroCluster 구성을 계획 및 설치합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_planning_for_a_mcc_configuration_with_array_luns.html">
+        스토리지 LUN을 사용한 MetroCluster 구성 계획
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_supported_mcc_configuration_with_array_luns.html">
+        어레이 LUN에서 지원되는 MetroCluster 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_requirements_for_a_mcc_configuration_with_array_luns_reference.html">
+        스토리지 LUN이 포함된 MetroCluster 구성 요구 사항
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_racking_the_hardware_components_in_a_mcc_configuration_with_array_luns.html">
+        어레이 LUN이 있는 MetroCluster 구성에서 하드웨어 구성 요소를 랙에 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_prepare_a_storage_array_for_use_with_ontap_systems.html">
+        ONTAP 시스템에서 사용할 스토리지 어레이를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_switch_ports_required_for_a_eight_node_mcc_configuration_with_array_luns.html">
+        스토리지 LUN이 있는 MetroCluster 구성에 필요한 스위치 포트
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스토리지 LUN이 있는 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_fc_vi_and_hba_ports_to_switches_in_a_two_node_fabric_attached_mcc_configuration_with_array_luns.html">
+        어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_fc_vi_and_hba_ports_to_switches_in_a_four_node_fabric_attached_mcc_configuration_with_array_luns.html">
+        스토리지 LUN을 사용하는 4노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_fc_vi_and_hba_ports_to_switches_in_an_eight_node_fabric_attached_mcc_configuration_with_array_luns.html">
+        스토리지 LUN을 사용하는 8노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_isls_in_a_mcc_configuration_with_array_luns.html">
+        스토리지 LUN이 있는 MetroCluster 구성에서 ISL 케이블 연결
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_cluster_interconnect_in_four_node_configurations.html">
+        8노드 또는 4노드 구성으로 클러스터 인터커넥트에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_cluster_peering_connections.html">
+        클러스터 피어링 연결에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_ha_interconnect.html">
+        필요한 경우 HA 인터커넥트에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_the_management_and_data_connections.html">
+        관리 및 데이터 연결에 케이블을 연결합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 구성에서 스토리지 어레이를 FC 스위치에 케이블로 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_cable_storage_arrays_to_fc_switches_in_a_mcc_configuration.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_example_of_cabling_array_luns_to_fc_switches_in_a_two_node_mcc_configuration.html">
+        2노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 케이블로 연결하는 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_example_of_cabling_array_luns_to_fc_switches_in_a_four_node_mcc_configuration.html">
+        4노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_example_of_cabling_array_luns_to_fc_switches_in_an_eight_node_mcc_configuration.html">
+        8노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_requirements_for_switch_zoning_in_a_mcc_configuration_with_array_luns.html">
+        어레이 LUN이 있는 MetroCluster 구성의 스위치 조닝에 대한 요구사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_example_of_switch_zoning_in_a_two_node_mcc_configuration_with_array_luns.html">
+        어레이 LUN이 있는 2노드 MetroCluster 구성에서 스위치 조닝의 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_example_of_switch_zoning_in_a_four_node_mcc_configuration_with_array_luns.html">
+        어레이 LUN이 있는 4노드 MetroCluster 구성의 스위치 조닝의 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_example_of_switch_zoning_in_an_eight_node_mcc_configuration_with_array_luns.html">
+        어레이 LUN이 있는 8노드 MetroCluster 구성의 스위치 조닝의 예
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 어레이 LUN이 있는 MetroCluster 구성에서 ONTAP를 설정합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_verify_the_ha_state_of_components_is_mcc_or_mcc_2n_in_maintenance_mode.html">
+        유지보수 모드에서 구성요소의 HA 상태 확인 및 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_configure_ontap_on_a_system_that_uses_only_array_luns.html">
+        스토리지 LUN만 사용하는 시스템에서 ONTAP 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_setting_up_the_cluster.html">
+        클러스터를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_install_the_license_for_us_array_luns_in_a_mcc_configuration.html">
+        MetroCluster 구성에서 스토리지 LUN을 사용하기 위한 라이센스를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_configure_fc_vi_ports_on_a_x1132a_r6_quad_port_card.html">
+        FAS8020 시스템에서 X1132A-R6 4중 포트 카드의 FC-VI 포트를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_assign_ownership_of_array_luns.html">
+        스토리지 LUN의 소유권을 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_peer_the_clusters_mcc_with_array_luns.html">
+        클러스터를 피합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_mirror_the_root_aggregates_mcc_with_array_luns.html">
+        루트 애그리게이트를 미러링합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_create_data_aggregates_and_implement_the_configuration_mcc_with_array_luns.html">
+        MetroCluster 구성에서 데이터 애그리게이트를 생성, 구축, 검증합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성을 구축합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_implementing_a_mcc_configuration_with_both_disks_and_array_luns.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_for_implementing_a_mcc_configuration_with_disks_and_array_luns.html">
+        디스크 및 스토리지 LUN을 사용하여 MetroCluster 구성을 구축할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_example_of_a_two_node_fabric_attached_mcc_configuration_with_disks_and_array_luns.html">
+        디스크 및 어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성의 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_example_of_a_four_node_mcc_configuration_with_disks_and_array_luns.html">
+        디스크 및 어레이 LUN이 있는 4노드 MetroCluster 구성의 예
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_synchronize_the_system_time_us_ntp.html">
+        NTP를 사용하여 시스템 시간을 동기화합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_considerations_when_using_ontap_in_a_mcc_configuration.html">
+        MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/reference_where_to_find_additional_information_icg.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster IP 구성을 설치합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/index.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 설치를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_differences.html">
+        ONTAP MetroCluster 구성의 차이점
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_mediator.html">
+        ONTAP 중재자와 MetroCluster Tiebreaker 간의 결정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_mcip.html">
+        MetroCluster IP 구성을 위한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_drive_assignment.html">
+        ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_peering.html">
+        클러스터 피어링
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_isls.html">
+        ISL 요구 사항
+      </a></li><li class="subfolders "><a href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_layer_3.html">
+        <div class="na-navbar-padding"> 계층 3 광역 네트워크를 사용하는 방법</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_modify_ip_netmask_gateway_properties.html">
+        MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_layer_2.html">
+        개인 계층 2 네트워크를 공유합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_mc_compliant_switches.html">
+        MetroCluster 호환 스위치 사용 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_tdm_encryption.html">
+        MetroCluster IP 구성에서 TDM/xWDM 및 암호화 장비를 사용하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_unmirrored_aggrs.html">
+        MetroCluster IP 구성의 미러링되지 않은 애그리게이트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_firewalls.html">
+        MetroCluster 사이트의 방화벽 사용
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html">
+        MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 하드웨어 구성 요소를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_parts_of_an_ip_mcc_configuration_mcc_ip.html">
+        MetroCluster IP 구성의 일부
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_required_mcc_ip_components_and_naming_guidelines_mcc_ip.html">
+        MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_rack_hw_components.html">
+        하드웨어 구성 요소를 랙에 장착하십시오
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster IP 스위치에 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/using_rcf_generator.html">
+        RcfFileGenerator 도구 또는 여러 MetroCluster 구성에서 포트 테이블을 사용하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/port_usage_3132q.html">
+        Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/port_usage_3232c_9336c.html">
+        Cisco 3232C 또는 Cisco 9336C 스위치에 대한 플랫폼 포트 할당
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/port_usage_bes53248.html">
+        Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_cable_other_connections.html">
+        컨트롤러 데이터 및 관리 포트에 케이블을 연결합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster IP 스위치를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_switch_config_broadcom.html">
+        Broadcom IP 스위치를 구성합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cisco IP 스위치를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_switch_config_cisco.html">
+        기본 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_switch_config_cisco_macsec.html">
+        Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
+      </a></li></ul></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP에서 MetroCluster 소프트웨어를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_configure_the_mcc_software_in_ontap.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_8n.html">
+        8노드 구성을 구성하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_gather_info.html">
+        필요한 정보를 수집합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_differences.html">
+        표준 클러스터와 MetroCluster 구성의 유사점과 차이점
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_verify_haconfig.html">
+        구성 요소의 ha-config 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_restore_defaults.html">
+        컨트롤러 모듈에서 시스템 기본값을 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_assign_pool0.html">
+        풀 0에 드라이브를 수동으로 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_setup_ontap.html">
+        ONTAP 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_configure_clusters.html">
+        클러스터를 MetroCluster 구성으로 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_verify_switchover.html">
+        전환, 복구, 스위치백을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_configure_mediator.html">
+        MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_sw_config_protect_backup.html">
+        구성 백업 파일을 보호합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_mediator_requirements.html">
+        ONTAP 중재자 서비스 설치 준비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_install_configure_mediator.html">
+        ONTAP 중재자 서비스를 설치하거나 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html">
+        MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_connecting_mcc_to_different_mediator_instance.html">
+        MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_changing_mediator_password.html">
+        ONTAP 중재자 암호를 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_changing_mediator_username.html">
+        ONTAP 중재자 사용자 이름을 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_uninstall_mediator.html">
+        ONTAP 중재자 서비스 제거
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_test_the_mcc_configuration.html">
+        MetroCluster 구성을 테스트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_when_removing_mcc_configurations.html">
+        MetroCluster 구성을 제거할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/concept_considerations_when_using_ontap_in_a_mcc_configuration.html">
+        MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/reference_where_to_find_additional_information_mccip_icg.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스트레치 MetroCluster 구성을 설치합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/index.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 설치를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_differences.html">
+        ONTAP MetroCluster 구성의 차이점
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_peering.html">
+        클러스터 피어링
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_unmirrored_aggrs.html">
+        미러링되지 않은 애그리게이트를 사용할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_firewalls.html">
+        MetroCluster 사이트의 방화벽 사용
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_choosing_the_correct_installation_procedure_for_your_configuration_mcc_install.html">
+        구성에 맞는 올바른 설치 절차를 선택하십시오
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2노드 SAS 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_configure_the_mcc_hardware_components_2_node_stretch_sas.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_parts_of_a_two_node_sas_attached_stretch_mcc_configuration.html">
+        2노드 SAS 연결 스트레치 MetroCluster 구성의 일부
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_required_mcc_components_and_example_names_for_two_node_sas_attached_stretch_configurations_mcc.html">
+        2노드 SAS 연결 스트레치 구성에 필요한 MetroCluster 하드웨어 구성요소 및 명명 지침
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2노드 SAS 연결 스트레치 구성용 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/reference_sas_optical_mc_configuring_a_stretch_mcc_system_with_sas_disk_shelves_and_sas_optical_cables.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_rack_the_hardware_components_2_node_stretch_sas.html">
+        하드웨어 구성 요소를 랙에 장착하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_cable_the_controllers_to_each_other_and_the_storage_shelves.html">
+        컨트롤러를 서로 및 스토리지 쉘프에 케이블로 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_cable_the_cluster_peering_connections.html">
+        클러스터 피어링 연결에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_cable_the_management_and_data_connections.html">
+        관리 및 데이터 연결에 케이블을 연결합니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2노드 브리지 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_configure_the_mcc_hardware_components_2_node_stretch_atto.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_parts_of_a_two_node_mcc_configuration_using_fc_to_sas_bridges.html">
+        2노드 브리지 연결 스트레치 MetroCluster 구성의 일부
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_required_mcc_components_and_naming_conventions_for_two_node_bridge_attached_stretch_configurations_mcc.html">
+        2노드 브리지 연결 확장 구성에 필요한 MetroCluster 하드웨어 구성 요소 및 명명 규칙
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/reference_information_gathering_worksheet_for_fc_to_sas_bridges_2_node_atto.html">
+        FC-to-SAS 브리지에 대한 정보 수집 워크시트
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 구성 요소를 설치하고 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_rack_the_hardware_components_mcc_2_node_stretch_atto.html">
+        하드웨어 구성 요소를 랙에 장착하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_cable_the_fc_vi_adapters_to_the_partner_controller_2_node_stretch_atto.html">
+        컨트롤러를 서로 케이블로 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_cable_the_cluster_peering_connections.html">
+        클러스터 피어링 연결에 케이블을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_cable_the_management_and_data_connections.html">
+        관리 및 데이터 연결에 케이블을 연결합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_fb_new_install.html">
+        FC-to-SAS 브릿지와 SAS 디스크 쉘프를 설치합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_configuring_the_mcc_software_in_ontap.html">
+        ONTAP에서 MetroCluster 소프트웨어를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html">
+        MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_test_the_mcc_configuration.html">
+        MetroCluster 구성을 테스트합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스토리지 LUN이 있는 확장 MetroCluster 구성의 연결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_stretch_mcc_configuration_with_array_luns.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/reference_example_of_a_stretch_mcc_configuration_with_array_luns.html">
+        스토리지 LUN이 있는 확장 MetroCluster 구성의 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/reference_examples_of_two_node_stretch_mcc_configurations_with_disks_and_array_luns.html">
+        디스크 및 어레이 LUN이 있는 2노드 스트레치 MetroCluster 구성의 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/reference_example_of_a_stretch_mcc_configuration_with_e_series_storage_arrays.html">
+        E-Series 스토리지 어레이를 사용하는 스트레치 MetroCluster 구성의 예
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_when_removing_mcc_configurations.html">
+        MetroCluster 구성을 제거할 때의 고려 사항
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_using_the_oncommand_management_tools_for_further_configuration_and_monitoring.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_synchronize_the_system_time_us_ntp.html">
+        NTP를 사용하여 시스템 시간 동기화
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_when_using_ontap_in_a_mcc_configuration.html">
+        MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/task_upgrade_the_configuration_to_fabric_attached_mcc.html">
+        확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-stretch/reference_where_to_find_additional_information_icg.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster Tiebreaker 설치 및 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/concept_overview_of_the_tiebreaker_software.html">
+        Tiebreaker 소프트웨어 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/task_install_the_tiebreaker_software.html">
+        Tiebreaker 소프트웨어를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/concept_configuring_the_tiebreaker_software.html">
+        Tiebreaker 소프트웨어를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/task_configure_snmp_setts_for_tiebreaker_software.html">
+        Tiebreaker 소프트웨어의 SNMP 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/concept_monitoring_the_mcc_configuration.html">
+        MetroCluster 구성을 모니터링합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/concept_risks_and_limitation_of_using_mcc_tiebreaker_in_active_mode.html">
+        활성 모드에서 MetroCluster Tiebreaker를 사용할 때의 위험 및 제한 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/reference_firewall_requirements_for_mcc_tiebreaker.html">
+        MetroCluster Tiebreaker의 방화벽 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/tiebreaker/reference_where_to_find_additional_information_tb_icg.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 데이터 보호 및 재해 복구 이해</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html">
+        MetroCluster가 데이터를 보호하고 재해 복구를 제공하는 방법
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 전환, 복구, 스위치백을 수행합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 테스트 또는 유지 관리를 위한 스위치오버 수행</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_perform_switchover_for_tests_or_maintenance.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html">
+        시스템을 전환할 준비가 되었는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_send_a_custom_autosupport_message_prior_to_negotiated_switchover.html">
+        협상된 전환 전에 맞춤형 AutoSupport 메시지를 전송하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_perform_a_negotiated_switchover.html">
+        협상된 전환을 수행합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/concept_output_for_storage_aggregate_plex_show_after_a_mcc_switchover.html">
+        스토리지 애그리게이트 plex show 명령의 출력은 MetroCluster 스위치오버 후 결정되지 않습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_confirm_that_dr_partners_have_come_online.html">
+        DR 파트너가 온라인 상태인지 확인합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 설정을 수정합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC 구성에서 구성을 수정합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_heal_the_configuration_in_a_mcc_fc_configuration_supertask.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_heal_the_data_aggregates_after_negotiated_switchover.html">
+        협상된 전환 후 데이터 애그리게이트를 수정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_heal_the_root_aggregates_after_negotiated_switchover.html">
+        협상된 전환 후 루트 애그리게이트를 수정합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_heal_the_configuration_in_a_mcc_ip_configuration_ontap_9_4_and_earlier.html">
+        MetroCluster IP 구성에서 구성을 수정합니다(ONTAP 9.4 이하).
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_perform_a_switchback.html">
+        스위치백을 수행합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_verify_a_successful_switchback.html">
+        성공적으로 스위치백을 확인합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/reference_commands_for_switchover_healing_and_switchback.html">
+        전환, 복구, 스위치백을 위한 명령입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/concept_monitoring_the_mcc_configuration.html">
+        MetroCluster 구성을 모니터링합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html">
+        NVFAIL을 사용하여 파일 시스템 일관성 모니터링 및 보호
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/reference_where_to_find_additional_information_dr_guide.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 구성 요소를 유지보수하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html">
+        MetroCluster 유지 관리 작업의 절차를 찾는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/reference_mcc_failure_scenarios.html">
+        MetroCluster 장애 및 복구 시나리오
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FC-to-SAS 브리지 유지 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_using_fibrebridge_7600n_bridges_in_mcc_configurations.html">
+        MetroCluster 구성에서 FiberBridge 7600N 브리지 지원
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_using_fibrebridge_7500n_bridges_in_mcc_configurations.html">
+        MetroCluster 구성에서 FiberBridge 7500N 브리지 지원
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_enable_ip_port_access_on_the_fibrebridge_7600n_bridge_guides.html">
+        필요한 경우 FiberBridge 7600N 브리지에서 IP 포트 액세스를 활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html">
+        FiberBridge 브리지에서 펌웨어를 업데이트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_replace_a_sle_fc_to_sas_bridge.html">
+        단일 FC-to-SAS 브리지를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html">
+        FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/reference_requirements_for_using_other_interfaces_to_configure_and_manage_fibrebridge_bridges.html">
+        FiberBridge 브리지를 구성 및 관리하기 위한 다른 인터페이스 사용 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/reference_fb_replace_a_power_supply.html">
+        오류가 발생한 전원 공급 장치 모듈을 핫 스왑(hot-replace) 합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_in_band_management_of_the_fc_to_sas_bridges.html">
+        FC-to-SAS 브리지의 대역 내 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_secur_or_unsecur_a_fibrebridge_bridge.html">
+        FiberBridge 브리지를 고정하거나 고정하지 않습니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FC 스위치 유지 관리 및 교체</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html">
+        Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html">
+        Cisco FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_upgrade_to_new_brocade_switches.html">
+        새 Brocade FC 스위치로 업그레이드하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_replace_a_brocade_fc_switch_mcc.html">
+        Brocade FC 스위치를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_rename_a_brocade_fc_switch.html">
+        Brocade FC 스위치의 이름을 바꿉니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_disable_encryption_on_brocade_fc_switches.html">
+        Brocade FC 스위치에서 암호화를 해제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_change_isl_properties_isl_ports_or_the_iod_ood_configuration_on_a_brocade_switch.html">
+        Brocade 스위치에서 ISL 속성, ISL 포트 또는 IOD/ood 구성을 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_replace_a_cisco_fc_switch_mcc.html">
+        Cisco FC 스위치를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_change_speed_of_isl_ports_on_a_cisco_fc_switch.html">
+        Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_add_lsls_to_a_cisco_fc_switch.html">
+        Cisco 스위치에 lSLs 추가
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> IP 스위치 유지 보수 및 교체</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_replace_an_ip_switch.html">
+        IP 스위치를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_upgrade_firmware_on_mcc_ip_switches.html">
+        MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html">
+        MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_rename_a_cisco_ip_switch.html">
+        Cisco IP 스위치의 이름을 바꿉니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_add_remove_or_change_isl_ports_nondisruptively.html">
+        ISL 포트를 중단 없이 추가, 제거 또는 변경할 수 있습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_identifying_storage_in_a_mcc_ip_configuration.html">
+        MetroCluster IP 구성에서 스토리지를 식별하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_add_shelves_using_shared_storage.html">
+        공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에 쉘프를 추가합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC 구성에 스토리지를 핫 추가합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_hot_add_a_sas_disk_shelf_in_a_direct_attached_mcc_configuration_us_sas_optical_cables.html">
+        SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성에서 SAS 디스크 쉘프를 핫 추가합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> SAS 스토리지를 브리지 연결 MetroCluster FC 구성에 핫 추가합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_hot_add_a_stack_to_exist_7500n_pair.html">
+        기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_fb_hot_add_stack_of_shelves_and_bridges.html">
+        SAS 디스크 쉘프 및 브리지 스택을 MetroCluster 시스템에 핫 추가합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_fb_hot_add_shelf_prepare_7500n.html">
+        SAS 디스크 쉘프 핫 추가 준비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_fb_hot_add_a_disk_shelf_install_7500n.html">
+        디스크 쉘프 핫 추가
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_hot_add_an_iom12_disk_shelf_to_a_stack_of_iom6_disk_shelves.html">
+        브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_hot_remove_storage_from_a_mcc_fc_configuration.html">
+        MetroCluster FC 구성에서 스토리지를 핫 제거할 수 있습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_replace_a_shelf_nondisruptively_in_a_stretch_mcc_configuration.html">
+        확장 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_replace_a_shelf_nondisruptively_in_a_mcc_fc_configuration.html">
+        패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_migrating_root_volumes_to_a_new_destination.html">
+        루트 볼륨을 새 대상으로 마이그레이션하는 시기
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_move_a_metadata_volume_in_mcc_configurations.html">
+        MetroCluster 구성에서 메타데이터 볼륨 이동
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_rename_the_cluster_for_mcc_configuration.html">
+        MetroCluster 구성에서 클러스터의 이름을 바꿉니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_power_on_and_power_off_a_data_center.html">
+        데이터 센터의 전원을 끄고 전원을 켭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_power_off_an_entire_mcc_ip_configuration.html">
+        전체 MetroCluster IP 구성의 전원을 끕니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_power_off_an_entire_mcc_fc_configuration.html">
+        전체 MetroCluster FC 구성의 전원을 끕니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/task_do_not_use_for_9_8_and_later_reconfigure_the_fc_switch_layout_for_ontap_9_1_or_later.html">
+        ONTAP 9.x 전에 구성된 FC 스위치 레이아웃을 재구성합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> FC 스위치에 대한 포트 할당</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_port_assignments_for_systems_using_two_initiator_ports.html">
+        이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">
+        ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">
+        ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_using_the_interoperability_matrix_tool_to_find_mcc_information.html">
+        상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보를 찾는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/reference_where_to_find_additional_information_mcc_service_guide.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC에서 MetroCluster IP로 전환합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_choosing_your_transition_procedure_mcc_transition.html">
+        전환 절차를 선택합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_supported_platforms_for_transition.html">
+        무중단 전환을 지원하는 플랫폼
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC에서 MetroCluster IP 구성으로 전환할 준비를 합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_requirements_for_fc_to_ip_transition_mcc.html">
+        무중단 FC-to-IP 전환 요구사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_how_transition_impacts_the_mcc_hardware_components.html">
+        전환이 MetroCluster 하드웨어 구성 요소에 미치는 영향
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_transition_workflow_fc_to_ip_transition.html">
+        무중단 MetroCluster 전환을 위한 워크플로우
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_considerations_for_using_existing_ip_switches.html">
+        IP 스위치에 대한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_switchover_and_switchback_operations_during_transition.html">
+        무중단 전환 중 전환, 복구, 스위치백 작업
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_mcc_operation_during_transition.html">
+        전환 중 알림 메시지 및 툴 지원
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_example_naming_in_this_procedure_mcc_ip_transition.html">
+        이 절차의 이름 지정 예
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC에서 MetroCluster IP 구성으로 전환</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_verify_mcc_health_fc_to_ip.html">
+        MetroCluster 구성의 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_remove_tiebreaker_4n_transition.html">
+        Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_apply_rcfs.html">
+        새 IP 스위치에 RCF 생성 및 적용
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_move_cluster_connections.html">
+        로컬 클러스터 연결을 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_prepare_ip_controllers_4n_transition.html">
+        MetroCluster IP 컨트롤러를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_configure_transition.html">
+        전환을 위해 MetroCluster를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_move_data_to_new_drive_shelves.html">
+        데이터를 새 드라이브 쉘프로 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_remove_mc_fc_controllers.html">
+        MetroCluster FC 컨트롤러를 분리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_complete_transition.html">
+        전환을 완료합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_send_a_custom_autosupport_message_after_maintenance_4n_nondisruptive_mcc_transition.html">
+        유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_restore_tiebreaker_monitor_4n_nondisruptive_mcc_transition.html">
+        Tiebreaker 또는 중재자 모니터링을 복원합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2노드 MetroCluster FC에서 4노드 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_disruptively_transition_from_a_two_node_mcc_fc_to_a_four_node_mcc_ip_configuration.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_example_naming_in_this_procedure_2n_mcc_transition_disruptive.html">
+        이 절차의 이름 지정 예
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.html">
+        FC-to-IP의 획기적인 전환 준비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_transition_the_mcc_fc_nodes_2n_mcc_transition_supertask.html">
+        MetroCluster FC 노드를 전환합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_connect_the_mcc_ip_controller_modules_2n_mcc_transition_supertask.html">
+        MetroCluster IP 컨트롤러 모듈을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_configure_the_new_nodes_and_complete_transition.html">
+        새 노드를 구성하고 전환을 완료합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_return_the_system_to_normal_operation_2n_mcc_transition_supertask.html">
+        시스템을 정상 작동 상태로 되돌립니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_disruptively_transition_while_move_volumes_from_old_shelves_to_new_shelves.html">
+        스토리지 쉘프를 폐기할 때 MetroCluster FC에서 MetroCluster IP로 중단 없이 전환(ONTAP 9.8 이상)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_disruptively_transition_when_exist_shelves_are_not_supported_on_new_controllers.html">
+        새 컨트롤러에서 기존 쉘프를 지원하지 않을 때 중단 없이 전환(ONTAP 9.8 이상)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_move_an_fc_san_workload_from_mcc_fc_to_mcc_ip_nodes.html">
+        FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html">
+        Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/reference_where_to_find_additional_information_mcc_ug.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster 구성을 업그레이드하거나 확장합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html">
+        업그레이드 또는 새로 고침 방법을 선택합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html">
+        스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html">
+        스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html">
+        스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html">
+        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html">
+        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_fc.html">
+        4노드 MetroCluster FC 구성 업데이트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html">
+        4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2노드 MetroCluster FC 구성을 4노드 구성으로 확장합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_expand_a_two_node_mcc_fc_configuration_to_a_four_node_fc_configuration_supertask.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_verify_the_state_of_the_mcc_configuration_mcc_expansion.html">
+        MetroCluster 구성의 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_send_a_custom_autosupport_message_before_add_nodes_to_the_mcc_configuration_2_node_to_4_node.html">
+        MetroCluster 구성에 noxdes를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_zone_for_the_new_controller_ports_in_a_fabric_attached_mcc_configuration_four_node_expansion.html">
+        패브릭 연결 MetroCluster 구성에 컨트롤러 모듈을 추가할 때 새 컨트롤러 포트의 영역입니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 각 클러스터에 새 컨트롤러 모듈을 추가합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_add_a_new_controller_to_each_cluster_mcc_expansion.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_prepare_for_the_upgrade_add_2nd_controller_to_create_ha_pair.html">
+        업그레이드를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_clear_the_configuration_on_a_controller_module_mcc.html">
+        컨트롤러 모듈의 구성을 지웁니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_prepare_cluster_ports_on_the_exist_controller.html">
+        기존 컨트롤러 모듈에서 클러스터 포트를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_prepare_the_netboot_server_cluster_mode.html">
+        Netboot 서버를 준비하여 이미지를 다운로드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_enable_the_ha_mode_on_the_exist_controller_mcc_when_add_a_2nd_controller.html">
+        기존 컨트롤러 모듈에서 HA 모드를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_shut_down_the_exist_controller_when_add_a_2nd_controller_in_c_mode.html">
+        기존 컨트롤러 모듈을 종료합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 새 컨트롤러 모듈을 설치하고 케이블을 연결합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_install_and_cable_the_new_controller.html">
+        필수 구성 요소 및 설치
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_cable_the_controller_module_s_fc_vi_hba_ports_to_the_fc_switches_controller_to_fc_sw.html">
+        새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_cable_the_cluster_peering_connections.html">
+        새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_power_up_both_controller_modules_and_display_the_loader_prompt_2_node_mcc_expansion.html">
+        두 컨트롤러 모듈의 전원을 켜고 Loader 메시지가 표시됩니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_change_the_ha_config_setts_mcc_add_a_2nd_controller.html">
+        기존 및 새 컨트롤러 모듈의 ha-config 설정을 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html">
+        두 컨트롤러 모듈에 대해 파트너 시스템 ID를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_boot_the_exist_controller_module.html">
+        기존 컨트롤러 모듈을 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_assign_disks_to_the_new_controller_mcc_expansion.html">
+        디스크를 새 컨트롤러 모듈에 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_netboot_and_set_up_ontap_on_the_new_controller_module_mcc.html">
+        새로운 컨트롤러 모듈에서 ONTAP를 netboot 및 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_mirror_the_root_aggregates_mcc_expansion_procedure.html">
+        새 컨트롤러의 루트 애그리게이트를 미러링합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 인터클러스터 LIF를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_configure_intercluster_lifs_to_use_dedicated_intercluster_ports.html">
+        전용 포트에 대한 인터클러스터 LIF를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_configure_intercluster_lifs_to_share_data_ports.html">
+        공유 데이터 포트에 대한 인터클러스터 LIF를 구성합니다
+      </a></li></ul></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html">
+        각 노드에 미러링된 데이터 애그리게이트를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_install_licenses_on_the_new_controller_module_cluster_mode.html">
+        새 컨트롤러 모듈에 대한 라이센스를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_create_unmirrored_data_aggregates_mcc.html">
+        미러링되지 않은 데이터 애그리게이트를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_install_firmware_after_add_a_controller_module.html">
+        컨트롤러 모듈을 추가한 후 펌웨어를 설치합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_the_mcc_configuration_mcc_configure_refresh.html">
+        새 컨트롤러로 MetroCluster 구성을 업데이트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_enable_storage_failover_both_controller_modules_and_set_cluster_ha.html">
+        두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA에서 구성 가능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_restart_the_svms.html">
+        SVM을 다시 시작합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 4노드 MetroCluster FC 구성을 8노드 구성으로 확장합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_expand_a_four_node_mcc_fc_configuration_to_an_eight_node_configuration.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_determin_the_new_cable_layout_mcc_expansion.html">
+        새 케이블 레이아웃 확인
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_rack_the_new_equipment_mcc_expansion.html">
+        새 장비를 랙에 장착하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_verify_the_health_of_the_mcc_configuration.html">
+        MetroCluster 구성의 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_check_for_mcc_configuration_errors_with_config_advisor.html">
+        Config Advisor에서 MetroCluster 구성 오류를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_send_a_custom_autosupport_message_before_add_nodes_to_the_mcc_configuration.html">
+        MetroCluster 구성에 노드를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 새 노드의 스위치 패브릭을 재설정하고 존(zone)합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_disconnect_the_exist_dr_group_mcc_expansion.html">
+        패브릭에서 기존 DR 그룹의 연결을 끊습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html">
+        RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 새 컨트롤러에서 ONTAP를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_clear_the_configuration_on_a_controller_module_mcc.html">
+        컨트롤러 모듈의 구성을 지웁니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_assign_disk_ownership_in_aff_systems_mcc.html">
+        AFF 시스템에서 디스크 소유권을 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_assign_disk_ownership_to_non_aff_systems_mcc.html">
+        비 AFF 시스템에서 디스크 소유권을 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_verify_that_the_ha_state_of_components_is_mcc_dr_smok_crater_or_mcc_expansion.html">
+        구성 요소의 ha-config 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_boot_the_new_controllers_and_join_them_to_the_cluster.html">
+        새 컨트롤러를 부팅하고 클러스터에 연결합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 클러스터를 MetroCluster 구성으로 구성합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 인터클러스터 LIF를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_configure_intercluster_lifs_to_use_dedicated_intercluster_ports.html">
+        전용 포트에 대한 인터클러스터 LIF를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_configure_intercluster_lifs_to_share_data_ports.html">
+        공유 데이터 포트에 대한 인터클러스터 LIF를 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_mirror_the_root_aggregates_mcc.html">
+        루트 애그리게이트를 미러링합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_implement_the_mcc_configuration_mcc_refresh_mcc_expansion.html">
+        MetroCluster 구성을 구현합니다
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html">
+        각 노드에 미러링된 데이터 애그리게이트를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_configure_the_fc_to_sas_bridges_for_health_monitor.html">
+        상태 모니터링을 위해 FC-to-SAS 브리지를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_move_a_metadata_volume_in_mcc_configurations.html">
+        MetroCluster 구성에서 메타데이터 볼륨 이동
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_check_the_mcc_configuration.html">
+        MetroCluster 설정을 확인한다
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_check_for_mcc_configuration_errors_with_config_advisor.html">
+        Config Advisor에서 MetroCluster 구성 오류를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_send_a_custom_autosupport_message_after_add_nodes_to_the_mcc_configuration.html">
+        다음에 사용자 지정 AutoSupport 메시지를 보내 MetroCluster 구성에 노드를 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_verify_switchover_heal_and_switchback.html">
+        전환, 복구, 스위치백을 확인합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_expand_a_four_node_mcc_ip_configuration.html">
+        4노드 MetroCluster IP 구성을 8노드 구성으로 확장합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/concept_removing_a_disaster_recovery_group.html">
+        재해 복구 그룹을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/reference_where_to_find_additional_information_mcc_ug.html">
+        추가 정보를 찾을 수 있는 위치
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 재해에 복구합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/concept_dr_workflow.html">
+        재해 복구를 위한 워크플로우
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_perform_a_forced_switchover_after_a_disaster.html">
+        재해 발생 후 강제 절체 수행
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html">
+        올바른 복구 절차 선택
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 멀티 컨트롤러 또는 스토리지 장애로부터 복구합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html">
+        시작하기 전에
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_replace_hardware_and_boot_new_controllers.html">
+        하드웨어를 교체하고 새 컨트롤러를 부팅합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster IP 구성에서 스위치백을 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_prepare_for_switchback_in_a_mcc_ip_configuration_supertask.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_set_env_mcip.html">
+        MetroCluster IP 구성에서 필요한 환경 변수를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_power_on_mcip.html">
+        재해 사이트에서 장비 전원 켜기(MetroCluster IP 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_config_switches_mcip.html">
+        IP 스위치 구성(MetroCluster IP 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_verify_connectivity_mcip.html">
+        원격 사이트에 대한 스토리지 접속 확인(MetroCluster IP 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_reassign_pool1_disastersite_mcip.html">
+        재해 사이트에서 풀 1 디스크에 대한 디스크 소유권 재할당(MetroCluster IP 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_boot_ontap_mcip.html">
+        MetroCluster IP 구성의 교체 컨트롤러 모듈에서 ONTAP로 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_restore_connectivity_mcip.html">
+        정상적인 노드에서 재해 사이트로 연결 복원(MetroCluster IP 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_verify_assignment_mcip.html">
+        자동 할당을 확인하거나 풀 0 드라이브를 수동으로 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_assign_pool1_survivingsite_mcip.html">
+        정상적인 사이트에서 풀 1 드라이브 할당(MetroCluster IP 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_delete_plexes_mcip.html">
+        정상적인 사이트에서 소유하는 실패한 플렉스를 삭제합니다(MetroCluster IP 구성).
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_heal_restore_mcip.html">
+        Aggregate 환원 및 미러 복원(MetroCluster IP 구성) 수행
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> MetroCluster FC 구성에서 스위치백을 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_verify_port_mcfc.html">
+        포트 구성 확인(MetroCluster FC 구성만 해당)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_cfg_bridges_mcfc.html">
+        FC-to-SAS 브리지 구성(MetroCluster FC 구성만 해당)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_cfg_switches_mcfc.html">
+        FC 스위치 구성(MetroCluster FC 구성만 해당)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_verify_storage_mcfc.html">
+        스토리지 구성을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_power_on_mcfc.html">
+        재해 사이트에서 장비의 전원을 켭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_assign_ownership_mcfc.html">
+        교체된 드라이브에 대한 소유권을 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_heal_restore_mcfc.html">
+        애그리게이트 복구 및 복원 미러(MetroCluster FC 구성) 수행
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_reassign_roots_mcfc.html">
+        루트 애그리게이트에 대한 디스크 소유권을 교체 컨트롤러 모듈에 재할당(MetroCluster FC 구성)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_boot_new_mcfc.html">
+        새 컨트롤러 모듈 부팅(MetroCluster FC 구성)
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_prepare_the_nodes_for_switchback_in_a_mixed_configuration.html">
+        혼합 구성에서 스위치백을 위한 노드 준비(전환 중 복구)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_complete_recovery.html">
+        복구를 완료합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/disaster-recovery/task_recover_from_a_non_controller_failure_mcc_dr.html">
+        컨트롤러 이외의 장애를 복구합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/reference_legal_notices.html">
+        법적 고지
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">홈</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">설명서</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/ontap-metrocluster/">ONTAP&nbsp;MetroCluster</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          각 노드에서 미러링된 데이터 애그리게이트 생성
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">각 노드에서 미러링된 데이터 애그리게이트 생성</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    
+  
+
+<span>기여자
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-ivanad">
+    <img  class="avatar avatar-small"
+          alt="netapp-ivanad"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/76115643?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+
+<div class="paragraph lead">
+<p>DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다.</p>
+</div>
+<div class="ulist">
+<div class="title">이 작업에 대해</div>
+<ul>
+<li>
+<p>새 애그리게이트에 어떤 드라이브가 사용되는지 알아야 합니다.</p>
+</li>
+<li>
+<p>시스템에 여러 드라이브 유형(이기종 스토리지)이 있는 경우 올바른 드라이브 유형을 선택할 수 있는 방법을 이해해야 합니다.</p>
+</li>
+<li>
+<p>드라이브는 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브는 동일한 노드에 의해 소유되어야 하며, 이 노드는 해당 애그리게이트의 홈 노드가 됩니다.</p>
+<div class="paragraph">
+<p>ADP를 사용하는 시스템에서는 각 드라이브가 P1, P2, P3 파티션으로 분할되는 파티션을 사용하여 애그리게이트를 생성합니다.</p>
+</div>
+</li>
+<li>
+<p>애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html">"디스크 및 애그리게이트 관리"</a></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>사용 가능한 스페어 목록을 표시합니다.</p>
+<div class="paragraph">
+<p>'storage disk show-spare-owner_node_name_'</p>
+</div>
+</li>
+<li>
+<p>애그리게이트 생성:</p>
+<div class="paragraph">
+<p>'스토리지 집계 생성 - 미러 true'</p>
+</div>
+<div class="paragraph">
+<p>클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에서 생성되도록 하려면 '-node' 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정합니다.</p>
+</div>
+<div class="paragraph">
+<p>다음 옵션을 지정할 수 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aggregate의 홈 노드(즉, 정상 운영 시 Aggregate를 소유한 노드)</p>
+</li>
+<li>
+<p>Aggregate에 추가될 특정 드라이브 목록입니다</p>
+</li>
+<li>
+<p>포함할 드라이브 수입니다</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
+</td>
+<td class="content">
+지원되는 최소 구성에서는 드라이브 수가 제한되어 있으므로, 디스크 RAID-DP Aggregate 3개를 만들 수 있도록 force-small-aggregate 옵션을 사용해야 합니다.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>집계에 사용할 체크섬 스타일</p>
+</li>
+<li>
+<p>사용할 드라이브 유형입니다</p>
+</li>
+<li>
+<p>사용할 드라이브의 크기입니다</p>
+</li>
+<li>
+<p>주행 속도를 사용하십시오</p>
+</li>
+<li>
+<p>Aggregate의 RAID 그룹에 적합한 RAID 유형입니다</p>
+</li>
+<li>
+<p>RAID 그룹에 포함될 수 있는 최대 드라이브 수입니다</p>
+</li>
+<li>
+<p>RPM이 다른 드라이브가 허용되는지 여부</p>
+<div class="paragraph">
+<p>이러한 옵션에 대한 자세한 내용은 '저장소 집계 만들기' man 페이지를 참조하십시오.</p>
+</div>
+<div class="paragraph">
+<p>다음 명령을 실행하면 10개의 디스크로 미러링된 Aggregate가 생성됩니다.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster_A::&gt; storage aggregate create aggr1_node_A_1 -diskcount 10 -node node_A_1 -mirror true
+[Job 15] Job is queued: Create aggr1_node_A_1.
+[Job 15] The job is starting.
+[Job 15] Job succeeded: DONE</pre>
+</div>
+</div>
+</li>
+<li>
+<p>새 애그리게이트의 RAID 그룹 및 드라이브를 확인합니다.</p>
+<div class="paragraph">
+<p>'Storage aggregate show-status-aggregate_aggregate-name_'</p>
+</div>
+</li>
+</ol>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[각 노드에서 미러링된 데이터 애그리게이트 생성](https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
+  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/ontap-metrocluster/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/ontap-metrocluster/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/ontap-metrocluster/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/ontap-metrocluster/js/www-ntap.js'></script>
+    <script src='/ko-kr/ontap-metrocluster/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>
