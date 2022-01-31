@@ -1,0 +1,62 @@
+---
+permalink: install-stretch/task_upgrade_the_configuration_to_fabric_attached_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, transition, stretch, fabric, attacjed, configuration 
+summary: 패브릭 연결 MetroCluster 구성에서는 노드가 서로 다른 위치에 있습니다. 이러한 지리적 차이로 인해 재해 보호가 증가합니다. 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환하기 위해서는 FC 스위치를 추가해야 하며, 필요한 경우 FC-to-SAS 브리지를 구성에 추가해야 합니다. 
+---
+= 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+패브릭 연결 MetroCluster 구성에서는 노드가 서로 다른 위치에 있습니다. 이러한 지리적 차이로 인해 재해 보호가 증가합니다. 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환하기 위해서는 FC 스위치를 추가해야 하며, 필요한 경우 FC-to-SAS 브리지를 구성에 추가해야 합니다.
+
+* MetroCluster modify-auto-switchover-failure-domain auto-disabled" 명령을 실행하여 두 클러스터 모두에서 자동 전환을 비활성화해야 합니다.
+* 노드를 종료해야 합니다.
++
+이 절차는 중단을 따릅니다.
+
+
+
+MetroCluster 구성은 두 사이트에서 모두 전환되어야 합니다. MetroCluster 구성을 업그레이드한 후 두 클러스터 모두에서 자동 전환을 활성화해야 합니다. MetroCluster check run 명령을 실행하여 구성을 검증해야 합니다.
+
+이 절차에서는 필요한 단계에 대한 개요를 제공합니다. 자세한 단계는 의 특정 섹션을 참조해야 합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]. 전체 설치 및 구성을 수행할 필요는 없습니다.
+
+.단계
+. 의 "MetroCluster 설치 준비" 섹션을 주의 깊게 검토하여 업그레이드를 준비합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"].
+. 필요한 스위치 및 FC-to-SAS 브리지를 설치, 케이블 연결 및 구성합니다.
++
+
+NOTE: 의 "패브릭 연결 MetroCluster 구성 케이블 연결" 섹션의 절차를 사용해야 합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"].
+
+. 다음 단계를 사용하여 MetroCluster 구성을 새로 고칩니다.
++
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html[Fabric-attached MetroCluster 설치 및 구성 링크에서 "ONTAP에서 MetroCluster 소프트웨어 구성" 섹션의 절차를 사용하지 마십시오.
+
++
+.. 고급 권한 모드로 들어갑니다: + " * set-privilege advanced *"
+.. MetroCluster 설정 새로 고침: + " * MetroCluster configure-refresh true *"
++
+다음 명령을 실행하면 controller_a_1이 포함된 DR 그룹의 모든 노드에 대한 MetroCluster 구성이 새로 고쳐집니다.
+
++
+[listing]
+----
+controller_A_1::*> metrocluster configure -refresh true
+[Job 009] Job succeeded: Configure is successful.
+----
+.. 관리자 권한 모드로 돌아가기: + " * set-privilege admin * "
+
+
+. MetroCluster 구성에 오류가 있는지 확인하고 작동 중인지 확인합니다.
++
+의 다음 섹션에 있는 절차를 사용해야 합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]:
+
++
+** Config Advisor에서 MetroCluster 구성 오류를 확인하는 중입니다
+** 로컬 HA 작업을 확인하는 중입니다
+** 전환, 복구, 스위치백을 확인하는 중입니다
+
+
+

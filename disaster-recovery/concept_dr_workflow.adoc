@@ -1,0 +1,14 @@
+---
+permalink: disaster-recovery/concept_dr_workflow.html 
+keywords: workflow, perform, disaster, recovery 
+summary: 워크플로우를 사용하여 재해 복구를 수행합니다. 
+---
+= 재해 복구를 위한 워크플로우
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+워크플로우를 사용하여 재해 복구를 수행합니다.
+
+image::../media/workflow_disaster_recovery.svg[워크플로우 재해 복구]

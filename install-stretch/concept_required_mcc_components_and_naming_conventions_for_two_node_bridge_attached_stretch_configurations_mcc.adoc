@@ -1,0 +1,144 @@
+---
+permalink: install-stretch/concept_required_mcc_components_and_naming_conventions_for_two_node_bridge_attached_stretch_configurations_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, required, hardware, components, naming, conventions, two, node, stretch, bridge 
+summary: MetroCluster 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다. 예를 들어 사이트 A는 사이트 A라고 하며 다른 사이트는 사이트 B라고 합니다 
+---
+= 2노드 브리지 연결 확장 구성에 필요한 MetroCluster 하드웨어 구성 요소 및 명명 규칙
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다. 예를 들어 사이트 A는 사이트 A라고 하며 다른 사이트는 사이트 B라고 합니다
+
+
+
+== 지원되는 소프트웨어 및 하드웨어
+
+MetroCluster FC 구성의 경우 하드웨어 및 소프트웨어가 지원되어야 합니다.
+
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+AFF 시스템을 사용하는 경우 MetroCluster 구성의 모든 컨트롤러 모듈을 AFF 시스템으로 구성해야 합니다.
+
+
+
+== MetroCluster 구성의 하드웨어 이중화
+
+MetroCluster 구성의 하드웨어 이중화 때문에 각 사이트에는 두 개의 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.
+
+
+
+== 2개의 단일 노드 ONTAP 클러스터 요구사항
+
+브리지 연결 확장 MetroCluster 구성에는 2개의 단일 노드 ONTAP 클러스터가 필요합니다.
+
+이름은 MetroCluster 구성 내에서 고유해야 합니다.
+
+예제 이름:
+
+* 사이트 A: cluster_a
+* 사이트 B: cluster_B
+
+
+
+
+== 스토리지 컨트롤러 모듈 2개 필요
+
+브리지 연결 스트레치 MetroCluster 구성에는 스토리지 컨트롤러 모듈 2개가 필요합니다.
+
+컨트롤러는 다음 요구 사항을 충족해야 합니다.
+
+* 이름은 MetroCluster 구성 내에서 고유해야 합니다.
+* MetroCluster 구성의 모든 컨트롤러 모듈이 동일한 버전의 ONTAP를 실행해야 합니다.
+* DR 그룹의 모든 컨트롤러 모듈은 동일한 모델이어야 합니다.
+* DR 그룹의 모든 컨트롤러 모듈은 동일한 FC-VI 구성을 사용해야 합니다.
++
+일부 컨트롤러 모듈은 FC-VI 연결을 위한 두 가지 옵션을 지원합니다.
+
++
+** 온보드 FC-VI 포트
+** 슬롯 1의 FC-VI 카드
++
+온보드 FC-VI 포트를 사용하는 컨트롤러 모듈과 애드온 FC-VI 카드를 사용하는 컨트롤러 모듈 혼합은 지원되지 않습니다. 예를 들어, 한 노드에서 온보드 FC-VI 구성을 사용하는 경우 DR 그룹의 다른 모든 노드는 온보드 FC-VI 구성을 사용해야 합니다.
+
+
+
+
+
+예제 이름:
+
+* 사이트 A: controller_a_1
+* 사이트 B: controller_B_1
+
+
+
+
+== FC-to-SAS 브릿지 요구 사항
+
+브리지 연결 스트레치 MetroCluster 구성에는 각 사이트에 2개 이상의 FC-SAS 브리지가 필요합니다.
+
+이러한 브리지는 SAS 디스크 쉘프를 컨트롤러 모듈에 연결합니다.
+
+
+NOTE: FiberBridge 6500N 브리지는 ONTAP 9.8 이상을 실행하는 구성에서는 지원되지 않습니다.
+
+* FiberBridge 7600N 및 7500N 브리지는 최대 4개의 SAS 스택을 지원합니다.
+* FiberBridge 6500N 브리지는 하나의 SAS 스택만 지원합니다.
+* 각 스택은 IOM의 다양한 모델을 사용할 수 있지만 스택 내의 모든 쉘프는 동일한 모델을 사용해야 합니다.
++
+지원되는 IOM 모델은 실행 중인 ONTAP 버전에 따라 다릅니다.
+
+* 이름은 MetroCluster 구성 내에서 고유해야 합니다.
+
+
+이 가이드에서 예제로 사용되는 권장 이름은 브리지가 연결되는 컨트롤러 모듈과 포트를 나타냅니다.
+
+예제 이름:
+
+* 사이트 A:
++
+** bridge_A_1_"__port-number_"
+** 브리지_A_2_"__포트-번호_"
+
+
+* 사이트 B:
++
+** bridge_B_1_"__port-number_"
+** Bridge_B_2_'__PORT-NUMBER_'
+
+
+
+
+
+
+== SAS 쉘프 4개 이상 필요(권장)
+
+브리지 연결 확장 MetroCluster 구성에는 최소 2개의 SAS 쉘프가 필요합니다. 그러나 각 사이트에서는 총 4개의 SAS 쉘프에 대해 디스크 소유권을 허용하도록 쉘프 2개를 권장합니다.
+
+각 사이트에서 최소 하나의 쉘프가 지원됩니다.
+
+예제 이름:
+
+* 사이트 A:
++
+** 쉘프_A_1_1
+** 쉘프_A_1_2
+
+
+* 사이트 B:
++
+** 셸프_B_1_1
+** 쉘프_B_1_2
+
+
+
+
+
+
+== 스택에서 IOM12와 IOM 6 모듈 혼합
+
+사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오. https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성"]
+
+쉘프 혼합에 대한 자세한 내용은 다음을 참조하십시오. https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"]

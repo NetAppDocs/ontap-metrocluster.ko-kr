@@ -1,0 +1,36 @@
+---
+permalink: upgrade/task_expand_a_four_node_mcc_fc_configuration_to_an_eight_node_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, expand, four, node, eight, configuration 
+summary: 4노드 MetroCluster FC 구성을 8노드 MetroCluster FC 구성으로 확장하는 경우 각 클러스터에 컨트롤러 2개를 추가하여 각 MetroCluster 사이트에서 두 번째 HA 쌍을 구성하고 MetroCluster FC 구성 작업을 실행해야 합니다. 
+---
+= 4노드 MetroCluster FC 구성을 8노드 구성으로 확장
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+4노드 MetroCluster FC 구성을 8노드 MetroCluster FC 구성으로 확장하는 경우 각 클러스터에 컨트롤러 2개를 추가하여 각 MetroCluster 사이트에서 두 번째 HA 쌍을 구성하고 MetroCluster FC 구성 작업을 실행해야 합니다.
+
+.이 작업에 대해
+* 노드는 MetroCluster FC 구성에서 ONTAP 9를 실행해야 합니다.
++
+이 절차는 이전 버전의 ONTAP 또는 MetroCluster IP 구성에서 지원되지 않습니다.
+
+* 기존 MetroCluster FC 구성이 양호해야 합니다.
+* 추가하는 장비는 에 설명된 모든 요구 사항을 충족하고 지원되어야 합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+* 새 컨트롤러와 새 브리지를 수용하기 위해 사용 가능한 FC 스위치 포트가 있어야 합니다.
+* FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+* 이 절차는 MetroCluster FC 구성에만 적용됩니다.
+* 이 절차는 무중단 운영이며 디스크를 제로화하면 완료하는 데 약 1일 정도 소요됩니다(랙 및 스택 제외).
+
+
+이 절차를 수행하기 전에 MetroCluster FC 구성은 4개의 노드로 구성되며 각 사이트에는 1개의 HA 쌍이 있습니다.
+
+image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+
+이 절차를 마치면 MetroCluster FC 구성은 각 사이트에 2개의 HA 쌍으로 구성됩니다.
+
+image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
+
+두 사이트 모두 동일하게 확장해야 합니다. MetroCluster FC 구성은 불균등한 노드 수로 구성될 수 없습니다.

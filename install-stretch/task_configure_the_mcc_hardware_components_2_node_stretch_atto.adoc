@@ -1,0 +1,15 @@
+---
+permalink: install-stretch/task_configure_the_mcc_hardware_components_2_node_stretch_atto.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, cable, two, nose, bridge, attached, stretch, configuration 
+summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다. 
+---
+= 2노드 브리지 연결 스트레치 MetroCluster 구성 케이블링
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다.
+
+image::../media/workflow_hardware_installation_and_configuration_2_node_bridge_attached.gif[워크플로우 하드웨어 설치 및 구성 2노드 브리지가 연결됨]

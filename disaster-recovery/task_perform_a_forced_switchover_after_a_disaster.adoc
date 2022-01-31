@@ -1,0 +1,114 @@
+---
+permalink: disaster-recovery/task_perform_a_forced_switchover_after_a_disaster.html 
+sidebar: sidebar 
+keywords: disaster, occur, perform, surviving, cluster, survive, switchover, ensure, safe, data, service, force, fence, fencing, off, site, access, volume, nvfail, state, output, storage, aggregate, plex, show, command, indeterminate, metroxluster 
+summary: 재해가 발생한 경우, 안전한 지속적인 데이터 서비스를 보장하기 위해 재해 클러스터와 정상적인 클러스터에서 모두 수행해야 하는 단계가 있습니다. 
+---
+= 재해 후 강제 전환 수행
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+재해가 발생한 경우, 안전한 지속적인 데이터 서비스를 보장하기 위해 재해 클러스터와 정상적인 클러스터에서 모두 수행해야 하는 단계가 있습니다.
+
+재해가 발생했는지 확인하는 방법은 다음과 같습니다.
+
+* 관리자
+* MetroCluster Tiebreaker 소프트웨어(구성된 경우
+* ONTAP 중재자 소프트웨어가 구성되어 있는 경우
+
+
+
+
+== 재해 사이트에서 펜싱
+
+재해 발생 후 재해 사이트 노드를 교체해야 하는 경우 해당 노드를 중단하여 사이트가 서비스를 재개하지 못하도록 해야 합니다. 그렇지 않으면 클라이언트가 교체 절차를 완료하기 전에 노드에 액세스하기 시작하면 데이터가 손상될 위험이 있습니다.
+
+.단계
+. 재해 사이트에서 노드를 중지하고 ONTAP 부팅을 지시할 때까지 전원을 차단하거나 로더 프롬프트에서 계속 노드를 가동합니다.
++
+'시스템 노드 halt-node 재난-site-node-name'입니다
+
++
+재해 사이트 노드가 제거되었거나 중지할 수 없는 경우 노드의 전원을 끄고 복구 절차에서 지시될 때까지 교체 노드를 부팅하지 마십시오.
+
+
+
+
+
+== 강제 전환 수행
+
+전환 프로세스는 테스트 및 유지 관리 중에 무중단 운영을 제공하는 것 외에도 단일 명령으로 사이트 장애로부터 복구할 수 있습니다.
+
+.시작하기 전에
+* 스위치오버를 수행하기 전에 남아 있는 사이트 노드 중 하나 이상이 가동 및 실행 중이어야 합니다.
+* 스위치백 작업을 수행하기 전에 이전의 모든 구성 변경을 완료해야 합니다.
++
+이는 협상된 전환 또는 스위치백 작업으로 인한 경쟁을 피하기 위한 것입니다.
+
+
+
+
+NOTE: SnapMirror 및 SnapVault 구성은 자동으로 삭제됩니다.
+
+MetroCluster switchover 명령은 MetroCluster 구성에서 모든 DR 그룹의 노드를 전환합니다. 예를 들어, 8노드 MetroCluster 구성에서는 두 DR 그룹 모두에서 노드를 전환합니다.
+
+.단계
+. 전환 구현:
++
+MetroCluster 전환 - 강제 재해 발생 시 진실
+
++
+작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
+
+. 전환을 계속하라는 메시지가 나타나면 y를 선택합니다.
+. MetroCluster operation show 명령을 실행하여 전환이 성공적으로 완료되었는지 확인합니다.
++
+....
+mcc1A::> metrocluster operation show
+  Operation: switchover
+ Start time: 10/4/2012 19:04:13
+      State: in-progress
+   End time: -
+     Errors:
+
+mcc1A::> metrocluster operation show
+  Operation: switchover
+ Start time: 10/4/2012 19:04:13
+      State: successful
+   End time: 10/4/2012 19:04:22
+     Errors: -
+....
++
+스위치오버가 거부되면 '- override-vetoes' 옵션을 사용하여 'MetroCluster switchover-forced-on-disaster true' 명령을 재실행할 수 있습니다. 이 옵션 매개변수를 사용하는 경우 시스템은 전환을 방해하는 모든 소프트 트레인을 재정의합니다.
+
+
+
+SnapMirror 관계는 스위치오버 이후 다시 설정해야 합니다.
+
+
+
+== 스토리지 애그리게이트 plex show 명령의 출력은 MetroCluster 스위치오버 후 결정되지 않습니다
+
+MetroCluster 절체 후 'Storage aggregate plex show' 명령을 실행하면 전환된 루트 애그리게이트의 Plex0 상태가 불확정되어 failed로 표시됩니다. 이 시간 동안 전환된 루트는 업데이트되지 않습니다. 이 플렉의 실제 상태는 MetroCluster 복구 단계 이후에만 확인할 수 있습니다.
+
+
+
+== 스위치오버 후 NVFAIL 상태의 볼륨 액세스
+
+스위치오버 후에는 볼륨 수정 명령의 `-in-nvfailed-state ' 매개 변수를 재설정하여 클라이언트 데이터 액세스 제한을 제거하여 NVFAIL 상태를 지워야 합니다.
+
+데이터베이스 또는 파일 시스템이 실행 중이거나 영향을 받는 볼륨에 액세스를 시도하지 않아야 합니다.
+
+nvfailed-state 매개 변수를 설정하려면 고급 수준의 권한이 필요합니다.
+
+.단계
+. false로 설정된 `-in-nvfailed-state' 매개 변수를 사용하여 'volume modify' 명령을 사용하여 볼륨을 복구합니다.
+
+
+데이터베이스 파일 유효성 검사에 대한 자세한 내용은 해당 데이터베이스 소프트웨어의 설명서를 참조하십시오.
+
+데이터베이스에서 LUN을 사용하는 경우 NVRAM에 장애가 발생한 후 호스트에서 LUN에 액세스할 수 있도록 하는 단계를 검토하십시오.
+
+link:../manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html["NVFAIL을 사용하여 데이터베이스 유효성 모니터링 및 보호"]

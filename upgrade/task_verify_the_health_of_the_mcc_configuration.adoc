@@ -1,0 +1,86 @@
+---
+permalink: upgrade/task_verify_the_health_of_the_mcc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, health, verify, conofiguration 
+summary: MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인해야 합니다. 
+---
+= MetroCluster 구성 상태 확인
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인해야 합니다.
+
+.단계
+. 각 클러스터에서 MetroCluster가 정상 모드로 구성되어 있는지 확인합니다.
++
+MetroCluster 쇼
+
++
+[listing]
+----
+cluster_A::> metrocluster show
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_A         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain auso-on-cluster-disaster
+Remote: cluster_B         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain auso-on-cluster-disaster
+----
+. 각 노드에서 미러링이 활성화되어 있는지 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::> metrocluster node show
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              node_A_1       configured     enabled   normal
+      cluster_B
+              node_B_1       configured     enabled   normal
+2 entries were displayed.
+----
+. MetroCluster 구성 요소가 정상인지 점검한다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::> metrocluster check run
+
+Last Checked On: 10/1/2014 16:03:37
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+4 entries were displayed.
+
+Command completed. Use the "metrocluster check show -instance" command or sub-commands in "metrocluster check" directory for detailed results.
+To check if the nodes are ready to do a switchover or switchback operation, run "metrocluster switchover -simulate" or "metrocluster switchback -simulate", respectively.
+----
+. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+. 스위치오버 작업 시뮬레이션:
++
+.. 노드 프롬프트에서 고급 권한 수준(+'et-Privilege advanced')으로 변경합니다
++
+고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 "* y*"로 응답해야 합니다.
+
+.. simulate parameter:+'MetroCluster switchover-simulate'로 switchover 동작을 수행한다
+.. 관리자 권한 수준으로 돌아가기: + 'Set-Privilege admin
+
+
+

@@ -1,0 +1,15 @@
+---
+permalink: install-stretch/concept_stretch_mcc_configuration_with_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, connections, stretch, configuration, array, lun 
+summary: 어레이 LUN이 있는 확장 MetroCluster 구성에서는 컨트롤러 간에 FC-VI 포트를 연결해야 합니다. 컨트롤러와 E-Series 스토리지 어레이 간에 직접 연결이 지원됩니다. 다른 모든 스토리지 LUN 구성에서는 FC 스위치를 사용해야 합니다. 
+---
+= 스토리지 LUN이 있는 확장 MetroCluster 구성의 연결
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+확장 MetroCluster 구성에서 어레이 LUN을 사용하려면 컨트롤러 간에 FC-VI 포트를 연결해야 합니다. 컨트롤러와 E-Series 스토리지 어레이 간에 직접 연결이 지원됩니다. 다른 모든 LUN 구성 어레이의 경우 구성에 FC 스위치를 사용해야 합니다.
+
+디스크 및 어레이 LUN을 모두 사용하여 확장 MetroCluster 구성을 설정할 수도 있습니다. 이러한 구성에서는 FC-to-SAS 브릿지 또는 SAS 광 케이블을 사용하여 컨트롤러를 디스크에 연결해야 합니다.

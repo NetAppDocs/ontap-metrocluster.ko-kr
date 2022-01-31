@@ -1,0 +1,313 @@
+---
+permalink: maintain/task_replace_a_shelf_nondisruptively_in_a_mcc_fc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, replace, shelf, nondisruptively, fabric, attached, configuration 
+summary: 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체하는 방법을 알아야 할 수도 있습니다. 
+---
+= 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체하는 방법을 알아야 할 수도 있습니다.
+
+
+NOTE: 이 절차는 패브릭 연결 MetroCluster 구성에서만 사용할 수 있습니다.
+
+
+
+== 쉘프에 대한 액세스를 해제합니다
+
+쉘프 모듈을 교체하기 전에 쉘프 액세스를 비활성화해야 합니다.
+
+구성의 전반적인 상태를 확인합니다. 시스템이 정상 상태가 아닌 경우 계속하기 전에 먼저 문제를 해결하십시오.
+
+.단계
+. 두 클러스터에서 모두 영향을 받는 쉘프 스택의 디스크로 모든 플렉스를 오프라인 상태로 전환합니다.
++
+'aggr offline_plex_name_'
+
++
+이 예에서는 clustered TNAP를 실행하는 컨트롤러에 대한 Plex를 오프라인으로 전환하기 위한 명령을 보여 줍니다.
+
++
+[listing]
+----
+
+cluster_A_1::> storage aggregate plex offline -aggr aggrA_1_0 -plex plex0
+cluster_A_1::> storage aggregate plex offline -aggr dataA_1_data -plex plex0
+cluster_A_2::> storage aggregate plex offline -aggr aggrA_2_0 -plex plex0
+cluster_A_2::> storage aggregate plex offline -aggr dataA_2_data -plex plex0
+----
+. 플렉스가 오프라인 상태인지 확인합니다.
++
+'aggr status_-raggr_name_'
+
++
+이 예에서는 cmode를 실행하는 컨트롤러에 대해 애그리게이트가 오프라인 상태인지 확인하기 위한 명령을 보여줍니다.
+
++
+[listing]
+----
+
+Cluster_A_1::> storage aggregate show -aggr aggrA_1_0
+Cluster_A_1::> storage aggregate show -aggr dataA_1_data
+Cluster_A_2::> storage aggregate show -aggr aggrA_2_0
+Cluster_A_2::> storage aggregate show -aggr dataA_2_data
+----
+. 대상 쉘프를 연결하는 브리지가 단일 SAS 스택을 연결 중인지 또는 둘 이상의 SAS 스택을 연결 중인지 여부에 따라 SAS 포트 또는 스위치 포트를 비활성화합니다.
++
+** 브리지가 단일 SAS 스택을 연결하는 경우 스위치에 적합한 명령을 사용하여 브리지가 연결되는 스위치 포트를 비활성화합니다.
++
+다음 예는 타겟 쉘프가 포함된 단일 SAS 스택을 연결하는 브리지 쌍을 보여줍니다.
+
++
+image::../media/mcc_shelf_replacement_bridges_with_a_single_stack.gif[MCC 셸프 교체 브리지는 단일 스택으로 제공됩니다]
+
++
+각 스위치의 스위치 포트 8과 9는 브리지를 네트워크에 연결합니다.
+
++
+다음 예에서는 Brocade 스위치에서 포트 8과 9가 비활성화되어 있는 것을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portDisable 8
+FC_switch_A_1:admin> portDisable 9
+
+FC_switch_A_2:admin> portDisable 8
+FC_switch_A_2:admin> portDisable 9
+----
++
+다음 예에서는 Cisco 스위치에서 포트 8과 9가 비활성화된 것을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1# conf t
+FC_switch_A_1(config)# int fc1/8
+FC_switch_A_1(config)# shut
+FC_switch_A_1(config)# int fc1/9
+FC_switch_A_1(config)# shut
+FC_switch_A_1(config)# end
+
+FC_switch_A_2# conf t
+FC_switch_A_2(config)# int fc1/8
+FC_switch_A_2(config)# shut
+FC_switch_A_2(config)# int fc1/9
+FC_switch_A_2(config)# shut
+FC_switch_A_2(config)# end
+----
+** 브리지가 둘 이상의 SAS 스택을 연결하는 경우 브리지를 대상 셸프에 연결하는 SAS 포트(+'SASportDisable_port number_')를 비활성화합니다
++
+
+NOTE: FiberBridge 6500 브리지에는 적용되지 않습니다.
+
++
+다음 예는 4개의 SAS 스택을 연결하는 브리지 쌍을 보여줍니다. SAS 스택 2에는 타겟 쉘프가 포함되어 있습니다.
+
++
+image::../media/mcc_shelf_replacement_bridges_with_four_stacks.gif[MCC 셸프 교체 브리지는 4개의 스택으로 구성됩니다]
+
++
+SAS 포트 B는 브리지를 타겟 쉘프에 연결합니다. 두 쉘프 모두에서 SAS 포트 B만 비활성화하면 교체 절차 중에도 다른 SAS 스택에서도 데이터 작업을 계속 수행할 수 있습니다.
+
++
+이 경우 브리지를 타겟 쉘프에 연결하는 SAS 포트를 비활성화합니다.
+
++
+'SASportDisable_port number_'
+
++
+다음 예는 브리지에서 SAS 포트 B가 비활성화되는 것을 보여주고 또한 SAS 포트 B가 비활성화되었는지 확인합니다. 두 브리지 모두에서 명령을 반복해야 합니다.
+
++
+[listing]
+----
+Ready. *
+SASPortDisable B
+
+SAS Port B has been disabled.
+----
+
+
+. 이전에 스위치 포트를 비활성화한 경우, 포트가 비활성화되었는지 확인합니다.
++
+재치쇼
+
++
+이 예에서는 Brocade 스위치에서 스위치 포트가 비활성화되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+
+FC_switch_A_1:admin> switchShow
+FC_switch_A_2:admin> switchShow
+----
++
+이 예에서는 Cisco 스위치에서 스위치 포트가 비활성화되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+
+FC_switch_A_1# show interface fc1/6
+FC_switch_A_2# show interface fc1/6
+----
+. ONTAP에서 디스크가 누락되었음을 인식할 때까지 기다립니다.
+. 교체하려는 셸프의 전원을 끕니다.
+
+
+
+
+== 쉘프 교체
+
+새 쉘프 및 쉘프 모듈을 삽입하고 케이블을 연결하기 전에 모든 케이블과 쉘프를 물리적으로 제거해야 합니다.
+
+.단계
+. 모든 디스크를 분리하고 교체할 쉘프에서 모든 케이블을 분리합니다.
+. 쉘프 모듈을 탈거하십시오.
+. 새 쉘프를 삽입합니다.
+. 새 디스크를 새 쉘프에 삽입합니다.
+. 쉘프 모듈을 삽입합니다.
+. 쉘프(SAS 또는 전원)에 케이블을 연결합니다.
+. 쉘프 전원을 켭니다.
+
+
+
+
+== 액세스를 다시 설정하고 작업을 확인합니다
+
+쉘프를 교체한 후에는 액세스를 재설정하고 새 쉘프가 올바로 작동하는지 확인해야 합니다.
+
+.단계
+. 쉘프 전원이 제대로 공급되는지, IOM 모듈의 링크가 있는지 확인합니다.
+. 다음 시나리오에 따라 스위치 포트 또는 SAS 포트를 활성화합니다.
++
+[cols="1,3"]
+|===
+
+
+| 옵션을 선택합니다 | 단계 
+
+
+ a| 
+* 이전에 스위치 포트를 비활성화한 경우 *
+ a| 
+.. 스위치 포트를 활성화합니다.
++
+'portEnable_port number _'
+
++
+이 예에서는 Brocade 스위치에서 사용 중인 스위치 포트를 보여 줍니다.
+
++
+[listing]
+----
+
+Switch_A_1:admin> portEnable 6
+Switch_A_2:admin> portEnable 6
+----
++
+이 예에서는 Cisco 스위치에서 사용 중인 스위치 포트를 보여 줍니다.
+
++
+[listing]
+----
+
+Switch_A_1# conf t
+Switch_A_1(config)# int fc1/6
+Switch_A_1(config)# no shut
+Switch_A_1(config)# end
+
+Switch_A_2# conf t
+Switch_A_2(config)# int fc1/6
+Switch_A_2(config)# no shut
+Switch_A_2(config)# end
+----
+
+
+
+
+ a| 
+* 이전에 SAS 포트를 비활성화했던 경우 *
+ a| 
+.. 스택을 쉘프 위치에 연결하는 SAS 포트를 활성화합니다.
++
+'SASportEnable_port number _'
+
++
+이 예에서는 브리지에서 SAS 포트 A가 활성화되어 있고 또한 SAS 포트 A가 활성화되어 있는지 확인합니다.
+
++
+[listing]
+----
+Ready. *
+SASPortEnable A
+
+SAS Port A has been enabled.
+----
+
+
+
+NOTE: ATTO 6500 FiberBridges에는 적용되지 않습니다.
+
+|===
+. 이전에 스위치 포트를 비활성화한 경우 포트가 활성화되어 있고 온라인 상태인지, 그리고 모든 장치가 올바르게 로그인했는지 확인합니다.
++
+재치쇼
+
++
+이 예에서는 Brocade 스위치가 온라인 상태인지 확인하기 위한 'SWIchShow' 명령을 보여 줍니다.
+
++
+[listing]
+----
+
+Switch_A_1:admin> SwitchShow
+Switch_A_2:admin> SwitchShow
+----
++
+이 예에서는 Cisco 스위치가 온라인 상태인지 확인하기 위한 'SWIchShow' 명령을 보여 줍니다.
+
++
+[listing]
+----
+
+Switch_A_1# show interface fc1/6
+Switch_A_2# show interface fc1/6
+----
++
+
+NOTE: 몇 분 후 ONTAP는 새 디스크가 삽입되었음을 감지하여 새 디스크마다 메시지를 표시합니다.
+
+. ONTAP에서 디스크를 감지했는지 확인합니다.
++
+시즈config-a
+
+. 이전에 오프라인 상태로 있던 플렉스를 온라인 상태로 만듭니다.
++
+'온라인 게임_플렉스_이름_'
+
++
+이 예는 cmode를 다시 온라인 상태로 실행하는 컨트롤러에 플렉스를 배치하기 위한 명령을 보여줍니다.
+
++
+[listing]
+----
+
+Cluster_A_1::> storage aggregate plex online -aggr aggr1 -plex plex2
+Cluster_A_1::> storage aggregate plex online -aggr aggr2 -plex plex6
+Cluster_A_1::> storage aggregate plex online -aggr aggr3 -plex plex1
+----
++
+플렉스가 재동기화되기 시작합니다.
+
++
+
+NOTE: 'aggr status_-raggr_name_' 명령을 사용하여 재동기화 진행률을 모니터링할 수 있습니다.
+
+

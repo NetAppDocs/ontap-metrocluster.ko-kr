@@ -1,0 +1,4587 @@
+---
+permalink: install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html 
+sidebar: sidebar 
+keywords: MetroCluster configurations 
+summary:  
+---
+= Brocade FC 스위치를 수동으로 구성합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성에서 각 Brocade 스위치 패브릭을 구성해야 합니다.
+
+.시작하기 전에
+* FC 스위치에 대한 텔넷 또는 SSH(Secure Shell) 액세스 권한이 있는 PC 또는 UNIX 워크스테이션이 있어야 합니다.
+* 동일한 모델의 지원되는 Brocade 스위치 4개를 동일한 Brocade FOS(Fabric Operating System) 버전 및 라이센스로 사용해야 합니다.
++
+https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+
++
+IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+
+* 지원되는 4개의 Brocade 스위치는 각각 2개의 스위치로 구성된 2개의 Fabric에 연결되어야 하며 각 Fabric은 두 사이트를 포괄해야 합니다.
+* 각 스토리지 컨트롤러에는 스위치 패브릭에 연결할 수 있는 4개의 이니시에이터 포트가 있어야 합니다. 각 스토리지 컨트롤러에서 각 패브릭에 두 개의 이니시에이터 포트를 연결해야 합니다.
++
+
+NOTE: 다음 조건이 모두 충족될 경우 컨트롤러당 2개의 이니시에이터 포트(각 패브릭에 단일 이니시에이터 포트)를 사용하여 FAS8020, AFF8020, FAS8200, AFF A300 시스템을 구성할 수 있습니다.
+
++
+** 디스크 스토리지를 연결하는 데 사용할 수 있는 FC 이니시에이터 포트가 4개 이하이며 추가 포트를 FC 이니시에이터로 구성할 수 없습니다.
+** 모든 슬롯이 사용 가능하며 FC 이니시에이터 카드를 추가할 수 없습니다.
+
+
+
+
+.이 작업에 대해
+* ISL(Inter-Switch Link) 트렁킹이 링크에서 지원되는 경우 이를 활성화해야 합니다.
++
+link:concept_tdm_wdm.html["패브릭 연결 MetroCluster 구성에서 TDM/WDM 장비를 사용하기 위한 고려 사항"]
+
+* 모든 ISL은 하나의 Fabric에서 길이와 속도가 동일해야 합니다.
++
+다양한 옷감에 다양한 길이를 사용할 수 있습니다. 모든 패브릭에서 동일한 속도를 사용해야 합니다.
+
+* Metro-E 및 TDM(SONET/SDH)은 지원되지 않으며 비 FC 네이티브 프레임 또는 신호는 지원되지 않습니다.
++
+Metro-E는 Metro 거리 또는 일부 TDM(Time-Division Multiplexing), MPLS(Multiprotocol Label Switching) 또는 WDM(Wavelength-Division Multiplexing)을 통해 이더넷 프레임 또는 신호가 기본적으로 발생하는 것을 의미합니다.
+
+* MetroCluster FC 스위치 패브릭에서는 TDM, FCR(네이티브 FC 라우팅) 또는 FCIP 확장이 지원되지 않습니다.
+* MetroCluster FC 스위치 패브릭의 특정 스위치는 암호화 또는 압축을 지원하며 경우에 따라 두 스위치를 모두 지원합니다.
++
+https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"]
+
++
+IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+
+* Brocade VF(Virtual Fabric) 기능은 지원되지 않습니다.
+* 도메인 포트를 기반으로 하는 FC 조닝이 지원되지만 WWN(Worldwide Name)을 기반으로 하는 조닝은 지원되지 않습니다.
+
+
+
+
+== Brocade 라이센스 요구 사항 검토
+
+MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다.
+
+MetroCluster 구성에는 다음과 같은 Brocade 라이센스 요구 사항이 있습니다.
+
+* 권장 사항에 따라 두 개 이상의 ISL을 사용하는 시스템에 대한 트렁킹 라이센스입니다.
+* 확장된 Fabric 라이센스(6km 이상의 ISL 거리용)
+* ISL이 2개 이상 있고 ISL 거리가 6km 이상인 사이트에 대한 엔터프라이즈 라이센스
++
+Enterprise 라이센스에는 Brocade Network Advisor 및 추가 포트 라이센스를 제외한 모든 라이센스가 포함됩니다.
+
+
+
+.단계
+. 라이센스가 설치되었는지 확인합니다.
++
+"사용권 허가자"
+
++
+이러한 라이센스가 없는 경우 계속하기 전에 영업 담당자에게 문의하십시오.
+
+
+
+
+
+== Brocade FC 스위치 값을 출하 시 기본값으로 설정합니다
+
+성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 또한 각 스위치에 고유한 이름을 할당해야 합니다.
+
+이 절차의 예에서 패브릭은 브로데SwitchA 및 브로데스위치B로 구성됩니다.
+
+.단계
+. 콘솔을 연결하고 하나의 Fabric에 있는 두 스위치에 로그인합니다.
+. 스위치를 영구적으로 비활성화합니다.
++
+'위치cfgpersistentdisable'
+
++
+이렇게 하면 재부팅 또는 빠른 부팅 후에도 스위치가 비활성화된 상태로 유지됩니다. 이 명령어를 사용할 수 없는 경우 'witchdisable' 명령어를 사용한다.
+
++
+다음 예에서는 Brocad데SwitchA에 대한 명령을 보여 줍니다.
+
++
+[listing]
+----
+BrocadeSwitchA:admin> switchcfgpersistentdisable
+----
++
+다음 예에서는 Brocadad데SwitchB에 대한 명령을 보여 줍니다.
+
++
+[listing]
+----
+BrocadeSwitchB:admin> switchcfgpersistentdisable
+----
+. 스위치 이름 설정:
++
+'스위치_이름'
+
++
+스위치마다 고유한 이름이 있어야 합니다. 이름을 설정한 후 프롬프트가 그에 따라 변경됩니다.
+
++
+다음 예에서는 Brocad데SwitchA에 대한 명령을 보여 줍니다.
+
++
+[listing]
+----
+BrocadeSwitchA:admin> switchname "FC_switch_A_1"
+FC_switch_A_1:admin>
+----
++
+다음 예에서는 Brocadad데SwitchB에 대한 명령을 보여 줍니다.
+
++
+[listing]
+----
+BrocadeSwitchB:admin> switchname "FC_Switch_B_1"
+FC_switch_B_1:admin>
+----
+. 모든 포트를 기본값으로 설정합니다.
++
+"portcfgdefault"
+
++
+이 작업은 스위치의 모든 포트에 대해 수행해야 합니다.
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgdefault 0
+FC_switch_A_1:admin> portcfgdefault 1
+...
+FC_switch_A_1:admin> portcfgdefault 39
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> portcfgdefault 0
+FC_switch_B_1:admin> portcfgdefault 1
+...
+FC_switch_B_1:admin> portcfgdefault 39
+----
+. 조닝 정보를 지웁니다.
++
+“cfgdisable”입니다
+
++
+"cfgclear"
+
++
+“cfgsave”입니다
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> cfgdisable
+FC_switch_A_1:admin> cfgclear
+FC_switch_A_1:admin> cfgsave
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> cfgdisable
+FC_switch_B_1:admin> cfgclear
+FC_switch_B_1:admin> cfgsave
+----
+. 일반 스위치 설정을 기본값으로 설정합니다.
++
+'configdefault'
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> configdefault
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> configdefault
+----
+. 모든 포트를 비트렁킹 모드로 설정합니다.
++
+'위츠cfgtrunk 0'
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchcfgtrunk 0
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> switchcfgtrunk 0
+----
+. Brocade 6510 스위치에서 Brocade VF(Virtual Fabrics) 기능을 비활성화합니다.
++
+'fosconfig options'
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> fosconfig --disable vf
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> fosconfig --disable vf
+----
+. AD(관리 도메인) 구성을 지웁니다.
++
+광고 옵션
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switch:admin> ad --select AD0
+FC_switch_A_1:> defzone --noaccess
+FC_switch_A_1:> cfgsave
+FC_switch_A_1:> exit
+FC_switch_A_1:admin> ad --clear -f
+FC_switch_A_1:admin> ad --apply
+FC_switch_A_1:admin> ad --save
+FC_switch_A_1:admin> exit
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> switch:admin> ad --select AD0
+FC_switch_A_1:> defzone --noaccess
+FC_switch_A_1:> cfgsave
+FC_switch_A_1:> exit
+FC_switch_B_1:admin> ad --clear -f
+FC_switch_B_1:admin> ad --apply
+FC_switch_B_1:admin> ad --save
+FC_switch_B_1:admin> exit
+----
+. 스위치를 재부팅합니다.
++
+다시 부팅
+
++
+다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> reboot
+----
++
+다음 예에서는 FC_SWITCH_B_1의 명령을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:admin> reboot
+----
+
+
+
+
+== 기본 스위치 설정 구성
+
+Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.
+
+이 작업에는 두 MetroCluster 사이트의 각 스위치에 대해 수행해야 하는 단계가 포함됩니다.
+
+이 절차에서는 다음 예제와 같이 각 스위치에 대해 고유한 도메인 ID를 설정합니다. 이 예에서 도메인 ID 5와 7은 fabric_1을, 도메인 ID 6과 8은 fabric_2를 형성합니다.
+
+* fc_switch_a_1이 도메인 ID 5에 할당되었습니다
+* fc_switch_a_2가 도메인 ID 6에 할당되었습니다
+* FC_SWITCH_B_1이 도메인 ID 7에 할당되었습니다
+* FC_SWITCH_B_2가 도메인 ID 8에 할당되었습니다
+
+
+.단계
+. 구성 모드 시작:
++
+'설정'을 클릭합니다
+
+. 프롬프트 진행:
++
+.. 스위치의 도메인 ID를 설정합니다.
+.. "RDP 폴링 주기"가 나타날 때까지 프롬프트에 응답하여 * Enter * 를 누른 다음 이 값을 "0"으로 설정하여 폴링을 비활성화합니다.
+.. 스위치 프롬프트로 돌아갈 때까지 * Enter * 를 누릅니다.
++
+[listing]
+----
+FC_switch_A_1:admin> configure
+Fabric parameters = y
+Domain_id = 5
+.
+.
+
+RSCN Transmission Mode [yes, y, no, no: [no] y
+
+End-device RSCN Transmission Mode
+ (0 = RSCN with single PID, 1 = RSCN with multiple PIDs, 2 = Fabric RSCN): (0..2) [1]
+Domain RSCN To End-device for switch IP address or name change
+ (0 = disabled, 1 = enabled): (0..1) [0] 1
+
+.
+.
+RDP Polling Cycle(hours)[0 = Disable Polling]: (0..24) [1] 0
+----
+
+
+. Fabric당 두 개 이상의 ISL을 사용하는 경우 프레임의 IOD(In-Order Delivery) 또는 프레임의 오목(Out-of-Order) 전송을 구성할 수 있습니다.
++
+
+NOTE: 표준 IOD 설정을 권장합니다. 필요한 경우에만 유목(Good)을 구성해야 합니다.
+
++
+link:concept_prepare_for_the_mcc_installation.html["패브릭 연결 MetroCluster 구성에서 TDM/WDM 장비를 사용하기 위한 고려 사항"]
+
++
+.. 프레임의 IOD를 구성하려면 각 스위치 패브릭에서 다음 단계를 수행해야 합니다.
++
+... IOD 활성화:
++
+'요오드셋'
+
+... APT(Advanced Performance Tuning) 정책을 1로 설정합니다.
++
+"aptpolicy 1"
+
+... DLS(동적 로드 공유) 비활성화:
++
+'lsreset'입니다
+
+... 'iodshow', 'aptpolicy', 'dlsshow' 명령을 사용하여 IOD 설정을 확인합니다.
++
+예를 들어, FC_SWITCH_A_1에서 다음 명령을 실행합니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> iodshow
+    IOD is set
+
+    FC_switch_A_1:admin> aptpolicy
+    Current Policy: 1 0(ap)
+
+    3 0(ap) : Default Policy
+    1: Port Based Routing Policy
+    3: Exchange Based Routing Policy
+         0: AP Shared Link Policy
+         1: AP Dedicated Link Policy
+    command aptpolicy completed
+
+    FC_switch_A_1:admin> dlsshow
+    DLS is not set
+----
+... 두 번째 스위치 패브릭에서 이 단계를 반복합니다.
+
+
+.. 프레임 유단을 구성하려면 각 스위치 패브릭에서 다음 단계를 수행해야 합니다.
++
+... 유목 활성화:
++
+'요오드리셋'
+
+... APT(Advanced Performance Tuning) 정책을 3으로 설정합니다.
++
+무정책 3
+
+... DLS(동적 로드 공유) 비활성화:
++
+'lsreset'입니다
+
+... 우드 설정을 확인합니다.
++
+'오드쇼'
+
++
+무정책
+
++
+'칼쇼'
+
++
+예를 들어, FC_SWITCH_A_1에서 다음 명령을 실행합니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> iodshow
+    IOD is not set
+
+    FC_switch_A_1:admin> aptpolicy
+    Current Policy: 3 0(ap)
+    3 0(ap) : Default Policy
+    1: Port Based Routing Policy
+    3: Exchange Based Routing Policy
+    0: AP Shared Link Policy
+    1: AP Dedicated Link Policy
+    command aptpolicy completed
+
+
+    FC_switch_A_1:admin> dlsshow
+    DLS is set by default with current routing policy
+----
+... 두 번째 스위치 패브릭에서 이 단계를 반복합니다.
++
+
+NOTE: 컨트롤러 모듈에서 ONTAP를 구성할 때는 MetroCluster 구성의 각 컨트롤러 모듈에서 유드로 명시적으로 구성해야 합니다.
+
++
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/concept_configure_the_mcc_software_in_ontap.html#configuring-in-order-delivery-or-out-of-order-delivery-of-frames-on-ontap-software["ONTAP 소프트웨어에서 프레임의 주문 전달 또는 주문 후 전달 구성"]
+
+
+
+
+
+. 스위치가 동적 포트 라이센스 방식을 사용하고 있는지 확인합니다.
++
+.. 다음 라이센스 명령을 실행합니다.
++
+--
+'licensePort -- 쇼'
+
+[listing]
+----
+FC_switch_A_1:admin> licenseport -show
+24 ports are available in this switch
+Full POD license is installed
+Dynamic POD method is in use
+----
+
+NOTE: 8.0 이전의 Brocade FabricOS 버전에서는 다음 명령을 관리자 및 버전 8.0으로 실행한 후 루트로 실행하십시오.
+
+--
+.. 루트 사용자를 설정합니다.
++
+루트 사용자가 Brocade에 의해 이미 비활성화된 경우 다음 예와 같이 루트 사용자를 설정합니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> userconfig --change root -e yes
+FC_switch_A_1:admin> rootaccess --set consoleonly
+----
+.. 다음 라이센스 명령을 실행합니다.
++
+'licensePort -- 쇼'
+
++
+[listing]
+----
+FC_switch_A_1:root> licenseport -show
+24 ports are available in this switch
+Full POD license is installed
+Dynamic POD method is in use
+----
+.. 라이센스 방법을 동적으로 변경합니다.
++
+'licenseport -- method dynamic'
+
++
+
+NOTE: 동적 라이센스 방법을 사용하지 않는 경우(정적 방법인 경우) 라이센스 방법을 동적 라이센스 방식으로 변경해야 합니다. 동적 라이센스 방법을 사용 중인 경우 이 단계를 건너뜁니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> licenseport --method dynamic
+The POD method has been changed to dynamic.
+Please reboot the switch now for this change to take effect
+----
+
+
+. ONTAP에서 스위치의 상태를 성공적으로 모니터링하려면 T11-FC-ZONE-SERVER-MIB에 대한 트랩을 활성화합니다.
++
+.. T11-FC-ZONE-SERVER-MIB 활성화:
++
+'snmpconfig--set mibCapability-mib_name T11-FC-zone-server-mib-bitmask 0x3f'
+
+.. T11-FC-ZONE-SERVER-MIB 트랩을 활성화합니다.
++
+'snmpconfig--enable mibcapability-mib_name sw-mib-trap_name swZoneConfigChangeTrap'
+
+.. 두 번째 스위치 패브릭에서 이전 단계를 반복합니다.
+
+
+. * 선택 사항 *: 커뮤니티 문자열을 "public" 이외의 값으로 설정하는 경우 지정한 커뮤니티 문자열을 사용하여 ONTAP 상태 모니터를 구성해야 합니다.
++
+.. 기존 커뮤니티 문자열 변경:
++
+'snmpconfig--set SNMPv1'
+
+.. "커뮤니티(ro):[공개]" 텍스트가 표시될 때까지 * Enter * 를 누릅니다.
+.. 원하는 커뮤니티 문자열을 입력합니다.
++
+FC_SWITCH_A_1:
+
++
+[listing]
+----
+FC_switch_A_1:admin> snmpconfig --set snmpv1
+SNMP community and trap recipient configuration:
+Community (rw): [Secret C0de]
+Trap Recipient's IP address : [0.0.0.0]
+Community (rw): [OrigEquipMfr]
+Trap Recipient's IP address : [0.0.0.0]
+Community (rw): [private]
+Trap Recipient's IP address : [0.0.0.0]
+Community (ro): [public] mcchm     <<<<<< change the community string to the desired value,
+Trap Recipient's IP address : [0.0.0.0]    in this example it is set to "mcchm"
+Community (ro): [common]
+Trap Recipient's IP address : [0.0.0.0]
+Community (ro): [FibreChannel]
+Trap Recipient's IP address : [0.0.0.0]
+Committing configuration.....done.
+FC_switch_A_1:admin>
+----
++
+FC_SWITCH_B_1:
+
++
+[listing]
+----
+FC_switch_B_1:admin> snmpconfig --set snmpv1
+SNMP community and trap recipient configuration:
+Community (rw): [Secret C0de]
+Trap Recipient's IP address : [0.0.0.0]
+Community (rw): [OrigEquipMfr]
+Trap Recipient's IP address : [0.0.0.0]
+Community (rw): [private]
+Trap Recipient's IP address : [0.0.0.0]
+Community (ro): [public] mcchm      <<<<<< change the community string to the desired value,
+Trap Recipient's IP address : [0.0.0.0]     in this example it is set to "mcchm"
+Community (ro): [common]
+Trap Recipient's IP address : [0.0.0.0]
+Community (ro): [FibreChannel]
+Trap Recipient's IP address : [0.0.0.0]
+Committing configuration.....done.
+FC_switch_B_1:admin>
+----
+
+
+. 스위치를 재부팅합니다.
++
+다시 부팅
+
++
+FC_SWITCH_A_1:
+
++
+[listing]
+----
+FC_switch_A_1:admin> reboot
+----
++
+FC_SWITCH_B_1:
+
++
+[listing]
+----
+FC_switch_B_1:admin> reboot
+----
+. 스위치를 영구적으로 활성화합니다.
++
+'위치cfgpersistentenable'
+
++
+FC_SWITCH_A_1:
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchcfgpersistentenable
+----
++
+FC_SWITCH_B_1:
+
++
+[listing]
+----
+FC_switch_B_1:admin> switchcfgpersistentenable
+----
+
+
+
+
+== Brocade DCX 8510-8 스위치의 기본 스위치 설정 구성
+
+Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.
+
+두 MetroCluster 사이트에서 각 스위치에 대해 단계를 수행해야 합니다. 이 절차에서는 다음 예에 표시된 대로 각 스위치에 대한 도메인 ID를 설정합니다.
+
+* fc_switch_a_1이 도메인 ID 5에 할당되었습니다
+* fc_switch_a_2가 도메인 ID 6에 할당되었습니다
+* FC_SWITCH_B_1이 도메인 ID 7에 할당되었습니다
+* FC_SWITCH_B_2가 도메인 ID 8에 할당되었습니다
+
+
+이전 예제에서 도메인 ID 5와 7은 fabric_1을 형성하고 도메인 ID 6과 8은 fabric_2를 형성합니다.
+
+
+NOTE: 이 절차를 사용하여 사이트당 DCX 8510-8 스위치를 하나만 사용할 경우 스위치를 구성할 수도 있습니다.
+
+이 절차를 사용하여 각 Brocade DCX 8510-8 스위치에 두 개의 논리 스위치를 만들어야 합니다. 두 Brocade DCX8510-8 스위치에서 생성된 두 개의 논리 스위치는 다음 예와 같이 두 개의 논리 패브릭을 형성합니다.
+
+* 논리적 패브릭 1: 스위치 1/블레이드1 및 스위치 2 블레이드 1
+* 논리적 패브릭 2: 스위치 1/Blade2 및 스위치 2 블레이드 2
+
+
+.단계
+. 명령 모드로 들어갑니다.
++
+'설정'을 클릭합니다
+
+. 프롬프트 진행:
++
+.. 스위치의 도메인 ID를 설정합니다.
+.. "RDP 폴링 주기"가 될 때까지 * Enter * 를 계속 선택한 다음 값을 "0"으로 설정하여 폴링을 비활성화합니다.
+.. 스위치 프롬프트로 돌아갈 때까지 * Enter * 를 선택합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> configure
+Fabric parameters = y
+Domain_id = `5
+
+
+RDP Polling Cycle(hours)[0 = Disable Polling]: (0..24) [1] 0
+`
+----
+
+
+. fabric_1 및 fabric_2의 모든 스위치에 대해 이 단계를 반복합니다.
+. 가상 패브릭을 구성합니다.
++
+.. 스위치에서 가상 Fabric 설정:
++
+'fosconfig--enablevf'
+
+.. 모든 논리 스위치에서 동일한 기본 구성을 사용하도록 시스템을 구성합니다.
++
+구성 새시
+
++
+다음 예제는 'configurechassis' 명령의 출력을 보여줍니다.
+
++
+[listing]
+----
+System (yes, y, no, n): [no] n
+cfgload attributes (yes, y, no, n): [no] n
+Custom attributes (yes, y, no, n): [no] y
+Config Index (0 to ignore): (0..1000) [3]:
+----
+
+
+. 논리 스위치를 생성하고 구성합니다.
++
+'cfg--create fabricID'
+
+. 블레이드의 모든 포트를 가상 Fabric에 추가합니다.
++
+''lscfg--config fabricID - slot slot-port lowest-port-highest-port''
+
++
+
+NOTE: 논리적 패브릭을 형성하는 블레이드(예 스위치 1 블레이드 1 및 스위치 3 블레이드 1) 패브릭 ID가 동일해야 합니다.
+
++
+[listing]
+----
+setcontext fabricid
+switchdisable
+configure
+<configure the switch per the above settings>
+switchname unique switch name
+switchenable
+----
+
+
+link:concept_prepare_for_the_mcc_installation.html["Brocade DCX 8510-8 스위치 사용에 대한 요구 사항"]
+
+
+
+== FC 포트를 사용하여 Brocade FC 스위치에서 E-포트 구성
+
+ISL(Inter-Switch Link)이 FC 포트를 사용하여 구성되는 Brocade 스위치의 경우 ISL을 연결하는 각 스위치 패브릭의 스위치 포트를 구성해야 합니다. 이러한 ISL 포트를 E-포트라고도 합니다.
+
+.시작하기 전에
+* FC 스위치 패브릭의 모든 ISL은 동일한 속도와 거리로 구성해야 합니다.
+* 스위치 포트와 SFP(Small Form-Factor Pluggable)의 조합은 속도를 지원해야 합니다.
+* 지원되는 ISL 거리는 FC 스위치 모델에 따라 다릅니다.
++
+https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+
++
+IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+
+* ISL 링크에는 전용 람다가 있어야 하며, 거리, 스위치 유형 및 FOS(Fabric Operating System)에 대해 Brocade에서 해당 링크를 지원해야 합니다.
+
+
+"portCfgLongDistance" 명령을 실행할 때 L0 설정을 사용하면 안 됩니다. 대신 LE 또는 LS 설정을 사용하여 최소 LE 거리 수준으로 Brocade 스위치의 거리를 구성해야 합니다.
+
+xWDM/TDM 장비로 작업할 때 "portCfgLongDistance" 명령을 실행할 때 LD 설정을 사용해서는 안 됩니다. 대신, LE 또는 LS 설정을 사용하여 Brocade 스위치의 거리를 구성해야 합니다.
+
+각 FC 스위치 패브릭에 대해 이 작업을 수행해야 합니다.
+
+다음 표에서는 ONTAP 9.1 또는 9.2를 실행하는 구성에서 여러 스위치에 대한 ISL 포트와 다양한 ISL 수를 보여 줍니다. 이 섹션에 나와 있는 예는 Brocade 6505 스위치입니다. 스위치 유형에 적용되는 포트를 사용하도록 예제를 수정해야 합니다.
+
+구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 link:install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"] 패브릭 연결 MetroCluster 설치 및 구성 가이드 _ 의 섹션.
+
+구성에 필요한 ISL 수를 사용해야 합니다.
+
+|===
+
+
+| 모델 전환 | ISL 포트 | 스위치 포트 
+
+
+.4+| Brocade 6520 | ISL 포트 1 | 23 
+
+
+| ISL 포트 2 | 47 
+
+
+| ISL 포트 3 | 71 
+
+
+| ISL 포트 4 | 95 
+
+
+.4+| Brocade 6505 | ISL 포트 1 | 20 
+
+
+| ISL 포트 2 | 21 
+
+
+| ISL 포트 3 | 22 
+
+
+| ISL 포트 4 | 23 
+
+
+.8+| Brocade 6510 및 Brocade DCX 8510-8 | ISL 포트 1 | 40 
+
+
+| ISL 포트 2 | 41 
+
+
+| ISL 포트 3 | 42 
+
+
+| ISL 포트 4 | 43 
+
+
+| ISL 포트 5 | 44 
+
+
+| ISL 포트 6 | 45 
+
+
+| ISL 포트 7 | 46 
+
+
+| ISL 포트 8 | 47 
+
+
+.6+| Brocade 7810  a| 
+ISL 포트 1
+ a| 
+GE2(10Gbps)
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+ge3(10Gbps)
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+GE4(10Gbps)
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+ge5(10Gbps)
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+ge6(10Gbps)
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+ge7(10Gbps)
+
+
+
+.4+| Brocade 7840 * 참고: * Brocade 7840 스위치는 FCIP ISL 생성을 위해 스위치당 2개의 40Gbps VE 포트 또는 최대 4개의 10Gbps VE 포트를 지원합니다.  a| 
+ISL 포트 1
+ a| 
+GE0(40Gbps) 또는 ge2(10Gbps)
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+ge1(40Gbps) 또는 ge3(10Gbps)
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+ge10(10Gbps)
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+ge11(10Gbps)
+
+
+
+.4+| Brocade G610  a| 
+ISL 포트 1
+ a| 
+20
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+21
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+22
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+23
+
+
+
+.7+| Brocade G620, G620-1, G630, G630-1, G720  a| 
+ISL 포트 1
+ a| 
+40
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+41
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+42
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+43
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+44
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+45
+
+
+
+ a| 
+ISL 포트 7
+ a| 
+46
+
+|===
+.단계
+. [[step1_브로케이드_구성]] 포트 속도 구성:
++
+포트스피드포트-숫자속도
+
++
+경로의 부품에 의해 지원되는 최고 공통 속도를 사용해야 합니다.
+
++
+다음 예에서는 각 Fabric에 두 개의 ISL이 있습니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgspeed 20 16
+FC_switch_A_1:admin> portcfgspeed 21 16
+
+FC_switch_B_1:admin> portcfgspeed 20 16
+FC_switch_B_1:admin> portcfgspeed 21 16
+----
+. 각 ISL에 대해 트렁킹 모드를 구성합니다.
++
+포트트렁킹포트-번호
+
++
+** 트렁킹(IOD)에 대한 ISL을 구성하는 경우 다음 예와 같이 portcfgtrunk port-numberport-number를 1로 설정합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgtrunkport 20 1
+FC_switch_A_1:admin> portcfgtrunkport 21 1
+FC_switch_B_1:admin> portcfgtrunkport 20 1
+FC_switch_B_1:admin> portcfgtrunkport 21 1
+----
+** 트렁킹(Good)에 대한 ISL을 구성하지 않으려면 다음 예에 표시된 것처럼 portcfgtrunktport-number를 0으로 설정합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgtrunkport 20 0
+FC_switch_A_1:admin> portcfgtrunkport 21 0
+FC_switch_B_1:admin> portcfgtrunkport 20 0
+FC_switch_B_1:admin> portcfgtrunkport 21 0
+----
+
+
+. 각 ISL 포트에 대해 QoS 트래픽 설정:
++
+포트번호 포트 번호
+
++
+다음 예에서는 스위치 패브릭당 두 개의 ISL이 있습니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgqos --enable 20
+FC_switch_A_1:admin> portcfgqos --enable 21
+
+FC_switch_B_1:admin> portcfgqos --enable 20
+FC_switch_B_1:admin> portcfgqos --enable 21
+----
+. 설정을 확인합니다.
++
+"portCfgShow 명령"
+
++
+다음 예에서는 포트 20과 포트 21에 케이블로 연결된 두 ISL을 사용하는 구성의 출력을 보여 줍니다. Trunk Port 설정은 IOD에 대해 ON이고, Good에 대해서는 OFF로 설정해야 합니다.
+
++
+[listing]
+----
+
+Ports of Slot 0   12  13   14 15    16  17  18  19   20  21 22  23    24  25  26  27
+----------------+---+---+---+---+-----+---+---+---+----+---+---+---+-----+---+---+---
+Speed             AN  AN  AN  AN    AN  AN  8G  AN   AN  AN  16G  16G    AN  AN  AN  AN
+Fill Word         0   0   0   0     0   0   3   0    0   0   3   3     3   0   0   0
+AL_PA Offset 13   ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Trunk Port        ..  ..  ..  ..    ..  ..  ..  ..   ON  ON  ..  ..    ..  ..  ..  ..
+Long Distance     ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+VC Link Init      ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Locked L_Port     ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Locked G_Port     ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Disabled E_Port   ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Locked E_Port     ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+ISL R_RDY Mode    ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+RSCN Suppressed   ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Persistent Disable..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+LOS TOV enable    ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+NPIV capability   ON  ON  ON  ON    ON  ON  ON  ON   ON  ON  ON  ON    ON  ON  ON  ON
+NPIV PP Limit    126 126 126 126   126 126 126 126  126 126 126 126   126 126 126 126
+QOS E_Port        AE  AE  AE  AE    AE  AE  AE  AE   AE  AE  AE  AE    AE  AE  AE  AE
+Mirror Port       ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Rate Limit        ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Credit Recovery   ON  ON  ON  ON    ON  ON  ON  ON   ON  ON  ON  ON    ON  ON  ON  ON
+Fport Buffers     ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+Port Auto Disable ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+CSCTL mode        ..  ..  ..  ..    ..  ..  ..  ..   ..  ..  ..  ..    ..  ..  ..  ..
+
+Fault Delay       0  0  0  0    0  0  0  0   0  0  0  0    0  0  0  0
+----
+. ISL 거리를 계산합니다.
++
+FC-VI의 동작 때문에 거리는 실제 거리의 1.5배로, 최소 거리는 10km(LE 거리 수준 사용)로 설정해야 합니다.
+
++
+ISL의 거리는 다음 전체 킬로미터까지 반올림하여 다음과 같이 계산됩니다.
+
++
+1.5 × real_distance = 거리
+
++
+거리가 3km 이면 1.5 × 3km = 4.5km 이 거리는 10km보다 낮으므로 ISL을 LE 거리 수준으로 설정해야 합니다.
+
++
+거리가 20km인 경우 1.520km = 30km ISL은 30km로 설정해야 하며 LS 거리 레벨을 사용해야 합니다.
+
+. 각 ISL 포트의 거리를 설정합니다.
++
+"portcfglongdistance_portdistance-level_vc_link_init_distance_
+
++
+1의 VC_LINK_init 값은 ARB fill word(default)를 사용한다. 0 값은 idle을 사용한다. 필요한 값은 사용 중인 링크에 따라 달라질 수 있습니다. 각 ISL 포트에 대해 명령을 반복해야 합니다.
+
++
+이전 단계의 예시에서 볼 수 있는 3km ISL의 경우 기본 설정인 VC_LINK_INIT 값이 1인 4.5 km입니다. 4.5km 설정은 10km 미만으로, LE distance level로 설정해야 한다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfglongdistance 20 LE 1
+
+FC_switch_B_1:admin> portcfglongdistance 20 LE 1
+----
++
+이전 단계의 예시에서 볼 수 있는 20km ISL의 경우 기본 VC_LINK_INIT 값이 "1"인 상태에서 30km로 설정됩니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfglongdistance 20 LS 1 -distance 30
+
+FC_switch_B_1:admin> portcfglongdistance 20 LS 1 -distance 30
+----
+. 거리 설정을 확인합니다.
++
+포트버거쇼
+
++
+LE의 거리 수준은 10km로 나타납니다
+
++
+다음 예에서는 포트 20 및 포트 21에서 ISL을 사용하는 구성의 출력을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portbuffershow
+
+User  Port     Lx      Max/Resv    Buffer Needed    Link      Remaining
+Port  Type    Mode     Buffers     Usage  Buffers   Distance  Buffers
+----  ----    ----     -------     ------ -------   --------- ---------
+...
+ 20     E      -          8         67      67       30km
+ 21     E      -          8         67      67       30km
+...
+ 23            -          8          0      -        -        466
+----
+. 두 스위치가 하나의 Fabric을 형성하는지 확인:
++
+재치쇼
+
++
+다음 예에서는 포트 20 및 포트 21에서 ISL을 사용하는 구성의 출력을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchshow
+switchName: FC_switch_A_1
+switchType: 109.1
+switchState:Online
+switchMode: Native
+switchRole: Subordinate
+switchDomain:       5
+switchId:   fffc01
+switchWwn:  10:00:00:05:33:86:89:cb
+zoning:             OFF
+switchBeacon:       OFF
+
+Index Port Address Media Speed State  Proto
+===========================================
+...
+20   20  010C00   id    16G  Online FC  LE E-Port  10:00:00:05:33:8c:2e:9a "FC_switch_B_1" (downstream)(trunk master)
+21   21  010D00   id    16G  Online FC  LE E-Port  (Trunk port, master is Port 20)
+...
+
+FC_switch_B_1:admin> switchshow
+switchName: FC_switch_B_1
+switchType: 109.1
+switchState:Online
+switchMode: Native
+switchRole: Principal
+switchDomain:       7
+switchId:   fffc03
+switchWwn:  10:00:00:05:33:8c:2e:9a
+zoning:             OFF
+switchBeacon:       OFF
+
+Index Port Address Media Speed State Proto
+==============================================
+...
+20   20  030C00   id    16G  Online  FC  LE E-Port  10:00:00:05:33:86:89:cb "FC_switch_A_1" (downstream)(Trunk master)
+21   21  030D00   id    16G  Online  FC  LE E-Port  (Trunk port, master is Port 20)
+...
+----
+. 패브릭의 구성을 확인하십시오.
++
+배가쇼
+
++
+[listing]
+----
+FC_switch_A_1:admin> fabricshow
+   Switch ID   Worldwide Name      Enet IP Addr FC IP Addr Name
+-----------------------------------------------------------------
+1: fffc01 10:00:00:05:33:86:89:cb 10.10.10.55  0.0.0.0    "FC_switch_A_1"
+3: fffc03 10:00:00:05:33:8c:2e:9a 10.10.10.65  0.0.0.0   >"FC_switch_B_1"
+----
++
+[listing]
+----
+FC_switch_B_1:admin> fabricshow
+   Switch ID   Worldwide Name     Enet IP Addr FC IP Addr   Name
+----------------------------------------------------------------
+1: fffc01 10:00:00:05:33:86:89:cb 10.10.10.55  0.0.0.0     "FC_switch_A_1"
+
+3: fffc03 10:00:00:05:33:8c:2e:9a 10.10.10.65  0.0.0.0    >"FC_switch_B_1
+----
+. [[step10_Brocade_config]] ISL의 트렁킹을 확인합니다.
++
+'트러커쇼'
+
++
+** 트렁킹(IOD)에 대한 ISL을 구성하는 경우 다음과 유사한 출력이 표시되어야 합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> trunkshow
+ 1: 20-> 20 10:00:00:05:33:ac:2b:13 3 deskew 15 MASTER
+    21-> 21 10:00:00:05:33:8c:2e:9a 3 deskew 16
+ FC_switch_B_1:admin> trunkshow
+ 1: 20-> 20 10:00:00:05:33:86:89:cb 3 deskew 15 MASTER
+    21-> 21 10:00:00:05:33:86:89:cb 3 deskew 16
+----
+** 트렁킹(Good)에 대한 ISL을 구성하지 않을 경우 다음과 유사한 출력이 표시됩니다.
++
+[listing]
+----
+FC_switch_A_1:admin> trunkshow
+ 1: 20-> 20 10:00:00:05:33:ac:2b:13 3 deskew 15 MASTER
+ 2: 21-> 21 10:00:00:05:33:8c:2e:9a 3 deskew 16 MASTER
+FC_switch_B_1:admin> trunkshow
+ 1: 20-> 20 10:00:00:05:33:86:89:cb 3 deskew 15 MASTER
+ 2: 21-> 21 10:00:00:05:33:86:89:cb 3 deskew 16 MASTER
+----
+
+
+. 반복합니다 <<step1_brocade_config,1단계>> 부터 까지 <<step10_brocade_config,10단계>> 두 번째 FC 스위치 패브릭용
+
+
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+
+
+
+== Brocade FC 7840 스위치에서 10Gbps VE 포트 구성
+
+ISL에 FCIP를 사용하는 10Gbps VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.
+
+이 절차는 MetroCluster 구성의 각 스위치 패브릭에서 수행해야 합니다.
+
+이 절차의 예에서는 두 개의 Brocade 7840 스위치에 다음과 같은 IP 주소가 있다고 가정합니다.
+
+* fc_switch_a_1은 로컬입니다.
+* fc_switch_B_1이 원격입니다.
+
+
+.단계
+. Fabric의 두 스위치에서 10Gbps 포트에 대한 IP 인터페이스(ipif) 주소를 생성합니다.
++
+"portcfg ipif FC_switch1_nameFirst_port_name create FC_switch1_ip_address netmask netmask_number vlan 2 MTU auto"
+
++
+다음 명령을 실행하면 ipif 주소가 FC_SWITCH_A_1의 ge2.dp0 및 ge3.dp0에 생성됩니다.
+
++
+[listing]
+----
+portcfg ipif  ge2.dp0 create  10.10.20.71 netmask 255.255.0.0 vlan 2 mtu auto
+portcfg ipif  ge3.dp0 create  10.10.21.71 netmask 255.255.0.0 vlan 2 mtu auto
+----
++
+다음 명령을 실행하면 ipif 주소가 FC_SWITCH_B_1의 ge2.dp0 및 ge3.dp0에 생성됩니다.
+
++
+[listing]
+----
+portcfg ipif  ge2.dp0 create  10.10.20.72 netmask 255.255.0.0 vlan 2 mtu auto
+portcfg ipif  ge3.dp0 create  10.10.21.72 netmask 255.255.0.0 vlan 2 mtu auto
+----
+. 두 스위치에서 ipif 주소가 성공적으로 생성되었는지 확인합니다.
++
+포트쇼 ipif all
+
++
+다음 명령을 실행하면 스위치 FC_SWITCH_A_1의 ipif 주소가 표시됩니다.
+
++
+[listing]
+----
+FC_switch_A_1:root> portshow ipif all
+
+ Port         IP Address                     / Pfx  MTU   VLAN  Flags
+--------------------------------------------------------------------------------
+ ge2.dp0      10.10.20.71                    / 24   AUTO  2     U R M I
+ ge3.dp0      10.10.21.71                    / 20   AUTO  2     U R M I
+--------------------------------------------------------------------------------
+Flags: U=Up B=Broadcast D=Debug L=Loopback P=Point2Point R=Running I=InUse
+       N=NoArp PR=Promisc M=Multicast S=StaticArp LU=LinkUp X=Crossport
+----
++
+다음 명령을 실행하면 스위치 FC_SWITCH_B_1의 ipif 주소가 표시됩니다.
+
++
+[listing]
+----
+FC_switch_B_1:root> portshow ipif all
+
+ Port         IP Address                     / Pfx  MTU   VLAN  Flags
+--------------------------------------------------------------------------------
+ ge2.dp0      10.10.20.72                    / 24   AUTO  2     U R M I
+ ge3.dp0      10.10.21.72                    / 20   AUTO  2     U R M I
+--------------------------------------------------------------------------------
+Flags: U=Up B=Broadcast D=Debug L=Loopback P=Point2Point R=Running I=InUse
+       N=NoArp PR=Promisc M=Multicast S=StaticArp LU=LinkUp X=Crossport
+----
+. dp0의 포트를 사용하여 두 FCIP 터널 중 첫 번째 터널을 생성합니다.
++
+포트cfg fciptunnel
+
++
+이 명령어는 단일 회로로 터널을 생성한다.
+
++
+다음 명령을 실행하면 스위치 FC_SWITCH_A_1에 터널이 생성됩니다.
+
++
+[listing]
+----
+portcfg fciptunnel 24 create -S 10.10.20.71  -D 10.10.20.72 -b 10000000 -B 10000000
+----
++
+다음 명령을 실행하면 스위치 FC_SWITCH_B_1에 터널이 생성됩니다.
+
++
+[listing]
+----
+portcfg fciptunnel 24 create -S 10.10.20.72  -D 10.10.20.71 -b 10000000 -B 10000000
+----
+. FCIP 터널이 성공적으로 생성되었는지 확인합니다.
++
+포트쇼 fciptunnel all
+
++
+다음 예에서는 터널이 생성되고 회로가 가동되는 것을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_B_1:root>
+
+ Tunnel Circuit  OpStatus  Flags    Uptime  TxMBps  RxMBps ConnCnt CommRt Met/G
+--------------------------------------------------------------------------------
+ 24    -         Up      ---------     2d8m    0.05    0.41   3      -       -
+--------------------------------------------------------------------------------
+ Flags (tunnel): i=IPSec f=Fastwrite T=TapePipelining F=FICON r=ReservedBW
+                 a=FastDeflate d=Deflate D=AggrDeflate P=Protocol
+                 I=IP-Ext
+----
+. dp0에 대한 추가 회로를 만듭니다.
++
+다음 명령을 실행하면 스위치 FC_SWITCH_A_1에서 dp0에 대한 회로가 생성됩니다.
+
++
+[listing]
+----
+portcfg fcipcircuit 24 create 1 -S 10.10.21.71 -D 10.10.21.72  --min-comm-rate 5000000 --max-comm-rate 5000000
+----
++
+다음 명령을 실행하면 스위치 FC_SWITCH_B_1에서 dp0에 대한 회로가 생성됩니다.
+
++
+[listing]
+----
+portcfg fcipcircuit 24 create 1 -S 10.10.21.72 -D 10.10.21.71  --min-comm-rate 5000000 --max-comm-rate 5000000
+----
+. 모든 회로가 성공적으로 생성되었는지 확인합니다.
++
+포트쇼 fcipcircuit all
+
++
+다음 명령을 실행하면 회로와 회로의 상태가 표시됩니다.
+
++
+[listing]
+----
+FC_switch_A_1:root> portshow fcipcircuit all
+
+ Tunnel Circuit  OpStatus  Flags    Uptime  TxMBps  RxMBps ConnCnt CommRt Met/G
+--------------------------------------------------------------------------------
+ 24    0 ge2     Up      ---va---4    2d12m    0.02    0.03   3 10000/10000 0/-
+ 24    1 ge3     Up      ---va---4    2d12m    0.02    0.04   3 10000/10000 0/-
+--------------------------------------------------------------------------------
+ Flags (circuit): h=HA-Configured v=VLAN-Tagged p=PMTU i=IPSec 4=IPv4 6=IPv6
+                 ARL a=Auto r=Reset s=StepDown t=TimedStepDown  S=SLA
+----
+
+
+
+
+== Brocade 7810 및 7840 FC 스위치에서 40Gbps VE 포트 구성
+
+ISL에 FCIP를 사용하는 두 개의 40GbE VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.
+
+이 절차는 MetroCluster 구성의 각 스위치 패브릭에서 수행해야 합니다.
+
+이 절차의 예에서는 두 개의 스위치를 사용합니다.
+
+* fc_switch_a_1은 로컬입니다.
+* fc_switch_B_1이 원격입니다.
+
+
+.단계
+. Fabric의 두 스위치에서 40Gbps 포트에 대한 IP 인터페이스(ipif) 주소를 생성합니다.
++
+"portcfg ipif FC_switch_nameFirst_port_name create FC_switch_ip_address netmask_number vlan 2 MTU auto"
+
++
+다음 명령을 실행하면 포트 GE0.dp0과 FC_SWITCH_A_1의 ge1.dp0에 ipif 주소가 생성됩니다.
+
++
+[listing]
+----
+portcfg ipif  ge0.dp0 create  10.10.82.10 netmask 255.255.0.0 vlan 2 mtu auto
+portcfg ipif  ge1.dp0 create  10.10.82.11 netmask 255.255.0.0 vlan 2 mtu auto
+----
++
+다음 명령을 실행하면 포트 GE0.dp0과 FC_SWITCH_B_1의 ge1.dp0에 ipif 주소가 생성됩니다.
+
++
+[listing]
+----
+portcfg ipif  ge0.dp0 create  10.10.83.10 netmask 255.255.0.0 vlan 2 mtu auto
+portcfg ipif  ge1.dp0 create  10.10.83.11 netmask 255.255.0.0 vlan 2 mtu auto
+----
+. 두 스위치에서 ipif 주소가 성공적으로 생성되었는지 확인합니다.
++
+포트쇼 ipif all
+
++
+다음 예에서는 FC_SWITCH_A_1의 IP 인터페이스를 보여 줍니다.
+
++
+[listing]
+----
+Port         IP Address                     / Pfx  MTU   VLAN  Flags
+---------------------------------------------------------------------------
+-----
+ ge0.dp0      10.10.82.10                    / 16   AUTO  2     U R M
+ ge1.dp0      10.10.82.11                    / 16   AUTO  2     U R M
+--------------------------------------------------------------------------------
+Flags: U=Up B=Broadcast D=Debug L=Loopback P=Point2Point R=Running I=InUse
+       N=NoArp PR=Promisc M=Multicast S=StaticArp LU=LinkUp X=Crossport
+----
++
+다음 예에서는 FC_SWITCH_B_1의 IP 인터페이스를 보여 줍니다.
+
++
+[listing]
+----
+Port         IP Address                     / Pfx  MTU   VLAN  Flags
+--------------------------------------------------------------------------------
+ ge0.dp0      10.10.83.10                    / 16   AUTO  2     U R M
+ ge1.dp0      10.10.83.11                    / 16   AUTO  2     U R M
+--------------------------------------------------------------------------------
+Flags: U=Up B=Broadcast D=Debug L=Loopback P=Point2Point R=Running I=InUse
+       N=NoArp PR=Promisc M=Multicast S=StaticArp LU=LinkUp X=Crossport
+----
+. 두 스위치 모두에 FCIP 터널을 생성합니다.
++
+포트무화과터널입니다
+
++
+다음 명령을 실행하면 FC_SWITCH_A_1에 터널이 생성됩니다.
+
++
+[listing]
+----
+portcfg fciptunnel 24 create -S 10.10.82.10  -D 10.10.83.10 -b 10000000 -B 10000000
+----
++
+다음 명령을 실행하면 FC_SWITCH_B_1에 터널이 생성됩니다.
+
++
+[listing]
+----
+portcfg fciptunnel 24 create -S 10.10.83.10  -D 10.10.82.10 -b 10000000 -B 10000000
+----
+. FCIP 터널이 성공적으로 생성되었는지 확인합니다.
++
+포트쇼 fciptunnel all
+
++
+다음 예에서는 터널이 생성되고 회로가 가동되는 것을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:root>
+
+ Tunnel Circuit  OpStatus  Flags    Uptime  TxMBps  RxMBps ConnCnt CommRt Met/G
+--------------------------------------------------------------------------------
+ 24    -         Up      ---------     2d8m    0.05    0.41   3      -       -
+ --------------------------------------------------------------------------------
+ Flags (tunnel): i=IPSec f=Fastwrite T=TapePipelining F=FICON r=ReservedBW
+                 a=FastDeflate d=Deflate D=AggrDeflate P=Protocol
+                 I=IP-Ext
+----
+. 각 스위치에 추가 회로를 만듭니다.
++
+"portcfg fcipcircuit 24 create 1-S source-ip-address-D destination-ip-address--min-comm-rate 10000000--max-comm-rate 10000000"
+
++
+다음 명령을 실행하면 스위치 FC_SWITCH_A_1에서 dp0에 대한 회로가 생성됩니다.
+
++
+[listing]
+----
+portcfg fcipcircuit 24  create 1 -S 10.10.82.11 -D 10.10.83.11  --min-comm-rate 10000000 --max-comm-rate 10000000
+----
++
+다음 명령을 실행하면 DP1에 대한 스위치 FC_SWITCH_B_1에 회로가 생성됩니다.
+
++
+[listing]
+----
+portcfg fcipcircuit 24 create 1  -S 10.10.83.11 -D 10.10.82.11  --min-comm-rate 10000000 --max-comm-rate 10000000
+----
+. 모든 회로가 성공적으로 생성되었는지 확인합니다.
++
+포트쇼 fcipcircuit all
+
++
+다음 예에서는 회로를 나열하고 해당 OpStatus가 UP 상태라는 것을 보여줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:root> portshow fcipcircuit all
+
+ Tunnel Circuit  OpStatus  Flags    Uptime  TxMBps  RxMBps ConnCnt CommRt Met/G
+--------------------------------------------------------------------------------
+ 24    0 ge0     Up      ---va---4    2d12m    0.02    0.03   3 10000/10000 0/-
+ 24    1 ge1     Up      ---va---4    2d12m    0.02    0.04   3 10000/10000 0/-
+ --------------------------------------------------------------------------------
+ Flags (circuit): h=HA-Configured v=VLAN-Tagged p=PMTU i=IPSec 4=IPv4 6=IPv6
+                 ARL a=Auto r=Reset s=StepDown t=TimedStepDown  S=SLA
+----
+
+
+
+
+== Brocade 스위치에서 비 E-포트 구성
+
+FC 스위치에서 E 포트가 아닌 포트를 구성해야 합니다. MetroCluster 구성에서는 스위치를 HBA 이니시에이터, FC-VI 상호 연결 및 FC-SAS 브리지에 연결하는 포트를 사용합니다. 이러한 단계는 각 포트에 대해 수행해야 합니다.
+
+다음 예에서는 포트가 FC-to-SAS 브리지를 연결합니다.
+
+--
+* Site_A의 FC_FC_SWITCH_A_1에 있는 포트 6
+* Site_B의 FC_FC_SWITCH_B_1에 있는 포트 6
+
+
+--
+.단계
+. E 포트가 아닌 각 포트의 포트 속도를 구성합니다.
++
+포트스피드 포트스피드
+
++
+SFP, SFP가 설치된 스위치 포트, 연결된 장치(HBA, 브리지 등) 등 데이터 경로의 모든 구성 요소에서 지원하는 최고 속도인 최고 공통 속도를 사용해야 합니다.
+
++
+예를 들어, 구성 요소의 지원 속도는 다음과 같습니다.
+
++
+** SFP의 용량은 4, 8 또는 16GB입니다.
+** 스위치 포트는 4, 8 또는 16GB를 지원합니다.
+** 연결된 HBA의 최대 속도는 16GB입니다. 이 경우 가장 높은 공통 속도는 16GB이므로 포트를 16GB의 속도로 구성해야 합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgspeed 6 16
+
+FC_switch_B_1:admin> portcfgspeed 6 16
+----
+
+
+. 설정을 확인합니다.
++
+포르cfgshow
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgshow
+
+FC_switch_B_1:admin> portcfgshow
+----
++
+예제 출력에서 포트 6에는 다음과 같은 설정이 있습니다. 속도가 16G 로 설정되어 있습니다.
+
++
+[listing]
+----
+Ports of Slot 0                     0   1   2   3   4   5   6   7   8
+-------------------------------------+---+---+---+--+---+---+---+---+--
+Speed                               16G 16G 16G 16G 16G 16G 16G 16G 16G
+AL_PA Offset 13                     ..  ..  ..  ..  ..  ..  ..  ..  ..
+Trunk Port                          ..  ..  ..  ..  ..  ..  ..  ..  ..
+Long Distance                       ..  ..  ..  ..  ..  ..  ..  ..  ..
+VC Link Init                        ..  ..  ..  ..  ..  ..  ..  ..  ..
+Locked L_Port                       -   -   -   -   -  -   -   -   -
+Locked G_Port                       ..  ..  ..  ..  ..  ..  ..  ..  ..
+Disabled E_Port                     ..  ..  ..  ..  ..  ..  ..  ..  ..
+Locked E_Port                       ..  ..  ..  ..  ..  ..  ..  ..  ..
+ISL R_RDY Mode                      ..  ..  ..  ..  ..  ..  ..  .. ..
+RSCN Suppressed                     ..  ..  ..  ..  ..  ..  ..  .. ..
+Persistent Disable                  ..  ..  ..  ..  ..  ..  ..  .. ..
+LOS TOV enable                      ..  ..  ..  ..  ..  ..  ..  .. ..
+NPIV capability                     ON  ON  ON  ON  ON  ON  ON  ON  ON
+NPIV PP Limit                       126 126 126 126 126 126 126 126 126
+QOS Port                            AE  AE  AE  AE  AE  AE  AE  AE  ON
+EX Port                             ..  ..  ..  ..  ..  ..  ..  ..  ..
+Mirror Port                         ..  ..  ..  ..  ..  ..  ..  ..  ..
+Rate Limit                          ..  ..  ..  ..  ..  ..  ..  ..  ..
+Credit Recovery                     ON  ON  ON  ON  ON  ON  ON  ON  ON
+Fport Buffers                       ..  ..  ..  ..  ..  ..  ..  ..  ..
+Eport Credits                       ..  ..  ..  ..  ..  ..  ..  ..  ..
+Port Auto Disable                   ..  ..  ..  ..  ..  ..  ..  ..  ..
+CSCTL mode                          ..  ..  ..  ..  ..  ..  ..  ..  ..
+D-Port mode                         ..  ..  ..  ..  ..  ..  ..  ..  ..
+D-Port over DWDM                    ..  ..  ..  ..  ..  ..  ..  ..  ..
+FEC                                 ON  ON  ON  ON  ON  ON  ON  ON  ON
+Fault Delay                         0   0   0   0   0   0   0   0   0
+Non-DFE                             ..  ..  ..  ..  ..  ..  ..  ..  ..
+----
+
+
+
+
+== Brocade G620 스위치의 ISL 포트에 대한 압축 구성
+
+Brocade G620 스위치를 사용하고 ISL에서 압축을 설정하는 경우 스위치의 각 E-포트에서 구성해야 합니다.
+
+이 작업은 ISL을 사용하여 두 스위치의 ISL 포트에서 수행해야 합니다.
+
+.단계
+. 압축을 구성하려는 포트를 비활성화합니다.
++
+포트 ID를 포트 ID로 설정합니다
+
+. 포트에서 압축 활성화:
++
+포트 ID를 활성화합니다
+
+. 포트를 활성화하여 압축을 사용하여 구성을 활성화합니다.
++
+포트아이드
+
+. 설정이 변경되었는지 확인합니다.
++
+포트쇼어 포트 ID
+
+
+
+다음 예에서는 포트 0에서 압축을 설정합니다.
+
+[listing]
+----
+FC_switch_A_1:admin> portdisable 0
+FC_switch_A_1:admin> portcfgcompress --enable 0
+FC_switch_A_1:admin> portenable 0
+FC_switch_A_1:admin> portcfgshow 0
+Area Number: 0
+Octet Speed Combo: 3(16G,10G)
+(output truncated)
+D-Port mode: OFF
+D-Port over DWDM ..
+Compression: ON
+Encryption: ON
+----
+islShow 명령을 사용하여 E_port가 암호화 또는 압축 구성 및 활성 상태로 온라인 상태인지 확인할 수 있습니다.
+
+[listing]
+----
+FC_switch_A_1:admin> islshow
+  1: 0-> 0 10:00:c4:f5:7c:8b:29:86   5 FC_switch_B_1
+sp: 16.000G bw: 16.000G TRUNK QOS CR_RECOV ENCRYPTION COMPRESSION
+----
+portEncCompShow 명령을 사용하여 활성 포트를 확인할 수 있습니다. 이 예에서는 암호화 및 압축이 포트 0에서 구성되고 활성화된다는 것을 알 수 있습니다.
+
+[listing]
+----
+FC_switch_A_1:admin> portenccompshow
+User	  Encryption		           Compression	         Config
+Port   Configured    Active   Configured   Active  Speed
+----   ----------    -------  ----------   ------  -----
+  0	   Yes	          Yes	     Yes	         Yes	    16G
+----
+
+
+== Brocade FC 스위치에서 조닝 구성
+
+스위치 포트를 별도의 영역에 할당하여 컨트롤러 및 스토리지 트래픽을 분리해야 합니다. FiberBridge 7500N 또는 FiberBridge 6500N 브리지 사용 여부에 따라 시술이 달라집니다.
+
+
+
+=== FC-VI 포트를 위한 조닝
+
+MetroCluster의 각 DR 그룹에 대해 컨트롤러-컨트롤러 트래픽을 허용하는 FC-VI 연결을 위해 두 개의 존을 구성해야 합니다. 이러한 존에는 컨트롤러 모듈 FC-VI 포트에 연결되는 FC 스위치 포트가 포함되어 있습니다. 이러한 영역은 QoS(서비스 품질) 존입니다.
+
+QoS 존 이름은 접두사 QOSHid_로 시작하고 그 뒤에 사용자 정의 문자열을 사용하여 일반 영역과 구분합니다. 이러한 QoS 존은 사용 중인 FiberBridge 브리지 모델과 상관없이 동일합니다.
+
+각 존에는 각 컨트롤러의 FC-VI 케이블마다 하나씩 모든 FC-VI 포트가 포함되어 있습니다. 이러한 영역은 높은 우선 순위로 구성됩니다.
+
+다음 표에는 2개의 DR 그룹에 대한 FC-VI 영역이 나와 있습니다.
+
+* FC-VI 포트 A/c * 용 DR 그룹 1: QOSH1 FC-VI 존
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 5 | 0 | 0 | 0 | 컨트롤러_A_1 포트 FC-VI A 
+
+
+| fc_switch_a_1 | A | 5 | 1 | 1 | 1 | controller_a_1 포트 FC-VI c 
+
+
+| fc_switch_a_1 | A | 5 | 4 | 4 | 4 | 컨트롤러_A_2 포트 FC-VI A 
+
+
+| fc_switch_a_1 | A | 5 | 5 | 5 | 5 | controller_a_2 포트 FC-VI c 
+
+
+| fc_switch_B_1 | B | 7 | 0 | 0 | 0 | 컨트롤러_B_1 포트 FC-VI A 
+
+
+| fc_switch_B_1 | B | 7 | 1 | 1 | 1 | controller_B_1 포트 FC-VI c 
+
+
+| fc_switch_B_1 | B | 7 | 4 | 4 | 4 | 컨트롤러_B_2 포트 FC-VI A 
+
+
+| fc_switch_B_1 | B | 7 | 5 | 5 | 5 | 컨트롤러_B_2 포트 FC-VI c 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| QOSH1_MC1_FAB_1_FCVI | 5,0; 5,1; 5,4; 5,5; 7,0; 7,1; 7,4; 7,5 
+|===
+* FC-VI 포트 b/d * 용 DR 그룹 1: QOSH1 FC-VI 존
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+| fc_switch_a_2 | A | 6 | 0 | 0 | 0 | controller_a_1 포트 FC-VI b 
+
+
+|  |  |  | 1 | 1 | 1 | 컨트롤러_A_1 포트 FC-VI d 
+
+
+|  |  |  | 4 | 4 | 4 | controller_a_2 포트 FC-VI b 
+
+
+|  |  |  | 5 | 5 | 5 | 컨트롤러_A_2 포트 FC-VI d 
+
+
+| fc_switch_B_2 | B | 8 | 0 | 0 | 0 | controller_B_1 포트 FC-VI b 
+
+
+|  |  |  | 1 | 1 | 1 | 컨트롤러_B_1 포트 FC-VI d 
+
+
+|  |  |  | 4 | 4 | 4 | controller_B_2 포트 FC-VI b 
+
+
+|  |  |  | 5 | 5 | 5 | 컨트롤러_B_2 포트 FC-VI d 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| QOSH1_MC1_FAB_2_FCVI | 6,0; 6,1; 6,4; 6,5; 8,0; 8,1; 8,4; 8,5 
+|===
+* DR 그룹 2: FC-VI 포트 A/c * 용 QOSH2 FC-VI 존
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | 스위치 포트 |  |  | 연결 대상... 
+
+
+|  |  |  | 6510 | 6520 | G620 |  
+
+
+| fc_switch_a_1 | A | 5 | 24 | 48 | 18 | 컨트롤러_A_3 포트 FC-VI A 
+
+
+|  |  |  | 25 | 49 | 19 | 컨트롤러_A_3 포트 FC-VI c 
+
+
+|  |  |  | 28 | 52 | 22 | 컨트롤러_A_4 포트 FC-VI A 
+
+
+|  |  |  | 29 | 53 | 23 | 컨트롤러_A_4 포트 FC-VI c 
+
+
+| fc_switch_B_1 | B | 7 | 24 | 48 | 18 | 컨트롤러_B_3 포트 FC-VI A 
+
+
+|  |  |  | 25 | 49 | 19 | 컨트롤러_B_3 포트 FC-VI c 
+
+
+|  |  |  | 28 | 52 | 22 | 컨트롤러_B_4 포트 FC-VI A 
+
+
+|  |  |  | 29 | 53 | 23 | 컨트롤러_B_4 포트 FC-VI c 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| QOSH2_MC2_FAB_1_FCVI(6510) | 5,24; 5,25; 5,28; 5,29; 7,24; 7,25; 7,28; 7,29 
+
+
+| QOSH2_MC2_FAB_1_FCVI(6520) | 5,48; 5,49; 5,52; 5,53; 7,48; 7,49; 7,52; 7,53 
+|===
+* DR 그룹 2: FC-VI 포트 b/d * 용 QOSH2 FC-VI 존
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | 6510 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+| fc_switch_a_2 | A | 6 | 24 | 48 | 18 | controller_a_3 포트 FC-VI b 
+
+
+| fc_switch_a_2 | A | 6 | 25 | 49 | 19 | 컨트롤러_A_3 포트 FC-VI d 
+
+
+| fc_switch_a_2 | A | 6 | 28 | 52 | 22 | controller_a_4 포트 FC-VI b 
+
+
+| fc_switch_a_2 | A | 6 | 29 | 53 | 23 | 컨트롤러_A_4 포트 FC-VI d 
+
+
+| fc_switch_B_2 | B | 8 | 24 | 48 | 18 | controller_B_3 포트 FC-VI b 
+
+
+| fc_switch_B_2 | B | 8 | 25 | 49 | 19 | 컨트롤러_B_3 포트 FC-VI d 
+
+
+| fc_switch_B_2 | B | 8 | 28 | 52 | 22 | controller_B_4 포트 FC-VI b 
+
+
+| fc_switch_B_2 | B | 8 | 29 | 53 | 23 | 컨트롤러_B_4 포트 FC-VI d 
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+| QOSH2_MC2_FAB_2_FCVI(6510) | 6,24; 6,25; 6,28; 6,29; 8,24; 8,25; 8,28; 8,29 
+
+
+| QOSH2_MC2_FAB_2_FCVI(6520) | 6,48; 6,49; 6,52; 6,53; 8,48; 8,49; 8,52; 8,53 
+|===
+다음 표에는 FC-VI 영역에 대한 요약이 나와 있습니다.
+
+|===
+
+
+| 패브릭 | 영역 이름 | 구성원 포트 
+
+
+.3+| FC_SWITCH_A_1 및 FC_SWITCH_B_1  a| 
+QOSH1_MC1_FAB_1_FCVI
+ a| 
+5,0; 5,1; 5,4; 5,5; 7,0; 7,1; 7,4; 7,5
+
+
+
+ a| 
+QOSH2_MC1_FAB_1_FCVI(6510)
+ a| 
+5,24; 5,25; 5,28; 5,29; 7,24; 7,25; 7,28; 7,29
+
+
+
+ a| 
+QOSH2_MC1_FAB_1_FCVI(6520)
+ a| 
+5,48; 5,49; 5,52; 5,53; 7,48; 7,49; 7,52; 7,53
+
+
+
+.3+| FC_SWITCH_A_2 및 FC_SWITCH_B_2  a| 
+QOSH1_MC1_FAB_2_FCVI
+ a| 
+6,0; 6,1; 6,4; 6,5; 8,0; 8,1; 8,4; 8,5
+
+
+
+ a| 
+QOSH2_MC1_FAB_2_FCVI(6510)
+ a| 
+6,24; 6,25; 6,28; 6,29; 8,24; 8,25; 8,28; 8,29
+
+
+
+ a| 
+QOSH2_MC1_FAB_2_FCVI(6520)
+ a| 
+6,48; 6,49; 6,52; 6,53; 8,48; 8,49; 8,52; 8,53
+
+|===
+
+
+=== FC 포트 하나를 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 위한 영역 지정
+
+FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 두 FC 포트 중 하나만 사용하는 경우 브리지 포트에 대한 스토리지 영역을 만들어야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.
+
+이 예에서는 DR 그룹 1에 대해서만 조닝을 보여 줍니다. 구성에 두 번째 DR 그룹이 포함된 경우 컨트롤러 및 브리지의 해당 포트를 사용하여 두 번째 DR 그룹의 조닝을 동일한 방식으로 구성합니다.
+
+
+
+==== 필수 구역
+
+각 컨트롤러 모듈의 이니시에이터와 FC-to-SAS 브리지 사이의 트래픽을 허용하는 각 FC-to-SAS 브리지 FC 포트에 대해 하나의 존을 구성해야 합니다.
+
+각 스토리지 존에는 9개의 포트가 있습니다.
+
+* HBA 이니시에이터 포트 8개(각 컨트롤러에 대한 연결 2개)
+* FC-to-SAS 브리지 FC 포트에 연결되는 포트 1개
+
+
+스토리지 존은 표준 조닝을 사용합니다.
+
+이 예에서는 각 사이트에 있는 두 개의 스택 그룹을 연결하는 두 쌍의 브리지를 보여 줍니다. 각 브리지는 하나의 FC 포트를 사용하므로 패브릭당 총 4개의 스토리지 영역이 있습니다(총 8개).
+
+
+
+==== 브리지 이름 지정
+
+브리지는 다음 예를 사용합니다. bridge_site_stack greplocation in pair
+
+|===
+
+
+| 이름의 이 부분은... | 다음을 식별합니다... | 가능한 값... 
+
+
+ a| 
+사이트
+ a| 
+브리지 쌍이 물리적으로 상주하는 사이트입니다.
+ a| 
+A 또는 B입니다
+
+
+
+ a| 
+스택 그룹
+ a| 
+브리지 쌍이 연결되는 스택 그룹의 수입니다.
+
+* FiberBridge 7600N 또는 7500N 브리지는 스택 그룹에서 최대 4개의 스택을 지원합니다.
++
+스택 그룹은 10개 이상의 스토리지 쉘프를 포함할 수 없습니다.
+
+* FiberBridge 6500N 브리지는 스택 그룹에서 단일 스택만 지원합니다.
+
+ a| 
+1, 2 등
+
+
+
+ a| 
+한 쌍의 위치
+ a| 
+브리지 쌍 내의 브리지. 한 쌍의 브리지는 특정 스택 그룹에 연결됩니다.
+ a| 
+a 또는 b
+
+|===
+각 사이트의 스택 그룹 하나에 대한 브리지 이름 예:
+
+* Bridge_A_1a
+* Bridge_a_1b
+* Bridge_B_1a
+* Bridge_B_1b
+
+
+
+
+==== DR 그룹 1 - Site_A의 스택 1
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 5 | 2 | 컨트롤러_A_1 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 3 | 컨트롤러_A_1 포트 0c 
+
+
+| fc_switch_a_1 | A | 5 | 6 | 컨트롤러_A_2 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 7 | 컨트롤러_A_2 포트 0c 
+
+
+| fc_switch_a_1 | A | 5 | 8 | Bridge_A_1a FC1 
+
+
+| fc_switch_B_1 | B | 7 | 2 | 컨트롤러_B_1 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 3 | 컨트롤러_B_1 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 6 | 컨트롤러_B_2 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 7 | 컨트롤러_B_2 포트 0c 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 5,8 
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_BOT_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 6 | 2 | 컨트롤러_A_1 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 3 | controller_a_1 포트 0d 
+
+
+| fc_switch_a_1 | A | 6 | 6 | 컨트롤러_A_2 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 7 | controller_a_2 포트 0d 
+
+
+| fc_switch_a_1 | A | 6 | 8 | Bridge_a_1b FC1 
+
+
+| fc_switch_B_1 | B | 8 | 2 | 컨트롤러_B_1 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 3 | controller_B_1 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 6 | 컨트롤러_B_2 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 7 | 컨트롤러_B_2 포트 0d 
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_A_STK_GRP_1_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 6,8 
+|===
+
+
+==== DR 그룹 1 - 사이트_A의 스택 2
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 5 | 2 | 컨트롤러_A_1 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 3 | 컨트롤러_A_1 포트 0c 
+
+
+| fc_switch_a_1 | A | 5 | 6 | 컨트롤러_A_2 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 7 | 컨트롤러_A_2 포트 0c 
+
+
+| fc_switch_a_1 | A | 5 | 9 | Bridge_a_2a FC1 
+
+
+| fc_switch_B_1 | B | 7 | 2 | 컨트롤러_B_1 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 3 | 컨트롤러_B_1 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 6 | 컨트롤러_B_2 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 7 | 컨트롤러_B_2 포트 0c 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 5,9 
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_2_BOT_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 6 | 2 | 컨트롤러_A_1 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 3 | controller_a_1 포트 0d 
+
+
+| fc_switch_a_1 | A | 6 | 6 | 컨트롤러_A_2 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 7 | controller_a_2 포트 0d 
+
+
+| fc_switch_a_1 | A | 6 | 9 | Bridge_a_2b FC1 
+
+
+| fc_switch_B_1 | B | 8 | 2 | 컨트롤러_B_1 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 3 | controller_B_1 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 6 | 컨트롤러_B_2 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 7 | 컨트롤러_B_2 포트 0d 
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_A_STK_GRP_2_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 6,9 
+|===
+
+
+==== DR 그룹 1 - Site_B의 스택 1
+
+* MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 5 | 2 | 컨트롤러_A_1 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 3 | 컨트롤러_A_1 포트 0c 
+
+
+| fc_switch_a_1 | A | 5 | 6 | 컨트롤러_A_2 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 7 | 컨트롤러_A_2 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 2 | 컨트롤러_B_1 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 3 | 컨트롤러_B_1 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 6 | 컨트롤러_B_2 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 7 | 컨트롤러_B_2 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 8 | Bridge_B_1a FC1 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 7,8 
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_1_BOT_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 6 | 2 | 컨트롤러_A_1 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 3 | controller_a_1 포트 0d 
+
+
+| fc_switch_a_1 | A | 6 | 6 | 컨트롤러_A_2 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 7 | controller_a_2 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 2 | 컨트롤러_B_1 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 3 | controller_B_1 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 6 | 컨트롤러_B_2 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 7 | 컨트롤러_B_2 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 8 | Bridge_B_1b FC1 
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_1_BOT_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 8,8 
+|===
+
+
+==== DR 그룹 1 - Site_B의 스택 2
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 5 | 2 | 컨트롤러_A_1 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 3 | 컨트롤러_A_1 포트 0c 
+
+
+| fc_switch_a_1 | A | 5 | 6 | 컨트롤러_A_2 포트 0a 
+
+
+| fc_switch_a_1 | A | 5 | 7 | 컨트롤러_A_2 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 2 | 컨트롤러_B_1 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 3 | 컨트롤러_B_1 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 6 | 컨트롤러_B_2 포트 0a 
+
+
+| fc_switch_B_1 | B | 7 | 7 | 컨트롤러_B_2 포트 0c 
+
+
+| fc_switch_B_1 | B | 7 | 9 | Bridge_b_2a FC1 
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_b_STK_GRP_2_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 7,9 
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_2_BOT_FC1: *
+
+|===
+| FC 스위치 | 사이트 | 도메인 전환 | Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트 | 연결 대상... 
+
+
+| fc_switch_a_1 | A | 6 | 2 | 컨트롤러_A_1 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 3 | controller_a_1 포트 0d 
+
+
+| fc_switch_a_1 | A | 6 | 6 | 컨트롤러_A_2 포트 0b 
+
+
+| fc_switch_a_1 | A | 6 | 7 | controller_a_2 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 2 | 컨트롤러_B_1 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 3 | controller_B_1 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 6 | 컨트롤러_B_2 포트 0b 
+
+
+| fc_switch_B_1 | B | 8 | 7 | 컨트롤러_B_2 포트 0d 
+
+
+| fc_switch_B_1 | B | 8 | 9 | Bridge_B_1b FC1 
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_2_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 8,9 
+|===
+
+
+==== 스토리지 영역 요약
+
+|===
+
+
+| 패브릭 | 영역 이름 | 구성원 포트 
+
+
+.4+| FC_SWITCH_A_1 및 FC_SWITCH_B_1 | MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 5,8 
+
+
+| MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 5,9 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 7,8 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC1 | 5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 7,9 
+
+
+.4+| FC_SWITCH_A_2 및 FC_SWITCH_B_2 | MC1_INIT_GRP_1_SITE_A_STK_GRP_1_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 6,8 
+
+
+| MC1_INIT_GRP_1_SITE_A_STK_GRP_2_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 6,9 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_1_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 8,8 
+
+
+| MC1_INIT_GRP_1_SITE_B_STK_GRP_2_BOT_FC1 | 6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 8,9 
+|===
+
+
+=== 두 FC 포트를 모두 사용하는 FiberBridge 7500N 브리지에 대한 조닝(Zoning
+
+FiberBridge 7500N 브리지를 두 FC 포트와 함께 사용하는 경우 브리지 포트에 대한 스토리지 영역을 만들어야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.
+
+
+
+==== 필수 구역
+
+각 컨트롤러 모듈의 이니시에이터와 FC-to-SAS 브리지 사이의 트래픽을 허용하는 각 FC-to-SAS 브리지 FC 포트에 대해 하나의 존을 구성해야 합니다.
+
+각 스토리지 존에는 5개의 포트가 있습니다.
+
+* HBA 이니시에이터 포트 4개(각 컨트롤러에 연결 1개)
+* FC-to-SAS 브리지 FC 포트에 연결되는 포트 1개
+
+
+스토리지 존은 표준 조닝을 사용합니다.
+
+이 예에서는 각 사이트에 있는 두 개의 스택 그룹을 연결하는 두 쌍의 브리지를 보여 줍니다. 각 브리지는 하나의 FC 포트를 사용하므로 패브릭당 총 8개의 스토리지 영역이 있습니다(총 16개).
+
+
+
+==== 브리지 이름 지정
+
+브리지는 다음 예를 사용합니다. bridge_site_stack greplocation in pair
+
+|===
+
+
+| 이름의 이 부분은... | 다음을 식별합니다... | 가능한 값... 
+
+
+ a| 
+사이트
+ a| 
+브리지 쌍이 물리적으로 상주하는 사이트입니다.
+ a| 
+A 또는 B입니다
+
+
+
+ a| 
+스택 그룹
+ a| 
+브리지 쌍이 연결되는 스택 그룹의 수입니다.
+
+* FiberBridge 7600N 또는 7500N 브리지는 스택 그룹에서 최대 4개의 스택을 지원합니다.
++
+스택 그룹은 10개 이상의 스토리지 쉘프를 포함할 수 없습니다.
+
+* FiberBridge 6500N 브리지는 스택 그룹에서 단일 스택만 지원합니다.
+
+ a| 
+1, 2 등
+
+
+
+ a| 
+한 쌍의 위치
+ a| 
+브리지 쌍 내의 브리지. 한 쌍의 브리지는 특정 스택 그룹에 연결됩니다.
+ a| 
+a 또는 b
+
+|===
+각 사이트의 스택 그룹 하나에 대한 브리지 이름 예:
+
+* Bridge_A_1a
+* Bridge_a_1b
+* Bridge_B_1a
+* Bridge_B_1b
+
+
+
+
+==== DR 그룹 1 - Site_A의 스택 1
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610/G620 포트 | 6520 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_A_1 포트 0a
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_A_2 포트 0a
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+8
+ a| 
+8
+ a| 
+Bridge_A_1a FC1
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0a
+
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 5,8
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_A_STK_GRP_1_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_A_1 포트 0c
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0c
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+9
+ a| 
+9
+ a| 
+9
+ a| 
+Bridge_a_1b FC1
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0c
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_1_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 5,9
+
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_BOT_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 | 6520 | G620 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+controller_a_2 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+8
+ a| 
+8
+ a| 
+8
+ a| 
+Bridge_A_1a FC2
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0b
+
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 6,8
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_A_STK_GRP_1_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 | 6520 | G620 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+controller_a_2 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+9
+ a| 
+9
+ a| 
+9
+ a| 
+Bridge_A_1b FC2
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0b
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_1_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 6,9
+
+|===
+
+
+==== DR 그룹 1 - 사이트_A의 스택 2
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_A_1 포트 0a
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_A_2 포트 0a
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+10
+ a| 
+10
+ a| 
+10
+ a| 
+Bridge_a_2a FC1
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0a
+
+|===
+|===
+
+
+| Fabric_1 hh의 구역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 5,10
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_A_STK_GRP_2_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_A_1 포트 0c
+
+
+
+| fc_switch_a_1  a| 
+A
+ a| 
+5
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0c
+
+
+
+| fc_switch_a_1  a| 
+A
+ a| 
+5
+ a| 
+11
+ a| 
+11
+ a| 
+11
+ a| 
+Bridge_a_2b FC1
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0c
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 5,11
+
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_2_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+2
+ a| 
+0
+ a| 
+0
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+6
+ a| 
+4
+ a| 
+4
+ a| 
+컨트롤러_A_2 포트 0b
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+10
+ a| 
+10
+ a| 
+10
+ a| 
+Bridge_a_2a FC2
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0b
+
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 6,10
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0b
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+11
+ a| 
+11
+ a| 
+11
+ a| 
+Bridge_a_2b FC2
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0b\
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0b
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 6,11
+
+|===
+
+
+==== DR 그룹 1 - Site_B의 스택 1
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_A_1 포트 0a
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_A_2 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+2
+ a| 
+2
+ a| 
+8
+ a| 
+컨트롤러_B_1 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+6
+ a| 
+6
+ a| 
+2
+ a| 
+컨트롤러_B_2 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+8
+ a| 
+8
+ a| 
+6
+ a| 
+Bridge_B_1a FC1
+
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 7,8
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_B_STK_GRP_1_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_A_1 포트 0c
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+3
+ a| 
+3
+ a| 
+9
+ a| 
+컨트롤러_B_1 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+3
+ a| 
+컨트롤러_B_2 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+9
+ a| 
+9
+ a| 
+7
+ a| 
+Bridge_B_1b FC1
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_1_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 7,9
+
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_1_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_A_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+8
+ a| 
+8
+ a| 
+8
+ a| 
+Bridge_B_1a FC2
+
+|===
+|===
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 8,8
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_B_STK_GRP_1_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+9
+ a| 
+9
+ a| 
+9
+ a| 
+Bridge_A_1b FC2
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_1_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 8,9
+
+|===
+
+
+==== DR 그룹 1 - Site_B의 스택 2
+
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_A_1 포트 0a
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_A_2 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0a
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+10
+ a| 
+10
+ a| 
+10
+ a| 
+Bridge_B_2a FC1
+
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 7,10
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_B_STK_GRP_2_TOP_FC1: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_A_1 포트 0c
+
+
+
+ a| 
+fc_switch_a_1
+ a| 
+A
+ a| 
+5
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0c
+
+
+
+ a| 
+fc_switch_B_1
+ a| 
+B
+ a| 
+7
+ a| 
+11
+ a| 
+11
+ a| 
+11
+ a| 
+Bridge_B_2b FC1
+
+|===
+|===
+
+
+| Fabric_2 hh의 구역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 7,11
+
+|===
+* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_2_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_A_1 포트 d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_A_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+2
+ a| 
+2
+ a| 
+2
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+6
+ a| 
+6
+ a| 
+6
+ a| 
+컨트롤러_B_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+10
+ a| 
+10
+ a| 
+10
+ a| 
+Bridge_B_2a FC2
+
+|===
+|===
+
+
+| Fabric_1의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 8,10
+
+|===
+* DrGroup 1: MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC2: *
+
+|===
+
+
+| FC 스위치 | 사이트 | 도메인 전환 | 6505/6510/G610 포트 | 6520 포트 | G620 포트 | 연결 대상... 
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+controller_a_1 포트 0d
+
+
+
+ a| 
+fc_switch_a_2
+ a| 
+A
+ a| 
+6
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_A_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+3
+ a| 
+3
+ a| 
+3
+ a| 
+컨트롤러_B_1 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+7
+ a| 
+7
+ a| 
+7
+ a| 
+컨트롤러_B_2 포트 0b
+
+
+
+ a| 
+fc_switch_B_2
+ a| 
+B
+ a| 
+8
+ a| 
+11
+ a| 
+11
+ a| 
+11
+ a| 
+Bridge_B_2b FC2
+
+|===
+|===
+
+
+| Fabric_2의 영역 | 구성원 포트 
+
+
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 8,11
+
+|===
+
+
+==== 스토리지 영역 요약
+
+|===
+
+
+| 패브릭 | 영역 이름 | 구성원 포트 
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 5,8
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_1_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 5,9
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 5,10
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 5,11
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 7,8
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_1_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 7,9
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC1
+ a| 
+5,2; 5,6; 7,2; 7,6; 7,10
+
+
+
+ a| 
+FC_SWITCH_A_1 및 FC_SWITCH_B_1
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC1
+ a| 
+5,3; 5,7; 7,3; 7,7; 7,11
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 6,8
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_1_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 6,9
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_1_SITE_A_STK_GRP_2_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 6,10
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 6,11
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 8,8
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_1_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 8,9
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC2
+ a| 
+6,2; 6,6; 8,2; 8,6; 8,10
+
+
+
+ a| 
+FC_SWITCH_A_2 및 FC_SWITCH_B_2
+ a| 
+MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC2
+ a| 
+6,3; 6,7; 8,3; 8,7; 8,11
+
+|===
+
+
+=== Brocade FC 스위치에서 조닝 구성
+
+FC-VI 포트 영역과 스토리지 포트 영역을 구분하여 컨트롤러 및 스토리지 트래픽을 별도의 영역에 스위치 포트를 할당해야 합니다.
+
+다음 단계에서는 MetroCluster 구성에 표준 조닝을 사용합니다.
+
+link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC-VI 포트를 위한 조닝"]
+
+link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 위한 영역 지정"]
+
+link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["두 FC 포트를 모두 사용하는 FiberBridge 7500N 브리지에 대한 조닝(Zoning"]
+
+.단계
+. 각 스위치에 FC-VI 영역을 생성합니다.
++
+"QOSH1_FCVI_1", 회원, 회원...
+
++
+이 예에서는 포트 5,0; 5,1; 5,4; 5,5; 7,0; 7,1; 7,4; 7,5:
+
++
+[listing]
+----
+Switch_A_1:admin> zonecreate "QOSH1_FCVI_1", "5,0;5,1;5,4;5,5;7,0;7,1;7,4;7,5"
+----
+. 각 스위치에서 스토리지 영역을 구성합니다.
++
+Fabric의 한 스위치에서 Fabric에 대한 영역 지정을 구성할 수 있습니다. 다음 예에서는 Switch_A_1에서 조닝을 구성합니다.
+
++
+.. 스위치 패브릭의 각 스위치 도메인에 대한 스토리지 존을 생성합니다.
++
+"이름, 구성원, 회원...
+
++
+이 예에서는 두 FC 포트를 모두 사용하는 FiberBridge 7500N에 대한 스토리지 영역이 생성됩니다. 영역에는 포트 5,2, 5,6, 7,2, 7,6, 5,16:
+
++
+[listing]
+----
+Switch_A_1:admin> zonecreate "MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1", "5,2;5,6;7,2;7,6;5,16"
+----
+.. 첫 번째 스위치 패브릭에서 구성을 생성합니다.
++
+"config_name, zone, zone..."을 입력합니다
+
++
+이 예에서는 이름이 CFG_1이고 두 영역 QOSH1_MC1_FAB_1_FCVI 및 MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1인 구성이 생성됩니다
+
++
+[listing]
+----
+Switch_A_1:admin> cfgcreate "CFG_1", "QOSH1_MC1_FAB_1_FCVI; MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1"
+----
+.. 필요한 경우 구성에 영역을 추가합니다.
++
+"cfgadd config_namezone; zone..."
+
+.. 구성 활성화:
++
+'cfgenable config_name'입니다
+
++
+[listing]
+----
+Switch_A_1:admin> cfgenable "CFG_1"
+----
+.. 구성을 저장합니다.
++
+“cfgsave”입니다
+
++
+[listing]
+----
+Switch_A_1:admin> cfgsave
+----
+.. 조닝 구성을 검증합니다.
++
+존-검증
+
++
+[listing]
+----
+Switch_A_1:admin> zone --validate
+Defined configuration:
+cfg: CFG_1 QOSH1_MC1_FAB_1_FCVI ; MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1
+zone: QOSH1_MC1_FAB_1_FCVI
+5,0;5,1;5,4;5,5;7,0;7,1;7,4;7,5
+zone: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1
+5,2;5,6;7,2;7,6;5,16
+Effective configuration:
+cfg: CFG_1
+zone: QOSH1_MC1_FAB_1_FCVI
+5,0
+5,1
+5,4
+5,5
+7,0
+7,1
+7,4
+7,5
+zone: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1
+5,2
+5,6
+7,2
+7,6
+5,16
+------------------------------------
+~ - Invalid configuration
+* - Member does not exist
+# - Invalid usage of broadcast zone
+----
+
+
+
+
+
+
+== Brocade 6510 또는 G620 스위치에서 ISL 암호화 설정
+
+Brocade 6510 또는 G620 스위치의 경우 ISL 연결에서 Brocade 암호화 기능을 선택적으로 사용할 수 있습니다. 암호화 기능을 사용하려면 MetroCluster 구성의 각 스위치에 대해 추가 구성 단계를 수행해야 합니다.
+
+.시작하기 전에
+* Brocade 6510 또는 G620 스위치가 있어야 합니다.
++
+
+NOTE: Brocade G620 스위치에서 ISL 암호화 지원은 ONTAP 9.4 이상에서만 지원됩니다.
+
+* 동일한 Fabric에서 두 스위치를 선택해야 합니다.
+* 대역폭 및 포트 제한을 확인하려면 스위치 및 패브릭 운영 체제 버전에 대한 Brocade 설명서를 검토해야 합니다.
+
+
+이 단계는 동일한 Fabric에 있는 두 스위치에서 수행해야 합니다.
+
+
+
+=== 가상 Fabric을 해제하는 중입니다
+
+ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 스위치에서 가상 패브릭을 모두 비활성화해야 합니다.
+
+.단계
+. 스위치 콘솔에서 다음 명령을 입력하여 가상 패브릭을 비활성화합니다.
++
+'fosconfig -- VF 비활성화'
+
+. 스위치를 재부팅합니다.
+
+
+
+
+=== 페이로드를 설정합니다
+
+가상 패브릭을 비활성화한 후 Fabric의 두 스위치에서 페이로드나 데이터 필드 크기를 설정해야 합니다.
+
+데이터 필드 크기는 2048을 초과할 수 없습니다.
+
+.단계
+. 스위치를 비활성화합니다.
++
+재치비활성화
+
+. 페이로드 구성 및 설정:
++
+'설정'을 클릭합니다
+
+. 다음 스위치 매개변수를 설정합니다.
++
+.. Fabric 파라미터를 다음과 같이 설정합니다. y
+.. 도메인, WWN 기반 영구 PID 등의 다른 매개 변수를 설정합니다.
+.. 데이터 필드 크기를 2048로 설정합니다
+
+
+
+
+
+
+=== 인증 정책 설정
+
+인증 정책과 관련 매개 변수를 설정해야 합니다.
+
+명령은 스위치 콘솔에서 실행해야 합니다.
+
+.단계
+. 인증 암호를 설정합니다.
++
+.. 설치 프로세스를 시작합니다.
++
+세크비크셋
+
++
+이 명령은 다음 단계에서 사용자가 응답하도록 일련의 프롬프트를 시작합니다.
+
+.. "피어 WWN, 도메인 또는 스위치 이름 입력" 매개 변수에 대해 Fabric에 있는 다른 스위치의 WWN(World Wide Name)을 제공합니다.
+.. "피어 암호 입력" 매개 변수의 피어 암호를 입력합니다.
+.. "Enter local secret" 매개 변수의 로컬 암호를 입력합니다.
+.. "완료 여부" 파라미터에 Y를 입력합니다.
++
+--
+다음은 인증 암호를 설정하는 예입니다.
+
+[listing]
+----
+brcd> secAuthSecret --set
+
+This command is used to set up secret keys for the DH-CHAP authentication.
+The minimum length of a secret key is 8 characters and maximum 40
+characters. Setting up secret keys does not initiate DH-CHAP
+authentication. If switch is configured to do DH-CHAP, it is performed
+whenever a port or a switch is enabled.
+
+Warning: Please use a secure channel for setting secrets. Using
+an insecure channel is not safe and may compromise secrets.
+
+Following inputs should be specified for each entry.
+
+1. WWN for which secret is being set up.
+2. Peer secret: The secret of the peer that authenticates to peer.
+3. Local secret: The local secret that authenticates peer.
+
+Press enter to start setting up secrets > <cr>
+
+Enter peer WWN, Domain, or switch name (Leave blank when done): 10:00:00:05:33:76:2e:99
+Enter peer secret: <hidden>
+Re-enter peer secret: <hidden>
+Enter local secret: <hidden>
+Re-enter local secret: <hidden>
+
+Enter peer WWN, Domain, or switch name (Leave blank when done):
+Are you done? (yes, y, no, n): [no] yes
+Saving data to key store... Done.
+----
+--
+
+
+. 인증 그룹을 4로 설정합니다.
++
+authutil - -set -g 4
+
+. 인증 유형을 "dhchap"로 설정합니다.
++
+"진정한 - 세트 - A 다치"
+
++
+다음과 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+Authentication is set to dhchap.
+----
+. 스위치의 인증 정책을 켜짐으로 설정합니다.
++
+authutil --policy-sw on
+
++
+다음과 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+Warning: Activating the authentication policy requires either DH-CHAP secrets or PKI certificates depending on the protocol selected. Otherwise, ISLs will be segmented during next E-port bring-up.
+ARE YOU SURE  (yes, y, no, n): [no] yes
+Auth Policy is set to ON
+----
+
+
+
+
+=== Brocade 스위치에서 ISL 암호화 설정
+
+인증 정책과 인증 암호를 설정한 후 포트에서 ISL 암호화를 사용하도록 설정해야 인증 정책이 적용됩니다.
+
+.이 작업에 대해
+* 이러한 단계는 한 번에 하나의 스위치 패브릭에서 수행해야 합니다.
+* 명령은 스위치 콘솔에서 실행해야 합니다.
+
+
+.단계
+. 모든 ISL 포트에서 암호화 설정:
++
+"portCfgEncrypt -- enable port_number"를 참조하십시오
+
++
+다음 예에서는 포트 8 및 12에서 암호화가 활성화됩니다.
+
++
+포트크레암호화 -- 활성화 8
+
++
+포트크레암호화 -- 활성화 12
+
+. 스위치를 활성화합니다.
++
+재치히다
+
+. ISL이 작동 중인지 확인합니다.
++
+'실쇼'
+
+. 암호화가 활성화되어 있는지 확인합니다.
++
+포트컴쇼
+
++
+다음 예에서는 포트 8 및 12에서 암호화가 활성화되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+
+User Encryption
+Port  configured     Active
+----   ----------    ------
+ 8      yes          yes
+ 9      No           No
+ 10     No           No
+ 11     No           No
+ 12     yes          yes
+----
+
+
+MetroCluster 구성에서 다른 Fabric의 스위치에 대한 모든 단계를 수행합니다.

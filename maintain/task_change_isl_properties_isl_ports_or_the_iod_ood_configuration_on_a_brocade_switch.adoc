@@ -1,0 +1,338 @@
+---
+permalink: maintain/task_change_isl_properties_isl_ports_or_the_iod_ood_configuration_on_a_brocade_switch.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, change, isl, properties, isl, ports, iod, configuration, brocade, switch 
+summary: 추가 또는 더 빠른 컨트롤러 또는 스위치와 같은 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다. 
+---
+= Brocade 스위치에서 ISL 속성, ISL 포트 또는 IOD/ood 구성을 변경합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+추가 또는 더 빠른 컨트롤러 또는 스위치와 같은 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다.
+
+시스템이 올바르게 구성되어 있고 모든 패브릭 스위치가 작동하고 오류가 없는지 확인합니다.
+
+ISL 링크의 장비가 변경되고 새 링크 구성이 현재 구성 -- 트렁킹 및 주문된 전달을 더 이상 지원하지 않는 경우, 올바른 라우팅 정책(IOD(In-Order-Delivery) 또는 주문되지 않은 전달(Good))을 위해 패브릭을 재구성해야 합니다.
+
+
+NOTE: ONTAP 소프트웨어에서 Good을 변경하려면 다음 단계를 수행하십시오. link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#configuring-in-order-delivery-or-out-of-order-delivery-of-frames-on-ontap-software#configuring-in-order-delivery-or-out-of-order-delivery-of-frames-on-ontap-software["ONTAP 소프트웨어에서 프레임의 주문 전달 또는 주문 후 전달 구성"]
+
+.단계
+. FCVI 및 스토리지 HBA 포트를 해제합니다.
++
+"portcfgpersistentdisable_port number _"
+
++
+기본적으로 FCVI 및 스토리지 HBA에 처음 8개 포트(포트 0 - 7)가 사용됩니다. 스위치를 재부팅할 때 포트가 비활성화된 상태로 유지되도록 포트를 영구적으로 비활성화해야 합니다.
+
++
+다음 예에서는 두 스위치에서 ISL 포트 0 - 7 이 비활성화된 상태를 보여 줍니다.
+
++
+[listing]
+----
+
+    Switch_A_1:admin> portcfgpersistentdisable 0-7
+    Switch_B_1:admin> portcfgpersistentdisable 0-7
+----
+. 필요에 따라 ISL 포트를 변경합니다.
++
+[cols="30,70"]
+|===
+
+
+| 옵션을 선택합니다 | 단계 
+
+
+ a| 
+ISL 포트의 속도를 변경하려면...
+ a| 
+Fabric의 두 스위치에서 "portcfgspeed_port number port speed_" 명령을 사용합니다.
+
+다음 예에서는 ISL 포트 속도를 40Gbps에서 16Gbps로 변경합니다.
+
+"BROCADE_SWITCH_A_1:admin>portcfgspeed 40 16"
+
+'witchshow' 명령을 사용하여 속도가 변경되었는지 확인할 수 있습니다.
+
+'Brocade_switch_a_1:admin>switchshow'
+
+다음과 같은 출력이 표시됩니다.
+
+....
+  . . .
+   40 40  062800  id 16G  No_Sync FC Disabled
+  . . .
+....
+
+
+ a| 
+ISL 포트의 거리를 변경하려면...
+ a| 
+Fabric의 두 스위치에서 "portcfglongdistance_port number port distance_" 명령을 사용합니다.
+
+
+
+ a| 
+ISL을 제거하려면...
+ a| 
+링크 \(케이블\)를 분리하십시오.
+
+
+
+ a| 
+ISL 추가...
+ a| 
+ISL 포트로 추가할 포트에 SFP를 삽입합니다. 이러한 포트가 추가하려는 스위치의 * 패브릭 연결 MetroCluster 설치 및 구성 * 에 나열되어 있는지 확인하고 이 가이드에 따라 케이블을 연결하십시오.
+
+
+
+ a| 
+ISL 재배치...
+ a| 
+ISL을 재배치하는 작업은 ISL을 제거한 다음 추가하는 것과 같습니다. 먼저, 링크를 분리하여 ISL을 제거한 다음 ISL 포트로 추가할 포트에 SFP를 삽입합니다.
+
+|===
+. 주문 초과 배송(Good) 또는 주문 배송(IOD)을 위해 재구성합니다.
++
+
+NOTE: 라우팅 정책이 동일한 경우 재구성할 필요가 없으며 이 단계를 무시할 수 있습니다. ONTAP 구성은 패브릭 구성과 일치해야 합니다. 패브릭이 유드에 대해 구성된 경우 ONTAP도 유드에 맞게 구성해야 합니다. IOD에도 동일하게 적용됩니다.
+
++
+이 단계는 다음 시나리오에서 실행해야 합니다.
+
++
+** 변경 전에 둘 이상의 ISL이 트렁크를 형성했지만 변경 후에는 트렁킹이 더 이상 지원되지 않습니다. 이 경우 유드에 대한 패브릭을 구성해야 합니다.
+** 변경 전에 ISL이 하나 있고 변경 후 여러 ISL이 있습니다.
+** 여러 ISL이 트렁크를 구성하는 경우 IOD에 대한 패브릭을 구성합니다. 여러 ISL * 이 트렁크를 형성할 수 없는 경우 유드에 대한 패브릭을 구성합니다.
+** 다음 예제와 같이 'witchcfgpersistentdisable' 명령을 사용하여 스위치를 지속적으로 비활성화합니다.
++
+[listing]
+----
+
+Switch_A_1:admin> switchcfgpersistentdisable
+Switch_B_1:admin> switchcfgpersistentdisable
+----
++
+... 다음 표와 같이 각 ISL의 "portcfgtruntrunkport_port number_"에 대한 트렁킹 모드를 구성합니다.
++
+[cols="30,70"]
+|===
+
+
+| 시나리오 | 단계 
+
+
+ a| 
+트렁킹용 ISL 구성\(IOD\)
+ a| 
+"portcfgtrunkport_port number_"를 1로 설정합니다.
+
+....
+FC_switch_A_1:admin> portcfgtrunkport 20 1
+FC_switch_A_1:admin> portcfgtrunkport 21 1
+FC_switch_B_1:admin> portcfgtrunkport 20 1
+FC_switch_B_1:admin> portcfgtrunkport 21 1
+....
+
+
+ a| 
+트렁킹에 대한 ISL 구성\(ood\)
+ a| 
+"portcfgtrunkport_port number_"를 0으로 설정합니다.
+
+....
+FC_switch_A_1:admin> portcfgtrunkport 20 0
+FC_switch_A_1:admin> portcfgtrunkport 21 0
+FC_switch_B_1:admin> portcfgtrunkport 20 0
+FC_switch_B_1:admin> portcfgtrunkport 21 0
+....
+|===
+... 필요에 따라 IOD 또는 Good에 대한 패브릭을 구성합니다.
++
+[cols="30,70"]
+|===
+
+
+| 시나리오 | 단계 
+
+
+ a| 
+IOD에 대한 패브릭을 구성합니다
+ a| 
+다음 예에서와 같이 'iodset', 'aptlistolicy', 'lsreset' 명령을 사용하여 IOD, APT, DLS의 세 가지 설정을 설정합니다.
+
+....
+Switch_A_1:admin> iodset
+Switch_A_1:admin> aptpolicy 1
+Policy updated successfully.
+Switch_A_1:admin> dlsreset
+FC_switch_A_1:admin>portcfgtrunkport 40 1
+FC_switch_A_1:admin>portcfgtrunkport 41 1
+
+Switch_B_1:admin> iodset
+Switch_B_1:admin> aptpolicy 1
+Policy updated successfully.
+Switch_B_1:admin> dlsreset
+FC_switch_B_1:admin>portcfgtrunkport 20 1
+FC_switch_B_1:admin>portcfgtrunkport 21 1
+....
+
+
+ a| 
+유드에 맞게 패브릭을 구성합니다
+ a| 
+다음 예와 같이 'iodreset', 'aptpolicy__policy_', 'lsset' 명령을 사용하여 IOD, APT 및 DLS의 세 가지 설정을 설정합니다.
+
+....
+Switch_A_1:admin> iodreset
+Switch_A_1:admin> aptpolicy 3
+Policy updated successfully.
+Switch_A_1:admin> dlsset
+FC_switch_A_1:admin> portcfgtrunkport 40 0
+FC_switch_A_1:admin> portcfgtrunkport 41 0
+
+Switch_B_1:admin> iodreset
+Switch_B_1:admin> aptpolicy 3
+Policy updated successfully.
+Switch_B_1:admin> dlsset
+FC_switch_B_1:admin> portcfgtrunkport 40 0
+FC_switch_B_1:admin> portcfgtrunkport 41 0
+....
+|===
+... 스위치를 영구적으로 활성화합니다.
++
+'위치cfgpersistentenable'
+
++
+[listing]
+----
+switch_A_1:admin>switchcfgpersistentenable
+switch_B_1:admin>switchcfgpersistentenable
+----
++
+이 명령어가 존재하지 않는 경우 다음 예제에서와 같이 'witchenable' 명령어를 사용한다.
+
++
+[listing]
+----
+brocade_switch_A_1:admin>
+switchenable
+----
+... 다음 예에 표시된 것처럼 'iodshow', 'aptpolicy' 및 'dlsshow' 명령을 사용하여 ood 설정을 확인합니다.
++
+[listing]
+----
+switch_A_1:admin> iodshow
+IOD is not set
+
+switch_A_1:admin> aptpolicy
+
+       Current Policy: 3 0(ap)
+
+       3 0(ap) : Default Policy
+       1: Port Based Routing Policy
+       3: Exchange Based Routing Policy
+       0: AP Shared Link Policy
+       1: AP Dedicated Link Policy
+       command aptpolicy completed
+
+switch_A_1:admin> dlsshow
+DLS is set by default with current routing policy
+----
++
+
+NOTE: 두 스위치 모두에서 이러한 명령을 실행해야 합니다.
+
+... 다음 예와 같이 'iodshow', 'aptpolicy' 및 'dlsshow' 명령을 사용하여 IOD 설정을 확인합니다.
++
+[listing]
+----
+switch_A_1:admin> iodshow
+IOD is set
+
+switch_A_1:admin> aptpolicy
+       Current Policy: 1 0(ap)
+
+       3 0(ap) : Default Policy
+       1: Port Based Routing Policy
+       3: Exchange Based Routing Policy
+       0: AP Shared Link Policy
+       1: AP Dedicated Link Policy
+       command aptpolicy completed
+
+switch_A_1:admin> dlsshow
+DLS is not set
+----
++
+
+NOTE: 두 스위치 모두에서 이러한 명령을 실행해야 합니다.
+
+
+
+
+
+. islshow와 trunkshow 명령을 사용하여 ISL이 온라인 상태이고 트렁킹된 상태(연결 장비가 트렁킹을 지원하는 경우)인지 확인합니다.
++
+
+NOTE: FEC가 활성화된 경우 트렁크 그룹의 마지막 온라인 포트의 디스큐 값은 케이블이 모두 동일한 길이이지만 최대 36의 차이를 나타낼 수 있습니다.
+
++
+[cols="20,80"]
+|===
+
+
+| ISL이 트렁킹됩니까? | 다음과 같은 시스템 출력이 표시됩니다. 
+
+
+ a| 
+예
+ a| 
+ISL이 트렁킹된 경우 'islshow' 명령의 출력에 단일 ISL만 표시됩니다. 포트 40 또는 41은 트렁크 마스터에 따라 나타날 수 있습니다. 포트 40과 41의 물리적 ISL을 모두 나열한 ID가 1인 트렁크의 경우 트렁크쇼의 출력이다. 다음 예에서는 포트 40과 41이 ISL로 사용하도록 구성되어 있습니다.
+
+[listing]
+----
+switch_A_1:admin> islshow 1:
+40-> 40 10:00:00:05:33:88:9c:68 2 switch_B_1 sp: 16.000G bw: 32.000G TRUNK CR_RECOV FEC
+switch_A_1:admin> trunkshow
+1: 40-> 40 10:00:00:05:33:88:9c:68 2 deskew 51 MASTER
+41-> 41 10:00:00:05:33:88:9c:68 2 deskew 15
+----
+
+
+ a| 
+아니요
+ a| 
+ISL이 트렁킹되지 않으면 islshow와 trunkshow의 출력에는 두 ISL이 별도로 나타납니다. 두 명령 모두 ID가 "1"과 "2"인 ISL을 나열합니다. 다음 예에서는 포트 ""40" 및 ""41""이 ISL로 사용하도록 구성되어 있습니다.
+
+[listing]
+----
+switch_A_1:admin> islshow
+1: 40-> 40 10:00:00:05:33:88:9c:68 2 switch_B_1 sp: 16.000G bw: 16.000G TRUNK CR_RECOV FEC
+2: 41-> 41 10:00:00:05:33:88:9c:68 2 switch_B_1 sp: 16.000G bw: 16.000G TRUNK CR_RECOV FEC
+switch_A_1:admin> trunkshow
+1: 40-> 40 10:00:00:05:33:88:9c:68 2 deskew 51 MASTER
+2: 41-> 41 10:00:00:05:33:88:9c:68 2 deskew 48 MASTER
+----
+|===
+. 두 스위치에서 'pinfab' 명령을 실행하여 ISL이 정상 상태인지 확인합니다.
++
+[listing]
+----
+switch_A_1:admin> spinfab -ports 0/40 - 0/41
+----
+. 1단계에서 비활성화된 포트를 활성화합니다.
++
+포트번호
+
++
+다음 예에서는 ISL 포트 ""0""에서 ""7""까지 활성화된 상태를 보여줍니다.
+
++
+[listing]
+----
+brocade_switch_A_1:admin> portenable 0-7
+----
+

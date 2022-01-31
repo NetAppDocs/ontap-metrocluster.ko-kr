@@ -1,0 +1,25 @@
+---
+permalink: install-fc/concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, local, ha, pairs, configuration, illustration 
+summary: 8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1개 또는 2개의 HA 쌍으로 구성된 스토리지 컨트롤러로 구성됩니다. 따라서 하나의 스토리지 컨트롤러에 장애가 발생할 경우 로컬 HA 파트너가 이를 대신 처리할 수 있도록 로컬 이중화가 가능합니다. 이러한 장애는 MetroCluster 전환 작업 없이 처리할 수 있습니다. 
+---
+= MetroCluster 구성의 로컬 HA 쌍 그림
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1개 또는 2개의 HA 쌍으로 구성된 스토리지 컨트롤러로 구성됩니다. 따라서 하나의 스토리지 컨트롤러에 장애가 발생할 경우 로컬 HA 파트너가 이를 대신 처리할 수 있도록 로컬 이중화가 가능합니다. 이러한 장애는 MetroCluster 전환 작업 없이 처리할 수 있습니다.
+
+로컬 HA 페일오버 및 반환 작업은 MetroCluster가 아닌 구성과 동일한 방식으로 스토리지 페일오버 명령을 통해 수행됩니다.
+
+image::../media/mcc_hw_architecture_local_ha.gif[MCC HW 아키텍처 로컬 ha]
+
+link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 브리지의 그림"]
+
+link:concept_redundant_fc_switch_fabrics.html["이중 FC 스위치 패브릭"]
+
+link:concept_cluster_peering_network_mcc.html["클러스터 피어링 네트워크의 그림"]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"^]

@@ -1,0 +1,31 @@
+---
+permalink: maintain/task_hot_add_a_sas_disk_shelf_in_a_direct_attached_mcc_configuration_us_sas_optical_cables.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, hot, add, sas, disk, shelf, direct, attached, fc, configuration, optical, cables 
+summary: SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성의 기존 SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가할 수도 있고, 컨트롤러의 SAS HBA 또는 온보드 SAS 포트에 대한 새로운 스택으로 추가할 수도 있습니다. 
+---
+= SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성에서 SAS 디스크 쉘프 핫 추가
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성의 기존 SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가할 수도 있고, 컨트롤러의 SAS HBA 또는 온보드 SAS 포트에 대한 새로운 스택으로 추가할 수도 있습니다.
+
+* 이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소요됩니다.
+* FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+* IOM6 쉘프 스택에 IOM12 쉘프를 추가하려면 을 참조하십시오 link:https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 쉘프 스택에 IOM12 쉘프 핫 추가"].
+
+
+이 작업은 스토리지가 SAS 케이블로 스토리지 컨트롤러에 직접 연결되는 MetroCluster FC 구성에 적용됩니다. FC-to-SAS 브릿지 또는 FC 스위치 패브릭을 사용하는 MetroCluster FC 구성에는 적용되지 않습니다.
+
+.단계
+. 디스크 쉘프 모델의 _설치 가이드_에서 SAS 디스크 쉘프 핫 추가 지침을 따라 디스크 쉘프를 핫 애드하는 다음 작업을 수행하십시오.
++
+.. 핫 애드용 디스크 쉘프를 설치합니다.
+.. 전원 공급 장치를 켜고 핫 애드인의 쉘프 ID를 설정합니다.
+.. 핫 애드 디스크 쉘프에 케이블을 연결합니다.
+.. SAS 연결을 확인합니다.
+
+
+

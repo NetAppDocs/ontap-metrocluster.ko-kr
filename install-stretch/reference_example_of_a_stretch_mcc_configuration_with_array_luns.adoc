@@ -1,0 +1,28 @@
+---
+permalink: install-stretch/reference_example_of_a_stretch_mcc_configuration_with_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, example, stretch, configuration, array, luns, e-series, FAS9000 
+summary: 어레이 LUN이 있는 확장 MetroCluster 구성에서는 컨트롤러 간 직접 연결을 위해 FC-VI 포트에 케이블을 연결해야 합니다. 또한 각 컨트롤러 HBA 포트에 케이블을 연결하여 해당 FC 스위치의 포트를 전환해야 합니다. 어레이 LUN에 대한 케이블 연결은 직접 연결할 수 있는 E-Series 어레이 LUN을 제외하고 패브릭 연결 MetroCluster의 케이블 연결과 동일합니다. 
+---
+= 스토리지 LUN이 있는 확장 MetroCluster 구성의 예
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+어레이 LUN이 있는 확장 MetroCluster 구성에서는 컨트롤러 간 직접 연결을 위해 FC-VI 포트에 케이블을 연결해야 합니다. 또한 각 컨트롤러 HBA 포트에 케이블을 연결하여 해당 FC 스위치의 포트를 전환해야 합니다. 어레이 LUN에 대한 케이블 연결은 직접 연결할 수 있는 E-Series 어레이 LUN을 제외하고 패브릭 연결 MetroCluster의 케이블 연결과 동일합니다.
+
+다음 그림에서는 확장 MetroCluster 구성에서 컨트롤러 A와 B에 케이블로 연결된 FC-VI 포트를 보여 줍니다.
+
+image::../media/fc_vi_connections_campus.gif[FC vi 연결 캠퍼스]
+
+
+NOTE: FAS9000 스토리지 시스템 컨트롤러 모듈은 각각 4개의 FC-VI 포트를 사용합니다.
+
+E-Series 어레이 LUN을 사용하는 구성의 경우 E-Series LUN을 직접 연결할 수 있습니다.
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/Direct_Attach_support_for_Stretch_MetroCluster_Configuration_with_NetApp_E-Series_array["NetApp E-Series 어레이를 통한 Stretch MetroCluster 구성에 대한 직접 연결 지원"]
+
+FC-VI 포트를 연결하는 경우를 제외하고, 이 절차의 나머지 부분에서는 E-Series 어레이 LUN을 사용하지 않는 어레이 LUN을 사용하여 MetroCluster 구성을 설정하는 것입니다. 따라서 패브릭 연결 구성에서 어레이 LUN을 사용하는 것과 동일한 FC 스위치가 필요합니다.
+
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]

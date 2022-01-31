@@ -1,0 +1,157 @@
+---
+permalink: disaster-recovery/task_cfg_bridges_mcfc.html 
+sidebar: sidebar 
+keywords: fc, sas, bridge, configure, metrocluster, configuration 
+summary: FC-to-SAS 브리지를 교체한 경우 MetroCluster 구성을 복원할 때 구성해야 합니다. 
+---
+= FC-to-SAS 브리지 구성(MetroCluster FC 구성만 해당)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FC-to-SAS 브리지를 교체한 경우 MetroCluster 구성을 복원할 때 구성해야 합니다. 이 절차는 FC-to-SAS 브리지의 초기 구성과 동일합니다.
+
+.단계
+. FC-to-SAS 브리지의 전원을 켭니다.
+. 'Set IPAddress port ipaddress' 명령어를 이용하여 Ethernet 포트의 IP 주소를 설정한다.
++
+** 포트는 MP1 또는 MP2 중 하나일 수 있습니다.
+** ipaddress는 xxx.xxx.xxx.xxx 형식의 IP 주소일 수 있습니다.
++
+다음 예제에서 IP 주소는 이더넷 포트 1의 10.10.10.55입니다.
+
++
+[listing]
+----
+
+Ready.
+set IPAddress MP1 10.10.10.55
+
+Ready. *
+----
+
+
+. 'Set IPSubnetMask port mask' 명령어를 사용해 이더넷 포트의 IP 서브넷 마스크를 설정한다.
++
+** 포트는 MP1 또는 MP2 중 선택할 수 있습니다.
+** mask는 xxx.xxx.xxx.xxx 형식의 서브넷 마스크일 수 있습니다.
++
+다음 예에서는 이더넷 포트 1에서 IP 서브넷 마스크가 255.255.255.0입니다.
+
++
+[listing]
+----
+
+Ready.
+set IPSubnetMask MP1 255.255.255.0
+
+Ready. *
+----
+
+
+. 'Eet EthernetSpeed port speed' 명령어를 이용하여 Ethernet 포트의 속도를 설정한다.
++
+** 포트는 MP1 또는 MP2 중 선택할 수 있습니다.
+** '속도'는 '100', '1000' 또는 '자동'이 될 수 있습니다.
++
+다음 예에서는 이더넷 포트 1에서 이더넷 속도를 1000으로 설정합니다.
+
++
+[listing]
+----
+
+Ready.
+set EthernetSpeed MP1 1000
+
+Ready. *
+----
+
+
+. 'aveConfiguration' 명령어를 이용하여 설정을 저장하고, 메시지가 나타나면 브리지를 다시 시작한다.
++
+이더넷 포트를 구성한 후 구성을 저장하면 텔넷을 사용하여 브리지 구성을 진행할 수 있으며 FTP를 사용하여 브리지에 액세스하여 펌웨어 업데이트를 수행할 수 있습니다.
+
++
+다음 예에서는 'aveConfiguration' 명령과 브리지를 다시 시작하라는 메시지를 보여 줍니다.
+
++
+[listing]
+----
+
+Ready.
+SaveConfiguration
+  Restart is necessary....
+  Do you wish to restart (y/n) ?
+Confirm with 'y'. The bridge will save and restart with the new settings.
+----
+. FC-to-SAS 브리지가 재부팅된 후 다시 로그인합니다.
+. 'show fcdatarate port speed' 명령을 사용하여 FC 포트의 속도를 설정합니다.
++
+** 포트란 1이나 2가 될 수 있습니다.
+** '속도'는 모델 브리지에 따라 2Gb, 4Gb, 8Gb 또는 16Gb 중 선택할 수 있습니다.
++
+다음 예에서는 포트 FC1 속도가 "8Gb"로 설정되어 있습니다.
+
++
+[listing]
+----
+
+Ready.
+set fcdatarate 1 8Gb
+
+Ready. *
+----
+
+
+. 'Set FCConnMode port mode' 명령어를 사용하여 FC 포트의 토폴로지를 설정한다.
++
+** 포트란 1이나 2가 될 수 있습니다.
+** '모드'는 PTP, '루프', 'PTP 루프' 또는 '자동'이 될 수 있습니다.
++
+다음 예에서는 포트 FC1 토폴로지가 "PTP"로 설정되어 있습니다.
+
++
+[listing]
+----
+
+Ready.
+set FCConnMode 1 ptp
+
+Ready. *
+----
+
+
+. 'aveConfiguration' 명령어를 이용하여 설정을 저장하고, 메시지가 나타나면 브리지를 다시 시작한다.
++
+다음 예에서는 'aveConfiguration' 명령과 브리지를 다시 시작하라는 메시지를 보여 줍니다.
+
++
+[listing]
+----
+
+ Ready.
+ SaveConfiguration
+    Restart is necessary....
+    Do you wish to restart (y/n) ?
+ Confirm with 'y'. The bridge will save and restart with the new settings.
+----
+. FC-to-SAS 브리지가 재부팅된 후 다시 로그인합니다.
+. FC-to-SAS 브리지에서 펌웨어 1.60 이상이 실행 중인 경우 SNMP를 사용하도록 설정합니다.
++
+[listing]
+----
+
+Ready.
+set snmp enabled
+
+Ready. *
+saveconfiguration
+
+Restart is necessary....
+Do you wish to restart (y/n) ?
+
+Verify with 'y' to restart the FibreBridge.
+----
+. FC-to-SAS 브리지의 전원을 끕니다.
+

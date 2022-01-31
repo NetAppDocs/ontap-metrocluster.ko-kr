@@ -1,0 +1,274 @@
+---
+permalink: transition/task_move_an_fc_san_workload_from_mcc_fc_to_mcc_ip_nodes.html 
+sidebar: sidebar 
+keywords: non-disruptively, transition, metrocluster, fc, ip, node, san, host, moving, move 
+summary: MetroCluster FC에서 IP 노드로 무중단 전환하는 경우 FC SAN 호스트 개체를 MetroCluster FC에서 IP 노드로 중단 없이 이동해야 합니다. 
+---
+= FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster FC에서 IP 노드로 무중단 전환하는 경우 FC SAN 호스트 개체를 MetroCluster FC에서 IP 노드로 중단 없이 이동해야 합니다.
+
+. MetroCluster IP 노드에서 새 FC 인터페이스(LIF) 설정:
++
+.. 필요한 경우 MetroCluster IP 노드에서 FC 타겟 퍼스낼리티에 대한 클라이언트 연결에 사용할 FC 포트를 수정합니다.
++
+노드를 재부팅해야 할 수 있습니다.
+
+.. 모든 SAN 가상 서버에 대해 IP 노드에서 FC LIFS/인터페이스를 생성합니다. 선택적으로 새로 생성한 FC LIF의 WWPN이 FC SAN 스위치에 로그인되는지 확인합니다
+
+
+. MetroCluster IP 노드에서 새로 추가된 FC LIF에 대한 SAN 조닝 구성을 업데이트합니다.
++
+데이터를 활성 상태로 FC SAN 클라이언트에 제공하는 LUN이 포함된 볼륨을 쉽게 이동할 수 있도록 기존 FC 스위치 영역을 업데이트하여 FC SAN 클라이언트가 MetroCluster IP 노드의 LUN에 액세스할 수 있도록 합니다.
+
++
+.. FC SAN 스위치(Cisco 또는 Brocade)에서 새로 추가된 FC SAN LIF의 WWPN을 영역에 추가합니다.
+.. 조닝 변경 사항을 업데이트, 저장 및 커밋합니다.
+.. 클라이언트에서 MetroCluster IP 노드의 새 SAN LIF에 대한 FC Initiator 로그인을 'sanlun lun show -p'로 확인합니다
++
+이때 클라이언트는 MetroCluster FC 및 MetroCluster IP 노드 모두에서 FC 인터페이스를 보고 로그인해야 합니다. LUN 및 볼륨은 여전히 MetroCluster FC 노드에서 물리적으로 호스팅됩니다.
+
++
+LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 FC 노드를 통한 경로만 표시합니다. sanlun lun show -p 및 multipath -ll -d 명령의 출력에서 확인할 수 있습니다.
+
++
+[listing]
+----
+[root@stemgr]# sanlun lun show -p
+ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
+ LUN: 4
+ LUN Size: 2g
+ Product: cDOT
+ Host Device: 3600a098038304646513f4f674e52774b
+ Multipath Policy: service-time 0
+ Multipath Provider: Native
+--------- ---------- ------- ------------ ----------------------------------------------
+host vserver
+path path /dev/ host vserver
+state type node adapter LIF
+--------- ---------- ------- ------------ ----------------------------------------------
+up primary sdk host3 iscsi_lf__n2_p1_
+up secondary sdh host2 iscsi_lf__n1_p1_
+
+[root@stemgr]# multipath -ll -d
+3600a098038304646513f4f674e52774b dm-5 NETAPP ,LUN C-Mode
+size=2.0G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_handle' hwhandler='1 alua' wp=rw
+|-+- policy='service-time 0' prio=50 status=active
+| `- 3:0:0:4 sdk 8:160 active ready running
+`-+- policy='service-time 0' prio=10 status=enabled
+ `- 2:0:0:4 sdh 8:112 active ready running
+----
+
+
+. 보고 노드를 수정하여 MetroCluster IP 노드를 추가합니다
++
+.. SVM에서 LUN에 대한 보고 노드를 나열합니다. 'lun mapping show -vserver svm -name -fields reporting -nodes-OSType linux'
++
+표시된 보고 노드는 LUN이 FC 노드 A_1 및 A_2에 물리적으로 있기 때문에 로컬 노드입니다.
+
++
+[listing]
+----
+cluster_A::> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+
+vserver  path                        igroup         reporting-nodes
+-------  --------------------------- ------------   -------------------------------------
+vsa_1    /vol/vsa_1_vol1/lun_linux_2 igroup_linux   A_1,A_2
+vsa_1    /vol/vsa_1_vol1/lun_linux_3 igroup_linux   A_1,A_2
+vsa_1    /vol/vsa_1_vol2/lun_linux_4 igroup_linux   A_1,A_2
+vsa_1    /vol/vsa_1_vol3/lun_linux_7 igroup_linux   A_1,A_2
+vsa_1    /vol/vsa_1_vol4/lun_linux_8 igroup_linux   A_1,A_2
+vsa_1    /vol/vsa_1_vol4/lun_linux_9 igroup_linux   A_1,A_2
+vsa_1    /vol/vsa_1_vol6/lun_linux_12 igroup_linux  A_1,A_2
+vsa_1    /vol/vsa_1_vol6/lun_linux_13 igroup_linux  A_1,A_2
+vsa_1    /vol/vsa_1_vol7/lun_linux_14 igroup_linux  A_1,A_2
+vsa_1    /vol/vsa_1_vol8/lun_linux_17 igroup_linux  A_1,A_2
+vsa_1    /vol/vsa_1_vol9/lun_linux_18 igroup_linux  A_1,A_2
+vsa_1    /vol/vsa_1_vol9/lun_linux_19 igroup_linux  A_1,A_2
+12 entries were displayed.
+----
+.. MetroCluster IP 노드를 포함할 보고 노드를 추가합니다.
++
+[listing]
+----
+cluster_A::> lun mapping add-reporting-nodes -vserver vsa_1 -path /vol/vsa_1_vol*/lun_linux_* -nodes B_1,B_2 -igroup igroup_linux
+
+12 entries were acted on.
+----
+.. 보고 노드를 나열하고 새 노드가 있는지 확인합니다.
++
+[listing]
+----
+cluster_A::> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+
+vserver path                          igroup          reporting-nodes
+------- ---------------------------   ------------    -------------------------------------------------------------------------------
+
+vsa_1   /vol/vsa_1_vol1/lun_linux_2   igroup_linux    A_1,A_2,B_1,B_2
+vsa_1   /vol/vsa_1_vol1/lun_linux_3   igroup_linux    A_1,A_2,B_1,B_2
+vsa_1   /vol/vsa_1_vol2/lun_linux_4   igroup_linux    A_1,A_2,B_1,B_2
+vsa_1   /vol/vsa_1_vol3/lun_linux_7   igroup_linux    A_1,A_2,B_1,B_2
+...
+
+12 entries were displayed.
+----
+.. 호스트에서 SCSI 버스를 재검색하여 새로 추가된 경로('/usr/bin/rescan-scsi-bus.sh -a')를 검색합니다
++
+[listing]
+----
+[root@stemgr]# /usr/bin/rescan-scsi-bus.sh -a
+Scanning SCSI subsystem for new devices
+Scanning host 0 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 1 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 2 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+ Scanning for device 2 0 0 0 ...
+.
+.
+.
+OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
+ Vendor: NETAPP Model: LUN C-Mode Rev: 9800
+ Type: Direct-Access ANSI SCSI revision: 05
+0 new or changed device(s) found.
+0 remapped or resized device(s) found.
+0 device(s) removed.
+----
+.. 새로 추가된 경로 's anlun lun show -p'를 표시합니다
++
+각 LUN에는 4개의 경로가 있습니다.
+
++
+[listing]
+----
+[root@stemgr]# sanlun lun show -p
+ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
+ LUN: 4
+ LUN Size: 2g
+ Product: cDOT
+ Host Device: 3600a098038304646513f4f674e52774b
+ Multipath Policy: service-time 0
+ Multipath Provider: Native
+--------- ---------- ------- ------------ ----------------------------------------------
+host vserver
+path path /dev/ host vserver
+state type node adapter LIF
+--------- ---------- ------- ------------ ----------------------------------------------
+up primary sdk host3 iscsi_lf__n2_p1_
+up secondary sdh host2 iscsi_lf__n1_p1_
+up secondary sdag host4 iscsi_lf__n4_p1_
+up secondary sdah host5 iscsi_lf__n3_p1_
+----
+.. 컨트롤러에서 LUN이 포함된 볼륨을 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다.
++
+[listing]
+----
+cluster_A::> vol move start -vserver vsa_1 -volume vsa_1_vol1 -destination-aggregate A_1_htp_005_aggr1
+[Job 1877] Job is queued: Move "vsa_1_vol1" in Vserver "vsa_1" to aggregate "A_1_htp_005_aggr1". Use the "volume move show -vserver vsa_1 -volume vsa_1_vol1"
+command to view the status of this operation.
+cluster_A::> volume move show
+Vserver    Volume    State    Move Phase   Percent-Complete Time-To-Complete
+--------- ---------- -------- ----------   ---------------- ----------------
+vsa_1     vsa_1_vol1 healthy  initializing
+ - -
+----
+.. FC SAN 클라이언트에서 'sanlun lun show -p'라는 LUN 정보를 표시합니다
++
+LUN이 현재 상주하는 MetroCluster IP 노드의 FC 인터페이스가 기본 경로로 업데이트됩니다. 볼륨 이동 후 기본 경로가 업데이트되지 않으면 /usr/bin/rescan-scsi-bus.sh -a 를 실행하거나 다중 경로 재검색 작업이 완료될 때까지 기다립니다.
+
++
+다음 예제의 기본 경로는 MetroCluster IP 노드의 LIF입니다.
+
++
+[listing]
+----
+[root@localhost ~]# sanlun lun show -p
+
+                    ONTAP Path: vsa_1:/vol/vsa_1_vol1/lun_linux_2
+                           LUN: 22
+                      LUN Size: 2g
+                       Product: cDOT
+                   Host Device: 3600a098038302d324e5d50305063546e
+              Multipath Policy: service-time 0
+            Multipath Provider: Native
+--------- ---------- ------- ------------ ----------------------------------------------
+host      vserver
+path      path       /dev/   host         vserver
+state     type       node    adapter      LIF
+--------- ---------- ------- ------------ ----------------------------------------------
+up        primary    sddv    host6        fc_5
+up        primary    sdjx    host7        fc_6
+up        secondary  sdgv    host6        fc_8
+up        secondary  sdkr    host7        fc_8
+----
+.. FC SAN 호스트에 속한 모든 볼륨, LUN 및 FC 인터페이스에 대해 위의 단계를 반복합니다.
++
+완료되면 해당 SVM 및 FC SAN 호스트의 모든 LUN이 MetroCluster IP 노드에 있어야 합니다.
+
+
+
+. 클라이언트에서 보고 노드를 제거하고 경로를 다시 검색합니다.
++
+.. Linux LUN에 대한 원격 보고 노드(MetroCluster FC 노드)를 제거합니다. 'lun mapping remove-reporting-nodes-vserver vsa_1-path * -igroup igroup igroup_linux -remote-nodes true'
++
+[listing]
+----
+cluster_A::> lun mapping remove-reporting-nodes -vserver vsa_1 -path * -igroup igroup_linux -remote-nodes true
+12 entries were acted on.
+----
+.. LUN에 대한 보고 노드를 확인하십시오: 'lun mapping show -vserver vsa_1 -fields reporting-nodes-OSType linux'
++
+[listing]
+----
+cluster_A::> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+
+vserver path igroup reporting-nodes
+------- --------------------------- ------------ -----------------------------------------
+vsa_1 /vol/vsa_1_vol1/lun_linux_2 igroup_linux B_1,B_2
+vsa_1 /vol/vsa_1_vol1/lun_linux_3 igroup_linux B_1,B_2
+vsa_1 /vol/vsa_1_vol2/lun_linux_4 igroup_linux B_1,B_2
+...
+
+12 entries were displayed.
+----
+.. 클라이언트에서 SCSI 버스를 다시 검색합니다: "/usr/bin/rescan-scsi-bus.sh -r"
++
+MetroCluster FC 노드의 경로는 다음과 같이 제거됩니다.
+
++
+[listing]
+----
+[root@stemgr]# /usr/bin/rescan-scsi-bus.sh -r
+Syncing file systems
+Scanning SCSI subsystem for new devices and remove devices that have disappeared
+Scanning host 0 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 1 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 2 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+sg0 changed: LU not available (PQual 1)
+REM: Host: scsi2 Channel: 00 Id: 00 Lun: 00
+DEL: Vendor: NETAPP Model: LUN C-Mode Rev: 9800
+ Type: Direct-Access ANSI SCSI revision: 05
+sg2 changed: LU not available (PQual 1)
+.
+.
+.
+OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
+ Vendor: NETAPP Model: LUN C-Mode Rev: 9800
+ Type: Direct-Access ANSI SCSI revision: 05
+0 new or changed device(s) found.
+0 remapped or resized device(s) found.
+24 device(s) removed.
+ [2:0:0:0]
+ [2:0:0:1]
+...
+----
+.. MetroCluster IP 노드의 경로만 호스트에서 표시되는지 확인합니다. 'Sanlun lun show -p
+.. 필요한 경우 MetroCluster FC 노드에서 iSCSI LIF를 제거합니다.
++
+다른 클라이언트에 매핑된 노드에 다른 LUN이 없는 경우 이 작업을 수행해야 합니다.
+
+
+
+

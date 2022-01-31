@@ -1,0 +1,24 @@
+---
+permalink: disaster-recovery/task_power_on_mcip.html 
+sidebar: sidebar 
+keywords: power, ip, disaster, site, configuration 
+summary: 재해 사이트에서 디스크 쉘프 및 MetroCluster IP 스위치 구성 요소의 전원을 켭니다. 
+---
+= 재해 사이트에서 장비 전원 켜기(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+재해 사이트에서 디스크 쉘프 및 MetroCluster IP 스위치 구성 요소의 전원을 켭니다. 재해 사이트의 컨트롤러 모듈은 LOADER 프롬프트에서 그대로 유지됩니다.
+
+이 절차의 예는 다음과 같습니다.
+
+* 사이트 A는 재해 사이트입니다.
+* 사이트 B는 정상적인 사이트입니다.
+
+
+.단계
+. 재해 사이트에서 디스크 쉘프를 켜고 모든 디스크가 실행 중인지 확인합니다.
+. MetroCluster IP 스위치가 아직 켜져 있지 않은 경우 켭니다.
+

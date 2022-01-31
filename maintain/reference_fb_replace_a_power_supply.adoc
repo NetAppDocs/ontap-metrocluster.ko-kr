@@ -1,0 +1,24 @@
+---
+permalink: maintain/reference_fb_replace_a_power_supply.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, hot, replacing, failed, power, supply, module 
+summary: 브리지로 연결되는 전원 공급 장치 모듈의 상태가 변경되면 전원 공급 장치 모듈을 분리하고 설치할 수 있습니다. 
+---
+= 오류가 발생한 전원 공급 장치 모듈 핫 교체
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+브리지로 연결되는 전원 공급 장치 모듈의 상태가 변경되면 전원 공급 장치 모듈을 분리하고 설치할 수 있습니다.
+
+브리지의 LED를 통해 전원 공급 장치 모듈의 상태 변화를 확인할 수 있습니다. 또한 ExpressNAV GUI 및 브리지 CLI, 직렬 포트 또는 텔넷을 통해 전원 공급 장치 모듈의 상태를 볼 수 있습니다.
+
+* 이 절차는 NDO(무중단)이며 완료하는 데 약 15분이 소요됩니다.
+* FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+
+
+
+NOTE: 모델 브리지의 _ATTO FiberBridge 설치 및 작동 설명서_에는 관리 인터페이스에 대한 자세한 정보가 나와 있습니다.
+
+ATTO Fiberbridge Description(ATTO Fiberbridge 설명) 페이지에 제공된 링크를 사용하여 ATTO 웹 사이트의 이 콘텐츠 및 기타 콘텐츠에 액세스할 수 있습니다.

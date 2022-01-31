@@ -1,0 +1,69 @@
+---
+permalink: maintain/task_secur_or_unsecur_a_fibrebridge_bridge.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, secure, unsecure, fibrebridge, bridge 
+summary: ONTAP 9.5부터 브리지에서 안전하지 않을 수 있는 이더넷 프로토콜을 쉽게 비활성화하여 브리지를 보호할 수 있습니다. 이렇게 하면 브리지의 이더넷 포트가 비활성화됩니다. 이더넷 액세스를 다시 설정할 수도 있습니다. 
+---
+= FiberBridge 브리지 고정 또는 고정 해제
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.5부터 브리지에서 안전하지 않을 수 있는 이더넷 프로토콜을 쉽게 비활성화하여 브리지를 보호할 수 있습니다. 이렇게 하면 브리지의 이더넷 포트가 비활성화됩니다. 이더넷 액세스를 다시 설정할 수도 있습니다.
+
+* 브리지의 보안을 설정하면 브리지에서 텔넷 및 기타 IP 포트 프로토콜과 서비스(FTP, ExpressNAV, ICMP 또는 Quicknav)가 비활성화됩니다.
+* 이 절차에서는 ONTAP 9.5부터 사용할 수 있는 ONTAP 프롬프트를 사용하여 대역외 관리를 사용합니다.
++
+대역외 관리를 사용하지 않는 경우 브리지 CLI에서 명령을 실행할 수 있습니다.
+
+* 이더넷 포트를 재활성화하는 데 ' * unsecurebridge * ' 명령을 사용할 수 있습니다.
+* ONTAP 9.7 및 이전 버전에서 ATTO FiberBridge에서 ' * securebridge * ' 명령을 실행하면 파트너 클러스터의 브리지 상태가 올바르게 업데이트되지 않을 수 있습니다. 이 경우 파트너 클러스터에서 ' * securebridge * ' 명령을 실행합니다.
+
+
+
+NOTE: ONTAP 9.8부터 ' * storage bridge * ' 명령은 ' * system bridge * '로 대체됩니다. 다음 단계에서는 '* storage bridge*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system bridge*' 명령을 사용하는 것이 좋습니다.
+
+.단계
+. 브리지가 포함된 클러스터의 ONTAP 프롬프트에서 브리지의 보안을 설정하거나 보안을 해제합니다.
++
+다음 명령을 사용하여 bridge_a_1을 보호합니다.
+
++
+[listing]
+----
+cluster_A> storage bridge run-cli -bridge bridge_A_1 -command securebridge
+----
++
+다음 명령을 실행하면 bridge_a_1의 보안이 해제됩니다.
+
++
+[listing]
+----
+cluster_A> storage bridge run-cli -bridge bridge_A_1 -command unsecurebridge
+----
+. 브리지가 포함된 클러스터의 ONTAP 프롬프트에서 브리지 구성을 저장합니다.
++
+'* storage bridge run-cli-bridge_bridge-name_-command saveconturation*'
+
++
+다음 명령을 사용하여 bridge_a_1을 보호합니다.
+
++
+[listing]
+----
+cluster_A> storage bridge run-cli -bridge bridge_A_1 -command saveconfiguration
+----
+. 브리지가 포함된 클러스터의 ONTAP 프롬프트에서 브리지의 펌웨어를 재시작합니다.
++
+'* storage bridge run-cli-bridge_bridge-name_-command firmwarerestart *
+
++
+다음 명령을 사용하여 bridge_a_1을 보호합니다.
+
++
+[listing]
+----
+cluster_A> storage bridge run-cli -bridge bridge_A_1 -command firmwarerestart
+----
+

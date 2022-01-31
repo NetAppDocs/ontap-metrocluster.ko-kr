@@ -1,0 +1,157 @@
+---
+permalink: install-ip/concept_considerations_mcip.html 
+sidebar: sidebar 
+keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, array luns, mediator, tiebreaker 
+summary: 컨트롤러가 원격 스토리지에 액세스하는 방법과 MetroCluster IP 주소가 작동하는 방식을 이해해야 합니다. 
+---
+= MetroCluster IP 구성을 위한 고려 사항
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러가 원격 스토리지에 액세스하는 방법과 MetroCluster IP 주소가 작동하는 방식을 이해해야 합니다.
+
+
+
+== MetroCluster IP 구성에서 원격 스토리지에 액세스
+
+MetroCluster IP 구성에서 로컬 컨트롤러가 원격 스토리지 풀에 도달하는 유일한 방법은 원격 컨트롤러를 사용하는 것입니다. IP 스위치는 컨트롤러의 이더넷 포트에 연결되며 디스크 쉘프에 직접 연결되지 않습니다. 조종기가 다운된 경우 로컬 컨트롤러가 원격 스토리지 풀에 도달할 수 없습니다.
+
+원격 스토리지 풀이 FC 패브릭 또는 SAS 연결을 통해 로컬 컨트롤러에 연결되는 MetroCluster FC 구성과 다릅니다. 원격 컨트롤러가 중단된 경우에도 로컬 컨트롤러는 원격 스토리지에 계속 액세스할 수 있습니다.
+
+
+
+== MetroCluster IP 주소입니다
+
+MetroCluster IP 주소 및 인터페이스가 MetroCluster IP 구성에서 구현되는 방식과 관련 요구 사항을 숙지해야 합니다.
+
+MetroCluster IP 구성에서 HA 파트너와 DR 파트너 간의 비휘발성 캐시와 스토리지 복제는 MetroCluster IP 패브릭의 고대역폭 전용 링크를 통해 수행됩니다. iSCSI 연결은 스토리지 복제에 사용됩니다. IP 스위치는 로컬 클러스터 내의 모든 클러스터 내 트래픽에도 사용됩니다. MetroCluster 트래픽은 별도의 IP 서브넷 및 VLAN을 사용하여 클러스터 내 트래픽과 별도로 유지됩니다. MetroCluster IP 패브릭은 클러스터 피어링 네트워크와 구별되며 다릅니다.
+
+image::../media/mcc_ip_ip_subnets.gif[MCC IP 서브넷]
+
+MetroCluster IP 구성에는 백엔드 MetroCluster IP 패브릭용으로 예약된 각 노드에 두 개의 IP 주소가 필요합니다. 예약된 IP 주소는 초기 구성 중에 MetroCluster IP 논리 인터페이스(LIF)에 할당되며 다음과 같은 요구사항이 있습니다.
+
+
+NOTE: 초기 구성 후에는 변경할 수 없으므로 MetroCluster IP 주소를 신중하게 선택해야 합니다.
+
+* 고유한 IP 범위에 속해야 합니다.
++
+운영 환경의 IP 공간과 중첩되어서는 안 됩니다.
+
+* 다른 모든 트래픽과 분리하는 두 개의 IP 서브넷 중 하나에 상주해야 합니다.
+
+
+예를 들어, 노드가 다음 IP 주소로 구성될 수 있습니다.
+
+|===
+
+
+| 노드 | 인터페이스 | IP 주소입니다 | 서브넷 
+
+
+ a| 
+노드_A_1
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.1
+ a| 
+10.1.1/24
+
+
+
+ a| 
+노드_A_1
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.1
+ a| 
+10.1.2/24
+
+
+
+ a| 
+노드_A_2
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.2
+ a| 
+10.1.1/24
+
+
+
+ a| 
+노드_A_2
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.2
+ a| 
+10.1.2/24
+
+
+
+ a| 
+노드_B_1
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.3
+ a| 
+10.1.1/24
+
+
+
+ a| 
+노드_B_1
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.3
+ a| 
+10.1.2/24
+
+
+
+ a| 
+노드_B_2
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.4
+ a| 
+10.1.1/24
+
+
+
+ a| 
+노드_B_2
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.4
+ a| 
+10.1.2/24
+
+|===
+
+
+== MetroCluster IP 인터페이스의 특성
+
+MetroCluster IP 인터페이스는 MetroCluster IP 구성에 따라 다릅니다. 다른 ONTAP 인터페이스 유형과는 다른 특성을 가지고 있습니다.
+
+* MetroCluster configuration-settings interface create 명령으로 초기 MetroCluster 설정의 일부로 생성됩니다.
++
+
+NOTE: ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+
++
+네트워크 인터페이스 명령에 의해 생성되거나 수정되지 않습니다.
+
+* 네트워크 인터페이스 쇼 명령의 출력에는 나타나지 않습니다.
+* 페일오버되지 않지만 생성된 포트에 연결된 상태로 유지됩니다.
+* MetroCluster IP 구성은 MetroCluster IP 인터페이스에 특정 이더넷 포트(플랫폼에 따라 다름)를 사용합니다.
+

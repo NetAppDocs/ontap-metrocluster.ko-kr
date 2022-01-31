@@ -1,0 +1,32 @@
+---
+permalink: transition/task_disruptively_transition_from_a_two_node_mcc_fc_to_a_four_node_mcc_ip_configuration.html 
+sidebar: sidebar 
+keywords: start, ontap, transition, workload, data, exist, two-node, metrocluster, fc, configuration, four-node, ip, disk, shelves, shelf, disruptive, fc 
+summary: ONTAP 9.8부터 기존 2노드 MetroCluster FC 구성에서 새로운 4노드 MetroCluster IP 구성으로 워크로드와 데이터를 전환할 수 있습니다. MetroCluster FC 노드의 디스크 쉘프가 IP 노드로 이동됩니다. 
+---
+= 2노드 MetroCluster FC에서 4노드 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.8부터 기존 2노드 MetroCluster FC 구성에서 새로운 4노드 MetroCluster IP 구성으로 워크로드와 데이터를 전환할 수 있습니다. MetroCluster FC 노드의 디스크 쉘프가 IP 노드로 이동됩니다.
+
+다음 그림에서는 이 전환 절차 전과 후의 구성을 간단히 보여 줍니다.
+
+image::../media/transition_2n_begin_to_end.png[전환 2n 이(가) 끝으로 시작됩니다]
+
+* 이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.
+* 이 절차는 중단을 따릅니다.
+* 이 절차는 2노드 MetroCluster FC 구성에만 적용됩니다.
++
+4노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 xref:concept_choosing_your_transition_procedure_mcc_transition.adoc[전환 절차 선택].
+
+* ADP는 이 절차에서 만든 4노드 MetroCluster IP 구성에서 지원되지 않습니다.
+* 모든 요구 사항을 충족하고 절차의 모든 단계를 따라야 합니다.
+* 기존 스토리지 셸프가 새 MetroCluster IP 노드로 이동됩니다.
+* 필요한 경우 구성에 스토리지 쉘프를 추가할 수 있습니다.
++
+을 참조하십시오 xref:concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.adoc[FC-to-IP로 전환할 때 드라이브 쉘프를 재사용하고 요구사항을 고려해야 합니다].
+
+

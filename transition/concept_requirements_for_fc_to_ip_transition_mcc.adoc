@@ -1,0 +1,31 @@
+---
+permalink: transition/concept_requirements_for_fc_to_ip_transition_mcc.html 
+sidebar: sidebar 
+keywords: start, transition, process, configuration, requirement, nondisruptive, fc-to-ip 
+summary: 전환 프로세스를 시작하기 전에 구성이 요구사항을 충족하는지 확인해야 합니다. 
+---
+= 무중단 FC-to-IP 전환 요구사항
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환 프로세스를 시작하기 전에 구성이 요구사항을 충족하는지 확인해야 합니다.
+
+* 4노드 구성이어야 하며 모든 노드에서 ONTAP 9.8 이상을 실행해야 합니다.
+* 기존 플랫폼과 새 플랫폼의 조합은 전환이 지원되는 조합이어야 합니다.
++
+xref:concept_supported_platforms_for_transition.adoc[무중단 전환을 지원하는 플랫폼]
+
+* 스위치가 있는 클러스터 구성을 지원해야 합니다.
++
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+* MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.
++
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
++
+link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
+
+

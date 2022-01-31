@@ -1,0 +1,199 @@
+---
+permalink: install-ip/task_sw_config_assign_pool0.html 
+sidebar: sidebar 
+keywords: metrocluster, controller, assign drives, pool 0, disk assign 
+summary: 공장에서 사전 구성된 시스템을 받지 못한 경우 풀 0 드라이브를 수동으로 할당해야 할 수 있습니다. 플랫폼 모델 및 시스템에서 ADP를 사용하고 있는지 여부에 따라 MetroCluster IP 구성의 각 노드에 대해 드라이브를 수동으로 풀 0에 할당해야 합니다. 사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다. 
+---
+= 풀 0에 드라이브를 수동으로 할당합니다
+
+
+[role="lead"]
+공장에서 사전 구성된 시스템을 받지 못한 경우 풀 0 드라이브를 수동으로 할당해야 할 수 있습니다. 플랫폼 모델 및 시스템에서 ADP를 사용하고 있는지 여부에 따라 MetroCluster IP 구성의 각 노드에 대해 드라이브를 수동으로 풀 0에 할당해야 합니다. 사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다.
+
+
+
+== 풀 0에 드라이브 수동 할당(ONTAP 9.4 이상)
+
+시스템이 출하 시 사전 구성되지 않았거나 자동 드라이브 할당 요구 사항을 충족하지 않는 경우 풀 0 드라이브를 수동으로 할당해야 합니다.
+
+이 절차는 ONTAP 9.4 이상을 실행하는 구성에 적용됩니다.
+
+시스템에 수동 디스크 할당이 필요한지 확인하려면 을(를) 검토해야 합니다 link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"].
+
+유지보수 모드에서 다음 단계를 수행합니다. 이 절차는 구성의 각 노드에서 수행해야 합니다.
+
+이 섹션의 예는 다음과 같은 가정을 기반으로 합니다.
+
+* 노드_A_1 및 노드_A_2의 드라이브 소유:
++
+** 사이트_A-쉘프_1(로컬)
+** 사이트_B-쉘프_2(원격)
+
+
+* 노드_B_1 및 노드_B_2의 드라이브 소유:
++
+** 사이트_B-쉘프_1(로컬)
+** 사이트_A-쉘프_2(원격)
+
+
+
+
+.단계
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. 옵션 9a를 선택합니다.
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  9a
+########## WARNING ##########
+
+    This is a disruptive operation and will result in the
+    loss of all filesystem data. Before proceeding further,
+    make sure that:
+    1) This option (9a) has been executed or will be executed
+    on the HA partner node (and DR/DR-AUX partner nodes if
+    applicable), prior to reinitializing any system in the
+    HA-pair (or MetroCluster setup).
+    2) The HA partner node (and DR/DR-AUX partner nodes if
+    applicable) is currently waiting at the boot menu.
+
+    Do you still want to continue (yes/no)? yes
+----
+. 노드가 재시작되면 부팅 메뉴를 표시하라는 메시지가 표시되면 Ctrl-C를 누른 후 * 유지보수 모드 부팅 * 옵션을 선택합니다.
+. 유지보수 모드에서 노드의 로컬 애그리게이트에 대해 드라이브를 수동으로 할당합니다.
++
+'디스크 할당_id_-p 0-s_local-node -sysid_'
+
++
+드라이브는 대칭적으로 할당되어야 하므로 각 노드의 드라이브 수는 동일합니다. 다음 단계는 각 사이트에 2개의 스토리지 쉘프가 있는 구성을 위한 것입니다.
+
++
+.. node_A_1을 구성할 때 site_A-shelf_1에서 노드 A1의 pool0에 슬롯 0에서 11로 드라이브를 수동으로 할당합니다.
+.. node_A_2를 구성할 때 site_A-shelf_1에서 노드 A2의 풀 0에 슬롯 12에서 23으로 드라이브를 수동으로 할당합니다.
+.. node_B_1을 구성할 때 site_B-shelf_1에서 노드 B1의 pool0에 슬롯 0에서 11로 드라이브를 수동으로 할당합니다.
+.. node_B_2를 구성할 때 slot 12에서 23 사이의 드라이브를 site_B-shelf_1에서 노드 B2의 pool0으로 수동으로 할당합니다.
+
+
+. 유지 관리 모드 종료:
++
+"중지"
+
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴에서 옵션 "4"를 선택하고 시스템을 부팅합니다.
+. MetroCluster IP 구성의 다른 노드에서 이 단계를 반복합니다.
+. 로 진행합니다 link:task_sw_config_setup_ontap.html["ONTAP 설정"].
+
+
+
+
+== 풀 0에 드라이브 수동 할당(ONTAP 9.3)
+
+각 노드에 대해 최소 2개의 디스크 쉘프가 있는 경우 ONTAP의 자동 할당 기능을 사용하여 로컬(풀 0) 디스크를 자동으로 할당합니다.
+
+노드가 유지보수 모드일 때는 먼저 적절한 쉘프의 단일 디스크를 풀 0에 할당해야 합니다. 그런 다음 ONTAP는 쉘프의 나머지 디스크를 동일한 풀에 자동으로 할당합니다. 이 작업은 공장에서 수신된 시스템에서 필요하지 않으며, 풀 0에는 사전 구성된 루트 애그리게이트가 포함되어 있습니다.
+
+이 절차는 ONTAP 9.3을 실행하는 구성에 적용됩니다.
+
+공장에서 MetroCluster 구성을 받은 경우에는 이 절차가 필요하지 않습니다. 팩토리 내의 노드는 풀 0 디스크 및 루트 애그리게이트로 구성됩니다.
+
+이 절차는 각 노드에 대해 디스크 쉘프가 2개 이상 있는 경우에만 사용할 수 있으며, 이를 통해 쉘프 레벨에서 디스크를 자동 할당할 수 있습니다. 쉘프 레벨 자동 할당을 사용할 수 없는 경우 각 노드에 로컬 디스크 풀(풀 0)이 있도록 로컬 디스크를 수동으로 할당해야 합니다.
+
+이러한 단계는 유지보수 모드에서 수행해야 합니다.
+
+이 섹션의 예제에서는 다음과 같은 디스크 쉘프를 가정합니다.
+
+* 노드_A_1은 다음 디스크에 디스크를 소유합니다.
++
+** 사이트_A-쉘프_1(로컬)
+** 사이트_B-쉘프_2(원격)
+
+
+* 노드_A_2가 다음에 연결되어 있습니다.
++
+** 사이트_A-쉘프_3(로컬)
+** 사이트_B-쉘프_4(원격)
+
+
+* Node_B_1이 다음에 연결되어 있습니다.
++
+** 사이트_B-쉘프_1(로컬)
+** 사이트_A-쉘프_2(원격)
+
+
+* 노드_B_2가 다음에 연결되어 있습니다.
++
+** 사이트_B-쉘프_3(로컬)
+** 사이트_A-쉘프_4(원격)
+
+
+
+
+.단계
+. 각 노드의 루트 애그리게이트에 대해 수동으로 단일 디스크 할당:
++
+'디스크 할당_id_-p 0-s_local-node -sysid_'
+
++
+이러한 디스크를 수동으로 할당하면 ONTAP 자동 할당 기능이 각 셸프의 나머지 디스크를 할당할 수 있습니다.
+
++
+.. node_A_1에서 로컬 site_a-shelf_1의 디스크 하나를 풀 0에 수동으로 할당합니다.
+.. node_A_2에서 로컬 site_A-shelf_3의 디스크 하나를 풀 0에 수동으로 할당합니다.
+.. node_B_1에서 로컬 site_B-shelf_1의 디스크 하나를 풀 0에 수동으로 할당합니다.
+.. node_B_2에서 로컬 site_B-shelf_3의 디스크 하나를 풀 0에 수동으로 할당합니다.
+
+
+. 부팅 메뉴의 옵션 4를 사용하여 사이트 A에서 각 노드를 부팅합니다.
++
+다음 노드로 진행하기 전에 노드에서 이 단계를 완료해야 합니다.
+
++
+.. 유지 관리 모드 종료:
++
+"중지"
+
+.. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+.. 부팅 메뉴에서 옵션 4를 선택하고 계속 진행합니다.
+
+
+. 부팅 메뉴의 옵션 4를 사용하여 사이트 B에서 각 노드를 부팅합니다.
++
+다음 노드로 진행하기 전에 노드에서 이 단계를 완료해야 합니다.
+
++
+.. 유지 관리 모드 종료:
++
+"중지"
+
+.. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+.. 부팅 메뉴에서 옵션 4를 선택하고 계속 진행합니다.
+
+
+

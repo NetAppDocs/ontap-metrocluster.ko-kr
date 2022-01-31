@@ -1,0 +1,193 @@
+---
+permalink: install-fc/task_reset_the_brocade_fc_switch_to_factory_defaults.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, reset, brocade, fc, switch, factory, defaults 
+summary: 새 소프트웨어 버전과 RCF 파일을 설치하기 전에 현재 스위치 구성을 지우고 기본 구성을 수행해야 합니다. 
+---
+= Brocade FC 스위치를 출하 시 기본값으로 재설정합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 소프트웨어 버전과 RCF 파일을 설치하기 전에 현재 스위치 구성을 지우고 기본 구성을 수행해야 합니다.
+
+MetroCluster 패브릭 구성의 각 FC 스위치에 대해 이러한 단계를 반복해야 합니다.
+
+.단계
+. 스위치에 관리자로 로그인합니다.
+. Brocade VF(Virtual Fabrics) 기능 비활성화:
++
+'fosconfig options'
+
++
+[listing]
+----
+FC_switch_A_1:admin> fosconfig --disable vf
+WARNING:  This is a disruptive operation that requires a reboot to take effect.
+Would you like to continue  [Y/N]: y
+----
+. ISL 케이블을 스위치의 포트에서 분리합니다.
+. 스위치를 비활성화합니다.
++
+'위치cfgpersistentdisable'
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchcfgpersistentdisable
+----
+. 구성 비활성화:
++
+“cfgDisable”입니다
+
++
+[listing]
+----
+FC_switch_A_1:admin> cfgDisable
+You are about to disable zoning configuration. This action will disable any previous zoning configuration enabled.
+Do you want to disable zoning configuration? (yes, y, no, n): [no] y
+Updating flash ...
+Effective configuration is empty. "No  Access" default zone mode is ON.
+----
+. 구성을 지웁니다.
++
+"cfgClear"
+
++
+[listing]
+----
+FC_switch_A_1:admin> cfgClear
+The Clear All action will clear all Aliases, Zones, FA Zones
+and configurations in the Defined configuration.
+Run cfgSave to commit the transaction or cfgTransAbort to
+cancel the transaction.
+Do you really want to clear all configurations?  (yes, y, no, n): [no] y
+----
+. 구성을 저장합니다.
++
+“cfgSave”입니다
+
++
+[listing]
+----
+FC_switch_A_1:admin> cfgSave
+You are about to save the Defined zoning configuration. This
+action will only save the changes on Defined configuration.
+Do you want to save the Defined zoning configuration only?  (yes, y, no, n): [no] y
+Updating flash ...
+----
+. 기본 구성을 설정합니다.
++
+'configDefault'입니다
+
++
+[listing]
+----
+FC_switch_A_1:admin> configDefault
+WARNING:  This is a disruptive operation that requires a switch reboot.
+Would you like to continue [Y/N]: y
+Executing configdefault...Please wait
+2020/10/05-08:04:08, [FCR-1069], 1016, FID 128, INFO, FC_switch_A_1, The FC Routing service is enabled.
+2020/10/05-08:04:08, [FCR-1068], 1017, FID 128, INFO, FC_switch_A_1, The FC Routing service is disabled.
+2020/10/05-08:04:08, [FCR-1070], 1018, FID 128, INFO, FC_switch_A_1, The FC Routing configuration is set to default.
+Committing configuration ... done.
+2020/10/05-08:04:12, [MAPS-1113], 1019, FID 128, INFO, FC_switch_A_1, Policy dflt_conservative_policy activated.
+2020/10/05-08:04:12, [MAPS-1145], 1020, FID 128, INFO, FC_switch_A_1, FPI Profile dflt_fpi_profile is activated for E-Ports.
+2020/10/05-08:04:12, [MAPS-1144], 1021, FID 128, INFO, FC_switch_A_1, FPI Profile dflt_fpi_profile is activated for F-Ports.
+The switch has to be rebooted to allow the changes to take effect.
+2020/10/05-08:04:12, [CONF-1031], 1022, FID 128, INFO, FC_switch_A_1, configDefault completed successfully for switch.
+----
+. 모든 포트에 대해 포트 구성을 기본값으로 설정합니다.
++
+"portcfgdefault_port-number _"
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgdefault <port number>
+----
++
+각 포트에 대해 이 단계를 완료해야 합니다.
+
+. 스위치가 POD(Dynamic Port On Demand) 방법을 사용하고 있는지 확인합니다.
++
+
+NOTE: Brocade Fabric OS 8.0 이전 버전에서는 다음 명령을 admin으로 실행하고 버전 8.0 이상에서는 root로 실행합니다.
+
++
+.. 다음 라이센스 명령을 실행합니다.
++
+'licenseport--show'
+
++
+[listing]
+----
+FC_switch_A_1:admin> licenseport -show
+24 ports are available in this switch
+Full POD license is installed
+Dynamic POD method is in use
+----
+.. Brocade에 의해 비활성화된 경우 루트 사용자를 활성화합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> userconfig --change root -e yes
+FC_switch_A_1:admin> rootaccess --set consoleonly
+----
+.. 다음 라이센스 명령을 실행합니다.
++
+'licenseport--show'
+
++
+[listing]
+----
+FC_switch_A_1:root> licenseport -show
+24 ports are available in this switch
+Full POD license is installed
+Dynamic POD method is in use
+----
+.. 라이센스 방법을 동적으로 변경합니다.
++
+'licenseport -- method dynamic'
+
++
+
+NOTE: 동적 POD 방법을 사용하지 않는 경우(POD 메서드가 정적 상태인 경우) 라이센스 할당 방법을 동적 으로 변경해야 합니다. 동적 POD 방법을 사용 중인 경우 이 단계를 건너뜁니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> licenseport --method dynamic
+The POD method has been changed to dynamic.
+Please reboot the switch now for this change to take effect
+----
+
+
+. 스위치를 재부팅합니다.
++
+'FastBoot'를 선택합니다
+
++
+[listing]
+----
+FC_switch_A_1:admin> fastboot
+Warning: This command would cause the switch to reboot
+and result in traffic disruption.
+Are you sure you want to reboot the switch [y/n]?y
+----
+. 기본 설정이 구현되었는지 확인합니다.
++
+재치쇼
+
+. IP 주소가 올바르게 설정되었는지 확인합니다.
++
+이파드쇼
+
++
+필요한 경우 다음 명령을 사용하여 IP 주소를 설정할 수 있습니다.
+
++
+'ipAddrSet'입니다
+
+

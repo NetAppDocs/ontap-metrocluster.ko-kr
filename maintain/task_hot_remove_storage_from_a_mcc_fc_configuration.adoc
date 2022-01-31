@@ -1,0 +1,140 @@
+---
+permalink: maintain/task_hot_remove_storage_from_a_mcc_fc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, hot, remove, storage, fc, configuration 
+summary: 드라이브에서 애그리게이트를 제거한 쉘프를 핫 제거할 수 있습니다. 데이터를 제공하는 MetroCluster FC 구성에서 드라이브 쉘프를 물리적으로 제거할 수 있습니다. 쉘프 스택 내의 모든 위치에서 하나 이상의 쉘프를 핫 제거할 수 있으며, 그렇지 않고 쉘프 스택을 제거할 수도 있습니다. 
+---
+= MetroCluster FC 구성에서 스토리지 핫 제거
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+드라이브 쉘프를 핫 제거할 수 있습니다. 즉, 데이터를 제공하는 MetroCluster FC 구성에서 드라이브에서 애그리게이트를 제거한 쉘프를 물리적으로 제거할 수 있습니다. 쉘프 스택 내의 모든 위치에서 하나 이상의 쉘프를 핫 제거할 수 있으며, 그렇지 않고 쉘프 스택을 제거할 수도 있습니다.
+
+* 시스템은 다중 경로 HA, 다중 경로, 4중 경로 HA 또는 4중 경로 구성이어야 합니다.
+* 4노드 MetroCluster FC 구성에서는 로컬 HA 쌍이 테이크오버 상태가 될 수 없습니다.
+* 제거할 쉘프의 드라이브에서 모든 애그리게이트를 이미 제거해야 합니다.
++
+
+IMPORTANT: 제거할 쉘프에 애그리게이트가 포함된 비 MetroCluster FC 구성에서 이 절차를 시도할 경우 다중 드라이브 패닉 상태로 시스템이 장애를 일으킬 수 있습니다.
+
++
+애그리게이트를 제거하려면 제거하려는 쉘프에서 미러링된 애그리게이트를 분할한 다음, 다른 드라이브 세트로 미러링된 애그리게이트를 다시 생성해야 합니다.
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+
+* 분리할 쉘프의 드라이브에서 애그리게이트를 제거한 후 드라이브 소유권을 제거해야 합니다.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+
+* 스택 내에서 하나 이상의 쉘프를 제거할 경우, 제거할 쉘프를 우회하기 위한 거리를 고려해야 합니다.
++
+현재 케이블이 충분히 길지 않으면 더 긴 케이블을 사용할 수 있어야 합니다.
+
+
+
+이 작업은 다음 MetroCluster FC 구성에 적용됩니다.
+
+* 스토리지 쉘프가 SAS 케이블로 스토리지 컨트롤러에 직접 연결되는 직접 연결 MetroCluster FC 구성
+* FC-to-SAS 브릿지를 사용하여 스토리지 쉘프를 연결하는 패브릭 연결 또는 브리지 연결 MetroCluster FC 구성
+
+
+.단계
+. ONTAP에서 MetroCluster 구성 작동을 확인합니다.
++
+.. 시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "
+.. 두 클러스터 모두에서 상태 알림을 확인합니다.
++
+'* 시스템 상태 경고 표시 * '
+
+.. MetroCluster 설정을 확인하고 운영 모드가 정상인지 확인합니다. + " * MetroCluster show * "
+.. MetroCluster 검사를 수행합니다.
++
+' * MetroCluster check run * '
+
+.. MetroCluster 검사 결과를 표시합니다.
++
+``MetroCluster CHOK SHOW *’’
+
+.. 스위치에 대한 상태 경고를 확인합니다(있는 경우).
++
+'* 스토리지 스위치 쇼 * '
+
+.. Config Advisor를 실행합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+
+.. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
+
+
+. 권한 수준을 고급으로 설정합니다.
++
+' * set-Privilege advanced * '
+
+. "* 스토리지 장애 조치 사서함-디스크 표시*"라는 사서함 드라이브가 셸프에 없는지 확인합니다
+. 관련 시나리오에 대한 단계에 따라 선반을 탈거하십시오.
++
+|===
+| 시나리오 | 단계 
+
+
+ a| 
+쉘프에 미러링되지 않은 애그리게이트, 미러링된 애그리게이트 또는 두 가지 유형의 애그리게이트로 된 애그리게이트를 제거하려면...
+ a| 
+.. ' * storage aggregate delete -aggregate_aggregate name_ *' 명령을 사용하여 애그리게이트를 제거합니다.
+.. 표준 절차에 따라 해당 쉘프에 있는 모든 드라이브의 소유권을 제거한 다음, 쉘프를 물리적으로 제거합니다.
++
+쉘프 모델의 _SAS 디스크 쉘프 서비스 가이드_에 나온 지침에 따라 쉘프를 핫 제거할 수 있습니다.
+
+
+
+
+
+ a| 
+미러링된 Aggregate에서 플렉스를 제거하려면 Aggregate의 미러를 해제해야 합니다.
+ a| 
+.. ' * run-node local sysconfig -r * ' 명령을 사용하여 제거할 플렉스를 식별합니다.
++
+다음 예에서는 라인 "Plex/dpg_MCC_8020_13_A1_aggr1/plex0"에서 플렉스를 식별할 수 있습니다. 이 경우 지정할 플렉스를 0으로 지정합니다.
+
++
+[listing]
+----
+dpgmcc_8020_13_a1a2::storage aggregate> run -node local sysconfig -r
+*** This system has taken over dpg-mcc-8020-13-a1
+Aggregate dpg_mcc_8020_13_a1_aggr1 (online, raid_dp, mirrored) (block checksums)
+  Plex /dpg_mcc_8020_13_a1_aggr1/plex0 (online, normal, active, pool0)
+    RAID group /dpg_mcc_8020_13_a1_aggr1/plex0/rg0 (normal, block checksums)
+      RAID Disk Device                          HA  SHELF BAY CHAN Pool Type  RPM  Used (MB/blks)    Phys (MB/blks)
+      --------- ------                          ------------- ---- ---- ---- ----- --------------    --------------
+      dparity   mcc-cisco-8Gb-fab-2:1-1.126L16  0c    32  15  FC:B   0   SAS 15000 272000/557056000  274845/562884296
+      parity    mcc-cisco-8Gb-fab-2:1-1.126L18  0c    32  17  FC:B   0   SAS 15000 272000/557056000  274845/562884296
+      data      mcc-cisco-8Gb-fab-2:1-1.126L19  0c    32  18  FC:B   0   SAS 15000 272000/557056000  274845/562884296
+      data      mcc-cisco-8Gb-fab-2:1-1.126L21  0c    32  20  FC:B   0   SAS 15000 272000/557056000  274845/562884296
+      data      mcc-cisco-8Gb-fab-2:1-1.126L22  0c    32  21  FC:B   0   SAS 15000 272000/557056000  274845/562884296
+
+  Plex /dpg_mcc_8020_13_a1_aggr1/plex1 (online, normal, active, pool1)
+    RAID group /dpg_mcc_8020_13_a1_aggr1/plex1/rg0 (normal, block checksums)
+
+      RAID Disk Device                          HA  SHELF BAY CHAN Pool Type  RPM  Used (MB/blks)    Phys (MB/blks)
+      --------- ------                          ------------- ---- ---- ---- ----- --------------    --------------
+      dparity   mcc-cisco-8Gb-fab-3:1-1.126L37  0d    34  10  FC:A   1   SAS 15000 272000/557056000  280104/573653840
+      parity    mcc-cisco-8Gb-fab-3:1-1.126L14  0d    33  13  FC:A   1   SAS 15000 272000/557056000  280104/573653840
+      data      mcc-cisco-8Gb-fab-3:1-1.126L41  0d    34  14  FC:A   1   SAS 15000 272000/557056000  280104/573653840
+      data      mcc-cisco-8Gb-fab-3:1-1.126L15  0d    33  14  FC:A   1   SAS 15000 272000/557056000  280104/573653840
+      data      mcc-cisco-8Gb-fab-3:1-1.126L45  0d    34  18  FC:A   1   SAS 15000 272000/557056000  280104/573653840
+----
+.. ' * storage aggregate delete -aggregate_agr_name_-plex_plex_name_ * ' 명령을 사용하여 플렉스 파일을 제거합니다.
++
+플렉스(Plex)는 플렉스3(plex3), 플렉스6(plex6) 등의 플렉스 이름을 정의합니다.
+
+.. 표준 절차에 따라 해당 쉘프에 있는 모든 드라이브의 소유권을 제거한 다음, 쉘프를 물리적으로 제거합니다.
++
+쉘프 모델의 _SAS 디스크 쉘프 서비스 가이드_에 나온 지침에 따라 쉘프를 핫 제거할 수 있습니다.
+
+
+
+|===
+

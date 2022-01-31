@@ -1,0 +1,134 @@
+---
+permalink: upgrade/task_check_the_mcc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, check, configuration 
+summary: 'MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다. 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된 \(계획된\) 스위치오버 또는 스위치백 작업을 수행하기 전에 확인해야 합니다.' 
+---
+= MetroCluster 구성 확인
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다. 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.
+
+둘 중 하나 또는 두 클러스터에서 짧은 시간 내에 'MetroCluster check run' 명령을 두 번 실행하면 충돌이 발생하고 명령이 모든 데이터를 수집하지 못할 수 있습니다. 이후 'MetroCluster check show' 명령어에서는 예상 출력이 표시되지 않습니다.
+
+.단계
+. 구성을 확인합니다.
++
+'MetroCluster check run
+
++
+명령은 백그라운드 작업으로 실행되며 즉시 완료되지 않을 수 있습니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster check run
+The operation has been started and is running in the background. Wait for
+it to complete and run "metrocluster check show" to view the results. To
+check the status of the running metrocluster check operation, use the command,
+"metrocluster operation history show -job-id 2245"
+----
++
+[listing]
+----
+cluster_A::> metrocluster check show
+Last Checked On: 9/13/2018 20:41:37
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+clusters            ok
+connections         ok
+6 entries were displayed.
+----
+. 가장 최근의 'MetroCluster check run' 명령어를 통해 보다 상세한 결과를 출력한다.
++
+'MetroCluster check aggregate show'
+
++
+'MetroCluster check cluster show'를 선택합니다
+
++
+'MetroCluster check config-replication show'를 선택합니다
+
++
+'MetroCluster check lif show'
+
++
+MetroCluster check node show
+
++
+MetroCluster check show 명령은 최근 MetroCluster check run 명령의 결과를 보여준다. MetroCluster check show 명령을 사용하기 전에 항상 MetroCluster check run 명령을 실행하여 표시되는 정보가 최신 정보가 되도록 해야 합니다.
+
++
+다음 예는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check aggregate show' 명령 출력을 보여줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster check aggregate show
+
+Last Checked On: 8/5/2014 00:42:58
+
+Node                  Aggregate                  Check                      Result
+---------------       --------------------       ---------------------      ---------
+controller_A_1        controller_A_1_aggr0
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_1_aggr1
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_1_aggr2
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+
+
+controller_A_2        controller_A_2_aggr0
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_2_aggr1
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_2_aggr2
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+
+18 entries were displayed.
+----
++
+다음 예에서는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check cluster show' 명령 출력을 보여 줍니다. 이는 필요한 경우 클러스터가 협상된 전환을 수행할 준비가 되었음을 나타냅니다.
+
++
+[listing]
+----
+Last Checked On: 9/13/2017 20:47:04
+
+Cluster               Check                           Result
+--------------------- ------------------------------- ---------
+mccint-fas9000-0102
+                      negotiated-switchover-ready     not-applicable
+                      switchback-ready                not-applicable
+                      job-schedules                   ok
+                      licenses                        ok
+                      periodic-check-enabled          ok
+mccint-fas9000-0304
+                      negotiated-switchover-ready     not-applicable
+                      switchback-ready                not-applicable
+                      job-schedules                   ok
+                      licenses                        ok
+                      periodic-check-enabled          ok
+10 entries were displayed.
+----
+

@@ -1,0 +1,87 @@
+---
+permalink: upgrade/task_apply_the_rcf_files_and_recable_the_switches.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, apply, rcf, files, recable, switches 
+summary: 새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다. 
+---
+= RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다.
+
+.단계
+. 구성에 사용할 RCF 파일을 찾습니다.
++
+RCF 파일은 8노드 구성에 사용해야 하며 스위치 모델에 맞게 사용해야 합니다.
+
+. RCF 파일을 다운로드 페이지의 지침에 따라 적용하고 ISL 설정을 필요에 따라 조정합니다.
+. 스위치 구성이 저장되었는지 확인합니다.
+. FC 스위치를 재부팅합니다.
+. 이전에 생성한 케이블링 레이아웃을 사용하여 기존 브리지와 새로운 FC-SAS 브릿지를 FC 스위치에 케이블로 연결합니다.
++
+FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 _Fabric 연결 MetroCluster 설치 및 구성 가이드_에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다.
+
++
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
++
+
+NOTE: RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
+
+. 스위치에 맞는 명령을 사용하여 포트가 온라인 상태인지 확인합니다.
++
+|===
+
+
+| 스위치 공급업체 | 명령 
+
+
+ a| 
+모든 정보를 제공합니다
+ a| 
+스위치 쇼
+
+
+
+ a| 
+Cisco의
+ a| 
+인터페이스 요약 표시
+
+|===
+. 이전에 생성한 케이블링 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.
++
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
++
+FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 _Fabric 연결 MetroCluster 설치 및 구성 가이드_에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다.
+
++
+
+NOTE: RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
+
+. 기존 노드에서 FC-VI 포트가 온라인 상태인지 확인합니다.
++
+MetroCluster 상호 연결 어댑터가 표시됩니다
+
++
+MetroCluster 상호 연결 미러 쇼
+
+. 현재 및 새 컨트롤러에서 HBA 포트를 케이블로 연결합니다.
+. 기존 컨트롤러 모듈에서 유지 관리를 통해 스위치 패브릭에 연결된 포트를 e-enable로 설정합니다.
++
+'Storage port enable-node_node-name_-port_port-ID_'
+
+. 새 컨트롤러를 시작하고 유지보수 모드로 부팅합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. 새 DR 그룹에서 사용할 스토리지만 새 컨트롤러 모듈에 표시되는지 확인합니다.
++
+다른 DR 그룹에서 사용하는 스토리지를 볼 수 없습니다.
+
+. 이 프로세스의 시작 부분으로 돌아가서 두 번째 스위치 패브릭을 다시 연결합니다.
+

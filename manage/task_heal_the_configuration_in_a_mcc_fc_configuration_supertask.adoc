@@ -1,0 +1,25 @@
+---
+permalink: manage/task_heal_the_configuration_in_a_mcc_fc_configuration_supertask.html 
+sidebar: sidebar 
+keywords: switchover, perform, heal, operation, restore, metrocluster, functionality, fc, configuration 
+summary: 스위치오버 후에는 MetroCluster 기능을 복원하기 위해 특정한 복구 작업을 수행해야 합니다. 
+---
+= MetroCluster FC 구성에서 구성 복구
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스위치오버 후에는 MetroCluster 기능을 복원하기 위해 특정한 복구 작업을 수행해야 합니다.
+
+* 전환을 수행해야 하며 정상적인 사이트에서 데이터를 제공해야 합니다.
+* 재해 사이트의 노드를 중단하거나 전원을 끈 상태로 두어야 합니다.
++
+복구 프로세스 중에 완전히 부팅하면 안 됩니다.
+
+* 재해 사이트의 스토리지에 액세스할 수 있어야 합니다(쉘프 켜기, 기능, 액세스 가능).
+* 패브릭 연결 MetroCluster 구성에서는 ISL(Inter-Switch Link)이 작동 중이어야 합니다.
+* 4노드 MetroCluster 구성에서는 장애가 있는 사이트의 노드가 HA 페일오버 상태가 아니어야 합니다(모든 노드가 각 HA 쌍에 대해 작동 및 실행 중이어야 함).
+
+
+먼저 데이터 애그리게이트 및 루트 애그리게이트에 대해 복구 작업을 수행해야 합니다.

@@ -1,0 +1,31 @@
+---
+permalink: install-ip/port_usage_3132q.html 
+sidebar: sidebar 
+keywords: cabling, cable, component, sip, link, site, management, network, hardware, component, switch, cluster, connection, management, data, configuring, configure 
+summary: MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다. 
+---
+= Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.
+
+
+
+== FAS2750 또는 AFF A220 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
+
+image::../media/mcc_ip_cabling_a_fas2750_or_a220_to_a_cisco_3132q_v_switch.png[Cisco 3132q v 스위치에 fas2750 또는 A220 MCC IP 케이블 연결]
+
+
+
+== FAS9000, AFF A700 및 Cisco 3132Q-V 스위치의 포트 사용
+
+image::../media/mcc_ip_cabling_a_fas9000_or_aff_a700_to_a_cisco_3132q_v_switch.png[MCC IP fas9000 또는 AFF a700을 Cisco 3132q v 스위치에 케이블로 연결합니다]
+
+
+
+== AFF A800 및 Cisco 3132Q-V 스위치의 포트 사용
+
+image::../media/cabling_an_aff_a800_to_a_cisco_3132q_v_switch.png[AFF A800을 Cisco 3132q v 스위치에 케이블로 연결합니다]

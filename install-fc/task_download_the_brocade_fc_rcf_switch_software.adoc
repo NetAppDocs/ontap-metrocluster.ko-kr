@@ -1,0 +1,29 @@
+---
+permalink: install-fc/task_download_the_brocade_fc_rcf_switch_software.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, download, brocade, fc, switch, rcf, file 
+summary: 'RCF\(참조 구성\) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.' 
+---
+= Brocade FC 스위치 RCF 파일 다운로드
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+RCF(Reference Configuration) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.
+
+이러한 RCF 파일을 사용하려면 시스템에서 ONTAP 9.1 이상을 실행해야 하며 ONTAP 9.1 이상에 대해 포트 레이아웃을 사용해야 합니다.
+
+FiberBridge 브리지에서 FC 포트 중 하나만 사용하려는 경우, 섹션에 나와 있는 지침에 따라 백엔드 Fibre Channel 스위치를 수동으로 구성합니다. link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"].
+
+.단계
+. Brocade RCF 다운로드 페이지의 RCF 파일 표를 참조하여 구성의 각 스위치에 대한 올바른 RCF 파일을 식별합니다.
++
+RCF 파일은 올바른 스위치에 적용해야 합니다.
+
+. 에서 스위치용 RCF 파일을 다운로드합니다 https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab["MetroCluster RCF 다운로드"] 페이지.
++
+파일은 스위치로 전송할 수 있는 위치에 배치해야 합니다. 2스위치 패브릭을 구성하는 4개의 스위치마다 별도의 파일이 있습니다.
+
+. 구성의 각 스위치에 대해 이 단계를 반복합니다.
+

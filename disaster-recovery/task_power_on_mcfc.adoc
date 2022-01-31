@@ -1,0 +1,140 @@
+---
+permalink: disaster-recovery/task_power_on_mcfc.html 
+sidebar: sidebar 
+keywords: power, sas, storage, direct, attached, configuration, fabric 
+summary: 스위치백을 준비할 준비가 되면 재해 사이트에서 MetroCluster 구성 요소의 전원을 켭니다. 
+---
+= 재해 사이트에서 장비 전원 켜기
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스위치백을 준비할 준비가 되면 재해 사이트에서 MetroCluster 구성 요소의 전원을 켭니다. 또한 직접 연결 MetroCluster 구성에서 SAS 스토리지 연결을 재설정하고 패브릭 연결 MetroCluster 구성에서 비스위치 간 링크 포트를 활성화해야 합니다.
+
+MetroCluster 구성 요소를 이미 교체하고 이전 구성 요소와 정확히 케이블로 연결한 상태여야 합니다.
+
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
+link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
+
+이 절차의 예는 다음과 같습니다.
+
+* 사이트 A는 재해 사이트입니다.
++
+** fc_switch_a_1이 교체되었습니다.
+** fc_switch_a_2가 교체되었습니다.
+
+
+* 사이트 B는 정상적인 사이트입니다.
++
+** fc_switch_B_1이 정상 상태임.
+** fc_switch_B_2가 정상 상태임.
+
+
+
+
+FC 스위치는 패브릭 연결 MetroCluster 구성에만 있습니다.
+
+.단계
+. SAS 케이블 연결(FC 스위치 패브릭 또는 FC-to-SAS 브릿지 없음)을 사용하는 스트레치 MetroCluster 구성에서는 두 사이트 간에 원격 스토리지를 포함한 모든 스토리지를 연결합니다.
++
+재해 사이트의 컨트롤러의 전원이 꺼져 있거나 로더 프롬프트에서 계속 켜져 있어야 합니다.
+
+. 정상적인 사이트에서 디스크 자동 할당을 사용하지 않도록 설정합니다.
++
+'스토리지 디스크 옵션 수정 - 자동 할당 해제 *'
+
++
+[listing]
+----
+cluster_B::> storage disk option modify -autoassign off *
+2 entries were modified.
+----
+. 남아 있는 사이트에서 디스크 자동 할당이 꺼져 있는지 확인합니다.
++
+'스토리지 디스크 옵션 표시'
+
++
+[listing]
+----
+cluster_B::> storage disk option show
+Node     BKg. FW. Upd.  Auto Copy   Auto Assign  Auto Assign Policy
+--------  -------------  -----------  -----------  ------------------
+node_B_1       on            on          off             default
+node_B_2       on            on          off             default
+2 entries were displayed.
+
+ cluster_B::>
+----
+. 재해 사이트에서 디스크 쉘프를 켜고 모든 디스크가 실행 중인지 확인합니다.
+. 브리지 연결 또는 패브릭 연결 MetroCluster 구성에서는 재해 사이트에서 모든 FC-to-SAS 브리지를 켭니다.
+. 디스크를 교체한 경우 컨트롤러의 전원을 끄거나 로더 프롬프트에서 그대로 둡니다.
+. 패브릭 연결 MetroCluster 구성에서 FC 스위치에서 비 ISL 포트를 활성화합니다.
++
+|===
+
+
+| 스위치 공급업체가... | 그런 다음 다음 다음 단계를 수행하여 포트를 활성화합니다. 
+
+
+ a| 
+모든 정보를 제공합니다
+ a| 
+.. FC-to-SAS 브리지에 연결된 포트를 "portpersistentenable port-number"로 영구적으로 활성화합니다
++
+다음 예에서는 포트 6과 7이 활성화되어 있습니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portpersistentenable 6
+FC_switch_A_1:admin> portpersistentenable 7
+
+FC_switch_A_1:admin>
+----
+.. HBA 및 FC-VI 어댑터에 연결된 포트를 영구적으로 활성화합니다. "portpersistentenable port-number
++
+다음 예에서는 포트 6과 7이 활성화되어 있습니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> portpersistentenable 1
+FC_switch_A_1:admin> portpersistentenable 2
+FC_switch_A_1:admin> portpersistentenable 4
+FC_switch_A_1:admin> portpersistentenable 5
+FC_switch_A_1:admin>
+----
++
+
+NOTE: AFF A700 및 FAS9000 시스템의 경우 switchcfgpersistentenable 명령을 사용하여 4개의 FC-VI 포트를 모두 영구적으로 사용해야 합니다.
+
+.. 작동 가능한 사이트에서 두 번째 FC 스위치에 대해 단계 a와 b를 반복합니다.
+
+
+
+
+ a| 
+Cisco의
+ a| 
+.. 인터페이스의 구성 모드를 시작한 다음 no shut 명령을 사용하여 포트를 활성화합니다.
++
+다음 예에서는 포트 FC1/36이 비활성화됩니다.
+
++
+[listing]
+----
+FC_switch_A_1# conf t
+FC_switch_A_1(config)# interface fc1/36
+FC_switch_A_1(config)# no shut
+FC_switch_A_1(config-if)# end
+FC_switch_A_1# copy running-config startup-config
+----
+.. 스위치 포트가 활성화되어 있는지 확인합니다. '인터페이스 요약 정보 보기'
+.. FC-to-SAS 브리지, HBA 및 FC-VI 어댑터에 연결된 다른 포트에서 하위 단계 a와 b를 반복합니다.
+.. 작동 가능한 사이트에서 두 번째 FC 스위치에 대해 a, b 및 c 하위 단계를 반복합니다.
+
+
+|===
+

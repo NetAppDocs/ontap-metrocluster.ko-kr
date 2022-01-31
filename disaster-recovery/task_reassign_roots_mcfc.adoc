@@ -1,0 +1,166 @@
+---
+permalink: disaster-recovery/task_reassign_roots_mcfc.html 
+sidebar: sidebar 
+keywords: reassign, ownership, nvram, system, id, replaced 
+summary: 재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하나 또는 둘 모두를 교체한 경우 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다. 
+---
+= 루트 애그리게이트에 대한 디스크 소유권을 교체 컨트롤러 모듈에 재할당(MetroCluster FC 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하나 또는 둘 모두를 교체한 경우 시스템 ID가 변경되었으며 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다.
+
+노드가 전환 모드에 있고 복구가 완료되었기 때문에 이 섹션에서는 재해 사이트의 pool1에 있는 루트 애그리게이트를 포함하는 디스크만 재할당합니다. 현재 이전 시스템 ID가 소유한 유일한 디스크입니다.
+
+이 섹션에서는 2노드 및 4노드 구성의 예를 제공합니다. 2노드 구성의 경우 각 사이트의 두 번째 노드에 대한 참조를 무시할 수 있습니다. 8노드 구성의 경우 두 번째 DR 그룹의 추가 노드를 고려해야 합니다. 이 예시는 다음과 같은 가정을 합니다.
+
+* 사이트 A는 재해 사이트입니다.
++
+** 노드_A_1이(가) 교체되었습니다.
+** 노드_A_2가 교체되었습니다.
++
+4노드 MetroCluster 구성에서만 제공됩니다.
+
+
+
+* 사이트 B는 정상적인 사이트입니다.
++
+** node_B_1이 정상 상태임.
+** node_B_2가 정상 상태임.
++
+4노드 MetroCluster 구성에서만 제공됩니다.
+
+
+
+
+
+이전 및 새 시스템 ID는 에서 식별되었습니다 link:task_replace_hardware_and_boot_new_controllers.html#determining-the-system-ids-and-vlan-ids-of-the-old-controller-modules["교체 컨트롤러 모듈의 시스템 ID 확인"].
+
+이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
+
+|===
+
+
+| 노드 수 | 노드 | 원래 시스템 ID입니다 | 새 시스템 ID입니다 
+
+
+.4+| 네  a| 
+노드_A_1
+ a| 
+4068741258
+ a| 
+1574774970
+
+
+
+ a| 
+노드_A_2
+ a| 
+4068741260
+ a| 
+1574774991
+
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+ a| 
+변경되지 않음
+
+
+
+ a| 
+노드_B_2
+ a| 
+4068741256
+ a| 
+변경되지 않음
+
+
+
+ a| 
+2개
+ a| 
+노드_A_1
+ a| 
+4068741258
+ a| 
+1574774970
+
+|===
+.단계
+. 유지보수 모드의 교체 노드에서 루트 애그리게이트 디스크를 재할당합니다.
++
+'Disk reassign-s old-system-ID-d new-system-ID'입니다
+
++
+[listing]
+----
+*> disk reassign -s 4068741258 -d 1574774970
+----
+. 디스크를 보고 재해 사이트의 pool1 루트 집계 디스크가 교체 노드로 변경되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+루트 애그리게이트에 있는 디스크 수와 이러한 디스크 중 장애가 발생하여 대체되었는지 여부에 따라 출력에 표시되는 디스크 수가 더 많아지거나 적어질 수 있습니다. 디스크를 교체한 경우 pool0 디스크가 출력에 표시되지 않습니다.
+
++
+이제 재해 사이트의 pool1 루트 애그리게이트 디스크를 교체 노드에 할당해야 합니다.
+
++
+[listing]
+----
+*> disk show
+Local System ID: 1574774970
+
+  DISK             OWNER                POOL   SERIAL NUMBER   HOME                DR HOME
+------------       -------------        -----  -------------   -------------       -------------
+sw_A_1:6.126L19    node_A_1(1574774970) Pool0  serial-number   node_A_1(1574774970)
+sw_A_1:6.126L3     node_A_1(1574774970) Pool0  serial-number   node_A_1(1574774970)
+sw_A_1:6.126L7     node_A_1(1574774970) Pool0  serial-number   node_A_1(1574774970)
+sw_B_1:6.126L8     node_A_1(1574774970) Pool1  serial-number   node_A_1(1574774970)
+sw_B_1:6.126L24    node_A_1(1574774970) Pool1  serial-number   node_A_1(1574774970)
+sw_B_1:6.126L2     node_A_1(1574774970) Pool1  serial-number   node_A_1(1574774970)
+
+*> aggr status
+         Aggr State           Status
+ node_A_1_root online          raid_dp, aggr
+                               mirror degraded
+                               64-bit
+*>
+----
+. 집계 상태 보기:
++
+'기정 상태'입니다
+
++
+루트 애그리게이트에 있는 디스크 수와 이러한 디스크 중 장애가 발생하여 대체되었는지 여부에 따라 출력에 표시되는 디스크 수가 더 많아지거나 적어질 수 있습니다. 디스크를 교체한 경우 pool0 디스크가 출력에 표시되지 않습니다.
+
++
+[listing]
+----
+*> aggr status
+          Aggr State           Status
+  node_A_1_root online          raid_dp, aggr
+                                mirror degraded
+                                64-bit
+*>
+----
+. 메일박스 디스크의 내용을 삭제합니다.
++
+'데일박스 파기 지역
+
+. Aggregate가 온라인 상태가 아닌 경우 온라인 상태로 전환합니다.
++
+'aggr online aggr_name'
+
+. LOADER 프롬프트가 표시되도록 노드를 중단합니다.
++
+"중지"
+
+

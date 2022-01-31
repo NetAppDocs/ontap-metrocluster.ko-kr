@@ -1,0 +1,20 @@
+---
+permalink: install-fc/concept_deciding_whether_to_use_this_guide_fabric_attached_mcc_installation_and_configuration_guide.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, planning, fabric-attached, installation, deciding, configuration, guide 
+summary: 이 가이드에서는 패브릭 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법을 설명합니다. 
+---
+= 패브릭 연결 MetroCluster 설치 및 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+이 가이드에서는 패브릭 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법을 설명합니다.
+
+다음과 같은 상황에서 패브릭 연결 MetroCluster 구성을 계획, 설치 및 구성하려면 이 가이드를 사용해야 합니다.
+
+* 패브릭 연결 MetroCluster 구성의 아키텍처를 이해하려고 합니다.
+* Fabric 연결형 MetroCluster 구성을 위한 요구사항과 모범 사례를 파악하려고 합니다.
+* 자동화된 스크립팅 도구가 아니라 CLI(Command-Line Interface)를 사용하려는 경우
+

@@ -1,0 +1,111 @@
+---
+permalink: maintain/task_rename_a_cisco_ip_switch.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, rename, cisco, ip, switch 
+summary: Cisco IP 스위치의 이름을 변경하여 구성 전체에서 일관된 이름을 지정해야 할 수도 있습니다. 
+---
+= Cisco IP 스위치 이름 바꾸기
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco IP 스위치의 이름을 변경하여 구성 전체에서 일관된 이름을 지정해야 할 수도 있습니다.
+
+이 작업의 예시에서 스위치 이름은 myswitch에서 ip_switch_a_1 로 변경된다.
+
+. 글로벌 구성 모드 시작:
++
+'* 터미널 구성 * '
+
++
+다음 예에서는 구성 모드 프롬프트를 보여 줍니다. 두 프롬프트 모두 'myswitch'의 스위치 이름을 표시합니다.
+
++
+[listing]
+----
+myswitch# configure terminal
+myswitch(config)#
+----
+. 스위치 이름을 다음과 같이 변경합니다.
++
+'* switchname new-switch-name*'
+
++
+Fabric에서 두 스위치의 이름을 바꾸는 경우 각 스위치에서 동일한 명령을 사용합니다.
+
++
+CLI 프롬프트가 변경되어 새 이름이 반영됩니다.
+
++
+[listing]
+----
+myswitch(config)# switchname IP_switch_A_1
+IP_switch_A_1(config)#
+----
+. 구성 모드 종료:
++
+' * exit * '
+
++
+최상위 스위치 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+IP_switch_A_1(config)# exit
+IP_switch_A_1#
+----
+. 현재 실행 중인 구성을 시작 구성 파일에 복사합니다.
++
+'* copy running-config startup-config * '
+
+. ONTAP 클러스터 프롬프트에서 스위치 이름 변경이 표시되는지 확인합니다.
++
+새 스위치 이름이 표시되고 이전 스위치 이름('myswitch')이 나타나지 않습니다.
+
++
+.. 고급 권한 모드로 들어가면서 ' * y * '를 누르라는 메시지가 나타나면 + ' * set-privilege advanced * '를 누릅니다
+.. 연결된 장치를 표시합니다: + " * network device-discovery show * "
+.. 관리자 권한 모드로 돌아가기: + " * set-privilege admin * "
++
+다음 예에서는 스위치가 새 이름인 IP_SWITCH_A_1과 함께 나타나는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::storage show> set advanced
+
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
+Do you want to continue? {y|n}: y
+
+cluster_A::storage show*> network device-discovery show
+Node/       Local  Discovered
+Protocol    Port   Device                    Interface         Platform
+----------- ------ ------------------------- ----------------  ----------------
+node_A_2/cdp
+            e0M    LF01-410J53.mycompany.com(SAL18516DZY)
+                                             Ethernet125/1/28  N9K-C9372PX
+            e1a    IP_switch_A_1(FOC21211RBU)
+                                             Ethernet1/2       N3K-C3232C
+            e1b    IP_switch_A_1(FOC21211RBU)
+                                             Ethernet1/10      N3K-C3232C
+.
+.
+.                                             Ethernet1/18      N9K-C9372PX
+node_A_1/cdp
+            e0M    LF01-410J53.mycompany.com(SAL18516DZY)
+                                             Ethernet125/1/26  N9K-C9372PX
+            e0a    IP_switch_A_2(FOC21211RB5)
+                                             Ethernet1/1       N3K-C3232C
+            e0b    IP_switch_A_2(FOC21211RB5)
+                                             Ethernet1/9       N3K-C3232C
+            e1a    IP_switch_A_1(FOC21211RBU)
+.
+.
+.
+16 entries were displayed.
+----
+
+
+

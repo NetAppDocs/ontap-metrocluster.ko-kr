@@ -1,0 +1,19 @@
+---
+permalink: install-fc/index.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric-attached, FC, installation 
+summary: 패브릭 연결 MetroCluster 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다. 
+---
+= 개요
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+패브릭 연결 MetroCluster 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다.
+
+* link:../install-fc/concept_considerations_differences.html["설치 준비 및 모든 요구 사항 이해"].
+* link:../install-fc/concept_choosing_the_correct_installation_procedure_for_your_configuration_mcc_install.html["올바른 설치 절차를 선택하십시오"]* 
+* link:../install-fc/concept_configure_the_mcc_software_in_ontap.html["소프트웨어를 구성합니다"]
+* link:../install-fc/task_test_the_mcc_configuration.html["구성을 테스트합니다"]
+

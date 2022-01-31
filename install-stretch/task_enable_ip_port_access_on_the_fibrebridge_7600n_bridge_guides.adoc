@@ -1,0 +1,65 @@
+---
+permalink: install-stretch/task_enable_ip_port_access_on_the_fibrebridge_7600n_bridge_guides.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, enable, ip, port, access, bridge, fibrebridge 
+summary: '9.5 이전 버전의 ONTAP를 사용하고 있거나 텔넷 또는 기타 IP 포트 프로토콜과 서비스를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우\(FTP, ExpressNAV, ICMP 또는 Quicknav\) 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.' 
+---
+= 필요한 경우 FiberBridge 7600N 브리지에서 IP 포트 액세스를 활성화합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+9.5 이전 버전의 ONTAP를 사용하거나 텔넷 또는 기타 IP 포트 프로토콜 및 서비스(FTP, ExpressNAV, ICMP 또는 Qunickav)를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.
+
+ATTO FiberBridge 7500N 및 6500N 브리지와 달리 FiberBridge 7600N 브리지는 모든 IP 포트 프로토콜 및 서비스가 비활성화된 상태로 제공됩니다.
+
+ONTAP 9.5부터 브리지의 _ 대역 내 관리 _ 가 지원됩니다. 즉, 브리지에 대한 FC 연결을 통해 ONTAP CLI에서 브리지를 구성 및 모니터링할 수 있습니다. 브리지 이더넷 포트를 통해 브리지에 물리적으로 액세스할 필요는 없으며 브리지 사용자 인터페이스는 필요하지 않습니다.
+
+ONTAP 9.8부터 브리지의 _ 대역내 관리 _ 가 기본적으로 지원되며 대역외 SNMP 관리는 사용되지 않습니다.
+
+이 작업은 브리지 관리를 위해 대역내 관리를 사용하지 않는 경우 * 필요합니다. 이 경우 이더넷 관리 포트를 통해 브리지를 구성해야 합니다.
+
+.단계
+. FiberBridge 7600N 브리지의 직렬 포트에 직렬 케이블을 연결하여 브리지의 콘솔 인터페이스에 액세스합니다.
+. 콘솔을 사용하여 액세스 서비스를 활성화한 다음 구성을 저장합니다.
++
+'* 클로스포트 없음 설정 * '
+
++
+'* savececonturation*'
+
++
+이 'show closeport none' 명령어는 브리지의 모든 접속 서비스를 가능하게 한다.
+
+. 필요한 경우 '설정 완료'를 실행하고 원하는 모든 서비스가 비활성화될 때까지 필요에 따라 명령을 반복하여 서비스를 비활성화합니다.
++
+' * set closebport_service_ * '
+
++
+세트 closeport 명령은 한 번에 하나의 서비스를 비활성화합니다.
+
++
+'_service_'는 다음 중 하나를 지정할 수 있습니다.
+
++
+** 고속도로
+** FTP
+** ICMP
+** 두께
+** SNMP를 선택합니다
+** Telnet+ 'Get closeport' 명령어를 이용하여 특정 프로토콜이 활성화 또는 비활성화되었는지 확인할 수 있다.
+
+
+. SNMP를 사용하는 경우 set snmp enabled 명령도 실행해야 합니다.
++
+'* SNMP 활성화 설정 * '
+
++
+SNMP는 별도의 enable 명령을 필요로 하는 유일한 프로토콜입니다.
+
+. 구성을 저장합니다.
++
+'* savececonturation*'
+
+

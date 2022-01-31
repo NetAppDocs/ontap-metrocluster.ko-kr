@@ -1,0 +1,42 @@
+---
+permalink: transition/task_apply_rcfs.html 
+sidebar: sidebar 
+keywords: Generating and applying RCFs to the new IP switches, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
+summary: MetroCluster IP 구성에 새로운 IP 스위치를 사용하는 경우 사용자 지정 RCF 파일을 사용하여 스위치를 구성해야 합니다. 
+---
+= 새 IP 스위치에 RCF 생성 및 적용
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 구성에 새로운 IP 스위치를 사용하는 경우 사용자 지정 RCF 파일을 사용하여 스위치를 구성해야 합니다.
+
+새 스위치를 사용하는 경우 이 작업이 필요합니다.
+
+기존 스위치를 사용하는 경우 로 진행합니다 xref:task_transition_from_mcc_fc_to_mcc_ip_configurations.adoc[로컬 클러스터 연결 이동].
+
+. 새 IP 스위치를 설치하고 랙에 설치합니다.
+. 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
++
+에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"]
+
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+
+
+. 필요한 경우 스위치의 펌웨어를 지원되는 버전으로 업데이트합니다.
+. RCF 생성기 툴을 사용하여 스위치 공급업체와 플랫폼 모델에 따라 RCF 파일을 생성한 다음 스위치를 파일로 업데이트합니다.
++
+_MetroCluster IP 설치 및 구성 안내서 _ 에서 스위치 공급업체의 섹션에 있는 단계를 따릅니다.
+
++
+link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"]
+
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP RCF 파일 다운로드 및 설치"]
+
+
+

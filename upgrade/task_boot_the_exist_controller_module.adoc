@@ -1,0 +1,20 @@
+---
+permalink: upgrade/task_boot_the_exist_controller_module.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, boot, existing, controller, module 
+summary: 기존 컨트롤러 모듈을 ONTAP로 부팅해야 합니다. 
+---
+= 기존 컨트롤러 모듈 부팅
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기존 컨트롤러 모듈을 ONTAP로 부팅해야 합니다.
+
+.단계
+. LOADER 프롬프트에서 기존 컨트롤러 모듈을 ONTAP로 부팅합니다.
++
+부트 ONTAP
+
+

@@ -1,0 +1,90 @@
+---
+section: install-stretch
+title: 스트레치 MetroCluster 구성을 설치합니다
+entries:
+- title: 개요
+  url: "/install-stretch/index.html"
+- title: MetroCluster 설치를 준비합니다
+  entries:
+  - title: ONTAP MetroCluster 구성의 차이점
+    url: "/install-stretch/concept_considerations_differences.html"
+  - title: 클러스터 피어링
+    url: "/install-stretch/concept_considerations_peering.html"
+  - title: 미러링되지 않은 애그리게이트를 사용할 때의 고려 사항
+    url: "/install-stretch/concept_considerations_unmirrored_aggrs.html"
+  - title: MetroCluster 사이트의 방화벽 사용
+    url: "/install-stretch/concept_considerations_firewalls.html"
+- title: 구성에 맞는 올바른 설치 절차를 선택하십시오
+  url: "/install-stretch/concept_choosing_the_correct_installation_procedure_for_your_configuration_mcc_install.html"
+- title: 2노드 SAS 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다
+  entries:
+  - title: 개요
+    url: "/install-stretch/task_configure_the_mcc_hardware_components_2_node_stretch_sas.html"
+  - title: 2노드 SAS 연결 스트레치 MetroCluster 구성의 일부
+    url: "/install-stretch/concept_parts_of_a_two_node_sas_attached_stretch_mcc_configuration.html"
+  - title: 2노드 SAS 연결 스트레치 구성에 필요한 MetroCluster 하드웨어 구성요소 및 명명 지침
+    url: "/install-stretch/concept_required_mcc_components_and_example_names_for_two_node_sas_attached_stretch_configurations_mcc.html"
+  - title: 2노드 SAS 연결 스트레치 구성용 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다
+    entries:
+    - title: 개요
+      url: "/install-stretch/reference_sas_optical_mc_configuring_a_stretch_mcc_system_with_sas_disk_shelves_and_sas_optical_cables.html"
+    - title: 하드웨어 구성 요소를 랙에 장착하십시오
+      url: "/install-stretch/task_rack_the_hardware_components_2_node_stretch_sas.html"
+    - title: 컨트롤러를 서로 및 스토리지 쉘프에 케이블로 연결합니다
+      url: "/install-stretch/task_cable_the_controllers_to_each_other_and_the_storage_shelves.html"
+    - title: 클러스터 피어링 연결에 케이블을 연결합니다
+      url: "/install-stretch/task_cable_the_cluster_peering_connections.html"
+    - title: 관리 및 데이터 연결에 케이블을 연결합니다
+      url: "/install-stretch/task_cable_the_management_and_data_connections.html"
+- title: 2노드 브리지 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다
+  entries:
+  - title: 개요
+    url: "/install-stretch/task_configure_the_mcc_hardware_components_2_node_stretch_atto.html"
+  - title: 2노드 브리지 연결 스트레치 MetroCluster 구성의 일부
+    url: "/install-stretch/concept_parts_of_a_two_node_mcc_configuration_using_fc_to_sas_bridges.html"
+  - title: 2노드 브리지 연결 확장 구성에 필요한 MetroCluster 하드웨어 구성 요소 및 명명 규칙
+    url: "/install-stretch/concept_required_mcc_components_and_naming_conventions_for_two_node_bridge_attached_stretch_configurations_mcc.html"
+  - title: FC-to-SAS 브리지에 대한 정보 수집 워크시트
+    url: "/install-stretch/reference_information_gathering_worksheet_for_fc_to_sas_bridges_2_node_atto.html"
+  - title: MetroCluster 구성 요소를 설치하고 케이블을 연결합니다
+    entries:
+    - title: 하드웨어 구성 요소를 랙에 장착하십시오
+      url: "/install-stretch/task_rack_the_hardware_components_mcc_2_node_stretch_atto.html"
+    - title: 컨트롤러를 서로 케이블로 연결합니다
+      url: "/install-stretch/task_cable_the_fc_vi_adapters_to_the_partner_controller_2_node_stretch_atto.html"
+    - title: 클러스터 피어링 연결에 케이블을 연결합니다
+      url: "/install-stretch/task_cable_the_cluster_peering_connections.html"
+    - title: 관리 및 데이터 연결에 케이블을 연결합니다
+      url: "/install-stretch/task_cable_the_management_and_data_connections.html"
+  - title: FC-to-SAS 브릿지와 SAS 디스크 쉘프를 설치합니다
+    url: "/install-stretch/task_fb_new_install.html"
+- title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
+  url: "/install-stretch/concept_configuring_the_mcc_software_in_ontap.html"
+- title: MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항
+  url: "/install-stretch/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html"
+- title: MetroCluster 구성을 테스트합니다
+  url: "/install-stretch/task_test_the_mcc_configuration.html"
+- title: 스토리지 LUN이 있는 확장 MetroCluster 구성의 연결
+  entries:
+  - title: 개요
+    url: "/install-stretch/concept_stretch_mcc_configuration_with_array_luns.html"
+  - title: 스토리지 LUN이 있는 확장 MetroCluster 구성의 예
+    url: "/install-stretch/reference_example_of_a_stretch_mcc_configuration_with_array_luns.html"
+  - title: 디스크 및 어레이 LUN이 있는 2노드 스트레치 MetroCluster 구성의 예
+    url: "/install-stretch/reference_examples_of_two_node_stretch_mcc_configurations_with_disks_and_array_luns.html"
+  - title: E-Series 스토리지 어레이를 사용하는 스트레치 MetroCluster 구성의 예
+    url: "/install-stretch/reference_example_of_a_stretch_mcc_configuration_with_e_series_storage_arrays.html"
+- title: MetroCluster 구성을 제거할 때의 고려 사항
+  url: "/install-stretch/concept_considerations_when_removing_mcc_configurations.html"
+- title: 추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법
+  entries:
+  - title: 개요
+    url: "/install-stretch/concept_using_the_oncommand_management_tools_for_further_configuration_and_monitoring.html"
+  - title: NTP를 사용하여 시스템 시간 동기화
+    url: "/install-stretch/task_synchronize_the_system_time_us_ntp.html"
+- title: MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
+  url: "/install-stretch/concept_considerations_when_using_ontap_in_a_mcc_configuration.html"
+- title: 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환
+  url: "/install-stretch/task_upgrade_the_configuration_to_fabric_attached_mcc.html"
+- title: 추가 정보를 찾을 수 있는 위치
+  url: "/install-stretch/reference_where_to_find_additional_information_icg.html"

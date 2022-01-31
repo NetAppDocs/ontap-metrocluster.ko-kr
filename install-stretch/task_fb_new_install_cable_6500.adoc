@@ -1,0 +1,39 @@
+---
+permalink: install-stretch/task_fb_new_install_cable_6500.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, cable, fibrebridge, disk, shelves, iom6, iom3, modules 
+summary: 브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 6500N 브리지는 QSFP 커넥터를 사용합니다. 
+---
+= IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 6500N 브리지와 디스크 쉘프 케이블링
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 6500N 브리지는 QSFP 커넥터를 사용합니다.
+
+전원을 켜고 10초 이상 기다린 후 포트를 연결합니다. SAS 케이블 커넥터는 SAS 포트에 올바르게 연결되었을 때 딸깍 소리가 나면서 제자리에 끼며 디스크 쉘프 SAS 포트 LNK LED가 녹색으로 켜집니다. 디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에) SAS 케이블 커넥터를 삽입합니다.
+
+FiberBridge 6500N 브리지는 IOM12 모듈을 사용하는 디스크 쉘프를 지원하지 않습니다.
+
+.단계
+. 각 스택의 디스크 쉘프를 데이지 체인 방식으로 연결합니다.
++
+디스크 쉘프 데이지 체인 방식으로 연결하는 방법에 대한 자세한 내용은 디스크 쉘프 모델의 _설치 및 서비스 가이드_를 참조하십시오.
+
+. 디스크 쉘프 각 스택의 IOM A 사각형 포트를 FiberBridge A의 SAS 포트 A에 연결합니다
+. 각 디스크 쉘프 스택에 대해 마지막 쉘프의 IOM B 원형 포트를 FiberBridge B의 SAS 포트 A에 연결합니다
++
+각 브리지는 디스크 쉘프 쌓기 위한 하나의 경로를 가지고 있습니다. 브리지 A는 첫 번째 쉘프를 통해 스택의 A 측에 연결되고, 브리지 B는 마지막 쉘프를 통해 스택의 B 측에 연결됩니다.
+
++
+
+NOTE: SAS 포트 B 브리지가 비활성화됩니다.
+
++
+다음 그림에서는 4개의 디스크 쉘프 스택에 연결된 브리지 세트를 보여 줍니다.
+
++
+image::../media/mcc_cabling_bridge_and_sas_stack.gif[MCC 케이블 연결 브리지 및 SAS 스택]
+
+

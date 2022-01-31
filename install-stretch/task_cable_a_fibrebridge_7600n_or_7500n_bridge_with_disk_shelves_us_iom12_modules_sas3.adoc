@@ -1,0 +1,50 @@
+---
+permalink: install-stretch/task_cable_a_fibrebridge_7600n_or_7500n_bridge_with_disk_shelves_us_iom12_modules_sas3.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, cable, fibrebridge, bridge, disk, shelves, iom12, modules 
+summary: 브리지를 구성한 후 시스템 케이블을 시작할 수 있습니다. 
+---
+= IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+브리지를 구성한 후 시스템 케이블을 시작할 수 있습니다.
+
+디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에) SAS 케이블 커넥터를 삽입합니다.
+
+.단계
+. 각 스택의 디스크 쉘프를 데이지 체인 방식으로 연결:
++
+.. 스택의 논리적 첫 번째 쉘프로 시작하여 IOM A 포트 3을 다음 쉘프의 IOM A 포트 1에 연결합니다. 스택의 각 IOM A가 연결될 때까지 이 프로세스를 반복합니다.
+.. IOM B에 대해 이전 하위 단계를 반복합니다
+.. 각 스택에 대해 이전 하위 단계를 반복합니다.
+
+
++
+디스크 쉘프 모델의 _설치 및 서비스 가이드_에서 디스크 쉘프 데이지 체인 방식으로 연결되는 방법에 대한 자세한 정보를 얻을 수 있습니다.
+
+. 디스크 쉘프의 전원을 켠 다음 쉘프 ID를 설정합니다.
++
+** 각 디스크 쉘프의 전원을 껐다가 다시 켜야 합니다.
+** 쉘프 ID는 각 MetroCluster DR 그룹(두 사이트 포함)의 각 SAS 디스크 쉘프에 대해 고유해야 합니다.
+
+
+. 디스크 쉘프를 FiberBridge 브리지에 연결합니다.
++
+.. 디스크 쉘프 첫 번째 스택의 경우, FiberBridge A의 SAS 포트 A에 첫 번째 쉘프의 IOM A를 케이블로 연결합니다 마지막 쉘프의 케이블 IOM B를 FiberBridge B의 SAS 포트 A에 연결합니다
+.. 추가 쉘프 스택의 경우 FiberBridge 브리지에서 사용 가능한 다음 SAS 포트를 사용하여 이전 단계를 반복하고, 두 번째 스택의 경우 포트 B, 세 번째 스택의 경우 포트 C, 네 번째 스택의 경우 포트 D를 사용합니다.
+.. 케이블 연결 중에 IOM12 및 IOM3/IOM6 모듈을 기준으로 하는 스택이 별도의 SAS 포트에 연결되어 있는 한 동일한 브리지에 연결됩니다.
++
+
+NOTE: 각 스택은 IOM의 다양한 모델을 사용할 수 있지만 스택 내의 모든 디스크 쉘프는 동일한 모델을 사용해야 합니다.
+
+
+
++
+다음 그림에서는 FiberBridge 7600N 또는 7500N 브리지 쌍에 연결된 디스크 쉘프를 보여 줍니다.
+
+
+
+image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks.gif[7500n 및 다중 스택을 사용한 MCC 케이블 연결 브리지 및 sas3 스택]

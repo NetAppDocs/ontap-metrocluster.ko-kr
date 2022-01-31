@@ -1,0 +1,70 @@
+---
+permalink: maintain/concept_in_band_management_of_the_fc_to_sas_bridges.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, in, band, management, fc, sas, bridges 
+summary: FiberBridge 7500N 또는 7600N 브리지가 있는 ONTAP 9.5부터 브리지의 대역 내 관리가 브리지 IP 관리 대신 지원됩니다. ONTAP 9.8부터는 대역외 관리가 사용되지 않습니다. 
+---
+= FC-to-SAS 브리지의 대역 내 관리
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FiberBridge 7500N 또는 7600N 브리지가 있는 ONTAP 9.5부터 브리지의 대역 내 관리가 브리지 IP 관리 대신 지원됩니다. ONTAP 9.8부터는 대역외 관리가 사용되지 않습니다.
+
+.이 작업에 대해
+
+NOTE: ONTAP 9.8부터 스토리지 브리지 명령이 시스템 브리지로 바뀌었습니다. 다음 단계에서는 'Storage bridge' 명령어를 보여주지만, ONTAP 9.8 이상을 실행 중인 경우에는 'system bridge' 명령어를 사용한다.
+
+대역내 관리를 사용하는 경우 브리지에 대한 FC 연결을 통해 ONTAP CLI에서 브리지를 관리 및 모니터링할 수 있습니다. 브리지 이더넷 포트를 통해 브리지에 물리적으로 액세스할 필요가 없어 브리지의 보안 취약점이 줄어듭니다.
+
+브리지의 대역내 관리 기능은 ONTAP 버전에 따라 다릅니다.
+
+* ONTAP 9.8부터 브리지는 기본적으로 대역내 연결을 통해 관리되며, SNMP를 통한 브리지의 대역 외 관리는 사용되지 않습니다.
+* ONTAP 9.5 ~ 9.7: 대역내 관리 또는 대역외 SNMP 관리가 지원됩니다.
+* ONTAP 9.5 이전에는 대역외 SNMP 관리만 지원됩니다.
+
+
+브리지 CLI 명령은 ONTAP ONTAP 인터페이스의 스토리지 브리지 run-cli-name_bridge-name_-command_bridge-command-name_'에서 실행할 수 있습니다.
+
+
+NOTE: IP 액세스가 비활성화된 상태에서 대역내 관리를 사용하면 브리지의 물리적 연결을 제한하여 보안을 강화할 수 있습니다.
+
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-bridge-with-a-replacement-bridge-of-the-same-model["동일한 모델의 교체 브리지로 브리지를 핫 스왑하는 경우"]
+
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-7500n-with-a-7600n-bridge["FiberBridge 7500N을 7600N 브리지로 핫 스와핑"]
+
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-a-6500n-bridge-with-a-fibrebrdige-7600n-or-7500n-bridge["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
+
+link:task_fb_hot_add_stack_of_shelves_and_bridges.html#hot-adding-a-stack-of-sas-disk-shelves-and-bridges["SAS 디스크 쉘프 및 브리지 스택 핫 추가"]
+
+
+
+== ONTAP에서 FiberBridge 브리지 관리
+
+ONTAP 9.5부터 ONTAP CLI를 사용하여 FiberBridge 명령을 브리지로 전달하고 해당 명령의 결과를 표시할 수 있습니다.
+
+.이 작업에 대해
+--
+
+NOTE: ONTAP 9.8부터 스토리지 브리지 명령이 시스템 브리지로 바뀌었습니다. 다음 단계에서는 'Storage bridge' 명령어를 보여주지만, ONTAP 9.8 이상을 실행 중인 경우에는 'system bridge' 명령어를 사용한다.
+
+--
+.단계
+. 'storage bridge run-cli' 명령 내에서 해당 FiberBridge 명령을 실행합니다.
++
+'Storage bridge run-cli-name_bridge-name_-command_"command-text"_'
+
++
+ONTAP 프롬프트에서 FiberBridge의 ASPortDisable 명령을 실행하여 브리지의 SAS 포트 b를 비활성화합니다.
+
++
+[listing]
+----
+cluster_A::> storage bridge run-cli -name "SASPortDisable b"
+
+SAS Port B has been disabled.
+Ready
+cluster_A::>
+----
+

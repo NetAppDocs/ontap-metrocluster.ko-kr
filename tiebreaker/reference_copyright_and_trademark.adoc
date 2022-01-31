@@ -1,0 +1,11 @@
+---
+permalink: tiebreaker/reference_copyright_and_trademark.html 
+sidebar: sidebar 
+keywords: copyright, trademark 
+summary: 저작권 및 상표 
+---
+= 저작권 및 상표
+:icons: font
+:imagesdir: ../media/
+
+

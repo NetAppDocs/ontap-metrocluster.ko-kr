@@ -1,0 +1,68 @@
+---
+section: disaster-recovery
+title: 재해에 복구합니다
+entries:
+- title: 재해 복구를 위한 워크플로우
+  url: "/disaster-recovery/concept_dr_workflow.html"
+- title: 재해 발생 후 강제 절체 수행
+  url: "/disaster-recovery/task_perform_a_forced_switchover_after_a_disaster.html"
+- title: 올바른 복구 절차 선택
+  url: "/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html"
+- title: 멀티 컨트롤러 또는 스토리지 장애로부터 복구합니다
+  entries:
+  - title: 시작하기 전에
+    url: "/disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html"
+  - title: 하드웨어를 교체하고 새 컨트롤러를 부팅합니다
+    url: "/disaster-recovery/task_replace_hardware_and_boot_new_controllers.html"
+  - title: MetroCluster IP 구성에서 스위치백을 준비합니다
+    entries:
+    - title: 개요
+      url: "/disaster-recovery/task_prepare_for_switchback_in_a_mcc_ip_configuration_supertask.html"
+    - title: MetroCluster IP 구성에서 필요한 환경 변수를 설정합니다
+      url: "/disaster-recovery/task_set_env_mcip.html"
+    - title: 재해 사이트에서 장비 전원 켜기(MetroCluster IP 구성)
+      url: "/disaster-recovery/task_power_on_mcip.html"
+    - title: IP 스위치 구성(MetroCluster IP 구성)
+      url: "/disaster-recovery/task_config_switches_mcip.html"
+    - title: 원격 사이트에 대한 스토리지 접속 확인(MetroCluster IP 구성)
+      url: "/disaster-recovery/task_verify_connectivity_mcip.html"
+    - title: 재해 사이트에서 풀 1 디스크에 대한 디스크 소유권 재할당(MetroCluster IP 구성)
+      url: "/disaster-recovery/task_reassign_pool1_disastersite_mcip.html"
+    - title: MetroCluster IP 구성의 교체 컨트롤러 모듈에서 ONTAP로 부팅합니다
+      url: "/disaster-recovery/task_boot_ontap_mcip.html"
+    - title: 정상적인 노드에서 재해 사이트로 연결 복원(MetroCluster IP 구성)
+      url: "/disaster-recovery/task_restore_connectivity_mcip.html"
+    - title: 자동 할당을 확인하거나 풀 0 드라이브를 수동으로 할당합니다
+      url: "/disaster-recovery/task_verify_assignment_mcip.html"
+    - title: 정상적인 사이트에서 풀 1 드라이브 할당(MetroCluster IP 구성)
+      url: "/disaster-recovery/task_assign_pool1_survivingsite_mcip.html"
+    - title: 정상적인 사이트에서 소유하는 실패한 플렉스를 삭제합니다(MetroCluster IP 구성).
+      url: "/disaster-recovery/task_delete_plexes_mcip.html"
+    - title: Aggregate 환원 및 미러 복원(MetroCluster IP 구성) 수행
+      url: "/disaster-recovery/task_heal_restore_mcip.html"
+  - title: MetroCluster FC 구성에서 스위치백을 준비합니다
+    entries:
+    - title: 포트 구성 확인(MetroCluster FC 구성만 해당)
+      url: "/disaster-recovery/task_verify_port_mcfc.html"
+    - title: FC-to-SAS 브리지 구성(MetroCluster FC 구성만 해당)
+      url: "/disaster-recovery/task_cfg_bridges_mcfc.html"
+    - title: FC 스위치 구성(MetroCluster FC 구성만 해당)
+      url: "/disaster-recovery/task_cfg_switches_mcfc.html"
+    - title: 스토리지 구성을 확인합니다
+      url: "/disaster-recovery/task_verify_storage_mcfc.html"
+    - title: 재해 사이트에서 장비의 전원을 켭니다
+      url: "/disaster-recovery/task_power_on_mcfc.html"
+    - title: 교체된 드라이브에 대한 소유권을 할당합니다
+      url: "/disaster-recovery/task_assign_ownership_mcfc.html"
+    - title: 애그리게이트 복구 및 복원 미러(MetroCluster FC 구성) 수행
+      url: "/disaster-recovery/task_heal_restore_mcfc.html"
+    - title: 루트 애그리게이트에 대한 디스크 소유권을 교체 컨트롤러 모듈에 재할당(MetroCluster FC 구성)
+      url: "/disaster-recovery/task_reassign_roots_mcfc.html"
+    - title: 새 컨트롤러 모듈 부팅(MetroCluster FC 구성)
+      url: "/disaster-recovery/task_boot_new_mcfc.html"
+  - title: 혼합 구성에서 스위치백을 위한 노드 준비(전환 중 복구)
+    url: "/disaster-recovery/task_prepare_the_nodes_for_switchback_in_a_mixed_configuration.html"
+  - title: 복구를 완료합니다
+    url: "/disaster-recovery/task_complete_recovery.html"
+- title: 컨트롤러 이외의 장애를 복구합니다
+  url: "/disaster-recovery/task_recover_from_a_non_controller_failure_mcc_dr.html"

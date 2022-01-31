@@ -1,0 +1,679 @@
+---
+permalink: install-ip/task_test_the_mcc_configuration.html 
+sidebar: sidebar 
+keywords: test, metrocluster, configuration, failure, correct, operation, metrocluster, verify, negotiate, switchover, heal, manual, switchback, power, line, disruption, loss, single, storage, shelf 
+summary: 오류 시나리오를 테스트하여 MetroCluster 구성이 올바르게 작동하는지 확인할 수 있습니다. 
+---
+= MetroCluster 구성을 테스트하는 중입니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+오류 시나리오를 테스트하여 MetroCluster 구성이 올바르게 작동하는지 확인할 수 있습니다.
+
+
+
+== 협상된 전환을 확인하는 중입니다
+
+협상된(계획된) 전환 작업을 테스트하여 중단 없는 데이터 가용성을 확인할 수 있습니다.
+
+이 테스트에서는 클러스터를 두 번째 데이터 센터로 전환하여 데이터 가용성이 영향을 받지 않음을 검증합니다(Microsoft SMB(Server Message Block) 및 Solaris Fibre Channel 프로토콜은 제외).
+
+이 테스트는 약 30분 정도 소요됩니다.
+
+이 절차에는 다음과 같은 예상 결과가 있습니다.
+
+* MetroCluster 절체 명령은 경고 메시지를 표시합니다.
++
+프롬프트에 "예"라고 응답하면 명령이 실행된 사이트가 파트너 사이트를 전환합니다.
+
+
+
+MetroCluster IP 구성의 경우:
+
+* ONTAP 9.4 및 이전 버전의 경우:
++
+** 협상된 전환 후 미러링된 Aggregate가 성능 저하 상태가 됩니다.
+
+
+* ONTAP 9.5 이상:
++
+** 원격 스토리지에 액세스할 수 있는 경우 미러링된 애그리게이트는 정상 상태로 유지됩니다.
+** 원격 스토리지에 대한 액세스가 손실되면 협상된 전환 후 미러링된 애그리게이트의 성능이 저하됩니다.
+
+
+* ONTAP 9.8 이상:
++
+** 원격 스토리지에 대한 액세스가 손실되면 재해 사이트에 있는 미러링되지 않은 애그리게이트를 사용할 수 없게 됩니다. 이로 인해 컨트롤러 중단이 발생할 수 있습니다.
+
+
+
+
+.단계
+. 모든 노드가 구성된 상태 및 정상 모드인지 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::>  metrocluster node show
+
+Cluster                        Configuration State    Mode
+------------------------------ ---------------------- ------------------------
+ Local: cluster_A               configured             normal
+Remote: cluster_B               configured             normal
+----
+. 전환 작업을 시작합니다.
++
+MetroCluster 절체
+
++
+[listing]
+----
+cluster_A::> metrocluster switchover
+Warning: negotiated switchover is about to start. It will stop all the data Vservers on cluster "cluster_B" and
+automatically re-start them on cluster "cluster_A". It will finally gracefully shutdown cluster "cluster_B".
+----
+. 로컬 클러스터가 구성된 상태 및 전환 모드에 있는지 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::>  metrocluster node show
+
+Cluster                        Configuration State    Mode
+------------------------------ ---------------------- ------------------------
+Local: cluster_A                configured             switchover
+Remote: cluster_B               not-reachable          -
+              configured             normal
+----
+. 전환 작업이 성공했는지 확인합니다.
++
+MetroCluster 동작쇼
+
++
+[listing]
+----
+cluster_A::>  metrocluster operation show
+
+cluster_A::> metrocluster operation show
+  Operation: switchover
+      State: successful
+ Start Time: 2/6/2016 13:28:50
+   End Time: 2/6/2016 13:29:41
+     Errors: -
+----
+. SVM show와 network interface show 명령을 사용하여 DR SVM과 LIF가 온라인 상태인지 확인하십시오.
+
+
+
+
+== 복구 및 수동 스위치백을 확인하는 중입니다
+
+협상된 전환 후 클러스터를 원래 데이터 센터로 다시 전환하여 복구 및 수동 스위치백 작업을 테스트하여 데이터 가용성이 영향을 받지 않는지(SMB 및 Solaris FC 구성은 제외) 확인할 수 있습니다.
+
+이 테스트는 약 30분 정도 소요됩니다.
+
+이 절차의 예상 결과는 서비스를 홈 노드로 다시 전환해야 한다는 것입니다.
+
+ONTAP 9.5 이상을 실행하는 시스템에서는 복구 단계가 필요하지 않으며, 협상된 전환 후 자동 복구가 수행됩니다. ONTAP 9.6 이상을 실행하는 시스템에서 예기치 않은 스위치오버 이후 복구도 자동으로 수행됩니다.
+
+.단계
+. 시스템에서 ONTAP 9.4 이하를 실행 중인 경우 데이터 애그리게이트를 치료합니다.
++
+'MetroCluster 환원 어애그리게이트'
+
++
+다음 예제는 명령이 성공적으로 완료되었음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster heal aggregates
+[Job 936] Job succeeded: Heal Aggregates is successful.
+----
+. 시스템에서 ONTAP 9.4 이하를 실행 중인 경우 루트 애그리게이트를 다음과 같이 수정합니다.
++
+'MetroCluster 환원 루트 집계'
+
++
+이 단계는 다음 구성에서 필요합니다.
+
++
+** MetroCluster FC 구성
+** ONTAP 9.4 이하를 실행하는 MetroCluster IP 구성. 다음 예제는 명령이 성공적으로 완료되었음을 보여 줍니다.
+
+
++
+[listing]
+----
+cluster_A::> metrocluster heal root-aggregates
+[Job 937] Job succeeded: Heal Root Aggregates is successful.
+----
+. 복구가 완료되었는지 확인합니다.
++
+'MetroCluster node show'
+
++
+다음 예제는 명령이 성공적으로 완료되었음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1         configured     enabled   heal roots completed
+      cluster_B
+              node_B_2         unreachable    -         switched over
+42 entries were displayed.metrocluster operation show
+----
++
+어떤 이유로든 자동 복구 작업이 실패하면 ONTAP 9.5 이전의 ONTAP 버전에서 했던 것처럼 'MetroCluster 환원' 명령을 수동으로 실행해야 합니다. MetroCluster operation show와 MetroCluster operation history show-instance 명령을 사용하여 복구 상태를 모니터링하고 장애 원인을 확인할 수 있습니다.
+
+. 모든 애그리게이트가 미러링되었는지 확인:
++
+'스토리지 집계 쇼'
+
++
+다음 예에서는 모든 애그리게이트에 RAID Status가 Mirrored로 표시되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate show
+cluster Aggregates:
+Aggregate Size     Available Used% State   #Vols  Nodes       RAID Status
+--------- -------- --------- ----- ------- ------ ----------- ------------
+data_cluster
+            4.19TB    4.13TB    2% online       8 node_A_1    raid_dp,
+                                                              mirrored,
+                                                              normal
+root_cluster
+           715.5GB   212.7GB   70% online       1 node_A_1    raid4,
+                                                              mirrored,
+                                                              normal
+cluster_B Switched Over Aggregates:
+Aggregate Size     Available Used% State   #Vols  Nodes       RAID Status
+--------- -------- --------- ----- ------- ------ ----------- ------------
+data_cluster_B
+            4.19TB    4.11TB    2% online       5 node_A_1    raid_dp,
+                                                              mirrored,
+                                                              normal
+root_cluster_B    -         -     - unknown      - node_A_1   -
+----
+. 재해 사이트에서 노드를 부팅합니다.
+. 스위치백 복구 상태를 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+             node_A_1            configured     enabled   heal roots completed
+      cluster_B
+             node_B_2            configured     enabled   waiting for switchback
+                                                          recovery
+2 entries were displayed.
+----
+. 스위치백 수행:
++
+MetroCluster 스위치백
+
++
+[listing]
+----
+cluster_A::> metrocluster switchback
+[Job 938] Job succeeded: Switchback is successful.Verify switchback
+----
+. 노드 상태 확인:
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1         configured     enabled   normal
+      cluster_B
+              node_B_2         configured     enabled   normal
+
+2 entries were displayed.
+----
+. MetroCluster 작업의 상태를 확인합니다.
++
+MetroCluster 동작쇼
+
++
+출력에 성공 상태가 표시되어야 합니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster operation show
+  Operation: switchback
+      State: successful
+ Start Time: 2/6/2016 13:54:25
+   End Time: 2/6/2016 13:56:15
+     Errors: -
+----
+
+
+
+
+== 전력선 작업 중단 후 작동 확인
+
+PDU의 장애에 대한 MetroCluster 구성 응답을 테스트할 수 있습니다.
+
+모범 사례는 구성 요소의 각 전원 공급 장치(PSU)를 개별 전원 공급 장치에 연결하는 것입니다. 두 PSU가 모두 동일한 PDU(Power Distribution Unit)에 연결되어 있고 전기 중단이 발생할 경우 사이트가 다운되거나 전체 쉘프를 사용할 수 없게 될 수 있습니다. 한 전원 라인의 장애를 테스트하여 서비스 중단을 일으킬 수 있는 케이블 불일치가 없는지 확인합니다.
+
+이 테스트는 약 15분 정도 소요됩니다.
+
+이 테스트에서는 모든 좌측 PDU의 전원을 끈 다음 MetroCluster 구성 요소가 포함된 모든 랙에 있는 모든 오른손 PDU를 꺼야 합니다.
+
+이 절차에는 다음과 같은 예상 결과가 있습니다.
+
+* PDU가 분리되어 있어 오류가 발생되어야 합니다.
+* 장애 조치 또는 서비스 손실이 발생하지 않아야 합니다.
+
+
+.단계
+. MetroCluster 구성 요소가 포함된 랙의 왼쪽에 있는 PDU의 전원을 끕니다.
+. 콘솔에서 결과를 모니터링합니다.
++
+'시스템 환경 센서 상태 오류
+
++
+'Storage shelf show-errors'
+
++
+[listing]
+----
+cluster_A::> system environment sensors show -state fault
+
+Node Sensor 			State Value/Units Crit-Low Warn-Low Warn-Hi Crit-Hi
+---- --------------------- ------ ----------- -------- -------- ------- -------
+node_A_1
+		PSU1 			fault
+							PSU_OFF
+		PSU1 Pwr In OK 	fault
+							FAULT
+node_A_2
+		PSU1 			fault
+							PSU_OFF
+		PSU1 Pwr In OK 	fault
+							FAULT
+4 entries were displayed.
+
+cluster_A::> storage shelf show -errors
+    Shelf Name: 1.1
+     Shelf UID: 50:0a:09:80:03:6c:44:d5
+ Serial Number: SHFHU1443000059
+
+Error Type          Description
+------------------  ---------------------------
+Power               Critical condition is detected in storage shelf power supply unit "1". The unit might fail.Reconnect PSU1
+----
+. 왼쪽 PDU의 전원을 다시 켭니다.
+. ONTAP에서 오류 조건이 해결되었는지 확인합니다.
+. 오른쪽 PDU를 사용하여 이전 단계를 반복합니다.
+
+
+
+
+== 단일 스토리지 쉘프 손실 후 작업 확인
+
+단일 스토리지 쉘프의 장애를 테스트하여 단일 장애 지점이 없는지 확인할 수 있습니다.
+
+이 절차에는 다음과 같은 예상 결과가 있습니다.
+
+* 모니터링 소프트웨어에서 오류 메시지를 보고해야 합니다.
+* 장애 조치 또는 서비스 손실이 발생하지 않아야 합니다.
+* 하드웨어 장애가 복구되면 미러 재동기화가 자동으로 시작됩니다.
+
+
+.단계
+. 스토리지 페일오버 상태를 확인합니다.
++
+'스토리지 페일오버 쇼'
+
++
+[listing]
+----
+cluster_A::> storage failover show
+
+Node           Partner        Possible State Description
+-------------- -------------- -------- -------------------------------------
+node_A_1       node_A_2       true     Connected to node_A_2
+node_A_2       node_A_1       true     Connected to node_A_1
+2 entries were displayed.
+----
+. 집계 상태 확인:
++
+'스토리지 집계 쇼'
+
++
+[listing]
+----
+cluster_A::> storage aggregate show
+
+cluster Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1data01_mirrored
+            4.15TB    3.40TB   18% online       3 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_1root
+           707.7GB   34.29GB   95% online       1 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_2_data01_mirrored
+            4.15TB    4.12TB    1% online       2 node_A_2       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_2_data02_unmirrored
+            2.18TB    2.18TB    0% online       1 node_A_2       raid_dp,
+                                                                   normal
+node_A_2_root
+           707.7GB   34.27GB   95% online       1 node_A_2       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+----
+. 모든 데이터 SVM 및 데이터 볼륨이 온라인 상태이고 데이터를 제공하고 있는지 확인합니다.
++
+'vserver show-type data'
+
++
+네트워크 인터페이스 표시 필드는 -홈 거짓입니다
+
++
+'볼륨 쇼!vol0,!MDV *'
+
++
+[listing]
+----
+cluster_A::> vserver show -type data
+                               Admin      Operational Root
+Vserver     Type    Subtype    State      State       Volume     Aggregate
+----------- ------- ---------- ---------- ----------- ---------- ----------
+SVM1        data    sync-source           running     SVM1_root  node_A_1_data01_mirrored
+SVM2        data    sync-source	          running     SVM2_root  node_A_2_data01_mirrored
+
+cluster_A::> network interface show -fields is-home false
+There are no entries matching your query.
+
+cluster_A::> volume show !vol0,!MDV*
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+SVM1
+          SVM1_root
+                       node_A_1data01_mirrored
+                                    online     RW         10GB     9.50GB    5%
+SVM1
+          SVM1_data_vol
+                       node_A_1data01_mirrored
+                                    online     RW         10GB     9.49GB    5%
+SVM2
+          SVM2_root
+                       node_A_2_data01_mirrored
+                                    online     RW         10GB     9.49GB    5%
+SVM2
+          SVM2_data_vol
+                       node_A_2_data02_unmirrored
+                                    online     RW          1GB    972.6MB    5%
+----
+. 풀 1에서 노드 "node_a_2"의 셸프를 식별하여 갑작스러운 하드웨어 장애를 시뮬레이션합니다.
++
+'storage aggregate show -r-node_node -name_! * root'를 선택합니다
+
++
+선택한 쉘프는 미러링된 데이터 애그리게이트의 일부인 드라이브를 포함해야 합니다.
+
++
+다음 예에서는 쉘프 ID "31"이 실패하도록 선택되어 있습니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate show -r -node node_A_2 !*root
+Owner Node: node_A_2
+ Aggregate: node_A_2_data01_mirrored (online, raid_dp, mirrored) (block checksums)
+  Plex: /node_A_2_data01_mirrored/plex0 (online, normal, active, pool0)
+   RAID Group /node_A_2_data01_mirrored/plex0/rg0 (normal, block checksums)
+                                                              Usable Physical
+     Position Disk                        Pool Type     RPM     Size     Size Status
+     -------- --------------------------- ---- ----- ------ -------- -------- ----------
+     dparity  2.30.3                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     parity   2.30.4                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.6                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.8                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.5                       0   BSAS    7200  827.7GB  828.0GB (normal)
+
+  Plex: /node_A_2_data01_mirrored/plex4 (online, normal, active, pool1)
+   RAID Group /node_A_2_data01_mirrored/plex4/rg0 (normal, block checksums)
+                                                              Usable Physical
+     Position Disk                        Pool Type     RPM     Size     Size Status
+     -------- --------------------------- ---- ----- ------ -------- -------- ----------
+     dparity  1.31.7                       1   BSAS    7200  827.7GB  828.0GB (normal)
+     parity   1.31.6                       1   BSAS    7200  827.7GB  828.0GB (normal)
+     data     1.31.3                       1   BSAS    7200  827.7GB  828.0GB (normal)
+     data     1.31.4                       1   BSAS    7200  827.7GB  828.0GB (normal)
+     data     1.31.5                       1   BSAS    7200  827.7GB  828.0GB (normal)
+
+ Aggregate: node_A_2_data02_unmirrored (online, raid_dp) (block checksums)
+  Plex: /node_A_2_data02_unmirrored/plex0 (online, normal, active, pool0)
+   RAID Group /node_A_2_data02_unmirrored/plex0/rg0 (normal, block checksums)
+                                                              Usable Physical
+     Position Disk                        Pool Type     RPM     Size     Size Status
+     -------- --------------------------- ---- ----- ------ -------- -------- ----------
+     dparity  2.30.12                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     parity   2.30.22                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.21                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.20                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.14                      0   BSAS    7200  827.7GB  828.0GB (normal)
+15 entries were displayed.
+----
+. 선택한 쉘프의 물리적 전원을 끕니다.
+. 집계 상태를 다시 확인합니다.
++
+'스토리지 집계 쇼'
+
++
+'Storage aggregate show -r-node_a_2! * root'를 선택합니다
+
++
+전원이 꺼진 상태의 드라이브가 있는 애그리게이트에는 "성능 저하" RAID 상태가 있고 영향을 받는 플렉스에 있는 드라이브는 다음 예에서와 같이 "장애" 상태가 되어야 합니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate show
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1data01_mirrored
+            4.15TB    3.40TB   18% online       3 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_1root
+           707.7GB   34.29GB   95% online       1 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_2_data01_mirrored
+            4.15TB    4.12TB    1% online       2 node_A_2       raid_dp,
+                                                                   mirror
+                                                                   degraded
+node_A_2_data02_unmirrored
+            2.18TB    2.18TB    0% online       1 node_A_2       raid_dp,
+                                                                   normal
+node_A_2_root
+           707.7GB   34.27GB   95% online       1 node_A_2       raid_dp,
+                                                                   mirror
+                                                                   degraded
+cluster_A::> storage aggregate show -r -node node_A_2 !*root
+Owner Node: node_A_2
+ Aggregate: node_A_2_data01_mirrored (online, raid_dp, mirror degraded) (block checksums)
+  Plex: /node_A_2_data01_mirrored/plex0 (online, normal, active, pool0)
+   RAID Group /node_A_2_data01_mirrored/plex0/rg0 (normal, block checksums)
+                                                              Usable Physical
+     Position Disk                        Pool Type     RPM     Size     Size Status
+     -------- --------------------------- ---- ----- ------ -------- -------- ----------
+     dparity  2.30.3                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     parity   2.30.4                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.6                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.8                       0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.5                       0   BSAS    7200  827.7GB  828.0GB (normal)
+
+  Plex: /node_A_2_data01_mirrored/plex4 (offline, failed, inactive, pool1)
+   RAID Group /node_A_2_data01_mirrored/plex4/rg0 (partial, none checksums)
+                                                              Usable Physical
+     Position Disk                        Pool Type     RPM     Size     Size Status
+     -------- --------------------------- ---- ----- ------ -------- -------- ----------
+     dparity  FAILED                       -   -          -  827.7GB        - (failed)
+     parity   FAILED                       -   -          -  827.7GB        - (failed)
+     data     FAILED                       -   -          -  827.7GB        - (failed)
+     data     FAILED                       -   -          -  827.7GB        - (failed)
+     data     FAILED                       -   -          -  827.7GB        - (failed)
+
+ Aggregate: node_A_2_data02_unmirrored (online, raid_dp) (block checksums)
+  Plex: /node_A_2_data02_unmirrored/plex0 (online, normal, active, pool0)
+   RAID Group /node_A_2_data02_unmirrored/plex0/rg0 (normal, block checksums)
+                                                              Usable Physical
+     Position Disk                        Pool Type     RPM     Size     Size Status
+     -------- --------------------------- ---- ----- ------ -------- -------- ----------
+     dparity  2.30.12                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     parity   2.30.22                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.21                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.20                      0   BSAS    7200  827.7GB  828.0GB (normal)
+     data     2.30.14                      0   BSAS    7200  827.7GB  828.0GB (normal)
+15 entries were displayed.
+----
+. 데이터를 제공하고 모든 볼륨이 온라인 상태인지 확인합니다.
++
+'vserver show-type data'
+
++
+네트워크 인터페이스 표시 필드는 -홈 거짓입니다
+
++
+'볼륨 쇼!vol0,!MDV *'
+
++
+[listing]
+----
+cluster_A::> vserver show -type data
+
+cluster_A::> vserver show -type data
+                               Admin      Operational Root
+Vserver     Type    Subtype    State      State       Volume     Aggregate
+----------- ------- ---------- ---------- ----------- ---------- ----------
+SVM1        data    sync-source           running     SVM1_root  node_A_1_data01_mirrored
+SVM2        data    sync-source	          running     SVM2_root  node_A_1_data01_mirrored
+
+cluster_A::> network interface show -fields is-home false
+There are no entries matching your query.
+
+cluster_A::> volume show !vol0,!MDV*
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+SVM1
+          SVM1_root
+                       node_A_1data01_mirrored
+                                    online     RW         10GB     9.50GB    5%
+SVM1
+          SVM1_data_vol
+                       node_A_1data01_mirrored
+                                    online     RW         10GB     9.49GB    5%
+SVM2
+          SVM2_root
+                       node_A_1data01_mirrored
+                                    online     RW         10GB     9.49GB    5%
+SVM2
+          SVM2_data_vol
+                       node_A_2_data02_unmirrored
+                                    online     RW          1GB    972.6MB    5%
+----
+. 쉘프의 물리적 전원을 켭니다.
++
+재동기화가 자동으로 시작됩니다.
+
+. 재동기화가 시작되었는지 확인합니다.
++
+'스토리지 집계 쇼'
+
++
+영향을 받는 Aggregate는 다음 예에 표시된 것처럼 "재동기화 중" RAID 상태를 가져야 합니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate show
+cluster Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1_data01_mirrored
+            4.15TB    3.40TB   18% online       3 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_1_root
+           707.7GB   34.29GB   95% online       1 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_2_data01_mirrored
+            4.15TB    4.12TB    1% online       2 node_A_2       raid_dp,
+                                                                   resyncing
+node_A_2_data02_unmirrored
+            2.18TB    2.18TB    0% online       1 node_A_2       raid_dp,
+                                                                   normal
+node_A_2_root
+           707.7GB   34.27GB   95% online       1 node_A_2       raid_dp,
+                                                                   resyncing
+----
+. Aggregate를 모니터링하여 재동기화가 완료되었는지 확인합니다.
++
+'스토리지 집계 쇼'
+
++
+다음 예에 표시된 것처럼 영향을 받는 애그리게이트에는 RAID 상태가 "normal"이어야 합니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate show
+cluster Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1data01_mirrored
+            4.15TB    3.40TB   18% online       3 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_1root
+           707.7GB   34.29GB   95% online       1 node_A_1       raid_dp,
+                                                                   mirrored,
+                                                                   normal
+node_A_2_data01_mirrored
+            4.15TB    4.12TB    1% online       2 node_A_2       raid_dp,
+                                                                   normal
+node_A_2_data02_unmirrored
+            2.18TB    2.18TB    0% online       1 node_A_2       raid_dp,
+                                                                   normal
+node_A_2_root
+           707.7GB   34.27GB   95% online       1 node_A_2       raid_dp,
+                                                                   resyncing
+----
+

@@ -1,0 +1,29 @@
+---
+permalink: upgrade/task_determin_the_new_cable_layout_mcc_expansion.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, determine, new, cabling, layout 
+summary: 새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다. 
+---
+= 새 케이블 연결 레이아웃 결정
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. 패브릭 연결 MetroCluster 설치 및 구성 가이드 _ 를 사용하여 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형에 대한 케이블 연결 레이아웃을 생성합니다.
++
+FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 가이드에 설명된 용법과 일치해야 합니다.
+
++
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
++
+
+NOTE: RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우, _Fabric에 연결된 MetroCluster 설치 및 구성 가이드_에 나와 있는 지침에 따라 시스템을 수동으로 구성해야 합니다. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
+
+

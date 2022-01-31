@@ -1,0 +1,26 @@
+---
+permalink: install-fc/task_cable_the_isl_between_the_mcc_sites_fabric_config.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, cable, isl, sites 
+summary: 'MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려면 광섬유 ISL(Inter-Switch Link)을 통해 각 사이트의 FC 스위치를 연결해야 합니다.' 
+---
+= MetroCluster 사이트 간 ISL 케이블 연결
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려면 광섬유 ISL(Inter-Switch Link)을 통해 각 사이트의 FC 스위치를 연결해야 합니다.
+
+이 작업은 두 스위치 Fabric 모두에 대해 수행해야 합니다.
+
+.단계
+. 구성 및 스위치 모델에 해당하는 표의 케이블을 사용하여 각 사이트의 FC 스위치를 모든 ISL에 연결합니다.
++
+** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"]
+
+
+
+
+link:concept_considerations_isls_mcfc.html["ISL에 대한 고려 사항"]

@@ -1,0 +1,59 @@
+---
+permalink: install-ip/concept_considerations_vip_bgp.html 
+sidebar: sidebar 
+keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, array luns, mediator, tiebreaker 
+summary: 'ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다.' 
+---
+= MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다. 프런트엔드 네트워킹의 이중화를 위한 VIP와 BGP를 결합하여 백엔드 MetroCluster 이중화를 통해 Layer 3 재해 복구 솔루션을 제공합니다.
+
+계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 다음 섹션을 참조하십시오.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-A8EF6D34-1717-4813-BBFA-AA33E104CF6F.html["* VIP(가상 IP) LIF 구성 *"]
+
+image::../media/vip_and_bgp_in_metrocluster_2.png[MetroCluster 2의 VIP 및 BGP]
+
+
+
+== ONTAP 제한 사항
+
+ONTAP는 MetroCluster 구성의 두 사이트에 있는 모든 노드가 BGP 피어링을 사용하여 구성되었는지 자동으로 확인하지 않습니다.
+
+ONTAP는 경로 통합을 수행하지 않지만 모든 개별 가상 LIF IP를 고유한 호스트 경로로 항상 알려 줍니다.
+
+ONTAP는 진정한 Anycast를 지원하지 않습니다. 즉, 클러스터의 단일 노드만 특정 가상 LIF IP를 제공합니다(물리적 포트가 올바른 IPspace의 일부일 경우, BGP LIF인지 여부에 관계없이 모든 물리적 인터페이스에서 수용됨). LIF마다 다른 호스팅 노드로 독립적으로 마이그레이션할 수 있습니다.
+
+
+
+== MetroCluster 구성에서 이 레이어 3 솔루션 사용에 대한 지침
+
+필요한 이중화를 제공하려면 BGP와 VIP를 올바르게 구성해야 합니다.
+
+보다 복잡한 아키텍처보다 간단한 배포 시나리오가 선호됩니다(예: BGP 피어링 라우터는 BGP 라우터가 아닌 중간 라우터를 통해 연결할 수 있음). 그러나 ONTAP는 네트워크 설계 또는 토폴로지 제한을 적용하지 않습니다.
+
+VIP LIF는 프런트엔드/데이터 네트워크만 포함합니다.
+
+ONTAP 버전에 따라 시스템 또는 데이터 SVM이 아닌 노드 SVM에서 BGP 피어링 LIF를 구성해야 합니다. 9.8에서는 BGP LIF가 클러스터(시스템) SVM에서 보이고 노드 SVM은 더 이상 존재하지 않습니다.
+
+각 데이터 SVM에는 잠재적인 모든 1차 홉 게이트웨이 주소(일반적으로 BGP 라우터 피어링 IP 주소)를 구성해야 하므로, LIF 마이그레이션이나 MetroCluster 페일오버가 발생하는 경우 반환 데이터 경로를 사용할 수 있습니다.
+
+BGP LIF는 노드마다 다르며, 인터클러스터 LIF와 유사합니다. 각 노드에는 고유한 구성이 있으므로 DR 사이트 노드에 복제할 필요가 없습니다.
+
+구성된 경우, v0a(v0b 등)가 지속적으로 연결을 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(파손된 구성이 중단 후에만 표시됨).
+
+아키텍처의 주요 차이점은 클라이언트가 더 이상 데이터 SVM의 VIP와 동일한 IP 서브넷을 공유해서는 안 된다는 점입니다. 적절한 엔터프라이즈급 복원력과 이중화 기능(예: VRRP/HSRP)이 활성화된 L3 라우터는 VIP가 올바르게 작동하려면 스토리지와 클라이언트 사이의 경로에 있어야 합니다.
+
+BGP의 안정적인 업데이트 프로세스는 약간 더 빠르고 일부 클라이언트에 대한 중단 가능성이 낮기 때문에 LIF 마이그레이션을 더 원활하게 수행할 수 있습니다
+
+적절하게 구성된 경우, BGP를 구성하여 일부 네트워크 클래스를 감지하거나 LACP보다 더 빠르게 스위치 오동작을 감지할 수 있습니다.
+
+외부 BGP(EBGP)는 ONTAP 노드와 피어링 라우터 간에 서로 다른 숫자를 사용하며, 라우터에서 라우팅 집계 및 재배포를 용이하게 하기 위해 선호되는 배포입니다. 내부 BGP(IBGP) 및 루트 리플렉터 사용은 불가능하지는 않지만 간단한 VIP 설정의 범위를 벗어납니다.
+
+구축 후에는 연결된 가상 LIF가 각 사이트의 모든 노드(MetroCluster 전환 포함) 간에 마이그레이션될 때 데이터 SVM에 액세스할 수 있는지 확인하여 동일한 데이터 SVM에 대한 정적 경로가 올바르게 구성되었는지 확인해야 합니다.
+
+VIP는 대부분의 IP 기반 프로토콜(NFS, SMB, iSCSI)에서 작동합니다.

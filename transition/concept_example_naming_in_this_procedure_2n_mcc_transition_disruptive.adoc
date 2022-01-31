@@ -1,0 +1,75 @@
+---
+permalink: transition/concept_example_naming_in_this_procedure_2n_mcc_transition_disruptive.html 
+sidebar: sidebar 
+keywords: procedure, example, name, identify, dr, group, node, switch, involve, naming 
+summary: 이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다. 
+---
+= 이 절차의 이름 지정 예
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다.
+
+원래 구성의 노드는 fabric-attached 또는 stretch MetroCluster 구성에 있음을 나타내는 접미사 -FC가 있습니다.
+
+[cols="22,39,39"]
+|===
+
+
+| 구성 요소 | 사이트_A의 클러스터_A | site_B의 cluster_B입니다 
+
+
+ a| 
+dr_group_1-FC
+ a| 
+* 노드_A_1-FC
+* 쉘프_A_1
+* 쉘프_A_2
+
+ a| 
+* 노드_B_1-FC
+* 쉘프_B_1
+* 쉘프_B_2
+
+
+
+
+ a| 
+dr_group_2 - IP입니다
+ a| 
+* Node_A_1 - IP
+* Node_A_2 - IP
+* 쉘프_A_1
+* 쉘프_A_2
+* 쉘프_A_3 - 신규
+* 쉘프_A_4 - 신규
+
+ a| 
+* Node_B_1 - IP
+* Node_B_2 - IP
+* 쉘프_B_1
+* 쉘프_B_2
+* 쉘프_B_3 - 신규
+* 쉘프_B_4 - 신규
+
+
+
+
+ a| 
+스위치
+ a| 
+* 스위치_A_1-FC
+* 스위치_A_2-FC
+* 스위치_A_1 - IP
+* 스위치_A_2 - IP
+
+ a| 
+* 스위치_B_1-FC
+* 스위치_B_2-FC
+* 스위치_B_1 - IP
+* 스위치_B_2 - IP
+
+
+|===

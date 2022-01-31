@@ -1,0 +1,931 @@
+---
+permalink: upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, fc, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroCluster FC 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 
+---
+= 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster FC 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.
+
+.이 작업에 대해
+* 이 절차는 컨트롤러 업그레이드에만 사용할 수 있습니다.
++
+스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소는 동시에 업그레이드할 수 없습니다.
+
+* 이 절차는 4노드 MetroCluster FC 구성의 컨트롤러 모듈에 적용됩니다.
+* 플랫폼이 ONTAP 9.10.1 이상을 실행해야 합니다.
+* 원본 플랫폼과 새 플랫폼이 호환되고 지원되어야 합니다.
++
+다음 표에서는 컨트롤러 업그레이드에 지원되는 모델 매트릭스를 보여 줍니다.
+
++
+|===
+
+
+| 더 빠르고 확실하게 구축 | 대체 플랫폼 모델 
+
+
+ a| 
+AFF A300
+ a| 
+AFF A400, AFF A700
+
+
+
+ a| 
+FAS8200
+ a| 
+FAS8300
+
+|===
++
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
+
+* 이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"]. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.
+* MetroCluster 사이트가 물리적으로 두 곳에 있는 경우 자동화된 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.
+* 이 자동화된 통계청 기반의 컨트롤러 업그레이드 절차를 통해 MetroCluster 재해 복구(DR) 사이트로 컨트롤러 교체를 시작할 수 있습니다. 한 번에 한 사이트에서만 컨트롤러 교체를 시작할 수 있습니다.
+* 사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.
+
+
+다음 예제 이름이 이 절차에 사용됩니다.
+
+* 사이트_A
++
+** 업그레이드 전:
++
+*** 노드_A_1 - 이전
+*** 노드_A_2 - 이전
+
+
+** 업그레이드 후:
++
+*** Node_A_1 - 신규
+*** Node_A_2 - 신규
+
+
+
+
+* 사이트_B
++
+** 업그레이드 전:
++
+*** 노드_B_1 - 이전
+*** 노드_B_2 - 이전
+
+
+** 업그레이드 후:
++
+*** Node_B_1 - 신규
+*** Node_B_2 - 신규
+
+
+
+
+
+
+
+
+== 업그레이드를 준비하는 중입니다
+
+컨트롤러 업그레이드를 준비하려면 시스템 사전 점검을 수행하고 구성 정보를 수집해야 합니다.
+
+업그레이드 중 어느 단계에서든 사이트 A에서 'system controller replace show' 또는 'system controller replace show-details' 명령을 실행하여 상태를 확인할 수 있습니다. 명령이 빈 출력을 반환하는 경우 몇 분 정도 기다린 후 명령을 다시 실행합니다.
+
+.단계
+. 사이트 A에서 자동 컨트롤러 교체 절차를 시작하여 사이트 B에서 컨트롤러를 교체합니다.
++
+시스템 컨트롤러 교체 시작
+
++
+자동 작업으로 사전 점검을 실행합니다. 문제가 발견되지 않으면 작업이 일시 중지되므로 수동으로 구성 관련 정보를 수집할 수 있습니다.
+
++
+
+NOTE: 현재 소스 시스템 및 호환되는 모든 타겟 시스템이 표시됩니다. 소스 컨트롤러를 다른 ONTAP 버전 또는 호환되지 않는 플랫폼으로 교체한 경우 자동화 작업이 중단되고 새 노드가 부팅된 후 오류가 보고됩니다. 클러스터를 정상 상태로 전환하려면 수동 복구 절차를 따라야 합니다.
+
++
+[NOTE]
+====
+'system controller replace start' 명령을 실행하면 다음과 같은 사전 검사 오류가 보고될 수 있습니다.
+
+[listing]
+----
+Cluster-A::*>system controller replace show
+Node        Status         Error-Action
+----------- -------------- ------------------------------------
+Node-A-1    Failed         MetroCluster check failed. Reason : MCC check showed errors in component aggregates
+----
+미러링되지 않은 애그리게이트가 있거나 다른 애그리게이트 문제로 인해 이 오류가 발생했는지 확인합니다. 미러링된 모든 애그리게이트가 정상 상태이고 성능이 저하되거나 미러 성능이 저하되지 않았는지 확인합니다. 이 오류가 미러링되지 않은 애그리게이트에만 기인하는 경우, '시스템 컨트롤러 교체 시작' 명령에서 '-skip-MetroCluster-check TRUE' 옵션을 선택하면 이 오류를 덮어쓸 수 있습니다. 원격 스토리지에 액세스할 수 있는 경우 미러링되지 않은 애그리게이트는 전환 후 온라인 상태로 전환됩니다. 원격 스토리지 링크에 장애가 발생하면 미러링되지 않은 애그리게이트가 온라인 상태가 되지 않습니다.
+
+====
+. 사이트 B에 로그인하고 'system controller replace show' 또는 'system controller replace show-details' 명령 아래 콘솔 메시지에 나열된 명령어를 수행하여 수동으로 구성정보를 수집한다.
+
+
+
+
+=== 업그레이드 전에 정보를 수집하는 중입니다
+
+업그레이드하기 전에 루트 볼륨이 암호화된 경우 백업 키 및 기타 정보를 수집하여 이전에 암호화된 루트 볼륨으로 새 컨트롤러를 부팅해야 합니다.
+
+이 작업은 기존 MetroCluster FC 구성에 대해 수행됩니다.
+
+.단계
+. 새 컨트롤러를 설정할 때 케이블을 쉽게 식별할 수 있도록 기존 컨트롤러의 케이블에 레이블을 지정합니다.
+. 백업 키 및 기타 정보를 캡처하는 명령을 표시합니다.
++
+'시스템 컨트롤러 교체 쇼
+
++
+파트너 클러스터의 'show' 명령 아래에 나열된 명령을 실행합니다.
+
+. MetroCluster 구성에서 노드의 시스템 ID를 수집합니다.
++
+--
+'MetroCluster node show-fields node-systemid, dr-partner-systemid
+
+교체 절차 중에 이러한 시스템 ID를 새 컨트롤러 모듈의 시스템 ID로 교체합니다.
+
+이 4노드 MetroCluster FC 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
+
+** NODE_A_1 - 이전: 4068741258
+** NODE_A_2 - 이전: 4068741260
+** NODE_B_1 - 이전: 4068741254
+** NODE_B_2 - 이전: 4068741256
+
+
+[listing]
+----
+metrocluster-siteA::> metrocluster node show -fields node-systemid,ha-partner-systemid,dr-partner-systemid,dr-auxiliary-systemid
+dr-group-id        cluster           node            node-systemid     ha-partner-systemid     dr-partner-systemid    dr-auxiliary-systemid
+-----------        ---------------   ----------      -------------     -------------------     -------------------    ---------------------
+1                    Cluster_A       Node_A_1-old    4068741258        4068741260              4068741256             4068741256
+1                    Cluster_A       Node_A_2-old    4068741260        4068741258              4068741254             4068741254
+1                    Cluster_B       Node_B_1-old    4068741254        4068741256              4068741258             4068741260
+1                    Cluster_B       Node_B_2-old    4068741256        4068741254              4068741260             4068741258
+4 entries were displayed.
+----
+이 2노드 MetroCluster FC 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
+
+** 노드_A_1:4068741258
+** 노드_B_1:4068741254
+
+
+[listing]
+----
+metrocluster node show -fields node-systemid,dr-partner-systemid
+
+dr-group-id cluster    node          node-systemid dr-partner-systemid
+----------- ---------- --------      ------------- ------------
+1           Cluster_A  Node_A_1-old  4068741258    4068741254
+1           Cluster_B  node_B_1-old  -             -
+2 entries were displayed.
+----
+--
+. 각 노드에 대한 포트 및 LIF 정보를 수집합니다.
++
+각 노드에 대해 다음 명령의 출력을 수집해야 합니다.
+
++
+** 네트워크 인터페이스 show-role cluster, node-mgmt
+** 네트워크 포트 show-node_node-name_-type physical
+** 'network port vlan show-node_node-name _'
+** 'network port ifgrp show -node_node_name_-instance'
+** 네트워크 포트 브로드캐스트 도메인 쇼
+** 네트워크 포트 도달 가능성 세부 정보
+** 네트워크 IPspace 쇼
+** '볼륨 쇼'
+** '스토리지 집계 쇼'
+** 'system node run-node_node-name_sysconfig-a'
+
+
+. MetroCluster 노드가 SAN 구성에 있는 경우 관련 정보를 수집합니다.
++
+다음 명령의 출력을 수집해야 합니다.
+
++
+** FCP 어댑터 show-instance(FCP 어댑터 show-instance)
+** FCP 인터페이스의 show-instance입니다
+** iSCSI 인터페이스 쇼
+** 'ucadmin 쇼'
+
+
+. 루트 볼륨이 암호화된 경우 키 관리자에 사용되는 암호를 수집하여 저장합니다.
++
+보안 키 관리자 백업 쇼
+
+. MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
++
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"^].
+
++
+.. Onboard Key Manager가 구성된 경우:
++
+보안 키 관리자 온보드 쇼 백업
+
++
+나중에 업그레이드 절차에서 암호가 필요합니다.
+
+.. 엔터프라이즈 키 관리(KMIP)를 구성한 경우 다음 명령을 실행하십시오.
++
+'보안 키 관리자 외부 쇼 인스턴스'
+
++
+보안 키 관리자 키 쿼리
+
+
+
+. 구성 정보 수집을 마친 후 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+
+
+
+
+=== Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성 제거
+
+전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
+
+.단계
+. Tiebreaker 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["MetroCluster 구성을 제거하는 중입니다"^]
+
+. 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
++
+응용 프로그램 설명서를 참조하십시오.
+
+
+
+
+
+== 이전 컨트롤러를 교체하고 새 컨트롤러를 부팅합니다
+
+정보를 수집하고 작업을 재개한 후에는 전환 작업을 계속 진행합니다.
+
+이 자동화 작업은 전환, '환원 집계' 및 '환원 루트 애그리게이트' 작업을 시작합니다. 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 앞서 수집한 'sids'를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다.
+
+전환을 시작하기 전에 자동화 작업이 일시 중지되므로 사이트 B에서 모든 LIF가 '작동'되는지 수동으로 확인할 수 있습니다 필요하다면 'system controller replace resume' 명령을 사용하여 'down'인 LIF를 가동하고 자동화 작업을 재개하십시오.
+
+
+
+=== 이전 컨트롤러의 네트워크 구성 준비
+
+새로운 컨트롤러에서 네트워킹이 완전히 다시 시작되도록 하려면 LIF를 공통 포트로 이동한 다음 이전 컨트롤러의 네트워킹 구성을 제거해야 합니다.
+
+.이 작업에 대해
+* 이 작업은 각 이전 노드에서 수행해야 합니다.
+* 에서 수집한 정보를 사용합니다 <<Preparing for the upgrade>>.
+
+
+.단계
+. 이전 노드를 부팅하고 노드에 로그인합니다.
++
+부트 ONTAP
+
+. 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새로운 컨트롤러 모듈 모두에서 동일한 공통 포트에 할당합니다.
++
+.. LIF 표시:
++
+네트워크 인터페이스 쇼
+
++
+SAN과 NAS를 포함한 모든 데이터 LIF는 전환 사이트(cluster_a)에서 관리되므로 운영 및 운영적 측면에서 "설정"됩니다.
+
+.. 출력을 검토하여 클러스터 포트로 사용되지 않는 이전 컨트롤러와 새 컨트롤러 모두에서 동일한 일반적인 물리적 네트워크 포트를 찾습니다.
++
+예를 들어, "e0d"는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. "e0d"는 클러스터 포트로 사용하거나 새 컨트롤러에서 사용되지 않습니다.
+
++
+플랫폼 모델의 포트 사용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
+
+.. 공통 포트를 홈 포트로 사용하도록 모든 데이터 LIF를 수정합니다.
++
+'network interface modify -vserver_svm -name_-lif_data-lif_-home-port_port -id_'
+
++
+다음 예에서는 "e0d"입니다.
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network interface modify -vserver vs0 -lif datalif1 -home-port e0d
+----
+
+
+. 브로드캐스트 도메인을 수정하여 삭제해야 하는 VLAN 및 물리적 포트를 제거합니다.
++
+'broadcast-domain remove-ports-broadcast-domain_broadcast-domain-name_-ports_node-name:port-id_'
+
++
+모든 VLAN 및 물리적 포트에 대해 이 단계를 반복합니다.
+
+. 클러스터 포트를 구성원 포트로 사용하고 클러스터 포트를 구성원 포트로 사용하는 인터페이스 그룹을 사용하여 VLAN 포트를 제거합니다.
++
+.. VLAN 포트 삭제:
++
+'network port vlan delete-node_node-name_-vlan-name_portID-vlanDID_'
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network port vlan delete -node node1 -vlan-name e1c-80
+----
+.. 인터페이스 그룹에서 물리적 포트를 제거합니다.
++
+'network port ifgrp remove-port-node_node-name_-ifgrp_interface-group-name_-port_portID_'
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
+----
+.. 브로드캐스트 도메인에서 VLAN 및 인터페이스 그룹 포트 제거:
++
+"네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace_IPSpace_-broadcast-domain_broadcast-domain-name_-ports_nodename:portname,nodname:portname_,."
+
+.. 필요에 따라 다른 물리적 포트를 구성원으로 사용하도록 인터페이스 그룹 포트를 수정합니다.
++
+'ifgrp add-port-node_node-name_-ifgrp_interface-group-name_-port_port-id_'
+
+
+
+. 노드 중단:
++
+'halt-inhibit-takeover TRUE-node_node-name_'
+
++
+이 단계는 두 노드에서 모두 수행해야 합니다.
+
+
+
+
+
+=== 새 컨트롤러 설정
+
+새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.
+
+.단계
+. 필요에 따라 새 컨트롤러 모듈 및 스토리지 쉘프를 포지셔닝합니다.
++
+랙 공간은 컨트롤러 모듈의 플랫폼 모델, 스위치 유형 및 구성의 스토리지 쉘프 수에 따라 다릅니다.
+
+. 적절하게 접지합니다.
+. 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
++
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+. 새 컨트롤러 모듈에 자체 FC-VI 카드가 제공되지 않았거나 이전 컨트롤러의 FC-VI 카드가 새 컨트롤러에서 호환되는 경우 FC-VI 카드를 교체하고 올바른 슬롯에 설치합니다.
++
+를 참조하십시오 link:https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] FC-VI 카드의 슬롯 정보
+
+. MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 컨트롤러의 전원, 직렬 콘솔 및 관리 연결에 케이블을 연결합니다.
++
+현재 이전 컨트롤러에서 분리된 다른 케이블을 연결하지 마십시오.
+
++
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+. 새 노드의 전원을 켜고 로더 프롬프트를 표시할 때 Ctrl-C를 누릅니다.
+
+
+
+
+=== 새 컨트롤러를 Netbooting 합니다
+
+새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
+
+이 작업은 각각의 새 컨트롤러 모듈에서 수행됩니다.
+
+.단계
+. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 ONTAP-version_image.tgz 파일을 저장합니다.
+. 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
++
+|===
+
+
+| 플랫폼 모델이 다음과 같은 경우 | 그러면... 
+
+
+| FAS/AFF8000 시리즈 시스템 | ONTAP-version_image.tgzfile의 컨텐츠를 타겟 디렉토리에 풉니다. tar -zxvf ONTAP-version_image.tgz 참고: Windows에서 컨텐츠를 추출하는 경우 7-Zip 또는 WinRAR을 사용하여 netboot 이미지를 추출합니다. 디렉토리 목록에는 커널 파일 netboot/kernel의 netboot 폴더가 포함되어야 합니다 
+
+
+| 기타 모든 시스템 | 디렉토리 목록에는 커널 파일이 포함된 netboot 폴더가 있어야 합니다. ONTAP-version_image.tgz ONTAP-version_image.tgz 파일을 추출할 필요가 없습니다. 
+|===
+. 로더 프롬프트에서 관리 LIF의 netboot 연결을 구성합니다.
++
+** IP 주소 지정이 DHCP인 경우 자동 연결을 구성합니다.
++
+ifconfig e0M-auto를 선택합니다
+
+** IP 주소 지정이 정적이면 수동 연결을 구성합니다.
++
+ifconfig e0M-addr=ip_addr-mask=netmask"-GW=gateway입니다
+
+
+
+. netboot 수행
++
+** 플랫폼이 80xx 시리즈 시스템인 경우 다음 명령을 사용합니다.
++
+"netboot\http://web_server_ip/path_to_web-accessible_directory/netboot/kernel`
+
+** 플랫폼이 다른 시스템인 경우 다음 명령을 사용합니다.
++
+"netboot\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz`
+
+
+
+. 부팅 메뉴에서 옵션 * (7) 새 소프트웨어를 먼저 설치 * 를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.
++
+ Disregard the following message: "This procedure is not supported for Non-Disruptive Upgrade on an HA pair". It applies to nondisruptive upgrades of software, not to upgrades of controllers.
+. 절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 이미지 파일의 URL('\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz` )을 입력합니다
++
+....
+Enter username/password if applicable, or press Enter to continue.
+....
+. 다음과 유사한 프롬프트가 표시되면 백업 복구를 건너뛰려면 "n"을 입력해야 합니다.
++
+....
+Do you want to restore the backup configuration now? {y|n}
+....
+. 다음과 유사한 프롬프트가 나타나면 y를 입력하여 재부팅합니다.
++
+....
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+....
+
+
+
+
+=== 컨트롤러 모듈의 구성 지우기
+
+[role="lead"]
+MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
+
+.단계
+. 필요한 경우 노드를 중지하고 로더 프롬프트를 표시합니다.
++
+"중지"
+
+. LOADER 프롬프트에서 환경 변수를 기본값으로 설정합니다.
++
+세트 기본값
+
+. 환경 저장:
++
+'사베에프'
+
+. LOADER 프롬프트에서 부팅 메뉴를 시작합니다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴 프롬프트에서 구성을 지웁니다.
++
+휘폰무화과
+
++
+확인 프롬프트에 yes로 응답합니다.
+
++
+노드가 재부팅되고 부팅 메뉴가 다시 표시됩니다.
+
+. 부팅 메뉴에서 옵션 * 5 * 를 선택하여 시스템을 유지보수 모드로 부팅합니다.
++
+확인 프롬프트에 yes로 응답합니다.
+
+
+
+
+
+=== HBA 구성을 복구합니다
+
+컨트롤러 모듈에 있는 HBA 카드의 존재 여부와 구성에 따라 사이트 용도에 맞게 HBA 카드를 올바르게 구성해야 합니다.
+
+.단계
+. 유지 관리 모드에서 시스템의 모든 HBA에 대한 설정을 구성합니다.
++
+.. 포트의 현재 설정을 확인합니다. 'ucadmin show'
+.. 필요에 따라 포트 설정을 업데이트합니다.
+
+
++
+|===
+
+
+| 이 유형의 HBA와 원하는 모드가 있는 경우... | 이 명령 사용... 
+
+
+ a| 
+CNA FC
+ a| 
+'ucadmin modify -m fc -t initiator_adapter-name_'
+
+
+
+ a| 
+CNA 이더넷
+ a| 
+'ucadmin modify-mode CNA_adapter-name _'
+
+
+
+ a| 
+FC 타겟
+ a| 
+'fcadmin config -t target_adapter-name_'
+
+
+
+ a| 
+FC 이니시에이터
+ a| 
+'fcadmin config -t initiator_adapter-name_'
+
+|===
+. 유지 관리 모드 종료:
++
+"중지"
+
++
+명령을 실행한 후 LOADER 프롬프트에서 노드가 중지될 때까지 기다립니다.
+
+. 노드를 유지보수 모드로 다시 부팅하여 구성 변경 사항이 적용되도록 합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. 변경 사항을 확인합니다.
++
+|===
+
+
+| 이 유형의 HBA가 있는 경우... | 이 명령 사용... 
+
+
+ a| 
+CNA
+ a| 
+'ucadmin 쇼'
+
+
+
+ a| 
+FC
+ a| 
+fcadmin 쇼
+
+|===
+
+
+
+
+=== 루트 애그리게이트 디스크를 다시 할당합니다
+
+앞에서 수집한 'sids'를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
+
+이 작업은 유지보수 모드에서 수행됩니다.
+
+에서 이전 시스템 ID를 식별했습니다 link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html#gathering-information-before-the-upgrade["업그레이드 전에 정보를 수집하는 중입니다"].
+
+이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
+
+|===
+
+
+| 노드 | 이전 시스템 ID입니다 | 새 시스템 ID입니다 
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+ a| 
+1574774970
+
+|===
+.단계
+. 다른 모든 연결을 새 컨트롤러 모듈(FC-VI, 스토리지, 클러스터 인터커넥트 등)에 케이블로 연결합니다.
+. 시스템을 중지하고 LOADER 프롬프트에서 유지보수 모드로 부팅합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. node_B_1-old가 소유한 디스크를 표시합니다.
++
+'디스크 쇼-A'
+
++
+명령 출력에는 새 컨트롤러 모듈의 시스템 ID(1574774970)가 표시됩니다. 그러나 루트 애그리게이트 디스크는 여전히 이전 시스템 ID(4068741254)가 소유합니다. 이 예는 MetroCluster 구성에서 다른 노드가 소유한 드라이브를 표시하지 않습니다.
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 1574774970
+
+  DISK         OWNER                     POOL   SERIAL NUMBER    HOME                      DR HOME
+------------   -------------             -----  -------------    -------------             -------------
+...
+rr18:9.126L44 node_B_1-old(4068741254)   Pool1  PZHYN0MD         node_B_1-old(4068741254)  node_B_1-old(4068741254)
+rr18:9.126L49 node_B_1-old(4068741254)   Pool1  PPG3J5HA         node_B_1-old(4068741254)  node_B_1-old(4068741254)
+rr18:8.126L21 node_B_1-old(4068741254)   Pool1  PZHTDSZD         node_B_1-old(4068741254)  node_B_1-old(4068741254)
+rr18:8.126L2  node_B_1-old(4068741254)   Pool0  S0M1J2CF         node_B_1-old(4068741254)  node_B_1-old(4068741254)
+rr18:8.126L3  node_B_1-old(4068741254)   Pool0  S0M0CQM5         node_B_1-old(4068741254)  node_B_1-old(4068741254)
+rr18:9.126L27 node_B_1-old(4068741254)   Pool0  S0M1PSDW         node_B_1-old(4068741254)  node_B_1-old(4068741254)
+...
+----
+. 드라이브 쉘프의 루트 애그리게이트 디스크를 새 컨트롤러에 재할당합니다.
++
+"디스크 재할당 -s_old-sysid_-d_new-sysid_"
+
++
+다음 예는 드라이브 재할당을 보여 줍니다.
+
++
+[listing]
+----
+*> disk reassign -s 4068741254 -d 1574774970
+Partner node must not be in Takeover mode during disk reassignment from maintenance mode.
+Serious problems could result!!
+Do not proceed with reassignment if the partner is in takeover mode. Abort reassignment (y/n)? n
+
+After the node becomes operational, you must perform a takeover and giveback of the HA partner node to ensure disk reassignment is successful.
+Do you want to continue (y/n)? Jul 14 19:23:49 [localhost:config.bridge.extra.port:error]: Both FC ports of FC-to-SAS bridge rtp-fc02-41-rr18:9.126L0 S/N [FB7500N107692] are attached to this controller.
+y
+Disk ownership will be updated on all disks previously belonging to Filer with sysid 4068741254.
+Do you want to continue (y/n)? y
+----
+. 모든 디스크가 예상대로 재할당되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+[listing]
+----
+*> disk show
+Local System ID: 1574774970
+
+  DISK        OWNER                      POOL   SERIAL NUMBER   HOME                      DR HOME
+------------  -------------              -----  -------------   -------------             -------------
+rr18:8.126L18 node_B_1-new(1574774970)   Pool1  PZHYN0MD        node_B_1-new(1574774970)  node_B_1-new(1574774970)
+rr18:9.126L49 node_B_1-new(1574774970)   Pool1  PPG3J5HA        node_B_1-new(1574774970)  node_B_1-new(1574774970)
+rr18:8.126L21 node_B_1-new(1574774970)   Pool1  PZHTDSZD        node_B_1-new(1574774970)  node_B_1-new(1574774970)
+rr18:8.126L2  node_B_1-new(1574774970)   Pool0  S0M1J2CF        node_B_1-new(1574774970)  node_B_1-new(1574774970)
+rr18:9.126L29 node_B_1-new(1574774970)   Pool0  S0M0CQM5        node_B_1-new(1574774970)  node_B_1-new(1574774970)
+rr18:8.126L1  node_B_1-new(1574774970)   Pool0  S0M1PSDW        node_B_1-new(1574774970)  node_B_1-new(1574774970)
+*>
+----
+. 집계 상태를 표시합니다.
++
+'기정 상태'입니다
+
++
+[listing]
+----
+*> aggr status
+           Aggr            State       Status           Options
+aggr0_node_b_1-root        online      raid_dp, aggr    root, nosnap=on,
+                           mirrored                     mirror_resync_priority=high(fixed)
+                           fast zeroed
+                           64-bit
+----
+. 파트너 노드에서 위 단계를 반복합니다(node_B_2 - new).
+
+
+
+
+=== 새 컨트롤러를 부팅합니다
+
+컨트롤러 플래시 이미지를 업데이트하려면 부팅 메뉴에서 컨트롤러를 재부팅해야 합니다. 암호화가 구성된 경우 추가 단계가 필요합니다.
+
+VLAN 및 인터페이스 그룹을 재구성할 수 있습니다. 필요한 경우 'system controller replace resume' 명령을 사용하여 작업을 재개하기 전에 클러스터 LIF의 포트를 수동으로 수정하고 도메인 세부 정보를 브로드캐스트합니다.
+
+이 작업은 모든 새 컨트롤러에 대해 수행해야 합니다.
+
+.단계
+. 노드 중단:
++
+"중지"
+
+. 외부 키 관리자가 구성된 경우 관련 boots를 설정합니다.
++
+'bootarg.kmip.init.ipaddr_ip-address_'
+
++
+'셋틴 bootarg.kmip.init.netmask_netmask_'
+
++
+'bootarg.kmip.init.gateway_gateway-address_'
+
++
+'setenv bootarg.kmip.init.interface_interface-id_'
+
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. 루트 암호화를 사용하는 경우 키 관리 구성에 대한 부팅 메뉴 옵션을 선택합니다.
++
+|===
+
+
+| 사용 중인 경우... | 이 부팅 메뉴 옵션을 선택합니다... 
+
+
+ a| 
+온보드 키 관리
+ a| 
+옵션 '10'
+
+프롬프트에 따라 키 관리자 구성을 복구 및 복원하는 데 필요한 입력을 제공합니다.
+
+
+
+ a| 
+외부 키 관리
+ a| 
+옵션 '11'
+
+프롬프트에 따라 키 관리자 구성을 복구 및 복원하는 데 필요한 입력을 제공합니다.
+
+|===
+. 자동 부팅 기능이 설정된 경우 Ctrl-C를 눌러 자동 부팅을 중단시킵니다
+. 부팅 메뉴에서 옵션 6 을 실행합니다.
++
+
+NOTE: 옵션 6은 완료되기 전에 노드를 두 번 재부팅합니다.
+
++
+시스템 ID 변경 프롬프트에 y를 응답합니다. 두 번째 재부팅 메시지가 나타날 때까지 기다립니다.
+
++
+[listing]
+----
+Successfully restored env file from boot media...
+
+Rebooting to load the restored env file...
+----
+. partner-sysid가 올바른지 다시 확인합니다.
++
+'printenv partner-sysid
+
++
+partner-sysid가 올바르지 않으면 다음을 설정합니다.
+
++
+'setenv PARTNER-sysid_PARTNER-sysid_'
+
+. 루트 암호화를 사용하는 경우 키 관리 구성에 대해 부팅 메뉴 옵션을 다시 선택합니다.
++
+|===
+
+
+| 사용 중인 경우... | 이 부팅 메뉴 옵션을 선택합니다... 
+
+
+ a| 
+온보드 키 관리
+ a| 
+옵션 '10'
+
+프롬프트에 따라 키 관리자 구성을 복구 및 복원하는 데 필요한 입력을 제공합니다.
+
+
+
+ a| 
+외부 키 관리
+ a| 
+옵션 '11'
+
+프롬프트에 따라 키 관리자 구성을 복구 및 복원하는 데 필요한 입력을 제공합니다.
+
+|===
++
+키 관리자 설정에 따라 첫 번째 부팅 메뉴 프롬프트에서 옵션 10이나 옵션 11을 선택한 다음 옵션 6을 선택하여 복구 절차를 수행합니다. 노드를 완전히 부팅하려면 옵션 "1"(일반 부팅)에 의해 계속된 복구 절차를 반복해야 할 수 있습니다.
+
+. 노드를 부팅합니다.
++
+부트 ONTAP
+
+. 교체된 노드가 부팅될 때까지 기다립니다.
++
+두 노드 중 하나가 Takeover 모드에 있으면 'storage failover 반환' 명령을 사용하여 Giveback을 수행합니다.
+
+. 모든 포트가 브로드캐스트 도메인에 있는지 확인합니다.
++
+.. 브로드캐스트 도메인 보기:
++
+네트워크 포트 브로드캐스트 도메인 쇼
+
+.. 필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58A3-46C9-BF0C-BA1D1D1475F9.html["브로드캐스트 도메인에서 포트 추가 또는 제거"^]
+
+.. 인터클러스터 LIF를 호스팅할 물리적 포트를 해당 브로드캐스트 도메인에 추가합니다.
+.. 새 물리적 포트를 홈 포트로 사용하도록 인터클러스터 LIF를 수정합니다.
+.. 인터클러스터 LIF가 가동된 후 클러스터 피어 상태를 확인하고 필요에 따라 클러스터 피어링을 다시 설정합니다.
++
+클러스터 피어링을 다시 구성해야 할 수 있습니다.
+
++
+link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#peering-the-clusters["클러스터 피어 관계 생성"]
+
+.. 필요에 따라 VLAN 및 인터페이스 그룹을 다시 생성합니다.
++
+VLAN 및 인터페이스 그룹 멤버쉽은 이전 노드의 멤버쉽과 다를 수 있습니다.
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-8929FCE2-5888-4051-B8C0-E27CAF3F2A63.html["VLAN을 생성하는 중입니다"^]
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EAB7-430A-A773-4E3420EE2AA1.html["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
+
+
+
+. 암호화가 사용되는 경우 키 관리 구성에 맞는 명령을 사용하여 키를 복원합니다.
++
+|===
+
+
+| 사용 중인 경우... | 이 명령 사용... 
+
+
+ a| 
+온보드 키 관리
+ a| 
+보안 키매니저 온보드 동기화
+
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-E4AB2ED4-9227-4974-A311-13036EB43A3D.html["온보드 키 관리 암호화 키를 복원하는 중입니다"^].
+
+
+
+ a| 
+외부 키 관리
+ a| 
+'Security key-manager external restore-vserver_SVM_-node_node_-key-server_host_name|ip_address:port_-key-id key_id-key-tag key_tag_node-name_'
+
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-32DA96C3-9B04-4401-92B8-EAF323C3C863.html["외부 키 관리 암호화 키 복원"^].
+
+|===
+. 작업을 다시 시작하기 전에 MetroCluster가 올바르게 구성되어 있는지 확인합니다. 노드 상태 확인:
++
+'MetroCluster node show'
+
++
+새 노드(site_B)가 site_A에서 스위치백 상태 * 를 기다리는 * 상태인지 확인합니다
+
+. 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+
+
+
+
+== 업그레이드를 완료하는 중입니다
+
+자동화 작업은 검증 시스템 검사를 실행한 다음 일시 중지하여 네트워크 연결 상태를 확인할 수 있습니다. 확인 후 리소스 다시 찾기 단계가 시작되고 자동화 작업이 사이트 A에서 스위치백을 실행하고 업그레이드 후 확인 시 일시 중지됩니다. 자동화 작업을 다시 시작하면 업그레이드 후 검사가 수행되고 오류가 발견되지 않으면 업그레이드가 완료된 것으로 표시됩니다.
+
+.단계
+. 콘솔 메시지를 따라 네트워크 연결 상태를 확인합니다.
+. 검증을 완료한 후 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+. 자동화 작업은 사이트 A에서 스위치백을 수행하고 업그레이드 후 점검을 수행합니다. 작업이 일시 중지되면 SAN LIF 상태를 수동으로 확인하고 콘솔 메시지에 따라 네트워크 구성을 확인합니다.
+. 검증을 완료한 후 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+. 업그레이드 후 점검 상태 확인:
++
+'시스템 컨트롤러 교체 쇼
+
++
+업그레이드 후 검사에서 오류가 보고되지 않으면 업그레이드가 완료된 것입니다.
+
+. 컨트롤러 업그레이드를 완료한 후 사이트 B에 로그인하여 교체된 컨트롤러가 올바르게 구성되었는지 확인합니다.
+
+
+
+
+=== Tiebreaker 모니터링 복원 중
+
+이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.
+
+. 의 단계를 사용합니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-7259BCA4-104C-49C6-BAD0-1068CA2A3DA5.html["MetroCluster 구성 추가"] MetroCluster Tiebreaker 설치 및 구성 가이드 _.
+

@@ -1,0 +1,398 @@
+---
+permalink: install-ip/concept_considerations_mc_compliant_switches.html 
+sidebar: sidebar 
+keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-compliant, requirements, compliant 
+summary: ONTAP IP 구성은 MetroCluster 9.7부터 NetApp 사양을 준수하는 경우에 NetApp에서 검증하지 않은 스위치를 지원할 수 있습니다. 
+---
+= MetroCluster 규격 스위치를 사용할 때의 고려 사항
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp에서 제공하는 MetroCluster IP 스위치는 NetApp의 검증을 거쳤습니다. ONTAP IP 구성은 MetroCluster 9.7부터 NetApp 사양을 준수하는 경우에 NetApp에서 검증하지 않은 스위치를 지원할 수 있습니다.
+
+
+
+== 일반 요구 사항
+
+이 요구사항은 참조 구성(RCF) 파일을 사용하지 않고 MetroCluster 호환 스위치를 구성하는 방법을 보여줍니다.
+
+* MetroCluster 노드에 연결된 스위치는 비 MetroCluster 트래픽을 전송할 수 있습니다.
+* 스위치가 없는 클러스터 인터커넥트를 위한 전용 포트를 제공하는 플랫폼만 지원됩니다. AFF 트래픽 및 MetroCluster 인터커넥트 트래픽이 동일한 네트워크 포트를 공유하기 때문에 FAS2750 및 MetroCluster A220과 같은 플랫폼은 지원되지 않습니다.
++
+MetroCluster 규격 스위치에 로컬 클러스터 연결을 연결하는 것은 지원되지 않습니다.
+
+* MetroCluster IP 인터페이스는 요구 사항을 충족하도록 구성할 수 있는 모든 스위치 포트에 연결할 수 있습니다.
+* 스위치 포트의 속도는 FAS8200 및 AFF A300 플랫폼의 경우 25Gbps이고, 다른 모든 플랫폼(40Gbps 또는 100Gbps)의 경우 최소 40Gbps여야 합니다.
+* 각 스위치 패브릭마다 2개씩 4개의 IP 스위치가 필요합니다.
+* ISL은 10Gbps 이상이어야 하며 MetroCluster 구성의 로드에 맞게 크기를 조정해야 합니다.
+* MetroCluster 구성은 두 네트워크에 연결되어야 합니다. 두 MetroCluster 인터페이스를 동일한 네트워크 또는 스위치에 연결하는 것은 지원되지 않습니다. 각 MetroCluster 노드는 2개의 네트워크 스위치에 연결되어야 합니다.
+* 네트워크는 다음 요구 사항을 충족해야 합니다.
++
+** link:../install-ip/concept_considerations_isls.html#basic-metrocluster-isl-requirements["기본 MetroCluster ISL 요구 사항"]
+** link:../install-ip/concept_considerations_isls.html#isl-requirements-in-shared-layer-2-networks["공유 계층 2 네트워크의 ISL 요구 사항"]
+** link:../install-ip/concept_considerations_layer_2.html#required-settings-on-intermediate-switches["중간 스위치에 필요한 설정"]
+
+
+* MetroCluster 호환 스위치를 사용하는 MetroCluster IP 구성에서는 ONTAP 9.6 이하로 되돌릴 수 없습니다.
+* MetroCluster IP 트래픽을 전달하는 모든 스위치에 대해 9216의 MTU를 구성해야 합니다.
+
+
+
+
+== 스위치 및 케이블 연결 요구 사항
+
+* 스위치는 QoS/트래픽 분류를 지원해야 합니다.
+* 스위치는 ECN(명시적 정체 알림)을 지원해야 합니다.
+* 스위치는 경로를 따라 순서를 보존하기 위해 L4 포트-VLAN 로드 밸런싱 정책을 지원해야 합니다.
+* 스위치는 L2 흐름 제어(L2FC)를 지원해야 합니다.
+* 노드를 스위치에 연결하는 케이블은 NetApp에서 구입해야 합니다. 우리가 제공하는 케이블은 스위치 공급업체에서 지원해야 합니다.
+
+
+
+
+== 제한 사항
+
+로컬 클러스터 연결이 스위치에 연결되어야 하는 구성 또는 기능은 지원되지 않습니다. 예를 들어 다음 구성 및 절차는 지원되지 않습니다.
+
+* 8노드 MetroCluster 구성
+* MetroCluster FC에서 MetroCluster IP 구성으로 전환
+* 4노드 MetroCluster IP 구성을 새로 고칩니다
+
+
+
+
+== MetroCluster 규정 준수 스위치를 위한 플랫폼별 네트워크 속도
+
+다음 표에는 MetroCluster 호환 스위치에 대한 플랫폼별 네트워크 속도가 나와 있습니다.
+
+
+NOTE: 누락된 값은 플랫폼이 지원되지 않음을 나타냅니다.
+
+|===
+
+
+| 플랫폼 | 네트워크 속도(Gbps) 
+
+
+ a| 
+AFF A900
+ a| 
+100
+
+
+
+ a| 
+AFF A800
+ a| 
+40 또는 100
+
+
+
+ a| 
+AFF A700
+ a| 
+40
+
+
+
+ a| 
+AFF A400
+ a| 
+100
+
+
+
+ a| 
+AFF A320
+ a| 
+100
+
+
+
+ a| 
+AFF A300
+ a| 
+25
+
+
+
+ a| 
+AFF A250
+ a| 
+-
+
+
+
+ a| 
+AFF A220
+ a| 
+-
+
+
+
+ a| 
+FAS9000
+ a| 
+40
+
+
+
+ a| 
+FAS8700
+ a| 
+100
+
+
+
+ a| 
+FAS8300
+ a| 
+100
+
+
+
+ a| 
+FAS8200
+ a| 
+25
+
+
+
+ a| 
+FAS2750
+ a| 
+-
+
+
+
+ a| 
+500f로 설정합니다
+ a| 
+-
+
+|===
+
+
+== 예제를 위한 가정
+
+제공된 예는 Cisco NX31xx 및 NX32xx 스위치에 유효합니다. 다른 스위치를 사용하는 경우 이러한 명령을 지침으로 사용할 수 있지만 명령이 다를 수 있습니다. 이 예에 표시된 기능을 스위치에서 사용할 수 없는 경우 이는 스위치가 최소 요구 사항을 충족하지 않으며 MetroCluster 구성을 배포하는 데 사용할 수 없음을 의미합니다. 이는 MetroCluster 구성을 연결하는 모든 스위치와 이러한 스위치 사이의 경로에 있는 모든 스위치에 대해 적용됩니다.
+
+* ISL 포트는 15 및 16이며 40Gbps의 속도로 작동합니다.
+* 네트워크 1의 VLAN은 10이고 네트워크 2의 VLAN은 20입니다. 예는 하나의 네트워크에만 표시될 수 있습니다.
+* MetroCluster 인터페이스는 각 스위치의 포트 9에 연결되어 있으며 100Gbps의 속도로 작동합니다.
+* 예제의 전체 컨텍스트가 설정되지 않았거나 표시되지 않습니다. 명령을 실행하려면 프로파일, VLAN 또는 인터페이스와 같은 추가 구성 정보를 입력해야 할 수도 있습니다.
+
+
+
+
+== 일반 스위치 구성
+
+각 네트워크의 VLAN을 구성해야 합니다. 이 예에서는 네트워크 10에서 VLAN을 구성하는 방법을 보여 줍니다.
+
+예:
+
+[listing]
+----
+# vlan 10
+----
+순서가 유지되도록 로드 밸런싱 정책을 설정해야 합니다.
+
+예:
+
+[listing]
+----
+# port-channel load-balance src-dst ip-l4port-vlan
+----
+RDMA 및 iSCSI 트래픽을 적절한 클래스에 매핑하는 액세스 및 클래스 맵을 구성해야 합니다.
+
+포트 65200을 오가는 모든 TCP 트래픽은 스토리지(iSCSI) 클래스에 매핑됩니다. 포트 10006과 포트 1006의 모든 TCP 트래픽은 RDMA 클래스에 매핑됩니다.
+
+예:
+
+[listing]
+----
+
+ip access-list storage
+  10 permit tcp any eq 65200 any
+  20 permit tcp any any eq 65200
+ip access-list rdma
+  10 permit tcp any eq 10006 any
+  20 permit tcp any any eq 10006
+
+class-map type qos match-all storage
+  match access-group name storage
+class-map type qos match-all rdma
+  match access-group name rdma
+----
+수신 정책을 구성해야 합니다. 수신 정책은 트래픽을 서로 다른 COS 그룹으로 분류한 것으로 매핑합니다. 이 예에서 RDMA 트래픽은 COS 그룹 5에 매핑되고 iSCSI 트래픽은 COS 그룹 4에 매핑됩니다.
+
+예:
+
+[listing]
+----
+
+policy-map type qos MetroClusterIP_Ingress
+class rdma
+  set dscp 40
+  set cos 5
+  set qos-group 5
+class storage
+  set dscp 32
+  set cos 4
+  set qos-group 4
+----
+스위치에 대한 송신 정책을 구성해야 합니다. 송신 정책은 트래픽을 송신 큐로 매핑합니다. 이 예에서 RDMA 트래픽은 대기열 5에 매핑되고 iSCSI 트래픽은 대기열 4에 매핑됩니다.
+
+예:
+
+[listing]
+----
+
+policy-map type queuing MetroClusterIP_Egress
+class type queuing c-out-8q-q7
+  priority level 1
+class type queuing c-out-8q-q6
+  priority level 2
+class type queuing c-out-8q-q5
+  priority level 3
+  random-detect threshold burst-optimized ecn
+class type queuing c-out-8q-q4
+  priority level 4
+  random-detect threshold burst-optimized ecn
+class type queuing c-out-8q-q3
+  priority level 5
+class type queuing c-out-8q-q2
+  priority level 6
+class type queuing c-out-8q-q1
+  priority level 7
+class type queuing c-out-8q-q-default
+  bandwidth remaining percent 100
+  random-detect threshold burst-optimized ecn
+----
+ISL에서 MetroCluster 트래픽이 있지만 MetroCluster 인터페이스에 연결되지 않는 스위치를 구성해야 합니다. 이 경우 트래픽은 이미 분류되어 있으며 적절한 대기열에만 매핑되어야 합니다. 다음 예에서는 모든 COS5 트래픽이 클래스 RDMA에 매핑되고 모든 COS4 트래픽이 클래스 iSCSI에 매핑됩니다. 이는 MetroCluster 트래픽뿐만 아니라 COS5 및 COS4 트래픽의 * 모든 * 에 영향을 미칩니다. MetroCluster 트래픽만 매핑하려면 위의 클래스 맵을 사용하여 액세스 그룹을 사용하여 트래픽을 식별해야 합니다.
+
+예:
+
+[listing]
+----
+
+class-map type qos match-all rdma
+  match cos 5
+class-map type qos match-all storage
+  match cos 4
+----
+
+
+== ISL 구성
+
+허용된 VLAN을 설정할 때 '트렁크' 모드 포트를 구성할 수 있습니다.
+
+두 개의 명령이 있습니다. 하나는 * set * 으로, 다른 하나는 * add * 로, 다른 하나는 기존의 허용된 VLAN 목록에 있습니다.
+
+예제에 표시된 대로 허용된 VLAN을 * 설정할 수 있습니다.
+
+예:
+
+[listing]
+----
+switchport trunk allowed vlan 10
+----
+예에 표시된 대로 허용된 목록에 VLAN을 * 추가할 수 있습니다.
+
+예:
+
+[listing]
+----
+switchport trunk allowed vlan add 10
+----
+이 예에서 포트 채널 10은 VLAN 10에 대해 구성됩니다.
+
+예:
+
+[listing]
+----
+
+interface port-channel10
+switchport mode trunk
+switchport trunk allowed vlan 10
+mtu 9216
+service-policy type queuing output MetroClusterIP_Egress
+----
+ISL 포트는 포트 채널의 일부로 구성되어야 하며 예에 표시된 대로 송신 큐를 할당해야 합니다.
+
+예:
+
+[listing]
+----
+
+interface eth1/15-16
+switchport mode trunk
+switchport trunk allowed vlan 10
+no lldp transmit
+no lldp receive
+mtu 9216
+channel-group 10 mode active
+service-policy type queuing output MetroClusterIP_Egress
+no shutdown
+----
+
+
+== 노드 포트 구성
+
+노드 포트를 소규모 모드로 구성해야 할 수 있습니다. 이 예에서 포트 25 및 26은 4 x 25Gbps 브레이크아웃 모드로 구성됩니다.
+
+예:
+
+[listing]
+----
+interface breakout module 1 port 25-26 map 25g-4x
+----
+MetroCluster 인터페이스 포트 속도를 구성해야 할 수 있습니다. 이 예에서는 속도를 "자동"으로 구성하는 방법을 보여 줍니다.
+
+예:
+
+[listing]
+----
+speed auto
+----
+다음 예에서는 40Gbps에서 속도를 수정하는 방법을 보여 줍니다.
+
+예:
+
+[listing]
+----
+speed 40000
+----
+인터페이스를 구성해야 할 수 있습니다. 다음 예에서는 인터페이스 속도가 "auto"로 설정되어 있습니다.
+
+포트가 VLAN 10의 액세스 모드에 있고 MTU가 9216으로 설정되고 MetroCluster 수신 정책이 할당됩니다.
+
+예:
+
+[listing]
+----
+
+interface eth1/9
+description MetroCluster-IP Node Port
+speed auto
+switchport access vlan 10
+spanning-tree port type edge
+spanning-tree bpduguard enable
+mtu 9216
+flowcontrol receive on
+flowcontrol send on
+service-policy type qos input MetroClusterIP_Ingress
+no shutdown
+----
+25Gbps 포트의 경우 예제에 표시된 대로 FEC 설정을 "off"로 설정해야 할 수 있습니다.
+
+예:
+
+[listing]
+----
+fec off
+----
+
+NOTE: 인터페이스를 구성한 후에는 항상 이 명령 * 을 실행해야 합니다. 명령이 작동하려면 트랜시버 모듈을 삽입해야 할 수 있습니다.

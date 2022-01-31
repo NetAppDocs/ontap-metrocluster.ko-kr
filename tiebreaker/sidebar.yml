@@ -1,0 +1,20 @@
+---
+section: tiebreaker
+title: MetroCluster Tiebreaker 설치 및 구성
+entries:
+- title: Tiebreaker 소프트웨어 개요
+  url: "/tiebreaker/concept_overview_of_the_tiebreaker_software.html"
+- title: Tiebreaker 소프트웨어를 설치합니다
+  url: "/tiebreaker/task_install_the_tiebreaker_software.html"
+- title: Tiebreaker 소프트웨어를 구성합니다
+  url: "/tiebreaker/concept_configuring_the_tiebreaker_software.html"
+- title: Tiebreaker 소프트웨어의 SNMP 설정을 구성합니다
+  url: "/tiebreaker/task_configure_snmp_setts_for_tiebreaker_software.html"
+- title: MetroCluster 구성을 모니터링합니다
+  url: "/tiebreaker/concept_monitoring_the_mcc_configuration.html"
+- title: 활성 모드에서 MetroCluster Tiebreaker를 사용할 때의 위험 및 제한 사항
+  url: "/tiebreaker/concept_risks_and_limitation_of_using_mcc_tiebreaker_in_active_mode.html"
+- title: MetroCluster Tiebreaker의 방화벽 요구 사항
+  url: "/tiebreaker/reference_firewall_requirements_for_mcc_tiebreaker.html"
+- title: 추가 정보를 찾을 수 있는 위치
+  url: "/tiebreaker/reference_where_to_find_additional_information_tb_icg.html"

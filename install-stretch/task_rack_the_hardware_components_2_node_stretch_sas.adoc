@@ -1,0 +1,35 @@
+---
+permalink: install-stretch/task_rack_the_hardware_components_2_node_stretch_sas.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, rack, hardware, components 
+summary: 캐비닛에 이미 설치된 장비를 받지 못한 경우 구성 요소를 랙에 장착해야 합니다. 
+---
+= 하드웨어 구성 요소 장착
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+캐비닛에 이미 설치된 장비를 받지 못한 경우 구성 요소를 랙에 장착해야 합니다.
+
+이 작업은 두 MetroCluster 사이트 모두에서 수행해야 합니다.
+
+.단계
+. MetroCluster 구성 요소의 위치를 계획합니다.
++
+필요한 랙 공간의 양은 스토리지 컨트롤러의 플랫폼 모델, 스위치 유형 및 구성의 디스크 쉘프 스택 수에 따라 달라집니다.
+
+. 전기 장비 작업에 대한 표준 작업장 관행을 사용하여 올바르게 접지되었는지 확인합니다.
+. 랙 또는 캐비닛에 스토리지 컨트롤러를 설치합니다.
++
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+
+. 디스크 쉘프를 설치하고, 각 스택에서 디스크 쉘프를 데이지 체인 방식으로 연결하고, 전원을 켜고, 쉘프 ID를 설정합니다.
++
+디스크 쉘프 데이지 체인 방식 및 쉘프 ID 설정에 대한 자세한 내용은 디스크 쉘프 모델의 해당 가이드를 참조하십시오.
+
++
+
+NOTE: 쉘프 ID는 각 MetroCluster DR 그룹(두 사이트 포함)의 각 SAS 디스크 쉘프에 대해 고유해야 합니다. 쉘프 ID를 수동으로 설정할 경우 디스크 쉘프의 전원을 껐다가 다시 켜야 합니다.
+
+

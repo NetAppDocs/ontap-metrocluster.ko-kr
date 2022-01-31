@@ -1,0 +1,103 @@
+---
+permalink: install-ip/task_switch_config_cisco_macsec.html 
+sidebar: sidebar 
+keywords: cisco, MACsec encryption 
+summary: 사이트 간에 실행되는 WAN ISL 포트에서만 MACsec 암호화를 구성해야 합니다. 올바른 RCF 파일을 적용한 후 MACsec을 구성해야 합니다. 
+---
+= Cisco 9336C 스위치에서 MACsec 암호화 구성
+
+
+필요한 경우 사이트 간에 실행되는 WAN ISL 포트에서 MACsec 암호화를 구성할 수 있습니다. 올바른 RCF 파일을 적용한 후 MACsec을 구성해야 합니다.
+
+
+NOTE: MACsec 암호화는 WAN ISL 포트에만 적용할 수 있습니다.
+
+
+
+== MACsec에 대한 라이센스 요구 사항
+
+MACsec에는 보안 라이센스가 필요합니다. Cisco NX-OS 라이센스 체계에 대한 전체 설명 및 라이센스 취득 및 적용 방법은 을 참조하십시오 https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/licensing/guide/b_Cisco_NX-OS_Licensing_Guide/b_Cisco_NX-OS_Licensing_Guide_chapter_01.html["Cisco NX-OS 라이센스 가이드 를 참조하십시오"]
+
+
+
+== MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL 활성화
+
+MetroCluster IP 구성에서 WAN ISL의 Cisco 9336C 스위치에 대해 MACsec 암호화를 설정할 수 있습니다.
+
+. '터미널 설정'이라는 글로벌 설정 모드로 진입한다
++
+[listing]
+----
+IP_switch_A_1# configure terminal
+IP_switch_A_1(config)#
+----
+. 장치에서 MACsec 및 MKA를 활성화합니다: "Feature MACsec"
++
+[listing]
+----
+IP_switch_A_1(config)# feature macsec
+----
+. 실행 중인 구성을 시작 구성에 복사합니다. 'copy running-config startup-config'
++
+[listing]
+----
+IP_switch_A_1(config)# copy running-config startup-config
+----
+
+
+
+
+== Cisco MACsec 암호화 사용 안 함
+
+MetroCluster IP 구성에서 WAN ISL의 Cisco 9336C 스위치에 대한 MACsec 암호화를 비활성화해야 할 수 있습니다.
+
+
+NOTE: 암호화를 사용하지 않도록 설정하는 경우 XXX에 설명된 대로 키도 삭제해야 합니다.
+
+. '터미널 설정'이라는 글로벌 설정 모드로 진입한다
++
+[listing]
+----
+IP_switch_A_1# configure terminal
+IP_switch_A_1(config)#
+----
+. 장치에서 MACsec 구성을 비활성화합니다. 'macsec shutdown(밀리초 종료)'
++
+[listing]
+----
+IP_switch_A_1(config)# macsec shutdown
+----
++
+
+NOTE: no 옵션을 선택하면 MACsec 기능이 복원됩니다.
+
+. MACsec로 이미 구성한 인터페이스를 선택합니다.
++
+인터페이스 유형 및 ID를 지정할 수 있습니다. 이더넷 포트의 경우 이더넷 슬롯/포트를 사용합니다.
+
++
+[listing]
+----
+IP_switch_A_1(config)# interface ethernet 1/15
+switch(config-if)#
+----
+. MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인, 정책 및 fallback-keychain을 제거합니다. "no MACsec keychain keychain-name policy-name fallback-keychain-name"
++
+[listing]
+----
+IP_switch_A_1(config-if)# no macsec keychain kc2 policy abc fallback-keychain fb_kc2
+----
+. MACsec이 구성된 모든 인터페이스에서 3단계와 4단계를 반복합니다.
+. 실행 중인 구성을 시작 구성에 복사합니다. 'copy running-config startup-config'
++
+[listing]
+----
+IP_switch_A_1(config)# copy running-config startup-config
+----
+
+
+
+
+== MACsec 키 체인 및 키 구성
+
+MACsec 키 체인 구성에 대한 자세한 내용은 해당 스위치에 대한 Cisco 설명서를 참조하십시오.

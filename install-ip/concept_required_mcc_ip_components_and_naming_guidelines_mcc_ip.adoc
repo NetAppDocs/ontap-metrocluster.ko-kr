@@ -1,0 +1,304 @@
+---
+permalink: install-ip/concept_required_mcc_ip_components_and_naming_guidelines_mcc_ip.html 
+sidebar: sidebar 
+keywords: plan, metrocluster, ip, configuration, planning, require, hardware, software, clarity, conventions, component, documentation, naming, name, requirement, support, redundancy, switch, ontap, cluster, controller, module, gigabit, ethernet, adapter, pool, drive, drive, location, consideration, partial, populate, shelves, shelf, aff, a800, internal, iom12, iom, module, stack, four-node, raid-dp, raid4, AFF A800 internal drives 
+summary: MetroCluster IP 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다. 
+---
+= MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다.
+
+
+
+== 지원되는 소프트웨어 및 하드웨어
+
+MetroCluster IP 구성을 위해서는 하드웨어 및 소프트웨어가 지원되어야 합니다.
+
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+AFF 시스템을 사용하는 경우 MetroCluster 구성의 모든 컨트롤러 모듈을 AFF 시스템으로 구성해야 합니다.
+
+
+
+== MetroCluster IP 구성의 하드웨어 이중화 요구 사항
+
+MetroCluster IP 구성의 하드웨어 이중화 때문에 각 사이트에 두 개의 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.
+
+
+
+== MetroCluster IP 구성의 ONTAP 클러스터 요구 사항
+
+MetroCluster IP 구성에는 각 MetroCluster 사이트에 하나씩 2개의 ONTAP 클러스터가 필요합니다.
+
+이름은 MetroCluster 구성 내에서 고유해야 합니다.
+
+예제 이름:
+
+* 사이트 A: cluster_a
+* 사이트 B: cluster_B
+
+
+
+
+== MetroCluster IP 구성의 IP 스위치 요구 사항
+
+MetroCluster IP 구성에는 4개의 IP 스위치가 필요합니다. 4개의 스위치는 MetroCluster IP 구성의 각 클러스터 간에 ISL을 제공하는 2개의 스위치 스토리지 패브릭을 형성합니다.
+
+또한 IP 스위치는 각 클러스터의 컨트롤러 모듈 간에 클러스터 간 통신을 제공합니다.
+
+이름은 MetroCluster 구성 내에서 고유해야 합니다.
+
+예제 이름:
+
+* 사이트 A: cluster_a
++
+** IP_SWITCH_A_1
+** IP_SWITCH_A_2
+
+
+* 사이트 B: cluster_B
++
+** IP_SWITCH_B_1
+** IP_SWITCH_B_2
+
+
+
+
+
+
+== MetroCluster IP 구성의 컨트롤러 모듈 요구 사항
+
+MetroCluster IP 구성에는 4개 또는 8개의 컨트롤러 모듈이 필요합니다.
+
+각 사이트의 컨트롤러 모듈이 HA 쌍을 형성합니다. 각 컨트롤러 모듈에는 다른 사이트에 DR 파트너가 있습니다.
+
+각 컨트롤러 모듈은 동일한 ONTAP 버전을 실행해야 합니다. 지원되는 플랫폼 모델은 ONTAP 버전에 따라 다릅니다.
+
+* FAS 시스템에 대한 새로운 MetroCluster IP 설치는 ONTAP 9.4에서 지원되지 않습니다.
++
+FAS 시스템의 기존 MetroCluster IP 구성을 ONTAP 9.4로 업그레이드할 수 있습니다.
+
+* ONTAP 9.5부터 FAS 시스템에 새로운 MetroCluster IP 설치가 지원됩니다.
+* ONTAP 9.4부터 ADP용으로 구성된 컨트롤러 모듈이 지원됩니다.
+
+
+
+
+=== 컨트롤러 모델은 4노드 구성으로 제한됩니다
+
+이러한 모델은 MetroCluster 구성에서 4개로 제한됩니다.
+
+* AFF A220
+* AFF A250
+* FAS2750
+* 500f로 설정합니다
+
+
+예를 들어, 다음 구성은 지원되지 않습니다.
+
+* 8개의 AFF A250 컨트롤러로 구성된 8노드 구성입니다.
+* AFF 220 컨트롤러 4개와 FAS500f 컨트롤러 4개로 구성된 8노드 구성
+* 각각 AFF A250 컨트롤러로 구성되어 있고 동일한 백엔드 스위치를 공유하는 4노드 MetroCluster IP 구성 2개
+* DR 그룹 1, AFF A250 컨트롤러 및 DR 그룹 2, FAS9000 컨트롤러 등으로 구성된 8노드 구성
+
+
+두 번째 MetroCluster에 위의 모델이 포함되지 않은 경우 동일한 백엔드 스위치를 사용하여 두 개의 개별 4노드 MetroCluster IP 구성을 구성할 수 있습니다.
+
+
+
+=== 예제 이름
+
+다음 예제 이름이 설명서에 사용되었습니다.
+
+* 사이트 A: cluster_a
++
+** 컨트롤러_A_1
+** 컨트롤러_A_2
+
+
+* 사이트 B: cluster_B
++
+** 컨트롤러_B_1
+** 컨트롤러_B_2
+
+
+
+
+
+
+== MetroCluster IP 구성의 기가비트 이더넷 어댑터 요구 사항
+
+MetroCluster IP 구성은 MetroCluster IP Fabric에 사용되는 IP 스위치에 대한 IP 인터페이스에 40/100Gbps 또는 10/25Gbps 이더넷 어댑터를 사용합니다.
+
+|===
+
+
+| 플랫폼 모델 | 기가비트 이더넷 어댑터가 필요합니다 | 어댑터에 필요한 슬롯입니다 | 포트 
+
+
+| AFF A900 | X91146A | 슬롯 5, 슬롯 7 | e5b, e7b 
+
+
+ a| 
+AFF A700 및 FAS9000
+ a| 
+X91146A-C
+ a| 
+슬롯 5
+ a| 
+e5a, e5b
+
+
+
+ a| 
+AFF A800
+ a| 
+X1146A/온보드 포트
+ a| 
+슬롯 1
+ a| 
+e0b e1b
+
+
+
+ a| 
+AFF A400 및 FAS8300
+ a| 
+X114A
+ a| 
+슬롯 1
+ a| 
+E1A, e1b
+
+
+
+ a| 
+AFF A300 및 FAS8200
+ a| 
+X1116A
+ a| 
+슬롯 1
+ a| 
+E1A, e1b
+
+
+
+ a| 
+AFF A220 및 FAS2750
+ a| 
+온보드 포트
+ a| 
+슬롯 0
+ a| 
+e0a, e0b
+
+
+
+ a| 
+AFF A250 및 FAS500f
+ a| 
+온보드 포트
+ a| 
+슬롯 0
+ a| 
+e0c, e0d
+
+
+
+ a| 
+AFF A320
+ a| 
+온보드 포트
+ a| 
+슬롯 0
+ a| 
+e0g, e0h
+
+|===
+
+
+== 풀 및 드라이브 요구 사항(최소 지원)
+
+쉘프당 디스크 소유권을 허용하려면 SAS 디스크 쉘프 8개(각 사이트에 쉘프 4개)가 권장됩니다.
+
+4노드 MetroCluster IP 구성에서는 각 사이트에서 최소 구성을 수행해야 합니다.
+
+* 각 노드에는 사이트에 하나 이상의 로컬 풀과 하나의 원격 풀이 있습니다.
+* 각 풀에 최소 7개의 드라이브가 있습니다.
++
+노드당 단일 미러링된 데이터 애그리게이트를 사용하는 4노드 MetroCluster 구성에서는 사이트에 24개의 디스크가 필요합니다.
+
+
+
+지원되는 최소 구성에서는 각 풀에 다음과 같은 드라이브 레이아웃이 있습니다.
+
+* 3개의 루트 드라이브
+* 데이터 드라이브 3개
+* 스페어 드라이브 1개
+
+
+지원되는 최소 구성에서는 사이트당 쉘프가 하나 이상 필요합니다.
+
+MetroCluster 구성은 RAID-DP 및 RAID4를 지원합니다.
+
+
+
+== 부분적으로 채워진 셸프에 대한 드라이브 위치 고려 사항
+
+절반으로 채워진 쉘프를 사용하는 경우(24-드라이브 쉘프의 드라이브 12개) 드라이브 자동 할당을 올바로 위해서는 드라이브가 슬롯 0-5 및 18-23에 있어야 합니다.
+
+쉘프가 부분적으로 채워진 구성에서 드라이브는 쉘프의 4사분면 에 균등하게 분산되어야 합니다.
+
+
+
+== AFF A800 내부 드라이브의 드라이브 위치 고려 사항
+
+ADP 기능을 올바르게 구현하려면 AFF A800 시스템 디스크 슬롯을 4등분하여 디스크를 대칭적으로 장착해야 합니다.
+
+AFF A800 시스템에는 48개의 드라이브 베이가 있습니다. 베이는 4분기로 나눌 수 있습니다.
+
+* 1분기:
++
+** 베이 0 - 5
+** 베이 24-29
+
+
+* 2분기:
++
+** 베이 6-11
+** 베이 30-35
+
+
+* 3분기:
++
+** 베이 12-17
+** 베이 36-41
+
+
+* 4분기:
++
+** 베이 18-23
+** 베이 42-47
+
+
+
+
+이 시스템에 16개의 드라이브가 장착된 경우 4개의 분기 간에 대칭적으로 분산되어야 합니다.
+
+* 1분기에는 0, 1, 2, 3의 4개 드라이브가 있습니다
+* 2분기에는 6개, 7개, 8개, 9개의 드라이브가 있습니다
+* 3분기에 4개의 드라이브: 12, 13, 14, 15
+* 4분기에는 18, 19, 20, 21의 4개 드라이브가 있습니다
+
+
+
+
+== 스택에서 IOM12와 IOM 6 모듈 혼합
+
+사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오 https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성 매트릭스 툴(IMT)"] 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.
+
+쉘프 혼합에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"]

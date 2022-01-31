@@ -1,0 +1,58 @@
+---
+permalink: maintain/concept_using_fibrebridge_7500n_bridges_in_mcc_configurations.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, support, fibrebridge, configurations 
+summary: FiberBridge 7500N 브리지는 FiberBridge 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 지원됩니다. 지원되는 구성에는 브리지의 FC 포트, 스택 및 스토리지 쉘프 제한에 대한 조닝 요구 사항 및 제한 사항이 있습니다. 
+---
+= MetroCluster 구성에서 FiberBridge 7500N 브리지 지원
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FiberBridge 7500N 브리지는 FiberBridge 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 지원됩니다. 지원되는 구성에는 브리지의 FC 포트, 스택 및 스토리지 쉘프 제한에 대한 조닝 요구 사항 및 제한 사항이 있습니다.
+
+
+NOTE: FiberBridge 6500N 브리지는 ONTAP 9.8 이상을 실행하는 구성에서는 지원되지 않습니다.
+
+[cols="27,19,27,27"]
+|===
+| 사용 사례 | 영역 변경이 필요합니까? | 제한 사항 | 절차를 참조하십시오 
+
+
+ a| 
+단일 FiberBridge 6500N 브리지를 단일 FiberBridge 7500N 브리지로 교체합니다
+ a| 
+아니요
+ a| 
+FiberBridge 7500N 브리지는 단일 FC 포트를 사용하여 단일 스택에 연결하여 FiberBridge 6500N 브리지와 동일하게 구성해야 합니다. FiberBridge 7500N의 두 번째 FC 포트는 사용해서는 안 됩니다.
+ a| 
+link:task_replace_a_sle_fc_to_sas_bridge.html["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
+
+
+
+ a| 
+여러 쌍의 FiberBridge 6500N 브리지를 단일 쌍의 FiberBridge 7500N 브리지로 교체하여 여러 스택 통합
+ a| 
+예
+ a| 
+이 경우, FiberBridge 6500N 브리지를 서비스 중단 없이 사용하여 FiberBridge 7500N 브리지 한 쌍으로 교체합니다. FiberBridge 7500N 또는 7600N 브리지의 각 쌍은 최대 4개의 스택을 지원할 수 있습니다.
+
+검사 종료 시 스택의 상단과 하단이 FiberBridge 7500N 브리지의 해당 포트에 연결되어야 합니다.
+ a| 
+link:task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html["FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체"]
+
+
+
+ a| 
+새로운 FiberBridge 7500N 브리지 쌍을 추가하여 새로운 스토리지를 추가합니다
+ a| 
+예
+
+새 브리지의 각 FC 포트에 대해 스토리지 영역을 추가해야 합니다.
+ a| 
+FC 스위치 패브릭(패브릭 연결 MetroCluster 구성) 또는 스토리지 컨트롤러(확장 MetroCluster 구성)에 사용 가능한 포트가 있어야 합니다. FiberBridge 7500N 또는 7600N 브리지의 각 쌍은 최대 4개의 스택을 지원할 수 있습니다.
+ a| 
+link:task_fb_hot_add_stack_of_shelves_and_bridges.html["MetroCluster 시스템에 SAS 디스크 쉘프 및 브리지 스택 핫 추가"]
+
+|===

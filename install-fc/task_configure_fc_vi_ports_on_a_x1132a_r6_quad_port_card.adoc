@@ -1,0 +1,112 @@
+---
+permalink: install-fc/task_configure_fc_vi_ports_on_a_x1132a_r6_quad_port_card.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, fc, vi, ports, quad, port, card 
+summary: FAS8020 시스템에서 X1132A-R6 4포트 카드를 사용하는 경우, 유지 관리 모드로 전환하여 FC-VI 및 이니시에이터 사용을 위한 1a 및 1b 포트를 구성할 수 있습니다. 출하 시 받은 MetroCluster 시스템에는 필요하지 않으며, 이 경우 포트가 구성에 맞게 적절하게 설정됩니다. 
+---
+= FAS8020 시스템에서 X1132A-R6 4중 포트 카드의 FC-VI 포트를 구성합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FAS8020 시스템에서 X1132A-R6 4포트 카드를 사용하는 경우, 유지 관리 모드로 전환하여 FC-VI 및 이니시에이터 사용을 위한 1a 및 1b 포트를 구성할 수 있습니다. 출하 시 받은 MetroCluster 시스템에는 필요하지 않으며, 이 경우 포트가 구성에 맞게 적절하게 설정됩니다.
+
+이 작업은 유지보수 모드에서 수행해야 합니다.
+
+
+NOTE: ucadmin 명령을 사용하여 FC 포트를 FC-VI 포트로 변환하는 작업은 FAS8020 및 AFF 8020 시스템에서만 지원됩니다. 다른 플랫폼에서는 FC 포트를 FCVI 포트로 변환할 수 없습니다.
+
+.단계
+. 포트 비활성화:
++
+'스토리지 비활성화 어댑터 1a'
+
++
+'스토리지 비활성화 어댑터 1b'
+
++
+[listing]
+----
+*> storage disable adapter 1a
+Jun 03 02:17:57 [controller_B_1:fci.adapter.offlining:info]: Offlining Fibre Channel adapter 1a.
+Host adapter 1a disable succeeded
+Jun 03 02:17:57 [controller_B_1:fci.adapter.offline:info]: Fibre Channel adapter 1a is now offline.
+*> storage disable adapter 1b
+Jun 03 02:18:43 [controller_B_1:fci.adapter.offlining:info]: Offlining Fibre Channel adapter 1b.
+Host adapter 1b disable succeeded
+Jun 03 02:18:43 [controller_B_1:fci.adapter.offline:info]: Fibre Channel adapter 1b is now offline.
+*>
+----
+. 포트가 비활성화되었는지 확인합니다.
++
+'ucadmin 쇼'
+
++
+[listing]
+----
+*> ucadmin show
+         Current  Current    Pending  Pending    Admin
+Adapter  Mode     Type       Mode     Type       Status
+-------  -------  ---------  -------  ---------  -------
+  ...
+  1a     fc       initiator  -        -          offline
+  1b     fc       initiator  -        -          offline
+  1c     fc       initiator  -        -          online
+  1d     fc       initiator  -        -          online
+----
+. A 및 b 포트를 FC-VI 모드로 설정합니다.
++
+'ucadmin modify-adapter 1a-type fcvi'
+
++
+명령은 포트 쌍 1a 및 1b의 두 포트 모두에서 모드를 설정합니다(명령에 1a만 지정됨).
+
++
+[listing]
+----
+
+*> ucadmin modify -t fcvi 1a
+Jun 03 02:19:13 [controller_B_1:ucm.type.changed:info]: FC-4 type has changed to fcvi on adapter 1a. Reboot the controller for the changes to take effect.
+Jun 03 02:19:13 [controller_B_1:ucm.type.changed:info]: FC-4 type has changed to fcvi on adapter 1b. Reboot the controller for the changes to take effect.
+----
+. 변경 사항이 보류 중인지 확인합니다.
++
+'ucadmin 쇼'
+
++
+[listing]
+----
+*> ucadmin show
+         Current  Current    Pending  Pending    Admin
+Adapter  Mode     Type       Mode     Type       Status
+-------  -------  ---------  -------  ---------  -------
+  ...
+  1a     fc       initiator  -        fcvi       offline
+  1b     fc       initiator  -        fcvi       offline
+  1c     fc       initiator  -        -          online
+  1d     fc       initiator  -        -          online
+----
+. 컨트롤러를 종료한 다음 유지보수 모드로 재부팅합니다.
+. 구성 변경을 확인합니다.
++
+'ucadmin show local'
+
++
+[listing]
+----
+
+Node           Adapter  Mode     Type       Mode     Type       Status
+------------   -------  -------  ---------  -------  ---------  -----------
+...
+controller_B_1
+               1a       fc       fcvi       -        -          online
+controller_B_1
+               1b       fc       fcvi       -        -          online
+controller_B_1
+               1c       fc       initiator  -        -          online
+controller_B_1
+               1d       fc       initiator  -        -          online
+6 entries were displayed.
+----
+

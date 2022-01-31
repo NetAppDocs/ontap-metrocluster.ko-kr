@@ -1,0 +1,67 @@
+---
+permalink: manage/reference_commands_for_switchover_healing_and_switchback.html 
+sidebar: sidebar 
+keywords: ontap, command, perform, metrocluster, disaster, recovery, process, switchover, heal, switchback 
+summary: MetroCluster 재해 복구 프로세스를 수행하기 위한 특정 ONTAP 명령이 있습니다. 
+---
+= 전환, 복구, 스위치백을 위한 명령입니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 재해 복구 프로세스를 수행하기 위한 특정 ONTAP 명령이 있습니다.
+
+[cols="2*"]
+|===
+| 원하는 작업 | 이 명령 사용... 
+
+
+ a| 
+스위치오버가 오류 또는 문제 없이 수행될 수 있는지 확인합니다.
+ a| 
+고급 권한 수준에서 'MetroCluster switchover-simulate'
+
+
+
+ a| 
+오류 또는 거부가 없이 스위치백을 수행할 수 있는지 확인합니다.
+ a| 
+고급 권한 수준에서 MetroCluster 스위치백 시뮬레이션
+
+
+
+ a| 
+파트너 노드로 전환(협상된 전환)
+ a| 
+MetroCluster 절체
+
+
+
+ a| 
+파트너 노드로 전환(강제 스위치오버)
+ a| 
+MetroCluster 전환 - 강제 재해 발생 시 진실
+
+
+
+ a| 
+데이터 애그리게이트 복구를 수행합니다.
+ a| 
+'MetroCluster 환원 위상 집계'
+
+
+
+ a| 
+루트 애그리게이트 복구를 수행합니다.
+ a| 
+MetroCluster 수정 단계 루트 집계
+
+
+
+ a| 
+홈 노드로 다시 전환합니다.
+ a| 
+MetroCluster 스위치백
+
+|===

@@ -1,0 +1,119 @@
+---
+permalink: tiebreaker/reference_firewall_requirements_for_mcc_tiebreaker.html 
+sidebar: sidebar 
+keywords: metrocluster, tiebreaker, port, communicate, specific, service, firewall, requirement 
+summary: MetroCluster Tiebreaker는 여러 포트를 사용하여 특정 서비스와 통신합니다. 
+---
+= MetroCluster Tiebreaker의 방화벽 요구 사항
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster Tiebreaker는 여러 포트를 사용하여 특정 서비스와 통신합니다.
+
+다음 표에는 방화벽에서 허용해야 하는 포트가 나와 있습니다.
+
+[cols="4*"]
+|===
+| 포트/서비스 | 출처 | 목적지 | 목적 
+
+
+ a| 
+443/TCP
+ a| 
+Tiebreaker입니다
+ a| 
+인터넷
+ a| 
+NetApp에 AutoSupport 메시지 전송
+
+
+
+ a| 
+22/TCP
+ a| 
+관리 호스트
+ a| 
+Tiebreaker입니다
+ a| 
+Tiebreaker 관리
+
+
+
+ a| 
+443/TCP
+ a| 
+Tiebreaker입니다
+ a| 
+클러스터 관리 LIF
+ a| 
+HTTP(SSL)를 통한 클러스터와의 보안 통신
+
+
+
+ a| 
+22/TCP
+ a| 
+Tiebreaker입니다
+ a| 
+클러스터 관리 LIF
+ a| 
+SSH를 통해 클러스터에 대한 통신을 보호합니다
+
+
+
+ a| 
+443/TCP
+ a| 
+Tiebreaker입니다
+ a| 
+노드 관리 LIF
+ a| 
+HTTP(SSL)를 통한 노드 보안 통신
+
+
+
+ a| 
+22/TCP
+ a| 
+Tiebreaker입니다
+ a| 
+노드 관리 LIF
+ a| 
+SSH를 통해 노드와의 통신을 보호합니다
+
+
+
+ a| 
+162/UDP
+ a| 
+Tiebreaker입니다
+ a| 
+SNMP 트랩 호스트입니다
+ a| 
+알림 SNMP 트랩을 보내는 데 사용됩니다
+
+
+
+ a| 
+ICMP(ping)
+ a| 
+Tiebreaker입니다
+ a| 
+클러스터 관리 LIF
+ a| 
+클러스터 IP에 연결할 수 있는지 확인합니다
+
+
+
+ a| 
+ICMP(ping)
+ a| 
+Tiebreaker입니다
+ a| 
+노드 관리 LIF
+ a| 
+노드 IP에 연결할 수 있는지 확인합니다
+
+|===

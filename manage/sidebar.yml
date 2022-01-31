@@ -1,0 +1,42 @@
+---
+section: manage
+title: 전환, 복구, 스위치백을 수행합니다
+entries:
+- title: 테스트 또는 유지 관리를 위한 스위치오버 수행
+  entries:
+  - title: 개요
+    url: "/manage/task_perform_switchover_for_tests_or_maintenance.html"
+  - title: 시스템을 전환할 준비가 되었는지 확인합니다
+    url: "/manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html"
+  - title: 협상된 전환 전에 맞춤형 AutoSupport 메시지를 전송하십시오
+    url: "/manage/task_send_a_custom_autosupport_message_prior_to_negotiated_switchover.html"
+  - title: 협상된 전환을 수행합니다
+    url: "/manage/task_perform_a_negotiated_switchover.html"
+  - title: 스토리지 애그리게이트 plex show 명령의 출력은 MetroCluster 스위치오버 후 결정되지 않습니다
+    url: "/manage/concept_output_for_storage_aggregate_plex_show_after_a_mcc_switchover.html"
+  - title: DR 파트너가 온라인 상태인지 확인합니다
+    url: "/manage/task_confirm_that_dr_partners_have_come_online.html"
+  - title: 설정을 수정합니다
+    entries:
+    - title: MetroCluster FC 구성에서 구성을 수정합니다
+      entries:
+      - title: 개요
+        url: "/manage/task_heal_the_configuration_in_a_mcc_fc_configuration_supertask.html"
+      - title: 협상된 전환 후 데이터 애그리게이트를 수정합니다
+        url: "/manage/task_heal_the_data_aggregates_after_negotiated_switchover.html"
+      - title: 협상된 전환 후 루트 애그리게이트를 수정합니다
+        url: "/manage/task_heal_the_root_aggregates_after_negotiated_switchover.html"
+    - title: MetroCluster IP 구성에서 구성을 수정합니다(ONTAP 9.4 이하).
+      url: "/manage/task_heal_the_configuration_in_a_mcc_ip_configuration_ontap_9_4_and_earlier.html"
+  - title: 스위치백을 수행합니다
+    url: "/manage/task_perform_a_switchback.html"
+  - title: 성공적으로 스위치백을 확인합니다
+    url: "/manage/task_verify_a_successful_switchback.html"
+- title: 전환, 복구, 스위치백을 위한 명령입니다
+  url: "/manage/reference_commands_for_switchover_healing_and_switchback.html"
+- title: MetroCluster 구성을 모니터링합니다
+  url: "/manage/concept_monitoring_the_mcc_configuration.html"
+- title: NVFAIL을 사용하여 파일 시스템 일관성 모니터링 및 보호
+  url: "/manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html"
+- title: 추가 정보를 찾을 수 있는 위치
+  url: "/manage/reference_where_to_find_additional_information_dr_guide.html"

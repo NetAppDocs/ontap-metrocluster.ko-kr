@@ -1,0 +1,24 @@
+---
+permalink: upgrade/task_send_a_custom_autosupport_message_after_add_nodes_to_the_mcc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, send, custom, autosupport, message, add, nodes, configuration 
+summary: AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다. 
+---
+= MetroCluster 구성에 노드를 추가한 후에 사용자 지정 AutoSupport 메시지를 보냅니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. Site_A에서 클러스터에 로그인합니다
+. 유지 관리의 종료를 나타내는 AutoSupport 메시지를 호출합니다.
++
+'System node AutoSupport invoke-node * -type all-message maINT=end'
+
+. 파트너 사이트에서 이 단계를 반복합니다.
+

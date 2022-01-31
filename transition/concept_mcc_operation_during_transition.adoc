@@ -1,0 +1,25 @@
+---
+permalink: transition/concept_mcc_operation_during_transition.html 
+sidebar: sidebar 
+keywords: notice, alert, message, transition, alert, safe, ignore, tool, transition 
+summary: 전환 중에 경고 메시지가 나타날 수 있습니다. 이러한 경고는 무시해도 됩니다. 또한 전환 중에는 일부 툴을 사용할 수 없습니다. 
+---
+= 전환 중 알림 메시지 및 툴 지원
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환 중에 경고 메시지가 나타날 수 있습니다. 이러한 경고는 무시해도 됩니다. 또한 전환 중에는 일부 툴을 사용할 수 없습니다.
+
+* ARS는 전환 중에 경고를 보낼 수 있습니다.
++
+이러한 알림은 무시될 수 있으며 전환이 완료되면 사라집니다.
+
+* 전환 중에 OnCommand Unified Manager에 알림이 표시될 수 있습니다.
++
+이러한 알림은 무시될 수 있으며 전환이 완료되면 사라집니다.
+
+* 전환 중에는 Config Advisor가 지원되지 않습니다.
+* 전환 중에는 System Manager가 지원되지 않습니다.
+

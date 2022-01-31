@@ -1,0 +1,17 @@
+---
+permalink: install-fc/reference_configuration_gathering_worksheet_for_fc_switches_and_fc_to_sas_bridges.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, configuration, worksheets, fc, switches, sas, bridges 
+summary: MetroCluster 사이트를 구성하기 전에 필요한 구성 정보를 수집해야 합니다. 
+---
+= FC 스위치 및 FC-to-SAS 브리지에 대한 구성 워크시트
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 사이트를 구성하기 전에 다음 워크시트를 사용하여 사이트 정보를 기록할 수 있습니다.
+
+link:media/MetroCluster-FC_setup_worksheet_site-A.csv["사이트 A 워크시트"]
+
+link:media/MetroCluster-FC_setup_worksheet_site-B.csv["사이트 B 워크시트"]

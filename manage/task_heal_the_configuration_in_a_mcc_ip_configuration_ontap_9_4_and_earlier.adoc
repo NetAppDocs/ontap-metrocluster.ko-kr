@@ -1,0 +1,67 @@
+---
+permalink: manage/task_heal_the_configuration_in_a_mcc_ip_configuration_ontap_9_4_and_earlier.html 
+sidebar: sidebar 
+keywords: heal, aggregate, preparation, switchback, operation, configuration, metrocluster, ip, ontap 
+summary: 스위치백 작업을 준비하기 위해 애그리게이트를 치유해야 합니다. 
+---
+= MetroCluster IP 구성에서 구성 복구(ONTAP 9.4 이하)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스위치백 작업을 준비하기 위해 애그리게이트를 치유해야 합니다.
+
+
+NOTE: ONTAP 9.5를 실행하는 MetroCluster IP 시스템에서는 복구가 자동으로 수행되고 이러한 작업을 건너뛸 수 있습니다.
+
+복구 절차를 수행하기 전에 다음 조건이 존재해야 합니다.
+
+* 전환을 수행해야 하며 정상적인 사이트에서 데이터를 제공해야 합니다.
+* 재해 사이트의 스토리지 쉘프는 가동, 기능 및 액세스 가능해야 합니다.
+* ISL이 가동 및 운영되어야 합니다.
+* 정상적인 사이트의 노드는 HA 페일오버 상태가 아니어야 합니다(두 노드가 모두 가동 및 실행 중이어야 함).
+
+
+이 작업은 ONTAP 9.5 이전 버전을 실행하는 MetroCluster IP 구성에만 적용됩니다.
+
+이 절차는 MetroCluster FC 구성의 복구 절차와 다릅니다.
+
+.단계
+. 전환된 사이트에서 각 컨트롤러 모듈의 전원을 켜고 완전히 부팅되도록 합니다.
++
+LOADER 프롬프트가 표시되면 boot_ONTAP 명령을 실행합니다.
+
+. 루트 애그리게이트 복구 단계 'MetroCluster 환원 루트 애그리게이트'를 수행합니다
++
+[listing]
+----
+cluster_A::> metrocluster heal root-aggregates
+[Job 137] Job succeeded: Heal Root-Aggregates is successful
+----
++
+치유가 거부되면 -override-vetoes 매개 변수를 사용하여 MetroCluster 환원 루트 애그리게이트 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+
+. 애그리게이트를 재동기화하십시오. 'MetroCluster 환원 Aggregate'입니다
++
+[listing]
+----
+cluster_A::> metrocluster heal aggregates
+[Job 137] Job succeeded: Heal Aggregates is successful
+----
++
+치유가 거부되면 -override-vetoes 매개 변수를 사용하여 MetroCluster 환원 명령을 다시 실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+
+. 정상 클러스터에서 MetroCluster operation show 명령을 실행하여 환원 작업이 완료되었는지 확인합니다.
++
+[listing]
+----
+
+cluster_A::> metrocluster operation show
+  Operation: heal-aggregates
+      State: successful
+ Start Time: 7/29/2017 20:54:41
+   End Time: 7/29/2017 20:54:42
+     Errors: -
+----
+

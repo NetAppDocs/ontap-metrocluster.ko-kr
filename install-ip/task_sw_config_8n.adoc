@@ -1,0 +1,15 @@
+---
+permalink: install-ip/task_sw_config_8n.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, eight-node 
+summary: 8노드 구성은 2개의 DR 그룹으로 구성됩니다. 이 섹션의 작업을 사용하여 첫 번째 DR 그룹을 구성합니다. 
+---
+= 8노드 구성 처리
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+8노드 구성은 2개의 DR 그룹으로 구성됩니다. 이 섹션의 작업을 사용하여 첫 번째 DR 그룹을 구성합니다.
+
+그런 다음 의 작업을 수행합니다 link:../upgrade/task_expand_a_four_node_mcc_ip_configuration.html["4노드 MetroCluster IP 구성을 8노드 구성으로 확장"]

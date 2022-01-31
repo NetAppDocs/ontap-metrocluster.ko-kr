@@ -1,0 +1,820 @@
+---
+permalink: install-ip/task_switch_config_broadcom.html 
+sidebar: sidebar 
+keywords: ip, switch, connection, configuring, configure, broadcom, factory defaults 
+summary: 클러스터 상호 연결 및 백엔드 MetroCluster IP 연결에 사용할 Broadcom IP 스위치를 구성해야 합니다. 
+---
+= Broadcom IP 스위치 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+클러스터 상호 연결 및 백엔드 MetroCluster IP 연결에 사용할 Broadcom IP 스위치를 구성해야 합니다.
+
+
+
+== Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다
+
+새 스위치 소프트웨어 버전과 RCFs를 설치하기 전에 Broadcom 스위치 설정을 지우고 기본 구성을 수행해야 합니다.
+
+.이 작업에 대해
+* MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
+* 직렬 콘솔을 사용하여 스위치에 연결해야 합니다.
+* 이 작업은 관리 네트워크의 구성을 재설정합니다.
+
+
+.단계
+. 상승된 권한의 명령 프롬프트('#')로 변경합니다
++
+[listing]
+----
+(IP_switch_A_1)> enable
+(IP_switch_A_1) #
+----
+. 시작 구성을 지우고 배너를 제거합니다
++
+.. 시작 구성을 지웁니다.
++
+* 'erase startup-config' *
+
++
+[listing]
+----
+(IP_switch_A_1) #erase startup-config
+
+Are you sure you want to clear the configuration? (y/n) y
+
+(IP_switch_A_1) #
+----
++
+이 명령은 배너를 지우지 않습니다.
+
+.. 배너 제거:
++
+"세트 피너 없음" *
+
++
+[listing]
+----
+(IP_switch_A_1) #configure
+(IP_switch_A_1)(Config) # no set clibanner
+(IP_switch_A_1)(Config) #
+----
+
+
+. 스위치를 재부팅합니다. * `(ip_switch_a_1) #reload * '
++
+[listing]
+----
+Are you sure you would like to reset the system? (y/n) y
+----
++
+
+NOTE: 스위치를 다시 로드하기 전에 저장되지 않은 구성이나 변경된 구성을 저장할지 묻는 메시지가 나타나면 * No * 를 선택합니다.
+
+. 스위치가 다시 로드될 때까지 기다린 다음 스위치에 로그인합니다.
++
+기본 사용자는 ""admin""이고 암호가 설정되어 있지 않습니다. 다음과 유사한 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+(Routing)>
+----
+. 상승된 권한의 명령 프롬프트로 변경합니다.
++
+"활성화"를 선택합니다
+
++
+[listing]
+----
+Routing)> enable
+(Routing) #
+----
+. service port protocol을 none으로 설정한다.
++
+'저빙항프로토콜 없음
+
++
+[listing]
+----
+(Routing) #serviceport protocol none
+Changing protocol mode will reset ip configuration.
+Are you sure you want to continue? (y/n) y
+
+(Routing) #
+----
+. IP 주소를 서비스 포트에 할당합니다.
++
+'erviceport IP_IP-address__netmask__gateway_'
+
++
+다음 예에서는 서브넷 "255.255.255.0" 및 게이트웨이 "10.10.10.1"이 있는 서비스 포트에 할당된 IP 주소 "10.10.10.10"을 보여 줍니다.
+
++
+[listing]
+----
+(Routing) #serviceport ip 10.10.10.10 255.255.255.0 10.10.10.1
+----
+. 서비스 포트가 올바르게 구성되었는지 확인합니다.
++
+서비스서비스
+
++
+다음 예에서는 포트가 작동 가능하며 올바른 주소가 할당되었음을 보여 줍니다.
+
++
+[listing]
+----
+(Routing) #show serviceport
+
+Interface Status............................... Up
+IP Address..................................... 10.10.10.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 10.10.10.1
+IPv6 Administrative Mode....................... Enabled
+IPv6 Prefix is ................................ fe80::dac4:97ff:fe56:87d7/64
+IPv6 Default Router............................ fe80::222:bdff:fef8:19ff
+Configured IPv4 Protocol....................... None
+Configured IPv6 Protocol....................... None
+IPv6 AutoConfig Mode........................... Disabled
+Burned In MAC Address.......................... D8:C4:97:56:87:D7
+
+(Routing) #
+----
+. 필요한 경우 SSH 서버를 구성합니다.
++
+
+NOTE: RCF 파일은 텔넷 프로토콜을 비활성화합니다. SSH 서버를 구성하지 않으면 직렬 포트 연결을 통해서만 브리지에 액세스할 수 있습니다.
+
++
+.. RSA 키를 생성합니다.
++
+[listing]
+----
+(Routing) #configure
+(Routing) (Config)#crypto key generate rsa
+----
+.. DSA 키 생성(선택 사항)
++
+[listing]
+----
+(Routing) #configure
+(Routing) (Config)#crypto key generate dsa
+----
+.. FIPS 호환 버전의 EFOS를 사용하는 경우 ECDSA 키를 생성합니다. 다음 예제에서는 길이가 256인 키를 만듭니다. 유효한 값은 256, 384 또는 521입니다.
++
+[listing]
+----
+(Routing) #configure
+(Routing) (Config)#crypto key generate ecdsa 256
+----
+.. SSH 서버를 활성화합니다.
++
+필요한 경우 구성 컨텍스트를 종료합니다.
+
++
+[listing]
+----
+(Routing) (Config)#end
+(Routing) #ip ssh server enable
+----
++
+
+NOTE: 키가 이미 있으면 덮어쓸지 묻는 메시지가 나타날 수 있습니다.
+
+
+
+. 필요한 경우 도메인 및 이름 서버를 구성합니다.
++
+'설정'을 클릭합니다
+
++
+다음 예에서는 IP domain과 IP name server 명령을 보여 줍니다.
+
++
+[listing]
+----
+(Routing) # configure
+(Routing) (Config)#ip domain name lab.netapp.com
+(Routing) (Config)#ip name server 10.99.99.1 10.99.99.2
+(Routing) (Config)#exit
+(Routing) (Config)#
+----
+. 필요한 경우 시간대 및 시간 동기화(SNTP)를 구성합니다.
++
+다음 예에서는 SNTP 서버의 IP 주소와 상대 시간대 등을 지정하는 'sNTP' 명령어를 보여준다.
+
++
+[listing]
+----
+(Routing) #
+(Routing) (Config)#sntp client mode unicast
+(Routing) (Config)#sntp server 10.99.99.5
+(Routing) (Config)#clock timezone -7
+(Routing) (Config)#exit
+(Routing) (Config)#
+----
+. 스위치 이름 구성:
++
+호스트 이름 IP_SWITCH_A_1
+
++
+스위치 프롬프트에는 새 이름이 표시됩니다.
+
++
+[listing]
+----
+(Routing) # hostname IP_switch_A_1
+
+(IP_switch_A_1) #
+----
+. 구성을 저장합니다.
++
+쓰기 메모리
+
++
+다음 예와 유사한 프롬프트 및 출력이 표시됩니다.
+
++
+[listing]
+----
+(IP_switch_A_1) #write memory
+
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) y
+
+Config file 'startup-config' created successfully .
+
+
+Configuration Saved!
+
+(IP_switch_A_1) #
+----
+. MetroCluster IP 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.
+
+
+
+
+== Broadcom 스위치 EFOS 소프트웨어 다운로드 및 설치
+
+MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF 파일을 다운로드해야 합니다.
+
+이 작업은 MetroCluster IP 구성의 각 스위치에서 반복해야 합니다.
+
+====
+* 다음 사항에 유의하십시오. *
+
+* EFOS 3.4.x.x에서 EFOS 3.7.x.x 이상으로 업그레이드할 경우 스위치에서 EFOS 3.4.4.6(또는 이후 3.4.x.x 릴리즈)이 실행되고 있어야 합니다. 그 전에 릴리스를 실행 중인 경우 먼저 스위치를 EFOS 3.4.4.6(또는 그 이상 3.4.x.x 릴리스)로 업그레이드한 다음 스위치를 EFOS 3.7.x.x 이상으로 업그레이드하십시오.
+* EFOS 3.4.x.x 및 3.7.x.x 이상의 구성은 다릅니다. EFOS 버전을 3.4.x.x에서 3.7.x.x 이상으로 변경하거나 그 반대로 변경하려면 스위치를 출고 시 기본값으로 재설정하고 해당 EFOS 버전의 RCF 파일을 (다시) 적용해야 합니다. 이 절차를 수행하려면 직렬 콘솔 포트를 통해 액세스해야 합니다.
+* EFOS 버전 3.7.x.x 이상부터는 FIPS를 준수하지 않는 버전과 FIPS 호환 버전을 사용할 수 있습니다. FIPS를 준수하지 않는 버전에서 로 이동하거나 FIPS를 준수하는 버전으로 전환할 때 다른 단계가 적용됩니다. FIPS를 준수하지 않는 버전에서 FIPS를 준수하는 버전으로 또는 그 반대로 EFOS를 변경하면 스위치가 공장 출하 시 기본값으로 재설정됩니다. 이 절차를 수행하려면 직렬 콘솔 포트를 통해 액세스해야 합니다.
+
+
+====
+|===
+
+
+| * 절차 * | * 현재 EFOS 버전 * | * 새로운 EFOS 버전 * | * 고급 단계 * 
+
+
+ a| 
+FIPS를 준수하지 않는 두 버전 간에 EFOS를 업그레이드하는 단계
+ a| 
+3.4.x.x
+ a| 
+3.4.x.x
+ a| 
+방법 1을 사용하여 새 EFOS 이미지 설치) 구성 및 라이센스 정보가 보존됩니다
+
+
+
+ a| 
+3.4.4.6(또는 그 이상 3.4.x.x)
+ a| 
+3.7.x.x 이상 비 FIPS 규격
+ a| 
+방법 1을 사용하여 EFOS를 업그레이드합니다. 스위치를 출고 시 기본값으로 재설정하고 EFOS 3.7.x.x 이상에 RCF 파일을 적용합니다
+
+
+
+.2+| 3.7.x.x 이상 비 FIPS 규격  a| 
+3.4.4.6(또는 그 이상 3.4.x.x)
+ a| 
+방법 1을 사용하여 EFOS를 다운그레이드합니다. 스위치를 출고 시 기본값으로 재설정하고 EFOS 3.4.x.x의 RCF 파일을 적용합니다
+
+
+
+ a| 
+3.7.x.x 이상 비 FIPS 규격
+ a| 
+방법 1을 사용하여 새 EFOS 이미지를 설치합니다. 구성 및 라이센스 정보가 유지됩니다
+
+
+
+ a| 
+3.7.x.x 이상 FIPS 규격
+ a| 
+3.7.x.x 이상 FIPS 규격
+ a| 
+방법 1을 사용하여 새 EFOS 이미지를 설치합니다. 구성 및 라이센스 정보가 유지됩니다
+
+
+
+ a| 
+FIPS 호환 EFOS 버전으로 업그레이드 단계
+ a| 
+FIPS 비호환
+ a| 
+FIPS 규격
+ a| 
+방법 2를 사용하여 EFOS 이미지 설치 스위치 구성 및 라이센스 정보가 손실됩니다.
+
+
+
+ a| 
+FIPS 규격
+ a| 
+FIPS 비호환
+
+|===
+* 방법 1: <<Steps to upgrade EFOS with downloading the software image to the backup boot partition>>
+* 방법 2: <<Steps to upgrade EFOS using the ONIE OS installation>>
+
+
+
+
+=== 백업 부팅 파티션에 소프트웨어 이미지를 다운로드하여 EFOS를 업그레이드하는 단계입니다
+
+두 EFOS 버전이 FIPS를 준수하지 않거나 두 EFOS 버전이 모두 FIPS를 준수하는 경우에만 다음 단계를 수행할 수 있습니다.
+
+
+NOTE: 한 버전이 FIPS를 준수하고 다른 버전이 FIPS를 준수하지 않는 경우 이 단계를 사용하지 마십시오.
+
+.단계
+. 스위치 소프트웨어를 스위치에 복사합니다. (+ copy sftp://user@50.50.50.50 /switchsoftware/efos-3.4.4.6.stk backup+)
++
+이 예에서 efos-3.4.4.6.stk 운영 체제 파일은 SFTP 서버에서 50.50.50으로 백업 파티션으로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.
+
++
+[listing]
+----
+(IP_switch_A_1) #copy sftp://user@50.50.50.50/switchsoftware/efos-3.4.4.6.stk backup
+Remote Password:*************
+
+Mode........................................... SFTP
+Set Server IP.................................. 50.50.50.50
+Path........................................... /switchsoftware/
+Filename....................................... efos-3.4.4.6.stk
+Data Type...................................... Code
+Destination Filename........................... backup
+
+Management access will be blocked for the duration of the transfer
+Are you sure you want to start? (y/n) y
+
+File transfer in progress. Management access will be blocked for the duration of the transfer. Please wait...
+SFTP Code transfer starting...
+
+
+File transfer operation completed successfully.
+
+(IP_switch_A_1) #
+----
+. 다음 스위치 재부팅의 백업 파티션에서 부팅하도록 스위치를 설정합니다.
++
+부팅 시스템 백업
+
++
+[listing]
+----
+(IP_switch_A_1) #boot system backup
+Activating image backup ..
+
+(IP_switch_A_1) #
+----
+. 새 부팅 이미지가 다음 부팅 시 활성화되는지 확인합니다.
++
+'How bootvar'입니다
+
++
+[listing]
+----
+(IP_switch_A_1) #show bootvar
+
+Image Descriptions
+
+ active :
+ backup :
+
+
+ Images currently available on Flash
+
+ ----  -----------  --------  ---------------  ------------
+ unit       active    backup   current-active   next-active
+ ----  -----------  --------  ---------------  ------------
+
+	1       3.4.4.2    3.4.4.6      3.4.4.2        3.4.4.6
+
+(IP_switch_A_1) #
+----
+. 구성을 저장합니다.
++
+쓰기 메모리
+
++
+[listing]
+----
+(IP_switch_A_1) #write memory
+
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) y
+
+
+Configuration Saved!
+
+(IP_switch_A_1) #
+----
+. 스위치를 재부팅합니다.
++
+다시 로드
+
++
+[listing]
+----
+(IP_switch_A_1) #reload
+
+Are you sure you would like to reset the system? (y/n) y
+----
+. 스위치가 재부팅될 때까지 기다립니다.
++
+
+NOTE: 드문 경우지만 스위치가 부팅되지 않을 수 있습니다. 를 따릅니다 <<Steps to upgrade EFOS using the ONIE OS installation>> 새 이미지를 설치합니다.
+
+. 스위치를 EFOS 3.4.x.x에서 EFOS 3.7.x.x로 변경하거나 그 반대로 변경할 경우 다음 두 절차를 따라 올바른 구성(RCF)을 적용하십시오.
++
+.. <<Resetting the Broadcom IP switch to factory defaults>>
+.. <<Downloading and installing the Broadcom RCF files>>
+
+
+. MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.
+
+
+
+
+=== ONIE OS 설치를 사용하여 EFOS를 업그레이드하는 단계
+
+한 EFOS 버전이 FIPS를 준수하고 다른 EFOS 버전이 FIPS를 준수하지 않는 경우 다음 단계를 수행할 수 있습니다. 이러한 단계는 스위치가 부팅되지 않는 경우 ONIE에서 비 FIPS 또는 FIPS 호환 EFOS 3.7.x.x 이미지를 설치하는 데 사용할 수 있습니다.
+
+.단계
+. 스위치를 ONIE 설치 모드로 부팅합니다.
++
+부팅 중에 다음 화면이 나타나면 ONIE를 선택합니다.
+
++
+[listing]
+----
+ +--------------------------------------------------------------------+
+ |EFOS                                                                |
+ |*ONIE                                                               |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ +--------------------------------------------------------------------+
+
+----
++
+"ONIE"를 선택하면 스위치가 로드되고 다음 선택 사항이 표시됩니다.
+
++
+[listing]
+----
+ +--------------------------------------------------------------------+
+ |*ONIE: Install OS                                                   |
+ | ONIE: Rescue                                                       |
+ | ONIE: Uninstall OS                                                 |
+ | ONIE: Update ONIE                                                  |
+ | ONIE: Embed ONIE                                                   |
+ | DIAG: Diagnostic Mode                                              |
+ | DIAG: Burn-In Mode                                                 |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ |                                                                    |
+ +--------------------------------------------------------------------+
+
+----
++
+이제 스위치가 ONIE 설치 모드로 부팅됩니다.
+
+. ONIE 검색을 중지하고 이더넷 인터페이스를 구성합니다
++
+다음 메시지가 나타나면 <ENTER> 키를 눌러 ONIE 콘솔을 호출합니다.
+
++
+[listing]
+----
+ Please press Enter to activate this console. Info: eth0:  Checking link... up.
+ ONIE:/ #
+----
++
+
+NOTE: ONIE 검색이 계속 진행되어 메시지가 콘솔에 인쇄됩니다.
+
++
+[listing]
+----
+Stop the ONIE discovery
+ONIE:/ # onie-discovery-stop
+discover: installer mode detected.
+Stopping: discover... done.
+ONIE:/ #
+----
+. 이더넷 인터페이스를 구성하고 'ifconfig eth0 <IPAddress> netmask <netmask> up' 및 'route add default GW <gatewayAddress>'를 사용하여 라우트를 추가합니다
++
+[listing]
+----
+ONIE:/ # ifconfig eth0 10.10.10.10 netmask 255.255.255.0 up
+ONIE:/ # route add default gw 10.10.10.1
+----
+. ONIE 설치 파일을 호스팅하는 서버에 연결할 수 있는지 확인합니다.
++
+[listing]
+----
+ONIE:/ # ping 50.50.50.50
+PING 50.50.50.50 (50.50.50.50): 56 data bytes
+64 bytes from 50.50.50.50: seq=0 ttl=255 time=0.429 ms
+64 bytes from 50.50.50.50: seq=1 ttl=255 time=0.595 ms
+64 bytes from 50.50.50.50: seq=2 ttl=255 time=0.369 ms
+^C
+--- 50.50.50.50 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.369/0.464/0.595 ms
+ONIE:/ #
+----
+. 새 스위치 소프트웨어를 설치합니다
++
+[listing]
+----
+
+ONIE:/ # onie-nos-install http:// 50.50.50.50/Software/onie-installer-x86_64
+discover: installer mode detected.
+Stopping: discover... done.
+Info: Fetching http:// 50.50.50.50/Software/onie-installer-3.7.0.4 ...
+Connecting to 50.50.50.50 (50.50.50.50:80)
+installer            100% |*******************************| 48841k  0:00:00 ETA
+ONIE: Executing installer: http:// 50.50.50.50/Software/onie-installer-3.7.0.4
+Verifying image checksum ... OK.
+Preparing image archive ... OK.
+----
++
+소프트웨어가 설치되고 스위치를 재부팅합니다. 스위치가 새 EFOS 버전으로 정상적으로 재부팅되도록 합니다.
+
+. 새 스위치 소프트웨어가 설치되었는지 확인합니다
++
+'How bootvar' *
+
++
+[listing]
+----
+
+(Routing) #show bootvar
+Image Descriptions
+active :
+backup :
+Images currently available on Flash
+---- 	----------- -------- --------------- ------------
+unit 	active 	   backup   current-active  next-active
+---- 	----------- -------- --------------- ------------
+1 	3.7.0.4     3.7.0.4  3.7.0.4         3.7.0.4
+(Routing) #
+----
+. 설치를 완료합니다
++
+구성이 적용되지 않고 스위치가 재부팅되고 출하 시 기본값으로 재설정됩니다. 다음 두 절차에 따라 스위치 기본 설정을 구성하고 다음 두 문서에 설명된 대로 RCF 파일을 적용합니다.
+
++
+.. 스위치 기본 설정을 구성합니다. 4단계 이후 단계를 따릅니다. <<Resetting the Broadcom IP switch to factory defaults>>
+.. 에 설명된 대로 RCF 파일을 생성하고 적용합니다 <<Downloading and installing the Broadcom RCF files>>
+
+
+
+
+
+
+== Broadcom RCF 파일 다운로드 및 설치
+
+MetroCluster IP 구성의 각 스위치에 스위치 RCF 파일을 다운로드하고 설치해야 합니다.
+
+이 작업에는 FTP, TFTP, SFTP 또는 SCP와 같은 파일 전송 소프트웨어가 필요합니다. 스위치에 파일을 복사합니다.
+
+이러한 단계는 MetroCluster IP 구성의 각 IP 스위치에서 반복해야 합니다.
+
+RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.
+
+|===
+
+
+| 스위치 | RCF 파일 
+
+
+ a| 
+IP_SWITCH_A_1
+ a| 
+v1.32_Switch-A1.txt
+
+
+
+ a| 
+IP_SWITCH_A_2
+ a| 
+v1.32_Switch-A2.txt
+
+
+
+ a| 
+IP_SWITCH_B_1
+ a| 
+v1.32_Switch-B1.txt
+
+
+
+ a| 
+IP_SWITCH_B_2
+ a| 
+v1.32_Switch-B2.txt
+
+|===
+
+NOTE: EFOS 버전 3.4.4.6 이상 3.4.x.x.x용 RCF 파일 릴리즈 버전과 EFOS 버전 3.7.0.4는 다릅니다. 스위치가 실행 중인 EFOS 버전에 맞는 RCF 파일을 생성했는지 확인해야 합니다.
+
+|===
+
+
+| EFOS 버전입니다 | RCF 파일 버전 
+
+
+| 3.4.x.x | v1.3x, v1.4x 
+
+
+| 3.7.x.x | V2.x 
+|===
+.단계
+. MetroCluster IP용 Broadcom RCF 파일을 생성합니다.
++
+.. 를 다운로드합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"]
+.. MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다
+
+
+. RCF 파일을 스위치에 복사합니다.
++
+.. RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF NVRAM:script BES-53248_v1.32_Switch-A1.txt NVRAM:script BES-53248_v1.32_Switch-A1.scr'
++
+이 예에서 "BES-53248_v1.32_Switch-A1.txt" RCF 파일은 SFTP 서버에서 "50.50.50"의 로컬 bootflash로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.
+
++
+[listing]
+----
+(IP_switch_A_1) #copy sftp://user@50.50.50.50/RcfFiles/BES-53248_v1.32_Switch-A1.txt nvram:script BES-53248_v1.32_Switch-A1.scr
+
+Remote Password:*************
+
+Mode........................................... SFTP
+Set Server IP.................................. 50.50.50.50
+Path........................................... /RcfFiles/
+Filename....................................... BES-53248_v1.32_Switch-A1.txt
+Data Type...................................... Config Script
+Destination Filename........................... BES-53248_v1.32_Switch-A1.scr
+
+Management access will be blocked for the duration of the transfer
+Are you sure you want to start? (y/n) y
+
+File transfer in progress. Management access will be blocked for the duration of the transfer. Please wait...
+File transfer operation completed successfully.
+
+
+Validating configuration script...
+
+config
+
+set clibanner "***************************************************************************
+
+* NetApp Reference Configuration File (RCF)
+
+*
+
+* Switch    : BES-53248
+
+
+...
+The downloaded RCF is validated. Some output is being logged here.
+...
+
+
+Configuration script validated.
+File transfer operation completed successfully.
+
+(IP_switch_A_1) #
+----
+.. RCF 파일이 스크립트로 저장되었는지 확인합니다.
++
+'스크립트 목록'
+
++
+[listing]
+----
+(IP_switch_A_1) #script list
+
+Configuration Script Name        Size(Bytes)  Date of Modification
+-------------------------------  -----------  --------------------
+BES-53248_v1.32_Switch-A1.scr             852   2019 01 29 18:41:25
+
+1 configuration script(s) found.
+2046 Kbytes free.
+(IP_switch_A_1) #
+----
+.. RCF 스크립트 적용:
++
+'cript apply BES-53248_v1.32_Switch-A1.SCR'
+
++
+[listing]
+----
+(IP_switch_A_1) #script apply BES-53248_v1.32_Switch-A1.scr
+
+Are you sure you want to apply the configuration script? (y/n) y
+
+
+config
+
+set clibanner "********************************************************************************
+
+* NetApp Reference Configuration File (RCF)
+
+*
+
+* Switch    : BES-53248
+
+...
+The downloaded RCF is validated. Some output is being logged here.
+...
+
+Configuration script 'BES-53248_v1.32_Switch-A1.scr' applied.
+
+(IP_switch_A_1) #
+----
+.. 구성을 저장합니다.
++
+쓰기 메모리
+
++
+[listing]
+----
+(IP_switch_A_1) #write memory
+
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) y
+
+
+Configuration Saved!
+
+(IP_switch_A_1) #
+----
+.. 스위치를 재부팅합니다.
++
+다시 로드
+
++
+[listing]
+----
+(IP_switch_A_1) #reload
+
+Are you sure you would like to reset the system? (y/n) y
+----
+.. 일치하는 RCF 파일을 해당 스위치에 복사하도록 나머지 세 스위치 각각에 대해 이전 단계를 반복합니다.
+
+
+. 스위치를 다시 로드하십시오.
++
+다시 로드
+
++
+[listing]
+----
+IP_switch_A_1# reload
+----
+. MetroCluster IP 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.
+

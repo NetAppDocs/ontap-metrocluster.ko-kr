@@ -1,0 +1,21 @@
+---
+permalink: maintain/concept_using_the_interoperability_matrix_tool_to_find_mcc_information.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, interoperability, matrix, tool, information 
+summary: MetroCluster 구성을 설정할 때 상호 운용성 툴을 사용하여 지원되는 소프트웨어 및 하드웨어 버전을 사용할 수 있습니다. 
+---
+= 상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보 찾기
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성을 설정할 때 상호 운용성 툴을 사용하여 지원되는 소프트웨어 및 하드웨어 버전을 사용할 수 있습니다.
+
+https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+
+상호 운용성 매트릭스를 연 후 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다.
+
+부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다.
+
+결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.

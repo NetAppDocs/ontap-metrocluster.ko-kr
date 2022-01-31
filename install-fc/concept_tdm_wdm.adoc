@@ -1,0 +1,88 @@
+---
+permalink: install-fc/concept_tdm_wdm.html 
+sidebar: sidebar 
+keywords: preparing, prepare, metrocluster, mcc, installation, install, differences, configurations, between, considerations, all, san, array, asa, cluster, peering, prerequisites, dedicated, ports, sharing, data, ports, native, disk, shelves, array, luns, transitions, 7-mode, isls, tdm/wdm, fabric-attached, iod, ood, encryption, devices, unmirrored, aggregates, maintenance, requiring, power, shutdown, firewall, hardware, racking, cabling, setup, checklist, all san array, asa 
+summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다. 
+---
+= 패브릭 연결 MetroCluster 구성에서 TDM/WDM 장비를 사용하기 위한 고려 사항
+
+
+[role="lead"]
+Hardware Universe 도구는 패브릭 연결 MetroCluster 구성을 사용하기 위해 TDM(Time Division Multiplexing) 또는 WDM(Wavelength Division Multiplexing) 장비가 충족해야 하는 요구 사항에 대해 설명합니다. 이러한 노트에는 다양한 구성에 대한 정보도 포함되어 있어 프레임 IOD(In-Order Delivery) 또는 프레임 부족(Out-of-Order Delivery) 사용 시기를 결정할 수 있습니다.
+
+이러한 요구 사항의 예로는 TDM/WDM 장비가 라우팅 정책을 통해 링크 집선(트렁킹) 기능을 지원해야 하는 경우를 들 수 있습니다. 프레임의 전달 순서(IOD 또는 ood)는 스위치 내에서 유지되며, 해당 라우팅 정책에 의해 결정됩니다.
+
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+다음 표에는 Brocade 스위치 및 Cisco 스위치가 포함된 구성에 대한 라우팅 정책이 나와 있습니다.
+
+|===
+
+
+| 스위치 | IOD에 대한 MetroCluster 구성 구성 | Good에 대한 MetroCluster 구성 구성 
+
+
+ a| 
+모든 정보를 제공합니다
+ a| 
+* AptPolicy는 1로 설정해야 합니다
+* DLS를 OFF로 설정해야 합니다
+* IOD를 On으로 설정해야 합니다
+
+ a| 
+* AptPolicy는 3으로 설정해야 합니다
+* DLS는 ON으로 설정되어야 합니다
+* IOD를 OFF로 설정해야 합니다
+
+
+
+
+ a| 
+Cisco의
+ a| 
+FCVI 지정 VSAN에 대한 정책:
+
+* 로드 밸런싱 정책: srcid 및 dstid
+* IOD를 On으로 설정해야 합니다
+
+
+스토리지 지정 VSAN에 대한 정책:
+
+* 로드 밸런싱 정책: srcid, dstid 및 oxid
+* vSAN에 in-order-보증 옵션이 설정되어 있지 않아야 합니다
+
+ a| 
+해당 없음
+
+|===
+
+
+== IOD 사용 시기
+
+IOD가 링크에서 지원되는 경우 사용하는 것이 가장 좋습니다. 다음 구성은 IOD를 지원합니다.
+
+* 단일 ISL
+* ISL 및 링크(및 TDM/WDM과 같은 링크 장비(사용되는 경우)는 IOD에 대한 구성을 지원합니다.
+* 단일 트렁크, ISL 및 링크(그리고 TDM/WDM과 같은 링크 장비(사용되는 경우)는 IOD에 대한 구성을 지원합니다.
+
+
+
+
+== 유목 사용 시기
+
+* IOD를 지원하지 않는 모든 구성에 대해 Good을 사용할 수 있습니다.
+* 트렁킹 기능을 지원하지 않는 구성에 대해서는 Good을 사용할 수 있습니다.
+
+
+
+
+== 암호화 장치 사용
+
+ISL에서 전용 암호화 디바이스를 사용하거나 MetroCluster 구성에서 WDM 디바이스에서 암호화를 사용하는 경우 다음 요구 사항을 충족해야 합니다.
+
+* 외부 암호화 장치 또는 WDM 장비는 해당 FC 스위치를 사용하여 공급업체에서 자체 인증을 받았습니다.
++
+자체 인증은 운영 모드(트렁킹 및 암호화 등)를 포괄해야 합니다.
+
+* 암호화로 인한 추가 지연 시간은 10마이크로초 미만이어야 합니다.
+

@@ -1,0 +1,30 @@
+---
+permalink: disaster-recovery/task_assign_pool1_survivingsite_mcip.html 
+sidebar: sidebar 
+keywords: adp, system, assign, surviving, site 
+summary: 정상적인 사이트에서 재해 사이트에 있는 원격 드라이브를 나머지 노드의 풀 1에 수동으로 할당해야 합니다. 
+---
+= 정상적인 사이트에 풀 1 드라이브 할당(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+재해 사이트에서 드라이브를 교체했고 시스템이 ADP에 대해 구성되지 않은 경우 정상적인 사이트에서 재해 사이트에 있는 원격 드라이브를 정상적인 노드의 풀 1에 수동으로 할당해야 합니다. 할당할 드라이브 수를 지정해야 합니다.
+
+ADP 시스템의 경우 드라이브가 자동으로 할당됩니다.
+
+.단계
+. 정상적인 사이트에서 첫 번째 노드의 풀 1(원격) 드라이브를 '스토리지 디스크 할당 n 교체 디스크 수 - p 1 0m * '로 지정합니다
++
+이 명령은 재해 사이트에서 새로 추가되거나 소유되지 않은 드라이브를 할당합니다.
+
++
+다음 명령을 실행하면 22개의 드라이브가 할당됩니다.
+
++
+[listing]
+----
+cluster_B::> storage disk assign -n 22 -p 1 0m*
+----
+

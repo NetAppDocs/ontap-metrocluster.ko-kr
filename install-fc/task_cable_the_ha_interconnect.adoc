@@ -1,0 +1,31 @@
+---
+permalink: install-fc/task_cable_the_ha_interconnect.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, cable, ha, interconnect, cabling 
+summary: 8노드 또는 4노드 MetroCluster 구성이 있고 HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우 컨트롤러 간 HA 인터커넥트에 케이블을 연결해야 합니다. 
+---
+= HA 인터커넥트 케이블 연결
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+8노드 또는 4노드 MetroCluster 구성이 있고 HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우 컨트롤러 간 HA 인터커넥트에 케이블을 연결해야 합니다.
+
+.이 작업에 대해
+* 이 작업은 2노드 MetroCluster 구성에는 적용되지 않습니다.
+* 이 작업은 두 MetroCluster 사이트 모두에서 수행해야 합니다.
+* HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우에만 HA 인터커넥트를 케이블로 연결해야 합니다.
++
+일부 스토리지 컨트롤러 모델은 단일 섀시에서 2개의 컨트롤러를 지원하며, 이 경우 내부 HA 인터커넥트를 사용합니다.
+
+
+
+.단계
+. 스토리지 컨트롤러의 HA 파트너가 별도의 섀시에 있는 경우 HA 인터커넥트에 케이블을 연결합니다.
++
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+
+. MetroCluster 사이트에 2개의 HA 쌍이 포함되어 있는 경우 두 번째 HA 쌍에서 이전 단계를 반복합니다.
+. MetroCluster 파트너 사이트에서 이 작업을 반복합니다.
+

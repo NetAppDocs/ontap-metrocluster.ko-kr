@@ -1,0 +1,25 @@
+---
+permalink: install-stretch/task_fb_new_install.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, fc, sas, bridge, disk, shelf 
+summary: 구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다. 
+---
+= FC-to-SAS 브릿지 및 SAS 디스크 쉘프 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다.
+
+공장에서 출하된 시스템의 경우 FC-to-SAS 브리지가 사전 구성되어 있으며 추가 구성이 필요하지 않습니다.
+
+이 절차에서는 ATTO ExpressNAV GUI 및 ATTO Quicknav 유틸리티와 같은 권장 브리지 관리 인터페이스를 사용하고 있다고 가정합니다.
+
+ATTO ExpressNAV GUI를 사용하여 브리지를 구성 및 관리하고 브리지 펌웨어를 업데이트합니다. ATTO Quicknav 유틸리티를 사용하여 브리지 이더넷 관리 1 포트를 구성합니다.
+
+필요한 경우 직렬 포트 또는 텔넷과 같은 다른 관리 인터페이스를 사용하여 브리지를 구성 및 관리하고 이더넷 관리 1 포트 및 브리지 펌웨어를 업데이트하는 FTP를 구성할 수 있습니다.
+
+이 절차에서는 다음 워크플로를 사용합니다.
+
+image::../media/workflow_bridge_installation_and_configuration.gif[워크플로우 브리지 설치 및 구성]

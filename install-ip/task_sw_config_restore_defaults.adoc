@@ -1,0 +1,90 @@
+---
+permalink: install-ip/task_sw_config_restore_defaults.html 
+sidebar: sidebar 
+keywords: metrocluster, controller, restore defaults 
+summary: 구성이 깨끗한지 확인하려면 컨트롤러 모듈에서 기본값을 재설정 및 복원해야 합니다. 
+---
+= 컨트롤러 모듈에서 시스템 기본값을 복원합니다
+
+
+[role="lead"]
+컨트롤러 모듈에서 기본값을 재설정 및 복원합니다.
+
+. LOADER 프롬프트에서 환경 변수를 기본 설정인 'Set-defaults'로 되돌립니다
+. 노드를 부팅 메뉴(boot_ontap menu)로 부팅합니다
++
+이 명령을 실행한 후 부팅 메뉴가 표시될 때까지 기다립니다.
+
+. 노드 구성을 지웁니다.
++
+--
+** ADP에 구성된 시스템을 사용하는 경우 부팅 메뉴에서 옵션 9a를 선택하고 메시지가 표시되면 yes로 응답합니다.
++
+
+NOTE: 이 프로세스는 중단을 야기합니다.
+
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  9a
+########## WARNING ##########
+
+    This is a disruptive operation and will result in the
+    loss of all filesystem data. Before proceeding further,
+    make sure that:
+    1) This option (9a) has been executed or will be executed
+    on the HA partner node, prior to reinitializing either
+    system in the HA-pair.
+    2) The HA partner node is currently in a halted state or
+    at the LOADER prompt.
+
+
+    Do you still want to continue (yes/no)? yes
+----
+
+
+--
++
+** 시스템이 ADP에 대해 구성되지 않은 경우 부팅 메뉴 프롬프트에 "wipmpeconfig"를 입력한 다음 Enter 키를 누릅니다.
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  wipeconfig
+This option deletes critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?: yes
+Rebooting to finish wipeconfig request.
+----
+
+
+

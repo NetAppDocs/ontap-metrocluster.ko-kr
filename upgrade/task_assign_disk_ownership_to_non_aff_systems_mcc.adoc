@@ -1,0 +1,162 @@
+---
+permalink: upgrade/task_assign_disk_ownership_to_non_aff_systems_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, assign, disk, ownership, aff, systems 
+summary: MetroCluster 노드에 디스크가 올바르게 할당되지 않았거나 구성에서 DS460C 디스크 쉘프를 사용하는 경우 쉘프 단위로 MetroCluster 구성의 각 노드에 디스크를 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성합니다. 
+---
+= 비 AFF 시스템에서 디스크 소유권 할당
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 노드에 디스크가 올바르게 할당되지 않았거나 구성에서 DS460C 디스크 쉘프를 사용하는 경우 쉘프 단위로 MetroCluster 구성의 각 노드에 디스크를 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성합니다.
+
+스토리지 컨트롤러가 유지보수 모드여야 합니다.
+
+구성에 DS460C 디스크 쉘프가 포함되어 있지 않은 경우, 공장 출하 시 디스크를 올바르게 할당한 경우에는 이 작업이 필요하지 않습니다.
+
+[NOTE]
+====
+풀 0에는 항상 디스크를 소유하는 스토리지 시스템과 동일한 사이트에서 찾은 디스크가 포함됩니다.
+
+풀 1에는 항상 디스크를 소유한 스토리지 시스템에 원격으로 상주하는 디스크가 포함되어 있습니다.
+
+====
+구성에 DS460C 디스크 쉘프가 포함된 경우 각 12-디스크 드로어에 대해 다음 지침을 사용하여 디스크를 수동으로 할당해야 합니다.
+
+|===
+
+
+| 드로어에 이러한 디스크 할당... | 이 노드 및 풀로... 
+
+
+ a| 
+0-2입니다
+ a| 
+로컬 노드의 풀 0
+
+
+
+ a| 
+3-5
+ a| 
+HA 파트너 노드의 풀 0
+
+
+
+ a| 
+6-8
+ a| 
+로컬 노드 풀 1의 DR 파트너
+
+
+
+ a| 
+9-11로 이동합니다
+ a| 
+HA 파트너 풀 1의 DR 파트너
+
+|===
+이 디스크 할당 패턴은 드로어가 오프라인 상태가 될 때 애그리게이트의 영향을 최소한으로 유지합니다.
+
+.단계
+. 그렇지 않은 경우 각 시스템을 유지보수 모드로 부팅합니다.
+. 디스크 쉘프를 첫 번째 사이트(사이트 A)에 있는 노드에 할당합니다.
++
+노드와 같은 사이트의 디스크 쉘프는 풀 0에 할당되고 파트너 사이트에 있는 디스크 쉘프는 풀 1에 할당됩니다.
+
++
+각 풀에 동일한 수의 셸프를 할당해야 합니다.
+
++
+.. 첫 번째 노드에서 체계적으로 로컬 디스크 쉘프를 풀 0에 할당하고 원격 디스크 쉘프를 풀 1에 할당합니다.
++
+Disk assign-shelf_local-switch-name: shelf-name.port_-p_pool_
+
++
+스토리지 컨트롤러 Controller_A_1에 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_A_1:1-4.shelf1 -p 0
+*> disk assign -shelf FC_switch_A_1:1-4.shelf2 -p 0
+
+*> disk assign -shelf FC_switch_B_1:1-4.shelf1 -p 1
+*> disk assign -shelf FC_switch_B_1:1-4.shelf2 -p 1
+----
+.. 로컬 사이트의 두 번째 노드에 대해 이 프로세스를 반복하여 로컬 디스크 쉘프를 풀 0에 체계적으로 할당하고 원격 디스크 쉘프를 풀 1에 할당합니다.
++
+Disk assign-shelf_local-switch-name: shelf-name.port_-p_pool_
+
++
+스토리지 컨트롤러 Controller_A_2에 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_A_1:1-4.shelf3 -p 0
+*> disk assign -shelf FC_switch_B_1:1-4.shelf4 -p 1
+
+*> disk assign -shelf FC_switch_A_1:1-4.shelf3 -p 0
+*> disk assign -shelf FC_switch_B_1:1-4.shelf4 -p 1
+----
+
+
+. 디스크 쉘프를 두 번째 사이트(사이트 B)에 있는 노드에 할당합니다.
++
+노드와 같은 사이트의 디스크 쉘프는 풀 0에 할당되고 파트너 사이트에 있는 디스크 쉘프는 풀 1에 할당됩니다.
+
++
+각 풀에 동일한 수의 셸프를 할당해야 합니다.
+
++
+.. 원격 사이트의 첫 번째 노드에서 체계적으로 로컬 디스크 쉘프를 풀 0에 할당하고 원격 디스크 쉘프를 풀 1에 할당합니다.
++
+Disk assign-shelf_local-switch-nameshelf-name_-p_pool_
+
++
+스토리지 컨트롤러 Controller_B_1에 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_B_1:1-5.shelf1 -p 0
+*> disk assign -shelf FC_switch_B_1:1-5.shelf2 -p 0
+
+*> disk assign -shelf FC_switch_A_1:1-5.shelf1 -p 1
+*> disk assign -shelf FC_switch_A_1:1-5.shelf2 -p 1
+----
+.. 원격 사이트의 두 번째 노드에 대해 이 프로세스를 반복하여 로컬 디스크 쉘프를 풀 0에 체계적으로 할당하고 원격 디스크 쉘프를 풀 1에 할당합니다.
++
+Disk assign-shelf_shelf-name_-p_pool_'입니다
+
++
+스토리지 컨트롤러 Controller_B_2에 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_B_1:1-5.shelf3 -p 0
+*> disk assign -shelf FC_switch_B_1:1-5.shelf4 -p 0
+
+*> disk assign -shelf FC_switch_A_1:1-5.shelf3 -p 1
+*> disk assign -shelf FC_switch_A_1:1-5.shelf4 -p 1
+----
+
+
+. 셸프 할당을 확인합니다.
++
+'Storage show shelf'
+
+. 유지 관리 모드 종료:
++
+"중지"
+
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. 각 노드에서 옵션 * 4 * 를 선택하여 모든 디스크를 초기화합니다.
+

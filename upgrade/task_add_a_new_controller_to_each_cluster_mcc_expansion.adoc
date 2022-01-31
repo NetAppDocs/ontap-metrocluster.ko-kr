@@ -1,0 +1,43 @@
+---
+permalink: upgrade/task_add_a_new_controller_to_each_cluster_mcc_expansion.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, add, new, controller, module, cluster 
+summary: 각 사이트에 새 컨트롤러 모듈을 추가하여 각 사이트에 HA 쌍을 생성해야 합니다. 이는 각 사이트에서 올바른 순서로 수행해야 하는 하드웨어 및 소프트웨어 변경 사항을 모두 포함하는 다단계 프로세스입니다. 
+---
+= 각 클러스터에 새 컨트롤러 모듈 추가
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 사이트에 새 컨트롤러 모듈을 추가하여 각 사이트에 HA 쌍을 생성해야 합니다. 이는 각 사이트에서 올바른 순서로 수행해야 하는 하드웨어 및 소프트웨어 변경 사항을 모두 포함하는 다단계 프로세스입니다.
+
+.이 작업에 대해
+* 업그레이드 키트의 일부로 NetApp으로부터 새 컨트롤러 모듈을 받아야 합니다.
++
+새 컨트롤러 모듈의 PCIe 카드가 호환되고 새 컨트롤러 모듈에서 지원되는지 확인해야 합니다.
+
++
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+* 단일 섀시 HA 쌍(두 컨트롤러 모듈이 동일한 섀시에 상주하는 HA 쌍)으로 업그레이드할 경우 시스템이 새 컨트롤러 모듈에 사용할 수 있는 빈 슬롯이 있어야 합니다.
++
+
+NOTE: 일부 시스템에서는 이 구성이 지원되지 않습니다. ONTAP 9에서 지원되는 단일 섀시 구성이 포함된 플랫폼은 AFF A300, FAS8200, FAS8300, AFF A400, AFF80xx, FAS8020, FAS8060, FAS8080, FAS9000
+
+* 이중 섀시 HA 쌍(컨트롤러 모듈이 개별 섀시에 상주하는 HA 쌍)으로 업그레이드할 경우 새 컨트롤러 모듈을 위한 랙 공간과 케이블이 있어야 합니다.
++
+
+NOTE: 일부 시스템에서는 이 구성이 지원되지 않습니다.
+
+* e0a 포트를 통해 각 컨트롤러 모듈을 관리 네트워크에 연결하거나, 시스템에 e0M 포트가 있는 경우 관리 포트로 연결할 수 있습니다.
+* 이러한 작업은 각 사이트에서 반복해야 합니다.
+* 기존 컨트롤러 모듈을 _existing_controller 모듈이라고 합니다.
++
+이 절차의 예에는 콘솔 프롬프트인 'existing_ctlr>'이 있습니다.
+
+* 추가되는 컨트롤러 모듈은 _new_controller 모듈이라고 하며, 이 절차의 예에는 콘솔 프롬프트 "new_ctlr>"가 있습니다.
+* 이 작업은 다음 워크플로를 사용합니다.
+
+
+image::../media/workflow_mcc_2_to_4_node_expansion_adding_nodes.gif[워크플로우 MCC 2-4노드 확장 노드 추가]

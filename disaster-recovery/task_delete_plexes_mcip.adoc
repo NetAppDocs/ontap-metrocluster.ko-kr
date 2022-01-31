@@ -1,0 +1,298 @@
+---
+permalink: disaster-recovery/task_delete_plexes_mcip.html 
+sidebar: sidebar 
+keywords: deleting, delete, fail, plex, own 
+summary: 재해 사이트에서 디스크 쉘프 및 MetroCluster IP 스위치 구성 요소의 전원을 켭니다. 
+---
+= 작동 중인 사이트에서 소유하는 실패한 플렉스를 삭제하는 중(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+하드웨어를 교체하고 디스크를 할당한 후에는 정상 작동하는 사이트 노드가 소유하지만 재해 사이트에 있는 실패한 원격 플렉스를 삭제해야 합니다.
+
+이 단계는 작동하는 클러스터에서 수행됩니다.
+
+.단계
+. 'Storage aggregate show-is-home true'라는 로컬 집계를 식별합니다
++
+[listing]
+----
+cluster_B::> storage aggregate show -is-home true
+
+cluster_B Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_B_1_aggr0 1.49TB  74.12GB 95% online       1 node_B_1         raid4,
+                                                                   mirror
+                                                                   degraded
+node_B_2_aggr0 1.49TB  74.12GB 95% online       1 node_B_2         raid4,
+                                                                   mirror
+                                                                   degraded
+node_B_1_aggr1 2.99TB  2.88TB   3% online      15 node_B_1         raid_dp,
+                                                                   mirror
+                                                                   degraded
+node_B_1_aggr2 2.99TB  2.91TB   3% online      14 node_B_1         raid_tec,
+                                                                   mirror
+                                                                   degraded
+node_B_2_aggr1 2.95TB  2.80TB   5% online      37 node_B_2         raid_dp,
+                                                                   mirror
+                                                                   degraded
+node_B_2_aggr2 2.99TB  2.87TB   4% online      35 node_B_2         raid_tec,
+                                                                   mirror
+                                                                   degraded
+6 entries were displayed.
+
+cluster_B::>
+----
+. 실패한 원격 플렉스를 확인합니다.
++
+'Storage aggregate plex show'
+
++
+다음 예에서는 원격(plex0 아님)이고 "failed(실패)" 상태인 플렉스를 호출합니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex show -fields aggregate,status,is-online,Plex,pool
+aggregate    plex  status        is-online pool
+------------ ----- ------------- --------- ----
+node_B_1_aggr0 plex0 normal,active true     0
+node_B_1_aggr0 plex4 failed,inactive false  - <<<<---Plex at remote site
+node_B_2_aggr0 plex0 normal,active true     0
+node_B_2_aggr0 plex4 failed,inactive false  - <<<<---Plex at remote site
+node_B_1_aggr1 plex0 normal,active true     0
+node_B_1_aggr1 plex4 failed,inactive false  - <<<<---Plex at remote site
+node_B_1_aggr2 plex0 normal,active true     0
+node_B_1_aggr2 plex1 failed,inactive false  - <<<<---Plex at remote site
+node_B_2_aggr1 plex0 normal,active true     0
+node_B_2_aggr1 plex4 failed,inactive false  - <<<<---Plex at remote site
+node_B_2_aggr2 plex0 normal,active true     0
+node_B_2_aggr2 plex1 failed,inactive false  - <<<<---Plex at remote site
+node_A_1_aggr1 plex0 failed,inactive false  -
+node_A_1_aggr1 plex4 normal,active true     1
+node_A_1_aggr2 plex0 failed,inactive false  -
+node_A_1_aggr2 plex1 normal,active true     1
+node_A_2_aggr1 plex0 failed,inactive false  -
+node_A_2_aggr1 plex4 normal,active true     1
+node_A_2_aggr2 plex0 failed,inactive false  -
+node_A_2_aggr2 plex1 normal,active true     1
+20 entries were displayed.
+
+cluster_B::>
+----
+. 실패한 각 플렉스를 오프라인 상태로 만든 다음 삭제합니다.
++
+.. 실패한 플렉스를 오프라인으로 전환합니다.
++
+'Storage aggregate plex offline-aggregate aggregate-name-plex-id'를 선택합니다
+
++
+다음 예에서는 오프라인 상태로 전환된 애그리게이트 "node_B_2_aggr1/plex1"을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex offline -aggregate node_B_1_aggr0 -plex plex4
+
+Plex offline successful on plex: node_B_1_aggr0/plex4
+----
+.. 실패한 플렉스 삭제:
++
+'Storage aggregate delete-aggregate aggregate-name-plex-id'를 선택합니다
+
++
+메시지가 표시되면 플렉스를 폐기할 수 있습니다.
+
++
+다음 예에서는 플렉스 노드_B_2_aggr1/plex1이 삭제되는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex delete -aggregate  node_B_1_aggr0 -plex plex4
+
+Warning: Aggregate "node_B_1_aggr0" is being used for the local management root
+         volume or HA partner management root volume, or has been marked as
+         the aggregate to be used for the management root volume after a
+         reboot operation. Deleting plex "plex4" for this aggregate could lead
+         to unavailability of the root volume after a disaster recovery
+         procedure. Use the "storage aggregate show -fields
+         has-mroot,has-partner-mroot,root" command to view such aggregates.
+
+Warning: Deleting plex "plex4" of mirrored aggregate "node_B_1_aggr0" on node
+         "node_B_1" in a MetroCluster configuration will disable its
+         synchronous disaster recovery protection. Are you sure you want to
+         destroy this plex? {y|n}: y
+[Job 633] Job succeeded: DONE
+
+cluster_B::>
+----
+
+
++
+실패한 각 플렉스에 대해 이 단계를 반복해야 합니다.
+
+. 플렉스가 제거되었는지 확인합니다.
++
+Storage aggregate plex show-fields aggregate, status, is-online, plex, pool
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex show -fields aggregate,status,is-online,Plex,pool
+aggregate    plex  status        is-online pool
+------------ ----- ------------- --------- ----
+node_B_1_aggr0 plex0 normal,active true     0
+node_B_2_aggr0 plex0 normal,active true     0
+node_B_1_aggr1 plex0 normal,active true     0
+node_B_1_aggr2 plex0 normal,active true     0
+node_B_2_aggr1 plex0 normal,active true     0
+node_B_2_aggr2 plex0 normal,active true     0
+node_A_1_aggr1 plex0 failed,inactive false  -
+node_A_1_aggr1 plex4 normal,active true     1
+node_A_1_aggr2 plex0 failed,inactive false  -
+node_A_1_aggr2 plex1 normal,active true     1
+node_A_2_aggr1 plex0 failed,inactive false  -
+node_A_2_aggr1 plex4 normal,active true     1
+node_A_2_aggr2 plex0 failed,inactive false  -
+node_A_2_aggr2 plex1 normal,active true     1
+14 entries were displayed.
+
+cluster_B::>
+----
+. 전환된 애그리게이트를 식별합니다.
++
+'Storage aggregate show-is-home false'를 선택합니다
+
++
+Storage aggregate plex show-fields aggregate, status, is-online, plex, pool' 명령을 사용하여 plex 0 Switched-over 애그리게이트를 식별할 수도 있습니다. "실패, 비활성" 상태가 됩니다.
+
++
+다음 명령을 실행하면 4개의 전환 애그리게이트가 표시됩니다.
+
++
+** 노드_A_1_aggr1
+** 노드_A_1_aggr2
+** 노드_A_2_aggr1
+** 노드_A_2_aggr2
+
+
++
+[listing]
+----
+cluster_B::> storage aggregate show -is-home false
+
+cluster_A Switched Over Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1_aggr1 2.12TB  1.88TB   11% online      91 node_B_1        raid_dp,
+                                                                   mirror
+                                                                   degraded
+node_A_1_aggr2 2.89TB  2.64TB    9% online      90 node_B_1        raid_tec,
+                                                                   mirror
+                                                                   degraded
+node_A_2_aggr1 2.12TB  1.86TB   12% online      91 node_B_2        raid_dp,
+                                                                   mirror
+                                                                   degraded
+node_A_2_aggr2 2.89TB  2.64TB    9% online      90 node_B_2        raid_tec,
+                                                                   mirror
+                                                                   degraded
+4 entries were displayed.
+
+cluster_B::>
+----
+. 전환 플렉스를 식별합니다.
++
+Storage aggregate plex show-fields aggregate, status, is-online, Plex, pool
+
++
+"실패, 비활성" 상태의 플렉스를 식별하려고 합니다.
+
++
+다음 명령을 실행하면 4개의 전환 애그리게이트가 표시됩니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex show -fields aggregate,status,is-online,Plex,pool
+aggregate    plex  status        is-online pool
+------------ ----- ------------- --------- ----
+node_B_1_aggr0 plex0 normal,active true     0
+node_B_2_aggr0 plex0 normal,active true     0
+node_B_1_aggr1 plex0 normal,active true     0
+node_B_1_aggr2 plex0 normal,active true     0
+node_B_2_aggr1 plex0 normal,active true     0
+node_B_2_aggr2 plex0 normal,active true     0
+node_A_1_aggr1 plex0 failed,inactive false  -  <<<<-- Switched over aggr/Plex0
+node_A_1_aggr1 plex4 normal,active true     1
+node_A_1_aggr2 plex0 failed,inactive false  -  <<<<-- Switched over aggr/Plex0
+node_A_1_aggr2 plex1 normal,active true     1
+node_A_2_aggr1 plex0 failed,inactive false  -  <<<<-- Switched over aggr/Plex0
+node_A_2_aggr1 plex4 normal,active true     1
+node_A_2_aggr2 plex0 failed,inactive false  -  <<<<-- Switched over aggr/Plex0
+node_A_2_aggr2 plex1 normal,active true     1
+14 entries were displayed.
+
+cluster_B::>
+----
+. 실패한 플렉스 삭제:
++
+'Storage aggregate plex delete-aggregate node_a_1_aggr1-plex plex0'
+
++
+메시지가 표시되면 플렉스를 폐기할 수 있습니다.
+
++
+다음 예에서는 플렉스 노드_A_1_aggr1/plex0이 삭제되는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex delete -aggregate node_A_1_aggr1 -plex plex0
+
+Warning: Aggregate "node_A_1_aggr1" hosts MetroCluster metadata volume
+         "MDV_CRS_e8457659b8a711e78b3b00a0988fe74b_A". Deleting plex "plex0"
+         for this aggregate can lead to the failure of configuration
+         replication across the two DR sites. Use the "volume show -vserver
+         <admin-vserver> -volume MDV_CRS*" command to verify the location of
+         such volumes.
+
+Warning: Deleting plex "plex0" of mirrored aggregate "node_A_1_aggr1" on node
+         "node_A_1" in a MetroCluster configuration will disable its
+         synchronous disaster recovery protection. Are you sure you want to
+         destroy this plex? {y|n}: y
+[Job 639] Job succeeded: DONE
+
+cluster_B::>
+----
++
+장애가 발생한 각 애그리게이트에 대해 이러한 단계를 반복해야 합니다.
+
+. 장애가 발생한 플렉스가 남아 있는 사이트가 없는지 확인합니다.
++
+다음 출력에서는 모든 플렉스가 정상, 활성 및 온라인임을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate plex show -fields aggregate,status,is-online,Plex,pool
+aggregate    plex  status        is-online pool
+------------ ----- ------------- --------- ----
+node_B_1_aggr0 plex0 normal,active true     0
+node_B_2_aggr0 plex0 normal,active true     0
+node_B_1_aggr1 plex0 normal,active true     0
+node_B_2_aggr2 plex0 normal,active true     0
+node_B_1_aggr1 plex0 normal,active true     0
+node_B_2_aggr2 plex0 normal,active true     0
+node_A_1_aggr1 plex4 normal,active true     1
+node_A_1_aggr2 plex1 normal,active true     1
+node_A_2_aggr1 plex4 normal,active true     1
+node_A_2_aggr2 plex1 normal,active true     1
+10 entries were displayed.
+
+cluster_B::>
+----
+

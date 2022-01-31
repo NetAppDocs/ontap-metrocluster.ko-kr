@@ -1,0 +1,40 @@
+---
+permalink: install-stretch/task_install_the_fc_to_sas_bridge_and_sas_shelves_fb_new_install_parent.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, install, fc, sas, bridge, shelves 
+summary: '시스템이 "설치 준비" 섹션의 모든 요구 사항을 충족하는지 확인한 후 새 시스템을 설치할 수 있습니다.' 
+---
+= FC-to-SAS 브리지 및 SAS 쉘프 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+시스템이 ""설치 준비"" 섹션의 모든 요구 사항을 충족하는지 확인한 후 새 시스템을 설치할 수 있습니다.
+
+* 두 사이트의 디스크 및 쉘프 구성은 동일해야 합니다.
++
+미러링되지 않은 애그리게이트를 사용하는 경우, 각 사이트의 디스크 및 쉘프 구성이 다를 수 있습니다.
+
++
+
+NOTE: DR(재해 복구) 그룹의 모든 디스크는 미러링된 Aggregate 또는 미러링되지 않은 Aggregate에 사용되는 디스크에 관계없이 동일한 유형의 연결을 사용해야 하며 재해 복구 그룹 내의 모든 노드에 표시되어야 합니다.
+
+* 파이버 브리지 브리지에도 50미크론 다중 모드 광섬유 케이블을 사용한 디스크 선반, FC 스위치 및 백업 테이프 장치의 최대 거리에 대한 시스템 연결 요구 사항이 적용됩니다.
++
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+* IOM12 모듈과 IOM3 모듈의 혼합은 동일한 스토리지 스택 내에서 지원되지 않습니다. 시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일한 스토리지 스택 내에서 IOM12 모듈과 IOM6 모듈의 조합이 지원됩니다.
+
+
+[NOTE]
+====
+다음 선반과 FiberBridge 7500N 또는 7600N 브리지의 추가 케이블 연결 없이 대역내 ACP가 지원됩니다.
+
+* ONTAP 9.2 이상을 사용하는 7500N 또는 7600N 브리지 뒤의 IOM12(DS460C)
+* IOM12(DS212C 및 DS224C)가 ONTAP 9.1 이상을 사용하는 7500N 또는 7600N 브리지에 있습니다
+
+
+====
+
+NOTE: MetroCluster 구성의 SAS 쉘프는 ACP 케이블 연결을 지원하지 않습니다.

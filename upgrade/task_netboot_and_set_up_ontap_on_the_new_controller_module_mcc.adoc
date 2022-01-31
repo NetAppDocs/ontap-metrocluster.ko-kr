@@ -1,0 +1,214 @@
+---
+permalink: upgrade/task_netboot_and_set_up_ontap_on_the_new_controller_module_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, netboot, set, up, ontap, new, controller, module 
+summary: 컨트롤러 모듈을 기존 MetroCluster 구성에 추가할 때 새 컨트롤러 모듈에 netboot와 ONTAP 운영 체제를 설치하기 위한 특정 단계를 수행해야 합니다. 
+---
+= 새 컨트롤러 모듈에서 ONTAP를 Netbooting 및 설정합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 모듈을 기존 MetroCluster 구성에 추가할 때 새 컨트롤러 모듈에 netboot와 ONTAP 운영 체제를 설치하기 위한 특정 단계를 수행해야 합니다.
+
+.이 작업에 대해
+* 이 작업은 새 컨트롤러 모듈의 LOADER 프롬프트에서 시작됩니다.
+* 이 작업에는 디스크 초기화가 포함됩니다.
++
+디스크를 초기화하는 데 필요한 시간은 디스크 크기에 따라 다릅니다.
+
+* 시스템에서 두 개의 디스크를 새 컨트롤러 모듈에 자동으로 할당합니다.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+
+
+
+.단계
+. LOADER 프롬프트에서 DHCP 가용성을 기반으로 새 컨트롤러 모듈의 IP 주소를 구성합니다.
++
+|===
+
+
+| DHCP가... | 그런 다음 다음 다음 명령을 입력합니다. 
+
+
+ a| 
+사용 가능
+ a| 
+' * ifconfig e0M-auto * '
+
+
+
+ a| 
+사용할 수 없습니다
+ a| 
+'ifconfig e0M-addr=__filer_addr_- 마스크=__netmask__- GW=__gateway__- dns=__dns_addr_- 도메인=__dns_domain_'
+
+filer_addr은 스토리지 시스템의 IP 주소입니다.
+
+넷마스크는 스토리지 시스템의 네트워크 마스크입니다.
+
+게이트웨이(gateway)는 스토리지 시스템의 관문입니다.
+
+dns_addr은 네트워크에 있는 이름 서버의 IP 주소입니다.
+
+dns_domain은 DNS(Domain Name System) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다.
+
+
+NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 LOADER 프롬프트에서 help ifconfig 명령어를 사용한다.
+
+|===
+. LOADER 프롬프트에서 새 노드를 netboot 합니다.
++
+|===
+
+
+| 대상... | 이 명령 실행... 
+
+
+ a| 
+FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 시리즈 시스템
+ a| 
+네부트 http://__web_server_ip/path_to_web-accessible_directory__/netboot/kernel`[]
+
+
+
+ a| 
+기타 모든 시스템
+ a| 
+네부트 http://__web_server_ip/path_to_web-accessible_directory__/<ontap_version>_image.tgz`[]
+
+|===
++
+"_path_to_the_web-Accessible_directory_"는 다운로드된 "<ONTAP_version>_image.tgz" 파일의 위치입니다.
+
+. 표시된 메뉴에서 * 새 소프트웨어 먼저 설치 * 옵션을 선택합니다.
++
+이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.
+
++
+** HA 쌍의 무중단 업그레이드를 위해 이 절차가 지원되지 않는다는 메시지가 표시되면 ' * y' * 를 입력해야 합니다.
+** 이 프로세스가 기존 ONTAP 소프트웨어를 새 소프트웨어로 대체한다는 경고가 나타나면 '* y*'를 입력해야 합니다.
+** image.tgz 파일의 URL을 묻는 메시지가 나타나면 다음과 같이 경로를 입력해야 합니다.
++
+"http://__path_to_the_web-accessible_directory__/image.tgz`
+
+
+
+. 중단 없는 소프트웨어 업그레이드 또는 교체에 대한 메시지가 나타나면 ' * y * '를 입력합니다.
+. 패키지의 URL을 묻는 메시지가 나타나면 image.tgz 파일의 경로를 입력합니다.
++
+[listing]
+----
+What is the URL for the package? `http://path_to_web-accessible_directory/image.tgz`
+----
+. 백업 구성을 복원하라는 메시지가 나타나면 백업 복구를 건너뛰려면 ' * n * '을 입력합니다.
++
+[listing]
+----
+****************************************************************
+*             Restore Backup Configuration                     *
+*  This procedure only applies to storage controllers that     *
+*  are configured as an HA pair.                               *
+*                                                              *
+*  Choose Yes to restore the "varfs" backup configuration      *
+*  from the SSH server.  Refer to the Boot Device Replacement  *
+*  guide for more details.                                     *
+*  Choose No to skip the backup recovery and return to the     *
+*  boot menu.                                                  *
+****************************************************************
+
+Do you want to restore the backup configuration
+now? {y|n} `n`
+----
+. 지금 재부팅하라는 메시지가 나타나면 ' * y * '를 입력합니다.
++
+[listing]
+----
+The node must be rebooted to start using the newly installed software. Do you want to
+reboot now? {y|n} `y`
+----
+. 필요한 경우 노드가 부팅된 후 * 구성 정리 및 모든 디스크 초기화 * 옵션을 선택합니다.
++
+새 컨트롤러 모듈을 구성하고 새 컨트롤러 모듈의 디스크가 비어 있으므로 시스템에서 모든 디스크를 삭제한다는 경고 메시지를 표시할 때 '* y*'를 응답할 수 있습니다.
+
++
+
+NOTE: 디스크를 초기화하는 데 필요한 시간은 디스크 크기와 구성에 따라 다릅니다.
+
+. 디스크가 초기화되고 클러스터 설정 마법사가 시작되면 노드를 설정합니다.
++
+콘솔에 노드 관리 LIF 정보를 입력합니다.
+
+. 노드에 로그인하여 cluster setup을 입력한 다음 클러스터에 가입하라는 메시지가 표시되면 join을 입력합니다.
++
+[listing]
+----
+Do you want to create a new cluster or join an existing cluster? {create, join}: `join`
+----
+. 사이트에 해당하는 나머지 프롬프트에 응답합니다.
++
+를 클릭합니다 link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["ONTAP를 설정합니다"] 사용 중인 ONTAP 버전에 대한 추가 세부 정보가 포함되어 있습니다.
+
+. 시스템이 스위치가 없는 2노드 클러스터 구성인 경우 network interface create 명령을 사용하여 기존 노드에 클러스터 인터페이스를 생성하고 클러스터 포트에 클러스터 LIF를 생성합니다.
++
+다음은 노드의 클러스터 포트 중 하나에 클러스터 LIF를 생성하는 예입니다. auto 매개 변수는 LIF가 링크 로컬 IP 주소를 사용하도록 구성합니다.
+
++
+[listing]
+----
+cluster_A::> network interface create -vserver Cluster -lif clus1 -role cluster -home-node node_A_1 -home-port e1a -auto true
+----
+. 설정이 완료되면 노드가 정상 상태이며 클러스터에 참여할 자격이 있는지 확인합니다.
++
+'클러스터 쇼'
+
++
+다음 예제에서는 두 번째 노드(cluster1-02)가 결합된 후에 클러스터를 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+node_A_1              true    true
+node_A_2              true    true
+----
++
+클러스터 설정 마법사를 사용하면 클러스터 설정 명령을 사용하여 SVM(스토리지 가상 머신) 또는 노드 SVM에 대해 입력한 값을 변경할 수 있습니다.
+
+. 클러스터 인터커넥트에 4개의 포트가 구성되어 있는지 확인합니다.
++
+네트워크 포트 쇼
+
++
+다음 예제는 cluster_A에 있는 2개의 컨트롤러 모듈에 대한 출력을 보여줍니다.
+
++
+[listing]
+----
+cluster_A::> network port show
+                                                             Speed (Mbps)
+Node   Port      IPspace      Broadcast Domain Link   MTU    Admin/Oper
+------ --------- ------------ ---------------- ----- ------- ------------
+node_A_1
+       **e0a       Cluster      Cluster          up       9000  auto/1000
+       e0b       Cluster      Cluster          up       9000  auto/1000**
+       e0c       Default      Default          up       1500  auto/1000
+       e0d       Default      Default          up       1500  auto/1000
+       e0e       Default      Default          up       1500  auto/1000
+       e0f       Default      Default          up       1500  auto/1000
+       e0g       Default      Default          up       1500  auto/1000
+node_A_2
+       **e0a       Cluster      Cluster          up       9000  auto/1000
+       e0b       Cluster      Cluster          up       9000  auto/1000**
+       e0c       Default      Default          up       1500  auto/1000
+       e0d       Default      Default          up       1500  auto/1000
+       e0e       Default      Default          up       1500  auto/1000
+       e0f       Default      Default          up       1500  auto/1000
+       e0g       Default      Default          up       1500  auto/1000
+14 entries were displayed.
+----
+

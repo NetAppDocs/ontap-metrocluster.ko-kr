@@ -1,0 +1,51 @@
+---
+permalink: upgrade/task_enable_storage_failover_both_controller_modules_and_set_cluster_ha.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, enable, storage, failover, both, controller, module, cluster, ha 
+summary: MetroCluster 구성에 새 컨트롤러 모듈을 추가한 후에는 두 컨트롤러 모듈에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 별도로 활성화해야 합니다. 
+---
+= 두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성에 새 컨트롤러 모듈을 추가한 후에는 두 컨트롤러 모듈에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 별도로 활성화해야 합니다.
+
+MetroCluster 설정은 MetroCluster configure -refresh true 명령을 사용하여 이전에 새로 고쳐져야 합니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. 스토리지 페일오버 활성화:
++
+'Storage failover modify -enabled true-node_existing-node-name _'
+
++
+단일 명령을 통해 두 컨트롤러 모듈 모두에서 스토리지 페일오버가 사용되도록 설정됩니다.
+
+. 스토리지 페일오버가 설정되었는지 확인합니다.
++
+'스토리지 페일오버 쇼'
+
++
+출력은 다음과 비슷해야 합니다.
+
++
+[listing]
+----
+
+Node           Partner        Possible State Description
+-------------- -------------- -------- ----------------------
+old-ctlr        new-ctlr      true      Connected to new-ctlr
+new-ctlr        old-ctlr      true      Connected to old-ctlr
+2 entries were displayed.
+----
+. 클러스터 HA 활성화:
++
+군산하수정-구성 진실
+
++
+2개의 노드만 포함하고 스토리지 페일오버에서 제공되는 HA와 다른 경우 클러스터에서 클러스터 고가용성(HA)을 구성해야 합니다.
+
+

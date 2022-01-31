@@ -1,0 +1,96 @@
+---
+permalink: install-fc/concept_considerations_isls_mcfc.html 
+sidebar: sidebar 
+keywords: preparing, prepare, metrocluster, mcc, installation, install, differences, configurations, between, considerations, all, san, array, asa, cluster, peering, prerequisites, dedicated, ports, sharing, data, ports, native, disk, shelves, array, luns, transitions, 7-mode, isls, tdm/wdm, fabric-attached, iod, ood, encryption, devices, unmirrored, aggregates, maintenance, requiring, power, shutdown, firewall, hardware, racking, cabling, setup, checklist, all san array, asa, san 
+summary: MetroCluster 구성에서 각 FC 스위치 패브릭에 필요한 ISL 수를 결정해야 합니다. 
+---
+= ISL에 대한 고려 사항
+
+
+[role="lead"]
+MetroCluster 구성에서 각 FC 스위치 패브릭에 필요한 ISL 수를 결정해야 합니다. ONTAP 9.2부터는 각 개별 MetroCluster 구성에 FC 스위치와 ISL을 할당하는 대신 동일한 4개의 스위치를 공유할 수 있습니다.
+
+
+
+== ISL 공유 고려 사항(ONTAP 9.2)
+
+ONTAP 9.2부터는 ISL 공유를 사용할 수 있습니다.
+
+* 2노드 1개 및 4노드 MetroCluster 구성 1개
+* 2개의 개별 4노드 MetroCluster 구성
+* 2개의 개별 2노드 MetroCluster 구성
+* 8노드 MetroCluster 구성 1개 내의 DR 그룹 2개
+
+
+공유 스위치 간에 필요한 ISL 수는 공유 스위치에 연결된 플랫폼 모델의 대역폭에 따라 달라집니다.
+
+필요한 ISL 수를 결정할 때 구성의 다음 측면을 고려하십시오.
+
+* MetroCluster 이외의 장치는 백 엔드 MetroCluster 연결을 제공하는 FC 스위치에 연결하면 안 됩니다.
+* ISL 공유는 Cisco 9250i 및 Cisco 9148 스위치를 제외한 모든 스위치에서 지원됩니다.
+* 모든 노드에서 ONTAP 9.2 이상을 실행해야 합니다.
+* ISL 공유를 위한 FC 스위치 케이블 연결은 8노드 MetroCluster 케이블 연결과 동일합니다.
+* ISL 공유를 위한 RCF 파일은 8노드 MetroCluster 케이블링과 동일합니다.
+* 모든 하드웨어 및 소프트웨어 버전이 지원되는지 확인해야 합니다.
++
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+* 두 MetroCluster 시스템에서 클라이언트 로드를 지원할 수 있도록 ISL의 속도와 수를 조정해야 합니다.
+* 백엔드 ISL 및 백엔드 구성 요소는 MetroCluster 구성에만 사용되어야 합니다.
+* ISL은 4Gbps, 8Gbps, 16Gbps 또는 32Gbps의 지원되는 속도 중 하나를 사용해야 합니다.
+* 하나의 Fabric에 있는 ISL은 모두 속도와 길이가 같아야 합니다.
+* 하나의 Fabric에 있는 ISL은 모두 동일한 토폴로지를 가져야 합니다. 예를 들어, 모든 링크는 직접 링크이거나 시스템에서 WDM을 사용하는 경우 모두 WDM을 사용해야 합니다.
+
+
+
+
+== 플랫폼별 ISL 고려 사항
+
+권장 ISL 수는 플랫폼 모델에 따라 다릅니다. 다음 표에서는 플랫폼 모델별 각 패브릭의 ISL 요구 사항을 보여 줍니다. 각 ISL의 용량이 16Gbps라고 가정합니다.
+
+|===
+
+
+| 플랫폼 모델 | 4노드 DR 그룹당 권장 ISL 수(스위치 패브릭당) 
+
+
+ a| 
+AFF A900
+ a| 
+8개
+
+
+
+ a| 
+AFF A700
+ a| 
+6개
+
+
+
+ a| 
+FAS9000
+ a| 
+6개
+
+
+
+ a| 
+8080
+ a| 
+네
+
+
+
+ a| 
+기타 모든
+ a| 
+2개
+
+|===
+스위치 패브릭이 8개 노드(단일 8노드 MetroCluster 구성의 일부 또는 ISL을 공유하는 2개 4노드 구성의 일부)를 지원하는 경우 Fabric에 권장되는 총 ISL 수는 각 4노드 DR 그룹에 필요한 총 수의 합계입니다. 예를 들면 다음과 같습니다.
+
+* DR 그룹 1에 AFF A700 시스템 4개가 포함되어 있는 경우 ISL 6개가 필요합니다.
+* DR 그룹 2에 FAS8200 시스템 4개가 포함된 경우 ISL 2개가 필요합니다.
+* 스위치 Fabric에 권장되는 총 ISL 수는 8개입니다.
+

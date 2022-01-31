@@ -1,0 +1,1108 @@
+---
+permalink: maintain/concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html 
+sidebar: sidebar 
+keywords: MetroCluster configurations running ONTAP 9.0 
+summary: FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 포트 할당은 ONTAP 9.0 이상 버전의 ONTAP에서 다릅니다. 
+---
+= ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 포트 할당은 ONTAP 9.0 이상 버전의 ONTAP에서 다릅니다.
+
+이니시에이터 포트, FC-VI 포트 또는 ISL을 연결하는 데 사용되지 않는 포트를 스토리지 포트로 재구성할 수 있습니다. 그러나 지원되는 RCFs를 사용하는 경우에는 그에 따라 조닝을 변경해야 합니다.
+
+지원되는 RCF 파일이 사용되는 경우 ISL 포트는 여기에 표시된 동일한 포트에 연결할 수 없으며 수동으로 재구성해야 할 수 있습니다.
+
+
+
+== 전반적인 케이블 연결 지침
+
+케이블 연결 테이블을 사용할 때 다음 지침을 숙지해야 합니다.
+
+* Brocade 및 Cisco 스위치는 다른 포트 번호를 사용합니다.
++
+** Brocade 스위치에서 첫 번째 포트는 0으로 번호가 지정됩니다.
+** Cisco 스위치에서 첫 번째 포트의 번호는 1입니다.
+
+
+* 케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+* AFF A300 및 FAS8200 스토리지 시스템은 FC-VI 연결을 위한 2가지 옵션 중 하나와 함께 주문할 수 있습니다.
++
+** FC-VI 모드로 구성된 온보드 포트 0e 및 0f
+** 슬롯 1의 FC-VI 카드에 있는 포트 1a 및 1b
+
+
+
+
+
+
+== MetroCluster 9.0을 실행하는 8노드 ONTAP 구성의 컨트롤러 연결에 대한 Brocade 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표에는 Brocade 모델 Brocade 6505, 6510 또는 DCX 8510-8의 컨트롤러 포트 사용량이 나와 있습니다.
+
+|===
+| 구성 요소 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| 컨트롤러_x_3 | FC-VI 포트 A | 6 | - 
+
+
+| 컨트롤러_x_3 | FC-VI 포트 b | - | 6 
+
+
+| 컨트롤러_x_3 | HBA 포트 A | 7 | - 
+
+
+| 컨트롤러_x_3 | HBA 포트 b | - | 7 
+
+
+| 컨트롤러_x_3 | HBA 포트 c | 8 | - 
+
+
+| 컨트롤러_x_3 | HBA 포트 d | - | 8 
+
+
+| 컨트롤러_x_4 | FC-VI 포트 A | 9 | - 
+
+
+| 컨트롤러_x_4 | FC-VI 포트 b | - | 9 
+
+
+| 컨트롤러_x_4 | HBA 포트 A | 10 | - 
+
+
+| 컨트롤러_x_4 | HBA 포트 b | - | 10 
+
+
+| 컨트롤러_x_4 | HBA 포트 c | 11 | - 
+
+
+| 컨트롤러_x_4 | HBA 포트 d | - | 11 
+|===
+
+
+== MetroCluster 9.0을 실행하는 8노드 ONTAP 구성에서 FC-SAS 브리지 연결을 위한 Brocade 포트 사용
+
+다음 표는 FiberBridge 7500 브리지를 사용할 때 브리지 포트 사용을 보여줍니다.
+
+|===
+| 브리지 | 브리지 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 12 | - 
+
+
+| Bridge_x_1a | FC2 | - | 12 
+
+
+| Bridge_x_1b | FC1 | 13 | - 
+
+
+| Bridge_x_1b | FC2 | - | 13 
+
+
+| bridge_x_2a | FC1 | 14 | - 
+
+
+| bridge_x_2a | FC2 | - | 14 
+
+
+| Bridge_x_2b | FC1 | 15 | - 
+
+
+| Bridge_x_2b | FC2 | - | 15 
+
+
+| Bridge_x_3a | FC1 | 16 | - 
+
+
+| Bridge_x_3a | FC2 | - | 16 
+
+
+| Bridge_x_3b | FC1 | 17 | - 
+
+
+| Bridge_x_3b | FC2 | - | 17 
+
+
+| Bridge_x_4a | FC1 | 18 | - 
+
+
+| Bridge_x_4a | FC2 | - | 18 
+
+
+| Bridge_x_4b | FC1 | 19 | - 
+
+
+| Bridge_x_4b | FC2 | - | 19 
+|===
+다음 표에는 FiberBridge 6500 브리지를 Brocade 6505, 6510 또는 DCX 8510-8 스위치와 함께 사용할 때 브리지 포트 사용량이 나와 있습니다.
+
+|===
+| 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 12 | - 
+
+
+| Bridge_x_1b | FC1 | - | 12 
+
+
+| bridge_x_2a | FC1 | 13 | - 
+
+
+| Bridge_x_2b | FC1 | - | 13 
+
+
+| Bridge_x_3a | FC1 | 14 | - 
+
+
+| Bridge_x_3b | FC1 | - | 14 
+
+
+| Bridge_x_4a | FC1 | 15 | - 
+
+
+| Bridge_x_4b | FC1 | - | 15 
+
+
+| Bridge_x_5a | FC1 | 16 | - 
+
+
+| Bridge_x_5b | FC1 | - | 16 
+
+
+| Bridge_x_6a | FC1 | 17 | - 
+
+
+| Bridge_x_6b | FC1 | - | 17 
+
+
+| Bridge_x_7a | FC1 | 18 | - 
+
+
+| Bridge_x_7b | FC1 | - | 18 
+
+
+| Bridge_x_8a | FC1 | 19 | - 
+
+
+| Bridge_x_8b | FC1 | - | 19 
+|===
+
+
+== ONTAP 9.0을 실행하는 8노드 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량
+
+다음 표에는 Brocade 6505, 6510 또는 DCX 8510-8 스위치의 ISL 포트 사용량이 나와 있습니다.
+
+|===
+| ISL 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| ISL 포트 1 | 20 | 20 
+
+
+| ISL 포트 2 | 21 | 21 
+
+
+| ISL 포트 3 | 22 | 22 
+
+
+| ISL 포트 4 | 23 | 23 
+|===
+
+
+== MetroCluster 9.0을 실행하는 4노드 ONTAP 구성의 컨트롤러에 대한 Brocade 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다. 다음 표에는 Brocade 6505, 6510 및 DCX 8510-8 스위치의 사용량이 나와 있습니다.
+
+|===
+| 구성 요소 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 A | 0 | - 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 b | - | 0 
+
+
+| 컨트롤러_x_1 | HBA 포트 A | 1 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 b | - | 1 
+
+
+| 컨트롤러_x_1 | HBA 포트 c | 2 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 d | - | 2 
+
+
+| 컨트롤러_x_2 | FC-VI 포트 A | 3 | - 
+
+
+| 컨트롤러_x_2 | FC-VI 포트 b | - | 3 
+
+
+| 컨트롤러_x_2 | HBA 포트 A | 4 | - 
+
+
+| 컨트롤러_x_2 | HBA 포트 b | - | 4 
+
+
+| 컨트롤러_x_2 | HBA 포트 c | 5 | - 
+
+
+| 컨트롤러_x_2 | HBA 포트 d | - | 5 
+|===
+
+
+== MetroCluster 9.0을 실행하는 4노드 ONTAP 구성의 브리지에 대한 Brocade 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표는 FiberBridge 7500 브리지를 사용할 때 포트 17까지의 브리지 포트 사용을 보여줍니다. 추가 브리지는 포트 18 ~ 23에 연결할 수 있습니다.
+
+|===
+| FiberBridge 7500 브리지 | 포트 | FC_SWITCH_x_1(6510 또는 DCX 8510-8) | FC_SWITCH_x_2(6510 또는 DCX 8510-8) | FC_SWITCH_x_1(6505) | FC_SWITCH_x_2(6505) 
+
+
+| Bridge_x_1a | FC1 | 6 | - | 6 | - 
+
+
+| Bridge_x_1a | FC2 | - | 6 | - | 6 
+
+
+| Bridge_x_1b | FC1 | 7 | - | 7 | - 
+
+
+| Bridge_x_1b | FC2 | - | 7 | - | 7 
+
+
+| bridge_x_2a | FC1 | 8 | - | 12 | - 
+
+
+| bridge_x_2a | FC2 | - | 8 | - | 12 
+
+
+| Bridge_x_2b | FC1 | 9 | - | 13 | - 
+
+
+| Bridge_x_2b | FC2 | - | 9 | - | 13 
+
+
+| Bridge_x_3a | FC1 | 10 | - | 14 | - 
+
+
+| Bridge_x_3a | FC2 | - | 10 | - | 14 
+
+
+| Bridge_x_3b | FC1 | 11 | - | 15 | - 
+
+
+| Bridge_x_3b | FC2 | - | 11 | - | 15 
+
+
+| Bridge_x_4a | FC1 | 12 | - | 16 | - 
+
+
+| Bridge_x_4a | FC2 | - | 12 | - | 16 
+
+
+| Bridge_x_4b | FC1 | 13 | - | 17 | - 
+
+
+| Bridge_x_4b | FC2 | - | 13 | - | 17 
+
+
+|  |  | 추가 브리지는 포트 19를 통해 케이블로 연결한 다음 포트 24에서 47까지 연결할 수 있습니다 |  |  |  
+|===
+다음 표는 FiberBridge 6500 브리지 사용 시 브리지 포트 사용을 보여줍니다.
+
+|===
+|  | 6500N 브리지 포트 | FC_SWITCH_x_1(6510 또는 DCX 8510-8) | FC_SWITCH_x_2(6510 또는 DCX 8510-8) | FC_SWITCH_x_1(6505) | FC_SWITCH_x_2(6505) 
+
+
+| Bridge_x_1a | FC1 | 6 | - | 6 | - 
+
+
+| Bridge_x_1b | FC1 | - | 6 | - | 6 
+
+
+| bridge_x_2a | FC1 | 7 | - | 7 | - 
+
+
+| Bridge_x_2b | FC1 | - | 7 | - | 7 
+
+
+| Bridge_x_3a | FC1 | 8 | - | 12 | - 
+
+
+| Bridge_x_3b | FC1 | - | 8 | - | 12 
+
+
+| Bridge_x_4a | FC1 | 9 | - | 13 | - 
+
+
+| Bridge_x_4b | FC1 | - | 9 | - | 13 
+
+
+| Bridge_x_5a | FC1 | 10 | - | 14 | - 
+
+
+| Bridge_x_5b | FC1 | - | 10 | - | 14 
+
+
+| Bridge_x_6a | FC1 | 11 | - | 15 | - 
+
+
+| Bridge_x_6b | FC1 | - | 11 | - | 15 
+
+
+| Bridge_x_7a | FC1 | 12 | - | 16 | - 
+
+
+| Bridge_x_7b | FC1 | - | 12 | - | 16 
+
+
+| Bridge_x_8a | FC1 | 13 | - | 17 | - 
+
+
+| Bridge_x_8b | FC1 | - | 13 | - | 17 
+
+
+|  |  | 추가 브리지는 포트 19를 통해 케이블로 연결한 다음 포트 24에서 47까지 연결할 수 있습니다 |  | 포트 23을 통해 추가 브리지를 케이블로 연결할 수 있습니다 |  
+|===
+
+
+== ONTAP 9.0을 실행하는 4노드 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량
+
+다음 표에는 ISL 포트 사용량이 나와 있습니다.
+
+|===
+| ISL 포트 | FC_SWITCH_x_1(6510 또는 DCX 8510-8) | FC_SWITCH_x_2(6510 또는 DCX 8510-8) | FC_SWITCH_x_1(6505) | FC_SWITCH_x_2(6505) 
+
+
+| ISL 포트 1 | 20 | 20 | 8 | 8 
+
+
+| ISL 포트 2 | 21 | 21 | 9 | 9 
+
+
+| ISL 포트 3 | 22 | 22 | 10 | 10 
+
+
+| ISL 포트 4 | 23 | 23 | 11 | 11 
+|===
+
+
+== MetroCluster 9.0을 실행하는 2노드 ONTAP 구성의 컨트롤러에 대한 Brocade 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다. 다음 표에서는 Brocade 6505, 6510 및 DCX 8510-8 스위치의 케이블 연결을 보여 줍니다.
+
+|===
+| 구성 요소 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 A | 0 | - 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 b | - | 0 
+
+
+| 컨트롤러_x_1 | HBA 포트 A | 1 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 b | - | 1 
+
+
+| 컨트롤러_x_1 | HBA 포트 c | 2 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 d | - | 2 
+|===
+
+
+== MetroCluster 9.0을 실행하는 2노드 ONTAP 구성의 브리지에 대한 Brocade 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표에서는 Brocade 6505, 6510 및 DCX 8510-8 스위치와 함께 FiberBridge 7500 브리지를 사용할 때 포트 17까지 브리지 포트 사용량을 보여 줍니다. 추가 브리지는 포트 18 ~ 23에 연결할 수 있습니다.
+
+|===
+| FiberBridge 7500 브리지 | 포트 | FC_SWITCH_x_1(6510 또는 DCX 8510-8) | FC_SWITCH_x_2(6510 또는 DCX 8510-8) | FC_SWITCH_x_1(6505) | FC_SWITCH_x_2(6505) 
+
+
+| Bridge_x_1a | FC1 | 6 | - | 6 | - 
+
+
+| Bridge_x_1a | FC2 | - | 6 | - | 6 
+
+
+| Bridge_x_1b | FC1 | 7 | - | 7 | - 
+
+
+| Bridge_x_1b | FC2 | - | 7 | - | 7 
+
+
+| bridge_x_2a | FC1 | 8 | - | 12 | - 
+
+
+| bridge_x_2a | FC2 | - | 8 | - | 12 
+
+
+| Bridge_x_2b | FC1 | 9 | - | 13 | - 
+
+
+| Bridge_x_2b | FC2 | - | 9 | - | 13 
+
+
+| Bridge_x_3a | FC1 | 10 | - | 14 | - 
+
+
+| Bridge_x_3a | FC2 | - | 10 | - | 14 
+
+
+| Bridge_x_3a | FC1 | 11 | - | 15 | - 
+
+
+| Bridge_x_3a | FC2 | - | 11 | - | 15 
+
+
+| Bridge_x_4a | FC1 | 12 | - | 16 | - 
+
+
+| Bridge_x_4a | FC2 | - | 12 | - | 16 
+
+
+| Bridge_x_4b | FC1 | 13 | - | 17 | - 
+
+
+| Bridge_x_4b | FC2 | - | 13 | - | 17 
+
+
+|  |  | 추가 브리지는 포트 19를 통해 케이블로 연결한 다음 포트 24에서 47까지 연결할 수 있습니다 |  | 포트 23을 통해 추가 브리지를 케이블로 연결할 수 있습니다 |  
+|===
+다음 표는 FiberBridge 6500 브리지를 Brocade 6505, 6510 및 DCX 8510-8 스위치와 함께 사용할 때 브리지 포트 사용을 보여줍니다.
+
+|===
+| FiberBridge 6500 브리지 | 포트 | FC_SWITCH_x_1(6510 또는 DCX 8510-8) | FC_SWITCH_x_2(6510 또는 DCX 8510-8) | FC_SWITCH_x_1(6505) | FC_SWITCH_x_2(6505) 
+
+
+| Bridge_x_1a | FC1 | 6 | - | 6 | - 
+
+
+| Bridge_x_1b | FC1 | - | 6 | - | 6 
+
+
+| bridge_x_2a | FC1 | 7 | - | 7 | - 
+
+
+| Bridge_x_2b | FC1 | - | 7 | - | 7 
+
+
+| Bridge_x_3a | FC1 | 8 | - | 12 | - 
+
+
+| Bridge_x_3b | FC1 | - | 8 | - | 12 
+
+
+| Bridge_x_4a | FC1 | 9 | - | 13 | - 
+
+
+| Bridge_x_4b | FC1 | - | 9 | - | 13 
+
+
+| Bridge_x_5a | FC1 | 10 | - | 14 | - 
+
+
+| Bridge_x_5b | FC1 | - | 10 | - | 14 
+
+
+| Bridge_x_6a | FC1 | 11 | - | 15 | - 
+
+
+| Bridge_x_6b | FC1 | - | 11 | - | 15 
+
+
+| Bridge_x_7a | FC1 | 12 | - | 16 | - 
+
+
+| Bridge_x_7b | FC1 | - | 12 | - | 16 
+
+
+| Bridge_x_8a | FC1 | 13 | - | 17 | - 
+
+
+| Bridge_x_8b | FC1 | - | 13 | - | 17 
+
+
+|  |  | 추가 브리지는 포트 19를 통해 케이블로 연결한 다음 포트 24에서 47까지 연결할 수 있습니다 |  | 포트 23을 통해 추가 브리지를 케이블로 연결할 수 있습니다 |  
+|===
+
+
+== ONTAP 9.0을 실행하는 2노드 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량
+
+다음 표에는 Brocade 6505, 6510 및 DCX 8510-8 스위치의 ISL 포트 사용량이 나와 있습니다.
+
+|===
+| ISL 포트 | FC_SWITCH_x_1(6510 또는 DCX 8510-8) | FC_SWITCH_x_2(6510 또는 DCX 8510-8) | FC_SWITCH_x_1(6505) | FC_SWITCH_x_2(6505) 
+
+
+| ISL 포트 1 | 20 | 20 | 8 | 8 
+
+
+| ISL 포트 2 | 21 | 21 | 9 | 9 
+
+
+| ISL 포트 3 | 22 | 22 | 10 | 10 
+
+
+| ISL 포트 4 | 23 | 23 | 11 | 11 
+|===
+
+
+== ONTAP 9.0을 실행하는 8노드 MetroCluster 구성의 컨트롤러에 대한 Cisco 포트 사용
+
+다음 표에는 Cisco 9148 및 9148S 스위치의 컨트롤러 포트 사용량이 나와 있습니다.
+
+|===
+| 구성 요소 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| 컨트롤러_x_3 | FC-VI 포트 A | 7 | - 
+
+
+| 컨트롤러_x_3 | FC-VI 포트 b | - | 7 
+
+
+| 컨트롤러_x_3 | HBA 포트 A | 8 | - 
+
+
+| 컨트롤러_x_3 | HBA 포트 b | - | 8 
+
+
+| 컨트롤러_x_3 | HBA 포트 c | 9 | - 
+
+
+| 컨트롤러_x_3 | HBA 포트 d | - | 9 
+
+
+| 컨트롤러_x_4 | FC-VI 포트 A | 10 | - 
+
+
+| 컨트롤러_x_4 | FC-VI 포트 b | - | 10 
+
+
+| 컨트롤러_x_4 | HBA 포트 A | 11 | - 
+
+
+| 컨트롤러_x_4 | HBA 포트 b | - | 11 
+
+
+| 컨트롤러_x_4 | HBA 포트 c | 13 | - 
+
+
+| 컨트롤러_x_4 | HBA 포트 d | - | 13 
+|===
+
+
+== ONTAP 9.0을 실행하는 8노드 MetroCluster 구성의 FC-SAS 브리지에 대한 Cisco 포트 사용
+
+다음 표는 Cisco 9148 또는 9148S 스위치를 사용할 때 FiberBridge 7500 브리지를 사용할 때 포트 23까지의 브리지 포트 사용을 보여줍니다. 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.
+
+|===
+| FiberBridge 7500 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 14 | 14 
+
+
+| Bridge_x_1a | FC2 | - | - 
+
+
+| Bridge_x_1b | FC1 | 15 | 15 
+
+
+| Bridge_x_1b | FC2 | - | - 
+
+
+| bridge_x_2a | FC1 | 17 | 17 
+
+
+| bridge_x_2a | FC2 | - | - 
+
+
+| Bridge_x_2b | FC1 | 18 | 18 
+
+
+| Bridge_x_2b | FC2 | - | - 
+
+
+| Bridge_x_3a | FC1 | 19 | 19 
+
+
+| Bridge_x_3a | FC2 | - | - 
+
+
+| Bridge_x_3b | FC1 | 21 | 21 
+
+
+| Bridge_x_3b | FC2 | - | - 
+
+
+| Bridge_x_4a | FC1 | 22 | 22 
+
+
+| Bridge_x_4a | FC2 | - | - 
+
+
+| Bridge_x_4b | FC1 | 23 | 23 
+
+
+| Bridge_x_4b | FC2 | - | - 
+|===
+동일한 패턴에 따라 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.
+
+다음 표는 FiberBridge 6500 브리지를 Cisco 9148 또는 9148S 스위치와 함께 사용할 때 포트 23까지의 브리지 포트 사용을 보여줍니다. 25-48번 포트를 사용하여 추가 브리지를 연결할 수 있습니다.
+
+|===
+| FiberBridge 6500 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 14 | - 
+
+
+| Bridge_x_1b | FC1 | - | 14 
+
+
+| bridge_x_2a | FC1 | 15 | - 
+
+
+| Bridge_x_2b | FC1 | - | 15 
+
+
+| Bridge_x_3a | FC1 | 17 | - 
+
+
+| Bridge_x_3b | FC1 | - | 17 
+
+
+| Bridge_x_4a | FC1 | 18 | - 
+
+
+| Bridge_x_4b | FC1 | - | 18 
+
+
+| Bridge_x_5a | FC1 | 19 | - 
+
+
+| Bridge_x_5b | FC1 | - | 19 
+
+
+| Bridge_x_6a | FC1 | 21 | - 
+
+
+| Bridge_x_6b | FC1 | - | 21 
+
+
+| Bridge_x_7a | FC1 | 22 | - 
+
+
+| Bridge_x_7b | FC1 | - | 22 
+
+
+| Bridge_x_8a | FC1 | 23 | - 
+
+
+| Bridge_x_8b | FC1 | - | 23 
+|===
+동일한 패턴에 따라 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.
+
+
+
+== ONTAP 9.0을 실행하는 8노드 MetroCluster 구성에서 ISL에 대한 Cisco 포트 사용량
+
+다음 표에는 Cisco 9148 및 9148S 스위치의 ISL 포트 사용량이 나와 있습니다.
+
+|===
+| ISL 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| ISL 포트 1 | 12 | 12 
+
+
+| ISL 포트 2 | 16 | 16 
+
+
+| ISL 포트 3 | 20 | 20 
+
+
+| ISL 포트 4 | 24 | 24 
+|===
+
+
+== 4노드 MetroCluster 구성의 컨트롤러에 대한 Cisco 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표에는 Cisco 9148, 9148S 및 9250i 스위치의 컨트롤러 포트 사용량이 나와 있습니다.
+
+|===
+| 구성 요소 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 A | 1 | - 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 b | - | 1 
+
+
+| 컨트롤러_x_1 | HBA 포트 A | 2 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 b | - | 2 
+
+
+| 컨트롤러_x_1 | HBA 포트 c | 3 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 d | - | 3 
+
+
+| 컨트롤러_x_2 | FC-VI 포트 A | 4 | - 
+
+
+| 컨트롤러_x_2 | FC-VI 포트 b | - | 4 
+
+
+| 컨트롤러_x_2 | HBA 포트 A | 5 | - 
+
+
+| 컨트롤러_x_2 | HBA 포트 b | - | 5 
+
+
+| 컨트롤러_x_2 | HBA 포트 c | 6 | - 
+
+
+| 컨트롤러_x_2 | HBA 포트 d | - | 6 
+|===
+
+
+== ONTAP 9.0을 실행하는 4노드 MetroCluster 구성의 FC-SAS 브리지에 대한 Cisco 포트 사용
+
+다음 표는 Cisco 9148, 9148S 또는 9250i 스위치와 함께 FiberBridge 7500 브리지를 사용할 때 포트 14까지의 브리지 포트 사용을 보여줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.
+
+|===
+| FiberBridge 7500 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 7 | - 
+
+
+| Bridge_x_1a | FC2 | - | 7 
+
+
+| Bridge_x_1b | FC1 | 8 | - 
+
+
+| Bridge_x_1b | FC2 | - | 8 
+
+
+| bridge_x_2a | FC1 | 9 | - 
+
+
+| bridge_x_2a | FC2 | - | 9 
+
+
+| Bridge_x_2b | FC1 | 10 | - 
+
+
+| Bridge_x_2b | FC2 | - | 10 
+
+
+| Bridge_x_3a | FC1 | 11 | - 
+
+
+| Bridge_x_3a | FC2 | - | 11 
+
+
+| Bridge_x_3b | FC1 | 12 | - 
+
+
+| Bridge_x_3b | FC2 | - | 12 
+
+
+| Bridge_x_4a | FC1 | 13 | - 
+
+
+| Bridge_x_4a | FC2 | - | 13 
+
+
+| Bridge_x_4b | FC1 | 14 | - 
+
+
+| Bridge_x_4b | FC2 | - | 14 
+|===
+다음 표는 Cisco 9148, 9148S 또는 9250i 스위치에서 FiberBridge 6500 브리지를 최대 포트 14까지 사용할 때 브리지 포트 사용량을 보여 줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.
+
+|===
+| FiberBridge 6500 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 7 | - 
+
+
+| Bridge_x_1b | FC1 | - | 7 
+
+
+| bridge_x_2a | FC1 | 8 | - 
+
+
+| Bridge_x_2b | FC1 | - | 8 
+
+
+| Bridge_x_3a | FC1 | 9 | - 
+
+
+| Bridge_x_3b | FC1 | - | 9 
+
+
+| Bridge_x_4a | FC1 | 10 | - 
+
+
+| Bridge_x_4b | FC1 | - | 10 
+
+
+| Bridge_x_5a | FC1 | 11 | - 
+
+
+| Bridge_x_5b | FC1 | - | 11 
+
+
+| Bridge_x_6a | FC1 | 12 | - 
+
+
+| Bridge_x_6b | FC1 | - | 12 
+
+
+| Bridge_x_7a | FC1 | 13 | - 
+
+
+| Bridge_x_7b | FC1 | - | 13 
+
+
+| Bridge_x_8a | FC1 | 14 | - 
+
+
+| Bridge_x_8b | FC1 | - | 14 
+|===
+동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.
+
+
+
+== ONTAP 9.0을 실행하는 4노드 MetroCluster 구성의 ISL에 대한 Cisco 9148 및 9148S 포트 사용량
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표에는 Cisco 9148 및 9148S 스위치의 ISL 포트 사용량이 나와 있습니다.
+
+|===
+| ISL 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| ISL 포트 1 | 36 | 36 
+
+
+| ISL 포트 2 | 40 | 40 
+
+
+| ISL 포트 3 | 44 | 44 
+
+
+| ISL 포트 4 | 48 | 48 
+|===
+
+
+== ONTAP 9.0을 실행하는 4노드 MetroCluster 구성의 ISL에 대한 Cisco 9250i 포트 사용량
+
+Cisco 9250i 스위치는 ISL에 FCIP 포트를 사용합니다.
+
+포트 40에서 48은 10GbE 포트이며 MetroCluster 구성에서 사용되지 않습니다.
+
+
+
+== 2노드 MetroCluster 구성의 컨트롤러에 대한 Cisco 포트 사용
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표에는 Cisco 9148, 9148S 및 9250i 스위치의 컨트롤러 포트 사용량이 나와 있습니다.
+
+|===
+| 구성 요소 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 A | 1 | - 
+
+
+| 컨트롤러_x_1 | FC-VI 포트 b | - | 1 
+
+
+| 컨트롤러_x_1 | HBA 포트 A | 2 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 b | - | 2 
+
+
+| 컨트롤러_x_1 | HBA 포트 c | 3 | - 
+
+
+| 컨트롤러_x_1 | HBA 포트 d | - | 3 
+|===
+
+
+== ONTAP 9.0을 실행하는 2노드 MetroCluster 구성의 FC-SAS 브리지에 대한 Cisco 포트 사용
+
+다음 표는 Cisco 9148, 9148S 및 9250i 스위치와 함께 FiberBridge 7500 브리지를 사용할 때 포트 14까지의 브리지 포트 사용을 보여줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.
+
+|===
+| FiberBridge 7500 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 7 | - 
+
+
+| Bridge_x_1a | FC2 | - | 7 
+
+
+| Bridge_x_1b | FC1 | 8 | - 
+
+
+| Bridge_x_1b | FC2 | - | 8 
+
+
+| bridge_x_2a | FC1 | 9 | - 
+
+
+| bridge_x_2a | FC2 | - | 9 
+
+
+| Bridge_x_2b | FC1 | 10 | - 
+
+
+| Bridge_x_2b | FC2 | - | 10 
+
+
+| Bridge_x_3a | FC1 | 11 | - 
+
+
+| Bridge_x_3a | FC2 | - | 11 
+
+
+| Bridge_x_3b | FC1 | 12 | - 
+
+
+| Bridge_x_3b | FC2 | - | 12 
+
+
+| Bridge_x_4a | FC1 | 13 | - 
+
+
+| Bridge_x_4a | FC2 | - | 13 
+
+
+| Bridge_x_4b | FC1 | 14 | - 
+
+
+| Bridge_x_4b | FC2 | - | 14 
+|===
+다음 표는 Cisco 9148, 9148S 또는 9250i 스위치에서 FiberBridge 6500 브리지를 최대 포트 14까지 사용할 때 브리지 포트 사용량을 보여 줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.
+
+|===
+| FiberBridge 6500 브리지 | 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| Bridge_x_1a | FC1 | 7 | - 
+
+
+| Bridge_x_1b | FC1 | - | 7 
+
+
+| bridge_x_2a | FC1 | 8 | - 
+
+
+| Bridge_x_2b | FC1 | - | 8 
+
+
+| Bridge_x_3a | FC1 | 9 | - 
+
+
+| Bridge_x_3b | FC1 | - | 9 
+
+
+| Bridge_x_4a | FC1 | 10 | - 
+
+
+| Bridge_x_4b | FC1 | - | 10 
+
+
+| Bridge_x_5a | FC1 | 11 | - 
+
+
+| Bridge_x_5b | FC1 | - | 11 
+
+
+| Bridge_x_6a | FC1 | 12 | - 
+
+
+| Bridge_x_6b | FC1 | - | 12 
+
+
+| Bridge_x_7a | FC1 | 13 | - 
+
+
+| Bridge_x_7b | FC1 | - | 13 
+
+
+| Bridge_x_8a | FC1 | 14 | - 
+
+
+| Bridge_x_8b | FC1 | - | 14 
+|===
+동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.
+
+
+
+== ONTAP 9.0을 실행하는 2노드 MetroCluster 구성의 ISL에 대한 Cisco 9148 또는 9148S 포트 사용량
+
+케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다.
+
+다음 표에는 Cisco 9148 또는 9148S 스위치의 ISL 포트 사용량이 나와 있습니다.
+
+|===
+| ISL 포트 | fc_switch_x_1 | fc_switch_x_2 
+
+
+| ISL 포트 1 | 36 | 36 
+
+
+| ISL 포트 2 | 40 | 40 
+
+
+| ISL 포트 3 | 44 | 44 
+
+
+| ISL 포트 4 | 48 | 48 
+|===
+
+
+== ONTAP 9.0을 실행하는 2노드 MetroCluster 구성의 ISL에 대한 Cisco 9250i 포트 사용량
+
+Cisco 9250i 스위치는 ISL에 FCIP 포트를 사용합니다.
+
+포트 40에서 48은 10GbE 포트이며 MetroCluster 구성에서 사용되지 않습니다.

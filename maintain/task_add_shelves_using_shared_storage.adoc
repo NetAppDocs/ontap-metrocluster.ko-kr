@@ -1,0 +1,702 @@
+---
+permalink: maintain/task_add_shelves_using_shared_storage.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, shelf, shelves, add, ns224, 
+summary: 공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster에 NS224 쉘프를 추가해야 할 수 있습니다. 
+---
+= 공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster에 NS224 쉘프를 추가해야 할 수 있습니다.
+
+ONTAP 9.10.1부터 공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에서 NS224 쉘프를 추가할 수 있습니다. 한 번에 둘 이상의 쉘프를 추가할 수 있습니다.
+
+.시작하기 전에
+* 노드는 ONTAP 9.9.1 이상을 실행해야 합니다.
+* 현재 연결된 모든 NS224 쉘프는 MetroCluster(공유 스토리지/MetroCluster 스위치 구성)와 동일한 스위치에 연결되어야 합니다.
+* 이 절차를 사용하여 전용 이더넷 스위치에 직접 연결된 NS224 셸프 또는 NS224 셸프가 있는 구성을 공유 스토리지/MetroCluster 스위치를 사용하는 구성으로 변환할 수 없습니다.
+
+
+
+
+== 유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+
+유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. 자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.
++
+.. 다음 명령을 실행합니다.
++
+'System node AutoSupport invoke -node * -type all-message "Maint=10h Adding or Removing NS224 shelf" _
+
++
+이 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.
+
++
+시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.
+
++
+'System node AutoSupport invoke-node * -type all-message maINT=end'
+
+.. 파트너 클러스터에서 명령을 반복합니다.
+
+
+
+
+
+
+== MetroCluster 구성 상태 확인
+
+전환을 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.
+
+.단계
+. ONTAP에서 MetroCluster 구성 작동을 확인합니다.
++
+.. 시스템에 다중 경로 가 있는지 확인합니다.
++
+'node run-node_node-name_sysconfig-a'
+
+.. 두 클러스터 모두에서 상태 알림을 확인합니다.
++
+'시스템 상태 경고 표시
+
+.. MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.
++
+MetroCluster 쇼
+
+.. MetroCluster 검사를 수행합니다.
++
+'MetroCluster check run
+
+.. MetroCluster 검사 결과를 표시합니다.
++
+MetroCluster 체크 쇼
+
+.. Config Advisor를 실행합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+
+.. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
+
+
+. 클러스터가 정상 상태인지 확인합니다.
++
+'cluster show-vserver 클러스터'입니다
+
++
+[listing]
+----
+cluster_A::> cluster show -vserver Cluster
+Node           Health  Eligibility   Epsilon
+-------------- ------  -----------   -------
+node_A_1    true    true          false
+node_A_2    true    true          false
+
+cluster_A::>
+----
+. 모든 클러스터 포트가 작동하는지 확인합니다.
++
+네트워크 포트 show-IPSpace cluster
+
++
+[listing]
+----
+cluster_A::> network port show -ipspace cluster
+
+Node: node_A_1-old
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+Node: node_A_2-old
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+4 entries were displayed.
+
+cluster_A::>
+----
+. 모든 클러스터 LIF가 작동 중인지 확인합니다.
++
+'network interface show-vserver cluster'
+
++
+각 클러스터 LIF는 홈에 대해 TRUE로 표시되고 상태 관리자/작업 이 UP/UP로 표시되어야 합니다
+
++
+[listing]
+----
+cluster_A::> network interface show -vserver cluster
+
+            Logical      Status     Network          Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- -----
+Cluster
+            node_A_1-old_clus1
+                       up/up      169.254.209.69/16  node_A_1   e0a     true
+            node_A_1-old_clus2
+                       up/up      169.254.49.125/16  node_A_1   e0b     true
+            node_A_2-old_clus1
+                       up/up      169.254.47.194/16  node_A_2   e0a     true
+            node_A_2-old_clus2
+                       up/up      169.254.19.183/16  node_A_2   e0b     true
+
+4 entries were displayed.
+
+cluster_A::>
+----
+. 모든 클러스터 LIF에서 자동 복구가 설정되었는지 확인합니다.
++
+'network interface show-vserver Cluster-fields auto-revert'
+
++
+[listing]
+----
+cluster_A::> network interface show -vserver Cluster -fields auto-revert
+
+          Logical
+Vserver   Interface     Auto-revert
+--------- ------------- ------------
+Cluster
+           node_A_1-old_clus1
+                        true
+           node_A_1-old_clus2
+                        true
+           node_A_2-old_clus1
+                        true
+           node_A_2-old_clus2
+                        true
+
+    4 entries were displayed.
+
+cluster_A::>
+----
+
+
+
+
+== 스위치에 새 RCF 파일 적용
+
+
+NOTE: 스위치가 이미 올바르게 구성된 경우 다음 섹션을 건너뛰고 로 바로 이동할 수 있습니다 <<Configuring MACsec encryption on Cisco 9336C switches>>, 해당되는 경우 또는 에 <<Connecting the new NS224 shelf>>.
+
+* 쉘프를 추가하려면 스위치 구성을 변경해야 합니다.
+* 에서 케이블 연결 세부 정보를 검토해야 합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/port_usage_3232c_9336c.html#cabling-a-aff-a800-to-a-cisco-3232c-or-cisco-9336c-switch["플랫폼 포트 할당"^].
+* RCF 파일을 구성하려면 ** RcfFileGenerator** 도구를 사용해야 합니다. 를 클릭합니다 link:https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["RcfFileGenerator 를 참조하십시오"^] 또한 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다. 올바른 개수의 쉘프를 선택해야 합니다. RCF 파일과 함께 추가 파일이 생성되어 특정 옵션에 맞는 상세한 케이블링 레이아웃을 제공합니다. 이 케이블 연결 개요를 사용하여 새 셸프를 연결할 때 케이블 연결을 확인합니다.
+
+
+
+
+=== MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
+
+새로운 스위치 펌웨어를 설치하는 경우 RCF 파일을 업그레이드하기 전에 스위치 펌웨어를 설치해야 합니다.
+
+이 절차는 RCF 파일이 업그레이드된 스위치의 트래픽을 중단시킵니다. 새 RCF 파일이 적용되면 트래픽이 재개됩니다.
+
+.단계
+. 구성 상태를 확인합니다.
++
+.. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+' * MetroCluster check run * '
+
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+
+----
+
+
++
+작업은 백그라운드에서 실행됩니다.
+
++
+.. MetroCluster check run 작업이 완료되면 MetroCluster check show를 실행하여 결과를 확인한다.
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+-----------
+::*> metrocluster check show
+
+Last Checked On: 4/7/2019 21:15:05
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          warning
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+.. 실행 중인 MetroCluster check 작업의 상태를 확인하려면 + " * MetroCluster operation history show -job-id 38 * " 명령을 사용합니다
+.. '* system health alert show*'라는 상태 경고가 없는지 확인합니다
+
+
+. 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
+
+
+
+
+=== Cisco IP 스위치를 출하 시 기본값으로 재설정합니다
+
+새 소프트웨어 버전과 RCFs를 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다.
+
+MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
+
+. 스위치를 출하 시 기본값으로 재설정합니다.
++
+.. 기존 설정 '쓰기 지우기'를 지웁니다
+.. 스위치 소프트웨어를 다시 로드합니다: 다시 로드
++
+시스템이 재부팅되고 구성 마법사가 시작됩니다. 부팅 중에 Auto Provisioning 중단 메시지가 표시되면 정상 설치를 계속하시겠습니까? (예/아니요) [n], 계속하려면 "예"로 응답해야 합니다.
+
+.. 구성 마법사에서 기본 스위치 설정을 입력합니다.
++
+*** 관리자 암호입니다
+*** 스위치 이름
+*** 대역외 관리 구성
+*** 기본 게이트웨이
+*** SSH 서비스(RSA) 구성 마법사를 완료한 후 스위치가 재부팅됩니다.
+
+
+.. 메시지가 표시되면 사용자 이름과 암호를 입력하여 스위치에 로그인합니다.
++
+다음 예에서는 스위치를 구성할 때 프롬프트 및 시스템 응답을 보여 줍니다. 꺾쇠 괄호(<<<<)는 사용자가 정보를 입력하는 위치를 표시합니다.
+
++
+[listing]
+----
+---- System Admin Account Setup ----
+Do you want to enforce secure password standard (yes/no) [y]:y  **<<<**
+
+Enter the password for "admin": password
+Confirm the password for "admin": password
+---- Basic System Configuration Dialog VDC: 1 ----
+
+This setup utility will guide you through the basic configuration of the system. Setup configures only enough connectivity for management of the system.
+
+Please register Cisco Nexus3000 Family devices promptly with your supplier. Failure to register may affect response times for initial service calls. Nexus3000 devices must be registered to receive entitled support services.
+
+Press Enter at anytime to skip a dialog. Use ctrl-c at anytime to skip the remaining dialogs.
+----
++
+스위치 이름, 관리 주소 및 게이트웨이를 포함하여 다음 프롬프트 세트에 기본 정보를 입력하고 SSH with RSA를 선택합니다.
+
++
+[listing]
+----
+Would you like to enter the basic configuration dialog (yes/no): yes
+  Create another login account (yes/no) [n]:
+  Configure read-only SNMP community string (yes/no) [n]:
+  Configure read-write SNMP community string (yes/no) [n]:
+  Enter the switch name : switch-name **<<<**
+  Continue with Out-of-band (mgmt0) management configuration? (yes/no) [y]:
+    Mgmt0 IPv4 address : management-IP-address  **<<<**
+   Mgmt0 IPv4 netmask : management-IP-netmask  **<<<**
+  Configure the default gateway? (yes/no) [y]: y **<<<**
+    IPv4 address of the default gateway : gateway-IP-address  **<<<**
+  Configure advanced IP options? (yes/no) [n]:
+  Enable the telnet service? (yes/no) [n]:
+  Enable the ssh service? (yes/no) [y]: y  **<<<**
+    Type of ssh key you would like to generate (dsa/rsa) [rsa]: rsa **<<<**
+   Number of rsa key bits <1024-2048> [1024]:
+ Configure the ntp server? (yes/no) [n]:
+  Configure default interface layer (L3/L2) [L2]:
+ Configure default switchport interface state (shut/noshut) [noshut]: shut **<<<**
+  Configure CoPP system profile (strict/moderate/lenient/dense) [strict]:
+----
++
+마지막 프롬프트 세트가 구성을 완료합니다.
+
++
+[listing]
+----
+The following configuration will be applied:
+ password strength-check
+  switchname IP_switch_A_1
+vrf context management
+ip route 0.0.0.0/0 10.10.99.1
+exit
+ no feature telnet
+  ssh key rsa 1024 force
+  feature ssh
+  system default switchport
+  system default switchport shutdown
+  copp profile strict
+interface mgmt0
+ip address 10.10.99.10 255.255.255.0
+no shutdown
+
+Would you like to edit the configuration? (yes/no) [n]:
+
+Use this configuration and save it? (yes/no) [y]:
+2017 Jun 13 21:24:43 A1 %$ VDC-1 %$ %COPP-2-COPP_POLICY: Control-Plane is protected with policy copp-system-p-policy-strict.
+
+[########################################] 100%
+Copy complete.
+
+User Access Verification
+IP_switch_A_1 login: admin
+Password:
+Cisco Nexus Operating System (NX-OS) Software
+.
+.
+.
+IP_switch_A_1#
+----
+
+
+. 구성을 저장합니다.
++
+[listing]
+----
+IP_switch-A-1# copy running-config startup-config
+----
+. 스위치를 재부팅하고 스위치가 다시 로드될 때까지 기다립니다.
++
+[listing]
+----
+IP_switch-A-1# reload
+----
+. MetroCluster IP 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.
+
+
+
+
+=== Cisco 스위치 NX-OS 소프트웨어 다운로드 및 설치
+
+MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF 파일을 다운로드해야 합니다.
+
+이 작업에는 FTP, TFTP, SFTP 또는 SCP와 같은 파일 전송 소프트웨어가 필요합니다. 스위치에 파일을 복사합니다.
+
+이러한 단계는 MetroCluster IP 구성의 각 IP 스위치에서 반복해야 합니다.
+
+지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
+
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+
+. 지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.
++
+https://software.cisco.com/download/home["Cisco 소프트웨어 다운로드"]
+
+. 스위치 소프트웨어를 스위치에 복사합니다. '+copy sftp://root@server-ip-address/tftpboot/nx-os-file-name bootflash:vrf management+'
++
+이 예제에서 nxos.7.0.3.I4.6.bin 파일은 SFTP 서버 10.10.99.99에서 로컬 bootflash로 복사됩니다.
+
++
+[listing]
+----
+IP_switch_A_1# copy sftp://root@10.10.99.99/tftpboot/nxos.7.0.3.I4.6.bin bootflash: vrf management
+root@10.10.99.99's password: password
+sftp> progress
+Progress meter enabled
+sftp> get   /tftpboot/nxos.7.0.3.I4.6.bin  /bootflash/nxos.7.0.3.I4.6.bin
+Fetching /tftpboot/nxos.7.0.3.I4.6.bin to /bootflash/nxos.7.0.3.I4.6.bin
+/tftpboot/nxos.7.0.3.I4.6.bin                 100%  666MB   7.2MB/s   01:32
+sftp> exit
+Copy complete, now saving to disk (please wait)...
+----
+. 각 스위치에서 스위치 NX-OS 파일이 각 스위치의 bootflash 디렉토리 'dir bootflash:'에 있는지 확인합니다
++
+다음 예제는 파일이 IP_SWITCH_A_1에 있음을 보여줍니다.
+
++
+[listing]
+----
+IP_switch_A_1# dir bootflash:
+                  .
+                  .
+                  .
+  698629632    Jun 13 21:37:44 2017  nxos.7.0.3.I4.6.bin
+                  .
+                  .
+                  .
+
+Usage for bootflash://sup-local
+ 1779363840 bytes used
+13238841344 bytes free
+15018205184 bytes total
+IP_switch_A_1#
+----
+. 스위치 소프트웨어 설치:'install all nxos bootflash: nxos.version-number.bin'
++
+스위치 소프트웨어가 설치되면 스위치는 자동으로 다시 로드(재부팅)됩니다.
+
++
+다음 예에서는 IP_SWITCH_A_1에 설치된 소프트웨어를 보여 줍니다.
+
++
+[listing]
+----
+IP_switch_A_1# install all nxos bootflash:nxos.7.0.3.I4.6.bin
+Installer will perform compatibility check first. Please wait.
+Installer is forced disruptive
+
+Verifying image bootflash:/nxos.7.0.3.I4.6.bin for boot variable "nxos".
+[####################] 100% -- SUCCESS
+
+Verifying image type.
+[####################] 100% -- SUCCESS
+
+Preparing "nxos" version info using image bootflash:/nxos.7.0.3.I4.6.bin.
+[####################] 100% -- SUCCESS
+
+Preparing "bios" version info using image bootflash:/nxos.7.0.3.I4.6.bin.
+[####################] 100% -- SUCCESS       [####################] 100%            -- SUCCESS
+
+Performing module support checks.            [####################] 100%            -- SUCCESS
+
+Notifying services about system upgrade.     [####################] 100%            -- SUCCESS
+
+
+
+Compatibility check is done:
+Module  bootable          Impact  Install-type  Reason
+------  --------  --------------  ------------  ------
+     1       yes      disruptive         reset  default upgrade is not hitless
+
+
+
+Images will be upgraded according to following table:
+Module       Image   Running-Version(pri:alt)         New-Version   Upg-Required
+------  ----------   ------------------------  ------------------   ------------
+     1        nxos                7.0(3)I4(1)         7.0(3)I4(6)   yes
+     1        bios         v04.24(04/21/2016)  v04.24(04/21/2016)   no
+
+
+Switch will be reloaded for disruptive upgrade.
+Do you want to continue with the installation (y/n)?  [n] y
+
+
+Install is in progress, please wait.
+
+Performing runtime checks.         [####################] 100%    -- SUCCESS
+
+Setting boot variables.
+[####################] 100% -- SUCCESS
+
+Performing configuration copy.
+[####################] 100% -- SUCCESS
+
+Module 1: Refreshing compact flash and upgrading bios/loader/bootrom.
+Warning: please do not remove or power off the module at this time.
+[####################] 100% -- SUCCESS
+
+
+Finishing the upgrade, switch will reboot in 10 seconds.
+IP_switch_A_1#
+----
+. 스위치가 다시 로드될 때까지 기다린 다음 스위치에 로그인합니다.
++
+스위치가 재부팅되면 로그인 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+User Access Verification
+IP_switch_A_1 login: admin
+Password:
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2017, Cisco and/or its affiliates.
+All rights reserved.
+.
+.
+.
+MDP database restore in progress.
+IP_switch_A_1#
+
+The switch software is now installed.
+----
+. 스위치 소프트웨어가 설치되어 있는지 확인합니다. '버전 확인'입니다
++
+다음 예는 출력을 보여줍니다.
+
++
+[listing]
+----
+IP_switch_A_1# show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2017, Cisco and/or its affiliates.
+All rights reserved.
+.
+.
+.
+
+Software
+  BIOS: version 04.24
+  NXOS: version 7.0(3)I4(6)   **<<< switch software version**
+  BIOS compile time:  04/21/2016
+  NXOS image file is: bootflash:///nxos.7.0.3.I4.6.bin
+  NXOS compile time:  3/9/2017 22:00:00 [03/10/2017 07:05:18]
+
+
+Hardware
+  cisco Nexus 3132QV Chassis
+  Intel(R) Core(TM) i3- CPU @ 2.50GHz with 16401416 kB of memory.
+  Processor Board ID FOC20123GPS
+
+  Device name: A1
+  bootflash:   14900224 kB
+  usb1:               0 kB (expansion flash)
+
+Kernel uptime is 0 day(s), 0 hour(s), 1 minute(s), 49 second(s)
+
+Last reset at 403451 usecs after  Mon Jun 10 21:43:52 2017
+
+  Reason: Reset due to upgrade
+  System version: 7.0(3)I4(1)
+  Service:
+
+plugin
+  Core Plugin, Ethernet Plugin
+IP_switch_A_1#
+----
+. MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.
+
+
+
+
+== Cisco 9336C 스위치에서 MACsec 암호화 구성
+
+필요한 경우 사이트 간에 실행되는 WAN ISL 포트에서 MACsec 암호화를 구성할 수 있습니다. 올바른 RCF 파일을 적용한 후 MACsec을 구성해야 합니다.
+
+
+NOTE: MACsec 암호화는 WAN ISL 포트에만 적용할 수 있습니다.
+
+
+
+=== MACsec에 대한 라이센스 요구 사항
+
+MACsec에는 보안 라이센스가 필요합니다. Cisco NX-OS 라이센스 체계에 대한 전체 설명 및 라이센스 취득 및 적용 방법은 을 참조하십시오 https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/licensing/guide/b_Cisco_NX-OS_Licensing_Guide/b_Cisco_NX-OS_Licensing_Guide_chapter_01.html["Cisco NX-OS 라이센스 가이드 를 참조하십시오"]
+
+
+
+=== MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL 활성화
+
+MetroCluster IP 구성에서 WAN ISL의 Cisco 9336C 스위치에 대해 MACsec 암호화를 설정할 수 있습니다.
+
+. '터미널 설정'이라는 글로벌 설정 모드로 진입한다
++
+[listing]
+----
+IP_switch_A_1# configure terminal
+IP_switch_A_1(config)#
+----
+. 장치에서 MACsec 및 MKA를 활성화합니다: "Feature MACsec"
++
+[listing]
+----
+IP_switch_A_1(config)# feature macsec
+----
+. 실행 중인 구성을 시작 구성에 복사합니다. 'copy running-config startup-config'
++
+[listing]
+----
+IP_switch_A_1(config)# copy running-config startup-config
+----
+
+
+
+
+=== Cisco MACsec 암호화 사용 안 함
+
+MetroCluster IP 구성에서 WAN ISL의 Cisco 9336C 스위치에 대한 MACsec 암호화를 비활성화해야 할 수 있습니다.
+
+
+NOTE: 암호화를 사용하지 않도록 설정하는 경우 키도 삭제해야 합니다.
+
+. '터미널 설정'이라는 글로벌 설정 모드로 진입한다
++
+[listing]
+----
+IP_switch_A_1# configure terminal
+IP_switch_A_1(config)#
+----
+. 장치에서 MACsec 구성을 비활성화합니다. 'macsec shutdown(밀리초 종료)'
++
+[listing]
+----
+IP_switch_A_1(config)# macsec shutdown
+----
++
+
+NOTE: no 옵션을 선택하면 MACsec 기능이 복원됩니다.
+
+. MACsec로 이미 구성한 인터페이스를 선택합니다.
++
+인터페이스 유형 및 ID를 지정할 수 있습니다. 이더넷 포트의 경우 이더넷 슬롯/포트를 사용합니다.
+
++
+[listing]
+----
+IP_switch_A_1(config)# interface ethernet 1/15
+switch(config-if)#
+----
+. MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인, 정책 및 fallback-keychain을 제거합니다. "no MACsec keychain keychain-name policy-name fallback-keychain-name"
++
+[listing]
+----
+IP_switch_A_1(config-if)# no macsec keychain kc2 policy abc fallback-keychain fb_kc2
+----
+. MACsec이 구성된 모든 인터페이스에서 3단계와 4단계를 반복합니다.
+. 실행 중인 구성을 시작 구성에 복사합니다. 'copy running-config startup-config'
++
+[listing]
+----
+IP_switch_A_1(config)# copy running-config startup-config
+----
+
+
+
+
+=== MACsec 키 체인 및 키 구성
+
+MACsec 키 체인 구성에 대한 자세한 내용은 해당 스위치에 대한 Cisco 설명서를 참조하십시오.
+
+
+
+== 새 NS224 쉘프 연결
+
+.단계
+. 키트 상자에 들어 있는 설치 안내물을 사용하여 선반과 함께 제공된 레일 마운트 키트를 설치합니다.
+. 설치 안내물을 사용하여 지지 브래킷과 랙 또는 캐비닛에 쉘프를 설치하고 고정합니다.
+. 전원 코드를 선반에 연결한 다음 전원 코드 고정쇠로 고정한 다음 전원 코드를 다른 전원에 연결하여 안정성을 확보합니다.
++
+선반이 전원에 연결되면 전원이 켜지고 전원 스위치가 없습니다. 올바르게 작동하면 전원 공급 장치의 이중 LED가 녹색으로 켜집니다.
+
+. 쉘프 ID를 HA 쌍 내에서 그리고 구성 전체에서 고유한 숫자로 설정합니다.
+. 쉘프 포트를 다음 순서로 연결합니다.
++
+.. NSM-A, e0a를 스위치에 연결합니다(스위치-A1 또는 스위치-B1).
+.. NSM-B, e0a를 스위치에 연결합니다(Switch-A2 또는 Switch-B2).
+.. NSM-A, e0b를 스위치에 연결(스위치-A1 또는 스위치-B1)
+.. NSM-B, e0b를 스위치에 연결(Switch-A2 또는 Switch-B2)
+
+
+. RcfFileGenerator** 도구에서 생성된 케이블 연결 레이아웃을 사용하여 셸프를 해당 포트에 케이블로 연결합니다.
++
+새 쉘프가 올바로 연결되면 ONTAP가 자동으로 네트워크에서 쉘프를 감지합니다.
+
+

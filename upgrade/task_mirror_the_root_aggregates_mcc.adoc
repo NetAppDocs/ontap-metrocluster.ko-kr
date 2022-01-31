@@ -1,0 +1,41 @@
+---
+permalink: upgrade/task_mirror_the_root_aggregates_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, mirror, root, aggregate 
+summary: 루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다. 
+---
+= 루트 애그리게이트를 미러링합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다.
+
+기본적으로 루트 애그리게이트는 RAID-DP 유형 Aggregate로 생성됩니다. 루트 애그리게이트를 RAID-DP에서 RAID4 유형 애그리게이트로 변경할 수 있습니다. 다음 명령을 실행하면 RAID4 유형 애그리게이트의 루트 애그리게이트가 수정됩니다.
+
+[listing]
+----
+storage aggregate modify –aggregate aggr_name -raidtype raid4
+----
+
+NOTE: ADP가 아닌 시스템에서는 aggregate가 미러링되기 전이나 후에 기본 RAID-DP에서 RAID4로 애그리게이트의 RAID 유형을 수정할 수 있습니다.
+
+.단계
+. 루트 애그리게이트 미러링:
++
+'Storage aggregate mirror_aggr_name_'
+
++
+다음 명령은 controller_a_1의 루트 애그리게이트를 미러링합니다.
+
++
+[listing]
+----
+controller_A_1::> storage aggregate mirror aggr0_controller_A_1
+----
++
+이 구성은 애그리게이트를 미러링하므로 원격 MetroCluster 사이트에 있는 로컬 플렉스와 원격 플렉스로 구성됩니다.
+
+. MetroCluster 구성의 각 노드에 대해 이전 단계를 반복합니다.
+

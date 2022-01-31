@@ -1,0 +1,72 @@
+---
+permalink: upgrade/task_change_the_ha_config_setts_mcc_add_a_2nd_controller.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, change, ha, config, sett, existing, new, controller, modules 
+summary: MetroCluster 구성을 확장하는 경우 기존 컨트롤러 모듈과 새 컨트롤러 모듈의 ha-config 설정을 업데이트해야 합니다. 또한 새 컨트롤러 모듈의 시스템 ID도 확인해야 합니다. 
+---
+= 기존 및 새 컨트롤러 모듈의 ha-config 설정 변경
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성을 확장하는 경우 기존 컨트롤러 모듈과 새 컨트롤러 모듈의 ha-config 설정을 업데이트해야 합니다. 또한 새 컨트롤러 모듈의 시스템 ID도 확인해야 합니다.
+
+이 작업은 기존 및 새 컨트롤러 모듈의 유지보수 모드에서 수행됩니다.
+
+.단계
+. 기존 컨트롤러 모듈의 ha-config 설정을 변경합니다.
++
+.. 기존 컨트롤러 모듈 및 섀시의 ha-config 설정을 표시합니다.
++
+하구성 쇼
+
++
+컨트롤러 모듈이 2노드 MetroCluster 구성이므로 ha-config 설정은 모든 구성 요소에 대해 "mcc-2n"입니다.
+
+.. 기존 컨트롤러 모듈의 ha-config 설정을 "mcc":+"ha-config modify controller MCC"로 변경합니다
+.. 기존 섀시의 ha-config 설정을 "mcc"로 변경합니다.
++
+하구성 수정 새시 MCC
+
+.. 기존 컨트롤러 모듈의 시스템 ID를 검색합니다.
++
+'시즈구성'을 선택합니다
+
++
+시스템 ID를 확인합니다. 새 컨트롤러 모듈에서 파트너 ID를 설정할 때 필요합니다.
+
+.. 유지보수 모드를 종료하여 로더 프롬프트로 돌아갑니다.
++
+"중지"
+
+
+
+. ha-config 설정을 변경하고 새 컨트롤러 모듈의 시스템 ID를 검색합니다.
++
+.. 새 컨트롤러 모듈이 아직 유지보수 모드가 아닌 경우 유지보수 모드로 부팅합니다.
++
+boot_ONTAP maint를 선택합니다
+
+.. 새 컨트롤러 모듈의 ha-config 설정을 "mcc"로 변경합니다.
++
+하구성 수정 컨트롤러 MCC
+
+.. 새 섀시의 ha-config 설정을 MCC로 변경합니다.
++
+하구성 수정 새시 MCC
+
+.. 새 컨트롤러 모듈의 시스템 ID를 검색합니다.
++
+'시즈구성'을 선택합니다
+
++
+시스템 ID를 확인합니다. 파트너 ID를 설정하고 디스크를 새 컨트롤러 모듈에 할당할 때 필요합니다.
+
+.. 유지보수 모드를 종료하여 로더 프롬프트로 돌아갑니다.
++
+"중지"
+
+
+
+

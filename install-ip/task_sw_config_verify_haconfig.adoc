@@ -1,0 +1,3026 @@
+---
+permalink: install-ip/task_sw_config_verify_haconfig.html 
+sidebar: sidebar 
+keywords: metrocluster, ha-config, mccip, haconfig, verify, high-availability 
+summary: 출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 mcip로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다. 
+---
+= 구성 요소의 ha-config 상태 확인
+:firstname: [.lead]
+:author: [.lead]
+:authorinitials: [
+:authors: [.lead]
+:revnumber: 
+:revdate: this value is preconfigured and you do not need to verify it.
+
+
+시스템이 유지보수 모드여야 합니다.
+
+.단계
+. 컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.
++
+하구성 쇼
+
++
+컨트롤러 모듈 및 섀시에는 "mccip" 값이 표시되어야 합니다.
+
+. 컨트롤러의 표시된 시스템 상태가 "mcip"이 아닌 경우 컨트롤러에 대한 HA 상태를 설정합니다.
++
+ha-config modify controller mcip.(컨트롤러 mccip 수정
+
+. 표시된 섀시 시스템 상태가 "mcip"이 아닌 경우 섀시의 HA 상태를 설정합니다.
++
+ha-config modify chassis mccip.(섀시 mcip 수정
+
+. MetroCluster 구성의 각 노드에서 이 단계를 반복합니다.
+
+
+
+
+== 컨트롤러 모듈에서 시스템 기본값을 복원합니다
+
+[role="lead"]
+컨트롤러 모듈에서 기본값을 재설정 및 복원합니다.
+
+. LOADER 프롬프트에서 환경 변수를 기본 설정인 'Set-defaults'로 되돌립니다
+. 노드를 부팅 메뉴(boot_ontap menu)로 부팅합니다
++
+이 명령을 실행한 후 부팅 메뉴가 표시될 때까지 기다립니다.
+
+. 노드 구성을 지웁니다.
++
+--
+** ADP에 구성된 시스템을 사용하는 경우 부팅 메뉴에서 옵션 9a를 선택하고 메시지가 표시되면 yes로 응답합니다.
++
+
+NOTE: 이 프로세스는 중단을 야기합니다.
+
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  9a
+########## WARNING ##########
+
+    This is a disruptive operation and will result in the
+    loss of all filesystem data. Before proceeding further,
+    make sure that:
+    1) This option (9a) has been executed or will be executed
+    on the HA partner node, prior to reinitializing either
+    system in the HA-pair.
+    2) The HA partner node is currently in a halted state or
+    at the LOADER prompt.
+
+
+    Do you still want to continue (yes/no)? yes
+----
+
+
+--
++
+** 시스템이 ADP에 대해 구성되지 않은 경우 부팅 메뉴 프롬프트에 "wipmpeconfig"를 입력한 다음 Enter 키를 누릅니다.
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  wipeconfig
+This option deletes critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?: yes
+Rebooting to finish wipeconfig request.
+----
+
+
+
+
+
+
+== 풀 0에 드라이브를 수동으로 할당합니다
+
+공장에서 사전 구성된 시스템을 받지 못한 경우 풀 0 드라이브를 수동으로 할당해야 할 수 있습니다. 플랫폼 모델 및 시스템에서 ADP를 사용하고 있는지 여부에 따라 MetroCluster IP 구성의 각 노드에 대해 드라이브를 수동으로 풀 0에 할당해야 합니다. 사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다.
+
+* <<man_assign_pool_0_9_4,풀 0에 드라이브 수동 할당(ONTAP 9.4 이상)>>
+* <<man_assign_pool_0_9_3,풀 0에 드라이브 수동 할당(ONTAP 9.3)>>
+
+
+
+
+=== 풀 0에 드라이브 수동 할당(ONTAP 9.4 이상)
+
+시스템이 출하 시 사전 구성되지 않았거나 자동 드라이브 할당 요구 사항을 충족하지 않는 경우 풀 0 드라이브를 수동으로 할당해야 합니다.
+
+이 절차는 ONTAP 9.4 이상을 실행하는 구성에 적용됩니다.
+
+시스템에 수동 디스크 할당이 필요한지 확인하려면 을(를) 검토해야 합니다 link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"].
+
+유지보수 모드에서 다음 단계를 수행합니다. 이 절차는 구성의 각 노드에서 수행해야 합니다.
+
+이 섹션의 예는 다음과 같은 가정을 기반으로 합니다.
+
+* 노드_A_1 및 노드_A_2의 드라이브 소유:
++
+** 사이트_A-쉘프_1(로컬)
+** 사이트_B-쉘프_2(원격)
+
+
+* 노드_B_1 및 노드_B_2의 드라이브 소유:
++
+** 사이트_B-쉘프_1(로컬)
+** 사이트_A-쉘프_2(원격)
+
+
+
+
+.단계
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. "9a" 옵션을 선택합니다.
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+[listing]
+----
+
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  9a
+########## WARNING ##########
+
+    This is a disruptive operation and will result in the
+    loss of all filesystem data. Before proceeding further,
+    make sure that:
+    1) This option (9a) has been executed or will be executed
+    on the HA partner node (and DR/DR-AUX partner nodes if
+    applicable), prior to reinitializing any system in the
+    HA-pair (or MetroCluster setup).
+    2) The HA partner node (and DR/DR-AUX partner nodes if
+    applicable) is currently waiting at the boot menu.
+
+    Do you still want to continue (yes/no)? yes
+----
+. 노드가 재시작되면 부팅 메뉴를 표시하라는 메시지가 표시되면 Ctrl-C를 누른 다음 * 유지보수 모드 부팅 * 옵션을 선택합니다.
+. 유지보수 모드에서 노드의 로컬 애그리게이트에 대해 드라이브를 수동으로 할당합니다.
++
+'디스크 할당_id_-p 0-s_local-node -sysid_'
+
++
+드라이브는 대칭적으로 할당되어야 하므로 각 노드의 드라이브 수는 동일합니다. 다음 단계는 각 사이트에 2개의 스토리지 쉘프가 있는 구성을 위한 것입니다.
+
++
+.. node_A_1을 구성할 때 site_A-shelf_1에서 노드 A1의 pool0에 슬롯 0에서 11로 드라이브를 수동으로 할당합니다.
+.. node_A_2를 구성할 때 site_A-shelf_1에서 노드 A2의 풀 0에 슬롯 12에서 23으로 드라이브를 수동으로 할당합니다.
+.. node_B_1을 구성할 때 site_B-shelf_1에서 노드 B1의 pool0에 슬롯 0에서 11로 드라이브를 수동으로 할당합니다.
+.. node_B_2를 구성할 때 slot 12에서 23 사이의 드라이브를 site_B-shelf_1에서 노드 B2의 pool0으로 수동으로 할당합니다.
+
+
+. 유지 관리 모드 종료:
++
+"중지"
+
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴에서 옵션 "4"를 선택하고 시스템을 부팅합니다.
+. MetroCluster IP 구성의 다른 노드에서 이 단계를 반복합니다.
+. 로 진행합니다 link:concept_configure_the_mcc_software_in_ontap.html#setting-up-ontap["ONTAP 설정"].
+
+
+
+
+=== 풀 0에 드라이브 수동 할당(ONTAP 9.3)
+
+각 노드에 대해 최소 2개의 디스크 쉘프가 있는 경우 ONTAP의 자동 할당 기능을 사용하여 로컬(풀 0) 디스크를 자동으로 할당합니다.
+
+노드가 유지보수 모드일 때는 먼저 적절한 쉘프의 단일 디스크를 풀 0에 할당해야 합니다. 그런 다음, ONTAP는 쉘프의 나머지 디스크를 동일한 풀에 자동으로 할당합니다. 이 작업은 공장에서 수신된 시스템에서 필요하지 않으며, 풀 0에는 사전 구성된 루트 애그리게이트가 포함되어 있습니다.
+
+이 절차는 ONTAP 9.3을 실행하는 구성에 적용됩니다.
+
+공장에서 MetroCluster 구성을 받은 경우에는 이 절차가 필요하지 않습니다. 팩토리 내의 노드는 풀 0 디스크 및 루트 애그리게이트로 구성됩니다.
+
+이 절차는 각 노드에 대해 디스크 쉘프가 2개 이상 있는 경우에만 사용할 수 있으며, 이를 통해 쉘프 레벨에서 디스크를 자동 할당할 수 있습니다. 쉘프 레벨 자동 할당을 사용할 수 없는 경우 각 노드에 로컬 디스크 풀(풀 0)이 있도록 로컬 디스크를 수동으로 할당해야 합니다.
+
+이러한 단계는 유지보수 모드에서 수행해야 합니다.
+
+이 섹션의 예제에서는 다음과 같은 디스크 쉘프를 가정합니다.
+
+* 노드_A_1은 다음 디스크에 디스크를 소유합니다.
++
+** 사이트_A-쉘프_1(로컬)
+** 사이트_B-쉘프_2(원격)
+
+
+* 노드_A_2가 다음에 연결되어 있습니다.
++
+** 사이트_A-쉘프_3(로컬)
+** 사이트_B-쉘프_4(원격)
+
+
+* Node_B_1이 다음에 연결되어 있습니다.
++
+** 사이트_B-쉘프_1(로컬)
+** 사이트_A-쉘프_2(원격)
+
+
+* 노드_B_2가 다음에 연결되어 있습니다.
++
+** 사이트_B-쉘프_3(로컬)
+** 사이트_A-쉘프_4(원격)
+
+
+
+
+.단계
+. 각 노드의 루트 애그리게이트에 대해 수동으로 단일 디스크 할당:
++
+'디스크 할당_id_-p 0-s_local-node -sysid_'
+
++
+이러한 디스크를 수동으로 할당하면 ONTAP 자동 할당 기능이 각 셸프의 나머지 디스크를 할당할 수 있습니다.
+
++
+.. node_A_1에서 로컬 site_a-shelf_1의 디스크 하나를 풀 0에 수동으로 할당합니다.
+.. node_A_2에서 로컬 site_A-shelf_3의 디스크 하나를 풀 0에 수동으로 할당합니다.
+.. node_B_1에서 로컬 site_B-shelf_1의 디스크 하나를 풀 0에 수동으로 할당합니다.
+.. node_B_2에서 로컬 site_B-shelf_3의 디스크 하나를 풀 0에 수동으로 할당합니다.
+
+
+. 부팅 메뉴의 옵션 "4"를 사용하여 사이트 A에서 각 노드를 부팅합니다.
++
+다음 노드로 진행하기 전에 노드에서 이 단계를 완료해야 합니다.
+
++
+.. 유지 관리 모드 종료:
++
+"중지"
+
+.. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+.. 부팅 메뉴에서 옵션 "4"를 선택하고 계속 진행합니다.
+
+
+. 부팅 메뉴의 옵션 "4"를 사용하여 사이트 B에서 각 노드를 부팅합니다.
++
+다음 노드로 진행하기 전에 노드에서 이 단계를 완료해야 합니다.
+
++
+.. 유지 관리 모드 종료:
++
+"중지"
+
+.. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+.. 부팅 메뉴에서 옵션 "4"를 선택하고 계속 진행합니다.
+
+
+
+
+
+
+== ONTAP 설정
+
+각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수행하라는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다.
+
+.시작하기 전에
+* MetroCluster 구성에 케이블로 연결되어 있어야 합니다.
+* 서비스 프로세서를 구성하지 않아야 합니다.
+
+
+새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 link:../upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#netbooting-the-new-controllers["새 컨트롤러 모듈을 Netbooting 합니다"] MetroCluster 업그레이드, 전환 및 확장 가이드 _.
+
+이 작업은 MetroCluster 구성의 두 클러스터 모두에서 수행해야 합니다.
+
+.단계
+. 아직 전원을 공급하지 않은 경우 로컬 사이트에서 각 노드의 전원을 켜고 모든 노드가 완전히 부팅되도록 합니다.
++
+시스템이 유지보수 모드인 경우 유지보수 모드를 종료하려면 halt 명령을 실행한 다음 'boot_ONTAP' 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 들어가야 합니다.
+
+. 각 클러스터의 첫 번째 노드에서 클러스터 구성 프롬프트를 계속 진행합니다
++
+.. 시스템에서 제공하는 지침에 따라 AutoSupport 도구를 활성화합니다.
++
+출력은 다음과 비슷해야 합니다.
+
++
+[listing]
+----
+Welcome to the cluster setup wizard.
+
+    You can enter the following commands at any time:
+    "help" or "?" - if you want to have a question clarified,
+    "back" - if you want to change previously answered questions, and
+    "exit" or "quit" - if you want to quit the cluster setup wizard.
+    Any changes you made before quitting will be saved.
+
+    You can return to cluster setup at any time by typing "cluster setup".
+    To accept a default or omit a question, do not enter a value.
+
+    This system will send event messages and periodic reports to NetApp Technical
+    Support. To disable this feature, enter
+    autosupport modify -support disable
+    within 24 hours.
+
+    Enabling AutoSupport can significantly speed problem determination and
+    resolution should a problem occur on your system.
+    For further information on AutoSupport, see:
+    http://support.netapp.com/autosupport/
+
+    Type yes to confirm and continue {yes}: yes
+
+.
+.
+.
+----
+.. 프롬프트에 응답하여 노드 관리 인터페이스를 구성합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Enter the node management interface port [e0M]:
+Enter the node management interface IP address: 172.17.8.229
+Enter the node management interface netmask: 255.255.254.0
+Enter the node management interface default gateway: 172.17.8.1
+A node management interface on port e0M with IP address 172.17.8.229 has been created.
+----
+.. 프롬프트에 응답하여 클러스터를 생성합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Do you want to create a new cluster or join an existing cluster? {create, join}:
+create
+
+
+Do you intend for this node to be used as a single node cluster? {yes, no} [no]:
+no
+
+Existing cluster interface configuration found:
+
+Port MTU IP Netmask
+e0a 1500 169.254.18.124 255.255.0.0
+e1a 1500 169.254.184.44 255.255.0.0
+
+Do you want to use this configuration? {yes, no} [yes]: no
+
+System Defaults:
+Private cluster network ports [e0a,e1a].
+Cluster port MTU values will be set to 9000.
+Cluster interface IP addresses will be automatically generated.
+
+Do you want to use these defaults? {yes, no} [yes]: no
+
+Enter the cluster administrator's (username "admin") password:
+
+Retype the password:
+
+
+Step 1 of 5: Create a Cluster
+You can type "back", "exit", or "help" at any question.
+
+List the private cluster network ports [e0a,e1a]:
+Enter the cluster ports' MTU size [9000]:
+Enter the cluster network netmask [255.255.0.0]: 255.255.254.0
+Enter the cluster interface IP address for port e0a: 172.17.10.228
+Enter the cluster interface IP address for port e1a: 172.17.10.229
+Enter the cluster name: cluster_A
+
+Creating cluster cluster_A
+
+Starting cluster support services ...
+
+Cluster cluster_A has been created.
+----
+.. 프롬프트에 응답하여 라이센스를 추가하고 클러스터 관리 SVM을 설정한 다음 DNS 정보를 입력합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Step 2 of 5: Add Feature License Keys
+You can type "back", "exit", or "help" at any question.
+
+Enter an additional license key []:
+
+
+Step 3 of 5: Set Up a Vserver for Cluster Administration
+You can type "back", "exit", or "help" at any question.
+
+
+Enter the cluster management interface port [e3a]:
+Enter the cluster management interface IP address: 172.17.12.153
+Enter the cluster management interface netmask: 255.255.252.0
+Enter the cluster management interface default gateway: 172.17.12.1
+
+A cluster management interface on port e3a with IP address 172.17.12.153 has been created. You can use this address to connect to and manage the cluster.
+
+Enter the DNS domain names: lab.netapp.com
+Enter the name server IP addresses: 172.19.2.30
+DNS lookup for the admin Vserver will use the lab.netapp.com domain.
+
+Step 4 of 5: Configure Storage Failover (SFO)
+You can type "back", "exit", or "help" at any question.
+
+
+SFO will be enabled when the partner joins the cluster.
+
+
+Step 5 of 5: Set Up the Node
+You can type "back", "exit", or "help" at any question.
+
+Where is the controller located []: svl
+----
+.. 프롬프트에 응답하여 스토리지 페일오버를 설정하고 노드를 설정합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Step 4 of 5: Configure Storage Failover (SFO)
+You can type "back", "exit", or "help" at any question.
+
+
+SFO will be enabled when the partner joins the cluster.
+
+
+Step 5 of 5: Set Up the Node
+You can type "back", "exit", or "help" at any question.
+
+Where is the controller located []: site_A
+----
+.. 노드 구성은 완료하지만 데이터 애그리게이트는 생성하지 않습니다.
++
+ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 (https://172.17.12.153)[].
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html["System Manager(버전 9.0 ~ 9.6)를 사용한 클러스터 관리"]
+
++
+https://docs.netapp.com/us-en/ontap/index.html["ONTAP 시스템 관리자(버전 9.7 이상)"]
+
+
+
+. 프롬프트에 따라 다음 컨트롤러를 부팅하고 클러스터에 연결합니다.
+. 노드가 고가용성 모드로 구성되었는지 확인합니다.
++
+'스토리지 페일오버 표시 필드 모드'
+
++
+그렇지 않은 경우 각 노드에서 HA 모드를 구성한 다음 노드를 재부팅해야 합니다.
+
++
+'Storage failover modify -mode ha-node_localhost_'
+
++
+이 명령은 고가용성 모드를 구성하지만 스토리지 페일오버를 사용하도록 설정하지는 않습니다. 스토리지 페일오버는 나중에 MetroCluster 구성을 구성할 때 자동으로 설정됩니다.
+
+. 클러스터 인터커넥트에 4개의 포트가 구성되어 있는지 확인합니다.
++
+네트워크 포트 쇼
+
++
+MetroCluster IP 인터페이스는 현재 구성되지 않으며 명령 출력에 표시되지 않습니다.
+
++
+다음 예에서는 node_A_1에 있는 두 개의 클러스터 포트를 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::*> network port show -role cluster
+
+
+
+Node: node_A_1
+
+                                                                       Ignore
+
+                                                  Speed(Mbps) Health   Health
+
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+
+e4a       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+e4e       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+
+Node: node_A_2
+
+                                                                       Ignore
+
+                                                  Speed(Mbps) Health   Health
+
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+
+e4a       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+e4e       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+
+4 entries were displayed.
+----
+. 파트너 클러스터에서 이 단계를 반복합니다.
+
+
+ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.
+
+
+
+== 클러스터를 MetroCluster 구성으로 구성합니다
+
+클러스터를 피어로 사용하고, 루트 애그리게이트를 미러링하고, 미러링된 데이터 애그리게이트를 생성한 다음, 명령을 실행하여 MetroCluster 작업을 구현해야 합니다.
+
+
+
+=== 자동 드라이브 할당 비활성화(ONTAP 9.4에서 수동 할당을 수행하는 경우)
+
+ONTAP 9.4에서 MetroCluster IP 구성의 사이트당 외부 스토리지 쉘프가 4개 미만인 경우 모든 노드에서 자동 드라이브 할당을 해제하고 드라이브를 수동으로 할당해야 합니다.
+
+ONTAP 9.5 이상에서는 이 작업이 필요하지 않습니다.
+
+이 작업은 내부 선반과 외부 선반이 없는 AFF A800 시스템에는 적용되지 않습니다.
+
+link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"]
+
+.단계
+. 자동 드라이브 할당 비활성화:
++
+'storage disk option modify -node_name -autoassign off'
+
++
+MetroCluster IP 구성의 모든 노드에서 이 명령을 실행해야 합니다.
+
+
+
+
+
+=== 풀 0 드라이브의 드라이브 할당을 확인하는 중입니다
+
+원격 드라이브가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
+
+자동 할당은 스토리지 시스템 플랫폼 모델 및 드라이브 쉘프 배열에 따라 다릅니다.
+
+link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"]
+
+.단계
+. 풀 0 드라이브가 자동으로 할당되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+다음 예는 외부 쉘프가 없는 AFF A800 시스템에 대한 "cluster_a" 출력을 보여줍니다.
+
++
+1분기(8개 드라이브)가 "node_A_1"에 자동으로 할당되고 1분기가 "node_A_2"에 자동으로 할당됩니다. 나머지 드라이브는 "node_B_1" 및 "node_B_2"에 대한 원격(풀 1) 드라이브입니다.
+
++
+[listing]
+----
+cluster_A::*> disk show
+                 Usable     Disk      Container           Container
+Disk             Size       Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+node_A_1:0n.12   1.75TB     0     12  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.13   1.75TB     0     13  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.14   1.75TB     0     14  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.15   1.75TB     0     15  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.16   1.75TB     0     16  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.17   1.75TB     0     17  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.18   1.75TB     0     18  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.19   1.75TB     0     19  SSD-NVM shared      -         node_A_1
+node_A_2:0n.0    1.75TB     0     0   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.1    1.75TB     0     1   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.2    1.75TB     0     2   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.3    1.75TB     0     3   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.4    1.75TB     0     4   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.5    1.75TB     0     5   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.6    1.75TB     0     6   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.7    1.75TB     0     7   SSD-NVM shared      -         node_A_2
+node_A_2:0n.24   -          0     24  SSD-NVM unassigned  -         -
+node_A_2:0n.25   -          0     25  SSD-NVM unassigned  -         -
+node_A_2:0n.26   -          0     26  SSD-NVM unassigned  -         -
+node_A_2:0n.27   -          0     27  SSD-NVM unassigned  -         -
+node_A_2:0n.28   -          0     28  SSD-NVM unassigned  -         -
+node_A_2:0n.29   -          0     29  SSD-NVM unassigned  -         -
+node_A_2:0n.30   -          0     30  SSD-NVM unassigned  -         -
+node_A_2:0n.31   -          0     31  SSD-NVM unassigned  -         -
+node_A_2:0n.36   -          0     36  SSD-NVM unassigned  -         -
+node_A_2:0n.37   -          0     37  SSD-NVM unassigned  -         -
+node_A_2:0n.38   -          0     38  SSD-NVM unassigned  -         -
+node_A_2:0n.39   -          0     39  SSD-NVM unassigned  -         -
+node_A_2:0n.40   -          0     40  SSD-NVM unassigned  -         -
+node_A_2:0n.41   -          0     41  SSD-NVM unassigned  -         -
+node_A_2:0n.42   -          0     42  SSD-NVM unassigned  -         -
+node_A_2:0n.43   -          0     43  SSD-NVM unassigned  -         -
+32 entries were displayed.
+----
++
+다음 예에서는 "cluster_B" 출력을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> disk show
+                 Usable     Disk              Container   Container
+Disk             Size       Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+
+Info: This cluster has partitioned disks. To get a complete list of spare disk
+capacity use "storage aggregate show-spare-disks".
+node_B_1:0n.12   1.75TB     0     12  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.13   1.75TB     0     13  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.14   1.75TB     0     14  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.15   1.75TB     0     15  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.16   1.75TB     0     16  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.17   1.75TB     0     17  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.18   1.75TB     0     18  SSD-NVM shared      aggr0     node_B_1
+node_B_1:0n.19   1.75TB     0     19  SSD-NVM shared      -         node_B_1
+node_B_2:0n.0    1.75TB     0     0   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.1    1.75TB     0     1   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.2    1.75TB     0     2   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.3    1.75TB     0     3   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.4    1.75TB     0     4   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.5    1.75TB     0     5   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.6    1.75TB     0     6   SSD-NVM shared      aggr0_node_B_1_0 node_B_2
+node_B_2:0n.7    1.75TB     0     7   SSD-NVM shared      -         node_B_2
+node_B_2:0n.24   -          0     24  SSD-NVM unassigned  -         -
+node_B_2:0n.25   -          0     25  SSD-NVM unassigned  -         -
+node_B_2:0n.26   -          0     26  SSD-NVM unassigned  -         -
+node_B_2:0n.27   -          0     27  SSD-NVM unassigned  -         -
+node_B_2:0n.28   -          0     28  SSD-NVM unassigned  -         -
+node_B_2:0n.29   -          0     29  SSD-NVM unassigned  -         -
+node_B_2:0n.30   -          0     30  SSD-NVM unassigned  -         -
+node_B_2:0n.31   -          0     31  SSD-NVM unassigned  -         -
+node_B_2:0n.36   -          0     36  SSD-NVM unassigned  -         -
+node_B_2:0n.37   -          0     37  SSD-NVM unassigned  -         -
+node_B_2:0n.38   -          0     38  SSD-NVM unassigned  -         -
+node_B_2:0n.39   -          0     39  SSD-NVM unassigned  -         -
+node_B_2:0n.40   -          0     40  SSD-NVM unassigned  -         -
+node_B_2:0n.41   -          0     41  SSD-NVM unassigned  -         -
+node_B_2:0n.42   -          0     42  SSD-NVM unassigned  -         -
+node_B_2:0n.43   -          0     43  SSD-NVM unassigned  -         -
+32 entries were displayed.
+
+cluster_B::>
+----
+
+
+
+
+=== 클러스터 피어링
+
+MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 복구에 필요한 데이터 미러링을 수행할 수 있도록 피어 관계에 있어야 합니다.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
+
+link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
+
+link:concept_considerations_peering.html#considerations-when-sharing-data-ports["데이터 포트 공유 시 고려 사항"]
+
+
+
+=== 클러스터 피어링을 위한 인터클러스터 LIF 구성
+
+MetroCluster 파트너 클러스터 간 통신에 사용되는 포트에 대한 인터클러스터 LIF를 생성해야 합니다. 데이터 트래픽도 있는 전용 포트 또는 포트를 사용할 수 있습니다.
+
+
+
+==== 전용 포트에 대한 인터클러스터 LIF 구성
+
+전용 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 일반적으로 복제 트래픽에 사용할 수 있는 대역폭이 증가합니다.
+
+.단계
+. 클러스터의 포트 나열:
++
+네트워크 포트 쇼
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예는 cluster01의 네트워크 포트를 보여줍니다.
+
++
+[listing]
+----
+
+cluster01::> network port show
+                                                             Speed (Mbps)
+Node   Port      IPspace      Broadcast Domain Link   MTU    Admin/Oper
+------ --------- ------------ ---------------- ----- ------- ------------
+cluster01-01
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+       e0e       Default      Default          up     1500   auto/1000
+       e0f       Default      Default          up     1500   auto/1000
+cluster01-02
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+       e0e       Default      Default          up     1500   auto/1000
+       e0f       Default      Default          up     1500   auto/1000
+----
+. 인터클러스터 통신 전용으로 사용할 수 있는 포트를 확인합니다.
++
+네트워크 인터페이스 보기 필드 홈 포트, 통화 포트
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 포트 "e0e" 및 "e0f"에 LIF가 할당되지 않은 것을 보여 줍니다.
+
++
+[listing]
+----
+
+cluster01::> network interface show -fields home-port,curr-port
+vserver lif                  home-port curr-port
+------- -------------------- --------- ---------
+Cluster cluster01-01_clus1   e0a       e0a
+Cluster cluster01-01_clus2   e0b       e0b
+Cluster cluster01-02_clus1   e0a       e0a
+Cluster cluster01-02_clus2   e0b       e0b
+cluster01
+        cluster_mgmt         e0c       e0c
+cluster01
+        cluster01-01_mgmt1   e0c       e0c
+cluster01
+        cluster01-02_mgmt1   e0c       e0c
+----
+. 전용 포트에 대한 페일오버 그룹을 생성합니다.
++
+'network interface failover-groups create-vserver_system_SVM_-failover-group_failover_group_-targets_physical_or_logical_ports_'
+
++
+다음 예에서는 "SVMcluster01" 시스템의 페일오버 그룹 "intercluster01"에 포트 "e0e" 및 "e0f"를 할당합니다.
+
++
+[listing]
+----
+cluster01::> network interface failover-groups create -vserver cluster01 -failover-group
+intercluster01 -targets
+cluster01-01:e0e,cluster01-01:e0f,cluster01-02:e0e,cluster01-02:e0f
+----
+. 페일오버 그룹이 생성되었는지 확인합니다.
++
+네트워크 인터페이스 페일오버 그룹들이 보여줌
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+[listing]
+----
+cluster01::> network interface failover-groups show
+                                  Failover
+Vserver          Group            Targets
+---------------- ---------------- --------------------------------------------
+Cluster
+                 Cluster
+                                  cluster01-01:e0a, cluster01-01:e0b,
+                                  cluster01-02:e0a, cluster01-02:e0b
+cluster01
+                 Default
+                                  cluster01-01:e0c, cluster01-01:e0d,
+                                  cluster01-02:e0c, cluster01-02:e0d,
+                                  cluster01-01:e0e, cluster01-01:e0f
+                                  cluster01-02:e0e, cluster01-02:e0f
+                 intercluster01
+                                  cluster01-01:e0e, cluster01-01:e0f
+                                  cluster01-02:e0e, cluster01-02:e0f
+----
+. 시스템 SVM에 대한 인터클러스터 LIF를 생성한 다음 이를 페일오버 그룹에 할당합니다.
++
+|===
+
+
+| ONTAP 버전입니다 | 명령 
+
+
+ a| 
+9.6 이상
+ a| 
+"네트워크 인터페이스 create-vserver_system_SVM_-lif_LIF_name_-service-policy default-인터클러스터-home-node_node_-home-port_port_-address_port_ip_-netmask_mask_-failover-group_group_"
+
+
+
+ a| 
+9.5 이하
+ a| 
+'network interface create -vserver_system_SVM_-lif_LIF_name_-role 인터클러스터 -home-node_node_-home-port_port_-address_port_ip_-netmask_mask_-failover -group_failover_group_'
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 페일오버 그룹 "intercluster01"에 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"를 생성합니다.
+
++
+[listing]
+----
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl01 -service-
+policy default-intercluster -home-node cluster01-01 -home-port e0e -address 192.168.1.201
+-netmask 255.255.255.0 -failover-group intercluster01
+
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl02 -service-
+policy default-intercluster -home-node cluster01-02 -home-port e0e -address 192.168.1.202
+-netmask 255.255.255.0 -failover-group intercluster01
+----
+. 인터클러스터 LIF가 생성되었는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+네트워크 인터페이스 show-service-policy default-인터클러스터
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터(network interface show-role 인터클러스터)
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+cluster01
+            cluster01_icl01
+                       up/up      192.168.1.201/24   cluster01-01  e0e     true
+            cluster01_icl02
+                       up/up      192.168.1.202/24   cluster01-02  e0f     true
+----
+. 인터클러스터 LIF가 중복되는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+네트워크 인터페이스 show-service-policy default-인터클러스터-failover를 선택합니다
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터-failover를 참조하십시오
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 "e0e" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0f" 포트로 페일오버된다는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster –failover
+         Logical         Home                  Failover        Failover
+Vserver  Interface       Node:Port             Policy          Group
+-------- --------------- --------------------- --------------- --------
+cluster01
+         cluster01_icl01 cluster01-01:e0e   local-only      intercluster01
+                            Failover Targets:  cluster01-01:e0e,
+                                               cluster01-01:e0f
+         cluster01_icl02 cluster01-02:e0e   local-only      intercluster01
+                            Failover Targets:  cluster01-02:e0e,
+                                               cluster01-02:e0f
+----
+
+
+link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
+
+
+
+==== 공유 데이터 포트에 대한 인터클러스터 LIF 구성
+
+데이터 네트워크와 공유하는 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 인터클러스터 네트워킹에 필요한 포트 수가 줄어듭니다.
+
+. 클러스터의 포트 나열:
++
+네트워크 포트 쇼
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예는 cluster01의 네트워크 포트를 보여줍니다.
+
++
+[listing]
+----
+
+cluster01::> network port show
+                                                             Speed (Mbps)
+Node   Port      IPspace      Broadcast Domain Link   MTU    Admin/Oper
+------ --------- ------------ ---------------- ----- ------- ------------
+cluster01-01
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+cluster01-02
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+----
+. 시스템 SVM에 대한 인터클러스터 LIF 생성:
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+'network interface create-vserver_system_SVM_-lif_LIF_name_-service-policy default-인터클러스터-home-node_node_-home-port_port_-address_port_ip_-netmask_mask_'
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+'network interface create-vserver_system_SVM_-lif_LIF_name_-role l인터클러스터-home-node_node_-home-port_port_-address_port_ip_-netmask_mask_'
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"를 생성합니다.
+
++
+[listing]
+----
+
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl01 -service-
+policy default-intercluster -home-node cluster01-01 -home-port e0c -address 192.168.1.201
+-netmask 255.255.255.0
+
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl02 -service-
+policy default-intercluster -home-node cluster01-02 -home-port e0c -address 192.168.1.202
+-netmask 255.255.255.0
+----
+. 인터클러스터 LIF가 생성되었는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+네트워크 인터페이스 show-service-policy default-인터클러스터
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터(network interface show-role 인터클러스터)
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+cluster01
+            cluster01_icl01
+                       up/up      192.168.1.201/24   cluster01-01  e0c     true
+            cluster01_icl02
+                       up/up      192.168.1.202/24   cluster01-02  e0c     true
+----
+. 인터클러스터 LIF가 중복되는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+'network interface show – service-policy default-인터클러스터-failover'
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터-failover를 참조하십시오
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 "e0c" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0d" 포트로 페일오버되는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster –failover
+         Logical         Home                  Failover        Failover
+Vserver  Interface       Node:Port             Policy          Group
+-------- --------------- --------------------- --------------- --------
+cluster01
+         cluster01_icl01 cluster01-01:e0c   local-only      192.168.1.201/24
+                            Failover Targets: cluster01-01:e0c,
+                                              cluster01-01:e0d
+         cluster01_icl02 cluster01-02:e0c   local-only      192.168.1.201/24
+                            Failover Targets: cluster01-02:e0c,
+                                              cluster01-02:e0d
+----
+
+
+link:concept_considerations_peering.html#considerations-when-sharing-data-ports["데이터 포트 공유 시 고려 사항"]
+
+
+
+=== 클러스터 피어 관계 생성
+
+클러스터 피어 생성 명령을 사용하여 로컬 클러스터와 원격 클러스터 간에 피어 관계를 생성할 수 있습니다. 피어 관계가 생성된 후 원격 클러스터에서 클러스터 피어 생성을 실행하여 로컬 클러스터에 인증할 수 있습니다.
+
+.시작하기 전에
+* 피어링될 클러스터의 모든 노드에 대한 인터클러스터 LIF를 생성해야 합니다.
+* 클러스터는 ONTAP 9.3 이상을 실행해야 합니다.
+
+
+.단계
+. 대상 클러스터에서 소스 클러스터와의 피어 관계를 생성합니다.
++
+'클러스터 피어 생성 - 생성 - 패스프레이즈 - 오퍼 - EXPIRATION_MM/DD/YYYY HH:MM:SS|1...7일|1...168시간_-피어-addrs_peer_LIF_IPIP_-IPSpace_IPSpace_'
+
++
+'-generate-passphrase와 '-peer-addrs'를 모두 지정하면 '-peer-addrs'에 지정된 인터클러스터 LIF가 있는 클러스터만 생성된 암호를 사용할 수 있습니다.
+
++
+사용자 지정 IPspace를 사용하지 않는 경우 '-IPSpace' 옵션을 무시할 수 있습니다. 전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 지정되지 않은 원격 클러스터에 클러스터 피어 관계를 생성합니다.
+
++
+[listing]
+----
+cluster02::> cluster peer create -generate-passphrase -offer-expiration 2days
+
+                     Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+                Expiration Time: 6/7/2017 08:16:10 EST
+  Initial Allowed Vserver Peers: -
+            Intercluster LIF IP: 192.140.112.101
+              Peer Cluster Name: Clus_7ShR (temporary generated)
+
+Warning: make a note of the passphrase - it cannot be displayed again.
+----
+. 소스 클러스터에서 소스 클러스터를 대상 클러스터에 인증합니다.
++
+'cluster peer create-peer-addrs_peer_LIF_ips_-IPSpace_IPSpace_'
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 인터클러스터 LIF IP 주소 "192.140.112.101" 및 "192.140.112.102"에서 원격 클러스터에 대한 로컬 클러스터를 인증합니다.
+
++
+[listing]
+----
+cluster01::> cluster peer create -peer-addrs 192.140.112.101,192.140.112.102
+
+Notice: Use a generated passphrase or choose a passphrase of 8 or more characters.
+        To ensure the authenticity of the peering relationship, use a phrase or sequence of characters that would be hard to guess.
+
+Enter the passphrase:
+Confirm the passphrase:
+
+Clusters cluster02 and cluster01 are peered.
+----
++
+메시지가 나타나면 피어 관계에 대한 암호를 입력합니다.
+
+. 클러스터 피어 관계가 생성되었는지 확인합니다.
++
+클러스터 피어 쇼 인스턴스
+
++
+[listing]
+----
+cluster01::> cluster peer show -instance
+
+                               Peer Cluster Name: cluster02
+                   Remote Intercluster Addresses: 192.140.112.101, 192.140.112.102
+              Availability of the Remote Cluster: Available
+                             Remote Cluster Name: cluster2
+                             Active IP Addresses: 192.140.112.101, 192.140.112.102
+                           Cluster Serial Number: 1-80-123456
+                  Address Family of Relationship: ipv4
+            Authentication Status Administrative: no-authentication
+               Authentication Status Operational: absent
+                                Last Update Time: 02/05 21:05:41
+                    IPspace for the Relationship: Default
+----
+. 피어 관계에서 노드의 접속 상태와 상태를 확인합니다.
++
+클러스터 피어 상태 쇼
+
++
+[listing]
+----
+cluster01::> cluster peer health show
+Node       cluster-Name                Node-Name
+             Ping-Status               RDB-Health Cluster-Health  Avail…
+---------- --------------------------- ---------  --------------- --------
+cluster01-01
+           cluster02                   cluster02-01
+             Data: interface_reachable
+             ICMP: interface_reachable true       true            true
+                                       cluster02-02
+             Data: interface_reachable
+             ICMP: interface_reachable true       true            true
+cluster01-02
+           cluster02                   cluster02-01
+             Data: interface_reachable
+             ICMP: interface_reachable true       true            true
+                                       cluster02-02
+             Data: interface_reachable
+             ICMP: interface_reachable true       true            true
+----
+
+
+
+
+=== DR 그룹 생성
+
+클러스터 간에 DR(재해 복구) 그룹 관계를 생성해야 합니다.
+
+MetroCluster 구성의 클러스터 중 하나에서 이 절차를 수행하여 두 클러스터의 노드 간에 DR 관계를 생성합니다.
+
+
+NOTE: DR 그룹을 생성한 후에는 DR 관계를 변경할 수 없습니다.
+
+image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+
+.단계
+. 각 노드에 다음 명령을 입력하여 DR 그룹을 생성할 준비가 되었는지 확인합니다.
++
+'MetroCluster configuration-settings show-status'를 선택합니다
+
++
+명령 출력에 노드가 준비되었음을 표시해야 합니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings show-status
+Cluster                    Node          Configuration Settings Status
+-------------------------- ------------- --------------------------------
+cluster_A                  node_A_1      ready for DR group create
+                           node_A_2      ready for DR group create
+2 entries were displayed.
+----
++
+[listing]
+----
+cluster_B::> metrocluster configuration-settings show-status
+Cluster                    Node          Configuration Settings Status
+-------------------------- ------------- --------------------------------
+cluster_B                  node_B_1      ready for DR group create
+                           node_B_2      ready for DR group create
+2 entries were displayed.
+----
+. DR 그룹 'MetroCluster configuration-settings dr-group create-partner-cluster_partner-cluster-name_-local-node_local-node-name_-remote-node_remote-node-name_'을 생성합니다
++
+이 명령은 한 번만 실행됩니다. 파트너 클러스터에서 이 작업을 반복할 필요는 없습니다. 명령에서 원격 클러스터의 이름과 파트너 클러스터의 한 로컬 노드 및 한 노드 이름을 지정합니다.
+
++
+지정하는 두 노드는 DR 파트너로 구성되며 다른 두 노드(명령에 지정되지 않음)는 DR 그룹에서 두 번째 DR 쌍으로 구성됩니다. 이 명령을 입력한 후에는 이러한 관계를 변경할 수 없습니다.
+
++
+다음 명령을 실행하면 이러한 DR 쌍이 생성됩니다.
+
++
+** NODE_A_1 및 NODE_B_1
+** NODE_A_2 및 NODE_B_2
+
+
++
+[listing]
+----
+Cluster_A::> metrocluster configuration-settings dr-group create -partner-cluster cluster_B -local-node node_A_1 -remote-node node_B_1
+[Job 27] Job succeeded: DR Group Create is successful.
+----
+
+
+
+
+=== MetroCluster IP 인터페이스 구성 및 연결
+
+각 노드의 스토리지 및 비휘발성 캐시의 복제에 사용되는 MetroCluster IP 인터페이스를 구성해야 합니다. 그런 다음 MetroCluster IP 인터페이스를 사용하여 연결을 설정합니다. 이렇게 하면 스토리지 복제에 대한 iSCSI 연결이 생성됩니다.
+
+.이 작업에 대해
+--
+
+NOTE: 초기 구성 후에는 변경할 수 없으므로 MetroCluster IP 주소를 신중하게 선택해야 합니다.
+
+--
+* 각 노드에 대해 2개의 인터페이스를 생성해야 합니다. 인터페이스는 MetroCluster RCF 파일에 정의된 VLAN과 연결되어야 합니다.
+* 동일한 VLAN에 모든 MetroCluster IP 인터페이스 "A" 포트를 생성하고 다른 VLAN에 모든 MetroCluster IP 인터페이스 "B" 포트를 생성해야 합니다. 을 참조하십시오 link:concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 사항"].
+
+
+를 누릅니다
+
+--
+[NOTE]
+====
+* 특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).
+* ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+
+
+====
+--
++다음 플랫폼 모델은 VLAN을 사용하고 기본이 아닌 VLAN ID를 구성할 수 있습니다.
+
+를 누릅니다
+
+|===
+
+
+| AFF 플랫폼 | FAS 플랫폼 
+
+
+ a| 
+* AFF A220
+* AFF A250
+* AFF A400
+
+ a| 
+* FAS2750
+* 500f로 설정합니다
+* FAS8300
+* FAS8700
+
+
+|===
+이 예에서는 다음과 같은 IP 주소와 서브넷이 사용됩니다.
+
+|===
+
+
+| 노드 | 인터페이스 | IP 주소입니다 | 서브넷 
+
+
+ a| 
+노드_A_1
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.1
+ a| 
+10.1.1/24
+
+
+
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.1
+ a| 
+10.1.2/24
+
+
+
+ a| 
+노드_A_2
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.2
+ a| 
+10.1.1/24
+
+
+
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.2
+ a| 
+10.1.2/24
+
+
+
+ a| 
+노드_B_1
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.3
+ a| 
+10.1.1/24
+
+
+
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.3
+ a| 
+10.1.2/24
+
+
+
+ a| 
+노드_B_2
+ a| 
+MetroCluster IP 인터페이스 1
+ a| 
+10.1.1.4
+ a| 
+10.1.1/24
+
+
+
+ a| 
+MetroCluster IP 인터페이스 2
+ a| 
+10.1.2.4
+ a| 
+10.1.2/24
+
+|===
+MetroCluster IP 인터페이스에서 사용하는 물리적 포트는 다음 표와 같이 플랫폼 모델에 따라 다릅니다.
+
+|===
+| 플랫폼 모델 | MetroCluster IP 포트입니다 | 참고 
+
+
+ a| 
+AFF A900
+ a| 
+e5b
+ a| 
+
+
+
+ a| 
+e7b
+
+
+
+ a| 
+AFF A800
+ a| 
+e0b
+ a| 
+
+
+
+ a| 
+e1b
+
+
+
+ a| 
+AFF A700 및 FAS900
+ a| 
+e5a
+ a| 
+
+
+
+ a| 
+e5b
+
+
+
+ a| 
+AFF A400
+ a| 
+e3a
+ a| 
+
+
+
+ a| 
+e3b
+
+
+
+ a| 
+AFF A320
+ a| 
+e0g
+ a| 
+
+
+
+ a| 
+e0h
+
+
+
+ a| 
+AFF A300 및 FAS8200
+ a| 
+E1A
+ a| 
+
+
+
+ a| 
+e1b
+
+
+
+ a| 
+AFF A220 및 FAS2750
+ a| 
+e0a
+ a| 
+이러한 시스템에서는 이러한 물리적 포트도 클러스터 인터페이스로 사용됩니다.
+
+
+
+ a| 
+e0b
+
+
+
+ a| 
+AFF A250 및 FAS500f
+ a| 
+e0c
+ a| 
+
+
+
+ a| 
+e0d
+
+
+
+ a| 
+FAS8300 및 FAS8700
+ a| 
+e0c
+ a| 
+
+
+
+ a| 
+e0d
+
+|===
+다음 예제의 포트 사용은 AFF A700 또는 FAS9000 시스템에 대한 것입니다.
+
+. 각 노드에 디스크 자동 할당이 설정되었는지 확인합니다.
++
+'스토리지 디스크 옵션 표시'
+
++
+디스크 자동 할당은 풀 0 및 풀 1 디스크를 쉘프별로 할당합니다.
+
++
+자동 할당 열은 디스크 자동 할당이 설정되었는지 여부를 나타냅니다.
+
++
+[listing]
+----
+
+Node        BKg. FW. Upd.  Auto Copy   Auto Assign  Auto Assign Policy
+----------  -------------  ----------  -----------  ------------------
+node_A_1             on           on           on           default
+node_A_2             on           on           on           default
+2 entries were displayed.
+----
+. 노드에서 MetroCluster IP 인터페이스를 생성할 수 있는지 검증:
++
+'MetroCluster configuration-settings show-status'를 선택합니다
+
++
+모든 노드가 준비되어 있어야 함:
+
++
+[listing]
+----
+
+Cluster       Node         Configuration Settings Status
+----------    -----------  ---------------------------------
+cluster_A
+              node_A_1     ready for interface create
+              node_A_2     ready for interface create
+cluster_B
+              node_B_1     ready for interface create
+              node_B_2     ready for interface create
+4 entries were displayed.
+----
+. "node_a_1"에 인터페이스를 생성합니다.
++
+--
+[NOTE]
+====
+** 다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
+** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+** MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.
+
+
+====
+--
++
+.. node_A_1의 포트 "e5a"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.1.1"이 있는 "node_a_1"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_A_1 -home-port e5a -address 10.1.1.1 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
+.. "node_a_1"의 포트 "e5b"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.2.1"을 사용하여 "node_a_1"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_A_1 -home-port e5b -address 10.1.2.1 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
+
+
++
+
+NOTE: 'MetroCluster configuration-settings interface show' 명령을 사용하여 이러한 인터페이스가 있는지 확인할 수 있습니다.
+
+. "node_a_2"에 인터페이스를 생성합니다.
++
+--
+[NOTE]
+====
+** 다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
+** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+** MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.
+
+
+====
+--
++
+.. "node_a_2"의 포트 "e5a"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.1.2"가 있는 "node_a_2"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_A_2 -home-port e5a -address 10.1.1.2 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
++
+MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 AFF ID가 "120"인 VLAN A220 시스템에 대한 명령을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_A_2 -home-port e0a -address 10.1.1.2 -netmask 255.255.255.0 -vlan-id 120
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
+.. "node_a_2"의 포트 "e5b"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.2.2"를 사용하여 "node_a_2"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_A_2 -home-port e5b -address 10.1.2.2 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
++
+MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 VLAN ID가 "220"인 AFF A220 시스템에 대한 명령을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_A_2 -home-port e0b -address 10.1.2.2 -netmask 255.255.255.0 -vlan-id 220
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
+
+
+. "node_B_1"에 인터페이스를 생성합니다.
++
+--
+[NOTE]
+====
+** 다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
+** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+** MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.
+
+
+====
+--
++
+.. "node_B_1"의 포트 "e5a"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.1.3"이 있는 "node_B_1"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_B_1 -home-port e5a -address 10.1.1.3 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.cluster_A::>
+----
+.. "node_B_1"의 포트 "e5b"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.2.3"을 사용하여 "node_B_1"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_B_1 -home-port e5b -address 10.1.2.3 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.cluster_A::>
+----
+
+
+. "node_B_2"에 인터페이스를 생성합니다.
++
+--
+[NOTE]
+====
+** 다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
+** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+** MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.
+
+
+====
+--
++
+.. "node_B_2"의 포트 "e5a"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.1.4"를 사용하여 "node_B_2"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::>metrocluster configuration-settings interface create -cluster-name cluster_B -home-node node_B_2 -home-port e5a -address 10.1.1.4 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.cluster_A::>
+----
+.. "node_B_2"의 포트 "e5b"에서 인터페이스를 구성합니다.
++
+'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'
+
++
+다음 예에서는 IP 주소 "10.1.2.4"가 있는 "node_B_2"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> metrocluster configuration-settings interface create -cluster-name cluster_B -home-node node_B_2 -home-port e5b -address 10.1.2.4 -netmask 255.255.255.0
+[Job 28] Job succeeded: Interface Create is successful.
+cluster_A::>
+----
+
+
+. 인터페이스가 구성되었는지 확인합니다.
++
+'MetroCluster configuration-settings interface show'를 선택합니다
+
++
+다음 예제는 각 인터페이스의 구성 상태가 완료되었음을 보여줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings interface show
+DR                                                              Config
+Group Cluster Node    Network Address Netmask         Gateway   State
+----- ------- ------- --------------- --------------- --------- ----------
+1     cluster_A  node_A_1
+                 Home Port: e5a
+                      10.1.1.1     255.255.255.0   -         completed
+                 Home Port: e5b
+                      10.1.2.1     255.255.255.0   -         completed
+                 node_A_2
+                 Home Port: e5a
+                      10.1.1.2     255.255.255.0   -         completed
+                 Home Port: e5b
+                      10.1.2.2     255.255.255.0   -         completed
+      cluster_B  node_B_1
+                 Home Port: e5a
+                      10.1.1.3     255.255.255.0   -         completed
+                 Home Port: e5b
+                      10.1.2.3     255.255.255.0   -         completed
+                 node_B_2
+                 Home Port: e5a
+                      10.1.1.4     255.255.255.0   -         completed
+                 Home Port: e5b
+                      10.1.2.4     255.255.255.0   -         completed
+8 entries were displayed.
+cluster_A::>
+----
+. 노드가 MetroCluster 인터페이스를 연결할 준비가 되었는지 확인합니다.
++
+'MetroCluster configuration-settings show-status'를 선택합니다
+
++
+다음 예제에서는 "연결 준비 완료" 상태의 모든 노드를 보여 줍니다.
+
++
+[listing]
+----
+
+Cluster       Node         Configuration Settings Status
+----------    -----------  ---------------------------------
+cluster_A
+              node_A_1     ready for connection connect
+              node_A_2     ready for connection connect
+cluster_B
+              node_B_1     ready for connection connect
+              node_B_2     ready for connection connect
+4 entries were displayed.
+----
+. 연결 설정:
++
+'MetroCluster configuration-settings connection connect'를 선택합니다
+
++
+이 명령을 실행한 후에는 IP 주소를 변경할 수 없습니다.
+
++
+다음 예에서는 "cluster_a"가 성공적으로 연결되었음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster configuration-settings connection connect
+[Job 53] Job succeeded: Connect is successful.
+cluster_A::>
+----
+. 연결이 설정되었는지 확인합니다.
++
+'MetroCluster configuration-settings show-status'를 선택합니다
+
++
+모든 노드의 구성 설정 상태는 다음과 같이 완료되어야 합니다.
+
++
+[listing]
+----
+
+Cluster       Node         Configuration Settings Status
+----------    -----------  ---------------------------------
+cluster_A
+              node_A_1     completed
+              node_A_2     completed
+cluster_B
+              node_B_1     completed
+              node_B_2     completed
+4 entries were displayed.
+----
+. iSCSI 연결이 설정되었는지 확인합니다.
++
+.. 고급 권한 레벨로 변경:
++
+세트 프리빌리지 고급
+
++
+고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 나타나면 y로 응답해야 합니다("*>").
+
+.. 다음 연결을 표시합니다.
++
+'Storage iSCSI-initiator show'를 선택합니다
+
++
+ONTAP 9.5를 실행하는 시스템에서는 각 클러스터에 출력에 표시되어야 하는 MetroCluster IP 이니시에이터가 8개 있습니다.
+
++
+ONTAP 9.4 이하 버전을 실행하는 시스템에서는 각 클러스터에 출력에 표시되어야 하는 MetroCluster IP 이니시에이터가 4개 있습니다.
+
++
+다음 예는 ONTAP 9.5를 실행하는 클러스터의 8개 MetroCluster IP 이니시에이터를 보여줍니다.
+
++
+[listing]
+----
+cluster_A::*> storage iscsi-initiator show
+Node Type Label    Target Portal           Target Name                      Admin/Op
+---- ---- -------- ------------------      -------------------------------- --------
+
+cluster_A-01
+     dr_auxiliary
+              mccip-aux-a-initiator
+                   10.227.16.113:65200     prod506.com.company:abab44       up/up
+              mccip-aux-a-initiator2
+                   10.227.16.113:65200     prod507.com.company:abab44       up/up
+              mccip-aux-b-initiator
+                   10.227.95.166:65200     prod506.com.company:abab44       up/up
+              mccip-aux-b-initiator2
+                   10.227.95.166:65200     prod507.com.company:abab44       up/up
+     dr_partner
+              mccip-pri-a-initiator
+                   10.227.16.112:65200     prod506.com.company:cdcd88       up/up
+              mccip-pri-a-initiator2
+                   10.227.16.112:65200     prod507.com.company:cdcd88       up/up
+              mccip-pri-b-initiator
+                   10.227.95.165:65200     prod506.com.company:cdcd88       up/up
+              mccip-pri-b-initiator2
+                   10.227.95.165:65200     prod507.com.company:cdcd88       up/up
+cluster_A-02
+     dr_auxiliary
+              mccip-aux-a-initiator
+                   10.227.16.112:65200     prod506.com.company:cdcd88       up/up
+              mccip-aux-a-initiator2
+                   10.227.16.112:65200     prod507.com.company:cdcd88       up/up
+              mccip-aux-b-initiator
+                   10.227.95.165:65200     prod506.com.company:cdcd88       up/up
+              mccip-aux-b-initiator2
+                   10.227.95.165:65200     prod507.com.company:cdcd88       up/up
+     dr_partner
+              mccip-pri-a-initiator
+                   10.227.16.113:65200     prod506.com.company:abab44       up/up
+              mccip-pri-a-initiator2
+                   10.227.16.113:65200     prod507.com.company:abab44       up/up
+              mccip-pri-b-initiator
+                   10.227.95.166:65200     prod506.com.company:abab44       up/up
+              mccip-pri-b-initiator2
+                   10.227.95.166:65200     prod507.com.company:abab44       up/up
+16 entries were displayed.
+----
+.. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+
+
+. 노드가 MetroCluster 구성을 최종 구현할 준비가 되었는지 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- ----
+-     cluster_A
+              node_A_1           ready to configure -     -
+              node_A_2           ready to configure -     -
+2 entries were displayed.
+cluster_A::>
+----
++
+[listing]
+----
+cluster_B::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- ----
+-     cluster_B
+              node_B_1           ready to configure -     -
+              node_B_2           ready to configure -     -
+2 entries were displayed.
+cluster_B::>
+----
+
+
+
+
+=== 풀 1 드라이브 할당을 확인하거나 수동으로 수행합니다
+
+스토리지 구성에 따라 풀 1 드라이브 할당을 확인하거나 MetroCluster IP 구성의 각 노드에 대해 풀 1에 드라이브를 수동으로 할당해야 합니다.
+
+사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다.
+
+|===
+
+
+| 구성 유형 | 절차를 참조하십시오 
+
+
+ a| 
+시스템은 자동 드라이브 할당 요구 사항을 충족시키거나 ONTAP 9.3을 실행하는 경우 공장에서 수신된 것입니다.
+ a| 
+<<Verifying disk assignment for pool 1 disks>>
+
+
+
+ a| 
+구성에는 3개의 쉘프가 포함되어 있거나 4개 이상의 쉘프가 포함된 경우, 4개의 쉘프(예: 7개의 쉘프)가 불균일한 배수이고 ONTAP 9.5가 실행 중입니다.
+ a| 
+<<Manually assigning drives for pool 1 (ONTAP 9.4 or later)>>
+
+
+
+ a| 
+이 구성에는 사이트당 4개의 스토리지 쉘프가 포함되지 않으며 ONTAP 9.4를 실행 중입니다
+ a| 
+<<Manually assigning drives for pool 1 (ONTAP 9.4 or later)>>
+
+
+
+ a| 
+출하 시 시스템이 수신되지 않았고 공장에서 받은 ONTAP 9.3시스템이 할당된 드라이브로 사전 구성되어 실행되고 있습니다.
+ a| 
+<<Manually assigning disks for pool 1 (ONTAP 9.3)>>
+
+|===
+
+
+==== 풀 1 디스크에 대한 디스크 할당을 확인하는 중입니다
+
+원격 디스크가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
+
+'MetroCluster configuration-settings connection connect' 명령을 사용하여 MetroCluster IP 인터페이스 및 연결이 생성된 후 디스크 자동 할당이 완료될 때까지 10분 이상 기다려야 합니다.
+
+명령 출력에는 디스크 이름이 다음 형식으로 표시됩니다.
+
+노드 이름: 0m.i1.0L1
+
+link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"]
+
+.단계
+. 풀 1 디스크가 자동으로 할당되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+다음 출력에는 외부 쉘프가 없는 AFF A800 시스템의 출력이 표시됩니다.
+
++
+드라이브 자동 할당에서는 "node_A_1"에 쿼터 1개(드라이브 8개)를, "node_A_2"에 분기당 1개를 할당했습니다. 나머지 드라이브는 "node_B_1" 및 "node_B_2"에 대한 원격(pool1) 디스크입니다.
+
++
+[listing]
+----
+cluster_B::> disk show -host-adapter 0m -owner node_B_2
+                    Usable     Disk              Container   Container
+Disk                Size       Shelf Bay Type    Type        Name      Owner
+----------------    ---------- ----- --- ------- ----------- --------- --------
+node_B_2:0m.i0.2L4  894.0GB    0     29  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.2L10 894.0GB    0     25  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.3L3  894.0GB    0     28  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.3L9  894.0GB    0     24  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.3L11 894.0GB    0     26  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.3L12 894.0GB    0     27  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.3L15 894.0GB    0     30  SSD-NVM shared      -         node_B_2
+node_B_2:0m.i0.3L16 894.0GB    0     31  SSD-NVM shared      -         node_B_2
+8 entries were displayed.
+
+cluster_B::> disk show -host-adapter 0m -owner node_B_1
+                    Usable     Disk              Container   Container
+Disk                Size       Shelf Bay Type    Type        Name      Owner
+----------------    ---------- ----- --- ------- ----------- --------- --------
+node_B_1:0m.i2.3L19 1.75TB     0     42  SSD-NVM shared      -         node_B_1
+node_B_1:0m.i2.3L20 1.75TB     0     43  SSD-NVM spare       Pool1     node_B_1
+node_B_1:0m.i2.3L23 1.75TB     0     40  SSD-NVM shared       -        node_B_1
+node_B_1:0m.i2.3L24 1.75TB     0     41  SSD-NVM spare       Pool1     node_B_1
+node_B_1:0m.i2.3L29 1.75TB     0     36  SSD-NVM shared       -        node_B_1
+node_B_1:0m.i2.3L30 1.75TB     0     37  SSD-NVM shared       -        node_B_1
+node_B_1:0m.i2.3L31 1.75TB     0     38  SSD-NVM shared       -        node_B_1
+node_B_1:0m.i2.3L32 1.75TB     0     39  SSD-NVM shared       -        node_B_1
+8 entries were displayed.
+
+cluster_B::> disk show
+                    Usable     Disk              Container   Container
+Disk                Size       Shelf Bay Type    Type        Name      Owner
+----------------    ---------- ----- --- ------- ----------- --------- --------
+node_B_1:0m.i1.0L6  1.75TB     0     1   SSD-NVM shared      -         node_A_2
+node_B_1:0m.i1.0L8  1.75TB     0     3   SSD-NVM shared      -         node_A_2
+node_B_1:0m.i1.0L17 1.75TB     0     18  SSD-NVM shared      -         node_A_1
+node_B_1:0m.i1.0L22 1.75TB     0     17 SSD-NVM shared - node_A_1
+node_B_1:0m.i1.0L25 1.75TB     0     12 SSD-NVM shared - node_A_1
+node_B_1:0m.i1.2L2  1.75TB     0     5 SSD-NVM shared - node_A_2
+node_B_1:0m.i1.2L7  1.75TB     0     2 SSD-NVM shared - node_A_2
+node_B_1:0m.i1.2L14 1.75TB     0     7 SSD-NVM shared - node_A_2
+node_B_1:0m.i1.2L21 1.75TB     0     16 SSD-NVM shared - node_A_1
+node_B_1:0m.i1.2L27 1.75TB     0     14 SSD-NVM shared - node_A_1
+node_B_1:0m.i1.2L28 1.75TB     0     15 SSD-NVM shared - node_A_1
+node_B_1:0m.i2.1L1  1.75TB     0     4 SSD-NVM shared - node_A_2
+node_B_1:0m.i2.1L5  1.75TB     0     0 SSD-NVM shared - node_A_2
+node_B_1:0m.i2.1L13 1.75TB     0     6 SSD-NVM shared - node_A_2
+node_B_1:0m.i2.1L18 1.75TB     0     19 SSD-NVM shared - node_A_1
+node_B_1:0m.i2.1L26 1.75TB     0     13 SSD-NVM shared - node_A_1
+node_B_1:0m.i2.3L19 1.75TB     0 42 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L20 1.75TB     0 43 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L23 1.75TB     0 40 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L24 1.75TB     0 41 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L29 1.75TB     0 36 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L30 1.75TB     0 37 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L31 1.75TB     0 38 SSD-NVM shared - node_B_1
+node_B_1:0m.i2.3L32 1.75TB     0 39 SSD-NVM shared - node_B_1
+node_B_1:0n.12      1.75TB     0 12 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.13      1.75TB     0 13 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.14      1.75TB     0 14 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.15      1.75TB 0 15 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.16      1.75TB 0 16 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.17      1.75TB 0 17 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.18      1.75TB 0 18 SSD-NVM shared aggr0 node_B_1
+node_B_1:0n.19      1.75TB 0 19 SSD-NVM shared - node_B_1
+node_B_1:0n.24      894.0GB 0 24 SSD-NVM shared - node_A_2
+node_B_1:0n.25      894.0GB 0 25 SSD-NVM shared - node_A_2
+node_B_1:0n.26      894.0GB 0 26 SSD-NVM shared - node_A_2
+node_B_1:0n.27      894.0GB 0 27 SSD-NVM shared - node_A_2
+node_B_1:0n.28      894.0GB 0 28 SSD-NVM shared - node_A_2
+node_B_1:0n.29      894.0GB 0 29 SSD-NVM shared - node_A_2
+node_B_1:0n.30      894.0GB 0 30 SSD-NVM shared - node_A_2
+node_B_1:0n.31      894.0GB 0 31 SSD-NVM shared - node_A_2
+node_B_1:0n.36      1.75TB 0 36 SSD-NVM shared - node_A_1
+node_B_1:0n.37      1.75TB 0 37 SSD-NVM shared - node_A_1
+node_B_1:0n.38      1.75TB 0 38 SSD-NVM shared - node_A_1
+node_B_1:0n.39      1.75TB 0 39 SSD-NVM shared - node_A_1
+node_B_1:0n.40      1.75TB 0 40 SSD-NVM shared - node_A_1
+node_B_1:0n.41      1.75TB 0 41 SSD-NVM shared - node_A_1
+node_B_1:0n.42      1.75TB 0 42 SSD-NVM shared - node_A_1
+node_B_1:0n.43      1.75TB 0 43 SSD-NVM shared - node_A_1
+node_B_2:0m.i0.2L4  894.0GB 0 29 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.2L10 894.0GB 0 25 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.3L3  894.0GB 0 28 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.3L9  894.0GB 0 24 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.3L11 894.0GB 0 26 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.3L12 894.0GB 0 27 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.3L15 894.0GB 0 30 SSD-NVM shared - node_B_2
+node_B_2:0m.i0.3L16 894.0GB 0 31 SSD-NVM shared - node_B_2
+node_B_2:0n.0       1.75TB 0 0 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.1 1.75TB 0 1 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.2 1.75TB 0 2 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.3 1.75TB 0 3 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.4 1.75TB 0 4 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.5 1.75TB 0 5 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.6 1.75TB 0 6 SSD-NVM shared aggr0_rha12_b1_cm_02_0 node_B_2
+node_B_2:0n.7 1.75TB 0 7 SSD-NVM shared - node_B_2
+64 entries were displayed.
+
+cluster_B::>
+
+
+cluster_A::> disk show
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+node_A_1:0m.i1.0L2 1.75TB 0 5 SSD-NVM shared - node_B_2
+node_A_1:0m.i1.0L8 1.75TB 0 3 SSD-NVM shared - node_B_2
+node_A_1:0m.i1.0L18 1.75TB 0 19 SSD-NVM shared - node_B_1
+node_A_1:0m.i1.0L25 1.75TB 0 12 SSD-NVM shared - node_B_1
+node_A_1:0m.i1.0L27 1.75TB 0 14 SSD-NVM shared - node_B_1
+node_A_1:0m.i1.2L1 1.75TB 0 4 SSD-NVM shared - node_B_2
+node_A_1:0m.i1.2L6 1.75TB 0 1 SSD-NVM shared - node_B_2
+node_A_1:0m.i1.2L7 1.75TB 0 2 SSD-NVM shared - node_B_2
+node_A_1:0m.i1.2L14 1.75TB 0 7 SSD-NVM shared - node_B_2
+node_A_1:0m.i1.2L17 1.75TB 0 18 SSD-NVM shared - node_B_1
+node_A_1:0m.i1.2L22 1.75TB 0 17 SSD-NVM shared - node_B_1
+node_A_1:0m.i2.1L5 1.75TB 0 0 SSD-NVM shared - node_B_2
+node_A_1:0m.i2.1L13 1.75TB 0 6 SSD-NVM shared - node_B_2
+node_A_1:0m.i2.1L21 1.75TB 0 16 SSD-NVM shared - node_B_1
+node_A_1:0m.i2.1L26 1.75TB 0 13 SSD-NVM shared - node_B_1
+node_A_1:0m.i2.1L28 1.75TB 0 15 SSD-NVM shared - node_B_1
+node_A_1:0m.i2.3L19 1.75TB 0 42 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L20 1.75TB 0 43 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L23 1.75TB 0 40 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L24 1.75TB 0 41 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L29 1.75TB 0 36 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L30 1.75TB 0 37 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L31 1.75TB 0 38 SSD-NVM shared - node_A_1
+node_A_1:0m.i2.3L32 1.75TB 0 39 SSD-NVM shared - node_A_1
+node_A_1:0n.12 1.75TB 0 12 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.13 1.75TB 0 13 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.14 1.75TB 0 14 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.15 1.75TB 0 15 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.16 1.75TB 0 16 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.17 1.75TB 0 17 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.18 1.75TB 0 18 SSD-NVM shared aggr0 node_A_1
+node_A_1:0n.19 1.75TB 0 19 SSD-NVM shared - node_A_1
+node_A_1:0n.24 894.0GB 0 24 SSD-NVM shared - node_B_2
+node_A_1:0n.25 894.0GB 0 25 SSD-NVM shared - node_B_2
+node_A_1:0n.26 894.0GB 0 26 SSD-NVM shared - node_B_2
+node_A_1:0n.27 894.0GB 0 27 SSD-NVM shared - node_B_2
+node_A_1:0n.28 894.0GB 0 28 SSD-NVM shared - node_B_2
+node_A_1:0n.29 894.0GB 0 29 SSD-NVM shared - node_B_2
+node_A_1:0n.30 894.0GB 0 30 SSD-NVM shared - node_B_2
+node_A_1:0n.31 894.0GB 0 31 SSD-NVM shared - node_B_2
+node_A_1:0n.36 1.75TB 0 36 SSD-NVM shared - node_B_1
+node_A_1:0n.37 1.75TB 0 37 SSD-NVM shared - node_B_1
+node_A_1:0n.38 1.75TB 0 38 SSD-NVM shared - node_B_1
+node_A_1:0n.39 1.75TB 0 39 SSD-NVM shared - node_B_1
+node_A_1:0n.40 1.75TB 0 40 SSD-NVM shared - node_B_1
+node_A_1:0n.41 1.75TB 0 41 SSD-NVM shared - node_B_1
+node_A_1:0n.42 1.75TB 0 42 SSD-NVM shared - node_B_1
+node_A_1:0n.43 1.75TB 0 43 SSD-NVM shared - node_B_1
+node_A_2:0m.i2.3L3 894.0GB 0 28 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L4 894.0GB 0 29 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L9 894.0GB 0 24 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L10 894.0GB 0 25 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L11 894.0GB 0 26 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L12 894.0GB 0 27 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L15 894.0GB 0 30 SSD-NVM shared - node_A_2
+node_A_2:0m.i2.3L16 894.0GB 0 31 SSD-NVM shared - node_A_2
+node_A_2:0n.0 1.75TB 0 0 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.1 1.75TB 0 1 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.2 1.75TB 0 2 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.3 1.75TB 0 3 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.4 1.75TB 0 4 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.5 1.75TB 0 5 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.6 1.75TB 0 6 SSD-NVM shared aggr0_node_A_2_0 node_A_2
+node_A_2:0n.7 1.75TB 0 7 SSD-NVM shared - node_A_2
+64 entries were displayed.
+
+cluster_A::>
+----
+
+
+
+
+==== 풀 1에 드라이브 수동 할당(ONTAP 9.4 이상)
+
+시스템이 출하 시 사전 구성되어 있지 않고 자동 드라이브 할당 요구 사항을 충족하지 않는 경우 원격 풀 1 드라이브를 수동으로 할당해야 합니다.
+
+이 절차는 ONTAP 9.4 이상을 실행하는 구성에 적용됩니다.
+
+시스템에 수동 디스크 할당이 필요한지 여부를 확인하는 세부 사항은 에 포함되어 있습니다 link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"].
+
+구성에 사이트당 2개의 외부 쉘프만 포함되는 경우 다음 예에 표시된 대로 각 사이트의 풀 1 드라이브를 동일한 쉘프에서 공유해야 합니다.
+
+* node_A_1은 사이트_B-shelf_2(원격)의 베이 0-11에 할당된 드라이브입니다.
+* Node_A_2는 사이트_B-쉘프_2(원격)의 베이 12-23에 할당된 드라이브입니다.
+
+
+.단계
+. MetroCluster IP 구성의 각 노드에서 원격 드라이브를 풀 1에 할당합니다.
++
+.. 할당되지 않은 드라이브 목록 표시:
++
+"디스크 show-host-adapter 0m-container-type unassigned"를 선택합니다
+
++
+[listing]
+----
+cluster_A::> disk show -host-adapter 0m -container-type unassigned
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+6.23.0                    -    23   0 SSD     unassigned  -         -
+6.23.1                    -    23   1 SSD     unassigned  -         -
+.
+.
+.
+node_A_2:0m.i1.2L51       -    21  14 SSD     unassigned  -         -
+node_A_2:0m.i1.2L64       -    21  10 SSD     unassigned  -         -
+.
+.
+.
+48 entries were displayed.
+
+cluster_A::>
+----
+.. 원격 드라이브(0m)의 소유권을 첫 번째 노드의 풀 1(예: "node_a_1")에 할당합니다.
++
+Disk assign-disk_disk-id_-pool 1-owner_owner-node-name _
+
++
+'디스크 ID'는 오너노드명(owner-node-name)의 원격 셸프에서 드라이브를 식별해야 합니다.
+
+.. 드라이브가 풀 1에 할당되었는지 확인합니다.
++
+"디스크 show-host-adapter 0m-container-type unassigned"를 선택합니다
+
++
+--
+
+NOTE: 원격 드라이브에 액세스하는 데 사용되는 iSCSI 연결이 0m로 나타납니다.
+
+--
++
+다음 출력에서는 쉘프 "23"의 드라이브가 더 이상 할당되지 않은 드라이브 목록에 표시되지 않으므로 할당된 드라이브를 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> disk show -host-adapter 0m -container-type unassigned
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+node_A_2:0m.i1.2L51       -    21  14 SSD     unassigned  -         -
+node_A_2:0m.i1.2L64       -    21  10 SSD     unassigned  -         -
+.
+.
+.
+node_A_2:0m.i2.1L90       -    21  19 SSD     unassigned  -         -
+24 entries were displayed.
+
+cluster_A::>
+----
+.. 이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 드라이브를 할당합니다(예: "n" ode_A_2").
+.. 사이트 B에서 이 단계를 반복합니다
+
+
+
+
+
+
+==== 풀 1에 대해 수동으로 디스크 할당(ONTAP 9.3)
+
+각 노드에 대해 최소 2개의 디스크 쉘프가 있는 경우 ONTAP의 자동 할당 기능을 사용하여 원격(풀 1) 디스크를 자동으로 할당합니다.
+
+먼저 쉘프의 디스크를 풀 1에 할당해야 합니다. 그런 다음 ONTAP는 쉘프의 나머지 디스크를 동일한 풀에 자동으로 할당합니다.
+
+이 절차는 ONTAP 9.3을 실행하는 구성에 적용됩니다.
+
+이 절차는 각 노드에 대해 디스크 쉘프가 2개 이상 있는 경우에만 사용할 수 있으며, 이를 통해 쉘프 레벨에서 디스크를 자동 할당할 수 있습니다.
+
+쉘프 레벨 자동 할당을 사용할 수 없는 경우 각 노드에 원격 디스크 풀(풀 1)이 있도록 원격 디스크를 수동으로 할당해야 합니다.
+
+ONTAP 자동 디스크 할당 기능은 디스크를 쉘프별로 할당합니다. 예를 들면 다음과 같습니다.
+
+* site_B-shelf_2의 모든 디스크가 node_A_1의 pool1에 자동으로 할당됩니다
+* site_B-shelf_4의 모든 디스크가 node_A_2의 pool1에 자동으로 할당됩니다
+* site_A-shelf_2의 모든 디스크가 node_B_1의 pool1에 자동으로 할당됩니다
+* site_A-shelf_4의 모든 디스크가 node_B_2의 pool1에 자동으로 할당됩니다
+
+
+각 쉘프에 단일 디스크를 지정하여 자동 할당을 "시드"해야 합니다.
+
+.단계
+. MetroCluster IP 구성의 각 노드에서 원격 디스크를 풀 1에 할당합니다.
++
+.. 할당되지 않은 디스크 목록을 표시합니다.
++
+"디스크 show-host-adapter 0m-container-type unassigned"를 선택합니다
+
++
+[listing]
+----
+cluster_A::> disk show -host-adapter 0m -container-type unassigned
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+6.23.0                    -    23   0 SSD     unassigned  -         -
+6.23.1                    -    23   1 SSD     unassigned  -         -
+.
+.
+.
+node_A_2:0m.i1.2L51       -    21  14 SSD     unassigned  -         -
+node_A_2:0m.i1.2L64       -    21  10 SSD     unassigned  -         -
+.
+.
+.
+48 entries were displayed.
+
+cluster_A::>
+----
+.. 원격 디스크(0m)를 선택하고 첫 번째 노드의 풀 1에 디스크 소유권을 할당합니다(예: "node_a_1").
++
+Disk assign-disk-id-pool 1-owner owner-node-name'입니다
+
++
+'디스크 ID'는 오너 노드 이름(owner-node-name)의 원격 셸프에서 디스크를 식별해야 합니다.
+
++
+ONTAP 디스크 자동 할당 기능은 지정된 디스크가 포함된 원격 셸프의 모든 디스크를 할당합니다.
+
+.. 디스크 자동 할당이 시작될 때까지 60초 이상 기다린 후 셸프의 원격 디스크가 풀 1에 자동 할당되었는지 확인합니다.
++
+"디스크 show-host-adapter 0m-container-type unassigned"를 선택합니다
+
++
+--
+
+NOTE: 원격 디스크에 액세스하는 데 사용되는 iSCSI 연결이 0m 장치로 나타납니다.
+
+--
++
+다음 출력에서는 쉘프 "23"의 디스크가 이제 할당되었으며 더 이상 표시되지 않음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> disk show -host-adapter 0m -container-type unassigned
+                     Usable           Disk    Container   Container
+Disk                   Size Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+node_A_2:0m.i1.2L51       -    21  14 SSD     unassigned  -         -
+node_A_2:0m.i1.2L64       -    21  10 SSD     unassigned  -         -
+node_A_2:0m.i1.2L72       -    21  23 SSD     unassigned  -         -
+node_A_2:0m.i1.2L74       -    21   1 SSD     unassigned  -         -
+node_A_2:0m.i1.2L83       -    21  22 SSD     unassigned  -         -
+node_A_2:0m.i1.2L90       -    21   7 SSD     unassigned  -         -
+node_A_2:0m.i1.3L52       -    21   6 SSD     unassigned  -         -
+node_A_2:0m.i1.3L59       -    21  13 SSD     unassigned  -         -
+node_A_2:0m.i1.3L66       -    21  17 SSD     unassigned  -         -
+node_A_2:0m.i1.3L73       -    21  12 SSD     unassigned  -         -
+node_A_2:0m.i1.3L80       -    21   5 SSD     unassigned  -         -
+node_A_2:0m.i1.3L81       -    21   2 SSD     unassigned  -         -
+node_A_2:0m.i1.3L82       -    21  16 SSD     unassigned  -         -
+node_A_2:0m.i1.3L91       -    21   3 SSD     unassigned  -         -
+node_A_2:0m.i2.0L49       -    21  15 SSD     unassigned  -         -
+node_A_2:0m.i2.0L50       -    21   4 SSD     unassigned  -         -
+node_A_2:0m.i2.1L57       -    21  18 SSD     unassigned  -         -
+node_A_2:0m.i2.1L58       -    21  11 SSD     unassigned  -         -
+node_A_2:0m.i2.1L59       -    21  21 SSD     unassigned  -         -
+node_A_2:0m.i2.1L65       -    21  20 SSD     unassigned  -         -
+node_A_2:0m.i2.1L72       -    21   9 SSD     unassigned  -         -
+node_A_2:0m.i2.1L80       -    21   0 SSD     unassigned  -         -
+node_A_2:0m.i2.1L88       -    21   8 SSD     unassigned  -         -
+node_A_2:0m.i2.1L90       -    21  19 SSD     unassigned  -         -
+24 entries were displayed.
+
+cluster_A::>
+----
+.. 이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 디스크를 할당합니다(예: "node_a_2").
+.. 사이트 B에서 이 단계를 반복합니다
+
+
+
+
+
+
+=== ONTAP 9.4에서 자동 드라이브 할당을 활성화합니다
+
+ONTAP 9.4에서 이 절차의 이전 지시에 따라 자동 드라이브 할당을 해제한 경우 모든 노드에서 자동 드라이브 할당을 다시 사용하도록 설정해야 합니다.
+
+link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"]
+
+.단계
+. 자동 드라이브 할당 활성화:
++
+'스토리지 디스크 옵션 modify -node_node_name_-autostassign on'
+
++
+MetroCluster IP 구성의 모든 노드에서 이 명령을 실행해야 합니다.
+
+
+
+
+
+=== 루트 애그리게이트를 미러링합니다
+
+루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다.
+
+기본적으로 루트 애그리게이트는 RAID-DP 유형 Aggregate로 생성됩니다. 루트 애그리게이트를 RAID-DP에서 RAID4 유형 애그리게이트로 변경할 수 있습니다. 다음 명령을 실행하면 RAID4 유형 애그리게이트의 루트 애그리게이트가 수정됩니다.
+
+'Storage aggregate modify – aggregate_aggr_name_-raidtype raid4'
+
+
+NOTE: ADP가 아닌 시스템에서는 aggregate가 미러링되기 전이나 후에 기본 RAID-DP에서 RAID4로 애그리게이트의 RAID 유형을 수정할 수 있습니다.
+
+.단계
+. 루트 애그리게이트 미러링:
++
+'Storage aggregate mirror_aggr_name_'
+
++
+다음 명령은 controller_a_1의 루트 애그리게이트를 미러링합니다.
+
++
+[listing]
+----
+controller_A_1::> storage aggregate mirror aggr0_controller_A_1
+----
++
+이 구성은 애그리게이트를 미러링하므로 원격 MetroCluster 사이트에 있는 로컬 플렉스와 원격 플렉스로 구성됩니다.
+
+. MetroCluster 구성의 각 노드에 대해 이전 단계를 반복합니다.
+
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["논리적 스토리지 관리"]
+
+
+
+=== 각 노드에서 미러링된 데이터 애그리게이트 생성
+
+DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다.
+
+.이 작업에 대해
+* 새 애그리게이트에 어떤 드라이브가 사용되는지 알아야 합니다.
+* 시스템에 여러 드라이브 유형(이기종 스토리지)이 있는 경우 올바른 드라이브 유형을 선택할 수 있는 방법을 이해해야 합니다.
+* 드라이브는 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브는 동일한 노드에 의해 소유되어야 하며, 이 노드는 해당 애그리게이트의 홈 노드가 됩니다.
++
+ADP를 사용하는 시스템에서는 각 드라이브가 P1, P2, P3 파티션으로 분할되는 파티션을 사용하여 애그리게이트를 생성합니다.
+
+* 애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+
+
+
+.단계
+. 사용 가능한 스페어 목록을 표시합니다.
++
+'storage disk show-spare-owner_node_name_'
+
+. 애그리게이트 생성:
++
+'스토리지 집계 생성 - 미러 true'
+
++
+클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에서 생성되도록 하려면 '-node' 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정합니다.
+
++
+다음 옵션을 지정할 수 있습니다.
+
++
+** Aggregate의 홈 노드(즉, 정상 운영 시 Aggregate를 소유한 노드)입니다.
+** Aggregate에 추가될 특정 드라이브 목록입니다.
+** 포함할 드라이브 수입니다.
++
+
+NOTE: 지원되는 최소 구성에서는 드라이브 수가 제한되어 있으므로, 디스크 RAID-DP Aggregate 3개를 만들 수 있도록 force-small-aggregate 옵션을 사용해야 합니다.
+
+** 집계에 사용할 체크섬 스타일
+** 사용할 드라이브 유형입니다.
+** 사용할 드라이브의 크기입니다.
+** 주행 속도를 사용하십시오.
+** Aggregate의 RAID 그룹에 적합한 RAID 유형입니다.
+** RAID 그룹에 포함될 수 있는 최대 드라이브 수입니다.
+** RPM이 다른 드라이브가 허용되는지 여부
++
+이러한 옵션에 대한 자세한 내용은 스토리지 애그리게이트 생성 man 페이지를 참조하십시오.
+
++
+다음 명령을 실행하면 10개의 디스크로 미러링된 Aggregate가 생성됩니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate create aggr1_node_A_1 -diskcount 10 -node node_A_1 -mirror true
+[Job 15] Job is queued: Create aggr1_node_A_1.
+[Job 15] The job is starting.
+[Job 15] Job succeeded: DONE
+----
+
+
+. 새 애그리게이트의 RAID 그룹 및 드라이브를 확인합니다.
++
+'Storage aggregate show-status-aggregate_aggregate-name_'
+
+
+
+
+
+=== MetroCluster 구성 구현
+
+MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster configure' 명령을 실행해야 합니다.
+
+.이 작업에 대해
+* 각 클러스터에 루트가 아닌 미러링된 데이터 Aggregate가 2개 이상 있어야 합니다.
++
+스토리지 aggregate show 명령을 사용하여 이를 확인할 수 있습니다.
+
++
+
+NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <<step1_single_mirrored,1단계>> 를 참조하십시오.
+
+* 컨트롤러 및 섀시의 ha-config 상태는 mcip이어야 합니다.
+
+
+모든 노드에서 'MetroCluster configure' 명령을 한 번 실행하여 MetroCluster 설정을 활성화한다. 각 사이트나 노드에서 명령을 실행할 필요가 없으며 명령을 실행하기로 선택한 노드나 사이트는 중요하지 않습니다.
+
+MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시스템 ID를 갖는 두 노드를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.
+
+.단계
+. [[step1_single_Mirrored]] MetroCluster를 다음 형식으로 구성합니다.
++
+|===
+
+
+| MetroCluster 구성에 다음 기능이 있는 경우 | 다음을 수행하십시오. 
+
+
+ a| 
+데이터 애그리게이트가 여러 개 있습니다
+ a| 
+노드의 프롬프트에서 MetroCluster:'MetroCluster configure node-name'을 설정한다
+
+
+
+ a| 
+단일 미러링 데이터 애그리게이트
+ a| 
+.. 노드의 프롬프트에서 고급 권한 레벨로 변경합니다.
++
+세트 프리빌리지 고급
+
++
+고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 나타나면 y로 응답해야 합니다("*>").
+
+.. '-allow-with-one-aggregate' TRUE 파라미터를 이용하여 MetroCluster를 설정한다.
++
+'MetroCluster configure-allow-with-one-aggregate TRUE node-name'
+
+.. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+
+
+|===
++
+--
+[NOTE]
+====
+모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 link:../maintain/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"].
+
+====
+--
++
+다음 명령을 실행하면 "controller_a_1"이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 설정됩니다.
+
++
+[listing]
+----
+cluster_A::*> metrocluster configure -node-name controller_A_1
+
+[Job 121] Job succeeded: Configure is successful.
+----
+. 사이트 A:'network port show'의 네트워킹 상태를 확인합니다
++
+다음 예는 4노드 MetroCluster 구성의 네트워크 포트 사용량을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> network port show
+                                                          Speed (Mbps)
+Node   Port      IPspace   Broadcast Domain Link   MTU    Admin/Oper
+------ --------- --------- ---------------- ----- ------- ------------
+controller_A_1
+       e0a       Cluster   Cluster          up     9000  auto/1000
+       e0b       Cluster   Cluster          up     9000  auto/1000
+       e0c       Default   Default          up     1500  auto/1000
+       e0d       Default   Default          up     1500  auto/1000
+       e0e       Default   Default          up     1500  auto/1000
+       e0f       Default   Default          up     1500  auto/1000
+       e0g       Default   Default          up     1500  auto/1000
+controller_A_2
+       e0a       Cluster   Cluster          up     9000  auto/1000
+       e0b       Cluster   Cluster          up     9000  auto/1000
+       e0c       Default   Default          up     1500  auto/1000
+       e0d       Default   Default          up     1500  auto/1000
+       e0e       Default   Default          up     1500  auto/1000
+       e0f       Default   Default          up     1500  auto/1000
+       e0g       Default   Default          up     1500  auto/1000
+14 entries were displayed.
+----
+. MetroCluster 구성의 두 사이트에서 MetroCluster 구성을 확인합니다.
++
+.. 사이트 A에서 구성을 확인합니다.
++
+MetroCluster 쇼
+
++
+[listing]
+----
+cluster_A::> metrocluster show
+
+Configuration: IP fabric
+
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_A         Configuration state configured
+                          Mode                normal
+Remote: cluster_B         Configuration state configured
+                          Mode                normal
+----
+.. 사이트 B의 구성을 확인합니다.
++
+MetroCluster 쇼
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+
+Configuration: IP fabric
+
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_B         Configuration state configured
+                          Mode                normal
+Remote: cluster_A         Configuration state configured
+                          Mode                normal
+----
+
+
+. 비휘발성 메모리 미러링에서 발생할 수 있는 문제를 방지하려면 4개 노드를 각각 재부팅하십시오.
++
+'node reboot-node_node-name_-inhibit-takeover TRUE
+
+. 두 클러스터에서 'MetroCluster show' 명령을 실행하여 구성을 다시 확인합니다.
+
+
+
+
+=== 8노드 구성에서 두 번째 DR 그룹 구성
+
+이전 작업을 반복하여 두 번째 DR 그룹의 노드를 구성합니다.
+
+
+
+=== 미러링되지 않은 데이터 애그리게이트를 생성합니다
+
+선택적으로 MetroCluster 구성에서 제공되는 이중 미러링이 필요하지 않은 데이터에 대해 미러링되지 않은 데이터 애그리게이트를 만들 수 있습니다.
+
+.이 작업에 대해
+* 새 애그리게이트에 어떤 드라이브 또는 어레이 LUN을 사용할 것인지 알아야 합니다.
+* 시스템에 여러 드라이브 유형(이기종 스토리지)이 있는 경우 올바른 드라이브 유형이 선택되었는지 확인하는 방법을 이해해야 합니다.
+
+
+
+IMPORTANT: MetroCluster IP 구성에서는 전환 후 원격 미러링되지 않은 애그리게이트에 액세스할 수 없습니다
+
+
+NOTE: 미러링되지 않은 애그리게이트는 해당 애그리게이트를 소유하는 노드에 로컬이어야 합니다.
+
+* 드라이브 및 어레이 LUN은 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브가 동일한 노드에 소유되어야 하며, 이 노드가 해당 애그리게이트의 홈 노드가 됩니다.
+* 애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다.
+* _ 디스크 및 애그리게이트 관리 _ 는 미러링 Aggregate에 대한 자세한 정보를 포함합니다.
+
+
+.단계
+. 미러링되지 않은 애그리게이트 구축 사용:
++
+MetroCluster modify-enable-미러링되지 않은-aggr-deployment true
+
+. 디스크 자동 할당이 비활성화되었는지 확인합니다.
++
+'디스크 옵션 표시'입니다
+
+. 미러링되지 않은 애그리게이트를 포함할 디스크 쉘프를 설치 및 케이블로 연결합니다.
++
+플랫폼 및 디스크 쉘프에 대한 _Installation 및 Setup_설명서의 절차를 사용할 수 있습니다.
+
++
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+
+. 새 쉘프의 모든 디스크를 적절한 노드에 수동으로 할당합니다.
++
+디스크 할당 - disk_disk -id_-owner_owner -node -name _
+
+. 애그리게이트 생성:
++
+'스토리지 애그리게이트 생성'
+
++
+클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 -node 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.
+
++
+또한 미러링되지 않은 쉘프의 드라이브만 애그리게이트에 포함되어 있는지 확인해야 합니다.
+
++
+다음 옵션을 지정할 수 있습니다.
+
++
+** Aggregate의 홈 노드(즉, 정상 운영 시 Aggregate를 소유한 노드)입니다.
+** 애그리게이트에 추가될 특정 드라이브 또는 어레이 LUN의 목록입니다.
+** 포함할 드라이브 수입니다.
+** 집계에 사용할 체크섬 스타일
+** 사용할 드라이브 유형입니다.
+** 사용할 드라이브의 크기입니다.
+** 주행 속도를 사용하십시오.
+** Aggregate의 RAID 그룹에 적합한 RAID 유형입니다.
+** RAID 그룹에 포함될 수 있는 최대 드라이브 또는 어레이 LUN 수
+** RPM이 다른 드라이브가 허용되는지 여부
++
+이러한 옵션에 대한 자세한 내용은 스토리지 애그리게이트 생성 man 페이지를 참조하십시오.
+
++
+다음 명령을 실행하면 10개의 디스크로 구성된 미러링되지 않은 Aggregate가 생성됩니다.
+
++
+[listing]
+----
+controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -node controller_A_1
+[Job 15] Job is queued: Create aggr1_controller_A_1.
+[Job 15] The job is starting.
+[Job 15] Job succeeded: DONE
+----
+
+
+. 새 애그리게이트의 RAID 그룹 및 드라이브를 확인합니다.
++
+'Storage aggregate show-status-aggregate_aggregate-name_'
+
+. 미러링되지 않은 애그리게이트 구축 사용 안 함:
++
+'MetroCluster modify-enable-미러링되지 않은-aggr-deployment false'
+
+. 디스크 자동 할당이 설정되었는지 확인합니다.
++
+'디스크 옵션 표시'입니다
+
+
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+
+
+
+=== MetroCluster 구성 확인
+
+MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다. 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.
+
+둘 중 하나 또는 두 클러스터에서 짧은 시간 내에 'MetroCluster check run' 명령을 두 번 실행하면 충돌이 발생하고 명령이 모든 데이터를 수집하지 못할 수 있습니다. 이후 'MetroCluster check show' 명령어에서는 예상 출력이 표시되지 않습니다.
+
+.단계
+. 구성을 확인합니다.
++
+'MetroCluster check run
+
++
+명령은 백그라운드 작업으로 실행되며 즉시 완료되지 않을 수 있습니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster check run
+The operation has been started and is running in the background. Wait for
+it to complete and run "metrocluster check show" to view the results. To
+check the status of the running metrocluster check operation, use the command,
+"metrocluster operation history show -job-id 2245"
+----
++
+[listing]
+----
+cluster_A::> metrocluster check show
+Last Checked On: 9/13/2018 20:41:37
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+clusters            ok
+connections         ok
+6 entries were displayed.
+----
+. 가장 최근의 'MetroCluster check run' 명령어를 통해 보다 상세한 결과를 출력한다.
++
+'MetroCluster check aggregate show'
+
++
+'MetroCluster check cluster show'를 선택합니다
+
++
+'MetroCluster check config-replication show'를 선택합니다
+
++
+'MetroCluster check lif show'
+
++
+MetroCluster check node show
+
++
+MetroCluster check show 명령은 최근 MetroCluster check run 명령의 결과를 보여준다. MetroCluster check show 명령을 사용하기 전에 항상 MetroCluster check run 명령을 실행하여 표시되는 정보가 최신 정보가 되도록 해야 합니다.
+
++
+다음 예는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check aggregate show' 명령 출력을 보여줍니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster check aggregate show
+
+Last Checked On: 8/5/2014 00:42:58
+
+Node                  Aggregate                  Check                      Result
+---------------       --------------------       ---------------------      ---------
+controller_A_1        controller_A_1_aggr0
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_1_aggr1
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_1_aggr2
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+
+
+controller_A_2        controller_A_2_aggr0
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_2_aggr1
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+                      controller_A_2_aggr2
+                                                 mirroring-status           ok
+                                                 disk-pool-allocation       ok
+                                                 ownership-state            ok
+
+18 entries were displayed.
+----
++
+다음 예에서는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check cluster show' 명령 출력을 보여 줍니다. 이는 필요한 경우 클러스터가 협상된 전환을 수행할 준비가 되었음을 나타냅니다.
+
++
+[listing]
+----
+Last Checked On: 9/13/2017 20:47:04
+
+Cluster               Check                           Result
+--------------------- ------------------------------- ---------
+mccint-fas9000-0102
+                      negotiated-switchover-ready     not-applicable
+                      switchback-ready                not-applicable
+                      job-schedules                   ok
+                      licenses                        ok
+                      periodic-check-enabled          ok
+mccint-fas9000-0304
+                      negotiated-switchover-ready     not-applicable
+                      switchback-ready                not-applicable
+                      job-schedules                   ok
+                      licenses                        ok
+                      periodic-check-enabled          ok
+10 entries were displayed.
+----
+
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]
+
+
+
+=== ONTAP 구성을 완료하는 중입니다
+
+MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 SVM, 네트워크 인터페이스 및 기타 ONTAP 기능을 추가하여 클러스터 구성을 완료할 수 있습니다.
+
+
+
+== 전환, 복구, 스위치백을 확인하는 중입니다
+
+MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
+
+. MetroCluster 관리 및 재해 복구 가이드 _ 에 설명되어 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용하십시오.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/home.html["MetroCluster 관리 및 재해 복구"]
+
+
+
+
+
+== MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어 구성
+
+MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨어 또는 세 번째 사이트에 다운로드하여 설치할 수 있습니다.
+
+MetroCluster 구성에서 두 클러스터에 대한 네트워크 연결이 가능한 Linux 호스트가 있어야 합니다. 구체적인 요구사항은 MetroCluster Tiebreaker 또는 ONTAP 중재자 설명서에 나와 있습니다.
+
+기존 Tiebreaker 또는 ONTAP 중재자 인스턴스에 연결하는 경우 Tiebreaker 또는 중재자 서비스의 사용자 이름, 암호 및 IP 주소가 필요합니다.
+
+ONTAP 중재자의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.
+
+link:concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성"]
+
+Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/home.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
+
+동일한 MetroCluster 구성에서 MetroCluster Tiebreaker 소프트웨어와 ONTAP 중재자를 모두 사용할 수 없습니다.
+
+link:concept_prepare_for_the_mcc_installation.html#considerations-for-using-ontap-mediator-or-metrocluster-tiebreaker["ONTAP 중재자 또는 MetroCluster Tiebreaker를 사용할 때의 고려 사항"]
+
+.단계
+. ONTAP 중재자 서비스 또는 Tiebreaker 소프트웨어 구성:
++
+** ONTAP 중재자의 기존 인스턴스를 사용하는 경우 ONTAP 중재자 서비스를 ONTAP에 추가합니다.
++
+'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'
+
+** Tiebreaker 소프트웨어를 사용하는 경우 Tiebreaker 설명서를 참조하십시오.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/home.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
+
+
+
+
+
+
+
+== 구성 백업 파일을 보호합니다
+
+로컬 클러스터의 기본 위치 외에 구성 백업 파일을 업로드할 원격 URL(HTTP 또는 FTP)을 지정하여 클러스터 구성 백업 파일에 대한 추가 보호를 제공할 수 있습니다.
+
+.단계
+. 구성 백업 파일의 원격 대상 URL을 설정합니다.
++
+'System configuration backup settings modify_url-of-destination _'
+
++
+CLI를 사용한 클러스터 관리에는 _ 구성 백업 관리 _ 섹션에 추가 정보가 포함되어 있습니다.
+
+
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"]

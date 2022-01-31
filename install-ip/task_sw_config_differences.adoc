@@ -1,0 +1,66 @@
+---
+permalink: install-ip/task_sw_config_differences.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, ontap, node-level, configuration, node, site, relationship, configuring, configure, similarities, difference, 
+summary: MetroCluster 구성에서 각 클러스터의 노드 구성은 표준 클러스터의 노드 구성과 비슷합니다. 
+---
+= 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
+
+
+[role="lead"]
+MetroCluster 구성에서 각 클러스터의 노드 구성은 표준 클러스터의 노드 구성과 비슷합니다.
+
+MetroCluster 구성은 2개의 표준 클러스터를 기반으로 합니다. 물리적으로 구성은 동일한 하드웨어 구성을 갖는 각 노드에 대칭적이어야 하며, 모든 MetroCluster 구성요소를 케이블로 연결하고 구성해야 합니다. 그러나 MetroCluster 구성에서 노드의 기본 소프트웨어 구성은 표준 클러스터의 노드의 구성과 동일합니다.
+
+|===
+
+
+| 구성 단계 | 표준 클러스터 구성 | MetroCluster 구성 
+
+
+ a| 
+각 노드에서 관리, 클러스터 및 데이터 LIF를 구성합니다.
+2+| 두 클러스터 유형에서도 동일합니다 
+
+
+ a| 
+루트 애그리게이트 구성
+2+| 두 클러스터 유형에서도 동일합니다 
+
+
+ a| 
+클러스터의 한 노드에서 클러스터 설정
+2+| 두 클러스터 유형에서도 동일합니다 
+
+
+ a| 
+다른 노드를 클러스터에 연결합니다.
+2+| 두 클러스터 유형에서도 동일합니다 
+
+
+ a| 
+미러링된 루트 애그리게이트를 생성합니다.
+ a| 
+선택 사항
+ a| 
+필수 요소입니다
+
+
+
+ a| 
+클러스터를 피합니다.
+ a| 
+선택 사항
+ a| 
+필수 요소입니다
+
+
+
+ a| 
+MetroCluster 구성을 활성화합니다.
+ a| 
+적용되지 않습니다
+ a| 
+필수 요소입니다
+
+|===

@@ -1,0 +1,55 @@
+---
+permalink: install-fc/task_install_the_license_for_us_array_luns_in_a_mcc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, license, array, luns, configuration 
+summary: 스토리지 LUN과 함께 사용할 각 MetroCluster 노드에 V_StorageAttach 라이센스를 설치해야 합니다. 라이센스가 설치될 때까지 Aggregate에서 어레이 LUN을 사용할 수 없습니다. 
+---
+= MetroCluster 구성에서 스토리지 LUN 사용을 위한 라이센스 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지 LUN과 함께 사용할 각 MetroCluster 노드에 V_StorageAttach 라이센스를 설치해야 합니다. 라이센스가 설치될 때까지 Aggregate에서 어레이 LUN을 사용할 수 없습니다.
+
+.시작하기 전에
+* 클러스터를 설치해야 합니다.
+* V_StorageAttach 라이센스에 대한 라이센스 키가 있어야 합니다.
+
+
+V_StorageAttach 라이센스를 설치할 각 노드에 대해 별도의 라이센스 키를 사용해야 합니다.
+
+.단계
+. V_StorageAttach 라이센스를 설치합니다.
++
+'시스템 사용권 추가'
+
++
+라이센스를 설치할 각 클러스터 노드에 대해 이 단계를 반복합니다.
+
+. V_StorageAttach 라이센스가 클러스터의 모든 필수 노드에 설치되었는지 확인합니다.
++
+'시스템 사용권 프로그램'
+
++
+다음 샘플 출력에서는 cluster_A의 노드에 V_StorageAttach 라이센스가 설치되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+
+cluster_A::> system license show
+Serial Number: nnnnnnnn
+Owner: controller_A_1
+Package           Type    Description           Expiration
+----------------- ------- --------------------- --------------------
+V_StorageAttach   license Virtual Attached Storage
+
+
+Serial Number: llllllll
+Owner: controller_A_2
+Package           Type    Description           Expiration
+----------------- ------- --------------------- --------------------
+V_StorageAttach   license Virtual Attached Storage
+----
+

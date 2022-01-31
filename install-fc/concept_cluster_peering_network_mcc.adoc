@@ -1,0 +1,31 @@
+---
+permalink: install-fc/concept_cluster_peering_network_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, illustration, cluster, peering, network 
+summary: 'MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 네트워크를 통해 들여다봅니다. 클러스터 피어링은 사이트 간에 SVM(이전의 vserver\)의 동기식 스토리지 가상 시스템 미러링을 지원합니다.' 
+---
+= 클러스터 피어링 네트워크의 그림
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 네트워크를 통해 들여다봅니다. 클러스터 피어링을 사용하면 사이트 간에 SVM(Storage Virtual Machine, 이전의 SVM)을 동기식 미러링할 수 있습니다.
+
+인터클러스터 LIF는 MetroCluster 구성의 각 노드에 구성해야 하며 피어링을 위해 클러스터를 구성해야 합니다. 인터클러스터 LIF의 포트는 고객이 제공한 클러스터 피어링 네트워크에 연결됩니다. SVM 구성 복제는 구성 복제 서비스를 통해 이 네트워크를 통해 수행됩니다.
+
+image::../media/mcc_hw_architecture_cluster_peering.gif[MCC HW 아키텍처 클러스터 피어링]
+
+link:concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html["MetroCluster 구성의 로컬 HA 쌍 그림"]
+
+link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 브리지의 그림"]
+
+link:concept_redundant_fc_switch_fabrics.html["이중 FC 스위치 패브릭"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
+
+link:concept_considerations_peering.html["클러스터 피어링을 구성할 때의 고려 사항"]
+
+link:task_cable_the_cluster_peering_connections.html["클러스터 피어링 연결에 케이블로 연결합니다"]
+
+link:concept_configure_the_mcc_software_in_ontap.html["클러스터 피어링"]

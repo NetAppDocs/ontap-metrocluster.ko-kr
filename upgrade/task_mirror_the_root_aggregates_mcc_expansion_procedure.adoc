@@ -1,0 +1,32 @@
+---
+permalink: upgrade/task_mirror_the_root_aggregates_mcc_expansion_procedure.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, mirror, root, aggregate, new, controller 
+summary: MetroCluster 구성에 컨트롤러를 추가할 때 데이터 보호를 제공하려면 루트 애그리게이트를 미러링해야 합니다. 
+---
+= 새 컨트롤러의 루트 애그리게이트를 미러링합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성에 컨트롤러를 추가할 때 데이터 보호를 제공하려면 루트 애그리게이트를 미러링해야 합니다.
+
+이 작업은 새 컨트롤러 모듈에서 수행해야 합니다.
+
+. 루트 애그리게이트 미러링:
++
+'Storage aggregate mirror_aggr_name_'
+
++
+다음 명령은 controller_a_1의 루트 애그리게이트를 미러링합니다.
+
++
+[listing]
+----
+controller_A_1::> storage aggregate mirror aggr0_controller_A_1
+----
++
+이 구성은 애그리게이트를 미러링하므로 원격 MetroCluster 사이트에 있는 로컬 플렉스와 원격 플렉스로 구성됩니다.
+
+

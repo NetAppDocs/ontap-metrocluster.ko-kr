@@ -1,0 +1,89 @@
+---
+permalink: disaster-recovery/task_verify_assignment_mcip.html 
+sidebar: sidebar 
+keywords: verify, adp, verify, drives, pool, automatically, assign 
+summary: ADP에 대해 구성된 시스템에서는 풀 0 드라이브가 자동으로 할당되었는지 확인해야 합니다. 
+---
+= 자동 할당을 확인하거나 풀 0 드라이브를 수동으로 할당합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ADP에 대해 구성된 시스템에서는 풀 0 드라이브가 자동으로 할당되었는지 확인해야 합니다. ADP에 대해 구성되지 않은 시스템에서는 풀 0 드라이브를 수동으로 할당해야 합니다.
+
+
+
+== 재해 사이트에서 ADP 시스템에 풀 0 드라이브의 드라이브 할당 확인(MetroCluster IP 시스템)
+
+재해 사이트에서 드라이브를 교체했고 시스템이 ADP에 대해 구성된 경우 원격 드라이브가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
+
+.단계
+. 풀 0 드라이브가 자동으로 할당되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+다음 예에서는 외부 쉘프가 없는 AFF A800 시스템에 대해 노드_A_1에 4분기(8개 드라이브)가 자동으로 할당되고 1분기가 노드_A_2에 자동으로 할당되었습니다. 나머지 드라이브는 node_B_1 및 node_B_2에 대한 원격(pool1) 드라이브입니다.
+
++
+[listing]
+----
+cluster_A::*> disk show
+                 Usable     Disk      Container           Container
+Disk             Size       Shelf Bay Type    Type        Name      Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+node_A_1:0n.12   1.75TB     0     12  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.13   1.75TB     0     13  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.14   1.75TB     0     14  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.15   1.75TB     0     15  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.16   1.75TB     0     16  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.17   1.75TB     0     17  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.18   1.75TB     0     18  SSD-NVM shared      aggr0     node_A_1
+node_A_1:0n.19   1.75TB     0     19  SSD-NVM shared      -         node_A_1
+node_A_2:0n.0    1.75TB     0     0   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.1    1.75TB     0     1   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.2    1.75TB     0     2   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.3    1.75TB     0     3   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.4    1.75TB     0     4   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.5    1.75TB     0     5   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.6    1.75TB     0     6   SSD-NVM shared      aggr0_node_A_2_0 node_A_2
+node_A_2:0n.7    1.75TB     0     7   SSD-NVM shared      -         node_A_2
+node_A_2:0n.24   -          0     24  SSD-NVM unassigned  -         -
+node_A_2:0n.25   -          0     25  SSD-NVM unassigned  -         -
+node_A_2:0n.26   -          0     26  SSD-NVM unassigned  -         -
+node_A_2:0n.27   -          0     27  SSD-NVM unassigned  -         -
+node_A_2:0n.28   -          0     28  SSD-NVM unassigned  -         -
+node_A_2:0n.29   -          0     29  SSD-NVM unassigned  -         -
+node_A_2:0n.30   -          0     30  SSD-NVM unassigned  -         -
+node_A_2:0n.31   -          0     31  SSD-NVM unassigned  -         -
+node_A_2:0n.36   -          0     36  SSD-NVM unassigned  -         -
+node_A_2:0n.37   -          0     37  SSD-NVM unassigned  -         -
+node_A_2:0n.38   -          0     38  SSD-NVM unassigned  -         -
+node_A_2:0n.39   -          0     39  SSD-NVM unassigned  -         -
+node_A_2:0n.40   -          0     40  SSD-NVM unassigned  -         -
+node_A_2:0n.41   -          0     41  SSD-NVM unassigned  -         -
+node_A_2:0n.42   -          0     42  SSD-NVM unassigned  -         -
+node_A_2:0n.43   -          0     43  SSD-NVM unassigned  -         -
+32 entries were displayed.
+----
+
+
+
+
+== 재해 사이트의 비 ADP 시스템에 풀 0 드라이브 할당(MetroCluster IP 구성)
+
+재해 사이트에서 드라이브를 교체했고 시스템이 ADP에 대해 구성되지 않은 경우 새 드라이브를 풀 0에 수동으로 할당해야 합니다.
+
+ADP 시스템의 경우 드라이브가 자동으로 할당됩니다.
+
+.단계
+. 재해 사이트의 교체 노드 중 하나에서 노드의 풀 0 드라이브를 재할당합니다.
++
+'Storage disk assign-n number-of-replacement disks-p 0'
+
++
+이 명령은 재해 사이트에서 새로 추가된(및 소유되지 않은) 드라이브를 할당합니다. 재해가 발생하기 전에 노드에서 사용했던 드라이브 수와 크기(또는 더 큰 드라이브)를 할당해야 합니다. '스토리지 디스크 할당' man 페이지에는 보다 세부적인 드라이브 할당 수행에 대한 자세한 정보가 포함되어 있습니다.
+
+. 재해 사이트의 다른 교체 노드에서 이 단계를 반복합니다.
+

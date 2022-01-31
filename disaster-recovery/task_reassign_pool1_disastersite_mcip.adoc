@@ -1,0 +1,205 @@
+---
+permalink: disaster-recovery/task_reassign_pool1_disastersite_mcip.html 
+sidebar: sidebar 
+keywords: metrocluster, disaster, site, replacement, controller, module, reassign, ownership 
+summary: 재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드를 교체한 경우 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다. 
+---
+= 재해 사이트의 풀 1 디스크에 대한 디스크 소유권 재할당(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하나 또는 둘 모두를 교체한 경우 시스템 ID가 변경되었으며 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다.
+
+노드가 전환 모드에 있으므로 재해 사이트의 pool1에 있는 루트 애그리게이트를 포함하는 디스크만 이 작업에 재할당됩니다. 현재 이전 시스템 ID가 소유한 유일한 디스크입니다.
+
+이 작업은 재해 사이트의 교체 노드에서 수행됩니다.
+
+이 작업은 유지보수 모드에서 수행됩니다.
+
+이 예시는 다음과 같은 가정을 합니다.
+
+* 사이트 A는 재해 사이트입니다.
+* 노드_A_1이(가) 교체되었습니다.
+* 노드_A_2가 교체되었습니다.
+* 사이트 B는 정상적인 사이트입니다.
+* node_B_1이 정상 상태임.
+* node_B_2가 정상 상태임.
+
+
+이전 및 새 시스템 ID는 에서 식별되었습니다 link:../disaster-recovery/task_replace_hardware_and_boot_new_controllers.html#determining-the-system-ids-of-the-replacement-controller-modules["교체 컨트롤러 모듈의 새 시스템 ID 확인"].
+
+이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
+
+|===
+
+
+| 노드 | 원래 시스템 ID입니다 | 새 시스템 ID입니다 
+
+
+ a| 
+노드_A_1
+ a| 
+4068741258
+ a| 
+1574774970
+
+
+
+ a| 
+노드_A_2
+ a| 
+4068741260
+ a| 
+1574774991
+
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+ a| 
+변경되지 않음
+
+
+
+ a| 
+노드_B_2
+ a| 
+4068741256
+ a| 
+변경되지 않음
+
+|===
+.단계
+. 유지보수 모드의 교체 노드에서 시스템이 ADP 및 ONTAP 버전으로 구성되었는지 여부에 따라 올바른 명령을 사용하여 루트 애그리게이트 디스크를 재할당합니다.
++
+메시지가 표시되면 재할당을 진행할 수 있습니다.
+
++
+|===
+
+
+| 시스템에서 ADP를 사용하는 경우... | 디스크 재할당에 이 명령을 사용합니다... 
+
+
+ a| 
+예(ONTAP 9.8)
+ a| 
+'Disk reassign-s old-system-ID-d new-system-ID-r dr dr dr-partner-system-ID
+
+
+
+ a| 
+예(ONTAP 9.7.x 이하)
+ a| 
+'Disk reassign-s old-system-ID-d new-system-ID-p old-partner-system-ID
+
+
+
+ a| 
+아니요
+ a| 
+'Disk reassign-s old-system-ID-d new-system-ID'입니다
+
+|===
++
+다음 예는 비 ADP 시스템에서 드라이브 재할당을 보여줍니다.
+
++
+[listing]
+----
+*> disk reassign -s 4068741256 -d 1574774970
+Partner node must not be in Takeover mode during disk reassignment from maintenance mode.
+Serious problems could result!!
+Do not proceed with reassignment if the partner is in takeover mode. Abort reassignment (y/n)? n
+
+After the node becomes operational, you must perform a takeover and giveback of the HA partner node to ensure disk reassignment is successful.
+Do you want to continue (y/n)? y
+Disk ownership will be updated on all disks previously belonging to Filer with sysid 537037643.
+Do you want to continue (y/n)? y
+disk reassign parameters: new_home_owner_id 537070473 , new_home_owner_name
+Disk 0m.i0.3L14 will be reassigned.
+Disk 0m.i0.1L6 will be reassigned.
+Disk 0m.i0.1L8 will be reassigned.
+Number of disks to be reassigned: 3
+----
+. 메일박스 디스크의 콘텐츠를 제거합니다.
++
+'데일박스 파기 지역
+
++
+메시지가 표시되면 제거 작업을 진행할 수 있습니다.
+
++
+다음 예에서는 mailbox destroy local 명령의 출력을 보여 줍니다.
+
++
+[listing]
+----
+*> mailbox destroy local
+Destroying mailboxes forces a node to create new empty mailboxes,
+which clears any takeover state, removes all knowledge
+of out-of-date plexes of mirrored volumes, and will prevent
+management services from going online in 2-node cluster
+HA configurations.
+Are you sure you want to destroy the local mailboxes? y
+...............Mailboxes destroyed.
+*>
+----
+. 디스크를 교체한 경우 삭제해야 하는 오류가 발생한 로컬 플렉스가 있습니다.
++
+.. 집계 상태를 표시합니다.
++
+'기정 상태'입니다
+
++
+다음 예에서는 plex node_a_1_aggr0/plex0이 실패했습니다.
+
++
+[listing]
+----
+*> aggr status
+Aug 18 15:00:07 [node_B_1:raid.vol.mirror.degraded:ALERT]: Aggregate node_A_1_aggr0 is
+   mirrored and one plex has failed. It is no longer protected by mirroring.
+Aug 18 15:00:07 [node_B_1:raid.debug:info]: Mirrored aggregate node_A_1_aggr0 has plex0
+   clean(-1), online(0)
+Aug 18 15:00:07 [node_B_1:raid.debug:info]: Mirrored aggregate node_A_1_aggr0 has plex2
+   clean(0), online(1)
+Aug 18 15:00:07 [node_B_1:raid.mirror.vote.noRecord1Plex:error]: WARNING: Only one plex
+   in aggregate node_A_1_aggr0 is available. Aggregate might contain stale data.
+Aug 18 15:00:07 [node_B_1:raid.debug:info]: volobj_mark_sb_recovery_aggrs: tree:
+   node_A_1_aggr0 vol_state:1 mcc_dr_opstate: unknown
+Aug 18 15:00:07 [node_B_1:raid.fsm.commitStateTransit:debug]: /node_A_1_aggr0 (VOL):
+   raid state change UNINITD -> NORMAL
+Aug 18 15:00:07 [node_B_1:raid.fsm.commitStateTransit:debug]: /node_A_1_aggr0 (MIRROR):
+   raid state change UNINITD -> DEGRADED
+Aug 18 15:00:07 [node_B_1:raid.fsm.commitStateTransit:debug]: /node_A_1_aggr0/plex0
+   (PLEX): raid state change UNINITD -> FAILED
+Aug 18 15:00:07 [node_B_1:raid.fsm.commitStateTransit:debug]: /node_A_1_aggr0/plex2
+   (PLEX): raid state change UNINITD -> NORMAL
+Aug 18 15:00:07 [node_B_1:raid.fsm.commitStateTransit:debug]: /node_A_1_aggr0/plex2/rg0
+   (GROUP): raid state change UNINITD -> NORMAL
+Aug 18 15:00:07 [node_B_1:raid.debug:info]: Topology updated for aggregate node_A_1_aggr0
+   to plex plex2
+*>
+----
+.. 실패한 플렉스 삭제:
++
+'플렉스-ID를 파괴한다'는 것입니다
+
++
+[listing]
+----
+*> aggr destroy node_A_1_aggr0/plex0
+----
+
+
+. LOADER 프롬프트가 표시되도록 노드를 중단합니다.
++
+"중지"
+
+. 재해 사이트의 다른 노드에서 이 단계를 반복합니다.
+

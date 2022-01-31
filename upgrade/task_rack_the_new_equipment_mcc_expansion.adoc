@@ -1,0 +1,20 @@
+---
+permalink: upgrade/task_rack_the_new_equipment_mcc_expansion.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, rack, new, equipment 
+summary: 새 노드의 장비는 랙에 설치해야 합니다. 
+---
+= 새 장비를 랙에 장착
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 노드의 장비는 랙에 설치해야 합니다.
+
+.단계
+. MetroCluster 설치 및 구성 가이드를 사용하여 새로운 스토리지 시스템, 디스크 쉘프 및 FC-SAS 브리지를 랙에 설치합니다.
++
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
+

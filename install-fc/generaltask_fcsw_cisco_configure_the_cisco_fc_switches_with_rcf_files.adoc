@@ -1,0 +1,13 @@
+---
+permalink: install-fc/generaltask_fcsw_cisco_configure_the_cisco_fc_switches_with_rcf_files.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, configuring, cisco, fc, switched, rcf, files 
+summary: 'Cisco FC 스위치를 구성하려면 스위치 설정을 초기 기본값으로 재설정하고 스위치 소프트웨어를 설치한 다음 특정 구성에 대한 전체 스위치 설정을 제공하는 참조 구성\(RCF\) 파일을 다운로드하여 적용해야 합니다.' 
+---
+= RCF 파일을 사용하여 Cisco FC 스위치 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco FC 스위치를 구성하려면 스위치 설정을 초기 기본값으로 재설정하고 스위치 소프트웨어를 설치한 다음, 특정 구성에 대한 전체 스위치 설정을 제공하는 RCF(Reference Configuration) 파일을 다운로드하여 적용해야 합니다.

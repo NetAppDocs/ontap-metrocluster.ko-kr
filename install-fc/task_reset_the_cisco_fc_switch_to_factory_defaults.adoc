@@ -1,0 +1,141 @@
+---
+permalink: install-fc/task_reset_the_cisco_fc_switch_to_factory_defaults.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, reset, cisco, fc, switch, factory, defaults 
+summary: 새 소프트웨어 버전과 RCFs를 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다. 
+---
+= Cisco FC 스위치를 출하 시 기본값으로 재설정합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 소프트웨어 버전과 RCFs를 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다.
+
+MetroCluster 패브릭 구성의 각 FC 스위치에 대해 이러한 단계를 반복해야 합니다.
+
+
+NOTE: 표시된 출력은 Cisco IP 스위치용으로 표시되지만 Cisco FC 스위치에도 적용할 수 있습니다.
+
+.단계
+. 스위치를 출하 시 기본값으로 재설정합니다.
++
+.. 기존 구성 지우기: + `* 쓰기 지우기 * '
+.. 스위치 소프트웨어를 다시 로드합니다: + " * reload * "
++
+시스템이 재부팅되고 구성 마법사가 시작됩니다. 부팅 중에 Auto Provisioning 중단 메시지가 표시된 후 정상 설치를 계속하면(예/아니요) [n] "* yes*"로 응답하여 계속 진행해야 합니다.
+
+.. 구성 마법사에서 기본 스위치 설정을 입력합니다.
++
+*** 관리자 암호입니다
+*** 스위치 이름
+*** 대역외 관리 구성
+*** 기본 게이트웨이
+*** SSH 서비스(원격 지원 에이전트) 구성 마법사를 완료한 후 스위치가 재부팅됩니다.
+
+
+.. 메시지가 표시되면 사용자 이름과 암호를 입력하여 스위치에 로그인합니다.
++
+다음 예에서는 스위치에 로그인할 때 프롬프트와 시스템 응답을 보여 줍니다. 꺾쇠 괄호(' * << * ')는 사용자가 정보를 입력하는 위치를 표시합니다.
+
++
+[listing]
+----
+---- System Admin Account Setup ----
+Do you want to enforce secure password standard (yes/no) [y]:y  **<<<**
+
+    Enter the password for "admin": password  **<<<**
+  Confirm the password for "admin": password  **<<<**
+         ---- Basic System Configuration Dialog VDC: 1 ----
+
+This setup utility will guide you through the basic configuration of
+the system. Setup configures only enough connectivity for management
+of the system.
+
+Please register Cisco Nexus3000 Family devices promptly with your
+supplier. Failure to register may affect response times for initial
+service calls. Nexus3000 devices must be registered to receive
+entitled support services.
+
+Press Enter at anytime to skip a dialog. Use ctrl-c at anytime
+to skip the remaining dialogs.
+----
+.. 스위치 이름, 관리 주소 및 게이트웨이를 포함한 다음 프롬프트 세트에 기본 정보를 입력하고, 다음 예에서와 같이 SSH 키에 대해 ' * RSA * '를 입력합니다.
++
+[listing]
+----
+Would you like to enter the basic configuration dialog (yes/no): yes
+  Create another login account (yes/no) [n]:
+  Configure read-only SNMP community string (yes/no) [n]:
+  Configure read-write SNMP community string (yes/no) [n]:
+  Enter the switch name : switch-name **<<<**
+  Continue with Out-of-band (mgmt0) management configuration? (yes/no) [y]:
+    Mgmt0 IPv4 address : management-IP-address  **<<<**
+    Mgmt0 IPv4 netmask : management-IP-netmask  **<<<**
+  Configure the default gateway? (yes/no) [y]: y **<<<**
+    IPv4 address of the default gateway : gateway-IP-address  **<<<**
+  Configure advanced IP options? (yes/no) [n]:
+  Enable the telnet service? (yes/no) [n]:
+  Enable the ssh service? (yes/no) [y]: y  **<<<**
+    Type of ssh key you would like to generate (dsa/rsa) [rsa]: rsa **<<<**
+    Number of rsa key bits <1024-2048> [1024]:
+  Configure the ntp server? (yes/no) [n]:
+  Configure default interface layer (L3/L2) [L2]:
+  Configure default switchport interface state (shut/noshut) [noshut]: shut **<<<**
+  Configure CoPP system profile (strict/moderate/lenient/dense) [strict]:
+----
++
+마지막 프롬프트 세트가 구성을 완료합니다.
+
++
+[listing]
+----
+The following configuration will be applied:
+  password strength-check
+  switchname IP_switch_A_1
+vrf context management
+ip route 0.0.0.0/0 10.10.99.1
+exit
+  no feature telnet
+  ssh key rsa 1024 force
+  feature ssh
+  system default switchport
+  system default switchport shutdown
+  copp profile strict
+interface mgmt0
+ip address 10.10.99.10 255.255.255.0
+no shutdown
+
+Would you like to edit the configuration? (yes/no) [n]:
+
+Use this configuration and save it? (yes/no) [y]:
+2017 Jun 13 21:24:43 A1 %$ VDC-1 %$ %COPP-2-COPP_POLICY: Control-Plane is protected with policy copp-system-p-policy-strict.
+
+[########################################] 100%
+Copy complete.
+
+User Access Verification
+IP_switch_A_1 login: admin
+Password:
+Cisco Nexus Operating System (NX-OS) Software
+.
+.
+.
+IP_switch_A_1#
+----
+
+
+. 구성을 저장합니다.
++
+[listing]
+----
+IP_switch_A_1# copy running-config startup-config
+----
+. 스위치를 재부팅하고 스위치가 다시 로드될 때까지 기다립니다.
++
+[listing]
+----
+IP_switch_A_1# reload
+----
+. MetroCluster 패브릭 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.
+

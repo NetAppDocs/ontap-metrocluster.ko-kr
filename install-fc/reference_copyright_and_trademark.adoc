@@ -1,0 +1,11 @@
+---
+permalink: install-fc/reference_copyright_and_trademark.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, copyright, trademark, machine, translation 
+summary: 패브릭 연결 MetroCluster 설치 및 구성에 대한 저작권, 상표 및 기계 번역. 
+---
+= 저작권, 상표 및 기계 번역
+:icons: font
+:imagesdir: ../media/
+
+

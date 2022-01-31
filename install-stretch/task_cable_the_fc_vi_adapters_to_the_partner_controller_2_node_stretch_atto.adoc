@@ -1,0 +1,33 @@
+---
+permalink: install-stretch/task_cable_the_fc_vi_adapters_to_the_partner_controller_2_node_stretch_atto.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, cable, controllers 
+summary: 각 컨트롤러의 FC-VI 어댑터는 파트너에게 직접 케이블로 연결되어야 합니다. 
+---
+= 컨트롤러를 서로 케이블로 연결합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 컨트롤러의 FC-VI 어댑터는 파트너에게 직접 케이블로 연결되어야 합니다.
+
+.단계
+. FC-VI 포트에 케이블을 연결합니다.
++
+image::../media/mcc_cabling_fc_vi_controller_to_partner.gif[MCC 케이블 FC vi 컨트롤러를 파트너에 연결합니다]
+
++
+위 그림은 필요한 케이블의 일반적인 표현입니다. 특정 FC-VI 포트는 컨트롤러 모듈에 따라 다릅니다.
+
++
+** AFF A300 및 FAS8200 컨트롤러 모듈은 FC-VI 연결을 위한 2가지 옵션 중 하나와 함께 주문할 수 있습니다.
++
+*** FC-VI 모드로 구성된 온보드 포트 0e 및 0f
+*** 슬롯 1의 FC-VI 카드에 있는 포트 1a 및 1b
+
+
+** AFF A700 및 FAS9000 스토리지 시스템 컨트롤러 모듈은 각각 4개의 FC-VI 포트를 사용합니다.
+
+
+

@@ -1,0 +1,19 @@
+---
+permalink: install-fc/task_fcsw_configure_the_fc_switches_with_rcf_files_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, fc, switches, run, configuration, file 
+summary: 스위치 구성 프로세스를 단순화하려는 경우 특정 구성에 대한 전체 스위치 설정을 제공하는 참조 구성 파일을 다운로드하여 적용할 수 있습니다. 
+---
+= 구성 파일을 실행하여 FC 스위치 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스위치 구성 프로세스를 단순화하려는 경우 특정 구성에 대한 전체 스위치 설정을 제공하는 참조 구성 파일을 다운로드하여 적용할 수 있습니다.
+
+참조 구성 파일(RCFs)은 8 ISL을 사용하는 구성을 지원하지 않습니다. 8개의 ISL을 사용하는 경우 스위치를 수동으로 구성해야 합니다.
+
+RCF는 2노드, 4노드 및 8노드 MetroCluster 구성에 적용됩니다. 이러한 파일은 기본적으로 IOD(In-Order Delivery)를 위해 패브릭을 구성합니다.
+
+RCF 다운로드 페이지는 다양한 스위치 모델에서 지원하는 노드 수를 나타냅니다.

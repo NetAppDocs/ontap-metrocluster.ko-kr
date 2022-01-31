@@ -1,0 +1,105 @@
+---
+permalink: transition/task_complete_transition.html 
+sidebar: sidebar 
+keywords: Generating and applying RCFs to the new IP switches, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
+summary: 전환을 위한 구성을 준비하려면 새 노드를 기존 MetroCluster 구성에 추가한 다음 데이터를 새 노드로 이동합니다. 
+---
+= 전이를 완료합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환을 완료하려면 새 MetroCluster IP 구성의 작동을 확인해야 합니다.
+
+. MetroCluster IP 구성을 확인합니다.
++
+각 클러스터에서 이 단계를 수행해야 합니다.
+
++
+다음 예에서는 cluster_A에 대한 출력을 보여 줍니다
+
++
+....
+cluster_A::> cluster show
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------  ------------
+node_A_1-IP          true    true          true
+node_A_2-IP          true    true          false
+2 entries were displayed.
+
+cluster_A::>
+....
++
+다음 예에서는 cluster_B에 대한 출력을 보여 줍니다
+
++
+....
+cluster_B::> cluster show
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------  ------------
+node_B_1-IP          true    true          true
+node_B_2-IP          true    true          false
+2 entries were displayed.
+
+cluster_B::>
+....
+. 클러스터 HA 및 스토리지 페일오버 설정
++
+각 클러스터에서 이 단계를 수행해야 합니다.
+
+. 클러스터 HA 기능이 활성화되었는지 확인합니다.
++
+....
+cluster_A::> cluster ha show
+High Availability Configured: true
+
+cluster_A::>
+
+
+cluster_A::> storage  failover show
+                              Takeover
+Node           Partner        Possible State Description
+-------------- -------------- -------- -------------------------------------
+node_A_1-IP    node_A_2-IP    true     Connected to node_A_2-IP
+node_A_2-IP    node_A_1-IP    true     Connected to node_A_1-IP
+2 entries were displayed.
+
+cluster_A::>
+....
+. MetroCluster 전환 모드를 비활성화합니다.
++
+.. 고급 권한 수준 'Set-Privilege advanced'로 변경합니다
+.. 전환 모드 비활성화: 'metrocluster transition disable'
+.. admin 권한 수준으로 복귀:'et-Privilege admin'입니다
+
+
++
+....
+cluster_A::*> metrocluster transition disable
+
+cluster_A::*>
+....
+. 전이가 'metrocluster transition show-mode'가 비활성화되어 있는지 확인합니다
++
+두 클러스터 모두에서 이러한 단계를 수행해야 합니다.
+
++
+....
+cluster_A::> metrocluster transition show-mode
+Transition Mode
+--------------------------
+not-enabled
+
+cluster_A::>
+....
++
+....
+cluster_B::> metrocluster transition show-mode
+Transition Mode
+--------------------------
+not-enabled
+
+cluster_B::>
+....
+

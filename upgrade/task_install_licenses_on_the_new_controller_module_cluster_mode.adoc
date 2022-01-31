@@ -1,0 +1,30 @@
+---
+permalink: upgrade/task_install_licenses_on_the_new_controller_module_cluster_mode.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, install, license, new, controller, module 
+summary: '표준 \(node-locked\) 라이센스가 필요한 모든 ONTAP 서비스에 대해 새 컨트롤러 모듈에 대한 라이센스를 추가해야 합니다. 표준 라이센스가 있는 기능을 사용하려면 클러스터의 각 노드에 해당 기능에 대한 자체 키가 있어야 합니다.' 
+---
+= 새 컨트롤러 모듈에 대한 라이센스 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+표준(노드 잠김) 라이센스가 필요한 모든 ONTAP 서비스에 대해 새 컨트롤러 모듈에 대한 라이센스를 추가해야 합니다. 표준 라이센스가 있는 기능을 사용하려면 클러스터의 각 노드에 해당 기능에 대한 자체 키가 있어야 합니다.
+
+라이센스에 대한 자세한 내용은 기술 자료 문서 3013749: Data ONTAP 8.2 라이센스 개요 및 NetApp Support 사이트 및 _시스템 관리 참조_를 참조하십시오.
+
+.단계
+. 필요한 경우 소프트웨어 라이센스의 내 지원 섹션에서 NetApp Support 사이트의 새 노드에 대한 라이센스 키를 얻습니다.
++
+사이트에 필요한 라이센스 키가 없는 경우 영업 담당자 또는 지원 담당자에게 문의하십시오.
+
+. 다음 명령을 실행하여 각 라이센스 키를 설치합니다.
++
+'시스템 라이선스 add-license-code_license_key_'
+
++
+license_key_ 는 길이가 28자리입니다.
+
+. 필요한 각 표준(노드 잠김) 라이센스에 대해 이 단계를 반복합니다.
+

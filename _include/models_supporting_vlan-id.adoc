@@ -1,0 +1,37 @@
+= 
+
+
+를 누릅니다
+
+--
+[NOTE]
+====
+* 특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).
+* ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+
+
+====
+--
++다음 플랫폼 모델은 VLAN을 사용하고 기본이 아닌 VLAN ID를 구성할 수 있습니다.
+
+를 누릅니다
+
+|===
+
+
+| AFF 플랫폼 | FAS 플랫폼 
+
+
+ a| 
+* AFF A220
+* AFF A250
+* AFF A400
+
+ a| 
+* FAS2750
+* 500f로 설정합니다
+* FAS8300
+* FAS8700
+
+
+|===

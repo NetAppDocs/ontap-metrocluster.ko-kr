@@ -1,0 +1,40 @@
+---
+permalink: transition/concept_how_transition_impacts_the_mcc_hardware_components.html 
+sidebar: sidebar 
+keywords: complete, completing, transition, procedure, key, component, exist, metrocluster, configuration, replace, reconfigure, impact, hardware, component 
+summary: 전환 절차를 완료한 후 기존 MetroCluster 구성의 주요 구성 요소가 교체되거나 재구성되었습니다. 
+---
+= 전환이 MetroCluster 하드웨어 구성 요소에 미치는 영향
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환 절차를 완료한 후 기존 MetroCluster 구성의 주요 구성 요소가 교체되거나 재구성되었습니다.
+
+* * 컨트롤러 모듈 *
++
+기존 컨트롤러 모듈은 새 컨트롤러 모듈로 교체됩니다. 전환 절차가 끝나면 기존 컨트롤러 모듈을 해체합니다.
+
+* 스토리지 쉘프 *
++
+데이터가 이전 쉘프에서 새 셸프로 이동합니다. 이전 선반은 전환 절차 종료 시 폐기됩니다.
+
+* * MetroCluster(백 엔드) 및 클러스터 스위치 *
++
+백엔드 스위치 기능은 IP 스위치 패브릭으로 대체됩니다. MetroCluster FC 구성에 FC 스위치와 FC-to-SAS 브리지가 포함되어 있는 경우 이 절차를 마치면 해당 스위치를 해체합니다.
+
++
+MetroCluster FC 구성에서 클러스터 인터커넥트에 클러스터 스위치를 사용한 경우 백엔드 IP 스위치 패브릭을 제공하는 데 다시 사용할 수도 있습니다. 재사용된 클러스터 스위치는 플랫폼 및 스위치별 RCFs를 사용하여 재구성해야 합니다. 절차를 참조하십시오.
+
++
+MetroCluster FC 구성에서 클러스터 스위치를 사용하지 않은 경우, 백엔드 스위치 패브릭을 제공하기 위해 새로운 IP 스위치가 추가됩니다.
+
++
+xref:concept_considerations_for_using_existing_ip_switches.adoc[IP 스위치에 대한 고려 사항]
+
+* * 클러스터 피어링 네트워크 *
++
+고객이 제공한 기존 클러스터 피어링 네트워크를 새로운 MetroCluster IP 구성에 사용할 수 있습니다. 클러스터 피어링은 전환 절차의 일환으로 MetroCluster IP 노드에서 구성됩니다.
+
+

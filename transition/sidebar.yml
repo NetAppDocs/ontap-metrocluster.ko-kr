@@ -1,0 +1,78 @@
+---
+section: transition
+title: MetroCluster FC에서 MetroCluster IP로 전환합니다
+entries:
+- title: 전환 절차를 선택합니다
+  url: "/transition/concept_choosing_your_transition_procedure_mcc_transition.html"
+- title: 무중단 전환을 지원하는 플랫폼
+  url: "/transition/concept_supported_platforms_for_transition.html"
+- title: MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
+  entries:
+  - title: 개요
+    url: "/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html"
+  - title: MetroCluster FC에서 MetroCluster IP 구성으로 전환할 준비를 합니다
+    entries:
+    - title: 무중단 FC-to-IP 전환 요구사항
+      url: "/transition/concept_requirements_for_fc_to_ip_transition_mcc.html"
+    - title: 전환이 MetroCluster 하드웨어 구성 요소에 미치는 영향
+      url: "/transition/concept_how_transition_impacts_the_mcc_hardware_components.html"
+    - title: 무중단 MetroCluster 전환을 위한 워크플로우
+      url: "/transition/concept_transition_workflow_fc_to_ip_transition.html"
+    - title: IP 스위치에 대한 고려 사항
+      url: "/transition/concept_considerations_for_using_existing_ip_switches.html"
+    - title: 무중단 전환 중 전환, 복구, 스위치백 작업
+      url: "/transition/concept_switchover_and_switchback_operations_during_transition.html"
+    - title: 전환 중 알림 메시지 및 툴 지원
+      url: "/transition/concept_mcc_operation_during_transition.html"
+    - title: 이 절차의 이름 지정 예
+      url: "/transition/concept_example_naming_in_this_procedure_mcc_ip_transition.html"
+  - title: MetroCluster FC에서 MetroCluster IP 구성으로 전환
+    entries:
+    - title: MetroCluster 구성의 상태를 확인합니다
+      url: "/transition/task_verify_mcc_health_fc_to_ip.html"
+    - title: Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
+      url: "/transition/task_remove_tiebreaker_4n_transition.html"
+    - title: 새 IP 스위치에 RCF 생성 및 적용
+      url: "/transition/task_apply_rcfs.html"
+    - title: 로컬 클러스터 연결을 이동합니다
+      url: "/transition/task_move_cluster_connections.html"
+    - title: MetroCluster IP 컨트롤러를 준비합니다
+      url: "/transition/task_prepare_ip_controllers_4n_transition.html"
+    - title: 전환을 위해 MetroCluster를 구성합니다
+      url: "/transition/task_configure_transition.html"
+    - title: 데이터를 새 드라이브 쉘프로 이동합니다
+      url: "/transition/task_move_data_to_new_drive_shelves.html"
+    - title: MetroCluster FC 컨트롤러를 분리합니다
+      url: "/transition/task_remove_mc_fc_controllers.html"
+    - title: 전환을 완료합니다
+      url: "/transition/task_complete_transition.html"
+  - title: 유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다
+    url: "/transition/task_send_a_custom_autosupport_message_after_maintenance_4n_nondisruptive_mcc_transition.html"
+  - title: Tiebreaker 또는 중재자 모니터링을 복원합니다
+    url: "/transition/task_restore_tiebreaker_monitor_4n_nondisruptive_mcc_transition.html"
+- title: 2노드 MetroCluster FC에서 4노드 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
+  entries:
+  - title: 개요
+    url: "/transition/task_disruptively_transition_from_a_two_node_mcc_fc_to_a_four_node_mcc_ip_configuration.html"
+  - title: 이 절차의 이름 지정 예
+    url: "/transition/concept_example_naming_in_this_procedure_2n_mcc_transition_disruptive.html"
+  - title: FC-to-IP의 획기적인 전환 준비
+    url: "/transition/concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.html"
+  - title: MetroCluster FC 노드를 전환합니다
+    url: "/transition/task_transition_the_mcc_fc_nodes_2n_mcc_transition_supertask.html"
+  - title: MetroCluster IP 컨트롤러 모듈을 연결합니다
+    url: "/transition/task_connect_the_mcc_ip_controller_modules_2n_mcc_transition_supertask.html"
+  - title: 새 노드를 구성하고 전환을 완료합니다
+    url: "/transition/task_configure_the_new_nodes_and_complete_transition.html"
+  - title: 시스템을 정상 작동 상태로 되돌립니다
+    url: "/transition/task_return_the_system_to_normal_operation_2n_mcc_transition_supertask.html"
+- title: 스토리지 쉘프를 폐기할 때 MetroCluster FC에서 MetroCluster IP로 중단 없이 전환(ONTAP 9.8 이상)
+  url: "/transition/task_disruptively_transition_while_move_volumes_from_old_shelves_to_new_shelves.html"
+- title: 새 컨트롤러에서 기존 쉘프를 지원하지 않을 때 중단 없이 전환(ONTAP 9.8 이상)
+  url: "/transition/task_disruptively_transition_when_exist_shelves_are_not_supported_on_new_controllers.html"
+- title: FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
+  url: "/transition/task_move_an_fc_san_workload_from_mcc_fc_to_mcc_ip_nodes.html"
+- title: Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
+  url: "/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html"
+- title: 추가 정보를 찾을 수 있는 위치
+  url: "/transition/reference_where_to_find_additional_information_mcc_ug.html"

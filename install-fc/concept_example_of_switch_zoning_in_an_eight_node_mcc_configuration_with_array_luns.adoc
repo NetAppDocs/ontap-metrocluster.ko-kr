@@ -1,0 +1,49 @@
+---
+permalink: install-fc/concept_example_of_switch_zoning_in_an_eight_node_mcc_configuration_with_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, example, eight, node, array, luns, mcc 
+summary: 스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다. 
+---
+= 어레이 LUN이 있는 8노드 MetroCluster 구성의 스위치 조닝의 예
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.
+
+8노드 MetroCluster 구성은 2개의 4노드 DR 그룹으로 구성됩니다. 첫 번째 DR 그룹은 다음 노드로 구성됩니다.
+
+* 컨트롤러_A_1
+* 컨트롤러_A_2
+* 컨트롤러_B_1
+* 컨트롤러_B_2
+
+
+두 번째 DR 그룹은 다음 노드로 구성됩니다.
+
+* 컨트롤러_A_3
+* 컨트롤러_A_4
+* 컨트롤러_B_3
+* 컨트롤러_B_4
+
+
+스위치 조닝을 구성하려면 첫 번째 DR 그룹에 대해 4노드 MetroCluster 구성에 대한 조닝 예제를 사용할 수 있습니다.
+
+link:concept_example_of_switch_zoning_in_a_four_node_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 4노드 MetroCluster 구성의 스위치 조닝의 예"]
+
+두 번째 DR 그룹에 대해 조닝을 구성하려면 두 번째 DR 그룹의 컨트롤러에 속한 FC 이니시에이터 포트와 어레이 LUN에 대한 동일한 예와 요구 사항을 따르십시오.
+
+.관련 정보
+* 스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.
++
+link:concept_example_of_switch_zoning_in_a_two_node_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 2노드 MetroCluster 구성에서 스위치 조닝의 예"]
+
++
+link:concept_example_of_switch_zoning_in_a_four_node_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 4노드 MetroCluster 구성의 스위치 조닝의 예"]
+
+* 어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝을 사용하는 경우 특정 기본 요구사항을 준수해야 합니다.
++
+link:reference_requirements_for_switch_zoning_in_a_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 MetroCluster 구성의 스위치 조닝에 대한 요구사항"]
+
+

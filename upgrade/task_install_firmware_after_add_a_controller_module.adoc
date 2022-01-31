@@ -1,0 +1,20 @@
+---
+permalink: upgrade/task_install_firmware_after_add_a_controller_module.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, install, firmware, add, controller, module 
+summary: 컨트롤러 모듈을 추가한 후 새 컨트롤러 모듈에 최신 펌웨어를 설치하여 컨트롤러 모듈이 ONTAP에서 올바르게 작동하도록 해야 합니다. 
+---
+= 컨트롤러 모듈 추가 후 펌웨어 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 모듈을 추가한 후 새 컨트롤러 모듈에 최신 펌웨어를 설치하여 컨트롤러 모듈이 ONTAP에서 올바르게 작동하도록 해야 합니다.
+
+.단계
+. 시스템에 맞는 최신 버전의 펌웨어를 다운로드하고 새 펌웨어 다운로드 및 설치 지침을 따릅니다.
++
+https://mysupport.netapp.com/site/downloads/firmware/system-firmware-diagnostics["NetApp 다운로드: 시스템 펌웨어 및 진단"]
+
+

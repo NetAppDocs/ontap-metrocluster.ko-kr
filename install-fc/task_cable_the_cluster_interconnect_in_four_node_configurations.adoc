@@ -1,0 +1,25 @@
+---
+permalink: install-fc/task_cable_the_cluster_interconnect_in_four_node_configurations.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, cable, cluster, interconnect, four, node 
+summary: 8노드 또는 4노드 MetroCluster 구성에서는 각 사이트의 로컬 컨트롤러 모듈 간에 클러스터 인터커넥트에 케이블을 연결해야 합니다. 
+---
+= 8노드 또는 4노드 구성으로 클러스터 인터커넥트 케이블 연결
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+8노드 또는 4노드 MetroCluster 구성에서는 각 사이트의 로컬 컨트롤러 모듈 간에 클러스터 인터커넥트에 케이블을 연결해야 합니다.
+
+2노드 MetroCluster 구성에는 이 작업이 필요하지 않습니다.
+
+이 작업은 두 MetroCluster 사이트 모두에서 수행해야 합니다.
+
+.단계
+. 클러스터 인터커넥트를 한 컨트롤러 모듈에서 다른 컨트롤러 모듈로 케이블로 연결하거나, 클러스터 인터커넥트 스위치를 각 컨트롤러 모듈에서 스위치로 사용하는 경우
+
+
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]

@@ -1,0 +1,47 @@
+---
+permalink: install-stretch/concept_parts_of_a_two_node_mcc_configuration_using_fc_to_sas_bridges.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, parts, two, node, bridge, stretch, configuration 
+summary: MetroCluster 구성을 계획할 때 구성의 각 부분과 구성 요소가 함께 작동하는 방식을 이해해야 합니다. 
+---
+= 2노드 브리지 연결 스트레치 MetroCluster 구성의 일부
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성을 계획할 때 구성의 각 부분과 구성 요소가 함께 작동하는 방식을 이해해야 합니다.
+
+MetroCluster 구성에는 다음과 같은 주요 하드웨어 요소가 포함됩니다.
+
+* 스토리지 컨트롤러
++
+스토리지 컨트롤러는 스토리지에 직접 연결되지 않고 FC-to-SAS 브리지에 연결됩니다. 스토리지 컨트롤러는 각 컨트롤러의 FC-VI 어댑터 간에 FC 케이블을 통해 서로 연결됩니다.
+
++
+각 스토리지 컨트롤러는 파트너 사이트의 스토리지 컨트롤러에 DR 파트너로 구성됩니다.
+
+* FC-to-SAS 브릿지
++
+FC-to-SAS 브릿지는 SAS 스토리지 스택을 컨트롤러의 FC 이니시에이터 포트에 연결하여 두 프로토콜을 연결합니다.
+
+* 클러스터 피어링 네트워크
++
+클러스터 피어링 네트워크는 스토리지 가상 시스템(SVM) 구성의 미러링을 위한 연결을 제공합니다. 하나의 클러스터에 있는 모든 SVM의 구성이 파트너 클러스터에 미러링됩니다.
+
+
+
+다음 그림은 MetroCluster 구성의 간단한 뷰를 보여 줍니다. 일부 연결의 경우, 단일 선은 구성 요소 간의 여러 중복 연결을 나타냅니다. 데이터 및 관리 네트워크 연결이 표시되지 않습니다.
+
+image::../media/mcc_hardware_architecture_both_clusters_2_node_atto.gif[MCC 하드웨어 아키텍처 두 클러스터 모두 2노드 ATTO입니다]
+
+* 이 구성은 2개의 단일 노드 클러스터로 구성됩니다.
+* 각 사이트에는 하나 이상의 SAS 스토리지 스택이 있습니다.
++
+
+NOTE: MetroCluster 구성의 SAS 쉘프는 ACP 케이블 연결을 지원하지 않습니다.
+
++
+추가 스토리지 스택은 지원되지만 각 사이트에는 하나만 표시됩니다.
+
+

@@ -1,0 +1,35 @@
+---
+permalink: transition/task_restore_tiebreaker_monitor_4n_nondisruptive_mcc_transition.html 
+sidebar: sidebar 
+keywords: completing, complete, transition, metrocluster, configuration, resume, monitor, tiebreaker, mediator, utility, restoring, restore 
+summary: MetroCluster 구성 전환을 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다. 
+---
+= Tiebreaker 또는 중재자 모니터링 복원
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성 전환을 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.
+
+. 구성에 적절한 절차를 사용합니다.
++
+[cols="2*"]
+|===
+| 사용 중인 경우... | 이 절차를 사용합니다 
+
+
+ a| 
+Tiebreaker입니다
+ a| 
+xref:../tiebreaker/concept_configuring_the_tiebreaker_software.adoc#adding-metrocluster-configurations[MetroCluster 구성 추가]
+
+
+
+ a| 
+중재자
+ a| 
+xref:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.adoc#configuring-the-ontap-mediator-service-from-a-metrocluster-ip-configuration[MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]
+
+|===
+

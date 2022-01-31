@@ -1,0 +1,21 @@
+---
+permalink: transition/task_send_a_custom_autosupport_message_after_maintenance_4n_nondisruptive_mcc_transition.html 
+sidebar: sidebar 
+keywords: complete, completing, transition, autosupport, message, indicating, indicate, maintenance, automatic, case, creation, resume, send 
+summary: 전환을 완료한 후 유지 관리 완료를 나타내는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다. 
+---
+= 유지 관리 후 사용자 지정 AutoSupport 메시지 보내기
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환을 완료한 후 유지 관리 완료를 나타내는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.
+
+. 자동 지원 케이스 생성을 재개하려면 유지 관리가 완료되었음을 나타내는 AutoSupport 메시지를 보냅니다.
++
+.. 'system node AutoSupport invoke -node * -type all-message maINT=end' 명령을 발행한다
+.. 파트너 클러스터에서 명령을 반복합니다.
+
+
+

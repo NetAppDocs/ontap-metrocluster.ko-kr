@@ -1,0 +1,35 @@
+---
+permalink: transition/concept_considerations_for_using_existing_ip_switches.html 
+sidebar: sidebar 
+keywords: ensure, ip, switch, support, exist, model, metrocluster, fc, configuration, ip, consideration, support 
+summary: IP 스위치가 지원되는지 확인해야 합니다. 기존 스위치 모델이 원래 MetroCluster FC 구성과 새 MetroCluster IP 구성에서 모두 지원되는 경우 기존 스위치를 재사용할 수 있습니다. 
+---
+= IP 스위치에 대한 고려 사항
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+IP 스위치가 지원되는지 확인해야 합니다. 기존 스위치 모델이 원래 MetroCluster FC 구성과 새 MetroCluster IP 구성에서 모두 지원되는 경우 기존 스위치를 재사용할 수 있습니다.
+
+
+
+== 지원되는 스위치
+
+NetApp에서 제공하는 스위치를 사용해야 합니다.
+
+* MetroCluster 규격 스위치(NetApp에서 검증 및 제공하지 않는 스위치)는 전환이 지원되지 않습니다.
+* IP 스위치는 MetroCluster FC 구성과 MetroCluster IP 구성 모두에서 클러스터 스위치로 지원되어야 합니다.
+* MetroCluster FC가 스위치 클러스터이고 IP 클러스터 스위치가 MetroCluster IP 구성에서 지원되는 경우 IP 스위치를 새로운 MetroCluster IP 구성에서 재사용할 수 있습니다.
+* 새 IP 스위치는 일반적으로 다음과 같은 경우에 사용됩니다.
++
+** MetroCluster FC는 스위치가 없는 클러스터이므로 새로운 스위치가 필요합니다.
+** MetroCluster FC는 스위치 클러스터이지만 MetroCluster IP 구성에서는 기존 IP 스위치가 지원되지 않습니다.
+** MetroCluster IP 구성에 다른 스위치를 사용하려고 합니다.
+
+
+
+
+플랫폼 모델 및 스위치 지원에 대한 자세한 내용은 _NetApp Hardware Universe_을 참조하십시오.
+
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]

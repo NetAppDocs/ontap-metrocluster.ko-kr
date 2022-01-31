@@ -1,0 +1,297 @@
+---
+permalink: install-fc/task_install_the_brocade_fc_switch_rcf_file.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, brocade, fc, switch, rcf, file 
+summary: Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 스위치 설정을 제공하는 스위치 구성 파일을 설치할 수 있습니다. 
+---
+= Brocade FC 스위치 RCF 파일 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 스위치 설정을 제공하는 스위치 구성 파일을 설치할 수 있습니다.
+
+이러한 단계는 MetroCluster 패브릭 구성의 각 Brocade FC 스위치에서 반복해야 합니다.
+
+.단계
+. 다운로드 및 구성 프로세스를 시작합니다.
++
+'configDownload'
+
++
+다음 예에 표시된 것처럼 프롬프트에 응답합니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> configDownload
+Protocol (scp, ftp, sftp, local) [ftp]:
+Server Name or IP Address [host]: <user input>
+User Name [user]:<user input>
+Path/Filename [<home dir>/config.txt]:path to configuration file
+Section (all|chassis|switch [all]): all
+.
+.
+.
+Do you want to continue [y/n]: y
+Password: <user input>
+----
++
+암호를 입력하면 스위치가 구성 파일을 다운로드하고 실행합니다.
+
+. 스위치를 영구적으로 활성화합니다.
++
+'위치cfgpersistentenable'
+
++
+이 예에서는 FC SWITCH_A_1을 영구적으로 활성화하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchcfgpersistentenable
+----
+. 다음 명령을 실행하여 구성 파일이 스위치 도메인을 설정했는지 확인합니다.
++
+재치쇼
+
++
+각 스위치에는 스위치가 사용하는 구성 파일에 따라 다른 도메인 번호가 할당됩니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchShow
+switchName: FC_switch_A_1
+switchType: 109.1
+switchState: Online
+switchMode: Native
+switchRole: Subordinate
+switchDomain: 5
+----
+. 다음 표에 표시된 대로 스위치에 올바른 도메인 값이 할당되었는지 확인합니다.
++
+|===
+
+
+| 패브릭 | 스위치 | 도메인 전환 
+
+
+ a| 
+1
+ a| 
+A_1
+ a| 
+5
+
+
+
+ a| 
+B_1
+ a| 
+7
+
+
+
+ a| 
+2
+ a| 
+A_2
+ a| 
+6
+
+
+
+ a| 
+B_2
+ a| 
+8
+
+|===
+. 포트 속도를 변경합니다.
++
+"포르cfgspeed"
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfgspeed port number port speed
+----
++
+기본적으로 모든 포트는 16Gbps에서 작동하도록 구성됩니다. 다음과 같은 이유로 포트 속도를 변경할 수 있습니다.
+
++
+** 8Gbps FC-VI 어댑터를 사용하고 스위치 포트 속도를 8Gbps로 설정해야 할 경우 상호 연결 스위치 포트 속도를 변경해야 합니다.
+** ATTO FiberBridge 6500N에 8Gbps HBA 어댑터를 사용하는 경우 스위치 포트 속도를 변경해야 합니다.
+** ISL이 16Gbps에서 실행될 수 없는 경우 ISL 포트의 속도를 변경해야 합니다.
+
+
+. ISL 거리를 계산합니다.
++
+FC-VI의 동작으로 인해 거리를 실제 거리의 1.5배, 최소 10배(LE)로 설정해야 합니다. ISL의 거리는 다음 전체 킬로미터까지 반올림하여 1.5 × 실제 거리 = 거리로 계산됩니다.
+
++
+거리가 3km 이면 1.5 × 3km = 4.5입니다. 이 값이 10보다 낮으므로 ISL을 LE 거리 수준으로 설정해야 합니다.
+
++
+거리는 20km, 그 다음 1.5 × 20km = 30입니다. ISL을 LS 거리 레벨로 설정해야 합니다.
+
+. 각 ISL 포트의 거리를 설정합니다.
++
+"portcfglongdistance_port level vc_link_init_-distance_distance_value_"
+
++
+VC_LINK_INIT 값 1은 기본적으로 "ARB"라는 fillword를 사용한다. 값이 0이면 "유휴"이라는 필렛이 사용됩니다. 필요한 값은 사용하는 링크에 따라 달라질 수 있습니다. 이 예제에서는 기본값이 설정되어 있고 거리가 20km로 가정합니다 따라서 이 설정은 VC_LINK_init 값이 "1"인 "30"이고 ISL 포트는 "21"입니다.
+
++
+예: LS
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfglongdistance 21 LS 1 -distance 30
+----
++
+예: LE
+
++
+[listing]
+----
+FC_switch_A_1:admin> portcfglongdistance 21 LE 1
+----
+. IP 주소가 올바르게 설정되었는지 확인합니다.
++
+이파드쇼
+
++
+[listing]
+----
+FC_switch_A_1:admin> ipAddrshow
+----
++
+필요한 경우 다음 명령을 사용하여 IP 주소를 설정할 수 있습니다.
+
++
+'ipAddrSet'입니다
+
+. 스위치 프롬프트에서 시간대를 설정합니다.
++
+'tstimezone -- 대화형'
+
++
+필요한 경우 프롬프트에 응답해야 합니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin>  tstimezone --interactive
+----
+. 스위치를 재부팅합니다.
++
+다시 부팅
+
++
+이 예에서는 FC SWITCH_A_1을 재부팅하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> reboot
+----
+. 거리 설정을 확인합니다.
++
+포트버거쇼
+
++
+LE 의 거리 설정은 10 km 로 나타납니다
+
++
+[listing]
+----
+FC_Switch_A_1:admin> portbuffershow
+User Port Lx   Max/Resv Buffer Needed  Link     Remaining
+Port Type Mode Buffers  Usage  Buffers Distance Buffers
+---- ---- ---- ------- ------ ------- --------- ----------
+...
+21    E    -      8      67     67      30 km
+22    E    -      8      67     67      30 km
+...
+23    -    8      0       -      -      466
+----
+. ISL 케이블을 제거한 스위치의 포트에 다시 연결합니다.
++
+초기 설정이 기본 설정으로 재설정되면 ISL 케이블이 분리되었습니다.
+
++
+link:task_reset_the_brocade_fc_switch_to_factory_defaults.html["Brocade FC 스위치를 출하 시 기본값으로 재설정합니다"]
+
+. 구성을 검증합니다.
++
+.. 스위치가 하나의 Fabric을 형성하는지 확인합니다.
++
+재치쇼
+
++
+다음 예에서는 포트 20 및 21에서 ISL을 사용하는 구성의 출력을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchshow
+switchName: FC_switch_A_1
+switchType: 109.1
+switchState:Online
+switchMode: Native
+switchRole: Subordinate
+switchDomain:       5
+switchId:   fffc01
+switchWwn:  10:00:00:05:33:86:89:cb
+zoning:             OFF
+switchBeacon:       OFF
+
+Index Port Address Media Speed State  Proto
+===========================================
+...
+20   20  010C00   id    16G  Online FC  LE E-Port  10:00:00:05:33:8c:2e:9a "FC_switch_B_1" (downstream)(trunk master)
+21   21  010D00   id    16G  Online FC  LE E-Port  (Trunk port, master is Port 20)
+...
+----
+.. 패브릭의 구성을 확인하십시오.
++
+배가쇼
+
++
+[listing]
+----
+FC_switch_A_1:admin> fabricshow
+   Switch ID   Worldwide Name      Enet IP Addr FC IP Addr Name
+-----------------------------------------------------------------
+1: fffc01 10:00:00:05:33:86:89:cb 10.10.10.55  0.0.0.0    "FC_switch_A_1"
+3: fffc03 10:00:00:05:33:8c:2e:9a 10.10.10.65  0.0.0.0   >"FC_switch_B_1"
+----
+.. ISL이 작동하는지 확인:
++
+'실쇼'
+
++
+[listing]
+----
+FC_switch_A_1:admin> islshow
+----
+.. 조닝이 제대로 복제되었는지 확인합니다.
++
+cfgshow+ 조네쇼
+
++
+두 출력 모두 두 스위치에 대해 동일한 구성 정보와 조닝 정보를 표시해야 합니다.
+
+.. 트렁킹을 사용하는 경우 다음 명령을 사용하여 트렁킹을 확인할 수 있습니다: `* trunkShow*'
++
+[listing]
+----
+FC_switch_A_1:admin> trunkshow
+----
+
+
+

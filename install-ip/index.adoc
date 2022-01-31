@@ -1,0 +1,20 @@
+---
+permalink: install-ip/index.html 
+sidebar: sidebar 
+keywords: metrocluster, ip, installation 
+summary: MetroCluster IP 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다. 
+---
+= 개요
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다.
+
+* link:../install-ip/concept_considerations_differences.html["설치 준비 및 모든 요구 사항 이해"].
+* link:../install-ip/concept_parts_of_an_ip_mcc_configuration_mcc_ip.html["구성 요소에 케이블을 연결합니다"]
+* link:../install-ip/concept_configure_the_mcc_software_in_ontap.html["소프트웨어를 구성합니다"]
+* link:../install-ip/concept_mediator_requirements.html["ONTAP 중재자 구성"] (선택 사항)
+* link:../install-ip/task_test_the_mcc_configuration.html["구성을 테스트합니다"]
+

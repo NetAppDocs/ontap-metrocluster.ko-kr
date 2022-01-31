@@ -1,0 +1,152 @@
+---
+permalink: manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html 
+sidebar: sidebar 
+keywords: monitor, protect, file, system, consistency, nvfail, parameter, volume, modify, enable, detect, nonvolatile, nvram, switchover, recover, impact, access, nfs, volume, lun, command, monitor, data, loss, event, access 
+summary: 'volume modify 명령의 -nvfail 매개 변수를 사용하면 시스템이 부팅 중이거나 전환 작업 후 ONTAP에서 NVRAM(Nonvolatile RAM)의 불일치를 감지할 수 있습니다. 또한 볼륨을 수동으로 복구할 수 있을 때까지 데이터 액세스 및 수정으로부터 시스템을 경고 및 보호합니다.' 
+---
+= NVFAIL을 사용하여 파일 시스템 일관성 모니터링 및 보호
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+'volume modify' 명령의 '-nvfail' 매개 변수를 사용하면 시스템이 부팅 중이거나 전환 작업 후 ONTAP에서 NVRAM(Nonvolatile RAM) 불일치를 감지할 수 있습니다. 또한 볼륨을 수동으로 복구할 수 있을 때까지 데이터 액세스 및 수정으로부터 시스템을 경고 및 보호합니다.
+
+ONTAP에서 문제가 감지되면 데이터베이스 또는 파일 시스템 인스턴스가 응답하지 않거나 종료됩니다. 그런 다음 ONTAP가 오류 메시지를 콘솔에 전송하여 데이터베이스 또는 파일 시스템의 상태를 확인하도록 알립니다. NVFAIL을 사용하면 데이터베이스 유효성 손상을 줄 수 있는 클러스터 노드 간의 NVRAM 불일치를 데이터베이스 관리자에게 경고할 수 있습니다.
+
+페일오버 또는 부팅 복구 중에 NVRAM 데이터가 손실되면 NVFAIL 상태가 해결될 때까지 NFS 클라이언트가 노드의 데이터에 액세스할 수 없습니다. CIFS 클라이언트는 영향을 받지 않습니다.
+
+
+
+== NVFAIL이 NFS 볼륨 또는 LUN에 대한 액세스에 미치는 영향
+
+NVFAIL 상태는 MetroCluster이 부팅 시, ONTAP 전환 작업이 수행될 때 또는 NVFAIL 옵션이 볼륨에 설정되어 있는 경우 HA 테이크오버 작업 중에 NVRAM 오류를 감지할 때 설정됩니다. 시작할 때 오류가 발견되지 않으면 파일 서비스가 정상적으로 시작됩니다. 그러나 NVRAM 오류가 감지되거나 NVFAIL 처리가 재해 스위치오버에 적용된 경우 ONTAP는 데이터베이스 인스턴스의 응답을 중지합니다.
+
+NVFAIL 옵션을 활성화하면 다음 표에 설명된 프로세스 중 하나가 부팅 중에 수행됩니다.
+
+|===
+
+
+| 만약... | 그러면... 
+
+
+ a| 
+ONTAP에서 NVRAM 오류가 감지되지 않습니다
+ a| 
+파일 서비스가 정상적으로 시작됩니다.
+
+
+
+ a| 
+ONTAP가 NVRAM 오류를 감지합니다
+ a| 
+* ONTAP는 데이터베이스에 액세스하려고 하는 NFS 클라이언트에 ESTALE(오래된 파일 핸들) 오류를 반환하여 애플리케이션이 응답하지 않거나 충돌하거나 종료되도록 합니다.
++
+그런 다음 ONTAP가 시스템 콘솔 및 로그 파일에 오류 메시지를 보냅니다.
+
+* 애플리케이션이 재시작되면 유효한 것을 확인하지 않은 경우에도 CIFS 클라이언트가 파일을 사용할 수 있습니다.
++
+NFS 클라이언트의 경우 영향을 받는 볼륨에서 'in-nvfailed-state' 옵션을 재설정할 때까지 파일에 액세스할 수 없습니다.
+
+
+
+
+
+ a| 
+다음 매개 변수 중 하나가 사용되는 경우:
+
+* dr-force-nvfail 볼륨 옵션이 설정되었습니다
+* 'force-nvfail-all' switchover 명령 옵션이 설정되었습니다.
+
+ a| 
+관리자가 향후 재해 전환 작업에 대해 NVFAIL 처리를 강제 적용할 것으로 예상하지 않는 경우 스위치오버 후 dr-force-nvfail" 옵션을 설정 취소할 수 있습니다. NFS 클라이언트의 경우 영향을 받는 볼륨에서 'in-nvfailed-state' 옵션을 재설정할 때까지 파일에 액세스할 수 없습니다.
+
+
+NOTE: 'force-nvfail-all' 옵션을 사용하면 재해 전환 중에 처리된 모든 DR 볼륨에 dr-force-nvfail 옵션이 설정됩니다.
+
+
+
+ a| 
+ONTAP는 LUN이 포함된 볼륨에서 NVRAM 오류를 감지합니다
+ a| 
+해당 볼륨의 LUN이 오프라인 상태로 전환됩니다. 볼륨의 'in-nvfailed-state' 옵션을 지워야 하며, LUN의 NVFAIL 속성은 영향을 받는 볼륨의 각 LUN을 온라인 상태로 전환하여 지워야 합니다. 이 단계를 수행하여 LUN의 무결성을 확인하고 필요에 따라 스냅샷 복사본 또는 백업에서 LUN을 복구할 수 있습니다. 볼륨의 모든 LUN이 복구되면 영향을 받는 볼륨의 'in-nvfailed-state' 옵션이 지워집니다.
+
+|===
+
+
+== 데이터 손실 이벤트 모니터링을 위한 명령입니다
+
+NVFAIL 옵션을 활성화하면 NVRAM 비일관성 또는 MetroCluster 스위치오버로 인해 시스템 충돌이 발생할 경우 알림을 받게 됩니다.
+
+기본적으로 NVFAIL 매개 변수는 사용되지 않습니다.
+
+[cols="1,2"]
+|===
+
+
+| 원하는 작업 | 이 명령 사용... 
+
+
+ a| 
+NVFAIL이 활성화된 새 볼륨을 생성합니다
+ a| 
+'volume create-nvfail on
+
+
+
+ a| 
+기존 볼륨에서 NVFAIL을 활성화합니다
+ a| 
+볼륨 수정
+
+* 참고: * 생성된 볼륨에서 NVFAIL을 활성화하려면 "-nvfail" 옵션을 "on"으로 설정합니다.
+
+
+
+ a| 
+NVFAIL이 현재 지정된 볼륨에 대해 활성화되어 있는지 여부를 표시합니다
+ a| 
+'볼륨 쇼'
+
+* 참고: * 지정된 볼륨에 대한 NVFAIL 속성을 표시하려면 '-fields' 매개 변수를 "nvfail"로 설정합니다.
+
+|===
+자세한 내용은 각 명령에 대한 man 페이지를 참조하십시오.
+
+
+
+== 스위치오버 후 NVFAIL 상태의 볼륨 액세스
+
+스위치오버 후에는 볼륨 수정 명령의 `-in-nvfailed-state ' 매개 변수를 재설정하여 클라이언트 데이터 액세스 제한을 제거하여 NVFAIL 상태를 지워야 합니다.
+
+데이터베이스 또는 파일 시스템이 실행 중이거나 영향을 받는 볼륨에 액세스를 시도하지 않아야 합니다.
+
+nvfailed-state 매개 변수를 설정하려면 고급 수준의 권한이 필요합니다.
+
+.단계
+. nvfailed-state 매개 변수가 false로 설정된 상태로 volume modify 명령을 사용하여 볼륨을 복구합니다.
+
+
+데이터베이스 파일 유효성 검사에 대한 자세한 내용은 해당 데이터베이스 소프트웨어의 설명서를 참조하십시오.
+
+데이터베이스에서 LUN을 사용하는 경우 NVRAM에 장애가 발생한 후 호스트에서 LUN에 액세스할 수 있도록 하는 단계를 검토하십시오.
+
+link:../manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html["NVFAIL을 사용하여 파일 시스템 일관성 모니터링 및 보호"]
+
+
+
+== 스위치오버 후 NVFAIL 상태에서 LUN 복구
+
+스위치오버 이후 호스트는 더 이상 NVFAIL 상태에 있는 LUN의 데이터에 액세스할 수 없습니다. 데이터베이스가 LUN에 액세스할 수 있으려면 먼저 여러 작업을 수행해야 합니다.
+
+데이터베이스가 실행 중이지 않아야 합니다.
+
+.단계
+. 'volume modify' 명령의 '-in-nvfailed-state' 매개 변수를 재설정하여 LUN을 호스팅하는 볼륨에서 NVFAIL 상태를 지웁니다.
+. 영향을 받는 LUN을 온라인 상태로 전환합니다.
+. LUN에 데이터 불일치가 있는지 검사하고 해결하십시오.
++
+여기에는 SnapRestore를 사용하는 스토리지 컨트롤러에서 호스트 기반 복구 또는 복구가 포함될 수 있습니다.
+
+. LUN을 복구한 후 데이터베이스 애플리케이션을 온라인 상태로 전환합니다.
+

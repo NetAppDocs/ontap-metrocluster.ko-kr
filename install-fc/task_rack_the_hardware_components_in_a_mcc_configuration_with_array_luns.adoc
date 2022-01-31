@@ -1,0 +1,32 @@
+---
+permalink: install-fc/task_rack_the_hardware_components_in_a_mcc_configuration_with_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, rack, hardware, components, array, luns 
+summary: 어레이 LUN을 포함하는 MetroCluster 구성을 설정하는 데 필요한 하드웨어 구성요소가 올바르게 랙에 장착되어 있는지 확인해야 합니다. 
+---
+= 스토리지 LUN을 사용하여 MetroCluster 구성에서 하드웨어 구성 요소 랙 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+어레이 LUN을 포함하는 MetroCluster 구성을 설정하는 데 필요한 하드웨어 구성요소가 올바르게 랙에 장착되어 있는지 확인해야 합니다.
+
+두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.
+
+.단계
+. MetroCluster 구성 요소의 위치를 계획합니다.
++
+랙 공간은 스토리지 컨트롤러의 플랫폼 모델, 스위치 유형 및 구성의 디스크 쉘프 스택 수에 따라 달라집니다.
+
+. 적절하게 접지합니다.
+. 랙 또는 캐비닛에 스토리지 컨트롤러를 설치합니다.
++
+
+NOTE: AFF 시스템은 어레이 LUN에서 지원되지 않습니다.
+
++
+AFF 또는 FAS 시스템에 대한 #https://docs.netapp.com/us-en/ontap/[Installation 절차]#
+
+. 랙 또는 캐비닛에 FC 스위치를 설치합니다.
+

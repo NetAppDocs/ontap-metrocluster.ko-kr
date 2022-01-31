@@ -1,0 +1,41 @@
+---
+permalink: install-ip/using_rcf_generator.html 
+sidebar: sidebar 
+keywords: cabling, cable, component, link, site, management, network, hardware, component, switch, cluster, connection, management, data, configuring, configure, rcf, file, generator, RcfFileGenerator 
+summary: RCF 파일을 올바르게 생성하려면 포트 테이블의 정보를 사용하는 방법을 이해해야 합니다. 
+---
+= RcfFileGenerator 도구나 여러 MetroCluster 구성에서 포트 테이블 사용
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+RCF 파일을 올바르게 생성하려면 포트 테이블의 정보를 사용하는 방법을 이해해야 합니다.
+
+표를 사용하기 전에 다음 사항을 검토하십시오.
+
+* 다음 표에는 사이트 A의 포트 사용량이 나와 있습니다 사이트 B에 동일한 케이블이 사용됩니다
+* 스위치는 속도가 다른 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 구성할 수 없습니다.
+* MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 등)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 정보가 필요합니다.
+* 를 클릭합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"] 또한 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다. 이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.
+
+
+
+
+== 8노드 MetroCluster 구성에 케이블을 연결합니다
+
+ONTAP 9.8 이하를 실행하는 MetroCluster 구성의 경우, 업그레이드를 전환하기 위해 수행되는 일부 절차에서는 임시 8노드 구성을 만들기 위해 구성에 두 번째 4노드 DR 그룹을 추가해야 합니다. ONTAP 9.9.1부터 영구적인 8노드 MetroCluster 구성이 지원됩니다.
+
+이러한 구성의 경우 위에서 설명한 것과 동일한 방법을 사용합니다. 보조 MetroCluster 대신 4노드 DR 그룹을 추가로 케이블로 연결합니다.
+
+예를 들어, 사용자의 구성에는 다음이 포함됩니다.
+
+* Cisco 3132Q-V 스위치
+* MetroCluster 1:FAS2750 플랫폼
+* MetroCluster 2: AFF A700 플랫폼(이러한 플랫폼은 2번째 4노드 DR 그룹으로 추가됨)
+
+
+.단계
+. MetroCluster 1의 경우, FAS2750 플랫폼 테이블과 MetroCluster 1 인터페이스 행을 사용하여 Cisco 3132Q-V 스위치에 케이블을 연결합니다.
+. MetroCluster 2(두 번째 DR 그룹)의 경우 AFF A700 플랫폼 테이블과 MetroCluster 2 인터페이스 행을 사용하여 Cisco 3132Q-V 스위치에 케이블을 연결합니다.
+

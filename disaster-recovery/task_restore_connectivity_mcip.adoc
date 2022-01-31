@@ -1,0 +1,41 @@
+---
+permalink: disaster-recovery/task_restore_connectivity_mcip.html 
+sidebar: sidebar 
+keywords: metrocluster, iscsi, connections, disaster, site, surviving, connectivity, restore 
+summary: 남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 연결을 복구해야 합니다. 
+---
+= 정상적인 노드에서 재해 사이트로 연결 복원(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 연결을 복구해야 합니다.
+
+이 절차는 MetroCluster IP 구성에만 필요합니다.
+
+.단계
+. 남아 있는 노드의 프롬프트에서 고급 권한 레벨로 변경합니다.
++
+세트 프리빌리지 고급
+
++
+고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 "y"로 응답해야 합니다.
+
+. DR 그룹의 남아 있는 두 노드에 iSCSI 이니시에이터를 연결합니다.
++
+'Storage iSCSI-initiator connect-node Surviving-node-label *'
+
++
+다음 예에서는 사이트 B에서 이니시에이터를 연결하기 위한 명령을 보여 줍니다.
+
++
+[listing]
+----
+site_B::*> storage iscsi-initiator connect -node node_B_1 -label *
+site_B::*> storage iscsi-initiator connect -node node_B_2 -label *
+----
+. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+

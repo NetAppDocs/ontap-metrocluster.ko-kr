@@ -1,0 +1,43 @@
+---
+permalink: install-stretch/concept_parts_of_a_two_node_sas_attached_stretch_mcc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, parts, two, node, sas, attached, configuration 
+summary: 2노드 MetroCluster SAS 연결 구성에서는 스토리지 컨트롤러가 SAS 케이블을 통해 스토리지에 직접 연결되는 2개의 단일 노드 클러스터를 포함하여 여러 부품이 필요합니다. 
+---
+= 2노드 SAS 연결 스트레치 MetroCluster 구성의 일부
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+2노드 MetroCluster SAS 연결 구성에서는 스토리지 컨트롤러가 SAS 케이블을 통해 스토리지에 직접 연결되는 2개의 단일 노드 클러스터를 포함하여 여러 부품이 필요합니다.
+
+MetroCluster 구성에는 다음과 같은 주요 하드웨어 요소가 포함됩니다.
+
+* 스토리지 컨트롤러
++
+스토리지 컨트롤러는 SAS 케이블을 사용하여 스토리지에 직접 연결합니다.
+
++
+각 스토리지 컨트롤러는 파트너 사이트의 스토리지 컨트롤러에 DR 파트너로 구성됩니다.
+
++
+** 더 짧은 거리에는 구리 SAS 케이블을 사용할 수 있습니다.
+** 광 SAS 케이블을 사용하여 장거리 작업을 수행할 수 있습니다.
++
+
+NOTE: E-Series 어레이 LUN을 사용하는 시스템에서는 스토리지 컨트롤러를 E-Series 스토리지 어레이에 직접 연결할 수 있습니다. 다른 스토리지 LUN의 경우 FC 스위치를 통한 접속이 필요합니다.
+
++
+https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+
++
+IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+
+
+
+* 클러스터 피어링 네트워크
++
+클러스터 피어링 네트워크는 스토리지 가상 시스템(SVM) 구성의 미러링을 위한 연결을 제공합니다. 하나의 클러스터에 있는 모든 SVM의 구성이 파트너 클러스터에 미러링됩니다.
+
+

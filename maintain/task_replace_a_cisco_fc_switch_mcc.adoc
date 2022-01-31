@@ -1,0 +1,423 @@
+---
+permalink: maintain/task_replace_a_cisco_fc_switch_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, replace, cisco, fc, switch 
+summary: 오류가 발생한 Cisco FC 스위치를 교체하려면 Cisco 관련 단계를 사용해야 합니다. 
+---
+= Cisco FC 스위치 교체
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+오류가 발생한 Cisco FC 스위치를 교체하려면 Cisco 관련 단계를 사용해야 합니다.
+
+FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+
+이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소요됩니다.
+
+이 절차의 예에서는 FC_SWITCH_A_1이 정상 스위치이고 FC_SWITCH_B_1이 손상된 스위치입니다. 이 예의 스위치 포트 사용은 다음 표에 나와 있습니다.
+
+|===
+| 역할 | 포트 
+
+
+ a| 
+FC-VI 연결
+ a| 
+1, 4
+
+
+
+ a| 
+HBA 접속
+ a| 
+2, 3, 5, 6
+
+
+
+ a| 
+FC-to-SAS 브릿지 연결
+ a| 
+7, 8
+
+
+
+ a| 
+ISL 연결
+ a| 
+36, 40
+
+|===
+이 예에는 FC-to-SAS 브릿지 2개가 나와 있습니다. 가 더 있는 경우 추가 포트를 사용하지 않도록 설정한 후 다시 활성화해야 합니다.
+
+스위치 포트 사용은 권장 할당을 따라야 합니다.
+
+* xref:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.adoc[ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당]
+* xref:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.adoc[ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당]
+
+
+.단계
+. 손상된 스위치를 펜스 오프하기 위해 정상 스위치의 ISL 포트를 비활성화합니다.
++
+이 단계는 정상 스위치에서 수행됩니다.
+
++
+.. 구성 모드로 들어갑니다: + " * conf t * "
+.. 인터페이스 명령과 산트 명령으로 정상 스위치의 ISL 포트를 비활성화합니다.
++
+[listing]
+----
+FC_switch_A_1# conf t
+FC_switch_A_1(config)# interface fc1/36
+FC_switch_A_1(config)# shut
+FC_switch_A_1(config)# interface fc1/40
+FC_switch_A_1(config)# shut
+----
+.. 구성 모드를 종료하고 구성을 시작 구성으로 복사합니다.
++
+[listing]
+----
+FC_switch_A_1(config)# end
+FC_switch_A_1# copy running-config startup-config
+FC_switch_A_1#
+----
+
+
+. 손상된 스위치의 FC-VI 및 HBA 포트를 펜으로 끕니다(계속 실행 중인 경우).
++
+이러한 단계는 손상된 스위치에 대해 수행됩니다.
+
++
+.. 구성 모드로 들어갑니다: + " * conf t * "
+.. 손상된 스위치가 여전히 작동 중이면 인터페이스 및 종료 명령을 사용하여 손상된 스위치의 FC-VI 및 HBA 포트를 비활성화합니다.
++
+[listing]
+----
+FC_switch_B_1(config)# interface fc1/1
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/4
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/2-3
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/5-6
+FC_switch_B_1(config)# shut
+----
+.. 구성 모드를 종료하고 구성을 시작 구성으로 복사합니다.
++
+[listing]
+----
+FC_switch_B_1(config)# end
+FC_switch_B_1# copy running-config startup-config
+FC_switch_B_1#
+----
+
+
+. 손상된 스위치가 계속 작동하는 경우 스위치의 WWN을 확인합니다.
++
+'* WWN 스위치 표시 *'
+
++
+[listing]
+----
+FC_switch_B_1# show wwn switch
+Switch WWN is 20:00:54:7f:ee:e3:86:50
+FC_switch_B_1#
+----
+. 교체 스위치를 물리적으로 설치하기 전에 부팅하여 미리 구성해야 합니다.
++
+이때 교체 스위치는 MetroCluster 구성에 케이블로 연결되지 않습니다. 파트너 스위치의 ISL 포트는 차단 모드에서 해제되며 오프라인입니다.
+
++
+.. 교체 스위치를 켜고 부팅하십시오.
+.. 교체 스위치의 펌웨어 버전을 확인하여 다른 FC 스위치의 버전과 일치하는지 확인합니다
+.. MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 교체 스위치를 구성하고 ""Cisco FC 스위치에서 조닝 구성" 섹션을 건너뜁니다.
++
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
++
+이 절차의 뒷부분에서 조닝을 구성합니다.
+
+.. 교체 스위치에서 FC-VI, HBA 및 스토리지 포트를 비활성화합니다.
++
+[listing]
+----
+FC_switch_B_1# conf t
+FC_switch_B_1(config)# interface fc1/1
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/4
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/2-3
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/5-6
+FC_switch_B_1(config)# shut
+FC_switch_B_1(config)# interface fc1/7-8
+FC_switch_B_1(config)# shut
+FC_switch_B_1# copy running-config startup-config
+FC_switch_B_1#
+----
+
+
+. 손상된 스위치를 물리적으로 교체합니다.
++
+.. 손상된 스위치의 전원을 끕니다.
+.. 교체 스위치의 전원을 끕니다.
+.. 케이블을 분리하고 손상된 스위치를 분리한 후 어떤 케이블이 어떤 포트에 연결되어 있는지 주의하여 확인하십시오.
+.. 랙에 교체용 스위치를 설치합니다.
+.. 손상된 스위치가 케이블로 연결된 것과 정확하게 교체용 스위치에 케이블을 연결합니다.
+.. 교체 스위치의 전원을 켭니다.
+
+
+. 교체 스위치에서 ISL 포트를 활성화합니다.
++
+[listing]
+----
+FC_switch_B_1# conf t
+FC_switch_B_1(config)# interface fc1/36
+FC_switch_B_1(config)# no shut
+FC_switch_B_1(config)# end
+FC_switch_B_1# copy running-config startup-config
+FC_switch_B_1(config)# interface fc1/40
+FC_switch_B_1(config)# no shut
+FC_switch_B_1(config)# end
+FC_switch_B_1#
+----
+. 교체 스위치의 ISL 포트가 작동하는지 확인합니다.
++
+'* show interface brief * '
+
+. 교체 스위치의 조닝을 MetroCluster 구성과 일치하도록 조정합니다.
++
+.. 정상적인 패브릭에서 조닝 정보를 배포합니다.
++
+이 예에서는 FC_SWITCH_B_1이 교체되었으며 FC_SWITCH_A_1에서 조닝 정보를 검색합니다.
+
++
+[listing]
+----
+FC_switch_A_1(config-zone)# zoneset distribute full vsan 10
+FC_switch_A_1(config-zone)# zoneset distribute full vsan 20
+FC_switch_A_1(config-zone)# end
+----
+.. 교체 스위치에서 정상적인 스위치에서 조닝 정보가 올바르게 검색되었는지 확인합니다. + " * show zone * "
++
+[listing]
+----
+FC_switch_B_1# show zone
+zone name FC-VI_Zone_1_10 vsan 10
+  interface fc1/1 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/4 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/1 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/4 swwn 20:00:54:7f:ee:b8:24:c0
+
+zone name STOR_Zone_1_20_25A vsan 20
+  interface fc1/2 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/3 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/5 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/6 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/2 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/3 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/5 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/6 swwn 20:00:54:7f:ee:b8:24:c0
+
+zone name STOR_Zone_1_20_25B vsan 20
+  interface fc1/2 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/3 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/5 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/6 swwn 20:00:54:7f:ee:e3:86:50
+  interface fc1/2 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/3 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/5 swwn 20:00:54:7f:ee:b8:24:c0
+  interface fc1/6 swwn 20:00:54:7f:ee:b8:24:c0
+FC_switch_B_1#
+----
+.. 스위치의 WWN을 찾습니다.
++
+이 예에서 두 스위치 WWN은 다음과 같습니다.
+
++
+*** fc_switch_a_1:20:00:54:7F:ee:B8:24:c0
+*** fc_switch_B_1:20:00:54:7F:ee:C6:80:78
+
+
++
+[listing]
+----
+FC_switch_B_1# show wwn switch
+Switch WWN is 20:00:54:7f:ee:c6:80:78
+FC_switch_B_1#
+
+FC_switch_A_1# show wwn switch
+Switch WWN is 20:00:54:7f:ee:b8:24:c0
+FC_switch_A_1#
+----
+.. 두 스위치의 스위치 WWN에 속하지 않는 영역 구성원을 제거합니다.
++
+이 예에서 출력에 "멤버 인터페이스 없음"은 다음 멤버가 Fabric에 있는 스위치 중 하나의 스위치 WWN과 연결되어 있지 않으므로 제거해야 함을 보여 줍니다.
+
++
+*** 존 이름 FC-VI_Zone_1_10 VSAN 10
++
+**** 인터페이스 FC1/1은 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/2 swwn 20:00:54:7F:ee:E3:86:50
+
+
+*** 존 이름 STOR_Zone_1_20_25A VSAN 20
++
+**** 인터페이스 FC1/5 swwn 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/8 swwn 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/9 swwn 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/10이 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/11이 20:00:54:7F:ee:E3:86:50
+
+
+*** 존 이름 STOR_Zone_1_20_25B VSAN 20
++
+**** 인터페이스 FC1/8 swwn 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/9 swwn 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/10이 20:00:54:7F:ee:E3:86:50
+**** 인터페이스 FC1/11 swwn 20:00:54:7F:ee:E3:86:50 다음 예에서는 이러한 인터페이스를 제거하는 방법을 보여 줍니다.
+
+
+
+
+
+
++
+[listing]
+----
+
+ FC_switch_B_1# conf t
+ FC_switch_B_1(config)# zone name FC-VI_Zone_1_10 vsan 10
+ FC_switch_B_1(config-zone)# no member interface fc1/1 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/2 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# zone name STOR_Zone_1_20_25A vsan 20
+ FC_switch_B_1(config-zone)# no member interface fc1/5 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/8 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/9 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/10 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/11 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# zone name STOR_Zone_1_20_25B vsan 20
+ FC_switch_B_1(config-zone)# no member interface fc1/8 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/9 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/10 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# no member interface fc1/11 swwn 20:00:54:7f:ee:e3:86:50
+ FC_switch_B_1(config-zone)# save running-config startup-config
+ FC_switch_B_1(config-zone)# zoneset distribute full 10
+ FC_switch_B_1(config-zone)# zoneset distribute full 20
+ FC_switch_B_1(config-zone)# end
+ FC_switch_B_1# copy running-config startup-config
+----
++
+.. 교체 스위치의 포트를 영역에 추가합니다.
++
+교체 스위치의 모든 케이블은 손상된 스위치와 동일해야 합니다.
+
++
+[listing]
+----
+
+ FC_switch_B_1# conf t
+ FC_switch_B_1(config)# zone name FC-VI_Zone_1_10 vsan 10
+ FC_switch_B_1(config-zone)# member interface fc1/1 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/2 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# zone name STOR_Zone_1_20_25A vsan 20
+ FC_switch_B_1(config-zone)# member interface fc1/5 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/8 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/9 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/10 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/11 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# zone name STOR_Zone_1_20_25B vsan 20
+ FC_switch_B_1(config-zone)# member interface fc1/8 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/9 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/10 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# member interface fc1/11 swwn 20:00:54:7f:ee:c6:80:78
+ FC_switch_B_1(config-zone)# save running-config startup-config
+ FC_switch_B_1(config-zone)# zoneset distribute full 10
+ FC_switch_B_1(config-zone)# zoneset distribute full 20
+ FC_switch_B_1(config-zone)# end
+ FC_switch_B_1# copy running-config startup-config
+----
+.. 조닝이 올바르게 구성되었는지 확인합니다. + " * show zone * "
++
+다음 출력 예에서는 세 개의 영역을 보여 줍니다.
+
++
+[listing]
+----
+
+ FC_switch_B_1# show zone
+   zone name FC-VI_Zone_1_10 vsan 10
+     interface fc1/1 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/2 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/1 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/2 swwn 20:00:54:7f:ee:b8:24:c0
+
+   zone name STOR_Zone_1_20_25A vsan 20
+     interface fc1/5 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/8 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/9 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/10 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/11 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/8 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/9 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/10 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/11 swwn 20:00:54:7f:ee:b8:24:c0
+
+   zone name STOR_Zone_1_20_25B vsan 20
+     interface fc1/8 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/9 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/10 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/11 swwn 20:00:54:7f:ee:c6:80:78
+     interface fc1/5 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/8 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/9 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/10 swwn 20:00:54:7f:ee:b8:24:c0
+     interface fc1/11 swwn 20:00:54:7f:ee:b8:24:c0
+ FC_switch_B_1#
+----
+.. 스토리지 및 컨트롤러에 대한 연결을 설정합니다.
++
+다음 예는 포트 사용량을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1# conf t
+FC_switch_A_1(config)# interface fc1/1
+FC_switch_A_1(config)# no shut
+FC_switch_A_1(config)# interface fc1/4
+FC_switch_A_1(config)# shut
+FC_switch_A_1(config)# interface fc1/2-3
+FC_switch_A_1(config)# shut
+FC_switch_A_1(config)# interface fc1/5-6
+FC_switch_A_1(config)# shut
+FC_switch_A_1(config)# interface fc1/7-8
+FC_switch_A_1(config)# shut
+FC_switch_A_1# copy running-config startup-config
+FC_switch_A_1#
+----
+
+
+. ONTAP에서 MetroCluster 구성 작동을 확인합니다.
++
+.. 시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "
+.. 두 클러스터에 대한 상태 경고(+' * system health alert show * ')가 있는지 확인합니다
+.. MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.
++
+``MetroCluster 쇼 *’
+
+.. MetroCluster 검사를 수행합니다.
++
+' * MetroCluster check run * '
+
+.. MetroCluster check 결과 표시: + ` * MetroCluster check show * '
+.. 스위치에 대한 상태 경고(있는 경우)가 있는지 확인합니다. + " * storage switch show * "
+.. Config Advisor를 실행합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+
+.. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
+
+
+

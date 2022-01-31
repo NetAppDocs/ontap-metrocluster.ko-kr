@@ -1,0 +1,127 @@
+---
+permalink: install-ip/task_modify_ip_netmask_gateway_properties.html 
+sidebar: sidebar 
+keywords: vlan, ip, gateway,netmask, address, network, interface, subnet 
+summary: MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다. 
+---
+= MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.10.1 버전부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.
+
+이러한 속성을 업데이트해야 할 수 있습니다. 예를 들어, 중복된 IP 주소가 감지되거나 라우터 구성 변경으로 인해 계층 3 네트워크의 경우 게이트웨이가 변경되어야 할 수 있습니다.
+
+한 번에 하나의 인터페이스만 변경할 수 있습니다. 다른 인터페이스가 업데이트되고 연결이 다시 설정될 때까지 해당 인터페이스에 트래픽 중단이 발생할 수 있습니다.
+
+MetroCluster IP interface 속성을 변경하려면 MetroCluster configuration-settings interface modify 명령을 사용한다.
+
+
+NOTE: 이러한 명령은 특정 포트의 특정 노드에 대한 구성을 변경합니다. 전체 네트워크 연결을 복원하려면 다른 포트에 유사한 명령이 필요합니다. 마찬가지로 네트워크 스위치도 구성을 업데이트해야 합니다. 예를 들어, 게이트웨이가 업데이트되는 경우 HA Pair의 두 노드에서 변경되기가 이상적입니다. 또한 해당 노드에 연결된 스위치도 게이트웨이를 업데이트해야 합니다.
+
+MetroCluster configuration-settings interface show, MetroCluster connection check, MetroCluster connection show 명령을 사용하여 모든 인터페이스가 정상적으로 동작하는지 확인한다.
+
+
+
+== IP 주소, 넷마스크 및 게이트웨이를 수정합니다
+
+. 단일 노드 및 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 'MetroCluster configuration-settings interface modify'로 업데이트합니다
+
+
+다음 명령을 실행하면 IP 주소, 넷마스크 및 게이트웨이를 업데이트하는 방법이 표시됩니다.
+
+[listing]
+----
+cluster_A::* metrocluster configuration-settings interface modify -cluster-name cluster_A -home-node node_A_1 -home-port e0a-10 -address 192.168.12.101 -gateway 192.168.12.1 -netmask 255.255.254.0
+(metrocluster configuration-settings interface modify)
+
+Warning: This operation will disconnect and reconnect iSCSI and RDMA connections used for DR protection through port “e0a-10”. Partner nodes may need modifications for port “e0a-10” in order to completely establish network connectivity.
+Do you want to continue?" yes
+
+[Job 28] Setting up iSCSI target configuration. (pass2:iscsi13:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
+[Job 28] Establishing iSCSI initiator connections.
+(pass6:iscsi14:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
+(pass8:iscsi15:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
+(pass9:iscsi16:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
+[Job 28] Job succeeded: Interface Modify is successful.
+
+cluster_A::*> metrocluster configuration-settings interface modify -cluster-name cluster_A -home-node node_A_2 -home-port e0a-10 -address 192.168.12.201 -gateway 192.168.12.1 -netmask 255.255.254.0
+(metrocluster configuration-settings interface modify)
+Warning: This operation will disconnect and reconnect iSCSI and RDMA connections used for DR protection through port “e0a-10”. Partner nodes may need modifications for port “e0a-10” in order to completely establish network connectivity.
+Do you want to continue?" yes
+[Job 28] Job succeeded: Interface Modify is successful
+----
+. [[step2]] 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings interface show'
+
+
+다음 명령을 실행하면 모든 인터페이스에서 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.
+
+[listing]
+----
+cluster_A::*> metrocluster configuration-settings interface show
+(metrocluster configuration-settings interface show)                                                 DR              Config
+Group Cluster Node    Network Address Netmask         Gateway         State
+----- ------- ------- --------------- --------------- --------------- ---------
+1     cluster_A node_A_2
+                 Home Port: e0a-10
+                      192.168.12.201  255.255.254.0   192.168.12.1    completed
+                 Home Port: e0b-20
+                      192.168.20.200  255.255.255.0   192.168.20.1    completed
+                node_A_1
+                 Home Port: e0a-10
+                      192.168.12.101  255.255.254.0   192.168.12.1    completed
+                 Home Port: e0b-20
+                      192.168.20.101  255.255.255.0   192.168.20.1    completed
+      cluster_B node_B_1
+                 Home Port: e0a-10
+                      192.168.11.151  255.255.255.0   192.168.11.1    completed
+                 Home Port: e0b-20
+                      192.168.21.150  255.255.255.0   192.168.21.1    completed
+                node_B_2
+                 Home Port: e0a-10
+                      192.168.11.250  255.255.255.0   192.168.11.1    completed
+                 Home Port: e0b-20
+                      192.168.21.250  255.255.255.0   192.168.21.1    completed
+8 entries were displayed.
+----
+. [[step3]] 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings connection show'
+
+
+다음 명령을 실행하면 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.
+
+[listing]
+----
+cluster_A::*> metrocluster configuration-settings connection show
+  (metrocluster configuration-settings connection show)
+DR                    Source          Destination
+Group Cluster Node    Network Address Network Address Partner Type Config State
+----- ------- ------- --------------- --------------- ------------ ------------
+1     cluster_A node_A_2
+                 Home Port: e0a-10
+                      192.168.10.200  192.168.10.101  HA Partner   completed
+                 Home Port: e0a-10
+                      192.168.10.200  192.168.11.250  DR Partner   completed
+                 Home Port: e0a-10
+                      192.168.10.200  192.168.11.151  DR Auxiliary completed
+                 Home Port: e0b-20
+                      192.168.20.200  192.168.20.100  HA Partner   completed
+                 Home Port: e0b-20
+                      192.168.20.200  192.168.21.250  DR Partner   completed
+                 Home Port: e0b-20
+                      192.168.20.200  192.168.21.150  DR Auxiliary completed
+                node_A_1
+                 Home Port: e0a-10
+                      192.168.10.101  192.168.10.200  HA Partner   completed
+                 Home Port: e0a-10
+                      192.168.10.101  192.168.11.151  DR Partner   completed
+                 Home Port: e0a-10
+                      192.168.10.101  192.168.11.250  DR Auxiliary completed
+                 Home Port: e0b-20
+                      192.168.20.100  192.168.20.200  HA Partner   completed
+                 Home Port: e0b-20
+                      192.168.20.100  192.168.21.150  DR Partner   completed
+                 Home Port: e0b-20
+                      192.168.20.100  192.168.21.250  DR Auxiliary completed
+----

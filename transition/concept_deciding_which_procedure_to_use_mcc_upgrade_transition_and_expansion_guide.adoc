@@ -1,0 +1,78 @@
+---
+permalink: transition/concept_deciding_which_procedure_to_use_mcc_upgrade_transition_and_expansion_guide.html 
+sidebar: sidebar 
+keywords: difference, metrocluster, upgrade, expansion, transition, procedure, match, goal, deciding, decide 
+summary: MetroCluster 업그레이드, 확장 또는 전환 간의 차이점을 이해하고 목표에 맞는 절차를 선택해야 합니다. 
+---
+= 사용할 절차를 결정합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 업그레이드, 확장 또는 전환 간의 차이점을 이해하고 목표에 맞는 절차를 선택해야 합니다.
+
+* * 업그레이드 *
++
+업그레이드 절차에서는 컨트롤러 모듈을 새 컨트롤러 모듈 모델로 교체하고 있습니다.
+
++
+** 이전 컨트롤러 모듈이 폐기되었습니다.
+** 스토리지가 업그레이드되지 않았습니다.
+** 스토리지 스위치 인프라 기술은 변경되지 않습니다.
++
+이 구성은 MetroCluster IP, Fabric 연결 MetroCluster 또는 Stretch MetroCluster 구성으로 유지됩니다.
+
++
+link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"]
+
+
+
+* * 새로 고침 *
++
+업데이트 절차에서는 컨트롤러 모듈을 새 컨트롤러 모듈 모델로 교체하고 스토리지 쉘프를 대체해야 합니다.
+
++
+** 이전 컨트롤러 모듈 및 스토리지 쉘프는 폐기됩니다.
+** 새로운 플랫폼 모델을 수용하기 위해 새로운 스위치가 필요하지 않은 한 스토리지 스위치 인프라 기술은 변경되지 않습니다.
++
+설정은 원래 유형으로 유지됩니다.
+
++
+*** MetroCluster IP를 선택합니다
+*** 패브릭 연결 MetroCluster
+*** Stretch MetroCluster 구성 +link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"]
+
+
+
+
+* * 전환 *
++
+전환 절차에서는 백엔드 스위치 인프라가 FC 스위치 또는 연결에서 IP 스위치로 변경되고 플랫폼 모델이 교체됩니다.
+
++
+** 새 컨트롤러 모듈이 구성에 추가됩니다.
+** 원래 컨트롤러 모듈은 절차 후 폐기됩니다.
+** 원래 구성에서 클러스터 인터커넥트 스위치를 사용한 경우 스위치 및 플랫폼 모델에 따라 스위치를 재사용할 수 있습니다.
+** 플랫폼 모델에 따라 스토리지를 재사용하거나 교체할 수 있습니다.
++
+스토리지 쉘프를 재사용하지 않을 경우, 데이터는 이전 쉘프에서 새 쉘프로 이동됩니다.
+
++
+링크:../transition/concept_choosing_your_transition_procedure_mcc_transition.html
+
+
+
+* * 확장 *
++
+확장 절차에서 MetroCluster FC 구성에 추가 노드와 스토리지가 추가됩니다.
+
++
+** link:../upgrade/task_expand_a_two_node_mcc_fc_configuration_to_a_four_node_fc_configuration_supertask.html["2노드 MetroCluster FC 구성을 4노드 구성으로 확장"]
+** link:../upgrade/task_expand_a_four_node_mcc_fc_configuration_to_an_eight_node_configuration.html["4노드 MetroCluster FC 구성을 8노드 구성으로 확장"]
++
+마이그레이션을 위한 링크가 제거되었습니다
+
+
+
+

@@ -1,0 +1,13 @@
+---
+permalink: install-fc/task_fcsw_configure_the_cisco_or_brocade_fc_switches_manually.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, configure, brocade, switches, manually 
+summary: 스위치 구성 절차와 명령은 스위치 공급업체에 따라 다릅니다. 
+---
+= Cisco 또는 Brocade FC 스위치를 수동으로 구성합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스위치 구성 절차와 명령은 스위치 공급업체에 따라 다릅니다.

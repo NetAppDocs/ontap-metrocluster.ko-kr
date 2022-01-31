@@ -1,0 +1,96 @@
+---
+permalink: maintain/task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, upgrade, downgrade, firmware, cisco, fc, switch 
+summary: Cisco FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Cisco 관련 명령을 사용하여 스위치를 비활성화하고 업그레이드를 수행 및 검증하고 스위치를 재부팅 및 재활성화해야 합니다. 
+---
+= Cisco FC 스위치에서 펌웨어 업그레이드 또는 다운그레이드
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Cisco 관련 명령을 사용하여 스위치를 비활성화하고 업그레이드를 수행 및 검증하고 스위치를 재부팅 및 재활성화해야 합니다.
+
+* 시스템의 케이블이 올바르게 연결되어 있어야 합니다.
+* 스토리지 쉘프에 대한 모든 경로를 사용할 수 있어야 합니다.
+* 디스크 쉘프 스택은 안정적이어야 합니다.
+* FC 스위치 패브릭은 양호한 상태여야 합니다.
+* 시스템의 모든 구성 요소가 정상 상태여야 합니다.
+* 시스템이 정상적으로 작동해야 합니다.
+* FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+
+
+펌웨어 업그레이드 또는 다운그레이드 중에는 스위치 패브릭을 사용할 수 없으며 MetroCluster 구성은 두 번째 Fabric에 의존하여 작업을 계속합니다.
+
+모든 스위치가 동일한 펌웨어 버전을 실행하고 있는지 확인하려면 각 스위치 패브릭에서 이 작업을 연속으로 반복해야 합니다.
+
+펌웨어 파일이 있어야 합니다.
+
+
+NOTE: 이 절차는 무중단으로 진행되며 완료까지 약 1시간이 소요됩니다.
+
+.단계
+. Fabric의 각 스위치에 로그인합니다.
++
+이 예에서는 스위치를 FC_SWITCH_A_1 및 FC_SWITCH_B_1이라고 합니다.
+
+. 각 스위치의 bootflash 디렉토리에 충분한 공간이 있는지 확인합니다.
++
+'* dir bootflash * '
+
++
+그렇지 않으면 "delete bootflash: file_name" 명령을 사용하여 원치 않는 펌웨어 파일을 삭제합니다.
+
+. kickstart 및 시스템 파일을 스위치에 복사합니다.
++
+' * copy_source_filletarget_file_ * '
+
++
+다음 예에서는 kickstart 파일('9200-s2ek9-kickstart-MZ.5.2.1.bin')과 시스템 파일('9200-s2ek9-MZ.5.2.1.bin')이 '/firmware/' 경로의 FTP 서버 10.10.10.55에 있습니다.
+
++
+다음 예는 FC_SWITCH_A_1에서 실행된 명령을 보여줍니다.
+
++
+[listing]
+----
+FC_switch_A_1# copy ftp://10.10.10.55/firmware/m9200-s2ek9-kickstart-mz.5.2.1.bin bootflash:m9200-s2ek9-kickstart-mz.5.2.1.bin
+FC_switch_A_1# copy ftp://10.10.10.55/firmware/m9200-s2ek9-mz.5.2.1.bin bootflash:m9200-s2ek9-mz.5.2.1.bin
+----
+. 이 Fabric의 두 스위치에서 모든 VSAN을 비활성화합니다.
+. 스위치에 원하는 펌웨어를 설치합니다.
++
+'* 모든 시스템 부트 플래시 설치:__systemfile_name__kickstart 부트 플래시:__cickstartfile_name__*'
+
++
+다음 예는 FC_SWITCH_A_1에서 실행된 명령을 보여줍니다.
+
++
+[listing]
+----
+FC_switch_A_1# install all system bootflash:m9200-s2ek9-mz.5.2.1.bin kickstart bootflash:m9200-s2ek9-kickstart-mz.5.2.1.bin
+Enter Yes to confirm the installation.
+----
+. 각 스위치에서 펌웨어 버전을 확인하여 올바른 버전이 설치되었는지 확인합니다.
++
+'* 버전 표시 * '
+
+. 이 Fabric의 두 스위치에서 모든 VSAN을 활성화합니다.
+. ONTAP에서 MetroCluster 구성 작동을 확인합니다.
++
+.. 시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "
+.. 두 클러스터에 대한 상태 경고(+' * system health alert show * ')가 있는지 확인합니다
+.. MetroCluster 설정을 확인하고 운영 모드가 정상인지 확인합니다. + " * MetroCluster show * "
+.. MetroCluster check 수행: + ` * MetroCluster check run * '
+.. MetroCluster check 결과 표시: + ` * MetroCluster check show * '
+.. 스위치에 대한 상태 경고(있는 경우)가 있는지 확인합니다. + " * storage switch show * "
+.. Config Advisor를 실행합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+
+.. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
+
+
+. 두 번째 스위치 패브릭에 대해 이 절차를 반복합니다.
+

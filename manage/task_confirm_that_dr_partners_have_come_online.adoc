@@ -1,0 +1,72 @@
+---
+permalink: manage/task_confirm_that_dr_partners_have_come_online.html 
+sidebar: sidebar 
+keywords: switchover, dr, partner, ownership, disk, svm, online, confirm 
+summary: 전환이 완료된 후 DR 파트너가 디스크를 소유하고 파트너 SVM이 온라인 상태인지 확인해야 합니다. 
+---
+= DR 파트너가 온라인 상태인지 확인합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환이 완료된 후 DR 파트너가 디스크를 소유하고 파트너 SVM이 온라인 상태인지 확인해야 합니다.
+
+.단계
+. 집계 디스크가 재해 사이트로 전환되었는지 '스토리지 디스크 표시 필드 소유자, DR-홈'인지 확인합니다
++
+이 예에서 출력은 전환된 디스크에 DR-Home 필드가 설정되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> storage disk show -fields owner,dr-home
+disk                 owner           dr-home
+-------------------- --------------- -------
+1.11.0               node_A_1        node_B_1
+1.11.1               node_A_1        node_B_1
+1.11.2               node_A_1        node_B_1
+1.11.3               node_A_1        node_B_1
+1.11.4               node_A_1        node_B_1
+1.11.5               node_A_1        node_B_1
+1.11.6               node_A_1        node_B_1
+1.11.7               node_A_1        node_B_1
+1.11.8               node_A_1        node_B_1
+----
+. storage aggregate show 명령을 사용하여 애그리게이트가 전환되었는지 확인합니다.
++
+이 예제에서는 애그리게이트가 전환된 것으로 가정합니다. 루트 애그리게이트(aggr0_B2)가 성능 저하 상태입니다. 데이터 애그리게이트(B2_aggr2)는 미러링된 정상 상태입니다.
+
++
+[listing]
+----
+cluster_A::*> storage aggregate show
+
+.
+.
+.
+mcc1-b Switched Over Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+aggr0_b2    227.1GB   45.1GB    80% online       0 node_A_1        raid_dp,
+                                                                   mirror
+                                                                   degraded
+b2_aggr1    227.1GB   200.3GB    20% online       0 node_A_1       raid_dp,
+                                                                   mirrored
+                                                                   normal
+----
+. vserver show 명령을 사용하여 보조 SVM이 온라인 상태인지 확인합니다.
++
+이 예에서는 2차 사이트에서 이전에 휴면 상태인 동기화 대상 SVM이 활성화되고 관리 상태가 실행 중입니다.
+
++
+[listing]
+----
+cluster_A::*> vserver show
+                                          Admin      Operational  Root                 Name    Name
+Vserver           Type  Subtype           State      State        Volume    Aggregate  Service Mapping
+-----------       ----- ----------        ---------- -----------  --------- ---------- ------- -------
+...
+cluster_B-vs1b-mc data   sync-destination  running   running      vs1b_vol   aggr_b1   file    file
+----
+

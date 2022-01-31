@@ -1,0 +1,99 @@
+---
+permalink: maintain/task_upgrade_firmware_on_mcc_ip_switches.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, upgrade, firmware. ip, switches, cisco, broadcom, efos, nxos, nx-os, software, install 
+summary: MetroCluster IP 스위치에서 펌웨어 업그레이드 
+---
+= MetroCluster IP 스위치에서 펌웨어 업그레이드
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 스위치에서 펌웨어를 업그레이드해야 할 수 있습니다.
+
+각 스위치에 스위치 소프트웨어를 설치할 때는 먼저 구성 상태를 확인해야 합니다.
+
+모든 MetroCluster 구성 요소의 상태가 양호한지 확인하려면 각 스위치에서 이 작업을 연속으로 반복해야 합니다.
+
+.단계
+. 구성 상태를 확인합니다.
++
+.. 각 클러스터에서 MetroCluster가 정상 모드로 구성되어 있는지 확인합니다.
++
+MetroCluster 쇼
+
++
+[listing]
+----
+cluster_A::> metrocluster show
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_A         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain auso-on-cluster-disaster
+Remote: cluster_B         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain auso-on-cluster-disaster
+----
+.. 각 노드에서 미러링이 활성화되어 있는지 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::> metrocluster node show
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              node_A_1       configured     enabled   normal
+      cluster_B
+              node_B_1       configured     enabled   normal
+2 entries were displayed.
+----
+.. MetroCluster 구성 요소가 정상인지 점검한다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::> metrocluster check run
+
+Last Checked On: 10/1/2014 16:03:37
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+4 entries were displayed.
+
+Command completed. Use the "metrocluster check show -instance" command or sub-commands in "metrocluster check" directory for detailed results.
+To check if the nodes are ready to do a switchover or switchback operation, run "metrocluster switchover -simulate" or "metrocluster switchback -simulate", respectively.
+----
+.. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+
+
+. 첫 번째 스위치에 소프트웨어를 설치합니다.
++
+
+NOTE: 스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.
+
++
+스위치 유형이 Broadcom인지 Cisco인지 여부에 따라 _MetroCluster IP 설치 및 구성_정보의 관련 항목에 있는 스위치 소프트웨어 설치 단계를 따르십시오.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-switch-efos-software["Broadcom 스위치 EFOS 소프트웨어 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-switch-nx-os-software["Cisco 스위치 NX-OS 소프트웨어 다운로드 및 설치"]
+
+
+. 각 스위치에 대해 이전 단계를 반복합니다.
+. 1단계를 반복하여 구성의 상태를 확인합니다.
+

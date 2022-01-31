@@ -1,0 +1,119 @@
+---
+permalink: upgrade/task_implement_the_mcc_configuration_mcc_refresh_mcc_expansion.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, implement, configuration 
+summary: MetroCluster 구성에 추가한 노드에서 데이터 보호를 시작하려면 MetroCluster configure -refresh true 명령을 실행해야 합니다. 
+---
+= MetroCluster 구성 구현
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성에 추가한 노드에서 데이터 보호를 시작하려면 "MetroCluster configure -refresh true" 명령을 실행해야 합니다.
+
+새로 추가된 노드 중 하나에 대해 "MetroCluster configure-refresh true" 명령을 한 번 실행하여 MetroCluster 구성을 새로 고칩니다. 각 사이트나 노드에서 명령을 실행하지 않아도 됩니다.
+
+MetroCluster configure-refresh true 명령은 두 개의 클러스터 각각에서 가장 낮은 시스템 ID를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.
+
+.단계
+. MetroCluster 구성 새로 고침:
++
+.. 고급 권한 모드 시작:
++
+세트 프리빌리지 고급
+
+.. 새 노드 중 하나에서 MetroCluster 구성을 새로 고칩니다: + "MetroCluster configure - refresh true"
++
+다음 예는 두 DR 그룹 모두에서 새로 고쳐진 MetroCluster 구성을 보여 줍니다.
+
++
+[listing]
+----
+controller_A_2::*> metrocluster configure -refresh true
+
+[Job 726] Job succeeded: Configure is successful.
+----
++
+[listing]
+----
+controller_A_4::*> metrocluster configure -refresh true
+
+[Job 740] Job succeeded: Configure is successful.
+----
+.. 관리자 권한 모드로 돌아가기:
++
+'Set-Privilege admin'입니다
+
+
+
+. 사이트 A의 네트워킹 상태를 확인합니다.
++
+네트워크 포트 쇼
+
++
+다음 예는 4노드 MetroCluster 구성의 네트워크 포트 사용량을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> network port show
+                                                          Speed (Mbps)
+Node   Port      IPspace   Broadcast Domain Link   MTU    Admin/Oper
+------ --------- --------- ---------------- ----- ------- ------------
+controller_A_1
+       e0a       Cluster   Cluster          up     9000  auto/1000
+       e0b       Cluster   Cluster          up     9000  auto/1000
+       e0c       Default   Default          up     1500  auto/1000
+       e0d       Default   Default          up     1500  auto/1000
+       e0e       Default   Default          up     1500  auto/1000
+       e0f       Default   Default          up     1500  auto/1000
+       e0g       Default   Default          up     1500  auto/1000
+controller_A_2
+       e0a       Cluster   Cluster          up     9000  auto/1000
+       e0b       Cluster   Cluster          up     9000  auto/1000
+       e0c       Default   Default          up     1500  auto/1000
+       e0d       Default   Default          up     1500  auto/1000
+       e0e       Default   Default          up     1500  auto/1000
+       e0f       Default   Default          up     1500  auto/1000
+       e0g       Default   Default          up     1500  auto/1000
+14 entries were displayed.
+----
+. MetroCluster 구성의 두 사이트에서 MetroCluster 구성을 확인합니다.
++
+.. 사이트 A에서 구성을 확인합니다.
++
+MetroCluster 쇼
+
++
+[listing]
+----
+cluster_A::> metrocluster show
+
+Configuration: IP fabric
+
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_A         Configuration state configured
+                          Mode                normal
+Remote: cluster_B         Configuration state configured
+                          Mode                normal
+----
+.. 사이트 B:+'MetroCluster show'의 구성을 확인합니다
++
+[listing]
+----
+cluster_B::> metrocluster show
+
+Configuration: IP fabric
+
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_B         Configuration state configured
+                          Mode                normal
+Remote: cluster_A         Configuration state configured
+                          Mode                normal
+----
+
+
+

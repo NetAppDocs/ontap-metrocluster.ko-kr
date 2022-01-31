@@ -1,0 +1,86 @@
+---
+permalink: install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, mediator, configure 
+summary: ONTAP 중재자 서비스는 MetroCluster IP 구성에서 사용할 수 있도록 ONTAP 노드에서 구성해야 합니다. 
+---
+= MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 중재자 서비스는 MetroCluster IP 구성에서 사용할 수 있도록 ONTAP 노드에서 구성해야 합니다.
+
+.시작하기 전에
+* ONTAP 중재자는 두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 성공적으로 설치되어 있어야 합니다.
+* ONTAP 중재자 서비스를 실행하는 호스트의 IP 주소가 있어야 합니다.
+* ONTAP 중재자 서비스를 위한 사용자 이름과 암호가 있어야 합니다.
+* MetroCluster IP 구성의 모든 노드가 온라인 상태여야 합니다.
+
+
+.이 작업에 대해
+* 이 작업은 기본적으로 예상치 못한 자동 전환을 활성화합니다.
+* 이 작업은 MetroCluster IP 구성에 있는 노드의 ONTAP 인터페이스에서 수행할 수 있습니다.
+* ONTAP 중재자 서비스는 최대 5개의 MetroCluster IP 구성으로 구성할 수 있습니다.
+
+
+.단계
+. 다음 명령을 사용하여 ONTAP 중재자 서비스를 ONTAP에 추가합니다.
++
+'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'
+
++
+
+NOTE: 중재자 관리자 사용자 계정의 사용자 이름과 암호를 묻는 메시지가 표시됩니다.
+
+. 의 자동 전환 기능이 활성화되어 있는지 확인합니다.
++
+MetroCluster 쇼
+
+. 중재자가 실행되고 있는지 확인합니다.
++
+.. 중재자 가상 디스크를 표시합니다.
++
+'스토리지 디스크 표시 컨테이너 유형 중재자
+
++
+....
+ cluster_A::> storage disk show -container-type mediator
+                        Usable           Disk    Container   Container
+ Disk                   Size Shelf Bay Type    Type        Name      Owner
+ ---------------- ---------- ----- --- ------- ----------- --------- --------
+ NET-1.5                   -     -   - VMDISK  mediator    -         node_A_2
+ NET-1.6                   -     -   - VMDISK  mediator    -         node_B_1
+ NET-1.7                   -     -   - VMDISK  mediator    -         node_B_2
+ NET-1.8                   -     -   - VMDISK  mediator    -         node_A_1
+....
+.. 권한 모드를 고급으로 설정합니다.
++
+진일진일보한 것
+
++
+....
+ cluster_A::> set advanced
+....
+.. 중재자 라고 표시된 이니시에이터를 표시합니다.
++
+'스토리지 iSCSI - 이니시에이터 표시 레이블 중재자'
+
++
+....
+ cluster_A::*> storage iscsi-initiator show -label mediator
+   (storage iscsi-initiator show)
+  +                                                                     Status
+ Node Type Label    Target Portal      Target Name                      Admin/Op
+ ---- ---- -------- ------------------ -------------------------------- --------
+ node_A_1
+      mailbox
+           mediator 1.1.1.1       iqn.2012-05.local:mailbox.target.6616cd3f-9ef1-11e9-aada-00a098ccf5d8:a05e1ffb-9ef1-11e9-8f68- 00a098cbca9e:1 up/up
+ node_A_2
+      mailbox
+           mediator 1.1.1.1       iqn.2012-05.local:mailbox.target.6616cd3f-9ef1-11e9-aada-00a098ccf5d8:a05e1ffb-9ef1-11e9-8f68-00a098cbca9e:1 up/up
+....
+
+
+

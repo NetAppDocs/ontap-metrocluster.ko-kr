@@ -1,0 +1,443 @@
+---
+permalink: transition/task_move_cluster_connections.html 
+sidebar: sidebar 
+keywords: Transitioning from MetroCluster FC to MetroCluster IP configurations, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
+summary: 모든 요구 사항을 검토하고 전환을 준비한 후 전환 절차를 수행합니다. 각 작업을 순서대로 수행해야 하며, 다음 작업으로 이동하기 전에 각 작업의 모든 단계를 완료해야 합니다. 지시가 있을 때까지 새 컨트롤러 또는 스토리지 쉘프를 기존 구성에 연결하면 안 됩니다. 
+---
+= 로컬 클러스터 연결 이동
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동해야 합니다.
+
+
+
+== MetroCluster FC 노드에서 클러스터 접속 이동
+
+[role="lead"]
+MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동해야 합니다. 이 단계는 기존 IP 스위치를 사용하고 있는지 또는 새 IP 스위치를 사용하고 있는지에 따라 달라집니다.
+
+두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.
+
+다음 작업에서는 클러스터 연결에 2개의 포트를 사용하는 컨트롤러 모듈을 가정합니다. 일부 컨트롤러 모듈 모델은 클러스터 연결에 4개 이상의 포트를 사용합니다. 이 예에서는 포트가 두 그룹으로 나뉘어 두 그룹 간에 번갈아 연결됩니다
+
+다음 표에서는 이 작업에 사용된 포트의 예를 보여 줍니다.
+
+|===
+| 컨트롤러 모듈의 클러스터 연결 수입니다 | 포트를 그룹화합니다 | 그룹 B 포트 
+
+
+ a| 
+2개
+ a| 
+e0a
+ a| 
+e0b
+
+
+
+ a| 
+네
+ a| 
+e0a, e0c
+ a| 
+e0b, e0d
+
+|===
+* 그룹 A 포트는 로컬 스위치 switch_x_1-IP에 연결됩니다.
+* 그룹 B 포트는 로컬 스위치 switch_x_2-IP에 연결됩니다.
+
+
+다음 표에는 FC 노드가 연결되는 스위치 포트가 나와 있습니다. Broadcom BES-53248 스위치의 경우 포트 사용은 MetroCluster IP 노드의 모델에 따라 달라집니다.
+
+[cols="4*"]
+|===
+| 모델 전환 | MetroCluster IP 노드 모델입니다 | 스위치 포트 | 에 연결합니다 
+
+
+.2+| Cisco 3132Q-V 또는 3232C .2+| 모두  a| 
+5
+ a| 
+노드_x_1-FC
+
+
+
+ a| 
+6
+ a| 
+노드_x_2-FC
+
+
+
+.4+| Broadcom BES-53248  a| 
+FAS2750/A220
+ a| 
+1, 2, 3
+ a| 
+노드_x_1-FC
+
+
+
+ a| 
+FAS8200/A300
+ a| 
+1, 2, 3, 7, 8, 9
+ a| 
+노드_x_1-FC
+
+
+
+ a| 
+FAS2750/A220
+ a| 
+4, 5, 6
+ a| 
+노드_x_2-FC
+
+
+
+ a| 
+FAS8200/A300
+ a| 
+4, 5, 6, 10, 11, 12
+ a| 
+노드_x_2-FC
+
+|===
+
+
+=== 새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다
+
+[role="lead"]
+새 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 새 스위치로 물리적으로 이동해야 합니다.
+
+. MetroCluster FC 노드 그룹 A 클러스터 연결을 새 IP 스위치로 이동합니다.
++
+에 설명된 포트를 사용합니다 link:../transition/task_verify_mcc_health_fc_to_ip.html#moving-the-cluster-connections-on-the-metrocluster-fc-nodes["MetroCluster FC 노드에서 클러스터 접속 이동"].
+
++
+.. 스위치에서 모든 그룹 A 포트를 분리하거나, MetroCluster FC 구성이 스위치가 없는 클러스터인 경우 파트너 노드에서 연결을 끊습니다.
+.. 노드_A_1-FC 및 노드_A_2-FC에서 그룹 A 포트를 분리합니다.
+.. node_A_1-FC의 그룹 A 포트를 switch_A_1-IP의 FC 노드에 대한 스위치 포트에 연결합니다
+.. node_A_2-FC의 그룹 A 포트를 switch_A_1-IP의 FC 노드에 대한 스위치 포트에 연결합니다
+
+
+. 모든 클러스터 포트가 작동 중인지 확인합니다. 'network port show-ipSpace Cluster'
++
+....
+cluster_A::*> network port show -ipspace Cluster
+
+Node: node_A_1-FC
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+Node: node_A_2-FC
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+4 entries were displayed.
+
+cluster_A::*>
+....
+. 모든 인터페이스가 '홈' 열 '네트워크 인터페이스 show-vserver cluster'에 true로 표시되는지 확인합니다
++
+이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
+
++
+....
+cluster_A::*> network interface show -vserver cluster
+
+            Logical      Status     Network          Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- -----
+Cluster
+            node_A_1_FC_clus1
+                       up/up      169.254.209.69/16  node_A_1_FC   e0a     true
+            node_A_1-FC_clus2
+                       up/up      169.254.49.125/16  node_A_1-FC   e0b     true
+            node_A_2-FC_clus1
+                       up/up      169.254.47.194/16  node_A_2-FC   e0a     true
+            node_A_2-FC_clus2
+                       up/up      169.254.19.183/16  node_A_2-FC   e0b     true
+
+4 entries were displayed.
+
+cluster_A::*>
+....
+. 두 노드(node_A_1-FC 및 node_A_2-FC)에서 위의 단계를 수행하여 클러스터 인터페이스의 그룹 B 포트를 이동합니다.
+. 파트너 클러스터 "cluster_B"에서 위의 단계를 반복합니다.
+
+
+
+
+=== 기존 IP 스위치를 재사용할 때 로컬 클러스터 연결을 이동합니다
+
+[role="lead"]
+기존 IP 스위치를 재사용하는 경우 펌웨어를 업데이트하고 올바른 RCFs(Reference Configure Files)를 사용하여 스위치를 재구성한 후 한 번에 하나의 스위치로 연결을 올바른 포트로 이동해야 합니다.
+
+이 작업은 FC 노드가 기존 IP 스위치에 연결되어 있고 스위치를 재사용하는 경우에만 필요합니다.
+
+. SWITCH_A_1_IP에 연결된 로컬 클러스터 연결을 끊습니다
++
+.. 기존 IP 스위치에서 그룹 A 포트를 분리합니다.
+.. 스위치_A_1_IP에서 ISL 포트를 분리합니다.
++
+플랫폼에 대한 설치 및 설정 지침을 참조하여 클러스터 포트 사용량을 확인할 수 있습니다.
+
++
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html["AFF A320 시스템: 설치 및 설정"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666["AFF A220/FAS2700 시스템 설치 및 설정 지침"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668["AFF A800 시스템 설치 및 설정 지침"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722["AFF A300 시스템 설치 및 설정 지침"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템 설치 및 설정 지침"]
+
+
+
+. 플랫폼 조합 및 전환을 위해 생성된 RCF 파일을 사용하여 SWITCH_A_1_IP를 재구성합니다.
++
+아래 링크에 나와 있는 대로 _MetroCluster IP 설치 및 구성 가이드_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.
+
++
+link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"]
+
++
+.. 필요한 경우 새 스위치 펌웨어를 다운로드하여 설치합니다.
++
+MetroCluster IP 노드가 지원하는 최신 펌웨어를 사용해야 합니다.
+
++
+*** link:../install-ip/task_switch_config_broadcom.html["Broadcom 스위치 EFOS 소프트웨어 다운로드 및 설치"]
+*** link:../install-ip/task_switch_config_cisco.html["Cisco 스위치 NX-OS 소프트웨어 다운로드 및 설치"]
+
+
+.. 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
++
+*** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"] **
+*** link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_switch_config_broadcom.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+
+
+.. 스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.
++
+*** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP RCF 파일 다운로드 및 설치"]
+*** link:../install-ip/task_switch_config_cisco.html["Cisco IP RCF 파일 다운로드 및 설치"]
+
+
+
+
+. 스위치_A_1_IP에 그룹 A 포트를 다시 연결합니다.
++
+에 설명된 포트를 사용합니다 xref:task_transition_from_mcc_fc_to_mcc_ip_configurations..adoc[MetroCluster FC 노드에서 클러스터 접속 이동].
+
+. 모든 클러스터 포트가 작동 중인지 확인합니다. 'network port show-ipSpace cluster'
++
+....
+Cluster-A::*> network port show -ipspace cluster
+
+Node: node_A_1_FC
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+Node: node_A_2_FC
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+4 entries were displayed.
+
+Cluster-A::*>
+....
+. 모든 인터페이스가 홈 포트인 'network interface show-vserver Cluster'에 있는지 확인합니다
++
+....
+Cluster-A::*> network interface show -vserver Cluster
+
+            Logical      Status     Network          Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- -----
+Cluster
+            node_A_1_FC_clus1
+                       up/up      169.254.209.69/16  node_A_1_FC   e0a     true
+            node_A_1_FC_clus2
+                       up/up      169.254.49.125/16  node_A_1_FC   e0b     true
+            node_A_2_FC_clus1
+                       up/up      169.254.47.194/16  node_A_2_FC   e0a     true
+            node_A_2_FC_clus2
+                       up/up      169.254.19.183/16  node_A_2_FC   e0b     true
+
+4 entries were displayed.
+
+Cluster-A::*>
+....
+. SWITCH_A_2_IP에서 이전 단계를 모두 반복합니다.
+. 로컬 클러스터 ISL 포트를 다시 연결합니다.
+. 스위치 B_1_IP 및 스위치 B_2_IP에 대해 사이트_B에서 위의 단계를 반복합니다.
+. 사이트 간에 원격 ISL을 연결합니다.
+
+
+
+
+== 클러스터 연결이 이동되고 클러스터가 정상 상태인지 확인
+
+[role="lead"]
+적절하게 접속되어 있고 전환 프로세스를 진행할 준비가 되었는지 확인하려면 클러스터 연결이 올바르게 이동되었는지, 클러스터 스위치가 인식되는지, 클러스터가 정상인지 확인해야 합니다.
+
+. 모든 클러스터 포트가 실행 중인지 확인합니다. 'network port show-ipSpace Cluster'
++
+....
+Cluster-A::*> network port show -ipspace Cluster
+
+Node: Node-A-1-FC
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+Node: Node-A-2-FC
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+4 entries were displayed.
+
+Cluster-A::*>
+....
+. 모든 인터페이스가 홈 포트인 'network interface show-vserver Cluster'에 있는지 확인합니다
++
+이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
+
++
+다음 예제에서는 모든 인터페이스가 홈 열에 true 로 표시되는 것을 보여 줍니다.
+
++
+....
+Cluster-A::*> network interface show -vserver Cluster
+
+            Logical      Status     Network          Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- -----
+Cluster
+            Node-A-1_FC_clus1
+                       up/up      169.254.209.69/16  Node-A-1_FC   e0a     true
+            Node-A-1-FC_clus2
+                       up/up      169.254.49.125/16  Node-A-1-FC   e0b     true
+            Node-A-2-FC_clus1
+                       up/up      169.254.47.194/16  Node-A-2-FC   e0a     true
+            Node-A-2-FC_clus2
+                       up/up      169.254.19.183/16  Node-A-2-FC   e0b     true
+
+4 entries were displayed.
+
+Cluster-A::*>
+....
+. 두 로컬 IP 스위치가 모두 'network device-discovery show-protocol CDP' 노드에서 검색되는지 확인합니다
++
+....
+Cluster-A::*> network device-discovery show -protocol cdp
+
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------  ----------------
+Node-A-1-FC
+           /cdp
+            e0a    Switch-A-3-IP             1/5/1             N3K-C3232C
+            e0b    Switch-A-4-IP             0/5/1             N3K-C3232C
+Node-A-2-FC
+           /cdp
+            e0a    Switch-A-3-IP             1/6/1             N3K-C3232C
+            e0b    Switch-A-4-IP             0/6/1             N3K-C3232C
+
+4 entries were displayed.
+
+Cluster-A::*>
+....
+. IP 스위치에서 두 로컬 IP 스위치(CDP 네이버 사용)가 MetroCluster IP 노드를 검색했는지 확인합니다
++
+각 스위치에서 이 단계를 수행해야 합니다.
+
++
+이 예에서는 스위치 A-3-IP에서 노드가 검색되었는지 확인하는 방법을 보여 줍니다.
+
++
+....
+(Switch-A-3-IP)# show cdp neighbors
+
+Capability Codes: R - Router, T - Trans-Bridge, B - Source-Route-Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater,
+                  V - VoIP-Phone, D - Remotely-Managed-Device,
+                  s - Supports-STP-Dispute
+
+Device-ID          Local Intrfce  Hldtme Capability  Platform      Port ID
+Node-A-1-FC         Eth1/5/1       133    H         FAS8200       e0a
+Node-A-2-FC         Eth1/6/1       133    H         FAS8200       e0a
+Switch-A-4-IP(FDO220329A4)
+                    Eth1/7         175    R S I s   N3K-C3232C    Eth1/7
+Switch-A-4-IP(FDO220329A4)
+                    Eth1/8         175    R S I s   N3K-C3232C    Eth1/8
+Switch-B-3-IP(FDO220329B3)
+                    Eth1/20        173    R S I s   N3K-C3232C    Eth1/20
+Switch-B-3-IP(FDO220329B3)
+                    Eth1/21        173    R S I s   N3K-C3232C    Eth1/21
+
+Total entries displayed: 4
+
+(Switch-A-3-IP)#
+....
++
+이 예에서는 스위치 A-4-IP에서 노드가 검색되었는지 확인하는 방법을 보여 줍니다.
+
++
+....
+(Switch-A-4-IP)# show cdp neighbors
+
+Capability Codes: R - Router, T - Trans-Bridge, B - Source-Route-Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater,
+                  V - VoIP-Phone, D - Remotely-Managed-Device,
+                  s - Supports-STP-Dispute
+
+Device-ID          Local Intrfce  Hldtme Capability  Platform      Port ID
+Node-A-1-FC         Eth1/5/1       133    H         FAS8200       e0b
+Node-A-2-FC         Eth1/6/1       133    H         FAS8200       e0b
+Switch-A-3-IP(FDO220329A3)
+                    Eth1/7         175    R S I s   N3K-C3232C    Eth1/7
+Switch-A-3-IP(FDO220329A3)
+                    Eth1/8         175    R S I s   N3K-C3232C    Eth1/8
+Switch-B-4-IP(FDO220329B4)
+                    Eth1/20        169    R S I s   N3K-C3232C    Eth1/20
+Switch-B-4-IP(FDO220329B4)
+                    Eth1/21        169    R S I s   N3K-C3232C    Eth1/21
+
+Total entries displayed: 4
+
+(Switch-A-4-IP)#
+....
+

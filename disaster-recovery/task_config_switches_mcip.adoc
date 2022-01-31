@@ -1,0 +1,151 @@
+---
+permalink: disaster-recovery/task_config_switches_mcip.html 
+sidebar: sidebar 
+keywords: metrocluster, ip, configuration, switchback, operation 
+summary: 교체된 IP 스위치를 구성해야 합니다. 
+---
+= IP 스위치 구성(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+교체된 IP 스위치를 구성해야 합니다.
+
+이 작업은 MetroCluster IP 구성에만 적용됩니다.
+
+이 작업은 두 스위치 모두에서 수행해야 합니다. 첫 번째 스위치를 구성한 후 정상적인 사이트의 스토리지 액세스가 영향을 받지 않는지 확인합니다.
+
+
+NOTE: 정상적인 사이트의 스토리지 액세스가 영향을 받는 경우 두 번째 스위치를 계속 사용해서는 안 됩니다.
+
+.단계
+. 을 참조하십시오 link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성:: ONTAP MetroCluster 구성 간의 차이점"] 교체 스위치 케이블 연결 및 구성 절차를 참조하십시오.
++
+다음 섹션의 절차를 사용할 수 있습니다.
+
++
+** IP 스위치 케이블 연결
+** IP 스위치 구성
+
+
+. 남아 있는 사이트에서 ISL이 해제된 경우 ISL을 설정하고 ISL이 온라인 상태인지 확인합니다.
++
+.. 첫 번째 스위치에서 ISL 인터페이스 설정:
++
+"종료 안 함"
+
++
+다음 예에서는 Broadcom IP 스위치 또는 Cisco IP 스위치에 대한 명령을 보여 줍니다.
+
++
+|===
+
+
+| 스위치 공급업체 | 명령 
+
+
+ a| 
+Broadcom의
+ a| 
+[listing]
+----
+(IP_Switch_A_1)> enable
+(IP_switch_A_1)# configure
+(IP_switch_A_1)(Config)# interface 0/13-0/16
+(IP_switch_A_1)(Interface 0/13-0/16 )# no shutdown
+(IP_switch_A_1)(Interface 0/13-0/16 )# exit
+(IP_switch_A_1)(Config)# exit
+----
+
+
+ a| 
+Cisco의
+ a| 
+[listing]
+----
+IP_switch_A_1# conf t
+IP_switch_A_1(config)# int eth1/15-eth1/20
+IP_switch_A_1(config)# no shutdown
+IP_switch_A_1(config)# copy running startup
+IP_switch_A_1(config)# show interface brief
+----
+|===
+.. 파트너 스위치에서 ISL 인터페이스 설정:
++
+"종료 안 함"
+
++
+다음 예에서는 Broadcom IP 스위치 또는 Cisco IP 스위치에 대한 명령을 보여 줍니다.
+
++
+|===
+
+
+| 스위치 공급업체 | 명령 
+
+
+ a| 
+Broadcom의
+ a| 
+[listing]
+----
+(IP_Switch_A_2)> enable
+(IP_switch_A_2)# configure
+(IP_switch_A_2)(Config)# interface 0/13-0/16
+(IP_switch_A_2)(Interface 0/13-0/16 )# no shutdown
+(IP_switch_A_2)(Interface 0/13-0/16 )# exit
+(IP_switch_A_2)(Config)# exit
+----
+
+
+ a| 
+Cisco의
+ a| 
+[listing]
+----
+IP_switch_A_2# conf t
+IP_switch_A_2(config)# int eth1/15-eth1/20
+IP_switch_A_2(config)# no shutdown
+IP_switch_A_2(config)# copy running startup
+IP_switch_A_2(config)# show interface brief
+----
+|===
+.. 인터페이스가 활성화되었는지 확인합니다.
++
+인터페이스 요약
+
++
+다음 예는 Cisco 스위치의 출력을 보여 줍니다.
+
++
+[listing]
+----
+IP_switch_A_2(config)# show interface brief
+
+--------------------------------------------------------
+Port VRF Status IP Address Speed MTU
+--------------------------------------------------------
+mt0 -- up 10.10.99.10 100 1500
+--------------------------------------------------------
+Ethernet    VLAN Type Mode    Status Reason Speed   Port
+Interface                                           Ch
+#
+--------------------------------------------------------
+.
+.
+.
+Eth1/15    10   eth   access  up     none   40G(D)  --
+Eth1/16    10   eth   access  up     none   40G(D)  --
+Eth1/17    10   eth   access  down   none   auto(D) --
+Eth1/18    10   eth   access  down   none   auto(D) --
+Eth1/19    10   eth   access  down   none   auto(D) --
+Eth1/20    10   eth   access  down   none   auto(D) --
+.
+.
+.
+IP_switch_A_2#
+----
+
+
+

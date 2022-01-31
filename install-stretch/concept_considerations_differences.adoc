@@ -1,0 +1,235 @@
+---
+permalink: install-stretch/concept_considerations_differences.html 
+sidebar: sidebar 
+keywords: metrocluster, stretch, installation, configurations, all san array, asa 
+summary: 다양한 MetroCluster 구성에 필요한 구성 요소의 주요 차이점이 있습니다. 
+---
+= ONTAP MetroCluster 구성의 차이점
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+다양한 MetroCluster 구성에 필요한 구성 요소의 주요 차이점이 있습니다.
+
+모든 구성에서 두 MetroCluster 사이트는 각각 ONTAP 클러스터로 구성됩니다. 2노드 MetroCluster 구성에서는 각 노드를 단일 노드 클러스터로 구성합니다.
+
+|===
+
+
+| 피처 | IP 구성 2+| 패브릭 연결 구성 2+| 늘이기 설정 
+
+
+|  |  | * 4노드 또는 8노드 * | * 2노드 * | * 2노드 브리지 연결 * | * 2노드 직접 연결 * 
+
+
+ a| 
+컨트롤러 수입니다
+ a| 
+4 또는 8 *
+ a| 
+4개 또는 8개
+ a| 
+2개
+ a| 
+2개
+ a| 
+2개
+
+
+
+ a| 
+FC 스위치 스토리지 패브릭을 사용합니다
+ a| 
+아니요
+ a| 
+예
+ a| 
+예
+ a| 
+아니요
+ a| 
+아니요
+
+
+
+ a| 
+IP 스위치 스토리지 패브릭을 사용합니다
+ a| 
+예
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+
+
+
+ a| 
+FC-to-SAS 브리지를 사용합니다
+ a| 
+아니요
+ a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+아니요
+
+
+
+ a| 
+직접 연결 SAS 스토리지를 사용합니다
+ a| 
+예(로컬 연결에만 해당)
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+예
+
+
+
+ a| 
+ADP를 지원합니다
+ a| 
+예(ONTAP 9.4에서 시작)
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+
+
+
+ a| 
+로컬 HA 지원
+ a| 
+예
+ a| 
+예
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+
+
+
+ a| 
+ONTAP AUSO를 지원합니다
+ a| 
+아니요
+ a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+예
+
+
+
+ a| 
+미러링되지 않은 애그리게이트를 지원합니다
+ a| 
+예(ONTAP 9.8부터 시작)
+ a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+예
+
+
+
+ a| 
+어레이 LUN을 지원합니다
+ a| 
+아니요
+ a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+예
+
+
+
+ a| 
+ONTAP 중재자 지원
+ a| 
+예(ONTAP 9.7부터 시작)
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+
+
+
+ a| 
+MetroCluster Tiebreaker 지원
+ a| 
+예(ONTAP 중재자를 조합하지 않음)
+ a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+예
+
+
+
+| 지원 <<Support for All SAN Array systems in MetroCluster configurations,모든 SAN 어레이>>  a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+예
+ a| 
+예
+
+|===
+* 중요 *
+
+8노드 MetroCluster IP 구성의 경우 다음 사항을 고려하십시오.
+
+* 8노드 구성은 ONTAP 9.9.1부터 지원됩니다.
+* NetApp에서 검증된 MetroCluster 스위치(NetApp에서 주문)만 지원됩니다.
+* IP 라우팅(계층 3) 백엔드 접속을 사용하는 구성은 지원되지 않습니다.
+* 공유 사설 계층 2 네트워크를 사용하는 구성은 지원되지 않습니다.
+* Cisco 9336C-FX2 공유 스위치를 사용하는 구성은 지원되지 않습니다.
+
+
+
+
+== MetroCluster 구성의 모든 SAN 어레이 시스템 지원
+
+일부 SAN 어레이(ASA)는 MetroCluster 구성에서 지원됩니다. MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.
+
+지원되는 플랫폼 구성은 에 나와 있습니다 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"].

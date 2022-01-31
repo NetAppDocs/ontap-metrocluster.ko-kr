@@ -1,0 +1,50 @@
+---
+permalink: install-fc/reference_supported_mcc_configuration_with_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, supported, array, luns 
+summary: 어레이 LUN을 사용하여 MetroCluster 구성을 설정할 수 있습니다. 스트레치 및 패브릭 연결 구성이 모두 지원됩니다. AFF 시스템은 어레이 LUN에서 지원되지 않습니다. 
+---
+= 어레이 LUN에서 지원되는 MetroCluster 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+어레이 LUN을 사용하여 MetroCluster 구성을 설정할 수 있습니다. 스트레치 및 패브릭 연결 구성이 모두 지원됩니다. AFF 시스템은 어레이 LUN에서 지원되지 않습니다.
+
+MetroCluster 구성에서 지원되는 기능은 구성 유형에 따라 다릅니다. 다음 표에는 스토리지 LUN을 사용하는 다양한 유형의 MetroCluster 구성에서 지원되는 기능이 나와 있습니다.
+
+|===
+
+
+.2+| 피처 3+| 패브릭 연결 구성 | 늘이기 설정 
+
+
+| 8개 노드 | 4노드 | 2노드 | 2노드 
+
+
+ a| 
+컨트롤러 수입니다
+ a| 
+8개
+ a| 
+네
+ a| 
+2개
+ a| 
+2개
+
+
+
+| FC 스위치 스토리지 패브릭을 사용합니다 | 예 | 예 | 예 | 예 
+
+
+| FC-to-SAS 브리지를 사용합니다 | 예 | 예 | 예 | 예 
+
+
+| 로컬 HA 지원 | 예 | 예 | 아니요 | 아니요 
+
+
+| 자동 절체를 지원합니다 | 예 | 예 | 예 | 예 
+|===
+link:concept_considerations_differences.html["ONTAP MetroCluster 구성의 차이점"]

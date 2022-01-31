@@ -1,0 +1,90 @@
+---
+permalink: disaster-recovery/task_boot_new_mcfc.html 
+sidebar: sidebar 
+keywords: boot, controller, modules, fc 
+summary: 데이터와 루트 애그리게이트 모두에 대해 애그리게이트 복구가 완료된 후 재해 사이트에서 노드를 부팅해야 합니다. 
+---
+= 새 컨트롤러 모듈 부팅(MetroCluster FC 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+데이터와 루트 애그리게이트 모두에 대해 애그리게이트 복구가 완료된 후 재해 사이트에서 노드를 부팅해야 합니다.
+
+이 작업은 로더 프롬프트를 표시하는 노드에서 시작합니다.
+
+.단계
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. [[2단계, 2단계]] 부팅 메뉴에서 옵션 6, * 백업 구성에서 플래시 업데이트 * 를 선택합니다.
+. 다음 프롬프트에 "y"로 응답합니다.
++
+그러면 모든 플래시 기반 구성이 디스크에 대한 마지막 백업으로 대체됩니다. 계속 하고 싶으세요
+
++
+시스템이 두 번 부팅되고 두 번째로 새 구성을 로드합니다.
+
++
+
+NOTE: 사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <<step2>> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 루트 복구를 수행해야 합니다. 기술 지원 부서에 지원을 요청하십시오.
+
+. plex 0에서 루트 애그리게이트 미러링:
++
+.. 3개의 pool0 디스크를 새 컨트롤러 모듈에 할당합니다.
+.. 루트 애그리게이트 pool1 플렉스 미러링:
++
+'aggr mirror root-aggr-name'
+
+.. 소유되지 않은 디스크를 로컬 노드의 pool0에 할당합니다
+
+
+. 4노드 구성이 있는 경우 재해 사이트의 다른 노드에서 이전 단계를 반복합니다.
+. MetroCluster 구성 새로 고침:
++
+.. 고급 권한 모드 시작:
++
+세트 프리빌리지 고급
+
+.. 구성 새로 고침:
++
+MetroCluster 설정-새로 고침 참
+
+.. 관리자 권한 모드로 돌아가기:
++
+'Set-Privilege admin'입니다
+
+
+
+. 재해 사이트의 교체 노드가 스위치백 준비가 되었는지 확인합니다.
++
+'MetroCluster node show'
+
++
+교체 노드는 "'스위치백 복구 대기 중" 모드에 있어야 합니다. 대신 "정상" 모드에 있는 경우 교체 노드를 재부팅할 수 있습니다. 이 부팅 후 노드는 ""스위치백 복구 대기 중" 모드에 있어야 합니다.
+
++
+다음 예에서는 교체 노드가 스위치백 준비가 되었음을 보여줍니다.
+
++
+....
+
+cluster_B::> metrocluster node show
+DR                    Configuration  DR
+Grp Cluster Node      State          Mirroring Mode
+--- ------- --------- -------------- --------- --------------------
+1   cluster_B
+            node_B_1  configured     enabled   switchover completed
+            node_B_2  configured     enabled   switchover completed
+    cluster_A
+            node_A_1  configured     enabled   waiting for switchback recovery
+            node_A_2  configured     enabled   waiting for switchback recovery
+4 entries were displayed.
+
+cluster_B::>
+....
+
+
+로 진행합니다 link:../disaster-recovery/task_complete_recovery.html["재해 복구 프로세스를 완료합니다"].

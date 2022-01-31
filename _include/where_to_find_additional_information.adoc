@@ -1,0 +1,123 @@
+= MetroCluster 및 기타 설명서
+
+
+[role="lead"]
+MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp 문서 라이브러리를 참조하십시오.
+
+
+
+== MetroCluster 및 기타 설명서
+
+|===
+
+
+| 가이드 | 콘텐츠 
+
+
+ a| 
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+ a| 
+* 패브릭 연결 MetroCluster 아키텍처
+* 구성 케이블 연결
+* FC-to-SAS 브릿지 구성
+* FC 스위치 구성
+* ONTAP에서 MetroCluster 구성
+
+
+
+
+ a| 
+link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
+ a| 
+* MetroCluster 아키텍처 확장
+* 구성 케이블 연결
+* FC-to-SAS 브릿지 구성
+* ONTAP에서 MetroCluster 구성
+
+
+
+
+ a| 
+link:../manage/index.html["MetroCluster 관리"]
+ a| 
+* MetroCluster 구성 이해
+* 전환, 복구, 스위치백
+
+
+
+
+ a| 
+link:../disaster-recovery/index.html["재해 복구"]
+ a| 
+* 재해 복구
+* 강제 전환
+* 멀티 컨트롤러 또는 스토리지 장애로부터 복구
+
+
+
+
+ a| 
+link:../maintain/index.html["MetroCluster 유지 관리"]
+ a| 
+* MetroCluster FC 구성의 유지 관리 지침
+* FC-to-SAS 브리지 및 FC 스위치에 대한 하드웨어 교체 또는 업그레이드 및 펌웨어 업그레이드 절차
+* 패브릭 연결 또는 확장 MetroCluster FC 구성에서 디스크 쉘프 핫 추가
+* 패브릭 연결 또는 확장 MetroCluster FC 구성에서 디스크 쉘프 핫 제거
+* 패브릭 연결 또는 확장 MetroCluster FC 구성의 재해 사이트에서 하드웨어 교체
+* 2노드 패브릭 연결 또는 확장 MetroCluster FC 구성을 4노드 MetroCluster 구성으로 확장
+* 4노드 패브릭 연결 또는 확장 MetroCluster FC 구성을 8노드 MetroCluster FC 구성으로 확장
+
+
+
+
+ a| 
+link:../upgrade/index.html["MetroCluster 업그레이드 및 확장"]
+ a| 
+* MetroCluster 구성 업그레이드 또는 새로 고침
+* 노드를 추가하여 MetroCluster 구성 확장
+
+
+
+
+ a| 
+link:../transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster 전환"]
+ a| 
+* MetroCluster FC 구성에서 MetroCluster IP 구성으로 전환
+
+
+
+
+ a| 
+link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluster 업그레이드, 전환 및 확장"]
+ a| 
+* MetroCluster Tiebreaker 소프트웨어로 MetroCluster 구성 모니터링
+
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems/["AFF and FAS 설명서 를 참조하십시오"]
+
+* 참고: * 표준 스토리지 쉘프 유지보수 절차는 MetroCluster IP 구성과 함께 사용할 수 있습니다.
+ a| 
+* 디스크 쉘프 핫 추가
+* 디스크 쉘프 핫 제거
+
+
+
+
+ a| 
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"]
+ a| 
+* 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
+
+
+
+
+ a| 
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"]
+ a| 
+* 미러링된 데이터의 작동 방식
+
+
+|===

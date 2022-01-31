@@ -1,0 +1,39 @@
+---
+permalink: install-fc/task_fmc_mcc_transition_configure_the_mcc_hardware_for_share_a_7_mode_brocade_6510_fc_fabric_dure_transition.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, hardware, brocade, fc, transition 
+summary: 7-Mode 패브릭 MetroCluster 구성에서 Brocade 6510 스위치를 사용하는 경우 기존 스위치 패브릭을 새로운 clustered MetroCluster 구성과 공유할 수 있습니다. 공유 스위치 패브릭은 새로운 MetroCluster 구성에 새로운 개별 스위치 Fabric이 필요하지 않음을 의미합니다. 이 임시 구성은 전환을 위해 Brocade 6510 스위치에서만 지원됩니다. 
+---
+= 전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+7-Mode 패브릭 MetroCluster 구성에서 Brocade 6510 스위치를 사용하는 경우 기존 스위치 패브릭을 새로운 clustered MetroCluster 구성과 공유할 수 있습니다. 공유 스위치 패브릭은 새로운 MetroCluster 구성에 새로운 개별 스위치 Fabric이 필요하지 않음을 의미합니다. 이 임시 구성은 전환을 위해 Brocade 6510 스위치에서만 지원됩니다.
+
+.시작하기 전에
+* 7-Mode 패브릭 MetroCluster는 Brocade 6510 스위치를 사용해야 합니다.
++
+MetroCluster 구성에서 현재 Brocade 6510 스위치를 사용하지 않는 경우 이 절차를 수행하기 전에 스위치를 Brocade 6510으로 업그레이드해야 합니다.
+
+* 7-Mode 패브릭 MetroCluster 구성에서는 SAS 스토리지 쉘프만 사용해야 합니다.
++
+기존 구성에 FC 스토리지 쉘프(예: DS14mk4 FC)가 포함된 경우 FC 스위치 패브릭 공유는 지원되지 않습니다.
+
+* 새로운 clustered MetroCluster 구성에 사용되는 스위치 포트의 SFP는 16Gbps의 속도를 지원해야 합니다.
++
+기존 7-Mode 패브릭 MetroCluster는 8Gbps 또는 16Gbps SFP를 사용하여 포트에 연결된 상태를 유지할 수 있습니다.
+
+* 4개의 Brocade 6510 스위치 각각에서 새 MetroCluster 구성 요소의 포트를 연결하려면 24번~45번 포트를 사용할 수 있어야 합니다.
+* 기존 ISL(Inter-Switch Link)이 포트 46 및 47에 있는지 확인해야 합니다.
+* Brocade 6510 스위치는 7-Mode 패브릭 MetroCluster 및 clustered ONTAP MetroCluster 구성 모두에서 지원되는 FOS 펌웨어 버전을 실행해야 합니다.
+
+
+패브릭을 공유하고 MetroCluster 구성을 완료한 후 7-Mode 패브릭 MetroCluster 구성에서 데이터를 전환할 수 있습니다.
+
+데이터를 전환한 후 7-Mode 패브릭 MetroCluster 케이블을 제거하고 필요에 따라 clustered ONTAP MetroCluster 케이블 연결을 7-Mode MetroCluster 케이블 연결에 사용했던 낮은 번호의 포트로 이동할 수 있습니다. 포트는 "4노드 MetroCluster에 대한 FC 스위치 포트 할당 검토" 섹션에 나와 있습니다. 재배열된 포트의 조닝을 조정해야 합니다.
+
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"]

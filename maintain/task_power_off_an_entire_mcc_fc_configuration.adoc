@@ -1,0 +1,94 @@
+---
+permalink: maintain/task_power_off_an_entire_mcc_fc_configuration.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, power, off, entire, metrocluster, fc, configuration 
+summary: 사이트 유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster FC 구성과 모든 장비의 전원을 꺼야 합니다. 
+---
+= 전체 MetroCluster FC 구성의 전원을 끕니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사이트 유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster FC 구성과 모든 장비의 전원을 꺼야 합니다.
+
+
+NOTE: ONTAP 9.8부터 ' * storage switch * ' 명령이 ' * system switch * '로 대체됩니다. 다음 단계에서는 '* storage switch*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system switch*' 명령을 사용하는 것이 좋습니다.
+
+. MetroCluster 구성의 두 사이트에서 MetroCluster 구성을 확인합니다.
++
+.. MetroCluster 구성과 운영 모드가 정상인지 확인합니다. '* MetroCluster show * '
+.. MetroCluster 노드 중 하나에 다음 명령을 입력하여 디스크 연결을 확인합니다. + " * run local sysconfig -v * "
+.. '* storage bridge show * ' 명령을 실행합니다
+.. '* storage port show * ' 명령을 실행합니다
+.. '* storage switch show * ' 명령을 실행합니다
+.. '* network port show * ' 명령을 실행합니다
+.. MetroCluster check 수행: + ` * MetroCluster check run * '
+.. MetroCluster check 결과 표시: + ` * MetroCluster check show * '
+
+
+. AUSO 실패 도메인을 로 수정하여 AUSO를 비활성화합니다
++
+'* auso-disabled*'
+
++
+[listing]
+----
+cluster_A_site_A::*>metrocluster modify -auto-switchover-failure-domain auso-disabled
+----
+. 명령을 사용하여 변경 사항을 확인합니다
++
+``MetroCluster 오퍼레이션 쇼 *’
+
++
+[listing]
+----
+
+	cluster_A_site_A::*> metrocluster operation show
+       Operation: modify
+           State: successful
+      Start Time: 4/25/2020 20:20:36
+        End Time: 4/25/2020 20:20:36
+          Errors: -
+----
+. 다음 명령을 사용하여 노드를 중단합니다.
++
+'* halt*'** 4노드 또는 8노드 MetroCluster 구성의 경우, + "* inhibit-takeover*" 매개변수를 사용하십시오
+
++
+를 누릅니다
+
++
+[listing]
+----
+system node halt -node node1_SiteA -inhibit-takeover true -ignore-quorum-warnings true
+----
++
+** 2노드 MetroCluster 구성의 경우 다음 명령을 사용합니다.
++
+[listing]
+----
+system node halt -node node1_SiteA -ignore-quorum-warnings true
+----
+
+
+. 현장에서 다음 장비의 전원을 끕니다.
++
+** 스토리지 컨트롤러
+** MetroCluster FC 스위치
+** ATTO FiberBridges
+** 스토리지 쉘프
+
+
+. 30분 정도 기다린 다음 모든 컨트롤러의 전원을 켭니다.
+. 컨트롤러의 전원을 켠 후 두 사이트에서 MetroCluster 구성을 확인합니다.
++
+구성을 확인하려면 1단계를 반복합니다.
+
+. 전원 사이클 검사를 수행합니다.
++
+.. 모든 동기화 소스 SVM이 온라인 상태인지 확인합니다. + " * vserver show * "
+.. 온라인 상태가 아닌 동기화 소스 SVM을 시작합니다. + " * vserver start * "
+
+
+

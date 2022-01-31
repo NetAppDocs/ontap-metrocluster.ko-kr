@@ -1,0 +1,85 @@
+---
+permalink: maintain/task_change_speed_of_isl_ports_on_a_cisco_fc_switch.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, change, speed, isl, ports, cisco, fc, switch 
+summary: ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도를 변경해야 할 수 있습니다. 더 먼 거리를 이동하는 ISL의 경우 품질을 개선하기 위해 속도를 낮춰야 할 수 있습니다. 
+---
+= Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도를 변경해야 할 수 있습니다. 더 먼 거리를 이동하는 ISL의 경우 품질을 개선하기 위해 속도를 낮춰야 할 수 있습니다.
+
+ISL 연결을 보장하려면 두 스위치 모두에서 모든 단계를 완료해야 합니다.
+
+. Fabric의 두 스위치에서 속도를 변경하려는 ISL의 ISL 포트 비활성화:
++
+``FC_SWITCH_A_1#config t *’
+
++
+구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# shut
+	FC_switch_A_1(config)# end
+----
+. Fabric의 두 스위치에서 ISL 포트의 속도를 변경합니다.
++
+``FC_SWITCH_A_1#config t *’
+
++
+구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# switchport speed 16000
+----
++
+
+NOTE: 포트의 속도는 16 = 16,000Gbps, 8 = 8,000Gbps, 4 = 4,000Gbps입니다.
+
++
+스위치의 ISL 포트가 _Fabric 연결 MetroCluster 설치 및 구성 가이드_에 나열되어 있는지 확인합니다.
+
+. Fabric의 두 스위치에서 모든 ISL 포트(활성화되지 않은 경우)를 활성화합니다.
++
+``FC_SWITCH_A_1#config t *’
+
++
+구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# no shut
+	FC_switch_A_1(config)# end
+----
+. 두 스위치 간에 ISL이 설정되었는지 확인합니다.
++
+'* show topology ISL * '
+
++
+[listing]
+----
+--------------------------------------------------------------------------------
+	__________Local_________ _________Remote_________ VSAN Cost I/F  PC    I/F  Band
+	 PC Domain SwName   Port  Port   SwName Domain PC          Stat Stat Speed width
+	--------------------------------------------------------------------------------
+	  1   0x11 cisco9 fc1/36  fc1/36 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/40  fc1/40 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/44  fc1/44 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/48  fc1/48 cisco9 0xbc    1    1   15 up   up    16g   64g
+----
+. 두 번째 스위치 패브릭에 대해 이 절차를 반복합니다.
+

@@ -1,0 +1,42 @@
+---
+permalink: install-fc/concept_choosing_the_correct_installation_procedure_for_your_configuration_mcc_install.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, correct, procedure, configuration 
+summary: FlexArray LUN을 사용하는지, MetroCluster 구성에서 노드 수, 7-Mode 패브릭 MetroCluster에서 사용하는 기존 FC 스위치 패브릭을 공유하는지 여부에 따라 올바른 설치 절차를 선택해야 합니다. 
+---
+= 구성에 맞는 올바른 설치 절차를 선택합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FlexArray LUN을 사용하는지, MetroCluster 구성에서 노드 수, 7-Mode 패브릭 MetroCluster에서 사용하는 기존 FC 스위치 패브릭을 공유하는지 여부에 따라 올바른 설치 절차를 선택해야 합니다.
+
+image::../media/workflow_select_your_metrocluster_configuration_fabric.gif[워크플로우 MetroCluster 구성 패브릭을 선택합니다]
+
+|===
+
+
+| 이 설치 유형의 경우... | 다음 절차를 사용하십시오... 
+
+
+ a| 
+NetApp(네이티브) 디스크를 사용하는 패브릭 연결 구성
+ a| 
+. link:task_configure_the_mcc_hardware_components_fabric.html["패브릭 연결 MetroCluster 구성 케이블링"]
+. link:concept_configure_the_mcc_software_in_ontap.html["ONTAP에서 MetroCluster 소프트웨어 구성"]
+
+
+
+
+ a| 
+기존 FC 스위치 패브릭과 공유할 때 패브릭 연결 구성
+
+이 구성은 Brocade 6510 스위치를 사용하는 7-Mode 패브릭 MetroCluster 구성의 임시 구성으로만 지원됩니다.
+ a| 
+. link:task_configure_the_mcc_hardware_components_fabric.html["패브릭 연결 MetroCluster 구성 케이블링"]
+. link:task_fmc_mcc_transition_configure_the_mcc_hardware_for_share_a_7_mode_brocade_6510_fc_fabric_dure_transition.html["전환 중 7-Mode Brocade 6510 FC 패브릭을 공유하기 위한 MetroCluster 하드웨어 구성"]
+. link:concept_configure_the_mcc_software_in_ontap.html["ONTAP에서 MetroCluster 소프트웨어 구성"]
+
+
+|===

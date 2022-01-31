@@ -1,0 +1,61 @@
+---
+permalink: manage/task_heal_the_data_aggregates_after_negotiated_switchover.html 
+sidebar: sidebar 
+keywords: heal, data, aggregate, completing, complete, maintenance, test, process, resynchronize, prepare, disaster, operation, root, negotiate, switchover 
+summary: 유지보수 또는 테스트를 완료한 후에는 데이터 애그리게이트를 치료해야 합니다. 이 프로세스는 데이터 애그리게이트를 재동기화하여 정상적인 작동을 위해 재해 사이트를 준비합니다. 루트 애그리게이트를 복구하기 전에 데이터 애그리게이트를 치유해야 합니다. 
+---
+= 협상된 전환 후 데이터 애그리게이트를 복구
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+유지보수 또는 테스트를 완료한 후에는 데이터 애그리게이트를 치료해야 합니다. 이 프로세스는 데이터 애그리게이트를 재동기화하여 정상적인 작동을 위해 재해 사이트를 준비합니다. 루트 애그리게이트를 복구하기 전에 데이터 애그리게이트를 치유해야 합니다.
+
+원격 클러스터의 모든 구성 업데이트가 로컬 클러스터로 복제됩니다. 이 절차의 일부로 재해 사이트에서 스토리지의 전원을 켜지만 재해 사이트의 컨트롤러 모듈에 전원을 공급해서는 안 되며 전원을 공급해서는 안 됩니다.
+
+.단계
+. MetroCluster operation show 명령을 실행하여 절체가 완료되었는지 확인합니다.
++
+[listing]
+----
+controller_A_1::> metrocluster operation show
+  Operation: switchover
+      State: successful
+ Start Time: 7/25/2014 20:01:48
+   End Time: 7/25/2014 20:02:14
+     Errors: -
+----
+. 남아 있는 클러스터에서 MetroCluster 환원 단계 애그리게이트 명령을 실행하여 데이터 애그리게이트를 재동기화합니다.
++
+[listing]
+----
+controller_A_1::> metrocluster heal -phase aggregates
+[Job 130] Job succeeded: Heal Aggregates is successful.
+----
++
+치유가 거부되면 -override-vetoes 매개 변수를 사용하여 MetroCluster 환원 명령을 다시 실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+
+. MetroCluster operation show 명령을 실행하여 작업이 완료되었는지 확인합니다.
++
+[listing]
+----
+controller_A_1::> metrocluster operation show
+    Operation: heal-aggregates
+      State: successful
+Start Time: 7/25/2014 18:45:55
+   End Time: 7/25/2014 18:45:56
+     Errors: -
+----
+. storage aggregate show 명령을 실행하여 애그리게이트 상태를 확인하십시오.
++
+[listing]
+----
+controller_A_1::> storage aggregate show
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+...
+aggr_b2    227.1GB   227.1GB    0% online       0 mcc1-a2          raid_dp, mirrored, normal...
+----
+. 재해 사이트에서 스토리지를 교체한 경우 애그리게이트를 다시 미러링해야 할 수 있습니다.
+

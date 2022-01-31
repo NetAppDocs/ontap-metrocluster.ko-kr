@@ -1,0 +1,216 @@
+---
+permalink: disaster-recovery/task_assign_ownership_mcfc.html 
+sidebar: sidebar 
+keywords: assign, ownership, drives, replaced 
+summary: 재해 사이트에서 하드웨어를 복원할 때 드라이브를 교체한 경우 영향을 받는 드라이브에 소유권을 할당해야 합니다. 
+---
+= 교체된 드라이브에 대한 소유권을 할당합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+재해 사이트에서 하드웨어를 복원할 때 드라이브를 교체했거나 드라이브를 제로하거나 소유권을 제거해야 하는 경우 영향을 받는 드라이브에 소유권을 할당해야 합니다.
+
+재해 사이트는 재해 발생 이전처럼 사용 가능한 드라이브가 최소 몇 개 이상 있어야 합니다.
+
+드라이브 쉘프 및 드라이브 배열은 의 요구 사항을 충족해야 합니다 link:../install-ip/concept_required_mcc_ip_components_and_naming_guidelines_mcc_ip.html["MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다"] 섹션을 참조하십시오 .
+
+이 단계는 재해 사이트의 클러스터에서 수행됩니다.
+
+이 절차는 모든 드라이브의 재할당 및 재해 사이트에서 새로운 플렉스를 생성하는 과정을 보여 줍니다. 새로운 플렉스는 살아 있는 사이트와 재해 사이트의 로컬 플렉스의 원격 플렉스이다.
+
+이 섹션에서는 2노드 및 4노드 구성의 예를 제공합니다. 2노드 구성의 경우 각 사이트의 두 번째 노드에 대한 참조를 무시할 수 있습니다. 8노드 구성의 경우 두 번째 DR 그룹의 추가 노드를 고려해야 합니다. 이 예시는 다음과 같은 가정을 합니다.
+
+* 사이트 A는 재해 사이트입니다.
++
+** 노드_A_1이(가) 교체되었습니다.
+** 노드_A_2가 교체되었습니다.
++
+4노드 MetroCluster 구성에서만 제공됩니다.
+
+
+
+* 사이트 B는 정상적인 사이트입니다.
++
+** node_B_1이 정상 상태임.
+** node_B_2가 정상 상태임.
++
+4노드 MetroCluster 구성에서만 제공됩니다.
+
+
+
+
+
+컨트롤러 모듈에는 다음과 같은 원래 시스템 ID가 있습니다.
+
+|===
+
+
+| MetroCluster 구성의 노드 수 | 노드 | 원래 시스템 ID입니다 
+
+
+ a| 
+네
+ a| 
+노드_A_1
+ a| 
+4068741258
+
+
+
+ a| 
+노드_A_2
+ a| 
+4068741260
+ a| 
+노드_B_1
+
+
+
+ a| 
+4068741254)를 참조하십시오
+ a| 
+노드_B_2
+ a| 
+4068741256
+
+
+
+ a| 
+2개
+ a| 
+노드_A_1
+ a| 
+4068741258
+
+|===
+드라이브를 할당할 때는 다음 사항을 염두에 두어야 합니다.
+
+* 이전 디스크 수는 재해 이전에 있었던 각 노드에 대해 최소한 동일한 수의 디스크여야 합니다.
++
+더 적은 수의 디스크가 지정되거나 있는 경우 공간 부족으로 인해 복구 작업이 완료되지 않을 수 있습니다.
+
+* 새로 생성되는 플렉스는 남아 있는 사이트(node_B_x pool1)에 속하는 원격 플렉스와 재해 사이트(node_B_x pool0)에 속한 로컬 플렉스입니다.
+* 필요한 총 드라이브 수에 루트 집계 디스크가 포함되어서는 안 됩니다.
++
+남아 있는 사이트의 pool1에 n개의 디스크가 할당된 경우 루트 애그리게이트에 3개의 디스크를 사용한다는 가정 하에 재해 사이트에 n-3 디스크를 할당해야 합니다.
+
+* 동일한 스택에 있는 다른 모든 디스크가 할당된 디스크와 다른 풀에 디스크를 할당할 수 없습니다.
+* 정상적인 사이트에 속하는 디스크는 풀 1에 할당되고 재해 사이트에 속한 디스크는 풀 0에 할당됩니다.
+
+
+.단계
+. 4노드 또는 2노드 MetroCluster 구성 중 어느 것을 가지고 있는지에 따라 소유되지 않은 새 드라이브를 할당합니다.
++
+** 4노드 MetroCluster 구성의 경우 교체 노드에서 다음 명령을 사용하여 소유되지 않은 새 디스크를 적절한 디스크 풀에 할당합니다.
++
+... 각 노드에 대해 교체된 디스크를 해당 디스크 풀에 체계적으로 할당합니다.
++
+'Disk assign-s sysid-n old-count-of-disks-p pool'
+
++
+정상적인 사이트에서 각 노드에 대해 디스크 할당 명령을 실행합니다.
+
++
+[listing]
+----
+cluster_B::> disk assign -s node_B_1-sysid -n old-count-of-disks -p 1 **\(remote pool of surviving site\)**
+cluster_B::> disk assign -s node_B_2-sysid -n old-count-of-disks -p 1 **\(remote pool of surviving site\)**
+cluster_B::> disk assign -s node_A_1-old-sysid -n old-count-of-disks -p 0 **\(local pool of disaster site\)**
+cluster_B::> disk assign -s node_A_2-old-sysid -n old-count-of-disks -p 0 **\(local pool of disaster site\)**
+----
++
+다음 예제는 시스템 ID가 있는 명령을 보여줍니다.
+
++
+[listing]
+----
+cluster_B::> disk assign -s 4068741254 -n 21 -p 1
+cluster_B::> disk assign -s 4068741256 -n 21 -p 1
+cluster_B::> disk assign -s 4068741258 -n 21 -p 0
+cluster_B::> disk assign -s 4068741260 -n 21 -p 0
+----
+... 디스크 소유권을 확인합니다.
++
+스토리지 디스크 표시 - 필드 소유자, 풀
+
++
+[listing]
+----
+storage disk show -fields owner, pool
+cluster_A::> storage disk show -fields owner, pool
+disk     owner          pool
+-------- ------------- -----
+0c.00.1  node_A_1      Pool0
+0c.00.2  node_A_1      Pool0
+.
+.
+.
+0c.00.8  node_A_1      Pool1
+0c.00.9  node_A_1      Pool1
+.
+.
+.
+0c.00.15 node_A_2      Pool0
+0c.00.16 node_A_2      Pool0
+.
+.
+.
+0c.00.22 node_A_2      Pool1
+0c.00.23 node_A_2      Pool1
+.
+.
+.
+----
+
+
+** 2노드 MetroCluster 구성의 경우 교체 노드에서 다음 명령을 사용하여 소유되지 않은 새 디스크를 적절한 디스크 풀에 할당합니다.
++
+... 로컬 쉘프 ID를 표시합니다.
++
+'run local storage show shelf'
+
+... 정상 노드에 대해 교체된 디스크를 풀 1에 할당합니다.
++
+'run local disk assign-shelf shelf-id -n old-count-of-disks -p 1 -s node_B_1 -sysid -f'
+
+... 교체 노드에 대해 교체된 디스크를 풀 0에 할당합니다.
++
+'run local disk assign-shelf shelf-id -n old-count-of-disks -p 0 -s node_a_1 -sysid -f'
+
+
+
+
+
+. 정상적인 사이트에서 자동 디스크 할당을 다시 설정합니다.
++
+'스토리지 디스크 옵션 수정 - 자동 할당 설정 *'
+
++
+[listing]
+----
+cluster_B::> storage disk option modify -autoassign on *
+2 entries were modified.
+----
+. 정상적인 사이트에서 자동 디스크 할당이 켜져 있는지 확인합니다.
++
+'스토리지 디스크 옵션 표시'
+
++
+[listing]
+----
+ cluster_B::> storage disk option show
+ Node     BKg. FW. Upd.  Auto Copy   Auto Assign  Auto Assign Policy
+--------  -------------  -----------  -----------  ------------------
+node_B_1       on            on          on             default
+node_B_2       on            on          on             default
+2 entries were displayed.
+
+ cluster_B::>
+----
+
+
+link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
+
+link:../manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#how-metrocluster-configurations-use-syncmirror-to-provide-data-redundancy["MetroCluster 구성에서 SyncMirror를 사용하여 데이터 이중화를 제공하는 방법"]

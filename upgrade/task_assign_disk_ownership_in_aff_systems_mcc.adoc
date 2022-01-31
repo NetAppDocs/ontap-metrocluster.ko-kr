@@ -1,0 +1,108 @@
+---
+permalink: upgrade/task_assign_disk_ownership_in_aff_systems_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, assign, disk, ownership, aff, systems 
+summary: '미러링된 Aggregate가 있는 구성에서 AFF 시스템을 사용하고 있고 노드에 디스크\(SSD\)가 올바르게 할당되지 않은 경우, 각 쉘프의 디스크 절반을 로컬 노드 1개에 할당하고 나머지 절반은 HA 파트너 노드에 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성해야 합니다.' 
+---
+= AFF 시스템에서 디스크 소유권을 할당합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+미러링된 Aggregate가 있는 구성에서 AFF 시스템을 사용하고 있고 노드에 디스크(SSD)가 올바르게 할당되지 않은 경우, 각 쉘프의 디스크 절반을 로컬 노드 1개에 할당하고 나머지 절반은 HA 파트너 노드에 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성해야 합니다.
+
+스토리지 컨트롤러가 유지보수 모드여야 합니다.
+
+미러링되지 않은 애그리게이트, 액티브/패시브 구성이 있거나 로컬 및 원격 풀에서 디스크 수가 동일하지 않은 구성에는 적용되지 않습니다.
+
+출하 시 디스크를 받았을 때 디스크를 올바르게 할당한 경우에는 이 작업이 필요하지 않습니다.
+
+
+NOTE: 풀 0에는 항상 해당 디스크를 소유하는 스토리지 시스템과 동일한 사이트에서 찾은 디스크가 포함되어 있고 풀 1에는 해당 디스크를 소유하는 스토리지 시스템에 원격으로 상주하는 디스크가 항상 포함되어 있습니다.
+
+.단계
+. 그렇지 않은 경우 각 시스템을 유지보수 모드로 부팅합니다.
+. 첫 번째 사이트(사이트 A)에 있는 노드에 디스크를 할당합니다.
++
+각 풀에 동일한 수의 디스크를 할당해야 합니다.
+
++
+.. 첫 번째 노드에서 각 셸프의 디스크 절반을 풀 0에 체계적으로 할당하고 나머지 절반은 HA 파트너의 풀 0: + disk assign-disk_disk-name_-p_pool_-n_number-of-disks _ 에 할당합니다
++
+스토리지 컨트롤러 컨트롤러_A_1에 각각 8개의 SSD가 장착된 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_A_1:1-4.shelf1 -p 0 -n 4
+*> disk assign -shelf FC_switch_A_1:1-4.shelf2 -p 0 -n 4
+
+*> disk assign -shelf FC_switch_B_1:1-4.shelf1 -p 1 -n 4
+*> disk assign -shelf FC_switch_B_1:1-4.shelf2 -p 1 -n 4
+----
+.. 로컬 사이트의 두 번째 노드에 대해 이 프로세스를 반복하여 각 셸프의 디스크 절반을 풀 1에, 나머지 절반은 HA 파트너의 풀 1: + disk assign-disk_disk-name_-p_pool_'에 체계적으로 할당합니다
++
+스토리지 컨트롤러 컨트롤러_A_1에 각각 8개의 SSD가 장착된 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_A_1:1-4.shelf3 -p 0 -n 4
+*> disk assign -shelf FC_switch_B_1:1-4.shelf4 -p 1 -n 4
+
+*> disk assign -shelf FC_switch_A_1:1-4.shelf3 -p 0 -n 4
+*> disk assign -shelf FC_switch_B_1:1-4.shelf4 -p 1 -n 4
+----
+
+
+. 두 번째 사이트(사이트 B)에 있는 노드에 디스크를 할당합니다.
++
+각 풀에 동일한 수의 디스크를 할당해야 합니다.
+
++
+.. 원격 사이트의 첫 번째 노드에서 각 셸프의 디스크 절반을 풀 0에 체계적으로 할당하고 나머지 절반은 HA 파트너의 풀 0: + disk assign-disk_name_-p_pool_'에 할당합니다
++
+스토리지 컨트롤러 컨트롤러 컨트롤러_B_1에 각각 8개의 SSD가 장착된 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_B_1:1-5.shelf1 -p 0 -n 4
+*> disk assign -shelf FC_switch_B_1:1-5.shelf2 -p 0 -n 4
+
+*> disk assign -shelf FC_switch_A_1:1-5.shelf1 -p 1 -n 4
+*> disk assign -shelf FC_switch_A_1:1-5.shelf2 -p 1 -n 4
+----
+.. 원격 사이트의 두 번째 노드에 대해 이 프로세스를 반복하여 각 쉘프의 디스크 절반을 풀 1에 체계적으로 할당하고 나머지 절반은 HA 파트너의 풀 1에 할당합니다.
++
+디스크 할당 - disk_disk-name_-p_pool_'입니다
+
++
+스토리지 컨트롤러 컨트롤러 컨트롤러_B_2에 각각 8개의 SSD가 장착된 4개의 쉘프가 있는 경우 다음 명령을 실행합니다.
+
++
+[listing]
+----
+*> disk assign -shelf FC_switch_B_1:1-5.shelf3 -p 0 -n 4
+*> disk assign -shelf FC_switch_B_1:1-5.shelf4 -p 0 -n 4
+
+*> disk assign -shelf FC_switch_A_1:1-5.shelf3 -p 1 -n 4
+*> disk assign -shelf FC_switch_A_1:1-5.shelf4 -p 1 -n 4
+----
+
+
+. 디스크 할당을 확인합니다.
++
+'스토리지 표시 디스크'
+
+. 유지 관리 모드 종료:
++
+"중지"
+
+. 부팅 메뉴를 표시합니다.
++
+boot_ontap 메뉴
+
+. 각 노드에서 옵션 * 4 * 를 선택하여 모든 디스크를 초기화합니다.
+

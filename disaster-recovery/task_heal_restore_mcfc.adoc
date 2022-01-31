@@ -1,0 +1,168 @@
+---
+permalink: disaster-recovery/task_heal_restore_mcfc.html 
+sidebar: sidebar 
+keywords: configure, fc, switches, metrocluster, configuration 
+summary: 하드웨어를 교체하고 디스크를 할당한 후 MetroCluster 복구 작업을 수행할 수 있습니다. 
+---
+= 애그리게이트 복구 및 미러 복구 수행(MetroCluster FC 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+하드웨어를 교체하고 디스크를 할당한 후 MetroCluster 복구 작업을 수행할 수 있습니다. 그런 다음 애그리게이트가 미러링되는지 확인하고 필요한 경우 미러링을 다시 시작해야 합니다.
+
+.단계
+. 재해 사이트에서 다음 두 단계의 복구(집계 복구 및 루트 복구)를 수행합니다.
++
+[listing]
+----
+cluster_B::> metrocluster heal -phase aggregates
+
+cluster_B::> metrocluster heal -phase root aggregates
+----
+. 복구를 모니터링하여 애그리게이트가 재동기화 또는 미러링 상태인지 확인합니다.
++
+'Storage aggregate show-node local
+
++
+|===
+
+
+| Aggregate에 이 상태가 표시되는 경우... | 그러면... 
+
+
+ a| 
+재동기화 중입니다
+ a| 
+별도의 조치가 필요하지 않습니다. 전체 재동기화 작업을 완료합니다.
+
+
+
+ a| 
+미러가 저하되었습니다
+ a| 
+로 진행합니다 <<step3_fc_aggr_healing,3단계>>
+
+
+
+ a| 
+대칭 복사, 정상
+ a| 
+별도의 조치가 필요하지 않습니다.
+
+
+
+ a| 
+알 수 없음, 오프라인
+ a| 
+재해 사이트의 모든 디스크를 교체한 경우 루트 애그리게이트에 이 상태가 표시됩니다.
+
+|===
++
+[listing]
+----
+cluster_B::> storage aggregate show -node local
+
+ Aggregate     Size Available Used% State   #Vols  Nodes      RAID Status
+ --------- -------- --------- ----- ------- ------ ---------- ------------
+ node_B_1_aggr1
+            227.1GB   11.00GB   95% online       1 node_B_1   raid_dp,
+                                                              resyncing
+ NodeA_1_aggr2
+            430.3GB   28.02GB   93% online       2 node_B_1   raid_dp,
+                                                              mirror
+                                                              degraded
+ node_B_1_aggr3
+            812.8GB   85.37GB   89% online       5 node_B_1   raid_dp,
+                                                              mirrored,
+                                                              normal
+ 3 entries were displayed.
+
+cluster_B::>
+----
++
+다음 예제에서는 세 개의 애그리게이트가 각각 다른 상태에 있습니다.
+
++
+|===
+
+
+| 노드 | 상태 
+
+
+ a| 
+노드_B_1_aggr1
+ a| 
+재동기화 중입니다
+
+
+
+ a| 
+노드_B_1_aggr2
+ a| 
+미러가 저하되었습니다
+
+
+
+ a| 
+노드_B_1_aggr3
+ a| 
+대칭 복사, 정상
+
+|===
+. [[step3_fc_aggr_resting]] 하나 이상의 플렉스가 오프라인 상태로 유지되면 미러를 재구축하는 데 추가 단계가 필요합니다.
++
+위의 표에서 node_B_1_aggr2의 미러를 재생성해야 합니다.
+
++
+.. 실패한 플렉스를 식별하기 위해 애그리게이트의 세부 정보를 봅니다.
++
+'Storage aggregate show -r-aggregate node_B_1_aggr2'
+
++
+다음 예에서는 plex /node_B_1_aggr2/plex0이 실패 상태입니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate show -r -aggregate node_B_1_aggr2
+
+ Owner Node: node_B_1
+  Aggregate: node_B_1_aggr2 (online, raid_dp, mirror degraded) (block checksums)
+   Plex: /node_B_1_aggr2/plex0 (offline, failed, inactive, pool0)
+    RAID Group /node_B_1_aggr2/plex0/rg0 (partial)
+                                                               Usable Physical
+      Position Disk                     Pool Type     RPM     Size     Size Status
+      -------- ------------------------ ---- ----- ------ -------- -------- ----------
+
+   Plex: /node_B_1_aggr2/plex1 (online, normal, active, pool1)
+    RAID Group /node_B_1_aggr2/plex1/rg0 (normal, block checksums)
+                                                               Usable Physical
+      Position Disk                     Pool Type     RPM     Size     Size Status
+      -------- ------------------------ ---- ----- ------ -------- -------- ----------
+      dparity  1.44.8                    1   SAS    15000  265.6GB  273.5GB (normal)
+      parity   1.41.11                   1   SAS    15000  265.6GB  273.5GB (normal)
+      data     1.42.8                    1   SAS    15000  265.6GB  273.5GB (normal)
+      data     1.43.11                   1   SAS    15000  265.6GB  273.5GB (normal)
+      data     1.44.9                    1   SAS    15000  265.6GB  273.5GB (normal)
+      data     1.43.18                   1   SAS    15000  265.6GB  273.5GB (normal)
+ 6 entries were displayed.
+
+ cluster_B::>
+----
+.. 실패한 플렉스 삭제:
++
+'Storage aggregate delete-aggregate aggregate-name-plex'를 선택합니다
+
+.. 미러를 다시 설정합니다.
++
+'스토리지 집계 미러 집계 집계-이름'
+
+.. 모든 미러가 재설정되고 모든 집계가 미러된 정상 상태로 표시될 때까지 플렉스에서 재동기화 및 미러링 상태를 모니터링합니다.
++
+'스토리지 집계 쇼'
+
+
+
+

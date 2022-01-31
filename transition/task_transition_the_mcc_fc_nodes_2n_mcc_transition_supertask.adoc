@@ -1,0 +1,221 @@
+---
+permalink: transition/task_transition_the_mcc_fc_nodes_2n_mcc_transition_supertask.html 
+sidebar: sidebar 
+keywords: information, exist, metrocluster, fc, node, autosupport, message, announcing, announce, maintenance, transition, node, gather, controller, module, send, custom, message, prior, shut, down, removing, remove 
+summary: 기존 MetroCluster FC 노드에서 정보를 수집하고, 유지 관리를 시작하라는 AutoSupport 메시지를 보내고, 노드를 전환해야 합니다. 
+---
+= MetroCluster FC 노드 전환
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기존 MetroCluster FC 노드에서 정보를 수집하고, 유지 관리를 시작하라는 AutoSupport 메시지를 보내고, 노드를 전환해야 합니다.
+
+
+
+== 전환 전에 기존 컨트롤러 모듈에서 정보를 수집합니다
+
+[role="lead"]
+전환하기 전에 각 노드에 대한 정보를 수집해야 합니다.
+
+이 작업은 기존 노드에서 수행됩니다.
+
+* 노드_A_1-FC
+* 노드_B_1-FC
++
+.. 다음 표의 명령에 대한 출력을 수집합니다.
+
+
+
+
+|===
+| 범주 | 명령 | 참고 
+
+
+| 라이센스 | 시스템 라이센스가 표시됩니다 |  
+
+
+| 쉘프 및 각 쉘프에 있는 디스크 수, 플래시 스토리지 세부 정보, 메모리, NVRAM 및 네트워크 카드 | 시스템 노드 run-node_name sysconfig |  
+
+
+| 클러스터 네트워크 및 노드 관리 LIF | 시스템 노드 run-node_name sysconfig network interface show -role "cluster, node-mgmt, 데이터" |  
+
+
+| SVM 정보 | vserver show 를 참조하십시오 |  
+
+
+| 프로토콜 정보 | nfs show iscsi show cifs 를 참조하십시오 |  
+
+
+| 물리적 포트 | network port show-node_name-type physical network port show를 참조하십시오 |  
+
+
+| 페일오버 그룹 | 네트워크 인터페이스 failover-groups show-vserver vserver_name 을 참조하십시오 | 클러스터 차원 이 아닌 페일오버 그룹의 이름과 포트를 기록합니다. 
+
+
+| VLAN 구성 | 네트워크 포트 vlan show-node node_name | 각 네트워크 포트 및 VLAN ID 페어링을 기록합니다. 
+
+
+| 인터페이스 그룹 구성 | 네트워크 포트 ifgrp show-node_name-instance | 인터페이스 그룹 및 그룹에 할당된 포트의 이름을 기록합니다. 
+
+
+| 브로드캐스트 도메인 | 네트워크 포트 브로드캐스트 - 도메인 표시 |  
+
+
+| IPspace | 네트워크 IPspace가 표시됩니다 |  
+
+
+| 볼륨 정보 | 볼륨 표시 및 볼륨 표시 필드 암호화 |  
+
+
+| 집계 정보 | 스토리지 애그리게이트 보기 및 스토리지 애그리게이션 암호화 표시 및스토리지 애그리게이트 오브젝트 저장소 표시 |  
+
+
+| 디스크 소유권 정보 | 스토리지 애그리게이트 보기 및 스토리지 애그리게이션 암호화 표시 및스토리지 애그리게이트 오브젝트 저장소 표시 |  
+
+
+| 암호화 | 스토리지 페일오버 메일박스 디스크 쇼 및 보안 키 관리자 백업 쇼 | 또한 키 관리자를 활성화하는 데 사용되는 암호문을 유지합니다. 외부 키 관리자의 경우 클라이언트와 서버에 대한 인증 정보가 필요합니다. 
+
+
+| 암호화 | 보안 키 관리자 가 표시됩니다 |  
+
+
+| 암호화 | 보안 키 관리자 외부 표시 |  
+
+
+| 암호화 | systemshell 로컬 kenv kmip.init.ipaddr IP 주소 |  
+
+
+| 암호화 | 시스템 셸 로컬 kenv kmip.init.netmask 넷마스크 |  
+
+
+| 암호화 | systemshell 로컬 kenv kmip.init.gateway 게이트웨이 |  
+
+
+| 암호화 | systemshell 로컬 kenv kmip.init.interface 인터페이스 |  
+|===
+
+
+== 유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+
+[role="lead"]
+유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 이렇게 하면 중단이 발생했다는 가정하에 사례가 열리지 않습니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+. 자동 지원 케이스 생성을 방지하려면 유지 관리가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.
++
+.. 'system node AutoSupport invoke -node * -type all-message MAINT=maintenance -window-in-hours' 명령을 실행합니다
++
+유지 보수 기간 - 시간 단위 는 유지 보수 기간 길이를 최대 72시간으로 지정합니다. 유지 보수 작업이 경과 시간 전에 완료되면 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지('시스템 노드 AutoSupport invoke-node * -type all-message MAINT=end')를 호출할 수 있습니다
+
+.. 파트너 클러스터에서 명령을 반복합니다.
+
+
+
+
+
+
+== MetroCluster FC 노드의 전환, 종료 및 제거
+
+[role="lead"]
+이 작업은 MetroCluster FC 노드에서 명령을 실행하는 것 외에도 각 사이트에서 컨트롤러 모듈을 물리적으로 분리하고 제거하는 작업을 포함합니다.
+
+이 작업은 이전 노드 각각에 대해 수행해야 합니다.
+
+* 노드_A_1-FC
+* 노드_B_1-FC
++
+.. 모든 클라이언트 트래픽을 중지합니다.
+.. MetroCluster FC 노드(예: node_A_1-FC)에서 전환을 설정합니다.
++
+... 'Set-priv advanced'라는 고급 권한 수준을 설정합니다
+... 전환 활성화:'MetroCluster 전환 활성화-전환-모드 중단
+... 'Set-priv admin' 모드로 돌아갑니다
+
+
+.. 루트 애그리게이트의 원격 플렉스를 삭제하여 루트 애그리게이트의 미러를 해제합니다.
++
+... 'Storage aggregate show-root true'라는 루트 애그리게이트를 식별합니다
+... pool1 집계, 'Storage aggregate plex show-pool 1'을 표시합니다
+... root aggregate의 local plex: 'aggr plex delete aggr-name-plex-name'을 삭제합니다
+... 오프라인: 루트 애그리게이트의 원격 플렉스: '루트 집계를 위한 aggr plex offline root-aggregate-plex remote-for-root-aggregate'
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+ # aggr plex offline aggr0_node_A_1-FC_01 -plex plex4
+----
+
+
+.. 각 컨트롤러에서 다음 명령을 사용하여 계속하기 전에 메일박스 수, 디스크 자동 할당 및 전환 모드를 확인하십시오.
++
+... 'Set-priv advanced'라는 고급 권한 수준을 설정합니다
+... 각 컨트롤러 모듈에 대해 스토리지 장애 조치 사서함-디스크 표시(storage failover mailbox-disk show)라는 사서함 드라이브가 3개만 표시되는지 확인합니다
+... 'Set-priv admin' 모드로 돌아갑니다
+... 전환 모드가 Disruptive:MetroCluster transition show 인지 확인합니다
+
+
+.. 깨진 디스크가 있는지 확인합니다
+.. 손상된 디스크를 제거하거나 교체합니다
+.. node_A_1-FC 및 node_B_1-FC에서 다음 명령을 사용하여 애그리게이트가 정상인지 확인합니다. 'storage aggregate show' 'storage aggregate plex show'
++
+storage aggregate show 명령은 루트 애그리게이트가 미러링되지 않은 상태임을 나타냅니다.
+
+.. VLAN 또는 인터페이스 그룹이 있는지 확인합니다. 'network port ifgrp show' network port vlan show'
++
+없는 경우 다음 두 단계를 건너뜁니다.
+
+.. VLAN 또는 ifgrp를 사용하여 LIO 목록을 표시합니다. network interface show-fields home-port, curr-port, network port show-type if-group | vlan
+.. VLAN 및 인터페이스 그룹을 제거합니다.
++
+mc 접미사가 있는 SVM을 포함하여 모든 SVM에 있는 모든 LIF에 대해 다음 단계를 수행해야 합니다.
+
++
+... VLAN 또는 인터페이스 그룹을 사용하여 모든 LIF를 사용 가능한 포트('network interface modify -vserver vserver -name -lif lif_name -home-port port port')로 이동합니다
+... 홈 포트에 없는 LIF를 네트워크 인터페이스 show-is-home false로 표시합니다
+... 모든 LIF를 각각의 홈 포트로 되돌리기: 'network interface revert-vserver vserver_name-lif lif_name'
+... 모든 LIF가 홈 포트에 있는지 확인합니다. 'network interface show-is-home false'
++
+출력에는 LIF가 나타나지 않아야 합니다.
+
+... 브로드캐스트 도메인에서 VLAN 및 ifgrp 포트를 제거합니다. :: ' 네트워크 포트 브로드캐스트 - 도메인 제거 - 포트 - IPSpace IPSpace - 브로드캐스트 - 도메인 브로드캐스트 - 도메인 이름 - 포트 이름 - 포트 이름: portname, nodename: portname,....
+... 모든 VLAN 및 ifgrp 포트가 브로드캐스트 도메인('network port show-type if-group|vlan')에 할당되지 않았는지 확인합니다
+... 모든 VLAN 삭제:'network port vlan delete-node nodename-vlan-name vlan-name'
+... Delete interface groups:'network port ifgrp delete-node nodename-ifgrp ifgrp-name'
+
+
+.. MetroCluster IP 인터페이스 포트와의 충돌을 해결하기 위해 필요에 따라 LIF를 이동합니다.
++
+의 1단계에서 확인한 LIF를 이동해야 합니다 xref:concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.adoc[MetroCluster FC 노드의 포트를 MetroCluster IP 노드로 매핑].
+
++
+... 원하는 포트에서 호스팅되는 모든 LIF를 다른 포트로 이동합니다. 'network interface modify -lif lifname -vserver vserver -name -home-port new-homedport''network interface revert-lif lifname -vserver vservername'
+... 필요한 경우 대상 포트를 적절한 IPspace 및 브로드캐스트 도메인으로 이동합니다. 네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace 현재-IPSpace-브로드캐스트-도메인 현재-브로드캐스트-도메인-도메인-포트 컨트롤러-이름:현재-포트''네트워크 포트 브로드캐스트-도메인 추가-포트-IPSpace NEW-IPSpace-브로드캐스트-도메인 새-브로드캐스트-도메인-포트 컨트롤러-이름:새-포트'
+
+
+.. MetroCluster FC 컨트롤러(NODE_A_1-FC, NODE_B_1-FC)를 정지시킵니다
+.. LOADER 프롬프트에서 FC 및 IP 컨트롤러 모듈 사이의 하드웨어 클록을 동기화합니다.
++
+... 기존 MetroCluster FC 노드(node_a_1-FC)에서 날짜 표시: '날짜 표시'를 표시합니다
+... 새 MetroCluster IP 컨트롤러(node_a_1-ip 및 node_B_1-ip)에서 원래 컨트롤러에 표시된 날짜를 설정합니다
+... 새 MetroCluster IP 컨트롤러(NODE_A_1-IP, NODE_B_1-IP)에서 날짜:'날짜 표시'를 확인합니다
+
+
+.. MetroCluster FC 컨트롤러 모듈(node_A_1-FC 및 node_B_1-FC), FC-SAS 브리지(있는 경우), FC 스위치(있는 경우) 및 이러한 노드에 연결된 각 스토리지 쉘프를 중지하고 끕니다.
+.. MetroCluster FC 컨트롤러에서 쉘프를 분리하고 각 클러스터에 대한 로컬 스토리지인 쉘프를 기록합니다.
++
+구성에서 FC-to-SAS 브리지 또는 FC 백엔드 스위치를 사용하는 경우 연결을 끊고 제거합니다.
+
+.. MetroCluster FC 노드(node_A_1-FC 및 node_B_1-FC)의 유지 관리 모드에서 연결된 디스크가 없는지 확인합니다
+.. MetroCluster FC 노드의 전원을 끄고 분리합니다.
+
+
+
+
+이 시점에서 MetroCluster FC 컨트롤러가 제거되고 쉘프가 모든 컨트롤러에서 분리되었습니다.
+
+image::../media/transition_2n_remove_fc_nodes.png[전환 2n FC 노드를 제거합니다]

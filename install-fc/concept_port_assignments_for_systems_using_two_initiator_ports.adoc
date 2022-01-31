@@ -1,0 +1,219 @@
+---
+permalink: install-fc/concept_port_assignments_for_systems_using_two_initiator_ports.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, port, assignments, systems, two, initiator, ports 
+summary: 각 패브릭에 대해 단일 이니시에이터 포트와 각 컨트롤러에 대한 2개의 이니시에이터 포트를 사용하여 FAS8020, AFF8020, FAS8200 및 AFF A300 시스템을 구성할 수 있습니다. 
+---
+= 이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 패브릭에 대해 단일 이니시에이터 포트와 각 컨트롤러에 대한 2개의 이니시에이터 포트를 사용하여 FAS8020, AFF8020, FAS8200 및 AFF A300 시스템을 구성할 수 있습니다.
+
+FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지의 케이블 연결을 따라갈 수 있습니다. 4개의 이니시에이터를 사용하는 대신 2개의 이니시에이터만 연결하고 다른 2개는 스위치 포트에 연결된 상태로 두십시오.
+
+FiberBridge 6500N 브리지의 구성에 올바른 RCF 파일을 적용해야 합니다.
+
+조닝을 수동으로 수행하는 경우 FC 포트(FC1 또는 FC2) 하나를 사용하여 FiberBridge 6500N 또는 FiberBridge 7500N 또는 7600N 브리지에 사용되는 조닝을 따르십시오. 이 시나리오에서는 Fabric당 각 존 구성원에 2개가 아닌 1개의 이니시에이터 포트가 추가됩니다.
+
+FiberBridge 7500N 또는 7600N bridge_의 FiberBridge 6500N 브리지와 _핫 스와핑 절차를 사용하여 FiberBridge 6500에서 FiberBridge 7500으로 Zoning을 변경하거나 FiberBridge 7500으로 업그레이드할 수 있습니다 https://docs.netapp.com/us-en/ontap-metrocluster/maintain/index.html["MetroCluster 구성 요소를 유지보수하십시오"].
+
+다음 표에서는 ONTAP 9.1 이상을 사용할 때 FC 스위치에 대한 포트 할당을 보여 줍니다.
+
+|===
+
+
+4+| FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N을 사용하는 구성입니다 
+
+
+4+| * MetroCluster 1 또는 DR 그룹 1 * 
+
+
+.2+| * 구성 요소 * .2+| * 포트 * 2+| * Brocade 스위치 모델 6505, 6510, 6520, 7840, G620, G610, DCX 8510-8 * 
+
+
+| * FC 스위치에 연결... * | * 스위치 포트에 연결합니다... * 
+
+
+.8+| 컨트롤러_x_1  a| 
+FC-VI 포트 A
+ a| 
+1
+ a| 
+0
+
+
+
+ a| 
+FC-VI 포트 b
+ a| 
+2
+ a| 
+0
+
+
+
+ a| 
+FC-VI 포트 c
+ a| 
+1
+ a| 
+1
+
+
+
+ a| 
+FC-VI 포트 d
+ a| 
+2
+ a| 
+1
+
+
+
+ a| 
+HBA 포트 A
+ a| 
+1
+ a| 
+2
+
+
+
+ a| 
+HBA 포트 b
+ a| 
+2
+ a| 
+2
+
+
+
+ a| 
+HBA 포트 c
+ a| 
+-
+ a| 
+-
+
+
+
+ a| 
+HBA 포트 d
+ a| 
+-
+ a| 
+-
+
+
+
+ a| 
+스택 1
+ a| 
+Bridge_x_1a
+ a| 
+1
+ a| 
+8
+
+
+
+ a| 
+Bridge_x_1b
+ a| 
+2
+ a| 
+8
+
+
+
+ a| 
+스택 y
+ a| 
+브리지 x _ 야
+ a| 
+1
+ a| 
+11
+
+
+
+ a| 
+Bridge_x_yb입니다
+ a| 
+2
+ a| 
+11
+
+|===
+다음 표에서는 ONTAP 9.0을 사용할 때의 FC 스위치에 대한 포트 할당을 보여 줍니다.
+
+|===
+
+
+4+| * MetroCluster 2노드 구성 * 
+
+
+.2+| * 구성 요소 * .2+| * 포트 * 2+| * Brocade 6505, 6510 또는 DCX 8510-8 * 
+
+
+| * FC_SWITCH_x_1 * | * FC_SWITCH_x_2 * 
+
+
+ a| 
+컨트롤러_x_1
+ a| 
+FC-VI 포트 A
+ a| 
+0
+ a| 
+-
+
+
+
+ a| 
+FC-VI 포트 b
+ a| 
+-
+ a| 
+0
+
+
+
+ a| 
+HBA 포트 A
+ a| 
+1
+ a| 
+-
+
+
+
+ a| 
+HBA 포트 b
+ a| 
+-
+ a| 
+1
+
+
+
+ a| 
+HBA 포트 c
+ a| 
+2
+ a| 
+-
+
+
+
+ a| 
+HBA 포트 d
+ a| 
+-
+ a| 
+2
+
+|===

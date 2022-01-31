@@ -1,0 +1,262 @@
+---
+permalink: install-ip/task_sw_config_setup_ontap.html 
+sidebar: sidebar 
+keywords: metrocluster, ontap, setup 
+summary: 각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수행하라는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다. 
+---
+= ONTAP 설정
+
+
+[role="lead"]
+각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수행하라는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다.
+
+.시작하기 전에
+* MetroCluster 구성에 케이블로 연결되어 있어야 합니다.
+* 서비스 프로세서를 구성하지 않아야 합니다.
+
+
+새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 link:../upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#netbooting-the-new-controllers["새 컨트롤러 모듈을 Netbooting 합니다"].
+
+이 작업은 MetroCluster 구성의 두 클러스터 모두에서 수행해야 합니다.
+
+.단계
+. 아직 전원을 공급하지 않은 경우 로컬 사이트에서 각 노드의 전원을 켜고 모든 노드가 완전히 부팅되도록 합니다.
++
+시스템이 유지보수 모드인 경우 유지보수 모드를 종료하려면 halt 명령을 실행한 다음 'boot_ONTAP' 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 들어가야 합니다.
+
+. 각 클러스터의 첫 번째 노드에서 클러스터 구성 프롬프트를 계속 진행합니다.
++
+.. 시스템에서 제공하는 지침에 따라 AutoSupport 도구를 활성화합니다.
++
+출력은 다음과 비슷해야 합니다.
+
++
+[listing]
+----
+Welcome to the cluster setup wizard.
+
+    You can enter the following commands at any time:
+    "help" or "?" - if you want to have a question clarified,
+    "back" - if you want to change previously answered questions, and
+    "exit" or "quit" - if you want to quit the cluster setup wizard.
+    Any changes you made before quitting will be saved.
+
+    You can return to cluster setup at any time by typing "cluster setup".
+    To accept a default or omit a question, do not enter a value.
+
+    This system will send event messages and periodic reports to NetApp Technical
+    Support. To disable this feature, enter
+    autosupport modify -support disable
+    within 24 hours.
+
+    Enabling AutoSupport can significantly speed problem determination and
+    resolution should a problem occur on your system.
+    For further information on AutoSupport, see:
+    http://support.netapp.com/autosupport/
+
+    Type yes to confirm and continue {yes}: yes
+.
+.
+.
+----
+.. 프롬프트에 응답하여 노드 관리 인터페이스를 구성합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Enter the node management interface port [e0M]:
+Enter the node management interface IP address: 172.17.8.229
+Enter the node management interface netmask: 255.255.254.0
+Enter the node management interface default gateway: 172.17.8.1
+A node management interface on port e0M with IP address 172.17.8.229 has been created.
+----
+.. 프롬프트에 응답하여 클러스터를 생성합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Do you want to create a new cluster or join an existing cluster? {create, join}:
+create
+
+
+Do you intend for this node to be used as a single node cluster? {yes, no} [no]:
+no
+
+Existing cluster interface configuration found:
+
+Port MTU IP Netmask
+e0a 1500 169.254.18.124 255.255.0.0
+e1a 1500 169.254.184.44 255.255.0.0
+
+Do you want to use this configuration? {yes, no} [yes]: no
+
+System Defaults:
+Private cluster network ports [e0a,e1a].
+Cluster port MTU values will be set to 9000.
+Cluster interface IP addresses will be automatically generated.
+
+Do you want to use these defaults? {yes, no} [yes]: no
+
+Enter the cluster administrator's (username "admin") password:
+
+Retype the password:
+
+
+Step 1 of 5: Create a Cluster
+You can type "back", "exit", or "help" at any question.
+
+List the private cluster network ports [e0a,e1a]:
+Enter the cluster ports' MTU size [9000]:
+Enter the cluster network netmask [255.255.0.0]: 255.255.254.0
+Enter the cluster interface IP address for port e0a: 172.17.10.228
+Enter the cluster interface IP address for port e1a: 172.17.10.229
+Enter the cluster name: cluster_A
+
+Creating cluster cluster_A
+
+Starting cluster support services ...
+
+Cluster cluster_A has been created.
+----
+.. 프롬프트에 응답하여 라이센스를 추가하고 클러스터 관리 SVM을 설정한 다음 DNS 정보를 입력합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Step 2 of 5: Add Feature License Keys
+You can type "back", "exit", or "help" at any question.
+
+Enter an additional license key []:
+
+
+Step 3 of 5: Set Up a Vserver for Cluster Administration
+You can type "back", "exit", or "help" at any question.
+
+
+Enter the cluster management interface port [e3a]:
+Enter the cluster management interface IP address: 172.17.12.153
+Enter the cluster management interface netmask: 255.255.252.0
+Enter the cluster management interface default gateway: 172.17.12.1
+
+A cluster management interface on port e3a with IP address 172.17.12.153 has been created. You can use this address to connect to and manage the cluster.
+
+Enter the DNS domain names: lab.netapp.com
+Enter the name server IP addresses: 172.19.2.30
+DNS lookup for the admin Vserver will use the lab.netapp.com domain.
+
+Step 4 of 5: Configure Storage Failover (SFO)
+You can type "back", "exit", or "help" at any question.
+
+
+SFO will be enabled when the partner joins the cluster.
+
+
+Step 5 of 5: Set Up the Node
+You can type "back", "exit", or "help" at any question.
+
+Where is the controller located []: svl
+----
+.. 프롬프트에 응답하여 스토리지 페일오버를 설정하고 노드를 설정합니다.
++
+프롬프트는 다음과 유사합니다.
+
++
+[listing]
+----
+Step 4 of 5: Configure Storage Failover (SFO)
+You can type "back", "exit", or "help" at any question.
+
+
+SFO will be enabled when the partner joins the cluster.
+
+
+Step 5 of 5: Set Up the Node
+You can type "back", "exit", or "help" at any question.
+
+Where is the controller located []: site_A
+----
+.. 노드 구성은 완료하지만 데이터 애그리게이트는 생성하지 않습니다.
++
+ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 (https://172.17.12.153)[].
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html["System Manager(버전 9.0 ~ 9.6)를 사용한 클러스터 관리"]
+
++
+https://docs.netapp.com/us-en/ontap/index.html#about-ontap-system-manager["ONTAP 시스템 관리자(버전 9.7 이상)"]
+
+
+
+. 프롬프트에 따라 다음 컨트롤러를 부팅하고 클러스터에 연결합니다.
+. 노드가 고가용성 모드로 구성되었는지 확인합니다.
++
+'스토리지 페일오버 표시 필드 모드'
+
++
+그렇지 않은 경우 각 노드에서 HA 모드를 구성한 다음 노드를 재부팅해야 합니다.
+
++
+'Storage failover modify-mode ha-node localhost'
+
++
+이 명령은 고가용성 모드를 구성하지만 스토리지 페일오버를 사용하도록 설정하지는 않습니다. 스토리지 페일오버는 나중에 MetroCluster 구성을 구성할 때 자동으로 설정됩니다.
+
+. 클러스터 인터커넥트에 4개의 포트가 구성되어 있는지 확인합니다.
++
+네트워크 포트 쇼
+
++
+MetroCluster IP 인터페이스는 현재 구성되지 않으며 명령 출력에 표시되지 않습니다.
+
++
+다음 예에서는 node_A_1에 있는 두 개의 클러스터 포트를 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::*> network port show -role cluster
+
+
+
+Node: node_A_1
+
+                                                                       Ignore
+
+                                                  Speed(Mbps) Health   Health
+
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+
+e4a       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+e4e       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+
+Node: node_A_2
+
+                                                                       Ignore
+
+                                                  Speed(Mbps) Health   Health
+
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+
+e4a       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+e4e       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+
+4 entries were displayed.
+----
+. 파트너 클러스터에서 이 단계를 반복합니다.
+
+
+ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.

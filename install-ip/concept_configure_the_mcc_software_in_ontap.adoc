@@ -1,0 +1,15 @@
+---
+permalink: install-ip/concept_configure_the_mcc_software_in_ontap.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, ontap, node-level, configuration, node, site, relationship, configuring, configure, 
+summary: 노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다. 
+---
+= ONTAP에서 MetroCluster 소프트웨어 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다.
+
+image::../media/workflow_mcc_ip_high_level_node_and_cluster_configuration_software.svg[워크플로우 MCC IP 상위 레벨 노드 및 클러스터 구성 소프트웨어]

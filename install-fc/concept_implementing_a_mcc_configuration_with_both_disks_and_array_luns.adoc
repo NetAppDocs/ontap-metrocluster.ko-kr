@@ -1,0 +1,23 @@
+---
+permalink: install-fc/concept_implementing_a_mcc_configuration_with_both_disks_and_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, implement, configuration, disks, array, luns 
+summary: 기본 디스크 및 어레이 LUN을 사용하여 MetroCluster 구성을 구현하려면 구성에 사용된 ONTAP 시스템이 스토리지 어레이에 연결될 수 있는지 확인해야 합니다. 
+---
+= 디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성 구축
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기본 디스크 및 어레이 LUN을 사용하여 MetroCluster 구성을 구현하려면 구성에 사용된 ONTAP 시스템이 스토리지 어레이에 연결될 수 있는지 확인해야 합니다.
+
+디스크 및 어레이 LUN이 있는 MetroCluster 구성에는 2개 또는 4개의 노드가 있을 수 있습니다. 4노드 MetroCluster 구성은 패브릭을 연결해야 하지만, 2노드 구성은 확장 또는 패브릭 연결 구성일 수 있습니다.
+
+에 있습니다 https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"]에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+
+기본 디스크 및 어레이 LUN을 포함하는 2노드 패브릭 연결 MetroCluster 구성 또는 4노드 MetroCluster 구성을 설정하려면 FC-SAS 브리지를 사용하여 ONTAP 시스템을 FC 스위치를 통해 디스크 쉘프와 연결해야 합니다. FC 스위치를 통해 어레이 LUN을 ONTAP 시스템에 연결할 수 있습니다.
+
+link:reference_example_of_a_two_node_fabric_attached_mcc_configuration_with_disks_and_array_luns.html["디스크 및 어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성의 예"]
+
+link:concept_example_of_a_four_node_mcc_configuration_with_disks_and_array_luns.html["디스크 및 어레이 LUN이 있는 4노드 MetroCluster 구성의 예"]

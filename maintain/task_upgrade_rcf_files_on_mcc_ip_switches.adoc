@@ -1,0 +1,145 @@
+---
+permalink: maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, upgrade, rcf, files, ip, switches 
+summary: MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다. 
+---
+= MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.
+
+
+
+== RCF 파일이 지원되는지 확인합니다
+
+스위치에서 실행 중인 ONTAP 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.
+
+.단계
+. RCF 파일의 버전을 확인하려면 스위치에서 다음 명령을 사용합니다.
++
+[cols="30,70"]
+|===
+
+
+| 이 스위치에서... | 이 명령 실행... 
+
+
+ a| 
+Brocade 스위치
+ a| 
+'(ip_switch_a_1)#show clibanner'
+
+
+
+ a| 
+Cisco 스위치
+ a| 
+'ip_switch_a_1#배너 mott'를 표시합니다
+
+|===
++
+어느 스위치에서든 RCF 파일의 버전을 나타내는 출력 줄을 찾습니다. 예를 들어, 다음 출력은 RCF 파일 버전이 ""v1.80""임을 나타내는 Cisco 스위치에서 출력되었습니다.
+
++
+....
+Filename : NX3232_v1.80_Switch-A2.txt
+....
+. 특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 RcfFileGenerator 를 사용합니다. 보유하고 있거나 업그레이드하려는 구성에 대해 RCF 파일을 생성할 수 있으면 해당 파일이 지원됩니다.
+. 스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.
++
+** https://hwu.netapp.com/NetApp["Hardware Universe"]
+** https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성"]
+
+
+
+
+
+
+== RCF 파일을 업그레이드합니다
+
+새로운 스위치 펌웨어를 설치하는 경우 RCF 파일을 업그레이드하기 전에 스위치 펌웨어를 설치해야 합니다.
+
+이 절차는 RCF 파일이 업그레이드된 스위치의 트래픽을 중단시킵니다. 새 RCF 파일이 적용되면 트래픽이 재개됩니다.
+
+.단계
+. 구성 상태를 확인합니다.
++
+.. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+
+----
+
+
++
+작업은 백그라운드에서 실행됩니다.
+
++
+.. MetroCluster check run 작업이 완료되면 MetroCluster check show를 실행하여 결과를 확인한다.
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+-----------
+::*> metrocluster check show
+
+Last Checked On: 4/7/2019 21:15:05
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          warning
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+.. 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
++
+MetroCluster 운용사 show-job-id 38
+
+.. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+
+
+. 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
++
+스위치 공급업체의 단계를 따르십시오.
+
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+
+
+. 스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.
++
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+
+
++
+스위치를 다음 순서로 업데이트하십시오.
+
++
+.. 스위치_A_1
+.. 스위치_B_1
+.. 스위치_A_2
+.. 스위치_B_2
+
+
+

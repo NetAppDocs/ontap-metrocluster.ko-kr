@@ -1,0 +1,180 @@
+---
+permalink: maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, find, procedures, maintenance, tasks 
+summary: MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올바른 절차를 선택해야 합니다. 
+---
+= MetroCluster 유지 관리 작업의 절차를 찾는 방법
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올바른 절차를 선택해야 합니다.
+
+
+NOTE: ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 link:../upgrade/index.html["MetroCluster 업그레이드 및 확장 가이드"] 및 .
+
+|===
+
+
+| 구성 요소 | MetroCluster 유형(FC 또는 IP) | 작업 | 절차를 참조하십시오 
+
+
+ a| 
+ONTAP 소프트웨어
+ a| 
+둘 다 해당되며
+ a| 
+ONTAP 소프트웨어 업그레이드
+ a| 
+https://docs.netapp.com/us-en/ontap/upgrade/index.html["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"^]
+
+
+
+ a| 
+컨트롤러 모듈
+ a| 
+둘 다 해당되며
+ a| 
+FRU 교체(컨트롤러 모듈, PCIe 카드, FC-VI 카드 등)
+
+
+NOTE: MetroCluster 스토리지 시스템 간에 스토리지 컨트롤러 모듈 또는 NVRAM 카드를 이동하는 것은 지원되지 않습니다.
+ a| 
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+
+
+
+ a| 
+업그레이드 및 확장
+ a| 
+link:../upgrade/index.html["MetroCluster ® 업그레이드 및 확장"]
+
+
+
+ a| 
+FC에서 IP 연결로 전환
+ a| 
+link:../transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"]
+
+
+
+ a| 
+드라이브 쉘프
+ a| 
+FC
+ a| 
+선반 추가(다리 또는 개별 선반이 있는 스택)
+ a| 
+link:task_hot_add_a_stack_to_exist_7500n_pair.html["기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택 핫 추가"]
+
+link:task_fb_hot_add_stack_of_shelves_and_bridges.html["MetroCluster 시스템에 SAS 디스크 쉘프 및 브리지 스택 핫 추가"]
+
+link:task_fb_hot_add_shelf.html["SAS 디스크 쉘프 스택에 SAS 디스크 쉘프 핫 추가"]
+
+
+
+ a| 
+FC
+ a| 
+쉘프 제거
+ a| 
+link:task_hot_remove_storage_from_a_mcc_fc_configuration.html["MetroCluster FC 구성에서 스토리지 핫 제거"]
+
+
+
+ a| 
+FC
+ a| 
+기타 모든 선반 정비 절차. 표준 절차를 사용할 수 있습니다.
+ a| 
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.html["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
+
+
+
+ a| 
+IP
+ a| 
+모든 선반 정비 절차. 표준 절차를 사용할 수 있습니다.
+
+미러링되지 않은 애그리게이트의 쉘프를 추가하는 경우 를 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/GUID-EA385AF8-7786-4C3C-B5AE-1B4CFD3AD2EE.html["미러링되지 않은 애그리게이트를 사용할 때의 고려 사항"^]
+ a| 
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.html["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
+
+
+
+ a| 
+둘 다 해당되며
+ a| 
+IOM6 쉘프 스택에 IOM12 쉘프를 핫 추가합니다
+ a| 
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"^]
+
+
+
+ a| 
+FC-to-SAS 브릿지
+ a| 
+FC
+ a| 
+브리지 교체
+ a| 
+link:task_replace_a_sle_fc_to_sas_bridge.html["단일 FC-to-SAS 브릿지 교체"]
+
+link:task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html["FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체"]
+
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-7500n-with-a-7600n-bridge["FiberBridge 7500N을 7600N 브리지로 핫 스와핑"]
+
+
+
+ a| 
+FC
+ a| 
+펌웨어 업그레이드
+ a| 
+link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어 업데이트"]
+
+
+
+ a| 
+FC
+ a| 
+장애가 발생한 전원 공급 장치 모듈 교체
+ a| 
+link:reference_fb_replace_a_power_supply.html["오류가 발생한 전원 공급 장치 모듈 핫 교체"]
+
+
+
+ a| 
+FC 스위치
+ a| 
+FC
+ a| 
+스위치 업그레이드
+ a| 
+link:task_upgrade_to_new_brocade_switches.html["새 Brocade FC 스위치로 업그레이드"]
+
+
+
+ a| 
+FC
+ a| 
+스위치 교체
+ a| 
+link:task_replace_a_brocade_fc_switch_mcc.html["Brocade FC 스위치(MetroCluster) 교체"]
+
+link:task_replace_a_cisco_fc_switch_mcc.html["Cisco FC 스위치 교체"]
+
+
+
+ a| 
+FC
+ a| 
+펌웨어 업그레이드
+ a| 
+link:task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html["Brocade FC 스위치에서 펌웨어를 업데이트하는 중입니다"]
+
+link:task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html["Cisco FC 스위치에서 펌웨어를 업데이트하는 중입니다"]
+
+|===

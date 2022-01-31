@@ -1,0 +1,329 @@
+---
+permalink: disaster-recovery/task_heal_restore_mcip.html 
+sidebar: sidebar 
+keywords: aggregate, heal, mirror, restore 
+summary: 하드웨어를 교체하고 디스크를 할당한 후 MetroCluster 복구 작업을 수행할 수 있습니다. 
+---
+= 애그리게이트 복구 및 미러 복구 수행(MetroCluster IP 구성)
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+하드웨어를 교체하고 디스크를 할당한 후 ONTAP 9.5 이하 버전을 실행하는 시스템에서 MetroCluster 복구 작업을 수행할 수 있습니다. 모든 ONTAP 버전에서 애그리게이트가 미러링되었는지 확인하고, 필요한 경우 미러링을 다시 시작해야 합니다.
+
+ONTAP 9.6부터 재해 사이트 노드가 부팅될 때 복구 작업이 자동으로 수행됩니다. 복구 명령은 필요하지 않습니다.
+
+이 단계는 작동하는 클러스터에서 수행됩니다.
+
+.단계
+. ONTAP 9.6 이상을 사용하는 경우 자동 복구가 성공적으로 완료되었는지 확인해야 합니다.
++
+.. 환원-집계-자동 및 환원-루트-집계-자동 작업이 완료되었는지 확인합니다.
++
+MetroCluster의 작동 이력이 보여집니다
+
++
+다음 출력에서는 cluster_A에서 작업이 성공적으로 완료되었음을 보여 줍니다
+
++
+[listing]
+----
+cluster_B::*> metrocluster operation history show
+Operation                     State          Start Time       End Time
+----------------------------- -------------- ---------------- ----------------
+heal-root-aggr-auto           successful      2/25/2019 06:45:58
+                                                              2/25/2019 06:46:02
+heal-aggr-auto                successful     2/25/2019 06:45:48
+                                                              2/25/2019 06:45:52
+.
+.
+.
+----
+.. 재해 사이트에서 스위치백을 수행할 준비가 되었는지 확인합니다.
++
+'MetroCluster node show'
+
++
+다음 출력에서는 cluster_A에서 작업이 성공적으로 완료되었음을 보여 줍니다
+
++
+[listing]
+----
+cluster_B::*> metrocluster node show
+DR                          Configuration  DR
+Group Cluster Node          State          Mirroring Mode
+----- ------- ------------- -------------- --------- --------------------
+1     cluster_A
+              node_A_1      configured     enabled   heal roots completed
+              node_A_2      configured     enabled   heal roots completed
+      cluster_B
+              node_B_1      configured     enabled   waiting for switchback recovery
+              node_B_2      configured     enabled   waiting for switchback recovery
+4 entries were displayed.
+----
+
+
+. ONTAP 9.5 이전 버전을 사용하는 경우 집계 복구를 수행해야 합니다.
++
+.. 노드의 상태를 확인합니다.
++
+'MetroCluster node show'
+
++
+다음 출력에서는 전환을 완료했으므로 복구를 수행할 수 있음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_B
+              node_B_1           configured     enabled   switchover completed
+              node_B_2           configured     enabled   switchover completed
+      cluster_A
+              node_A_1           configured     enabled   waiting for switchback recovery
+              node_A_2           configured     enabled   waiting for switchback recovery
+4 entries were displayed.
+
+cluster_B::>
+----
+.. Aggregate 복구 단계 수행:
++
+'MetroCluster 환원 위상 집계'
+
++
+다음 출력에서는 일반적인 애그리게이트 복구 작업을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::*> metrocluster heal -phase aggregates
+[Job 647] Job succeeded: Heal Aggregates is successful.
+
+cluster_B::*> metrocluster operation show
+  Operation: heal-aggregates
+      State: successful
+ Start Time: 10/26/2017 12:01:15
+   End Time: 10/26/2017 12:01:17
+     Errors: -
+
+cluster_B::*>
+----
+.. Aggregate 복구가 완료되고 재해 사이트에서 스위치백을 수행할 준비가 되었는지 확인:
++
+'MetroCluster node show'
+
++
+다음 출력에서는 cluster_A에서 "환원 애그리게이트" 단계가 완료되었음을 보여 줍니다
+
++
+[listing]
+----
+cluster_B::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1           configured     enabled   heal aggregates completed
+              node_A_2           configured     enabled   heal aggregates completed
+      cluster_B
+              node_B_1           configured     enabled   waiting for switchback recovery
+              node_B_2           configured     enabled   waiting for switchback recovery
+4 entries were displayed.
+
+cluster_B::>
+----
+
+
+. 디스크를 교체한 경우 로컬 및 전환 애그리게이트를 미러링해야 합니다.
++
+.. 애그리게이트 표시:
++
+'스토리지 집계 쇼'
+
++
+[listing]
+----
+cluster_B::> storage aggregate show
+cluster_B Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_B_1_aggr0 1.49TB  74.12GB   95% online     1 node_B_1         raid4,
+                                                                   normal
+node_B_2_aggr0 1.49TB  74.12GB   95% online     1 node_B_2         raid4,
+                                                                   normal
+node_B_1_aggr1 3.14TB  3.04TB    3% online     15 node_B_1         raid_dp,
+                                                                   normal
+node_B_1_aggr2 3.14TB  3.06TB    3% online     14 node_B_1         raid_tec,
+                                                                   normal
+node_B_1_aggr1 3.14TB  2.99TB    5% online     37 node_B_2         raid_dp,
+                                                                   normal
+node_B_1_aggr2 3.14TB  3.02TB    4% online     35 node_B_2         raid_tec,
+                                                                   normal
+
+cluster_A Switched Over Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1_aggr1 2.36TB  2.12TB   10% online     91 node_B_1         raid_dp,
+                                                                   normal
+node_A_1_aggr2 3.14TB  2.90TB    8% online     90 node_B_1         raid_tec,
+                                                                   normal
+node_A_2_aggr1 2.36TB  2.10TB   11% online     91 node_B_2         raid_dp,
+                                                                   normal
+node_A_2_aggr2 3.14TB  2.89TB    8% online     90 node_B_2         raid_tec,
+                                                                   normal
+12 entries were displayed.
+
+cluster_B::>
+----
+.. 집계 대칭 복사:
++
+'스토리지 집계 미러 집계 집계-이름'
+
++
+다음 출력에서는 일반적인 미러링 작업을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate mirror -aggregate node_B_1_aggr1
+
+Info: Disks would be added to aggregate "node_B_1_aggr1" on node "node_B_1" in
+      the following manner:
+
+      Second Plex
+
+        RAID Group rg0, 6 disks (block checksum, raid_dp)
+          Position   Disk                      Type                  Size
+          ---------- ------------------------- ---------- ---------------
+          dparity    5.20.6                    SSD                      -
+          parity     5.20.14                   SSD                      -
+          data       5.21.1                    SSD                894.0GB
+          data       5.21.3                    SSD                894.0GB
+          data       5.22.3                    SSD                894.0GB
+          data       5.21.13                   SSD                894.0GB
+
+      Aggregate capacity available for volume use would be 2.99TB.
+
+Do you want to continue? {y|n}: y
+----
+.. 남아 있는 사이트에서 각 애그리게이트로 이전 단계를 반복합니다.
+.. 애그리게이트가 재동기화될 때까지 기다리면 'storage aggregate show' 명령을 사용하여 상태를 확인할 수 있습니다.
++
+다음 출력에서는 여러 애그리게이트가 재동기화되고 있음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> storage aggregate show
+
+cluster_B Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_B_1_aggr0 1.49TB  74.12GB   95% online     1 node_B_1         raid4,
+                                                                   mirrored,
+                                                                   normal
+node_B_2_aggr0 1.49TB  74.12GB   95% online     1 node_B_2         raid4,
+                                                                   mirrored,
+                                                                   normal
+node_B_1_aggr1 2.86TB  2.76TB    4% online     15 node_B_1         raid_dp,
+                                                                   resyncing
+node_B_1_aggr2 2.89TB  2.81TB    3% online     14 node_B_1         raid_tec,
+                                                                   resyncing
+node_B_2_aggr1 2.73TB  2.58TB    6% online     37 node_B_2         raid_dp,
+                                                                   resyncing
+node_B-2_aggr2 2.83TB  2.71TB    4% online     35 node_B_2         raid_tec,
+                                                                   resyncing
+
+cluster_A Switched Over Aggregates:
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+node_A_1_aggr1 1.86TB  1.62TB   13% online     91 node_B_1         raid_dp,
+                                                                   resyncing
+node_A_1_aggr2 2.58TB  2.33TB   10% online     90 node_B_1         raid_tec,
+                                                                   resyncing
+node_A_2_aggr1 1.79TB  1.53TB   14% online     91 node_B_2         raid_dp,
+                                                                   resyncing
+node_A_2_aggr2 2.64TB  2.39TB    9% online     90 node_B_2         raid_tec,
+                                                                   resyncing
+12 entries were displayed.
+----
+.. 모든 애그리게이트가 온라인 상태이고 다시 동기화되었는지 확인합니다.
++
+'Storage aggregate plex show'
+
++
+다음 출력에서는 모든 애그리게이트가 재동기화되었음을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::> storage aggregate plex show
+  ()
+                    Is      Is         Resyncing
+Aggregate Plex      Online  Resyncing    Percent Status
+--------- --------- ------- ---------- --------- ---------------
+node_B_1_aggr0 plex0 true    false              - normal,active
+node_B_1_aggr0 plex8 true    false              - normal,active
+node_B_2_aggr0 plex0 true    false              - normal,active
+node_B_2_aggr0 plex8 true    false              - normal,active
+node_B_1_aggr1 plex0 true    false              - normal,active
+node_B_1_aggr1 plex9 true    false              - normal,active
+node_B_1_aggr2 plex0 true    false              - normal,active
+node_B_1_aggr2 plex5 true    false              - normal,active
+node_B_2_aggr1 plex0 true    false              - normal,active
+node_B_2_aggr1 plex9 true    false              - normal,active
+node_B_2_aggr2 plex0 true    false              - normal,active
+node_B_2_aggr2 plex5 true    false              - normal,active
+node_A_1_aggr1 plex4 true    false              - normal,active
+node_A_1_aggr1 plex8 true    false              - normal,active
+node_A_1_aggr2 plex1 true    false              - normal,active
+node_A_1_aggr2 plex5 true    false              - normal,active
+node_A_2_aggr1 plex4 true    false              - normal,active
+node_A_2_aggr1 plex8 true    false              - normal,active
+node_A_2_aggr2 plex1 true    false              - normal,active
+node_A_2_aggr2 plex5 true    false              - normal,active
+20 entries were displayed.
+----
+
+
+. ONTAP 9.5 이전 버전을 실행 중인 시스템에서 루트 애그리게이트 복구 단계를 수행합니다.
++
+MetroCluster 수정 단계 루트 집계
+
++
+[listing]
+----
+cluster_B::> metrocluster heal -phase root-aggregates
+[Job 651] Job is queued: MetroCluster Heal Root Aggregates Job.Oct 26 13:05:00
+[Job 651] Job succeeded: Heal Root Aggregates is successful.
+----
+. "환원 루트" 단계가 완료되고 재해 사이트에서 스위치백을 수행할 준비가 되었는지 확인합니다.
++
+다음 출력에서는 cluster_A에서 "환원 루트" 단계가 완료되었음을 보여 줍니다
+
++
+[listing]
+----
+cluster_B::> metrocluster node show
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1           configured     enabled   heal roots completed
+              node_A_2           configured     enabled   heal roots completed
+      cluster_B
+              node_B_1           configured     enabled   waiting for switchback recovery
+              node_B_2           configured     enabled   waiting for switchback recovery
+4 entries were displayed.
+
+cluster_B::>
+----
+
+
+교체된 노드의 라이센스를 확인합니다.
+
+xref:task_complete_recovery.html#verifying-licenses-on-the-replaced-nodes[교체된 노드에서 라이센스 확인]

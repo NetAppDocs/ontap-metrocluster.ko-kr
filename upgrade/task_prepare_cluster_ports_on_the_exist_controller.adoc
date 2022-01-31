@@ -1,0 +1,184 @@
+---
+permalink: upgrade/task_prepare_cluster_ports_on_the_exist_controller.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, prepare, cluster, ports, existing, controller, module 
+summary: 새 컨트롤러 모듈을 설치하기 전에 클러스터 포트가 새 컨트롤러 모듈과 클러스터 통신을 제공할 수 있도록 기존 컨트롤러 모듈에 클러스터 포트를 구성해야 합니다. 
+---
+= 기존 컨트롤러 모듈에서 클러스터 포트를 준비합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 컨트롤러 모듈을 설치하기 전에 클러스터 포트가 새 컨트롤러 모듈과 클러스터 통신을 제공할 수 있도록 기존 컨트롤러 모듈에 클러스터 포트를 구성해야 합니다.
+
+스위치가 없는 2노드 클러스터를 생성하는 경우(클러스터 네트워크 스위치 없음), 스위치가 없는 클러스터 네트워킹 모드를 활성화해야 합니다.
+
+ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 관리 가이드 를 참조하십시오"].
+
+.단계
+. 노드의 클러스터 포트로 사용해야 하는 포트를 확인합니다.
++
+플랫폼에 대한 기본 포트 역할 목록은 를 참조하십시오 https://hwu.netapp.com/["Hardware Universe"]
+
++
+NetApp Support 사이트의 플랫폼을 위한 _ 설치 및 설정 지침 _ 에는 클러스터 네트워크 연결을 위한 포트에 대한 정보가 포함되어 있습니다.
+
+. 각 클러스터 포트에 대해 포트 역할을 확인합니다.
++
+네트워크 포트 쇼
+
++
+다음 예제에서 포트 "e0a", "e0b", "e0c" 및 "e0d"를 클러스터 포트로 변경해야 합니다.
+
++
+[listing]
+----
+cluster_A::> network port show
+
+Node: controller_A_1
+Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link  MTU    Admin/Oper  Status
+--------- ------------ ---------------- ----  ----   ----------- --------
+e0M       Default      mgmt_bd_1500     up    1500   auto/1000   healthy
+e0a       Default      Default          up    1500   auto/10000  healthy
+e0b       Default      Default          up    1500   auto/10000  healthy
+e0c       Default      Default          up    1500   auto/10000  healthy
+e0d       Default      Default          up    1500   auto/10000  healthy
+e0i       Default      Default          down  1500   auto/10     -
+e0j       Default      Default          down  1500   auto/10     -
+e0k       Default      Default          down  1500   auto/10     -
+e0l       Default      Default          down  1500   auto/10     -
+e2a       Default      Default          up    1500   auto/10000  healthy
+e2b       Default      Default          up    1500   auto/10000  healthy
+e4a       Default      Default          up    1500   auto/10000  healthy
+e4b       Default      Default          up    1500   auto/10000  healthy
+13 entries were displayed.
+----
+. 클러스터 포트를 홈 포트 또는 현재 포트로 사용하는 데이터 LIF의 경우, 데이터 포트를 홈 포트로 사용하도록 LIF를 수정합니다.
++
+네트워크 인터페이스 수정
+
++
+다음 예에서는 데이터 LIF의 홈 포트를 데이터 포트로 변경합니다.
+
++
+[listing]
+----
+cluster1::> network interface modify -lif datalif1 -vserver vs1 -home-port e1b
+----
+. 수정한 각 LIF의 경우 LIF를 새 홈 포트로 되돌립니다.
++
+네트워크 인터페이스 복원
+
++
+다음 예에서는 LIF "datalif1"을 새 홈 포트 "e1b"로 되돌립니다.
+
++
+[listing]
+----
+cluster1::> network interface revert -lif datalif1 -vserver vs1
+----
+. 클러스터 포트를 구성원 포트로 사용하고 클러스터 포트를 구성원 포트로 사용하여 ifgrp를 사용하는 VLAN 포트를 모두 제거합니다.
++
+.. VLAN 포트 삭제: + 'network port vlan delete-node_node-name_-vlan-name_portID-vlanDID_'
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network port vlan delete -node node1 -vlan-name e1c-80
+----
+.. 인터페이스 그룹에서 물리적 포트를 제거합니다.
++
+'network port ifgrp remove-port-node_node-name_-ifgrp_interface-group-name_-port_portID_'
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
+----
+.. 브로드캐스트 도메인에서 VLAN 및 인터페이스 그룹 포트 제거:
++
+"네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace_IPSpace_-broadcast-domain_broadcast-domain-name_-ports_nodename:portname,nodname:portname_,."
+
+.. 필요에 따라 다른 물리적 포트를 구성원으로 사용하도록 인터페이스 그룹 포트를 수정합니다.: + ``ifgrp add-port-node_node-name_-ifgrp_interface-group-name_-port_port-id_
+
+
+. 포트 역할이 변경되었는지 확인합니다.
++
+네트워크 포트 쇼
+
++
+다음 예에서는 포트 "e0a", "e0b", "e0c" 및 "e0d"가 이제 클러스터 포트임을 보여 줍니다.
+
++
+[listing]
+----
+Node: controller_A_1
+Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link  MTU    Admin/Oper  Status
+--------- ------------ ---------------- ----  ----   ----------- --------
+e0M       Default      mgmt_bd_1500     up    1500   auto/1000   healthy
+e0a       Cluster      Cluster          up    9000   auto/10000  healthy
+e0b       Cluster      Cluster          up    9000   auto/10000  healthy
+e0c       Cluster      Cluster          up    9000   auto/10000  healthy
+e0d       Cluster      Cluster          up    9000   auto/10000  healthy
+e0i       Default      Default          down  1500   auto/10 -
+e0j       Default      Default          down  1500   auto/10 -
+e0k       Default      Default          down  1500   auto/10 -
+e0l       Default      Default          down  1500   auto/10 -
+e2a       Default      Default          up    1500   auto/10000  healthy
+e2b       Default      Default          up    1500   auto/10000  healthy
+e4a       Default      Default          up    1500   auto/10000  healthy
+e4b       Default      Default          up    1500   auto/10000  healthy
+13 entries were displayed.
+----
+. 클러스터 브로드캐스트 도메인에 포트를 추가합니다.
++
+''broadcast-domain add-ports-IPSpace Cluster-broadcast-domain Cluster-ports_port-id_,_port-id_,_port-id_...'
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+broadcast-domain add-ports -ipspace Cluster -broadcast-domain Cluster -ports cluster1-01:e0a
+----
+. 시스템이 전환된 클러스터의 일부인 경우 클러스터 포트에 '네트워크 인터페이스 생성'이라는 클러스터 LIF를 생성합니다
++
+다음 예에서는 노드의 클러스터 포트 중 하나에 클러스터 LIF를 생성합니다. '-auto' 매개 변수는 LIF가 링크 로컬 IP 주소를 사용하도록 구성합니다.
+
++
+[listing]
+----
+cluster1::> network interface create -vserver Cluster -lif clus1 -role cluster -home-node node0 -home-port e1a -auto true
+----
+. 스위치가 없는 2노드 클러스터를 생성하는 경우, 스위치가 없는 클러스터 네트워킹 모드를 사용하도록 설정하십시오.
++
+.. 다음 노드 중 하나에서 고급 권한 레벨로 변경합니다.
++
+세트 프리빌리지 고급
+
++
+고급 모드로 계속 진행할지 묻는 메시지가 표시되면 y를 응답할 수 있습니다. 고급 모드 프롬프트가 나타납니다('*>').
+
+.. 스위치가 없는 클러스터 네트워킹 모드를 설정합니다.
++
+'network options switchless-cluster modify -enabled true'
+
+.. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+
+
+
+
+
+IMPORTANT: 스위치가 없는 2노드 클러스터 시스템의 기존 노드에 대한 클러스터 인터페이스 생성은 새 컨트롤러 모듈의 netboot를 통해 클러스터 설정이 완료된 후에 완료됩니다.

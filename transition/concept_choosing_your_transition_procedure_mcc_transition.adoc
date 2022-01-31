@@ -1,0 +1,68 @@
+---
+permalink: transition/concept_choosing_your_transition_procedure_mcc_transition.html 
+sidebar: sidebar 
+keywords: select, transition, procedure, depend, exist, metrocluster, fc, configuration, choosing, choose 
+summary: 기존 MetroCluster FC 구성에 따라 전환 절차를 선택해야 합니다. 
+---
+= 전환 절차 선택
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기존 MetroCluster FC 구성에 따라 전환 절차를 선택해야 합니다.
+
+전환 절차로 백엔드 FC 스위치 패브릭 또는 FC-VI 연결을 IP 스위치 네트워크로 바꿉니다. 정확한 절차는 시작 구성에 따라 다릅니다.
+
+전환 절차가 끝나면 원래 플랫폼과 FC 스위치(있는 경우)가 폐기됩니다.
+
+[cols="20,20,20,40"]
+|===
+
+
+| 구성을 시작하는 중입니다 | 중단 또는 무중단 | 요구 사항 | 절차를 참조하십시오 
+
+
+ a| 
+4개 노드
+ a| 
+무중단
+ a| 
+새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.
+ a| 
+link:concept_requirements_for_fc_to_ip_transition_mcc.html["MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)"]
+
+
+
+ a| 
+2개 노드
+ a| 
+성능
+ a| 
+새로운 스토리지 쉘프는 원래 플랫폼과 새 플랫폼 모두에서 지원됩니다.
+ a| 
+link:task_disruptively_transition_from_a_two_node_mcc_fc_to_a_four_node_mcc_ip_configuration.html["2노드 MetroCluster FC에서 4노드 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)"]
+
+
+
+ a| 
+2개 노드
+ a| 
+성능
+ a| 
+새로운 스토리지 쉘프는 원래 플랫폼과 새 플랫폼 모두에서 지원됩니다. 이전 스토리지 쉘프는 폐기되어야 합니다.
+ a| 
+link:task_disruptively_transition_while_move_volumes_from_old_shelves_to_new_shelves.html["스토리지 쉘프를 폐기할 때 MetroCluster FC에서 MetroCluster IP로 중단 없이 전환(ONTAP 9.8 이상)"]
+
+
+
+ a| 
+2개 노드
+ a| 
+성능
+ a| 
+이전 스토리지 쉘프는 새 플랫폼에서 지원되지 않습니다. 이전 스토리지 쉘프는 폐기되어야 합니다.
+ a| 
+link:task_disruptively_transition_when_exist_shelves_are_not_supported_on_new_controllers.html["새 컨트롤러에서 기존 쉘프를 지원하지 않을 때 중단 없이 전환(ONTAP 9.8 이상)"]
+
+|===

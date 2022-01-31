@@ -1,0 +1,73 @@
+---
+permalink: transition/concept_example_naming_in_this_procedure_mcc_ip_transition.html 
+sidebar: sidebar 
+keywords: procedure, example, name, throughout, identify, dr, group, node, switch, naming 
+summary: 이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다. 
+---
+= 이 절차의 이름 지정 예
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다.
+
+[cols="3*"]
+|===
+| DR 그룹 | 사이트_A의 클러스터_A | site_B의 cluster_B입니다 
+
+
+ a| 
+dr_group_1-FC
+ a| 
+* 노드_A_1-FC
+* 노드_A_2-FC
+
+ a| 
+* 노드_B_1-FC
+* 노드_B_2-FC
+
+
+
+
+ a| 
+dr_group_2 - IP입니다
+ a| 
+* Node_A_3 - IP
+* Node_A_4 - IP
+
+ a| 
+* Node_B_3 - IP
+* Node_B_4 - IP
+
+
+
+
+ a| 
+스위치
+ a| 
+초기 스위치(패브릭 연결 구성의 경우)
+
+* 스위치_A_1-FC
+* 스위치_A_2-FC
+
+
+MetroCluster IP 스위치:
+
+* 스위치_A_1 - IP
+* 스위치_A_2 - IP
+
+ a| 
+초기 스위치(패브릭 연결 구성의 경우):
+
+* 스위치_B_1-FC
+* 스위치_B_2-FC
+
+
+MetroCluster IP 스위치:
+
+* 스위치_B_1 - IP
+* 스위치_B_2 - IP
+
+
+|===

@@ -1,0 +1,110 @@
+---
+permalink: maintain/reference_mcc_failure_scenarios.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, failure, recovery, scenarios 
+summary: MetroCluster 구성이 여러 가지 장애 이벤트에 응답하는 방식을 알고 있어야 합니다. 
+---
+= MetroCluster 장애 및 복구 시나리오
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성이 여러 가지 장애 이벤트에 응답하는 방식을 알고 있어야 합니다.
+
+
+NOTE: 노드 장애 복구에 대한 자세한 내용은 의 "올바른 복구 절차 선택" 섹션을 참조하십시오 link:../disaster-recovery/index.html["재해에 복구합니다"].
+
+|===
+
+
+| 이벤트 | 영향 | 복구 
+
+
+ a| 
+단일 노드 장애
+ a| 
+페일오버가 트리거됩니다.
+ a| 
+구성은 로컬 테이크오버 를 통해 복구됩니다. RAID는 영향을 받지 않습니다. 시스템 메시지를 검토하고 필요에 따라 장애가 발생한 FRU를 교체합니다.
+
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+
+
+ a| 
+한 사이트에서 두 노드에 장애가 발생합니다
+ a| 
+MetroCluster Tiebreaker 소프트웨어에서 자동 전환이 활성화된 경우에만 노드 2개가 실패합니다.
+ a| 
+MetroCluster Tiebreaker 소프트웨어에서 자동 전환이 활성화되지 않은 경우 수동 USO
+
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+
+
+ a| 
+MetroCluster IP 인터페이스 -- 포트 1개에 장애가 발생했습니다
+ a| 
+시스템의 성능이 저하되었습니다. 추가 포트 장애는 HA 미러링에 영향을 미칩니다.
+ a| 
+두 번째 포트가 사용됩니다. 상태 모니터는 포트에 대한 물리적 링크가 끊어진 경우 알림을 생성합니다. 시스템 메시지를 검토하고 필요에 따라 장애가 발생한 FRU를 교체합니다.
+
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+
+
+ a| 
+MetroCluster IP 인터페이스 -- 두 포트 모두에 장애가 발생했습니다
+ a| 
+HA 기능이 영향을 받습니다. 노드의 RAID SyncMirror 동기화가 중지됩니다.
+ a| 
+HA 테이크오버 없이 수동 복구가 즉시 필요합니다. 시스템 메시지를 검토하고 필요에 따라 장애가 발생한 FRU를 교체합니다.
+
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+
+
+ a| 
+MetroCluster IP 스위치 1개에 장애가 발생했습니다
+ a| 
+영향 없음. 이중화는 두 번째 네트워크를 통해 제공됩니다.
+ a| 
+필요에 따라 장애가 발생한 스위치를 교체합니다.
+
+link:task_replace_an_ip_switch.html["IP 스위치 교체"]
+
+
+
+ a| 
+동일한 네트워크에 있는 MetroCluster IP 스위치 2개에 장애가 발생했습니다
+ a| 
+영향 없음. 이중화는 두 번째 네트워크를 통해 제공됩니다.
+ a| 
+필요에 따라 장애가 발생한 스위치를 교체합니다.
+
+link:task_replace_an_ip_switch.html["IP 스위치 교체"]
+
+
+
+ a| 
+한 사이트에 있는 MetroCluster IP 스위치 2개에 장애가 발생했습니다
+ a| 
+노드의 RAID SyncMirror 동기화가 중지됩니다. HA 기능이 영향을 받고 클러스터가 쿼럼을 벗어났을 때
+ a| 
+필요에 따라 장애가 발생한 스위치를 교체합니다.
+
+link:task_replace_an_ip_switch.html["IP 스위치 교체"]
+
+
+
+ a| 
+동일한 네트워크가 아닌 다른 사이트에 있는 MetroCluster IP 스위치 2개의 장애(대각선 오류)
+ a| 
+노드의 RAID SyncMirror 동기화가 중지됩니다.
+ a| 
+노드의 RAID SyncMirror 동기화가 중지됩니다. 클러스터 및 HA 기능은 영향을 받지 않습니다. 필요에 따라 장애가 발생한 스위치를 교체합니다.
+
+link:task_replace_an_ip_switch.html["IP 스위치 교체"]
+
+|===

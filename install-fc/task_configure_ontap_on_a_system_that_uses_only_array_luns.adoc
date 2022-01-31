@@ -1,0 +1,201 @@
+---
+permalink: install-fc/task_configure_ontap_on_a_system_that_uses_only_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, array luns, ontap 
+summary: 어레이 LUN과 함께 사용하도록 ONTAP를 구성하려면 루트 애그리게이트 및 루트 볼륨을 구성하고, 진단 및 복구 작업을 위한 공간을 예약하고, 클러스터를 설정해야 합니다. 
+---
+= 스토리지 LUN만 사용하는 시스템에서 ONTAP 구성
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+어레이 LUN과 함께 사용하도록 ONTAP를 구성하려면 루트 애그리게이트 및 루트 볼륨을 구성하고, 진단 및 복구 작업을 위한 공간을 예약하고, 클러스터를 설정해야 합니다.
+
+.시작하기 전에
+* ONTAP 시스템은 스토리지 시스템에 접속되어 있어야 합니다.
+* 스토리지 시스템 관리자가 LUN을 생성하여 ONTAP에 제공해야 합니다.
+* 스토리지 시스템 관리자가 LUN 보안을 구성해야 합니다.
+
+
+어레이 LUN에 사용할 각 노드를 구성해야 합니다. 노드가 HA 쌍에 있는 경우 파트너 노드의 구성을 계속하기 전에 한 노드에서 구성 프로세스를 완료해야 합니다.
+
+.단계
+. 콘솔에 다음 메시지가 표시되면 Ctrl-C를 눌러 기본 노드의 전원을 켜고 부팅 프로세스를 중단합니다.
++
+특별부팅 메뉴는 Ctrl-C를 누릅니다
+
+. 부팅 메뉴에서 옵션 * 4 (Clean configuration and initialize all disks) * 를 선택합니다.
++
+ONTAP에서 사용할 수 있는 스토리지 LUN 목록이 표시됩니다. 또한 루트 볼륨 생성에 필요한 스토리지 LUN 크기도 지정됩니다. 루트 볼륨 생성에 필요한 크기는 ONTAP 시스템마다 다릅니다.
+
++
+** 이전에 할당된 어레이 LUN이 없는 경우 다음 예에서와 같이 ONTAP에서 사용 가능한 스토리지 LUN을 감지하고 표시합니다.
++
+[listing]
+----
+mcc8040-ams1::> disk show  NET-1.6 -instance
+                  Disk: NET-1.6
+        Container Type: aggregate
+            Owner/Home: mcc8040-ams1-01 / mcc8040-ams1-01
+               DR Home: -
+    Stack ID/Shelf/Bay: -  / -  / -
+                   LUN: 0
+                 Array: NETAPP_INF_1
+                Vendor: NETAPP
+                 Model: INF-01-00
+         Serial Number: 60080E50004317B4000003B158E35974
+                   UID: 60080E50:004317B4:000003B1:58E35974:00000000:00000000:00000000:00000000:00000000:00000000
+                   BPS: 512
+         Physical Size: 87.50GB
+              Position: data
+Checksum Compatibility: block
+             Aggregate: eseries
+                  Plex: plex0
+Paths:
+                                LUN  Initiator Side        Target Side                                                        Link
+Controller         Initiator     ID  Switch Port           Switch Port           Acc Use  Target Port                TPGN    Speed      I/O KB/s          IOPS
+------------------ ---------  -----  --------------------  --------------------  --- ---  -----------------------  ------  -------  ------------  ------------
+mcc8040-ams1-01    2c             0  mccb6505-ams1:16      mccb6505-ams1:18      AO  INU  20330080e54317b4              1   4 Gb/S             0             0
+mcc8040-ams1-01    2a             0  mccb6505-ams1:17      mccb6505-ams1:19      ANO RDY  20320080e54317b4              0   4 Gb/S             0             0
+
+Errors:
+-
+----
+** 예를 들어, 유지보수 모드를 통해 어레이 LUN이 이전에 할당된 경우, ONTAP를 설치하려는 노드나 해당 HA 파트너에 따라 사용 가능한 어레이 LUN 목록에 로컬 또는 파트너로 표시됩니다.
++
+이 예에서는 인덱스 번호가 3과 6인 스토리지 LUN이 이전에 이 특정 노드에서 할당되었기 때문에 "로컬"으로 표시됩니다.
+
++
+[listing]
+----
+
+**********************************************************************
+* No disks are owned by this node, but array LUNs are assigned.      *
+* You can use the following information to verify connectivity from  *
+* HBAs to switch ports.  If the connectivity of HBAs to switch ports *
+* does not match your expectations, configure your SAN and rescan.   *
+* You can rescan by entering 'r' at the prompt for selecting         *
+* array LUNs below.
+
+**********************************************************************
+             HBA  HBA WWPN           Switch port      Switch port WWPN
+              ---  --------           -----------      ----------------
+              0e 500a098001baf8e0  vgbr6510s203:25      20190027f88948dd
+              0f 500a098101baf8e0 vgci9710s202:1-17      2011547feeead680
+              0g 500a098201baf8e0  vgbr6510s203:27      201b0027f88948dd
+              0h 500a098301baf8e0 vgci9710s202:1-18      2012547feeead680
+
+
+No native disks were detected, but array LUNs were detected.
+You will need to select an array LUN to be used to create the root aggregate and root volume.
+
+The array LUNs visible to the system are listed below.  Select one array LUN to be used to
+create the root aggregate and root volume.  **The root volume requires 350.0 GB of space.**
+
+ Warning: The contents of the array LUN you select will be erased by ONTAP prior to their use.
+
+Index  Array LUN Name           Model   Vendor    Size    Owner   Checksum  Serial Number
+-----  -----------------------  ------  ------  --------  ------  --------  ------------------------
+   0   vgci9710s202:2-24.0L19   RAID5   DGC     217.3 GB          Block     6006016083402B0048E576D7
+   1   vgbr6510s203:30.126L20   RAID5   DGC     217.3 GB          Block     6006016083402B0049E576D7
+   2   vgci9710s202:2-24.0L21   RAID5   DGC     217.3 GB          Block     6006016083402B004AE576D7
+   3   vgbr6510s203:30.126L22   RAID5   DGC     405.4 GB  local   Block     6006016083402B004BE576D7
+   4   vgci9710s202:2-24.0L23   RAID5   DGC     217.3 GB          Block     6006016083402B004CE576D7
+   5   vgbr6510s203:30.126L24   RAID5   DGC     217.3 GB          Block     6006016083402B004DE576D7
+   6   vgbr6510s203:30.126L25   RAID5   DGC     423.5 GB  local   Block     6006016083402B003CF93694
+   7   vgci9710s202:2-24.0L26   RAID5   DGC     423.5 GB          Block     6006016083402B003DF93694
+----
+
+
+. 루트 볼륨으로 할당할 스토리지 LUN에 해당하는 인덱스 번호를 선택합니다.
++
+스토리지 LUN의 크기가 루트 볼륨을 생성하는 데 충분해야 합니다.
+
++
+루트 볼륨 생성을 위해 선택한 스토리지 LUN이 "local (root)"로 표시됩니다.
+
++
+다음 예에서는 인덱스 번호가 3인 스토리지 LUN이 루트 볼륨 생성을 위해 표시됩니다.
+
++
+[listing]
+----
+
+The root volume will be created on switch 0:5.183L33.
+
+**ONTAP requires that 11.0 GB of space be reserved for use in diagnostic and recovery
+operations.**  Select one array LUN to be used as spare for diagnostic and recovery operations.
+
+Index Array LUN Name    Model       Vendor    Size   Owner           Checksum  Serial Number
+----- ----------------- ----------  ------  -------- --------------  --------  ------------------------
+   0  switch0:5.183L1   SYMMETRIX   EMC     266.1 GB                 Block     600604803436313734316631
+   1  switch0:5.183L3   SYMMETRIX   EMC     266.1 GB                 Block     600604803436316333353837
+   2  switch0:5.183L31  SYMMETRIX   EMC     266.1 GB                 Block     600604803436313237643666
+   3  switch0:5.183L33  SYMMETRIX   EMC     658.3 GB local  (root)   Block     600604803436316263613066
+   4  switch0:7.183L0   SYMMETRIX   EMC     173.6 GB                 Block     600604803436313261356235
+   5  switch0:7.183L2   SYMMETRIX   EMC     173.6 GB                 Block     600604803436313438396431
+   6  switch0:7.183L4   SYMMETRIX   EMC     658.3 GB                 Block     600604803436313161663031
+   7  switch0:7.183L30  SYMMETRIX   EMC     173.6 GB                 Block     600604803436316538353834
+   8  switch0:7.183L32  SYMMETRIX   EMC     266.1 GB                 Block     600604803436313237353738
+   9  switch0:7.183L34  SYMMETRIX   EMC     658.3 GB                 Block     600604803436313737333662
+----
+. 진단 및 복구 옵션에 사용할 스토리지 LUN에 해당하는 인덱스 번호를 선택합니다.
++
+어레이 LUN의 크기는 진단 및 복구 옵션에 사용하기에 충분해야 합니다. 필요한 경우 결합된 크기가 지정된 크기보다 크거나 같은 여러 스토리지 LUN을 선택할 수도 있습니다. 여러 항목을 선택하려면 진단 및 복구 옵션을 선택할 스토리지 LUN에 해당하는 모든 인덱스 번호의 쉼표로 구분된 값을 입력해야 합니다.
+
++
+다음 예에서는 루트 볼륨 생성 및 진단 및 복구 옵션을 위해 선택된 스토리지 LUN 목록을 보여 줍니다.
+
++
+[listing]
+----
+
+Here is a list of the selected array LUNs
+Index Array LUN Name     Model      Vendor    Size    Owner          Checksum  Serial Number
+----- -----------------  ---------  ------  --------  -------------  --------  ------------------------
+   2  switch0:5.183L31   SYMMETRIX  EMC     266.1 GB  local          Block     600604803436313237643666
+   3  switch0:5.183L33   SYMMETRIX  EMC     658.3 GB  local   (root) Block     600604803436316263613066
+   4  switch0:7.183L0    SYMMETRIX  EMC     173.6 GB  local          Block     600604803436313261356235
+   5  switch0:7.183L2    SYMMETRIX  EMC     173.6 GB  local          Block     600604803436313438396431
+Do you want to continue (yes|no)?
+----
++
+
+NOTE: "아니요"를 선택하면 LUN 선택이 지워집니다.
+
+. 설치 프로세스를 계속하라는 메시지가 나타나면 '* y*'를 입력합니다.
++
+루트 애그리게이트 및 루트 볼륨이 생성되고 나머지 설치 프로세스가 계속됩니다.
+
+. 노드 관리 인터페이스를 생성하는 데 필요한 세부 정보를 입력합니다.
++
+다음 예는 노드 관리 인터페이스 생성을 확인하는 메시지와 함께 노드 관리 인터페이스 화면을 보여 줍니다.
+
++
+[listing]
+----
+Welcome to node setup.
+
+You can enter the following commands at any time:
+  "help" or "?" - if you want to have a question clarified,
+  "back" - if you want to change previously answered questions, and
+  "exit" or "quit" - if you want to quit the setup wizard.
+     Any changes you made before quitting will be saved.
+
+To accept a default or omit a question, do not enter a value.
+
+Enter the node management interface port [e0M]:
+Enter the node management interface IP address: 192.0.2.66
+
+Enter the node management interface netmask: 255.255.255.192
+Enter the node management interface default gateway: 192.0.2.7
+A node management interface on port e0M with IP address 192.0.2.66 has been created.
+
+This node has its management address assigned and is ready for cluster setup.
+----
+
+
+어레이 LUN에 사용할 모든 노드에서 ONTAP를 구성한 후 를 완료해야 합니다https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["클러스터 설정 프로세스"]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"]

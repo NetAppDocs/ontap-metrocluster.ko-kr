@@ -1,0 +1,17 @@
+---
+permalink: install-fc/concept_considerations_7mt.html 
+sidebar: sidebar 
+keywords: preparing, prepare, metrocluster, mcc, installation, install, differences, configurations, between, considerations, all, san, array, asa, cluster, peering, prerequisites, dedicated, ports, sharing, data, ports, native, disk, shelves, array, luns, transitions, 7-mode, isls, tdm/wdm, fabric-attached, iod, ood, encryption, devices, unmirrored, aggregates, maintenance, requiring, power, shutdown, firewall, hardware, racking, cabling, setup, checklist, all san array, asa 
+summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다. 
+---
+= 7-Mode에서 ONTAP로 전환할 때의 고려 사항
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환 툴을 사용하여 데이터를 7-Mode MetroCluster 구성에서 ONTAP 구성으로 이동하기 전에 새로운 MetroCluster 구성이 완전히 구성 및 작동 중이어야 합니다. 7-Mode 구성에서 Brocade 6510 스위치를 사용하는 경우 새로운 구성이 기존 패브릭을 공유하여 하드웨어 요구 사항을 줄일 수 있습니다.
+
+Brocade 6510 스위치가 있고 7-Mode 패브릭 MetroCluster와 ONTAP에서 실행되는 MetroCluster 간에 스위치 패브릭을 공유하려는 경우 MetroCluster 구성 요소를 구성하기 위한 특정 절차를 사용해야 합니다.
+
+link:task_fmc_mcc_transition_configure_the_mcc_hardware_for_share_a_7_mode_brocade_6510_fc_fabric_dure_transition.html["전환 중 7-Mode Brocade 6510 FC 패브릭을 공유하기 위한 MetroCluster 하드웨어 구성"]

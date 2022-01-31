@@ -1,0 +1,117 @@
+---
+section: install-ip
+title: MetroCluster IP 구성을 설치합니다
+entries:
+- title: 개요
+  url: "/install-ip/index.html"
+- title: MetroCluster 설치를 준비합니다
+  entries:
+  - title: ONTAP MetroCluster 구성의 차이점
+    url: "/install-ip/concept_considerations_differences.html"
+  - title: ONTAP 중재자와 MetroCluster Tiebreaker 간의 결정
+    url: "/install-ip/concept_considerations_mediator.html"
+  - title: MetroCluster IP 구성을 위한 고려 사항
+    url: "/install-ip/concept_considerations_mcip.html"
+  - title: ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템
+    url: "/install-ip/concept_considerations_drive_assignment.html"
+  - title: 클러스터 피어링
+    url: "/install-ip/concept_considerations_peering.html"
+  - title: ISL 요구 사항
+    url: "/install-ip/concept_considerations_isls.html"
+  - title: 계층 3 광역 네트워크를 사용하는 방법
+    url: "/install-ip/concept_considerations_layer_3.html"
+    entries:
+    - title: MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정
+      url: "/install-ip/task_modify_ip_netmask_gateway_properties.html"
+  - title: 개인 계층 2 네트워크를 공유합니다
+    url: "/install-ip/concept_considerations_layer_2.html"
+  - title: MetroCluster 호환 스위치 사용 방법
+    url: "/install-ip/concept_considerations_mc_compliant_switches.html"
+  - title: MetroCluster IP 구성에서 TDM/xWDM 및 암호화 장비를 사용하는 방법
+    url: "/install-ip/concept_considerations_tdm_encryption.html"
+  - title: MetroCluster IP 구성의 미러링되지 않은 애그리게이트
+    url: "/install-ip/concept_considerations_unmirrored_aggrs.html"
+  - title: MetroCluster 사이트의 방화벽 사용
+    url: "/install-ip/concept_considerations_firewalls.html"
+  - title: MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항
+    url: "/install-ip/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html"
+- title: MetroCluster 하드웨어 구성 요소를 구성합니다
+  entries:
+  - title: MetroCluster IP 구성의 일부
+    url: "/install-ip/concept_parts_of_an_ip_mcc_configuration_mcc_ip.html"
+  - title: MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다
+    url: "/install-ip/concept_required_mcc_ip_components_and_naming_guidelines_mcc_ip.html"
+  - title: 하드웨어 구성 요소를 랙에 장착하십시오
+    url: "/install-ip/task_rack_hw_components.html"
+  - title: MetroCluster IP 스위치에 케이블을 연결합니다
+    entries:
+    - title: RcfFileGenerator 도구 또는 여러 MetroCluster 구성에서 포트 테이블을 사용하는 방법
+      url: "/install-ip/using_rcf_generator.html"
+    - title: Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당
+      url: "/install-ip/port_usage_3132q.html"
+    - title: Cisco 3232C 또는 Cisco 9336C 스위치에 대한 플랫폼 포트 할당
+      url: "/install-ip/port_usage_3232c_9336c.html"
+    - title: Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당
+      url: "/install-ip/port_usage_bes53248.html"
+  - title: 컨트롤러 데이터 및 관리 포트에 케이블을 연결합니다
+    url: "/install-ip/task_cable_other_connections.html"
+  - title: MetroCluster IP 스위치를 구성합니다
+    entries:
+    - title: Broadcom IP 스위치를 구성합니다
+      url: "/install-ip/task_switch_config_broadcom.html"
+    - title: Cisco IP 스위치를 구성합니다
+      entries:
+      - title: 기본 설정을 구성합니다
+        url: "/install-ip/task_switch_config_cisco.html"
+      - title: Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
+        url: "/install-ip/task_switch_config_cisco_macsec.html"
+- title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
+  entries:
+  - title: 개요
+    url: "/install-ip/concept_configure_the_mcc_software_in_ontap.html"
+  - title: 8노드 구성을 구성하는 방법
+    url: "/install-ip/task_sw_config_8n.html"
+  - title: 필요한 정보를 수집합니다
+    url: "/install-ip/task_sw_config_gather_info.html"
+  - title: 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
+    url: "/install-ip/task_sw_config_differences.html"
+  - title: 구성 요소의 ha-config 상태를 확인합니다
+    url: "/install-ip/task_sw_config_verify_haconfig.html"
+  - title: 컨트롤러 모듈에서 시스템 기본값을 복원합니다
+    url: "/install-ip/task_sw_config_restore_defaults.html"
+  - title: 풀 0에 드라이브를 수동으로 할당합니다
+    url: "/install-ip/task_sw_config_assign_pool0.html"
+  - title: ONTAP 설정
+    url: "/install-ip/task_sw_config_setup_ontap.html"
+  - title: 클러스터를 MetroCluster 구성으로 구성합니다
+    url: "/install-ip/task_sw_config_configure_clusters.html"
+  - title: 전환, 복구, 스위치백을 확인합니다
+    url: "/install-ip/task_sw_config_verify_switchover.html"
+  - title: MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다
+    url: "/install-ip/task_sw_config_configure_mediator.html"
+  - title: 구성 백업 파일을 보호합니다
+    url: "/install-ip/task_sw_config_protect_backup.html"
+- title: 계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다
+  entries:
+  - title: ONTAP 중재자 서비스 설치 준비
+    url: "/install-ip/concept_mediator_requirements.html"
+  - title: ONTAP 중재자 서비스를 설치하거나 업그레이드합니다
+    url: "/install-ip/task_install_configure_mediator.html"
+  - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다
+    url: "/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html"
+  - title: MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
+    url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
+  - title: ONTAP 중재자 암호를 변경합니다
+    url: "/install-ip/task_changing_mediator_password.html"
+  - title: ONTAP 중재자 사용자 이름을 변경합니다
+    url: "/install-ip/task_changing_mediator_username.html"
+  - title: ONTAP 중재자 서비스 제거
+    url: "/install-ip/task_uninstall_mediator.html"
+- title: MetroCluster 구성을 테스트합니다
+  url: "/install-ip/task_test_the_mcc_configuration.html"
+- title: MetroCluster 구성을 제거할 때의 고려 사항
+  url: "/install-ip/concept_considerations_when_removing_mcc_configurations.html"
+- title: MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
+  url: "/install-ip/concept_considerations_when_using_ontap_in_a_mcc_configuration.html"
+- title: 추가 정보를 찾을 수 있는 위치
+  url: "/install-ip/reference_where_to_find_additional_information_mccip_icg.html"

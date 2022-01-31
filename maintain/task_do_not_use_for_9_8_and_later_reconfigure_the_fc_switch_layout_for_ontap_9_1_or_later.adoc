@@ -1,0 +1,226 @@
+---
+permalink: maintain/task_do_not_use_for_9_8_and_later_reconfigure_the_fc_switch_layout_for_ontap_9_1_or_later.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, reconfigure, fc, switch, layout, configured 
+summary: '기존 FC 스위치 레이아웃이 ONTAP 9.1 이전에 구성된 경우 포트 레이아웃을 재구성하고 최신 RCF(Reference Configuration Files)를 적용해야 합니다. 이 절차는 MetroCluster FC 구성에만 적용됩니다.' 
+---
+= ONTAP 9.x 전에 구성된 FC 스위치 레이아웃을 재구성합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기존 FC 스위치 레이아웃이 ONTAP 9.1 이전에 구성된 경우 포트 레이아웃을 재구성하고 최신 RCF(Reference Configuration Files)를 적용해야 합니다. 이 절차는 MetroCluster FC 구성에만 적용됩니다.
+
+Fabric 도메인에 있는 FC 스위치를 식별해야 합니다.
+
+FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+
+ONTAP 9.1 이전에 기존 FC 스위치 레이아웃을 구성한 경우 이 작업을 수행해야 합니다. ONTAP 9.1 이상으로 구성된 기존 스위치 레이아웃에서 업그레이드하는 경우 _not_required 입니다.
+
+이 절차는 무중단 운영이며 디스크를 제로화하면 완료하는 데 약 4시간이 소요됩니다(랙 및 스택 제외).
+
+
+
+== 스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+
+스위치를 재구성하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. 클러스터에 로그인합니다.
+. 유지 관리의 시작을 나타내는 AutoSupport 메시지를 호출합니다.
++
+'시스템 노드 AutoSupport invoke-node * -type all-message maINT=__maintenance -window-in-hours__ *'
+
++
+유지 보수 기간 - 시간 단위 는 유지 보수 기간 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.
+
++
+'System node AutoSupport invoke-node * -type all-message maINT=end'
+
+. 파트너 사이트에서 이 단계를 반복합니다.
+
+
+
+
+== MetroCluster 구성 상태 확인
+
+MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인해야 합니다.
+
+.단계
+. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+
+----
++
+작업은 백그라운드에서 실행됩니다.
+
+. MetroCluster check run 작업이 완료되면 MetroCluster check show를 실행하여 결과를 확인한다.
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+-----------
+cluster_A::*> metrocluster check show
+
+Last Checked On: 4/7/2019 21:15:05
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          warning
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+. 실행 중인 MetroCluster check 작업의 상태를 확인하려면 다음 명령을 사용합니다.
++
+MetroCluster 운용사 show-job-id 38
+
+. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+
+
+
+
+== MetroCluster 구성 오류를 확인하는 중입니다
+
+NetApp Support 사이트에서 제공되는 Config Advisor 툴을 사용하여 일반적인 구성 오류를 확인할 수 있습니다.
+
+Config Advisor는 구성 검증 및 상태 점검 툴입니다. 데이터 수집 및 시스템 분석을 위해 보안 사이트 및 비보안 사이트에 배포할 수 있습니다.
+
+
+NOTE: Config Advisor에 대한 지원은 제한적이며 온라인에서만 제공됩니다.
+
+. Config Advisor 도구를 다운로드합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
+
+. Config Advisor를 실행하고, 출력을 검토하고, 권장 사항을 따라 문제를 해결하십시오.
+
+
+
+
+== 스위치를 영구적으로 비활성화합니다
+
+구성을 수정할 수 있도록 Fabric에서 스위치를 영구적으로 비활성화해야 합니다.
+
+switch 명령줄에서 명령을 실행하여 스위치를 사용하지 않도록 설정합니다. 이 명령에 사용되는 명령은 ONTAP 명령이 아닙니다.
+
+.단계
+. 스위치를 영구적으로 비활성화합니다.
++
+** 다음 명령을 사용하여 Brocade 스위치를 영구적으로 사용하지 않도록 설정합니다.
++
+'FC_SWITCH_A_1:admin>switchCfgPersistentDisable'
+
+** 다음 명령을 사용하여 Cisco 스위치를 영구적으로 사용하지 않도록 설정할 수 있습니다.
++
+VSAN[vsna#] 일시 중단
+
+
+
+
+
+
+
+== 새 케이블 연결 레이아웃 결정
+
+새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.
+
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. 사용 https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 확인합니다.
++
+FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 가이드에 설명된 용법과 일치해야 합니다.
+
++
+
+NOTE: RCFs를 사용할 수 있는 방식으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCFs를 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
+
+
+
+
+
+== RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다
+
+새로운 노드를 수용하기 위해 스위치를 재구성하기 위해 적절한 RCF(Reference Configuration) 파일을 적용해야 합니다. RCF 파일을 적용한 후 스위치를 다시 사용할 수 있습니다.
+
+FC 스위치 포트 사용량은 에 설명된 사용량과 일치해야 합니다 https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] 따라서 RCFs를 사용할 수 있습니다.
+
+.단계
+. 구성에 사용할 RCF 파일을 찾습니다.
++
+사용 중인 스위치 모델에 맞는 RCF 파일을 사용해야 합니다.
+
+. RCF 파일을 다운로드 페이지의 지침에 따라 적용하고 필요에 따라 ISL 설정을 조정합니다.
+. 스위치 구성이 저장되었는지 확인합니다.
+. "새 케이블링 레이아웃 결정" 섹션에서 작성한 케이블링 레이아웃을 사용하여 FC-SAS 브리지를 FC 스위치에 연결합니다.
+. 포트가 온라인 상태인지 확인합니다.
++
+** Brocade 스위치의 경우 'switchshow' 명령을 사용합니다.
+** Cisco 스위치의 경우 'show interface brief' 명령어를 사용한다.
+
+
+. FC-VI 포트를 컨트롤러에서 스위치로 케이블로 연결합니다.
+. 기존 노드에서 FC-VI 포트가 온라인 상태인지 확인합니다.
++
+MetroCluster 상호 연결 어댑터가 표시됩니다
+
++
+MetroCluster 상호 연결 미러 쇼
+
+
+
+
+
+== 스위치를 영구적으로 활성화합니다
+
+Fabric에서 스위치를 영구적으로 활성화해야 합니다.
+
+.단계
+. 스위치를 영구적으로 활성화합니다.
++
+** Brocade 스위치의 경우 'witchCfgPersistentenable' 명령을 사용합니다.
+** Cisco 스위치의 경우 'uspend' 명령을 사용합니다. 다음 명령을 실행하면 Brocade 스위치가 영구적으로 설정됩니다.
++
+[listing]
+----
+FC_switch_A_1:admin> switchCfgPersistentenable
+----
++
+다음 명령을 실행하면 Cisco 스위치가 활성화됩니다.
+
++
+[listing]
+----
+vsan [vsna #]no suspend
+----
+
+
+
+
+
+
+== 전환, 복구, 스위치백을 확인하는 중입니다
+
+MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
+
+. 에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["MetroCluster 관리 및 재해 복구"^].
+

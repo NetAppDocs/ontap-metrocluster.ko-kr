@@ -1,0 +1,436 @@
+---
+permalink: install-fc/task_cable_the_isls_in_a_mcc_configuration_with_array_luns.html 
+sidebar: sidebar 
+keywords: metrocluster, fabric, installation, cable, isl, array, luns 
+summary: '스토리지 LUN을 사용하는 MetroCluster 구성에서 ISL(Inter-Switch Link)\)을 통해 사이트 전체에 FC 스위치를 접속해야 스위치 패브릭을 형성할 수 있습니다.' 
+---
+= 스토리지 LUN을 사용하여 MetroCluster 구성에서 ISL 케이블 연결
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지 LUN을 사용하는 MetroCluster 구성에서 ISL(Inter-Switch Link)을 통해 사이트 전체에 FC 스위치를 접속해야 스위치 패브릭을 형성할 수 있습니다.
+
+.단계
+. 구성 및 스위치 모델에 해당하는 표의 케이블을 사용하여 각 사이트의 스위치를 ISL 또는 ISL에 연결합니다.
++
+FC ISL에 사용할 수 있는 스위치 포트 번호는 다음과 같습니다.
+
++
+|===
+
+
+| 모델 전환 | ISL 포트 | 스위치 포트 
+
+
+ a| 
+Brocade 6520
+ a| 
+ISL 포트 1
+ a| 
+23
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+47
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+71
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+95
+
+
+
+ a| 
+Brocade 6505
+ a| 
+ISL 포트 1
+ a| 
+20
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+21
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+22
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+23
+
+
+
+ a| 
+Brocade 6510 및 Brocade DCX 8510-8
+ a| 
+ISL 포트 1
+ a| 
+40
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+41
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+42
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+43
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+44
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+45
+
+
+
+ a| 
+ISL 포트 7
+ a| 
+46
+
+
+
+ a| 
+ISL 포트 8
+ a| 
+47
+
+
+
+ a| 
+Brocade 7810
+ a| 
+ISL 포트 1
+ a| 
+GE2(10Gbps)
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+ge3(10Gbps)
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+GE4(10Gbps)
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+ge5(10Gbps)
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+ge6(10Gbps)
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+ge7(10Gbps)
+
+
+
+ a| 
+Brocade 7840
+
+* 참고 *: Brocade 7840 스위치는 FCIP ISL 생성을 위해 스위치당 2개의 40Gbps VE 포트 또는 최대 4개의 10Gbps VE 포트를 지원합니다.
+ a| 
+ISL 포트 1
+ a| 
+GE0(40Gbps) 또는 ge2(10Gbps)
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+ge1(40Gbps) 또는 ge3(10Gbps)
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+ge10(10Gbps)
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+ge11(10Gbps)
+
+
+
+ a| 
+Brocade G610
+ a| 
+ISL 포트 1
+ a| 
+20
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+21
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+22
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+23
+
+
+
+ a| 
+Brocade G620, G620-1, G630, G630-1, G720
+ a| 
+ISL 포트 1
+ a| 
+40
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+41
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+42
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+43
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+44
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+45
+
+
+
+ a| 
+ISL 포트 7
+ a| 
+46
+
+
+
+ a| 
+ISL 포트 8
+ a| 
+47
+
+
+
+3+|  
+
+
+| 모드 l | ISL 포트 | 스위치 포트 
+
+
+.4+| Cisco 9396S  a| 
+ISL 1
+ a| 
+44
+
+
+
+ a| 
+ISL 2
+ a| 
+48
+
+
+
+ a| 
+ISL 3
+ a| 
+92
+
+
+
+ a| 
+ISL 4
+ a| 
+96
+
+
+
+ a| 
+24포트 라이센스가 있는 Cisco 9250i
+ a| 
+ISL 1
+ a| 
+12
+
+
+
+ a| 
+ISL 2
+ a| 
+16
+
+
+
+ a| 
+ISL 3
+ a| 
+20
+
+
+
+ a| 
+ISL 4
+ a| 
+24
+
+
+
+ a| 
+Cisco 9148S
+ a| 
+ISL 1
+ a| 
+20
+
+
+
+ a| 
+ISL 2
+ a| 
+24
+
+
+
+ a| 
+ISL 3
+ a| 
+44
+
+
+
+ a| 
+ISL 4
+ a| 
+48
+
+
+
+.4+| Cisco 9132T  a| 
+ISL 1
+ a| 
+MDS 모듈 1 포트 13
+
+
+
+ a| 
+ISL 2
+ a| 
+MDS 모듈 1 포트 14
+
+
+
+ a| 
+ISL 3
+ a| 
+MDS 모듈 1 포트 15
+
+
+
+ a| 
+ISL 4
+ a| 
+MDS 모듈 1 포트 16
+
+
+
+3+| * Cisco 9250i 스위치는 ISL에 FCIP 포트를 사용합니다. FCIP 포트를 사용하는 경우 몇 가지 제한 사항과 절차가 있습니다. 
+
+
+3+| 포트 40에서 48은 10GbE 포트이며 MetroCluster 구성에서 사용되지 않습니다. 
+|===
+

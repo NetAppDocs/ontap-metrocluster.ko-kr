@@ -1,0 +1,131 @@
+= 
+
+
+MetroCluster를 성공적으로 설치하려면 컨트롤러 모듈에서 기본값을 재설정 및 복원합니다.
+
+이 작업은 FC-to-SAS 브리지를 사용하는 확장 구성에만 필요합니다.
+
+.단계
+. LOADER 프롬프트에서 환경 변수를 기본 설정으로 되돌립니다.
++
+세트 기본값
+
+. 노드를 유지 관리 모드로 부팅한 다음 시스템에 있는 모든 HBA에 대한 설정을 구성합니다.
++
+.. 유지보수 모드로 부팅:
++
+boot_ONTAP maint를 선택합니다
+
+.. 포트의 현재 설정을 확인합니다.
++
+'ucadmin 쇼'
+
+.. 필요에 따라 포트 설정을 업데이트합니다.
+
+
++
+|===
+
+
+| 이 유형의 HBA와 원하는 모드가 있는 경우... | 이 명령 사용... 
+
+
+ a| 
+CNA FC
+ a| 
+'ucadmin modify -m fc -t initiator_adapter_name_'
+
+
+
+ a| 
+CNA 이더넷
+ a| 
+'ucadmin modify-mode CNA_adapter_name _'
+
+
+
+ a| 
+FC 타겟
+ a| 
+'fcadmin config -t target_adapter_name_'
+
+
+
+ a| 
+FC 이니시에이터
+ a| 
+'fcadmin config -t initiator_adapter_name_'
+
+|===
+. 유지 관리 모드 종료:
++
+"중지"
+
++
+명령을 실행한 후 LOADER 프롬프트에서 노드가 중지될 때까지 기다립니다.
+
+. 노드를 유지보수 모드로 다시 부팅하여 구성 변경 사항이 적용되도록 합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. 변경 사항을 확인합니다.
++
+|===
+
+
+| 이 유형의 HBA가 있는 경우... | 이 명령 사용... 
+
+
+ a| 
+CNA
+ a| 
+'ucadmin 쇼'
+
+
+
+ a| 
+FC
+ a| 
+fcadmin 쇼
+
+|===
+. 유지 관리 모드 종료:
++
+"중지"
+
++
+명령을 실행한 후 LOADER 프롬프트에서 노드가 중지될 때까지 기다립니다.
+
+. 노드를 부팅 메뉴로 부팅합니다.
++
+boot_ontap 메뉴
+
++
+명령을 실행한 후 부팅 메뉴가 표시될 때까지 기다립니다.
+
+. 부팅 메뉴 프롬프트에 ""wpeconfig""를 입력하여 노드 구성을 지우고 Enter 키를 누릅니다.
++
+다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
+
++
+--
+....
+Please choose one of the following:
+
+     (1) Normal Boot.
+     (2) Boot without /etc/rc.
+     (3) Change password.
+     (4) Clean configuration and initialize all disks.
+     (5) Maintenance mode boot.
+     (6) Update flash from backup config.
+     (7) Install new software first.
+     (8) Reboot node.
+     (9) Configure Advanced Drive Partitioning.
+     Selection (1-9)?  wipeconfig
+ This option deletes critical system configuration, including cluster membership.
+ Warning: do not run this option on a HA node that has been taken over.
+ Are you sure you want to continue?: yes
+ Rebooting to finish wipeconfig request.
+....
+--
+

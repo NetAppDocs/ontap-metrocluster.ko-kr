@@ -1,0 +1,719 @@
+---
+permalink: disaster-recovery/task_replace_hardware_and_boot_new_controllers.html 
+sidebar: sidebar 
+keywords: hardware, component, replace, individual, replacement, installation, guide, replacing, controller, booting, new 
+summary: 하드웨어 구성 요소를 교체해야 하는 경우 개별 하드웨어 교체 및 설치 가이드를 사용하여 교체해야 합니다. 
+---
+= 하드웨어 교체 및 새 컨트롤러 부팅
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 재해 사이트에서 하드웨어 교체
+
+하드웨어 구성 요소를 교체해야 하는 경우 개별 하드웨어 교체 및 설치 가이드를 사용하여 교체해야 합니다.
+
+스토리지 컨트롤러의 전원을 끄거나 계속 정지해야 합니다(로더 프롬프트 표시).
+
+.단계
+. 필요에 따라 구성 요소를 교체하십시오.
++
+
+NOTE: 이 단계에서는 장애가 발생하기 전에 케이블로 연결한 것과 정확히 동일한 방식으로 구성 요소를 교체하고 케이블을 연결합니다. 구성 요소의 전원을 켜서는 안 됩니다.
+
++
+|===
+
+
+| 교체 중인 경우... | 다음 단계를 수행합니다. | 이 가이드를 사용하는 중... 
+
+
+ a| 
+MetroCluster FC 구성의 FC 스위치
+ a| 
+.. 새 스위치를 장착하십시오.
+.. ISL 링크에 케이블을 연결합니다. 지금은 FC 스위치의 전원을 켤 수 없습니다.
+
+| link:../maintain/index.html["MetroCluster 부품 유지 관리"] 
+
+
+ a| 
+MetroCluster IP 구성의 IP 스위치
+ a| 
+.. 새 스위치를 장착하십시오.
+.. ISL 링크에 케이블을 연결합니다. 지금은 IP 스위치의 전원을 켜서는 안 됩니다.
+
+ a| 
+link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성: ONTAP MetroCluster 구성 간의 차이점"]
+
+
+
+ a| 
+디스크 쉘프
+ a| 
+.. 디스크 쉘프 및 디스크를 설치합니다.
++
+*** 디스크 쉘프 스택은 작동하는 사이트와 동일한 구성해야 합니다.
+*** 디스크의 크기는 같을 수도 있고 더 클 수도 있지만 유형이 동일해야 합니다(SAS 또는 SATA).
+
+
+.. 디스크 쉘프를 스택 내의 인접한 쉘프 및 FC-to-SAS 브리지에 연결합니다. 지금은 디스크 쉘프의 전원을 사용하지 마십시오.
+
+| link:http://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^] 
+
+
+ a| 
+SAS 케이블
+ a| 
+.. 새 케이블을 장착하십시오. 지금은 디스크 쉘프의 전원을 사용하지 마십시오.
+
+ a| 
+link:http://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+
+
+ a| 
+MetroCluster FC 구성의 FC-to-SAS 브릿지
+ a| 
+.. FC-to-SAS 브리지를 설치합니다.
+.. FC-to-SAS 브리지에 케이블을 연결합니다.
++
+MetroCluster 구성 유형에 따라 FC 스위치 또는 컨트롤러 모듈에 케이블을 연결합니다.
+
++
+현재 FC-to-SAS 브리지의 전원을 켜서는 안 됩니다.
+
+
+ a| 
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
+link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
+
+
+
+ a| 
+컨트롤러 모듈
+ a| 
+.. 새 컨트롤러 모듈을 설치합니다.
++
+*** 컨트롤러 모듈은 교체되는 모듈과 동일한 모델이어야 합니다.
++
+예를 들어 8080 컨트롤러 모듈은 8080 컨트롤러 모듈로 교체해야 합니다.
+
+*** 컨트롤러 모듈이 이전에 MetroCluster 구성 내 클러스터의 일부이거나 기존의 클러스터 구성에 속하지 않아야 합니다.
++
+만약 그런 경우 기본값을 설정하고 ""wipecononfig" 프로세스를 수행해야 합니다.
+
+*** 모든 네트워크 인터페이스 카드(예: 이더넷 또는 FC)가 이전 컨트롤러 모듈에 사용된 동일한 슬롯에 있는지 확인합니다.
+
+
+.. 새 컨트롤러 모듈을 기존 모듈과 정확히 동일하게 케이블로 연결합니다.
++
+컨트롤러 모듈을 스토리지에 연결하는 포트(IP 또는 FC 스위치 연결, FC-to-SAS 브리지 또는 직접 연결)는 재해 발생 전에 사용한 포트와 동일해야 합니다.
+
++
+이때 컨트롤러 모듈의 전원을 켜서는 안 됩니다.
+
+
+ a| 
+link:http://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+
+|===
+. 모든 구성 요소가 구성에 맞게 케이블로 올바르게 연결되어 있는지 확인합니다.
++
+** link:../install-ip/using_rcf_generator.html["MetroCluster IP 구성"]
+** link:../install-fc/task_fmc_mcc_transition_cable_the_new_mcc_controllers_to_the_exist_fc_fabrics.html["MetroCluster 패브릭 연결 구성"]
+
+
+
+
+
+
+== 이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID 확인
+
+재해 사이트에서 모든 하드웨어를 교체한 후 교체한 컨트롤러 모듈의 시스템 ID를 확인해야 합니다. 디스크를 새 컨트롤러 모듈에 재할당할 때 이전 시스템 ID가 필요합니다. 시스템이 AFF A220, AFF A250, AFF A400, AFF A800, FAS2750인 경우 FAS8300 또는 FAS8700 모델 FAS8700 모델에서는 MetroCluster IP 인터페이스에서 사용하는 VLAN ID도 결정해야 합니다.
+
+재해 사이트의 모든 장비의 전원을 꺼야 합니다.
+
+이 토론에서는 2노드 및 4노드 구성의 예를 제공합니다. 8노드 구성의 경우 두 번째 DR 그룹의 추가 노드에 장애가 있는지 고려해야 합니다.
+
+2노드 MetroCluster 구성의 경우 각 사이트의 두 번째 컨트롤러 모듈에 대한 참조를 무시할 수 있습니다.
+
+이 절차의 예는 다음과 같은 가정을 기반으로 합니다.
+
+* 사이트 A는 재해 사이트입니다.
+* node_A_1이(가) 실패하여 완전히 교체되고 있습니다.
+* node_A_2에 장애가 발생하여 완전히 교체되고 있습니다.
++
+node_A_2는 4노드 MetroCluster 구성에만 있습니다.
+
+* 사이트 B는 정상적인 사이트입니다.
+* node_B_1이 정상 상태임.
+* node_B_2가 정상 상태임.
++
+node_B_2는 4노드 MetroCluster 구성에만 존재합니다.
+
+
+
+컨트롤러 모듈에는 다음과 같은 원래 시스템 ID가 있습니다.
+
+|===
+
+
+| MetroCluster 구성의 노드 수 | 노드 | 원래 시스템 ID입니다 
+
+
+ a| 
+네
+ a| 
+노드_A_1
+ a| 
+4068741258
+
+
+
+ a| 
+노드_A_2
+ a| 
+4068741260
+
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+
+
+
+ a| 
+노드_B_2
+ a| 
+4068741256
+
+
+
+ a| 
+2개
+ a| 
+노드_A_1
+ a| 
+4068741258
+
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+
+|===
+.단계
+. 정상적인 사이트에서 MetroCluster 구성에 있는 노드의 시스템 ID를 표시합니다.
++
+|===
+
+
+| MetroCluster 구성의 노드 수 | 이 명령을 사용합니다 
+
+
+ a| 
+4개 또는 8개
+ a| 
+MetroCluster node show-fields node-systemid, ha-partner-systemid, dr-partner-systemid, dr-auxiliary-systemid
+
+
+
+ a| 
+2개
+ a| 
+'MetroCluster node show-fields node-systemid, dr-partner-systemid
+
+|===
++
+이 4노드 MetroCluster 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
+
++
+** 노드_A_1:4068741258
+** Node_A_2:4068741260
++
+이전 컨트롤러 모듈이 소유한 디스크는 여전히 이러한 시스템 ID를 소유합니다.
+
++
+[listing]
+----
+metrocluster node show -fields node-systemid,ha-partner-systemid,dr-partner-systemid,dr-auxiliary-systemid
+
+dr-group-id cluster    node      node-systemid ha-partner-systemid dr-partner-systemid dr-auxiliary-systemid
+----------- ---------- --------  ------------- ------ ------------ ------ ------------ ------ --------------
+1           Cluster_A  Node_A_1  4068741258    4068741260          4068741254          4068741256
+1           Cluster_A  Node_A_2  4068741260    4068741258          4068741256          4068741254
+1           Cluster_B  Node_B_1  -             -                   -                   -
+1           Cluster_B  Node_B_2  -             -                   -                   -
+4 entries were displayed.
+----
+
+
++
+이 2노드 MetroCluster 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
+
++
+** 노드_A_1:4068741258
++
+이전 컨트롤러 모듈이 소유한 디스크는 여전히 이 시스템 ID를 소유합니다.
+
++
+[listing]
+----
+metrocluster node show -fields node-systemid,dr-partner-systemid
+
+dr-group-id cluster    node      node-systemid dr-partner-systemid
+----------- ---------- --------  ------------- ------------
+1           Cluster_A  Node_A_1  4068741258    4068741254
+1           Cluster_B  Node_B_1  -             -
+2 entries were displayed.
+----
+
+
+. ONTAP 중재자 서비스를 사용하는 MetroCluster IP 구성의 경우 ONTAP 중재자 서비스의 IP 주소를 가져옵니다.
++
+'스토리지 iSCSI-initiator show-node * -label 중재자'
+
+. 시스템이 AFF A220, AFF A400, FAS2750, FAS8300, FAS8700 또는 FAS8700 모델인 경우, VLAN ID 확인:
++
+MetroCluster interconnect show
+
++
+VLAN ID는 출력의 Adapter 열에 표시된 어댑터 이름에 포함됩니다.
+
++
+이 예에서 VLAN ID는 120과 130입니다.
+
++
+[listing]
+----
+metrocluster interconnect show
+                          Mirror   Mirror
+                  Partner Admin    Oper
+Node Partner Name Type    Status   Status  Adapter Type   Status
+---- ------------ ------- -------- ------- ------- ------ ------
+Node_A_1 Node_A_2 HA      enabled  online
+                                           e0a-120 iWARP  Up
+                                           e0b-130 iWARP  Up
+         Node_B_1 DR      enabled  online
+                                           e0a-120 iWARP  Up
+                                           e0b-130 iWARP  Up
+         Node_B_2 AUX     enabled  offline
+                                           e0a-120 iWARP  Up
+                                           e0b-130 iWARP  Up
+Node_A_2 Node_A_1 HA      enabled  online
+                                           e0a-120 iWARP  Up
+                                           e0b-130 iWARP  Up
+         Node_B_2 DR      enabled  online
+                                           e0a-120 iWARP  Up
+                                           e0b-130 iWARP  Up
+         Node_B_1 AUX     enabled  offline
+                                           e0a-120 iWARP  Up
+                                           e0b-130 iWARP  Up
+12 entries were displayed.
+----
+
+
+
+
+== 정상적인 사이트에서 교체 드라이브 격리(MetroCluster IP 구성)
+
+남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 접속을 끊어 교체 드라이브를 격리해야 합니다.
+
+이 절차는 MetroCluster IP 구성에만 필요합니다.
+
+.단계
+. 남아 있는 노드의 프롬프트에서 고급 권한 레벨로 변경합니다.
++
+세트 프리빌리지 고급
+
++
+고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 "y"로 응답해야 합니다.
+
+. DR 그룹의 남아 있는 두 노드에서 iSCSI 이니시에이터 연결 끊기:
++
+'Storage iSCSI-initiator disconnect-node Surviving-node-label *'
+
++
+이 명령은 작동하는 각 노드에 대해 한 번씩 두 번 실행해야 합니다.
+
++
+다음 예에서는 사이트 B에서 이니시에이터를 분리하기 위한 명령을 보여 줍니다.
+
++
+[listing]
+----
+site_B::*> storage iscsi-initiator disconnect -node node_B_1 -label *
+site_B::*> storage iscsi-initiator disconnect -node node_B_2 -label *
+----
+. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+
+
+
+
+== 컨트롤러 모듈의 구성 지우기
+
+[role="lead"]
+MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
+
+.단계
+. 필요한 경우 노드를 중지하고 로더 프롬프트를 표시합니다.
++
+"중지"
+
+. LOADER 프롬프트에서 환경 변수를 기본값으로 설정합니다.
++
+세트 기본값
+
+. 환경 저장:
++
+'사베에프'
+
+. LOADER 프롬프트에서 부팅 메뉴를 시작합니다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴 프롬프트에서 구성을 지웁니다.
++
+휘폰무화과
+
++
+확인 프롬프트에 yes로 응답합니다.
+
++
+노드가 재부팅되고 부팅 메뉴가 다시 표시됩니다.
+
+. 부팅 메뉴에서 옵션 * 5 * 를 선택하여 시스템을 유지보수 모드로 부팅합니다.
++
+확인 프롬프트에 yes로 응답합니다.
+
+
+
+
+
+== 새 컨트롤러 모듈을 Netbooting 합니다
+
+새 컨트롤러 모듈의 ONTAP 버전이 남아 있는 컨트롤러 모듈의 버전과 다른 경우 새 컨트롤러 모듈을 netboot 해야 합니다.
+
+.시작하기 전에
+* HTTP 서버에 대한 액세스 권한이 있어야 합니다.
+* 사용 중인 플랫폼과 ONTAP 소프트웨어 버전에서 필요한 시스템 파일을 다운로드하려면 NetApp Support 사이트에 액세스할 수 있어야 합니다.
++
+https://mysupport.netapp.com/site/global/dashboard["NetApp 지원"^]
+
+
+
+.단계
+. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 ONTAP-version_image.tgz 파일을 저장합니다.
+. 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
++
+|===
+
+
+| 플랫폼 모델이 다음과 같은 경우 | 그러면... 
+
+
+| FAS/AFF8000 시리즈 시스템 | ONTAP-version_image.tgzfile의 컨텐츠를 타겟 디렉토리에 풉니다. tar -zxvf ONTAP-version_image.tgz 참고: Windows에서 컨텐츠를 추출하는 경우 7-Zip 또는 WinRAR을 사용하여 netboot 이미지를 추출합니다. 디렉토리 목록에는 커널 파일 netboot/kernel의 netboot 폴더가 포함되어야 합니다 
+
+
+| 기타 모든 시스템 | 디렉토리 목록에는 커널 파일이 포함된 netboot 폴더가 있어야 합니다. ONTAP-version_image.tgz ONTAP-version_image.tgz 파일을 추출할 필요가 없습니다. 
+|===
+. 로더 프롬프트에서 관리 LIF의 netboot 연결을 구성합니다.
++
+** IP 주소 지정이 DHCP인 경우 자동 연결을 구성합니다.
++
+ifconfig e0M-auto를 선택합니다
+
+** IP 주소 지정이 정적이면 수동 연결을 구성합니다.
++
+ifconfig e0M-addr=ip_addr-mask=netmask"-GW=gateway입니다
+
+
+
+. netboot 수행
++
+** 플랫폼이 80xx 시리즈 시스템인 경우 다음 명령을 사용합니다.
++
+"netboot\http://web_server_ip/path_to_web-accessible_directory/netboot/kernel`
+
+** 플랫폼이 다른 시스템인 경우 다음 명령을 사용합니다.
++
+"netboot\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz`
+
+
+
+. 부팅 메뉴에서 옵션 * (7) 새 소프트웨어를 먼저 설치 * 를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.
++
+ Disregard the following message: "This procedure is not supported for Non-Disruptive Upgrade on an HA pair". It applies to nondisruptive upgrades of software, not to upgrades of controllers.
+. 절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 이미지 파일의 URL('\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz` )을 입력합니다
++
+....
+Enter username/password if applicable, or press Enter to continue.
+....
+. 다음과 유사한 프롬프트가 표시되면 백업 복구를 건너뛰려면 "n"을 입력해야 합니다.
++
+....
+Do you want to restore the backup configuration now? {y|n}
+....
+. 다음과 유사한 프롬프트가 나타나면 y를 입력하여 재부팅합니다.
++
+....
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+....
+. 부팅 메뉴에서 * 옵션 5 * 를 선택하여 유지보수 모드로 전환합니다.
+. 4노드 MetroCluster 구성이 있는 경우 다른 새 컨트롤러 모듈에서 이 절차를 반복합니다.
+
+
+
+
+== 교체 컨트롤러 모듈의 시스템 ID 확인
+
+재해 사이트에서 모든 하드웨어를 교체한 후 새로 설치된 스토리지 컨트롤러 모듈 또는 모듈의 시스템 ID를 확인해야 합니다.
+
+유지보수 모드의 교체 컨트롤러 모듈에서 이 절차를 수행해야 합니다.
+
+이 섹션에서는 2노드 및 4노드 구성의 예를 제공합니다. 2노드 구성의 경우 각 사이트의 두 번째 노드에 대한 참조를 무시할 수 있습니다. 8노드 구성의 경우 두 번째 DR 그룹의 추가 노드를 고려해야 합니다. 이 예시는 다음과 같은 가정을 합니다.
+
+* 사이트 A는 재해 사이트입니다.
+* 노드_A_1이(가) 교체되었습니다.
+* 노드_A_2가 교체되었습니다.
++
+4노드 MetroCluster 구성에서만 제공됩니다.
+
+* 사이트 B는 정상적인 사이트입니다.
+* node_B_1이 정상 상태임.
+* node_B_2가 정상 상태임.
++
+4노드 MetroCluster 구성에서만 제공됩니다.
+
+
+
+이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
+
+|===
+
+
+| MetroCluster 구성의 노드 수 | 노드 | 원래 시스템 ID입니다 | 새 시스템 ID입니다 | 이 노드를 DR 파트너로 페어링합니다 
+
+
+ a| 
+네
+ a| 
+노드_A_1
+ a| 
+4068741258
+ a| 
+1574774970
+ a| 
+노드_B_1
+
+
+
+ a| 
+노드_A_2
+ a| 
+4068741260
+ a| 
+1574774991
+ a| 
+노드_B_2
+
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+ a| 
+변경되지 않음
+ a| 
+노드_A_1
+
+
+
+ a| 
+노드_B_2
+ a| 
+4068741256
+ a| 
+변경되지 않음
+ a| 
+노드_A_2
+
+
+
+ a| 
+2개
+ a| 
+노드_A_1
+ a| 
+4068741258
+ a| 
+1574774970
+ a| 
+노드_B_1
+
+
+
+ a| 
+노드_B_1
+ a| 
+4068741254)를 참조하십시오
+ a| 
+변경되지 않음
+ a| 
+노드_A_1
+
+|===
+
+NOTE: 4노드 MetroCluster 구성에서 시스템은 Site_A에서 가장 낮은 시스템 ID를 가진 노드와 site_B에서 가장 낮은 시스템 ID를 가진 노드를 페어링하여 DR 파트너십을 결정합니다 시스템 ID가 변경되므로 컨트롤러 교체가 완료된 후 재해 발생 전과 다른 DR 쌍이 될 수 있습니다.
+
+위 예제에서:
+
+* Node_A_1(1574774970)은 NODE_B_1(4068741254)과 페어링됩니다.
+* Node_A_2(1574774991)가 node_B_2(4068741256)와 페어링됩니다.
+
+
+.단계
+. 노드가 Maintenance Mode로 설정된 경우 각 노드의 로컬 시스템 ID인 "disk show"를 표시합니다
++
+다음 예에서 새 로컬 시스템 ID는 1574774970입니다.
+
++
+[listing]
+----
+*> disk show
+ Local System ID: 1574774970
+ ...
+----
+. 두 번째 노드에서 이전 단계를 반복합니다.
++
+
+NOTE: 2노드 MetroCluster 구성에는 이 단계가 필요하지 않습니다.
+
++
+다음 예에서는 새 로컬 시스템 ID가 1574774991입니다.
+
++
+[listing]
+----
+*> disk show
+ Local System ID: 1574774991
+ ...
+----
+
+
+
+
+== 구성 요소의 ha-config 상태 확인
+
+MetroCluster 구성에서 컨트롤러 모듈 및 섀시 구성 요소의 ha-config 상태는 "MCC" 또는 "MCC-2n"으로 설정해야 제대로 부팅됩니다.
+
+시스템이 유지보수 모드여야 합니다.
+
+이 작업은 각 새 컨트롤러 모듈에서 수행해야 합니다.
+
+.단계
+. 유지보수 모드에서 컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.
++
+하구성 쇼
+
++
+올바른 HA 상태는 MetroCluster 구성에 따라 다릅니다.
+
++
+|===
+
+
+| MetroCluster 구성의 컨트롤러 수입니다 | 모든 구성요소의 HA 상태는... 
+
+
+ a| 
+8노드 또는 4노드 MetroCluster FC 구성
+ a| 
+MCC
+
+
+
+ a| 
+2노드 MetroCluster FC 구성
+ a| 
+MCC - 2n
+
+
+
+ a| 
+MetroCluster IP 구성
+ a| 
+mcip
+
+|===
+. 표시된 컨트롤러 시스템 상태가 정확하지 않은 경우 컨트롤러 모듈에 대한 HA 상태를 설정합니다.
++
+|===
+
+
+| MetroCluster 구성의 컨트롤러 수입니다 | 명령 
+
+
+ a| 
+8노드 또는 4노드 MetroCluster FC 구성
+ a| 
+하구성 수정 컨트롤러 MCC
+
+
+
+ a| 
+2노드 MetroCluster FC 구성
+ a| 
+ha-config modify controller MCC-2n
+
+
+
+ a| 
+MetroCluster IP 구성
+ a| 
+ha-config modify controller mcip.(컨트롤러 mccip 수정
+
+|===
+. 표시된 섀시 시스템 상태가 올바르지 않으면 섀시의 HA 상태를 설정합니다.
++
+|===
+
+
+| MetroCluster 구성의 컨트롤러 수입니다 | 명령 
+
+
+ a| 
+8노드 또는 4노드 MetroCluster FC 구성
+ a| 
+하구성 수정 새시 MCC
+
+
+
+ a| 
+2노드 MetroCluster FC 구성
+ a| 
+ha-config modify chassis MCC-2n
+
+
+
+ a| 
+MetroCluster IP 구성
+ a| 
+ha-config modify chassis mccip.(섀시 mcip 수정
+
+|===
+. 다른 대체 노드에서 이 단계를 반복합니다.
+

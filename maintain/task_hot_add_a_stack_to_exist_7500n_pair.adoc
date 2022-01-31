@@ -1,0 +1,244 @@
+---
+permalink: maintain/task_hot_add_a_stack_to_exist_7500n_pair.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, hot, add, stack, sas, disk, shelves, existing, pair, fibrebridge, bridge 
+summary: 사용 가능한 포트가 있는 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다. 
+---
+= 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택 핫 추가
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사용 가능한 포트가 있는 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다.
+
+.시작하기 전에
+* 최신 디스크 및 디스크 쉘프 펌웨어를 다운로드해야 합니다.
+* MetroCluster 구성의 모든 디스크 쉘프(기존 쉘프)에서 동일한 펌웨어 버전을 실행해야 합니다. 하나 이상의 디스크 또는 쉘프에서 최신 펌웨어 버전을 실행하지 않는 경우 새 디스크 또는 쉘프를 연결하기 전에 펌웨어를 업데이트합니다.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp 다운로드: 디스크 드라이브 펌웨어"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
+
+* FiberBridge 7500N 브리지는 연결되어 있고 사용 가능한 SAS 포트가 있어야 합니다.
+
+
+이 절차는 ATTO ExpressNAV GUI 및 ATTO Quicknav 유틸리티와 같은 권장 브리지 관리 인터페이스를 사용하고 있다고 가정하고 작성되었습니다.
+
+ATTO ExpressNAV GUI를 사용하여 브리지를 구성 및 관리하고 브리지 펌웨어를 업데이트할 수 있습니다. ATTO Quicknav 유틸리티를 사용하여 브리지 이더넷 관리 1 포트를 구성할 수 있습니다.
+
+필요한 경우 다른 관리 인터페이스를 사용할 수 있습니다. 이러한 옵션에는 직렬 포트 또는 텔넷을 사용하여 브리지를 구성 및 관리하고 이더넷 관리 1 포트를 구성하고 FTP를 사용하여 브리지 펌웨어를 업데이트하는 것이 포함됩니다. 이러한 관리 인터페이스를 선택하는 경우 의 해당 요구 사항을 충족해야 합니다 link:reference_requirements_for_using_other_interfaces_to_configure_and_manage_fibrebridge_bridges.html["기타 브리지 관리 인터페이스"].
+
+
+IMPORTANT: SAS 케이블을 잘못된 포트에 삽입한 경우 SAS 포트에서 케이블을 분리할 때 다른 SAS 포트에 케이블을 연결하기 전에 최소 120초 정도 기다려야 합니다. 그렇지 않으면 시스템이 케이블이 다른 포트로 이동되었음을 인식하지 못합니다.
+
+.단계
+. 적절하게 접지합니다.
+. 두 컨트롤러 중 하나의 콘솔에서 시스템에 디스크 자동 할당이 활성화되어 있는지 확인합니다.
++
+'스토리지 디스크 옵션 표시'
+
++
+자동 할당 열은 디스크 자동 할당이 설정되었는지 여부를 나타냅니다.
+
++
+[listing]
+----
+
+Node        BKg. FW. Upd.  Auto Copy   Auto Assign  Auto Assign Policy
+----------  -------------  ----------  -----------  ------------------
+node_A_1             on           on           on           default
+node_A_2             on           on           on           default
+2 entries were displayed.
+----
+. 새 스택에 대한 스위치 포트를 비활성화합니다.
+. 각 브리지에서 FiberBridge 펌웨어를 업데이트합니다.
++
+새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster 유지 관리 가이드 _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.
+
+. 페어의 각 브리지에서 새 스택에 연결할 SAS 포트를 활성화합니다.
++
+'SASPortEnable_port-letter _'
+
++
+동일한 SAS 포트(B, C 또는 D)를 두 브리지 모두에서 사용해야 합니다.
+
+. 구성을 저장하고 각 브리지를 재부팅합니다.
++
+'SaveConfiguration Restart
+
+. 디스크 쉘프를 브리지에 케이블 연결:
++
+.. 각 스택의 디스크 쉘프를 데이지 체인 방식으로 연결합니다.
++
+디스크 쉘프 모델의 _설치 및 서비스 가이드_에서 디스크 쉘프 데이지 체인 방식으로 연결되는 방법에 대한 자세한 정보를 얻을 수 있습니다.
+
+.. 각 디스크 쉘프 스택의 경우, 첫 번째 쉘프의 IOM A를 FiberBridge A의 SAS 포트 A에 케이블로 연결한 다음, 마지막 쉘프의 IOM B를 FiberBridge B의 SAS 포트 A에 케이블로 연결합니다
++
+link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+
++
+link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
+
++
+각 브리지는 디스크 쉘프 쌓기 위한 하나의 경로를 가지고 있으며, 브리지 A는 첫 번째 쉘프를 통해 스택의 A 측에 연결되고, 브리지 B는 마지막 쉘프를 통해 스택의 B 측에 연결됩니다.
+
++
+
+NOTE: 브리지 SAS 포트 B가 비활성화되었습니다.
+
+
+
+. 각 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 감지할 수 있는지 확인합니다.
++
+[cols="30,70"]
+|===
+
+
+| 를 사용하는 경우... | 그러면... 
+
+
+ a| 
+ATTO ExpressNAV GUI
+ a| 
+.. 지원되는 웹 브라우저의 브라우저 상자에 브리지의 IP 주소를 입력합니다.
++
+링크가 있는 ATTO FiberBridge 홈 페이지로 이동합니다.
+
+.. 링크를 클릭한 다음 브리지를 구성할 때 지정한 사용자 이름과 암호를 입력합니다.
++
+왼쪽에 메뉴가 있는 ATTO FiberBridge 상태 페이지가 나타납니다.
+
+.. 메뉴에서 * 고급 * 을 클릭합니다.
+.. 연결된 장치 보기:
++
+'아스타우다스다'
+
+.. 제출 * 을 클릭합니다.
+
+
+
+
+ a| 
+직렬 포트 연결
+ a| 
+연결된 장치 보기:
+
+'아스타우다스다'
+
+|===
++
+출력에는 브리지가 연결되는 장치(디스크 및 디스크 쉘프)가 표시됩니다. 출력 줄에 순차적으로 번호가 매겨서 장치를 빠르게 계산할 수 있습니다.
+
++
+
+NOTE: 출력 시작 부분에 "respongse 잘린" 텍스트가 나타나면 텔넷을 사용하여 브리지에 연결한 다음 'startears' 명령을 사용하여 모든 출력을 볼 수 있습니다.
+
++
+다음 출력에서는 10개의 디스크가 연결되어 있음을 보여 줍니다.
+
++
+[listing]
+----
+Tgt VendorID ProductID        Type        SerialNumber
+  0 NETAPP   X410_S15K6288A15 DISK        3QP1CLE300009940UHJV
+  1 NETAPP   X410_S15K6288A15 DISK        3QP1ELF600009940V1BV
+  2 NETAPP   X410_S15K6288A15 DISK        3QP1G3EW00009940U2M0
+  3 NETAPP   X410_S15K6288A15 DISK        3QP1EWMP00009940U1X5
+  4 NETAPP   X410_S15K6288A15 DISK        3QP1FZLE00009940G8YU
+  5 NETAPP   X410_S15K6288A15 DISK        3QP1FZLF00009940TZKZ
+  6 NETAPP   X410_S15K6288A15 DISK        3QP1CEB400009939MGXL
+  7 NETAPP   X410_S15K6288A15 DISK        3QP1G7A900009939FNTT
+  8 NETAPP   X410_S15K6288A15 DISK        3QP1FY0T00009940G8PA
+  9 NETAPP   X410_S15K6288A15 DISK        3QP1FXW600009940VERQ
+----
+. 명령 출력에 브리지가 스택의 모든 해당 디스크 및 디스크 쉘프에 연결되어 있는지 확인합니다.
++
+[cols="30,70"]
+|===
+
+
+| 출력이 다음과 같은 경우... | 그러면... 
+
+
+ a| 
+정답입니다
+ a| 
+나머지 각 브리지에 대해 이전 단계를 반복합니다.
+
+
+
+ a| 
+정답이 아닙니다
+ a| 
+.. SAS 케이블이 느슨한지 확인하거나 단계를 반복하여 디스크 쉘프를 브리지에 케이블로 연결하여 SAS 케이블을 올바르게 연결합니다.
+.. 나머지 각 브리지에 대해 이전 단계를 반복합니다.
+
+
+|===
+. 시스템 콘솔에서 디스크 드라이브 펌웨어를 최신 버전으로 업데이트합니다.
++
+"디스크_FW_UPDATE"입니다
+
++
+두 컨트롤러 모두에서 이 명령을 실행해야 합니다.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp 다운로드: 디스크 드라이브 펌웨어"^]
+
+. 다운로드한 펌웨어의 지침을 사용하여 디스크 쉘프 펌웨어를 최신 버전으로 업데이트합니다.
++
+두 컨트롤러의 시스템 콘솔에서 절차의 명령을 실행할 수 있습니다.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
+
+. 시스템에 디스크 자동 할당이 설정되어 있지 않으면 디스크 드라이브 소유권을 할당합니다.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
+
++
+
+NOTE: 단일 디스크 쉘프 스택의 소유권을 여러 컨트롤러로 분할하는 경우 디스크 소유권을 할당하기 전에 디스크 자동 할당('스토리지 디스크 옵션 수정 - 클러스터의 두 노드에서 자동 할당 해제 *')을 비활성화해야 합니다. 그렇지 않으면 단일 디스크 드라이브를 할당할 때 나머지 디스크 드라이브가 동일한 컨트롤러 및 풀에 자동으로 할당될 수 있습니다.
+
++
+
+NOTE: 디스크 드라이브 펌웨어 및 디스크 쉘프 펌웨어가 업데이트되고 이 작업의 검증 단계가 완료될 때까지 디스크 드라이브를 Aggregate 또는 볼륨에 추가할 수 없습니다.
+
+. 새 스택에 대한 스위치 포트를 활성화합니다.
+. ONTAP에서 MetroCluster 구성 작동을 확인합니다.
++
+.. 시스템에 다중 경로 가 있는지 확인합니다.
++
+'node run-node_node-name_sysconfig-a'
+
+.. 두 클러스터 모두에서 상태 알림을 확인합니다.
++
+'시스템 상태 경고 표시
+
+.. MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.
++
+MetroCluster 쇼
+
+.. MetroCluster 검사를 수행합니다.
++
+'MetroCluster check run
+
+.. MetroCluster 검사 결과를 표시합니다.
++
+MetroCluster 체크 쇼
+
+.. 스위치에 대한 상태 경고를 확인합니다(있는 경우).
++
+'스토리지 스위치 쇼'
+
+.. Config Advisor를 실행합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
+
+.. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
+
+
+. 해당되는 경우 파트너 사이트에 대해 이 절차를 반복합니다.
+

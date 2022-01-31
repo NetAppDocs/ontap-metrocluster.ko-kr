@@ -1,0 +1,558 @@
+---
+permalink: disaster-recovery/task_set_env_mcip.html 
+sidebar: sidebar 
+keywords: metrocluster, ip, configuration, setting, require, environmental, variable 
+summary: MetroCluster IP 구성에서는 이더넷 포트에서 MetroCluster 인터페이스의 IP 주소를 검색한 다음 이를 사용하여 교체 컨트롤러 모듈에 대한 인터페이스를 구성합니다. 
+---
+= MetroCluster IP 구성에서 필요한 환경 변수 설정
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 구성에서는 이더넷 포트에서 MetroCluster 인터페이스의 IP 주소를 검색한 다음 이를 사용하여 교체 컨트롤러 모듈에 대한 인터페이스를 구성해야 합니다.
+
+이 작업은 MetroCluster IP 구성에서만 필요합니다.
+
+이 작업의 명령은 정상적인 사이트의 클러스터 프롬프트와 재해 사이트의 노드의 로더 프롬프트에서 수행됩니다.
+
+이 예의 노드에는 MetroCluster IP 연결에 대해 다음과 같은 IP 주소가 있습니다.
+
+
+NOTE: 이 예는 AFF A700 또는 FAS9000 시스템에 대한 것입니다. 인터페이스는 플랫폼 모델에 따라 다릅니다.
+
+|===
+
+
+| 노드 | 포트 | IP 주소입니다 
+
+
+ a| 
+노드_A_1
+ a| 
+e5a
+ a| 
+172.17.26.10
+
+
+
+ a| 
+e5b
+ a| 
+172.17.27.10
+
+
+
+ a| 
+노드_A_2
+ a| 
+e5a
+ a| 
+172.17.26.11
+
+
+
+ a| 
+e5b
+ a| 
+172.17.27.11
+
+
+
+ a| 
+노드_B_1
+ a| 
+e5a
+ a| 
+172.17.26.13
+
+
+
+ a| 
+e5b
+ a| 
+172.17.27.13
+
+
+
+ a| 
+노드_B_2
+ a| 
+e5a
+ a| 
+172.17.26.12
+
+
+
+ a| 
+e5b
+ a| 
+172.17.27.12
+
+|===
+다음 표에는 노드와 각 노드의 MetroCluster IP 주소 간의 관계가 요약되어 있습니다.
+
+|===
+
+
+| 노드 | HA 파트너 | DR 파트너 | DR 보조 파트너 
+
+
+ a| 
+노드_A_1
+
+* e5a:172.17.26.10
+* e5b:172.17.27.10
+
+ a| 
+노드_A_2
+
+* e5a: 172.17.26.11
+* e5b:172.17.27.11
+
+ a| 
+노드_B_1
+
+* e5a:172.17.26.13
+* e5b:172.17.27.13
+
+ a| 
+노드_B_2
+
+* e5a: 172.17.26.12
+* e5b:172.17.27.12
+
+
+
+
+ a| 
+노드_A_2
+
+* e5a: 172.17.26.11
+* e5b:172.17.27.11
+
+ a| 
+노드_A_1
+
+* e5a:172.17.26.10
+* e5b:172.17.27.10
+
+ a| 
+노드_B_2
+
+* e5a: 172.17.26.12
+* e5b:172.17.27.12
+
+ a| 
+노드_B_1
+
+* e5a:172.17.26.13
+* e5b:172.17.27.13
+
+
+
+
+ a| 
+노드_B_1
+
+* e5a:172.17.26.13
+* e5b:172.17.27.13
+
+ a| 
+노드_B_2
+
+* e5a: 172.17.26.12
+* e5b:172.17.27.12
+
+ a| 
+노드_A_1
+
+* e5a:172.17.26.10
+* e5b:172.17.27.10
+
+ a| 
+노드_A_2
+
+* e5a: 172.17.26.11
+* e5b:172.17.27.11
+
+
+
+
+ a| 
+노드_B_2
+
+* e5a: 172.17.26.12
+* e5b:172.17.27.12
+
+ a| 
+노드_B_1
+
+* e5a:172.17.26.13
+* e5b:172.17.27.13
+
+ a| 
+노드_A_2
+
+* e5a: 172.17.26.11
+* e5b:172.17.27.11
+
+ a| 
+노드_A_1
+
+* e5a:172.17.26.10
+* e5b:172.17.27.10
+
+
+|===
+다음 표에는 MetroCluster IP 인터페이스에서 VLAN ID를 사용하는 플랫폼 모델이 나와 있습니다. 이러한 모델은 기본 VLAN ID를 사용하지 않는 경우 추가 단계가 필요할 수 있습니다.
+
+|===
+
+
+2+| MetroCluster IP 인터페이스에서 VLAN ID를 사용하는 플랫폼 모델 
+
+
+ a| 
+* AFF A220
+* AFF A250
+* AFF A400
+
+ a| 
+* 500f로 설정합니다
+* FAS2750
+* FAS8300
+* FAS8700
+
+
+|===
+.단계
+. 정상적인 사이트에서 재해 사이트에 있는 MetroCluster 인터페이스의 IP 주소를 수집합니다.
++
+'MetroCluster configuration-settings connection show'를 선택합니다
+
++
+필수 주소는 * Destination Network Address * 열에 표시된 DR 파트너 주소입니다.
+
++
+다음 출력에서는 포트 e5a 및 e5b에서 MetroCluster IP 인터페이스를 사용하는 AFF A700 및 FAS9000 시스템의 구성 IP 주소를 보여 줍니다. 인터페이스는 플랫폼 유형에 따라 다릅니다.
+
++
+[listing]
+----
+cluster_B::*> metrocluster configuration-settings connection show
+DR                    Source          Destination
+DR                    Source          Destination
+Group Cluster Node    Network Address Network Address Partner Type Config State
+----- ------- ------- --------------- --------------- ------------ ------------
+1     cluster_B
+              node_B_1
+                 Home Port: e5a
+                      172.17.26.13    172.17.26.12    HA Partner   completed
+                 Home Port: e5a
+                      172.17.26.13    172.17.26.10    DR Partner   completed
+                 Home Port: e5a
+                      172.17.26.13    172.17.26.11    DR Auxiliary completed
+                 Home Port: e5b
+                      172.17.27.13    172.17.27.12    HA Partner   completed
+                 Home Port: e5b
+                      172.17.27.13    172.17.27.10    DR Partner   completed
+                 Home Port: e5b
+                      172.17.27.13    172.17.27.11    DR Auxiliary completed
+              node_B_2
+                 Home Port: e5a
+                      172.17.26.12    172.17.26.13    HA Partner   completed
+                 Home Port: e5a
+                      172.17.26.12    172.17.26.11    DR Partner   completed
+                 Home Port: e5a
+                      172.17.26.12    172.17.26.10    DR Auxiliary completed
+                 Home Port: e5b
+                      172.17.27.12    172.17.27.13    HA Partner   completed
+                 Home Port: e5b
+                      172.17.27.12    172.17.27.11    DR Partner   completed
+                 Home Port: e5b
+                      172.17.27.12    172.17.27.10    DR Auxiliary completed
+12 entries were displayed.
+----
+. 인터페이스의 VLAN ID 또는 게이트웨이 주소를 확인해야 하는 경우 작동하는 사이트에서 VLAN ID를 확인합니다.
++
+'MetroCluster configuration-settings interface show'를 선택합니다
+
++
+** 플랫폼 모델이 VLAN ID를 사용하고(위 목록 참조) 기본 VLAN ID를 사용하지 않는 경우 VLAN ID가 필요합니다.
+** 을(를) 사용하는 경우 게이트웨이 주소가 필요합니다 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크"].
++
+VLAN ID는 출력의 * Network Address * 열에 포함됩니다. 게이트웨이 * 열에 게이트웨이 IP 주소가 표시됩니다.
+
++
+이 예에서 인터페이스는 VLAN ID가 120인 e0a 및 VLAN ID 130인 e0b입니다.
+
++
+[listing]
+----
+Cluster-A::*> metrocluster configuration-settings interface show
+DR                                                                     Config
+Group Cluster Node     Network Address Netmask         Gateway         State
+----- ------- ------- --------------- --------------- --------------- ---------
+1
+      cluster_A
+              node_A_1
+                  Home Port: e0a-120
+                          172.17.26.10  255.255.255.0  -            completed
+                  Home Port: e0b-130
+                          172.17.27.10  255.255.255.0  -            completed
+----
+
+
+. 재해 사이트 노드가 VLAN ID(위 목록 참조)를 사용하는 경우 각 재해 사이트 노드에 대한 로더 프롬프트에서 다음 boots를 설정합니다.
++
+--
+....
+setenv bootarg.mcc.port_a_ip_config local-IP-address/local-IP-mask,gateway-IP-address,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id
+
+setenv bootarg.mcc.port_b_ip_config local-IP-address/local-IP-mask,gateway-IP-address,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id
+....
+[NOTE]
+====
+** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
+** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["Layer3 광역 네트워크"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
+
+
+====
+** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
+** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["계층 3 백엔드 접속"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
++
+다음 명령은 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_a_1에 대한 값을 설정합니다.
+
+
+
+....
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12,120
+
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12,130
+....
+다음 예에서는 VLAN ID가 없는 node_a_1에 대한 명령을 보여 줍니다.
+
+....
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12
+
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12
+....
+--
+. 재해 사이트 노드가 VLAN ID를 사용하는 시스템이 아닌 경우 각 재해 노드에 대한 로더 프롬프트에서 local_ip/mask, gateway를 사용하여 다음 boots를 설정합니다.
++
+....
+setenv bootarg.mcc.port_a_ip_config local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address
+
+
+setenv bootarg.mcc.port_b_ip_config local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address
+....
++
+[NOTE]
+====
+** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
+** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
+
+
+====
++
+다음 명령을 실행하면 node_a_1에 대한 값이 설정됩니다. 이 예에서는 _gateway-ip-address_와 _vlan-id_값이 사용되지 않습니다.
+
++
+....
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12
+
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12
+....
+. 정상적인 사이트에서 재해 사이트의 UUID를 수집합니다.
++
+'MetroCluster node show-fields node-cluster-uuid, node-uuuid
+
++
+[listing]
+----
+cluster_B::> metrocluster node show -fields node-cluster-uuid, node-uuid
+
+  (metrocluster node show)
+dr-group-id cluster     node     node-uuid                            node-cluster-uuid
+----------- ----------- -------- ------------------------------------ ------------------------------
+1           cluster_A   node_A_1 f03cb63c-9a7e-11e7-b68b-00a098908039 ee7db9d5-9a82-11e7-b68b-00a098
+                                                                        908039
+1           cluster_A   node_A_2 aa9a7a7a-9a81-11e7-a4e9-00a098908c35 ee7db9d5-9a82-11e7-b68b-00a098
+                                                                        908039
+1           cluster_B   node_B_1 f37b240b-9ac1-11e7-9b42-00a098c9e55d 07958819-9ac6-11e7-9b42-00a098
+                                                                        c9e55d
+1           cluster_B   node_B_2 bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f 07958819-9ac6-11e7-9b42-00a098
+                                                                        c9e55d
+4 entries were displayed.
+cluster_A::*>
+----
++
+|===
+
+
+| 노드 | UUID입니다 
+
+
+ a| 
+클러스터_B
+ a| 
+07958819-9ac6-11e7-9b42-00a098c9e55d
+
+
+
+ a| 
+노드_B_1
+ a| 
+f37b240b-9ac1-11e7-9b42-00a098c9e55d
+
+
+
+ a| 
+노드_B_2
+ a| 
+bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f
+
+
+
+ a| 
+클러스터_A
+ a| 
+ee7db9d5-9a82-11e7-b68b-00a098908039
+
+
+
+ a| 
+노드_A_1
+ a| 
+f03cb63c-9a7e-11e7-b68b-00a098908039
+
+
+
+ a| 
+노드_A_2
+ a| 
+a9a7a7a-9a81-11e7-a4e9-00a098908c35
+
+|===
+. 교체 노드의 LOADER 프롬프트에서 UUID를 설정합니다.
++
+....
+setenv bootarg.mgwd.partner_cluster_uuid partner-cluster-UUID
+
+setenv bootarg.mgwd.cluster_uuid local-cluster-UUID
+
+setenv bootarg.mcc.pri_partner_uuid DR-partner-node-UUID
+
+setenv bootarg.mcc.aux_partner_uuid DR-aux-partner-node-UUID
+
+setenv bootarg.mcc_iscsi.node_uuid local-node-UUID`
+....
++
+.. node_a_1에서 UUID를 설정합니다.
++
+다음 예에서는 node_a_1에서 UUID를 설정하기 위한 명령을 보여 줍니다.
+
++
+....
+setenv bootarg.mgwd.cluster_uuid ee7db9d5-9a82-11e7-b68b-00a098908039
+
+setenv bootarg.mgwd.partner_cluster_uuid 07958819-9ac6-11e7-9b42-00a098c9e55d
+
+setenv bootarg.mcc.pri_partner_uuid f37b240b-9ac1-11e7-9b42-00a098c9e55d
+
+setenv bootarg.mcc.aux_partner_uuid bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f
+
+setenv bootarg.mcc_iscsi.node_uuid f03cb63c-9a7e-11e7-b68b-00a098908039
+....
+.. node_a_2에서 UUID 설정:
++
+다음 예에서는 node_a_2에서 UUID를 설정하기 위한 명령을 보여 줍니다.
+
++
+....
+setenv bootarg.mgwd.cluster_uuid ee7db9d5-9a82-11e7-b68b-00a098908039
+
+setenv bootarg.mgwd.partner_cluster_uuid 07958819-9ac6-11e7-9b42-00a098c9e55d
+
+setenv bootarg.mcc.pri_partner_uuid bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f
+
+setenv bootarg.mcc.aux_partner_uuid f37b240b-9ac1-11e7-9b42-00a098c9e55d
+
+setenv bootarg.mcc_iscsi.node_uuid aa9a7a7a-9a81-11e7-a4e9-00a098908c35
+....
+
+
+. 원래 시스템이 ADP에 대해 구성된 경우 각 교체 노드의 LOADER 프롬프트에서 ADP를 활성화합니다.
++
+'etenv bootarg.MCC.adp_enabled true'
+
+. ONTAP 9.5, 9.6 또는 9.7을 실행하는 경우 각 교체 노드의 로더 프롬프트에서 다음 변수를 활성화합니다.
++
+'에테네 부터그 MCC.lun_part true'
+
++
+.. node_a_1에서 변수를 설정합니다.
++
+다음 예제는 ONTAP 9.6을 실행할 때 node_a_1의 값을 설정하는 명령을 보여줍니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.lun_part true
+----
+.. node_a_2에서 변수를 설정합니다.
++
+다음 예제는 ONTAP 9.6을 실행할 때 node_a_2의 값을 설정하는 명령을 보여줍니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.lun_part true
+----
+
+
+. 원래 시스템이 ADP에 대해 구성된 경우 각 교체 노드의 로더 프롬프트에서 원래 시스템 ID(* 교체 컨트롤러 모듈의 시스템 ID가 * 아님) 및 노드의 DR 파트너의 시스템 ID를 설정합니다.
++
+'setenv bootarg.MCC.local_config_id original-sysid'
+
++
+'etenv bootarg.MCC.dr_partner dr_partner-sysid'
+
++
+link:task_replace_hardware_and_boot_new_controllers.html#determining-the-system-ids-of-the-replacement-controller-modules["이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID 확인"]
+
++
+.. node_a_1에서 변수를 설정합니다.
++
+다음 예제는 node_a_1에서 시스템 ID를 설정하기 위한 명령을 보여줍니다.
+
++
+*** node_A_1의 이전 시스템 ID는 4068741258입니다.
+*** node_B_1의 시스템 ID는 4068741254입니다.
++
+[listing]
+----
+setenv bootarg.mcc.local_config_id 4068741258
+setenv bootarg.mcc.dr_partner 4068741254
+----
+
+
+.. node_a_2에서 변수를 설정합니다.
++
+다음 예제는 node_A_2에서 시스템 ID를 설정하기 위한 명령을 보여줍니다.
+
++
+*** node_A_1의 이전 시스템 ID는 4068741260입니다.
+*** node_B_1의 시스템 ID는 4068741256입니다.
++
+[listing]
+----
+setenv bootarg.mcc.local_config_id 4068741260
+setenv bootarg.mcc.dr_partner 4068741256
+----
+
+
+
+
+

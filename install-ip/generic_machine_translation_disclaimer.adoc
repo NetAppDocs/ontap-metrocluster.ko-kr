@@ -1,0 +1,14 @@
+---
+permalink: install-ip/generic_machine_translation_disclaimer.html 
+sidebar: sidebar 
+keywords: important, information, localized, netapp, machine, translation 
+summary: 한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십시오. 
+---
+= 기계 번역
+:icons: font
+:imagesdir: ../media/
+
+
+한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십시오.
+
+https://www.netapp.com/company/legal/machine-translation/[]

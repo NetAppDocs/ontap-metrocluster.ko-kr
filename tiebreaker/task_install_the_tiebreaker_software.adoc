@@ -1,0 +1,771 @@
+---
+permalink: tiebreaker/task_install_the_tiebreaker_software.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+---
+= Tiebreaker 소프트웨어 설치
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.
+
+MetroCluster 소프트웨어를 설치하고 구성해야 합니다.
+
+
+
+== Tiebreaker 소프트웨어 설치 또는 업그레이드를 위한 시스템 요구 사항
+
+Tiebreaker 소프트웨어는 세 번째 사이트에 설치되며, 이를 통해 ISL(Inter-Switch Link) 장애(사이트 간 링크가 다운된 경우)와 사이트 장애를 구분할 수 있습니다. MetroCluster 구성을 모니터링하기 위해 로컬 컴퓨터에 Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템이 특정 요구 사항을 충족해야 합니다.
+
+MetroCluster Tiebreaker 소프트웨어에는 다음과 같은 모니터링 기능과 요구 사항이 있습니다.
+
+* 서로 다른 MetroCluster 구성에 특별한 구성이 필요하지 않습니다.
+* 최대 15개의 MetroCluster 구성을 동시에 모니터링할 수 있습니다.
++
+
+NOTE: 여러 개의 Tiebreaker 모니터와 충돌하지 않도록 MetroCluster 구성당 MetroCluster Tiebreaker 모니터가 하나만 있어야 합니다.
+
+* MetroCluster IP, MetroCluster FC 및 스트레치 MetroCluster 구성의 조합 지원
+* 하드웨어 및 소프트웨어:
++
+** ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1 또는 9.10.1
+
+
+* Red Hat Enterprise Linux 7 - 7.9 또는 8 - 8.4 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)
++
+** MariaDB 5.5.52.x/MySQL Server 5.6x
+** 4GB RAM
+** Java Runtime Environment 8을 엽니다
+
+
+* 디스크 용량: 8GB
+* 사용자: 루트 액세스
+* 방화벽:
++
+** AutoSupport 메시지 설정을 위한 직접 액세스
+** SSH(포트 22/TCP), HTTPS(포트 443/TCP) 및 ping(ICMP)
+
+
+* FIPS 지원 호스트에서는 설치가 지원되지 않습니다.
+
+
+
+
+== MetroCluster Tiebreaker 종속성 설치
+
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트인 Linux 운영 체제에 따라 MySQL 또는 MariaDB 서버를 설치해야 합니다.
+
+.단계
+. Java Runtime Environment를 설치합니다.
++
+<<install-java-1-8,Java Runtime Environment 설치 1.8>>
+
+. MySQL 또는 MariaDB 서버 설치:
++
+[cols="30,70"]
+|===
+
+
+| Linux 호스트가 인 경우 | 그러면... 
+
+
+ a| 
+Red Hat Enterprise Linux 7/CentOS 7
+ a| 
+MySQL을 설치합니다
+
+<<install-mysql-redhat,Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치>>
+
+
+
+ a| 
+Red Hat Enterprise Linux 8
+ a| 
+MariaDB를 설치합니다
+
+<<install-mariadb,Red Hat Enterprise Linux 8에 MariaDB 서버 설치>>
+
+|===
+
+
+
+
+=== Java Runtime Environment 설치 1.8
+
+Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 호스트 시스템에 Java Runtime Environment 1.8을 설치해야 합니다.
+
+.단계
+. 호스트 시스템에 root로 로그인합니다.
++
+[listing]
+----
+
+login as: root
+root@mcctb's password:
+Last login: Fri Jan  8 21:33:00 2017 from host.domain.com
+----
+. Java Runtime Environment 1.8 설치:
++
+'[root@mctb~]#yum install java-1.8.0-openjdk.x86_64'
+
++
+....
+[root@mcctb ~]# yum install java-1.8.0-openjdk.x86_64
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+... shortened....
+Dependencies Resolved
+
+=======================================================================
+Package               Arch   Version                 Repository    Size
+=======================================================================
+Installing:
+ java-1.8.0-openjdk  x86_64  1:1.8.0.144-0.b01.el7_4 updates      238 k
+ ..
+ ..
+Transaction Summary
+=======================================================================
+Install  1 Package  (+ 4 Dependent packages)
+
+Total download size: 34 M
+Is this ok [y/d/N]: y
+
+Installed:
+java-1.8.0-openjdk.x86_64 1:1.8.0.144-0.b01.el7_4
+Complete!
+....
+
+
+
+
+=== Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치
+
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다.
+
+.단계
+. 호스트 시스템에 root로 로그인합니다.
++
+[listing]
+----
+
+login as: root
+root@mcctb's password:
+Last login: Fri Jan  8 21:33:00 2016 from host.domain.com
+----
+. 호스트 시스템에 MySQL 리포지토리를 추가합니다.
++
+([root@mcctb~]#yum localinstall\https://dev.mysql.com/get/mysql57-community-release-el6-11.noarch.rpm`)
+
++
+....
+
+Loaded plugins: product-id, refresh-packagekit, security, subscription-manager
+Setting up Local Package Process
+Examining /var/tmp/yum-root-LLUw0r/mysql-community-release-el6-5.noarch.rpm: mysql-community-release-el6-5.noarch
+Marking /var/tmp/yum-root-LLUw0r/mysql-community-release-el6-5.noarch.rpm to be installed
+Resolving Dependencies
+--> Running transaction check
+---> Package mysql-community-release.noarch 0:el6-5 will be installed
+--> Finished Dependency Resolution
+Dependencies Resolved
+================================================================================
+Package               Arch   Version
+                                    Repository                             Size
+================================================================================
+Installing:
+mysql-community-release
+                       noarch el6-5 /mysql-community-release-el6-5.noarch 4.3 k
+Transaction Summary
+================================================================================
+Install       1 Package(s)
+Total size: 4.3 k
+Installed size: 4.3 k
+Is this ok [y/N]: y
+Downloading Packages:
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : mysql-community-release-el6-5.noarch                         1/1
+  Verifying  : mysql-community-release-el6-5.noarch                         1/1
+Installed:
+  mysql-community-release.noarch 0:el6-5
+Complete!
+....
+. MySQL 57 리포지토리를 비활성화합니다.
++
+'[root@mctb~]#yum-config-manager--disable mysql57-community'
+
+. MySQL 56 리포지토리 활성화:
++
+'[root@mctb~]#yum-config-manager--enable mysql56-community'
+
+. 리포지토리 활성화:
++
+"[root@mcctb~]#yum repolist enabled|grep "mysql. * -community. *"""
+
++
+....
+
+mysql-connectors-community           MySQL Connectors Community            21
+mysql-tools-community                MySQL Tools Community                 35
+mysql56-community                    MySQL 5.6 Community Server           231
+....
+. MySQL 커뮤니티 서버 설치:
++
+'[root@mctb~]#yum install mysql-community-server'
+
++
+[listing]
+----
+
+Loaded plugins: product-id, refresh-packagekit, security, subscription-manager
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager
+to register.
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+.....Output truncated.....
+---> Package mysql-community-libs-compat.x86_64 0:5.6.29-2.el6 will be obsoleting
+--> Finished Dependency Resolution
+Dependencies Resolved
+==============================================================================
+Package                          Arch   Version       Repository          Size
+==============================================================================
+Installing:
+ mysql-community-client         x86_64  5.6.29-2.el6  mysql56-community  18  M
+     replacing  mysql.x86_64 5.1.71-1.el6
+ mysql-community-libs           x86_64  5.6.29-2.el6  mysql56-community  1.9 M
+     replacing  mysql-libs.x86_64 5.1.71-1.el6
+ mysql-community-libs-compat    x86_64  5.6.29-2.el6  mysql56-community  1.6 M
+     replacing  mysql-libs.x86_64 5.1.71-1.el6
+ mysql-community-server         x86_64  5.6.29-2.el6  mysql56-community  53  M
+     replacing  mysql-server.x86_64 5.1.71-1.el6
+Installing for dependencies:
+mysql-community-common          x86_64  5.6.29-2.el6  mysql56-community   308 k
+
+Transaction Summary
+===============================================================================
+Install       5 Package(s)
+Total download size: 74 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/5): mysql-community-client-5.6.29-2.el6.x86_64.rpm       |  18 MB     00:28
+(2/5): mysql-community-common-5.6.29-2.el6.x86_64.rpm       | 308 kB     00:01
+(3/5): mysql-community-libs-5.6.29-2.el6.x86_64.rpm         | 1.9 MB     00:05
+(4/5): mysql-community-libs-compat-5.6.29-2.el6.x86_64.rpm  | 1.6 MB     00:05
+(5/5): mysql-community-server-5.6.29-2.el6.x86_64.rpm       |  53 MB     03:42
+-------------------------------------------------------------------------------
+Total                                              289 kB/s |  74 MB     04:24
+warning: rpmts_HdrFromFdno: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
+Retrieving key from file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+Importing GPG key 0x5072E1F5:
+ Userid : MySQL Release Engineering <mysql-build@oss.oracle.com>
+Package: mysql-community-release-el6-5.noarch
+         (@/mysql-community-release-el6-5.noarch)
+ From   : file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+Is this ok [y/N]: y
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : mysql-community-common-5.6.29-2.el6.x86_64
+....Output truncated....
+1.el6.x86_64                                                               7/8
+  Verifying  : mysql-5.1.71-1.el6.x86_64                       	           8/8
+Installed:
+  mysql-community-client.x86_64 0:5.6.29-2.el6
+  mysql-community-libs.x86_64 0:5.6.29-2.el6
+  mysql-community-libs-compat.x86_64 0:5.6.29-2.el6
+  mysql-community-server.x86_64 0:5.6.29-2.el6
+
+Dependency Installed:
+  mysql-community-common.x86_64 0:5.6.29-2.el6
+
+Replaced:
+  mysql.x86_64 0:5.1.71-1.el6 mysql-libs.x86_64 0:5.1.71-1.el6
+  mysql-server.x86_64 0:5.1.71-1.el6
+Complete!
+----
+. MySQL 서버 시작:
++
+'[root@mcctb~]#service mysqld start'
+
++
+....
+
+Initializing MySQL database:  2016-04-05 19:44:38 0 [Warning] TIMESTAMP
+with implicit DEFAULT value is deprecated. Please use
+--explicit_defaults_for_timestamp server option (see documentation
+for more details).
+2016-04-05 19:44:38 0 [Note] /usr/sbin/mysqld (mysqld 5.6.29)
+        starting as process 2487 ...
+2016-04-05 19:44:38 2487 [Note] InnoDB: Using atomics to ref count
+        buffer pool pages
+2016-04-05 19:44:38 2487 [Note] InnoDB: The InnoDB memory heap is disabled
+....Output truncated....
+2016-04-05 19:44:42 2509 [Note] InnoDB: Shutdown completed; log sequence
+       number 1625987
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER!
+To do so, start the server, then issue the following commands:
+
+  /usr/bin/mysqladmin -u root password 'new-password'
+  /usr/bin/mysqladmin -u root -h mcctb password 'new-password'
+
+Alternatively, you can run:
+  /usr/bin/mysql_secure_installation
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+.....Output truncated.....
+WARNING: Default config file /etc/my.cnf exists on the system
+This file will be read by default by the MySQL server
+If you do not want to use this, either remove it, or use the
+--defaults-file argument to mysqld_safe when starting the server
+
+                                                           [  OK  ]
+Starting mysqld:                                           [  OK  ]
+....
+. MySQL 서버가 실행 중인지 확인합니다.
++
+'[root@mcctb~]#service mysqld status'
+
++
+[listing]
+----
+
+mysqld (pid  2739) is running...
+----
+. 보안 및 암호 설정 구성:
++
+'[root@mctb~]#mysql_secure_installation'
+
++
+....
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MySQL
+       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+ In order to log into MySQL to secure it, we'll need the current
+ password for the root user.  If you've just installed MySQL, and
+ you haven't set the root password yet, the password will be blank,
+ so you should just press enter here.
+
+ Enter current password for root (enter for none):   <== on default install
+                                                         hit enter here
+ OK, successfully used password, moving on...
+
+ Setting the root password ensures that nobody can log into the MySQL
+ root user without the proper authorization.
+
+ Set root password? [Y/n] y
+ New password:
+ Re-enter new password:
+ Password updated successfully!
+ Reloading privilege tables..
+  ... Success!
+
+ By default, a MySQL installation has an anonymous user, allowing anyone
+ to log into MySQL without having to have a user account created for
+ them.  This is intended only for testing, and to make the installation
+ go a bit smoother.  You should remove them before moving into a
+ production environment.
+
+ Remove anonymous users? [Y/n] y
+  ... Success!
+
+ Normally, root should only be allowed to connect from 'localhost'.  This
+ ensures that someone cannot guess at the root password from the network.
+
+ Disallow root login remotely? [Y/n] y
+  ... Success!
+
+ By default, MySQL comes with a database named 'test' that anyone can
+ access.  This is also intended only for testing, and should be removed
+ before moving into a production environment.
+
+ Remove test database and access to it? [Y/n] y
+  - Dropping test database...
+ ERROR 1008 (HY000) at line 1: Can't drop database 'test';
+ database doesn't exist
+  ... Failed!  Not critical, keep moving...
+  - Removing privileges on test database...
+  ... Success!
+
+ Reloading the privilege tables will ensure that all changes made so far
+ will take effect immediately.
+
+ Reload privilege tables now? [Y/n] y
+  ... Success!
+
+ All done!  If you've completed all of the above steps, your MySQL
+ installation should now be secure.
+
+ Thanks for using MySQL!
+
+ Cleaning up...
+....
+. MySQL 로그인이 작동하는지 확인합니다.
++
+'[root@mctb~]#mysql-u root –p'
+
++
+....
+
+Enter password: <configured_password>
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 5.6.29 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+....
++
+MySQL 로그인이 작동 중이면 출력이 mysql> 프롬프트로 종료됩니다.
+
+
+
+
+
+==== MySQL 자동 시작 설정을 활성화합니다
+
+MySQL deamon에 대해 자동 시작 기능이 켜져 있는지 확인해야 합니다. MySQL 데몬을 켜면 MetroCluster Tiebreaker 소프트웨어가 상주하는 시스템이 재부팅될 경우 MySQL이 자동으로 다시 시작됩니다. MySQL 데몬이 실행되고 있지 않으면 Tiebreaker 소프트웨어가 계속 실행되지만 다시 시작할 수 없으며 구성을 변경할 수 없습니다.
+
+.단계
+. 부팅할 때 MySQL이 자동 시작되도록 설정되었는지 확인합니다.
++
+([root@mcctb~]#systemctl list-unit-files mysqld.service`)
+
++
+....
+UNIT FILE          State
+------------------ ----------
+mysqld.service     enabled
+
+....
++
+부팅할 때 MySQL이 자동 시작되도록 설정되지 않은 경우 MySQL 설명서를 참조하여 설치에 대한 자동 시작 기능을 활성화하십시오.
+
+
+
+
+
+=== Red Hat Enterprise Linux 8에 MariaDB 서버 설치
+
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다.
+
+호스트 시스템은 Red Hat Enterprise Linux(RHEL) 8에서 실행 중이어야 합니다.
+
+.단계
+. 호스트 시스템에 root로 로그인합니다.
++
+....
+
+login as: root
+root@mcctb's password:
+Last login: Fri Jan  8 21:33:00 2017 from host.domain.com
+....
+. MariaDB 서버 설치:
++
+'[root@mctb~]#yum install MariaDB-server.x86_64'
+
++
+....
+ [root@mcctb ~]# yum install mariadb-server.x86_64
+Loaded plugins: fastestmirror, langpacks
+...
+...
+
+===========================================================================
+ Package                      Arch   Version         Repository        Size
+===========================================================================
+Installing:
+mariadb-server               x86_64   1:5.5.56-2.el7   base            11 M
+Installing for dependencies:
+
+Transaction Summary
+===========================================================================
+Install  1 Package  (+8 Dependent packages)
+Upgrade             ( 1 Dependent package)
+
+Total download size: 22 M
+Is this ok [y/d/N]: y
+Downloading packages:
+No Presto metadata available for base warning:
+/var/cache/yum/x86_64/7/base/packages/mariadb-libs-5.5.56-2.el7.x86_64.rpm:
+Header V3 RSA/SHA256 Signature,
+key ID f4a80eb5: NOKEY] 1.4 MB/s | 3.3 MB  00:00:13 ETA
+Public key for mariadb-libs-5.5.56-2.el7.x86_64.rpm is not installed
+(1/10): mariadb-libs-5.5.56-2.el7.x86_64.rpm  | 757 kB  00:00:01
+..
+..
+(10/10): perl-Net-Daemon-0.48-5.el7.noarch.rpm|  51 kB  00:00:01
+-----------------------------------------------------------------------------------------
+Installed:
+  mariadb-server.x86_64 1:5.5.56-2.el7
+
+Dependency Installed:
+mariadb.x86_64 1:5.5.56-2.el7
+perl-Compress-Raw-Bzip2.x86_64 0:2.061-3.el7
+perl-Compress-Raw-Zlib.x86_64 1:2.061-4.el7
+perl-DBD-MySQL.x86_64 0:4.023-5.el7
+perl-DBI.x86_64 0:1.627-4.el7
+perl-IO-Compress.noarch 0:2.061-2.el7
+perl-Net-Daemon.noarch 0:0.48-5.el7
+perl-PlRPC.noarch 0:0.2020-14.el7
+
+Dependency Updated:
+  mariadb-libs.x86_64 1:5.5.56-2.el7
+Complete!
+....
+. MariaDB 서버 시작:
++
+'[root@mcctb~]#systemctl start MariaDB'
+
+. MariaDB 서버가 시작되었는지 확인합니다.
++
+'[root@mcctb~]#systemctl status MariaDB'
+
++
+....
+
+[root@mcctb ~]# systemctl status mariadb
+mariadb.service - MariaDB database server
+...
+Nov 08 21:28:59 mcctb systemd[1]: Starting MariaDB database server...
+...
+Nov 08 21:29:01 scspr0523972001 systemd[1]: Started MariaDB database server.
+....
++
+
+NOTE: MariaDB에 대해 "자동 시작 사용" 설정이 켜져 있는지 확인합니다. 을 참조하십시오 <<mariadb-autostart>>.
+
+. 보안 및 암호 설정을 구성합니다.
++
+'[root@mctb~]#mysql_secure_installation'
+
++
+....
+
+[root@mcctb ~]# mysql_secure_installation
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+SERVERS IN PRODUCTION USE! PLEASE READ EACH STEP CAREFULLY!
+Set root password? [Y/n] y
+New password:
+Re-enter new password:
+Password updated successfully!
+Remove anonymous users? [Y/n] y
+... Success!
+Normally, root should only be allowed to connect from 'localhost'. This
+ensures that someone cannot guess at the root password from the network.
+Disallow root login remotely? [Y/n] y
+... Success!
+Remove test database and access to it? [Y/n] y
+- Dropping test database...
+... Success!
+- Removing privileges on test database...
+... Success!
+Reload privilege tables now? [Y/n]
+... Success!
+Cleaning up...
+All done! If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+Thanks for using MariaDB!
+....
+
+
+
+
+==== MariaDB에 대한 자동 시작 설정을 활성화합니다
+
+MariaDB에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. 자동 시작 기능을 활성화하지 않고 MetroCluster Tiebreaker 소프트웨어가 있는 시스템을 재부팅해야 하는 경우 Tiebreaker 소프트웨어는 계속 실행되지만 MariaDB 서비스를 다시 시작할 수 없으며 구성을 변경할 수 없습니다.
+
+.단계
+. 자동 시작 서비스를 활성화합니다.
++
+'[root@mcctb~]#systemctl enable mariadb.service`
+
+. 부팅할 때 MariaDB가 자동 시작되도록 설정되었는지 확인합니다.
++
+([root@mcctb~]#systemctl list-unit-files mariadb.service`)
+
++
+....
+UNIT FILE          State
+------------------ ----------
+mariadb.service    enabled
+
+....
+
+
+
+
+== 소프트웨어 패키지 설치 또는 업그레이드
+
+MetroCluster 구성을 모니터링하려면 로컬 컴퓨터에 MetroCluster Tiebreaker 소프트웨어를 설치하거나 업그레이드해야 합니다.
+
+* 스토리지 시스템에서 ONTAP 8.3.x 이상을 실행해야 합니다.
+* yum install java-1.8.0-openjdk 명령을 사용하여 OpenJDK를 설치해야 합니다.
+
+
+.단계
+. 최신 버전의 MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예에서는 버전 1.21P3-1을 사용합니다.
++
+https://mysupport.netapp.com/site/["NetApp 지원"]
+
+. 호스트에 루트 사용자로 로그인합니다.
+. Tiebreaker 소프트웨어 설치 또는 업그레이드:
++
+[cols="20,80"]
+|===
+
+
+| 만약... | 이 명령 실행... 
+
+
+ a| 
+새 설치 수행
+ a| 
+"rpm-ivh NetApp-MetroCluster-Tiebreaker-Software-1.21P3-1x86_64.rpm"
+
+성공적인 설치를 위해 다음과 같은 출력이 표시됩니다.
+
+....
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
+Post installation start Wed Oct 20 09:59:19 EDT 2021
+Enter MetroCluster Tiebreaker user password:
+
+Please enter mysql root password when prompted
+Enter password:
+Synchronizing state of netapp-metrocluster-tiebreaker-software.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable netapp-metrocluster-tiebreaker-software
+Created symlink /etc/systemd/system/multi-user.target.wants/netapp-metrocluster-tiebreaker-software.service → /etc/systemd/system/netapp-metrocluster-tiebreaker-software.service.
+Attempting to start NetApp MetroCluster Tiebreaker software services
+Started NetApp MetroCluster Tiebreaker software services
+Enabled autostart of NetApp MetroCluster Tiebreaker software daemon during boot
+Created symbolic link for NetApp MetroCluster Tiebreaker software CLI
+Post installation end Wed Oct 20 09:59:28 EDT 2021
+Successfully installed NetApp MetroCluster Tiebreaker software version 1.21P3.
+....
+
+
+ a| 
+기존 설치 업그레이드
+ a| 
+"rpm-Uvh NetApp-MetroCluster-Tiebreaker-Software-1.21P3-1.x86_64.rpm"
+
+성공적인 업그레이드를 위해 다음과 같은 출력이 표시됩니다.
+
+....
+
+MetroCluster-Tiebreaker-Software-1.21P3-1.x86_64.rpm
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Upgrading NetApp MetroCluster Tiebreaker software....
+Stopping NetApp MetroCluster Tiebreaker software services before upgrade.
+Updating / installing...
+   1:NetApp-MetroCluster-Tiebreaker-So################################# [ 50%]
+Post installation start Wed Oct 20 09:57:49 EDT 2021
+Synchronizing state of netapp-metrocluster-tiebreaker-software.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable netapp-metrocluster-tiebreaker-software
+Created symlink /etc/systemd/system/multi-user.target.wants/netapp-metrocluster-tiebreaker-software.service → /etc/systemd/system/netapp-metrocluster-tiebreaker-software.service.
+Attempting to start NetApp MetroCluster Tiebreaker software services
+Starting NetApp MetroCluster Tiebreaker software services. Retry: 1
+Started NetApp MetroCluster Tiebreaker software services
+Enabled autostart of NetApp MetroCluster Tiebreaker software daemon during boot
+Created symbolic link for NetApp MetroCluster Tiebreaker software CLI
+Post upgrade end Wed Oct 20 09:57:52 EDT 2021
+Successfully upgraded NetApp MetroCluster Tiebreaker software to version 1.21P3.
+Cleaning up / removing...
+   2:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
+
+....
+|===
++
+
+NOTE: 잘못된 MySQL root 패스워드를 입력하면 Tiebreaker 소프트웨어는 성공적으로 설치되었음을 나타내지만 "Access denied" 메시지를 표시합니다. 이 문제를 해결하려면 "rpm -e" 명령을 사용하여 Tiebreaker 소프트웨어를 제거한 다음 올바른 MySQL root 암호를 사용하여 소프트웨어를 다시 설치해야 합니다.
+
+. Tiebreaker 호스트에서 각 노드 관리 LIF 및 클러스터 관리 LIF로 SSH 연결을 열어 MetroCluster 소프트웨어에 대한 Tiebreaker 연결을 확인합니다.
+
+
+https://mysupport.netapp.com/site/["NetApp 지원"]
+
+
+
+== Tiebreaker 모니터가 실행 중인 호스트 업그레이드
+
+업그레이드 전에 모니터를 관찰자 모드로 전환하면 Tiebreaker 모니터가 실행 중인 호스트를 중단 없이 업그레이드할 수 있습니다.
+
+.단계
+. 모니터가 observer 모드인지 확인합니다.
++
+모니터 쇼 – 상태
+
++
+....
+NetApp MetroCluster Tiebreaker:> monitor show -status
+MetroCluster: cluster_A
+    Disaster: false
+    Monitor State: Normal
+    Observer Mode: true
+    Silent Period: 15
+    Override Vetoes: false
+    Cluster: cluster_Ba(UUID:4d9ccf24-080f-11e4-9df2-00a098168e7c)
+        Reachable: true
+        All-Links-Severed: FALSE
+            Node: mcc5-a1(UUID:78b44707-0809-11e4-9be1-e50dab9e83e1)
+                Reachable: true
+                All-Links-Severed: FALSE
+                State: normal
+            Node: mcc5-a2(UUID:9a8b1059-0809-11e4-9f5e-8d97cdec7102)
+                Reachable: true
+                All-Links-Severed: FALSE
+                State: normal
+    Cluster: cluster_B(UUID:70dacd3b-0823-11e4-a7b9-00a0981693c4)
+        Reachable: true
+        All-Links-Severed: FALSE
+            Node: mcc5-b1(UUID:961fce7d-081d-11e4-9ebf-2f295df8fcb3)
+                Reachable: true
+                All-Links-Severed: FALSE
+                State: normal
+            Node: mcc5-b2(UUID:9393262d-081d-11e4-80d5-6b30884058dc)
+                Reachable: true
+                All-Links-Severed: FALSE
+                State: normal
+....
+. 모든 모니터를 관찰자 모드로 변경합니다.
++
+....
+NetApp MetroCluster Tiebreaker :> monitor modify -monitor-name _monitor_name_ -observer-mode true
+....
+. Tiebreaker 호스트를 업그레이드하려면 다음 절차의 모든 단계를 따르십시오.
++
+<<install-upgrade-sw-pkg,소프트웨어 패키지 설치 또는 업그레이드>>
+
+. 관찰자 모드를 비활성화하여 모든 모니터를 다시 온라인 모드로 전환합니다.
++
+[listing]
+----
+NetApp MetroCluster Tiebreaker :> monitor modify -monitor-name _monitor_name_ -observer-mode false
+----
+
+
+
+
+== Tiebreaker 소프트웨어의 NTP 소스를 선택합니다
+
+Tiebreaker 소프트웨어에는 로컬 NTP(Network Time Protocol) 소스를 사용해야 합니다. Tiebreaker 소프트웨어가 모니터링하는 MetroCluster 사이트와 동일한 소스를 사용해서는 안 됩니다.

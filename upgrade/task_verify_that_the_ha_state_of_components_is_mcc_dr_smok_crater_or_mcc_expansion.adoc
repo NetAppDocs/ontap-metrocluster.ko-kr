@@ -1,0 +1,37 @@
+---
+permalink: upgrade/task_verify_that_the_ha_state_of_components_is_mcc_dr_smok_crater_or_mcc_expansion.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, verify, ha, config, component, state 
+summary: MetroCluster 구성에서 컨트롤러 모듈 및 섀시 구성 요소의 ha-config 상태는 MCC로 설정해야 제대로 부팅됩니다. 
+---
+= 구성 요소의 ha-config 상태 확인
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성에서 컨트롤러 모듈 및 섀시 구성 요소의 ha-config 상태를 * MCC * 로 설정해야 제대로 부팅됩니다.
+
+.이 작업에 대해
+* 시스템이 유지보수 모드여야 합니다.
+* 이 작업은 각 새 컨트롤러 모듈에서 수행해야 합니다.
+
+
+.단계
+. 유지보수 모드에서 컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.
++
+하구성 쇼
+
++
+모든 구성 요소의 HA 상태는 "MCC"여야 합니다.
+
+. 표시된 컨트롤러 시스템 상태가 정확하지 않은 경우 컨트롤러 모듈에 대한 HA 상태를 설정합니다.
++
+하구성 수정 컨트롤러 MCC
+
+. 표시된 섀시 시스템 상태가 올바르지 않으면 섀시의 HA 상태를 설정합니다.
++
+하구성 수정 새시 MCC
+
+. 다른 대체 노드에서 이 단계를 반복합니다.
+
