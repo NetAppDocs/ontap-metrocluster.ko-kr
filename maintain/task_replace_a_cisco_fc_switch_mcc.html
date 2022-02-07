@@ -3703,7 +3703,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
@@ -3713,6 +3713,14 @@
           alt="netapp-ivanad"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/76115643?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3739,13 +3747,11 @@
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">역할</th>
-<th class="tableblock halign-left valign-top">포트</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">역할</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">포트</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>FC-VI 연결</p>
@@ -3789,10 +3795,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당</a></p>
+<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">"ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"</a></p>
 </li>
 <li>
-<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</a></p>
+<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">"ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"</a></p>
 </li>
 </ul>
 </div>
@@ -3807,7 +3813,7 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>구성 모드로 들어갑니다: + " * conf t * "</p>
+<p>구성 모드 + "conf t"로 들어갑니다</p>
 </li>
 <li>
 <p>인터페이스 명령과 산트 명령으로 정상 스위치의 ISL 포트를 비활성화합니다.</p>
@@ -3842,7 +3848,10 @@ FC_switch_A_1#</pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>구성 모드로 들어갑니다: + " * conf t * "</p>
+<p>구성 모드 시작:</p>
+<div class="paragraph">
+<p>"구성"</p>
+</div>
 </li>
 <li>
 <p>손상된 스위치가 여전히 작동 중이면 인터페이스 및 종료 명령을 사용하여 손상된 스위치의 FC-VI 및 HBA 포트를 비활성화합니다.</p>
@@ -3875,7 +3884,7 @@ FC_switch_B_1#</pre>
 <li>
 <p>손상된 스위치가 계속 작동하는 경우 스위치의 WWN을 확인합니다.</p>
 <div class="paragraph">
-<p>'* WWN 스위치 표시 *'</p>
+<p>WWN 스위치 사용</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3896,12 +3905,15 @@ FC_switch_B_1#</pre>
 <p>교체 스위치를 켜고 부팅하십시오.</p>
 </li>
 <li>
-<p>교체 스위치의 펌웨어 버전을 확인하여 다른 FC 스위치의 버전과 일치하는지 확인합니다</p>
+<p>교체 스위치의 펌웨어 버전을 확인하여 다른 FC 스위치의 버전과 일치하는지 확인하십시오.</p>
+<div class="paragraph">
+<p>'How version&#8217;입니다</p>
+</div>
 </li>
 <li>
 <p>MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 교체 스위치를 구성하고 ""Cisco FC 스위치에서 조닝 구성" 섹션을 건너뜁니다.</p>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html">"패브릭 연결 MetroCluster 설치 및 구성"</a></p>
+<p><a href="../install-fc/index.html">"패브릭 연결 MetroCluster 설치 및 구성"</a></p>
 </div>
 </li>
 </ol>
@@ -3978,7 +3990,7 @@ FC_switch_B_1#</pre>
 <li>
 <p>교체 스위치의 ISL 포트가 작동하는지 확인합니다.</p>
 <div class="paragraph">
-<p>'* show interface brief * '</p>
+<p>인터페이스 요약</p>
 </div>
 </li>
 <li>
@@ -3999,7 +4011,10 @@ FC_switch_A_1(config-zone)# end</pre>
 </div>
 </li>
 <li>
-<p>교체 스위치에서 정상적인 스위치에서 조닝 정보가 올바르게 검색되었는지 확인합니다. + " * show zone * "</p>
+<p>교체 스위치에서 정상적인 스위치에서 조닝 정보가 올바르게 검색되었는지 확인합니다.</p>
+<div class="paragraph">
+<p>'조수 구역'</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>FC_switch_B_1# show zone
@@ -4062,7 +4077,7 @@ FC_switch_A_1#</pre>
 <li>
 <p>두 스위치의 스위치 WWN에 속하지 않는 영역 구성원을 제거합니다.</p>
 <div class="paragraph">
-<p>이 예에서 출력에 "멤버 인터페이스 없음"은 다음 멤버가 Fabric에 있는 스위치 중 하나의 스위치 WWN과 연결되어 있지 않으므로 제거해야 함을 보여 줍니다.</p>
+<p>이 예제에서 출력에서 ""멤버 인터페이스 없음""은 다음 멤버가 Fabric에 있는 스위치 중 하나의 스위치 WWN과 연결되어 있지 않으므로 제거해야 함을 나타냅니다.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4116,12 +4131,6 @@ FC_switch_A_1#</pre>
 </li>
 <li>
 <p>인터페이스 FC1/11 swwn 20:00:54:7F:ee:E3:86:50 다음 예에서는 이러한 인터페이스를 제거하는 방법을 보여 줍니다.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre> FC_switch_B_1# conf t
@@ -4145,6 +4154,12 @@ FC_switch_A_1#</pre>
  FC_switch_B_1(config-zone)# end
  FC_switch_B_1# copy running-config startup-config</pre>
 </div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -4178,7 +4193,10 @@ FC_switch_A_1#</pre>
 </div>
 </li>
 <li>
-<p>조닝이 올바르게 구성되었는지 확인합니다. + " * show zone * "</p>
+<p>조닝이 올바르게 구성되었는지 확인합니다.</p>
+<div class="paragraph">
+<p>'조수 구역'</p>
+</div>
 <div class="paragraph">
 <p>다음 출력 예에서는 세 개의 영역을 보여 줍니다.</p>
 </div>
@@ -4247,28 +4265,40 @@ FC_switch_A_1#</pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "</p>
+<p>시스템에 다중 경로 가 있는지 확인합니다.</p>
+<div class="paragraph">
+<p>'node run-node_node-name_sysconfig-a'</p>
+</div>
 </li>
 <li>
-<p>두 클러스터에 대한 상태 경고(+' * system health alert show * ')가 있는지 확인합니다</p>
+<p>두 클러스터 모두에서 상태 알림을 확인합니다.</p>
+<div class="paragraph">
+<p>'시스템 상태 경고 표시</p>
+</div>
 </li>
 <li>
 <p>MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.</p>
 <div class="paragraph">
-<p>``MetroCluster 쇼 *’</p>
+<p>MetroCluster 쇼</p>
 </div>
 </li>
 <li>
 <p>MetroCluster 검사를 수행합니다.</p>
 <div class="paragraph">
-<p>' * MetroCluster check run * '</p>
+<p>'MetroCluster check run</p>
 </div>
 </li>
 <li>
-<p>MetroCluster check 결과 표시: + ` * MetroCluster check show * '</p>
+<p>MetroCluster 검사 결과를 표시합니다.</p>
+<div class="paragraph">
+<p>MetroCluster 체크 쇼</p>
+</div>
 </li>
 <li>
-<p>스위치에 대한 상태 경고(있는 경우)가 있는지 확인합니다. + " * storage switch show * "</p>
+<p>스위치에 대한 상태 경고를 확인합니다(있는 경우).</p>
+<div class="paragraph">
+<p>'스토리지 스위치 쇼'</p>
+</div>
 </li>
 <li>
 <p>Config Advisor를 실행합니다.</p>

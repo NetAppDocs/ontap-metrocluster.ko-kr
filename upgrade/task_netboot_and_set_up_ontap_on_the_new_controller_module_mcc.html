@@ -3703,24 +3703,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
 <span>기여자
-  <a target="_blank" href="https://github.com/netapp-martyh">
-    <img  class="avatar avatar-small"
-          alt="netapp-martyh"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/66496079?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-martyh">
+    <img  class="avatar avatar-small"
+          alt="netapp-martyh"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/66496079?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3768,8 +3768,8 @@
 <p>LOADER 프롬프트에서 DHCP 가용성을 기반으로 새 컨트롤러 모듈의 IP 주소를 구성합니다.</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3826,8 +3826,8 @@
 <p>LOADER 프롬프트에서 새 노드를 netboot 합니다.</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3864,10 +3864,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>HA 쌍의 무중단 업그레이드를 위해 이 절차가 지원되지 않는다는 메시지가 표시되면 ' * y' * 를 입력해야 합니다.</p>
+<p>HA 쌍의 무중단 업그레이드를 위해 이 절차가 지원되지 않는다는 메시지가 표시되면 ""y""를 입력해야 합니다.</p>
 </li>
 <li>
-<p>이 프로세스가 기존 ONTAP 소프트웨어를 새 소프트웨어로 대체한다는 경고가 나타나면 '* y*'를 입력해야 합니다.</p>
+<p>이 프로세스가 기존 ONTAP 소프트웨어를 새 소프트웨어로 대체한다는 경고가 나타나면 ""y"를 입력해야 합니다.</p>
 </li>
 <li>
 <p>image.tgz 파일의 URL을 묻는 메시지가 나타나면 다음과 같이 경로를 입력해야 합니다.</p>
@@ -3879,7 +3879,7 @@
 </div>
 </li>
 <li>
-<p>중단 없는 소프트웨어 업그레이드 또는 교체에 대한 메시지가 나타나면 ' * y * '를 입력합니다.</p>
+<p>중단 없는 소프트웨어 업그레이드 또는 교체에 대한 메시지가 나타나면 ""y"를 입력합니다.</p>
 </li>
 <li>
 <p>패키지의 URL을 묻는 메시지가 나타나면 image.tgz 파일의 경로를 입력합니다.</p>
@@ -3890,7 +3890,7 @@
 </div>
 </li>
 <li>
-<p>백업 구성을 복원하라는 메시지가 나타나면 백업 복구를 건너뛰려면 ' * n * '을 입력합니다.</p>
+<p>백업 구성을 복원하라는 메시지가 표시되면 ""n""을 입력하여 백업 복구를 건너뜁니다.</p>
 <div class="listingblock">
 <div class="content">
 <pre>****************************************************************
@@ -3911,7 +3911,7 @@ now? {y|n} `n`</pre>
 </div>
 </li>
 <li>
-<p>지금 재부팅하라는 메시지가 나타나면 ' * y * '를 입력합니다.</p>
+<p>지금 재부팅하라는 메시지가 나타나면 ""y""를 입력합니다.</p>
 <div class="listingblock">
 <div class="content">
 <pre>The node must be rebooted to start using the newly installed software. Do you want to
@@ -3922,7 +3922,7 @@ reboot now? {y|n} `y`</pre>
 <li>
 <p>필요한 경우 노드가 부팅된 후 * 구성 정리 및 모든 디스크 초기화 * 옵션을 선택합니다.</p>
 <div class="paragraph">
-<p>새 컨트롤러 모듈을 구성하고 새 컨트롤러 모듈의 디스크가 비어 있으므로 시스템에서 모든 디스크를 삭제한다는 경고 메시지를 표시할 때 '* y*'를 응답할 수 있습니다.</p>
+<p>새 컨트롤러 모듈을 구성하고 있고 새 컨트롤러 모듈의 디스크가 비어 있으므로 시스템에서 모든 디스크를 지우라는 경고를 표시할 때 ""y""를 응답할 수 있습니다.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3954,7 +3954,7 @@ reboot now? {y|n} `y`</pre>
 <li>
 <p>사이트에 해당하는 나머지 프롬프트에 응답합니다.</p>
 <div class="paragraph">
-<p>를 클릭합니다 <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html">"ONTAP를 설정합니다"</a> 사용 중인 ONTAP 버전에 대한 추가 세부 정보가 포함되어 있습니다.</p>
+<p>를 클릭합니다 <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html" target="_blank" rel="noopener">"ONTAP를 설정합니다"</a> 사용 중인 ONTAP 버전에 대한 추가 세부 정보가 포함되어 있습니다.</p>
 </div>
 </li>
 <li>

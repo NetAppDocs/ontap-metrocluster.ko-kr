@@ -3703,7 +3703,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
@@ -3713,6 +3713,14 @@
           alt="netapp-ivanad"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/76115643?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3747,7 +3755,7 @@
 <li>
 <p>스위치는 지원되는 최신 펌웨어를 실행해야 합니다.</p>
 <div class="paragraph">
-<p><a href="https://mysupport.netapp.com/matrix">"NetApp 상호 운용성 매트릭스 툴"</a></p>
+<p><a href="https://mysupport.netapp.com/matrix" target="_blank" rel="noopener">"NetApp 상호 운용성 매트릭스 툴"</a></p>
 </div>
 </li>
 <li>
@@ -3804,7 +3812,10 @@
 </div>
 </li>
 <li>
-<p>새 스위치(+'* switchCfgPersistentDisable*')를 비활성화합니다</p>
+<p>새 스위치를 비활성화합니다.</p>
+<div class="paragraph">
+<p>'스치치치프트PersistentDisable&#8217;을 선택합니다</p>
+</div>
 <div class="paragraph">
 <p>이 명령을 실행하면 스위치 패브릭의 두 스위치가 모두 비활성화됩니다.</p>
 </div>
@@ -3817,10 +3828,10 @@
 <li>
 <p>권장되는 포트 할당을 사용하여 새 스위치에 케이블을 연결합니다.</p>
 <div class="paragraph">
-<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당</a></p>
+<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">"ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"</a></p>
 </div>
 <div class="paragraph">
-<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</a></p>
+<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">"ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"</a></p>
 </div>
 </li>
 <li>
@@ -3849,7 +3860,7 @@
 <li>
 <p>스위치 구성을 저장합니다.</p>
 <div class="paragraph">
-<p>'* cfgSave*'</p>
+<p>“cfgSave”입니다</p>
 </div>
 </li>
 <li>
@@ -3858,7 +3869,7 @@
 <li>
 <p>MetroCluster 노드 중 하나에 다음 명령을 입력하여 디스크 연결을 확인합니다.</p>
 <div class="paragraph">
-<p>' * run local sysconfig -v * '</p>
+<p>로컬 sysconfig -v를 실행합니다</p>
 </div>
 <div class="paragraph">
 <p>이 출력에서는 컨트롤러의 이니시에이터 포트에 연결된 디스크를 표시하고 FC-to-SAS 브리지에 연결된 쉘프를 식별합니다.</p>
@@ -3914,7 +3925,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, &lt;UP&gt;)**&lt;=== Ini
 <li>
 <p>스위치 프롬프트로 돌아가 스위치 펌웨어 버전을 확인합니다.</p>
 <div class="paragraph">
-<p>' * firmwareshweshwHow * '</p>
+<p>'firmwareswHow&#8217;입니다</p>
 </div>
 <div class="paragraph">
 <p>스위치는 지원되는 최신 펌웨어를 실행해야 합니다.</p>
@@ -3928,16 +3939,22 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, &lt;UP&gt;)**&lt;=== Ini
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>노드의 프롬프트에서 고급 권한 수준(+' * set-privilege advanced * ')으로 변경합니다</p>
+<p>노드 프롬프트에서 고급 권한 수준(+'et-Privilege advanced')으로 변경합니다</p>
 <div class="paragraph">
-<p>고급 모드로 계속 진행하고 고급 모드 프롬프트(<strong>&gt;)를 보려면 "</strong> y*"로 응답해야 합니다.</p>
+<p>고급 모드로 계속 진행하고 고급 모드 프롬프트(*&gt;)를 보려면 ""y""로 응답해야 합니다.</p>
 </div>
 </li>
 <li>
-<p>'-simulate' 파라미터:+' * MetroCluster switchover-simulate *'로 절체 작업을 수행한다</p>
+<p>'-simulate' 파라미터로 절체 동작 수행:</p>
+<div class="paragraph">
+<p>'MetroCluster switchover-simulate</p>
+</div>
 </li>
 <li>
-<p>관리자 권한 수준(+' * set-privilege admin * ')으로 돌아갑니다</p>
+<p>관리자 권한 레벨로 돌아갑니다.</p>
+<div class="paragraph">
+<p>'Set-Privilege admin&#8217;입니다</p>
+</div>
 </li>
 </ol>
 </div>

@@ -3703,7 +3703,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
@@ -3743,7 +3743,7 @@
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>유지보수 모드에서 다음 명령을 입력하여 FC 포트 구성을 복원합니다.</p>
+<p>유지보수 모드에서 FC 포트 구성을 복원합니다.</p>
 <div class="paragraph">
 <p>'ucadmin modify -m fc -t initiatoradapter_name&#8217;입니다</p>
 </div>
@@ -3768,7 +3768,7 @@
 <p>두 포트도 동일합니다</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>포트 쌍의 한 포트를 수정하면 다른 포트도 수정되기 때문에 시스템에서 메시지가 나타나면 y를 선택합니다.</p>
+<p>포트 쌍의 한 포트를 수정하면 다른 포트도 수정되기 때문에 시스템에서 메시지가 나타나면 "y"를 선택합니다.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3778,10 +3778,10 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>시스템에 의해 메시지가 나타나면 "n"을 선택합니다.</p>
+<p>시스템에 의해 메시지가 나타나면 "n"이라고 대답합니다.</p>
 </li>
 <li>
-<p>FC 포트 구성을 복원하려면 다음 명령을 입력합니다.</p>
+<p>FC 포트 구성을 복구합니다.</p>
 </li>
 </ol>
 </div>
@@ -3793,7 +3793,10 @@
 </table>
 </li>
 <li>
-<p>'halt' 명령어를 입력하여 Maintenance Mode를 종료한다</p>
+<p>유지 관리 모드 종료:</p>
+<div class="paragraph">
+<p>"중지"</p>
+</div>
 <div class="paragraph">
 <p>명령을 실행한 후 LOADER 프롬프트에서 시스템이 중지될 때까지 기다립니다.</p>
 </div>
@@ -3805,13 +3808,16 @@
 </div>
 </li>
 <li>
-<p>다음 명령을 입력하여 변수 값을 확인합니다.</p>
+<p>변수 값을 확인합니다.</p>
 <div class="paragraph">
 <p>'ucadmin 쇼'</p>
 </div>
 </li>
 <li>
-<p>유지보수 모드를 종료하고 LOADER 프롬프트에서 "HALT"를 표시합니다</p>
+<p>유지보수 모드를 종료하고 로더 프롬프트를 표시합니다.</p>
+<div class="paragraph">
+<p>"중지"</p>
+</div>
 </li>
 </ol>
 </div>

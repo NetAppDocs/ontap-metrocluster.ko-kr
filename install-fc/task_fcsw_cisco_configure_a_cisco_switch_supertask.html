@@ -3703,7 +3703,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
@@ -3898,21 +3898,21 @@ Cisco MDS 9250i 스위치에는 고정 1/10 GbE IP 스토리지 서비스 포트
 <p>콘솔을 연결하고 동일한 Fabric의 두 스위치에 로그인합니다.</p>
 </li>
 <li>
-<p>스위치를 기본 설정으로 다시 설정하려면 다음 명령을 실행합니다.</p>
+<p>스위치를 기본 설정으로 다시 설정합니다.</p>
 <div class="paragraph">
 <p>쓰기 지우기</p>
 </div>
 <div class="paragraph">
-<p>명령을 확인하라는 메시지가 나타나면 y를 응답할 수 있습니다. 그러면 스위치에 있는 모든 라이센스 및 구성 정보가 지워집니다.</p>
+<p>명령을 확인하라는 메시지가 나타나면 ""y""를 응답할 수 있습니다. 그러면 스위치에 있는 모든 라이센스 및 구성 정보가 지워집니다.</p>
 </div>
 </li>
 <li>
-<p>다음 명령을 실행하여 스위치를 재부팅합니다.</p>
+<p>스위치를 재부팅합니다.</p>
 <div class="paragraph">
 <p>다시 로드</p>
 </div>
 <div class="paragraph">
-<p>명령을 확인하라는 메시지가 나타나면 y를 응답할 수 있습니다.</p>
+<p>명령을 확인하라는 메시지가 나타나면 ""y""를 응답할 수 있습니다.</p>
 </div>
 </li>
 <li>
@@ -3962,9 +3962,9 @@ FC_Switch_B_1# write erase
 <p>SNMP 커뮤니티 문자열을 입력하라는 메시지가 표시될 때까지 설정 질문에 대한 기본 응답을 수락합니다.</p>
 </li>
 <li>
-<p>ONTAP 상태 모니터에서 액세스할 수 있도록 커뮤니티 문자열을 "public"(모두 소문자)로 설정합니다.</p>
+<p>ONTAP 상태 모니터에서 액세스할 수 있도록 커뮤니티 문자열을 ""public"(모두 소문자)로 설정합니다.</p>
 <div class="paragraph">
-<p>커뮤니티 문자열을 "public"이 아닌 값으로 설정할 수 있지만 지정한 커뮤니티 문자열을 사용하여 ONTAP 상태 모니터를 구성해야 합니다.</p>
+<p>커뮤니티 문자열을 ""public"" 이외의 값으로 설정할 수 있지만 지정한 커뮤니티 문자열을 사용하여 ONTAP 상태 모니터를 구성해야 합니다.</p>
 </div>
 <div class="paragraph">
 <p>다음 예에서는 FC_SWITCH_A_1의 명령을 보여 줍니다.</p>
@@ -4014,7 +4014,7 @@ FC_Switch_B_1# write erase
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>다음 명령을 실행하여 스위치 패브릭의 라이센스 사용량을 표시합니다.</p>
+<p>스위치 패브릭의 라이센스 사용량을 표시합니다.</p>
 <div class="paragraph">
 <p>'포트-리소스 모듈 1</p>
 </div>
@@ -4023,7 +4023,7 @@ FC_Switch_B_1# write erase
 </div>
 </li>
 <li>
-<p>다음 명령을 실행하여 구성 모드로 전환합니다.</p>
+<p>구성 모드 시작:</p>
 <div class="paragraph">
 <p>구성</p>
 </div>
@@ -4033,7 +4033,7 @@ FC_Switch_B_1# write erase
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>라이센스가 없는 포트를 선택하려면 다음 명령을 실행합니다.</p>
+<p>라이센스가 없는 포트를 선택합니다.</p>
 <div class="paragraph">
 <p>interface_interface-name _</p>
 </div>
@@ -4058,7 +4058,7 @@ FC_Switch_B_1# write erase
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>라이센스가 없는 포트를 선택하려면 다음 명령을 실행합니다.</p>
+<p>라이센스가 없는 포트를 선택합니다.</p>
 <div class="paragraph">
 <p>interface_interface-name _</p>
 </div>
@@ -4169,7 +4169,7 @@ FC_Switch_B_1# write erase
 </div>
 </li>
 <li>
-<p>다음 명령을 순서대로 입력하여 포트 그룹에서 필요한 포트를 라이센스하고 획득합니다.</p>
+<p>포트 그룹에서 필요한 포트를 라이센스 및 취득합니다.</p>
 <div class="paragraph">
 <p>구성</p>
 </div>
@@ -4243,7 +4243,7 @@ switch(config-if)# end</pre>
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>다음 명령을 실행하여 구성 모드로 전환합니다.</p>
+<p>구성 모드 시작:</p>
 <div class="paragraph">
 <p>구성</p>
 </div>
@@ -4261,13 +4261,13 @@ switch(config-if)# end</pre>
 </div>
 </li>
 <li>
-<p>다음 명령을 실행하여 포트를 F 모드로 설정합니다.</p>
+<p>포트를 F 모드로 설정합니다.</p>
 <div class="paragraph">
 <p>스치포트 모드 F</p>
 </div>
 </li>
 <li>
-<p>다음 명령을 실행하여 포트를 고정 속도로 설정합니다.</p>
+<p>포트를 고정 속도로 설정합니다.</p>
 <div class="paragraph">
 <p>'switchport speed_speed-value_'</p>
 </div>
@@ -4276,7 +4276,7 @@ switch(config-if)# end</pre>
 </div>
 </li>
 <li>
-<p>다음 명령을 실행하여 스위치 포트의 속도 모드를 Dedicated로 설정합니다.</p>
+<p>스위치 포트의 속도 모드를 Dedicated로 설정합니다.</p>
 <div class="paragraph">
 <p>'위츠포트 속도 모드 전용&#8217;입니다</p>
 </div>
@@ -4288,7 +4288,7 @@ switch(config-if)# end</pre>
 </div>
 </li>
 <li>
-<p>다음 명령을 실행하여 구성 모드를 종료합니다.</p>
+<p>구성 모드 종료:</p>
 <div class="paragraph">
 <p>"끝"</p>
 </div>
@@ -4487,9 +4487,9 @@ fc1/39                                      1        8.0 dedicated
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
 </colgroup>
 <tbody>
 <tr>
@@ -5438,11 +5438,11 @@ FC_switch_B_1# copy running-config startup-config</pre>
 </li>
 <li>
 <p>구성 모드 종료:</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>종료</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -5650,7 +5650,7 @@ max-bandwidth-mbps 5000 min-available-bandwidth-mbps 4500 round-trip-time-ms 3
 </div>
 </li>
 <li>
-<p>48로 제어 TCP 연결을 구성하고 DSCP(Differentiated Services Code Point) 값에 있는 모든 패킷을 표시하려면 26으로 데이터 연결을 구성합니다.</p>
+<p>48로 제어 TCP 연결을 구성하고 데이터 연결을 26으로 구성하여 해당 DSCP(Differentiated Services Code Point) 값에 있는 모든 패킷을 표시합니다.</p>
 <div class="paragraph">
 <p>QoS 제어 48 데이터 26</p>
 </div>
@@ -6474,7 +6474,10 @@ FC_switch_B_1# copy running-config startup-config</pre>
 </div>
 </li>
 <li>
-<p>FCIP 프로파일을 구성하는 프로파일 이름은 + 'FCIP profile_FCIP-profile-name_'입니다</p>
+<p>다음 프로파일 이름으로 FCIP 프로파일을 구성합니다.</p>
+<div class="paragraph">
+<p>'FCIP profile_FCIP-profile-name_'</p>
+</div>
 <div class="paragraph">
 <p>다음 목록에는 '<em>FCIP-profile-name</em>' 매개 변수의 값이 나와 있습니다.</p>
 </div>

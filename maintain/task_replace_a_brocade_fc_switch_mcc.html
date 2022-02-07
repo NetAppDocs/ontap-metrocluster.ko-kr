@@ -3703,7 +3703,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
@@ -3713,6 +3713,14 @@
           alt="netapp-ivanad"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/76115643?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3744,13 +3752,11 @@
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">포트 연결</th>
-<th class="tableblock halign-left valign-top">포트</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">포트 연결</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">포트</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>FC-VI 연결</p>
@@ -3806,10 +3812,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당</a></p>
+<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html">"ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"</a></p>
 </li>
 <li>
-<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</a></p>
+<p><a href="concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html">"ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"</a></p>
 </li>
 </ul>
 </div>
@@ -3821,7 +3827,10 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>각 포트에 대해 정상 스위치의 ISL 포트(+" * portcfgpersistentdisable_port-number_ * ")를 비활성화합니다</p>
+<p>각 포트에 대해 정상 스위치의 ISL 포트 비활성화:</p>
+<div class="paragraph">
+<p>"portcfgpersistentdisable_port-number _"</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>FC_switch_A_1:admin&gt; portcfgpersistentdisable 10
@@ -3830,7 +3839,13 @@ FC_switch_A_1:admin&gt; portcfgpersistentdisable 11</pre>
 </div>
 </li>
 <li>
-<p>손상된 스위치가 계속 작동하는 경우 각 포트에 대해 해당 스위치에서 FC-VI 및 HBA 포트를 비활성화합니다. + "* portcfgpersistentdisable_port-number_ *</p>
+<p>손상된 스위치가 계속 작동하는 경우 각 포트에 대해 해당 스위치에서 FC-VI 및 HBA 포트를 비활성화합니다.</p>
+<div class="paragraph">
+<p>"portcfgpersistentdisable_port-number _"</p>
+</div>
+</li>
+</ol>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>FC_switch_B_1:admin&gt; portcfgpersistentdisable 0
@@ -3842,11 +3857,8 @@ FC_switch_B_1:admin&gt; portcfgpersistentdisable 5</pre>
 </div>
 </div>
 </li>
-</ol>
-</div>
-</li>
 <li>
-<p>손상된 스위치가 여전히 작동 중이면 ' * switchshow * ' 명령을 사용하여 출력을 수집합니다.</p>
+<p>손상된 스위치가 계속 작동한다면 'SWIchshow' 명령에서 출력을 수집합니다.</p>
 <div class="listingblock">
 <div class="content">
 <pre>FC_switch_B_1:admin&gt; switchshow
@@ -3871,10 +3883,13 @@ FC_switch_B_1:admin&gt; portcfgpersistentdisable 5</pre>
 <p>새 스위치의 전원을 켜고 부팅하십시오.</p>
 </li>
 <li>
-<p>스위치의 펌웨어 버전을 확인하여 다른 FC 스위치의 버전과 일치하는지 확인합니다</p>
+<p>스위치의 펌웨어 버전이 다른 FC 스위치의 버전과 일치하는지 확인합니다.</p>
+<div class="paragraph">
+<p>'firmwareswHow&#8217;입니다</p>
+</div>
 </li>
 <li>
-<p>MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 섹션을 건너뜁니다.</p>
+<p>_MetroCluster 설치 및 구성에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 절차를 건너뜁니다.</p>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html">"패브릭 연결 MetroCluster 설치 및 구성"</a></p>
 </div>
@@ -3950,16 +3965,16 @@ FC_switch_B_1:admin&gt; portcfgpersistentdisable 7</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>가상 Fabric 비활성화</p>
+<p>가상 패브릭을 비활성화합니다</p>
 </li>
 <li>
 <p>페이로드를 설정합니다</p>
 </li>
 <li>
-<p>인증 정책 설정</p>
+<p>인증 정책을 설정합니다</p>
 </li>
 <li>
-<p>Brocade 스위치에서 ISL 암호화 설정</p>
+<p>Brocade 스위치에서 ISL 암호화를 설정합니다</p>
 </li>
 </ul>
 </div>
@@ -3969,7 +3984,10 @@ FC_switch_B_1:admin&gt; portcfgpersistentdisable 7</pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>ISL:+" * portcfgpersistentenable_port-number_ *"를 활성화합니다</p>
+<p>ISL 활성화:</p>
+<div class="paragraph">
+<p>"portcfgpersistentenable_port-number _"</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>FC_switch_B_1:admin&gt; portcfgpersistentenable 10
@@ -3978,7 +3996,10 @@ FC_switch_B_1:admin&gt; portcfgpersistentenable 11</pre>
 </div>
 </li>
 <li>
-<p>교체 스위치(예제의 FC_SWITCH_B_1)에서 ISL이 온라인 상태인지 확인합니다</p>
+<p>교체 스위치(예제의 FC_SWITCH_B_1)에서 ISL이 온라인 상태인지 확인합니다.</p>
+<div class="paragraph">
+<p>재치쇼</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>FC_switch_B_1:admin&gt; switchshow
@@ -4040,7 +4061,7 @@ FC_switch_B_1:admin&gt; portcfgpersistentenable 3</pre>
 <li>
 <p>포트가 온라인 상태인지 확인합니다.</p>
 <div class="paragraph">
-<p>``switchshow *’’입니다</p>
+<p>재치쇼</p>
 </div>
 </li>
 <li>
@@ -4048,43 +4069,43 @@ FC_switch_B_1:admin&gt; portcfgpersistentenable 3</pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "</p>
+<p>시스템에 다중 경로 가 있는지 확인합니다.</p>
+<div class="paragraph">
+<p>'node run-node_node-name_sysconfig-a'</p>
+</div>
 </li>
 <li>
 <p>두 클러스터 모두에서 상태 알림을 확인합니다.</p>
 <div class="paragraph">
-<p>'* 시스템 상태 경고 표시 * '</p>
+<p>'시스템 상태 경고 표시</p>
 </div>
 </li>
 <li>
 <p>MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.</p>
 <div class="paragraph">
-<p>``MetroCluster 쇼 *’</p>
+<p>MetroCluster 쇼</p>
 </div>
 </li>
 <li>
 <p>MetroCluster 검사를 수행합니다.</p>
 <div class="paragraph">
-<p>' * MetroCluster check run * '</p>
+<p>'MetroCluster check run</p>
 </div>
 </li>
 <li>
 <p>MetroCluster 검사 결과를 표시합니다.</p>
 <div class="paragraph">
-<p>``MetroCluster CHOK SHOW *’’</p>
+<p>MetroCluster 체크 쇼</p>
 </div>
 </li>
 <li>
 <p>스위치에 대한 상태 경고를 확인합니다(있는 경우).</p>
 <div class="paragraph">
-<p>'* 스토리지 스위치 쇼 * '</p>
+<p>'스토리지 스위치 쇼'</p>
 </div>
 </li>
 <li>
-<p>Config Advisor를 실행합니다.</p>
-<div class="paragraph">
-<p><a href="https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor">"NetApp 다운로드: Config Advisor"</a></p>
-</div>
+<p>실행 <a href="https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor">"Config Advisor"</a>.</p>
 </li>
 <li>
 <p>Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.</p>

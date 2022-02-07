@@ -3703,11 +3703,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
 <span>기여자
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/NetAppZacharyWambold">
     <img  class="avatar avatar-small"
           alt="NetAppZacharyWambold"
@@ -3728,7 +3736,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>전환된 데이터 애그리게이트가 'Storage aggregate show&#8217;로 다시 전환되는지 확인합니다</p>
+<p>전환된 데이터 애그리게이트가 다시 전환되는지 확인합니다.</p>
+<div class="paragraph">
+<p>'스토리지 집계 쇼'</p>
+</div>
 <div class="paragraph">
 <p>다음 예제에서 노드 B2의 aggr_b2는 다시 전환되었습니다.</p>
 </div>
@@ -3750,11 +3761,14 @@ aggr_b2          -         -     - unknown      - node_A_1</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 애그리게이트 show 명령의 출력에 알 수 없는 상태로 애그리게이트가 표시될 수 있습니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.</p>
+<p>재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에 "unknown" 상태로 나타날 수 있습니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.</p>
 </div>
 </li>
 <li>
-<p>정상적인 클러스터의 모든 동기화 대상 SVM이 휴면 상태(중지된 관리 상태 표시)이고 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다. 'vserver show-subtype sync-source'</p>
+<p>정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태이고("가동 상태"를 나타냄), 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.</p>
+<div class="paragraph">
+<p>'vserver show-subtype sync-source&#8217;를 선택합니다</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>node_B_1::&gt; vserver show -subtype sync-source
@@ -3777,7 +3791,7 @@ cluster_A-vs1a-mc  data    sync-destination
 </div>
 </div>
 <div class="paragraph">
-<p>MetroCluster 구성의 동기화 대상 애그리게이트에는 쉽게 식별할 수 있도록 이름에 접미사 "-mc"가 자동으로 추가됩니다.</p>
+<p>MetroCluster 구성의 동기화 대상 애그리게이트에는 식별을 위해 이름에 ""-mc" 접미사가 자동으로 추가됩니다.</p>
 </div>
 </li>
 <li>
@@ -3787,13 +3801,11 @@ cluster_A-vs1a-mc  data    sync-destination
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">명령 출력에 다음과 같은 내용이 표시되는 경우</th>
-<th class="tableblock halign-left valign-top">그러면&#8230;&#8203;</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">명령 출력에 다음과 같은 내용이 표시되는 경우</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">그러면&#8230;&#8203;</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>스위치백 작업 상태가 성공입니다.</p>
@@ -3807,7 +3819,7 @@ cluster_A-vs1a-mc  data    sync-destination
 <p>스위치백 작업 또는 스위치백 연속 - 상담원 작업이 부분적으로 성공했음을 나타냅니다.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>MetroCluster operation show 명령의 출력에 제공된 권장 해결 방법을 수행합니다.</p>
+<p>'MetroCluster operation show' 명령의 출력에서 제시된 픽스를 수행한다.</p>
 </div></div></td>
 </tr>
 </tbody>

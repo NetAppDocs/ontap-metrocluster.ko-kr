@@ -3703,11 +3703,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
     
   
 
 <span>기여자
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -3766,14 +3774,12 @@
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">컨트롤러 모듈의 클러스터 연결 수입니다</th>
-<th class="tableblock halign-left valign-top">포트를 그룹화합니다</th>
-<th class="tableblock halign-left valign-top">그룹 B 포트</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">컨트롤러 모듈의 클러스터 연결 수입니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">포트를 그룹화합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">그룹 B 포트</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2개</p>
@@ -3818,15 +3824,13 @@
 <col style="width: 25%;">
 <col style="width: 25%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">모델 전환</th>
-<th class="tableblock halign-left valign-top">MetroCluster IP 노드 모델입니다</th>
-<th class="tableblock halign-left valign-top">스위치 포트</th>
-<th class="tableblock halign-left valign-top">에 연결합니다</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">모델 전환</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster IP 노드 모델입니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">스위치 포트</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">에 연결합니다</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Cisco 3132Q-V 또는 3232C</p></td>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">모두</p></td>
@@ -3894,7 +3898,7 @@
 </table>
 <div class="sect2">
 <h3 id="새-ip-스위치를-사용할-때-로컬-클러스터-연결을-이동합니다">새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다</h3>
-<div class="paragraph lead">
+<div class="paragraph">
 <p>새 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 새 스위치로 물리적으로 이동해야 합니다.</p>
 </div>
 <div class="olist arabic">
@@ -3922,7 +3926,10 @@
 </div>
 </li>
 <li>
-<p>모든 클러스터 포트가 작동 중인지 확인합니다. 'network port show-ipSpace Cluster'</p>
+<p>모든 클러스터 포트가 작동하는지 확인합니다.</p>
+<div class="paragraph">
+<p>네트워크 포트 표시 - IPSpace 클러스터</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>cluster_A::*&gt; network port show -ipspace Cluster
@@ -3950,7 +3957,10 @@ cluster_A::*&gt;</pre>
 </div>
 </li>
 <li>
-<p>모든 인터페이스가 '홈' 열 '네트워크 인터페이스 show-vserver cluster&#8217;에 true로 표시되는지 확인합니다</p>
+<p>모든 인터페이스가 ""홈" 열에 참 으로 표시되는지 확인합니다.</p>
+<div class="paragraph">
+<p>'network interface show-vserver cluster'</p>
+</div>
 <div class="paragraph">
 <p>이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</p>
 </div>
@@ -3981,14 +3991,14 @@ cluster_A::*&gt;</pre>
 <p>두 노드(node_A_1-FC 및 node_A_2-FC)에서 위의 단계를 수행하여 클러스터 인터페이스의 그룹 B 포트를 이동합니다.</p>
 </li>
 <li>
-<p>파트너 클러스터 "cluster_B"에서 위의 단계를 반복합니다.</p>
+<p>파트너 클러스터 ""cluster_B""에서 위의 단계를 반복합니다.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
 <h3 id="기존-ip-스위치를-재사용할-때-로컬-클러스터-연결을-이동합니다">기존 IP 스위치를 재사용할 때 로컬 클러스터 연결을 이동합니다</h3>
-<div class="paragraph lead">
+<div class="paragraph">
 <p>기존 IP 스위치를 재사용하는 경우 펌웨어를 업데이트하고 올바른 RCFs(Reference Configure Files)를 사용하여 스위치를 재구성한 후 한 번에 하나의 스위치로 연결을 올바른 포트로 이동해야 합니다.</p>
 </div>
 <div class="paragraph">
@@ -4009,28 +4019,28 @@ cluster_A::*&gt;</pre>
 <p>플랫폼에 대한 설치 및 설정 지침을 참조하여 클러스터 포트 사용량을 확인할 수 있습니다.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html">"AFF A320 시스템: 설치 및 설정"</a></p>
+<p><a href="https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html" target="_blank" rel="noopener">"AFF A320 시스템: 설치 및 설정"</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666">"AFF A220/FAS2700 시스템 설치 및 설정 지침"</a></p>
+<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666" target="_blank" rel="noopener">"AFF A220/FAS2700 시스템 설치 및 설정 지침"</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668">"AFF A800 시스템 설치 및 설정 지침"</a></p>
+<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668" target="_blank" rel="noopener">"AFF A800 시스템 설치 및 설정 지침"</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722">"AFF A300 시스템 설치 및 설정 지침"</a></p>
+<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722" target="_blank" rel="noopener">"AFF A300 시스템 설치 및 설정 지침"</a></p>
 </div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769">"FAS8200 시스템 설치 및 설정 지침"</a></p>
+<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769" target="_blank" rel="noopener">"FAS8200 시스템 설치 및 설정 지침"</a></p>
 </div>
 </li>
 <li>
 <p>플랫폼 조합 및 전환을 위해 생성된 RCF 파일을 사용하여 SWITCH_A_1_IP를 재구성합니다.</p>
 <div class="paragraph">
-<p>아래 링크에 나와 있는 대로 _MetroCluster IP 설치 및 구성 가이드_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.</p>
+<p>_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 절차에 따라 다음 단계를 수행하십시오.</p>
 </div>
 <div class="paragraph">
 <p><a href="../install-ip/concept_considerations_differences.html">"MetroCluster IP 설치 및 구성"</a></p>
@@ -4085,11 +4095,14 @@ cluster_A::*&gt;</pre>
 <li>
 <p>스위치_A_1_IP에 그룹 A 포트를 다시 연결합니다.</p>
 <div class="paragraph">
-<p>에 설명된 포트를 사용합니다 <a href="task_transition_from_mcc_fc_to_mcc_ip_configurations..html">MetroCluster FC 노드에서 클러스터 접속 이동</a>.</p>
+<p>에 설명된 포트를 사용합니다 <a href="task_transition_from_mcc_fc_to_mcc_ip_configurations.html">"MetroCluster FC 노드에서 클러스터 접속 이동"</a>.</p>
 </div>
 </li>
 <li>
-<p>모든 클러스터 포트가 작동 중인지 확인합니다. 'network port show-ipSpace cluster'</p>
+<p>모든 클러스터 포트가 작동하는지 확인합니다.</p>
+<div class="paragraph">
+<p>네트워크 포트 show-IPSpace cluster</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Cluster-A::*&gt; network port show -ipspace cluster
@@ -4117,7 +4130,10 @@ Cluster-A::*&gt;</pre>
 </div>
 </li>
 <li>
-<p>모든 인터페이스가 홈 포트인 'network interface show-vserver Cluster&#8217;에 있는지 확인합니다</p>
+<p>모든 인터페이스가 홈 포트에 있는지 확인합니다.</p>
+<div class="paragraph">
+<p>'network interface show-vserver cluster'</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Cluster-A::*&gt; network interface show -vserver Cluster
@@ -4161,13 +4177,16 @@ Cluster-A::*&gt;</pre>
 <div class="sect1">
 <h2 id="클러스터-연결이-이동되고-클러스터가-정상-상태인지-확인">클러스터 연결이 이동되고 클러스터가 정상 상태인지 확인</h2>
 <div class="sectionbody">
-<div class="paragraph lead">
+<div class="paragraph">
 <p>적절하게 접속되어 있고 전환 프로세스를 진행할 준비가 되었는지 확인하려면 클러스터 연결이 올바르게 이동되었는지, 클러스터 스위치가 인식되는지, 클러스터가 정상인지 확인해야 합니다.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>모든 클러스터 포트가 실행 중인지 확인합니다. 'network port show-ipSpace Cluster'</p>
+<p>모든 클러스터 포트가 실행 중인지 확인합니다.</p>
+<div class="paragraph">
+<p>네트워크 포트 표시 - IPSpace 클러스터</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Cluster-A::*&gt; network port show -ipspace Cluster
@@ -4195,12 +4214,15 @@ Cluster-A::*&gt;</pre>
 </div>
 </li>
 <li>
-<p>모든 인터페이스가 홈 포트인 'network interface show-vserver Cluster&#8217;에 있는지 확인합니다</p>
+<p>모든 인터페이스가 홈 포트에 있는지 확인합니다.</p>
+<div class="paragraph">
+<p>'network interface show-vserver cluster'</p>
+</div>
 <div class="paragraph">
 <p>이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</p>
 </div>
 <div class="paragraph">
-<p>다음 예제에서는 모든 인터페이스가 홈 열에 true 로 표시되는 것을 보여 줍니다.</p>
+<p>다음 예제는 모든 인터페이스가 ""홈" 열에 true로 표시된다는 것을 보여줍니다.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4226,7 +4248,10 @@ Cluster-A::*&gt;</pre>
 </div>
 </li>
 <li>
-<p>두 로컬 IP 스위치가 모두 'network device-discovery show-protocol CDP' 노드에서 검색되는지 확인합니다</p>
+<p>두 로컬 IP 스위치가 모두 노드에서 검색되는지 확인합니다.</p>
+<div class="paragraph">
+<p>네트워크 디바이스 검색 표시 프로토콜 CDP</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Cluster-A::*&gt; network device-discovery show -protocol cdp
@@ -4250,7 +4275,10 @@ Cluster-A::*&gt;</pre>
 </div>
 </li>
 <li>
-<p>IP 스위치에서 두 로컬 IP 스위치(CDP 네이버 사용)가 MetroCluster IP 노드를 검색했는지 확인합니다</p>
+<p>IP 스위치에서 두 로컬 IP 스위치 모두에서 MetroCluster IP 노드가 검색되었는지 확인합니다.</p>
+<div class="paragraph">
+<p>CDP 이웃의 성전</p>
+</div>
 <div class="paragraph">
 <p>각 스위치에서 이 단계를 수행해야 합니다.</p>
 </div>
