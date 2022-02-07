@@ -87,7 +87,7 @@ image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[워크플�
 
 자세한 전환 절차를 따라야 합니다.
 
-다음 단계에서는 이 가이드의 다른 섹션으로 이동합니다. 각 참조 섹션의 단계를 주어진 순서대로 수행해야 합니다.
+다음 단계에서는 다른 절차로 이동합니다. 각 참조 절차의 단계를 지정된 순서대로 수행해야 합니다.
 
 .단계
 . 의 단계를 사용하여 포트 매핑을 계획합니다 link:../transition/concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.html#mapping-ports-from-the-metrocluster-fc-nodes-to-the-metrocluster-ip-nodes["MetroCluster FC 노드의 포트를 MetroCluster IP 노드로 매핑"].

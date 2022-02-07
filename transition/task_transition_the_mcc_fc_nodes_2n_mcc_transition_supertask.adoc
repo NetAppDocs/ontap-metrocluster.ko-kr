@@ -190,7 +190,7 @@ mc 접미사가 있는 SVM을 포함하여 모든 SVM에 있는 모든 LIF에 �
 
 .. MetroCluster IP 인터페이스 포트와의 충돌을 해결하기 위해 필요에 따라 LIF를 이동합니다.
 +
-의 1단계에서 확인한 LIF를 이동해야 합니다 xref:concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.adoc[MetroCluster FC 노드의 포트를 MetroCluster IP 노드로 매핑].
+의 1단계에서 확인한 LIF를 이동해야 합니다 link:concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.html["MetroCluster FC 노드의 포트를 MetroCluster IP 노드로 매핑"].
 
 +
 ... 원하는 포트에서 호스팅되는 모든 LIF를 다른 포트로 이동합니다. 'network interface modify -lif lifname -vserver vserver -name -home-port new-homedport''network interface revert-lif lifname -vserver vservername'

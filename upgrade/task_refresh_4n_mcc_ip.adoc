@@ -84,12 +84,9 @@ image::../media/mcc_dr_group_b.png[MCC DR 그룹 b]
 +
 의 단계를 수행합니다 link:../maintain/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"].
 
-. 컨트롤러 하드웨어 업그레이드 익스프레스 가이드 _ 의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다.
+. 의 다음 절차에 따라 이전 노드에서 새 노드로 데이터를 이동합니다 https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/home.html["기타 플랫폼 절차: 컨트롤러 하드웨어 업그레이드 익스프레스 가이드"^]
 +
-https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/home.html["기타 플랫폼 절차: 컨트롤러 하드웨어 업그레이드 익스프레스 가이드"]
-
-+
-.. 의 모든 단계를 수행합니다 http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-AFE432F6-60AD-4A79-86C0-C7D12957FA63.html["Aggregate 생성 및 볼륨을 새 노드로 이동"].
+.. 의 모든 단계를 수행합니다 http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-AFE432F6-60AD-4A79-86C0-C7D12957FA63.html["Aggregate 생성 및 볼륨을 새 노드로 이동"^].
 +
 
 NOTE: Aggregate를 생성할 때나 생성한 후에 미러링할 수도 있습니다.
@@ -139,14 +136,14 @@ MetroCluster 체크 쇼
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations["MetroCluster 구성 추가"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations["MetroCluster 구성 추가"] MetroCluster Tiebreaker 설치 및 구성 _.
 
 
 
  a| 
 중재자
  a| 
-link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 가이드 _ 에서
+link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 _.
 
 
 

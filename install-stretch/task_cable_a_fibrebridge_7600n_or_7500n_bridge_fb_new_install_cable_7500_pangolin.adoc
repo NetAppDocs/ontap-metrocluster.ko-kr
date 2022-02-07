@@ -25,7 +25,7 @@ IOM3 모듈은 FiberBridge 7600N 브리지에서 지원되지 않습니다.
 쉘프 모델의 _설치 및 서비스 안내서_에서는 데이지 체인 방식의 쉘프에 대한 자세한 정보를 제공합니다.
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMP1119629["DS4243, DS2246, DS4486 및 DS4246용 SAS 디스크 쉘프 설치 및 서비스 가이드"]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1119629["DS4243, DS2246, DS4486 및 DS4246용 SAS 디스크 쉘프 설치 및 서비스 가이드"^]
 
 +
 다음 그림에서는 쉘프 스택에 연결된 브리지 세트를 보여 줍니다.

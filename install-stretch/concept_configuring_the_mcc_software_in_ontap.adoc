@@ -38,7 +38,7 @@ image::../media/workflow_high_level_node_and_cluster_configuration_software.gif[
 
 
  a| 
-클러스터 이름입니다. 이 설명서에 사용된 예: site_a
+클러스터 이름입니다. 이 정보에 사용된 예: site_a
  a| 
 
 
@@ -79,7 +79,7 @@ DNS 이름 서버
 
 
  a| 
-노드 1. 이 설명서에 사용된 예: controller_a_1
+노드 1. 이 정보에 사용된 예: controller_a_1
  a| 
  a| 
  a| 
@@ -90,7 +90,7 @@ DNS 이름 서버
  a| 
 노드 2. 2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 필요하지 않습니다.
 
-이 설명서에 사용된 예: controller_a_2
+이 정보에 사용된 예: controller_a_2
  a| 
  a| 
  a| 
@@ -252,7 +252,7 @@ HTTP, HTTPS 또는 SMTP
 
 
  a| 
-클러스터 이름입니다. 본 가이드에 사용된 예: site_B
+클러스터 이름입니다. 이 정보에 사용된 예: site_B
  a| 
 
 
@@ -293,7 +293,7 @@ DNS 이름 서버
 
 
  a| 
-노드 1. 이 설명서에 사용된 예: controller_B_1
+노드 1. 이 정보에 사용된 예: controller_B_1
  a| 
  a| 
  a| 
@@ -304,7 +304,7 @@ DNS 이름 서버
  a| 
 노드 2. 2노드 MetroCluster 구성에는 필요하지 않습니다(각 사이트에 1개 노드).
 
-이 설명서에 사용된 예: controller_B_2
+이 정보에 사용된 예: controller_B_2
  a| 
  a| 
  a| 

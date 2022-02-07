@@ -12,22 +12,24 @@ summary: MetroCluster 재해 복구 프로세스를 수행하기 위한 특정 O
 [role="lead"]
 MetroCluster 재해 복구 프로세스를 수행하기 위한 특정 ONTAP 명령이 있습니다.
 
-[cols="2*"]
+[cols="1,2"]
 |===
+
+
 | 원하는 작업 | 이 명령 사용... 
 
 
  a| 
 스위치오버가 오류 또는 문제 없이 수행될 수 있는지 확인합니다.
  a| 
-고급 권한 수준에서 'MetroCluster switchover-simulate'
+고급 권한 수준에서 'MetroCluster switchover-simulate'+
 
 
 
  a| 
 오류 또는 거부가 없이 스위치백을 수행할 수 있는지 확인합니다.
  a| 
-고급 권한 수준에서 MetroCluster 스위치백 시뮬레이션
+고급 권한 수준에서 'MetroCluster 스위치백 - 시뮬레이션'+
 
 
 

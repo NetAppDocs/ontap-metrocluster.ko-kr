@@ -17,6 +17,8 @@ FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니�
 다음 예에서는 FC_SWITCH_A_1이 정상 스위치이고 FC_SWITCH_B_1이 손상된 스위치입니다. 이 예의 스위치 포트 사용은 다음 표에 나와 있습니다.
 
 |===
+
+
 | 포트 연결 | 포트 
 
 
@@ -54,21 +56,27 @@ NOTE: 이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소
 
 스위치 포트 사용은 권장 할당을 따라야 합니다.
 
-* xref:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.adoc[ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당]
-* xref:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.adoc[ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당]
+* link:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"]
+* link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 
 
 .단계
 . Fabric의 정상 스위치에서 ISL 포트를 비활성화하고 손상된 스위치의 FC-VI 및 HBA 포트를 비활성화하여 스위치 교체 대상 펜스 끄기(손상된 스위치가 여전히 작동 중인 경우):
 +
-.. 각 포트에 대해 정상 스위치의 ISL 포트(+" * portcfgpersistentdisable_port-number_ * ")를 비활성화합니다
+.. 각 포트에 대해 정상 스위치의 ISL 포트 비활성화:
++
+"portcfgpersistentdisable_port-number _"
+
 +
 [listing]
 ----
 FC_switch_A_1:admin> portcfgpersistentdisable 10
 FC_switch_A_1:admin> portcfgpersistentdisable 11
 ----
-.. 손상된 스위치가 계속 작동하는 경우 각 포트에 대해 해당 스위치에서 FC-VI 및 HBA 포트를 비활성화합니다. + "* portcfgpersistentdisable_port-number_ *
+.. 손상된 스위치가 계속 작동하는 경우 각 포트에 대해 해당 스위치에서 FC-VI 및 HBA 포트를 비활성화합니다.
++
+"portcfgpersistentdisable_port-number _"
+
 +
 [listing]
 ----
@@ -81,7 +89,7 @@ FC_switch_B_1:admin> portcfgpersistentdisable 5
 ----
 
 
-. 손상된 스위치가 여전히 작동 중이면 ' * switchshow * ' 명령을 사용하여 출력을 수집합니다.
+. 손상된 스위치가 계속 작동한다면 'SWIchshow' 명령에서 출력을 수집합니다.
 +
 [listing]
 ----
@@ -100,8 +108,11 @@ FC_switch_B_1:admin> switchshow
 . 새 스위치를 물리적으로 설치하기 전에 부팅하고 미리 구성해야 합니다.
 +
 .. 새 스위치의 전원을 켜고 부팅하십시오.
-.. 스위치의 펌웨어 버전을 확인하여 다른 FC 스위치의 버전과 일치하는지 확인합니다
-.. MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 섹션을 건너뜁니다.
+.. 스위치의 펌웨어 버전이 다른 FC 스위치의 버전과 일치하는지 확인합니다.
++
+'firmwareswHow'입니다
+
+.. _MetroCluster 설치 및 구성에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 절차를 건너뜁니다.
 +
 https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 
@@ -143,22 +154,28 @@ FC_switch_B_1:admin> portcfgpersistentdisable 7
 ISL 암호화를 설정하는 경우 다음 작업을 완료해야 합니다.
 
 +
-** 가상 Fabric 비활성화
+** 가상 패브릭을 비활성화합니다
 ** 페이로드를 설정합니다
-** 인증 정책 설정
-** Brocade 스위치에서 ISL 암호화 설정
+** 인증 정책을 설정합니다
+** Brocade 스위치에서 ISL 암호화를 설정합니다
 
 
 . 새 스위치 구성을 완료합니다.
 +
-.. ISL:+" * portcfgpersistentenable_port-number_ *"를 활성화합니다
+.. ISL 활성화:
++
+"portcfgpersistentenable_port-number _"
+
 +
 [listing]
 ----
 FC_switch_B_1:admin> portcfgpersistentenable 10
 FC_switch_B_1:admin> portcfgpersistentenable 11
 ----
-.. 교체 스위치(예제의 FC_SWITCH_B_1)에서 ISL이 온라인 상태인지 확인합니다
+.. 교체 스위치(예제의 FC_SWITCH_B_1)에서 ISL이 온라인 상태인지 확인합니다.
++
+재치쇼
+
 +
 [listing]
 ----
@@ -213,35 +230,35 @@ FC_switch_B_1:admin> portcfgpersistentenable 3
 
 . 포트가 온라인 상태인지 확인합니다.
 +
-``switchshow *’’입니다
+재치쇼
 
 . ONTAP에서 MetroCluster 구성 작동을 확인합니다.
 +
-.. 시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "
+.. 시스템에 다중 경로 가 있는지 확인합니다.
++
+'node run-node_node-name_sysconfig-a'
+
 .. 두 클러스터 모두에서 상태 알림을 확인합니다.
 +
-'* 시스템 상태 경고 표시 * '
+'시스템 상태 경고 표시
 
 .. MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.
 +
-``MetroCluster 쇼 *’
+MetroCluster 쇼
 
 .. MetroCluster 검사를 수행합니다.
 +
-' * MetroCluster check run * '
+'MetroCluster check run
 
 .. MetroCluster 검사 결과를 표시합니다.
 +
-``MetroCluster CHOK SHOW *’’
+MetroCluster 체크 쇼
 
 .. 스위치에 대한 상태 경고를 확인합니다(있는 경우).
 +
-'* 스토리지 스위치 쇼 * '
+'스토리지 스위치 쇼'
 
-.. Config Advisor를 실행합니다.
-+
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
-
+.. 실행 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Config Advisor"].
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
 

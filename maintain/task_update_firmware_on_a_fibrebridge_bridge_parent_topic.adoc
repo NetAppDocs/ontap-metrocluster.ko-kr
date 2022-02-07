@@ -66,7 +66,7 @@ https://mysupport.netapp.com/site/products/all/details/atto-fibrebridge/download
 +
 고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 ""y""로 응답해야 합니다.
 
-. 다음 명령을 사용하여 브리지 펌웨어를 업데이트합니다.
+. 브리지 펌웨어 업데이트:
 +
 'Storage bridge firmware update-bridge name-Uri_url-of-firmware-package_
 

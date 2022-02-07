@@ -22,10 +22,7 @@ RCF 파일은 8노드 구성에 사용해야 하며 스위치 모델에 맞게 �
 . FC 스위치를 재부팅합니다.
 . 이전에 생성한 케이블링 레이아웃을 사용하여 기존 브리지와 새로운 FC-SAS 브릿지를 FC 스위치에 케이블로 연결합니다.
 +
-FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 _Fabric 연결 MetroCluster 설치 및 구성 가이드_에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다.
-
-+
-link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.
 
 +
 
@@ -52,12 +49,9 @@ Cisco의
 인터페이스 요약 표시
 
 |===
-. 이전에 생성한 케이블링 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.
+. 의 절차를 사용합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 이전에 생성한 케이블 연결 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.
 +
-link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
-
-+
-FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 _Fabric 연결 MetroCluster 설치 및 구성 가이드_에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다.
+FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.
 
 +
 

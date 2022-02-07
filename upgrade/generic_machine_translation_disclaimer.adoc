@@ -9,6 +9,4 @@ summary: MetroCluster 업그레이드, 전환 및 확장 가이드에 대한 기
 :imagesdir: ../media/
 
 
-한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십시오.
-
-https://www.netapp.com/company/legal/machine-translation/[]
+현지화된 컨텐츠에 대한 중요 정보는 에서 확인하십시오 https://www.netapp.com/company/legal/machine-translation/["기계 번역 고지 사항"]

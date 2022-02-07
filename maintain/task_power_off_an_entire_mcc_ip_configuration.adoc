@@ -13,7 +13,7 @@ summary: 유지보수 또는 재배치를 시작하려면 먼저 전체 MetroClu
 유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster IP 구성 및 모든 장비의 전원을 꺼야 합니다.
 
 
-NOTE: ONTAP 9.8부터 ' * storage switch * ' 명령이 ' * system switch * '로 대체됩니다. 다음 단계에서는 '* storage switch*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system switch*' 명령을 사용하는 것이 좋습니다.
+NOTE: ONTAP 9.8부터 ' * storage switch * ' 명령은 ' * system switch * '로 대체됩니다. 다음 단계에서는 '* storage switch*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system switch*' 명령을 사용하는 것이 좋습니다.
 
 . MetroCluster 구성의 두 사이트에서 MetroCluster 구성을 확인합니다.
 +

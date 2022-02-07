@@ -19,7 +19,7 @@ summary: 2노드 MetroCluster FC 구성을 4노드 MetroCluster FC 구성으로 
 
 * 2노드 구성의 플랫폼이 ONTAP 9.2에서 지원되지 않는 경우 ONTAP 9.2_and_Expand에서 지원되는 플랫폼으로 4-노드 클러스터로 업그레이드하려면 MetroCluster FC 구성을 확장하기_전에_2노드 구성의 플랫폼을 업그레이드해야 합니다.
 * 기존 MetroCluster FC 구성이 양호해야 합니다.
-* 추가하려는 장비가 지원되어야 하며 _Fabric-Attached MetroCluster 설치 및 구성 안내서_ 또는 _Stretch 설치 및 구성 안내서_에 설명된 모든 요구 사항을 충족해야 합니다.
+* 추가하려는 장비가 지원되어야 하며 다음 절차에 설명된 모든 요구 사항을 충족해야 합니다.
 +
 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 

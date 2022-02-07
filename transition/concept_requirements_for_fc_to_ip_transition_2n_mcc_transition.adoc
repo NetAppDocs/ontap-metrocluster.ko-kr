@@ -22,7 +22,7 @@ summary: 전환 프로세스를 시작하기 전에 구성이 요구사항을 �
 +
 2노드 패브릭 연결 또는 확장 MetroCluster가 될 수 있습니다.
 
-* MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.
+* 이 케이블은 _MetroCluster 설치 및 구성_절차에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.
 +
 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 

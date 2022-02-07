@@ -19,7 +19,7 @@ summary: 새 Brocade FC 스위치로 업그레이드하는 경우 첫 번째 패
 
 * 스위치는 지원되는 최신 펌웨어를 실행해야 합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
 
 * 이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소요됩니다.
 * FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
@@ -51,7 +51,10 @@ image::../media/brocade_upgr_to_g620_fab_1_down.gif[Brocade upgr을 G620 Fab 1�
 +
 image::../media/brocade_upgr_to_g620_replaced_a_1.gif[Brocade upgr to G620 대체 1]
 
-.. 새 스위치(+'* switchCfgPersistentDisable*')를 비활성화합니다
+.. 새 스위치를 비활성화합니다.
++
+'스치치치프트PersistentDisable'을 선택합니다
+
 +
 이 명령을 실행하면 스위치 패브릭의 두 스위치가 모두 비활성화됩니다.
 
@@ -62,10 +65,10 @@ FC_switch_A_1:admin> switchCfgPersistentDisable
 ----
 .. 권장되는 포트 할당을 사용하여 새 스위치에 케이블을 연결합니다.
 +
-xref:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.adoc[ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당]
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"]
 
 +
-xref:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.adoc[ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당]
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 
 .. 파트너 MetroCluster 사이트에서 이러한 하위 단계를 반복하여 첫 번째 스위치 패브릭의 두 번째 스위치를 교체합니다.
 +
@@ -81,12 +84,12 @@ image::../media/brocade_upgr_to_g620_replaced_b_1.gif[Brocade upgr to G620 대�
 . RCF 파일을 다운로드 페이지의 지침에 따라 패브릭의 두 새 스위치에 모두 적용합니다.
 . 스위치 구성을 저장합니다.
 +
-'* cfgSave*'
+“cfgSave”입니다
 
 . 구성이 안정화될 때까지 10분간 기다립니다.
 . MetroCluster 노드 중 하나에 다음 명령을 입력하여 디스크 연결을 확인합니다.
 +
-' * run local sysconfig -v * '
+로컬 sysconfig -v를 실행합니다
 
 +
 이 출력에서는 컨트롤러의 이니시에이터 포트에 연결된 디스크를 표시하고 FC-to-SAS 브리지에 연결된 쉘프를 식별합니다.
@@ -141,7 +144,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 ----
 . 스위치 프롬프트로 돌아가 스위치 펌웨어 버전을 확인합니다.
 +
-' * firmwareshweshwHow * '
+'firmwareswHow'입니다
 
 +
 스위치는 지원되는 최신 펌웨어를 실행해야 합니다.
@@ -151,12 +154,18 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 
 . 스위치오버 작업 시뮬레이션:
 +
-.. 노드의 프롬프트에서 고급 권한 수준(+' * set-privilege advanced * ')으로 변경합니다
+.. 노드 프롬프트에서 고급 권한 수준(+'et-Privilege advanced')으로 변경합니다
 +
-고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 "* y*"로 응답해야 합니다.
+고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 ""y""로 응답해야 합니다.
 
-.. '-simulate' 파라미터:+' * MetroCluster switchover-simulate *'로 절체 작업을 수행한다
-.. 관리자 권한 수준(+' * set-privilege admin * ')으로 돌아갑니다
+.. '-simulate' 파라미터로 절체 동작 수행:
++
+'MetroCluster switchover-simulate
+
+.. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
 
 
 . 두 번째 스위치 패브릭에서 이전 단계를 반복합니다.

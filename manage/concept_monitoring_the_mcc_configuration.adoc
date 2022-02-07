@@ -205,14 +205,14 @@ MetroCluster 상호 연결 미러 쇼
 |===
 
 
-| H 원하는 작업  a| 
-이 명령 사용...
-
+| 원하는 작업 | 이 명령 사용... 
 
 
  a| 
 MetroCluster 구성의 두 사이트 모두에서 모든 SVM을 확인합니다.
-| 'MetroCluster vserver show' 
+ a| 
+'MetroCluster vserver show'
+
 |===
 
 

@@ -5,13 +5,10 @@ keywords: metrocluster, ha-config, mccip, haconfig, verify, high-availability
 summary: 출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 mcip로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다. 
 ---
 = 구성 요소의 ha-config 상태 확인
-:firstname: [.lead]
-:author: [.lead]
-:authorinitials: [
-:authors: [.lead]
-:revnumber: 
-:revdate: this value is preconfigured and you do not need to verify it.
 
+
+[role="lead"]
+출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 " mccip "로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다.
 
 시스템이 유지보수 모드여야 합니다.
 
@@ -21,13 +18,13 @@ summary: 출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 �
 하구성 쇼
 
 +
-컨트롤러 모듈 및 섀시에는 "mccip" 값이 표시되어야 합니다.
+컨트롤러 모듈 및 섀시에는 "mcip" 값이 표시되어야 합니다.
 
-. 컨트롤러의 표시된 시스템 상태가 "mcip"이 아닌 경우 컨트롤러에 대한 HA 상태를 설정합니다.
+. 컨트롤러의 표시된 시스템 상태가 "mcip"이 아닌 경우 컨트롤러의 HA 상태를 설정합니다.
 +
 ha-config modify controller mcip.(컨트롤러 mccip 수정
 
-. 표시된 섀시 시스템 상태가 "mcip"이 아닌 경우 섀시의 HA 상태를 설정합니다.
+. 섀시의 표시된 시스템 상태가 "mcip"이 아닌 경우 섀시의 HA 상태를 설정합니다.
 +
 ha-config modify chassis mccip.(섀시 mcip 수정
 
@@ -284,7 +281,7 @@ boot_ontap 메뉴
 .. node_B_2에서 로컬 site_B-shelf_3의 디스크 하나를 풀 0에 수동으로 할당합니다.
 
 
-. 부팅 메뉴의 옵션 "4"를 사용하여 사이트 A에서 각 노드를 부팅합니다.
+. 부팅 메뉴에서 ""4" 옵션을 사용하여 사이트 A의 각 노드를 부팅합니다.
 +
 다음 노드로 진행하기 전에 노드에서 이 단계를 완료해야 합니다.
 
@@ -297,10 +294,10 @@ boot_ontap 메뉴
 +
 boot_ontap 메뉴
 
-.. 부팅 메뉴에서 옵션 "4"를 선택하고 계속 진행합니다.
+.. 부팅 메뉴에서 옵션 ""4""를 선택하고 계속 진행합니다.
 
 
-. 부팅 메뉴의 옵션 "4"를 사용하여 사이트 B에서 각 노드를 부팅합니다.
+. 부팅 메뉴에서 ""4" 옵션을 사용하여 사이트 B에서 각 노드를 부팅합니다.
 +
 다음 노드로 진행하기 전에 노드에서 이 단계를 완료해야 합니다.
 
@@ -329,7 +326,7 @@ boot_ontap 메뉴
 * 서비스 프로세서를 구성하지 않아야 합니다.
 
 
-새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 link:../upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#netbooting-the-new-controllers["새 컨트롤러 모듈을 Netbooting 합니다"] MetroCluster 업그레이드, 전환 및 확장 가이드 _.
+새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 link:../upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#netbooting-the-new-controllers["새 컨트롤러 모듈을 Netbooting 합니다"].
 
 이 작업은 MetroCluster 구성의 두 클러스터 모두에서 수행해야 합니다.
 
@@ -501,10 +498,10 @@ Where is the controller located []: site_A
 ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 (https://172.17.12.153)[].
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html["System Manager(버전 9.0 ~ 9.6)를 사용한 클러스터 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html["System Manager(버전 9.0 ~ 9.6)를 사용한 클러스터 관리"^]
 
 +
-https://docs.netapp.com/us-en/ontap/index.html["ONTAP 시스템 관리자(버전 9.7 이상)"]
+https://docs.netapp.com/us-en/ontap/index.html["ONTAP 시스템 관리자(버전 9.7 이상)"^]
 
 
 
@@ -723,7 +720,7 @@ cluster_B::>
 
 MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 복구에 필요한 데이터 미러링을 수행할 수 있도록 피어 관계에 있어야 합니다.
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"^]
 
 link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
 
@@ -783,7 +780,7 @@ cluster01-02
 전체 명령 구문은 man 페이지를 참조하십시오.
 
 +
-다음 예에서는 포트 "e0e" 및 "e0f"에 LIF가 할당되지 않은 것을 보여 줍니다.
+다음 예제는 포트 ""e0e"" 및 ""e0f""에 LIF가 할당되지 않음을 보여줍니다.
 
 +
 [listing]
@@ -808,7 +805,7 @@ cluster01
 'network interface failover-groups create-vserver_system_SVM_-failover-group_failover_group_-targets_physical_or_logical_ports_'
 
 +
-다음 예에서는 "SVMcluster01" 시스템의 페일오버 그룹 "intercluster01"에 포트 "e0e" 및 "e0f"를 할당합니다.
+다음 예에서는 시스템 "s vcluster01"의 페일오버 그룹 ""intercluster01""에 ""e0e"" 및 ""e0f"" 포트를 할당합니다.
 
 +
 [listing]
@@ -870,7 +867,7 @@ cluster01
 전체 명령 구문은 man 페이지를 참조하십시오.
 
 +
-다음 예에서는 페일오버 그룹 "intercluster01"에 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"를 생성합니다.
+다음 예에서는 페일오버 그룹 ""intercluster01""에 인터클러스터 LIF ""cluster01_icl01"" 및 ""cluster01_icl02""를 생성합니다.
 
 +
 [listing]
@@ -1097,7 +1094,7 @@ cluster01
 전체 명령 구문은 man 페이지를 참조하십시오.
 
 +
-다음 예에서는 "e0c" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0d" 포트로 페일오버되는 것을 보여 줍니다.
+다음 예에서는 ""e0c" 포트에 대한 인터클러스터 LIF ""cluster01_icl01"" 및 ""cluster01_icl02""가 ""e0d"" 포트로 페일오버되는 것을 보여줍니다.
 
 +
 [listing]
@@ -1272,7 +1269,10 @@ cluster_B                  node_B_1      ready for DR group create
                            node_B_2      ready for DR group create
 2 entries were displayed.
 ----
-. DR 그룹 'MetroCluster configuration-settings dr-group create-partner-cluster_partner-cluster-name_-local-node_local-node-name_-remote-node_remote-node-name_'을 생성합니다
+. DR 그룹 생성:
++
+'MetroCluster configuration-settings dr-group create-partner-cluster_partner-cluster-name_-local-node_local-node-name_-remote-node_remote-node-name_'
+
 +
 이 명령은 한 번만 실행됩니다. 파트너 클러스터에서 이 작업을 반복할 필요는 없습니다. 명령에서 원격 클러스터의 이름과 파트너 클러스터의 한 로컬 노드 및 한 노드 이름을 지정합니다.
 
@@ -1308,24 +1308,21 @@ NOTE: 초기 구성 후에는 변경할 수 없으므로 MetroCluster IP 주소�
 
 --
 * 각 노드에 대해 2개의 인터페이스를 생성해야 합니다. 인터페이스는 MetroCluster RCF 파일에 정의된 VLAN과 연결되어야 합니다.
-* 동일한 VLAN에 모든 MetroCluster IP 인터페이스 "A" 포트를 생성하고 다른 VLAN에 모든 MetroCluster IP 인터페이스 "B" 포트를 생성해야 합니다. 을 참조하십시오 link:concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 사항"].
-
-
-를 누릅니다
-
+* 동일한 VLAN에 모든 MetroCluster IP 인터페이스 ""A"" 포트를 생성하고 다른 VLAN에 모든 MetroCluster IP 인터페이스 ""B"" 포트를 생성해야 합니다. 을 참조하십시오 link:concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 사항"].
++
 --
 [NOTE]
 ====
-* 특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).
-* ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+** 특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).
+** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
 
 
 ====
 --
-+다음 플랫폼 모델은 VLAN을 사용하고 기본이 아닌 VLAN ID를 구성할 수 있습니다.
++
+다음 플랫폼 모델은 VLAN을 사용하며 기본 VLAN ID가 아닌 VLAN ID를 구성할 수 있습니다.
 
-를 누릅니다
-
++
 |===
 
 
@@ -1333,18 +1330,20 @@ NOTE: 초기 구성 후에는 변경할 수 없으므로 MetroCluster IP 주소�
 
 
  a| 
-* AFF A220
-* AFF A250
-* AFF A400
+** AFF A220
+** AFF A250
+** AFF A400
 
  a| 
-* FAS2750
-* 500f로 설정합니다
-* FAS8300
-* FAS8700
+** FAS2750
+** 500f로 설정합니다
+** FAS8300
+** FAS8700
 
 
 |===
+
+
 이 예에서는 다음과 같은 IP 주소와 서브넷이 사용됩니다.
 
 |===
@@ -1557,6 +1556,7 @@ e0d
 |===
 다음 예제의 포트 사용은 AFF A700 또는 FAS9000 시스템에 대한 것입니다.
 
+.단계
 . 각 노드에 디스크 자동 할당이 설정되었는지 확인합니다.
 +
 '스토리지 디스크 옵션 표시'
@@ -1598,7 +1598,7 @@ cluster_B
               node_B_2     ready for interface create
 4 entries were displayed.
 ----
-. "node_a_1"에 인터페이스를 생성합니다.
+. ""node_a_1""에 인터페이스를 작성합니다.
 +
 --
 [NOTE]
@@ -1611,7 +1611,7 @@ cluster_B
 ====
 --
 +
-.. node_A_1의 포트 "e5a"에서 인터페이스를 구성합니다.
+.. "node_a_1"의 포트 ""e5a""에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
 
@@ -1625,12 +1625,12 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 [Job 28] Job succeeded: Interface Create is successful.
 cluster_A::>
 ----
-.. "node_a_1"의 포트 "e5b"에서 인터페이스를 구성합니다.
+.. ""node_a_1""의 ""e5b"" 포트에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.2.1"을 사용하여 "node_a_1"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예제는 IP 주소가 10.1.2.1"인 노드_A_1"의 포트 ""e5b""에 대한 인터페이스를 만드는 것을 보여줍니다.
 
 +
 [listing]
@@ -1645,12 +1645,12 @@ cluster_A::>
 
 NOTE: 'MetroCluster configuration-settings interface show' 명령을 사용하여 이러한 인터페이스가 있는지 확인할 수 있습니다.
 
-. "node_a_2"에 인터페이스를 생성합니다.
+. ""node_a_2""에 인터페이스를 작성합니다.
 +
 --
 [NOTE]
 ====
-** 다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
+** 다음 예의 포트 사용은 AFF A700 또는 FAS9000 시스템(""e5a" 및""e5b")에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
 ** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
 ** MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.
 
@@ -1658,12 +1658,12 @@ NOTE: 'MetroCluster configuration-settings interface show' 명령을 사용하�
 ====
 --
 +
-.. "node_a_2"의 포트 "e5a"에서 인터페이스를 구성합니다.
+.. "node_a_2"의 포트 ""e5a""에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.1.2"가 있는 "node_a_2"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예에서는 IP 주소가 10.1.1.2"인 노드_A_2"에서 포트 ""e5a""에 대한 인터페이스를 생성하는 것을 보여줍니다.
 
 +
 [listing]
@@ -1673,7 +1673,7 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 cluster_A::>
 ----
 +
-MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 AFF ID가 "120"인 VLAN A220 시스템에 대한 명령을 보여 줍니다.
+MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 VLAN ID가 ""120""인 AFF A220 시스템에 대한 명령을 보여 줍니다.
 
 +
 [listing]
@@ -1682,12 +1682,12 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 [Job 28] Job succeeded: Interface Create is successful.
 cluster_A::>
 ----
-.. "node_a_2"의 포트 "e5b"에서 인터페이스를 구성합니다.
+.. ""node_a_2""의 ""e5b"" 포트에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.2.2"를 사용하여 "node_a_2"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예에서는 IP 주소가 10.1.2.2"인 노드_a_2"의 포트 ""e5b""에 인터페이스를 생성하는 것을 보여줍니다.
 
 +
 [listing]
@@ -1697,7 +1697,7 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 cluster_A::>
 ----
 +
-MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 VLAN ID가 "220"인 AFF A220 시스템에 대한 명령을 보여 줍니다.
+MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 VLAN ID가 ""220""인 AFF A220 시스템에 대한 명령을 보여 줍니다.
 
 +
 [listing]
@@ -1708,12 +1708,12 @@ cluster_A::>
 ----
 
 
-. "node_B_1"에 인터페이스를 생성합니다.
+. ""node_B_1""에 인터페이스를 작성합니다.
 +
 --
 [NOTE]
 ====
-** 다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
+** 다음 예의 포트 사용은 AFF A700 또는 FAS9000 시스템(""e5a" 및""e5b")에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.
 ** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
 ** MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.
 
@@ -1721,12 +1721,12 @@ cluster_A::>
 ====
 --
 +
-.. "node_B_1"의 포트 "e5a"에서 인터페이스를 구성합니다.
+.. "node_B_1"의 포트 ""e5a""에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.1.3"이 있는 "node_B_1"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예에서는 IP 주소가 10.1.1.3"인 노드_B_1"의 포트 ""e5a""에 대한 인터페이스를 생성하는 것을 보여 줍니다.
 
 +
 [listing]
@@ -1734,12 +1734,12 @@ cluster_A::>
 cluster_A::> metrocluster configuration-settings interface create -cluster-name cluster_A -home-node node_B_1 -home-port e5a -address 10.1.1.3 -netmask 255.255.255.0
 [Job 28] Job succeeded: Interface Create is successful.cluster_A::>
 ----
-.. "node_B_1"의 포트 "e5b"에서 인터페이스를 구성합니다.
+.. ""node_B_1""의 ""e5b"" 포트에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.2.3"을 사용하여 "node_B_1"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예에서는 IP 주소가 10.1.2.3"인 ""node_B_1""에서 "e5b" 포트에 인터페이스를 생성하는 것을 보여 줍니다.
 
 +
 [listing]
@@ -1749,7 +1749,7 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 ----
 
 
-. "node_B_2"에 인터페이스를 생성합니다.
+. ""node_B_2""에 인터페이스를 작성합니다.
 +
 --
 [NOTE]
@@ -1762,12 +1762,12 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 ====
 --
 +
-.. "node_B_2"의 포트 "e5a"에서 인터페이스를 구성합니다.
+.. "node_B_2"의 포트 ""e5a""에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.1.4"를 사용하여 "node_B_2"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예에서는 IP 주소가 10.1.1.4"인 노드_B_2"에 있는 포트 ""e5a""에 대한 인터페이스를 생성하는 것을 보여줍니다.
 
 +
 [listing]
@@ -1775,12 +1775,12 @@ cluster_A::> metrocluster configuration-settings interface create -cluster-name 
 cluster_B::>metrocluster configuration-settings interface create -cluster-name cluster_B -home-node node_B_2 -home-port e5a -address 10.1.1.4 -netmask 255.255.255.0
 [Job 28] Job succeeded: Interface Create is successful.cluster_A::>
 ----
-.. "node_B_2"의 포트 "e5b"에서 인터페이스를 구성합니다.
+.. ""node_B_2""의 ""e5b"" 포트에 인터페이스를 구성합니다.
 +
 'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'
 
 +
-다음 예에서는 IP 주소 "10.1.2.4"가 있는 "node_B_2"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.
+다음 예에서는 IP 주소가 10.1.2.4"인 ""node_B_2""에서 ""e5b""" 포트에 인터페이스를 생성하는 것을 보여 줍니다.
 
 +
 [listing]
@@ -1833,7 +1833,7 @@ cluster_A::>
 'MetroCluster configuration-settings show-status'를 선택합니다
 
 +
-다음 예제에서는 "연결 준비 완료" 상태의 모든 노드를 보여 줍니다.
+다음 예에서는 "연결 준비" 상태의 모든 노드를 보여줍니다.
 
 +
 [listing]
@@ -1857,7 +1857,7 @@ cluster_B
 이 명령을 실행한 후에는 IP 주소를 변경할 수 없습니다.
 
 +
-다음 예에서는 "cluster_a"가 성공적으로 연결되었음을 보여 줍니다.
+다음 예에서는 ""cluster_a""가 성공적으로 연결되었음을 보여 줍니다.
 
 +
 [listing]
@@ -1894,7 +1894,7 @@ cluster_B
 세트 프리빌리지 고급
 
 +
-고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 나타나면 y로 응답해야 합니다("*>").
+고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 표시되면 ""y""로 응답해야 합니다("*>").
 
 .. 다음 연결을 표시합니다.
 +
@@ -2058,7 +2058,7 @@ link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 �
 다음 출력에는 외부 쉘프가 없는 AFF A800 시스템의 출력이 표시됩니다.
 
 +
-드라이브 자동 할당에서는 "node_A_1"에 쿼터 1개(드라이브 8개)를, "node_A_2"에 분기당 1개를 할당했습니다. 나머지 드라이브는 "node_B_1" 및 "node_B_2"에 대한 원격(pool1) 디스크입니다.
+드라이브 자동 할당은 ""node_a_1""에 1 쿼터(8개 드라이브)를, ""node_a_2"에 1/4를 할당했습니다. 나머지 드라이브는 ""node_B_1" 및 ""node_B_2"에 대한 원격(pool1) 디스크입니다.
 
 +
 [listing]
@@ -2282,7 +2282,7 @@ node_A_2:0m.i1.2L64       -    21  10 SSD     unassigned  -         -
 
 cluster_A::>
 ----
-.. 원격 드라이브(0m)의 소유권을 첫 번째 노드의 풀 1(예: "node_a_1")에 할당합니다.
+.. 첫 번째 노드의 풀 1에 원격 드라이브(0m)의 소유권을 할당합니다(예: ""node_a_1"").
 +
 Disk assign-disk_disk-id_-pool 1-owner_owner-node-name _
 
@@ -2300,7 +2300,7 @@ NOTE: 원격 드라이브에 액세스하는 데 사용되는 iSCSI 연결이 0m
 
 --
 +
-다음 출력에서는 쉘프 "23"의 드라이브가 더 이상 할당되지 않은 드라이브 목록에 표시되지 않으므로 할당된 드라이브를 보여 줍니다.
+다음 출력은 쉘프 ""23""의 드라이브가 할당되지 않은 드라이브 목록에 더 이상 나타나지 않으므로 할당된 것을 보여줍니다.
 
 +
 [listing]
@@ -2319,7 +2319,7 @@ node_A_2:0m.i2.1L90       -    21  19 SSD     unassigned  -         -
 
 cluster_A::>
 ----
-.. 이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 드라이브를 할당합니다(예: "n" ode_A_2").
+.. 이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 드라이브를 할당합니다(예: ""node_a_2"").
 .. 사이트 B에서 이 단계를 반복합니다
 
 
@@ -2377,7 +2377,7 @@ node_A_2:0m.i1.2L64       -    21  10 SSD     unassigned  -         -
 
 cluster_A::>
 ----
-.. 원격 디스크(0m)를 선택하고 첫 번째 노드의 풀 1에 디스크 소유권을 할당합니다(예: "node_a_1").
+.. 원격 디스크(0m)를 선택하고 첫 번째 노드의 풀 1에 디스크 소유권을 할당합니다(예: ""node_a_1"").
 +
 Disk assign-disk-id-pool 1-owner owner-node-name'입니다
 
@@ -2398,7 +2398,7 @@ NOTE: 원격 디스크에 액세스하는 데 사용되는 iSCSI 연결이 0m �
 
 --
 +
-다음 출력에서는 쉘프 "23"의 디스크가 이제 할당되었으며 더 이상 표시되지 않음을 보여 줍니다.
+다음 출력은 쉘프 ""23""의 디스크가 이제 할당되었으며 더 이상 나타나지 않음을 보여줍니다.
 
 +
 [listing]
@@ -2435,7 +2435,7 @@ node_A_2:0m.i2.1L90       -    21  19 SSD     unassigned  -         -
 
 cluster_A::>
 ----
-.. 이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 디스크를 할당합니다(예: "node_a_2").
+.. 이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 디스크를 할당합니다(예: ""node_a_2"").
 .. 사이트 B에서 이 단계를 반복합니다
 
 
@@ -2579,7 +2579,7 @@ MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster conf
 
 NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <<step1_single_mirrored,1단계>> 를 참조하십시오.
 
-* 컨트롤러 및 섀시의 ha-config 상태는 mcip이어야 합니다.
+* 컨트롤러와 섀시의 ha-config 상태는 "mcip"이어야 합니다.
 
 
 모든 노드에서 'MetroCluster configure' 명령을 한 번 실행하여 MetroCluster 설정을 활성화한다. 각 사이트나 노드에서 명령을 실행할 필요가 없으며 명령을 실행하기로 선택한 노드나 사이트는 중요하지 않습니다.
@@ -2610,7 +2610,7 @@ MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시
 세트 프리빌리지 고급
 
 +
-고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 나타나면 y로 응답해야 합니다("*>").
+고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 표시되면 ""y""로 응답해야 합니다("*>").
 
 .. '-allow-with-one-aggregate' TRUE 파라미터를 이용하여 MetroCluster를 설정한다.
 +
@@ -2632,7 +2632,7 @@ MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시
 ====
 --
 +
-다음 명령을 실행하면 "controller_a_1"이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 설정됩니다.
+다음 명령을 실행하면 ""controller_a_1""이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 활성화됩니다.
 
 +
 [listing]
@@ -2641,7 +2641,10 @@ cluster_A::*> metrocluster configure -node-name controller_A_1
 
 [Job 121] Job succeeded: Configure is successful.
 ----
-. 사이트 A:'network port show'의 네트워킹 상태를 확인합니다
+. 사이트 A의 네트워킹 상태를 확인합니다.
++
+네트워크 포트 쇼
+
 +
 다음 예는 4노드 MetroCluster 구성의 네트워크 포트 사용량을 보여 줍니다.
 
@@ -2770,7 +2773,7 @@ https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조
 '스토리지 애그리게이트 생성'
 
 +
-클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 -node 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.
+클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 '-node' 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.
 
 +
 또한 미러링되지 않은 쉘프의 드라이브만 애그리게이트에 포함되어 있는지 확인해야 합니다.
@@ -2819,7 +2822,7 @@ controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -n
 
 
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 
 
 
@@ -2948,9 +2951,9 @@ mccint-fas9000-0304
 ----
 
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"^]
 
 
 
@@ -2964,17 +2967,14 @@ MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 S
 
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
-. MetroCluster 관리 및 재해 복구 가이드 _ 에 설명되어 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용하십시오.
-+
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/home.html["MetroCluster 관리 및 재해 복구"]
-
+. 에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/home.html["MetroCluster 관리 및 재해 복구"]
 
 
 
 
 == MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어 구성
 
-MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨어 또는 세 번째 사이트에 다운로드하여 설치할 수 있습니다.
+MetroCluster Tiebreaker 소프트웨어 또는 ONTAP 9.7부터 ONTAP 중재자인 Tiebreaker 소프트웨어를 다운로드하여 제3사이트에 설치할 수 있습니다.
 
 MetroCluster 구성에서 두 클러스터에 대한 네트워크 연결이 가능한 Linux 호스트가 있어야 합니다. 구체적인 요구사항은 MetroCluster Tiebreaker 또는 ONTAP 중재자 설명서에 나와 있습니다.
 
@@ -3023,4 +3023,4 @@ CLI를 사용한 클러스터 관리에는 _ 구성 백업 관리 _ 섹션에 �
 
 
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"^]

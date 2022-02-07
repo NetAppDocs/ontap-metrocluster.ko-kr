@@ -16,11 +16,9 @@ MetroCluster 구성에서 두 클러스터에 대한 네트워크 연결이 가�
 
 ONTAP 중재자의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.
 
-link:concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성"]
+link:concept_mediator_requirements.html["계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성"]
 
 Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우, 에 따르십시오 link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["소프트웨어 설치 및 구성 지침"].
-
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/home.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
 
 동일한 MetroCluster 구성에서 MetroCluster Tiebreaker 소프트웨어와 ONTAP 중재자를 모두 사용할 수 없습니다.
 
@@ -29,7 +27,7 @@ link:../install-ip/concept_considerations_mediator.html["ONTAP 중재자 또는 
 .단계
 . ONTAP 중재자 서비스 또는 Tiebreaker 소프트웨어 구성:
 +
-** ONTAP 중재자의 기존 인스턴스를 사용하는 경우 다음 명령을 사용하여 ONTAP 중재자 서비스를 ONTAP에 추가합니다.
+** ONTAP 중재자의 기존 인스턴스를 사용하는 경우 ONTAP 중재자 서비스를 ONTAP에 추가합니다.
 +
 'MetroCluster configuration-settings 중재자-address-of-중재자-host'
 

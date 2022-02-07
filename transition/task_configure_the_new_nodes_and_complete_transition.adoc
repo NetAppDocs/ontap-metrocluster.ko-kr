@@ -189,11 +189,9 @@ MetroCluster 전환 비활성화
 
 새 노드인 node_A_2-IP 및 node_B_2-IP에 데이터 LIF를 구성해야 합니다.
 
-아직 할당되지 않은 경우 새 컨트롤러에서 사용할 수 있는 새 포트를 브로드캐스트 도메인에 추가해야 합니다. 필요한 경우 새 포트에 VLAN 또는 인터페이스 그룹을 생성합니다. 네트워크 관리 가이드 _ 를 참조하십시오.
+아직 할당되지 않은 경우 새 컨트롤러에서 사용할 수 있는 새 포트를 브로드캐스트 도메인에 추가해야 합니다. 필요한 경우 새 포트에 VLAN 또는 인터페이스 그룹을 생성합니다. 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"^]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"^]
-
-. 다음 명령을 실행하여 현재 포트 사용 및 브로드캐스트 도메인을 식별합니다.
+. 현재 포트 사용 및 브로드캐스트 도메인 식별:
 +
 네트워크 포트쇼 네트워크 포트 브로드캐스트 도메인 쇼
 
@@ -232,7 +230,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 에서 수집한 정보를 참조하십시오 link:task_connect_the_mcc_ip_controller_modules_2n_mcc_transition_supertask.html["네트워크 구성을 만드는 중입니다"].
 
 +
-.. 다음 명령을 실행하여 LIF의 홈 포트를 확인하십시오.
+.. LIF의 홈 포트를 확인하십시오.
 +
 네트워크 인터페이스 show-field home-port
 

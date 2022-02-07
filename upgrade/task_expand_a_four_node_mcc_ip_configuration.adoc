@@ -247,7 +247,7 @@ cluster_A::>
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#commands-for-modifying-metrocluster-tiebreaker-configurations["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#commands-for-modifying-metrocluster-tiebreaker-configurations["MetroCluster 구성 제거"].
 
 
 
@@ -400,7 +400,7 @@ Do you want to use this configuration? {yes, no} [yes]: yes
 예제에 사용된 홈 포트는 플랫폼별로 다릅니다. MetroCluster IP 노드 플랫폼에 맞는 적절한 홈 포트를 사용해야 합니다.
 
 .단계
-. 새 MetroCluster IP 노드에서 _MetroCluster IP 설치 및 구성 가이드 _ 의 절차를 사용하여 인터클러스터 LIF를 구성합니다.
+. 새 MetroCluster IP 노드에서 다음 절차를 사용하여 인터클러스터 LIF를 구성합니다.
 +
 link:../install-ip/task_sw_config_configure_clusters.html#peering-the-clusters["전용 포트에 대한 인터클러스터 LIF 구성"]
 
@@ -439,7 +439,7 @@ cluster_B::>
 'MetroCluster configuration-settings dr-group create-partner-cluster
 
 +
-MetroCluster 구성 설정 및 연결에 대한 자세한 내용은 _MetroCluster IP 설치 및 구성 안내서_를 참조하십시오.
+MetroCluster 구성 설정 및 연결에 대한 자세한 내용은 다음을 참조하십시오.
 
 +
 link:../install-ip/concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 사항"]
@@ -522,7 +522,7 @@ cluster_A::>
 +
 --
 
-NOTE: 두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.1.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 만들려면 '-gateway' 매개 변수도 지정해야 합니다. 을 참조하십시오 link:..install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
+NOTE: 두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.1.1부터 계층 3 구성을 사용하는 경우에는 '-gateway' 매개 변수도 지정하여 MetroCluster IP 인터페이스를 만들어야 합니다. 을 참조하십시오 link:..install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
 
 --
 +

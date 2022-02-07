@@ -24,37 +24,39 @@ summary: 캐비닛에 이미 설치된 장비를 받지 못한 경우 구성 요
 
 . 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666["AFF A220/FAS2700 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666["AFF A220/FAS2700 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2870798["AFF A250 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2870798["AFF A250 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722["AFF A300 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722["AFF A300 시스템 설치 및 설정 지침"^]
 
 +
-https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html["AFF A320 시스템: 설치 및 설정"]
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html["AFF A320 시스템: 설치 및 설정"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2858854["AFF A400 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2858854["AFF A400 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2873445["AFF A700 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2873445["AFF A700 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668["AFF A800 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668["AFF A800 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2872833["FAS500f 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2872833["FAS500f 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2858856["FAS8300 및 FAS8700 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2858856["FAS8300 및 FAS8700 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2874463["FAS9000 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2874463["FAS9000 시스템 설치 및 설정 지침"^]
+
+
 
 . 랙 또는 캐비닛에 IP 스위치를 설치합니다.
 . 디스크 쉘프를 설치하고 전원을 켠 다음 쉘프 ID를 설정합니다.

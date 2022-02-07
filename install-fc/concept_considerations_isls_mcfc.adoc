@@ -14,7 +14,7 @@ MetroCluster 구성에서 각 FC 스위치 패브릭에 필요한 ISL 수를 결
 
 == ISL 공유 고려 사항(ONTAP 9.2)
 
-ONTAP 9.2부터는 ISL 공유를 사용할 수 있습니다.
+ONTAP 9.2부터는 다음과 같은 경우에 ISL 공유를 사용할 수 있습니다.
 
 * 2노드 1개 및 4노드 MetroCluster 구성 1개
 * 2개의 개별 4노드 MetroCluster 구성

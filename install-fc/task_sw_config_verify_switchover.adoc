@@ -88,7 +88,7 @@ image::../media/workflow_high_level_node_and_cluster_configuration_software.gif[
  a| 
 클러스터 이름입니다
 
-이 설명서에 사용된 예: site_a
+이 절차에서 사용되는 예: site_a
  a| 
 
 
@@ -131,7 +131,7 @@ DNS 이름 서버
  a| 
 노드 1
 
-이 설명서에 사용된 예: controller_a_1
+이 절차에서 사용되는 예: controller_a_1
  a| 
  a| 
  a| 
@@ -144,7 +144,7 @@ DNS 이름 서버
 
 2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 필요하지 않습니다.
 
-이 설명서에 사용된 예: controller_a_2
+이 절차에서 사용되는 예: controller_a_2
  a| 
  a| 
  a| 
@@ -3474,10 +3474,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["고�
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
 .단계
-. MetroCluster 관리 및 재해 복구 가이드 _ 에 설명되어 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용하십시오.
-+
-https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster 관리 및 재해 복구"^]
-
+. 에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster 관리 및 재해 복구"]
 
 
 
@@ -3492,7 +3489,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster
 '시스템 구성 백업 설정 수정대상 URL'입니다
 
 +
-https://docs.netapp.com/us-en/ontap/system-admin/index.html["CLI를 통한 클러스터 관리"^] 섹션에 추가 정보가 포함되어 있습니다.
+https://docs.netapp.com/us-en/ontap/system-admin/config-backup-file-concept.html["구성 백업 관리"^] 추가 정보를 포함합니다.
 
 
 

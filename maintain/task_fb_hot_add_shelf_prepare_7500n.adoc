@@ -43,7 +43,7 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 . 최신 디스크 및 디스크 쉘프 펌웨어 다운로드:
 +
 
-NOTE: 이 단계에서는 링크에 제공된 지침의 다운로드 부분만 완료합니다. 에 나와 있는 단계를 따라야 합니다 xref:task_fb_hot_add_a_disk_shelf_install_7500n.adoc[디스크 쉘프 핫 추가] 섹션을 참조하십시오.
+NOTE: 이 단계에서는 링크에 제공된 지침의 다운로드 부분만 완료합니다. 에 나와 있는 단계를 따라야 합니다 link:task_fb_hot_add_a_disk_shelf_install_7500n.html["디스크 쉘프 핫 추가"] 섹션을 참조하십시오.
 
 +
 .. 디스크 펌웨어를 다운로드하고 나중에 참조할 수 있도록 디스크 펌웨어 지침 사본을 만듭니다.

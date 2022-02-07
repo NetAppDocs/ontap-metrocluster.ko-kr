@@ -51,19 +51,19 @@ summary: 섀시에 새 컨트롤러 모듈을 물리적으로 설치한 다음 �
 +
 .. 클러스터 연결을 위한 컨트롤러 모듈의 포트를 식별합니다.
 +
-https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html["AFF A320 시스템: 설치 및 설정"]
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html["AFF A320 시스템: 설치 및 설정"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666["AFF A220/FAS2700 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666["AFF A220/FAS2700 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668["AFF A800 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668["AFF A800 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722["AFF A300 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722["AFF A300 시스템 설치 및 설정 지침"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템 설치 및 설정 지침"]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템 설치 및 설정 지침"^]
 
 .. 스위치 클러스터를 구성하는 경우 클러스터 네트워크 스위치에서 사용할 포트를 식별합니다.
 +
@@ -89,7 +89,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템
  a| 
 스위치 클러스터
  a| 
-각 컨트롤러의 클러스터 포트를 하위 단계 b에 표시된 클러스터 네트워크 스위치의 포트에 연결합니다
+Substep b에 나와 있는 클러스터 네트워크 스위치의 포트에 각 컨트롤러의 클러스터 포트를 연결합니다
 
 |===
 

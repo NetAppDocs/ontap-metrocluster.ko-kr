@@ -13,8 +13,5 @@ summary: 새 노드의 장비는 랙에 설치해야 합니다.
 새 노드의 장비는 랙에 설치해야 합니다.
 
 .단계
-. MetroCluster 설치 및 구성 가이드를 사용하여 새로운 스토리지 시스템, 디스크 쉘프 및 FC-SAS 브리지를 랙에 설치합니다.
-+
-link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
-
+. 의 절차를 사용합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 새로운 스토리지 시스템, 디스크 쉘프 및 FC-to-SAS 브릿지를 랙에 장착
 

@@ -73,7 +73,7 @@ Brocade-6510:admin> zone -–show
 +
 'lsreset'입니다
 
-. 다음 명령을 사용하여 IOD 설정을 확인합니다.
+. IOD 설정을 확인합니다.
 +
 '오드쇼'
 

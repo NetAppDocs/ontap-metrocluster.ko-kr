@@ -12,7 +12,7 @@ summary: 성능을 저하시키지 않고 스토리지를 증가하려는 경우
 [role="lead"]
 성능을 저하시키지 않고 스토리지를 증가하려는 경우 디스크 쉘프를 핫 추가할 수 있습니다.
 
-* 시스템은 의 모든 요구 사항을 충족해야 합니다 xref:task_fb_hot_add_shelf_prepare_7500n.adoc[SAS 디스크 쉘프 핫 추가 준비].
+* 시스템은 의 모든 요구 사항을 충족해야 합니다 link:task_fb_hot_add_shelf_prepare_7500n.html["SAS 디스크 쉘프 핫 추가 준비"].
 * 쉘프를 핫 애드할 경우 환경은 다음 시나리오 중 하나를 충족해야 합니다.
 +
 ** 2개의 FiberBridge 7500N 브리지가 SAS 디스크 쉘프 스택에 연결되어 있습니다.

@@ -30,6 +30,6 @@ summary: 어레이 LUN이 있는 MetroCluster 구성에서는 이중 포트 쌍�
 
 첫 번째 DR 그룹의 어레이 포트에 케이블을 연결하려면 첫 번째 DR 그룹의 4노드 MetroCluster 구성에 대한 케이블 연결 예를 사용할 수 있습니다.
 
-xref:reference_example_of_cabling_array_luns_to_fc_switches_in_a_four_node_mcc_configuration.adoc[4노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예]
+link:reference_example_of_cabling_array_luns_to_fc_switches_in_a_four_node_mcc_configuration.html["4노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예"]
 
 두 번째 DR 그룹의 어레이 포트에 케이블을 연결하려면 같은 예제를 따라 두 번째 DR 그룹의 컨트롤러에 속한 FC-VI 포트와 FC 이니시에이터 포트를 추정합니다.

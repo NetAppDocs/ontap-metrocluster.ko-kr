@@ -1,8 +1,8 @@
 ---
 permalink: transition/reference_where_to_find_additional_information_mcc_ug.html 
 sidebar: sidebar 
-keywords: metrocluster, configuration, operation, netapp, documentation, library, additional, information, miscellaneous, guide 
-summary: MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp 문서 라이브러리를 참조하십시오. 
+keywords: metrocluster, configuration, operation, netapp, documentation, additional, information, miscellaneous, guide 
+summary: MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp 설명서를 참조하십시오. 
 ---
 = 추가 정보를 찾을 수 있는 위치
 :icons: font
@@ -10,16 +10,16 @@ summary: MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp 문
 
 
 [role="lead"]
-MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp 문서 라이브러리를 참조하십시오.
+MetroCluster 구성에 대해 자세히 알아볼 수 있습니다.
 
 
 
-== MetroCluster 및 기타 설명서
+== MetroCluster 및 기타 정보
 
 |===
 
 
-| 가이드 | 콘텐츠 
+| 정보 | 제목 
 
 
  a| 
@@ -104,7 +104,7 @@ link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluste
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems/["AFF and FAS 설명서 를 참조하십시오"]
+https://docs.netapp.com/us-en/ontap-systems/["AFF and FAS 설명서 를 참조하십시오"^]
 
 * 참고: * 표준 스토리지 쉘프 유지보수 절차는 MetroCluster IP 구성과 함께 사용할 수 있습니다.
  a| 
@@ -115,7 +115,7 @@ https://docs.netapp.com/us-en/ontap-systems/["AFF and FAS 설명서 를 참조�
 
 
  a| 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"^]
  a| 
 * 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
 
@@ -123,7 +123,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복
 
 
  a| 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"^]
  a| 
 * 미러링된 데이터의 작동 방식
 

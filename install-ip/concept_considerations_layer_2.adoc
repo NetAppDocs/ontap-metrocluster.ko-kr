@@ -202,7 +202,7 @@ policy-map type queuing MetroClusterIP_Egress
 
 == MetroCluster 네트워크 토폴로지의 예
 
-ONTAP 9.6부터는 일부 공유 ISL 네트워크 구성이 MetroCluster IP 구성에 대해 지원됩니다.
+ONTAP 9.6부터는 일부 공유 ISL 네트워크 구성이 MetroCluster IP 구성에서 지원됩니다.
 
 
 

@@ -31,7 +31,7 @@ MetroCluster FC 구성에서 클러스터 인터커넥트에 클러스터 스위
 MetroCluster FC 구성에서 클러스터 스위치를 사용하지 않은 경우, 백엔드 스위치 패브릭을 제공하기 위해 새로운 IP 스위치가 추가됩니다.
 
 +
-xref:concept_considerations_for_using_existing_ip_switches.adoc[IP 스위치에 대한 고려 사항]
+link:concept_considerations_for_using_existing_ip_switches.html["IP 스위치에 대한 고려 사항"]
 
 * * 클러스터 피어링 네트워크 *
 +

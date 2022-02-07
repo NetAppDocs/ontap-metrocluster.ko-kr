@@ -26,7 +26,7 @@ ONTAP 중재자 서비스는 MetroCluster IP 구성에서 사용할 수 있도�
 
 
 .단계
-. 다음 명령을 사용하여 ONTAP 중재자 서비스를 ONTAP에 추가합니다.
+. ONTAP 중재자 서비스를 ONTAP에 추가합니다.
 +
 'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'
 

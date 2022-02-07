@@ -77,13 +77,15 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 . 관련 시나리오에 대한 단계에 따라 선반을 탈거하십시오.
 +
 |===
+
+
 | 시나리오 | 단계 
 
 
  a| 
 쉘프에 미러링되지 않은 애그리게이트, 미러링된 애그리게이트 또는 두 가지 유형의 애그리게이트로 된 애그리게이트를 제거하려면...
  a| 
-.. ' * storage aggregate delete -aggregate_aggregate name_ *' 명령을 사용하여 애그리게이트를 제거합니다.
+.. 'storage aggregate delete -aggregate_aggregate name_' 명령을 사용하여 애그리게이트를 제거합니다.
 .. 표준 절차에 따라 해당 쉘프에 있는 모든 드라이브의 소유권을 제거한 다음, 쉘프를 물리적으로 제거합니다.
 +
 쉘프 모델의 _SAS 디스크 쉘프 서비스 가이드_에 나온 지침에 따라 쉘프를 핫 제거할 수 있습니다.
@@ -95,9 +97,9 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
  a| 
 미러링된 Aggregate에서 플렉스를 제거하려면 Aggregate의 미러를 해제해야 합니다.
  a| 
-.. ' * run-node local sysconfig -r * ' 명령을 사용하여 제거할 플렉스를 식별합니다.
+.. 'run-node local sysconfig -r' 명령을 사용하여 제거할 플렉스를 식별합니다.
 +
-다음 예에서는 라인 "Plex/dpg_MCC_8020_13_A1_aggr1/plex0"에서 플렉스를 식별할 수 있습니다. 이 경우 지정할 플렉스를 0으로 지정합니다.
+다음 예에서는 라인 "Plex/dpg_MCC_8020_13_A1_aggr1/plex0"에서 플렉스를 식별할 수 있습니다. 이 경우 지정할 플렉스에는 "plex0"이 있습니다.
 
 +
 [listing]
@@ -126,9 +128,9 @@ Aggregate dpg_mcc_8020_13_a1_aggr1 (online, raid_dp, mirrored) (block checksums)
       data      mcc-cisco-8Gb-fab-3:1-1.126L15  0d    33  14  FC:A   1   SAS 15000 272000/557056000  280104/573653840
       data      mcc-cisco-8Gb-fab-3:1-1.126L45  0d    34  18  FC:A   1   SAS 15000 272000/557056000  280104/573653840
 ----
-.. ' * storage aggregate delete -aggregate_agr_name_-plex_plex_name_ * ' 명령을 사용하여 플렉스 파일을 제거합니다.
+.. 'Storage aggregate delete -aggregate_agr_name_-plex_plex_name_' 명령을 사용하여 플렉스를 제거합니다.
 +
-플렉스(Plex)는 플렉스3(plex3), 플렉스6(plex6) 등의 플렉스 이름을 정의합니다.
+Plex는 "plex3" 또는 "plex6" 등의 플렉스 이름을 정의합니다.
 
 .. 표준 절차에 따라 해당 쉘프에 있는 모든 드라이브의 소유권을 제거한 다음, 쉘프를 물리적으로 제거합니다.
 +
