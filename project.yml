@@ -42,7 +42,7 @@ homepage:
     - title: Tiebreaker를 설치합니다
       url: "/tiebreaker/concept_overview_of_the_tiebreaker_software.html"
     - title: 중재자 설치(MetroCluster IP만 해당)
-      url: "/install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html"
+      url: "/install-ip/concept_mediator_requirements.html"
   - title: 유지 관리
     links:
     - title: FC 스위치

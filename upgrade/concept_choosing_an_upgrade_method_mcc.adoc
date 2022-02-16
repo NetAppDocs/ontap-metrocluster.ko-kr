@@ -134,7 +134,7 @@ FC
  a| 
 9.10.1 이상
  a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-mendocino/index.html[""system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로 업그레이드합니다"^]
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다"^]
 
 
 

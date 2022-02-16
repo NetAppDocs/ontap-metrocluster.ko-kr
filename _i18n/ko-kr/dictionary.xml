@@ -1256,7 +1256,6 @@
   <block id="b4a4356f509fb6c32e40ddbcc18b8a1a" category="section-title">ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법</block>
   <block id="7480d239952f3388e1a45150c044ba8e" category="paragraph">ONTAP 중재자가 중재자 호스트에 있는 사서함에 MetroCluster 노드에 대한 상태 정보를 저장합니다. MetroCluster 노드는 이 정보를 사용하여 DR 파트너의 상태를 모니터링하고 재해 발생 시 중재자를 통한 자동 계획되지 않은 전환(MAUSO)을 구현할 수 있습니다.</block>
   <block id="ad48fc5af22c71cdbcd7d9db9a44e632" category="paragraph">절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다.</block>
-  <block id="38640edf067eb08148bbb243d83148a7" category="paragraph">MAUSO는 각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화되는 경우에만 시작됩니다.</block>
   <block id="29464d5954abf5bc9affd5f6ae57e7e5" category="admonition">MAUSO는 사이트 재해가 발생한 경우에만 시작됩니다. 사이트 재해는 동일한 사이트에 있는 * 모든 * 노드의 장애이지만 몇 가지 예외가 있습니다.</block>
   <block id="76febd606fc24a36395547ab83980f59" category="paragraph">MAUSO는 다음과 같은 종료 시나리오에서 * 시작되지 않습니다 *.</block>
   <block id="1fb135b5dd970a96db5c2b3025ddcbf8" category="list-text">종료를 시작합니다. 예를 들면 다음과 같습니다.</block>
@@ -3787,8 +3786,6 @@
   <block id="fc220fa1e514a0098ff6b9739a86bcdb" category="cell">집계 재배치 절차</block>
   <block id="d2a672acb2ab8b5e74822778c1141a70" category="paragraph">'시스템 컨트롤러 교체' 명령을 사용하고 컨트롤러 모듈과 NVM을 교환합니다</block>
   <block id="04c19f5eb2ebdc099239a7074f8d6534" category="paragraph">9.10.1 이상</block>
-  <block id="29f0de2b0e55e07da57cbc094ee90f18" category="inline-link">"system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로 업그레이드합니다</block>
-  <block id="698790ff3a9e772b95a90b745268af9a" category="paragraph"><block ref="698790ff3a9e772b95a90b745268af9a" category="inline-link-rx"></block></block>
   <block id="b9e53a247da3982cb706e33287d2a8fd" category="paragraph">'시스템 컨트롤러 교체' 명령 사용</block>
   <block id="5b34d65f91f37ddae80b6389b69e56f6" category="paragraph">9.8 이상</block>
   <block id="c6d4a9d3f7628712dae7a41ab974439d" category="inline-link">'시스템 컨트롤러 교체' 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다</block>
@@ -12587,7 +12584,6 @@
   <block id="ab08b90a3ec069f002ca9a306b280075" category="admonition">ONTAP 9.6부터 ONTAP 시스템 관리자를 사용하여 MetroCluster IP 구성에서 스위치오버 및 스위치백 작업을 수행할 수 있습니다.</block>
   <block id="51c314385c544d39d9b0b57b7e4adc0c" category="paragraph">ONTAP 9.5부터 브리지의 _ 대역 내 관리 _ 가 지원됩니다. 즉, 브리지에 대한 FC 연결을 통해 ONTAP CLI에서 브리지를 구성 및 모니터링할 수 있습니다. 브리지 이더넷 포트를 통해 브리지에 물리적으로 액세스할 필요는 없으며 브리지 사용자 인터페이스는 필요하지 않습니다.</block>
   <block id="4de57bb3ff326a74dbe2d8f7f29b872e" category="paragraph">ONTAP 9.8부터 브리지의 _ 대역내 관리 _ 가 기본적으로 지원되며 대역외 SNMP 관리는 사용되지 않습니다.</block>
-  <block id="76523054e1a9c487e3ee7fc5639b663c" category="paragraph">각 스위치에서 이 작업을 연속으로 반복해야 합니다.</block>
   <block id="330b7770e81504eae12777c67ca4c41a" category="admonition">ONTAP 9.8부터 ' * storage switch * ' 명령은 ' * system switch * '로 대체됩니다. 다음 단계에서는 '* storage switch*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system switch*' 명령을 사용하는 것이 좋습니다.</block>
   <block id="bcde10ce4a2143b2697a304bf8b1428c" category="list-text">구성 모드 + "conf t"로 들어갑니다</block>
   <block id="373d444a2cd198885d109a2e14d51bec" category="list-text">교체 스위치의 펌웨어 버전을 확인하여 다른 FC 스위치의 버전과 일치하는지 확인하십시오.</block>
@@ -12728,4 +12724,11 @@
   <block id="62e6ef0d9ca5ed550d07c950fb908783" category="list-text">48에 대한 제어 TCP 연결 및 26에 대한 데이터 연결을 구성하여 해당 DSCP(Differentiated Services Code Point) 값에 있는 모든 패킷을 표시합니다.</block>
   <block id="cae6c8fdb4bf6ec6d4303accb806c01e" category="list-text">다음 프로파일 이름으로 FCIP 프로파일을 구성합니다.</block>
   <block id="186580027a6082f2b0bf52acc31fef23" category="list-text">IOD 설정을 확인합니다.</block>
+  <block id="5c5abfeb23848eee7e1fb00c2a61db6c" category="paragraph">MAUSO는 다음 시나리오에서만 시작됩니다.</block>
+  <block id="d805df154de0ed954114c0b8a30d6cf0" category="list-text">각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화됩니다.</block>
+  <block id="539aa46206b59c007151f02f46d35617" category="list-text">정상적인 사이트의 노드 중 테이크오버 상태가 아닌 노드는 없습니다.</block>
+  <block id="1bcbe4bd68c550a7ed28f4bdd586bc74" category="inline-link">"system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다</block>
+  <block id="5ddb9938498e31a4b1c392ab5953e15b" category="paragraph"><block ref="5ddb9938498e31a4b1c392ab5953e15b" category="inline-link-rx"></block></block>
+  <block id="9630e0ae86014261ce835fe1e1ffcd0e" category="paragraph">각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.</block>
+  <block id="b8ce668f7b81ebccc724b47a22aafe9f" category="paragraph">MetroCluster 시스템의 서비스 절차에는 드라이브 쉘프, IP 스위치, FC 스위치, FC-to-SAS 브리지 및 SAS 케이블에 대한 펌웨어 업그레이드 및 하드웨어 교체 절차가 포함됩니다.</block>
 </blocks>
