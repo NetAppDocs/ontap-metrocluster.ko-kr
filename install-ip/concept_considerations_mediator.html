@@ -3703,7 +3703,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-07 17:44:19 +0000">02/07/2022</time>
+    <time datetime="2022-02-17 00:18:40 +0000">02/17/2022</time>
     
   
 
@@ -3811,7 +3811,17 @@ MAUSO는 비휘발성 캐시 미러링(<em>DR 미러링</em>)과 SyncMirror plex
 <p>절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다.</p>
 </div>
 <div class="paragraph">
-<p>MAUSO는 각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화되는 경우에만 시작됩니다.</p>
+<p>MAUSO는 다음 시나리오에서만 시작됩니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화됩니다.</p>
+</li>
+<li>
+<p>정상적인 사이트의 노드 중 테이크오버 상태가 아닌 노드는 없습니다.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock important">
 <table>
