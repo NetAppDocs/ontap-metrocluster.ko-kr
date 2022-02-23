@@ -3441,7 +3441,6 @@
   <block id="b62c48c82e4ea4a71a96e2e228f80a9b" category="paragraph">의 단계를 사용합니다 <block ref="c3652d8371e8759d3786637bc5f1c8bc" category="inline-link-macro-rx"></block>.</block>
   <block id="1971b81ef4689f1794a2e3edb64225db" category="list-text">partner-sysid가 올바른지 다시 확인합니다.</block>
   <block id="628ec0782add3a1eca1d1b88c88303f8" category="list-text">루트 암호화를 사용하는 경우 키 관리 구성에 대해 부팅 메뉴 옵션을 다시 선택합니다.</block>
-  <block id="d5515afb7a540243e68f5f9378938f3d" category="paragraph">키 관리자 설정에 따라 첫 번째 부팅 메뉴 프롬프트에서 옵션 10이나 옵션 11을 선택한 다음 옵션 6을 선택하여 복구 절차를 수행합니다. 노드를 완전히 부팅하려면 옵션 "1"(일반 부팅)에 의해 계속된 복구 절차를 반복해야 할 수 있습니다.</block>
   <block id="0076499bf0665482ee0c069821eab630" category="list-text">교체된 노드가 부팅될 때까지 기다립니다.</block>
   <block id="91795395e1cb68a9afce1f21b96272fa" category="paragraph">두 노드 중 하나가 Takeover 모드에 있으면 'storage failover 반환' 명령을 사용하여 Giveback을 수행합니다.</block>
   <block id="9da201c92a516e6f31f68187562fdcc5" category="list-text">암호화가 사용되는 경우 키 관리 구성에 맞는 명령을 사용하여 키를 복원합니다.</block>
@@ -3721,7 +3720,6 @@
   <block id="f6b539ea59b73f9b259ffed026e616d0" category="list-text">컨트롤러 업그레이드를 완료한 후 사이트 B에 로그인하여 교체된 컨트롤러가 올바르게 구성되었는지 확인합니다.</block>
   <block id="b7e5b55538476224f8195437bdd6b155" category="section-title">Tiebreaker 모니터링 복원 중</block>
   <block id="cf01be10c4ad6c0e087f2447c096712d" category="paragraph">이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.</block>
-  <block id="ace7c96df4bae1a7d80b832dc5c02f95" category="list-text">의 단계를 사용합니다<block ref="8a40a48df09f86826787416776d41780" category="inline-link-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _.</block>
   <block id="caf5a8c5111f5b0928fbdb96c1e8b81a" category="summary">FC 스위치 조닝은 새로운 컨트롤러 연결을 수용해야 합니다. NetApp에서 제공한 참조 구성 파일\(RCFs\)을 사용하여 스위치를 구성한 경우 조닝이 사전 구성되지만 변경할 필요는 없습니다.</block>
   <block id="aa7634a6c4e974b52faf565e007e1b60" category="doc">패브릭 연결 MetroCluster 구성에 컨트롤러 모듈을 추가할 때 새 컨트롤러 포트에 대한 조닝(zoning)입니다</block>
   <block id="f1671ac439417f75927f98ad97323bf7" category="paragraph">FC 스위치 조닝은 새로운 컨트롤러 연결을 수용해야 합니다. NetApp에서 제공한 참조 구성 파일(RCFs)을 사용하여 스위치를 구성한 경우 조닝이 사전 구성이므로 변경할 필요가 없습니다.</block>
@@ -3820,11 +3818,8 @@
   <block id="0658afd7b63854a03c773da7890b79c4" category="list-text">ONTAP 9.3 이상에서는 2노드 구성이 지원됩니다.</block>
   <block id="2e6da68450b987e7ad374e965e63ad0e" category="list-text">ONTAP 9.8 이상에서는 4개 및 8개 노드 구성이 지원됩니다.</block>
   <block id="ed332ae2e9a3efd17382e627809f4c84" category="paragraph">9.8 이전의 ONTAP 버전을 실행하는 4노드 또는 8노드 구성에서는 이 절차를 사용하지 마십시오.</block>
-  <block id="f0a86e811ffbd36a13f5a704cba084eb" category="admonition">원래 또는 새 플랫폼이 FC-VI 모드에서 1c/1d 포트를 사용하는 8020 시스템인 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="b7071513452c80dcfb33a91f6c6f0ecd" category="list-text">이 절차는 MetroCluster FC 구성의 컨트롤러 모듈(2노드 스트레치 MetroCluster 또는 2노드 또는 4노드 패브릭 연결 MetroCluster 구성)에 적용됩니다.</block>
-  <block id="8d26d11f6cef9d6a6c27ff854b3fc1e6" category="list-text">FAS80xx</block>
   <block id="cd71bc5f24bea355d7c54ac4a1bd00a5" category="list-text">원래 노드와 새 노드 간에 스토리지, FC 및 이더넷 연결을 사전에 매핑하는 것이 좋습니다.</block>
-  <block id="ac7815000e080de08acacad1aef30632" category="paragraph">자세한 내용은 를 참조하십시오<block ref="bf137fbaca3418d969a7cbbc6acb278c" category="inline-link-rx"></block></block>
   <block id="d0a21ff59a32489a592aeb50ea891e1c" category="list-text">구성에 손상된 디스크가 없는지 확인합니다.</block>
   <block id="9c2ea476b2663febaae7e92749da7877" category="paragraph">스토리지 디스크 고장</block>
   <block id="23a6830e0b1f38beb4090d86d31d8532" category="list-text">두 사이트 모두에서 표준 시간대와 시간이 올바르게 설정되었는지 확인합니다.</block>
@@ -3849,7 +3844,6 @@
   <block id="5db2619ab3a7ccb178b98644ee1d4e05" category="list-text">브로드캐스트 도메인을 수정하여 삭제해야 하는 VLAN 및 물리적 포트를 제거합니다.</block>
   <block id="9c72ecff6f02b2c92e12130effa540d4" category="section-title">이전 플랫폼을 제거하는 중입니다</block>
   <block id="fb7af1863497df9dda3e65ea0159d317" category="paragraph">이전 컨트롤러를 구성에서 제거해야 합니다.</block>
-  <block id="f3a6e1fe094dc62639f83bbc858ee252" category="paragraph">를 참조하십시오 <block ref="c7de98113170eef3b5acdc2cf9602241" category="inline-link-macro-rx"></block> FC-VI 카드의 슬롯 정보</block>
   <block id="9c1c5be053b28ba5edd13b92cac80497" category="paragraph">모든 구성 요소의 HA 상태는 MCC 여야 합니다.</block>
   <block id="fe8b2cbe27aeee8cf3fd12fd4f19075c" category="cell">MetroCluster 구성에 다음과 같은 문제가 있는 경우</block>
   <block id="7a0cb0e9d6bfae35a7d862f122269833" category="cell">HA 상태는...</block>
@@ -3873,7 +3867,6 @@
   <block id="e606299b52f4f296d9e1024342b77a75" category="paragraph">RECOVER_EXTERNAL_keymanager'입니다</block>
   <block id="9caedf166198ce0f30b4afaef9a9b698" category="list-text">부팅 메뉴에서 옵션(6)을 실행합니다.</block>
   <block id="2d9e786c47fe4bbb5d2cec20e0f373eb" category="list-text">루트 암호화가 사용되는 경우 사용 중인 ONTAP 버전에 따라 부팅 메뉴 옵션을 선택하거나 키 관리 구성에 대해 부팅 메뉴 명령을 다시 실행하십시오.</block>
-  <block id="96c86abb61a7377e730b6b80e3d90aec" category="paragraph">노드가 완전히 부팅될 때까지 부팅 메뉴 프롬프트에서 recover_xxxxxxxx_keymanager 명령을 여러 번 실행해야 할 수 있습니다.</block>
   <block id="80d9624a4e183629cc80dcaae44aedaa" category="section-title">LIF 구성을 확인하는 중입니다</block>
   <block id="34e041fe9ecda3607a3bb424cba8d99b" category="paragraph">스위치백 이전에 LIF가 적절한 노드/포트에서 호스팅되었는지 확인합니다. 다음 단계를 수행해야 합니다</block>
   <block id="87706eccebcd85e1210a84c72b5e2c9b" category="paragraph">이 작업은 노드가 루트 애그리게이트로 부팅된 site_B에서 수행합니다.</block>
@@ -12731,4 +12724,15 @@
   <block id="5ddb9938498e31a4b1c392ab5953e15b" category="paragraph"><block ref="5ddb9938498e31a4b1c392ab5953e15b" category="inline-link-rx"></block></block>
   <block id="9630e0ae86014261ce835fe1e1ffcd0e" category="paragraph">각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.</block>
   <block id="b8ce668f7b81ebccc724b47a22aafe9f" category="paragraph">MetroCluster 시스템의 서비스 절차에는 드라이브 쉘프, IP 스위치, FC 스위치, FC-to-SAS 브리지 및 SAS 케이블에 대한 펌웨어 업그레이드 및 하드웨어 교체 절차가 포함됩니다.</block>
+  <block id="46e4f6024087b0e1c3fd4a21ef438dad" category="admonition">원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 기술 지원 부서에 문의하십시오.</block>
+  <block id="ea82c7b5fb58362afd3d6e95de6eb609" category="list-text">FAS80x0으로</block>
+  <block id="9b81337122f1b971d326821246c0fb05" category="list-text">AFF80x0입니다</block>
+  <block id="9630fdb2df8bbf2bbd201638e1cc2f2e" category="admonition">FC-VI 모드에서 1c 및 1d 포트를 사용하는 경우 FAS8020 또는 AFF8020의 업그레이드는 지원되지 않습니다.</block>
+  <block id="51556e4766045ccfd74aafe1f8271966" category="paragraph">자세한 내용은 를 참조하십시오<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block></block>
+  <block id="38d923048395adfe402bca08916bd9db" category="paragraph">컨트롤러의 포트 사용량은 플랫폼 모듈과 MetroCluster IP 구성에서 사용할 스위치에 따라 다릅니다. 에서 새 플랫폼의 포트 사용량을 수집할 수 있습니다 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="f9f099865bb9d36821db181257896abb" category="list-text">자동 부팅을 사용하는 경우 CTRL-C를 눌러 자동 부팅을 중단합니다</block>
+  <block id="806422c50772a82e317db68491ffe3e4" category="paragraph">두 노드 중 하나가 Takeover 모드에 있는 경우 Giveback을 수행합니다.</block>
+  <block id="411fd118744e7bc163c41845c9fedb88" category="paragraph">'스토리지 페일오버 반환</block>
+  <block id="c9616da62905adb15396b653b4d8475b" category="paragraph">클러스터 피어링을 다시 구성해야 할 수 있습니다.</block>
+  <block id="b196fb7a2e0b15c158585ec325406b3c" category="list-text">의 단계를 사용합니다<block ref="abdcb9b507d42a49d77fa45291426271" category="inline-link-rx"></block> In_MetroCluster Tiebreaker 설치 및 구성 _.</block>
 </blocks>
