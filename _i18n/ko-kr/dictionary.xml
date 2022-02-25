@@ -12735,4 +12735,10 @@
   <block id="411fd118744e7bc163c41845c9fedb88" category="paragraph">'스토리지 페일오버 반환</block>
   <block id="c9616da62905adb15396b653b4d8475b" category="paragraph">클러스터 피어링을 다시 구성해야 할 수 있습니다.</block>
   <block id="b196fb7a2e0b15c158585ec325406b3c" category="list-text">의 단계를 사용합니다<block ref="abdcb9b507d42a49d77fa45291426271" category="inline-link-rx"></block> In_MetroCluster Tiebreaker 설치 및 구성 _.</block>
+  <block id="6feea37f7c9ba85a19752c43872c3438" category="inline-link-macro">유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다</block>
+  <block id="c53469c0e05ec04d4c7bf601859fd9fb" category="admonition">유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.<block ref="a0ba112c9c0ab9c29c24131f966b9b69" category="inline-link-macro-rx"></block></block>
+  <block id="5713f2c18fca6cff15f3222aca93a2a6" category="summary">Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다</block>
+  <block id="4a397091a3693a57176ee396010387ca" category="paragraph">유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.</block>
+  <block id="65e494c11bd4a371acff4afdb4808d87" category="paragraph">유지보수 작업으로는 컨트롤러 플랫폼 업그레이드, ONTAP 업그레이드, 협상된 전환 및 스위치백 수행이 있습니다.</block>
+  <block id="362c54fb8886bdfe1e59d87ffffef547" category="list-text">MetroCluster 구성 유지 관리를 완료한 후에는 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.</block>
 </blocks>

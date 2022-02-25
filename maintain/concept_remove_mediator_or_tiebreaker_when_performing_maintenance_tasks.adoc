@@ -1,0 +1,78 @@
+---
+permalink: maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, maintenance, service, tiebreaker, mediator, ontap mediator 
+summary: Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다 
+---
+= 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.
+
+유지보수 작업으로는 컨트롤러 플랫폼 업그레이드, ONTAP 업그레이드, 협상된 전환 및 스위치백 수행이 있습니다.
+
+.단계
+. 다음 명령의 출력을 수집합니다.
++
+'Storage iSCSI-initiator show'를 선택합니다
+
+. 전환을 시작할 수 있는 Tiebreaker, 중재자 또는 기타 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.
++
+|===
+
+
+| 사용 중인 경우... | 다음 절차를 사용하십시오. 
+
+
+ a| 
+Tiebreaker입니다
+ a| 
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
+
+
+
+ a| 
+중재자
+ a| 
+ONTAP 프롬프트에서 다음 명령을 실행합니다.
+
+'MetroCluster configuration-settings 중재자 제거
+
+
+
+ a| 
+타사 응용 프로그램
+ a| 
+제품 설명서를 참조하십시오.
+
+|===
+. MetroCluster 구성 유지 관리를 완료한 후에는 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.
++
+|===
+| 사용 중인 경우... | 이 절차를 사용합니다 
+
+
+ a| 
+Tiebreaker입니다
+ a| 
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations["MetroCluster 구성 추가"] MetroCluster Tiebreaker 설치 및 구성_섹션에서
+
+
+
+ a| 
+중재자
+ a| 
+link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 섹션에서
+
+
+
+ a| 
+타사 응용 프로그램
+ a| 
+제품 설명서를 참조하십시오.
+
+|===
+

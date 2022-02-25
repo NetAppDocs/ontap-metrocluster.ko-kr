@@ -6,6 +6,8 @@ entries:
   url: "/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html"
 - title: MetroCluster 장애 및 복구 시나리오
   url: "/maintain/reference_mcc_failure_scenarios.html"
+- title: 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
+  url: "/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html"
 - title: FC-to-SAS 브리지 유지 관리
   entries:
   - title: MetroCluster 구성에서 FiberBridge 7600N 브리지 지원
