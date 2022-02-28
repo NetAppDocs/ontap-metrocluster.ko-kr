@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>두 컨트롤러 모듈에 대한 파트너 시스템 ID 설정</title>
+  <title>유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="두 컨트롤러 모듈에 대한 파트너 시스템 ID 설정" />
+  <meta property="og:title" content="유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html" />
-	<meta property="og:description" content="두 컨트롤러 모듈 모두에서 HA 쌍을 형성할 수 있도록 파트너 시스템 ID를 설정해야 합니다." />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html" />
+	<meta property="og:description" content="Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다" />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
@@ -18,8 +18,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="두 컨트롤러 모듈 모두에서 HA 쌍을 형성할 수 있도록 파트너 시스템 ID를 설정해야 합니다.">
-  <meta name="keywords" content=" metrocluster, upgrade, set, up, partner, system, id, controller, module">
+  <meta name="description" content="Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다">
+  <meta name="keywords" content=" metrocluster, maintain, maintenance, service, tiebreaker, mediator, ontap mediator">
   
   
 
@@ -281,13 +281,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -1691,6 +1691,15 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/pages/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.pdf" >
+    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -2237,15 +2246,6 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/pages/upgrade/task_set_the_partner_system_id_for_both_controller_modules.pdf" >
-    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -3211,7 +3211,7 @@
         MetroCluster 유지 관리 작업의 절차를 찾는 방법
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/reference_mcc_failure_scenarios.html">
         MetroCluster 장애 및 복구 시나리오
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html">
         유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> FC-to-SAS 브리지 유지 관리</div>
@@ -3471,7 +3471,7 @@
         두 컨트롤러 모듈의 전원을 켜고 Loader 메시지가 표시됩니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_change_the_ha_config_setts_mcc_add_a_2nd_controller.html">
         기존 및 새 컨트롤러 모듈의 ha-config 설정을 변경합니다
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html">
         두 컨트롤러 모듈에 대해 파트너 시스템 ID를 설정합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_boot_the_exist_controller_module.html">
         기존 컨트롤러 모듈을 부팅합니다
@@ -3677,7 +3677,7 @@
           <a href="/ko-kr/ontap-metrocluster/">ONTAP&nbsp;MetroCluster</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          두 컨트롤러 모듈에 대한 파트너 시스템 ID 설정
+          유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
         </li>
       </ul>
     </div>
@@ -3700,7 +3700,7 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">두 컨트롤러 모듈에 대한 파트너 시스템 ID 설정</h1>
+  <h1 class="n-doc__component-detail-heading">유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다</h1>
 </div>
 
 
@@ -3712,19 +3712,11 @@
   
 
 <span>기여자
-  <a target="_blank" href="https://github.com/netapp-ivanad">
+  <a target="_blank" href="https://github.com/netapp-folivia">
     <img  class="avatar avatar-small"
-          alt="netapp-ivanad"
+          alt="netapp-folivia"
           width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/76115643?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          src="https://avatars.githubusercontent.com/u/91882669?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3735,25 +3727,102 @@
 
 
 <div class="paragraph lead">
-<p>두 컨트롤러 모듈 모두에서 HA 쌍을 형성할 수 있도록 파트너 시스템 ID를 설정해야 합니다.</p>
+<p>유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.</p>
 </div>
 <div class="paragraph">
-<p>이 작업은 LOADER 프롬프트에서 두 컨트롤러 모듈을 모두 사용하여 수행됩니다.</p>
+<p>유지보수 작업으로는 컨트롤러 플랫폼 업그레이드, ONTAP 업그레이드, 협상된 전환 및 스위치백 수행이 있습니다.</p>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>기존 컨트롤러 모듈에서 파트너 시스템 ID를 새 컨트롤러 모듈의 ID로 설정합니다.</p>
+<p>다음 명령의 출력을 수집합니다.</p>
 <div class="paragraph">
-<p>'setenv PARTNER-sysid_of_new_controller_'</p>
+<p>'Storage iSCSI-initiator show&#8217;를 선택합니다</p>
 </div>
 </li>
 <li>
-<p>새 컨트롤러 모듈에서 파트너 시스템 ID를 기존 컨트롤러 모듈의 ID로 설정합니다.</p>
-<div class="paragraph">
-<p>'setenv partner-sysid_of_existing_controller_'</p>
+<p>전환을 시작할 수 있는 Tiebreaker, 중재자 또는 기타 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">사용 중인 경우&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">다음 절차를 사용하십시오.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Tiebreaker입니다</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html">"MetroCluster 구성 제거"</a> MetroCluster Tiebreaker 설치 및 구성 가이드 _</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>중재자</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ONTAP 프롬프트에서 다음 명령을 실행합니다.</p>
 </div>
+<div class="paragraph">
+<p>'MetroCluster configuration-settings 중재자 제거</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>타사 응용 프로그램</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>제품 설명서를 참조하십시오.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>MetroCluster 구성 유지 관리를 완료한 후에는 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">사용 중인 경우&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">이 절차를 사용합니다</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Tiebreaker입니다</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations">"MetroCluster 구성 추가"</a> MetroCluster Tiebreaker 설치 및 구성_섹션에서</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>중재자</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html">"MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"</a> MetroCluster IP 설치 및 구성 섹션에서</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>타사 응용 프로그램</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>제품 설명서를 참조하십시오.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
 </div>
@@ -3767,8 +3836,8 @@
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[두 컨트롤러 모듈에 대한 파트너 시스템 ID 설정](https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_set_the_partner_system_id_for_both_controller_modules.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/upgrade/task_set_the_partner_system_id_for_both_controller_modules.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다](https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
     </div>
     <div class="page-nav-container">
