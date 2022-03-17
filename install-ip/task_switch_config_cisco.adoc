@@ -10,19 +10,20 @@ summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 �
 [role="lead"]
 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 Cisco IP 스위치를 구성해야 합니다.
 
-.이 작업에 대해
-* MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
-* 직렬 콘솔을 사용하여 스위치에 연결해야 합니다.
-* 이 작업은 관리 네트워크의 구성을 재설정합니다.
-
+이 섹션의 절차 중 일부는 독립 절차이며, 사용자가 직접 수행했거나 작업과 관련된 절차만 실행해야 합니다.
 
 
 
 == Cisco IP 스위치를 출하 시 기본값으로 재설정합니다
 
-새 소프트웨어 버전과 RCFs를 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다.
+[role="lead"]
+RCF 파일을 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다. 이전 설치가 실패한 후 동일한 RCF 파일을 다시 설치하거나 새 버전의 RCF 파일을 설치하려는 경우 이 절차가 필요합니다.
 
-MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
+.이 작업에 대해
+* MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
+* 직렬 콘솔을 사용하여 스위치에 연결해야 합니다.
+* 이 작업은 관리 네트워크의 구성을 재설정합니다.
+
 
 .단계
 . 스위치를 출하 시 기본값으로 재설정합니다.
@@ -669,10 +670,8 @@ IP_switch_A_1(config)#
 IP_switch_A_1(config)# key-chain macsec-psk no-show
 ----
 +
-참고:
 
-+
-설정을 파일에 저장할 때 옥텟 문자열도 숨겨집니다.
+NOTE: 설정을 파일에 저장할 때 옥텟 문자열도 숨겨집니다.
 
 +
 기본적으로 PSK 키는 암호화된 형식으로 표시되며 쉽게 해독할 수 있습니다. 이 명령은 MACsec 키 체인에만 적용됩니다.
@@ -845,13 +844,19 @@ IP_switch_A_1(config-macsec-policy)# sak-expiry-time 100
 IP_switch_A_1(config-macsec-policy)# conf-offset CONF-OFFSET-0
 ----
 +
+<<<<<<< 머리
+
+
+
+
+
+====
+를 누릅니다
+
 --
-
-NOTE: 이 명령은 MPLS 태그와 같은 패킷 헤더(dmac, smac, etype)를 사용하기 위해 중간 스위치에 필요할 수 있습니다.
+>>>>>> fb53efa2361ac88998ad17907c3a3fe6d3aafb6d 참고: 이 명령은 MPLS 태그와 같은 패킷 헤더(dmac, smac, etype)를 사용하는 중간 스위치에 필요할 수 있습니다.
 
 --
-
-
 . 실행 중인 구성을 시작 구성으로 복사합니다.
 +
 'copy running-config startup-config'를 선택합니다
@@ -872,9 +877,7 @@ IP_switch_A_1(config-macsec-policy)# show macsec policy
 ----
 
 
-
-
-=== MACsec 구성을 확인하는 중입니다
+=== MACsec 구성 확인
 
 .단계
 . MACsec 세션을 설정하려면 구성 내 두 번째 스위치에 대한 이전 절차의 * ALL * 을 반복합니다.
@@ -920,8 +923,6 @@ MACsec MKA 구성
 특정 MACsec 정책 또는 모든 MACsec 정책의 구성
 
 |===
-
-
 
 
 
@@ -979,9 +980,7 @@ IP_switch_A_1(config)# copy running-config startup-config
 ----
 
 
-
-
-== 25Gbps 연결을 사용하는 시스템에 대한 Forward Error Correction 설정
+= 25Gbps 연결을 사용하는 시스템에 대한 Forward Error Correction 설정
 
 시스템이 25Gbps 연결을 사용하여 구성된 경우 RCF 파일을 적용한 후 FEC(Forward Error Correction) 매개변수를 수동으로 OFF로 설정해야 합니다. RCF 파일은 이 설정을 적용하지 않습니다.
 
@@ -993,6 +992,9 @@ link:port_usage_3232c_9336c.html["Cisco 3232C 또는 Cisco 9336C 스위치에 �
 
 이 작업은 MetroCluster IP 구성의 4개 스위치 모두에서 수행해야 합니다.
 
+<<<<<<< 머리. 컨트롤러 모듈에 연결된 각 25Gbps 포트에서 FEC 매개변수를 off로 설정한 다음 실행 중인 구성을 시작 구성으로 복사합니다. 구성 모드 'config t'로 진입합니다. 구성할 25Gbps interface를 지정한다. FEC를 OFF: FEC OFF로 설정한다. 스위치의 각 25Gbps 포트에 대해 이전 단계를 반복합니다. ... 설정 모드 종료: '종료
+
+====
 .단계
 . 컨트롤러 모듈에 연결된 각 25Gbps 포트에서 FEC 매개변수를 "OFF"로 설정한 다음 실행 중인 구성을 시작 구성으로 복사합니다.
 +
@@ -1011,7 +1013,7 @@ FEC 끄기
 .. 스위치의 각 25Gbps 포트에 대해 이전 단계를 반복합니다.
 .. 구성 모드 종료:
 +
-종료
+'종료'>>>>>> fb53efa2361ac88998ad17907c3a3fe6d3aafb6d
 
 +
 다음 예에서는 스위치 IP_SWITCH_A_1의 인터페이스 Ethernet1/25/1에 대한 명령을 보여 줍니다.
