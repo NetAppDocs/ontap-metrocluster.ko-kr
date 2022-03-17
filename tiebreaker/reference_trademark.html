@@ -16,20 +16,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/>
-  
-  <meta name="description" content="상표">
-  <meta name="keywords" content=" trademark">
-  
-  
-
-  <!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="상표">
+  <meta name="keywords" content=" trademark"><!-- Icons -->
   <link rel="icon" href="/ko-kr/ontap-metrocluster/images/favicon.ico" type="image/x-icon">
 
-  <!-- RSS Feed -->
-  
-
-  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
@@ -59,27 +50,11 @@
   
   <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/ko-kr/ontap-metrocluster/css/product-family.css' type="text/css">
-  
-
-  
-  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-feature.css' type='text/css'>
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-  
-    <script src='/ko-kr/ontap-metrocluster/js/na-search.js'></script>
-  
 
-  
-  <script src='/ko-kr/ontap-metrocluster/js/na-pagenav.js'></script>
-  
-
-  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/prism.css' type='text/css'>
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/ontap-metrocluster/js/na-search.js'></script><script src='/ko-kr/ontap-metrocluster/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/prism-netapp.css' type='text/css'>
 
 
@@ -97,9 +72,7 @@
   <script src='/ko-kr/ontap-metrocluster/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/ko-kr/ontap-metrocluster/js/toc.js'></script>
-  <script src='/ko-kr/ontap-metrocluster/js/customscripts.js'></script>
-
-  <script>
+  <script src='/ko-kr/ontap-metrocluster/js/customscripts.js'></script><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -158,7 +131,6 @@
   }
   </script>
   <script src='/ko-kr/ontap-metrocluster/js/version-dropdown.js'></script>
-  <script src='/ko-kr/ontap-metrocluster/js/product-family.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/FileSaver.min.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/jszip-utils.min.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/jszip.min.js'></script>
@@ -171,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[상표](https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_trademark.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/tiebreaker/reference_trademark.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -3650,26 +3641,22 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container -->
-    <article class="page-content">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">홈</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">설명서</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/ko-kr/ontap-metrocluster/">ONTAP&nbsp;MetroCluster</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          상표
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -3698,7 +3685,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-28 13:26:13 +0000">02/28/2022</time>
+    <time datetime="2022-03-17 13:33:13 +0000">03/17/2022</time>
     
   
 
@@ -3716,7 +3703,6 @@
 
 </p>
 
-
 <div class="paragraph">
 <p>NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</p>
 </div>
@@ -3728,27 +3714,7 @@
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[상표](https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_trademark.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/tiebreaker/reference_trademark.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">이 페이지의 내용</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
-  <div style="clear: both"></div><!-- Main needs to have height -->
-</div>
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
 
@@ -3850,9 +3816,7 @@
 </div>
 </footer>
 
-      </div>
-
-      <!-- Elasticsearch JS -->
+      </div><!-- Elasticsearch JS -->
       <script type="text/javascript" src='/ko-kr/ontap-metrocluster/js/bundle.js'></script>
 
       <!-- Syntax Highlighting -->
@@ -3867,7 +3831,4 @@
     </script>
     <script src='/ko-kr/ontap-metrocluster/js/www-ntap.js'></script>
     <script src='/ko-kr/ontap-metrocluster/js/tabbed-blocks.js'></script>
-  </body>
-
-  
-</html>
+  </body></html>
