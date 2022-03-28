@@ -593,6 +593,49 @@ aggr_data_a2
 새 DR 그룹을 MetroCluster 구성에 통합하고 새 노드에 미러링된 데이터 애그리게이트를 생성해야 합니다.
 
 .단계
+. MetroCluster를 구성하여 변경 사항을 구현합니다.
++
+'MetroCluster 설정'
+
++
+
+NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다.
+
++
+....
+cluster_A::> metrocluster configure
+
+[Job 439] Job succeeded: Configure is successful.
+
+cluster_A::>
+....
+. 노드가 DR 그룹에 추가되었는지 확인합니다.
++
+'MetroCluster node show'
+
++
+....
+cluster_A::> metrocluster node show
+
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node-A-1-FC        configured     enabled   normal
+              node-A-2-FC        configured     enabled   normal
+      Cluster-B
+              node-B-1-FC        configured     enabled   normal
+              node-B-2-FC        configured     enabled   normal
+2     cluster_A
+              node-A-3-IP        configured     enabled   normal
+              node-A-4-IP        configured     enabled   normal
+      Cluster-B
+              node-B-3-IP        configured     enabled   normal
+              node-B-4-IP        configured     enabled   normal
+8 entries were displayed.
+
+cluster_A::>
+....
 . 각 새 MetroCluster 노드에서 미러링된 데이터 애그리게이트를 생성합니다.
 +
 'Storage aggregate create-aggregate aggregate-name-node-name-diskcount no-of-diskdiskcount -mirror true'
@@ -641,45 +684,6 @@ Do you want to continue? {y|n}: y
 
 cluster_A::>
 ....
-. MetroCluster를 구성하여 변경 사항을 구현합니다.
-+
-'MetroCluster 설정'
-
-+
-....
-cluster_A::*> metrocluster configure
-
-[Job 439] Job succeeded: Configure is successful.
-
-cluster_A::*>
-....
-. 노드가 DR 그룹에 추가되었는지 확인합니다.
-+
-'MetroCluster node show'
-
-+
-....
-cluster_A::*> metrocluster node show
-
-DR                               Configuration  DR
-Group Cluster Node               State          Mirroring Mode
------ ------- ------------------ -------------- --------- --------------------
-1     cluster_A
-              node-A-1-FC        configured     enabled   normal
-              node-A-2-FC        configured     enabled   normal
-      Cluster-B
-              node-B-1-FC        configured     enabled   normal
-              node-B-2-FC        configured     enabled   normal
-2     cluster_A
-              node-A-3-IP        configured     enabled   normal
-              node-A-4-IP        configured     enabled   normal
-      Cluster-B
-              node-B-3-IP        configured     enabled   normal
-              node-B-4-IP        configured     enabled   normal
-8 entries were displayed.
-
-cluster_A::*>
-....
 . MDV_CRS 볼륨을 이전 노드에서 고급 권한이 있는 새 노드로 이동합니다.
 +
 .. MDV 볼륨을 식별하기 위해 볼륨을 표시합니다.
@@ -721,7 +725,7 @@ cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 
 +
 ....
-cluster_A::> vol move start -volume MDV_CRS_d6b0b313ff5611e9837100a098544e51_A -destination-aggregate data_a3 -vserver cluster_A
+cluster_A::*> vol move start -volume MDV_CRS_d6b0b313ff5611e9837100a098544e51_A -destination-aggregate data_a3 -vserver cluster_A
 
 Warning: You are about to modify the system volume
          "MDV_CRS_d6b0b313ff5611e9837100a098544e51_A". This might cause severe
@@ -738,7 +742,7 @@ Warning: You are about to modify the system volume
 
 +
 ....
-cluster_A::> vol show MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
+cluster_A::*> vol show MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 Vserver     Volume       Aggregate    State      Type       Size  Available Used%
 ---------   ------------ ------------ ---------- ---- ---------- ---------- -----
 cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B

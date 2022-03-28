@@ -12747,4 +12747,5 @@
   <block id="787ecd419f9570a45ad7d6ce5504c937" category="paragraph">'종료'&gt;&gt;&gt;&gt;&gt;&gt; fb53efa2361ac88998ad17907c3a3fe6d3aafb6d</block>
   <block id="c902bf858b7534a7f5dae73adb86fcab" category="section-title">키 관리를 복원하는 중입니다</block>
   <block id="f4f5fa0da45d620edd37e7bd122f0953" category="paragraph">데이터 볼륨이 암호화된 경우 키 관리를 복원해야 합니다. 루트 볼륨이 암호화된 경우 키 관리를 복구해야 합니다.</block>
+  <block id="fc5ed1fc7f860e8b42d66e226e5650e6" category="admonition">MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다.</block>
 </blocks>
