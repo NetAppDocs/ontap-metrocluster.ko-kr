@@ -3694,36 +3694,9 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-17 13:33:13 +0000">03/17/2022</time>
+    <time datetime="2022-03-28 17:31:53 +0000">03/28/2022</time>
     
   
-
-<span>기여자
-  <a target="_blank" href="https://github.com/netapp-martyh">
-    <img  class="avatar avatar-small"
-          alt="netapp-martyh"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/66496079?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/netapp-ranuk">
-    <img  class="avatar avatar-small"
-          alt="netapp-ranuk"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/80323433?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-</span>
 
 
 </p>
@@ -4453,6 +4426,63 @@ aggr_data_a2
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
+<p>MetroCluster를 구성하여 변경 사항을 구현합니다.</p>
+<div class="paragraph">
+<p>'MetroCluster 설정'</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
+</td>
+<td class="content">
+MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cluster_A::&gt; metrocluster configure
+
+[Job 439] Job succeeded: Configure is successful.
+
+cluster_A::&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>노드가 DR 그룹에 추가되었는지 확인합니다.</p>
+<div class="paragraph">
+<p>'MetroCluster node show'</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cluster_A::&gt; metrocluster node show
+
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node-A-1-FC        configured     enabled   normal
+              node-A-2-FC        configured     enabled   normal
+      Cluster-B
+              node-B-1-FC        configured     enabled   normal
+              node-B-2-FC        configured     enabled   normal
+2     cluster_A
+              node-A-3-IP        configured     enabled   normal
+              node-A-4-IP        configured     enabled   normal
+      Cluster-B
+              node-B-3-IP        configured     enabled   normal
+              node-B-4-IP        configured     enabled   normal
+8 entries were displayed.
+
+cluster_A::&gt;</pre>
+</div>
+</div>
+</li>
+<li>
 <p>각 새 MetroCluster 노드에서 미러링된 데이터 애그리게이트를 생성합니다.</p>
 <div class="paragraph">
 <p>'Storage aggregate create-aggregate aggregate-name-node-name-diskcount no-of-diskdiskcount -mirror true'</p>
@@ -4508,51 +4538,6 @@ Do you want to continue? {y|n}: y
 [Job 440] Job succeeded: DONE
 
 cluster_A::&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>MetroCluster를 구성하여 변경 사항을 구현합니다.</p>
-<div class="paragraph">
-<p>'MetroCluster 설정'</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cluster_A::*&gt; metrocluster configure
-
-[Job 439] Job succeeded: Configure is successful.
-
-cluster_A::*&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>노드가 DR 그룹에 추가되었는지 확인합니다.</p>
-<div class="paragraph">
-<p>'MetroCluster node show'</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cluster_A::*&gt; metrocluster node show
-
-DR                               Configuration  DR
-Group Cluster Node               State          Mirroring Mode
------ ------- ------------------ -------------- --------- --------------------
-1     cluster_A
-              node-A-1-FC        configured     enabled   normal
-              node-A-2-FC        configured     enabled   normal
-      Cluster-B
-              node-B-1-FC        configured     enabled   normal
-              node-B-2-FC        configured     enabled   normal
-2     cluster_A
-              node-A-3-IP        configured     enabled   normal
-              node-A-4-IP        configured     enabled   normal
-      Cluster-B
-              node-B-3-IP        configured     enabled   normal
-              node-B-4-IP        configured     enabled   normal
-8 entries were displayed.
-
-cluster_A::*&gt;</pre>
 </div>
 </div>
 </li>
@@ -4613,7 +4598,7 @@ cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>cluster_A::&gt; vol move start -volume MDV_CRS_d6b0b313ff5611e9837100a098544e51_A -destination-aggregate data_a3 -vserver cluster_A
+<pre>cluster_A::*&gt; vol move start -volume MDV_CRS_d6b0b313ff5611e9837100a098544e51_A -destination-aggregate data_a3 -vserver cluster_A
 
 Warning: You are about to modify the system volume
          "MDV_CRS_d6b0b313ff5611e9837100a098544e51_A". This might cause severe
@@ -4636,7 +4621,7 @@ Warning: You are about to modify the system volume
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>cluster_A::&gt; vol show MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
+<pre>cluster_A::*&gt; vol show MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 Vserver     Volume       Aggregate    State      Type       Size  Available Used%
 ---------   ------------ ------------ ---------- ---- ---------- ---------- -----
 cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
