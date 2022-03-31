@@ -599,7 +599,7 @@ aggr_data_a2
 
 +
 
-NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다.
+NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다
 
 +
 ....
