@@ -484,14 +484,6 @@
   <block id="5bd3adf5a1870b916a8c5aa5af9f7d92" category="admonition">9.0 이전 버전의 ONTAP에서는 각 스위치오버에 NVFAIL 플래그가 사용됩니다. ONTAP 9.0 이상 버전에서는 USO(계획되지 않은 전환)가 사용됩니다.</block>
   <block id="43052fb5cbe7d726484352632bff4d45" category="list-text">'vol-dr-force-nvfail' 매개 변수를 'on'으로 설정하여 스위치오버 시 NVFAIL을 트리거하도록 MetroCluster 구성 활성화:</block>
   <block id="8d7c5a2fec33d152c060971aa3253c4b" category="paragraph">'vol modify -vserver vserver -name -volume volume -name -dr -force -nvfail on'</block>
-  <block id="c27f8d08f54639e1ea065a458bb5450b" category="summary">필요한 경우 ONTAP 중재자 서비스를 제거할 수 있습니다.</block>
-  <block id="956ab0574d8251a8ec8c6c74f42bf11d" category="doc">ONTAP 중재자 서비스를 제거합니다</block>
-  <block id="5dc574c75d3a0b59f4965eca3a6c2c5f" category="paragraph">중재자 서비스를 제거하기 전에 중재자를 ONTAP에서 분리해야 합니다.</block>
-  <block id="baf6e7771f84cf5db3fbc9533db52b40" category="paragraph">이 작업은 ONTAP 중재자 서비스가 설치된 Linux 호스트에서 수행됩니다.</block>
-  <block id="e3bdaded12d38863b3e782d2277f8891" category="paragraph">이 명령에 액세스할 수 없는 경우 다음 예에 표시된 대로 전체 경로를 사용하여 명령을 실행해야 할 수 있습니다.</block>
-  <block id="04e18ededf9b4f7e991de51ad7fa228d" category="paragraph">'/usr/local/bin/uninstall_ontap_중재자'</block>
-  <block id="af016f6803224b169dbdc2d486a7034d" category="list-text">ONTAP 중재자 서비스를 제거합니다.</block>
-  <block id="c53d7ae8b9830f4d572f86414bfcc5ab" category="paragraph">uninstall_ontap_중재자</block>
   <block id="1ff31a738d26e47dfa5c26bac0568556" category="summary">각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수행하라는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다.</block>
   <block id="49263ce76ed7dd5239c1a66ac12d2d4e" category="doc">ONTAP 설정</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">시작하기 전에</block>
@@ -528,14 +520,7 @@
   <block id="76c896ac6b7a90ae2d17c2b3934e8219" category="paragraph">다음 예에서는 node_A_1에 있는 두 개의 클러스터 포트를 보여 줍니다.</block>
   <block id="cdf29de4c8a5a778670e597ff53bb862" category="list-text">파트너 클러스터에서 이 단계를 반복합니다.</block>
   <block id="c5f6ae1a3a37c521928e14a692842c6b" category="paragraph">ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.</block>
-  <block id="d5aeb358681fe8cf66166fa74195a2fd" category="summary">ONTAP 중재자 서비스를 설치한 후 암호를 변경할 수 있습니다. 두 가지 방법으로 암호를 변경할 수 있습니다.</block>
-  <block id="e3aa7011a37bc39acddb421d35fe5c6b" category="doc">ONTAP 중재자 암호 변경</block>
-  <block id="183b2aa3a5eb88aeb88e71147b8bcf77" category="paragraph">'/usr/local/bin/중재자_change_password'</block>
-  <block id="0fea72913528353e02baddfe85a03e5e" category="paragraph">다음 옵션 중 하나를 선택하여 암호를 변경합니다.</block>
-  <block id="e2a6f3f0659d65cb3836785cf8a67738" category="list-text">'edator_change_password' 명령어를 실행하여 다음 예와 같이 프롬프트에 응답한다.</block>
   <block id="337d79852891a37d41285c9101c3fff4" category="list-text">다음 명령을 실행합니다.</block>
-  <block id="42e7b099f6b0528770f02ee25377b671" category="paragraph">MDIATOR_USERNAME=mediatoradmin MEDIA_PASSWORD=mediator1 MEDIATOR_NEW_PASSWORD=mediator2 MEDIATOR_CHANGE_PASSWORD"</block>
-  <block id="170fad7ce1323bd1ac99a22d153c057d" category="paragraph">이 예제에서는 암호가 "mediator1"에서 "mediator2"로 변경되었음을 보여 줍니다.</block>
   <block id="54744df94a6fdb7104348dee41697c48" category="summary">MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.</block>
   <block id="14681192c7f80e2d7631c3a070df9619" category="doc">Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당</block>
   <block id="3b83c4ddd89aceae283e372313711a0d" category="section-title">FAS2750 또는 AFF A220 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
@@ -914,7 +899,6 @@
   <block id="b1ff5704b48e42d700d43961dd415064" category="summary">상표</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
   <block id="f99aa604031e5049799e73b5c3748a98" category="paragraph"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
-  <block id="858e574cb48e3c7de231574b683ba3f3" category="list-text">다음 예제와 같이 중재자_change_password 명령을 실행하고 프롬프트에 응답합니다.</block>
   <block id="965fd21ca9743b38007dc88ab0a81ba7" category="summary">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다.</block>
   <block id="ee6fa0b2fb549ba892f87ce418e13636" category="paragraph">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지해야 합니다. 이러한 관계에 공유 포트 또는 전용 포트를 사용할지 여부를 결정할 때 이 점이 중요합니다.</block>
   <block id="e332effd770e4f47249bcffd39577fea" category="inline-link">클러스터 및 SVM 피어링 Express 구성</block>
@@ -2119,12 +2103,6 @@
   <block id="158cb58d37ae471e855a50eebdf79050" category="list-text">RCF 스크립트 적용:</block>
   <block id="3c0c5e88db6d4b3741126778351471ec" category="paragraph">'cript apply BES-53248_v1.32_Switch-A1.SCR'</block>
   <block id="8dbef93c578a2dd1a148ce7a8e7ed428" category="list-text">일치하는 RCF 파일을 해당 스위치에 복사하도록 나머지 세 스위치 각각에 대해 이전 단계를 반복합니다.</block>
-  <block id="c02d4950c4ce62ccd8590b978866a586" category="doc">ONTAP 중재자 사용자 이름 변경</block>
-  <block id="363d2acb4bc2d2fd26d5676edcfecde3" category="paragraph">ONTAP 중재자 서비스를 설치한 후 사용자 이름을 변경할 수 있습니다. 두 가지 방법으로 암호를 변경할 수 있습니다.</block>
-  <block id="6b650cfd5a5122af7703db2cfff2b455" category="paragraph">'/usr/local/bin/중재자_username'</block>
-  <block id="493069b37797535af86a5daa9bd2e352" category="paragraph">다음 옵션 중 하나를 선택하여 사용자 이름을 변경합니다.</block>
-  <block id="2c7c13674c748cbd47e89d7e894c0c63" category="list-text">다음 예제와 같이 중재자_change_user 명령을 실행하고 프롬프트에 응답합니다.</block>
-  <block id="b41c8853c66915bd8a05346255719968" category="paragraph">MDIATOR_USERNAME=중재자_PASSWORD=mediator2 MEDIATOR_NEW_USERNAME=mediatoradmin 중재자_CHANGE_USER</block>
   <block id="a88a3ffd094ac9c3e4781378daf727b2" category="summary">MetroCluster IP 구성을 계획할 때 하드웨어 구성 요소 및 상호 연결 방법을 이해해야 합니다.</block>
   <block id="131a1d95b4315c0e5bb2b356dc23edb5" category="doc">MetroCluster IP 구성의 일부</block>
   <block id="1b80b97dc5d058d798af4c2b50efe299" category="section-title">주요 하드웨어 요소</block>
@@ -2164,7 +2142,6 @@
   <block id="63ffe4f1eeb56d0485132cbf234244c7" category="inline-link-macro">클러스터 피어링 연결에 케이블로 연결합니다</block>
   <block id="d6c1b26afb87081a7358d272268afbf0" category="paragraph"><block ref="d6c1b26afb87081a7358d272268afbf0" category="inline-link-macro-rx"></block></block>
   <block id="a72d2a4ca552186cbf62f182a7dfbe82" category="paragraph"><block ref="a72d2a4ca552186cbf62f182a7dfbe82" category="inline-link-macro-rx"></block></block>
-  <block id="87c73779bdee7b395b93de88e2529301" category="doc">ONTAP 중재자 서비스 설치 준비</block>
   <block id="d7bc3e4699ceee82586454b661f07889" category="list-text">ONTAP 중재자 서비스와 MetroCluster Tiebreaker 소프트웨어를 동일한 MetroCluster 구성과 함께 사용해서는 안 됩니다.</block>
   <block id="8b0f66b1cb7f0a192803547cc01ef5c4" category="list-text">ONTAP 중재자는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.</block>
   <block id="965fd53f15f7bf99e2336c9a442ebb53" category="list-text">ONTAP 중재자 서비스는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
@@ -2180,10 +2157,6 @@
   <block id="72b09b4c164fb776e6577cef10d7084d" category="paragraph">중재자 서비스와 MetroCluster 구성 사이의 링크는 최소 1Gbps의 대역폭을 가져야 합니다.</block>
   <block id="652f10975e44b79de998287113035fac" category="section-title">ONTAP 중재자를 위한 방화벽 요구 사항</block>
   <block id="671e00f956495c99ae5aae5896e8542a" category="paragraph">ONTAP 중재자가 여러 포트를 사용하여 특정 서비스와 통신합니다.</block>
-  <block id="861ef6676813cbc81369ee701ae73269" category="list-text">타사 방화벽을 사용하는 경우:</block>
-  <block id="041f3a27fe8b40cc213210949eb4f036" category="list-text">HTTPS 액세스를 활성화해야 합니다.</block>
-  <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
-  <block id="cc1e6f116b4b45ffde821f0aef59e030" category="paragraph">기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우, 중재자를 설치하는 동안 방화벽이 자동으로 구성됩니다.</block>
   <block id="fc4f6ae944c5fa7cfc47e0574373e3e8" category="paragraph">다음 표에는 방화벽에서 허용해야 하는 포트가 나와 있습니다.</block>
   <block id="f31bbdd1b3e85bccd652680e16935819" category="cell">출처</block>
   <block id="12007e1d59f4d09c87dbe2c438256244" category="cell">목적지</block>
@@ -2198,184 +2171,10 @@
   <block id="a3993ea912c0ecd6926aed69b72fd59a" category="paragraph">메일박스에 대한 iSCSI 데이터 접속</block>
   <block id="63639615515d028231f302c56bab6ad7" category="section-title">MetroCluster 구성에서 ONTAP 중재자를 업그레이드하기 위한 지침입니다</block>
   <block id="2eb1029cd264d9f182cfb37b0492ad43" category="paragraph">ONTAP 중재자를 업그레이드하는 경우 Linux 버전 요구 사항을 충족하고 업그레이드 지침을 따라야 합니다.</block>
-  <block id="07042419ecf3ef833bec94711072410a" category="list-text">중재자 서비스는 버전 1.0에서 1.1로 업그레이드할 수 있습니다.</block>
   <block id="80f0fa63ac735fb302ee06c9c1c515ae" category="list-text">모든 중재자 버전은 ONTAP 9.7 이상을 실행하는 MetroCluster IP 구성에서 지원됩니다.</block>
-  <block id="f275e7f70d8f999068761bd03506f0d2" category="section-title">호스트 운영 체제와 중재자를 함께 업그레이드</block>
-  <block id="3f2f9f3216025313cf31d8b43b3718b8" category="paragraph">다음 표에는 중재자 버전을 업그레이드할 뿐 아니라 RHEL/CentOS 7.6에서 최신 RHEL/CentOS 릴리즈로 업그레이드하는 경우의 업그레이드 지침이 나와 있습니다.</block>
-  <block id="1a9dd4a9c96e2863ec3f38f5667b2669" category="cell">대상 Linux 버전</block>
-  <block id="3d48ec6a07eabeb99d3b80b1f889cf92" category="cell">대상 중재자 버전</block>
-  <block id="b5cb41a6703cf18b4cecd5a0817f91cf" category="cell">노트 업그레이드</block>
-  <block id="6a8de62be2aba3050fe2cb285953ea9e" category="paragraph">RHEL/CentOS 7.7</block>
-  <block id="777d45bbbcdf50d49c42c70ad7acf5fe" category="paragraph">1.1</block>
-  <block id="03f4d43f4c43ea861fdce10fac096113" category="list-text">업그레이드는 다음과 같은 순서로 수행해야 합니다.</block>
-  <block id="be7a8da01f06535e5b1c825376fb13e3" category="list-text">RHEL/CentOS 버전 7.6에서 7.7로 운영 체제를 업그레이드합니다.</block>
-  <block id="1baaf248a80e9f2df9149ad24bcd0836" category="paragraph">* 참고 *: 운영 체제 업그레이드 중에는 ONTAP 중재자 및 중재자 지원 자동 비계획 전환을 사용할 수 없습니다. 중재자가 버전 1.0 - 1.1의 업그레이드 프로세스를 완료할 때까지 오프라인 상태입니다.</block>
-  <block id="17d6d5a8a6de38dd282c99abc975ec47" category="list-text">호스트를 재부팅하여 커널 모듈 변경 사항을 적용합니다.</block>
-  <block id="3ba55116604ed821f5ce045a1e006709" category="list-text">중재자를 버전 1.0에서 1.1로 업그레이드합니다.</block>
-  <block id="024f6b2ceb960af0370d128ea02e3bb1" category="inline-link-macro">ONTAP 중재자 서비스 설치 또는 업그레이드</block>
-  <block id="7ae90f92f4c3116089ea1691a1481c66" category="paragraph"><block ref="7ae90f92f4c3116089ea1691a1481c66" category="inline-link-macro-rx"></block></block>
-  <block id="797bfc3436949aeab76668d5c4a46d22" category="list-text">storage iscsi-initiator show 명령은 업그레이드 중에 중재자 서비스에 대한 연결이 중단된다는 것을 보고합니다.</block>
-  <block id="62ac39b42107cd3cf20201925c95f754" category="list-text">ONTAP 운영 체제는 업그레이드 중에 cf.mccip.med.auso.stDisabled EMS 이벤트를 생성합니다.</block>
-  <block id="2eacb51d1b60982ec71d3b87f9d967c9" category="list-text">ONTAP 운영 체제는 예기치 않은 자동 전환이 다시 활성화될 때 cf.mccip.med.auso.stEnabled EMS 이벤트를 생성합니다.</block>
-  <block id="d6844ff42f175efd4429d9bbe872a8f6" category="paragraph">RHEL/CentOS 8.0 또는 8.1</block>
-  <block id="13db436ef9104ac8217c5942baa439dd" category="paragraph">직접 업그레이드 경로가 없습니다. 운영 체제를 업그레이드한 후 1.0 버전을 제거하고 1.1 버전을 설치해야 합니다.</block>
-  <block id="050bfbcc74f502e3ef3716d883f61c92" category="list-text">ONTAP 구성에서 중재자 서비스를 삭제합니다.</block>
-  <block id="b8f876840850ae6eec722731d20577a1" category="list-text">중재자 서비스의 1.0 버전을 제거합니다.</block>
-  <block id="1712916ea86b92e1dc65c6376e57dbdc" category="inline-link-macro">ONTAP 중재자 서비스 제거</block>
-  <block id="cedb2eedc9be91c46ad0eebf891a04c2" category="paragraph"><block ref="cedb2eedc9be91c46ad0eebf891a04c2" category="inline-link-macro-rx"></block></block>
-  <block id="5a57e5770a7f3f6093180752cff0d9b0" category="list-text">Linux 운영 체제를 버전 8.0 또는 8.1로 업그레이드합니다.</block>
-  <block id="7c4b6e403cbff0ec5097c53fbb8b73b9" category="list-text">중재 서비스의 1.1 버전을 설치합니다.</block>
-  <block id="ae295e7cab9e10826cf8dfdf49ccefd4" category="paragraph"><block ref="ae295e7cab9e10826cf8dfdf49ccefd4" category="inline-link-macro-rx"></block></block>
-  <block id="8484266510c971479df6392894ce9e31" category="list-text">ONTAP 구성에 중재자 서비스를 추가합니다.</block>
-  <block id="f0324d386ec4ed7f8c8ebf742291230a" category="paragraph">'MetroCluster configuration-settings add-imator-address-1.1-ip-address'</block>
   <block id="fe8f2bed933b5baccdaadbe566f09126" category="section-title">업그레이드 후</block>
   <block id="ed92588fcdb50fce92fb0e01fb8449b0" category="paragraph">중재자 및 운영 체제 업그레이드가 완료된 후 'storage iscsi-initiator show' 명령을 실행하여 중재자 연결이 작동 중인지 확인해야 합니다.</block>
-  <block id="e757d32d746d3d6a86c0e1e0c565ae81" category="section-title">중재자 1.1 설치에서 되돌리기</block>
-  <block id="bfdbe680fc75eecc4ef0b63fafccccab" category="paragraph">중재자 버전 1.1에서 1.0으로 직접 되돌릴 수 없습니다. 1.1 버전을 제거하고 1.0 버전을 다시 설치해야 합니다.</block>
-  <block id="876c65eb22dee3ed901e633fbb746563" category="list-text">중재 서비스의 1.1 버전을 제거합니다.</block>
-  <block id="1b58be7ab5c19ce77ef566da58eafc6f" category="list-text">중재자 서비스의 1.0 버전을 설치합니다.</block>
-  <block id="0cbcf8488c0db66baf9b2d34702dd7ba" category="paragraph">'MetroCluster configuration-settings add-중재자-address-1.0-ip-address'</block>
-  <block id="a91fb4c2f26a34da08dc0d60df26191f" category="section-title">Linux 커널 업그레이드 복구</block>
-  <block id="14cbdd3ff28baa5ad34b838f1cdfd80d" category="paragraph">ONTAP 중재자를 사용하려면 SCST 커널 모듈이 필요합니다. Linux 커널이 업데이트되면 이 종속 관계가 서비스 손실로 이어질 수 있습니다. 커널 패키지가 변경될 경우 SCST 커널 모듈을 재구축하는 것이 좋습니다.</block>
-  <block id="1513e346075ff4cb53e8b13f74797242" category="list-text">ONTAP 중재자 버전 1.0에서 1.1로 업그레이드하면 SCST 모듈이 재생성됩니다.</block>
-  <block id="458808065ca0aca8ac27a5be6cf038a7" category="list-text">커널 모듈 변경 사항은 Linux 커널이 재부팅된 후에 적용됩니다.</block>
-  <block id="67d5dcdc5d8e2084ea8d15e52bc220de" category="paragraph">다음 절차 중 하나를 사용하여 중재자의 서비스 손실을 초래한 커널 업그레이드를 복구할 수 있습니다.</block>
-  <block id="41f0d067784b5d77c67c5cb8a8d27ab5" category="paragraph">SCST 커널 모듈을 제거하고 다시 설치합니다</block>
-  <block id="16e9eaaa525605067841e3acea249bee" category="paragraph">중재자 버전에 사용되는 SCST tar 번들이 있어야 합니다.</block>
-  <block id="dd8a600684ca75e62507b1a2ba59bb88" category="list-text">ONTAP 중재자 1.0은 scst-3.3.0.tar.bz2가 필요합니다</block>
-  <block id="c67f8c6b45774dc77f53b1037cdb9c4d" category="list-text">ONTAP 중재자 1.1에는 scst-3.4.0.tar.bz2가 필요합니다</block>
-  <block id="1b7d3b4fc56775c78dcdbc605fcecf91" category="list-text">SCST 모듈을 제거합니다.</block>
-  <block id="9541f06b5a8106059ae792b60b33a1f2" category="list-text">중재자 버전에 필요한 SCST tar 번들을 다운로드하고 압축을 풉니다.</block>
-  <block id="2a57d67b29d5c7bd4a714518aa1897bc" category="list-text">scst 디렉토리 내에서 다음 명령을 실행합니다.</block>
-  <block id="b1b38660f957e7723cbac948066d8a8c" category="list-text">scst 디렉토리 내부에서 다음 명령을 실행하여 중재자 버전의 SCST 모듈을 다시 설치합니다.</block>
-  <block id="430ee00fceaabe9e9489be3a0d2475b8" category="paragraph">ONTAP 중재자를 제거하고 다시 설치합니다</block>
-  <block id="59ce098408ba22153827c3740f7439ed" category="paragraph">참고:** ONTAP에서 중재자를 다시 구성해야 합니다.</block>
-  <block id="4d3a5688cd619b6a471bd27705ed11b7" category="list-text"><block ref="e5b98464b5c0e6ec01b305f3fb5a465a" category="inline-link-macro-rx"></block>.</block>
-  <block id="489d957f264863b3f4437f805ebfcc30" category="inline-link-macro">중재자 서비스를 다시 설치합니다</block>
-  <block id="cb34f32d49a6adde57a3822c5d1146c9" category="list-text"><block ref="72ca1e083d77bc61b26140e9f36ae29f" category="inline-link-macro-rx"></block>.</block>
-  <block id="23c36d85c3ecc94e8e88986b2d4194cc" category="paragraph">'MetroCluster configuration-settings add-중재자-address-ip-address'</block>
-  <block id="5dd41c69dbbf6464456398569c1dc43b" category="summary">ONTAP 중재자 서비스를 설치하려면 모든 필수 구성 요소가 충족되었는지 확인하고 설치 패키지를 얻고 호스트에서 설치 관리자를 실행해야 합니다.</block>
-  <block id="d538323207536710bf9482e713fccdb0" category="paragraph">다음 필수 조건을 충족해야 합니다.</block>
-  <block id="4dbae59f3cbe15012d73996ea5e7efd7" category="cell">중재자 버전</block>
-  <block id="7086defea73bc85dfa4588f2db92a805" category="cell">지원되는 Linux 버전</block>
-  <block id="0b0ec9f1cc28b3c19dc6c36dcd5af7cc" category="paragraph">1.3</block>
-  <block id="fcc29e51109ca100014a87a9b9694411" category="list-text">Red Hat Enterprise Linux: 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3</block>
-  <block id="7756ed262f2157ad61f237289d31648e" category="list-text">CentOS: 7.6, 7.7, 7.8, 7.9</block>
-  <block id="56765472680401499c79732468ba4340" category="paragraph">1.2</block>
-  <block id="070add3768287c5f5f5f77d13c4a72af" category="list-text">Red Hat Enterprise Linux: 7.6, 7.7, 7.8, 8.0, 8.1</block>
-  <block id="a565f362dbb8e1b9f57a08e86e8f79c8" category="list-text">CentOS: 7.6, 7.7, 7.8</block>
-  <block id="7ca10fe4adcfe26c58b56f49be56e4d0" category="admonition">커널 버전이 운영 체제 버전과 일치해야 합니다.</block>
-  <block id="d55d8aaf12099eb46ec871f4ea80b39d" category="list-text">64비트 물리적 설치 또는 가상 머신</block>
-  <block id="83626eda7582435cdf0eb139d5cc8972" category="list-text">8GB RAM</block>
   <block id="2f889d7364543ea941a8c61cfb8175f4" category="list-text">사용자: 루트 액세스</block>
-  <block id="2774e53c6d33bb76442da628f467bbda" category="paragraph">Red Hat Enterprise Linux 또는 CentOS를 설치하는 모범 사례와 시스템에 연결된 리포지토리를 설치하는 방법은 다음과 같습니다. 다른 방식으로 설치 또는 구성된 시스템은 추가 단계가 필요할 수 있습니다.</block>
-  <block id="8e6d01361c0a0174b1932a821de7a679" category="list-text">Red Hat 모범 사례에 따라 Red Hat Enterprise Linux 또는 CentOS를 설치해야 합니다. CentOS 8.x 버전에 대한 지원 기간이 종료되므로 RHEL 또는 CentOS 7.x 호환 버전을 사용하지 않는 것이 좋습니다</block>
-  <block id="d78f805366335574fe9a7a8a768188ec" category="list-text">Red Hat Enterprise Linux 또는 CentOS에 ONTAP 중재자 서비스를 설치하는 동안 시스템은 설치 프로그램이 필요한 모든 소프트웨어 종속성을 액세스하고 설치할 수 있도록 적절한 리포지토리에 액세스할 수 있어야 합니다.</block>
-  <block id="177124ed5a050ade35cf0ca9bbfbea42" category="list-text">yum installer가 Red Hat Enterprise Linux 리포지토리에서 종속 소프트웨어를 찾으려면 Red Hat Enterprise Linux를 설치하는 동안 또는 유효한 Red Hat 서브스크립션을 사용하여 시스템을 등록해야 합니다.</block>
-  <block id="3fd0a1c0edf135c3937e76bd17a097d3" category="paragraph">Red Hat 서브스크립션 관리자에 대한 자세한 내용은 Red Hat 설명서를 참조하십시오.</block>
-  <block id="b2a4296360f5b0414eec745b6a908f44" category="list-text">다음 포트는 사용되지 않고 중재자를 위해 사용할 수 있어야 합니다.</block>
-  <block id="f35f71b69154572b602a36ded3d5e04b" category="list-text">31784</block>
-  <block id="d54ce9de9df77c579775a7b6b1a4bdc0" category="list-text">3260</block>
-  <block id="647537229263aefa3c54288c7bb1c9c9" category="list-text">타사 방화벽을 사용하는 경우 를 참조하십시오 <block ref="18d19bad9a4543e182a0d97d3b9dd92c" category="inline-link-macro-rx"></block></block>
-  <block id="0c52d328e3575ffed90f3f02c8504ef7" category="list-text">Linux 호스트가 인터넷에 액세스할 수 없는 위치에 있는 경우 패키지를 수동으로 설치하거나 필요한 패키지를 로컬 저장소에서 사용할 수 있는지 확인해야 합니다.</block>
-  <block id="2fb8fab8d316710dc04148da14d65653" category="paragraph">리포지토리 설정에 대한 자세한 내용은 다음 링크를 참조하십시오.</block>
-  <block id="3674977431a44980c31f81d6a2b8cc32" category="paragraph">ONTAP 중재자 서비스에는 다음 패키지가 필요합니다.</block>
-  <block id="f813fcc7239eff34d867d55b252023dc" category="cell">모든 RHEL/CentOS 버전</block>
-  <block id="2b4506837d7956224ca67c3fe50a62f1" category="cell">RHEL/CentOS 7.x용 추가 패키지</block>
-  <block id="73e41e821a9762dfeb2467ba42329069" category="cell">RHEL/CentOS 8.x용 추가 패키지</block>
-  <block id="50955d4b2031271f8fda1764c1a66ac3" category="list-text">OpenSSL</block>
-  <block id="bfb048701bda18c214ce545e4c956329" category="list-text">OpenSSL - devel</block>
-  <block id="181eb1934d9e8f95069e533e5364b99d" category="list-text">커널-devel</block>
-  <block id="e0d511356bd44120af49cc96c9dcf3b3" category="list-text">GCC 를 참조하십시오</block>
-  <block id="d40270eef8bab470027aedc1b59294ef" category="list-text">libselinux-utils</block>
-  <block id="099dafc678df7d266c25f95ccf6cde22" category="list-text">만듭니다</block>
-  <block id="d8ccd8a2339a5abdfd1aa26a18065592" category="list-text">redhat-LSB-core를 참조하십시오</block>
-  <block id="e5c5e6dae38b284e8cf0bd1fb0efac03" category="list-text">패치</block>
-  <block id="03ce1ba314f367fdd09887fc8f60578b" category="list-text">bzip2</block>
-  <block id="feed9f9eee114f237486f709d5bd0248" category="list-text">python36</block>
-  <block id="bb0d72f88d770a3fb163f1db9068533b" category="list-text">python36-devel</block>
-  <block id="017b459c471455ea6ffb7b32b1598286" category="list-text">Perl - 데이터 - 덤프</block>
-  <block id="6d290149925db69430ede61961477f82" category="list-text">Perl-ExtUtils-MakeMaker</block>
-  <block id="e08cb560fa0fac340ce6e958daaf5e4d" category="list-text">python3-PIP</block>
-  <block id="84ca4ac1c16ddb3230798bc5eb343137" category="list-text">정책 코어 유틸리티 - 비톤</block>
-  <block id="6bd1d4e8dbf8645d427b0d591dfaa638" category="list-text">python36-PIP</block>
-  <block id="6461c12b2a26dbd0adddb0db161c7020" category="list-text">elfutils -libelf -devel</block>
-  <block id="c8dff58175a7ddfedf00d77953ef42dd" category="list-text">정책 코어 유틸리티 - 비톤 - 유틸리티</block>
-  <block id="e781852df8c9fc982198148d005ed892" category="list-text">서명 확인이 구성된 경우 이를 비활성화해야 합니다. 이 작업은 다음 두 가지 방법 중 하나로 수행할 수 있습니다.</block>
-  <block id="56edd0d6ba5ec6dd9ebe0dfe46cd6e7e" category="list-text">UEFI SecureBoot 메커니즘이 구성된 경우 이를 비활성화합니다.</block>
-  <block id="e6518c986f6d4680dfac1ee6e165f115" category="list-text">grub.cfg 파일을 업데이트하고 다시 생성하여 서명 확인 메커니즘을 비활성화합니다.</block>
-  <block id="ac6439da643a87aca9345317b0df6695" category="list-text">/etc/default/grub 파일을 엽니다.</block>
-  <block id="555ac066a0a725c3b21878ee11396baa" category="list-text">GRUB_CMDLINE_LINUX 문 끝에 문자열 module.SIG_WERYCE=0을 추가합니다.</block>
-  <block id="66b839172e851682436ef771164bf0b9" category="list-text">grub.cfg 파일을 다시 생성하여 변경 사항을 구현합니다.</block>
-  <block id="c4e74e306f571ddb1de7142533ff4394" category="paragraph">'update-bootloader||update-grub||grub2-mkconfig-o/boot/grub2/grub.cfg'</block>
-  <block id="8418b94a2a307b3e96b6474bc55e08b7" category="list-text">호스트를 재부팅합니다.</block>
-  <block id="970e1040f661445042b9cc4524e79084" category="paragraph">중재자 설치 패키지는 다음을 포함하는 자동 압축 tar 파일입니다.</block>
-  <block id="40ee7f81efc7bee0246bfd8b4313ff05" category="list-text">지원되는 릴리즈의 리포지토리에서 가져올 수 없는 모든 종속성을 포함하는 RPM 파일입니다.</block>
-  <block id="8bbf3efceb42cd45e316987343509e73" category="list-text">설치 스크립트</block>
-  <block id="ae90f7d74aeb9331f16b20106d00bbb7" category="paragraph">이 절차에 설명된 대로 유효한 SSL 인증을 권장합니다.</block>
-  <block id="08dcc2869a95098cf8ff34aa8213d3f2" category="paragraph">이 절차는 기존 설치의 설치 또는 업그레이드에 사용됩니다.</block>
-  <block id="6ec67c7f9ae6e79cdc1ecaba58a63339" category="paragraph"><block ref="6ec67c7f9ae6e79cdc1ecaba58a63339" category="inline-link-macro-rx"></block></block>
-  <block id="966d347d6cc1563a226816ae5a81a78b" category="section-title">리포지토리에 대한 액세스를 활성화합니다</block>
-  <block id="9f14218e5135dda7b7530841c740770a" category="cell">운영 체제가...</block>
-  <block id="c76eda301cb02c29a872a2edc87fac66" category="cell">이러한 리포지토리에 대한 액세스를 제공해야 합니다...</block>
-  <block id="886dab0e73d247379a1479ecce7a2e23" category="paragraph">RHEL 7.x를 참조하십시오</block>
-  <block id="3272bb50aa49abfece4d0ff5d7f2f1c9" category="paragraph">RHEL-7-server-optional-rpms</block>
-  <block id="66985170e641a7e20698bfec3c1d889f" category="paragraph">CentOS 7.x</block>
-  <block id="29bbf40549849d260ac98466712efae4" category="paragraph">C7.6.1810 - 기본 리포지토리입니다</block>
-  <block id="9871c3e3eef10eb83f1020bf0f40a11c" category="paragraph">RHEL 8.x를 참조하십시오</block>
-  <block id="53edaf3b5c2db40d342cf9b501bc24c1" category="list-text">RHEL-8-for-x86_64-baseos-rpms</block>
-  <block id="77e5c42f280ea35ee2926680eb9b47bd" category="list-text">RHEL-8-for-x86_64-appstream-rpms</block>
-  <block id="af01f167586e9fbd8632c8a1a0ec0690" category="paragraph">CentOS 8.0</block>
-  <block id="89fbd37c27e26bf7336116db7ac1b466" category="paragraph">중재자가 설치 프로세스 중에 필요한 패키지에 액세스할 수 있도록 위에 나열된 리포지토리에 대한 액세스를 활성화합니다. 사용 중인 운영 체제에 대해 아래 절차를 따르십시오.</block>
-  <block id="ef86cc5f8c1cf0649edb8980819d5ccb" category="list-text">에 대한 절차 <block ref="cfad4f933445fe3e149c146ecc0b3865" category="inline-xref-macro-rx"></block> 운영 체제.</block>
-  <block id="e5e4fe7cae071f868354ffe124c8eac4" category="list-text">에 대한 절차 <block ref="7f25bb534eeedad3193848983965dfb8" category="inline-xref-macro-rx"></block> 운영 체제.</block>
-  <block id="871694b01e89140015514ce2a9ec485a" category="list-text">에 대한 절차 <block ref="d65b2d64eb8a246b44f850f01d3b24a4" category="inline-xref-macro-rx"></block> 운영 체제.</block>
-  <block id="aab7c1d9cccd04fb93c38e242c676b4a" category="inline-xref">CentOS 8.0.1095 이상</block>
-  <block id="67293445361633138c116474626ee0d9" category="list-text">에 대한 절차 <block ref="6cd33e8d98a7bb7cb5f5ed641272afcc" category="inline-xref-macro-rx"></block> 운영 체제.</block>
-  <block id="f9338b001083c1207b750f7ca56fb6ce" category="section-title">RHEL 7.x 운영 체제에 대한 절차</block>
-  <block id="29a3901faa47143beca695a85de7db4c" category="paragraph">운영 체제가 * RHEL 7.x * 인 경우:</block>
-  <block id="ebb1c48020075aff153ff6902c0e37db" category="list-text">필요한 리포지토리 구독:</block>
-  <block id="b3dd10b8fd4e14d2545dc0003d3ad87a" category="paragraph">'Subscription-manager Repos - -enable rhel-7-server-optional-rpms'</block>
-  <block id="b89b54d5af46b251354ba0599e815d76" category="paragraph">다음 예제에서는 이 명령의 실행을 보여 줍니다.</block>
-  <block id="981295ff2a0d7463991a885ba18dcf9d" category="list-text">yum repolist 명령을 실행합니다.</block>
-  <block id="99e8c68b889cb147e7d7f3a766bcbc08" category="section-title">RHEL 8.x 운영 체제에 대한 절차</block>
-  <block id="f55bcd9897346cefe1eb6f488358d4b7" category="paragraph">운영 체제가 * RHEL 8.x * 인 경우:</block>
-  <block id="7dd1ebc4d5b183898da5921f08d7b314" category="paragraph">'Subscription-manager Repos -- rhel-8-for-x86_64-baseos-rpms'를 활성화합니다</block>
-  <block id="bb80618cbf594385d599f59db2af5e33" category="paragraph">'Subscription-manager Repos - -enable rhel-8-for-x86_64-appstream-rpms'</block>
-  <block id="3a1b4b15b3782aff48704dfaea19c4ca" category="paragraph">새로 가입된 리포지토리가 목록에 나타납니다.</block>
-  <block id="aa3f631fc5c50fd8386f95cdb6d4a080" category="section-title">CentOS 7.x 운영 체제에 대한 절차</block>
-  <block id="22245074a7cac6efac9483e3712eb75c" category="paragraph">운영 체제가 * CentOS 7.x * 인 경우:</block>
-  <block id="95e57bf68611e6ba7f518e0e34d40385" category="list-text">C7.6.1810-Base 리포지토리를 추가합니다. C7.6.1810 - 기본 볼트 리포지토리에는 ONTAP 중재자를 위해 필요한 커널-devel 패키지가 포함되어 있습니다.</block>
-  <block id="a9a0d20bc8c82736f7aca5ab3b01ecdf" category="list-text">/etc/yum.repos.d/CentOS-Vault.repo에 다음 줄을 추가합니다.</block>
-  <block id="e77417f9b3a025db5c9b897480397f05" category="section-title">CentOS 8.0.1905 이상 운영 체제에 대한 절차</block>
-  <block id="81c7a3cb2e63f472014dfe2b68d0038b" category="admonition">CentOS 8.x의 수명 지원은 2021년 12월 31일에 종료됩니다. ONTAP에서 CentOS를 사용하는 경우 로 되돌리는 것이 좋습니다 <block ref="d65b2d64eb8a246b44f850f01d3b24a4" category="inline-xref-macro-rx"></block> 운영 체제 또는 RHEL을 사용합니다.</block>
-  <block id="d35432a6cd9635c21aa35d7b00ab2a18" category="paragraph">운영 체제가 * CentOS 8.0.1905 이상인 경우 *:</block>
-  <block id="776b863d23f8f3c1ad323efc746ad581" category="inline-link">CentOS 볼트</block>
-  <block id="6ba27586854ba0abe529cf9dfcdd935e" category="paragraph">에 있습니다<block ref="ca696ba3aa939e934b2df752c3821404" category="inline-link-rx"></block>에서 운영 체제와 일치하는 커널-devel 패키지를 찾습니다. 8.0(CentOS 8.0.1905이상) 코어의 최신 버전이 에 있기 때문입니다<block ref="0ea159b669197108632fac010ad6fa88" category="inline-link-rx"></block>필요한 커널 모듈을 컴파일하려면 일치하는 kernel-devel 패키지에 대한 액세스를 제공해야 합니다.</block>
-  <block id="9a57fec066e0a61fb842162f033faf88" category="paragraph">rpm -i\http://vault.centos.org/8.0.1905/BaseOS/x86_64/os/Packages/kernel-devel-$(uname -r).rpm</block>
-  <block id="2699fab59dd92a1ee8ec7edfb1c53cc2" category="admonition">위의 명령은 CentOS 8.0.1905에만 적용되는 예입니다. 다른 CentoOS 8.x 빌드에 적합한 경로를 변경합니다.</block>
-  <block id="f79787ab160e21523526e72ba51652ad" category="list-text">패키지가 이미 설치되었다는 오류가 시스템에 표시되면 패키지를 제거하고 다시 시도하십시오.</block>
-  <block id="5842c617760ec88e74403fcbbdac12a9" category="list-text">kernel-devel 패키지를 제거합니다.</block>
-  <block id="6d97c3b1955e8f90cdc265fad38ddb79" category="paragraph">'yum remove kernel-devel'</block>
-  <block id="99bb9681cb725875d0be400f49eca9d6" category="list-text">에 표시된 "rpm" 명령을 반복합니다 <block ref="fd049611d5f23ebb101acec1a21657d5" category="inline-xref-macro-rx"></block>.</block>
-  <block id="e1daa66710a7c955cba4452a694495af" category="section-title">중재자 설치 패키지를 다운로드합니다</block>
-  <block id="658af565337d40fc1457f7afa13ddfee" category="list-text">ONTAP 중재자 페이지에서 중재자 설치 패키지를 다운로드합니다.</block>
-  <block id="b02f3046b150b191e2d899be132a42bf" category="inline-link">ONTAP 중재자 다운로드 페이지</block>
-  <block id="8206c273a22a9771c0ddd5eb500e8908" category="list-text">중재자 설치 패키지가 대상 디렉토리에 있는지 확인합니다.</block>
-  <block id="74ba1d61d7167ef9092b8a56f7804e73" category="paragraph">"ls"</block>
-  <block id="bfaf18d8dfedf8024736910386965918" category="paragraph">인터넷에 액세스할 수 없는 위치에 있는 경우 설치 프로그램이 필요한 패키지에 액세스할 수 있는지 확인해야 합니다.</block>
-  <block id="8381a4805481041eb6ea8539d663156b" category="list-text">필요한 경우, 중재 설치 패키지를 다운로드 디렉토리에서 Linux 중재자 호스트의 설치 디렉토리로 이동합니다.</block>
-  <block id="f7def9f508355bb00fa3a45cb1f5748c" category="section-title">ONTAP 중재자 설치 패키지를 설치합니다</block>
-  <block id="88d054d5f3a3fafd9ba1b4f2b9d83d80" category="list-text">중재자 설치 패키지를 설치하고 필요에 따라 프롬프트에 응답합니다.</block>
-  <block id="5f733d0fb3040c5d3ddeb8aecc22ad76" category="paragraph">'./ONTAP-중재자_1.3'</block>
-  <block id="e62715a71f6beca82d6df0e20b5bd455" category="paragraph">설치 프로세스가 진행되어 필요한 계정을 생성하고 필요한 패키지를 설치합니다. 호스트에 이전 버전의 중재자가 설치되어 있는 경우 업그레이드할지 확인하는 메시지가 표시됩니다.</block>
-  <block id="db1646631b8bff8b437c37c322aa0a61" category="inline-link-macro">ONTAP 중재자 설치의 예(콘솔 출력)</block>
-  <block id="9c0f95d6de9186b24cce94c1c19ad0bb" category="section-title">설치를 확인합니다</block>
-  <block id="727f7e66f563ac8a9894cde4ef7cae57" category="list-text">다음 명령을 실행하여 ONTAP 중재자 서비스의 상태를 확인합니다.</block>
-  <block id="2c101feb286ad2210cbfe89cbea82b4a" category="paragraph">'스타emctl'입니다</block>
-  <block id="8a03d3e4e3fbf1d4d358c62350ffc64b" category="list-text">ONTAP 중재자 서비스가 사용하는 포트를 확인합니다. netstat</block>
-  <block id="8eea62084ca7e541d918e823422bd82e" category="section-title">결과</block>
-  <block id="e08c70cd39bb34f43d0f131e35bb05f8" category="paragraph">이제 ONTAP 중재자 서비스가 설치 및 실행됩니다. 중재자 기능을 사용하려면 ONTAP 스토리지 시스템에서 추가 구성을 수행해야 합니다.</block>
   <block id="37e24b9beaec6e2d80c28ff203bbbdac" category="summary">MetroCluster Tiebreaker는 여러 포트를 사용하여 특정 서비스와 통신합니다.</block>
   <block id="4374d106640eedbc52c784ec2a533f0b" category="doc">MetroCluster Tiebreaker의 방화벽 요구 사항</block>
   <block id="38d8f431ef4c9f99c8f96cd4ef60bf47" category="paragraph">Tiebreaker입니다</block>
@@ -12122,8 +11921,6 @@
   <block id="71a38375f76a7ed87f8e28fa9645d356" category="sidebar">ONTAP 중재자 서비스를 설치하거나 업그레이드합니다</block>
   <block id="4a013e1601591220c48257d9b4f85901" category="sidebar">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다</block>
   <block id="f49bd82ec28b5ed1e86bb99d8be7e44e" category="sidebar">MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다</block>
-  <block id="ccb82146b8d97fe4c7eca00b48d743d4" category="sidebar">ONTAP 중재자 암호를 변경합니다</block>
-  <block id="1cc7ca7bd5f05790fc8714f3758d47eb" category="sidebar">ONTAP 중재자 사용자 이름을 변경합니다</block>
   <block id="2497da01927dd78867fe48a11bd87f93" category="sidebar">MetroCluster 구성을 테스트합니다</block>
   <block id="b25d5935c651d85fc394ce7858eb2c60" category="sidebar">MetroCluster Tiebreaker 설치 및 구성</block>
   <block id="38484792ce18e1ac90df07df1cbe4040" category="sidebar">Tiebreaker 소프트웨어를 설치합니다</block>
@@ -12433,13 +12230,6 @@
   <block id="fa06f628b32f0d1ba3fc7ece00862b96" category="paragraph"><block ref="fa06f628b32f0d1ba3fc7ece00862b96" category="inline-link-rx"></block></block>
   <block id="9f6ef9d803a6a101c30a47069149abd6" category="list-text">EFOS 버전 3.7.x.x 이상부터는 FIPS를 준수하지 않는 버전과 FIPS 호환 버전을 사용할 수 있습니다. FIPS를 준수하지 않는 버전에서 로 이동하거나 FIPS를 준수하는 버전으로 전환할 때 다른 단계가 적용됩니다. FIPS를 준수하지 않는 버전에서 FIPS를 준수하는 버전으로 또는 그 반대로 EFOS를 변경하면 스위치가 공장 출하 시 기본값으로 재설정됩니다. 이 절차를 수행하려면 직렬 콘솔 포트를 통해 액세스해야 합니다.</block>
   <block id="c92c490b97a94b8ad700c26b41c33c18" category="summary">ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성을 지원하여 예상치 못한 자동 전환을 수행할 수 있습니다.</block>
-  <block id="f99a7e2cc2f68abed09630b1b61f8cd9" category="paragraph">ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성을 지원하여 예상치 못한 자동 전환을 수행할 수 있습니다. 환경은 다음 요구 사항을 충족해야 합니다. Linux 버전을 업데이트해야 할 수 있습니다.</block>
-  <block id="6be6d40c3750758375151aaf5ce76c7a" category="paragraph">Linux 환경에서 LACP(Link Aggregation Control Protocol)를 사용하는 경우 커널을 올바르게 구성하고 'sysctl net.ipv4.conf.all.arp_ignore'가 ""2"로 설정되어 있는지 확인해야 합니다.</block>
-  <block id="56f9797f838faa0e4bcaf2634a6882b4" category="paragraph">다음 예제에서는 이 명령의 실행을 보여 줍니다. "'rhel-7-server-optional-rpms'" 리포지토리가 목록에 나타나야 합니다.</block>
-  <block id="ff55a787e94b8141de1d31a08ef3978a" category="paragraph">다음 예제에서는 이 명령의 실행을 보여 줍니다. 목록에 "'CentOS-7.6.1810-Base" 리포지토리가 나타나야 합니다.</block>
-  <block id="428213827ee56071818425b8652e1717" category="list-text">[[step1-rpm]] 커널-devel 패키지를 직접 설치합니다.</block>
-  <block id="1c25284cbe99f20a5f633ae8ef6d7f53" category="paragraph"><block ref="1c25284cbe99f20a5f633ae8ef6d7f53" category="inline-link-rx"></block></block>
-  <block id="bc11709638b090ced2d64b33a0568e86" category="paragraph"><block ref="bc11709638b090ced2d64b33a0568e86" category="inline-link-macro-rx"></block></block>
   <block id="e90535a051902416d901e147c4c59930" category="summary">이 정보는 MetroCluster Tiebreaker 소프트웨어를 설치하고 구성하는 방법을 설명합니다.</block>
   <block id="884324de7d536976016cc7e2b34b0da9" category="paragraph">이 정보를 사용하여 MetroCluster Tiebreaker 소프트웨어를 설치해야 합니다.</block>
   <block id="26a1b5abfaa8d36a512417a3da776baf" category="summary">MetroCluster 구성 및 작동에 대해 자세히 알아볼 수 있습니다.</block>
@@ -12748,4 +12538,10 @@
   <block id="df181c6434803cd5a18218c45eca6655" category="list-text">FEC를 OFF: FEC OFF로 설정한다</block>
   <block id="344fc0c43530ccad90a38944b632b1e4" category="list-text">설정 모드 종료: '종료</block>
   <block id="9c0c1022f821ad4ee9fd20c2731bc6f1" category="list-text">문제 해결을 지원하기 위해 각 MetroCluster DR 그룹 내의 각 SAS 디스크 쉘프에 대해 고유한 쉘프 ID를 적극 권장합니다.</block>
+  <block id="70fef59fffa5df67d10b024d11f37399" category="paragraph"><block ref="70fef59fffa5df67d10b024d11f37399" category="inline-link-macro-rx"></block></block>
+  <block id="466ed123ab8f5845237d3ae425397ec7" category="paragraph">환경은 다음 요구 사항을 충족해야 합니다.</block>
+  <block id="c5cd3d887ef507cadc249c592410542a" category="list-text">Linux 버전을 업데이트할 계획이라면 최신 ONTAP 중재자 서비스를 설치하기 전에 업데이트를 수행하십시오.</block>
+  <block id="38553b6946adff245ef7423d34544e4b" category="paragraph">타사 방화벽을 사용하는 경우: * HTTPS 액세스를 활성화해야 합니다. * 포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
+  <block id="63fb21fb55a9451afb7b60d2b7d593b2" category="paragraph">+ 기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우 중재 설치 중에 방화벽이 자동으로 구성됩니다.</block>
+  <block id="5981ded82c976bff5c9a73686842655a" category="list-text">중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
 </blocks>

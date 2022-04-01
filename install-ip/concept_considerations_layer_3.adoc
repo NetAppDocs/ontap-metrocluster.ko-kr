@@ -16,7 +16,7 @@ MetroCluster 백엔드 스위치는 라우팅된 IP 네트워크에 직접 연�
 image::../media/mcc_layer3_backend.png[MCC layer3 백엔드]
 
 
-NOTE: NetApp은 NetApp의 검증된 스위치만 지원합니다. 이러한 스위치는 NetApp에서 테스트 및 판매합니다. 이 목록은 에 나와 있습니다 link:https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성 매트릭스 툴(IMT)"] 및 IN .
+NOTE: NetApp은 NetApp의 검증된 스위치만 지원합니다. 이러한 스위치는 NetApp에서 테스트 및 판매합니다. 이 목록은 에 나와 있습니다 link:https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성 매트릭스 툴(IMT)"] 및 IN link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["IP 스위치 케이블 연결"].
 
 MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 link:task_configure_the_mcc_hardware_components_mcc_ip.html["MetroCluster 하드웨어 구성 요소를 구성합니다"]. 설치 및 케이블 연결 절차를 수행할 때는 계층 3 구성에 해당하는 단계를 수행해야 합니다.
 

@@ -13,7 +13,7 @@ summary: MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올�
 MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올바른 절차를 선택해야 합니다.
 
 
-NOTE: ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 link:../upgrade/index.html["MetroCluster 업그레이드 및 확장"] 및 .
+NOTE: ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 link:../upgrade/index.html["MetroCluster 업그레이드 및 확장"] 및 link:../transition/index.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"].
 
 |===
 

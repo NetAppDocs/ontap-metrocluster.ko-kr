@@ -375,7 +375,7 @@ image::../media/zoning_consolidation_site_a_before.gif[전에 통합 사이트 A
 새 FC2 포트 영역에는 기존 존에서 제거된 이니시에이터 포트가 포함됩니다. 다이어그램에서 이러한 영역은 점선으로 표시됩니다.
 
 +
-조닝 명령에 대한 자세한 내용은 의 FC 스위치 섹션을 참조하십시오 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 또는 .
+조닝 명령에 대한 자세한 내용은 의 FC 스위치 섹션을 참조하십시오 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 또는 link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"].
 
 +
 다음 예에서는 통합 전후에 스토리지 영역 및 각 영역의 포트를 보여 줍니다. 포트는 _domain, port_pair로 식별됩니다.

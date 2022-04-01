@@ -95,19 +95,11 @@ entries:
   entries:
   - title: ONTAP 중재자 서비스 설치 준비
     url: "/install-ip/concept_mediator_requirements.html"
-  - title: ONTAP 중재자 서비스를 설치하거나 업그레이드합니다
-    url: "/install-ip/task_install_configure_mediator.html"
-  - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다
+  - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성
     url: "/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html"
   - title: MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
     url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
-  - title: ONTAP 중재자 암호를 변경합니다
-    url: "/install-ip/task_changing_mediator_password.html"
-  - title: ONTAP 중재자 사용자 이름을 변경합니다
-    url: "/install-ip/task_changing_mediator_username.html"
-  - title: ONTAP 중재자 서비스 제거
-    url: "/install-ip/task_uninstall_mediator.html"
-- title: MetroCluster 구성을 테스트합니다
+- title: MetroCluster 구성을 테스트하는 중입니다
   url: "/install-ip/task_test_the_mcc_configuration.html"
 - title: MetroCluster 구성을 제거할 때의 고려 사항
   url: "/install-ip/concept_considerations_when_removing_mcc_configurations.html"
