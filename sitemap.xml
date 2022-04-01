@@ -246,7 +246,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_layer_3.html</loc>
       
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -526,7 +526,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_mediator_requirements.html</loc>
       
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -820,7 +820,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html</loc>
       
-      <lastmod>2022-02-07T17:44:19+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -904,7 +904,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/</loc>
       
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -1345,7 +1345,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster//search.html</loc>
       
-      <lastmod>2022-03-31T18:59:50+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:30+00:00</lastmod>
       
     </url>
   
@@ -1415,7 +1415,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/task_assign_ownership_mcfc.html</loc>
       
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -1637,27 +1637,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_changing_mediator_password.html</loc>
-      
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_changing_mediator_password.html</loc>
-      
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_changing_mediator_username.html</loc>
-      
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_check_for_mcc_configuration_errors_with_config_advisor.html</loc>
       
       <lastmod>2022-01-31T15:02:03+00:00</lastmod>
@@ -1786,7 +1765,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html</loc>
       
-      <lastmod>2022-02-07T17:44:19+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -1961,7 +1940,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html</loc>
       
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -2186,13 +2165,6 @@
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_install_and_cable_the_new_controller.html</loc>
       
       <lastmod>2022-02-07T17:44:19+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_install_configure_mediator.html</loc>
-      
-      <lastmod>2022-02-22T14:21:49+00:00</lastmod>
       
     </url>
   
@@ -2444,7 +2416,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/task_prepare_the_nodes_for_switchback_in_a_mixed_configuration.html</loc>
       
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
+      <lastmod>2022-04-01T22:54:03+00:00</lastmod>
       
     </url>
   
@@ -2872,13 +2844,6 @@
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_transition_the_mcc_fc_nodes_2n_mcc_transition_supertask.html</loc>
       
       <lastmod>2022-02-07T17:44:19+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_uninstall_mediator.html</loc>
-      
-      <lastmod>2022-01-31T15:02:03+00:00</lastmod>
       
     </url>
   
