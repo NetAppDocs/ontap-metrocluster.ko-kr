@@ -2,7 +2,14 @@ $(document).ready(function () {
   try {
     // intialize config variables
     let zipLevel = "";
-    let baseUrlSection = "/ko-kr/ontap-metrocluster/pdfs/sidebar/";
+
+    let baseUrlSection = "/ko-kr/ontap-metrocluster/pdfs/";
+    const flavor = $("body").data("flavor");
+    if (flavor) {
+      baseUrlSection += flavor + "/";
+    }
+    baseUrlSection += "sidebar/";
+
     let zipFilename = "";
     let zipFileSize = 0;
     zipLevel = zipLevel !== ""?zipLevel:1;

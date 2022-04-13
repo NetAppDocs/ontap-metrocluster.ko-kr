@@ -45,12 +45,52 @@
   <link rel="stylesheet" href='/ko-kr/ontap-metrocluster/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/ko-kr/ontap-metrocluster/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ko-kr/ontap-metrocluster/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/ko-kr/ontap-metrocluster/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
@@ -60,15 +100,6 @@
 
   <script src='/ko-kr/ontap-metrocluster/js/na-utility.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/ko-kr/ontap-metrocluster/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/ko-kr/ontap-metrocluster/js/toc.js'></script>
@@ -121,16 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/ko-kr/ontap-metrocluster/js/version-dropdown.js'></script>
+  <script src='/ko-kr/ontap-metrocluster/js/custom-dropdown.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/FileSaver.min.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/jszip-utils.min.js'></script>
   <script src='/ko-kr/ontap-metrocluster/js/jszip.min.js'></script>
@@ -138,20 +161,15 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[IP 스위치에 대한 고려 사항](https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_considerations_for_using_existing_ip_switches.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/transition/concept_considerations_for_using_existing_ip_switches.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[IP 스위치에 대한 고려 사항](https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_considerations_for_using_existing_ip_switches.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/transition/concept_considerations_for_using_existing_ip_switches.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -161,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -244,7 +263,8 @@
           data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
           data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
           data-results-found="{hitCount}개의 결과를 찾음"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -333,6 +353,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/fullsite-sidebar/MetroCluster_문서.pdf" >
           <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
 
@@ -343,6 +366,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/패브릭_연결_MetroCluster를_설치합니다.pdf" 
@@ -358,6 +384,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_설치를_준비합니다.pdf" 
@@ -400,6 +429,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/패브릭_연결_MetroCluster_구성에_케이블을_연결합니다.pdf" 
@@ -415,6 +447,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/Fabric_MetroCluster_구성의_일부.pdf" 
@@ -451,6 +486,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성_요소를_설치하고_케이블을_연결합니다.pdf" 
@@ -476,6 +514,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/AFF_A900_시스템을_사용하는_경우_FC_스위치에_대한_포트_할당.pdf" 
@@ -523,6 +564,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_스위치를_구성합니다.pdf" 
@@ -536,6 +580,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/RCF_파일을_사용하여_Brocade_FC_스위치를_구성합니다.pdf" 
@@ -564,6 +611,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/RCF_파일을_사용하여_Cisco_FC_스위치를_구성합니다.pdf" 
@@ -616,6 +666,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/전환_중에_Brocade_6510_FC_패브릭을_공유하기_위한_하드웨어를_구성합니다.pdf" 
@@ -637,6 +690,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/7_Mode와_clustered_MetroCluster_구성_간에_스위치_패브릭을_공유할_수_있습니다.pdf" 
@@ -684,6 +740,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스토리지_LUN을_사용하여_MetroCluster_구성을_계획_및_설치합니다.pdf" 
@@ -703,6 +762,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/어레이_LUN을_사용하는_구성에서_MetroCluster_구성_요소를_설치하고_케이블로_연결합니다.pdf" 
@@ -722,6 +784,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스토리지_LUN이_있는_MetroCluster_구성에서_FC_VI_및_HBA_포트에_케이블을_연결합니다.pdf" 
@@ -760,6 +825,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성에서_스토리지_어레이를_FC_스위치에_케이블로_연결합니다.pdf" 
@@ -799,6 +867,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/어레이_LUN이_있는_MetroCluster_구성에서_스위치_조닝.pdf" 
@@ -829,6 +900,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/어레이_LUN이_있는_MetroCluster_구성에서_ONTAP를_설정합니다.pdf" 
@@ -869,6 +943,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/디스크_및_어레이_LUN을_모두_사용하여_MetroCluster_구성을_구축합니다.pdf" 
@@ -908,6 +985,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/추가_구성_및_모니터링을_위해_Active_IQ_Unified_Manager_및_ONTAP_System_Manager를_사용하는_방법.pdf" 
@@ -945,6 +1025,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_구성을_설치합니다.pdf" 
@@ -960,6 +1043,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_설치를_준비합니다.pdf" 
@@ -985,6 +1071,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/계층_3_광역_네트워크를_사용하는_방법.pdf" 
@@ -1030,6 +1119,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_하드웨어_구성_요소를_구성합니다.pdf" 
@@ -1049,6 +1141,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_스위치에_케이블을_연결합니다.pdf" 
@@ -1081,6 +1176,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_스위치를_구성합니다.pdf" 
@@ -1096,6 +1194,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/Cisco_IP_스위치를_구성합니다.pdf" 
@@ -1140,6 +1241,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/ONTAP에서_MetroCluster_소프트웨어를_구성합니다.pdf" 
@@ -1186,6 +1290,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/계획되지_않은_자동_전환을_위해_ONTAP_중재자_서비스를_구성합니다.pdf" 
@@ -1231,6 +1338,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스트레치_MetroCluster_구성을_설치합니다.pdf" 
@@ -1246,6 +1356,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_설치를_준비합니다.pdf" 
@@ -1278,6 +1391,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_SAS_연결_스트레치_MetroCluster_구성에_케이블을_연결합니다.pdf" 
@@ -1297,6 +1413,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_SAS_연결_스트레치_구성용_MetroCluster_구성_요소를_설치하고_케이블로_연결합니다.pdf" 
@@ -1338,6 +1457,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_브리지_연결_스트레치_MetroCluster_구성에_케이블을_연결합니다.pdf" 
@@ -1359,6 +1481,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성_요소를_설치하고_케이블을_연결합니다.pdf" 
@@ -1406,6 +1531,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/스토리지_LUN이_있는_확장_MetroCluster_구성의_연결.pdf" 
@@ -1438,6 +1566,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/추가_구성_및_모니터링을_위해_Active_IQ_Unified_Manager_및_ONTAP_System_Manager를_사용하는_방법.pdf" 
@@ -1479,6 +1610,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_Tiebreaker_설치_및_구성.pdf" 
@@ -1517,6 +1651,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_데이터_보호_및_재해_복구_이해.pdf" 
@@ -1541,6 +1678,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/전환__복구__스위치백을_수행합니다.pdf" 
@@ -1554,6 +1694,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/테스트_또는_유지_관리를_위한_스위치오버_수행.pdf" 
@@ -1579,6 +1722,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/설정을_수정합니다.pdf" 
@@ -1592,6 +1738,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC_구성에서_구성을_수정합니다.pdf" 
@@ -1661,6 +1810,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성_요소를_유지보수하십시오.pdf" 
@@ -1680,6 +1832,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_to_SAS_브리지_유지_관리.pdf" 
@@ -1722,6 +1877,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_스위치_유지_관리_및_교체.pdf" 
@@ -1764,6 +1922,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/IP_스위치_유지_보수_및_교체.pdf" 
@@ -1800,6 +1961,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC_구성에_스토리지를_핫_추가합니다.pdf" 
@@ -1815,6 +1979,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/SAS_스토리지를_브리지_연결_MetroCluster_FC_구성에_핫_추가합니다.pdf" 
@@ -1832,6 +1999,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/SAS_디스크_쉘프_스택에_SAS_디스크_쉘프를_핫_추가합니다.pdf" 
@@ -1898,6 +2068,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/FC_스위치에_대한_포트_할당.pdf" 
@@ -1939,6 +2112,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP로_전환합니다.pdf" 
@@ -1956,6 +2132,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP_구성으로_중단_없이_전환_ONTAP_9_8_이상_.pdf" 
@@ -1971,6 +2150,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP_구성으로_전환할_준비를_합니다.pdf" 
@@ -2016,6 +2198,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC에서_MetroCluster_IP_구성으로_전환.pdf" 
@@ -2069,6 +2254,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_MetroCluster_FC에서_4노드_MetroCluster_IP_구성으로_중단_없이_전환_ONTAP_9_8_이상_.pdf" 
@@ -2124,6 +2312,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_구성을_업그레이드하거나_확장합니다.pdf" 
@@ -2153,6 +2344,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/2노드_MetroCluster_FC_구성을_4노드_구성으로_확장합니다.pdf" 
@@ -2174,6 +2368,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/각_클러스터에_새_컨트롤러_모듈을_추가합니다.pdf" 
@@ -2201,6 +2398,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/새_컨트롤러_모듈을_설치하고_케이블을_연결합니다.pdf" 
@@ -2243,6 +2443,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/인터클러스터_LIF를_구성합니다.pdf" 
@@ -2301,6 +2504,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/4노드_MetroCluster_FC_구성을_8노드_구성으로_확장합니다.pdf" 
@@ -2326,6 +2532,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/새_노드의_스위치_패브릭을_재설정하고_존_zone_합니다.pdf" 
@@ -2352,6 +2561,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/새_컨트롤러에서_ONTAP를_구성합니다.pdf" 
@@ -2375,6 +2587,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/클러스터를_MetroCluster_구성으로_구성합니다.pdf" 
@@ -2388,6 +2603,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/인터클러스터_LIF를_구성합니다.pdf" 
@@ -2474,6 +2692,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/재해에_복구합니다.pdf" 
@@ -2493,6 +2714,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/멀티_컨트롤러_또는_스토리지_장애로부터_복구합니다.pdf" 
@@ -2510,6 +2734,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_IP_구성에서_스위치백을_준비합니다.pdf" 
@@ -2556,6 +2783,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/ko-kr/ontap-metrocluster/pdfs/sidebar/MetroCluster_FC_구성에서_스위치백을_준비합니다.pdf" 
@@ -2765,7 +2995,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_download_and_install_the_cisco_fc_switch_rcf_files.html">
         Cisco FC RCF 파일을 다운로드하고 설치합니다
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html">
-        Brocade FC 스위치를 수동으로 구성해야 합니다
+        Brocade FC 스위치를 수동으로 구성합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fcsw_cisco_configure_a_cisco_switch_supertask.html">
         Cisco FC 스위치를 수동으로 구성합니다
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fb_new_install.html">
@@ -2775,7 +3005,7 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_fmc_mcc_transition_configure_the_mcc_hardware_for_share_a_7_mode_brocade_6510_fc_fabric_dure_transition.html">
         개요
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_fcsw_brocade_review_brocade_license_requirements.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/concept_fcsw_brocade_reviewing_brocade_license_requirements.html">
         Brocade 라이센스 요구 사항을 검토합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_rack_the_hardware_components_mcc_fabric_and_ip.html">
         하드웨어 구성 요소를 랙에 장착하십시오
@@ -2812,7 +3042,7 @@
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_racking_the_hardware_components_in_a_mcc_configuration_with_array_luns.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_rack_the_hardware_components_in_a_mcc_configuration_with_array_luns.html">
         어레이 LUN이 있는 MetroCluster 구성에서 하드웨어 구성 요소를 랙에 구성합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-fc/task_prepare_a_storage_array_for_use_with_ontap_systems.html">
         ONTAP 시스템에서 사용할 스토리지 어레이를 준비합니다
@@ -3630,6 +3860,7 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
@@ -3678,7 +3909,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 15:02:03 +0000">01/31/2022</time>
+    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
     
   
 
@@ -3748,98 +3979,122 @@
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
-  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">이용 약관</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">개인 정보 보호 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">쿠키 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">쿠키 설정</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?</span>
+              <a target="_self" href="javascript:netapp_mailto()">의견을 공유해 주십시오</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/ko-kr/announcements/">공지 사항</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
       </div><!-- Elasticsearch JS -->
