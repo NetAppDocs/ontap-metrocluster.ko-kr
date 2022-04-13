@@ -5,6 +5,7 @@ keywords: machine, translation
 summary: 한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십시오. 
 ---
 = 기계 번역
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

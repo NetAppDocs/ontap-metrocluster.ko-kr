@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, configure, fc, sas, bridges, health, monitoring
 summary: FiberBridge 브리지는 타사 SNMP 모니터링 도구를 지원하지 않습니다. ONTAP 9.8부터 FC-SAS 브리지는 기본적으로 대역내 연결을 통해 모니터링되며 추가 구성은 필요하지 않습니다. 
 ---
 = 상태 모니터링을 위한 FC-to-SAS 브리지 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

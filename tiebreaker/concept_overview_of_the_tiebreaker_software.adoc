@@ -5,6 +5,7 @@ keywords: helpful, understand, netapp, metrocluster, tiebreaker, software, disti
 summary: NetApp MetroCluster Tiebreaker 소프트웨어가 무엇인지, MetroCluster 그리고 NetApp 구성을 효율적으로 모니터링할 수 있도록 장애 유형을 구분하는 방법을 이해하는 것이 도움이 됩니다. Tiebreaker CLI를 사용하여 설정을 관리하고 MetroCluster 구성의 상태와 운영을 모니터링할 수 있습니다. 
 ---
 = Tiebreaker 소프트웨어 개요
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

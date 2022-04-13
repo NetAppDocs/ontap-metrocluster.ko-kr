@@ -5,6 +5,7 @@ keywords: Generating and applying RCFs to the new IP switches, review, requireme
 summary: 전환을 위한 구성을 준비하려면 새 노드를 기존 MetroCluster 구성에 추가한 다음 데이터를 새 노드로 이동합니다. 
 ---
 = 전환을 위해 MetroCluster를 구성합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

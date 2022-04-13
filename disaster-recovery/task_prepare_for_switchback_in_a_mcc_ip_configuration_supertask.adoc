@@ -5,6 +5,7 @@ keywords: perform, task, prepare, metrocluster, ip, configuration, switchback, o
 summary: 스위치백 작업을 위해 MetroCluster IP 구성을 준비하려면 특정 작업을 수행해야 합니다. 
 ---
 = MetroCluster IP 구성에서 스위치백을 준비합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

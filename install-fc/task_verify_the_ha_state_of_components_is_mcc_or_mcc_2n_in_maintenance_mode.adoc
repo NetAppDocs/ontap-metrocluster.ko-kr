@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, verify, ha, state, components, mai
 summary: 'MetroCluster 구성에서 스토리지 시스템을 구성할 때는 컨트롤러 모듈 및 섀시 구성 요소의 고가용성 \(HA\) 상태가 MCC 또는 MCC-2n인지 확인해야 구성 요소가 제대로 부팅됩니다.' 
 ---
 = 유지보수 모드에서 구성요소의 HA 상태 확인 및 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

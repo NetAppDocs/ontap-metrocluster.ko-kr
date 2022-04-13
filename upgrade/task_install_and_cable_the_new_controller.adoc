@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, install, cable, new, controller, module
 summary: 섀시에 새 컨트롤러 모듈을 물리적으로 설치한 다음 케이블을 연결해야 합니다. 
 ---
 = 새 컨트롤러 모듈 설치 및 케이블 연결
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

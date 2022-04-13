@@ -5,6 +5,7 @@ keywords: start, ontap, disruptive, transition, two-node, metrocluster, fc, conf
 summary: ONTAP 9.8부터 2노드 MetroCluster FC 구성을 4노드 MetroCluster IP 구성으로 중단 없이 전환하고 기존 스토리지 쉘프를 폐기할 수 있습니다. 이 절차에는 기존 드라이브 쉘프에서 새로운 구성으로 데이터를 이동한 다음 이전 쉘프를 폐기하는 단계가 포함됩니다. 
 ---
 = 스토리지 쉘프를 폐기할 때 MetroCluster FC에서 MetroCluster IP로 중단 없이 전환(ONTAP 9.8 이상)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

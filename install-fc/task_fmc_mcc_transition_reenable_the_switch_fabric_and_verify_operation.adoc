@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, reenable, switch, fabric, verify, 
 summary: FC 스위치 패브릭을 활성화하고 스위치 및 디바이스가 올바르게 작동하는지 확인해야 합니다. 
 ---
 = 스위치 패브릭을 재설정하고 작업을 확인합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

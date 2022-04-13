@@ -5,6 +5,7 @@ keywords: follow, workflow, ensure, successful, nondisruptive, transition, metro
 summary: 무중단 전환이 성공하려면 특정 워크플로우를 따라야 합니다. 
 ---
 = 무중단 MetroCluster 전환을 위한 워크플로우
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

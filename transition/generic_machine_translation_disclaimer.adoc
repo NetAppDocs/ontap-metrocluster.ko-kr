@@ -5,6 +5,7 @@ keywords: machine, translation
 summary: 기계 번역 
 ---
 = 기계 번역
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: test, metrocluster, functionality, plan, maintenance, negotiate, switc
 summary: MetroCluster 기능을 테스트하거나 계획된 유지 관리를 수행하려는 경우, 협상된 전환을 수행하여 한 클러스터가 파트너 클러스터로 완전히 전환됩니다. 그런 다음 설정을 복구한 후 다시 전환할 수 있습니다. 
 ---
 = 테스트 또는 유지 관리를 위한 전환 수행
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

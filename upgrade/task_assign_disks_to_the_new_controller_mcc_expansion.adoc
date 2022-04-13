@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, assign, disks, new, controller, module
 summary: netboot를 통해 새 컨트롤러 모듈 구성을 완료하기 전에 디스크를 할당해야 합니다. 
 ---
 = 새 컨트롤러 모듈에 디스크 할당
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

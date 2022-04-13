@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, check, configuration, errors, config, advisor
 summary: NetApp Support 사이트로 이동하여 Config Advisor 툴을 다운로드하여 일반적인 구성 오류를 확인할 수 있습니다. 
 ---
 = Config Advisor에서 MetroCluster 구성 오류를 확인하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

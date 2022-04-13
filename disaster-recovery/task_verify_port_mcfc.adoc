@@ -5,6 +5,7 @@ keywords: verify, port, environmental, metrocluster, configuration
 summary: MetroCluster 구성을 준비하려면 노드에서 환경 변수를 설정한 다음 전원을 꺼야 합니다. 
 ---
 = 포트 구성 확인(MetroCluster FC 구성만 해당)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

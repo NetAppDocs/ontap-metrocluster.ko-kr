@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, supported, array, luns
 summary: 어레이 LUN을 사용하여 MetroCluster 구성을 설정할 수 있습니다. 스트레치 및 패브릭 연결 구성이 모두 지원됩니다. AFF 시스템은 어레이 LUN에서 지원되지 않습니다. 
 ---
 = 어레이 LUN에서 지원되는 MetroCluster 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

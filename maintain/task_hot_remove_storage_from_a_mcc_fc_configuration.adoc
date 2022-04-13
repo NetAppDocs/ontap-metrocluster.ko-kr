@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, hot, remove, storage, fc, configurati
 summary: 드라이브에서 애그리게이트를 제거한 쉘프를 핫 제거할 수 있습니다. 데이터를 제공하는 MetroCluster FC 구성에서 드라이브 쉘프를 물리적으로 제거할 수 있습니다. 쉘프 스택 내의 모든 위치에서 하나 이상의 쉘프를 핫 제거할 수 있으며, 그렇지 않고 쉘프 스택을 제거할 수도 있습니다. 
 ---
 = MetroCluster FC 구성에서 스토리지 핫 제거
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: MetroCluster configurations
 summary:  
 ---
 = Brocade FC 스위치를 수동으로 구성합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

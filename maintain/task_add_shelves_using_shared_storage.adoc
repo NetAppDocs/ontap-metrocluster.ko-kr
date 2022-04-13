@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, shelf, shelves, add, ns224,
 summary: 공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster에 NS224 쉘프를 추가해야 할 수 있습니다. 
 ---
 = 공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

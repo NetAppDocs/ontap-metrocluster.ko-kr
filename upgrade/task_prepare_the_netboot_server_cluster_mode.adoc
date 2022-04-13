@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, prepare, netboot, server, download, image
 summary: netboot 서버를 준비할 준비가 되면 NetApp Support 사이트에서 netboot 서버로 올바른 ONTAP netboot 이미지를 다운로드하고 IP 주소를 메모해야 합니다. 
 ---
 = 이미지를 다운로드하기 위해 netboot 서버를 준비하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

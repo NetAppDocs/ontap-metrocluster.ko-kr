@@ -5,6 +5,7 @@ keywords: verify, adp, verify, drives, pool, automatically, assign
 summary: ADP에 대해 구성된 시스템에서는 풀 0 드라이브가 자동으로 할당되었는지 확인해야 합니다. 
 ---
 = 자동 할당을 확인하거나 풀 0 드라이브를 수동으로 할당합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

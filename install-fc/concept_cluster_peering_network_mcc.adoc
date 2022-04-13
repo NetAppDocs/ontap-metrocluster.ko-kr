@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, illustration, cluster, peering, ne
 summary: 'MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 네트워크를 통해 들여다봅니다. 클러스터 피어링은 사이트 간에 SVM(이전의 vserver\)의 동기식 스토리지 가상 시스템 미러링을 지원합니다.' 
 ---
 = 클러스터 피어링 네트워크의 그림
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

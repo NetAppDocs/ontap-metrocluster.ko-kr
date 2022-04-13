@@ -5,6 +5,7 @@ keywords: ontap, metrocluster,
 summary: 스토리지 LUN을 사용하여 MetroCluster 구성을 설정하기 위해 ONTAP 시스템을 FC 스위치에 연결하는 경우, 각 컨트롤러의 FC-VI 및 HBA 포트를 특정 스위치 포트에 연결해야 합니다. 
 ---
 = 스토리지 LUN이 있는 MetroCluster 구성에 필요한 스위치 포트
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

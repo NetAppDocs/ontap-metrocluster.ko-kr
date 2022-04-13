@@ -5,6 +5,7 @@ keywords:
 summary: MetroCluster 구성의 각 Cisco 스위치는 ISL 및 스토리지 연결에 맞게 적절히 구성해야 합니다. 
 ---
 = Cisco FC 스위치를 수동으로 구성합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

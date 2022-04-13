@@ -5,6 +5,7 @@ keywords: ontap, command, perform, metrocluster, disaster, recovery, process, sw
 summary: MetroCluster 재해 복구 프로세스를 수행하기 위한 특정 ONTAP 명령이 있습니다. 
 ---
 = 전환, 복구, 스위치백을 위한 명령입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

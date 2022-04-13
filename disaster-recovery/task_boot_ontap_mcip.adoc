@@ -5,6 +5,7 @@ keywords: metrocluster, ip, configuration, replacement, controller, module, disa
 summary: 재해 사이트의 교체 노드를 ONTAP 운영 체제로 부팅해야 합니다. 
 ---
 = MetroCluster IP 구성의 교체 컨트롤러 모듈에서 ONTAP로 부팅합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, fabric-attached, FC, installation
 summary: 패브릭 연결 MetroCluster 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다. 
 ---
 = 개요
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, correct, procedure, configuration
 summary: FlexArray LUN을 사용하고 있는지 여부와 스토리지 컨트롤러가 스토리지 쉘프에 연결하는 방법을 기준으로 올바른 설치 절차를 선택해야 합니다. 
 ---
 = 구성에 맞는 올바른 설치 절차를 선택합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

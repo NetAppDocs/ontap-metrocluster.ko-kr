@@ -5,6 +5,7 @@ keywords: procedure, example, name, identify, dr, group, node, switch, involve, 
 summary: 이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다. 
 ---
 = 이 절차의 이름 지정 예
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

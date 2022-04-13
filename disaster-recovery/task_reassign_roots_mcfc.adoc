@@ -5,6 +5,7 @@ keywords: reassign, ownership, nvram, system, id, replaced
 summary: 재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하나 또는 둘 모두를 교체한 경우 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다. 
 ---
 = 루트 애그리게이트에 대한 디스크 소유권을 교체 컨트롤러 모듈에 재할당(MetroCluster FC 구성)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

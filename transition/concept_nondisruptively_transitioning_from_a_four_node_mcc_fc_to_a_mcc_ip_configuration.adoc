@@ -5,6 +5,7 @@ keywords: nondisruptive, transition, fc, ip
 summary: ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다. 
 ---
 = MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

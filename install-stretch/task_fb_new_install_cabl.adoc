@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, cable, disk, shelves, bridges
 summary: 디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다. 
 ---
 = 브리지에 디스크 쉘프 케이블링
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

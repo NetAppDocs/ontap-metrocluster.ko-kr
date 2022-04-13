@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, refresh, configuration, new, controller
 summary: 2노드 구성에서 4노드 구성으로 확장할 경우 MetroCluster 구성을 새로 고쳐야 합니다. 
 ---
 = 새 컨트롤러로 MetroCluster 구성 새로 고침
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

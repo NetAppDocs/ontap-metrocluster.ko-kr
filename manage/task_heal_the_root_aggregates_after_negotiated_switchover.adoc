@@ -5,6 +5,7 @@ keywords: data, aggregate, heal, root, preparation, switchback, operation, negot
 summary: 데이터 애그리게이트가 복구되면 스위치백 작업 준비를 위해 루트 애그리게이트를 치유해야 합니다. 
 ---
 = 협상된 전환 후 루트 애그리게이트 복구
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

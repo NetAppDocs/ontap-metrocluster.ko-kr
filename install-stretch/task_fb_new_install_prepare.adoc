@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, prepare
 summary: 새 MetroCluster 시스템의 일부로 브리지를 설치할 준비가 되면 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 여기에는 브리지의 설정 및 구성 요구 사항을 충족하는 작업이 포함됩니다. 기타 요구사항으로는 필요한 문서 다운로드, ATTO Quicknav 유틸리티 및 브리지 펌웨어 등이 있습니다. 
 ---
 = 설치 준비 중
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

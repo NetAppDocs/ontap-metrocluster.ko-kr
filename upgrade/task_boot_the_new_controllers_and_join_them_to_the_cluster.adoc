@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, boot, new, controller, join, cluster
 summary: 새 컨트롤러를 클러스터에 연결하려면 각 새 컨트롤러 모듈을 부팅하고 ONTAP 클러스터 설정 마법사를 사용하여 클러스터가 결합될 것을 식별해야 합니다. 
 ---
 = 새 컨트롤러를 부팅하고 클러스터에 가입합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

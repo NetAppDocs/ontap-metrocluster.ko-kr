@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, maintenance, service, tiebreaker, mediator, on
 summary: Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다 
 ---
 = 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -65,7 +66,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 섹션에서
+링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]MetroCluster 을 참조하십시오.
 
 
 

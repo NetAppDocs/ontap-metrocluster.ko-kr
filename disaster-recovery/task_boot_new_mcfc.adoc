@@ -5,6 +5,7 @@ keywords: boot, controller, modules, fc
 summary: 데이터와 루트 애그리게이트 모두에 대해 애그리게이트 복구가 완료된 후 재해 사이트에서 노드를 부팅해야 합니다. 
 ---
 = 새 컨트롤러 모듈 부팅(MetroCluster FC 구성)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

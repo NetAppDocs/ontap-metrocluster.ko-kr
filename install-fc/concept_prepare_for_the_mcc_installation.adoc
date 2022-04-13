@@ -5,6 +5,7 @@ keywords: preparing, prepare, metrocluster, mcc, installation, install, differen
 summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다. 
 ---
 = MetroCluster 설치 준비
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

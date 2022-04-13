@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, verify, switchover, healing, switchback
 summary: MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다. 
 ---
 = 전환, 복구, 스위치백을 확인하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

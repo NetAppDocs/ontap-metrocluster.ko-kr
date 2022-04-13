@@ -5,6 +5,7 @@ keywords: ontap, mediator, service, assist, metrocluster, ip, configuration, per
 summary: ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성을 지원하여 예상치 못한 자동 전환을 수행할 수 있습니다. 
 ---
 = ONTAP 중재자 서비스 설치 준비
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -52,9 +53,14 @@ MTU 크기는 1400 이상이어야 합니다.
 
 ONTAP 중재자가 여러 포트를 사용하여 특정 서비스와 통신합니다.
 
-타사 방화벽을 사용하는 경우: * HTTPS 액세스를 활성화해야 합니다. * 포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.
+타사 방화벽을 사용하는 경우:
 
-+ 기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우 중재 설치 중에 방화벽이 자동으로 구성됩니다.
+* HTTPS 액세스를 활성화해야 합니다.
+* 포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.
++
+기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우, 중재자를 설치하는 동안 방화벽이 자동으로 구성됩니다.
+
+
 
 다음 표에는 방화벽에서 허용해야 하는 포트가 나와 있습니다.
 

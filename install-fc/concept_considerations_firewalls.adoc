@@ -5,6 +5,7 @@ keywords: preparing, prepare, metrocluster, mcc, installation, install, differen
 summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다. 
 ---
 = MetroCluster 사이트의 방화벽 사용
+:allow-uri-read: 
 
 
 

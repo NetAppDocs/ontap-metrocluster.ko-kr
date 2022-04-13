@@ -5,6 +5,7 @@ keywords: negotiate, switchover, clean, shut, down, partner, site, operation, me
 summary: 협상된 전환은 파트너 사이트에서 프로세스를 완전히 종료한 다음 파트너 사이트에서 운영을 전환합니다. 협상된 전환을 사용하여 MetroCluster 사이트에 대한 유지 관리를 수행하거나 전환 기능을 테스트할 수 있습니다. 
 ---
 = 협상된 전환 수행
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

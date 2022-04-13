@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, cable, controllers, storage, shel
 summary: 컨트롤러 FC-VI 어댑터는 서로 직접 케이블로 연결되어야 합니다. 컨트롤러 SAS 포트는 원격 및 로컬 스토리지 스택 모두에 케이블로 연결되어야 합니다. 
 ---
 = 컨트롤러를 서로 및 스토리지 쉘프에 케이블로 연결합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

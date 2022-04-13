@@ -5,6 +5,7 @@ keywords: replace, metrocluster, maintain, service, pair, fibrebridge, bridges
 summary: FiberBridge 7600N 또는 7500N 브리지의 추가 FC2 포트를 활용하고 랙 사용률을 줄이기 위해 6500N 브리지를 중단 없이 교체하고 FiberBridge 7600N 또는 7500N 브리지 한 쌍 뒤에 최대 4개의 스토리지 스택을 통합할 수 있습니다. 
 ---
 = FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

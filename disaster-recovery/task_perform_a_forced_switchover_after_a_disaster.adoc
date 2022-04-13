@@ -5,6 +5,7 @@ keywords: disaster, occur, perform, surviving, cluster, survive, switchover, ens
 summary: 재해가 발생한 경우, 안전한 지속적인 데이터 서비스를 보장하기 위해 재해 클러스터와 정상적인 클러스터에서 모두 수행해야 하는 단계가 있습니다. 
 ---
 = 재해 후 강제 전환 수행
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

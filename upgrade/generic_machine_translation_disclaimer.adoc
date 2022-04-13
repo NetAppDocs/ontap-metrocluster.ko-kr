@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, machine, translation, generic
 summary: MetroCluster 업그레이드, 전환 및 확장 가이드에 대한 기계 번역 정보 
 ---
 = 기계 번역
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

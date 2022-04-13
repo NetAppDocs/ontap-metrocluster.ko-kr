@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, redundant, fc, switch, fabrics
 summary: '각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch Link) \ 을 포함합니다. 데이터는 ISL을 통해 사이트 간에 복제됩니다. 이중화를 위해 각 스위치 패브릭은 서로 다른 물리적 경로에 있어야 합니다.' 
 ---
 = 이중 FC 스위치 패브릭
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

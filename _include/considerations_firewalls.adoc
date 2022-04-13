@@ -1,4 +1,5 @@
 = MetroCluster 사이트의 방화벽 사용에 대한 고려 사항
+:allow-uri-read: 
 
 
 

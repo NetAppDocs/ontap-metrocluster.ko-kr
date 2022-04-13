@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, move, metadata, volume, configuration
 summary: MetroCluster 구성에서 메타데이터 볼륨을 한 Aggregate에서 다른 aggregate로 이동할 수 있습니다. 소스 애그리게이터가 사용 중지되거나 미러링되지 않은 경우 또는 애그리게이트에 적합하지 않은 다른 이유로 메타데이터 볼륨을 이동할 수 있습니다. 
 ---
 = MetroCluster 구성에서 메타데이터 볼륨 이동
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

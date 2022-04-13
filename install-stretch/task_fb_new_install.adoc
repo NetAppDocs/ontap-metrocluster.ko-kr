@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, fc, sas, bridge, disk, shelf
 summary: 구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다. 
 ---
 = FC-to-SAS 브릿지 및 SAS 디스크 쉘프 설치
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

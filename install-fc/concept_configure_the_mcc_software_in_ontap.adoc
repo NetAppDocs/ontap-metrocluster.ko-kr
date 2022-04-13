@@ -5,6 +5,7 @@ keywords: configure, configuring, metrocluster, software, ontap
 summary: 노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다. 네이티브 디스크 쉘프가 있는 시스템의 단계는 어레이 LUN이 있는 시스템의 단계와 약간 다릅니다. 
 ---
 = ONTAP에서 MetroCluster 소프트웨어 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

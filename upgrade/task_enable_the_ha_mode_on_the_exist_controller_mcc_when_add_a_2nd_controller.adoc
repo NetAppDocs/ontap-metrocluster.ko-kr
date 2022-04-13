@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, set, up, ha, mode, existing, controller, module
 summary: 기존 컨트롤러 모듈에서 모드를 설정하려면 스토리지 페일오버 수정 명령을 사용해야 합니다. 모드 값은 나중에 컨트롤러 모듈을 재부팅한 이후에 활성화됩니다. 
 ---
 = 기존 컨트롤러 모듈에서 HA 모드를 설정합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

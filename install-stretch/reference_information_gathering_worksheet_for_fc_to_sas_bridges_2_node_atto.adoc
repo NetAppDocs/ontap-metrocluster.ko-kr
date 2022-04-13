@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, worksheet, fc, sas, bridges, info
 summary: MetroCluster 사이트를 구성하기 전에 필요한 구성 정보를 수집해야 합니다. 
 ---
 = FC-to-SAS 브리지에 대한 정보 수집 워크시트
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, prepare, cluster, ports, existing, controller, 
 summary: 새 컨트롤러 모듈을 설치하기 전에 클러스터 포트가 새 컨트롤러 모듈과 클러스터 통신을 제공할 수 있도록 기존 컨트롤러 모듈에 클러스터 포트를 구성해야 합니다. 
 ---
 = 기존 컨트롤러 모듈에서 클러스터 포트를 준비합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: transition, metrocluster, node, fc, ip, iscsi, host, connection, movin
 summary: MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 새 노드로 이동해야 할 수 있습니다. 
 ---
 = Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: AFF, A900, ONTAP, FAS, Brocade, ISL, metrocluster
 summary: 다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 ISL 포트 사용량을 보여 줍니다. 
 ---
 = AFF A900 - ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

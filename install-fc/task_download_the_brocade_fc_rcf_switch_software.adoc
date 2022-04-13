@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, download, brocade, fc, switch, rcf
 summary: 'RCF\(참조 구성\) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.' 
 ---
 = Brocade FC 스위치 RCF 파일 다운로드
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

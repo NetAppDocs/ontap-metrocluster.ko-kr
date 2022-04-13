@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, expand, two, node, fc, configuration, four
 summary: 2노드 MetroCluster FC 구성을 4노드 MetroCluster FC 구성으로 확장하는 경우 각 클러스터에 컨트롤러를 추가하여 각 MetroCluster 사이트에서 HA 쌍을 구성하고 MetroCluster FC 구성을 새로 고칩니다. 
 ---
 = 2노드 MetroCluster FC 구성을 4노드 구성으로 확장
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

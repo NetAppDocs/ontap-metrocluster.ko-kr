@@ -5,6 +5,7 @@ keywords: adp, system, assign, surviving, site
 summary: 정상적인 사이트에서 재해 사이트에 있는 원격 드라이브를 나머지 노드의 풀 1에 수동으로 할당해야 합니다. 
 ---
 = 정상적인 사이트에 풀 1 드라이브 할당(MetroCluster IP 구성)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

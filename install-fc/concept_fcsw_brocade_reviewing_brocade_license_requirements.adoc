@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, review, brocade, license, requirem
 summary: MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다. 
 ---
 = Brocade 라이센스 요구 사항 검토
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, setup, metrocluster configuration-settings interface cre
 summary: 클러스터를 피어로 사용하고, 루트 애그리게이트를 미러링하고, 미러링된 데이터 애그리게이트를 생성한 다음, 명령을 실행하여 MetroCluster 작업을 구현해야 합니다. 
 ---
 = 클러스터를 MetroCluster 구성으로 구성합니다
+:allow-uri-read: 
 
 
 [role="lead"]

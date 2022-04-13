@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, cable, new, controller, module, fc, vi, hba, po
 summary: '새 컨트롤러 모듈의 FC-VI 포트와 HBA\(호스트 버스 어댑터\)는 사이트 FC 스위치에 케이블로 연결되어야 합니다.' 
 ---
 = 새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: differences, eight-node, four-node, fabric-attached, stretch, metroclu
 summary: 'ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다.' 
 ---
 = MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

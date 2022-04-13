@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, prepare, hot, add, sas, disk, shelves
 summary: SAS 디스크 쉘프 핫 추가를 준비하기 위해 디스크 드라이브와 디스크 쉘프 펌웨어를 함께 다운로드하십시오. 
 ---
 = SAS 디스크 쉘프 핫 추가 준비
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

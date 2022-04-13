@@ -5,6 +5,7 @@ keywords: copyright, trademark, right to publish, protect, patents, duplication,
 summary: 저작권 
 ---
 = 저작권 정보
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

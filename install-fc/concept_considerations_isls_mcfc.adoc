@@ -5,6 +5,7 @@ keywords: preparing, prepare, metrocluster, mcc, installation, install, differen
 summary: MetroCluster 구성에서 각 FC 스위치 패브릭에 필요한 ISL 수를 결정해야 합니다. 
 ---
 = ISL에 대한 고려 사항
+:allow-uri-read: 
 
 
 [role="lead"]

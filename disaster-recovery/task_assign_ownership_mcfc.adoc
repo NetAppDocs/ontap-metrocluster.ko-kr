@@ -5,6 +5,7 @@ keywords: assign, ownership, drives, replaced
 summary: 재해 사이트에서 하드웨어를 복원할 때 드라이브를 교체한 경우 영향을 받는 드라이브에 소유권을 할당해야 합니다. 
 ---
 = 교체된 드라이브에 대한 소유권을 할당합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

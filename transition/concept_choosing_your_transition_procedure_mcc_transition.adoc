@@ -5,6 +5,7 @@ keywords: select, transition, procedure, depend, exist, metrocluster, fc, config
 summary: 기존 MetroCluster FC 구성에 따라 전환 절차를 선택해야 합니다. 
 ---
 = 전환 절차 선택
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

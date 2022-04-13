@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, assigning, ownership, array, luns
 summary: 스토리지 LUN을 스토리지로 사용할 Aggregate에 추가하려면 먼저 노드가 소유해야 합니다. 
 ---
 = 스토리지 LUN의 소유권을 할당합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

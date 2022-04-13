@@ -5,6 +5,7 @@ keywords: differences, eight-node, four-node, fabric-attached, stretch, metroclu
 summary: 컨트롤러가 원격 스토리지에 액세스하는 방법과 MetroCluster IP 주소가 작동하는 방식을 이해해야 합니다. 
 ---
 = MetroCluster IP 구성을 위한 고려 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

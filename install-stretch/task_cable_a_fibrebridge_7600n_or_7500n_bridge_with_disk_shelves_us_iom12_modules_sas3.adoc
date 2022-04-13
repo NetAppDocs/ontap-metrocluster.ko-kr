@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, cable, fibrebridge, bridge, disk,
 summary: 브리지를 구성한 후 시스템 케이블을 시작할 수 있습니다. 
 ---
 = IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

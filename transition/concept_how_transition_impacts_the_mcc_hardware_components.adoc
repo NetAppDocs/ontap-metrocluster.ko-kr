@@ -5,6 +5,7 @@ keywords: complete, completing, transition, procedure, key, component, exist, me
 summary: 전환 절차를 완료한 후 기존 MetroCluster 구성의 주요 구성 요소가 교체되거나 재구성되었습니다. 
 ---
 = 전환이 MetroCluster 하드웨어 구성 요소에 미치는 영향
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

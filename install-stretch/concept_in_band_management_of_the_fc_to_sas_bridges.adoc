@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, in, band, management, fc, sas, br
 summary: FiberBridge 7500N 또는 7600N 브리지가 있는 ONTAP 9.5부터 브리지의 대역 내 관리가 브리지 IP 관리 대신 지원됩니다. ONTAP 9.8부터는 대역외 관리가 사용되지 않습니다. 
 ---
 = FC-to-SAS 브리지의 대역 내 관리
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

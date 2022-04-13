@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, disconnect, existing, dr, group, fabric
 summary: 패브릭의 FC 스위치에서 기존 컨트롤러 모듈을 분리해야 합니다. 
 ---
 = 패브릭에서 기존 DR 그룹 연결 끊기
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

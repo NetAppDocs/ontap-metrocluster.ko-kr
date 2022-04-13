@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, required, hardware, components, n
 summary: MetroCluster 구성에는 다양한 하드웨어 구성요소가 필요합니다. 편리함과 명확성을 위해 MetroCluster 설명서 전반에 걸쳐 구성 요소의 표준 이름이 사용됩니다. 한 사이트는 사이트 A라고 하며 다른 사이트는 사이트 B라고 합니다 
 ---
 = 2노드 SAS 연결 스트레치 구성에 필요한 MetroCluster 하드웨어 구성요소 및 명명 지침
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

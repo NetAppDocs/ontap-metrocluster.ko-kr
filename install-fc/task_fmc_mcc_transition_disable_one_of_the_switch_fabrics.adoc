@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, disable, switch, fabrics
 summary: 구성을 수정할 수 있도록 스위치 패브릭 중 하나를 비활성화해야 합니다. 구성을 완료하고 스위치 패브릭을 다시 설정한 후 다른 패브릭에서도 이 프로세스를 반복합니다. 
 ---
 = 스위치 패브릭 중 하나를 비활성화합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, required, hardware, components, n
 summary: MetroCluster 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다. 예를 들어 사이트 A는 사이트 A라고 하며 다른 사이트는 사이트 B라고 합니다 
 ---
 = 2노드 브리지 연결 확장 구성에 필요한 MetroCluster 하드웨어 구성 요소 및 명명 규칙
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

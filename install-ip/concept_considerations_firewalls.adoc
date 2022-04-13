@@ -5,6 +5,7 @@ keywords: firewall, port usage, tcip, udp, cluster peering, intercluster lifs, h
 summary: MetroCluster 사이트에서 방화벽을 사용하는 경우 특정 필수 포트에 대한 액세스를 보장해야 합니다. 
 ---
 = MetroCluster 사이트의 방화벽 사용
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, controllers, switchover, switchback, fc, config
 summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroCluster FC 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 
 ---
 = 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

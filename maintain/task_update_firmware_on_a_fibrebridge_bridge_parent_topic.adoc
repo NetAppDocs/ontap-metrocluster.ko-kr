@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, update, firmware, fibrebridge, bridge
 summary: 브리지 펌웨어 업데이트 절차는 브리지 모델과 ONTAP 버전에 따라 다릅니다. 
 ---
 = FiberBridge 브리지에서 펌웨어 업데이트 중
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

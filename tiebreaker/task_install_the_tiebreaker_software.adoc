@@ -5,6 +5,7 @@ keywords: install, tiebreaker, software, monitor, capabilities, capability, clus
 summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
 ---
 = Tiebreaker 소프트웨어 설치
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

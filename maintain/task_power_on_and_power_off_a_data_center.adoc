@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, power, off, on, data, center, relocat
 summary: 사이트 유지 관리를 위해 또는 사이트를 다른 위치로 재배치할 목적으로 데이터 센터의 전원을 끄고 전원을 켜는 방법을 알고 있어야 합니다. 
 ---
 = 데이터 센터의 전원을 끄고 켭니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

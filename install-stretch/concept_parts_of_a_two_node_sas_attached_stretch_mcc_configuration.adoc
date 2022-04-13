@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, parts, two, node, sas, attached, 
 summary: 2노드 MetroCluster SAS 연결 구성에서는 스토리지 컨트롤러가 SAS 케이블을 통해 스토리지에 직접 연결되는 2개의 단일 노드 클러스터를 포함하여 여러 부품이 필요합니다. 
 ---
 = 2노드 SAS 연결 스트레치 MetroCluster 구성의 일부
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

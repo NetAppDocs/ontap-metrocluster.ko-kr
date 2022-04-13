@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, stretch, configuration, decide
 summary: '이 정보는 확장 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치 및 구성하는 방법(SAS 광 MetroCluster 구성이라고도 함)을 설명합니다.' 
 ---
 = 스트레치 MetroCluster 설치 및 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

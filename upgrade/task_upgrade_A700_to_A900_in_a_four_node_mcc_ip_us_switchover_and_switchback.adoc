@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, controller, ip, configuration, switchover, swit
 summary: 'ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언트에 무중단 서비스를 제공하는 동시에 파트너 클러스터의 컨트롤러 모듈을 업그레이드할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.' 
 ---
 = 스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+:allow-uri-read: 
 
 
 [role="lead"]
@@ -123,8 +124,8 @@ AFF A700의 MetroCluster IP 구성에서는 VLAN을 사용하지 않습니다. A
 에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"] 콘텐츠.
 
 +
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#reasing-the-broadcom-ip-switch-to-factory-defaults[Broadcom IP 스위치를 출하 시 기본값으로 재설정]
+** 링크:../install-ip/task_switch_config_broadcom.html#재설정 - Broadcom-ip-switch-to-factory-defaults#재설정 - Cisco-IP-switch-to-factory-defaults[Cisco IP 스위치를 출하 시 기본값으로 재설정]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
@@ -132,8 +133,8 @@ AFF A700의 MetroCluster IP 구성에서는 VLAN을 사용하지 않습니다. A
 의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"] 콘텐츠.
 
 +
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-broadcom-rcf-files [RCF 파일 다운로드 및 설치]
+** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-cisco-ip-rcf-files [Cisco IP RCF 파일 다운로드 및 설치]
 
 
 
@@ -831,8 +832,8 @@ _MetroCluster IP 설치 및 구성_섹션에서 스위치 공급업체의 섹션
 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
 
 +
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#reasing-the-broadcom-ip-switch-to-factory-defaults[Broadcom IP 스위치를 출하 시 기본값으로 재설정]
+** 링크:../install-ip/task_switch_config_broadcom.html#재설정 - Broadcom-ip-switch-to-factory-defaults#재설정 - Cisco-IP-switch-to-factory-defaults[Cisco IP 스위치를 출하 시 기본값으로 재설정]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
@@ -840,8 +841,8 @@ link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
 에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"].
 
 +
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_install_and_cable_the_mcc_components.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-broadcom-rcf-files [RCF 파일 다운로드 및 설치]
+** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-cisco-ip-rcf-files [Cisco IP RCF 파일 다운로드 및 설치]
 
 
 
@@ -1446,7 +1447,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 섹션에서
+링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]MetroCluster 을 참조하십시오.
 
 
 

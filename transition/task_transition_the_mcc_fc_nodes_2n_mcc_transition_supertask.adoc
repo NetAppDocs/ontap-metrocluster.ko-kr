@@ -5,6 +5,7 @@ keywords: information, exist, metrocluster, fc, node, autosupport, message, anno
 summary: 기존 MetroCluster FC 노드에서 정보를 수집하고, 유지 관리를 시작하라는 AutoSupport 메시지를 보내고, 노드를 전환해야 합니다. 
 ---
 = MetroCluster FC 노드 전환
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

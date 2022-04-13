@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, add, new, controller, module, cluster
 summary: 각 사이트에 새 컨트롤러 모듈을 추가하여 각 사이트에 HA 쌍을 생성해야 합니다. 이는 각 사이트에서 올바른 순서로 수행해야 하는 하드웨어 및 소프트웨어 변경 사항을 모두 포함하는 다단계 프로세스입니다. 
 ---
 = 각 클러스터에 새 컨트롤러 모듈 추가
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

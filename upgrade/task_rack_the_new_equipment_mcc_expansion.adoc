@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, rack, new, equipment
 summary: 새 노드의 장비는 랙에 설치해야 합니다. 
 ---
 = 새 장비를 랙에 장착
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

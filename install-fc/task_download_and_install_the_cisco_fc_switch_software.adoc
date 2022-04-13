@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, download, cisco, fc, switch, nx, s
 summary: MetroCluster 패브릭 구성의 각 스위치에 스위치 운영 체제 파일 및 RCF 파일을 다운로드해야 합니다. 
 ---
 = Cisco FC 스위치 NX-OS 소프트웨어 다운로드 및 설치
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

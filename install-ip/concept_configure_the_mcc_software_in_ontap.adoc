@@ -5,6 +5,7 @@ keywords: metrocluster, configuration, ontap, node-level, configuration, node, s
 summary: 노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다. 
 ---
 = ONTAP에서 MetroCluster 소프트웨어 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

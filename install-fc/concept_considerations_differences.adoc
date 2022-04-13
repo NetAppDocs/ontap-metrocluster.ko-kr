@@ -5,6 +5,7 @@ keywords: preparing, prepare, metrocluster, mcc, installation, install, differen
 summary: 다양한 MetroCluster 구성에 필요한 구성 요소의 주요 차이점이 있습니다. 
 ---
 = ONTAP MetroCluster 구성의 차이점
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

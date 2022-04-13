@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, hot, add, disk, shelf
 summary: 성능을 저하시키지 않고 스토리지를 증가하려는 경우 디스크 쉘프를 핫 추가할 수 있습니다. 
 ---
 = 디스크 쉘프 핫 추가
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

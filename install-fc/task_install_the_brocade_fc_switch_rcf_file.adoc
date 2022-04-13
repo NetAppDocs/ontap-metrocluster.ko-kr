@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, brocade, fc, switch, rcf, file
 summary: Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 스위치 설정을 제공하는 스위치 구성 파일을 설치할 수 있습니다. 
 ---
 = Brocade FC 스위치 RCF 파일 설치
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

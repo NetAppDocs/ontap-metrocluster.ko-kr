@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, license, array, luns, configuratio
 summary: 스토리지 LUN과 함께 사용할 각 MetroCluster 노드에 V_StorageAttach 라이센스를 설치해야 합니다. 라이센스가 설치될 때까지 Aggregate에서 어레이 LUN을 사용할 수 없습니다. 
 ---
 = MetroCluster 구성에서 스토리지 LUN 사용을 위한 라이센스 설치
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

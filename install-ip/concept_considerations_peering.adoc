@@ -5,6 +5,7 @@ keywords: considertaions, cluster peering, shared peering ports, dedicated peeri
 summary: 각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 
 ---
 = 클러스터 피어링
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

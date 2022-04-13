@@ -5,6 +5,7 @@ keywords: stage, transition, process, metrocluster, switchover, heal, switchback
 summary: 전환 프로세스의 단계에 따라 MetroCluster 전환, 복구 및 스위치백 작업에서 MetroCluster FC 또는 MetroCluster IP 워크플로우를 사용합니다. 
 ---
 = 무중단 전환 중 전환, 복구, 스위치백 작업
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

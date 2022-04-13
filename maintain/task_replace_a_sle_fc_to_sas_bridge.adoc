@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, replace, single, fc, sas, bridge
 summary: 브리지를 동일한 모델 브리지로 또는 새 모델 브리지로 중단 없이 교체할 수 있습니다. 
 ---
 = 단일 FC-to-SAS 브릿지 교체
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -1446,10 +1447,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
 
-. 키트와 함께 제공된 RMA 명령에 설명된 대로 오류가 발생한 부품을 NetApp에 반환합니다.
-+
-기술 지원 부서(에 문의하십시오 https://mysupport.netapp.com/site/global/dashboard["NetApp 지원"^], 888-463-8277 (북미), 00-800-44-638277 (유럽) 또는 +800-800-80-800 (아시아/태평양) 교체 절차에 대한 추가 지원이 필요한 경우.
-
+. 부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 link:https://mysupport.netapp.com/site/info/rma["부품 반품 및 앰프, 교체"] 페이지를 참조하십시오.
 
 
 link:concept_in_band_management_of_the_fc_to_sas_bridges.html["FC-to-SAS 브리지의 대역 내 관리"]

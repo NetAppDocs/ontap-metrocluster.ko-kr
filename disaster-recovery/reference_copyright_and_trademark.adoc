@@ -5,6 +5,7 @@ keywords: copyright, trademark, machine, translation
 summary: 저작권, 상표 및 기계 번역 
 ---
 = 저작권, 상표 및 기계 번역
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

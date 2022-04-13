@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, assign, disk, ownership, aff, systems
 summary: '미러링된 Aggregate가 있는 구성에서 AFF 시스템을 사용하고 있고 노드에 디스크\(SSD\)가 올바르게 할당되지 않은 경우, 각 쉘프의 디스크 절반을 로컬 노드 1개에 할당하고 나머지 절반은 HA 파트너 노드에 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성해야 합니다.' 
 ---
 = AFF 시스템에서 디스크 소유권을 할당합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, ensure, port, group, configure, zo
 summary: 'ISL(Inter-Switch Link)\)이 동일한 포트 그룹에 있는지 확인하고 MetroCluster 구성이 스위치 패브릭을 성공적으로 공유할 수 있도록 조닝을 구성해야 합니다.' 
 ---
 = ISL이 동일한 포트 그룹에 있는지 확인하고 조닝을 구성합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

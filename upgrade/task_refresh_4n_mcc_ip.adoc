@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, refresh, four, node, ip, configuration, add, au
 summary: 'ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.' 
 ---
 = 4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -54,7 +55,7 @@ image::../media/mcc_dr_group_a.png[MCC DR 그룹 A]
  a| 
 Tiebreaker입니다
  a| 
-link:..tiebreaker/concept_configuring_the_tiebreaker_software.html#commands-for-modifying-metrocluster-tiebreaker-configurations["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#commands-for-modifying-metrocluster-tiebreaker-configurations["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
 
 
 
@@ -143,7 +144,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 _.
+링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성] - MetroCluster IP 설치 및 구성 _.
 
 
 

@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, power, up, controller. modules, display, loader
 summary: 기존 컨트롤러 모듈과 새 컨트롤러 모듈의 전원을 켜면 로더 프롬프트가 표시됩니다. 
 ---
 = 두 컨트롤러 모듈의 전원을 켜고 로더 프롬프트를 표시합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

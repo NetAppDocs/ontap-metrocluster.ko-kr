@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, trademark
 summary: MetroCluster 구성 요소 유지 관리를 위한 상표 정보. 
 ---
 = 상표
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

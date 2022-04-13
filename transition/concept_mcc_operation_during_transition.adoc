@@ -5,6 +5,7 @@ keywords: notice, alert, message, transition, alert, safe, ignore, tool, transit
 summary: 전환 중에 경고 메시지가 나타날 수 있습니다. 이러한 경고는 무시해도 됩니다. 또한 전환 중에는 일부 툴을 사용할 수 없습니다. 
 ---
 = 전환 중 알림 메시지 및 툴 지원
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

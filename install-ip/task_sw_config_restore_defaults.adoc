@@ -5,6 +5,7 @@ keywords: metrocluster, controller, restore defaults
 summary: 구성이 깨끗한지 확인하려면 컨트롤러 모듈에서 기본값을 재설정 및 복원해야 합니다. 
 ---
 = 컨트롤러 모듈에서 시스템 기본값을 복원합니다
+:allow-uri-read: 
 
 
 [role="lead"]

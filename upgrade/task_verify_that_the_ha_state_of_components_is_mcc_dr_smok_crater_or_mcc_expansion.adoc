@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, verify, ha, config, component, state
 summary: MetroCluster 구성에서 컨트롤러 모듈 및 섀시 구성 요소의 ha-config 상태는 MCC로 설정해야 제대로 부팅됩니다. 
 ---
 = 구성 요소의 ha-config 상태 확인
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

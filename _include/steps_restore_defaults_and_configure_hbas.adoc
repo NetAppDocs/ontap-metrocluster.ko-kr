@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 MetroCluster를 성공적으로 설치하려면 컨트롤러 모듈에서 기본값을 재설정 및 복원합니다.

@@ -5,6 +5,7 @@ keywords: helpful, metrocluster, protect, data, transparent, recovery, failure, 
 summary: MetroCluster가 데이터를 보호하고 장애로부터 투명하게 복구를 제공하므로 스위치오버 및 스위치백 활동을 쉽고 효율적으로 관리할 수 있는 방법을 이해하는 데 도움이 됩니다. 
 ---
 = MetroCluster 데이터 보호 및 재해 복구 이해
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

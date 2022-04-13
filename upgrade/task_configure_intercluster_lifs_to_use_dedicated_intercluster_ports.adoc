@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, configure, intercluster, lif, dedicated, ports
 summary: 전용 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 일반적으로 복제 트래픽에 사용할 수 있는 대역폭이 증가합니다. 
 ---
 = 전용 포트에 대한 인터클러스터 LIF 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, copyright
 summary: MetroCluster 구성 요소 유지 관리에 대한 저작권. 
 ---
 = 저작권
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

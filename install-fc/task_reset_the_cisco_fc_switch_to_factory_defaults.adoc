@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, reset, cisco, fc, switch, factory,
 summary: 새 소프트웨어 버전과 RCFs를 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다. 
 ---
 = Cisco FC 스위치를 출하 시 기본값으로 재설정합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

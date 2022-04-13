@@ -5,6 +5,7 @@ keywords: metrocluster, ip, configuration, hardware, component, interconnect, pa
 summary: MetroCluster IP 구성을 계획할 때 하드웨어 구성 요소 및 상호 연결 방법을 이해해야 합니다. 
 ---
 = MetroCluster IP 구성의 일부
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

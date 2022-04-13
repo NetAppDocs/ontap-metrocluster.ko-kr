@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, support, fibrebridge, configurations
 summary: FiberBridge 7500N 브리지는 FiberBridge 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 지원됩니다. 지원되는 구성에는 브리지의 FC 포트, 스택 및 스토리지 쉘프 제한에 대한 조닝 요구 사항 및 제한 사항이 있습니다. 
 ---
 = MetroCluster 구성에서 FiberBridge 7500N 브리지 지원
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

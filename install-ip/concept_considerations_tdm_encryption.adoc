@@ -5,6 +5,7 @@ keywords: differences, eight-node, four-node, fabric-attached, stretch, metroclu
 summary: MetroCluster IP 구성에서 멀티플렉싱 장비를 사용할 때 고려해야 할 몇 가지 사항에 대해 알고 있어야 합니다. 
 ---
 = TDM/xWDM 및 MetroCluster IP 구성이 있는 암호화 장비 사용
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

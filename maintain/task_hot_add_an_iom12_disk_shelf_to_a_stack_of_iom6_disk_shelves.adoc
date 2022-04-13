@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, hot, add, iom12, stack, iom6, disk, s
 summary: ONTAP 버전에 따라 IOM12 디스크 쉘프를 브리지 연결 MetroCluster 구성의 IOM6 디스크 쉘프 스택에 핫 추가할 수 있습니다. 
 ---
 = 브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

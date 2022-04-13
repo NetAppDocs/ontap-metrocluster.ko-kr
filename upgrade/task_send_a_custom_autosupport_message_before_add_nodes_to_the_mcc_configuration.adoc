@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, autosupport, custom, message, add, node, config
 summary: NetApp 기술 지원 팀에 유지보수 진행 중임을 알리는 AutoSupport 메시지를 발행해야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다. 
 ---
 = MetroCluster 구성에 노드를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

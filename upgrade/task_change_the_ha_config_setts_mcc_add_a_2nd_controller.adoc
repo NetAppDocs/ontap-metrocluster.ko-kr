@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, change, ha, config, sett, existing, new, contro
 summary: MetroCluster 구성을 확장하는 경우 기존 컨트롤러 모듈과 새 컨트롤러 모듈의 ha-config 설정을 업데이트해야 합니다. 또한 새 컨트롤러 모듈의 시스템 ID도 확인해야 합니다. 
 ---
 = 기존 및 새 컨트롤러 모듈의 ha-config 설정 변경
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

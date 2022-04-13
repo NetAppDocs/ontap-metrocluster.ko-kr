@@ -5,6 +5,7 @@ keywords:
 summary: ONTAP 9.8부터 8노드 MetroCluster 구성에서 DR 그룹을 제거하여 4노드 MetroCluster 구성을 만들 수 있습니다. 
 ---
 = 재해 복구 그룹 제거
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

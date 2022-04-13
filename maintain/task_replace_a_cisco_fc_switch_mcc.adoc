@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, replace, cisco, fc, switch
 summary: 오류가 발생한 Cisco FC 스위치를 교체하려면 Cisco 관련 단계를 사용해야 합니다. 
 ---
 = Cisco FC 스위치 교체
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, ontap, configuration
 summary: MetroCluster 구성에서 ONTAP를 사용할 때는 라이센스 등록, MetroCluster 구성 외부의 클러스터 피어링, 볼륨 작업 수행, NVFAIL 작업 및 기타 ONTAP 작업과 관련된 특정 고려 사항을 숙지해야 합니다. 
 ---
 = MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

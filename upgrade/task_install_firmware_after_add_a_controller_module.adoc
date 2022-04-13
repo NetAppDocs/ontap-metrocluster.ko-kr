@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, install, firmware, add, controller, module
 summary: 컨트롤러 모듈을 추가한 후 새 컨트롤러 모듈에 최신 펌웨어를 설치하여 컨트롤러 모듈이 ONTAP에서 올바르게 작동하도록 해야 합니다. 
 ---
 = 컨트롤러 모듈 추가 후 펌웨어 설치
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

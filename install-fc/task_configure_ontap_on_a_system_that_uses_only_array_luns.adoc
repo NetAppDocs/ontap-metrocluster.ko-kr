@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, array luns, ontap
 summary: 어레이 LUN과 함께 사용하도록 ONTAP를 구성하려면 루트 애그리게이트 및 루트 볼륨을 구성하고, 진단 및 복구 작업을 위한 공간을 예약하고, 클러스터를 설정해야 합니다. 
 ---
 = 스토리지 LUN만 사용하는 시스템에서 ONTAP 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

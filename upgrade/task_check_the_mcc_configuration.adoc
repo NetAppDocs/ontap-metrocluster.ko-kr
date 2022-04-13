@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, check, configuration
 summary: 'MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다. 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된 \(계획된\) 스위치오버 또는 스위치백 작업을 수행하기 전에 확인해야 합니다.' 
 ---
 = MetroCluster 구성 확인
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

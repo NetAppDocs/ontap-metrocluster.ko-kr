@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, cable, fibrebridge, disk, shelves
 summary: 브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 6500N 브리지는 QSFP 커넥터를 사용합니다. 
 ---
 = IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 6500N 브리지와 디스크 쉘프 케이블링
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

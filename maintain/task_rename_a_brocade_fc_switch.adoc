@@ -5,6 +5,7 @@ keywords: rename, metrocluster, maintain, service, brocade, fc, switch
 summary: 구성 전체에서 일관된 이름을 보장하기 위해 Brocade FC 스위치의 이름을 변경해야 할 수 있습니다. 
 ---
 = Brocade FC 스위치 이름 바꾸기
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

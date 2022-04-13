@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, shut, down, existing, controller, module
 summary: 모든 데이터가 디스크에 기록되었는지 확인하려면 기존 컨트롤러 모듈을 완전히 종료해야 합니다. 또한 전원 공급 장치를 분리해야 합니다. 
 ---
 = 기존 컨트롤러 모듈 종료
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

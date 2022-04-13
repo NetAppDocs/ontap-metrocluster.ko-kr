@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, requirements, array, luns, mcc
 summary: MetroCluster 구성에 사용되는 ONTAP 시스템, 스토리지 어레이 및 FC 스위치는 이러한 유형의 구성에 대한 요구사항을 충족해야 합니다. 또한 어레이 LUN을 사용하는 MetroCluster 구성에 대한 SyncMirror 요구 사항도 고려해야 합니다. 
 ---
 = 스토리지 LUN이 포함된 MetroCluster 구성 요구 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

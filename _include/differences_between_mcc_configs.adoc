@@ -1,4 +1,5 @@
 = MetroCluster 구성의 모든 SAN 어레이 시스템 지원
+:allow-uri-read: 
 
 
 다양한 MetroCluster 구성에 필요한 구성 요소의 주요 차이점이 있습니다.

@@ -5,6 +5,7 @@ keywords: metrocluster, tiebreaker, port, communicate, specific, service, firewa
 summary: MetroCluster Tiebreaker는 여러 포트를 사용하여 특정 서비스와 통신합니다. 
 ---
 = MetroCluster Tiebreaker의 방화벽 요구 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

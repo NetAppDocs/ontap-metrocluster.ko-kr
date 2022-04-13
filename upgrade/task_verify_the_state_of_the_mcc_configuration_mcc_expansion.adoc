@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, verify, state, configuration
 summary: '기존 컨트롤러를 식별하고 이러한 컨트롤러 간의 DR(재해 복구) 관계, 컨트롤러가 정상 모드이고 애그리게이트가 미러링되는지 확인해야 합니다.' 
 ---
 = MetroCluster 구성 상태를 확인하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

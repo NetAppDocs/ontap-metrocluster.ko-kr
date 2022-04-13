@@ -115,8 +115,6 @@
   <block id="aebbde0d48d31742f98866fb5fd93228" category="paragraph">구성에 MACsec 키 체인 또는 키를 만들 수 있습니다.</block>
   <block id="2438f61312714fdde0ea5d2291cacf5a" category="paragraph">* 키 수명 및 Hitless 키 롤오버 *</block>
   <block id="432af3885800eb3d0fdfa0d72b0e8f83" category="paragraph">MACsec 키 체인은 미리 공유된 여러 키(PSK)를 가질 수 있으며, 각 키는 키 ID와 수명(옵션)으로 구성됩니다. 키 수명은 키가 활성화되고 만료되는 시간을 지정합니다. 수명 구성이 없을 경우 기본 수명은 무제한입니다. 수명이 구성되면 MKA는 수명이 만료된 후 키체인에 구성된 다음 사전 공유 키로 롤오버합니다. 키의 표준 시간대는 로컬 또는 UTC입니다. 기본 표준 시간대는 UTC입니다. 두 번째 키(키 체인)를 구성하고 첫 번째 키의 수명을 구성하면 동일한 키 체인 내의 두 번째 키로 키를 롤오버할 수 있습니다. 첫 번째 키의 수명이 만료되면 목록의 다음 키로 자동 롤오버됩니다. 같은 키가 링크의 양쪽에서 동시에 구성된 경우 키 롤오버는 무단위(즉, 키가 트래픽 중단 없이 롤오버됨)입니다.</block>
-  <block id="a84ec9413c1eeb220ff2c85c15c3da91" category="paragraph">* 폴백 키 *</block>
-  <block id="afa4816f1e4efec6be7d5a9580f8af8a" category="paragraph">키/키 이름(CKN) 불일치 또는 스위치와 피어 사이의 유한 키 지속 시간으로 인해 MACsec 세션이 실패할 수 있습니다. MACsec 세션이 실패할 경우 대체 키가 구성된 경우 대체 세션이 대신 사용됩니다. 폴백 세션은 운영 세션 장애로 인한 다운타임을 방지하고 사용자가 장애를 일으키는 주요 문제를 해결할 수 있도록 합니다. 또한 기본 세션이 시작되지 않는 경우 대체 키는 백업 세션을 제공합니다. 이 기능은 선택 사항입니다.</block>
   <block id="09d2459b8ba15bdb94703e39490766cf" category="list-text">암호화된 키 옥텟 문자열을 숨기려면 'show running-config' 및 'show startup-config' 명령의 출력에서 문자열을 와일드카드 문자로 바꿉니다.</block>
   <block id="1b7a49127c059c9782571e668d1b9394" category="paragraph">설정을 파일에 저장할 때 옥텟 문자열도 숨겨집니다.</block>
   <block id="82a54f643a125ec28b0318b12e98edc4" category="paragraph">기본적으로 PSK 키는 암호화된 형식으로 표시되며 쉽게 해독할 수 있습니다. 이 명령은 MACsec 키 체인에만 적용됩니다.</block>
@@ -132,7 +130,6 @@
   <block id="553e37d1edf682c2d4e3e0044a0e8f59" category="paragraph">'수명 종료 시작-시간 지속 기간'을 선택합니다</block>
   <block id="d2294acb2c54a8144dcb00a8f1554fab" category="paragraph">기본적으로 장치는 시작 시간을 UTC로 처리합니다. start-time 인수는 키가 활성화되는 날짜와 시간입니다. duration 인수는 초 단위의 수명 길이입니다. 최대 길이는 2147483646초(약 68년)입니다.</block>
   <block id="8dd0074f8606108f750defc9306a01b3" category="list-text">키 체인 구성을 표시합니다.</block>
-  <block id="49a66a48bbc301445b1c144ea99c4dbf" category="paragraph">키체인 이름</block>
   <block id="2861de74286d86a770050eefe484b016" category="section-title">MACsec 정책 구성</block>
   <block id="dde20920c9bc2285cedc0171616ad91e" category="list-text">MACsec 정책 만들기:</block>
   <block id="3ec088691927601a692a22de57f7b714" category="paragraph">'macsec policy name'입니다</block>
@@ -174,14 +171,6 @@
   <block id="f6d141f9c0ebe12ce79c36ba0585ecf8" category="paragraph">MACsec MKA 구성</block>
   <block id="b6b47858b43ec1819137a7dbb17a0e1c" category="paragraph">마초 정책 정책 이름</block>
   <block id="b73bb1a80bfcd166befb33ddc1a9fe9d" category="paragraph">특정 MACsec 정책 또는 모든 MACsec 정책의 구성</block>
-  <block id="fd6b314abc631729200274092a59dbde" category="paragraph">키/키 이름(CKN) 불일치 또는 스위치와 피어 사이의 제한된 키 지속 시간의 결과로 기본 세션이 실패하는 경우 대체 키를 구성하여 백업 세션을 시작할 수 있습니다.</block>
-  <block id="cc9f85a6f649e0f320a34bda0a52ee70" category="list-text">구성할 인터페이스를 지정합니다.</block>
-  <block id="73e78255dbf78b6041f893d45a07746c" category="paragraph">인터페이스 유형 및 ID를 지정할 수 있습니다. 이더넷 포트의 경우 다음을 사용합니다.</block>
-  <block id="41837e780d5f604a1688e70404f818d8" category="paragraph">이더넷 슬롯/포트</block>
-  <block id="963f5eadacb40d1c09a8a4b55061def7" category="list-text">키/키 ID 불일치 또는 키 만료로 인해 MACsec 세션 실패 후 사용할 대체 키 체인을 지정합니다.</block>
-  <block id="acdb387736771ac188de8a6d086cdb34" category="paragraph">macsec keychain keychain-name policy-name fallback-keychain keychain-name'입니다</block>
-  <block id="3b0db3e385223be11fabb9ef92f30540" category="admonition">이 단계를 진행하기 전에 _MACsec 키 체인 및 키 구성_의 단계를 사용하여 fallback-keychain을 구성해야 합니다.</block>
-  <block id="dcf432534686dfbd4a5057ebd44a4d2a" category="list-text">이전 단계를 반복하여 MACsec을 사용하여 추가 WAN ISL 포트를 구성합니다.</block>
   <block id="85b091192b5f7d8d84eccf6181fd6ae8" category="paragraph">시스템이 25Gbps 연결을 사용하여 구성된 경우 RCF 파일을 적용한 후 FEC(Forward Error Correction) 매개변수를 수동으로 OFF로 설정해야 합니다. RCF 파일은 이 설정을 적용하지 않습니다.</block>
   <block id="21b34813f1e8c3819fcd4c2d1a97dc87" category="paragraph">이 절차를 수행하기 전에 25Gbps 포트를 케이블로 연결해야 합니다.</block>
   <block id="de42a51018ae76cdec0d5104c4b44724" category="inline-link-macro">Cisco 3232C 또는 Cisco 9336C 스위치에 대한 플랫폼 포트 할당</block>
@@ -809,7 +798,6 @@
   <block id="ef707581c5c00eaa0743321b02294606" category="list-text">site_B-shelf_1의 디스크 절반을 node_B_2의 풀 0에 할당합니다.</block>
   <block id="8645ab46e52c8bc8dde41a2d070d37a1" category="list-text">site_B-shelf_2의 디스크 절반을 node_A_1의 풀 1에 할당합니다.</block>
   <block id="8f234811a84b4e31259fe07e29ca1dec" category="list-text">site_B-shelf_2의 디스크 절반을 node_A_2의 풀 1에 할당합니다.</block>
-  <block id="169ea076206029b921aba5b11aeb1224" category="section-title">기존 구성에 쉘프 추가</block>
   <block id="27c6fcf081b1c055fab70dab85df9058" category="paragraph">자동 드라이브 할당을 통해 기존 구성에 쉘프를 대칭 추가할 수 있습니다.</block>
   <block id="1ad37847dbce444ea5080d0121d5409b" category="paragraph">새 셸프가 추가되면 새로 추가된 셸프에 동일한 할당 정책이 적용됩니다. 예를 들어, 사이트당 단일 셸프를 사용하는 경우 추가 셸프가 추가되면 시스템은 쿼터 쉘프 할당 규칙을 새 쉘프에 적용합니다.</block>
   <block id="138070c8ec80f4ea916e550a8882b671" category="inline-link-macro">MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다</block>
@@ -3720,7 +3708,6 @@
   <block id="1f97a710da6fbb3cde26846701fd10e0" category="list-text">Broadcom BES-53248 스위치로 구성된 AFF A320 시스템에서는 이 절차가 지원되지 않습니다.</block>
   <block id="3e47f65a0c143cd4a51a7540fd2001fa" category="list-text">다음 명령을 실행합니다. +'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"</block>
   <block id="6837dd1f788164eabd6d97dbcbe7e4c9" category="paragraph">다음 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.</block>
-  <block id="54a30e0ba58741e8ec7cbc4dfc92ecd1" category="paragraph"><block ref="83c26e5bd0b8a6dff43d38aeb91fb3e1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _</block>
   <block id="c2c1067a31958842c8438647512d141e" category="list-text">의 모든 단계를 수행합니다 <block ref="3e70f7d1f526cf6dd7a89a97c88d0cc8" category="inline-link-macro-rx"></block> 를 클릭하여 구성에 새 노드 및 스토리지를 추가합니다.</block>
   <block id="be357376ba81fe8d3fa32b0e145fc73b" category="paragraph">의 단계를 수행합니다 <block ref="bf3d05f18b73f1c62d283d02a0c83e7a" category="inline-link-macro-rx"></block>.</block>
   <block id="79de9fa3497efd5f7c2e2f6a6682e5cd" category="summary">AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다.</block>
@@ -3756,11 +3743,7 @@
   <block id="01624fead9baaddc3669cdd47ad795ed" category="list-text">스위치가 지원되는 최소 RCF 파일 버전으로 구성되지 않은 경우 RCF 파일을 업데이트해야 합니다. 사용 중인 스위치 모델에 맞는 RCF 파일 버전은 를 참조하십시오 <block ref="da64f60a95327a9651de90bff4a67cd3" category="inline-link-macro-rx"></block>. 다음 단계는 RCF 파일 애플리케이션을 위한 것입니다.</block>
   <block id="590efa3b2ef6486e61048a848e166d21" category="inline-link-macro">MetroCluster IP 설치 및 구성</block>
   <block id="1f41258ab009387cbd7e42b144372d55" category="paragraph">에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 <block ref="1a8a3204a30c37aed38d8cb8818b0107" category="inline-link-macro-rx"></block> 콘텐츠.</block>
-  <block id="b01a590ee5a5c4d39d2ea827140d95fd" category="list-text"><block ref="b01a590ee5a5c4d39d2ea827140d95fd" category="inline-link-macro-rx"></block></block>
-  <block id="662be47b2e290d723b00fe0a9dc2e8b8" category="list-text"><block ref="662be47b2e290d723b00fe0a9dc2e8b8" category="inline-link-macro-rx"></block></block>
   <block id="e886156cd00bbd9320ba94c39cce2772" category="paragraph">의 단계를 따릅니다 <block ref="1a8a3204a30c37aed38d8cb8818b0107" category="inline-link-macro-rx"></block> 콘텐츠.</block>
-  <block id="b04dcda81f4d3d1adcd9bfdd252098b0" category="list-text"><block ref="b04dcda81f4d3d1adcd9bfdd252098b0" category="inline-link-macro-rx"></block></block>
-  <block id="51a2c292407c79a580014258c5f17d8d" category="list-text"><block ref="51a2c292407c79a580014258c5f17d8d" category="inline-link-macro-rx"></block></block>
   <block id="dadca3d57b191a678f23de76f79b283e" category="section-title">이전 노드의 포트를 새 노드로 매핑합니다</block>
   <block id="87ff91e75692235d02e091de808fd819" category="paragraph">AFF A700에서 AFF A900으로 업그레이드할 때 데이터 네트워크 포트, FCP SAN 어댑터 포트, SAS 및 NVMe 스토리지 포트는 변경하지 않습니다. 데이터 LIF는 업그레이드 도중과 이후에 계속 유지됩니다. 따라서 이전 노드의 네트워크 포트를 새 노드로 매핑할 필요가 없습니다.</block>
   <block id="0c8985d7cfbb81f5f054993ed8285211" category="section-title">사이트 업그레이드 전에 MetroCluster 상태를 확인하십시오</block>
@@ -3926,7 +3909,6 @@
   <block id="98c99ee34c8774fa11a9a533fe708618" category="paragraph">작업을 수행할 때 사이트와 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, 사이트_A에서 스위치오버로 예제를 제공할 경우 site_B에서 전환합니다</block>
   <block id="4a73711f675c6d654d190ca9589e5da1" category="section-title">Tiebreaker 또는 중재자 모니터링을 복원합니다</block>
   <block id="0c429b26fd1db8d4b7bb104d284c1cea" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
-  <block id="5b68f0b098986e0ac238ae377c414032" category="paragraph"><block ref="2a039788d8e6faddff2d947b20403dfe" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 섹션에서</block>
   <block id="26eeb9c2ed8ad703fd7436c1c5091b0b" category="section-title">유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="summary">새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.</block>
   <block id="fd1f71815b5abfc5d58a282353d2ba84" category="doc">새 케이블 연결 레이아웃 결정</block>
@@ -6642,7 +6624,6 @@
   <block id="416e335daad496ad8619dd5e0873c083" category="inline-link-macro">MetroCluster Tiebreaker 소프트웨어를 설치하고 구성합니다</block>
   <block id="3e124f4767179cdcf91533c7d87b883f" category="list-text"><block ref="3e124f4767179cdcf91533c7d87b883f" category="inline-link-macro-rx"></block></block>
   <block id="4eb00e76349103bb49f834540fdce720" category="inline-link-macro">계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다</block>
-  <block id="6d16b8dff033f574f07e4b71a797f5de" category="list-text"><block ref="6d16b8dff033f574f07e4b71a797f5de" category="inline-link-macro-rx"></block></block>
   <block id="4d60f545ef2535cd524505ef40a30ea5" category="section-title">NetApp MetroCluster Tiebreaker 소프트웨어가 장애를 감지하는 방식</block>
   <block id="65e5269f8fb0f709f4c3258e226f2c6a" category="paragraph">이 유형의 네트워크는 두 개의 이중화 FC 스위치 패브릭으로 구성됩니다. 각 스위치 패브릭은 2개의 FC 스위치를 가지고 있으며, 각 스위치 패브릭은 클러스터와 함께 배치되어 있습니다. 각 클러스터에는 각 스위치 패브릭에서 하나씩 두 개의 FC 스위치가 있습니다. 모든 노드에는 공동 배치된 각 IP 스위치에 대한 FC(NV 상호 연결 및 FCP 이니시에이터) 연결이 있습니다. 데이터는 ISL을 통해 클러스터에서 클러스터로 복제됩니다.</block>
   <block id="beca4c261f58e41e37cd354316dd0a6e" category="paragraph">Tiebreaker 소프트웨어는 노드에서 사이트 간 연결 상태를 정기적으로 검색합니다. NV 상호 연결 연결이 끊어지고 인터클러스터 피어링이 핑에 응답하지 않는 경우 클러스터는 사이트가 격리되었다고 간주하고 Tiebreaker 소프트웨어는 경고를 "AllLinksSegan"으로 트리거합니다. 클러스터에서 "AllLinksSegable" 상태를 식별하고 다른 클러스터에 연결할 수 없는 경우 Tiebreaker 소프트웨어는 경고를 "재해"로 트리거합니다.</block>
@@ -8208,8 +8189,6 @@
   <block id="3951ec8f2fc02767a1eae0cd589a3733" category="paragraph">예를 들어, 다음 출력은 시스템이 다중 경로 HA에 대해 케이블로 연결되었음을 보여 줍니다.</block>
   <block id="26b4da5ef440db55c9d7fb90222428b3" category="paragraph">명령 출력에 해당 구성이 혼합 경로 또는 단일 경로 HA로 표시되는 경우 새 브리지를 통해 모든 디스크 드라이브에 액세스할 수 있는 것은 아니므로 SAS 및 FC 케이블을 수정해야 합니다.</block>
   <block id="d7b12022bf276b2113771c05b8e93cd3" category="list-text">브리지가 추가되었고 제대로 구성되었는지 확인합니다. + 'Storage bridge show'</block>
-  <block id="236b42e7d6f2c4b9984f5b984b7a652b" category="list-text">키트와 함께 제공된 RMA 명령에 설명된 대로 오류가 발생한 부품을 NetApp에 반환합니다.</block>
-  <block id="a3a77716c94ad331870c1ba138c3f00c" category="paragraph">기술 지원 부서(에 문의하십시오<block ref="9a6f401ca1e7e89d8a0c29fb0cbe81b7" category="inline-link-rx"></block>, 888-463-8277 (북미), 00-800-44-638277 (유럽) 또는 +800-800-80-800 (아시아/태평양) 교체 절차에 대한 추가 지원이 필요한 경우.</block>
   <block id="44244676532e07acd5a22f72a89ec840" category="summary">ONTAP 9.5부터 브리지에서 안전하지 않을 수 있는 이더넷 프로토콜을 쉽게 비활성화하여 브리지를 보호할 수 있습니다. 이렇게 하면 브리지의 이더넷 포트가 비활성화됩니다. 이더넷 액세스를 다시 설정할 수도 있습니다.</block>
   <block id="27095f3064c14438fd39d18650d50519" category="doc">FiberBridge 브리지 고정 또는 고정 해제</block>
   <block id="618f88c71c4840cc7fbd972a2c370542" category="paragraph">ONTAP 9.5부터 브리지에서 안전하지 않을 수 있는 이더넷 프로토콜을 쉽게 비활성화하여 브리지를 보호할 수 있습니다. 이렇게 하면 브리지의 이더넷 포트가 비활성화됩니다. 이더넷 액세스를 다시 설정할 수도 있습니다.</block>
@@ -9028,7 +9007,6 @@
   <block id="f41e50bab2cb24fbe619e365ab4a650c" category="list-text">전환 과정에서 컨트롤러 이름을 선택적으로 바꿀 수 있습니다. 'system node rename -node &lt;old-name&gt; -newname &lt;new-name&gt;' 컨트롤러의 이름을 바꾸는 데 사용되는 명령은 다음과 같습니다</block>
   <block id="9d5dedaa21b8b6a9a7e44d2adc53aac3" category="paragraph">이름 바꾸기 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다. system show-fields node 명령을 사용하여 다른 단계를 계속하기 전에 이름 변경 내용이 각 노드에 전파되었는지 확인합니다.</block>
   <block id="d5c7b5758935e090373e3105cfac7ea4" category="list-text">필요에 따라 모니터링 서비스를 구성합니다.</block>
-  <block id="80d884692d4825b1aded41bb42eaba5e" category="paragraph"><block ref="80d884692d4825b1aded41bb42eaba5e" category="inline-link-macro-rx"></block></block>
   <block id="6a12946cbb81d960abd7b608085f126a" category="inline-link-macro">Tiebreaker 소프트웨어 설치 및 구성</block>
   <block id="e71402603f50c2282d8c7bcc53d63e72" category="paragraph"><block ref="e71402603f50c2282d8c7bcc53d63e72" category="inline-link-macro-rx"></block></block>
   <block id="9cc3a2a2e8c24fe291907c539aa19b26" category="paragraph">전환을 완료한 후 유지 관리 완료를 나타내는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.</block>
@@ -9118,7 +9096,6 @@
   <block id="34d1cfcdcf18bab93eb2f50683525124" category="list-text">site_B(node_B_1-IP 및 node_B_2-IP)에서 위의 단계를 반복합니다.</block>
   <block id="80161bd3062933aab7f174ce293237dc" category="summary">모든 요구 사항을 검토하고 전환을 준비한 후 전환 절차를 수행합니다. 각 작업을 순서대로 수행해야 하며, 다음 작업으로 이동하기 전에 각 작업의 모든 단계를 완료해야 합니다. 지시가 있을 때까지 새 컨트롤러 또는 스토리지 쉘프를 기존 구성에 연결하면 안 됩니다.</block>
   <block id="68ca4c8699281e1858977752c796cd45" category="paragraph">MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동해야 합니다.</block>
-  <block id="7a7fc289890af932361e87db34a988e7" category="section-title">MetroCluster FC 노드에서 클러스터 접속 이동</block>
   <block id="faa907fa21172fe5049a9e06b580a22f" category="paragraph">MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동해야 합니다. 이 단계는 기존 IP 스위치를 사용하고 있는지 또는 새 IP 스위치를 사용하고 있는지에 따라 달라집니다.</block>
   <block id="a4508902f6a0e0fe2638bb2698abffe9" category="paragraph">두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.</block>
   <block id="9a6a031361d5fc2d07e0496f2d3f35aa" category="paragraph">다음 작업에서는 클러스터 연결에 2개의 포트를 사용하는 컨트롤러 모듈을 가정합니다. 일부 컨트롤러 모듈 모델은 클러스터 연결에 4개 이상의 포트를 사용합니다. 이 예에서는 포트가 두 그룹으로 나뉘어 두 그룹 간에 번갈아 연결됩니다</block>
@@ -9147,7 +9124,6 @@
   <block id="41add71327ff82aa85f0074583131e05" category="section-title">새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다</block>
   <block id="f96b1e8d8ce6fb44d55bd62523f1fffd" category="paragraph">새 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 새 스위치로 물리적으로 이동해야 합니다.</block>
   <block id="971a965432d70710e6faba87f3271008" category="list-text">MetroCluster FC 노드 그룹 A 클러스터 연결을 새 IP 스위치로 이동합니다.</block>
-  <block id="6977cb2f448c534eb0fe8b9c3ab46f80" category="paragraph">에 설명된 포트를 사용합니다 <block ref="218c51413835cd54b79a77004931a9e5" category="inline-link-macro-rx"></block>.</block>
   <block id="158a9eaed207074e679175ceadae600d" category="list-text">스위치에서 모든 그룹 A 포트를 분리하거나, MetroCluster FC 구성이 스위치가 없는 클러스터인 경우 파트너 노드에서 연결을 끊습니다.</block>
   <block id="dd6ad065820d004f2add01d31b8a8ddc" category="list-text">노드_A_1-FC 및 노드_A_2-FC에서 그룹 A 포트를 분리합니다.</block>
   <block id="e6b3a7be6db6e31bb16692e2bb56b06d" category="list-text">node_A_1-FC의 그룹 A 포트를 switch_A_1-IP의 FC 노드에 대한 스위치 포트에 연결합니다</block>
@@ -9445,7 +9421,6 @@
   <block id="06b34b4d4fbdbda5eda4c6c60b4a50aa" category="paragraph">두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.</block>
   <block id="099521a7112509edbce04bcd0ca911e7" category="paragraph">랙 공간은 스토리지 컨트롤러의 플랫폼 모델, 스위치 유형 및 구성의 디스크 쉘프 스택 수에 따라 달라집니다.</block>
   <block id="173460488dce7240a263945ff8eca309" category="admonition">AFF 시스템은 어레이 LUN에서 지원되지 않습니다.</block>
-  <block id="a1fecf534698cc371187a3c3028827a7" category="paragraph">AFF 또는 FAS 시스템에 대한 #https://docs.netapp.com/us-en/ontap/[Installation 절차]#</block>
   <block id="c8c3719034d9b9b752000ca4d3b5b2c2" category="list-text">랙 또는 캐비닛에 FC 스위치를 설치합니다.</block>
   <block id="e7b2ab89026c8038792876d17344e2a9" category="admonition">ucadmin 명령을 사용하여 FC 포트를 FC-VI 포트로 변환하는 작업은 FAS8020 및 AFF 8020 시스템에서만 지원됩니다. 다른 플랫폼에서는 FC 포트를 FCVI 포트로 변환할 수 없습니다.</block>
   <block id="7264088d4f9d193f30e9a2464dab74fb" category="list-text">재해 사이트에서 노드를 부팅합니다.</block>
@@ -12106,7 +12081,6 @@
   <block id="00b95021ee9d17915062023af515e24c" category="sidebar">Cisco FC 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="04feb40ba41d7f08a0ed11c320036b50" category="sidebar">Cisco FC 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다</block>
   <block id="3c25e8c40f06568b29ce946fd777d561" category="sidebar">Cisco FC RCF 파일을 다운로드하고 설치합니다</block>
-  <block id="0657e393d82d82dc4317b0d4cb80b4b8" category="sidebar">Brocade FC 스위치를 수동으로 구성해야 합니다</block>
   <block id="9ee7e057ce8f87d9c6d58a3ac45b4a14" category="sidebar">Cisco FC 스위치를 수동으로 구성합니다</block>
   <block id="a843b71ec15aadada63575eb83031c0b" category="sidebar">전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어를 구성합니다</block>
   <block id="7a624101744abdf7e3500edd9f2b8245" category="sidebar">Brocade 라이센스 요구 사항을 검토합니다</block>
@@ -12256,7 +12230,6 @@
   <block id="f1318dc614d34488bcb6f8bef3e32bff" category="paragraph">옵션 "'11'"</block>
   <block id="37ef00a03e6b4bacbc26b2ee369f838f" category="paragraph">키 관리자 설정에 따라 첫 번째 부팅 메뉴 프롬프트에서 옵션 ""10"" 또는 옵션 ""11", 옵션 "6"을 차례로 선택하여 복구 절차를 수행합니다. 노드를 완전히 부팅하려면 옵션 ""1"(일반 부팅)에서 계속 진행하는 복구 절차를 반복해야 할 수 있습니다.</block>
   <block id="ff8648705a32483b6efc36e81f3ff6c9" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block>.</block>
-  <block id="91866c0618812e699061cb4e2f764274" category="paragraph"><block ref="2a039788d8e6faddff2d947b20403dfe" category="inline-link-macro-rx"></block>.</block>
   <block id="9dc1904e0c3ace141704b477cd9b345d" category="inline-link-macro">네트워크 관리</block>
   <block id="a329e8bb19b80d658f071e8e3a9b43df" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="b7287c70d2b20ddb4e9eda3d1f5462cf" category="inline-link-macro-rx"></block>.</block>
   <block id="84c335ab98bb834a85c89e20e223e638" category="paragraph">플랫폼에 대한 기본 포트 역할 목록은 를 참조하십시오<block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block></block>
@@ -12281,7 +12254,6 @@
   <block id="377469609affd7863d1b91e8c08f8efe" category="list-text">의 다음 절차에 따라 이전 노드에서 새 노드로 데이터를 이동합니다<block ref="5807d40cbe0aa8dbcf7fb966b3a22848" category="inline-link-rx"></block></block>
   <block id="f6352e453f366612cb28420644953c44" category="list-text">의 모든 단계를 수행합니다<block ref="bbef996a3720f9825acbe3a7239b4c3c" category="inline-link-rx"></block>.</block>
   <block id="f0c5b568bbaab2490082e4d2aaf08123" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 _.</block>
-  <block id="9b81be6eaafefd1e5ea3279470770a1a" category="paragraph"><block ref="2a039788d8e6faddff2d947b20403dfe" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 _.</block>
   <block id="7965e118387157e57593becb6ae60117" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 새로운 스토리지 시스템, 디스크 쉘프 및 FC-to-SAS 브릿지를 랙에 장착</block>
   <block id="bd583895c72d99233af8746d9463ab07" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형에 대한 케이블 연결 레이아웃을 생성합니다.</block>
   <block id="7215f927afe2ef194199487494b76dd7" category="paragraph">FC 스위치 포트 사용은 RCFs(Reference Configuration Files)를 사용할 수 있도록 절차에 설명된 용법과 일치해야 합니다.</block>
@@ -12426,7 +12398,6 @@
   <block id="4aeccceec58ed237296dba5ea0673521" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="a43d04863a085a87276f8dea37ae5895" category="inline-link-macro-rx"></block>.</block>
   <block id="0297e6ce2162b2f01b03b57027b0de3f" category="paragraph">_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.</block>
   <block id="7efa6fc838c006d396e42638b4ff25d1" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block></block>
-  <block id="d0575e4ffcaa94137b559df66450e762" category="paragraph"><block ref="d0575e4ffcaa94137b559df66450e762" category="inline-link-macro-rx"></block></block>
   <block id="bc77bf857b365d445270101e2d7ce03f" category="list-text">MetroCluster FC 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster FC 구성에서 사용되는 단계입니다.</block>
   <block id="58f51e86971b6d1d53b59f46792a926c" category="list-text">MetroCluster IP 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster IP 구성에서 사용되는 단계입니다.</block>
   <block id="be841ef50614c5c74b8d6a685c367458" category="cell">협상된 전환에서 이 워크플로우 사용...</block>
@@ -12453,7 +12424,6 @@
   <block id="6754d52ab3aba634c1d3868f6ff1173b" category="paragraph">'network interface show-vserver cluster'</block>
   <block id="535ec980e99542a3e46527ed475d4ce5" category="list-text">파트너 클러스터 ""cluster_B""에서 위의 단계를 반복합니다.</block>
   <block id="6ac37c1e4002ef5cd117acd818874c0f" category="paragraph">_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 절차에 따라 다음 단계를 수행하십시오.</block>
-  <block id="71202b6dd001af35585cf163b87312a1" category="paragraph">에 설명된 포트를 사용합니다 <block ref="c686921008a79d8a2f4cb70ab4d03caf" category="inline-link-macro-rx"></block>.</block>
   <block id="2e3c0afc2d193f3727d220d4c952e88c" category="list-text">모든 인터페이스가 홈 포트에 있는지 확인합니다.</block>
   <block id="df263d0c9cee0f502a35c7a48d5606b3" category="list-text">모든 클러스터 포트가 실행 중인지 확인합니다.</block>
   <block id="407eedf4c99afddafe143a1c132d2205" category="paragraph">다음 예제는 모든 인터페이스가 ""홈" 열에 true로 표시된다는 것을 보여줍니다.</block>
@@ -12527,7 +12497,6 @@
   <block id="2ab9c070f5e78bc6f7809e89ecd023eb" category="admonition">MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다</block>
   <block id="5382d2282494796171738f35b9361ab8" category="admonition">이 명령은 MPLS 태그와 같은 패킷 헤더(dmac, smac, etype)를 사용하기 위해 중간 스위치에 필요할 수 있습니다.</block>
   <block id="bb7076dff2fa5f0d308e776f5006e07e" category="section-title">MACsec 구성을 확인하는 중입니다</block>
-  <block id="f0336856a5a2f4bfae1adfb71fa3ae60" category="section-title">WAN ISL 포트에서 MACsec 폴백 키 구성</block>
   <block id="ffe1f559bee6f65df8232945e7f1517d" category="section-title">25Gbps 연결을 사용하는 시스템에 대한 Forward Error Correction 설정</block>
   <block id="250b5ed5389f4260b31c4ede97dea809" category="paragraph">이 작업은 25Gbps 연결을 사용하는 플랫폼에만 적용됩니다.</block>
   <block id="44ebc7deaba92b772a9bf569e1c8ca12" category="list-text">FAS 8200</block>
@@ -12541,7 +12510,28 @@
   <block id="70fef59fffa5df67d10b024d11f37399" category="paragraph"><block ref="70fef59fffa5df67d10b024d11f37399" category="inline-link-macro-rx"></block></block>
   <block id="466ed123ab8f5845237d3ae425397ec7" category="paragraph">환경은 다음 요구 사항을 충족해야 합니다.</block>
   <block id="c5cd3d887ef507cadc249c592410542a" category="list-text">Linux 버전을 업데이트할 계획이라면 최신 ONTAP 중재자 서비스를 설치하기 전에 업데이트를 수행하십시오.</block>
-  <block id="38553b6946adff245ef7423d34544e4b" category="paragraph">타사 방화벽을 사용하는 경우: * HTTPS 액세스를 활성화해야 합니다. * 포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
-  <block id="63fb21fb55a9451afb7b60d2b7d593b2" category="paragraph">+ 기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우 중재 설치 중에 방화벽이 자동으로 구성됩니다.</block>
   <block id="5981ded82c976bff5c9a73686842655a" category="list-text">중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
+  <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
+  <block id="844f223d5d27d9ea92473e2d258ee969" category="list-text">부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 <block ref="af64d870205b209887217377e716cd40" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
+  <block id="73deb7011cb325e1dbd9f40a4995786e" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]MetroCluster 을 참조하십시오.</block>
+  <block id="455aeb5b6e6bb2c51d7485e26da56e30" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
+  <block id="e62a18c77eddb4d80155a6c15402f7e5" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _</block>
+  <block id="7da41c16475b7dae8b0b8ab6424918d7" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성] - MetroCluster IP 설치 및 구성 _.</block>
+  <block id="1694bd7aa5b3b3ecd0394ac449f774af" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#reasing-the-broadcom-ip-switch-to-factory-defaults[Broadcom IP 스위치를 출하 시 기본값으로 재설정]</block>
+  <block id="40f8dac9d3afe2ad9f3eb063b5a8ebe6" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#재설정 - Broadcom-ip-switch-to-factory-defaults#재설정 - Cisco-IP-switch-to-factory-defaults[Cisco IP 스위치를 출하 시 기본값으로 재설정]</block>
+  <block id="a016106990032abc8e07606eb9a35a34" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-broadcom-rcf-files [RCF 파일 다운로드 및 설치]</block>
+  <block id="2092fa2d67720266015440eaa2d835ab" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-cisco-ip-rcf-files [Cisco IP RCF 파일 다운로드 및 설치]</block>
+  <block id="861ef6676813cbc81369ee701ae73269" category="paragraph">타사 방화벽을 사용하는 경우:</block>
+  <block id="041f3a27fe8b40cc213210949eb4f036" category="list-text">HTTPS 액세스를 활성화해야 합니다.</block>
+  <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
+  <block id="cc1e6f116b4b45ffde821f0aef59e030" category="paragraph">기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우, 중재자를 설치하는 동안 방화벽이 자동으로 구성됩니다.</block>
+  <block id="a6bcf63661955f7af02bb69a2cd4d604" category="section-title">기존 구성에 쉘프 추가</block>
+  <block id="6257739eb87a755c28bf814ad261df2d" category="section-title">MetroCluster FC 노드에서 클러스터 접속을 이동합니다</block>
+  <block id="9d8f122e284d64a31d50c5040fe4f338" category="section-title">이동할 연결입니다</block>
+  <block id="508763c5ecfa3096ab25520f14c971f5" category="paragraph">에 설명된 포트를 사용합니다 <block ref="10769c5348734bed7e40370eea435ab1" category="inline-xref-macro-rx"></block>.</block>
+  <block id="fe45fe811f6f58baafc88df1114b43df" category="paragraph">링크:../install-ip/concept_mediator_requirements.html #configuring-the-ontap-중재자-service-from-a-MetroCluster-IP 구성 [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
+  <block id="353f64efd56caa103dcbf2b9e24c3129" category="paragraph">링크:../install-ip/concept_mediator_requirements.html</block>
+  <block id="dd23316b696cd08f3479c6e2d7baadc0" category="inline-link">AFF 또는 FAS 시스템의 설치 절차</block>
+  <block id="17959b19c1c128d5d74608a22de28cf9" category="paragraph"><block ref="17959b19c1c128d5d74608a22de28cf9" category="inline-link-rx"></block></block>
+  <block id="e5303b615c196a6ae1c68873f1d05073" category="sidebar">Brocade FC 스위치를 수동으로 구성합니다</block>
 </blocks>

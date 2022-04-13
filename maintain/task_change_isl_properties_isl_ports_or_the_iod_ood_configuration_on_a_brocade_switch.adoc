@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, change, isl, properties, isl, ports, 
 summary: 추가 또는 더 빠른 컨트롤러 또는 스위치와 같은 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다. 
 ---
 = Brocade 스위치에서 ISL 속성, ISL 포트 또는 IOD/ood 구성을 변경합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

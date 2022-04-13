@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, create, mirrored, data, aggregate, node
 summary: DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다. 
 ---
 = 각 노드에서 미러링된 데이터 애그리게이트 생성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

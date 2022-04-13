@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, configure, intercluster, lif, shared, data, por
 summary: 데이터 네트워크와 공유하는 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 인터클러스터 네트워킹에 필요한 포트 수가 줄어듭니다. 
 ---
 = 공유 데이터 포트에 대한 인터클러스터 LIF 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, replace, brocade, fc, switch
 summary: 장애가 발생한 스위치를 교체하려면 이 Brocade 관련 절차를 사용해야 합니다. 
 ---
 = Brocade FC 스위치 교체
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

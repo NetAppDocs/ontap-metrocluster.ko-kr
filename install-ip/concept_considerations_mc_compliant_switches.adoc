@@ -5,6 +5,7 @@ keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-complia
 summary: ONTAP IP 구성은 MetroCluster 9.7부터 NetApp 사양을 준수하는 경우에 NetApp에서 검증하지 않은 스위치를 지원할 수 있습니다. 
 ---
 = MetroCluster 규격 스위치를 사용할 때의 고려 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

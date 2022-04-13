@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, trademark
 summary: MetroCluster 업그레이드, 전환 및 확장 가이드의 상표 정보 
 ---
 = 상표
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, correct, procedure, configuration
 summary: FlexArray LUN을 사용하는지, MetroCluster 구성에서 노드 수, 7-Mode 패브릭 MetroCluster에서 사용하는 기존 FC 스위치 패브릭을 공유하는지 여부에 따라 올바른 설치 절차를 선택해야 합니다. 
 ---
 = 구성에 맞는 올바른 설치 절차를 선택합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

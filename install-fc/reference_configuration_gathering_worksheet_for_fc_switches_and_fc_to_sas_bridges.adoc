@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, configuration, worksheets, fc, swi
 summary: MetroCluster 사이트를 구성하기 전에 필요한 구성 정보를 수집해야 합니다. 
 ---
 = FC 스위치 및 FC-to-SAS 브리지에 대한 구성 워크시트
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, rename, cisco, ip, switch
 summary: Cisco IP 스위치의 이름을 변경하여 구성 전체에서 일관된 이름을 지정해야 할 수도 있습니다. 
 ---
 = Cisco IP 스위치 이름 바꾸기
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

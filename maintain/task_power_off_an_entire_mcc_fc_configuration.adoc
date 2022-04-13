@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, power, off, entire, metrocluster, fc,
 summary: 사이트 유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster FC 구성과 모든 장비의 전원을 꺼야 합니다. 
 ---
 = 전체 MetroCluster FC 구성의 전원을 끕니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

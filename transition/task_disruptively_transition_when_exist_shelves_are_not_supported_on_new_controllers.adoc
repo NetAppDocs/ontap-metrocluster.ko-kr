@@ -5,6 +5,7 @@ keywords: start, ontap, disruptive, transition, two-node, metrocluster, fc, conf
 summary: ONTAP 9.8부터 2노드 MetroCluster FC 구성을 중단 없이 전환하고 기존 스토리지 쉘프가 새로운 MetroCluster IP 노드에서 지원되지 않는 경우에도 기존 드라이브 쉘프에서 데이터를 이동할 수 있습니다. 
 ---
 = 새 컨트롤러에서 기존 쉘프를 지원하지 않을 때 중단 없이 전환(ONTAP 9.8 이상)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

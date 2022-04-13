@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, examples, two, node, stretch, con
 summary: 기본 디스크 및 어레이 LUN을 사용하여 확장 MetroCluster 구성을 설정하려면 FC-to-SAS 브릿지 또는 SAS 광 케이블을 사용하여 ONTAP 시스템을 디스크 쉘프에 연결해야 합니다. FC 스위치를 사용하여 스토리지 LUN을 ONTAP 시스템에 접속해야 합니다. 
 ---
 = 디스크 및 어레이 LUN이 있는 2노드 스트레치 MetroCluster 구성의 예
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

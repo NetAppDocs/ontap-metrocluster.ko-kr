@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, change, speed, isl, ports, cisco, fc,
 summary: ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도를 변경해야 할 수 있습니다. 더 먼 거리를 이동하는 ISL의 경우 품질을 개선하기 위해 속도를 낮춰야 할 수 있습니다. 
 ---
 = Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

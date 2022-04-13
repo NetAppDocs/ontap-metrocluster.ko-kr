@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, copyright
 summary: 패브릭 연결 MetroCluster 설치 및 구성에 대한 저작권 정보. 
 ---
 = 저작권
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

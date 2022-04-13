@@ -5,6 +5,7 @@ keywords: metrocluster, mcc, management, disaster, recover, switchover, switchba
 summary: 계획된 유지보수 작업 또는 재해 발생 시 MetroCluster 전환 및 스위치백 작업을 수행할 수 있습니다. 
 ---
 = MetroCluster ® 관리
+:allow-uri-read: 
 
 
 

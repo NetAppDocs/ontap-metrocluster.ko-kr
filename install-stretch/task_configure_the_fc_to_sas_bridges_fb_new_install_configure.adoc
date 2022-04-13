@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, configuration, fc, sas, bridges
 summary: FC-to-SAS 브릿지의 모델을 케이블로 연결하기 전에 FiberBridge 소프트웨어에서 설정을 구성해야 합니다. 
 ---
 = FC-to-SAS 브릿지 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

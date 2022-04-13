@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, upgrade, firmware. ip, switches, cisc
 summary: MetroCluster IP 스위치에서 펌웨어 업그레이드 
 ---
 = MetroCluster IP 스위치에서 펌웨어 업그레이드
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

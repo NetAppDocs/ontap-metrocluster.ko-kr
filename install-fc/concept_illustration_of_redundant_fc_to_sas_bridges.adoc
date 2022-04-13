@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, illustration, redundant, fc, sas, 
 summary: FC-to-SAS 브리지는 SAS 연결 디스크와 FC 스위치 패브릭 간의 프로토콜 브리징을 제공합니다. 
 ---
 = 이중 FC-to-SAS 브리지의 그림
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: failure, metrocluster, configuration, correct, recovery, procedure, ch
 summary: MetroCluster 구성에서 장애가 발생한 후에는 장애 정도에 따라 올바른 복구 절차를 선택해야 합니다. 
 ---
 = 올바른 복구 절차 선택
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

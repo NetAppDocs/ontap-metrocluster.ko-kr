@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, hot, add, sas, disk, shelf, direct, a
 summary: SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성의 기존 SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가할 수도 있고, 컨트롤러의 SAS HBA 또는 온보드 SAS 포트에 대한 새로운 스택으로 추가할 수도 있습니다. 
 ---
 = SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성에서 SAS 디스크 쉘프 핫 추가
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

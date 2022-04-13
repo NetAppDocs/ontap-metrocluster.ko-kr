@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, hot, replacing, failed, power, supply
 summary: 브리지로 연결되는 전원 공급 장치 모듈의 상태가 변경되면 전원 공급 장치 모듈을 분리하고 설치할 수 있습니다. 
 ---
 = 오류가 발생한 전원 공급 장치 모듈 핫 교체
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

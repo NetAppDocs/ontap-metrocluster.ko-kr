@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, cable, controllers
 summary: 각 컨트롤러의 FC-VI 어댑터는 파트너에게 직접 케이블로 연결되어야 합니다. 
 ---
 = 컨트롤러를 서로 케이블로 연결합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

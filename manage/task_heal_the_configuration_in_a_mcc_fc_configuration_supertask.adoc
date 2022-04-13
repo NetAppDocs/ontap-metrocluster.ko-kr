@@ -5,6 +5,7 @@ keywords: switchover, perform, heal, operation, restore, metrocluster, functiona
 summary: 스위치오버 후에는 MetroCluster 기능을 복원하기 위해 특정한 복구 작업을 수행해야 합니다. 
 ---
 = MetroCluster FC 구성에서 구성 복구
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

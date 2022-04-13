@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, machine, translation
 summary: MetroCluster 구성 요소를 유지 관리하기 위한 기계 번역. 
 ---
 = 기계 번역
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

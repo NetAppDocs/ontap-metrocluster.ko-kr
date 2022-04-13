@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, clear, configuration, controller, module
 summary: MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 구성을 지워야 합니다. 
 ---
 = 컨트롤러 모듈의 구성 지우기
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

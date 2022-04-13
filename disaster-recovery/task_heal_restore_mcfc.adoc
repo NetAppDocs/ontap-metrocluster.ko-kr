@@ -5,6 +5,7 @@ keywords: configure, fc, switches, metrocluster, configuration
 summary: 하드웨어를 교체하고 디스크를 할당한 후 MetroCluster 복구 작업을 수행할 수 있습니다. 
 ---
 = 애그리게이트 복구 및 미러 복구 수행(MetroCluster FC 구성)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

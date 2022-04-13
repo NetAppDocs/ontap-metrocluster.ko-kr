@@ -5,6 +5,7 @@ keywords: AFF, A900, Cisco, ONTAP, FAS, FC, metrocluster
 summary: 이 표에는 DR 그룹에 8개의 AFF A900 컨트롤러 모듈이 있는 지원되는 최대 구성이 나와 있습니다. 
 ---
 = ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 컨트롤러에 대한 Cisco 포트 사용
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

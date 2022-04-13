@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, create, data, aggregates, implemen
 summary: 각 노드에서 데이터 애그리게이트를 만들어 MetroCluster 구성을 구현하고 확인해야 합니다. 
 ---
 = MetroCluster 구성에서 데이터 애그리게이트를 생성, 구현 및 확인
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

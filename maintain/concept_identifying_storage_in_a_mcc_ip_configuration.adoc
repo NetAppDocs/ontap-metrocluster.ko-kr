@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, identifying, storage, ip, configurati
 summary: 드라이브 또는 쉘프 모듈을 교체해야 하는 경우, 먼저 위치를 확인해야 합니다. 
 ---
 = MetroCluster IP 구성에서 스토리지 식별
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

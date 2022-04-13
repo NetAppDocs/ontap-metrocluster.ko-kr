@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, cable, two, node, sas, attached, 
 summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다. 
 ---
 = 2노드 SAS 연결 스트레치 MetroCluster 구성의 케이블 연결
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

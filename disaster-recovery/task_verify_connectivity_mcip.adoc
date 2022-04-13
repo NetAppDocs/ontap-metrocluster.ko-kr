@@ -5,6 +5,7 @@ keywords: metrocluster, ip, configuration, verify, storage, connectivity, remote
 summary: 교체한 노드가 정상 작동하는 사이트의 디스크 쉘프에 연결되어 있는지 확인해야 합니다. 
 ---
 = 원격 사이트에 대한 스토리지 접속 확인(MetroCluster IP 구성)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

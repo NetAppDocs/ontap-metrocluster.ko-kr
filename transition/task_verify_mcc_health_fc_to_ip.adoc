@@ -5,6 +5,7 @@ keywords: Verifying the health of the MetroCluster configuration, review, requir
 summary: 전환을 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다. 
 ---
 = MetroCluster 구성 상태 확인
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

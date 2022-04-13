@@ -5,6 +5,7 @@ keywords: node, complete, transition, configure, metrocluster, ip, node, configu
 summary: 새 노드가 추가되면 전환 단계를 완료하고 MetroCluster IP 노드를 구성해야 합니다. 
 ---
 = 새 노드 구성 및 전환 완료
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

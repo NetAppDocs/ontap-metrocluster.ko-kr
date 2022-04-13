@@ -5,6 +5,7 @@ keywords: object, fabricpool, mirror, co-located, metrocluster, disaster, site, 
 summary: FabricPool 미러에 있는 오브젝트 저장소 중 하나가 MetroCluster 재해 사이트와 공동으로 배치되고 폐기된 경우 오브젝트 저장소와 FabricPool 미러를 재설정해야 합니다. 
 ---
 = 복구를 완료하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

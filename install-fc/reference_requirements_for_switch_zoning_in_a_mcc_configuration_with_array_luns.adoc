@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, switch, zoning, array, luns, requi
 summary: 어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝을 사용하는 경우 특정 기본 요구사항을 준수해야 합니다. 
 ---
 = 어레이 LUN이 있는 MetroCluster 구성의 스위치 조닝에 대한 요구사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

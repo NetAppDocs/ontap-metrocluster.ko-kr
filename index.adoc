@@ -4,5 +4,6 @@ sidebar: sidebar
 permalink: index.html 
 ---
 = MetroCluster 문서
+:allow-uri-read: 
 
 

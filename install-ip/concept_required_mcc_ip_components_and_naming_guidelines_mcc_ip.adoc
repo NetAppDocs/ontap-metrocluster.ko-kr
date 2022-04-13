@@ -5,6 +5,7 @@ keywords: plan, metrocluster, ip, configuration, planning, require, hardware, so
 summary: MetroCluster IP 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다. 
 ---
 = MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

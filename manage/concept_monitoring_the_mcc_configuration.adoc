@@ -5,6 +5,7 @@ keywords: ontap, metrocluster, command, active, iq, unified, manager, oncommand,
 summary: 'ONTAP MetroCluster 명령 및 Active IQ Unified Manager(이전의 OnCommand Unified Manager)를 사용하여 다양한 소프트웨어 구성 요소의 상태와 MetroCluster 작업 상태를 모니터링할 수 있습니다.' 
 ---
 = MetroCluster 구성 모니터링
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -223,7 +224,7 @@ MetroCluster 구성의 두 사이트 모두에서 모든 SVM을 확인합니다.
 다음 링크를 사용하여 Tiebreaker 또는 중재자를 설치 및 구성합니다.
 
 * link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluster Tiebreaker 소프트웨어를 설치하고 구성합니다"]
-* link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다"]
+* 링크:../install-ip/concept_mediator_requirements.html
 
 
 

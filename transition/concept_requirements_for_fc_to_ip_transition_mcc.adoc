@@ -5,6 +5,7 @@ keywords: start, transition, process, configuration, requirement, nondisruptive,
 summary: 전환 프로세스를 시작하기 전에 구성이 요구사항을 충족하는지 확인해야 합니다. 
 ---
 = 무중단 FC-to-IP 전환 요구사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

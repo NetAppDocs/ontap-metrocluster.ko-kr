@@ -5,6 +5,7 @@ keywords: transition, metrocluster, ip, configuration, combination, support, pla
 summary: 그런 다음 MetroCluster IP 구성으로 전환하려면 지원되는 플랫폼 모델을 조합해야 합니다. 
 ---
 = 무중단 전환을 지원하는 플랫폼
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

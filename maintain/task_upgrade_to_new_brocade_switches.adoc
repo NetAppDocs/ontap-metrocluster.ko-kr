@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, cluster, new, brocade, fc, switches
 summary: 새 Brocade FC 스위치로 업그레이드하는 경우 첫 번째 패브릭의 스위치를 교체하고 MetroCluster 구성이 완전히 작동하는지 확인한 다음 두 번째 패브릭의 스위치를 교체해야 합니다. 
 ---
 = 새 Brocade FC 스위치로 업그레이드
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

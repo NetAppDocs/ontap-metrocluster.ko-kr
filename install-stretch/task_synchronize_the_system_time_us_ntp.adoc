@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, synchronize, system, time, ntp
 summary: '각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다. System Manager의 DateTime 편집 대화 상자를 사용하여 NTP 서버를 구성할 수 있습니다.' 
 ---
 = NTP를 사용하여 시스템 시간 동기화
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, iscsi, connections, disaster, site, surviving, connectiv
 summary: 남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 연결을 복구해야 합니다. 
 ---
 = 정상적인 노드에서 재해 사이트로 연결 복원(MetroCluster IP 구성)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

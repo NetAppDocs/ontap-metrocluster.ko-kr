@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, cable, components, array, luns
 summary: 스토리지 LUN을 사용하여 MetroCluster 구성을 설정하려면 스토리지 컨트롤러를 FC 스위치에 케이블로 연결하고 ISL을 케이블로 연결하여 사이트를 연결해야 합니다. 또한 스토리지 어레이를 FC 스위치에 연결해야 합니다. 
 ---
 = 어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소 설치 및 케이블 연결
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

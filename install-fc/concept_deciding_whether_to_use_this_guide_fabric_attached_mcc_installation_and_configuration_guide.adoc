@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, planning, fabric-attached, installation, decidin
 summary: 이 가이드에서는 패브릭 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법을 설명합니다. 
 ---
 = 패브릭 연결 MetroCluster 설치 및 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

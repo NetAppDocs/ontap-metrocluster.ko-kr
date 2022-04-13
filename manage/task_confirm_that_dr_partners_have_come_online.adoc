@@ -5,6 +5,7 @@ keywords: switchover, dr, partner, ownership, disk, svm, online, confirm
 summary: 전환이 완료된 후 DR 파트너가 디스크를 소유하고 파트너 SVM이 온라인 상태인지 확인해야 합니다. 
 ---
 = DR 파트너가 온라인 상태인지 확인합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, create, unmirrored, data, aggregates
 summary: 선택적으로 MetroCluster 구성에서 제공되는 이중 미러링이 필요하지 않은 데이터에 대해 미러링되지 않은 데이터 애그리게이트를 만들 수 있습니다. 
 ---
 = 미러링되지 않은 데이터 애그리게이트를 생성합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

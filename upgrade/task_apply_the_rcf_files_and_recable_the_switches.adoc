@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, apply, rcf, files, recable, switches
 summary: 새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다. 
 ---
 = RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

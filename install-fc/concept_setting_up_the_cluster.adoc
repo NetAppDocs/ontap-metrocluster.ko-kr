@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, set, up, cluster
 summary: 클러스터를 설정하려면 각 노드를 설정하고, 첫 번째 노드에서 클러스터를 생성하고, 나머지 노드를 클러스터에 가입해야 합니다. 
 ---
 = 클러스터를 설정하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

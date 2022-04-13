@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, switch, zoning, two, node, array, 
 summary: 스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다. 
 ---
 = 어레이 LUN이 있는 2노드 MetroCluster 구성에서 스위치 조닝의 예
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, prepare, storage, array, systems
 summary: 스토리지 LUN이 포함된 MetroCluster 구성에서 ONTAP 시스템을 설정하기 전에 스토리지 시스템 관리자는 ONTAP에서 사용할 스토리지를 준비해야 합니다. 
 ---
 = ONTAP 시스템에서 사용할 스토리지 어레이 준비
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

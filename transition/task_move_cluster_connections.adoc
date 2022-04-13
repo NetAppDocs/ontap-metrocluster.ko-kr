@@ -1,10 +1,11 @@
 ---
 permalink: transition/task_move_cluster_connections.html 
 sidebar: sidebar 
-keywords: Transitioning from MetroCluster FC to MetroCluster IP configurations, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
+keywords: transition, cluster connections 
 summary: 모든 요구 사항을 검토하고 전환을 준비한 후 전환 절차를 수행합니다. 각 작업을 순서대로 수행해야 하며, 다음 작업으로 이동하기 전에 각 작업의 모든 단계를 완료해야 합니다. 지시가 있을 때까지 새 컨트롤러 또는 스토리지 쉘프를 기존 구성에 연결하면 안 됩니다. 
 ---
-= 로컬 클러스터 연결 이동
+= 로컬 클러스터 연결을 이동합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -14,12 +15,16 @@ MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동
 
 
 
-== MetroCluster FC 노드에서 클러스터 접속 이동
+== MetroCluster FC 노드에서 클러스터 접속을 이동합니다
 
 [role="lead"]
 MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동해야 합니다. 이 단계는 기존 IP 스위치를 사용하고 있는지 또는 새 IP 스위치를 사용하고 있는지에 따라 달라집니다.
 
 두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.
+
+
+
+=== 이동할 연결입니다
 
 다음 작업에서는 클러스터 연결에 2개의 포트를 사용하는 컨트롤러 모듈을 가정합니다. 일부 컨트롤러 모듈 모델은 클러스터 연결에 4개 이상의 포트를 사용합니다. 이 예에서는 포트가 두 그룹으로 나뉘어 두 그룹 간에 번갈아 연결됩니다
 
@@ -117,7 +122,7 @@ FAS8200/A300
 
 . MetroCluster FC 노드 그룹 A 클러스터 연결을 새 IP 스위치로 이동합니다.
 +
-에 설명된 포트를 사용합니다 link:../transition/task_verify_mcc_health_fc_to_ip.html#moving-the-cluster-connections-on-the-metrocluster-fc-nodes["MetroCluster FC 노드에서 클러스터 접속 이동"].
+에 설명된 포트를 사용합니다 <<Which connections to move>>.
 
 +
 .. 스위치에서 모든 그룹 A 포트를 분리하거나, MetroCluster FC 구성이 스위치가 없는 클러스터인 경우 파트너 노드에서 연결을 끊습니다.
@@ -251,7 +256,7 @@ MetroCluster IP 노드가 지원하는 최신 펌웨어를 사용해야 합니�
 
 . 스위치_A_1_IP에 그룹 A 포트를 다시 연결합니다.
 +
-에 설명된 포트를 사용합니다 link:task_transition_from_mcc_fc_to_mcc_ip_configurations.html["MetroCluster FC 노드에서 클러스터 접속 이동"].
+에 설명된 포트를 사용합니다 <<Which connections to move>>.
 
 . 모든 클러스터 포트가 작동하는지 확인합니다.
 +

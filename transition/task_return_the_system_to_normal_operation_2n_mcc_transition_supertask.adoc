@@ -5,6 +5,7 @@ keywords: perform, final, configuration, return, metrocluster, normal, operation
 summary: 최종 구성 단계를 수행하고 MetroCluster 구성을 정상 작동 상태로 되돌리십시오. 
 ---
 = 시스템을 정상 작동 상태로 되돌리기
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -70,7 +71,7 @@ license_key의 길이는 28자입니다.
 link:../install-ip/concept_considerations_mediator.html["중재자를 위한 고려 사항"]
 
 +
-link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html["계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성"]
+링크:../install-ip/concept_mediator_requirements.html
 
 +
 link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["Tiebreaker 소프트웨어 설치 및 구성"]

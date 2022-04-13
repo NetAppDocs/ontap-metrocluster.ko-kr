@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, parts, two, node, bridge, stretch
 summary: MetroCluster 구성을 계획할 때 구성의 각 부분과 구성 요소가 함께 작동하는 방식을 이해해야 합니다. 
 ---
 = 2노드 브리지 연결 스트레치 MetroCluster 구성의 일부
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster ip, rack hardware, components, racking
 summary: 캐비닛에 이미 설치된 장비를 받지 못한 경우 구성 요소를 랙에 장착해야 합니다. 
 ---
 = 하드웨어 구성 요소 장착
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

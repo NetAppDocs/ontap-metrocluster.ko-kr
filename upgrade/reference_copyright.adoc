@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, copyright
 summary: MetroCluster 업그레이드, 전환 및 확장 가이드의 저작권 정보. 
 ---
 = 저작권
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

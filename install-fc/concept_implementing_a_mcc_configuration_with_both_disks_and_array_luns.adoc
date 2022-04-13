@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, implement, configuration, disks, a
 summary: 기본 디스크 및 어레이 LUN을 사용하여 MetroCluster 구성을 구현하려면 구성에 사용된 ONTAP 시스템이 스토리지 어레이에 연결될 수 있는지 확인해야 합니다. 
 ---
 = 디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성 구축
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

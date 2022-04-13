@@ -5,6 +5,7 @@ keywords: metrocluster ip, ontap, mediator, tiebreaker
 summary: MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨어 또는 세 번째 사이트에 다운로드하여 설치할 수 있습니다. 
 ---
 = MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어 구성
+:allow-uri-read: 
 
 
 [role="lead"]

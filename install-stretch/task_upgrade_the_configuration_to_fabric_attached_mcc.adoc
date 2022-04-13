@@ -5,6 +5,7 @@ keywords: metrocluster, stretch, installation, transition, stretch, fabric, atta
 summary: 패브릭 연결 MetroCluster 구성에서는 노드가 서로 다른 위치에 있습니다. 이러한 지리적 차이로 인해 재해 보호가 증가합니다. 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환하기 위해서는 FC 스위치를 추가해야 하며, 필요한 경우 FC-to-SAS 브리지를 구성에 추가해야 합니다. 
 ---
 = 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

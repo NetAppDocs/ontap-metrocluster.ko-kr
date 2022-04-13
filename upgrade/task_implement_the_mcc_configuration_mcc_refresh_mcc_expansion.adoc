@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, implement, configuration
 summary: MetroCluster 구성에 추가한 노드에서 데이터 보호를 시작하려면 MetroCluster configure -refresh true 명령을 실행해야 합니다. 
 ---
 = MetroCluster 구성 구현
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

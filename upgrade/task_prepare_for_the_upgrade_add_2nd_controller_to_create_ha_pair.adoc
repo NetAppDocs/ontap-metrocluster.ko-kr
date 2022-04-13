@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, prepare, upgrade
 summary: HA 쌍으로 업그레이드하기 전에 시스템이 모든 요구사항을 충족하는지, 그리고 모든 필요한 정보를 갖추고 있는지 확인해야 합니다. 
 ---
 = 업그레이드를 준비하는 중입니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

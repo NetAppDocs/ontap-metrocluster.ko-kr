@@ -5,6 +5,7 @@ keywords: monitor, protect, file, system, consistency, nvfail, parameter, volume
 summary: 'volume modify 명령의 -nvfail 매개 변수를 사용하면 시스템이 부팅 중이거나 전환 작업 후 ONTAP에서 NVRAM(Nonvolatile RAM)의 불일치를 감지할 수 있습니다. 또한 볼륨을 수동으로 복구할 수 있을 때까지 데이터 액세스 및 수정으로부터 시스템을 경고 및 보호합니다.' 
 ---
 = NVFAIL을 사용하여 파일 시스템 일관성 모니터링 및 보호
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

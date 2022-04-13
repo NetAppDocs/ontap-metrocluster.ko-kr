@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, cable, new, controller, modules, cluster, peeri
 summary: 파트너 사이트의 클러스터와 연결이 되도록 새 컨트롤러 모듈을 클러스터 피어링 네트워크에 케이블로 연결해야 합니다. 
 ---
 = 새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: metrocluster, upgrade, mirror, root, aggregate, new, controller
 summary: MetroCluster 구성에 컨트롤러를 추가할 때 데이터 보호를 제공하려면 루트 애그리게이트를 미러링해야 합니다. 
 ---
 = 새 컨트롤러의 루트 애그리게이트를 미러링합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

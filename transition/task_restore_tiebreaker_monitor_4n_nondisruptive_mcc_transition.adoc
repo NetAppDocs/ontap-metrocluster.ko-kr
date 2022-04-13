@@ -5,6 +5,7 @@ keywords: completing, complete, transition, metrocluster, configuration, resume,
 summary: MetroCluster 구성 전환을 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다. 
 ---
 = Tiebreaker 또는 중재자 모니터링 복원
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -31,7 +32,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-link:../install-ip/concept_configure_the_ontap_mediator_for_unplanned_automatic_switchover.html#configuring-the-ontap-mediator-service-from-a-metrocluster-ip-configuration["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"]
+링크:../install-ip/concept_mediator_requirements.html #configuring-the-ontap-중재자-service-from-a-MetroCluster-IP 구성 [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]
 
 |===
 

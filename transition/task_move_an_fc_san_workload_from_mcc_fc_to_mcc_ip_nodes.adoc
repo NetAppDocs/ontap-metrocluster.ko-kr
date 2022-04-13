@@ -5,6 +5,7 @@ keywords: non-disruptively, transition, metrocluster, fc, ip, node, san, host, m
 summary: MetroCluster FC에서 IP 노드로 무중단 전환하는 경우 FC SAN 호스트 개체를 MetroCluster FC에서 IP 노드로 중단 없이 이동해야 합니다. 
 ---
 = FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

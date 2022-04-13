@@ -5,6 +5,7 @@ keywords: configure, fc, switches, metrocluster, configuration
 summary: 재해 사이트에서 FC 스위치를 교체한 경우 공급업체별 절차를 사용하여 구성해야 합니다. 
 ---
 = FC 스위치 구성(MetroCluster FC 구성만 해당)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

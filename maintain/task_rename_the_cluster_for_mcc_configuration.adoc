@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, rename, cluster, configuration
 summary: MetroCluster 구성에서 클러스터의 이름을 바꾸는 작업은 변경을 수행한 다음 로컬 및 원격 클러스터에서 변경 사항이 올바르게 적용되었는지 확인하는 것입니다. 
 ---
 = MetroCluster 구성에서 클러스터 이름 바꾸기
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

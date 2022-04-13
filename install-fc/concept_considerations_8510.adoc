@@ -5,6 +5,7 @@ keywords: preparing, prepare, metrocluster, mcc, installation, install, differen
 summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다. 
 ---
 = Brocade DCX 8510-8 스위치 사용에 대한 요구 사항
+:allow-uri-read: 
 
 
 * MetroCluster 구성에 사용되는 DCX 8510-8 스위치는 NetApp에서 구입해야 합니다.

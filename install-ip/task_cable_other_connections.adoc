@@ -5,6 +5,7 @@ keywords: cabling, cable, component, peering, management, network, hardware, com
 summary: 클러스터 피어링, 관리, 데이터 연결에 사용되는 컨트롤러 모듈 포트에 케이블을 연결해야 합니다. 
 ---
 = 컨트롤러 피어링, 데이터 및 관리 포트에 케이블 연결
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

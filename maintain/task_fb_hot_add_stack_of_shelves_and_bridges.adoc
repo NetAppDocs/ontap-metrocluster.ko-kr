@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, hot, add, stack, sas, disk, shelves, 
 summary:  
 ---
 = MetroCluster 시스템에 SAS 디스크 쉘프 및 브리지 스택 핫 추가
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

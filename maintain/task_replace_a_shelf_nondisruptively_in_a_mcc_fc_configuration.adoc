@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, replace, shelf, nondisruptively, fabr
 summary: 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체하는 방법을 알아야 할 수도 있습니다. 
 ---
 = 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

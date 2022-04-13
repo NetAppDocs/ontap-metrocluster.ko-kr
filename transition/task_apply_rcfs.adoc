@@ -5,6 +5,7 @@ keywords: Generating and applying RCFs to the new IP switches, review, requireme
 summary: MetroCluster IP 구성에 새로운 IP 스위치를 사용하는 경우 사용자 지정 RCF 파일을 사용하여 스위치를 구성해야 합니다. 
 ---
 = 새 IP 스위치에 RCF 생성 및 적용
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

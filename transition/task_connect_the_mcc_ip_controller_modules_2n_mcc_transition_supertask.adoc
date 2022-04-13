@@ -5,6 +5,7 @@ keywords: add, four, controller, module, additional, storage, shelves, shelf, co
 summary: 구성에 새 컨트롤러 모듈 4개와 추가 스토리지 쉘프를 추가해야 합니다. 새 컨트롤러 모듈은 한 번에 두 개씩 추가됩니다. 
 ---
 = MetroCluster IP 컨트롤러 모듈 연결
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

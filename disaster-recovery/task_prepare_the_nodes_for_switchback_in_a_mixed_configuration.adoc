@@ -5,6 +5,7 @@ keywords: perform, certain, task, prepare, metrocluster, ip, fc, configuration, 
 summary: 스위치백 작업을 위해 혼합된 MetroCluster IP 및 FC 구성을 준비하려면 특정 작업을 수행해야 합니다. 이 절차는 MetroCluster FC에서 IP로의 전환 프로세스 중에 장애가 발생한 구성에만 적용됩니다. 
 ---
 = 혼합 구성에서 스위치백 준비(전환 중 복구)
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

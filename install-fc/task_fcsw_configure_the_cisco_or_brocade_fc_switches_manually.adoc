@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, configure, brocade, switches, manu
 summary: 스위치 구성 절차와 명령은 스위치 공급업체에 따라 다릅니다. 
 ---
 = Cisco 또는 Brocade FC 스위치를 수동으로 구성합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

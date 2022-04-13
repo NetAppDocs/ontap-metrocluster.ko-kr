@@ -4,6 +4,7 @@ keywords: workflow, perform, disaster, recovery
 summary: 워크플로우를 사용하여 재해 복구를 수행합니다. 
 ---
 = 재해 복구를 위한 워크플로우
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

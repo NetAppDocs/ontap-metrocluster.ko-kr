@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, upgrade, downgrade, firmware, brocade
 summary: Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Brocade 관련 명령을 사용하여 스위치를 비활성화하고 펌웨어 변경을 수행 및 확인하고 스위치를 재부팅 및 다시 활성화해야 합니다. 
 ---
 = Brocade FC 스위치에서 펌웨어 업그레이드 또는 다운그레이드
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

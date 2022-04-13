@@ -5,6 +5,7 @@ keywords: hardware, component, replace, individual, replacement, installation, g
 summary: 하드웨어 구성 요소를 교체해야 하는 경우 개별 하드웨어 교체 및 설치 가이드를 사용하여 교체해야 합니다. 
 ---
 = 하드웨어 교체 및 새 컨트롤러 부팅
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

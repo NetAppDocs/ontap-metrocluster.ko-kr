@@ -5,6 +5,7 @@ keywords: switchover, upon, detection, site, failure, automatic, metrocluster, t
 summary: MetroCluster Tiebreaker가 활성 모드에 있을 때 사이트 장애 감지 시 자동으로 전환됩니다. 이 모드는 ONTAP/FAS 자동 전환 기능을 보완하는 데 사용할 수 있습니다. 
 ---
 = 활성 모드에서 MetroCluster Tiebreaker를 사용할 때의 위험 및 제한 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

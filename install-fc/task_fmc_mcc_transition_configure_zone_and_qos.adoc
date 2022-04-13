@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, delete, ti, zoning, tod, settings
 summary: '기존 TI 조닝을 삭제하고 스위치 패브릭에서 IOD\(In-order-delivery\) 설정을 재구성해야 합니다.' 
 ---
 = TI 조닝 삭제 및 IOD 설정 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

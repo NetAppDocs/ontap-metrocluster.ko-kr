@@ -5,6 +5,7 @@ keywords: snmp, tiebreaker, software, configure, setting
 summary: Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설정을 구성해야 합니다. 
 ---
 = Tiebreaker 소프트웨어에 대한 SNMP 설정 구성
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: remove, removing, metrocluster, configuration, disk, connectivity, int
 summary: MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오. 
 ---
 = MetroCluster 구성을 제거할 때의 고려 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

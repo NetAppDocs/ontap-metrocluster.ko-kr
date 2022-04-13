@@ -5,6 +5,7 @@ keywords: metrocluster, maintain, service, support, fibrebridge, bridges, config
 summary: FiberBridge 7600N 브리지는 FiberBridge 7500N 또는 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 ONTAP 9.5 이상에서 지원됩니다. 브리지의 FC 포트 사용과 관련된 조닝 요구 사항 및 제한은 FiberBridge 7500N 브리지의 경우와 동일합니다. 
 ---
 = MetroCluster 구성에서 FiberBridge 7600N 브리지 지원
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

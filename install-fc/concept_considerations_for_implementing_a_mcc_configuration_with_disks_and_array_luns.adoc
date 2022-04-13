@@ -5,6 +5,7 @@ keywords: metrocluster, fabric, installation, considerations, configuration, dis
 summary: 디스크 및 어레이 LUN에 사용할 MetroCluster 구성을 계획할 때는 스토리지 액세스 설정 순서, 루트 애그리게이트 위치, FC 이니시에이터 포트, 스위치 및 FC-to-SAS 브릿지 사용 등과 같은 다양한 요소를 고려해야 합니다. 
 ---
 = 디스크 및 스토리지 LUN을 사용하여 MetroCluster 구성을 구축할 때의 고려 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
