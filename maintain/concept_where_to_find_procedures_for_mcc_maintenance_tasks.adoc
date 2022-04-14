@@ -14,7 +14,7 @@ summary: MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올�
 MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올바른 절차를 선택해야 합니다.
 
 
-NOTE: ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 link:../upgrade/index.html["MetroCluster 업그레이드 및 확장"] 및 link:../transition/index.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"].
+NOTE: ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 업그레이드 및 확장"] 및 link:../transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"].
 
 |===
 
@@ -50,7 +50,7 @@ https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조
  a| 
 업그레이드 및 확장
  a| 
-link:../upgrade/index.html["MetroCluster ® 업그레이드 및 확장"]
+link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster ® 업그레이드 및 확장"]
 
 
 
@@ -72,7 +72,7 @@ link:task_hot_add_a_stack_to_exist_7500n_pair.html["기존 FiberBridge 7500N 브
 
 link:task_fb_hot_add_stack_of_shelves_and_bridges.html["MetroCluster 시스템에 SAS 디스크 쉘프 및 브리지 스택 핫 추가"]
 
-link:task_fb_hot_add_shelf.html["SAS 디스크 쉘프 스택에 SAS 디스크 쉘프 핫 추가"]
+link:task_fb_hot_add_shelf_prepare_7500n.html["SAS 디스크 쉘프 스택에 SAS 디스크 쉘프 핫 추가"]
 
 
 

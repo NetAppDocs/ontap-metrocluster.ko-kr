@@ -223,5 +223,5 @@ vsan [vsna #]no suspend
 
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
-. 에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["MetroCluster 관리 및 재해 복구"^].
+. 에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_dr_workflow.html["MetroCluster 관리 및 재해 복구"^].
 

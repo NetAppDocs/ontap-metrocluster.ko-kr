@@ -55,7 +55,7 @@ link:../install-stretch/concept_considerations_differences.html["스트레치 Me
 
 
  a| 
-link:../disaster-recovery/index.html["MetroCluster 관리 및 재해 복구"]
+link:../disaster-recovery/concept_dr_workflow.html["MetroCluster 관리 및 재해 복구"]
  a| 
 * MetroCluster 구성 이해
 * 전환, 복구, 스위치백
@@ -79,7 +79,7 @@ link:../maintain/index.html["MetroCluster 부품 유지 관리"]
 
 
  a| 
-link:../upgrade/index.html["MetroCluster 업그레이드, 전환 및 확장"]
+link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 업그레이드, 전환 및 확장"]
  a| 
 * MetroCluster 구성 업그레이드 또는 새로 고침
 * MetroCluster FC 구성에서 MetroCluster IP 구성으로 전환
@@ -89,7 +89,7 @@ link:../upgrade/index.html["MetroCluster 업그레이드, 전환 및 확장"]
 
 
  a| 
-link:../tiebreaker/index.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
+link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
  a| 
 * MetroCluster Tiebreaker 소프트웨어로 MetroCluster 구성 모니터링
 

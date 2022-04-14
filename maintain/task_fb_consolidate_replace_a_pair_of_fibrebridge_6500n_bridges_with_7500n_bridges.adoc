@@ -178,7 +178,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 		.
 		.
 ----
-. 다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지로 ""하단" FiberBridge 6500N 브리지를 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.htmlc["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
+. 다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지로 ""하단" FiberBridge 6500N 브리지를 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.html["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
 +
 ** FiberBridge 7600N 또는 7500N 브리지 FC2 포트를 스위치 또는 컨트롤러에 연결합니다.
 +

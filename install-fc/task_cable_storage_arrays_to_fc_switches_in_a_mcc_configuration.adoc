@@ -31,7 +31,7 @@ MetroCluster 구성의 ONTAP 시스템이 최소 2개의 경로를 통해 특정
 .관련 정보
 * 스위치 조닝을 구성하면 MetroCluster 구성에서 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.
 +
-link:concept_switch_zoning_in_a_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝"]
+link:reference_requirements_for_switch_zoning_in_a_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝"]
 
 * 어레이 LUN이 있는 MetroCluster 구성에서는 이중 포트 쌍을 구성하는 스토리지 어레이 포트를 대체 FC 스위치에 연결해야 합니다.
 +

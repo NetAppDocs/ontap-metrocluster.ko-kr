@@ -48,7 +48,7 @@ link:../manage/index.html["MetroCluster 관리"]
 
 
  a| 
-link:../disaster-recovery/index.html["재해 복구"]
+link:../disaster-recovery/concept_dr_workflow.html["재해 복구"]
  a| 
 * 재해 복구
 * 강제 전환
@@ -72,7 +72,7 @@ link:../maintain/index.html["MetroCluster 유지 관리"]
 
 
  a| 
-link:../upgrade/index.html["MetroCluster 업그레이드 및 확장"]
+link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 업그레이드 및 확장"]
  a| 
 * MetroCluster 구성 업그레이드 또는 새로 고침
 * 노드를 추가하여 MetroCluster 구성 확장

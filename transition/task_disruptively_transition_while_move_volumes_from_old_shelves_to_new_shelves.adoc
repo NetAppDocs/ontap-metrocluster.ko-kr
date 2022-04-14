@@ -99,7 +99,7 @@ image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[워크플�
 
 . MetroCluster FC 구성에서 정보를 수집합니다.
 +
-의 단계를 수행합니다 link:../task_transition_the_mcc_fc_nodes_2n_mcc_transition_supertask.html#gathering-information-from-the-existing-controller-modules-before-the-transition["전환 전에 기존 컨트롤러 모듈에서 정보를 수집합니다"].
+의 단계를 수행합니다 link:task_transition_the_mcc_fc_nodes_2n_mcc_transition_supertask.html#gathering-information-from-the-existing-controller-modules-before-the-transition["전환 전에 기존 컨트롤러 모듈에서 정보를 수집합니다"].
 
 . 필요한 경우 Tiebreaker 모니터링을 제거합니다.
 +

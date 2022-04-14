@@ -1046,9 +1046,9 @@ MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 �
 
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"^]
 
-link:concept_preparing_for_the_mcc_installation.html["전용 포트를 사용할 때의 고려 사항"]
+link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
 
-link:concept_preparing_for_the_mcc_installation.html["데이터 포트 공유 시 고려 사항"]
+link:concept_considerations_peering.html#considerations-when-sharing-data-ports["데이터 포트 공유 시 고려 사항"]
 
 
 
@@ -1288,7 +1288,7 @@ cluster01
 ----
 
 
-link:concept_preparing_for_the_mcc_installation.html["전용 포트를 사용할 때의 고려 사항"]
+link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
 
 
 
@@ -1449,7 +1449,7 @@ cluster01
 ----
 
 
-link:concept_preparing_for_the_mcc_installation.html["데이터 포트 공유 시 고려 사항"]
+link:concept_considerations_peering.html#considerations-when-sharing-data-ports["데이터 포트 공유 시 고려 사항"]
 
 
 

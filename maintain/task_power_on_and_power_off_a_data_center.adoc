@@ -719,6 +719,6 @@ MetroCluster FC 구성
 |===
 . MetroCluster 구성을 다시 설정합니다.
 +
-의 지침을 따릅니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["MetroCluster 관리 및 재해 복구"] MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.
+의 지침을 따릅니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_dr_workflow.html["MetroCluster 관리 및 재해 복구"] MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.
 
 

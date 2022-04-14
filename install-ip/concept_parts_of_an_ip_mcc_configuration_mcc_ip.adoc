@@ -99,6 +99,6 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클
 
 link:concept_considerations_peering.html["클러스터 피어링을 구성할 때의 고려 사항"]
 
-link:task_cable_ip_switches.html["클러스터 피어링 연결에 케이블로 연결합니다"]
+link:task_cable_other_connections.html["클러스터 피어링 연결에 케이블로 연결합니다"]
 
 link:task_sw_config_configure_clusters.html#peering-the-clusters["클러스터 피어링"]

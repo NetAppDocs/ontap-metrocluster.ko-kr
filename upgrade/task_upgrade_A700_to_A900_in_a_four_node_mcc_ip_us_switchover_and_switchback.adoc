@@ -2,7 +2,7 @@
 permalink: upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html 
 sidebar: sidebar 
 keywords: metrocluster, upgrade, controller, ip, configuration, switchover, switchback, workflow, nodes, tiebreaker, verify, bootrage, root, aggregate, disks 
-summary: 'ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언트에 무중단 서비스를 제공하는 동시에 파트너 클러스터의 컨트롤러 모듈을 업그레이드할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.' 
+summary: 'BYou는 MetroCluster 스위치오버 운영을 사용하여 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.' 
 ---
 = 스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
 :allow-uri-read: 
@@ -124,8 +124,8 @@ AFF A700의 MetroCluster IP 구성에서는 VLAN을 사용하지 않습니다. A
 에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"] 콘텐츠.
 
 +
-** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#reasing-the-broadcom-ip-switch-to-factory-defaults[Broadcom IP 스위치를 출하 시 기본값으로 재설정]
-** 링크:../install-ip/task_switch_config_broadcom.html#재설정 - Broadcom-ip-switch-to-factory-defaults#재설정 - Cisco-IP-switch-to-factory-defaults[Cisco IP 스위치를 출하 시 기본값으로 재설정]
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
@@ -133,8 +133,8 @@ AFF A700의 MetroCluster IP 구성에서는 VLAN을 사용하지 않습니다. A
 의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"] 콘텐츠.
 
 +
-** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-broadcom-rcf-files [RCF 파일 다운로드 및 설치]
-** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-cisco-ip-rcf-files [Cisco IP RCF 파일 다운로드 및 설치]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
 
 
 
@@ -378,7 +378,7 @@ dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-sy
  a| 
 Tiebreaker입니다
  a| 
-link:install-stretch/concept_considerations_when_removing_mcc_configurations.html["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 내용 _
+link:tiebreaker/concept_configuring_the_tiebreaker_software.html#commands-for-modifying-metrocluster-tiebreaker-configurations["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 내용 _
 
 
 
@@ -620,7 +620,7 @@ AFF A900 컨트롤러 모듈과 NVS를 바꾼 후 AFF A900 노드를 netboot 하
 . 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 . [[step2-download-software]] NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 'ontap-version_image.tgz' 파일을 저장합니다.
 . 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
-. 디렉토리 목록에는 <ONTAP_version>_image.tgz 가 포함되어야 합니다.
+. 디렉토리 목록에는 <ONTAP_VERSION>\_IMAGE.tgz 가 포함되어야 합니다.
 . 다음 작업 중 하나를 선택하여 netboot 연결을 구성합니다.
 +
 
@@ -645,12 +645,12 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레
  a| 
 부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=<filer_addr> -mask=<netmask> -GW=<gateway> -DNS=<DNS_addr> domain=<DNS_domain>'
 
-"<filer_addr>"은(는) 스토리지 시스템의 IP 주소입니다. "<netmask>"는 스토리지 시스템의 네트워크 마스크입니다. '<gateway>'는 스토리지 시스템의 게이트웨이입니다. "<dns_addr"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '<dns_domain>'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.
+"<filer_addr>"은(는) 스토리지 시스템의 IP 주소입니다. "<netmask>"는 스토리지 시스템의 네트워크 마스크입니다. '<gateway>'는 스토리지 시스템의 게이트웨이입니다. "<dns_addr>"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '<dns_domain>'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.
 
 |===
 . node_B_1:'netboot' http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel` 에서 netboot를 수행한다
 +
-"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 <<step2-download-software,2단계>>.
+"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>\_image.tgz"를 다운로드한 위치로 이어져야 합니다 <<step2-download-software,2단계>>.
 
 +
 
@@ -679,7 +679,7 @@ Selection (1-11)?
 +
 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.
 
-. 절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz` 를 입력합니다
+. 절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>\_image.tgz` 를 입력합니다
 . 컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.
 +
 .. "n"을 입력하여 백업 복구를 건너뛰십시오. "지금 백업 구성을 복구하시겠습니까?"라는 메시지가 표시되면 백업 복구를 건너뛰십시오. {y|n}'
@@ -692,7 +692,7 @@ Selection (1-11)?
 .. 노드가 재부팅되어 "wipeconfig"가 끝나면 부팅 메뉴에서 멈춥니다.
 
 
-. 부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 *>가 표시될 때까지 프롬프트에 "yes"를 선택합니다.
+. 부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 \ *>가 나타날 때까지 프롬프트에 "yes"를 선택합니다.
 . netboot node_B_2에 이 단계를 반복합니다.
 
 
@@ -832,8 +832,8 @@ _MetroCluster IP 설치 및 구성_섹션에서 스위치 공급업체의 섹션
 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
 
 +
-** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#reasing-the-broadcom-ip-switch-to-factory-defaults[Broadcom IP 스위치를 출하 시 기본값으로 재설정]
-** 링크:../install-ip/task_switch_config_broadcom.html#재설정 - Broadcom-ip-switch-to-factory-defaults#재설정 - Cisco-IP-switch-to-factory-defaults[Cisco IP 스위치를 출하 시 기본값으로 재설정]
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
@@ -841,8 +841,8 @@ link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
 에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"].
 
 +
-** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-broadcom-rcf-files [RCF 파일 다운로드 및 설치]
-** 링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-cisco-ip-rcf-files [Cisco IP RCF 파일 다운로드 및 설치]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
 
 
 

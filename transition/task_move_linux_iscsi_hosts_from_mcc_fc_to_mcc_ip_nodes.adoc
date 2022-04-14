@@ -26,7 +26,7 @@ iSCSI 연결을 이동하려면 MetroCluster IP 노드에 대한 새 iSCSI 연�
 
 . MetroCluster IP 노드에서 iSCSI 인터페이스를 생성하고 iSCSI 클라이언트에서 MetroCluster IP 노드의 새 IP 인터페이스로의 Ping 연결을 확인합니다.
 +
-https://docs.netapp.com/us-en/ontap/networking-app/create_a_lif.html["네트워크 인터페이스를 생성하는 중입니다"]
+https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["네트워크 인터페이스를 생성하는 중입니다"^]
 
 +
 SVM의 모든 iSCSI 인터페이스는 iSCSI 클라이언트를 통해 연결할 수 있어야 합니다.

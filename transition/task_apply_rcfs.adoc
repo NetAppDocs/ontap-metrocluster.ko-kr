@@ -15,7 +15,7 @@ MetroCluster IP 구성에 새로운 IP 스위치를 사용하는 경우 사용�
 
 새 스위치를 사용하는 경우 이 작업이 필요합니다.
 
-기존 스위치를 사용하는 경우 로 진행합니다 link:task_transition_from_mcc_fc_to_mcc_ip_configurations.html["로컬 클러스터 연결 이동"].
+기존 스위치를 사용하는 경우 로 진행합니다 link:task_move_cluster_connections.html["로컬 클러스터 연결 이동"].
 
 . 새 IP 스위치를 설치하고 랙에 설치합니다.
 . 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.

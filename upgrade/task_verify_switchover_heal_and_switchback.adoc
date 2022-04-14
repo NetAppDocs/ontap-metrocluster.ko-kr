@@ -14,5 +14,5 @@ summary: MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
 .단계
-. 에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 link:../disaster-recovery/index.html["MetroCluster 관리 및 재해 복구"].
+. 에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 link:../disaster-recovery/concept_dr_workflow.html["MetroCluster 관리 및 재해 복구"].
 

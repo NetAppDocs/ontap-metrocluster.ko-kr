@@ -1903,7 +1903,6 @@
   <block id="ee3eb67d59a11b958b7071c3dadc57e6" category="list-text">MetroCluster 구성 이해</block>
   <block id="d82e4b6cc46afb567474f7178afb5796" category="list-text">전환, 복구, 스위치백</block>
   <block id="e413eba49b15917b0c9dbf2620f3e66e" category="inline-link-macro">재해 복구</block>
-  <block id="9cb8502fd35a89cbfe1fcdcfbf276ed4" category="paragraph"><block ref="9cb8502fd35a89cbfe1fcdcfbf276ed4" category="inline-link-macro-rx"></block></block>
   <block id="645a84975202e30700b572b49a5ee29d" category="list-text">재해 복구</block>
   <block id="70a6af377eaf4da39eb5c40bd123522b" category="list-text">강제 전환</block>
   <block id="0ece35432200ec94e379aeb1ce68db94" category="list-text">멀티 컨트롤러 또는 스토리지 장애로부터 복구</block>
@@ -1917,7 +1916,6 @@
   <block id="560beaf4ecbeef522db64be8cdbe3f91" category="list-text">2노드 패브릭 연결 또는 확장 MetroCluster FC 구성을 4노드 MetroCluster 구성으로 확장</block>
   <block id="d39cdada890dee2324241814d94c0db0" category="list-text">4노드 패브릭 연결 또는 확장 MetroCluster FC 구성을 8노드 MetroCluster FC 구성으로 확장</block>
   <block id="c750cfcf9c6045b6e0b4b0d6de2212f3" category="inline-link-macro">MetroCluster 업그레이드 및 확장</block>
-  <block id="6634ea1415fe897674389adb775394f0" category="paragraph"><block ref="6634ea1415fe897674389adb775394f0" category="inline-link-macro-rx"></block></block>
   <block id="13cc95ab944450522d2eb2095f739cb9" category="list-text">MetroCluster 구성 업그레이드 또는 새로 고침</block>
   <block id="10af3af0d0797cd0477b8fad07ed3c9e" category="list-text">노드를 추가하여 MetroCluster 구성 확장</block>
   <block id="a9fd24893aed7bda18921eb1da6f8440" category="inline-link-macro">MetroCluster 전환</block>
@@ -1951,7 +1949,6 @@
   <block id="ef8a86bee8843988ee84e3ebf370fee9" category="inline-link-macro">IP 스위치 케이블 연결</block>
   <block id="190cbd15f1cbbd86a76eac6847a93472" category="admonition">NetApp은 NetApp의 검증된 스위치만 지원합니다. 이러한 스위치는 NetApp에서 테스트 및 판매합니다. 이 목록은 에 나와 있습니다 <block ref="d4ffdef7e991262a330f44b113eb81ba" category="inline-link-macro-rx"></block> 및 IN <block ref="d708b823ca770dd1bbb2d28ee68bd021" category="inline-link-macro-rx"></block>.</block>
   <block id="fe77866a46d2eb6a7c2af4e6da3afb40" category="inline-link-macro">MetroCluster 하드웨어 구성 요소를 구성합니다</block>
-  <block id="45dd59cfa07c747ed4243a8798b12e55" category="paragraph">MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 <block ref="dff375c743905386a2b0925d1ae7b141" category="inline-link-macro-rx"></block>. 설치 및 케이블 연결 절차를 수행할 때는 계층 3 구성에 해당하는 단계를 수행해야 합니다.</block>
   <block id="50355476e9050b2a291f3aee1615aa53" category="list-text">MetroCluster 스위치는 라우터나 하나 이상의 중간 스위치에 직접 연결할 수 있습니다. VLAN은 게이트웨이 장치로 확장되어야 합니다.</block>
   <block id="0e94eed6c84ca698067d35e27e2c2b56" category="list-text">'-gateway' 매개변수를 사용하여 IP 게이트웨이 주소로 MetroCluster IP(MCC-IP) 인터페이스 주소를 구성합니다.</block>
   <block id="8f02ff97112ef08ffb62f88c80b6aab7" category="paragraph">라우터 및 게이트웨이 IP 주소를 구성할 때 다음 요구 사항이 충족되는지 확인합니다.</block>
@@ -2128,7 +2125,6 @@
   <block id="59a45a7f051ccc97450bfc85a22e3683" category="inline-link-macro">클러스터 피어링을 구성할 때의 고려 사항</block>
   <block id="c49e3aaaa51f771668bea65f43e92229" category="paragraph"><block ref="c49e3aaaa51f771668bea65f43e92229" category="inline-link-macro-rx"></block></block>
   <block id="63ffe4f1eeb56d0485132cbf234244c7" category="inline-link-macro">클러스터 피어링 연결에 케이블로 연결합니다</block>
-  <block id="d6c1b26afb87081a7358d272268afbf0" category="paragraph"><block ref="d6c1b26afb87081a7358d272268afbf0" category="inline-link-macro-rx"></block></block>
   <block id="a72d2a4ca552186cbf62f182a7dfbe82" category="paragraph"><block ref="a72d2a4ca552186cbf62f182a7dfbe82" category="inline-link-macro-rx"></block></block>
   <block id="d7bc3e4699ceee82586454b661f07889" category="list-text">ONTAP 중재자 서비스와 MetroCluster Tiebreaker 소프트웨어를 동일한 MetroCluster 구성과 함께 사용해서는 안 됩니다.</block>
   <block id="8b0f66b1cb7f0a192803547cc01ef5c4" category="list-text">ONTAP 중재자는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.</block>
@@ -2616,7 +2612,6 @@
   <block id="fadb571b21e3b8d292a9bfb891aca2ba" category="paragraph">스위치가 없는 2노드 클러스터</block>
   <block id="2c2669db831414564c9029bab2a03d8b" category="paragraph">기존 컨트롤러 모듈의 클러스터 포트를 새 컨트롤러 모듈의 해당 클러스터 포트에 직접 연결합니다.</block>
   <block id="fdb81c76c6f1da911b1f70e70fa60f4b" category="paragraph">스위치 클러스터</block>
-  <block id="467b03d67513f90008dacfccf9aaad2c" category="paragraph"><block ref="467b03d67513f90008dacfccf9aaad2c" category="inline-link-macro-rx"></block></block>
   <block id="dcf4701604c34addcef13b54ec69afb0" category="paragraph">이러한 옵션에 대한 자세한 내용은 '저장소 집계 만들기' man 페이지를 참조하십시오.</block>
   <block id="ae0930527dc1f23b45618d9c343cf9e0" category="summary">HA 쌍으로 업그레이드하기 전에 시스템이 모든 요구사항을 충족하는지, 그리고 모든 필요한 정보를 갖추고 있는지 확인해야 합니다.</block>
   <block id="a6a2bfa5b0368feae00b3711d6fe107d" category="doc">업그레이드를 준비하는 중입니다</block>
@@ -3758,7 +3753,6 @@
   <block id="bebcf28331e2ef1173754b217ce3b9d4" category="list-text">Onboard Key Manager가 설정된 경우 '보안 키 관리자 온보드 show-backup'+업그레이드 절차 후반부에 패스프레이즈가 필요합니다.</block>
   <block id="10a7f52b07c24ded6796ce7b186bcafe" category="list-text">MetroCluster node show-fields node-systemid, ha-partner-systemid, dr-partner-systemid, dr-auxiliary-systemid 등 기존 노드의 시스템 ID를 수집한다</block>
   <block id="1cefe6fb0bd3a21a29c31cc3652723ce" category="section-title">중재자 또는 타이차단기 모니터링을 제거합니다</block>
-  <block id="a2e29f8228cdb7ac2387f9aa36bb0ea1" category="paragraph"><block ref="4f455031542b6708352ac5ad428a2b70" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
   <block id="2c8c38da3af9290bc8367a776b867b51" category="section-title">유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="9db835e4c4f6ecab5779d22af305de38" category="paragraph">유지 관리를 수행하기 전에 AutoSupport 메시지를 발행하여 유지 보수 작업이 진행 중임을 기술 지원 부서에 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.</block>
   <block id="0cd13c32173979ae3ca88ab25050c571" category="section-title">MetroCluster 구성을 전환합니다</block>
@@ -3824,7 +3818,6 @@
   <block id="7e50dc6378f3e2a11e73b6c2111ee61e" category="list-text">시스템에 필요한 시스템 파일과 ONTAP의 올바른 버전을 NetApp Support 사이트에서 다운로드해야 합니다.</block>
   <block id="008f1056138f3dd1061c0c135f496d75" category="paragraph">설치된 ONTAP 버전이 원래 컨트롤러에 설치된 버전과 동일하지 않은 경우, 새 컨트롤러를 netboot 해야 합니다. 각각의 새 컨트롤러를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 시스템을 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다.</block>
   <block id="e4c7a6a9ed6a7acb0614144c062d21fd" category="list-text">[[step2-download-software]] NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 'ontap-version_image.tgz' 파일을 저장합니다.</block>
-  <block id="bc90acdb3802fef8bffa06c039008c30" category="list-text">디렉토리 목록에는 &lt;ONTAP_version&gt;_image.tgz 가 포함되어야 합니다.</block>
   <block id="f47f57e3434d00c4cb0ddb03933b3fc5" category="list-text">다음 작업 중 하나를 선택하여 netboot 연결을 구성합니다.</block>
   <block id="d1adb867eac5534b9fe3de6b0b271291" category="admonition">관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레이드를 수행하는 동안 데이터 LIF IP를 사용하지 않거나 데이터 중단이 발생할 수 있습니다.</block>
   <block id="192da45ead024e4835d5b54e26e539c3" category="cell">DCHP(동적 호스트 구성 프로토콜)가 다음과 같은 경우</block>
@@ -3832,22 +3825,18 @@
   <block id="c05c7a2303ef34ab95234ebadd79fc8f" category="paragraph">부팅 환경 프롬프트에서 'ifconfig e0M-auto'를 사용하여 연결을 자동으로 구성합니다</block>
   <block id="19e185aea92cb0890229c16489d9c4cc" category="paragraph">실행 중이 아닙니다</block>
   <block id="78da5f94688332d9080947e0f923b416" category="paragraph">부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=&lt;filer_addr&gt; -mask=&lt;netmask&gt; -GW=&lt;gateway&gt; -DNS=&lt;DNS_addr&gt; domain=&lt;DNS_domain&gt;'</block>
-  <block id="cd303869834d5ee5e6aaca427a21f2b7" category="paragraph">"&lt;filer_addr&gt;"은(는) 스토리지 시스템의 IP 주소입니다. "&lt;netmask&gt;"는 스토리지 시스템의 네트워크 마스크입니다. '&lt;gateway&gt;'는 스토리지 시스템의 게이트웨이입니다. "&lt;dns_addr"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '&lt;dns_domain&gt;'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.</block>
   <block id="8cadcd3d278c7bf112a3d2eb870dfb3e" category="list-text">node_B_1:'netboot' http://&lt;web_server_ip/path_to_web_accessible_directory&gt;/netboot/kernel` 에서 netboot를 수행한다</block>
   <block id="e31ad1284b7618a9c10777ed99b12e64" category="inline-xref">2단계</block>
-  <block id="177534e7487672f74e65482ce040eff2" category="paragraph">"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
   <block id="85bd8aebb41cb27f7bc364e977313958" category="admonition">부팅을 중단하지 마십시오.</block>
   <block id="6f6f6695a268d5918427f02892c43312" category="list-text">AFF A900 컨트롤러 모듈에서 지금 실행 중인 node_B_1이 부팅될 때까지 기다린 후 다음과 같이 부팅 메뉴 옵션을 표시합니다.</block>
   <block id="2653300b079109b65a613fd185414faa" category="list-text">부팅 메뉴에서 ''(7) Install new software first(새 소프트웨어를 먼저 설치합니다)' 옵션을 선택합니다 이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다. 참고: "이 절차는 HA 쌍의 무중단 업그레이드를 지원하지 않습니다."라는 메시지는 무시하십시오 이 노트는 컨트롤러 업그레이드가 아닌 무중단 ONTAP 소프트웨어 업그레이드에 적용됩니다.</block>
   <block id="f7462137da4e89b12e82937bb5da165f" category="paragraph">항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.</block>
-  <block id="7464b9510418d0b0f92366d413fdb495" category="list-text">절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://&lt;web_server_ip/path_to_web-accessible_directory&gt;/&lt;ontap_version&gt;_image.tgz` 를 입력합니다</block>
   <block id="7b3f6c26774d36cd594edf297f0f8f57" category="list-text">컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.</block>
   <block id="61ee95ecb870c833ca0f73515cef5bce" category="list-text">"n"을 입력하여 백업 복구를 건너뛰십시오. "지금 백업 구성을 복구하시겠습니까?"라는 메시지가 표시되면 백업 복구를 건너뛰십시오. {y|n}'</block>
   <block id="d7672ee0e4d46e194ae0b844a3cf32ad" category="list-text">다음 프롬프트가 표시되면 ''y to reboot when you reboot:'를 입력하여 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해야 합니다. 지금 재부팅하시겠습니까? {y|n}""부팅 장치가 다시 포맷되어 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지되므로 구성 데이터를 복원해야 합니다.</block>
   <block id="963f89f538a2fcd5d086c865807c540a" category="list-text">프롬프트에서 "wpeconmponfig" 명령을 실행하여 부팅 미디어의 이전 구성을 지웁니다.</block>
   <block id="c9c4b352c210e485b70af0c63a95e7fa" category="list-text">다음 메시지가 표시되면 Yes를 선택합니다. 그러면 클러스터 구성원을 포함한 중요한 시스템 구성이 삭제됩니다. 경고: 인계된 HA 노드에서 이 옵션을 실행하지 마십시오. 계속 하고 싶으세요</block>
   <block id="d9942055ef69c8d0b4c6c187ca017527" category="list-text">노드가 재부팅되어 "wipeconfig"가 끝나면 부팅 메뉴에서 멈춥니다.</block>
-  <block id="6ebf5df07db410036bc7fe70797c789b" category="list-text">부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 *&gt;가 표시될 때까지 프롬프트에 "yes"를 선택합니다.</block>
   <block id="c97b27c69af0eb8712cf22da6b167f03" category="list-text">netboot node_B_2에 이 단계를 반복합니다.</block>
   <block id="0ea9cea3e113063ccea6ef4b69487681" category="section-title">HBA 구성을 복구합니다</block>
   <block id="63db75147bb8e9b621622657ecea58d6" category="section-title">새 컨트롤러 및 섀시에서 HA 상태를 설정합니다</block>
@@ -5033,8 +5022,6 @@
   <block id="0bc961270d144e17c4780186952eec64" category="list-text">클러스터 설정 * 마법사를 완료하고 종료한 후 클러스터가 활성 상태이고 첫 번째 노드가 정상 상태인지 확인합니다.</block>
   <block id="18c21f1ef4c6e9590e0455c9e14fd3fb" category="paragraph">admin SVM 또는 node SVM에 대해 입력한 설정을 변경해야 하는 경우 "cluster setup" 명령을 사용하여 * 클러스터 설정 * 마법사에 액세스할 수 있습니다.</block>
   <block id="9312a7c47a9915cb921363b9989a8320" category="paragraph"><block ref="9312a7c47a9915cb921363b9989a8320" category="inline-link-rx"></block></block>
-  <block id="2afa460df5e410797c1820ebc7e4d05c" category="paragraph"><block ref="2afa460df5e410797c1820ebc7e4d05c" category="inline-link-macro-rx"></block></block>
-  <block id="49496c260d6e69c957fc9fece654f5e0" category="paragraph"><block ref="49496c260d6e69c957fc9fece654f5e0" category="inline-link-macro-rx"></block></block>
   <block id="217e25eec2a8ae116de54929aa35253f" category="section-title">인터클러스터 LIF 구성</block>
   <block id="e379ec23aefb4ea298d6539bf663e4ce" category="paragraph">다음 예에서는 ""cluster01""의 네트워크 포트를 보여줍니다.</block>
   <block id="ae9570444f7281706174b8d5e38ee0a2" category="paragraph">다음 예제는 포트 ""e0e"" 및 ""e0f""에 LIF가 할당되지 않음을 보여줍니다.</block>
@@ -6865,7 +6852,6 @@
   <block id="1b9078b6f6fd34ef368d1162644a9f35" category="list-text">Brocade 스위치의 경우 'witchCfgPersistentenable' 명령을 사용합니다.</block>
   <block id="8a6ebe5990af3d6fd69fc6576202deea" category="list-text">Cisco 스위치의 경우 'uspend' 명령을 사용합니다. 다음 명령을 실행하면 Brocade 스위치가 영구적으로 설정됩니다.</block>
   <block id="ed9a4f5db580dee6eccfdb4d4ba452e7" category="paragraph">다음 명령을 실행하면 Cisco 스위치가 활성화됩니다.</block>
-  <block id="f6ebc97c3dd18d3e590229f14e2b997f" category="list-text">에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="b1691cf28bc690bfdc6f2071919d62d4" category="inline-link-rx"></block>.</block>
   <block id="8fa3ff2a6684e6aa12c0df1acfb993a7" category="summary">ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
   <block id="f4ace2d74922a56d6954c4cdcc593514" category="doc">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</block>
   <block id="83be746defb3baacbca8a27913d5e887" category="summary">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster에 NS224 쉘프를 추가해야 할 수 있습니다.</block>
@@ -7207,7 +7193,6 @@
   <block id="d42cf82f955fcaf61a8de7f584bf0e63" category="admonition">MetroCluster 스토리지 시스템 간에 스토리지 컨트롤러 모듈 또는 NVRAM 카드를 이동하는 것은 지원되지 않습니다.</block>
   <block id="1b11a607d1bb5556b64964d84ade46e0" category="paragraph">업그레이드 및 확장</block>
   <block id="ec9ed7bffd77d0096865ed2f7cdcc6cb" category="inline-link-macro">MetroCluster ® 업그레이드 및 확장</block>
-  <block id="4ad0984b4112e2f4fcdb04cdbb047f30" category="paragraph"><block ref="4ad0984b4112e2f4fcdb04cdbb047f30" category="inline-link-macro-rx"></block></block>
   <block id="85c536a9f52fed53890ea4e081f3019f" category="paragraph">FC에서 IP 연결로 전환</block>
   <block id="a8125364ced10d8a90aedca98aa02032" category="paragraph"><block ref="a8125364ced10d8a90aedca98aa02032" category="inline-link-macro-rx"></block></block>
   <block id="efc8f4d1076344beccb8353312cb002a" category="paragraph">드라이브 쉘프</block>
@@ -7215,7 +7200,6 @@
   <block id="df54bbed28c805d5ed5ce92b8e5ce3ee" category="inline-link-macro">기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택 핫 추가</block>
   <block id="5a302b1db223d113f18ba828a7728831" category="paragraph"><block ref="5a302b1db223d113f18ba828a7728831" category="inline-link-macro-rx"></block></block>
   <block id="11a48e261ca60d0969a5485e63b91320" category="inline-link-macro">SAS 디스크 쉘프 스택에 SAS 디스크 쉘프 핫 추가</block>
-  <block id="36ac47baf32c3a2932ed1874fed7e2af" category="paragraph"><block ref="36ac47baf32c3a2932ed1874fed7e2af" category="inline-link-macro-rx"></block></block>
   <block id="d16b39d610f212ffa73f1912eed06d2a" category="paragraph">쉘프 제거</block>
   <block id="19b62c619e1b1ed88877f41babaf2907" category="paragraph"><block ref="19b62c619e1b1ed88877f41babaf2907" category="inline-link-macro-rx"></block></block>
   <block id="4d3b05b4c57a27fdba495a23ae2199d7" category="paragraph">기타 모든 선반 정비 절차. 표준 절차를 사용할 수 있습니다.</block>
@@ -7428,7 +7412,6 @@
   <block id="5844eb4847c89603c89f034b72ecb0bf" category="paragraph"><block ref="5844eb4847c89603c89f034b72ecb0bf" category="inline-link-macro-rx"></block></block>
   <block id="2c8822fc3f76f36544e532c6939a3dcd" category="list-text">상호 운용성 요구사항을 모두 충족하는 경우, SAS 디스크 쉘프 및 브리지 스택을 핫 추가하는 무중단 절차입니다.</block>
   <block id="30b1f30a86834ebf09a3c73cb022650e" category="inline-link-macro">상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보 찾기</block>
-  <block id="bd73c346b7b65c18cc82c35d84f4f2cb" category="paragraph"><block ref="bd73c346b7b65c18cc82c35d84f4f2cb" category="inline-link-macro-rx"></block></block>
   <block id="b05244c0c1deb30e1a54d21c9480cc96" category="list-text">다중 경로 HA는 브리지를 사용하는 MetroCluster 시스템에 대해 지원되는 유일한 구성입니다.</block>
   <block id="48bbb88f91aefc38d3850baa267bec33" category="paragraph">두 컨트롤러 모듈 모두 각 스택의 디스크 쉘프에 대한 브리지를 통해 액세스할 수 있어야 합니다.</block>
   <block id="e91b6736c635aa9d4ef20369de4645f0" category="list-text">IP 관리 대신 브리지의 대역 내 관리를 사용하는 경우 관련 단계에 설명된 대로 이더넷 포트 및 IP 설정 구성 단계를 건너뛸 수 있습니다.</block>
@@ -7738,7 +7721,6 @@
   <block id="7ed92f84948f4fe94d9e740b0e479a4e" category="paragraph">MetroCluster FC 구성</block>
   <block id="81927ec637b63156a40899d4c547908f" category="paragraph">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다. 오프라인 플렉스를 다시 온라인으로 설정합니다. 이렇게 하면 재동기화 작업이 다시 시작되고 SyncMirror가 다시 설정됩니다.</block>
   <block id="0483b2aca795ea6933a0ab7502b4e963" category="list-text">MetroCluster 구성을 다시 설정합니다.</block>
-  <block id="7dd614724556a3966b03ba1f571c938d" category="paragraph">의 지침을 따릅니다 <block ref="fd64fad0fd85c76ef3ac6d154403d818" category="inline-link-macro-rx"></block> MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.</block>
   <block id="119be031ef4485d20c7683d291d0e9f6" category="inline-link-macro">MetroCluster 설명서</block>
   <block id="80576c4aa53dafd98601f61dc64d1551" category="paragraph"><block ref="80576c4aa53dafd98601f61dc64d1551" category="inline-link-macro-rx"></block></block>
   <block id="4e022109084988ae423d8454cd4007b3" category="inline-link">NetApp MetroCluster 솔루션 아키텍처 및 설계</block>
@@ -7769,7 +7751,6 @@
   <block id="5a5847115d5c3eb94f6db3d6e4b75064" category="list-text">이때 FiberBridge 7600N 또는 7500N 브리지 FC2 포트를 연결하지 마십시오. 다음 다이어그램에서는 bridge_a_1a가 교체되었으며 현재 FiberBridge 7600N 또는 7500N 브리지임을 보여 줍니다.</block>
   <block id="e16af547e6500c2c72cc764eaaaa3831" category="image-alt">스택 첫 번째 7500n을 제자리에 통합</block>
   <block id="a3f45edd16a39a61c12d4446071cba63" category="list-text">브리지 연결 디스크에 대한 연결을 확인하고 새 FiberBridge 7500N이 구성에 표시되는지 확인합니다.</block>
-  <block id="fb18671b6f6bd3a4b0f317ae03bbecaa" category="list-text">다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지로 ""하단" FiberBridge 6500N 브리지를 핫 스왑합니다 <block ref="4a5897c402dc3c400f037316fba4e4fc" category="inline-link-macro-rx"></block>:</block>
   <block id="8ff709665460262bbf6007f085751483" category="list-text">FiberBridge 7600N 또는 7500N 브리지 FC2 포트를 스위치 또는 컨트롤러에 연결합니다.</block>
   <block id="44f4a4edbfb8c95871fef3eb7d97957a" category="list-text">이때 FiberBridge 7600N 또는 7500N 브리지 FC1 포트를 연결하지 마십시오.<block ref="a06c0386e8ef594aee7be854f4de811f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f02aee1c50fae642922a5499566ecbf9" category="list-text">브리지 연결 디스크에 대한 연결을 확인합니다.</block>
@@ -8006,7 +7987,6 @@
   <block id="1085da58e90873ee49d4724127d66db4" category="admonition">단일 디스크 쉘프 스택의 소유권을 여러 컨트롤러로 분할하는 경우 디스크 소유권을 할당하기 전에 디스크 자동 할당('스토리지 디스크 옵션 수정 - 클러스터의 두 노드에서 자동 할당 해제 *')을 비활성화해야 합니다. 그렇지 않으면 단일 디스크 드라이브를 할당할 때 나머지 디스크 드라이브가 동일한 컨트롤러 및 풀에 자동으로 할당될 수 있습니다.</block>
   <block id="85d4b8c862a1b165b7ccb85636649d25" category="summary">MetroCluster 구성이 여러 가지 장애 이벤트에 응답하는 방식을 알고 있어야 합니다.</block>
   <block id="a20544b3db3eacb724cbbcfc89016dc4" category="doc">MetroCluster 장애 및 복구 시나리오</block>
-  <block id="7fa4d7e9b20d58127b8754982ea5604a" category="admonition">노드 장애 복구에 대한 자세한 내용은 의 "올바른 복구 절차 선택" 섹션을 참조하십시오 <block ref="f5649c77521ce57ea1c3069471789f1d" category="inline-link-macro-rx"></block>.</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">이벤트</block>
   <block id="21f59b54f62b5b8b4bc0f63f0f617fc1" category="cell">영향</block>
   <block id="d8afbc541b39d23648c823057cffe3a5" category="cell">복구</block>
@@ -8479,7 +8459,6 @@
   <block id="5727e89e1a9f103e6c122f3e281a070c" category="list-text">MetroCluster FC 구성의 상태를 확인합니다.</block>
   <block id="bd06c304e78aaf8098a0eb5757ca869d" category="paragraph">의 단계를 수행합니다 <block ref="4c4984fc1287cfa1cec22e3d9418abef" category="inline-link-macro-rx"></block>.</block>
   <block id="63034aed8ee5667d26127f9f9ed637fd" category="list-text">MetroCluster FC 구성에서 정보를 수집합니다.</block>
-  <block id="62c215bcf61b167f8876345b8e7617e9" category="paragraph">의 단계를 수행합니다 <block ref="16de910b8ac33cc8ca168ae42f313127" category="inline-link-macro-rx"></block>.</block>
   <block id="ad90134a0b87918611ecae6d239da64b" category="list-text">필요한 경우 Tiebreaker 모니터링을 제거합니다.</block>
   <block id="87026ac24b693b99c9187b6c59dd08ba" category="paragraph">의 단계를 수행합니다 <block ref="d6c8cfbb59e30552477d5b22014936e3" category="inline-link-macro-rx"></block>.</block>
   <block id="8dfdbece4a0964f2cf973f39b1a35a64" category="list-text">기존 MetroCluster FC 노드를 준비하고 제거합니다.</block>
@@ -8936,7 +8915,6 @@
   <block id="38182d0b7f94eabf093a27fc21d6c6e6" category="paragraph">iSCSI 연결을 이동하려면 MetroCluster IP 노드에 대한 새 iSCSI 연결을 설정해야 합니다.</block>
   <block id="b5c888106b46101190a9a9446ff7aeba" category="list-text">MetroCluster IP 노드에서 iSCSI 인터페이스를 생성하고 iSCSI 클라이언트에서 MetroCluster IP 노드의 새 IP 인터페이스로의 Ping 연결을 확인합니다.</block>
   <block id="f2a6a6dfe9a7cb508ec1e1f475d326dc" category="inline-link">네트워크 인터페이스를 생성하는 중입니다</block>
-  <block id="76c12ddb0f3ab2b6a3d727beb50de2d3" category="paragraph"><block ref="76c12ddb0f3ab2b6a3d727beb50de2d3" category="inline-link-rx"></block></block>
   <block id="0dc491dada4885353b9e96030fce6bd3" category="paragraph">SVM의 모든 iSCSI 인터페이스는 iSCSI 클라이언트를 통해 연결할 수 있어야 합니다.</block>
   <block id="acb0e987f9b29d1eab50c31f4f95aa9a" category="list-text">iSCSI 호스트 또는 클라이언트에서 호스트에서 MetroCluster FC 노드로의 기존 iSCSI 접속('iscsiadm -m session')을 식별합니다</block>
   <block id="d163a1c94db271251417ac64b011f503" category="list-text">MetroCluster IP 노드의 접속을 확인합니다. 'iscsi session show -vserver svm -name'</block>
@@ -9472,7 +9450,6 @@
   <block id="a1350ff79863130a11a81a4223c96e8c" category="inline-link-macro">패브릭 연결 MetroCluster 구성 케이블링</block>
   <block id="12b05343ddb9ee449eb02e9df256be16" category="paragraph"><block ref="12b05343ddb9ee449eb02e9df256be16" category="inline-link-macro-rx"></block></block>
   <block id="33cb94ec8653b1f632148976c8a040cd" category="inline-link-macro">스토리지 LUN을 사용한 MetroCluster 구성 계획 및 설치</block>
-  <block id="0b88045c51cbb65bd086c5bfd592aaa5" category="paragraph"><block ref="0b88045c51cbb65bd086c5bfd592aaa5" category="inline-link-macro-rx"></block></block>
   <block id="70894d5c0a41692947485c0d0a19e60a" category="inline-link">FlexArray 가상화 설치 요구 사항 및 참조 자료</block>
   <block id="cefd59017a4a065f49d52af021a7df7a" category="paragraph"><block ref="cefd59017a4a065f49d52af021a7df7a" category="inline-link-rx"></block></block>
   <block id="76612d8038518e7aa7b303db3045593f" category="summary">어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝을 사용하는 경우 특정 기본 요구사항을 준수해야 합니다.</block>
@@ -10584,7 +10561,6 @@
   <block id="030467ecaf0ffcaec3cc6f902037c1d1" category="paragraph">각 사이트에서 스토리지 시스템의 이중 포트 쌍을 대체 패브릭의 FC 스위치에 연결합니다. 이렇게 하면 스토리지 LUN을 액세스하기 위한 경로에 이중화를 제공할 수 있습니다.</block>
   <block id="99fa0f82949c7aac46618689ac0fcdbe" category="list-text">스위치 조닝을 구성하면 MetroCluster 구성에서 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
   <block id="4a2fdc22a1eb9a68e0facd6612db20d8" category="inline-link-macro">어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝</block>
-  <block id="6cce65fe6924e8263912ac73c8865cc0" category="paragraph"><block ref="6cce65fe6924e8263912ac73c8865cc0" category="inline-link-macro-rx"></block></block>
   <block id="706480a61d9e0992be9182b5010a6f28" category="inline-link-macro">2노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 케이블로 연결하는 예</block>
   <block id="3d46a6eeb65ebe391571feddc1cc5164" category="paragraph"><block ref="3d46a6eeb65ebe391571feddc1cc5164" category="inline-link-macro-rx"></block></block>
   <block id="9eecc3d31e1dca8ff5a3adf6988fa6d7" category="paragraph"><block ref="9eecc3d31e1dca8ff5a3adf6988fa6d7" category="inline-link-macro-rx"></block></block>
@@ -11244,7 +11220,6 @@
   <block id="121789800a2a17c2b44944d1aba6cec3" category="paragraph">패브릭을 공유하고 MetroCluster 구성을 완료한 후 7-Mode 패브릭 MetroCluster 구성에서 데이터를 전환할 수 있습니다.</block>
   <block id="516b14cf2c8d48e0d3bc843b88989702" category="paragraph">데이터를 전환한 후 7-Mode 패브릭 MetroCluster 케이블을 제거하고 필요에 따라 clustered ONTAP MetroCluster 케이블 연결을 7-Mode MetroCluster 케이블 연결에 사용했던 낮은 번호의 포트로 이동할 수 있습니다. 포트는 "4노드 MetroCluster에 대한 FC 스위치 포트 할당 검토" 섹션에 나와 있습니다. 재배열된 포트의 조닝을 조정해야 합니다.</block>
   <block id="c860f7f0a8aaf5b10a9ec71f48b87682" category="inline-link-macro">가상 IP LIF를 구성합니다</block>
-  <block id="71fdbf59db45133c4aca9c7831b44466" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="19f78610f7fe22aa3fb117b5aee3e2a3" category="inline-link-macro-rx"></block>.</block>
   <block id="8a1bb3556c5253b390b70da7c5d3cb7c" category="paragraph">브리지 모델의 _ATTO FiberBridge 설치 및 작동 설명서_ 에는 자세한 정보와 설치 그림이 포함되어 있습니다.</block>
   <block id="ce24d226f8ee508a2ea1001f5b67e265" category="admonition">적절한 포트 공간 액세스 및 FRU 서비스 가능성을 위해 브리지 쌍 아래에 1U 공간을 두고 공구가 필요 없는 블랭킹 패널을 사용하여 이 공간을 덮어야 합니다.</block>
   <block id="85b8c51389720a3d7d709e4a1462d7ae" category="summary">FlexArray LUN을 사용하는지, MetroCluster 구성에서 노드 수, 7-Mode 패브릭 MetroCluster에서 사용하는 기존 FC 스위치 패브릭을 공유하는지 여부에 따라 올바른 설치 절차를 선택해야 합니다.</block>
@@ -12216,14 +12191,12 @@
   <block id="0bae9da7e045b91539ca2636147550a9" category="inline-link">기타 플랫폼 절차: 컨트롤러 하드웨어 업그레이드 익스프레스</block>
   <block id="074e456fb5fc2d75c702ca853d7ff4a7" category="list-text">의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다<block ref="c8d46be4ca27ce42222e434f46ed9bd4" category="inline-link-rx"></block>.</block>
   <block id="6abf8fcf1209a0e61a34ee20748a726e" category="paragraph">Substep b에 나와 있는 클러스터 네트워크 스위치의 포트에 각 컨트롤러의 클러스터 포트를 연결합니다</block>
-  <block id="fe4855b1c6b801b5e92176cd902d4a76" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 <block ref="467b03d67513f90008dacfccf9aaad2c" category="inline-link-macro-rx"></block>.</block>
   <block id="30ff186227aaf51cf730a9cf5a73a9e1" category="inline-link">물리적 스토리지 관리</block>
   <block id="139a2480b517efabfcd850e52aeab3e8" category="paragraph"><block ref="139a2480b517efabfcd850e52aeab3e8" category="inline-link-rx"></block></block>
   <block id="a8307b4c5fa271005a1338d5b405ca1f" category="paragraph">ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그룹으로 추가할 수 있습니다. 그러면 8노드 MetroCluster 구성이 생성됩니다.</block>
   <block id="a4aa69385ab0a1b92a7a5635cdb2f2b2" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block>.</block>
   <block id="1cab2231671234cf1e23b1ca0a52ef3e" category="list-text">새 MetroCluster IP 노드에서 다음 절차를 사용하여 인터클러스터 LIF를 구성합니다.</block>
   <block id="bc13f269b8fcdbac7ef84f083e616363" category="paragraph">MetroCluster 구성 설정 및 연결에 대한 자세한 내용은 다음을 참조하십시오.</block>
-  <block id="826921064deb9c03eeb155f2c78b5ec6" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.1.1부터 계층 3 구성을 사용하는 경우에는 '-gateway' 매개 변수도 지정하여 MetroCluster IP 인터페이스를 만들어야 합니다. 을 참조하십시오 <block ref="39d6ebbaa38ab1d3a91c83593d55d602" category="inline-link-macro-rx"></block>.</block>
   <block id="cd60490d5712d0d4fead93178d76d0d7" category="paragraph">스위치 공급업체에 대한 절차의 단계를 따르십시오.</block>
   <block id="143982074a2586885b81ca0686673560" category="list-text">에 설명된 대로 컨트롤러를 IP 스위치에 연결합니다 <block ref="4ab496c462bc9a729fe703221c683545" category="inline-link-macro-rx"></block>.</block>
   <block id="c09c91c40853cc803259a2c27d8fa946" category="paragraph">시스템 ID 변경 프롬프트에 ""y""를 응답합니다. 두 번째 재부팅 메시지가 나타날 때까지 기다립니다.</block>
@@ -12267,8 +12240,6 @@
   <block id="c115301f599f6a61a213f015820f2807" category="paragraph">새 컨트롤러 모듈을 구성하고 있고 새 컨트롤러 모듈의 디스크가 비어 있으므로 시스템에서 모든 디스크를 지우라는 경고를 표시할 때 ""y""를 응답할 수 있습니다.</block>
   <block id="3967230285e3296d4600c5d6f8a225a2" category="list-text">노드에 로그인하여 cluster setup을 입력한 다음 클러스터에 가입하라는 메시지가 표시되면 join을 입력합니다.</block>
   <block id="2aae09e4f065abad72f108794c111bcd" category="paragraph">를 클릭합니다 <block ref="95a2ad6fc516d3f7074e7d260643f587" category="inline-link-macro-rx"></block> 사용 중인 ONTAP 버전에 대한 추가 세부 정보가 포함되어 있습니다.</block>
-  <block id="496284ad6f6aafd5df774eb7019e89ee" category="paragraph"><block ref="496284ad6f6aafd5df774eb7019e89ee" category="inline-link-macro-rx"></block></block>
-  <block id="5fb9f0561cb803f508ed9e3b73633212" category="paragraph"><block ref="5fb9f0561cb803f508ed9e3b73633212" category="inline-link-macro-rx"></block></block>
   <block id="75f592488d6be5738040725bd9891f31" category="list-text">추가하려는 장비가 지원되어야 하며 다음 절차에 설명된 모든 요구 사항을 충족해야 합니다.</block>
   <block id="d0adaf602e73b54e5ed4fca02915a8c2" category="inline-link">기계 번역 고지 사항</block>
   <block id="9d5c01825c136f7f2d4457afa4f41770" category="paragraph">현지화된 컨텐츠에 대한 중요 정보는 에서 확인하십시오<block ref="f07125fb97264bd7aeb45160d145d34f" category="inline-link-rx"></block></block>
@@ -12341,7 +12312,6 @@
   <block id="3e364a62394cf176526399560d023208" category="paragraph">ONTAP 9.5부터 ONTAP CLI를 사용하여 FiberBridge 명령을 브리지로 전달하고 해당 명령의 결과를 표시할 수 있습니다.</block>
   <block id="e57ca4b3df83a88b6254675613163df0" category="list-text">시스템은 의 모든 요구 사항을 충족해야 합니다 <block ref="08d6c3cbf42a81a0c26843f87c874545" category="inline-link-macro-rx"></block>.</block>
   <block id="680f2c91c58cc6532106b87cb564cc68" category="admonition">이 단계에서는 링크에 제공된 지침의 다운로드 부분만 완료합니다. 에 나와 있는 단계를 따라야 합니다 <block ref="47adb28a466429763b049bd78d160e0f" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="d90a7659d57c5e308b960baf3ceb0ad6" category="admonition">ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 <block ref="6634ea1415fe897674389adb775394f0" category="inline-link-macro-rx"></block> 및 <block ref="4b2bd901a298e1bc3ed2224632f2e517" category="inline-link-macro-rx"></block>.</block>
   <block id="b2d9f80a5c71fe34bed7839914c2fd68" category="paragraph">새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster Maintenance _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.</block>
   <block id="3240aad2738f70e3ab16c6dadcff4f64" category="list-text">브리지 펌웨어 업데이트:</block>
   <block id="befb8d9c3b9caecfce0121a43afa3ce1" category="admonition">ATTO 펌웨어 버전 2.95부터 브리지가 자동으로 다시 시작되며 이 단계는 필요하지 않습니다.</block>
@@ -12395,7 +12365,6 @@
   <block id="af6710425f9b72f8e5aeb24aa9d0bac6" category="summary">ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다.</block>
   <block id="dd29cf7134047c7a311edc4776b9021e" category="paragraph">2노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 <block ref="ef88855c7d052c0aa5ce46e187d01954" category="inline-link-macro-rx"></block>.</block>
   <block id="2912e0eba45e116506958546503977b9" category="paragraph"><block ref="2912e0eba45e116506958546503977b9" category="inline-link-macro-rx"></block></block>
-  <block id="4aeccceec58ed237296dba5ea0673521" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="a43d04863a085a87276f8dea37ae5895" category="inline-link-macro-rx"></block>.</block>
   <block id="0297e6ce2162b2f01b03b57027b0de3f" category="paragraph">_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.</block>
   <block id="7efa6fc838c006d396e42638b4ff25d1" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block></block>
   <block id="bc77bf857b365d445270101e2d7ce03f" category="list-text">MetroCluster FC 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster FC 구성에서 사용되는 단계입니다.</block>
@@ -12449,7 +12418,6 @@
   <block id="c3473aa37fb65a96d05747e3b9043979" category="paragraph">필요한 경우 IP 주소를 설정할 수 있습니다.</block>
   <block id="94d54d70c5d7ee5cc198da3e79246db2" category="list-text">트렁킹을 사용하는 경우 트렁킹을 확인합니다.</block>
   <block id="3c4e32c4ec392d71a4445aa8de2c38a3" category="paragraph">'트러킹쇼'</block>
-  <block id="0561b2a8ba939086c6798ec4eb3c4290" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="9ddd202dbf59bf7876d81864f2edbb11" category="inline-link-macro-rx"></block>.</block>
   <block id="968a5c710f7421980907a4cc6a0df2a5" category="list-text">스위치를 기본 설정으로 다시 설정합니다.</block>
   <block id="c96e5513a57e88173ad4f14750758f4c" category="paragraph">명령을 확인하라는 메시지가 나타나면 ""y""를 응답할 수 있습니다. 그러면 스위치에 있는 모든 라이센스 및 구성 정보가 지워집니다.</block>
   <block id="b9333c3e2ee70bdb29c9d7d9026f0127" category="paragraph">명령을 확인하라는 메시지가 나타나면 ""y""를 응답할 수 있습니다.</block>
@@ -12517,10 +12485,6 @@
   <block id="455aeb5b6e6bb2c51d7485e26da56e30" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
   <block id="e62a18c77eddb4d80155a6c15402f7e5" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _</block>
   <block id="7da41c16475b7dae8b0b8ab6424918d7" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성] - MetroCluster IP 설치 및 구성 _.</block>
-  <block id="1694bd7aa5b3b3ecd0394ac449f774af" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#reasing-the-broadcom-ip-switch-to-factory-defaults[Broadcom IP 스위치를 출하 시 기본값으로 재설정]</block>
-  <block id="40f8dac9d3afe2ad9f3eb063b5a8ebe6" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#재설정 - Broadcom-ip-switch-to-factory-defaults#재설정 - Cisco-IP-switch-to-factory-defaults[Cisco IP 스위치를 출하 시 기본값으로 재설정]</block>
-  <block id="a016106990032abc8e07606eb9a35a34" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-broadcom-rcf-files [RCF 파일 다운로드 및 설치]</block>
-  <block id="2092fa2d67720266015440eaa2d835ab" category="list-text">링크:../install-ip/task_switch_config_broadcom.html#reasing-the-broadcom-ip-switch-to-factory-defaults#downloading-and-installing-the-cisco-ip-rcf-files [Cisco IP RCF 파일 다운로드 및 설치]</block>
   <block id="861ef6676813cbc81369ee701ae73269" category="paragraph">타사 방화벽을 사용하는 경우:</block>
   <block id="041f3a27fe8b40cc213210949eb4f036" category="list-text">HTTPS 액세스를 활성화해야 합니다.</block>
   <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
@@ -12534,4 +12498,39 @@
   <block id="dd23316b696cd08f3479c6e2d7baadc0" category="inline-link">AFF 또는 FAS 시스템의 설치 절차</block>
   <block id="17959b19c1c128d5d74608a22de28cf9" category="paragraph"><block ref="17959b19c1c128d5d74608a22de28cf9" category="inline-link-rx"></block></block>
   <block id="e5303b615c196a6ae1c68873f1d05073" category="sidebar">Brocade FC 스위치를 수동으로 구성합니다</block>
+  <block id="2e7e413d490de09cb96837b5567b668c" category="paragraph"><block ref="2e7e413d490de09cb96837b5567b668c" category="inline-link-macro-rx"></block></block>
+  <block id="97f70489df0d405722087f0f98dc7c3f" category="paragraph"><block ref="97f70489df0d405722087f0f98dc7c3f" category="inline-link-macro-rx"></block></block>
+  <block id="6b85600ee1be273e93253da5e134fb16" category="admonition">노드 장애 복구에 대한 자세한 내용은 의 "올바른 복구 절차 선택" 섹션을 참조하십시오 <block ref="e623fd8091406f43d52a7bc3543c2f9f" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ef2465c629a51ad799f916321355ab0" category="paragraph"><block ref="8ef2465c629a51ad799f916321355ab0" category="inline-link-macro-rx"></block></block>
+  <block id="c160b6358f7336db6f2a26360400f661" category="list-text">다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지로 ""하단" FiberBridge 6500N 브리지를 핫 스왑합니다 <block ref="958de5ee2f25b5fa2715cdd4e27fa14c" category="inline-link-macro-rx"></block>:</block>
+  <block id="8b8800e8b5ac43d8ac015a60e243a711" category="admonition">ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 <block ref="97f70489df0d405722087f0f98dc7c3f" category="inline-link-macro-rx"></block> 및 <block ref="a8125364ced10d8a90aedca98aa02032" category="inline-link-macro-rx"></block>.</block>
+  <block id="ebe3b07d927344896c24a9e5e5eee917" category="paragraph"><block ref="ebe3b07d927344896c24a9e5e5eee917" category="inline-link-macro-rx"></block></block>
+  <block id="5e6d9dff4a682d0558edb1406ac87060" category="paragraph"><block ref="5e6d9dff4a682d0558edb1406ac87060" category="inline-link-macro-rx"></block></block>
+  <block id="80063a26d9eb84904fdbb388ac3a5629" category="list-text">에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="be2bdafda4a97cad52118e4d9ef914b5" category="inline-link-rx"></block>.</block>
+  <block id="44b7f701c8b22fd32471d911de4c0984" category="paragraph">의 지침을 따릅니다 <block ref="c355f6bb3dca677defb89e8a84e6c55b" category="inline-link-macro-rx"></block> MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.</block>
+  <block id="e3d7ead0f01b9fa985ec5c35c22c44f3" category="paragraph"><block ref="e3d7ead0f01b9fa985ec5c35c22c44f3" category="inline-link-macro-rx"></block></block>
+  <block id="6405f02626b672ea5ce042f43244f057" category="paragraph"><block ref="6405f02626b672ea5ce042f43244f057" category="inline-link-macro-rx"></block></block>
+  <block id="f62e57388ece8ed3ab39425498977dae" category="paragraph"><block ref="f62e57388ece8ed3ab39425498977dae" category="inline-link-macro-rx"></block></block>
+  <block id="291349860e45161d05b403e88ba2f28b" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 <block ref="e3d7ead0f01b9fa985ec5c35c22c44f3" category="inline-link-macro-rx"></block>.</block>
+  <block id="070a06c68e9e4e7cecc2e9719193b28c" category="summary">BYou는 MetroCluster 스위치오버 운영을 사용하여 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
+  <block id="35b541137c97f0d986b3779c7a322603" category="list-text"><block ref="35b541137c97f0d986b3779c7a322603" category="inline-link-macro-rx"></block></block>
+  <block id="7781c27327814c0f7935ce903ca1101f" category="list-text"><block ref="7781c27327814c0f7935ce903ca1101f" category="inline-link-macro-rx"></block></block>
+  <block id="8e077a574605e13d75ee083e7cd96f27" category="list-text"><block ref="8e077a574605e13d75ee083e7cd96f27" category="inline-link-macro-rx"></block></block>
+  <block id="5860040c16ad914f0dc769bbc79c2a6d" category="list-text"><block ref="5860040c16ad914f0dc769bbc79c2a6d" category="inline-link-macro-rx"></block></block>
+  <block id="4a3e665f4593afeb6ebcabea7ce85845" category="paragraph"><block ref="97b0c50183125e551abb5b04258316bf" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
+  <block id="398ca4e3f9e65b681f95fee13804bab9" category="list-text">디렉토리 목록에는 &lt;ONTAP_VERSION&gt;\_IMAGE.tgz 가 포함되어야 합니다.</block>
+  <block id="befdb6ab41f0cd39ff57e00b0ee8c3f6" category="paragraph">"&lt;filer_addr&gt;"은(는) 스토리지 시스템의 IP 주소입니다. "&lt;netmask&gt;"는 스토리지 시스템의 네트워크 마스크입니다. '&lt;gateway&gt;'는 스토리지 시스템의 게이트웨이입니다. "&lt;dns_addr&gt;"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '&lt;dns_domain&gt;'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.</block>
+  <block id="f9917e026c23b682e18bcd6bc125c1b9" category="paragraph">"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;\_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
+  <block id="b04e99a0adbd90ade4803bbd436b76af" category="list-text">절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://&lt;web_server_ip/path_to_web-accessible_directory&gt;/&lt;ontap_version&gt;\_image.tgz` 를 입력합니다</block>
+  <block id="dbfa5994b398cd0fb3a814715f0dc252" category="list-text">부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 \ *&gt;가 나타날 때까지 프롬프트에 "yes"를 선택합니다.</block>
+  <block id="d201d18b165e21d1a9986863a5788d3c" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.1.1부터 계층 3 구성을 사용하는 경우에는 '-gateway' 매개 변수도 지정하여 MetroCluster IP 인터페이스를 만들어야 합니다. 을 참조하십시오 <block ref="babfc343bda1ae07500c981be392a72d" category="inline-link-macro-rx"></block>.</block>
+  <block id="76c06c220bafe4dc7e175b4584717344" category="paragraph"><block ref="76c06c220bafe4dc7e175b4584717344" category="inline-link-macro-rx"></block></block>
+  <block id="b16f070ef0ff70f134e9de232ff4d07d" category="paragraph">MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 <block ref="1f208108354e7662d904d86579319d48" category="inline-link-macro-rx"></block>. 설치 및 케이블 연결 절차를 수행할 때는 계층 3 구성에 해당하는 단계를 수행해야 합니다.</block>
+  <block id="2445f74267948c10619896a5e47cd3d6" category="paragraph">의 단계를 수행합니다 <block ref="0e3caa859006182753aee07c6f57c3cf" category="inline-link-macro-rx"></block>.</block>
+  <block id="b0f85a0199d1b83b2b8a32a5f34bdd8d" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="4da30401760153ceb5481ac559dbe601" category="inline-link-macro-rx"></block>.</block>
+  <block id="cdf93537d7257dad75e41411958bb32c" category="paragraph"><block ref="cdf93537d7257dad75e41411958bb32c" category="inline-link-rx"></block></block>
+  <block id="f44903a02a813582e3877d0c017bdfcb" category="paragraph"><block ref="f44903a02a813582e3877d0c017bdfcb" category="inline-link-macro-rx"></block></block>
+  <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
+  <block id="83e579bcd33d25206730a931a64a84a1" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block>.</block>
+  <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
 </blocks>
