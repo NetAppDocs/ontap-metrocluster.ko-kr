@@ -106,7 +106,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_configuring_the_mcc_software_in_ontap.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -134,7 +134,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/concept_considerations_array_luns.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -218,7 +218,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -246,7 +246,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_layer_3.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -603,7 +603,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_parts_of_an_ip_mcc_configuration_mcc_ip.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -820,7 +820,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1177,7 +1177,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_mcc_failure_scenarios.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1310,21 +1310,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/reference_where_to_find_additional_information_mcc_ug.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/reference_where_to_find_additional_information_mcc_ug.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/reference_where_to_find_additional_information_mccip_icg.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1345,7 +1345,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster//search.html</loc>
       
-      <lastmod>2022-04-13T14:15:55+00:00</lastmod>
+      <lastmod>2022-04-14T13:30:13+00:00</lastmod>
       
     </url>
   
@@ -1380,7 +1380,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_apply_rcfs.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1485,7 +1485,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/task_cable_storage_arrays_to_fc_switches_in_a_mcc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1856,14 +1856,14 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_disruptively_transition_while_move_volumes_from_old_shelves_to_new_shelves.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_do_not_use_for_9_8_and_later_reconfigure_the_fc_switch_layout_for_ontap_9_1_or_later.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1926,7 +1926,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_expand_a_four_node_mcc_ip_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1940,7 +1940,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -1961,7 +1961,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_fb_hot_add_stack_of_shelves_and_bridges.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -2010,7 +2010,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -2283,7 +2283,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -2346,7 +2346,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_power_on_and_power_off_a_data_center.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -2864,7 +2864,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
@@ -2983,7 +2983,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_verify_switchover_heal_and_switchback.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
       
     </url>
   
