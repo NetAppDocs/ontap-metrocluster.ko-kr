@@ -1386,7 +1386,6 @@
   <block id="cb8db61556b998f0533a4e329749c0f3" category="list-text">동일한 VLAN에 모든 MetroCluster IP 인터페이스 "A" 포트를 생성하고 다른 VLAN에 모든 MetroCluster IP 인터페이스 "B" 포트를 생성해야 합니다. 을 참조하십시오 <block ref="0d7e2206ca44f9cb7344ddf469b6d625" category="inline-link-macro-rx"></block>.</block>
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">를 누릅니다</block>
   <block id="e4194351c70f628f28ee542a65494961" category="list-text">특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).</block>
-  <block id="19d390d9b8d24ef2e5e8d530b56b6c3a" category="paragraph">+다음 플랫폼 모델은 VLAN을 사용하고 기본이 아닌 VLAN ID를 구성할 수 있습니다.</block>
   <block id="9ace720c417350af9e7b31ebc811b5de" category="cell">AFF 플랫폼</block>
   <block id="cc04b828d9f0654ce99362fa4a96bb32" category="cell">FAS 플랫폼</block>
   <block id="540dacfeb5577ce4282c41e9c7518680" category="list-text">AFF A400</block>
@@ -2132,13 +2131,10 @@
   <block id="c1444ba460cdd9b59c8ecf988ca907c4" category="list-text">ONTAP 9.7 이상에서는 자동 비계획 전환이 지원됩니다.</block>
   <block id="927ed696d98572bdb5039cbffcfdb480" category="section-title">MetroCluster 구성에서 중재자를 사용하기 위한 네트워크 요구 사항</block>
   <block id="b2b90a2080b20a433104d14b3164613a" category="paragraph">MetroCluster 구성에 ONTAP 중재자 서비스를 설치하려면 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.</block>
-  <block id="584cbb7b9a5b8e8c3d576c37046ef4f5" category="list-text">왕복 지연 시간</block>
-  <block id="44bf16da487b917462868fadbd2d975a" category="paragraph">왕복 지연 시간은 25ms 미만이어야 합니다.</block>
   <block id="1a03f6720968dfb968df6cc034114444" category="list-text">MTU</block>
   <block id="6b55a3ff2ffe6275beb9e73d58d08007" category="paragraph">MTU 크기는 1400 이상이어야 합니다.</block>
   <block id="64ddceb2cbf941d1fc93373ce9219a1f" category="list-text">패킷 손실</block>
   <block id="7d724e4bd163fe8323200b15500517f9" category="list-text">대역폭</block>
-  <block id="72b09b4c164fb776e6577cef10d7084d" category="paragraph">중재자 서비스와 MetroCluster 구성 사이의 링크는 최소 1Gbps의 대역폭을 가져야 합니다.</block>
   <block id="652f10975e44b79de998287113035fac" category="section-title">ONTAP 중재자를 위한 방화벽 요구 사항</block>
   <block id="671e00f956495c99ae5aae5896e8542a" category="paragraph">ONTAP 중재자가 여러 포트를 사용하여 특정 서비스와 통신합니다.</block>
   <block id="fc4f6ae944c5fa7cfc47e0574373e3e8" category="paragraph">다음 표에는 방화벽에서 허용해야 하는 포트가 나와 있습니다.</block>
@@ -2199,8 +2195,6 @@
   <block id="68a68579e29d4f4e1a1a17f8dc790b3c" category="admonition">여러 개의 Tiebreaker 모니터와 충돌하지 않도록 MetroCluster 구성당 MetroCluster Tiebreaker 모니터가 하나만 있어야 합니다.</block>
   <block id="74c24f77157a44b3d1b75c7a631b2f1a" category="list-text">MetroCluster IP, MetroCluster FC 및 스트레치 MetroCluster 구성의 조합 지원</block>
   <block id="0051a43c14e5ca151dedc81a1b8f3b8e" category="list-text">하드웨어 및 소프트웨어:</block>
-  <block id="acbfeda7edea7eba0418c4de0c90e09c" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1 또는 9.10.1</block>
-  <block id="df889c76e4219d94a86d75d41919ad14" category="list-text">Red Hat Enterprise Linux 7 - 7.9 또는 8 - 8.4 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)</block>
   <block id="1622cddcc8d92c2f521cf45ebeeb83b0" category="list-text">MariaDB 5.5.52.x/MySQL Server 5.6x</block>
   <block id="f211a801e18d8052b211fd5a87a83253" category="list-text">4GB RAM</block>
   <block id="fcf5a54aabe95484b6469eae85dc2a6a" category="list-text">Java Runtime Environment 8을 엽니다</block>
@@ -2736,7 +2730,6 @@
   <block id="ad668484e20b76c4db276efb95b361b4" category="paragraph">'MetroCluster configuration-settings dr-group show'를 선택합니다</block>
   <block id="333744f802db71c53ff9d4ad61fbc125" category="list-text">새로 가입된 MetroCluster IP 노드에 대해 MetroCluster IP 인터페이스를 구성합니다.</block>
   <block id="b1e0fc9a28d1fbc5566a3e38e1ba8e33" category="paragraph">'MetroCluster configuration-settings interface create-cluster-name'입니다</block>
-  <block id="8120231654641080268a38a8ad065e8b" category="paragraph">다음 플랫폼 모델은 VLAN을 사용하며 기본 VLAN ID가 아닌 VLAN ID를 구성할 수 있습니다.</block>
   <block id="8c74115e4c2bebadc09e695e69b012f5" category="list-text">MetroCluster IP 인터페이스가 생성되었는지 확인합니다.</block>
   <block id="30b6fb782c39e19cc96a63a24fc78cda" category="list-text">MetroCluster IP 인터페이스를 연결합니다.</block>
   <block id="636315ac7c2e7121c2eed168244e31ec" category="admonition">이 명령을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</block>
@@ -8260,7 +8253,6 @@
   <block id="934706a419f8bd1c7c07e2f70f366db7" category="list-text">기존 MetroCluster FC 포트 사용량과 새 노드의 MetroCluster IP 인터페이스에 대한 포트 사용량 간에 충돌이 있는지 확인합니다.</block>
   <block id="5ec820848a37e15913e881383d321172" category="paragraph">아래 표를 사용하여 새 MetroCluster IP 컨트롤러의 MetroCluster IP 포트를 식별해야 합니다. 그런 다음 MetroCluster FC 노드의 포트에 데이터 LIF 또는 클러스터 LIF가 있는지 확인하고 기록합니다.</block>
   <block id="f792a94ecd326887dad12660284df14c" category="paragraph">MetroCluster FC 노드에서 충돌하는 데이터 LIF 또는 클러스터 LIF는 전환 절차의 적절한 단계로 이동됩니다.</block>
-  <block id="f9ce0bc7b36b38eb2afa4b5dabcd6c8a" category="admonition">AFF A220 및 FAS2750 시스템에서 MetroCluster IP 물리적 포트는 클러스터 인터페이스로 사용됩니다. 새 MetroCluster IP 노드가 AFF A220 또는 FAS2750 시스템인 경우 기존 클러스터 LIF를 이동할 필요가 없습니다.</block>
   <block id="8e00032c24d53ef0b02b39ad3a87a5fc" category="paragraph">다음 표에서는 플랫폼 모델별 MetroCluster IP 포트를 보여 줍니다. VLAN ID 열은 무시할 수 있습니다.</block>
   <block id="05808f0e86c04c2a062c2e041f9e0827" category="cell">VLAN ID입니다</block>
   <block id="aadb3ee341867ca2327dd458d9f1e42b" category="cell">사용 안 합니다</block>
@@ -8328,7 +8320,6 @@
   <block id="e9f061fb2bc125b997083e48a3442510" category="list-text">녹색 셀은 조합이 지원된다는 것을 나타냅니다.</block>
   <block id="7bf7e1a6cec96a843176b66291c50547" category="list-text">흰색(빈) 셀은 조합이 지원되지 않음을 나타냅니다.</block>
   <block id="1799408ec992ed3e5561f7b04ccef0fe" category="paragraph">예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.</block>
-  <block id="06dbf695b0eb6bb2278b17719899aba9" category="image-alt">전환이 지원되는 플랫폼 조합</block>
   <block id="2abcc8e487f56251cd49b5a74738c4c4" category="section-title">Cisco 9336C-FX2 공유 스위치 구성으로 전환</block>
   <block id="f8e0758b3af85da8f282b95e41204586" category="paragraph">Cisco 9336C-FX2 공유 스위치 구성으로의 전환은 지원되지 않습니다. 공유 스위치 구성 _ 은(는) 스위치가 MetroCluster 연결과 스토리지 쉘프 연결을 모두 제공하는 구성입니다.</block>
   <block id="1a0ece25400c2d4c0b3a063a4d9d1aad" category="paragraph">Cisco 9336C-FX2 스위치가 MetroCluster 연결만 제공하는 구성은 지원됩니다.</block>
@@ -9089,16 +9080,7 @@
   <block id="57ab4d65e05ba7805256e178468b7043" category="cell">MetroCluster IP 노드 모델입니다</block>
   <block id="dcf4881a93cea43ae1634b2f0f7939ac" category="cell">스위치 포트</block>
   <block id="5cf0603a9cc38118a92d6f62afbc27ad" category="cell">에 연결합니다</block>
-  <block id="e3ba5feff9c2f5df371992a6af632d38" category="cell">Cisco 3132Q-V 또는 3232C</block>
   <block id="ed36a1ef76a59ee3f15180e0441188ad" category="cell">모두</block>
-  <block id="8e8bf4eef9dc6ef4efedcee322e60026" category="paragraph">노드_x_1-FC</block>
-  <block id="496f634a3fb7abe92600445e4ebf2858" category="paragraph">노드_x_2-FC</block>
-  <block id="5065d90219d07238456028a58852a578" category="paragraph">FAS2750/A220</block>
-  <block id="66ce05ea43c73b8e33c74c12d0371bc9" category="paragraph">1, 2, 3</block>
-  <block id="9be00eab53c162af955730115921876c" category="paragraph">FAS8200/A300</block>
-  <block id="c0fedf1d3c6d43675ba3ccd93a26de39" category="paragraph">1, 2, 3, 7, 8, 9</block>
-  <block id="c2d626f8beba73ad0cf4e66214f7d949" category="paragraph">4, 5, 6</block>
-  <block id="195ae27cd18c9577876e8db4440c4230" category="paragraph">4, 5, 6, 10, 11, 12</block>
   <block id="41add71327ff82aa85f0074583131e05" category="section-title">새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다</block>
   <block id="f96b1e8d8ce6fb44d55bd62523f1fffd" category="paragraph">새 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 새 스위치로 물리적으로 이동해야 합니다.</block>
   <block id="971a965432d70710e6faba87f3271008" category="list-text">MetroCluster FC 노드 그룹 A 클러스터 연결을 새 IP 스위치로 이동합니다.</block>
@@ -12533,4 +12515,26 @@
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
   <block id="83e579bcd33d25206730a931a64a84a1" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block>.</block>
   <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
+  <block id="cf5928613cf8b77d8355882cdec38712" category="paragraph">내부 드라이브 16개에만 해당</block>
+  <block id="90cd0db781b4639c1c46407e5a4f0a93" category="paragraph">+다음 플랫폼 모델은 사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
+  <block id="92083475c7b52cf5e29e7faa8db9dc17" category="paragraph">ONTAP 9.11.1부터 MetroCluster 구성 내의 두 클러스터는 세 번째 사이트와의 SVM DR 관계의 소스가 될 수 있습니다.</block>
+  <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
+  <block id="66420f475101cc9c2b0d458605176249" category="paragraph">왕복 지연 시간은 75ms를 초과할 수 없습니다.</block>
+  <block id="d89a2477841e85e6d37fac9fb392f350" category="paragraph">지터는 25ms 미만이어야 합니다.</block>
+  <block id="31677ea68806d62bf012786b0cfb0379" category="paragraph">중재자 서비스와 MetroCluster 구성 사이의 링크는 20Gbps 이상의 대역폭을 가져야 합니다.</block>
+  <block id="37e445da4970f1c0106716e8dba83be8" category="paragraph">사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 다음 플랫폼 모델을 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
+  <block id="9e9a93655547f7858baef5194a909e2c" category="cell">Cisco 3132Q-V, 3232C 또는 9336C-FX2</block>
+  <block id="a825d9b135e0604b1a8244aa950f4952" category="paragraph">FC 노드의 로컬 클러스터 인터페이스입니다</block>
+  <block id="32e69a0f5d950aefcb7cefee34c73d19" category="paragraph">FAS500f/A250</block>
+  <block id="22c9730efa04ff77f4d689d1554cb1af" category="paragraph">FAS8200/A300</block>
+  <block id="44966f51999c176196bdbfe7e74f3762" category="paragraph">3, 4, 9, 10, 11, 12</block>
+  <block id="3ee537e70a06614ada97e070ef70fe96" category="paragraph">FAS8300/A400/FAS8700</block>
+  <block id="fb6814303d896b70f8e88a7a5fa288c1" category="list-text">파란색 셀은 ONTAP 9.11.1부터 조합이 지원된다는 것을 나타냅니다.</block>
+  <block id="f65f3d1cbac500084196b8e4bf5ad772" category="image-alt">FC IP 전환 메타 사용자 및 이후</block>
+  <block id="8cff99d2c284195b8638b34190ed3388" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1 또는 9.11.1.</block>
+  <block id="e551931a21b4ccec04009df38f655079" category="list-text">Red Hat Enterprise Linux 7 - 7.9 또는 8 - 8.5 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)</block>
+  <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
+  <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
+  <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
+  <block id="fe92f5934bf96194725b46db02f72324" category="list-text">이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.</block>
 </blocks>

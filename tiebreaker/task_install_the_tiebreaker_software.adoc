@@ -32,10 +32,10 @@ NOTE: 여러 개의 Tiebreaker 모니터와 충돌하지 않도록 MetroCluster 
 * MetroCluster IP, MetroCluster FC 및 스트레치 MetroCluster 구성의 조합 지원
 * 하드웨어 및 소프트웨어:
 +
-** ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1 또는 9.10.1
+** ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1 또는 9.11.1.
 
 
-* Red Hat Enterprise Linux 7 - 7.9 또는 8 - 8.4 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)
+* Red Hat Enterprise Linux 7 - 7.9 또는 8 - 8.5 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)
 +
 ** MariaDB 5.5.52.x/MySQL Server 5.6x
 ** 4GB RAM
