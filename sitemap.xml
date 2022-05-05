@@ -162,7 +162,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_drive_assignment.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -351,14 +351,14 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_when_using_ontap_in_a_mcc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/concept_considerations_when_using_ontap_in_a_mcc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -526,7 +526,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_mediator_requirements.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -715,7 +715,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_requirements_for_fc_to_ip_transition_2n_mcc_transition.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -750,7 +750,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_supported_platforms_for_transition.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -1345,7 +1345,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster//search.html</loc>
       
-      <lastmod>2022-05-03T08:12:23+00:00</lastmod>
+      <lastmod>2022-05-05T14:23:15+00:00</lastmod>
       
     </url>
   
@@ -1751,7 +1751,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_configure_the_new_nodes_and_complete_transition.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -1926,7 +1926,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_expand_a_four_node_mcc_ip_configuration.html</loc>
       
-      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -2213,7 +2213,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/task_install_the_tiebreaker_software.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -2269,7 +2269,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_move_cluster_connections.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -2500,7 +2500,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -2717,7 +2717,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_sw_config_configure_clusters.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
@@ -2766,7 +2766,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_sw_config_verify_haconfig.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
       
     </url>
   
