@@ -101,15 +101,12 @@
   <block id="0a911607fcdb2a0895663c58e11b5e20" category="list-text">장치에서 MACsec 및 MKA 활성화:</block>
   <block id="0af698a47e630dbe25ea48f66be32472" category="paragraph">피처 MACsec</block>
   <block id="94d3b8e178343e5848889ce109b92d67" category="list-text">실행 중인 구성을 시작 구성으로 복사합니다.</block>
-  <block id="c65d9e378f505697a236ecdbbf4f570d" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL 비활성화</block>
   <block id="749ac7a2f1348088d99ca5c98ffd2d16" category="paragraph">MetroCluster IP 구성에서 WAN ISL의 Cisco 9336C 스위치에 대한 MACsec 암호화를 비활성화해야 할 수 있습니다.</block>
   <block id="8593f4ba6cc280cf6c5bf594528f3eb4" category="list-text">장치에서 MACsec 구성 비활성화:</block>
   <block id="cdb4bb93b3a531a567e11665f5148cc9" category="paragraph">'시스템 종료'</block>
   <block id="c00cade2f94121d752e8500322a535ab" category="admonition">""아니오" 옵션을 선택하면 MACsec 기능이 복원됩니다.</block>
   <block id="d87fb26eb8c307c05c4cef618a867ad5" category="list-text">MACsec로 이미 구성한 인터페이스를 선택합니다.</block>
   <block id="38b72613f93d93bebc25e126c3accdb1" category="paragraph">인터페이스 유형 및 ID를 지정할 수 있습니다. 이더넷 포트의 경우 이더넷 슬롯/포트를 사용합니다.</block>
-  <block id="994f1ea1f472d234f9c01b086bcddfff" category="list-text">MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인, 정책 및 fallback-keychain을 제거합니다.</block>
-  <block id="4433609b41a7b52c237c57c092b2feb7" category="paragraph">"no MACsec keychain keychain-name policy-name fallback-keychain keychain-name"이 있습니다</block>
   <block id="099cf25e93dd32c5578a33534cbb5ff2" category="list-text">MACsec이 구성된 모든 인터페이스에서 3단계와 4단계를 반복합니다.</block>
   <block id="949f29205f74faab47cb2a1f2ab7dac1" category="section-title">MACsec 키 체인 및 키 구성</block>
   <block id="aebbde0d48d31742f98866fb5fd93228" category="paragraph">구성에 MACsec 키 체인 또는 키를 만들 수 있습니다.</block>
@@ -130,7 +127,6 @@
   <block id="553e37d1edf682c2d4e3e0044a0e8f59" category="paragraph">'수명 종료 시작-시간 지속 기간'을 선택합니다</block>
   <block id="d2294acb2c54a8144dcb00a8f1554fab" category="paragraph">기본적으로 장치는 시작 시간을 UTC로 처리합니다. start-time 인수는 키가 활성화되는 날짜와 시간입니다. duration 인수는 초 단위의 수명 길이입니다. 최대 길이는 2147483646초(약 68년)입니다.</block>
   <block id="8dd0074f8606108f750defc9306a01b3" category="list-text">키 체인 구성을 표시합니다.</block>
-  <block id="2861de74286d86a770050eefe484b016" category="section-title">MACsec 정책 구성</block>
   <block id="dde20920c9bc2285cedc0171616ad91e" category="list-text">MACsec 정책 만들기:</block>
   <block id="3ec088691927601a692a22de57f7b714" category="paragraph">'macsec policy name'입니다</block>
   <block id="f6f1bccdbe1b9de16d5e5c9a259735ef" category="list-text">GCM-AES-128, GCM-AES-256, GCM-AES-XPN-128 또는 GCM-AES-XPN-256 중 하나를 구성합니다.</block>
@@ -296,7 +292,6 @@
   <block id="f3b35ec0554707831c93f8d1726c3e1d" category="list-text">장치에서 MACsec 및 MKA를 활성화합니다: "Feature MACsec"</block>
   <block id="67d10db60edc762f7873c87cd6b4d249" category="list-text">실행 중인 구성을 시작 구성에 복사합니다. 'copy running-config startup-config'</block>
   <block id="8289fc55a0dea0e27a08723be563875e" category="section-title">Cisco MACsec 암호화 사용 안 함</block>
-  <block id="096c074687c2dd6452629aee93157757" category="admonition">암호화를 사용하지 않도록 설정하는 경우 XXX에 설명된 대로 키도 삭제해야 합니다.</block>
   <block id="408e437eca7dacdea718d8544eb31c70" category="list-text">장치에서 MACsec 구성을 비활성화합니다. 'macsec shutdown(밀리초 종료)'</block>
   <block id="a78ca51eaaf1a7fe31e057a59182b175" category="admonition">no 옵션을 선택하면 MACsec 기능이 복원됩니다.</block>
   <block id="1fd9a2e4a02fcc573ee7bb473c57b045" category="list-text">MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인, 정책 및 fallback-keychain을 제거합니다. "no MACsec keychain keychain-name policy-name fallback-keychain-name"</block>
@@ -306,7 +301,6 @@
   <block id="ffd76385e89b64e24fcfe106dc5b4533" category="paragraph">기존 Tiebreaker 또는 ONTAP 중재자 인스턴스에 연결하는 경우 Tiebreaker 또는 중재자 서비스의 사용자 이름, 암호 및 IP 주소가 필요합니다.</block>
   <block id="9d4b44162692abd2769e8e0a1c1f0155" category="paragraph">ONTAP 중재자의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.</block>
   <block id="6d83b3cc0c5c986a38aa0e7f75c60a63" category="inline-link-macro">계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성</block>
-  <block id="2045016bec8bea27ddbdf3bf4b176595" category="paragraph"><block ref="2045016bec8bea27ddbdf3bf4b176595" category="inline-link-macro-rx"></block></block>
   <block id="d605b9788bd8c2e1d6694fb74ab24c77" category="inline-link-macro">소프트웨어 설치 및 구성 지침</block>
   <block id="cc65b45d9cd6a58be27baf40866d52dc" category="paragraph">Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우, 에 따르십시오 <block ref="41bac20da3e04dcec3e43f3b27170310" category="inline-link-macro-rx"></block>.</block>
   <block id="b935de63e2396f2d2fe997c9028969f7" category="inline-link">MetroCluster Tiebreaker 소프트웨어 설치 및 구성</block>
@@ -1632,7 +1626,6 @@
   <block id="ccc25c1a9a6f63d4acf6c9390b850b64" category="section-title">ONTAP 구성을 완료하는 중입니다</block>
   <block id="938a9f49acfde2902a8737d1aadbf6a1" category="paragraph">MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 SVM, 네트워크 인터페이스 및 기타 ONTAP 기능을 추가하여 클러스터 구성을 완료할 수 있습니다.</block>
   <block id="c9016b3f72dba4b8f61408d9d613c969" category="paragraph">Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.</block>
-  <block id="6c8f611a4b721174f4789122858e5dc3" category="paragraph"><block ref="6c8f611a4b721174f4789122858e5dc3" category="inline-link-macro-rx"></block></block>
   <block id="fb2c0ebeb18b9e1080333a65b192bdc3" category="list-text">ONTAP 중재자의 기존 인스턴스를 사용하는 경우 ONTAP 중재자 서비스를 ONTAP에 추가합니다.</block>
   <block id="24135708f40bc30abbe1b5a601010307" category="list-text">Tiebreaker 소프트웨어를 사용하는 경우 Tiebreaker 설명서를 참조하십시오.</block>
   <block id="4978301a508dcc7f7e8778cdb2401e04" category="section-title">구성 백업 파일을 보호합니다</block>
@@ -4049,8 +4042,6 @@
   <block id="447b7bdefc8e750f8d7dab18bb9172ea" category="list-text">노드_B_2-A700:537035354</block>
   <block id="50d704bfae735cf9f8824da705413abc" category="paragraph">자세한 내용은 을 참조하십시오<block ref="0abbdd13a8c045ec09bd7c54eb2d0bef" category="inline-link-rx"></block>.</block>
   <block id="c455927c47d829e25595da49b62049ba" category="section-title">Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다</block>
-  <block id="02f80d1409d40adabdcd4b00959239b0" category="inline-link-macro">MetroCluster 구성을 제거합니다</block>
-  <block id="b0d3c2e52841601c113af9d2ec1d76e1" category="paragraph"><block ref="b0d3c2e52841601c113af9d2ec1d76e1" category="inline-link-macro-rx"></block></block>
   <block id="2038f837dd43f190a92c79bb698d5d00" category="paragraph">이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다.</block>
   <block id="b1b207442d1d74b512ee7783091ec80b" category="section-title">site_B에서 AFF A700 컨트롤러 모듈 및 NVS를 제거합니다</block>
   <block id="fbb702216c9d47455a0b8dbde9a6a6ca" category="paragraph">구성에서 이전 컨트롤러를 제거해야 합니다.</block>
@@ -4135,8 +4126,6 @@
   <block id="09d09b12e62bbea5812e7cd6ee644ddd" category="list-text">부터 시작하여 site_a의 노드를 업그레이드하려면 단계를 반복합니다 <block ref="0e6ccb461a8e4072917a7db8187a2ba6" category="inline-link-macro-rx"></block>.</block>
   <block id="aef044e8d9907a55ceb4a933de45cc66" category="paragraph">작업을 수행할 때 사이트와 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, 사이트_A에서 스위치오버로 예제를 제공할 경우 Site_B에서 전환합니다</block>
   <block id="641ef094fd6e3f18fc8a62270dc2b543" category="section-title">Tiebreaker 모니터링을 복원합니다</block>
-  <block id="9708813a6edf75a072848cc8c19d1d0b" category="inline-link-macro">MetroCluster 구성 추가</block>
-  <block id="41e5a570a4f2d19e8390709e59c70fa0" category="list-text">의 단계를 사용합니다 <block ref="12128e797396b704d910303dde9a32c0" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
   <block id="31c65a2058e5394cf4f67afa9634685a" category="summary">새 컨트롤러를 클러스터에 연결하려면 각 새 컨트롤러 모듈을 부팅하고 ONTAP 클러스터 설정 마법사를 사용하여 클러스터가 결합될 것을 식별해야 합니다.</block>
   <block id="c97ffd8c62ff7f9d8c843c6e65672330" category="doc">새 컨트롤러를 부팅하고 클러스터에 가입합니다</block>
   <block id="2e296e5ecea65075de45f381533dc47d" category="paragraph">이 작업을 수행하기 전에 서비스 프로세서를 구성하지 않아야 합니다.</block>
@@ -5070,7 +5059,6 @@
   <block id="34d50950463bd9deb8050c6afe5d8652" category="paragraph">'보안 로그인 쇼'</block>
   <block id="00045154249cbebb0c448b3f16b85947" category="list-text">스위치 프롬프트에서 스위치에 SNMPv3을 구성합니다.</block>
   <block id="8877f60294cec4f344b4ffc0df4449c3" category="paragraph">'snmpconfig--set SNMPv3'을 선택합니다</block>
-  <block id="8e2467ce90556be64053bd8e7c611ad8" category="paragraph">RO 액세스가 필요한 경우 'User(ro):' 다음에 예에서와 같이 "'snmpv3user'를 지정합니다.</block>
   <block id="766c26974a4c90ad9b490830ebb9d74a" category="paragraph">이 예제에서는 읽기 전용 사용자를 구성하는 방법을 보여 줍니다. 필요한 경우 RW 사용자를 조정할 수 있습니다. 또한 사용하지 않는 계정에 대한 암호를 설정하여 계정을 보호하고 ONTAP 릴리스에서 제공되는 최상의 암호화를 사용해야 합니다.</block>
   <block id="b650107d3033a6cbfd9eec73b7b79ab2" category="list-text">사이트에서 필요에 따라 나머지 스위치 사용자의 암호화 및 암호를 구성합니다.</block>
   <block id="c3ba99ea78fe878c8116f93f8bc6caea" category="paragraph">9.8 이전의 ONTAP 버전을 실행하는 시스템에서 FC-to-SAS 브리지가 구성에 포함된 경우 MetroCluster 구성에서 FC-to-SAS 브리지를 모니터링하기 위한 몇 가지 특수 구성 단계를 수행해야 합니다.</block>
@@ -7942,7 +7930,6 @@
   <block id="e36320198d71e90e7fbc80a9b47b9394" category="paragraph">어느 스위치에서든 RCF 파일의 버전을 나타내는 출력 줄을 찾습니다. 예를 들어, 다음 출력은 RCF 파일 버전이 ""v1.80""임을 나타내는 Cisco 스위치에서 출력되었습니다.</block>
   <block id="c7534d571d84fdfe4912d24b4f1f30bf" category="list-text">특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 RcfFileGenerator 를 사용합니다. 보유하고 있거나 업그레이드하려는 구성에 대해 RCF 파일을 생성할 수 있으면 해당 파일이 지원됩니다.</block>
   <block id="282bc05e82ec2895ab48f3f9377e06d3" category="list-text">스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.</block>
-  <block id="e77a7dbb2ff81ed5602321d5148ff36e" category="list-text"><block ref="e77a7dbb2ff81ed5602321d5148ff36e" category="inline-link-rx"></block></block>
   <block id="8ae1a8b6dc4a3df150f27ca419fb9a6c" category="list-text"><block ref="8ae1a8b6dc4a3df150f27ca419fb9a6c" category="inline-link-rx"></block></block>
   <block id="bde0605fb74695c23ddd122685cfc65e" category="section-title">RCF 파일을 업그레이드합니다</block>
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
@@ -8315,8 +8302,6 @@
   <block id="99121f5c6ebd942309c1151523466608" category="paragraph"><block ref="99121f5c6ebd942309c1151523466608" category="inline-link-macro-rx"></block></block>
   <block id="9dbbc592d23a777892a7b326fdecb27a" category="summary">그런 다음 MetroCluster IP 구성으로 전환하려면 지원되는 플랫폼 모델을 조합해야 합니다.</block>
   <block id="c5ca83d0e723113560fb2c95b33b532b" category="doc">무중단 전환을 지원하는 플랫폼</block>
-  <block id="7e78f2c6ef0bb1c644bf13957f799b3e" category="paragraph">MetroCluster IP 구성으로 전환할 때는 지원되는 플랫폼 모델을 조합하여 사용해야 합니다.</block>
-  <block id="5bb55ff54cc0047e95b27d7917c63627" category="paragraph">다음 표에서는 지원되는 플랫폼 조합을 보여 줍니다. 녹색 표 셀에 표시된 대로 왼쪽 열의 플랫폼에서 오른쪽 열의 지원되는 대로 나열된 플랫폼으로 전환할 수 있습니다.</block>
   <block id="e9f061fb2bc125b997083e48a3442510" category="list-text">녹색 셀은 조합이 지원된다는 것을 나타냅니다.</block>
   <block id="7bf7e1a6cec96a843176b66291c50547" category="list-text">흰색(빈) 셀은 조합이 지원되지 않음을 나타냅니다.</block>
   <block id="1799408ec992ed3e5561f7b04ccef0fe" category="paragraph">예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.</block>
@@ -12499,7 +12484,6 @@
   <block id="7781c27327814c0f7935ce903ca1101f" category="list-text"><block ref="7781c27327814c0f7935ce903ca1101f" category="inline-link-macro-rx"></block></block>
   <block id="8e077a574605e13d75ee083e7cd96f27" category="list-text"><block ref="8e077a574605e13d75ee083e7cd96f27" category="inline-link-macro-rx"></block></block>
   <block id="5860040c16ad914f0dc769bbc79c2a6d" category="list-text"><block ref="5860040c16ad914f0dc769bbc79c2a6d" category="inline-link-macro-rx"></block></block>
-  <block id="4a3e665f4593afeb6ebcabea7ce85845" category="paragraph"><block ref="97b0c50183125e551abb5b04258316bf" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
   <block id="398ca4e3f9e65b681f95fee13804bab9" category="list-text">디렉토리 목록에는 &lt;ONTAP_VERSION&gt;\_IMAGE.tgz 가 포함되어야 합니다.</block>
   <block id="befdb6ab41f0cd39ff57e00b0ee8c3f6" category="paragraph">"&lt;filer_addr&gt;"은(는) 스토리지 시스템의 IP 주소입니다. "&lt;netmask&gt;"는 스토리지 시스템의 네트워크 마스크입니다. '&lt;gateway&gt;'는 스토리지 시스템의 게이트웨이입니다. "&lt;dns_addr&gt;"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '&lt;dns_domain&gt;'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.</block>
   <block id="f9917e026c23b682e18bcd6bc125c1b9" category="paragraph">"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;\_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
@@ -12521,7 +12505,6 @@
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
   <block id="66420f475101cc9c2b0d458605176249" category="paragraph">왕복 지연 시간은 75ms를 초과할 수 없습니다.</block>
   <block id="d89a2477841e85e6d37fac9fb392f350" category="paragraph">지터는 25ms 미만이어야 합니다.</block>
-  <block id="31677ea68806d62bf012786b0cfb0379" category="paragraph">중재자 서비스와 MetroCluster 구성 사이의 링크는 20Gbps 이상의 대역폭을 가져야 합니다.</block>
   <block id="37e445da4970f1c0106716e8dba83be8" category="paragraph">사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 다음 플랫폼 모델을 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
   <block id="9e9a93655547f7858baef5194a909e2c" category="cell">Cisco 3132Q-V, 3232C 또는 9336C-FX2</block>
   <block id="a825d9b135e0604b1a8244aa950f4952" category="paragraph">FC 노드의 로컬 클러스터 인터페이스입니다</block>
@@ -12537,4 +12520,25 @@
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
   <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
   <block id="fe92f5934bf96194725b46db02f72324" category="list-text">이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.</block>
+  <block id="610f11b52907034f4715c6fa1abf8d1b" category="paragraph">중재자 서비스와 MetroCluster 구성 사이의 링크는 20Mbps 이상의 대역폭을 가져야 합니다.</block>
+  <block id="f5cd93f67ab362b3830ef2c47249e909" category="paragraph"><block ref="f5cd93f67ab362b3830ef2c47249e909" category="inline-link-macro-rx"></block></block>
+  <block id="a3816a0d57fcb59bc1a3bfba35af44cf" category="paragraph"><block ref="a3816a0d57fcb59bc1a3bfba35af44cf" category="inline-link-macro-rx"></block></block>
+  <block id="8a4f175190a1710cdcd52e7efde01268" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL을 활성화합니다</block>
+  <block id="dbbfd3dd70a4d25284d890b07ad9bc31" category="section-title">MACsec 키 체인 및 키를 구성합니다</block>
+  <block id="2903318a6fa99cbae17be8d84747e6f4" category="section-title">MACsec 정책을 구성합니다</block>
+  <block id="d2b2747d0c22a09619558cfbac550396" category="section-title">인터페이스에서 Cisco MACsec 암호화를 활성화합니다</block>
+  <block id="022ccd39646806bfe7a58384a672a87d" category="list-text">MACsec 암호화로 구성한 인터페이스를 선택합니다.</block>
+  <block id="b07933039277c17cd5a85e3d7906d601" category="list-text">인터페이스에서 구성할 키 체인 및 정책을 추가하여 MACsec 구성을 추가합니다.</block>
+  <block id="82cc9e863d73c099e61d0b3f2db03cbf" category="paragraph">macsec keychain-name policy-name'입니다</block>
+  <block id="5b62e90551dcaf31183c797f549f19f5" category="list-text">MACsec 암호화를 구성할 모든 인터페이스에서 1단계와 2단계를 반복합니다.</block>
+  <block id="2df81ef73ca6234e1f2efffdc855e826" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL을 비활성화합니다</block>
+  <block id="dc58a5917fbb05da0e560a4cbcb1f72c" category="list-text">MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인 및 정책을 제거합니다.</block>
+  <block id="c988e8ca5d6e6bb62b67254721e13586" category="paragraph">MACsec keychain keychain-name policy-name 없음</block>
+  <block id="8d0f34f00997c62960ad51adbe64457d" category="list-text"><block ref="8d0f34f00997c62960ad51adbe64457d" category="inline-link-rx"></block></block>
+  <block id="2687b88898e3642fcc69aaef6be8e73c" category="paragraph">MetroCluster IP 구성으로 전환할 때는 지원되는 플랫폼 모델을 조합하여 사용해야 합니다. 또한 MetroCluster IP 플랫폼이 MetroCluster FC 구성에서 MetroCluster IP 구성으로 전환하려는 로드에 적합한 크기인지 확인해야 합니다.</block>
+  <block id="d9599a6265b31306f6c79d760a47a9aa" category="paragraph">다음 표에서는 지원되는 플랫폼 조합을 보여 줍니다. 색이 지정된 표 셀에 표시된 대로 왼쪽 열의 플랫폼에서 오른쪽 열의 지원되는 대로 나열된 플랫폼으로 전환할 수 있습니다.</block>
+  <block id="d84d4239724af43bfdc3b74836c335fe" category="paragraph">구성이 완료되면 v0a(v0b 등)가 지속적으로 연결을 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(파손된 구성이 운영 중단 후에만 표시됨).</block>
+  <block id="222561f9cba21343a81a9b2ee1890d68" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block></block>
+  <block id="81fe00b955881476878ae80a1ff92b24" category="list-text">의 단계를 사용합니다. <block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
+  <block id="61324fd73aeb16a8318bff07556941ad" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
 </blocks>

@@ -74,7 +74,7 @@ https://mysupport.netapp.com/site/products/all/details/atto-fibrebridge/download
 +
 [listing]
 ----
-cluster_A> storage bridge firmware update -bridge bridge_A_1a -uri http://192.168.132.97/firmware.spf
+cluster_A> storage bridge firmware update -bridge bridge_A_1a -uri http://192.168.132.97/firmware.ZBD
 ----
 . 관리자 권한 레벨로 돌아갑니다.
 +
