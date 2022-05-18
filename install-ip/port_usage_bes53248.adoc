@@ -34,6 +34,16 @@ MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차를 포함�
 ** 4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)
 
 
+. 두 MetroCluster 구성을 연결하고 두 구성 모두 동일한 컨트롤러 유형을 사용하는 경우 MetroCluster 포트 그룹 3과 4를 사용해야 합니다. 컨트롤러가 다른 경우에는 MetroCluster 포트 그룹 3 및 4를 한 유형에 사용하고 MetroCluster 포트 그룹 1 및 2를 다른 유형에 사용해야 합니다.
++
+** 예를 들어, 다음과 같이 연결할 수 있습니다.
++
+*** FAS2750/AFF A220만 또는 FAS500f/AFF A250으로 구성된 2개의 MetroCluster 구성에서는 MetroCluster 포트 그룹 3과 4를 선택해야 합니다.
+*** 하나의 MetroCluster가 FAS2750/AFF A220 유형이고 다른 하나는 FAS500f/AFF A250인 두 MetroCluster 구성에서는 포트 그룹 3과 4를 선택하고 다른 하나는 포트 그룹 1과 2를 선택해야 합니다. 에 있습니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"], 드롭다운 필드 1 및 2는 드롭다운 필드 3 및 4에서 플랫폼을 선택한 후에만 지원되는 플랫폼으로 채워집니다. 을 참조하십시오 link:../install-ip/using_rcf_generator.html["RcfFileGenerator 도구나 여러 MetroCluster 구성에서 포트 테이블 사용"] 포트 테이블 사용 방법에 대한 자세한 내용은 를 참조하십시오.
+
+
+
+
 
 
 
@@ -47,6 +57,12 @@ image::../media/mcc_ip_cabling_a_aff_a220_or_fas2750_to_a_broadcom_bes_53248_swi
 == AFF A250 또는 FAS500f 시스템의 스위치 포트 사용
 
 image::../media/mcc_ip_cabling_a_aff_a250_or_fas500f_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 AFF A250 또는 fas500f를 Broadcom의 53248 스위치에 연결합니다]
+
+
+
+== AFF A250 또는 FAS500f 및 AFF A220 또는 FAS2750 시스템을 함께 사용하기 위한 스위치 포트 사용
+
+image::../media/mcc_ip_cabling_aff_a250_and_ a220_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 연결 AFF A250 및 A220을 Broadcom의 Bes 53248 스위치에 연결합니다]
 
 
 

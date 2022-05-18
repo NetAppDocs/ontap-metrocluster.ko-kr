@@ -7582,7 +7582,6 @@
   <block id="1abb821f2b965d18052b2448ef4137ed" category="summary">사이트 유지 관리를 위해 또는 사이트를 다른 위치로 재배치할 목적으로 데이터 센터의 전원을 끄고 전원을 켜는 방법을 알고 있어야 합니다.</block>
   <block id="3f7ef4e6486f47719dca790d2a160ae5" category="doc">데이터 센터의 전원을 끄고 켭니다</block>
   <block id="50619d56fd21f33883011467e89403f8" category="paragraph">사이트를 재배치하고 재구성해야 하는 경우(예: 4노드에서 8노드 클러스터로 확장해야 하는 경우) 이러한 작업을 동시에 완료할 수 없습니다. 이 절차에서는 사이트 유지 관리를 수행하거나 사이트 구성을 변경하지 않고 사이트를 재배치하는 데 필요한 단계만 다룹니다.</block>
-  <block id="8dae46f3452d05c7a36200c9a9200768" category="paragraph">다음 다이어그램은 MetroCluster 구성을 보여 줍니다. 유지 관리를 위해 Cluster_A의 전원이 꺼집니다.</block>
   <block id="e42120d29d88cc6c3c023d82236437a8" category="admonition">이 절차는 MetroCluster IP 및 FC 구성 모두에서 사용됩니다.</block>
   <block id="13453110a818269a21fc3929d2514208" category="image-alt">데이터 센터의 전원을 끕니다</block>
   <block id="efe31da79ff42582640c229b718168aa" category="section-title">MetroCluster 사이트의 전원을 끕니다</block>
@@ -12501,7 +12500,6 @@
   <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
   <block id="cf5928613cf8b77d8355882cdec38712" category="paragraph">내부 드라이브 16개에만 해당</block>
   <block id="90cd0db781b4639c1c46407e5a4f0a93" category="paragraph">+다음 플랫폼 모델은 사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
-  <block id="92083475c7b52cf5e29e7faa8db9dc17" category="paragraph">ONTAP 9.11.1부터 MetroCluster 구성 내의 두 클러스터는 세 번째 사이트와의 SVM DR 관계의 소스가 될 수 있습니다.</block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
   <block id="66420f475101cc9c2b0d458605176249" category="paragraph">왕복 지연 시간은 75ms를 초과할 수 없습니다.</block>
   <block id="d89a2477841e85e6d37fac9fb392f350" category="paragraph">지터는 25ms 미만이어야 합니다.</block>
@@ -12541,4 +12539,14 @@
   <block id="222561f9cba21343a81a9b2ee1890d68" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block></block>
   <block id="81fe00b955881476878ae80a1ff92b24" category="list-text">의 단계를 사용합니다. <block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
   <block id="61324fd73aeb16a8318bff07556941ad" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
+  <block id="1fe9ee738ca0e6e9e3aeec4c7902cb67" category="paragraph">다음 다이어그램은 MetroCluster 구성을 보여 줍니다. 유지 관리를 위해 Cluster_B의 전원이 꺼져 있습니다.</block>
+  <block id="04609bc4c74d3a1d83089f636a27a4b0" category="paragraph">ONTAP 9.11.1부터 MetroCluster 구성 내의 두 사이트는 다음 이미지와 같이 FAS 또는 AFF 대상 클러스터와 SVM DR 관계의 소스가 될 수 있습니다.</block>
+  <block id="66a9b9ac77fa7e18f707ae56e903dd9c" category="inline-image-macro">SVM DR 새로운 토폴로지</block>
+  <block id="852e82b3cf4859eb193e979d1ed02eba" category="paragraph"><block ref="852e82b3cf4859eb193e979d1ed02eba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="11956e846be834740959ad71d40b9547" category="list-text">두 MetroCluster 구성을 연결하고 두 구성 모두 동일한 컨트롤러 유형을 사용하는 경우 MetroCluster 포트 그룹 3과 4를 사용해야 합니다. 컨트롤러가 다른 경우에는 MetroCluster 포트 그룹 3 및 4를 한 유형에 사용하고 MetroCluster 포트 그룹 1 및 2를 다른 유형에 사용해야 합니다.</block>
+  <block id="691efed68d0449f254968b0811d65b71" category="list-text">예를 들어, 다음과 같이 연결할 수 있습니다.</block>
+  <block id="2ad4e214daf4f2fbe760328984025270" category="list-text">FAS2750/AFF A220만 또는 FAS500f/AFF A250으로 구성된 2개의 MetroCluster 구성에서는 MetroCluster 포트 그룹 3과 4를 선택해야 합니다.</block>
+  <block id="1c4e028af9d72f4e84ad919004a88581" category="list-text">하나의 MetroCluster가 FAS2750/AFF A220 유형이고 다른 하나는 FAS500f/AFF A250인 두 MetroCluster 구성에서는 포트 그룹 3과 4를 선택하고 다른 하나는 포트 그룹 1과 2를 선택해야 합니다. 에 있습니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block>, 드롭다운 필드 1 및 2는 드롭다운 필드 3 및 4에서 플랫폼을 선택한 후에만 지원되는 플랫폼으로 채워집니다. 을 참조하십시오 <block ref="4dfd72a31c74d2e269d1ca49dcbd7291" category="inline-link-macro-rx"></block> 포트 테이블 사용 방법에 대한 자세한 내용은 를 참조하십시오.</block>
+  <block id="a9bf0a810b5c634110cced1dcc9dd514" category="section-title">AFF A250 또는 FAS500f 및 AFF A220 또는 FAS2750 시스템을 함께 사용하기 위한 스위치 포트 사용</block>
+  <block id="eab2b22490c89198b6c41f5b7c6e6104" category="image-alt">MCC IP 케이블 연결 AFF A250 및 A220을 Broadcom의 Bes 53248 스위치에 연결합니다</block>
 </blocks>
