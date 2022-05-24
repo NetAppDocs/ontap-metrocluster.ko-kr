@@ -12513,7 +12513,6 @@
   <block id="fb6814303d896b70f8e88a7a5fa288c1" category="list-text">파란색 셀은 ONTAP 9.11.1부터 조합이 지원된다는 것을 나타냅니다.</block>
   <block id="f65f3d1cbac500084196b8e4bf5ad772" category="image-alt">FC IP 전환 메타 사용자 및 이후</block>
   <block id="8cff99d2c284195b8638b34190ed3388" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1 또는 9.11.1.</block>
-  <block id="e551931a21b4ccec04009df38f655079" category="list-text">Red Hat Enterprise Linux 7 - 7.9 또는 8 - 8.5 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)</block>
   <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
   <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
@@ -12549,4 +12548,7 @@
   <block id="1c4e028af9d72f4e84ad919004a88581" category="list-text">하나의 MetroCluster가 FAS2750/AFF A220 유형이고 다른 하나는 FAS500f/AFF A250인 두 MetroCluster 구성에서는 포트 그룹 3과 4를 선택하고 다른 하나는 포트 그룹 1과 2를 선택해야 합니다. 에 있습니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block>, 드롭다운 필드 1 및 2는 드롭다운 필드 3 및 4에서 플랫폼을 선택한 후에만 지원되는 플랫폼으로 채워집니다. 을 참조하십시오 <block ref="4dfd72a31c74d2e269d1ca49dcbd7291" category="inline-link-macro-rx"></block> 포트 테이블 사용 방법에 대한 자세한 내용은 를 참조하십시오.</block>
   <block id="a9bf0a810b5c634110cced1dcc9dd514" category="section-title">AFF A250 또는 FAS500f 및 AFF A220 또는 FAS2750 시스템을 함께 사용하기 위한 스위치 포트 사용</block>
   <block id="eab2b22490c89198b6c41f5b7c6e6104" category="image-alt">MCC IP 케이블 연결 AFF A250 및 A220을 Broadcom의 Bes 53248 스위치에 연결합니다</block>
+  <block id="cbb84028bf466aea1ee153b79bbe1a90" category="list-text">Red Hat Enterprise Linux 7 - 7.9 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)</block>
+  <block id="7ddeb0fd81d52fb9d56f1689ef0faa65" category="list-text">Red Hat Enterprise Linux 8.1 - 8.5</block>
+  <block id="af5c7720c35a6c5bbdbd9a0118f9b86a" category="list-text">MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)</block>
 </blocks>
