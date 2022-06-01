@@ -1719,8 +1719,6 @@
 
 
 
-
-
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -3381,10 +3379,8 @@
         협상된 전환 전에 맞춤형 AutoSupport 메시지를 전송하십시오
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_perform_a_negotiated_switchover.html">
         협상된 전환을 수행합니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/concept_output_for_storage_aggregate_plex_show_after_a_mcc_switchover.html">
-        스토리지 애그리게이트 plex show 명령의 출력은 MetroCluster 스위치오버 후 결정되지 않습니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_confirm_that_dr_partners_have_come_online.html">
-        DR 파트너가 온라인 상태인지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/manage/task_verify_SVMs are_running_and_aggregates_are_online.html">
+        SVM이 실행되고 있고 애그리게이트가 온라인 상태인지 확인합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 설정을 수정합니다</div>
       </a>
@@ -3911,7 +3907,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-06-01 14:14:51 +0000">06/01/2022</time>
     
   
 
@@ -3994,20 +3990,17 @@ ONTAP 9.8부터 ' * storage switch * ' 명령은 ' * system switch * '로 대체
 </div>
 </li>
 <li>
-<p>다음 명령을 사용하여 노드를 중단합니다.</p>
-<div class="paragraph">
-<p>'* halt*'<strong>* 4노드 또는 8노드 MetroCluster 구성의 경우, + "</strong> inhibit-takeover*" 매개변수를 사용하십시오</p>
-</div>
-<div class="paragraph">
-<p>를 누릅니다</p>
-</div>
+<p>' * halt * ' 명령을 사용하여 노드를 중단합니다</p>
+<div class="ulist">
+<ul>
+<li>
+<p>4노드 또는 8노드 MetroCluster 구성의 경우 ' * inhibit-takeover * ' 매개 변수를 사용합니다</p>
 <div class="listingblock">
 <div class="content">
 <pre>system node halt -node node1_SiteA -inhibit-takeover true -ignore-quorum-warnings true</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p>2노드 MetroCluster 구성의 경우 다음 명령을 사용합니다.</p>
 <div class="listingblock">
@@ -4027,7 +4020,7 @@ ONTAP 9.8부터 ' * storage switch * ' 명령은 ' * system switch * '로 대체
 <p>스토리지 컨트롤러</p>
 </li>
 <li>
-<p>MetroCluster FC 스위치</p>
+<p>MetroCluster FC 스위치(사용 중이고 구성이 2노드 확장 구성이 아닌 경우)</p>
 </li>
 <li>
 <p>ATTO FiberBridges</p>
@@ -4039,7 +4032,23 @@ ONTAP 9.8부터 ' * storage switch * ' 명령은 ' * system switch * '로 대체
 </div>
 </li>
 <li>
-<p>30분 정도 기다린 다음 모든 컨트롤러의 전원을 켭니다.</p>
+<p>30분 정도 기다린 후 현장에서 다음 장비의 전원을 켭니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>스토리지 쉘프</p>
+</li>
+<li>
+<p>ATTO FiberBridges</p>
+</li>
+<li>
+<p>MetroCluster FC 스위치</p>
+</li>
+<li>
+<p>스토리지 컨트롤러</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>컨트롤러의 전원을 켠 후 두 사이트에서 MetroCluster 구성을 확인합니다.</p>

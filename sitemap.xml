@@ -566,13 +566,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/concept_output_for_storage_aggregate_plex_show_after_a_mcc_switchover.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/concept_overview_of_the_tiebreaker_software.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
@@ -673,7 +666,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -1345,7 +1338,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster//search.html</loc>
       
-      <lastmod>2022-05-24T20:30:41+00:00</lastmod>
+      <lastmod>2022-06-01T14:15:22+00:00</lastmod>
       
     </url>
   
@@ -1604,7 +1597,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/task_cfg_bridges_mcfc.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -1770,13 +1763,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/task_confirm_that_dr_partners_have_come_online.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_connect_the_mcc_ip_controller_modules_2n_mcc_transition_supertask.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
@@ -1807,7 +1793,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_create_unmirrored_data_aggregates_mcc.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -2017,7 +2003,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/task_fcsw_cisco_configure_a_cisco_switch_supertask.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -2332,7 +2318,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_power_off_an_entire_mcc_fc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -2346,7 +2332,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_power_on_and_power_off_a_data_center.html</loc>
       
-      <lastmod>2022-05-18T17:27:10+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -2542,7 +2528,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_rename_the_cluster_for_mcc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
@@ -2935,6 +2921,13 @@
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/task_verify_SVMs are_running_and_aggregates_are_online.html</loc>
+      
+      <lastmod>2022-06-01T14:14:51+00:00</lastmod>
       
     </url>
   
