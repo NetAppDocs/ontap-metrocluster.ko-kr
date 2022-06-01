@@ -12,10 +12,8 @@ entries:
     url: "/manage/task_send_a_custom_autosupport_message_prior_to_negotiated_switchover.html"
   - title: 협상된 전환을 수행합니다
     url: "/manage/task_perform_a_negotiated_switchover.html"
-  - title: 스토리지 애그리게이트 plex show 명령의 출력은 MetroCluster 스위치오버 후 결정되지 않습니다
-    url: "/manage/concept_output_for_storage_aggregate_plex_show_after_a_mcc_switchover.html"
-  - title: DR 파트너가 온라인 상태인지 확인합니다
-    url: "/manage/task_confirm_that_dr_partners_have_come_online.html"
+  - title: SVM이 실행되고 있고 애그리게이트가 온라인 상태인지 확인합니다
+    url: "/manage/task_verify_SVMs are_running_and_aggregates_are_online.html"
   - title: 설정을 수정합니다
     entries:
     - title: MetroCluster FC 구성에서 구성을 수정합니다

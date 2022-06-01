@@ -80,7 +80,7 @@ Group Cluster Node               State          Mirroring Mode
 +
 [listing]
 ----
-cluster_2::> cluster peer modify-local-name -name cluster_2 -new-name
+cluster_A::> cluster peer modify-local-name -name cluster_2 -new-name
 cluster_B
 ----
 . 원격 클러스터에서 로컬 클러스터의 이름이 변경되었으며 정상적으로 실행 중인지 확인합니다.

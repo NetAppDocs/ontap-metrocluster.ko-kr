@@ -3654,7 +3654,6 @@
   <block id="0bc21a35b9fa75a32e7824ce87d4baad" category="list-text">Config Advisor 다운로드 페이지로 이동하여 도구를 다운로드합니다.</block>
   <block id="dd85c3d7d3adaed9956e1da9f117ac8b" category="list-text">Config Advisor를 실행하고, 도구의 출력을 검토하고, 출력에서 권장 사항을 따라 발견된 문제를 해결합니다.</block>
   <block id="cbd00cb1e3956c7b77e9a26286ae68a5" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 '-node' 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.</block>
-  <block id="ed4a2e0538bc20c760b1ea91bd6a8e39" category="list-text">디스크 자동 할당이 활성화되었는지 확인합니다.</block>
   <block id="3db118c57a32eeadafa348accaf1b303" category="summary">MetroCluster 구성에 컨트롤러를 추가할 때 데이터 보호를 제공하려면 루트 애그리게이트를 미러링해야 합니다.</block>
   <block id="47383a1b5f4ca911eeac439508e5ce41" category="doc">새 컨트롤러의 루트 애그리게이트를 미러링합니다</block>
   <block id="3e7cdad2c836355d7d9e7434ef0039f1" category="paragraph">이 작업은 새 컨트롤러 모듈에서 수행해야 합니다.</block>
@@ -5375,7 +5374,6 @@
   <block id="3139f8423b6707a01c072b52b74bba88" category="list-text">mask는 xxx.xxx.xxx.xxx 형식의 서브넷 마스크일 수 있습니다.</block>
   <block id="fd027079bbe69098f8750a9a1f564dac" category="paragraph">다음 예에서는 이더넷 포트 1에서 IP 서브넷 마스크가 255.255.255.0입니다.</block>
   <block id="bd82535b64d275e691210920ce86e57c" category="list-text">'Eet EthernetSpeed port speed' 명령어를 이용하여 Ethernet 포트의 속도를 설정한다.</block>
-  <block id="8d9110a527c214f8634fced6b92afa82" category="list-text">'속도'는 '100', '1000' 또는 '자동'이 될 수 있습니다.</block>
   <block id="c77a0844b861447f5e1f655105bfc197" category="paragraph">다음 예에서는 이더넷 포트 1에서 이더넷 속도를 1000으로 설정합니다.</block>
   <block id="b9fe6f89437e8317bad43dd8d668d48b" category="list-text">'aveConfiguration' 명령어를 이용하여 설정을 저장하고, 메시지가 나타나면 브리지를 다시 시작한다.</block>
   <block id="fb9b5d11aea961816a10aea050894354" category="paragraph">이더넷 포트를 구성한 후 구성을 저장하면 텔넷을 사용하여 브리지 구성을 진행할 수 있으며 FTP를 사용하여 브리지에 액세스하여 펌웨어 업데이트를 수행할 수 있습니다.</block>
@@ -6554,9 +6552,6 @@
   <block id="aad8b7c11b4aa6bcae4874f577338fdb" category="list-text">스위치백 동작 진행상황 MetroCluster show를 확인한다</block>
   <block id="cf7da6064d11b7240c8a90c881c2b0a8" category="paragraph">출력에 대기 중인 스위치백 이 표시되면 스위치백 작업이 계속 진행 중입니다.</block>
   <block id="2213f433c7bd712d0cb81eedc430d2bd" category="summary">전환이 완료된 후 DR 파트너가 디스크를 소유하고 파트너 SVM이 온라인 상태인지 확인해야 합니다.</block>
-  <block id="8603db18d8c416ccc81d2b424b35cf76" category="doc">DR 파트너가 온라인 상태인지 확인합니다</block>
-  <block id="66122b38af0f3f61bd3ec6b33481e4cf" category="list-text">집계 디스크가 재해 사이트로 전환되었는지 '스토리지 디스크 표시 필드 소유자, DR-홈'인지 확인합니다</block>
-  <block id="067a26f886e470db719ff9cb0e9f3446" category="paragraph">이 예에서 출력은 전환된 디스크에 DR-Home 필드가 설정되어 있음을 보여 줍니다.</block>
   <block id="61b3dba0ec8dd8583fd3305e70822e04" category="list-text">storage aggregate show 명령을 사용하여 애그리게이트가 전환되었는지 확인합니다.</block>
   <block id="9088c944ef75a914aa5d4867e1767842" category="paragraph">이 예제에서는 애그리게이트가 전환된 것으로 가정합니다. 루트 애그리게이트(aggr0_B2)가 성능 저하 상태입니다. 데이터 애그리게이트(B2_aggr2)는 미러링된 정상 상태입니다.</block>
   <block id="e6425dc24f9a2e2af2f6d10b0fe7e9bd" category="list-text">vserver show 명령을 사용하여 보조 SVM이 온라인 상태인지 확인합니다.</block>
@@ -7229,8 +7224,6 @@
   <block id="dcb50c9c2355a3cb9319d8e715205e95" category="list-text">MetroCluster 구성과 운영 모드가 정상인지 확인합니다. '* MetroCluster show * '</block>
   <block id="a5bdcf7a78025a6dd8c23463165acdf4" category="list-text">'* storage bridge show * ' 명령을 실행합니다</block>
   <block id="dde8f3550b8192d2b695c0bd40ddc1c4" category="list-text">AUSO 실패 도메인을 로 수정하여 AUSO를 비활성화합니다</block>
-  <block id="c4e7bf68890c72361daa13a0af4f08f2" category="list-text">다음 명령을 사용하여 노드를 중단합니다.</block>
-  <block id="74baa61a2162fe0f71b9573c2f34fc32" category="paragraph">'* halt*'** 4노드 또는 8노드 MetroCluster 구성의 경우, + "* inhibit-takeover*" 매개변수를 사용하십시오</block>
   <block id="93081236e78e8a13aff59ffaa04927e9" category="list-text">2노드 MetroCluster 구성의 경우 다음 명령을 사용합니다.</block>
   <block id="da7a50a0e8e8ff0c06082864043b3257" category="list-text">MetroCluster FC 스위치</block>
   <block id="043cef7f3b4952ab49e47a66b62d07cb" category="list-text">ATTO FiberBridges</block>
@@ -11262,11 +11255,9 @@
   <block id="f9d1d88dc50b4154bc11fca12fdf231e" category="list-text">MetroCluster 패브릭 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.</block>
   <block id="7808905132392bd0ce5a445469e4132d" category="summary">MetroCluster 구성의 각 Cisco 스위치는 ISL 및 스토리지 연결에 맞게 적절히 구성해야 합니다.</block>
   <block id="e5d68dba728fb2d82fcd5253e45d2606" category="paragraph">Cisco FC 스위치에는 다음 요구사항이 적용됩니다.</block>
-  <block id="961d09a7e51b8ffaa03e9f30944b0adf" category="list-text">동일한 모델의 지원되는 4개의 Cisco 스위치를 동일한 NX-OS 버전 및 라이센스로 사용하고 있어야 합니다.</block>
   <block id="3ec266ea74a45a024e2d5a1bd41809e5" category="list-text">MetroCluster 구성에는 4개의 스위치가 필요합니다.</block>
   <block id="2761e9bec5ebacec4c753af20fb77c0b" category="paragraph">4개의 스위치는 각각 2개의 스위치로 구성된 2개의 Fabric에 연결되어야 하며 각 Fabric은 두 사이트를 포괄해야 합니다.</block>
   <block id="94ddea3989db862af4097d594a0b3616" category="list-text">스위치는 ATTO FiberBridge 모델에 대한 연결을 지원해야 합니다.</block>
-  <block id="6b0913c627afc4001314955fa8aa4721" category="list-text">Cisco FC 스토리지 패브릭에서는 암호화 또는 압축을 사용할 수 없습니다. MetroCluster 구성에서는 지원되지 않습니다.</block>
   <block id="bdec96a67c6505262de48bb96911cf92" category="paragraph">ISL(Inter-Switch Link) 연결에는 다음 요구 사항이 적용됩니다.</block>
   <block id="83b23219f5596e10bed8c27500b5613d" category="paragraph">다양한 Fabric에서 서로 다른 길이의 ISL을 사용할 수 있습니다. 모든 패브릭에서 동일한 속도를 사용해야 합니다.</block>
   <block id="34002160bdcb409321181729dd1af0a3" category="paragraph">스토리지 접속에는 다음 요구 사항이 적용됩니다.</block>
@@ -11937,7 +11928,6 @@
   <block id="96effe55f4da22d5c25718b62d05d235" category="sidebar">시스템을 전환할 준비가 되었는지 확인합니다</block>
   <block id="6f4a780481b56c575dbc6baddb640db2" category="sidebar">협상된 전환 전에 맞춤형 AutoSupport 메시지를 전송하십시오</block>
   <block id="fb46e3fec300d7afb8d95ad37dd036c2" category="sidebar">협상된 전환을 수행합니다</block>
-  <block id="54d232cc2492683cacdfa62436baae04" category="sidebar">DR 파트너가 온라인 상태인지 확인합니다</block>
   <block id="dc83484006791ea1b99aaaea10c1bafb" category="sidebar">설정을 수정합니다</block>
   <block id="a3a667e65760237e6d02c759034ddd73" category="sidebar">MetroCluster FC 구성에서 구성을 수정합니다</block>
   <block id="efe698fdacf5509f669bbfa66669a1e4" category="sidebar">협상된 전환 후 데이터 애그리게이트를 수정합니다</block>
@@ -12551,4 +12541,15 @@
   <block id="cbb84028bf466aea1ee153b79bbe1a90" category="list-text">Red Hat Enterprise Linux 7 - 7.9 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)</block>
   <block id="7ddeb0fd81d52fb9d56f1689ef0faa65" category="list-text">Red Hat Enterprise Linux 8.1 - 8.5</block>
   <block id="af5c7720c35a6c5bbdbd9a0118f9b86a" category="list-text">MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)</block>
+  <block id="f59e44c66a463087eb80b00cc5e7867c" category="list-text">동일한 모델의 지원되는 Cisco 스위치 4개를 동일한 NX-OS 버전 및 라이센스로 사용해야 합니다.</block>
+  <block id="de27fc3292cfa48f233ba5969313e590" category="list-text">Cisco FC 스토리지 패브릭에서는 암호화 또는 압축을 사용할 수 없습니다. MetroCluster 구성에서는 지원되지 않습니다.</block>
+  <block id="17a482b02d43109c8b8a1497839ff0b4" category="list-text">' * halt * ' 명령을 사용하여 노드를 중단합니다</block>
+  <block id="fad9503a100b92ad7c54437a9309f256" category="list-text">4노드 또는 8노드 MetroCluster 구성의 경우 ' * inhibit-takeover * ' 매개 변수를 사용합니다</block>
+  <block id="63e64e288714d32cded7a6ed8dfec32c" category="list-text">MetroCluster FC 스위치(사용 중이고 구성이 2노드 확장 구성이 아닌 경우)</block>
+  <block id="a2a7d27c6bf1ad121aeada48fc70ca1d" category="list-text">30분 정도 기다린 후 현장에서 다음 장비의 전원을 켭니다.</block>
+  <block id="383d92c84e46dd00caa3dbad6de7fe2f" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
+  <block id="688f019e2f851b28c81904e0acd0c450" category="paragraph"><block ref="6f99ee259693716af238b16f6b3287d3" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 섹션에서</block>
+  <block id="e3b4bec7cc0382f3d2b420e4d37da974" category="list-text">스토리지 컨트롤러의 전원을 켭니다.</block>
+  <block id="be8e7921b8bc696adb0f989ee98b7e9f" category="list-text">'속도'는 100이나 1000이 될 수 있습니다.</block>
+  <block id="e44042693910b4bd1a0494893ddc1892" category="doc">SVM이 실행되고 있고 애그리게이트가 온라인 상태인지 확인합니다</block>
 </blocks>

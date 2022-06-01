@@ -586,6 +586,7 @@ switch_A_1# copy running-config startup-config
 .. ISL을 확인합니다.
 
 
+. 스토리지 컨트롤러의 전원을 켭니다.
 . 쉘프 전원을 켜고 전원을 완전히 켤 때까지 충분한 시간을 둡니다.
 . FiberBridge 브리지의 전원을 켭니다.
 +

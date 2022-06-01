@@ -52,19 +52,14 @@ cluster_A_site_A::*>metrocluster modify -auto-switchover-failure-domain auso-dis
         End Time: 4/25/2020 20:20:36
           Errors: -
 ----
-. 다음 명령을 사용하여 노드를 중단합니다.
+. ' * halt * ' 명령을 사용하여 노드를 중단합니다
 +
-'* halt*'** 4노드 또는 8노드 MetroCluster 구성의 경우, + "* inhibit-takeover*" 매개변수를 사용하십시오
-
-+
-를 누릅니다
-
+** 4노드 또는 8노드 MetroCluster 구성의 경우 ' * inhibit-takeover * ' 매개 변수를 사용합니다
 +
 [listing]
 ----
 system node halt -node node1_SiteA -inhibit-takeover true -ignore-quorum-warnings true
 ----
-+
 ** 2노드 MetroCluster 구성의 경우 다음 명령을 사용합니다.
 +
 [listing]
@@ -76,12 +71,19 @@ system node halt -node node1_SiteA -ignore-quorum-warnings true
 . 현장에서 다음 장비의 전원을 끕니다.
 +
 ** 스토리지 컨트롤러
-** MetroCluster FC 스위치
+** MetroCluster FC 스위치(사용 중이고 구성이 2노드 확장 구성이 아닌 경우)
 ** ATTO FiberBridges
 ** 스토리지 쉘프
 
 
-. 30분 정도 기다린 다음 모든 컨트롤러의 전원을 켭니다.
+. 30분 정도 기다린 후 현장에서 다음 장비의 전원을 켭니다.
++
+** 스토리지 쉘프
+** ATTO FiberBridges
+** MetroCluster FC 스위치
+** 스토리지 컨트롤러
+
+
 . 컨트롤러의 전원을 켠 후 두 사이트에서 MetroCluster 구성을 확인합니다.
 +
 구성을 확인하려면 1단계를 반복합니다.

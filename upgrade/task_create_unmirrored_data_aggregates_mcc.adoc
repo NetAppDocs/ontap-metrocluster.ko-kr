@@ -30,14 +30,6 @@ NOTE: 미러링되지 않은 애그리게이트는 해당 애그리게이트를 
 
 
 .단계
-. 미러링되지 않은 애그리게이트 구축 사용:
-+
-MetroCluster modify-enable-미러링되지 않은-aggr-deployment true
-
-. 디스크 자동 할당이 비활성화되었는지 확인합니다.
-+
-'디스크 옵션 표시'입니다
-
 . 미러링되지 않은 애그리게이트를 포함할 디스크 쉘프를 설치 및 케이블로 연결합니다.
 +
 플랫폼 및 디스크 쉘프에 대한 _Installation 및 Setup_설명서의 절차를 사용할 수 있습니다.
@@ -92,14 +84,6 @@ controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -n
 . 새 애그리게이트의 RAID 그룹 및 드라이브를 확인합니다.
 +
 'Storage aggregate show-status-aggregate_aggregate-name_'
-
-. 미러링되지 않은 애그리게이트 구축 사용 안 함:
-+
-'MetroCluster modify-enable-미러링되지 않은-aggr-deployment false'
-
-. 디스크 자동 할당이 활성화되었는지 확인합니다.
-+
-'디스크 옵션 표시'입니다
 
 
 
