@@ -97,6 +97,8 @@ entries:
     url: "/install-ip/concept_mediator_requirements.html"
   - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성
     url: "/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html"
+  - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다
+    url: "/install-ip/task_remove_unconfigure_mediator.html"
   - title: MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
     url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
 - title: MetroCluster 구성을 테스트하는 중입니다
