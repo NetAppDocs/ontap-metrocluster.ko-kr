@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</title>
+  <title>MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)" />
+  <meta property="og:title" content="MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html" />
-	<meta property="og:description" content="ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다." />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html" />
+	<meta property="og:description" content="MetroCluster IP 구성에서 ONTAP 중재자 서비스를 제거할 수 있습니다." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다.">
-  <meta name="keywords" content=" nondisruptive, transition, fc, ip"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="MetroCluster IP 구성에서 ONTAP 중재자 서비스를 제거할 수 있습니다.">
+  <meta name="keywords" content=" ontap, mediator, service, assist, remove, unconfigure, requirements, mediator requirements"><!-- Icons -->
   <link rel="icon" href="/ko-kr/ontap-metrocluster/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)](https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다](https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/install-ip/task_remove_unconfigure_mediator.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -292,15 +292,15 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
+                  <a href="https://docs.netapp.com/zh-tw/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -1308,6 +1308,15 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/pages/install-ip/task_remove_unconfigure_mediator.pdf" >
+    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -2146,15 +2155,6 @@
             MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
           </a>
           
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/ontap-metrocluster/pdfs/pages/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.pdf" >
-    <img src="/ko-kr/ontap-metrocluster/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -3237,7 +3237,7 @@
         ONTAP 중재자 서비스 설치 준비
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html">
         MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_remove_unconfigure_mediator.html">
         MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/install-ip/task_connecting_mcc_to_different_mediator_instance.html">
         MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
@@ -3547,7 +3547,7 @@
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html">
         개요
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> MetroCluster FC에서 MetroCluster IP 구성으로 전환할 준비를 합니다</div>
@@ -3904,14 +3904,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</h1>
+  <h1 class="n-doc__component-detail-heading">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-06-02 18:33:11 +0000">06/02/2022</time>
     
   
 
@@ -3919,29 +3919,46 @@
 </p>
 
 <div class="paragraph lead">
-<p>ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다.</p>
+<p>MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 ONTAP 중재자를 성공적으로 설치 및 구성해야 합니다.</p>
+</div>
+<div class="paragraph">
+<p>MetroCluster IP 구성의 두 클러스터 모두에서 이 작업을 수행해야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>다음 명령을 사용하여 ONTAP 중재자 서비스를 구성 해제합니다.</p>
+<div class="paragraph">
+<p>'MetroCluster configuration-settings 중재자 제거</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>다음 명령을 사용하여 손상된 디스크가 있는지 확인합니다.</p>
+<div class="paragraph">
+<p>'디스크 쇼-파단'</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.</p>
-</li>
-<li>
-<p>이 절차는 무중단으로 수행할 수 있으며</p>
-<div class="paragraph">
-<p>MetroCluster 구성은 작업 중에도 데이터를 계속 제공할 수 있습니다.</p>
-</div>
-</li>
-<li>
-<p>이 절차는 4노드 MetroCluster FC 구성에만 적용됩니다.</p>
-<div class="paragraph">
-<p>2노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 <a href="concept_choosing_your_transition_procedure_mcc_transition.html">"전환 절차 선택"</a>.</p>
-</div>
-</li>
-<li>
-<p>모든 요구 사항을 충족하고 절차의 모든 단계를 따라야 합니다.</p>
+<p>예 *</p>
 </li>
 </ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>There are no entries matching your query.</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 
     </article>
