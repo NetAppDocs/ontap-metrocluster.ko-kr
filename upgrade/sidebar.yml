@@ -107,7 +107,7 @@ entries:
     entries:
     - title: 패브릭에서 기존 DR 그룹의 연결을 끊습니다
       url: "/upgrade/task_disconnect_the_exist_dr_group_mcc_expansion.html"
-    - title: RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+    - title: 스위치를 재구성하고 재구성하십시오
       url: "/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html"
   - title: 새 컨트롤러에서 ONTAP를 구성합니다
     entries:

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, apply, rcf, files, recable, switches 
 summary: 새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다. 
 ---
-= RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다
+= 스위치를 재구성하고 재구성하십시오
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,12 @@ summary: 새로운 노드를 수용하기 위해 조닝을 재구성하려면 RC
 
 [role="lead"]
 새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다.
+
+RCF 파일을 사용하여 스위치를 구성할 수 없는 경우 스위치를 수동으로 구성해야 합니다. 참조:
+
+* link:../install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
+* link:../install-fc/task_fcsw_cisco_configure_a_cisco_switch_supertask.html["Cisco FC 스위치를 수동으로 구성합니다"]
+
 
 .단계
 . 구성에 사용할 RCF 파일을 찾습니다.
@@ -24,10 +30,6 @@ RCF 파일은 8노드 구성에 사용해야 하며 스위치 모델에 맞게 �
 . 이전에 생성한 케이블링 레이아웃을 사용하여 기존 브리지와 새로운 FC-SAS 브릿지를 FC 스위치에 케이블로 연결합니다.
 +
 FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.
-
-+
-
-NOTE: RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
 
 . 스위치에 맞는 명령을 사용하여 포트가 온라인 상태인지 확인합니다.
 +
@@ -53,10 +55,6 @@ Cisco의
 . 의 절차를 사용합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 이전에 생성한 케이블 연결 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.
 +
 FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"] 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.
-
-+
-
-NOTE: RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
 
 . 기존 노드에서 FC-VI 포트가 온라인 상태인지 확인합니다.
 +

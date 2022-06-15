@@ -2479,14 +2479,12 @@
   <block id="17df4fd49850915af19920e401bb115e" category="list-text">Tiebreaker CLI monitor dump-status 명령을 사용하여 모든 MetroCluster 구성의 전체 상태에 대한 덤프 파일을 생성합니다.</block>
   <block id="fe2474eef36644b3afa9a1943fe28539" category="paragraph">다음 예에서는 /var/log/netapp/mctb/metrocluster-tiebreaker-status.xml 덤프 파일이 성공적으로 생성되었음을 보여 줍니다.</block>
   <block id="f13350a82ffb5e406781c64809e8f8a8" category="summary">새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다.</block>
-  <block id="6016ea2cf4e87fb0a89afdab83b8a98b" category="doc">RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다</block>
   <block id="6a82c384f85f037d7996beaa2d1d7d15" category="list-text">구성에 사용할 RCF 파일을 찾습니다.</block>
   <block id="c0b2ef0c7e8bedc314010fcbe929e544" category="paragraph">RCF 파일은 8노드 구성에 사용해야 하며 스위치 모델에 맞게 사용해야 합니다.</block>
   <block id="93db71f559f17fb1c146361893f3ff36" category="list-text">RCF 파일을 다운로드 페이지의 지침에 따라 적용하고 ISL 설정을 필요에 따라 조정합니다.</block>
   <block id="b862528f72ea6d2ddcdf03d59e55fa27" category="list-text">스위치 구성이 저장되었는지 확인합니다.</block>
   <block id="9566c6febae9d51d50e73e64dbd10cfe" category="list-text">FC 스위치를 재부팅합니다.</block>
   <block id="cc421f36cbb2a622eb7463c75215237e" category="list-text">이전에 생성한 케이블링 레이아웃을 사용하여 기존 브리지와 새로운 FC-SAS 브릿지를 FC 스위치에 케이블로 연결합니다.</block>
-  <block id="81f2b3db69617a2591d70d6a0ed93fe7" category="admonition">RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.</block>
   <block id="6bea4e12f9fc7219e8f9f668a51bbd7e" category="list-text">스위치에 맞는 명령을 사용하여 포트가 온라인 상태인지 확인합니다.</block>
   <block id="603daf7d0ebdc9f03b83a713f846bd99" category="cell">스위치 공급업체</block>
   <block id="f767ce6f0ed7bd206c39e1687db0b685" category="paragraph">모든 정보를 제공합니다</block>
@@ -11248,7 +11246,6 @@
   <block id="da490e4cad45c10def878a2b7c965b5e" category="list-text">기존 구성 지우기: + `* 쓰기 지우기 * '</block>
   <block id="4eec5768b0acba2b883e4b34537af3c1" category="list-text">스위치 소프트웨어를 다시 로드합니다: + " * reload * "</block>
   <block id="6ca513baf7b251864842229b25190fb8" category="paragraph">시스템이 재부팅되고 구성 마법사가 시작됩니다. 부팅 중에 Auto Provisioning 중단 메시지가 표시된 후 정상 설치를 계속하면(예/아니요) [n] "* yes*"로 응답하여 계속 진행해야 합니다.</block>
-  <block id="2d49954711bf3702573c6a8e8d807645" category="list-text">SSH 서비스(원격 지원 에이전트) 구성 마법사를 완료한 후 스위치가 재부팅됩니다.</block>
   <block id="f1739ac2b66c3c894842c1cb12d27102" category="paragraph">다음 예에서는 스위치에 로그인할 때 프롬프트와 시스템 응답을 보여 줍니다. 꺾쇠 괄호(' * &lt;&lt; * ')는 사용자가 정보를 입력하는 위치를 표시합니다.</block>
   <block id="5a50560fb9b26d7fc2c92b7d5f6ae1b1" category="list-text">스위치 이름, 관리 주소 및 게이트웨이를 포함한 다음 프롬프트 세트에 기본 정보를 입력하고, 다음 예에서와 같이 SSH 키에 대해 ' * RSA * '를 입력합니다.</block>
   <block id="1b4782ce89069f77ed7b432f97688c96" category="paragraph">마지막 프롬프트 세트가 구성을 완료합니다.</block>
@@ -11876,7 +11873,6 @@
   <block id="1d6f4a845a954c7b875dc506c2f3b1dc" category="sidebar">MetroCluster 구성에 노드를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="991d75ef8b30d43e0c77377fdedbced8" category="sidebar">새 노드의 스위치 패브릭을 재설정하고 존(zone)합니다</block>
   <block id="5d4fa840aa69061d766097a3909fad83" category="sidebar">패브릭에서 기존 DR 그룹의 연결을 끊습니다</block>
-  <block id="59c85c278b8f5f8a994f268744829b19" category="sidebar">RCF 파일을 적용하고 스위치를 재전송할 수 있습니다</block>
   <block id="d9a531a3f31df861443133dd9765f39c" category="sidebar">새 컨트롤러에서 ONTAP를 구성합니다</block>
   <block id="a3d53cea9a8b8b61d7bf5ff5d1804260" category="sidebar">AFF 시스템에서 디스크 소유권을 할당합니다</block>
   <block id="83acf92ff8f6812b50314e32473081e5" category="sidebar">비 AFF 시스템에서 디스크 소유권을 할당합니다</block>
@@ -12561,4 +12557,11 @@
   <block id="0c87e171b9e1156bebc0a65b722d174d" category="list-text">다음 명령을 사용하여 손상된 디스크가 있는지 확인합니다.</block>
   <block id="27bf55792722dd4b16925981ef8953b4" category="paragraph">'디스크 쇼-파단'</block>
   <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 예 *</block>
+  <block id="2e5c6d46dc39a1cc71a6f41b56106221" category="list-text">SSH 서비스(원격 지원 에이전트)</block>
+  <block id="4c20f2b5dfebba1daad521c7b3ab4c3b" category="paragraph">구성 마법사를 완료하면 스위치가 재부팅됩니다.</block>
+  <block id="5582507cb9f874f57ac6bf62db65d371" category="doc">스위치를 재구성하고 재구성하십시오</block>
+  <block id="6647147ed73881ba6516c57ac1b5fe4a" category="paragraph">RCF 파일을 사용하여 스위치를 구성할 수 없는 경우 스위치를 수동으로 구성해야 합니다. 참조:</block>
+  <block id="71620bedc8491865816460c55b3cde98" category="list-text"><block ref="71620bedc8491865816460c55b3cde98" category="inline-link-macro-rx"></block></block>
+  <block id="3a8190b24d904ae352e54f8a0a3df0bb" category="list-text"><block ref="3a8190b24d904ae352e54f8a0a3df0bb" category="inline-link-macro-rx"></block></block>
+  <block id="bee24b783e44923012afab506584e701" category="list-text">SSH 서비스(RSA)</block>
 </blocks>
