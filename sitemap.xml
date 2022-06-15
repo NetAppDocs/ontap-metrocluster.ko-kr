@@ -1338,7 +1338,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster//search.html</loc>
       
-      <lastmod>2022-06-02T18:33:46+00:00</lastmod>
+      <lastmod>2022-06-15T14:20:30+00:00</lastmod>
       
     </url>
   
@@ -1374,13 +1374,6 @@
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_apply_rcfs.html</loc>
       
       <lastmod>2022-04-14T13:29:45+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
@@ -2463,6 +2456,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html</loc>
+      
+      <lastmod>2022-06-15T14:19:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
@@ -2598,7 +2598,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/task_reset_the_cisco_fc_switch_to_factory_defaults.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-15T14:19:49+00:00</lastmod>
       
     </url>
   
@@ -2787,7 +2787,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_switch_config_cisco.html</loc>
       
-      <lastmod>2022-05-10T16:17:27+00:00</lastmod>
+      <lastmod>2022-06-15T14:19:49+00:00</lastmod>
       
     </url>
   

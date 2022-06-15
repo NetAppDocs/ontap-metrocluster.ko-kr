@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다</title>
+  <title>스위치를 재구성하고 재구성하십시오</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다" />
+  <meta property="og:title" content="스위치를 재구성하고 재구성하십시오" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" />
 	<meta property="og:description" content="새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다." />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다](https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/upgrade/task_apply_the_rcf_files_and_recable_the_switches.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/issues/new?body=Page%3A%20[스위치를 재구성하고 재구성하십시오](https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-metrocluster/blob/main/upgrade/task_recable_and_reconfigure_the_switches.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-metrocluster/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-metrocluster/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -2886,7 +2878,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/index.html">
         MetroCluster
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/releasenotes.html">
@@ -3730,7 +3722,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_disconnect_the_exist_dr_group_mcc_expansion.html">
         패브릭에서 기존 DR 그룹의 연결을 끊습니다
       </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html">
-        RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+        스위치를 재구성하고 재구성하십시오
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 새 컨트롤러에서 ONTAP를 구성합니다</div>
       </a>
@@ -3904,14 +3896,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다</h1>
+  <h1 class="n-doc__component-detail-heading">스위치를 재구성하고 재구성하십시오</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-06-15 14:19:49 +0000">06/15/2022</time>
     
   
 
@@ -3920,6 +3912,19 @@
 
 <div class="paragraph lead">
 <p>새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다.</p>
+</div>
+<div class="paragraph">
+<p>RCF 파일을 사용하여 스위치를 구성할 수 없는 경우 스위치를 수동으로 구성해야 합니다. 참조:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html">"Brocade FC 스위치를 수동으로 구성합니다"</a></p>
+</li>
+<li>
+<p><a href="../install-fc/task_fcsw_cisco_configure_a_cisco_switch_supertask.html">"Cisco FC 스위치를 수동으로 구성합니다"</a></p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -3943,18 +3948,6 @@
 <p>이전에 생성한 케이블링 레이아웃을 사용하여 기존 브리지와 새로운 FC-SAS 브릿지를 FC 스위치에 케이블로 연결합니다.</p>
 <div class="paragraph">
 <p>FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 <a href="../install-fc/index.html">"패브릭 연결 MetroCluster 설치 및 구성"</a> 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
-</td>
-<td class="content">
-RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
-</td>
-</tr>
-</table>
 </div>
 </li>
 <li>
@@ -3992,18 +3985,6 @@ RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없
 <p>의 절차를 사용합니다 <a href="../install-fc/index.html">"패브릭 연결 MetroCluster 설치 및 구성"</a> 이전에 생성한 케이블 연결 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.</p>
 <div class="paragraph">
 <p>FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 <a href="../install-fc/index.html">"패브릭 연결 MetroCluster 설치 및 구성"</a> 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
-</td>
-<td class="content">
-RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCF 파일을 사용할 수 없는 경우 이 절차를 사용하지 마십시오.
-</td>
-</tr>
-</table>
 </div>
 </li>
 <li>
@@ -4187,4 +4168,5 @@ RCF 파일을 사용하는 방법으로 환경을 케이블로 연결할 수 없
     </script>
     <script src='/ko-kr/ontap-metrocluster/js/www-ntap.js'></script>
     <script src='/ko-kr/ontap-metrocluster/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/ontap-metrocluster/js/sidebar.js'></script>
   </body></html>

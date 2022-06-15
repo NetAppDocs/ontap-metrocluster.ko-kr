@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-metrocluster/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_mediator_requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/install-ip/concept_mediator_requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_mediator_requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/install-ip/concept_mediator_requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-metrocluster/install-ip/concept_mediator_requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_mediator_requirements.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_mediator_requirements.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-metrocluster/install-ip/concept_mediator_requirements.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-metrocluster/install-ip/concept_mediator_requirements.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-metrocluster/install-ip/concept_mediator_requirements.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -2886,7 +2878,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/index.html">
         MetroCluster
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/releasenotes.html">
@@ -3730,7 +3722,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_disconnect_the_exist_dr_group_mcc_expansion.html">
         패브릭에서 기존 DR 그룹의 연결을 끊습니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_apply_the_rcf_files_and_recable_the_switches.html">
-        RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+        스위치를 재구성하고 재구성하십시오
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 새 컨트롤러에서 ONTAP를 구성합니다</div>
       </a>
@@ -4240,4 +4232,5 @@
     </script>
     <script src='/ko-kr/ontap-metrocluster/js/www-ntap.js'></script>
     <script src='/ko-kr/ontap-metrocluster/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/ontap-metrocluster/js/sidebar.js'></script>
   </body></html>
