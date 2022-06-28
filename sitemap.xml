@@ -92,7 +92,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/concept_configure_the_mcc_software_in_ontap.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -146,14 +146,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_differences.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_differences.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_differences.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_differences.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -174,14 +174,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_firewalls.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_firewalls.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_firewalls.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_firewalls.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -209,14 +209,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -279,14 +279,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_peering.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_peering.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_peering.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_peering.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -307,14 +307,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_unmirrored_aggrs.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_unmirrored_aggrs.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_unmirrored_aggrs.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_unmirrored_aggrs.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -330,21 +330,21 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/concept_considerations_when_removing_mcc_configurations.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_when_removing_mcc_configurations.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_when_removing_mcc_configurations.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_when_removing_mcc_configurations.html</loc>
+      
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -356,16 +356,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_when_using_ontap_in_a_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_when_using_ontap_in_a_mcc_configuration.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-05-18T17:27:10+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/concept_considerations_when_using_ontap_in_a_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/concept_considerations_when_using_ontap_in_a_mcc_configuration.html</loc>
       
-      <lastmod>2022-05-18T17:27:10+00:00</lastmod>
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
@@ -545,14 +545,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/concept_monitoring_the_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/concept_monitoring_the_mcc_configuration.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/concept_monitoring_the_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/concept_monitoring_the_mcc_configuration.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -839,7 +839,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/generic_machine_translation_disclaimer.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/generic_machine_translation_disclaimer.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -853,28 +853,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/generic_machine_translation_disclaimer.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/generic_machine_translation_disclaimer.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/generic_machine_translation_disclaimer.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/generic_machine_translation_disclaimer.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/generic_machine_translation_disclaimer.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -888,21 +867,28 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/generic_machine_translation_disclaimer.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/generic_machine_translation_disclaimer.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/generic_machine_translation_disclaimer.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -916,7 +902,21 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -965,49 +965,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_copyright.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/reference_copyright.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_copyright.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/reference_copyright.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/reference_copyright.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/reference_copyright.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/reference_copyright.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1021,6 +979,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/reference_copyright.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_copyright.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/reference_copyright.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
@@ -1028,7 +1000,28 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_copyright_and_trademark.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/reference_copyright.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_copyright.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/reference_copyright.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/reference_copyright.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1042,7 +1035,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_copyright_and_trademark.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/reference_copyright_and_trademark.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1056,6 +1049,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_copyright_and_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/reference_copyright_and_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/reference_copyright_and_trademark.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
@@ -1063,7 +1070,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/reference_copyright_and_trademark.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_copyright_and_trademark.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1077,14 +1084,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/reference_copyright_and_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/reference_copyright_and_trademark.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/reference_copyright_and_trademark.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1210,49 +1210,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-fc/reference_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/reference_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/reference_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/reference_trademark.html</loc>
-      
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/reference_trademark.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1266,7 +1224,49 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/reference_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/reference_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/manage/reference_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/reference_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/tiebreaker/reference_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/reference_trademark.html</loc>
+      
+      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/reference_trademark.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -1338,7 +1338,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster//search.html</loc>
       
-      <lastmod>2022-06-15T14:20:30+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:56+00:00</lastmod>
       
     </url>
   
@@ -1646,7 +1646,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/task_complete_recovery.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -1842,7 +1842,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_do_not_use_for_9_8_and_later_reconfigure_the_fc_switch_layout_for_ontap_9_1_or_later.html</loc>
       
-      <lastmod>2022-04-14T13:29:45+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -2164,7 +2164,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_install_licenses_on_the_new_controller_module_cluster_mode.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -2225,14 +2225,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_move_a_metadata_volume_in_mcc_configurations.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_move_a_metadata_volume_in_mcc_configurations.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_move_a_metadata_volume_in_mcc_configurations.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/maintain/task_move_a_metadata_volume_in_mcc_configurations.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -2346,7 +2346,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_power_up_both_controller_modules_and_display_the_loader_prompt_2_node_mcc_expansion.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -2472,7 +2472,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/disaster-recovery/task_recover_from_a_non_controller_failure_mcc_dr.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -2626,7 +2626,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/transition/task_return_the_system_to_normal_operation_2n_mcc_transition_supertask.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -2710,7 +2710,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_sw_config_configure_clusters.html</loc>
       
-      <lastmod>2022-05-05T14:22:50+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
@@ -2820,14 +2820,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/task_test_the_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_test_the_mcc_configuration.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-ip/task_test_the_mcc_configuration.html</loc>
+      <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/install-stretch/task_test_the_mcc_configuration.html</loc>
       
       <lastmod>2022-04-13T14:15:34+00:00</lastmod>
       
@@ -2864,7 +2864,7 @@
     <url>
       <loc>https://docs.netapp.com/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html</loc>
       
-      <lastmod>2022-04-13T14:15:34+00:00</lastmod>
+      <lastmod>2022-06-28T12:59:31+00:00</lastmod>
       
     </url>
   
