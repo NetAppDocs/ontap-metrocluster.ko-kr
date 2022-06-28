@@ -1967,13 +1967,8 @@ NOTE: 지원되는 최소 구성에서는 드라이브 수가 제한되어 있�
 ** Aggregate의 RAID 그룹에 적합한 RAID 유형입니다
 ** RAID 그룹에 포함될 수 있는 최대 드라이브 수입니다
 ** 이 옵션에 대한 자세한 내용은 스토리지 애그리게이트 생성 man 페이지를 참조하십시오.
-
-
 +
 다음 명령을 실행하면 10개의 디스크로 미러링된 Aggregate가 생성됩니다.
-
-+
-를 누릅니다
 
 +
 [listing]
@@ -1983,6 +1978,8 @@ cluster_A::> storage aggregate create aggr1_node_A_1 -diskcount 10 -node node_A_
 [Job 15] The job is starting.
 [Job 15] Job succeeded: DONE
 ----
+
+
 . 새 애그리게이트의 RAID 그룹 및 드라이브를 확인합니다.
 +
 'Storage aggregate show-status-aggregate_aggregate-name_'
@@ -2010,6 +2007,9 @@ NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 �
 모든 노드에서 'MetroCluster configure' 명령을 한 번 실행하여 MetroCluster 설정을 활성화한다. 각 사이트나 노드에서 명령을 실행할 필요가 없으며 명령을 실행하기로 선택한 노드나 사이트는 중요하지 않습니다.
 
 MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시스템 ID를 갖는 두 노드를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.
+
+
+NOTE: 'MetroCluster configure' 명령을 실행하기 전에 Onboard Key Manager(OKM) 또는 외부 키 관리를 * 구성하지 않아야 합니다.
 
 .단계
 . [[step1_single_mirror]] 다음 형식으로 MetroCluster를 구성합니다.

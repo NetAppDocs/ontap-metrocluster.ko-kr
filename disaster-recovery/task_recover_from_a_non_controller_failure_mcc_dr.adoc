@@ -346,7 +346,7 @@ Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 aggr_b2          -         -     - unknown      - node_A_1
 ----
 +
-재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에서 해당 애그리게이트는 "unknown" 상태로 표시될 수 있습니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.
+재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에서 해당 애그리게이트는 "unknown" 상태로 표시될 수 있습니다. 미러링되지 않은 애그리게이트 및 참조에 대한 오래된 항목을 제거하려면 기술 지원 부서에 문의하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_stale_unmirrored_aggregate_entries_in_a_MetroCluster_following_disaster_where_storage_was_lost["NetApp 기술 자료: 스토리지가 손실된 후 재해 발생 시 MetroCluster에서 오래된 Aggregate 항목을 제거하는 방법"^]
 
 . 남아 있는 클러스터의 모든 동기화 대상 SVM이 휴면 상태(관리 상태 "중지됨" 표시)이고 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.
 +

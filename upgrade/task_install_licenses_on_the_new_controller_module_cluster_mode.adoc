@@ -18,7 +18,7 @@ summary: '표준 \(node-locked\) 라이센스가 필요한 모든 ONTAP 서비�
 .단계
 . 필요한 경우 소프트웨어 라이센스의 내 지원 섹션에서 NetApp Support 사이트의 새 노드에 대한 라이센스 키를 얻습니다.
 +
-사이트에 필요한 라이센스 키가 없는 경우 영업 담당자 또는 지원 담당자에게 문의하십시오.
+라이센스 교체에 대한 자세한 내용은 를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/AFF_Series/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["AFF/FAS 시스템의 라이센스 업데이트를 위한 마더보드 교체 후 프로세스"^]
 
 . 다음 명령을 실행하여 각 라이센스 키를 설치합니다.
 +

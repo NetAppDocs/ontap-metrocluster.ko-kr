@@ -14,4 +14,4 @@ summary: 'MetroCluster 구성의 모든 노드 또는 DR\(재해 복구 그룹�
 MetroCluster 구성의 모든 노드 또는 DR(재해 복구) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.
 
 
-IMPORTANT: MetroCluster 구성 해제를 되돌릴 수 없습니다. 이 프로세스는 기술 지원 부서의 도움을 받아야 합니다.
+IMPORTANT: MetroCluster 구성 해제를 되돌릴 수 없습니다. 이 프로세스는 기술 지원 부서의 도움을 받아야 합니다. NetApp 기술 지원 팀에 문의하여 에서 구성에 적합한 가이드를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_nodes_from_a_MetroCluster_configuration_-_Resolution_Guide["NetApp 기술 자료: MetroCluster 구성 해결 가이드에서 노드를 제거하는 방법"^]

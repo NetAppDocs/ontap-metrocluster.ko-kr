@@ -2663,6 +2663,9 @@ NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 �
 
 MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시스템 ID를 갖는 두 노드를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.
 
+
+NOTE: 'MetroCluster configure' 명령을 실행하기 전에 Onboard Key Manager(OKM) 또는 외부 키 관리를 * 구성하지 않아야 합니다.
+
 .단계
 . [[step1_aggr]] 다음 형식으로 MetroCluster를 구성합니다.
 +

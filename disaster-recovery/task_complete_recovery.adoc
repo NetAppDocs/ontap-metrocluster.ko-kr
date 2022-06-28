@@ -90,7 +90,7 @@ FCP               periodic-check-enabled            ok
 . 새 라이센스 키가 필요한 경우 소프트웨어 라이센스 아래의 내 지원 섹션에 있는 NetApp Support 사이트에서 교체용 라이센스 키를 받으십시오.
 +
 
-NOTE: 필요한 새 라이센스 키는 자동으로 생성되어 파일의 이메일 주소로 전송됩니다. 30일 이내에 라이센스 키가 포함된 이메일을 받지 못한 경우 기술 지원 부서에 문의하십시오.
+NOTE: 필요한 새 라이센스 키는 자동으로 생성되어 파일의 이메일 주소로 전송됩니다. 30일 이내에 라이센스 키가 포함된 이메일을 받지 못한 경우 의 _ "내 라이센스에 문제가 있는 경우 누구에게 연락합니까?" _ 섹션을 참조하십시오link:https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/AFF_Series/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["NetApp 기술 자료: AFF/FAS 시스템의 라이센스를 업데이트하기 위한 마더보드 교체 후 프로세스"^]
 
 . 각 라이센스 키 설치:
 +
@@ -275,7 +275,7 @@ Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 aggr_b2          -         -     - unknown      - node_A_1
 ----
 +
-재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.
+재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트, 참조의 오래된 항목을 제거하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_stale_unmirrored_aggregate_entries_in_a_MetroCluster_following_disaster_where_storage_was_lost["NetApp 기술 자료: 스토리지가 손실된 후 재해 발생 시 MetroCluster에서 오래된 Aggregate 항목을 제거하는 방법"^]
 
 . 정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태(관리 상태 "최고" 표시)이고 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.
 +

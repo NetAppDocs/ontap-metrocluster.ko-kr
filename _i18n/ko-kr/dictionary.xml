@@ -1706,7 +1706,6 @@
   <block id="75d7363908012fa0907c5a27d0b79c63" category="paragraph">지원되는 플랫폼 구성은 에 나와 있습니다<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block>.</block>
   <block id="ff63653e290a8e5b339966cb9855555f" category="summary">MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="882861c4cbc2720bbf7b9b7ae1dbada9" category="doc">MetroCluster 구성을 제거할 때의 고려 사항</block>
-  <block id="42c2aaa725120c3eba302533d73629d7" category="admonition">MetroCluster 구성 해제를 되돌릴 수 없습니다. 이 프로세스는 기술 지원 부서의 도움을 받아야 합니다.</block>
   <block id="169ba71a4cacfeff085e3e52ecd7cc5c" category="summary">ONTAP IP 구성은 MetroCluster 9.7부터 NetApp 사양을 준수하는 경우에 NetApp에서 검증하지 않은 스위치를 지원할 수 있습니다.</block>
   <block id="598ab8da90f7b08fb85eebf2cdb5b642" category="doc">MetroCluster 규격 스위치를 사용할 때의 고려 사항</block>
   <block id="436efa93c0f96363240fcf2f6fe616f3" category="paragraph">NetApp에서 제공하는 MetroCluster IP 스위치는 NetApp의 검증을 거쳤습니다. ONTAP IP 구성은 MetroCluster 9.7부터 NetApp 사양을 준수하는 경우에 NetApp에서 검증하지 않은 스위치를 지원할 수 있습니다.</block>
@@ -3571,7 +3570,6 @@
   <block id="96b370eac5aa139852f6e8fd4b6aaf01" category="summary">MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
   <block id="775b84147d85d58d8180690300a5d104" category="list-text">이 절차는 특정 ONTAP 버전에서 사용할 수 있습니다.</block>
   <block id="0658afd7b63854a03c773da7890b79c4" category="list-text">ONTAP 9.3 이상에서는 2노드 구성이 지원됩니다.</block>
-  <block id="2e6da68450b987e7ad374e965e63ad0e" category="list-text">ONTAP 9.8 이상에서는 4개 및 8개 노드 구성이 지원됩니다.</block>
   <block id="ed332ae2e9a3efd17382e627809f4c84" category="paragraph">9.8 이전의 ONTAP 버전을 실행하는 4노드 또는 8노드 구성에서는 이 절차를 사용하지 마십시오.</block>
   <block id="b7071513452c80dcfb33a91f6c6f0ecd" category="list-text">이 절차는 MetroCluster FC 구성의 컨트롤러 모듈(2노드 스트레치 MetroCluster 또는 2노드 또는 4노드 패브릭 연결 MetroCluster 구성)에 적용됩니다.</block>
   <block id="cd71bc5f24bea355d7c54ac4a1bd00a5" category="list-text">원래 노드와 새 노드 간에 스토리지, FC 및 이더넷 연결을 사전에 매핑하는 것이 좋습니다.</block>
@@ -3660,7 +3658,6 @@
   <block id="df2ef58daa49e755e50530b551f462b9" category="paragraph">표준(노드 잠김) 라이센스가 필요한 모든 ONTAP 서비스에 대해 새 컨트롤러 모듈에 대한 라이센스를 추가해야 합니다. 표준 라이센스가 있는 기능을 사용하려면 클러스터의 각 노드에 해당 기능에 대한 자체 키가 있어야 합니다.</block>
   <block id="3995801a90ce2d1b48223a6bace39bcd" category="paragraph">라이센스에 대한 자세한 내용은 기술 자료 문서 3013749: Data ONTAP 8.2 라이센스 개요 및 NetApp Support 사이트 및 _시스템 관리 참조_를 참조하십시오.</block>
   <block id="e5514e918432d58e8d631dcf6889b269" category="list-text">필요한 경우 소프트웨어 라이센스의 내 지원 섹션에서 NetApp Support 사이트의 새 노드에 대한 라이센스 키를 얻습니다.</block>
-  <block id="ecf4debaa8ac551655e89b1663c331ed" category="paragraph">사이트에 필요한 라이센스 키가 없는 경우 영업 담당자 또는 지원 담당자에게 문의하십시오.</block>
   <block id="cecf1f14234757f8afb171021ce16823" category="list-text">다음 명령을 실행하여 각 라이센스 키를 설치합니다.</block>
   <block id="22c3fe21df9e672128143869cc64097f" category="paragraph">'시스템 라이선스 add-license-code_license_key_'</block>
   <block id="20ddcb4ab055c5c617f1c025424029d3" category="paragraph">license_key_ 는 길이가 28자리입니다.</block>
@@ -4185,7 +4182,6 @@
   <block id="41365539a8ffcff55d887255791f26f6" category="list-text">기존 컨트롤러 모듈의 전원 공급 장치를 켭니다.</block>
   <block id="81849b984186456aa612c556a4914aaa" category="list-text">새 컨트롤러 모듈에 대해 이 단계를 반복합니다</block>
   <block id="4b7867ffe681fd760cc93c409952f239" category="paragraph">각 컨트롤러 모듈에는 로더 프롬프트('로더&gt;', 'Loader-A&gt;' 또는 'Loader-B&gt;')가 표시되어야 합니다.</block>
-  <block id="ff3d4335d0a6cda4d1a193cc9b93d0ac" category="admonition">LOADER 프롬프트가 없는 경우 오류 메시지를 기록하고 기술 지원 부서에 문의하십시오. 시스템이 부팅 메뉴를 표시하는 경우 재부팅하여 부팅 프로세스를 다시 중단하십시오.</block>
   <block id="8feea330ffbe49a50b6488993153a0da" category="doc">상태 모니터링을 위한 FC-to-SAS 브리지 구성</block>
   <block id="e8cae8409adcb7eb5b686521a6aabf9e" category="list-text">FiberBridge 브리지는 타사 SNMP 모니터링 도구를 지원하지 않습니다.</block>
   <block id="0a1e1d422dedcdd1584fb34a0b7038c1" category="list-text">ONTAP 클러스터 프롬프트에서 상태 모니터링에 브리지를 추가합니다.</block>
@@ -5898,7 +5894,6 @@
   <block id="6a4974bedd0009da69e6a878e12b82bd" category="paragraph">스위치백을 수행한 후 모든 애그리게이트 및 SVM(스토리지 가상 머신)이 온라인 상태로 전환되었는지 확인할 수 있습니다.</block>
   <block id="3579c4d393b95e31540a220033fd8ed1" category="list-text">전환된 데이터 애그리게이트가 다시 전환되는지 확인합니다.</block>
   <block id="5a64108d7ac092878672067dc635803d" category="paragraph">다음 예제에서 노드 B2의 aggr_b2는 다시 전환되었습니다.</block>
-  <block id="db835b1e3cf598f7016d1b565d22d173" category="paragraph">재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에서 해당 애그리게이트는 "unknown" 상태로 표시될 수 있습니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.</block>
   <block id="8d90a1ad74872449b69dcbc9a1230a79" category="list-text">남아 있는 클러스터의 모든 동기화 대상 SVM이 휴면 상태(관리 상태 "중지됨" 표시)이고 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.</block>
   <block id="529311fd1dafee8998290952c2b30156" category="paragraph">'vserver show-subtype sync-source'를 선택합니다</block>
   <block id="a657e2ecdb4e6ab9790d126a51b552c5" category="paragraph">MetroCluster 구성의 동기화 대상 애그리게이트에는 쉽게 식별할 수 있도록 이름에 접미사 "-mc"가 자동으로 추가됩니다.</block>
@@ -5998,7 +5993,6 @@
   <block id="1523d0cbbedf508597567dac56417eb2" category="paragraph">'MetroCluster check license show'</block>
   <block id="881fe4323212cb8e35cee6be8d05c929" category="paragraph">다음 예는 노드에 적합한 라이센스를 표시합니다.</block>
   <block id="bc6cb5ca7b5ffe469e55f15360b228c7" category="list-text">새 라이센스 키가 필요한 경우 소프트웨어 라이센스 아래의 내 지원 섹션에 있는 NetApp Support 사이트에서 교체용 라이센스 키를 받으십시오.</block>
-  <block id="d3c2ed97232b4e6667d7111adb92a79c" category="admonition">필요한 새 라이센스 키는 자동으로 생성되어 파일의 이메일 주소로 전송됩니다. 30일 이내에 라이센스 키가 포함된 이메일을 받지 못한 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="179f3c48aec46d54f5f4fe15ed0484b2" category="list-text">각 라이센스 키 설치:</block>
   <block id="c71ddef805b4933b2cfdcf19e62282bf" category="paragraph">'시스템 라이선스 추가 라이선스 코드 라이선스 키, 라이선스 키...+'</block>
   <block id="11d90ad9838fdc1545ee368cd8943df9" category="list-text">필요한 경우 이전 라이센스를 제거합니다.</block>
@@ -6009,7 +6003,6 @@
   <block id="ca433a1a8cdfe2e0d09b21bb5cf1db25" category="paragraph">다음 예제에서는 enabled 상태의 노드를 표시합니다.</block>
   <block id="dc7b301c5776f0cc16bbe8a1a0af179f" category="list-text">정상적인 클러스터에 있는 모든 노드에서 MetroCluster 스위치백 명령을 실행하여 스위치백을 수행합니다.</block>
   <block id="1a255a509a23411cee70fd6198bcd3dd" category="paragraph">스위치백을 완료하는 데 시간이 오래 걸리는 경우 고급 권한 수준에서 다음 명령을 사용하여 진행 중인 기준선의 상태를 확인할 수 있습니다.</block>
-  <block id="673c12c7e6525bb3d967abd59cf88b50" category="paragraph">재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.</block>
   <block id="aa22b9d198bd6a038b670437eee9be3f" category="list-text">정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태(관리 상태 "최고" 표시)이고 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.</block>
   <block id="842c1547cc0bfd1bffb5a2f2520f3453" category="list-text">MetroCluster operation show 명령을 사용하여 스위치백 작업이 성공했는지 확인합니다.</block>
   <block id="7072d1b360a3772389261a074c882d35" category="paragraph">스위치백 작업 또는 스위치백 연속 - 상담원 작업이 부분적으로 성공했음을 나타냅니다.</block>
@@ -6810,7 +6803,6 @@
   <block id="91bdff5df0a4d2a8dfa3b9c5b74ac20a" category="list-text">다음 명령을 사용하여 Cisco 스위치를 영구적으로 사용하지 않도록 설정할 수 있습니다.</block>
   <block id="888372be024925328ca6e321c9a44891" category="paragraph">VSAN[vsna#] 일시 중단</block>
   <block id="37e68b1ed6861ebdf386fc5e91c46ae5" category="list-text">사용<block ref="df3a11b0f7b8977a7ee2ae6dd464c6cb" category="inline-link-rx"></block> 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 확인합니다.</block>
-  <block id="9abd645e397061a8e3dab1bb33124897" category="admonition">RCFs를 사용할 수 있는 방식으로 환경을 케이블로 연결할 수 없는 경우 기술 지원 부서에 문의하십시오. 케이블이 RCFs를 사용할 수 없는 경우 이 절차를 사용하지 마십시오.</block>
   <block id="62f6cc0bf7eb35e158a953058ca74eca" category="section-title">RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다</block>
   <block id="240180de393c4a94b035628cb25892f2" category="paragraph">새로운 노드를 수용하기 위해 스위치를 재구성하기 위해 적절한 RCF(Reference Configuration) 파일을 적용해야 합니다. RCF 파일을 적용한 후 스위치를 다시 사용할 수 있습니다.</block>
   <block id="f2fa326e6e1c8de922a1dcd02e4670eb" category="paragraph">FC 스위치 포트 사용량은 에 설명된 사용량과 일치해야 합니다<block ref="df3a11b0f7b8977a7ee2ae6dd464c6cb" category="inline-link-rx"></block> 따라서 RCFs를 사용할 수 있습니다.</block>
@@ -12392,7 +12384,6 @@
   <block id="5ddb9938498e31a4b1c392ab5953e15b" category="paragraph"><block ref="5ddb9938498e31a4b1c392ab5953e15b" category="inline-link-rx"></block></block>
   <block id="9630e0ae86014261ce835fe1e1ffcd0e" category="paragraph">각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.</block>
   <block id="b8ce668f7b81ebccc724b47a22aafe9f" category="paragraph">MetroCluster 시스템의 서비스 절차에는 드라이브 쉘프, IP 스위치, FC 스위치, FC-to-SAS 브리지 및 SAS 케이블에 대한 펌웨어 업그레이드 및 하드웨어 교체 절차가 포함됩니다.</block>
-  <block id="46e4f6024087b0e1c3fd4a21ef438dad" category="admonition">원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="ea82c7b5fb58362afd3d6e95de6eb609" category="list-text">FAS80x0으로</block>
   <block id="9b81337122f1b971d326821246c0fb05" category="list-text">AFF80x0입니다</block>
   <block id="9630fdb2df8bbf2bbd201638e1cc2f2e" category="admonition">FC-VI 모드에서 1c 및 1d 포트를 사용하는 경우 FAS8020 또는 AFF8020의 업그레이드는 지원되지 않습니다.</block>
@@ -12564,4 +12555,25 @@
   <block id="71620bedc8491865816460c55b3cde98" category="list-text"><block ref="71620bedc8491865816460c55b3cde98" category="inline-link-macro-rx"></block></block>
   <block id="3a8190b24d904ae352e54f8a0a3df0bb" category="list-text"><block ref="3a8190b24d904ae352e54f8a0a3df0bb" category="inline-link-macro-rx"></block></block>
   <block id="bee24b783e44923012afab506584e701" category="list-text">SSH 서비스(RSA)</block>
+  <block id="39ceb938ecce9e03ffb814b0ab98c3ff" category="inline-link-macro">NetApp 기술 자료: MetroCluster 구성 해결 가이드에서 노드를 제거하는 방법</block>
+  <block id="ddcd0bc62cc0d6ad3a96c234e8e9acc2" category="admonition">MetroCluster 구성 해제를 되돌릴 수 없습니다. 이 프로세스는 기술 지원 부서의 도움을 받아야 합니다. NetApp 기술 지원 팀에 문의하여 에서 구성에 적합한 가이드를 참조하십시오 <block ref="6b274ee2da4e368d83246d3228463b74" category="inline-link-macro-rx"></block></block>
+  <block id="aac7cfec46f1e12804543ab7e9f0bf82" category="admonition">'MetroCluster configure' 명령을 실행하기 전에 Onboard Key Manager(OKM) 또는 외부 키 관리를 * 구성하지 않아야 합니다.</block>
+  <block id="b7dc5f17370f3f6d8f0564ad37092c2e" category="list-text">ONTAP 9.8 이상에서는 4노드 및 8노드 구성이 지원됩니다.</block>
+  <block id="4d8ef96135f1fcc906a1c836b94ccd72" category="inline-link-macro">NetApp 기술 자료: 기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 설정된 경우 컨트롤러 업그레이드에서는 포트 1c 및 1d를 사용합니다.</block>
+  <block id="3b66e88b9eec711f27eed9c397de04df" category="admonition">원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 를 참조하십시오 <block ref="5f6e886a55fbfce55c807e98c86f0ed7" category="inline-link-macro-rx"></block></block>
+  <block id="6f2e4be613f6e5c211f118c1604357ae" category="list-text">두 사이트의 라이센스가 일치해야 합니다. 에서 새 라이센스를 얻을 수 있습니다 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>.</block>
+  <block id="4bf20a918b2c6b62364371fe4f4d9c7f" category="section-title">새 라이센스를 설치합니다</block>
+  <block id="c24d2fcd8511c8b51a6aef773200e0d8" category="paragraph">스위치백 작업을 수행하기 전에 새 컨트롤러의 라이센스를 설치해야 합니다.</block>
+  <block id="07beb3f4161a6f204edf78213ee21dd3" category="list-text"><block ref="07beb3f4161a6f204edf78213ee21dd3" category="inline-link-macro-rx"></block></block>
+  <block id="852fee667b0218d56efb26732593192d" category="inline-link-macro">AFF/FAS 시스템의 라이센스 업데이트를 위한 마더보드 교체 후 프로세스</block>
+  <block id="4d373838f1432114e8cb3f53c45f8736" category="paragraph">라이센스 교체에 대한 자세한 내용은 를 참조하십시오 <block ref="7fa6d13435a2a82c954f1735e8d67b30" category="inline-link-macro-rx"></block></block>
+  <block id="42f4edc2efb2c786550a905c38a8416c" category="admonition">LOADER 프롬프트가 없는 경우 오류 메시지를 기록합니다. 시스템이 부팅 메뉴를 표시하는 경우 재부팅하여 부팅 프로세스를 다시 중단하십시오.</block>
+  <block id="8c4c17369ebab47cd3919b9e6b1e8537" category="admonition">케이블이 RCFs를 사용할 수 없는 경우 이 절차를 사용하지 마십시오.</block>
+  <block id="07d36974183f0bd379705eb8861c8bba" category="inline-link-macro">NetApp 기술 자료: 스토리지가 손실된 후 재해 발생 시 MetroCluster에서 오래된 Aggregate 항목을 제거하는 방법</block>
+  <block id="e8a2aa8f2b533983c4b701d088ac2fa9" category="paragraph">재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에서 해당 애그리게이트는 "unknown" 상태로 표시될 수 있습니다. 미러링되지 않은 애그리게이트 및 참조에 대한 오래된 항목을 제거하려면 기술 지원 부서에 문의하십시오 <block ref="857cf6ab3254f5ce14b6347a5dc33b9f" category="inline-link-macro-rx"></block></block>
+  <block id="34e63b4d455bee1fbdab9ea6d4e3fcb7" category="inline-link-macro">NetApp 기술 자료: AFF/FAS 시스템의 라이센스를 업데이트하기 위한 마더보드 교체 후 프로세스</block>
+  <block id="6abc18b19d1261841c5bebef07ade3cc" category="admonition">필요한 새 라이센스 키는 자동으로 생성되어 파일의 이메일 주소로 전송됩니다. 30일 이내에 라이센스 키가 포함된 이메일을 받지 못한 경우 의 _ "내 라이센스에 문제가 있는 경우 누구에게 연락합니까?" _ 섹션을 참조하십시오<block ref="01bfbfba842a68c11d464652fb5b8666" category="inline-link-macro-rx"></block></block>
+  <block id="a83bdcaf895c6161de37c26c6fde86a6" category="paragraph">재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트, 참조의 오래된 항목을 제거하십시오 <block ref="857cf6ab3254f5ce14b6347a5dc33b9f" category="inline-link-macro-rx"></block></block>
+  <block id="efa4707d1136ea0f455cfb38e7371895" category="inline-link-macro">NetApp 기술 자료: AFF/FAS 시스템의 라이센스를 업데이트하기 위한 마더보드 교체 후 프로세스</block>
+  <block id="e4d43f7afcae270903f6fda758c33beb" category="paragraph">라이센스 교체에 대한 자세한 내용은 를 참조하십시오 <block ref="fd34fb83b47f441a190e089e21262454" category="inline-link-macro-rx"></block></block>
 </blocks>
