@@ -3472,13 +3472,13 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html">
         스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_fc.html">
         4노드 MetroCluster FC 구성 업데이트
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html">
@@ -3757,7 +3757,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-06-30 21:23:48 +0000">06/30/2022</time>
     
   
 
@@ -3785,17 +3785,8 @@ Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 ...
 aggr_b2    227.1GB   227.1GB    0% online       0 node_B_2   raid_dp,
                                                                    mirrored,
-                                                                   normal
-
-node_A_1::&gt; aggr show
-Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
---------- -------- --------- ----- ------- ------ ---------------- ------------
-...
-aggr_b2          -         -     - unknown      - node_A_1</pre>
+                                                                   normal</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에 "unknown" 상태로 나타날 수 있습니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.</p>
 </div>
 </li>
 <li>

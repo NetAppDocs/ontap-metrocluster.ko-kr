@@ -3472,13 +3472,13 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html">
         스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_fc.html">
         4노드 MetroCluster FC 구성 업데이트
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html">
@@ -3757,7 +3757,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-06-30 21:23:48 +0000">06/30/2022</time>
     
   
 
@@ -3771,41 +3771,20 @@
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>새 컨트롤러 모듈에 할당할 수 있는 할당되지 않은 디스크 또는 스페어 디스크를 식별해야 합니다.</p>
-<div class="paragraph">
-<p><a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2427462" target="_blank" rel="noopener">"물리적 스토리지 관리"</a></p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html" target="_blank" rel="noopener">"디스크 및 애그리게이트 관리"</a></p>
+<p>다음 명령을 사용하여 새 컨트롤러 모듈에 할당할 수 있는 할당되지 않은 디스크 또는 스페어 디스크를 식별합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>스토리지 디스크 show-container-type spare</p>
+</li>
+<li>
+<p>스토리지 디스크 show-container-type unassigned</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
-<p>이전 단계의 결과에 따라 다음 중 하나를 수행합니다.</p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">결과가 다음과 같은 경우&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">그러면&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>루트 데이터 파티셔닝 없이 시스템의 새 컨트롤러 모듈에 사용 가능한 스페어 디스크가 충분하지 않습니다</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>자세한 내용은 기술 지원 부서에 문의하십시오.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>기타 결과</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>다음 하위 단계를 완료합니다.</p>
-</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3830,10 +3809,7 @@
 <p>새 노드에 필요한 만큼 디스크에 대해 이전 단계를 반복합니다.</p>
 </li>
 </ol>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+</div>
 </li>
 <li>
 <p>다음 연결에 사용할 수 있는 케이블이 있는지 확인합니다.</p>

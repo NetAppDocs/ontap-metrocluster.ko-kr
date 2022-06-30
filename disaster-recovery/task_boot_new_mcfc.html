@@ -3472,13 +3472,13 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html">
         스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_fc.html">
         4노드 MetroCluster FC 구성 업데이트
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html">
@@ -3757,13 +3757,15 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-06-30 21:23:48 +0000">06/30/2022</time>
     
   
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>데이터와 루트 애그리게이트 모두에 대해 애그리게이트 복구가 완료된 후 재해 사이트에서 노드를 부팅해야 합니다.</p>
 </div>
@@ -3797,7 +3799,7 @@
 <img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
 </td>
 <td class="content">
-사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <a href="#step2">[step2]</a> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 루트 복구를 수행해야 합니다. 기술 지원 부서에 지원을 요청하십시오.
+사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <a href="#step2">[step2]</a> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <a href="#Reset-the-boot-recovery">부팅 복구 및 RDB_Corrupt boots를 재설정합니다</a>
 </td>
 </tr>
 </table>
@@ -3883,6 +3885,47 @@ cluster_B::&gt;</pre>
 </div>
 <div class="paragraph">
 <p>로 진행합니다 <a href="../disaster-recovery/task_complete_recovery.html">"재해 복구 프로세스를 완료합니다"</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="boot_recovery-및-rdb_corrupt-boots를-재설정합니다">boot_recovery 및 rdb_corrupt boots를 재설정합니다</h3>
+<div class="paragraph lead">
+<p>필요한 경우 boot_recovery 및 rdb_corrupt_boots를 재설정할 수 있습니다</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>노드를 다시 LOADER 프롬프트로 중단합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>node_A_1::*&gt; halt -node _node-name_</pre>
+</div>
+</div>
+</li>
+<li>
+<p>다음 boots가 설정되었는지 확인합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>LOADER&gt; printenv bootarg.init.boot_recovery
+LOADER&gt; printenv bootarg.rdb_corrupt</pre>
+</div>
+</div>
+</li>
+<li>
+<p>bootarg 중 하나가 값으로 설정된 경우 설정을 해제하고 ONTAP를 부팅합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>LOADER&gt; unsetenv bootarg.init.boot_recovery
+LOADER&gt; unsetenv bootarg.rdb_corrupt
+LOADER&gt; saveenv
+LOADER&gt; bye</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 
     </article>

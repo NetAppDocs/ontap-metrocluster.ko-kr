@@ -3472,13 +3472,13 @@
       </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html">
         스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html">
         스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html">
-        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+        스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_fc.html">
         4노드 MetroCluster FC 구성 업데이트
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html">
@@ -3757,7 +3757,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-28 12:59:31 +0000">06/28/2022</time>
+    <time datetime="2022-06-30 21:23:48 +0000">06/30/2022</time>
     
   
 
@@ -3806,22 +3806,22 @@
 <img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
 </td>
 <td class="content">
-원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 를 참조하십시오 <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/Upgrading_controllers_when_FCVI_connections_on_existing_FAS8020_or_AFF8020_nodes_use_ports_1c_and_1d" target="_blank" rel="noopener">"NetApp 기술 자료: 기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 설정된 경우 컨트롤러 업그레이드에서는 포트 1c 및 1d를 사용합니다."</a>
+원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 기술 자료 문서를 참조하십시오 <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/Upgrading_controllers_when_FCVI_connections_on_existing_FAS8020_or_AFF8020_nodes_use_ports_1c_and_1d" target="_blank" rel="noopener">"기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 사용되는 경우 컨트롤러 업그레이드에서는 포트 1c 및 1d를 사용합니다."</a>
 </td>
 </tr>
 </table>
 </div>
 </li>
 <li>
-<p>두 사이트의 라이센스가 일치해야 합니다. 에서 새 라이센스를 얻을 수 있습니다 <a href="https://mysupport.netapp.com/site/" target="_blank" rel="noopener">"NetApp Support 사이트"</a>.</p>
+<p>두 사이트의 라이센스가 일치해야 합니다. 에서 새 라이센스를 얻을 수 있습니다 <a href="https://mysupport.netapp.com/site/" target="_blank" rel="noopener">"NetApp 지원"</a>.</p>
 </li>
 <li>
-<p>이 절차는 MetroCluster FC 구성의 컨트롤러 모듈(2노드 스트레치 MetroCluster 또는 2노드 또는 4노드 패브릭 연결 MetroCluster 구성)에 적용됩니다.</p>
+<p>이 절차는 MetroCluster FC 구성의 컨트롤러 모듈(2노드 스트레치 MetroCluster 또는 2노드, 4노드 또는 8노드 패브릭 연결 MetroCluster 구성)에 적용됩니다.</p>
 </li>
 <li>
-<p>구성의 모든 컨트롤러는 동일한 유지보수 기간 동안 업그레이드해야 합니다.</p>
+<p>동일한 DR 그룹의 모든 컨트롤러는 동일한 유지보수 기간 동안 업그레이드해야 합니다.</p>
 <div class="paragraph">
-<p>이 유지 관리 활동 외부에서는 컨트롤러 유형이 서로 다른 MetroCluster 구성을 작동하는 것이 지원되지 않습니다.</p>
+<p>동일한 DR 그룹에서 서로 다른 컨트롤러 유형의 MetroCluster 구성 작업은 이 유지 관리 활동 외부에서 지원되지 않습니다. 8노드 MetroCluster 구성의 경우 DR 그룹 내의 컨트롤러는 동일해야 하지만 두 DR 그룹 모두에서 서로 다른 컨트롤러 유형을 사용할 수 있습니다.</p>
 </div>
 </li>
 <li>
