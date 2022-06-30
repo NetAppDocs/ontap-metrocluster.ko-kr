@@ -141,7 +141,7 @@ MetroCluster IP 구성은 MetroCluster IP Fabric에 사용되는 IP 스위치에
 | 플랫폼 모델 | 기가비트 이더넷 어댑터가 필요합니다 | 어댑터에 필요한 슬롯입니다 | 포트 
 
 
-| AFF A900 | X91146A | 슬롯 5, 슬롯 7 | e5b, e7b 
+| AFF A900 및 FAS9500 | X91146A | 슬롯 5, 슬롯 7 | e5b, e7b 
 
 
  a| 

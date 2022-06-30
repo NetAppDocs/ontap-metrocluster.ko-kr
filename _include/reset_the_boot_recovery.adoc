@@ -1,0 +1,31 @@
+= 
+:allow-uri-read: 
+
+
+[role="lead"]
+필요한 경우 boot_recovery 및 rdb_corrupt_boots를 재설정할 수 있습니다
+
+.단계
+. 노드를 다시 LOADER 프롬프트로 중단합니다.
++
+[listing]
+----
+node_A_1::*> halt -node _node-name_
+----
+. 다음 boots가 설정되었는지 확인합니다.
++
+[listing]
+----
+LOADER> printenv bootarg.init.boot_recovery
+LOADER> printenv bootarg.rdb_corrupt
+----
+. bootarg 중 하나가 값으로 설정된 경우 설정을 해제하고 ONTAP를 부팅합니다.
++
+[listing]
+----
+LOADER> unsetenv bootarg.init.boot_recovery
+LOADER> unsetenv bootarg.rdb_corrupt
+LOADER> saveenv
+LOADER> bye
+----
+

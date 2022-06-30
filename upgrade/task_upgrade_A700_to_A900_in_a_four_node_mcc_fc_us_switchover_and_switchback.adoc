@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, controllers, switchover, switchback, fc, configuration, net, boot, root, aggregate, mcc 
 summary: 'MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.' 
 ---
-= 스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+= 스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -18,7 +18,8 @@ MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 �
 +
 스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소를 동시에 업그레이드할 수는 없습니다.
 
-* 이 절차는 ONTAP 9.10.1 이상에서 사용할 수 있습니다.
+* 이 절차를 사용하여 AFF A700을 ONTAP 9.10.1 이상이 설치된 AFF A900으로 업그레이드할 수 있습니다.
+* 이 절차를 사용하여 FAS9000을 ONTAP 9.10.1P3 이상이 설치된 FAS9500으로 업그레이드할 수 있습니다.
 +
 ** ONTAP 9.10.1 이상에서는 4개 및 8개 노드 구성이 지원됩니다.
 +
@@ -49,13 +50,22 @@ https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 * AFF A900
 
 
+
+
+ a| 
+* FAS9000
+
+ a| 
+* FAS9500
+
+
 |===
 * 업그레이드 절차 중에 RCF 및 케이블 연결의 물리적 변경을 포함하여 MetroCluster 패브릭을 변경해야 합니다. 컨트롤러 업그레이드를 수행하기 전에 RCF 및 케이블 연결 변경을 수행할 수 있습니다.
 * 이 업그레이드 절차를 수행하기 위해 원래 노드와 새 노드 간에 스토리지, FC 및 이더넷 연결을 변경할 필요는 없습니다.
-* 업그레이드 절차 중에는 AFF A700 시스템에서 다른 카드를 추가하거나 제거하면 안 됩니다. 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
+* 업그레이드 절차 중에는 AFF A700 또는 FAS9000 시스템에서 다른 카드를 추가하거나 제거하면 안 됩니다. 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 
-다음 예제 이름이 이 절차에 사용됩니다.
+다음 예제 이름은 이 절차의 예시와 그래픽에 사용됩니다.
 
 * 사이트_A
 +
@@ -95,19 +105,19 @@ https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 == 업그레이드를 준비합니다
 
-기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고, RCF 파일 및 케이블을 AFF A900 패브릭 MetroCluster 구성에 필요한 새로운 포트 연결 토폴로지에 맞게 변경하고, 기타 작업을 수행해야 합니다.
+기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고, RCF 파일 및 케이블을 AFF A900 또는 FAS9000 패브릭 MetroCluster 구성에 필요한 새로운 포트 연결 토폴로지에 맞게 변경하고, 기타 작업을 수행해야 합니다.
 
 
 
 == AFF A700 컨트롤러에서 슬롯 7을 지웁니다
 
-AFF A900의 MetroCluster 구성에는 슬롯 5 및 7에 FC-VI 카드 전반에 8개의 FC-VI 포트가 필요합니다. 업그레이드를 시작하기 전에 AFF A700의 슬롯 7에 카드가 있는 경우 클러스터의 모든 노드에 대해 다른 슬롯으로 카드를 이동해야 합니다.
+AFF A900 또는 FAS9500에서 MetroCluster를 구성하려면 슬롯 5와 7에서 FC-VI 카드 전체에 8개의 FC-VI 포트가 필요합니다. 업그레이드를 시작하기 전에 AFF A700 또는 FAS9000의 슬롯 7에 카드가 있는 경우 해당 카드를 클러스터의 모든 노드에 대한 다른 슬롯으로 이동해야 합니다.
 
 
 
 === MetroCluster 구성의 상태를 확인합니다
 
-AFF A900 패브릭 MetroCluster 구성의 RCF 파일 및 케이블을 업데이트하기 전에 구성 상태와 연결을 확인해야 합니다.
+AFF A900 또는 FAS9500 패브릭 MetroCluster 구성의 RCF 파일 및 케이블을 업데이트하기 전에 구성의 상태와 연결을 확인해야 합니다.
 
 .단계
 . ONTAP에서 MetroCluster 구성 작동을 확인합니다.
@@ -195,13 +205,13 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 === 패브릭 스위치 RCF 파일을 업데이트합니다
 
-AFF A900 패브릭 MetroCluster에는 AFF A700에 필요한 4포트 FC-VI 어댑터 1개와 비교하여 노드당 4포트 FC-VI 어댑터 2개가 필요합니다. AFF A900 컨트롤러로 컨트롤러 업그레이드를 시작하기 전에 AFF A900 연결 토폴로지를 지원하도록 패브릭 스위치 RCF 파일을 수정해야 합니다.
+AFF A900 또는 FAS9500 패브릭 MetroCluster에는 AFF A700에 필요한 단일 4포트 FC-VI 어댑터와 비교하여 노드당 2개의 4포트 FC-VI 어댑터가 필요합니다. AFF A900 또는 FAS9500 컨트롤러로 컨트롤러 업그레이드를 시작하기 전에 AFF A900 또는 FAS9500 연결 토폴로지를 지원하도록 패브릭 스위치 RCF 파일을 수정해야 합니다.
 
-. 에서 https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab["MetroCluster RCF 파일 다운로드 페이지"^]에서 AFF A900 패브릭 MetroCluster에 대한 올바른 RCF 파일과 AFF A700 구성에서 사용 중인 스위치 모델을 다운로드하십시오.
+. 에서 https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab["MetroCluster RCF 파일 다운로드 페이지"^]에서 AFF A900 또는 FAS9500 패브릭 MetroCluster의 올바른 RCF 파일과 AFF A700 또는 FAS9000 구성에서 사용 중인 스위치 모델을 다운로드하십시오.
 . [[Update-RCF]]의 단계에 따라 패브릭 A 스위치, 스위치 A1 및 스위치 B1의 RCF 파일을 업데이트합니다 link:../disaster-recovery/task_cfg_switches_mcfc.html["FC 스위치 구성"].
 +
 
-NOTE: AFF A900 패브릭 MetroCluster 구성을 지원하는 RCF 파일 업데이트는 AFF A700 패브릭 MetroCluster 구성에 사용되는 포트 및 연결에 영향을 미치지 않습니다.
+NOTE: AFF A900 또는 FAS9500 패브릭 MetroCluster 구성을 지원하는 RCF 파일 업데이트는 AFF A700 또는 FAS9000 패브릭 MetroCluster 구성에 사용되는 포트 및 연결에 영향을 미치지 않습니다.
 
 . 패브릭 A 스위치에서 RCF 파일을 업데이트한 후 모든 스토리지와 FC-VI 연결이 온라인 상태가 되어야 합니다. FC-VI 연결을 확인합니다.
 +
@@ -311,11 +321,11 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
-=== AFF A700 노드의 포트를 AFF A900 노드로 매핑합니다
+=== AFF A700 또는 FAS9000 노드의 포트를 AFF A900 또는 FAS9500 노드에 매핑합니다
 
 컨트롤러 업그레이드 프로세스 중에는 이 절차에서 설명하는 연결만 변경해야 합니다.
 
-AFF A700 컨트롤러의 슬롯 7에 카드가 있는 경우 컨트롤러 업그레이드 절차를 시작하기 전에 카드를 다른 슬롯으로 이동해야 합니다. AFF A900에서 패브릭 MetroCluster를 작동하는 데 필요한 두 번째 FC-VI 어댑터를 추가하기 위해 슬롯 7을 사용할 수 있어야 합니다.
+슬롯 7에 AFF A700 또는 FAS9000 컨트롤러의 카드가 있는 경우 컨트롤러 업그레이드 절차를 시작하기 전에 카드를 다른 슬롯으로 이동해야 합니다. AFF A900 또는 FAS9500 컨트롤러에서 패브릭 MetroCluster를 작동하는 데 필요한 두 번째 FC-VI 어댑터를 추가하기 위해 슬롯 7을 사용할 수 있어야 합니다.
 
 
 
@@ -611,21 +621,21 @@ image:../media/drw_a900_move-remove_NVRAM_module.png["NVS 모듈"]
 
 
 
-NOTE: AFF A700 비휘발성 스토리지 모듈에 코어 덤프 장치로 사용되는 추가 모듈이 있는 경우 AFF A900 NVS로 전송하지 마십시오. AFF A700 컨트롤러 모듈 및 NVS의 부품을 AFF A900으로 전송하지 마십시오.
+NOTE: AFF A700 또는 FAS9000 비휘발성 스토리지 모듈에 코어 덤프 장치로 사용되는 애드온 모듈이 있는 경우 AFF A900 또는 FAS9500 NVS로 전송하지 마십시오. AFF A700 또는 A900 컨트롤러 모듈 및 NVS의 부품을 AFF A900 또는 FAS9500 컨트롤러 모듈로 전송하지 마십시오.
 
 
 
-== AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+== AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치합니다
 
-Site_B의 두 노드에 있는 업그레이드 키트에서 AFF A900 NVS 및 컨트롤러 모듈을 설치해야 합니다 코어 덤프 장치를 AFF A700 NVS 모듈에서 AFF A900 NVS 모듈로 이동하지 마십시오.
+Site_B의 두 노드에 있는 업그레이드 키트에서 AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치해야 합니다 코어 덤프 장치를 AFF A700 또는 FAS9000 NVS 모듈에서 AFF A900 또는 FAS9500 NVS 모듈로 이동하지 마십시오.
 
 아직 접지되지 않은 경우 올바르게 접지하십시오.
 
 
 
-=== AFF A900 NVS를 설치합니다
+=== AFF A900 또는 FAS9500 NVS를 설치합니다
 
-다음 절차에 따라 site_B에서 두 노드의 슬롯 6에 AFF A900 NVS를 설치하십시오
+다음 절차에 따라 site_B에서 두 노드의 슬롯 6에 AFF A900 또는 FAS9500 NVS를 설치합니다
 
 .단계
 . NVS를 슬롯 6의 섀시 입구 가장자리에 맞춥니다.
@@ -646,9 +656,9 @@ image:../media/drw_a900_move-remove_NVRAM_module.png["NVS 모듈"]
 
 
 
-=== AFF A900 컨트롤러 모듈을 설치합니다
+=== AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다
 
-다음 절차에 따라 AFF A900 컨트롤러 모듈을 설치하십시오.
+다음 절차에 따라 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.
 
 .단계
 . 컨트롤러 모듈의 끝을 섀시의 입구에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.
@@ -672,7 +682,7 @@ image:../media/drw_9500_remove_PCM.png["컨트롤러"]
 |===
 . 각 노드의 슬롯 7에 두 번째 X91129A 카드를 설치합니다.
 +
-.. 슬롯 7에서 스위치로 FC-VI 포트를 연결합니다. 을 참조하십시오 link:../install-fc/index.html["패브릭 연결 설치 및 구성"] 사용 중인 환경의 스위치 유형에 대한 AFF A900 패브릭 MetroCluster 연결 요구 사항을 참조하십시오.
+.. 슬롯 7에서 스위치로 FC-VI 포트를 연결합니다. 을 참조하십시오 link:../install-fc/index.html["패브릭 연결 설치 및 구성"] 사용 중인 환경의 스위치 유형에 대한 AFF A900 또는 FAS9500 패브릭 MetroCluster 연결 요구 사항을 설명서를 참조하십시오.
 
 
 . 섀시의 전원을 켜고 시리얼 콘솔에 연결합니다.
@@ -686,9 +696,9 @@ image:../media/drw_9500_remove_PCM.png["컨트롤러"]
 
 === site_B에서 노드를 netboot 합니다
 
-AFF A900 컨트롤러 모듈과 NVS를 바꾼 후 AFF A900 노드를 netboot 하고 클러스터에서 실행 중인 것과 동일한 ONTAP 버전 및 패치 레벨을 설치해야 합니다. 네트워크 부팅이란 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가해야 합니다.
+AFF A900 또는 FAS9500 컨트롤러 모듈과 NVS를 바꾼 후에는 AFF A900 또는 FAS9500 노드를 netboot에 설치하고 클러스터에서 실행 중인 것과 동일한 ONTAP 버전 및 패치 수준을 설치해야 합니다. 네트워크 부팅이란 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가해야 합니다.
 
-AFF A900 컨트롤러 모듈의 부팅 미디어에 설치된 ONTAP 버전은 섀시에 설치하고 전원을 켜지 않는 한 확인할 수 없습니다. AFF A900 부팅 미디어의 ONTAP 버전은 업그레이드할 AFF A700 시스템에서 실행되는 ONTAP 버전과 동일해야 하며 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다. 부팅 메뉴에서 netboot, wipecononfig 명령을 차례로 수행하여 이미지를 구성할 수 있습니다. 이전에 다른 클러스터에서 컨트롤러 모듈을 사용한 경우 "wipeconfig" 명령을 실행하면 부팅 미디어의 나머지 구성이 지워집니다.
+AFF A900 또는 FAS9500 컨트롤러 모듈의 부팅 미디어에 설치된 ONTAP 버전은 섀시에 설치되어 있고 전원이 켜져 있지 않으면 확인할 수 없습니다. AFF A900 또는 FAS9500 부팅 미디어의 ONTAP 버전은 업그레이드할 AFF A700 또는 FAS9000 시스템에서 실행되는 ONTAP 버전과 동일해야 하며 기본 부팅 이미지와 백업 부팅 이미지가 일치해야 합니다. 부팅 메뉴에서 netboot, wipecononfig 명령을 차례로 수행하여 이미지를 구성할 수 있습니다. 이전에 다른 클러스터에서 컨트롤러 모듈을 사용한 경우 "wipeconfig" 명령을 실행하면 부팅 미디어의 나머지 구성이 지워집니다.
 
 .시작하기 전에
 * 시스템에서 HTTP 서버에 액세스할 수 있는지 확인합니다.
@@ -717,7 +727,7 @@ AFF A900 컨트롤러 모듈의 부팅 미디어에 설치된 ONTAP 버전은 �
 
 NOTE: 부팅을 중단하지 마십시오.
 
-. AFF A900 컨트롤러 모듈에서 실행 중인 노드 1이 부팅될 때까지 기다린 후 다음과 같이 부팅 메뉴 옵션을 표시합니다.
+. AFF A900 또는 FAS9500 컨트롤러 모듈에서 실행 중인 노드 1이 부팅될 때까지 기다린 후 다음과 같이 부팅 메뉴 옵션을 표시합니다.
 +
 [listing]
 ----

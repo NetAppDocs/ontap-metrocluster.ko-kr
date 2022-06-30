@@ -77,9 +77,9 @@ image::../media/cabling_an_aff_a800_to_a_cisco_3232c_or_cisco_9336c_switch.png[A
 
 
 
-== AFF A900을 Cisco 3232C 또는 Cisco 9336C 스위치에 케이블로 연결합니다
+== AFF A900 또는 FAS9500을 Cisco 3232C 또는 Cisco 9336C 스위치에 케이블로 연결합니다
 
-image::../media/cabling_an_aff_a900_to_a_cisco_3232c_or_cisco_9336c_switch.png[AFF a900을 Cisco 3232c 또는 Cisco 9336c 스위치에 케이블로 연결합니다]
+image:../media/cabling_an_aff_a900_or_FAS9500_to_a_cisco_3232c_or_cisco_9336c_switch.png[""]
 
 
 

@@ -42,7 +42,7 @@ MetroCluster가 올바르게 작동하는지 확인하고 드라이브를 두 �
 
 . 필요한 경우 소프트웨어 라이센스의 내 지원 섹션에서 NetApp Support 사이트의 새 노드에 대한 라이센스 키를 얻습니다.
 +
-라이센스 교체에 대한 자세한 내용은 를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/AFF_Series/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["NetApp 기술 자료: AFF/FAS 시스템의 라이센스를 업데이트하기 위한 마더보드 교체 후 프로세스"^]
+라이센스 교체에 대한 자세한 내용은 기술 자료 문서를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/AFF_Series/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["AFF/FAS 시스템의 라이센스 업데이트를 위한 마더보드 교체 후 프로세스"^]
 
 . 각 라이센스 키를 설치하려면 다음 명령을 실행하십시오. 'system license add-license-code license_key'
 +

@@ -13,7 +13,9 @@ summary: ONTAP 9.8부터 8노드 MetroCluster 구성에서 DR 그룹을 제거�
 [role="lead"]
 ONTAP 9.8부터 8노드 MetroCluster 구성에서 DR 그룹을 제거하여 4노드 MetroCluster 구성을 만들 수 있습니다.
 
-이 절차는 ONTAP 9.8 이상에서 지원됩니다. 이전 버전의 ONTAP에서는 기술 지원 부서에 문의하여 DR 그룹을 제거하십시오.
+이 절차는 ONTAP 9.8 이상에서 지원됩니다. ONTAP 9.7 이하를 실행하는 시스템의 경우 기술 자료 문서를 참조하십시오
+
+link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_a_DR-Group_from_a_MetroCluster["MetroCluster 구성에서 DR 그룹을 제거하는 방법"]
 
 https://mysupport.netapp.com/site/global/dashboard["NetApp 지원"]
 

@@ -6,7 +6,7 @@ entries:
   url: "/upgrade/concept_choosing_an_upgrade_method_mcc.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
   url: "/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html"
-- title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP
+- title: 스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP
     9.10.1 이상)
   url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html"
 - title: 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1
@@ -14,7 +14,7 @@ entries:
   url: "/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)
   url: "/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html"
-- title: 스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP
+- title: 스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP
     9.10.1 이상)
   url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html"
 - title: 4노드 MetroCluster FC 구성 업데이트

@@ -30,7 +30,7 @@ boot_ontap 메뉴
 
 +
 
-NOTE: 사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <<step2>> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 루트 복구를 수행해야 합니다. 기술 지원 부서에 지원을 요청하십시오.
+NOTE: 사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <<step2>> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <<Reset-the-boot-recovery,부팅 복구 및 RDB_Corrupt boots를 재설정합니다>>
 
 . plex 0에서 루트 애그리게이트 미러링:
 +
@@ -89,3 +89,35 @@ cluster_B::>
 
 
 로 진행합니다 link:../disaster-recovery/task_complete_recovery.html["재해 복구 프로세스를 완료합니다"].
+
+
+
+=== boot_recovery 및 rdb_corrupt boots를 재설정합니다
+
+[role="lead"]
+필요한 경우 boot_recovery 및 rdb_corrupt_boots를 재설정할 수 있습니다
+
+.단계
+. 노드를 다시 LOADER 프롬프트로 중단합니다.
++
+[listing]
+----
+node_A_1::*> halt -node _node-name_
+----
+. 다음 boots가 설정되었는지 확인합니다.
++
+[listing]
+----
+LOADER> printenv bootarg.init.boot_recovery
+LOADER> printenv bootarg.rdb_corrupt
+----
+. bootarg 중 하나가 값으로 설정된 경우 설정을 해제하고 ONTAP를 부팅합니다.
++
+[listing]
+----
+LOADER> unsetenv bootarg.init.boot_recovery
+LOADER> unsetenv bootarg.rdb_corrupt
+LOADER> saveenv
+LOADER> bye
+----
+

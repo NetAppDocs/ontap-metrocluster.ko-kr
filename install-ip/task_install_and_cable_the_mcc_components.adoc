@@ -1,0 +1,16 @@
+---
+permalink: install-ip/task_install_and_cable_the_mcc_components.html 
+sidebar: sidebar 
+keywords: ip, switch, configuring 
+summary: 백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 
+---
+= 스위치 구성
+:allow-uri-read: 
+
+
+[role="lead"]
+백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다.
+
+* link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치 구성"]
+* link:../install-ip/task_switch_config_broadcom.html["Cisco IP 스위치 구성"]
+

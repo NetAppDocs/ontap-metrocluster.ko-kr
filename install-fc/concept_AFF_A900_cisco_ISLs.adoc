@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: AFF, A900, ONTAP, FAS, Cisco, ISL, metrocluster 
 summary: 다음 표에서는 ISL 포트 사용을 보여 줍니다. 
 ---
-= AFF 9.10.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성의 ISL에 대한 ONTAP A900-Cisco 포트 사용량
+= ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성에서 ISL에 대한 AFF A900 또는 FAS9500-Cisco 포트 사용
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

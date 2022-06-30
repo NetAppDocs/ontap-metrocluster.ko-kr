@@ -56,7 +56,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 
  a| 
-AFF A900
+AFF A900 및 FAS9500
  a| 
 8개
 

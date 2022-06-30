@@ -4,13 +4,13 @@ sidebar: sidebar
 keywords: AFF, A900, ONTAP, FAS, FC, Brocade, metrocluster 
 summary: 다음 표에는 AFF A900 시스템용 Brocade 스위치의 포트 사용량이 나와 있습니다 
 ---
-= AFF 9.10.1 이상을 실행하는 MetroCluster 구성에서 ONTAP A900 컨트롤러에 대한 Brocade 포트 사용
+= ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 또는 FAS9500 컨트롤러에 Brocade 포트를 사용합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
-다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 4개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. AFF A900에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.
+다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 4개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. AFF A900 및 FAS9500 시스템에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.
 
 |===
 

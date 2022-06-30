@@ -870,7 +870,7 @@ MetroCluster IP 인터페이스에서 사용하는 물리적 포트는 다음 �
 
 
  a| 
-AFF A900
+AFF A900 및 FAS9500
  a| 
 e5b
  a| 
@@ -896,7 +896,7 @@ e1b
 
 
  a| 
-AFF A700 및 FAS900
+AFF A700 및 FAS9000
  a| 
 e5a
  a| 

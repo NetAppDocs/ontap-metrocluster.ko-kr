@@ -30,16 +30,7 @@ Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 aggr_b2    227.1GB   227.1GB    0% online       0 node_B_2   raid_dp,
                                                                    mirrored,
                                                                    normal
-
-node_A_1::> aggr show
-Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
---------- -------- --------- ----- ------- ------ ---------------- ------------
-...
-aggr_b2          -         -     - unknown      - node_A_1
 ----
-+
-재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 'storage aggregate show' 명령의 출력에 "unknown" 상태로 나타날 수 있습니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하십시오.
-
 . 정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태이고("가동 상태"를 나타냄), 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.
 +
 'vserver show-subtype sync-source'를 선택합니다
