@@ -209,7 +209,6 @@ data_cluster_B
                                                               normal
 root_cluster_B    -         -     - unknown      - node_A_1   -
 ----
-. 재해 사이트에서 노드를 부팅합니다.
 . 스위치백 복구 상태를 확인합니다.
 +
 'MetroCluster node show'

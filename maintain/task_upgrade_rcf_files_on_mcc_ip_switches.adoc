@@ -128,19 +128,21 @@ MetroCluster 운용사 show-job-id 38
 
 
 . 스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.
-+
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom IP RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
-
-
-+
-스위치를 다음 순서로 업데이트하십시오.
-
-+
-.. 스위치_A_1
-.. 스위치_B_1
-.. 스위치_A_2
-.. 스위치_B_2
 
 
 
+NOTE: L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스'에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.
+
++ * link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom IP RCF 파일 다운로드 및 설치"]
+
++ * link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+
++ 스위치를 다음 순서대로 업데이트합니다.
+
+. 스위치_A_1
+. 스위치_B_1
+. 스위치_A_2
+. 스위치_B_2
+
+
+GitHub 문제 135호, 2022년 7월 4일

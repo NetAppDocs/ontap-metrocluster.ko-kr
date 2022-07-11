@@ -3559,7 +3559,6 @@
   <block id="68e2e6c811fcf4ea79df3b84f45653bf" category="list-text">볼륨 이동 작업의 상태를 확인합니다.</block>
   <block id="cac3d29269cf69756d4750034581575a" category="paragraph">'volume move show -volume vol_f성분_이름'</block>
   <block id="96b370eac5aa139852f6e8fd4b6aaf01" category="summary">MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
-  <block id="775b84147d85d58d8180690300a5d104" category="list-text">이 절차는 특정 ONTAP 버전에서 사용할 수 있습니다.</block>
   <block id="0658afd7b63854a03c773da7890b79c4" category="list-text">ONTAP 9.3 이상에서는 2노드 구성이 지원됩니다.</block>
   <block id="ed332ae2e9a3efd17382e627809f4c84" category="paragraph">9.8 이전의 ONTAP 버전을 실행하는 4노드 또는 8노드 구성에서는 이 절차를 사용하지 마십시오.</block>
   <block id="cd71bc5f24bea355d7c54ac4a1bd00a5" category="list-text">원래 노드와 새 노드 간에 스토리지, FC 및 이더넷 연결을 사전에 매핑하는 것이 좋습니다.</block>
@@ -7515,9 +7514,7 @@
   <block id="e42120d29d88cc6c3c023d82236437a8" category="admonition">이 절차는 MetroCluster IP 및 FC 구성 모두에서 사용됩니다.</block>
   <block id="13453110a818269a21fc3929d2514208" category="image-alt">데이터 센터의 전원을 끕니다</block>
   <block id="efe31da79ff42582640c229b718168aa" category="section-title">MetroCluster 사이트의 전원을 끕니다</block>
-  <block id="d8a69cf9d5438bcb021a7abc71ab4571" category="paragraph">다음 단계의 모든 명령은 전원을 끄려는 사이트에서 실행됩니다.</block>
   <block id="4bfd66c37cd5ce244e0dfdd30c499d83" category="list-text">시작하기 전에 사이트의 미러링되지 않은 애그리게이트가 오프라인 상태인지 확인합니다.</block>
-  <block id="9458e87c0098f44c3f2f9a56df027289" category="list-text">다음 명령을 입력하여 전환을 구현합니다.</block>
   <block id="0829264e645ef456fedfb9d7d6e189a9" category="paragraph">MetroCluster FC 구성에서는 aggregate의 원격 디스크에 액세스할 수 있는 경우, 미러링되지 않은 애그리게이트가 스위치오버 이후 온라인만 됩니다. ISL에 장애가 발생하면 로컬 노드가 미러링되지 않은 원격 디스크의 데이터를 액세스할 수 없습니다. Aggregate에 장애가 발생하면 로컬 노드가 재부팅될 수 있습니다.</block>
   <block id="c35cb6405b316f2999613190b9a610f3" category="list-text">전환 완료 모니터링 및 확인:</block>
   <block id="60add77cd3913e8299d20186ba7ec1e0" category="list-text">ONTAP 9.6 이상을 실행하는 MetroCluster IP 구성이 있는 경우 재해 사이트 플렉스가 온라인 상태가 되고 복구 작업이 자동으로 완료될 때까지 기다립니다.</block>
@@ -7863,11 +7860,7 @@
   <block id="bde0605fb74695c23ddd122685cfc65e" category="section-title">RCF 파일을 업그레이드합니다</block>
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
   <block id="c58c2c8b494a438765beae02806faf3a" category="paragraph">스위치 공급업체의 단계를 따르십시오.</block>
-  <block id="2deafafde550e3fbeae046746ef3f599" category="list-text">스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.</block>
   <block id="97a377942f4f2e5cbecdba36cbfb77ea" category="inline-link-macro">Broadcom IP RCF 파일 다운로드 및 설치</block>
-  <block id="c1e630c896fe7378e2dd05cd5272a6ff" category="list-text"><block ref="c1e630c896fe7378e2dd05cd5272a6ff" category="inline-link-macro-rx"></block></block>
-  <block id="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="list-text"><block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
-  <block id="d42d9a9e37bc8567ae9ea46bcfad54c0" category="paragraph">스위치를 다음 순서로 업데이트하십시오.</block>
   <block id="78000b0502657029700618498b49c2a2" category="list-text">스위치_A_1</block>
   <block id="e8ec5d8866ea800460ce1192269d2c8f" category="list-text">스위치_B_1</block>
   <block id="9c84e76a527ed2550b5deb0129b1f0ef" category="list-text">스위치_A_2</block>
@@ -12596,4 +12589,23 @@
   <block id="d903b046ad4e23192a38f289cf8b3677" category="paragraph">재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하려면 기술 자료 문서를 참조하십시오 <block ref="5f58a40bfe898f128ca76e4a4e4715d4" category="inline-link-macro-rx"></block></block>
   <block id="9734751a8e945b1c9cd85ffbdd0c241e" category="admonition">사용한 교체 컨트롤러 모듈의 NVRAM 내용을 지우지 않은 경우 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 패닉 메시지가 나타날 수 있습니다 이 경우 시스템을 ONTAP 프롬프트(boot_ontap menu)로 다시 부팅합니다. 그런 다음 해야 합니다 <block ref="81092c96bc8b36fe9ac80e13a918f8bb" category="inline-xref-macro-rx"></block></block>
   <block id="2117e88807c2074036a5c585d3364860" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="0ab5e32384cf33a80caff743210417d8" category="admonition">HA 및 스토리지 페일오버의 예상 구성 상태는 다음과 같습니다.</block>
+  <block id="a9c14bf4555cada69be518fce567a21c" category="list-text">HA 모드가 구성되었지만 스토리지 페일오버가 사용되도록 설정되지 않았습니다.</block>
+  <block id="917db687ec940c706231d4c917812bb2" category="list-text">HA 테이크오버 기능이 비활성화됩니다.</block>
+  <block id="202fc6604bcb0268741426bb0d623520" category="list-text">HA 인터페이스가 오프라인 상태입니다.</block>
+  <block id="9064d0cb38703eeae4019097f2ba6dee" category="list-text">HA 모드, 스토리지 페일오버 및 인터페이스는 프로세스의 뒷부분에서 구성됩니다.</block>
+  <block id="a5820aab646669a3b5a9ad826ceaf514" category="list-text">특정 ONTAP 버전에서 이 절차를 사용할 수 있습니다.</block>
+  <block id="5ac8082d208bbf03d0cce2d606e0f49f" category="paragraph">일치하는 포트가 없습니다. 업그레이드 후에는 클러스터 포트를 다시 생성해야 합니다.<block ref="2305a256def4f5c38d82352fac177e1d" category="inline-link-macro-rx"></block></block>
+  <block id="44489e59a236bf582156026d721d7300" category="list-text">스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.</block>
+  <block id="a208547a21e1dc907c538b655cfee7c1" category="admonition">L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스'에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.</block>
+  <block id="a7ad2cc3f2e65335d382b74029354ee6" category="paragraph">+ * <block ref="c1e630c896fe7378e2dd05cd5272a6ff" category="inline-link-macro-rx"></block></block>
+  <block id="15229eb2fb74ec06320e5767f87322b0" category="paragraph">+ * <block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
+  <block id="6103dfdbf1ef77c8394206644595ce63" category="paragraph">+ 스위치를 다음 순서대로 업데이트합니다.</block>
+  <block id="440e5d46a3352ce5e00ab6b9ecdbc792" category="paragraph">GitHub 문제 135호, 2022년 7월 4일</block>
+  <block id="05cb8d64e2770620783bfd98ba2c571c" category="paragraph">다음 단계의 모든 명령은 전원이 켜져 있도록 사이트에서 실행됩니다.</block>
+  <block id="714cb8627bb0d04d6b5d032326cab4a3" category="list-text">유지하고자 하는 사이트에서 전환을 구현합니다.</block>
+  <block id="d5e08bac7a66723faca8e245c44582ae" category="list-text">볼륨 및 LUN을 오프라인 상태로 이동합니다.</block>
+  <block id="4434ac45fa2bd65c77619dc4135a3848" category="list-text">볼륨을 오프라인으로 이동합니다.</block>
+  <block id="8a0f98caf632998576a36c94b83328a6" category="list-text">LUN을 오프라인 상태로 이동합니다.</block>
+  <block id="e7edce3217788bc841a63851100c9164" category="list-text">미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환</block>
 </blocks>

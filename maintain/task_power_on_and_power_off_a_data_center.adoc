@@ -28,7 +28,7 @@ image::power-on-off-data-center.gif[데이터 센터의 전원을 끕니다]
 
 현장 유지 보수 또는 재배치를 시작하려면 먼저 사이트 및 모든 장비의 전원을 꺼야 합니다.
 
-다음 단계의 모든 명령은 전원을 끄려는 사이트에서 실행됩니다.
+다음 단계의 모든 명령은 전원이 켜져 있도록 사이트에서 실행됩니다.
 
 .단계
 . 시작하기 전에 사이트의 미러링되지 않은 애그리게이트가 오프라인 상태인지 확인합니다.
@@ -62,10 +62,15 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
 
-. 다음 명령을 입력하여 전환을 구현합니다.
+. 유지하고자 하는 사이트에서 전환을 구현합니다.
 +
 MetroCluster 절체
 
++
+[listing]
+----
+cluster_A::*> metrocluster switchover
+----
 +
 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
 
@@ -99,6 +104,28 @@ cluster_A::*> metrocluster operation show
 +
 이전 버전의 ONTAP를 실행하는 MetroCluster IP 구성에서는 재해 사이트 노드가 ONTAP로 자동으로 부팅되지 않고 플렉스가 오프라인 상태로 유지됩니다. MetroCluster FC 구성의 경우 모든 플렉스가 온라인 상태로 유지되므로 플렉스를 온라인 상태로 유지할 필요가 없습니다.
 
+. 볼륨 및 LUN을 오프라인 상태로 이동합니다.
++
+.. 볼륨을 오프라인으로 이동합니다.
++
+[listing]
+----
+cluster_A::* volume offline <volume name>
+----
+.. LUN을 오프라인 상태로 이동합니다.
++
+[listing]
+----
+cluster_A::* lun offline lun_path <lun_path>
+----
+
+
+. 미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환
++
+[listing]
+----
+cluster_A*::> storage aggregate offline -aggregate <aggregate-name>
+----
 . 구성 및 ONTAP 버전에 따라 재해 사이트(Cluster_B)에 있는 영향을 받는 오프라인 플렉스를 확인하고 이동합니다.
 +
 [NOTE]
