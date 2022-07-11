@@ -3757,7 +3757,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-10 16:17:27 +0000">05/10/2022</time>
+    <time datetime="2022-07-11 22:44:03 +0000">07/11/2022</time>
     
   
 
@@ -3931,18 +3931,32 @@ volumes             ok
 </li>
 <li>
 <p>스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files">"Broadcom IP RCF 파일 다운로드 및 설치"</a></p>
 </li>
-<li>
-<p><a href="../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files">"Cisco IP RCF 파일 다운로드 및 설치"</a></p>
-<div class="paragraph">
-<p>스위치를 다음 순서로 업데이트하십시오.</p>
+</ol>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
+</td>
+<td class="content">
+L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스&#8217;에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>+ * <a href="../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files">"Broadcom IP RCF 파일 다운로드 및 설치"</a></p>
+</div>
+<div class="paragraph">
+<p>+ * <a href="../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files">"Cisco IP RCF 파일 다운로드 및 설치"</a></p>
+</div>
+<div class="paragraph">
+<p>+ 스위치를 다음 순서대로 업데이트합니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>스위치_A_1</p>
 </li>
@@ -3957,11 +3971,8 @@ volumes             ok
 </li>
 </ol>
 </div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
+<div class="paragraph">
+<p>GitHub 문제 135호, 2022년 7월 4일</p>
 </div>
 </div>
 </div>

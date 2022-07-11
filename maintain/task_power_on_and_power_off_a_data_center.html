@@ -3757,7 +3757,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 14:14:51 +0000">06/01/2022</time>
+    <time datetime="2022-07-11 22:44:03 +0000">07/11/2022</time>
     
   
 
@@ -3801,7 +3801,7 @@
 <p>현장 유지 보수 또는 재배치를 시작하려면 먼저 사이트 및 모든 장비의 전원을 꺼야 합니다.</p>
 </div>
 <div class="paragraph">
-<p>다음 단계의 모든 명령은 전원을 끄려는 사이트에서 실행됩니다.</p>
+<p>다음 단계의 모든 명령은 전원이 켜져 있도록 사이트에서 실행됩니다.</p>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -3859,9 +3859,14 @@
 </div>
 </li>
 <li>
-<p>다음 명령을 입력하여 전환을 구현합니다.</p>
+<p>유지하고자 하는 사이트에서 전환을 구현합니다.</p>
 <div class="paragraph">
 <p>MetroCluster 절체</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster_A::*&gt; metrocluster switchover</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</p>
@@ -3901,6 +3906,37 @@ cluster_A::*&gt; metrocluster operation show
 <p>ONTAP 9.6 이상을 실행하는 MetroCluster IP 구성이 있는 경우 재해 사이트 플렉스가 온라인 상태가 되고 복구 작업이 자동으로 완료될 때까지 기다립니다.</p>
 <div class="paragraph">
 <p>이전 버전의 ONTAP를 실행하는 MetroCluster IP 구성에서는 재해 사이트 노드가 ONTAP로 자동으로 부팅되지 않고 플렉스가 오프라인 상태로 유지됩니다. MetroCluster FC 구성의 경우 모든 플렉스가 온라인 상태로 유지되므로 플렉스를 온라인 상태로 유지할 필요가 없습니다.</p>
+</div>
+</li>
+<li>
+<p>볼륨 및 LUN을 오프라인 상태로 이동합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>볼륨을 오프라인으로 이동합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>cluster_A::* volume offline &lt;volume name&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>LUN을 오프라인 상태로 이동합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>cluster_A::* lun offline lun_path &lt;lun_path&gt;</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환</p>
+<div class="listingblock">
+<div class="content">
+<pre>cluster_A*::&gt; storage aggregate offline -aggregate &lt;aggregate-name&gt;</pre>
+</div>
 </div>
 </li>
 <li>

@@ -3757,7 +3757,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-07-11 22:44:03 +0000">07/11/2022</time>
     
   
 
@@ -3991,8 +3991,37 @@ Where is the controller located []: site_A</pre>
 <div class="paragraph">
 <p>'Storage failover modify-mode ha-node localhost'</p>
 </div>
-<div class="paragraph">
-<p>이 명령은 고가용성 모드를 구성하지만 스토리지 페일오버를 사용하도록 설정하지는 않습니다. 스토리지 페일오버는 나중에 MetroCluster 구성을 구성할 때 자동으로 설정됩니다.</p>
+<div class="exampleblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
+</td>
+<td class="content">
+HA 및 스토리지 페일오버의 예상 구성 상태는 다음과 같습니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HA 모드가 구성되었지만 스토리지 페일오버가 사용되도록 설정되지 않았습니다.</p>
+</li>
+<li>
+<p>HA 테이크오버 기능이 비활성화됩니다.</p>
+</li>
+<li>
+<p>HA 인터페이스가 오프라인 상태입니다.</p>
+</li>
+<li>
+<p>HA 모드, 스토리지 페일오버 및 인터페이스는 프로세스의 뒷부분에서 구성됩니다.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </li>
 <li>
