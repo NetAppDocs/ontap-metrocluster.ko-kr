@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/ontap-metrocluster/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -3757,7 +3759,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-10 16:17:27 +0000">05/10/2022</time>
+    <time datetime="2022-07-14 21:01:51 +0000">07/14/2022</time>
     
   
 
@@ -3767,15 +3769,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>환경은 다음 요구 사항을 충족해야 합니다.</p>
+<p>환경은 특정 요구 사항을 충족해야 합니다.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-metrocluster/images/note.svg" alt="참고">
-</td>
-<td class="content">
+<div class="paragraph">
+<p>다음 요구 사항은 하나의 DR 그룹(재해 복구 그룹)에 적용됩니다. 에 대해 자세히 알아보십시오 <a href="concept_parts_of_an_ip_mcc_configuration_mcc_ip.html#disaster-recovery-dr-groups">"DR 그룹"</a>.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -3786,6 +3784,9 @@
 </li>
 <li>
 <p>ONTAP 중재자는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.</p>
+<div class="paragraph">
+<p>ONTAP 중재자와 각 사이트 간의 연결은 두 개의 개별 장애 도메인이어야 합니다.</p>
+</div>
 </li>
 <li>
 <p>ONTAP 중재자 서비스는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</p>
@@ -3794,10 +3795,6 @@
 <p>ONTAP 9.7 이상에서는 자동 비계획 전환이 지원됩니다.</p>
 </li>
 </ul>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -3812,10 +3809,10 @@
 <li>
 <p>지연 시간</p>
 <div class="paragraph">
-<p>왕복 지연 시간은 75ms를 초과할 수 없습니다.</p>
+<p>최대 지연 시간이 75ms(RTT) 미만입니다.</p>
 </div>
 <div class="paragraph">
-<p>지터는 25ms 미만이어야 합니다.</p>
+<p>지터는 5ms를 넘지 않아야 합니다.</p>
 </div>
 </li>
 <li>
@@ -3827,13 +3824,50 @@
 <li>
 <p>패킷 손실</p>
 <div class="paragraph">
-<p>패킷 손실은 0.01% 이하여야 합니다.</p>
+<p>ICMP(Internet Control Message Protocol)와 TCP 트래픽 모두에서 패킷 손실은 0.01% 미만이어야 합니다.</p>
 </div>
 </li>
 <li>
 <p>대역폭</p>
 <div class="paragraph">
-<p>중재자 서비스와 MetroCluster 구성 사이의 링크는 20Mbps 이상의 대역폭을 가져야 합니다.</p>
+<p>중재자 서비스와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.</p>
+</div>
+</li>
+<li>
+<p>독립적 연결</p>
+<div class="paragraph">
+<p>각 사이트와 ONTAP 중재자 간의 독립적인 연결이 필요합니다. 한 사이트의 장애가 다른 두 개의 영향을 받지 않는 사이트 간의 IP 연결을 중단해서는 안 됩니다.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="metrocluster-구성에서-ontap-중재자를-위한-호스트-요구-사항">MetroCluster 구성에서 ONTAP 중재자를 위한 호스트 요구 사항</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>구성이 여러 호스트 요구 사항을 충족하는지 확인해야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ONTAP 중재자는 두 ONTAP 클러스터와 물리적으로 분리된 외부 사이트에 설치해야 합니다.</p>
+</li>
+<li>
+<p>ONTAP 중재자가 최대 5개의 MetroCluster 구성을 지원합니다.</p>
+</li>
+<li>
+<p>ONTAP 중재자의 경우 CPU 및 메모리(RAM)에 대한 호스트 운영 체제의 최소 요구 사항보다 더 많은 작업이 필요하지 않습니다.</p>
+</li>
+<li>
+<p>호스트 운영 체제의 최소 요구 사항 외에 최소 30GB의 추가 가용 디스크 공간을 사용할 수 있어야 합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>각 DR 그룹에는 최대 200MB의 디스크 공간이 필요합니다.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>

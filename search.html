@@ -3726,6 +3726,8 @@
   data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
   data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
   data-results-found="{hitCount}개의 결과를 찾음"
+  data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+  data-error-reset="Reset Search"
   data-sk-es-pf-indexes=""
   data-flavor=""></div>
   <button class="search-all-icon n-property-bar__search-toggle-button" type="button">
@@ -3884,6 +3886,7 @@
     <script src='/ko-kr/ontap-metrocluster/js/tabbed-blocks.js'></script>
     <script src='/ko-kr/ontap-metrocluster/js/sidebar.js'></script>
   </body><script>
+    /*
       if(hasParameter(window.location.search,'q')) {
         var queryString = decodeURI(getParameter(window.location.search, 'q'));
         document.getElementsByClassName("sk-search-box__text")[0].setAttribute("value", queryString);
@@ -3906,4 +3909,5 @@
         param = param || "";
         return (searchString.indexOf("?"+param+"=") != -1 || searchString.indexOf("&"+param+"=") != -1);
       }
+      */
   </script></html>

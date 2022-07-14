@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/ontap-metrocluster/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -3757,7 +3759,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 14:15:34 +0000">04/13/2022</time>
+    <time datetime="2022-07-14 21:01:51 +0000">07/14/2022</time>
     
   
 
@@ -3851,6 +3853,144 @@ FC_switch_A_1# copy ftp://10.10.10.55/firmware/m9200-s2ek9-mz.5.2.1.bin bootflas
 </li>
 <li>
 <p>이 Fabric의 두 스위치에서 모든 VSAN을 비활성화합니다.</p>
+<div class="paragraph">
+<p>VSAN을 비활성화하려면 다음 절차를 따르십시오.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>구성 터미널을 엽니다.</p>
+<div class="paragraph">
+<p>``config t *’</p>
+</div>
+</li>
+<li>
+<p>' * VSAN 데이터베이스 * '를 입력합니다</p>
+</li>
+<li>
+<p>VSAN의 상태를 확인합니다.</p>
+<div class="paragraph">
+<p>``show vsan *’’입니다</p>
+</div>
+<div class="paragraph">
+<p>모든 VSAN은 활성 상태여야 합니다.</p>
+</div>
+</li>
+<li>
+<p>VSAN 일시 중단:</p>
+<div class="paragraph">
+<p>' * vsan_vsan-num_suspend *'</p>
+</div>
+<div class="paragraph">
+<p>예: * 'VSAN 10 일시 중지</p>
+</div>
+</li>
+<li>
+<p>VSAN의 상태를 다시 확인합니다.</p>
+<div class="paragraph">
+<p>``show vsan *’ + 모든 VSAN은 일시 중단되어야 합니다.</p>
+</div>
+</li>
+<li>
+<p>구성 터미널 종료:</p>
+<div class="paragraph">
+<p>' * end * '</p>
+</div>
+</li>
+<li>
+<p>구성을 저장합니다.</p>
+<div class="paragraph">
+<p>'* copy running-config startup-config * '</p>
+</div>
+<div class="paragraph">
+<p>다음 예는 FC_SWITCH_A_1의 출력을 표시합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FC_switch_A_1# config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+FC_switch_A_1(config)# vsan database
+FC_switch_A_1(config-vsan-db)# show vsan
+vsan 1 information
+         name:VSAN0001  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:up
+
+vsan 30 information
+         name:MC1_FCVI_2_30  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:up
+
+vsan 40 information
+         name:MC1_STOR_2_40  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:up
+
+vsan 70 information
+         name:MC2_FCVI_2_70  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:up
+
+vsan 80 information
+         name:MC2_STOR_2_80  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:up
+
+vsan 4079:evfp_isolated_vsan
+
+vsan 4094:isolated_vsan
+
+FC_switch_A_1(config-vsan-db)# vsan 1 suspend
+FC_switch_A_1(config-vsan-db)# vsan 30 suspend
+FC_switch_A_1(config-vsan-db)# vsan 40 suspend
+FC_switch_A_1(config-vsan-db)# vsan 70 suspend
+FC_switch_A_1(config-vsan-db)# vsan 80 suspend
+FC_switch_A_1(config-vsan-db)# end
+FC_switch_A_1#
+FC_switch_A_1# show vsan
+vsan 1 information
+         name:VSAN0001  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:down
+
+vsan 30 information
+         name:MC1_FCVI_2_30  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:down
+
+vsan 40 information
+         name:MC1_STOR_2_40  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:down
+
+vsan 70 information
+         name:MC2_FCVI_2_70  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:down
+
+vsan 80 information
+         name:MC2_STOR_2_80  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:down
+
+vsan 4079:evfp_isolated_vsan
+
+vsan 4094:isolated_vsan</pre>
+</div>
+</div>
 </li>
 <li>
 <p>스위치에 원하는 펌웨어를 설치합니다.</p>
@@ -3875,28 +4015,189 @@ Enter Yes to confirm the installation.</pre>
 </li>
 <li>
 <p>이 Fabric의 두 스위치에서 모든 VSAN을 활성화합니다.</p>
+<div class="paragraph">
+<p>VSAN을 활성화하려면 다음 절차를 따르십시오.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>구성 터미널을 엽니다.</p>
+<div class="paragraph">
+<p>``config t *’</p>
+</div>
+</li>
+<li>
+<p>' * VSAN 데이터베이스 * '를 입력합니다</p>
+</li>
+<li>
+<p>VSAN의 상태를 확인합니다.</p>
+<div class="paragraph">
+<p>``show vsan *’’입니다</p>
+</div>
+<div class="paragraph">
+<p>VSAN은 일시 중단되어야 합니다.</p>
+</div>
+</li>
+<li>
+<p>VSAN을 활성화합니다.</p>
+<div class="paragraph">
+<p>'* no vsan_vsan-num_suspend * '</p>
+</div>
+<div class="paragraph">
+<p>예: * 'no vsan 10 suspend</p>
+</div>
+</li>
+<li>
+<p>VSAN의 상태를 다시 확인합니다.</p>
+<div class="paragraph">
+<p>``show vsan *’’입니다</p>
+</div>
+<div class="paragraph">
+<p>모든 VSAN은 활성 상태여야 합니다.</p>
+</div>
+</li>
+<li>
+<p>구성 터미널 종료:</p>
+<div class="paragraph">
+<p>' * end * '</p>
+</div>
+</li>
+<li>
+<p>구성을 저장합니다.</p>
+<div class="paragraph">
+<p>'* copy running-config startup-config * '</p>
+</div>
+<div class="paragraph">
+<p>다음 예는 FC_SWITCH_A_1의 출력을 표시합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FC_switch_A_1# config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+FC_switch_A_1(config)# vsan database
+FC_switch_A_1(config-vsan-db)# show vsan
+vsan 1 information
+         name:VSAN0001  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:down
+
+vsan 30 information
+         name:MC1_FCVI_2_30  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:down
+
+vsan 40 information
+         name:MC1_STOR_2_40  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:down
+
+vsan 70 information
+         name:MC2_FCVI_2_70  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:down
+
+vsan 80 information
+         name:MC2_STOR_2_80  state:suspended
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:down
+
+vsan 4079:evfp_isolated_vsan
+
+vsan 4094:isolated_vsan
+
+FC_switch_A_1(config-vsan-db)# no vsan 1 suspend
+FC_switch_A_1(config-vsan-db)# no vsan 30 suspend
+FC_switch_A_1(config-vsan-db)# no vsan 40 suspend
+FC_switch_A_1(config-vsan-db)# no vsan 70 suspend
+FC_switch_A_1(config-vsan-db)# no vsan 80 suspend
+FC_switch_A_1(config-vsan-db)#
+FC_switch_A_1(config-vsan-db)# show vsan
+vsan 1 information
+         name:VSAN0001  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:up
+
+vsan 30 information
+         name:MC1_FCVI_2_30  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:up
+
+vsan 40 information
+         name:MC1_STOR_2_40  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:up
+
+vsan 70 information
+         name:MC2_FCVI_2_70  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id
+         operational state:up
+
+vsan 80 information
+         name:MC2_STOR_2_80  state:active
+         interoperability mode:default
+         loadbalancing:src-id/dst-id/oxid
+         operational state:up
+
+vsan 4079:evfp_isolated_vsan
+
+vsan 4094:isolated_vsan
+
+FC_switch_A_1(config-vsan-db)# end
+FC_switch_A_1#</pre>
+</div>
+</div>
 </li>
 <li>
 <p>ONTAP에서 MetroCluster 구성 작동을 확인합니다.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "</p>
+<p>시스템에 다중 경로 가 있는지 확인합니다.</p>
+<div class="paragraph">
+<p>' * node run-node_node-name_sysconfig-a * '</p>
+</div>
 </li>
 <li>
-<p>두 클러스터에 대한 상태 경고(+' * system health alert show * ')가 있는지 확인합니다</p>
+<p>두 클러스터 모두에서 상태 알림을 확인합니다.</p>
+<div class="paragraph">
+<p>'* 시스템 상태 경고 표시 * '</p>
+</div>
 </li>
 <li>
-<p>MetroCluster 설정을 확인하고 운영 모드가 정상인지 확인합니다. + " * MetroCluster show * "</p>
+<p>MetroCluster 구성을 확인하고 운영 모드가 정상인지 확인합니다.</p>
+<div class="paragraph">
+<p>``MetroCluster 쇼 *’</p>
+</div>
 </li>
 <li>
-<p>MetroCluster check 수행: + ` * MetroCluster check run * '</p>
+<p>MetroCluster 검사를 수행합니다.</p>
+<div class="paragraph">
+<p>' * MetroCluster check run * '</p>
+</div>
 </li>
 <li>
-<p>MetroCluster check 결과 표시: + ` * MetroCluster check show * '</p>
+<p>MetroCluster 검사 결과를 표시합니다.</p>
+<div class="paragraph">
+<p>``MetroCluster CHOK SHOW *’’</p>
+</div>
 </li>
 <li>
-<p>스위치에 대한 상태 경고(있는 경우)가 있는지 확인합니다. + " * storage switch show * "</p>
+<p>스위치에 대한 상태 경고를 확인합니다(있는 경우).</p>
+<div class="paragraph">
+<p>'* 스토리지 스위치 쇼 * '</p>
+</div>
 </li>
 <li>
 <p>Config Advisor를 실행합니다.</p>
