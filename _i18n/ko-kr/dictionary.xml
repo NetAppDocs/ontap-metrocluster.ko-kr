@@ -2119,7 +2119,6 @@
   <block id="965fd53f15f7bf99e2336c9a442ebb53" category="list-text">ONTAP 중재자 서비스는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
   <block id="c1444ba460cdd9b59c8ecf988ca907c4" category="list-text">ONTAP 9.7 이상에서는 자동 비계획 전환이 지원됩니다.</block>
   <block id="927ed696d98572bdb5039cbffcfdb480" category="section-title">MetroCluster 구성에서 중재자를 사용하기 위한 네트워크 요구 사항</block>
-  <block id="b2b90a2080b20a433104d14b3164613a" category="paragraph">MetroCluster 구성에 ONTAP 중재자 서비스를 설치하려면 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.</block>
   <block id="1a03f6720968dfb968df6cc034114444" category="list-text">MTU</block>
   <block id="6b55a3ff2ffe6275beb9e73d58d08007" category="paragraph">MTU 크기는 1400 이상이어야 합니다.</block>
   <block id="64ddceb2cbf941d1fc93373ce9219a1f" category="list-text">패킷 손실</block>
@@ -6905,18 +6904,10 @@
   <block id="77df057daf76f735d0f043a72ec2aa0d" category="paragraph">' * copy_source_filletarget_file_ * '</block>
   <block id="d79569db55a245ec84059695dcfda462" category="paragraph">다음 예에서는 kickstart 파일('9200-s2ek9-kickstart-MZ.5.2.1.bin')과 시스템 파일('9200-s2ek9-MZ.5.2.1.bin')이 '/firmware/' 경로의 FTP 서버 10.10.10.55에 있습니다.</block>
   <block id="a457135adaa0f04d7a51bf9454377797" category="paragraph">다음 예는 FC_SWITCH_A_1에서 실행된 명령을 보여줍니다.</block>
-  <block id="49423ea450a2fb44c7b0112f25a9e604" category="list-text">이 Fabric의 두 스위치에서 모든 VSAN을 비활성화합니다.</block>
   <block id="dd6b9024482bdc7dffb370c445595e90" category="list-text">스위치에 원하는 펌웨어를 설치합니다.</block>
   <block id="f4c4d9dac1fcf9ad55f947c425db6845" category="paragraph">'* 모든 시스템 부트 플래시 설치:__systemfile_name__kickstart 부트 플래시:__cickstartfile_name__*'</block>
   <block id="ba7c5d6f6ef0b4eeeb3cf2edceb16a5e" category="list-text">각 스위치에서 펌웨어 버전을 확인하여 올바른 버전이 설치되었는지 확인합니다.</block>
   <block id="14afcc8b85712a75a7cf7514c1e75983" category="paragraph">'* 버전 표시 * '</block>
-  <block id="a69604ad0e31be276b2fc1bb94145857" category="list-text">이 Fabric의 두 스위치에서 모든 VSAN을 활성화합니다.</block>
-  <block id="365ca0e4f2197423629324647193d170" category="list-text">시스템이 다중 경로로 지정되었는지 확인합니다. + " * node run-node_node -name_sysconfig -a * "</block>
-  <block id="8c97991d1f2e00c0d96a3986c86bdf7f" category="list-text">두 클러스터에 대한 상태 경고(+' * system health alert show * ')가 있는지 확인합니다</block>
-  <block id="da0ff0da60f7f00ebb996e20b72f9ee8" category="list-text">MetroCluster 설정을 확인하고 운영 모드가 정상인지 확인합니다. + " * MetroCluster show * "</block>
-  <block id="ff6eadd340dcb509a7ffff48fb0151c6" category="list-text">MetroCluster check 수행: + ` * MetroCluster check run * '</block>
-  <block id="083232ed80a0455172fded40eccc1ef8" category="list-text">MetroCluster check 결과 표시: + ` * MetroCluster check show * '</block>
-  <block id="6f480ffa9f23ccd58b24ca38c10600d4" category="list-text">스위치에 대한 상태 경고(있는 경우)가 있는지 확인합니다. + " * storage switch show * "</block>
   <block id="5d0aacff762759dbda6dfa013df2be6e" category="list-text">두 번째 스위치 패브릭에 대해 이 절차를 반복합니다.</block>
   <block id="b57004775c4d348fa434a0ee51cb3d83" category="summary">MetroCluster 구성에서 MetroCluster 관련 하드웨어 구성요소를 유지할 수 있습니다.</block>
   <block id="1b90568b607149e86214f36f7e1c89a5" category="paragraph">다음 절차를 사용하여 MetroCluster 구성에서 MetroCluster 관련 하드웨어 구성요소를 유지할 수 있습니다.</block>
@@ -12347,7 +12338,6 @@
   <block id="344fc0c43530ccad90a38944b632b1e4" category="list-text">설정 모드 종료: '종료</block>
   <block id="9c0c1022f821ad4ee9fd20c2731bc6f1" category="list-text">문제 해결을 지원하기 위해 각 MetroCluster DR 그룹 내의 각 SAS 디스크 쉘프에 대해 고유한 쉘프 ID를 적극 권장합니다.</block>
   <block id="70fef59fffa5df67d10b024d11f37399" category="paragraph"><block ref="70fef59fffa5df67d10b024d11f37399" category="inline-link-macro-rx"></block></block>
-  <block id="466ed123ab8f5845237d3ae425397ec7" category="paragraph">환경은 다음 요구 사항을 충족해야 합니다.</block>
   <block id="c5cd3d887ef507cadc249c592410542a" category="list-text">Linux 버전을 업데이트할 계획이라면 최신 ONTAP 중재자 서비스를 설치하기 전에 업데이트를 수행하십시오.</block>
   <block id="5981ded82c976bff5c9a73686842655a" category="list-text">중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
   <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
@@ -12406,8 +12396,6 @@
   <block id="cf5928613cf8b77d8355882cdec38712" category="paragraph">내부 드라이브 16개에만 해당</block>
   <block id="90cd0db781b4639c1c46407e5a4f0a93" category="paragraph">+다음 플랫폼 모델은 사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
-  <block id="66420f475101cc9c2b0d458605176249" category="paragraph">왕복 지연 시간은 75ms를 초과할 수 없습니다.</block>
-  <block id="d89a2477841e85e6d37fac9fb392f350" category="paragraph">지터는 25ms 미만이어야 합니다.</block>
   <block id="37e445da4970f1c0106716e8dba83be8" category="paragraph">사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 다음 플랫폼 모델을 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
   <block id="9e9a93655547f7858baef5194a909e2c" category="cell">Cisco 3132Q-V, 3232C 또는 9336C-FX2</block>
   <block id="a825d9b135e0604b1a8244aa950f4952" category="paragraph">FC 노드의 로컬 클러스터 인터페이스입니다</block>
@@ -12422,7 +12410,6 @@
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
   <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
   <block id="fe92f5934bf96194725b46db02f72324" category="list-text">이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.</block>
-  <block id="610f11b52907034f4715c6fa1abf8d1b" category="paragraph">중재자 서비스와 MetroCluster 구성 사이의 링크는 20Mbps 이상의 대역폭을 가져야 합니다.</block>
   <block id="f5cd93f67ab362b3830ef2c47249e909" category="paragraph"><block ref="f5cd93f67ab362b3830ef2c47249e909" category="inline-link-macro-rx"></block></block>
   <block id="a3816a0d57fcb59bc1a3bfba35af44cf" category="paragraph"><block ref="a3816a0d57fcb59bc1a3bfba35af44cf" category="inline-link-macro-rx"></block></block>
   <block id="8a4f175190a1710cdcd52e7efde01268" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL을 활성화합니다</block>
@@ -12608,4 +12595,45 @@
   <block id="4434ac45fa2bd65c77619dc4135a3848" category="list-text">볼륨을 오프라인으로 이동합니다.</block>
   <block id="8a0f98caf632998576a36c94b83328a6" category="list-text">LUN을 오프라인 상태로 이동합니다.</block>
   <block id="e7edce3217788bc841a63851100c9164" category="list-text">미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환</block>
+  <block id="eeb4c33e80d1b1f4f321335e6c0a8948" category="list-text">이 Fabric의 두 스위치에서 모든 VSAN을 비활성화합니다.</block>
+  <block id="f214faa187b0f8585d0284ecf49f3906" category="paragraph">VSAN을 비활성화하려면 다음 절차를 따르십시오.</block>
+  <block id="cb8fb6423ba4514d27c43e02fd22b2c5" category="list-text">구성 터미널을 엽니다.</block>
+  <block id="aaa8e3ee96b410b325315a1de30cec4d" category="paragraph">``config t *’</block>
+  <block id="b8afb7257af8298e9b39672376c99b62" category="list-text">' * VSAN 데이터베이스 * '를 입력합니다</block>
+  <block id="bdcc1fc68db08008dfc00ee2fb9f43d0" category="list-text">VSAN의 상태를 확인합니다.</block>
+  <block id="e9f0b0392908ef9837a95fcb28e5f3ce" category="paragraph">``show vsan *’’입니다</block>
+  <block id="bfa47473eeda6cdc1320879f81c9474d" category="paragraph">모든 VSAN은 활성 상태여야 합니다.</block>
+  <block id="05d72f61ef02c2140fd7e59819dbf084" category="list-text">VSAN 일시 중단:</block>
+  <block id="30299303da61f3e16530da93773dc942" category="paragraph">' * vsan_vsan-num_suspend *'</block>
+  <block id="aff73339a7ace49d8fb821447e5e8511" category="paragraph">예: * 'VSAN 10 일시 중지</block>
+  <block id="39c87be3adad4cc73e3eb8d71d59b30e" category="list-text">VSAN의 상태를 다시 확인합니다.</block>
+  <block id="8374d5822320e4bcecd77348b45777e9" category="paragraph">``show vsan *’ + 모든 VSAN은 일시 중단되어야 합니다.</block>
+  <block id="60e747d08548393572fe33c71de63c4d" category="list-text">구성 터미널 종료:</block>
+  <block id="867c6e1e47ae23bbfc994dfb678e8dd7" category="paragraph">' * end * '</block>
+  <block id="25812ed1432cfe46632186b5957ebe26" category="list-text">구성을 저장합니다.</block>
+  <block id="f97309b3069a96764144d271543ba39d" category="paragraph">다음 예는 FC_SWITCH_A_1의 출력을 표시합니다.</block>
+  <block id="4bee25b7ef41eb8c76d388627d6c9875" category="list-text">이 Fabric의 두 스위치에서 모든 VSAN을 활성화합니다.</block>
+  <block id="9197f672eba96636ff2e194f924458d7" category="paragraph">VSAN을 활성화하려면 다음 절차를 따르십시오.</block>
+  <block id="c2a01cfc17a5081ae1c7a2c5be9d857b" category="paragraph">VSAN은 일시 중단되어야 합니다.</block>
+  <block id="b727a9424b5e29f595c0aa427109dab9" category="list-text">VSAN을 활성화합니다.</block>
+  <block id="b05dfe32ff54f216e31f69b3bcf35430" category="paragraph">'* no vsan_vsan-num_suspend * '</block>
+  <block id="59bf52ba61a46286e679847925ce1f3c" category="paragraph">예: * 'no vsan 10 suspend</block>
+  <block id="32a9706efc49910d5f907e98994d74f1" category="paragraph">``MetroCluster 쇼 *’</block>
+  <block id="b88bf0c809fffc695990879900c60d29" category="paragraph">환경은 특정 요구 사항을 충족해야 합니다.</block>
+  <block id="a624bf1cb8ea6541888d2e3bfed29f37" category="paragraph">다음 요구 사항은 하나의 DR 그룹(재해 복구 그룹)에 적용됩니다. 에 대해 자세히 알아보십시오 <block ref="0244a225d1215475caa277f136d50b4a" category="inline-link-macro-rx"></block>.</block>
+  <block id="9f6204fe619ab6c1e9a1fcd03de81cb5" category="paragraph">ONTAP 중재자와 각 사이트 간의 연결은 두 개의 개별 장애 도메인이어야 합니다.</block>
+  <block id="5030719f4c55271135b32bdf9c634c88" category="paragraph">MetroCluster 구성에 ONTAP 중재자 서비스를 설치하려면 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.</block>
+  <block id="ceeccb67c4ca8801e51075063d898307" category="paragraph">최대 지연 시간이 75ms(RTT) 미만입니다.</block>
+  <block id="2c66766b3cbb0e01db3809a4370c911e" category="paragraph">지터는 5ms를 넘지 않아야 합니다.</block>
+  <block id="192e68ef3df9e07712be5cfbedf63575" category="paragraph">ICMP(Internet Control Message Protocol)와 TCP 트래픽 모두에서 패킷 손실은 0.01% 미만이어야 합니다.</block>
+  <block id="918d95987e6cf19fe89998499e6e9348" category="paragraph">중재자 서비스와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.</block>
+  <block id="4f1f2bb1718b231428cfd539cdbe7657" category="list-text">독립적 연결</block>
+  <block id="d4fda9bf787c3a38a379763f5d621600" category="paragraph">각 사이트와 ONTAP 중재자 간의 독립적인 연결이 필요합니다. 한 사이트의 장애가 다른 두 개의 영향을 받지 않는 사이트 간의 IP 연결을 중단해서는 안 됩니다.</block>
+  <block id="f743e29bd73cf3b477b5b3c15fcf6ec1" category="section-title">MetroCluster 구성에서 ONTAP 중재자를 위한 호스트 요구 사항</block>
+  <block id="fec21bcdc858f42f1c942fd943d09de4" category="paragraph">구성이 여러 호스트 요구 사항을 충족하는지 확인해야 합니다.</block>
+  <block id="aecf60a0046b893cbed6332405eb3aa3" category="list-text">ONTAP 중재자는 두 ONTAP 클러스터와 물리적으로 분리된 외부 사이트에 설치해야 합니다.</block>
+  <block id="6f044e53b0f973c21b9f45e9f29dd890" category="list-text">ONTAP 중재자가 최대 5개의 MetroCluster 구성을 지원합니다.</block>
+  <block id="00dcc4021e9b5b5c4107ab832d8a3b22" category="list-text">ONTAP 중재자의 경우 CPU 및 메모리(RAM)에 대한 호스트 운영 체제의 최소 요구 사항보다 더 많은 작업이 필요하지 않습니다.</block>
+  <block id="3238177a17500506d8e25597811d95a1" category="list-text">호스트 운영 체제의 최소 요구 사항 외에 최소 30GB의 추가 가용 디스크 공간을 사용할 수 있어야 합니다.</block>
+  <block id="d87323d7c443195bdfe43686953d17da" category="list-text">각 DR 그룹에는 최대 200MB의 디스크 공간이 필요합니다.</block>
 </blocks>
