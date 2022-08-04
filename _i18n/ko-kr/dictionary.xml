@@ -496,7 +496,6 @@
   <block id="7d191b34c9144d68eb2fae3f407083be" category="paragraph">'스토리지 페일오버 표시 필드 모드'</block>
   <block id="b4c9e1380e1ed5373eae1207de120c59" category="paragraph">그렇지 않은 경우 각 노드에서 HA 모드를 구성한 다음 노드를 재부팅해야 합니다.</block>
   <block id="0f68bcf6db23f619a99e94a2fc9e080a" category="paragraph">'Storage failover modify-mode ha-node localhost'</block>
-  <block id="734411caacc66dc5fb48af46a3ee7524" category="paragraph">이 명령은 고가용성 모드를 구성하지만 스토리지 페일오버를 사용하도록 설정하지는 않습니다. 스토리지 페일오버는 나중에 MetroCluster 구성을 구성할 때 자동으로 설정됩니다.</block>
   <block id="dd06a2caac751d244ed876cee557e7fb" category="list-text">클러스터 인터커넥트에 4개의 포트가 구성되어 있는지 확인합니다.</block>
   <block id="47cd03a2fa721b9f4f83dca38829afea" category="paragraph">네트워크 포트 쇼</block>
   <block id="c8a47a2f93307e796690ebd7d82f5573" category="paragraph">MetroCluster IP 인터페이스는 현재 구성되지 않으며 명령 출력에 표시되지 않습니다.</block>
@@ -1273,15 +1272,6 @@
   <block id="4051be1a3983dca295d33b07d3d4aeb9" category="list-text">ADP에 구성된 시스템을 사용하는 경우 부팅 메뉴에서 옵션 9a를 선택하고 메시지가 표시되면 yes로 응답합니다.</block>
   <block id="4e7b785e4493cbe0b79242ce203ac879" category="admonition">이 프로세스는 중단을 야기합니다.</block>
   <block id="b2fa559c6e143e4ed29141eade0a1a3e" category="list-text">시스템이 ADP에 대해 구성되지 않은 경우 부팅 메뉴 프롬프트에 "wipmpeconfig"를 입력한 다음 Enter 키를 누릅니다.</block>
-  <block id="eb7f8625ee8e86a6bca2611bb12442ec" category="list-text"><block ref="c1f5a94cfd066062167f55d534e50946" category="inline-xref-macro-rx"></block></block>
-  <block id="6c7a64a1f4e024ce7a69797733e5ea70" category="list-text"><block ref="a68a4adac480e2cd0e0cb4df2db11ae4" category="inline-xref-macro-rx"></block></block>
-  <block id="f9a26e7e1146416447089df2dd5e9a7a" category="list-text">"9a" 옵션을 선택합니다.</block>
-  <block id="f2c62ba974aeba381c63dedf483a3554" category="list-text">노드가 재시작되면 부팅 메뉴를 표시하라는 메시지가 표시되면 Ctrl-C를 누른 다음 * 유지보수 모드 부팅 * 옵션을 선택합니다.</block>
-  <block id="777c3d143908c77e542462fee4831d88" category="list-text">로 진행합니다 <block ref="0ec0f3cb91ab6923e11455d08d5019fc" category="inline-link-macro-rx"></block>.</block>
-  <block id="9620a315fe49582f83b352cb3df7065d" category="paragraph">노드가 유지보수 모드일 때는 먼저 적절한 쉘프의 단일 디스크를 풀 0에 할당해야 합니다. 그런 다음, ONTAP는 쉘프의 나머지 디스크를 동일한 풀에 자동으로 할당합니다. 이 작업은 공장에서 수신된 시스템에서 필요하지 않으며, 풀 0에는 사전 구성된 루트 애그리게이트가 포함되어 있습니다.</block>
-  <block id="da4ffc9643edc63e8b45b98c3db4e4d1" category="list-text">부팅 메뉴에서 옵션 "4"를 선택하고 계속 진행합니다.</block>
-  <block id="973fe20c86fcee0442e8a4a7a7390bba" category="list-text">각 클러스터의 첫 번째 노드에서 클러스터 구성 프롬프트를 계속 진행합니다</block>
-  <block id="e8453ea55ca2ab8a592b2cb35594bcab" category="inline-link">ONTAP 시스템 관리자(버전 9.7 이상)</block>
   <block id="f753a91b4868b4d2d7ad06fa15958542" category="paragraph">'Storage failover modify -mode ha-node_localhost_'</block>
   <block id="7b0d27454ef980cc3577cf44e3462c41" category="section-title">클러스터를 MetroCluster 구성으로 구성합니다</block>
   <block id="744dd62dbddcfc9601b7e3e7d7cfc329" category="paragraph">클러스터를 피어로 사용하고, 루트 애그리게이트를 미러링하고, 미러링된 데이터 애그리게이트를 생성한 다음, 명령을 실행하여 MetroCluster 작업을 구현해야 합니다.</block>
@@ -1291,7 +1281,6 @@
   <block id="5b081d3d61723c9a4781cbdf3d2d324a" category="paragraph">이 작업은 내부 선반과 외부 선반이 없는 AFF A800 시스템에는 적용되지 않습니다.</block>
   <block id="e40d6a178d9137d254eca9144fcc5d3c" category="paragraph"><block ref="e40d6a178d9137d254eca9144fcc5d3c" category="inline-link-macro-rx"></block></block>
   <block id="dfedcd37df868d1ac2683539148a334c" category="list-text">자동 드라이브 할당 비활성화:</block>
-  <block id="6823c1546d13fbb3599a3e00ab6bcc7a" category="paragraph">'storage disk option modify -node_name -autoassign off'</block>
   <block id="e9695a34aff55a89cfcf4eb7c264e421" category="paragraph">MetroCluster IP 구성의 모든 노드에서 이 명령을 실행해야 합니다.</block>
   <block id="fc4f073ad5daa6447edda1ae7ce8b2a3" category="section-title">풀 0 드라이브의 드라이브 할당을 확인하는 중입니다</block>
   <block id="4c4ee99da54133541011014fd0611def" category="paragraph">원격 드라이브가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.</block>
@@ -1334,7 +1323,6 @@
   <block id="8d708d729f3157c2560f4fd66ab2821b" category="list-text">인터클러스터 LIF가 중복되는지 확인합니다.</block>
   <block id="3f03d09659bbfe5952ff31a77d57eca7" category="paragraph">네트워크 인터페이스 show-service-policy default-인터클러스터-failover를 선택합니다</block>
   <block id="a79109432485cb634f66654d4bce4833" category="paragraph">네트워크 인터페이스 show-role 인터클러스터-failover를 참조하십시오</block>
-  <block id="1a42d5e3ae526a4699281b8767219ce1" category="paragraph">다음 예에서는 "e0e" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0f" 포트로 페일오버된다는 것을 보여 줍니다.</block>
   <block id="3bad2dd7623ea523622748f7e327cfb7" category="section-title">공유 데이터 포트에 대한 인터클러스터 LIF 구성</block>
   <block id="cf620fa6f3ed9766bc13dc1be2e365fd" category="paragraph">데이터 네트워크와 공유하는 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 인터클러스터 네트워킹에 필요한 포트 수가 줄어듭니다.</block>
   <block id="79535297ba63fe49ca425eaa96a5e72f" category="list-text">시스템 SVM에 대한 인터클러스터 LIF 생성:</block>
@@ -1365,7 +1353,6 @@
   <block id="878c696b56e45ab7ef0e26758c638301" category="paragraph">MetroCluster 구성의 클러스터 중 하나에서 이 절차를 수행하여 두 클러스터의 노드 간에 DR 관계를 생성합니다.</block>
   <block id="63b903c6d6176719201fe2f4842e2296" category="admonition">DR 그룹을 생성한 후에는 DR 관계를 변경할 수 없습니다.</block>
   <block id="cd60e29f6a69af834d314d8b493bb673" category="image-alt">MCC DR 그룹 4개 노드</block>
-  <block id="83da41cb2046392d9c91b9b42b375ebe" category="list-text">각 노드에 다음 명령을 입력하여 DR 그룹을 생성할 준비가 되었는지 확인합니다.</block>
   <block id="49e1a7864ade73270e9731fa5e8d06b5" category="paragraph">'MetroCluster configuration-settings show-status'를 선택합니다</block>
   <block id="3ddf6128f0a393867c561bb1e5afc517" category="paragraph">명령 출력에 노드가 준비되었음을 표시해야 합니다.</block>
   <block id="5f4922783bf1dbf85c40333fb51b2c89" category="paragraph">이 명령은 한 번만 실행됩니다. 파트너 클러스터에서 이 작업을 반복할 필요는 없습니다. 명령에서 원격 클러스터의 이름과 파트너 클러스터의 한 로컬 노드 및 한 노드 이름을 지정합니다.</block>
@@ -1393,10 +1380,7 @@
   <block id="ef552e9c89303b51a8bdce9d5298edba" category="paragraph">e7b</block>
   <block id="22fe67c2e87caff18249cf1804bbeaad" category="paragraph">e0b</block>
   <block id="e737b5ac24a63afc00e81377a906728d" category="paragraph">e1b</block>
-  <block id="4d2df55d2343b32800bfea20e735c55a" category="paragraph">AFF A700 및 FAS900</block>
   <block id="ce8a9ea1be6239e906e9f5393a9f9ea5" category="paragraph">e5a</block>
-  <block id="577e6b9899e57c4e54e43cf79c919f83" category="paragraph">e3a</block>
-  <block id="969d430598a257671bdf944480e4d46b" category="paragraph">e3b</block>
   <block id="cbd803f54be888bcec7290684e827de3" category="paragraph">e0g</block>
   <block id="09f2306a6f2ede6943b6299ba6f08e6f" category="paragraph">e0h</block>
   <block id="9cb7b36b3f2bccc776862e6f2f494077" category="paragraph">E1A</block>
@@ -1430,7 +1414,6 @@
   <block id="a4535010ae2f4ce62af6dee1e890e35c" category="list-text">"node_B_1"의 포트 "e5b"에서 인터페이스를 구성합니다.</block>
   <block id="5be161c3a882b82a0b7dc3058d8956b5" category="paragraph">다음 예에서는 IP 주소 "10.1.2.3"을 사용하여 "node_B_1"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.</block>
   <block id="e04e8cbdd0a7cf4af02577a11d726014" category="list-text">"node_B_2"에 인터페이스를 생성합니다.</block>
-  <block id="af46fd28618bde8b135c1c6b4d3405ac" category="paragraph">'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'</block>
   <block id="ad3afcb2aadc5a9ffea38f064401dda5" category="paragraph">다음 예에서는 IP 주소 "10.1.1.4"를 사용하여 "node_B_2"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.</block>
   <block id="8d85d6b70338bbcd3644736d2ce0fac0" category="list-text">"node_B_2"의 포트 "e5b"에서 인터페이스를 구성합니다.</block>
   <block id="3a031f6913ae84e38c41a35cbaf0372a" category="paragraph">다음 예에서는 IP 주소 "10.1.2.4"가 있는 "node_B_2"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.</block>
@@ -1439,7 +1422,6 @@
   <block id="57b75395c7f63a75a4e6b6d3198f299b" category="paragraph">다음 예제는 각 인터페이스의 구성 상태가 완료되었음을 보여줍니다.</block>
   <block id="7cdacd92c7d25c56a3b4cd267ceaeb45" category="list-text">노드가 MetroCluster 인터페이스를 연결할 준비가 되었는지 확인합니다.</block>
   <block id="81b3ec87aa382eaeed6816109d653991" category="paragraph">다음 예제에서는 "연결 준비 완료" 상태의 모든 노드를 보여 줍니다.</block>
-  <block id="4f756847ca1507865cb117aa60347adb" category="list-text">연결 설정:</block>
   <block id="e84d9abe5e1fc391ac4a450f001b2f71" category="paragraph">'MetroCluster configuration-settings connection connect'를 선택합니다</block>
   <block id="b3aefc653b3e34234962d0fd4751384e" category="paragraph">이 명령을 실행한 후에는 IP 주소를 변경할 수 없습니다.</block>
   <block id="1e17943d4720a25913c03b742e2d9603" category="list-text">연결이 설정되었는지 확인합니다.</block>
@@ -1457,8 +1439,6 @@
   <block id="d260c71f1d73fe6dce24fae82cd28aca" category="paragraph">'Set-Privilege admin'입니다</block>
   <block id="7c06dbc134a00ff1f711d23edce1d460" category="list-text">노드가 MetroCluster 구성을 최종 구현할 준비가 되었는지 확인합니다.</block>
   <block id="f17045bd4d8381f6f2d272dd6ecb0f77" category="section-title">풀 1 드라이브 할당을 확인하거나 수동으로 수행합니다</block>
-  <block id="459f816e984e3774fe54bd0c3739bd78" category="paragraph">스토리지 구성에 따라 풀 1 드라이브 할당을 확인하거나 MetroCluster IP 구성의 각 노드에 대해 풀 1에 드라이브를 수동으로 할당해야 합니다.</block>
-  <block id="576b0156512a49a83913a3d968e689c1" category="paragraph">사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다.</block>
   <block id="efb6ec8736b8f7b340b21adf8615fbd9" category="cell">구성 유형</block>
   <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="cell">절차를 참조하십시오</block>
   <block id="bc322ef549bee4ad385243a287fd8def" category="paragraph">시스템은 자동 드라이브 할당 요구 사항을 충족시키거나 ONTAP 9.3을 실행하는 경우 공장에서 수신된 것입니다.</block>
@@ -1471,9 +1451,6 @@
   <block id="066d199ee6821e079010eb41b2c4dcd2" category="section-title">풀 1 디스크에 대한 디스크 할당을 확인하는 중입니다</block>
   <block id="9f5556b92889a582f2e62489b12911d7" category="paragraph">원격 디스크가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.</block>
   <block id="a1217e1ce317189baaa6d6c6dd532be6" category="paragraph">'MetroCluster configuration-settings connection connect' 명령을 사용하여 MetroCluster IP 인터페이스 및 연결이 생성된 후 디스크 자동 할당이 완료될 때까지 10분 이상 기다려야 합니다.</block>
-  <block id="b210f8e02a0b572eec2a5c98da81b46b" category="paragraph">명령 출력에는 디스크 이름이 다음 형식으로 표시됩니다.</block>
-  <block id="5bddb9f920514b0a0a299f0a0cca3e7e" category="paragraph">노드 이름: 0m.i1.0L1</block>
-  <block id="705296b22d53fe306b6160e173a7dfff" category="list-text">풀 1 디스크가 자동으로 할당되었는지 확인합니다.</block>
   <block id="32346615f33c2e0e1546cdc1f6f4eacd" category="paragraph">다음 출력에는 외부 쉘프가 없는 AFF A800 시스템의 출력이 표시됩니다.</block>
   <block id="1b9fcc71b05513fd230d91251df1d525" category="section-title">풀 1에 드라이브 수동 할당(ONTAP 9.4 이상)</block>
   <block id="55b74f9be7335a57e77de5c111d71188" category="paragraph">시스템이 출하 시 사전 구성되어 있지 않고 자동 드라이브 할당 요구 사항을 충족하지 않는 경우 원격 풀 1 드라이브를 수동으로 할당해야 합니다.</block>
@@ -1485,25 +1462,18 @@
   <block id="93a05e12a5b6edba257e33f8d132f672" category="list-text">할당되지 않은 드라이브 목록 표시:</block>
   <block id="9541d0a2ec2001b79a5021245bc8097d" category="paragraph">"디스크 show-host-adapter 0m-container-type unassigned"를 선택합니다</block>
   <block id="43e6ad4a7595ffb998ecabca800a4499" category="paragraph">Disk assign-disk_disk-id_-pool 1-owner_owner-node-name _</block>
-  <block id="2e9a660786a2138a9457f0cdb952c99d" category="paragraph">'디스크 ID'는 오너노드명(owner-node-name)의 원격 셸프에서 드라이브를 식별해야 합니다.</block>
   <block id="3eb645c2e2e57a4fa839c890ce5500a5" category="list-text">드라이브가 풀 1에 할당되었는지 확인합니다.</block>
   <block id="0b9ffe41b53e309536e3f5708172ef6b" category="admonition">원격 드라이브에 액세스하는 데 사용되는 iSCSI 연결이 0m로 나타납니다.</block>
   <block id="39e93eb17757fd8fb52d7c9292dd9372" category="list-text">사이트 B에서 이 단계를 반복합니다</block>
   <block id="919e6408348a7dae1112a733a620d17b" category="section-title">풀 1에 대해 수동으로 디스크 할당(ONTAP 9.3)</block>
-  <block id="654be415f4fd25d4eb7ef5d13950da64" category="paragraph">각 노드에 대해 최소 2개의 디스크 쉘프가 있는 경우 ONTAP의 자동 할당 기능을 사용하여 원격(풀 1) 디스크를 자동으로 할당합니다.</block>
   <block id="537950db1fe03e9e3a49db57addd85c6" category="paragraph">먼저 쉘프의 디스크를 풀 1에 할당해야 합니다. 그런 다음 ONTAP는 쉘프의 나머지 디스크를 동일한 풀에 자동으로 할당합니다.</block>
   <block id="fbfcf0e3733710ed69ed10b5fa779fed" category="paragraph">이 절차는 각 노드에 대해 디스크 쉘프가 2개 이상 있는 경우에만 사용할 수 있으며, 이를 통해 쉘프 레벨에서 디스크를 자동 할당할 수 있습니다.</block>
   <block id="7b062536c43e31fbee2942433f3ccb31" category="paragraph">쉘프 레벨 자동 할당을 사용할 수 없는 경우 각 노드에 원격 디스크 풀(풀 1)이 있도록 원격 디스크를 수동으로 할당해야 합니다.</block>
   <block id="01f1f803c245894da41eff36602972c9" category="paragraph">ONTAP 자동 디스크 할당 기능은 디스크를 쉘프별로 할당합니다. 예를 들면 다음과 같습니다.</block>
-  <block id="0225c53f2baba94a31b5eb0d90e365cf" category="list-text">site_B-shelf_2의 모든 디스크가 node_A_1의 pool1에 자동으로 할당됩니다</block>
-  <block id="48f3a4ccc31158c28a0543a8d0931d55" category="list-text">site_B-shelf_4의 모든 디스크가 node_A_2의 pool1에 자동으로 할당됩니다</block>
-  <block id="275964d7b48391c0fbb2a8a50a6722d9" category="list-text">site_A-shelf_2의 모든 디스크가 node_B_1의 pool1에 자동으로 할당됩니다</block>
-  <block id="04c166136aa1b3c5a330651de02e8c2c" category="list-text">site_A-shelf_4의 모든 디스크가 node_B_2의 pool1에 자동으로 할당됩니다</block>
   <block id="ee7e48631bbfc8e832cadee5bbbc03a9" category="paragraph">각 쉘프에 단일 디스크를 지정하여 자동 할당을 "시드"해야 합니다.</block>
   <block id="ea0ac128cbb46e41c5edee49bafee325" category="list-text">MetroCluster IP 구성의 각 노드에서 원격 디스크를 풀 1에 할당합니다.</block>
   <block id="94427a4d5177b2ba3264de4433e877c3" category="list-text">할당되지 않은 디스크 목록을 표시합니다.</block>
   <block id="97047fcf259462467b79b76f81bc261f" category="list-text">원격 디스크(0m)를 선택하고 첫 번째 노드의 풀 1에 디스크 소유권을 할당합니다(예: "node_a_1").</block>
-  <block id="6a9998a797a4b4ebbb6e136447e6189c" category="paragraph">Disk assign-disk-id-pool 1-owner owner-node-name'입니다</block>
   <block id="1df04fb323d4da59ba3f98ebc5f1b64e" category="paragraph">'디스크 ID'는 오너 노드 이름(owner-node-name)의 원격 셸프에서 디스크를 식별해야 합니다.</block>
   <block id="123e6c3d9c94f11e38d58164f434bdf4" category="paragraph">ONTAP 디스크 자동 할당 기능은 지정된 디스크가 포함된 원격 셸프의 모든 디스크를 할당합니다.</block>
   <block id="81b4294a2f342064d8a63544ff17f60d" category="list-text">디스크 자동 할당이 시작될 때까지 60초 이상 기다린 후 셸프의 원격 디스크가 풀 1에 자동 할당되었는지 확인합니다.</block>
@@ -1538,19 +1508,8 @@
   <block id="f6d7b348eb50ac463eb2cc91d02f51b4" category="paragraph">'storage disk show-spare-owner_node_name_'</block>
   <block id="9b8cdeec74c28d73d6a8e9f5a416d181" category="list-text">애그리게이트 생성:</block>
   <block id="7b17c57f5be39e90729d13df3345c22d" category="paragraph">'스토리지 집계 생성 - 미러 true'</block>
-  <block id="49252d08fb330c8c53b08b310f655d3f" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에서 생성되도록 하려면 '-node' 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정합니다.</block>
   <block id="dae64623939fa6678e8ed67c94a5eb3d" category="paragraph">다음 옵션을 지정할 수 있습니다.</block>
-  <block id="2da5317e4e730871c4e0eebd9caf388e" category="list-text">Aggregate의 홈 노드(즉, 정상 운영 시 Aggregate를 소유한 노드)입니다.</block>
-  <block id="24039e9f7463121386eb64f0a5fbe184" category="list-text">Aggregate에 추가될 특정 드라이브 목록입니다.</block>
-  <block id="cbd02cd515fef46c3f5978bf3a1c2fa5" category="list-text">포함할 드라이브 수입니다.</block>
   <block id="d09684c973ddbc452b759f614ccf0673" category="admonition">지원되는 최소 구성에서는 드라이브 수가 제한되어 있으므로, 디스크 RAID-DP Aggregate 3개를 만들 수 있도록 force-small-aggregate 옵션을 사용해야 합니다.</block>
-  <block id="3b03d743e2fdb9ba04471b09a100499d" category="list-text">집계에 사용할 체크섬 스타일</block>
-  <block id="915fe9fcfebfa751a522bb919d397401" category="list-text">사용할 드라이브 유형입니다.</block>
-  <block id="aa3349a8ef996a1caa4d11cec0481ea2" category="list-text">사용할 드라이브의 크기입니다.</block>
-  <block id="28430df9d9883e95bc26f63f68cab7ac" category="list-text">주행 속도를 사용하십시오.</block>
-  <block id="dbf6704815a89e026e7222b9ddbd1be6" category="list-text">Aggregate의 RAID 그룹에 적합한 RAID 유형입니다.</block>
-  <block id="32e5424b78c791c02cd24f2a1f66b779" category="list-text">RAID 그룹에 포함될 수 있는 최대 드라이브 수입니다.</block>
-  <block id="6314ba11af07fde9f749195a4938e623" category="list-text">RPM이 다른 드라이브가 허용되는지 여부</block>
   <block id="aee39fa61ef32d1a40e13054914c36df" category="paragraph">이러한 옵션에 대한 자세한 내용은 스토리지 애그리게이트 생성 man 페이지를 참조하십시오.</block>
   <block id="fb9cd46f402117fe67035dba86f3816f" category="paragraph">다음 명령을 실행하면 10개의 디스크로 미러링된 Aggregate가 생성됩니다.</block>
   <block id="5cc254ef11dfb638d3f63eedc93039ba" category="list-text">새 애그리게이트의 RAID 그룹 및 드라이브를 확인합니다.</block>
@@ -1560,17 +1519,13 @@
   <block id="cd7c123576d74dffad372d35977b2234" category="list-text">각 클러스터에 루트가 아닌 미러링된 데이터 Aggregate가 2개 이상 있어야 합니다.</block>
   <block id="a09517d85950406142abe0b5f1a98a2e" category="paragraph">스토리지 aggregate show 명령을 사용하여 이를 확인할 수 있습니다.</block>
   <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-xref">1단계</block>
-  <block id="ef59cc1d4f18c9ecc43389044e0b17b3" category="admonition">미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <block ref="69c8031a2de94253e9843bb8f5d7573d" category="inline-xref-macro-rx"></block> 를 참조하십시오.</block>
   <block id="9ea79dc17a6b01f7950f89175d68862a" category="paragraph">모든 노드에서 'MetroCluster configure' 명령을 한 번 실행하여 MetroCluster 설정을 활성화한다. 각 사이트나 노드에서 명령을 실행할 필요가 없으며 명령을 실행하기로 선택한 노드나 사이트는 중요하지 않습니다.</block>
   <block id="d7f15f09df4ff19cfec06353603aa12d" category="paragraph">MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시스템 ID를 갖는 두 노드를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.</block>
-  <block id="f8a921915ee07bb012df13da2fdd7c05" category="list-text">[[step1_single_Mirrored]] MetroCluster를 다음 형식으로 구성합니다.</block>
   <block id="be8958e515095147a6dd8614b428fe8d" category="cell">MetroCluster 구성에 다음 기능이 있는 경우</block>
   <block id="9792a4eebc59c44369f1f98f9d27237a" category="cell">다음을 수행하십시오.</block>
   <block id="5a886364f7be07108a866a1dbf84580e" category="paragraph">데이터 애그리게이트가 여러 개 있습니다</block>
-  <block id="7f844e6639d44c336dfaaa0017b0dbc8" category="paragraph">노드의 프롬프트에서 MetroCluster:'MetroCluster configure node-name'을 설정한다</block>
   <block id="eb4d985f7e803275c39a27eca837d150" category="paragraph">단일 미러링 데이터 애그리게이트</block>
   <block id="ea04e5f210548abce0038ee281135006" category="list-text">노드의 프롬프트에서 고급 권한 레벨로 변경합니다.</block>
-  <block id="bfbb3cda3599b6898415d47ca3b06d9f" category="list-text">'-allow-with-one-aggregate' TRUE 파라미터를 이용하여 MetroCluster를 설정한다.</block>
   <block id="794714ece855897a8f048ab85dcccd86" category="paragraph">'MetroCluster configure-allow-with-one-aggregate TRUE node-name'</block>
   <block id="47ff2890d02071b25bb35b0427bd6fbe" category="inline-link-macro">MetroCluster 구성에서 메타데이터 볼륨 이동</block>
   <block id="f85d453a151727b424ea32911c308179" category="paragraph">모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 <block ref="bf3d05f18b73f1c62d283d02a0c83e7a" category="inline-link-macro-rx"></block>.</block>
@@ -1593,7 +1548,6 @@
   <block id="fb5b647ceadafa64bdabb02e963b9224" category="list-text">드라이브 및 어레이 LUN은 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브가 동일한 노드에 소유되어야 하며, 이 노드가 해당 애그리게이트의 홈 노드가 됩니다.</block>
   <block id="4b8414b2021cbbd4b58cc5b95bc166cd" category="list-text">_ 디스크 및 애그리게이트 관리 _ 는 미러링 Aggregate에 대한 자세한 정보를 포함합니다.</block>
   <block id="1f28277756aaed1f919fd03c2fa92a26" category="list-text">미러링되지 않은 애그리게이트 구축 사용:</block>
-  <block id="a6344715e21a74094ac5f97c4b6becd5" category="list-text">디스크 자동 할당이 비활성화되었는지 확인합니다.</block>
   <block id="99202cf08ee605465b048d280b130030" category="list-text">미러링되지 않은 애그리게이트를 포함할 디스크 쉘프를 설치 및 케이블로 연결합니다.</block>
   <block id="b2fa14e3df9342c7d9ce9f5ac1643744" category="paragraph">플랫폼 및 디스크 쉘프에 대한 _Installation 및 Setup_설명서의 절차를 사용할 수 있습니다.</block>
   <block id="2dece9a9495d8764b16760fe7d05d7a9" category="inline-link">AFF and FAS 문서 센터 를 참조하십시오</block>
@@ -1602,8 +1556,6 @@
   <block id="29d368b17fa8f6a4c00f53e0b1b0ddcd" category="paragraph">디스크 할당 - disk_disk -id_-owner_owner -node -name _</block>
   <block id="6d6f602efa1b388ca6264b6013787a0e" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 -node 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.</block>
   <block id="c867a6fd725cedea57bb7663de5a37c2" category="paragraph">또한 미러링되지 않은 쉘프의 드라이브만 애그리게이트에 포함되어 있는지 확인해야 합니다.</block>
-  <block id="74d845e51b59918636d9a13b9fc37d69" category="list-text">애그리게이트에 추가될 특정 드라이브 또는 어레이 LUN의 목록입니다.</block>
-  <block id="755643e3264b43687573ebc08e75d0aa" category="list-text">RAID 그룹에 포함될 수 있는 최대 드라이브 또는 어레이 LUN 수</block>
   <block id="0c14f54e968697b22703046426aae7f1" category="paragraph">다음 명령을 실행하면 10개의 디스크로 구성된 미러링되지 않은 Aggregate가 생성됩니다.</block>
   <block id="4e75faadc19bd6bd8fe9f36b43a6dc7c" category="list-text">미러링되지 않은 애그리게이트 구축 사용 안 함:</block>
   <block id="62127648214ef0c407c0c4bc108b0b80" category="list-text">디스크 자동 할당이 설정되었는지 확인합니다.</block>
@@ -1625,14 +1577,11 @@
   <block id="bc3d619cb2db28a4bb6fdf98a10e1f1f" category="paragraph"><block ref="bc3d619cb2db28a4bb6fdf98a10e1f1f" category="inline-link-rx"></block></block>
   <block id="ccc25c1a9a6f63d4acf6c9390b850b64" category="section-title">ONTAP 구성을 완료하는 중입니다</block>
   <block id="938a9f49acfde2902a8737d1aadbf6a1" category="paragraph">MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 SVM, 네트워크 인터페이스 및 기타 ONTAP 기능을 추가하여 클러스터 구성을 완료할 수 있습니다.</block>
-  <block id="c9016b3f72dba4b8f61408d9d613c969" category="paragraph">Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.</block>
   <block id="fb2c0ebeb18b9e1080333a65b192bdc3" category="list-text">ONTAP 중재자의 기존 인스턴스를 사용하는 경우 ONTAP 중재자 서비스를 ONTAP에 추가합니다.</block>
-  <block id="24135708f40bc30abbe1b5a601010307" category="list-text">Tiebreaker 소프트웨어를 사용하는 경우 Tiebreaker 설명서를 참조하십시오.</block>
   <block id="4978301a508dcc7f7e8778cdb2401e04" category="section-title">구성 백업 파일을 보호합니다</block>
   <block id="afc362bb21237b3cf262e5bb73c2e7ce" category="paragraph">로컬 클러스터의 기본 위치 외에 구성 백업 파일을 업로드할 원격 URL(HTTP 또는 FTP)을 지정하여 클러스터 구성 백업 파일에 대한 추가 보호를 제공할 수 있습니다.</block>
   <block id="d459dc1ddad8d856203ba30b84fd6675" category="list-text">구성 백업 파일의 원격 대상 URL을 설정합니다.</block>
   <block id="267f48079d5a0c20b3bac37bdeae2c4e" category="paragraph">'System configuration backup settings modify_url-of-destination _'</block>
-  <block id="5fb51bd58dc6b3d970f3c719b5895808" category="paragraph">CLI를 사용한 클러스터 관리에는 _ 구성 백업 관리 _ 섹션에 추가 정보가 포함되어 있습니다.</block>
   <block id="1e7af3d71c61db132b57b2c8e061b86d" category="inline-link">시스템 관리</block>
   <block id="1b58c8498876b494bed537a676c855cc" category="paragraph"><block ref="1b58c8498876b494bed537a676c855cc" category="inline-link-rx"></block></block>
   <block id="d74c7ca1ea000f4f70f344a02c2ae570" category="paragraph">표를 사용하기 전에 다음 사항을 검토하십시오.</block>
@@ -3724,7 +3673,6 @@
   <block id="d02e71ae77b3af75d1cc326f36f84ae3" category="paragraph">컨트롤러 업그레이드 중에 협상된 전환 후 애그리게이트 자동 복구가 해제됩니다. site_B의 노드는 LOADER 프롬프트에서 정지되고 정지된다.</block>
   <block id="b780f876891edc15fa85c699a7f8bfcb" category="list-text">site_B:"printenv"에 있는 두 노드에서 bootarg 값을 수집합니다</block>
   <block id="1e80b49a305b8f9776f5ad016b85d8e7" category="list-text">site_B에서 섀시의 전원을 끕니다</block>
-  <block id="7772cd0198105a3d1385b2e8a38dfd13" category="section-title">AFF A700 컨트롤러 모듈을 제거합니다</block>
   <block id="f6cb76da900c86fece5eb404a84c66d1" category="list-text">컨트롤러 모듈을 분리하기 전에 콘솔 케이블 및 컨트롤러 모듈에서 관리 케이블을 분리합니다.</block>
   <block id="dfa9bdf3553d14d1f1265d5adf46b338" category="list-text">섀시에서 컨트롤러 모듈을 잠금 해제하고 분리합니다.</block>
   <block id="c1ed0cd23ea77c49b5611e5929537b3f" category="list-text">캠 핸들의 주황색 버튼을 잠금 해제할 때까지 아래로 밉니다.</block>
@@ -3736,8 +3684,6 @@
   <block id="33d42cfbdf6857f6d56828022546f696" category="cell"><block ref="33d42cfbdf6857f6d56828022546f696" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b733ab833a64f07b84375a26a6af83f0" category="cell">캠 핸들</block>
   <block id="f0231ce2b907f79181e8b9703e9a2c98" category="list-text">캠 핸들을 돌려 컨트롤러 모듈을 섀시에서 완전히 분리한 다음 컨트롤러 모듈을 섀시 밖으로 밉니다. 컨트롤러 모듈 하단을 섀시 밖으로 밀어낼 때 지지하는지 확인합니다.</block>
-  <block id="fd22b7848c5af6378d0b6f4b2d27e00f" category="section-title">AFF A700 NVS 모듈을 제거합니다</block>
-  <block id="79c5d41bbb72ea24170f3061addd9ece" category="paragraph">다음 절차를 사용하여 AFF A700 NVS 모듈을 제거합니다.</block>
   <block id="0d64a71c5e54f6a18144ca98af6bba12" category="list-text">슬롯 6에서 NVS의 잠금을 해제하고 제거합니다.</block>
   <block id="97bf9cd87a9cbb5619926733a7d23035" category="list-text">문자 및 번호가 매겨진 '캠' 버튼을 누르십시오. 캠 버튼이 섀시에서 멀어져 있습니다.</block>
   <block id="3e40de17d289a21aa0995b29466f1eab" category="list-text">캠 래치가 수평 위치에 올 때까지 아래로 돌립니다. NVS는 섀시에서 분리되어 몇 인치 정도 이동합니다.</block>
@@ -3994,16 +3940,12 @@
   <block id="447b7bdefc8e750f8d7dab18bb9172ea" category="list-text">노드_B_2-A700:537035354</block>
   <block id="50d704bfae735cf9f8824da705413abc" category="paragraph">자세한 내용은 을 참조하십시오<block ref="0abbdd13a8c045ec09bd7c54eb2d0bef" category="inline-link-rx"></block>.</block>
   <block id="c455927c47d829e25595da49b62049ba" category="section-title">Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다</block>
-  <block id="2038f837dd43f190a92c79bb698d5d00" category="paragraph">이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다.</block>
-  <block id="b1b207442d1d74b512ee7783091ec80b" category="section-title">site_B에서 AFF A700 컨트롤러 모듈 및 NVS를 제거합니다</block>
   <block id="fbb702216c9d47455a0b8dbde9a6a6ca" category="paragraph">구성에서 이전 컨트롤러를 제거해야 합니다.</block>
   <block id="e4dfa2cb8ac36daa9c5d60ebed0d438b" category="paragraph">이 작업은 site_B에서 수행합니다</block>
   <block id="e9e9340e13d6253f17a48e08970ad599" category="list-text">site_B에서 이전 컨트롤러(node_B_1-700 및 node_B_2-700)의 시리얼 콘솔에 연결하고 'Loader' 프롬프트가 표시되는지 확인합니다.</block>
   <block id="60086a2b9ff0b21debbb0d8bf099b8e7" category="section-title">site_B의 두 노드에서 컨트롤러 모듈과 NVS를 제거합니다</block>
-  <block id="aa7985a89f1c2f960f222e4a5876a369" category="paragraph">다음 절차를 사용하여 AFF A700 컨트롤러 모듈을 제거합니다.</block>
   <block id="594c103f2c6e04c3d8ab059f031e0c1a" category="inline-image-macro">컨트롤러</block>
   <block id="5370787e20e547791ddb1e14849b2cd9" category="paragraph"><block ref="5370787e20e547791ddb1e14849b2cd9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="87f2b2201ecbf070e4e854d1304aeeac" category="admonition">AFF A700 NVS 모듈은 슬롯 6에 있으며 시스템의 다른 모듈에 비해 높이가 2배입니다.</block>
   <block id="771fe3d405626b11981b56d013399632" category="list-text">문자 및 번호가 매겨진 캠 버튼을 누릅니다. 캠 버튼이 섀시에서 멀어져 있습니다.</block>
   <block id="dd1cfa8d899a8ddd6f4a00978117e5f0" category="inline-image-macro">NVS 모듈</block>
   <block id="20d7cafa77ced4deb94fb09d7a230ff9" category="paragraph"><block ref="20d7cafa77ced4deb94fb09d7a230ff9" category="inline-image-macro-rx" type="image"></block></block>
@@ -11983,50 +11925,7 @@
   <block id="c1420c708cdb03e8e6259f7cb1285a08" category="paragraph">컨트롤러 모듈 및 섀시에는 "mcip" 값이 표시되어야 합니다.</block>
   <block id="717daacc38ffb11ae03c79a7871ba94a" category="list-text">컨트롤러의 표시된 시스템 상태가 "mcip"이 아닌 경우 컨트롤러의 HA 상태를 설정합니다.</block>
   <block id="1be7c4ddc79016b4335125e64b368241" category="list-text">섀시의 표시된 시스템 상태가 "mcip"이 아닌 경우 섀시의 HA 상태를 설정합니다.</block>
-  <block id="25b5ead61653e93322d7cdd02e68bed7" category="list-text">부팅 메뉴에서 ""4" 옵션을 사용하여 사이트 A의 각 노드를 부팅합니다.</block>
-  <block id="d6262ce3ce8d4552f5bba743fa687f27" category="list-text">부팅 메뉴에서 옵션 ""4""를 선택하고 계속 진행합니다.</block>
-  <block id="c00ad9db1ba9b2390705a2374f4d3c8b" category="list-text">부팅 메뉴에서 ""4" 옵션을 사용하여 사이트 B에서 각 노드를 부팅합니다.</block>
-  <block id="8628c8f82d22aaba7e4ff8640b5c8913" category="paragraph"><block ref="8628c8f82d22aaba7e4ff8640b5c8913" category="inline-link-rx"></block></block>
-  <block id="4c5303bd380c1014a165c1ad253ea2f5" category="paragraph"><block ref="4c5303bd380c1014a165c1ad253ea2f5" category="inline-link-rx"></block></block>
-  <block id="b8aeb50ab1946f3c20e4f5ceed42b633" category="paragraph">다음 예에서는 시스템 "s vcluster01"의 페일오버 그룹 ""intercluster01""에 ""e0e"" 및 ""e0f"" 포트를 할당합니다.</block>
-  <block id="1012d3a631b6876c6dcb7face2d6a501" category="list-text">동일한 VLAN에 모든 MetroCluster IP 인터페이스 ""A"" 포트를 생성하고 다른 VLAN에 모든 MetroCluster IP 인터페이스 ""B"" 포트를 생성해야 합니다. 을 참조하십시오 <block ref="0d7e2206ca44f9cb7344ddf469b6d625" category="inline-link-macro-rx"></block>.</block>
-  <block id="89084e438af77c52e3bb123d64f339eb" category="list-text">""node_a_1""에 인터페이스를 작성합니다.</block>
   <block id="1631c24dd2645318c89e780c4904812a" category="list-text">ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 <block ref="c0c95b98444cb413fd783099a9c566d2" category="inline-link-macro-rx"></block>.</block>
-  <block id="34b309a7a8f5ac4692710dfcf5a00777" category="list-text">"node_a_1"의 포트 ""e5a""에 인터페이스를 구성합니다.</block>
-  <block id="b44259ae71dce764eaaa8b48707da56a" category="list-text">""node_a_1""의 ""e5b"" 포트에 인터페이스를 구성합니다.</block>
-  <block id="9b466f494271828adb713455019d23f2" category="paragraph">다음 예제는 IP 주소가 10.1.2.1"인 노드_A_1"의 포트 ""e5b""에 대한 인터페이스를 만드는 것을 보여줍니다.</block>
-  <block id="718d065eac1ff3e2a2be302bd8ff88ce" category="list-text">""node_a_2""에 인터페이스를 작성합니다.</block>
-  <block id="ff775bc8ad4e6cc1937bbf2876775f01" category="list-text">다음 예의 포트 사용은 AFF A700 또는 FAS9000 시스템(""e5a" 및""e5b")에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.</block>
-  <block id="c628ef83038584c5f47c7ddfe50d38c0" category="list-text">"node_a_2"의 포트 ""e5a""에 인터페이스를 구성합니다.</block>
-  <block id="b69208c65d61eacde5488594766fd3b8" category="paragraph">다음 예에서는 IP 주소가 10.1.1.2"인 노드_A_2"에서 포트 ""e5a""에 대한 인터페이스를 생성하는 것을 보여줍니다.</block>
-  <block id="5ecd7c22ce3acd95a76953721fa8aeb8" category="paragraph">MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 VLAN ID가 ""120""인 AFF A220 시스템에 대한 명령을 보여 줍니다.</block>
-  <block id="20b7ea9a5bf1a5d7c5fabf9131abf09c" category="list-text">""node_a_2""의 ""e5b"" 포트에 인터페이스를 구성합니다.</block>
-  <block id="c59dee00f6497e29ef0226d20704dc10" category="paragraph">다음 예에서는 IP 주소가 10.1.2.2"인 노드_a_2"의 포트 ""e5b""에 인터페이스를 생성하는 것을 보여줍니다.</block>
-  <block id="49d2fe60521b8a0cdb30285ac8543c5b" category="paragraph">MetroCluster IP 인터페이스에 대한 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다. 다음 예에서는 VLAN ID가 ""220""인 AFF A220 시스템에 대한 명령을 보여 줍니다.</block>
-  <block id="b62e9bf9d023237b47ada0b7d6d4cf59" category="list-text">""node_B_1""에 인터페이스를 작성합니다.</block>
-  <block id="80c6329501b0e5f8b016ef76f6be3664" category="list-text">"node_B_1"의 포트 ""e5a""에 인터페이스를 구성합니다.</block>
-  <block id="270269f59ee1cd9bc99f05eb79147eeb" category="paragraph">다음 예에서는 IP 주소가 10.1.1.3"인 노드_B_1"의 포트 ""e5a""에 대한 인터페이스를 생성하는 것을 보여 줍니다.</block>
-  <block id="616f51ca22d7fe8514da17f4fb96fa92" category="list-text">""node_B_1""의 ""e5b"" 포트에 인터페이스를 구성합니다.</block>
-  <block id="e4c1125b6535c7798f7ae85e122d60e2" category="paragraph">다음 예에서는 IP 주소가 10.1.2.3"인 ""node_B_1""에서 "e5b" 포트에 인터페이스를 생성하는 것을 보여 줍니다.</block>
-  <block id="d26f7b805ed0dcb944e2e280b30bbd07" category="list-text">""node_B_2""에 인터페이스를 작성합니다.</block>
-  <block id="e2d56705aef6b7c5a25f72f46d88bbe7" category="list-text">"node_B_2"의 포트 ""e5a""에 인터페이스를 구성합니다.</block>
-  <block id="3149faae3d7ae9c0621829d63f66c33d" category="paragraph">다음 예에서는 IP 주소가 10.1.1.4"인 노드_B_2"에 있는 포트 ""e5a""에 대한 인터페이스를 생성하는 것을 보여줍니다.</block>
-  <block id="9c7f78e9d2e564d314650f4f8d2f89cf" category="list-text">""node_B_2""의 ""e5b"" 포트에 인터페이스를 구성합니다.</block>
-  <block id="426b66c3321be38bf5e743497b7a06cd" category="paragraph">다음 예에서는 IP 주소가 10.1.2.4"인 ""node_B_2""에서 ""e5b""" 포트에 인터페이스를 생성하는 것을 보여 줍니다.</block>
-  <block id="36531c09673685da2eb7a9b424719e07" category="paragraph">다음 예에서는 "연결 준비" 상태의 모든 노드를 보여줍니다.</block>
-  <block id="6cf81a0d4823756f8f92c439387e37c5" category="paragraph">다음 예에서는 ""cluster_a""가 성공적으로 연결되었음을 보여 줍니다.</block>
-  <block id="3c5bea345bf95b2ddd2d4480093df667" category="paragraph">고급 모드로 계속 진행하라는 메시지가 표시되고 고급 모드 프롬프트가 표시되면 ""y""로 응답해야 합니다("*&gt;").</block>
-  <block id="89afa329dc5f807f2e8486478a15c3a4" category="paragraph">드라이브 자동 할당은 ""node_a_1""에 1 쿼터(8개 드라이브)를, ""node_a_2"에 1/4를 할당했습니다. 나머지 드라이브는 ""node_B_1" 및 ""node_B_2"에 대한 원격(pool1) 디스크입니다.</block>
-  <block id="808399043c3072cd0aa24746698a6720" category="list-text">첫 번째 노드의 풀 1에 원격 드라이브(0m)의 소유권을 할당합니다(예: ""node_a_1"").</block>
-  <block id="3ce7f1b9ad5e0866fca8bb3ed3bfaf24" category="paragraph">다음 출력은 쉘프 ""23""의 드라이브가 할당되지 않은 드라이브 목록에 더 이상 나타나지 않으므로 할당된 것을 보여줍니다.</block>
-  <block id="15ca6babcd89f4df7fef4ad08eebc182" category="list-text">이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 드라이브를 할당합니다(예: ""node_a_2"").</block>
-  <block id="ec556c6f0a7c1341af78db8c6979a3ec" category="paragraph">각 쉘프에 단일 디스크를 지정하여 자동 할당을 "시드"해야 합니다.</block>
-  <block id="a106bbb8c6a0404bf4119f09f97f4b2b" category="list-text">원격 디스크(0m)를 선택하고 첫 번째 노드의 풀 1에 디스크 소유권을 할당합니다(예: ""node_a_1"").</block>
-  <block id="0c90186b6a1b1bb07d839515b5838513" category="paragraph">다음 출력은 쉘프 ""23""의 디스크가 이제 할당되었으며 더 이상 나타나지 않음을 보여줍니다.</block>
-  <block id="cc5f058fa8df2998a58b6fe6de2c6ca6" category="list-text">이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 디스크를 할당합니다(예: ""node_a_2"").</block>
-  <block id="5064cf282b956b1a00cb68a958a94a35" category="list-text">컨트롤러와 섀시의 ha-config 상태는 "mcip"이어야 합니다.</block>
-  <block id="d3e0fb982a529e06bf305b944b1f5000" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="31eae521f3e4fd8fd098b415771facd9" category="inline-link-rx"></block></block>
-  <block id="c5ca300fc0462691509bf45ae10e3bc5" category="paragraph">MetroCluster Tiebreaker 소프트웨어 또는 ONTAP 9.7부터 ONTAP 중재자인 Tiebreaker 소프트웨어를 다운로드하여 제3사이트에 설치할 수 있습니다.</block>
   <block id="9bdf1ed180b1b862f7cea11085897aca" category="paragraph">예(ONTAP 9.4 시작)</block>
   <block id="a27983e963a18385eebdc3381062e49b" category="paragraph">예(ONTAP 9.8부터 시작)</block>
   <block id="098fadefd1319cbc560b7d741aa7210e" category="paragraph">예(ONTAP 9.7부터 시작)</block>
@@ -12410,8 +12309,6 @@
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
   <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
   <block id="fe92f5934bf96194725b46db02f72324" category="list-text">이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.</block>
-  <block id="f5cd93f67ab362b3830ef2c47249e909" category="paragraph"><block ref="f5cd93f67ab362b3830ef2c47249e909" category="inline-link-macro-rx"></block></block>
-  <block id="a3816a0d57fcb59bc1a3bfba35af44cf" category="paragraph"><block ref="a3816a0d57fcb59bc1a3bfba35af44cf" category="inline-link-macro-rx"></block></block>
   <block id="8a4f175190a1710cdcd52e7efde01268" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL을 활성화합니다</block>
   <block id="dbbfd3dd70a4d25284d890b07ad9bc31" category="section-title">MACsec 키 체인 및 키를 구성합니다</block>
   <block id="2903318a6fa99cbae17be8d84747e6f4" category="section-title">MACsec 정책을 구성합니다</block>
@@ -12513,7 +12410,6 @@
   <block id="810c9113a382d35f83c48d0bc5ad007c" category="paragraph">동일한 DR 그룹에서 서로 다른 컨트롤러 유형의 MetroCluster 구성 작업은 이 유지 관리 활동 외부에서 지원되지 않습니다. 8노드 MetroCluster 구성의 경우 DR 그룹 내의 컨트롤러는 동일해야 하지만 두 DR 그룹 모두에서 서로 다른 컨트롤러 유형을 사용할 수 있습니다.</block>
   <block id="f0f7e2a1799d8b479b19f71aa5a163de" category="inline-link-macro">AFF/FAS 시스템의 라이센스 업데이트를 위한 마더보드 교체 후 프로세스</block>
   <block id="70dc27aa0b1b6fd743baaf39ac831057" category="paragraph">라이센스 교체에 대한 자세한 내용은 기술 자료 문서를 참조하십시오 <block ref="fefc92a8d5d54e07ec6a27ea1fbe0992" category="inline-link-macro-rx"></block></block>
-  <block id="b36fd383298dd454964a70693b082d21" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="fa5bebfbd3b64c98d09c75db575bd11c" category="list-text">AFF A700 컨트롤러 모듈을 AFF A900으로 업그레이드하려면 컨트롤러에서 ONTAP 9.10.1 이상을 실행해야 합니다.</block>
   <block id="b8c01685df64d764fee3ea66bb33411d" category="list-text">FAS9000 컨트롤러 모듈을 FAS9500으로 업그레이드하려면 컨트롤러에 ONTAP 9.10.1P3 이상이 실행되고 있어야 합니다.</block>
   <block id="ae4867e3d506833b86caef7b0885d0ba" category="paragraph">AFF A700 및 AFF A900 또는 FAS9000 및 FAS9500 컨트롤러로 MetroCluster 구성을 작동하는 것은 이 유지보수 활동 외부에서는 지원되지 않습니다.</block>
@@ -12540,7 +12436,6 @@
   <block id="c90754ff62c724c351a1fdbc2c0922dc" category="list-text">AFF A900 또는 FAS9500 컨트롤러 모듈에서 지금 실행 중인 node_B_1이 부팅될 때까지 기다린 후 다음과 같이 부팅 메뉴 옵션을 표시합니다.</block>
   <block id="1efe4497214b901f523cf96a2c33ab26" category="list-text">다음 명령을 사용하여 새 컨트롤러 모듈에 할당할 수 있는 할당되지 않은 디스크 또는 스페어 디스크를 식별합니다.</block>
   <block id="2849cfeed499bf8aebf6e17e9cf254ca" category="list-text">스토리지 디스크 show-container-type spare</block>
-  <block id="45a22a50381b7d0a6d65f4f38ec04b7d" category="doc">스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="304e34c553d5aabda89299a7fe2902b4" category="list-text">이 절차를 사용하여 AFF A700을 ONTAP 9.10.1 이상이 설치된 AFF A900으로 업그레이드할 수 있습니다.</block>
   <block id="35a4e2939e219a109bc9eacce7e98324" category="list-text">이 절차를 사용하여 FAS9000을 ONTAP 9.10.1P3 이상이 설치된 FAS9500으로 업그레이드할 수 있습니다.</block>
   <block id="995bf77226d032f3f7bb0a9172e19e98" category="list-text">업그레이드 절차 중에는 AFF A700 또는 FAS9000 시스템에서 다른 카드를 추가하거나 제거하면 안 됩니다. 자세한 내용은 를 참조하십시오<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block></block>
@@ -12575,7 +12470,6 @@
   <block id="24f7d38b1eaa5b3c78d65d263e040011" category="admonition">필요한 새 라이센스 키는 자동으로 생성되어 파일의 이메일 주소로 전송됩니다. 30일 이내에 라이센스 키가 포함된 이메일을 받지 못한 경우 기술 자료 문서의 _ "내 라이센스에 문제가 있는 경우 누구에게 연락합니까?" _ 섹션을 참조하십시오 <block ref="fefc92a8d5d54e07ec6a27ea1fbe0992" category="inline-link-macro-rx"></block></block>
   <block id="d903b046ad4e23192a38f289cf8b3677" category="paragraph">재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하려면 기술 자료 문서를 참조하십시오 <block ref="5f58a40bfe898f128ca76e4a4e4715d4" category="inline-link-macro-rx"></block></block>
   <block id="9734751a8e945b1c9cd85ffbdd0c241e" category="admonition">사용한 교체 컨트롤러 모듈의 NVRAM 내용을 지우지 않은 경우 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 패닉 메시지가 나타날 수 있습니다 이 경우 시스템을 ONTAP 프롬프트(boot_ontap menu)로 다시 부팅합니다. 그런 다음 해야 합니다 <block ref="81092c96bc8b36fe9ac80e13a918f8bb" category="inline-xref-macro-rx"></block></block>
-  <block id="2117e88807c2074036a5c585d3364860" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/A900을 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="0ab5e32384cf33a80caff743210417d8" category="admonition">HA 및 스토리지 페일오버의 예상 구성 상태는 다음과 같습니다.</block>
   <block id="a9c14bf4555cada69be518fce567a21c" category="list-text">HA 모드가 구성되었지만 스토리지 페일오버가 사용되도록 설정되지 않았습니다.</block>
   <block id="917db687ec940c706231d4c917812bb2" category="list-text">HA 테이크오버 기능이 비활성화됩니다.</block>
@@ -12591,9 +12485,6 @@
   <block id="440e5d46a3352ce5e00ab6b9ecdbc792" category="paragraph">GitHub 문제 135호, 2022년 7월 4일</block>
   <block id="05cb8d64e2770620783bfd98ba2c571c" category="paragraph">다음 단계의 모든 명령은 전원이 켜져 있도록 사이트에서 실행됩니다.</block>
   <block id="714cb8627bb0d04d6b5d032326cab4a3" category="list-text">유지하고자 하는 사이트에서 전환을 구현합니다.</block>
-  <block id="d5e08bac7a66723faca8e245c44582ae" category="list-text">볼륨 및 LUN을 오프라인 상태로 이동합니다.</block>
-  <block id="4434ac45fa2bd65c77619dc4135a3848" category="list-text">볼륨을 오프라인으로 이동합니다.</block>
-  <block id="8a0f98caf632998576a36c94b83328a6" category="list-text">LUN을 오프라인 상태로 이동합니다.</block>
   <block id="e7edce3217788bc841a63851100c9164" category="list-text">미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환</block>
   <block id="eeb4c33e80d1b1f4f321335e6c0a8948" category="list-text">이 Fabric의 두 스위치에서 모든 VSAN을 비활성화합니다.</block>
   <block id="f214faa187b0f8585d0284ecf49f3906" category="paragraph">VSAN을 비활성화하려면 다음 절차를 따르십시오.</block>
@@ -12636,4 +12527,19 @@
   <block id="00dcc4021e9b5b5c4107ab832d8a3b22" category="list-text">ONTAP 중재자의 경우 CPU 및 메모리(RAM)에 대한 호스트 운영 체제의 최소 요구 사항보다 더 많은 작업이 필요하지 않습니다.</block>
   <block id="3238177a17500506d8e25597811d95a1" category="list-text">호스트 운영 체제의 최소 요구 사항 외에 최소 30GB의 추가 가용 디스크 공간을 사용할 수 있어야 합니다.</block>
   <block id="d87323d7c443195bdfe43686953d17da" category="list-text">각 DR 그룹에는 최대 200MB의 디스크 공간이 필요합니다.</block>
+  <block id="cba78abc40cd6aa38755c20692e16922" category="list-text">미러링되지 않은 애그리게이트에 속한 볼륨 및 LUN을 모두 오프라인으로 이동합니다.</block>
+  <block id="7386845cd79b01875eaa7f006f46b9f2" category="list-text">볼륨을 오프라인으로 이동합니다.</block>
+  <block id="cd69a3dbda56dd351c139686ba9519dc" category="list-text">LUN을 오프라인 상태로 이동합니다.</block>
+  <block id="17327179cc24e43223407ad31775b347" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="4adc962ec0036e99dcb3ed30b5a7bb90" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A990/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="18d71f6f9b2869ce694a656dc6e2f46c" category="paragraph">이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)</block>
+  <block id="104b8a291f0127f5923408928b5ee7e9" category="section-title">site_B에서 AFF A700 또는 FAS9000 컨트롤러 모듈 및 NVS를 제거합니다</block>
+  <block id="208671d931da81374958ab0bdeb8d0f0" category="paragraph">다음 절차를 사용하여 AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다.</block>
+  <block id="d1bba686a5b245f47f0d8653cd12d51c" category="admonition">AFF A700 또는 FAS9000 NVS 모듈은 슬롯 6에 있으며 시스템의 다른 모듈에 비해 높이가 2배입니다.</block>
+  <block id="400837732a47a77ab9ec9d475301631a" category="paragraph">이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. 다음 그림과 같이 site_a의 노드가 업그레이드를 기다리고 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)</block>
+  <block id="aacdf7a1a9a3666db3b501d37a579c04" category="summary">백엔드 MetroCluster FC 연결을 제공하도록 FC 스위치를 구성해야 합니다.</block>
+  <block id="3c2e7a09f3e6838bdc9926952b8e998b" category="list-text"><block ref="3c2e7a09f3e6838bdc9926952b8e998b" category="inline-link-macro-rx"></block></block>
+  <block id="8c67eafd90e097bf6228c8d6f91f15cb" category="list-text"><block ref="8c67eafd90e097bf6228c8d6f91f15cb" category="inline-link-macro-rx"></block></block>
+  <block id="6fc32e58ee37ceb6ca0bb1590e84ab08" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="121ccccf0953c4b38cd58e1f1be63ffd" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
 </blocks>

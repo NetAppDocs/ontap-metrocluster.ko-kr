@@ -1,0 +1,16 @@
+---
+permalink: install-fc/task_fcsw_configure_the_fc_switches_choice_topic.html 
+sidebar: sidebar 
+keywords: fc, switch, configuring 
+summary: 백엔드 MetroCluster FC 연결을 제공하도록 FC 스위치를 구성해야 합니다. 
+---
+= 스위치 구성
+:allow-uri-read: 
+
+
+[role="lead"]
+백엔드 MetroCluster FC 연결을 제공하도록 FC 스위치를 구성해야 합니다.
+
+* link:../install-fc/task_reset_the_brocade_fc_switch_to_factory_defaults.html["RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다"]
+* link:../install-fc/task_reset_the_cisco_fc_switch_to_factory_defaults.html["RCF 파일을 사용하여 Cisco FC 스위치를 구성합니다"]
+

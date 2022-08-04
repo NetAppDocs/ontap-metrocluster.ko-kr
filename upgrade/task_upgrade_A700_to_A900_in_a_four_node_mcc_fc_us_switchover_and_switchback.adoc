@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, controllers, switchover, switchback, fc, configuration, net, boot, root, aggregate, mcc 
 summary: 'MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.' 
 ---
-= 스위치오버 및 스위치백을 사용하여 AFF A700/A900에서 MetroCluster FC 구성의 FAS9x00으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
+= 스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A990/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -472,7 +472,7 @@ site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전�
 
 이 작업은 site_A에서 수행해야 합니다
 
-이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다.
+이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)
 
 image::../media/mcc_upgrade_cluster_a_in_switchover_A900.png[스위치오버 A900의 MCC 업그레이드 클러스터 A]
 
@@ -544,7 +544,7 @@ cluster_A::> metrocluster operation show
 
 
 
-== site_B에서 AFF A700 컨트롤러 모듈 및 NVS를 제거합니다
+== site_B에서 AFF A700 또는 FAS9000 컨트롤러 모듈 및 NVS를 제거합니다
 
 구성에서 이전 컨트롤러를 제거해야 합니다.
 
@@ -564,9 +564,9 @@ cluster_A::> metrocluster operation show
 
 
 
-=== AFF A700 컨트롤러 모듈을 제거합니다
+=== AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다
 
-다음 절차를 사용하여 AFF A700 컨트롤러 모듈을 제거합니다.
+다음 절차를 사용하여 AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다.
 
 .단계
 . 컨트롤러 모듈을 분리하기 전에 콘솔 케이블 및 컨트롤러 모듈에서 관리 케이블을 분리합니다.
@@ -592,12 +592,12 @@ image:../media/drw_9500_remove_PCM.png["컨트롤러"]
 
 
 
-=== AFF A700 NVS 모듈을 제거합니다
+=== AFF A700 또는 FAS9000 NVS 모듈을 제거합니다
 
-다음 절차를 사용하여 AFF A700 NVS 모듈을 제거합니다.
+다음 절차를 사용하여 AFF A700 또는 FAS9000 NVS 모듈을 제거할 수 있습니다.
 
 
-NOTE: AFF A700 NVS 모듈은 슬롯 6에 있으며 시스템의 다른 모듈에 비해 높이가 2배입니다.
+NOTE: AFF A700 또는 FAS9000 NVS 모듈은 슬롯 6에 있으며 시스템의 다른 모듈에 비해 높이가 2배입니다.
 
 . 슬롯 6에서 NVS의 잠금을 해제하고 제거합니다.
 +
@@ -1244,7 +1244,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 새 컨트롤러를 구성한 후 MetroCluster 구성을 다시 전환하여 구성을 정상 작동 상태로 되돌립니다.
 
-이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.
+이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. 다음 그림과 같이 site_a의 노드가 업그레이드를 기다리고 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)
 
 image::../media/mcc_upgrade_cluster_a_switchback_A900.png[4노드 MetroCluster]
 
