@@ -106,7 +106,7 @@ AFF A900 또는 FAS9500의 MetroCluster 구성은 슬롯 5와 7에 있는 DR 카
 
 === 컨트롤러를 업그레이드하기 전에 MetroCluster 스위치 RCF 파일을 업데이트합니다
 
-AFF A700 또는 FAS9000의 MetroCluster IP 구성에서는 VLAN을 사용하지 않습니다. AFF A900 또는 FAS9500의 MetroCluster 구성에서는 VLAN을 사용합니다. 따라서 AFF A700 또는 FAS9000에서 AFF A900 또는 FAS9500으로 업그레이드할 때 RCF 파일을 변경해야 합니다.
+이 업그레이드를 수행할 때 MetroCluster 스위치에서 RCF 파일을 업데이트해야 합니다. 다음 표에는 AFF A900/FAS9500 MetroCluster IP 구성에서 지원되는 VLAN 범위가 나와 있습니다.
 
 |===
 
@@ -1456,7 +1456,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]MetroCluster 을 참조하십시오.
+link:../install-ip/concept_mediator_requirements.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 섹션에서
 
 
 

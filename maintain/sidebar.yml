@@ -60,6 +60,8 @@ entries:
     url: "/maintain/task_upgrade_firmware_on_mcc_ip_switches.html"
   - title: MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
     url: "/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html"
+  - title: 정리 파일을 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
+    url: "/maintain/task_upgrade_rcf_files_on_mcc_ip_switches_with_cleanupfiles.html"
   - title: Cisco IP 스위치의 이름을 바꿉니다
     url: "/maintain/task_rename_a_cisco_ip_switch.html"
 - title: ISL 포트를 중단 없이 추가, 제거 또는 변경할 수 있습니다

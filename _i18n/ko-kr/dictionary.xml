@@ -1678,8 +1678,6 @@
   <block id="0cbb4d7d4f143fb521b8b3f87302bd06" category="list-text">노드를 스위치에 연결하는 케이블은 NetApp에서 구입해야 합니다. 우리가 제공하는 케이블은 스위치 공급업체에서 지원해야 합니다.</block>
   <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">제한 사항</block>
   <block id="bd7d6c816fdd7d9da30ecc293b76db32" category="list-text">4노드 MetroCluster IP 구성을 새로 고칩니다</block>
-  <block id="c4ed0d0751e29e2e6f44e3aa377e7ba3" category="section-title">MetroCluster 규정 준수 스위치를 위한 플랫폼별 네트워크 속도</block>
-  <block id="e92ebb13ce1d8f5b5ce0c4d117c2d6c2" category="paragraph">다음 표에는 MetroCluster 호환 스위치에 대한 플랫폼별 네트워크 속도가 나와 있습니다.</block>
   <block id="4d9a55c7ba617b9a2f2637145490e989" category="admonition">누락된 값은 플랫폼이 지원되지 않음을 나타냅니다.</block>
   <block id="419f3742e6de8e0ec4b22cce005e7630" category="cell">플랫폼</block>
   <block id="4995a003b2b1032b64bcc8805dea3b99" category="cell">네트워크 속도(Gbps)</block>
@@ -5582,7 +5580,6 @@
   <block id="a9ad5f0f1be45b30398dbe73adbb606e" category="paragraph">재동기화 중입니다</block>
   <block id="6019dfee7638e230d502e66ffea7f6a3" category="paragraph">별도의 조치가 필요하지 않습니다. 전체 재동기화 작업을 완료합니다.</block>
   <block id="473bd4647e8a05181ead56323ed92986" category="paragraph">미러가 저하되었습니다</block>
-  <block id="c201641d70cd4ae15cd06ffa4ea8f259" category="paragraph">로 진행합니다 <block ref="c16477a932f1452e2ed03a379f3dafe9" category="inline-xref-macro-rx"></block></block>
   <block id="6066ad56fc87c9a2863e7cfa938dbb24" category="paragraph">대칭 복사, 정상</block>
   <block id="7f43f347b613f6a28645c1f967751efc" category="paragraph">별도의 조치가 필요하지 않습니다.</block>
   <block id="31d866fa77641621d52b91bb67a82069" category="paragraph">알 수 없음, 오프라인</block>
@@ -12241,7 +12238,6 @@
   <block id="5981ded82c976bff5c9a73686842655a" category="list-text">중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
   <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
   <block id="844f223d5d27d9ea92473e2d258ee969" category="list-text">부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 <block ref="af64d870205b209887217377e716cd40" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
-  <block id="73deb7011cb325e1dbd9f40a4995786e" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]MetroCluster 을 참조하십시오.</block>
   <block id="455aeb5b6e6bb2c51d7485e26da56e30" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
   <block id="e62a18c77eddb4d80155a6c15402f7e5" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _</block>
   <block id="7da41c16475b7dae8b0b8ab6424918d7" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성] - MetroCluster IP 설치 및 구성 _.</block>
@@ -12416,7 +12412,6 @@
   <block id="975e1cbd2148147537ebaf00649d3b64" category="list-text">다음 예제 이름은 이 절차에서 예시와 그래픽 모두에 사용됩니다.</block>
   <block id="07861cb79e114503ecd43d810982548c" category="section-title">AFF A700 또는 FAS9000 컨트롤러에서 슬롯 7을 지웁니다</block>
   <block id="33fde62eca72a6b040fde5ee872c847c" category="paragraph">AFF A900 또는 FAS9500의 MetroCluster 구성은 슬롯 5와 7에 있는 DR 카드의 각 포트 중 하나를 사용합니다. 업그레이드를 시작하기 전에 AFF A700 또는 FAS9000의 슬롯 7에 카드가 있는 경우 해당 카드를 클러스터의 모든 노드에 대한 다른 슬롯으로 이동해야 합니다.</block>
-  <block id="ea9c648e1ece3666c16468e1b7bf9609" category="paragraph">AFF A700 또는 FAS9000의 MetroCluster IP 구성에서는 VLAN을 사용하지 않습니다. AFF A900 또는 FAS9500의 MetroCluster 구성에서는 VLAN을 사용합니다. 따라서 AFF A700 또는 FAS9000에서 AFF A900 또는 FAS9500으로 업그레이드할 때 RCF 파일을 변경해야 합니다.</block>
   <block id="367b6ed56e5d72c6f7fc505e20f24bd2" category="list-text">AFF A900 또는 FAS9500</block>
   <block id="faab2cbd973ffc485dff6e74aeeab547" category="paragraph">AFF A700에서 AFF A900 또는 FAS9000으로 업그레이드할 때 데이터 네트워크 포트, FCP SAN 어댑터 포트, SAS 및 NVMe 스토리지 포트는 변경하지 않습니다. 데이터 LIF는 업그레이드 도중과 이후에 계속 유지됩니다. 따라서 이전 노드의 네트워크 포트를 새 노드로 매핑할 필요가 없습니다.</block>
   <block id="e834b095ea947be3c6866a33f1da8979" category="section-title">AFF A700 또는 FAS9000 플랫폼 컨트롤러 모듈 및 NVS를 제거합니다</block>
@@ -12462,7 +12457,6 @@
   <block id="0b0c0d8fa1e4052e4b5d4195ede1e340" category="list-text">다음 boots가 설정되었는지 확인합니다.</block>
   <block id="99892b3569ad9c719e8f7c24fa15b733" category="list-text">bootarg 중 하나가 값으로 설정된 경우 설정을 해제하고 ONTAP를 부팅합니다.</block>
   <block id="097a789cebf1d8b62e0e25ac5634e09a" category="inline-xref">부팅 복구 및 RDB_Corrupt boots를 재설정합니다</block>
-  <block id="bbfd04df316138a8bd107ee376a54dc1" category="admonition">사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <block ref="358c6da937c27d6519a48f813996b4db" category="inline-xref-macro-rx"></block> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <block ref="98b89efafafc6baeefb50e35f16eee3c" category="inline-xref-macro-rx"></block></block>
   <block id="749bb4f63c981ace3f4595e0221aeaa6" category="section-title">boot_recovery 및 rdb_corrupt boots를 재설정합니다</block>
   <block id="e6d0640faf9a5179bcd547053596e9fb" category="admonition">사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 이러한 하위 단계를 반복하여 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <block ref="98b89efafafc6baeefb50e35f16eee3c" category="inline-xref-macro-rx"></block></block>
   <block id="04008409e45af76f1283ce88932da449" category="inline-link-macro">스토리지가 손실된 재해 발생 후 MetroCluster에서 오래된 미러링되지 않은 애그리게이트 항목을 제거하는 방법</block>
@@ -12482,7 +12476,6 @@
   <block id="a7ad2cc3f2e65335d382b74029354ee6" category="paragraph">+ * <block ref="c1e630c896fe7378e2dd05cd5272a6ff" category="inline-link-macro-rx"></block></block>
   <block id="15229eb2fb74ec06320e5767f87322b0" category="paragraph">+ * <block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
   <block id="6103dfdbf1ef77c8394206644595ce63" category="paragraph">+ 스위치를 다음 순서대로 업데이트합니다.</block>
-  <block id="440e5d46a3352ce5e00ab6b9ecdbc792" category="paragraph">GitHub 문제 135호, 2022년 7월 4일</block>
   <block id="05cb8d64e2770620783bfd98ba2c571c" category="paragraph">다음 단계의 모든 명령은 전원이 켜져 있도록 사이트에서 실행됩니다.</block>
   <block id="714cb8627bb0d04d6b5d032326cab4a3" category="list-text">유지하고자 하는 사이트에서 전환을 구현합니다.</block>
   <block id="e7edce3217788bc841a63851100c9164" category="list-text">미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환</block>
@@ -12531,7 +12524,6 @@
   <block id="7386845cd79b01875eaa7f006f46b9f2" category="list-text">볼륨을 오프라인으로 이동합니다.</block>
   <block id="cd69a3dbda56dd351c139686ba9519dc" category="list-text">LUN을 오프라인 상태로 이동합니다.</block>
   <block id="17327179cc24e43223407ad31775b347" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
-  <block id="4adc962ec0036e99dcb3ed30b5a7bb90" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A990/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="18d71f6f9b2869ce694a656dc6e2f46c" category="paragraph">이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)</block>
   <block id="104b8a291f0127f5923408928b5ee7e9" category="section-title">site_B에서 AFF A700 또는 FAS9000 컨트롤러 모듈 및 NVS를 제거합니다</block>
   <block id="208671d931da81374958ab0bdeb8d0f0" category="paragraph">다음 절차를 사용하여 AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다.</block>
@@ -12542,4 +12534,125 @@
   <block id="8c67eafd90e097bf6228c8d6f91f15cb" category="list-text"><block ref="8c67eafd90e097bf6228c8d6f91f15cb" category="inline-link-macro-rx"></block></block>
   <block id="6fc32e58ee37ceb6ca0bb1590e84ab08" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="121ccccf0953c4b38cd58e1f1be63ffd" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="cfb1fc36dd671ed91ba25af840a49e64" category="doc">CleanUpFiles를 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
+  <block id="44d9da525f678322921a73864bd0b924" category="paragraph">RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.</block>
+  <block id="0d98f6fd87f88cd68844ee1450081b43" category="paragraph">구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.</block>
+  <block id="cf5d82da1dbb504eeff51105d1c22631" category="list-text">표준 RCF 구성이 적용됩니다.</block>
+  <block id="6b20882c651017ff72189d2d3ffa3c80" category="list-text">를 클릭합니다<block ref="c52b4d12f68853a25c52576697c6b2b5" category="inline-link-rx"></block> 동일한 버전 및 구성(플랫폼, VLAN)으로 적용된 동일한 RCF 파일을 생성할 수 있어야 합니다.</block>
+  <block id="c37890f623a8fcecb93e9309d3462a5a" category="list-text">NetApp은 적용된 RCF 파일을 특수 구성으로 제공하지 않았습니다.</block>
+  <block id="3ff3eb13919d98b8bc5b485dcf074e8a" category="list-text">RCF 파일을 적용하기 전에 변경하지 않았습니다.</block>
+  <block id="22bfd0bc1ef7b5ec6b0c3d09a25173dd" category="list-text">현재 RCF 파일을 적용하기 전에 스위치를 출하 시 기본값으로 재설정하는 단계를 따랐습니다.</block>
+  <block id="bdda45d6734a620758197fdb8292141f" category="list-text">RCF가 적용된 후 스위치(포트) 구성이 변경되지 않았습니다.</block>
+  <block id="7db0739314c77bc294505bdbb23e67b7" category="paragraph">이러한 요구 사항을 충족하지 않으면 RCF 파일을 생성할 때 생성되는 CleanUpFiles를 사용할 수 없습니다. 그러나 이 함수를 사용하여 제네릭 CleanUpFiles를 만들 수 있습니다. 이 메서드를 사용하는 정리는 'show running-config'의 출력에서 파생되며 가장 좋은 방법입니다.</block>
+  <block id="c9adb95bef755c2c28edaaae2720ea48" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_B_1 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
+  <block id="0e0fe23e527e37b417182290ff6ed374" category="list-text">현재 RCF 파일 버전과 사용할 포트 및 VLAN을 확인합니다. 'ip_switch_a_1#show banner motd'</block>
+  <block id="e020d7382ce2a21b56ea6460a45b49c2" category="admonition">4개 스위치 모두에서 이 정보를 얻고 다음 정보 표를 완료해야 합니다.</block>
+  <block id="2b6ad2a040294d5c6d9cd85338614383" category="paragraph">이 출력에서 다음 두 표에 표시된 정보를 수집해야 합니다.</block>
+  <block id="f144e7b7cc102698f980f9982e2a5e1d" category="cell">일반 정보</block>
+  <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="cell">데이터</block>
+  <block id="4b226f60c2f68032b937aacd5b5e3678" category="cell">1.81</block>
+  <block id="65ad9acf5fdb6dd1970367114c996fe6" category="cell">NX9336</block>
+  <block id="81ac64718c75e924eba12e5d97e40c05" category="cell">네트워크 유형</block>
+  <block id="5133eec99a85d56a1ac9d3c5f004d7f7" category="cell">L2 네트워크, 직접 ISL</block>
+  <block id="f0cb6783b152b19ceab16227ca3976a2" category="cell">스토리지 유형입니다</block>
+  <block id="d9cf99f3c099e962f04909de0136fcd5" category="cell">SAS 스토리지</block>
+  <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="cell">플랫폼</block>
+  <block id="c2d0e7e3160f3b055633df2344187f85" category="cell">VLAN 정보</block>
+  <block id="eec89088ee408b80387155272b113256" category="cell">네트워크</block>
+  <block id="c4c5aa4a6dd5f49953b20c79429fa413" category="cell">스위치 포트</block>
+  <block id="d5dd2705024366d4932a9bbd462b5fbf" category="cell">VLAN 로컬 클러스터</block>
+  <block id="e9bd4e0cb042401e6ea10355ea91ce7e" category="cell">네트워크 1</block>
+  <block id="92963defdbac8bd4a8b7a2cefacc9a9d" category="cell">1, 2</block>
+  <block id="698d51a19d8a121ce581499d7b701668" category="cell">111</block>
+  <block id="bcbe3365e6ac95ea2c0343a2395834dd" category="cell">222</block>
+  <block id="1c24f17a8390dee9e499524b9ee70bd3" category="cell">3, 4</block>
+  <block id="a8f15eda80c50adb0e71943adc8015cf" category="cell">151</block>
+  <block id="19f3cd308f1455b3fa09a282e0d496f4" category="cell">251</block>
+  <block id="008392e2cf1a89a73277a2102064ce62" category="cell">네트워크 2</block>
+  <block id="f71c13ed2d97e452540d49c647f6c68c" category="cell">VLAN MetroCluster</block>
+  <block id="c3636d20b051d01d096cdff27a100cab" category="cell">9, 10</block>
+  <block id="07e1cd7dca89a1678042477183b7ac3f" category="cell">119</block>
+  <block id="28bfad2637394f49a9bee9ef9ba705a4" category="cell">11, 12</block>
+  <block id="140f6969d5213fd0ece03148e62e461e" category="cell">159</block>
+  <block id="c0e190d8267e36708f955d7ab048990d" category="cell">219</block>
+  <block id="cfa0860e83a4c3a763a7e62d825349f7" category="cell">259</block>
+  <block id="92b3853ab8f28c919e230db814cc7d3c" category="list-text">[[Create-RCF-files-and-CleanUpFiles-or-create-generic-CleanUpFiles]] RCF 파일과 CleanUpFiles를 만들거나 현재 구성에 대한 일반 CleanUpFiles를 만듭니다.</block>
+  <block id="8f1cf5ff45cd4e25f9add94959779152" category="paragraph">구성이 필수 구성 요소에 설명된 요구 사항을 충족하는 경우 * 옵션 1 * 을 선택합니다. 구성이 필수 구성 요소에 설명된 요구 사항을 충족하지 * 않는 경우 * 옵션 2 * 를 선택합니다.</block>
+  <block id="08593dc75ce732119b98a7568c2bf0f8" category="open-title">옵션 1: RCF 파일 및 CleanUpFiles를 생성합니다</block>
+  <block id="257583b315f4448eaa8b40d0996d314d" category="paragraph">구성이 요구 사항을 충족하는 경우 이 절차를 사용합니다.</block>
+  <block id="5c4f1865e4bc1d73184e237f9959c388" category="list-text">RcfFileGenerator 1.4a 이상 버전을 사용하여 1단계에서 검색한 정보를 사용하여 RCF 파일을 생성합니다. RcfFileGenerator의 새 버전은 일부 구성을 되돌리고 새 RCF 구성을 적용하기 위해 스위치를 준비하는 데 사용할 수 있는 CleanUpFiles의 추가 세트를 만듭니다.</block>
+  <block id="65f306707f97b0e6528c632443da6ffa" category="list-text">배너 motd를 현재 적용된 RCF 파일과 비교합니다. 플랫폼 유형, 스위치 유형, 포트 및 VLAN 사용은 동일해야 합니다.</block>
+  <block id="eeca5f39015a896c3fd153b273497470" category="admonition">RCF 파일과 동일한 버전에서 CleanUpFiles를 사용해야 하며 정확히 동일한 구성을 사용해야 합니다. CleanUpFile을 사용하면 작동하지 않으며 스위치를 완전히 재설정해야 할 수도 있습니다.</block>
+  <block id="6d48f487507c57727138fae0e2a5e20d" category="admonition">스토리지 유형이 SAS 스토리지 또는 직접 스토리지와는 다를 수 있습니다.</block>
+  <block id="f7f6e369dd85b855e692642fc45404d1" category="admonition">RCF 파일이 생성되는 ONTAP 버전은 관련이 없습니다. RCF 파일 버전만 중요합니다.</block>
+  <block id="5ac0010e09da0a19568a51f509b47c9e" category="admonition">RCF 파일(동일한 버전도 포함)은 더 적은 수의 또는 더 많은 플랫폼을 나열할 수 있습니다. 플랫폼이 목록에 있는지 확인합니다.</block>
+  <block id="b801f2818024b60718ab5b68f7b2eb23" category="open-title">옵션 2: 일반 CleanUpFiles를 만듭니다</block>
+  <block id="4863f68e17407624559d4ea8f5de6e15" category="paragraph">구성이 모든 요구 사항을 충족하지 * 않는 경우 이 절차를 사용하십시오.</block>
+  <block id="fb1067b2548231b6038213796f92b520" category="list-text">각 스위치에서 show running-config의 출력을 조회한다.</block>
+  <block id="82039ffbe327c15082e7acf99d1ee57f" category="list-text">RcfFileGenerator 도구를 열고 창 아래쪽에서 '일반 CleanUpFiles 만들기'를 클릭합니다</block>
+  <block id="55b16128d1dcc54711d7e49e2b808e4e" category="list-text">1단계에서 검색한 출력을 'One' 스위치에서 상단 창으로 복사합니다. 기본 출력을 제거하거나 그대로 둘 수 있습니다.</block>
+  <block id="9f90d7cb7cc47d6f3b8e8503b209a1a0" category="list-text">'CUF 파일 작성'을 클릭합니다.</block>
+  <block id="3dcf0272d83a4c69033ee60eb75d9580" category="list-text">하단 창의 출력을 텍스트 파일로 복사합니다(이 파일은 CleanUpFile입니다).</block>
+  <block id="03486ffd0acf93e60ea6875d70823cbf" category="list-text">구성의 모든 스위치에 대해 c, d, e 단계를 반복합니다.</block>
+  <block id="250543158aeade1deea5f13bbe9c80b5" category="paragraph">이 절차를 마치면 각 스위치마다 하나씩 4개의 텍스트 파일이 있어야 합니다. 이러한 파일은 옵션 1을 사용하여 만들 수 있는 CleanUpFiles 와 같은 방법으로 사용할 수 있습니다.</block>
+  <block id="222b8c1d4cb1f6af18d4f87ae8a60226" category="list-text">[[Create-the-new-RCF-files-for-the-new-configuration]] 새 구성을 위해 '새로운' RCF 파일을 생성합니다. 각 ONTAP 및 RCF 파일 버전을 선택하는 경우를 제외하고 이전 단계에서 파일을 생성한 것과 동일한 방식으로 이러한 파일을 생성합니다.</block>
+  <block id="a7d33b18445fe3decdb0f90d8636fbc1" category="paragraph">이 단계를 완료한 후에는 각각 12개의 파일로 구성된 두 세트의 RCF 파일이 있어야 합니다.</block>
+  <block id="6999307e181dd9c4d01a65b848b47fd3" category="list-text">파일을 bootflash에 다운로드합니다.</block>
+  <block id="6b3a86257ee5d114600528fa7f5c7bf4" category="inline-xref">RCF 파일 및 CleanUpFiles를 생성하거나 현재 구성을 위한 일반 CleanUpFiles를 생성합니다</block>
+  <block id="0f23428de5fb7b85f84bc0371d73292e" category="list-text">에서 만든 CleanUpFiles를 다운로드합니다 <block ref="c8340163884f51bb133b6171f43e6a09" category="inline-xref-macro-rx"></block></block>
+  <block id="72f2778a0cd9028b2b314aa743b0dedb" category="admonition">이 CleanUpFile은 현재 적용된 RCF 파일용으로, 업그레이드하려는 새 RCF에 대해서는 * 적용되지 않습니다 *.</block>
+  <block id="1c4d6db343dcde2655f5a2b6fb6a4fc1" category="paragraph">스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.81_Switch-A1.txt'</block>
+  <block id="63a80dfd5cc3c6944330a9e459d8284b" category="inline-xref">새 구성을 위해 '새로운' RCF 파일을 생성합니다.</block>
+  <block id="c3f65a7773b44ccd20e3e511f5993d75" category="list-text">에서 생성한 '새로운' RCF 파일을 다운로드합니다 <block ref="59c54752a2fb487390ef8f9f21a2c752" category="inline-xref-macro-rx"></block></block>
+  <block id="17e0fefcaf2813560ada5ff7d65a8d95" category="paragraph">Switch-A1:'NX9336_v1.90_Switch-A1.txt'의 RCF 파일 예</block>
+  <block id="9bfdc1d8656a6a994323ae166f7f7201" category="list-text">에서 만든 CleanUpFiles를 다운로드합니다 <block ref="59c54752a2fb487390ef8f9f21a2c752" category="inline-xref-macro-rx"></block> 이 단계는 선택 사항입니다. 나중에 파일을 사용하여 스위치 구성을 업데이트할 수 있습니다. 현재 적용된 설정과 일치합니다.</block>
+  <block id="4dfd3caa3db27470042b1db1ab3290bd" category="paragraph">스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.90_Switch-A1.txt'</block>
+  <block id="e22c8d95bd31d52b85280c2595f839cf" category="admonition">올바른(일치) RCF 버전을 사용하려면 CleanUpFile을 사용해야 합니다. CleanUpFile을 다른 RCF 버전 또는 다른 구성에 사용하는 경우 구성 정리가 올바르게 작동하지 않을 수 있습니다.</block>
+  <block id="432b7619f02e011863c5b9e1c9903161" category="paragraph">다음 예제에서는 세 개의 파일을 bootflash에 복사합니다.</block>
+  <block id="21bbea31798e629222a90ab6f5a8c762" category="list-text">CleanUpFile 또는 일반 CleanUpFile을 적용합니다.</block>
+  <block id="416d6380f479bebf2f1e240e5138413d" category="paragraph">일부 구성이 되돌려지고 스위치 포트가 '오프라인'됩니다.</block>
+  <block id="b8cc23c33e5e071f878545496a559de1" category="list-text">시작 구성에 대한 보류 중인 변경 사항('show running-config diff')이 없는지 확인합니다</block>
+  <block id="cd92773f17482016d7d78e9261d84565" category="list-text">시스템 출력이 표시되면 실행 중인 구성을 시작 구성에 저장합니다. 'copy running-config startup-config'</block>
+  <block id="411302e71dbe9de68d575f36bde52ce0" category="admonition">시스템 출력은 시작 구성과 실행 중인 구성이 서로 다르고 보류 중인 변경 사항을 나타냅니다. 보류 중인 변경 사항을 저장하지 않으면 스위치를 다시 로드하여 롤백할 수 없습니다.</block>
+  <block id="5ca7b4447cc8a2a82da0c2b9f2418080" category="list-text">CleanUpFile 적용:</block>
+  <block id="402689bf26b1f692b90ab6dcf0cbb5a0" category="admonition">스위치 프롬프트로 되돌아오려면 스크립트가 다소 시간이 걸릴 수 있습니다. 출력이 예상되지 않습니다.</block>
+  <block id="cd0dc0252c2294b0b0d632a728fea8d8" category="list-text">실행 중인 구성을 확인하여 설정이 'show running-config'로 지워졌는지 확인합니다</block>
+  <block id="63ada81f0e0d456939c586af1ac4850a" category="paragraph">현재 구성은 다음과 같이 표시되어야 합니다.</block>
+  <block id="e12a13bf0f15c1a1e5cff8c75258250e" category="list-text">클래스 맵 및 IP 액세스 목록이 구성되지 않았습니다</block>
+  <block id="e54b7a71f9457751f744e01466943cc8" category="list-text">정책 맵이 구성되지 않았습니다</block>
+  <block id="319961110e1d1f6c900b9f842e20c81a" category="list-text">서비스 정책이 구성되지 않았습니다</block>
+  <block id="00f4ac9296724f6455056845c09f6cea" category="list-text">구성된 포트 프로파일이 없습니다</block>
+  <block id="459722fc0d9b873b0459e6cc0213fe45" category="list-text">모든 이더넷 인터페이스(mgmt0 구성은 표시하지 않고 VLAN 1만 구성해야 함)</block>
+  <block id="a7c1dc82620aa47d13a5325a92e48b8b" category="paragraph">위 항목 중 하나라도 구성되어 있다면 새로운 RCF 파일 구성을 적용하지 못할 수 있습니다. 그러나 실행 중인 구성을 시작 구성에 저장하지 않고 * 스위치를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.</block>
+  <block id="b96e894aca032efb6ce18c3fee836f2e" category="list-text">RCF 파일을 적용하고 포트가 온라인 상태인지 확인합니다.</block>
+  <block id="57eec47f7c1d3f7c578a164a838dcb88" category="list-text">RCF 파일을 적용합니다.</block>
+  <block id="f3f957cad54a09303c58187ea562c4e0" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지가 나타나지 않습니다.</block>
+  <block id="94f2f59cf614fa38bf778db2f227f97f" category="list-text">구성을 적용한 후 클러스터 및 MetroCluster 포트가 다음 명령 중 하나인 '인터페이스 요약 보기', 'CDP 인접 항목 표시' 또는 '이웃 표시' 중 하나로 온라인 상태인지 확인합니다</block>
+  <block id="36654f0d51aef3cf2ff1ad8320086412" category="admonition">로컬 클러스터의 VLAN을 변경하고 사이트에서 첫 번째 스위치를 업그레이드한 경우, 이전 구성과 새 구성의 VLAN이 일치하지 않기 때문에 클러스터 상태 모니터링 시 상태가 '정상'으로 보고되지 않을 수 있습니다. 두 번째 스위치가 업데이트된 후 상태가 정상 상태로 돌아가야 합니다.</block>
+  <block id="d83d3a40a56d46ffaf1367b944bbd493" category="paragraph">구성이 올바르게 적용되지 않거나 구성을 유지하지 않으려면 실행 중인 구성을 시작 구성에 저장하지 않고 스위치 * 를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.</block>
+  <block id="5c15303512898df9740f49f4f5280ac3" category="list-text">구성을 저장하고 스위치를 다시 로드합니다.</block>
+  <block id="36602be901b56918898e8b02c97104c1" category="inline-xref">하나 이상의 플렉스가 오프라인 상태로 유지되는 경우 미러를 재구축하려면 추가 단계가 필요합니다.</block>
+  <block id="578f0ca9e0f2b8dc5eca3447de5f13b7" category="paragraph">로 진행합니다 <block ref="3ea650e98c5c617b3f8d234e7fcf7e38" category="inline-xref-macro-rx"></block></block>
+  <block id="c9e7a6f18b5625d689b9621860dc8f89" category="admonition">사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <block ref="25689aeb5a175ff3bbdb354620fd37b8" category="inline-xref-macro-rx"></block> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <block ref="98b89efafafc6baeefb50e35f16eee3c" category="inline-xref-macro-rx"></block></block>
+  <block id="d7cccafb4df9b0ac0b83e89d61285a81" category="list-text">이 절차는 FAS2750, AFF A220, FAS500f 및 A250 시스템에서는 지원되지 않습니다.</block>
+  <block id="39297c491b5456e17752798ab9be67b0" category="paragraph">이 업그레이드를 수행할 때 MetroCluster 스위치에서 RCF 파일을 업데이트해야 합니다. 다음 표에는 AFF A900/FAS9500 MetroCluster IP 구성에서 지원되는 VLAN 범위가 나와 있습니다.</block>
+  <block id="d267ad4b716836a6875d9be23fc81c21" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 섹션에서</block>
+  <block id="d07bebb0e23926af3c78f855a3108b26" category="admonition">MetroCluster check run과 MetroCluster check show를 실행하면 다음과 유사한 오류 메시지가 표시됩니다.</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">예</block>
+  <block id="6870468a3fe6a4b5c829d30e0702c5fd" category="paragraph">이는 업그레이드 프로세스 중 컨트롤러 불일치로 인한 것으로 예상되며 오류 메시지는 무시해도 됩니다.</block>
+  <block id="237972ceb7096a96a9dafc4e43911024" category="section-title">MetroCluster 호환 스위치를 위한 플랫폼 특정 네트워크 속도 및 스위치 포트 모드</block>
+  <block id="1134e76c47457f3441325208e777cc69" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도와 스위치 포트 모드가 나와 있습니다. 표에 설명된 대로 스위치 포트 모드를 구성해야 합니다.</block>
+  <block id="0ec1914fce58a6a4d1748f3ace018fa1" category="cell">포트 모드를 전환합니다</block>
+  <block id="cfd4780e5a733c1327748c9a30e9d03c" category="paragraph">트렁크 모드</block>
+  <block id="2c74da2e4beb4c522085a84540793b5e" category="paragraph">액세스 모드</block>
+  <block id="939d3efe7d4070c6c8be39404639b5db" category="paragraph">Cisco 9336C-FX2(NS224 쉘프 연결 안 됨)</block>
+  <block id="d183fa3896220b7f678ea0b9376a4b8b" category="paragraph">40 또는 100Gbps를 사용하는 ISL 6개</block>
+  <block id="874eb49ff41ba3748fa2b06563329fb2" category="paragraph">10Gbps 사용 ISL 16개</block>
+  <block id="b94f047c1e1eaf1f0b0b1b5ef5819d6b" category="paragraph">Cisco 9336C-FX2(NS224 쉘프 연결)</block>
+  <block id="74cb45c8e8b33478150237cb0755c4ca" category="paragraph">네이티브 포트(2개)</block>
+  <block id="32dd9953382a7753a2f980620effb409" category="paragraph">40 또는 100Gbps를 사용하는 ISL 4개</block>
+  <block id="eb4cfd99b709d0b0ddc435f063be95cf" category="paragraph">브레이크아웃 케이블(2개)</block>
+  <block id="e5df3565fbad5a4849fc6fb6ec79e8d1" category="list-text">BES-53248 스위치에서 40 또는 100Gbps ISL 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
+  <block id="394d86b50aa384c22c3eeb7d90023e15" category="list-text">Cisco 9336C-FX2(NS224 셸프 연결)용 RCF 파일을 생성할 때 ISL을 기본 * 또는 * 브레이크아웃 모드로 구성해야 합니다.</block>
+  <block id="a455825d44f1e4a4ab9b205b1b01f846" category="sidebar">정리 파일을 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
 </blocks>

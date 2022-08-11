@@ -1,0 +1,293 @@
+---
+permalink: maintain/task_upgrade_rcf_files_on_mcc_ip_switches_with_cleanupfiles.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, upgrade, rcf, files, ip, switches, cleanupfiles 
+summary: MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다. 
+---
+= CleanUpFiles를 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.
+
+RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.
+
+구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.
+
+* 표준 RCF 구성이 적용됩니다.
+* 를 클릭합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["RcfFileGenerator 를 참조하십시오"] 동일한 버전 및 구성(플랫폼, VLAN)으로 적용된 동일한 RCF 파일을 생성할 수 있어야 합니다.
+* NetApp은 적용된 RCF 파일을 특수 구성으로 제공하지 않았습니다.
+* RCF 파일을 적용하기 전에 변경하지 않았습니다.
+* 현재 RCF 파일을 적용하기 전에 스위치를 출하 시 기본값으로 재설정하는 단계를 따랐습니다.
+* RCF가 적용된 후 스위치(포트) 구성이 변경되지 않았습니다.
++
+이러한 요구 사항을 충족하지 않으면 RCF 파일을 생성할 때 생성되는 CleanUpFiles를 사용할 수 없습니다. 그러나 이 함수를 사용하여 제네릭 CleanUpFiles를 만들 수 있습니다. 이 메서드를 사용하는 정리는 'show running-config'의 출력에서 파생되며 가장 좋은 방법입니다.
+
++
+
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_B_1 및 Switch_B_2 스위치를 업데이트할 수 있습니다.
+
+
+
+.단계
+. 현재 RCF 파일 버전과 사용할 포트 및 VLAN을 확인합니다. 'ip_switch_a_1#show banner motd'
++
+
+NOTE: 4개 스위치 모두에서 이 정보를 얻고 다음 정보 표를 완료해야 합니다.
+
++
+[listing]
+----
+* NetApp Reference Configuration File (RCF)
+*
+* Switch : NX9336C (SAS storage, L2 Networks, direct ISL)
+* Filename : NX9336_v1.81_Switch-A1.txt
+* Date : Generator version: v1.3c_2022-02-24_001, file creation time: 2021-05-11, 18:20:50
+*
+* Platforms : MetroCluster 1 : FAS8300, AFF-A400, FAS8700
+*              MetroCluster 2 : AFF-A320, FAS9000, AFF-A700, AFF-A800
+* Port Usage:
+* Ports 1- 2: Intra-Cluster Node Ports, Cluster: MetroCluster 1, VLAN 111
+* Ports 3- 4: Intra-Cluster Node Ports, Cluster: MetroCluster 2, VLAN 151
+* Ports 5- 6: Ports not used
+* Ports 7- 8: Intra-Cluster ISL Ports, local cluster, VLAN 111, 151
+* Ports 9-10: MetroCluster 1, Node Ports, VLAN 119
+* Ports 11-12: MetroCluster 2, Node Ports, VLAN 159
+* Ports 13-14: Ports not used
+* Ports 15-20: MetroCluster-IP ISL Ports, VLAN 119, 159, Port Channel 10
+* Ports 21-24: MetroCluster-IP ISL Ports, VLAN 119, 159, Port Channel 11, breakout mode 10gx4
+* Ports 25-30: Ports not used
+* Ports 31-36: Ports not used
+*
+
+#
+IP_switch_A_1#
+----
++
+이 출력에서 다음 두 표에 표시된 정보를 수집해야 합니다.
+
++
+|===
+
+
+| 일반 정보 | MetroCluster | 데이터 
+
+
+| RCF 파일 버전 |  | 1.81 
+
+
+| 스위치 유형 |  | NX9336 
+
+
+| 네트워크 유형 |  | L2 네트워크, 직접 ISL 
+
+
+| 스토리지 유형입니다 |  | SAS 스토리지 
+
+
+.2+| 플랫폼 | 1 | AFF A400 
+
+
+| 2 | FAS9000 
+|===
++
+|===
+| VLAN 정보 | 네트워크 | MetroCluster 구성 | 스위치 포트 | 사이트 A | 사이트 B 
+
+
+.4+| VLAN 로컬 클러스터 .2+| 네트워크 1 | 1 | 1, 2 | 111 | 222 
+
+
+| 2 | 3, 4 | 151 | 251 
+
+
+.2+| 네트워크 2 | 1 | 1, 2 | 111 | 222 
+
+
+| 2 | 3, 4 | 151 | 251 
+
+
+.4+| VLAN MetroCluster .2+| 네트워크 1 | 1 | 9, 10 | 119 | 119 
+
+
+| 2 | 11, 12 | 159 | 159 
+
+
+.2+| 네트워크 2 | 1 | 9, 10 | 219 | 219 
+
+
+| 2 | 11, 12 | 259 | 259 
+|===
+. [[Create-RCF-files-and-CleanUpFiles-or-create-generic-CleanUpFiles]] RCF 파일과 CleanUpFiles를 만들거나 현재 구성에 대한 일반 CleanUpFiles를 만듭니다.
++
+구성이 필수 구성 요소에 설명된 요구 사항을 충족하는 경우 * 옵션 1 * 을 선택합니다. 구성이 필수 구성 요소에 설명된 요구 사항을 충족하지 * 않는 경우 * 옵션 2 * 를 선택합니다.
+
++
+[role="tabbed-block"]
+====
+.옵션 1: RCF 파일 및 CleanUpFiles를 생성합니다
+--
+구성이 요구 사항을 충족하는 경우 이 절차를 사용합니다.
+
+.단계
+.. RcfFileGenerator 1.4a 이상 버전을 사용하여 1단계에서 검색한 정보를 사용하여 RCF 파일을 생성합니다. RcfFileGenerator의 새 버전은 일부 구성을 되돌리고 새 RCF 구성을 적용하기 위해 스위치를 준비하는 데 사용할 수 있는 CleanUpFiles의 추가 세트를 만듭니다.
+.. 배너 motd를 현재 적용된 RCF 파일과 비교합니다. 플랫폼 유형, 스위치 유형, 포트 및 VLAN 사용은 동일해야 합니다.
++
+
+NOTE: RCF 파일과 동일한 버전에서 CleanUpFiles를 사용해야 하며 정확히 동일한 구성을 사용해야 합니다. CleanUpFile을 사용하면 작동하지 않으며 스위치를 완전히 재설정해야 할 수도 있습니다.
+
++
+
+NOTE: 스토리지 유형이 SAS 스토리지 또는 직접 스토리지와는 다를 수 있습니다.
+
++
+
+NOTE: RCF 파일이 생성되는 ONTAP 버전은 관련이 없습니다. RCF 파일 버전만 중요합니다.
+
++
+
+NOTE: RCF 파일(동일한 버전도 포함)은 더 적은 수의 또는 더 많은 플랫폼을 나열할 수 있습니다. 플랫폼이 목록에 있는지 확인합니다.
+
+
+
+--
+.옵션 2: 일반 CleanUpFiles를 만듭니다
+--
+구성이 모든 요구 사항을 충족하지 * 않는 경우 이 절차를 사용하십시오.
+
+.단계
+.. 각 스위치에서 show running-config의 출력을 조회한다.
+.. RcfFileGenerator 도구를 열고 창 아래쪽에서 '일반 CleanUpFiles 만들기'를 클릭합니다
+.. 1단계에서 검색한 출력을 'One' 스위치에서 상단 창으로 복사합니다. 기본 출력을 제거하거나 그대로 둘 수 있습니다.
+.. 'CUF 파일 작성'을 클릭합니다.
+.. 하단 창의 출력을 텍스트 파일로 복사합니다(이 파일은 CleanUpFile입니다).
+.. 구성의 모든 스위치에 대해 c, d, e 단계를 반복합니다.
++
+이 절차를 마치면 각 스위치마다 하나씩 4개의 텍스트 파일이 있어야 합니다. 이러한 파일은 옵션 1을 사용하여 만들 수 있는 CleanUpFiles 와 같은 방법으로 사용할 수 있습니다.
+
+
+
+--
+====
+. [[Create-the-new-RCF-files-for-the-new-configuration]] 새 구성을 위해 '새로운' RCF 파일을 생성합니다. 각 ONTAP 및 RCF 파일 버전을 선택하는 경우를 제외하고 이전 단계에서 파일을 생성한 것과 동일한 방식으로 이러한 파일을 생성합니다.
++
+이 단계를 완료한 후에는 각각 12개의 파일로 구성된 두 세트의 RCF 파일이 있어야 합니다.
+
+. 파일을 bootflash에 다운로드합니다.
++
+.. 에서 만든 CleanUpFiles를 다운로드합니다 <<Create-RCF-files-and-CleanUpFiles-or-create-generic-CleanUpFiles,RCF 파일 및 CleanUpFiles를 생성하거나 현재 구성을 위한 일반 CleanUpFiles를 생성합니다>>
++
+
+NOTE: 이 CleanUpFile은 현재 적용된 RCF 파일용으로, 업그레이드하려는 새 RCF에 대해서는 * 적용되지 않습니다 *.
+
++
+스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.81_Switch-A1.txt'
+
+.. 에서 생성한 '새로운' RCF 파일을 다운로드합니다 <<Create-the-new-RCF-files-for-the-new-configuration,새 구성을 위해 '새로운' RCF 파일을 생성합니다.>>
++
+Switch-A1:'NX9336_v1.90_Switch-A1.txt'의 RCF 파일 예
+
+.. 에서 만든 CleanUpFiles를 다운로드합니다 <<Create-the-new-RCF-files-for-the-new-configuration,새 구성을 위해 '새로운' RCF 파일을 생성합니다.>> 이 단계는 선택 사항입니다. 나중에 파일을 사용하여 스위치 구성을 업데이트할 수 있습니다. 현재 적용된 설정과 일치합니다.
++
+스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.90_Switch-A1.txt'
+
++
+
+NOTE: 올바른(일치) RCF 버전을 사용하려면 CleanUpFile을 사용해야 합니다. CleanUpFile을 다른 RCF 버전 또는 다른 구성에 사용하는 경우 구성 정리가 올바르게 작동하지 않을 수 있습니다.
+
++
+다음 예제에서는 세 개의 파일을 bootflash에 복사합니다.
+
++
+[listing]
+----
+IP_switch_A_1# copy sftp://user@50.50.50.50/RcfFiles/NX9336-direct-SAS_v1.81_MetroCluster-IP_L2Direct_A400FAS8700_xxx_xxx_xxx_xxx/Cleanup_NX9336_v1.81_Switch-A1.txt bootflash:
+IP_switch_A_1# copy sftp://user@50.50.50.50/RcfFiles/NX9336-direct-SAS_v1.90_MetroCluster-IP_L2Direct_A400FAS8700A900FAS9500_xxx_xxx_xxx_xxxNX9336_v1.90//NX9336_v1.90_Switch-A1.txt bootflash:
+IP_switch_A_1# copy sftp://user@50.50.50.50/RcfFiles/NX9336-direct-SAS_v1.90_MetroCluster-IP_L2Direct_A400FAS8700A900FAS9500_xxx_xxx_xxx_xxxNX9336_v1.90//Cleanup_NX9336_v1.90_Switch-A1.txt bootflash:
+----
+
+
+. CleanUpFile 또는 일반 CleanUpFile을 적용합니다.
++
+일부 구성이 되돌려지고 스위치 포트가 '오프라인'됩니다.
+
++
+.. 시작 구성에 대한 보류 중인 변경 사항('show running-config diff')이 없는지 확인합니다
++
+[listing]
+----
+IP_switch_A_1# show running-config diff
+IP_switch_A_1#
+----
+
+
+. 시스템 출력이 표시되면 실행 중인 구성을 시작 구성에 저장합니다. 'copy running-config startup-config'
++
+
+NOTE: 시스템 출력은 시작 구성과 실행 중인 구성이 서로 다르고 보류 중인 변경 사항을 나타냅니다. 보류 중인 변경 사항을 저장하지 않으면 스위치를 다시 로드하여 롤백할 수 없습니다.
+
++
+.. CleanUpFile 적용:
++
+[listing]
+----
+
+IP_switch_A_1# copy bootflash:Cleanup_NX9336_v1.81_Switch-A1.txt running-config
+
+IP_switch_A_1#
+----
++
+
+NOTE: 스위치 프롬프트로 되돌아오려면 스크립트가 다소 시간이 걸릴 수 있습니다. 출력이 예상되지 않습니다.
+
+
+
+. 실행 중인 구성을 확인하여 설정이 'show running-config'로 지워졌는지 확인합니다
++
+현재 구성은 다음과 같이 표시되어야 합니다.
+
++
+** 클래스 맵 및 IP 액세스 목록이 구성되지 않았습니다
+** 정책 맵이 구성되지 않았습니다
+** 서비스 정책이 구성되지 않았습니다
+** 구성된 포트 프로파일이 없습니다
+** 모든 이더넷 인터페이스(mgmt0 구성은 표시하지 않고 VLAN 1만 구성해야 함)
++
+위 항목 중 하나라도 구성되어 있다면 새로운 RCF 파일 구성을 적용하지 못할 수 있습니다. 그러나 실행 중인 구성을 시작 구성에 저장하지 않고 * 스위치를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.
+
+
+
+. RCF 파일을 적용하고 포트가 온라인 상태인지 확인합니다.
++
+.. RCF 파일을 적용합니다.
++
+[listing]
+----
+IP_switch_A_1# copy bootflash:NX9336_v1.90-X2_Switch-A1.txt running-config
+----
++
+
+NOTE: 구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지가 나타나지 않습니다.
+
+.. 구성을 적용한 후 클러스터 및 MetroCluster 포트가 다음 명령 중 하나인 '인터페이스 요약 보기', 'CDP 인접 항목 표시' 또는 '이웃 표시' 중 하나로 온라인 상태인지 확인합니다
++
+
+NOTE: 로컬 클러스터의 VLAN을 변경하고 사이트에서 첫 번째 스위치를 업그레이드한 경우, 이전 구성과 새 구성의 VLAN이 일치하지 않기 때문에 클러스터 상태 모니터링 시 상태가 '정상'으로 보고되지 않을 수 있습니다. 두 번째 스위치가 업데이트된 후 상태가 정상 상태로 돌아가야 합니다.
+
++
+구성이 올바르게 적용되지 않거나 구성을 유지하지 않으려면 실행 중인 구성을 시작 구성에 저장하지 않고 스위치 * 를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.
+
+
+
+. 구성을 저장하고 스위치를 다시 로드합니다.
++
+[listing]
+----
+IP_switch_A_1# copy running-config startup-config
+
+IP_switch_A_1# reload
+----
+

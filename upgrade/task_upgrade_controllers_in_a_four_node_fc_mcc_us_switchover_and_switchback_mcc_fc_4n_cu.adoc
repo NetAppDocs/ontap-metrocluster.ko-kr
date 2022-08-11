@@ -1514,6 +1514,20 @@ MetroCluster 쇼
 +
 MetroCluster 체크 쇼
 
++
+
+NOTE: MetroCluster check run과 MetroCluster check show를 실행하면 다음과 유사한 오류 메시지가 표시됩니다.
+
++
+.예
+[listing]
+----
+Failed to validate the node and cluster components before the switchover operation.
+                  Cluster_A:: node_A_1 (non-overridable veto): DR partner NVLog mirroring is not online. Make sure that the links between the two sites are healthy and properly configured.
+----
++
+이는 업그레이드 프로세스 중 컨트롤러 불일치로 인한 것으로 예상되며 오류 메시지는 무시해도 됩니다.
+
 
 
 

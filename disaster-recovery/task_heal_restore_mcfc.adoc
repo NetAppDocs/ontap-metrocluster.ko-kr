@@ -43,7 +43,7 @@ cluster_B::> metrocluster heal -phase root aggregates
  a| 
 미러가 저하되었습니다
  a| 
-로 진행합니다 <<step3_fc_aggr_healing,3단계>>
+로 진행합니다 <<step3_fc_aggr_healing,하나 이상의 플렉스가 오프라인 상태로 유지되는 경우 미러를 재구축하려면 추가 단계가 필요합니다.>>
 
 
 
