@@ -12299,7 +12299,6 @@
   <block id="44966f51999c176196bdbfe7e74f3762" category="paragraph">3, 4, 9, 10, 11, 12</block>
   <block id="3ee537e70a06614ada97e070ef70fe96" category="paragraph">FAS8300/A400/FAS8700</block>
   <block id="fb6814303d896b70f8e88a7a5fa288c1" category="list-text">파란색 셀은 ONTAP 9.11.1부터 조합이 지원된다는 것을 나타냅니다.</block>
-  <block id="f65f3d1cbac500084196b8e4bf5ad772" category="image-alt">FC IP 전환 메타 사용자 및 이후</block>
   <block id="8cff99d2c284195b8638b34190ed3388" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1 또는 9.11.1.</block>
   <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
@@ -12655,4 +12654,8 @@
   <block id="e5df3565fbad5a4849fc6fb6ec79e8d1" category="list-text">BES-53248 스위치에서 40 또는 100Gbps ISL 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
   <block id="394d86b50aa384c22c3eeb7d90023e15" category="list-text">Cisco 9336C-FX2(NS224 셸프 연결)용 RCF 파일을 생성할 때 ISL을 기본 * 또는 * 브레이크아웃 모드로 구성해야 합니다.</block>
   <block id="a455825d44f1e4a4ab9b205b1b01f846" category="sidebar">정리 파일을 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
+  <block id="b811a3677c5b098a6945ad54c6058363" category="section-title">스위치오버 및 스위치백을 사용하여 컨트롤러 업그레이드를 위한 플랫폼 조합을 지원합니다</block>
+  <block id="773198299cf56ea3814545219f2bb9cb" category="paragraph">스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다. 다음 표에는 지원되는 컨트롤러 업그레이드 조합이 나와 있습니다.</block>
+  <block id="0af1623ce613439fe5aa524f7c4b1e1b" category="image-alt">지원되는 컨트롤러 업그레이드 조합</block>
+  <block id="bc85eece93965de5b37264d01e4e5eeb" category="image-alt">FC IP 전환 대도시 이상</block>
 </blocks>

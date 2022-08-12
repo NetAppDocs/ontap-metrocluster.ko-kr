@@ -22,7 +22,7 @@ MetroCluster IP 구성으로 전환할 때는 지원되는 플랫폼 모델을 �
 
 예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.
 
-image::../media/fc_ip_transition_metrpolitan_and_later.png[FC IP 전환 메타 사용자 및 이후]
+image::../media/fc_ip_transition_metropolitan_and_later.png[FC IP 전환 대도시 이상]
 
 
 
