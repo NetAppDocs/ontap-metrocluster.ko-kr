@@ -275,6 +275,34 @@ MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF
 
 
 ====
+.단계
+. 'show FIPS status' 명령을 사용하여 사용자의 EFOS 버전이 FIPS 호환 버전인지 또는 비 FIPS 호환 버전인지 확인합니다. 다음 예에서는 IP_SWITCH_A_1이 FIPS 호환 EFOS를 사용하고 있으며 IP_SWITCH_A_2는 FIPS 비호환 EFOS를 사용하고 있습니다.
++
+* 예 1 *
+
++
+[listing]
+----
+IP_switch_A_1 #show fips status
+
+System running in FIPS mode
+
+IP_switch_A_1 #
+----
++
+* 예 2 *
+
++
+[listing]
+----
+IP_switch_A_2 #show fips status
+                     ^
+% Invalid input detected at `^` marker.
+
+IP_switch_A_2 #
+----
+. 다음 표를 사용하여 어떤 방법을 따라야 하는지 확인하십시오.
++
 |===
 
 
@@ -341,8 +369,11 @@ FIPS 규격
 FIPS 비호환
 
 |===
-* 방법 1: <<Steps to upgrade EFOS with downloading the software image to the backup boot partition>>
-* 방법 2: <<Steps to upgrade EFOS using the ONIE OS installation>>
++
+** 방법 1: <<Steps to upgrade EFOS with downloading the software image to the backup boot partition>>
+** 방법 2: <<Steps to upgrade EFOS using the ONIE OS installation>>
+
+
 
 
 
