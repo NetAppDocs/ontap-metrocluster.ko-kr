@@ -14,6 +14,13 @@ summary: 클러스터 상호 연결 및 백엔드 MetroCluster IP 연결에 사�
 클러스터 상호 연결 및 백엔드 MetroCluster IP 연결에 사용할 Broadcom IP 스위치를 구성해야 합니다.
 
 
+NOTE: 다음과 같은 경우 구성에 추가 라이센스(6 x 100-Gb 포트 라이센스)가 필요합니다.
+
+* 포트 53과 54를 40Gbps 또는 100Gbps MetroCluster ISL로 사용합니다.
+* 로컬 클러스터와 MetroCluster 인터페이스를 포트 49-52에 연결하는 플랫폼을 사용합니다.
+
+
+
 
 == Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다
 
@@ -715,7 +722,7 @@ NOTE: 다운로드 후 RCF 파일을 수정할 수 없습니다.
 
 . RCF 파일을 스위치에 복사합니다.
 +
-.. RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF NVRAM:script BES-53248_v1.32_Switch-A1.txt NVRAM:script BES-53248_v1.32_Switch-A1.scr'
+.. RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF/BES-53248_v1.32_Switch-A1.txt NVRAM: script BES-53248_v1.32_Switch-A1.scr'
 +
 이 예에서 "BES-53248_v1.32_Switch-A1.txt" RCF 파일은 SFTP 서버에서 "50.50.50"의 로컬 bootflash로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.
 

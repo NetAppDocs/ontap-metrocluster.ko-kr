@@ -2016,7 +2016,6 @@
   <block id="ca06807503101d86e21d40fd5c8ff94b" category="cell">V2.x</block>
   <block id="ab4a2de3931dbed092e0d44be3c87116" category="list-text">MetroCluster IP용 Broadcom RCF 파일을 생성합니다.</block>
   <block id="fd550a9c3a7b7c6106ae07bc6bb69106" category="list-text">를 다운로드합니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block></block>
-  <block id="c02e1d7f483cf9ccd0ff120c09ebc64f" category="list-text">RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF NVRAM:script BES-53248_v1.32_Switch-A1.txt NVRAM:script BES-53248_v1.32_Switch-A1.scr'</block>
   <block id="0fde531bbbf90d47fe7905001a962dde" category="paragraph">이 예에서 "BES-53248_v1.32_Switch-A1.txt" RCF 파일은 SFTP 서버에서 "50.50.50"의 로컬 bootflash로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.</block>
   <block id="e1e09f5dca0aef21d822f07bad5eea3b" category="list-text">RCF 파일이 스크립트로 저장되었는지 확인합니다.</block>
   <block id="406bb351c55daa6b29920fa6ce644c29" category="paragraph">'스크립트 목록'</block>
@@ -12533,7 +12532,6 @@
   <block id="8c67eafd90e097bf6228c8d6f91f15cb" category="list-text"><block ref="8c67eafd90e097bf6228c8d6f91f15cb" category="inline-link-macro-rx"></block></block>
   <block id="6fc32e58ee37ceb6ca0bb1590e84ab08" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="121ccccf0953c4b38cd58e1f1be63ffd" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
-  <block id="cfb1fc36dd671ed91ba25af840a49e64" category="doc">CleanUpFiles를 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
   <block id="44d9da525f678322921a73864bd0b924" category="paragraph">RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.</block>
   <block id="0d98f6fd87f88cd68844ee1450081b43" category="paragraph">구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.</block>
   <block id="cf5d82da1dbb504eeff51105d1c22631" category="list-text">표준 RCF 구성이 적용됩니다.</block>
@@ -12543,7 +12541,6 @@
   <block id="22bfd0bc1ef7b5ec6b0c3d09a25173dd" category="list-text">현재 RCF 파일을 적용하기 전에 스위치를 출하 시 기본값으로 재설정하는 단계를 따랐습니다.</block>
   <block id="bdda45d6734a620758197fdb8292141f" category="list-text">RCF가 적용된 후 스위치(포트) 구성이 변경되지 않았습니다.</block>
   <block id="7db0739314c77bc294505bdbb23e67b7" category="paragraph">이러한 요구 사항을 충족하지 않으면 RCF 파일을 생성할 때 생성되는 CleanUpFiles를 사용할 수 없습니다. 그러나 이 함수를 사용하여 제네릭 CleanUpFiles를 만들 수 있습니다. 이 메서드를 사용하는 정리는 'show running-config'의 출력에서 파생되며 가장 좋은 방법입니다.</block>
-  <block id="c9adb95bef755c2c28edaaae2720ea48" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_B_1 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
   <block id="0e0fe23e527e37b417182290ff6ed374" category="list-text">현재 RCF 파일 버전과 사용할 포트 및 VLAN을 확인합니다. 'ip_switch_a_1#show banner motd'</block>
   <block id="e020d7382ce2a21b56ea6460a45b49c2" category="admonition">4개 스위치 모두에서 이 정보를 얻고 다음 정보 표를 완료해야 합니다.</block>
   <block id="2b6ad2a040294d5c6d9cd85338614383" category="paragraph">이 출력에서 다음 두 표에 표시된 정보를 수집해야 합니다.</block>
@@ -12662,4 +12659,11 @@
   <block id="0b9982c26f9b690896e158b901c7001c" category="paragraph">* 예 1 *</block>
   <block id="66fcc909c7d6b29950f9da753e168312" category="paragraph">* 예 2 *</block>
   <block id="beb59952abfbd2e99ff165a613423fa0" category="list-text">다음 표를 사용하여 어떤 방법을 따라야 하는지 확인하십시오.</block>
+  <block id="242fc88f1fc9a405fa9f0e7cbf2c069b" category="summary">Cisco IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.</block>
+  <block id="ec9296ef857e944ab344eb684e789ddc" category="doc">CleanUpFiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다</block>
+  <block id="88d8da08ee7e7170ae3a43278a025761" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_A_2 스위치를 업데이트한 후 Switch_B_1 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
+  <block id="6eedc2d4a1f7c30325c52c25b14dda09" category="admonition">다음과 같은 경우 구성에 추가 라이센스(6 x 100-Gb 포트 라이센스)가 필요합니다.</block>
+  <block id="d4a39e254ca0e79abbaea7e91f10d1c8" category="list-text">포트 53과 54를 40Gbps 또는 100Gbps MetroCluster ISL로 사용합니다.</block>
+  <block id="39d6f919c4f9487cf3eba1907393cc85" category="list-text">로컬 클러스터와 MetroCluster 인터페이스를 포트 49-52에 연결하는 플랫폼을 사용합니다.</block>
+  <block id="b457d19307b0152d2948b75490c21739" category="list-text">RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF/BES-53248_v1.32_Switch-A1.txt NVRAM: script BES-53248_v1.32_Switch-A1.scr'</block>
 </blocks>
