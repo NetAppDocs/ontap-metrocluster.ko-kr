@@ -858,7 +858,6 @@
   <block id="e544ed43da5fbe5f1ff53ed83f313e27" category="section-title">FAS2750 시스템에 디스크 할당</block>
   <block id="348b34a8fc3bce6d3e74519d8b7e9ca3" category="paragraph">내부 드라이브 24개 및 외부 드라이브 24개</block>
   <block id="8a9765ee788aa0ec121d5869524dbbb4" category="paragraph">내부 및 외부 쉘프는 같은 2개의 반으로 나뉩니다. 각 절반은 자동으로 다른 풀에 할당됩니다</block>
-  <block id="1727ed989c7f4287136d81d78aeb960e" category="paragraph">해당 없음.</block>
   <block id="9b69500f7139e9ab34f753b13df6c609" category="section-title">FAS8200 시스템의 디스크 할당</block>
   <block id="f5282c0c22db3753989149a870ee22a6" category="paragraph">외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="f279008175291c0c57dfde21cb38762c" category="section-title">FAS500f 시스템에서 디스크 할당</block>
@@ -12650,10 +12649,6 @@
   <block id="eb4cfd99b709d0b0ddc435f063be95cf" category="paragraph">브레이크아웃 케이블(2개)</block>
   <block id="e5df3565fbad5a4849fc6fb6ec79e8d1" category="list-text">BES-53248 스위치에서 40 또는 100Gbps ISL 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
   <block id="394d86b50aa384c22c3eeb7d90023e15" category="list-text">Cisco 9336C-FX2(NS224 셸프 연결)용 RCF 파일을 생성할 때 ISL을 기본 * 또는 * 브레이크아웃 모드로 구성해야 합니다.</block>
-  <block id="a455825d44f1e4a4ab9b205b1b01f846" category="sidebar">정리 파일을 사용하여 MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
-  <block id="b811a3677c5b098a6945ad54c6058363" category="section-title">스위치오버 및 스위치백을 사용하여 컨트롤러 업그레이드를 위한 플랫폼 조합을 지원합니다</block>
-  <block id="773198299cf56ea3814545219f2bb9cb" category="paragraph">스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다. 다음 표에는 지원되는 컨트롤러 업그레이드 조합이 나와 있습니다.</block>
-  <block id="0af1623ce613439fe5aa524f7c4b1e1b" category="image-alt">지원되는 컨트롤러 업그레이드 조합</block>
   <block id="bc85eece93965de5b37264d01e4e5eeb" category="image-alt">FC IP 전환 대도시 이상</block>
   <block id="731380609e4acd613ed054b92fc261e6" category="list-text">'show FIPS status' 명령을 사용하여 사용자의 EFOS 버전이 FIPS 호환 버전인지 또는 비 FIPS 호환 버전인지 확인합니다. 다음 예에서는 IP_SWITCH_A_1이 FIPS 호환 EFOS를 사용하고 있으며 IP_SWITCH_A_2는 FIPS 비호환 EFOS를 사용하고 있습니다.</block>
   <block id="0b9982c26f9b690896e158b901c7001c" category="paragraph">* 예 1 *</block>
@@ -12666,4 +12661,15 @@
   <block id="d4a39e254ca0e79abbaea7e91f10d1c8" category="list-text">포트 53과 54를 40Gbps 또는 100Gbps MetroCluster ISL로 사용합니다.</block>
   <block id="39d6f919c4f9487cf3eba1907393cc85" category="list-text">로컬 클러스터와 MetroCluster 인터페이스를 포트 49-52에 연결하는 플랫폼을 사용합니다.</block>
   <block id="b457d19307b0152d2948b75490c21739" category="list-text">RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF/BES-53248_v1.32_Switch-A1.txt NVRAM: script BES-53248_v1.32_Switch-A1.scr'</block>
+  <block id="ea32627e820d2d706867bdf52f203354" category="section-title">MetroCluster IP 구성에서 스위치오버 및 스위치백을 사용하여 컨트롤러 업그레이드를 위한 플랫폼 조합을 지원합니다</block>
+  <block id="5a133f61008521cf04b795cbed594afb" category="paragraph">MetroCluster IP 구성에서 스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다. 다음 표에는 지원되는 컨트롤러 업그레이드 조합이 나와 있습니다.</block>
+  <block id="3683e9c25b6907e036fd4e9c0b1f6c3e" category="image-alt">IP 구성에서 지원되는 컨트롤러 업그레이드 조합</block>
+  <block id="c18cacb38175bec2261f766082f949f2" category="section-title">MetroCluster FC 구성에서 스위치오버 및 스위치백을 사용하여 컨트롤러 업그레이드를 위한 플랫폼 조합을 지원합니다</block>
+  <block id="d71f8b4a76cf6eed8f9c4126a751829c" category="paragraph">MetroCluster FC 구성에서 스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다. 다음 표에는 지원되는 컨트롤러 업그레이드 조합이 나와 있습니다.</block>
+  <block id="2a9c49e8bc60cebb402b316352750e02" category="image-alt">FC 구성에서 지원되는 컨트롤러 업그레이드 조합</block>
+  <block id="6ecbc3bbbc5acac0e3a1eaa928b0ef3a" category="list-text">두 개의 데이터 파티션</block>
+  <block id="203589fdbad6f6dc48cf251ed51e812a" category="list-text">스페어 파티션이 없습니다</block>
+  <block id="78da571ba5b07c0449886d55d21269c6" category="paragraph">수동 할당이 필요합니다</block>
+  <block id="361139022557555da3940779901816d7" category="paragraph">수동 할당이 필요합니다.</block>
+  <block id="6d54b17c6700f2c764e16c85409687ad" category="sidebar">Cleanupfiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다</block>
 </blocks>
