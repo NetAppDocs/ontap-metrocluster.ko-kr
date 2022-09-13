@@ -12672,4 +12672,7 @@
   <block id="78da571ba5b07c0449886d55d21269c6" category="paragraph">수동 할당이 필요합니다</block>
   <block id="361139022557555da3940779901816d7" category="paragraph">수동 할당이 필요합니다.</block>
   <block id="6d54b17c6700f2c764e16c85409687ad" category="sidebar">Cleanupfiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다</block>
+  <block id="cd87d30388635f4978d5e5f84d17c64e" category="admonition">MetroCluster IP 구성에서 포트 e5a 및 e7a를 인터클러스터 LIF로 사용할 수 있습니다.</block>
+  <block id="ec8b479c503bdd6824b5e3505ef1d0df" category="paragraph">다음 예에서는 오프라인인 집계 aggr_data_A1을 보여 줍니다.</block>
+  <block id="aa8cd184e817ada870c8b763be695d0b" category="paragraph">다음 예제는 삭제되는 집계 aggr_data_A1을 보여줍니다.</block>
 </blocks>

@@ -80,25 +80,25 @@ cluster_B::>
 +
 .. '스토리지 집계 오프라인-집계 집계-이름'을 집계하여 오프라인으로 전환합니다
 +
-다음 예는 오프라인이 되는 Aggregate node_B_1_aggr0을 보여줍니다.
+다음 예에서는 오프라인인 집계 aggr_data_A1을 보여 줍니다.
 
 +
 ....
-cluster_B::> storage aggregate offline -aggregate node_B_1_aggr0
+cluster_B::> storage aggregate offline -aggregate aggr_data_a1
 
-Aggregate offline successful on aggregate: node_B_1_aggr0
+Aggregate offline successful on aggregate: aggr_data_a1
 ....
 .. 'Storage aggregate delete-aggregate aggregate-name'이라는 애그리게이트를 삭제합니다
 +
 메시지가 표시되면 플렉스를 폐기할 수 있습니다.
 
 +
-다음 예에서는 삭제 중인 Aggregate node_B_1_aggr0을 보여줍니다.
+다음 예제는 삭제되는 집계 aggr_data_A1을 보여줍니다.
 
 +
 ....
-cluster_B::> storage aggregate delete -aggregate node_B_1_aggr0
-Warning: Are you sure you want to destroy aggregate "node_B_1_aggr0"? {y|n}: y
+cluster_B::> storage aggregate delete -aggregate aggr_data_a1
+Warning: Are you sure you want to destroy aggregate "aggr_data_a1"? {y|n}: y
 [Job 123] Job succeeded: DONE
 
 cluster_B::>
