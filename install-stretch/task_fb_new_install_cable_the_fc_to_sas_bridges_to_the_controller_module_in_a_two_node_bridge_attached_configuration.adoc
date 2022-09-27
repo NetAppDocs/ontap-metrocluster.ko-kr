@@ -84,7 +84,7 @@ Tgt VendorID ProductID        Type        SerialNumber
  a| 
 정답입니다
  a| 
-반복합니다 <<step1-verify-detect,1단계>> 각 나머지 브리지에 대해.
+반복합니다 ,1단계 각 나머지 브리지에 대해.
 
 
 
@@ -95,7 +95,7 @@ Tgt VendorID ProductID        Type        SerialNumber
 +
 link:task_fb_new_install_cabl.html["브리지에 디스크 쉘프 케이블링"]
 
-.. 반복합니다 <<step1-verify-detect,1단계>> 각 나머지 브리지에 대해.
+.. 반복합니다 ,1단계 각 나머지 브리지에 대해.
 
 
 |===
@@ -114,5 +114,5 @@ image::../media/cluster_peering_network.gif[클러스터 피어링 네트워크]
 
 
 
-. 반복합니다 <<step3-cable-each-bridge,3단계>> 모든 브리지가 케이블로 연결될 때까지 다른 브리지에 연결합니다.
+. 반복합니다 ,3단계 모든 브리지가 케이블로 연결될 때까지 다른 브리지에 연결합니다.
 

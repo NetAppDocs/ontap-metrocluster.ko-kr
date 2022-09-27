@@ -158,7 +158,7 @@ cluster_A::*>
 
 ... 스토리지 페일오버 해제:
 +
-"storage failover modify -node_node -name _ -enable false <------ 추가 단계'를 선택합니다
+'storage failover modify -node_node -name _ -enable false'
 
 ... 노드: + 'cluster unjoin-node_node-name_'의 연결을 해제합니다
 +

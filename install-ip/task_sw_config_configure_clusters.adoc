@@ -1441,28 +1441,28 @@ cluster_B::>
  a| 
 시스템은 자동 드라이브 할당 요구 사항을 충족시키거나 ONTAP 9.3을 실행하는 경우 공장에서 수신된 것입니다.
  a| 
-<<Verifying disk assignment for pool 1 disks>>
+ disk assignment for pool 1 disks
 
 
 
  a| 
 구성에는 3개의 쉘프가 포함되어 있거나 4개 이상의 쉘프가 포함된 경우, 4개의 쉘프(예: 7개의 쉘프)가 불균일한 배수이고 ONTAP 9.5가 실행 중입니다.
  a| 
-<<Manually assigning drives for pool 1 (ONTAP 9.4 or later)>>
+ assigning drives for pool 1 (ONTAP 9.4 or later)
 
 
 
  a| 
 이 구성에는 사이트당 4개의 스토리지 쉘프가 포함되지 않으며 ONTAP 9.4를 실행 중입니다
  a| 
-<<Manually assigning drives for pool 1 (ONTAP 9.4 or later)>>
+ assigning drives for pool 1 (ONTAP 9.4 or later)
 
 
 
  a| 
 출하 시 시스템이 수신되지 않았고 공장에서 받은 ONTAP 9.3시스템이 할당된 드라이브로 사전 구성되어 실행되고 있습니다.
  a| 
-<<Manually assigning disks for pool 1 (ONTAP 9.3)>>
+ assigning disks for pool 1 (ONTAP 9.3)
 
 |===
 
@@ -2002,7 +2002,7 @@ MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster conf
 
 +
 
-NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <<step1_single_mirror,1단계>> 를 참조하십시오.
+NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 ,1단계 를 참조하십시오.
 
 * 컨트롤러 및 섀시의 ha-config 상태는 "mccip"이어야 합니다.
 

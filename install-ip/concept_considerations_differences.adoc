@@ -203,7 +203,7 @@ MetroCluster Tiebreaker 지원
 
 
 
-| 지원 <<Support for All SAN Array systems in MetroCluster configurations,모든 SAN 어레이>>  a| 
+| 지원  for All SAN Array systems in MetroCluster configurations,모든 SAN 어레이  a| 
 예
  a| 
 예

@@ -421,15 +421,15 @@ Tgt VendorID ProductID        Type        SerialNumber
  a| 
 정답입니다
  a| 
-반복합니다 <<step11-verify-each-bridge-detect,11단계>> 각 나머지 브리지에 대해.
+반복합니다 ,11단계 각 나머지 브리지에 대해.
 
 
 
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step10-cable-shelves-bridges,10단계>>.
-.. 반복합니다 <<step11-verify-each-bridge-detect,11단계>>.
+.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 ,10단계.
+.. 반복합니다 ,11단계.
 
 
 |===

@@ -1238,7 +1238,7 @@ FC_switch_B_1:admin> trunkshow
 ----
 
 
-. 반복합니다 <<step1_brocade_config,1단계>> 부터 까지 <<step10_brocade_config,10단계>> 두 번째 FC 스위치 패브릭용
+. 반복합니다 ,1단계 부터 까지 ,10단계 두 번째 FC 스위치 패브릭용
 
 
 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]

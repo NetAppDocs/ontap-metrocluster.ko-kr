@@ -159,15 +159,15 @@ MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어
 * https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]
 * 파트너 클러스터로 IPspace 객체를 복제하고 MetroCluster 구성에서 서브넷 및 IPv6를 구성하기 위한 요구사항을 알고 있어야 합니다.
 +
-<<ipspace_obj_rep,IPSpace 객체 복제 및 서브넷 구성 요구 사항>>
+,IPSpace 객체 복제 및 서브넷 구성 요구 사항
 
 * MetroCluster 구성에서 네트워크를 구성할 때 LIF를 생성하기 위한 요구 사항을 숙지해야 합니다.
 +
-<<reqs_lif_create,MetroCluster 구성에서 LIF 생성을 위한 요구사항>>
+,MetroCluster 구성에서 LIF 생성을 위한 요구사항
 
 * MetroCluster 구성의 LIF 복제 요구사항을 알고 있어야 합니다. 또한 복제된 LIF가 파트너 클러스터에 배치된 방식을 알아야 하며, LIF 복제 또는 LIF 배치에 장애가 발생할 경우 발생하는 문제를 알아야 합니다.
 +
-<<lif_rep_place,LIF 복제 및 배치 요구사항 및 문제>>
+,LIF 복제 및 배치 요구사항 및 문제
 
 
 
@@ -230,11 +230,11 @@ IPv6이 한 사이트에 구성되어 있는 경우 다른 사이트에서도 IP
 .관련 정보
 * MetroCluster 구성에서 네트워크를 구성할 때 LIF를 생성하기 위한 요구 사항을 숙지해야 합니다.
 +
-<<reqs_lif_create,MetroCluster 구성에서 LIF 생성을 위한 요구사항>>
+,MetroCluster 구성에서 LIF 생성을 위한 요구사항
 
 * MetroCluster 구성의 LIF 복제 요구사항을 알고 있어야 합니다. 또한 복제된 LIF가 파트너 클러스터에 배치된 방식을 알아야 하며, LIF 복제 또는 LIF 배치에 장애가 발생할 경우 발생하는 문제를 알아야 합니다.
 +
-<<lif_rep_place,LIF 복제 및 배치 요구사항 및 문제>>
+,LIF 복제 및 배치 요구사항 및 문제
 
 
 
@@ -262,11 +262,11 @@ MetroCluster 구성에서 'MetroCluster check lif show' 명령을 실행하여 L
 .관련 정보
 * 파트너 클러스터로 IPspace 객체를 복제하고 MetroCluster 구성에서 서브넷 및 IPv6를 구성하기 위한 요구사항을 알고 있어야 합니다.
 +
-<<ipspace_obj_rep,IPSpace 객체 복제 및 서브넷 구성 요구 사항>>
+,IPSpace 객체 복제 및 서브넷 구성 요구 사항
 
 * MetroCluster 구성의 LIF 복제 요구사항을 알고 있어야 합니다. 또한 복제된 LIF가 파트너 클러스터에 배치된 방식을 알아야 하며, LIF 복제 또는 LIF 배치에 장애가 발생할 경우 발생하는 문제를 알아야 합니다.
 +
-<<lif_rep_place,LIF 복제 및 배치 요구사항 및 문제>>
+,LIF 복제 및 배치 요구사항 및 문제
 
 
 
@@ -388,11 +388,11 @@ LIF의 호스트 연결을 확인하기 위해 FC 스위치 패브릭에서 변�
 .관련 정보
 * 파트너 클러스터로 IPspace 객체를 복제하고 MetroCluster 구성에서 서브넷 및 IPv6를 구성하기 위한 요구사항을 알고 있어야 합니다.
 +
-<<ipspace_obj_rep,IPSpace 객체 복제 및 서브넷 구성 요구 사항>>
+,IPSpace 객체 복제 및 서브넷 구성 요구 사항
 
 * MetroCluster 구성에서 네트워크를 구성할 때 LIF를 생성하기 위한 요구 사항을 숙지해야 합니다.
 +
-<<reqs_lif_create,MetroCluster 구성에서 LIF 생성을 위한 요구사항>>
+,MetroCluster 구성에서 LIF 생성을 위한 요구사항
 
 
 

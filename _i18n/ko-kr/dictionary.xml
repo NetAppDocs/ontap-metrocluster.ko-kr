@@ -1817,11 +1817,7 @@
   <block id="acb19996aff6d0b774650f9aa4d7212a" category="inline-link-macro">MetroCluster IP 설정 워크시트, site_B</block>
   <block id="08fcfce40ddd768f4ab6ad0534a40c73" category="paragraph"><block ref="08fcfce40ddd768f4ab6ad0534a40c73" category="inline-link-macro-rx"></block></block>
   <block id="09bf7c8746b0eccb2f8b87d398db4ad3" category="doc">MetroCluster IP 설치 및 구성</block>
-  <block id="463528d23a54279a25ea4137731c7ca5" category="list-text">MetroCluster IP 구성의 아키텍처를 이해하려고 합니다.</block>
-  <block id="12a8edac591f0bee9a2dbbaed62060a3" category="list-text">MetroCluster IP 구성을 구성하는 데 필요한 요구 사항과 모범 사례를 파악하려고 합니다.</block>
   <block id="62f7ef95a1a4f5a1e459930846582588" category="list-text">자동화된 스크립팅 도구가 아니라 CLI(Command-Line Interface)를 사용하려는 경우</block>
-  <block id="58f4e450e6637270a6ebb47e42477be1" category="paragraph">ONTAP 및 MetroCluster 구성에 대한 일반 정보도 사용할 수 있습니다.</block>
-  <block id="774a065cb3548cc61fb0ec3bc1494fbe" category="inline-link">ONTAP 9 문서 센터</block>
   <block id="4bb047f8c530785002e490ef17fa725e" category="doc">추가 정보를 찾을 수 있는 위치</block>
   <block id="5bf1678517b4e7d065d78a458ca7ed44" category="inline-link-macro">패브릭 연결 MetroCluster 설치 및 구성</block>
   <block id="a9f150ef34b7953b6119f5ac779097fe" category="paragraph"><block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block></block>
@@ -3828,7 +3824,6 @@
   <block id="8d3c998ce16ecd4cdc06e3ddd8c757e6" category="list-text">이전 DR 그룹의 노드 연결을 해제합니다.</block>
   <block id="b30c893d5895266607a2a417b5123132" category="paragraph">각 클러스터에서 이 단계를 수행해야 합니다.</block>
   <block id="ed2e5c7ebbd6b2c749bdb92415d9787c" category="list-text">스토리지 페일오버 해제:</block>
-  <block id="e55c19252352253899907fe9a7a48ff5" category="paragraph">"storage failover modify -node_node -name _ -enable false &lt;------ 추가 단계'를 선택합니다</block>
   <block id="cdab15f9840a783bfc35d8f8baa514e9" category="list-text">노드: + 'cluster unjoin-node_node-name_'의 연결을 해제합니다</block>
   <block id="ff6434ad658fa9ed7826817a3f9f0dff" category="paragraph">이전 DR 그룹의 다른 로컬 노드에 대해 이 단계를 반복합니다.</block>
   <block id="06b28530123c83dfb519d35b8e3e11f5" category="list-text">admin 권한 수준 설정: +'Set-Privilege admin'</block>
@@ -7789,10 +7784,6 @@
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
   <block id="c58c2c8b494a438765beae02806faf3a" category="paragraph">스위치 공급업체의 단계를 따르십시오.</block>
   <block id="97a377942f4f2e5cbecdba36cbfb77ea" category="inline-link-macro">Broadcom IP RCF 파일 다운로드 및 설치</block>
-  <block id="78000b0502657029700618498b49c2a2" category="list-text">스위치_A_1</block>
-  <block id="e8ec5d8866ea800460ce1192269d2c8f" category="list-text">스위치_B_1</block>
-  <block id="9c84e76a527ed2550b5deb0129b1f0ef" category="list-text">스위치_A_2</block>
-  <block id="24a317c09a8ce13b1d45e281822fc809" category="list-text">스위치_B_2</block>
   <block id="aa9dd1542ced8b74553b49591df08b7f" category="summary">MetroCluster 구성 요소 유지 관리에 대한 저작권.</block>
   <block id="16573a1c176c6843c144993b6e9d5686" category="summary">에 대한 저작권, 상표 및 기계 번역은 MetroCluster 구성 요소를 유지 관리합니다.</block>
   <block id="0ddbccff2e33cdad7e25875f8ed5047b" category="summary">사용 가능한 포트가 있는 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다.</block>
@@ -11927,9 +11918,6 @@
   <block id="b9afd1726285b60db7d467ad0820e411" category="list-text">8노드 구성은 ONTAP 9.9.1부터 지원됩니다.</block>
   <block id="fa59de86b7e9bd4898cb6907726259d6" category="paragraph">ONTAP 9.8 이하를 실행하는 MetroCluster 구성의 경우, 업그레이드를 전환하기 위해 수행되는 일부 절차에서는 임시 8노드 구성을 만들기 위해 구성에 두 번째 4노드 DR 그룹을 추가해야 합니다. ONTAP 9.9.1부터 영구적인 8노드 MetroCluster 구성이 지원됩니다.</block>
   <block id="e03959092a5c4014e786cb1caa8e7067" category="summary">ONTAP 9.5부터 ONTAP는 가상 IP\(VIP\) 및 경계 게이트웨이 프로토콜\(BGP\)을 사용하여 계층 3 연결을 지원합니다. 프런트엔드 네트워킹의 이중화를 위한 VIP와 BGP를 결합하여 백엔드 MetroCluster 이중화를 통해 Layer 3 재해 복구 솔루션을 제공합니다.</block>
-  <block id="bbcb3b5036e2a08450550efac9975ba1" category="summary">이 정보는 MetroCluster IP 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법을 설명합니다.</block>
-  <block id="8a0b74215590506f148554eeefc4f739" category="paragraph">다음과 같은 상황에서 MetroCluster IP 구성을 계획, 설치 및 구성하는 데 이 정보를 사용해야 합니다.</block>
-  <block id="04b0bb6aae6dc41149097cc24034df97" category="paragraph"><block ref="04b0bb6aae6dc41149097cc24034df97" category="inline-link-rx"></block></block>
   <block id="ca06ae8121f1cc11363fc78862822c7c" category="summary">MetroCluster IP 구성 및 작동에 대한 자세한 내용은 NetApp 설명서를 참조하십시오.</block>
   <block id="cc3e055fb471a8cb2ae09b695769980f" category="paragraph">MetroCluster 구성에 대해 자세히 알아볼 수 있습니다.</block>
   <block id="1e9c37d63bd64093dd1167b70b4e684f" category="section-title">MetroCluster 및 기타 정보</block>
@@ -12470,9 +12458,6 @@
   <block id="5ac8082d208bbf03d0cce2d606e0f49f" category="paragraph">일치하는 포트가 없습니다. 업그레이드 후에는 클러스터 포트를 다시 생성해야 합니다.<block ref="2305a256def4f5c38d82352fac177e1d" category="inline-link-macro-rx"></block></block>
   <block id="44489e59a236bf582156026d721d7300" category="list-text">스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.</block>
   <block id="a208547a21e1dc907c538b655cfee7c1" category="admonition">L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스'에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.</block>
-  <block id="a7ad2cc3f2e65335d382b74029354ee6" category="paragraph">+ * <block ref="c1e630c896fe7378e2dd05cd5272a6ff" category="inline-link-macro-rx"></block></block>
-  <block id="15229eb2fb74ec06320e5767f87322b0" category="paragraph">+ * <block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
-  <block id="6103dfdbf1ef77c8394206644595ce63" category="paragraph">+ 스위치를 다음 순서대로 업데이트합니다.</block>
   <block id="05cb8d64e2770620783bfd98ba2c571c" category="paragraph">다음 단계의 모든 명령은 전원이 켜져 있도록 사이트에서 실행됩니다.</block>
   <block id="714cb8627bb0d04d6b5d032326cab4a3" category="list-text">유지하고자 하는 사이트에서 전환을 구현합니다.</block>
   <block id="e7edce3217788bc841a63851100c9164" category="list-text">미러링되지 않은 애그리게이트를 오프라인: 스토리지 애그리게이트를 오프라인으로 전환</block>
@@ -12675,4 +12660,9 @@
   <block id="cd87d30388635f4978d5e5f84d17c64e" category="admonition">MetroCluster IP 구성에서 포트 e5a 및 e7a를 인터클러스터 LIF로 사용할 수 있습니다.</block>
   <block id="ec8b479c503bdd6824b5e3505ef1d0df" category="paragraph">다음 예에서는 오프라인인 집계 aggr_data_A1을 보여 줍니다.</block>
   <block id="aa8cd184e817ada870c8b763be695d0b" category="paragraph">다음 예제는 삭제되는 집계 aggr_data_A1을 보여줍니다.</block>
+  <block id="d2038b70348bcc50135596de145913db" category="admonition">스위치_A_1, 스위치_B_1, 스위치_A_2, 스위치_B_2 순서로 스위치를 업데이트합니다</block>
+  <block id="c1e630c896fe7378e2dd05cd5272a6ff" category="list-text"><block ref="c1e630c896fe7378e2dd05cd5272a6ff" category="inline-link-macro-rx"></block></block>
+  <block id="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="list-text"><block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
+  <block id="f6d453c97574893aee9bca0a4faee686" category="paragraph">'storage failover modify -node_node -name _ -enable false'</block>
+  <block id="d1b92a4930d50c6ed1038655db0d2684" category="sidebar">모든 ONTAP 제품 설명서</block>
 </blocks>

@@ -110,5 +110,6 @@ homepage:
       summary: 지원 질문에 대한 답변을 검색합니다.
       url: https://kb.netapp.com/
 product-family:
-  name: AFF and FAS Systems
-  repo: ontap-systems-family
+  name: ONTAP
+  repo: ontap-family
+  sidebar_label: 모든 ONTAP 제품 설명서

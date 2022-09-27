@@ -228,7 +228,7 @@ MetroCluster 상호 연결 미러 쇼
 .. 실행이 완료되면 MetroCluster 실행 결과를 확인합니다. 'MetroCluster check show'
 
 
-. 반복하여 패브릭 B 스위치(스위치 2 및 4)를 업데이트합니다 <<Update-RCF,2단계>> 를 선택합니다 <<verify-healthy,5단계>>.
+. 반복하여 패브릭 B 스위치(스위치 2 및 4)를 업데이트합니다 ,2단계 를 선택합니다 ,5단계.
 
 
 
@@ -722,7 +722,7 @@ AFF A900 또는 FAS9500 컨트롤러 모듈의 부팅 미디어에 설치된 ONT
 
 | 실행 중이 아닙니다 | 부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=<filer_addr> -mask=<netmask> -GW=<gateway> -DNS=<DNS_addr> domain=<DNS_domain>'<filer_addr>'은 스토리지 시스템의 IP 주소입니다. "<netmask>"는 스토리지 시스템의 네트워크 마스크입니다. '<gateway>'는 스토리지 시스템의 게이트웨이입니다. "<dns_addr>"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '<dns_domain>'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 펌웨어 프롬프트에 help ifconfig를 입력합니다. 
 |===
-. 노드 1에서 netboot를 수행한다 http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`[]"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 <<step2-download-software,2단계>>.
+. 노드 1에서 netboot를 수행한다 http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`[]"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 ,2단계.
 +
 
 NOTE: 부팅을 중단하지 마십시오.

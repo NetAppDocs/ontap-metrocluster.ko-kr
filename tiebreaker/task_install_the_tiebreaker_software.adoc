@@ -71,7 +71,7 @@ Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호�
 .단계
 . Java Runtime Environment를 설치합니다.
 +
-<<install-java-1-8,Java Runtime Environment 설치 1.8>>
+,Java Runtime Environment 설치 1.8
 
 . MySQL 또는 MariaDB 서버 설치:
 +
@@ -87,7 +87,7 @@ Red Hat Enterprise Linux 7/CentOS 7
  a| 
 MySQL을 설치합니다
 
-<<install-mysql-redhat,Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치>>
+,Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치
 
 
 
@@ -96,7 +96,7 @@ Red Hat Enterprise Linux 8
  a| 
 MariaDB를 설치합니다
 
-<<install-mariadb,Red Hat Enterprise Linux 8에 MariaDB 서버 설치>>
+,Red Hat Enterprise Linux 8에 MariaDB 서버 설치
 
 |===
 
@@ -559,7 +559,7 @@ Nov 08 21:29:01 scspr0523972001 systemd[1]: Started MariaDB database server.
 ....
 +
 
-NOTE: MariaDB에 대해 "자동 시작 사용" 설정이 켜져 있는지 확인합니다. 을 참조하십시오 <<mariadb-autostart>>.
+NOTE: MariaDB에 대해 "자동 시작 사용" 설정이 켜져 있는지 확인합니다. 을 참조하십시오 .
 
 . 보안 및 암호 설정을 구성합니다.
 +
@@ -764,7 +764,7 @@ NetApp MetroCluster Tiebreaker :> monitor modify -monitor-name _monitor_name_ -o
 ....
 . Tiebreaker 호스트를 업그레이드하려면 다음 절차의 모든 단계를 따르십시오.
 +
-<<install-upgrade-sw-pkg,소프트웨어 패키지 설치 또는 업그레이드>>
+,소프트웨어 패키지 설치 또는 업그레이드
 
 . 관찰자 모드를 비활성화하여 모든 모니터를 다시 온라인 모드로 전환합니다.
 +

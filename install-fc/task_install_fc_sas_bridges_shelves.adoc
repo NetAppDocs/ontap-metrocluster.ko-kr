@@ -452,9 +452,9 @@ link:task_fb_new_install.html["FC-to-SAS 브리지의 대역 내 관리"]
 디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다.
 
 .선택
-* <<cabling_fb_7600N_7500N_with_iom12,IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다>>
-* <<cabling_fb_7600N_7500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 쉘프에 케이블 연결>>
-* <<cabling_fb_6500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 6500N 브리지와 디스크 쉘프 케이블링>>
+* ,IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다
+* ,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 쉘프에 케이블 연결
+* ,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 6500N 브리지와 디스크 쉘프 케이블링
 
 
 
@@ -646,7 +646,7 @@ Tgt VendorID ProductID        Type        SerialNumber
  a| 
 정답입니다
  a| 
-반복합니다 <<step1_bridge,1단계>> 각 나머지 브리지에 대해.
+반복합니다 ,1단계 각 나머지 브리지에 대해.
 
 
 
@@ -655,9 +655,9 @@ Tgt VendorID ProductID        Type        SerialNumber
  a| 
 .. 케이블을 반복하여 SAS 케이블이 느슨한지 확인하거나 SAS 케이블을 수정합니다.
 +
-<<Cabling disk shelves to the bridges>>
+ disk shelves to the bridges
 
-.. 반복합니다 <<step1_bridge,1단계>>.
+.. 반복합니다 ,1단계.
 
 
 |===
