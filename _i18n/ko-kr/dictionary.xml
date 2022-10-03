@@ -12665,4 +12665,12 @@
   <block id="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="list-text"><block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
   <block id="f6d453c97574893aee9bca0a4faee686" category="paragraph">'storage failover modify -node_node -name _ -enable false'</block>
   <block id="d1b92a4930d50c6ed1038655db0d2684" category="sidebar">모든 ONTAP 제품 설명서</block>
+  <block id="f91adcd268075ddcfabf631a5a33611e" category="list-text">각 데이터 애그리게이트를 오프라인 상태로 전환하고 삭제합니다.</block>
+  <block id="d4fbfd12406441eb6b750cde2dcb9137" category="list-text">사이트 간 ISL(Inter-Switch Link)이 작동 중이고 포트 채널이 작동 중인지 확인합니다.</block>
+  <block id="0e199c470dcfb3a63ccc62156cd2085f" category="paragraph">다음 예에서 ISL 포트 "Eth1/15"에서 "Eth1/20"은 원격 사이트 링크에 대해 "Po10"으로 구성되고 "Eth1/7"에서 "Eth1/8"은 로컬 클러스터 ISL에 대해 "PO1"로 구성됩니다. "Eth1/15"~"Eth1/20", "Eth1/7"~"Eth1/8", "Po10" 및 "PO1" 상태는 'UP'이어야 합니다.</block>
+  <block id="69e830aa4ae0ba332c540430bb342b65" category="paragraph">타겟 또는 IP 노드에 새로운 SAN LIF를 생성하고 볼륨을 새 애그리게이트로 이동하기 전에 호스트를 연결해야 합니다.</block>
+  <block id="87375b5769d5bc8e37ee39d964c25804" category="list-text">VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프로드 작업에 사용되는 LIF를 마이그레이션할 수 없습니다.</block>
+  <block id="29011b2c4a1fcc691d4080c12a975cd2" category="inline-link-macro">Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동</block>
+  <block id="15c49ac51668072fdf92e5d8db0ec9ff" category="list-text">MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 새 노드로 이동해야 할 수 있습니다. 를 참조하십시오 <block ref="e3ab265f03332ea44056fafa567b430d" category="inline-link-macro-rx"></block></block>
+  <block id="1fd94f8dc4aef371c8059f7aadb13ffb" category="list-text">다음 절차를 사용하여 AFF A700/FAS9000 컨트롤러를 AFF A900/FAS9500 컨트롤러로 업그레이드할 수 있습니다. <block ref="d4055a630aa0f5dfe07651f60a376ff8" category="inline-link-macro-rx"></block></block>
 </blocks>

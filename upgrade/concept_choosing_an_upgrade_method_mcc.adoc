@@ -49,6 +49,9 @@ MetroCluster FC 구성에서 스위치오버 및 스위치백 작업을 사용�
 
 image::supported_controller_upgrades_fc_configurations.png[FC 구성에서 지원되는 컨트롤러 업그레이드 조합]
 
+* 다음 절차를 사용하여 AFF A700/FAS9000 컨트롤러를 AFF A900/FAS9500 컨트롤러로 업그레이드할 수 있습니다. link:task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html["스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)"]
+
+
 
 
 == 집계 재배치를 사용하지 않는 프로시저 선택
