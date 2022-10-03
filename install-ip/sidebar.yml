@@ -53,6 +53,8 @@ entries:
       url: "/install-ip/port_usage_3232c_9336c.html"
     - title: Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port_usage_bes53248.html"
+    - title: NVIDIA 지원 SN2100 IP 스위치를 위한 플랫폼 포트 할당
+      url: "/install-ip/port_usage_sn2100.html"
   - title: 컨트롤러 데이터 및 관리 포트에 케이블을 연결합니다
     url: "/install-ip/task_cable_other_connections.html"
   - title: MetroCluster IP 스위치를 구성합니다
@@ -65,6 +67,8 @@ entries:
         url: "/install-ip/task_switch_config_cisco.html"
       - title: Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
         url: "/install-ip/task_switch_config_cisco_macsec.html"
+    - title: NVIDIA IP 스위치를 구성합니다
+      url: "/install-ip/task_switch_config_nvidia.html"
 - title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
   entries:
   - title: 개요

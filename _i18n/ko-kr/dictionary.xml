@@ -12673,4 +12673,74 @@
   <block id="29011b2c4a1fcc691d4080c12a975cd2" category="inline-link-macro">Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동</block>
   <block id="15c49ac51668072fdf92e5d8db0ec9ff" category="list-text">MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 새 노드로 이동해야 할 수 있습니다. 를 참조하십시오 <block ref="e3ab265f03332ea44056fafa567b430d" category="inline-link-macro-rx"></block></block>
   <block id="1fd94f8dc4aef371c8059f7aadb13ffb" category="list-text">다음 절차를 사용하여 AFF A700/FAS9000 컨트롤러를 AFF A900/FAS9500 컨트롤러로 업그레이드할 수 있습니다. <block ref="d4055a630aa0f5dfe07651f60a376ff8" category="inline-link-macro-rx"></block></block>
+  <block id="e52e46b2e9a285a92c4fb276c84c544e" category="summary">클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 NVIDIA IP 스위치를 구성해야 합니다.</block>
+  <block id="12dfda519b07b8627c017865df4388a6" category="doc">NVIDIA IP SN2100 스위치를 구성합니다</block>
+  <block id="056bd4ccfa99eecc32b7151072832cb7" category="paragraph">클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 NVIDIA SN2100 IP 스위치를 구성해야 합니다.</block>
+  <block id="80d79e74efb3cf7c2ad45e7e1c96223d" category="section-title">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="7c3ceaca0865f6c6621d894d5c1f5274" category="paragraph">다음 방법 중 하나를 선택하여 스위치를 공장 출하시 기본 설정으로 재설정할 수 있습니다.</block>
+  <block id="61168c45da9c3d852ce200a8e6fe5441" category="inline-xref">RCF 파일 옵션을 사용하여 스위치를 재설정합니다</block>
+  <block id="f39c98e742374a832c3bc1976a82c99a" category="list-text"><block ref="4d1a1da583a14975a026f863f46efa9e" category="inline-xref-macro-rx"></block></block>
+  <block id="2905d1a656f6dd8b76df3793ca9d808a" category="inline-xref">Cumulus 설치 옵션을 사용하여 스위치를 재설정합니다</block>
+  <block id="07e63a61b44e7110afc73ee228b45e9f" category="list-text"><block ref="c5c4030964ab0fc53589e1f003b13a41" category="inline-xref-macro-rx"></block></block>
+  <block id="465c9065d10e2d00f4f4116734ac1084" category="paragraph">새 RCF 구성을 설치하기 전에 NVIDIA 스위치 설정을 되돌려야 합니다.</block>
+  <block id="4cc34c69d718b06fff00dea4b3e4a9d7" category="paragraph">스위치를 기본 설정으로 복원하려면 RestoreDefaults 옵션을 사용하여 RCF 파일을 실행합니다. 이 옵션은 원래 백업된 파일을 원래 위치로 복사한 다음 스위치를 재부팅합니다. 재부팅 후, 스위치는 RCF 파일을 처음 실행하여 스위치를 구성할 때 있던 원래 구성과 함께 온라인 상태로 제공됩니다.</block>
+  <block id="2678e0ba955ea31dc3a2b8d425811dfc" category="paragraph">다음 구성 세부 정보는 재설정되지 않습니다.</block>
+  <block id="0ed4e7e607ce6aeb54fbe2eee71c8925" category="list-text">사용자 및 자격 증명 구성</block>
+  <block id="a93cf3e8ddcdb9137b78b02a173624c6" category="list-text">관리 네트워크 포트 eth0 구성</block>
+  <block id="0359ad641e8604c134d24d2bbddd1f44" category="admonition">RCF 파일을 적용하는 동안 발생하는 다른 모든 구성 변경은 원래 구성으로 되돌려집니다.</block>
+  <block id="764bb8fed74d46f6a6171f7253b5bb18" category="inline-xref">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="e1f1980ba1430c6d4553ef8f7963bb4f" category="list-text">에 따라 스위치를 구성해야 합니다 <block ref="67df29514d3fd31c6e0b92fb5ef28c21" category="inline-xref-macro-rx"></block>. 이 방법으로 를 구성하지 않았거나 RCF 파일을 실행하기 전에 추가 기능을 구성한 경우 이 절차를 사용할 수 없습니다.</block>
+  <block id="9d06a5d3de791df53c7a1c71fe30deed" category="list-text">직렬 콘솔 연결을 사용하여 스위치에 연결해야 합니다.</block>
+  <block id="4e95898c852022962fdebc7727a93f46" category="list-text">RCF 구성이 동일하거나 호환되는 RCF 파일 버전으로 성공적으로 적용되었으며 백업 파일이 있는지 확인하십시오.</block>
+  <block id="b6446010a605d2f225bc5b4a651d77f6" category="admonition">출력에는 백업 파일, 보존된 파일 또는 이 두 가지 모두가 표시될 수 있습니다. 백업 파일 또는 보존된 파일이 출력에 표시되지 않으면 이 절차를 사용할 수 없습니다.</block>
+  <block id="50fc7f4fc4780b7f326a480f73bd0267" category="list-text">RCF 파일을 실행하여 기본값 복원: RestoreDefaults 옵션을 사용합니다</block>
+  <block id="389656231e83b20cf8f1080911ace092" category="list-text">프롬프트에 '예'로 응답합니다. 스위치가 원래 구성으로 되돌아가고 재부팅됩니다.</block>
+  <block id="9c7625742f7f1ccd999df088ad4a3ae7" category="paragraph">RCF 파일을 적용하기 전에 스위치가 재설정되고 관리 네트워크 구성 및 현재 자격 증명과 같은 초기 구성이 그대로 유지됩니다. 재부팅 후 동일한 또는 다른 버전의 RCF 파일을 사용하여 새 구성을 적용할 수 있습니다.</block>
+  <block id="8ea07ce14527ee98182ee1d95fed9b57" category="paragraph">Cumulus 이미지를 적용하여 스위치를 완전히 재설정하려면 다음 단계를 사용하십시오.</block>
+  <block id="7ad863bb2a72d36c0234f4f6bfc2e19f" category="list-text">Cumulus 스위치 소프트웨어 이미지는 HTTP를 통해 액세스할 수 있습니다.</block>
+  <block id="f230e571a49fa16f56965586613d2b79" category="list-text">명령에 대한 'SUDO'에 대한 루트 암호가 있어야 합니다.</block>
+  <block id="c67ce273436af6008876bf44654fd767" category="list-text">Cumulus 콘솔에서 스위치 소프트웨어 설치를 "onie-install-a-i" 명령과 함께 스위치 소프트웨어의 파일 경로를 다운로드하고 대기하십시오.</block>
+  <block id="c6f62465ade5eb8bf0739b3b9e260823" category="paragraph">이 예에서는 펌웨어 파일 'cumulus-linux-4.4.2-mlx-amd64.bin'이 HTTP 서버 '50.50.50.50'에서 로컬 스위치로 복사됩니다.</block>
+  <block id="0271d2dea0397f75aa8c0d5cd4c35209" category="list-text">이미지 다운로드 및 확인 시 설치 확인을 위해 프롬프트에 "y"를 응답합니다.</block>
+  <block id="efb5ccaab9d7fe2b2ab5b9f178475a7a" category="list-text">스위치를 재부팅하여 새 소프트웨어 'SUDO 재부팅'을 설치합니다</block>
+  <block id="1f66fcbdc3a63bbe8e57cebc96e1d8a9" category="admonition">스위치가 재부팅되고 스위치 소프트웨어 설치 상태로 전환되며, 이 과정에서 시간이 다소 소요됩니다. 설치가 완료되면 스위치가 재부팅되고 '로그인' 메시지가 표시됩니다.</block>
+  <block id="8c1c8ef99f8d9e49251d5052029a2122" category="list-text">기본 스위치 설정을 구성합니다</block>
+  <block id="c6f0365546c55b3f9de31ce3118ed962" category="list-text">스위치가 부팅되고 로그인 프롬프트에서 로그인하고 암호를 변경합니다.</block>
+  <block id="9d837b283737463bc96b390a448572da" category="admonition">사용자 이름은 'cumulus'이고 기본 암호는 'cumulus'입니다.</block>
+  <block id="462a12e5e5fc8a8f0f2503ac82e01e16" category="list-text">관리 네트워크 인터페이스를 구성합니다.</block>
+  <block id="404f235a0e668325747a3bbe34a85550" category="admonition">다음 예에서는 'net add hostname &lt;hostname&gt;', 'net add interface eth0 ip address &lt;IPAddress/mask&gt;', 'net add interface eth0 ip address &lt;IPAddress/mask&gt;', 'net add interface eth0 IP gateway&gt;' 명령을 사용하여 호스트 이름(IP_switch_a_1), IP 주소(10.10.10.10), 넷마스크(255.255.255.0(24))) 및 게이트웨이(10.10.10.10.1)를 구성하는 방법을 보여 줍니다.</block>
+  <block id="fd56421b5278bf3b069d8729f920f29e" category="list-text">'SUDO reboot' 명령어를 사용하여 스위치를 reboot 한다.</block>
+  <block id="c55cbcd30055e2eecf2070469bd7907a" category="paragraph">스위치가 재부팅되면 의 단계를 사용하여 새 구성을 적용할 수 있습니다 <block ref="67df29514d3fd31c6e0b92fb5ef28c21" category="inline-xref-macro-rx"></block>.</block>
+  <block id="8fa6539999f2d3aff134c30600c80e41" category="section-title">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="62217055050b5f95ab3ac1b301982bec" category="list-text">스위치 소프트웨어가 설치되고 관리 네트워크가 구성됩니다.</block>
+  <block id="8d8734eaa9f80f06163e261ecd8dfd87" category="list-text">방법 1 또는 방법 2를 사용하여 스위치를 처음 설치하는 단계를 따랐습니다.</block>
+  <block id="f5029a9b9e4cf676befc86e9839549bd" category="list-text">초기 설치 후 추가 구성을 적용하지 않았습니다.</block>
+  <block id="223a78def5043a8e8a25a141206e0278" category="admonition">스위치를 재설정한 후 RCF 파일을 적용하기 전에 추가 구성을 수행할 경우 이 절차를 사용할 수 없습니다.</block>
+  <block id="696548cd048bf1ec4d31654cdbb3c156" category="paragraph">MetroCluster IP 구성(새 설치) 또는 교체 스위치(스위치 교체)의 각 IP 스위치에 대해 이러한 단계를 반복해야 합니다.</block>
+  <block id="b547506e85823bfaa1522cd7d20ababb" category="list-text">MetroCluster IP용 NVIDIA RCF 파일을 생성합니다.</block>
+  <block id="a68522a1adf950d13a0dab9b74d36669" category="list-text">를 다운로드합니다<block ref="b3f8a8564bd91efeacbc3b6197426c6e" category="inline-link-rx"></block>.</block>
+  <block id="38325ef6d268e93ab480af3cd0b3bd5f" category="list-text">MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 사용할 RCF 파일을 생성합니다.</block>
+  <block id="7332a56dad899da7a26afe16c9ca077a" category="list-text">홈 디렉토리로 이동합니다. '누적'으로 기록되면 파일 경로는 '/home/cumulus'입니다.</block>
+  <block id="323d6ef10b6c3c66d13f049670cbdb83" category="list-text">RCF 파일을 이 디렉토리에 다운로드합니다. 다음 예에서는 SCP를 사용하여 서버 '50.50.50.50'에서 홈 디렉토리로 MSN2100_v1.0_IP_SWITCH_A_1.txt 파일을 다운로드하여 MSN2100_v1.0_IP_SWITCH_A_1.py로 저장하는 것을 보여 줍니다.</block>
+  <block id="59c778d760eb930375b77337b3ee45b9" category="list-text">RCF 파일을 실행합니다. RCF 파일에는 하나 이상의 단계를 적용하는 옵션이 필요합니다. 기술 지원 부서의 지시가 없는 한, RCF 파일을 명령줄 옵션 없이 실행합니다. RCF 파일의 다양한 단계 완료 상태를 확인하려면 '-1' 또는 '모두' 옵션을 사용하여 모든 단계(보류 중)를 적용합니다.</block>
+  <block id="91fda6ec6c364088ae4a9e6553b26f99" category="doc">NVIDIA 지원 SN2100 IP 스위치를 위한 플랫폼 포트 할당</block>
+  <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">지원되는 구성</block>
+  <block id="5b7679ef32240286811b416ba05c54c1" category="paragraph">현재 지원되는 플랫폼은 다음과 같습니다.</block>
+  <block id="e1da8c334241f25c9cc939f9d9e1c5b2" category="list-text">FAS500f/AFF A250</block>
+  <block id="cbdc5a97c94bd42a3c869ae6831f7b04" category="list-text">FAS8300/AFF A400</block>
+  <block id="4c744d90883c4aab83c5469643da24c7" category="list-text">FAS9000/AFF A700</block>
+  <block id="b6db688996a59c9dcd63d8adb538f928" category="paragraph">다음 플랫폼 및 구성은 현재 지원되지 않습니다.</block>
+  <block id="570a8334b13f037157ca46f8cbbf662b" category="list-text">MetroCluster FC-to-IP 전환</block>
+  <block id="67ce3d63d94102f7ff725a6564099821" category="list-text">8노드 MetroCluster 구성</block>
+  <block id="5aa692c4552b821f69bb151f7aa0f216" category="paragraph">여러 MetroCluster 구성에 케이블을 연결하는 경우 해당 표를 따르십시오. 예를 들면 다음과 같습니다.</block>
+  <block id="8bcb14049f972f715f22c433283f9028" category="list-text">AFF A700 유형의 4노드 MetroCluster 구성 2개를 케이블로 연결한 경우 첫 번째 MetroCluster를 'MetroCluster 1'로 연결하고 두 번째 MetroCluster를 AFF A700 표에서 'MetroCluster 2'로 연결합니다.</block>
+  <block id="88a7b55f8e462f6453124192f872e512" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 13s0-3 및 14s0-3으로 표시됩니다.</block>
+  <block id="10fe94c98083f4e751ef035d96910a62" category="paragraph">다음 섹션에서는 물리적 케이블 연결 개요에 대해 설명합니다. 를 참조할 수도 있습니다<block ref="c52b4d12f68853a25c52576697c6b2b5" category="inline-link-rx"></block> 케이블 연결에 대한 자세한 내용은 을 참조하십시오.</block>
+  <block id="09a5cc95a7bf7e0d1b588340d9deb189" category="image-alt">MCC IP 케이블 A250 MSN2100</block>
+  <block id="189ceff67ac9718189406d45e1d9192a" category="image-alt">MCC IP 케이블 A400 MSN2100</block>
+  <block id="9b1abf59f2c97ca1a2592e463ceb99ff" category="section-title">AFF A700 또는 FAS9000의 스위치 포트 사용</block>
+  <block id="ef983d4a2755d55ad39ed1892fc3e613" category="image-alt">MCC IP 케이블 A700 MSN2100</block>
+  <block id="e22ae8f3e1d3ede96551e02f922872f0" category="section-title">AFF A800의 스위치 포트 사용</block>
+  <block id="31b0afd6a52b93da38138e53814052b1" category="image-alt">MCC IP 케이블 연결 A800 MN2100</block>
+  <block id="fb66ffdb7a65b64035629ded64b78faf" category="sidebar">NVIDIA IP 스위치를 구성합니다</block>
 </blocks>
