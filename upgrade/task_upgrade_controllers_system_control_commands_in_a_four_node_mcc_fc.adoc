@@ -13,37 +13,31 @@ summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroClus
 [role="lead"]
 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster FC 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.
 
-.이 작업에 대해
+
+
+== 지원되는 플랫폼 조합
+
+다음 표에서는 지원되는 컨트롤러 모델 조합을 보여 줍니다.
+
+현재 플랫폼 * 행과 * 대상 플랫폼 * 열의 교차점이 녹색이 아닌 경우 이 절차를 사용할 수 없습니다.
+
+을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
+
+
+NOTE: AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 업그레이드하는 내용은 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 link:task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html["AFF A700/FAS9500 전환/스위치백 절차"].
+
+image::supported_controller_upgrades_mccfc_sosb.png[FC 구성에서 지원되는 컨트롤러 업그레이드 조합]
+
+
+
+== 이 작업에 대해
+
 * 이 절차는 컨트롤러 업그레이드에만 사용할 수 있습니다.
 +
 스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소는 동시에 업그레이드할 수 없습니다.
 
 * 이 절차는 4노드 MetroCluster FC 구성의 컨트롤러 모듈에 적용됩니다.
 * 플랫폼이 ONTAP 9.10.1 이상을 실행해야 합니다.
-* 원본 플랫폼과 새 플랫폼이 호환되고 지원되어야 합니다.
-+
-다음 표에서는 컨트롤러 업그레이드에 지원되는 모델 매트릭스를 보여 줍니다.
-
-+
-|===
-
-
-| 더 빠르고 확실하게 구축 | 대체 플랫폼 모델 
-
-
- a| 
-AFF A300
- a| 
-AFF A400, AFF A700
-
-
-
- a| 
-FAS8200
- a| 
-FAS8300
-
-|===
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 

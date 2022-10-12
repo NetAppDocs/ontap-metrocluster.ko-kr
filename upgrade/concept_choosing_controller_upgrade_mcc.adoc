@@ -1,0 +1,139 @@
+---
+permalink: upgrade/concept_choosing_controller_upgrade_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, choose, upgrade, refresh, method 
+summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다릅니다. 
+---
+= 컨트롤러 업그레이드 절차를 선택하십시오
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다.
+
+
+
+== 집계 재배치를 사용하지 않는 프로시저 선택
+
+[cols="2,1,1,2"]
+|===
+
+
+| 업그레이드 또는 새로 고침 유형입니다 | MetroCluster 형식입니다 | 최초의 ONTAP 버전 지원 | 절차를 참조하십시오 
+
+
+ a| 
+* 범위: 플랫폼(컨트롤러 모듈)만 해당
+* 방법: 자동 전환/스위치백
+
+ a| 
+FC
+ a| 
+9.10.1
+ a| 
+link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html["스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드"]
+
+
+
+ a| 
+* 범위: 플랫폼(컨트롤러 모듈)만 해당
+* 방법: 자동 전환/스위치백
+
+ a| 
+IP
+ a| 
+9.10.1
+ a| 
+link:task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html["스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)"]
+
+
+
+ a| 
+* 범위: 플랫폼(컨트롤러 모듈)만 해당
+* 방법: 전환/스위치백
+
+ a| 
+FC
+ a| 
+9.8
+ a| 
+link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러 업그레이드"]
+
+
+
+ a| 
+* 범위: 플랫폼(컨트롤러 모듈)만 해당
+* 방법: 전환/스위치백
+
+ a| 
+IP
+ a| 
+9.8
+ a| 
+link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html["스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)"]
+
+|===
+
+
+== 집계 재배치를 사용하여 프로시저 선택
+
+|===
+| 집계 재배치 절차 | MetroCluster 형식입니다 | 최초의 ONTAP 버전 지원 | 절차를 참조하십시오 
+
+
+ a| 
+'시스템 컨트롤러 교체' 명령을 사용하고 컨트롤러 모듈과 NVM을 교환합니다
+ a| 
+FC
+ a| 
+9.10.1 이상
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다"^]
+
+
+
+ a| 
+'시스템 컨트롤러 교체' 명령 사용
+ a| 
+FC
+ a| 
+9.8 이상
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["'시스템 컨트롤러 교체' 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"^]
+
+
+
+ a| 
+'시스템 컨트롤러 교체' 명령 사용
+ a| 
+FC
+ a| 
+9.5에서 9.7
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 ONTAP 9.7로 업그레이드합니다"^]
+
+
+
+ a| 
+수동 ARL 명령 사용
+ a| 
+FC
+ a| 
+9.8
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"^]
+
+
+
+ a| 
+수동 ARL 명령 사용
+ a| 
+FC
+ a| 
+9.7 이하
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"^]
+
+|===

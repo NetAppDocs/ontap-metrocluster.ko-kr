@@ -1,0 +1,45 @@
+---
+permalink: upgrade/concept_choosing_tech_refresh_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, choose, upgrade, refresh, method 
+summary: 사용하는 업데이트 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다. 
+---
+= 시스템 새로 고침 방법 선택
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사용하는 시스템 업데이트 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다.
+
+[cols="2,1,1,2"]
+|===
+| 범위 | 구성 유형 | ONTAP 지원 | 이동... 
+
+
+ a| 
+* 범위: 플랫폼(컨트롤러 모듈) 및 스토리지 쉘프
+* 방법: MetroCluster 구성을 확장한 다음 이전 노드를 제거합니다
+
+ a| 
+FC
+ a| 
+9.6 이상
+ a| 
+link:task_refresh_4n_mcc_fc.html["4노드 MetroCluster FC 구성 업데이트"]
+
+
+
+ a| 
+* 범위: 플랫폼(컨트롤러 모듈) 및 스토리지 쉘프
+* 방법: MetroCluster 구성을 확장한 다음 이전 노드를 제거합니다
+
+ a| 
+IP
+ a| 
+9.8
+ a| 
+link:task_refresh_4n_mcc_ip.html["4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)"]
+
+|===
