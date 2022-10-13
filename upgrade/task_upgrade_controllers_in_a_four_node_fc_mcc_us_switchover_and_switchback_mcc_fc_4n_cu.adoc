@@ -23,9 +23,13 @@ MetroCluster FC 구성에서 스위치오버 및 스위치백 작업을 사용�
 
 을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
 
+[NOTE]
+====
+* AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 업그레이드하는 내용은 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 link:task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html["AFF A700/FAS9500 전환/스위치백 절차"].
+* 온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼의 업그레이드는 ONTAP 9.10.1 이전 버전을 실행하는 시스템에서만 지원됩니다.
 
-NOTE: AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 업그레이드하는 내용은 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 link:task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html["AFF A700/FAS9500 전환/스위치백 절차"].
 
+====
 image::supported_controller_upgrades_mccfc_sosb.png[FC 구성에서 지원되는 컨트롤러 업그레이드 조합]
 
 
