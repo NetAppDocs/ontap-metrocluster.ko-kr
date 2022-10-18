@@ -9794,7 +9794,6 @@
   <block id="2c473c2b0dd7e7fd0a780aba4f6b52cb" category="paragraph">인터클러스터 복제를 위한 전용 포트를 사용하는 것이 올바른 인터클러스터 네트워크 솔루션인지 결정할 때 LAN 유형, 사용 가능한 WAN 대역폭, 복제 간격, 변경률 및 포트 수와 같은 구성 및 요구 사항을 고려해야 합니다.</block>
   <block id="b8e7cebe68f75c9a508edbf43913f3f6" category="paragraph">다음 예에서는 인터클러스터 LIF cluster01_icl01 및 cluster01_icl02를 생성합니다.</block>
   <block id="121791834cc106d1f75cc10ba9274408" category="paragraph">* ONTAP 9.6 이상 *:</block>
-  <block id="47e9356ba3921e22bdc9f1b3569697d0" category="paragraph">+다음 예제에서는 "e0c" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0d" 포트로 페일오버되는 것을 보여 줍니다.</block>
   <block id="f227beeb960f3332c7459a76dc3a00f7" category="list-text">클러스터 관리자는 각 클러스터가 다른 클러스터에 자신을 인증하는 데 사용할 암호에 동의해야 합니다.</block>
   <block id="5daa9d83f0ef8ad584a04c9f6589730a" category="paragraph">사용자 지정 IPspace를 사용하지 않는 경우 _-IPSpace_옵션을 무시해도 됩니다. 전체 명령 구문은 man 페이지를 참조하십시오.</block>
   <block id="d93f79a987bba3304695b6a783f4a705" category="paragraph">다음 예에서는 인터클러스터 LIF IP 주소 "192.168.2.201" 및 "192.168.2.202"에서 원격 클러스터와 클러스터 피어 관계를 생성합니다.</block>
@@ -12776,4 +12775,7 @@
   <block id="0f0bf8d23aa860be830e25b6f1b90c86" category="sidebar">스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster IP의 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드</block>
   <block id="34e0a85e8dfaaeca6dadc1260cdef2ae" category="sidebar">4노드 MetroCluster FC 구성을 업데이트합니다</block>
   <block id="027b9ebdca6bdd3a2f1b2789fdd87f98" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼의 업그레이드는 ONTAP 9.10.1 이전 버전을 실행하는 시스템에서만 지원됩니다.</block>
+  <block id="ddbd6ef13caff567c99b6c907c4fee1c" category="list-text">AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 컨트롤러 업그레이드는 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 <block ref="246d2420012a9cc76fe218ed0d95c813" category="inline-link-macro-rx"></block>.</block>
+  <block id="80a030e3352fb989821aa7c6d15bcfad" category="inline-link-macro">공개 보고서</block>
+  <block id="9f65944593edc840cbe5ddb177ae6b75" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
 </blocks>

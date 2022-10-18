@@ -2066,10 +2066,12 @@ cluster01
 +
 전체 명령 구문은 man 페이지를 참조하십시오.
 
-+
+
+
 다음 예에서는 SVM "e0e" 포트에 대한 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0f" 포트로 페일오버된다는 것을 보여 줍니다.
 
-+
+를 누릅니다
+
 [listing]
 ----
 cluster01::> network interface show -service-policy default-intercluster –failover
@@ -2084,8 +2086,6 @@ cluster01
                             Failover Targets:  cluster01-02:e0e,
                                                cluster01-02:e0f
 ----
-
-
 link:concept_prepare_for_the_mcc_installation.html["전용 포트를 사용할 때의 고려 사항"]
 
 인터클러스터 복제를 위한 전용 포트를 사용하는 것이 올바른 인터클러스터 네트워크 솔루션인지 결정할 때 LAN 유형, 사용 가능한 WAN 대역폭, 복제 간격, 변경률 및 포트 수와 같은 구성 및 요구 사항을 고려해야 합니다.
@@ -2232,7 +2232,7 @@ cluster01
 
 전체 명령 구문은 man 페이지를 참조하십시오.
 
-+다음 예제에서는 "e0c" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0d" 포트로 페일오버되는 것을 보여 줍니다.
+다음 예에서는 "e0c" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0d" 포트로 페일오버되는 것을 보여 줍니다.
 
 를 누릅니다
 
