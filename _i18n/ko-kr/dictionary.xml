@@ -12774,8 +12774,8 @@
   <block id="31214012750b888cbecfe6100ea9a335" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)</block>
   <block id="0f0bf8d23aa860be830e25b6f1b90c86" category="sidebar">스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster IP의 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드</block>
   <block id="34e0a85e8dfaaeca6dadc1260cdef2ae" category="sidebar">4노드 MetroCluster FC 구성을 업데이트합니다</block>
-  <block id="027b9ebdca6bdd3a2f1b2789fdd87f98" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼의 업그레이드는 ONTAP 9.10.1 이전 버전을 실행하는 시스템에서만 지원됩니다.</block>
   <block id="ddbd6ef13caff567c99b6c907c4fee1c" category="list-text">AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 컨트롤러 업그레이드는 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 <block ref="246d2420012a9cc76fe218ed0d95c813" category="inline-link-macro-rx"></block>.</block>
   <block id="80a030e3352fb989821aa7c6d15bcfad" category="inline-link-macro">공개 보고서</block>
   <block id="9f65944593edc840cbe5ddb177ae6b75" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
+  <block id="bf65ff1f2c88ec7d1999086f6c8ba8ea" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼의 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
 </blocks>
