@@ -12778,4 +12778,13 @@
   <block id="80a030e3352fb989821aa7c6d15bcfad" category="inline-link-macro">공개 보고서</block>
   <block id="9f65944593edc840cbe5ddb177ae6b75" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
   <block id="bf65ff1f2c88ec7d1999086f6c8ba8ea" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼의 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
+  <block id="dda33fc9a3cc083db08123f7d7e692a8" category="inline-link-macro">MetroCluster 자동 강제 적용 시 위험 및 제한 사항</block>
+  <block id="160ccce82c893f99e3f0614ca209899d" category="admonition">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 을 검토하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
+  <block id="2c697c75c3912edd44d925cbf3b6566c" category="list-text">MetroCluster 자동 강제 전환을 구성하려면 다음 명령을 실행합니다.<block ref="956c336644e4861eddad733e8ae9f18c" prefix=" " category="inline-code"></block></block>
+  <block id="4830d0eb35b6c7bd558e3bba215a9a3f" category="paragraph">이 기능을 활성화하기 전에 을 검토하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
+  <block id="d49fffd0ec397c8f5b53fbeb1bc93ee2" category="paragraph">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환(MAUSO) 기능의 확장입니다.</block>
+  <block id="a6e62874574d6ae8ffc9dc6ea98c08e7" category="paragraph">MetroCluster 자동 강제 전환 기능을 활성화하면 사이트 장애가 감지되면 자동으로 전환됩니다. 이 기능을 사용하여 MetroCluster IP 자동 전환 기능을 보완할 수 있습니다.</block>
+  <block id="64aca5dcd09842ce5e26c9c9f52a5c79" category="paragraph">MetroCluster IP 구성이 자동 강제 전환 모드에서 작동하도록 하면 다음과 같은 알려진 문제로 인해 데이터가 손실될 수 있습니다.</block>
+  <block id="432fccc7d25e83271acb25e6c686d22f" category="list-text">스토리지 컨트롤러의 비휘발성 메모리는 파트너 사이트의 원격 DR(재해 복구) 파트너에 미러링되지 않습니다.</block>
+  <block id="4e94608087f1df11aa020cbfe28a7876" category="admonition">언급되지 않은 시나리오가 있을 수 있습니다. NetApp은 MetroCluster 자동 강제 전환 기능을 사용하도록 설정하여 발생할 수 있는 데이터 손상, 데이터 손실 또는 기타 손상에 대해 책임지지 않습니다. 위험 및 제한 사항이 수용할 수 없는 경우에는 MetroCluster 자동 강제 전환 기능을 사용하지 마십시오.</block>
 </blocks>

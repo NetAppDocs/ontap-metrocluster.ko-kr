@@ -1,0 +1,24 @@
+---
+permalink: install-ip/concept-risks-limitations-automatic-switchover.html 
+sidebar: sidebar 
+keywords: ontap, mediator, service, assist, metrocluster, ip, configuration, perform, automatic, unplan, switchover, physical, repository, status, information, configuring, configure, install, configuring, configure, forced 
+summary:  
+---
+= MetroCluster 자동 강제 적용 시 위험 및 제한 사항
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환(MAUSO) 기능의 확장입니다.
+
+MetroCluster 자동 강제 전환 기능을 활성화하면 사이트 장애가 감지되면 자동으로 전환됩니다. 이 기능을 사용하여 MetroCluster IP 자동 전환 기능을 보완할 수 있습니다.
+
+MetroCluster IP 구성이 자동 강제 전환 모드에서 작동하도록 하면 다음과 같은 알려진 문제로 인해 데이터가 손실될 수 있습니다.
+
+* 스토리지 컨트롤러의 비휘발성 메모리는 파트너 사이트의 원격 DR(재해 복구) 파트너에 미러링되지 않습니다.
+
+
+
+CAUTION: 언급되지 않은 시나리오가 있을 수 있습니다. NetApp은 MetroCluster 자동 강제 전환 기능을 사용하도록 설정하여 발생할 수 있는 데이터 손상, 데이터 손실 또는 기타 손상에 대해 책임지지 않습니다. 위험 및 제한 사항이 수용할 수 없는 경우에는 MetroCluster 자동 강제 전환 기능을 사용하지 마십시오.
