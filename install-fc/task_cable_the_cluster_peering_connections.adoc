@@ -30,4 +30,4 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클
 
 각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지하고, 이러한 관계에 공유 또는 전용 포트를 사용할지 여부를 결정해야 합니다.
 
-link:concept_prepare_for_the_mcc_installation.html["클러스터 피어링을 구성할 때의 고려 사항"]
+link:concept_considerations_peering.html["클러스터 피어링"]

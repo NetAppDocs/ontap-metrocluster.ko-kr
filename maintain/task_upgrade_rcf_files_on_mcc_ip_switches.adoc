@@ -30,7 +30,7 @@ MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있�
 
 
  a| 
-Brocade 스위치
+Broadcom 스위치
  a| 
 '(ip_switch_a_1)#show clibanner'
 

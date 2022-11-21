@@ -834,7 +834,6 @@
   <block id="3101be4d53f99469f2c1b39892d6d93f" category="list-text">Q2: node_a_2 pool0</block>
   <block id="dbe07d3b0e16c3d4d765887b1b29b7bd" category="list-text">Q3: node_B_1 pool1</block>
   <block id="36a6b2d82f1c99925006210a57878b24" category="list-text">4분기: node_B_2 pool1</block>
-  <block id="78901a670ecee0e2cae92a552370d833" category="list-text">하나의 데이터 파티션</block>
   <block id="88f336a63a2478d097af48b4a173b710" category="section-title">AFF A250 시스템에서 ADP 및 디스크 할당</block>
   <block id="f3a88820bdb6aec9f587dc31d6c8d2a5" category="paragraph">각 쉘프의 파티션은 루트 애그리게이트를 만드는 데 사용됩니다. 루트 애그리게이트에는 각 플렉스에 다음 파티션이 포함되어 있습니다.</block>
   <block id="ebc41c749d217e4e33d72e9e61f637ae" category="paragraph">내부 드라이브 24개 전용</block>
@@ -3837,11 +3836,6 @@
   <block id="7a15f8c2a97f6388700c82fdf3a949b2" category="paragraph">' * ifconfig e0M-auto * '</block>
   <block id="2d25c72c1b18e562f6654fff8e11711e" category="paragraph">사용할 수 없습니다</block>
   <block id="1a29ce3d863e175d333643f75803d49b" category="paragraph">'ifconfig e0M-addr=__filer_addr_- 마스크=__netmask__- GW=__gateway__- dns=__dns_addr_- 도메인=__dns_domain_'</block>
-  <block id="5cae28c48acee98f2baac425290bbe14" category="paragraph">filer_addr은 스토리지 시스템의 IP 주소입니다.</block>
-  <block id="846aab4775f72f7500de656fcc2ac584" category="paragraph">넷마스크는 스토리지 시스템의 네트워크 마스크입니다.</block>
-  <block id="5c53dd4f07d069ff3358f3008241d6cd" category="paragraph">게이트웨이(gateway)는 스토리지 시스템의 관문입니다.</block>
-  <block id="e14b9c106486400a1e3f574403b479e2" category="paragraph">dns_addr은 네트워크에 있는 이름 서버의 IP 주소입니다.</block>
-  <block id="5eeab609359fce246c8785de7ee7e37a" category="paragraph">dns_domain은 DNS(Domain Name System) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다.</block>
   <block id="204216aae6f9292b8a5efb27c92a401f" category="admonition">인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 LOADER 프롬프트에서 help ifconfig 명령어를 사용한다.</block>
   <block id="10b41884caecbbf69bf85b01824d86cc" category="list-text">LOADER 프롬프트에서 새 노드를 netboot 합니다.</block>
   <block id="461d7e2424f72a59c55adf97e846017a" category="paragraph">네부트<block ref="06f9d34e62d99a2aae0864928de56974" category="inline-link-rx"></block></block>
@@ -7766,7 +7760,6 @@
   <block id="c5578900d835092e78f37c68ccc1b2ea" category="paragraph">스위치에서 실행 중인 ONTAP 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.</block>
   <block id="bdff20b545d5f7f451d6cc86cddcd9d5" category="list-text">RCF 파일의 버전을 확인하려면 스위치에서 다음 명령을 사용합니다.</block>
   <block id="cb1e716ab831d1ef2a5741deabd44bd7" category="cell">이 스위치에서...</block>
-  <block id="e1b2d6a1b751cb96efc81bdc19b3dec8" category="paragraph">Brocade 스위치</block>
   <block id="196859a46785802c1b55cf0cc9501818" category="paragraph">'(ip_switch_a_1)#show clibanner'</block>
   <block id="4b7e6b18c6a39aa5ac2a1c68aebcc388" category="paragraph">Cisco 스위치</block>
   <block id="9b3b2c674f3b4b1f564ace7400510bbc" category="paragraph">'ip_switch_a_1#배너 mott'를 표시합니다</block>
@@ -9792,8 +9785,6 @@
   <block id="0d602c230a46295cfc602300167e27b6" category="list-text"><block ref="8cfbb5114495ced27bfaac04cfd46bf0" category="inline-xref-macro-rx"></block></block>
   <block id="ee435f89d284f68ad97e19b07724a100" category="paragraph">다음 예에서는 "SVMcluster01" 시스템의 페일오버 그룹 intercluster01에 포트 "e0e" 및 "e0f"를 할당합니다.</block>
   <block id="2c473c2b0dd7e7fd0a780aba4f6b52cb" category="paragraph">인터클러스터 복제를 위한 전용 포트를 사용하는 것이 올바른 인터클러스터 네트워크 솔루션인지 결정할 때 LAN 유형, 사용 가능한 WAN 대역폭, 복제 간격, 변경률 및 포트 수와 같은 구성 및 요구 사항을 고려해야 합니다.</block>
-  <block id="b8e7cebe68f75c9a508edbf43913f3f6" category="paragraph">다음 예에서는 인터클러스터 LIF cluster01_icl01 및 cluster01_icl02를 생성합니다.</block>
-  <block id="121791834cc106d1f75cc10ba9274408" category="paragraph">* ONTAP 9.6 이상 *:</block>
   <block id="f227beeb960f3332c7459a76dc3a00f7" category="list-text">클러스터 관리자는 각 클러스터가 다른 클러스터에 자신을 인증하는 데 사용할 암호에 동의해야 합니다.</block>
   <block id="5daa9d83f0ef8ad584a04c9f6589730a" category="paragraph">사용자 지정 IPspace를 사용하지 않는 경우 _-IPSpace_옵션을 무시해도 됩니다. 전체 명령 구문은 man 페이지를 참조하십시오.</block>
   <block id="d93f79a987bba3304695b6a783f4a705" category="paragraph">다음 예에서는 인터클러스터 LIF IP 주소 "192.168.2.201" 및 "192.168.2.202"에서 원격 클러스터와 클러스터 피어 관계를 생성합니다.</block>
@@ -10052,7 +10043,6 @@
   <block id="4d5890e7ea6dcdaf056d3131f9a1f60f" category="paragraph">이 예에서는 NX3232_v1.80_Switch-A1.txt의 RCF 파일이 SFTP 서버(10.10.99.99)에서 로컬 bootflash로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.</block>
   <block id="f86146750d5caee0dd0ee6f541390137" category="list-text">각 스위치에서 RCF 파일이 각 스위치의 'bootflash' 디렉토리에 있는지 확인합니다.</block>
   <block id="e98444d7d3279149fb170762eaa09685" category="paragraph">bootflash: __switch-specific-RCF__.txt running-config를 복사합니다</block>
-  <block id="3ace0101eda807644a901de4c89f212a" category="paragraph">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지하고, 이러한 관계에 공유 또는 전용 포트를 사용할지 여부를 결정해야 합니다.</block>
   <block id="c283e6d33e5ab7ba05309d0bdb85144e" category="summary">MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다.</block>
   <block id="1895119723122826713ca9b3d616a96b" category="doc">Brocade 라이센스 요구 사항 검토</block>
   <block id="020376a3fd370a6b9dfc23a3f92f2cba" category="paragraph">MetroCluster 구성에는 다음과 같은 Brocade 라이센스 요구 사항이 있습니다.</block>
@@ -11557,7 +11547,6 @@
   <block id="ac0321498317235c480942be9e861d45" category="list-text">주문 후 배송 활성화:</block>
   <block id="4f3c80eb4c7058a48ce3a8802614c67e" category="list-text">APT(Advanced Performance Tuning) 정책 1을 선택합니다. 포트 기반 라우팅 정책:</block>
   <block id="4cd1110435955b3b14ac2d145c6baae1" category="paragraph">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지하고, 이러한 관계에 공유 또는 전용 포트를 사용할지 여부를 결정해야 합니다.</block>
-  <block id="4f14bd83165c34717fd8f31fd01148f6" category="paragraph"><block ref="4f14bd83165c34717fd8f31fd01148f6" category="inline-link-macro-rx"></block></block>
   <block id="72fa0ea37e0389a6c2e6107de6bbcbe8" category="summary">다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 ISL 포트 사용량을 보여 줍니다.</block>
   <block id="83f8b75cddaf0acd53872b333bc5d6c1" category="paragraph">6510, G620, G620-1, G720</block>
   <block id="f3089a69f0cb0a583fab7f5c1ea7226c" category="cell">6505, G610</block>
@@ -12322,7 +12311,6 @@
   <block id="dbef88bf7072abf7cb1500b76c098158" category="doc">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다</block>
   <block id="b265dc310dca1d74417a4715e46c4168" category="paragraph">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제할 수 있습니다.</block>
   <block id="db31f506e34352cf979355688abceeac" category="paragraph">두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 ONTAP 중재자를 성공적으로 설치 및 구성해야 합니다.</block>
-  <block id="5bf67de758861fac80bba5762e2395d5" category="paragraph">MetroCluster IP 구성의 두 클러스터 모두에서 이 작업을 수행해야 합니다.</block>
   <block id="c8dd54fd6141594c239adba6bd3401ff" category="list-text">다음 명령을 사용하여 ONTAP 중재자 서비스를 구성 해제합니다.</block>
   <block id="0c87e171b9e1156bebc0a65b722d174d" category="list-text">다음 명령을 사용하여 손상된 디스크가 있는지 확인합니다.</block>
   <block id="27bf55792722dd4b16925981ef8953b4" category="paragraph">'디스크 쇼-파단'</block>
@@ -12787,4 +12775,31 @@
   <block id="64aca5dcd09842ce5e26c9c9f52a5c79" category="paragraph">MetroCluster IP 구성이 자동 강제 전환 모드에서 작동하도록 하면 다음과 같은 알려진 문제로 인해 데이터가 손실될 수 있습니다.</block>
   <block id="432fccc7d25e83271acb25e6c686d22f" category="list-text">스토리지 컨트롤러의 비휘발성 메모리는 파트너 사이트의 원격 DR(재해 복구) 파트너에 미러링되지 않습니다.</block>
   <block id="4e94608087f1df11aa020cbfe28a7876" category="admonition">언급되지 않은 시나리오가 있을 수 있습니다. NetApp은 MetroCluster 자동 강제 전환 기능을 사용하도록 설정하여 발생할 수 있는 데이터 손상, 데이터 손실 또는 기타 손상에 대해 책임지지 않습니다. 위험 및 제한 사항이 수용할 수 없는 경우에는 MetroCluster 자동 강제 전환 기능을 사용하지 마십시오.</block>
+  <block id="80f6a6e12e6ca0304707e7a67581f248" category="paragraph">Broadcom 스위치</block>
+  <block id="530dbe55cb10e603b69b517d0cb2f4bc" category="list-text">두 클러스터에서 다음 명령을 실행하여 ONTAP 중재자 서비스가 MetroCluster 구성에서 제거되었는지 확인합니다.</block>
+  <block id="49b7410e94a7ca7d1c674a14241ebe49" category="list-text"><block ref="7200673afad174d0ff258c801fbb9def" prefix="" category="inline-code"></block></block>
+  <block id="f85af53e3d7c278ec6cd756cf3365359" category="list-text">예비 부품 없음</block>
+  <block id="385f02022cf6cb2f3cfc0aa026b7c3d7" category="list-text">구성과 일치하는 옵션을 선택하고 cluster_A에서 올바른 명령을 실행합니다.</block>
+  <block id="ee300e8560b29f936da49959eebf76e9" category="open-title">옵션 1: ONTAP 9.8 이상을 실행하는 4노드 또는 8노드 FC 구성</block>
+  <block id="33bc2208a49f224c5922ce3b2b42fb21" category="paragraph">다음 명령을 실행합니다.<block ref="71b269d201dc030c963a1b0b33ee014f" prefix=" " category="inline-code"></block></block>
+  <block id="322ed43657dad6df7189e69bbea9fe57" category="open-title">옵션 2: ONTAP 9.3 이상을 실행하는 2노드 FC 구성</block>
+  <block id="ad714f1a11f3ed1c3d1a9c5c0a9c185b" category="paragraph">다음 명령을 실행합니다.<block ref="803740ddd57a4d0c8a51c6ede10e3096" prefix=" " category="inline-code"></block></block>
+  <block id="dda9fac268f3774282dbdcee2b98e206" category="paragraph"><block ref="c823de4f8bc2e5e070e3f2a6b83c709f" prefix="" category="inline-code"></block></block>
+  <block id="9a63e80a7a324f409930e8d454b5e538" category="paragraph"><block ref="cb485a0e6e52cf58d8ed72bd00e074ec" prefix="" category="inline-code"></block></block>
+  <block id="4ee3c0b4cfc3305a195d42ce617dcc41" category="paragraph"><block ref="854a4be4b1fce65bf3a90ee74692188e" prefix="" category="inline-code"></block> 스토리지 시스템의 IP 주소입니다.</block>
+  <block id="db90801e232a1746aec7c835ee93e932" category="paragraph"><block ref="220b0a4790e2c047ae96a881e506e1fe" prefix="" category="inline-code"></block> 스토리지 시스템의 네트워크 마스크입니다.</block>
+  <block id="2341e6b2fbc3a695ee3dd2358295392c" category="paragraph"><block ref="14fb245f7140583707d1cda241eeeff2" prefix="" category="inline-code"></block> 는 스토리지 시스템의 게이트웨이입니다.</block>
+  <block id="9ecb124bd7cc72ce8836d42500ccf1c1" category="paragraph"><block ref="573c932508ccab841c5c117fb2cd2186" prefix="" category="inline-code"></block> 네트워크에 있는 이름 서버의 IP 주소입니다.</block>
+  <block id="0b01a5f19097da529bc5a887225bb6d0" category="paragraph"><block ref="79e5a69f76d034adaafbb5cb6cb8fc45" prefix="" category="inline-code"></block> DNS(Domain Name System) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다.</block>
+  <block id="bafe4bc75cd2dda40df8007d783f6a0b" category="paragraph"><block ref="bafe4bc75cd2dda40df8007d783f6a0b" category="inline-link-macro-rx"></block></block>
+  <block id="2fc63d7ef73ec51fea07c22bee9e5328" category="open-title">ONTAP 9.6 이상</block>
+  <block id="a6716741999f9bc3ac379c0b1266ee9e" category="paragraph">다음 명령을 실행합니다.<block ref="adc0f0943e919c37894a966fa46c4084" prefix=" " category="inline-code"></block></block>
+  <block id="99aae08435ef4a82bc4ed2301471d60e" category="paragraph">다음 명령을 실행합니다.<block ref="b7394405b5c746164dce6dfd2501d986" prefix=" " category="inline-code"></block></block>
+  <block id="6ddde2f3f00d7171e5fc3d8622653a6e" category="paragraph">RON 명령:<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
+  <block id="9bb6c900985ca15d936c8e04295202f6" category="paragraph">다음 명령을 실행합니다.<block ref="4686e63f75ecbb5593b9aac27ab89dd7" prefix=" " category="inline-code"></block></block>
+  <block id="ef272f06b8afd4c6381d192259829c5a" category="paragraph">다음 명령을 실행합니다.<block ref="e24a79e2175b07b7a27cd83a3dc6847e" prefix=" " category="inline-code"></block></block>
+  <block id="bea69222028495543641d681312bfac9" category="paragraph">다음 명령을 실행합니다.<block ref="a95e2d29f4907b8b27d7a8683d428c09" prefix=" " category="inline-code"></block></block>
+  <block id="a417bfe3b0e85c20658fe71357feb3ef" category="paragraph">전체 명령 구문은 man 페이지를 참조하십시오. 다음 예에서는 인터클러스터 LIF cluster01_icl01 및 cluster01_icl02를 생성합니다.</block>
+  <block id="0074a60c2f111fa09e324bfc6f086bfd" category="paragraph">다음 명령을 실행합니다.<block ref="08fd4296d1145ee217b3ba481add0899" prefix=" " category="inline-code"></block></block>
+  <block id="bb084c29063404b6611bde28d4ed57d3" category="paragraph">다음 명령을 실행합니다.<block ref="4686e63f75ecbb5593b9aac27ab89dd7" prefix=" " category="inline-code"></block></block>
 </blocks>

@@ -146,12 +146,12 @@ cluster_A::>
 ----
 . 모든 클러스터 포트가 작동하는지 확인합니다.
 +
-네트워크 포트 show-IPSpace cluster
+네트워크 포트 표시 - IPSpace 클러스터
 
 +
 [listing]
 ----
-cluster_A::> network port show -ipspace cluster
+cluster_A::> network port show -ipspace Cluster
 
 Node: node_A_1-old
 

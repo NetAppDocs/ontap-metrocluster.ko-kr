@@ -47,15 +47,15 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디�
  a| 
 'ifconfig e0M-addr=__filer_addr_- 마스크=__netmask__- GW=__gateway__- dns=__dns_addr_- 도메인=__dns_domain_'
 
-filer_addr은 스토리지 시스템의 IP 주소입니다.
+`_filer_addr_` 스토리지 시스템의 IP 주소입니다.
 
-넷마스크는 스토리지 시스템의 네트워크 마스크입니다.
+`_netmask_` 스토리지 시스템의 네트워크 마스크입니다.
 
-게이트웨이(gateway)는 스토리지 시스템의 관문입니다.
+`_gateway_` 는 스토리지 시스템의 게이트웨이입니다.
 
-dns_addr은 네트워크에 있는 이름 서버의 IP 주소입니다.
+`_dns_addr_` 네트워크에 있는 이름 서버의 IP 주소입니다.
 
-dns_domain은 DNS(Domain Name System) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다.
+`_dns_domain_` DNS(Domain Name System) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다.
 
 
 NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 LOADER 프롬프트에서 help ifconfig 명령어를 사용한다.

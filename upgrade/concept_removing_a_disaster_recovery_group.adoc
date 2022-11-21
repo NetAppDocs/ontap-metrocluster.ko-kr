@@ -54,14 +54,14 @@ NOTE: 루트 애그리게이트는 삭제되지 않습니다.
 
 ... 모든 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. ''network interface show-home-node_old_node_'
 +
-'network interface modify -vserver_svm -name_-lif_data-lif_-home-port_port -id_'
+`network interface modify -vserver svm-name -lif data-lif -home-node new_node -home-port port-id`
 
 ... 클러스터 관리 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다.
 +
 네트워크 인터페이스 show-role cluster-mgmt
 
 +
-'network interface modify -vserver_svm -name_-lif_data-lif_-home-port_port -id_'
+`network interface modify -vserver svm-name -lif cluster_mgmt -home-node new_node -home-port port-id`
 
 +
 노드 관리 및 클러스터 간 LIF는 마이그레이션되지 않습니다.

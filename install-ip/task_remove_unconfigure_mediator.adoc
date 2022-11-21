@@ -15,8 +15,6 @@ MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제할 수 �
 
 두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 ONTAP 중재자를 성공적으로 설치 및 구성해야 합니다.
 
-MetroCluster IP 구성의 두 클러스터 모두에서 이 작업을 수행해야 합니다.
-
 .단계
 . 다음 명령을 사용하여 ONTAP 중재자 서비스를 구성 해제합니다.
 +
@@ -34,6 +32,28 @@ MetroCluster IP 구성의 두 클러스터 모두에서 이 작업을 수행해�
 ....
 There are no entries matching your query.
 ....
+
+
+. 두 클러스터에서 다음 명령을 실행하여 ONTAP 중재자 서비스가 MetroCluster 구성에서 제거되었는지 확인합니다.
++
+.. `metrocluster configuration-settings mediator show`
++
+* 예 *
+
++
+[listing]
+----
+This table is currently empty.
+----
+.. '스토리지 iSCSI - 이니시에이터 표시 레이블 중재자'
++
+* 예 *
+
++
+[listing]
+----
+There are no entries matching your query.
+----
 
 
 
