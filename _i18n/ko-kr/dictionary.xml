@@ -596,7 +596,6 @@
   <block id="bf12adc163db611b54b1d064ba31ce27" category="list-text">사이트_A-쉘프_2(원격)</block>
   <block id="825dcccec9fe8d386a6e1fe932104cdc" category="list-text">부팅 메뉴를 표시합니다.</block>
   <block id="a94e69437db24dee798bbd90bce4ee0a" category="paragraph">boot_ontap 메뉴</block>
-  <block id="b824b6c6758ea18eb50dcbcc628e8f4e" category="list-text">옵션 9a를 선택합니다.</block>
   <block id="af247723d3e5855980c90c146b7390f5" category="paragraph">다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.</block>
   <block id="b909e72d13e8da91fcea9c40534ed958" category="list-text">노드가 재시작되면 부팅 메뉴를 표시하라는 메시지가 표시되면 Ctrl-C를 누른 후 * 유지보수 모드 부팅 * 옵션을 선택합니다.</block>
   <block id="f04ccee1003dbd5f1c9c6351af3f0b4e" category="list-text">유지보수 모드에서 노드의 로컬 애그리게이트에 대해 드라이브를 수동으로 할당합니다.</block>
@@ -608,7 +607,6 @@
   <block id="9efc38e83933c4f2c9fb07cee9596997" category="list-text">node_B_2를 구성할 때 slot 12에서 23 사이의 드라이브를 site_B-shelf_1에서 노드 B2의 pool0으로 수동으로 할당합니다.</block>
   <block id="97c16f2bd68041ac79ef06049407d0c7" category="list-text">유지 관리 모드 종료:</block>
   <block id="819817945fea31f0c3596c841e685904" category="paragraph">"중지"</block>
-  <block id="b9ddc3ef83ffe8e2847e207d39a98687" category="list-text">부팅 메뉴에서 옵션 "4"를 선택하고 시스템을 부팅합니다.</block>
   <block id="b0c89cef6e3289ee320cc161037d6135" category="list-text">MetroCluster IP 구성의 다른 노드에서 이 단계를 반복합니다.</block>
   <block id="1a731b6b2711f5533b67a659f8e5e7c3" category="list-text">로 진행합니다 <block ref="5b0b3430fd5af0e5a4020af54ce263e7" category="inline-link-macro-rx"></block>.</block>
   <block id="6d8f1fb9b5a06280cf307486db8cfe99" category="section-title">풀 0에 드라이브 수동 할당(ONTAP 9.3)</block>
@@ -961,8 +959,6 @@
   <block id="a14dc0dfb776471bcbc1e3c1239e4bb1" category="paragraph">이러한 섹션을 검토하여 ISL의 필요한 종단 간 용량을 정확하게 계산해야 합니다. MetroCluster 구성에서 지연 시간이 짧은 연속 비휘발성 캐시 및 스토리지 복제가 매우 중요합니다. 백엔드 네트워크의 지연 시간은 클라이언트 IO에서 확인되는 지연 시간 및 처리량에 영향을 줍니다.</block>
   <block id="449a2bdc6a969f884c1d33fb66eecea7" category="section-title">ISL의 지연 시간 및 패킷 손실 제한</block>
   <block id="e96606e3ebee8eeb5bb85d4955c381cb" category="paragraph">사이트_A의 MetroCluster IP 스위치와 사이트_B 간의 라운드 트립 트래픽에 대해 다음 요구 사항을 충족해야 하며, MetroCluster 구성이 안정적 상태 작업이어야 합니다.</block>
-  <block id="53207176b7e0da899c3b41dd3e31f0e7" category="list-text">왕복 지연 시간은 7ms보다 작거나 같아야 합니다.</block>
-  <block id="bc0948c79fe270cb100d796564e0fb2c" category="paragraph">최대 거리는 700km이므로 사이트 간 거리는 지연 시간 또는 최대 거리 중 먼저 도달하는 값에 의해 제한됩니다.</block>
   <block id="c9bc211a49ab07521cd90557ecdd0cbb" category="paragraph">두 MetroCluster 사이트 간의 거리가 증가하면 지연 시간이 증가하며, 일반적으로 100km(62마일)당 1ms의 왕복 지연 시간이 증가합니다. 또한 이 지연 시간은 네트워크의 ISL 링크 대역폭, 패킷 손실률 및 지터 측면에서 네트워크 서비스 수준 계약(SLA)에 따라 달라집니다. 낮은 대역폭, 높은 지터 및 랜덤 패킷 드롭은 성공적인 패킷 전송을 위해 컨트롤러 모듈의 스위치 또는 TCP 엔진에 의해 서로 다른 복구 메커니즘으로 이어집니다. 이러한 복구 메커니즘은 전반적인 대기 시간을 늘릴 수 있습니다.</block>
   <block id="5b39512a68b8704473f81b0e6ba1272e" category="paragraph">대기 시간에 영향을 주는 모든 장치를 고려해야 합니다.</block>
   <block id="48826ffed53f55da6bc21c81ca1b5e8f" category="list-text">패킷 손실은 0.01% 이하여야 합니다.</block>
@@ -1267,7 +1263,6 @@
   <block id="ee576c01fd9d6961677d0a6255745ad9" category="list-text">노드를 부팅 메뉴(boot_ontap menu)로 부팅합니다</block>
   <block id="78735ed2469903b39a49e93e0f0bda5d" category="paragraph">이 명령을 실행한 후 부팅 메뉴가 표시될 때까지 기다립니다.</block>
   <block id="d1bfdd1ce3b6b225b5bd39959c1b640e" category="list-text">노드 구성을 지웁니다.</block>
-  <block id="4051be1a3983dca295d33b07d3d4aeb9" category="list-text">ADP에 구성된 시스템을 사용하는 경우 부팅 메뉴에서 옵션 9a를 선택하고 메시지가 표시되면 yes로 응답합니다.</block>
   <block id="4e7b785e4493cbe0b79242ce203ac879" category="admonition">이 프로세스는 중단을 야기합니다.</block>
   <block id="b2fa559c6e143e4ed29141eade0a1a3e" category="list-text">시스템이 ADP에 대해 구성되지 않은 경우 부팅 메뉴 프롬프트에 "wipmpeconfig"를 입력한 다음 Enter 키를 누릅니다.</block>
   <block id="f753a91b4868b4d2d7ad06fa15958542" category="paragraph">'Storage failover modify -mode ha-node_localhost_'</block>
@@ -3441,10 +3436,8 @@
   <block id="09dfcbc0cceee8247717360bd0733f1c" category="section-title">집계 재배치를 사용하지 않는 프로시저 선택</block>
   <block id="9f7143c3ebe35a24d494d7e347dc4f89" category="cell">업그레이드 또는 새로 고침 유형입니다</block>
   <block id="75f7d2bcde6cf0fe3c3db259a2547dbc" category="cell">MetroCluster 형식입니다</block>
-  <block id="d11c86a74db1b7830a8684cc5563ece4" category="cell">최초의 ONTAP 버전 지원</block>
   <block id="f56ee108e3b47664e82456fbf68b6cda" category="list-text">범위: 플랫폼(컨트롤러 모듈)만 해당</block>
   <block id="344a350961d4b3279a1bf51e3f2def2a" category="list-text">방법: 자동 전환/스위치백</block>
-  <block id="ea2aca94e5b174a1b84f2c3891379526" category="paragraph">9.10.1</block>
   <block id="966e34443f418eb2dc544779908833ab" category="paragraph"><block ref="966e34443f418eb2dc544779908833ab" category="inline-link-macro-rx"></block></block>
   <block id="a12a3079e14ced46e69ba52b8a90b21a" category="paragraph">IP</block>
   <block id="fc295d422c1cefba3de763612fefa26b" category="inline-link-macro">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
@@ -6169,7 +6162,6 @@
   <block id="c2b2988e42872fbbf4eff058f98ecdb3" category="list-text">순차적인 다중 장애</block>
   <block id="8bda26ec15d7a55dcc4af3d09db73eb6" category="paragraph">여러 부품이 순서대로 실패합니다. 예를 들어 컨트롤러 모듈, 스위치 패브릭 및 쉘프가 순차적으로 실패하여 스토리지 페일오버, 패브릭 이중화 및 SyncMirror가 차례로 중단시간 및 데이터 손실을 방지합니다.</block>
   <block id="9ed60e8ae7b59768be2e8ff8e49e0aaf" category="paragraph">다음 표에는 장애 유형과 해당 DR(재해 복구) 메커니즘 및 복구 방법이 나와 있습니다.</block>
-  <block id="33dbd84fe8a89808f645b461285d67c4" category="admonition">AUSO(자동 예정되지 않은 전환)는 MetroCluster IP 구성에서 지원되지 않습니다.</block>
   <block id="286b093812b48d02d5bfa7dc2e6ad646" category="cell">실패 유형</block>
   <block id="3834f1439a798cb231c757c26bc43fe1" category="cell">DR 메커니즘</block>
   <block id="3173632519dbe423e6f3bb42d6703d70" category="cell">복구 방법 요약</block>
@@ -12614,7 +12606,6 @@
   <block id="beb59952abfbd2e99ff165a613423fa0" category="list-text">다음 표를 사용하여 어떤 방법을 따라야 하는지 확인하십시오.</block>
   <block id="242fc88f1fc9a405fa9f0e7cbf2c069b" category="summary">Cisco IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.</block>
   <block id="ec9296ef857e944ab344eb684e789ddc" category="doc">CleanUpFiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다</block>
-  <block id="88d8da08ee7e7170ae3a43278a025761" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_A_2 스위치를 업데이트한 후 Switch_B_1 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
   <block id="6eedc2d4a1f7c30325c52c25b14dda09" category="admonition">다음과 같은 경우 구성에 추가 라이센스(6 x 100-Gb 포트 라이센스)가 필요합니다.</block>
   <block id="d4a39e254ca0e79abbaea7e91f10d1c8" category="list-text">포트 53과 54를 40Gbps 또는 100Gbps MetroCluster ISL로 사용합니다.</block>
   <block id="39d6f919c4f9487cf3eba1907393cc85" category="list-text">로컬 클러스터와 MetroCluster 인터페이스를 포트 49-52에 연결하는 플랫폼을 사용합니다.</block>
@@ -12784,8 +12775,6 @@
   <block id="33bc2208a49f224c5922ce3b2b42fb21" category="paragraph">다음 명령을 실행합니다.<block ref="71b269d201dc030c963a1b0b33ee014f" prefix=" " category="inline-code"></block></block>
   <block id="322ed43657dad6df7189e69bbea9fe57" category="open-title">옵션 2: ONTAP 9.3 이상을 실행하는 2노드 FC 구성</block>
   <block id="ad714f1a11f3ed1c3d1a9c5c0a9c185b" category="paragraph">다음 명령을 실행합니다.<block ref="803740ddd57a4d0c8a51c6ede10e3096" prefix=" " category="inline-code"></block></block>
-  <block id="dda9fac268f3774282dbdcee2b98e206" category="paragraph"><block ref="c823de4f8bc2e5e070e3f2a6b83c709f" prefix="" category="inline-code"></block></block>
-  <block id="9a63e80a7a324f409930e8d454b5e538" category="paragraph"><block ref="cb485a0e6e52cf58d8ed72bd00e074ec" prefix="" category="inline-code"></block></block>
   <block id="4ee3c0b4cfc3305a195d42ce617dcc41" category="paragraph"><block ref="854a4be4b1fce65bf3a90ee74692188e" prefix="" category="inline-code"></block> 스토리지 시스템의 IP 주소입니다.</block>
   <block id="db90801e232a1746aec7c835ee93e932" category="paragraph"><block ref="220b0a4790e2c047ae96a881e506e1fe" prefix="" category="inline-code"></block> 스토리지 시스템의 네트워크 마스크입니다.</block>
   <block id="2341e6b2fbc3a695ee3dd2358295392c" category="paragraph"><block ref="14fb245f7140583707d1cda241eeeff2" prefix="" category="inline-code"></block> 는 스토리지 시스템의 게이트웨이입니다.</block>
@@ -12802,4 +12791,19 @@
   <block id="a417bfe3b0e85c20658fe71357feb3ef" category="paragraph">전체 명령 구문은 man 페이지를 참조하십시오. 다음 예에서는 인터클러스터 LIF cluster01_icl01 및 cluster01_icl02를 생성합니다.</block>
   <block id="0074a60c2f111fa09e324bfc6f086bfd" category="paragraph">다음 명령을 실행합니다.<block ref="08fd4296d1145ee217b3ba481add0899" prefix=" " category="inline-code"></block></block>
   <block id="bb084c29063404b6611bde28d4ed57d3" category="paragraph">다음 명령을 실행합니다.<block ref="4686e63f75ecbb5593b9aac27ab89dd7" prefix=" " category="inline-code"></block></block>
+  <block id="52fef25c133f347af6547e0d7325285d" category="list-text">데이터 LIF를 오프라인 상태로 이동합니다. 를 누릅니다<block ref="58d060d8bc95409e743c7b8e95e72710" prefix=" " category="inline-code"></block></block>
+  <block id="3c01c02ef0bb0d39aaf5f9cbc5c8ea4b" category="paragraph"><block ref="6b5ac3bb2bcffd222567cf972f8a2548" prefix="" category="inline-code"></block></block>
+  <block id="f7967c2b46538ede39d7960526ce1fa4" category="list-text">데이터 LIF를 다시 온라인 상태로 전환합니다.<block ref="c5b63f9c60f25a11e5c1cde65fb540f1" prefix=" " category="inline-code"></block></block>
+  <block id="f677111a20e676139c4a865021fafa0d" category="paragraph"><block ref="850d7b5cf3d569632a8982fc791023b0" prefix="" category="inline-code"></block></block>
+  <block id="00b7088169fa7f91ce7c54fd96b41d7b" category="list-text">인터클러스터 LIF를 호스팅할 물리적 포트를 해당 브로드캐스트 도메인에 추가합니다.</block>
+  <block id="e64aaeac172dbd7d324ded015d3b620f" category="list-text">파트너 클러스터에 연결할 수 있고 구성이 파트너 클러스터에서 성공적으로 재동기화되었는지 확인합니다.</block>
+  <block id="e3c9aa07778be11d3bb374e3a6486e23" category="paragraph"><block ref="982b6fd5e36acd031c5af800a9951ed1" prefix="" category="inline-code"></block></block>
+  <block id="d8181c8a06e26fd37aba60f3ff3a08ed" category="admonition">AUSO(자동 비계획 전환)는 MetroCluster IP 구성에서 지원되지 않습니다.</block>
+  <block id="cfe5a553856e4e9131ebeda8844ee3c2" category="list-text">옵션 9a를 선택하고 응답합니다<block ref="7fa3b767c460b54a2be4d49030b349c7" prefix=" " category="inline-code"></block> 메시지가 표시되면</block>
+  <block id="bc3cbfae3cfe082620539cbe61e53bb4" category="list-text">두 노드의 부팅 메뉴에서 옵션 * 4 * 를 선택하고 시스템을 부팅합니다.</block>
+  <block id="5bb182767225fa9e1ca2133f4aa4f1df" category="inline-link-macro">Hardware Universe를 참조하십시오.</block>
+  <block id="e04f67144663da34a17311a720ccf0a1" category="list-text">라운드 트립 지연 시간 및 구성에 대한 최대 거리 요구 사항에 대한 자세한 내용은 을 참조하십시오 <block ref="44be38b301d3bfae89cdec57afffd9be" category="inline-link-macro-rx"></block></block>
+  <block id="5dae04759c79459bcbe855ce6759cc39" category="list-text">ADP에 대해 구성된 시스템을 사용하는 경우 옵션을 선택합니다<block ref="3de20f8f6d054d551e879fef0f0fc83c" prefix=" " category="inline-code"></block> 를 눌러 부팅 메뉴에서 를 선택합니다<block ref="7fa3b767c460b54a2be4d49030b349c7" prefix=" " category="inline-code"></block> 메시지가 표시되면</block>
+  <block id="0bab44e07fec8808eebb4c9baedcc312" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_A_2 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
+  <block id="70743d1dc2a6fb8238c19b7d315abc9f" category="admonition">VRF(Virtual Routing and Forwarding)를 지정하라는 메시지가 표시됩니다.</block>
 </blocks>

@@ -28,7 +28,7 @@ RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이
 
 +
 
-NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_A_2 스위치를 업데이트한 후 Switch_B_1 및 Switch_B_2 스위치를 업데이트할 수 있습니다.
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_A_2 및 Switch_B_2 스위치를 업데이트할 수 있습니다.
 
 
 
@@ -208,6 +208,10 @@ IP_switch_A_1# copy sftp://user@50.50.50.50/RcfFiles/NX9336-direct-SAS_v1.81_Met
 IP_switch_A_1# copy sftp://user@50.50.50.50/RcfFiles/NX9336-direct-SAS_v1.90_MetroCluster-IP_L2Direct_A400FAS8700A900FAS9500_xxx_xxx_xxx_xxxNX9336_v1.90//NX9336_v1.90_Switch-A1.txt bootflash:
 IP_switch_A_1# copy sftp://user@50.50.50.50/RcfFiles/NX9336-direct-SAS_v1.90_MetroCluster-IP_L2Direct_A400FAS8700A900FAS9500_xxx_xxx_xxx_xxxNX9336_v1.90//Cleanup_NX9336_v1.90_Switch-A1.txt bootflash:
 ----
++
+
+NOTE: VRF(Virtual Routing and Forwarding)를 지정하라는 메시지가 표시됩니다.
+
 
 
 . CleanUpFile 또는 일반 CleanUpFile을 적용합니다.

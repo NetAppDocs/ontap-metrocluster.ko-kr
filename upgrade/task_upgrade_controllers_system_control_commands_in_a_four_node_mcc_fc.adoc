@@ -849,6 +849,10 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-8929FCE2-58
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EAB7-430A-A773-4E3420EE2AA1.html["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
 
+.. 파트너 클러스터에 연결할 수 있고 구성이 파트너 클러스터에서 성공적으로 재동기화되었는지 확인합니다.
++
+`metrocluster switchback -simulate true`
+
 
 
 . 암호화가 사용되는 경우 키 관리 구성에 맞는 명령을 사용하여 키를 복원합니다.

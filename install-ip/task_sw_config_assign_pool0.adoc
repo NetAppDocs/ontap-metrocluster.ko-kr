@@ -44,7 +44,7 @@ summary: 공장에서 사전 구성된 시스템을 받지 못한 경우 풀 0 �
 +
 boot_ontap 메뉴
 
-. 옵션 9a를 선택합니다.
+. 옵션 9a를 선택하고 응답합니다 `no` 메시지가 표시되면
 +
 다음 화면에는 부팅 메뉴 프롬프트가 표시됩니다.
 
@@ -54,29 +54,36 @@ boot_ontap 메뉴
 
 Please choose one of the following:
 
-    (1) Normal Boot.
-    (2) Boot without /etc/rc.
-    (3) Change password.
-    (4) Clean configuration and initialize all disks.
-    (5) Maintenance mode boot.
-    (6) Update flash from backup config.
-    (7) Install new software first.
-    (8) Reboot node.
-    (9) Configure Advanced Drive Partitioning.
-    Selection (1-9)?  9a
-########## WARNING ##########
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 9a
 
-    This is a disruptive operation and will result in the
-    loss of all filesystem data. Before proceeding further,
-    make sure that:
-    1) This option (9a) has been executed or will be executed
-    on the HA partner node (and DR/DR-AUX partner nodes if
-    applicable), prior to reinitializing any system in the
-    HA-pair (or MetroCluster setup).
-    2) The HA partner node (and DR/DR-AUX partner nodes if
-    applicable) is currently waiting at the boot menu.
+...
 
-    Do you still want to continue (yes/no)? yes
+########## WARNING: AGGREGATES WILL BE DESTROYED ##########
+This is a disruptive operation that applies to all the disks
+that are attached and visible to this node.
+
+Before proceeding further, make sure that:
+
+The aggregates visible from this node do not contain
+data that needs to be preserved.
+This option (9a) has been executed or will be executed
+on the HA partner node (and DR/DR-AUX partner nodes if
+applicable), prior to reinitializing any system in the
+HA-pair or MetroCluster configuration.
+The HA partner node (and DR/DR-AUX partner nodes if
+applicable) is currently waiting at the boot menu.
+Do you want to abort this operation (yes/no)? no
 ----
 . 노드가 재시작되면 부팅 메뉴를 표시하라는 메시지가 표시되면 Ctrl-C를 누른 후 * 유지보수 모드 부팅 * 옵션을 선택합니다.
 . 유지보수 모드에서 노드의 로컬 애그리게이트에 대해 드라이브를 수동으로 할당합니다.
@@ -101,8 +108,8 @@ Please choose one of the following:
 +
 boot_ontap 메뉴
 
-. 부팅 메뉴에서 옵션 "4"를 선택하고 시스템을 부팅합니다.
 . MetroCluster IP 구성의 다른 노드에서 이 단계를 반복합니다.
+. 두 노드의 부팅 메뉴에서 옵션 * 4 * 를 선택하고 시스템을 부팅합니다.
 . 로 진행합니다 link:task_sw_config_setup_ontap.html["ONTAP 설정"].
 
 

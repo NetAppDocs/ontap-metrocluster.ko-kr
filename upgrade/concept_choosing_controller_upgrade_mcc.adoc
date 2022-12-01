@@ -21,7 +21,7 @@ summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다�
 |===
 
 
-| 업그레이드 또는 새로 고침 유형입니다 | MetroCluster 형식입니다 | 최초의 ONTAP 버전 지원 | 절차를 참조하십시오 
+| 업그레이드 또는 새로 고침 유형입니다 | MetroCluster 형식입니다 | ONTAP 버전입니다 | 절차를 참조하십시오 
 
 
  a| 
@@ -31,7 +31,7 @@ summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다�
  a| 
 FC
  a| 
-9.10.1
+9.10.1 이상
  a| 
 link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html["스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드"]
 
@@ -44,7 +44,7 @@ link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html
  a| 
 IP
  a| 
-9.10.1
+9.10.1 이상
  a| 
 link:task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html["스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)"]
 
@@ -57,7 +57,7 @@ link:task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchbac
  a| 
 FC
  a| 
-9.8
+9.8 이상
  a| 
 link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러 업그레이드"]
 
@@ -70,7 +70,7 @@ link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback
  a| 
 IP
  a| 
-9.8
+9.8 이상
  a| 
 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html["스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)"]
 
@@ -80,7 +80,7 @@ link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback
 == 집계 재배치를 사용하여 프로시저 선택
 
 |===
-| 집계 재배치 절차 | MetroCluster 형식입니다 | 최초의 ONTAP 버전 지원 | 절차를 참조하십시오 
+| 집계 재배치 절차 | MetroCluster 형식입니다 | ONTAP 버전입니다 | 절차를 참조하십시오 
 
 
  a| 

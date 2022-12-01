@@ -1787,6 +1787,7 @@ cluster_A::> storage aggregate create aggr1_node_A_1 -diskcount 10 -node node_A_
 
 
 .이 작업에 대해
+[]
 ====
 * 주의 *: MetroCluster FC 구성에서는 애그리게이트의 원격 디스크에 액세스할 수 있는 경우에만 미러링되지 않은 애그리게이트가 전환 후 온라인 상태가 됩니다. ISL에 장애가 발생하면 로컬 노드가 미러링되지 않은 원격 디스크의 데이터를 액세스할 수 없습니다. Aggregate에 장애가 발생하면 로컬 노드가 재부팅될 수 있습니다.
 
