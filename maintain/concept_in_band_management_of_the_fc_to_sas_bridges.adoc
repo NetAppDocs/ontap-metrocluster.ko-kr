@@ -31,6 +31,7 @@ NOTE: ONTAP 9.8부터 스토리지 브리지 명령이 시스템 브리지로 �
 
 NOTE: IP 액세스가 비활성화된 상태에서 대역내 관리를 사용하면 브리지의 물리적 연결을 제한하여 보안을 강화할 수 있습니다.
 
+.관련 정보
 link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-bridge-with-a-replacement-bridge-of-the-same-model["동일한 모델의 교체 브리지로 브리지를 핫 스왑하는 경우"]
 
 link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-7500n-with-a-7600n-bridge["FiberBridge 7500N을 7600N 브리지로 핫 스와핑"]

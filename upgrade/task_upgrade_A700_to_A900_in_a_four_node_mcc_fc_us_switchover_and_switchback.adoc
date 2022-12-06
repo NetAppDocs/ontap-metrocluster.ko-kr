@@ -228,7 +228,7 @@ MetroCluster 상호 연결 미러 쇼
 .. 실행이 완료되면 MetroCluster 실행 결과를 확인합니다. 'MetroCluster check show'
 
 
-. 반복하여 패브릭 B 스위치(스위치 2 및 4)를 업데이트합니다 ,2단계 를 선택합니다 ,5단계.
+. 반복하여 패브릭 B 스위치(스위치 2 및 4)를 업데이트합니다 <<Update-RCF,2단계>> 를 선택합니다 <<verify-healthy,5단계>>.
 
 
 
@@ -333,6 +333,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 업그레이드하기 전에 각 노드에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
 
+.이 작업에 대해
 이 작업은 기존 MetroCluster FC 구성에 대해 수행됩니다.
 
 .단계
@@ -444,6 +445,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-met
 
 유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
 
+.이 작업에 대해
 이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
 
 .단계
@@ -470,6 +472,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-met
 
 site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전환해야 합니다.
 
+.이 작업에 대해
 이 작업은 site_A에서 수행해야 합니다
 
 이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B는 비활성 상태이므로 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)
@@ -550,6 +553,7 @@ cluster_A::> metrocluster operation show
 
 이 작업은 site_B에서 수행합니다
 
+.시작하기 전에
 아직 접지되지 않은 경우 올바르게 접지하십시오.
 
 .단계
@@ -629,6 +633,7 @@ NOTE: AFF A700 또는 FAS9000 비휘발성 스토리지 모듈에 코어 덤프 
 
 Site_B의 두 노드에 있는 업그레이드 키트에서 AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치해야 합니다 코어 덤프 장치를 AFF A700 또는 FAS9000 NVS 모듈에서 AFF A900 또는 FAS9500 NVS 모듈로 이동하지 마십시오.
 
+.시작하기 전에
 아직 접지되지 않은 경우 올바르게 접지하십시오.
 
 
@@ -722,7 +727,7 @@ AFF A900 또는 FAS9500 컨트롤러 모듈의 부팅 미디어에 설치된 ONT
 
 | 실행 중이 아닙니다 | 부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=<filer_addr> -mask=<netmask> -GW=<gateway> -DNS=<DNS_addr> domain=<DNS_domain>'<filer_addr>'은 스토리지 시스템의 IP 주소입니다. "<netmask>"는 스토리지 시스템의 네트워크 마스크입니다. '<gateway>'는 스토리지 시스템의 게이트웨이입니다. "<dns_addr>"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '<dns_domain>'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 펌웨어 프롬프트에 help ifconfig를 입력합니다. 
 |===
-. 노드 1에서 netboot를 수행한다 http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`[]"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 ,2단계.
+. 노드 1에서 netboot를 수행한다 http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`[]"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 <<step2-download-software,2단계>>.
 +
 
 NOTE: 부팅을 중단하지 마십시오.
@@ -950,6 +955,7 @@ ha-config modify chassis MCC-2n
 
 앞에서 수집한 sysids를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
 
+.이 작업에 대해
 이 작업은 유지보수 모드에서 수행됩니다.
 
 에서 이전 시스템 ID를 식별했습니다 link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["업그레이드 전에 정보를 수집하는 중입니다"].
@@ -1058,6 +1064,7 @@ aggr0_node_b_1-root    online      raid_dp, aggr    root, nosnap=on,
 
 컨트롤러 플래시 이미지를 업데이트하려면 부팅 메뉴에서 컨트롤러를 재부팅해야 합니다. 암호화가 구성된 경우 추가 단계가 필요합니다.
 
+.이 작업에 대해
 이 작업은 모든 새 컨트롤러에 대해 수행해야 합니다.
 
 .단계
@@ -1210,6 +1217,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 스위치백 이전에 LIF가 적절한 노드/포트에서 호스팅되었는지 확인합니다. 다음 단계를 수행해야 합니다
 
+.이 작업에 대해
 이 작업은 노드가 루트 애그리게이트로 부팅된 site_B에서 수행합니다.
 
 .단계
@@ -1244,6 +1252,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 새 컨트롤러를 구성한 후 MetroCluster 구성을 다시 전환하여 구성을 정상 작동 상태로 되돌립니다.
 
+.이 작업에 대해
 이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. 다음 그림과 같이 site_a의 노드가 업그레이드를 기다리고 있습니다. (이 그림은 FAS9000을 FAS9000컨트롤러로 업그레이드하는 경우에도 적용됩니다.)
 
 image::../media/mcc_upgrade_cluster_a_switchback_A900.png[4노드 MetroCluster]
@@ -1306,6 +1315,7 @@ Remote: cluster_A         Configuration state configured
 
 컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.
 
+.이 작업에 대해
 이 작업은 MetroCluster 구성의 모든 노드에서 수행할 수 있습니다.
 
 .단계

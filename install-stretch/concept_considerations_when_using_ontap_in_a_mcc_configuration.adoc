@@ -153,6 +153,7 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 
 MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"^]
 
 

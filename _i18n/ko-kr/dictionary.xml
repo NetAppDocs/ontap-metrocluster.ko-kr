@@ -4758,7 +4758,6 @@
   <block id="dae4a538d4ca7b6c0789932062fe718d" category="cell">호스트 이름입니다</block>
   <block id="85cabef5a0ee43a130abed28ee18d27f" category="paragraph">NTP 서버 1</block>
   <block id="0a86604d1b452801458d10e0355af6e8" category="paragraph">NTP 서버 2</block>
-  <block id="f05d34c7805315dc6fc70f4c8224224f" category="section-title">Site A AutoSupport 정보</block>
   <block id="9bd9fbffad4433a66e131c6c4f75968e" category="paragraph">각 노드에서 AutoSupport를 구성해야 하며 여기에는 다음 정보가 필요합니다.</block>
   <block id="6f6da7aec649851c977b6bf4e083977d" category="paragraph">보낸 사람 이메일 주소</block>
   <block id="cba7670aee94b794bf55fa5db6b8b248" category="paragraph">메일 호스트입니다</block>
@@ -4781,8 +4780,6 @@
   <block id="7f92c2e38c8b2f1d9d424f284d8b974e" category="paragraph">이 설명서에 사용된 예: controller_B_2</block>
   <block id="6f126fa7932b6b060d8301f099d74d18" category="section-title">사이트 B 클러스터 피어링을 위한 LIF 및 포트</block>
   <block id="5b3864552eeb932b0d36514ae2ad1a25" category="section-title">사이트 B 시간 서버 정보</block>
-  <block id="5f43c444f290a66ebda4ce17c1b520f5" category="section-title">사이트 B AutoSupport 정보</block>
-  <block id="ece8759484e6ed2004c668a872ecdb9e" category="section-title">사이트 B SP 정보</block>
   <block id="a4e6e7ad65f785b47dc3bb3846e4c758" category="paragraph">문제 해결 및 유지 관리를 위해 각 노드의 서비스 프로세서(SP)에 대한 액세스를 설정해야 하며, 이때 각 노드에 대해 다음 네트워크 정보가 필요합니다.</block>
   <block id="922040b92464414838bf711f5439a941" category="paragraph">노드 1(controller_B_1)</block>
   <block id="ceff12d3f2421f0f2021a61d11b8d7e8" category="section-title">시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다</block>
@@ -6575,7 +6572,6 @@
   <block id="43a533d4a7711d238594840dabecdae9" category="paragraph">ISL을 제거하려면...</block>
   <block id="0251accfd0a01d6b6678e4acc31b0511" category="paragraph">링크 \(케이블\)를 분리하십시오.</block>
   <block id="31e0f1d7c104cf71dda69e0e141d7dfa" category="paragraph">ISL 추가...</block>
-  <block id="626ba26700ca8d483bcdb1b5d3a41336" category="paragraph">ISL 포트로 추가할 포트에 SFP를 삽입합니다. 이러한 포트가 추가하려는 스위치의 * 패브릭 연결 MetroCluster 설치 및 구성 * 에 나열되어 있는지 확인하고 이 가이드에 따라 케이블을 연결하십시오.</block>
   <block id="30157269456de4c3887b93d1ec060d5c" category="paragraph">ISL 재배치...</block>
   <block id="aef3cfb377e896595d24bea72737dbb1" category="paragraph">ISL을 재배치하는 작업은 ISL을 제거한 다음 추가하는 것과 같습니다. 먼저, 링크를 분리하여 ISL을 제거한 다음 ISL 포트로 추가할 포트에 SFP를 삽입합니다.</block>
   <block id="93852cc642726104756c52dbcffc5cb5" category="list-text">주문 초과 배송(Good) 또는 주문 배송(IOD)을 위해 재구성합니다.</block>
@@ -12634,7 +12630,6 @@
   <block id="e52e46b2e9a285a92c4fb276c84c544e" category="summary">클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 NVIDIA IP 스위치를 구성해야 합니다.</block>
   <block id="12dfda519b07b8627c017865df4388a6" category="doc">NVIDIA IP SN2100 스위치를 구성합니다</block>
   <block id="056bd4ccfa99eecc32b7151072832cb7" category="paragraph">클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 NVIDIA SN2100 IP 스위치를 구성해야 합니다.</block>
-  <block id="80d79e74efb3cf7c2ad45e7e1c96223d" category="section-title">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="7c3ceaca0865f6c6621d894d5c1f5274" category="paragraph">다음 방법 중 하나를 선택하여 스위치를 공장 출하시 기본 설정으로 재설정할 수 있습니다.</block>
   <block id="61168c45da9c3d852ce200a8e6fe5441" category="inline-xref">RCF 파일 옵션을 사용하여 스위치를 재설정합니다</block>
   <block id="f39c98e742374a832c3bc1976a82c99a" category="list-text"><block ref="4d1a1da583a14975a026f863f46efa9e" category="inline-xref-macro-rx"></block></block>
@@ -12669,7 +12664,6 @@
   <block id="404f235a0e668325747a3bbe34a85550" category="admonition">다음 예에서는 'net add hostname &lt;hostname&gt;', 'net add interface eth0 ip address &lt;IPAddress/mask&gt;', 'net add interface eth0 ip address &lt;IPAddress/mask&gt;', 'net add interface eth0 IP gateway&gt;' 명령을 사용하여 호스트 이름(IP_switch_a_1), IP 주소(10.10.10.10), 넷마스크(255.255.255.0(24))) 및 게이트웨이(10.10.10.10.1)를 구성하는 방법을 보여 줍니다.</block>
   <block id="fd56421b5278bf3b069d8729f920f29e" category="list-text">'SUDO reboot' 명령어를 사용하여 스위치를 reboot 한다.</block>
   <block id="c55cbcd30055e2eecf2070469bd7907a" category="paragraph">스위치가 재부팅되면 의 단계를 사용하여 새 구성을 적용할 수 있습니다 <block ref="67df29514d3fd31c6e0b92fb5ef28c21" category="inline-xref-macro-rx"></block>.</block>
-  <block id="8fa6539999f2d3aff134c30600c80e41" category="section-title">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
   <block id="62217055050b5f95ab3ac1b301982bec" category="list-text">스위치 소프트웨어가 설치되고 관리 네트워크가 구성됩니다.</block>
   <block id="8d8734eaa9f80f06163e261ecd8dfd87" category="list-text">방법 1 또는 방법 2를 사용하여 스위치를 처음 설치하는 단계를 따랐습니다.</block>
   <block id="f5029a9b9e4cf676befc86e9839549bd" category="list-text">초기 설치 후 추가 구성을 적용하지 않았습니다.</block>
@@ -12806,4 +12800,26 @@
   <block id="5dae04759c79459bcbe855ce6759cc39" category="list-text">ADP에 대해 구성된 시스템을 사용하는 경우 옵션을 선택합니다<block ref="3de20f8f6d054d551e879fef0f0fc83c" prefix=" " category="inline-code"></block> 를 눌러 부팅 메뉴에서 를 선택합니다<block ref="7fa3b767c460b54a2be4d49030b349c7" prefix=" " category="inline-code"></block> 메시지가 표시되면</block>
   <block id="0bab44e07fec8808eebb4c9baedcc312" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_A_2 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
   <block id="70743d1dc2a6fb8238c19b7d315abc9f" category="admonition">VRF(Virtual Routing and Forwarding)를 지정하라는 메시지가 표시됩니다.</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">작업을 마친 후</block>
+  <block id="ebf8099b0d57d09213f64014fd257ea1" category="section-title">[[Reset-the-switch]] NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="841793e4a1e005b1b9596c374804395a" category="section-title">[[RCF-FILE-OPTION]] RCF 파일 옵션을 사용하여 스위치를 재설정합니다</block>
+  <block id="261e7c7b4c25948690ce095224937522" category="section-title">[[Cumulus-install-option] Cumulus 설치 옵션을 사용하여 스위치를 재설정합니다</block>
+  <block id="66dfac56c9206023b345746e3fd92eae" category="section-title">[[다운로드 및 설치]] NVIDIA RCF 파일을 다운로드하여 설치합니다</block>
+  <block id="c938b5cfd075c2f653372f886805b37a" category="paragraph-title">구성 테이블을 사용하기 전에 이러한 고려 사항을 검토하십시오</block>
+  <block id="3f710cadb0123c693533da68aaf5b596" category="paragraph-title">다음 단계</block>
+  <block id="0fcee5126250d77f3f33a330fd9c5a17" category="paragraph">ISL 포트로 추가할 포트에 SFP를 삽입합니다. 이러한 포트가 에 나열되어 있는지 확인합니다 <block ref="5488151483f7e2bfe24758bbbb4d6f40" category="inline-link-macro-rx"></block> 추가할 스위치입니다.</block>
+  <block id="4b18b6ffcae5c35c0fd047b621fdb59e" category="section-title">사이트 A nbsp;AutoSupport 정보</block>
+  <block id="ed68524d33cb83b7bc35eb3921cd5e50" category="section-title">사이트 A nbsp;SP 정보</block>
+  <block id="75cb9d2c8e6c492546bef17abe8e5a69" category="section-title">사이트 B nbsp;AutoSupport 정보</block>
+  <block id="336d72b5902fa5007c0f1b27db5d4cb7" category="section-title">사이트 B nbsp;SP 정보</block>
+  <block id="0ab984d91ab0a037bdf692bf0e73c349" category="paragraph-title">중요</block>
+  <block id="c6e21fae72937c189cf8456f90c8f3a5" category="section-title">사이트 A nbsp;AutoSupport 정보</block>
+  <block id="9416a5cc051e7f0bc3db126192f4a9c8" category="section-title">사이트 A nbsp;SP 정보</block>
+  <block id="ac3e6c4174906200ce86dcb34e0c1feb" category="section-title">사이트 B nbsp;AutoSupport 정보</block>
+  <block id="be9e3196b872778c6a28445130404d80" category="section-title">사이트 B nbsp;SP 정보</block>
+  <block id="9d103bd3bd0b1f3ca173693727680cd3" category="section-title">[[Reset-the-boot-recovery]] boot_recovery와 RDB_corrupt boots를 재설정합니다</block>
+  <block id="ec18da962520ae390c485b5c542ac279" category="paragraph-title">관련 작업</block>
+  <block id="c1902fd1f00ac0b0e269fd37dd64f7e8" category="section-title">사이트 A nbsp;AutoSupport 정보</block>
+  <block id="a321560b2ae4d0c708a5027ac5562270" category="section-title">사이트 B nbsp;AutoSupport 정보</block>
+  <block id="87713443a9395f659a438c305d6fa70d" category="section-title">사이트 B nbsp;SP 정보</block>
 </blocks>

@@ -13,6 +13,7 @@ summary: MetroCluster 구성의 각 Cisco 스위치는 ISL 및 스토리지 연�
 [role="lead"]
 MetroCluster 구성의 각 Cisco 스위치는 ISL 및 스토리지 연결에 맞게 적절히 구성해야 합니다.
 
+.시작하기 전에
 Cisco FC 스위치에는 다음 요구사항이 적용됩니다.
 
 * 동일한 모델의 지원되는 Cisco 스위치 4개를 동일한 NX-OS 버전 및 라이센스로 사용해야 합니다.
@@ -26,6 +27,7 @@ Cisco FC 스위치에는 다음 요구사항이 적용됩니다.
 
 에 있습니다 https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"]에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
 
+.이 작업에 대해
 ISL(Inter-Switch Link) 연결에는 다음 요구 사항이 적용됩니다.
 
 * 모든 ISL은 하나의 Fabric에서 길이와 속도가 동일해야 합니다.
@@ -52,6 +54,7 @@ ISL(Inter-Switch Link) 연결에는 다음 요구 사항이 적용됩니다.
 ====
 
 
+.관련 정보
 https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 
 
@@ -90,6 +93,7 @@ NOTE: Cisco MDS 9250i 스위치에는 고정 1/10 GbE IP 스토리지 서비스 
 
 성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 이렇게 하면 스위치가 클린 구성에서 시작됩니다.
 
+.이 작업에 대해
 이 작업은 MetroCluster 구성의 모든 스위치에 대해 수행해야 합니다.
 
 .단계
@@ -114,6 +118,7 @@ NOTE: Cisco MDS 9250i 스위치에는 고정 1/10 GbE IP 스토리지 서비스 
 
 
 
+.예
 다음 예에서는 FC_SWITCH_A_1 및 FC_SWITCH_B_1로 구성된 패브릭의 프로세스를 보여 줍니다.
 
 [listing]
@@ -184,6 +189,7 @@ FC_switch_B_1# setup
 
 연속 포트 범위에서 Cisco 스위치 라이센스를 사용할 필요가 없습니다. 대신 사용되는 특정 포트에 대한 라이센스를 취득하고 사용하지 않는 포트에서 라이센스를 제거할 수 있습니다.
 
+.시작하기 전에
 스위치 구성에서 라이센스가 부여된 포트 수를 확인하고 필요한 경우 필요에 따라 라이센스를 한 포트에서 다른 포트로 이동해야 합니다.
 
 .단계
@@ -340,6 +346,7 @@ switch(config-if)# end
 
 FC 스위치에서 F 포트를 구성해야 합니다.
 
+.이 작업에 대해
 MetroCluster 구성에서 F 포트는 스위치를 HBA 이니시에이터, FC-VI 상호 연결 및 FC-SAS 브리지에 연결하는 포트입니다.
 
 각 포트는 개별적으로 구성해야 합니다.
@@ -390,6 +397,7 @@ speed-value_ 는 8000이나 16000입니다
 
 
 
+.예
 다음 예에서는 두 스위치의 명령을 보여 줍니다.
 
 [listing]
@@ -419,6 +427,7 @@ FC_switch_B_1# copy running-config startup-config
 
 ISL과 동일한 포트 그룹에 있는 경우 F 포트에 버퍼 대 버퍼 크레딧을 할당해야 합니다. 포트에 필요한 버퍼 대 버퍼 크레딧이 없으면 ISL이 작동하지 않을 수 있습니다.
 
+.이 작업에 대해
 F-포트가 ISL 포트와 동일한 포트 그룹에 있지 않은 경우에는 이 작업이 필요하지 않습니다.
 
 F-포트가 ISL이 포함된 포트 그룹에 있는 경우 MetroCluster 구성의 각 FC 스위치에서 이 작업을 수행해야 합니다.
@@ -471,6 +480,7 @@ F-포트가 ISL이 포함된 포트 그룹에 있는 경우 MetroCluster 구성�
 
 
 
+.예
 이 예에서 포트 FC1/40은 ISL입니다. 포트 FC1/37, FC1/38 및 FC1/39는 동일한 포트 그룹에 있으며 구성해야 합니다.
 
 다음 명령은 FC1/37~FC1/39에 대해 구성 중인 포트 범위를 보여줍니다.
@@ -535,6 +545,7 @@ fc1/39                                      1        8.0 dedicated
 
 MetroCluster 구성에서 각 FC 스위치의 스토리지 포트에 대해 FC-VI 포트에 대한 VSAN과 VSAN을 생성해야 합니다.
 
+.이 작업에 대해
 VSAN은 고유한 번호와 이름을 가져야 합니다. 순서대로 프레임을 전달하는 두 ISL을 사용하는 경우 추가 구성을 수행해야 합니다.
 
 이 작업의 예에는 다음과 같은 명명 규칙이 사용됩니다.
@@ -929,11 +940,12 @@ FC_switch_B_1# copy running-config startup-config
 
 ISL(E-Port)을 연결하는 스위치 포트를 구성해야 합니다.
 
+.이 작업에 대해
 사용하는 절차는 사용 중인 스위치에 따라 다릅니다.
 
-* ,Cisco FC 스위치에서 E-포트 구성
-* ,Cisco 9250i FC 스위치에서 단일 ISL에 대한 FCIP 포트 구성
-* ,Cisco 9250i FC 스위치의 이중 ISL용 FCIP 포트 구성
+* <<config-e-ports-cisco-fc,Cisco FC 스위치에서 E-포트 구성>>
+* <<config-fcip-ports-single-isl-cisco-9250i,Cisco 9250i FC 스위치에서 단일 ISL에 대한 FCIP 포트 구성>>
+* <<config-fcip-ports-dual-isl-cisco-9250i,Cisco 9250i FC 스위치의 이중 ISL용 FCIP 포트 구성>>
 
 
 
@@ -942,6 +954,7 @@ ISL(E-Port)을 연결하는 스위치 포트를 구성해야 합니다.
 
 ISL(Inter-Switch Link)을 연결하는 FC 스위치 포트를 구성해야 합니다.
 
+.이 작업에 대해
 이러한 포트는 E-port 이며 각 포트에 대해 구성해야 합니다. 이렇게 하려면 올바른 개수의 BBC(Buffer-to-Buffer Credit)를 계산해야 합니다.
 
 Fabric의 모든 ISL은 동일한 속도 및 거리 설정으로 구성해야 합니다.
@@ -1171,6 +1184,7 @@ FC_switch_B_1# copy running-config startup-config
 
 
 
+.관련 정보
 ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 을 참조하십시오 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 
 
@@ -1179,6 +1193,7 @@ ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지
 
 FCIP 프로파일과 인터페이스를 생성한 다음 이를 IPStorage1/1GbE 인터페이스에 할당하여 ISL(E-port)을 연결하는 FCIP 스위치 포트를 구성해야 합니다.
 
+.이 작업에 대해
 이 작업은 각 스위치에서 IPStorage1/1 인터페이스를 사용하는 스위치 패브릭당 단일 ISL을 사용하는 구성에만 해당됩니다.
 
 이 작업은 각 FC 스위치에서 수행해야 합니다.
@@ -1587,6 +1602,7 @@ FC_switch_B_1# copy running-config startup-config
 
 FCIP 프로파일과 인터페이스를 생성한 다음 IPStorage1/1 및 IPStorage1/2 GbE 인터페이스에 할당하여 ISL(E-Port)을 연결하는 FCIP 스위치 포트를 구성해야 합니다.
 
+.이 작업에 대해
 이 작업은 각 스위치에서 IPStorage1/1 및 IPStorage1/2 GbE 인터페이스를 사용하는 스위치 패브릭당 이중 ISL을 사용하는 구성에만 해당됩니다.
 
 이 작업은 각 FC 스위치에서 수행해야 합니다.
@@ -1595,8 +1611,8 @@ image::../media/fcip_ports_dual_isl.gif[FCIP 포트 이중 ISL]
 
 작업 및 예제에서는 다음 프로파일 구성 테이블을 사용합니다.
 
-* 
-* 
+* <<fabric1_table>>
+* <<fabric2_table>>
 
 
 * 패브릭 1 프로파일 구성 표 *
@@ -1935,7 +1951,7 @@ NOTE: 각 스위치에서 IPStorage 인터페이스 IPStorage1/1, IPStorage1/2 �
 +
 종료
 
-.. 반복합니다  부터 까지  다른 IP 주소를 사용하여 IPStorage1/2 GbE 인터페이스를 구성합니다.
+.. 반복합니다 <<substep_a>> 부터 까지 <<substep_f>> 다른 IP 주소를 사용하여 IPStorage1/2 GbE 인터페이스를 구성합니다.
 
 
 . 프로파일 구성 표에 지정된 프로파일 이름을 사용하여 FC-VI 및 스토리지 트래픽에 대한 FCIP 프로파일을 구성합니다.
@@ -2400,6 +2416,7 @@ exit
 
 스위치 포트를 별도의 영역에 할당하여 스토리지(HBA) 및 컨트롤러(FC-VI) 트래픽을 격리해야 합니다.
 
+.이 작업에 대해
 이러한 단계는 두 FC 스위치 Fabric 모두에서 수행해야 합니다.
 
 다음 단계에서는 4노드 MetroCluster 구성에서 FiberBridge 7500N에 대한 영역 지정 섹션에 설명된 조닝을 사용합니다. 을 참조하십시오 link:task_fcsw_cisco_configure_a_cisco_switch_supertask.html#configuring-fcip-ports-for-a-dual-isl-on-cisco-9250i-fc-switches["FC-VI 포트를 위한 조닝"].
@@ -2677,6 +2694,7 @@ FC_switch_A_1# copy running-config startup-config
 
 모든 스위치에서 FC 스위치 구성이 시작 구성에 저장되었는지 확인해야 합니다.
 
+.단계
 두 FC 스위치 패브릭에서 다음 명령을 실행합니다.
 
 'copy running-config startup-config'를 선택합니다

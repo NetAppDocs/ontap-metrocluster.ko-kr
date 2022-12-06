@@ -13,6 +13,7 @@ MetroCluster 구성은 네이티브(NetApp) 디스크 쉘프만 사용하거나 
 
 AFF 시스템은 스토리지 LUN을 지원하지 않습니다.
 
+.관련 정보
 link:task_configure_the_mcc_hardware_components_fabric.html["패브릭 연결 MetroCluster 구성 케이블링"]
 
 link:concept_planning_for_a_mcc_configuration_with_array_luns.html["스토리지 LUN을 사용한 MetroCluster 구성 계획 및 설치"]

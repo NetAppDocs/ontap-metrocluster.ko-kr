@@ -13,6 +13,7 @@ summary: AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유�
 [role="lead"]
 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다.
 
+.이 작업에 대해
 이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
 
 .단계

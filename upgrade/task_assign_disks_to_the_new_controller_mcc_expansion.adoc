@@ -13,6 +13,7 @@ summary: netboot를 통해 새 컨트롤러 모듈 구성을 완료하기 전에
 [role="lead"]
 netboot를 통해 새 컨트롤러 모듈 구성을 완료하기 전에 디스크를 할당해야 합니다.
 
+.이 작업에 대해
 기존 애그리게이트에 포함되어 있지 않은 충분한 스페어, 할당되지 않은 디스크 또는 할당 디스크가 있는지 확인해야 합니다.
 
 link:task_prepare_for_the_upgrade_add_2nd_controller_to_create_ha_pair.html["업그레이드를 준비하는 중입니다"]

@@ -17,6 +17,7 @@ summary: 클러스터를 피어로 사용하고, 루트 애그리게이트를 �
 
 ONTAP 9.4에서 MetroCluster IP 구성의 사이트당 외부 스토리지 쉘프가 4개 미만인 경우 모든 노드에서 자동 드라이브 할당을 해제하고 드라이브를 수동으로 할당해야 합니다.
 
+.이 작업에 대해
 ONTAP 9.5 이상에서는 이 작업이 필요하지 않습니다.
 
 이 작업은 내부 선반과 외부 선반이 없는 AFF A800 시스템에는 적용되지 않습니다.
@@ -37,6 +38,7 @@ link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 �
 
 원격 드라이브가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
 
+.이 작업에 대해
 자동 할당은 스토리지 시스템 플랫폼 모델 및 드라이브 쉘프 배열에 따라 다릅니다.
 
 link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"]
@@ -150,6 +152,7 @@ cluster_B::>
 
 MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 복구에 필요한 데이터 미러링을 수행할 수 있도록 피어 관계에 있어야 합니다.
 
+.관련 정보
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
 
 link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
@@ -389,6 +392,7 @@ cluster01
 ----
 
 
+.관련 정보
 link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
 
 
@@ -544,6 +548,7 @@ cluster01
 ----
 
 
+.관련 정보
 link:concept_considerations_peering.html#considerations-when-sharing-data-ports["데이터 포트 공유 시 고려 사항"]
 
 
@@ -665,6 +670,7 @@ cluster01-02
 
 클러스터 간에 DR(재해 복구) 그룹 관계를 생성해야 합니다.
 
+.이 작업에 대해
 MetroCluster 구성의 클러스터 중 하나에서 이 절차를 수행하여 두 클러스터의 노드 간에 DR 관계를 생성합니다.
 
 
@@ -1441,28 +1447,28 @@ cluster_B::>
  a| 
 시스템은 자동 드라이브 할당 요구 사항을 충족시키거나 ONTAP 9.3을 실행하는 경우 공장에서 수신된 것입니다.
  a| 
- disk assignment for pool 1 disks
+<<풀 1 디스크에 대한 디스크 할당을 확인하는 중입니다>>
 
 
 
  a| 
 구성에는 3개의 쉘프가 포함되어 있거나 4개 이상의 쉘프가 포함된 경우, 4개의 쉘프(예: 7개의 쉘프)가 불균일한 배수이고 ONTAP 9.5가 실행 중입니다.
  a| 
- assigning drives for pool 1 (ONTAP 9.4 or later)
+<<풀 1에 드라이브 수동 할당(ONTAP 9.4 이상)>>
 
 
 
  a| 
 이 구성에는 사이트당 4개의 스토리지 쉘프가 포함되지 않으며 ONTAP 9.4를 실행 중입니다
  a| 
- assigning drives for pool 1 (ONTAP 9.4 or later)
+<<풀 1에 드라이브 수동 할당(ONTAP 9.4 이상)>>
 
 
 
  a| 
 출하 시 시스템이 수신되지 않았고 공장에서 받은 ONTAP 9.3시스템이 할당된 드라이브로 사전 구성되어 실행되고 있습니다.
  a| 
- assigning disks for pool 1 (ONTAP 9.3)
+<<풀 1에 대해 수동으로 디스크 할당(ONTAP 9.3)>>
 
 |===
 
@@ -1471,6 +1477,7 @@ cluster_B::>
 
 원격 디스크가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
 
+.시작하기 전에
 'MetroCluster configuration-settings connection connect' 명령을 사용하여 MetroCluster IP 인터페이스 및 연결이 생성된 후 디스크 자동 할당이 완료될 때까지 10분 이상 기다려야 합니다.
 
 명령 출력에서는 디스크 이름을 node-name:0m.i1.0L1 형식으로 표시합니다
@@ -1672,6 +1679,7 @@ cluster_A::>
 
 시스템이 출하 시 사전 구성되어 있지 않고 자동 드라이브 할당 요구 사항을 충족하지 않는 경우 원격 풀 1 드라이브를 수동으로 할당해야 합니다.
 
+.이 작업에 대해
 이 절차는 ONTAP 9.4 이상을 실행하는 구성에 적용됩니다.
 
 시스템에 수동 디스크 할당이 필요한지 여부를 확인하는 세부 사항은 에 포함되어 있습니다 link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"].
@@ -1759,8 +1767,10 @@ cluster_A::>
 
 각 노드에 대해 디스크 쉘프가 3개 이상 있는 경우 ONTAP의 자동 할당 기능을 사용하여 원격(pool1) 디스크를 자동으로 할당합니다.
 
+.시작하기 전에
 먼저 쉘프의 디스크를 풀 1에 할당해야 합니다. 그런 다음 ONTAP는 쉘프의 나머지 디스크를 동일한 풀에 자동으로 할당합니다.
 
+.이 작업에 대해
 이 절차는 ONTAP 9.3을 실행하는 구성에 적용됩니다.
 
 이 절차는 각 노드에 대해 디스크 쉘프가 2개 이상 있는 경우에만 사용할 수 있으며, 이를 통해 쉘프 레벨에서 디스크를 자동 할당할 수 있습니다.
@@ -1873,6 +1883,7 @@ cluster_A::>
 
 == ONTAP 9.4에서 자동 드라이브 할당을 활성화합니다
 
+.이 작업에 대해
 ONTAP 9.4에서 이 절차의 이전 지시에 따라 자동 드라이브 할당을 해제한 경우 모든 노드에서 자동 드라이브 할당을 다시 사용하도록 설정해야 합니다.
 
 link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"]
@@ -1893,6 +1904,7 @@ MetroCluster IP 구성의 모든 노드에서 이 명령을 실행해야 합니�
 
 루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다.
 
+.이 작업에 대해
 기본적으로 루트 애그리게이트는 RAID-DP 유형 Aggregate로 생성됩니다. 루트 애그리게이트를 RAID-DP에서 RAID4 유형 애그리게이트로 변경할 수 있습니다. 다음 명령을 실행하면 RAID4 유형 애그리게이트의 루트 애그리게이트가 수정됩니다.
 
 'Storage aggregate modify – aggregate_aggr_name_-raidtype raid4'
@@ -1919,6 +1931,7 @@ controller_A_1::> storage aggregate mirror aggr0_controller_A_1
 . MetroCluster 구성의 각 노드에 대해 이전 단계를 반복합니다.
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["논리적 스토리지 관리"]
 
 
@@ -2002,7 +2015,7 @@ MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster conf
 
 +
 
-NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 ,1단계 를 참조하십시오.
+NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <<step1_single_mirror,1단계>> 를 참조하십시오.
 
 * 컨트롤러 및 섀시의 ha-config 상태는 "mccip"이어야 합니다.
 
@@ -2250,6 +2263,7 @@ controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -n
 
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 
@@ -2258,6 +2272,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디�
 
 MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다.
 
+.이 작업에 대해
 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다.
 
 또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.
@@ -2386,6 +2401,7 @@ mccint-fas9000-0304
 ----
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]

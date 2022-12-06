@@ -11,6 +11,7 @@ summary: 전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새�
 [role="lead"]
 전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새로운 MetroCluster IP 구성으로 데이터를 이동합니다.
 
+.시작하기 전에
 타겟 또는 IP 노드에 새로운 SAN LIF를 생성하고 볼륨을 새 애그리게이트로 이동하기 전에 호스트를 연결해야 합니다.
 
 . 자동 지원 케이스 생성을 재개하려면 유지 관리가 완료되었음을 나타내는 AutoSupport 메시지를 보냅니다.

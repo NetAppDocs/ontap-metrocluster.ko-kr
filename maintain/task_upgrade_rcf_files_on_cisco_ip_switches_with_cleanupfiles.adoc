@@ -13,8 +13,10 @@ summary: Cisco IP 스위치에서 RCF 파일을 업그레이드해야 할 수 �
 [role="lead"]
 Cisco IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.
 
+.이 작업에 대해
 RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.
 
+.시작하기 전에
 구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.
 
 * 표준 RCF 구성이 적용됩니다.
@@ -178,7 +180,7 @@ NOTE: RCF 파일(동일한 버전도 포함)은 더 적은 수의 또는 더 많
 
 . 파일을 bootflash에 다운로드합니다.
 +
-.. 에서 만든 CleanUpFiles를 다운로드합니다 ,RCF 파일 및 CleanUpFiles를 생성하거나 현재 구성을 위한 일반 CleanUpFiles를 생성합니다
+.. 에서 만든 CleanUpFiles를 다운로드합니다 <<Create-RCF-files-and-CleanUpFiles-or-create-generic-CleanUpFiles,RCF 파일 및 CleanUpFiles를 생성하거나 현재 구성을 위한 일반 CleanUpFiles를 생성합니다>>
 +
 
 NOTE: 이 CleanUpFile은 현재 적용된 RCF 파일용으로, 업그레이드하려는 새 RCF에 대해서는 * 적용되지 않습니다 *.
@@ -186,11 +188,11 @@ NOTE: 이 CleanUpFile은 현재 적용된 RCF 파일용으로, 업그레이드�
 +
 스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.81_Switch-A1.txt'
 
-.. 에서 생성한 '새로운' RCF 파일을 다운로드합니다 ,새 구성을 위해 '새로운' RCF 파일을 생성합니다.
+.. 에서 생성한 '새로운' RCF 파일을 다운로드합니다 <<Create-the-new-RCF-files-for-the-new-configuration,새 구성을 위해 '새로운' RCF 파일을 생성합니다.>>
 +
 Switch-A1:'NX9336_v1.90_Switch-A1.txt'의 RCF 파일 예
 
-.. 에서 만든 CleanUpFiles를 다운로드합니다 ,새 구성을 위해 '새로운' RCF 파일을 생성합니다. 이 단계는 선택 사항입니다. 나중에 파일을 사용하여 스위치 구성을 업데이트할 수 있습니다. 현재 적용된 설정과 일치합니다.
+.. 에서 만든 CleanUpFiles를 다운로드합니다 <<Create-the-new-RCF-files-for-the-new-configuration,새 구성을 위해 '새로운' RCF 파일을 생성합니다.>> 이 단계는 선택 사항입니다. 나중에 파일을 사용하여 스위치 구성을 업데이트할 수 있습니다. 현재 적용된 설정과 일치합니다.
 +
 스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.90_Switch-A1.txt'
 

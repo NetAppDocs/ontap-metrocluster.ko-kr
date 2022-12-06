@@ -48,4 +48,5 @@ MetroCluster 구성에서 지원되는 기능은 구성 유형에 따라 다릅�
 
 | 자동 절체를 지원합니다 | 예 | 예 | 예 | 예 
 |===
+.관련 정보
 link:concept_considerations_differences.html["ONTAP MetroCluster 구성의 차이점"]

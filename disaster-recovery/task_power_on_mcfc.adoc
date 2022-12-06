@@ -13,12 +13,14 @@ summary: 스위치백을 준비할 준비가 되면 재해 사이트에서 Metro
 [role="lead"]
 스위치백을 준비할 준비가 되면 재해 사이트에서 MetroCluster 구성 요소의 전원을 켭니다. 또한 직접 연결 MetroCluster 구성에서 SAS 스토리지 연결을 재설정하고 패브릭 연결 MetroCluster 구성에서 비스위치 간 링크 포트를 활성화해야 합니다.
 
+.시작하기 전에
 MetroCluster 구성 요소를 이미 교체하고 이전 구성 요소와 정확히 케이블로 연결한 상태여야 합니다.
 
 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 
 link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
 
+.이 작업에 대해
 이 절차의 예는 다음과 같습니다.
 
 * 사이트 A는 재해 사이트입니다.

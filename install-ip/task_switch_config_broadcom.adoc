@@ -271,6 +271,7 @@ Configuration Saved!
 
 MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF 파일을 다운로드해야 합니다.
 
+.이 작업에 대해
 이 작업은 MetroCluster IP 구성의 각 스위치에서 반복해야 합니다.
 
 []
@@ -378,8 +379,8 @@ FIPS 비호환
 
 |===
 +
-** 방법 1:  to upgrade EFOS with downloading the software image to the backup boot partition
-** 방법 2:  to upgrade EFOS using the ONIE OS installation
+** 방법 1: <<백업 부팅 파티션에 소프트웨어 이미지를 다운로드하여 EFOS를 업그레이드하는 단계입니다>>
+** 방법 2: <<ONIE OS 설치를 사용하여 EFOS를 업그레이드하는 단계>>
 
 
 
@@ -492,12 +493,12 @@ Are you sure you would like to reset the system? (y/n) y
 . 스위치가 재부팅될 때까지 기다립니다.
 +
 
-NOTE: 드문 경우지만 스위치가 부팅되지 않을 수 있습니다. 를 따릅니다  to upgrade EFOS using the ONIE OS installation 새 이미지를 설치합니다.
+NOTE: 드문 경우지만 스위치가 부팅되지 않을 수 있습니다. 를 따릅니다 <<ONIE OS 설치를 사용하여 EFOS를 업그레이드하는 단계>> 새 이미지를 설치합니다.
 
 . 스위치를 EFOS 3.4.x.x에서 EFOS 3.7.x.x로 변경하거나 그 반대로 변경할 경우 다음 두 절차를 따라 올바른 구성(RCF)을 적용하십시오.
 +
-..  the Broadcom IP switch to factory defaults
-..  and installing the Broadcom RCF files
+.. <<Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다>>
+.. <<Broadcom RCF 파일 다운로드 및 설치>>
 
 
 . MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.
@@ -645,8 +646,8 @@ unit 	active 	   backup   current-active  next-active
 구성이 적용되지 않고 스위치가 재부팅되고 출하 시 기본값으로 재설정됩니다. 다음 두 절차에 따라 스위치 기본 설정을 구성하고 다음 두 문서에 설명된 대로 RCF 파일을 적용합니다.
 
 +
-.. 스위치 기본 설정을 구성합니다. 4단계 이후 단계를 따릅니다.  the Broadcom IP switch to factory defaults
-.. 에 설명된 대로 RCF 파일을 생성하고 적용합니다  and installing the Broadcom RCF files
+.. 스위치 기본 설정을 구성합니다. 4단계 이후 단계를 따릅니다. <<Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다>>
+.. 에 설명된 대로 RCF 파일을 생성하고 적용합니다 <<Broadcom RCF 파일 다운로드 및 설치>>
 
 
 
@@ -657,8 +658,10 @@ unit 	active 	   backup   current-active  next-active
 
 MetroCluster IP 구성의 각 스위치에 스위치 RCF 파일을 다운로드하고 설치해야 합니다.
 
+.시작하기 전에
 이 작업에는 FTP, TFTP, SFTP 또는 SCP와 같은 파일 전송 소프트웨어가 필요합니다. 스위치에 파일을 복사합니다.
 
+.이 작업에 대해
 이러한 단계는 MetroCluster IP 구성의 각 IP 스위치에서 반복해야 합니다.
 
 RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.

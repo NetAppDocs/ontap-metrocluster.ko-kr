@@ -18,6 +18,7 @@ summary: 스토리지 LUN과 함께 사용할 각 MetroCluster 노드에 V_Stora
 * V_StorageAttach 라이센스에 대한 라이센스 키가 있어야 합니다.
 
 
+.이 작업에 대해
 V_StorageAttach 라이센스를 설치할 각 노드에 대해 별도의 라이센스 키를 사용해야 합니다.
 
 .단계

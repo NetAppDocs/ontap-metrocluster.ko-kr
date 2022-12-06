@@ -234,7 +234,7 @@ NTP 서버 2
 |===
 
 
-==== Site A AutoSupport 정보
+==== 사이트 A nbsp;AutoSupport 정보
 
 각 노드에서 AutoSupport를 구성해야 하며 여기에는 다음 정보가 필요합니다.
 
@@ -293,7 +293,7 @@ HTTP, HTTPS 또는 SMTP
 |===
 
 
-==== 사이트 A SP 정보입니다
+==== 사이트 A nbsp;SP 정보
 
 문제 해결 및 유지 관리를 위해 각 노드의 서비스 프로세서(SP)에 대한 액세스를 설정해야 하며, 이때 각 노드에 대해 다음 네트워크 정보가 필요합니다.
 
@@ -533,7 +533,7 @@ NTP 서버 2
 |===
 
 
-==== 사이트 B AutoSupport 정보
+==== 사이트 B nbsp;AutoSupport 정보
 
 각 노드에서 AutoSupport를 구성해야 하며 여기에는 다음 정보가 필요합니다.
 
@@ -590,7 +590,7 @@ HTTP, HTTPS 또는 SMTP
 |===
 
 
-==== 사이트 B SP 정보
+==== 사이트 B nbsp;SP 정보
 
 문제 해결 및 유지 관리를 위해 각 노드의 서비스 프로세서(SP)에 대한 액세스를 설정해야 하며, 이때 각 노드에 대해 다음 네트워크 정보가 필요합니다.
 
@@ -680,6 +680,7 @@ MetroCluster 구성을 활성화합니다.
 --
 MetroCluster를 성공적으로 설치하려면 컨트롤러 모듈에서 기본값을 재설정 및 복원합니다.
 
+.중요
 이 작업은 FC-to-SAS 브리지를 사용하는 확장 구성에만 필요합니다.
 
 .단계
@@ -814,6 +815,7 @@ Please choose one of the following:
 
 FAS8020 시스템에서 X1132A-R6 4포트 카드를 사용하는 경우, 유지 관리 모드로 전환하여 FC-VI 및 이니시에이터 사용을 위한 1a 및 1b 포트를 구성할 수 있습니다. 출하 시 받은 MetroCluster 시스템에는 필요하지 않으며, 이 경우 포트가 구성에 맞게 적절하게 설정됩니다.
 
+.이 작업에 대해
 이 작업은 유지보수 모드에서 수행해야 합니다.
 
 
@@ -919,6 +921,7 @@ controller_B_1
 
 시스템을 ONTAP로 완전히 부팅하기 전에 선택적으로 유지보수 모드로 부팅하고 노드의 디스크 할당을 확인할 수 있습니다. 각 풀에는 동일한 수의 디스크가 할당되어 있는 완전 대칭 액티브-액티브 구성을 생성하도록 디스크를 할당해야 합니다.
 
+.이 작업에 대해
 새 MetroCluster 시스템에는 배송 전에 디스크 할당이 완료되었습니다.
 
 다음 표에서는 MetroCluster 구성의 풀 할당 예를 보여 줍니다. 디스크는 쉘프별로 풀에 할당됩니다.
@@ -1117,8 +1120,10 @@ controller_B_1
 
 MetroCluster 노드에 디스크가 올바르게 할당되지 않았거나 구성에서 DS460C 디스크 쉘프를 사용하는 경우 쉘프 단위로 MetroCluster 구성의 각 노드에 디스크를 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성합니다.
 
+.시작하기 전에
 스토리지 컨트롤러가 유지보수 모드여야 합니다.
 
+.이 작업에 대해
 구성에 DS460C 디스크 쉘프가 포함되어 있지 않은 경우, 공장 출하 시 디스크를 올바르게 할당한 경우에는 이 작업이 필요하지 않습니다.
 
 [NOTE]
@@ -1272,8 +1277,10 @@ boot_ontap 메뉴
 
 미러링된 Aggregate가 있는 구성에서 AFF 시스템을 사용하고 있고 노드에 디스크(SSD)가 올바르게 할당되지 않은 경우, 각 쉘프의 디스크 절반을 로컬 노드 1개에 할당하고 나머지 절반은 HA 파트너 노드에 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성해야 합니다.
 
+.시작하기 전에
 스토리지 컨트롤러가 유지보수 모드여야 합니다.
 
+.이 작업에 대해
 미러링되지 않은 애그리게이트, 액티브/패시브 구성이 있거나 로컬 및 원격 풀에서 디스크 수가 동일하지 않은 구성에는 적용되지 않습니다.
 
 출하 시 디스크를 받았을 때 디스크를 올바르게 할당한 경우에는 이 작업이 필요하지 않습니다.
@@ -1386,8 +1393,10 @@ boot_ontap 메뉴
 
 시스템을 ONTAP로 완전히 부팅하기 전에 필요에 따라 시스템을 유지보수 모드로 부팅하고 노드의 디스크 할당을 확인할 수 있습니다. 디스크를 할당하여 자체 디스크 쉘프를 소유하고 데이터를 제공하는 두 사이트를 모두 포함하는 완전 대칭 구성을 생성해야 합니다. 각 노드와 각 풀에는 동일한 수의 미러링된 디스크가 할당됩니다.
 
+.시작하기 전에
 시스템이 유지보수 모드여야 합니다.
 
+.이 작업에 대해
 새 MetroCluster 시스템에는 배송 전에 디스크 할당이 완료되었습니다.
 
 다음 표에서는 MetroCluster 구성의 풀 할당 예를 보여 줍니다. 디스크는 쉘프별로 풀에 할당됩니다.
@@ -1501,8 +1510,10 @@ DR 파트너의 풀 1
 
 MetroCluster 구성에서 스토리지 시스템을 구성할 때는 컨트롤러 모듈 및 섀시 구성 요소의 고가용성(HA) 상태가 MCC 또는 MCC-2n인지 확인해야 구성 요소가 제대로 부팅됩니다.
 
+.시작하기 전에
 시스템이 유지보수 모드여야 합니다.
 
+.이 작업에 대해
 이 작업은 공장에서 입고된 시스템에는 필요하지 않습니다.
 
 .단계
@@ -1612,8 +1623,8 @@ HA-config modify 섀시 mcip
 새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-upgrade/GUID-3370EC34-310E-4F09-829F-F632EC8CDD9B.html["새 컨트롤러 모듈을 Netbooting 합니다"] MetroCluster 업그레이드, 전환 및 확장 가이드 _.
 
 .선택
-* ,2노드 MetroCluster 구성에서 ONTAP 설정
-* ,8모드 또는 4노드 MetroCluster 구성에서 ONTAP 설정
+* <<setup_ontap_2node_MCC,2노드 MetroCluster 구성에서 ONTAP 설정>>
+* <<setup_ontap_8node_4node_MCC,8모드 또는 4노드 MetroCluster 구성에서 ONTAP 설정>>
 
 
 
@@ -1622,8 +1633,10 @@ HA-config modify 섀시 mcip
 
 2노드 MetroCluster 구성에서는 각 클러스터에서 노드를 부팅하고 클러스터 설정 마법사를 종료한 다음, 클러스터 설정 명령을 사용하여 노드를 단일 노드 클러스터로 구성해야 합니다.
 
+.시작하기 전에
 서비스 프로세서를 구성하지 않아야 합니다.
 
+.이 작업에 대해
 이 작업은 네이티브 NetApp 스토리지를 사용하는 2노드 MetroCluster 구성에 사용됩니다.
 
 새로운 MetroCluster 시스템은 사전 구성되어 있으므로 이 단계를 수행할 필요가 없습니다. 그러나 AutoSupport를 구성해야 합니다.
@@ -1718,8 +1731,10 @@ admin SVM 또는 node SVM에 대해 입력한 설정을 변경해야 하는 경�
 
 각 노드를 부팅하면 System Setup 도구를 실행하여 기본 노드 및 클러스터 구성을 수행할 것인지 묻는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다.
 
+.시작하기 전에
 MetroCluster 구성에 케이블로 연결되어 있어야 합니다.
 
+.이 작업에 대해
 이 작업은 네이티브 NetApp 스토리지를 사용하는 8노드 또는 4노드 MetroCluster 구성에 사용됩니다.
 
 새로운 MetroCluster 시스템은 사전 구성되어 있으므로 이 단계를 수행할 필요가 없습니다. 그러나 AutoSupport 도구를 구성해야 합니다.
@@ -1840,6 +1855,7 @@ NOTE: 이후 작업에서 미러링된 애그리게이트를 생성할 수 있�
 
 
 
+.작업을 마친 후
 ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.
 
 
@@ -1861,8 +1877,8 @@ MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 �
 MetroCluster 파트너 클러스터 간 통신에 사용되는 포트에 대한 인터클러스터 LIF를 생성해야 합니다. 데이터 트래픽도 있는 전용 포트 또는 포트를 사용할 수 있습니다.
 
 .선택
-* ,전용 포트에 대한 인터클러스터 LIF 구성
-* ,공유 데이터 포트에 대한 인터클러스터 LIF 구성
+* <<config_LIFs_dedicated,전용 포트에 대한 인터클러스터 LIF 구성>>
+* <<config_LIFs_shared_data,공유 데이터 포트에 대한 인터클러스터 LIF 구성>>
 
 
 
@@ -2075,6 +2091,7 @@ cluster01
                             Failover Targets:  cluster01-02:e0e,
                                                cluster01-02:e0f
 ----
+.관련 정보
 link:concept_prepare_for_the_mcc_installation.html["전용 포트를 사용할 때의 고려 사항"]
 
 인터클러스터 복제를 위한 전용 포트를 사용하는 것이 올바른 인터클러스터 네트워크 솔루션인지 결정할 때 LAN 유형, 사용 가능한 WAN 대역폭, 복제 간격, 변경률 및 포트 수와 같은 구성 및 요구 사항을 고려해야 합니다.
@@ -2216,6 +2233,7 @@ cluster01
 ----
 
 
+.관련 정보
 link:concept_prepare_for_the_mcc_installation.html["데이터 포트 공유 시 고려 사항"]
 
 
@@ -2224,6 +2242,7 @@ link:concept_prepare_for_the_mcc_installation.html["데이터 포트 공유 시 
 
 MetroCluster 클러스터 간에 클러스터 피어 관계를 생성해야 합니다.
 
+.이 작업에 대해
 'cluster peer create' 명령을 사용하여 로컬 클러스터와 원격 클러스터 간의 피어 관계를 생성할 수 있습니다. 피어 관계가 생성된 후 원격 클러스터에서 '클러스터 피어 생성'을 실행하여 로컬 클러스터에 인증할 수 있습니다.
 
 .시작하기 전에
@@ -2440,6 +2459,7 @@ cluster01-02
 
 루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다.
 
+.이 작업에 대해
 기본적으로 루트 애그리게이트는 RAID-DP 유형 Aggregate로 생성됩니다. 루트 애그리게이트를 RAID-DP에서 RAID4 유형 애그리게이트로 변경할 수 있습니다. 다음 명령을 실행하면 RAID4 유형 애그리게이트의 루트 애그리게이트가 수정됩니다.
 
 [listing]
@@ -2468,6 +2488,7 @@ controller_A_1::> storage aggregate mirror aggr0_controller_A_1
 . MetroCluster 구성의 각 노드에 대해 이전 단계를 반복합니다.
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["논리적 스토리지 관리"]
 
 
@@ -2602,6 +2623,7 @@ controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -n
 
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 
@@ -2620,11 +2642,12 @@ MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster conf
 
 +
 
-NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 ,1단계 를 참조하십시오.
+NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <<step1_aggr,1단계>> 를 참조하십시오.
 
 * 컨트롤러 및 섀시의 ha-config 상태는 "MCC"여야 합니다.
 
 
+.이 작업에 대해
 모든 노드에서 'MetroCluster configure' 명령을 한 번 실행하여 MetroCluster 설정을 활성화한다. 각 사이트나 노드에서 명령을 실행할 필요가 없으며 명령을 실행하기로 선택한 노드나 사이트는 중요하지 않습니다.
 
 MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시스템 ID를 갖는 두 노드를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.
@@ -2764,6 +2787,7 @@ Remote: cluster_A         Configuration state configured
 
 파이버 채널(FC) 스위치 구성에 따라 IOD(In-Order Delivery) 또는 Food(Out-of-Order Delivery)를 구성해야 합니다.
 
+.이 작업에 대해
 FC 스위치가 IOD용으로 구성된 경우 IOD에 대해 ONTAP 소프트웨어를 구성해야 합니다. 마찬가지로 FC 스위치가 유드에 대해 구성된 경우 유드에 대해 ONTAP를 구성해야 합니다.
 
 .단계
@@ -2866,8 +2890,10 @@ mcc4-b2      mlx4_0          IB      Up     false     192.0.2.10  	ib2b
 
 === MetroCluster 구성에서 SNMPv3 구성
 
+.시작하기 전에
 스위치와 ONTAP 시스템의 인증 및 개인 정보 보호 프로토콜은 동일해야 합니다.
 
+.이 작업에 대해
 ONTAP는 현재 AES-128 암호화를 지원합니다.
 
 .단계
@@ -2972,6 +2998,7 @@ Priv Protocol [DES(1)/noPriv(2)/AES128(3)/AES256(4)]): (2..2) [3]
 
 MetroCluster 구성에서 구성 요소를 모니터링하기 전에 몇 가지 특수 구성 단계를 수행해야 합니다.
 
+.이 작업에 대해
 이러한 작업은 FC-to-SAS 브리지가 있는 시스템에만 적용됩니다.
 
 [NOTE]
@@ -3039,6 +3066,7 @@ controller_A_1::>
 
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"]
 
 
@@ -3118,6 +3146,7 @@ MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 �
 
 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.
 
+.이 작업에 대해
 둘 중 하나 또는 두 클러스터에서 짧은 시간 내에 'MetroCluster check run' 명령을 두 번 실행하면 충돌이 발생하고 명령이 모든 데이터를 수집하지 못할 수 있습니다. 이후 'MetroCluster check show' 명령어는 예상 출력을 표시하지 않는다.
 
 .단계
@@ -3239,6 +3268,7 @@ mccint-fas9000-0304
 ----
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]
@@ -3249,6 +3279,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네�
 
 NetApp Support 사이트로 이동하여 Config Advisor 툴을 다운로드하여 일반적인 구성 오류를 확인할 수 있습니다.
 
+.이 작업에 대해
 Config Advisor는 구성 검증 및 상태 점검 툴입니다. 데이터 수집 및 시스템 분석을 위해 보안 사이트 및 비보안 사이트에 배포할 수 있습니다.
 
 
@@ -3268,6 +3299,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 4노드 MetroCluster 구성이 있는 경우 MetroCluster 구성에서 로컬 HA 쌍의 작동을 확인해야 합니다. 2노드 구성에는 이 작업이 필요하지 않습니다.
 
+.이 작업에 대해
 2노드 MetroCluster 구성은 로컬 HA 쌍으로 구성되지 않으며 이 작업은 적용되지 않습니다.
 
 이 작업의 예에는 표준 명명 규칙이 사용됩니다.
@@ -3366,6 +3398,7 @@ controller_A_2 controller_A_1 true     Connected to controller_A_1
 . cluster_B에서 위의 단계를 반복합니다
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["고가용성 구성"]
 
 

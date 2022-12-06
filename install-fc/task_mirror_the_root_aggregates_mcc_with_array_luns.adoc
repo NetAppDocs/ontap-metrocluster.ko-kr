@@ -13,8 +13,10 @@ summary: 데이터 보호를 위해서는 MetroCluster 구성에서 루트 애�
 [role="lead"]
 데이터 보호를 위해서는 MetroCluster 구성에서 루트 애그리게이트를 미러링해야 합니다.
 
+.시작하기 전에
 스토리지 LUN을 사용하는 MetroCluster 구성에 대한 SyncMirror 요구 사항이 충족되었는지 확인해야 합니다. 을 참조하십시오link:reference_requirements_for_a_mcc_configuration_with_array_luns_reference.html["스토리지 LUN이 포함된 MetroCluster 구성 요구 사항"].
 
+.이 작업에 대해
 MetroCluster 구성의 각 컨트롤러에 대해 이 작업을 반복해야 합니다.
 
 .단계

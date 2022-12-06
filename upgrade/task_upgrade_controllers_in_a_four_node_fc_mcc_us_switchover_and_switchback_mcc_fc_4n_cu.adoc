@@ -206,6 +206,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 이전 노드의 물리적 포트에 있는 LIF를 새 노드의 물리적 포트에 매핑해야 합니다.
 
+.이 작업에 대해
 업그레이드 프로세스 중에 새 노드를 처음 부팅하면 교체 중인 이전 노드의 최신 구성이 재생됩니다. node_A_1-new를 부팅할 때 ONTAP는 node_A_1-old에서 사용된 것과 동일한 포트에 LIF를 호스팅하려고 시도합니다. 따라서 업그레이드의 일환으로 포트와 LIF 구성이 이전 노드의 구성과 호환되도록 조정해야 합니다. 업그레이드 절차를 진행하는 동안 이전 노드와 새 노드 모두에서 단계를 수행하여 클러스터, 관리 및 데이터 LIF 구성이 올바른지 확인할 수 있습니다.
 
 다음 표에서는 새 노드의 포트 요구 사항과 관련된 구성 변경의 예를 보여 줍니다.
@@ -398,6 +399,7 @@ e0c 및 e0d가 일치하는 포트입니다. 구성을 변경할 필요는 없�
 
 업그레이드하기 전에 각 노드에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
 
+.이 작업에 대해
 이 작업은 기존 MetroCluster FC 구성에 대해 수행됩니다.
 
 .단계
@@ -525,6 +527,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/G
 
 유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
 
+.이 작업에 대해
 이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
 
 .단계
@@ -551,6 +554,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/G
 
 site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전환해야 합니다.
 
+.이 작업에 대해
 이 작업은 site_A에서 수행해야 합니다
 
 이 작업을 완료하면 cluster_a가 활성 상태이며 두 사이트에 대한 데이터를 제공합니다. Cluster_B는 비활성 상태이며 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다.
@@ -741,6 +745,7 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 
 이전 컨트롤러를 구성에서 제거해야 합니다.
 
+.이 작업에 대해
 이 작업은 site_B에서 수행됩니다
 
 .단계
@@ -1043,6 +1048,7 @@ ha-config modify chassis MCC-2n
 
 앞에서 수집한 sysids를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
 
+.이 작업에 대해
 이 작업은 유지보수 모드에서 수행됩니다.
 
 에서 이전 시스템 ID를 식별했습니다 link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["업그레이드 전에 정보를 수집하는 중입니다"].
@@ -1157,6 +1163,7 @@ aggr0_node_b_1-root    online      raid_dp, aggr    root, nosnap=on,
 
 컨트롤러 플래시 이미지를 업데이트하려면 부팅 메뉴에서 컨트롤러를 재부팅해야 합니다. 암호화가 구성된 경우 추가 단계가 필요합니다.
 
+.이 작업에 대해
 이 작업은 모든 새 컨트롤러에 대해 수행해야 합니다.
 
 .단계
@@ -1388,6 +1395,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 스위치백 이전에 LIF가 적절한 노드/포트에서 호스팅되었는지 확인합니다. 다음 단계를 수행해야 합니다
 
+.이 작업에 대해
 이 작업은 노드가 루트 애그리게이트로 부팅된 site_B에서 수행합니다.
 
 .단계
@@ -1432,6 +1440,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 새 컨트롤러를 구성한 후 MetroCluster 구성을 다시 전환하여 구성을 정상 작동 상태로 되돌립니다.
 
+.이 작업에 대해
 이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.
 
 image::../media/mcc_upgrade_cluster_a_switchback.png[MCC 업그레이드 클러스터 A 스위치백]
@@ -1494,6 +1503,7 @@ Remote: cluster_A         Configuration state configured
 
 컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.
 
+.이 작업에 대해
 이 작업은 MetroCluster 구성의 모든 노드에서 수행할 수 있습니다.
 
 .단계

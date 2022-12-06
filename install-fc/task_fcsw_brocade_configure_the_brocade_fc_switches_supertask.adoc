@@ -66,6 +66,7 @@ IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션�
 
 MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다.
 
+.이 작업에 대해
 MetroCluster 구성에는 다음과 같은 Brocade 라이센스 요구 사항이 있습니다.
 
 * 권장 사항에 따라 두 개 이상의 ISL을 사용하는 시스템에 대한 트렁킹 라이센스입니다.
@@ -92,6 +93,7 @@ Enterprise 라이센스에는 Brocade Network Advisor 및 추가 포트 라이�
 
 성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 또한 각 스위치에 고유한 이름을 할당해야 합니다.
 
+.이 작업에 대해
 이 절차의 예에서 패브릭은 브로데SwitchA 및 브로데스위치B로 구성됩니다.
 
 .단계
@@ -325,6 +327,7 @@ FC_switch_B_1:admin> reboot
 
 Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.
 
+.이 작업에 대해
 이 작업에는 두 MetroCluster 사이트의 각 스위치에 대해 수행해야 하는 단계가 포함됩니다.
 
 이 절차에서는 다음 예제와 같이 각 스위치에 대해 고유한 도메인 ID를 설정합니다. 이 예에서 도메인 ID 5와 7은 fabric_1을, 도메인 ID 6과 8은 fabric_2를 형성합니다.
@@ -648,6 +651,7 @@ FC_switch_B_1:admin> switchcfgpersistentenable
 
 Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.
 
+.이 작업에 대해
 두 MetroCluster 사이트에서 각 스위치에 대해 단계를 수행해야 합니다. 이 절차에서는 다음 예에 표시된 대로 각 스위치에 대한 도메인 ID를 설정합니다.
 
 * fc_switch_a_1이 도메인 ID 5에 할당되었습니다
@@ -738,6 +742,7 @@ switchenable
 ----
 
 
+.관련 정보
 link:concept_prepare_for_the_mcc_installation.html["Brocade DCX 8510-8 스위치 사용에 대한 요구 사항"]
 
 
@@ -759,6 +764,7 @@ IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션�
 * ISL 링크에는 전용 람다가 있어야 하며, 거리, 스위치 유형 및 FOS(Fabric Operating System)에 대해 Brocade에서 해당 링크를 지원해야 합니다.
 
 
+.이 작업에 대해
 "portCfgLongDistance" 명령을 실행할 때 L0 설정을 사용하면 안 됩니다. 대신 LE 또는 LS 설정을 사용하여 최소 LE 거리 수준으로 Brocade 스위치의 거리를 구성해야 합니다.
 
 xWDM/TDM 장비로 작업할 때 "portCfgLongDistance" 명령을 실행할 때 LD 설정을 사용해서는 안 됩니다. 대신, LE 또는 LS 설정을 사용하여 Brocade 스위치의 거리를 구성해야 합니다.
@@ -1238,9 +1244,10 @@ FC_switch_B_1:admin> trunkshow
 ----
 
 
-. 반복합니다 ,1단계 부터 까지 ,10단계 두 번째 FC 스위치 패브릭용
+. 반복합니다 <<step1_brocade_config,1단계>> 부터 까지 <<step10_brocade_config,10단계>> 두 번째 FC 스위치 패브릭용
 
 
+.관련 정보
 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 
 
@@ -1249,6 +1256,7 @@ link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.htm
 
 ISL에 FCIP를 사용하는 10Gbps VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.
 
+.이 작업에 대해
 이 절차는 MetroCluster 구성의 각 스위치 패브릭에서 수행해야 합니다.
 
 이 절차의 예에서는 두 개의 Brocade 7840 스위치에 다음과 같은 IP 주소가 있다고 가정합니다.
@@ -1404,6 +1412,7 @@ FC_switch_A_1:root> portshow fcipcircuit all
 
 ISL에 FCIP를 사용하는 두 개의 40GbE VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.
 
+.이 작업에 대해
 이 절차는 MetroCluster 구성의 각 스위치 패브릭에서 수행해야 합니다.
 
 이 절차의 예에서는 두 개의 스위치를 사용합니다.
@@ -1556,6 +1565,7 @@ FC_switch_A_1:root> portshow fcipcircuit all
 
 FC 스위치에서 E 포트가 아닌 포트를 구성해야 합니다. MetroCluster 구성에서는 스위치를 HBA 이니시에이터, FC-VI 상호 연결 및 FC-SAS 브리지에 연결하는 포트를 사용합니다. 이러한 단계는 각 포트에 대해 수행해야 합니다.
 
+.이 작업에 대해
 다음 예에서는 포트가 FC-to-SAS 브리지를 연결합니다.
 
 --
@@ -1645,6 +1655,7 @@ Non-DFE                             ..  ..  ..  ..  ..  ..  ..  ..  ..
 
 Brocade G620 스위치를 사용하고 ISL에서 압축을 설정하는 경우 스위치의 각 E-포트에서 구성해야 합니다.
 
+.이 작업에 대해
 이 작업은 ISL을 사용하여 두 스위치의 ISL 포트에서 수행해야 합니다.
 
 .단계
@@ -4268,6 +4279,7 @@ MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC2
 
 FC-VI 포트 영역과 스토리지 포트 영역을 구분하여 컨트롤러 및 스토리지 트래픽을 별도의 영역에 스위치 포트를 할당해야 합니다.
 
+.이 작업에 대해
 다음 단계에서는 MetroCluster 구성에 표준 조닝을 사용합니다.
 
 link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC-VI 포트를 위한 조닝"]
@@ -4396,6 +4408,7 @@ NOTE: Brocade G620 스위치에서 ISL 암호화 지원은 ONTAP 9.4 이상에�
 * 대역폭 및 포트 제한을 확인하려면 스위치 및 패브릭 운영 체제 버전에 대한 Brocade 설명서를 검토해야 합니다.
 
 
+.이 작업에 대해
 이 단계는 동일한 Fabric에 있는 두 스위치에서 수행해야 합니다.
 
 
@@ -4418,6 +4431,7 @@ ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 �
 
 가상 패브릭을 비활성화한 후 Fabric의 두 스위치에서 페이로드나 데이터 필드 크기를 설정해야 합니다.
 
+.이 작업에 대해
 데이터 필드 크기는 2048을 초과할 수 없습니다.
 
 .단계
@@ -4444,6 +4458,7 @@ ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 �
 
 인증 정책과 관련 매개 변수를 설정해야 합니다.
 
+.이 작업에 대해
 명령은 스위치 콘솔에서 실행해야 합니다.
 
 .단계
@@ -4585,4 +4600,5 @@ Port  configured     Active
 ----
 
 
+.다음 단계
 MetroCluster 구성에서 다른 Fabric의 스위치에 대한 모든 단계를 수행합니다.

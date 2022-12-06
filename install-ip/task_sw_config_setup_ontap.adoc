@@ -17,6 +17,7 @@ summary: 각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수
 
 새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 link:../upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#netbooting-the-new-controllers["새 컨트롤러 모듈을 Netbooting 합니다"].
 
+.이 작업에 대해
 이 작업은 MetroCluster 구성의 두 클러스터 모두에서 수행해야 합니다.
 
 .단계
@@ -269,4 +270,5 @@ e4e       Cluster      Cluster          up   9000  auto/40000 healthy  false
 . 파트너 클러스터에서 이 단계를 반복합니다.
 
 
+.다음 단계
 ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.

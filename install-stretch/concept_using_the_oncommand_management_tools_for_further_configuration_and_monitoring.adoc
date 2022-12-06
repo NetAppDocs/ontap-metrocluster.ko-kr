@@ -17,4 +17,5 @@ Active IQ Unified Manager 및 ONTAP System Manager를 사용하여 클러스터�
 
 Active IQ Unified Manager를 사용하여 MetroCluster 구성을 모니터링할 수도 있습니다.
 
+.관련 정보
 http://docs.netapp.com["Active IQ Unified Manager 및 ONTAP 시스템 관리자 설명서"^]

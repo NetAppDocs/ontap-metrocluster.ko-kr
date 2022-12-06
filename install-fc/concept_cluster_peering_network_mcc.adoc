@@ -17,6 +17,7 @@ MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 
 
 image::../media/mcc_hw_architecture_cluster_peering.gif[MCC HW 아키텍처 클러스터 피어링]
 
+.관련 정보
 link:concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html["MetroCluster 구성의 로컬 HA 쌍 그림"]
 
 link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 브리지의 그림"]

@@ -88,6 +88,7 @@ image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[워크플�
 
 자세한 전환 절차를 따라야 합니다.
 
+.이 작업에 대해
 다음 단계에서는 다른 절차로 이동합니다. 각 참조 절차의 단계를 지정된 순서대로 수행해야 합니다.
 
 .단계
@@ -125,6 +126,7 @@ image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[워크플�
 
 전환이 완료되면 MetroCluster FC 구성에서 남은 기존 루트 애그리게이트를 MetroCluster IP 구성의 새 쉘프로 마이그레이션할 수 있습니다.
 
+.이 작업에 대해
 이 작업은 node_A_1-FC 및 node_B_1-FC의 루트 애그리게이트를 새 MetroCluster IP 컨트롤러가 소유하는 디스크 쉘프로 이동합니다.
 
 .단계

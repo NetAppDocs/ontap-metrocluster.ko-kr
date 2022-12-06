@@ -18,6 +18,7 @@ summary: 스토리지 LUN을 스토리지로 사용할 Aggregate에 추가하려
 * 할당하려는 스토리지 LUN은 ONTAP 시스템에 제공되어야 합니다.
 
 
+.이 작업에 대해
 다음과 같은 특성을 가진 스토리지 LUN의 소유권을 할당할 수 있습니다.
 
 * 소유하지 않은 것입니다.
@@ -49,4 +50,5 @@ ONTAP는 중복 오류가 있는 어레이 LUN을 할당하려고 할 때 사용
 
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"]

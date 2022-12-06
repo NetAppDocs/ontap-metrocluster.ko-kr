@@ -13,4 +13,5 @@ summary: 클러스터를 설정하려면 각 노드를 설정하고, 첫 번째 
 [role="lead"]
 클러스터를 설정하려면 각 노드를 설정하고, 첫 번째 노드에서 클러스터를 생성하고, 나머지 노드를 클러스터에 가입해야 합니다.
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["소프트웨어 설정"]

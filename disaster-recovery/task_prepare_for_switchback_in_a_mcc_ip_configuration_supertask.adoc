@@ -13,6 +13,7 @@ summary: 스위치백 작업을 위해 MetroCluster IP 구성을 준비하려면
 [role="lead"]
 스위치백 작업을 위해 MetroCluster IP 구성을 준비하려면 특정 작업을 수행해야 합니다.
 
+.이 작업에 대해
 nbsp(&nbsp);
 
 image::../media/workflow_preparing_for_switchback_in_mcc_ip_dr.gif[MCC IP DR에서 스위치백을 위한 워크플로 준비]

@@ -13,6 +13,7 @@ summary: 재해 사이트에서 FC 스위치를 교체한 경우 공급업체별
 [role="lead"]
 재해 사이트에서 FC 스위치를 교체한 경우 공급업체별 절차를 사용하여 구성해야 합니다. 하나의 스위치를 구성하고 정상 작동하는 사이트의 스토리지 액세스가 영향을 받지 않는지 확인한 다음 두 번째 스위치를 구성해야 합니다.
 
+.관련 작업
 link:../install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"]
 
 link:../install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
@@ -23,6 +24,7 @@ link:../install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1
 
 이 Brocade 관련 절차를 사용하여 교체 스위치를 구성하고 ISL 포트를 활성화해야 합니다.
 
+.이 작업에 대해
 이 절차의 예는 다음과 같은 가정을 기반으로 합니다.
 
 * 사이트 A는 재해 사이트입니다.
@@ -147,6 +149,7 @@ Index Port Address Media Speed State  Proto
 
 Cisco 관련 절차를 사용하여 교체 스위치를 구성하고 ISL 포트를 활성화해야 합니다.
 
+.이 작업에 대해
 이 절차의 예는 다음과 같은 가정을 기반으로 합니다.
 
 * 사이트 A는 재해 사이트입니다.

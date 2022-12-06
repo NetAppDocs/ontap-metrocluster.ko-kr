@@ -13,6 +13,7 @@ summary: 스토리지 LUN이 포함된 MetroCluster 구성에서 ONTAP 시스템
 [role="lead"]
 스토리지 LUN이 포함된 MetroCluster 구성에서 ONTAP 시스템을 설정하기 전에 스토리지 시스템 관리자는 ONTAP에서 사용할 스토리지를 준비해야 합니다.
 
+.시작하기 전에
 구성에서 사용하려는 스토리지 어레이, 펌웨어 및 스위치는 특정 ONTAP 버전에서 지원되어야 합니다.
 
 * https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성(IMT)"]
@@ -22,6 +23,7 @@ IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션�
 * https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 
+.이 작업에 대해
 스토리지 시스템에서 이 작업을 수행하려면 스토리지 시스템 관리자와 협력해야 합니다.
 
 .단계

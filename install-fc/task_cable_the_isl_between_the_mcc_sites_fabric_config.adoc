@@ -13,6 +13,7 @@ summary: 'MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형�
 [role="lead"]
 MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려면 광섬유 ISL(Inter-Switch Link)을 통해 각 사이트의 FC 스위치를 연결해야 합니다.
 
+.이 작업에 대해
 이 작업은 두 스위치 Fabric 모두에 대해 수행해야 합니다.
 
 .단계
@@ -24,4 +25,5 @@ MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려�
 
 
 
+.관련 정보
 link:concept_considerations_isls_mcfc.html["ISL에 대한 고려 사항"]

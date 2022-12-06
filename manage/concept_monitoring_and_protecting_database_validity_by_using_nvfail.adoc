@@ -112,6 +112,7 @@ NVFAIL이 현재 지정된 볼륨에 대해 활성화되어 있는지 여부를 
 * 참고: * 지정된 볼륨에 대한 NVFAIL 속성을 표시하려면 '-fields' 매개 변수를 "nvfail"로 설정합니다.
 
 |===
+.관련 정보
 자세한 내용은 각 명령에 대한 man 페이지를 참조하십시오.
 
 
@@ -120,18 +121,22 @@ NVFAIL이 현재 지정된 볼륨에 대해 활성화되어 있는지 여부를 
 
 스위치오버 후에는 볼륨 수정 명령의 `-in-nvfailed-state ' 매개 변수를 재설정하여 클라이언트 데이터 액세스 제한을 제거하여 NVFAIL 상태를 지워야 합니다.
 
+.시작하기 전에
 데이터베이스 또는 파일 시스템이 실행 중이거나 영향을 받는 볼륨에 액세스를 시도하지 않아야 합니다.
 
+.이 작업에 대해
 nvfailed-state 매개 변수를 설정하려면 고급 수준의 권한이 필요합니다.
 
 .단계
 . nvfailed-state 매개 변수가 false로 설정된 상태로 volume modify 명령을 사용하여 볼륨을 복구합니다.
 
 
+.작업을 마친 후
 데이터베이스 파일 유효성 검사에 대한 자세한 내용은 해당 데이터베이스 소프트웨어의 설명서를 참조하십시오.
 
 데이터베이스에서 LUN을 사용하는 경우 NVRAM에 장애가 발생한 후 호스트에서 LUN에 액세스할 수 있도록 하는 단계를 검토하십시오.
 
+.관련 정보
 link:../manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html["NVFAIL을 사용하여 파일 시스템 일관성 모니터링 및 보호"]
 
 
@@ -140,6 +145,7 @@ link:../manage/concept_monitoring_and_protecting_database_validity_by_using_nvfa
 
 스위치오버 이후 호스트는 더 이상 NVFAIL 상태에 있는 LUN의 데이터에 액세스할 수 없습니다. 데이터베이스가 LUN에 액세스할 수 있으려면 먼저 여러 작업을 수행해야 합니다.
 
+.시작하기 전에
 데이터베이스가 실행 중이지 않아야 합니다.
 
 .단계

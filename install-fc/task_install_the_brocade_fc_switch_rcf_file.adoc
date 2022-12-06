@@ -13,6 +13,7 @@ summary: Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 �
 [role="lead"]
 Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 스위치 설정을 제공하는 스위치 구성 파일을 설치할 수 있습니다.
 
+.이 작업에 대해
 이러한 단계는 MetroCluster 패브릭 구성의 각 Brocade FC 스위치에서 반복해야 합니다.
 
 .단계

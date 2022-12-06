@@ -35,6 +35,7 @@ MetroCluster 구성에서 HA 쌍이 작동하는 방식을 이해해야 합니�
 
 image::../media/mcc_hw_architecture_local_ha.gif[MCC HW 아키텍처 로컬 ha]
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["고가용성 구성"^]
 
 
@@ -105,6 +106,7 @@ ISL에 장애가 발생했고 재해 사이트 스토리지를 사용할 수 없
 
 
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"^]
 
 
@@ -313,6 +315,7 @@ MetroCluster 전환이 발생하고 정상적인 사이트에서 문제가 발�
 
 2노드 구성의 경우, HA 쌍에서 자동 스토리지 페일오버를 트리거하는 동일한 이벤트가 자동 UNPLANNED 스위치오버(AUSO)를 트리거합니다. 즉, 2노드 MetroCluster 구성에서는 HA Pair와 동일한 보호 수준을 사용합니다.
 
+.관련 정보
 link:concept_understanding_mcc_data_protection_and_disaster_recovery.html["MetroCluster FC 구성에서 계획되지 않은 자동 스위치오버"]
 
 

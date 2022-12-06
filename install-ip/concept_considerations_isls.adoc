@@ -127,7 +127,7 @@ RcfFileGenerator는 특정 VLAN ID의 사용을 제한할 수 있습니다(예: 
 MetroCluster IP 구성에서 공유 ISL을 사용하는 경우 사이트 A의 컨트롤러 포트에서 사이트 B의 컨트롤러 포트로 실행되는 엔드 투 엔드 MetroCluster ISL의 요구 사항을 알아야 합니다
 
 
-NOTE: 을 따라야 합니다  MetroCluster ISL requirements.
+NOTE: 을 따라야 합니다 <<기본 MetroCluster ISL 요구 사항>>.
 
 
 

@@ -84,10 +84,10 @@ IMPORTANT: 노드를 추가하거나 제거하는 중에 전환 중에 장애가
 
 실패 시나리오:
 
-*  controller module failures in a single DR group
-*  controller module failures in a single DR group
-*  controller module failures in separate DR groups
-*  controller module failures spread across the DR groups
+* <<단일 DR 그룹에서 단일 컨트롤러 모듈 장애 발생>>
+* <<단일 DR 그룹에서 2개의 컨트롤러 모듈 장애 발생>>
+* <<별도의 DR 그룹에서 단일 컨트롤러 모듈 장애 발생>>
+* <<3개의 컨트롤러 모듈 장애가 DR 그룹 전체에 분산됩니다>>
 
 
 

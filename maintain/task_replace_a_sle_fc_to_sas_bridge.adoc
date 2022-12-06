@@ -13,14 +13,17 @@ summary: 브리지를 동일한 모델 브리지로 또는 새 모델 브리지�
 [role="lead"]
 브리지를 동일한 모델 브리지로 또는 새 모델 브리지로 중단 없이 교체할 수 있습니다.
 
+.시작하기 전에
 FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
 
+.이 작업에 대해
 이 절차는 무중단으로 진행되며 완료까지 약 60분이 소요됩니다.
 
 이 절차에서는 브리지 CLI를 사용하여 브리지를 구성 및 관리하고 브리지 펌웨어 및 ATTO Quicknav 유틸리티를 업데이트하여 브리지 이더넷 관리 1 포트를 구성합니다. 요구 사항을 충족하는 다른 인터페이스를 사용할 수 있습니다.
 
 link:reference_requirements_for_using_other_interfaces_to_configure_and_manage_fibrebridge_bridges.html["FiberBridge 브리지를 구성 및 관리하기 위한 다른 인터페이스 사용 요구 사항"]
 
+.관련 정보
 link:task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html["FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체"]
 
 
@@ -29,6 +32,7 @@ link:task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_
 
 브리지를 교체하기 전에 브리지 및 스토리지 연결을 확인해야 합니다. 명령 출력에 익숙해질 경우 구성을 변경한 후 나중에 연결을 확인할 수 있습니다.
 
+.이 작업에 대해
 유지보수 중인 사이트의 MetroCluster 구성에 있는 컨트롤러 모듈의 admin 프롬프트에서 이러한 명령을 실행할 수 있습니다.
 
 .단계
@@ -95,6 +99,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 
 장애가 발생한 브리지를 동일한 모델의 다른 브리지로 핫 스왑할 수 있습니다.
 
+.이 작업에 대해
 IP 관리 대신 브리지의 대역 내 관리를 사용하는 경우 관련 단계에 설명된 대로 이더넷 포트 및 IP 설정 구성 단계를 건너뛸 수 있습니다.
 
 
@@ -511,15 +516,15 @@ Tgt VendorID ProductID        Type SerialNumber
  a| 
 정답입니다
  a| 
-반복합니다 ,18단계 각 나머지 브리지에 대해.
+반복합니다 <<step18-verify-each-bridge,18단계>> 각 나머지 브리지에 대해.
 
 
 
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 ,17단계.
-.. 반복합니다 ,18단계.
+.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step17-reconnect-newbridge,17단계>>.
+.. 반복합니다 <<step18-verify-each-bridge,18단계>>.
 
 
 |===
@@ -633,6 +638,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+.관련 정보
 link:concept_in_band_management_of_the_fc_to_sas_bridges.html["FC-to-SAS 브리지의 대역 내 관리"]
 
 
@@ -641,6 +647,7 @@ link:concept_in_band_management_of_the_fc_to_sas_bridges.html["FC-to-SAS 브리�
 
 FiberBridge 7500N 브리지를 7600N 브리지로 핫 스왑할 수 있습니다.
 
+.이 작업에 대해
 IP 관리 대신 브리지의 대역 내 관리를 사용하는 경우 관련 단계에 설명된 대로 이더넷 포트 및 IP 설정 구성 단계를 건너뛸 수 있습니다.
 
 
@@ -899,7 +906,7 @@ Tgt VendorID ProductID        Type        SerialNumber
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 ,17단계.
+.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step17-reconnect-cables,17단계>>.
 .. 이전 단계를 반복합니다.
 
 
@@ -1015,6 +1022,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+.관련 정보
 link:concept_in_band_management_of_the_fc_to_sas_bridges.html["FC-to-SAS 브리지의 대역 내 관리"]
 
 
@@ -1334,7 +1342,7 @@ NOTE: 출력 시작 부분에 "respongse 잘린" 텍스트가 나타나면 텔�
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 ,17단계.
+.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step17-recable,17단계>>.
 .. 나머지 각 브리지에 대해 이전 단계를 반복합니다.
 
 
@@ -1450,4 +1458,5 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 . 부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 link:https://mysupport.netapp.com/site/info/rma["부품 반품 및 앰프, 교체"] 페이지를 참조하십시오.
 
 
+.관련 정보
 link:concept_in_band_management_of_the_fc_to_sas_bridges.html["FC-to-SAS 브리지의 대역 내 관리"]

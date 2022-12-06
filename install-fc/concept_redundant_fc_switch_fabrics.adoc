@@ -15,6 +15,7 @@ summary: '각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch 
 
 image::../media/mcc_hw_architecture_switch_fabrics.gif[MCC HW 아키텍처 스위치 패브릭]
 
+.관련 정보
 link:concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html["MetroCluster 구성의 로컬 HA 쌍 그림"]
 
 link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 브리지의 그림"]

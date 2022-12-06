@@ -13,8 +13,10 @@ summary: MetroCluster 구성에 새 컨트롤러 모듈을 추가한 후에는 �
 [role="lead"]
 MetroCluster 구성에 새 컨트롤러 모듈을 추가한 후에는 두 컨트롤러 모듈에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 별도로 활성화해야 합니다.
 
+.시작하기 전에
 MetroCluster 설정은 MetroCluster configure -refresh true 명령을 사용하여 이전에 새로 고쳐져야 합니다.
 
+.이 작업에 대해
 이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
 
 .단계

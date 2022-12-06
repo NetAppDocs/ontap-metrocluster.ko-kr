@@ -11,6 +11,7 @@ summary: MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨
 [role="lead"]
 MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨어 또는 세 번째 사이트에 다운로드하여 설치할 수 있습니다.
 
+.시작하기 전에
 MetroCluster 구성에서 두 클러스터에 대한 네트워크 연결이 가능한 Linux 호스트가 있어야 합니다. 구체적인 요구사항은 MetroCluster Tiebreaker 또는 ONTAP 중재자 설명서에 나와 있습니다.
 
 기존 Tiebreaker 또는 ONTAP 중재자 인스턴스에 연결하는 경우 Tiebreaker 또는 중재자 서비스의 사용자 이름, 암호 및 IP 주소가 필요합니다.
@@ -21,6 +22,7 @@ link:concept_mediator_requirements.html["계획되지 않은 자동 전환을 �
 
 Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우, 에 따르십시오 link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["소프트웨어 설치 및 구성 지침"].
 
+.이 작업에 대해
 동일한 MetroCluster 구성에서 MetroCluster Tiebreaker 소프트웨어와 ONTAP 중재자를 모두 사용할 수 없습니다.
 
 link:../install-ip/concept_considerations_mediator.html["ONTAP 중재자 또는 MetroCluster Tiebreaker를 사용할 때의 고려 사항"]

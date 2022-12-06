@@ -75,6 +75,7 @@ MetroCluster 구성 외부에서 클러스터에 대한 FlexCache 관계의 경�
 
 스위치백을 수행할 때 site_a(원래 클러스터)와 site_c의 SVM을 다시 반복해야 합니다
 
+.관련 정보
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html["FlexCache 볼륨 관리"^]
 
 
@@ -104,6 +105,7 @@ FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 https:
 
 NOTE: 애그리게이트를 구성하기 전에 의 "MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"에 설명된 대로 오브젝트 저장소를 설정해야 합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^].
 
+.단계
 FabricPool에서 사용할 Aggregate를 구성하려면 다음을 수행합니다.
 
 . Aggregate를 생성하거나 기존 Aggregate를 선택합니다.
@@ -157,6 +159,7 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 
 MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"^]
 
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#ipspace-object-replication-and-subnet-configuration-requirements["IPSpace 객체 복제 및 서브넷 구성 요구 사항"]
@@ -221,6 +224,7 @@ subnet1   192.168.2.0/24   Default   192.168.2.1       10/10    192.168.2.21-192
 
 IPv6이 한 사이트에 구성되어 있는 경우 다른 사이트에서도 IPv6를 구성해야 합니다.
 
+.관련 정보
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#requirements-for-lif-creation-in-a-metrocluster-configuration["MetroCluster 구성에서 LIF 생성을 위한 요구사항"]
 
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#lif-replication-and-placement-requirements-and-issues["LIF 복제 및 배치 요구사항 및 문제"]
@@ -246,6 +250,7 @@ LIF를 생성할 때는 다음 지침을 고려해야 합니다.
 
 MetroCluster check lif show 명령을 실행하여 MetroCluster 구성에서 LIF가 성공적으로 생성되었는지 확인할 수 있습니다. LIF를 생성하는 동안 문제가 발생하면 MetroCluster check lif repair-placement 명령을 사용하여 문제를 해결할 수 있습니다.
 
+.관련 정보
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#ipspace-object-replication-and-subnet-configuration-requirements["IPSpace 객체 복제 및 서브넷 구성 요구 사항"]
 
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#lif-replication-and-placement-requirements-and-issues["LIF 복제 및 배치 요구사항 및 문제"]
@@ -348,6 +353,7 @@ DR 파트너가 전환된 노드에서 iSCSI 또는 FC LIF가 생성된 경우 �
 
 NOTE: 소스 SVM이 다운되더라도 대상 SVM에서 동일한 IPspace와 네트워크를 사용하는 포트에서 다른 SVM에 속하는 LIF가 있으면 LIF 배치가 정상적으로 진행될 수 있습니다.
 
+.관련 정보
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#ipspace-object-replication-and-subnet-configuration-requirements["IPSpace 객체 복제 및 서브넷 구성 요구 사항"]
 
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#requirements-for-lif-creation-in-a-metrocluster-configuration["MetroCluster 구성에서 LIF 생성을 위한 요구사항"]

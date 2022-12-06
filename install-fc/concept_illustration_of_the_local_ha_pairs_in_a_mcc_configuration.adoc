@@ -17,6 +17,7 @@ summary: 8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1�
 
 image::../media/mcc_hw_architecture_local_ha.gif[MCC HW 아키텍처 로컬 ha]
 
+.관련 정보
 link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 브리지의 그림"]
 
 link:concept_redundant_fc_switch_fabrics.html["이중 FC 스위치 패브릭"]

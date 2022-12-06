@@ -63,6 +63,7 @@ image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
 
 image::../media/mcc_ip_hardware_architecture_ha_pairs.gif[MCC IP 하드웨어 아키텍처 하 쌍]
 
+.관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"]
 
 
@@ -83,6 +84,7 @@ MetroCluster IP 구성의 각 노드에는 백엔드 IP 네트워크에 연결�
 
 image::../media/mcc_ip_lif_usage.gif[MCC IP lif 사용]
 
+.관련 정보
 link:concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 사항"]
 
 
@@ -95,6 +97,7 @@ MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 
 
 image::../media/mcc_ip_hardware_architecture_cluster_peering_network.gif[MCC IP 하드웨어 아키텍처 클러스터 피어링 네트워크]
 
+.관련 정보
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
 
 link:concept_considerations_peering.html["클러스터 피어링을 구성할 때의 고려 사항"]

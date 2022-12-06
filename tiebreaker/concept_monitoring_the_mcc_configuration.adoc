@@ -19,6 +19,7 @@ MetroCluster Tiebreaker 소프트웨어는 MetroCluster 구성 상태를 모니�
 
 기본적으로 AutoSupport 메시지는 Tiebreaker 소프트웨어 설치 후 1주일 후에 NetApp에 전송됩니다. AutoSupport 알림을 트리거하는 이벤트에는 Tiebreaker 소프트웨어 패닉, MetroCluster 구성에서 재해 조건 감지 또는 알 수 없는 MetroCluster 구성 상태가 포함됩니다.
 
+.시작하기 전에
 AutoSupport 메시지를 설정하려면 직접 액세스할 수 있어야 합니다.
 
 .단계

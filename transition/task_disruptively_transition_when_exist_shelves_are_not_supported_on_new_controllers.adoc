@@ -98,6 +98,7 @@ image::../media/workflow_2n_transition_old_shelves_not_supported.png[워크플�
 
 MetroCluster IP 구성으로 전환하기 전에 기존 컨트롤러 모듈에 새 드라이브 쉘프를 연결해야 합니다.
 
+.이 작업에 대해
 다음 그림에서는 MetroCluster FC 구성에 연결된 새 셸프를 보여 줍니다.
 
 image::../media/transition_2n_unsupported_old_new_shelves_to_old_controllers.png[지원되지 않는 이전 신규 쉘프를 이전 컨트롤러로 2n 이전]
@@ -125,6 +126,7 @@ image::../media/transition_2n_unsupported_old_new_shelves_to_old_controllers.png
 
 루트 애그리게이트를 이전 드라이브 쉘프에서 MetroCluster IP 노드에서 사용할 새 드라이브 쉘프로 이동해야 합니다.
 
+.이 작업에 대해
 이 작업은 기존 노드(node_A_1-FC 및 node_B_1-FC)에서 전환 전에 수행됩니다.
 
 .단계
@@ -478,6 +480,7 @@ MetroCluster 체크 쇼
 
 자세한 전환 절차를 따라야 합니다.
 
+.이 작업에 대해
 다음 단계에서는 다른 항목으로 이동합니다. 각 항목의 단계를 지정된 순서대로 수행해야 합니다.
 
 .단계
