@@ -2737,7 +2737,6 @@
   <block id="b93f37f9b29ffcc5ed4a451ba3da2f03" category="paragraph">내부 쉘프가 있는 플랫폼 모델은 지원되지 않습니다.</block>
   <block id="d9ac7caa0b14c170344b2e959f8034c0" category="cell">더 빠르고 확실하게 구축</block>
   <block id="9ced91efcf548438eaefe7f78378491e" category="cell">새로운 플랫폼 모델</block>
-  <block id="986d1720aef5da8bb727fdc9d630f18b" category="admonition">BES-53248 IP 스위치를 사용하는 경우 AFF A320 플랫폼 모델은 업그레이드가 지원되지 않습니다.</block>
   <block id="b8c2f69c5a69a0de627c50e7bc6a4cf9" category="list-text">구성의 모든 컨트롤러는 동일한 유지보수 기간 동안 업그레이드해야 합니다.</block>
   <block id="4eef4343ca82afa388103a13e5acd0be" category="paragraph">이 유지 관리 활동 외부에서는 컨트롤러 유형이 서로 다른 MetroCluster 구성을 작동하는 것이 지원되지 않습니다.</block>
   <block id="60182e6504cabd5c1f32193f850cc537" category="list-text">IP 스위치는 지원되는 펌웨어 버전을 실행하고 있어야 합니다.</block>
@@ -3413,7 +3412,6 @@
   <block id="678ed7731362b0bc9cd907d28b7ec4f5" category="list-text">새 섀시의 ha-config 설정을 MCC로 변경합니다.</block>
   <block id="09a9a100aa76808698c1684a11324cad" category="list-text">새 컨트롤러 모듈의 시스템 ID를 검색합니다.</block>
   <block id="51395ed8dcf20694f7b9a62c66a2721c" category="paragraph">시스템 ID를 확인합니다. 파트너 ID를 설정하고 디스크를 새 컨트롤러 모듈에 할당할 때 필요합니다.</block>
-  <block id="e1e9fa3d9d4f90362f074f019c90eb3a" category="summary">MetroCluster 업그레이드, 전환 및 확장 가이드의 상표 정보</block>
   <block id="b99ba5be13e289565b08f250edeea7b8" category="paragraph">다음 예에서는 인터클러스터 LIF 'cluster01_icl01'과 'cluster01_icl02'를 생성합니다.</block>
   <block id="dc2d97a05f4493a33fe850c759870e80" category="summary">사용하는 업그레이드 또는 업데이트 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
   <block id="301e2a674920a7bb1b220a6ccd88ce36" category="doc">업그레이드 또는 새로 고침 방법 선택</block>
@@ -3423,41 +3421,18 @@
   <block id="a7aaa8ad9b4eb237491656be6847a146" category="list-text">업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다.</block>
   <block id="d88c4996fb2cc79de7a698b7df8ad023" category="paragraph">새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다.</block>
   <block id="94882711d15b981019aa1ce1561c9fb1" category="paragraph">그러면 원래 컨트롤러가 폐기됩니다.</block>
-  <block id="09dfcbc0cceee8247717360bd0733f1c" category="section-title">집계 재배치를 사용하지 않는 프로시저 선택</block>
-  <block id="9f7143c3ebe35a24d494d7e347dc4f89" category="cell">업그레이드 또는 새로 고침 유형입니다</block>
   <block id="75f7d2bcde6cf0fe3c3db259a2547dbc" category="cell">MetroCluster 형식입니다</block>
-  <block id="f56ee108e3b47664e82456fbf68b6cda" category="list-text">범위: 플랫폼(컨트롤러 모듈)만 해당</block>
-  <block id="344a350961d4b3279a1bf51e3f2def2a" category="list-text">방법: 자동 전환/스위치백</block>
-  <block id="966e34443f418eb2dc544779908833ab" category="paragraph"><block ref="966e34443f418eb2dc544779908833ab" category="inline-link-macro-rx"></block></block>
   <block id="a12a3079e14ced46e69ba52b8a90b21a" category="paragraph">IP</block>
-  <block id="fc295d422c1cefba3de763612fefa26b" category="inline-link-macro">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700에서 AFF A900으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)</block>
-  <block id="8fb424fc470de611a2a62971976c4206" category="paragraph"><block ref="8fb424fc470de611a2a62971976c4206" category="inline-link-macro-rx"></block></block>
-  <block id="776bc492f3a4f2cc9ec5ac519b3c8522" category="list-text">방법: 전환/스위치백</block>
   <block id="4f7dd0fe0940df4a5fda327a4ee4ddbd" category="paragraph">9.8</block>
   <block id="3f28886cbb43f1c7c0c4f4d35ecafdde" category="inline-link-macro">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러 업그레이드</block>
-  <block id="31d76b92692867470330ad7bbde7af60" category="paragraph"><block ref="31d76b92692867470330ad7bbde7af60" category="inline-link-macro-rx"></block></block>
-  <block id="6a2eaf8340b529aad0413700b417f836" category="paragraph"><block ref="6a2eaf8340b529aad0413700b417f836" category="inline-link-macro-rx"></block></block>
-  <block id="52e51613975499674a3274607c3b2b19" category="list-text">범위: 플랫폼(컨트롤러 모듈) 및 스토리지 쉘프</block>
   <block id="398ab86a6e7a78acb117ab7d140d06d6" category="list-text">방법: MetroCluster 구성을 확장한 다음 이전 노드를 제거합니다</block>
-  <block id="3fc1a5f7c0561e78aaeef2b4231bca4f" category="paragraph"><block ref="3fc1a5f7c0561e78aaeef2b4231bca4f" category="inline-link-macro-rx"></block></block>
-  <block id="25101db8425d5c0bc04e6d109223fd02" category="paragraph"><block ref="25101db8425d5c0bc04e6d109223fd02" category="inline-link-macro-rx"></block></block>
   <block id="da72e287071989d880a84bc9f714faf6" category="section-title">집계 재배치를 사용하여 프로시저 선택</block>
-  <block id="fc220fa1e514a0098ff6b9739a86bcdb" category="cell">집계 재배치 절차</block>
-  <block id="d2a672acb2ab8b5e74822778c1141a70" category="paragraph">'시스템 컨트롤러 교체' 명령을 사용하고 컨트롤러 모듈과 NVM을 교환합니다</block>
   <block id="04c19f5eb2ebdc099239a7074f8d6534" category="paragraph">9.10.1 이상</block>
   <block id="b9e53a247da3982cb706e33287d2a8fd" category="paragraph">'시스템 컨트롤러 교체' 명령 사용</block>
   <block id="5b34d65f91f37ddae80b6389b69e56f6" category="paragraph">9.8 이상</block>
-  <block id="c6d4a9d3f7628712dae7a41ab974439d" category="inline-link">'시스템 컨트롤러 교체' 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다</block>
-  <block id="6c8dc70fbcb473ab96451fff57f7f3a0" category="paragraph"><block ref="6c8dc70fbcb473ab96451fff57f7f3a0" category="inline-link-rx"></block></block>
   <block id="f8f096d15253e4546e8e8ff39fa22723" category="paragraph">9.5에서 9.7</block>
-  <block id="e513aa5cfbbd2f249692cdb0e9b36322" category="inline-link">"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 ONTAP 9.7로 업그레이드합니다</block>
-  <block id="48735ed0c36ec6507e28385a92f9c1c3" category="paragraph"><block ref="48735ed0c36ec6507e28385a92f9c1c3" category="inline-link-rx"></block></block>
   <block id="570e0e3e350318c0e6af015d23a5b749" category="paragraph">수동 ARL 명령 사용</block>
-  <block id="8e672eb6f0591d6c3be625fb96c708d9" category="inline-link">ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다</block>
-  <block id="ffa4858ba15ab995b35a6841f7fde299" category="paragraph"><block ref="ffa4858ba15ab995b35a6841f7fde299" category="inline-link-rx"></block></block>
   <block id="4b8a576fb64d5b6a41905d5d9b5d1568" category="paragraph">9.7 이하</block>
-  <block id="a9143ce30f02be342b3ac1761b894447" category="inline-link">ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다</block>
-  <block id="c3e6669930ba273936fc70ff1592ca3d" category="paragraph"><block ref="c3e6669930ba273936fc70ff1592ca3d" category="inline-link-rx"></block></block>
   <block id="c2a508ea1c1dc6acffdbe9b7e9055d55" category="summary">MetroCluster 구성에서 메타데이터 볼륨을 한 Aggregate에서 다른 aggregate로 이동할 수 있습니다. 소스 애그리게이터가 사용 중지되거나 미러링되지 않은 경우 또는 애그리게이트에 적합하지 않은 다른 이유로 메타데이터 볼륨을 이동할 수 있습니다.</block>
   <block id="9a9ff442998d6bb127ed2c5c3627be64" category="list-text">이 작업을 수행하려면 클러스터 관리자 권한이 있어야 합니다.</block>
   <block id="8cbb4ac8a6b0f1215f501bb60892ae59" category="list-text">대상 애그리게이트는 미러링되어야 하며 성능 저하 상태가 아니어야 합니다.</block>
@@ -3585,7 +3560,6 @@
   <block id="c6084eb130de0b018e621dc1c9cf963f" category="summary">MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 구성을 지워야 합니다.</block>
   <block id="bc7aab32c224c2ee49642086c4c9aa59" category="list-text">이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="147cf28bb435c696edc54db7c4d19273" category="list-text">IP 스위치를 업그레이드하는 경우 이 새로 고침 절차를 수행하기 전에 IP 스위치를 업그레이드해야 합니다.</block>
-  <block id="1f97a710da6fbb3cde26846701fd10e0" category="list-text">Broadcom BES-53248 스위치로 구성된 AFF A320 시스템에서는 이 절차가 지원되지 않습니다.</block>
   <block id="3e47f65a0c143cd4a51a7540fd2001fa" category="list-text">다음 명령을 실행합니다. +'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"</block>
   <block id="6837dd1f788164eabd6d97dbcbe7e4c9" category="paragraph">다음 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.</block>
   <block id="c2c1067a31958842c8438647512d141e" category="list-text">의 모든 단계를 수행합니다 <block ref="3e70f7d1f526cf6dd7a89a97c88d0cc8" category="inline-link-macro-rx"></block> 를 클릭하여 구성에 새 노드 및 스토리지를 추가합니다.</block>
@@ -4000,7 +3974,6 @@
   <block id="eb6d0056a7ec956f99a2591ea6f92634" category="list-text">노드 프롬프트에서 고급 권한 수준(+'et-Privilege advanced')으로 변경합니다</block>
   <block id="f20ec4a663953b8413f93cdcbc65817b" category="paragraph">고급 모드로 계속 진행하고 고급 모드 프롬프트(*&gt;)를 보려면 "* y*"로 응답해야 합니다.</block>
   <block id="9eacad39f32dfb7a1a6d5e468b030290" category="list-text">simulate parameter:+'MetroCluster switchover-simulate'로 switchover 동작을 수행한다</block>
-  <block id="4d3c695f9939143bace5ffd58dc7d269" category="summary">MetroCluster 업그레이드, 전환 및 확장 가이드에 대한 기계 번역 정보</block>
   <block id="b0223eb63d90d053234b82e3aab3578f" category="summary">패브릭의 FC 스위치에서 기존 컨트롤러 모듈을 분리해야 합니다.</block>
   <block id="885bcd82f73e0085b7bef0b02fbae9ab" category="doc">패브릭에서 기존 DR 그룹 연결 끊기</block>
   <block id="dae73f4efc19df59fc64a7e73e05a617" category="list-text">기존 컨트롤러 모듈을 유지 보수 중인 스위치 패브릭에 연결하는 HBA 포트를 비활성화합니다.</block>
@@ -4047,8 +4020,6 @@
   <block id="50353645f43a4a7ccdced7165b02cc34" category="paragraph">'스토리지 브리지 쇼'</block>
   <block id="9aa100213ac06e4996c83aafb9f55bca" category="paragraph">폴링 간격 때문에 모든 데이터가 반영되는 데 15분 정도 걸릴 수 있습니다. ONTAP 상태 모니터는 "상태" 열의 값이 "확인"이고 WWN(Worldwide Name)과 같은 기타 정보가 표시되는 경우 브리지에 연결하고 모니터링할 수 있습니다.</block>
   <block id="bb9db66136ab8a41a65cc419b36be80d" category="paragraph">다음 예는 FC-to-SAS 브리지가 구성된 경우를 보여줍니다.</block>
-  <block id="f3a293b5084b9afc68a047d6efd28523" category="summary">MetroCluster 업그레이드, 전환 및 확장 가이드의 저작권 정보.</block>
-  <block id="cb7debfd6008e33f68615f75d3145513" category="summary">MetroCluster 업그레이드, 전환 및 확장 가이드에 대한 저작권, 상표 및 기계, 번역 정보.</block>
   <block id="7ecc1bdad9ef5a9d1921fae2612d70b5" category="summary">파트너 사이트의 클러스터와 연결이 되도록 새 컨트롤러 모듈을 클러스터 피어링 네트워크에 케이블로 연결해야 합니다.</block>
   <block id="cd6c42f22b0649cda62803cd1b11f14a" category="doc">새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결</block>
   <block id="14ac4530bc2bbdb5e1f11a09cb300909" category="summary">두 컨트롤러 모듈 모두에서 HA 쌍을 형성할 수 있도록 파트너 시스템 ID를 설정해야 합니다.</block>
@@ -8106,10 +8077,7 @@
   <block id="9784a9ef130e7d3b3d90574becda9acb" category="paragraph">'node run-node-name sysconfig-a'</block>
   <block id="cbd4d4672378f350894bea8cdbc4bb91" category="list-text">노드가 비-HA 모드인지 확인합니다.</block>
   <block id="99121f5c6ebd942309c1151523466608" category="paragraph"><block ref="99121f5c6ebd942309c1151523466608" category="inline-link-macro-rx"></block></block>
-  <block id="9dbbc592d23a777892a7b326fdecb27a" category="summary">그런 다음 MetroCluster IP 구성으로 전환하려면 지원되는 플랫폼 모델을 조합해야 합니다.</block>
   <block id="c5ca83d0e723113560fb2c95b33b532b" category="doc">무중단 전환을 지원하는 플랫폼</block>
-  <block id="e9f061fb2bc125b997083e48a3442510" category="list-text">녹색 셀은 조합이 지원된다는 것을 나타냅니다.</block>
-  <block id="7bf7e1a6cec96a843176b66291c50547" category="list-text">흰색(빈) 셀은 조합이 지원되지 않음을 나타냅니다.</block>
   <block id="1799408ec992ed3e5561f7b04ccef0fe" category="paragraph">예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.</block>
   <block id="2abcc8e487f56251cd49b5a74738c4c4" category="section-title">Cisco 9336C-FX2 공유 스위치 구성으로 전환</block>
   <block id="f8e0758b3af85da8f282b95e41204586" category="paragraph">Cisco 9336C-FX2 공유 스위치 구성으로의 전환은 지원되지 않습니다. 공유 스위치 구성 _ 은(는) 스위치가 MetroCluster 연결과 스토리지 쉘프 연결을 모두 제공하는 구성입니다.</block>
@@ -8929,15 +8897,11 @@
   <block id="ae4bcbe3a4d8a4dd251ebc90c0689dc3" category="paragraph">4개 노드</block>
   <block id="b8910962b1d031cc1eb8e8ad588c4c48" category="paragraph">무중단</block>
   <block id="b1967383562a98a66ed0eff3ea640595" category="paragraph">새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.</block>
-  <block id="1f59c4cc50146ab19215fd6b4be7ee5e" category="paragraph"><block ref="1f59c4cc50146ab19215fd6b4be7ee5e" category="inline-link-macro-rx"></block></block>
   <block id="5c85f685c62c106f7c5565f5f9efa724" category="paragraph">2개 노드</block>
   <block id="fb36a3d5cdf2e3b5ecef9b3c9fbab504" category="paragraph">성능</block>
   <block id="8377dec7f2f76b3e412145b87daa08da" category="paragraph">새로운 스토리지 쉘프는 원래 플랫폼과 새 플랫폼 모두에서 지원됩니다.</block>
-  <block id="fb41234c74201660fa7a3a1063d04365" category="paragraph"><block ref="fb41234c74201660fa7a3a1063d04365" category="inline-link-macro-rx"></block></block>
   <block id="048526ef7c67ac433dc4a1d99ed45b9a" category="paragraph">새로운 스토리지 쉘프는 원래 플랫폼과 새 플랫폼 모두에서 지원됩니다. 이전 스토리지 쉘프는 폐기되어야 합니다.</block>
-  <block id="70e8c86cc71d382ac668bb68bb33223a" category="paragraph"><block ref="70e8c86cc71d382ac668bb68bb33223a" category="inline-link-macro-rx"></block></block>
   <block id="4bc2f58697bbe4a9e2718e615c7c46b8" category="paragraph">이전 스토리지 쉘프는 새 플랫폼에서 지원되지 않습니다. 이전 스토리지 쉘프는 폐기되어야 합니다.</block>
-  <block id="85bb194a69db1254e3990cfd7e6324af" category="paragraph"><block ref="85bb194a69db1254e3990cfd7e6324af" category="inline-link-macro-rx"></block></block>
   <block id="8a532061ed88c0b4cc8381f7f929de61" category="list-text">이 절차는 기존 스토리지 쉘프 모델이 새로운 MetroCluster IP 플랫폼 모델에서 지원되지 않는 경우에만 사용해야 합니다.</block>
   <block id="fb5117e043a4d64b796d5d9d74f05477" category="section-title">새로운 노드에서 쉘프가 지원되지 않는 경우의 전환 요구사항</block>
   <block id="797268e1d058e6c9f785b9ffbc86269f" category="list-text">기존 구성은 2노드 패브릭 연결 또는 확장 MetroCluster 구성이어야 하며 모든 노드에서 ONTAP 9.8 이상을 실행해야 합니다.</block>
@@ -10994,10 +10958,6 @@
   <block id="76171250896c5dfe6901a6c8c3fb3f68" category="paragraph"><block ref="76171250896c5dfe6901a6c8c3fb3f68" category="inline-link-macro-rx"></block></block>
   <block id="0690a5c4248a898ac79d4ea42b64f808" category="list-text">의 절차를 사용하여 클러스터 피어 관계를 생성합니다.</block>
   <block id="dc4f0f08d29c6f89700794f3a34384f2" category="paragraph"><block ref="dc4f0f08d29c6f89700794f3a34384f2" category="inline-link-macro-rx"></block></block>
-  <block id="44736a1d7cbc47ca3c352d26f21c493a" category="summary">이 가이드에서는 패브릭 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법을 설명합니다.</block>
-  <block id="0d258df3b9e4e8a2039306e0ce7265cf" category="paragraph">다음과 같은 상황에서 패브릭 연결 MetroCluster 구성을 계획, 설치 및 구성하려면 이 가이드를 사용해야 합니다.</block>
-  <block id="1011922596834fad03cbfa79b8eea6de" category="list-text">패브릭 연결 MetroCluster 구성의 아키텍처를 이해하려고 합니다.</block>
-  <block id="3871b5c010a2e068a625e5d358ef749a" category="list-text">Fabric 연결형 MetroCluster 구성을 위한 요구사항과 모범 사례를 파악하려고 합니다.</block>
   <block id="2f02a7617f22d45dd2c91c2ad0c9bf2b" category="summary">MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 네트워크를 통해 들여다봅니다. 클러스터 피어링은 사이트 간에 SVM(이전의 vserver\)의 동기식 스토리지 가상 시스템 미러링을 지원합니다.</block>
   <block id="4ff9b388af4d661484920a7b2002bc50" category="image-alt">MCC HW 아키텍처 클러스터 피어링</block>
   <block id="8bd0cd6715687fc71d09455137c040b9" category="paragraph"><block ref="8bd0cd6715687fc71d09455137c040b9" category="inline-link-macro-rx"></block></block>
@@ -11633,7 +11593,6 @@
   <block id="77d873129b2551d3791bd53918453706" category="sidebar">Tiebreaker 소프트웨어를 구성합니다</block>
   <block id="842ed7dcbaa63b60b53e91a89a33e02c" category="sidebar">Tiebreaker 소프트웨어의 SNMP 설정을 구성합니다</block>
   <block id="9e22e5887d35d0e7eed7b0656d5e7bfa" category="sidebar">MetroCluster 구성을 모니터링합니다</block>
-  <block id="e4005417f8696e4a4da8df0b2f48d4fd" category="sidebar">MetroCluster 구성을 업그레이드하거나 확장합니다</block>
   <block id="30836d6051134105cf07f488afe11425" category="sidebar">4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="6e1b901662872166ef0e661d1481924c" category="sidebar">2노드 MetroCluster FC 구성을 4노드 구성으로 확장합니다</block>
   <block id="fbda6a351e5c32b65583383006360afa" category="sidebar">MetroCluster 구성의 상태를 확인합니다</block>
@@ -11943,8 +11902,6 @@
   <block id="3967230285e3296d4600c5d6f8a225a2" category="list-text">노드에 로그인하여 cluster setup을 입력한 다음 클러스터에 가입하라는 메시지가 표시되면 join을 입력합니다.</block>
   <block id="2aae09e4f065abad72f108794c111bcd" category="paragraph">를 클릭합니다 <block ref="95a2ad6fc516d3f7074e7d260643f587" category="inline-link-macro-rx"></block> 사용 중인 ONTAP 버전에 대한 추가 세부 정보가 포함되어 있습니다.</block>
   <block id="75f592488d6be5738040725bd9891f31" category="list-text">추가하려는 장비가 지원되어야 하며 다음 절차에 설명된 모든 요구 사항을 충족해야 합니다.</block>
-  <block id="d0adaf602e73b54e5ed4fca02915a8c2" category="inline-link">기계 번역 고지 사항</block>
-  <block id="9d5c01825c136f7f2d4457afa4f41770" category="paragraph">현지화된 컨텐츠에 대한 중요 정보는 에서 확인하십시오<block ref="f07125fb97264bd7aeb45160d145d34f" category="inline-link-rx"></block></block>
   <block id="437238e14c493f4cd7340eb1bdcdd921" category="summary">FiberBridge 브리지는 타사 SNMP 모니터링 도구를 지원하지 않습니다. ONTAP 9.8부터 FC-SAS 브리지는 기본적으로 대역내 연결을 통해 모니터링되며 추가 구성은 필요하지 않습니다.</block>
   <block id="a45d83a0b1153ad4e451241db8943830" category="list-text">ONTAP 9.8부터 FC-SAS 브리지는 기본적으로 대역내 연결을 통해 모니터링되며 추가 구성은 필요하지 않습니다.</block>
   <block id="52812075c78ece551ae010bb2c3594ea" category="paragraph">ONTAP 9.5부터 브리지의 _ 대역 내 관리 _ 가 지원됩니다. 즉, 브리지에 대한 FC 연결을 통해 ONTAP CLI에서 브리지를 구성 및 모니터링할 수 있습니다. 브리지 이더넷 포트를 통해 브리지에 물리적으로 액세스할 필요는 없으며 브리지 사용자 인터페이스는 필요하지 않습니다.</block>
@@ -12137,8 +12094,6 @@
   <block id="5c5abfeb23848eee7e1fb00c2a61db6c" category="paragraph">MAUSO는 다음 시나리오에서만 시작됩니다.</block>
   <block id="d805df154de0ed954114c0b8a30d6cf0" category="list-text">각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화됩니다.</block>
   <block id="539aa46206b59c007151f02f46d35617" category="list-text">정상적인 사이트의 노드 중 테이크오버 상태가 아닌 노드는 없습니다.</block>
-  <block id="1bcbe4bd68c550a7ed28f4bdd586bc74" category="inline-link">"system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다</block>
-  <block id="5ddb9938498e31a4b1c392ab5953e15b" category="paragraph"><block ref="5ddb9938498e31a4b1c392ab5953e15b" category="inline-link-rx"></block></block>
   <block id="9630e0ae86014261ce835fe1e1ffcd0e" category="paragraph">각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.</block>
   <block id="b8ce668f7b81ebccc724b47a22aafe9f" category="paragraph">MetroCluster 시스템의 서비스 절차에는 드라이브 쉘프, IP 스위치, FC 스위치, FC-to-SAS 브리지 및 SAS 케이블에 대한 펌웨어 업그레이드 및 하드웨어 교체 절차가 포함됩니다.</block>
   <block id="51556e4766045ccfd74aafe1f8271966" category="paragraph">자세한 내용은 를 참조하십시오<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block></block>
@@ -12237,7 +12192,6 @@
   <block id="22c9730efa04ff77f4d689d1554cb1af" category="paragraph">FAS8200/A300</block>
   <block id="44966f51999c176196bdbfe7e74f3762" category="paragraph">3, 4, 9, 10, 11, 12</block>
   <block id="3ee537e70a06614ada97e070ef70fe96" category="paragraph">FAS8300/A400/FAS8700</block>
-  <block id="fb6814303d896b70f8e88a7a5fa288c1" category="list-text">파란색 셀은 ONTAP 9.11.1부터 조합이 지원된다는 것을 나타냅니다.</block>
   <block id="8cff99d2c284195b8638b34190ed3388" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1 또는 9.11.1.</block>
   <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
@@ -12565,7 +12519,6 @@
   <block id="36602be901b56918898e8b02c97104c1" category="inline-xref">하나 이상의 플렉스가 오프라인 상태로 유지되는 경우 미러를 재구축하려면 추가 단계가 필요합니다.</block>
   <block id="578f0ca9e0f2b8dc5eca3447de5f13b7" category="paragraph">로 진행합니다 <block ref="3ea650e98c5c617b3f8d234e7fcf7e38" category="inline-xref-macro-rx"></block></block>
   <block id="c9e7a6f18b5625d689b9621860dc8f89" category="admonition">사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <block ref="25689aeb5a175ff3bbdb354620fd37b8" category="inline-xref-macro-rx"></block> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <block ref="98b89efafafc6baeefb50e35f16eee3c" category="inline-xref-macro-rx"></block></block>
-  <block id="d7cccafb4df9b0ac0b83e89d61285a81" category="list-text">이 절차는 FAS2750, AFF A220, FAS500f 및 A250 시스템에서는 지원되지 않습니다.</block>
   <block id="39297c491b5456e17752798ab9be67b0" category="paragraph">이 업그레이드를 수행할 때 MetroCluster 스위치에서 RCF 파일을 업데이트해야 합니다. 다음 표에는 AFF A900/FAS9500 MetroCluster IP 구성에서 지원되는 VLAN 범위가 나와 있습니다.</block>
   <block id="d267ad4b716836a6875d9be23fc81c21" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 섹션에서</block>
   <block id="d07bebb0e23926af3c78f855a3108b26" category="admonition">MetroCluster check run과 MetroCluster check show를 실행하면 다음과 유사한 오류 메시지가 표시됩니다.</block>
@@ -12585,7 +12538,6 @@
   <block id="eb4cfd99b709d0b0ddc435f063be95cf" category="paragraph">브레이크아웃 케이블(2개)</block>
   <block id="e5df3565fbad5a4849fc6fb6ec79e8d1" category="list-text">BES-53248 스위치에서 40 또는 100Gbps ISL 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
   <block id="394d86b50aa384c22c3eeb7d90023e15" category="list-text">Cisco 9336C-FX2(NS224 셸프 연결)용 RCF 파일을 생성할 때 ISL을 기본 * 또는 * 브레이크아웃 모드로 구성해야 합니다.</block>
-  <block id="bc85eece93965de5b37264d01e4e5eeb" category="image-alt">FC IP 전환 대도시 이상</block>
   <block id="731380609e4acd613ed054b92fc261e6" category="list-text">'show FIPS status' 명령을 사용하여 사용자의 EFOS 버전이 FIPS 호환 버전인지 또는 비 FIPS 호환 버전인지 확인합니다. 다음 예에서는 IP_SWITCH_A_1이 FIPS 호환 EFOS를 사용하고 있으며 IP_SWITCH_A_2는 FIPS 비호환 EFOS를 사용하고 있습니다.</block>
   <block id="0b9982c26f9b690896e158b901c7001c" category="paragraph">* 예 1 *</block>
   <block id="66fcc909c7d6b29950f9da753e168312" category="paragraph">* 예 2 *</block>
@@ -12596,7 +12548,6 @@
   <block id="d4a39e254ca0e79abbaea7e91f10d1c8" category="list-text">포트 53과 54를 40Gbps 또는 100Gbps MetroCluster ISL로 사용합니다.</block>
   <block id="39d6f919c4f9487cf3eba1907393cc85" category="list-text">로컬 클러스터와 MetroCluster 인터페이스를 포트 49-52에 연결하는 플랫폼을 사용합니다.</block>
   <block id="b457d19307b0152d2948b75490c21739" category="list-text">RCF 파일을 첫 번째 스위치에 복사합니다. 'copy sftp://user@ftp-server-ip-address/rcfFiles/switch-specific-RCF/BES-53248_v1.32_Switch-A1.txt NVRAM: script BES-53248_v1.32_Switch-A1.scr'</block>
-  <block id="2a9c49e8bc60cebb402b316352750e02" category="image-alt">FC 구성에서 지원되는 컨트롤러 업그레이드 조합</block>
   <block id="6ecbc3bbbc5acac0e3a1eaa928b0ef3a" category="list-text">두 개의 데이터 파티션</block>
   <block id="203589fdbad6f6dc48cf251ed51e812a" category="list-text">스페어 파티션이 없습니다</block>
   <block id="78da571ba5b07c0449886d55d21269c6" category="paragraph">수동 할당이 필요합니다</block>
@@ -12686,13 +12637,8 @@
   <block id="31b0afd6a52b93da38138e53814052b1" category="image-alt">MCC IP 케이블 연결 A800 MN2100</block>
   <block id="fb66ffdb7a65b64035629ded64b78faf" category="sidebar">NVIDIA IP 스위치를 구성합니다</block>
   <block id="344184862169747549deee4b87dc1cf2" category="section-title">지원되는 플랫폼 조합</block>
-  <block id="a3e36fda70f465bc183d8a10d4112db7" category="paragraph">MetroCluster FC 구성에서 스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다. 다음 표에서는 지원되는 컨트롤러 업그레이드 조합을 보여 줍니다.</block>
-  <block id="c847f7b69bc5bbe9de608a708803dafc" category="paragraph">현재 플랫폼 * 행과 * 대상 플랫폼 * 열의 교차점이 녹색이 아닌 경우 이 절차를 사용할 수 없습니다.</block>
   <block id="96235e4cabe659a051590175116c1e60" category="paragraph">을 참조하십시오<block ref="2c4f45f6db308a425e052afade2ba656" category="inline-link-rx"></block> 을 참조하십시오.</block>
-  <block id="8c97e6473cb544145de6aa0144fc60b6" category="inline-link-macro">AFF A700/FAS9500 전환/스위치백 절차</block>
-  <block id="4eef8f838c31b644dbfa5638ac4dae43" category="admonition">AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 업그레이드하는 내용은 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 <block ref="246d2420012a9cc76fe218ed0d95c813" category="inline-link-macro-rx"></block>.</block>
   <block id="339aff0aa186e93b68d974842b334cfa" category="doc">여기서 컨트롤러 업그레이드, 시스템 업데이트 또는 확장 중 하나를 선택합니다</block>
-  <block id="d9072960df90d32fffa3f4db1496457e" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택했습니다.</block>
   <block id="0fa722347ab16c39e7070989619c6d3a" category="list-text">컨트롤러 업그레이드 절차는 컨트롤러 모듈에만 적용됩니다. 컨트롤러가 새 컨트롤러 모델로 교체됩니다.</block>
   <block id="d54a35a8f37af3fbffcb482b7998215b" category="list-text">확장 절차를 사용하면 컨트롤러 및 쉘프를 제거하지 않고 MetroCluster 구성에 추가할 수 있습니다.</block>
   <block id="855a42fae714160495a9f9f355ec5d3e" category="paragraph">사용하는 절차는 MetroCluster 유형과 기존 컨트롤러의 수에 따라 다릅니다.</block>
@@ -12713,34 +12659,20 @@
   <block id="2c67410cdfbda39caa185635976fb5a3" category="list-text"><block ref="2c67410cdfbda39caa185635976fb5a3" category="inline-link-macro-rx"></block></block>
   <block id="af90c7c33f97cc152b46f35af11f2720" category="summary">사용하는 업데이트 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
   <block id="c3845446d08fee33d16bfdbbedffdc88" category="doc">시스템 새로 고침 방법 선택</block>
-  <block id="67d9ea64d4d1f19a6fa9178bcb2a126b" category="paragraph">사용하는 시스템 업데이트 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
-  <block id="5d113f2038d289f391614c39043629e8" category="cell">범위</block>
-  <block id="fc392b1e7219ffdf49fa895aa4900b36" category="cell">구성 유형</block>
-  <block id="013647ab1eb017c353f89f46ca2c0d85" category="cell">ONTAP 지원</block>
   <block id="ebc2ca8d2c7ef918abcfff80809d9aab" category="summary">사용하는 업그레이드 절차는 플랫폼 모델에 따라 다릅니다.</block>
-  <block id="1c9a0818e732ba5a475e7e19b4991adf" category="doc">컨트롤러 업그레이드 절차를 선택하십시오</block>
-  <block id="895bf4a1ca3e66ce2801d409eb6daf37" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
-  <block id="362eddecd5ba3f79183ea3b743c4526c" category="paragraph">다음 표에서는 지원되는 컨트롤러 모델 조합을 보여 줍니다.</block>
   <block id="c163452b6d6fda6fddd3c92df9b52e8f" category="section-title">이 절차에서 지원하는 플랫폼</block>
   <block id="3af8c4bc8c1236580221c8d8a69ebe0a" category="list-text">대상(새) 플랫폼은 원래 플랫폼과 다른 모델이어야 합니다.</block>
   <block id="1105b1e9f2d843b22143dc8f0c9ab49c" category="list-text">MetroCluster IP 구성에서 이 절차를 사용하여 특정 플랫폼 모델만 업그레이드할 수 있습니다.</block>
-  <block id="c66499ab9700410fb3d8b3a64e9e291c" category="list-text">다음 표에는 지원되는 플랫폼 모델 조합이 나와 있습니다.</block>
-  <block id="dd3dcc697b8eff7c7acdca7e5bb2b62a" category="image-alt">지원되는 컨트롤러 업그레이드 mcip sosb</block>
   <block id="173073f2b4c10001197b8ecb42c6e83b" category="paragraph">8000 시리즈 시스템</block>
   <block id="cc4c5c397558976c3fb0387232297737" category="sidebar">여기서 시작 - 절차를 선택합니다</block>
   <block id="db267dea88bedafa5679df8ad5247270" category="sidebar">컨트롤러 업그레이드, 시스템 업데이트 또는 확장을 선택하십시오</block>
   <block id="676a1a7f93fd600585d02e62f2d0a51b" category="sidebar">컨트롤러 업그레이드 절차를 선택합니다</block>
   <block id="62cbee147331935911956f9a0173e5dc" category="sidebar">시스템 새로 고침 절차를 선택합니다</block>
   <block id="3cf7b8011f891632a5de191822ee417b" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC에서 컨트롤러를 업그레이드합니다</block>
-  <block id="00dc868cd4449d840bca045060dbf7cb" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC의 MetroCluster FC에서 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="ebd157c1e8defc9bf33ac98105172329" category="sidebar">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC에서 컨트롤러를 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 업그레이드</block>
-  <block id="31214012750b888cbecfe6100ea9a335" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)</block>
   <block id="0f0bf8d23aa860be830e25b6f1b90c86" category="sidebar">스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster IP의 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드</block>
   <block id="34e0a85e8dfaaeca6dadc1260cdef2ae" category="sidebar">4노드 MetroCluster FC 구성을 업데이트합니다</block>
-  <block id="ddbd6ef13caff567c99b6c907c4fee1c" category="list-text">AFF A700/FAS9000 컨트롤러에서 AFF A900/FAS9500 컨트롤러로 컨트롤러 업그레이드는 이 표에 나와 있지 않습니다. 이 조합은 을 사용하여 지원됩니다 <block ref="246d2420012a9cc76fe218ed0d95c813" category="inline-link-macro-rx"></block>.</block>
   <block id="80a030e3352fb989821aa7c6d15bcfad" category="inline-link-macro">공개 보고서</block>
-  <block id="9f65944593edc840cbe5ddb177ae6b75" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
-  <block id="bf65ff1f2c88ec7d1999086f6c8ba8ea" category="list-text">온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼의 업그레이드는 ONTAP 9.9.1 이전 버전을 실행하는 시스템에서만 지원됩니다. 자세한 내용은 를 참조하십시오 <block ref="845e64151c0738e7120f5a63234759b0" category="inline-link-macro-rx"></block>.</block>
   <block id="dda33fc9a3cc083db08123f7d7e692a8" category="inline-link-macro">MetroCluster 자동 강제 적용 시 위험 및 제한 사항</block>
   <block id="160ccce82c893f99e3f0614ca209899d" category="admonition">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 을 검토하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
   <block id="2c697c75c3912edd44d925cbf3b6566c" category="list-text">MetroCluster 자동 강제 전환을 구성하려면 다음 명령을 실행합니다.<block ref="956c336644e4861eddad733e8ae9f18c" prefix=" " category="inline-code"></block></block>
@@ -12833,4 +12765,83 @@
   <block id="68d8047cbf72a612dd739f574baa912c" category="paragraph">로컬 클러스터 연결이 스위치에 연결되어야 하는 구성 또는 기능은 사용할 수 없습니다. 예를 들어, MetroCluster 호환 스위치에는 다음 구성 및 절차를 사용할 수 없습니다.</block>
   <block id="999a0234ad26235f40e860b0131203f6" category="admonition">값이 누락되면 플랫폼을 MetroCluster 호환 스위치와 함께 사용할 수 없음을 나타냅니다.</block>
   <block id="e6e94fa732001e55f7fcf67c01c5f249" category="paragraph">ISL에서 MetroCluster 트래픽이 있지만 MetroCluster 인터페이스에 연결되지 않는 스위치를 구성해야 할 수 있습니다. 이 경우 트래픽은 이미 분류되어 있으며 적절한 대기열에만 매핑되어야 합니다. 다음 예에서는 모든 COS5 트래픽이 클래스 RDMA에 매핑되고 모든 COS4 트래픽이 클래스 iSCSI에 매핑됩니다. 이는 MetroCluster 트래픽뿐만 아니라 COS5 및 COS4 트래픽의 * 모든 * 에 영향을 미칩니다. MetroCluster 트래픽만 매핑하려면 위의 클래스 맵을 사용하여 액세스 그룹을 사용하여 트래픽을 식별해야 합니다.</block>
+  <block id="09d852286694a04fbe67a38fda6ca956" category="image-alt">MetroCluster FC IP 전환 매트릭스입니다</block>
+  <block id="421c8863e1f7223f216aacf99393b7dd" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.11.1 이상이 필요합니다.</block>
+  <block id="234207cc1f3002485022da1892b4559b" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스에 대해 40GbE 인터페이스가 있어야 합니다.</block>
+  <block id="6ae32e231af4316f91162f3b9a761e43" category="list-text">참고 3: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다.</block>
+  <block id="60ddbd1babdd945c26fbc431202fea6c" category="inline-link-macro">Hardware Universe</block>
+  <block id="f90dfbd0dbb63ace6227bf8f3e75efb6" category="admonition">이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다. 을 참조하십시오 <block ref="62911b0739c1772914819ee9e7282ee4" category="inline-link-macro-rx"></block> 플랫폼 제한.</block>
+  <block id="6e2ee39d0f9ccdad593782674a048e67" category="inline-link-macro">절차 링크</block>
+  <block id="7fcdce91feb430306391667c0a012cd7" category="paragraph"><block ref="7fcdce91feb430306391667c0a012cd7" category="inline-link-macro-rx"></block></block>
+  <block id="0a623e8d3b5ae84e14f2fe4f454a3abb" category="paragraph"><block ref="0a623e8d3b5ae84e14f2fe4f454a3abb" category="inline-link-macro-rx"></block></block>
+  <block id="8435af9be97e0c50b0d730d64b42f198" category="paragraph"><block ref="8435af9be97e0c50b0d730d64b42f198" category="inline-link-macro-rx"></block></block>
+  <block id="f7080628c8d078c209fb6b6b18f03a3a" category="paragraph"><block ref="f7080628c8d078c209fb6b6b18f03a3a" category="inline-link-macro-rx"></block></block>
+  <block id="4975610bd246038bf0371f5dff472f85" category="list-text">MetroCluster FC 구성에서 이 절차를 사용하는 경우에만 특정 플랫폼 모델을 새로 고칠 수 있습니다.</block>
+  <block id="837991be7d2221d6599e3d88efd529fd" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 새로 고침 표를 참조하십시오 <block ref="098d9a9640b5298b40bdef0da63bc459" category="inline-link-macro-rx"></block>.</block>
+  <block id="0defe01fed70ecdf301ed45ee130f658" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 <block ref="5e51ded3128b8f60bc0b91c41dccbb25" category="inline-link-macro-rx"></block>.</block>
+  <block id="7aeedda5f35486a7239b2a68ae68fb9a" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택할 수 있습니다.</block>
+  <block id="959c17d1eadff13225c68a5578c6da93" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
+  <block id="822ff8bdadd23c839b2a13dbdf0af776" category="paragraph">업그레이드 절차에서는 컨트롤러가 새 컨트롤러 모델로 교체됩니다. 스토리지 쉘프 모델은 업그레이드되지 않습니다.</block>
+  <block id="8ddc003a58eb9422a54e43b4cfe03f2e" category="list-text">스위치오버 및 스위치백 절차에서 MetroCluster 스위치오버 작동은 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공하는 데 사용됩니다.</block>
+  <block id="789c52582d523f3977d636da81e92dc0" category="list-text">ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.</block>
+  <block id="316cc41a2ded57b927048db5915a847f" category="section-title">스위치오버 및 스위치백 프로세스를 사용하는 절차 선택</block>
+  <block id="310848f15048cc78b3cbee9c61235054" category="paragraph">아래 FC 또는 IP 표에서 현재 플랫폼을 선택합니다. 현재 플랫폼 행과 대상 플랫폼 열이 교차하는 부분이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
+  <block id="569cf9bf2c0f655af1cc3b1657f11706" category="section-title">MetroCluster IP 컨트롤러 업그레이드가 지원됩니다</block>
+  <block id="540ce52d50e838f18565d459be99ad07" category="image-alt">MetroCluster IP 업그레이드 테이블</block>
+  <block id="871aaccc4c0a59b618736750595955e7" category="list-text">참고 1: 이 업그레이드의 경우 절차를 사용하십시오 <block ref="f668bd1de55e6e087edcf0e6120e96e3" category="inline-link-macro-rx"></block></block>
+  <block id="59710baa552439a5c3866c2907720be7" category="section-title">지원되는 MetroCluster FC 컨트롤러 업그레이드</block>
+  <block id="4c3f5a4336bfad25061595eaff859835" category="image-alt">MetroCluster FC 업그레이드 테이블입니다</block>
+  <block id="9ae1fbeadb6e0efc4e024384fb8a4f8d" category="inline-link">기술 자료 문서</block>
+  <block id="6bd20d1a4e5bd1d6bed1627ed32e934c" category="list-text">참고 1: 기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 포트 1c 및 1d를 사용할 때 컨트롤러를 업그레이드하려면 다음을 참조하십시오<block ref="058c6692589b3956d6bd485ac9c6cea6" category="inline-link-rx"></block>.</block>
+  <block id="67be5a03851a4b6d9deae18ad49f328e" category="list-text">참고 2: 온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 ONTAP 9.9.1을 실행하는 시스템에서만 지원됩니다. 또는 그 이전 버전. 자세한 내용은 를 참조하십시오 <block ref="54dac02f94a6488bb50eb2223b2531dc" category="inline-link-macro-rx"></block>.</block>
+  <block id="24e0de0a456339a0645a68e87b1bd30e" category="list-text">참고 3: 이 업그레이드에 대해서는 을 참조하십시오 <block ref="d4055a630aa0f5dfe07651f60a376ff8" category="inline-link-macro-rx"></block></block>
+  <block id="2a4d011a1daa1baf70a0642eaa186c4b" category="cell">업그레이드 방법</block>
+  <block id="5fad8e8329f6ac022801d63699f46933" category="paragraph">'시스템 컨트롤러 교체' 명령으로 업그레이드하십시오</block>
+  <block id="6987ada6ea28beb46126004956a5b490" category="paragraph"><block ref="6987ada6ea28beb46126004956a5b490" category="inline-link-macro-rx"></block></block>
+  <block id="38300c3bac1d8ea373eab8d253e6145a" category="paragraph">CLI 명령을 사용한 수동 업그레이드(AFF A700/FAS9000에서 AFF A900/FAS9500으로 업그레이드)</block>
+  <block id="728a0a50f7a8d4bbdbdba3c233f966ba" category="paragraph"><block ref="728a0a50f7a8d4bbdbdba3c233f966ba" category="inline-link-macro-rx"></block></block>
+  <block id="0eed08e9bdf744019f74d44b9f20dfb9" category="paragraph"><block ref="0eed08e9bdf744019f74d44b9f20dfb9" category="inline-link-macro-rx"></block></block>
+  <block id="cfe38c12e0e54947d3f0085a1ddb68cc" category="paragraph">CLI 명령을 사용한 수동 업그레이드</block>
+  <block id="5f290ae29562085cc0cef01e0f484b1d" category="paragraph"><block ref="5f290ae29562085cc0cef01e0f484b1d" category="inline-link-macro-rx"></block></block>
+  <block id="28d9d9e03b64356e498c630e744a9cdf" category="paragraph"><block ref="28d9d9e03b64356e498c630e744a9cdf" category="inline-link-macro-rx"></block></block>
+  <block id="0feef50dfeaf08303a2284d2c2ff6eb4" category="cell">애그리게이트 재배치</block>
+  <block id="5c6fc64fa41aef579f27097f378325cb" category="paragraph">사용<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 컨트롤러 모듈 및 NVM 교체(AFF A700에서 AFF A900으로 업그레이드)</block>
+  <block id="38a031e8dad2eab70ea05c570be3935e" category="paragraph"><block ref="38a031e8dad2eab70ea05c570be3935e" category="inline-link-rx"></block></block>
+  <block id="b80a36d83825959bd2fd92ffd36709e2" category="paragraph"><block ref="b80a36d83825959bd2fd92ffd36709e2" category="inline-link-rx"></block></block>
+  <block id="ddf68ce76cf70c3d2061e221edeb7ae1" category="paragraph"><block ref="ddf68ce76cf70c3d2061e221edeb7ae1" category="inline-link-rx"></block></block>
+  <block id="c5785d86411f0791086e0d729d92ea59" category="paragraph"><block ref="c5785d86411f0791086e0d729d92ea59" category="inline-link-rx"></block></block>
+  <block id="549e0180633c51bff766e9cab2aff418" category="paragraph"><block ref="549e0180633c51bff766e9cab2aff418" category="inline-link-rx"></block></block>
+  <block id="64902df2f40b54af9303ee162076af7e" category="summary">사용하는 확장 절차는 MetroCluster 구성 유형과 ONTAP 버전에 따라 다릅니다.</block>
+  <block id="1183f26be758aca1cf3787bcad5b2010" category="doc">확장 절차를 선택합니다</block>
+  <block id="81d18a4a40082c66f7427c3072b68b70" category="paragraph">확장 절차에는 MetroCluster 구성에 새 컨트롤러 및 스토리지를 추가하는 작업이 포함됩니다. 확장은 각 사이트에 짝수 개의 컨트롤러를 유지해야 하며 사용하는 절차는 원래 MetroCluster 구성의 노드 수에 따라 다릅니다.</block>
+  <block id="191defc94e935558055aed94783f83cd" category="cell">확장 방법</block>
+  <block id="1524ad20c3fd28d8be25c8ad8d2fc9d2" category="paragraph">방법: 2노드 MetroCluster FC를 4개로 확장합니다</block>
+  <block id="cb1f599e33d405f2e405bf5dcc417b42" category="paragraph">2노드 FC</block>
+  <block id="181f531f788750976228c482da035402" category="paragraph">ONTAP 9 이상(플랫폼은 ONTAP 9.2 이상에서 지원해야 함)</block>
+  <block id="c8fb72f7499472fd24b7dac46ac4853e" category="paragraph"><block ref="c8fb72f7499472fd24b7dac46ac4853e" category="inline-link-macro-rx"></block></block>
+  <block id="b83dcb0f1eec7f7e3a880861759b8457" category="paragraph">방법: 4노드 MetroCluster FC를 8로 확장합니다</block>
+  <block id="433017d17528a810ab08685208c4e37d" category="paragraph">4노드 FC</block>
+  <block id="8e7028c1d5cca9b6e9570057bb3dde62" category="paragraph">ONTAP 9 이상</block>
+  <block id="1d129a73cb0ea5574fdfc1bd5db8aacf" category="paragraph"><block ref="1d129a73cb0ea5574fdfc1bd5db8aacf" category="inline-link-macro-rx"></block></block>
+  <block id="860f46e358c27f8c3e11d77767b6e377" category="paragraph">방법: 4노드 MetroCluster IP를 8로 확장합니다</block>
+  <block id="f75b229104808ecf96fca33d4778f2a8" category="paragraph">4노드 IP</block>
+  <block id="1ff96f961a0386158191fbc0f4fb218b" category="paragraph">ONTAP 9.9.1 이상</block>
+  <block id="f775e4c4edc895975c9cd478e2a512c1" category="paragraph"><block ref="f775e4c4edc895975c9cd478e2a512c1" category="inline-link-macro-rx"></block></block>
+  <block id="cc6f5bdcaa380f5a02b85aa487423648" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 <block ref="a934c7831e4c0e5d9741460d2b55f4b9" category="inline-link-macro-rx"></block>.</block>
+  <block id="5f565b56a7ba868b460ab51ab73790d6" category="paragraph">을 참조하십시오<block ref="6ddc20d2276dd2fc9d58822a83f46769" category="inline-link-rx"></block> 을 참조하십시오.</block>
+  <block id="3cdc2ade26b9bc4adc9df14235e19c7e" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
+  <block id="d0b28fd083b63a9e12330f486ca47625" category="section-title">지원되는 MetroCluster FC 기술 업데이트 조합</block>
+  <block id="88ea8505ba0420be98c64dcb7f91e23c" category="image-alt">MetroCluster FC 기술 업데이트</block>
+  <block id="094d92c3e06727b6e6ff0d7a8d541bef" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
+  <block id="cfd1300cd3db131e8f69dc38177b5658" category="section-title">지원되는 MetroCluster IP 기술 업데이트 조합</block>
+  <block id="5a19a72f15dc5e9ad6e2a4e964365ace" category="image-alt">MetroCluster IP 기술 업데이트</block>
+  <block id="ad06b1bad80df72d4f2fa24312c0a9bf" category="cell">새로 고침 방법</block>
+  <block id="56ad29882b1f5aa7a765e42a0bd3ca97" category="paragraph"><block ref="56ad29882b1f5aa7a765e42a0bd3ca97" category="inline-link-macro-rx"></block></block>
+  <block id="65fc2b3acec6ee29de6484f084e9ad51" category="paragraph">MetroCluster FC 구성에서 스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다.</block>
+  <block id="7c5f3ae5aa1416c77224608ca167ed4c" category="paragraph">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 <block ref="5e51ded3128b8f60bc0b91c41dccbb25" category="inline-link-macro-rx"></block>.</block>
+  <block id="453e7486fdad67f2f92e437e6af495ee" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 새로 고침 표를 참조하십시오 <block ref="9900dd3b59a39c700581c58c1a5bd91b" category="inline-link-macro-rx"></block>.</block>
+  <block id="524f05419622851f7f6289320cc91a6e" category="sidebar">MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다</block>
+  <block id="81cce2035bed6113b6ccecaeb9cf25a9" category="sidebar">확장 절차를 선택합니다</block>
+  <block id="6ff6555fd4c104df84532572f5435476" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC의 MetroCluster FC에서 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="87663f3a8212644181733b0573eae80d" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)</block>
 </blocks>

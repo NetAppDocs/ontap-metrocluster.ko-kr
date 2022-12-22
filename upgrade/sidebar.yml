@@ -1,6 +1,6 @@
 ---
 section: upgrade
-title: MetroCluster 구성을 업그레이드하거나 확장합니다
+title: MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다
 entries:
 - title: 여기서 시작 - 절차를 선택합니다
   entries:
@@ -10,6 +10,8 @@ entries:
     url: "/upgrade/concept_choosing_controller_upgrade_mcc.html"
   - title: 시스템 새로 고침 절차를 선택합니다
     url: "/upgrade/concept_choosing_tech_refresh_mcc.html"
+  - title: 확장 절차를 선택합니다
+    url: "/upgrade/concept_choosing_expansion_method_mcc.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC에서 컨트롤러를 업그레이드합니다
   url: "/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC의 MetroCluster FC에서 컨트롤러(AFF A700/FAS9000을

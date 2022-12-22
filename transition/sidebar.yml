@@ -4,8 +4,6 @@ title: MetroCluster FC에서 MetroCluster IP로 전환합니다
 entries:
 - title: 전환 절차를 선택합니다
   url: "/transition/concept_choosing_your_transition_procedure_mcc_transition.html"
-- title: 무중단 전환을 지원하는 플랫폼
-  url: "/transition/concept_supported_platforms_for_transition.html"
 - title: MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)
   entries:
   - title: 개요

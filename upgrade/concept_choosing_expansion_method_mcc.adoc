@@ -1,0 +1,54 @@
+---
+permalink: upgrade/concept_choosing_expansion_method_mcc.html 
+sidebar: sidebar 
+keywords: metrocluster, expansion, method 
+summary: 사용하는 확장 절차는 MetroCluster 구성 유형과 ONTAP 버전에 따라 다릅니다. 
+---
+= 확장 절차를 선택합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사용하는 확장 절차는 MetroCluster 구성 유형과 ONTAP 버전에 따라 다릅니다.
+
+확장 절차에는 MetroCluster 구성에 새 컨트롤러 및 스토리지를 추가하는 작업이 포함됩니다. 확장은 각 사이트에 짝수 개의 컨트롤러를 유지해야 하며 사용하는 절차는 원래 MetroCluster 구성의 노드 수에 따라 다릅니다.
+
+[cols="2,1,1,2"]
+|===
+| 확장 방법 | 구성 유형 | ONTAP 버전입니다 | 절차를 참조하십시오 
+
+
+ a| 
+방법: 2노드 MetroCluster FC를 4개로 확장합니다
+ a| 
+2노드 FC
+ a| 
+ONTAP 9 이상(플랫폼은 ONTAP 9.2 이상에서 지원해야 함)
+ a| 
+link:../upgrade/task_expand_a_two_node_mcc_fc_configuration_to_a_four_node_fc_configuration_supertask.html["절차 링크"]
+
+
+
+ a| 
+방법: 4노드 MetroCluster FC를 8로 확장합니다
+ a| 
+4노드 FC
+ a| 
+ONTAP 9 이상
+ a| 
+link:task_refresh_4n_mcc_ip.html["절차 링크"]
+
+
+
+ a| 
+방법: 4노드 MetroCluster IP를 8로 확장합니다
+ a| 
+4노드 IP
+ a| 
+ONTAP 9.9.1 이상
+ a| 
+link:../upgrade/task_expand_a_four_node_mcc_ip_configuration.html["절차 링크"]
+
+|===

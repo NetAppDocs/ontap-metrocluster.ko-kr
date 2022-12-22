@@ -17,8 +17,11 @@ ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전의
 * 이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.
 * IP 스위치를 업그레이드하는 경우 이 새로 고침 절차를 수행하기 전에 IP 스위치를 업그레이드해야 합니다.
 * "이전 노드"에 대한 참조는 바꾸려는 노드를 의미합니다.
-* Broadcom BES-53248 스위치로 구성된 AFF A320 시스템에서는 이 절차가 지원되지 않습니다.
-* 이 절차는 FAS2750, AFF A220, FAS500f 및 A250 시스템에서는 지원되지 않습니다.
+* MetroCluster FC 구성에서 이 절차를 사용하는 경우에만 특정 플랫폼 모델을 새로 고칠 수 있습니다.
++
+** 지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 새로 고침 표를 참조하십시오 link:upgrade/concept_choosing_tech_refresh_mcc.html#supported-metrocluster-ip-tech-refresh-combinations["시스템 새로 고침 방법 선택"].
+
+
 
 
 .단계
