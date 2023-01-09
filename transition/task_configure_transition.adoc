@@ -525,7 +525,7 @@ cluster_A::>
 ....
 . 루트 애그리게이트 미러링:
 +
-'Storage aggregate mirror-aggregate aggr0_node_A_3-IP'를 선택합니다
+`storage aggregate mirror -aggregate aggr0_node_A_3_IP`
 
 +
 
@@ -533,9 +533,9 @@ NOTE: 각 MetroCluster IP 노드에서 이 단계를 완료해야 합니다.
 
 +
 ....
-cluster_A::> aggr mirror -aggregate aggr0_node_A_3-IP
+cluster_A::> aggr mirror -aggregate aggr0_node_A_3_IP
 
-Info: Disks would be added to aggregate "aggr0_node_A_3-IP"on node "node_A_3-IP"
+Info: Disks would be added to aggregate "aggr0_node_A_3_IP"on node "node_A_3-IP"
       in the following manner:
 
       Second Plex
@@ -564,19 +564,19 @@ cluster_A::> aggr show
 
 Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 --------- -------- --------- ----- ------- ------ ---------------- ------------
-aggr0_node_A_1-FC
+aggr0_node_A_1_FC
            349.0GB   16.84GB   95% online       1 node_A_1-FC      raid_dp,
                                                                    mirrored,
                                                                    normal
-aggr0_node_A_2-FC
+aggr0_node_A_2_FC
            349.0GB   16.84GB   95% online       1 node_A_2-FC      raid_dp,
                                                                    mirrored,
                                                                    normal
-aggr0_node_A_3-IP
+aggr0_node_A_3_IP
            467.6GB   22.63GB   95% online       1 node_A_3-IP      raid_dp,
                                                                    mirrored,
                                                                    normal
-aggr0_node_A_4-IP
+aggr0_node_A_4_IP
            467.6GB   22.62GB   95% online       1 node_A_4-IP      raid_dp,
                                                                    mirrored,
                                                                    normal
@@ -649,13 +649,13 @@ cluster_A::>
 NOTE: 사이트당 하나 이상의 미러링된 데이터 애그리게이트를 만들어야 합니다. MetroCluster IP 노드에서 사이트당 두 개의 미러링된 데이터 집계를 사용하여 MDV 볼륨을 호스팅하는 것이 좋지만 사이트당 단일 집계를 지원하는 것은 권장되지 않습니다. MetroCluster의 한 사이트는 단일 미러링된 데이터 애그리게이트를 가지고 있고, 다른 사이트는 둘 이상의 미러링된 데이터 애그리게이트를 가지고 있습니다.
 
 +
-다음 예에서는 node_A_1-new에 Aggregate를 생성하는 방법을 보여 줍니다.
+다음 예에서는 node_a_3-IP에 Aggregate를 생성하는 방법을 보여 줍니다.
 
 +
 ....
-cluster_A::> storage aggregate create -aggregate data_a3 -node node_A_1-new -diskcount 10 -mirror t
+cluster_A::> storage aggregate create -aggregate data_a3 -node node_A_3-IP -diskcount 10 -mirror t
 
-Info: The layout for aggregate "data_a3" on node "node_A_1-new" would be:
+Info: The layout for aggregate "data_a3" on node "node_A_3-IP" would be:
 
       First Plex
 
