@@ -130,7 +130,7 @@ ADP를 지원합니다
 
 
  a| 
-ONTAP AUSO를 지원합니다
+ONTAP 자동 비계획 전환(AUSO) 지원
  a| 
 아니요
  a| 
