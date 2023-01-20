@@ -167,7 +167,7 @@ cluster_B::>
 .단계
 . MetroCluster IP 노드를 기존 MetroCluster 구성에 추가합니다.
 +
-.. 첫 번째 MetroCluster IP 노드(node_a_1-IP)를 기존 MetroCluster FC 구성에 연결합니다.
+.. 첫 번째 MetroCluster IP 노드(node_a_3-IP)를 기존 MetroCluster FC 구성에 연결합니다.
 +
 ....
 
@@ -219,10 +219,10 @@ Do you want to use this configuration? {yes, no} [yes]: yes
 .
 .
 ....
-.. 두 번째 MetroCluster IP 노드(node_a_2-IP)를 기존 MetroCluster FC 구성에 연결합니다.
+.. 두 번째 MetroCluster IP 노드(node_a_4-IP)를 기존 MetroCluster FC 구성에 연결합니다.
 
 
-. 이 단계를 반복하여 node_B_1-IP 및 node_B_2-IP를 cluster_B에 연결합니다
+. 이 단계를 반복하여 node_B_3-IP 및 node_B_4-IP를 cluster_B에 연결합니다
 
 
 
@@ -343,7 +343,7 @@ Group Cluster Node               State          Mirroring Mode
 
 +
 
-NOTE: 두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개 변수도 지정해야 합니다. 링크:../install-ip/concept_considations_layer_3.html을 참조하십시오.
+NOTE: 두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.9.1부터 계층 3 구성을 사용하는 경우 도 지정해야 합니다 `-gateway` MetroCluster IP 인터페이스를 생성할 때의 매개 변수입니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"]
 
 +
 ....
@@ -520,9 +520,12 @@ Disk                   Size Shelf Bay Type    Type        Name      Owner
 2.20.10             546.9GB    20  10 SAS     aggregate   rha1_a1_aggr1 node_a_1
 ...
 43 entries were displayed.
-
 cluster_A::>
 ....
++
+
+NOTE: ADP(Advanced Drive Partitioning)로 구성된 시스템에서 컨테이너 유형은 예제 출력에 표시된 것처럼 "remote"가 아니라 "공유"입니다.
+
 . 루트 애그리게이트 미러링:
 +
 `storage aggregate mirror -aggregate aggr0_node_A_3_IP`

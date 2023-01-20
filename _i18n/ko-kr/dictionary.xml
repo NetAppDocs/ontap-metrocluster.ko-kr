@@ -8297,9 +8297,6 @@
   <block id="d7c2f1f68dfab85a30e0ec280fd028ec" category="list-text">클러스터 HA가 비활성화되었는지 확인합니다.</block>
   <block id="5c3e762ebb6954ea6ec1df3ec8289fc7" category="section-title">클러스터에 MetroCluster IP 노드 연결</block>
   <block id="0374a6e5ac7874327546ae00b1a604d8" category="list-text">MetroCluster IP 노드를 기존 MetroCluster 구성에 추가합니다.</block>
-  <block id="fbfd3619aa54cd6546a334791148c766" category="list-text">첫 번째 MetroCluster IP 노드(node_a_1-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
-  <block id="c6bbfa16738696bfd63392cfdc4c0a5c" category="list-text">두 번째 MetroCluster IP 노드(node_a_2-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
-  <block id="3bd4a265daa0ebad936e251efefd2525" category="list-text">이 단계를 반복하여 node_B_1-IP 및 node_B_2-IP를 cluster_B에 연결합니다</block>
   <block id="c278969e1942414c418d0d7d8ac9a149" category="inline-link-macro">인터클러스터 LIF를 구성합니다</block>
   <block id="8ba940ea91d09fe81fb2362bd009f4b4" category="list-text">새 MetroCluster IP 노드에서 <block ref="658f71494f9e3f098a91c18b3f1ed366" category="inline-link-macro-rx"></block>.</block>
   <block id="4b860ec7efdf1c6e14b4d6ba6d043bfc" category="list-text">MetroCluster IP 노드의 DR 그룹을 구성합니다.</block>
@@ -12015,7 +12012,6 @@
   <block id="2b114f6498e5132b0cbcc04ccda11d53" category="list-text">이 케이블은 _MetroCluster 설치 및 구성_절차에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.</block>
   <block id="80a501c7c310f786642caeb4ba98a43d" category="paragraph">의 1단계에서 확인한 LIF를 이동해야 합니다 <block ref="f19930c3c7cb7f705cf91593411955ab" category="inline-link-macro-rx"></block>.</block>
   <block id="db53daa46cc857a5ca6ccd9ab19fe451" category="paragraph">다음 단계에서는 다른 절차로 이동합니다. 각 참조 절차의 단계를 지정된 순서대로 수행해야 합니다.</block>
-  <block id="29e21146baddc462ae95a60cebbec773" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개 변수도 지정해야 합니다. 링크:../install-ip/concept_considations_layer_3.html을 참조하십시오.</block>
   <block id="679c1dc70b523e1092eb2a7b3129711d" category="paragraph">포트 및 브로드캐스트 도메인에 대해 MTU 설정이 올바르게 설정되어 있는지 확인하고 변경합니다.</block>
   <block id="af6710425f9b72f8e5aeb24aa9d0bac6" category="summary">ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다.</block>
   <block id="dd29cf7134047c7a311edc4776b9021e" category="paragraph">2노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 <block ref="ef88855c7d052c0aa5ce46e187d01954" category="inline-link-macro-rx"></block>.</block>
@@ -12846,4 +12842,21 @@
   <block id="9e70c8a747dbcd4eb73fc72a2155c425" category="paragraph">MetroCluster Tiebreaker 소프트웨어에서 자동 전환이 활성화되지 않은 경우, 계획되지 않은 수동 전환(USO)</block>
   <block id="03a06951389ef81ee2c73f9db6d94fbf" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 새로 고침 표를 참조하십시오 <block ref="ca31e6122d170c1a660e1ab5d0a9430f" category="inline-link-macro-rx"></block>.</block>
   <block id="04d849614bcf7a25c057bcb4f136cfc7" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 새로 고침 표를 참조하십시오 <block ref="2026df26c379ba66a79d2229c4a71dd8" category="inline-link-macro-rx"></block>.</block>
+  <block id="7f3573698486df0e906484a42b56260a" category="list-text">첫 번째 MetroCluster IP 노드(node_a_3-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
+  <block id="2cc9b0ebb585ef702d75e1a9560e44ee" category="list-text">두 번째 MetroCluster IP 노드(node_a_4-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
+  <block id="43978c682537332f0c17e45dcf81c394" category="list-text">이 단계를 반복하여 node_B_3-IP 및 node_B_4-IP를 cluster_B에 연결합니다</block>
+  <block id="56276c01f8fdea330f7d547910dbe817" category="inline-link-macro">계층 3 광역 네트워크에 대한 고려 사항</block>
+  <block id="5464631d6fd9ed12f95c271bf666c4bc" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.9.1부터 계층 3 구성을 사용하는 경우 도 지정해야 합니다<block ref="50e57debf79bf52aa078c6e993f8969f" prefix=" " category="inline-code"></block> MetroCluster IP 인터페이스를 생성할 때의 매개 변수입니다. 을 참조하십시오 <block ref="1e1496262359096cc1cfeecfa4cefcb5" category="inline-link-macro-rx"></block></block>
+  <block id="d62d7bce1fe91e6c1145e8a56018d13e" category="admonition">ADP(Advanced Drive Partitioning)로 구성된 시스템에서 컨테이너 유형은 예제 출력에 표시된 것처럼 "remote"가 아니라 "공유"입니다.</block>
+  <block id="bad8ee5726316ec5f26bb0039cbf4bc6" category="summary">MetroCluster Tiebreaker 작업이 이벤트 로그 파일에 기록됩니다.</block>
+  <block id="08b9323d7a1af549de439f419bb3096a" category="doc">MetroCluster Tiebreaker용 이벤트 로그 파일</block>
+  <block id="bbeded76bf1f0922d3c3d140c95591b9" category="paragraph">이벤트 로그 파일에는 MetroCluster Tiebreaker 소프트웨어에서 수행한 모든 작업의 로그가 들어 있습니다.</block>
+  <block id="a683f94e07dea51d4fd5a8ef0f351f0a" category="paragraph">Tiebreaker 소프트웨어는 다음 작업을 수행합니다.</block>
+  <block id="4b331bdac9dc044af8ef6c6502e176f3" category="list-text">사이트 재해를 감지합니다</block>
+  <block id="62bb78b2baed22256e5a91c1b10b48ae" category="list-text">데이터베이스, 기타 Tiebreaker 모니터 또는 MetroCluster Tiebreaker 소프트웨어와 관련된 구성 변경을 감지합니다</block>
+  <block id="74e0bf9f3312e196cf0f79415f5fd557" category="list-text">SSH 연결을 감지하고 연결을 해제합니다</block>
+  <block id="e7937ee1a1ffc7f60a0d80b1dcee5b56" category="list-text">MetroCluster 구성을 검색합니다</block>
+  <block id="98c16872714765876ef7301d6b92820a" category="paragraph">이러한 작업은 이벤트 로그 파일에 다음 형식으로 기록됩니다.</block>
+  <block id="efddb3b6772ab4f446bebb2bda2d2155" category="paragraph">타임스탬프 심각도/로그 수준 스레드 ID 모듈입니다</block>
+  <block id="690f8ff3b8b65da4f1bc779fb507da9d" category="sidebar">MetroCluster Tiebreaker 이벤트 로그 파일</block>
 </blocks>

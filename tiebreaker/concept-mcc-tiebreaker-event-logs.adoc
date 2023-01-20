@@ -1,0 +1,32 @@
+---
+permalink: tiebreaker/concept-mcc-tiebreaker-event-logs.html 
+sidebar: sidebar 
+keywords: metrocluster, tiebreaker, actions, events, event, log files, files, logs, file 
+summary: MetroCluster Tiebreaker 작업이 이벤트 로그 파일에 기록됩니다. 
+---
+= MetroCluster Tiebreaker용 이벤트 로그 파일
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+이벤트 로그 파일에는 MetroCluster Tiebreaker 소프트웨어에서 수행한 모든 작업의 로그가 들어 있습니다.
+
+Tiebreaker 소프트웨어는 다음 작업을 수행합니다.
+
+* 사이트 재해를 감지합니다
+* 데이터베이스, 기타 Tiebreaker 모니터 또는 MetroCluster Tiebreaker 소프트웨어와 관련된 구성 변경을 감지합니다
+* SSH 연결을 감지하고 연결을 해제합니다
+* MetroCluster 구성을 검색합니다
+
+
+이러한 작업은 이벤트 로그 파일에 다음 형식으로 기록됩니다.
+
+타임스탬프 심각도/로그 수준 스레드 ID 모듈입니다
+
+....
+2022-09-07 06:14:30,797 INFO  [MCCTBCommandServer-16] [SslSupport] Successfully initiated SSL context. Protocol used is TLSv1.3.
+2022-09-07 06:14:34,137 INFO  [MCCTBCommandServer-16] [DataBase] Successfully read MCCTB database.
+2022-09-07 06:14:34,137 INFO  [MCCTBCommandServer-16] [ConfigurationMonitor] Debug mode disabled.
+....
