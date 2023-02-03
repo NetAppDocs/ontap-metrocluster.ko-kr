@@ -2058,7 +2058,6 @@
   <block id="47c5e6a166f9432ff96681fa2a62c791" category="paragraph">ONTAP 중재자 웹 서버</block>
   <block id="8cf15eeaee2b3382338ecab30027c48b" category="paragraph">REST API(HTTPS)</block>
   <block id="5395ab3ceab5345ee4a1117e436bec89" category="paragraph">3260/TCP</block>
-  <block id="dbc7df65565b4f36db0a469d1e54a440" category="paragraph">ONTAP 클러스터</block>
   <block id="1c44912242a1c1688be9805f25a62dbd" category="paragraph">ONTAP는 iSCSI 대상을 중재합니다</block>
   <block id="a3993ea912c0ecd6926aed69b72fd59a" category="paragraph">메일박스에 대한 iSCSI 데이터 접속</block>
   <block id="63639615515d028231f302c56bab6ad7" category="section-title">MetroCluster 구성에서 ONTAP 중재자를 업그레이드하기 위한 지침입니다</block>
@@ -12859,4 +12858,7 @@
   <block id="98c16872714765876ef7301d6b92820a" category="paragraph">이러한 작업은 이벤트 로그 파일에 다음 형식으로 기록됩니다.</block>
   <block id="efddb3b6772ab4f446bebb2bda2d2155" category="paragraph">타임스탬프 심각도/로그 수준 스레드 ID 모듈입니다</block>
   <block id="690f8ff3b8b65da4f1bc779fb507da9d" category="sidebar">MetroCluster Tiebreaker 이벤트 로그 파일</block>
+  <block id="fd8a65566a0bac859d93882f20cc0c7d" category="paragraph"><block ref="fd8a65566a0bac859d93882f20cc0c7d" category="inline-link-macro-rx"></block></block>
+  <block id="43119522ff803c1f1fa88bdbaffe20b7" category="admonition">iSCSI 포트는 MetroCluster IP 구성에서만 필요합니다.</block>
+  <block id="4026cb63b92cdc28e17e39a79de589f7" category="paragraph">ONTAP 클러스터(데이터 LIF 또는 데이터 관리 LIF)</block>
 </blocks>
