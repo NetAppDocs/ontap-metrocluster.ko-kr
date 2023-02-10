@@ -11479,7 +11479,6 @@
   <block id="4f3c80eb4c7058a48ce3a8802614c67e" category="list-text">APT(Advanced Performance Tuning) 정책 1을 선택합니다. 포트 기반 라우팅 정책:</block>
   <block id="4cd1110435955b3b14ac2d145c6baae1" category="paragraph">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지하고, 이러한 관계에 공유 또는 전용 포트를 사용할지 여부를 결정해야 합니다.</block>
   <block id="72fa0ea37e0389a6c2e6107de6bbcbe8" category="summary">다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 ISL 포트 사용량을 보여 줍니다.</block>
-  <block id="83f8b75cddaf0acd53872b333bc5d6c1" category="paragraph">6510, G620, G620-1, G720</block>
   <block id="f3089a69f0cb0a583fab7f5c1ea7226c" category="cell">6505, G610</block>
   <block id="e376bd1a00beeb72bd5c4ab256198e27" category="summary">MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려면 광섬유 ISL(Inter-Switch Link)을 통해 각 사이트의 FC 스위치를 연결해야 합니다.</block>
   <block id="6fde06e36c7ea040984ee2ff8627888d" category="doc">MetroCluster 사이트 간 ISL 케이블 연결</block>
@@ -12261,7 +12260,6 @@
   <block id="8ec1014b27ed523596c5c910443b0827" category="paragraph">AFF A900 및 FAS9500</block>
   <block id="87ba2462050ce75d6d9915d834efe9b7" category="doc">AFF ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 ISL에 대한 A900 또는 FAS9500 - Brocade 포트 사용</block>
   <block id="801938c63db0b16215aa712c6d1fd12c" category="paragraph">다음 표에서는 AFF A900 또는 FAS9500 시스템의 Brocade 스위치에 대한 ISL 포트 사용을 보여 줍니다.</block>
-  <block id="5cc34fc9164e77d33b971042da17edf2" category="admonition">AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1 및 G720 스위치에서 8개의 ISL이 지원됩니다.</block>
   <block id="1dcd768f9d116bda4a2253d295e01fb8" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 또는 FAS9500 컨트롤러에 Brocade 포트를 사용합니다</block>
   <block id="e33ab3eabb81d3db08bba17fee6ed399" category="paragraph">다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 4개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. AFF A900 및 FAS9500 시스템에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.</block>
   <block id="e0477011a5767f5250fc49bfe9ab153c" category="list-text">AFF A700, FAS9000, AFF A900 및 FAS9500 스토리지 시스템은 패브릭당 최대 8개의 ISL을 지원합니다. 다른 스토리지 시스템 모델은 Fabric당 최대 4개의 ISL을 지원합니다.</block>
@@ -12861,4 +12859,6 @@
   <block id="fd8a65566a0bac859d93882f20cc0c7d" category="paragraph"><block ref="fd8a65566a0bac859d93882f20cc0c7d" category="inline-link-macro-rx"></block></block>
   <block id="43119522ff803c1f1fa88bdbaffe20b7" category="admonition">iSCSI 포트는 MetroCluster IP 구성에서만 필요합니다.</block>
   <block id="4026cb63b92cdc28e17e39a79de589f7" category="paragraph">ONTAP 클러스터(데이터 LIF 또는 데이터 관리 LIF)</block>
+  <block id="fd9b3eaeebb236fdcf40b5456ccc900e" category="admonition">AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, 및 G720 스위치</block>
+  <block id="81d4bf20c117cfe06c727511dd63382b" category="paragraph">6510, G620, G620-1, G630, G630-1, G720</block>
 </blocks>
