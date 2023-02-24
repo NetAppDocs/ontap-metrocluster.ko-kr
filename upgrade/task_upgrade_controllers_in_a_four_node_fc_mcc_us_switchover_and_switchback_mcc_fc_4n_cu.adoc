@@ -1398,7 +1398,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 .. 포트 구성을 재정의하여 적절한 LIF 배치가 이루어지도록 합니다.
 +
-'vserver config override -command "network interface modify" -vserver_vserver_name_-home-port_active_port_after_upgrade_-lif_lif_name_-home-node_new_node_name_"
+'vserver config override -command' network interface modify -vserver_vserver_name_-home-port_active_port_after_upgrade_-lif_lif_name_-home-node_new_node_name_'
 
 +
 'vserver config override' 명령 내에서 'network interface modify' 명령을 입력할 때는 Tab autotcomplete 기능을 사용할 수 없습니다. 자동 완성 기능을 사용하여 'network interface modify'를 만든 다음 'vserver config override' 명령에 포함할 수 있습니다.

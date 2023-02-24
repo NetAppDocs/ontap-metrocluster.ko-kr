@@ -600,22 +600,51 @@ aggr_data_a2
 새 DR 그룹을 MetroCluster 구성에 통합하고 새 노드에 미러링된 데이터 애그리게이트를 생성해야 합니다.
 
 .단계
-. MetroCluster를 구성하여 변경 사항을 구현합니다.
+. MetroCluster에 단일 데이터 Aggregate가 있는지 또는 여러 데이터 Aggregate가 있는지 여부에 따라 다음과 같이 구성합니다.
 +
-'MetroCluster 설정'
+|===
 
-+
+
+| MetroCluster 구성에 다음 기능이 있는 경우 | 다음을 수행하십시오. 
+
+
+ a| 
+데이터 애그리게이트가 여러 개 있습니다
+ a| 
+노드의 프롬프트에서 MetroCluster를 구성합니다.
+
+'MetroCluster configure_node-name _'
+
 
 NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다
 
+
+
+ a| 
+단일 미러링 데이터 애그리게이트
+ a| 
+.. 노드의 프롬프트에서 고급 권한 레벨로 변경합니다.
 +
-....
-cluster_A::> metrocluster configure
+세트 프리빌리지 고급
 
-[Job 439] Job succeeded: Configure is successful.
++
+에 응답해야 합니다 `y` 고급 모드로 계속 진행하라는 메시지가 나타나면 고급 모드 프롬프트(*)가 나타납니다.
 
-cluster_A::>
-....
+.. '-allow-with-one-aggregate TRUE' 파라미터를 사용하여 MetroCluster를 설정한다.
++
+'MetroCluster configure-allow-with-one-aggregate TRUE_NODE-NAME_'
+
+.. 관리자 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+
+
+|===
++
+
+NOTE: 모범 사례는 미러링된 데이터 애그리게이트를 여러 개 사용하는 것입니다. 미러링된 Aggregate가 하나만 있으면 메타데이터 볼륨이 별도의 Aggregate가 아닌 동일한 Aggregate에 있기 때문에 보호가 덜 됩니다.
+
 . 노드가 DR 그룹에 추가되었는지 확인합니다.
 +
 'MetroCluster node show'

@@ -8307,7 +8307,6 @@
   <block id="29f2ad546591daf9c21a8e1e2148edae" category="list-text">디스크 자동 할당 및 파티셔닝 확인:</block>
   <block id="566d9f9b7bf49eab87dd8768b654754e" category="section-title">MetroCluster IP 노드 추가 완료</block>
   <block id="a8f0490385b664bc34aae209741dbdce" category="paragraph">'Storage aggregate create-aggregate aggregate-name-node-name-diskcount no-of-diskdiskcount -mirror true'</block>
-  <block id="ab1c45cb56358465162f8f3a812e6fbe" category="list-text">MetroCluster를 구성하여 변경 사항을 구현합니다.</block>
   <block id="7e6d5ec0a20a9a4499623036df823e6b" category="list-text">노드가 DR 그룹에 추가되었는지 확인합니다.</block>
   <block id="458ae1b61ac6159f8929c86f98d3592d" category="paragraph">다음 예는 체적 표시 출력의 MDV 볼륨을 보여줍니다.</block>
   <block id="9727e668cbd91ea1a73ea3f2e53d09ec" category="paragraph">'volume mdv-volume-destination-aggregate aggr-on-new-node-vserver vserver-name'</block>
@@ -12861,4 +12860,8 @@
   <block id="4026cb63b92cdc28e17e39a79de589f7" category="paragraph">ONTAP 클러스터(데이터 LIF 또는 데이터 관리 LIF)</block>
   <block id="fd9b3eaeebb236fdcf40b5456ccc900e" category="admonition">AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, 및 G720 스위치</block>
   <block id="81d4bf20c117cfe06c727511dd63382b" category="paragraph">6510, G620, G620-1, G630, G630-1, G720</block>
+  <block id="64cdec386f8cc50c2a2ec9316633b629" category="paragraph">러닝을 시작하기 전에<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block>HA 모드 및 DR 미러링이 활성화되어 있지 않으며 이 예상 동작과 관련된 오류 메시지가 표시될 수 있습니다. 나중에 명령을 실행할 때 HA 모드 및 DR 미러링을 사용하도록 설정할 수 있습니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 구성을 구현합니다.</block>
+  <block id="929a405a00082b7cddc01ac6b47159f6" category="list-text">MetroCluster에 단일 데이터 Aggregate가 있는지 또는 여러 데이터 Aggregate가 있는지 여부에 따라 다음과 같이 구성합니다.</block>
+  <block id="5ffd33f8dea25274cffabd9b7ab1c36e" category="paragraph">에 응답해야 합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 고급 모드로 계속 진행하라는 메시지가 나타나면 고급 모드 프롬프트(*)가 나타납니다.</block>
+  <block id="1fd3081a4bf2b2b1ccafeb89c824a5d2" category="admonition">모범 사례는 미러링된 데이터 애그리게이트를 여러 개 사용하는 것입니다. 미러링된 Aggregate가 하나만 있으면 메타데이터 볼륨이 별도의 Aggregate가 아닌 동일한 Aggregate에 있기 때문에 보호가 덜 됩니다.</block>
 </blocks>
