@@ -13,4 +13,6 @@ summary: 노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCl
 [role="lead"]
 노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다.
 
+구성 중 컨트롤러 모듈에 장애가 발생하면 을 참조하십시오 link:../disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html#controller-module-failure-scenarios-during-metrocluster-installation["MetroCluster 설치 중 컨트롤러 모듈 장애 시나리오"].
+
 image::../media/workflow_mcc_ip_high_level_node_and_cluster_configuration_software.svg[워크플로우 MCC IP 상위 레벨 노드 및 클러스터 구성 소프트웨어]

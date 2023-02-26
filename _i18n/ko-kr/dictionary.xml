@@ -5864,7 +5864,6 @@
   <block id="b3f86a877f6ea26216000f89d5bf892c" category="list-text">컨트롤러 모듈 외부의 추가 하드웨어에 장애가 발생했습니다</block>
   <block id="fd4a684eb57b47e219dba160f184d10a" category="paragraph">드라이브 할당에 대한 모든 단계를 건너뛰어야 합니다.</block>
   <block id="dc0c368a1922eaf19a6855f5ad8d0d14" category="list-text">DR 그룹 내에서 여러 컨트롤러 모듈 장애(추가 장애 포함 또는 없음)가 발생합니다</block>
-  <block id="9bf79a5c424f73ef9e47171ed7990f3e" category="section-title">MetroCluster FC-to-IP 전환 중 컨트롤러 모듈 장애 시나리오</block>
   <block id="22585ab22291d597a4bba70a7c31406b" category="paragraph">복구 절차는 전환 중에 사이트 장애가 발생할 경우 사용할 수 있습니다. 그러나 구성이 안정적인 혼합 구성인 경우에만 사용할 수 있으며 FC DR 그룹 및 IP DR 그룹이 모두 완전히 구성되어 있습니다. 'MetroCluster node show' 명령의 출력은 8개 노드를 모두 포함하는 두 DR 그룹을 모두 표시해야 합니다.</block>
   <block id="5a7fd8ca0af58c99ec76faf59c614922" category="admonition">노드를 추가하거나 제거하는 중에 전환 중에 장애가 발생한 경우 기술 지원 팀에 문의해야 합니다.</block>
   <block id="ab1494884dc22965631b6a9814fe75a6" category="section-title">8노드 MetroCluster 구성의 컨트롤러 모듈 장애 시나리오</block>
@@ -12864,4 +12863,13 @@
   <block id="929a405a00082b7cddc01ac6b47159f6" category="list-text">MetroCluster에 단일 데이터 Aggregate가 있는지 또는 여러 데이터 Aggregate가 있는지 여부에 따라 다음과 같이 구성합니다.</block>
   <block id="5ffd33f8dea25274cffabd9b7ab1c36e" category="paragraph">에 응답해야 합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 고급 모드로 계속 진행하라는 메시지가 나타나면 고급 모드 프롬프트(*)가 나타납니다.</block>
   <block id="1fd3081a4bf2b2b1ccafeb89c824a5d2" category="admonition">모범 사례는 미러링된 데이터 애그리게이트를 여러 개 사용하는 것입니다. 미러링된 Aggregate가 하나만 있으면 메타데이터 볼륨이 별도의 Aggregate가 아닌 동일한 Aggregate에 있기 때문에 보호가 덜 됩니다.</block>
+  <block id="3a02d8d4d0c731efe2550cb0db8b9626" category="inline-link-macro">MetroCluster 설치 중 컨트롤러 모듈 장애 시나리오</block>
+  <block id="3975d998da71c5679e24fd76827cedb3" category="paragraph">구성 중 컨트롤러 모듈에 장애가 발생하면 을 참조하십시오 <block ref="5184dce34568aa2bdcc7cb6d2fe3f540" category="inline-link-macro-rx"></block>.</block>
+  <block id="c772808016cce686234dc8c5339463c5" category="paragraph">이 표의 이 정보는 설치 또는 전환이 완료된 것으로 가정합니다. 즉, 가 표시됩니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 성공적으로 실행되었습니다.</block>
+  <block id="7d677bbca4c8c648b22ad2b73d684197" category="section-title">MetroCluster 설치 중 컨트롤러 모듈 장애 시나리오</block>
+  <block id="5f07f69c69bd236d8043669ebd3a920b" category="paragraph">MetroCluster 구성 절차 중 컨트롤러 모듈 오류에 대응하는 방법은 에 따라 다릅니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 완료되었습니다.</block>
+  <block id="d8230f83ef3ade7e9ba6071d54f0e853" category="list-text">를 누릅니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 아직 실행되지 않았거나 실패했습니다. 교체 컨트롤러 모듈을 사용하여 처음부터 MetroCluster 소프트웨어 구성 절차를 다시 시작해야 합니다.</block>
+  <block id="6a9c67444d70fbe1484e9983092ffff8" category="admonition">의 단계를 수행해야 합니다 <block ref="b6e3e97b1b6ab70165db8088036aef95" category="inline-link-macro-rx"></block> 각 컨트롤러(교체 컨트롤러 포함)에서 이전 구성이 제거되었는지 확인합니다.</block>
+  <block id="779a44ac931df50e9ba3ac26bbca035e" category="list-text">를 누릅니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 성공적으로 완료된 후 컨트롤러 모듈이 실패했습니다. 이전 표를 사용하여 올바른 복구 절차를 확인하십시오.</block>
+  <block id="57c5f3148ec34d732973b7f905f1ca84" category="section-title">MetroCluster FC-to-IP 전환 중 컨트롤러 모듈 장애 시나리오</block>
 </blocks>
