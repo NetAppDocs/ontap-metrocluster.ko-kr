@@ -17,11 +17,11 @@ ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그
 * 이전 노드와 새 노드에서 동일한 버전의 ONTAP를 실행해야 합니다.
 * 플랫폼 혼합을 위해 이전 플랫폼 모델과 새로운 플랫폼 모델이 지원되는지 확인해야 합니다.
 +
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인해야 합니다.
 +
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 새 노드에는 루트 애그리게이트 및 스페어 디스크를 위한 충분한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 있어야 합니다.
 * 이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.
@@ -132,16 +132,16 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 . 클러스터가 정상 상태인지 확인합니다.
 +
-'cluster show-vserver 클러스터'입니다
+'클러스터 쇼'
 
 +
 [listing]
 ----
-cluster_A::> cluster show -vserver Cluster
-Node           Health  Eligibility   Epsilon
--------------- ------  -----------   -------
-node_A_1    true    true          false
-node_A_2    true    true          false
+cluster_A::> cluster show
+Node           Health  Eligibility
+-------------- ------  -----------
+node_A_1       true    true
+node_A_2       true    true
 
 cluster_A::>
 ----
@@ -310,6 +310,93 @@ link:../install-ip/using_rcf_generator.html["IP 스위치 케이블 연결"]
 . 유지보수 모드에서 halt 명령을 실행하여 유지보수 모드를 종료한 다음 boot_ONTAP 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 이동합니다.
 +
 지금은 클러스터 마법사 또는 노드 마법사를 완료하지 마십시오.
+
+
+
+
+
+== RCF 파일을 업그레이드합니다
+
+[role="lead"]
+새로운 스위치 펌웨어를 설치하는 경우 RCF 파일을 업그레이드하기 전에 스위치 펌웨어를 설치해야 합니다.
+
+.이 작업에 대해
+이 절차는 RCF 파일이 업그레이드된 스위치의 트래픽을 중단시킵니다. 새 RCF 파일이 적용되면 트래픽이 재개됩니다.
+
+.단계
+. 구성 상태를 확인합니다.
++
+.. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+
+----
+
+
++
+작업은 백그라운드에서 실행됩니다.
+
++
+.. MetroCluster check run 작업이 완료되면 MetroCluster check show를 실행하여 결과를 확인한다.
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+-----------
+::*> metrocluster check show
+
+Last Checked On: 4/7/2019 21:15:05
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          warning
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+.. 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
++
+MetroCluster 운용사 show-job-id 38
+
+.. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+
+
+. 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
++
+스위치 공급업체의 단계를 따르십시오.
+
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"^]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"^]
+
+
+. 스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.
++
+
+NOTE: 스위치_A_1, 스위치_B_1, 스위치_A_2, 스위치_B_2 순서로 스위치를 업데이트합니다
+
++
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
++
+
+NOTE: L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스'에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.
+
+
 
 
 
@@ -873,6 +960,32 @@ aggr_data_a2
 새 DR 그룹을 MetroCluster 구성에 통합하고 새 노드에 미러링된 데이터 애그리게이트를 생성해야 합니다.
 
 .단계
+. MetroCluster 구성 새로 고침:
++
+.. 고급 권한 모드 시작:
++
+세트 프리빌리지 고급
+
+.. 새 노드 중 하나에서 MetroCluster 구성을 새로 고칩니다.
++
+'MetroCluster 설정'
+
++
+다음 예는 두 DR 그룹 모두에서 새로 고쳐진 MetroCluster 구성을 보여 줍니다.
+
++
+[listing]
+----
+cluster_A::*> metrocluster configure -refresh true
+
+[Job 726] Job succeeded: Configure is successful.
+----
+.. 관리자 권한 모드로 돌아가기:
++
+'Set-Privilege admin'입니다
+
+
+
 . 각 새 MetroCluster 노드에서 미러링된 데이터 애그리게이트를 생성합니다.
 +
 'Storage aggregate create-aggregate_aggregate-name_-node_node-name_-diskcount_no-of-diskdisks_-mirror true'
@@ -922,32 +1035,6 @@ Do you want to continue? {y|n}: y
 
 cluster_A::>
 ----
-. MetroCluster 구성 새로 고침:
-+
-.. 고급 권한 모드 시작:
-+
-세트 프리빌리지 고급
-
-.. 새 노드 중 하나에서 MetroCluster 구성을 새로 고칩니다.
-+
-'MetroCluster 설정'
-
-+
-다음 예는 두 DR 그룹 모두에서 새로 고쳐진 MetroCluster 구성을 보여 줍니다.
-
-+
-[listing]
-----
-cluster_A::*> metrocluster configure -refresh true
-
-[Job 726] Job succeeded: Configure is successful.
-----
-.. 관리자 권한 모드로 돌아가기:
-+
-'Set-Privilege admin'입니다
-
-
-
 . 노드가 DR 그룹에 추가되었는지 확인합니다.
 +
 [listing]
@@ -1016,7 +1103,7 @@ cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 +
 [listing]
 ----
-cluster_A::> vol move start -volume MDV_CRS_d6b0b313ff5611e9837100a098544e51_A -destination-aggregate data_a3 -vserver cluster_A
+cluster_A::*> vol move start -volume MDV_CRS_d6b0b313ff5611e9837100a098544e51_A -destination-aggregate data_a3 -vserver cluster_A
 
 Warning: You are about to modify the system volume
          "MDV_CRS_d6b0b313ff5611e9837100a098544e51_A". This might cause severe
@@ -1034,16 +1121,12 @@ Warning: You are about to modify the system volume
 +
 [listing]
 ----
-cluster_A::> vol show MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
+cluster_A::*> vol show MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 Vserver     Volume       Aggregate    State      Type       Size  Available Used%
 ---------   ------------ ------------ ---------- ---- ---------- ---------- -----
 cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
                        aggr_a2      online     RW         10GB     9.50GB    0%
 ----
-.. 관리자 모드로 돌아가기:
-+
-'Set-Privilege admin'입니다
-
 
 
 . 이전 노드에서 새 노드로 epsilon 이동:
@@ -1055,7 +1138,7 @@ cluster_A   MDV_CRS_d6b0b313ff5611e9837100a098544e51_B
 +
 [listing]
 ----
-cluster_B::> cluster show -fields epsilon
+cluster_B::*> cluster show -fields epsilon
 node             epsilon
 ---------------- -------
 node_A_1-old      true
@@ -1079,7 +1162,7 @@ node_A_4-new      false
 +
 [listing]
 ----
-cluster_A::> cluster show -fields epsilon
+cluster_A::*> cluster show -fields epsilon
 node             epsilon
 ---------------- -------
 node_A_1-old      false

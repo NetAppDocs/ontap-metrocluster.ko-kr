@@ -5211,16 +5211,12 @@
   <block id="a51e1a2414271dabb40bc15842ca2d83" category="paragraph">'시스템 노드 halt-node 재난-site-node-name'입니다</block>
   <block id="000918ea512f2105cbb6880aa17027ff" category="paragraph">재해 사이트 노드가 제거되었거나 중지할 수 없는 경우 노드의 전원을 끄고 복구 절차에서 지시될 때까지 교체 노드를 부팅하지 마십시오.</block>
   <block id="8d05d7bd3136c1c3d27ce612d1642b55" category="paragraph">전환 프로세스는 테스트 및 유지 관리 중에 무중단 운영을 제공하는 것 외에도 단일 명령으로 사이트 장애로부터 복구할 수 있습니다.</block>
-  <block id="e79358e0d6be348f3b30497d0f74086f" category="list-text">스위치오버를 수행하기 전에 남아 있는 사이트 노드 중 하나 이상이 가동 및 실행 중이어야 합니다.</block>
   <block id="46244e26ed027de3f7dac5055551ea67" category="list-text">스위치백 작업을 수행하기 전에 이전의 모든 구성 변경을 완료해야 합니다.</block>
   <block id="2af1ec41c7e7b07f4cdb56cb47d4ebe4" category="paragraph">이는 협상된 전환 또는 스위치백 작업으로 인한 경쟁을 피하기 위한 것입니다.</block>
   <block id="ca776b7a0f214042bab6636ff7235436" category="admonition">SnapMirror 및 SnapVault 구성은 자동으로 삭제됩니다.</block>
   <block id="7adfea65bac9026340a67e4c4fbc6cf1" category="paragraph">MetroCluster switchover 명령은 MetroCluster 구성에서 모든 DR 그룹의 노드를 전환합니다. 예를 들어, 8노드 MetroCluster 구성에서는 두 DR 그룹 모두에서 노드를 전환합니다.</block>
-  <block id="f0e97f395ca7acc4142d44b8d5fcd22a" category="list-text">전환 구현:</block>
   <block id="03d462e9dc47820c368c2d67f464784a" category="paragraph">MetroCluster 전환 - 강제 재해 발생 시 진실</block>
-  <block id="5872a2b6450f234576cf5d48bcdde6d1" category="paragraph">작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</block>
   <block id="7e2e7baa90ed02c71ec0c1aff8c2f52f" category="list-text">전환을 계속하라는 메시지가 나타나면 y를 선택합니다.</block>
-  <block id="b046f473d72fa4bb3a8b003d1f1c4ca0" category="list-text">MetroCluster operation show 명령을 실행하여 전환이 성공적으로 완료되었는지 확인합니다.</block>
   <block id="37a919d754d5135e54d0f9a3243827d8" category="paragraph">스위치오버가 거부되면 '- override-vetoes' 옵션을 사용하여 'MetroCluster switchover-forced-on-disaster true' 명령을 재실행할 수 있습니다. 이 옵션 매개변수를 사용하는 경우 시스템은 전환을 방해하는 모든 소프트 트레인을 재정의합니다.</block>
   <block id="8e2df6a076ab8c2df47dff186e779dab" category="paragraph">SnapMirror 관계는 스위치오버 이후 다시 설정해야 합니다.</block>
   <block id="3f98066376e4f19519c40bfdf06de035" category="paragraph">MetroCluster 절체 후 'Storage aggregate plex show' 명령을 실행하면 전환된 루트 애그리게이트의 Plex0 상태가 불확정되어 failed로 표시됩니다. 이 시간 동안 전환된 루트는 업데이트되지 않습니다. 이 플렉의 실제 상태는 MetroCluster 복구 단계 이후에만 확인할 수 있습니다.</block>
@@ -6107,11 +6103,9 @@
   <block id="09f81e5c41b5cbf59e868532256e9c4d" category="paragraph">MetroCluster 구성을 사용하여 적절하게 대응할 수 있도록 다양한 유형의 장애 및 재해에 대해 잘 알아야 합니다.</block>
   <block id="5bfc201d41e9f1d875dab1348c8fe184" category="list-text">단일 노드 장애</block>
   <block id="6c628e5bd1e441cf84dbfb33c4e702fe" category="paragraph">로컬 HA 쌍의 단일 구성 요소에 장애가 발생합니다.</block>
-  <block id="b3595fee10e224030fc39a6fcf960976" category="paragraph">4노드 MetroCluster 구성에서는 장애가 발생한 구성요소에 따라 이 장애가 발생하면 장애가 발생한 노드가 자동 또는 협상된 테이크오버 상태로 될 수 있습니다. 데이터 복구에 대한 자세한 내용은 _High Availability 구성 가이드_를 참조하십시오.</block>
   <block id="6f22e733ca2220a1bcbe5e8c43b2b096" category="paragraph">2노드 MetroCluster 구성에서 이 장애는 자동 계획되지 않은 전환(AUSO)으로 이어집니다.</block>
   <block id="568ff3fa260956a48e6aec64320335ec" category="list-text">사이트 전체 컨트롤러 장애</block>
   <block id="97a8761d85aa340fbdd48793649910be" category="paragraph">전원 손실, 장비 교체 또는 재해 등으로 인해 모든 컨트롤러 모듈이 사이트에서 장애가 발생합니다. 일반적으로 MetroCluster 구성은 실패와 재해를 구분할 수 없습니다. 그러나 MetroCluster Tiebreaker 소프트웨어와 같은 감시 소프트웨어는 이러한 소프트웨어를 구분할 수 있습니다. ISL(Inter-Switch Link) 링크 및 스위치가 가동되고 스토리지에 액세스할 수 있는 경우 사이트 전체 컨트롤러 장애가 발생하면 자동 스위치오버가 발생할 수 있습니다.</block>
-  <block id="0b5534d532d225b5627bcdb233683b18" category="paragraph">_ 고가용성 구성 가이드 _ 에는 컨트롤러 오류가 포함되지 않은 사이트 전체 컨트롤러 장애 및 하나 이상의 컨트롤러가 포함된 장애 발생 시 복구하는 방법에 대한 자세한 정보가 나와 있습니다.</block>
   <block id="de977f98763f9cb159f730adb49d54f6" category="list-text">ISL 장애</block>
   <block id="9a3848005e80fb99f99cbd76fac6e3ad" category="paragraph">사이트 간의 연결이 실패합니다. MetroCluster 구성은 아무런 작업도 수행하지 않습니다. 각 노드가 정상적으로 데이터를 제공하지만 해당 재해 복구 사이트에 대한 액세스가 손실되므로 미러는 해당 재해 복구 사이트에 기록되지 않습니다.</block>
   <block id="c2b2988e42872fbbf4eff058f98ecdb3" category="list-text">순차적인 다중 장애</block>
@@ -6139,7 +6133,6 @@
   <block id="2007e152d09a6d332d797698ec41c154" category="paragraph">단일 노드에만 문제가 발생하는 경우 로컬 HA 쌍 내의 페일오버 및 기브백은 무중단 운영을 지원합니다. 이 경우 MetroCluster 구성에 원격 사이트로 전환할 필요가 없습니다.</block>
   <block id="c83d0163c048cc9e0e71c9162a0efc0a" category="paragraph">8노드 또는 4노드 MetroCluster 구성은 각 사이트에 1개 이상의 HA 쌍으로 구성되므로, 각 사이트는 로컬 장애를 감당하며 파트너 사이트로 전환하지 않고도 무중단 운영을 수행할 수 있습니다. HA 쌍 작업은 비 MetroCluster 구성에서 HA 쌍과 동일합니다.</block>
   <block id="a0dfd210408014abb5ef9129acf5fef1" category="paragraph">4노드 및 8노드 MetroCluster 구성의 경우 패닉 또는 정전 때문에 노드 장애가 발생하면 자동 스위치오버가 발생할 수 있습니다.</block>
-  <block id="2541c7fda2cb2bc37bc40ec988280653" category="paragraph"><block ref="2541c7fda2cb2bc37bc40ec988280653" category="inline-link-rx"></block></block>
   <block id="d34779432067d872b224aa7f20ba89d2" category="paragraph">로컬 페일오버 후 두 번째 장애가 발생할 경우 MetroCluster 전환 이벤트를 통해 무중단 운영이 계속 제공됩니다. 마찬가지로, 스위치오버 작업이 끝난 후 정상적인 노드 중 하나에서 두 번째 장애가 발생하면 로컬 페일오버 이벤트가 중단 없이 계속 작동합니다. 이 경우 정상적인 단일 노드에서 DR 그룹의 다른 3개 노드에 대한 데이터를 제공합니다.</block>
   <block id="ad0e8ad90c5a2873a047744473c907fb" category="section-title">MetroCluster 전환 중 스위치오버 및 스위치백</block>
   <block id="08cfede6fab5790e0719b7058c81fcad" category="paragraph">MetroCluster FC-to-IP 전환에는 MetroCluster IP 노드 및 IP 스위치를 기존 MetroCluster FC 구성에 추가한 다음 MetroCluster FC 노드를 폐기하는 작업이 포함됩니다. 전환 프로세스의 단계에 따라 MetroCluster 전환, 복구 및 스위치백 작업에서 서로 다른 워크플로우를 사용합니다.</block>
@@ -12695,7 +12688,6 @@
   <block id="a417bfe3b0e85c20658fe71357feb3ef" category="paragraph">전체 명령 구문은 man 페이지를 참조하십시오. 다음 예에서는 인터클러스터 LIF cluster01_icl01 및 cluster01_icl02를 생성합니다.</block>
   <block id="0074a60c2f111fa09e324bfc6f086bfd" category="paragraph">다음 명령을 실행합니다.<block ref="08fd4296d1145ee217b3ba481add0899" prefix=" " category="inline-code"></block></block>
   <block id="bb084c29063404b6611bde28d4ed57d3" category="paragraph">다음 명령을 실행합니다.<block ref="4686e63f75ecbb5593b9aac27ab89dd7" prefix=" " category="inline-code"></block></block>
-  <block id="52fef25c133f347af6547e0d7325285d" category="list-text">데이터 LIF를 오프라인 상태로 이동합니다. 를 누릅니다<block ref="58d060d8bc95409e743c7b8e95e72710" prefix=" " category="inline-code"></block></block>
   <block id="3c01c02ef0bb0d39aaf5f9cbc5c8ea4b" category="paragraph"><block ref="6b5ac3bb2bcffd222567cf972f8a2548" prefix="" category="inline-code"></block></block>
   <block id="f7967c2b46538ede39d7960526ce1fa4" category="list-text">데이터 LIF를 다시 온라인 상태로 전환합니다.<block ref="c5b63f9c60f25a11e5c1cde65fb540f1" prefix=" " category="inline-code"></block></block>
   <block id="f677111a20e676139c4a865021fafa0d" category="paragraph"><block ref="850d7b5cf3d569632a8982fc791023b0" prefix="" category="inline-code"></block></block>
@@ -12872,4 +12864,16 @@
   <block id="6a9c67444d70fbe1484e9983092ffff8" category="admonition">의 단계를 수행해야 합니다 <block ref="b6e3e97b1b6ab70165db8088036aef95" category="inline-link-macro-rx"></block> 각 컨트롤러(교체 컨트롤러 포함)에서 이전 구성이 제거되었는지 확인합니다.</block>
   <block id="779a44ac931df50e9ba3ac26bbca035e" category="list-text">를 누릅니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 성공적으로 완료된 후 컨트롤러 모듈이 실패했습니다. 이전 표를 사용하여 올바른 복구 절차를 확인하십시오.</block>
   <block id="57c5f3148ec34d732973b7f905f1ca84" category="section-title">MetroCluster FC-to-IP 전환 중 컨트롤러 모듈 장애 시나리오</block>
+  <block id="b79001d76282bba800ccc9b5187d2ad4" category="list-text">데이터 LIF를 오프라인 상태로 이동합니다.<block ref="58d060d8bc95409e743c7b8e95e72710" prefix=" " category="inline-code"></block></block>
+  <block id="6bf7a249268f3de77afe5f47cab93371" category="list-text"><block ref="6bf7a249268f3de77afe5f47cab93371" category="inline-link-macro-rx"></block></block>
+  <block id="6a6fc2b9cb4bc74b0b6f0528b0da3e1e" category="list-text"><block ref="6a6fc2b9cb4bc74b0b6f0528b0da3e1e" category="inline-link-macro-rx"></block></block>
+  <block id="467f07382f2568a4248a6dee67437d64" category="paragraph"><block ref="467f07382f2568a4248a6dee67437d64" category="inline-link-macro-rx"></block></block>
+  <block id="d570f5d821344a6838aaa260987eafc8" category="inline-link-macro">고가용성 쌍 관리</block>
+  <block id="519460f530eb0c6817aeafcaef72fd69" category="paragraph">4노드 MetroCluster 구성에서는 장애가 발생한 구성요소에 따라 이 장애가 발생하면 장애가 발생한 노드가 자동 또는 협상된 테이크오버 상태로 될 수 있습니다. 데이터 복구에 대한 설명은 에 나와 있습니다 <block ref="098c4bee7c591ea5429ed6be6c4ddd42" category="inline-link-macro-rx"></block> .</block>
+  <block id="9b8483df982fc88c283d98b86d41f86f" category="paragraph"><block ref="098c4bee7c591ea5429ed6be6c4ddd42" category="inline-link-macro-rx"></block> 컨트롤러 장애가 아닌 사이트 전체 컨트롤러 장애로부터 복구하는 방법에 대한 자세한 내용은 컨트롤러 하나 이상의 컨트롤러를 포함합니다.</block>
+  <block id="098c4bee7c591ea5429ed6be6c4ddd42" category="paragraph"><block ref="098c4bee7c591ea5429ed6be6c4ddd42" category="inline-link-macro-rx"></block></block>
+  <block id="2054a94796fbdefe9b1b24a74c1e246e" category="list-text">전환을 수행하기 전에 작동 가능한 사이트 노드 중 하나 이상이 가동 및 실행 중이어야 합니다.</block>
+  <block id="6fe56a61eacaba0f58f729f4dff36b33" category="list-text">작동 중인 사이트에서 다음 명령을 실행하여 전환을 수행합니다.</block>
+  <block id="9b6012ae921487ba43de70a4b89eea50" category="admonition">작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다. 를 사용하여 진행 상태를 확인할 수 있습니다<block ref="0d47d8f5f26b2a71aacf597494f0adbb" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="732b254ce7502fe430a0cca5faf72038" category="list-text">를 실행하여 전환이 성공적으로 완료되었는지 확인합니다<block ref="0d47d8f5f26b2a71aacf597494f0adbb" prefix=" " category="inline-code"></block> 명령.</block>
 </blocks>

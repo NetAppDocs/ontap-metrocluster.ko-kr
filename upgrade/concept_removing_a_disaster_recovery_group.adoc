@@ -52,7 +52,7 @@ ClusterB::> aggr delete -aggregate aggregate_name
 
 NOTE: 루트 애그리게이트는 삭제되지 않습니다.
 
-... 데이터 LIF를 오프라인 상태로 이동합니다. 를 누릅니다
+... 데이터 LIF를 오프라인 상태로 이동합니다.
 `network interface modify -vserver _svm-name_ -lif _data-lif_ -status-admin down`
 ... 모든 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. ''network interface show-home-node_old_node_'
 +
