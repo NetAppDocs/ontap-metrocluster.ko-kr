@@ -50,7 +50,7 @@ entries:
     entries:
     - title: 하드웨어 구성 요소를 랙에 장착하십시오
       url: "/install-fc/task_rack_the_hardware_components_mcc_fabric_and_ip.html"
-    - title: 새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다
+    - title: 새 컨트롤러 모듈 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다
       url: "/install-fc/task_cable_the_controller_module_s_fc_vi_hba_ports_to_the_fc_switches_controller_to_fc_sw.html"
     - title: MetroCluster 사이트 간 ISL 케이블 연결
       url: "/install-fc/task_cable_the_isl_between_the_mcc_sites_fabric_config.html"

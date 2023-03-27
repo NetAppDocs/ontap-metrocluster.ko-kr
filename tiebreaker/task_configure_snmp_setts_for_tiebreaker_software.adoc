@@ -13,27 +13,30 @@ summary: Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설�
 [role="lead"]
 Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설정을 구성해야 합니다.
 
-. Tiebreaker CLI SNMP config wizard 명령을 사용하여 MetroCluster 구성을 추가합니다.
+. Tiebreaker CLI를 사용합니다 `snmp config wizard` 명령을 사용하여 MetroCluster 구성을 추가합니다.
 +
 
 NOTE: 현재 하나의 SNMP 트랩 호스트만 지원됩니다.
 
 +
-다음 예에서는 IP 주소가 10.222.210.234인 SNMP V1을 지원하는 SNMP 수신기 구성, 트랩 메시지의 포트 번호 162 및 public으로 설정된 커뮤니티 문자열을 보여 줍니다.
+다음 예에서는 IP 주소가 10.240.45.66이고 포트 번호가 162인 SNMP V3을 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.
 
 +
 ....
 
 NetApp MetroCluster Tiebreaker :> snmp config wizard
-Enter SNMP Version [V1/V3]: V1
-Enter SNMP Host: 10.222.210.234
+Enter SNMP Version[V1/V3]: v3
+Enter SNMP Host: 10.240.45.66
 Enter SNMP Port: 162
-Enter SNMP V1 Community: public
+Enter SNMP V3 Security Name: v3sec
+Enter SNMP V3 Authentication password:
+Enter SNMP V3 Privacy password:
+Engine ID : 8000031504932eff571825192a6f1193b265e24593
 Successfully added SNMP properties to NetApp MetroCluster Tiebreaker software.
-NetApp MetroCluster Tiebreaker :>
 ....
 +
-Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.
+
+NOTE: SNMPv1이 안전하지 않으므로 SNMPv3을 구성해야 합니다. 기본 커뮤니티 문자열이 public으로 설정되어 있지 * 않은지 확인합니다.
 
 . SNMP 설정이 구성되었는지 확인합니다.
 +

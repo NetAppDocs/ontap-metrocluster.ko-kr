@@ -2065,7 +2065,6 @@
   <block id="80f0fa63ac735fb302ee06c9c1c515ae" category="list-text">모든 중재자 버전은 ONTAP 9.7 이상을 실행하는 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="fe8f2bed933b5baccdaadbe566f09126" category="section-title">업그레이드 후</block>
   <block id="ed92588fcdb50fce92fb0e01fb8449b0" category="paragraph">중재자 및 운영 체제 업그레이드가 완료된 후 'storage iscsi-initiator show' 명령을 실행하여 중재자 연결이 작동 중인지 확인해야 합니다.</block>
-  <block id="2f889d7364543ea941a8c61cfb8175f4" category="list-text">사용자: 루트 액세스</block>
   <block id="37e24b9beaec6e2d80c28ff203bbbdac" category="summary">MetroCluster Tiebreaker는 여러 포트를 사용하여 특정 서비스와 통신합니다.</block>
   <block id="4374d106640eedbc52c784ec2a533f0b" category="doc">MetroCluster Tiebreaker의 방화벽 요구 사항</block>
   <block id="38d8f431ef4c9f99c8f96cd4ef60bf47" category="paragraph">Tiebreaker입니다</block>
@@ -2097,28 +2096,20 @@
   <block id="355c33d19fef368cb732f4540374aa89" category="admonition">언급되지 않은 시나리오가 있을 수 있습니다. NetApp은 액티브 모드에서 MetroCluster Tiebreaker를 사용하지 않을 경우 발생할 수 있는 어떠한 손상에도 책임을 지지 않습니다. 위험 및 제한이 허용되지 않는 경우 MetroCluster Tiebreaker를 활성 모드에서 사용하지 마십시오.</block>
   <block id="d5e32abfbd3e5376cc7d90c1003b3516" category="summary">Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.</block>
   <block id="1e03abc52b8015d8bfda380a49a74d3d" category="doc">Tiebreaker 소프트웨어 설치</block>
-  <block id="9e44d314de95eaf08eaa23e210f083b9" category="paragraph">MetroCluster 소프트웨어를 설치하고 구성해야 합니다.</block>
   <block id="dfecead04927b98b4718817e8ee72b45" category="section-title">Tiebreaker 소프트웨어 설치 또는 업그레이드를 위한 시스템 요구 사항</block>
   <block id="995e564ca3c05e931e1da79c841f6b29" category="paragraph">Tiebreaker 소프트웨어는 세 번째 사이트에 설치되며, 이를 통해 ISL(Inter-Switch Link) 장애(사이트 간 링크가 다운된 경우)와 사이트 장애를 구분할 수 있습니다. MetroCluster 구성을 모니터링하기 위해 로컬 컴퓨터에 Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템이 특정 요구 사항을 충족해야 합니다.</block>
   <block id="41cf1c389a424db4cc6188d92f8873e1" category="paragraph">MetroCluster Tiebreaker 소프트웨어에는 다음과 같은 모니터링 기능과 요구 사항이 있습니다.</block>
-  <block id="4b8277d24c612d1d23663a72977ad328" category="list-text">서로 다른 MetroCluster 구성에 특별한 구성이 필요하지 않습니다.</block>
   <block id="fa16f1eaa9378fa31cb55f8791abfbc4" category="list-text">최대 15개의 MetroCluster 구성을 동시에 모니터링할 수 있습니다.</block>
-  <block id="68a68579e29d4f4e1a1a17f8dc790b3c" category="admonition">여러 개의 Tiebreaker 모니터와 충돌하지 않도록 MetroCluster 구성당 MetroCluster Tiebreaker 모니터가 하나만 있어야 합니다.</block>
   <block id="74c24f77157a44b3d1b75c7a631b2f1a" category="list-text">MetroCluster IP, MetroCluster FC 및 스트레치 MetroCluster 구성의 조합 지원</block>
   <block id="0051a43c14e5ca151dedc81a1b8f3b8e" category="list-text">하드웨어 및 소프트웨어:</block>
   <block id="1622cddcc8d92c2f521cf45ebeeb83b0" category="list-text">MariaDB 5.5.52.x/MySQL Server 5.6x</block>
   <block id="f211a801e18d8052b211fd5a87a83253" category="list-text">4GB RAM</block>
-  <block id="fcf5a54aabe95484b6469eae85dc2a6a" category="list-text">Java Runtime Environment 8을 엽니다</block>
   <block id="6d6a8e3be3c8694034944ec6e631c4be" category="list-text">디스크 용량: 8GB</block>
   <block id="4c009b85d61ad347b56add00274e7453" category="list-text">방화벽:</block>
   <block id="3c78850f45b6edfc4af8ec0a93a2a1ab" category="list-text">AutoSupport 메시지 설정을 위한 직접 액세스</block>
   <block id="cde2b4acd898c32670d230559bc6a550" category="list-text">SSH(포트 22/TCP), HTTPS(포트 443/TCP) 및 ping(ICMP)</block>
-  <block id="b7b51c42ece1fa71e4c6078d16fb8180" category="list-text">FIPS 지원 호스트에서는 설치가 지원되지 않습니다.</block>
   <block id="d622b09f9e4518b80b223d0f3d83f9cd" category="section-title">MetroCluster Tiebreaker 종속성 설치</block>
   <block id="c484a86c621669bc61d7e0ad166de57f" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트인 Linux 운영 체제에 따라 MySQL 또는 MariaDB 서버를 설치해야 합니다.</block>
-  <block id="daef0ac00e1ce03149d77a238f313f40" category="list-text">Java Runtime Environment를 설치합니다.</block>
-  <block id="322a14b32bb5c1132087f429aa08aa6e" category="inline-xref">Java Runtime Environment 설치 1.8</block>
-  <block id="5b704ee7b2ad5423137a896d4c4ab92a" category="paragraph"><block ref="706367e7c49952df4e02581bb09ed841" category="inline-xref-macro-rx"></block></block>
   <block id="b56e6f0af6a9b1b27daa95d4a36afdc4" category="list-text">MySQL 또는 MariaDB 서버 설치:</block>
   <block id="6d3e1ad458b8305490e7f3f555ee8c93" category="cell">Linux 호스트가 인 경우</block>
   <block id="c1325f6903ebb5ebb2bb519a73ddb1b0" category="cell">그러면...</block>
@@ -2130,16 +2121,10 @@
   <block id="4edc6e3711a7b2b1f3ee14f852711a72" category="paragraph">MariaDB를 설치합니다</block>
   <block id="6b415ecff4f67f832fb78f9c6ed7945a" category="inline-xref">Red Hat Enterprise Linux 8에 MariaDB 서버 설치</block>
   <block id="8ced9fc9cddb4453095058632c12c49f" category="paragraph"><block ref="fcc472ae70179ceec6c9e23c4db15f10" category="inline-xref-macro-rx"></block></block>
-  <block id="cd349969158b43e12b83d29b04e0043d" category="paragraph">Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 호스트 시스템에 Java Runtime Environment 1.8을 설치해야 합니다.</block>
-  <block id="72b0aab8b96a9d3fa805ed484ede7f76" category="list-text">호스트 시스템에 root로 로그인합니다.</block>
-  <block id="1b4e516e0d0ab981d6240b91082cdfe8" category="list-text">Java Runtime Environment 1.8 설치:</block>
-  <block id="b0039379b0936cf4501521fb4420f585" category="paragraph">'[root@mctb~]#yum install java-1.8.0-openjdk.x86_64'</block>
   <block id="4a857d4819f55ec889deb5379b9ce9c7" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다.</block>
   <block id="982777ff7445d76450443abffc937386" category="list-text">호스트 시스템에 MySQL 리포지토리를 추가합니다.</block>
   <block id="76597904d13ed6703126a060cc752f6b" category="paragraph">([root@mcctb~]#yum localinstall\https://dev.mysql.com/get/mysql57-community-release-el6-11.noarch.rpm`)</block>
-  <block id="081d28d21e98dffaebd19fca15fe5217" category="list-text">MySQL 57 리포지토리를 비활성화합니다.</block>
   <block id="b668a67d489eec4f62521bbd12885266" category="paragraph">'[root@mctb~]#yum-config-manager--disable mysql57-community'</block>
-  <block id="487abcba8707ef46aacc2b585b6a289b" category="list-text">MySQL 56 리포지토리 활성화:</block>
   <block id="b2a2bcf1d273c0fb32775eaa18c41696" category="paragraph">'[root@mctb~]#yum-config-manager--enable mysql56-community'</block>
   <block id="072e1bfd6f4abef0faf3012692bf5ea1" category="list-text">리포지토리 활성화:</block>
   <block id="e7f832e3ddb40e5c83f7a6a1009ac585" category="paragraph">"[root@mcctb~]#yum repolist enabled|grep "mysql. * -community. *"""</block>
@@ -2155,7 +2140,6 @@
   <block id="a4fddf98cdbecd6a73cbff1c16747db4" category="paragraph">'[root@mctb~]#mysql-u root –p'</block>
   <block id="b1cef06f6d0dbb6b0907ba2828c01658" category="paragraph">MySQL 로그인이 작동 중이면 출력이 mysql&gt; 프롬프트로 종료됩니다.</block>
   <block id="ee2d0facfca7cf9da7afc98606d041bb" category="section-title">MySQL 자동 시작 설정을 활성화합니다</block>
-  <block id="2aebe553116141c80b33b03a6066e162" category="paragraph">MySQL deamon에 대해 자동 시작 기능이 켜져 있는지 확인해야 합니다. MySQL 데몬을 켜면 MetroCluster Tiebreaker 소프트웨어가 상주하는 시스템이 재부팅될 경우 MySQL이 자동으로 다시 시작됩니다. MySQL 데몬이 실행되고 있지 않으면 Tiebreaker 소프트웨어가 계속 실행되지만 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
   <block id="907482e03a773bacd1197e79ad353d1a" category="list-text">부팅할 때 MySQL이 자동 시작되도록 설정되었는지 확인합니다.</block>
   <block id="9828a53574d333fd2cfd570e38922b4f" category="paragraph">([root@mcctb~]#systemctl list-unit-files mysqld.service`)</block>
   <block id="6b78bf98fe8a405df5e22ad1b5b3a1ba" category="paragraph">부팅할 때 MySQL이 자동 시작되도록 설정되지 않은 경우 MySQL 설명서를 참조하여 설치에 대한 자동 시작 기능을 활성화하십시오.</block>
@@ -2165,12 +2149,9 @@
   <block id="cef7dfc261d8a8420d1938a361c69aa9" category="paragraph">'[root@mctb~]#yum install MariaDB-server.x86_64'</block>
   <block id="60d8aee94c480f814db37523f4bf4e7c" category="list-text">MariaDB 서버 시작:</block>
   <block id="5dfdc749670b1b02e69d44bfaebcca7a" category="paragraph">'[root@mcctb~]#systemctl start MariaDB'</block>
-  <block id="41e90b98524e41b5e2a730bbc11c4d68" category="list-text">MariaDB 서버가 시작되었는지 확인합니다.</block>
   <block id="3d17e319e9e36197217af282fa99978d" category="paragraph">'[root@mcctb~]#systemctl status MariaDB'</block>
-  <block id="66c3a52e296340b1f53b99213e63311b" category="admonition">MariaDB에 대해 "자동 시작 사용" 설정이 켜져 있는지 확인합니다. 을 참조하십시오 <block ref="357a9b2b77cd4c5da8d2b51300246283" category="inline-xref-macro-rx"></block>.</block>
   <block id="937a7baab3806f1c4b9f6865102b0452" category="list-text">보안 및 암호 설정을 구성합니다.</block>
   <block id="a6a94dd70978b2b80d52534ad2ff0763" category="section-title">MariaDB에 대한 자동 시작 설정을 활성화합니다</block>
-  <block id="69b59a19df8a4681ca9120df41f595ea" category="paragraph">MariaDB에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. 자동 시작 기능을 활성화하지 않고 MetroCluster Tiebreaker 소프트웨어가 있는 시스템을 재부팅해야 하는 경우 Tiebreaker 소프트웨어는 계속 실행되지만 MariaDB 서비스를 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
   <block id="3a792898663e436585860dc61b16ebbe" category="list-text">자동 시작 서비스를 활성화합니다.</block>
   <block id="702b74d571398b97d529b92567ce42a7" category="paragraph">'[root@mcctb~]#systemctl enable mariadb.service`</block>
   <block id="5c77e1603fd1c29c92901cf08deda7ef" category="list-text">부팅할 때 MariaDB가 자동 시작되도록 설정되었는지 확인합니다.</block>
@@ -2178,22 +2159,13 @@
   <block id="998939e20c88d175779417ce100fafed" category="section-title">소프트웨어 패키지 설치 또는 업그레이드</block>
   <block id="aa0bf4d75253e028ce83fbc2fe035e54" category="paragraph">MetroCluster 구성을 모니터링하려면 로컬 컴퓨터에 MetroCluster Tiebreaker 소프트웨어를 설치하거나 업그레이드해야 합니다.</block>
   <block id="3f18eec2af554a1393e91a90bacbc4e0" category="list-text">스토리지 시스템에서 ONTAP 8.3.x 이상을 실행해야 합니다.</block>
-  <block id="efbeea6d7850727664a7da563473bf28" category="list-text">yum install java-1.8.0-openjdk 명령을 사용하여 OpenJDK를 설치해야 합니다.</block>
-  <block id="9be8f8020bac531bf90d3e9e43090821" category="list-text">최신 버전의 MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예에서는 버전 1.21P3-1을 사용합니다.</block>
   <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link">NetApp 지원</block>
-  <block id="7cc99909d4740191f04c1e16267410f6" category="paragraph"><block ref="7cc99909d4740191f04c1e16267410f6" category="inline-link-rx"></block></block>
   <block id="0181a996142ce88d36927257090dd51b" category="list-text">호스트에 루트 사용자로 로그인합니다.</block>
-  <block id="e5c134f52f1e0a03dbbcea2a450afc6f" category="list-text">Tiebreaker 소프트웨어 설치 또는 업그레이드:</block>
-  <block id="f869ea7ce9a752fc1c1184b74b7c48b7" category="cell">만약...</block>
   <block id="5c0951f5a767642dcb5de6e5878a5032" category="cell">이 명령 실행...</block>
-  <block id="e0dc43e0acdb1e44f8a2ca5c8e9d32a7" category="paragraph">새 설치 수행</block>
-  <block id="91cf0413661523a86216dbb468e63b8e" category="paragraph">"rpm-ivh NetApp-MetroCluster-Tiebreaker-Software-1.21P3-1x86_64.rpm"</block>
   <block id="5a1ca385deb8381ffff2ed6a33fd752d" category="paragraph">성공적인 설치를 위해 다음과 같은 출력이 표시됩니다.</block>
   <block id="3d47e198e02ccec25cafef6cbda2ebcc" category="paragraph">기존 설치 업그레이드</block>
-  <block id="efbc224381e9ee3b7c21a4934b2b6740" category="paragraph">"rpm-Uvh NetApp-MetroCluster-Tiebreaker-Software-1.21P3-1.x86_64.rpm"</block>
   <block id="dbe9b345ce63b9fd500e311eff185188" category="paragraph">성공적인 업그레이드를 위해 다음과 같은 출력이 표시됩니다.</block>
   <block id="669f62b51efaf771cdc56bbd948e67a7" category="admonition">잘못된 MySQL root 패스워드를 입력하면 Tiebreaker 소프트웨어는 성공적으로 설치되었음을 나타내지만 "Access denied" 메시지를 표시합니다. 이 문제를 해결하려면 "rpm -e" 명령을 사용하여 Tiebreaker 소프트웨어를 제거한 다음 올바른 MySQL root 암호를 사용하여 소프트웨어를 다시 설치해야 합니다.</block>
-  <block id="8ea7e8ff291af2b5e94aaafdfe8d1824" category="list-text">Tiebreaker 호스트에서 각 노드 관리 LIF 및 클러스터 관리 LIF로 SSH 연결을 열어 MetroCluster 소프트웨어에 대한 Tiebreaker 연결을 확인합니다.</block>
   <block id="35a8ad649b3194dfec4cd801fff9f656" category="section-title">Tiebreaker 모니터가 실행 중인 호스트 업그레이드</block>
   <block id="742dc42b1fe2cbc56c22d6c1ccda0d88" category="paragraph">업그레이드 전에 모니터를 관찰자 모드로 전환하면 Tiebreaker 모니터가 실행 중인 호스트를 중단 없이 업그레이드할 수 있습니다.</block>
   <block id="c1b20466030a9b3540d83155ad9678ce" category="list-text">모니터가 observer 모드인지 확인합니다.</block>
@@ -2228,17 +2200,13 @@
   <block id="fc56e4fa678580b339facec8400a6301" category="paragraph"><block ref="fc56e4fa678580b339facec8400a6301" category="inline-link-rx"></block></block>
   <block id="9fb038c9fc985f95a364fbc284e66009" category="summary">Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설정을 구성해야 합니다.</block>
   <block id="42c78bfa01522453fc42980157ef4a55" category="doc">Tiebreaker 소프트웨어에 대한 SNMP 설정 구성</block>
-  <block id="e80a09d3556dbe0da16e8959c406854a" category="list-text">Tiebreaker CLI SNMP config wizard 명령을 사용하여 MetroCluster 구성을 추가합니다.</block>
   <block id="8891488ccf0af3b6c4a946824e6f0cdc" category="admonition">현재 하나의 SNMP 트랩 호스트만 지원됩니다.</block>
-  <block id="aa25456b4a8036cc77b127add821a979" category="paragraph">다음 예에서는 IP 주소가 10.222.210.234인 SNMP V1을 지원하는 SNMP 수신기 구성, 트랩 메시지의 포트 번호 162 및 public으로 설정된 커뮤니티 문자열을 보여 줍니다.</block>
-  <block id="ca3a15f1b35361e790cff5d49cca0bdf" category="paragraph">Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.</block>
   <block id="69b040d4f8adaa4c34e437207036c73c" category="list-text">SNMP 설정이 구성되었는지 확인합니다.</block>
   <block id="da82ec774885b0fd4ea7e17756ffc01b" category="paragraph">NMP 구성 테스트</block>
   <block id="c4aa541ec1b33e5e76d09363d75995f8" category="paragraph">다음 예에서는 tiebreaker 소프트웨어가 이벤트 test_snmp_Config에 대한 SNMP 트랩을 보낼 수 있음을 보여 줍니다.</block>
   <block id="88360ff6d6d5e3d5d618e2ab14b30049" category="summary">Tiebreaker 소프트웨어를 설치한 후 MetroCluster 구성을 추가 또는 수정하거나 Tiebreaker 소프트웨어에서 제거할 수 있습니다.</block>
   <block id="84b5999a36db8b18180d5b58bd61c503" category="doc">Tiebreaker 소프트웨어 구성</block>
   <block id="1f160d9eb389f42ea44f6394967f985f" category="section-title">Tiebreaker 소프트웨어 CLI 시작</block>
-  <block id="54b4367d6ad91431d14caba64c7ea90b" category="paragraph">Tiebreaker 소프트웨어를 설치한 후 소프트웨어를 구성하려면 CLI를 시작해야 합니다.</block>
   <block id="c3dadd67840f8db5df2397f22e3266bd" category="list-text">소프트웨어를 설치한 호스트의 프롬프트에서 CLI를 시작합니다.</block>
   <block id="cefc8e2ff0cb055845c8a3c508972733" category="paragraph">'NetApp-MetroCluster-Tiebreaker-software-CLI'</block>
   <block id="0c3de4f48f152830cf54a3c7110e5b3e" category="section-title">MetroCluster 구성 추가</block>
@@ -2274,7 +2242,6 @@
   <block id="6f35b087f03c5152be82d7a8508f1dcc" category="paragraph">로깅을 위한 디버그 모드를 활성화합니다</block>
   <block id="43b692b0742e982d619122103369fe81" category="paragraph">디버그 비활성화</block>
   <block id="8060efc18c89171e7bd03f884d5eb315" category="paragraph">로깅에 대한 디버그 모드를 비활성화합니다</block>
-  <block id="d4421ede25de078e50d8f3f7b8943003" category="paragraph">Tiebreaker CLI "update-mcctb-password" 명령을 사용하여 사용자 암호를 업데이트할 수 있습니다.</block>
   <block id="8ce98798a68f5a92e2449012b2bc0d0a" category="paragraph">update-mctb-password(업데이트-mctb-암호)</block>
   <block id="4bc2d3a1736d521ef313b0b94df0b712" category="paragraph">사용자 암호가 성공적으로 업데이트되었습니다</block>
   <block id="c9038e013b6927b428c3bb5f3d842a05" category="section-title">MetroCluster 구성을 제거하는 중입니다</block>
@@ -2324,8 +2291,6 @@
   <block id="adb27e4fd8b408342d1fe674b200de75" category="list-text">중지 또는 재부팅</block>
   <block id="f15bdb92238378e8a74313c186a40e64" category="list-text">재해 사이트에서 FC 스위치 손실</block>
   <block id="134edeae96c65c1e5f901507c80c3e5f" category="paragraph">Tiebreaker 소프트웨어는 노드 작동이 중지되면 알림을 즉시 트리거합니다. 전원이 손실되면 인터클러스터 피어링, NV 상호 연결망 및 메일박스 디스크와 같은 모든 연결과 업데이트가 중지됩니다. 클러스터에 연결할 수 없는 시간, 재해 감지 및 기본 5초의 자동 시간을 포함하여 트리거 사이의 시간은 30초를 초과하지 않아야 합니다.</block>
-  <block id="1aed952ba5c62f7f85363261321da2b1" category="paragraph">Tiebreaker 소프트웨어는 사이트 간 NV 상호 연결이 다운되고 나머지 사이트는 ""AllLinksSegiven"" 상태를 나타낼 때 경고를 트리거합니다. 코어 덤프 프로세스가 완료된 후에만 발생합니다. 이 시나리오에서는 클러스터에 연결할 수 없게 되는 클러스터와 재해 감지 사이에 걸리는 시간이 코어 덤프 프로세스에 걸리는 시간과 같거나 더 길어질 수 있습니다. 대부분의 경우 감지 시간은 30초 이상입니다.</block>
-  <block id="a71f5af5384e7d44564d1456fc656123" category="paragraph">노드가 작동을 중지하지만 코어 덤프 프로세스에 대한 파일을 생성하지 않는 경우 검색 시간은 30초를 넘지 않아야 합니다.</block>
   <block id="f604e2f49da75682fe40941d90a27870" category="paragraph">Tiebreaker 소프트웨어는 노드가 다운되고 나머지 사이트가 ""AllLinksSegiven"" 상태를 나타낼 때만 경고를 트리거합니다. 클러스터 간에 연결할 수 없고 재해 감지 시간이 30초 이상 걸릴 수 있습니다. 이 시나리오에서는 재해 사이트 노드가 종료되는 데 걸리는 시간에 따라 재해 감지 시간이 달라집니다.</block>
   <block id="49a4812102830a278e97180cb708cdda" category="section-title">재해 사이트에서 FC 스위치 손실(패브릭 연결 MetroCluster 구성)</block>
   <block id="0a8e830222c5376adabb07f776303bd6" category="paragraph">Tiebreaker 소프트웨어는 노드 작동이 중지되면 알림을 트리거합니다. FC 스위치가 손실되면 노드에서 디스크에 대한 경로를 약 30초 동안 복구하려고 시도합니다. 이 시간 동안 노드는 피어링 네트워크에서 작동 및 응답합니다. 두 FC 스위치가 모두 다운되어 디스크 경로를 복구할 수 없는 경우, 노드는 MultiDiskFailure 오류를 발생시키고 중단시킵니다. FC 스위치 장애와 노드에서 다중디스크 장애 오류가 발생한 횟수 사이에 걸리는 시간은 약 30초입니다. 이 추가 30초를 재해 감지 시간에 추가해야 합니다.</block>
@@ -11589,8 +11554,6 @@
   <block id="34cbf6f4c56856e1f5344cf68061a5e4" category="sidebar">기존 컨트롤러 모듈을 종료합니다</block>
   <block id="01df64906814434fe4ea875b0e3ca9c0" category="sidebar">새 컨트롤러 모듈을 설치하고 케이블을 연결합니다</block>
   <block id="4662d48530b5b4895d14fda6d70a1136" category="sidebar">필수 구성 요소 및 설치</block>
-  <block id="3cb9f86e529b8be768c61e7d3fdd16db" category="sidebar">새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
-  <block id="9227942c0e8496d1950743de0c2f2b18" category="sidebar">새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결</block>
   <block id="d413a885e4df87b75c2998fe65ce15b3" category="sidebar">두 컨트롤러 모듈의 전원을 켜고 Loader 메시지가 표시됩니다</block>
   <block id="4483869994f1e668b933505db516b46e" category="sidebar">기존 및 새 컨트롤러 모듈의 ha-config 설정을 변경합니다</block>
   <block id="a2ea5e88eaf7883c14d07a200dcbac08" category="sidebar">두 컨트롤러 모듈에 대해 파트너 시스템 ID를 설정합니다</block>
@@ -11605,7 +11568,6 @@
   <block id="749a63d3e52d7d3f56116371f74f4c4c" category="sidebar">미러링되지 않은 데이터 애그리게이트를 생성합니다</block>
   <block id="d55515e1ee7c8b15964a420a9c7ee7bd" category="sidebar">컨트롤러 모듈을 추가한 후 펌웨어를 설치합니다</block>
   <block id="5e5e370132ae9bbe4d5067ae42f064ab" category="sidebar">새 컨트롤러로 MetroCluster 구성을 업데이트합니다</block>
-  <block id="8d2d0964462d3961a4a8337e2416a365" category="sidebar">두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA에서 구성 가능</block>
   <block id="5708e8d95317910a90a939a9609e669c" category="sidebar">SVM을 다시 시작합니다</block>
   <block id="086918f8a02df8d6185d9161ef568597" category="sidebar">4노드 MetroCluster FC 구성을 8노드 구성으로 확장합니다</block>
   <block id="13b1c4d4cea89ae59fe3f7b9fd95ea2d" category="sidebar">새 케이블 레이아웃 확인</block>
@@ -12174,7 +12136,6 @@
   <block id="22c9730efa04ff77f4d689d1554cb1af" category="paragraph">FAS8200/A300</block>
   <block id="44966f51999c176196bdbfe7e74f3762" category="paragraph">3, 4, 9, 10, 11, 12</block>
   <block id="3ee537e70a06614ada97e070ef70fe96" category="paragraph">FAS8300/A400/FAS8700</block>
-  <block id="8cff99d2c284195b8638b34190ed3388" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1 또는 9.11.1.</block>
   <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
   <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
@@ -12208,7 +12169,6 @@
   <block id="a9bf0a810b5c634110cced1dcc9dd514" category="section-title">AFF A250 또는 FAS500f 및 AFF A220 또는 FAS2750 시스템을 함께 사용하기 위한 스위치 포트 사용</block>
   <block id="eab2b22490c89198b6c41f5b7c6e6104" category="image-alt">MCC IP 케이블 연결 AFF A250 및 A220을 Broadcom의 Bes 53248 스위치에 연결합니다</block>
   <block id="cbb84028bf466aea1ee153b79bbe1a90" category="list-text">Red Hat Enterprise Linux 7 - 7.9 또는 CentOS 7 - 7.9 64비트(물리적 설치 또는 가상 시스템)</block>
-  <block id="7ddeb0fd81d52fb9d56f1689ef0faa65" category="list-text">Red Hat Enterprise Linux 8.1 - 8.5</block>
   <block id="af5c7720c35a6c5bbdbd9a0118f9b86a" category="list-text">MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)</block>
   <block id="f59e44c66a463087eb80b00cc5e7867c" category="list-text">동일한 모델의 지원되는 Cisco 스위치 4개를 동일한 NX-OS 버전 및 라이센스로 사용해야 합니다.</block>
   <block id="de27fc3292cfa48f233ba5969313e590" category="list-text">Cisco FC 스토리지 패브릭에서는 암호화 또는 압축을 사용할 수 없습니다. MetroCluster 구성에서는 지원되지 않습니다.</block>
@@ -12818,7 +12778,6 @@
   <block id="7c5f3ae5aa1416c77224608ca167ed4c" category="paragraph">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 <block ref="5e51ded3128b8f60bc0b91c41dccbb25" category="inline-link-macro-rx"></block>.</block>
   <block id="524f05419622851f7f6289320cc91a6e" category="sidebar">MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다</block>
   <block id="81cce2035bed6113b6ccecaeb9cf25a9" category="sidebar">확장 절차를 선택합니다</block>
-  <block id="6ff6555fd4c104df84532572f5435476" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster FC의 MetroCluster FC에서 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="87663f3a8212644181733b0573eae80d" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)</block>
   <block id="cbfda5b02caeddc103ebee1baa66d92c" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스에 대해 40GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합에는 ONTAP 9.12.1 이상이 필요합니다.</block>
   <block id="55b44ccf6250ba590ce25f63cea8e958" category="list-text">참고 3: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합에는 ONTAP 9.12.1 이상이 필요합니다.</block>
@@ -12876,4 +12835,184 @@
   <block id="6fe56a61eacaba0f58f729f4dff36b33" category="list-text">작동 중인 사이트에서 다음 명령을 실행하여 전환을 수행합니다.</block>
   <block id="9b6012ae921487ba43de70a4b89eea50" category="admonition">작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다. 를 사용하여 진행 상태를 확인할 수 있습니다<block ref="0d47d8f5f26b2a71aacf597494f0adbb" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="732b254ce7502fe430a0cca5faf72038" category="list-text">를 실행하여 전환이 성공적으로 완료되었는지 확인합니다<block ref="0d47d8f5f26b2a71aacf597494f0adbb" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="4d2d1612af55980a51c5e5884cfe5048" category="paragraph">MetroCluster FC 구성에서 Tiebreaker 소프트웨어는 사이트 간 NV 상호 연결 연결이 다운되고 나머지 사이트는 ""AllLinksSeged"" 상태를 나타낼 때 경고를 트리거합니다. 코어 덤프 프로세스가 완료된 후에만 발생합니다. 이 시나리오에서는 클러스터에 연결할 수 없게 되는 클러스터와 재해 감지 사이에 걸리는 시간이 코어 덤프 프로세스에 걸리는 시간과 같거나 더 길어질 수 있습니다. 대부분의 경우 감지 시간은 30초 이상입니다.</block>
+  <block id="e4a02bd2c4ec025de546315db10bc44f" category="paragraph">노드가 작동을 중지하지만 코어 덤프 프로세스에 대한 파일을 생성하지 않는 경우 검색 시간은 30초를 넘지 않아야 합니다. MetroCluster IP 구성에서 NV는 통신을 중지하고 정상적인 사이트가 코어 덤프 프로세스를 인식하지 못합니다.</block>
+  <block id="2d5bfb04adbed278cb35f60f17f596f2" category="paragraph">Tiebreaker 소프트웨어를 설치한 후 소프트웨어를 구성하려면 CLI를 시작해야 합니다.</block>
+  <block id="ea9b2c9e4cc3caddc774579fda10f554" category="list-text">설치 후 처음 시작하는 동안 데이터베이스에 액세스하려면 Tiebreaker 사용자의 암호를 입력합니다. 설치하는 동안 데이터베이스 사용자에 대해 지정한 암호입니다.</block>
+  <block id="4a4d46716cd5f84b658a3a257394bbbc" category="paragraph">Tiebreaker 1.4 이하를 실행하는 시스템에서는 Tiebreaker CLI를 사용합니다<block ref="8ce98798a68f5a92e2449012b2bc0d0a" prefix=" " category="inline-code"></block> 명령을 사용하여 사용자 암호를 업데이트할 수 있습니다. 이 명령은 Tiebreaker 1.5 이상에서 더 이상 사용되지 않습니다.</block>
+  <block id="1dc3a4bfe402ed00a069d8536291ac79" category="summary">ONTAP API 및 SSH에 대한 관리자 액세스를 구성할 수 있습니다.</block>
+  <block id="6f29ae92010ef511648a0f0deeae72a4" category="doc">ONTAP API 및 SSH에 대한 관리자 액세스 구성</block>
+  <block id="82c961634d5efa9abb1920a04a9c2959" category="list-text">ONTAP API 액세스 권한이 있는 관리자 사용자 생성:<block ref="d87e573141fcf041eb5613c691267fb5" prefix=" " category="inline-code"></block></block>
+  <block id="e0dc40ccfef10504fb91f1169d35732e" category="list-text">SSH 액세스를 통해 admin 사용자 생성:<block ref="451dc81d26d749970c113ad1ee5eb03d" prefix=" " category="inline-code"></block></block>
+  <block id="b1da335cf10c2f924dba74d5fd88d108" category="list-text">새 관리자 사용자가 생성되었는지 확인합니다.<block ref="025c83c1a746b39471a98aa72befe950" prefix=" " category="inline-code"></block></block>
+  <block id="6ba7b5d818acb6cab3137d4c011e2db2" category="inline-link-macro">관리자 인증 및 RBAC</block>
+  <block id="e7d59a0eb3a6cfef54201efcc0c8d786" category="admonition"><block ref="7886b0aac53ba2a311aa54645e5cc1ff" category="inline-link-macro-rx"></block> 구현되었습니다.</block>
+  <block id="928cee617936aa2a4fa44c397f9242d0" category="paragraph">Tiebreaker 소프트웨어를 설치하고 구성해야 합니다.</block>
+  <block id="2cdf4d361a0254ca58a3bec3a13f4c97" category="admonition">MetroCluster Tiebreaker 소프트웨어 및 종속 패키지를 설치하려면 "루트" 권한이 있어야 합니다.</block>
+  <block id="08821d58a0ccf55fa3dc84c09844d2be" category="admonition">여러 개의 Tiebreaker 모니터와 충돌을 피하기 위해 MetroCluster 구성당 하나의 MetroCluster Tiebreaker 모니터만 사용할 수 있습니다.</block>
+  <block id="32c7669c4b727c3dd30ff98a0c602bff" category="list-text">ONTAP 8.3.x, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9.1, 9.10.1, 9.11.1 또는 9.12.1</block>
+  <block id="c332d926b941e2e435266f227d47f710" category="admonition">MetroCluster Tiebreaker 1.4만 RHEL 버전 7-7.9와 호환됩니다.</block>
+  <block id="589527a6e982279d79d4094b9cb6a17d" category="list-text">JRE 8을 엽니다</block>
+  <block id="b54b2f8d3b7da844c5372449a2f2e34b" category="list-text">Red Hat Enterprise Linux 8.1 - 8.7</block>
+  <block id="b4405cee9bd65889bb2683ee9723f1a6" category="paragraph">Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다.</block>
+  <block id="df3d50023ef4040e27c74e460fb82c76" category="section-title">호스트 및 데이터베이스 설치를 보호합니다</block>
+  <block id="a70255bc79978e30e2226102ec52a8b4" category="paragraph">MetroCluster Tiebreaker 1.5 이상을 실행하는 구성의 경우 호스트 OS와 데이터베이스를 보호하고 강화할 수 있습니다.</block>
+  <block id="fb42bff9ef98fcd52bf0394e5b82dbc4" category="section-title">호스트를 보호합니다</block>
+  <block id="ba55431ffbe07990825776e0189349f9" category="paragraph">다음 지침은 Tiebreaker 소프트웨어가 설치된 호스트를 고정하는 방법을 보여줍니다.</block>
+  <block id="77af0d306f63f871aed8775a2fee284e" category="list-text">"루트" 사용자의 액세스를 제한합니다.</block>
+  <block id="61f7733093f25bb223a42607ca2406c1" category="list-text">Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다.</block>
+  <block id="30550ee0195aa8c918aee8678daf6dc8" category="list-text">Tiebreaker 소프트웨어 관리를 위해 루트 액세스로 승격할 수 없는 사용자를 사용할 수 있습니다.</block>
+  <block id="33e6988813e236adab8df9d5f7902aa5" category="admonition">설치 중에 "mctbgrp"라는 그룹을 생성해야 합니다. 설치 중에 생성된 호스트 루트 사용자와 사용자는 모두 구성원입니다. 이 그룹의 구성원만 Tiebreaker 소프트웨어를 완전히 관리할 수 있습니다.</block>
+  <block id="4c57532a7794b3dceffcfaa9c83555c3" category="list-text">이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 또는 CLI에 액세스할 수 없습니다. 호스트에서 추가 사용자를 생성하고 해당 사용자를 그룹의 구성원으로 만들 수 있습니다. 이러한 추가 구성원은 Tiebreaker 소프트웨어를 완전히 관리할 수 없습니다. 즉, 읽기 전용 액세스 권한이 있으며 모니터를 추가, 변경 또는 삭제할 수 없습니다.</block>
+  <block id="c1f8ac8c1a56ebb5dd571d1786563ed6" category="list-text">디스크 암호화를 사용합니다</block>
+  <block id="b0c14dc494b591e529b0b6c13cfbd8dd" category="list-text">디스크 암호화를 활성화할 수 있습니다. 이것은 FullDiskEncryption(하드웨어) 또는 HostOS(소프트웨어)에서 제공하는 암호화 또는 SVM 호스트에서 제공할 수 있습니다.</block>
+  <block id="6b1d6ed0d8e28b63b51388bb7b60fd63" category="list-text">들어오는 연결을 허용하는 사용하지 않는 서비스를 비활성화합니다. 사용하지 않는 서비스는 모두 비활성화할 수 있습니다. Tiebreaker 설치 시 모든 연결이 전송되므로 Tiebreaker 소프트웨어를 통해 들어오는 연결에 대한 서비스를 받을 필요가 없습니다. 기본적으로 활성화되며 비활성화할 수 있는 서비스는 다음과 같습니다.</block>
+  <block id="e289b4b6640e10a13a734897ab62afa5" category="list-text">HTTP/HTTPS 서버</block>
+  <block id="2e34d93f4da607e244985623cb1d0fa8" category="list-text">FTP 서버</block>
+  <block id="8b01afb3d17e508a84bd8058b3428a66" category="list-text">텔넷, RSH, rlogin</block>
+  <block id="729879fdf525c9667cb277d244aa7274" category="list-text">NFS, CIFS 및 기타 프로토콜 액세스</block>
+  <block id="beda15400b31ab8205bae24315e9e3c7" category="list-text">RDP(RemoteDesktopProtocol), X11 서버, VNC 또는 기타 원격 "데스크톱" 서비스 공급자.</block>
+  <block id="ecc5f4591089da399dd184de3b89733b" category="admonition">호스트를 원격으로 관리하려면 직렬 콘솔 액세스(지원되는 경우) 또는 하나 이상의 프로토콜을 활성화해야 합니다. 모든 프로토콜을 비활성화하면 관리를 위해 호스트에 대한 물리적 액세스가 필요합니다.</block>
+  <block id="0b188830f4d45166fb7cb045426789cd" category="list-text">FIPS를 사용하여 호스트를 보호합니다</block>
+  <block id="94591c4a627b8be3a77cc91a7b0c39ed" category="list-text">호스트 OS를 FIPS 호환 모드로 설치한 다음 Tiebreaker를 설치할 수 있습니다.</block>
+  <block id="3e91f62daa13f5b54cc2bbf0a5356d5c" category="admonition">OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 확인합니다. 수동으로 변경할 필요가 없습니다.</block>
+  <block id="dd3533624ea6d478890db012d2a96e07" category="list-text">기본 권장 사항</block>
+  <block id="28f1a9422a1c43b899dff40ac21f8195" category="list-text">루트 사용자로 Tiebreaker를 실행하지 마십시오. Tiebreaker를 실행하려면 권한이 없는 전용 서비스 계정을 사용하십시오.</block>
+  <block id="34b38a81712963f8bc96b575fb9e9d63" category="list-text">"/etc/snmp/snmpd.conf" 파일에서 기본 커뮤니티 문자열을 변경합니다.</block>
+  <block id="22792bff9ca0a70da01bbf3a534fb0a8" category="list-text">최소 쓰기 권한 허용. 권한이 없는 Tiebreaker 서비스 계정은 실행 가능한 바이너리 또는 구성 파일을 덮어쓸 수 있는 액세스 권한이 없어야 합니다. Tiebreaker 사용자는 로컬 Tiebreaker 스토리지(예: 통합 백엔드 스토리지) 또는 감사 로그의 디렉토리와 파일만 쓸 수 있어야 합니다.</block>
+  <block id="78e2f9fbccdc78c822a630b60fdb45d2" category="list-text">엔드 투 엔드 전송 계층 보안(TLS). Tiebreaker는 항상 TLS와 함께 사용해야 합니다. 중간 부하 분산 장치 또는 역방향 프록시가 전면 Tiebreaker에 사용되는 경우, 백엔드 스토리지를 포함한 시스템의 모든 구성 요소 간의 모든 네트워크 연결에 TLS를 사용하여 Tiebreaker 간에 전송 중인 모든 트래픽을 암호화해야 합니다. 가능하면 Tiebreaker의 사용자 지정 응답 헤더 기능을 사용하여 HTTP Strict Transport Security(HSTS) 헤더를 설정해야 합니다.</block>
+  <block id="d793625b2b0dd5dc51e94311cfc93a64" category="list-text">최신 버전의 OpenSSH를 설치하고 실행해야 합니다.</block>
+  <block id="ce7f15a2d18ae2db0c61e3bd34a36461" category="list-text">익명 사용자는 허용하지 않습니다.</block>
+  <block id="8e69b78393ea997402c47bcf5e3dc234" category="list-text">AllowTcpForwarding 을 "no"로 설정하거나 Match 지시문을 사용하여 익명 사용자를 제한합니다.</block>
+  <block id="126a7d9f821252d114afe5a3bd55d49a" category="list-text">Shell 명령 기록을 비활성화합니다.</block>
+  <block id="98789e20ad857b904690ce90333052d6" category="list-text">자주 업그레이드하십시오. Tiebreaker는 적극적으로 개발되었으며 보안 픽스 및 키 길이 또는 암호 그룹 같은 기본 설정의 변경 사항을 통합하기 위해 자주 업데이트해야 합니다.</block>
+  <block id="59c35ef819d1dde06d960624fd6fafd1" category="list-text">새로운 릴리스의 발표 내용을 받아보려면 HashiCorp 공지 메일링 목록을 구독하고 새로운 릴리스의 최신 업데이트에 대한 자세한 내용은 Tiebreaker changelog를 방문하십시오.</block>
+  <block id="43a32642c83792b717745d6ba0b8ce88" category="list-text">올바른 파일 권한을 사용하십시오. Tiebreaker 소프트웨어, 특히 중요한 정보가 포함된 소프트웨어를 시작하기 전에 항상 파일에 적절한 권한이 적용되었는지 확인하십시오.</block>
+  <block id="1aeb0f3005db6ba70bd420bae561dc5d" category="list-text">다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다. RHEL 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다.</block>
+  <block id="92726ab5faeb2cb9208eaac9af0346bd" category="paragraph-title">사용자 관리</block>
+  <block id="29e7446bddd5d43e5b134b0195974dc4" category="inline-link-macro">사용자 계정 관리 시작</block>
+  <block id="e7093675e4f7ff464368a2c6885c0eff" category="paragraph"><block ref="e7093675e4f7ff464368a2c6885c0eff" category="inline-link-macro-rx"></block></block>
+  <block id="65c86c5fc3a334e5116b9bb178b8f05f" category="inline-link-macro">사용자 및 그룹 계정 관리 소개</block>
+  <block id="8429a553dc9f96d80d372de5c7bc1dd0" category="paragraph"><block ref="8429a553dc9f96d80d372de5c7bc1dd0" category="inline-link-macro-rx"></block></block>
+  <block id="891179c93bd7a1d83445158a2a3bcf35" category="inline-link-macro">웹 콘솔에서 사용자 계정 관리</block>
+  <block id="dcc8b60eb907ead6a2476a179c643719" category="paragraph"><block ref="dcc8b60eb907ead6a2476a179c643719" category="inline-link-macro-rx"></block></block>
+  <block id="7c557f5d7b160269fadf1af0918c0ff8" category="inline-link-macro">명령줄에서 사용자 관리</block>
+  <block id="8c153ad2f489ca7a136092d429df3c46" category="paragraph"><block ref="8c153ad2f489ca7a136092d429df3c46" category="inline-link-macro-rx"></block></block>
+  <block id="11e979f92d60857c96e7cef79b2098cd" category="inline-link-macro">명령줄을 사용하여 사용자 그룹 편집</block>
+  <block id="5182eba1834da91a1e9b917f0ba52913" category="paragraph"><block ref="5182eba1834da91a1e9b917f0ba52913" category="inline-link-macro-rx"></block></block>
+  <block id="b063c000eb4fba48d6e75b79adf42a9d" category="inline-link-macro">sudo 액세스 관리</block>
+  <block id="9d11eb8265b20d1b5cc3258afeee0197" category="paragraph"><block ref="9d11eb8265b20d1b5cc3258afeee0197" category="inline-link-macro-rx"></block></block>
+  <block id="c5d7be9e703097d4676ec00c2b6b552e" category="inline-link-macro">루트 암호를 관리하고 재설정합니다</block>
+  <block id="6bff5b8adae91af0fd158a7e1d80c4fd" category="paragraph"><block ref="6bff5b8adae91af0fd158a7e1d80c4fd" category="inline-link-macro-rx"></block></block>
+  <block id="addb25ae677e0b8a55734ab57c09d585" category="inline-link-macro">보안 강화</block>
+  <block id="77948500a8ac32e65224ff3e88f584f7" category="paragraph"><block ref="77948500a8ac32e65224ff3e88f584f7" category="inline-link-macro-rx"></block></block>
+  <block id="7e6eb8a8fac82fdcaf2a5595f008d4f8" category="inline-link-macro">네트워크 보안</block>
+  <block id="e987f366c618f88054ad128bd499b7ee" category="paragraph"><block ref="e987f366c618f88054ad128bd499b7ee" category="inline-link-macro-rx"></block></block>
+  <block id="48bf78646325b8dac0d057af95860a05" category="inline-link-macro">systemctl을 사용하여 시스템 서비스 관리</block>
+  <block id="47bfa795f3168c6e7510c4c9ad03c05a" category="paragraph"><block ref="47bfa795f3168c6e7510c4c9ad03c05a" category="inline-link-macro-rx"></block></block>
+  <block id="48ff390f0fb64944dc24e6b219359ffe" category="inline-link-macro">RHEL 8 문서</block>
+  <block id="810a71e7a8ed8d9a40260fe78cf59339" category="paragraph"><block ref="810a71e7a8ed8d9a40260fe78cf59339" category="inline-link-macro-rx"></block></block>
+  <block id="a0b41d356b93c9dfaa68be7187603656" category="inline-link-macro">OpenJDK 8의 기본 FIPS 구성</block>
+  <block id="afa39d1513aaa715d473b01160b979a5" category="paragraph"><block ref="afa39d1513aaa715d473b01160b979a5" category="inline-link-macro-rx"></block></block>
+  <block id="da450a003a78f5bc0db625b903ebe4df" category="admonition">호스트를 보호하는 경우 사용자 개입 없이 호스트를 부팅할 수 있는지 확인해야 합니다. 사용자 개입이 필요한 경우 호스트가 예기치 않게 재부팅될 경우 Tiebreaker 기능을 사용하지 못할 수 있습니다. 이 경우 Tiebreaker 기능은 수동 개입 이후 및 호스트가 완전히 부팅된 후에만 사용할 수 있습니다.</block>
+  <block id="c22cb96c998e3ef3a46e95e20b46cc25" category="section-title">데이터베이스 설치를 보호합니다</block>
+  <block id="dde18c163a52fbc5fd51944f7a5cc78a" category="paragraph">다음 지침은 MariaDB 10.x 데이터베이스 설치를 보호하고 강화하는 방법을 보여줍니다.</block>
+  <block id="72cc9b23ef9181d84a5d1574a7d6b0fa" category="list-text">"루트" 사용자의 액세스를 제한합니다.</block>
+  <block id="167298beccb8405f3b75e539b4af3f80" category="list-text">Tiebreaker는 전용 계정을 사용합니다. Tiebreaker를 설치하는 동안 저장(구성) 데이터를 위한 계정 및 테이블이 생성됩니다. 데이터베이스에 대한 액세스 권한을 상승시키는 유일한 시간은 설치 중에 필요합니다.</block>
+  <block id="f09d662f92ba47c6523ae0d3d4d3672c" category="list-text">설치 중에 다음과 같은 액세스 및 권한이 필요합니다.</block>
+  <block id="24289888e3803ec70dfd766cd4e83012" category="list-text">데이터베이스 및 테이블을 만드는 기능입니다</block>
+  <block id="4dae4336145d630fc4ef8b36620dd040" category="list-text">글로벌 옵션을 생성하는 기능</block>
+  <block id="66995e4fcc23b009283a0ffee069bac0" category="list-text">데이터베이스 사용자를 생성하고 암호를 설정하는 기능입니다</block>
+  <block id="35217fef3323400eef6c43eae284fa4f" category="list-text">데이터베이스 사용자를 데이터베이스 및 테이블과 연결하고 액세스 권한을 할당하는 기능입니다</block>
+  <block id="60353b50c7233098e0964ca219364fc6" category="admonition">Tiebreaker 설치 중에 지정하는 사용자 계정에는 이러한 모든 권한이 있어야 합니다. 여러 작업에 여러 사용자 계정을 사용하는 것은 지원되지 않습니다.</block>
+  <block id="9dc09eec2f0b114fc44ada1400453e18" category="list-text">데이터베이스 암호화를 사용합니다</block>
+  <block id="9061f04f4bcdcda1f9e55b752788fb3d" category="list-text">NetApp은 유휴 데이터의 암호화를 지원합니다</block>
+  <block id="aa6d61e03c8f89f9d032024a34407fc4" category="list-text">전송 중인 데이터는 암호화되지 않습니다. 사용 중인 데이터는 로컬 "socks" 파일 연결을 사용합니다.</block>
+  <block id="247b92755de52d8ede5f08728ea55244" category="list-text">MariaDB에 대한 FIPS 규정 준수 -- 데이터베이스에서 FIPS 규정 준수를 활성화할 필요는 없습니다. FIPS 호환 모드에서 호스트를 설치해도 충분합니다.</block>
+  <block id="853fa7832b3e31e56f9427d88404dee9" category="admonition">암호화가 필요한 경우 Tiebreaker 소프트웨어를 설치하기 전에 암호화 설정을 활성화해야 합니다.</block>
+  <block id="26f428eaa625d88e18348654825b4df2" category="list-text">데이터베이스 사용자 관리</block>
+  <block id="65c931ac7059c8d8027b5347a2bc458a" category="inline-link-macro">액세스 제어 및 계정 관리</block>
+  <block id="6e668ee7d7022baf28de7345f448095c" category="paragraph"><block ref="6e668ee7d7022baf28de7345f448095c" category="inline-link-macro-rx"></block></block>
+  <block id="10235005b9115be409478241320830ac" category="list-text">데이터베이스 보안</block>
+  <block id="e9dccef9d910d2d69e48e8c2885d0e39" category="inline-link-macro">MySQL을 공격자에 대한 보안 강화</block>
+  <block id="529e037a8731bcfd360d39247cd9009f" category="paragraph"><block ref="529e037a8731bcfd360d39247cd9009f" category="inline-link-macro-rx"></block></block>
+  <block id="6c64c3998d1974786fb6c7319be77e44" category="inline-link-macro">MariaDB 보안</block>
+  <block id="85909cec38d8e32308f892163433f22f" category="paragraph"><block ref="85909cec38d8e32308f892163433f22f" category="inline-link-macro-rx"></block></block>
+  <block id="f460d5928c4cc0c85aa0f4f16edeefb7" category="list-text">유휴 데이터의 암호화</block>
+  <block id="a39641b0bac8191fa991bd279a1cb8aa" category="inline-link-macro">저장된 데이터 암호화 개요</block>
+  <block id="481b20702b29a344c7e3fbc0ed5c8cd2" category="paragraph"><block ref="481b20702b29a344c7e3fbc0ed5c8cd2" category="inline-link-macro-rx"></block></block>
+  <block id="1d262274bf6315ede4b316f1c1ac7294" category="inline-link-macro">MySQL Enterprise Transparent Data Encryption(TDE)</block>
+  <block id="c738467feabecf5154d502220ea938b4" category="paragraph"><block ref="c738467feabecf5154d502220ea938b4" category="inline-link-macro-rx"></block></block>
+  <block id="c212b56e6344256b819057aa0ff26e93" category="list-text">볼트 설치를 보호합니다</block>
+  <block id="adfa274b93101556376a5c1c110a25b1" category="inline-link-macro">생산 강화</block>
+  <block id="3de794741da4d53ee89d2cfb65848ddb" category="paragraph"><block ref="3de794741da4d53ee89d2cfb65848ddb" category="inline-link-macro-rx"></block></block>
+  <block id="f2bc12f5f4eebffc4fcfe148f063406b" category="list-text">JRE를 설치합니다.</block>
+  <block id="1eb28a6954d3f0d52944773f2001d377" category="inline-xref">JRE를 설치합니다</block>
+  <block id="441101d3b94f5fe418ef67bd1081c0a6" category="paragraph"><block ref="06f50206a2b466fef1529155ff096c98" category="inline-xref-macro-rx"></block></block>
+  <block id="6641dbbe07c8e6fe53f1f58917a97776" category="list-text">Vault 설치 및 구성</block>
+  <block id="f798a783218170fc044aaf03491e8c63" category="inline-xref">Vault 설치 및 구성</block>
+  <block id="ef1f1252873864d80f380df4f260b300" category="paragraph"><block ref="11cd3d25aa255f8670dd0bfb1bb1d11c" category="inline-xref-macro-rx"></block></block>
+  <block id="4f98b9e93c5515ca7d85806f3a0879e7" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 JRE를 설치해야 합니다. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다. 예제의 출력에는 JRE 1.8.0이 표시됩니다. (JRE 8).</block>
+  <block id="037b7d55a30f474064c10ac0edbaf6d3" category="list-text">고급 권한 모드로 변경할 수 있는 "루트" 사용자 또는 sudo 사용자로 로그인합니다.</block>
+  <block id="a5bdeb77664eccd64392e790b5c620a8" category="paragraph"><block ref="350a7ebb397b46f12bb07dab4792547e" prefix="" category="inline-code"></block></block>
+  <block id="75c3358765861dfefd4446691eccaebc" category="paragraph">로컬 볼트 서버를 가지고 있지 않거나 사용하고자 하는 경우, Vault를 설치해야 합니다. Vault를 설치하려면 이 표준 절차를 참조하거나, 다른 지침은 Hashicorp 설치 지침을 참조하십시오.</block>
+  <block id="ae861828484d4409805ec1edb73c2ede" category="admonition">네트워크에 Vault 서버가 있는 경우, MetroCluster Tiebreaker 호스트가 볼트 설치를 사용하도록 구성할 수 있습니다. 이 경우, 호스트에 Vault를 설치할 필요가 없습니다.</block>
+  <block id="6ab2b19db2409ff46893b7cf13d70d9d" category="list-text">볼트 zip 파일을 다운로드합니다.</block>
+  <block id="67445ff9dcb93ae0c427e0999e64cf35" category="list-text">볼트 파일의 압축을 풉니다.</block>
+  <block id="17ddf110eb6e52617c8b7cf887babcb0" category="list-text">설치를 확인합니다.</block>
+  <block id="cc99362ed38d28fc7af6e2036222f681" category="list-text">볼트 설정 파일을 작성하고 "/root" 디렉토리에 설정 파일이 작성되었는지 확인합니다.</block>
+  <block id="2a87ce89d72e3f90bd878edd443d805c" category="admonition">Vault와의 통신 보안을 위해 TLS를 사용해야 합니다.</block>
+  <block id="e8ab497790f83f5fc3740edafdb6d723" category="list-text">볼트 서버 시작:<block ref="853dbf1e30ce9caf7a28a537403dabef" prefix=" " category="inline-code"></block></block>
+  <block id="c3fa5062efbe5addb0b829217e486e9a" category="list-text">Vault 주소를 내보냅니다.</block>
+  <block id="4de432bd9c82befd87621d345b19046d" category="paragraph">TLS 사용 여부에 따라 올바른 옵션을 선택합니다.</block>
+  <block id="3279d9dbec65a434bbbaf6075818c7c5" category="open-title">옵션 1. TLS 사용 시</block>
+  <block id="3f8c35444ffef5a5d567e66fe6a43370" category="open-title">옵션 2. TLS를 사용하지 않는 경우</block>
+  <block id="91e6f0d9d3028913e9b2e534b86ef446" category="list-text">볼트 초기화</block>
+  <block id="4c540f118761cf389d03c5408a7163e8" category="list-text">볼트 루트 토큰을 내보냅니다.</block>
+  <block id="30a9676a23282e273d7f6cbe1022a6eb" category="list-text">작성된 세 개의 키 중 하나를 사용하여 Vault를 봉인합니다.</block>
+  <block id="4abdc80f31b6532d800862a32fe8ed41" category="list-text">볼트 봉인 상태가 거짓인지 확인합니다.</block>
+  <block id="6244f17ea488fb3773f5740fe78c9df2" category="list-text">부팅 중에 호스트에서 볼트 서비스가 시작되는지 확인합니다.</block>
+  <block id="cb6b0d7f9ede942a2b4f800a3fcfa03e" category="list-text">다음 명령을 실행합니다.<block ref="df6090330d99fecb3392520a0dd713fe" prefix=" " category="inline-code"></block></block>
+  <block id="bccb0874ce0428092d8ca432cf7ff3dc" category="list-text">다음 명령을 실행합니다.<block ref="1ff331fe1baeee901f4e0e0790fc6fc3" prefix=" " category="inline-code"></block></block>
+  <block id="b25f8301169ab26c8100b788b5a04f1f" category="list-text">다음 명령을 실행합니다.<block ref="269b117015efb12595eebf74692e5cbc" prefix=" " category="inline-code"></block></block>
+  <block id="fe78cd97d75c844b841d778a0e4b605e" category="list-text">다음 명령을 실행합니다.<block ref="cbf0dd11767a9f63b03243350db0a86e" prefix=" " category="inline-code"></block></block>
+  <block id="df9fc85b72713a8a0de9939c26c83353" category="admonition">MetroCluster Tiebreaker를 설치하는 동안 이 기능을 사용하라는 메시지가 표시됩니다. 볼트 밀봉을 해제하는 방법을 변경하려면 MetroCluster Tiebreaker 소프트웨어를 제거하고 다시 설치해야 합니다.</block>
+  <block id="c11d71d3c5b40ddd8e086180837e914e" category="list-text">고급 권한 모드로 변경할 수 있는 루트 사용자 또는 sudo 사용자로 로그인합니다.</block>
+  <block id="3bbfd04a5793d4302c4ff4e4d5c2b05e" category="list-text">MySQL 57 리포지토리를 비활성화합니다.</block>
+  <block id="7652b5e50c33dc0b91dc1b1f3b99bbae" category="list-text">MySQL 56 리포지토리 활성화:</block>
+  <block id="c74f17ce72c64bc3a5d3eacc0affa867" category="paragraph">MySQL 데몬에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. MySQL 데몬을 켜면 MetroCluster Tiebreaker 소프트웨어가 상주하는 시스템이 재부팅될 경우 MySQL이 자동으로 다시 시작됩니다. MySQL 데몬이 실행되고 있지 않으면 Tiebreaker 소프트웨어가 계속 실행되지만 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
+  <block id="7b21144e83a2d9bef049269b16711fb4" category="list-text">로 로그인합니다<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block> sudo를 고급 권한 모드로 설정할 수 있는 사용자 또는 사용자입니다.</block>
+  <block id="a85ec808ef0cc8f00cfefb33625bee2e" category="list-text">MariaDB 서버가 시작되었는지 확인합니다.</block>
+  <block id="39082d88e748813ca7c4289ec8bb91b8" category="admonition">MariaDB에 대해 "자동 시작 사용" 설정이 켜져 있는지 확인합니다. 을 참조하십시오 <block ref="357a9b2b77cd4c5da8d2b51300246283" category="inline-xref-macro-rx"></block>.</block>
+  <block id="516012473dc0564d6ae8f1bb21c934d0" category="paragraph">MariaDB에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. 자동 시작 기능을 활성화하지 않고 MetroCluster Tiebreaker 소프트웨어가 있는 시스템을 재부팅해야 하는 경우 Tiebreaker 소프트웨어는 계속 실행되지만 MariaDB 서비스를 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
+  <block id="fe62eeb322eff90b81676630826cee46" category="list-text">을 사용하여 OpenJDK를 설치해야 합니다<block ref="366f2699f7c6384b966350ad31d76b9d" prefix=" " category="inline-code"></block> 명령. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다. 예제의 출력에는 JRE 1.8.0이 표시됩니다. (JRE 8).</block>
+  <block id="8043dd95e39830a755744f552dcbfe87" category="list-text">MetroCluster Tiebreaker는 Tiebreaker 설치를 수행하고, 테이블, 사용자를 생성하고, 사용자 암호 등을 설정하기 위한 충분한 관리 권한을 가진 비 루트 사용자로 설치할 수 있습니다</block>
+  <block id="9e60d73d0ca4d4a89597b4e9640c5dab" category="list-text">최신 버전의 MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.</block>
+  <block id="b11583eaa66ec31ee30afd4772390654" category="paragraph"><block ref="b11583eaa66ec31ee30afd4772390654" category="inline-link-rx"></block></block>
+  <block id="afe5c13e8c0820ecf86c92cb3af131ee" category="list-text">RPM 파일을 확인합니다.</block>
+  <block id="65efc23e428017c909aa7ce5f2ab429e" category="list-text">RPM 키 파일을 다운로드하고 가져옵니다.</block>
+  <block id="9374484c18bb5cc9da6bbfb9993c0386" category="list-text">지문을 확인하여 올바른 키를 가져왔는지 확인합니다.</block>
+  <block id="9c61fcb9ca42533ca71bc3967fa8d764" category="paragraph">다음 예는 올바른 키 지문을 보여줍니다.</block>
+  <block id="f42c78486b9afb451e324130426f727f" category="list-text">서명 확인:<block ref="5f80e7b98a82f4c92a3d9bd54baf6d9e" prefix=" " category="inline-code"></block></block>
+  <block id="e5dc6ecd3ca37b58ada5f81277474d69" category="admonition">서명을 확인한 후에만 설치를 진행해야 합니다.</block>
+  <block id="1181eacfe8bc53d389900389ceb7d577" category="list-text">[[install-tiebreaker]] Tiebreaker 소프트웨어 설치 또는 업그레이드:</block>
+  <block id="fe5c4e6d23d7df5197bb3306f0890eba" category="admonition">Tiebreaker 버전 1.4에서 업그레이드할 때만 Tiebreaker 버전 1.5로 업그레이드할 수 있습니다. 이전 버전에서 Tiebreaker 1.5로의 업그레이드는 지원되지 않습니다.</block>
+  <block id="f02f0088b75e56893084f3c6d0e11382" category="paragraph">새 설치를 수행하는지 또는 기존 설치를 업그레이드하는지에 따라 아래에서 올바른 절차를 선택하십시오.</block>
+  <block id="53a3299075fc91e0efbd249fca6a3b62" category="open-title">새 설치를 수행합니다</block>
+  <block id="40459a63d8595edf157d373070798f30" category="list-text">다음 명령을 실행합니다.<block ref="03b215d9ee73daa38b9c74b25129b68a" prefix=" " category="inline-code"></block></block>
+  <block id="d0797ac7be86e76f779b0cdc4f75e306" category="list-text">지원되는 버전의 OpenJDK가 설치되어 있고 호스트에 있는 최신 Java 버전인지 확인합니다.</block>
+  <block id="bf9295a397fc51fb6414b02eb7dce4e7" category="admonition">Tiebreaker 1.5로 업그레이드하려면 OpenJDK 버전 17, 18 또는 19를 설치해야 합니다.</block>
+  <block id="ee7ebb7261a4f55ecf1a40b55f7ec926" category="list-text">볼트 서비스가 봉인되지 않고 실행 중인지 확인합니다.<block ref="95a8292a01bd6ac4b1373bf95faab177" prefix=" " category="inline-code"></block></block>
+  <block id="f4db944bd7f6d3b8eaa9afbf84f4ba60" category="list-text">Tiebreaker 소프트웨어를 업그레이드합니다.</block>
+  <block id="8ac6e9edd68ffb00104a32fd0a3ef455" category="list-text">Tiebreaker 호스트에서 각 노드 관리 LIF 및 클러스터 관리 LIF까지 SSH 연결을 열어 MetroCluster 소프트웨어에 대한 Tiebreaker 연결을 확인합니다.</block>
+  <block id="92d17a99a2247a42900b1a4c61e8e7d0" category="paragraph">Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설정을 구성해야 합니다.</block>
+  <block id="b108689bc1b65903b90d77f19e30d295" category="list-text">Tiebreaker CLI를 사용합니다<block ref="5ef546c28db0706808d8d451d5a71029" prefix=" " category="inline-code"></block> 명령을 사용하여 MetroCluster 구성을 추가합니다.</block>
+  <block id="c852f510264f0662076b7dc87a75f8f3" category="paragraph">다음 예에서는 IP 주소가 10.240.45.66이고 포트 번호가 162인 SNMP V3을 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.</block>
+  <block id="6eeb81da538b4f61a034b7c239d160a7" category="admonition">SNMPv1이 안전하지 않으므로 SNMPv3을 구성해야 합니다. 기본 커뮤니티 문자열이 public으로 설정되어 있지 * 않은지 확인합니다.</block>
+  <block id="a645efc9b9e1d2189f4d79d85cfaefce" category="sidebar">스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster FC 구성에서 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드</block>
+  <block id="6f4c27e539cc3005215fed00a58a0521" category="sidebar">새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
+  <block id="da3f2d04a7e97d4412b48daacd47915e" category="sidebar">새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결</block>
+  <block id="2a077243240a3af8fdb5a2c53c8dfd93" category="sidebar">두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다</block>
+  <block id="3ae2a51b967ff5379c07b5d59d9bb892" category="sidebar">새 컨트롤러 모듈 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
+  <block id="2ec9cf7fc01c78e918f2c1109d699ebd" category="sidebar">ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다</block>
 </blocks>

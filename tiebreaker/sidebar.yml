@@ -4,6 +4,8 @@ title: MetroCluster Tiebreaker 설치 및 구성
 entries:
 - title: Tiebreaker 소프트웨어 개요
   url: "/tiebreaker/concept_overview_of_the_tiebreaker_software.html"
+- title: ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다
+  url: "/tiebreaker/task_configure_ssh_ontapi.html"
 - title: Tiebreaker 소프트웨어를 설치합니다
   url: "/tiebreaker/task_install_the_tiebreaker_software.html"
 - title: Tiebreaker 소프트웨어를 구성합니다

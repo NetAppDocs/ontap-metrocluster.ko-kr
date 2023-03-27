@@ -14,8 +14,8 @@ entries:
     url: "/upgrade/concept_choosing_expansion_method_mcc.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC에서 컨트롤러를 업그레이드합니다
   url: "/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html"
-- title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC의 MetroCluster FC에서 컨트롤러(AFF A700/FAS9000을
-    AFF A900/FAS9500으로 업그레이드(ONTAP 9.10.1 이상)
+- title: 스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster FC 구성에서 컨트롤러(AFF A700/FAS9000을
+    AFF A900/FAS9500으로 업그레이드
   url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html"
 - title: 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC에서 컨트롤러를 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1
     이상)으로 업그레이드
@@ -93,7 +93,7 @@ entries:
       url: "/upgrade/task_install_firmware_after_add_a_controller_module.html"
   - title: 새 컨트롤러로 MetroCluster 구성을 업데이트합니다
     url: "/upgrade/task_refresh_the_mcc_configuration_mcc_configure_refresh.html"
-  - title: 두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA에서 구성 가능
+  - title: 두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다
     url: "/upgrade/task_enable_storage_failover_both_controller_modules_and_set_cluster_ha.html"
   - title: SVM을 다시 시작합니다
     url: "/upgrade/task_restart_the_svms.html"
