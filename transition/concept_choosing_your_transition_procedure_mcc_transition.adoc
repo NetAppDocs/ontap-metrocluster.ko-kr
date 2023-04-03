@@ -17,7 +17,7 @@ MetroCluster IP 구성으로 전환할 때는 지원되는 플랫폼 모델을 �
 
 예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.
 
-image::../media/metrocluster_fc_ip_transition_matrix.png[MetroCluster FC IP 전환 매트릭스입니다]
+image::../media/metrocluster_fc_ip_transition_matrix_yellowdogp1.png[MetroCluster FC IP 전환 매트릭스 y노란색그룹1]
 
 * 참고 1: 이 플랫폼 조합에는 ONTAP 9.11.1 이상이 필요합니다.
 * 참고 2: FC 노드의 로컬 클러스터 인터페이스에 대해 40GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합에는 ONTAP 9.12.1 이상이 필요합니다.

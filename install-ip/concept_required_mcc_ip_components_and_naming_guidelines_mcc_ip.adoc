@@ -156,7 +156,7 @@ e5a, e5b
 
 
  a| 
-AFF A800
+AFF A800, AFF C800
  a| 
 X1146A/온보드 포트
  a| 
@@ -167,7 +167,7 @@ e0b e1b
 
 
  a| 
-AFF A400 및 FAS8300
+FAS8300, AFF A400 및 AFF C400
  a| 
 X114A
  a| 
@@ -189,7 +189,7 @@ E1A, e1b
 
 
  a| 
-AFF A220 및 FAS2750
+FAS2750, AFF A150 및 AFF A220
  a| 
 온보드 포트
  a| 
@@ -200,7 +200,7 @@ e0a, e0b
 
 
  a| 
-AFF A250 및 FAS500f
+500f, AFF A250 및 AFF C250
  a| 
 온보드 포트
  a| 

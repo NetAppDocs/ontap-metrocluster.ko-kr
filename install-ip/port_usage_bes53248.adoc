@@ -20,7 +20,7 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 +
 이러한 포트에는 추가 라이센스가 필요합니다.
 
-. A320을 사용하는 단일 4노드 MetroCluster만 스위치에 연결할 수 있습니다.
+. AFF A320 시스템을 사용하는 단일 4노드 MetroCluster만 스위치에 연결할 수 있습니다.
 +
 MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차를 포함하여 스위치 클러스터가 필요한 기능은 이 구성에서 지원되지 않습니다.
 
@@ -48,25 +48,25 @@ MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차를 포함�
 
 
 
-== AFF A220 또는 FAS2750 시스템의 스위치 포트 사용
+== FAS2750, AFF 150 또는 AFF A220 시스템의 스위치 포트 사용
 
-image::../media/mcc_ip_cabling_a_aff_a220_or_fas2750_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 연결: AFF A220 또는 fas2750을 Broadcom의 53248 스위치에 연결합니다]
-
-
-
-== AFF A250 또는 FAS500f 시스템의 스위치 포트 사용
-
-image::../media/mcc_ip_cabling_a_aff_a250_or_fas500f_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 AFF A250 또는 fas500f를 Broadcom의 53248 스위치에 연결합니다]
+image::../media/mcc_ip_cabling_a_aff_a150_a220_or_fas2750_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 연결 AFF a150 A220 또는 fas2750을 Broadcom Bes 53248 스위치에 연결합니다]
 
 
 
-== AFF A250 또는 FAS500f 및 AFF A220 또는 FAS2750 시스템을 함께 사용하기 위한 스위치 포트 사용
+== FAS500f, AFF C250 또는 AFF A250 시스템의 스위치 포트 사용
+
+image::../media/mcc_ip_cabling_a_aff_c250_a250_or_fas500f_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 AFF c250 A250 또는 fas500f를 Broadcom의 53248 스위치에 연결합니다]
+
+
+
+== AFF A150, FAS2750, AFF A220 및 FAS500f 또는 AFF C250의 조합 사용을 위한 스위치 포트 사용 또는 AFF A250 시스템
 
 image::../media/mcc_ip_cabling_aff_a250_and_ a220_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 연결 AFF A250 및 A220을 Broadcom의 Bes 53248 스위치에 연결합니다]
 
 
 
-== AFF A300 또는 FAS8200 시스템에 대한 스위치 포트 사용
+== FAS8200 또는 AFF A300 시스템에 대한 스위치 포트 사용
 
 image::../media/mcc_ip_cabling_a_aff_a300_or_fas8200_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 AFF a300 또는 fas8200을 Broadcom의 53248 스위치에 연결합니다]
 
@@ -74,6 +74,6 @@ image::../media/mcc_ip_cabling_a_aff_a320_to_a_broadcom_bes_53248_switch.png[MCC
 
 
 
-== AFF A400, FAS8300 또는 FAS8700 시스템의 스위치 포트 사용량
+== FAS8300, AFF C400, AFF A400 또는 FAS8700 시스템의 스위치 포트 사용량
 
 image::../media/mcc_ip_cabling_a_fas8300_a400_or_fas8700_to_a_broadcom_bes_53248_switch.png[MCC IP 케이블 연결 fas8300 a400 또는 fas8700에서 Broadcom bes 53248 스위치에 연결합니다]

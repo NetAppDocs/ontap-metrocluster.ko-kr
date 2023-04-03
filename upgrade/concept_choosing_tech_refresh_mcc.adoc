@@ -29,7 +29,7 @@ NOTE: 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트
 
 === 지원되는 MetroCluster IP 기술 업데이트 조합
 
-image::../media/metrocluster_ip_tech_refresh.png[MetroCluster IP 기술 업데이트]
+image::../media/metrocluster_ip_tech_refresh_yellowdogp1.png[MetroCluster IP 기술 업데이트 노란색1]
 
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
 
