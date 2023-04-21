@@ -13005,4 +13005,6 @@
   <block id="52d00daf67aaaf387590e09043aff43a" category="list-text"><block ref="52d00daf67aaaf387590e09043aff43a" category="inline-link-macro-rx"></block></block>
   <block id="49cc90fa19d302674a7ac32a31b7a0c8" category="list-text"><block ref="49cc90fa19d302674a7ac32a31b7a0c8" category="inline-link-macro-rx"></block></block>
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
+  <block id="65cc666ecd4a5bdf3c624b12e425c91f" category="admonition">구성을 변경하려면 컨트롤러를 재부팅해야 합니다.</block>
+  <block id="57d89ae0fa9051439d76f5f61398fa16" category="list-text">양방향으로 고가용성(HA) 테이크오버 수행 하여 컨트롤러를 재부팅합니다.</block>
 </blocks>

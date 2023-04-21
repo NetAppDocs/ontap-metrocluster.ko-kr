@@ -2794,6 +2794,9 @@ Remote: cluster_A         Configuration state configured
 .이 작업에 대해
 FC 스위치가 IOD용으로 구성된 경우 IOD에 대해 ONTAP 소프트웨어를 구성해야 합니다. 마찬가지로 FC 스위치가 유드에 대해 구성된 경우 유드에 대해 ONTAP를 구성해야 합니다.
 
+
+NOTE: 구성을 변경하려면 컨트롤러를 재부팅해야 합니다.
+
 .단계
 . IOD 또는 프레임 유목(Good)을 작동하도록 ONTAP를 구성합니다.
 +
@@ -2863,6 +2866,7 @@ mcc4-b2      mlx4_0          IB       Up    false    192.0.2.10  	 ib2b
 mcc4-b12_siteB::*> metrocluster interconnect adapter modify -node mcc4-b1 -is-ood-enabled true
 mcc4-b12_siteB::*> metrocluster interconnect adapter modify -node mcc4-b2 -is-ood-enabled true
 ----
+... 양방향으로 고가용성(HA) 테이크오버 수행 하여 컨트롤러를 재부팅합니다.
 ... 설정을 확인합니다.
 +
 MetroCluster 상호 연결 어댑터가 표시됩니다
