@@ -25,9 +25,14 @@ image::../media/metrocluster_fc_ip_transition_matrix_yellowdogp1.png[MetroCluste
 * 전환 절차는 모두 ONTAP 9.8 이상이 필요합니다. 단, 참고 사항에 별도로 명시되어 있거나 개별 플랫폼에서 요구하는 경우는 예외입니다.
 
 
+[NOTE]
+====
+* 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.
+* 타겟 플랫폼 제한값이 MetroCluster 제한보다 낮을 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한보다 낮거나 같은 상태로 다시 구성해야 합니다.
+* 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
-NOTE: 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다. 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
+====
 기존 MetroCluster FC 구성에 따라 전환 절차를 선택해야 합니다.
 
 전환 절차로 백엔드 FC 스위치 패브릭 또는 FC-VI 연결을 IP 스위치 네트워크로 바꿉니다. 정확한 절차는 시작 구성에 따라 다릅니다.

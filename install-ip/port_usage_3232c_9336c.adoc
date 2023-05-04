@@ -55,4 +55,4 @@ image::../media/mcc_ip_cabling_a320_a400_a700_a800_a900 _cisco_3232C or_9336c_sw
 
 == AFF A320, AFF C400, AFF A400, AFF A700, AFF C800 케이블 연결 또는 AFF A800을 Cisco 9336C-FX2 공유 스위치로 사용할 수 있습니다
 
-image::../media/mcc_ip_cabling_aff_a320_c400_a400_a700_c800_a800_to_cisco_9336c_shared_switch.png[MCC IP 케이블 연결 AFF A320 C400 a400 a700 C800 A800을 Cisco 9336c 공유 스위치로 연결합니다]
+image::../media/mcc_ip_cabling_aff_a320_c400_a400_a700_c800_a800_to_cisco_9336c_shared_switch_revised.png[MCC IP 케이블링 AFF A320 C400 a400 a700 C800 A800에서 Cisco 9336c 공유 스위치가 개정되었습니다]

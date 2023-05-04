@@ -12,6 +12,9 @@ entries:
     url: "/upgrade/concept_choosing_tech_refresh_mcc.html"
   - title: 확장 절차를 선택합니다
     url: "/upgrade/concept_choosing_expansion_method_mcc.html"
+- title: 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP에서 컨트롤러를 업그레이드합니다. "시스템 컨트롤러 교체" 명령(ONTAP
+    9.13.1 이상)
+  url: "/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_ip.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC에서 컨트롤러를 업그레이드합니다
   url: "/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html"
 - title: 스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster FC 구성에서 컨트롤러(AFF A700/FAS9000을
@@ -27,7 +30,7 @@ entries:
   url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html"
 - title: 4노드 MetroCluster FC 구성을 업데이트합니다
   url: "/upgrade/task_refresh_4n_mcc_fc.html"
-- title: 4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)
+- title: 4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)
   url: "/upgrade/task_refresh_4n_mcc_ip.html"
 - title: 2노드 MetroCluster FC 구성을 4노드 구성으로 확장합니다
   entries:
@@ -155,7 +158,7 @@ entries:
     url: "/upgrade/task_send_a_custom_autosupport_message_after_add_nodes_to_the_mcc_configuration.html"
   - title: 전환, 복구, 스위치백을 확인합니다
     url: "/upgrade/task_verify_switchover_heal_and_switchback.html"
-- title: 4노드 MetroCluster IP 구성을 8노드 구성으로 확장합니다
+- title: MetroCluster IP 구성을 확장합니다
   url: "/upgrade/task_expand_a_four_node_mcc_ip_configuration.html"
 - title: 재해 복구 그룹을 제거합니다
   url: "/upgrade/concept_removing_a_disaster_recovery_group.html"

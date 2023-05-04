@@ -4,25 +4,67 @@ sidebar: sidebar
 keywords: metrocluster, maintain, service, replace, ip, switch 
 summary: '장애가 발생한 스위치를 교체하거나 스위치를 업그레이드 또는 다운그레이드해야 할 수 있습니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다. \(스위치를 업그레이드하거나 다운그레이드할 수도 있습니다.\)' 
 ---
-= IP 스위치 교체
+= IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-장애가 발생한 스위치를 교체하거나 스위치를 업그레이드 또는 다운그레이드해야 할 수 있습니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다(스위치 업그레이드 또는 다운그레이드).
-
-장애가 발생한 스위치를 동일한 유형의 스위치로 교체하려면 장애가 발생한 스위치만 교체하면 됩니다. 스위치를 업그레이드하거나 다운그레이드하려면 동일한 네트워크에 있는 두 스위치를 조정해야 합니다. 두 스위치가 ISL(Inter-Switch Link)에 연결되어 있고 같은 사이트에 있지 않은 경우 동일한 네트워크에 있습니다. 예를 들어, 네트워크 1에는 IP_SWITCH_A_1 및 IP_SWITCH_B_1이 포함됩니다. 네트워크 2에는 아래 그림과 같이 IP_SWITCH_A_2 및 IP_SWITCH_B_2가 포함됩니다.
-
-image::../media/mcc_ip_hardware_architecture_ip_interconnect.png[MCC IP 하드웨어 아키텍처 IP 상호 연결]
+장애가 발생한 스위치를 교체하거나, 스위치를 업그레이드 또는 다운그레이드하거나, 기존 MetroCluster IP 스위치를 변경해야 할 수 있습니다.
 
 이 절차는 NetApp 검증 스위치를 사용하는 경우에 적용됩니다. MetroCluster 호환 스위치를 사용하는 경우 스위치 공급업체를 참조하십시오.
 
-네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 이 절차를 반복해야 합니다.
+이 절차에서는 다음 변환을 지원합니다.
+
+* 스위치 공급업체, 유형 또는 둘 다를 변경합니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다(스위치 업그레이드 또는 다운그레이드).
++
+예를 들어, AFF A400 컨트롤러 및 BES-53248 스위치를 사용하는 단일 4노드 구성에서 AFF A400 컨트롤러를 사용하는 8노드 구성으로 MetroCluster IP 구성을 확장하려면 새로운 구성에서 BES-53248 스위치가 지원되지 않으므로 스위치를 지원되는 구성 유형으로 변경해야 합니다.
+
++
+장애가 발생한 스위치를 동일한 유형의 스위치로 교체하려면 장애가 발생한 스위치만 교체합니다. 스위치를 업그레이드하거나 다운그레이드하려면 동일한 네트워크에 있는 두 스위치를 조정해야 합니다. 두 스위치는 ISL(Inter-Switch Link)에 연결되어 동일한 사이트에 있지 않을 때 동일한 네트워크에 있습니다. 예를 들어, 네트워크 1에는 IP_SWITCH_A_1 및 IP_SWITCH_B_1이 포함되며, 네트워크 2에는 아래 그림과 같이 IP_SWITCH_A_2 및 IP_SWITCH_B_2가 포함됩니다.
+
++
+image::../media/mcc_ip_hardware_architecture_ip_interconnect.png[MCC IP 하드웨어 아키텍처 IP 상호 연결]
+
++
+
+NOTE: 스위치를 교체하거나 다른 스위치로 업그레이드할 경우 스위치 펌웨어 및 RCF 파일을 설치하여 스위치를 사전 구성할 수 있습니다.
+
+* 공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP 구성을 MetroCluster IP 구성으로 변환합니다.
++
+예를 들어, AFF A700 컨트롤러를 사용하여 일반 MetroCluster IP 구성을 사용하는 경우 MetroCluster를 재구성하여 NS224 쉘프를 동일한 스위치에 연결할 수 있습니다.
+
++
+[NOTE]
+====
+** 공유 스토리지 MetroCluster IP 스위치를 사용하여 MetroCluster IP 구성에서 쉘프를 추가하거나 제거하려면 의 단계를 수행하십시오 link:https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_add_shelves_using_shared_storage.html["공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가"]
+** MetroCluster IP는 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.
+
+
+====
+
+
+.포트 사용 워크시트
+다음은 기존 스위치를 사용하여 NS224 셸프 2개를 연결하는 공유 스토리지 구성으로 MetroCluster IP 구성을 변환하는 예제 워크시트입니다.
+
+워크시트 정의:
+
+* 기존 구성: 기존 MetroCluster 구성의 케이블링
+* NS224 쉘프를 사용한 새로운 구성: 스토리지 및 MetroCluster 간에 스위치가 공유되는 타겟 구성입니다.
+
+
+이 워크시트의 강조 표시된 필드는 다음을 나타냅니다.
+
+* 녹색: 케이블을 변경할 필요가 없습니다.
+* 노란색: 동일하거나 다른 구성으로 포트를 이동해야 합니다.
+* 파란색: 새 연결인 포트
+
+
+image:../media/mcc_port_usage_workflow.png[""]
 
 .단계
-. 구성 상태를 확인합니다.
+. [[ALL_STep1]] 구성 상태를 확인합니다.
 +
 .. MetroCluster가 각 클러스터에서 정상 모드로 구성되어 있는지 확인합니다. (* MetroCluster show *
 +
@@ -76,6 +118,9 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 
 . 설치하기 전에 새 스위치를 구성합니다.
 +
+기존 스위치를 재사용하는 경우 로 이동합니다 <<existing_step4,4단계>>.
+
++
 
 NOTE: 스위치를 업그레이드하거나 다운그레이드하는 경우 네트워크의 모든 스위치를 구성해야 합니다.
 
@@ -92,31 +137,103 @@ NOTE: 스위치를 업그레이드하거나 다운그레이드하는 경우 네�
 +
 '* 네트워크 포트 쇼 * '
 
-. 이전 스위치에 연결된 원격 스위치에서 ISL 연결을 분리합니다.
+. [[Existing_step4]] 이전 스위치에서 연결을 끊습니다.
 +
-IP_SWITCH_B_1에 연결하는 IP_SWITCH_A_1의 포트에서 ISL 연결을 끊어야 합니다.
 
-. 스위치를 끄고 케이블을 분리한 다음 IP_SWITCH_B_1을 물리적으로 제거합니다.
-. 새 스위치를 장착하십시오.
+NOTE: 이전 구성과 새 구성에서 동일한 포트를 사용하지 않는 연결만 연결을 끊을 수 있습니다. 새 스위치를 사용하는 경우 모든 연결을 끊어야 합니다.
+
 +
-의 IP 스위치 케이블 연결 _ 섹션에 나와 있는 단계에 따라 새 스위치(ISL 포함)를 먼저 케이블로 연결합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"].
+다음 순서대로 연결부를 분리하십시오.
 
++
+** 로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:
++
+*** 로컬 클러스터 인터페이스를 분리합니다
+*** 로컬 클러스터 ISL을 분리합니다
+
+
+** MetroCluster IP 인터페이스를 분리합니다
+** MetroCluster ISL을 분리합니다
++
+를 참조하십시오 <<port_usage_worksheet>>, 스위치는 변경되지 않습니다. MetroCluster ISL은 재배치되며 연결을 해제해야 합니다. 워크시트에서 녹색으로 표시된 연결은 연결 해제할 필요가 없습니다.
+
+
+
+. 새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 IP_SWITCH_B_1을 물리적으로 제거합니다.
++
+기존 스위치를 재사용하는 경우 로 이동합니다 <<existing_step6,6단계>>.
+
++
+
+NOTE: 관리 인터페이스(사용하는 경우)를 제외하고 새 스위치에 케이블을 연결하지 * 마십시오.
+
+. [[Existing_step6]] 기존 스위치를 구성합니다.
++
+스위치를 이미 사전 구성한 경우 이 단계를 건너뛸 수 있습니다.
+
++
+기존 스위치를 구성하려면 다음 단계에 따라 펌웨어 및 RCF 파일을 설치 및 업그레이드하십시오.
+
++
+** link:https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_upgrade_firmware_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 펌웨어 업그레이드"]
+** link:https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다"]
+
+
+. 스위치에 케이블을 연결합니다.
++
+의 _ IP 스위치 케이블 연결 _ 섹션에 나와 있는 단계를 수행할 수 있습니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"].
+
++
+스위치를 다음과 같은 순서로 케이블로 연결합니다(필요한 경우).
+
++
+.. 원격 사이트에 ISL 케이블 연결
+.. MetroCluster IP 인터페이스에 케이블을 연결합니다.
+.. 로컬 클러스터 인터페이스에 케이블을 연결합니다.
 +
 [NOTE]
 ====
-스위치 유형이 다른 경우 사용된 포트는 이전 스위치의 포트와 다를 수 있습니다. 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL에 케이블을 연결하지 * 마십시오. 두 번째 네트워크의 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL과 한 사이트의 두 스위치가 모두 동일한 유형인 경우에만 로컬 ISL에 케이블을 연결하십시오.
+*** 스위치 유형이 다른 경우 사용된 포트는 이전 스위치의 포트와 다를 수 있습니다. 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL에 케이블을 연결하지 * 마십시오. 두 번째 네트워크의 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL과 한 사이트의 두 스위치가 동일한 유형과 케이블인 경우에만 로컬 ISL에 케이블을 연결하십시오.
+*** Switch-A1 및 Switch-B1을 업그레이드하는 경우 Switch-A2 및 Switch-B2에 대해 1단계에서 6단계까지 수행해야 합니다.
+
 
 ====
+
+
+. 로컬 클러스터 케이블 연결을 마칩니다.
++
+.. 로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:
++
+... 로컬 클러스터 ISL 케이블 연결
+
+
+.. 로컬 클러스터 인터페이스가 스위치에 연결되지 * 않은 경우:
++
+... 를 사용합니다 link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched.html["스위치 NetApp 클러스터 환경으로 마이그레이션"] 스위치가 없는 클러스터를 스위치가 없는 클러스터로 변환하는 절차입니다. 에 표시된 포트를 사용합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"] 또는 RCF 케이블 연결 파일을 사용하여 로컬 클러스터 인터페이스를 연결합니다.
+
+
+
+
 . 스위치 또는 스위치의 전원을 켭니다.
 +
 새 스위치가 동일한 경우 새 스위치의 전원을 켭니다. 스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켭니다. 이 구성은 두 번째 네트워크가 업데이트될 때까지 각 사이트에 있는 두 개의 서로 다른 스위치로 작동할 수 있습니다.
 
-. 1단계를 반복하여 MetroCluster 구성이 정상인지 확인합니다.
+. MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <<all_step1,1단계>>.
 +
 첫 번째 네트워크에서 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 몇 가지 경고가 표시될 수 있습니다.
 
 +
 
 NOTE: 네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 모든 단계를 반복합니다.
+
+. 선택적으로 NS224 쉘프를 이동합니다.
++
+NS224 셸프를 MetroCluster IP 스위치에 연결하지 않는 MetroCluster IP 구성을 재구성할 경우 적절한 절차에 따라 NS224 셸프를 추가하거나 이동합니다.
+
++
+** link:https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_add_shelves_using_shared_storage.html["공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가"]
+** link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/migrate-from-switchless-cluster-dat-storage.html["직접 연결 스토리지를 사용하여 스위치가 없는 클러스터에서 마이그레이션"^]
+** link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/migrate-from-switchless-configuration-sat-storage.html["스토리지 스위치를 재사용하여 스위치 연결 스토리지를 사용하는 스위치가 없는 구성에서 마이그레이션합니다"^]
+
 
 

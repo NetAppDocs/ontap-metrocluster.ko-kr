@@ -697,7 +697,7 @@ SP는 상태를 모니터링하기 위해 DR 파트너와 SNMP 트래픽을 보�
 
 ==== MetroCluster FC 구성에서 AUSO 설정 변경
 
-AUSO는 기본적으로 클러스터 안에서의 재해(auso-on-cluster-disaster)로 설정됩니다. 이 상태는 MetroCluster show 명령에서 확인할 수 있습니다.
+AUSO는 기본적으로 "클러스터 내 재해"로 설정되어 있습니다. 상태는 에서 볼 수 있습니다 `metrocluster show` 명령.
 
 
 NOTE: AUSO 설정은 MetroCluster IP 구성에 적용되지 않습니다.
@@ -727,6 +727,10 @@ link:task_perform_switchover_for_tests_or_maintenance.html["테스트 또는 유
 === MetroCluster IP 구성에서 중재자를 통한 자동 비계획 전환
 
 MetroCluster IP 구성에서 시스템은 ONTAP 중재자를 사용하여 오류를 감지하고 중재자를 통한 자동 계획되지 않은 전환(MAUSO)을 수행할 수 있습니다.
+
+ONTAP 9.13.1 부터는 MetroCluster IP 구성에서 AUSO 상태에 대한 기본값이 "auso-on-dr-group"으로 설정됩니다. ONTAP 9.12.1 이전 버전의 경우 기본값은 "auso-on-cluster-disaster"로 설정됩니다. 8노드 MetroCluster IP 구성에서 이 옵션은 HA 쌍의 두 노드에 장애가 발생할 경우 AUSO를 트리거합니다.
+
+을 사용하여 AUSO 도메인을 "클러스터 내 클러스터 내 재해" 도메인으로 변경할 수 있습니다 `metrocluster modify -auto-switchover-failure-domain auso-on-cluster-disaster` 명령.
 
 
 NOTE: MAUSO는 MetroCluster FC 구성에서 지원되지 않습니다.

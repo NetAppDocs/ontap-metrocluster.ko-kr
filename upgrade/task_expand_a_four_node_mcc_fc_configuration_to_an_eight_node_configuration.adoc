@@ -35,3 +35,19 @@ image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
 image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
 
 두 사이트 모두 동일하게 확장해야 합니다. MetroCluster FC 구성은 불균등한 노드 수로 구성될 수 없습니다.
+
+
+
+== 두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합
+
+다음 표에는 8노드 MetroCluster FC 구성에 지원되는 플랫폼 조합이 나와 있습니다.
+
+[IMPORTANT]
+====
+* 이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.
+* 이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.
+* 하나의 DR 그룹에 있는 모든 노드의 유형과 구성이 동일해야 합니다.
+
+
+====
+image::../media/8node_comb_fc.png[8노드 구성을 위한 플랫폼 조합]

@@ -22,21 +22,31 @@ image::../media/metrocluster_fc_tech_refresh.png[MetroCluster FC 기술 업데�
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
 
 
+[NOTE]
+====
+* 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.
+* 타겟 플랫폼 제한값이 MetroCluster 제한보다 낮을 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한보다 낮거나 같은 상태로 다시 구성해야 합니다.
+* 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
-NOTE: 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다. 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
+====
 
 
 === 지원되는 MetroCluster IP 기술 업데이트 조합
 
-image::../media/metrocluster_ip_tech_refresh_yellowdogp1.png[MetroCluster IP 기술 업데이트 노란색1]
+image::../media/metrocluster_techref_ip.png[MetroCluster IP 기술 업데이트 조합]
 
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
 
 
+[NOTE]
+====
+* 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.
+* 타겟 플랫폼 제한이 MetroCluster 제한보다 낮은 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한값 이하로 재구성해야 합니다.
+* 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
-NOTE: 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다. 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
+====
 [cols="2,1,1,2"]
 |===
 | 새로 고침 방법 | 구성 유형 | ONTAP 버전입니다 | 절차를 참조하십시오 

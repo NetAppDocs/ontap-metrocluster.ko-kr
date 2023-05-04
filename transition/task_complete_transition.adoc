@@ -103,4 +103,5 @@ not-enabled
 
 cluster_B::>
 ....
+. 8노드 구성이 있는 경우 부터 시작하여 전체 절차를 반복해야 합니다 link:concept_requirements_for_fc_to_ip_transition_mcc.html["MetroCluster FC에서 MetroCluster IP 구성으로 전환할 준비를 합니다"] FC DR 그룹 각각에 대해
 

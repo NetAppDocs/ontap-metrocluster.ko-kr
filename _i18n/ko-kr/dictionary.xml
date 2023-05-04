@@ -1191,12 +1191,10 @@
   <block id="b4a4356f509fb6c32e40ddbcc18b8a1a" category="section-title">ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법</block>
   <block id="7480d239952f3388e1a45150c044ba8e" category="paragraph">ONTAP 중재자가 중재자 호스트에 있는 사서함에 MetroCluster 노드에 대한 상태 정보를 저장합니다. MetroCluster 노드는 이 정보를 사용하여 DR 파트너의 상태를 모니터링하고 재해 발생 시 중재자를 통한 자동 계획되지 않은 전환(MAUSO)을 구현할 수 있습니다.</block>
   <block id="ad48fc5af22c71cdbcd7d9db9a44e632" category="paragraph">절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다.</block>
-  <block id="29464d5954abf5bc9affd5f6ae57e7e5" category="admonition">MAUSO는 사이트 재해가 발생한 경우에만 시작됩니다. 사이트 재해는 동일한 사이트에 있는 * 모든 * 노드의 장애이지만 몇 가지 예외가 있습니다.</block>
   <block id="76febd606fc24a36395547ab83980f59" category="paragraph">MAUSO는 다음과 같은 종료 시나리오에서 * 시작되지 않습니다 *.</block>
   <block id="1fb135b5dd970a96db5c2b3025ddcbf8" category="list-text">종료를 시작합니다. 예를 들면 다음과 같습니다.</block>
   <block id="969ad1d775144c2dcc448c09e5467831" category="list-text">노드를 중단합니다</block>
   <block id="e417cabb8d771305beaa6b46cf7335e1" category="list-text">노드를 재부팅합니다</block>
-  <block id="512faff67d2109381c61bd2d3609c40f" category="list-text">팬 또는 구성 요소 오류로 인해 시스템 종료 시작(환경 종료)</block>
   <block id="23b070f17dffe8e66479102b1681ffad" category="doc">MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용</block>
   <block id="3c17e9573f8b45dda43321f58bfcd2bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 다음 섹션을 참조하십시오.</block>
   <block id="e8c0139663de0f382f275109978b357d" category="inline-link">* VIP(가상 IP) LIF 구성 *</block>
@@ -2414,7 +2412,6 @@
   <block id="82100af698d65aee7d8eee88a9f650ea" category="image-alt">MCC DR 그룹 b</block>
   <block id="8bcdf2e6243e634b6f778a006ca38abf" category="list-text">CRS 체적을 이동합니다.</block>
   <block id="236eeda4c8d48fc292788d239a772b52" category="paragraph">의 단계를 수행합니다<block ref="56fddf2b85ee23d29212804ee4b58ff1" category="inline-link-rx"></block>.</block>
-  <block id="6479d55762228eaca7df21ed18531b58" category="inline-link">기타 플랫폼 절차: 컨트롤러 하드웨어 업그레이드 익스프레스 가이드</block>
   <block id="863335fd52f3c5bd2f7a9a78319bbe9c" category="inline-link">Aggregate 생성 및 볼륨을 새 노드로 이동</block>
   <block id="3e8fdd40da1578fb2a4b45209a4f63c5" category="list-text">의 모든 단계를 수행합니다<block ref="fe6e57ca921017b547e49e0f385e2ca7" category="inline-link-rx"></block>.</block>
   <block id="79e90867e68054d16a6abbb1208fa244" category="admonition">Aggregate를 생성할 때나 생성한 후에 미러링할 수도 있습니다.</block>
@@ -3227,7 +3224,6 @@
   <block id="8db7c34118d5425403025b6210cacb71" category="list-text">Tiebreaker 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.</block>
   <block id="2cd5138ffea77134b2eaf87275680e03" category="section-title">이전 컨트롤러를 교체하고 새 컨트롤러를 부팅합니다</block>
   <block id="f7a00e5a4faa1093e067a4074671fd4f" category="paragraph">정보를 수집하고 작업을 재개한 후에는 전환 작업을 계속 진행합니다.</block>
-  <block id="6605a90d61aaaaebf433918eb8eb5f61" category="paragraph">이 자동화 작업은 전환, '환원 집계' 및 '환원 루트 애그리게이트' 작업을 시작합니다. 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 앞서 수집한 'sids'를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다.</block>
   <block id="5e744c4240b735a2a086be5884b09ed3" category="section-title">이전 컨트롤러의 네트워크 구성 준비</block>
   <block id="f02f75fbbe89500c3766deab4ccf2d4d" category="paragraph">새로운 컨트롤러에서 네트워킹이 완전히 다시 시작되도록 하려면 LIF를 공통 포트로 이동한 다음 이전 컨트롤러의 네트워킹 구성을 제거해야 합니다.</block>
   <block id="dd3d39a72e683fc82c6e4dd4c8f79169" category="list-text">이 작업은 각 이전 노드에서 수행해야 합니다.</block>
@@ -3492,10 +3488,8 @@
   <block id="2a273c846af91d733dbb202c265751b5" category="image-alt">워크플로우 MCC 2-4노드 확장 노드 추가</block>
   <block id="c6084eb130de0b018e621dc1c9cf963f" category="summary">MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 구성을 지워야 합니다.</block>
   <block id="bc7aab32c224c2ee49642086c4c9aa59" category="list-text">이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.</block>
-  <block id="147cf28bb435c696edc54db7c4d19273" category="list-text">IP 스위치를 업그레이드하는 경우 이 새로 고침 절차를 수행하기 전에 IP 스위치를 업그레이드해야 합니다.</block>
   <block id="3e47f65a0c143cd4a51a7540fd2001fa" category="list-text">다음 명령을 실행합니다. +'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"</block>
   <block id="6837dd1f788164eabd6d97dbcbe7e4c9" category="paragraph">다음 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.</block>
-  <block id="c2c1067a31958842c8438647512d141e" category="list-text">의 모든 단계를 수행합니다 <block ref="3e70f7d1f526cf6dd7a89a97c88d0cc8" category="inline-link-macro-rx"></block> 를 클릭하여 구성에 새 노드 및 스토리지를 추가합니다.</block>
   <block id="be357376ba81fe8d3fa32b0e145fc73b" category="paragraph">의 단계를 수행합니다 <block ref="bf3d05f18b73f1c62d283d02a0c83e7a" category="inline-link-macro-rx"></block>.</block>
   <block id="79de9fa3497efd5f7c2e2f6a6682e5cd" category="summary">AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다.</block>
   <block id="195ffc9776ee62387ded9a109c150447" category="doc">MetroCluster 구성에 노드를 추가한 후에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
@@ -6187,7 +6181,6 @@
   <block id="b0c82cdddc90d14b4d8397e5f82c2d60" category="paragraph">2노드 MetroCluster 구성에서는 컨트롤러 모듈의 서비스 프로세서(SP)가 구성을 모니터링합니다. 일부 시나리오에서는 SP가 ONTAP 소프트웨어보다 빠르게 장애를 감지할 수 있습니다. 이 경우 SP가 AUSO를 트리거합니다. 이 기능은 자동으로 활성화됩니다.</block>
   <block id="f5df4faa59acabae932a5e5c8a7cb6ba" category="paragraph">SP는 상태를 모니터링하기 위해 DR 파트너와 SNMP 트래픽을 보내고 받습니다.</block>
   <block id="f85105583dd3169fd42850d26f61d681" category="section-title">MetroCluster FC 구성에서 AUSO 설정 변경</block>
-  <block id="36d0e7a55c68ebdcc9fedc7164727610" category="paragraph">AUSO는 기본적으로 클러스터 안에서의 재해(auso-on-cluster-disaster)로 설정됩니다. 이 상태는 MetroCluster show 명령에서 확인할 수 있습니다.</block>
   <block id="9b3f588fcebc2f78163f82421533beec" category="admonition">AUSO 설정은 MetroCluster IP 구성에 적용되지 않습니다.</block>
   <block id="9cb341a3612f1e04e6fefe834b029776" category="paragraph">MetroCluster modify-auto-switchover-failure-domain auto-disabled 명령으로 AUSO를 비활성화할 수 있습니다. 이 명령은 DR 사이트 전체 컨트롤러 장애 시 AUSO를 트리거하지 않도록 합니다. 두 사이트에서 AUSO를 비활성화하려면 두 사이트에서 모두 실행해야 합니다.</block>
   <block id="3b7b4f3bf205942f3e21e267f46b1809" category="paragraph">AUSO는 MetroCluster modify-auto-switchover-failure-domain auso-on-cluster-disaster 명령을 사용하여 다시 활성화할 수 있습니다.</block>
@@ -6950,9 +6943,6 @@
   <block id="043cef7f3b4952ab49e47a66b62d07cb" category="list-text">ATTO FiberBridges</block>
   <block id="0f4890949e646d00de6b9e66bd1b1968" category="summary">장애가 발생한 스위치를 교체하거나 스위치를 업그레이드 또는 다운그레이드해야 할 수 있습니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다. \(스위치를 업그레이드하거나 다운그레이드할 수도 있습니다.\)</block>
   <block id="5e2a519a0cc2ae15695c5cf1d46f0cc9" category="doc">IP 스위치 교체</block>
-  <block id="911215b34b5c274e1926f0abbe14c1aa" category="paragraph">장애가 발생한 스위치를 교체하거나 스위치를 업그레이드 또는 다운그레이드해야 할 수 있습니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다(스위치 업그레이드 또는 다운그레이드).</block>
-  <block id="ebcf4640c5bf8e93ff2b8a2a35c8307c" category="paragraph">장애가 발생한 스위치를 동일한 유형의 스위치로 교체하려면 장애가 발생한 스위치만 교체하면 됩니다. 스위치를 업그레이드하거나 다운그레이드하려면 동일한 네트워크에 있는 두 스위치를 조정해야 합니다. 두 스위치가 ISL(Inter-Switch Link)에 연결되어 있고 같은 사이트에 있지 않은 경우 동일한 네트워크에 있습니다. 예를 들어, 네트워크 1에는 IP_SWITCH_A_1 및 IP_SWITCH_B_1이 포함됩니다. 네트워크 2에는 아래 그림과 같이 IP_SWITCH_A_2 및 IP_SWITCH_B_2가 포함됩니다.</block>
-  <block id="5d1e77979f28e175a4f0a00201b52c96" category="paragraph">네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 이 절차를 반복해야 합니다.</block>
   <block id="439912781979c2137b20f407615e78f8" category="list-text">MetroCluster가 각 클러스터에서 정상 모드로 구성되어 있는지 확인합니다. (* MetroCluster show *</block>
   <block id="7cb5b2f0dc5754654737d8fa60eef89c" category="list-text">각 노드에서 미러링이 활성화되어 있는지 확인합니다. (* MetroCluster node show *</block>
   <block id="00652f80af0605cfeb69c7eae69f32c6" category="list-text">MetroCluster 구성부품이 정상 상태인지 점검한다. (* MetroCluster check run *</block>
@@ -6965,15 +6955,8 @@
   <block id="21d70434879bc17385bedbe3b2231480" category="paragraph">스위치를 업그레이드하거나 다운그레이드하는 경우 새 스위치에 지원되는 최신 RCF 파일을 적용하십시오.</block>
   <block id="140f85d0d849f4cdeb15f3576a478d27" category="list-text">port show 명령을 실행하여 네트워크 포트에 대한 정보를 봅니다.</block>
   <block id="664180a50093532dd9d44b1e80f40b72" category="paragraph">'* 네트워크 포트 쇼 * '</block>
-  <block id="fadbd51c15a213aa8af9bf307ca458f4" category="list-text">이전 스위치에 연결된 원격 스위치에서 ISL 연결을 분리합니다.</block>
-  <block id="27604e7d5efaf39491ee061091d488d6" category="paragraph">IP_SWITCH_B_1에 연결하는 IP_SWITCH_A_1의 포트에서 ISL 연결을 끊어야 합니다.</block>
-  <block id="4a33b7e0657d8882c04d927b5a407835" category="list-text">스위치를 끄고 케이블을 분리한 다음 IP_SWITCH_B_1을 물리적으로 제거합니다.</block>
-  <block id="a968c5874449b03251965cad3b2ae61a" category="list-text">새 스위치를 장착하십시오.</block>
-  <block id="dee3ad1ae6332587ef2a694f33aad4a3" category="paragraph">의 IP 스위치 케이블 연결 _ 섹션에 나와 있는 단계에 따라 새 스위치(ISL 포함)를 먼저 케이블로 연결합니다 <block ref="69c250b2ff0cdf92dd9f1322bce627cf" category="inline-link-macro-rx"></block>.</block>
-  <block id="76879c80744bf26cf04a50e9a7cb5b12" category="paragraph">스위치 유형이 다른 경우 사용된 포트는 이전 스위치의 포트와 다를 수 있습니다. 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL에 케이블을 연결하지 * 마십시오. 두 번째 네트워크의 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL과 한 사이트의 두 스위치가 모두 동일한 유형인 경우에만 로컬 ISL에 케이블을 연결하십시오.</block>
   <block id="39ef49ece238860759e8870c2160120a" category="list-text">스위치 또는 스위치의 전원을 켭니다.</block>
   <block id="a2ff4a69c8e810edbb5274ee75363ce0" category="paragraph">새 스위치가 동일한 경우 새 스위치의 전원을 켭니다. 스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켭니다. 이 구성은 두 번째 네트워크가 업데이트될 때까지 각 사이트에 있는 두 개의 서로 다른 스위치로 작동할 수 있습니다.</block>
-  <block id="f6563b54c975d5388c5f64362e5700e3" category="list-text">1단계를 반복하여 MetroCluster 구성이 정상인지 확인합니다.</block>
   <block id="4d7ea7c5860513bb0b675638d55fcd77" category="paragraph">첫 번째 네트워크에서 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 몇 가지 경고가 표시될 수 있습니다.</block>
   <block id="c997b3e19c99644bd488baf3bfa8890d" category="admonition">네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 모든 단계를 반복합니다.</block>
   <block id="a89a5b71cb60acbd82724db1a629420a" category="summary">FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 포트 할당은 ONTAP 9.0 이상 버전의 ONTAP에서 다릅니다.</block>
@@ -8428,7 +8411,6 @@
   <block id="2380f44f4dcec1f84b76f71d467c0c65" category="doc">MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</block>
   <block id="14b3de5cc3b7ebe82cf797d4c070ce27" category="list-text">이 절차는 무중단으로 수행할 수 있으며</block>
   <block id="c360a01208e0f0cebb82608c945309e8" category="paragraph">MetroCluster 구성은 작업 중에도 데이터를 계속 제공할 수 있습니다.</block>
-  <block id="14f6c48a4cd4faf32f9f408ae13ca0fc" category="list-text">이 절차는 4노드 MetroCluster FC 구성에만 적용됩니다.</block>
   <block id="f4f9114b6815399e0354d08e08a983ae" category="summary">전환 절차를 완료한 후 기존 MetroCluster 구성의 주요 구성 요소가 교체되거나 재구성되었습니다.</block>
   <block id="9f656b06c5e70137762318437b99476a" category="doc">전환이 MetroCluster 하드웨어 구성 요소에 미치는 영향</block>
   <block id="5653fb30c26df8107e327cdb9788d9f6" category="list-text">* 컨트롤러 모듈 *</block>
@@ -8484,7 +8466,6 @@
   <block id="0031dbc1afe1c2ec91d4c02136da5eb6" category="list-text">RCF 생성기 툴을 사용하여 스위치 공급업체와 플랫폼 모델에 따라 RCF 파일을 생성한 다음 스위치를 파일로 업데이트합니다.</block>
   <block id="9ce923539fb1123fe118101d429941ae" category="list-text"><block ref="9ce923539fb1123fe118101d429941ae" category="inline-link-macro-rx"></block></block>
   <block id="26335ad95c44f5e233c28d27ab09f461" category="doc">무중단 FC-to-IP 전환 요구사항</block>
-  <block id="000d4bf81dfdcb3820ecd69215825810" category="list-text">4노드 구성이어야 하며 모든 노드에서 ONTAP 9.8 이상을 실행해야 합니다.</block>
   <block id="1c80ea06ae866b6e42e9d266e0cb8906" category="list-text">스위치가 있는 클러스터 구성을 지원해야 합니다.</block>
   <block id="39128f9051c3d4355aead1a61c996c25" category="summary">MetroCluster 업그레이드, 확장 또는 전환 간의 차이점을 이해하고 목표에 맞는 절차를 선택해야 합니다.</block>
   <block id="c614230ffa3ceef0cb27e7fbc1f50307" category="doc">사용할 절차를 결정합니다</block>
@@ -11510,7 +11491,6 @@
   <block id="77d873129b2551d3791bd53918453706" category="sidebar">Tiebreaker 소프트웨어를 구성합니다</block>
   <block id="842ed7dcbaa63b60b53e91a89a33e02c" category="sidebar">Tiebreaker 소프트웨어의 SNMP 설정을 구성합니다</block>
   <block id="9e22e5887d35d0e7eed7b0656d5e7bfa" category="sidebar">MetroCluster 구성을 모니터링합니다</block>
-  <block id="30836d6051134105cf07f488afe11425" category="sidebar">4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="6e1b901662872166ef0e661d1481924c" category="sidebar">2노드 MetroCluster FC 구성을 4노드 구성으로 확장합니다</block>
   <block id="fbda6a351e5c32b65583383006360afa" category="sidebar">MetroCluster 구성의 상태를 확인합니다</block>
   <block id="c3f3140743256f4b3b23e2414dda5987" category="sidebar">MetroCluster 구성에 noxdes를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
@@ -11551,7 +11531,6 @@
   <block id="41a799bcc3e4afaad880fb5ecde437ff" category="sidebar">상태 모니터링을 위해 FC-to-SAS 브리지를 구성합니다</block>
   <block id="8cd5672b7c6aa3bf6d484d5398e7cf35" category="sidebar">MetroCluster 구성에서 메타데이터 볼륨 이동</block>
   <block id="dd20522d7848c343bdb11bf7a434d0ad" category="sidebar">다음에 사용자 지정 AutoSupport 메시지를 보내 MetroCluster 구성에 노드를 추가합니다</block>
-  <block id="62cb54844a683179dd9896f2c466d71f" category="sidebar">4노드 MetroCluster IP 구성을 8노드 구성으로 확장합니다</block>
   <block id="0344e1867e953d0d51eac7e816dee9fe" category="sidebar">재해 복구 그룹을 제거합니다</block>
   <block id="ad7387359f9a0a6887a964296353e137" category="sidebar">스트레치 MetroCluster 구성을 설치합니다</block>
   <block id="9f972acbec9959324ff1bb96e032e896" category="sidebar">구성에 맞는 올바른 설치 절차를 선택하십시오</block>
@@ -11618,7 +11597,6 @@
   <block id="0bef545435b6a9a9c7e8d064352e395e" category="sidebar">Brocade FC 스위치의 이름을 바꿉니다</block>
   <block id="b3057e5e30082a1c0b7f4d1863e16c92" category="sidebar">Cisco FC 스위치를 교체합니다</block>
   <block id="706be03f02099b320a48663ab49614b7" category="sidebar">IP 스위치 유지 보수 및 교체</block>
-  <block id="bf8027982a2773871f133f6df59c6ddc" category="sidebar">IP 스위치를 교체합니다</block>
   <block id="40414fb3a79648f825985d2f107661f0" category="sidebar">MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다</block>
   <block id="6fc3e23fc447e1c003feca250d853db5" category="sidebar">Cisco IP 스위치의 이름을 바꿉니다</block>
   <block id="c674510981c9027bb4d0c0161679026d" category="sidebar">ISL 포트를 중단 없이 추가, 제거 또는 변경할 수 있습니다</block>
@@ -11799,7 +11777,6 @@
   <block id="56bf84e32d22ab8fb694fbc5332432dc" category="paragraph">FC 스위치를 수동으로 구성한 경우 새 컨트롤러 모듈의 이니시에이터 연결에 대해 조닝이 올바른지 확인해야 합니다. 의 조닝 관련 섹션을 참조하십시오 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block>.</block>
   <block id="dedcc0638aa1bf3276ae388ea4613c81" category="summary">ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="75aa8d2f84e0be26d2847e91f37f74e2" category="list-text">자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.</block>
-  <block id="377469609affd7863d1b91e8c08f8efe" category="list-text">의 다음 절차에 따라 이전 노드에서 새 노드로 데이터를 이동합니다<block ref="5807d40cbe0aa8dbcf7fb966b3a22848" category="inline-link-rx"></block></block>
   <block id="f6352e453f366612cb28420644953c44" category="list-text">의 모든 단계를 수행합니다<block ref="bbef996a3720f9825acbe3a7239b4c3c" category="inline-link-rx"></block>.</block>
   <block id="f0c5b568bbaab2490082e4d2aaf08123" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 _.</block>
   <block id="7965e118387157e57593becb6ae60117" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 새로운 스토리지 시스템, 디스크 쉘프 및 FC-to-SAS 브릿지를 랙에 장착</block>
@@ -11933,7 +11910,6 @@
   <block id="80a501c7c310f786642caeb4ba98a43d" category="paragraph">의 1단계에서 확인한 LIF를 이동해야 합니다 <block ref="f19930c3c7cb7f705cf91593411955ab" category="inline-link-macro-rx"></block>.</block>
   <block id="db53daa46cc857a5ca6ccd9ab19fe451" category="paragraph">다음 단계에서는 다른 절차로 이동합니다. 각 참조 절차의 단계를 지정된 순서대로 수행해야 합니다.</block>
   <block id="679c1dc70b523e1092eb2a7b3129711d" category="paragraph">포트 및 브로드캐스트 도메인에 대해 MTU 설정이 올바르게 설정되어 있는지 확인하고 변경합니다.</block>
-  <block id="af6710425f9b72f8e5aeb24aa9d0bac6" category="summary">ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 무중단으로 전환할 수 있습니다.</block>
   <block id="dd29cf7134047c7a311edc4776b9021e" category="paragraph">2노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 <block ref="ef88855c7d052c0aa5ce46e187d01954" category="inline-link-macro-rx"></block>.</block>
   <block id="2912e0eba45e116506958546503977b9" category="paragraph"><block ref="2912e0eba45e116506958546503977b9" category="inline-link-macro-rx"></block></block>
   <block id="0297e6ce2162b2f01b03b57027b0de3f" category="paragraph">_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.</block>
@@ -12046,8 +12022,6 @@
   <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
   <block id="844f223d5d27d9ea92473e2d258ee969" category="list-text">부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 <block ref="af64d870205b209887217377e716cd40" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
   <block id="455aeb5b6e6bb2c51d7485e26da56e30" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
-  <block id="e62a18c77eddb4d80155a6c15402f7e5" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _</block>
-  <block id="7da41c16475b7dae8b0b8ab6424918d7" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성] - MetroCluster IP 설치 및 구성 _.</block>
   <block id="861ef6676813cbc81369ee701ae73269" category="paragraph">타사 방화벽을 사용하는 경우:</block>
   <block id="041f3a27fe8b40cc213210949eb4f036" category="list-text">HTTPS 액세스를 활성화해야 합니다.</block>
   <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
@@ -12660,7 +12634,6 @@
   <block id="e6e94fa732001e55f7fcf67c01c5f249" category="paragraph">ISL에서 MetroCluster 트래픽이 있지만 MetroCluster 인터페이스에 연결되지 않는 스위치를 구성해야 할 수 있습니다. 이 경우 트래픽은 이미 분류되어 있으며 적절한 대기열에만 매핑되어야 합니다. 다음 예에서는 모든 COS5 트래픽이 클래스 RDMA에 매핑되고 모든 COS4 트래픽이 클래스 iSCSI에 매핑됩니다. 이는 MetroCluster 트래픽뿐만 아니라 COS5 및 COS4 트래픽의 * 모든 * 에 영향을 미칩니다. MetroCluster 트래픽만 매핑하려면 위의 클래스 맵을 사용하여 액세스 그룹을 사용하여 트래픽을 식별해야 합니다.</block>
   <block id="421c8863e1f7223f216aacf99393b7dd" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="60ddbd1babdd945c26fbc431202fea6c" category="inline-link-macro">Hardware Universe</block>
-  <block id="f90dfbd0dbb63ace6227bf8f3e75efb6" category="admonition">이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다. 을 참조하십시오 <block ref="62911b0739c1772914819ee9e7282ee4" category="inline-link-macro-rx"></block> 플랫폼 제한.</block>
   <block id="6e2ee39d0f9ccdad593782674a048e67" category="inline-link-macro">절차 링크</block>
   <block id="7fcdce91feb430306391667c0a012cd7" category="paragraph"><block ref="7fcdce91feb430306391667c0a012cd7" category="inline-link-macro-rx"></block></block>
   <block id="0a623e8d3b5ae84e14f2fe4f454a3abb" category="paragraph"><block ref="0a623e8d3b5ae84e14f2fe4f454a3abb" category="inline-link-macro-rx"></block></block>
@@ -12719,7 +12692,6 @@
   <block id="3cdc2ade26b9bc4adc9df14235e19c7e" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
   <block id="d0b28fd083b63a9e12330f486ca47625" category="section-title">지원되는 MetroCluster FC 기술 업데이트 조합</block>
   <block id="88ea8505ba0420be98c64dcb7f91e23c" category="image-alt">MetroCluster FC 기술 업데이트</block>
-  <block id="094d92c3e06727b6e6ff0d7a8d541bef" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
   <block id="cfd1300cd3db131e8f69dc38177b5658" category="section-title">지원되는 MetroCluster IP 기술 업데이트 조합</block>
   <block id="ad06b1bad80df72d4f2fa24312c0a9bf" category="cell">새로 고침 방법</block>
   <block id="56ad29882b1f5aa7a765e42a0bd3ca97" category="paragraph"><block ref="56ad29882b1f5aa7a765e42a0bd3ca97" category="inline-link-macro-rx"></block></block>
@@ -12735,7 +12707,6 @@
   <block id="1ecf45c0e50d338e165546ea9f33580d" category="paragraph">다음 예에서는 node_a_3-IP에 Aggregate를 생성하는 방법을 보여 줍니다.</block>
   <block id="ef7e136a1fd917ac9e6587b12e4cfbad" category="paragraph">ONTAP 자동 비계획 전환(AUSO) 지원</block>
   <block id="9e70c8a747dbcd4eb73fc72a2155c425" category="paragraph">MetroCluster Tiebreaker 소프트웨어에서 자동 전환이 활성화되지 않은 경우, 계획되지 않은 수동 전환(USO)</block>
-  <block id="03a06951389ef81ee2c73f9db6d94fbf" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 새로 고침 표를 참조하십시오 <block ref="ca31e6122d170c1a660e1ab5d0a9430f" category="inline-link-macro-rx"></block>.</block>
   <block id="04d849614bcf7a25c057bcb4f136cfc7" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 새로 고침 표를 참조하십시오 <block ref="2026df26c379ba66a79d2229c4a71dd8" category="inline-link-macro-rx"></block>.</block>
   <block id="7f3573698486df0e906484a42b56260a" category="list-text">첫 번째 MetroCluster IP 노드(node_a_3-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
   <block id="2cc9b0ebb585ef702d75e1a9560e44ee" category="list-text">두 번째 MetroCluster IP 노드(node_a_4-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
@@ -12964,9 +12935,6 @@
   <block id="2a077243240a3af8fdb5a2c53c8dfd93" category="sidebar">두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다</block>
   <block id="3ae2a51b967ff5379c07b5d59d9bb892" category="sidebar">새 컨트롤러 모듈 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
   <block id="2ec9cf7fc01c78e918f2c1109d699ebd" category="sidebar">ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다</block>
-  <block id="afc391e4f426f99e79c7db52846734a8" category="image-alt">MetroCluster IP 기술 업데이트 노란색1</block>
-  <block id="cc2ec6d9e6bb31f9131384ee2ea63d52" category="image-alt">MetroCluster IP 업그레이드 테이블 y노란색도dp1</block>
-  <block id="e99d1c22871517ed64fe9bd3e59b4c85" category="image-alt">MetroCluster FC 업그레이드 표 노란색그룹1</block>
   <block id="6dc537d2cf87cd236dd75c2694edbea6" category="image-alt">MetroCluster FC IP 전환 매트릭스 y노란색그룹1</block>
   <block id="3ba18986907ef3401544960b244376ed" category="section-title">AFF A150 및 AFF A220 시스템의 ADP 및 디스크 할당</block>
   <block id="cab91f7159880630a5bee29aa55d9f8a" category="section-title">AFF C250 및 AFF A250 시스템에서 ADP 및 디스크 할당</block>
@@ -12989,7 +12957,6 @@
   <block id="03a4a17b1eab01f0b74373b2d602b107" category="section-title">AFF A320, FAS8300, AFF C400, AFF A400, FAS8700 케이블링, FAS9000, AFF A700, AFF C800, AFF A800, FAS9500 또는 AFF A900</block>
   <block id="cf6033c90446afb2f2e4bf0a87384e97" category="image-alt">MCC IP 케이블 연결 A320 a400 a700 A800 a900 Cisco 3232C 또는 9336c 스위치</block>
   <block id="354182992aa934a6b659ad8284efa43c" category="section-title">AFF A320, AFF C400, AFF A400, AFF A700, AFF C800 케이블 연결 또는 AFF A800을 Cisco 9336C-FX2 공유 스위치로 사용할 수 있습니다</block>
-  <block id="16212daffd6a3883636683e7ad616747" category="image-alt">MCC IP 케이블 연결 AFF A320 C400 a400 a700 C800 A800을 Cisco 9336c 공유 스위치로 연결합니다</block>
   <block id="4aa636d0c8e798111a1395c5cf44abef" category="paragraph">AFF A800, AFF C800</block>
   <block id="76a3e9deef2a9133b01bc4b8aa5ad045" category="paragraph">FAS8300, AFF A400 및 AFF C400</block>
   <block id="2d24d8597140717b72521869e1b9643a" category="paragraph">FAS2750, AFF A150 및 AFF A220</block>
@@ -13007,4 +12974,216 @@
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
   <block id="65cc666ecd4a5bdf3c624b12e425c91f" category="admonition">구성을 변경하려면 컨트롤러를 재부팅해야 합니다.</block>
   <block id="57d89ae0fa9051439d76f5f61398fa16" category="list-text">양방향으로 고가용성(HA) 테이크오버 수행 하여 컨트롤러를 재부팅합니다.</block>
+  <block id="ee587f5bd979b8f81d1cbf341f0b2470" category="list-text">8노드 구성이 있는 경우 부터 시작하여 전체 절차를 반복해야 합니다 <block ref="e821f1828723ededc57f2e891aea4a6a" category="inline-link-macro-rx"></block> FC DR 그룹 각각에 대해</block>
+  <block id="bb6c47f32358fe5242b175ac608f7d32" category="list-text">8노드 구성의 경우 모든 노드에서 ONTAP 9.13.1 이상을 실행해야 합니다.</block>
+  <block id="d8e49cb116ea5302a217647ce0506ea6" category="list-text">4노드 구성의 경우 모든 노드에서 ONTAP 9.8 이상을 실행해야 합니다.</block>
+  <block id="b8c86c478bbb73c53f5440966b9fb7d1" category="list-text">이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.</block>
+  <block id="c5c0eb8cddac9e2347091241dce72719" category="list-text">타겟 플랫폼 제한값이 MetroCluster 제한보다 낮을 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한보다 낮거나 같은 상태로 다시 구성해야 합니다.</block>
+  <block id="b6f6c085e7f98b78ea8fa6d3dd82bb6d" category="list-text">을 참조하십시오 <block ref="62911b0739c1772914819ee9e7282ee4" category="inline-link-macro-rx"></block> 플랫폼 제한.</block>
+  <block id="dc63943b5b97ad0f10f23219d6f93cd4" category="list-text">각 클러스터에 대해 전환된 IP 노드의 클러스터 피어에 대한 IP 주소를 수정합니다.</block>
+  <block id="6ea6f99dac44cf31a220dfe1e63e9825" category="list-text">를 사용하여 cluster_a 피어를 식별합니다<block ref="ecb6aba8bb04d2d32562d54c8601a0e1" prefix=" " category="inline-code"></block> 명령:</block>
+  <block id="f01a5704368544da9ef6bb24a5a2e763" category="list-text">cluster_a 피어 IP 주소를 수정합니다.</block>
+  <block id="45abb87b8206cfbc00722d2629eb7f12" category="paragraph"><block ref="b92e186cb2da410f82acd0e2859869c5" prefix="" category="inline-code"></block></block>
+  <block id="8483d6377b961ac296cf824a6c40adf8" category="list-text">를 사용하여 cluster_B 피어를 식별합니다<block ref="ecb6aba8bb04d2d32562d54c8601a0e1" prefix=" " category="inline-code"></block> 명령:</block>
+  <block id="a3f3fe950d173612d2c6baf2a11af417" category="list-text">cluster_B 피어 IP 주소를 수정합니다.</block>
+  <block id="46727703daccfd5df78f5a296293e49f" category="paragraph"><block ref="b351517027b03964abcefa6f0f5c5e50" prefix="" category="inline-code"></block></block>
+  <block id="417888b510ff4a6d7179797fd8e7ecc6" category="list-text">각 클러스터에 대해 클러스터 피어 IP 주소가 업데이트되었는지 확인합니다.</block>
+  <block id="25835160bb5009a7ab4e790ce4b03e99" category="list-text">를 사용하여 각 클러스터의 IP 주소가 업데이트되었는지 확인합니다<block ref="5cdd2540d44c1775d98bc8cede68e64f" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="75c999adce069eeec740f4fe07baa454" category="paragraph">를 클릭합니다<block ref="30bb7a28fa1f682306677d4fb91fe005" prefix=" " category="inline-code"></block> 다음 예제의 필드는 업데이트된 IP 주소를 표시합니다.</block>
+  <block id="0afdca0e4bd513974eb6c83722b9369e" category="paragraph">cluster_A의 예:</block>
+  <block id="be5c4e8941add3c6aebfb833fcd39e2b" category="paragraph">cluster_B의 예</block>
+  <block id="4b4f0848ca83589260083500e4b29774" category="paragraph">무중단 전환이 성공하려면 특정 워크플로우를 따라야 합니다. 구성에 대한 워크플로우를 선택합니다.</block>
+  <block id="6023e0e0a35923698957728074541693" category="list-text"><block ref="aae73aabcc7be91363e42ab781381500" category="inline-xref-macro-rx"></block></block>
+  <block id="16fc5d53fc09263c0c4d64ab08d37123" category="list-text"><block ref="dd4533a8ca70ef4d543abe89ba09b7d4" category="inline-xref-macro-rx"></block></block>
+  <block id="3590c734ea7d31811bb06e6baeb89747" category="section-title">4노드 FC 구성 전환 워크플로우</block>
+  <block id="5b07506ebe022aa6945ad44b0cda5013" category="section-title">8노드 FC 구성 전환 워크플로우</block>
+  <block id="926b6426ad1a2491d649c8474d38f0db" category="paragraph">전환 프로세스는 양호한 8노드 MetroCluster FC 구성으로 시작됩니다.</block>
+  <block id="1af649626413a03f251f9a4c472e947b" category="image-alt">MCC DR 그룹 C1</block>
+  <block id="8a5133631c31fdbaaf6923247c22e665" category="paragraph">새 MetroCluster IP 노드가 세 번째 DR 그룹으로 추가됩니다.</block>
+  <block id="0f45be12e3fdc02453476d6aa8aae017" category="image-alt">MCC DR 그룹 C2</block>
+  <block id="56921c990c07a8724d93d1e5150e4105" category="paragraph">데이터가 DR_GROUP_1-FC에서 DR_GROUP_1-IP로 전송된 후 이전 노드와 해당 스토리지가 구성에서 제거되고 폐기됩니다.</block>
+  <block id="89ab8f8036966d10863f53d47d1a56a2" category="admonition">8노드 FC 구성에서 4노드 IP 구성으로 전환하려는 경우 DR_GROUP_1-FC 및 DR_GROUP_2-FC의 모든 데이터를 새 IP DR 그룹(DR_GROUP_1-IP)으로 전환해야 합니다. 그런 다음 두 FC DR 그룹을 모두 중단할 수 있습니다. FC DR 그룹을 제거한 후 4노드 MetroCluster IP 구성으로 프로세스가 종료됩니다.</block>
+  <block id="65b5b7e1c217903d6e531cfa03dabeae" category="image-alt">MCC DR 그룹 C8</block>
+  <block id="efe65f05ea8aa4be04872bc5fc3592fa" category="paragraph">기존 MetroCluster 구성에 나머지 MetroCluster IP 노드를 추가합니다. 이 프로세스를 반복하여 DR_GROUP_2-FC 노드에서 DR_GROUP_2-IP 노드로 데이터를 전송합니다.</block>
+  <block id="eea4c5637cb859e2000dbcdf78548d9c" category="image-alt">MCC DR 그룹 C7</block>
+  <block id="7882ff17d8c8170e2a07510acdefa52b" category="paragraph">dr_group_2-FC를 제거한 후 8노드 MetroCluster IP 구성으로 프로세스가 종료됩니다.</block>
+  <block id="3801c840bf76921c2b00fc213010c0d4" category="image-alt">MCC DR 그룹 C6</block>
+  <block id="7bfd4ffe50f69a1805344bce9b252c81" category="section-title">전환 프로세스 워크플로우</block>
+  <block id="feb6447b54e85b35757c82bf8e07abf7" category="summary">ONTAP 9.13.1 부터는 기존 8노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.</block>
+  <block id="3d24a5eddf097cddc7e369398b35f959" category="paragraph">기존 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.</block>
+  <block id="31c4d6a80fe871ada10a219d5727c166" category="paragraph">ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.</block>
+  <block id="1bf2c57ed29fc24c2ccb26dcba0c45be" category="list-text">이 절차는 4노드 및 8노드 MetroCluster FC 구성에만 적용됩니다.</block>
+  <block id="99e6dcb4734e7eef8858b52e3c36d08c" category="list-text">이 절차에서는 4노드 FC DR 그룹 하나를 전환하는 데 필요한 단계를 설명합니다. 8노드 구성(FC DR 그룹 2개)이 있는 경우 각 FC DR 그룹에 대해 전체 절차를 반복해야 합니다.</block>
+  <block id="7085ef0783c3069c714c62b941d51195" category="summary">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다.</block>
+  <block id="be2a104272635035d829d9eb66247a6e" category="doc">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)으로 컨트롤러 업그레이드</block>
+  <block id="7644562e2fb618084cb09ad85c576c00" category="paragraph">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
+  <block id="23006e2e0a92cb1615e8aaf31b4fa13e" category="paragraph">이 절차는 FAS8200에서 FAS9500까지, 그리고 AFF A900 컨트롤러 업그레이드에 대한 AFF A300을 지원합니다.</block>
+  <block id="db8b16f8a162b64f9227ab0fe83ffe4c" category="paragraph">플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 <block ref="2a99f679e02927fd36d8e489a7ee9535" category="inline-link-macro-rx"></block>.</block>
+  <block id="e9f3eb39072498fcd6fd79f6beb0b0f4" category="list-text">이 절차는 ONTAP 9.13.1 이상을 실행하는 4노드 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.</block>
+  <block id="d6777f90334e4deb82616ecb9b6f9fb9" category="list-text">MetroCluster 시스템은 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
+  <block id="55a7a35f233fa5c7dc761790158ed06d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 전환 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 컨트롤러를 업그레이드할 수 있습니다.</block>
+  <block id="c5825fe35515c4155fffecab1329d16f" category="admonition">4노드 MetroCluster IP 구성에서는 ARL(Aggregate Relocation)을 사용하여 "system controller replace" 명령을 사용하여 업그레이드를 수행할 수 없습니다.</block>
+  <block id="77eb4e36d322d7ab218107d7c498326a" category="list-text">자동 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.</block>
+  <block id="06b8cd9278c28e36ddc1fc586a6f840c" category="inline-link-macro">ONTAP 중재자를 수동으로 재구성합니다</block>
+  <block id="6647b31592f54f2deed2633fe8863ba5" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 점검을 통과하지 못하거나 업그레이드를 진행하지 않도록 선택하는 경우 반드시 다음을 수행해야 합니다 <block ref="8eeedc881b874d23b9b6cbc9929c7075" category="inline-link-macro-rx"></block>.</block>
+  <block id="3cc4806cb19cbb655dbea9a73d4aab85" category="paragraph"><block ref="4baef16133ebdeaa64de2abee5aaa778" prefix="" category="inline-code"></block></block>
+  <block id="ad84135061ac4d026b0f6b6b0b90c976" category="list-text">를 실행하지 않는 경우<block ref="4baef16133ebdeaa64de2abee5aaa778" prefix=" " category="inline-code"></block> 명령, 컨트롤러 업그레이드 절차는 MetroCluster IP 시스템의 기본 절차로 통계청 기반의 자동 전환 및 스위치백을 선택합니다.</block>
+  <block id="c37cd78225bfd28b27aba6fdb4ffdb05" category="paragraph">이 작업은 기존 MetroCluster IP 구성에서 수행됩니다.</block>
+  <block id="41658c9a662bf36d1d1079b0d7e61f18" category="paragraph">를 클릭합니다<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> 명령 출력에는 MetroCluster 인터페이스 IP, 시스템 ID 및 시스템 UUID가 포함된 세 개의 테이블이 표시됩니다. 이 정보는 나중에 새 노드를 부팅할 때 boots를 설정하는 절차에 필요합니다.</block>
+  <block id="103e238a461bced8a19653fadfc6b06f" category="paragraph">이 예에서 4노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
+  <block id="f517753faa986ef4fe936b6ef049742a" category="paragraph">이 예에서는 2노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
+  <block id="8351b67dee4e0c692cf4f28e83b54b0a" category="paragraph">자동화 작업이 전환 작업을 시작합니다. 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다<block ref="5fb641c5977b93de82b81e36db0454cf" prefix=" " category="inline-code"></block> 앞서 모였습니다.</block>
+  <block id="8582c1480060e39fb79b0996133a48d6" category="paragraph"><block ref="8582c1480060e39fb79b0996133a48d6" category="inline-link-rx"></block></block>
+  <block id="956cd19055bcda776c4aa38d849f5270" category="paragraph">디렉토리 목록에는 커널 파일 ONTAP-version_image.tgz가 있는 netboot 폴더가 포함되어야 합니다</block>
+  <block id="d58685908c79a70d5ff1a6db6c223402" category="paragraph">ONTAP-version_image.tgz 파일은 추출할 필요가 없습니다.</block>
+  <block id="f3b7262f888ca591450dde27d2e71aaf" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_1에 대한 값을 설정합니다.</block>
+  <block id="65197a1036db006851c7578b94728a50" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_2에 대한 값을 설정합니다.</block>
+  <block id="bf8bfdf49f6f753bf2394e6dce1882b0" category="list-text">node_B_1에서 UUID를 설정합니다.</block>
+  <block id="5eac2f82a290cf5f7626a80d0e2c07aa" category="paragraph">다음 예에서는 node_B_1에서 UUID를 설정하기 위한 명령을 보여 줍니다.</block>
+  <block id="f2925ea98441cdf274d96211ca1ada37" category="list-text">node_B_2에서 UUID 설정:</block>
+  <block id="812568fdfa215d28245c0e27f1e6f5ce" category="paragraph">다음 예에서는 node_B_2에서 UUID를 설정하기 위한 명령을 보여 줍니다.</block>
+  <block id="384df789341519934d49ceef6f3f8c5e" category="admonition">를 클릭합니다<block ref="12f728ceb5fc82e860ec81c090369ca5" prefix=" " category="inline-code"></block> 변수를 * Original * 컨트롤러 모듈 node_B_1의 sys-id로 설정해야 합니다.</block>
+  <block id="1e9e20507e30afe8b79feaf697336037" category="list-text">node_B_1에서 변수를 설정합니다.</block>
+  <block id="96a30b5e5305a12e0752b81f173e6fc6" category="paragraph">다음 예제는 node_B_1에서 값을 설정하는 명령을 보여 줍니다.</block>
+  <block id="ed8d1dfb2569c85ee7b108aa3e6a5466" category="list-text">node_B_2에서 변수를 설정합니다.</block>
+  <block id="bacd790164cac2c217ca06a37ce78e9c" category="paragraph">다음 예제는 node_B_2에서 값을 설정하는 명령을 보여 줍니다.</block>
+  <block id="1f9d34c7d1e2d2f573c7d5fc014693cd" category="paragraph">에서 이전 시스템 ID를 식별했습니다 <block ref="88d9e20523438a3ef8e09cf426f5ea87" category="inline-link-macro-rx"></block>.</block>
+  <block id="ca0df34f59e377032b2f4b42096b5055" category="admonition">MetroCluster IP 시스템에 고급 디스크 파티셔닝이 구성되어 있는 경우 을 실행하여 DR 파트너 시스템 ID를 포함해야 합니다<block ref="1d9572d24113365244a97e4cb81d5a77" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="3d76ebef670d0f7bd3eab697fb186812" category="paragraph">옵션 ""6"" 후 재부팅 중 하나가 진행되는 동안 확인 메시지가 표시됩니다<block ref="adeeb123a02ab1bcf79fc4bdffdd3b9f" prefix=" " category="inline-code"></block> 나타납니다. 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
+  <block id="16de7447f84bfaba1c8cf72b93fbf6ee" category="paragraph"><block ref="16de7447f84bfaba1c8cf72b93fbf6ee" category="inline-link-macro-rx"></block></block>
+  <block id="9d278f0716d4f0b8bdeaa91150592096" category="list-text">자동화 작업이 수행됩니다<block ref="f62e58c376725d0e22a9e8040934124c" prefix=" " category="inline-code"></block>,<block ref="f71080a9d0eed0afac5e99d0ac5f5781" prefix=" " category="inline-code"></block>사이트 A의 스위치백 작업과 업그레이드 후 점검 작업을 수행할 수 있습니다. 작업이 일시 중지되면 SAN LIF 상태를 수동으로 확인하고 콘솔 메시지에 따라 네트워크 구성을 확인합니다.</block>
+  <block id="7058a4e91dbbbe7dcf2fde3987421db0" category="section-title">ONTAP 중재자를 재구성합니다</block>
+  <block id="37a1beb7755a7b8722d2585dbc965263" category="paragraph">업그레이드를 시작하기 전에 자동으로 제거된 ONTAP 중재자를 수동으로 구성합니다.</block>
+  <block id="72912b568eb3bd0af2dc6a3ba324a1c9" category="list-text">의 단계를 사용합니다 <block ref="f90e9d8e118936cdbb24903820a79eb3" category="inline-link-macro-rx"></block>.</block>
+  <block id="eae1d6e5dc6115799413390aecfa0c7c" category="paragraph">자동화 작업으로 인해 전환이 시작됩니다.<block ref="4bc031ebd90e06c679bed249595b6c90" prefix=" " category="inline-code"></block>, 및<block ref="a233091efff166ee24ee5a89d344dcdf" prefix=" " category="inline-code"></block> 운영: 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다<block ref="5fb641c5977b93de82b81e36db0454cf" prefix=" " category="inline-code"></block> 앞서 모였습니다.</block>
+  <block id="3d296dee09f5acd9721e7bd1f885a1ff" category="doc">MetroCluster IP 구성 확장</block>
+  <block id="f7ebd0c3919ed1a579352a95f757a9e6" category="paragraph">ONTAP 버전에 따라 4개의 새 노드를 새 DR 그룹으로 추가하여 MetroCluster IP 구성을 확장할 수 있습니다.</block>
+  <block id="bb12c6e41d92f6e4a5251b0dd54e9b0f" category="paragraph">ONTAP 9.13.1 부터는 MetroCluster IP 구성에 세 번째 DR 그룹으로 네 개의 새 노드를 추가할 수 있습니다. 그러면 12노드 MetroCluster 구성이 생성됩니다.</block>
+  <block id="1b9d79df22b9bc1c5dc1b1baa6f53e05" category="list-text">이 절차에서는 4노드 DR 그룹 하나를 확장하는 데 필요한 단계를 설명합니다. 8노드 구성(DR 그룹 2개)이 있는 경우 각 DR 그룹에 대해 전체 절차를 반복해야 합니다.</block>
+  <block id="5ffb6f10d2a660f5653c90be923e511a" category="section-title">두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합</block>
+  <block id="c7a5837b5fbd32fe6a2e393e60dbd4a3" category="paragraph">다음 표에는 8노드 IP 구성에 지원되는 플랫폼 조합이 나와 있습니다.</block>
+  <block id="a321522d8592d70cc3e6c26d2e63f256" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
+  <block id="999074f8fe2e3e48d827312298ab3915" category="list-text">이 표에 표시된 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
+  <block id="33ad7ee6bdd54750e4657cc259182b15" category="list-text">하나의 DR 그룹에 있는 모든 노드의 유형과 구성이 동일해야 합니다.</block>
+  <block id="0f186c4f0b005580a0159670474d7e66" category="image-alt">8노드 구성을 위한 플랫폼 조합</block>
+  <block id="ef426871118095ccbed64997bc2ebf1e" category="list-text">* 참고 1 *: 이러한 조합에는 ONTAP 9.9.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
+  <block id="06f9380c619d2fa649d0592c6129e260" category="list-text">* 참고 2 *: 이러한 조합에는 ONTAP 9.13.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
+  <block id="cd2c073603609b9fcdfdc1ca7075bc5b" category="doc">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
+  <block id="60a88be17742c8d2f99c1b27c311dca1" category="paragraph">이 절차를 사용하여 4노드 또는 8노드 구성으로 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.</block>
+  <block id="3104ce50b7a53b01f1c0af3e3fc54e43" category="paragraph">ONTAP 9.13.1 버전부터는 구성을 임시 12노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 8노드 MetroCluster IP 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.</block>
+  <block id="016be225123f8261f19fb829bbc84977" category="paragraph">ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전 DR 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.</block>
+  <block id="e3f29f34a8bb06767323cc8e4d058431" category="list-text">8노드 구성의 경우 시스템에서 ONTAP 9.13.1 이상을 실행해야 합니다.</block>
+  <block id="7c332afd15fb912a3e325674359f7556" category="list-text">4노드 구성의 경우 시스템에서 ONTAP 9.8 이상을 실행해야 합니다.</block>
+  <block id="754c49529520fa11e1c669a74ccc0157" category="list-text">IP 스위치도 업그레이드하는 경우 이 새로 고침 절차를 수행하기 전에 IP 스위치를 업그레이드해야 합니다.</block>
+  <block id="3143fc3898209e4326c307ba9fca7f8c" category="list-text">이 절차에서는 4노드 DR 그룹 하나를 새로 고치는 데 필요한 단계를 설명합니다. 8노드 구성(DR 그룹 2개)이 있는 경우 하나 또는 두 DR 그룹을 모두 새로 고칠 수 있습니다.</block>
+  <block id="0e2f3faf301851917c69f0747162b9c4" category="paragraph">두 DR 그룹을 모두 업데이트하는 경우 한 번에 하나의 DR 그룹을 새로 고쳐야 합니다.</block>
+  <block id="1fd5fb51244bb2f9e31caff05e49083d" category="list-text">8노드 구성의 경우 소스 및 타겟 8노드 MetroCluster 플랫폼 조합을 지원해야 합니다.</block>
+  <block id="79d720fb95bb200ede7a9f6c0dbfc3d0" category="admonition">두 DR 그룹을 모두 새로 고치면 첫 번째 DR 그룹을 새로 고친 후 플랫폼 조합이 지원되지 않을 수 있습니다. 지원되는 8노드 구성을 달성하려면 두 DR 그룹을 모두 새로 고쳐야 합니다.</block>
+  <block id="abd99efcea2674d79facbe22bbbbecc7" category="list-text">MetroCluster IP 구성에서 이 절차를 사용하여 특정 플랫폼 모델만 새로 고칠 수 있습니다.</block>
+  <block id="9a7b8abaf725425f1194c7e34ab14ebb" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 새로 고침 표를 참조하십시오 <block ref="ca31e6122d170c1a660e1ab5d0a9430f" category="inline-link-macro-rx"></block>.</block>
+  <block id="2a2cf6a410f2b6427bba1d87ddefb983" category="list-text">소스 및 타겟 플랫폼의 하한이 적용됩니다. 상위 플랫폼으로 전환할 경우 모든 DR 그룹의 기술 업데이트가 완료된 후에만 새 플랫폼의 제한이 적용됩니다.</block>
+  <block id="40be6b525ed2183840f20fb9c29f8703" category="list-text">소스 플랫폼보다 낮은 한계로 플랫폼에 대한 기술 업데이트를 수행할 경우 이 절차를 수행하기 전에 한계를 조정하고 대상 플랫폼 제한값 이하로 줄여야 합니다.</block>
+  <block id="b31a2061aa6b904219eba112464c7357" category="paragraph">8노드 구성은 다음 이미지와 같이 나타납니다.</block>
+  <block id="448f39697cef4353cf70c2df80e1d4c9" category="list-text">Tiebreaker CLI를 사용하여 MetroCluster 구성이 올바르게 제거되었는지 확인합니다<block ref="7f09554f3b428339c3f534ff2c033739" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="2d9320a95baef24be0ce2f2d4bc608a6" category="list-text">의 모든 단계를 수행합니다 <block ref="26ae71b3302b7c9dcac8b221e98acc6f" category="inline-link-macro-rx"></block> 를 클릭하여 구성에 새 노드 및 스토리지를 추가합니다.</block>
+  <block id="8785d96b922a1a66136207792a0400c5" category="paragraph">확장 절차가 완료되면 다음 이미지와 같이 임시 구성이 나타납니다.</block>
+  <block id="7d7fd277012689535b693bcae0693459" category="image-title">일시적인 8노드 구성</block>
+  <block id="cb3b06d4f89d32589bbce6abb75941fc" category="image-title">임시 12노드 구성</block>
+  <block id="830d9e0f5e1de2a97686d67c2397dae5" category="image-alt">MCC DR 그룹 C4</block>
+  <block id="6af6b76d592516d40ca101051c678be3" category="inline-link-macro">AFF 및 FAS 시스템 업그레이드 설명서</block>
+  <block id="73463ea97bfc9f9e1267ea63ebdd42a3" category="list-text">의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 <block ref="292db4887d6135b1e0f2f8467d29f1d6" category="inline-link-macro-rx"></block></block>
+  <block id="bbe65d15d9db73ecb088957ca54464a4" category="list-text">각 클러스터에 대해 전환된 노드의 클러스터 피어의 IP 주소를 수정합니다.</block>
+  <block id="5f733ea5e4f1c7cf03ff4e0dcc486e49" category="list-text">의 단계를 따릅니다 <block ref="e5ebde3067c5558de277c40cd868d611" category="inline-link-macro-rx"></block> 기존 DR 그룹을 제거합니다.</block>
+  <block id="91658906d8262381ddcdb44c01a8989d" category="list-text">8노드 구성에서 두 DR 그룹을 모두 새로 고치려면 각 DR 그룹에 대해 전체 절차를 반복해야 합니다.</block>
+  <block id="e50b66bedcb52077182d77c650db0ca0" category="paragraph">이전 DR 그룹을 제거한 후 다음 이미지와 같이 구성이 나타납니다.</block>
+  <block id="47468b9007c8d1b64ee8a7229933b739" category="image-title">8노드 구성</block>
+  <block id="e73093705babe6125a16df08eedb00cc" category="image-alt">MCC DR 그룹 C5</block>
+  <block id="68f99a795ff5a89f522232c02dc3bdef" category="paragraph"><block ref="ded257afb157d474a6461a3bc1b48d84" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 _.</block>
+  <block id="d64734f1819a8d6339e74ffe37dc5430" category="paragraph">플랫폼이 나열되지 않은 경우 지원되는 컨트롤러 업그레이드 조합이 없습니다.</block>
+  <block id="9cc4e1f05676227146cf00108c59fa28" category="image-alt">MetroCluster IP 업그레이드 표 9 13 1</block>
+  <block id="183ffd679adb1c9e843df285f2b91466" category="list-text">참고 2: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
+  <block id="565b432bf0dbccb436556aa228477fc4" category="image-alt">MetroCluster FC 업그레이드 표 p 13 1</block>
+  <block id="ef7e86617c6692f308d834d239d77e9e" category="list-text">참고4: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
+  <block id="5abae7190ce598d45fe390e44304cde0" category="paragraph">9.13.1 이상</block>
+  <block id="80fd06bae5a00e691ac9334058ccace5" category="paragraph"><block ref="80fd06bae5a00e691ac9334058ccace5" category="inline-link-macro-rx"></block></block>
+  <block id="338b3842cbe6f0ae991509f38e7d0cca" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
+  <block id="0fa55a9001a26a5414307fd992cd4661" category="image-alt">MetroCluster IP 기술 업데이트 조합</block>
+  <block id="c38f34e2c50bf5ed2113077f8269019c" category="list-text">타겟 플랫폼 제한이 MetroCluster 제한보다 낮은 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한값 이하로 재구성해야 합니다.</block>
+  <block id="fdc1be4b61fa768dbfcc3e8f0dab2595" category="paragraph">다음 표에는 8노드 MetroCluster FC 구성에 지원되는 플랫폼 조합이 나와 있습니다.</block>
+  <block id="49782ec67fb4809f5d138aa07412fd9d" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
+  <block id="ea95591996a43e78cc0b5f96cb4d8f1c" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
+  <block id="c6e46da968a03eccf97571ae7315a6ce" category="image-alt">MCC IP 케이블링 AFF A320 C400 a400 a700 C800 A800에서 Cisco 9336c 공유 스위치가 개정되었습니다</block>
+  <block id="1251b37475039ca3d9d370458002ce7c" category="paragraph">ONTAP 중재자가 중재자 호스트에 있는 사서함에 MetroCluster 노드에 대한 상태 정보를 저장합니다. MetroCluster 노드는 이 정보를 사용하여 DR 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO를 구현할 수 있습니다.</block>
+  <block id="8227e4d84dc1594bf85338cfe09f1747" category="list-text">사이트 재해가 발생하는 경우 사이트 재해는 동일한 사이트에 있는 * 모든 * 노드의 장애입니다.</block>
+  <block id="792f2e5a1dddb8ed73154e39c1bf5e77" category="list-text">ONTAP 9.13.1 부터는 위의 조건이 충족되고 팬 또는 하드웨어 장애가 발생하면 전원 공급 장치, NVRAM 배터리 또는 서비스 프로세서 하트비트 장애, 고온 또는 저온 등의 환경 종료가 시작됩니다.</block>
+  <block id="08d29117f113494cf7bd34ddc0d0a7e0" category="doc">IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다</block>
+  <block id="2454620eb6c11598ab9b657181cc0f55" category="paragraph">장애가 발생한 스위치를 교체하거나, 스위치를 업그레이드 또는 다운그레이드하거나, 기존 MetroCluster IP 스위치를 변경해야 할 수 있습니다.</block>
+  <block id="057120c40cd4c9c1a072526b368d97f4" category="paragraph">이 절차에서는 다음 변환을 지원합니다.</block>
+  <block id="31d37e1e42011bd98b80703dc464aba6" category="list-text">스위치 공급업체, 유형 또는 둘 다를 변경합니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다(스위치 업그레이드 또는 다운그레이드).</block>
+  <block id="140c4f749e3092d3a7c3a67473f0dc03" category="paragraph">예를 들어, AFF A400 컨트롤러 및 BES-53248 스위치를 사용하는 단일 4노드 구성에서 AFF A400 컨트롤러를 사용하는 8노드 구성으로 MetroCluster IP 구성을 확장하려면 새로운 구성에서 BES-53248 스위치가 지원되지 않으므로 스위치를 지원되는 구성 유형으로 변경해야 합니다.</block>
+  <block id="dbe41527f45d328d1c442eb0dbad0503" category="paragraph">장애가 발생한 스위치를 동일한 유형의 스위치로 교체하려면 장애가 발생한 스위치만 교체합니다. 스위치를 업그레이드하거나 다운그레이드하려면 동일한 네트워크에 있는 두 스위치를 조정해야 합니다. 두 스위치는 ISL(Inter-Switch Link)에 연결되어 동일한 사이트에 있지 않을 때 동일한 네트워크에 있습니다. 예를 들어, 네트워크 1에는 IP_SWITCH_A_1 및 IP_SWITCH_B_1이 포함되며, 네트워크 2에는 아래 그림과 같이 IP_SWITCH_A_2 및 IP_SWITCH_B_2가 포함됩니다.</block>
+  <block id="9cdb975932394169c1a7da25c603b227" category="admonition">스위치를 교체하거나 다른 스위치로 업그레이드할 경우 스위치 펌웨어 및 RCF 파일을 설치하여 스위치를 사전 구성할 수 있습니다.</block>
+  <block id="dc90672e58a69bbca66b20395c1f39b7" category="list-text">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP 구성을 MetroCluster IP 구성으로 변환합니다.</block>
+  <block id="86d1d4ce5bcdca5be40df18599a99316" category="paragraph">예를 들어, AFF A700 컨트롤러를 사용하여 일반 MetroCluster IP 구성을 사용하는 경우 MetroCluster를 재구성하여 NS224 쉘프를 동일한 스위치에 연결할 수 있습니다.</block>
+  <block id="0a68705a55d8a79d8f02e799bbe59a07" category="inline-link-macro">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가</block>
+  <block id="a26675682d61464ec64687501c97e418" category="list-text">공유 스토리지 MetroCluster IP 스위치를 사용하여 MetroCluster IP 구성에서 쉘프를 추가하거나 제거하려면 의 단계를 수행하십시오 <block ref="a6c32053e88f456cb0f33bc2215c1e48" category="inline-link-macro-rx"></block></block>
+  <block id="db1a71d927fe2da1cf5688ccd43aff7e" category="list-text">MetroCluster IP는 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.</block>
+  <block id="40fbbb9d7606643acc0b72d7f28c501f" category="paragraph-title">포트 사용 워크시트</block>
+  <block id="738fc50c1eb3a054e9eeacb63a7e72f3" category="paragraph">다음은 기존 스위치를 사용하여 NS224 셸프 2개를 연결하는 공유 스토리지 구성으로 MetroCluster IP 구성을 변환하는 예제 워크시트입니다.</block>
+  <block id="21eb30d37360c5d8c536d0be6968f476" category="paragraph">워크시트 정의:</block>
+  <block id="f8974ea8379a4bc6dda041a2f0e7cfa3" category="list-text">기존 구성: 기존 MetroCluster 구성의 케이블링</block>
+  <block id="2c0c7e8c9405c56506dbb2ee6f1549cf" category="list-text">NS224 쉘프를 사용한 새로운 구성: 스토리지 및 MetroCluster 간에 스위치가 공유되는 타겟 구성입니다.</block>
+  <block id="574fb9fc0e12595fd6be9ec98d4f7361" category="paragraph">이 워크시트의 강조 표시된 필드는 다음을 나타냅니다.</block>
+  <block id="7e6b37741503afb3e7ddb433e2eb7924" category="list-text">녹색: 케이블을 변경할 필요가 없습니다.</block>
+  <block id="f06f8cd222932224a11a995ec4ef0ccf" category="list-text">노란색: 동일하거나 다른 구성으로 포트를 이동해야 합니다.</block>
+  <block id="b7450015b71c12c709e06c6df0960192" category="list-text">파란색: 새 연결인 포트</block>
+  <block id="64a60a68eb306ec5af2b3794eebf0acc" category="paragraph"><block ref="64a60a68eb306ec5af2b3794eebf0acc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="633cc15b1e59b48a46d3c777359a1055" category="list-text">[[ALL_STep1]] 구성 상태를 확인합니다.</block>
+  <block id="7882a4b556b6996eaf604413a9e602d9" category="inline-xref">4단계</block>
+  <block id="081cd064d2071e8aa77edcf5d45444be" category="paragraph">기존 스위치를 재사용하는 경우 로 이동합니다 <block ref="046a26a191748a2899dce4a2c37c0cb7" category="inline-xref-macro-rx"></block>.</block>
+  <block id="a20cd528d8bc7b61469ce5e3d4c9c554" category="list-text">[[Existing_step4]] 이전 스위치에서 연결을 끊습니다.</block>
+  <block id="7d776215704c45de3e834bbcadf79f9d" category="admonition">이전 구성과 새 구성에서 동일한 포트를 사용하지 않는 연결만 연결을 끊을 수 있습니다. 새 스위치를 사용하는 경우 모든 연결을 끊어야 합니다.</block>
+  <block id="75e3c856358f89db923a1a35bcc7533c" category="paragraph">다음 순서대로 연결부를 분리하십시오.</block>
+  <block id="0cde1e9cab83159ca8c4c0066971bfaf" category="list-text">로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:</block>
+  <block id="2d92b42c0c2f47e6ac73af40f63add96" category="list-text">로컬 클러스터 인터페이스를 분리합니다</block>
+  <block id="0054fe87c904661c3e1c865d343c0bcc" category="list-text">로컬 클러스터 ISL을 분리합니다</block>
+  <block id="ffd6b825c885ce7458a8f30023fc7852" category="list-text">MetroCluster IP 인터페이스를 분리합니다</block>
+  <block id="67cc98572471f894a699ad039887fbf2" category="list-text">MetroCluster ISL을 분리합니다</block>
+  <block id="afbde099dc8a26a6394d60f258d7b937" category="paragraph">를 참조하십시오 <block ref="6c63cd5b30d21cdd776aa75d41e55cc0" category="inline-xref-macro-rx"></block>, 스위치는 변경되지 않습니다. MetroCluster ISL은 재배치되며 연결을 해제해야 합니다. 워크시트에서 녹색으로 표시된 연결은 연결 해제할 필요가 없습니다.</block>
+  <block id="7b9cd3f24cb1c28f865438cbd149932b" category="list-text">새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 IP_SWITCH_B_1을 물리적으로 제거합니다.</block>
+  <block id="f5ce4d426c8852e0090ab32842d1cd09" category="inline-xref">6단계</block>
+  <block id="a5717edbc2c781c1beaa710a27186585" category="paragraph">기존 스위치를 재사용하는 경우 로 이동합니다 <block ref="2e61491c69f93a4146be17b4939efb61" category="inline-xref-macro-rx"></block>.</block>
+  <block id="333d2f9cc8c6ad8010d2882a39d82f4b" category="admonition">관리 인터페이스(사용하는 경우)를 제외하고 새 스위치에 케이블을 연결하지 * 마십시오.</block>
+  <block id="1fd9c3285779f1beb3a2a86f3db536dd" category="list-text">[[Existing_step6]] 기존 스위치를 구성합니다.</block>
+  <block id="00988a383d51754cc7748f6c1b1e0fea" category="paragraph">스위치를 이미 사전 구성한 경우 이 단계를 건너뛸 수 있습니다.</block>
+  <block id="6009872da2f85ec2153eaa9c096839f1" category="paragraph">기존 스위치를 구성하려면 다음 단계에 따라 펌웨어 및 RCF 파일을 설치 및 업그레이드하십시오.</block>
+  <block id="9c77ce4749e7ce4cb8afcbc4ebd4e32e" category="list-text"><block ref="9c77ce4749e7ce4cb8afcbc4ebd4e32e" category="inline-link-macro-rx"></block></block>
+  <block id="45cb34f2cec27064a29ed6e3a54a294f" category="list-text"><block ref="45cb34f2cec27064a29ed6e3a54a294f" category="inline-link-macro-rx"></block></block>
+  <block id="3a14a65fbfc927e7fc3c51dcb8d932f8" category="list-text">스위치에 케이블을 연결합니다.</block>
+  <block id="e864e1a0a83c248ec6705eecbb75a2e4" category="paragraph">의 _ IP 스위치 케이블 연결 _ 섹션에 나와 있는 단계를 수행할 수 있습니다 <block ref="69c250b2ff0cdf92dd9f1322bce627cf" category="inline-link-macro-rx"></block>.</block>
+  <block id="abba6801f76a30e62f42a339319d8046" category="paragraph">스위치를 다음과 같은 순서로 케이블로 연결합니다(필요한 경우).</block>
+  <block id="eed332b6efe7c74f805fd4d57a6089fa" category="list-text">원격 사이트에 ISL 케이블 연결</block>
+  <block id="c78a73a52795719f0a6c0e4e534be9ef" category="list-text">MetroCluster IP 인터페이스에 케이블을 연결합니다.</block>
+  <block id="01deefeeb71ff074c039158073f19265" category="list-text">로컬 클러스터 인터페이스에 케이블을 연결합니다.</block>
+  <block id="8b6ae3655a41f028d5060b1f3d5aebbf" category="list-text">스위치 유형이 다른 경우 사용된 포트는 이전 스위치의 포트와 다를 수 있습니다. 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL에 케이블을 연결하지 * 마십시오. 두 번째 네트워크의 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL과 한 사이트의 두 스위치가 동일한 유형과 케이블인 경우에만 로컬 ISL에 케이블을 연결하십시오.</block>
+  <block id="eaa95352e43bdba50bdd8ae03821eb2f" category="list-text">Switch-A1 및 Switch-B1을 업그레이드하는 경우 Switch-A2 및 Switch-B2에 대해 1단계에서 6단계까지 수행해야 합니다.</block>
+  <block id="ab95b1ec0ad168059ea7f20803fa1073" category="list-text">로컬 클러스터 케이블 연결을 마칩니다.</block>
+  <block id="4ceec7a3943b4f4acd458ca89a818798" category="list-text">로컬 클러스터 ISL 케이블 연결</block>
+  <block id="10fb2fd01be021da5cbd6629a96e24a6" category="list-text">로컬 클러스터 인터페이스가 스위치에 연결되지 * 않은 경우:</block>
+  <block id="446e9d64184ff722494a9a706bbd9d06" category="inline-link-macro">스위치 NetApp 클러스터 환경으로 마이그레이션</block>
+  <block id="76424713bb30c73c77e02fc03d7bfa54" category="list-text">를 사용합니다 <block ref="54de1f7ba3b725e8a672244eb3963d64" category="inline-link-macro-rx"></block> 스위치가 없는 클러스터를 스위치가 없는 클러스터로 변환하는 절차입니다. 에 표시된 포트를 사용합니다 <block ref="69c250b2ff0cdf92dd9f1322bce627cf" category="inline-link-macro-rx"></block> 또는 RCF 케이블 연결 파일을 사용하여 로컬 클러스터 인터페이스를 연결합니다.</block>
+  <block id="ef28ede8698d6b9355079c76d077c08d" category="list-text">MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <block ref="78909af09fbcfe8c1bea7d5cc8b7674c" category="inline-xref-macro-rx"></block>.</block>
+  <block id="15bac38a5276c64284cc172e6de7c1f3" category="list-text">선택적으로 NS224 쉘프를 이동합니다.</block>
+  <block id="13c9917203c8c2e988a75ac2cf246dcd" category="paragraph">NS224 셸프를 MetroCluster IP 스위치에 연결하지 않는 MetroCluster IP 구성을 재구성할 경우 적절한 절차에 따라 NS224 셸프를 추가하거나 이동합니다.</block>
+  <block id="a6c32053e88f456cb0f33bc2215c1e48" category="list-text"><block ref="a6c32053e88f456cb0f33bc2215c1e48" category="inline-link-macro-rx"></block></block>
+  <block id="3ebdfe501befb632f105d0771d49b2ed" category="inline-link-macro">직접 연결 스토리지를 사용하여 스위치가 없는 클러스터에서 마이그레이션</block>
+  <block id="38584e0fd95cba0498b35bc2d1409789" category="list-text"><block ref="38584e0fd95cba0498b35bc2d1409789" category="inline-link-macro-rx"></block></block>
+  <block id="2e782f3147ceef5a1435f26ba8fa7daa" category="inline-link-macro">스토리지 스위치를 재사용하여 스위치 연결 스토리지를 사용하는 스위치가 없는 구성에서 마이그레이션합니다</block>
+  <block id="a8a61fb8a898cbbd8809029f5f6b5dba" category="list-text"><block ref="a8a61fb8a898cbbd8809029f5f6b5dba" category="inline-link-macro-rx"></block></block>
+  <block id="ba8871c06c0bd003e2160207049c17d5" category="paragraph">AUSO는 기본적으로 "클러스터 내 재해"로 설정되어 있습니다. 상태는 에서 볼 수 있습니다<block ref="0d51371cbb850772d2130a36f4368df4" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="c7f2465703040d1f77ba4f73cf6ce393" category="paragraph">ONTAP 9.13.1 부터는 MetroCluster IP 구성에서 AUSO 상태에 대한 기본값이 "auso-on-dr-group"으로 설정됩니다. ONTAP 9.12.1 이전 버전의 경우 기본값은 "auso-on-cluster-disaster"로 설정됩니다. 8노드 MetroCluster IP 구성에서 이 옵션은 HA 쌍의 두 노드에 장애가 발생할 경우 AUSO를 트리거합니다.</block>
+  <block id="55e40c2e95a8c835a2e8ddca52499b33" category="paragraph">을 사용하여 AUSO 도메인을 "클러스터 내 클러스터 내 재해" 도메인으로 변경할 수 있습니다<block ref="eabe864642c195f21f3f5dd17825dd14" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="d87d22ecaeaff0e5d4bd4030a9e08302" category="sidebar">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP에서 컨트롤러를 업그레이드합니다. "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)</block>
+  <block id="12651c133a2edc8c764efaddca32ca42" category="sidebar">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
+  <block id="f11af7573a10a71e1161a2099db36bcc" category="sidebar">MetroCluster IP 구성을 확장합니다</block>
 </blocks>
