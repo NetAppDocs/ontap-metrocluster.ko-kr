@@ -13017,7 +13017,6 @@
   <block id="7085ef0783c3069c714c62b941d51195" category="summary">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다.</block>
   <block id="be2a104272635035d829d9eb66247a6e" category="doc">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)으로 컨트롤러 업그레이드</block>
   <block id="7644562e2fb618084cb09ad85c576c00" category="paragraph">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
-  <block id="23006e2e0a92cb1615e8aaf31b4fa13e" category="paragraph">이 절차는 FAS8200에서 FAS9500까지, 그리고 AFF A900 컨트롤러 업그레이드에 대한 AFF A300을 지원합니다.</block>
   <block id="db8b16f8a162b64f9227ab0fe83ffe4c" category="paragraph">플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 <block ref="2a99f679e02927fd36d8e489a7ee9535" category="inline-link-macro-rx"></block>.</block>
   <block id="e9f3eb39072498fcd6fd79f6beb0b0f4" category="list-text">이 절차는 ONTAP 9.13.1 이상을 실행하는 4노드 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.</block>
   <block id="d6777f90334e4deb82616ecb9b6f9fb9" category="list-text">MetroCluster 시스템은 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
@@ -13025,7 +13024,6 @@
   <block id="c5825fe35515c4155fffecab1329d16f" category="admonition">4노드 MetroCluster IP 구성에서는 ARL(Aggregate Relocation)을 사용하여 "system controller replace" 명령을 사용하여 업그레이드를 수행할 수 없습니다.</block>
   <block id="77eb4e36d322d7ab218107d7c498326a" category="list-text">자동 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.</block>
   <block id="06b8cd9278c28e36ddc1fc586a6f840c" category="inline-link-macro">ONTAP 중재자를 수동으로 재구성합니다</block>
-  <block id="6647b31592f54f2deed2633fe8863ba5" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 점검을 통과하지 못하거나 업그레이드를 진행하지 않도록 선택하는 경우 반드시 다음을 수행해야 합니다 <block ref="8eeedc881b874d23b9b6cbc9929c7075" category="inline-link-macro-rx"></block>.</block>
   <block id="3cc4806cb19cbb655dbea9a73d4aab85" category="paragraph"><block ref="4baef16133ebdeaa64de2abee5aaa778" prefix="" category="inline-code"></block></block>
   <block id="ad84135061ac4d026b0f6b6b0b90c976" category="list-text">를 실행하지 않는 경우<block ref="4baef16133ebdeaa64de2abee5aaa778" prefix=" " category="inline-code"></block> 명령, 컨트롤러 업그레이드 절차는 MetroCluster IP 시스템의 기본 절차로 통계청 기반의 자동 전환 및 스위치백을 선택합니다.</block>
   <block id="c37cd78225bfd28b27aba6fdb4ffdb05" category="paragraph">이 작업은 기존 MetroCluster IP 구성에서 수행됩니다.</block>
@@ -13150,7 +13148,6 @@
   <block id="ffd6b825c885ce7458a8f30023fc7852" category="list-text">MetroCluster IP 인터페이스를 분리합니다</block>
   <block id="67cc98572471f894a699ad039887fbf2" category="list-text">MetroCluster ISL을 분리합니다</block>
   <block id="afbde099dc8a26a6394d60f258d7b937" category="paragraph">를 참조하십시오 <block ref="6c63cd5b30d21cdd776aa75d41e55cc0" category="inline-xref-macro-rx"></block>, 스위치는 변경되지 않습니다. MetroCluster ISL은 재배치되며 연결을 해제해야 합니다. 워크시트에서 녹색으로 표시된 연결은 연결 해제할 필요가 없습니다.</block>
-  <block id="7b9cd3f24cb1c28f865438cbd149932b" category="list-text">새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 IP_SWITCH_B_1을 물리적으로 제거합니다.</block>
   <block id="f5ce4d426c8852e0090ab32842d1cd09" category="inline-xref">6단계</block>
   <block id="a5717edbc2c781c1beaa710a27186585" category="paragraph">기존 스위치를 재사용하는 경우 로 이동합니다 <block ref="2e61491c69f93a4146be17b4939efb61" category="inline-xref-macro-rx"></block>.</block>
   <block id="333d2f9cc8c6ad8010d2882a39d82f4b" category="admonition">관리 인터페이스(사용하는 경우)를 제외하고 새 스위치에 케이블을 연결하지 * 마십시오.</block>
@@ -13186,4 +13183,8 @@
   <block id="d87d22ecaeaff0e5d4bd4030a9e08302" category="sidebar">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP에서 컨트롤러를 업그레이드합니다. "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)</block>
   <block id="12651c133a2edc8c764efaddca32ca42" category="sidebar">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="f11af7573a10a71e1161a2099db36bcc" category="sidebar">MetroCluster IP 구성을 확장합니다</block>
+  <block id="fd069f5f1b9ec4fce867ea78d80b2049" category="paragraph">이 절차는 AFF A900 컨트롤러 업그레이드에 대한 AFF A300만 지원합니다.</block>
+  <block id="f60298ca20150ed82728ebbcf934dcdd" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 점검을 통과하지 못하거나 업그레이드를 진행하지 않도록 선택하는 경우 반드시 다음을 수행해야 합니다 <block ref="27c582b1d219a53bd62704e35b9572aa" category="inline-xref-macro-rx"></block>.</block>
+  <block id="cf26e00f9d9d62aac6ab045ca55c7c29" category="list-text">에서 수집한 정보를 사용합니다 <block ref="4349c160b4ba85d15c9d1b99e7fab03e" category="inline-xref-macro-rx"></block>.</block>
+  <block id="a6d521ed969131c6ad881b1c930a769c" category="list-text">새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 스위치를 물리적으로 분리합니다.</block>
 </blocks>
