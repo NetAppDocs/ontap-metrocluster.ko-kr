@@ -19,7 +19,7 @@ SAS 디스크 쉘프 핫 추가를 준비하기 위해 디스크 드라이브와
 쉘프를 추가하기 전에 MetroCluster 구성 전체에서 디스크 및 쉘프 펌웨어를 업데이트할 수 있습니다.
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ug-rdg/home.html["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"]
+https://["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"]
 
 
 
@@ -33,13 +33,13 @@ NOTE: 시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일�
 .단계
 . NetApp Support 사이트에서 다음 문서를 다운로드하거나 볼 수 있습니다.
 +
-** https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+** https://["NetApp 상호 운용성 매트릭스 툴"]
 ** 디스크 쉘프 모델의 _설치 가이드_를 참조하십시오.
 
 
 . 추가하고 있는 디스크 쉘프가 지원되는지 확인하십시오.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://["NetApp 상호 운용성 매트릭스 툴"]
 
 . 최신 디스크 및 디스크 쉘프 펌웨어 다운로드:
 +
@@ -49,11 +49,11 @@ NOTE: 이 단계에서는 링크에 제공된 지침의 다운로드 부분만 �
 +
 .. 디스크 펌웨어를 다운로드하고 나중에 참조할 수 있도록 디스크 펌웨어 지침 사본을 만듭니다.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp 다운로드: 디스크 드라이브 펌웨어"]
+https://["NetApp 다운로드: 디스크 드라이브 펌웨어"]
 
 .. 디스크 쉘프 펌웨어를 다운로드하고 나중에 참조할 수 있도록 디스크 쉘프 펌웨어 지침의 복사본을 만드십시오.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"]
+https://["NetApp 다운로드: 디스크 쉘프 펌웨어"]
 
 
 

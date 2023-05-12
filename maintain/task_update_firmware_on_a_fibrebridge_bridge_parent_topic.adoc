@@ -25,7 +25,7 @@ FiberBridge 브리지의 펌웨어를 업데이트하여 최신 기능을 사용
 * 관리자 암호와 HTTP 서버에 대한 액세스가 필요합니다.
 * 지원되는 펌웨어 버전을 사용하고 있어야 합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
+https://["NetApp 상호 운용성 매트릭스 툴"^]
 
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
@@ -53,7 +53,7 @@ NOTE: ONTAP 9.8부터 스토리지 브리지 명령이 시스템 브리지로 �
 
 . ATTO FiberBridge 페이지로 이동하여 브리지에 적합한 펌웨어를 선택합니다.
 +
-https://mysupport.netapp.com/site/products/all/details/atto-fibrebridge/downloads-tab["ATTO FiberBridge 펌웨어 다운로드 페이지"^]
+https://["ATTO FiberBridge 펌웨어 다운로드 페이지"^]
 
 . 주의/MustRead 및 최종 사용자 계약을 검토하고 확인란을 클릭하여 수락을 표시하고 계속 진행합니다.
 . 컨트롤러 모듈이 네트워크에 액세스할 수 있는 네트워크 위치에 펌웨어 파일을 배치합니다.
@@ -269,7 +269,7 @@ FiberBridge 브리지의 펌웨어를 업데이트하여 최신 기능을 사용
 * FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
 * 지원되는 펌웨어 버전을 사용하고 있어야 합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
+https://["NetApp 상호 운용성 매트릭스 툴"^]
 
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
@@ -298,7 +298,7 @@ NOTE: 이 절차는 무중단으로 진행되며 완료하는 데 약 30분이 �
 
 . ATTO FiberBridge 페이지로 이동하여 브리지에 적합한 펌웨어를 선택합니다.
 +
-https://mysupport.netapp.com/site/products/all/details/atto-fibrebridge/downloads-tab["ATTO FiberBridge 펌웨어 다운로드 페이지"^]
+https://["ATTO FiberBridge 펌웨어 다운로드 페이지"^]
 
 . 주의/MustRead 및 최종 사용자 계약을 검토하고 확인란을 클릭하여 수락을 표시하고 계속 진행합니다.
 . ATTO FiberBridge 펌웨어 다운로드 페이지의 절차의 1단계부터 3단계까지 사용하여 브리지 펌웨어 파일을 다운로드합니다.

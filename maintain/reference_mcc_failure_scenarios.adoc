@@ -29,7 +29,7 @@ NOTE: 노드 장애 복구에 대한 자세한 내용은 의 "올바른 복구 �
  a| 
 구성은 로컬 테이크오버 를 통해 복구됩니다. RAID는 영향을 받지 않습니다. 시스템 메시지를 검토하고 필요에 따라 장애가 발생한 FRU를 교체합니다.
 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 
 
@@ -40,7 +40,7 @@ MetroCluster Tiebreaker 소프트웨어에서 자동 전환이 활성화된 경�
  a| 
 MetroCluster Tiebreaker 소프트웨어에서 자동 전환이 활성화되지 않은 경우, 계획되지 않은 수동 전환(USO)
 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 
 
@@ -51,7 +51,7 @@ MetroCluster IP 인터페이스 -- 포트 1개에 장애가 발생했습니다
  a| 
 두 번째 포트가 사용됩니다. 상태 모니터는 포트에 대한 물리적 링크가 끊어진 경우 알림을 생성합니다. 시스템 메시지를 검토하고 필요에 따라 장애가 발생한 FRU를 교체합니다.
 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 
 
@@ -62,7 +62,7 @@ HA 기능이 영향을 받습니다. 노드의 RAID SyncMirror 동기화가 중�
  a| 
 HA 테이크오버 없이 수동 복구가 즉시 필요합니다. 시스템 메시지를 검토하고 필요에 따라 장애가 발생한 FRU를 교체합니다.
 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 
 

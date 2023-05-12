@@ -23,7 +23,7 @@ FiberBridge 브리지에서 FC 포트 중 하나만 사용하려는 경우, 섹�
 +
 RCF 파일은 올바른 스위치에 적용해야 합니다.
 
-. 에서 스위치용 RCF 파일을 다운로드합니다 https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab["MetroCluster RCF 다운로드"] 페이지.
+. 에서 스위치용 RCF 파일을 다운로드합니다 https://["MetroCluster RCF 다운로드"] 페이지.
 +
 파일은 스위치로 전송할 수 있는 위치에 배치해야 합니다. 2스위치 패브릭을 구성하는 4개의 스위치마다 별도의 파일이 있습니다.
 

@@ -24,7 +24,7 @@ link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 
 
 link:concept_redundant_fc_switch_fabrics.html["이중 FC 스위치 패브릭"]
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
+http://["클러스터 및 SVM 피어링 Express 구성"]
 
 link:concept_considerations_peering.html["클러스터 피어링을 구성할 때의 고려 사항"]
 

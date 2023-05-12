@@ -17,7 +17,7 @@ MetroCluster 구성에서 각 Brocade 스위치 패브릭을 구성해야 합니
 * FC 스위치에 대한 텔넷 또는 SSH(Secure Shell) 액세스 권한이 있는 PC 또는 UNIX 워크스테이션이 있어야 합니다.
 * 동일한 모델의 지원되는 Brocade 스위치 4개를 동일한 Brocade FOS(Fabric Operating System) 버전 및 라이센스로 사용해야 합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://["NetApp 상호 운용성 매트릭스 툴"]
 
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
@@ -51,7 +51,7 @@ Metro-E는 Metro 거리 또는 일부 TDM(Time-Division Multiplexing), MPLS(Mult
 * MetroCluster FC 스위치 패브릭에서는 TDM, FCR(네이티브 FC 라우팅) 또는 FCIP 확장이 지원되지 않습니다.
 * MetroCluster FC 스위치 패브릭의 특정 스위치는 암호화 또는 압축을 지원하며 경우에 따라 두 스위치를 모두 지원합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"]
+https://["NetApp 상호 운용성 매트릭스 툴(IMT)"]
 
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
@@ -471,7 +471,7 @@ FC_switch_A_1:admin> iodshow
 NOTE: 컨트롤러 모듈에서 ONTAP를 구성할 때는 MetroCluster 구성의 각 컨트롤러 모듈에서 유드로 명시적으로 구성해야 합니다.
 
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/concept_configure_the_mcc_software_in_ontap.html#configuring-in-order-delivery-or-out-of-order-delivery-of-frames-on-ontap-software["ONTAP 소프트웨어에서 프레임의 주문 전달 또는 주문 후 전달 구성"]
+https://["ONTAP 소프트웨어에서 프레임의 주문 전달 또는 주문 후 전달 구성"]
 
 
 
@@ -756,7 +756,7 @@ ISL(Inter-Switch Link)이 FC 포트를 사용하여 구성되는 Brocade 스위�
 * 스위치 포트와 SFP(Small Form-Factor Pluggable)의 조합은 속도를 지원해야 합니다.
 * 지원되는 ISL 거리는 FC 스위치 모델에 따라 다릅니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://["NetApp 상호 운용성 매트릭스 툴"]
 
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.

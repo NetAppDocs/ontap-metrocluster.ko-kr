@@ -157,7 +157,7 @@ FC_switch_A_1:admin> portcfgshow
 .. 스위치에 대한 상태 경고(있는 경우)가 있는지 확인합니다. + " * storage switch show * "
 .. Config Advisor를 실행합니다.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+https://["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

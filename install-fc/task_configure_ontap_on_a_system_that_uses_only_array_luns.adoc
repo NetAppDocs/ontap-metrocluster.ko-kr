@@ -199,7 +199,7 @@ This node has its management address assigned and is ready for cluster setup.
 
 
 .작업을 마친 후
-어레이 LUN에 사용할 모든 노드에서 ONTAP를 구성한 후 를 완료해야 합니다https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["클러스터 설정 프로세스"]
+어레이 LUN에 사용할 모든 노드에서 ONTAP를 구성한 후 를 완료해야 합니다https://["클러스터 설정 프로세스"]
 
 .관련 정보
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"]
+https://["FlexArray 가상화 설치 요구 사항 및 참조 자료"]

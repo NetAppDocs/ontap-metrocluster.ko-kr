@@ -1082,7 +1082,7 @@ MetroCluster 구성을 모니터링하려면 로컬 컴퓨터에 MetroCluster Ti
 .단계
 . 최신 버전의 MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.
 +
-https://mysupport.netapp.com/site/["NetApp 지원"^]
+https://["NetApp 지원"^]
 
 . 호스트에 루트 사용자로 로그인합니다.
 . RPM 파일을 확인합니다.
@@ -1268,7 +1268,7 @@ NOTE: 잘못된 MySQL root 패스워드를 입력하면 Tiebreaker 소프트웨�
 
 
 .관련 정보
-https://mysupport.netapp.com/site/["NetApp 지원"^]
+https://["NetApp 지원"^]
 
 
 

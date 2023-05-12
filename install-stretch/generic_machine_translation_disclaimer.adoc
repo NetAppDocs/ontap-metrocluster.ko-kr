@@ -12,4 +12,4 @@ summary: 한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십
 
 한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십시오.
 
-https://www.netapp.com/company/legal/machine-translation/[]
+https://[]

@@ -21,7 +21,7 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 
 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 link:concept_choosing_controller_upgrade_mcc.html#supported-metrocluster-ip-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
 
-을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
+을 참조하십시오 https://["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
 
 
 
@@ -33,7 +33,7 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 
 * 이 절차는 ONTAP 9.13.1 이상을 실행하는 4노드 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.
 +
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
+https://["NetApp Hardware Universe를 참조하십시오"^]
 
 * MetroCluster 시스템은 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.
 * 이 절차를 사용하면 통계청 기반의 자동 전환 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 컨트롤러를 업그레이드할 수 있습니다.
@@ -223,7 +223,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 
 . MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
 +
-자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"^].
+자세한 내용은 을 참조하십시오 https://["온보드 키 관리 정보를 수동으로 백업합니다"^].
 
 +
 .. Onboard Key Manager가 구성된 경우:
@@ -255,7 +255,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
 
 .단계
-. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["기존 MetroCluster 구성을 제거합니다"^] Tiebreaker 소프트웨어
+. http://["기존 MetroCluster 구성을 제거합니다"^] Tiebreaker 소프트웨어
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +
 응용 프로그램 설명서를 참조하십시오.
@@ -304,7 +304,7 @@ SAN 및 NAS를 포함한 모든 데이터 LIF는 전환 사이트(cluster_a)에 
 예를 들어, ""e0d""는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. ""e0d""는 클러스터 포트로 사용하거나 새 컨트롤러에서 사용되지 않습니다.
 
 +
-플랫폼 모델의 포트 사용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
+플랫폼 모델의 포트 사용은 를 참조하십시오 https://["NetApp Hardware Universe를 참조하십시오"^]
 
 .. 공통 포트를 홈 포트로 사용하도록 모든 데이터 LIF를 수정합니다.
 +
@@ -389,7 +389,7 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 . 적절하게 접지합니다.
 . 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
 +
-https://docs.netapp.com/us-en/ontap-systems/index.html["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 . 새 컨트롤러 모듈에 자체 FC-VI 카드가 제공되지 않았거나 이전 컨트롤러의 FC-VI 카드가 새 컨트롤러에서 호환되는 경우 FC-VI 카드를 교체하고 올바른 슬롯에 설치합니다.
 +
@@ -400,7 +400,7 @@ https://docs.netapp.com/us-en/ontap-systems/index.html["AFF and FAS 문서 센�
 현재 이전 컨트롤러에서 분리된 다른 케이블을 연결하지 마십시오.
 
 +
-https://docs.netapp.com/us-en/ontap-systems/index.html["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 . 새 노드의 전원을 켜고 로더 프롬프트를 표시할 때 Ctrl-C를 누릅니다.
 
@@ -414,7 +414,7 @@ https://docs.netapp.com/us-en/ontap-systems/index.html["AFF and FAS 문서 센�
 이 작업은 각각의 새 컨트롤러 모듈에서 수행됩니다.
 
 .단계
-. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. 에 액세스합니다 https://["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 . NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 ONTAP-version_image.tgz 파일을 저장합니다.
 . 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
 +
@@ -1028,7 +1028,7 @@ Rebooting to load the restored env file...
 
 .. 필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58A3-46C9-BF0C-BA1D1D1475F9.html["브로드캐스트 도메인에서 포트 추가 또는 제거"^]
+https://["브로드캐스트 도메인에서 포트 추가 또는 제거"^]
 
 .. 인터클러스터 LIF를 호스팅할 물리적 포트를 해당 브로드캐스트 도메인에 추가합니다.
 .. 새 물리적 포트를 홈 포트로 사용하도록 인터클러스터 LIF를 수정합니다.
@@ -1044,10 +1044,10 @@ link:../install-ip/task_sw_config_configure_clusters.html#peering-the-clusters["
 VLAN 및 인터페이스 그룹 멤버쉽은 이전 노드의 멤버쉽과 다를 수 있습니다.
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-8929FCE2-5888-4051-B8C0-E27CAF3F2A63.html["VLAN을 생성하는 중입니다"^]
+https://["VLAN을 생성하는 중입니다"^]
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EAB7-430A-A773-4E3420EE2AA1.html["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
+https://["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
 
 .. 파트너 클러스터에 연결할 수 있고 구성이 파트너 클러스터에서 성공적으로 재동기화되었는지 확인합니다.
 +
@@ -1068,7 +1068,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
  a| 
 보안 키매니저 온보드 동기화
 
-자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-E4AB2ED4-9227-4974-A311-13036EB43A3D.html["온보드 키 관리 암호화 키를 복원하는 중입니다"^].
+자세한 내용은 을 참조하십시오 https://["온보드 키 관리 암호화 키를 복원하는 중입니다"^].
 
 
 
@@ -1077,7 +1077,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
  a| 
 'Security key-manager external restore-vserver_SVM_-node_node_-key-server_host_name|ip_address:port_-key-id key_id-key-tag key_tag_node-name_'
 
-자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-32DA96C3-9B04-4401-92B8-EAF323C3C863.html["외부 키 관리 암호화 키 복원"^].
+자세한 내용은 을 참조하십시오 https://["외부 키 관리 암호화 키 복원"^].
 
 |===
 . 작업을 다시 시작하기 전에 MetroCluster가 올바르게 구성되어 있는지 확인합니다. 노드 상태 확인:
@@ -1135,5 +1135,5 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.
 
-. 의 단계를 사용합니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-7259BCA4-104C-49C6-BAD0-1068CA2A3DA5.html["MetroCluster 구성 추가"].
+. 의 단계를 사용합니다 http://["MetroCluster 구성 추가"].
 

@@ -28,7 +28,7 @@ NOTE: ONTAP 9.4를 실행하는 MetroCluster IP 구성에서는 쉘프 ID가 Met
 
 드라이브 또는 쉘프 모듈이 식별된 상태에서 적절한 절차를 사용하여 구성 요소를 교체할 수 있습니다.
 
-https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.html["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"]
+https://["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"]
 
 
 

@@ -28,7 +28,7 @@ link:../index.html["MetroCluster 설명서"]
 
 
  a| 
-https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf["NetApp MetroCluster 솔루션 아키텍처 및 설계"^]
+https://["NetApp MetroCluster 솔루션 아키텍처 및 설계"^]
  a| 
 * MetroCluster 구성 및 작동에 대한 기술적 개요
 * MetroCluster 구성에 대한 모범 사례
@@ -37,7 +37,7 @@ https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf["NetApp MetroCluste
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+https://["패브릭 연결 MetroCluster 설치 및 구성"]
  a| 
 * 패브릭 연결 MetroCluster 아키텍처
 * 구성 케이블 연결
@@ -49,7 +49,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브�
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
+https://["스트레치 MetroCluster 설치 및 구성"]
  a| 
 * MetroCluster 아키텍처 확장
 * 구성 케이블 연결
@@ -60,7 +60,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/concept_conside
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"]
+https://["MetroCluster IP 설치 및 구성"]
  a| 
 * MetroCluster IP 아키텍처
 * MetroCluster IP 구성 케이블 연결
@@ -70,7 +70,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_consideratio
 
 
  a| 
-https://www.netapp.com/support-and-training/documentation/["NetApp 설명서: 제품 가이드 및 리소스"^]
+https://["NetApp 설명서: 제품 가이드 및 리소스"^]
  a| 
 * MetroCluster 구성 및 성능 모니터링
 
@@ -78,7 +78,7 @@ https://www.netapp.com/support-and-training/documentation/["NetApp 설명서: �
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
+https://["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
  a| 
 * MetroCluster Tiebreaker 소프트웨어로 MetroCluster 구성 모니터링
 
@@ -86,7 +86,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/tiebreaker/concept_overview_of_
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/index.html["복사 기반 전환"]
+https://["복사 기반 전환"]
  a| 
 * 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
 

@@ -14,7 +14,7 @@ summary: 각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 �
 각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지해야 합니다. 이러한 관계에 공유 포트 또는 전용 포트를 사용할지 여부를 결정할 때 이 점이 중요합니다.
 
 .관련 정보
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
+http://["클러스터 및 SVM 피어링 Express 구성"]
 
 
 

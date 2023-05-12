@@ -34,7 +34,7 @@ ONTAP 9.2부터는 다음과 같은 경우에 ISL 공유를 사용할 수 있습
 * ISL 공유를 위한 RCF 파일은 8노드 MetroCluster 케이블링과 동일합니다.
 * 모든 하드웨어 및 소프트웨어 버전이 지원되는지 확인해야 합니다.
 +
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://["NetApp Hardware Universe를 참조하십시오"]
 
 * 두 MetroCluster 시스템에서 클라이언트 로드를 지원할 수 있도록 ISL의 속도와 수를 조정해야 합니다.
 * 백엔드 ISL 및 백엔드 구성 요소는 MetroCluster 구성에만 사용되어야 합니다.

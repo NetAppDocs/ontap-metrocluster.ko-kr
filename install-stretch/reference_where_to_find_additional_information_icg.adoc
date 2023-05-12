@@ -24,7 +24,7 @@ MetroCluster 구성 및 작동에 대해 자세히 알아볼 수 있습니다.
 
 
  a| 
-https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 설명서"^]
+https://["ONTAP 9 설명서"^]
  a| 
 * 모든 MetroCluster 설명서
 
@@ -40,7 +40,7 @@ https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 설명서"^]
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+https://["패브릭 연결 MetroCluster 설치 및 구성"]
  a| 
 * 패브릭 연결 MetroCluster 아키텍처
 * 구성 케이블 연결
@@ -52,7 +52,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브�
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성: ONTAP MetroCluster 구성 간의 차이점"]
+https://["MetroCluster IP 설치 및 구성: ONTAP MetroCluster 구성 간의 차이점"]
  a| 
 * MetroCluster IP 아키텍처
 * 구성 케이블 연결
@@ -62,7 +62,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_consideratio
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster 관리 및 재해 복구"]
+https://["MetroCluster 관리 및 재해 복구"]
  a| 
 * MetroCluster 구성 이해
 * 전환, 복구, 스위치백
@@ -86,9 +86,9 @@ link:../maintain/index.html["MetroCluster 부품 유지 관리"]
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"]
+https://["MetroCluster FC에서 MetroCluster IP로 전환합니다"]
 
-https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 업그레이드 및 확장 가이드"]
+https://["MetroCluster 업그레이드 및 확장 가이드"]
  a| 
 * MetroCluster 구성 업그레이드 또는 새로 고침
 * MetroCluster FC 구성에서 MetroCluster IP 구성으로 전환
@@ -98,7 +98,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upg
 
 
  a| 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/home.html["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
+https://["MetroCluster Tiebreaker 소프트웨어 설치 및 구성"]
  a| 
 * MetroCluster Tiebreaker 소프트웨어로 MetroCluster 구성 모니터링
 
@@ -108,7 +108,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/
  a| 
 Active IQ Unified Manager 설명서
 
-https://www.netapp.com/support-and-training/documentation/["NetApp 설명서: 제품 가이드 및 리소스"^]
+https://["NetApp 설명서: 제품 가이드 및 리소스"^]
  a| 
 * MetroCluster 구성 및 성능 모니터링
 
@@ -116,7 +116,7 @@ https://www.netapp.com/support-and-training/documentation/["NetApp 설명서: �
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/index.html["복사 기반 전환"]
+https://["복사 기반 전환"]
  a| 
 * 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
 
@@ -124,7 +124,7 @@ https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/index.html["복�
 
 
  a| 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"]
+https://["ONTAP 개념"]
  a| 
 * 미러링된 데이터의 작동 방식
 

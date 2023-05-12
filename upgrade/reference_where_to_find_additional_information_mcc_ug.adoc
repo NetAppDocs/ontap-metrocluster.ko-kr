@@ -97,7 +97,7 @@ link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluste
 
 
  a| 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 
 NOTE: 표준 스토리지 쉘프 유지보수 절차는 MetroCluster IP 구성과 함께 사용할 수 있습니다.
@@ -109,7 +109,7 @@ NOTE: 표준 스토리지 쉘프 유지보수 절차는 MetroCluster IP 구성�
 
 
  a| 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"^]
+http://["복사 기반 전환"^]
  a| 
 * 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
 
@@ -117,7 +117,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복
 
 
  a| 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"^]
+https://["ONTAP 개념"^]
  a| 
 * 미러링된 데이터의 작동 방식
 

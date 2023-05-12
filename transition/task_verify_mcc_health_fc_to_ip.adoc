@@ -23,7 +23,7 @@ summary: 전환을 수행하기 전에 MetroCluster 구성의 상태와 연결�
 .. 스위치의 상태 경고(있는 경우) '스토리지 스위치 표시'를 확인합니다
 .. Config Advisor를 실행합니다.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+https://["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

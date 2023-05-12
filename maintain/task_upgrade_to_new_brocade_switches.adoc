@@ -20,7 +20,7 @@ summary: 새 Brocade FC 스위치로 업그레이드하는 경우 첫 번째 패
 
 * 스위치는 지원되는 최신 펌웨어를 실행해야 합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
+https://["NetApp 상호 운용성 매트릭스 툴"^]
 
 * 이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소요됩니다.
 * FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
@@ -151,7 +151,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 스위치는 지원되는 최신 펌웨어를 실행해야 합니다.
 
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://["NetApp 상호 운용성 매트릭스 툴"]
 
 . 스위치오버 작업 시뮬레이션:
 +

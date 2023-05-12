@@ -35,7 +35,7 @@ NOTE: 미러링되지 않은 애그리게이트는 해당 애그리게이트를 
 플랫폼 및 디스크 쉘프에 대한 _Installation 및 Setup_설명서의 절차를 사용할 수 있습니다.
 
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+https://["AFF and FAS 문서 센터 를 참조하십시오"]
 
 . 새 쉘프의 모든 디스크를 적절한 노드에 수동으로 할당합니다.
 +
@@ -88,4 +88,4 @@ controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -n
 
 
 .관련 정보
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+https://["디스크 및 애그리게이트 관리"]

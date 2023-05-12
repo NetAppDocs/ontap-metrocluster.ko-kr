@@ -25,7 +25,7 @@ Cisco FC 스위치에는 다음 요구사항이 적용됩니다.
 * Cisco FC 스토리지 패브릭에서는 암호화 또는 압축을 사용할 수 없습니다. MetroCluster 구성에서는 지원되지 않습니다.
 
 
-에 있습니다 https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"]에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+에 있습니다 https://["NetApp 상호 운용성 매트릭스 툴(IMT)"]에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
 
 .이 작업에 대해
 ISL(Inter-Switch Link) 연결에는 다음 요구 사항이 적용됩니다.
@@ -55,7 +55,7 @@ ISL(Inter-Switch Link) 연결에는 다음 요구 사항이 적용됩니다.
 
 
 .관련 정보
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://["NetApp 상호 운용성 매트릭스 툴"]
 
 
 

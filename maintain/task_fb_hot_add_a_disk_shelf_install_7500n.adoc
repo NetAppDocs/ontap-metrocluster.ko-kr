@@ -93,7 +93,7 @@ node_A_2             on           on           on           default
 ----
 . 시스템에 디스크 자동 할당이 설정되어 있지 않거나 동일한 스택에 있는 디스크 드라이브가 두 컨트롤러가 소유하는 경우 디스크 드라이브를 적절한 풀에 할당합니다.
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+https://["디스크 및 애그리게이트 관리"]
 
 +
 [NOTE]
@@ -112,7 +112,7 @@ NOTE: 디스크 드라이브 및 디스크 쉘프 펌웨어가 업데이트될 �
 두 컨트롤러의 시스템 콘솔에서 절차의 명령을 실행할 수 있습니다.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"]
+https://["NetApp 다운로드: 디스크 쉘프 펌웨어"]
 
 . 디스크 쉘프 설치 및 케이블 연결:
 +
@@ -150,7 +150,7 @@ NOTE: 디스크 쉘프의 전원을 껐다가 켠 후 전체 스토리지 시스
 
 . 시스템 콘솔에서 디스크 드라이브 펌웨어를 최신 버전으로 업데이트합니다.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp 다운로드: 디스크 드라이브 펌웨어"]
+https://["NetApp 다운로드: 디스크 드라이브 펌웨어"]
 
 +
 .. 고급 권한 수준으로 변경: + " * set-privilege advanced * "
@@ -181,7 +181,7 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp
 
 .. Config Advisor를 실행합니다.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+https://["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

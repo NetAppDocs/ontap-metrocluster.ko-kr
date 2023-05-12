@@ -82,7 +82,7 @@ MetroCluster 체크 쇼
 
 .. Config Advisor를 실행합니다.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+https://["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -395,11 +395,11 @@ MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF
 
 지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://["NetApp Hardware Universe를 참조하십시오"]
 
 . 지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.
 +
-https://software.cisco.com/download/home["Cisco 소프트웨어 다운로드"]
+https://["Cisco 소프트웨어 다운로드"]
 
 . 스위치 소프트웨어를 스위치에 복사합니다. '+copy sftp://root@server-ip-address/tftpboot/nx-os-file-name bootflash:vrf management+'
 +
@@ -591,7 +591,7 @@ NOTE: MACsec 암호화는 WAN ISL 포트에만 적용할 수 있습니다.
 
 === MACsec에 대한 라이센스 요구 사항
 
-MACsec에는 보안 라이센스가 필요합니다. Cisco NX-OS 라이센스 체계에 대한 전체 설명 및 라이센스 취득 및 적용 방법은 을 참조하십시오 https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/licensing/guide/b_Cisco_NX-OS_Licensing_Guide/b_Cisco_NX-OS_Licensing_Guide_chapter_01.html["Cisco NX-OS 라이센스 가이드 를 참조하십시오"]
+MACsec에는 보안 라이센스가 필요합니다. Cisco NX-OS 라이센스 체계에 대한 전체 설명 및 라이센스 취득 및 적용 방법은 을 참조하십시오 https://["Cisco NX-OS 라이센스 가이드 를 참조하십시오"]
 
 
 

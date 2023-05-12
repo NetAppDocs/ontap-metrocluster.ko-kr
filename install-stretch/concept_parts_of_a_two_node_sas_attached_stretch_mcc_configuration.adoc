@@ -30,7 +30,7 @@ MetroCluster 구성에는 다음과 같은 주요 하드웨어 요소가 포함�
 NOTE: E-Series 어레이 LUN을 사용하는 시스템에서는 스토리지 컨트롤러를 E-Series 스토리지 어레이에 직접 연결할 수 있습니다. 다른 스토리지 LUN의 경우 FC 스위치를 통한 접속이 필요합니다.
 
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
+https://["NetApp 상호 운용성 매트릭스 툴"]
 
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.

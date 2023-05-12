@@ -39,7 +39,7 @@ link:task_recover_from_a_non_controller_failure_mcc_dr.html["컨트롤러 이외
 
 * 참고: * 드라이브 또는 기타 하드웨어 장애가 없는 경우 컨트롤러 모듈 FRU 교체 절차를 2노드 MetroCluster 구성에서 사용할 수 있습니다.
 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+https://["AFF and FAS 문서 센터 를 참조하십시오"]
 
 
 
@@ -114,7 +114,7 @@ IMPORTANT: 노드를 추가하거나 제거하는 중에 전환 중에 장애가
 
 * 교체가 필요한 스토리지가 없는 경우 플랫폼 모델의 컨트롤러 모듈 FRU 교체 절차를 사용할 수 있습니다.
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 * 스토리지를 교체해야 하는 경우 멀티 컨트롤러 모듈 복구 절차를 사용할 수 있습니다.
 +
@@ -151,7 +151,7 @@ image::../media/mcc_dr_groups_8_node_with_a_multi_controller_failure.gif[MCC DR 
 FRU 교체 절차는 오류가 발생한 각 컨트롤러 모듈에 대해 한 번씩 두 번 수행됩니다.
 
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 * 스토리지를 교체해야 하는 경우 멀티 컨트롤러 모듈 복구 절차를 사용할 수 있습니다.
 +
@@ -171,7 +171,7 @@ link:task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 �
 
 DR 그룹 2에 대해 플랫폼별 컨트롤러 모듈 FRU 교체 절차를 사용할 수 있습니다.
 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 image::../media/mcc_dr_groups_8_node_with_a_3_controller_failure.gif[MCC DR 그룹 3개 컨트롤러 장애가 있는 8개 노드]
 
@@ -183,7 +183,7 @@ image::../media/mcc_dr_groups_8_node_with_a_3_controller_failure.gif[MCC DR 그�
 
 * 교체가 필요한 스토리지가 없는 경우 플랫폼 모델의 컨트롤러 모듈 FRU 교체 절차를 사용할 수 있습니다.
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://["AFF and FAS 문서 센터 를 참조하십시오"^]
 
 * 스토리지를 교체해야 하는 경우 멀티 컨트롤러 모듈 복구 절차를 사용할 수 있습니다.
 +

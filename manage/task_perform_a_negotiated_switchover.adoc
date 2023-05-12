@@ -22,7 +22,7 @@ summary: 협상된 전환은 파트너 사이트에서 프로세스를 완전히
 시스템 관리 참조_에는 "'쿼럼 및 epsilon 이해' 섹션에 클러스터 쿼럼에 대한 자세한 정보가 있습니다.
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"]
+https://["시스템 관리"]
 
 * 클러스터 피어링 네트워크는 두 사이트에서 모두 사용할 수 있어야 합니다.
 * MetroCluster 구성의 모든 노드에서 동일한 버전의 ONTAP 소프트웨어를 실행해야 합니다.

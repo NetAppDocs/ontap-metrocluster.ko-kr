@@ -75,7 +75,7 @@ system node halt -node node1_SiteA -inhibit-takeover true -ignore-quorum-warning
 ** 스토리지 쉘프
 
 
-. 30분 정도 기다린 다음 모든 컨트롤러의 전원을 켭니다.
+. 30분 정도 기다린 다음 모든 스토리지 쉘프, MetroCluster IP 스위치 및 스토리지 컨트롤러의 전원을 켭니다.
 . 컨트롤러의 전원을 켠 후 두 사이트에서 MetroCluster 구성을 확인합니다.
 +
 구성을 확인하려면 1단계를 반복합니다.

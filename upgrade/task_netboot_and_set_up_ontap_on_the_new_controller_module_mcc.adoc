@@ -21,7 +21,7 @@ summary: 컨트롤러 모듈을 기존 MetroCluster 구성에 추가할 때 새 
 
 * 시스템에서 두 개의 디스크를 새 컨트롤러 모듈에 자동으로 할당합니다.
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+https://["디스크 및 애그리게이트 관리"]
 
 
 
@@ -73,14 +73,14 @@ NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자
  a| 
 FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 시리즈 시스템
  a| 
-네부트 http://__web_server_ip/path_to_web-accessible_directory__/netboot/kernel`[]
+네부트 http://[]
 
 
 
  a| 
 기타 모든 시스템
  a| 
-네부트 http://__web_server_ip/path_to_web-accessible_directory__/<ontap_version>_image.tgz`[]
+네부트 http://[]
 
 |===
 +

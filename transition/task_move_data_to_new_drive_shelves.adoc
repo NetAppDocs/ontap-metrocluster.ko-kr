@@ -22,19 +22,19 @@ summary: 전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새�
 
 . 데이터 볼륨을 새 컨트롤러의 aggregate로 한 번에 하나씩 이동합니다.
 +
-의 절차를 사용합니다 http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-AFE432F6-60AD-4A79-86C0-C7D12957FA63.html["Aggregate 생성 및 볼륨을 새 노드로 이동"].
+의 절차를 사용합니다 http://["Aggregate 생성 및 볼륨을 새 노드로 이동"].
 
 . 최근에 추가한 노드에서 SAN LIF를 생성합니다.
 +
-의 다음 절차를 사용합니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-expand/GUID-E3BB89AF-6251-4210-A979-130E845BC9A1.html["새 노드의 LUN 경로를 업데이트하는 중입니다"^].
+의 다음 절차를 사용합니다 http://["새 노드의 LUN 경로를 업데이트하는 중입니다"^].
 
 . FC 노드에 노드 잠김 라이센스가 있는지 확인합니다. 있는 경우 새로 추가된 노드에 노드를 추가해야 합니다.
 +
-의 다음 절차를 사용합니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-expand/GUID-487FAC36-3C5C-4314-B4BD-4253CB67ABE8.html["노드 잠김 라이센스 추가"^].
+의 다음 절차를 사용합니다 http://["노드 잠김 라이센스 추가"^].
 
 . 데이터 LIF 마이그레이션
 +
-의 절차를 사용합니다  http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-95CA9262-327D-431D-81AA-C73DEFF3DEE2.html["SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동"^] 그러나 클러스터 관리 LIF를 마이그레이션하기 위한 마지막 두 단계를 * 수행하지 * 마십시오.
+의 절차를 사용합니다  http://["SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동"^] 그러나 클러스터 관리 LIF를 마이그레이션하기 위한 마지막 두 단계를 * 수행하지 * 마십시오.
 
 
 

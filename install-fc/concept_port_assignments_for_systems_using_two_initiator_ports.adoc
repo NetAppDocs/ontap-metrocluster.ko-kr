@@ -19,7 +19,7 @@ FiberBridge 6500N 브리지의 구성에 올바른 RCF 파일을 적용해야 �
 
 조닝을 수동으로 수행하는 경우 FC 포트(FC1 또는 FC2) 하나를 사용하여 FiberBridge 6500N 또는 FiberBridge 7500N 또는 7600N 브리지에 사용되는 조닝을 따르십시오. 이 시나리오에서는 Fabric당 각 존 구성원에 2개가 아닌 1개의 이니시에이터 포트가 추가됩니다.
 
-FiberBridge 7500N 또는 7600N bridge_의 FiberBridge 6500N 브리지와 _핫 스와핑 절차를 사용하여 FiberBridge 6500에서 FiberBridge 7500으로 Zoning을 변경하거나 FiberBridge 7500으로 업그레이드할 수 있습니다 https://docs.netapp.com/us-en/ontap-metrocluster/maintain/index.html["MetroCluster 구성 요소를 유지보수하십시오"].
+FiberBridge 7500N 또는 7600N bridge_의 FiberBridge 6500N 브리지와 _핫 스와핑 절차를 사용하여 FiberBridge 6500에서 FiberBridge 7500으로 Zoning을 변경하거나 FiberBridge 7500으로 업그레이드할 수 있습니다 https://["MetroCluster 구성 요소를 유지보수하십시오"].
 
 다음 표에서는 ONTAP 9.1 이상을 사용할 때 FC 스위치에 대한 포트 할당을 보여 줍니다.
 

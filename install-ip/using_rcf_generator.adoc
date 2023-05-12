@@ -19,7 +19,7 @@ RCF 파일을 올바르게 생성하려면 포트 테이블의 정보를 사용�
 * 다음 표에는 사이트 A의 포트 사용량이 나와 있습니다 사이트 B에 동일한 케이블이 사용됩니다
 * 스위치는 속도가 다른 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 구성할 수 없습니다.
 * MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 등)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 정보가 필요합니다.
-* 를 클릭합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"] 또한 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다. 이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.
+* 를 클릭합니다 https://["MetroCluster IP용 RcfFileGenerator입니다"] 또한 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다. 이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.
 
 
 

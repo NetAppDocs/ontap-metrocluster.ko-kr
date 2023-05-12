@@ -414,12 +414,12 @@ boot_ontap 메뉴
 * HTTP 서버에 대한 액세스 권한이 있어야 합니다.
 * 사용 중인 플랫폼과 ONTAP 소프트웨어 버전에서 필요한 시스템 파일을 다운로드하려면 NetApp Support 사이트에 액세스할 수 있어야 합니다.
 +
-https://mysupport.netapp.com/site/global/dashboard["NetApp 지원"^]
+https://["NetApp 지원"^]
 
 
 
 .단계
-. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. 에 액세스합니다 https://["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 . NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 ONTAP-version_image.tgz 파일을 저장합니다.
 . 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
 +

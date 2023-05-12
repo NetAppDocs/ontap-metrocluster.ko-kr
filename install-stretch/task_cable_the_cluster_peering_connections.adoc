@@ -25,6 +25,6 @@ summary: 클러스터 피어링에 사용되는 컨트롤러 모듈 포트에 �
 클러스터 피어링은 전용 포트 또는 데이터 포트에서 수행할 수 있습니다. 전용 포트를 사용하면 클러스터 피어링 트래픽에 더 높은 처리량을 제공할 수 있습니다.
 
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
+http://["클러스터 및 SVM 피어링 Express 구성"]
 
 

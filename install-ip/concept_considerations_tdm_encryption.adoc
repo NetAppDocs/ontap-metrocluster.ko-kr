@@ -17,7 +17,7 @@ MetroCluster IP 구성에서 멀티플렉싱 장비를 사용할 때 고려해�
 
 Hardware Universe 도구는 MetroCluster IP 구성을 사용하기 위해 TDM/xWDM 장비가 충족해야 하는 요구 사항에 대한 몇 가지 참고 사항을 제공합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://["NetApp Hardware Universe를 참조하십시오"]
 
 
 

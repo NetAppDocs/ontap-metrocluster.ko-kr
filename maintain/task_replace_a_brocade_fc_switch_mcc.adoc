@@ -115,7 +115,7 @@ FC_switch_B_1:admin> switchshow
 
 .. _MetroCluster 설치 및 구성에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 절차를 건너뜁니다.
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
+https://["패브릭 연결 MetroCluster 설치 및 구성"]
 
 +
 이 절차의 뒷부분에서 조닝을 구성합니다.
@@ -259,7 +259,7 @@ MetroCluster 체크 쇼
 +
 '스토리지 스위치 쇼'
 
-.. 실행 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Config Advisor"].
+.. 실행 https://["Config Advisor"].
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
 

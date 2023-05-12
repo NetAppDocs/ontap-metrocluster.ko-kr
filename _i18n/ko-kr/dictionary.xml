@@ -336,11 +336,8 @@
   <block id="088f906179e95184476cce093f9c4729" category="list-text">FlexCache의 다른 쪽 끝(VS2의 origin_1)은 site_C(MetroCluster 구성이 아님)에 있습니다.</block>
   <block id="05997981cacb7abc8efa68a4cb489aaa" category="paragraph">절체가 트리거되고 site_A와 site_C가 연결되지 않은 경우 전환 후 vserver peer revoder 명령을 사용하여 site_B(절체 클러스터) 및 site_C에서 SVM을 수동으로 자동 해제해야 합니다.</block>
   <block id="64ffde0294a1e95d407067a972556182" category="paragraph">스위치백을 수행할 때 site_a(원래 클러스터)와 site_c의 SVM을 다시 반복해야 합니다</block>
-  <block id="ecea9649650e61f80fa7e4d035f5052f" category="inline-link">FlexCache 볼륨 관리</block>
-  <block id="ab3bedf5b2bac1f18aa979a42fb1871b" category="paragraph"><block ref="ab3bedf5b2bac1f18aa979a42fb1871b" category="inline-link-rx"></block></block>
   <block id="0513c77713bdaca92c899d67245d714a" category="section-title">MetroCluster 구성에서 FabricPool 지원</block>
   <block id="9c92896894a8fe3d79aeae61fe2ddf98" category="inline-link">디스크 및 애그리게이트 관리</block>
-  <block id="43a384668d02383bb19c7b1d54761855" category="paragraph">FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오<block ref="46a180d322a34c1f2719942dadd3e4fb" category="inline-link-rx"></block>.</block>
   <block id="4096949315fbb0590283002717421da7" category="section-title">FabricPool을 사용할 때의 고려 사항</block>
   <block id="cb2882d39ecc345874a2172a679345a0" category="list-text">클러스터에는 용량 제한이 일치하는 FabricPool 라이센스가 있어야 합니다.</block>
   <block id="da1d8a158d031df0c087914bc717f807" category="list-text">클러스터에 일치하는 이름을 가진 IPspace가 있어야 합니다.</block>
@@ -487,8 +484,6 @@
   <block id="529c1647bb7154274999ead05402d316" category="list-text">프롬프트에 응답하여 스토리지 페일오버를 설정하고 노드를 설정합니다.</block>
   <block id="b842db396e001f50d74b654f1314df5d" category="list-text">노드 구성은 완료하지만 데이터 애그리게이트는 생성하지 않습니다.</block>
   <block id="3dda58d6d9375a71c538f50ab53299f6" category="paragraph">ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 <block ref="a014d2689df7be806072ba0665b78ca6" category="inline-link-rx"></block>.</block>
-  <block id="66b81db08cfd6dc65c91f43c33637ff2" category="inline-link">System Manager(버전 9.0 ~ 9.6)를 사용한 클러스터 관리</block>
-  <block id="02cd0671731ab4d34407ccdb1bd2c455" category="paragraph"><block ref="02cd0671731ab4d34407ccdb1bd2c455" category="inline-link-rx"></block></block>
   <block id="a20a27311b456fc6207eda19880125cd" category="inline-link">ONTAP 시스템 관리자(버전 9.7 이상)</block>
   <block id="1ca0d9647eb663a44ff0a5fef980ff52" category="paragraph"><block ref="1ca0d9647eb663a44ff0a5fef980ff52" category="inline-link-rx"></block></block>
   <block id="cbb4f42385447257b0524c80bc88c203" category="list-text">프롬프트에 따라 다음 컨트롤러를 부팅하고 클러스터에 연결합니다.</block>
@@ -2411,7 +2406,6 @@
   <block id="37c43c60431d0988dbc66af885d529aa" category="paragraph">확장 절차가 완료되면 다음 그림과 같이 구성이 나타납니다.</block>
   <block id="82100af698d65aee7d8eee88a9f650ea" category="image-alt">MCC DR 그룹 b</block>
   <block id="8bcdf2e6243e634b6f778a006ca38abf" category="list-text">CRS 체적을 이동합니다.</block>
-  <block id="236eeda4c8d48fc292788d239a772b52" category="paragraph">의 단계를 수행합니다<block ref="56fddf2b85ee23d29212804ee4b58ff1" category="inline-link-rx"></block>.</block>
   <block id="863335fd52f3c5bd2f7a9a78319bbe9c" category="inline-link">Aggregate 생성 및 볼륨을 새 노드로 이동</block>
   <block id="3e8fdd40da1578fb2a4b45209a4f63c5" category="list-text">의 모든 단계를 수행합니다<block ref="fe6e57ca921017b547e49e0f385e2ca7" category="inline-link-rx"></block>.</block>
   <block id="79e90867e68054d16a6abbb1208fa244" category="admonition">Aggregate를 생성할 때나 생성한 후에 미러링할 수도 있습니다.</block>
@@ -3677,7 +3671,6 @@
   <block id="f2bf546b53e3f6cc54f274876ab2cb36" category="list-text">MetroCluster remove-dr-group 명령은 ONTAP 9.8 이상에서만 지원됩니다.</block>
   <block id="cdfb112bdd5ad036d9715bddf30e7912" category="list-text">아직 DR 그룹이 없으면 제거할 준비를 합니다.</block>
   <block id="95e7c6b72cfdf5397dbe8a6653bdc7c1" category="list-text">모든 데이터 볼륨을 다른 DR 그룹으로 이동합니다.</block>
-  <block id="5aba19facd12672131c8ed9f8c19d6c3" category="list-text">모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다. 다음 절차의 단계를 따릅니다.<block ref="56fddf2b85ee23d29212804ee4b58ff1" category="inline-link-rx"></block></block>
   <block id="25898a6422d7ded47f2936026a1df6c1" category="list-text">제거할 DR 그룹에 있을 수 있는 모든 MDV_AUD 메타데이터 볼륨을 삭제합니다.</block>
   <block id="92cccd899142da5e06923ac8991bc5fc" category="list-text">다음 예에 표시된 대로 제거할 DR 그룹의 모든 데이터 애그리게이트를 삭제합니다.</block>
   <block id="73f68d9b46d6064cae47a18da8004723" category="admonition">루트 애그리게이트는 삭제되지 않습니다.</block>
@@ -6360,7 +6353,6 @@
   <block id="a58d52a12cc22d2e3c3b60974ce27273" category="list-text">현장에서 다음 장비의 전원을 끕니다.</block>
   <block id="c74361f8919e393c4955920ffabda5b7" category="list-text">MetroCluster IP 스위치</block>
   <block id="2817c308965584631c0d98d1640317ca" category="list-text">스토리지 쉘프</block>
-  <block id="9e94d7eb41fe7e730da1976b7ad41884" category="list-text">30분 정도 기다린 다음 모든 컨트롤러의 전원을 켭니다.</block>
   <block id="2f186765402b54ae503e7c11d851ca43" category="list-text">컨트롤러의 전원을 켠 후 두 사이트에서 MetroCluster 구성을 확인합니다.</block>
   <block id="a93300f1d0aeb5fa8781f15375c55fc1" category="paragraph">구성을 확인하려면 1단계를 반복합니다.</block>
   <block id="22eeed3fff7b55b768266be126a12dcf" category="list-text">전원 사이클 검사를 수행합니다.</block>
@@ -9143,7 +9135,6 @@
   <block id="bf9ed55fade58e6d12b08126597ad127" category="list-text">FlexCache(VS1의 cache_1)의 한쪽 끝은 MetroCluster site_A에 있습니다</block>
   <block id="6e9ffd16aec825895cde46ff6fe91ad0" category="list-text">FlexCache의 다른 쪽 끝(VS2의 origin_1)은 site_C(MetroCluster 구성이 아님)에 있습니다.</block>
   <block id="64df84e5dd9457f7ff6fca59541532f7" category="paragraph">ONTAP 구성은 MetroCluster 9.7부터 FabricPool 스토리지 계층을 지원합니다.</block>
-  <block id="e12b7ce615b4c57da01f7f573c2a5a1f" category="paragraph">FabricPool 사용에 대한 일반적인 내용은 를 참조하십시오<block ref="02623f162960bb96fdc9b7c3d9989219" category="inline-link-rx"></block></block>
   <block id="9f437bd3f304cff4e9dd7b48cc5a9500" category="paragraph">이 IPspace는 기본 IPspace 또는 관리가 생성한 IPspace가 될 수 있습니다. 이 IPspace는 FabricPool 오브젝트 저장소 구성 설정에 사용됩니다.</block>
   <block id="302236925d66f4e5011613180b9839b1" category="admonition">애그리게이트를 구성하기 전에 의 "MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"에 설명된 대로 오브젝트 저장소를 설정해야 합니다<block ref="6ca1f1c4f557736e9b169b0bb2581c65" category="inline-link-rx"></block></block>
   <block id="99dc2e42eb5cbad5dfa0fe00d5193924" category="list-text">에 설명된 대로 Aggregate를 사용하여 FabricPool 미러를 생성합니다<block ref="d80da76762d0e5fadaefb2c12eee2740" category="inline-link-rx"></block></block>
@@ -9620,7 +9611,6 @@
   <block id="f96aff9bb92f47a99bb9e80c8aefd182" category="list-text"><block ref="0ce177c637860f04ef435f1d4df8c7a1" category="inline-xref-macro-rx"></block></block>
   <block id="80f5aa2c1fd8d40ec861adc9b8554601" category="inline-xref">8모드 또는 4노드 MetroCluster 구성에서 ONTAP 설정</block>
   <block id="9b21ad21eb9282dd4e397a5ca93023dc" category="list-text"><block ref="07c1a2d7d8220345e0719327013f6d09" category="inline-xref-macro-rx"></block></block>
-  <block id="53859114136088fdcd8566623bb6df02" category="paragraph">ONTAP 설정에 대한 자세한 내용은 를 참조하십시오<block ref="b6819648fd16f3919c90cb1d213b3480" category="inline-link-rx"></block></block>
   <block id="6cf5d5492a2e7185b3efc5a5df46334b" category="list-text">클러스터 설정 * 마법사를 완료하고 종료한 후 클러스터가 활성 상태이고 첫 번째 노드가 정상 상태인지 확인합니다</block>
   <block id="b2ede78eeadccf7a2964d2eb92cebe8b" category="list-text">스위치가 없는 클러스터 모드 활성화:</block>
   <block id="dd8c5249263ec9d9387eb89d479386db" category="list-text"><block ref="411c2872850deed59c904124c3df5b0e" category="inline-xref-macro-rx"></block></block>
@@ -9632,7 +9622,6 @@
   <block id="d93f79a987bba3304695b6a783f4a705" category="paragraph">다음 예에서는 인터클러스터 LIF IP 주소 "192.168.2.201" 및 "192.168.2.202"에서 원격 클러스터와 클러스터 피어 관계를 생성합니다.</block>
   <block id="7775c1757d41f1e18ee45e04fab5a916" category="paragraph">다음 예에서는 인터클러스터 LIF IP 주소 "192.140.112.203" 및 "192.140.112.204"에서 원격 클러스터에 대한 로컬 클러스터를 인증합니다.</block>
   <block id="bc79ba4747158e531dea5a77e367aa47" category="paragraph">클러스터 피어 상태 쇼</block>
-  <block id="d2b0d40b2282002fc4ed782c5f9ebc52" category="list-text">애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다. 을 참조하십시오<block ref="bdfdc55438d1bd89079bcd52bcc353e7" category="inline-link-rx"></block>.</block>
   <block id="3f2e8b786a2072dd4bd108ff8d047526" category="admonition">드라이브 수가 제한된 최소 구성에서는 'force-small-aggregate' 옵션을 사용하여 디스크 RAID-DP Aggregate 3개를 생성해야 합니다.</block>
   <block id="a6dc0a04536717d4478be204a9eedac4" category="admonition">미러링된 단일 데이터 애그리게이트를 사용하려면 를 참조하십시오 <block ref="68dbb28d16b2f5ad0b139d60008a1b90" category="inline-xref-macro-rx"></block> 를 참조하십시오.</block>
   <block id="909bcad662bf67b01f5028f61e1ca6f4" category="list-text">컨트롤러 및 섀시의 ha-config 상태는 "MCC"여야 합니다.</block>
@@ -9647,7 +9636,6 @@
   <block id="046a4dbe28831449e896740fded1c064" category="paragraph">또한 사용하지 않는 계정에 대한 암호를 설정하여 계정을 보호하고 ONTAP 릴리스에서 제공되는 최상의 암호화를 사용해야 합니다.</block>
   <block id="220a5f3f86ae97f0476676c92a412f16" category="paragraph">초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.</block>
   <block id="ac8270e817c97c45a74fde32ae003705" category="paragraph">둘 중 하나 또는 두 클러스터에서 짧은 시간 내에 'MetroCluster check run' 명령을 두 번 실행하면 충돌이 발생하고 명령이 모든 데이터를 수집하지 못할 수 있습니다. 이후 'MetroCluster check show' 명령어는 예상 출력을 표시하지 않는다.</block>
-  <block id="25f7dc38caaf02e2f9a5b9e898eed532" category="paragraph"><block ref="25f7dc38caaf02e2f9a5b9e898eed532" category="inline-link-rx"></block></block>
   <block id="06eff1ae70df860b6c817c9ab3858d3d" category="list-text">에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="6d6ef49fcb406c2ba2bda06977913f53" category="inline-link-rx"></block>.</block>
   <block id="29262d4c1e8420636829557b35f0fad4" category="summary">새 소프트웨어 버전과 RCF 파일을 설치하기 전에 현재 스위치 구성을 지우고 기본 구성을 수행해야 합니다.</block>
   <block id="07c4c56523ee49c0877a89240f5a605e" category="doc">Brocade FC 스위치를 출하 시 기본값으로 재설정합니다</block>
@@ -11757,7 +11745,6 @@
   <block id="37ef00a03e6b4bacbc26b2ee369f838f" category="paragraph">키 관리자 설정에 따라 첫 번째 부팅 메뉴 프롬프트에서 옵션 ""10"" 또는 옵션 ""11", 옵션 "6"을 차례로 선택하여 복구 절차를 수행합니다. 노드를 완전히 부팅하려면 옵션 ""1"(일반 부팅)에서 계속 진행하는 복구 절차를 반복해야 할 수 있습니다.</block>
   <block id="ff8648705a32483b6efc36e81f3ff6c9" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block>.</block>
   <block id="9dc1904e0c3ace141704b477cd9b345d" category="inline-link-macro">네트워크 관리</block>
-  <block id="a329e8bb19b80d658f071e8e3a9b43df" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="b7287c70d2b20ddb4e9eda3d1f5462cf" category="inline-link-macro-rx"></block>.</block>
   <block id="84c335ab98bb834a85c89e20e223e638" category="paragraph">플랫폼에 대한 기본 포트 역할 목록은 를 참조하십시오<block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block></block>
   <block id="4b921a602b7b9dfd3ef2bf07ef52ad90" category="paragraph">다음 예에서는 포트 ""e0a", ""e0b"", ""e0c"" 및 ""e0d""를 클러스터 포트로 변경해야 합니다.</block>
   <block id="0af6886a9c45bb0f127ab39da3242e24" category="paragraph">다음 예에서는 LIF "datalif1"을 새 홈 포트 "e1b"로 되돌립니다.</block>
@@ -11932,7 +11919,6 @@
   <block id="bef95e9ae70e84ecacc09d17b5b2d101" category="inline-link-macro">중재자를 위한 고려 사항</block>
   <block id="7900124947b526ad60ee913634068229" category="paragraph"><block ref="7900124947b526ad60ee913634068229" category="inline-link-macro-rx"></block></block>
   <block id="99e1566c550fe0f9db0d7ecf84e5a3d6" category="list-text">자동 지원 케이스 생성을 재개하려면 유지 관리가 완료되었음을 나타내는 AutoSupport 메시지를 보냅니다.</block>
-  <block id="011567f6ce64681304cb07cf8a11db65" category="paragraph">아직 할당되지 않은 경우 새 컨트롤러에서 사용할 수 있는 새 포트를 브로드캐스트 도메인에 추가해야 합니다. 필요한 경우 새 포트에 VLAN 또는 인터페이스 그룹을 생성합니다. 을 참조하십시오<block ref="b067056c82d13ccc87c33c109530910b" category="inline-link-rx"></block></block>
   <block id="81cd4f21303da57c00dcdd0182de6982" category="list-text">현재 포트 사용 및 브로드캐스트 도메인 식별:</block>
   <block id="8570d4b69bd3be86ec49bb299da8d8e8" category="list-text">LIF의 홈 포트를 확인하십시오.</block>
   <block id="d8ea814f2fff910e06cd5858dd803441" category="paragraph">네트워크 포트 표시 - IPSpace 클러스터</block>
@@ -12215,7 +12201,6 @@
   <block id="1a246311887a704e5ab1d187d0cc6336" category="admonition">AFF A900 또는 FAS9500 패브릭 MetroCluster 구성을 지원하는 RCF 파일 업데이트는 AFF A700 또는 FAS9000 패브릭 MetroCluster 구성에 사용되는 포트 및 연결에 영향을 미치지 않습니다.</block>
   <block id="20924b6eb8b6cea108e86b88645e9bcc" category="section-title">AFF A700 또는 FAS9000 노드의 포트를 AFF A900 또는 FAS9500 노드에 매핑합니다</block>
   <block id="28533a78f5b9ed1a1d242b6608b33990" category="paragraph">슬롯 7에 AFF A700 또는 FAS9000 컨트롤러의 카드가 있는 경우 컨트롤러 업그레이드 절차를 시작하기 전에 카드를 다른 슬롯으로 이동해야 합니다. AFF A900 또는 FAS9500 컨트롤러에서 패브릭 MetroCluster를 작동하는 데 필요한 두 번째 FC-VI 어댑터를 추가하기 위해 슬롯 7을 사용할 수 있어야 합니다.</block>
-  <block id="f54a1f359c3619ec4b54a5cbaf5a1d68" category="admonition">AFF A700 또는 FAS9000 비휘발성 스토리지 모듈에 코어 덤프 장치로 사용되는 애드온 모듈이 있는 경우 AFF A900 또는 FAS9500 NVS로 전송하지 마십시오. AFF A700 또는 A900 컨트롤러 모듈 및 NVS의 부품을 AFF A900 또는 FAS9500 컨트롤러 모듈로 전송하지 마십시오.</block>
   <block id="147bc4d2dafd157a0f974f42f685692c" category="section-title">AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치합니다</block>
   <block id="d0cf791b8d9197d3aeb94c14818053cb" category="paragraph">Site_B의 두 노드에 있는 업그레이드 키트에서 AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치해야 합니다 코어 덤프 장치를 AFF A700 또는 FAS9000 NVS 모듈에서 AFF A900 또는 FAS9500 NVS 모듈로 이동하지 마십시오.</block>
   <block id="f92e6303c5bbd6720b3a3c23e3e7d624" category="paragraph">다음 절차에 따라 site_B에서 두 노드의 슬롯 6에 AFF A900 또는 FAS9500 NVS를 설치합니다</block>
@@ -13187,4 +13172,30 @@
   <block id="f60298ca20150ed82728ebbcf934dcdd" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 점검을 통과하지 못하거나 업그레이드를 진행하지 않도록 선택하는 경우 반드시 다음을 수행해야 합니다 <block ref="27c582b1d219a53bd62704e35b9572aa" category="inline-xref-macro-rx"></block>.</block>
   <block id="cf26e00f9d9d62aac6ab045ca55c7c29" category="list-text">에서 수집한 정보를 사용합니다 <block ref="4349c160b4ba85d15c9d1b99e7fab03e" category="inline-xref-macro-rx"></block>.</block>
   <block id="a6d521ed969131c6ad881b1c930a769c" category="list-text">새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 스위치를 물리적으로 분리합니다.</block>
+  <block id="3e49e5936cffd2e96856c25fa0417df2" category="inline-link-macro">네트워크 관리</block>
+  <block id="a4c47e03a7d497b0826db4991d94d6d6" category="paragraph">아직 할당되지 않은 경우 새 컨트롤러에서 사용할 수 있는 새 포트를 브로드캐스트 도메인에 추가해야 합니다. 필요한 경우 새 포트에 VLAN 또는 인터페이스 그룹을 생성합니다. 을 참조하십시오 <block ref="1c21ab35e530b06d4d331f67f55dccef" category="inline-link-macro-rx"></block></block>
+  <block id="9e0b4796d1405bd6e331c19494270494" category="paragraph"><block ref="9e0b4796d1405bd6e331c19494270494" category="inline-link-macro-rx"></block></block>
+  <block id="a6facdfa8cf4a377f1f75c53c09e707a" category="inline-link-macro">ONTAP를 설정합니다</block>
+  <block id="c9f409d76d5cc24dd25ab0f887c5a174" category="paragraph">ONTAP 설정에 대한 자세한 내용은 을 참조하십시오 <block ref="d97ab501661fbbca35d40c80c06f0e45" category="inline-link-macro-rx"></block>.</block>
+  <block id="c1a14ef4c1320caf80e81dff4161eb9b" category="inline-link-macro">CLI를 통한 논리적 스토리지 관리</block>
+  <block id="23806251831778e9042b7dc8e04e42d9" category="paragraph"><block ref="23806251831778e9042b7dc8e04e42d9" category="inline-link-macro-rx"></block></block>
+  <block id="2352ff1ae19f26a07b1327f9c16fc49b" category="list-text">애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다. 을 참조하십시오 <block ref="0b0765834489040687dfd80e9c9de26e" category="inline-link-macro-rx"></block>.</block>
+  <block id="48cc474587952d5ed9e7d5ac09cd9721" category="inline-link-macro">디스크 및 계층(애그리게이트) 관리</block>
+  <block id="4795213e623b148f220cf084c6476c34" category="paragraph"><block ref="4795213e623b148f220cf084c6476c34" category="inline-link-macro-rx"></block></block>
+  <block id="ec27418ec1f48cdc9bf22eaf5b14b004" category="paragraph"><block ref="ec27418ec1f48cdc9bf22eaf5b14b004" category="inline-link-macro-rx"></block></block>
+  <block id="0f1853ecc95d28b4e20f71e016846751" category="paragraph">8노드 또는 4노드 MetroCluster 구성에서는 각 사이트의 로컬 컨트롤러 모듈 간에 클러스터 인터커넥트에 케이블을 연결해야 합니다.</block>
+  <block id="628016d3218c797c356699f3b0303679" category="inline-link-macro">CLI를 사용한 FlexCache 볼륨 관리</block>
+  <block id="448f267d686472e9454713b7d3e7c668" category="paragraph"><block ref="448f267d686472e9454713b7d3e7c668" category="inline-link-macro-rx"></block></block>
+  <block id="82cd62f837d53c3bc3323448e9f22eee" category="paragraph">FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 <block ref="4795213e623b148f220cf084c6476c34" category="inline-link-macro-rx"></block>.</block>
+  <block id="72e662b10113513ea641d5b3354b185d" category="inline-link">System Manager(ONTAP 9.7 이하)를 사용하여 클러스터 관리</block>
+  <block id="30ff87be8b58b0ba65f6add20f9047e8" category="paragraph"><block ref="30ff87be8b58b0ba65f6add20f9047e8" category="inline-link-rx"></block></block>
+  <block id="f7bfc5eb5d8ec63be63bd6bba0125d51" category="paragraph">FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오<block ref="966068e36a5307fcc960e1ebcf3ade1b" category="inline-link-rx"></block>.</block>
+  <block id="9573102a4ce6d4f101cdb2919ff28999" category="list-text">슬롯 6에 있는 AFF A700 비휘발성 스토리지 모듈의 코어 덤프 장치로 사용되는 추가 모듈을 AFF A900 NVS 모듈로 전송하지 마십시오. AFF A700 컨트롤러 및 NVS 모듈에서 AFF A900 컨트롤러 모듈로 부품을 전송하지 마십시오.</block>
+  <block id="8c2906d7fe83e39ba6743c6a9583efe2" category="list-text">FAS9000에서 FAS9500으로 업그레이드할 경우 FAS9000 NVS 모듈의 Flash Cache 모듈만 FAS9500 NVS 모듈로 전송해야 합니다. FAS9000 컨트롤러 및 NVS 모듈의 다른 부품은 FAS9500 컨트롤러 모듈로 전송하지 마십시오.</block>
+  <block id="3eab0c13bca99d4dd3b66f80ccacdb36" category="paragraph">를 실행한 후<block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block> 및<block ref="da68e7539bf844a8366ded5d17b246d7" prefix=" " category="inline-code"></block> 명령을 실행하면 다음 예제와 유사한 오류가 표시될 수 있습니다.</block>
+  <block id="4b6b157113ce170877f5d11a96afff8a" category="paragraph">이 오류는 업그레이드 프로세스 중 컨트롤러 불일치로 인해 발생합니다. 오류를 무시하고 site_A의 노드를 업그레이드할 수 있습니다</block>
+  <block id="1acf191212a145fa4d362e381005b820" category="paragraph">의 단계를 수행합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block>.</block>
+  <block id="f624129c4d6772a2f62200de12382ad0" category="list-text">에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block> 절차를 참조하십시오.</block>
+  <block id="112564590ec1ae4e651904cd571ed9d4" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="378e9004462b7ecfad8256f25b57fbf6" category="inline-link-macro-rx"></block>.</block>
+  <block id="347bde5f3be96b6c3eab8b4a360b9028" category="list-text">30분 정도 기다린 다음 모든 스토리지 쉘프, MetroCluster IP 스위치 및 스토리지 컨트롤러의 전원을 켭니다.</block>
 </blocks>

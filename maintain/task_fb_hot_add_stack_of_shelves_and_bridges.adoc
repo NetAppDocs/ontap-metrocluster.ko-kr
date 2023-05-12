@@ -32,14 +32,14 @@ SAS 디스크 쉘프 스택과 브리지 쌍을 핫 애드할 준비를 하려�
 .시작하기 전에
 * 시스템은 지원되는 구성이어야 하며 지원되는 ONTAP 버전을 실행 중이어야 합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
+https://["NetApp 상호 운용성 매트릭스 툴"^]
 
 * 시스템의 모든 디스크 드라이브와 디스크 쉘프는 최신 펌웨어 버전을 실행해야 합니다.
 +
 쉘프를 추가하기 전에 MetroCluster 구성 전체에서 디스크 및 쉘프 펌웨어를 업데이트할 수 있습니다.
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ug-rdg/home.html["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"^]
+https://["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"^]
 
 * 각 FC 스위치에는 한 브리지에 연결할 수 있는 FC 포트가 하나 있어야 합니다.
 +
@@ -55,7 +55,7 @@ ATTO 제품 릴리스 노트_에는 지원되는 웹 브라우저의 최신 목�
 .단계
 . NetApp Support 사이트에서 다음 문서를 다운로드하거나 볼 수 있습니다.
 +
-** https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
+** https://["NetApp 상호 운용성 매트릭스 툴"^]
 ** 디스크 쉘프 모델의 _설치 및 서비스 가이드_입니다.
 
 
@@ -90,11 +90,11 @@ NOTE: 이 단계에서는 링크에 제공된 지침의 다운로드 부분만 �
 +
 .. 디스크 펌웨어를 다운로드하고 나중에 참조할 수 있도록 디스크 펌웨어 지침 사본을 만듭니다.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp 다운로드: 디스크 드라이브 펌웨어"^]
+https://["NetApp 다운로드: 디스크 드라이브 펌웨어"^]
 
 .. 디스크 쉘프 펌웨어를 다운로드하고 나중에 참조할 수 있도록 디스크 쉘프 펌웨어 지침의 복사본을 만드십시오.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
+https://["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
 
 
 
@@ -134,7 +134,7 @@ link:task_fb_hot_add_stack_of_shelves_and_bridges.html["SAS 디스크 쉘프 및
 
 * 상호 운용성 요구사항을 모두 충족하는 경우, SAS 디스크 쉘프 및 브리지 스택을 핫 추가하는 무중단 절차입니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
+https://["NetApp 상호 운용성 매트릭스 툴"^]
 
 +
 link:concept_using_the_interoperability_matrix_tool_to_find_mcc_information.html["상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보 찾기"]
@@ -1700,18 +1700,18 @@ NOTE: G620, G630, G620-1 및 G630-1 스위치의 포트 32에서 39까지 추가
 두 컨트롤러 모듈 모두에서 이 명령을 실행해야 합니다.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp 다운로드: 디스크 드라이브 펌웨어"^]
+https://["NetApp 다운로드: 디스크 드라이브 펌웨어"^]
 
 . 다운로드한 펌웨어의 지침을 사용하여 디스크 쉘프 펌웨어를 최신 버전으로 업데이트합니다.
 +
 절차의 명령은 두 컨트롤러 모듈 중 하나의 시스템 콘솔에서 실행할 수 있습니다.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
+https://["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
 
 . 시스템에 디스크 자동 할당이 설정되어 있지 않으면 디스크 드라이브 소유권을 할당합니다.
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
+https://["디스크 및 애그리게이트 관리"^]
 
 +
 
@@ -1732,7 +1732,7 @@ NOTE: 디스크 드라이브 펌웨어 및 디스크 쉘프 펌웨어가 업데�
 .. 스위치에 대한 상태 경고(있는 경우): + 스토리지 스위치 표시 여부를 확인합니다
 .. Config Advisor를 실행합니다.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
+https://["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

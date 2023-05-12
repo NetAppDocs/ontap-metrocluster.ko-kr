@@ -155,7 +155,7 @@ ONTAP 9.4에서는 다음과 같은 쉘프 구성을 가진 시스템에서 드�
 .관련 정보
 link:concept_required_mcc_ip_components_and_naming_guidelines_mcc_ip.html["MetroCluster IP 구성 요소 및 명명 규칙이 필요합니다"]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
+https://["디스크 및 애그리게이트 관리"^]
 
 
 
@@ -168,7 +168,7 @@ NOTE: ADP를 사용하는 시스템에서는 각 드라이브가 P1, P2, P3 파�
 
 지원되는 최대 드라이브 수 및 기타 지침에 대해서는 MetroCluster 제한을 충족해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://["NetApp Hardware Universe를 참조하십시오"]
 
 
 

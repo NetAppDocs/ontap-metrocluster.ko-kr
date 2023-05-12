@@ -174,12 +174,12 @@ MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF
 
 지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://["NetApp Hardware Universe를 참조하십시오"]
 
 .단계
 . 지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.
 +
-https://software.cisco.com/download/home["Cisco 소프트웨어 다운로드"]
+https://["Cisco 소프트웨어 다운로드"]
 
 . 스위치 소프트웨어를 스위치에 복사합니다.
 +
@@ -380,7 +380,7 @@ RCF 파일은 MetroCluster IP 구성의 각 스위치에 다운로드해야 합�
 
 지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://["NetApp Hardware Universe를 참조하십시오"]
 
 RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.
 
