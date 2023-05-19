@@ -24,6 +24,7 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 * FAS8700
 * FAS9000/AFF A700
 * AFF C800/AFF A800
+* FAS9500/AFF A900
 
 
 다음 플랫폼 및 구성은 현재 지원되지 않습니다.
@@ -51,6 +52,6 @@ image::../media/mcc_ip_cabling_A250_C250_MSN2100.png[MCC IP 케이블 A250 C250 
 
 
 
-== AFF C400, AFF A400, AFF A700 또는 FAS9000, FAS8300 또는 FAS8700 AFF A800의 스위치 포트 사용
+== AFF C400, AFF A400, AFF A700, FAS9000, FAS8300, FAS8700, AFF A800, FAS9500 또는 AFF A900
 
 image::../media/mcc_ip_cabling_aff250_400_700_800_cseriesMSN2100.png[MCC IP 케이블 연결 250 400 700 800 cserialesMSN2100]

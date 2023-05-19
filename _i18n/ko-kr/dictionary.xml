@@ -727,7 +727,6 @@
   <block id="d941a85d8c25c36e2e02e4daac541831" category="list-text">각 디스크 쉘프의 전원을 껐다가 다시 켜야 합니다.</block>
   <block id="5651378df1ae9fca87b89a16e61ab123" category="list-text">쉘프 ID는 각 MetroCluster DR 그룹(두 사이트 포함)의 각 SAS 디스크 쉘프에 대해 고유해야 합니다.</block>
   <block id="b392ae8268e3acac3f8918c2f70f55fe" category="admonition">현재 미러링되지 않은 애그리게이트를 포함하도록 설계된 디스크 쉘프는 케이블을 연결하지 마십시오. MetroCluster 구성이 완료된 후 'MetroCluster modify -enable -미러링되지 않은 -aggr -deployment true' 명령을 사용한 후에만 미러링되지 않은 애그리게이트용 쉘프를 구축할 수 있습니다.</block>
-  <block id="34e560639ffdd9bc9704af3387945fde" category="paragraph">ONTAP 9.4 이상 릴리스에는 ADP 지원에 대한 다음과 같은 변경 사항이 포함되어 있습니다.</block>
   <block id="a4a9824ba125eba903fb3d347f4f5eb6" category="list-text">풀 0 디스크 할당은 공장에서 수행됩니다.</block>
   <block id="a1fbd6da7a08fa8c0a2a6b92a3b0a9c5" category="list-text">미러링되지 않은 루트는 공장에서 생성됩니다.</block>
   <block id="c60c48f30552c5ad7630dd7b31eb4943" category="list-text">데이터 파티션 할당은 설치 절차 중에 고객 사이트에서 수행됩니다.</block>
@@ -11696,7 +11695,6 @@
   <block id="eb737ed666dd88bebf10d994bb6b0a10" category="paragraph"><block ref="eb737ed666dd88bebf10d994bb6b0a10" category="inline-link-rx"></block></block>
   <block id="8bcabb3e778663882c95082b775c75b8" category="summary">ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다.</block>
   <block id="3299ba9863a06ef7650cf2bb56d8651c" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다. 대부분의 구성에서는 MetroCluster 사이트의 초기 구성 중에 파티션 분할 및 디스크 할당이 자동으로 수행됩니다.</block>
-  <block id="732888c3eafbc36a6c179a0d04b80675" category="admonition">ONTAP 9.5부터 스토리지 디스크 옵션 수정 - 자동 할당 설정 명령으로 디스크 자동 할당을 활성화해야 합니다.</block>
   <block id="b8f6677db24add5f2af4be56aa22ea68" category="list-text">ONTAP 9.5부터 FAS 시스템에 새로운 MetroCluster IP 설치가 지원됩니다.</block>
   <block id="04be3a6c5ee416a84b497452ccd41ffd" category="list-text">ONTAP 9.4부터는 ADP용으로 구성된 컨트롤러 모듈이 지원됩니다.</block>
   <block id="5dddfa582624b89f44517d6ff5b20963" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. 두 서비스 중 하나만 MetroCluster IP 구성에 사용할 수 있습니다.</block>
@@ -12933,7 +12931,6 @@
   <block id="e5c3d25338f9cf52b0644af8df5dd491" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 포트 13s0-3 및 14s0-3으로 표시됩니다.</block>
   <block id="1ad95d38a718a40f57a452228a018366" category="section-title">FAS500f, AFF C250 또는 AFF A250의 스위치 포트 사용</block>
   <block id="32749c9f2fe889b20a4f9ed309297f2b" category="image-alt">MCC IP 케이블 A250 C250 MSN2100</block>
-  <block id="3a1adad502af8b0ad25b006361e23ce5" category="section-title">AFF C400, AFF A400, AFF A700 또는 FAS9000, FAS8300 또는 FAS8700 AFF A800의 스위치 포트 사용</block>
   <block id="6f71608a9b02340c422ff3d643b4afd7" category="image-alt">MCC IP 케이블 연결 250 400 700 800 cserialesMSN2100</block>
   <block id="0995dd589b8b5229e4b9e28862db9b91" category="paragraph">둘 이상의 MetroCluster 구성을 Cisco 3132Q-V 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster에 케이블을 연결해야 합니다. 예를 들어, FAS2750과 AFF A700을 동일한 Cisco 3132Q-V 스위치에 케이블로 연결하는 경우 그런 다음 표 1의 "MetroCluster 1"에 따라 FAS2750과 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 AFF A700을 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
   <block id="014322233c716b51b659a375ee0b236f" category="section-title">AFF A150, FAS2750, AFF A220, FAS500f, AFF C250 또는 AFF A250을 Cisco 3232C 또는 Cisco 9336-FX2C 스위치에 케이블로 연결합니다</block>
@@ -13198,4 +13195,18 @@
   <block id="f624129c4d6772a2f62200de12382ad0" category="list-text">에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block> 절차를 참조하십시오.</block>
   <block id="112564590ec1ae4e651904cd571ed9d4" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="378e9004462b7ecfad8256f25b57fbf6" category="inline-link-macro-rx"></block>.</block>
   <block id="347bde5f3be96b6c3eab8b4a360b9028" category="list-text">30분 정도 기다린 다음 모든 스토리지 쉘프, MetroCluster IP 스위치 및 스토리지 컨트롤러의 전원을 켭니다.</block>
+  <block id="0434950fcf46c88299084ad712ed62cc" category="list-text">FAS9500/AFF A900</block>
+  <block id="bf63be372af426fed8556dc915b7ccb6" category="section-title">AFF C400, AFF A400, AFF A700, FAS9000, FAS8300, FAS8700, AFF A800, FAS9500 또는 AFF A900</block>
+  <block id="6789cbf331ef2c9b50d45082c81e74cb" category="paragraph">ONTAP 9.4 이상에는 ADP 지원에 대한 다음과 같은 변경 사항이 포함되어 있습니다.</block>
+  <block id="4b72d9ad6a5a5828529f4266cc3f2713" category="list-text">디스크와 모든 파티션은 동일한 HA(고가용성) 쌍의 노드가 소유해야 합니다. 단일 드라이브 내에서 파티션 또는 드라이브 소유권을 로컬 HA 쌍과 DR(재해 복구) 파트너 또는 DR 보조 파트너 간에 혼합할 수 없습니다.</block>
+  <block id="352c5d749caa22e221b7fc037fede87d" category="paragraph">지원되는 구성의 예:</block>
+  <block id="cd1c00b76cbbe512b20985ec2344b5ed" category="cell">드라이브/파티션</block>
+  <block id="de6f944fd72539769b70781e85ebcb0d" category="cell">드라이브:</block>
+  <block id="5eceec2cc5b83a608e155b1545a68237" category="cell"><block ref="3adbe009bdc9265b370999a77c471e08" prefix="" category="inline-code"></block></block>
+  <block id="59e29fe03e3616d7a0f604bccecab054" category="cell">파티션 1:</block>
+  <block id="282e3c3f77057f75613970647a21e39b" category="cell">파티션 2:</block>
+  <block id="5e14931fa3c39251787af92197392ae0" category="cell"><block ref="b5713f91ed0348a8e6565b40d2be523a" prefix="" category="inline-code"></block></block>
+  <block id="7794a024d3134acafeb3b112e36c9a3f" category="cell">파티션 3:</block>
+  <block id="6129d8bcf6f4ed452d528f954ce79ee6" category="admonition">ONTAP 9.5부터 에서 디스크 자동 할당을 활성화해야 합니다<block ref="9518ee5351ea31dd67cceada18bfcfd6" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="00427bfa7d8d8bd516409a3466e96821" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="ee9beb37ef6441cda28497e9b5b08a94" category="inline-link-macro-rx"></block>.</block>
 </blocks>
