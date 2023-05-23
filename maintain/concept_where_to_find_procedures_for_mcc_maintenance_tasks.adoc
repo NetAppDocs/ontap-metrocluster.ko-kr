@@ -29,7 +29,7 @@ ONTAP 소프트웨어
  a| 
 ONTAP 소프트웨어 업그레이드
  a| 
-https://["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"^]
+https://docs.netapp.com/us-en/ontap/upgrade/index.html["업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다"^]
 
 
 
@@ -43,7 +43,7 @@ FRU 교체(컨트롤러 모듈, PCIe 카드, FC-VI 카드 등)
 
 NOTE: MetroCluster 스토리지 시스템 간에 스토리지 컨트롤러 모듈 또는 NVRAM 카드를 이동하는 것은 지원되지 않습니다.
  a| 
-https://["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
 
 
 
@@ -90,7 +90,7 @@ FC
  a| 
 기타 모든 선반 정비 절차. 표준 절차를 사용할 수 있습니다.
  a| 
-https://["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.html["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
 
 
 
@@ -99,9 +99,9 @@ IP
  a| 
 모든 선반 정비 절차. 표준 절차를 사용할 수 있습니다.
 
-미러링되지 않은 애그리게이트의 쉘프를 추가하는 경우 를 참조하십시오 http://["미러링되지 않은 애그리게이트를 사용할 때의 고려 사항"^]
+미러링되지 않은 애그리게이트의 쉘프를 추가하는 경우 를 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/GUID-EA385AF8-7786-4C3C-B5AE-1B4CFD3AD2EE.html["미러링되지 않은 애그리게이트를 사용할 때의 고려 사항"^]
  a| 
-https://["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.html["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
 
 
 
@@ -110,7 +110,7 @@ https://["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
  a| 
 IOM6 쉘프 스택에 IOM12 쉘프를 핫 추가합니다
  a| 
-https://["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"^]
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"^]
 
 
 

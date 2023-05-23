@@ -24,10 +24,10 @@ summary: 클러스터 피어링, 관리, 데이터 연결에 사용되는 컨트
 클러스터 피어링은 전용 포트 또는 데이터 포트에서 수행할 수 있습니다. 전용 포트를 사용하면 클러스터 피어링 트래픽에 대해 더 높은 처리량을 제공할 수 있습니다.
 
 +
-http://["클러스터 및 SVM 피어링 Express 구성"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
 
 . 컨트롤러의 관리 및 데이터 포트를 로컬 사이트의 관리 및 데이터 네트워크에 케이블로 연결합니다.
 +
-의 플랫폼에 대한 설치 지침을 사용합니다 https://["AFF 및 FAS 시스템 설명서"].
+의 플랫폼에 대한 설치 지침을 사용합니다 https://docs.netapp.com/us-en/ontap-systems/["AFF 및 FAS 시스템 설명서"].
 
 

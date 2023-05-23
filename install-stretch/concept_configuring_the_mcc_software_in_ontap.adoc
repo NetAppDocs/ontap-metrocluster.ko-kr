@@ -1052,7 +1052,7 @@ admin SVM 또는 node SVM에 대해 입력한 설정을 변경해야 하는 경�
 MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 복구에 필요한 데이터 미러링을 수행할 수 있도록 피어 관계에 있어야 합니다.
 
 .관련 정보
-http://["클러스터 및 SVM 피어링 Express 구성"^]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"^]
 
 link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
 
@@ -1715,9 +1715,9 @@ controller_A_1::> storage aggregate mirror aggr0_controller_A_1
 
 
 .관련 정보
-https://["논리적 스토리지 관리"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["논리적 스토리지 관리"^]
 
-https://["ONTAP 개념"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"^]
 
 
 
@@ -1734,7 +1734,7 @@ DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들�
 * 드라이브 및 어레이 LUN은 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브가 동일한 노드에 소유되어야 하며, 이 노드가 해당 애그리게이트의 홈 노드가 됩니다.
 * 애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다.
 +
-https://["디스크 및 애그리게이트 관리"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 
 
 
@@ -1923,7 +1923,7 @@ NOTE: 미러링된 단일 데이터 애그리게이트를 사용하려면 를 �
 |===
 +
 
-NOTE: 모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 http://["MetroCluster 구성에서 메타데이터 볼륨 이동"^].
+NOTE: 모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-service/GUID-114DAE6E-F105-4908-ABB1-CE1D7B5C7048.html["MetroCluster 구성에서 메타데이터 볼륨 이동"^].
 
 +
 다음 명령을 실행하면 ""controller_a_1""이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 활성화됩니다.
@@ -2192,7 +2192,7 @@ mccint-fas9000-0304
 
 
 .관련 정보
-https://["디스크 및 애그리게이트 관리"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 
 link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 및 LIF 관리"^]
 
@@ -2209,7 +2209,7 @@ NOTE: Config Advisor에 대한 지원은 제한적이며 온라인에서만 제�
 
 . Config Advisor 다운로드 페이지로 이동하여 도구를 다운로드합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 . Config Advisor를 실행하고, 도구의 출력을 검토하고, 출력에서 권장 사항을 따라 발견된 문제를 해결합니다.
 

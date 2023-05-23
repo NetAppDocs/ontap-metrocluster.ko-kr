@@ -24,11 +24,11 @@ IMPORTANT: 제거할 쉘프에 애그리게이트가 포함된 비 MetroCluster 
 애그리게이트를 제거하려면 제거하려는 쉘프에서 미러링된 애그리게이트를 분할한 다음, 다른 드라이브 세트로 미러링된 애그리게이트를 다시 생성해야 합니다.
 
 +
-https://["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 * 분리할 쉘프의 드라이브에서 애그리게이트를 제거한 후 드라이브 소유권을 제거해야 합니다.
 +
-https://["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 * 스택 내에서 하나 이상의 쉘프를 제거할 경우, 제거할 쉘프를 우회하기 위한 거리를 고려해야 합니다.
 +
@@ -65,7 +65,7 @@ https://["디스크 및 애그리게이트 관리"]
 
 .. Config Advisor를 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

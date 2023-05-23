@@ -21,7 +21,7 @@ link:concept_choosing_your_transition_procedure_mcc_transition.html["무중단 �
 
 * 스위치가 있는 클러스터 구성을 지원해야 합니다.
 +
-https://["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 * 이 케이블은 _MetroCluster 설치 및 구성_절차에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.
 +

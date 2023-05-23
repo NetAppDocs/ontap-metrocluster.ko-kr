@@ -137,12 +137,12 @@ image::../media/mcc_dr_group_c4.png[MCC DR 그룹 C4]
 
 . 의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/index.html["AFF 및 FAS 시스템 업그레이드 설명서"^]
 +
-.. 의 모든 단계를 수행합니다 http://["Aggregate 생성 및 볼륨을 새 노드로 이동"^].
+.. 의 모든 단계를 수행합니다 http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-AFE432F6-60AD-4A79-86C0-C7D12957FA63.html["Aggregate 생성 및 볼륨을 새 노드로 이동"^].
 +
 
 NOTE: Aggregate를 생성할 때나 생성한 후에 미러링할 수도 있습니다.
 
-.. 의 모든 단계를 수행합니다 http://["SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동"].
+.. 의 모든 단계를 수행합니다 http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-95CA9262-327D-431D-81AA-C73DEFF3DEE2.html["SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동"].
 
 
 . 각 클러스터에 대해 전환된 노드의 클러스터 피어의 IP 주소를 수정합니다.

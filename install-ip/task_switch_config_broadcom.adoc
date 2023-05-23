@@ -716,7 +716,7 @@ NOTE: EFOS 버전 3.4.4.6 이상 3.4.x.x.x용 RCF 파일 릴리즈 버전과 EFO
 .단계
 . MetroCluster IP용 Broadcom RCF 파일을 생성합니다.
 +
-.. 를 다운로드합니다 https://["MetroCluster IP용 RcfFileGenerator입니다"]
+.. 를 다운로드합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"]
 .. MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다.
 +
 

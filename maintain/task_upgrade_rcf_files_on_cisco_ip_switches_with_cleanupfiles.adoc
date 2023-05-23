@@ -20,7 +20,7 @@ RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이
 구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.
 
 * 표준 RCF 구성이 적용됩니다.
-* 를 클릭합니다 https://["RcfFileGenerator 를 참조하십시오"] 동일한 버전 및 구성(플랫폼, VLAN)으로 적용된 동일한 RCF 파일을 생성할 수 있어야 합니다.
+* 를 클릭합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["RcfFileGenerator 를 참조하십시오"] 동일한 버전 및 구성(플랫폼, VLAN)으로 적용된 동일한 RCF 파일을 생성할 수 있어야 합니다.
 * NetApp은 적용된 RCF 파일을 특수 구성으로 제공하지 않았습니다.
 * RCF 파일을 적용하기 전에 변경하지 않았습니다.
 * 현재 RCF 파일을 적용하기 전에 스위치를 출하 시 기본값으로 재설정하는 단계를 따랐습니다.

@@ -243,19 +243,19 @@ cluster_A::*>
 플랫폼에 대한 설치 및 설정 지침을 참조하여 클러스터 포트 사용량을 확인할 수 있습니다.
 
 +
-https://["AFF A320 시스템: 설치 및 설정"^]
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-a320-install-setup/home.html["AFF A320 시스템: 설치 및 설정"^]
 
 +
-https://["AFF A220/FAS2700 시스템 설치 및 설정 지침"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842666["AFF A220/FAS2700 시스템 설치 및 설정 지침"^]
 
 +
-https://["AFF A800 시스템 설치 및 설정 지침"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2842668["AFF A800 시스템 설치 및 설정 지침"^]
 
 +
-https://["AFF A300 시스템 설치 및 설정 지침"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2469722["AFF A300 시스템 설치 및 설정 지침"^]
 
 +
-https://["FAS8200 시스템 설치 및 설정 지침"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템 설치 및 설정 지침"^]
 
 
 

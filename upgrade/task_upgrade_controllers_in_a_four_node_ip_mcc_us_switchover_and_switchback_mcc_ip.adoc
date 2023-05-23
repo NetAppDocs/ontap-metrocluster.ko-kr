@@ -24,7 +24,7 @@ ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언
 +
 ** 지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 link:concept_choosing_controller_upgrade_mcc.html["컨트롤러 업그레이드 절차를 선택합니다"].
 +
-을 참조하십시오 https://["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
+을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_controller_upgrade_mcc.html#choosing-a-procedure-that-uses-the-switchover-and-switchback-process["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
 
 
 
@@ -42,7 +42,7 @@ ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언
 * IP 스위치는 지원되는 펌웨어 버전을 실행하고 있어야 합니다.
 * 새 플랫폼의 슬롯이 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다.
 +
-자세한 내용은 를 참조하십시오 https://["NetApp Hardware Universe를 참조하십시오"].
+자세한 내용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"].
 
 * 새 플랫폼에서는 원래 플랫폼의 IP 주소, 넷마스크 및 게이트웨이를 다시 사용합니다.
 * 다음 예제 이름이 이 절차에 사용됩니다.
@@ -383,7 +383,7 @@ e0c 및 e0d가 일치하는 포트입니다. 구성을 변경할 필요는 없�
 .단계
 . 새 컨트롤러를 Netboot에 다음과 같이 합니다.
 +
-.. 에 액세스합니다 https://["NetApp Support 사이트"] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+.. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 .. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 'ONTAP-version_image.tgz' 파일을 저장합니다.
 .. 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
 +
@@ -456,7 +456,7 @@ ifconfig e0M-auto를 선택합니다
  a| 
 FAS/AFF8000 시리즈 시스템
  a| 
-네부트 http://[]
+네부트 http://_web_server_ip/path_to_web-accessible_directory_/netboot/kernel`[]
 
 
 
@@ -599,7 +599,7 @@ MetroCluster 체크 쇼
 +
 .. Config Advisor를 다운로드하고 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -728,7 +728,7 @@ a9a7a7a-9a81-11e7-a4e9-00a098908c35
 
 . MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
 +
-자세한 내용은 을 참조하십시오 https://["온보드 키 관리 정보를 수동으로 백업합니다"].
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"].
 
 +
 .. Onboard Key Manager가 설정된 경우: +'보안 키 관리자 온보드 show-backup
@@ -785,7 +785,7 @@ dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-sy
  a| 
 Tiebreaker입니다
  a| 
-http://["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 가이드 _
 
 
 
@@ -902,7 +902,7 @@ SAN 및 NAS를 포함한 모든 데이터 LIF는 전환 사이트(cluster_a)에�
 예를 들어, e0d는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. e0d는 클러스터 포트 또는 새 컨트롤러에 사용되지 않습니다.
 
 +
-플랫폼 모델의 포트 사용은 를 참조하십시오 https://["NetApp Hardware Universe를 참조하십시오"]
+플랫폼 모델의 포트 사용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"]
 
 .. 공통 포트를 홈 포트로 사용하도록 모든 데이터 LIFS를 수정합니다. + 'network interface modify -vserver_svm -name_-lif_data-lif_-home-port_port -id_'
 +
@@ -1020,7 +1020,7 @@ link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설�
 . 적절하게 접지합니다.
 . 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
 +
-https://["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
 
 . 에 설명된 대로 컨트롤러를 IP 스위치에 연결합니다 link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"].
 +
@@ -1565,7 +1565,7 @@ partner-sysid가 올바르지 않으면 다음을 설정합니다.
  a| 
 보안 키매니저 온보드 동기화
 
-자세한 내용은 을 참조하십시오 https://["온보드 키 관리 암호화 키를 복원하는 중입니다"].
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-E4AB2ED4-9227-4974-A311-13036EB43A3D.html["온보드 키 관리 암호화 키를 복원하는 중입니다"].
 
 
 
@@ -1574,7 +1574,7 @@ partner-sysid가 올바르지 않으면 다음을 설정합니다.
  a| 
 'Security key-manager external restore-vserver_SVM_-node_node_-key-server_host_name|ip_address:port_-key-id key_id-key-tag key_tag_node-name_'
 
-자세한 내용은 을 참조하십시오 https://["외부 키 관리 암호화 키 복원"].
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-32DA96C3-9B04-4401-92B8-EAF323C3C863.html["외부 키 관리 암호화 키 복원"].
 
 |===
 . 모든 포트가 브로드캐스트 도메인에 있는지 확인합니다.
@@ -1585,17 +1585,17 @@ partner-sysid가 올바르지 않으면 다음을 설정합니다.
 
 .. 필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.
 +
-https://["브로드캐스트 도메인에서 포트 추가 또는 제거"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58A3-46C9-BF0C-BA1D1D1475F9.html["브로드캐스트 도메인에서 포트 추가 또는 제거"]
 
 .. 필요에 따라 VLAN 및 인터페이스 그룹을 다시 생성합니다.
 +
 VLAN 및 인터페이스 그룹 멤버쉽은 이전 노드의 멤버쉽과 다를 수 있습니다.
 
 +
-https://["VLAN을 생성하는 중입니다"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-8929FCE2-5888-4051-B8C0-E27CAF3F2A63.html["VLAN을 생성하는 중입니다"]
 
 +
-https://["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EAB7-430A-A773-4E3420EE2AA1.html["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"]
 
 
 

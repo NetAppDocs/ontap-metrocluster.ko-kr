@@ -27,7 +27,7 @@ MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 �
 NOTE: AFF A900 시스템은 ONTAP 9.10.1 이상에서만 지원됩니다.
 
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
@@ -62,7 +62,7 @@ https://["NetApp Hardware Universe를 참조하십시오"^]
 |===
 * 업그레이드 절차 중에 RCF 및 케이블 연결의 물리적 변경을 포함하여 MetroCluster 패브릭을 변경해야 합니다. 컨트롤러 업그레이드를 수행하기 전에 RCF 및 케이블 연결 변경을 수행할 수 있습니다.
 * 이 업그레이드 절차를 수행하기 위해 원래 노드와 새 노드 간에 스토리지, FC 및 이더넷 연결을 변경할 필요는 없습니다.
-* 업그레이드 절차 중에는 AFF A700 또는 FAS9000 시스템에서 다른 카드를 추가하거나 제거하면 안 됩니다. 자세한 내용은 를 참조하십시오 https://["NetApp Hardware Universe를 참조하십시오"^]
+* 업그레이드 절차 중에는 AFF A700 또는 FAS9000 시스템에서 다른 카드를 추가하거나 제거하면 안 됩니다. 자세한 내용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 
 다음 예제 이름은 이 절차의 예시와 그래픽에 사용됩니다.
@@ -194,7 +194,7 @@ MetroCluster 체크 쇼
 +
 .. Config Advisor를 다운로드하고 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -207,7 +207,7 @@ https://["NetApp 다운로드: Config Advisor"^]
 
 AFF A900 또는 FAS9500 패브릭 MetroCluster에는 AFF A700에 필요한 단일 4포트 FC-VI 어댑터와 비교하여 노드당 2개의 4포트 FC-VI 어댑터가 필요합니다. AFF A900 또는 FAS9500 컨트롤러로 컨트롤러 업그레이드를 시작하기 전에 AFF A900 또는 FAS9500 연결 토폴로지를 지원하도록 패브릭 스위치 RCF 파일을 수정해야 합니다.
 
-. 에서 https://["MetroCluster RCF 파일 다운로드 페이지"^]에서 AFF A900 또는 FAS9500 패브릭 MetroCluster의 올바른 RCF 파일과 AFF A700 또는 FAS9000 구성에서 사용 중인 스위치 모델을 다운로드하십시오.
+. 에서 https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab["MetroCluster RCF 파일 다운로드 페이지"^]에서 AFF A900 또는 FAS9500 패브릭 MetroCluster의 올바른 RCF 파일과 AFF A700 또는 FAS9000 구성에서 사용 중인 스위치 모델을 다운로드하십시오.
 . [[Update-RCF]]의 단계에 따라 패브릭 A 스위치, 스위치 A1 및 스위치 B1의 RCF 파일을 업데이트합니다 link:../disaster-recovery/task_cfg_switches_mcfc.html["FC 스위치 구성"].
 +
 
@@ -312,7 +312,7 @@ MetroCluster 체크 쇼
 +
 .. Config Advisor를 다운로드하고 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -401,7 +401,7 @@ dr-group-id cluster    node           node-systemid ha-partner-systemid dr-partn
 
 . MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
 +
-자세한 내용은 을 참조하십시오 https://["온보드 키 관리 정보를 수동으로 백업합니다"^].
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap/encryption-at-rest/backup-key-management-information-manual-task.html["온보드 키 관리 정보를 수동으로 백업합니다"^].
 
 +
 .. Onboard Key Manager가 구성된 경우:
@@ -731,7 +731,7 @@ AFF A900 또는 FAS9500 컨트롤러 모듈의 부팅 미디어에 설치된 ONT
 
 | 실행 중이 아닙니다 | 부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=<filer_addr> -mask=<netmask> -GW=<gateway> -DNS=<DNS_addr> domain=<DNS_domain>'<filer_addr>'은 스토리지 시스템의 IP 주소입니다. "<netmask>"는 스토리지 시스템의 네트워크 마스크입니다. '<gateway>'는 스토리지 시스템의 게이트웨이입니다. "<dns_addr>"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '<dns_domain>'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 펌웨어 프롬프트에 help ifconfig를 입력합니다. 
 |===
-. 노드 1에서 netboot를 수행한다 http://[]"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 <<step2-download-software,2단계>>.
+. 노드 1에서 netboot를 수행한다 http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`[]"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 <<step2-download-software,2단계>>.
 +
 
 NOTE: 부팅을 중단하지 마십시오.
@@ -760,7 +760,7 @@ Selection (1-11)?
 
 NOTE: 다음 메시지는 무시하십시오: "이 절차는 HA 쌍의 무중단 업그레이드를 지원하지 않습니다. 이 노트는 컨트롤러 업그레이드가 아닌 무중단 ONTAP 소프트웨어 업그레이드에 적용됩니다. 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.
 
-. 절차를 계속하라는 메시지가 나타나면 "y"를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.http://[]
+. 절차를 계속하라는 메시지가 나타나면 "y"를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz[]
 . 컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.
 +
 .. "n"을 입력하여 백업 복구를 건너뛰십시오. "지금 백업 구성을 복구하시겠습니까?"라는 메시지가 표시되면 백업 복구를 건너뛰십시오. {y|n}'

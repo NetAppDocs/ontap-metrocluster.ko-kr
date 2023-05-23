@@ -33,4 +33,4 @@ NetApp에서 제공하는 스위치를 사용해야 합니다.
 
 플랫폼 모델 및 스위치 지원에 대한 자세한 내용은 _NetApp Hardware Universe_을 참조하십시오.
 
-https://["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]

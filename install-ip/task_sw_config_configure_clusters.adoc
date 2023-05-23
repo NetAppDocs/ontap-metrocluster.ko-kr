@@ -156,7 +156,7 @@ cluster_B::>
 MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 복구에 필요한 데이터 미러링을 수행할 수 있도록 피어 관계에 있어야 합니다.
 
 .관련 정보
-http://["클러스터 및 SVM 피어링 Express 구성"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
 
 link:concept_considerations_peering.html#considerations-when-using-dedicated-ports["전용 포트를 사용할 때의 고려 사항"]
 
@@ -1935,7 +1935,7 @@ controller_A_1::> storage aggregate mirror aggr0_controller_A_1
 
 
 .관련 정보
-https://["논리적 스토리지 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["논리적 스토리지 관리"]
 
 
 
@@ -1952,7 +1952,7 @@ ADP를 사용하는 시스템에서는 각 드라이브가 P1, P2, P3 파티션�
 
 * 애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다.
 +
-https://["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 
 
@@ -2206,7 +2206,7 @@ MetroCluster modify-enable-미러링되지 않은-aggr-deployment true
 플랫폼 및 디스크 쉘프에 대한 설치 및 설정 설명서의 절차를 사용할 수 있습니다.
 
 +
-https://["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
 
 . 새 쉘프의 모든 디스크를 적절한 노드에 수동으로 할당합니다.
 +
@@ -2267,7 +2267,7 @@ controller_A_1::> storage aggregate create aggr1_controller_A_1 -diskcount 10 -n
 
 
 .관련 정보
-https://["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 
 
@@ -2405,7 +2405,7 @@ mccint-fas9000-0304
 
 
 .관련 정보
-https://["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 및 LIF 관리"^]
 

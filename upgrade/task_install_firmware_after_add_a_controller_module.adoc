@@ -16,6 +16,6 @@ summary: 컨트롤러 모듈을 추가한 후 새 컨트롤러 모듈에 최신 
 .단계
 . 시스템에 맞는 최신 버전의 펌웨어를 다운로드하고 새 펌웨어 다운로드 및 설치 지침을 따릅니다.
 +
-https://["NetApp 다운로드: 시스템 펌웨어 및 진단"]
+https://mysupport.netapp.com/site/downloads/firmware/system-firmware-diagnostics["NetApp 다운로드: 시스템 펌웨어 및 진단"]
 
 

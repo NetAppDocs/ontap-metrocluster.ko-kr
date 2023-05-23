@@ -54,7 +54,7 @@ link:../install-stretch/concept_considerations_differences.html["스트레치 Me
 
 * 드라이브 등에 대한 플랫폼 제한을 초과하지 않도록 해야 합니다
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
@@ -86,7 +86,7 @@ image::../media/transition_2n_4_new_ip_nodes_on_the_shelves.png[선반에서 2�
 이 정보는 _NetApp Hardware Universe_의 각 플랫폼 모델에 대해 제공됩니다.
 
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
@@ -250,7 +250,7 @@ node_B_1-FC의 두 번째 MetroCluster IP 포트입니다
 컨트롤러의 포트 사용량은 MetroCluster IP 구성에서 사용할 플랫폼 모델 및 IP 스위치 모델에 따라 다릅니다. _NetApp Hardware Universe_에서 새 플랫폼의 포트 사용을 수집할 수 있습니다.
 
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 . 필요한 경우 node_A_1-FC 및 node_A_1-IP에 대한 포트 정보를 기록합니다.
 +
@@ -707,7 +707,7 @@ MetroCluster 체크 쇼
 
 .. Config Advisor를 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

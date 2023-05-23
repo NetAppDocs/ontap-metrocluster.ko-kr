@@ -287,7 +287,7 @@ MetroCluster IP 구성(새 설치) 또는 교체 스위치(스위치 교체)의 
 .단계
 . MetroCluster IP용 NVIDIA RCF 파일을 생성합니다.
 +
-.. 를 다운로드합니다 https://["MetroCluster IP용 RcfFileGenerator입니다"^].
+.. 를 다운로드합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"^].
 .. MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 사용할 RCF 파일을 생성합니다.
 .. 홈 디렉토리로 이동합니다. '누적'으로 기록되면 파일 경로는 '/home/cumulus'입니다.
 +

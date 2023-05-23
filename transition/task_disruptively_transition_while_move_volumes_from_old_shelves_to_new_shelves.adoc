@@ -48,7 +48,7 @@ link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 
 * 새로운 MetroCluster IP 플랫폼 모델은 이전 스토리지 쉘프 모델을 지원해야 합니다.
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 기존 쉘프에서 사용 가능한 스페어 디스크에 따라 추가 드라이브를 추가해야 합니다.
 +
@@ -66,7 +66,7 @@ https://["NetApp Hardware Universe를 참조하십시오"^]
 
 * 새 노드를 포함한 구성이 드라이브 수, 루트 애그리게이트 크기 용량 등을 포함하여 구성에 대한 플랫폼 제한을 초과하지 않도록 해야 합니다
 +
-이 정보는 에서 각 플랫폼 모델에 대해 사용할 수 있습니다 https://["NetApp Hardware Universe를 참조하십시오"^]
+이 정보는 에서 각 플랫폼 모델에 대해 사용할 수 있습니다 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
@@ -175,7 +175,7 @@ storage aggregate show 명령을 사용하여 애그리게이트의 동기화 �
 
 . 데이터 볼륨을 새 컨트롤러의 aggregate로 한 번에 하나씩 이동합니다.
 +
-http://["Aggregate 생성 및 볼륨을 새 노드로 이동"^]
+http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-AFE432F6-60AD-4A79-86C0-C7D12957FA63.html["Aggregate 생성 및 볼륨을 새 노드로 이동"^]
 
 
 

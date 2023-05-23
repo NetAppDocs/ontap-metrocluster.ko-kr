@@ -631,7 +631,7 @@ ATTO_10.10.20.13  atto04        true          ok              Atto   FibreBridge
 .. 스위치에 대한 상태 경고(있는 경우): + 스토리지 스위치 표시 여부를 확인합니다
 .. Config Advisor를 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -1015,7 +1015,7 @@ MetroCluster 체크 쇼
 .. 스위치에 대한 상태 경고(있는 경우): + 스토리지 스위치 표시 여부를 확인합니다
 .. Config Advisor를 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -1450,7 +1450,7 @@ MetroCluster 체크 쇼
 
 .. Config Advisor를 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

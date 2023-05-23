@@ -12,4 +12,4 @@ summary: MetroCluster 구성 요소 유지 관리를 위한 상표 정보.
 
 NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.
 
-https://[]
+https://www.netapp.com/company/legal/trademarks/[]

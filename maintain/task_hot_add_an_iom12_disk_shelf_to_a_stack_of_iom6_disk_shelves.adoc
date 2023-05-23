@@ -13,4 +13,4 @@ summary: ONTAP 버전에 따라 IOM12 디스크 쉘프를 브리지 연결 Metro
 [role="lead"]
 ONTAP 버전에 따라 IOM12 디스크 쉘프를 브리지 연결 MetroCluster 구성의 IOM6 디스크 쉘프 스택에 핫 추가할 수 있습니다.
 
-이 절차를 수행하려면 을 참조하십시오 https://["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"].
+이 절차를 수행하려면 을 참조하십시오 https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"].

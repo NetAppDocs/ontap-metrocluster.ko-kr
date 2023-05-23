@@ -52,8 +52,8 @@ Filename : NX3232_v1.80_Switch-A2.txt
 . 특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 RcfFileGenerator 를 사용합니다. 보유하고 있거나 업그레이드하려는 구성에 대해 RCF 파일을 생성할 수 있으면 해당 파일이 지원됩니다.
 . 스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.
 +
-** https://["Hardware Universe"]
-** https://["NetApp 상호 운용성"]
+** https://hwu.netapp.com["Hardware Universe"]
+** https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성"]
 
 
 

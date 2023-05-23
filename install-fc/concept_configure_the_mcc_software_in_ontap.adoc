@@ -1620,7 +1620,7 @@ HA-config modify 섀시 mcip
 
 각 컨트롤러 모듈에 ONTAP를 설정해야 합니다.
 
-새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 http://["새 컨트롤러 모듈을 Netbooting 합니다"] MetroCluster 업그레이드, 전환 및 확장 가이드 _.
+새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-upgrade/GUID-3370EC34-310E-4F09-829F-F632EC8CDD9B.html["새 컨트롤러 모듈을 Netbooting 합니다"] MetroCluster 업그레이드, 전환 및 확장 가이드 _.
 
 .선택
 * <<setup_ontap_2node_MCC,2노드 MetroCluster 구성에서 ONTAP 설정>>
@@ -2700,7 +2700,7 @@ MetroCluster configure node-name
 |===
 +
 
-NOTE: 모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 http://["MetroCluster 구성에서 메타데이터 볼륨 이동"].
+NOTE: 모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-service/GUID-114DAE6E-F105-4908-ABB1-CE1D7B5C7048.html["MetroCluster 구성에서 메타데이터 볼륨 이동"].
 
 +
 다음 명령을 실행하면 controller_a_1이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 설정됩니다.
@@ -3075,7 +3075,7 @@ controller_A_1::>
 
 
 .관련 정보
-https://["시스템 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"]
 
 
 
@@ -3277,7 +3277,7 @@ mccint-fas9000-0304
 
 
 .관련 정보
-https://["디스크 및 애그리게이트 관리"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
 
 link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 및 LIF 관리"^]
 
@@ -3296,7 +3296,7 @@ NOTE: Config Advisor에 대한 지원은 제한적이며 온라인에서만 제�
 .단계
 . Config Advisor 다운로드 페이지로 이동하여 도구를 다운로드합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 . Config Advisor를 실행하고, 도구의 출력을 검토하고, 출력에서 권장 사항을 따라 발견된 문제를 해결합니다.
 
@@ -3416,7 +3416,7 @@ link:https://docs.netapp.com/us-en/ontap/cloud/high-availability-concept.html["�
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
 .단계
-. 에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://["재해에 복구합니다"].
+. 에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["재해에 복구합니다"].
 
 
 
@@ -3431,6 +3431,6 @@ MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 �
 'System configuration backup settings modify_url-of-destination _'
 
 +
-를 클릭합니다 https://["CLI를 통한 클러스터 관리"] 구성 백업 관리 섹션에 대한 추가 정보가 포함되어 있습니다.
+를 클릭합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["CLI를 통한 클러스터 관리"] 구성 백업 관리 섹션에 대한 추가 정보가 포함되어 있습니다.
 
 

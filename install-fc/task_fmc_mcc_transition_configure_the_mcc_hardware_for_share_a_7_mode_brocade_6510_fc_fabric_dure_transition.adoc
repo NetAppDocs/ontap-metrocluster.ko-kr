@@ -39,4 +39,4 @@ MetroCluster 구성에서 현재 Brocade 6510 스위치를 사용하지 않는 �
 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 
 .관련 정보
-http://["복사 기반 전환"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"]

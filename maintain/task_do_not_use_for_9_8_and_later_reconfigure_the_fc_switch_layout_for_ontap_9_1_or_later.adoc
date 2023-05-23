@@ -112,7 +112,7 @@ NOTE: Config Advisor에 대한 지원은 제한적이며 온라인에서만 제�
 
 . Config Advisor 도구를 다운로드합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 . Config Advisor를 실행하고, 출력을 검토하고, 권장 사항을 따라 문제를 해결하십시오.
 
@@ -149,7 +149,7 @@ VSAN[vsna#] 일시 중단
 이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
 
 .단계
-. 사용 https://["패브릭 연결 MetroCluster 설치 및 구성"^] 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 확인합니다.
+. 사용 https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 확인합니다.
 +
 FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 가이드에 설명된 용법과 일치해야 합니다.
 
@@ -165,7 +165,7 @@ NOTE: 케이블이 RCFs를 사용할 수 없는 경우 이 절차를 사용하�
 
 새로운 노드를 수용하기 위해 스위치를 재구성하기 위해 적절한 RCF(Reference Configuration) 파일을 적용해야 합니다. RCF 파일을 적용한 후 스위치를 다시 사용할 수 있습니다.
 
-FC 스위치 포트 사용량은 에 설명된 사용량과 일치해야 합니다 https://["패브릭 연결 MetroCluster 설치 및 구성"^] 따라서 RCFs를 사용할 수 있습니다.
+FC 스위치 포트 사용량은 에 설명된 사용량과 일치해야 합니다 https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] 따라서 RCFs를 사용할 수 있습니다.
 
 .단계
 . 구성에 사용할 RCF 파일을 찾습니다.
@@ -225,5 +225,5 @@ vsan [vsna #]no suspend
 
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
-. 에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://["MetroCluster 관리 및 재해 복구"^].
+. 에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_dr_workflow.html["MetroCluster 관리 및 재해 복구"^].
 

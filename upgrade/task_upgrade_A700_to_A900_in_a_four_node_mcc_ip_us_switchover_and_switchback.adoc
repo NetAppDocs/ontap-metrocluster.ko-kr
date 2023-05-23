@@ -195,7 +195,7 @@ MetroCluster 체크 쇼
 +
 .. Config Advisor를 다운로드하고 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"^]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 
@@ -311,7 +311,7 @@ a9a7a7a-9a81-11e7-a4e9-00a098908c35
 
 
 . 루트 볼륨이 암호화된 경우 키 관리자에 사용되는 암호문 '보안 키 관리자 백업 표시'를 수집하여 저장합니다
-. MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다. 자세한 내용은 을 참조하십시오 https://["온보드 키 관리 정보를 수동으로 백업합니다"^].
+. MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다. 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap/encryption-at-rest/backup-key-management-information-manual-task.html["온보드 키 관리 정보를 수동으로 백업합니다"^].
 +
 .. Onboard Key Manager가 설정된 경우 '보안 키 관리자 온보드 show-backup'+업그레이드 절차 후반부에 패스프레이즈가 필요합니다.
 .. 엔터프라이즈 키 관리(KMIP)를 구성한 경우 다음 명령을 실행하십시오.
@@ -607,7 +607,7 @@ AFF A900 또는 FAS9500 컨트롤러 모듈과 NVS를 바꾼 후에는 AFF A900 
 설치된 ONTAP 버전이 원래 컨트롤러에 설치된 버전과 동일하지 않은 경우, 새 컨트롤러를 netboot 해야 합니다. 각각의 새 컨트롤러를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 시스템을 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다.
 
 .단계
-. 에 액세스합니다 https://["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 . [[step2-download-software]] NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 'ontap-version_image.tgz' 파일을 저장합니다.
 . 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
 . 디렉토리 목록에는 <ONTAP_VERSION>\_IMAGE.tgz 가 포함되어야 합니다.
@@ -1218,7 +1218,7 @@ partner-sysid가 올바르지 않으면 다음을 설정합니다.
  a| 
 보안 키매니저 온보드 동기화
 
-자세한 내용은 을 참조하십시오 https://["온보드 키 관리 암호화 키를 복원하는 중입니다"^].
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["온보드 키 관리 암호화 키를 복원하는 중입니다"^].
 
 
 
@@ -1227,7 +1227,7 @@ partner-sysid가 올바르지 않으면 다음을 설정합니다.
  a| 
 'Security key-manager external restore-vserver_SVM_-node_node_-key-server_host_name|ip_address:port_-key-id key_id-key-tag key_tag_node-name_'
 
-자세한 내용은 을 참조하십시오 https://["외부 키 관리 암호화 키 복원"^].
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["외부 키 관리 암호화 키 복원"^].
 
 |===
 . 모든 포트가 브로드캐스트 도메인에 있는지 확인합니다.
@@ -1238,17 +1238,17 @@ partner-sysid가 올바르지 않으면 다음을 설정합니다.
 
 .. 필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.
 +
-https://["브로드캐스트 도메인에서 포트 추가 또는 제거"^]
+https://docs.netapp.com/us-en/ontap/networking/add_or_remove_ports_from_a_broadcast_domain97.html["브로드캐스트 도메인에서 포트 추가 또는 제거"^]
 
 .. 필요에 따라 VLAN 및 인터페이스 그룹을 다시 생성합니다.
 +
 VLAN 및 인터페이스 그룹 멤버쉽은 이전 노드의 멤버쉽과 다를 수 있습니다.
 
 +
-https://["VLAN을 생성하는 중입니다"^]
+https://docs.netapp.com/us-en/ontap/networking/configure_vlans_over_physical_ports.html#create-a-vlan["VLAN을 생성하는 중입니다"^]
 
 +
-https://["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
+https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
 
 
 

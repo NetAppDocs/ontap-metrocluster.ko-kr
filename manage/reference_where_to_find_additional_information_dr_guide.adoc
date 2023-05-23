@@ -32,7 +32,7 @@ link:../index.html["MetroCluster 문서"]
 
 
  a| 
-http://["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^]
+http://www.netapp.com/us/media/tr-4375.pdf["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^]
  a| 
 * MetroCluster 구성 및 작동에 대한 기술적 개요
 * MetroCluster 구성에 대한 모범 사례
@@ -41,7 +41,7 @@ http://["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^
 
 
  a| 
-https://["패브릭 연결 MetroCluster 설치 및 구성"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["패브릭 연결 MetroCluster 설치 및 구성"]
  a| 
 * 패브릭 연결 MetroCluster 아키텍처
 * 구성 케이블 연결
@@ -53,7 +53,7 @@ https://["패브릭 연결 MetroCluster 설치 및 구성"]
 
 
  a| 
-https://["스트레치 MetroCluster 설치 및 구성"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-stretch/home.html["스트레치 MetroCluster 설치 및 구성"]
  a| 
 * MetroCluster 아키텍처 확장
 * 구성 케이블 연결
@@ -64,7 +64,7 @@ https://["스트레치 MetroCluster 설치 및 구성"]
 
 
  a| 
-http://["MetroCluster IP 설치 및 구성"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/home.html["MetroCluster IP 설치 및 구성"]
  a| 
 * MetroCluster IP 아키텍처
 * 구성 케이블 연결
@@ -82,7 +82,7 @@ link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluste
 
 
  a| 
-Active IQ Unified Manager 설명서 https://["NetApp 설명서: 제품 가이드 및 리소스"^]
+Active IQ Unified Manager 설명서 https://www.netapp.com/support-and-training/documentation/["NetApp 설명서: 제품 가이드 및 리소스"^]
  a| 
 * MetroCluster 구성 및 성능 모니터링
 
@@ -90,7 +90,7 @@ Active IQ Unified Manager 설명서 https://["NetApp 설명서: 제품 가이드
 
 
  a| 
-http://["복사 기반 전환"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html["복사 기반 전환"]
  a| 
 * 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
 

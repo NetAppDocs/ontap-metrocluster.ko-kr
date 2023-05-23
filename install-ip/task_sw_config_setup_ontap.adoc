@@ -187,10 +187,10 @@ Where is the controller located []: site_A
 ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 .
 
 +
-https://["System Manager(ONTAP 9.7 이하)를 사용하여 클러스터 관리"^]
+https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/index.html["System Manager(ONTAP 9.7 이하)를 사용하여 클러스터 관리"^]
 
 +
-https://["ONTAP 시스템 관리자(버전 9.7 이상)"]
+https://docs.netapp.com/us-en/ontap/index.html#about-ontap-system-manager["ONTAP 시스템 관리자(버전 9.7 이상)"]
 
 
 

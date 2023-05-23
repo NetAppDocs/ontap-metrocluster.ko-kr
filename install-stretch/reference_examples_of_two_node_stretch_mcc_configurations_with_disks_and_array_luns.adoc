@@ -32,4 +32,4 @@ image::../media/two_node_mcc_combined_array_luns.gif[2노드 MCC가 결합된 �
 
 NOTE: 필요한 경우 동일한 FC 스위치를 사용하여 MetroCluster 구성의 컨트롤러에 기본 디스크와 어레이 LUN을 모두 연결할 수도 있습니다.
 
-https://["패브릭 연결 MetroCluster 설치 및 구성"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]

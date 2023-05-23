@@ -107,7 +107,7 @@ ISL에 장애가 발생했고 재해 사이트 스토리지를 사용할 수 없
 
 
 .관련 정보
-https://["시스템 관리"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시스템 관리"^]
 
 
 
@@ -295,7 +295,7 @@ link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용
 
 MetroCluster FC-to-IP 전환에는 MetroCluster IP 노드 및 IP 스위치를 기존 MetroCluster FC 구성에 추가한 다음 MetroCluster FC 노드를 폐기하는 작업이 포함됩니다. 전환 프로세스의 단계에 따라 MetroCluster 전환, 복구 및 스위치백 작업에서 서로 다른 워크플로우를 사용합니다.
 
-을 참조하십시오 http://["전환 중 전환, 복구, 스위치백 작업"^].
+을 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-upgrade/GUID-1870FDC4-1774-4604-86A7-5C979C297ADA.html["전환 중 전환, 복구, 스위치백 작업"^].
 
 
 

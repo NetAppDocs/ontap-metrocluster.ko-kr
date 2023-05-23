@@ -22,11 +22,11 @@ ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그
 * 이 절차에서는 4노드 DR 그룹 하나를 확장하는 데 필요한 단계를 설명합니다. 8노드 구성(DR 그룹 2개)이 있는 경우 각 DR 그룹에 대해 전체 절차를 반복해야 합니다.
 * 플랫폼 혼합을 위해 이전 플랫폼 모델과 새로운 플랫폼 모델이 지원되는지 확인해야 합니다.
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인해야 합니다.
 +
-https://["NetApp Hardware Universe를 참조하십시오"^]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 새 노드에는 루트 애그리게이트 및 스페어 디스크를 위한 충분한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 있어야 합니다.
 * 이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.
@@ -150,7 +150,7 @@ MetroCluster 체크 쇼
 
 .. Config Advisor를 실행합니다.
 +
-https://["NetApp 다운로드: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
 
 .. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
 

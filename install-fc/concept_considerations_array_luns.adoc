@@ -18,4 +18,4 @@ link:task_configure_the_mcc_hardware_components_fabric.html["패브릭 연결 Me
 
 link:concept_planning_for_a_mcc_configuration_with_array_luns.html["스토리지 LUN을 사용한 MetroCluster 구성 계획 및 설치"]
 
-https://["FlexArray 가상화 설치 요구 사항 및 참조 자료"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"]

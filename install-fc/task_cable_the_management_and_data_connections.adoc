@@ -21,6 +21,6 @@ summary: 각 스토리지 컨트롤러의 관리 및 데이터 포트를 사이�
 .단계
 . 컨트롤러의 관리 및 데이터 포트를 로컬 사이트의 관리 및 데이터 네트워크에 케이블로 연결합니다.
 +
-https://["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
 
 

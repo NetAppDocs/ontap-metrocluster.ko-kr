@@ -154,7 +154,7 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.
 
 .관련 정보
-https://["ONTAP 개념"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"^]
 
 
 
@@ -384,7 +384,7 @@ image::../media/svm_dr_image_2.gif[SVM DR 이미지 2]
 
 
 
-의 ""SVM 구성 복제" 섹션을 참조하십시오 https://["CLI를 통한 데이터 보호"^] SVM DR 관계 구성에 대한 자세한 내용은 를 참조하십시오.
+의 ""SVM 구성 복제" 섹션을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/GUID-983EDECC-A085-46DC-AF11-6FF9C474ABAE.html["CLI를 통한 데이터 보호"^] SVM DR 관계 구성에 대한 자세한 내용은 를 참조하십시오.
 
 
 

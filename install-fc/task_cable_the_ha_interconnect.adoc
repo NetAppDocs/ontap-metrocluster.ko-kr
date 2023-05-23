@@ -25,7 +25,7 @@ summary: 8노드 또는 4노드 MetroCluster 구성이 있고 HA 쌍 내의 스�
 .단계
 . 스토리지 컨트롤러의 HA 파트너가 별도의 섀시에 있는 경우 HA 인터커넥트에 케이블을 연결합니다.
 +
-https://["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
 
 . MetroCluster 사이트에 2개의 HA 쌍이 포함되어 있는 경우 두 번째 HA 쌍에서 이전 단계를 반복합니다.
 . MetroCluster 파트너 사이트에서 이 작업을 반복합니다.

@@ -76,5 +76,5 @@ link:concept_example_of_switch_zoning_in_a_four_node_mcc_configuration_with_arra
 +
 link:concept_example_of_switch_zoning_in_an_eight_node_mcc_configuration_with_array_luns.html["어레이 LUN이 있는 8노드 MetroCluster 구성의 스위치 조닝의 예"]
 
-* https://["NetApp Hardware Universe를 참조하십시오"]
+* https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 

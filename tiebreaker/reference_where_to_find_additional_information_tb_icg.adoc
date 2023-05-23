@@ -32,7 +32,7 @@ link:../index.html["MetroCluster 문서"]
 
 
  a| 
-http://["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^]
+http://www.netapp.com/us/media/tr-4375.pdf["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^]
  a| 
 * MetroCluster 구성 및 작동에 대한 기술적 개요
 * MetroCluster 구성에 대한 모범 사례
@@ -41,7 +41,7 @@ http://["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^
 
 
  a| 
-https://["패브릭 연결 MetroCluster 설치 및 구성"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
  a| 
 * 패브릭 연결 MetroCluster 아키텍처
 * 구성 케이블 연결
@@ -53,7 +53,7 @@ https://["패브릭 연결 MetroCluster 설치 및 구성"]
 
 
  a| 
-https://["스트레치 MetroCluster 설치 및 구성"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
  a| 
 * MetroCluster 아키텍처 확장
 * 구성 케이블 연결
@@ -64,7 +64,7 @@ https://["스트레치 MetroCluster 설치 및 구성"]
 
 
  a| 
-https://["MetroCluster IP 설치 및 구성"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"]
  a| 
 * MetroCluster IP 아키텍처
 * MetroCluster IP 구성 케이블 연결
@@ -74,7 +74,7 @@ https://["MetroCluster IP 설치 및 구성"]
 
 
  a| 
-https://["MetroCluster 구성 요소를 유지보수하십시오"]
+https://docs.netapp.com/us-en/ontap-metrocluster/maintain/index.html["MetroCluster 구성 요소를 유지보수하십시오"]
  a| 
 * MetroCluster 구성 유지 관리 지침
 * FC-to-SAS 브리지 및 FC 스위치에 대한 하드웨어 교체 또는 업그레이드 및 펌웨어 업그레이드 절차
@@ -90,7 +90,7 @@ https://["MetroCluster 구성 요소를 유지보수하십시오"]
  a| 
 Active IQ Unified Manager 설명서
 
-https://["NetApp 설명서: 제품 가이드 및 리소스"^]
+https://docs.netapp.com["NetApp 설명서: 제품 가이드 및 리소스"^]
  a| 
 * MetroCluster 구성 및 성능 모니터링
 
@@ -98,7 +98,7 @@ https://["NetApp 설명서: 제품 가이드 및 리소스"^]
 
 
  a| 
-https://["복사 기반 전환"]
+https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/index.html["복사 기반 전환"]
  a| 
 * 7-Mode 스토리지 시스템에서 클러스터 스토리지 시스템으로 데이터 전환
 

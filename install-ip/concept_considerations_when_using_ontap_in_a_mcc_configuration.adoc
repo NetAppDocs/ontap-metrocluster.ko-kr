@@ -84,7 +84,7 @@ link:https://docs.netapp.com/us-en/ontap/flexcache/index.html["CLI를 사용한 
 
 ONTAP 구성은 MetroCluster 9.7부터 FabricPool 스토리지 계층을 지원합니다.
 
-FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 https://["디스크 및 계층(애그리게이트) 관리"^].
+FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["디스크 및 계층(애그리게이트) 관리"^].
 
 
 
@@ -103,14 +103,14 @@ FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 https:
 === 미러링된 FabricPool에서 사용하도록 애그리게이트 구성
 
 
-NOTE: 애그리게이트를 구성하기 전에 의 "MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"에 설명된 대로 오브젝트 저장소를 설정해야 합니다 https://["디스크 및 애그리게이트 관리"^].
+NOTE: 애그리게이트를 구성하기 전에 의 "MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"에 설명된 대로 오브젝트 저장소를 설정해야 합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^].
 
 .단계
 FabricPool에서 사용할 Aggregate를 구성하려면 다음을 수행합니다.
 
 . Aggregate를 생성하거나 기존 Aggregate를 선택합니다.
 . MetroCluster 구성 내에서 애그리게이트를 일반적인 미러링된 Aggregate로 미러링합니다.
-. 에 설명된 대로 Aggregate를 사용하여 FabricPool 미러를 생성합니다 https://["디스크 및 애그리게이트 관리"^]
+. 에 설명된 대로 Aggregate를 사용하여 FabricPool 미러를 생성합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 +
 .. 기본 오브젝트 저장소를 연결합니다.
 +
@@ -160,7 +160,7 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.
 
 .관련 정보
-https://["네트워크 및 LIF 관리"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"^]
 
 link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#ipspace-object-replication-and-subnet-configuration-requirements["IPSpace 객체 복제 및 서브넷 구성 요구 사항"]
 
@@ -402,7 +402,7 @@ image::../media/svm_dr_image_2.gif[SVM DR 이미지 2]
 
 
 
-의 ""SVM 구성 복제""를 참조하십시오 http://["데이터 보호"^] SVM DR 관계 구성에 대한 자세한 내용은 를 참조하십시오.
+의 ""SVM 구성 복제""를 참조하십시오 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html["데이터 보호"^] SVM DR 관계 구성에 대한 자세한 내용은 를 참조하십시오.
 
 
 

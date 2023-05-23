@@ -28,7 +28,7 @@ summary: 어레이 LUN을 포함하는 MetroCluster 구성을 설정하는 데 �
 NOTE: AFF 시스템은 어레이 LUN에서 지원되지 않습니다.
 
 +
-https://["AFF 또는 FAS 시스템의 설치 절차"]
+https://docs.netapp.com/us-en/ontap-systems/["AFF 또는 FAS 시스템의 설치 절차"]
 
 . 랙 또는 캐비닛에 FC 스위치를 설치합니다.
 

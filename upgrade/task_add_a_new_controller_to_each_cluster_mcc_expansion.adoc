@@ -19,7 +19,7 @@ summary: 각 사이트에 새 컨트롤러 모듈을 추가하여 각 사이트�
 새 컨트롤러 모듈의 PCIe 카드가 호환되고 새 컨트롤러 모듈에서 지원되는지 확인해야 합니다.
 
 +
-https://["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 * 단일 섀시 HA 쌍(두 컨트롤러 모듈이 동일한 섀시에 상주하는 HA 쌍)으로 업그레이드할 경우 시스템이 새 컨트롤러 모듈에 사용할 수 있는 빈 슬롯이 있어야 합니다.
 +
