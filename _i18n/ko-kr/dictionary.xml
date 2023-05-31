@@ -8587,7 +8587,6 @@
   <block id="e90434592ed415a541e2a6f03284ae2d" category="list-text">MetroCluster IP 노드에서 LUN에 대한 보고 노드를 확인합니다. 'lun mapping show -vserver vsa_1 -fields reporting -nodes-OSType linux'</block>
   <block id="1e7ae3480577387e1ba55438a03a4513" category="list-text">iSCSI 호스트에서 '/usr/bin/rescan-scsi-bus.sh -r' SCSI 버스를 다시 검색합니다</block>
   <block id="d535eedec31c0a58f698132001cbc9bb" category="paragraph">제거된 경로는 FC 노드의 경로입니다.</block>
-  <block id="3f12786d4b9511cd0eec25cdac544486" category="list-text">iSCSI 호스트에서 MetroCluster IP 노드의 경로만 표시되는지 확인합니다. 'show -p' multitpath -ll -d'</block>
   <block id="a1dc95b2dccfd24df8e5f465b41ca7bb" category="summary">전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새로운 MetroCluster IP 구성으로 데이터를 이동합니다.</block>
   <block id="6b2201b255bf7619b40525eabcf640ce" category="doc">데이터를 새 드라이브 쉘프로 이동</block>
   <block id="d43a293b508a220ef74948f1d6ffa38b" category="paragraph">전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새로운 MetroCluster IP 구성으로 데이터를 이동합니다.</block>
@@ -10677,7 +10676,6 @@
   <block id="1c894e6b507e00c15428a59377b3edea" category="paragraph">6,2; 6,6; 8,2; 8,6; 6,10</block>
   <block id="19c4c7cbe51f9cc9c84e03e471f6929c" category="paragraph">* DrGroup 1: MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC2: *</block>
   <block id="b8f988b57682ee3866e672d627663e00" category="paragraph">Bridge_a_2b FC2</block>
-  <block id="03121169c4d1348b6827ea00f3922000" category="paragraph">컨트롤러_B_1 포트 0b\</block>
   <block id="004b482a536c1dbeb972fdbcb633914c" category="paragraph">MC1_INIT_GRP_2_SITE_A_STK_GRP_2_BOT_FC2</block>
   <block id="8a4965122e119874f47264cf47f02991" category="paragraph">6,3; 6,7; 8,3; 8,7; 6,11</block>
   <block id="7c8958ab7c622e1e6215179931fad545" category="paragraph">* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1: *</block>
@@ -10700,7 +10698,6 @@
   <block id="3a85d29ae69b3e31581b8b2d167a621a" category="paragraph">MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC1</block>
   <block id="208edde938c07656ddf2417fd81c409a" category="paragraph">5,3; 5,7; 7,3; 7,7; 7,11</block>
   <block id="c9e31e059604d2f6b216b114815682e5" category="paragraph">* DrGroup 1: MC1_INIT_GRP_1_SITE_B_STK_GRP_2_BOT_FC2: *</block>
-  <block id="c822bb67407542108aec4655c3b63b2b" category="paragraph">컨트롤러_A_1 포트 d</block>
   <block id="45f04d2c5b2b8b64ce9c8a96677c5437" category="paragraph">Bridge_B_2a FC2</block>
   <block id="24dd159d2abea2dcd3b2e2a5e3c34813" category="paragraph">MC1_INIT_GRP_1_SITE_B_STK_GRP_2_TOP_FC2</block>
   <block id="7de585560799d109a1bfaa97c04462a0" category="paragraph">6,2; 6,6; 8,2; 8,6; 8,10</block>
@@ -13209,4 +13206,35 @@
   <block id="7794a024d3134acafeb3b112e36c9a3f" category="cell">파티션 3:</block>
   <block id="6129d8bcf6f4ed452d528f954ce79ee6" category="admonition">ONTAP 9.5부터 에서 디스크 자동 할당을 활성화해야 합니다<block ref="9518ee5351ea31dd67cceada18bfcfd6" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="00427bfa7d8d8bd516409a3466e96821" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="ee9beb37ef6441cda28497e9b5b08a94" category="inline-link-macro-rx"></block>.</block>
+  <block id="7a1a87ce99eaab2774eb1f9eacc17d53" category="list-text">iSCSI 호스트에서 MetroCluster IP 노드의 경로만 표시되는지 확인합니다.</block>
+  <block id="60b4ea9b972dc75c3aa76b2fc2aab932" category="paragraph"><block ref="41dc2c94e82e1c56ba876085acf5a974" prefix="" category="inline-code"></block></block>
+  <block id="ba27cfcb3809ba8690469645b378b4af" category="paragraph"><block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix="" category="inline-code"></block></block>
+  <block id="5338d1a8478f350f9f873b7c89a98b0f" category="summary">MetroCluster FC 백엔드 스위치 또는 ATTO 브리지의 IP 주소를 수정한 후 기존 상태 모니터링 IP 주소를 대체합니다.</block>
+  <block id="ab82e5baf31743b1a6f1bdd378ba458b" category="doc">상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다</block>
+  <block id="e3dbdae2799d2ed863a853d87ba77fd1" category="paragraph">MetroCluster FC 백엔드 스위치 및 ATTO 브리지의 IP 주소를 수정한 후에는 기존 상태 모니터링 IP 주소를 새 값으로 바꿔야 합니다.</block>
+  <block id="f92e0078fdec1ffe1c4ea4aa9d6f1a1e" category="list-text"><block ref="ab2d45fba3c3f757aacec91da4cb1b70" category="inline-xref-macro-rx"></block></block>
+  <block id="165574b7ebb66de680159f8b0d4fcfc5" category="list-text"><block ref="e8667931151aa8a03a3ce375a7fb4ce1" category="inline-xref-macro-rx"></block></block>
+  <block id="23d9641e3ce1ace9d285b6d99428aa46" category="section-title">스위치 IP 주소를 수정합니다</block>
+  <block id="0ce4b65dc88de631364f20a47a4c2763" category="paragraph">MetroCluster FC 백엔드 스위치의 이전 상태 모니터링 IP 주소를 교체합니다.</block>
+  <block id="4007362387ed0cc5dd6adba726c520d9" category="paragraph">상태 모니터링 IP 주소를 변경하기 전에 스위치의 IP 주소를 변경하려면 스위치 공급업체의 스위치 모델 설명서를 참조하십시오.</block>
+  <block id="7bbfbf566095b68040e5c4a3aceac6ac" category="list-text">를 실행합니다<block ref="54cb0cc4651ed88426820f54a959f983" prefix=" " category="inline-code"></block> 명령 및 출력에서 오류를 보고하는 스위치를 확인합니다.</block>
+  <block id="cdf3b6d5f62383fc5e5b19d993938d28" category="list-text">이전 IP 주소가 있는 스위치 항목을 제거합니다.</block>
+  <block id="718e9867401dd91866fb2a987df7bc0c" category="paragraph"><block ref="f9e659c5cf89d4cd6229787d8c325744" prefix="" category="inline-code"></block></block>
+  <block id="eebd9da1099c88008c8642171a3e5ae0" category="list-text">새 IP 주소를 사용하여 스위치를 추가합니다.</block>
+  <block id="d4f0cc67f8aefe1ab7966060dea16fd3" category="paragraph"><block ref="63bf3e4595e1cea2668cf6a221b6733e" prefix="" category="inline-code"></block></block>
+  <block id="7295794d4681a6b472535b162c67d854" category="list-text">새 IP 주소를 확인하고 오류가 없는지 확인합니다.</block>
+  <block id="17ebf08b360e23da5de17080478b5a9a" category="paragraph"><block ref="54cb0cc4651ed88426820f54a959f983" prefix="" category="inline-code"></block></block>
+  <block id="57dfb63d08478439698cd552ae3e5aaf" category="list-text">필요한 경우 항목을 새로 고칩니다.</block>
+  <block id="938dd650e30906bfb9b2b22db00400e9" category="paragraph"><block ref="b005242c3b5e82cd0bc325b3c7aa88b5" prefix="" category="inline-code"></block></block>
+  <block id="d27195bfb9db39c84dd807f644d56035" category="paragraph"><block ref="d417edd9124181cee913e66273c75f24" prefix="" category="inline-code"></block></block>
+  <block id="baed02715ff1c68d98d96ab1f1824839" category="paragraph"><block ref="2b2245798948be76e47bf2c58b09ff70" prefix="" category="inline-code"></block></block>
+  <block id="e21a16678b580969058476d22d6dec5a" category="section-title">ATTO 브리지 IP 주소를 수정합니다</block>
+  <block id="b8ba41975a83a28edcb1fc976000f8aa" category="paragraph">ATTO 브리지의 기존 상태 모니터링 IP 주소를 교체합니다.</block>
+  <block id="5a641276a63ef6c96ab4d424621d47a1" category="list-text">를 실행합니다<block ref="c15b1a514541c60b840d997ade873f6d" prefix=" " category="inline-code"></block> 명령 및 출력에서 오류를 보고하는 ATTO 브리지를 확인합니다.</block>
+  <block id="fe8871b8444844b0056512bac56eeb27" category="list-text">이전 IP 주소를 사용하여 ATTO 브리지 항목을 제거합니다.</block>
+  <block id="22007fc81568e5bddd49d6ef9b5f7cb0" category="paragraph"><block ref="fb0e4750f8c23a6c43224287bc7ea075" prefix="" category="inline-code"></block></block>
+  <block id="94b07ddcdeea86a3cb5e6bba21fa0102" category="list-text">ATTO 브리지를 새 IP 주소로 추가합니다.</block>
+  <block id="c6b98eed0e9727a5dfb3f152632a0f26" category="paragraph"><block ref="abef28b214988e1f461b70d9ddd96084" prefix="" category="inline-code"></block></block>
+  <block id="5da08e80e3eab08ebb4baa8e1b142991" category="paragraph"><block ref="c15b1a514541c60b840d997ade873f6d" prefix="" category="inline-code"></block></block>
+  <block id="9c2b22a66311e51f1e1983454811963b" category="paragraph"><block ref="6253a5e48e30f72d3113196e1239627c" prefix="" category="inline-code"></block></block>
 </blocks>

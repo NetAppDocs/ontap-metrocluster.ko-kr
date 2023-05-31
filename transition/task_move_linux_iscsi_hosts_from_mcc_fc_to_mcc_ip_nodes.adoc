@@ -364,5 +364,11 @@ OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
 .
 .
 ----
-. iSCSI 호스트에서 MetroCluster IP 노드의 경로만 표시되는지 확인합니다. 'show -p' multitpath -ll -d'
+. iSCSI 호스트에서 MetroCluster IP 노드의 경로만 표시되는지 확인합니다.
++
+`sanlun lun show -p`
+
++
+`multipath -ll -d`
+
 

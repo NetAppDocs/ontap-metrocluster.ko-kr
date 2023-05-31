@@ -1,0 +1,85 @@
+---
+permalink: maintain/task_modify_switch_or_bridge_ip_address_for_health_monitoring.html 
+sidebar: sidebar 
+keywords: metrocluster, atto, fc, switches, bridges, modify, IP, address 
+summary: MetroCluster FC 백엔드 스위치 또는 ATTO 브리지의 IP 주소를 수정한 후 기존 상태 모니터링 IP 주소를 대체합니다. 
+---
+= 상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster FC 백엔드 스위치 및 ATTO 브리지의 IP 주소를 수정한 후에는 기존 상태 모니터링 IP 주소를 새 값으로 바꿔야 합니다.
+
+* <<스위치 IP 주소를 수정합니다>>
+* <<ATTO 브리지 IP 주소를 수정합니다>>
+
+
+
+
+== 스위치 IP 주소를 수정합니다
+
+MetroCluster FC 백엔드 스위치의 이전 상태 모니터링 IP 주소를 교체합니다.
+
+.시작하기 전에
+상태 모니터링 IP 주소를 변경하기 전에 스위치의 IP 주소를 변경하려면 스위치 공급업체의 스위치 모델 설명서를 참조하십시오.
+
+.단계
+. 를 실행합니다 `::> storage switch show` 명령 및 출력에서 오류를 보고하는 스위치를 확인합니다.
+. 이전 IP 주소가 있는 스위치 항목을 제거합니다.
++
+`::> storage switch remove -name _switch_name_`
+
+. 새 IP 주소를 사용하여 스위치를 추가합니다.
++
+`::> storage switch add -name _switch_name_ -address _new_IP_address_ -managed-by in-band`
+
+. 새 IP 주소를 확인하고 오류가 없는지 확인합니다.
++
+`::> storage switch show`
+
+. 필요한 경우 항목을 새로 고칩니다.
++
+`::> set advanced`
+
++
+`::*> storage switch refresh`
+
++
+`::*> set admin`
+
+
+
+
+
+== ATTO 브리지 IP 주소를 수정합니다
+
+ATTO 브리지의 기존 상태 모니터링 IP 주소를 교체합니다.
+
+.단계
+. 를 실행합니다 `::> storage bridge show` 명령 및 출력에서 오류를 보고하는 ATTO 브리지를 확인합니다.
+. 이전 IP 주소를 사용하여 ATTO 브리지 항목을 제거합니다.
++
+`::> storage bridge remove -name _ATTO_bridge_name_`
+
+. ATTO 브리지를 새 IP 주소로 추가합니다.
++
+`::> storage bridge add -name _ATTO_bridge_name_ -address _new_IP_address_ -managed-by in-band`
+
+. 새 IP 주소를 확인하고 오류가 없는지 확인합니다.
++
+`::> storage bridge show`
+
+. 필요한 경우 항목을 새로 고칩니다.
++
+`::> set advanced`
+
++
+`::*> storage bridge refresh`
+
++
+`::*> set admin`
+
+
