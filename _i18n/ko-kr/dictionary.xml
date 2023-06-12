@@ -9656,11 +9656,8 @@
   <block id="1711fdcc6944bbeddd35a626101f4b4d" category="list-text">스위치가 POD(Dynamic Port On Demand) 방법을 사용하고 있는지 확인합니다.</block>
   <block id="2f3d07c01cbdac4d395d3a14b661150c" category="admonition">Brocade Fabric OS 8.0 이전 버전에서는 다음 명령을 admin으로 실행하고 버전 8.0 이상에서는 root로 실행합니다.</block>
   <block id="64fa0d568b3592806aa948b76b25721e" category="list-text">다음 라이센스 명령을 실행합니다.</block>
-  <block id="2fc05e860677e088c66d18d9fe3bb918" category="paragraph">'licenseport--show'</block>
   <block id="d63c14f8f4da1b2f3355284117aa43d6" category="list-text">Brocade에 의해 비활성화된 경우 루트 사용자를 활성화합니다.</block>
-  <block id="0495c36d7c4cd6e18740fbb344d64ab4" category="list-text">라이센스 방법을 동적으로 변경합니다.</block>
   <block id="58245d98714cc00602b18f5cd698870e" category="paragraph">'licenseport -- method dynamic'</block>
-  <block id="dca190678a04e60a515a67708b3f0c76" category="admonition">동적 POD 방법을 사용하지 않는 경우(POD 메서드가 정적 상태인 경우) 라이센스 할당 방법을 동적 으로 변경해야 합니다. 동적 POD 방법을 사용 중인 경우 이 단계를 건너뜁니다.</block>
   <block id="06628fac4ad175a059dea1e8992ec356" category="paragraph">'FastBoot'를 선택합니다</block>
   <block id="ede0376c0e0928f0e121e5c4a17e579f" category="list-text">기본 설정이 구현되었는지 확인합니다.</block>
   <block id="384bb33c884dd5c4aed5b1cef7c99c53" category="list-text">IP 주소가 올바르게 설정되었는지 확인합니다.</block>
@@ -9877,7 +9874,6 @@
   <block id="e7acec6ea00d47c0f7752735341c6bb3" category="list-text">확장된 Fabric 라이센스(6km 이상의 ISL 거리용)</block>
   <block id="9095235ccbae1acead09e083fb7b20dd" category="list-text">ISL이 2개 이상 있고 ISL 거리가 6km 이상인 사이트에 대한 엔터프라이즈 라이센스</block>
   <block id="c447450429c7aa0c8fa978a8c7ab1f67" category="paragraph">Enterprise 라이센스에는 Brocade Network Advisor 및 추가 포트 라이센스를 제외한 모든 라이센스가 포함됩니다.</block>
-  <block id="aaf82250987f97db574d1fc26bfc8c06" category="paragraph">"licenseshHow" 명령을 사용하여 라이센스가 설치되어 있는지 확인할 수 있습니다. 이러한 라이센스가 없는 경우 계속하기 전에 영업 담당자에게 문의하십시오.</block>
   <block id="5fbb52ab0ccc2914c72b1ce04d94f538" category="summary">각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch Link) \ 을 포함합니다. 데이터는 ISL을 통해 사이트 간에 복제됩니다. 이중화를 위해 각 스위치 패브릭은 서로 다른 물리적 경로에 있어야 합니다.</block>
   <block id="ec25303fa6412309bf87b276dbbd7a8c" category="paragraph">각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch Link)을 포함합니다. 데이터는 ISL을 통해 사이트 간에 복제됩니다. 이중화를 위해 각 스위치 패브릭은 서로 다른 물리적 경로에 있어야 합니다.</block>
   <block id="09011b1854f3ff9c194f9a18281f450c" category="image-alt">MCC HW 아키텍처 스위치 패브릭</block>
@@ -10278,7 +10274,6 @@
   <block id="b54ac66ca0ca34c593eeed1fe8cd4e03" category="list-text">Brocade VF(Virtual Fabric) 기능은 지원되지 않습니다.</block>
   <block id="c51b448f36df4e8b4b68e7af4df4c6b8" category="list-text">도메인 포트를 기반으로 하는 FC 조닝이 지원되지만 WWN(Worldwide Name)을 기반으로 하는 조닝은 지원되지 않습니다.</block>
   <block id="5f864e9896e626c0a0c857ef2de8b1d6" category="list-text">라이센스가 설치되었는지 확인합니다.</block>
-  <block id="085c43e1c750634547ed6d634183b052" category="paragraph">"사용권 허가자"</block>
   <block id="4d8abf4bb34371dfeb410341732e506b" category="paragraph">이러한 라이센스가 없는 경우 계속하기 전에 영업 담당자에게 문의하십시오.</block>
   <block id="29beb95dbfa349b40c8e018564927306" category="section-title">Brocade FC 스위치 값을 출하 시 기본값으로 설정합니다</block>
   <block id="bc9a8f24ac7c37a611a7d6eccad46c1a" category="paragraph">성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 또한 각 스위치에 고유한 이름을 할당해야 합니다.</block>
@@ -10305,7 +10300,6 @@
   <block id="e39c65b9d816e2a7741f1d5584f8ae65" category="paragraph">'위츠cfgtrunk 0'</block>
   <block id="ae6d4e9d4497377541a0ac6446e39a09" category="list-text">Brocade 6510 스위치에서 Brocade VF(Virtual Fabrics) 기능을 비활성화합니다.</block>
   <block id="5592272feb1a1ba6847cf13d1a8c1474" category="list-text">AD(관리 도메인) 구성을 지웁니다.</block>
-  <block id="acb1a0aabd466b89953a635308b148ef" category="paragraph">광고 옵션</block>
   <block id="41f75670bd6513f25d1942c68f417ebb" category="section-title">기본 스위치 설정 구성</block>
   <block id="b5200136ba99d499e1f31b6fc5df9dcc" category="paragraph">Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.</block>
   <block id="402d1d9024cb07a63926bd7becbf4af3" category="paragraph">이 작업에는 두 MetroCluster 사이트의 각 스위치에 대해 수행해야 하는 단계가 포함됩니다.</block>
@@ -10343,11 +10337,9 @@
   <block id="53989b83805e7661f392318f958a6584" category="admonition">컨트롤러 모듈에서 ONTAP를 구성할 때는 MetroCluster 구성의 각 컨트롤러 모듈에서 유드로 명시적으로 구성해야 합니다.</block>
   <block id="555d0eb5e8f5efea1f9923360c2e1807" category="paragraph"><block ref="555d0eb5e8f5efea1f9923360c2e1807" category="inline-link-rx"></block></block>
   <block id="8e6415ee4068075bb4d9b0908c9e0ba1" category="list-text">스위치가 동적 포트 라이센스 방식을 사용하고 있는지 확인합니다.</block>
-  <block id="67c13f78d822be3160ea3c5b07cae707" category="paragraph">'licensePort -- 쇼'</block>
   <block id="39c3f713772acf06f906fa354070ccae" category="admonition">8.0 이전의 Brocade FabricOS 버전에서는 다음 명령을 관리자 및 버전 8.0으로 실행한 후 루트로 실행하십시오.</block>
   <block id="bb455cc655a37d9370a7b572be5c356a" category="list-text">루트 사용자를 설정합니다.</block>
   <block id="9982799dc107b44357ff54b7e3b835e7" category="paragraph">루트 사용자가 Brocade에 의해 이미 비활성화된 경우 다음 예와 같이 루트 사용자를 설정합니다.</block>
-  <block id="46714aac3ad4ae91307dcd356eefab49" category="admonition">동적 라이센스 방법을 사용하지 않는 경우(정적 방법인 경우) 라이센스 방법을 동적 라이센스 방식으로 변경해야 합니다. 동적 라이센스 방법을 사용 중인 경우 이 단계를 건너뜁니다.</block>
   <block id="95da9f6e517e5c030f88ab1f88a8412b" category="list-text">ONTAP에서 스위치의 상태를 성공적으로 모니터링하려면 T11-FC-ZONE-SERVER-MIB에 대한 트랩을 활성화합니다.</block>
   <block id="ed4e949381c1b26b6a818efefef7af72" category="list-text">T11-FC-ZONE-SERVER-MIB 활성화:</block>
   <block id="30b22579f9b8f04df9b75ac978e270dc" category="paragraph">'snmpconfig--set mibCapability-mib_name T11-FC-zone-server-mib-bitmask 0x3f'</block>
@@ -13237,4 +13229,14 @@
   <block id="c6b98eed0e9727a5dfb3f152632a0f26" category="paragraph"><block ref="abef28b214988e1f461b70d9ddd96084" prefix="" category="inline-code"></block></block>
   <block id="5da08e80e3eab08ebb4baa8e1b142991" category="paragraph"><block ref="c15b1a514541c60b840d997ade873f6d" prefix="" category="inline-code"></block></block>
   <block id="9c2b22a66311e51f1e1983454811963b" category="paragraph"><block ref="6253a5e48e30f72d3113196e1239627c" prefix="" category="inline-code"></block></block>
+  <block id="5aec6e2f211b9dfd0cbd3f6c569bd08c" category="open-title">Data Fabric OS 8.2.x 및 그 이전 버전</block>
+  <block id="21a858f81918f7707fbcd7bef86f8797" category="paragraph">명령을 실행합니다<block ref="c53664d593e772e240ea0e6fdcfc79e1" prefix=" " category="inline-code"></block>.</block>
+  <block id="afff4aa2c1e899c46d499fb894d82ada" category="open-title">Fabric OS 9.0 이상</block>
+  <block id="39219ac241ea7f4ccb98564b8a02b92c" category="paragraph">명령을 실행합니다<block ref="ee9cf2be6d80be01f66c5272dabe9164" prefix=" " category="inline-code"></block>.</block>
+  <block id="6662b782a3a75b8e31dda70ebe53c4f0" category="paragraph">명령을 실행합니다<block ref="c3d759c84d82a17cd2fc31c0bbd2be02" prefix=" " category="inline-code"></block>.</block>
+  <block id="1fb30ffcb217df70eb8b61a9c76f518f" category="paragraph">명령을 실행합니다<block ref="f7fd6058274b87da3f8cba419f53bb7e" prefix=" " category="inline-code"></block>.</block>
+  <block id="3c8938b87b13dff113f84a2814ddff39" category="paragraph"><block ref="f7fd6058274b87da3f8cba419f53bb7e" prefix="" category="inline-code"></block></block>
+  <block id="1ad5a70ead9bdd722df6000495e21c24" category="list-text">Fabric OS 8.2.x 이하를 실행 중인 경우 라이센스 방법을 동적으로 변경해야 합니다.</block>
+  <block id="7fafa568d6f3c9a0ee98323f64b1c01c" category="admonition">Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.</block>
+  <block id="0b6c4085e3a8dba280dd11e4bbbbeee1" category="paragraph">'license' 명령을 사용하여 라이센스가 설치되었는지 확인할 수 있습니다.</block>
 </blocks>

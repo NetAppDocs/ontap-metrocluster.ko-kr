@@ -120,12 +120,23 @@ NOTE: Brocade Fabric OS 8.0 이전 버전에서는 다음 명령을 admin으로 
 +
 .. 다음 라이센스 명령을 실행합니다.
 +
-'licenseport--show'
+[role="tabbed-block"]
+====
+.Data Fabric OS 8.2.x 및 그 이전 버전
+--
+명령을 실행합니다 `licenseport --show`.
 
+--
+.Fabric OS 9.0 이상
+--
+명령을 실행합니다 `license --show -port`.
+
+--
+====
 +
 [listing]
 ----
-FC_switch_A_1:admin> licenseport -show
+FC_switch_A_1:admin> license --show -port
 24 ports are available in this switch
 Full POD license is installed
 Dynamic POD method is in use
@@ -139,23 +150,30 @@ FC_switch_A_1:admin> rootaccess --set consoleonly
 ----
 .. 다음 라이센스 명령을 실행합니다.
 +
-'licenseport--show'
+[role="tabbed-block"]
+====
+.Data Fabric OS 8.2.x 및 그 이전 버전
+--
+명령을 실행합니다 `licenseport --show`.
 
+--
+.Fabric OS 9.0 이상
+--
+명령을 실행합니다 `license --show -port`.
+
+--
+====
 +
 [listing]
 ----
-FC_switch_A_1:root> licenseport -show
+FC_switch_A_1:root> license --show -port
 24 ports are available in this switch
 Full POD license is installed
 Dynamic POD method is in use
 ----
-.. 라이센스 방법을 동적으로 변경합니다.
+.. Fabric OS 8.2.x 이하를 실행 중인 경우 라이센스 방법을 동적으로 변경해야 합니다.
 +
 'licenseport -- method dynamic'
-
-+
-
-NOTE: 동적 POD 방법을 사용하지 않는 경우(POD 메서드가 정적 상태인 경우) 라이센스 할당 방법을 동적 으로 변경해야 합니다. 동적 POD 방법을 사용 중인 경우 이 단계를 건너뜁니다.
 
 +
 [listing]
@@ -164,6 +182,10 @@ FC_switch_A_1:admin> licenseport --method dynamic
 The POD method has been changed to dynamic.
 Please reboot the switch now for this change to take effect
 ----
++
+
+NOTE: Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.
+
 
 
 . 스위치를 재부팅합니다.
