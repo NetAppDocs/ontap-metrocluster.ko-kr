@@ -13,9 +13,13 @@ summary: 사이트 유지보수 또는 재배치를 시작하려면 먼저 전�
 [role="lead"]
 사이트 유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster FC 구성과 모든 장비의 전원을 꺼야 합니다.
 
+.이 작업에 대해
+두 사이트에서 동시에 이 절차의 단계를 수행해야 합니다.
+
 
 NOTE: ONTAP 9.8부터 ' * storage switch * ' 명령은 ' * system switch * '로 대체됩니다. 다음 단계에서는 '* storage switch*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system switch*' 명령을 사용하는 것이 좋습니다.
 
+.단계
 . MetroCluster 구성의 두 사이트에서 MetroCluster 구성을 확인합니다.
 +
 .. MetroCluster 구성과 운영 모드가 정상인지 확인합니다. '* MetroCluster show * '
@@ -54,11 +58,11 @@ cluster_A_site_A::*>metrocluster modify -auto-switchover-failure-domain auso-dis
 ----
 . ' * halt * ' 명령을 사용하여 노드를 중단합니다
 +
-** 4노드 또는 8노드 MetroCluster 구성의 경우 ' * inhibit-takeover * ' 매개 변수를 사용합니다
+** 4노드 또는 8노드 MetroCluster 구성의 경우 를 사용합니다 `*inhibit-takeover*` 및 `*skip-lif-migration-before-shutdown*` 매개 변수:
 +
 [listing]
 ----
-system node halt -node node1_SiteA -inhibit-takeover true -ignore-quorum-warnings true
+system node halt -node node1_SiteA -inhibit-takeover true -ignore-quorum-warnings true -skip-lif-migration-before-shutdown true
 ----
 ** 2노드 MetroCluster 구성의 경우 다음 명령을 사용합니다.
 +

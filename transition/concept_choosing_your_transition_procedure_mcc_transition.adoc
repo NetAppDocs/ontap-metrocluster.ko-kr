@@ -47,13 +47,24 @@ image::../media/metrocluster_fc_ip_transition_matrix_yellowdogp1.png[MetroCluste
 
 
  a| 
+8개 노드
+ a| 
+무중단
+ a| 
+새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.
+ a| 
+link:concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["절차 링크"]
+
+
+
+ a| 
 4개 노드
  a| 
 무중단
  a| 
 새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.
  a| 
-link:concept_requirements_for_fc_to_ip_transition_mcc.html["절차 링크"]
+link:concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["절차 링크"]
 
 
 

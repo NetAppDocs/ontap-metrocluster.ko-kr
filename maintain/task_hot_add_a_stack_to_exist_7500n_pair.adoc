@@ -2,16 +2,16 @@
 permalink: maintain/task_hot_add_a_stack_to_exist_7500n_pair.html 
 sidebar: sidebar 
 keywords: metrocluster, maintain, service, hot, add, stack, sas, disk, shelves, existing, pair, fibrebridge, bridge 
-summary: 사용 가능한 포트가 있는 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다. 
+summary: 사용 가능한 포트가 있는 기존 FiberBridge 7600N 또는 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다. 
 ---
-= 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택 핫 추가
+= 기존 FiberBridge 7600N 또는 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-사용 가능한 포트가 있는 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다.
+사용 가능한 포트가 있는 기존 FiberBridge 7600N 또는 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다.
 
 .시작하기 전에
 * 최신 디스크 및 디스크 쉘프 펌웨어를 다운로드해야 합니다.
@@ -22,7 +22,7 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["NetApp
 +
 https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp 다운로드: 디스크 쉘프 펌웨어"^]
 
-* FiberBridge 7500N 브리지는 연결되어 있고 사용 가능한 SAS 포트가 있어야 합니다.
+* FiberBridge 7600N 또는 7500N 브리지가 연결되어 있고 사용 가능한 SAS 포트가 있어야 합니다.
 
 
 .이 작업에 대해
@@ -54,11 +54,6 @@ node_A_1             on           on           on           default
 node_A_2             on           on           on           default
 2 entries were displayed.
 ----
-. 새 스택에 대한 스위치 포트를 비활성화합니다.
-. 각 브리지에서 FiberBridge 펌웨어를 업데이트합니다.
-+
-새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster 유지 관리 가이드 _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.
-
 . 페어의 각 브리지에서 새 스택에 연결할 SAS 포트를 활성화합니다.
 +
 'SASPortEnable_port-letter _'
@@ -208,7 +203,6 @@ NOTE: 단일 디스크 쉘프 스택의 소유권을 여러 컨트롤러로 분�
 
 NOTE: 디스크 드라이브 펌웨어 및 디스크 쉘프 펌웨어가 업데이트되고 이 작업의 검증 단계가 완료될 때까지 디스크 드라이브를 Aggregate 또는 볼륨에 추가할 수 없습니다.
 
-. 새 스택에 대한 스위치 포트를 활성화합니다.
 . ONTAP에서 MetroCluster 구성 작동을 확인합니다.
 +
 .. 시스템에 다중 경로 가 있는지 확인합니다.
@@ -231,9 +225,9 @@ MetroCluster 쇼
 +
 MetroCluster 체크 쇼
 
-.. 스위치에 대한 상태 경고를 확인합니다(있는 경우).
+.. 새 스택을 추가한 후 브리지에 대한 상태 알림이 있는지 확인합니다.
 +
-'스토리지 스위치 쇼'
+'스토리지 브리지 쇼'
 
 .. Config Advisor를 실행합니다.
 +
