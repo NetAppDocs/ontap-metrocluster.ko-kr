@@ -137,7 +137,7 @@ Node-A-1    Failed         MetroCluster check failed. Reason : MCC check showed 
 --
 'MetroCluster node show-fields node-systemid, dr-partner-systemid
 
-교체 절차 중에 이러한 시스템 ID를 새 컨트롤러 모듈의 시스템 ID로 교체합니다.
+업그레이드 절차 중에 이러한 이전 시스템 ID를 새 컨트롤러 모듈의 시스템 ID로 교체합니다.
 
 이 4노드 MetroCluster FC 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
 
@@ -175,7 +175,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 2 entries were displayed.
 ----
 --
-. 각 노드에 대한 포트 및 LIF 정보를 수집합니다.
+. 이전 각 노드에 대한 포트 및 LIF 정보를 수집합니다.
 +
 각 노드에 대해 다음 명령의 출력을 수집해야 합니다.
 

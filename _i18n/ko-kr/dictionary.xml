@@ -826,7 +826,6 @@
   <block id="dbe07d3b0e16c3d4d765887b1b29b7bd" category="list-text">Q3: node_B_1 pool1</block>
   <block id="36a6b2d82f1c99925006210a57878b24" category="list-text">4분기: node_B_2 pool1</block>
   <block id="f3a88820bdb6aec9f587dc31d6c8d2a5" category="paragraph">각 쉘프의 파티션은 루트 애그리게이트를 만드는 데 사용됩니다. 루트 애그리게이트에는 각 플렉스에 다음 파티션이 포함되어 있습니다.</block>
-  <block id="ebc41c749d217e4e33d72e9e61f637ae" category="paragraph">내부 드라이브 24개 전용</block>
   <block id="5f09ad28ed34c8a5a9d9a71b6cfab3ac" category="section-title">AFF A300 시스템에서 ADP 및 디스크 할당</block>
   <block id="eef4995b2b5cb936fd39ce523f41f36e" category="paragraph">96개 드라이브</block>
   <block id="e6668b4aac77d165570602be7eb7cec3" category="paragraph">드라이브는 쉘프별로 자동으로 할당됩니다.</block>
@@ -3194,7 +3193,6 @@
   <block id="a0e8bd8a19cc4080f31b71bf720b5cea" category="paragraph">파트너 클러스터의 'show' 명령 아래에 나열된 명령을 실행합니다.</block>
   <block id="3894726aa348d9a18ddd016a54497034" category="list-text">MetroCluster 구성에서 노드의 시스템 ID를 수집합니다.</block>
   <block id="85c4cdb0a97aae9e10995c21089e5b08" category="paragraph">'MetroCluster node show-fields node-systemid, dr-partner-systemid</block>
-  <block id="3cd530184990375ba5ce23dfb543233c" category="paragraph">교체 절차 중에 이러한 시스템 ID를 새 컨트롤러 모듈의 시스템 ID로 교체합니다.</block>
   <block id="783c0ee630587e0a74bf53bfb650c2e7" category="paragraph">이 4노드 MetroCluster FC 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
   <block id="1cd4744ff6d97a425af9a0e34512335b" category="list-text">NODE_A_1 - 이전: 4068741258</block>
   <block id="58091da607d7ce6b90f5b3bdc5df9969" category="list-text">NODE_A_2 - 이전: 4068741260</block>
@@ -3203,7 +3201,6 @@
   <block id="5239ea0712b70f8449264a817c925b60" category="paragraph">이 2노드 MetroCluster FC 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
   <block id="0c5898a1da561b8bab86de214fb4bdc3" category="list-text">노드_A_1:4068741258</block>
   <block id="a935a365a62e9c51ec22e6740bc18910" category="list-text">노드_B_1:4068741254</block>
-  <block id="3401f9f19dd2ad33d88a3a8363ed6c9b" category="list-text">각 노드에 대한 포트 및 LIF 정보를 수집합니다.</block>
   <block id="4fb12e23a9f5fb90c604b2b0c7dbf88a" category="list-text">네트워크 포트 show-node_node-name_-type physical</block>
   <block id="f6ab51154cdfc097564bafa164ac20be" category="paragraph">자세한 내용은 을 참조하십시오<block ref="9c5418b86e38fd117e0f48c25b2c7372" category="inline-link-rx"></block>.</block>
   <block id="696b64bc323bdd13e4a324fd384d294c" category="list-text">Onboard Key Manager가 구성된 경우:</block>
@@ -3416,7 +3413,6 @@
   <block id="b7f8567690eb07abe3c00b52e12c1a3d" category="paragraph">에서 이전 시스템 ID를 식별했습니다 <block ref="93760c38050596c2d594606b232570b5" category="inline-link-macro-rx"></block>.</block>
   <block id="9cf18883abd310f0e24341194095b229" category="list-text">루트 암호화가 사용되는 경우 사용 중인 ONTAP 버전에 따라 부팅 메뉴 옵션을 선택하거나 키 관리 구성에 대한 부팅 메뉴 명령을 실행합니다.</block>
   <block id="716a92112769d0f62895dc8c3a9fe47f" category="list-text">ONTAP 9.8부터 부팅 메뉴 옵션을 선택합니다.</block>
-  <block id="52b1f5429bdd6813cde83cf7eb1f6838" category="list-text">ONTAP 9.7 이전 버전에서는 부팅 메뉴 명령을 실행합니다.</block>
   <block id="8cb7388f916ea57692be4e2442a4bb6e" category="cell">부팅 메뉴 프롬프트에서 이 명령을 실행합니다...</block>
   <block id="945a7facca1121e7c5b6eed95ea1b03a" category="paragraph">recover_onboard_keymanager'입니다</block>
   <block id="e606299b52f4f296d9e1024342b77a75" category="paragraph">RECOVER_EXTERNAL_keymanager'입니다</block>
@@ -3788,7 +3784,6 @@
   <block id="4391b07561c519a0e33f2d598bbaf24e" category="paragraph">업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.</block>
   <block id="1009168ca9b613e3f4fa7884c8377f36" category="paragraph">컨트롤러 업그레이드 프로세스 중에는 이 절차에서 설명하는 연결만 변경해야 합니다.</block>
   <block id="e8b2b31f6129e480376a3948b9b9d73c" category="list-text">MetroCluster 구성 노드 시스템 ID 수집:</block>
-  <block id="3c0b6cb420c455a5a165c08c7cd7af73" category="paragraph">교체 절차 중에 이러한 시스템 ID를 컨트롤러 모듈의 시스템 ID로 교체합니다.</block>
   <block id="52d83d7ca0d0ff43bc0929d376512989" category="list-text">노드_A_1-A700:537037649</block>
   <block id="a0efecab010293ebd247221cd9cca871" category="list-text">노드_A_2-A700:537407030</block>
   <block id="c5c663e6628e19ffabcbcb01ecaa23e3" category="list-text">노드_B_1-A700:0537407114</block>
@@ -12040,7 +12035,6 @@
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
   <block id="83e579bcd33d25206730a931a64a84a1" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block>.</block>
   <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
-  <block id="cf5928613cf8b77d8355882cdec38712" category="paragraph">내부 드라이브 16개에만 해당</block>
   <block id="90cd0db781b4639c1c46407e5a4f0a93" category="paragraph">+다음 플랫폼 모델은 사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
   <block id="37e445da4970f1c0106716e8dba83be8" category="paragraph">사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 다음 플랫폼 모델을 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
@@ -12633,7 +12627,6 @@
   <block id="5f290ae29562085cc0cef01e0f484b1d" category="paragraph"><block ref="5f290ae29562085cc0cef01e0f484b1d" category="inline-link-macro-rx"></block></block>
   <block id="28d9d9e03b64356e498c630e744a9cdf" category="paragraph"><block ref="28d9d9e03b64356e498c630e744a9cdf" category="inline-link-macro-rx"></block></block>
   <block id="0feef50dfeaf08303a2284d2c2ff6eb4" category="cell">애그리게이트 재배치</block>
-  <block id="5c6fc64fa41aef579f27097f378325cb" category="paragraph">사용<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 컨트롤러 모듈 및 NVM 교체(AFF A700에서 AFF A900으로 업그레이드)</block>
   <block id="38a031e8dad2eab70ea05c570be3935e" category="paragraph"><block ref="38a031e8dad2eab70ea05c570be3935e" category="inline-link-rx"></block></block>
   <block id="b80a36d83825959bd2fd92ffd36709e2" category="paragraph"><block ref="b80a36d83825959bd2fd92ffd36709e2" category="inline-link-rx"></block></block>
   <block id="ddf68ce76cf70c3d2061e221edeb7ae1" category="paragraph"><block ref="ddf68ce76cf70c3d2061e221edeb7ae1" category="inline-link-rx"></block></block>
@@ -13243,4 +13236,14 @@
   <block id="7ec840edd23c7b1a5bd3b9167d726942" category="list-text">새 스택을 추가한 후 브리지에 대한 상태 알림이 있는지 확인합니다.</block>
   <block id="4aa202a3c65f2813f56a71404d4e0d9f" category="paragraph">8개 노드</block>
   <block id="74c873abf18bb043c43561d25adce539" category="paragraph"><block ref="74c873abf18bb043c43561d25adce539" category="inline-link-macro-rx"></block></block>
+  <block id="0159b80d745d9b405520a30a29416d2d" category="paragraph">업그레이드하기 전에 이전 노드 각각에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.</block>
+  <block id="3b2740b2f65f79e770509c9b837df2de" category="paragraph">업그레이드 절차 중에 이러한 이전 시스템 ID를 컨트롤러 모듈의 시스템 ID로 교체합니다.</block>
+  <block id="22891a1da512f437a0d8620852295bd7" category="list-text">이전 각 노드에 대한 포트 및 LIF 정보를 수집합니다.</block>
+  <block id="30872b2ff811f5e5d51bcf20468c730a" category="paragraph">"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다</block>
+  <block id="e5fb04e9be2a470a838a8ae287e6100a" category="paragraph">업그레이드 절차 중에 이러한 이전 시스템 ID를 새 컨트롤러 모듈의 시스템 ID로 교체합니다.</block>
+  <block id="9e25219bfef39dc2d94805b599244f8d" category="open-title">ONTAP 9.8 이상</block>
+  <block id="5a830b76ff5a71db59759b13f383410c" category="open-title">ONTAP 9.7 이하</block>
+  <block id="5227f75c6a1f77d9623c7a089f1e3ea7" category="paragraph">ONTAP 9.7 이전 버전의 경우 부팅 메뉴 명령을 실행합니다.</block>
+  <block id="3e3df3be76a18ca2c89904765d97f078" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.</block>
+  <block id="3963205d7c5d1cb2f000d61f16c10f1d" category="paragraph">내부 드라이브 24개</block>
 </blocks>

@@ -134,7 +134,7 @@ ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재�
  a| 
 FC
  a| 
-사용 `system controller replace` 컨트롤러 모듈 및 NVM 교체(AFF A700에서 AFF A900으로 업그레이드)
+"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다
  a| 
 9.10.1 이상
  a| 

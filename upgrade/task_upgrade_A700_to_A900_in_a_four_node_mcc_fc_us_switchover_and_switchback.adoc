@@ -35,8 +35,7 @@ https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 +
 다음 표에서는 컨트롤러 업그레이드에 지원되는 모델 매트릭스를 보여 줍니다.
 
-
-
++
 |===
 
 
@@ -44,19 +43,19 @@ https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 
  a| 
-* AFF A700
+** AFF A700
 
  a| 
-* AFF A900
+** AFF A900
 
 
 
 
  a| 
-* FAS9000
+** FAS9000
 
  a| 
-* FAS9500
+** FAS9500
 
 
 |===
@@ -331,7 +330,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 === 업그레이드하기 전에 정보를 수집합니다
 
-업그레이드하기 전에 각 노드에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
+업그레이드하기 전에 이전 노드 각각에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
 
 .이 작업에 대해
 이 작업은 기존 MetroCluster FC 구성에 대해 수행됩니다.
@@ -342,7 +341,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 'MetroCluster node show-fields node-systemid, dr-partner-systemid
 
 +
-교체 절차 중에 이러한 시스템 ID를 컨트롤러 모듈의 시스템 ID로 교체합니다.
+업그레이드 절차 중에 이러한 이전 시스템 ID를 컨트롤러 모듈의 시스템 ID로 교체합니다.
 
 +
 이 4노드 MetroCluster FC 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
@@ -367,7 +366,7 @@ dr-group-id cluster    node           node-systemid ha-partner-systemid dr-partn
 
 4 entries were displayed.
 ----
-. 각 노드에 대한 포트 및 LIF 정보를 수집합니다.
+. 이전 각 노드에 대한 포트 및 LIF 정보를 수집합니다.
 +
 각 노드에 대해 다음 명령의 출력을 수집해야 합니다.
 

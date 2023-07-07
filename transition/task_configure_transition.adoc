@@ -720,6 +720,22 @@ Do you want to continue? {y|n}: y
 
 cluster_A::>
 ....
+. 두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.
++
+'스토리지 페일오버 쇼'
+
++
+[listing]
+----
+cluster_A::> storage failover show
+                                    Takeover
+Node           Partner              Possible    State Description
+-------------- -------------------- ---------   ------------------
+Node_FC_1      Node_FC_2              true      Connected to Node_FC_2
+Node_FC_2      Node_FC_1              true      Connected to Node_FC_1
+Node_IP_1      Node_IP_2              true      Connected to Node_IP_2
+Node_IP_2      Node_IP_1              true      Connected to Node_IP_1
+----
 . MDV_CRS 볼륨을 이전 노드에서 고급 권한이 있는 새 노드로 이동합니다.
 +
 .. MDV 볼륨을 식별하기 위해 볼륨을 표시합니다.

@@ -131,6 +131,22 @@ image::../media/mcc_dr_group_b.png[MCC DR 그룹 b]
 .임시 12노드 구성
 image::../media/mcc_dr_group_c4.png[MCC DR 그룹 C4]
 
+. 두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.
++
+'스토리지 페일오버 쇼'
+
++
+[listing]
+----
+cluster_A::> storage failover show
+                                    Takeover
+Node           Partner              Possible    State Description
+-------------- -------------------- ---------   ------------------
+Node_FC_1      Node_FC_2              true      Connected to Node_FC_2
+Node_FC_2      Node_FC_1              true      Connected to Node_FC_1
+Node_IP_1      Node_IP_2              true      Connected to Node_IP_2
+Node_IP_2      Node_IP_1              true      Connected to Node_IP_1
+----
 . CRS 체적을 이동합니다.
 +
 의 단계를 수행합니다 link:../maintain/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"].
