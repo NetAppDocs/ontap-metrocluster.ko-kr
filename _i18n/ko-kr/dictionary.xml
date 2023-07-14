@@ -13246,4 +13246,9 @@
   <block id="5227f75c6a1f77d9623c7a089f1e3ea7" category="paragraph">ONTAP 9.7 이전 버전의 경우 부팅 메뉴 명령을 실행합니다.</block>
   <block id="3e3df3be76a18ca2c89904765d97f078" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.</block>
   <block id="3963205d7c5d1cb2f000d61f16c10f1d" category="paragraph">내부 드라이브 24개</block>
+  <block id="d33f2a600ba4fe43084a26e95e4908c0" category="paragraph">* 관련 정보 *</block>
+  <block id="33677e980c1bb7a6aad1c55805e512b3" category="inline-link-macro">MetroCluster 자동 강제 전환을 사용할 때의 위험과 제한사항에 대해 알아보십시오</block>
+  <block id="8358918e22c23bbc5881522d821dd13e" category="list-text"><block ref="8358918e22c23bbc5881522d821dd13e" category="inline-link-macro-rx"></block></block>
+  <block id="e3aa563f27ef718a2d0767e57ad2f0c2" category="inline-link-macro">MetroCluster IP 구성에서 MAUSO 관리에 대해 알아보십시오</block>
+  <block id="b1a9c412046cbd6accefdfa3f6f94916" category="list-text"><block ref="b1a9c412046cbd6accefdfa3f6f94916" category="inline-link-macro-rx"></block></block>
 </blocks>

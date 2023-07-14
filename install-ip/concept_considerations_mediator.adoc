@@ -67,3 +67,9 @@ MAUSO는 다음과 같은 종료 시나리오에서 * 시작되지 않습니다 
 
 
 
+
+* 관련 정보 *
+
+* link:concept-risks-limitations-automatic-switchover.html["MetroCluster 자동 강제 전환을 사용할 때의 위험과 제한사항에 대해 알아보십시오"]
+* link:../manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#mediator-assisted-automatic-unplanned-switchover-in-metrocluster-ip-configurations["MetroCluster IP 구성에서 MAUSO 관리에 대해 알아보십시오"]
+
