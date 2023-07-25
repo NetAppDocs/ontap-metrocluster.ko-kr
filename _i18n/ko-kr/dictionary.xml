@@ -13315,4 +13315,6 @@
   <block id="85488d881ebf03beb1eca3be4b5fda44" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="e78382cc6f841e7f00c97b18a2e30f41" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="5fdc7ff67ace146413ecd7d44157aca4" category="paragraph">쉘프 혼합에 대한 자세한 내용은 를 참조하십시오<block ref="532c1f47a9370f9e21538610051f3830" category="inline-link-rx"></block></block>
   <block id="2b2a5cb87d298900008c3873faf7fc40" category="sidebar">MetroCluster IP 구성에서 ADP를 사용하여 루트 애그리게이트를 마이그레이션합니다</block>
+  <block id="e868bded76541295e018b74bb15a7920" category="inline-link-macro">NVIDIA SN2100 스위치의 설치 및 구성 개요</block>
+  <block id="b86c7f3554d9472f6a1e417c7f70fb18" category="admonition">Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 <block ref="ac21c0d53d9fcd547ee85e9d73d53854" category="inline-link-macro-rx"></block></block>
 </blocks>

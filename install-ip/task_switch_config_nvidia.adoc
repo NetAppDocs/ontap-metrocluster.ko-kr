@@ -120,6 +120,10 @@ Cumulus 이미지를 적용하여 스위치를 완전히 재설정하려면 다�
 .시작하기 전에
 * 직렬 콘솔 연결을 사용하여 스위치에 연결해야 합니다.
 * Cumulus 스위치 소프트웨어 이미지는 HTTP를 통해 액세스할 수 있습니다.
++
+
+NOTE: Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-overview-sn2100-cluster.html#initial-configuration-overview["NVIDIA SN2100 스위치의 설치 및 구성 개요"^]
+
 * 명령에 대한 'SUDO'에 대한 루트 암호가 있어야 합니다.
 
 
