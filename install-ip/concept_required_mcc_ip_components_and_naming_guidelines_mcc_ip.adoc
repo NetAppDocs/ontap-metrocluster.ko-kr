@@ -220,7 +220,7 @@ AFF A320
 e0g, e0h
 
 |===
-link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자동 드라이브 할당 및 ADP 시스템에 대해 자세히 알아보십시오"]
+link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자동 드라이브 할당 및 ADP 시스템에 대해 자세히 알아보십시오"].
 
 
 

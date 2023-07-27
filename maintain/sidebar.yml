@@ -98,8 +98,6 @@ entries:
   url: "/maintain/task_replace_a_shelf_nondisruptively_in_a_mcc_fc_configuration.html"
 - title: 루트 볼륨을 새 대상으로 마이그레이션하는 시기
   url: "/maintain/concept_migrating_root_volumes_to_a_new_destination.html"
-- title: MetroCluster IP 구성에서 ADP를 사용하여 루트 애그리게이트를 마이그레이션합니다
-  url: "/maintain/task_migrating_root_agg_with_adp.html"
 - title: MetroCluster 구성에서 메타데이터 볼륨 이동
   url: "/maintain/task_move_a_metadata_volume_in_mcc_configurations.html"
 - title: MetroCluster 구성에서 클러스터의 이름을 바꿉니다
