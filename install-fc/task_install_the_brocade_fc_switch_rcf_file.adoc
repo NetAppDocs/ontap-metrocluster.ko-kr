@@ -42,18 +42,6 @@ Password: <user input>
 +
 암호를 입력하면 스위치가 구성 파일을 다운로드하고 실행합니다.
 
-. 스위치를 영구적으로 활성화합니다.
-+
-'위치cfgpersistentenable'
-
-+
-이 예에서는 FC SWITCH_A_1을 영구적으로 활성화하는 방법을 보여 줍니다.
-
-+
-[listing]
-----
-FC_switch_A_1:admin> switchcfgpersistentenable
-----
 . 구성 파일이 스위치 도메인을 설정했는지 확인합니다.
 +
 재치쇼
@@ -161,6 +149,18 @@ FC_switch_A_1:admin> portcfglongdistance 21 LS 1 -distance 30
 [listing]
 ----
 FC_switch_A_1:admin> portcfglongdistance 21 LE 1
+----
+. 스위치를 영구적으로 활성화합니다.
++
+'위치cfgpersistentenable'
+
++
+이 예에서는 FC SWITCH_A_1을 영구적으로 활성화하는 방법을 보여 줍니다.
+
++
+[listing]
+----
+FC_switch_A_1:admin> switchcfgpersistentenable
 ----
 . IP 주소가 올바르게 설정되었는지 확인합니다.
 +

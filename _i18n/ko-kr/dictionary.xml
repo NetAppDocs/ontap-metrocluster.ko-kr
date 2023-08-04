@@ -13083,7 +13083,6 @@
   <block id="86d1d4ce5bcdca5be40df18599a99316" category="paragraph">예를 들어, AFF A700 컨트롤러를 사용하여 일반 MetroCluster IP 구성을 사용하는 경우 MetroCluster를 재구성하여 NS224 쉘프를 동일한 스위치에 연결할 수 있습니다.</block>
   <block id="0a68705a55d8a79d8f02e799bbe59a07" category="inline-link-macro">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가</block>
   <block id="a26675682d61464ec64687501c97e418" category="list-text">공유 스토리지 MetroCluster IP 스위치를 사용하여 MetroCluster IP 구성에서 쉘프를 추가하거나 제거하려면 의 단계를 수행하십시오 <block ref="a6c32053e88f456cb0f33bc2215c1e48" category="inline-link-macro-rx"></block></block>
-  <block id="db1a71d927fe2da1cf5688ccd43aff7e" category="list-text">MetroCluster IP는 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.</block>
   <block id="40fbbb9d7606643acc0b72d7f28c501f" category="paragraph-title">포트 사용 워크시트</block>
   <block id="738fc50c1eb3a054e9eeacb63a7e72f3" category="paragraph">다음은 기존 스위치를 사용하여 NS224 셸프 2개를 연결하는 공유 스토리지 구성으로 MetroCluster IP 구성을 변환하는 예제 워크시트입니다.</block>
   <block id="21eb30d37360c5d8c536d0be6968f476" category="paragraph">워크시트 정의:</block>
@@ -13255,4 +13254,14 @@
   <block id="e868bded76541295e018b74bb15a7920" category="inline-link-macro">NVIDIA SN2100 스위치의 설치 및 구성 개요</block>
   <block id="b86c7f3554d9472f6a1e417c7f70fb18" category="admonition">Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 <block ref="ac21c0d53d9fcd547ee85e9d73d53854" category="inline-link-macro-rx"></block></block>
   <block id="d173c8f64c2c9e1ca6a4cc8814f4c2ec" category="paragraph"><block ref="04a1df006b1c7589273df10cf6fc5ac4" category="inline-link-macro-rx"></block>.</block>
+  <block id="7dd57dad7ab33a64ea80d69dc576695f" category="list-text">MetroCluster IP 구성은 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.</block>
+  <block id="e6b54b2dde2da7a5ff5d226fbb4c72a9" category="paragraph">IP 스위치</block>
+  <block id="c2940722935f500be2023f23b7bc5ee0" category="paragraph">스위치 교체 또는 사용 변경</block>
+  <block id="805f56a5319b24b11dbae19c7fafc0bc" category="paragraph"><block ref="805f56a5319b24b11dbae19c7fafc0bc" category="inline-link-macro-rx"></block></block>
+  <block id="7c0b97da4c84c6c87c92b1aeab30ad43" category="paragraph"><block ref="7c0b97da4c84c6c87c92b1aeab30ad43" category="inline-link-macro-rx"></block></block>
+  <block id="21ebe2933dbecca61d158de684e14ba8" category="paragraph">RCF 파일 업그레이드</block>
+  <block id="a34db179fe2b6652c4d8cfee61145d82" category="paragraph"><block ref="a34db179fe2b6652c4d8cfee61145d82" category="inline-link-macro-rx"></block></block>
+  <block id="1bb61f9065b728e677aa4a655bc12365" category="paragraph"><block ref="1bb61f9065b728e677aa4a655bc12365" category="inline-link-macro-rx"></block></block>
+  <block id="c9e8474b98ce13361ef8538974668a72" category="paragraph">스위치 이름을 바꿉니다</block>
+  <block id="27bead6811af0141e80347fb870c00c6" category="paragraph"><block ref="27bead6811af0141e80347fb870c00c6" category="inline-link-macro-rx"></block></block>
 </blocks>

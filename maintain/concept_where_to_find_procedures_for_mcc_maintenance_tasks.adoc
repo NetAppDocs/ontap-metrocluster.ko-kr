@@ -178,4 +178,44 @@ link:task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html["Broc
 
 link:task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html["Cisco FC 스위치에서 펌웨어를 업데이트하는 중입니다"]
 
+
+
+ a| 
+IP 스위치
+ a| 
+IP
+ a| 
+스위치 교체 또는 사용 변경
+ a| 
+link:task_replace_an_ip_switch.html["IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다"]
+
+
+
+ a| 
+IP
+ a| 
+펌웨어 업그레이드
+ a| 
+link:maintain/task_upgrade_firmware_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다"]
+
+
+
+ a| 
+IP
+ a| 
+RCF 파일 업그레이드
+ a| 
+link:maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다"]
+
+link:maintain/task_upgrade_rcf_files_on_cisco_ip_switches_with_cleanupfiles.html["CleanUpFiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다"]
+
+
+
+ a| 
+IP
+ a| 
+스위치 이름을 바꿉니다
+ a| 
+link:maintain/task_rename_a_cisco_ip_switch.html["Cisco IP 스위치의 이름을 바꿉니다"]
+
 |===

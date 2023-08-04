@@ -39,7 +39,7 @@ NOTE: 스위치를 교체하거나 다른 스위치로 업그레이드할 경우
 [NOTE]
 ====
 ** 공유 스토리지 MetroCluster IP 스위치를 사용하여 MetroCluster IP 구성에서 쉘프를 추가하거나 제거하려면 의 단계를 수행하십시오 link:https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_add_shelves_using_shared_storage.html["공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가"]
-** MetroCluster IP는 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.
+** MetroCluster IP 구성은 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.
 
 
 ====
