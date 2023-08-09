@@ -13258,10 +13258,11 @@
   <block id="e6b54b2dde2da7a5ff5d226fbb4c72a9" category="paragraph">IP 스위치</block>
   <block id="c2940722935f500be2023f23b7bc5ee0" category="paragraph">스위치 교체 또는 사용 변경</block>
   <block id="805f56a5319b24b11dbae19c7fafc0bc" category="paragraph"><block ref="805f56a5319b24b11dbae19c7fafc0bc" category="inline-link-macro-rx"></block></block>
-  <block id="7c0b97da4c84c6c87c92b1aeab30ad43" category="paragraph"><block ref="7c0b97da4c84c6c87c92b1aeab30ad43" category="inline-link-macro-rx"></block></block>
   <block id="21ebe2933dbecca61d158de684e14ba8" category="paragraph">RCF 파일 업그레이드</block>
-  <block id="a34db179fe2b6652c4d8cfee61145d82" category="paragraph"><block ref="a34db179fe2b6652c4d8cfee61145d82" category="inline-link-macro-rx"></block></block>
-  <block id="1bb61f9065b728e677aa4a655bc12365" category="paragraph"><block ref="1bb61f9065b728e677aa4a655bc12365" category="inline-link-macro-rx"></block></block>
   <block id="c9e8474b98ce13361ef8538974668a72" category="paragraph">스위치 이름을 바꿉니다</block>
-  <block id="27bead6811af0141e80347fb870c00c6" category="paragraph"><block ref="27bead6811af0141e80347fb870c00c6" category="inline-link-macro-rx"></block></block>
+  <block id="3c6fae50d09fb30ac9a98fc022f76605" category="paragraph"><block ref="3c6fae50d09fb30ac9a98fc022f76605" category="inline-link-macro-rx"></block></block>
+  <block id="3b6ad9086b47f9a90b8bbef5ab85d430" category="paragraph"><block ref="3b6ad9086b47f9a90b8bbef5ab85d430" category="inline-link-macro-rx"></block></block>
+  <block id="3d371ae53e0538b3e0a7ddbfb529f302" category="paragraph"><block ref="3d371ae53e0538b3e0a7ddbfb529f302" category="inline-link-macro-rx"></block></block>
+  <block id="d9d6b58e57305b9866d95c493eb0aa7a" category="paragraph"><block ref="d9d6b58e57305b9866d95c493eb0aa7a" category="inline-link-macro-rx"></block></block>
+  <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
 </blocks>
