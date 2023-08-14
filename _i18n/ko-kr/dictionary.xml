@@ -12023,7 +12023,6 @@
   <block id="f9917e026c23b682e18bcd6bc125c1b9" category="paragraph">"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;\_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
   <block id="b04e99a0adbd90ade4803bbd436b76af" category="list-text">절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://&lt;web_server_ip/path_to_web-accessible_directory&gt;/&lt;ontap_version&gt;\_image.tgz` 를 입력합니다</block>
   <block id="dbfa5994b398cd0fb3a814715f0dc252" category="list-text">부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 \ *&gt;가 나타날 때까지 프롬프트에 "yes"를 선택합니다.</block>
-  <block id="d201d18b165e21d1a9986863a5788d3c" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.1.1부터 계층 3 구성을 사용하는 경우에는 '-gateway' 매개 변수도 지정하여 MetroCluster IP 인터페이스를 만들어야 합니다. 을 참조하십시오 <block ref="babfc343bda1ae07500c981be392a72d" category="inline-link-macro-rx"></block>.</block>
   <block id="76c06c220bafe4dc7e175b4584717344" category="paragraph"><block ref="76c06c220bafe4dc7e175b4584717344" category="inline-link-macro-rx"></block></block>
   <block id="b16f070ef0ff70f134e9de232ff4d07d" category="paragraph">MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 <block ref="1f208108354e7662d904d86579319d48" category="inline-link-macro-rx"></block>. 설치 및 케이블 연결 절차를 수행할 때는 계층 3 구성에 해당하는 단계를 수행해야 합니다.</block>
   <block id="2445f74267948c10619896a5e47cd3d6" category="paragraph">의 단계를 수행합니다 <block ref="0e3caa859006182753aee07c6f57c3cf" category="inline-link-macro-rx"></block>.</block>
@@ -13265,4 +13264,5 @@
   <block id="3d371ae53e0538b3e0a7ddbfb529f302" category="paragraph"><block ref="3d371ae53e0538b3e0a7ddbfb529f302" category="inline-link-macro-rx"></block></block>
   <block id="d9d6b58e57305b9866d95c493eb0aa7a" category="paragraph"><block ref="d9d6b58e57305b9866d95c493eb0aa7a" category="inline-link-macro-rx"></block></block>
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
+  <block id="0e5e2d82a1039e41c19d2248f3b64787" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다.</block>
 </blocks>
