@@ -17,7 +17,21 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 
 == 지원되는 플랫폼 조합
 
-이 절차는 AFF A900 컨트롤러 업그레이드에 대한 AFF A300만 지원합니다.
+이 절차는 ONTAP 9.13.1 이상을 실행하는 시스템에서 다음 컨트롤러 업그레이드를 지원합니다.
+
+|===
+
+
+| 더 오래 된 컨트롤러 | 교체 컨트롤러 
+
+
+| AFF A300 | AFF A900 
+
+
+| FAS8200 | FAS9500 
+|===
+
+NOTE: 설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또는 9.11.1을 실행하는 시스템에서 위 표에 나열된 컨트롤러 업그레이드를 수행할 수 있습니다 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html["여기"].
 
 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 link:concept_choosing_controller_upgrade_mcc.html#supported-metrocluster-ip-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
 

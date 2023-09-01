@@ -13139,7 +13139,6 @@
   <block id="d87d22ecaeaff0e5d4bd4030a9e08302" category="sidebar">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP에서 컨트롤러를 업그레이드합니다. "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)</block>
   <block id="12651c133a2edc8c764efaddca32ca42" category="sidebar">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="f11af7573a10a71e1161a2099db36bcc" category="sidebar">MetroCluster IP 구성을 확장합니다</block>
-  <block id="fd069f5f1b9ec4fce867ea78d80b2049" category="paragraph">이 절차는 AFF A900 컨트롤러 업그레이드에 대한 AFF A300만 지원합니다.</block>
   <block id="f60298ca20150ed82728ebbcf934dcdd" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 점검을 통과하지 못하거나 업그레이드를 진행하지 않도록 선택하는 경우 반드시 다음을 수행해야 합니다 <block ref="27c582b1d219a53bd62704e35b9572aa" category="inline-xref-macro-rx"></block>.</block>
   <block id="cf26e00f9d9d62aac6ab045ca55c7c29" category="list-text">에서 수집한 정보를 사용합니다 <block ref="4349c160b4ba85d15c9d1b99e7fab03e" category="inline-xref-macro-rx"></block>.</block>
   <block id="a6d521ed969131c6ad881b1c930a769c" category="list-text">새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 스위치를 물리적으로 분리합니다.</block>
@@ -13265,4 +13264,11 @@
   <block id="d9d6b58e57305b9866d95c493eb0aa7a" category="paragraph"><block ref="d9d6b58e57305b9866d95c493eb0aa7a" category="inline-link-macro-rx"></block></block>
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
   <block id="0e5e2d82a1039e41c19d2248f3b64787" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다.</block>
+  <block id="6212a1ad66c5ad9d3c50380aa91aab6a" category="list-text">하드웨어 오류가 없습니다</block>
+  <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="paragraph">AFF A150</block>
+  <block id="36cbaf4511461b23b06f56ad7754e17d" category="paragraph">이 절차는 ONTAP 9.13.1 이상을 실행하는 시스템에서 다음 컨트롤러 업그레이드를 지원합니다.</block>
+  <block id="cfdade9e474e805958704ec0836f18ac" category="cell">교체 컨트롤러</block>
+  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
+  <block id="4992f0045a6913a2fb77a09884c4e55c" category="admonition">설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또는 9.11.1을 실행하는 시스템에서 위 표에 나열된 컨트롤러 업그레이드를 수행할 수 있습니다 <block ref="4254cdc4ef28ceba663ec4031c88c9dd" category="inline-link-macro-rx"></block>.</block>
+  <block id="050dafe962829ef847f34f7607e36eb3" category="list-text"><block ref="050dafe962829ef847f34f7607e36eb3" category="inline-link-macro-rx"></block></block>
 </blocks>

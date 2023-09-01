@@ -225,7 +225,7 @@ MetroCluster 구성의 두 사이트 모두에서 모든 SVM을 확인합니다.
 다음 링크를 사용하여 Tiebreaker 또는 중재자를 설치 및 구성합니다.
 
 * link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluster Tiebreaker 소프트웨어를 설치하고 구성합니다"]
-* 링크:../install-ip/concept_mediator_requirements.html
+* link:../install-ip/concept_mediator_requirements.html["ONTAP 중재자 서비스 설치 준비"]
 
 
 
