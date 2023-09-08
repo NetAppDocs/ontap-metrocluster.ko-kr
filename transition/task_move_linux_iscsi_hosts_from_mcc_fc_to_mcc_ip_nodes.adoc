@@ -56,7 +56,7 @@ vsa_1 iscsi_lf__n2_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02
 
 2 entries were displayed.
 ----
-. 인터페이스를 포함하는 SVM을 위한 ONTAP의 iSCSI 인터페이스를 나열합니다. 'iscsi interface show -vserver svm -name'
+. 인터페이스가 포함된 SVM용 ONTAP의 iSCSI 인터페이스를 나열합니다. `iscsi interface show -vserver svm-name`
 +
 [listing]
 ----
@@ -210,7 +210,8 @@ vsa_1 /vol/vsa_1_vol1/lun_linux_3 igroup_linux node_A_1-FC,node_A_2-FC,node_A_1-
 
 12 entries were displayed.
 ----
-. 호스트에서 다음 명령을 실행하여 호스트에서 SCSI 버스를 재검색하고 새로 추가된 경로를 검색합니다. ""/usr/bin/rescan-scsi-bus.sh -a
+. 를 확인합니다 `sg3-utils` 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다 `rescan-scsi-bus.sh utility not found` 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다 `rescan-scsi-bus` 명령.
+. 호스트에서 다음 명령을 실행하여 호스트에서 SCSI 버스를 다시 검색하고 새로 추가된 경로를 검색합니다. `/usr/bin/rescan-scsi-bus.sh -a`
 +
 [listing]
 ----
@@ -331,7 +332,8 @@ vsa_1 /vol/vsa_1_vol2/lun_linux_4   group_linux   node_A_1-IP,node_A_2-IP
 
 12 entries were displayed.
 ----
-. iSCSI 호스트에서 '/usr/bin/rescan-scsi-bus.sh -r' SCSI 버스를 다시 검색합니다
+. 를 확인합니다 `sg3-utils` 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다 `rescan-scsi-bus.sh utility not found` 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다 `rescan-scsi-bus` 명령.
+. iSCSI 호스트에서 SCSI 버스를 다시 검색합니다. `/usr/bin/rescan-scsi-bus.sh -r`
 +
 제거된 경로는 FC 노드의 경로입니다.
 

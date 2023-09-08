@@ -4235,7 +4235,6 @@
   <block id="1249ce19ef6180e143506b5287be8a7a" category="list-text">ICMP</block>
   <block id="19928e39d24e38d1c9928b94667fa5d5" category="list-text">두께</block>
   <block id="96f9963e25520a9011c82401920794f0" category="list-text">SNMP를 선택합니다</block>
-  <block id="40e7c640678c064d478e2a07e47eb68a" category="list-text">Telnet+ 'Get closeport' 명령어를 이용하여 특정 프로토콜이 활성화 또는 비활성화되었는지 확인할 수 있다.</block>
   <block id="9d05079a491a98497153e953bbaddaa4" category="list-text">SNMP를 사용하는 경우 set snmp enabled 명령도 실행해야 합니다.</block>
   <block id="944957367bcbba5f885d8dc885354148" category="paragraph">'* SNMP 활성화 설정 * '</block>
   <block id="2773e82b500feb0530b8577db9c276d7" category="paragraph">SNMP는 별도의 enable 명령을 필요로 하는 유일한 프로토콜입니다.</block>
@@ -4851,7 +4850,6 @@
   <block id="b29b8c83f7d8c55b39ae87067330f426" category="list-text">[[step3-cable-each-bridge] 각 브리지를 컨트롤러 모듈에 연결합니다.</block>
   <block id="4422c879aa9ea654583488de1d4d4e82" category="list-text">브리지의 FC 포트 1을 cluster_A의 컨트롤러 모듈에 있는 FC 포트에 케이블로 연결합니다</block>
   <block id="db0e7a22facf5e7460258a2022b5e9d5" category="list-text">브리지의 FC 포트 2를 cluster_B의 컨트롤러 모듈에 있는 FC 포트에 케이블로 연결합니다</block>
-  <block id="b952b3eddebea29b6169cd5bd56a3bc5" category="paragraph">컨트롤러 모듈이 4중 포트 FC 어댑터로 구성된 경우 스토리지 스택이 동일한 ASIC의 두 FC 포트에 연결되어 있는지 확인합니다. 포트 A와 포트 b는 동일한 ASIC를 공유하고, 포트 c와 포트 d는 동일한 ASIC를 공유합니다. 포트 A 및 포트 b에 쉘프 스택을 연결하지 마십시오 대신 포트 a와 포트 c를 사용하거나, ASIC에 장애가 발생할 경우 포트 b와 포트 d를 사용하여 단일 장애 지점을 방지합니다.</block>
   <block id="48dda5bb7b1f8b58b068fa47d9879c67" category="paragraph">컨트롤러 모듈이 둘 이상의 FC 어댑터로 구성된 경우 두 브리지 포트를 동일한 어댑터에 케이블로 연결하지 마십시오. 단일 장애 지점을 방지하려면 FC 포트 1을 어댑터 A에, FC 포트 2를 어댑터 B에 배포해야 합니다.</block>
   <block id="67d7a49e616a0e579f0506ada050a36b" category="image-alt">클러스터 피어링 네트워크</block>
   <block id="2d5ce426423eeeead4f35769cd8b1b27" category="inline-xref">3단계</block>
@@ -6311,7 +6309,6 @@
   <block id="c58436ceeffb789114ef5d94d2e81161" category="summary">9.5 이전 버전의 ONTAP를 사용하고 있거나 텔넷이나 기타 IP 포트 프로토콜 및 서비스를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우\(FTP, ExpressNAV, ICMP 또는 Quicknav\) 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.</block>
   <block id="ebda0461d9b282997db74027d2c545a7" category="paragraph">9.5 이전 버전의 ONTAP를 사용 중이거나 텔넷 또는 기타 IP 포트 프로토콜 및 서비스(FTP, ExpressNAV, ICMP 또는 Quicknav)를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.</block>
   <block id="a0afad98dfd82382cc1bf2c361c3df76" category="paragraph">'서비스'는 다음 중 하나를 지정할 수 있습니다.</block>
-  <block id="0e9f0a250a9d56072ce7737a3cd51f63" category="list-text">텔넷 "Get closeport" 명령을 사용하여 특정 프로토콜이 활성화되었는지 여부를 확인할 수 있습니다.</block>
   <block id="245370f7754738e7db5a3ff87aab25cc" category="summary">MetroCluster IP 스위치에서 펌웨어 업그레이드</block>
   <block id="47471aa588b43c640e780e991822eda9" category="doc">MetroCluster IP 스위치에서 펌웨어 업그레이드</block>
   <block id="666408818b617858e00b40c2eb3d365a" category="paragraph">MetroCluster IP 스위치에서 펌웨어를 업그레이드해야 할 수 있습니다.</block>
@@ -8508,21 +8505,17 @@
   <block id="aba0064857c6ce89cc764da8d55ce5c1" category="doc">FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동</block>
   <block id="73f9743e086ef8ac735d8d9a5a299535" category="list-text">MetroCluster IP 노드에서 새 FC 인터페이스(LIF) 설정:</block>
   <block id="e050f35561c7894ee0a0e945c979a806" category="list-text">필요한 경우 MetroCluster IP 노드에서 FC 타겟 퍼스낼리티에 대한 클라이언트 연결에 사용할 FC 포트를 수정합니다.</block>
-  <block id="4dbd9443241248d896c42809416cff33" category="paragraph">노드를 재부팅해야 할 수 있습니다.</block>
-  <block id="24bdd4e6fd63a2598d59b77c5076d636" category="list-text">모든 SAN 가상 서버에 대해 IP 노드에서 FC LIFS/인터페이스를 생성합니다. 선택적으로 새로 생성한 FC LIF의 WWPN이 FC SAN 스위치에 로그인되는지 확인합니다</block>
   <block id="2ea8e9b085e6487dc8f8677dad1b2007" category="list-text">MetroCluster IP 노드에서 새로 추가된 FC LIF에 대한 SAN 조닝 구성을 업데이트합니다.</block>
   <block id="46be4a0b4ce48ea62086efafc65dbbab" category="paragraph">데이터를 활성 상태로 FC SAN 클라이언트에 제공하는 LUN이 포함된 볼륨을 쉽게 이동할 수 있도록 기존 FC 스위치 영역을 업데이트하여 FC SAN 클라이언트가 MetroCluster IP 노드의 LUN에 액세스할 수 있도록 합니다.</block>
   <block id="7cbcf73edeac7dc26492a2312ceba51d" category="list-text">FC SAN 스위치(Cisco 또는 Brocade)에서 새로 추가된 FC SAN LIF의 WWPN을 영역에 추가합니다.</block>
   <block id="4c3d801187dd3bd83498ab4cc39962cb" category="list-text">조닝 변경 사항을 업데이트, 저장 및 커밋합니다.</block>
   <block id="780d54d0c3dcaee808b6d845b2755068" category="list-text">클라이언트에서 MetroCluster IP 노드의 새 SAN LIF에 대한 FC Initiator 로그인을 'sanlun lun show -p'로 확인합니다</block>
   <block id="7ff219f4bc061d194735ac6928a7e661" category="paragraph">이때 클라이언트는 MetroCluster FC 및 MetroCluster IP 노드 모두에서 FC 인터페이스를 보고 로그인해야 합니다. LUN 및 볼륨은 여전히 MetroCluster FC 노드에서 물리적으로 호스팅됩니다.</block>
-  <block id="047884ddcb740bc854ce7ccb563642b2" category="paragraph">LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 FC 노드를 통한 경로만 표시합니다. sanlun lun show -p 및 multipath -ll -d 명령의 출력에서 확인할 수 있습니다.</block>
   <block id="7903e3004ba7d039fbd00c128bd855bf" category="list-text">보고 노드를 수정하여 MetroCluster IP 노드를 추가합니다</block>
   <block id="b37c9b18c1fffc0a2c04176485cc32aa" category="list-text">SVM에서 LUN에 대한 보고 노드를 나열합니다. 'lun mapping show -vserver svm -name -fields reporting -nodes-OSType linux'</block>
   <block id="a8ac1b93cf5cb550949dfea97a05b60a" category="paragraph">표시된 보고 노드는 LUN이 FC 노드 A_1 및 A_2에 물리적으로 있기 때문에 로컬 노드입니다.</block>
   <block id="ed464784c3f6c07bdf64a809c105429b" category="list-text">MetroCluster IP 노드를 포함할 보고 노드를 추가합니다.</block>
   <block id="c74a06acbdafccea854827ab3c1389ac" category="list-text">보고 노드를 나열하고 새 노드가 있는지 확인합니다.</block>
-  <block id="7cb622a0ff86a1bb88637f6d85cf9f43" category="list-text">호스트에서 SCSI 버스를 재검색하여 새로 추가된 경로('/usr/bin/rescan-scsi-bus.sh -a')를 검색합니다</block>
   <block id="e1ee3a062911dfd9a5f37daadbab5edb" category="list-text">새로 추가된 경로 's anlun lun show -p'를 표시합니다</block>
   <block id="05eafc0806ed7438ec13d238537264c7" category="paragraph">각 LUN에는 4개의 경로가 있습니다.</block>
   <block id="42d2c72ed1b78cf2ef6ae94126ea459b" category="list-text">컨트롤러에서 LUN이 포함된 볼륨을 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다.</block>
@@ -8534,7 +8527,6 @@
   <block id="3412078ebeec5a57c10057087d69f64e" category="list-text">클라이언트에서 보고 노드를 제거하고 경로를 다시 검색합니다.</block>
   <block id="4bb7a2cf16de0e88533fe09d20e8cacf" category="list-text">Linux LUN에 대한 원격 보고 노드(MetroCluster FC 노드)를 제거합니다. 'lun mapping remove-reporting-nodes-vserver vsa_1-path * -igroup igroup igroup_linux -remote-nodes true'</block>
   <block id="f2eed01c29702a10f9291aaa3e13f368" category="list-text">LUN에 대한 보고 노드를 확인하십시오: 'lun mapping show -vserver vsa_1 -fields reporting-nodes-OSType linux'</block>
-  <block id="cb35b692ef8bc5399820e0ba83b8cb35" category="list-text">클라이언트에서 SCSI 버스를 다시 검색합니다: "/usr/bin/rescan-scsi-bus.sh -r"</block>
   <block id="8f8c9a65b706c1177309d44848cd6abe" category="paragraph">MetroCluster FC 노드의 경로는 다음과 같이 제거됩니다.</block>
   <block id="9dbd28fb326c06062ade74756b1829ab" category="list-text">MetroCluster IP 노드의 경로만 호스트에서 표시되는지 확인합니다. 'Sanlun lun show -p</block>
   <block id="0dcfa974a402a3458da069a245602792" category="list-text">필요한 경우 MetroCluster FC 노드에서 iSCSI LIF를 제거합니다.</block>
@@ -8550,7 +8542,6 @@
   <block id="0dc491dada4885353b9e96030fce6bd3" category="paragraph">SVM의 모든 iSCSI 인터페이스는 iSCSI 클라이언트를 통해 연결할 수 있어야 합니다.</block>
   <block id="acb0e987f9b29d1eab50c31f4f95aa9a" category="list-text">iSCSI 호스트 또는 클라이언트에서 호스트에서 MetroCluster FC 노드로의 기존 iSCSI 접속('iscsiadm -m session')을 식별합니다</block>
   <block id="d163a1c94db271251417ac64b011f503" category="list-text">MetroCluster IP 노드의 접속을 확인합니다. 'iscsi session show -vserver svm -name'</block>
-  <block id="47e1989be910f2a95cba13df244916de" category="list-text">인터페이스를 포함하는 SVM을 위한 ONTAP의 iSCSI 인터페이스를 나열합니다. 'iscsi interface show -vserver svm -name'</block>
   <block id="a36d68710357482d2ab6a01760a3ed96" category="list-text">iSCSI 클라이언트에서 SVM의 iSCSI IP 주소 중 하나에서 검색을 실행하여 새 타겟('iscsiadm -m discovery -t SendTargets -p iscsi -ip -address')을 검색합니다</block>
   <block id="6d5e653b42496cb611cacbd3f1622d89" category="paragraph">비 iSCSI 인터페이스를 포함하여 SVM의 모든 IP 주소에서 검색을 실행할 수 있습니다.</block>
   <block id="a461f22b707612a699bc8af021961c83" category="list-text">iSCSI 클라이언트에서 검색된 모든 주소('iscsiadm -m node -L all -T node -address -p portal -address -l')에 로그인합니다</block>
@@ -8564,7 +8555,6 @@
   <block id="ca3831196a5922b44d1bd6c3f098a76e" category="paragraph">LUN이 FC 노드_A_1-FC 및 노드_A_2-FC에 물리적으로 있기 때문에 다음 보고 노드는 로컬 노드입니다.</block>
   <block id="ada767f49af9e4d84ffa661e5dca75c7" category="list-text">MetroCluster 노드에서 보고 노드를 추가합니다. 'lun mapping add-reporting-nodes-vserver svm-name-path /vol/vsa_1_vol * /lun_linux_ * -nodes node1, node2-igroup igroup igroup igroup_linux'</block>
   <block id="7b0a84102a195b8e0f8d8953620707ba" category="list-text">MetroCluster 노드에서 새로 추가된 노드가 있는지 확인합니다. 'lun mapping show -vserver svm -name -fields reporting -nodes-OSType linux vserver path igroup reporting-nodes'</block>
-  <block id="33a3004b4b08a0f2ce598422f5d7b5f6" category="list-text">호스트에서 다음 명령을 실행하여 호스트에서 SCSI 버스를 재검색하고 새로 추가된 경로를 검색합니다. ""/usr/bin/rescan-scsi-bus.sh -a</block>
   <block id="897e36e6985e9d4eb2bed54f3762a125" category="list-text">호스트에서 다음 명령을 실행하여 새로 추가된 경로를 나열합니다. 'lun lun show -p</block>
   <block id="2a12888d763445436f29b56694f714b2" category="paragraph">각 LUN에 대해 4개의 경로가 표시됩니다.</block>
   <block id="2511d667d00c1cb6eba362bc0093b244" category="list-text">MetroCluster에서 LUN이 포함된 볼륨/볼륨을 FC에서 IP 노드로 이동합니다.</block>
@@ -8576,7 +8566,6 @@
   <block id="8ab7ca6cd6e1f79872ab4f322117ca76" category="list-text">MetroCluster IP 노드에서 Linux LUN에 대한 원격 보고 노드(MetroCluster IP 노드)를 제거합니다. 'lun mapping remove-reporting-nodes-vserver vsa_1-path * -igroup igroup igroup_linux-remote-nodes true'</block>
   <block id="05048e4fdd078ddd77168cd8270fe3f4" category="paragraph">이 경우 원격 노드는 FC 노드입니다.</block>
   <block id="e90434592ed415a541e2a6f03284ae2d" category="list-text">MetroCluster IP 노드에서 LUN에 대한 보고 노드를 확인합니다. 'lun mapping show -vserver vsa_1 -fields reporting -nodes-OSType linux'</block>
-  <block id="1e7ae3480577387e1ba55438a03a4513" category="list-text">iSCSI 호스트에서 '/usr/bin/rescan-scsi-bus.sh -r' SCSI 버스를 다시 검색합니다</block>
   <block id="d535eedec31c0a58f698132001cbc9bb" category="paragraph">제거된 경로는 FC 노드의 경로입니다.</block>
   <block id="a1dc95b2dccfd24df8e5f465b41ca7bb" category="summary">전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새로운 MetroCluster IP 구성으로 데이터를 이동합니다.</block>
   <block id="6b2201b255bf7619b40525eabcf640ce" category="doc">데이터를 새 드라이브 쉘프로 이동</block>
@@ -13271,4 +13260,14 @@
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
   <block id="4992f0045a6913a2fb77a09884c4e55c" category="admonition">설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또는 9.11.1을 실행하는 시스템에서 위 표에 나열된 컨트롤러 업그레이드를 수행할 수 있습니다 <block ref="4254cdc4ef28ceba663ec4031c88c9dd" category="inline-link-macro-rx"></block>.</block>
   <block id="050dafe962829ef847f34f7607e36eb3" category="list-text"><block ref="050dafe962829ef847f34f7607e36eb3" category="inline-link-macro-rx"></block></block>
+  <block id="96011b4dbcd722924f3c53c7252522f8" category="list-text">인터페이스가 포함된 SVM용 ONTAP의 iSCSI 인터페이스를 나열합니다.<block ref="3c78b9e1a9fef2eea89905b0233c19ad" prefix=" " category="inline-code"></block></block>
+  <block id="2af958a8143c65676390b5e251abe90a" category="list-text">를 확인합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다<block ref="b0c94f1494e22d963244e235719a2582" prefix=" " category="inline-code"></block> 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다<block ref="685ca42026debec2f3691cc5faae67d5" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="f4b770b44b57fa84a8b8fc29d6c6c8bb" category="list-text">호스트에서 다음 명령을 실행하여 호스트에서 SCSI 버스를 다시 검색하고 새로 추가된 경로를 검색합니다.<block ref="9e65638d5d13acb691c4bec2ede5a483" prefix=" " category="inline-code"></block></block>
+  <block id="d1b38e9b356895decf6917b400433e15" category="list-text">iSCSI 호스트에서 SCSI 버스를 다시 검색합니다.<block ref="06653a48f6165608045bd55ec32d95fb" prefix=" " category="inline-code"></block></block>
+  <block id="1f52bd2314f9805b0a0098b0f56a0dc4" category="paragraph">이 경우 노드를 재부팅해야 할 수 있습니다.</block>
+  <block id="ab85fd4f549c390675df901a8ef3f78e" category="list-text">모든 SAN SVM에 대해 IP 노드에서 FC LIFS/인터페이스를 생성합니다. 선택적으로 새로 생성된 FC LIF의 WWPN이 FC SAN 스위치에 로그인되어 있는지 확인합니다</block>
+  <block id="cbabd53b8268cb963ad7b2c67de0b634" category="paragraph">LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 FC 노드를 통한 경로만 표시합니다. 이는 의 출력에서 확인할 수 있습니다<block ref="41dc2c94e82e1c56ba876085acf5a974" prefix=" " category="inline-code"></block> 및<block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="7162464dfaefdef75b18029dcb1bb1f1" category="list-text">호스트에서 SCSI 버스를 다시 검색하여 새로 추가된 경로를 검색합니다.<block ref="9e65638d5d13acb691c4bec2ede5a483" prefix=" " category="inline-code"></block></block>
+  <block id="9b3bd2afae038f8967e9373560a3b6d2" category="list-text">클라이언트에서 SCSI 버스를 다시 검색합니다.<block ref="06653a48f6165608045bd55ec32d95fb" prefix=" " category="inline-code"></block></block>
+  <block id="77139d079fd912afd88e4ca7f5623393" category="paragraph">컨트롤러 모듈이 4중 포트 FC 어댑터로 구성된 경우 스토리지 스택이 같은 ASIC에 있는 두 개의 FC 포트에 연결되어 있지 않은지 확인합니다. 포트 A와 포트 b는 동일한 ASIC를 공유하고, 포트 c와 포트 d는 동일한 ASIC를 공유합니다. 포트 A 및 포트 b에 쉘프 스택을 연결하지 마십시오 대신 포트 a와 포트 c를 사용하거나, ASIC에 장애가 발생할 경우 포트 b와 포트 d를 사용하여 단일 장애 지점을 방지합니다.</block>
 </blocks>
