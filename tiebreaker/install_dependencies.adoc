@@ -1,0 +1,907 @@
+---
+permalink: tiebreaker/install_dependencies.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+---
+= MetroCluster Tiebreaker 종속성 설치
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+호스트 Linux 운영 체제에 따라 Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 MySQL 또는 MariaDB 서버를 설치해야 합니다.
+
+.단계
+. JRE를 설치합니다.
++
+<<install-java-1-8,JRE를 설치합니다>>
+
+. Vault 설치 및 구성
++
+<<install-vault,Vault 설치 및 구성>>
+
+. MySQL 또는 MariaDB 서버 설치:
++
+[cols="30,70"]
+|===
+
+
+| Linux 호스트가 인 경우 | 그러면... 
+
+
+ a| 
+Red Hat Enterprise Linux 7/CentOS 7
+ a| 
+MySQL을 설치합니다
+
+<<install-mysql-redhat,Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치>>
+
+
+
+ a| 
+Red Hat Enterprise Linux 8
+ a| 
+MariaDB를 설치합니다
+
+<<install-mariadb,Red Hat Enterprise Linux 8에 MariaDB 서버 설치>>
+
+|===
+
+
+
+
+== JRE를 설치합니다
+
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 JRE를 설치해야 합니다. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다.
+
+
+NOTE: 다음 예의 출력은 JRE 1.8.0입니다. (JRE 8).
+
+.단계
+. 고급 권한 모드로 변경할 수 있는 "루트" 사용자 또는 sudo 사용자로 로그인합니다.
++
+[listing]
+----
+
+login as: root
+root@mcctb's password:
+Last login: Fri Jan  8 21:33:00 2017 from host.domain.com
+----
+. 사용 가능한 JRE 버전 확인:
++
+`yum search openjdk`
+
+. 설치할 Tiebreaker 버전에 적합한 JRE 버전을 설치합니다.
++
+`yum install java-<version>-openjdk.x86_64`
+
++
+[listing]
+----
+[root@mcctb ~]# yum install java-1.8.0-openjdk.x86_64
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+... shortened....
+Dependencies Resolved
+
+=======================================================================
+Package               Arch   Version                 Repository    Size
+=======================================================================
+Installing:
+ java-1.8.0-openjdk  x86_64  1:1.8.0.144-0.b01.el7_4 updates      238 k
+ ..
+ ..
+Transaction Summary
+=======================================================================
+Install  1 Package  (+ 4 Dependent packages)
+
+Total download size: 34 M
+Is this ok [y/d/N]: y
+
+Installed:
+java-1.8.0-openjdk.x86_64 1:1.8.0.144-0.b01.el7_4
+Complete!
+----
+
+
+
+
+== Vault 설치 및 구성
+
+로컬 볼트 서버를 가지고 있지 않거나 사용하고자 하는 경우, Vault를 설치해야 합니다. Vault를 설치하려면 이 표준 절차를 참조하거나, 다른 지침은 Hashicorp 설치 지침을 참조하십시오.
+
+
+NOTE: 네트워크에 Vault 서버가 있는 경우, MetroCluster Tiebreaker 호스트가 볼트 설치를 사용하도록 구성할 수 있습니다. 이렇게 하면 호스트에 Vault를 설치할 필요가 없습니다.
+
+.단계
+. 로 이동합니다 `/bin` 디렉터리:
++
+[listing]
+----
+[root@mcctb] cd /bin
+----
+. 볼트 zip 파일을 다운로드합니다.
++
+[listing]
+----
+[root@mcctb /bin]#  curl -sO https://releases.hashicorp.com/vault/1.12.2/vault_1.12.2_linux_amd64.zip
+----
+. 볼트 파일의 압축을 풉니다.
++
+[listing]
+----
+[root@mcctb /bin]# unzip vault_1.12.2_linux_amd64.zip
+Archive:  vault_1.12.2_linux_amd64.zip
+  inflating: vault
+----
+. 설치를 확인합니다.
++
+[listing]
+----
+[root@mcctb /bin]# vault -version
+Vault v1.12.2 (415e1fe3118eebd5df6cb60d13defdc01aa17b03), built 2022-11-23T12:53:46Z
+----
+. 로 이동합니다 `/root` 디렉터리:
++
+[listing]
+----
+[root@mcctb /bin] cd /root
+----
+. 아래에 볼트 설정 파일을 작성합니다 `/root` 디렉토리.
++
+에서 `[root@mcctb ~]` 메시지를 표시하고, 복사하고, 다음 명령을 실행하여 를 생성합니다 `config.hcl` 파일:
+
++
+[source, cli]
+----
+# cat > config.hcl << EOF
+ storage "file" {
+  address = "127.0.0.1:8500"
+  path    = "/mcctb_vdata/data"
+ }
+ listener "tcp" {
+   address     = "127.0.0.1:8200"
+   tls_disable = 1
+ }
+EOF
+----
+. 볼트 서버 시작:
++
+[listing]
+----
+[root@mcctb ~] vault server -config config.hcl &
+----
+. Vault 주소를 내보냅니다.
++
+[listing]
+----
+[root@mcctb ~]# export VAULT_ADDR="http://127.0.0.1:8200"
+----
+. 볼트 초기화
++
+[listing]
+----
+[root@mcctb ~]# vault operator init
+2022-12-15T14:57:22.113+0530 [INFO]  core: security barrier not initialized
+2022-12-15T14:57:22.113+0530 [INFO]  core: seal configuration missing, not initialized
+2022-12-15T14:57:22.114+0530 [INFO]  core: security barrier not initialized
+2022-12-15T14:57:22.116+0530 [INFO]  core: security barrier initialized: stored=1 shares=5 threshold=3
+2022-12-15T14:57:22.118+0530 [INFO]  core: post-unseal setup starting
+2022-12-15T14:57:22.137+0530 [INFO]  core: loaded wrapping token key
+2022-12-15T14:57:22.137+0530 [INFO]  core: Recorded vault version: vault version=1.12.2 upgrade time="2022-12-15 09:27:22.137200412 +0000 UTC" build date=2022-11-23T12:53:46Z
+2022-12-15T14:57:22.137+0530 [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+2022-12-15T14:57:22.137+0530 [INFO]  core: no mounts; adding default mount table
+2022-12-15T14:57:22.143+0530 [INFO]  core: successfully mounted backend: type=cubbyhole version="" path=cubbyhole/
+2022-12-15T14:57:22.144+0530 [INFO]  core: successfully mounted backend: type=system version="" path=sys/
+2022-12-15T14:57:22.144+0530 [INFO]  core: successfully mounted backend: type=identity version="" path=identity/
+2022-12-15T14:57:22.148+0530 [INFO]  core: successfully enabled credential backend: type=token version="" path=token/ namespace="ID: root. Path: "
+2022-12-15T14:57:22.149+0530 [INFO]  rollback: starting rollback manager
+2022-12-15T14:57:22.149+0530 [INFO]  core: restoring leases
+2022-12-15T14:57:22.150+0530 [INFO]  expiration: lease restore complete
+2022-12-15T14:57:22.150+0530 [INFO]  identity: entities restored
+2022-12-15T14:57:22.150+0530 [INFO]  identity: groups restored
+2022-12-15T14:57:22.151+0530 [INFO]  core: usage gauge collection is disabled
+2022-12-15T14:57:23.385+0530 [INFO]  core: post-unseal setup complete
+2022-12-15T14:57:23.387+0530 [INFO]  core: root token generated
+2022-12-15T14:57:23.387+0530 [INFO]  core: pre-seal teardown starting
+2022-12-15T14:57:23.387+0530 [INFO]  rollback: stopping rollback manager
+2022-12-15T14:57:23.387+0530 [INFO]  core: pre-seal teardown complete
+Unseal Key 1: <unseal_key_1_id>
+Unseal Key 2: <unseal_key_2_id>
+Unseal Key 3: <unseal_key_3_id>
+Unseal Key 4: <unseal_key_4_id>
+Unseal Key 5: <unseal_key_5_id>
+
+Initial Root Token: <initial_root_token_id>
+
+
+Vault initialized with 5 key shares and a key threshold of 3. Please securely
+distribute the key shares printed above. When the Vault is re-sealed,
+restarted, or stopped, you must supply at least 3 of these keys to unseal it
+before it can start servicing requests.
+
+Vault does not store the generated root key. Without at least 3 keys to
+reconstruct the root key, Vault will remain permanently sealed!
+
+It is possible to generate new unseal keys, provided you have a quorum of
+existing unseal keys shares. See "vault operator rekey" for more information.
+----
++
+
+IMPORTANT: 이 절차의 뒷부분에서 사용할 수 있도록 키 ID와 초기 루트 토큰을 안전한 위치에 기록하고 저장해야 합니다.
+
+. 볼트 루트 토큰을 내보냅니다.
++
+[listing]
+----
+[root@mcctb ~]#  export VAULT_TOKEN="<initial_root_token_id>"
+----
+. 생성된 다섯 개의 키 중 세 개를 사용하여 Vault의 봉인을 해제합니다.
++
+를 실행해야 합니다 `vault operator unseal` 세 키 각각에 대한 명령:
+
++
+.. 첫 번째 키를 사용하여 볼트 봉인을 해제합니다.
++
+[listing]
+----
+[root@mcctb ~]# vault operator unseal
+Unseal Key (will be hidden):
+Key                Value
+---                -----
+Seal Type          shamir
+Initialized        true
+Sealed             true
+Total Shares       5
+Threshold          3
+Unseal Progress    1/3
+Unseal Nonce       <unseal_key_1_id>
+Version            1.12.2
+Build Date         2022-11-23T12:53:46Z
+Storage Type       file
+HA Enabled         false
+----
+.. 두 번째 키를 사용하여 볼트 봉인을 해제합니다.
++
+[listing]
+----
+[root@mcctb ~]# vault operator unseal
+Unseal Key (will be hidden):
+Key                Value
+---                -----
+Seal Type          shamir
+Initialized        true
+Sealed             true
+Total Shares       5
+Threshold          3
+Unseal Progress    2/3
+Unseal Nonce       <unseal_key_2_id>
+Version            1.12.2
+Build Date         2022-11-23T12:53:46Z
+Storage Type       file
+HA Enabled         false
+----
+.. 세 번째 키를 사용하여 볼트 봉인을 해제합니다.
++
+[listing]
+----
+[root@mcctb ~]# vault operator unseal
+Unseal Key (will be hidden):
+2022-12-15T15:15:00.980+0530 [INFO]  core.cluster-listener.tcp: starting listener: listener_address=127.0.0.1:8201
+2022-12-15T15:15:00.980+0530 [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=127.0.0.1:8201
+2022-12-15T15:15:00.981+0530 [INFO]  core: post-unseal setup starting
+2022-12-15T15:15:00.981+0530 [INFO]  core: loaded wrapping token key
+2022-12-15T15:15:00.982+0530 [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+2022-12-15T15:15:00.983+0530 [INFO]  core: successfully mounted backend: type=system version="" path=sys/
+2022-12-15T15:15:00.984+0530 [INFO]  core: successfully mounted backend: type=identity version="" path=identity/
+2022-12-15T15:15:00.984+0530 [INFO]  core: successfully mounted backend: type=cubbyhole version="" path=cubbyhole/
+2022-12-15T15:15:00.986+0530 [INFO]  core: successfully enabled credential backend: type=token version="" path=token/ namespace="ID: root. Path: "
+2022-12-15T15:15:00.986+0530 [INFO]  rollback: starting rollback manager
+2022-12-15T15:15:00.987+0530 [INFO]  core: restoring leases
+2022-12-15T15:15:00.987+0530 [INFO]  expiration: lease restore complete
+2022-12-15T15:15:00.987+0530 [INFO]  identity: entities restored
+2022-12-15T15:15:00.987+0530 [INFO]  identity: groups restored
+2022-12-15T15:15:00.988+0530 [INFO]  core: usage gauge collection is disabled
+2022-12-15T15:15:00.989+0530 [INFO]  core: post-unseal setup complete
+2022-12-15T15:15:00.989+0530 [INFO]  core: vault is unsealed
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.12.2
+Build Date      2022-11-23T12:53:46Z
+Storage Type    file
+Cluster Name    vault-cluster
+Cluster ID      <cluster_id>
+HA Enabled      false
+----
+
+
+. 볼트 봉인 상태가 거짓인지 확인합니다.
++
+[listing]
+----
+[root@mcctb ~]# vault status
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.12.2
+Build Date      2022-11-23T12:53:46Z
+Storage Type    file
+Cluster Name    vault-cluster
+Cluster ID      <cluster_id>
+HA Enabled      false
+----
+. Vault 서비스가 부팅될 때 시작되도록 구성합니다.
++
+.. 다음 명령을 실행합니다. `cd /etc/systemd/system`
++
+[listing]
+----
+[root@mcctb ~]#  cd /etc/systemd/system
+----
+.. 에서 `[root@mcctb system]` 프롬프트, 복사, 다음 명령을 실행하여 Vault 서비스 파일을 작성합니다.
++
+[source, cli]
+----
+# cat > vault.service << EOF
+[Unit]
+Description=Vault Service
+After=mariadb.service
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/vault server -config /root/config.hcl &
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+----
+.. 다음 명령을 실행합니다. `systemctl daemon-reload`
++
+[listing]
+----
+[root@mcctb system]#  systemctl daemon-reload
+----
+.. 다음 명령을 실행합니다. `systemctl enable vault.service`
++
+[listing]
+----
+[root@mcctb system]#  systemctl enable vault.service
+Created symlink /etc/systemd/system/multi-user.target.wants/vault.service → /etc/systemd/system/vault.service.
+----
++
+
+NOTE: MetroCluster Tiebreaker를 설치하는 동안 이 기능을 사용하라는 메시지가 표시됩니다. 볼트 밀봉을 해제하는 방법을 변경하려면 MetroCluster Tiebreaker 소프트웨어를 제거하고 다시 설치해야 합니다.
+
+
+
+
+
+
+
+== Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치
+
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다.
+
+.단계
+. 고급 권한 모드로 변경할 수 있는 루트 사용자 또는 sudo 사용자로 로그인합니다.
++
+[listing]
+----
+
+login as: root
+root@mcctb's password:
+Last login: Fri Jan  8 21:33:00 2016 from host.domain.com
+----
+. 호스트 시스템에 MySQL 리포지토리를 추가합니다.
++
+([root@mcctb~]#yum localinstall\https://dev.mysql.com/get/mysql57-community-release-el6-11.noarch.rpm`)
+
++
+[listing, subs="verbatim,quotes"]
+----
+Loaded plugins: product-id, refresh-packagekit, security, subscription-manager
+Setting up Local Package Process
+Examining /var/tmp/yum-root-LLUw0r/mysql-community-release-el6-5.noarch.rpm: mysql-community-release-el6-5.noarch
+Marking /var/tmp/yum-root-LLUw0r/mysql-community-release-el6-5.noarch.rpm to be installed
+Resolving Dependencies
+--> Running transaction check
+---> Package mysql-community-release.noarch 0:el6-5 will be installed
+--> Finished Dependency Resolution
+Dependencies Resolved
+================================================================================
+Package               Arch   Version
+                                    Repository                             Size
+================================================================================
+Installing:
+mysql-community-release
+                       noarch el6-5 /mysql-community-release-el6-5.noarch 4.3 k
+Transaction Summary
+================================================================================
+Install       1 Package(s)
+Total size: 4.3 k
+Installed size: 4.3 k
+*Is this ok [y/N]: y*
+Downloading Packages:
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : mysql-community-release-el6-5.noarch                         1/1
+  Verifying  : mysql-community-release-el6-5.noarch                         1/1
+Installed:
+  mysql-community-release.noarch 0:el6-5
+Complete!
+----
+. MySQL 57 리포지토리를 비활성화합니다.
++
+'[root@mctb~]#yum-config-manager--disable mysql57-community'
+
+. MySQL 56 리포지토리 활성화:
++
+'[root@mctb~]#yum-config-manager--enable mysql56-community'
+
+. 리포지토리 활성화:
++
+"[root@mcctb~]#yum repolist enabled|grep "mysql. * -community. *"""
+
++
+[listing]
+----
+
+mysql-connectors-community           MySQL Connectors Community            21
+mysql-tools-community                MySQL Tools Community                 35
+mysql56-community                    MySQL 5.6 Community Server           231
+----
+. MySQL 커뮤니티 서버 설치:
++
+'[root@mctb~]#yum install mysql-community-server'
+
++
+[listing, subs="verbatim,quotes"]
+----
+Loaded plugins: product-id, refresh-packagekit, security, subscription-manager
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager
+to register.
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+ .....Output truncated.....
+---> Package mysql-community-libs-compat.x86_64 0:5.6.29-2.el6 will be obsoleting
+--> Finished Dependency Resolution
+Dependencies Resolved
+==============================================================================
+Package                          Arch   Version       Repository          Size
+==============================================================================
+Installing:
+ mysql-community-client         x86_64  5.6.29-2.el6  mysql56-community  18  M
+     replacing  mysql.x86_64 5.1.71-1.el6
+ mysql-community-libs           x86_64  5.6.29-2.el6  mysql56-community  1.9 M
+     replacing  mysql-libs.x86_64 5.1.71-1.el6
+ mysql-community-libs-compat    x86_64  5.6.29-2.el6  mysql56-community  1.6 M
+     replacing  mysql-libs.x86_64 5.1.71-1.el6
+ mysql-community-server         x86_64  5.6.29-2.el6  mysql56-community  53  M
+     replacing  mysql-server.x86_64 5.1.71-1.el6
+Installing for dependencies:
+mysql-community-common          x86_64  5.6.29-2.el6  mysql56-community   308 k
+
+Transaction Summary
+===============================================================================
+Install       5 Package(s)
+Total download size: 74 M
+*Is this ok [y/N]: y*
+Downloading Packages:
+(1/5): mysql-community-client-5.6.29-2.el6.x86_64.rpm       |  18 MB     00:28
+(2/5): mysql-community-common-5.6.29-2.el6.x86_64.rpm       | 308 kB     00:01
+(3/5): mysql-community-libs-5.6.29-2.el6.x86_64.rpm         | 1.9 MB     00:05
+(4/5): mysql-community-libs-compat-5.6.29-2.el6.x86_64.rpm  | 1.6 MB     00:05
+(5/5): mysql-community-server-5.6.29-2.el6.x86_64.rpm       |  53 MB     03:42
+ -------------------------------------------------------------------------------
+Total                                              289 kB/s |  74 MB     04:24
+warning: rpmts_HdrFromFdno: Header V3 DSA/SHA1 Signature, key ID <key_id> NOKEY
+Retrieving key from file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+Importing GPG key 0x5072E1F5:
+ Userid : MySQL Release Engineering <mysql-build@oss.oracle.com>
+Package: mysql-community-release-el6-5.noarch
+         (@/mysql-community-release-el6-5.noarch)
+ From   : file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+*Is this ok [y/N]: y*
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : mysql-community-common-5.6.29-2.el6.x86_64
+....Output truncated....
+1.el6.x86_64                                                               7/8
+  Verifying  : mysql-5.1.71-1.el6.x86_64                       	           8/8
+Installed:
+  mysql-community-client.x86_64 0:5.6.29-2.el6
+  mysql-community-libs.x86_64 0:5.6.29-2.el6
+  mysql-community-libs-compat.x86_64 0:5.6.29-2.el6
+  mysql-community-server.x86_64 0:5.6.29-2.el6
+
+Dependency Installed:
+  mysql-community-common.x86_64 0:5.6.29-2.el6
+
+Replaced:
+  mysql.x86_64 0:5.1.71-1.el6 mysql-libs.x86_64 0:5.1.71-1.el6
+  mysql-server.x86_64 0:5.1.71-1.el6
+Complete!
+
+----
+. MySQL 서버 시작:
++
+'[root@mcctb~]#service mysqld start'
+
++
+[listing]
+----
+
+Initializing MySQL database:  2016-04-05 19:44:38 0 [Warning] TIMESTAMP
+with implicit DEFAULT value is deprecated. Please use
+--explicit_defaults_for_timestamp server option (see documentation
+for more details).
+2016-04-05 19:44:38 0 [Note] /usr/sbin/mysqld (mysqld 5.6.29)
+        starting as process 2487 ...
+2016-04-05 19:44:38 2487 [Note] InnoDB: Using atomics to ref count
+        buffer pool pages
+2016-04-05 19:44:38 2487 [Note] InnoDB: The InnoDB memory heap is disabled
+....Output truncated....
+2016-04-05 19:44:42 2509 [Note] InnoDB: Shutdown completed; log sequence
+       number 1625987
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER!
+To do so, start the server, then issue the following commands:
+
+  /usr/bin/mysqladmin -u root password 'new-password'
+  /usr/bin/mysqladmin -u root -h mcctb password 'new-password'
+
+Alternatively, you can run:
+  /usr/bin/mysql_secure_installation
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+.....Output truncated.....
+WARNING: Default config file /etc/my.cnf exists on the system
+This file will be read by default by the MySQL server
+If you do not want to use this, either remove it, or use the
+--defaults-file argument to mysqld_safe when starting the server
+
+                                                           [  OK  ]
+Starting mysqld:                                           [  OK  ]
+----
+. MySQL 서버가 실행 중인지 확인합니다.
++
+'[root@mcctb~]#service mysqld status'
+
++
+[listing]
+----
+
+mysqld (pid  2739) is running...
+----
+. 보안 및 암호 설정 구성:
++
+'[root@mctb~]#mysql_secure_installation'
+
++
+[listing, subs="verbatim,quotes"]
+----
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MySQL
+       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+ In order to log into MySQL to secure it, we'll need the current
+ password for the root user.  If you've just installed MySQL, and
+ you haven't set the root password yet, the password will be blank,
+ so you should just press enter here.
+
+ *Enter current password for root (enter for none):*   <== on default install
+                                                         hit enter here
+ OK, successfully used password, moving on...
+
+ Setting the root password ensures that nobody can log into the MySQL
+ root user without the proper authorization.
+
+ *Set root password? [Y/n] y*
+ *New password:*
+ *Re-enter new password:*
+ Password updated successfully!
+ Reloading privilege tables..
+  ... Success!
+
+ By default, a MySQL installation has an anonymous user, allowing anyone
+ to log into MySQL without having to have a user account created for
+ them.  This is intended only for testing, and to make the installation
+ go a bit smoother.  You should remove them before moving into a
+ production environment.
+
+ *Remove anonymous users? [Y/n] y*
+  ... Success!
+
+ Normally, root should only be allowed to connect from 'localhost'.  This
+ ensures that someone cannot guess at the root password from the network.
+
+ *Disallow root login remotely? [Y/n] y*
+  ... Success!
+
+ By default, MySQL comes with a database named 'test' that anyone can
+ access.  This is also intended only for testing, and should be removed
+ before moving into a production environment.
+
+ *Remove test database and access to it? [Y/n] y*
+  - Dropping test database...
+ ERROR 1008 (HY000) at line 1: Can't drop database 'test';
+ database doesn't exist
+  ... Failed!  Not critical, keep moving...
+  - Removing privileges on test database...
+  ... Success!
+
+ Reloading the privilege tables will ensure that all changes made so far
+ will take effect immediately.
+
+ *Reload privilege tables now? [Y/n] y*
+  ... Success!
+
+ All done!  If you've completed all of the above steps, your MySQL
+ installation should now be secure.
+
+ Thanks for using MySQL!
+
+ Cleaning up...
+----
+. MySQL 로그인이 작동하는지 확인합니다.
++
+'[root@mctb~]#mysql-u root –p'
+
++
+[listing, subs="verbatim,quotes"]
+----
+*Enter password: <configured_password>*
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 5.6.29 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+----
++
+MySQL 로그인이 작동 중이면 출력이 mysql> 프롬프트로 종료됩니다.
+
+
+
+
+
+=== MySQL 자동 시작 설정을 활성화합니다
+
+MySQL 데몬에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. MySQL 데몬을 켜면 MetroCluster Tiebreaker 소프트웨어가 상주하는 시스템이 재부팅될 경우 MySQL이 자동으로 다시 시작됩니다. MySQL 데몬이 실행되고 있지 않으면 Tiebreaker 소프트웨어가 계속 실행되지만 다시 시작할 수 없으며 구성을 변경할 수 없습니다.
+
+.단계
+. 부팅할 때 MySQL이 자동 시작되도록 설정되었는지 확인합니다.
++
+([root@mcctb~]#systemctl list-unit-files mysqld.service`)
+
++
+[listing]
+----
+UNIT FILE          State
+------------------ ----------
+mysqld.service     enabled
+
+----
++
+부팅할 때 MySQL이 자동 시작되도록 설정되지 않은 경우 MySQL 설명서를 참조하여 설치에 대한 자동 시작 기능을 활성화하십시오.
+
+
+
+
+
+== Red Hat Enterprise Linux 8에 MariaDB 서버 설치
+
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다.
+
+.시작하기 전에
+호스트 시스템은 Red Hat Enterprise Linux(RHEL) 8에서 실행 중이어야 합니다.
+
+.단계
+. 로 로그인합니다 `root` sudo를 고급 권한 모드로 설정할 수 있는 사용자 또는 사용자입니다.
+
+
+[listing]
+----
+
+login as: root
+root@mcctb's password:
+Last login: Fri Jan  8 21:33:00 2017 from host.domain.com
+----
+. MariaDB 서버 설치:
++
+'[root@mctb~]#yum install MariaDB-server.x86_64'
+
++
+[listing, subs="verbatim,quotes"]
+----
+
+[root@mcctb ~]# yum install mariadb-server.x86_64
+Loaded plugins: fastestmirror, langpacks
+ ...
+ ...
+
+===========================================================================
+ Package                      Arch   Version         Repository        Size
+===========================================================================
+Installing:
+mariadb-server               x86_64   1:5.5.56-2.el7   base            11 M
+Installing for dependencies:
+
+Transaction Summary
+===========================================================================
+Install  1 Package  (+8 Dependent packages)
+Upgrade             ( 1 Dependent package)
+
+Total download size: 22 M
+*Is this ok [y/d/N]: y*
+
+Downloading packages:
+No Presto metadata available for base warning:
+/var/cache/yum/x86_64/7/base/packages/mariadb-libs-5.5.56-2.el7.x86_64.rpm:
+Header V3 RSA/SHA256 Signature,
+key ID f4a80eb5: NOKEY] 1.4 MB/s | 3.3 MB  00:00:13 ETA
+Public key for mariadb-libs-5.5.56-2.el7.x86_64.rpm is not installed
+(1/10): mariadb-libs-5.5.56-2.el7.x86_64.rpm  | 757 kB  00:00:01
+..
+..
+(10/10): perl-Net-Daemon-0.48-5.el7.noarch.rpm|  51 kB  00:00:01
+-----------------------------------------------------------------------------------------
+Installed:
+  mariadb-server.x86_64 1:5.5.56-2.el7
+
+Dependency Installed:
+mariadb.x86_64 1:5.5.56-2.el7
+perl-Compress-Raw-Bzip2.x86_64 0:2.061-3.el7
+perl-Compress-Raw-Zlib.x86_64 1:2.061-4.el7
+perl-DBD-MySQL.x86_64 0:4.023-5.el7
+perl-DBI.x86_64 0:1.627-4.el7
+perl-IO-Compress.noarch 0:2.061-2.el7
+perl-Net-Daemon.noarch 0:0.48-5.el7
+perl-PlRPC.noarch 0:0.2020-14.el7
+
+Dependency Updated:
+  mariadb-libs.x86_64 1:5.5.56-2.el7
+Complete!
+----
+. MariaDB 서버 시작:
++
+'[root@mcctb~]#systemctl start MariaDB'
+
+. MariaDB 서버가 시작되었는지 확인합니다.
++
+'[root@mcctb~]#systemctl status MariaDB'
+
++
+[listing]
+----
+[root@mcctb ~]# systemctl status mariadb
+mariadb.service - MariaDB database server
+...
+Nov 08 21:28:59 mcctb systemd[1]: Starting MariaDB database server...
+...
+Nov 08 21:29:01 mcctb systemd[1]: Started MariaDB database server.
+----
+. 보안 및 암호 설정을 구성합니다.
++
+
+NOTE: 루트 암호를 묻는 메시지가 표시되면 암호를 비워 두고 Enter 키를 눌러 보안 및 암호 설정을 계속 구성합니다.
+
++
+'[root@mctb~]#mysql_secure_installation'
+
++
+[listing, subs="quotes"]
+----
+root@localhost systemd]# mysql_secure_installation
+
+ NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we'll need the current
+password for the root user.  If you've just installed MariaDB, and
+you haven't set the root password yet, the password will be blank,
+so you should just press enter here.
+
+Enter current password for root (enter for none):
+OK, successfully used password, moving on...
+
+Setting the root password ensures that nobody can log into the MariaDB
+root user without the proper authorisation.
+
+*Set root password? [Y/n] y*
+*New password:*
+*Re-enter new password:*
+Password updated successfully!
+Reloading privilege tables..
+ ... Success!
+
+
+By default, a MariaDB installation has an anonymous user, allowing anyone
+to log into MariaDB without having to have a user account created for
+them.  This is intended only for testing, and to make the installation
+go a bit smoother.  You should remove them before moving into a
+production environment.
+
+*Remove anonymous users? [Y/n] y*
+ ... Success!
+
+Normally, root should only be allowed to connect from 'localhost'.  This
+ensures that someone cannot guess at the root password from the network.
+
+*Disallow root login remotely? [Y/n] y*
+ ... Success!
+
+By default, MariaDB comes with a database named 'test' that anyone can
+access.  This is also intended only for testing, and should be removed
+before moving into a production environment.
+
+*Remove test database and access to it? [Y/n] y*
+ - Dropping test database...
+  ... Success!
+ - Removing privileges on test database...
+   ... Success!
+
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+
+*Reload privilege tables now? [Y/n]*
+
+ ... Success!
+
+Cleaning up...
+
+All done!  If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+
+----
+
+
+
+
+=== MariaDB 서버에 대한 자동 시작 설정을 사용하도록 설정합니다
+
+MariaDB 서버에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. 자동 시작 기능을 활성화하지 않고 MetroCluster Tiebreaker 소프트웨어가 있는 시스템을 재부팅해야 하는 경우 Tiebreaker 소프트웨어는 계속 실행되지만 MariaDB 서비스를 다시 시작할 수 없으며 구성을 변경할 수 없습니다.
+
+.단계
+. 자동 시작 서비스를 활성화합니다.
++
+'[root@mcctb~]#systemctl enable mariadb.service`
+
+. 부팅할 때 MariaDB가 자동 시작되도록 설정되었는지 확인합니다.
++
+([root@mcctb~]#systemctl list-unit-files mariadb.service`)
+
++
+[listing]
+----
+UNIT FILE          State
+------------------ ----------
+mariadb.service    enabled
+----
+

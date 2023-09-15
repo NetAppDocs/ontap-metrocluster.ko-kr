@@ -88,14 +88,42 @@ MetroCluster 쇼
       mailbox
            mediator 1.1.1.1       iqn.2012-05.local:mailbox.target.6616cd3f-9ef1-11e9-aada-00a098ccf5d8:a05e1ffb-9ef1-11e9-8f68-00a098cbca9e:1 up/up
 ....
-
-
-. MetroCluster 자동 강제 전환을 구성하려면 다음 명령을 실행합니다. `metrocluster modify -allow-automatic-forced-switchover true`
+.. AUSO(Automatic Unplanned Switchover) 장애 도메인의 상태를 확인합니다.
 +
-이 기능을 활성화하기 전에 을 검토하십시오 link:concept-risks-limitations-automatic-switchover.html["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"].
+MetroCluster 쇼
+
++
+
+NOTE: 다음 출력 예는 ONTAP 9.13.1 이상에 적용됩니다. ONTAP 9.12.1 이하 버전의 경우 AUSO 오류 도메인 상태는 이어야 합니다 `auso-on-cluster-disaster`.
+
++
+[listing]
+----
+cluster_A::> metrocluster show
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+Local: cluster_A         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain auso-on-dr-group-disaster
+Remote: cluster_B         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain auso-on-dr-group-disaster
+----
+
+
+. 필요에 따라 MetroCluster 자동 강제 전환을 구성합니다.
++
+다음 명령은 고급 권한 수준에서만 사용할 수 있습니다.
+
++
+
+IMPORTANT: 이 명령을 사용하기 전에 를 검토하십시오 link:concept-risks-limitations-automatic-switchover.html["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"].
+
++
+`metrocluster modify -allow-auto-forced-switchover true`
 
 +
 ....
-cluster_A::*> metrocluster modify -allow-automatic-forced-switchover true
+cluster_A::*> metrocluster modify -allow-auto-forced-switchover true
 ....
 

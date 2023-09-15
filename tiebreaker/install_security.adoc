@@ -1,0 +1,175 @@
+---
+permalink: tiebreaker/install_security.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+---
+= Tiebreaker 호스트 및 데이터베이스 설치를 보호합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster Tiebreaker 1.5 이상을 실행하는 구성의 경우 호스트 OS와 데이터베이스를 보호하고 강화할 수 있습니다.
+
+
+
+== 호스트를 보호합니다
+
+다음 지침은 Tiebreaker 소프트웨어가 설치된 호스트를 고정하는 방법을 보여줍니다.
+
+
+
+=== 사용자 관리 권장 사항
+
+* "루트" 사용자의 액세스를 제한합니다.
++
+** Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다. link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings["sudo 액세스 관리"^]
+** Tiebreaker 소프트웨어 관리를 위해 루트 액세스로 승격할 수 없는 사용자를 사용할 수 있습니다.
+** 설치하는 동안 "mctbgrp"라는 그룹을 만들어야 합니다. 설치 중에 생성한 호스트 루트 사용자와 사용자는 둘 다 구성원이어야 합니다. 이 그룹의 구성원만 Tiebreaker 소프트웨어를 완전히 관리할 수 있습니다.
++
+
+NOTE: 이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 또는 CLI에 액세스할 수 없습니다. 호스트에서 추가 사용자를 생성하고 해당 사용자를 그룹의 구성원으로 만들 수 있습니다. 이러한 추가 구성원은 타이브레이커 소프트웨어를 완전히 관리할 수 없습니다. 읽기 전용 액세스 권한이 있으며 모니터를 추가, 변경 또는 삭제할 수 없습니다.
+
+** 루트 사용자로 Tiebreaker를 실행하지 마십시오. Tiebreaker를 실행하려면 권한이 없는 전용 서비스 계정을 사용하십시오.
+
+
+* "/etc/snmp/snmpd.conf" 파일에서 기본 커뮤니티 문자열을 변경합니다.
+* 최소 쓰기 권한 허용. 권한이 없는 Tiebreaker 서비스 계정은 실행 가능한 바이너리 또는 구성 파일을 덮어쓸 수 있는 액세스 권한이 없어야 합니다. Tiebreaker 사용자는 로컬 Tiebreaker 스토리지(예: 통합 백엔드 스토리지) 또는 감사 로그의 디렉토리와 파일만 쓸 수 있어야 합니다.
+* 익명 사용자는 허용하지 않습니다.
++
+** AllowTcpForwarding 을 "no"로 설정하거나 Match 지시문을 사용하여 익명 사용자를 제한합니다.
+
+
+
+
+.관련 정보
+* 사용자 및 계정 관리
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_getting-started-with-managing-user-accounts_configuring-basic-system-settings["사용자 계정 관리 시작"^]
+
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/introduction-to-managing-user-and-group-accounts_configuring-basic-system-settings["사용자 및 그룹 계정 관리 소개"^]
+
+* 웹 콘솔 또는 CLI를 사용하여 사용자 및 그룹 관리
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-user-accounts-in-the-web-console-new_configuring-basic-system-settings["웹 콘솔에서 사용자 계정 관리"^]
+
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-users-from-the-command-line_configuring-basic-system-settings["명령줄에서 사용자 관리"^]
+
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/editing-user-groups-using-the-command-line_configuring-basic-system-settings["명령줄을 사용하여 사용자 그룹 편집"^]
+
+* 루트 암호 관리
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/changing-and-resetting-the-root-password-from-the-command-line_configuring-basic-system-settings["루트 암호를 관리하고 재설정합니다"^]
+
+
+
+
+
+=== 기본 호스트 보안 권장 사항
+
+* 디스크 암호화를 사용합니다
++
+** 디스크 암호화를 활성화할 수 있습니다. 이것은 FullDiskEncryption(하드웨어) 또는 HostOS(소프트웨어)에서 제공하는 암호화 또는 SVM 호스트에서 제공할 수 있습니다.
+
+
+* 들어오는 연결을 허용하는 사용하지 않는 서비스를 비활성화합니다. 사용하지 않는 서비스는 모두 비활성화할 수 있습니다. Tiebreaker 설치 시 모든 연결이 전송되므로 Tiebreaker 소프트웨어를 통해 들어오는 연결에 대한 서비스를 받을 필요가 없습니다. 기본적으로 활성화되며 비활성화할 수 있는 서비스는 다음과 같습니다.
++
+** HTTP/HTTPS 서버
+** FTP 서버
+** 텔넷, RSH, rlogin
+** NFS, CIFS 및 기타 프로토콜 액세스
+** RDP(RemoteDesktopProtocol), X11 서버, VNC 또는 기타 원격 "데스크톱" 서비스 공급자.
++
+
+NOTE: 호스트를 원격으로 관리하려면 직렬 콘솔 액세스(지원되는 경우) 또는 하나 이상의 프로토콜을 활성화해야 합니다. 모든 프로토콜을 비활성화하면 관리를 위해 호스트에 대한 물리적 액세스가 필요합니다.
+
++
+link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-system-services-with-systemctl_configuring-basic-system-settings["systemctl을 사용하여 시스템 서비스를 관리하는 방법에 대해 알아봅니다"^]
+
+
+
+* FIPS를 사용하여 호스트를 보호합니다
++
+** 호스트 OS를 FIPS 호환 모드로 설치한 다음 Tiebreaker를 설치할 수 있습니다.
++
+
+NOTE: OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 확인합니다. 수동으로 변경할 필요가 없습니다.
+
++
+자세한 내용은 을 참조하십시오 link:https://access.redhat.com/documentation/ru-ru/openjdk/8/html/configuring_openjdk_8_on_rhel_with_fips/openjdk-default-fips-configuration["OpenJDK 8의 기본 FIPS 구성"^]
+
+** 호스트를 보호하는 경우 사용자 개입 없이 호스트를 부팅할 수 있는지 확인해야 합니다. 사용자 개입이 필요한 경우 호스트가 예기치 않게 재부팅될 경우 Tiebreaker 기능을 사용하지 못할 수 있습니다. 이 경우 Tiebreaker 기능은 수동 개입 후 그리고 호스트가 완전히 부팅된 후에만 사용할 수 있습니다.
+
+
+* Shell 명령 기록을 비활성화합니다.
+* 자주 업그레이드하십시오. Tiebreaker는 적극적으로 개발되었으며 보안 픽스 및 키 길이 또는 암호 그룹 같은 기본 설정의 변경 사항을 통합하기 위해 자주 업데이트해야 합니다.
+* 새로운 릴리스의 발표 내용을 받아보려면 HashiCorp 공지 메일링 목록을 구독하고 새로운 릴리스의 최신 업데이트에 대한 자세한 내용은 Tiebreaker changelog를 방문하십시오.
+* 올바른 파일 권한을 사용하십시오. Tiebreaker 소프트웨어, 특히 중요한 정보가 포함된 소프트웨어를 시작하기 전에 항상 파일에 적절한 권한이 적용되었는지 확인하십시오.
+* 다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다. link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index["보안 강화에 대해 자세히 알아보십시오"^]
++
+** Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다. link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/index["네트워크 보안에 대해 자세히 알아보십시오"^]
+
+
+
+
+
+
+== 데이터베이스 설치를 보호합니다
+
+다음 지침은 MariaDB 10.x 데이터베이스 설치를 보호하고 강화하는 방법을 보여줍니다.
+
+* "루트" 사용자의 액세스를 제한합니다.
++
+** Tiebreaker는 전용 계정을 사용합니다. Tiebreaker를 설치하는 동안 저장(구성) 데이터를 위한 계정 및 테이블이 생성됩니다. 데이터베이스에 대한 액세스 권한을 상승시키는 유일한 시간은 설치 중에 필요합니다.
+
+
+* 설치 중에 다음과 같은 액세스 및 권한이 필요합니다.
++
+** 데이터베이스 및 테이블을 만드는 기능입니다
+** 글로벌 옵션을 생성하는 기능
+** 데이터베이스 사용자를 생성하고 암호를 설정하는 기능입니다
+** 데이터베이스 사용자를 데이터베이스 및 테이블과 연결하고 액세스 권한을 할당하는 기능입니다
++
+
+NOTE: Tiebreaker 설치 중에 지정하는 사용자 계정에는 이러한 모든 권한이 있어야 합니다. 여러 작업에 여러 사용자 계정을 사용하는 것은 지원되지 않습니다.
+
+
+
+* 데이터베이스 암호화를 사용합니다
++
+** 유휴 데이터 암호화가 지원됩니다. link:https://mariadb.com/kb/en/data-at-rest-encryption-overview/["유휴 데이터 암호화에 대해 자세히 알아보십시오"^]
+** 전송 중인 데이터는 암호화되지 않습니다. 사용 중인 데이터는 로컬 "socks" 파일 연결을 사용합니다.
+** MariaDB에 대한 FIPS 규정 준수 -- 데이터베이스에서 FIPS 규정 준수를 활성화할 필요는 없습니다. FIPS 호환 모드에서 호스트를 설치해도 충분합니다.
++
+link:https://www.mysql.com/products/enterprise/tde.html["MySQL Enterprise TDE(Transparent Data Encryption)에 대해 자세히 알아보기"^]
+
++
+
+NOTE: Tiebreaker 소프트웨어를 설치하기 전에 암호화 설정을 활성화해야 합니다.
+
+
+
+
+
+.관련 정보
+* 데이터베이스 사용자 관리
++
+link:https://dev.mysql.com/doc/refman/8.0/en/access-control.html["액세스 제어 및 계정 관리"^]
+
+* 데이터베이스 보안
++
+link:https://dev.mysql.com/doc/refman/8.0/en/security-against-attack.html["MySQL을 공격자에 대한 보안 강화"^]
+
++
+link:https://mariadb.com/kb/en/securing-mariadb/["MariaDB 보안"^]
+
+* 볼트 설치를 보호합니다
++
+link:https://developer.hashicorp.com/vault/tutorials/operations/production-hardening/["생산 강화"^]
+
+

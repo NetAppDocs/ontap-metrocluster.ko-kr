@@ -1,0 +1,74 @@
+---
+permalink: tiebreaker/whats_new.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+---
+= 새로운 기능
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 릴리스에서 향상된 MetroCluster Tiebreaker가 제공됩니다. 다음은 MetroCluster Tiebreaker의 최신 릴리스의 새로운 기능입니다.
+
+
+
+== 향상된 기능
+
+[cols="25,75"]
+|===
+
+
+| ONTAP Tiebreaker 버전 | 향상된 기능 
+
+
+ a| 
+1.5
+ a| 
+* 지원 라이브러리 업데이트
+* 보안 강화
+
+
+
+
+ a| 
+1.4
+ a| 
+* 지원 라이브러리 업데이트
+
+
+|===
+
+
+== OS 지원 매트릭스
+
+[cols="16,12,12,12"]
+|===
+
+
+| 타이브레이커 버전 | CentOS 7 - 7.9 | 레드햇 7-7.9 | 레드햇 8.1 - 8.7 
+
+
+ a| 
+1.5
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+예
+
+
+
+ a| 
+1.4
+ a| 
+예
+ a| 
+예
+ a| 
+예
+
+|===

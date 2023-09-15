@@ -1,0 +1,89 @@
+---
+permalink: tiebreaker/install_prepare.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+---
+= 요구사항 검토
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.
+
+Tiebreaker 소프트웨어를 설치하고 구성해야 합니다.
+
+
+
+== 소프트웨어 요구 사항
+
+설치하는 타이브레이커의 버전에 따라 다음 소프트웨어 요구 사항을 충족해야 합니다.
+
+[cols="1,1,1,2"]
+|===
+
+
+| ONTAP Tiebreaker 버전 | 지원되는 ONTAP 버전 | 지원되는 Linux 버전 | Java/MariaDB 요구 사항 
+
+
+ a| 
+1.5
+ a| 
+ONTAP 9.8 이상
+ a| 
+* Red Hat Enterprise Linux 8.1 - 8.7
+
+ a| 
+Red Hat Enterprise Linux 8.1 - 8.7:
+
+* MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)
+* OpenJDK 17, 18 또는 19
+
+
+
+
+ a| 
+1.4
+ a| 
+ONTAP 9.2 이상
+ a| 
+* Red Hat Enterprise Linux 8.1 - 8.7
+* Red Hat Enterprise Linux 7 - 7.9
+* CentOS 7 - 7.9 64비트
+
+ a| 
+CentOS 사용 시:
+
+* MariaDB 5.5.52.x/MySQL Server 5.6x
+* 4GB RAM
+* JRE 8을 엽니다
+
+
+Red Hat Enterprise Linux 8.1 - 8.7:
+
+* MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)
+* JRE 8
+
+|===
+
+
+== 추가 요구 사항
+
+다음과 같은 추가 요구사항을 알고 있어야 합니다.
+
+* Tiebreaker 소프트웨어는 세 번째 사이트에 설치되며, 이를 통해 ISL(Inter-Switch Link) 장애(사이트 간 링크가 다운된 경우)와 사이트 장애를 구분할 수 있습니다. MetroCluster 구성을 모니터링하기 위해 로컬 컴퓨터에 Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템이 특정 요구 사항을 충족해야 합니다.
+* MetroCluster Tiebreaker 소프트웨어 및 종속 패키지를 설치하려면 "루트" 권한이 있어야 합니다.
+* 여러 개의 Tiebreaker 모니터와 충돌을 피하기 위해 MetroCluster 구성당 하나의 MetroCluster Tiebreaker 모니터만 사용할 수 있습니다.
+* Tiebreaker 소프트웨어에 대한 NTP(Network Time Protocol) 소스를 선택할 때는 로컬 NTP 소스를 사용해야 합니다. 타이브레이커 소프트웨어는 타이브레이커 소프트웨어가 모니터링하는 MetroCluster 사이트와 동일한 소스를 사용해서는 안 됩니다.
+
+
+* 디스크 용량: 8GB
+* 방화벽:
++
+** AutoSupport 메시지 설정을 위한 직접 액세스
+** SSH(포트 22/TCP), HTTPS(포트 443/TCP) 및 ping(ICMP)
+
+
+
