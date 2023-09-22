@@ -11649,7 +11649,6 @@
   <block id="7943ea12bc74a508f6f28277851d9e5e" category="paragraph"><block ref="7943ea12bc74a508f6f28277851d9e5e" category="inline-link-rx"></block></block>
   <block id="eb737ed666dd88bebf10d994bb6b0a10" category="paragraph"><block ref="eb737ed666dd88bebf10d994bb6b0a10" category="inline-link-rx"></block></block>
   <block id="8bcabb3e778663882c95082b775c75b8" category="summary">ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다.</block>
-  <block id="3299ba9863a06ef7650cf2bb56d8651c" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다. 대부분의 구성에서는 MetroCluster 사이트의 초기 구성 중에 파티션 분할 및 디스크 할당이 자동으로 수행됩니다.</block>
   <block id="b8f6677db24add5f2af4be56aa22ea68" category="list-text">ONTAP 9.5부터 FAS 시스템에 새로운 MetroCluster IP 설치가 지원됩니다.</block>
   <block id="04be3a6c5ee416a84b497452ccd41ffd" category="list-text">ONTAP 9.4부터는 ADP용으로 구성된 컨트롤러 모듈이 지원됩니다.</block>
   <block id="5dddfa582624b89f44517d6ff5b20963" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. 두 서비스 중 하나만 MetroCluster IP 구성에 사용할 수 있습니다.</block>
@@ -12821,7 +12820,6 @@
   <block id="2ec9cf7fc01c78e918f2c1109d699ebd" category="sidebar">ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다</block>
   <block id="6dc537d2cf87cd236dd75c2694edbea6" category="image-alt">MetroCluster FC IP 전환 매트릭스 y노란색그룹1</block>
   <block id="3ba18986907ef3401544960b244376ed" category="section-title">AFF A150 및 AFF A220 시스템의 ADP 및 디스크 할당</block>
-  <block id="cab91f7159880630a5bee29aa55d9f8a" category="section-title">AFF C250 및 AFF A250 시스템에서 ADP 및 디스크 할당</block>
   <block id="3e0a52646b307379f47860044c088d60" category="paragraph">각 외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="b244c220ca2f00fdc24e97de45456f82" category="section-title">AFF C400 및 AFF A400 시스템에서 ADP 및 디스크 할당</block>
   <block id="ba9bcbab50848c136d0007b25231ce1e" category="section-title">AFF C800 및 AFF A800 시스템에서 ADP 및 디스크 할당</block>
@@ -13291,7 +13289,6 @@
   <block id="4b0a6058e6a6f2eafcc1db1a3a9573fb" category="paragraph">다음과 같은 추가 요구사항을 알고 있어야 합니다.</block>
   <block id="64f896c377dcdc9e0d5ae4809d1c3a73" category="list-text">Tiebreaker 소프트웨어에 대한 NTP(Network Time Protocol) 소스를 선택할 때는 로컬 NTP 소스를 사용해야 합니다. 타이브레이커 소프트웨어는 타이브레이커 소프트웨어가 모니터링하는 MetroCluster 사이트와 동일한 소스를 사용해서는 안 됩니다.</block>
   <block id="490414e0366b091220802d406e52c076" category="doc">새로운 기능</block>
-  <block id="f68e01d366d2b521019205564511ae77" category="paragraph">각 릴리스에서 향상된 MetroCluster Tiebreaker가 제공됩니다. 다음은 MetroCluster Tiebreaker의 최신 릴리스의 새로운 기능입니다.</block>
   <block id="c1748037d10cffabb8e95e4ccf77c613" category="section-title">향상된 기능</block>
   <block id="6a2fab1a92eaec5f3c3d9b2d28d580c4" category="list-text">지원 라이브러리 업데이트</block>
   <block id="5f6c185eb38c56187fc699dfbe62654b" category="list-text">보안 강화</block>
@@ -13317,4 +13314,8 @@
   <block id="9adb8eb34f7ed5a25405fe6af3b01c0a" category="sidebar">설치를 고정합니다</block>
   <block id="357559d73c5bb22e54ab3aeafca1013b" category="sidebar">소프트웨어 패키지를 설치합니다</block>
   <block id="3689ab983cde586722e4881cdbf1822a" category="sidebar">호스트를 업그레이드합니다</block>
+  <block id="3a234e68f5d62ce2d6b3d068c61605c3" category="paragraph">각 릴리스에서 MetroCluster Tiebreaker 소프트웨어의 향상된 기능이 제공됩니다. 다음은 MetroCluster Tiebreaker의 최신 릴리스의 새로운 기능입니다.</block>
+  <block id="5801d3e28a980df8d84e60a3eea8469c" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 ADP(고급 드라이브 파티셔닝)를 사용한 새로운 설치를 지원합니다. 대부분의 구성에서는 MetroCluster 사이트의 초기 구성 중에 파티션 분할 및 디스크 할당이 자동으로 수행됩니다.</block>
+  <block id="e6ca378bbb6d15fd110961cea50b2eb0" category="section-title">AFF C250, AFF A250 및 FAS500f 시스템에서 ADP 및 디스크 할당</block>
+  <block id="91d96627fcbee13a9d474587060d13f8" category="paragraph">AFF C250 및 AFF A250 시스템에 대한 동일한 디스크 할당 지침 및 규칙이 FAS500f 시스템에 적용됩니다. FAS500f 시스템에 디스크를 할당하는 방법은 을 참조하십시오 <block ref="62481755a241b3efc5c68e4e7dd00bb5" category="inline-xref-macro-rx"></block> 표.</block>
 </blocks>
