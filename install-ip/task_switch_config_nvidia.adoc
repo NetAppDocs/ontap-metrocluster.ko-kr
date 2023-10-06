@@ -344,3 +344,56 @@ Running Step 24: Final reboot of the switch
 ... The switch will reboot if all steps applied successfully ...
 ----
 
+
+
+
+== 사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다
+
+불필요한 상태 경고를 방지하기 위해 사용하지 않는 ISL 포트 및 포트 채널을 비활성화하는 것이 좋습니다 NetApp.
+
+. RCF 파일 배너를 사용하여 사용되지 않는 ISL 포트 및 포트 채널을 식별합니다.
++
+
+NOTE: 포트가 브레이크아웃 모드인 경우 명령에서 지정하는 포트 이름은 RCF 배너에 지정된 이름과 다를 수 있습니다. RCF 케이블 연결 파일을 사용하여 포트 이름을 찾을 수도 있습니다.
+
++
+`net show interface`
+
+. RCF 파일을 사용하여 사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다.
++
+[listing]
+----
+cumulus@mcc1-integrity-a1:mgmt:~$ sudo python3 SN2100_v2.0_IP_Switch-A1.py runCmd
+[sudo] password for cumulus:
+    Running cumulus version  : 5.4.0
+    Running RCF file version : v2.0
+Help for runCmd:
+    To run a command execute the RCF script as follows:
+    sudo python3 <script> runCmd <option-1> <option-2> <option-x>
+    Depending on the command more or less options are required. Example to 'up' port 'swp1'
+        sudo python3 SN2100_v2.0_IP_Switch-A1.py runCmd swp1 up
+    Available commands:
+        UP / DOWN the switchport
+            sudo python3 SN2100_v2.0_IP_Switch-A1.py runCmd <switchport> state <up | down>
+        Set the switch port speed
+            sudo python3 SN2100_v2.0_Switch-A1.py runCmd <switchport> speed <10 | 25 | 40 | 100 | AN>
+        Set the fec mode on the switch port
+            sudo python3 SN2100_v2.0_Switch-A1.py runCmd <switchport> fec <default | auto | rs | baser | off>
+        Set the [localISL | remoteISL] to 'UP' or 'DOWN' state
+            sudo python3 SN2100_v2.0_Switch-A1.py runCmd [localISL | remoteISL] state [up | down]
+        Set the option on the port to support DAC cables. This option does not support port ranges.
+            You must reload the switch after changing this option for the required ports. This will disrupt traffic.
+            This setting requires Cumulus 5.4 or a later 5.x release.
+            sudo python3 SN2100_v2.0_Switch-A1.py runCmd <switchport> DacOption [enable | disable]
+cumulus@mcc1-integrity-a1:mgmt:~$
+----
++
+다음 명령 예에서는 "swp14" 포트를 비활성화합니다.
+
++
+`sudo python3 SN2100_v2.0_Switch-A1.py runCmd swp14 state down`
+
++
+식별된 각 사용되지 않은 포트 또는 포트 채널에 대해 이 단계를 반복합니다.
+
+

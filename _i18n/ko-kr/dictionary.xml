@@ -862,7 +862,6 @@
   <block id="9a7bfe6d6612ba952e9111e46a3f0f4b" category="list-text"><block ref="c98dda7cf17c882c0ddf3f106df66173" category="inline-link-macro-rx"></block> (선택 사항)</block>
   <block id="2c5ae76fe324d0add4b46b2dd0383f14" category="inline-link-macro">구성을 테스트합니다</block>
   <block id="eb33313f3538c31e46b95c9d4f03ad30" category="list-text"><block ref="eb33313f3538c31e46b95c9d4f03ad30" category="inline-link-macro-rx"></block></block>
-  <block id="b1ff5704b48e42d700d43961dd415064" category="summary">상표</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
   <block id="f99aa604031e5049799e73b5c3748a98" category="paragraph"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
   <block id="965fd21ca9743b38007dc88ab0a81ba7" category="summary">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다.</block>
@@ -1674,9 +1673,6 @@
   <block id="5eee8a123c93417db687e76b152f6ef0" category="list-text">MetroCluster 2: AFF A700 플랫폼(이러한 플랫폼은 2번째 4노드 DR 그룹으로 추가됨)</block>
   <block id="7169e1403b175332b81d333c6e2af6ab" category="list-text">MetroCluster 1의 경우, FAS2750 플랫폼 테이블과 MetroCluster 1 인터페이스 행을 사용하여 Cisco 3132Q-V 스위치에 케이블을 연결합니다.</block>
   <block id="0dc1c4c70bff26c7c3ae5646d99a32f7" category="list-text">MetroCluster 2(두 번째 DR 그룹)의 경우 AFF A700 플랫폼 테이블과 MetroCluster 2 인터페이스 행을 사용하여 Cisco 3132Q-V 스위치에 케이블을 연결합니다.</block>
-  <block id="6b6c87870bfc5260f4e7282bb5b52dd6" category="summary">한글 콘텐츠에 대한 중요 정보는 netapp.com 을 참조하십시오.</block>
-  <block id="b4de17ead867a3cf0b9d11e57e562672" category="doc">기계 번역</block>
-  <block id="db9bfd81e26275c9db26e2db3ac172c3" category="paragraph"><block ref="db9bfd81e26275c9db26e2db3ac172c3" category="inline-link-rx"></block></block>
   <block id="268f1e3113b76d1115b1dfd6ea2805c8" category="paragraph">'storage disk option modify -node_node_name_-autoassign off'</block>
   <block id="9962213aeca3e8ba4538c090e761fb85" category="paragraph">다음 예에서는 "cluster01"의 네트워크 포트를 보여 줍니다.</block>
   <block id="5152b189d736ab8937cc45a67d7606a8" category="paragraph">다음 예에서는 "SVMcluster01" 시스템의 페일오버 그룹 "intercluster01"에 포트 "e0e" 및 "e0f"를 할당합니다.</block>
@@ -1808,14 +1804,6 @@
   <block id="f3a7480e0a79ed83429e832d5c0bcfa4" category="paragraph"><block ref="f3a7480e0a79ed83429e832d5c0bcfa4" category="inline-link-rx"></block></block>
   <block id="4f0b7bb576d3c8fa91bf3496e68c038e" category="list-text">미러링된 데이터의 작동 방식</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="summary">저작권</block>
-  <block id="e10b5b38785c3a24ec75723ab75b4360" category="paragraph">Copyright © 2021 NetApp, Inc. All rights reserved. 미국에서 인쇄됨</block>
-  <block id="2275e007ee598cef266c877f9c52ee25" category="paragraph">본 문서의 어떤 부분도 저작권 소유자의 사전 서면 승인 없이는 어떠한 형식이나 수단(그래픽, 전자 또는 기계 등)으로도 저작권 소유자의 사전 서면 승인 없이 전자 검색 시스템에 저장 또는 저장.</block>
-  <block id="ce4ad2236c56cc11a838f29c8c261bf7" category="paragraph">NetApp이 저작권을 가진 자료에 있는 소프트웨어에는 아래의 라이센스와 고지 사항이 적용됩니다.</block>
-  <block id="b110bc9db113b3149cb9e2ed905d4c6c" category="paragraph">본 소프트웨어는 NetApp에 의해 "있는 그대로" 제공되며 상품성 및 특정 목적에 대한 적합성에 대한 명시적 또는 묵시적 보증을 포함하여 이에 제한되지 않고, 어떠한 보증도 하지 않습니다. NetApp은 대체품 또는 대체 서비스의 조달, 사용 불능, 데이터 손실, 이익 손실, 또는 파생적 손해(소계 물품 또는 서비스의 조달, 사용 손실, 데이터 또는 수익 손실, 계약, 엄격한 책임 또는 불법 행위(과실 또는 그렇지 않은 경우)에 관계없이 어떠한 책임도 지지 않으며, 이는 이러한 손해의 가능성을 사전에 알고 있던 경우에도 마찬가지입니다.</block>
-  <block id="4fc9b260d15698bbd988f76ca839c5b6" category="paragraph">NetApp은 본 문서에 설명된 제품을 언제든지 예고 없이 변경할 권리를 보유합니다. NetApp은 NetApp의 명시적인 서면 동의를 받은 경우를 제외하고 본 문서에 설명된 제품을 사용하여 발생하는 어떠한 문제에도 책임을 지지 않습니다. 본 제품의 사용 또는 구입의 경우 NetApp에서는 어떠한 특허권, 상표권 또는 기타 지적 재산권이 적용되는 라이센스도 제공하지 않습니다.</block>
-  <block id="87bfcb691f34a9e3fdda83480f0acf78" category="paragraph">본 설명서에 설명된 제품은 하나 이상의 미국 특허 또는 해외 특허, 해외 특허, 해외 특허, 해외 특허, 해외 특허, 해외 특허, 해외 특허, 미국 출원 중인 특허로 보호됩니다.</block>
-  <block id="464821ce353b86f770de0d09b5f5aabe" category="paragraph">여기에 포함된 데이터는 상업용 품목(FAR 2.101에 정의)에 해당하며 NetApp, Inc의 독점 자산입니다 정부는 데이터가 제공된 미국 계약과 관련하여 해당 계약을 지원하는 데에만 데이터에 대한 전 세계적으로 비독점적이고 양도할 수 없으며 재사용이 불가능하며 데이터를 제공한 정부 계약입니다. 여기에 제공된 경우를 제외하고 데이터는 사용, 공개, 재생산, 수정, 수행 등의 할 수 또는 NetApp, Inc.의 사전 서면 승인 없이 표시됩니다. 미국 국방부에 대한 정부 라이선스는 DFARS 조항 252.227-7015(b)에 명시된 권한으로 제한됩니다.</block>
-  <block id="e9f56eb126455869bdb213c6b8827217" category="summary">저작권, 상표 및 기계 번역</block>
   <block id="01fe01722f1775c1b67e7b20a14951de" category="summary">ONTAP 9.9.1부터 MetroCluster IP 구성은 IP 라우팅(계층 3) 백엔드 연결로 구현할 수 있습니다.</block>
   <block id="4b7a16d6d162a666fd84016cdf343a72" category="paragraph">MetroCluster 백엔드 스위치는 라우팅된 IP 네트워크에 직접 연결됩니다(다음 간단한 예에 표시된 것처럼). 또는 다른 개입 스위치를 통해 연결됩니다.</block>
   <block id="39a69537fd3d24cb81ea2bc0e26adec5" category="image-alt">MCC layer3 백엔드</block>
@@ -2122,7 +2110,6 @@
   <block id="dd369bd80b51fade2a8040849d0cdfb3" category="list-text">모든 모니터를 관찰자 모드로 변경합니다.</block>
   <block id="364ba5b8b3d13bcb103f29814c8bdc8b" category="list-text">Tiebreaker 호스트를 업그레이드하려면 다음 절차의 모든 단계를 따르십시오.</block>
   <block id="3e3282862342655e70b0b4d411fbb78b" category="list-text">관찰자 모드를 비활성화하여 모든 모니터를 다시 온라인 모드로 전환합니다.</block>
-  <block id="a93bc0a57623c2facaa010825c808507" category="paragraph"><block ref="a93bc0a57623c2facaa010825c808507" category="inline-link-rx"></block></block>
   <block id="a89d71cea914c12a8560cf535aa946c5" category="list-text">모든 MetroCluster 설명서</block>
   <block id="2839ce8da1b91633a5faa834ae8e86da" category="inline-link">NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster</block>
   <block id="a310e23a4d771cf01d8f1b1cad705ade" category="list-text">MetroCluster 구성 및 작동에 대한 기술적 개요</block>
@@ -2244,8 +2231,6 @@
   <block id="21e1288545b5e4bcd71ed959fe5b58cb" category="paragraph">Tiebreaker CLI는 Tiebreaker 소프트웨어를 원격으로 구성하고 MetroCluster 구성을 모니터링할 수 있는 명령을 제공합니다.</block>
   <block id="90057e5e4627dddcd3c317f85b5cdf1c" category="paragraph">CLI 명령 프롬프트는 NetApp MetroCluster tiebreaker:::&gt; 로 표시됩니다.</block>
   <block id="eaa918da98f1c1c51821025d29a35cf3" category="paragraph">man 페이지는 프롬프트에 해당 명령 이름을 입력하여 CLI에서 사용할 수 있습니다.</block>
-  <block id="456a31391b752801562536d0f9695aad" category="paragraph">Copyright © 2020 NetApp, Inc. All rights reserved. 미국에서 인쇄됨</block>
-  <block id="f434e67fe7c948db94749474e31b44c4" category="summary">저작권 및 상표</block>
   <block id="a386c9fa441b3fe3c6e80b9d41240b0a" category="summary">MetroCluster Tiebreaker 소프트웨어는 MetroCluster 구성 상태를 모니터링하고, NetApp 고객 지원에 전송되는 SNMP 이벤트와 트랩을 평가하고, 모니터링 작업의 상태를 확인할 수 있도록 함으로써 복구 프로세스를 자동화합니다.</block>
   <block id="c01a785ae5fde9a2ca584e4698cbfda1" category="doc">MetroCluster 구성 모니터링</block>
   <block id="e549cde0735c7d730ee3af36acfff1f0" category="section-title">AutoSupport 구성</block>
@@ -2418,7 +2403,6 @@
   <block id="ae93f8db79e804687f665cca18aeaf96" category="list-text">필요에 따라 클러스터 네트워크 연결을 케이블로 연결합니다.</block>
   <block id="08d765882f3d558992e145feaf1e7b56" category="list-text">클러스터 연결을 위한 컨트롤러 모듈의 포트를 식별합니다.</block>
   <block id="71cce47db286c6aa128117deeafa4fa5" category="list-text">스위치 클러스터를 구성하는 경우 클러스터 네트워크 스위치에서 사용할 포트를 식별합니다.</block>
-  <block id="9d568d2bce9df96d5cd0c80e9752fafc" category="paragraph">사용 중인 스위치에 따라 Cisco 스위치_,_NetApp 10G 클러스터 모드 스위치 설치 가이드_또는_NetApp 1G 클러스터 모드 스위치 설치 가이드_에 대한 _Data ONTAP 스위치 설정 가이드를 참조하십시오.</block>
   <block id="0ca1ffae445c35f0997cbf9bb3edfd18" category="list-text">클러스터 포트에 케이블 연결:</block>
   <block id="ac9d5901ac51a7a9e98d7f8c6c0740f1" category="cell">클러스터가...</block>
   <block id="fadb571b21e3b8d292a9bfb891aca2ba" category="paragraph">스위치가 없는 2노드 클러스터</block>
@@ -3641,7 +3625,6 @@
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="summary">새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.</block>
   <block id="fd1f71815b5abfc5d58a282353d2ba84" category="doc">새 케이블 연결 레이아웃 결정</block>
   <block id="6485f9afbf9c5f34e988054e67e3b142" category="paragraph">이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.</block>
-  <block id="9846b9bd1d098858cca0855cc4e56c18" category="paragraph">FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 가이드에 설명된 용법과 일치해야 합니다.</block>
   <block id="cba784dbb6dad30cadc1fcb2d1b5ee81" category="paragraph"><block ref="cba784dbb6dad30cadc1fcb2d1b5ee81" category="inline-link-rx"></block></block>
   <block id="19df577c80891b37cfa2f1b29c518f6e" category="paragraph">8노드 구성에는 2개의 4노드 DR 그룹으로 구성된 8개 노드가 포함됩니다.</block>
   <block id="efe4097a762524c1e1628fcad46084ae" category="image-alt">MCC DR 그룹 8개 노드</block>
@@ -4890,8 +4873,6 @@
   <block id="56d23b4bd36ea7e836bbc1283db551b3" category="paragraph">E-Series 스토리지 어레이 LUN을 사용하는 확장 MetroCluster 구성에서는 스토리지 컨트롤러와 스토리지 어레이를 직접 연결할 수 있습니다. 다른 스토리지 LUN과 달리 FC 스위치는 필요하지 않습니다.</block>
   <block id="3194674804f66d71138f3d227b29f143" category="paragraph">를 클릭합니다 <block ref="58ed8621fbf888b6b052231ede94da3e" category="inline-link-macro-rx"></block> 기술 자료 문서에서는 E-Series 어레이 LUN의 구성 예를 제공합니다.</block>
   <block id="43441b39bffebee3ed9f59ea9dc91306" category="image-alt">워크플로우 하드웨어 설치 및 구성 2노드 SAS 연결</block>
-  <block id="5621b41b86ecc6119cef6c570390e2c4" category="summary">Stretch MetroCluster 설치 및 구성에 대한 저작권 정보.</block>
-  <block id="a4cef338a5507901a886ba7a9f2c3930" category="summary">Stretch MetroCluster 설치 및 구성에 대한 저작권, 상표 및 기계 번역.</block>
   <block id="54ce61bb83aa359dcf6fd5be3a23f0e8" category="summary">MetroCluster 구성에는 다양한 하드웨어 구성요소가 필요합니다. 편리함과 명확성을 위해 MetroCluster 설명서 전반에 걸쳐 구성 요소의 표준 이름이 사용됩니다. 한 사이트는 사이트 A라고 하며 다른 사이트는 사이트 B라고 합니다</block>
   <block id="7c53c51d939566adc8b93c1646e124e6" category="doc">2노드 SAS 연결 스트레치 구성에 필요한 MetroCluster 하드웨어 구성요소 및 명명 지침</block>
   <block id="e5365d20f1684376de1caa0543ccf275" category="paragraph">MetroCluster 구성의 하드웨어 이중화 때문에 각 사이트에 두 가지 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.</block>
@@ -5326,7 +5307,6 @@
   <block id="3350bc81a5e3e697ff11e363a99fa50c" category="paragraph">다음 예에서는 교체 스위치의 케이블이 이전 스위치와 같다고 가정합니다.</block>
   <block id="8271f912986358a975ab52f4b2f36620" category="list-text">조닝이 올바르게 구성되어 있는지 'Zone을 표시합니다'</block>
   <block id="48f7e98210cfd8503c0c0617c1918b1b" category="paragraph">다음 출력 예에서는 세 개의 영역을 보여 줍니다.</block>
-  <block id="abf5633c4666f2c2f9ee92883952b686" category="doc">상표 정보</block>
   <block id="7973f5d14899037a87987aa43fdfe835" category="summary">스위치백 작업을 위해 MetroCluster IP 구성을 준비하려면 특정 작업을 수행해야 합니다.</block>
   <block id="281d3052f468c5814a71ad0a6ed1db8d" category="doc">MetroCluster IP 구성에서 스위치백을 준비합니다</block>
   <block id="cc7819055cde3194bb3b136bad5cf58d" category="paragraph">nbsp(&amp;nbsp);</block>
@@ -5666,8 +5646,6 @@
   <block id="dd29b77c9462badc974346cf86d8651f" category="doc">재해 사이트에서 장비 전원 켜기(MetroCluster IP 구성)</block>
   <block id="7ffdc0d791b0895283fb9a6afab7c000" category="paragraph">재해 사이트에서 디스크 쉘프 및 MetroCluster IP 스위치 구성 요소의 전원을 켭니다. 재해 사이트의 컨트롤러 모듈은 LOADER 프롬프트에서 그대로 유지됩니다.</block>
   <block id="22cf71b4afc2e8b46729eed2988cdcf4" category="list-text">MetroCluster IP 스위치가 아직 켜져 있지 않은 경우 켭니다.</block>
-  <block id="00ff6cb65975cb5036856052734543f1" category="doc">저작권 정보</block>
-  <block id="b8bf3a077651caf89f45b81a997cd4f8" category="paragraph">권리 제한 표시: 정부에 의한 사용, 복제 또는 공개에는 DFARS 252.277-7103(1988년 10월) 및 FAR 52-227-19(1987년 6월)의 기술 데이터 및 컴퓨터 소프트웨어의 권리(Rights in Technical Data and Computer Software) 조항의 하위 조항 (c)(1)(ii)에 설명된 제한사항이 적용됩니다.</block>
   <block id="0c8055e0791cc36196ae36911bd50891" category="summary">남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 연결을 복구해야 합니다.</block>
   <block id="38d34cbc1563089582d501fa33fc8431" category="doc">정상적인 노드에서 재해 사이트로 연결 복원(MetroCluster IP 구성)</block>
   <block id="0a45c53381e4d9658ac23143a94b0959" category="list-text">DR 그룹의 남아 있는 두 노드에 iSCSI 이니시에이터를 연결합니다.</block>
@@ -6666,7 +6644,6 @@
   <block id="b57004775c4d348fa434a0ee51cb3d83" category="summary">MetroCluster 구성에서 MetroCluster 관련 하드웨어 구성요소를 유지할 수 있습니다.</block>
   <block id="1b90568b607149e86214f36f7e1c89a5" category="paragraph">다음 절차를 사용하여 MetroCluster 구성에서 MetroCluster 관련 하드웨어 구성요소를 유지할 수 있습니다.</block>
   <block id="a57ca36aaadd79a0f7796b97ef93ea4b" category="paragraph">MetroCluster 시스템의 서비스 절차에는 드라이브 쉘프, IP 스위치, FC 스위치, FC-to-SAS 브리지 및 SAS 케이블에 대한 펌웨어 업그레이드 및 하드웨어 교체 절차가 포함됩니다.</block>
-  <block id="49f90e35c32b05006940aa496079571b" category="summary">MetroCluster 구성 요소 유지 관리를 위한 상표 정보.</block>
   <block id="0f03e15eba6bd2b5d72c3bf12b9e6464" category="summary">성능을 저하시키지 않고 스토리지를 증가하려는 경우 디스크 쉘프를 핫 추가할 수 있습니다.</block>
   <block id="85c019b69442635697fc1b5b3f6cfad3" category="inline-xref-macro">SAS 디스크 쉘프 핫 추가 준비</block>
   <block id="5c96ab4a94ce2c03e50e3170dc50e8be" category="list-text">쉘프를 핫 애드할 경우 환경은 다음 시나리오 중 하나를 충족해야 합니다.</block>
@@ -7490,7 +7467,6 @@
   <block id="0da89a692d93366ccff2aa62afc43ca9" category="list-text">브리지 설정: + 'SaveConfiguration'을 저장합니다</block>
   <block id="fa76faa2bc68c42d3d664aab14f9b476" category="paragraph">다음 예는 SAS 포트 C와 D가 비활성화되어 있음을 보여줍니다. 별표가 더 이상 나타나지 않으면 구성이 저장되었음을 나타냅니다.</block>
   <block id="7692cf69e09d1b6c2d8bea7841918e4c" category="list-text">하단 FC-to-SAS 브리지에서 이전 단계를 반복합니다.</block>
-  <block id="d9e400dd9ded7f29f3d83e3af80e5739" category="summary">MetroCluster 구성 요소를 유지 관리하기 위한 기계 번역.</block>
   <block id="030887e8b58ec755fe20ef7fbcdc9495" category="summary">브리지로 연결되는 전원 공급 장치 모듈의 상태가 변경되면 전원 공급 장치 모듈을 분리하고 설치할 수 있습니다.</block>
   <block id="0ea60b406b044af50baf856e62b54dea" category="paragraph">브리지의 LED를 통해 전원 공급 장치 모듈의 상태 변화를 확인할 수 있습니다. 또한 ExpressNAV GUI 및 브리지 CLI, 직렬 포트 또는 텔넷을 통해 전원 공급 장치 모듈의 상태를 볼 수 있습니다.</block>
   <block id="f9a006e76305c853a36326e90e0bbbd8" category="list-text">이 절차는 NDO(무중단)이며 완료하는 데 약 15분이 소요됩니다.</block>
@@ -7595,8 +7571,6 @@
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
   <block id="c58c2c8b494a438765beae02806faf3a" category="paragraph">스위치 공급업체의 단계를 따르십시오.</block>
   <block id="97a377942f4f2e5cbecdba36cbfb77ea" category="inline-link-macro">Broadcom IP RCF 파일 다운로드 및 설치</block>
-  <block id="aa9dd1542ced8b74553b49591df08b7f" category="summary">MetroCluster 구성 요소 유지 관리에 대한 저작권.</block>
-  <block id="16573a1c176c6843c144993b6e9d5686" category="summary">에 대한 저작권, 상표 및 기계 번역은 MetroCluster 구성 요소를 유지 관리합니다.</block>
   <block id="695e87d61d65625619e3a56919865a2c" category="list-text">최신 디스크 및 디스크 쉘프 펌웨어를 다운로드해야 합니다.</block>
   <block id="8b82688b3d28b8ce8fbcbb8c09b13ce3" category="list-text">MetroCluster 구성의 모든 디스크 쉘프(기존 쉘프)에서 동일한 펌웨어 버전을 실행해야 합니다. 하나 이상의 디스크 또는 쉘프에서 최신 펌웨어 버전을 실행하지 않는 경우 새 디스크 또는 쉘프를 연결하기 전에 펌웨어를 업데이트합니다.</block>
   <block id="8d372617f83f8c0b84203a0c342601a0" category="paragraph">ATTO ExpressNAV GUI를 사용하여 브리지를 구성 및 관리하고 브리지 펌웨어를 업데이트할 수 있습니다. ATTO Quicknav 유틸리티를 사용하여 브리지 이더넷 관리 1 포트를 구성할 수 있습니다.</block>
@@ -9924,7 +9898,6 @@
   <block id="b70216f5078d65c8860a010a7ccdbdd8" category="list-text">FiberBridge 7600N 또는 7500N 브리지는 최대 4개의 SAS 스택을 지원합니다.</block>
   <block id="520e16a62f58f9e73a16fda005e8fe2f" category="list-text">각 스택은 IOM의 다양한 모델을 사용할 수 있습니다.</block>
   <block id="8db51e2a7c564cc042e840346cc8e77f" category="paragraph">지원되는 IOM 모듈은 실행 중인 ONTAP 버전에 따라 다릅니다.</block>
-  <block id="5400fbe37f724313e0008bfdb06f2ae6" category="paragraph">이 가이드에서 예제로 사용되는 권장 이름은 아래 그림과 같이 브리지가 연결되는 컨트롤러 모듈 및 스택을 식별합니다.</block>
   <block id="9df6f19f1ce5cd3044ae4a6c42240fb1" category="paragraph">MetroCluster 구성에는 각 사이트에서 최소 구성이 필요합니다.</block>
   <block id="6b921594086cf3be722aefbdc64a10c1" category="paragraph">예를 들어 4노드 MetroCluster 구성에서는 각 사이트에 2개의 노드가 있고 각 사이트에 4개의 풀이 필요합니다.</block>
   <block id="d963cd5338d788b5f26861ebd6ae6f27" category="paragraph">쉘프 혼합에 대한 자세한 내용은 다음을 참조하십시오.<block ref="96c52bfd2d59063b848ae852888ce36d" category="inline-link-rx"></block></block>
@@ -10818,8 +10791,6 @@
   <block id="c5a261fd95941fcb6c642a92e85a9c7f" category="list-text">컨트롤러 페일오버가 정상 상태인지 확인합니다. + "CF 상태"</block>
   <block id="303ac55e6ca0222f3e4f7511c42b6d50" category="list-text">디스크가 표시되는지 확인합니다. +'Storage show disk –p'</block>
   <block id="a4624bf4e4cb6a15bc97fd7c39d6b621" category="list-text">애그리게이트가 정상 상태인지 확인합니다. + "집계 상태</block>
-  <block id="9bc07042d75b92db9b8b24b372c11865" category="summary">패브릭 연결 MetroCluster 설치 및 구성에 대한 저작권 정보.</block>
-  <block id="695e93d2cacba01cfb4c9024989cf992" category="summary">패브릭 연결 MetroCluster 설치 및 구성에 대한 저작권, 상표 및 기계 번역.</block>
   <block id="c88edc4c15fee94b757ac367781bb561" category="paragraph">8노드 MetroCluster 구성은 2개의 4노드 DR 그룹으로 구성됩니다. 첫 번째 DR 그룹은 다음 노드로 구성됩니다.</block>
   <block id="6873448bb983f2d98dc888336e992a66" category="paragraph">두 번째 DR 그룹은 다음 노드로 구성됩니다.</block>
   <block id="eed30f9d99bbd7faa235645e344fed96" category="list-text">컨트롤러_A_3</block>
@@ -11342,15 +11313,10 @@
   <block id="d2dda80f1fff01d0e113ebb44b5f1ed8" category="paragraph">다음 표에는 스토리지 어레이 포트와 FC 스위치 간의 연결 예가 MetroCluster 그림에 나와 있습니다.</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
-  <block id="de6edae22bc37b97b38a15c7f8af62e2" category="paragraph"><block ref="de6edae22bc37b97b38a15c7f8af62e2" category="inline-link-rx"></block></block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
   <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
   <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
-  <block id="547ea2e305891e64d8e744949b0aca2c" category="paragraph"><block ref="547ea2e305891e64d8e744949b0aca2c" category="inline-link-rx"></block></block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
-  <block id="50921fca0d376fca62102a5e608994e2" category="paragraph"><block ref="50921fca0d376fca62102a5e608994e2" category="inline-link-rx"></block></block>
-  <block id="dd3918c571093dff2b94f7cef5066d01" category="inline-link-macro">NetApp.com</block>
-  <block id="5db028f960e19ec42098e3252e4fb1e3" category="paragraph">현지화된 컨텐츠에 대한 중요 정보는 에서 확인하십시오 <block ref="7e89bb7928e951b6f80ad1dab5c58475" category="inline-link-macro-rx"></block></block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">릴리즈 노트</block>
   <block id="13c1fe346da53d3c9c58ab0c190eb172" category="sidebar">MetroCluster 데이터 보호 및 재해 복구 이해</block>
   <block id="f6ded8bde676e251409725df18ef579a" category="sidebar">MetroCluster가 데이터를 보호하고 재해 복구를 제공하는 방법</block>
@@ -12018,7 +11984,6 @@
   <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
   <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
-  <block id="fe92f5934bf96194725b46db02f72324" category="list-text">이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.</block>
   <block id="8a4f175190a1710cdcd52e7efde01268" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL을 활성화합니다</block>
   <block id="dbbfd3dd70a4d25284d890b07ad9bc31" category="section-title">MACsec 키 체인 및 키를 구성합니다</block>
   <block id="2903318a6fa99cbae17be8d84747e6f4" category="section-title">MACsec 정책을 구성합니다</block>
@@ -13318,4 +13283,52 @@
   <block id="5801d3e28a980df8d84e60a3eea8469c" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 ADP(고급 드라이브 파티셔닝)를 사용한 새로운 설치를 지원합니다. 대부분의 구성에서는 MetroCluster 사이트의 초기 구성 중에 파티션 분할 및 디스크 할당이 자동으로 수행됩니다.</block>
   <block id="e6ca378bbb6d15fd110961cea50b2eb0" category="section-title">AFF C250, AFF A250 및 FAS500f 시스템에서 ADP 및 디스크 할당</block>
   <block id="91d96627fcbee13a9d474587060d13f8" category="paragraph">AFF C250 및 AFF A250 시스템에 대한 동일한 디스크 할당 지침 및 규칙이 FAS500f 시스템에 적용됩니다. FAS500f 시스템에 디스크를 할당하는 방법은 을 참조하십시오 <block ref="62481755a241b3efc5c68e4e7dd00bb5" category="inline-xref-macro-rx"></block> 표.</block>
+  <block id="d39fc122b5bc72857d3bc1cb28b2528b" category="summary">FC 스위치의 공급업체를 변경하거나(Cisco에서 Brocade로, 또는 그 반대) 스위치 모델을 변경하거나, 둘 다 변경해야 할 수 있습니다.</block>
+  <block id="dc97a56f45d09eb47627be2f51eaacac" category="doc">FC 스위치의 공급업체 또는 모델을 변경합니다</block>
+  <block id="588f711b0852bf6ebac518663e6bf15c" category="paragraph">FC 스위치의 공급업체를 Cisco에서 Brocade로 변경하거나 그 반대로 변경하거나 스위치 모델을 변경하거나, 두 가지를 모두 변경해야 할 수 있습니다.</block>
+  <block id="34b3750efa9ad33069e758e1d20702b2" category="list-text">이 절차는 NetApp 검증 스위치를 사용하는 경우에 적용됩니다.</block>
+  <block id="038dcdf6b816f0dea514171c0fbec340" category="list-text">구성의 두 Fabric에 대해 한 번에 하나의 Fabric에 대해 이 절차의 단계를 수행해야 합니다.</block>
+  <block id="12e792350f2f2a26f26efec238939f8c" category="list-text">[[STEP_1, 1단계]] 구성의 상태를 확인합니다.</block>
+  <block id="2aadc0e8757be310d2a25c139de10d8a" category="paragraph">의 단계를 따릅니다 <block ref="71433a7a2e7b6001aee2288bc93568fd" category="inline-link-macro-rx"></block>.</block>
+  <block id="4b0b73acfce5119dcc60f2f7b6dac2c4" category="list-text">다음 순서로 연결부를 분리하여 이전 스위치에서 연결을 끊습니다.</block>
+  <block id="5ad31ba7150f9832a818c89539b6baa5" category="list-text">MetroCluster IP 인터페이스의 연결을 끊습니다.</block>
+  <block id="66700e9b823419320bcf568412b3c8f5" category="list-text">MetroCluster ISL을 분리합니다.</block>
+  <block id="c4f64a0c7e0a39b3f68c6c76b119f9b7" category="list-text">이전 스위치의 전원을 끄고 케이블을 제거한 다음 기존 스위치를 새 스위치로 물리적으로 교체합니다.</block>
+  <block id="39c4de53c442cd522fc67edfc4cc59c8" category="list-text">다음과 같은 순서로 스위치를 케이블로 연결합니다.</block>
+  <block id="0f192214376d7c0e958d509a331b7c82" category="inline-link-macro">MetroCluster 구성 요소를 설치하고 케이블을 연결합니다</block>
+  <block id="ca71188f7f4bbd1ad7fb2b3ac50145fa" category="paragraph">의 단계를 수행해야 합니다 <block ref="f09498c56b761bf8471aa49436b9c6b5" category="inline-link-macro-rx"></block>.</block>
+  <block id="d7c72b026579f98d6108723379befa5c" category="list-text">스위치 전원을 켭니다.</block>
+  <block id="4c49ac5fd96c13efa7ddbce7575dd9e4" category="list-text">MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <block ref="70a312d559ac5bac88a63c5c7c2e52d3" category="inline-xref-macro-rx"></block>.</block>
+  <block id="b81576b1956a4793e86cfb62d8774b3f" category="list-text">구성의 두 번째 Fabric에 대해 1단계부터 7단계까지 반복합니다.</block>
+  <block id="899dd799064eace0f16728f2bf38c96b" category="paragraph">RCF(Reference Configuration Files)를 사용할 수 있도록 FC 스위치 포트 사용량은 설명서에 설명된 사용량과 일치해야 합니다.</block>
+  <block id="c1f9897c71a9ecfa3b9c9f7cf2180518" category="paragraph">이 설명서의 예제로 사용된 제안된 이름은 아래와 같이 브리지가 연결되는 컨트롤러 모듈과 스택을 식별합니다.</block>
+  <block id="498655ab09377cb9366dc958acdc9ea7" category="section-title">사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다</block>
+  <block id="ff0ff0079f0279d8fee034046e8fa982" category="paragraph">불필요한 상태 경고를 방지하기 위해 사용하지 않는 ISL 포트 및 포트 채널을 비활성화하는 것이 좋습니다 NetApp.</block>
+  <block id="a9326d2f25aef48e5762f13385203981" category="list-text">사용되지 않는 ISL 포트 및 포트 채널 식별:</block>
+  <block id="266e882d8921051df420c801a50fbf2b" category="list-text">사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다.</block>
+  <block id="88cd2a16d4b9522a6fbeb03c6848465d" category="paragraph">식별된 미사용 포트 또는 포트 채널에 대해 다음 명령을 실행해야 합니다.</block>
+  <block id="24b12e7bdbffc85f965324863b16c8be" category="list-text">RCF 파일 배너를 사용하여 사용되지 않는 ISL 포트 및 포트 채널을 식별합니다.</block>
+  <block id="1ebfefc73ecfb2ec17fba9f0880be790" category="admonition">포트가 브레이크아웃 모드인 경우 명령에서 지정하는 포트 이름은 RCF 배너에 지정된 이름과 다를 수 있습니다. RCF 케이블 연결 파일을 사용하여 포트 이름을 찾을 수도 있습니다.</block>
+  <block id="bb4c2363cad6592b2fa6d4a7007aaa06" category="open-title">ISL 포트 세부 정보를 참조하십시오</block>
+  <block id="53b57934da9ea1d512fc2c0741e756bc" category="paragraph">명령을 실행합니다<block ref="bb29d819162aea516f17802198f8faf7" prefix=" " category="inline-code"></block>.</block>
+  <block id="0c3fc93b330ba95bfe2bc5102d8089aa" category="open-title">포트 채널 세부 정보는 을 참조하십시오</block>
+  <block id="cd26d4b6b111806e4402f9e7eead62d5" category="paragraph">명령을 실행합니다<block ref="aedf88e4ada390daeb68da65170c0578" prefix=" " category="inline-code"></block>.</block>
+  <block id="4adfbc621db8b89083d474dee0f07c80" category="paragraph"><block ref="fba42a2ccc46f0a6204709f144e648ff" prefix="" category="inline-code"></block></block>
+  <block id="f9218f910e102c6bf49c5cfbc302c5ac" category="list-text">RCF 파일을 사용하여 사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다.</block>
+  <block id="68a72b41a8daefa7ca605b20a64500a8" category="paragraph">다음 명령 예에서는 "swp14" 포트를 비활성화합니다.</block>
+  <block id="b41a320410f2e03d4fb404dd5306d72d" category="paragraph"><block ref="1c2ab87af553dd288ec9c5432d9df972" prefix="" category="inline-code"></block></block>
+  <block id="82ba711aac35f0fb050f29204c66ad9b" category="paragraph">식별된 각 사용되지 않은 포트 또는 포트 채널에 대해 이 단계를 반복합니다.</block>
+  <block id="aecfb0a1f8a6f4b14648ea2c18aae2ae" category="inline-link">Clustered Data ONTAP 스위치 설정 가이드 - Cisco 스위치</block>
+  <block id="b1eca50e31d6909ea55f828a37711fa1" category="inline-link">NetApp 10G 클러스터 모드 스위치 설치 안내서</block>
+  <block id="96e98f400012e6584b81d57011c42c45" category="inline-link">NetApp 1G 클러스터 모드 스위치 설치 가이드</block>
+  <block id="1f11a3b40ac30c6144b635a5d93b7747" category="paragraph">를 참조하십시오<block ref="237aa47d8beba176e8d1fd03c40ee412" category="inline-link-rx"></block>,<block ref="972e67585606ce2e224f1c546c9d6041" category="inline-link-rx"></block> 또는<block ref="9fb6a12c499847b05bef27152fedb329" category="inline-link-rx"></block>사용하는 스위치에 따라 다릅니다.</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="35c124f455f44a154eb3b514029ee58a" category="section-title">안전 정보 및 규정 고지</block>
+  <block id="a6518839a3ee2f900f136494094df3cf" category="paragraph"><block ref="a6518839a3ee2f900f136494094df3cf" category="inline-link-rx"></block></block>
 </blocks>

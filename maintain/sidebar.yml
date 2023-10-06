@@ -52,6 +52,8 @@ entries:
     url: "/maintain/task_change_speed_of_isl_ports_on_a_cisco_fc_switch.html"
   - title: Cisco 스위치에 lSLs 추가
     url: "/maintain/task_add_lsls_to_a_cisco_fc_switch.html"
+  - title: FC 스위치의 공급업체 또는 모델을 변경합니다
+    url: "/maintain/task_change_an_fc_switch.html"
 - title: IP 스위치 유지 보수 및 교체
   entries:
   - title: IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다

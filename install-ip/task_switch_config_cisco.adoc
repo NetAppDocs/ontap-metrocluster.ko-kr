@@ -585,3 +585,32 @@ IP_switch_A_1# copy running-config startup-config
 
 . MetroCluster IP 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.
 
+
+
+
+== 사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다
+
+불필요한 상태 경고를 방지하기 위해 사용하지 않는 ISL 포트 및 포트 채널을 비활성화하는 것이 좋습니다 NetApp.
+
+. 사용되지 않는 ISL 포트 및 포트 채널 식별:
++
+인터페이스 요약
+
+. 사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다.
++
+식별된 미사용 포트 또는 포트 채널에 대해 다음 명령을 실행해야 합니다.
+
++
+[listing]
+----
+SwitchA_1# config t
+Enter configuration commands, one per line. End with CNTL/Z.
+SwitchA_1(config)# int Eth1/14
+SwitchA_1(config-if)# shutdown
+SwitchA_12(config-if)# exit
+SwitchA_1(config-if)# copy running-config startup-config
+[########################################] 100%
+Copy complete, now saving to disk (please wait)...
+Copy complete.
+----
+

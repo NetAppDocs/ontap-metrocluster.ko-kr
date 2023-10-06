@@ -151,7 +151,7 @@ VSAN[vsna#] 일시 중단
 .단계
 . 사용 https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 확인합니다.
 +
-FC 스위치 포트 사용은 참조 구성 파일(RCFs)을 사용할 수 있도록 가이드에 설명된 용법과 일치해야 합니다.
+RCF(Reference Configuration Files)를 사용할 수 있도록 FC 스위치 포트 사용량은 설명서에 설명된 사용량과 일치해야 합니다.
 
 +
 

@@ -29,7 +29,6 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 새 노드에는 루트 애그리게이트 및 스페어 디스크를 위한 충분한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 있어야 합니다.
-* 이 절차는 FAS2750 또는 AFF A220 시스템에서 지원되지 않습니다.
 
 
 

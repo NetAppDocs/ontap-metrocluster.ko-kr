@@ -68,7 +68,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2316769["FAS8200 시스템
 
 .. 스위치 클러스터를 구성하는 경우 클러스터 네트워크 스위치에서 사용할 포트를 식별합니다.
 +
-사용 중인 스위치에 따라 Cisco 스위치_,_NetApp 10G 클러스터 모드 스위치 설치 가이드_또는_NetApp 1G 클러스터 모드 스위치 설치 가이드_에 대한 _Data ONTAP 스위치 설정 가이드를 참조하십시오.
+를 참조하십시오 https://library.netapp.com/ecm/ecm_get_file/ECMP1115327["Clustered Data ONTAP 스위치 설정 가이드 - Cisco 스위치"^], https://library.netapp.com/ecm/ecm_download_file/ECMP1117824["NetApp 10G 클러스터 모드 스위치 설치 안내서"^] 또는 https://library.netapp.com/ecm/ecm_download_file/ECMP1117853["NetApp 1G 클러스터 모드 스위치 설치 가이드"^]사용하는 스위치에 따라 다릅니다.
 
 .. 클러스터 포트에 케이블 연결:
 
