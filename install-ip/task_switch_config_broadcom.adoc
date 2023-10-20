@@ -224,6 +224,29 @@ NOTE: 키가 이미 있으면 덮어쓸지 묻는 메시지가 나타날 수 있
 (Routing) (Config)#exit
 (Routing) (Config)#
 ----
++
+EFOS 버전 3.10.0.3 이상에서는 를 사용합니다 `ntp` 명령을 입력합니다.
+
++
+[listing]
+----
+> (Config)# ntp ?
+
+authenticate             Enables NTP authentication.
+authentication-key       Configure NTP authentication key.
+broadcast                Enables NTP broadcast mode.
+broadcastdelay           Configure NTP broadcast delay in microseconds.
+server                   Configure NTP server.
+source-interface         Configure the NTP source-interface.
+trusted-key              Configure NTP authentication key number for trusted time source.
+vrf                      Configure the NTP VRF.
+
+>(Config)# ntp server ?
+
+ip-address|ipv6-address|hostname  Enter a valid IPv4/IPv6 address or hostname.
+
+>(Config)# ntp server 10.99.99.5
+----
 . 스위치 이름 구성:
 +
 호스트 이름 IP_SWITCH_A_1
