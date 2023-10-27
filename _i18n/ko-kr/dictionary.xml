@@ -8492,41 +8492,9 @@
   <block id="0dcfa974a402a3458da069a245602792" category="list-text">필요한 경우 MetroCluster FC 노드에서 iSCSI LIF를 제거합니다.</block>
   <block id="7f83881f97231779a245235cf609c051" category="paragraph">다른 클라이언트에 매핑된 노드에 다른 LUN이 없는 경우 이 작업을 수행해야 합니다.</block>
   <block id="46307856034c0d19deb4348b4c6fdf64" category="summary">MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 새 노드로 이동해야 할 수 있습니다.</block>
-  <block id="ad6b5250334c326be9a638a7f4693ca4" category="doc">Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동</block>
-  <block id="4ffda0b442f3ec790dfbba912d0ea775" category="paragraph">이 절차에서 IPv4 인터페이스가 생성됩니다.</block>
-  <block id="c69cc98613331b3414ecc19841ab7a4a" category="paragraph">이 절차에서 제공된 호스트 명령 및 예제는 Linux 운영 체제에만 해당됩니다.</block>
-  <block id="2635e8261b1d21ba35254c00e3e54eda" category="section-title">새 iSCSI 연결을 설정합니다</block>
-  <block id="38182d0b7f94eabf093a27fc21d6c6e6" category="paragraph">iSCSI 연결을 이동하려면 MetroCluster IP 노드에 대한 새 iSCSI 연결을 설정해야 합니다.</block>
-  <block id="b5c888106b46101190a9a9446ff7aeba" category="list-text">MetroCluster IP 노드에서 iSCSI 인터페이스를 생성하고 iSCSI 클라이언트에서 MetroCluster IP 노드의 새 IP 인터페이스로의 Ping 연결을 확인합니다.</block>
-  <block id="f2a6a6dfe9a7cb508ec1e1f475d326dc" category="inline-link">네트워크 인터페이스를 생성하는 중입니다</block>
-  <block id="0dc491dada4885353b9e96030fce6bd3" category="paragraph">SVM의 모든 iSCSI 인터페이스는 iSCSI 클라이언트를 통해 연결할 수 있어야 합니다.</block>
-  <block id="acb0e987f9b29d1eab50c31f4f95aa9a" category="list-text">iSCSI 호스트 또는 클라이언트에서 호스트에서 MetroCluster FC 노드로의 기존 iSCSI 접속('iscsiadm -m session')을 식별합니다</block>
-  <block id="d163a1c94db271251417ac64b011f503" category="list-text">MetroCluster IP 노드의 접속을 확인합니다. 'iscsi session show -vserver svm -name'</block>
-  <block id="a36d68710357482d2ab6a01760a3ed96" category="list-text">iSCSI 클라이언트에서 SVM의 iSCSI IP 주소 중 하나에서 검색을 실행하여 새 타겟('iscsiadm -m discovery -t SendTargets -p iscsi -ip -address')을 검색합니다</block>
   <block id="6d5e653b42496cb611cacbd3f1622d89" category="paragraph">비 iSCSI 인터페이스를 포함하여 SVM의 모든 IP 주소에서 검색을 실행할 수 있습니다.</block>
-  <block id="a461f22b707612a699bc8af021961c83" category="list-text">iSCSI 클라이언트에서 검색된 모든 주소('iscsiadm -m node -L all -T node -address -p portal -address -l')에 로그인합니다</block>
-  <block id="ab6390fa8cebdea69f293643fa6ca3ac" category="list-text">iSCSI 클라이언트에서 로그인 및 연결 상태('iscsiadm -m session')를 확인합니다</block>
-  <block id="dbd11be9c2b255acab2242a02fc1a77e" category="list-text">MetroCluster 노드에서 클라이언트 "iscsi initiator show -vserver vsa_1"과의 로그인 및 연결을 확인합니다</block>
-  <block id="bc60b7e20cad666b78b99a17cd6677a3" category="paragraph">이 작업이 끝나면 클라이언트는 모든 iSCSI 인터페이스(MetroCluster FC 및 MetroCluster IP 노드)를 볼 수 있고 이러한 모든 인터페이스에 로그인됩니다.</block>
-  <block id="677e4c06325c77f7c3bfe8975fe9b0df" category="paragraph">LUN 및 볼륨은 여전히 FC 노드에서 물리적으로 호스팅됩니다. LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 MetroCluster FC 노드를 통한 경로만 표시합니다. sanlun lun show -p 및 multipath -ll -d 명령 출력에서 확인할 수 있습니다. 다음 단계는 IP 노드를 보고 노드로 추가하는 것입니다.</block>
-  <block id="af74a863cdb562e7957297f060551652" category="section-title">MetroCluster IP 노드를 보고 노드로 추가</block>
-  <block id="de6fbd0b27f08771a0a17e006eb28d85" category="paragraph">새 MetroCluster IP 노드에 대한 연결을 설정한 후에는 새 보고 노드를 추가해야 합니다.</block>
-  <block id="c3fa4a22a34cdd0dcd970ef661134749" category="list-text">MetroCluster 노드의 SVM에 대한 LUN 보고 노드를 나열합니다. 'lun mapping show -vserver vsa_1 - fields reporting-nodes-OSType linux'</block>
-  <block id="ca3831196a5922b44d1bd6c3f098a76e" category="paragraph">LUN이 FC 노드_A_1-FC 및 노드_A_2-FC에 물리적으로 있기 때문에 다음 보고 노드는 로컬 노드입니다.</block>
-  <block id="ada767f49af9e4d84ffa661e5dca75c7" category="list-text">MetroCluster 노드에서 보고 노드를 추가합니다. 'lun mapping add-reporting-nodes-vserver svm-name-path /vol/vsa_1_vol * /lun_linux_ * -nodes node1, node2-igroup igroup igroup igroup_linux'</block>
-  <block id="7b0a84102a195b8e0f8d8953620707ba" category="list-text">MetroCluster 노드에서 새로 추가된 노드가 있는지 확인합니다. 'lun mapping show -vserver svm -name -fields reporting -nodes-OSType linux vserver path igroup reporting-nodes'</block>
-  <block id="897e36e6985e9d4eb2bed54f3762a125" category="list-text">호스트에서 다음 명령을 실행하여 새로 추가된 경로를 나열합니다. 'lun lun show -p</block>
   <block id="2a12888d763445436f29b56694f714b2" category="paragraph">각 LUN에 대해 4개의 경로가 표시됩니다.</block>
-  <block id="2511d667d00c1cb6eba362bc0093b244" category="list-text">MetroCluster에서 LUN이 포함된 볼륨/볼륨을 FC에서 IP 노드로 이동합니다.</block>
-  <block id="e33b00901de3da30e6f72b62b448dbb9" category="list-text">볼륨 이동이 완료되면 MetroCluster에서 volume show 명령을 사용하여 볼륨 또는 LUN이 온라인 상태인지 확인합니다.</block>
-  <block id="61edda4eb7dd41417f619b2deaf6f3bc" category="list-text">LUN이 현재 상주하는 MetroCluster IP 노드의 iSCSI 인터페이스가 기본 경로로 업데이트됩니다. 볼륨 이동 후 기본 경로가 업데이트되지 않으면 /usr/bin/rescan-scsi-bus.sh -a 및 multipath -v3을 실행하거나 다중 경로 재검색 작업이 완료될 때까지 기다립니다.</block>
-  <block id="288fc657c3692f20a29305049548a50b" category="paragraph">다음 예제에서 기본 경로는 MetroCluster IP 노드의 LIF입니다.</block>
-  <block id="78481b816b560f8944cfc9750c7c69ac" category="section-title">보고 노드를 제거하고 경로를 다시 검색했습니다</block>
   <block id="907ed284747209370db5d2e6065cf477" category="paragraph">보고 노드를 제거하고 경로를 다시 검색해야 합니다.</block>
-  <block id="8ab7ca6cd6e1f79872ab4f322117ca76" category="list-text">MetroCluster IP 노드에서 Linux LUN에 대한 원격 보고 노드(MetroCluster IP 노드)를 제거합니다. 'lun mapping remove-reporting-nodes-vserver vsa_1-path * -igroup igroup igroup_linux-remote-nodes true'</block>
-  <block id="05048e4fdd078ddd77168cd8270fe3f4" category="paragraph">이 경우 원격 노드는 FC 노드입니다.</block>
-  <block id="e90434592ed415a541e2a6f03284ae2d" category="list-text">MetroCluster IP 노드에서 LUN에 대한 보고 노드를 확인합니다. 'lun mapping show -vserver vsa_1 -fields reporting -nodes-OSType linux'</block>
-  <block id="d535eedec31c0a58f698132001cbc9bb" category="paragraph">제거된 경로는 FC 노드의 경로입니다.</block>
   <block id="a1dc95b2dccfd24df8e5f465b41ca7bb" category="summary">전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새로운 MetroCluster IP 구성으로 데이터를 이동합니다.</block>
   <block id="6b2201b255bf7619b40525eabcf640ce" category="doc">데이터를 새 드라이브 쉘프로 이동</block>
   <block id="d43a293b508a220ef74948f1d6ffa38b" category="paragraph">전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새로운 MetroCluster IP 구성으로 데이터를 이동합니다.</block>
@@ -11967,7 +11935,6 @@
   <block id="b16f070ef0ff70f134e9de232ff4d07d" category="paragraph">MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 <block ref="1f208108354e7662d904d86579319d48" category="inline-link-macro-rx"></block>. 설치 및 케이블 연결 절차를 수행할 때는 계층 3 구성에 해당하는 단계를 수행해야 합니다.</block>
   <block id="2445f74267948c10619896a5e47cd3d6" category="paragraph">의 단계를 수행합니다 <block ref="0e3caa859006182753aee07c6f57c3cf" category="inline-link-macro-rx"></block>.</block>
   <block id="b0f85a0199d1b83b2b8a32a5f34bdd8d" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="4da30401760153ceb5481ac559dbe601" category="inline-link-macro-rx"></block>.</block>
-  <block id="cdf93537d7257dad75e41411958bb32c" category="paragraph"><block ref="cdf93537d7257dad75e41411958bb32c" category="inline-link-rx"></block></block>
   <block id="f44903a02a813582e3877d0c017bdfcb" category="paragraph"><block ref="f44903a02a813582e3877d0c017bdfcb" category="inline-link-macro-rx"></block></block>
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
   <block id="83e579bcd33d25206730a931a64a84a1" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block>.</block>
@@ -13070,9 +13037,6 @@
   <block id="7794a024d3134acafeb3b112e36c9a3f" category="cell">파티션 3:</block>
   <block id="6129d8bcf6f4ed452d528f954ce79ee6" category="admonition">ONTAP 9.5부터 에서 디스크 자동 할당을 활성화해야 합니다<block ref="9518ee5351ea31dd67cceada18bfcfd6" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="00427bfa7d8d8bd516409a3466e96821" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="ee9beb37ef6441cda28497e9b5b08a94" category="inline-link-macro-rx"></block>.</block>
-  <block id="7a1a87ce99eaab2774eb1f9eacc17d53" category="list-text">iSCSI 호스트에서 MetroCluster IP 노드의 경로만 표시되는지 확인합니다.</block>
-  <block id="60b4ea9b972dc75c3aa76b2fc2aab932" category="paragraph"><block ref="41dc2c94e82e1c56ba876085acf5a974" prefix="" category="inline-code"></block></block>
-  <block id="ba27cfcb3809ba8690469645b378b4af" category="paragraph"><block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix="" category="inline-code"></block></block>
   <block id="5338d1a8478f350f9f873b7c89a98b0f" category="summary">MetroCluster FC 백엔드 스위치 또는 ATTO 브리지의 IP 주소를 수정한 후 기존 상태 모니터링 IP 주소를 대체합니다.</block>
   <block id="ab82e5baf31743b1a6f1bdd378ba458b" category="doc">상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다</block>
   <block id="e3dbdae2799d2ed863a853d87ba77fd1" category="paragraph">MetroCluster FC 백엔드 스위치 및 ATTO 브리지의 IP 주소를 수정한 후에는 기존 상태 모니터링 IP 주소를 새 값으로 바꿔야 합니다.</block>
@@ -13159,10 +13123,7 @@
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
   <block id="4992f0045a6913a2fb77a09884c4e55c" category="admonition">설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또는 9.11.1을 실행하는 시스템에서 위 표에 나열된 컨트롤러 업그레이드를 수행할 수 있습니다 <block ref="4254cdc4ef28ceba663ec4031c88c9dd" category="inline-link-macro-rx"></block>.</block>
   <block id="050dafe962829ef847f34f7607e36eb3" category="list-text"><block ref="050dafe962829ef847f34f7607e36eb3" category="inline-link-macro-rx"></block></block>
-  <block id="96011b4dbcd722924f3c53c7252522f8" category="list-text">인터페이스가 포함된 SVM용 ONTAP의 iSCSI 인터페이스를 나열합니다.<block ref="3c78b9e1a9fef2eea89905b0233c19ad" prefix=" " category="inline-code"></block></block>
   <block id="2af958a8143c65676390b5e251abe90a" category="list-text">를 확인합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다<block ref="b0c94f1494e22d963244e235719a2582" prefix=" " category="inline-code"></block> 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다<block ref="685ca42026debec2f3691cc5faae67d5" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="f4b770b44b57fa84a8b8fc29d6c6c8bb" category="list-text">호스트에서 다음 명령을 실행하여 호스트에서 SCSI 버스를 다시 검색하고 새로 추가된 경로를 검색합니다.<block ref="9e65638d5d13acb691c4bec2ede5a483" prefix=" " category="inline-code"></block></block>
-  <block id="d1b38e9b356895decf6917b400433e15" category="list-text">iSCSI 호스트에서 SCSI 버스를 다시 검색합니다.<block ref="06653a48f6165608045bd55ec32d95fb" prefix=" " category="inline-code"></block></block>
   <block id="1f52bd2314f9805b0a0098b0f56a0dc4" category="paragraph">이 경우 노드를 재부팅해야 할 수 있습니다.</block>
   <block id="ab85fd4f549c390675df901a8ef3f78e" category="list-text">모든 SAN SVM에 대해 IP 노드에서 FC LIFS/인터페이스를 생성합니다. 선택적으로 새로 생성된 FC LIF의 WWPN이 FC SAN 스위치에 로그인되어 있는지 확인합니다</block>
   <block id="cbabd53b8268cb963ad7b2c67de0b634" category="paragraph">LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 FC 노드를 통한 경로만 표시합니다. 이는 의 출력에서 확인할 수 있습니다<block ref="41dc2c94e82e1c56ba876085acf5a974" prefix=" " category="inline-code"></block> 및<block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix=" " category="inline-code"></block> 명령.</block>
@@ -13331,4 +13292,53 @@
   <block id="35c124f455f44a154eb3b514029ee58a" category="section-title">안전 정보 및 규정 고지</block>
   <block id="a6518839a3ee2f900f136494094df3cf" category="paragraph"><block ref="a6518839a3ee2f900f136494094df3cf" category="inline-link-rx"></block></block>
   <block id="f00ba2972a9c532b4ab2bf7cf4fe1350" category="paragraph">EFOS 버전 3.10.0.3 이상에서는 를 사용합니다<block ref="c09633a606c51a161b16f8bf38f5ebb1" prefix=" " category="inline-code"></block> 명령을 입력합니다.</block>
+  <block id="067e2e3846b3b294b518d3f733e2a96b" category="list-text">IPv4 인터페이스는 새 iSCSI 연결을 설정할 때 생성됩니다.</block>
+  <block id="187aa569481ce25a564facc34217dda3" category="list-text">호스트 명령과 예는 Linux 운영 체제에만 해당됩니다.</block>
+  <block id="6a7b2c1519b9ac2b9ebf90b5ebe2fa92" category="list-text">MetroCluster FC 노드를 이전 노드라고 하고, MetroCluster IP 노드를 새 노드라고 합니다.</block>
+  <block id="ea6cc97cd446c8ab07c46f26be73c50d" category="section-title">1단계: 새 iSCSI 연결을 설정합니다</block>
+  <block id="552dfeee4aa45aab21f5db04ebc1f244" category="paragraph">iSCSI 연결을 이동하려면 새 노드에 대한 새 iSCSI 연결을 설정합니다.</block>
+  <block id="fc85dbac1706910c76a2b7a6f7638bdb" category="list-text">새 노드에서 iSCSI 인터페이스를 생성하고 iSCSI 호스트에서 새 노드의 새 인터페이스로의 ping 연결을 확인합니다.</block>
+  <block id="7bbfc198d3ba29087c1dd1984313d004" category="inline-link">네트워크 인터페이스를 생성합니다</block>
+  <block id="607be49a44f6d2de54aedb24c5821b8b" category="paragraph"><block ref="607be49a44f6d2de54aedb24c5821b8b" category="inline-link-rx"></block></block>
+  <block id="87c826df1266871a8db57cee9750cbd0" category="paragraph">SVM의 모든 iSCSI 인터페이스에 iSCSI 호스트에 연결할 수 있어야 합니다.</block>
+  <block id="9709761b16b5aefc81534e48c85098d7" category="list-text">iSCSI 호스트에서 호스트에서 호스트에서 이전 노드로의 기존 iSCSI 접속을 식별합니다.</block>
+  <block id="90f2c25e2e05bd11190a9ace67be2df7" category="list-text">새 노드에서 새 노드로부터의 연결을 확인합니다.</block>
+  <block id="840e7124a9aeed666f3cab70b890da0f" category="list-text">새 노드에서 인터페이스가 포함된 SVM용 ONTAP의 iSCSI 인터페이스를 나열합니다.</block>
+  <block id="e817bc638b8c95d84d9d468a31b9a9c6" category="list-text">iSCSI 호스트에서 SVM의 iSCSI IP 주소 중 하나에서 검색을 실행하여 새 타겟을 검색합니다.</block>
+  <block id="4c2900dfa972d4e54c006349317ed61b" category="list-text">iSCSI 호스트에서 검색된 모든 주소에 로그인합니다.</block>
+  <block id="50f723ce927cda10c297d19c642446b6" category="list-text">iSCSI 호스트에서 로그인 및 접속을 확인합니다.</block>
+  <block id="c833c589f902c8c0ddc3bdb645a85fe9" category="list-text">새 노드에서 호스트에 대한 로그인 및 연결을 확인합니다.</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">결과</block>
+  <block id="4e7233ab8e56169d5783c1e27cf80e62" category="paragraph">이 작업이 끝나면 호스트는 이전 노드와 새 노드에 있는 모든 iSCSI 인터페이스를 볼 수 있으며 이러한 모든 인터페이스에 로그인됩니다.</block>
+  <block id="1ea11cf2a7632efb274bdc8804c13cc8" category="paragraph">LUN 및 볼륨은 이전 노드에서 물리적으로 호스팅됩니다. LUN은 이전 노드 인터페이스에서만 보고되기 때문에 호스트는 이전 노드에 대한 경로만 표시합니다. 이를 보려면 를 실행합니다<block ref="41dc2c94e82e1c56ba876085acf5a974" prefix=" " category="inline-code"></block> 및<block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix=" " category="inline-code"></block> 호스트에 대한 명령을 실행하고 명령 출력을 검사합니다.</block>
+  <block id="85ef9de042295f197ffebdafe8989eba" category="section-title">2단계: 새 노드를 보고 노드로 추가합니다</block>
+  <block id="63caeb58f676a0ef9b76df2d7cb19636" category="paragraph">새 노드에 대한 연결을 설정한 후 새 노드를 보고 노드로 추가합니다.</block>
+  <block id="491bf790c89cc65e6e44bc71af9a4016" category="list-text">새 노드에서 SVM에 있는 LUN에 대한 보고 노드를 나열합니다.</block>
+  <block id="b04f1d6b7664813408094e25f316f33e" category="paragraph">LUN이 물리적으로 이전 node_A_1-old 및 node_A_2-old에 있으므로 다음 보고 노드는 로컬 노드입니다.</block>
+  <block id="cc171fdd8df3207be64edefc9b40c9ba" category="list-text">새 노드에서 보고 노드를 추가합니다.</block>
+  <block id="d0cc5c260aaa60f4409e8ab9a2fc50be" category="list-text">새 노드에서 새로 추가된 노드가 있는지 확인합니다.</block>
+  <block id="1e9ecffd328dcde30affda2b4f6c9ece" category="list-text">를 클릭합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> Linux 호스트에 패키지가 설치되어 있어야 합니다. 이를 통해 가 방지됩니다<block ref="b0c94f1494e22d963244e235719a2582" prefix=" " category="inline-code"></block> 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다<block ref="685ca42026debec2f3691cc5faae67d5" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="9e684d318658354d8e928df696e09c90" category="paragraph">호스트에서 를 확인합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> 패키지가 설치됨:</block>
+  <block id="bf0c6c5c08f9fbefa42c89aea32af827" category="list-text">데비안 기반 배포판의 경우:</block>
+  <block id="a06dd63aa02d1ca9f0480be58723d68a" category="list-text">Red Hat 기반 배포판의 경우:</block>
+  <block id="716de22554eea42da49644b2b136ecd9" category="paragraph">필요한 경우 를 설치합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> Linux 호스트의 패키지:</block>
+  <block id="7065b19f91f5ce4da99fc6ed95adb773" category="list-text">호스트에서 호스트의 SCSI 버스를 다시 검색하여 새로 추가된 경로를 찾습니다.</block>
+  <block id="a206b7156387b72b6602cf4ab7999c62" category="list-text">iSCSI 호스트에서 새로 추가된 경로를 나열합니다.</block>
+  <block id="fba41109e69c86f9eb83af48257072a8" category="list-text">새 노드의 경우 LUN이 포함된 볼륨/볼륨을 이전 노드에서 새 노드로 이동합니다.</block>
+  <block id="ac9a615f4366cb038c52dc84717f8ac2" category="list-text">볼륨을 새 노드로 이동한 후 볼륨이 온라인 상태인지 확인합니다.</block>
+  <block id="a8ccb2f6b92c9e7445e9a052ff3fb3f9" category="list-text">이제 LUN이 상주하는 새 노드의 iSCSI 인터페이스가 기본 경로로 업데이트됩니다. 볼륨 이동 후 기본 경로가 업데이트되지 않은 경우 를 실행합니다<block ref="9e65638d5d13acb691c4bec2ede5a483" prefix=" " category="inline-code"></block> 및<block ref="4bcfa5223bd4ad05f8dd421976cbc1c1" prefix=" " category="inline-code"></block> 호스트에서 또는 단순히 다중 경로 재검색이 수행될 때까지 기다립니다.</block>
+  <block id="162b2246503837a755b6cd4dddb0c228" category="paragraph">다음 예제에서 기본 경로는 새 노드의 LIF입니다.</block>
+  <block id="5fd8a55dd43f013ef906cc65f6986fc3" category="section-title">3단계: 보고 노드를 제거하고 경로를 다시 검색합니다</block>
+  <block id="829b0bec40a94531d8e7e7dd5076a8ac" category="list-text">새 노드에서 Linux LUN에 대한 원격 보고 노드(새 노드)를 제거합니다.</block>
+  <block id="2b57c94b011b67d2b972fc549295ffbe" category="paragraph">이 경우 원격 노드가 이전 노드입니다.</block>
+  <block id="1eae5e7b27384996cd8a3ccaee9ed11b" category="list-text">새 노드에서 LUN에 대한 보고 노드를 확인합니다.</block>
+  <block id="b40a504ccb3da532382333f0ef630e2d" category="list-text">iSCSI 호스트에서 SCSI 버스를 다시 검색합니다.</block>
+  <block id="3ab536112aae2adb0154a97a03a97995" category="paragraph">제거된 경로는 이전 노드의 경로입니다.</block>
+  <block id="5eb2f5a07f8114a82bfca62a5f95b81d" category="list-text">iSCSI 호스트에서 새 노드의 경로만 표시되는지 확인합니다.</block>
+  <block id="207e61ae33ef5e6ef918554d51d81114" category="paragraph">Fabric OS 9.0.1부터 SNMPv2는 Brocade 스위치에서 지원되지 않습니다. Fabric OS 9.0.1 이상으로 업그레이드하는 경우 상태 모니터링에 SNMPv3을 사용해야 합니다. 자세한 내용은 을 참조하십시오 <block ref="f40dae5fcb87cbbfe058698fbd8d3759" category="inline-link-macro-rx"></block>.</block>
+  <block id="acb3a81879787c0ac3484855a93f5ff6" category="paragraph">Fabric OS 9.0.1부터는 SNMPv2가 Brocade 스위치의 상태 모니터링에 지원되지 않으므로 SNMPv3를 대신 사용해야 합니다. SNMPv3을 사용하는 경우 다음 섹션으로 진행하기 전에 ONTAP에서 SNMPv3을 구성해야 합니다. 자세한 내용은 을 참조하십시오 <block ref="84b6bc8814c8fff8860aaf6e2164af86" category="inline-xref-macro-rx"></block>.</block>
+  <block id="a4bed89e9f2e162a1bad93f81efe2681" category="paragraph">실행하는 명령은 SNMPv2 또는 SNMPv3를 사용 중인지 여부에 따라 다릅니다.</block>
+  <block id="bd041cb07dda4e5f8fbcf9fc40cd8e53" category="open-title">SNMPv3을 사용하여 스위치 추가:</block>
+  <block id="1ec64a333712792d694f6485f208d7bf" category="paragraph"><block ref="6483c1c2c512d0e62f46ddc53b9d4638" prefix="" category="inline-code"></block></block>
+  <block id="ebbf46e9806730b0f0c4ca0133de2d34" category="open-title">SNMPv2를 사용하여 스위치 추가:</block>
 </blocks>

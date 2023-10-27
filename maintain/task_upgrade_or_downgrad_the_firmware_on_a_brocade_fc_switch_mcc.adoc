@@ -25,6 +25,8 @@ Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이
 
 펌웨어 업그레이드 또는 다운그레이드 중에는 스위치 패브릭을 사용할 수 없으며 MetroCluster 구성은 두 번째 Fabric에 의존하여 작업을 계속합니다.
 
+Fabric OS 9.0.1부터 SNMPv2는 Brocade 스위치에서 지원되지 않습니다. Fabric OS 9.0.1 이상으로 업그레이드하는 경우 상태 모니터링에 SNMPv3을 사용해야 합니다. 자세한 내용은 을 참조하십시오 link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#configuring-snmpv3-in-a-metrocluster-configuration["MetroCluster 구성에서 SNMPv3 구성"].
+
 이 작업은 모든 스위치가 동일한 펌웨어 버전을 실행할 수 있도록 각 스위치 Fabric에 대해 연속적으로 수행해야 합니다.
 
 

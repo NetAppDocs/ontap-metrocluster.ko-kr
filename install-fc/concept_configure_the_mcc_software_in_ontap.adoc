@@ -3009,6 +3009,8 @@ MetroCluster 구성에서 구성 요소를 모니터링하기 전에 몇 가지 
 .이 작업에 대해
 이러한 작업은 FC-to-SAS 브리지가 있는 시스템에만 적용됩니다.
 
+Fabric OS 9.0.1부터는 SNMPv2가 Brocade 스위치의 상태 모니터링에 지원되지 않으므로 SNMPv3를 대신 사용해야 합니다. SNMPv3을 사용하는 경우 다음 섹션으로 진행하기 전에 ONTAP에서 SNMPv3을 구성해야 합니다. 자세한 내용은 을 참조하십시오 <<MetroCluster 구성에서 SNMPv3 구성>>.
+
 [NOTE]
 ====
 * 다른 소스의 간섭을 방지하려면 전용 네트워크에 브리지 및 노드 관리 LIF를 배치해야 합니다.
@@ -3028,8 +3030,22 @@ NOTE: ONTAP 9.8부터는 스토리지 스위치 명령이 시스템 스위치로
 .단계
 . 각 MetroCluster 노드에 IP 주소가 있는 스위치를 추가합니다.
 +
+실행하는 명령은 SNMPv2 또는 SNMPv3를 사용 중인지 여부에 따라 다릅니다.
+
++
+[role="tabbed-block"]
+====
+.SNMPv3을 사용하여 스위치 추가:
+--
+`storage switch add -address <ip_adddress> -snmp-version SNMPv3 -snmp-community-or-username <SNMP_user_configured_on_the_switch>`
+
+--
+.SNMPv2를 사용하여 스위치 추가:
+--
 스토리지 스위치 추가 주소 ipaddress
 
+--
+====
 +
 이 명령은 MetroCluster 구성의 4개 스위치 모두에서 반복해야 합니다.
 

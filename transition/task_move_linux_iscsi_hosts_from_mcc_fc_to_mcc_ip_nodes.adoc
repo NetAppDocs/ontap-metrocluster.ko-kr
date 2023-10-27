@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: transition, metrocluster, node, fc, ip, iscsi, host, connection, moving, move, linux, set, up, add, report, removing, remove, rescan, path 
 summary: MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 새 노드로 이동해야 할 수 있습니다. 
 ---
-= Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동
+= Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,70 +13,83 @@ summary: MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연
 [role="lead"]
 MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 새 노드로 이동해야 할 수 있습니다.
 
-이 절차에서 IPv4 인터페이스가 생성됩니다.
+.이 작업에 대해
+* IPv4 인터페이스는 새 iSCSI 연결을 설정할 때 생성됩니다.
+* 호스트 명령과 예는 Linux 운영 체제에만 해당됩니다.
+* MetroCluster FC 노드를 이전 노드라고 하고, MetroCluster IP 노드를 새 노드라고 합니다.
 
-이 절차에서 제공된 호스트 명령 및 예제는 Linux 운영 체제에만 해당됩니다.
 
 
 
-== 새 iSCSI 연결을 설정합니다
+== 1단계: 새 iSCSI 연결을 설정합니다
 
-[role="lead"]
-iSCSI 연결을 이동하려면 MetroCluster IP 노드에 대한 새 iSCSI 연결을 설정해야 합니다.
+iSCSI 연결을 이동하려면 새 노드에 대한 새 iSCSI 연결을 설정합니다.
 
-. MetroCluster IP 노드에서 iSCSI 인터페이스를 생성하고 iSCSI 클라이언트에서 MetroCluster IP 노드의 새 IP 인터페이스로의 Ping 연결을 확인합니다.
+.단계
+. 새 노드에서 iSCSI 인터페이스를 생성하고 iSCSI 호스트에서 새 노드의 새 인터페이스로의 ping 연결을 확인합니다.
 +
-https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["네트워크 인터페이스를 생성하는 중입니다"^]
+https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["네트워크 인터페이스를 생성합니다"^]
 
 +
-SVM의 모든 iSCSI 인터페이스는 iSCSI 클라이언트를 통해 연결할 수 있어야 합니다.
+SVM의 모든 iSCSI 인터페이스에 iSCSI 호스트에 연결할 수 있어야 합니다.
 
-. iSCSI 호스트 또는 클라이언트에서 호스트에서 MetroCluster FC 노드로의 기존 iSCSI 접속('iscsiadm -m session')을 식별합니다
+. iSCSI 호스트에서 호스트에서 호스트에서 이전 노드로의 기존 iSCSI 접속을 식별합니다.
++
+[source, cli]
+----
+iscsiadm -m session
+----
 +
 [listing]
 ----
 [root@scspr1789621001 ~]# iscsiadm -m session
-
 tcp: [1] 10.230.68.236:3260,1156 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
-
 tcp: [2] 10.230.68.237:3260,1158 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
 ----
-. MetroCluster IP 노드의 접속을 확인합니다. 'iscsi session show -vserver svm -name'
+. 새 노드에서 새 노드로부터의 연결을 확인합니다.
++
+[source, cli]
+----
+iscsi session show -vserver <svm-name>
+----
 +
 [listing]
 ----
-node_A_1-IP::*> iscsi session show -vserver vsa_1
-
+node_A_1-new::*> iscsi session show -vserver vsa_1
  Tpgroup Initiator Initiator
-
 Vserver Name TSIH Name ISID Alias
 --------- ------- ---- ------------------------ --------- ---------------------
 vsa_1 iscsi_lf__n1_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:01 scspr1789621001.gdl.englab.netapp.com
 vsa_1 iscsi_lf__n2_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:02 scspr1789621001.gdl.englab.netapp.com
-
 2 entries were displayed.
 ----
-. 인터페이스가 포함된 SVM용 ONTAP의 iSCSI 인터페이스를 나열합니다. `iscsi interface show -vserver svm-name`
+. 새 노드에서 인터페이스가 포함된 SVM용 ONTAP의 iSCSI 인터페이스를 나열합니다.
++
+[source, cli]
+----
+iscsi interface show -vserver <svm-name>
+----
 +
 [listing]
 ----
 sti8200mcchtp001htp_siteA::*> iscsi interface show -vserver vsa_1
-
  Logical Status Curr Curr
-
-Vserver    Interface  TPGT Admin/Oper IP Address Node Port Enabled
----------- ---------- ---- ---------- --------------- ----------- ---- -------
-
+Vserver Interface  TPGT Admin/Oper IP Address Node Port Enabled
+------- ---------- ---- ---------- --------------- ----------- ---- -------
 vsa_1 iscsi_lf__n1_p1_ 1156 up/up 10.230.68.236 sti8200mcc-htp-001 e0g true
 vsa_1 iscsi_lf__n1_p2_ 1157 up/up fd20:8b1e:b255:805e::78c9 sti8200mcc-htp-001 e0h true
 vsa_1 iscsi_lf__n2_p1_ 1158 up/up 10.230.68.237 sti8200mcc-htp-002 e0g true
 vsa_1 iscsi_lf__n2_p2_ 1159 up/up fd20:8b1e:b255:805e::78ca sti8200mcc-htp-002 e0h true
 vsa_1 iscsi_lf__n3_p1_ 1183 up/up 10.226.43.134 sti8200mccip-htp-005 e0c true
 vsa_1 iscsi_lf__n4_p1_ 1188 up/up 10.226.43.142 sti8200mccip-htp-006 e0c true
-
 6 entries were displayed.
 ----
-. iSCSI 클라이언트에서 SVM의 iSCSI IP 주소 중 하나에서 검색을 실행하여 새 타겟('iscsiadm -m discovery -t SendTargets -p iscsi -ip -address')을 검색합니다
+. iSCSI 호스트에서 SVM의 iSCSI IP 주소 중 하나에서 검색을 실행하여 새 타겟을 검색합니다.
++
+[source, cli]
+----
+iscsiadm -m discovery -t sendtargets -p iscsi-ip-address
+----
 +
 비 iSCSI 인터페이스를 포함하여 SVM의 모든 IP 주소에서 검색을 실행할 수 있습니다.
 
@@ -84,55 +97,65 @@ vsa_1 iscsi_lf__n4_p1_ 1188 up/up 10.226.43.142 sti8200mccip-htp-006 e0c true
 [listing]
 ----
 [root@scspr1789621001 ~]# iscsiadm -m discovery -t sendtargets -p 10.230.68.236:3260
-
 10.230.68.236:3260,1156 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
 10.226.43.142:3260,1188 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
 10.226.43.134:3260,1183 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
 10.230.68.237:3260,1158 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
 ----
-. iSCSI 클라이언트에서 검색된 모든 주소('iscsiadm -m node -L all -T node -address -p portal -address -l')에 로그인합니다
+. iSCSI 호스트에서 검색된 모든 주소에 로그인합니다.
++
+[source, cli]
+----
+iscsiadm -m node -L all -T node-address -p portal-address -l
+----
 +
 [listing]
 ----
 [root@scspr1789621001 ~]# iscsiadm -m node -L all -T iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 -p 10.230.68.236:3260 -l
-
 Logging in to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.142,3260] (multiple)
 Logging in to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.134,3260] (multiple)
 Login to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.142,3260] successful.
 Login to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.134,3260] successful.
 ----
-. iSCSI 클라이언트에서 로그인 및 연결 상태('iscsiadm -m session')를 확인합니다
+. iSCSI 호스트에서 로그인 및 접속을 확인합니다.
++
+[source, cli]
+----
+iscsiadm -m session
+----
 +
 [listing]
 ----
 [root@scspr1789621001 ~]# iscsiadm -m session
-
 tcp: [1] 10.230.68.236:3260,1156 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
 tcp: [2] 10.230.68.237:3260,1158 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
 tcp: [3] 10.226.43.142:3260,1188 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
 ----
-. MetroCluster 노드에서 클라이언트 "iscsi initiator show -vserver vsa_1"과의 로그인 및 연결을 확인합니다
+. 새 노드에서 호스트에 대한 로그인 및 연결을 확인합니다.
++
+[source, cli]
+----
+iscsi initiator show -vserver <svm-name>
+----
 +
 [listing]
 ----
 sti8200mcchtp001htp_siteA::*> iscsi initiator show -vserver vsa_1
-
  Tpgroup Initiator
-
 Vserver Name             TSIH Name                  ISID              Igroup Name
 ------- --------         ---- --------------------- ----------------- -----------------
 vsa_1 iscsi_lf__n1_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:01 igroup_linux
 vsa_1 iscsi_lf__n2_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:02 igroup_linux
 vsa_1 iscsi_lf__n3_p1_ 1 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:04 igroup_linux
 vsa_1 iscsi_lf__n4_p1_ 1 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:03 igroup_linux
-
 4 entries were displayed.
 ----
 
 
-이 작업이 끝나면 클라이언트는 모든 iSCSI 인터페이스(MetroCluster FC 및 MetroCluster IP 노드)를 볼 수 있고 이러한 모든 인터페이스에 로그인됩니다.
+.결과
+이 작업이 끝나면 호스트는 이전 노드와 새 노드에 있는 모든 iSCSI 인터페이스를 볼 수 있으며 이러한 모든 인터페이스에 로그인됩니다.
 
-LUN 및 볼륨은 여전히 FC 노드에서 물리적으로 호스팅됩니다. LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 MetroCluster FC 노드를 통한 경로만 표시합니다. sanlun lun show -p 및 multipath -ll -d 명령 출력에서 확인할 수 있습니다. 다음 단계는 IP 노드를 보고 노드로 추가하는 것입니다.
+LUN 및 볼륨은 이전 노드에서 물리적으로 호스팅됩니다. LUN은 이전 노드 인터페이스에서만 보고되기 때문에 호스트는 이전 노드에 대한 경로만 표시합니다. 이를 보려면 를 실행합니다 `sanlun lun show -p` 및 `multipath -ll -d` 호스트에 대한 명령을 실행하고 명령 출력을 검사합니다.
 
 [listing]
 ----
@@ -144,14 +167,13 @@ ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
  Host Device: 3600a098038304646513f4f674e52774b
  Multipath Policy: service-time 0
  Multipath Provider: Native
---------- ---------- ------- ------------ ----------------------------------------------
+--------- ---------- ------- ------------ -------------------
 host vserver
 path path /dev/ host vserver
-state     type       node     adapter     LIF
---------- ---------- ------- ------------ ----------------------------------------------
+state     type       node    adapter      LIF
+--------- ---------- ------- ------------ -------------------
 up        primary    sdk     host3        iscsi_lf__n2_p1_
 up        secondary  sdh     host2        iscsi_lf__n1_p1_
-
 [root@scspr1789621001 ~]# multipath -ll -d
 3600a098038304646513f4f674e52774b dm-5 NETAPP ,LUN C-Mode
 size=2.0G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_handle' hwhandler='1 alua' wp=rw
@@ -162,56 +184,99 @@ size=2.0G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_han
 ----
 
 
-== MetroCluster IP 노드를 보고 노드로 추가
+== 2단계: 새 노드를 보고 노드로 추가합니다
 
-[role="lead"]
-새 MetroCluster IP 노드에 대한 연결을 설정한 후에는 새 보고 노드를 추가해야 합니다.
+새 노드에 대한 연결을 설정한 후 새 노드를 보고 노드로 추가합니다.
 
-. MetroCluster 노드의 SVM에 대한 LUN 보고 노드를 나열합니다. 'lun mapping show -vserver vsa_1 - fields reporting-nodes-OSType linux'
+.단계
+. 새 노드에서 SVM에 있는 LUN에 대한 보고 노드를 나열합니다.
 +
-LUN이 FC 노드_A_1-FC 및 노드_A_2-FC에 물리적으로 있기 때문에 다음 보고 노드는 로컬 노드입니다.
+[source, cli]
+----
+lun mapping show -vserver <svm-name> -fields reporting-nodes -ostype linux
+----
++
+LUN이 물리적으로 이전 node_A_1-old 및 node_A_2-old에 있으므로 다음 보고 노드는 로컬 노드입니다.
 
 +
 [listing]
 ----
-node_A_1-IP::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
-
-vserver path igroup reporting-nodes
-------- --------------------------- ------------ -------------------------------------
-vsa_1 /vol/vsa_1_vol1/lun_linux_2 igroup_linux node_A_1-FC,node_A_2-FC
+node_A_1-new::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+vserver path                         igroup       reporting-nodes
+------- ---------------------------- ------------ ---------------------------
+vsa_1   /vol/vsa_1_vol1/lun_linux_2  igroup_linux node_A_1-old,node_A_2-old
 .
 .
 .
-vsa_1 /vol/vsa_1_vol9/lun_linux_19 igroup_linux node_A_1-FC,node_A_2-FC
+vsa_1   /vol/vsa_1_vol9/lun_linux_19 igroup_linux node_A_1-old,node_A_2-old
 12 entries were displayed.
 ----
-. MetroCluster 노드에서 보고 노드를 추가합니다. 'lun mapping add-reporting-nodes-vserver svm-name-path /vol/vsa_1_vol * /lun_linux_ * -nodes node1, node2-igroup igroup igroup igroup_linux'
+. 새 노드에서 보고 노드를 추가합니다.
++
+[source, cli]
+----
+lun mapping add-reporting-nodes -vserver <svm-name> -path /vol/vsa_1_vol*/lun_linux_* -nodes node1,node2 -igroup <igroup_name>
+----
 +
 [listing]
 ----
-node_A_1-IP::*> lun mapping add-reporting-nodes -vserver vsa_1 -path /vol/vsa_1_vol*/lun_linux_* -nodes node_A_1-IP,node_A_2-IP
+node_A_1-new::*> lun mapping add-reporting-nodes -vserver vsa_1 -path /vol/vsa_1_vol*/lun_linux_* -nodes node_A_1-new,node_A_2-new
 -igroup igroup_linux
-
 12 entries were acted on.
 ----
-. MetroCluster 노드에서 새로 추가된 노드가 있는지 확인합니다. 'lun mapping show -vserver svm -name -fields reporting -nodes-OSType linux vserver path igroup reporting-nodes'
+. 새 노드에서 새로 추가된 노드가 있는지 확인합니다.
++
+[source, cli]
+----
+lun mapping show -vserver <svm-name> -fields reporting-nodes -ostype linux vserver path igroup reporting-nodes
+----
 +
 [listing]
 ----
-
-node_A_1-IP::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux vserver path igroup reporting-nodes
+node_A_1-new::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux vserver path igroup reporting-nodes
 ------- --------------------------- ------------ -------------------------------------------------------------------------------
-
-vsa_1 /vol/vsa_1_vol1/lun_linux_2 igroup_linux node_A_1-FC,node_A_2-FC,node_A_1-IP,node_A_2-IP
-vsa_1 /vol/vsa_1_vol1/lun_linux_3 igroup_linux node_A_1-FC,node_A_2-FC,node_A_1-IP,node_A_2-IP.
+vsa_1 /vol/vsa_1_vol1/lun_linux_2 igroup_linux node_A_1-old,node_A_2-old,node_A_1-new,node_A_2-new
+vsa_1 /vol/vsa_1_vol1/lun_linux_3 igroup_linux node_A_1-old,node_A_2-old,node_A_1-new,node_A_2-new
 .
 .
 .
-
 12 entries were displayed.
 ----
-. 를 확인합니다 `sg3-utils` 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다 `rescan-scsi-bus.sh utility not found` 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다 `rescan-scsi-bus` 명령.
-. 호스트에서 다음 명령을 실행하여 호스트에서 SCSI 버스를 다시 검색하고 새로 추가된 경로를 검색합니다. `/usr/bin/rescan-scsi-bus.sh -a`
+. 를 클릭합니다 `sg3-utils` Linux 호스트에 패키지가 설치되어 있어야 합니다. 이를 통해 가 방지됩니다 `rescan-scsi-bus.sh utility not found` 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다 `rescan-scsi-bus` 명령.
++
+호스트에서 를 확인합니다 `sg3-utils` 패키지가 설치됨:
+
++
+--
+** 데비안 기반 배포판의 경우:
++
+[source, cli]
+----
+dpkg -l | grep sg3-utils
+----
+** Red Hat 기반 배포판의 경우:
++
+[source, cli]
+----
+rpm -qa | grep sg3-utils
+----
+
+
+--
++
+필요한 경우 를 설치합니다 `sg3-utils` Linux 호스트의 패키지:
+
++
+[source, cli]
+----
+sudo apt-get install sg3-utils
+----
+. 호스트에서 호스트의 SCSI 버스를 다시 검색하여 새로 추가된 경로를 찾습니다.
++
+[source, cli]
+----
+/usr/bin/rescan-scsi-bus.sh -a
+----
 +
 [listing]
 ----
@@ -231,7 +296,12 @@ OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
 0 remapped or resized device(s) found.
 0 device(s) removed.
 ----
-. 호스트에서 다음 명령을 실행하여 새로 추가된 경로를 나열합니다. 'lun lun show -p
+. iSCSI 호스트에서 새로 추가된 경로를 나열합니다.
++
+[source, cli]
+----
+sanlun lun show -p
+----
 +
 각 LUN에 대해 4개의 경로가 표시됩니다.
 
@@ -246,32 +316,37 @@ ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
  Host Device: 3600a098038304646513f4f674e52774b
  Multipath Policy: service-time 0
  Multipath Provider: Native
---------- ---------- ------- ------------ ----------------------------------------------
+------- ---------- ------- ----------- ---------------------
 host vserver
 path path /dev/ host vserver
-state type node adapter LIF
---------- ---------- ------- ------------ ----------------------------------------------
-up primary sdk host3 iscsi_lf__n2_p1_
-up secondary sdh host2 iscsi_lf__n1_p1_
-up secondary sdag host4 iscsi_lf__n4_p1_
-up secondary sdah host5 iscsi_lf__n3_p1_
+state   type       node    adapter     LIF
+------  ---------- ------- ----------- ---------------------
+up      primary    sdk      host3      iscsi_lf__n2_p1_
+up      secondary  sdh     host2       iscsi_lf__n1_p1_
+up      secondary  sdag    host4       iscsi_lf__n4_p1_
+up      secondary  sdah    host5       iscsi_lf__n3_p1_
 ----
-. MetroCluster에서 LUN이 포함된 볼륨/볼륨을 FC에서 IP 노드로 이동합니다.
+. 새 노드의 경우 LUN이 포함된 볼륨/볼륨을 이전 노드에서 새 노드로 이동합니다.
 +
 [listing]
 ----
-node_A_1-IP::*> vol move start -vserver vsa_1 -volume vsa_1_vol1 -destination-aggregate sti8200mccip_htp_005_aggr1
+node_A_1-new::*> vol move start -vserver vsa_1 -volume vsa_1_vol1 -destination-aggregate sti8200mccip_htp_005_aggr1
 [Job 1877] Job is queued: Move "vsa_1_vol1" in Vserver "vsa_1" to aggregate "sti8200mccip_htp_005_aggr1". Use the "volume move show -vserver
 vsa_1 -volume vsa_1_vol1" command to view the status of this operation.
-node_A_1-IP::*> vol move show
-Vserver    Volume     State       Move       Phase            Percent-Complete  Time-To-Complete
----------  ---------- --------    ---------- ---------------- ----------------  ----------------
-vsa_1     vsa_1_vol1  healthy                initializing     -                 -
+node_A_1-new::*> vol move show
+Vserver  Volume      State       Move       Phase            Percent-Complete  Time-To-Complete
+-------- ----------  --------    ---------- ---------------- ----------------  ----------------
+vsa_1    vsa_1_vol1  healthy                initializing     -                 -
 ----
-. 볼륨 이동이 완료되면 MetroCluster에서 volume show 명령을 사용하여 볼륨 또는 LUN이 온라인 상태인지 확인합니다.
-. LUN이 현재 상주하는 MetroCluster IP 노드의 iSCSI 인터페이스가 기본 경로로 업데이트됩니다. 볼륨 이동 후 기본 경로가 업데이트되지 않으면 /usr/bin/rescan-scsi-bus.sh -a 및 multipath -v3을 실행하거나 다중 경로 재검색 작업이 완료될 때까지 기다립니다.
+. 볼륨을 새 노드로 이동한 후 볼륨이 온라인 상태인지 확인합니다.
 +
-다음 예제에서 기본 경로는 MetroCluster IP 노드의 LIF입니다.
+[source, cli]
+----
+volume show -state
+----
+. 이제 LUN이 상주하는 새 노드의 iSCSI 인터페이스가 기본 경로로 업데이트됩니다. 볼륨 이동 후 기본 경로가 업데이트되지 않은 경우 를 실행합니다 `/usr/bin/rescan-scsi-bus.sh -a` 및 `multipath -v3` 호스트에서 또는 단순히 다중 경로 재검색이 수행될 때까지 기다립니다.
++
+다음 예제에서 기본 경로는 새 노드의 LIF입니다.
 
 +
 [listing]
@@ -298,44 +373,83 @@ up        secondary  sdah    host5        iscsi_lf__n3_p1_
 
 
 
-== 보고 노드를 제거하고 경로를 다시 검색했습니다
+== 3단계: 보고 노드를 제거하고 경로를 다시 검색합니다
 
-[role="lead"]
 보고 노드를 제거하고 경로를 다시 검색해야 합니다.
 
-. MetroCluster IP 노드에서 Linux LUN에 대한 원격 보고 노드(MetroCluster IP 노드)를 제거합니다. 'lun mapping remove-reporting-nodes-vserver vsa_1-path * -igroup igroup igroup_linux-remote-nodes true'
+.단계
+. 새 노드에서 Linux LUN에 대한 원격 보고 노드(새 노드)를 제거합니다.
 +
-이 경우 원격 노드는 FC 노드입니다.
+[source, cli]
+----
+lun mapping remove-reporting-nodes -vserver <svm-name> -path * -igroup <igroup_name> -remote-nodes true
+----
++
+이 경우 원격 노드가 이전 노드입니다.
 
 +
 [listing]
 ----
-node_A_1-IP::*> lun mapping remove-reporting-nodes -vserver vsa_1 -path * -igroup igroup_linux -remote-nodes true
-
+node_A_1-new::*> lun mapping remove-reporting-nodes -vserver vsa_1 -path * -igroup igroup_linux -remote-nodes true
 12 entries were acted on.
 ----
-. MetroCluster IP 노드에서 LUN에 대한 보고 노드를 확인합니다. 'lun mapping show -vserver vsa_1 -fields reporting -nodes-OSType linux'
+. 새 노드에서 LUN에 대한 보고 노드를 확인합니다.
++
+[source, cli]
+----
+lun mapping show -vserver <svm-name> -fields reporting-nodes -ostype linux
+----
 +
 [listing]
 ----
-node_A_1-IP::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
-
-vserver  path                        igroup      reporting-nodes
-------- --------------------------- ------------ -----------------------------------------
-
-vsa_1 /vol/vsa_1_vol1/lun_linux_2   igroup_linux  node_A_1-IP,node_A_2-IP
-vsa_1 /vol/vsa_1_vol1/lun_linux_3   igroup_linux  node_A_1-IP,node_A_2-IP
-vsa_1 /vol/vsa_1_vol2/lun_linux_4   group_linux   node_A_1-IP,node_A_2-IP
+node_A_1-new::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+vserver  path                         igroup        reporting-nodes
+-------  ---------------------------  ------------  -------------------------
+vsa_1    /vol/vsa_1_vol1/lun_linux_2  igroup_linux  node_A_1-new,node_A_2-new
+vsa_1    /vol/vsa_1_vol1/lun_linux_3  igroup_linux  node_A_1-new,node_A_2-new
+vsa_1    /vol/vsa_1_vol2/lun_linux_4  group_linux   node_A_1-new,node_A_2-new
 .
 .
 .
-
 12 entries were displayed.
 ----
-. 를 확인합니다 `sg3-utils` 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다 `rescan-scsi-bus.sh utility not found` 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다 `rescan-scsi-bus` 명령.
-. iSCSI 호스트에서 SCSI 버스를 다시 검색합니다. `/usr/bin/rescan-scsi-bus.sh -r`
+. 를 클릭합니다 `sg3-utils` Linux 호스트에 패키지가 설치되어 있어야 합니다. 이를 통해 가 방지됩니다 `rescan-scsi-bus.sh utility not found` 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다 `rescan-scsi-bus` 명령.
 +
-제거된 경로는 FC 노드의 경로입니다.
+호스트에서 를 확인합니다 `sg3-utils` 패키지가 설치됨:
+
++
+--
+** 데비안 기반 배포판의 경우:
++
+[source, cli]
+----
+dpkg -l | grep sg3-utils
+----
+** Red Hat 기반 배포판의 경우:
++
+[source, cli]
+----
+rpm -qa | grep sg3-utils
+----
+
+
+--
++
+필요한 경우 를 설치합니다 `sg3-utils` Linux 호스트의 패키지:
+
++
+[source, cli]
+----
+sudo apt-get install sg3-utils
+----
+. iSCSI 호스트에서 SCSI 버스를 다시 검색합니다.
++
+[source, cli]
+----
+/usr/bin/rescan-scsi-bus.sh -r
+----
++
+제거된 경로는 이전 노드의 경로입니다.
 
 +
 [listing]
@@ -362,15 +476,19 @@ OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
 24 device(s) removed.
  [2:0:0:0]
  [2:0:0:1]
- .
+.
 .
 .
 ----
-. iSCSI 호스트에서 MetroCluster IP 노드의 경로만 표시되는지 확인합니다.
+. iSCSI 호스트에서 새 노드의 경로만 표시되는지 확인합니다.
 +
-`sanlun lun show -p`
-
+[source, cli]
+----
+sanlun lun show -p
+----
 +
-`multipath -ll -d`
-
+[source, cli]
+----
+multipath -ll -d
+----
 
