@@ -323,7 +323,6 @@
   <block id="38aab50f6d81fce560ddcd4349e66fc7" category="list-text">SnapMirror SVM 재해 복구는 ONTAP 9.5 이상의 버전을 실행 중인 MetroCluster 구성에서만 지원됩니다.</block>
   <block id="8aa8953fa014032d4074fce6f76630d4" category="section-title">ONTAP 시스템 관리자의 MetroCluster 작업</block>
   <block id="a0e45cbea6afae054f370a0854ab9b4f" category="paragraph">ONTAP 버전에 따라 ONTAP System Manager를 사용하여 일부 MetroCluster 관련 작업을 수행할 수 있습니다.</block>
-  <block id="dea75c52e73dcc7b5308af6dfbc8d3df" category="paragraph">미러링되지 않은 애그리게이트는 System Manager에서 지원되지 않습니다.</block>
   <block id="89bbe5f6f49d96ef3219b3e3960c33d5" category="section-title">MetroCluster 구성에서 FlexCache 지원</block>
   <block id="25f74bbacb558877b948827961d27de6" category="section-title">FlexCache 오리진 및 캐시가 동일한 MetroCluster 사이트 내에 있을 때 스위치오버 후 SVM이 자동으로 수행됩니다</block>
   <block id="43d8c9bae66c0d9ea51cdfb946c37379" category="paragraph">협상된 또는 계획되지 않은 전환 후 클러스터 내의 모든 SVM FlexCache 피어링 관계를 수동으로 구성해야 합니다.</block>
@@ -4241,7 +4240,6 @@
   <block id="7a365cd12da877b60fbaf51ea77e78d3" category="list-text">각 사이트에는 하나 이상의 SAS 스토리지 스택이 있습니다.</block>
   <block id="7a4c75050b0dbc2db2f44779ef59ac8f" category="admonition">MetroCluster 구성의 SAS 쉘프는 ACP 케이블 연결을 지원하지 않습니다.</block>
   <block id="31ba954da1f3d57b312dbcd42cb0f623" category="paragraph">추가 스토리지 스택은 지원되지만 각 사이트에는 하나만 표시됩니다.</block>
-  <block id="f6fd567c32c1fb87872959aed0c80c2e" category="paragraph">ONTAP 버전에 따라 ONTAP System Manager를 사용하여 일부 MetroCluster 특정 작업을 수행할 수 있습니다.</block>
   <block id="e1a39a6f1b5c4c92045693ad6ebdd2a1" category="paragraph">스위치오버 후 SVM VS1-mc 및 VS2-mc가 파트너 사이트(site_B)에서 활성화됩니다. FlexCache에서 'vserver peer 반복적인' 명령을 사용하여 작업을 하려면 수동으로 이 명령을 철회해야 합니다.</block>
   <block id="05b1987240de2b0227bb9f6af346a70e" category="paragraph">MetroCluster 구성 외부에서 클러스터에 대한 FlexCache 관계의 경우 전환 중에 관련 클러스터가 연결 끊김 모드에 있을 때 절체 후에 항상 피어링을 수동으로 재구성해야 합니다.</block>
   <block id="3b4a0463df76b45385a0a18ebfbb5917" category="paragraph">절체가 트리거되고, site_A와 site_C가 연결되지 않은 경우, 절체 후 'vserver peer redrepoder' 명령을 사용하여 site_B(절체 클러스터) 및 site_C의 SVM을 수동으로 자동 해제해야 합니다.</block>
@@ -9034,8 +9032,6 @@
   <block id="827782113c613dee6a1aabc786e39335" category="list-text">에서 스위치용 RCF 파일을 다운로드합니다<block ref="7a2a5b3ce34e84b17e1e6ffcc479aaa8" category="inline-link-rx"></block> 페이지.</block>
   <block id="af833d07deb3fe26ff9462cdf18f37ab" category="paragraph">파일은 스위치로 전송할 수 있는 위치에 배치해야 합니다. 2스위치 패브릭을 구성하는 4개의 스위치마다 별도의 파일이 있습니다.</block>
   <block id="6141173db52bd750748a18081d69700e" category="list-text">구성의 각 스위치에 대해 이 단계를 반복합니다.</block>
-  <block id="ce54cea34e79331ac5a0d8398a0daeb2" category="list-text">MetroCluster IP 구성에서 스위치오버 및 스위치백(ONTAP 9.7부터 시작)</block>
-  <block id="b9dc5407731afe77b8474622a7260199" category="list-text">MetroCluster IP 구성(ONTAP 9.8부터)에서 미러링된 애그리게이트를 프로비저닝 및 확장</block>
   <block id="8dc21fc84b0da6d36b0ff79fb6495c7b" category="paragraph">예를 들어 SVM "VS1"(캐시) 및 "VS2"(원본)은 site_A에 있습니다 이러한 SVM을 자세히 들여다보았습니다.</block>
   <block id="685fd8e4740bc36c11367ec44db4636f" category="paragraph">스위치오버 후 파트너 사이트(site_B)에서 SVM "VS1-mc" 및 "VS2-mc"가 활성화됩니다. FlexCache에서 'vserver peer 반복적인' 명령을 사용하여 작업을 하려면 수동으로 이 명령을 철회해야 합니다.</block>
   <block id="bf9ed55fade58e6d12b08126597ad127" category="list-text">FlexCache(VS1의 cache_1)의 한쪽 끝은 MetroCluster site_A에 있습니다</block>
@@ -13341,4 +13337,6 @@
   <block id="bd041cb07dda4e5f8fbcf9fc40cd8e53" category="open-title">SNMPv3을 사용하여 스위치 추가:</block>
   <block id="1ec64a333712792d694f6485f208d7bf" category="paragraph"><block ref="6483c1c2c512d0e62f46ddc53b9d4638" prefix="" category="inline-code"></block></block>
   <block id="ebbf46e9806730b0f0c4ca0133de2d34" category="open-title">SNMPv2를 사용하여 스위치 추가:</block>
+  <block id="10982c02dbedeb50373ef205f82ca3c8" category="inline-link-macro">System Manager로 MetroCluster 사이트를 관리합니다</block>
+  <block id="53eaf367aa3b61105b8ddce45278ab85" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="eef6283454e42ed2d47fdb00a9ff3e0c" category="inline-link-macro-rx"></block> 문서화:</block>
 </blocks>

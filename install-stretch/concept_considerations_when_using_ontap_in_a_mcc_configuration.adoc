@@ -30,19 +30,6 @@ MetroCluster 구성에서 ONTAP를 사용할 때는 라이센스 등록, MetroCl
 
 
 
-== ONTAP 시스템 관리자의 MetroCluster 작업
-
-ONTAP 버전에 따라 ONTAP System Manager를 사용하여 일부 MetroCluster 특정 작업을 수행할 수 있습니다.
-
-* MetroCluster IP 구성에서 스위치오버 및 스위치백(ONTAP 9.7부터 시작)
-* MetroCluster IP 구성(ONTAP 9.8부터)에서 미러링된 애그리게이트를 프로비저닝 및 확장
-+
-미러링되지 않은 애그리게이트는 System Manager에서 지원되지 않습니다.
-
-
-
-
-
 == MetroCluster 구성에서 FlexCache 지원
 
 ONTAP 9.7부터 MetroCluster 볼륨은 FlexCache 구성에서 지원됩니다. 스위치오버 또는 스위치백 작업 후 수동 재시행을 위한 요구 사항을 숙지해야 합니다.
