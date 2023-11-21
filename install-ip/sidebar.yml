@@ -51,6 +51,8 @@ entries:
       url: "/install-ip/port_usage_3132q.html"
     - title: Cisco 3232C 또는 Cisco 9336C 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port_usage_3232c_9336c.html"
+    - title: Cisco 9336C-FX2 공유 스위치에 대한 플랫폼 포트 할당
+      url: "/install-ip/port_usage_9336c_shared.html"
     - title: Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port_usage_bes53248.html"
     - title: NVIDIA 지원 SN2100 IP 스위치를 위한 플랫폼 포트 할당

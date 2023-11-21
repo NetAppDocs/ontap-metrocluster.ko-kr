@@ -13,6 +13,11 @@ summary: MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플�
 [role="lead"]
 MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.
 
+표를 사용하기 전에 다음 지침을 검토하십시오.
+
+* MetroCluster FC에서 IP로 전환되도록 스위치를 구성하는 경우, 포트 5, 포트 6, 포트 13 또는 포트 14를 사용하여 MetroCluster FC 노드의 로컬 클러스터 인터페이스를 연결할 수 있습니다. 을 참조하십시오 link:https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["RcfFileGenerator 를 참조하십시오"^] 이 구성의 케이블 연결에 대한 자세한 내용은 생성된 케이블 연결 파일을 참조하십시오. 다른 모든 연결의 경우 표에 나열된 포트 사용 할당을 사용할 수 있습니다.
+
+
 
 
 == FAS2750 또는 AFF A220 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
@@ -21,12 +26,12 @@ image::../media/mcc_ip_cabling_a_fas2750_or_a220_to_a_cisco_3132q_v_switch.png[C
 
 
 
-== FAS9000, AFF A700 및 Cisco 3132Q-V 스위치의 포트 사용
+== FAS9000 또는 AFF A700 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
 
 image::../media/mcc_ip_cabling_a_fas9000_or_aff_a700_to_a_cisco_3132q_v_switch.png[MCC IP fas9000 또는 AFF a700을 Cisco 3132q v 스위치에 케이블로 연결합니다]
 
 
 
-== AFF A800 및 Cisco 3132Q-V 스위치의 포트 사용
+== AFF A800 또는 ASA A800 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
 
 image::../media/cabling_an_aff_a800_to_a_cisco_3132q_v_switch.png[AFF A800을 Cisco 3132q v 스위치에 케이블로 연결합니다]

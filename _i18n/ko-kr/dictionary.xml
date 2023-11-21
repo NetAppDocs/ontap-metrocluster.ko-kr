@@ -501,9 +501,7 @@
   <block id="14681192c7f80e2d7631c3a070df9619" category="doc">Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당</block>
   <block id="3b83c4ddd89aceae283e372313711a0d" category="section-title">FAS2750 또는 AFF A220 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
   <block id="0d1dedffee468c654fc7737c161a5ef6" category="image-alt">Cisco 3132q v 스위치에 fas2750 또는 A220 MCC IP 케이블 연결</block>
-  <block id="017a22ca0ee5bf776874da5739566129" category="section-title">FAS9000, AFF A700 및 Cisco 3132Q-V 스위치의 포트 사용</block>
   <block id="f300420ccf8e917fff4dcf018758ab75" category="image-alt">MCC IP fas9000 또는 AFF a700을 Cisco 3132q v 스위치에 케이블로 연결합니다</block>
-  <block id="e029b19b88949b46b1b71209d9728ce5" category="section-title">AFF A800 및 Cisco 3132Q-V 스위치의 포트 사용</block>
   <block id="4ab951cbcd9d68b32f922b0a2d6e39c2" category="image-alt">AFF A800을 Cisco 3132q v 스위치에 케이블로 연결합니다</block>
   <block id="09cb6984bdf1b82c9749906ba1a69331" category="summary">MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
   <block id="bacf5875940eb96c091917a5d1b9e1ad" category="doc">MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정</block>
@@ -911,10 +909,6 @@
   <block id="5464feaf47ab5ece52dac29514c066c9" category="list-text">인터클러스터 복제를 위한 데이터 포트를 공유하는 경우 LIF를 동일한 노드의 다른 인터클러스터 지원 포트로 마이그레이션하여 복제에 사용되는 특정 데이터 포트를 제어할 수 있습니다.</block>
   <block id="3e7d7088000e9b3208b36b1397763f5e" category="doc">Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당</block>
   <block id="70797c25b23e4d3313107866a946ef86" category="paragraph">스위치는 속도가 다른 원격 ISL 포트(예: 10Gbps ISL 포트에 연결된 25Gbps 포트)와 함께 사용할 수 없습니다.</block>
-  <block id="1ea1224e95806d38188ac2833eef5d68" category="list-title">아래 표에 대한 참고 사항:</block>
-  <block id="84d5df4bc00912b5bf41517f871849dc" category="list-text">일부 플랫폼의 경우 MetroCluster ISL 또는 MetroCluster 인터페이스 연결에 포트 49-54를 사용할 수 있습니다.</block>
-  <block id="141c241c09745923a907fa0b44d6fdc2" category="paragraph">이러한 포트에는 추가 라이센스가 필요합니다.</block>
-  <block id="c7ecc9ce844e9f4491596826d0847864" category="paragraph">MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차를 포함하여 스위치 클러스터가 필요한 기능은 이 구성에서 지원되지 않습니다.</block>
   <block id="101ffe4f466417c1ce75564d3cc0a3b6" category="list-text">Broadcom BES-53248 스위치로 구성된 AFF A320 시스템은 일부 기능을 지원하지 않을 수 있습니다.</block>
   <block id="cc1b37b4c1dcf92c7509c109eb4c4d7d" category="paragraph">로컬 클러스터 연결이 스위치에 연결되어야 하는 구성 또는 기능은 지원되지 않습니다. 예를 들어 다음 구성 및 절차는 지원되지 않습니다.</block>
   <block id="9998da0c6596ccc4b44b68b91eee576b" category="list-text">8노드 MetroCluster 구성</block>
@@ -922,7 +916,6 @@
   <block id="541a17569d4a90ee94a9fd4035349deb" category="list-text">4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="dea9eb47178beaeb21ad431dae613392" category="image-alt">MCC IP 케이블 AFF a300 또는 fas8200을 Broadcom의 53248 스위치에 연결합니다</block>
   <block id="99abcc4b4e656e7c9d684acf6c9c05d8" category="image-alt">MCC IP Broadcom의 53248 스위치에 AFF A320 케이블 연결</block>
-  <block id="d13ba1eac1605fed2f8d4e769d4a477e" category="image-alt">MCC IP 케이블 연결 fas8300 a400 또는 fas8700에서 Broadcom bes 53248 스위치에 연결합니다</block>
   <block id="ea9736859da816cfcd8267f7a6c4256a" category="summary">구성에 대한 ISL 요구 사항을 알아야 합니다.</block>
   <block id="48b322af5cc10f141bccf9319f5b9635" category="paragraph">모든 MetroCluster IP 구성에서 ISL에 대해 다음 요구 사항을 충족해야 합니다.</block>
   <block id="2cf083b4052be0be399ea3ba03b033d9" category="list-text">네이티브 속도 ISL 스위치 포트는 네이티브 속도 ISL 스위치 포트에 연결해야 합니다.</block>
@@ -1555,7 +1548,6 @@
   <block id="bbea4b02ce438e1ae0146e4c5cabb671" category="list-text">다음 표에는 사이트 A의 포트 사용량이 나와 있습니다 사이트 B에 동일한 케이블이 사용됩니다</block>
   <block id="f57f407b5a71435a3bd46aac8befd7b8" category="list-text">스위치는 속도가 다른 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 구성할 수 없습니다.</block>
   <block id="c57a7dcc596f78ac23d59a9297d99a56" category="list-text">스위치를 사용하여 단일 MetroCluster를 구성하는 경우 * MetroCluster 1 * 포트 그룹을 사용합니다.</block>
-  <block id="33fe8d1e8f8aa1d0b52b4b3a25fc436c" category="paragraph">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 또는 MetroCluster 3)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 도구가 필요합니다.</block>
   <block id="240c641ec7d44f443373981bb513fa5c" category="list-text">MetroCluster IP용 RcfFileGenerator는 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다.</block>
   <block id="e13e5f806fc6cae09bcb9fed7eecf125" category="paragraph">이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.</block>
   <block id="9ae436c3a98ee403124b8482b69c2296" category="section-title">스위치에 2개의 MetroCluster 구성을 케이블로 연결합니다</block>
@@ -7923,9 +7915,6 @@
   <block id="99121f5c6ebd942309c1151523466608" category="paragraph"><block ref="99121f5c6ebd942309c1151523466608" category="inline-link-macro-rx"></block></block>
   <block id="c5ca83d0e723113560fb2c95b33b532b" category="doc">무중단 전환을 지원하는 플랫폼</block>
   <block id="1799408ec992ed3e5561f7b04ccef0fe" category="paragraph">예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.</block>
-  <block id="2abcc8e487f56251cd49b5a74738c4c4" category="section-title">Cisco 9336C-FX2 공유 스위치 구성으로 전환</block>
-  <block id="f8e0758b3af85da8f282b95e41204586" category="paragraph">Cisco 9336C-FX2 공유 스위치 구성으로의 전환은 지원되지 않습니다. 공유 스위치 구성 _ 은(는) 스위치가 MetroCluster 연결과 스토리지 쉘프 연결을 모두 제공하는 구성입니다.</block>
-  <block id="1a0ece25400c2d4c0b3a063a4d9d1aad" category="paragraph">Cisco 9336C-FX2 스위치가 MetroCluster 연결만 제공하는 구성은 지원됩니다.</block>
   <block id="1e5e78662df1059700ef33c3a063b1d8" category="summary">기존 MetroCluster FC 노드에서 정보를 수집하고, 유지 관리를 시작하라는 AutoSupport 메시지를 보내고, 노드를 전환해야 합니다.</block>
   <block id="a286994e2be106ef6491365f1ecc470f" category="doc">MetroCluster FC 노드 전환</block>
   <block id="a689c00e028f2cdb352d96242d3b6ef8" category="section-title">전환 전에 기존 컨트롤러 모듈에서 정보를 수집합니다</block>
@@ -11969,11 +11958,6 @@
   <block id="04609bc4c74d3a1d83089f636a27a4b0" category="paragraph">ONTAP 9.11.1부터 MetroCluster 구성 내의 두 사이트는 다음 이미지와 같이 FAS 또는 AFF 대상 클러스터와 SVM DR 관계의 소스가 될 수 있습니다.</block>
   <block id="66a9b9ac77fa7e18f707ae56e903dd9c" category="inline-image-macro">SVM DR 새로운 토폴로지</block>
   <block id="852e82b3cf4859eb193e979d1ed02eba" category="paragraph"><block ref="852e82b3cf4859eb193e979d1ed02eba" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="11956e846be834740959ad71d40b9547" category="list-text">두 MetroCluster 구성을 연결하고 두 구성 모두 동일한 컨트롤러 유형을 사용하는 경우 MetroCluster 포트 그룹 3과 4를 사용해야 합니다. 컨트롤러가 다른 경우에는 MetroCluster 포트 그룹 3 및 4를 한 유형에 사용하고 MetroCluster 포트 그룹 1 및 2를 다른 유형에 사용해야 합니다.</block>
-  <block id="691efed68d0449f254968b0811d65b71" category="list-text">예를 들어, 다음과 같이 연결할 수 있습니다.</block>
-  <block id="2ad4e214daf4f2fbe760328984025270" category="list-text">FAS2750/AFF A220만 또는 FAS500f/AFF A250으로 구성된 2개의 MetroCluster 구성에서는 MetroCluster 포트 그룹 3과 4를 선택해야 합니다.</block>
-  <block id="1c4e028af9d72f4e84ad919004a88581" category="list-text">하나의 MetroCluster가 FAS2750/AFF A220 유형이고 다른 하나는 FAS500f/AFF A250인 두 MetroCluster 구성에서는 포트 그룹 3과 4를 선택하고 다른 하나는 포트 그룹 1과 2를 선택해야 합니다. 에 있습니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block>, 드롭다운 필드 1 및 2는 드롭다운 필드 3 및 4에서 플랫폼을 선택한 후에만 지원되는 플랫폼으로 채워집니다. 을 참조하십시오 <block ref="4dfd72a31c74d2e269d1ca49dcbd7291" category="inline-link-macro-rx"></block> 포트 테이블 사용 방법에 대한 자세한 내용은 를 참조하십시오.</block>
-  <block id="eab2b22490c89198b6c41f5b7c6e6104" category="image-alt">MCC IP 케이블 연결 AFF A250 및 A220을 Broadcom의 Bes 53248 스위치에 연결합니다</block>
   <block id="af5c7720c35a6c5bbdbd9a0118f9b86a" category="list-text">MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)</block>
   <block id="f59e44c66a463087eb80b00cc5e7867c" category="list-text">동일한 모델의 지원되는 Cisco 스위치 4개를 동일한 NX-OS 버전 및 라이센스로 사용해야 합니다.</block>
   <block id="de27fc3292cfa48f233ba5969313e590" category="list-text">Cisco FC 스토리지 패브릭에서는 암호화 또는 압축을 사용할 수 없습니다. MetroCluster 구성에서는 지원되지 않습니다.</block>
@@ -12358,11 +12342,7 @@
   <block id="59c778d760eb930375b77337b3ee45b9" category="list-text">RCF 파일을 실행합니다. RCF 파일에는 하나 이상의 단계를 적용하는 옵션이 필요합니다. 기술 지원 부서의 지시가 없는 한, RCF 파일을 명령줄 옵션 없이 실행합니다. RCF 파일의 다양한 단계 완료 상태를 확인하려면 '-1' 또는 '모두' 옵션을 사용하여 모든 단계(보류 중)를 적용합니다.</block>
   <block id="91fda6ec6c364088ae4a9e6553b26f99" category="doc">NVIDIA 지원 SN2100 IP 스위치를 위한 플랫폼 포트 할당</block>
   <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">지원되는 구성</block>
-  <block id="5b7679ef32240286811b416ba05c54c1" category="paragraph">현재 지원되는 플랫폼은 다음과 같습니다.</block>
-  <block id="4c744d90883c4aab83c5469643da24c7" category="list-text">FAS9000/AFF A700</block>
-  <block id="b6db688996a59c9dcd63d8adb538f928" category="paragraph">다음 플랫폼 및 구성은 현재 지원되지 않습니다.</block>
   <block id="570a8334b13f037157ca46f8cbbf662b" category="list-text">MetroCluster FC-to-IP 전환</block>
-  <block id="67ce3d63d94102f7ff725a6564099821" category="list-text">8노드 MetroCluster 구성</block>
   <block id="5aa692c4552b821f69bb151f7aa0f216" category="paragraph">여러 MetroCluster 구성에 케이블을 연결하는 경우 해당 표를 따르십시오. 예를 들면 다음과 같습니다.</block>
   <block id="10fe94c98083f4e751ef035d96910a62" category="paragraph">다음 섹션에서는 물리적 케이블 연결 개요에 대해 설명합니다. 를 참조할 수도 있습니다<block ref="c52b4d12f68853a25c52576697c6b2b5" category="inline-link-rx"></block> 케이블 연결에 대한 자세한 내용은 을 참조하십시오.</block>
   <block id="fb66ffdb7a65b64035629ded64b78faf" category="sidebar">NVIDIA IP 스위치를 구성합니다</block>
@@ -12500,8 +12480,6 @@
   <block id="0defe01fed70ecdf301ed45ee130f658" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 <block ref="5e51ded3128b8f60bc0b91c41dccbb25" category="inline-link-macro-rx"></block>.</block>
   <block id="7aeedda5f35486a7239b2a68ae68fb9a" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택할 수 있습니다.</block>
   <block id="959c17d1eadff13225c68a5578c6da93" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
-  <block id="822ff8bdadd23c839b2a13dbdf0af776" category="paragraph">업그레이드 절차에서는 컨트롤러가 새 컨트롤러 모델로 교체됩니다. 스토리지 쉘프 모델은 업그레이드되지 않습니다.</block>
-  <block id="8ddc003a58eb9422a54e43b4cfe03f2e" category="list-text">스위치오버 및 스위치백 절차에서 MetroCluster 스위치오버 작동은 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공하는 데 사용됩니다.</block>
   <block id="789c52582d523f3977d636da81e92dc0" category="list-text">ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.</block>
   <block id="316cc41a2ded57b927048db5915a847f" category="section-title">스위치오버 및 스위치백 프로세스를 사용하는 절차 선택</block>
   <block id="310848f15048cc78b3cbee9c61235054" category="paragraph">아래 FC 또는 IP 표에서 현재 플랫폼을 선택합니다. 현재 플랫폼 행과 대상 플랫폼 열이 교차하는 부분이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
@@ -12547,7 +12525,6 @@
   <block id="5f565b56a7ba868b460ab51ab73790d6" category="paragraph">을 참조하십시오<block ref="6ddc20d2276dd2fc9d58822a83f46769" category="inline-link-rx"></block> 을 참조하십시오.</block>
   <block id="3cdc2ade26b9bc4adc9df14235e19c7e" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
   <block id="d0b28fd083b63a9e12330f486ca47625" category="section-title">지원되는 MetroCluster FC 기술 업데이트 조합</block>
-  <block id="88ea8505ba0420be98c64dcb7f91e23c" category="image-alt">MetroCluster FC 기술 업데이트</block>
   <block id="cfd1300cd3db131e8f69dc38177b5658" category="section-title">지원되는 MetroCluster IP 기술 업데이트 조합</block>
   <block id="ad06b1bad80df72d4f2fa24312c0a9bf" category="cell">새로 고침 방법</block>
   <block id="56ad29882b1f5aa7a765e42a0bd3ca97" category="paragraph"><block ref="56ad29882b1f5aa7a765e42a0bd3ca97" category="inline-link-macro-rx"></block></block>
@@ -12745,38 +12722,19 @@
   <block id="2a077243240a3af8fdb5a2c53c8dfd93" category="sidebar">두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다</block>
   <block id="3ae2a51b967ff5379c07b5d59d9bb892" category="sidebar">새 컨트롤러 모듈 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
   <block id="2ec9cf7fc01c78e918f2c1109d699ebd" category="sidebar">ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다</block>
-  <block id="6dc537d2cf87cd236dd75c2694edbea6" category="image-alt">MetroCluster FC IP 전환 매트릭스 y노란색그룹1</block>
   <block id="3ba18986907ef3401544960b244376ed" category="section-title">AFF A150 및 AFF A220 시스템의 ADP 및 디스크 할당</block>
   <block id="3e0a52646b307379f47860044c088d60" category="paragraph">각 외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="b244c220ca2f00fdc24e97de45456f82" category="section-title">AFF C400 및 AFF A400 시스템에서 ADP 및 디스크 할당</block>
   <block id="ba9bcbab50848c136d0007b25231ce1e" category="section-title">AFF C800 및 AFF A800 시스템에서 ADP 및 디스크 할당</block>
-  <block id="c977cafedb40d70c2be8514107ee4747" category="list-text">FAS500f/AFF C250/AFF A250</block>
-  <block id="fc6e488d651b33ef6c6b35c501a7495f" category="list-text">FAS8300/AFF C400/AFF A400</block>
-  <block id="297b6e0ce5945c15596f1be2b7ce0585" category="list-text">AFF C800/AFF A800</block>
   <block id="8e65b308ba381d7e7d885330e749b55d" category="list-text">AFF A700 유형의 4노드 MetroCluster 구성 2개를 케이블로 연결한 경우 첫 번째 MetroCluster를 "MetroCluster 1"로 연결하고 두 번째 MetroCluster를 AFF A700 표에서 "MetroCluster 2"로 연결합니다.</block>
   <block id="e5c3d25338f9cf52b0644af8df5dd491" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 포트 13s0-3 및 14s0-3으로 표시됩니다.</block>
-  <block id="1ad95d38a718a40f57a452228a018366" category="section-title">FAS500f, AFF C250 또는 AFF A250의 스위치 포트 사용</block>
-  <block id="32749c9f2fe889b20a4f9ed309297f2b" category="image-alt">MCC IP 케이블 A250 C250 MSN2100</block>
-  <block id="6f71608a9b02340c422ff3d643b4afd7" category="image-alt">MCC IP 케이블 연결 250 400 700 800 cserialesMSN2100</block>
   <block id="0995dd589b8b5229e4b9e28862db9b91" category="paragraph">둘 이상의 MetroCluster 구성을 Cisco 3132Q-V 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster에 케이블을 연결해야 합니다. 예를 들어, FAS2750과 AFF A700을 동일한 Cisco 3132Q-V 스위치에 케이블로 연결하는 경우 그런 다음 표 1의 "MetroCluster 1"에 따라 FAS2750과 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 AFF A700을 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
-  <block id="014322233c716b51b659a375ee0b236f" category="section-title">AFF A150, FAS2750, AFF A220, FAS500f, AFF C250 또는 AFF A250을 Cisco 3232C 또는 Cisco 9336-FX2C 스위치에 케이블로 연결합니다</block>
   <block id="b1ae03d0492f9071184bcc685e4d9008" category="image-alt">MCC IP 케이블 연결 a150 A250 을 Cisco 32c 또는 Cisco 9336c 스위치에 연결합니다</block>
-  <block id="f4a4caf899825065a94a65355e7134d1" category="section-title">Cisco 3232C 또는 Cisco 9336C 스위치에 FAS8200 또는 AFF A300 케이블 연결</block>
-  <block id="03a4a17b1eab01f0b74373b2d602b107" category="section-title">AFF A320, FAS8300, AFF C400, AFF A400, FAS8700 케이블링, FAS9000, AFF A700, AFF C800, AFF A800, FAS9500 또는 AFF A900</block>
   <block id="cf6033c90446afb2f2e4bf0a87384e97" category="image-alt">MCC IP 케이블 연결 A320 a400 a700 A800 a900 Cisco 3232C 또는 9336c 스위치</block>
-  <block id="354182992aa934a6b659ad8284efa43c" category="section-title">AFF A320, AFF C400, AFF A400, AFF A700, AFF C800 케이블 연결 또는 AFF A800을 Cisco 9336C-FX2 공유 스위치로 사용할 수 있습니다</block>
   <block id="4aa636d0c8e798111a1395c5cf44abef" category="paragraph">AFF A800, AFF C800</block>
   <block id="76a3e9deef2a9133b01bc4b8aa5ad045" category="paragraph">FAS8300, AFF A400 및 AFF C400</block>
   <block id="2d24d8597140717b72521869e1b9643a" category="paragraph">FAS2750, AFF A150 및 AFF A220</block>
   <block id="f557196ec910f221f73585a5c481f240" category="paragraph">500f, AFF A250 및 AFF C250</block>
-  <block id="bf9729690d4b6a4daedabf36c5b5ec8c" category="list-text">AFF A320 시스템을 사용하는 단일 4노드 MetroCluster만 스위치에 연결할 수 있습니다.</block>
-  <block id="9b7cca2be0457a3d0c492f8e904df901" category="section-title">FAS2750, AFF 150 또는 AFF A220 시스템의 스위치 포트 사용</block>
-  <block id="8ee408688016c0cb16c82686873a5d8e" category="image-alt">MCC IP 케이블 연결 AFF a150 A220 또는 fas2750을 Broadcom Bes 53248 스위치에 연결합니다</block>
-  <block id="58f2f8e1f41f44915c0a9dd64bc2bb2d" category="section-title">FAS500f, AFF C250 또는 AFF A250 시스템의 스위치 포트 사용</block>
-  <block id="358099a0b111152a484a1e05b14c7c47" category="image-alt">MCC IP 케이블 AFF c250 A250 또는 fas500f를 Broadcom의 53248 스위치에 연결합니다</block>
-  <block id="4dd9be0b315657693d8b4224514a84dd" category="section-title">AFF A150, FAS2750, AFF A220 및 FAS500f 또는 AFF C250의 조합 사용을 위한 스위치 포트 사용 또는 AFF A250 시스템</block>
-  <block id="e4bf5275812c1279d2db37ca9929225f" category="section-title">FAS8200 또는 AFF A300 시스템에 대한 스위치 포트 사용</block>
-  <block id="3e2cc26117df5be817591b49f77f1480" category="section-title">FAS8300, AFF C400, AFF A400 또는 FAS8700 시스템의 스위치 포트 사용량</block>
   <block id="52d00daf67aaaf387590e09043aff43a" category="list-text"><block ref="52d00daf67aaaf387590e09043aff43a" category="inline-link-macro-rx"></block></block>
   <block id="49cc90fa19d302674a7ac32a31b7a0c8" category="list-text"><block ref="49cc90fa19d302674a7ac32a31b7a0c8" category="inline-link-macro-rx"></block></block>
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
@@ -12906,10 +12864,7 @@
   <block id="e73093705babe6125a16df08eedb00cc" category="image-alt">MCC DR 그룹 C5</block>
   <block id="68f99a795ff5a89f522232c02dc3bdef" category="paragraph"><block ref="ded257afb157d474a6461a3bc1b48d84" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 _.</block>
   <block id="d64734f1819a8d6339e74ffe37dc5430" category="paragraph">플랫폼이 나열되지 않은 경우 지원되는 컨트롤러 업그레이드 조합이 없습니다.</block>
-  <block id="9cc4e1f05676227146cf00108c59fa28" category="image-alt">MetroCluster IP 업그레이드 표 9 13 1</block>
   <block id="183ffd679adb1c9e843df285f2b91466" category="list-text">참고 2: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
-  <block id="565b432bf0dbccb436556aa228477fc4" category="image-alt">MetroCluster FC 업그레이드 표 p 13 1</block>
-  <block id="ef7e86617c6692f308d834d239d77e9e" category="list-text">참고4: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="5abae7190ce598d45fe390e44304cde0" category="paragraph">9.13.1 이상</block>
   <block id="80fd06bae5a00e691ac9334058ccace5" category="paragraph"><block ref="80fd06bae5a00e691ac9334058ccace5" category="inline-link-macro-rx"></block></block>
   <block id="338b3842cbe6f0ae991509f38e7d0cca" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
@@ -12918,7 +12873,6 @@
   <block id="fdc1be4b61fa768dbfcc3e8f0dab2595" category="paragraph">다음 표에는 8노드 MetroCluster FC 구성에 지원되는 플랫폼 조합이 나와 있습니다.</block>
   <block id="49782ec67fb4809f5d138aa07412fd9d" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
   <block id="ea95591996a43e78cc0b5f96cb4d8f1c" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
-  <block id="c6e46da968a03eccf97571ae7315a6ce" category="image-alt">MCC IP 케이블링 AFF A320 C400 a400 a700 C800 A800에서 Cisco 9336c 공유 스위치가 개정되었습니다</block>
   <block id="1251b37475039ca3d9d370458002ce7c" category="paragraph">ONTAP 중재자가 중재자 호스트에 있는 사서함에 MetroCluster 노드에 대한 상태 정보를 저장합니다. MetroCluster 노드는 이 정보를 사용하여 DR 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO를 구현할 수 있습니다.</block>
   <block id="8227e4d84dc1594bf85338cfe09f1747" category="list-text">사이트 재해가 발생하는 경우 사이트 재해는 동일한 사이트에 있는 * 모든 * 노드의 장애입니다.</block>
   <block id="792f2e5a1dddb8ed73154e39c1bf5e77" category="list-text">ONTAP 9.13.1 부터는 위의 조건이 충족되고 팬 또는 하드웨어 장애가 발생하면 전원 공급 장치, NVRAM 배터리 또는 서비스 프로세서 하트비트 장애, 고온 또는 저온 등의 환경 종료가 시작됩니다.</block>
@@ -13019,8 +12973,6 @@
   <block id="f624129c4d6772a2f62200de12382ad0" category="list-text">에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block> 절차를 참조하십시오.</block>
   <block id="112564590ec1ae4e651904cd571ed9d4" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="378e9004462b7ecfad8256f25b57fbf6" category="inline-link-macro-rx"></block>.</block>
   <block id="347bde5f3be96b6c3eab8b4a360b9028" category="list-text">30분 정도 기다린 다음 모든 스토리지 쉘프, MetroCluster IP 스위치 및 스토리지 컨트롤러의 전원을 켭니다.</block>
-  <block id="0434950fcf46c88299084ad712ed62cc" category="list-text">FAS9500/AFF A900</block>
-  <block id="bf63be372af426fed8556dc915b7ccb6" category="section-title">AFF C400, AFF A400, AFF A700, FAS9000, FAS8300, FAS8700, AFF A800, FAS9500 또는 AFF A900</block>
   <block id="6789cbf331ef2c9b50d45082c81e74cb" category="paragraph">ONTAP 9.4 이상에는 ADP 지원에 대한 다음과 같은 변경 사항이 포함되어 있습니다.</block>
   <block id="4b72d9ad6a5a5828529f4266cc3f2713" category="list-text">디스크와 모든 파티션은 동일한 HA(고가용성) 쌍의 노드가 소유해야 합니다. 단일 드라이브 내에서 파티션 또는 드라이브 소유권을 로컬 HA 쌍과 DR(재해 복구) 파트너 또는 DR 보조 파트너 간에 혼합할 수 없습니다.</block>
   <block id="352c5d749caa22e221b7fc037fede87d" category="paragraph">지원되는 구성의 예:</block>
@@ -13339,4 +13291,73 @@
   <block id="ebbf46e9806730b0f0c4ca0133de2d34" category="open-title">SNMPv2를 사용하여 스위치 추가:</block>
   <block id="10982c02dbedeb50373ef205f82ca3c8" category="inline-link-macro">System Manager로 MetroCluster 사이트를 관리합니다</block>
   <block id="53eaf367aa3b61105b8ddce45278ab85" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="eef6283454e42ed2d47fdb00a9ff3e0c" category="inline-link-macro-rx"></block> 문서화:</block>
+  <block id="e896a08242f1b8600bd891680083c89c" category="paragraph">표를 사용하기 전에 다음 지침을 검토하십시오.</block>
+  <block id="11b0a2bdfcd224ea773788cafe8f7027" category="list-text">MetroCluster FC에서 IP로 전환되도록 스위치를 구성하는 경우, 포트 5, 포트 6, 포트 13 또는 포트 14를 사용하여 MetroCluster FC 노드의 로컬 클러스터 인터페이스를 연결할 수 있습니다. 을 참조하십시오 <block ref="46a459674905c476821f71bc8486a4ba" category="inline-link-macro-rx"></block> 이 구성의 케이블 연결에 대한 자세한 내용은 생성된 케이블 연결 파일을 참조하십시오. 다른 모든 연결의 경우 표에 나열된 포트 사용 할당을 사용할 수 있습니다.</block>
+  <block id="96072cdace8aeeb7214cc70597039994" category="section-title">FAS9000 또는 AFF A700 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
+  <block id="e0bf993f0bc1586df5f9dfb72954e8da" category="section-title">AFF A800 또는 ASA A800 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
+  <block id="91166ddb2661684df8dbc56e903ec043" category="paragraph">다음 구성은 현재 지원되지 않습니다.</block>
+  <block id="ffbf0166c7ab0c630d8081caba93b8ff" category="list-text">8노드 또는 2개의 4노드 MetroCluster 구성을 연결하려면 ONTAP 9.14.1 이상 및 RCF 파일 버전 2.00 이상이 필요합니다.</block>
+  <block id="df1cd5b519ca6d9ac61c3fcdeed5dbc5" category="section-title">AFF A150, ASA A150, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 NVIDIA SN2100 스위치까지</block>
+  <block id="b65df01fa47ee7a17ae4ac22e4f80fe1" category="image-alt">MCC IP 케이블 AFF ASA a150 fas500f A250 C250 MSN2100</block>
+  <block id="600e74c5a86bfaafeac18b9626b2b791" category="section-title">FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, FAS8700, FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 NVIDIA SN2100 스위치로 마이그레이션합니다</block>
+  <block id="52447c97a913b0a7009beba2a860f2f1" category="image-alt">MCC IP 케이블 fas8300 AFF ASA C400 a400 fas8700 fas9000 a700 A800 a900 fas9500 MSN2100</block>
+  <block id="2f37bf7d3a80ef892a37b5867710dc5e" category="paragraph">*참고 1*: X91440A 어댑터(40Gbps)를 사용하는 경우 e4a 및 e4e 또는 e4a 및 e8a 포트를 사용합니다. X91153A 어댑터(100Gbps)를 사용하는 경우 e4a 및 e4b 또는 e4a 및 e8a 포트를 사용합니다.</block>
+  <block id="8232ac4b6380b290738aa1ce5cc7cff3" category="paragraph">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2, MetroCluster 3 또는 MetroCluster 4)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 도구가 필요합니다.</block>
+  <block id="554d0ed2f8464fefa6da872d6dbcf5c5" category="list-text">MetroCluster ISL의 25G 브레이크아웃 모드를 사용하려면 RCF 파일 버전 v2.10 이상이 필요합니다.</block>
+  <block id="5b43fcab432560bae73db4e0c9e34232" category="list-text">"MetroCluster 4" 그룹에서 FAS8200 또는 AFF A300 이외의 플랫폼을 사용하려면 ONTAP 9.13.1 이상 및 RCF 파일 버전 2.00이 필요합니다.</block>
+  <block id="3c2d958a2069bca526b0229b6a1b15d8" category="section-title">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 Cisco 9336-FX2C 스위치에 연결합니다</block>
+  <block id="0c52a66510db282f2898b1934e18c757" category="section-title">FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 Cisco 9336C 스위치에 케이블 연결합니다</block>
+  <block id="959103b0e0798459de77e2b5d8985ab3" category="paragraph">이전 RCF 파일에서 업그레이드하는 경우 케이블 연결 구성에서 "MetroCluster 4" 그룹(포트 25/26 및 29/30)의 포트를 사용하고 있을 수 있습니다.</block>
+  <block id="dbbcebd42c4edb43711e86d3bbc61485" category="section-title">AFF A320, FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, FAS8700, FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900, 또는 ASA A900 시스템에서 Cisco 3232C 또는 Cisco 9336C-FX2 스위치로 마이그레이션합니다</block>
+  <block id="905eeaf0eb85efa82c94d09cf33bd250" category="admonition">"MetroCluster 4" 그룹의 포트를 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
+  <block id="57434776bd5888e009d9e57f22c69e23" category="doc">Cisco 9336C-FX2 공유 스위치에 대한 플랫폼 포트 할당</block>
+  <block id="732d615839cca3ffb6814dbae606c495" category="list-text">하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다.</block>
+  <block id="3209e9c123d4238593063149c7f8b0e2" category="list-text">스위치 연결 NS224 쉘프를 지원하지 않는 플랫폼은 2차 MetroCluster 구성으로만 연결하거나 2차 DR 그룹으로 연결할 수 있습니다.</block>
+  <block id="dae9a493a0381746910b46f271097afc" category="list-text">RcfFileGenerator는 첫 번째 플랫폼을 선택한 경우에만 적합한 플랫폼을 표시합니다.</block>
+  <block id="dfaaea754370da30cfd269ee856da3a9" category="list-text">1개의 8노드 또는 2개의 4노드 MetroCluster 구성을 연결하려면 ONTAP 9.14.1 이상이 필요합니다.</block>
+  <block id="b03c615d318e9480b137520def0c0019" category="section-title">AFF A320, AFF C400, ASA C400, AFF A400, ASA A400, AFF A700, AFF C800, ASA C800, AFF A800, AFF A900, 또는 ASA A900 시스템에서 Cisco 9336C-FX2 공유 스위치로 이동할 수 있습니다</block>
+  <block id="6bb6a0936af73cac3f2bdbf32254d719" category="image-alt">MCC IP 케이블 A320 C400 a400 a700 C800 A800 a900에서 Cisco 9336c 공유 스위치에 연결합니다</block>
+  <block id="bf136b704de578c59a07363b76151378" category="section-title">AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블 연결합니다</block>
+  <block id="dcbe5e1c651d61678fa6f79f5f231f44" category="image-alt">AFF a150 ASA a150 fas27500 AFF A220을 Cisco 9336c 공유 스위치에 MCC IP 케이블로 연결합니다</block>
+  <block id="e5d9d3d0d01df5d39a8698af57def92a" category="section-title">FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블 연결합니다</block>
+  <block id="76df3d556d3a4275629b963054352251" category="image-alt">MCC IP 케이블 연결 c250 ASA c250 A250 ASA A250 - Cisco 9336c 공유 스위치</block>
+  <block id="3fdaa78573cae6b8e4c297b899acfe37" category="section-title">FAS8200 또는 AFF A300 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블 연결</block>
+  <block id="89d6082264fd0fa3fcf9fe31279df2a7" category="image-alt">Cisco 9336c 공유 스위치에 대한 MCC IP 케이블 연결 fas8200 affa300입니다</block>
+  <block id="7cbcd9b9ad1f63a9723831b696a1d54d" category="section-title">FAS8300, FAS8700, FAS9000 또는 FAS9500 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블로 연결합니다</block>
+  <block id="ae163524dd2fe8e287d9f71b5de5920f" category="image-alt">MCC IP 케이블 연결 fas8300 fas8700 fas9000 fas9500에서 Cisco 9336c 공유 스위치에 연결합니다</block>
+  <block id="82e2d7798ab15559f8ebbae8125f55c3" category="list-title">표를 사용하기 전에 다음 정보를 검토하십시오.</block>
+  <block id="a5d0cab9bff9a930a5eb4ad5c7bce183" category="list-text">MetroCluster FC에서 IP로의 전환을 위해 스위치를 구성하는 경우 선택하는 타겟 플랫폼에 따라 다음 포트가 사용됩니다.</block>
+  <block id="f2a26c5fb823530f83a5b4d6bf512eb9" category="cell">대상 플랫폼</block>
+  <block id="c2a1880d9ec21424185dc32c708f7c2f" category="cell">FAS500f, AFF C250, ASA C250, AFF A250, ASA A250, FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, 또는 FAS8700 플랫폼을 지원합니다</block>
+  <block id="a346e4e54905b86ccf19d436cac4f72d" category="cell">포트 1-6, 10Gbps</block>
+  <block id="520f683aecf042eb1afbf14be7588551" category="cell">FAS8200 또는 AFF A300 플랫폼</block>
+  <block id="81d990a756b6f5e5f14a9df8a16bbe34" category="cell">포트 3-4 및 9-12, 10Gbps</block>
+  <block id="2df5ca4f8a203d43ca2d6ee0dcd3ffc5" category="list-title">표에 참조된 참고 사항:</block>
+  <block id="afc53d7c7e597c30acb18fa3ed38cc86" category="list-text">*참고 1*: 이 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
+  <block id="87b750ce6fbbe87d62cbc08d2dc73e1f" category="list-text">*참고 2*: AFF A320 시스템을 사용하는 단일 4-노드 MetroCluster만 스위치에 연결할 수 있습니다.</block>
+  <block id="5e32839c7226a47e6623ae1f3ffc146d" category="paragraph">이 구성에서는 MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차를 비롯하여 스위치 클러스터가 필요한 기능이 지원되지 않습니다.</block>
+  <block id="01ee52aecc80516ef9b51d0a149683a6" category="list-text">*참고 3*: BES-53248 스위치는 4포트 그룹의 모든 포트가 동일한 속도로 작동해야 합니다. AFF 150, ASA A150, FAS2750, AFF A220 및 FAS500f, AFF C250, ASA C250, AFF A250 및 ASA A250 플랫폼을 혼합해서 연결하려면 별도의 4포트 그룹에 위치한 스위치 포트를 사용해야 합니다. 이러한 유형의 구성이 필요한 경우 다음 사항이 적용됩니다.</block>
+  <block id="23b8a1af268a574d717d9ea3d20d1b88" category="list-text">에 있습니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block>, "MetroCluster 1" 및 "MetroCluster 2"의 드롭다운 필드는 MetroCluster 3 또는 "MetroCluster 4"의 플랫폼을 선택한 후에만 채워집니다.  을 참조하십시오 <block ref="4dfd72a31c74d2e269d1ca49dcbd7291" category="inline-link-macro-rx"></block> 포트 테이블 사용 방법에 대한 자세한 내용은 를 참조하십시오.</block>
+  <block id="f94a1422b62d10932fbf032c0b5f1c48" category="list-text">두 MetroCluster 구성이 동일한 플랫폼을 사용하는 경우, NetApp는 하나의 구성에 대해 "MetroCluster 3" 그룹을 선택하고 다른 구성에 대해서는 "MetroCluster 4" 그룹을 선택하는 것이 좋습니다. 플랫폼이 다른 경우 첫 번째 구성으로 "MetroCluster 3" 또는 "MetroCluster 4"를 선택하고 두 번째 구성으로 "MetroCluster 1" 또는 "MetroCluster 2"를 선택해야 합니다.</block>
+  <block id="67515cf8b1cb1eb3a194348da0494b5a" category="section-title">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 - Broadcom BES-53248 스위치</block>
+  <block id="c1362aea3362cced26c169c7f2579830" category="image-alt">MCC IP는 AFF ASA a150 A220 c250 A250 fas2750을 Broadcom bes 53248 스위치에 케이블로 연결합니다</block>
+  <block id="ae988cdaab88cda23ac7eae94e718156" category="section-title">FAS8200, AFF A300 또는 AFF A320 시스템을 Broadcom BES-53248 스위치에 케이블 연결합니다</block>
+  <block id="5c48415a3384935ba5be90eee889bb15" category="section-title">FAS8300, AFF C400, ASA C400, AFF A400, ASA A400 또는 FAS8700 시스템을 Broadcom BES-53248 스위치에 케이블 연결합니다</block>
+  <block id="f9e62124423900674e7c280534c2b0d1" category="image-alt">MCC IP는 fas8300 a400 C400 또는 fas8700을 Broadcom bes 53248 스위치에 케이블로 연결합니다</block>
+  <block id="5b5bc0c2a68a3a5df60e045184c265e7" category="paragraph">의 * 스위치 * 섹션을 참조하십시오 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 지원되는 트랜시버를 확인합니다.</block>
+  <block id="30ec0ec381148de730ef6f636244409c" category="paragraph">ONTAP 9.13.1부터 이 절차는 MetroCluster와 드라이브 쉘프가 동일한 IP 스위치(공유 스토리지 스위치 구성)에 연결되는 MetroCluster IP 구성에서 지원됩니다.</block>
+  <block id="63d08c3cedf8143a5b62917cdffc9a26" category="image-alt">MetroCluster FC IP 전환 매트릭스 914</block>
+  <block id="7411369ee6af7c3b06eeb0cb088ed313" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
+  <block id="af03c8177e63c13156d2341adae52d1d" category="paragraph">업그레이드 절차에서는 컨트롤러가 새 컨트롤러 모델로 교체됩니다. 스토리지 쉘프 모델은 업그레이드되지 않습니다.</block>
+  <block id="a42deea73d6695bcde6da0ac8925f0f8" category="paragraph">컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 * 일치해야 합니다.</block>
+  <block id="5fd3c01d6ba82ebe581c794d9a655304" category="list-text">FAS 시스템을 FAS 시스템으로 업그레이드하거나 AFF A-Series를 AFF A-Series로 업그레이드할 수 있습니다.</block>
+  <block id="f4dbbbaca7fd3336a645956878f8c04c" category="list-text">FAS 시스템을 AFF A-Series로 또는 AFF A-Series를 AFF C-Series로 업그레이드할 수 없습니다.</block>
+  <block id="9d437f50da0d309aac4a2fd5117cc07f" category="paragraph">예를 들어, 업그레이드하려는 플랫폼이 FAS8200인 경우 FAS9000으로 업그레이드할 수 있습니다. FAS8200 시스템을 AFF A700 시스템으로 업그레이드할 수 없습니다.</block>
+  <block id="78dd72417c3e7e39a5c94c9fe04d72d2" category="image-alt">MetroCluster IP 업그레이드 표 914</block>
+  <block id="7e895ffe56c2c22085a060323bcc3b91" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 새로운 컨트롤러는 기존 컨트롤러와 동일한 ONTAP 버전을 실행해야 합니다.</block>
+  <block id="4bdc0ece89d77527b0c94aa60d045b78" category="image-alt">MetroCluster FC 업그레이드 표 914</block>
+  <block id="613e72a9b729773a1554cb0002fc99e8" category="list-text">참고 4: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
+  <block id="825d65b3b18d444d8008136946a33a99" category="list-text">참고 5: 컨트롤러 업그레이드는 ONTAP 9.14.1 이상을 실행하는 시스템에서 지원됩니다.</block>
+  <block id="50338c34cfec6d9e54eae1256352e18d" category="image-alt">MetroCluster FC 기술 업데이트 914</block>
+  <block id="94487339ee219de4122a1e81d3919b34" category="admonition">루트 애그리게이트 디스크란 컨트롤러 업그레이드 프로세스 중에 다시 할당해야 하는 유일한 디스크입니다. 데이터 애그리게이트의 디스크 소유권은 스위치오버/스위치백 작업의 일부로 처리됩니다.</block>
 </blocks>

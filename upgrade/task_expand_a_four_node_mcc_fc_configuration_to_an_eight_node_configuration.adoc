@@ -44,10 +44,11 @@ image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
 
 [IMPORTANT]
 ====
+* MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.
 * 이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.
 * 이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.
 * 하나의 DR 그룹에 있는 모든 노드의 유형과 구성이 동일해야 합니다.
 
 
 ====
-image::../media/8node_comb_fc.png[8노드 구성을 위한 플랫폼 조합]
+image::../media/8node_comb_fc_914.png[8노드 구성을 위한 플랫폼 조합]

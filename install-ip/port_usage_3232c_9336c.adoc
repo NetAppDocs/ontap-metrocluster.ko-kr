@@ -19,12 +19,14 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 * 스위치는 속도가 다른 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 구성할 수 없습니다.
 * 스위치를 사용하여 단일 MetroCluster를 구성하는 경우 * MetroCluster 1 * 포트 그룹을 사용합니다.
 +
-MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 또는 MetroCluster 3)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 도구가 필요합니다.
+MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2, MetroCluster 3 또는 MetroCluster 4)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 도구가 필요합니다.
 
 * MetroCluster IP용 RcfFileGenerator는 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다.
 +
 이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.
 
+* MetroCluster ISL의 25G 브레이크아웃 모드를 사용하려면 RCF 파일 버전 v2.10 이상이 필요합니다.
+* "MetroCluster 4" 그룹에서 FAS8200 또는 AFF A300 이외의 플랫폼을 사용하려면 ONTAP 9.13.1 이상 및 RCF 파일 버전 2.00이 필요합니다.
 
 
 
@@ -35,24 +37,25 @@ MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 또는 MetroCluster 3)
 
 
 
-== AFF A150, FAS2750, AFF A220, FAS500f, AFF C250 또는 AFF A250을 Cisco 3232C 또는 Cisco 9336-FX2C 스위치에 케이블로 연결합니다
+== AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 Cisco 9336-FX2C 스위치에 연결합니다
 
 image::../media/mcc_ip_cabling_a150_a220_a250_to_a_cisco_3232c_or_cisco_9336c_switch.png[MCC IP 케이블 연결 a150 A250 을 Cisco 32c 또는 Cisco 9336c 스위치에 연결합니다]
 
 
 
-== Cisco 3232C 또는 Cisco 9336C 스위치에 FAS8200 또는 AFF A300 케이블 연결
+== FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 Cisco 9336C 스위치에 케이블 연결합니다
 
 image::../media/mcc_ip_cabling_a_aff_a300_or_fas8200_to_a_cisco_3232c_or_cisco_9336c_switch.png[MCC IP AFF a300 또는 fas8200을 Cisco 32c 또는 Cisco 9336c 스위치에 케이블로 연결합니다]
 
+이전 RCF 파일에서 업그레이드하는 경우 케이블 연결 구성에서 "MetroCluster 4" 그룹(포트 25/26 및 29/30)의 포트를 사용하고 있을 수 있습니다.
 
 
-== AFF A320, FAS8300, AFF C400, AFF A400, FAS8700 케이블링, FAS9000, AFF A700, AFF C800, AFF A800, FAS9500 또는 AFF A900
+
+== AFF A320, FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, FAS8700, FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900, 또는 ASA A900 시스템에서 Cisco 3232C 또는 Cisco 9336C-FX2 스위치로 마이그레이션합니다
 
 image::../media/mcc_ip_cabling_a320_a400_a700_a800_a900 _cisco_3232C or_9336c_switch.png[MCC IP 케이블 연결 A320 a400 a700 A800 a900 Cisco 3232C 또는 9336c 스위치]
 
+*참고 1*: X91440A 어댑터(40Gbps)를 사용하는 경우 e4a 및 e4e 또는 e4a 및 e8a 포트를 사용합니다. X91153A 어댑터(100Gbps)를 사용하는 경우 e4a 및 e4b 또는 e4a 및 e8a 포트를 사용합니다.
 
 
-== AFF A320, AFF C400, AFF A400, AFF A700, AFF C800 케이블 연결 또는 AFF A800을 Cisco 9336C-FX2 공유 스위치로 사용할 수 있습니다
-
-image::../media/mcc_ip_cabling_aff_a320_c400_a400_a700_c800_a800_to_cisco_9336c_shared_switch_revised.png[MCC IP 케이블링 AFF A320 C400 a400 a700 C800 A800에서 Cisco 9336c 공유 스위치가 개정되었습니다]
+NOTE: "MetroCluster 4" 그룹의 포트를 사용하려면 ONTAP 9.13.1 이상이 필요합니다.
