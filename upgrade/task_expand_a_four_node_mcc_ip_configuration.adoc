@@ -20,15 +20,19 @@ ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그
 .시작하기 전에
 * 이전 노드와 새 노드에서 동일한 버전의 ONTAP를 실행해야 합니다.
 * 이 절차에서는 4노드 DR 그룹 하나를 확장하는 데 필요한 단계를 설명합니다. 8노드 구성(DR 그룹 2개)이 있는 경우 각 DR 그룹에 대해 전체 절차를 반복해야 합니다.
-* 플랫폼 혼합을 위해 이전 플랫폼 모델과 새로운 플랫폼 모델이 지원되는지 확인해야 합니다.
+* 플랫폼 혼합에 대해 기존 플랫폼 모델과 새 플랫폼 모델이 지원되는지 확인합니다.
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
-* 이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인해야 합니다.
+* 이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인합니다.
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 * 새 노드에는 루트 애그리게이트 및 스페어 디스크를 위한 충분한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 있어야 합니다.
+* 이전 노드에 생성된 기본 브로드캐스트 도메인이 있는지 확인합니다.
++
+기본 브로드캐스트 도메인 없이 기존 클러스터에 새 노드를 추가할 경우, 예상 이름 대신 UUID(Universal Unique Identifier)를 사용하여 새 노드에 대한 노드 관리 LIF가 생성됩니다. 자세한 내용은 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/os/Node_management_LIFs_on_newly-added_nodes_generated_with_UUID_names["UUID 이름으로 새로 추가된 노드의 노드 관리 LIF"^].
+
 
 
 

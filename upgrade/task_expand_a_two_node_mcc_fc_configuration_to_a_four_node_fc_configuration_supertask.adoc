@@ -28,6 +28,10 @@ link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 link:../install-stretch/concept_considerations_differences.html["스트레치 MetroCluster 설치 및 구성"]
 
 * 새 컨트롤러와 새 브리지를 수용하기 위해 사용 가능한 FC 스위치 포트가 있어야 합니다.
+* 이전 노드에 생성된 기본 브로드캐스트 도메인이 있는지 확인합니다.
++
+기본 브로드캐스트 도메인 없이 기존 클러스터에 새 노드를 추가할 경우, 예상 이름 대신 UUID(Universal Unique Identifier)를 사용하여 새 노드에 대한 노드 관리 LIF가 생성됩니다. 자세한 내용은 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/os/Node_management_LIFs_on_newly-added_nodes_generated_with_UUID_names["UUID 이름으로 새로 추가된 노드의 노드 관리 LIF"^].
+
 * FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
 
 

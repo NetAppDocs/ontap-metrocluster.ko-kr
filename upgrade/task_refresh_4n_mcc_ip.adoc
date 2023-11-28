@@ -41,6 +41,10 @@ NOTE: 두 DR 그룹을 모두 새로 고치면 첫 번째 DR 그룹을 새로 �
 
 
 .단계
+. 이전 노드에 생성된 기본 브로드캐스트 도메인이 있는지 확인합니다.
++
+기본 브로드캐스트 도메인 없이 기존 클러스터에 새 노드를 추가할 경우, 예상 이름 대신 UUID(Universal Unique Identifier)를 사용하여 새 노드에 대한 노드 관리 LIF가 생성됩니다. 자세한 내용은 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/os/Node_management_LIFs_on_newly-added_nodes_generated_with_UUID_names["UUID 이름으로 새로 추가된 노드의 노드 관리 LIF"^].
+
 . 이전 노드에서 정보를 수집합니다.
 +
 이 단계에서는 다음 이미지와 같이 4노드 구성이 나타납니다.

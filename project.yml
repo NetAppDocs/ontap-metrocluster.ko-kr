@@ -110,3 +110,6 @@ homepage:
     - title: NetApp 지원 기술 자료
       summary: 지원 질문에 대한 답변을 검색합니다.
       url: https://kb.netapp.com/
+product-family:
+  name: ONTAP
+  repo: ontap-family
