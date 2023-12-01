@@ -730,7 +730,6 @@
   <block id="eac95d67103889e23f4fae8c79139a7a" category="list-text">대부분의 경우, 드라이브 할당 및 파티셔닝은 설정 절차 중에 자동으로 수행됩니다.</block>
   <block id="bf17ab05d95b3cfd56763e2ed2c9c07d" category="admonition">ONTAP 9.4에서 9.5로 업그레이드할 때 시스템은 기존 디스크 할당을 인식합니다.</block>
   <block id="5fafb49cc9fb9a65d03134ac546c84c0" category="section-title">자동 파티셔닝</block>
-  <block id="bd7fdcf8e3958a26cae80f44fe7019eb" category="paragraph">ADP는 플랫폼의 초기 구성 중에 자동으로 수행됩니다.</block>
   <block id="d80db6731d8005aabd1dad8b4bd740b7" category="paragraph">설치 중에 최대 96개의 드라이브를 자동으로 분할할 수 있습니다. 초기 설치 후에 드라이브를 추가할 수 있습니다.</block>
   <block id="8c27139a6a49272931ad3f34f0b1054e" category="section-title">Shelf-by-Shelf 자동 할당 작동 방식</block>
   <block id="7cf1eeb2e4f4fa2a69a78396893ace96" category="paragraph">사이트당 외부 쉘프가 4개인 경우, 다음 예에 표시된 대로 각 쉘프가 서로 다른 노드 및 풀에 할당됩니다.</block>
@@ -4354,7 +4353,6 @@
   <block id="93eb81c5bb51f5c82069014d257d73f7" category="section-title">이 문서의 절차를 시작하기 전에</block>
   <block id="14192cce75fd2280d57cd86b8457d1e8" category="paragraph">이 작업을 완료하기 전에 다음과 같은 전반적인 요구 사항을 충족해야 합니다.</block>
   <block id="eec9a69f383dc26376611c0311190048" category="list-text">설치하기 전에 디스크 쉘프 모델의 디스크 쉘프 설치 및 케이블 연결에 대한 고려 사항 및 모범 사례를 숙지해야 합니다.</block>
-  <block id="ae8995edf717de497e60100989504ef0" category="list-text">모든 MictoCluster 구성 요소가 지원되어야 합니다.</block>
   <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link">NetApp 상호 운용성 매트릭스 툴</block>
   <block id="687d97208bee730c33801be1d460abf6" category="paragraph"><block ref="687d97208bee730c33801be1d460abf6" category="inline-link-rx"></block></block>
   <block id="46afce358fde8f707e4d3d83045d922c" category="paragraph">IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.</block>
@@ -7544,8 +7542,6 @@
   <block id="5ed8f44307454ec26dcecaa85949ef5b" category="list-text">두 번째 패브릭에서 이 절차를 반복합니다.</block>
   <block id="e0b252916154b49ca991301bb62d8e77" category="summary">MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.</block>
   <block id="56ba5c8d245e7af9f26245ccc8eddba9" category="doc">MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
-  <block id="442c1b0de388e5078bf1b6c0bee713d7" category="section-title">RCF 파일이 지원되는지 확인합니다</block>
-  <block id="c5578900d835092e78f37c68ccc1b2ea" category="paragraph">스위치에서 실행 중인 ONTAP 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.</block>
   <block id="bdff20b545d5f7f451d6cc86cddcd9d5" category="list-text">RCF 파일의 버전을 확인하려면 스위치에서 다음 명령을 사용합니다.</block>
   <block id="cb1e716ab831d1ef2a5741deabd44bd7" category="cell">이 스위치에서...</block>
   <block id="196859a46785802c1b55cf0cc9501818" category="paragraph">'(ip_switch_a_1)#show clibanner'</block>
@@ -12971,7 +12967,6 @@
   <block id="f624129c4d6772a2f62200de12382ad0" category="list-text">에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block> 절차를 참조하십시오.</block>
   <block id="112564590ec1ae4e651904cd571ed9d4" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="378e9004462b7ecfad8256f25b57fbf6" category="inline-link-macro-rx"></block>.</block>
   <block id="347bde5f3be96b6c3eab8b4a360b9028" category="list-text">30분 정도 기다린 다음 모든 스토리지 쉘프, MetroCluster IP 스위치 및 스토리지 컨트롤러의 전원을 켭니다.</block>
-  <block id="6789cbf331ef2c9b50d45082c81e74cb" category="paragraph">ONTAP 9.4 이상에는 ADP 지원에 대한 다음과 같은 변경 사항이 포함되어 있습니다.</block>
   <block id="4b72d9ad6a5a5828529f4266cc3f2713" category="list-text">디스크와 모든 파티션은 동일한 HA(고가용성) 쌍의 노드가 소유해야 합니다. 단일 드라이브 내에서 파티션 또는 드라이브 소유권을 로컬 HA 쌍과 DR(재해 복구) 파트너 또는 DR 보조 파트너 간에 혼합할 수 없습니다.</block>
   <block id="352c5d749caa22e221b7fc037fede87d" category="paragraph">지원되는 구성의 예:</block>
   <block id="cd1c00b76cbbe512b20985ec2344b5ed" category="cell">드라이브/파티션</block>
@@ -13040,10 +13035,6 @@
   <block id="3e3df3be76a18ca2c89904765d97f078" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.</block>
   <block id="3963205d7c5d1cb2f000d61f16c10f1d" category="paragraph">내부 드라이브 24개</block>
   <block id="d33f2a600ba4fe43084a26e95e4908c0" category="paragraph">* 관련 정보 *</block>
-  <block id="33677e980c1bb7a6aad1c55805e512b3" category="inline-link-macro">MetroCluster 자동 강제 전환을 사용할 때의 위험과 제한사항에 대해 알아보십시오</block>
-  <block id="8358918e22c23bbc5881522d821dd13e" category="list-text"><block ref="8358918e22c23bbc5881522d821dd13e" category="inline-link-macro-rx"></block></block>
-  <block id="e3aa563f27ef718a2d0767e57ad2f0c2" category="inline-link-macro">MetroCluster IP 구성에서 MAUSO 관리에 대해 알아보십시오</block>
-  <block id="b1a9c412046cbd6accefdfa3f6f94916" category="list-text"><block ref="b1a9c412046cbd6accefdfa3f6f94916" category="inline-link-macro-rx"></block></block>
   <block id="7632b8724806890acaf96c668d641251" category="inline-link-macro">MetroCluster IP 구성의 자동 드라이브 할당 및 ADP 시스템에 대해 자세히 알아보십시오</block>
   <block id="85488d881ebf03beb1eca3be4b5fda44" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="e78382cc6f841e7f00c97b18a2e30f41" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="5fdc7ff67ace146413ecd7d44157aca4" category="paragraph">쉘프 혼합에 대한 자세한 내용은 를 참조하십시오<block ref="532c1f47a9370f9e21538610051f3830" category="inline-link-rx"></block></block>
@@ -13186,7 +13177,6 @@
   <block id="357559d73c5bb22e54ab3aeafca1013b" category="sidebar">소프트웨어 패키지를 설치합니다</block>
   <block id="3689ab983cde586722e4881cdbf1822a" category="sidebar">호스트를 업그레이드합니다</block>
   <block id="3a234e68f5d62ce2d6b3d068c61605c3" category="paragraph">각 릴리스에서 MetroCluster Tiebreaker 소프트웨어의 향상된 기능이 제공됩니다. 다음은 MetroCluster Tiebreaker의 최신 릴리스의 새로운 기능입니다.</block>
-  <block id="5801d3e28a980df8d84e60a3eea8469c" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 ADP(고급 드라이브 파티셔닝)를 사용한 새로운 설치를 지원합니다. 대부분의 구성에서는 MetroCluster 사이트의 초기 구성 중에 파티션 분할 및 디스크 할당이 자동으로 수행됩니다.</block>
   <block id="e6ca378bbb6d15fd110961cea50b2eb0" category="section-title">AFF C250, AFF A250 및 FAS500f 시스템에서 ADP 및 디스크 할당</block>
   <block id="91d96627fcbee13a9d474587060d13f8" category="paragraph">AFF C250 및 AFF A250 시스템에 대한 동일한 디스크 할당 지침 및 규칙이 FAS500f 시스템에 적용됩니다. FAS500f 시스템에 디스크를 할당하는 방법은 을 참조하십시오 <block ref="62481755a241b3efc5c68e4e7dd00bb5" category="inline-xref-macro-rx"></block> 표.</block>
   <block id="d39fc122b5bc72857d3bc1cb28b2528b" category="summary">FC 스위치의 공급업체를 변경하거나(Cisco에서 Brocade로, 또는 그 반대) 스위치 모델을 변경하거나, 둘 다 변경해야 할 수 있습니다.</block>
@@ -13363,4 +13353,19 @@
   <block id="fdf5e2eb479f201de0c9c62e9a32e769" category="paragraph">기본 브로드캐스트 도메인 없이 기존 클러스터에 새 노드를 추가할 경우, 예상 이름 대신 UUID(Universal Unique Identifier)를 사용하여 새 노드에 대한 노드 관리 LIF가 생성됩니다. 자세한 내용은 기술 자료 문서를 참조하십시오<block ref="4808e3ddae1b3b2c14dc148b67bd36ea" category="inline-link-rx"></block>.</block>
   <block id="f6410291c32fa961402f5a821c332f6c" category="list-text">플랫폼 혼합에 대해 기존 플랫폼 모델과 새 플랫폼 모델이 지원되는지 확인합니다.</block>
   <block id="e220a628f1c5f8fb65824aaeb387520e" category="list-text">이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인합니다.</block>
+  <block id="56f1ca12910041b73ea6fcc9bc18a954" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 ADP(고급 드라이브 파티셔닝)를 사용한 새로운 설치를 지원합니다.</block>
+  <block id="72a38a5af8be1c706e478add3356ba90" category="paragraph">MetroCluster IP 구성과 함께 ADP를 사용할 때는 다음 사항을 고려해야 합니다.</block>
+  <block id="3cae0a231aac97485961fb33cea76ca2" category="list-text">MetroCluster IP 구성과 함께 ADP를 사용하려면 ONTAP 9.4 이상이 필요합니다.</block>
+  <block id="959bb45d9851a2b3efaeb05db74e0a80" category="list-text">ADPv2는 MetroCluster IP 구성에서 지원됩니다.</block>
+  <block id="a393732e5defe7b7a921a586e53ec51d" category="list-text">루트 애그리게이트는 두 사이트의 모든 노드에 대해 파티션 3에 위치해야 합니다.</block>
+  <block id="9ef6aecb7d030435d81fe80cacca477e" category="list-text">파티셔닝과 디스크 할당은 MetroCluster 사이트의 초기 구성 중에 자동으로 수행됩니다.</block>
+  <block id="82d98fe86a7b6dbc49abc0913b83f2ac" category="paragraph">ADP는 시스템의 초기 구성 중에 자동으로 수행됩니다.</block>
+  <block id="2785e39cd183c09c66a74a7aad221542" category="admonition">ONTAP 9.13.1부터 클러스터 * 또는 * HA 쌍 장애 시 MAUSO를 시작하도록 동작을 변경할 수 있습니다. HA Pair의 경우 두 노드에서 동시에 장애가 발생해야 합니다.</block>
+  <block id="3ea08f3e8da19255d966a6ac28c7c9cf" category="paragraph">위에 나열되지 않은 추가 시나리오에 대해 MAUSO를 시작할 수 있습니다. 자세한 내용은 을 참조하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
+  <block id="e0907a528c832799b0d1ad87758c5f86" category="inline-link-macro">MetroCluster IP 구성의 MAUSO에 대해 자세히 알아보십시오</block>
+  <block id="b5a3168b79ae5368d7ec0db231f9a1fc" category="paragraph"><block ref="715b35e54e91f145a6041ef6c0fd6dbb" category="inline-link-macro-rx"></block>.</block>
+  <block id="2d183ed725bd043df73111a219fb4c10" category="list-text">모든 MetroCluster 구성 요소가 지원되어야 합니다.</block>
+  <block id="a6ab1915ab3c895c47d4e04f54324428" category="paragraph">MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, 스위치에서 실행 중인 RCF 파일 버전이 ONTAP 버전, 스위치 펌웨어 버전 또는 둘 다에서 지원되지 않는 경우</block>
+  <block id="3c895cdeb8d2489a220d797e54ab8b6f" category="section-title">RCF 파일이 지원되는지 확인합니다</block>
+  <block id="aa71e3dcbe0cdabbe4cce28385ab2fd6" category="paragraph">ONTAP 버전 또는 스위치 펌웨어 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.</block>
 </blocks>
