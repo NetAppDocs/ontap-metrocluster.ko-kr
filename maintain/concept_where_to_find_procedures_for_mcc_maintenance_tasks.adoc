@@ -43,7 +43,7 @@ FRU 교체(컨트롤러 모듈, PCIe 카드, FC-VI 카드 등)
 
 NOTE: MetroCluster 스토리지 시스템 간에 스토리지 컨트롤러 모듈 또는 NVRAM 카드를 이동하는 것은 지원되지 않습니다.
  a| 
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 
 

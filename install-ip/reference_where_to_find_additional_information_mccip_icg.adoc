@@ -105,7 +105,7 @@ link:../tiebreaker/concept_overview_of_the_tiebreaker_software.html["MetroCluste
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems/["AFF and FAS 설명서 를 참조하십시오"^]
+https://docs.netapp.com/us-en/ontap-systems/["ONTAP 하드웨어 시스템 설명서"^]
 
 * 참고: * 표준 스토리지 쉘프 유지보수 절차는 MetroCluster IP 구성과 함께 사용할 수 있습니다.
  a| 

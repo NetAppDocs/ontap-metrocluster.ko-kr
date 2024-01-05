@@ -1104,8 +1104,6 @@
   <block id="5206bcb346755220c00fbc45647faca6" category="list-text">클러스터 피어링을 위해 최소 2개의 포트를 식별하여 케이블로 연결하고 파트너 클러스터와 네트워크가 연결되어 있는지 확인합니다.</block>
   <block id="91570c88eb5cc19dd41fc5caf53c3a27" category="paragraph">클러스터 피어링은 전용 포트 또는 데이터 포트에서 수행할 수 있습니다. 전용 포트를 사용하면 클러스터 피어링 트래픽에 대해 더 높은 처리량을 제공할 수 있습니다.</block>
   <block id="258ba3377e43df3da3fbda0611fd8b0c" category="list-text">컨트롤러의 관리 및 데이터 포트를 로컬 사이트의 관리 및 데이터 네트워크에 케이블로 연결합니다.</block>
-  <block id="16319414c65274d365d86327a61ef5dc" category="inline-link">AFF 및 FAS 시스템 설명서</block>
-  <block id="63799698c3b4bb55f091a324342f6ef6" category="paragraph">의 플랫폼에 대한 설치 지침을 사용합니다<block ref="0b3a876cb84d37c698b419ae2be696d8" category="inline-link-rx"></block>.</block>
   <block id="fea810a7a02c4d40cd3c6c1a77cb926d" category="summary">MetroCluster 노드를 다른 ONTAP 중재자 인스턴스에 연결하려면 ONTAP 소프트웨어에서 중재자 연결을 구성 해제한 다음 다시 구성해야 합니다.</block>
   <block id="329d785801ff55185f4e6f85d622dc8d" category="doc">다른 ONTAP 중재 인스턴스에 MetroCluster 구성 연결</block>
   <block id="8e764b71ee02a7e2a9c3dc39f6afd918" category="paragraph">새 ONTAP 중재자 인스턴스의 사용자 이름, 암호 및 IP 주소가 필요합니다.</block>
@@ -1509,8 +1507,6 @@
   <block id="1f28277756aaed1f919fd03c2fa92a26" category="list-text">미러링되지 않은 애그리게이트 구축 사용:</block>
   <block id="99202cf08ee605465b048d280b130030" category="list-text">미러링되지 않은 애그리게이트를 포함할 디스크 쉘프를 설치 및 케이블로 연결합니다.</block>
   <block id="b2fa14e3df9342c7d9ce9f5ac1643744" category="paragraph">플랫폼 및 디스크 쉘프에 대한 _Installation 및 Setup_설명서의 절차를 사용할 수 있습니다.</block>
-  <block id="2dece9a9495d8764b16760fe7d05d7a9" category="inline-link">AFF and FAS 문서 센터 를 참조하십시오</block>
-  <block id="112864a76081118148a479a1da39eb09" category="paragraph"><block ref="112864a76081118148a479a1da39eb09" category="inline-link-rx"></block></block>
   <block id="2d1ee8760a765460b6dcc34dbf24e95d" category="list-text">새 쉘프의 모든 디스크를 적절한 노드에 수동으로 할당합니다.</block>
   <block id="29d368b17fa8f6a4c00f53e0b1b0ddcd" category="paragraph">디스크 할당 - disk_disk -id_-owner_owner -node -name _</block>
   <block id="6d6f602efa1b388ca6264b6013787a0e" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 -node 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.</block>
@@ -1783,7 +1779,6 @@
   <block id="b6f8655d9cab6bf8d32e7b0bdc6c8eef" category="inline-link-macro">MetroCluster 업그레이드, 전환 및 확장</block>
   <block id="78d0e38065ed90f1fe7de25c50775110" category="paragraph"><block ref="78d0e38065ed90f1fe7de25c50775110" category="inline-link-macro-rx"></block></block>
   <block id="64a22d6aef579bef853d3771327a4ae8" category="list-text">MetroCluster Tiebreaker 소프트웨어로 MetroCluster 구성 모니터링</block>
-  <block id="9b69c1695f55a4595dbf315316635dc3" category="inline-link">AFF and FAS 설명서 를 참조하십시오</block>
   <block id="f69e3ec9eb18b508cb9d4ee4a9a0a1cc" category="paragraph">* 참고: * 표준 스토리지 쉘프 유지보수 절차는 MetroCluster IP 구성과 함께 사용할 수 있습니다.</block>
   <block id="c7c3f6690f29780dcaae9a3466cbb181" category="list-text">디스크 쉘프 핫 추가</block>
   <block id="76a9f159672d537c708be837bfe4931f" category="list-text">디스크 쉘프 핫 제거</block>
@@ -3189,7 +3184,6 @@
   <block id="baf620aab7b9758c307a3f0ac247ab7f" category="list-text">노드 중단:</block>
   <block id="19450cbfa926e998bbf8df4c2acf2202" category="paragraph">'halt-inhibit-takeover TRUE-node_node-name_'</block>
   <block id="30ee2c11e0c555918a60d26e605302e8" category="paragraph">이 단계는 두 노드에서 모두 수행해야 합니다.</block>
-  <block id="4ab1e5de67e4fdb090409b744f44bb19" category="paragraph"><block ref="4ab1e5de67e4fdb090409b744f44bb19" category="inline-link-rx"></block></block>
   <block id="30959867bd2ab160df81515782a357b1" category="list-text">새 컨트롤러 모듈에 자체 FC-VI 카드가 제공되지 않았거나 이전 컨트롤러의 FC-VI 카드가 새 컨트롤러에서 호환되는 경우 FC-VI 카드를 교체하고 올바른 슬롯에 설치합니다.</block>
   <block id="76947da623011473e258bcef85f2724d" category="paragraph">를 참조하십시오 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> FC-VI 카드의 슬롯 정보</block>
   <block id="c128b2ab68429454a80c551ee2dde909" category="list-text">MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 컨트롤러의 전원, 직렬 콘솔 및 관리 연결에 케이블을 연결합니다.</block>
@@ -5407,7 +5401,6 @@
   <block id="d340143d5e700f5d4e8046e617b37422" category="list-text">디스크 쉘프 스택은 작동하는 사이트와 동일한 구성해야 합니다.</block>
   <block id="5ecfd8db2d0a444e9b4b4b94265bd302" category="list-text">디스크의 크기는 같을 수도 있고 더 클 수도 있지만 유형이 동일해야 합니다(SAS 또는 SATA).</block>
   <block id="b02caacb3894ef9842bc0aef53528d62" category="list-text">디스크 쉘프를 스택 내의 인접한 쉘프 및 FC-to-SAS 브리지에 연결합니다. 지금은 디스크 쉘프의 전원을 사용하지 마십시오.</block>
-  <block id="f7569c5539a611615a6389d7051bfe9c" category="cell"><block ref="f7569c5539a611615a6389d7051bfe9c" category="inline-link-macro-rx"></block></block>
   <block id="37d313349fe563ae8b848d2dedc9b49d" category="paragraph">SAS 케이블</block>
   <block id="10870f04f6e998bece63881b8c817b77" category="list-text">새 케이블을 장착하십시오. 지금은 디스크 쉘프의 전원을 사용하지 마십시오.</block>
   <block id="0a8cc401310286b041be93eea053d047" category="paragraph">MetroCluster FC 구성의 FC-to-SAS 브릿지</block>
@@ -6418,7 +6411,6 @@
   <block id="ef4ac4a593cb9178a9d16e0c36679549" category="paragraph">포트번호</block>
   <block id="33bf44ceb147e757ac2d51950af56f07" category="paragraph">다음 예에서는 ISL 포트 ""0""에서 ""7""까지 활성화된 상태를 보여줍니다.</block>
   <block id="6397abfc307e631ca1c862e2d899a88a" category="summary">ISL 포트를 추가, 제거 또는 변경해야 할 수 있습니다. 전용 ISL 포트를 공유 ISL 포트로 전환하거나 스위치에서 ISL 포트의 속도를 변경할 수 있습니다. 거리가 더 먼 ISL을 이동하는 경우 품질을 향상시키려면 속도가 더 빨라질 수 있습니다. 또한 하드웨어를 추가하거나 업그레이드하는 경우 ISL 포트의 속도를 높여 시스템 업그레이드를 활용하고 Cisco IP 스위치에 ISL을 추가해야 할 수 있습니다.</block>
-  <block id="d10e49d0bde942d5917f6688f5e0de46" category="doc">ISL 포트를 중단 없이 추가, 제거 또는 변경할 수 있습니다</block>
   <block id="d799c86ecf33c88c19b257919f3e1a0e" category="inline-link-macro">공유 ISL 포트에 대한 요구 사항</block>
   <block id="20892c0f4a9566a296500f9e5a037ac2" category="paragraph">전용 ISL 포트를 공유 ISL 포트로 변환하는 경우 새 포트가 을 충족하는지 확인합니다 <block ref="85684a9c447191d458d402cc3d7d0980" category="inline-link-macro-rx"></block>.</block>
   <block id="81cb74811132f21a42025036363e5af8" category="paragraph">ISL 연결을 보장하려면 두 스위치 모두에서 모든 단계를 완료해야 합니다.</block>
@@ -11454,7 +11446,6 @@
   <block id="706be03f02099b320a48663ab49614b7" category="sidebar">IP 스위치 유지 보수 및 교체</block>
   <block id="40414fb3a79648f825985d2f107661f0" category="sidebar">MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다</block>
   <block id="6fc3e23fc447e1c003feca250d853db5" category="sidebar">Cisco IP 스위치의 이름을 바꿉니다</block>
-  <block id="c674510981c9027bb4d0c0161679026d" category="sidebar">ISL 포트를 중단 없이 추가, 제거 또는 변경할 수 있습니다</block>
   <block id="8939a3071227e9e768ef56f5cc7f2c4d" category="sidebar">MetroCluster IP 구성에서 스토리지를 식별하는 방법</block>
   <block id="1c833178608e8e9495706619170addcc" category="sidebar">공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에 쉘프를 추가합니다</block>
   <block id="806e10b1bc39f5ac90158ffc4013b751" category="sidebar">MetroCluster FC 구성에 스토리지를 핫 추가합니다</block>
@@ -11583,7 +11574,6 @@
   <block id="1e9c37d63bd64093dd1167b70b4e684f" category="section-title">MetroCluster 및 기타 정보</block>
   <block id="a82be0f551b8708bc08eb33cd9ded0cf" category="cell">정보</block>
   <block id="c7892ebbb139886662c6f2fc8c450710" category="cell">제목</block>
-  <block id="2847e89fee2d01cd879013b5c3c38cf6" category="paragraph"><block ref="2847e89fee2d01cd879013b5c3c38cf6" category="inline-link-rx"></block></block>
   <block id="fa06f628b32f0d1ba3fc7ece00862b96" category="paragraph"><block ref="fa06f628b32f0d1ba3fc7ece00862b96" category="inline-link-rx"></block></block>
   <block id="9f6ef9d803a6a101c30a47069149abd6" category="list-text">EFOS 버전 3.7.x.x 이상부터는 FIPS를 준수하지 않는 버전과 FIPS 호환 버전을 사용할 수 있습니다. FIPS를 준수하지 않는 버전에서 로 이동하거나 FIPS를 준수하는 버전으로 전환할 때 다른 단계가 적용됩니다. FIPS를 준수하지 않는 버전에서 FIPS를 준수하는 버전으로 또는 그 반대로 EFOS를 변경하면 스위치가 공장 출하 시 기본값으로 재설정됩니다. 이 절차를 수행하려면 직렬 콘솔 포트를 통해 액세스해야 합니다.</block>
   <block id="c92c490b97a94b8ad700c26b41c33c18" category="summary">ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성을 지원하여 예상치 못한 자동 전환을 수행할 수 있습니다.</block>
@@ -12788,7 +12778,6 @@
   <block id="103e238a461bced8a19653fadfc6b06f" category="paragraph">이 예에서 4노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
   <block id="f517753faa986ef4fe936b6ef049742a" category="paragraph">이 예에서는 2노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
   <block id="8351b67dee4e0c692cf4f28e83b54b0a" category="paragraph">자동화 작업이 전환 작업을 시작합니다. 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다<block ref="5fb641c5977b93de82b81e36db0454cf" prefix=" " category="inline-code"></block> 앞서 모였습니다.</block>
-  <block id="8582c1480060e39fb79b0996133a48d6" category="paragraph"><block ref="8582c1480060e39fb79b0996133a48d6" category="inline-link-rx"></block></block>
   <block id="956cd19055bcda776c4aa38d849f5270" category="paragraph">디렉토리 목록에는 커널 파일 ONTAP-version_image.tgz가 있는 netboot 폴더가 포함되어야 합니다</block>
   <block id="d58685908c79a70d5ff1a6db6c223402" category="paragraph">ONTAP-version_image.tgz 파일은 추출할 필요가 없습니다.</block>
   <block id="f3b7262f888ca591450dde27d2e71aaf" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_1에 대한 값을 설정합니다.</block>
@@ -12845,8 +12834,6 @@
   <block id="7d7fd277012689535b693bcae0693459" category="image-title">일시적인 8노드 구성</block>
   <block id="cb3b06d4f89d32589bbce6abb75941fc" category="image-title">임시 12노드 구성</block>
   <block id="830d9e0f5e1de2a97686d67c2397dae5" category="image-alt">MCC DR 그룹 C4</block>
-  <block id="6af6b76d592516d40ca101051c678be3" category="inline-link-macro">AFF 및 FAS 시스템 업그레이드 설명서</block>
-  <block id="73463ea97bfc9f9e1267ea63ebdd42a3" category="list-text">의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 <block ref="292db4887d6135b1e0f2f8467d29f1d6" category="inline-link-macro-rx"></block></block>
   <block id="bbe65d15d9db73ecb088957ca54464a4" category="list-text">각 클러스터에 대해 전환된 노드의 클러스터 피어의 IP 주소를 수정합니다.</block>
   <block id="5f733ea5e4f1c7cf03ff4e0dcc486e49" category="list-text">의 단계를 따릅니다 <block ref="e5ebde3067c5558de277c40cd868d611" category="inline-link-macro-rx"></block> 기존 DR 그룹을 제거합니다.</block>
   <block id="91658906d8262381ddcdb44c01a8989d" category="list-text">8노드 구성에서 두 DR 그룹을 모두 새로 고치려면 각 DR 그룹에 대해 전체 절차를 반복해야 합니다.</block>
@@ -13370,4 +13357,13 @@
   <block id="1aa145ddf3cafc3bf77b04a1c7069f71" category="list-text">_MetroCluster 설치 및 구성_ 에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 절차를 건너뜁니다.</block>
   <block id="21b5cf2db61fccc0ace8b80bac8b35b7" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스에 대해 40GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="13cdbd43c145584bcad75658a29e498d" category="list-text">참고 3: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
+  <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 하드웨어 시스템 설명서</block>
+  <block id="a6060d4587fc5fc5f841d3287d08316c" category="paragraph"><block ref="a6060d4587fc5fc5f841d3287d08316c" category="inline-link-rx"></block></block>
+  <block id="777cc85682fbb64f0c41aa09dccf0ca4" category="paragraph"><block ref="777cc85682fbb64f0c41aa09dccf0ca4" category="inline-link-rx"></block></block>
+  <block id="9701f608cd28914f41da9cef3b56ba90" category="paragraph">의 플랫폼에 대한 설치 지침을 사용합니다<block ref="ba9533a8784109065785b5514b6caa78" category="inline-link-rx"></block>.</block>
+  <block id="1f1b4aed93819376fcceca70dcc661a8" category="paragraph"><block ref="1f1b4aed93819376fcceca70dcc661a8" category="inline-link-rx"></block></block>
+  <block id="ddd2d923df0e2b56b89593bd7e74dec1" category="list-text">의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 <block ref="4af1ab31bd03b6b171b2abfc54231e72" category="inline-link-macro-rx"></block></block>
+  <block id="13b7f77edb33af927a5eb756e92d3e1e" category="doc">Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다</block>
+  <block id="d0b4d4a01f6fdfe6150ce107537b1a30" category="paragraph">Cisco IP 스위치에서 ISL 포트를 추가, 제거 또는 변경해야 할 수 있습니다. 전용 ISL 포트를 공유 ISL 포트로 변환하거나 Cisco IP 스위치에서 ISL 포트의 속도를 변경할 수 있습니다. 거리가 더 먼 ISL을 이동하는 경우 품질을 향상시키려면 속도가 더 빨라질 수 있습니다. 하드웨어를 추가하거나 업그레이드하는 경우 시스템 업그레이드를 활용하고 ISL을 Cisco IP 스위치에 추가하려면 ISL 포트의 속도를 높여야 할 수 있습니다.</block>
+  <block id="f8661864113fa686fbcb0e8305046574" category="cell"><block ref="f8661864113fa686fbcb0e8305046574" category="inline-link-macro-rx"></block></block>
 </blocks>

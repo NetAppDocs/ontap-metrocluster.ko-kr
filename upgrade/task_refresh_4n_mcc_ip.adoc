@@ -155,7 +155,7 @@ Node_IP_2      Node_IP_1              true      Connected to Node_IP_1
 +
 의 단계를 수행합니다 link:../maintain/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"].
 
-. 의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/index.html["AFF 및 FAS 시스템 업그레이드 설명서"^]
+. 의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/index.html["ONTAP 하드웨어 시스템 설명서"^]
 +
 .. 의 모든 단계를 수행합니다 http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-AFE432F6-60AD-4A79-86C0-C7D12957FA63.html["Aggregate 생성 및 볼륨을 새 노드로 이동"^].
 +

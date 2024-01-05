@@ -63,7 +63,7 @@ link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설�
 
 .. 디스크 쉘프를 스택 내의 인접한 쉘프 및 FC-to-SAS 브리지에 연결합니다. 지금은 디스크 쉘프의 전원을 사용하지 마십시오.
 
-| link:http://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^] 
+| link:http://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^] 
 
 
  a| 
@@ -72,7 +72,7 @@ SAS 케이블
 .. 새 케이블을 장착하십시오. 지금은 디스크 쉘프의 전원을 사용하지 마십시오.
 
  a| 
-link:http://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+link:http://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 
 
@@ -120,7 +120,7 @@ link:../install-stretch/concept_considerations_differences.html["스트레치 Me
 
 
  a| 
-link:http://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+link:http://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 |===
 . 모든 구성 요소가 구성에 맞게 케이블로 올바르게 연결되어 있는지 확인합니다.

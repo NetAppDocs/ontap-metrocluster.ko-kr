@@ -81,7 +81,7 @@ boot_ontap 메뉴
 케이블 연결 정보는 해당 모델의 컨트롤러 설치 및 설정 절차를 참조하십시오.
 
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 . 에 설명된 대로 컨트롤러를 IP 스위치에 연결합니다 link:../install-ip/using_rcf_generator.html["IP 스위치 케이블 연결"].
 . 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.

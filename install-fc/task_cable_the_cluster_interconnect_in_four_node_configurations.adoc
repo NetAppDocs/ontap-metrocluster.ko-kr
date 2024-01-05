@@ -23,6 +23,6 @@ summary: 8노드 또는 4노드 MetroCluster 구성에서는 각 사이트의 �
 
 
 .관련 정보
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 및 LIF 관리"^]

@@ -1020,7 +1020,7 @@ link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설�
 . 적절하게 접지합니다.
 . 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"]
+https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 . 에 설명된 대로 컨트롤러를 IP 스위치에 연결합니다 link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"].
 +

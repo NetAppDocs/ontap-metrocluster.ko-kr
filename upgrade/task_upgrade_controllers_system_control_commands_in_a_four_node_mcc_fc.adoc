@@ -375,7 +375,7 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 . 적절하게 접지합니다.
 . 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 . 새 컨트롤러 모듈에 자체 FC-VI 카드가 제공되지 않았거나 이전 컨트롤러의 FC-VI 카드가 새 컨트롤러에서 호환되는 경우 FC-VI 카드를 교체하고 올바른 슬롯에 설치합니다.
 +
@@ -386,7 +386,7 @@ https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조
 현재 이전 컨트롤러에서 분리된 다른 케이블을 연결하지 마십시오.
 
 +
-https://docs.netapp.com/platstor/index.jsp["AFF and FAS 문서 센터 를 참조하십시오"^]
+https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
 . 새 노드의 전원을 켜고 로더 프롬프트를 표시할 때 Ctrl-C를 누릅니다.
 
