@@ -146,14 +146,16 @@ NOTE: 이전 구성과 새 구성에서 동일한 포트를 사용하지 않는 
 다음 순서대로 연결부를 분리하십시오.
 
 +
-** 로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:
+.. 자동 되돌리기를 사용하지 않도록 모든 클러스터 LIF 수정:
 +
-*** 로컬 클러스터 인터페이스를 분리합니다
-*** 로컬 클러스터 ISL을 분리합니다
-
-
-** MetroCluster IP 인터페이스를 분리합니다
-** MetroCluster ISL을 분리합니다
+[source, asciidoc]
+----
+net int modify -vserver <vserver_name> -lif <lif_name> -auto-revert false
+----
+.. 로컬 클러스터 인터페이스를 분리합니다
+.. 로컬 클러스터 ISL을 분리합니다
+.. MetroCluster IP 인터페이스를 분리합니다
+.. MetroCluster ISL을 분리합니다
 +
 를 참조하십시오 <<port_usage_worksheet>>, 스위치는 변경되지 않습니다. MetroCluster ISL은 재배치되며 연결을 해제해야 합니다. 워크시트에서 녹색으로 표시된 연결은 연결 해제할 필요가 없습니다.
 

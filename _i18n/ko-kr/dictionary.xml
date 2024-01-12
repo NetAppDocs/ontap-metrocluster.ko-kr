@@ -13366,4 +13366,7 @@
   <block id="13b7f77edb33af927a5eb756e92d3e1e" category="doc">Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다</block>
   <block id="d0b4d4a01f6fdfe6150ce107537b1a30" category="paragraph">Cisco IP 스위치에서 ISL 포트를 추가, 제거 또는 변경해야 할 수 있습니다. 전용 ISL 포트를 공유 ISL 포트로 변환하거나 Cisco IP 스위치에서 ISL 포트의 속도를 변경할 수 있습니다. 거리가 더 먼 ISL을 이동하는 경우 품질을 향상시키려면 속도가 더 빨라질 수 있습니다. 하드웨어를 추가하거나 업그레이드하는 경우 시스템 업그레이드를 활용하고 ISL을 Cisco IP 스위치에 추가하려면 ISL 포트의 속도를 높여야 할 수 있습니다.</block>
   <block id="f8661864113fa686fbcb0e8305046574" category="cell"><block ref="f8661864113fa686fbcb0e8305046574" category="inline-link-macro-rx"></block></block>
+  <block id="69f5f299da1076246b1de6b47387e82c" category="list-text">자동 되돌리기를 사용하지 않도록 모든 클러스터 LIF 수정:</block>
+  <block id="44f3e9b14f204b411afdea78f7b0391c" category="doc">MetroCluster 릴리즈 노트</block>
+  <block id="af8a69aa12393a4d9b6992e884f1c919" category="sidebar">MetroCluster 문서</block>
 </blocks>

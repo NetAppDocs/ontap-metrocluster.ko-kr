@@ -11,7 +11,7 @@ settings:
   langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: MetroCluster
+  - title: MetroCluster 문서
     url: "/index.html"
   - title: 릴리즈 노트
     url: "/releasenotes.html"

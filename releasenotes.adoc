@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: release, notes, new, features, fixed, issues, known, limitations, 7-mode, transition, tool 
 summary: 새로운 기능, 업그레이드 정보, 해결된 문제, 알려진 제한 사항 및 알려진 문제에 대해 설명합니다. 
 ---
-= MetroCluster
+= MetroCluster 릴리즈 노트
 :allow-uri-read: 
 
 
