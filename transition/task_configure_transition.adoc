@@ -613,7 +613,7 @@ aggr_data_a2
  a| 
 노드의 프롬프트에서 MetroCluster를 구성합니다.
 
-'MetroCluster configure_node-name _'
+`metrocluster configure <node-name>`
 
 
 NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다
@@ -632,7 +632,7 @@ NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster config
 
 .. '-allow-with-one-aggregate TRUE' 파라미터를 사용하여 MetroCluster를 설정한다.
 +
-'MetroCluster configure-allow-with-one-aggregate TRUE_NODE-NAME_'
+`metrocluster configure -allow-with-one-aggregate true -node-name <node-name>`
 
 .. 관리자 권한 레벨로 돌아갑니다.
 +
@@ -720,6 +720,13 @@ Do you want to continue? {y|n}: y
 
 cluster_A::>
 ....
+. 클러스터의 모든 노드가 정상 상태인지 확인합니다.
++
+'클러스터 쇼'
+
++
+출력이 표시됩니다 `true` 의 경우 `health` 모든 노드에 대한 필드입니다.
+
 . 두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.
 +
 '스토리지 페일오버 쇼'
@@ -736,6 +743,18 @@ Node_FC_2      Node_FC_1              true      Connected to Node_FC_1
 Node_IP_1      Node_IP_2              true      Connected to Node_IP_2
 Node_IP_2      Node_IP_1              true      Connected to Node_IP_1
 ----
+. 새로 연결된 MetroCluster IP 노드에 연결된 모든 디스크가 있는지 확인합니다.
++
+'디스크 쇼'
+
+. 다음 명령을 실행하여 MetroCluster 구성의 상태를 확인합니다.
++
+.. 'MetroCluster check run
+.. MetroCluster 체크 쇼
+.. MetroCluster 상호 연결 미러 쇼
+.. MetroCluster 상호 연결 어댑터가 표시됩니다
+
+
 . MDV_CRS 볼륨을 이전 노드에서 고급 권한이 있는 새 노드로 이동합니다.
 +
 .. MDV 볼륨을 식별하기 위해 볼륨을 표시합니다.
