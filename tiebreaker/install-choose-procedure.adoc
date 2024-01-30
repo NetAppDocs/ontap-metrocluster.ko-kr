@@ -1,0 +1,35 @@
+---
+permalink: tiebreaker/install-choose-procedure.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: 사용하는 타이브레이커 설치 절차는 설치하는 타이브레이커의 버전에 따라 다릅니다. 
+---
+= 설치 절차를 선택합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사용하는 타이브레이커 설치 절차는 설치하는 타이브레이커의 버전에 따라 다릅니다.
+
+[cols="5,5"]
+|===
+
+
+| 타이브레이커 버전 | 이동... 
+
+
+ a| 
+타이브레이커 1.6
+ a| 
+link:tb-16-install.html["타이브레이커 1.6을 설치합니다"]
+
+
+
+ a| 
+타이브레이커 1.5 또는 1.4
+ a| 
+link:install_dependencies.html["Tiebreaker 1.5 또는 1.4를 설치합니다"]
+
+|===

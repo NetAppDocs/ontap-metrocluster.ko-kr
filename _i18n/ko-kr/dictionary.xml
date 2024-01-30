@@ -2089,12 +2089,6 @@
   <block id="3d47e198e02ccec25cafef6cbda2ebcc" category="paragraph">기존 설치 업그레이드</block>
   <block id="dbe9b345ce63b9fd500e311eff185188" category="paragraph">성공적인 업그레이드를 위해 다음과 같은 출력이 표시됩니다.</block>
   <block id="669f62b51efaf771cdc56bbd948e67a7" category="admonition">잘못된 MySQL root 패스워드를 입력하면 Tiebreaker 소프트웨어는 성공적으로 설치되었음을 나타내지만 "Access denied" 메시지를 표시합니다. 이 문제를 해결하려면 "rpm -e" 명령을 사용하여 Tiebreaker 소프트웨어를 제거한 다음 올바른 MySQL root 암호를 사용하여 소프트웨어를 다시 설치해야 합니다.</block>
-  <block id="35a8ad649b3194dfec4cd801fff9f656" category="section-title">Tiebreaker 모니터가 실행 중인 호스트 업그레이드</block>
-  <block id="c1b20466030a9b3540d83155ad9678ce" category="list-text">모니터가 observer 모드인지 확인합니다.</block>
-  <block id="01e2bc057f0d0c9226b9b72fe02073dc" category="paragraph">모니터 쇼 – 상태</block>
-  <block id="dd369bd80b51fade2a8040849d0cdfb3" category="list-text">모든 모니터를 관찰자 모드로 변경합니다.</block>
-  <block id="364ba5b8b3d13bcb103f29814c8bdc8b" category="list-text">Tiebreaker 호스트를 업그레이드하려면 다음 절차의 모든 단계를 따르십시오.</block>
-  <block id="3e3282862342655e70b0b4d411fbb78b" category="list-text">관찰자 모드를 비활성화하여 모든 모니터를 다시 온라인 모드로 전환합니다.</block>
   <block id="a89d71cea914c12a8560cf535aa946c5" category="list-text">모든 MetroCluster 설명서</block>
   <block id="2839ce8da1b91633a5faa834ae8e86da" category="inline-link">NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster</block>
   <block id="a310e23a4d771cf01d8f1b1cad705ade" category="list-text">MetroCluster 구성 및 작동에 대한 기술적 개요</block>
@@ -12531,7 +12525,6 @@
   <block id="b1da335cf10c2f924dba74d5fd88d108" category="list-text">새 관리자 사용자가 생성되었는지 확인합니다.<block ref="025c83c1a746b39471a98aa72befe950" prefix=" " category="inline-code"></block></block>
   <block id="6ba7b5d818acb6cab3137d4c011e2db2" category="inline-link-macro">관리자 인증 및 RBAC</block>
   <block id="e7d59a0eb3a6cfef54201efcc0c8d786" category="admonition"><block ref="7886b0aac53ba2a311aa54645e5cc1ff" category="inline-link-macro-rx"></block> 구현되었습니다.</block>
-  <block id="928cee617936aa2a4fa44c397f9242d0" category="paragraph">Tiebreaker 소프트웨어를 설치하고 구성해야 합니다.</block>
   <block id="2cdf4d361a0254ca58a3bec3a13f4c97" category="admonition">MetroCluster Tiebreaker 소프트웨어 및 종속 패키지를 설치하려면 "루트" 권한이 있어야 합니다.</block>
   <block id="08821d58a0ccf55fa3dc84c09844d2be" category="admonition">여러 개의 Tiebreaker 모니터와 충돌을 피하기 위해 MetroCluster 구성당 하나의 MetroCluster Tiebreaker 모니터만 사용할 수 있습니다.</block>
   <block id="589527a6e982279d79d4094b9cb6a17d" category="list-text">JRE 8을 엽니다</block>
@@ -12625,8 +12618,6 @@
   <block id="7b21144e83a2d9bef049269b16711fb4" category="list-text">로 로그인합니다<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block> sudo를 고급 권한 모드로 설정할 수 있는 사용자 또는 사용자입니다.</block>
   <block id="a85ec808ef0cc8f00cfefb33625bee2e" category="list-text">MariaDB 서버가 시작되었는지 확인합니다.</block>
   <block id="fe62eeb322eff90b81676630826cee46" category="list-text">을 사용하여 OpenJDK를 설치해야 합니다<block ref="366f2699f7c6384b966350ad31d76b9d" prefix=" " category="inline-code"></block> 명령. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다. 예제의 출력에는 JRE 1.8.0이 표시됩니다. (JRE 8).</block>
-  <block id="8043dd95e39830a755744f552dcbfe87" category="list-text">MetroCluster Tiebreaker는 Tiebreaker 설치를 수행하고, 테이블, 사용자를 생성하고, 사용자 암호 등을 설정하기 위한 충분한 관리 권한을 가진 비 루트 사용자로 설치할 수 있습니다</block>
-  <block id="9e60d73d0ca4d4a89597b4e9640c5dab" category="list-text">최신 버전의 MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.</block>
   <block id="b11583eaa66ec31ee30afd4772390654" category="paragraph"><block ref="b11583eaa66ec31ee30afd4772390654" category="inline-link-rx"></block></block>
   <block id="afe5c13e8c0820ecf86c92cb3af131ee" category="list-text">RPM 파일을 확인합니다.</block>
   <block id="65efc23e428017c909aa7ce5f2ab429e" category="list-text">RPM 키 파일을 다운로드하고 가져옵니다.</block>
@@ -13063,9 +13054,7 @@
   <block id="a41a029b875096344ffc788be91b9870" category="list-text">Java의 절대 경로를 검색하고 기록합니다.</block>
   <block id="bf2a1a18c2c6398b764f31d46e296f2f" category="list-text">다음 명령을 실행합니다.<block ref="03b215d9ee73daa38b9c74b25129b68a" prefix=" " category="inline-code"></block></block>
   <block id="3ac11446b528739d814fa9e6668fa288" category="admonition">설치 중에 메시지가 표시되면 이전에 만들어 에 할당한 루트가 아닌 사용자를 제공합니다<block ref="d5a9c5909d563fb968e1c3dc3e45cd64" prefix=" " category="inline-code"></block> 그룹.</block>
-  <block id="2d0e9a7694bf5bc701c3af145a6bba71" category="doc">요구사항 검토</block>
   <block id="7ddb33edf227a18eb76201fcb9e2c9db" category="section-title">소프트웨어 요구 사항</block>
-  <block id="652ef26e1fed1ab97fdc4a6c15b02207" category="paragraph">설치하는 타이브레이커의 버전에 따라 다음 소프트웨어 요구 사항을 충족해야 합니다.</block>
   <block id="7756d8f2d40ed781cebba0f1c1f2b14d" category="cell">ONTAP Tiebreaker 버전</block>
   <block id="eae7ed824c301543a7e09d88d74d7b19" category="cell">지원되는 ONTAP 버전</block>
   <block id="7086defea73bc85dfa4588f2db92a805" category="cell">지원되는 Linux 버전</block>
@@ -13089,11 +13078,6 @@
   <block id="d278aad9be542d15b42d2b30e3ac0701" category="section-title">OS 지원 매트릭스</block>
   <block id="bc66e40e6d2b679666709d4696a3e3a0" category="cell">타이브레이커 버전</block>
   <block id="2ff01ce7887ede183a0dcb4bf579a040" category="cell">CentOS 7 - 7.9</block>
-  <block id="afdc9e833dc368813fa4f4ad3b6ff344" category="cell">레드햇 7-7.9</block>
-  <block id="a3d07f12ac6e702822c54bd39beca7e2" category="cell">레드햇 8.1 - 8.7</block>
-  <block id="f3bda6ae20e6fe147fffa682501d3941" category="paragraph">업그레이드 전에 모니터를 observer 모드로 설정한 경우, 작업 중단을 최소화하면서 Tiebreaker 모니터가 실행 중인 호스트를 업그레이드할 수 있습니다.</block>
-  <block id="41d2ed82aa95a99454a02273bf71db16" category="inline-link-macro">타이브레이커 패키지를 설치하거나 업그레이드합니다</block>
-  <block id="4df70720c02e1beb11cbc3ae87370ddf" category="paragraph"><block ref="4df70720c02e1beb11cbc3ae87370ddf" category="inline-link-macro-rx"></block></block>
   <block id="e409cbaf30133c40afd8ba79b71e06ee" category="paragraph">42번, 포트 12부터 15까지 Brocade 7840 스위치의 두 번째 MetroCluster 또는 DR 그룹에 예약되어 있습니다.</block>
   <block id="2a8e60d3a0b3d603c27fa9c4562178bf" category="summary">NetApp MetroCluster 구성에서는 어레이 기반 클러스터링을 동기식 복제와 결합하여 지속적인 가용성을 제공하고 모든 미션 크리티컬 데이터를 트랜잭션별로 즉시 복제합니다.</block>
   <block id="99d7ea00899cf98fde6ae4bd7a763fe6" category="list-text">AUSO(Automatic Unplanned Switchover) 장애 도메인의 상태를 확인합니다.</block>
@@ -13103,7 +13087,6 @@
   <block id="142e30c0e2bc40260b6bba783159349f" category="admonition">이 명령을 사용하기 전에 를 검토하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
   <block id="626946adf45b7bb7ff18b4ffcb520404" category="paragraph"><block ref="c3c9b152afaa4bfa0aa390b3e2063a6d" prefix="" category="inline-code"></block></block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
-  <block id="f76aaf3aaa7b30238e7a3e2b1a04493b" category="sidebar">설치 준비</block>
   <block id="bbce41d7b43eef36d5db9bed94db0495" category="sidebar">종속 항목을 설치합니다</block>
   <block id="9adb8eb34f7ed5a25405fe6af3b01c0a" category="sidebar">설치를 고정합니다</block>
   <block id="357559d73c5bb22e54ab3aeafca1013b" category="sidebar">소프트웨어 패키지를 설치합니다</block>
@@ -13347,4 +13330,57 @@
   <block id="e402ac65c66b96e2f07562ac550c53d8" category="paragraph">오프라인(참고 1)</block>
   <block id="5993b684cff34ce50e30b3a1293c1f25" category="paragraph">* 참고 1 *: MetroCluster IP 구성에서 전환이 완료된 후 수동으로 미러링되지 않은 애그리게이트를 온라인 상태로 전환할 수 있습니다.</block>
   <block id="0fc1dc5210ab6635b5582671b5100aaf" category="paragraph">에 대해 자세히 알아보십시오 <block ref="26007d4b0afff1c47eeefe43a1492ee9" category="inline-xref-macro-rx"></block>.</block>
+  <block id="edcdea907176b4b6176bfac47c1c23cc" category="doc">타이브레이커 1.6을 설치합니다</block>
+  <block id="51e78330040131fe6b93cb04e0fa15ec" category="paragraph">타이브레이커 소프트웨어를 새로 설치하거나 업그레이드합니다.</block>
+  <block id="9a9884d3e2c33b612fd52c46591cdf8b" category="list-text">스토리지 시스템에서 ONTAP 9.12.1 이상을 실행해야 합니다.</block>
+  <block id="f616ec898f7359b274487a4c46b54cfc" category="list-text">Tiebreaker 설치를 수행하고, 테이블과 사용자를 만들고, 사용자 암호를 설정할 수 있는 충분한 관리 권한이 있는 비루트 사용자로 MetroCluster Tiebreaker를 설치할 수 있습니다.</block>
+  <block id="e19f14d0b2d10c8920d70cbad23314da" category="list-text">MetroCluster Tiebreaker 1.6 소프트웨어를 다운로드합니다.</block>
+  <block id="51bf182ce0d0aa7ded2a3830ac9d79c1" category="list-text">업그레이드를 수행하는 경우 실행 중인 Tiebreaker 버전을 확인합니다.</block>
+  <block id="e114922bb72d15b2ebf1cdc8a84f5765" category="paragraph">다음 예에서는 Tiebreaker 1.5를 보여 줍니다.</block>
+  <block id="a7f55356cc47030db5528f30a58edfb2" category="list-text">타이브레이커 소프트웨어를 설치하거나 업그레이드합니다.</block>
+  <block id="aad71198aa2c8b35c39182535fa9f425" category="paragraph">Tiebreaker 1.6을 새로 설치하려면 다음 단계를 따르십시오.</block>
+  <block id="73bcbbea382be16f93642da3ea4e23a7" category="list-text">에서 다음 명령을 실행합니다<block ref="e9af9a0ef1d120bf3a16357375ed6d36" prefix=" " category="inline-code"></block> 설치를 시작하라는 메시지 표시:</block>
+  <block id="30c295d71ca99219187fc6466ee21568" category="open-title">Tiebreaker 1.5에서 1.6으로 업그레이드하십시오</block>
+  <block id="8be93a7c27b9b66803ef47f46f3d4a36" category="paragraph">다음 단계에 따라 Tiebreaker 1.5 소프트웨어 버전을 Tiebreaker 1.6으로 업그레이드합니다.</block>
+  <block id="b9a8b4d6a676fac167bcd49bac74376b" category="list-text">에서 다음 명령을 실행합니다<block ref="e9af9a0ef1d120bf3a16357375ed6d36" prefix=" " category="inline-code"></block> 소프트웨어를 업그레이드하라는 메시지 표시:</block>
+  <block id="cf316c5c67469aab7dcc16eed2309753" category="open-title">Tiebreaker 1.4에서 1.6으로 업그레이드합니다</block>
+  <block id="b6afd444ae977b739cc436bd2a8b5c0b" category="paragraph">다음 단계에 따라 tiebreaker 1.4 소프트웨어 버전을 tiebreaker 1.6으로 업그레이드합니다.</block>
+  <block id="67449e50a32d34759e501e37496d3308" category="doc">타이브레이커 설치 워크플로우</block>
+  <block id="a6812db2442ae325a9ccd39373bbd9dd" category="paragraph-title">이 워크플로 정보</block>
+  <block id="c8c6970a40c7cbea5e435ea727fe8d20" category="paragraph">이 워크플로를 사용하여 Tiebreaker 소프트웨어를 설치하거나 업그레이드할 수 있습니다.</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1개</block>
+  <block id="5a49bb106c1b752cc4864e7b0efa6fe5" category="inline-link-macro">타이브레이커 소프트웨어 설치를 준비합니다</block>
+  <block id="e3936efd5aa8f1ff93ede922e9557c0f" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="e91136d8b3f350d5d04ba23e1d04db6b" category="inline-link-macro-rx"></block></block>
+  <block id="72fd6c80a8c842e3b015cb994df1977c" category="paragraph">타이브레이커 소프트웨어를 설치하고 구성하기 전에 시스템이 특정 요구 사항을 충족하는지 확인하십시오.</block>
+  <block id="e583219b5f5acce43fc0503407e380d9" category="paragraph-title"><block ref="444c1bf2e877f5617e8ce0a2ded57f4f" category="inline-image-macro-rx" type="image"></block><block ref="7cb52d79d7da7be8edad1414bc7d2aa6" category="inline-link-macro-rx"></block></block>
+  <block id="f6c088317f02d7149ad83fcd03fb7398" category="inline-link-macro">타이브레이커 소프트웨어 패키지를 설치합니다</block>
+  <block id="493c3e1a38da21c140af6f670b03b68a" category="paragraph-title"><block ref="905b132c63e4b8e6831d77863275a213" category="inline-image-macro-rx" type="image"></block><block ref="be4ef0fa013cc9494ceb74b978af0a3a" category="inline-link-macro-rx"></block></block>
+  <block id="e139095a02563e8f280c56a9e455082b" category="paragraph">타이브레이커 소프트웨어를 새로 설치하거나 업그레이드합니다. 설치 절차는 설치할 타이브레이커의 버전에 따라 다릅니다.</block>
+  <block id="d7a4d09daa1ff7dd5f983bb4169e4858" category="summary">타이브레이커 소프트웨어를 설치하고 구성하기 전에 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다.</block>
+  <block id="dbb70fa6f1b1115cf7c974a53e710591" category="paragraph">설치하는 타이브레이커 버전에 따라 다음 소프트웨어 요구 사항을 충족해야 합니다.</block>
+  <block id="4341447b6ad78bf4d7eb59ebb5a53d63" category="paragraph">1.6</block>
+  <block id="16d9a40603d44eea561b00730eec3d91" category="paragraph">ONTAP 9.12.1 이상</block>
+  <block id="4951fe611f97b799b2abaf7474848aa1" category="inline-link-macro">OS 지원 매트릭스 를 참조하십시오</block>
+  <block id="30177b72c8d5a1bab13142ff42dfc513" category="paragraph">을 참조하십시오 <block ref="9f4435e7cf286b329f02bc934ba0dd4b" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="e27eee16ff4c1ce2072fea31052ce7d5" category="paragraph">없음. 종속성은 설치와 함께 번들로 제공됩니다.</block>
+  <block id="4a558332080902b1daf6c9eb900f075a" category="summary">사용하는 타이브레이커 설치 절차는 설치하는 타이브레이커의 버전에 따라 다릅니다.</block>
+  <block id="686cbe9ae98dac9e3c34fe747bedda27" category="doc">설치 절차를 선택합니다</block>
+  <block id="de537937e28d6ff9bfed73c24f238620" category="paragraph">타이브레이커 1.6</block>
+  <block id="3d0eb4e198ae6fd77a45e8e5eeab8df8" category="paragraph"><block ref="3d0eb4e198ae6fd77a45e8e5eeab8df8" category="inline-link-macro-rx"></block></block>
+  <block id="fc8e9fcd20abea214d32b4b417fe9ee7" category="paragraph">타이브레이커 1.5 또는 1.4</block>
+  <block id="2ffd1c81489309e0073aecd5609369ad" category="inline-link-macro">Tiebreaker 1.5 또는 1.4를 설치합니다</block>
+  <block id="133f62a92e5c4fe1c8e0583979dbcf43" category="paragraph"><block ref="133f62a92e5c4fe1c8e0583979dbcf43" category="inline-link-macro-rx"></block></block>
+  <block id="9fc6565c0dbc4f2911a9e92430c80179" category="list-text">MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.</block>
+  <block id="92c6c9c27fa6ff626915d050a03cd801" category="doc">Tiebreaker 모니터가 실행 중인 호스트를 업그레이드합니다</block>
+  <block id="bb6cdee210874ecf03d44e914a8ca0e2" category="paragraph">Tiebreaker 모니터가 실행 중인 호스트를 업그레이드해야 할 수 있습니다.</block>
+  <block id="5d7ada76e0c335aff8880d70d7058de7" category="list-text">Tiebreaker 소프트웨어를 제거합니다.</block>
+  <block id="16918e6c9c1a391ee7fc51a19b77cc28" category="paragraph"><block ref="19124a01f5182120f436f905b2c95886" prefix="" category="inline-code"></block></block>
+  <block id="fb6ba2db993fb64b8ba9f47909fd4db1" category="list-text">호스트를 업그레이드합니다. 자세한 내용은 호스트 OS 설명서를 참조하십시오.</block>
+  <block id="cb75dafe5098e84554cfafc5f3f7cb18" category="list-text">타이브레이커 소프트웨어를 다시 설치합니다.</block>
+  <block id="aa27f1e0fd685e0f4cde8697742ae6ac" category="paragraph">의 단계에 따라 타이브레이커를 새로 설치합니다 <block ref="34a05079494730e6ed0177e3b3032a6d" category="inline-link-macro-rx"></block>.</block>
+  <block id="be7c560a571a01eeb644e3be4ae88e59" category="list-text">설치 용이성 향상</block>
+  <block id="6106648cc4773cdde37c48ca810022c0" category="cell">Red Hat 7 - 7.9</block>
+  <block id="7d04b9af5dfbfc78c7040183f68afdc4" category="cell">Red Hat 8.1 - 8.7</block>
+  <block id="33ef1f5aa9b12ecd01c340c91d8f9150" category="cell">Red Hat 8.8 -9.2</block>
+  <block id="003d136e5089a4f9ae0f1df3f6fc37fa" category="cell">Rocky Linux 9.0</block>
 </blocks>

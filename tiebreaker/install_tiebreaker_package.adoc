@@ -13,11 +13,11 @@ MetroCluster 구성을 모니터링하려면 로컬 컴퓨터에 MetroCluster Ti
 .이 작업에 대해
 * 스토리지 시스템에서 ONTAP 8.3.x 이상을 실행해야 합니다.
 * 을 사용하여 OpenJDK를 설치해야 합니다 `yum install java-x.x.x-openjdk` 명령. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다. 예제의 출력에는 JRE 1.8.0이 표시됩니다. (JRE 8).
-* MetroCluster Tiebreaker는 Tiebreaker 설치를 수행하고, 테이블, 사용자를 생성하고, 사용자 암호 등을 설정하기 위한 충분한 관리 권한을 가진 비 루트 사용자로 설치할 수 있습니다
+* Tiebreaker 설치를 수행하고, 테이블과 사용자를 만들고, 사용자 암호를 설정할 수 있는 충분한 관리 권한이 있는 비루트 사용자로 MetroCluster Tiebreaker를 설치할 수 있습니다.
 
 
 .단계
-. 최신 버전의 MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.
+. MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.
 +
 https://mysupport.netapp.com/site/["NetApp Support 사이트"^]
 

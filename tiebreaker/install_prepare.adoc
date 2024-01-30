@@ -2,30 +2,39 @@
 permalink: tiebreaker/install_prepare.html 
 sidebar: sidebar 
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
-summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+summary: 타이브레이커 소프트웨어를 설치하고 구성하기 전에 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 
 ---
-= 요구사항 검토
+= 타이브레이커 소프트웨어 설치를 준비합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.
-
-Tiebreaker 소프트웨어를 설치하고 구성해야 합니다.
+타이브레이커 소프트웨어를 설치하고 구성하기 전에 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다.
 
 
 
 == 소프트웨어 요구 사항
 
-설치하는 타이브레이커의 버전에 따라 다음 소프트웨어 요구 사항을 충족해야 합니다.
+설치하는 타이브레이커 버전에 따라 다음 소프트웨어 요구 사항을 충족해야 합니다.
 
 [cols="1,1,1,2"]
 |===
 
 
 | ONTAP Tiebreaker 버전 | 지원되는 ONTAP 버전 | 지원되는 Linux 버전 | Java/MariaDB 요구 사항 
+
+
+ a| 
+1.6
+ a| 
+ONTAP 9.12.1 이상
+ a| 
+을 참조하십시오 link:whats_new.html#os-support-matrix["OS 지원 매트릭스 를 참조하십시오"] 를 참조하십시오.
+ a| 
+없음. 종속성은 설치와 함께 번들로 제공됩니다.
+
 
 
  a| 
