@@ -7100,7 +7100,6 @@
   <block id="bdf5a4145db18b2c7dd55def53b3ed55" category="list-text">MetroCluster 구성이 정상적으로 작동해야 합니다.</block>
   <block id="d5d3590e43714c27f890df20d7fb4b09" category="list-text">MetroCluster 구성의 모든 FiberBridge 브리지는 가동 및 작동해야 합니다.</block>
   <block id="0450d35c3e42ba9d9532f666b14a8b24" category="list-text">모든 스토리지 경로를 사용할 수 있어야 합니다.</block>
-  <block id="6c84f57441ac5f9c9fc0a2b2600dbfcb" category="list-text">관리자 암호와 HTTP 서버에 대한 액세스가 필요합니다.</block>
   <block id="166dba728289a6a5685576331ebb01f7" category="list-text">지원되는 펌웨어 버전을 사용하고 있어야 합니다.</block>
   <block id="b64e329a5994176cf6b7c2cf5a95361c" category="list-text">ONTAP 9.4 이상을 실행하는 구성에서 FiberBridge 7600N 또는 7500N 브리지에서만 이 작업을 사용할 수 있습니다.</block>
   <block id="c8385b45832e29f74df94bada634afbb" category="list-text">모든 브리지가 동일한 펌웨어 버전을 실행할 수 있도록 MetroCluster 구성의 각 FiberBridge 브리지에서 이 작업을 수행해야 합니다.</block>
@@ -8961,8 +8960,6 @@
   <block id="9377aa6f276f8ec401ff97cad8c3288f" category="list-text">여러 이니시에이터 포트를 단일 타겟 포트와 공유하면 성능 문제가 발생할 수 있습니다.</block>
   <block id="4213e2e4219d8c646fb0d77e759bd1e7" category="paragraph">마찬가지로, 여러 타겟 포트를 단일 이니시에이터 포트와 공유하면 성능 문제가 발생할 수 있습니다.</block>
   <block id="a97092f773742097739d9703f62392b9" category="list-text">MetroCluster 구성에 사용되는 FC 스위치의 기본 구성을 수행해야 합니다.</block>
-  <block id="9e5e027fd19574761ea3d87eebdedffa" category="inline-link-macro">Cisco 또는 Brocade FC 스위치를 수동으로 구성합니다</block>
-  <block id="d6d64090fd47c5235492fd5cc4f11ff5" category="paragraph"><block ref="d6d64090fd47c5235492fd5cc4f11ff5" category="inline-link-macro-rx"></block></block>
   <block id="ed167884ebcfbf8e54d556f8a50a60c2" category="list-text">스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
   <block id="0bf5a919f9397252a1fb8ee826f70bcb" category="inline-link-macro">어레이 LUN이 있는 2노드 MetroCluster 구성에서 스위치 조닝의 예</block>
   <block id="a90e829037a5fa8775e3eae393aa9ee4" category="paragraph"><block ref="a90e829037a5fa8775e3eae393aa9ee4" category="inline-link-macro-rx"></block></block>
@@ -13383,4 +13380,10 @@
   <block id="7d04b9af5dfbfc78c7040183f68afdc4" category="cell">Red Hat 8.1 - 8.7</block>
   <block id="33ef1f5aa9b12ecd01c340c91d8f9150" category="cell">Red Hat 8.8 -9.2</block>
   <block id="003d136e5089a4f9ae0f1df3f6fc37fa" category="cell">Rocky Linux 9.0</block>
+  <block id="9d0101bb262cf2b07ff8dcfa1f6cf004" category="list-text">관리자 암호와 HTTP, FTP, SFTP 또는 TFTP(Trivial File Transfer Protocol) 서버에 액세스해야 합니다.</block>
+  <block id="c422062a1c7b3d9ed9b2282378699dc7" category="paragraph"><block ref="c422062a1c7b3d9ed9b2282378699dc7" category="inline-link-macro-rx"></block></block>
+  <block id="f54824b249675e35c90a450877126d13" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
+  <block id="da09acdb1d2e578a9e771c592cf62afa" category="paragraph"><block ref="da09acdb1d2e578a9e771c592cf62afa" category="inline-link-macro-rx"></block></block>
+  <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
+  <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
 </blocks>

@@ -81,6 +81,8 @@ entries:
       url: "/install-fc/task_cable_the_management_and_data_connections.html"
   - title: FC 스위치를 구성합니다
     entries:
+    - title: FC 스위치 구성 개요
+      url: "/install-fc/concept-configure-fc-switches.html"
     - title: RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다
       entries:
       - title: Brocade FC 스위치를 출하 시 기본값으로 재설정합니다

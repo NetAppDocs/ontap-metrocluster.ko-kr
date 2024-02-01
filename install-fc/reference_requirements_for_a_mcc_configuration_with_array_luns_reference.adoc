@@ -66,11 +66,14 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 * 각 Fabric에는 2개의 FC 스위치가 있어야 합니다.
 * 각 ONTAP 시스템은 중복 구성 요소를 사용하여 스토리지에 연결해야 장치 및 경로 장애가 발생할 경우 이중화가 가능합니다.
 * AFF A700, FAS9000, AFF A900 및 FAS9500 스토리지 시스템은 패브릭당 최대 8개의 ISL을 지원합니다. 다른 스토리지 시스템 모델은 Fabric당 최대 4개의 ISL을 지원합니다.
+* 스위치는 MetroCluster 기본 스위치 구성, ISL 설정 및 FC-VI 구성을 사용해야 합니다.
++
+link:task_fcsw_cisco_configure_a_cisco_switch_supertask.html["Cisco FC 스위치를 수동으로 구성합니다"]
+
++
+link:ask_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
 
 
-스위치는 MetroCluster 기본 스위치 구성, ISL 설정 및 FC-VI 구성을 사용해야 합니다.
-
-link:task_fcsw_configure_the_cisco_or_brocade_fc_switches_manually.html["Cisco 또는 Brocade FC 스위치를 수동으로 구성합니다"]
 
 
 
