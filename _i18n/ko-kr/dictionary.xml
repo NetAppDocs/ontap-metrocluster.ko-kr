@@ -13386,4 +13386,5 @@
   <block id="da09acdb1d2e578a9e771c592cf62afa" category="paragraph"><block ref="da09acdb1d2e578a9e771c592cf62afa" category="inline-link-macro-rx"></block></block>
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
   <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
+  <block id="1399637937931de009069d1a13a152fb" category="paragraph">* 참고 1: * 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
 </blocks>

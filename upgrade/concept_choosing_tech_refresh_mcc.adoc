@@ -20,35 +20,27 @@ summary: 사용하는 업데이트 절차는 플랫폼 모델, 업그레이드 �
 image::../media/metrocluster_fc_tech_refresh_914.png[MetroCluster FC 기술 업데이트 914]
 
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
-
-
-[NOTE]
-====
 * MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.
 * 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.
 * 타겟 플랫폼 제한값이 MetroCluster 제한보다 낮을 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한보다 낮거나 같은 상태로 다시 구성해야 합니다.
 * 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
 
-====
 
 
 === 지원되는 MetroCluster IP 기술 업데이트 조합
 
 image::../media/metrocluster_techref_ip_914.png[MetroCluster IP 기술 업데이트 조합]
 
+* 참고 1: * 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.
+
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
-
-
-[NOTE]
-====
 * MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.
 * 이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.
 * 타겟 플랫폼 제한이 MetroCluster 제한보다 낮은 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한값 이하로 재구성해야 합니다.
 * 을 참조하십시오 link:https://hwu.netapp.html["Hardware Universe"^] 플랫폼 제한.
 
 
-====
 [cols="2,1,1,2"]
 |===
 | 새로 고침 방법 | 구성 유형 | ONTAP 버전입니다 | 절차를 참조하십시오 
