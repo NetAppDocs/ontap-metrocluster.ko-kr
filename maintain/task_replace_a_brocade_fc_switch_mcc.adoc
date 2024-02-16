@@ -113,13 +113,7 @@ FC_switch_B_1:admin> switchshow
 +
 'firmwareswHow'입니다
 
-.. _MetroCluster 설치 및 구성_ 에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 절차를 건너뜁니다.
-+
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
-
-+
-이 절차의 뒷부분에서 조닝을 구성합니다.
-
+.. 의 단계에 따라 새 스위치를 구성합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"].
 +
 
 NOTE: 이때 새 스위치는 MetroCluster 구성에 케이블로 연결되지 않습니다.
@@ -173,6 +167,10 @@ ISL 암호화를 설정하는 경우 다음 작업을 완료해야 합니다.
 FC_switch_B_1:admin> portcfgpersistentenable 10
 FC_switch_B_1:admin> portcfgpersistentenable 11
 ----
+.. 조닝 구성을 확인합니다.
++
+`cfg show`
+
 .. 교체 스위치(예제의 FC_SWITCH_B_1)에서 ISL이 온라인 상태인지 확인합니다.
 +
 재치쇼

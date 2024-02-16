@@ -7449,7 +7449,6 @@
   <block id="8e5f01e6f722107f58bbbd4e30557349" category="paragraph">10, 11</block>
   <block id="670c82721eda362e6fbddff0dd85e845" category="list-text">Fabric의 정상 스위치에서 ISL 포트를 비활성화하고 손상된 스위치의 FC-VI 및 HBA 포트를 비활성화하여 스위치 교체 대상 펜스 끄기(손상된 스위치가 여전히 작동 중인 경우):</block>
   <block id="105fa3122987d45fae2de8b9e61228dc" category="list-text">새 스위치를 물리적으로 설치하기 전에 부팅하고 미리 구성해야 합니다.</block>
-  <block id="b78f0a4f76dcc1e77900d332f928827a" category="paragraph">이 절차의 뒷부분에서 조닝을 구성합니다.</block>
   <block id="b8e631780d1dd27b4f2d09d46aff4b4b" category="admonition">이때 새 스위치는 MetroCluster 구성에 케이블로 연결되지 않습니다.</block>
   <block id="44cc543a1a8236a9d069faa85442a84b" category="list-text">새 스위치에서 FC-VI, HBA 및 스토리지 포트와 FC-SAS 브리지에 연결된 포트를 비활성화합니다.</block>
   <block id="32d094a9a039fb0268cc6295ed9c3e91" category="list-text">스위치를 물리적으로 교체합니다.</block>
@@ -13282,7 +13281,6 @@
   <block id="aa71e3dcbe0cdabbe4cce28385ab2fd6" category="paragraph">ONTAP 버전 또는 스위치 펌웨어 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.</block>
   <block id="9f4a5b5c7a3f862c1d0ff77f72d3eea0" category="paragraph">ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.</block>
   <block id="c471c44c2f26c78f9327863d90427cb7" category="admonition">ONTAP 중재자가 다운된 경우<block ref="1eafb93bfc40f298e60cf17e8a8c598c" prefix=" " category="inline-code"></block> 명령에서는 여전히 ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지를 표시하고 MetroCluster 구성에서 ONTAP 중재자 서비스를 제거합니다.</block>
-  <block id="1aa145ddf3cafc3bf77b04a1c7069f71" category="list-text">_MetroCluster 설치 및 구성_ 에 설명된 대로 새 스위치를 구성하되 ""Brocade FC 스위치에서 조닝 구성" 절차를 건너뜁니다.</block>
   <block id="21b5cf2db61fccc0ace8b80bac8b35b7" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스에 대해 40GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="13cdbd43c145584bcad75658a29e498d" category="list-text">참고 3: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 하드웨어 시스템 설명서</block>
@@ -13387,4 +13385,36 @@
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
   <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
   <block id="1399637937931de009069d1a13a152fb" category="paragraph">* 참고 1: * 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
+  <block id="9ae99044ddcd14d01b26630cedd8846d" category="list-text">의 단계에 따라 새 스위치를 구성합니다 <block ref="435cf525be06a494222aa18eba4f6000" category="inline-link-macro-rx"></block>.</block>
+  <block id="02d80d458a48a16bd927a203d6bb2c73" category="list-text">조닝 구성을 확인합니다.</block>
+  <block id="62c870995fe52ce6aa5f9fc71ef4da98" category="paragraph"><block ref="ed3badb92af3298762df5a811de2da80" prefix="" category="inline-code"></block></block>
+  <block id="79787dbf023f957de1bd4970858b26be" category="summary">상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다.</block>
+  <block id="3a4aa5b142f66d14a43abf77cc49c599" category="doc">상태 모니터링을 위해 MetroCluster IP 스위치를 구성합니다</block>
+  <block id="877caefa8e802eac248e66b46636c94b" category="paragraph">MetroCluster IP 구성에서 IP 스위치의 상태를 모니터링하도록 SNMPv3을 구성할 수 있습니다.</block>
+  <block id="b3d73929ddf74bb4c7d3cac6eeda8684" category="section-title">1단계: MetroCluster IP 스위치에서 SNMPv3 사용자를 구성합니다</block>
+  <block id="038fbd2fc792b1165c5e88791a09113a" category="paragraph">다음 단계를 사용하여 MetroCluster IP 스위치에서 SNMPv3 사용자를 구성하십시오.</block>
+  <block id="f1407eaef69e4aa9948574be11c0a49b" category="admonition">명령에서 인증 및 개인 정보 보호 프로토콜을 모두 사용해야 합니다. 개인 정보 보호 없이 인증을 사용하는 것은 지원되지 않습니다.</block>
+  <block id="165237cf57452c2427f247f1c6589434" category="open-title">Broadcom IP 스위치용</block>
+  <block id="8d09188a2cfea4cc57e0f38750b68c97" category="list-text">'network-admin' 사용자 그룹이 존재하지 않는 경우 다음을 생성합니다.</block>
+  <block id="0f3a15963e4657a9c97ab6b3db322d27" category="paragraph"><block ref="173ceda524dbc87af297f813b0f50cd8" prefix="" category="inline-code"></block></block>
+  <block id="ec714ba3bea7bae033524709c8ddb144" category="list-text">'network-admin' 그룹이 생성되었는지 확인합니다.</block>
+  <block id="a24bdf92e7d1dc2d2e5714305a56e0eb" category="paragraph"><block ref="77aa57f376fe73c9581fb729ddeb38eb" prefix="" category="inline-code"></block></block>
+  <block id="6697365f2e46593a5513af21ee61a084" category="list-text">Broadcom IP 스위치에서 SNMPv3 사용자를 구성합니다.</block>
+  <block id="3289ce0836654122a2c0d3bfd4fab942" category="paragraph">다음 예와 같이 인증 및 개인 정보 암호 주위에 따옴표를 사용해야 합니다.</block>
+  <block id="9253168d7e5e9b3b8152a8ff1870743f" category="open-title">Cisco IP 스위치의 경우</block>
+  <block id="4a2ec710ab28d8f45e2fdabacdc2dfc6" category="list-text">다음 명령을 실행하여 Cisco IP 스위치에서 SNMPv3 사용자를 구성합니다.</block>
+  <block id="a8b5c32b456efe8e0fcb23cd218c6b6c" category="list-text">SNMPv3 사용자가 스위치에 구성되어 있는지 확인합니다.</block>
+  <block id="dcc1c100b3f25557081f2e0b39235331" category="paragraph"><block ref="b74f60eeed5179550ade1e96ba13e2f9" prefix="" category="inline-code"></block></block>
+  <block id="82551d68c685b978ef7462fc2759040f" category="paragraph">다음 출력 예는 해당 사용자를 보여줍니다<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> SNMPv3에 대해 구성됨:</block>
+  <block id="54095e9794a9fd93e475a7911543f88e" category="section-title">2단계: ONTAP에서 SNMPv3 사용자를 구성합니다</block>
+  <block id="584b7eab2aafafcbe01855419f896b21" category="paragraph">ONTAP에서 SNMPv3 사용자를 구성하려면 다음 단계를 따르십시오.</block>
+  <block id="1bff762b431027892d402682570d40ac" category="list-text">ONTAP에서 SNMPv3 사용자를 구성합니다.</block>
+  <block id="ddc11f6ac980cbb07f08bef9febcc0e7" category="paragraph"><block ref="d122104842549610cab7a5c1c6e791ab" prefix="" category="inline-code"></block></block>
+  <block id="c74135dc000c228de7018358eaf099e5" category="list-text">새 SNMPv3 사용자를 사용하여 스위치를 모니터링하도록 스위치 상태 모니터링을 구성합니다.</block>
+  <block id="19acda7cb8d15af8dcf62dcf74bcbe00" category="paragraph"><block ref="536a54b756351ba8978169ff37fc419d" prefix="" category="inline-code"></block></block>
+  <block id="102bc61adb74b49384536c35a485dea4" category="list-text">새로 생성된 SNMPv3 사용자와 함께 모니터링될 장치 일련 번호가 올바른지 확인합니다.</block>
+  <block id="189afc0f727c57bbef41f18728ebe44a" category="list-text">스위치 상태 모니터링 폴링 시간 기간을 표시합니다.</block>
+  <block id="4e8c2092c0a2bb40fde077763873c66c" category="paragraph"><block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix="" category="inline-code"></block></block>
+  <block id="b9035c5f27542cbf7fb14fced8e330ba" category="list-text">폴링 시간이 경과하면 다음 명령을 실행합니다.</block>
+  <block id="20c4c39b07a94d810605541c0137f531" category="paragraph"><block ref="9214d4fe696fff6386a131ecee126bc4" prefix="" category="inline-code"></block></block>
 </blocks>

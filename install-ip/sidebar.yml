@@ -71,6 +71,8 @@ entries:
         url: "/install-ip/task_switch_config_cisco_macsec.html"
     - title: NVIDIA IP 스위치를 구성합니다
       url: "/install-ip/task_switch_config_nvidia.html"
+    - title: 상태 모니터링을 위해 MetroCluster IP 스위치를 구성합니다
+      url: "/install-ip/task_config_switch_health.html"
 - title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
   entries:
   - title: 개요
