@@ -76,8 +76,6 @@ cluster_A::*> metrocluster check run
 -----------
 cluster_A::*> metrocluster check show
 
-Last Checked On: 4/7/2019 21:15:05
-
 Component           Result
 ------------------- ---------
 nodes               ok

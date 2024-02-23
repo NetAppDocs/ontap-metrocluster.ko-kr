@@ -2405,7 +2405,6 @@
   <block id="d2f829e728cf15e6e3b1c66326532c9f" category="list-text">새 컨트롤러 모듈에 대한 모든 IP 주소 및 기타 네트워크 매개 변수를 수집합니다.</block>
   <block id="b330eebf161ca27c703eccf6e8e36d29" category="summary">MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그룹으로 추가할 수 있습니다. 그러면 8노드 MetroCluster 구성이 생성됩니다.</block>
   <block id="44e7e75e628cd7549a2dac175d45b418" category="list-text">이전 노드와 새 노드에서 동일한 버전의 ONTAP를 실행해야 합니다.</block>
-  <block id="2ee2465217913ae7b455ab4ef5e995e6" category="list-text">새 노드에는 루트 애그리게이트 및 스페어 디스크를 위한 충분한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 있어야 합니다.</block>
   <block id="1ba701b5ad5528986d9e0eb838638aae" category="section-title">이 절차의 이름 지정 예</block>
   <block id="a9b1d4be69539e9b95a2c6672035550c" category="paragraph">이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다.</block>
   <block id="360264088f5b0d4a8993fa7a8e15856d" category="cell">DR 그룹</block>
@@ -9847,7 +9846,6 @@
   <block id="f7957f4fad1ef92794a3f4763851bc70" category="paragraph">a 또는 b</block>
   <block id="5482b27fb601c9d5069a7533e0dd1b02" category="summary">Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 스위치 설정을 제공하는 스위치 구성 파일을 설치할 수 있습니다.</block>
   <block id="c2a1b1aaf420fd5fc4e694faa94de89f" category="doc">Brocade FC 스위치 RCF 파일 설치</block>
-  <block id="40a501dacb79ddf4f770555994a4dbe9" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 Brocade FC 스위치에서 반복해야 합니다.</block>
   <block id="2d6424f21b7898ba895ef0e70f5c13c8" category="list-text">다운로드 및 구성 프로세스를 시작합니다.</block>
   <block id="3ef73a7a519c5b4a03c363a138b097eb" category="paragraph">'configDownload'</block>
   <block id="d304e0e1a0c74d4f29c7bf97c9e6c845" category="paragraph">다음 예에 표시된 것처럼 프롬프트에 응답합니다.</block>
@@ -13296,7 +13294,6 @@
   <block id="44f3e9b14f204b411afdea78f7b0391c" category="doc">MetroCluster 릴리즈 노트</block>
   <block id="af8a69aa12393a4d9b6992e884f1c919" category="sidebar">MetroCluster 문서</block>
   <block id="b8b5370c063dd2b4ce4021558a49ac07" category="paragraph">ONTAP 9.8 이하를 실행하는 MetroCluster 구성의 경우, 업그레이드를 전환하기 위해 수행되는 일부 절차에서는 임시 8노드 구성을 만들기 위해 구성에 두 번째 4노드 DR 그룹을 추가해야 합니다.  ONTAP 9.9.1부터 영구 8노드 MetroCluster 구성이 지원됩니다.</block>
-  <block id="ff66d22d6ddbc0a6a59188599728f8d1" category="paragraph">ONTAP 9.13.1부터 8노드 MetroCluster 구성을 임시로 확장하여 컨트롤러 및 스토리지를 업데이트할 수 있습니다. 을 참조하십시오 <block ref="6e6fb56321b906b7bb3a671d5fc5dfc7" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="0abe9117fda19697d2dbf1bd1d754e02" category="list-text">이 절차는 4노드 DR 그룹 하나를 기존 MetroCluster IP 구성에 추가하는 데 필요한 단계를 설명합니다. 8노드 구성을 업데이트하는 경우 각 DR 그룹에 대해 전체 절차를 반복하면서 한 번에 하나씩 추가해야 합니다.</block>
   <block id="84d04e0c7f711ba6800f8d3bd5bc0847" category="inline-xref">ONTAP 9.4 이상을 실행하는 MetroCluster 구성에서 Cisco 9132T 포트 사용</block>
   <block id="ccdfc130a534c248f558d6495323cb02" category="admonition">Cisco 9132T의 경우 를 참조하십시오 <block ref="3db7a367aafc64164b814f36e8341eaa" category="inline-xref-macro-rx"></block>.</block>
@@ -13417,4 +13414,15 @@
   <block id="4e8c2092c0a2bb40fde077763873c66c" category="paragraph"><block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix="" category="inline-code"></block></block>
   <block id="b9035c5f27542cbf7fb14fced8e330ba" category="list-text">폴링 시간이 경과하면 다음 명령을 실행합니다.</block>
   <block id="20c4c39b07a94d810605541c0137f531" category="paragraph"><block ref="9214d4fe696fff6386a131ecee126bc4" prefix="" category="inline-code"></block></block>
+  <block id="0ca1a0fce29aa8b27d10b5cf276a5a5c" category="list-text">xWDM 구성을 사용하는 경우 ISL에 대한 추가 설정이 필요할 수 있습니다. 자세한 내용은 xWDM 공급업체 설명서를 참조하십시오.</block>
+  <block id="e389e5759cd93883cfbee1a000ab0c47" category="list-text">MetroCluster 패브릭 구성의 각 Brocade FC 스위치에서 이러한 단계를 반복해야 합니다.</block>
+  <block id="9dc72cfc812a43dbca6ba4e6357b2b04" category="paragraph">ONTAP 9.13.1부터 8노드 MetroCluster 구성을 임시로 확장하여 컨트롤러 및 스토리지를 업데이트할 수 있습니다. 을 참조하십시오 <block ref="df5e6373f54c9330727709bb1055a079" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="e6f19b92e0e69fc5d74e94088b442a26" category="inline-link-macro">4노드 또는 8노드 MetroCluster IP 구성 업데이트</block>
+  <block id="ae236ebe2cd05ce4da7fe73d504f4946" category="list-text">있는 경우 <block ref="54f4a86aff0fc5aba4d6e37b225734c0" category="inline-link-macro-rx"></block>새로운 노드에는 루트 애그리게이트 및 예비 디스크를 위한 적절한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 필요합니다.</block>
+  <block id="30db39dffca5d3a3ab759b48303153b1" category="list-text">제거할 DR 그룹에 로드 공유 미러 볼륨이 포함되어 있으면 이동할 수 없습니다.  다른 DR 그룹에 모든 로드 공유 미러 볼륨을 다시 생성한 다음 제거할 DR 그룹에서 로드 공유 미러 볼륨을 삭제합니다.</block>
+  <block id="0108924065f583138162139c8d2325c4" category="list-text">Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2의 순서로 한 번에 하나의 스위치에서 단계를 수행합니다.</block>
+  <block id="4c73c980356e24dbc4b9bfa823ff3540" category="inline-link-macro">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="5ea045545da6545f166122f615c720c2" category="list-text"><block ref="5ea045545da6545f166122f615c720c2" category="inline-link-macro-rx"></block></block>
+  <block id="9d2a9152feb1a65b3472b15d2e557bca" category="inline-link-macro">NVIDIA IP RCF 파일 다운로드 및 설치</block>
+  <block id="3ebe02a815587b2ddedbada8c501d0ef" category="list-text"><block ref="3ebe02a815587b2ddedbada8c501d0ef" category="inline-link-macro-rx"></block></block>
 </blocks>

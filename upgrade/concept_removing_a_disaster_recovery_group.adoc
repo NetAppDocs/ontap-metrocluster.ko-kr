@@ -31,15 +31,19 @@ image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
 
 == 각 클러스터에서 DR 그룹 노드 제거
 
+.시작하기 전에
 * 두 클러스터 모두에서 이 단계를 수행해야 합니다.
 * MetroCluster remove-dr-group 명령은 ONTAP 9.8 이상에서만 지원됩니다.
+
+
+.단계
+. 아직 DR 그룹이 없으면 제거할 준비를 합니다.
 +
-.. 아직 DR 그룹이 없으면 제거할 준비를 합니다.
-+
-... 모든 데이터 볼륨을 다른 DR 그룹으로 이동합니다.
-... 에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"] 절차를 참조하십시오.
-... 제거할 DR 그룹에 있을 수 있는 모든 MDV_AUD 메타데이터 볼륨을 삭제합니다.
-... 다음 예에 표시된 대로 제거할 DR 그룹의 모든 데이터 애그리게이트를 삭제합니다.
+.. 모든 데이터 볼륨을 다른 DR 그룹으로 이동합니다.
+.. 제거할 DR 그룹에 로드 공유 미러 볼륨이 포함되어 있으면 이동할 수 없습니다.  다른 DR 그룹에 모든 로드 공유 미러 볼륨을 다시 생성한 다음 제거할 DR 그룹에서 로드 공유 미러 볼륨을 삭제합니다.
+.. 에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"] 절차를 참조하십시오.
+.. 제거할 DR 그룹에 있을 수 있는 모든 MDV_AUD 메타데이터 볼륨을 삭제합니다.
+.. 다음 예에 표시된 대로 제거할 DR 그룹의 모든 데이터 애그리게이트를 삭제합니다.
 +
 [listing]
 ----
@@ -52,15 +56,15 @@ ClusterB::> aggr delete -aggregate aggregate_name
 
 NOTE: 루트 애그리게이트는 삭제되지 않습니다.
 
-... 데이터 LIF를 오프라인 상태로 이동합니다.
+.. 데이터 LIF를 오프라인 상태로 이동합니다.
 `network interface modify -vserver _svm-name_ -lif _data-lif_ -status-admin down`
-... 모든 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. ''network interface show-home-node_old_node_'
+.. 모든 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. ''network interface show-home-node_old_node_'
 +
 `network interface modify -vserver _svm-name_ -lif _data-lif_ -home-node _new_node_ -home-port _port-id_`
 
-... 데이터 LIF를 다시 온라인 상태로 전환합니다.
+.. 데이터 LIF를 다시 온라인 상태로 전환합니다.
 `network interface modify -vserver _svm-name_ -lif _data-lif_ -status-admin up`
-... 클러스터 관리 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다.
+.. 클러스터 관리 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다.
 +
 네트워크 인터페이스 show-role cluster-mgmt
 
@@ -70,7 +74,7 @@ NOTE: 루트 애그리게이트는 삭제되지 않습니다.
 +
 노드 관리 및 클러스터 간 LIF는 마이그레이션되지 않습니다.
 
-... 필요한 경우 epsilon을 다른 DR 그룹의 노드로 전송합니다.
+.. 필요한 경우 epsilon을 다른 DR 그룹의 노드로 전송합니다.
 +
 [listing]
 ----
@@ -88,13 +92,13 @@ ClusterB::*> set admin
 ----
 
 
-.. DR 그룹을 식별하고 제거합니다.
+. DR 그룹을 식별하고 제거합니다.
 +
-... 제거할 올바른 DR 그룹을 식별합니다.
+.. 제거할 올바른 DR 그룹을 식별합니다.
 +
 'MetroCluster node show'
 
-... DR 그룹 노드를 제거합니다. + 'MetroCluster remove-dr-group-dr-group-id 1'
+.. DR 그룹 노드를 제거합니다. + 'MetroCluster remove-dr-group-dr-group-id 1'
 +
 다음 예에서는 cluster_A에서 DR 그룹 구성을 제거하는 방법을 보여 줍니다
 
@@ -134,51 +138,49 @@ cluster_A::*>
 ----
 
 
-.. 파트너 클러스터에서 이전 단계를 반복합니다.
-.. MetroCluster IP 구성에 있는 경우 이전 DR 그룹의 노드에서 MetroCluster 연결을 제거합니다.
+. 파트너 클러스터에서 이전 단계를 반복합니다.
+. MetroCluster IP 구성에 있는 경우 이전 DR 그룹의 노드에서 MetroCluster 연결을 제거합니다.
 +
 이러한 명령은 두 클러스터 모두에서 실행할 수 있으며 두 클러스터를 포괄하는 전체 DR 그룹에 적용할 수 있습니다.
 
 +
-... 다음 연결부를 분리하십시오.
+.. 다음 연결부를 분리하십시오.
 +
 'MetroCluster configuration-settings connection disconnect_dr-group-id_
 
-... 이전 DR 그룹의 노드에서 MetroCluster 인터페이스를 삭제합니다.
+.. 이전 DR 그룹의 노드에서 MetroCluster 인터페이스를 삭제합니다.
 +
 'MetroCluster configuration-settings interface delete
 
-... 이전 DR 그룹의 구성을 삭제합니다. + 'MetroCluster configuration-settings dr-group delete
+.. 이전 DR 그룹의 구성을 삭제합니다. + 'MetroCluster configuration-settings dr-group delete
 
 
-.. 이전 DR 그룹의 노드 연결을 해제합니다.
+. 이전 DR 그룹의 노드 연결을 해제합니다.
 +
 각 클러스터에서 이 단계를 수행해야 합니다.
 
 +
-... 고급 권한 수준 설정:
+.. 고급 권한 수준 설정:
 +
 세트 프리빌리지 고급
 
-... 스토리지 페일오버 해제:
+.. 스토리지 페일오버 해제:
 +
 'storage failover modify -node_node -name _ -enable false'
 
-... 노드: + 'cluster unjoin-node_node-name_'의 연결을 해제합니다
+.. 노드: + 'cluster unjoin-node_node-name_'의 연결을 해제합니다
 +
 이전 DR 그룹의 다른 로컬 노드에 대해 이 단계를 반복합니다.
 
-... admin 권한 수준 설정: +'Set-Privilege admin'
+.. admin 권한 수준 설정: +'Set-Privilege admin'
 
 
-.. 새 DR 그룹에서 클러스터 HA를 다시 설정합니다.
+. 새 DR 그룹에서 클러스터 HA를 다시 설정합니다.
 +
 군산하수정-구성 진실
 
 +
 각 클러스터에서 이 단계를 수행해야 합니다.
 
-.. 이전 컨트롤러 모듈 및 스토리지 쉘프를 중지하고 전원을 끄고 분리합니다.
-
-
+. 이전 컨트롤러 모듈 및 스토리지 쉘프를 중지하고 전원을 끄고 분리합니다.
 

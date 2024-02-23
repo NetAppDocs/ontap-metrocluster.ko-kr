@@ -37,7 +37,6 @@ check the status of the running metrocluster check operation, use the command,
 [listing]
 ----
 cluster_A::> metrocluster check show
-Last Checked On: 9/13/2018 20:41:37
 
 Component           Result
 ------------------- ---------
@@ -47,7 +46,8 @@ config-replication  ok
 aggregates          ok
 clusters            ok
 connections         ok
-6 entries were displayed.
+volumes             ok
+7 entries were displayed.
 ----
 . 가장 최근의 'MetroCluster check run' 명령어를 통해 보다 상세한 결과를 출력한다.
 +
