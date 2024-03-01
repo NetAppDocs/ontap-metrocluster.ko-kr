@@ -66,10 +66,10 @@ entries:
     url: "/maintain/task_upgrade_rcf_files_on_cisco_ip_switches_with_cleanupfiles.html"
   - title: Cisco IP 스위치의 이름을 바꿉니다
     url: "/maintain/task_rename_a_cisco_ip_switch.html"
+  - title: Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다
+    url: "/maintain/task_add_remove_or_change_isl_ports_nondisruptively.html"
 - title: 상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다
   url: "/maintain/task_modify_switch_or_bridge_ip_address_for_health_monitoring.html"
-- title: Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다
-  url: "/maintain/task_add_remove_or_change_isl_ports_nondisruptively.html"
 - title: MetroCluster IP 구성에서 스토리지를 식별하는 방법
   url: "/maintain/concept_identifying_storage_in_a_mcc_ip_configuration.html"
 - title: 공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에 쉘프를 추가합니다

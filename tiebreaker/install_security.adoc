@@ -25,7 +25,7 @@ MetroCluster Tiebreaker 1.5 이상을 실행하는 구성의 경우 호스트 OS
 
 * "루트" 사용자의 액세스를 제한합니다.
 +
-** Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다. link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings["sudo 액세스 관리"^]
+** Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다.
 ** Tiebreaker 소프트웨어 관리를 위해 루트 액세스로 승격할 수 없는 사용자를 사용할 수 있습니다.
 ** 설치하는 동안 "mctbgrp"라는 그룹을 만들어야 합니다. 설치 중에 생성한 호스트 루트 사용자와 사용자는 둘 다 구성원이어야 합니다. 이 그룹의 구성원만 Tiebreaker 소프트웨어를 완전히 관리할 수 있습니다.
 +
@@ -45,27 +45,8 @@ NOTE: 이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 
 
 
 .관련 정보
-* 사용자 및 계정 관리
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_getting-started-with-managing-user-accounts_configuring-basic-system-settings["사용자 계정 관리 시작"^]
-
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/introduction-to-managing-user-and-group-accounts_configuring-basic-system-settings["사용자 및 그룹 계정 관리 소개"^]
-
-* 웹 콘솔 또는 CLI를 사용하여 사용자 및 그룹 관리
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-user-accounts-in-the-web-console-new_configuring-basic-system-settings["웹 콘솔에서 사용자 계정 관리"^]
-
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-users-from-the-command-line_configuring-basic-system-settings["명령줄에서 사용자 관리"^]
-
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/editing-user-groups-using-the-command-line_configuring-basic-system-settings["명령줄을 사용하여 사용자 그룹 편집"^]
-
-* 루트 암호 관리
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/changing-and-resetting-the-root-password-from-the-command-line_configuring-basic-system-settings["루트 암호를 관리하고 재설정합니다"^]
-
+* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/["Red Hat Enterprise Linux 8 제품 설명서"^]
+* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/["Red Hat Enterprise Linux 9 제품 설명서"^]
 
 
 
@@ -88,9 +69,6 @@ link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/ht
 
 NOTE: 호스트를 원격으로 관리하려면 직렬 콘솔 액세스(지원되는 경우) 또는 하나 이상의 프로토콜을 활성화해야 합니다. 모든 프로토콜을 비활성화하면 관리를 위해 호스트에 대한 물리적 액세스가 필요합니다.
 
-+
-link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-system-services-with-systemctl_configuring-basic-system-settings["systemctl을 사용하여 시스템 서비스를 관리하는 방법에 대해 알아봅니다"^]
-
 
 
 * FIPS를 사용하여 호스트를 보호합니다
@@ -100,9 +78,6 @@ link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/ht
 
 NOTE: OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 확인합니다. 수동으로 변경할 필요가 없습니다.
 
-+
-자세한 내용은 을 참조하십시오 link:https://access.redhat.com/documentation/ru-ru/openjdk/8/html/configuring_openjdk_8_on_rhel_with_fips/openjdk-default-fips-configuration["OpenJDK 8의 기본 FIPS 구성"^]
-
 ** 호스트를 보호하는 경우 사용자 개입 없이 호스트를 부팅할 수 있는지 확인해야 합니다. 사용자 개입이 필요한 경우 호스트가 예기치 않게 재부팅될 경우 Tiebreaker 기능을 사용하지 못할 수 있습니다. 이 경우 Tiebreaker 기능은 수동 개입 후 그리고 호스트가 완전히 부팅된 후에만 사용할 수 있습니다.
 
 
@@ -110,11 +85,16 @@ NOTE: OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 �
 * 자주 업그레이드하십시오. Tiebreaker는 적극적으로 개발되었으며 보안 픽스 및 키 길이 또는 암호 그룹 같은 기본 설정의 변경 사항을 통합하기 위해 자주 업데이트해야 합니다.
 * 새로운 릴리스의 발표 내용을 받아보려면 HashiCorp 공지 메일링 목록을 구독하고 새로운 릴리스의 최신 업데이트에 대한 자세한 내용은 Tiebreaker changelog를 방문하십시오.
 * 올바른 파일 권한을 사용하십시오. Tiebreaker 소프트웨어, 특히 중요한 정보가 포함된 소프트웨어를 시작하기 전에 항상 파일에 적절한 권한이 적용되었는지 확인하십시오.
-* 다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다. link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/index["보안 강화에 대해 자세히 알아보십시오"^]
+* 다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다.
 +
-** Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다. link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/index["네트워크 보안에 대해 자세히 알아보십시오"^]
+** Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다.
 
 
+
+
+.관련 정보
+* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/["Red Hat Enterprise Linux 8 제품 설명서"^]
+* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/["Red Hat Enterprise Linux 9 제품 설명서"^]
 
 
 

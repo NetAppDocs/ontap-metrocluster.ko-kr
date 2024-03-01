@@ -2349,20 +2349,14 @@
   <block id="bcf9f8bb6be3a3d38d87e026dd4cfe95" category="image-alt">MCC DR 그룹 A</block>
   <block id="cb0344550b820e06b780b2e5d8b7b8ed" category="list-text">MetroCluster 유형에 대해 4노드 확장 절차의 모든 단계를 수행합니다.</block>
   <block id="aad7003b864f3b9dee5c96516c4fa6ef" category="inline-link-macro">4노드 MetroCluster FC 구성을 8노드 구성으로 확장</block>
-  <block id="4a730b17dd16562ae49f3cc3608e3ed8" category="paragraph"><block ref="4a730b17dd16562ae49f3cc3608e3ed8" category="inline-link-macro-rx"></block></block>
   <block id="37c43c60431d0988dbc66af885d529aa" category="paragraph">확장 절차가 완료되면 다음 그림과 같이 구성이 나타납니다.</block>
   <block id="82100af698d65aee7d8eee88a9f650ea" category="image-alt">MCC DR 그룹 b</block>
   <block id="8bcdf2e6243e634b6f778a006ca38abf" category="list-text">CRS 체적을 이동합니다.</block>
   <block id="863335fd52f3c5bd2f7a9a78319bbe9c" category="inline-link">Aggregate 생성 및 볼륨을 새 노드로 이동</block>
-  <block id="3e8fdd40da1578fb2a4b45209a4f63c5" category="list-text">의 모든 단계를 수행합니다<block ref="fe6e57ca921017b547e49e0f385e2ca7" category="inline-link-rx"></block>.</block>
   <block id="79e90867e68054d16a6abbb1208fa244" category="admonition">Aggregate를 생성할 때나 생성한 후에 미러링할 수도 있습니다.</block>
   <block id="e55ece1b480141d2d3d80097aa8809ec" category="inline-link">SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동</block>
-  <block id="eb4fe35d43a34806194cdb242255ddd6" category="list-text">의 모든 단계를 수행합니다<block ref="beb9d1851c303d50e94e9eb5964e9a88" category="inline-link-rx"></block>.</block>
-  <block id="77ea2d02d900614e0cd0117f920d3510" category="inline-link">원래 노드에서 SAN LIF를 삭제합니다</block>
-  <block id="d40cb1d255ffbf920b82077655761954" category="list-text">의 모든 단계를 수행합니다<block ref="de6e057f7eef868ca5fb52c843a52d68" category="inline-link-rx"></block>.</block>
   <block id="ce5bbb10a781d48b96bba3c0fb1b8281" category="list-text">이전 DR 그룹을 제거하는 절차의 단계를 따릅니다.</block>
   <block id="54c28d1cf3d720cc9297f6c3da2658be" category="inline-link-macro">재해 복구 그룹 제거</block>
-  <block id="e5ebde3067c5558de277c40cd868d611" category="paragraph"><block ref="e5ebde3067c5558de277c40cd868d611" category="inline-link-macro-rx"></block></block>
   <block id="f8d577c9976367a6e41d78a00f8aacaf" category="paragraph">이전 DR 그룹(DR 그룹 1)을 제거한 후 다음 이미지와 같이 구성이 나타납니다.</block>
   <block id="b40a53693e112d3e63df2022f1ea538b" category="image-alt">MCC DR 그룹 d</block>
   <block id="2629484c812e864cba4938a84b1d7271" category="summary">섀시에 새 컨트롤러 모듈을 물리적으로 설치한 다음 케이블을 연결해야 합니다.</block>
@@ -3423,7 +3417,6 @@
   <block id="bc7aab32c224c2ee49642086c4c9aa59" category="list-text">이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="3e47f65a0c143cd4a51a7540fd2001fa" category="list-text">다음 명령을 실행합니다. +'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"</block>
   <block id="6837dd1f788164eabd6d97dbcbe7e4c9" category="paragraph">다음 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.</block>
-  <block id="be357376ba81fe8d3fa32b0e145fc73b" category="paragraph">의 단계를 수행합니다 <block ref="bf3d05f18b73f1c62d283d02a0c83e7a" category="inline-link-macro-rx"></block>.</block>
   <block id="79de9fa3497efd5f7c2e2f6a6682e5cd" category="summary">AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다.</block>
   <block id="195ffc9776ee62387ded9a109c150447" category="doc">MetroCluster 구성에 노드를 추가한 후에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="049ca5eec54de1a662d5929abfae80b1" category="list-text">유지 관리의 종료를 나타내는 AutoSupport 메시지를 호출합니다.</block>
@@ -6416,8 +6409,6 @@
   <block id="50a377c0c8eec8c1beda3650370c0363" category="list-text">다음 명령으로 시작되는 Fabric의 두 스위치 모두에서 모든 ISL 포트(활성화되지 않은 경우)를 설정합니다.</block>
   <block id="a69701b697bf3e6c2f1e120893cd8d5e" category="paragraph">'스위치_A_1#설정 t'</block>
   <block id="2d93cc223819a02757a7e9885b50c780" category="paragraph">모든 명령을 입력한 후 줄당 하나의 구성 명령만 입력하고 Ctrl-Z를 눌러야 합니다.</block>
-  <block id="7bf2b8aa2965c469cbed666283cc688a" category="list-text">두 스위치 간에 ISL이 설정되었는지 확인합니다.</block>
-  <block id="a435a250565ee3763e97ae4f9479fc93" category="paragraph">'Switch_a_1#show int eth1/17, eth1/18 brief</block>
   <block id="cf7aba35b26c53d9d39f432d24bb6b7f" category="paragraph">다음 예와 같이 명령 출력에 ISL 인터페이스가 표시되어야 합니다.</block>
   <block id="502351f7672bedb2e8f4f7aedd01b7bd" category="list-text">패브릭 2에 대해 이 절차를 반복합니다.</block>
   <block id="d30f280fa32f9327e8485ff0aa1b5b70" category="summary">기존 FC 스위치 레이아웃이 ONTAP 9.1 이전에 구성된 경우 포트 레이아웃을 재구성하고 최신 RCF(Reference Configuration Files)를 적용해야 합니다. 이 절차는 MetroCluster FC 구성에만 적용됩니다.</block>
@@ -11524,8 +11515,6 @@
   <block id="7abce9dabe03b4e216be9445267a37a1" category="paragraph"><block ref="7abce9dabe03b4e216be9445267a37a1" category="inline-link-rx"></block></block>
   <block id="61eb859904ba2d6f08ea80ad772e9aba" category="paragraph">FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.</block>
   <block id="408d7b2d5acc0ee56e5deef74d263b2e" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 이전에 생성한 케이블 연결 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.</block>
-  <block id="0bae9da7e045b91539ca2636147550a9" category="inline-link">기타 플랫폼 절차: 컨트롤러 하드웨어 업그레이드 익스프레스</block>
-  <block id="074e456fb5fc2d75c702ca853d7ff4a7" category="list-text">의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다<block ref="c8d46be4ca27ce42222e434f46ed9bd4" category="inline-link-rx"></block>.</block>
   <block id="6abf8fcf1209a0e61a34ee20748a726e" category="paragraph">Substep b에 나와 있는 클러스터 네트워크 스위치의 포트에 각 컨트롤러의 클러스터 포트를 연결합니다</block>
   <block id="a8307b4c5fa271005a1338d5b405ca1f" category="paragraph">ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그룹으로 추가할 수 있습니다. 그러면 8노드 MetroCluster 구성이 생성됩니다.</block>
   <block id="a4aa69385ab0a1b92a7a5635cdb2f2b2" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block>.</block>
@@ -11557,7 +11546,6 @@
   <block id="56bf84e32d22ab8fb694fbc5332432dc" category="paragraph">FC 스위치를 수동으로 구성한 경우 새 컨트롤러 모듈의 이니시에이터 연결에 대해 조닝이 올바른지 확인해야 합니다. 의 조닝 관련 섹션을 참조하십시오 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block>.</block>
   <block id="dedcc0638aa1bf3276ae388ea4613c81" category="summary">ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="75aa8d2f84e0be26d2847e91f37f74e2" category="list-text">자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.</block>
-  <block id="f6352e453f366612cb28420644953c44" category="list-text">의 모든 단계를 수행합니다<block ref="bbef996a3720f9825acbe3a7239b4c3c" category="inline-link-rx"></block>.</block>
   <block id="f0c5b568bbaab2490082e4d2aaf08123" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 _.</block>
   <block id="7965e118387157e57593becb6ae60117" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 새로운 스토리지 시스템, 디스크 쉘프 및 FC-to-SAS 브릿지를 랙에 장착</block>
   <block id="bd583895c72d99233af8746d9463ab07" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형에 대한 케이블 연결 레이아웃을 생성합니다.</block>
@@ -12549,20 +12537,6 @@
   <block id="98789e20ad857b904690ce90333052d6" category="list-text">자주 업그레이드하십시오. Tiebreaker는 적극적으로 개발되었으며 보안 픽스 및 키 길이 또는 암호 그룹 같은 기본 설정의 변경 사항을 통합하기 위해 자주 업데이트해야 합니다.</block>
   <block id="59c35ef819d1dde06d960624fd6fafd1" category="list-text">새로운 릴리스의 발표 내용을 받아보려면 HashiCorp 공지 메일링 목록을 구독하고 새로운 릴리스의 최신 업데이트에 대한 자세한 내용은 Tiebreaker changelog를 방문하십시오.</block>
   <block id="43a32642c83792b717745d6ba0b8ce88" category="list-text">올바른 파일 권한을 사용하십시오. Tiebreaker 소프트웨어, 특히 중요한 정보가 포함된 소프트웨어를 시작하기 전에 항상 파일에 적절한 권한이 적용되었는지 확인하십시오.</block>
-  <block id="29e7446bddd5d43e5b134b0195974dc4" category="inline-link-macro">사용자 계정 관리 시작</block>
-  <block id="e7093675e4f7ff464368a2c6885c0eff" category="paragraph"><block ref="e7093675e4f7ff464368a2c6885c0eff" category="inline-link-macro-rx"></block></block>
-  <block id="65c86c5fc3a334e5116b9bb178b8f05f" category="inline-link-macro">사용자 및 그룹 계정 관리 소개</block>
-  <block id="8429a553dc9f96d80d372de5c7bc1dd0" category="paragraph"><block ref="8429a553dc9f96d80d372de5c7bc1dd0" category="inline-link-macro-rx"></block></block>
-  <block id="891179c93bd7a1d83445158a2a3bcf35" category="inline-link-macro">웹 콘솔에서 사용자 계정 관리</block>
-  <block id="dcc8b60eb907ead6a2476a179c643719" category="paragraph"><block ref="dcc8b60eb907ead6a2476a179c643719" category="inline-link-macro-rx"></block></block>
-  <block id="7c557f5d7b160269fadf1af0918c0ff8" category="inline-link-macro">명령줄에서 사용자 관리</block>
-  <block id="8c153ad2f489ca7a136092d429df3c46" category="paragraph"><block ref="8c153ad2f489ca7a136092d429df3c46" category="inline-link-macro-rx"></block></block>
-  <block id="11e979f92d60857c96e7cef79b2098cd" category="inline-link-macro">명령줄을 사용하여 사용자 그룹 편집</block>
-  <block id="5182eba1834da91a1e9b917f0ba52913" category="paragraph"><block ref="5182eba1834da91a1e9b917f0ba52913" category="inline-link-macro-rx"></block></block>
-  <block id="b063c000eb4fba48d6e75b79adf42a9d" category="inline-link-macro">sudo 액세스 관리</block>
-  <block id="c5d7be9e703097d4676ec00c2b6b552e" category="inline-link-macro">루트 암호를 관리하고 재설정합니다</block>
-  <block id="6bff5b8adae91af0fd158a7e1d80c4fd" category="paragraph"><block ref="6bff5b8adae91af0fd158a7e1d80c4fd" category="inline-link-macro-rx"></block></block>
-  <block id="a0b41d356b93c9dfaa68be7187603656" category="inline-link-macro">OpenJDK 8의 기본 FIPS 구성</block>
   <block id="c22cb96c998e3ef3a46e95e20b46cc25" category="section-title">데이터베이스 설치를 보호합니다</block>
   <block id="dde18c163a52fbc5fd51944f7a5cc78a" category="paragraph">다음 지침은 MariaDB 10.x 데이터베이스 설치를 보호하고 강화하는 방법을 보여줍니다.</block>
   <block id="72cc9b23ef9181d84a5d1574a7d6b0fa" category="list-text">"루트" 사용자의 액세스를 제한합니다.</block>
@@ -12762,7 +12736,6 @@
   <block id="40be6b525ed2183840f20fb9c29f8703" category="list-text">소스 플랫폼보다 낮은 한계로 플랫폼에 대한 기술 업데이트를 수행할 경우 이 절차를 수행하기 전에 한계를 조정하고 대상 플랫폼 제한값 이하로 줄여야 합니다.</block>
   <block id="b31a2061aa6b904219eba112464c7357" category="paragraph">8노드 구성은 다음 이미지와 같이 나타납니다.</block>
   <block id="448f39697cef4353cf70c2df80e1d4c9" category="list-text">Tiebreaker CLI를 사용하여 MetroCluster 구성이 올바르게 제거되었는지 확인합니다<block ref="7f09554f3b428339c3f534ff2c033739" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="2d9320a95baef24be0ce2f2d4bc608a6" category="list-text">의 모든 단계를 수행합니다 <block ref="26ae71b3302b7c9dcac8b221e98acc6f" category="inline-link-macro-rx"></block> 를 클릭하여 구성에 새 노드 및 스토리지를 추가합니다.</block>
   <block id="8785d96b922a1a66136207792a0400c5" category="paragraph">확장 절차가 완료되면 다음 이미지와 같이 임시 구성이 나타납니다.</block>
   <block id="7d7fd277012689535b693bcae0693459" category="image-title">일시적인 8노드 구성</block>
   <block id="cb3b06d4f89d32589bbce6abb75941fc" category="image-title">임시 12노드 구성</block>
@@ -12880,7 +12853,6 @@
   <block id="8c2906d7fe83e39ba6743c6a9583efe2" category="list-text">FAS9000에서 FAS9500으로 업그레이드할 경우 FAS9000 NVS 모듈의 Flash Cache 모듈만 FAS9500 NVS 모듈로 전송해야 합니다. FAS9000 컨트롤러 및 NVS 모듈의 다른 부품은 FAS9500 컨트롤러 모듈로 전송하지 마십시오.</block>
   <block id="3eab0c13bca99d4dd3b66f80ccacdb36" category="paragraph">를 실행한 후<block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block> 및<block ref="da68e7539bf844a8366ded5d17b246d7" prefix=" " category="inline-code"></block> 명령을 실행하면 다음 예제와 유사한 오류가 표시될 수 있습니다.</block>
   <block id="4b6b157113ce170877f5d11a96afff8a" category="paragraph">이 오류는 업그레이드 프로세스 중 컨트롤러 불일치로 인해 발생합니다. 오류를 무시하고 site_A의 노드를 업그레이드할 수 있습니다</block>
-  <block id="1acf191212a145fa4d362e381005b820" category="paragraph">의 단계를 수행합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block>.</block>
   <block id="f624129c4d6772a2f62200de12382ad0" category="list-text">에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 <block ref="9273ba8e8bd1c5c1cc0cd85662f27754" category="inline-link-macro-rx"></block> 절차를 참조하십시오.</block>
   <block id="112564590ec1ae4e651904cd571ed9d4" category="paragraph">ONTAP의 포트, LIF 및 네트워크 구성에 대한 자세한 내용은 를 참조하십시오 <block ref="378e9004462b7ecfad8256f25b57fbf6" category="inline-link-macro-rx"></block>.</block>
   <block id="347bde5f3be96b6c3eab8b4a360b9028" category="list-text">30분 정도 기다린 다음 모든 스토리지 쉘프, MetroCluster IP 스위치 및 스토리지 컨트롤러의 전원을 켭니다.</block>
@@ -13014,21 +12986,10 @@
   <block id="b0d6d2175ecec830760ddc378a14c197" category="paragraph">MariaDB 서버에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. 자동 시작 기능을 활성화하지 않고 MetroCluster Tiebreaker 소프트웨어가 있는 시스템을 재부팅해야 하는 경우 Tiebreaker 소프트웨어는 계속 실행되지만 MariaDB 서비스를 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
   <block id="457e8f6231f529b8a11028ebae92d27b" category="doc">Tiebreaker 호스트 및 데이터베이스 설치를 보호합니다</block>
   <block id="e97506311a4625245b4c7a4b57176ce3" category="section-title">사용자 관리 권장 사항</block>
-  <block id="3232523ff4a40d267f68a13bbb03df0c" category="list-text">Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다. <block ref="9d11eb8265b20d1b5cc3258afeee0197" category="inline-link-macro-rx"></block></block>
   <block id="5e5b4bcd476f7fe9e363a188ab99443b" category="list-text">설치하는 동안 "mctbgrp"라는 그룹을 만들어야 합니다. 설치 중에 생성한 호스트 루트 사용자와 사용자는 둘 다 구성원이어야 합니다. 이 그룹의 구성원만 Tiebreaker 소프트웨어를 완전히 관리할 수 있습니다.</block>
   <block id="0dcb0b0233e3f2356aaca0e848f12cc4" category="admonition">이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 또는 CLI에 액세스할 수 없습니다. 호스트에서 추가 사용자를 생성하고 해당 사용자를 그룹의 구성원으로 만들 수 있습니다. 이러한 추가 구성원은 타이브레이커 소프트웨어를 완전히 관리할 수 없습니다. 읽기 전용 액세스 권한이 있으며 모니터를 추가, 변경 또는 삭제할 수 없습니다.</block>
-  <block id="fe59497b414fc467e4ab9b4b2fd0be66" category="list-text">사용자 및 계정 관리</block>
-  <block id="7f727428c803270e583eaddeb013aca4" category="list-text">웹 콘솔 또는 CLI를 사용하여 사용자 및 그룹 관리</block>
-  <block id="e61515ae08809701bf1ead416820c29d" category="list-text">루트 암호 관리</block>
   <block id="88ab4db9318fd99a5973f7836c0a8ee2" category="section-title">기본 호스트 보안 권장 사항</block>
-  <block id="061515bf7de72fb94353317af70f32a5" category="inline-link-macro">systemctl을 사용하여 시스템 서비스를 관리하는 방법에 대해 알아봅니다</block>
-  <block id="04c83df2471b53349a1380d6594a6dfb" category="paragraph"><block ref="04c83df2471b53349a1380d6594a6dfb" category="inline-link-macro-rx"></block></block>
-  <block id="cf4ea178c9802758c291b6fe04a80105" category="paragraph">자세한 내용은 을 참조하십시오 <block ref="afa39d1513aaa715d473b01160b979a5" category="inline-link-macro-rx"></block></block>
   <block id="f6167fc25dca4237241452d4c50ff80f" category="list-text">호스트를 보호하는 경우 사용자 개입 없이 호스트를 부팅할 수 있는지 확인해야 합니다. 사용자 개입이 필요한 경우 호스트가 예기치 않게 재부팅될 경우 Tiebreaker 기능을 사용하지 못할 수 있습니다. 이 경우 Tiebreaker 기능은 수동 개입 후 그리고 호스트가 완전히 부팅된 후에만 사용할 수 있습니다.</block>
-  <block id="627c400de9f499aced07d42c09563122" category="inline-link-macro">보안 강화에 대해 자세히 알아보십시오</block>
-  <block id="cd1ebc5ab6a9193c3eccbb08b0b7ed73" category="list-text">다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다. <block ref="e9290f469c98ab9e8674920b93043758" category="inline-link-macro-rx"></block></block>
-  <block id="f49bc52f11d809c3633742c41eeec0a7" category="inline-link-macro">네트워크 보안에 대해 자세히 알아보십시오</block>
-  <block id="29a308883ebb4a95b6ddf165b75bed02" category="list-text">Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다. <block ref="963efb6e18c87b850ef6a75fe996325a" category="inline-link-macro-rx"></block></block>
   <block id="0c1569b269fb49dcb3a19e461599f8b2" category="inline-link-macro">유휴 데이터 암호화에 대해 자세히 알아보십시오</block>
   <block id="d037eff76ce863bc8073ee65a4d7aa0f" category="list-text">유휴 데이터 암호화가 지원됩니다. <block ref="b9ec4fd69d69350fd85a6abd4005da82" category="inline-link-macro-rx"></block></block>
   <block id="8fdb4169cdca0d0e1f02d4b06965140f" category="inline-link-macro">MySQL Enterprise TDE(Transparent Data Encryption)에 대해 자세히 알아보기</block>
@@ -13286,9 +13247,7 @@
   <block id="777cc85682fbb64f0c41aa09dccf0ca4" category="paragraph"><block ref="777cc85682fbb64f0c41aa09dccf0ca4" category="inline-link-rx"></block></block>
   <block id="9701f608cd28914f41da9cef3b56ba90" category="paragraph">의 플랫폼에 대한 설치 지침을 사용합니다<block ref="ba9533a8784109065785b5514b6caa78" category="inline-link-rx"></block>.</block>
   <block id="1f1b4aed93819376fcceca70dcc661a8" category="paragraph"><block ref="1f1b4aed93819376fcceca70dcc661a8" category="inline-link-rx"></block></block>
-  <block id="ddd2d923df0e2b56b89593bd7e74dec1" category="list-text">의 다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다 <block ref="4af1ab31bd03b6b171b2abfc54231e72" category="inline-link-macro-rx"></block></block>
   <block id="13b7f77edb33af927a5eb756e92d3e1e" category="doc">Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다</block>
-  <block id="d0b4d4a01f6fdfe6150ce107537b1a30" category="paragraph">Cisco IP 스위치에서 ISL 포트를 추가, 제거 또는 변경해야 할 수 있습니다. 전용 ISL 포트를 공유 ISL 포트로 변환하거나 Cisco IP 스위치에서 ISL 포트의 속도를 변경할 수 있습니다. 거리가 더 먼 ISL을 이동하는 경우 품질을 향상시키려면 속도가 더 빨라질 수 있습니다. 하드웨어를 추가하거나 업그레이드하는 경우 시스템 업그레이드를 활용하고 ISL을 Cisco IP 스위치에 추가하려면 ISL 포트의 속도를 높여야 할 수 있습니다.</block>
   <block id="f8661864113fa686fbcb0e8305046574" category="cell"><block ref="f8661864113fa686fbcb0e8305046574" category="inline-link-macro-rx"></block></block>
   <block id="69f5f299da1076246b1de6b47387e82c" category="list-text">자동 되돌리기를 사용하지 않도록 모든 클러스터 LIF 수정:</block>
   <block id="44f3e9b14f204b411afdea78f7b0391c" category="doc">MetroCluster 릴리즈 노트</block>
@@ -13414,7 +13373,6 @@
   <block id="4e8c2092c0a2bb40fde077763873c66c" category="paragraph"><block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix="" category="inline-code"></block></block>
   <block id="b9035c5f27542cbf7fb14fced8e330ba" category="list-text">폴링 시간이 경과하면 다음 명령을 실행합니다.</block>
   <block id="20c4c39b07a94d810605541c0137f531" category="paragraph"><block ref="9214d4fe696fff6386a131ecee126bc4" prefix="" category="inline-code"></block></block>
-  <block id="0ca1a0fce29aa8b27d10b5cf276a5a5c" category="list-text">xWDM 구성을 사용하는 경우 ISL에 대한 추가 설정이 필요할 수 있습니다. 자세한 내용은 xWDM 공급업체 설명서를 참조하십시오.</block>
   <block id="e389e5759cd93883cfbee1a000ab0c47" category="list-text">MetroCluster 패브릭 구성의 각 Brocade FC 스위치에서 이러한 단계를 반복해야 합니다.</block>
   <block id="9dc72cfc812a43dbca6ba4e6357b2b04" category="paragraph">ONTAP 9.13.1부터 8노드 MetroCluster 구성을 임시로 확장하여 컨트롤러 및 스토리지를 업데이트할 수 있습니다. 을 참조하십시오 <block ref="df5e6373f54c9330727709bb1055a079" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="e6f19b92e0e69fc5d74e94088b442a26" category="inline-link-macro">4노드 또는 8노드 MetroCluster IP 구성 업데이트</block>
@@ -13425,4 +13383,38 @@
   <block id="5ea045545da6545f166122f615c720c2" category="list-text"><block ref="5ea045545da6545f166122f615c720c2" category="inline-link-macro-rx"></block></block>
   <block id="9d2a9152feb1a65b3472b15d2e557bca" category="inline-link-macro">NVIDIA IP RCF 파일 다운로드 및 설치</block>
   <block id="3ebe02a815587b2ddedbada8c501d0ef" category="list-text"><block ref="3ebe02a815587b2ddedbada8c501d0ef" category="inline-link-macro-rx"></block></block>
+  <block id="61cdeb097cfdf5250ae69244ebf01a62" category="list-text">xWDM 구성을 사용하는 경우 ISL에 대한 추가 설정이 필요할 수 있습니다. 자세한 내용은 xWDM 공급업체 설명서를 참조하십시오.</block>
+  <block id="91debec19d39d0379223807f0659efab" category="section-title">MetroCluster 구성에서 구성을 복구합니다</block>
+  <block id="40a0ce393bbc07b8791fe3c093d906bf" category="paragraph">MetroCluster FC 구성에서는 복구 작업을 특정 순서로 수행하여 전환 후 MetroCluster 기능을 복원합니다.</block>
+  <block id="488d96c011f8548ef7da9ddc5753a241" category="paragraph">MetroCluster IP 구성에서는 전환 후 복구 작업이 자동으로 시작됩니다. 그렇지 않은 경우 복구 작업을 수동으로 수행할 수 있습니다.</block>
+  <block id="c699de2804ae61ba2a08a116ed2ef23a" category="list-text">의 모든 단계를 수행합니다 <block ref="25a09b13067ca55ce197a3a70d7d4ef3" category="inline-link-macro-rx"></block> 를 클릭하여 구성에 새 노드 및 스토리지를 추가합니다.</block>
+  <block id="ed9ffb5949db6450250233e6cfe01a73" category="paragraph">의 단계를 수행합니다 <block ref="96f56aa11694bb622748492be0c72b72" category="inline-link-macro-rx"></block>.</block>
+  <block id="6cf2188282d1c5565ee1186b280374e1" category="list-text">다음 절차를 사용하여 이전 노드에서 새 노드로 데이터를 이동합니다.</block>
+  <block id="3085ebd8810ece8cd93e0024bdb65eb1" category="inline-link">애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다</block>
+  <block id="5ac4c292c34e378b8a66c288fe234ec8" category="list-text">의 모든 단계를 수행합니다<block ref="86de927c33b88be1f428ac8283e6ea02" category="inline-link-rx"></block>.</block>
+  <block id="2e23c7e78862e31423e93a8c06fbeebd" category="inline-link">비 SAN 데이터 LIF 및 클러스터 관리 LIF를 새 노드로 이동합니다</block>
+  <block id="4c40ad7be0747f4eabf4da6aae571326" category="list-text">의 모든 단계를 수행합니다<block ref="0b7f99a20292b0e5c2035897d141aa60" category="inline-link-rx"></block>.</block>
+  <block id="2fb1fe6ba80304c2c9334028fb3987c7" category="paragraph"><block ref="2fb1fe6ba80304c2c9334028fb3987c7" category="inline-link-macro-rx"></block></block>
+  <block id="578675274d57e26902bd07f1e14bdaf5" category="paragraph">의 단계를 수행합니다 <block ref="1df44d63dee1aa671250cee412b649ab" category="inline-link-macro-rx"></block>.</block>
+  <block id="0e6555dbfd8998f1622712c607f2ff35" category="list-text">다음 절차에 따라 이전 노드에서 새 노드로 데이터를 이동합니다.</block>
+  <block id="9279de4bda72814dc5de34cb99091103" category="inline-link">애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다</block>
+  <block id="544b7f400e22a353c6314aae46b6f31b" category="list-text">의 모든 단계를 수행합니다<block ref="899abfe6981bfebeee20b57aa0d2c7f6" category="inline-link-rx"></block>.</block>
+  <block id="7d0330f92f5b6340af08f88bf712e687" category="inline-link">SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동</block>
+  <block id="a0df2f967f4f322912323748b634da9e" category="list-text">의 모든 단계를 수행합니다<block ref="5d08a890945af7173c6e4b6a952f82de" category="inline-link-rx"></block>.</block>
+  <block id="1b4080c52526ea8390adef3facc6646f" category="inline-link">원래 노드에서 더 이상 필요하지 않은 SAN LIF를 삭제합니다</block>
+  <block id="7c05cd1434f77b09211b33f0e3df8f7e" category="list-text">의 모든 단계를 수행합니다<block ref="6f9da97248de99650a607f2ab8f8c4c5" category="inline-link-rx"></block>.</block>
+  <block id="175bbe9b6bd074e923b41baad3944299" category="paragraph"><block ref="175bbe9b6bd074e923b41baad3944299" category="inline-link-macro-rx"></block></block>
+  <block id="1af1c128bcb15febcfeae67428ab0606" category="paragraph">Cisco IP 스위치에서 ISL 포트를 추가, 제거 또는 변경해야 할 수 있습니다. 전용 ISL 포트를 공유 ISL 포트로 변환하거나 Cisco IP 스위치에서 ISL 포트의 속도를 변경할 수 있습니다.</block>
+  <block id="9ef8b8de2a46a8cdf8b96e3433081f97" category="admonition">NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우 ISL을 변경하려면 새 RCF 파일이 필요할 수 있습니다. 현재 및 새 ISL 속도가 40Gbps 및 100Gbps인 경우에는 새 RCF 파일이 필요하지 않습니다. ISL 속도의 다른 모든 변경 사항에는 새 RCF 파일이 필요합니다. 예를 들어 ISL 속도를 40Gbps에서 100Gbps로 변경하는 경우 새 RCF 파일이 필요하지 않지만 ISL 속도를 10Gbps에서 40Gbps로 변경하려면 새 RCF 파일이 필요합니다.</block>
+  <block id="e5a44346ea08417f9c1bb13c971ef4b4" category="inline-link-macro">MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다.</block>
+  <block id="6780acd09b7544d9829b3c8c782e7228" category="admonition">NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우 RCF 파일을 업그레이드하고 새 ISL 포트에 대한 새 구성을 적용해야 하는 경우, 의 단계를 따릅니다 <block ref="06d2583ef923bd1ae27cd7aa8a48f582" category="inline-link-macro-rx"></block></block>
+  <block id="4f8a3836e9b2b61340340f61f8a1d944" category="list-text">ISL과 ISL의 포트 채널이 두 스위치 간에 설정되었는지 확인합니다.</block>
+  <block id="f1ba48098d6a9078f5a1ba8e0141de5b" category="paragraph"><block ref="d975a431de1e74582bd6e6f677a19ad0" prefix="" category="inline-code"></block></block>
+  <block id="61f7733093f25bb223a42607ca2406c1" category="list-text">Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다.</block>
+  <block id="88b4165ca48e72ba667b9778d007aaad" category="inline-link-macro">Red Hat Enterprise Linux 8 제품 설명서</block>
+  <block id="a984325f757f454ac079ec671b9324d6" category="list-text"><block ref="a984325f757f454ac079ec671b9324d6" category="inline-link-macro-rx"></block></block>
+  <block id="ff7401ad1796e3298f03e4bd7f3432f0" category="inline-link-macro">Red Hat Enterprise Linux 9 제품 설명서</block>
+  <block id="9208e559efedea4d185e467a4ad4e657" category="list-text"><block ref="9208e559efedea4d185e467a4ad4e657" category="inline-link-macro-rx"></block></block>
+  <block id="c5de0a644266fc0016715f94fa5fe1e3" category="list-text">다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다.</block>
+  <block id="6de657c388054d5bb983a1d1351b1f89" category="list-text">Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다.</block>
 </blocks>
