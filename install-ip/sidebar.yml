@@ -109,8 +109,8 @@ entries:
     url: "/install-ip/task_remove_unconfigure_mediator.html"
   - title: MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
     url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
-  - title: MetroCluster 자동 강제 적용 시 위험 및 제한 사항
-    url: "/install-ip/concept-risks-limitations-automatic-switchover.html"
+  - title: ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법
+    url: "/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html"
 - title: MetroCluster 구성을 테스트하는 중입니다
   url: "/install-ip/task_test_the_mcc_configuration.html"
 - title: MetroCluster 구성을 제거할 때의 고려 사항

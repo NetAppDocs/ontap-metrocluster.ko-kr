@@ -24,7 +24,7 @@ link:https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 �
 
 
 
-CAUTION: ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 을 검토하십시오 link:concept-risks-limitations-automatic-switchover.html["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"].
+CAUTION: ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 를 검토하십시오 link:concept-ontap-mediator-supports-automatic-unplanned-switchover.html#mauso-9-12-1["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"].
 
 .이 작업에 대해
 * 이 작업은 기본적으로 예상치 못한 자동 전환을 활성화합니다.
@@ -117,7 +117,7 @@ Remote: cluster_B         Configuration state configured
 
 +
 
-IMPORTANT: 이 명령을 사용하기 전에 를 검토하십시오 link:concept-risks-limitations-automatic-switchover.html["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"].
+IMPORTANT: 이 명령을 사용하기 전에 를 검토하십시오 link:concept-ontap-mediator-supports-automatic-unplanned-switchover.html#mauso-9-12-1["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"].
 
 +
 `metrocluster modify -allow-auto-forced-switchover true`

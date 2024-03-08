@@ -1,0 +1,8 @@
+---
+permalink: install-ip/concept-risks-limitations-automatic-switchover.html 
+redirect: ontap-metrocluster/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html 
+---
+= 
+:allow-uri-read: 
+
+

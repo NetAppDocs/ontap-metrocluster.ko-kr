@@ -89,28 +89,6 @@ FAS 시스템의 기존 MetroCluster IP 구성을 ONTAP 9.4로 업그레이드�
 
 
 
-=== 컨트롤러 모델은 4노드 구성으로 제한됩니다
-
-이러한 모델은 MetroCluster 구성에서 4개로 제한됩니다.
-
-* AFF A220
-* AFF A250
-* FAS2750
-* 500f로 설정합니다
-
-
-예를 들어, 다음 구성은 지원되지 않습니다.
-
-* 8개의 AFF A250 컨트롤러로 구성된 8노드 구성입니다.
-* AFF 220 컨트롤러 4개와 FAS500f 컨트롤러 4개로 구성된 8노드 구성
-* 각각 AFF A250 컨트롤러로 구성되어 있고 동일한 백엔드 스위치를 공유하는 4노드 MetroCluster IP 구성 2개
-* DR 그룹 1, AFF A250 컨트롤러 및 DR 그룹 2, FAS9000 컨트롤러 등으로 구성된 8노드 구성
-
-
-두 번째 MetroCluster에 위의 모델이 포함되지 않은 경우 동일한 백엔드 스위치를 사용하여 두 개의 개별 4노드 MetroCluster IP 구성을 구성할 수 있습니다.
-
-
-
 === 예제 이름
 
 다음 예제 이름이 설명서에 사용되었습니다.
@@ -141,7 +119,7 @@ MetroCluster IP 구성은 MetroCluster IP Fabric에 사용되는 IP 스위치에
 | 플랫폼 모델 | 기가비트 이더넷 어댑터가 필요합니다 | 어댑터에 필요한 슬롯입니다 | 포트 
 
 
-| AFF A900 및 FAS9500 | X91146A | 슬롯 5, 슬롯 7 | e5b, e7b 
+| AFF A900, ASA A900 및 FAS9500 | X91146A | 슬롯 5, 슬롯 7 | e5b, e7b 
 
 
  a| 
@@ -156,7 +134,7 @@ e5a, e5b
 
 
  a| 
-AFF A800, AFF C800
+AFF A800, AFF C800, ASA A800 및 ASA C800입니다
  a| 
 X1146A/온보드 포트
  a| 
@@ -167,7 +145,7 @@ e0b e1b
 
 
  a| 
-FAS8300, AFF A400 및 AFF C400
+FAS8300, AFF A400, ASA A400, ASA C400 및 AFF C400
  a| 
 X114A
  a| 
@@ -189,7 +167,7 @@ E1A, e1b
 
 
  a| 
-FAS2750, AFF A150 및 AFF A220
+FAS2750, AFF A150, ASA A150 및 AFF A220
  a| 
 온보드 포트
  a| 
@@ -200,7 +178,7 @@ e0a, e0b
 
 
  a| 
-500f, AFF A250 및 AFF C250
+FAS500f, AFF A250, ASA A250, ASA C250 및 AFF C250
  a| 
 온보드 포트
  a| 

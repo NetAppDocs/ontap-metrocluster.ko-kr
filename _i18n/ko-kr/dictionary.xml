@@ -753,7 +753,6 @@
   <block id="314397a966e69ed15a6dc4aef51251e3" category="paragraph">베이 12-17</block>
   <block id="c827f7df05c6916afe05fd36408cafb0" category="paragraph">쿼터 3: 베이 24-35</block>
   <block id="93dcc09acf50956dd3f108153247603c" category="paragraph">베이 24-29</block>
-  <block id="fd4becc7ba4fbc457e46157c8cdbc213" category="paragraph">4분기: 베이 36-48</block>
   <block id="77c79465aa008b1bff68e784406b5273" category="paragraph">베이 36-41</block>
   <block id="a66208eb43ca07208dc54b23ce6f191c" category="paragraph">각 사이트에서 2개의 쉘프를 사용하는 경우, 하프 쉘프 정책을 사용하여 디스크가 할당됩니다. 쉘프가 완전히 채워지지 않은 경우, 쉘프 양쪽 끝에서 드라이브를 동일하게 설치합니다.</block>
   <block id="dbaf1635e32fb5c1cc5e8aca3a390c3e" category="paragraph">예를 들어, 24개 드라이브 쉘프에 12개의 드라이브를 설치하는 경우 베이 0-5와 18-23에 드라이브를 설치합니다.</block>
@@ -835,7 +834,6 @@
   <block id="6f53d85533c3e60dad3733efac10ae04" category="paragraph">루트 애그리게이트는 내부 쉘프에서 12개의 루트 파티션으로 생성됩니다.</block>
   <block id="982a2e1944b422fa6826f45f24630643" category="paragraph">내부 파티션은 4개의 동일한 그룹(분기)으로 나뉩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다.</block>
   <block id="f674c4dddbf3c8f5d8282775b8f64dfc" category="list-text">스페어 파티션 1개</block>
-  <block id="ef312d32820f8cc7d4f38a6f5049b24d" category="section-title">AFF A900 시스템의 ADP 및 디스크 할당</block>
   <block id="c62a718b8f06da8fda597def926b5514" category="cell">사이트당 쉘프 수</block>
   <block id="e544ed43da5fbe5f1ff53ed83f313e27" category="section-title">FAS2750 시스템에 디스크 할당</block>
   <block id="348b34a8fc3bce6d3e74519d8b7e9ca3" category="paragraph">내부 드라이브 24개 및 외부 드라이브 24개</block>
@@ -1011,18 +1009,10 @@
   <block id="6a208811e09d735ff7f3bbc3709313aa" category="paragraph">각 컨트롤러 모듈은 동일한 ONTAP 버전을 실행해야 합니다. 지원되는 플랫폼 모델은 ONTAP 버전에 따라 다릅니다.</block>
   <block id="56a9c9a003a7d6e212ea012cfda551f5" category="list-text">FAS 시스템에 대한 새로운 MetroCluster IP 설치는 ONTAP 9.4에서 지원되지 않습니다.</block>
   <block id="eaf7309def7e7136bb09e5898743d18b" category="paragraph">FAS 시스템의 기존 MetroCluster IP 구성을 ONTAP 9.4로 업그레이드할 수 있습니다.</block>
-  <block id="0a031333cf2c811fea7702892ed6eb5b" category="section-title">컨트롤러 모델은 4노드 구성으로 제한됩니다</block>
-  <block id="8f6fda81c2274384a4980cc38b8e45e7" category="paragraph">이러한 모델은 MetroCluster 구성에서 4개로 제한됩니다.</block>
   <block id="8fd3ca5f66dff5be16e79560dd28171e" category="list-text">AFF A220</block>
   <block id="68b23d3f7da36f1f08be0727f515bcb1" category="list-text">AFF A250</block>
   <block id="3eab1bbd4a3f05ea0803f3bcf5fac9e5" category="list-text">FAS2750</block>
   <block id="9cce52969ddef317310e7d9d1c259895" category="list-text">500f로 설정합니다</block>
-  <block id="725684805491a7e291f9f8b54091a2c1" category="paragraph">예를 들어, 다음 구성은 지원되지 않습니다.</block>
-  <block id="0a87be6cc036c9f0de1076a02a8b8f06" category="list-text">8개의 AFF A250 컨트롤러로 구성된 8노드 구성입니다.</block>
-  <block id="f28dfecdb04d9fddcb6815412a00d65b" category="list-text">AFF 220 컨트롤러 4개와 FAS500f 컨트롤러 4개로 구성된 8노드 구성</block>
-  <block id="b67dfd517d85d4d92bbb6924d9a50347" category="list-text">각각 AFF A250 컨트롤러로 구성되어 있고 동일한 백엔드 스위치를 공유하는 4노드 MetroCluster IP 구성 2개</block>
-  <block id="66f9fb0d9e7258cc4fc93d0eb88c274d" category="list-text">DR 그룹 1, AFF A250 컨트롤러 및 DR 그룹 2, FAS9000 컨트롤러 등으로 구성된 8노드 구성</block>
-  <block id="f30117279b81255a79cfd80114e6947b" category="paragraph">두 번째 MetroCluster에 위의 모델이 포함되지 않은 경우 동일한 백엔드 스위치를 사용하여 두 개의 개별 4노드 MetroCluster IP 구성을 구성할 수 있습니다.</block>
   <block id="87b514f77df8f80e9ce684f94332fb57" category="section-title">예제 이름</block>
   <block id="b28d5f07ecc3e09cca01f61bcd89c642" category="paragraph">다음 예제 이름이 설명서에 사용되었습니다.</block>
   <block id="ba7daf8fded06fad682c0b21342ef324" category="list-text">컨트롤러_A_1</block>
@@ -1161,19 +1151,13 @@
   <block id="54b00572b4fb9c96346da414c5a1780b" category="paragraph">이러한 구성에서 AUSO는 컨트롤러에 장애가 발생했지만 스토리지(및 브리지(있는 경우)가 작동 중인 경우 시작됩니다.</block>
   <block id="f25509e4a4010e30eda740d9ef693bf9" category="list-text">MetroCluster 중재 서비스(ONTAP 9.7 이상)를 사용하는 * ONTAP IP 구성</block>
   <block id="8a15f9f5afd6ffb27ec4a9af854624f7" category="paragraph">이러한 구성에서 MAUSO는 위에서 설명한 AUSO와 동일한 상황에서 그리고 전체 사이트 장애(컨트롤러, 스토리지 및 스위치)가 발생한 후에 시작됩니다.</block>
-  <block id="2464b025c8a02fc9a54a5cbe8a3b3041" category="admonition">MAUSO는 비휘발성 캐시 미러링(_DR 미러링_)과 SyncMirror plex 미러링이 장애 발생 시 동기화되는 경우에만 시작됩니다.</block>
   <block id="e5edd8dd9b2717b8f0d5e2c5e9c4563d" category="list-text">* 활성 모드에서 Tiebreaker 소프트웨어를 사용하는 MetroCluster IP 또는 FC 구성 *</block>
   <block id="d252bbe03c515e14d80ddc7cae716a23" category="paragraph">이러한 구성에서 Tiebreaker는 전체 사이트 장애 후 계획되지 않은 전환을 시작합니다.</block>
   <block id="7e2317ea641d19001e33fe184824ff0d" category="paragraph">Tiebreaker 소프트웨어를 사용하기 전에 을 검토하십시오 <block ref="f62e57388ece8ed3ab39425498977dae" category="inline-link-macro-rx"></block></block>
   <block id="a7de0eeb62026c7c8a784a9e3a44a081" category="section-title">다른 애플리케이션 및 어플라이언스와 함께 하는 ONTAP 중재자의 상호 운용성</block>
   <block id="7fd453474071dccd50ff62492d227dec" category="paragraph">ONTAP 중재자와 함께 전환을 트리거할 수 있는 타사 애플리케이션이나 어플라이언스를 사용할 수 없습니다. 또한 ONTAP 중재자를 사용할 때는 MetroCluster Tiebreaker 소프트웨어를 사용하여 MetroCluster 구성을 모니터링하는 기능이 지원되지 않습니다.</block>
   <block id="b4a4356f509fb6c32e40ddbcc18b8a1a" category="section-title">ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법</block>
-  <block id="7480d239952f3388e1a45150c044ba8e" category="paragraph">ONTAP 중재자가 중재자 호스트에 있는 사서함에 MetroCluster 노드에 대한 상태 정보를 저장합니다. MetroCluster 노드는 이 정보를 사용하여 DR 파트너의 상태를 모니터링하고 재해 발생 시 중재자를 통한 자동 계획되지 않은 전환(MAUSO)을 구현할 수 있습니다.</block>
-  <block id="ad48fc5af22c71cdbcd7d9db9a44e632" category="paragraph">절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다.</block>
-  <block id="76febd606fc24a36395547ab83980f59" category="paragraph">MAUSO는 다음과 같은 종료 시나리오에서 * 시작되지 않습니다 *.</block>
   <block id="1fb135b5dd970a96db5c2b3025ddcbf8" category="list-text">종료를 시작합니다. 예를 들면 다음과 같습니다.</block>
-  <block id="969ad1d775144c2dcc448c09e5467831" category="list-text">노드를 중단합니다</block>
-  <block id="e417cabb8d771305beaa6b46cf7335e1" category="list-text">노드를 재부팅합니다</block>
   <block id="23b070f17dffe8e66479102b1681ffad" category="doc">MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용</block>
   <block id="3c17e9573f8b45dda43321f58bfcd2bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 다음 섹션을 참조하십시오.</block>
   <block id="e8c0139663de0f382f275109978b357d" category="inline-link">* VIP(가상 IP) LIF 구성 *</block>
@@ -6102,10 +6086,7 @@
   <block id="6466cdc759d3f24e72db990e82ef2e6e" category="inline-link-macro">테스트 또는 유지 관리를 위한 전환 수행</block>
   <block id="8d50f35507fbf2c3d543e72aaed82f75" category="paragraph"><block ref="8d50f35507fbf2c3d543e72aaed82f75" category="inline-link-macro-rx"></block></block>
   <block id="d570448dc17eb2b971433918f9fda788" category="section-title">MetroCluster IP 구성에서 중재자를 통한 자동 비계획 전환</block>
-  <block id="73e03c5be719fd40e437f5c019235422" category="paragraph">MetroCluster IP 구성에서 시스템은 ONTAP 중재자를 사용하여 오류를 감지하고 중재자를 통한 자동 계획되지 않은 전환(MAUSO)을 수행할 수 있습니다.</block>
   <block id="e0dfacb7c32b66e9900ec804d3555a37" category="admonition">MAUSO는 MetroCluster FC 구성에서 지원되지 않습니다.</block>
-  <block id="bf1d205a4e5418512184787235e4b76b" category="paragraph">ONTAP 중재자가 MetroCluster IP 노드에 대한 메일박스 LUN을 제공합니다. 이러한 LUN은 ONTAP 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 MetroCluster 중재자의 공동 위치입니다.</block>
-  <block id="9065c339d0aefe8c01add4abec5c6525" category="paragraph">MetroCluster 노드는 사서함 정보를 사용하여 MAUSO가 필요한지 여부를 확인합니다. 스토리지 컨트롤러의 비휘발성 메모리(플랫폼 모델에 따라 NVRAM 또는 NVMEM)가 파트너 사이트의 원격 DR(재해 복구) 파트너에 미러링되지 않는 경우 MAUSO가 시작되지 않습니다</block>
   <block id="aba053c292ccb0431a94f6b992f85614" category="section-title">복구 중 수행되는 작업(MetroCluster FC 구성)</block>
   <block id="1316fded180310faa69facd0141e9243" category="paragraph">MetroCluster FC 구성에서 복구 중에 미러링된 애그리게이트의 재동기화는 스위치백을 위해 복구된 재해 사이트의 노드를 준비하는 단계별 프로세스에서 수행됩니다. 계획된 이벤트이므로 각 단계를 완벽하게 제어하여 다운타임을 최소화할 수 있습니다. 복구는 스토리지 및 컨트롤러 구성 요소에서 발생하는 2단계 프로세스입니다.</block>
   <block id="55ed90f41949baae887193f4670caaa7" category="section-title">데이터 애그리게이트 복구</block>
@@ -6226,7 +6207,6 @@
   <block id="beca4c261f58e41e37cd354316dd0a6e" category="paragraph">Tiebreaker 소프트웨어는 노드에서 사이트 간 연결 상태를 정기적으로 검색합니다. NV 상호 연결 연결이 끊어지고 인터클러스터 피어링이 핑에 응답하지 않는 경우 클러스터는 사이트가 격리되었다고 간주하고 Tiebreaker 소프트웨어는 경고를 "AllLinksSegan"으로 트리거합니다. 클러스터에서 "AllLinksSegable" 상태를 식별하고 다른 클러스터에 연결할 수 없는 경우 Tiebreaker 소프트웨어는 경고를 "재해"로 트리거합니다.</block>
   <block id="6445040915e7859f45a707546ebb0455" category="paragraph">Tiebreaker 소프트웨어는 재해 사이트의 클러스터(모든 노드)가 다운되거나 연결할 수 없을 때 경고를 트리거하고, 정상적인 사이트의 클러스터에 "AllLinksSegan" 상태가 표시됩니다.</block>
   <block id="283ac08265135875ca6923ff496eb23d" category="list-text">재해 사이트의 모든 노드가 다운된 클러스터에서 정상 작동 중인 사이트 다운에 있는 HA 쌍 하나, 정상적인 사이트의 클러스터는 "AllLinksSe존경된" 상태를 나타냅니다</block>
-  <block id="32cbf293fe64d853582c8537f6165030" category="paragraph">MAUSO는 각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화되는 경우에만 시작됩니다.</block>
   <block id="57bc2e727ba0490135e6fee8d1534614" category="summary">MetroCluster 기능을 테스트하거나 계획된 유지 관리를 수행하려는 경우, 협상된 전환을 수행하여 한 클러스터가 파트너 클러스터로 완전히 전환됩니다. 그런 다음 설정을 복구한 후 다시 전환할 수 있습니다.</block>
   <block id="5771417733c3bf6349722617d5708850" category="image-alt">통계청 및 스위치백을 수행하는 워크플로</block>
   <block id="11faa392ba59f8c2a4c11123aa1fab9d" category="summary">협상된 전환을 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 협상된 전환으로 인해 MetroCluster 메시지를 트리거하는 plex 또는 AutoSupport 작업 장애가 발생할 수 있습니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.</block>
@@ -11485,7 +11465,6 @@
   <block id="8bcabb3e778663882c95082b775c75b8" category="summary">ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다.</block>
   <block id="b8f6677db24add5f2af4be56aa22ea68" category="list-text">ONTAP 9.5부터 FAS 시스템에 새로운 MetroCluster IP 설치가 지원됩니다.</block>
   <block id="04be3a6c5ee416a84b497452ccd41ffd" category="list-text">ONTAP 9.4부터는 ADP용으로 구성된 컨트롤러 모듈이 지원됩니다.</block>
-  <block id="5dddfa582624b89f44517d6ff5b20963" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. 두 서비스 중 하나만 MetroCluster IP 구성에 사용할 수 있습니다.</block>
   <block id="c94a009c5a39824e241500e9f7d49cad" category="summary">ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다.</block>
   <block id="7dec0067013edb1b7d2d18b5bc21f4a8" category="paragraph">ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다. 프런트엔드 네트워킹의 이중화를 위한 VIP와 BGP를 결합하여 백엔드 MetroCluster 이중화를 통해 Layer 3 재해 복구 솔루션을 제공합니다.</block>
   <block id="b09496e62afe76db185677ab92dd3695" category="paragraph">출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 " mccip "로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다.</block>
@@ -11746,7 +11725,6 @@
   <block id="62e6ef0d9ca5ed550d07c950fb908783" category="list-text">48에 대한 제어 TCP 연결 및 26에 대한 데이터 연결을 구성하여 해당 DSCP(Differentiated Services Code Point) 값에 있는 모든 패킷을 표시합니다.</block>
   <block id="cae6c8fdb4bf6ec6d4303accb806c01e" category="list-text">다음 프로파일 이름으로 FCIP 프로파일을 구성합니다.</block>
   <block id="186580027a6082f2b0bf52acc31fef23" category="list-text">IOD 설정을 확인합니다.</block>
-  <block id="5c5abfeb23848eee7e1fb00c2a61db6c" category="paragraph">MAUSO는 다음 시나리오에서만 시작됩니다.</block>
   <block id="d805df154de0ed954114c0b8a30d6cf0" category="list-text">각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화됩니다.</block>
   <block id="539aa46206b59c007151f02f46d35617" category="list-text">정상적인 사이트의 노드 중 테이크오버 상태가 아닌 노드는 없습니다.</block>
   <block id="9630e0ae86014261ce835fe1e1ffcd0e" category="paragraph">각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.</block>
@@ -12103,7 +12081,6 @@
   <block id="5c4f1865e4bc1d73184e237f9959c388" category="list-text">RcfFileGenerator 1.4a 이상 버전을 사용하여 1단계에서 검색한 정보를 사용하여 RCF 파일을 생성합니다. RcfFileGenerator의 새 버전은 일부 구성을 되돌리고 새 RCF 구성을 적용하기 위해 스위치를 준비하는 데 사용할 수 있는 CleanUpFiles의 추가 세트를 만듭니다.</block>
   <block id="65f306707f97b0e6528c632443da6ffa" category="list-text">배너 motd를 현재 적용된 RCF 파일과 비교합니다. 플랫폼 유형, 스위치 유형, 포트 및 VLAN 사용은 동일해야 합니다.</block>
   <block id="eeca5f39015a896c3fd153b273497470" category="admonition">RCF 파일과 동일한 버전에서 CleanUpFiles를 사용해야 하며 정확히 동일한 구성을 사용해야 합니다. CleanUpFile을 사용하면 작동하지 않으며 스위치를 완전히 재설정해야 할 수도 있습니다.</block>
-  <block id="6d48f487507c57727138fae0e2a5e20d" category="admonition">스토리지 유형이 SAS 스토리지 또는 직접 스토리지와는 다를 수 있습니다.</block>
   <block id="f7f6e369dd85b855e692642fc45404d1" category="admonition">RCF 파일이 생성되는 ONTAP 버전은 관련이 없습니다. RCF 파일 버전만 중요합니다.</block>
   <block id="5ac0010e09da0a19568a51f509b47c9e" category="admonition">RCF 파일(동일한 버전도 포함)은 더 적은 수의 또는 더 많은 플랫폼을 나열할 수 있습니다. 플랫폼이 목록에 있는지 확인합니다.</block>
   <block id="b801f2818024b60718ab5b68f7b2eb23" category="open-title">옵션 2: 일반 CleanUpFiles를 만듭니다</block>
@@ -12293,12 +12270,7 @@
   <block id="34e0a85e8dfaaeca6dadc1260cdef2ae" category="sidebar">4노드 MetroCluster FC 구성을 업데이트합니다</block>
   <block id="80a030e3352fb989821aa7c6d15bcfad" category="inline-link-macro">공개 보고서</block>
   <block id="dda33fc9a3cc083db08123f7d7e692a8" category="inline-link-macro">MetroCluster 자동 강제 적용 시 위험 및 제한 사항</block>
-  <block id="160ccce82c893f99e3f0614ca209899d" category="admonition">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 을 검토하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
-  <block id="d49fffd0ec397c8f5b53fbeb1bc93ee2" category="paragraph">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환(MAUSO) 기능의 확장입니다.</block>
   <block id="a6e62874574d6ae8ffc9dc6ea98c08e7" category="paragraph">MetroCluster 자동 강제 전환 기능을 활성화하면 사이트 장애가 감지되면 자동으로 전환됩니다. 이 기능을 사용하여 MetroCluster IP 자동 전환 기능을 보완할 수 있습니다.</block>
-  <block id="64aca5dcd09842ce5e26c9c9f52a5c79" category="paragraph">MetroCluster IP 구성이 자동 강제 전환 모드에서 작동하도록 하면 다음과 같은 알려진 문제로 인해 데이터가 손실될 수 있습니다.</block>
-  <block id="432fccc7d25e83271acb25e6c686d22f" category="list-text">스토리지 컨트롤러의 비휘발성 메모리는 파트너 사이트의 원격 DR(재해 복구) 파트너에 미러링되지 않습니다.</block>
-  <block id="4e94608087f1df11aa020cbfe28a7876" category="admonition">언급되지 않은 시나리오가 있을 수 있습니다. NetApp은 MetroCluster 자동 강제 전환 기능을 사용하도록 설정하여 발생할 수 있는 데이터 손상, 데이터 손실 또는 기타 손상에 대해 책임지지 않습니다. 위험 및 제한 사항이 수용할 수 없는 경우에는 MetroCluster 자동 강제 전환 기능을 사용하지 마십시오.</block>
   <block id="80f6a6e12e6ca0304707e7a67581f248" category="paragraph">Broadcom 스위치</block>
   <block id="530dbe55cb10e603b69b517d0cb2f4bc" category="list-text">두 클러스터에서 다음 명령을 실행하여 ONTAP 중재자 서비스가 MetroCluster 구성에서 제거되었는지 확인합니다.</block>
   <block id="49b7410e94a7ca7d1c674a14241ebe49" category="list-text"><block ref="7200673afad174d0ff258c801fbb9def" prefix="" category="inline-code"></block></block>
@@ -12397,7 +12369,6 @@
   <block id="59710baa552439a5c3866c2907720be7" category="section-title">지원되는 MetroCluster FC 컨트롤러 업그레이드</block>
   <block id="9ae1fbeadb6e0efc4e024384fb8a4f8d" category="inline-link">기술 자료 문서</block>
   <block id="6bd20d1a4e5bd1d6bed1627ed32e934c" category="list-text">참고 1: 기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 포트 1c 및 1d를 사용할 때 컨트롤러를 업그레이드하려면 다음을 참조하십시오<block ref="058c6692589b3956d6bd485ac9c6cea6" category="inline-link-rx"></block>.</block>
-  <block id="67be5a03851a4b6d9deae18ad49f328e" category="list-text">참고 2: 온보드 포트 0e 및 0f를 FC-VI 연결로 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 ONTAP 9.9.1을 실행하는 시스템에서만 지원됩니다. 또는 그 이전 버전. 자세한 내용은 를 참조하십시오 <block ref="54dac02f94a6488bb50eb2223b2531dc" category="inline-link-macro-rx"></block>.</block>
   <block id="24e0de0a456339a0645a68e87b1bd30e" category="list-text">참고 3: 이 업그레이드에 대해서는 을 참조하십시오 <block ref="d4055a630aa0f5dfe07651f60a376ff8" category="inline-link-macro-rx"></block></block>
   <block id="2a4d011a1daa1baf70a0642eaa186c4b" category="cell">업그레이드 방법</block>
   <block id="5fad8e8329f6ac022801d63699f46933" category="paragraph">'시스템 컨트롤러 교체' 명령으로 업그레이드하십시오</block>
@@ -12612,19 +12583,12 @@
   <block id="2a077243240a3af8fdb5a2c53c8dfd93" category="sidebar">두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다</block>
   <block id="3ae2a51b967ff5379c07b5d59d9bb892" category="sidebar">새 컨트롤러 모듈 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
   <block id="2ec9cf7fc01c78e918f2c1109d699ebd" category="sidebar">ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다</block>
-  <block id="3ba18986907ef3401544960b244376ed" category="section-title">AFF A150 및 AFF A220 시스템의 ADP 및 디스크 할당</block>
   <block id="3e0a52646b307379f47860044c088d60" category="paragraph">각 외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
-  <block id="b244c220ca2f00fdc24e97de45456f82" category="section-title">AFF C400 및 AFF A400 시스템에서 ADP 및 디스크 할당</block>
-  <block id="ba9bcbab50848c136d0007b25231ce1e" category="section-title">AFF C800 및 AFF A800 시스템에서 ADP 및 디스크 할당</block>
   <block id="8e65b308ba381d7e7d885330e749b55d" category="list-text">AFF A700 유형의 4노드 MetroCluster 구성 2개를 케이블로 연결한 경우 첫 번째 MetroCluster를 "MetroCluster 1"로 연결하고 두 번째 MetroCluster를 AFF A700 표에서 "MetroCluster 2"로 연결합니다.</block>
   <block id="e5c3d25338f9cf52b0644af8df5dd491" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 포트 13s0-3 및 14s0-3으로 표시됩니다.</block>
   <block id="0995dd589b8b5229e4b9e28862db9b91" category="paragraph">둘 이상의 MetroCluster 구성을 Cisco 3132Q-V 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster에 케이블을 연결해야 합니다. 예를 들어, FAS2750과 AFF A700을 동일한 Cisco 3132Q-V 스위치에 케이블로 연결하는 경우 그런 다음 표 1의 "MetroCluster 1"에 따라 FAS2750과 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 AFF A700을 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
   <block id="b1ae03d0492f9071184bcc685e4d9008" category="image-alt">MCC IP 케이블 연결 a150 A250 을 Cisco 32c 또는 Cisco 9336c 스위치에 연결합니다</block>
   <block id="cf6033c90446afb2f2e4bf0a87384e97" category="image-alt">MCC IP 케이블 연결 A320 a400 a700 A800 a900 Cisco 3232C 또는 9336c 스위치</block>
-  <block id="4aa636d0c8e798111a1395c5cf44abef" category="paragraph">AFF A800, AFF C800</block>
-  <block id="76a3e9deef2a9133b01bc4b8aa5ad045" category="paragraph">FAS8300, AFF A400 및 AFF C400</block>
-  <block id="2d24d8597140717b72521869e1b9643a" category="paragraph">FAS2750, AFF A150 및 AFF A220</block>
-  <block id="f557196ec910f221f73585a5c481f240" category="paragraph">500f, AFF A250 및 AFF C250</block>
   <block id="52d00daf67aaaf387590e09043aff43a" category="list-text"><block ref="52d00daf67aaaf387590e09043aff43a" category="inline-link-macro-rx"></block></block>
   <block id="49cc90fa19d302674a7ac32a31b7a0c8" category="list-text"><block ref="49cc90fa19d302674a7ac32a31b7a0c8" category="inline-link-macro-rx"></block></block>
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
@@ -12757,9 +12721,6 @@
   <block id="fdc1be4b61fa768dbfcc3e8f0dab2595" category="paragraph">다음 표에는 8노드 MetroCluster FC 구성에 지원되는 플랫폼 조합이 나와 있습니다.</block>
   <block id="49782ec67fb4809f5d138aa07412fd9d" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
   <block id="ea95591996a43e78cc0b5f96cb4d8f1c" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
-  <block id="1251b37475039ca3d9d370458002ce7c" category="paragraph">ONTAP 중재자가 중재자 호스트에 있는 사서함에 MetroCluster 노드에 대한 상태 정보를 저장합니다. MetroCluster 노드는 이 정보를 사용하여 DR 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO를 구현할 수 있습니다.</block>
-  <block id="8227e4d84dc1594bf85338cfe09f1747" category="list-text">사이트 재해가 발생하는 경우 사이트 재해는 동일한 사이트에 있는 * 모든 * 노드의 장애입니다.</block>
-  <block id="792f2e5a1dddb8ed73154e39c1bf5e77" category="list-text">ONTAP 9.13.1 부터는 위의 조건이 충족되고 팬 또는 하드웨어 장애가 발생하면 전원 공급 장치, NVRAM 배터리 또는 서비스 프로세서 하트비트 장애, 고온 또는 저온 등의 환경 종료가 시작됩니다.</block>
   <block id="08d29117f113494cf7bd34ddc0d0a7e0" category="doc">IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다</block>
   <block id="2454620eb6c11598ab9b657181cc0f55" category="paragraph">장애가 발생한 스위치를 교체하거나, 스위치를 업그레이드 또는 다운그레이드하거나, 기존 MetroCluster IP 스위치를 변경해야 할 수 있습니다.</block>
   <block id="057120c40cd4c9c1a072526b368d97f4" category="paragraph">이 절차에서는 다음 변환을 지원합니다.</block>
@@ -12823,8 +12784,6 @@
   <block id="2e782f3147ceef5a1435f26ba8fa7daa" category="inline-link-macro">스토리지 스위치를 재사용하여 스위치 연결 스토리지를 사용하는 스위치가 없는 구성에서 마이그레이션합니다</block>
   <block id="a8a61fb8a898cbbd8809029f5f6b5dba" category="list-text"><block ref="a8a61fb8a898cbbd8809029f5f6b5dba" category="inline-link-macro-rx"></block></block>
   <block id="ba8871c06c0bd003e2160207049c17d5" category="paragraph">AUSO는 기본적으로 "클러스터 내 재해"로 설정되어 있습니다. 상태는 에서 볼 수 있습니다<block ref="0d51371cbb850772d2130a36f4368df4" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="c7f2465703040d1f77ba4f73cf6ce393" category="paragraph">ONTAP 9.13.1 부터는 MetroCluster IP 구성에서 AUSO 상태에 대한 기본값이 "auso-on-dr-group"으로 설정됩니다. ONTAP 9.12.1 이전 버전의 경우 기본값은 "auso-on-cluster-disaster"로 설정됩니다. 8노드 MetroCluster IP 구성에서 이 옵션은 HA 쌍의 두 노드에 장애가 발생할 경우 AUSO를 트리거합니다.</block>
-  <block id="55e40c2e95a8c835a2e8ddca52499b33" category="paragraph">을 사용하여 AUSO 도메인을 "클러스터 내 클러스터 내 재해" 도메인으로 변경할 수 있습니다<block ref="eabe864642c195f21f3f5dd17825dd14" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="d87d22ecaeaff0e5d4bd4030a9e08302" category="sidebar">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP에서 컨트롤러를 업그레이드합니다. "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)</block>
   <block id="12651c133a2edc8c764efaddca32ca42" category="sidebar">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="f11af7573a10a71e1161a2099db36bcc" category="sidebar">MetroCluster IP 구성을 확장합니다</block>
@@ -12923,7 +12882,6 @@
   <block id="5227f75c6a1f77d9623c7a089f1e3ea7" category="paragraph">ONTAP 9.7 이전 버전의 경우 부팅 메뉴 명령을 실행합니다.</block>
   <block id="3e3df3be76a18ca2c89904765d97f078" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.</block>
   <block id="3963205d7c5d1cb2f000d61f16c10f1d" category="paragraph">내부 드라이브 24개</block>
-  <block id="d33f2a600ba4fe43084a26e95e4908c0" category="paragraph">* 관련 정보 *</block>
   <block id="7632b8724806890acaf96c668d641251" category="inline-link-macro">MetroCluster IP 구성의 자동 드라이브 할당 및 ADP 시스템에 대해 자세히 알아보십시오</block>
   <block id="85488d881ebf03beb1eca3be4b5fda44" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="e78382cc6f841e7f00c97b18a2e30f41" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="5fdc7ff67ace146413ecd7d44157aca4" category="paragraph">쉘프 혼합에 대한 자세한 내용은 를 참조하십시오<block ref="532c1f47a9370f9e21538610051f3830" category="inline-link-rx"></block></block>
@@ -13039,7 +12997,6 @@
   <block id="914c0f805af7b6a979c9b14a8fca637d" category="admonition">다음 출력 예는 ONTAP 9.13.1 이상에 적용됩니다. ONTAP 9.12.1 이하 버전의 경우 AUSO 오류 도메인 상태는 이어야 합니다<block ref="8371e13c4fc64771e634f39be50ec198" prefix=" " category="inline-code"></block>.</block>
   <block id="1d2738c61f2ddb3b312cabca3378259b" category="list-text">필요에 따라 MetroCluster 자동 강제 전환을 구성합니다.</block>
   <block id="09bb2a0904755eb985fc0c00a8eaeb29" category="paragraph">다음 명령은 고급 권한 수준에서만 사용할 수 있습니다.</block>
-  <block id="142e30c0e2bc40260b6bba783159349f" category="admonition">이 명령을 사용하기 전에 를 검토하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
   <block id="626946adf45b7bb7ff18b4ffcb520404" category="paragraph"><block ref="c3c9b152afaa4bfa0aa390b3e2063a6d" prefix="" category="inline-code"></block></block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
   <block id="bbce41d7b43eef36d5db9bed94db0495" category="sidebar">종속 항목을 설치합니다</block>
@@ -13047,7 +13004,6 @@
   <block id="357559d73c5bb22e54ab3aeafca1013b" category="sidebar">소프트웨어 패키지를 설치합니다</block>
   <block id="3689ab983cde586722e4881cdbf1822a" category="sidebar">호스트를 업그레이드합니다</block>
   <block id="3a234e68f5d62ce2d6b3d068c61605c3" category="paragraph">각 릴리스에서 MetroCluster Tiebreaker 소프트웨어의 향상된 기능이 제공됩니다. 다음은 MetroCluster Tiebreaker의 최신 릴리스의 새로운 기능입니다.</block>
-  <block id="e6ca378bbb6d15fd110961cea50b2eb0" category="section-title">AFF C250, AFF A250 및 FAS500f 시스템에서 ADP 및 디스크 할당</block>
   <block id="91d96627fcbee13a9d474587060d13f8" category="paragraph">AFF C250 및 AFF A250 시스템에 대한 동일한 디스크 할당 지침 및 규칙이 FAS500f 시스템에 적용됩니다. FAS500f 시스템에 디스크를 할당하는 방법은 을 참조하십시오 <block ref="62481755a241b3efc5c68e4e7dd00bb5" category="inline-xref-macro-rx"></block> 표.</block>
   <block id="d39fc122b5bc72857d3bc1cb28b2528b" category="summary">FC 스위치의 공급업체를 변경하거나(Cisco에서 Brocade로, 또는 그 반대) 스위치 모델을 변경하거나, 둘 다 변경해야 할 수 있습니다.</block>
   <block id="dc97a56f45d09eb47627be2f51eaacac" category="doc">FC 스위치의 공급업체 또는 모델을 변경합니다</block>
@@ -13057,7 +13013,6 @@
   <block id="12e792350f2f2a26f26efec238939f8c" category="list-text">[[STEP_1, 1단계]] 구성의 상태를 확인합니다.</block>
   <block id="2aadc0e8757be310d2a25c139de10d8a" category="paragraph">의 단계를 따릅니다 <block ref="71433a7a2e7b6001aee2288bc93568fd" category="inline-link-macro-rx"></block>.</block>
   <block id="4b0b73acfce5119dcc60f2f7b6dac2c4" category="list-text">다음 순서로 연결부를 분리하여 이전 스위치에서 연결을 끊습니다.</block>
-  <block id="5ad31ba7150f9832a818c89539b6baa5" category="list-text">MetroCluster IP 인터페이스의 연결을 끊습니다.</block>
   <block id="66700e9b823419320bcf568412b3c8f5" category="list-text">MetroCluster ISL을 분리합니다.</block>
   <block id="c4f64a0c7e0a39b3f68c6c76b119f9b7" category="list-text">이전 스위치의 전원을 끄고 케이블을 제거한 다음 기존 스위치를 새 스위치로 물리적으로 교체합니다.</block>
   <block id="39c4de53c442cd522fc67edfc4cc59c8" category="list-text">다음과 같은 순서로 스위치를 케이블로 연결합니다.</block>
@@ -13230,10 +13185,6 @@
   <block id="a393732e5defe7b7a921a586e53ec51d" category="list-text">루트 애그리게이트는 두 사이트의 모든 노드에 대해 파티션 3에 위치해야 합니다.</block>
   <block id="9ef6aecb7d030435d81fe80cacca477e" category="list-text">파티셔닝과 디스크 할당은 MetroCluster 사이트의 초기 구성 중에 자동으로 수행됩니다.</block>
   <block id="82d98fe86a7b6dbc49abc0913b83f2ac" category="paragraph">ADP는 시스템의 초기 구성 중에 자동으로 수행됩니다.</block>
-  <block id="2785e39cd183c09c66a74a7aad221542" category="admonition">ONTAP 9.13.1부터 클러스터 * 또는 * HA 쌍 장애 시 MAUSO를 시작하도록 동작을 변경할 수 있습니다. HA Pair의 경우 두 노드에서 동시에 장애가 발생해야 합니다.</block>
-  <block id="3ea08f3e8da19255d966a6ac28c7c9cf" category="paragraph">위에 나열되지 않은 추가 시나리오에 대해 MAUSO를 시작할 수 있습니다. 자세한 내용은 을 참조하십시오 <block ref="a3a7e72ce1f5f993a44ac5e44397056b" category="inline-link-macro-rx"></block>.</block>
-  <block id="e0907a528c832799b0d1ad87758c5f86" category="inline-link-macro">MetroCluster IP 구성의 MAUSO에 대해 자세히 알아보십시오</block>
-  <block id="b5a3168b79ae5368d7ec0db231f9a1fc" category="paragraph"><block ref="715b35e54e91f145a6041ef6c0fd6dbb" category="inline-link-macro-rx"></block>.</block>
   <block id="2d183ed725bd043df73111a219fb4c10" category="list-text">모든 MetroCluster 구성 요소가 지원되어야 합니다.</block>
   <block id="a6ab1915ab3c895c47d4e04f54324428" category="paragraph">MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, 스위치에서 실행 중인 RCF 파일 버전이 ONTAP 버전, 스위치 펌웨어 버전 또는 둘 다에서 지원되지 않는 경우</block>
   <block id="3c895cdeb8d2489a220d797e54ab8b6f" category="section-title">RCF 파일이 지원되는지 확인합니다</block>
@@ -13417,4 +13368,68 @@
   <block id="9208e559efedea4d185e467a4ad4e657" category="list-text"><block ref="9208e559efedea4d185e467a4ad4e657" category="inline-link-macro-rx"></block></block>
   <block id="c5de0a644266fc0016715f94fa5fe1e3" category="list-text">다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다.</block>
   <block id="6de657c388054d5bb983a1d1351b1f89" category="list-text">Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다.</block>
+  <block id="37c5a21bd601c49050ac3301b684599c" category="list-text">Cisco 9336C-FX2 스위치에는 RCF에서 이름이 다른 두 가지 다른 스위치 스토리지 유형이 있습니다. 다음 표를 참조하여 구성에 맞는 Cisco 9336C-FX2 스토리지 유형을 확인하십시오.</block>
+  <block id="df31753dd5a463d7868062b7d85b4e56" category="cell">다음 스토리지를 연결하는 경우...</block>
+  <block id="d78b539282fbd3ab71c056420e27d11d" category="cell">Cisco 9336C-FX2 스토리지 유형 선택...</block>
+  <block id="b2e9c77dc19c02cc79d1cec1f3ee2fc0" category="cell">샘플 RCF 파일 배너/MOTD</block>
+  <block id="4123b977475c9c4828f585782db5cb61" category="list-text">SAS 쉘프 직접 연결</block>
+  <block id="e8ea5873a1121ec729327255bcb20d9a" category="list-text">NVMe 쉘프 직접 연결</block>
+  <block id="415f7c0e4d1c31bd8bc9a1c226589d04" category="list-text">NVMe 쉘프는 전용 스토리지 스위치에 연결됩니다</block>
+  <block id="835e845ff21a7d399948f73712506619" category="paragraph">9336C-FX2 – 직접 저장만 해당</block>
+  <block id="b744e858676d01c41a1f92dc2c92ce88" category="paragraph"><block ref="c88a201ac5b4f93953dedf78bec764d8" prefix="" category="inline-code"></block></block>
+  <block id="8bda241c90bb84166be9260845bd9dbd" category="list-text">MetroCluster IP 스위치에 연결된 NVMe 쉘프</block>
+  <block id="8c8b7a01f7186e24025ef8e89ee4deb8" category="admonition">하나 이상의 이더넷에 연결된 NVMe 쉘프가 필요합니다</block>
+  <block id="ad87745a64591ff679affa48fe663b39" category="paragraph">9336C-FX2 – SAS 및 이더넷 스토리지</block>
+  <block id="462b36259caf681453d6d7b142217c3d" category="paragraph"><block ref="419f67b8b89585d3be41af97b158dd9e" prefix="" category="inline-code"></block></block>
+  <block id="3a9ef4ec11f1ec3fddae2461f053c31a" category="list-text">MetroCluster FC 인터페이스를 분리합니다.</block>
+  <block id="439c5d8621fe2376ba1455a5e5502727" category="list-text">MetroCluster FC 인터페이스를 케이블로 연결합니다.</block>
+  <block id="6a62571ce4203a1671da10509f3013e0" category="cell">AFF A900, ASA A900 및 FAS9500</block>
+  <block id="d7b1c9d4f2a52b2d3648ce28baa0dd5c" category="paragraph">AFF A800, AFF C800, ASA A800 및 ASA C800입니다</block>
+  <block id="2bba389392c3b789eaa9d1c8c6fc87d2" category="paragraph">FAS8300, AFF A400, ASA A400, ASA C400 및 AFF C400</block>
+  <block id="2adc2b7878fdb2191078a23343a8729e" category="paragraph">FAS2750, AFF A150, ASA A150 및 AFF A220</block>
+  <block id="58783907a3fbb2ae3dd67c785764d060" category="paragraph">FAS500f, AFF A250, ASA A250, ASA C250 및 AFF C250</block>
+  <block id="1b2e916922e69cdb49ce0690307dd784" category="admonition">MetroCluster IP 시스템에는 전용 고가용성(HA) 포트가 없습니다. ONTAP 하드웨어 시스템 설명서 _ 를 사용하여 플랫폼을 설치하는 경우 클러스터 및 HA 포트에 케이블을 연결하기 위해 지침을 따르지 마십시오.</block>
+  <block id="689365c2d6e4fb2ffa83031a799cb8a1" category="inline-link-macro">수동 복구를 수행합니다</block>
+  <block id="b6933415b566c13842c75e7153f5e0bd" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. MAUSO 또는 tiebreaker 소프트웨어를 반드시 사용해야 하는 것은 아니지만, 이러한 서비스를 사용하지 않을 경우에는 반드시 사용해야 합니다 <block ref="ffc76c5e8798538fa424ea31c8f712bb" category="inline-link-macro-rx"></block> 재해가 발생한 경우</block>
+  <block id="b65bf2d95ccaa5163ee3e519ccc4f46c" category="inline-link-macro">ONTAP 중재자가 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
+  <block id="79fa79dc9ecfb5181a7024131b90413f" category="paragraph"><block ref="66850f0d314a9b674fb83121fdb5639b" category="inline-link-macro-rx"></block>.</block>
+  <block id="2927bb12dad92f3aa1e9f54de7ac5c86" category="inline-link-macro">MetroCluster IP 구성의 MAUSO에 대해 자세히 알아보십시오</block>
+  <block id="861d9a7b4136ca5c52adba1b162580b0" category="paragraph"><block ref="dedd67391845326372399eb154d21c6c" category="inline-link-macro-rx"></block>.</block>
+  <block id="88ddeb4aaff386fa8928e9ed590bcdd6" category="admonition">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 를 검토하십시오 <block ref="b36331871b99d608d499593ef0805d3b" category="inline-link-macro-rx"></block>.</block>
+  <block id="6627a26235928f19183374e55b041466" category="admonition">이 명령을 사용하기 전에 를 검토하십시오 <block ref="b36331871b99d608d499593ef0805d3b" category="inline-link-macro-rx"></block>.</block>
+  <block id="62dab2247ca5697a261fd865abf3712d" category="paragraph">4분기: 베이 36-47</block>
+  <block id="c81d9f1aaf4df29053805f321b5b089d" category="section-title">AFF A150, ASA A150 및 AFF A220 시스템에서 ADP 및 디스크 할당</block>
+  <block id="f7895982d569530633368489a09d6077" category="section-title">AFF C250, AFF A250, ASA A250, ASA C250 및 FAS500f 시스템에서 ADP 및 디스크 할당</block>
+  <block id="6a0fb9ba6a0c02751fb5fc909455894f" category="section-title">AFF C400, AFF A400, ASA C400 및 ASA A400 시스템에서 ADP 및 디스크 할당</block>
+  <block id="ce18baa4e98793cae29bac3255df9775" category="section-title">AFF C800, ASA C800, ASA A800, AFF A800 시스템에서 ADP 및 디스크 할당</block>
+  <block id="fbb4c9d136a3689d23c5be288b1f395e" category="section-title">AFF A900 및 ASA A900 시스템에서 ADP 및 디스크 할당</block>
+  <block id="fd659a09a0244eaf6b3f61e3ca61a14d" category="paragraph">ONTAP 중재자는 MetroCluster IP 노드에 대한 상태 정보를 저장할 메일박스 LUN을 제공합니다. 이러한 LUN은 ONTAP 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 MetroCluster 중재자의 공동 위치입니다. MetroCluster IP 노드는 사서함 정보를 사용하여 DR(재해 복구) 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO(중재자 지원 계획되지 않은 전환)를 구현할 수 있습니다.</block>
+  <block id="30340ec1ae42c7ca90b5fdd7fab0a4a3" category="paragraph">절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다. 기본적으로 MAUSO는 다음 시나리오에서 시작됩니다.</block>
+  <block id="44c6a8e31f1720ca268816c13cea4bb0" category="list-text">사이트 재해가 발생하는 경우 사이트 재해는 동일한 사이트에 있는 _ALL_NODES의 장애입니다.</block>
+  <block id="b33abe56d950c95329c1ac6ab46d5bdc" category="paragraph">MAUSO는 다음과 같은 종료 시나리오에서 _NOT_initiated입니다.</block>
+  <block id="7d65c4c7a1755447eb25532fa1c05793" category="list-text">노드를 중지합니다</block>
+  <block id="a31a9f4a486873e4dc3b002470885d75" category="list-text">노드를 재부팅합니다</block>
+  <block id="5839b84cc7331e1fd1cf7430c48b88bf" category="paragraph">각 ONTAP 9 릴리스에서 사용할 수 있는 MAUSO 기능에 대해 알아봅니다.</block>
+  <block id="5959cf5fc1876c0cf2f01475b2d29319" category="cell">다음으로 시작...</block>
+  <block id="b6e60011eab2ca1cf5d6c756a1bbfc5e" category="paragraph">ONTAP 9.13.1 을 참조하십시오</block>
+  <block id="66d9d3437f2744347e0a591595693ad1" category="inline-xref">기본 시나리오</block>
+  <block id="ab3336a667d96ef9c402b6a46c81bd2c" category="list-text">MAUSO는 인 경우 시작됩니다 <block ref="dde1859590d6a82ce7ac4175ed266c06" category="inline-xref-macro-rx"></block> 팬 또는 하드웨어 장애가 발생하면 환경 종료가 시작됩니다. 하드웨어 장애의 예로는 고온 또는 저온, 또는 전원 공급 장치, NVRAM 배터리 또는 서비스 프로세서 하트비트 장애가 있습니다.</block>
+  <block id="c897ae331a6c4340c7349b2eef604de5" category="list-text">MetroCluster IP 구성에서 실패 도메인의 기본값은 "auso-on-dr-group"으로 설정됩니다. ONTAP 9.12.1 이하 버전의 경우 기본값은 "auso-on-cluster-daster"로 설정됩니다.</block>
+  <block id="0db9b5fe983538f75b18b32de0c2ce94" category="paragraph">8노드 MetroCluster IP 구성에서 "auso-on-DR-group"은 클러스터 장애 시 또는 하나의 DR 그룹에 있는 HA 쌍 중 하나로 MAUSO를 트리거합니다. HA Pair의 경우 두 노드에서 동시에 장애가 발생해야 합니다.</block>
+  <block id="6d1c7c21528d53a15ceb69aaf889c3fb" category="paragraph">필요한 경우 를 사용하여 장애 도메인 설정을 "auso-on-cluster-daster" 도메인으로 변경할 수 있습니다<block ref="eabe864642c195f21f3f5dd17825dd14" prefix=" " category="inline-code"></block> 두 DR 그룹에 HA 노드 쌍 장애가 있는 경우에만 MAUSO를 트리거하는 명령</block>
+  <block id="8bfc2adffc82ece0041951e3235bb8ec" category="list-text">장애 시 NVRAM이 동기화되지 않은 경우에도 동작을 변경하여 MAUSO를 강제 적용할 수 있습니다.</block>
+  <block id="3137bae31a11a2d4baeb8aa1cec772cb" category="paragraph">[[mauso-9-12-1]] ONTAP 9.12.1</block>
+  <block id="5c0bdfd01cd7569a98a8f9612aadbf05" category="paragraph">를 사용하여 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다<block ref="c3c9b152afaa4bfa0aa390b3e2063a6d" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="f9de585d414ec03b35493a4744a2d4d4" category="paragraph">MetroCluster IP 구성이 자동 강제 적용 스위치오버 모드로 작동하도록 할 경우 다음과 같은 알려진 문제로 인해 데이터가 손실될 수 있습니다.</block>
+  <block id="154771589b1d0513667d698a89165972" category="list-text">스토리지 컨트롤러의 비휘발성 메모리는 파트너 사이트의 원격 DR 파트너로 미러링되지 않습니다.</block>
+  <block id="6a3d2990d2a37c02edb00046af03cc1f" category="paragraph">* 주의 * : 언급되지 않은 시나리오가 발생할 수 있습니다. NetApp은 MetroCluster 자동 강제 전환 기능을 사용하도록 설정하여 발생할 수 있는 데이터 손상, 데이터 손실 또는 기타 손상에 대해 책임지지 않습니다. 위험 및 제한 사항이 수용할 수 없는 경우에는 MetroCluster 자동 강제 전환 기능을 사용하지 마십시오.</block>
+  <block id="b5b5cc6df7a12381dec8d337a0ba502a" category="list-text">참고 2: 온보드 포트 0e 및 0f 를 FC-VI 연결로 사용하는 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 다음 시스템에서만 지원됩니다.</block>
+  <block id="865e0a67a929a26c01b4b5429126f2d7" category="list-text">ONTAP 9.9.1 이하</block>
+  <block id="d0fabc1518e4f28ee6017b7168d98443" category="list-text">ONTAP 9.10.1P9</block>
+  <block id="21493ffcb915c4b7b1c1fcd44d54a372" category="list-text">ONTAP 9.11.1P5</block>
+  <block id="dc75fcdb6131845b7d3d783394c5c6e4" category="list-text">ONTAP 9.12.1GA</block>
+  <block id="dcc3f7f0ec763ead07e62fab778e446f" category="list-text">ONTAP 9.13.1 이상</block>
+  <block id="b07b13f7f6740ff05e2edecf69453d1e" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="54dac02f94a6488bb50eb2223b2531dc" category="inline-link-macro-rx"></block>.</block>
+  <block id="6c788f4f91230d4481264ef0fc97d4b2" category="inline-link-macro">ONTAP mediator가 MetroCluster IP 구성에서 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
+  <block id="83401bd8eb751fc79a9ff9e2e69be029" category="paragraph"><block ref="ff41f8886897126f1b4109a0b09cd291" category="inline-link-macro-rx"></block>.</block>
 </blocks>

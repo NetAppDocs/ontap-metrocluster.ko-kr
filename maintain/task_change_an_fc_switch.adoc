@@ -81,7 +81,7 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 ... 로컬 클러스터 ISL을 분리합니다
 
 
-.. MetroCluster IP 인터페이스의 연결을 끊습니다.
+.. MetroCluster FC 인터페이스를 분리합니다.
 .. MetroCluster ISL을 분리합니다.
 
 
@@ -92,7 +92,7 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 
 +
 .. 원격 사이트에 ISL 케이블 연결
-.. MetroCluster IP 인터페이스에 케이블을 연결합니다.
+.. MetroCluster FC 인터페이스를 케이블로 연결합니다.
 .. 로컬 클러스터 인터페이스에 케이블을 연결합니다.
 +
 로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:

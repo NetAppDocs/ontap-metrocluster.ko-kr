@@ -14,7 +14,40 @@ summary: Cisco IP 스위치에서 RCF 파일을 업그레이드해야 할 수 �
 Cisco IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.
 
 .이 작업에 대해
-RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.
+* RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.
+* Cisco 9336C-FX2 스위치에는 RCF에서 이름이 다른 두 가지 다른 스위치 스토리지 유형이 있습니다. 다음 표를 참조하여 구성에 맞는 Cisco 9336C-FX2 스토리지 유형을 확인하십시오.
++
+[cols="3*"]
+|===
+| 다음 스토리지를 연결하는 경우... | Cisco 9336C-FX2 스토리지 유형 선택... | 샘플 RCF 파일 배너/MOTD 
+
+
+ a| 
+** SAS 쉘프 직접 연결
+** NVMe 쉘프 직접 연결
+** NVMe 쉘프는 전용 스토리지 스위치에 연결됩니다
+
+ a| 
+9336C-FX2 – 직접 저장만 해당
+ a| 
+`* Switch    : NX9336C (direct storage, L2 Networks, direct ISL)`
+
+
+
+ a| 
+** SAS 쉘프 직접 연결
+** MetroCluster IP 스위치에 연결된 NVMe 쉘프
+
+
+
+NOTE: 하나 이상의 이더넷에 연결된 NVMe 쉘프가 필요합니다
+ a| 
+9336C-FX2 – SAS 및 이더넷 스토리지
+ a| 
+`* Switch    : NX9336C (SAS and Ethernet storage, L2 Networks, direct ISL)`
+
+|===
+
 
 .시작하기 전에
 구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.
@@ -140,10 +173,6 @@ IP_switch_A_1#
 +
 
 NOTE: RCF 파일과 동일한 버전에서 CleanUpFiles를 사용해야 하며 정확히 동일한 구성을 사용해야 합니다. CleanUpFile을 사용하면 작동하지 않으며 스위치를 완전히 재설정해야 할 수도 있습니다.
-
-+
-
-NOTE: 스토리지 유형이 SAS 스토리지 또는 직접 스토리지와는 다를 수 있습니다.
 
 +
 
