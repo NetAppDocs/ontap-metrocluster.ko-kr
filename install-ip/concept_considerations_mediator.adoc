@@ -40,6 +40,3 @@ Tiebreaker 소프트웨어를 사용하기 전에 을 검토하십시오 link:..
 == 다른 애플리케이션 및 어플라이언스와 함께 하는 ONTAP 중재자의 상호 운용성
 
 ONTAP 중재자와 함께 전환을 트리거할 수 있는 타사 애플리케이션이나 어플라이언스를 사용할 수 없습니다. 또한 ONTAP 중재자를 사용할 때는 MetroCluster Tiebreaker 소프트웨어를 사용하여 MetroCluster 구성을 모니터링하는 기능이 지원되지 않습니다.
-
-.관련 정보
-link:../manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#mediator-assisted-automatic-unplanned-switchover-in-metrocluster-ip-configurations["MetroCluster IP 구성의 MAUSO에 대해 자세히 알아보십시오"].

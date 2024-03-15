@@ -12123,7 +12123,6 @@
   <block id="a7c1dc82620aa47d13a5325a92e48b8b" category="paragraph">위 항목 중 하나라도 구성되어 있다면 새로운 RCF 파일 구성을 적용하지 못할 수 있습니다. 그러나 실행 중인 구성을 시작 구성에 저장하지 않고 * 스위치를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.</block>
   <block id="b96e894aca032efb6ce18c3fee836f2e" category="list-text">RCF 파일을 적용하고 포트가 온라인 상태인지 확인합니다.</block>
   <block id="57eec47f7c1d3f7c578a164a838dcb88" category="list-text">RCF 파일을 적용합니다.</block>
-  <block id="f3f957cad54a09303c58187ea562c4e0" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지가 나타나지 않습니다.</block>
   <block id="94f2f59cf614fa38bf778db2f227f97f" category="list-text">구성을 적용한 후 클러스터 및 MetroCluster 포트가 다음 명령 중 하나인 '인터페이스 요약 보기', 'CDP 인접 항목 표시' 또는 '이웃 표시' 중 하나로 온라인 상태인지 확인합니다</block>
   <block id="36654f0d51aef3cf2ff1ad8320086412" category="admonition">로컬 클러스터의 VLAN을 변경하고 사이트에서 첫 번째 스위치를 업그레이드한 경우, 이전 구성과 새 구성의 VLAN이 일치하지 않기 때문에 클러스터 상태 모니터링 시 상태가 '정상'으로 보고되지 않을 수 있습니다. 두 번째 스위치가 업데이트된 후 상태가 정상 상태로 돌아가야 합니다.</block>
   <block id="d83d3a40a56d46ffaf1367b944bbd493" category="paragraph">구성이 올바르게 적용되지 않거나 구성을 유지하지 않으려면 실행 중인 구성을 시작 구성에 저장하지 않고 스위치 * 를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.</block>
@@ -12975,7 +12974,6 @@
   <block id="64b48b15797ae9ce8dde94af89070b3d" category="paragraph">Red Hat Enterprise Linux 8.1 - 8.7:</block>
   <block id="389dbd9d6deb8eabbab651256bf77680" category="list-text">OpenJDK 17, 18 또는 19</block>
   <block id="9e605ce3bb6ad134bb55c54d861ceb6a" category="paragraph">1.4</block>
-  <block id="d1b3737d5bc8f98b3241666f4d0cd1cf" category="paragraph">ONTAP 9.2 이상</block>
   <block id="09eecd50480033ff43835a86efed6607" category="list-text">Red Hat Enterprise Linux 7 - 7.9</block>
   <block id="ae1dfcc629f4542382fd6286dbfe5a0d" category="list-text">CentOS 7 - 7.9 64비트</block>
   <block id="3f4ac8596d411de0ef0ad341cbeb82aa" category="paragraph">CentOS 사용 시:</block>
@@ -13393,8 +13391,6 @@
   <block id="b6933415b566c13842c75e7153f5e0bd" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. MAUSO 또는 tiebreaker 소프트웨어를 반드시 사용해야 하는 것은 아니지만, 이러한 서비스를 사용하지 않을 경우에는 반드시 사용해야 합니다 <block ref="ffc76c5e8798538fa424ea31c8f712bb" category="inline-link-macro-rx"></block> 재해가 발생한 경우</block>
   <block id="b65bf2d95ccaa5163ee3e519ccc4f46c" category="inline-link-macro">ONTAP 중재자가 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
   <block id="79fa79dc9ecfb5181a7024131b90413f" category="paragraph"><block ref="66850f0d314a9b674fb83121fdb5639b" category="inline-link-macro-rx"></block>.</block>
-  <block id="2927bb12dad92f3aa1e9f54de7ac5c86" category="inline-link-macro">MetroCluster IP 구성의 MAUSO에 대해 자세히 알아보십시오</block>
-  <block id="861d9a7b4136ca5c52adba1b162580b0" category="paragraph"><block ref="dedd67391845326372399eb154d21c6c" category="inline-link-macro-rx"></block>.</block>
   <block id="88ddeb4aaff386fa8928e9ed590bcdd6" category="admonition">ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강제 전환 기능을 활성화할 수 있습니다. 이 기능은 중재자 지원 계획되지 않은 전환을 확장하는 기능입니다. 이 기능을 활성화하기 전에 를 검토하십시오 <block ref="b36331871b99d608d499593ef0805d3b" category="inline-link-macro-rx"></block>.</block>
   <block id="6627a26235928f19183374e55b041466" category="admonition">이 명령을 사용하기 전에 를 검토하십시오 <block ref="b36331871b99d608d499593ef0805d3b" category="inline-link-macro-rx"></block>.</block>
   <block id="62dab2247ca5697a261fd865abf3712d" category="paragraph">4분기: 베이 36-47</block>
@@ -13432,4 +13428,11 @@
   <block id="b07b13f7f6740ff05e2edecf69453d1e" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="54dac02f94a6488bb50eb2223b2531dc" category="inline-link-macro-rx"></block>.</block>
   <block id="6c788f4f91230d4481264ef0fc97d4b2" category="inline-link-macro">ONTAP mediator가 MetroCluster IP 구성에서 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
   <block id="83401bd8eb751fc79a9ff9e2e69be029" category="paragraph"><block ref="ff41f8886897126f1b4109a0b09cd291" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ee0349da94a79740c2458822156c3f3" category="paragraph">ONTAP 9.13.1 이하</block>
+  <block id="58ff5f456710e2c10351958a374f1bae" category="paragraph">ONTAP 9.11.1 이전 버전</block>
+  <block id="0b0ec9f1cc28b3c19dc6c36dcd5af7cc" category="paragraph">1.3</block>
+  <block id="7477ed6488d6dd27883a39484d4cd5f8" category="paragraph">ONTAP 9.10.1 이하</block>
+  <block id="09e34111ef8649a5302b1889e0c7d303" category="list-text">JRE 8</block>
+  <block id="d434765df1b814e459b22676bed43318" category="paragraph">1.21배입니다</block>
+  <block id="b3c0f57dcdb05faa9fbc38832a492a4e" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지는 일반적으로 예상되지 않습니다. 그러나 SSH를 사용하여 로그인한 경우 다음 오류가 발생할 수 있습니다.<block ref="f6ffe33fb36eb714adf6f81147c665f6" prefix=" " category="inline-code"></block></block>
 </blocks>
