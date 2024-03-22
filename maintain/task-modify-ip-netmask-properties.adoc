@@ -1,17 +1,17 @@
 ---
-permalink: install-ip/task_modify_ip_netmask_gateway_properties.html 
+permalink: maintain/task-modify-ip-netmask-properties.html 
 sidebar: sidebar 
 keywords: vlan, ip, gateway,netmask, address, network, interface, subnet 
 summary: MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다. 
 ---
-= MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정
+= MetroCluster IP 구성에서 주소, 넷마스크 및 게이트웨이를 수정합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ONTAP 9.10.1 버전부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.
+ONTAP 9.10.1.1부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.
 
 이러한 속성을 업데이트해야 할 수 있습니다. 예를 들어, 중복된 IP 주소가 감지되거나 라우터 구성 변경으로 인해 계층 3 네트워크의 경우 게이트웨이가 변경되어야 할 수 있습니다.
 
@@ -29,25 +29,22 @@ MetroCluster configuration-settings interface show, MetroCluster connection chec
 == IP 주소, 넷마스크 및 게이트웨이를 수정합니다
 
 . 단일 노드 및 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 'MetroCluster configuration-settings interface modify'로 업데이트합니다
-
-
++
 다음 명령을 실행하면 IP 주소, 넷마스크 및 게이트웨이를 업데이트하는 방법이 표시됩니다.
 
++
 [listing]
 ----
 cluster_A::* metrocluster configuration-settings interface modify -cluster-name cluster_A -home-node node_A_1 -home-port e0a-10 -address 192.168.12.101 -gateway 192.168.12.1 -netmask 255.255.254.0
 (metrocluster configuration-settings interface modify)
-
 Warning: This operation will disconnect and reconnect iSCSI and RDMA connections used for DR protection through port “e0a-10”. Partner nodes may need modifications for port “e0a-10” in order to completely establish network connectivity.
 Do you want to continue?" yes
-
 [Job 28] Setting up iSCSI target configuration. (pass2:iscsi13:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
 [Job 28] Establishing iSCSI initiator connections.
 (pass6:iscsi14:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
 (pass8:iscsi15:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
 (pass9:iscsi16:0:-1:0): xpt_action_default: CCB type 0xe XPT_DEV_ADVINFO not supported
 [Job 28] Job succeeded: Interface Modify is successful.
-
 cluster_A::*> metrocluster configuration-settings interface modify -cluster-name cluster_A -home-node node_A_2 -home-port e0a-10 -address 192.168.12.201 -gateway 192.168.12.1 -netmask 255.255.254.0
 (metrocluster configuration-settings interface modify)
 Warning: This operation will disconnect and reconnect iSCSI and RDMA connections used for DR protection through port “e0a-10”. Partner nodes may need modifications for port “e0a-10” in order to completely establish network connectivity.
@@ -55,10 +52,10 @@ Do you want to continue?" yes
 [Job 28] Job succeeded: Interface Modify is successful
 ----
 . [[step2]] 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings interface show'
-
-
++
 다음 명령을 실행하면 모든 인터페이스에서 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.
 
++
 [listing]
 ----
 cluster_A::*> metrocluster configuration-settings interface show
@@ -87,11 +84,16 @@ Group Cluster Node    Network Address Netmask         Gateway         State
                       192.168.21.250  255.255.255.0   192.168.21.1    completed
 8 entries were displayed.
 ----
-. [[step3]] 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings connection show'
 
 
+. [[3단계]] 모든 연결이 작동하는지 확인합니다.
++
+'MetroCluster configuration-settings connection show'를 선택합니다
+
++
 다음 명령을 실행하면 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.
 
++
 [listing]
 ----
 cluster_A::*> metrocluster configuration-settings connection show
@@ -126,3 +128,4 @@ Group Cluster Node    Network Address Network Address Partner Type Config State
                  Home Port: e0b-20
                       192.168.20.100  192.168.21.250  DR Auxiliary completed
 ----
+

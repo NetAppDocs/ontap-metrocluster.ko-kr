@@ -1,0 +1,8 @@
+---
+permalink: install-ip/concept_considerations_layer_3.html 
+redirect: ontap-metrocluster/install-ip/concept_considerations_layer_2_layer_3.html 
+---
+= 
+:allow-uri-read: 
+
+

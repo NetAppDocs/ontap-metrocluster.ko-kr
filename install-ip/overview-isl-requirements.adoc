@@ -1,0 +1,43 @@
+---
+permalink: install-ip/overview-isl-requirements.html 
+sidebar: sidebar 
+keywords: isls, ip, layer 2, layer 3, shared switch 
+summary: MetroCluster 구성 및 네트워크가 모든 ISL 요구 사항을 충족하는지 확인하는 데 필요한 정보를 알아보십시오. 
+---
+= ISL 요구사항 개요
+:allow-uri-read: 
+
+
+MetroCluster IP 구성 및 네트워크가 모든 ISL(Inter-Switch Link) 요구 사항을 충족하는지 확인해야 합니다. 특정 요구 사항이 구성에 적용되지 않을 수도 있지만 전체 구성을 보다 잘 이해하려면 모든 ISL 요구 사항을 알고 있어야 합니다.
+
+다음 표는 이 섹션에서 다루는 항목의 개요를 제공합니다.
+
+[cols="25,75"]
+|===
+| 제목 | 설명 
+
+
+| link:mcc-compliant-netapp-validated-switches.html["NetApp의 검증된 MetroCluster 호환 스위치"] | 에서는 스위치 요구 사항을 설명합니다.
+
+백엔드 스위치를 포함하여 MetroCluster 구성에 사용되는 모든 스위치에 적용됩니다. 
+
+
+| link:concept-requirements-isls.html["ISL에 대한 고려 사항"] | ISL 요구 사항에 대해 설명합니다.
+
+네트워크 토폴로지, NetApp 검증 스위치 또는 MetroCluster 규정 준수 스위치를 사용하는지에 관계없이 모든 MetroCluster 구성에 적용됩니다. 
+
+
+| link:concept-considerations-layer-2-layer-3.html["MetroCluster를 공유 계층 2 또는 계층 3 네트워크에 배포할 때 고려해야 할 사항"] | 에서는 공유 계층 2 또는 계층 3 네트워크에 대한 요구 사항을 설명합니다.
+
+MetroCluster 구성을 제외한 모든 구성에 적용, NetApp 검증 스위치 사용 및 직접 연결 ISL 사용 
+
+
+| link:concept-requirement-and-limitations-mcc-compliant-switches.html["MetroCluster 호환 스위치 사용 시 고려 사항"] | MetroCluster 호환 스위치에 대한 요구사항을 설명합니다.
+
+NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적용됩니다. 
+
+
+| link:concept-example-network-topologies.html["MetroCluster 네트워크 토폴로지의 예"] | 에는 다양한 MetroCluster 네트워크 토폴로지의 예가 나와 있습니다.
+
+모든 MetroCluster 구성에 적용됩니다. 
+|===

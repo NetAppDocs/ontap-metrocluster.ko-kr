@@ -1,0 +1,56 @@
+---
+permalink: install-ip/concept-requirement-and-limitations-mcc-compliant-switches.html 
+sidebar: sidebar 
+keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-compliant, requirements, compliant, limitations 
+summary: ONTAP 9.7부터 MetroCluster IP 구성을 사용하면 MetroCluster 호환 스위치를 사용할 수 있습니다. 이러한 스위치는 NetApp의 검증을 받지 않지만 NetApp 사양을 준수합니다. 이 항목에서는 MetroCluster 호환 스위치의 일반 요구사항 및 제한 사항에 대해 간략하게 설명합니다. 
+---
+= MetroCluster 규정 준수 스위치를 사용할 때의 요구사항 및 제한 사항
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7부터 MetroCluster IP 구성을 사용하면 MetroCluster 호환 스위치를 사용할 수 있습니다. 이러한 스위치는 NetApp의 검증을 받지 않지만 NetApp 사양을 준수합니다. 그러나 NetApp는 검증되지 않은 스위치에 대해 문제 해결 또는 구성 지원 서비스를 제공하지 않습니다. MetroCluster 호환 스위치를 사용할 때는 일반 요구사항 및 제한 사항을 숙지해야 합니다.
+
+
+
+== MetroCluster 호환 스위치에 대한 일반 요구사항
+
+MetroCluster IP 인터페이스를 연결하는 스위치는 다음과 같은 일반 요구 사항을 충족해야 합니다.
+
+* 스위치는 QoS(Quality of Service) 및 트래픽 분류를 지원해야 합니다.
+* 스위치는 ECN(명시적 정체 알림)을 지원해야 합니다.
+* 스위치는 로드 밸런싱 정책을 지원해야 경로 순서를 유지할 수 있습니다.
+* 스위치는 L2 흐름 제어(L2FC)를 지원해야 합니다.
+* 스위치 포트는 전용 속도를 제공해야 하며 초과 할당되어서는 안 됩니다.
+* 노드를 스위치에 연결하는 케이블 및 트랜시버는 NetApp에서 제공해야 합니다. 이러한 케이블은 스위치 공급업체에서 지원해야 합니다. 광 케이블을 사용하는 경우 스위치의 송수신기가 NetApp에서 제공되지 않을 수 있습니다. 컨트롤러의 트랜시버와 호환되는지 확인해야 합니다.
+* MetroCluster 노드를 연결하는 스위치는 비 MetroCluster 트래픽을 전달할 수 있습니다.
+* 스위치가 없는 클러스터 인터커넥트를 위한 전용 포트를 제공하는 플랫폼만 MetroCluster 호환 스위치와 함께 사용할 수 있습니다. MetroCluster 트래픽 및 MetroCluster 인터커넥트 트래픽이 동일한 네트워크 포트를 공유하기 때문에 FAS2750 및 AFF A220과 같은 플랫폼을 사용할 수 없습니다.
+* 로컬 클러스터 연결에 MetroCluster 호환 스위치를 사용해서는 안 됩니다.
+* MetroCluster IP 인터페이스는 요구 사항을 충족하도록 구성할 수 있는 모든 스위치 포트에 연결할 수 있습니다.
+* 각 스위치 패브릭마다 2개씩 4개의 IP 스위치가 필요합니다. 디렉터를 사용하는 경우 각 측면에서 단일 디렉터를 사용할 수 있지만 MetroCluster IP 인터페이스는 해당 디렉터의 서로 다른 두 장애 도메인에 있는 서로 다른 두 블레이드에 연결해야 합니다.
+* 한 노드의 MetroCluster 인터페이스는 2개의 네트워크 스위치 또는 블레이드에 연결해야 합니다. 한 노드의 MetroCluster 인터페이스를 동일한 네트워크, 스위치 또는 블레이드에 연결할 수 없습니다.
+* 네트워크는 다음 섹션에 요약된 요구 사항을 충족해야 합니다.
++
+** link:concept-requirements-isls.html["ISL에 대한 고려 사항"]
+** link:concept-considerations-layer-2-layer-3.html["공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항"]
+
+
+* MetroCluster IP 트래픽을 전달하는 모든 스위치에서 MTU(Maximum Transmission Unit)가 9216으로 구성되어야 합니다.
+* ONTAP 9.6 이하 버전으로 되돌리는 것은 지원되지 않습니다.
+
+
+두 사이트에서 MetroCluster IP 인터페이스를 연결하는 스위치 간에 사용하는 모든 중간 스위치는 요구 사항을 충족해야 하며 에 설명된 대로 구성해야 합니다 link:concept-considerations-layer-2-layer-3.html["공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항"].
+
+
+
+== MetroCluster 호환 스위치 사용 시 제한 사항
+
+로컬 클러스터 연결이 스위치에 연결되어 있어야 하는 구성이나 기능은 사용할 수 없습니다. 예를 들어, MetroCluster 호환 스위치에는 다음 구성 및 절차를 사용할 수 없습니다.
+
+* 8노드 MetroCluster 구성
+* MetroCluster FC에서 MetroCluster IP 구성으로 전환
+* 4노드 MetroCluster IP 구성을 새로 고칩니다
+* 로컬 클러스터 및 MetroCluster 트래픽에 대한 물리적 인터페이스를 공유하는 플랫폼 을 참조하십시오 link:concept-network-speeds-and-switchport-modes.html["MetroCluster 호환 스위치를 위한 플랫폼 특정 네트워크 속도 및 스위치 포트 모드"] 지원되는 속도.
+

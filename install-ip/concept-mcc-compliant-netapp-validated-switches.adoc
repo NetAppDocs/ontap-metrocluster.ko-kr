@@ -1,0 +1,34 @@
+---
+permalink: install-ip/mcc-compliant-netapp-validated-switches.html 
+sidebar: sidebar 
+keywords: isls, ip, layer 2, layer 3, shared switch 
+summary: 이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요구 사항을 충족하는지 확인하는 데 필요한 정보를 제공합니다. 
+---
+= NetApp의 검증된 MetroCluster 호환 스위치
+:allow-uri-read: 
+
+
+백엔드 스위치를 포함하여 구성에 사용되는 모든 스위치는 NetApp에서 검증하거나 MetroCluster 규정을 준수해야 합니다.
+
+
+
+== NetApp의 검증된 스위치
+
+스위치는 다음 요구사항을 충족할 경우 NetApp에서 검증했습니다.
+
+* 이 스위치는 MetroCluster IP 구성의 일부로 NetApp에서 제공합니다
+* 스위치는 에 나열되어 있습니다 link:https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] MetroCluster-over-IP-connections_에서 지원되는 스위치입니다
+* 이 스위치는 MetroCluster IP 컨트롤러 및 일부 구성에서는 NS224 드라이브 쉘프에만 사용됩니다
+* 스위치는 NetApp에서 제공하는 RCF(Reference Configuration File)를 사용하여 구성됩니다
+
+
+이러한 요구사항을 충족하지 않는 스위치는 NetApp의 검증 스위치가 아닙니다 *.
+
+
+
+== MetroCluster 규정 준수 스위치
+
+MetroCluster 준수 스위치는 NetApp 검증이 되지 않았지만 특정 요구사항 및 구성 지침을 충족할 경우 MetroCluster IP 구성에서 사용할 수 있습니다.
+
+
+NOTE: NetApp은 검증되지 않은 MetroCluster 규정 준수 스위치에 대한 문제 해결 또는 구성 지원 서비스를 제공하지 않습니다.

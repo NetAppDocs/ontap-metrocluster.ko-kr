@@ -1,0 +1,8 @@
+---
+permalink: install-ip/task_modify_ip_netmask_gateway_properties.html 
+redirect: ontap-metrocluster/maintain/task-modify-ip-netmask-properties.html 
+---
+= 
+:allow-uri-read: 
+
+

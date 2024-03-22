@@ -504,8 +504,6 @@
   <block id="f300420ccf8e917fff4dcf018758ab75" category="image-alt">MCC IP fas9000 또는 AFF a700을 Cisco 3132q v 스위치에 케이블로 연결합니다</block>
   <block id="4ab951cbcd9d68b32f922b0a2d6e39c2" category="image-alt">AFF A800을 Cisco 3132q v 스위치에 케이블로 연결합니다</block>
   <block id="09cb6984bdf1b82c9749906ba1a69331" category="summary">MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
-  <block id="bacf5875940eb96c091917a5d1b9e1ad" category="doc">MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정</block>
-  <block id="40505aafe5fd41af1999393ab341c808" category="paragraph">ONTAP 9.10.1 버전부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
   <block id="d7fffb0ac95f2fd216c5e3fd04365cca" category="paragraph">이러한 속성을 업데이트해야 할 수 있습니다. 예를 들어, 중복된 IP 주소가 감지되거나 라우터 구성 변경으로 인해 계층 3 네트워크의 경우 게이트웨이가 변경되어야 할 수 있습니다.</block>
   <block id="383d9b07e1ef0cfcfa9ec36fecccfe02" category="paragraph">한 번에 하나의 인터페이스만 변경할 수 있습니다. 다른 인터페이스가 업데이트되고 연결이 다시 설정될 때까지 해당 인터페이스에 트래픽 중단이 발생할 수 있습니다.</block>
   <block id="8450a359c3efc774857fe0f3189456e0" category="paragraph">MetroCluster IP interface 속성을 변경하려면 MetroCluster configuration-settings interface modify 명령을 사용한다.</block>
@@ -516,60 +514,19 @@
   <block id="2f545dcb650b5848061814c5ce3b4cf4" category="paragraph">다음 명령을 실행하면 IP 주소, 넷마스크 및 게이트웨이를 업데이트하는 방법이 표시됩니다.</block>
   <block id="c8a08760312508ec804450cb7fad4702" category="list-text">[[step2]] 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings interface show'</block>
   <block id="3fc201ecdcbc7e37cc8a9b91bd0c01b3" category="paragraph">다음 명령을 실행하면 모든 인터페이스에서 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.</block>
-  <block id="464f766a72b725b51056bd23b507d8fb" category="list-text">[[step3]] 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings connection show'</block>
   <block id="1a8c6f33d0bdd54f26272fc3c497ec01" category="paragraph">다음 명령을 실행하면 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.</block>
-  <block id="36e19271cbd156de524b5ae13872cb4f" category="doc">개인 계층 2 네트워크 공유를 위한 고려 사항</block>
-  <block id="26a46433a2f75a74966a962fd286906b" category="paragraph">MetroCluster IP 스위치는 MetroCluster 구성 전용이며 공유할 수 없습니다. 따라서 MetroCluster IP 스위치 세트는 하나의 MetroCluster 구성만 연결할 수 있습니다. MetroCluster IP 스위치의 MetroCluster ISL 포트만 공유 스위치에 연결할 수 있습니다.</block>
-  <block id="8ac8df48acb2ee9b6d05e12a33e47a64" category="admonition">공유 네트워크를 사용하는 경우 고객은 공유 네트워크의 MetroCluster 네트워크 요구 사항을 충족해야 합니다.</block>
   <block id="967e7fe5e26ac9c522059f0a938773bb" category="section-title">ISL 요구 사항</block>
-  <block id="7785ade42189cf6d11ccb19313c44f6f" category="paragraph">다음 요구 사항을 충족해야 합니다.</block>
-  <block id="827f9b527fbba564ef9eced1f2580e8f" category="inline-link-macro">기본 MetroCluster ISL 요구 사항</block>
-  <block id="8bbac031447994e5b8b245f9bb913a6e" category="list-text"><block ref="8bbac031447994e5b8b245f9bb913a6e" category="inline-link-macro-rx"></block></block>
-  <block id="7b271aec8b32a0f14193aee31d2831c3" category="inline-link-macro">공유 계층 2 네트워크의 ISL 요구 사항</block>
-  <block id="b0a09f47597f8af9c573c32b664dfa45" category="list-text"><block ref="b0a09f47597f8af9c573c32b664dfa45" category="inline-link-macro-rx"></block></block>
   <block id="67500937686453a2388ecdf97823b682" category="section-title">중간 스위치에 필요한 설정</block>
-  <block id="2824c9af33977c76eaa395e6e43f06cf" category="paragraph">공유 네트워크에서 ISL 트래픽을 공유할 때 고객이 제공하는 중간 스위치 구성은 MetroCluster 트래픽(RDMA 및 스토리지)이 MetroCluster 사이트 간 전체 경로에서 필요한 서비스 수준을 충족하는지 확인해야 합니다.</block>
-  <block id="65d2eae171038871014da39c8ce5212d" category="paragraph">다음 예는 Cisco Nexus 3000 스위치 및 IP Broadcom 스위치에 대한 것입니다. 스위치 공급업체 및 모델에 따라 중간 스위치의 구성이 동일해야 합니다.</block>
-  <block id="c6300f8f433dd2ce7fbf121a8739ab01" category="section-title">Cisco Nexus 스위치</block>
-  <block id="97b5c02d2e6962aa18f521d8e70f5be1" category="paragraph">다음 다이어그램은 외부 스위치가 Cisco 스위치일 때 공유 네트워크에 필요한 설정에 대한 개요를 제공합니다.</block>
   <block id="6c3d514454f211b4331e09486e926e74" category="image-alt">Cisco 스위치를 사용하여 트래픽을 전환합니다</block>
   <block id="60878e723ef52f68f389c7c8fd6c072c" category="paragraph">이 예에서는 MetroCluster 트래픽에 대해 다음 정책과 맵이 생성됩니다.</block>
-  <block id="b167c89e35597c39657522cff264a281" category="list-text">MetroCluster IP 스위치에 연결되는 중간 스위치의 포트에 MetroCluster_Ingress 정책이 적용됩니다.</block>
-  <block id="d944b4fc13286119be43ab42d06a32be" category="paragraph">MetroCluster_Ingress 정책은 수신 태그 지정된 트래픽을 중간 스위치의 적절한 대기열에 매핑합니다. 태깅은 ISL이 아닌 노드 포트에서 수행됩니다. ISL에서 동일한 포트를 사용하는 비 MetroCluster 트래픽은 기본 대기열에 유지됩니다.</block>
-  <block id="e18fbf6fce702c71742e8d27a2d6a7ae" category="list-text">Intermediate 스위치 간의 ISL에 연결하는 Intermediate 스위치의 포트에 MetroCluster_Egress 정책이 적용됩니다</block>
   <block id="69aaacac83508073d197d4bf65062708" category="paragraph">MetroCluster IP 스위치 사이의 경로를 따라 일치하는 QoS 액세스 맵, 클래스 맵 및 정책 맵을 사용하여 중간 스위치를 구성해야 합니다. 중간 스위치는 RDMA 트래픽을 COS5에 매핑하고 스토리지 트래픽은 COS4에 매핑합니다.</block>
-  <block id="6ddbc452227e26b7b8bc21217c891718" category="paragraph">다음 예에서는 고객이 제공한 Cisco Nexus 3000 스위치에 대한 구성을 보여 줍니다. Cisco 스위치가 있는 경우 이 예제를 사용하여 쉽게 경로를 따라 스위치를 구성할 수 있습니다. Cisco 스위치가 없는 경우 중간 스위치에 해당하는 구성을 결정하고 적용해야 합니다.</block>
-  <block id="bedbf87beaf6932452b34e84aa5ee3dd" category="paragraph">다음 예제에서는 클래스 맵 정의를 보여 줍니다.</block>
-  <block id="dd804fb484432fe551ac3fba99fc92f0" category="admonition">이 예는 Cisco MetroCluster IP 스위치를 사용하는 구성에 대한 것입니다. MetroCluster IP 스위치에 연결되지 않는 MetroCluster 트래픽을 전송하는 스위치의 스위치 유형에 관계없이 이 예제를 따를 수 있습니다.</block>
-  <block id="b4327d52f05535a2882438ad4f3e25f3" category="paragraph">다음 예제에서는 정책 맵 정의를 보여 줍니다.</block>
-  <block id="490e2a5ce4a3b1e54b04eacc64117857" category="section-title">MetroCluster IP Broadcom 스위치</block>
-  <block id="9c6be93159d26c882e6ffd6c1598ade0" category="paragraph">다음 다이어그램은 외부 스위치가 IP Broadcom 스위치일 때 공유 네트워크에 필요한 설정에 대한 개요를 제공합니다.</block>
   <block id="05b3e3fb6ac0659ae9bfe38cf0c825e9" category="image-alt">Broadcom 스위치를 사용하여 트래픽을 전환합니다</block>
-  <block id="cf3219433ded79f81b130bc7d338f32d" category="paragraph">MetroCluster IP Broadcom 스위치를 사용하는 구성에는 추가 구성이 필요합니다.</block>
-  <block id="654f12da649b915a9c194b9f37867d88" category="list-text">외부 스위치의 경우 액세스 및 클래스 맵을 구성하여 고객 네트워크에 침투하는 트래픽을 분류해야 합니다.</block>
-  <block id="f49d57475c4de1abef662a0c701bd2df" category="admonition">MetroCluster IP 스위치를 사용하는 구성에는 이 작업이 필요하지 않습니다.</block>
-  <block id="0247f45671c0550817a407f11075ad25" category="paragraph">다음 예에서는 첫 번째 및 마지막 고객 스위치에서 MetroCluster IP Broadcom 스위치 간의 ISL을 연결하는 액세스 및 클래스 맵을 구성하는 방법을 보여 줍니다.</block>
-  <block id="026a4c2590405563bbb18611864325aa" category="list-text">첫 번째 고객 스위치의 ISL 스위치 포트에 수신 정책을 할당해야 합니다.</block>
-  <block id="a5caef8a168ae3398b49dd56ada3c819" category="section-title">중간 고객 스위치</block>
-  <block id="a6b73a04bfd2c671e7b9ad270923041b" category="list-text">중간 고객 스위치의 경우 ISL 스위치 포트에 송신 정책을 할당해야 합니다.</block>
-  <block id="68174da7b47b2116e36e80409f154967" category="list-text">MetroCluster 트래픽을 전달하는 경로를 따라 있는 다른 모든 내부 스위치의 경우 _Cisco Nexus 3000 스위치_ 섹션에 있는 클래스 맵 및 정책 맵 예제를 따르십시오.</block>
   <block id="37322f94dec561a9cb13c3ba1266cfd1" category="section-title">MetroCluster 네트워크 토폴로지의 예</block>
   <block id="1884419e0250b6ad508f2fd36f98d40d" category="section-title">직접 링크가 있는 공유 네트워크 구성</block>
-  <block id="192af72fd3a6a8f8e1eed7df8b911dc4" category="paragraph">이 토폴로지에서는 두 개의 개별 사이트가 직접 링크로 연결됩니다. 이러한 링크는 파장 분할 멀티플렉싱 장비(xWDM) 또는 스위치 사이에 있을 수 있습니다. ISL의 용량은 MetroCluster 트래픽 전용이 아니라 다른 트래픽과 공유됩니다.</block>
-  <block id="3d46b75a9510ff3b2fc1221089b507b1" category="paragraph">ISL 용량은 최소 요구 사항을 충족해야 합니다. xWDM 장치 또는 스위치 사용 여부에 따라 다른 네트워크 구성 조합이 적용될 수 있습니다.</block>
   <block id="5929fb5bb5d1ff9a7e46817ed17ab0b2" category="image-alt">공유 ISL을 통한 MCC IP 네트워킹</block>
   <block id="fbf66ccc845f0c441c22f8be84b750c9" category="section-title">중간 네트워크가 있는 공유 인프라</block>
-  <block id="78b1baea44bd8a7cd1e99e2d555265cb" category="paragraph">이 토폴로지에서는 MetroCluster IP 코어 스위치 트래픽과 호스트 트래픽이 NetApp에서 제공하지 않는 네트워크를 통해 전달됩니다. 네트워크 인프라 및 링크(임대 직접 링크 포함)는 MetroCluster 구성 외부에 있습니다. 네트워크는 일련의 xWDM 및 스위치로 구성될 수 있지만 직접 ISL을 사용하는 공유 구성과 달리 사이트 간에 직접 연결되는 링크는 아닙니다. 사이트 간의 인프라에 따라 네트워크 구성을 원하는 대로 조합할 수 있습니다. 중간 인프라는 "클라우드"로 표현되지만(사이트 간에 여러 장치가 존재할 수 있음), 여전히 고객의 통제 하에 있습니다. 이 중간 인프라를 통한 용량은 MetroCluster 트래픽 전용이 아니라 다른 트래픽과 공유됩니다.</block>
-  <block id="a024d8d17577278b0e1443f54ce83c52" category="paragraph">VLAN 및 네트워크 xWDM 또는 스위치 구성은 최소 요구 사항을 충족해야 합니다.</block>
   <block id="de47f3bace55dd3bf08de34a0ed075d6" category="image-alt">중간 사설 네트워크를 통한 MCC IP 네트워킹</block>
-  <block id="74d2d15fdbde676ffa0713db987d6e1b" category="section-title">중간 네트워크를 공유하는 두 개의 MetroCluster 구성</block>
-  <block id="01a462fc9c6195d0a7624ef8e043e011" category="paragraph">이 토폴로지에서는 두 개의 별도 MetroCluster 구성이 동일한 중간 네트워크를 공유합니다. 이 예에서 MetroCluster ONE SWITCH_A_1과 MetroCluster Two SWITCH_A_1은 모두 동일한 중간 스위치에 연결됩니다.</block>
-  <block id="6387b5c2765ea3b2679035cdac3eb1ea" category="paragraph">이 예제는 이해를 돕기 위한 목적으로만 제공됩니다.</block>
   <block id="9111fcd943391a3325aaa7508427ee6f" category="image-alt">MCC IP 동일한 공유 네트워크 SX를 공유하는 두 개의 MCC</block>
-  <block id="c1418d0a4d3dae89c1089eb73647aa7b" category="section-title">중간 네트워크에 직접 연결되는 MetroCluster 구성 2개</block>
-  <block id="0f22a23cdeb43d757abb6d17f14c0dd8" category="paragraph">이 토폴로지는 ONTAP 9.7부터 지원됩니다. 두 개의 별도 MetroCluster 구성은 동일한 중간 네트워크를 공유하며 한 개의 MetroCluster 구성 노드는 중간 스위치에 직접 연결됩니다.</block>
-  <block id="13fb17d9959e5b76dfb561a0f95edc25" category="paragraph">MetroCluster One은 NetApp의 검증된 스위치, ONTAP 9.6 및 공유 토폴로지를 사용하는 MetroCluster 구성입니다. MetroCluster 2는 NetApp 준수 스위치와 ONTAP 9.7을 사용하는 MetroCluster 구성입니다.</block>
-  <block id="5ad2282d147bc627a5ce751a67599c20" category="admonition">중간 스위치는 NetApp 사양을 준수해야 합니다.</block>
   <block id="c7f89880448c82e7f3ca4625488b3680" category="image-alt">MCC IP 지원되지 않는 두 개의 MCC가 공유 스위치에 직접 연결됩니다</block>
   <block id="e229d395b1fbe6b50f6d7c10696e4b23" category="summary">공장에서 사전 구성된 시스템을 받지 못한 경우 풀 0 드라이브를 수동으로 할당해야 할 수 있습니다. 플랫폼 모델 및 시스템에서 ADP를 사용하고 있는지 여부에 따라 MetroCluster IP 구성의 각 노드에 대해 드라이브를 수동으로 풀 0에 할당해야 합니다. 사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다.</block>
   <block id="109a1f0f213be873d0671ba7010786cf" category="doc">풀 0에 드라이브를 수동으로 할당합니다</block>
@@ -668,22 +625,8 @@
   <block id="248f892426f89c07bc5999439096f3e0" category="paragraph">진일진일보한 것</block>
   <block id="1b3b2eb3ea38d6c2916cd4e043a581a0" category="list-text">중재자 라고 표시된 이니시에이터를 표시합니다.</block>
   <block id="0064d443ab5a950b5f6aadf617249813" category="paragraph">'스토리지 iSCSI - 이니시에이터 표시 레이블 중재자'</block>
-  <block id="19d820a9221f4c3142921037b434a337" category="summary">MetroCluster IP 구성에서 멀티플렉싱 장비를 사용할 때 고려해야 할 몇 가지 사항에 대해 알고 있어야 합니다.</block>
-  <block id="879911f6e225e29ff8e098fa74f5ff53" category="doc">TDM/xWDM 및 MetroCluster IP 구성이 있는 암호화 장비 사용</block>
-  <block id="c1c2a0409868d06a74bf1b3203711a03" category="paragraph">이러한 고려 사항은 MetroCluster 백 엔드 직접 링크 및 스위치에만 적용되며, MetroCluster 이외의 트래픽과 공유되는 링크는 해당되지 않습니다.</block>
-  <block id="e9557f8098c7727893e65c1b6a2e977b" category="paragraph">Hardware Universe 도구는 MetroCluster IP 구성을 사용하기 위해 TDM/xWDM 장비가 충족해야 하는 요구 사항에 대한 몇 가지 참고 사항을 제공합니다.</block>
-  <block id="4a3cb00dbc665a78cfbd19ade6a9ff95" category="section-title">WDM 또는 외부 암호화 장치에서 암호화 사용</block>
-  <block id="eb2492c73c4c4ff8b6d6fa30c78306b3" category="paragraph">MetroCluster IP 구성에서 WDM 장치에서 암호화를 사용하는 경우 환경은 다음 요구 사항을 충족해야 합니다.</block>
-  <block id="8ee32e06f78f7dec719f3b73b0878e94" category="list-text">외부 암호화 장치 또는 DWDM 장비는 해당 스위치를 사용하여 공급업체에서 인증해야 합니다.</block>
-  <block id="68d9a2569dbad6c1e8772013f1aafac9" category="paragraph">인증에는 운영 모드(트렁킹 및 암호화 등)가 포함되어야 합니다.</block>
-  <block id="086e8208bc8bdabded9057c56fa703ab" category="list-text">암호화를 포함한 전반적인 엔드 투 엔드 지연 및 지터는 IMT 또는 이 문서에 명시된 최대치를 초과할 수 없습니다.</block>
-  <block id="4c592893625bfd66101dc3598e44db86" category="section-title">SFP 고려 사항</block>
-  <block id="16c5d56f540f017cc98cc397c77b811a" category="paragraph">장비 공급업체가 지원하는 모든 SFP 또는 QSFP는 MetroCluster ISL에 대해 지원됩니다. SFP 및 QSFP는 NetApp 또는 장비 공급업체에서 구입할 수 있습니다.</block>
   <block id="1c2ac66406fbd86dae3a5ebc91801648" category="section-title">ISL에 대한 고려 사항</block>
   <block id="be0b6f12de0b0ca96727b409aae71fff" category="paragraph">하나의 Fabric에 있는 ISL은 모두 속도와 길이가 같아야 합니다.</block>
-  <block id="038405b3bd431b24c757922ba1e38abb" category="paragraph">하나의 Fabric에 있는 ISL은 모두 동일한 토폴로지를 가져야 합니다. 예를 들어, 모든 링크는 직접 링크이거나 WDM을 사용하는 구성에서는 모두 WDM을 사용해야 합니다.</block>
-  <block id="957f130ae934815da7e3f565a1d9e150" category="paragraph">MetroCluster가 아닌 네트워크와 ISL을 공유하는 경우 섹션의 지침을 따라야 합니다 <block ref="dbac327de76ab613d0e2b5848ebc320c" category="inline-link-macro-rx"></block>.</block>
-  <block id="33fc3bd0047ef5d3f8fb4a1a8611e593" category="paragraph">패브릭 1과 패브릭 2 간의 최대 지원 거리 차이는 20km입니다</block>
   <block id="34d132e3658aa87feb2e47721dda240d" category="summary">MetroCluster 사이트에서 방화벽을 사용하는 경우 특정 필수 포트에 대한 액세스를 보장해야 합니다.</block>
   <block id="4f06b4d64acae1e487dfeee6d05acf87" category="doc">MetroCluster 사이트의 방화벽 사용</block>
   <block id="e472488b3c694fa7ae83295a2d67fb13" category="section-title">MetroCluster 사이트의 방화벽 사용에 대한 고려 사항</block>
@@ -913,81 +856,18 @@
   <block id="541a17569d4a90ee94a9fd4035349deb" category="list-text">4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="dea9eb47178beaeb21ad431dae613392" category="image-alt">MCC IP 케이블 AFF a300 또는 fas8200을 Broadcom의 53248 스위치에 연결합니다</block>
   <block id="99abcc4b4e656e7c9d684acf6c9c05d8" category="image-alt">MCC IP Broadcom의 53248 스위치에 AFF A320 케이블 연결</block>
-  <block id="ea9736859da816cfcd8267f7a6c4256a" category="summary">구성에 대한 ISL 요구 사항을 알아야 합니다.</block>
-  <block id="48b322af5cc10f141bccf9319f5b9635" category="paragraph">모든 MetroCluster IP 구성에서 ISL에 대해 다음 요구 사항을 충족해야 합니다.</block>
-  <block id="2cf083b4052be0be399ea3ba03b033d9" category="list-text">네이티브 속도 ISL 스위치 포트는 네이티브 속도 ISL 스위치 포트에 연결해야 합니다.</block>
-  <block id="70dbdfcc1fcf9942925567a4bb68c457" category="paragraph">예를 들어, 40Gbps 포트는 40Gbps 포트에 연결됩니다.</block>
-  <block id="cbb950e5b5a1e828d01a30e24e878972" category="list-text">기본 모드(즉, 브레이크아웃 케이블을 사용하지 않음)에 있는 10Gbps 포트는 기본 모드에 있는 10Gbps 포트에 연결할 수 있습니다.</block>
-  <block id="89bde422fe859df0cc4ffa75c63bf660" category="list-text">MetroCluster IP 스위치와 고객 네트워크 간의 ISL 및 중간 스위치 간의 ISL은 속도 측면에서 동일한 규칙을 따릅니다.</block>
-  <block id="ab170f7d66135266cdcb2262d9678b17" category="list-text">MetroCluster 스위치와 고객 네트워크 스위치 사이에 있는 ISL 수와 고객 네트워크 스위치 사이에 있는 ISL 수는 일치시킬 필요가 없습니다.</block>
-  <block id="fdc56c61f9ac64c24f76ec4804e7cc39" category="paragraph">예를 들어, MetroCluster 스위치는 두 ISL을 사용하여 중간 스위치에 연결할 수 있고 중간 스위치는 10 ISL을 사용하여 서로 연결할 수 있습니다.</block>
-  <block id="275769550a9388aeaf2fa2c16427b081" category="list-text">MetroCluster 스위치와 고객 네트워크 스위치 사이에 있는 ISL의 속도와 고객 네트워크 스위치 사이에 있는 ISL의 속도는 일치하지 않아도 됩니다.</block>
-  <block id="6aab2d09edb8be7e6076e1b402176d1d" category="paragraph">예를 들어, MetroCluster 스위치는 40Gbps ISL을 사용하여 중간 스위치에 연결할 수 있고 중간 스위치는 100Gbps ISL을 사용하여 서로 연결할 수 있습니다.</block>
-  <block id="eec3041ce00c0146de19cb1a1ed37539" category="list-text">각 MetroCluster 스위치를 중간 스위치에 연결하는 ISL의 수와 속도는 두 MetroCluster 사이트 모두에서 동일해야 합니다.</block>
-  <block id="4f1be337d4a681e3d7b80bec073ab5fb" category="inline-link-macro">공유 네트워크에서 ISL 트래픽 공유</block>
-  <block id="e86157d5182c2cc0ba39de2fa88b66d0" category="paragraph">시기 <block ref="901f15628992a82bc2ea044529a4cc50" category="inline-link-macro-rx"></block>ISL의 용량과 크기가 적절한지 확인해야 합니다. MetroCluster 사이트 간 데이터 복제에는 짧은 지연 시간이 매우 중요합니다. 이러한 연결에서 지연 문제가 클라이언트 입출력에 영향을 줄 수 있습니다</block>
-  <block id="a14dc0dfb776471bcbc1e3c1239e4bb1" category="paragraph">이러한 섹션을 검토하여 ISL의 필요한 종단 간 용량을 정확하게 계산해야 합니다. MetroCluster 구성에서 지연 시간이 짧은 연속 비휘발성 캐시 및 스토리지 복제가 매우 중요합니다. 백엔드 네트워크의 지연 시간은 클라이언트 IO에서 확인되는 지연 시간 및 처리량에 영향을 줍니다.</block>
   <block id="449a2bdc6a969f884c1d33fb66eecea7" category="section-title">ISL의 지연 시간 및 패킷 손실 제한</block>
-  <block id="e96606e3ebee8eeb5bb85d4955c381cb" category="paragraph">사이트_A의 MetroCluster IP 스위치와 사이트_B 간의 라운드 트립 트래픽에 대해 다음 요구 사항을 충족해야 하며, MetroCluster 구성이 안정적 상태 작업이어야 합니다.</block>
-  <block id="c9bc211a49ab07521cd90557ecdd0cbb" category="paragraph">두 MetroCluster 사이트 간의 거리가 증가하면 지연 시간이 증가하며, 일반적으로 100km(62마일)당 1ms의 왕복 지연 시간이 증가합니다. 또한 이 지연 시간은 네트워크의 ISL 링크 대역폭, 패킷 손실률 및 지터 측면에서 네트워크 서비스 수준 계약(SLA)에 따라 달라집니다. 낮은 대역폭, 높은 지터 및 랜덤 패킷 드롭은 성공적인 패킷 전송을 위해 컨트롤러 모듈의 스위치 또는 TCP 엔진에 의해 서로 다른 복구 메커니즘으로 이어집니다. 이러한 복구 메커니즘은 전반적인 대기 시간을 늘릴 수 있습니다.</block>
   <block id="5b39512a68b8704473f81b0e6ba1272e" category="paragraph">대기 시간에 영향을 주는 모든 장치를 고려해야 합니다.</block>
-  <block id="48826ffed53f55da6bc21c81ca1b5e8f" category="list-text">패킷 손실은 0.01% 이하여야 합니다.</block>
-  <block id="331d81871af9648aed5dcdc16b042e36" category="paragraph">패킷 손실에는 혼잡 또는 초과 가입으로 인한 물리적 손실 또는 손실이 포함됩니다.</block>
-  <block id="46c3dc1c366b76273938fe1ce08ca0de" category="paragraph">패킷 드롭은 재전송을 유발하고 정체 기간을 줄일 수 있습니다.</block>
-  <block id="ad89c5a048917b4cc556bf23d46e1874" category="list-text">지원되는 지터 값은 왕복 3ms입니다(또는 단방향: 1.5ms).</block>
-  <block id="8f1a0df354aadab81c22bc45d64cfe7c" category="list-text">네트워크는 MetroCluster 트래픽에 필요한 대역폭에 대한 SLA를 할당 및 유지해야 하며, 이는 트래픽의 마이크로버스트 및 급증에 대한 것입니다.</block>
-  <block id="581ca7facb47e256cb2467b52ebc32ad" category="paragraph">대역폭이 낮으면 대기 지연 및 스위치에서 테일 드롭이 발생할 수 있습니다. ONTAP 9.7 이상을 사용하는 경우 두 사이트 간의 네트워크 중간은 MetroCluster 구성에 대해 최소 4.5Gbps의 대역폭을 제공해야 합니다.</block>
-  <block id="c0ce48bf5ebe05cb782d8edd4436f621" category="list-text">MetroCluster 트래픽은 전체 대역폭을 소비해서는 안 되며 MetroCluster 외 트래픽에 부정적인 영향을 미칩니다.</block>
-  <block id="e8d6e7fbaeb7ee39717e31140102b2f7" category="list-text">공유 네트워크에는 ISL의 사용률, 오류(손실, 링크 플랩, 손상 등) 및 장애를 모니터링하도록 구성된 네트워크 모니터링이 있어야 합니다.</block>
-  <block id="b4c0ed3196b7f0fc8d0177f2d4a47089" category="section-title">고객 스위치의 연결 제한 및 트렁킹</block>
   <block id="616cfd3e2d847183316a89a2940d8ba6" category="paragraph">고객이 제공한 중간 스위치는 다음 요구 사항을 충족해야 합니다.</block>
-  <block id="d4116be21d3fbe2654067267fd582693" category="list-text">중간 스위치 수는 제한되지 않으며 MetroCluster IP 스위치 간에 2개 이상의 스위치가 지원됩니다.</block>
-  <block id="25d74f2daccefbc881453b697d0166cf" category="paragraph">MetroCluster IP 스위치는 장거리 링크를 제공하는 중간 스위치에 최대한 가까이 위치해야 합니다. 경로를 따라 있는 모든 ISL 연결은 MetroCluster ISL의 모든 요구 사항을 충족해야 합니다.</block>
-  <block id="32955279f53f3e8b806605d25c94f1b0" category="list-text">고객 네트워크의 ISL(고객 스위치 간 ISL)은 충분한 대역폭이 제공되고 전송 순서가 유지되도록 구성해야 합니다.</block>
-  <block id="22d652e4993228d5b92712170fa6290f" category="paragraph">이 작업은 트렁킹에서 충분한 수의 링크를 사용하고 로드 밸런싱 정책을 적용하여 순서를 유지할 수 있습니다.</block>
-  <block id="b1111b151f189b85097d8f0496491fa1" category="section-title">기타 네트워크 요구 사항</block>
-  <block id="cfa9c666a1b648f7bb3bf57be1c65b91" category="list-text">고객 네트워크는 RCF 파일에 설정된 MetroCluster VLAN과 일치하는 사이트 간에 동일한 VLAN을 제공해야 합니다.</block>
   <block id="1b7cbc00704b6ef833ca0edf0071abef" category="paragraph">MetroCluster VLAN ID와 일치하는 ID가 있는 계층 2 VLAN은 공유 네트워크를 포괄해야 합니다.</block>
-  <block id="39cf9b2bcdacdfeb7b63d18129c991bf" category="list-text">ONTAP 9.7 및 이전 버전에서는 FAS2750 및 AFF A220 시스템에 VLAN 10 및 20이 필요합니다.</block>
-  <block id="6dd7ab791ca7dbeea96f6883017c405f" category="list-text">ONTAP 9.8 이상, FAS2750, AFF A220, FAS500f, AFF A250 FAS8300, AFF A400 및 FAS8700 시스템은 기본적으로 VLAN 10 및 20을 사용합니다. 인터페이스 생성 중에 다른 VLAN을 구성할 수 있으며 101-4096 범위를 유지해야 합니다. 앞서 언급한 모든 플랫폼의 경우 인터페이스를 생성하는 동안에만 VLAN을 지정할 수 있습니다. MetroCluster 인터페이스가 생성되면 VLAN ID를 변경할 수 없습니다. 앞서 언급하지 않은 다른 모든 플랫폼에서는 VLAN을 사용할 수 있으며 언제든지 해당 플랫폼의 VLAN ID를 변경할 수 있지만, 새로운 RCF 파일을 생성 및 적용해야 합니다.</block>
   <block id="d4d2baddcab9cd51d2fbec64f215447e" category="paragraph">RcfFileGenerator는 플랫폼에서 지원하지 않는 VLAN을 사용하여 RCF 파일을 생성할 수 없습니다.</block>
-  <block id="1ae258b0d1f5d352443737727b61370e" category="paragraph">RcfFileGenerator는 특정 VLAN ID의 사용을 제한할 수 있습니다(예: 향후 사용을 위해 제공된 경우). 일반적으로 예약된 VLAN은 최대 100개까지 가능합니다.</block>
-  <block id="44320ea25002137ed4c7ae17e4e2c3c4" category="list-text">종단 간 네트워크의 모든 장치에서 MTU 크기를 9216으로 설정해야 합니다.</block>
-  <block id="89135c2bf7d6ba269eae563b2b92f041" category="list-text">다른 트래픽은 서비스 클래스(COS) 5보다 높은 우선 순위로 구성할 수 없습니다.</block>
-  <block id="cddd34f6d4d277285aa4639fd92f80de" category="list-text">모든 종단 간 경로에 ECN(명시적 정체 알림)을 구성해야 합니다.</block>
-  <block id="7417b1510f8c5a301f6398d855561505" category="section-title">공유 ISL 사용 시 케이블 연결 요구 사항</block>
-  <block id="a9cb6e376a12c0c6b5deb0f0438259da" category="paragraph">MetroCluster IP 구성에서 공유 ISL을 사용하는 경우 사이트 A의 컨트롤러 포트에서 사이트 B의 컨트롤러 포트로 실행되는 엔드 투 엔드 MetroCluster ISL의 요구 사항을 알아야 합니다</block>
-  <block id="af1cf569a025dd01876e4b16b86cbc5e" category="admonition">을 따라야 합니다 <block ref="fa2050fe1fe203254b9a9c610c6240ba" category="inline-xref-macro-rx"></block>.</block>
-  <block id="a0195e692f2c0be63d231173e3a75422" category="section-title">공유 네트워크의 ISL 및 브레이크아웃 케이블 수</block>
-  <block id="b1ff9e42c9daa73ff3fe3b02d56090b0" category="paragraph">MetroCluster IP 스위치를 공유 네트워크에 연결하는 ISL의 수는 스위치 모델 및 포트 유형에 따라 달라집니다.</block>
   <block id="d16af7f5896d12cf0cd0ace2315785f4" category="cell">MetroCluster IP 스위치 모델</block>
   <block id="182aeb116dd563a6020ec9b2d5b6595e" category="cell">포트 유형입니다</block>
-  <block id="ad31a22d752d43c3309f6c3ed2021019" category="cell">ISL 수</block>
   <block id="87ac6ecba347afc9b3bfcf5a25512ddc" category="paragraph">Broadcom 지원 BES-53248 스위치</block>
   <block id="ac00d0051561ed303dd8e72e72447f4f" category="paragraph">네이티브 포트</block>
-  <block id="78de8fe46d62f85d57ba50aa182fbd0f" category="paragraph">10 또는 25Gbps 포트를 사용하는 ISL 4개</block>
   <block id="f606ada25615407b042f8f189d1b9fab" category="paragraph">Cisco 3132Q-V</block>
-  <block id="cd089c0b60ab24530eec57a25c3db128" category="paragraph">40Gbps 포트를 사용하는 ISL 6개</block>
   <block id="93f0d165366aa023f16e11d7c9adcd64" category="paragraph">브레이크아웃 케이블</block>
-  <block id="61b74a953ea1f4810d962b6c3c7d0d2e" category="paragraph">10-Gbps ISL 16개</block>
   <block id="c83195c9d5e5dd5960c0976c81d14ea5" category="paragraph">Cisco 3232C</block>
-  <block id="4c9949dbf0df72405925c5aa0a2567c4" category="paragraph">40 또는 100Gbps 포트를 사용하는 ISL 6개</block>
-  <block id="6968ac086701343ff37d9889e7c66a54" category="list-text">Cisco 스위치에서 브레이크아웃 케이블(하나의 물리적 포트가 4 x 10Gbps 포트로 사용됨)을 사용할 수 있습니다.</block>
-  <block id="f8fce322a8edd097d065fb99a37ff7d4" category="list-text">IP 스위치용 RCF 파일에는 기본 및 브레이크아웃 모드의 포트가 구성되어 있습니다.</block>
-  <block id="81d3c2b4ee2f461abdccb3d6cdce9095" category="paragraph">네이티브 포트 속도 모드와 브레이크아웃 모드의 ISL 포트 혼합은 지원되지 않습니다. MetroCluster IP 스위치에서 하나의 네트워크에 있는 중간 스위치까지의 모든 ISL은 속도와 길이가 같아야 합니다.</block>
-  <block id="dc42da7855100b1c361cd94167e5704b" category="list-text">외부 암호화 장치(예: WDM 장치를 통해 제공되는 외부 링크 암호화 또는 암호화)의 사용은 위 요구 사항 내에 라운드 트립 지연 시간이 유지되는 한 지원됩니다.</block>
-  <block id="faca76a5b29adc7d5fa5ff7f0d9b653c" category="paragraph">최적의 성능을 얻으려면 네트워크당 최소 1 x 40Gbps 또는 여러 10Gbps ISL을 사용해야 합니다. AFF A800 시스템에서 네트워크당 단일 10Gbps ISL을 사용하는 것은 권장하지 않습니다.</block>
-  <block id="452528f4539349b3f1c2d6c52b377435" category="paragraph">공유 ISL의 이론상 최대 처리량(예: 40Gbps ISL 6개를 포함하는 240Gbps)은 최상의 시나리오입니다. 여러 ISL을 사용할 경우 통계 로드 밸런싱이 최대 처리량에 영향을 줄 수 있습니다. 불균일한 밸런싱이 발생할 수 있으며 단일 ISL의 처리량을 줄일 수 있습니다.</block>
-  <block id="b64af5cd785842d6bf6cd01ead747f85" category="paragraph">구성에서 L2 VLAN을 사용하는 경우 기본적으로 사이트를 포괄해야 합니다. VXLAN(Virtual Extensible LAN)과 같은 VLAN 오버레이는 지원되지 않습니다.</block>
-  <block id="29df3d2a3fbed3e329eebdafb198548b" category="paragraph">MetroCluster 트래픽을 전달하는 ISL은 스위치 간의 네이티브 링크여야 합니다. MPLS(Multiprotocol Label Switching) 링크와 같은 링크 공유 서비스는 지원되지 않습니다.</block>
-  <block id="b3c298f9bcf8ef440bfc199365b29a8e" category="section-title">Broadcom BES-53248 스위치에서 WAN ISL 지원</block>
-  <block id="55c5dc89f1ac68c2bcb189c6aa17ee81" category="list-text">Fabric당 최소 WAN ISL 수: 1(10GbE, 25GbE, 40GbE 또는 100GbE)</block>
-  <block id="8bfedfb9f058f538424f53d5078319d0" category="list-text">Fabric당 최대 10GbE WAN ISL 수: 4</block>
-  <block id="c324e731d42e84dbec1e5b4c71d30110" category="list-text">Fabric당 최대 25GbE WAN ISL 수: 4</block>
-  <block id="2a6e6f4fa9d966c23c1cb254e6a5f0e1" category="list-text">Fabric당 최대 40-GbE WAN ISL 수: 2</block>
-  <block id="4c347bcd948e8c65dedccc01d292af64" category="list-text">Fabric당 최대 100GbE WAN ISL 수: 2</block>
-  <block id="fad747cfa36fbbfa745283703977fe09" category="paragraph">40GbE 또는 100-GbE WAN ISL은 RCF 파일 버전 1.40 이상이 필요합니다.</block>
-  <block id="0bb3bfbc599df59ab910863567e82b1f" category="admonition">추가 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
   <block id="f36114c708cdf027cb87470b60b2bf8d" category="summary">MetroCluster IP 구성을 계획할 때 필수 및 지원되는 하드웨어 및 소프트웨어 구성 요소를 이해해야 합니다. 또한 설명서 전체에서 구성 요소에 사용되는 명명 규칙을 예제로 이해해야 합니다.</block>
   <block id="2043deaa93c63e7bbf9d2bc975e360a9" category="section-title">지원되는 소프트웨어 및 하드웨어</block>
   <block id="fed8598d34d2dd09e02d810def0e98ef" category="paragraph">MetroCluster IP 구성을 위해서는 하드웨어 및 소프트웨어가 지원되어야 합니다.</block>
@@ -1574,26 +1454,10 @@
   <block id="ff63653e290a8e5b339966cb9855555f" category="summary">MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="882861c4cbc2720bbf7b9b7ae1dbada9" category="doc">MetroCluster 구성을 제거할 때의 고려 사항</block>
   <block id="598ab8da90f7b08fb85eebf2cdb5b642" category="doc">MetroCluster 규격 스위치를 사용할 때의 고려 사항</block>
-  <block id="0fd2020965353993ca7470eaf762f030" category="paragraph">이 요구사항은 참조 구성(RCF) 파일을 사용하지 않고 MetroCluster 호환 스위치를 구성하는 방법을 보여줍니다.</block>
-  <block id="73c8b60f13f3d62360643fda70255745" category="list-text">MetroCluster 노드에 연결된 스위치는 비 MetroCluster 트래픽을 전송할 수 있습니다.</block>
   <block id="c33e2f23b789dd4d078b0a5b51963f75" category="list-text">MetroCluster IP 인터페이스는 요구 사항을 충족하도록 구성할 수 있는 모든 스위치 포트에 연결할 수 있습니다.</block>
-  <block id="33205e28b19e76b7edcb7bc5cad77101" category="list-text">스위치 포트의 속도는 FAS8200 및 AFF A300 플랫폼의 경우 25Gbps이고, 다른 모든 플랫폼(40Gbps 또는 100Gbps)의 경우 최소 40Gbps여야 합니다.</block>
-  <block id="145dacb3237a86979e113708eea5ccbb" category="list-text">각 스위치 패브릭마다 2개씩 4개의 IP 스위치가 필요합니다.</block>
-  <block id="92f69bca586043acecbd273c5ea2d217" category="list-text">ISL은 10Gbps 이상이어야 하며 MetroCluster 구성의 로드에 맞게 크기를 조정해야 합니다.</block>
-  <block id="2d8f234d7714dedd101fd476b6581d02" category="list-text">네트워크는 다음 요구 사항을 충족해야 합니다.</block>
-  <block id="377c20999d3a2f2bf6430aba5269fa35" category="list-text"><block ref="377c20999d3a2f2bf6430aba5269fa35" category="inline-link-macro-rx"></block></block>
-  <block id="81469bbc8b1e22a393e56fdba3d5a1f3" category="list-text">MetroCluster 호환 스위치를 사용하는 MetroCluster IP 구성에서는 ONTAP 9.6 이하로 되돌릴 수 없습니다.</block>
-  <block id="e2cccfe2013ba1930aabf09a154e5ffe" category="list-text">MetroCluster IP 트래픽을 전달하는 모든 스위치에 대해 9216의 MTU를 구성해야 합니다.</block>
-  <block id="0d3b7c7f0d8918f762dea13c0abfd697" category="list-text">스위치는 QoS/트래픽 분류를 지원해야 합니다.</block>
   <block id="4ff5b50b72910d305ce187223bd1d86d" category="list-text">스위치는 ECN(명시적 정체 알림)을 지원해야 합니다.</block>
-  <block id="d1e15e63c1fd6cbe9ab03ae500fe90cc" category="list-text">스위치는 경로를 따라 순서를 보존하기 위해 L4 포트-VLAN 로드 밸런싱 정책을 지원해야 합니다.</block>
   <block id="d40f7578a0d14b583c64b9e1238ce357" category="list-text">스위치는 L2 흐름 제어(L2FC)를 지원해야 합니다.</block>
-  <block id="0cbb4d7d4f143fb521b8b3f87302bd06" category="list-text">노드를 스위치에 연결하는 케이블은 NetApp에서 구입해야 합니다. 우리가 제공하는 케이블은 스위치 공급업체에서 지원해야 합니다.</block>
   <block id="bd7d6c816fdd7d9da30ecc293b76db32" category="list-text">4노드 MetroCluster IP 구성을 새로 고칩니다</block>
-  <block id="419f3742e6de8e0ec4b22cce005e7630" category="cell">플랫폼</block>
-  <block id="4995a003b2b1032b64bcc8805dea3b99" category="cell">네트워크 속도(Gbps)</block>
-  <block id="f899139df5e1059396431415e770c6dd" category="paragraph">100</block>
-  <block id="35b8c775f2c2f1e3186a213d6b7931b3" category="paragraph">40 또는 100</block>
   <block id="56c7968a1d140906ab8313162854322d" category="paragraph">AFF A700</block>
   <block id="d645920e395fedad7bbbed0eca3fe2e0" category="paragraph">40</block>
   <block id="c78a423f3132ee2ac4f4f4c1fa5d4859" category="paragraph">AFF A300</block>
@@ -1601,35 +1465,6 @@
   <block id="336d5ebc5436534e61d16e63ddfca327" category="paragraph">-</block>
   <block id="ec5c696a4bc57321a5a79c91b886d5ff" category="paragraph">FAS9000</block>
   <block id="c37feb3492d999b3f216448183986be2" category="paragraph">FAS8200</block>
-  <block id="ce345fbefe9cca9ddd58d8e672f0f91e" category="section-title">예제를 위한 가정</block>
-  <block id="85d4a8f9f28aad1082eeb4a658c7d835" category="paragraph">제공된 예는 Cisco NX31xx 및 NX32xx 스위치에 유효합니다. 다른 스위치를 사용하는 경우 이러한 명령을 지침으로 사용할 수 있지만 명령이 다를 수 있습니다. 이 예에 표시된 기능을 스위치에서 사용할 수 없는 경우 이는 스위치가 최소 요구 사항을 충족하지 않으며 MetroCluster 구성을 배포하는 데 사용할 수 없음을 의미합니다. 이는 MetroCluster 구성을 연결하는 모든 스위치와 이러한 스위치 사이의 경로에 있는 모든 스위치에 대해 적용됩니다.</block>
-  <block id="1931721e4ef4af703b868f902825c2ef" category="list-text">ISL 포트는 15 및 16이며 40Gbps의 속도로 작동합니다.</block>
-  <block id="c111bb8c12e2f784f729520e744f565c" category="list-text">네트워크 1의 VLAN은 10이고 네트워크 2의 VLAN은 20입니다. 예는 하나의 네트워크에만 표시될 수 있습니다.</block>
-  <block id="8b61600dc20618a035e4d19c78a78b09" category="list-text">MetroCluster 인터페이스는 각 스위치의 포트 9에 연결되어 있으며 100Gbps의 속도로 작동합니다.</block>
-  <block id="0058cf79c1cc371a6eee83f772cee308" category="list-text">예제의 전체 컨텍스트가 설정되지 않았거나 표시되지 않습니다. 명령을 실행하려면 프로파일, VLAN 또는 인터페이스와 같은 추가 구성 정보를 입력해야 할 수도 있습니다.</block>
-  <block id="cc386b0adbc0859c1bbf9c56dbf7e711" category="section-title">일반 스위치 구성</block>
-  <block id="6c74eea0bd0204c5de756cb1cc1fca0e" category="paragraph">각 네트워크의 VLAN을 구성해야 합니다. 이 예에서는 네트워크 10에서 VLAN을 구성하는 방법을 보여 줍니다.</block>
-  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">예:</block>
-  <block id="eb746570e6ed0bb49e25cd189acf94bb" category="paragraph">순서가 유지되도록 로드 밸런싱 정책을 설정해야 합니다.</block>
-  <block id="ee5374c58f192971aa6985bd24d83a9e" category="paragraph">RDMA 및 iSCSI 트래픽을 적절한 클래스에 매핑하는 액세스 및 클래스 맵을 구성해야 합니다.</block>
-  <block id="1e3c8e05b670c33032815dc9f814a471" category="paragraph">포트 65200을 오가는 모든 TCP 트래픽은 스토리지(iSCSI) 클래스에 매핑됩니다. 포트 10006과 포트 1006의 모든 TCP 트래픽은 RDMA 클래스에 매핑됩니다.</block>
-  <block id="7232053d17d6d458acd3dc6a3b06e8ef" category="paragraph">수신 정책을 구성해야 합니다. 수신 정책은 트래픽을 서로 다른 COS 그룹으로 분류한 것으로 매핑합니다. 이 예에서 RDMA 트래픽은 COS 그룹 5에 매핑되고 iSCSI 트래픽은 COS 그룹 4에 매핑됩니다.</block>
-  <block id="8d099e100c2db650c7b3c9471d6c3021" category="paragraph">스위치에 대한 송신 정책을 구성해야 합니다. 송신 정책은 트래픽을 송신 큐로 매핑합니다. 이 예에서 RDMA 트래픽은 대기열 5에 매핑되고 iSCSI 트래픽은 대기열 4에 매핑됩니다.</block>
-  <block id="40188be7ae52fbad0eec10d341d64dca" category="section-title">ISL 구성</block>
-  <block id="139ee81500499fa6a20d90091e35aedf" category="paragraph">허용된 VLAN을 설정할 때 '트렁크' 모드 포트를 구성할 수 있습니다.</block>
-  <block id="7f46b9452d630356ab3904d38691b3f5" category="paragraph">두 개의 명령이 있습니다. 하나는 * set * 으로, 다른 하나는 * add * 로, 다른 하나는 기존의 허용된 VLAN 목록에 있습니다.</block>
-  <block id="01e38d1895fd26b959a83b5e7c474615" category="paragraph">예제에 표시된 대로 허용된 VLAN을 * 설정할 수 있습니다.</block>
-  <block id="a113ac43e845b37ed3c4d24db88ce41d" category="paragraph">예에 표시된 대로 허용된 목록에 VLAN을 * 추가할 수 있습니다.</block>
-  <block id="68c7fc319da1886292fc942cdde96eaa" category="paragraph">이 예에서 포트 채널 10은 VLAN 10에 대해 구성됩니다.</block>
-  <block id="5cb440886a621a8372b845ad70883325" category="paragraph">ISL 포트는 포트 채널의 일부로 구성되어야 하며 예에 표시된 대로 송신 큐를 할당해야 합니다.</block>
-  <block id="0e140510bf85c7aa8339935669d8b836" category="section-title">노드 포트 구성</block>
-  <block id="04b15a1dc82e7721a50071d0d546bffa" category="paragraph">노드 포트를 소규모 모드로 구성해야 할 수 있습니다. 이 예에서 포트 25 및 26은 4 x 25Gbps 브레이크아웃 모드로 구성됩니다.</block>
-  <block id="8a63315a2ffec2485df2f1442ae57ba9" category="paragraph">MetroCluster 인터페이스 포트 속도를 구성해야 할 수 있습니다. 이 예에서는 속도를 "자동"으로 구성하는 방법을 보여 줍니다.</block>
-  <block id="3a1d3c6085d08ba32283ec7dca7f4f8c" category="paragraph">다음 예에서는 40Gbps에서 속도를 수정하는 방법을 보여 줍니다.</block>
-  <block id="40d09af1b4eb1caa952d1cfeedc72c6b" category="paragraph">인터페이스를 구성해야 할 수 있습니다. 다음 예에서는 인터페이스 속도가 "auto"로 설정되어 있습니다.</block>
-  <block id="0b6fb4c3000783272b8778eb9804b9cc" category="paragraph">포트가 VLAN 10의 액세스 모드에 있고 MTU가 9216으로 설정되고 MetroCluster 수신 정책이 할당됩니다.</block>
-  <block id="7b87d868779f28cca35a9a8ba5f90614" category="paragraph">25Gbps 포트의 경우 예제에 표시된 대로 FEC 설정을 "off"로 설정해야 할 수 있습니다.</block>
-  <block id="333816f1143329ca2f87a87e778f7420" category="admonition">인터페이스를 구성한 후에는 항상 이 명령 * 을 실행해야 합니다. 명령이 작동하려면 트랜시버 모듈을 삽입해야 할 수 있습니다.</block>
   <block id="5b97f056c47eb55f7ac2ec585e184dd9" category="summary">RCF 파일을 올바르게 생성하려면 포트 테이블의 정보를 사용하는 방법을 이해해야 합니다.</block>
   <block id="673f5a3eeb8366a43231216d5889b9fc" category="doc">RcfFileGenerator 도구나 여러 MetroCluster 구성에서 포트 테이블 사용</block>
   <block id="6852fcac58b417258b30784060002d89" category="list-text">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 등)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 정보가 필요합니다.</block>
@@ -1773,25 +1608,14 @@
   <block id="f3a7480e0a79ed83429e832d5c0bcfa4" category="paragraph"><block ref="f3a7480e0a79ed83429e832d5c0bcfa4" category="inline-link-rx"></block></block>
   <block id="4f0b7bb576d3c8fa91bf3496e68c038e" category="list-text">미러링된 데이터의 작동 방식</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="summary">저작권</block>
-  <block id="01fe01722f1775c1b67e7b20a14951de" category="summary">ONTAP 9.9.1부터 MetroCluster IP 구성은 IP 라우팅(계층 3) 백엔드 연결로 구현할 수 있습니다.</block>
   <block id="4b7a16d6d162a666fd84016cdf343a72" category="paragraph">MetroCluster 백엔드 스위치는 라우팅된 IP 네트워크에 직접 연결됩니다(다음 간단한 예에 표시된 것처럼). 또는 다른 개입 스위치를 통해 연결됩니다.</block>
   <block id="39a69537fd3d24cb81ea2bc0e26adec5" category="image-alt">MCC layer3 백엔드</block>
   <block id="ef8a86bee8843988ee84e3ebf370fee9" category="inline-link-macro">IP 스위치 케이블 연결</block>
-  <block id="190cbd15f1cbbd86a76eac6847a93472" category="admonition">NetApp은 NetApp의 검증된 스위치만 지원합니다. 이러한 스위치는 NetApp에서 테스트 및 판매합니다. 이 목록은 에 나와 있습니다 <block ref="d4ffdef7e991262a330f44b113eb81ba" category="inline-link-macro-rx"></block> 및 IN <block ref="d708b823ca770dd1bbb2d28ee68bd021" category="inline-link-macro-rx"></block>.</block>
   <block id="fe77866a46d2eb6a7c2af4e6da3afb40" category="inline-link-macro">MetroCluster 하드웨어 구성 요소를 구성합니다</block>
-  <block id="50355476e9050b2a291f3aee1615aa53" category="list-text">MetroCluster 스위치는 라우터나 하나 이상의 중간 스위치에 직접 연결할 수 있습니다. VLAN은 게이트웨이 장치로 확장되어야 합니다.</block>
-  <block id="0e94eed6c84ca698067d35e27e2c2b56" category="list-text">'-gateway' 매개변수를 사용하여 IP 게이트웨이 주소로 MetroCluster IP(MCC-IP) 인터페이스 주소를 구성합니다.</block>
-  <block id="8f02ff97112ef08ffb62f88c80b6aab7" category="paragraph">라우터 및 게이트웨이 IP 주소를 구성할 때 다음 요구 사항이 충족되는지 확인합니다.</block>
-  <block id="254c2137e0390496acb79dd0bc699a37" category="list-text">각 노드에서 2개의 인터페이스는 동일한 게이트웨이 IP 주소를 가질 수 없습니다.</block>
   <block id="7529321ce137d7312b6e8ba5d13f21e9" category="list-text">각 사이트의 HA 쌍에 대한 해당 인터페이스의 게이트웨이 IP 주소가 동일해야 합니다.</block>
   <block id="c2fdaa32e3c40d58194e8a3db0bc7230" category="list-text">노드의 해당 인터페이스 및 DR 및 AUX 파트너는 동일한 게이트웨이 IP 주소를 가질 수 없습니다.</block>
   <block id="f9444a19576866e65f0aef4edcc3a6f3" category="list-text">노드 및 해당 DR 및 AUX 파트너의 해당 인터페이스는 동일한 VLAN ID를 가져야 합니다.</block>
-  <block id="0c0528f146b2a317df8f2dcc9f042cba" category="paragraph">MetroCluster 트래픽이 게이트웨이에 도달할 수 있도록 MetroCluster VLAN이 에지 MetroCluster 스위치에서 게이트웨이 라우터로 확장되어야 합니다(위 다이어그램 참조). MetroCluster VLAN의 VLAN ID는 각 사이트에서 동일해야 합니다. 그러나 서브넷은 다를 수 있습니다.</block>
-  <block id="fbe952f2d6d84cc85d1e1f8f557ede0e" category="paragraph">RcfFileGenerator 도구로 만든 RCF 파일을 사용합니다. MetroCluster 노드와 게이트웨이 라우터 사이의 네트워크는 RCF 파일에 설정된 것과 동일한 VLAN ID를 제공해야 합니다.</block>
-  <block id="b9190193c292a0ff200a479f4f92d534" category="section-title">IP 라우팅 네트워크 요구 사항</block>
-  <block id="c6c1faa8edb04466748eaa20b9f1af27" category="paragraph">IP 라우팅 네트워크는 다음 요구 사항을 충족해야 합니다.</block>
   <block id="33fea8e13b43fdb7df3cb24e51cc42c4" category="list-text">MetroCluster 트래픽에는 동적 라우팅이 지원되지 않습니다.</block>
-  <block id="b6a9903c2ef511ee44c51b65db292bf6" category="list-text">4노드 MetroCluster 구성만 지원됩니다(각 사이트에 2개 노드).</block>
   <block id="b793654a30cf8567ed25af895400affb" category="list-text">각 MetroCluster 사이트에는 각 네트워크에 하나씩 두 개의 서브넷이 필요합니다.</block>
   <block id="4ef3b220e04ca274abbe1def1b61d2bc" category="list-text">자동 IP 할당이 지원되지 않습니다.</block>
   <block id="fd58981b5f874672e01e04edf91b9262" category="summary">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결에 사용할 Broadcom IP 스위치를 구성해야 합니다.</block>
@@ -11219,10 +11043,6 @@
   <block id="10fb6eda16d44576f048cbbd98a21f49" category="sidebar">MetroCluster 설치를 준비합니다</block>
   <block id="06800b31fe5394b22e1a11163137b326" category="sidebar">ONTAP 중재자와 MetroCluster Tiebreaker 간의 결정</block>
   <block id="4ae1141d3ba10797d5f82641406d5702" category="sidebar">ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템</block>
-  <block id="bef67646bfedc1b249d97a64ef323bcc" category="sidebar">계층 3 광역 네트워크를 사용하는 방법</block>
-  <block id="876c5ee843ae5fc2720d374b7e063de5" category="sidebar">개인 계층 2 네트워크를 공유합니다</block>
-  <block id="a0950456b6fe5bfbedbee43b6a7dc213" category="sidebar">MetroCluster 호환 스위치 사용 방법</block>
-  <block id="257dd382287d5979745c22ca0c1ac204" category="sidebar">MetroCluster IP 구성에서 TDM/xWDM 및 암호화 장비를 사용하는 방법</block>
   <block id="d3afb6862c8b819caa7f03082d2af919" category="sidebar">MetroCluster IP 구성의 미러링되지 않은 애그리게이트</block>
   <block id="b8e55c88d2ead2425b022ce67ac4bb75" category="sidebar">하드웨어 구성 요소를 랙에 장착하십시오</block>
   <block id="5a4d16a157dad9438b527caaa9b4b2ab" category="sidebar">MetroCluster IP 스위치에 케이블을 연결합니다</block>
@@ -11447,9 +11267,6 @@
   <block id="0e0fb7c8f8c90679b6de81eb83cc9c05" category="paragraph">ONTAP 9.7부터 MetroCluster 볼륨은 FlexCache 구성에서 지원됩니다. 스위치오버 또는 스위치백 작업 후 수동 재시행을 위한 요구 사항을 숙지해야 합니다.</block>
   <block id="324411cbb41cb55bc8c2f637443ed820" category="paragraph">ONTAP 9.6 MetroCluster 구성부터 FlexGroup 볼륨을 지원합니다.</block>
   <block id="595a0070423d641189b233c03827a69e" category="paragraph">ONTAP 9.5부터 MetroCluster 구성의 활성 SVM(스토리지 가상 시스템)을 SnapMirror SVM 재해 복구 기능에서 소스로 사용할 수 있습니다. 대상 SVM은 MetroCluster 구성 외부의 세 번째 클러스터에 있어야 합니다.</block>
-  <block id="8f40f02b2069b8947b976e569e5762e5" category="summary">ONTAP 9.6부터 지원되는 Cisco 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL을 위한 기존 네트워크를 공유할 수 있습니다.</block>
-  <block id="137fb6b7668b4dc771dba830f9525b67" category="paragraph">ONTAP 9.6부터 지원되는 Cisco 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL을 위한 기존 네트워크를 공유할 수 있습니다. 이전 ONTAP 버전에는 전용 ISL이 필요합니다.</block>
-  <block id="a7730eb29505c2a902b8c2ef5fabb951" category="paragraph">ONTAP 9.6부터는 일부 공유 ISL 네트워크 구성이 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="22ad9a689b8447af0ecfb5eb5b5495b3" category="list-text">ONTAP 중재자 서비스를 ONTAP에 추가합니다.</block>
   <block id="f0ff1470e66c8950946e7e3e5058f8a8" category="paragraph"><block ref="f0ff1470e66c8950946e7e3e5058f8a8" category="inline-link-rx"></block></block>
   <block id="f52969ece4bf2f4994203a22fa76dc44" category="paragraph"><block ref="f52969ece4bf2f4994203a22fa76dc44" category="inline-link-rx"></block></block>
@@ -11804,7 +11621,6 @@
   <block id="b04e99a0adbd90ade4803bbd436b76af" category="list-text">절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://&lt;web_server_ip/path_to_web-accessible_directory&gt;/&lt;ontap_version&gt;\_image.tgz` 를 입력합니다</block>
   <block id="dbfa5994b398cd0fb3a814715f0dc252" category="list-text">부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 \ *&gt;가 나타날 때까지 프롬프트에 "yes"를 선택합니다.</block>
   <block id="76c06c220bafe4dc7e175b4584717344" category="paragraph"><block ref="76c06c220bafe4dc7e175b4584717344" category="inline-link-macro-rx"></block></block>
-  <block id="b16f070ef0ff70f134e9de232ff4d07d" category="paragraph">MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 <block ref="1f208108354e7662d904d86579319d48" category="inline-link-macro-rx"></block>. 설치 및 케이블 연결 절차를 수행할 때는 계층 3 구성에 해당하는 단계를 수행해야 합니다.</block>
   <block id="2445f74267948c10619896a5e47cd3d6" category="paragraph">의 단계를 수행합니다 <block ref="0e3caa859006182753aee07c6f57c3cf" category="inline-link-macro-rx"></block>.</block>
   <block id="b0f85a0199d1b83b2b8a32a5f34bdd8d" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="4da30401760153ceb5481ac559dbe601" category="inline-link-macro-rx"></block>.</block>
   <block id="f44903a02a813582e3877d0c017bdfcb" category="paragraph"><block ref="f44903a02a813582e3877d0c017bdfcb" category="inline-link-macro-rx"></block></block>
@@ -12136,19 +11952,8 @@
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">예</block>
   <block id="6870468a3fe6a4b5c829d30e0702c5fd" category="paragraph">이는 업그레이드 프로세스 중 컨트롤러 불일치로 인한 것으로 예상되며 오류 메시지는 무시해도 됩니다.</block>
   <block id="237972ceb7096a96a9dafc4e43911024" category="section-title">MetroCluster 호환 스위치를 위한 플랫폼 특정 네트워크 속도 및 스위치 포트 모드</block>
-  <block id="1134e76c47457f3441325208e777cc69" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도와 스위치 포트 모드가 나와 있습니다. 표에 설명된 대로 스위치 포트 모드를 구성해야 합니다.</block>
-  <block id="0ec1914fce58a6a4d1748f3ace018fa1" category="cell">포트 모드를 전환합니다</block>
-  <block id="cfd4780e5a733c1327748c9a30e9d03c" category="paragraph">트렁크 모드</block>
-  <block id="2c74da2e4beb4c522085a84540793b5e" category="paragraph">액세스 모드</block>
   <block id="939d3efe7d4070c6c8be39404639b5db" category="paragraph">Cisco 9336C-FX2(NS224 쉘프 연결 안 됨)</block>
-  <block id="d183fa3896220b7f678ea0b9376a4b8b" category="paragraph">40 또는 100Gbps를 사용하는 ISL 6개</block>
-  <block id="874eb49ff41ba3748fa2b06563329fb2" category="paragraph">10Gbps 사용 ISL 16개</block>
   <block id="b94f047c1e1eaf1f0b0b1b5ef5819d6b" category="paragraph">Cisco 9336C-FX2(NS224 쉘프 연결)</block>
-  <block id="74cb45c8e8b33478150237cb0755c4ca" category="paragraph">네이티브 포트(2개)</block>
-  <block id="32dd9953382a7753a2f980620effb409" category="paragraph">40 또는 100Gbps를 사용하는 ISL 4개</block>
-  <block id="eb4cfd99b709d0b0ddc435f063be95cf" category="paragraph">브레이크아웃 케이블(2개)</block>
-  <block id="e5df3565fbad5a4849fc6fb6ec79e8d1" category="list-text">BES-53248 스위치에서 40 또는 100Gbps ISL 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
-  <block id="394d86b50aa384c22c3eeb7d90023e15" category="list-text">Cisco 9336C-FX2(NS224 셸프 연결)용 RCF 파일을 생성할 때 ISL을 기본 * 또는 * 브레이크아웃 모드로 구성해야 합니다.</block>
   <block id="731380609e4acd613ed054b92fc261e6" category="list-text">'show FIPS status' 명령을 사용하여 사용자의 EFOS 버전이 FIPS 호환 버전인지 또는 비 FIPS 호환 버전인지 확인합니다. 다음 예에서는 IP_SWITCH_A_1이 FIPS 호환 EFOS를 사용하고 있으며 IP_SWITCH_A_2는 FIPS 비호환 EFOS를 사용하고 있습니다.</block>
   <block id="0b9982c26f9b690896e158b901c7001c" category="paragraph">* 예 1 *</block>
   <block id="66fcc909c7d6b29950f9da753e168312" category="paragraph">* 예 2 *</block>
@@ -12303,7 +12108,6 @@
   <block id="cfe5a553856e4e9131ebeda8844ee3c2" category="list-text">옵션 9a를 선택하고 응답합니다<block ref="7fa3b767c460b54a2be4d49030b349c7" prefix=" " category="inline-code"></block> 메시지가 표시되면</block>
   <block id="bc3cbfae3cfe082620539cbe61e53bb4" category="list-text">두 노드의 부팅 메뉴에서 옵션 * 4 * 를 선택하고 시스템을 부팅합니다.</block>
   <block id="5bb182767225fa9e1ca2133f4aa4f1df" category="inline-link-macro">Hardware Universe를 참조하십시오.</block>
-  <block id="e04f67144663da34a17311a720ccf0a1" category="list-text">라운드 트립 지연 시간 및 구성에 대한 최대 거리 요구 사항에 대한 자세한 내용은 을 참조하십시오 <block ref="44be38b301d3bfae89cdec57afffd9be" category="inline-link-macro-rx"></block></block>
   <block id="5dae04759c79459bcbe855ce6759cc39" category="list-text">ADP에 대해 구성된 시스템을 사용하는 경우 옵션을 선택합니다<block ref="3de20f8f6d054d551e879fef0f0fc83c" prefix=" " category="inline-code"></block> 를 눌러 부팅 메뉴에서 를 선택합니다<block ref="7fa3b767c460b54a2be4d49030b349c7" prefix=" " category="inline-code"></block> 메시지가 표시되면</block>
   <block id="0bab44e07fec8808eebb4c9baedcc312" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 또는 Switch_A_1 및 Switch_B_1 스위치를 업데이트한 후 Switch_A_2 및 Switch_B_2 스위치를 업데이트할 수 있습니다.</block>
   <block id="70743d1dc2a6fb8238c19b7d315abc9f" category="admonition">VRF(Virtual Routing and Forwarding)를 지정하라는 메시지가 표시됩니다.</block>
@@ -12329,27 +12133,14 @@
   <block id="c1902fd1f00ac0b0e269fd37dd64f7e8" category="section-title">사이트 A nbsp;AutoSupport 정보</block>
   <block id="a321560b2ae4d0c708a5027ac5562270" category="section-title">사이트 B nbsp;AutoSupport 정보</block>
   <block id="87713443a9395f659a438c305d6fa70d" category="section-title">사이트 B nbsp;SP 정보</block>
-  <block id="a43f4b9d18f498b517f7dd9eede1654d" category="inline-link-macro">NetApp Hardware Universe를 참조하십시오</block>
-  <block id="d5b877d116ca4502862349e4a1fea007" category="summary">에서 지원되는 스위치로 나열된 MetroCluster IP 스위치입니다 <block ref="81064abf44a077ab44fc1d50feb7e8e0" category="inline-link-macro-rx"></block> NetApp은 NetApp의 검증을 거쳤습니다. ONTAP 9.7부터 MetroCluster IP 구성을 사용하면 MetroCluster 호환 스위치를 사용할 수 있습니다. 이러한 스위치는 NetApp의 검증을 받지 않지만 NetApp 사양을 준수합니다. 그러나 NetApp은 검증되지 않은 스위치에 대한 지원 서비스, 문제 해결 및/또는 구성을 제공하지 않습니다.</block>
   <block id="4275c1aa69fa12af30bea79f33b6ab8b" category="section-title">NetApp의 검증된 스위치</block>
-  <block id="1891f9d47aa8c3949d63aba63cfd538e" category="paragraph">스위치는 다음과 같은 조건을 모두 충족하는 경우에 NetApp의 검증을 거쳤습니다.</block>
   <block id="cf8d2c69254b785016eeecea385f1512" category="list-text">이 스위치는 MetroCluster IP 구성의 일부로 NetApp에서 제공합니다</block>
-  <block id="57bc5d4a7e0c60e62b42b542a38a19d8" category="list-text">스위치는 에 나열되어 있습니다 <block ref="81064abf44a077ab44fc1d50feb7e8e0" category="inline-link-macro-rx"></block> "MetroCluster-over-IP-connections"에서 지원되는 스위치</block>
   <block id="44f5b263d419c190d99a3b681f245dad" category="list-text">이 스위치는 MetroCluster IP 컨트롤러 및 일부 구성에서는 NS224 드라이브 쉘프에만 사용됩니다</block>
-  <block id="643a5bb556beb7d67fd22c0d3de4c759" category="list-text">이 스위치는 NetApp에서 제공하는 RCF(Reference Configuration File)를 사용하여 구성됩니다.</block>
-  <block id="579d6ce20a4bdaad6dff3e52bc4e42ba" category="paragraph">이러한 기준을 충족하지 않는 스위치는 NetApp 검증 스위치가 * 아닙니다 *.</block>
   <block id="92bf95b2bb1fdf762ca6c2507b432332" category="section-title">MetroCluster 규정 준수 스위치</block>
-  <block id="fb0fc5c459c3f4029ec7b03dd85a909a" category="paragraph">MetroCluster 규정 준수 스위치는 NetApp의 검증을 받지 않지만, 아래 요구사항 및 구성 지침을 충족하는 경우 MetroCluster IP 구성에서 사용할 수 있습니다.</block>
-  <block id="f2153c30c0089338d3848e4eaa64fc3e" category="admonition">NetApp은 검증되지 않은 MetroCluster 호환 스위치에 대한 지원 서비스, 문제 해결 및/또는 구성을 제공하지 않습니다.</block>
   <block id="2e3b6cbd29fbe534f65b62b67e974e1a" category="section-title">MetroCluster 호환 스위치에 대한 일반 요구사항</block>
   <block id="e167cf704969390451b66b4604d89501" category="list-text">스위치가 없는 클러스터 인터커넥트를 위한 전용 포트를 제공하는 플랫폼만 MetroCluster 호환 스위치와 함께 사용할 수 있습니다. MetroCluster 트래픽 및 MetroCluster 인터커넥트 트래픽이 동일한 네트워크 포트를 공유하기 때문에 FAS2750 및 AFF A220과 같은 플랫폼을 사용할 수 없습니다.</block>
   <block id="832bfdec136453c59e06674dc5b1fbfc" category="paragraph">로컬 클러스터 연결에 MetroCluster 호환 스위치를 사용해서는 안 됩니다.</block>
-  <block id="cef3763dc37c86b326ba9f36674ba2b4" category="list-text">MetroCluster 구성은 두 네트워크에 연결되어야 합니다. MetroCluster 인터페이스는 동일한 네트워크 또는 스위치에 연결할 수 없습니다. 각 MetroCluster 노드는 2개의 네트워크 스위치에 연결되어야 합니다.</block>
-  <block id="320aeba3423b75436241c00392964782" category="section-title">MetroCluster 규격 스위치를 위한 스위치 및 케이블 연결 요구사항</block>
-  <block id="00da554e6014936ea814019f7270b104" category="section-title">MetroCluster 준수 스위치에 대한 제한 사항</block>
-  <block id="68d8047cbf72a612dd739f574baa912c" category="paragraph">로컬 클러스터 연결이 스위치에 연결되어야 하는 구성 또는 기능은 사용할 수 없습니다. 예를 들어, MetroCluster 호환 스위치에는 다음 구성 및 절차를 사용할 수 없습니다.</block>
   <block id="999a0234ad26235f40e860b0131203f6" category="admonition">값이 누락되면 플랫폼을 MetroCluster 호환 스위치와 함께 사용할 수 없음을 나타냅니다.</block>
-  <block id="e6e94fa732001e55f7fcf67c01c5f249" category="paragraph">ISL에서 MetroCluster 트래픽이 있지만 MetroCluster 인터페이스에 연결되지 않는 스위치를 구성해야 할 수 있습니다. 이 경우 트래픽은 이미 분류되어 있으며 적절한 대기열에만 매핑되어야 합니다. 다음 예에서는 모든 COS5 트래픽이 클래스 RDMA에 매핑되고 모든 COS4 트래픽이 클래스 iSCSI에 매핑됩니다. 이는 MetroCluster 트래픽뿐만 아니라 COS5 및 COS4 트래픽의 * 모든 * 에 영향을 미칩니다. MetroCluster 트래픽만 매핑하려면 위의 클래스 맵을 사용하여 액세스 그룹을 사용하여 트래픽을 식별해야 합니다.</block>
   <block id="421c8863e1f7223f216aacf99393b7dd" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="60ddbd1babdd945c26fbc431202fea6c" category="inline-link-macro">Hardware Universe</block>
   <block id="6e2ee39d0f9ccdad593782674a048e67" category="inline-link-macro">절차 링크</block>
@@ -12900,7 +12691,6 @@
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
   <block id="0e5e2d82a1039e41c19d2248f3b64787" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다.</block>
   <block id="6212a1ad66c5ad9d3c50380aa91aab6a" category="list-text">하드웨어 오류가 없습니다</block>
-  <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="paragraph">AFF A150</block>
   <block id="36cbaf4511461b23b06f56ad7754e17d" category="paragraph">이 절차는 ONTAP 9.13.1 이상을 실행하는 시스템에서 다음 컨트롤러 업그레이드를 지원합니다.</block>
   <block id="cfdade9e474e805958704ec0836f18ac" category="cell">교체 컨트롤러</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
@@ -13435,4 +13225,279 @@
   <block id="09e34111ef8649a5302b1889e0c7d303" category="list-text">JRE 8</block>
   <block id="d434765df1b814e459b22676bed43318" category="paragraph">1.21배입니다</block>
   <block id="b3c0f57dcdb05faa9fbc38832a492a4e" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지는 일반적으로 예상되지 않습니다. 그러나 SSH를 사용하여 로그인한 경우 다음 오류가 발생할 수 있습니다.<block ref="f6ffe33fb36eb714adf6f81147c665f6" prefix=" " category="inline-code"></block></block>
+  <block id="c15b62e6a5ff15a0315735efe0205145" category="doc">MetroCluster IP 구성에서 주소, 넷마스크 및 게이트웨이를 수정합니다</block>
+  <block id="907d0a00eecf52dcc4562775faad470a" category="paragraph">ONTAP 9.10.1.1부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
+  <block id="5e1f7c325aa2c4eb9ee527a8279eb798" category="list-text">[[3단계]] 모든 연결이 작동하는지 확인합니다.</block>
+  <block id="cf07fc29a0bf48b43804bd5e97849449" category="summary">MetroCluster 호환 스위치를 사용하는 경우 플랫폼별 네트워크 속도 및 스위치 포트 모드 요구 사항을 알고 있어야 합니다.</block>
+  <block id="b6c12395a961cf95058c6e4d4412ac09" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다. 표에 따라 스위치 포트 모드를 구성해야 합니다.</block>
+  <block id="f2ac555a8b496557dba2555170124225" category="image-alt">MCC 호환 스위치 네트워크 속도</block>
+  <block id="8c425f952493015588fb91113b5b2dd8" category="summary">이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에 대한 요구 사항을 다룹니다.</block>
+  <block id="422a6c8c8d23cb29ed822adac0da8cd9" category="paragraph">모든 MetroCluster IP 구성과 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에는 특정 요구 사항이 있습니다. 이러한 요구 사항은 고객 스위치 간에 ISL이 직접 또는 공유되는지 여부에 관계없이 MetroCluster 트래픽을 전달하는 모든 ISL에 적용됩니다.</block>
+  <block id="78464639db6e6acf657d9d576a0f2888" category="section-title">일반 MetroCluster ISL 요구사항</block>
+  <block id="a5c426f5b72cbfd96a6dec4a6e3046d2" category="paragraph">다음은 모든 MetroCluster IP 구성의 ISL에 적용됩니다.</block>
+  <block id="f2fe3be43c081827bf52c1013416d414" category="list-text">두 Fabric의 ISL 수는 동일해야 합니다.</block>
+  <block id="baf55d93093b54950152b6be3f9bfec2" category="list-text">하나의 Fabric에 있는 ISL은 모두 속도와 길이가 같아야 합니다.</block>
+  <block id="4b00dc01ca120693f1539bf736f11069" category="list-text">두 패브릭의 ISL은 속도와 길이가 같아야 합니다.</block>
+  <block id="ef6ab3e28db1093c7315b30edeb84730" category="list-text">패브릭 1과 패브릭 2 간의 최대 지원 거리 차이는 20km 또는 0.2ms입니다.</block>
+  <block id="1b6ceb9b8db71407a3be0617e754101e" category="list-text">한 Fabric의 ISL은 동일한 토폴로지를 가져야 합니다. 예를 들어, 모두 직접 링크여야 하거나 구성에서 WDM을 사용하는 경우 모두 WDM을 사용해야 합니다.</block>
+  <block id="ddf41f2636c98d00a2698837f55a3f74" category="list-text">ISL 속도는 10Gbps 이상이어야 합니다.</block>
+  <block id="cb806a9b25dfb1d4470413a3c2dd9944" category="list-text">Fabric당 10Gbps ISL 포트가 하나 이상 있어야 합니다.</block>
+  <block id="25b13aa97e6e9eb228478bfddbcc84e9" category="paragraph">다음은 site_A와 site_B에서 MetroCluster IP 스위치 간의 왕복 트래픽에 적용되며, MetroCluster 구성이 정상 작동 중입니다.</block>
+  <block id="ae36a5fd21eb894eb914590a632f59c9" category="list-text">두 MetroCluster 사이트 간의 거리가 증가하면 지연 시간이 증가하며, 일반적으로 100km(62마일)당 1ms의 왕복 지연 시간이 증가합니다. 지연 시간은 또한 ISL 링크의 대역폭, 패킷 드롭 속도 및 네트워크의 지터 측면에서 네트워크 SLA(Service Level Agreement)에 따라 달라집니다. 낮은 대역폭, 높은 지터 및 임의 패킷 손실은 성공적인 패킷 전달을 위해 스위치에 의한 다른 복구 메커니즘 또는 컨트롤러 모듈의 TCP 엔진으로 이어집니다. 이러한 복구 메커니즘은 전반적인 대기 시간을 늘릴 수 있습니다. 라운드 트립 지연 시간 및 구성에 대한 최대 거리 요구 사항에 대한 자세한 내용은 을 참조하십시오 <block ref="44be38b301d3bfae89cdec57afffd9be" category="inline-link-macro-rx"></block></block>
+  <block id="827d473df1489ff96dfc62d8af802566" category="list-text">를 클릭합니다 <block ref="44be38b301d3bfae89cdec57afffd9be" category="inline-link-macro-rx"></block> 거리(km)를 제공합니다 100km당 1ms를 할당해야 합니다. 최대 거리는 가장 먼저 도달한 거리, 최대 왕복 시간(RTT)(ms) 또는 거리(km)에 의해 정의됩니다 예를 들어, _The Hardware Universe_가 300km의 거리를 나열하고 3ms로 변환하면 ISL은 300km를 넘을 수 없으며 최대 RTT는 3ms(둘 중 먼저 도달하는 시간)를 초과할 수 없습니다.</block>
+  <block id="22380478e64b8062eb70d91ccdd67ce7" category="list-text">패킷 손실은 0.01% 이하여야 합니다. 최대 패킷 손실은 MetroCluster 노드 사이의 경로에 있는 모든 링크의 모든 손실과 로컬 MetroCluster IP 인터페이스의 손실을 합한 것입니다.</block>
+  <block id="0b2575167b6e71da84f0682066aa5c0d" category="list-text">지원되는 지터 값은 왕복 3ms(단방향: 1.5ms)입니다.</block>
+  <block id="b1bbb8c0e7431a301e05959762cb6be0" category="list-text">네트워크는 트래픽의 마이크로버스트와 급증에 관계없이 MetroCluster 트래픽에 필요한 SLA 대역폭을 할당하고 유지해야 합니다.</block>
+  <block id="db5dfb006abd3b92e48ae138fe185ffb" category="list-text">ONTAP 9.7 이상을 사용하는 경우 두 사이트 간의 중간 네트워크는 MetroCluster IP 구성을 위해 최소 4.5Gbps의 대역폭을 제공해야 합니다.</block>
+  <block id="8feeeb8c24b7a524af9a025841262932" category="section-title">트랜시버 및 케이블 고려 사항</block>
+  <block id="667735c31f9e3d4e69adccaa68e87206" category="paragraph">장비 공급업체가 지원하는 모든 SFP 또는 QSFP는 MetroCluster ISL에 대해 지원됩니다. NetApp 또는 장비 공급업체에서 제공하는 SFP 및 QSFP는 스위치 및 스위치 펌웨어에서 지원해야 합니다.</block>
+  <block id="887966b0ad45d1598b4a9517835a9477" category="paragraph">컨트롤러를 스위치 및 로컬 클러스터 ISL에 연결할 때는 NetApp에서 제공하는 트랜시버 및 케이블을 MetroCluster와 함께 사용해야 합니다.</block>
+  <block id="e85cb21e89ca9d04ba904100f2ca54dd" category="section-title">xWDM, TDM 및 외부 암호화 장치 사용</block>
+  <block id="b93bd17cefcbedfcddd97a878fe619ca" category="paragraph">MetroCluster IP 구성에서 xWDM/TDM 장치 또는 암호화를 제공하는 장치를 사용하는 경우 사용자 환경은 다음 요구 사항을 충족해야 합니다.</block>
+  <block id="5ccca3c124f21ccc9309774d650ff25a" category="list-text">MetroCluster IP 스위치를 xWDM/TDM에 연결할 때 외부 암호화 장치 또는 xWDM/TDM 장비는 해당 스위치 및 펌웨어에 대한 공급업체의 인증을 받아야 합니다. 인증서는 작동 모드(트렁킹 및 암호화 등)를 포괄해야 합니다.</block>
+  <block id="d649419649cb678c33d0b903d521e77d" category="list-text">암호화를 포함한 전반적인 엔드 투 엔드 지연 시간 및 지터는 IMT 및 이 설명서에 명시된 최대 크기보다 클 수 없습니다.</block>
+  <block id="2d4984b69db60670a112b74742b0e904" category="section-title">지원되는 ISL 및 브레이크아웃 케이블 수</block>
+  <block id="fb107bb292185991f92a0e25ae8d6a7d" category="paragraph">다음 표에서는 RCF(Reference Configuration File) 구성을 사용하여 MetroCluster IP 스위치에서 구성할 수 있는 지원되는 최대 ISL 수를 보여 줍니다.</block>
+  <block id="44f1305d14d557252a2dc140a921830d" category="cell">최대 ISL 수입니다</block>
+  <block id="a3a59d60bdb611e1b4c58bf4c4cf7723" category="paragraph">10Gbps 또는 25Gbps를 사용하는 4 ISL</block>
+  <block id="05f775ee7e2e9c0191349d27678ee92a" category="paragraph">기본 포트(참고 1)</block>
+  <block id="7fc50d7658ce6e69450367a1566d2160" category="paragraph">40Gbps 또는 100Gbps를 사용하는 2 ISL</block>
+  <block id="d92546772d08abd00db8e99ff54c7ecb" category="paragraph">40Gbps를 사용하는 ISL 6개</block>
+  <block id="0274c7930fb2689bb0d5d7900b24b372" category="paragraph">10Gbps를 사용하는 16개의 ISL</block>
+  <block id="cdd7ce1b4fb53a24815dfe597e2d9bf4" category="paragraph">40Gbps 또는 100Gbps를 사용하는 6 ISL</block>
+  <block id="5f464862c3ad92817ffd0d939008e569" category="paragraph">10을 사용하는 16개의 ISL</block>
+  <block id="a47530745311f9d2efa307163eb1ee61" category="paragraph">기본 포트(참고 2)</block>
+  <block id="a86749ca3f0eb199f6cde6d8cc60d442" category="paragraph">40Gbps 또는 100Gbps를 사용하는 4 ISL</block>
+  <block id="83462a2f17a5fa1e38b557632ec6d366" category="paragraph">브레이크아웃 케이블(참고 2)</block>
+  <block id="94f92369bb57ec3cd50af356ac87615d" category="paragraph">nVidia SN2100</block>
+  <block id="e742bd9fac434ad11cb2ad1f6bf81c22" category="paragraph">10Gbps 또는 25Gbps를 사용하는 8 ISL</block>
+  <block id="57806988ce5a738c0e2a24b77927841a" category="paragraph">*참고 1*: BES-53248 스위치에서 40Gbps 또는 100Gbps ISL을 사용하려면 추가 라이센스가 필요합니다.</block>
+  <block id="e2470e32c0e86c6c4a72a4740defccf2" category="paragraph">* 참고 2 * : 기본 속도 및 브레이크아웃 모드에 동일한 포트가 사용됩니다. RCF 파일을 만들 때 기본 속도 모드 또는 브레이크아웃 모드에서 포트를 사용하도록 선택해야 합니다.</block>
+  <block id="210ce8af438dddcd62166408fac706c7" category="list-text">하나의 MetroCluster IP 스위치에 있는 모든 ISL은 동일한 속도여야 합니다. 속도가 다른 ISL 포트를 동시에 사용하는 것은 지원되지 않습니다.</block>
+  <block id="0c1686d7a527ea2db8a72392a860f59c" category="list-text">최적의 성능을 얻으려면 네트워크당 최소 1개의 40Gbps ISL을 사용해야 합니다. FAS9000, AFF A700 또는 기타 대용량 플랫폼에 네트워크당 단일 10Gbps ISL을 사용하면 안 됩니다.</block>
+  <block id="932fb139d393444f022abae844a0f930" category="admonition">NetApp에서는 낮은 대역폭 ISL의 수가 많은 것보다 적은 수의 높은 대역폭 ISL을 구성하는 것이 좋습니다. 예를 들어 4개의 10Gbps ISL 대신 1개의 40Gbps ISL을 구성하는 것이 좋습니다. 여러 ISL을 사용할 경우 통계 로드 밸런싱이 최대 처리량에 영향을 줄 수 있습니다. 불균일한 밸런싱은 단일 ISL의 처리량을 감소시킬 수 있습니다.</block>
+  <block id="38c2425cd3eb3add7b70e3f33eb88ddb" category="summary">이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요구 사항을 충족하는지 확인하는 데 필요한 정보를 제공합니다.</block>
+  <block id="b3afb8520c6389b800eb9ce2c45ab2ba" category="doc">NetApp의 검증된 MetroCluster 호환 스위치</block>
+  <block id="e28e9835ecaf16f4bdf25d7e6e04c512" category="paragraph">백엔드 스위치를 포함하여 구성에 사용되는 모든 스위치는 NetApp에서 검증하거나 MetroCluster 규정을 준수해야 합니다.</block>
+  <block id="d5d85142dbdda4a696e7722b3c96dc4a" category="paragraph">스위치는 다음 요구사항을 충족할 경우 NetApp에서 검증했습니다.</block>
+  <block id="c8ca446c1fea2c076d78412221cebd1b" category="list-text">스위치는 에 나열되어 있습니다 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> MetroCluster-over-IP-connections_에서 지원되는 스위치입니다</block>
+  <block id="14bb4f6c6d9e383cc569d9498b83c24e" category="list-text">스위치는 NetApp에서 제공하는 RCF(Reference Configuration File)를 사용하여 구성됩니다</block>
+  <block id="3f3f7f794ea7fa2f780388bfffd726f0" category="paragraph">이러한 요구사항을 충족하지 않는 스위치는 NetApp의 검증 스위치가 아닙니다 *.</block>
+  <block id="6e90f0ca5975aa305331b461c0d17a10" category="paragraph">MetroCluster 준수 스위치는 NetApp 검증이 되지 않았지만 특정 요구사항 및 구성 지침을 충족할 경우 MetroCluster IP 구성에서 사용할 수 있습니다.</block>
+  <block id="81d0b430232d54ef8c3da154a6bb51df" category="admonition">NetApp은 검증되지 않은 MetroCluster 규정 준수 스위치에 대한 문제 해결 또는 구성 지원 서비스를 제공하지 않습니다.</block>
+  <block id="e4d0658d40deb1bdd0cba2af1bb7edcc" category="summary">ONTAP 9.6부터 MetroCluster IP 구성에 대해 몇 가지 추가 네트워크 구성이 지원됩니다.</block>
+  <block id="d4e5769f0b30b686cad3f67f0712a4ed" category="paragraph">ONTAP 9.6부터 MetroCluster IP 구성에 대해 몇 가지 추가 네트워크 구성이 지원됩니다. 이 섹션에서는 지원되는 네트워크 구성의 몇 가지 예를 제공합니다. 지원되는 토폴로지 중 일부는 나열되지 않습니다.</block>
+  <block id="f8c144d99faf0be94c6f73117182fe1c" category="paragraph">이러한 토폴로지에서는 ISL 및 중간 네트워크가 에 설명된 요구 사항에 따라 구성된 것으로 가정합니다 <block ref="3a1583c43d5c26bc5494a0499ae33c72" category="inline-link-macro-rx"></block>.</block>
+  <block id="3f455575634261ee88453f2b32a39574" category="admonition">MetroCluster가 아닌 트래픽과 ISL을 공유하는 경우 MetroCluster에 항상 사용할 수 있는 최소 필수 대역폭이 있는지 확인해야 합니다.</block>
+  <block id="714d7f26f344f1a2137ecaafa3977560" category="paragraph">이 토폴로지에서는 두 개의 개별 사이트가 직접 링크로 연결됩니다. 이러한 링크는 xWDM 및 TDM 디바이스 또는 스위치 사이에 있을 수 있습니다. ISL의 용량은 MetroCluster 트래픽 전용이 아니라 다른 비 MetroCluster 트래픽과 공유됩니다.</block>
+  <block id="c6cb1b44e79b73322f9f95a6e6a856bf" category="paragraph">이 토폴로지에서 MetroCluster 사이트는 직접 연결되지 않지만 MetroCluster 및 호스트 트래픽은 네트워크를 통해 이동합니다.
+네트워크는 일련의 xWDM, TDM 및 스위치로 구성될 수 있지만 직접 ISL을 사용하는 공유 구성과 달리 사이트 간 링크는 직접 구성되지 않습니다. 사이트 간의 인프라에 따라 네트워크 구성을 원하는 대로 조합할 수 있습니다.</block>
+  <block id="0ebe9ae371e55183b558cb093feb8087" category="section-title">중간 네트워크를 공유하는 여러 MetroCluster 구성</block>
+  <block id="5ba8b9c9d6b3d9754ec372dd3472dbd0" category="paragraph">이 토폴로지에서는 두 개의 별도 MetroCluster 구성이 동일한 중간 네트워크를 공유합니다. 이 예에서 MetroCluster ONE SWITCH_A_1과 MetroCluster Two SWITCH_A_1은 모두 동일한 중간 스위치에 연결됩니다.</block>
+  <block id="fd42ae0e289ae7349d9cb095b5baedcb" category="admonition">"MetroCluster One" 또는 "MetroCluster 2" 모두 8노드 MetroCluster 구성 1개 또는 4노드 MetroCluster 구성 2개를 사용할 수 있습니다.</block>
+  <block id="445254de7995c8ef37155f67cff1ccd8" category="section-title">NetApp 검증 스위치를 사용한 MetroCluster 구성과 MetroCluster 규정 준수 스위치를 사용한 구성의 조합</block>
+  <block id="d0f4ebf077d350978a17afd3cf7a8bc3" category="paragraph">두 개의 개별 MetroCluster 구성은 동일한 중간 스위치를 공유합니다. 여기서 한 MetroCluster는 공유 계층 2 구성(MetroCluster 1)에서 NetApp 검증 스위치를 사용하여 구성되고 다른 MetroCluster는 중간 스위치(MetroCluster 2)에 직접 연결된 MetroCluster 호환 스위치를 사용하여 구성됩니다.</block>
+  <block id="15111207d6b0c0cbf958b921f4798172" category="summary">다양한 스위치 포트 구성에 대해 알아봅니다.</block>
+  <block id="698eaadeb5d3fb421bccdcf1b0ab1fef" category="doc">스위치 포트 구성 예</block>
+  <block id="39c7e049077f0d9b7a1fa77f6180ea92" category="admonition">다음 예에서는 십진수 값을 사용하고 Cisco 스위치에 적용되는 표를 따릅니다. 스위치 공급업체에 따라 DSCP에 대해 다른 값이 필요할 수 있습니다. 스위치 공급업체의 해당 표를 참조하여 올바른 값을 확인하십시오.</block>
+  <block id="35ad26d27261978449b9fa90bdfbbee1" category="cell">DSCP 값</block>
+  <block id="937504f318f04eaf0f1d701df4c4d7f3" category="cell">십진수</block>
+  <block id="92640bd72988395b326c888614f8937a" category="cell">16진수</block>
+  <block id="7277de5f2ed6f17c61f1f25594591a82" category="cell">의미</block>
+  <block id="8b7e00eb8a358958722be8ce20193ff2" category="paragraph">101만</block>
+  <block id="7f6a417be70d8c2743207d53badb5c83" category="paragraph">0x10</block>
+  <block id="aef7a4e1b7e3fe7e4df67684dbffa9e1" category="paragraph">CS2를 참조하십시오</block>
+  <block id="3a7057801a60578b2ed0bbaf035dfc21" category="paragraph">011 000</block>
+  <block id="b0757d5c3880247054302eee28d9d08c" category="paragraph">0x18</block>
+  <block id="8c4e56414e26520294c3b571e92e58e4" category="paragraph">CS3의 약어입니다</block>
+  <block id="7e0cd72ce46464b7b74a6be952e1198d" category="paragraph">100,000</block>
+  <block id="9cb7196b9376491fb16d0db6de086efb" category="paragraph">0x20</block>
+  <block id="7009daf81333670cd06b8bb2b02054cc" category="paragraph">CS4를 참조하십시오</block>
+  <block id="64759f4346c9c74f5744ed5781753be7" category="paragraph">0x28입니다</block>
+  <block id="1c61feff957ecc2d50e499cbe076094c" category="paragraph">CS5를 참조하십시오</block>
+  <block id="152ac40eab234174a4df3411ce840abc" category="list-title">MetroCluster 인터페이스를 연결하는 스위치 포트입니다</block>
+  <block id="d3739a6ca5f7881d26cd16ae0246cb66" category="list-text">RDMA(Remote Direct Memory Access) 트래픽 분류:</block>
+  <block id="1fbc1d9fd1cab89ba481e86cf474c0db" category="list-text">일치: TCP 포트 10006, 소스, 대상 또는 둘 다</block>
+  <block id="a829c133d53608ae0e95e4674bf97b6b" category="list-text">선택적 일치: COS 5</block>
+  <block id="6f8616dc7edb0ec3be10494e52645e33" category="list-text">선택 일치: DSCP 40</block>
+  <block id="d8211541cda259f40aead0607233255f" category="list-text">DSCP 40을 설정합니다</block>
+  <block id="f530740ac9e609fc21d073ac7a1005eb" category="list-text">COS 5를 설정합니다</block>
+  <block id="905698c568b08ffae010badfede2c3d9" category="list-text">선택 사항: 20Gbps로 속도 조정</block>
+  <block id="6f9086eed365c3a2db1521fa98bb7fad" category="list-text">iSCSI 트래픽 분류:</block>
+  <block id="bfee253ff06448698780744ab1762cba" category="list-text">일치: TCP 포트 62500, 소스, 대상 또는 둘 다</block>
+  <block id="b6b4cd52ee0814cd111c7646f3ec71cf" category="list-text">선택적 일치: COS 4</block>
+  <block id="bc0161255c709f2bfdb09ade9fbc1364" category="list-text">선택적 일치: DSCP 32</block>
+  <block id="18b58e1c9302e2acb18218c02c62dab7" category="list-text">DSCP 32를 설정합니다</block>
+  <block id="9635157acb849c6a772e37e0f94858d6" category="list-text">COS 4를 설정합니다</block>
+  <block id="0e6469e92f0a600d51275ec32be23bb1" category="list-text">L2FlowControl(일시 중지), RX 및 TX</block>
+  <block id="85a0f387d72a9b66caa12bfd8ac6c340" category="list-text">분류:</block>
+  <block id="e27bd9b5b6530f056100c85e8e3f0077" category="list-text">COS 5 또는 DSCP 40을 일치시킵니다</block>
+  <block id="e9430458570a06bf61121dd05841e47c" category="list-text">COS 4 또는 DSCP 32와 일치합니다</block>
+  <block id="5874b557eb2d616519503b3a9d5ce19c" category="list-text">이그레스 큐</block>
+  <block id="78456c8ab5587f32bc610877d74ef7a7" category="list-text">CoS 그룹 4의 최소 구성 임계값은 2000이고 최대 임계값은 3000입니다</block>
+  <block id="b4b17fa389e749d338c939d59e32db97" category="list-text">CoS 그룹 5의 최소 구성 임계값은 3500이고 최대 임계값은 6500입니다.</block>
+  <block id="246d20a235e1c5c1dbb77c8dd872497b" category="admonition">구성 임계값은 환경에 따라 달라질 수 있습니다. 개별 환경에 따라 구성 임계값을 평가해야 합니다.</block>
+  <block id="accd310df4e17b2af66b22edc9c1e947" category="list-text">ECN은 Q4 및 Q5에서 사용할 수 있습니다</block>
+  <block id="e5d00fe64d05f1fce7d98d430a420841" category="list-text">Q4 및 Q5에 대해 빨간색이 활성화되었습니다</block>
+  <block id="afeb146185af0336a8e15734f4d8d82b" category="list-title">대역폭 할당(MetroCluster 인터페이스 및 ISL 포트를 연결하는 스위치 포트)</block>
+  <block id="4ffad2b7caeb46c571b7de01bf63c497" category="list-text">RDMA, COS 5/DSCP 40:60%</block>
+  <block id="fddd1eb673a9b9d4b1288a3e624d4702" category="list-text">iSCSI, COS 4/DSCP 32: 40%</block>
+  <block id="74a0d47e246ff885c997c58ac7f5c7ef" category="list-text">MetroCluster 구성 및 네트워크당 최소 용량 요구사항: 10Gbps</block>
+  <block id="e14e93b70d1997123d2de410047c323f" category="admonition">속도 제한을 사용할 경우 트래픽이 손실되지 않고 * 형태여야 합니다.</block>
+  <block id="e53ae17087425b26dcf2c8f30e6a2f79" category="section-title">MetroCluster 컨트롤러를 연결하는 스위치 포트를 구성하는 예</block>
+  <block id="1d44ff8a3ea66c300c0fc107ab6d6979" category="paragraph">제공된 명령은 Cisco NX3232 또는 Cisco NX9336 스위치에 대해 유효합니다. 명령은 스위치 유형에 따라 다릅니다.</block>
+  <block id="63459049e091924c73609b9957c4e64f" category="paragraph">예제에 표시된 기능이나 이에 상응하는 기능을 스위치에서 사용할 수 없는 경우에는 스위치가 최소 요구 사항을 충족하지 못하므로 MetroCluster 구성을 구축하는 데 사용할 수 없습니다. 이는 MetroCluster 구성에 연결되는 모든 스위치 및 모든 중간 스위치에 적용됩니다.</block>
+  <block id="11eba6b520d78c3fbdee86eaa640f55e" category="admonition">다음 예에서는 한 네트워크에 대한 구성만 보여 줍니다.</block>
+  <block id="416206518e27ed2ec8b8e0876078af35" category="paragraph-title">기본 구성</block>
+  <block id="92960f86c54c971b6a0cf5a9c0ba173f" category="paragraph">각 네트워크의 VLAN(가상 LAN)을 구성해야 합니다. 다음 예는 네트워크 10에서 VLAN을 구성하는 방법을 보여줍니다.</block>
+  <block id="c26fe677a830587ef1c141567a86c86a" category="paragraph">* 예: *</block>
+  <block id="0d2aec46175773fc70efbe5d12535b0a" category="section-title">분류 구성에 대한 예</block>
+  <block id="b6743577d6311b6a886fd545eecad9ab" category="paragraph">RDMA 및 iSCSI 트래픽을 적절한 클래스에 매핑하도록 액세스 및 클래스 맵을 구성해야 합니다.</block>
+  <block id="2cb92abbd15a47018d0204e9dfee4122" category="paragraph">다음 예에서는 포트 65200과 주고받는 모든 TCP 트래픽이 스토리지(iSCSI) 클래스에 매핑됩니다. 포트 10006과 포트 1006의 모든 TCP 트래픽은 RDMA 클래스에 매핑됩니다. 이러한 정책 맵은 MetroCluster 인터페이스를 연결하는 스위치 포트에 사용됩니다.</block>
+  <block id="f80f72892df8210cce38857cf663c2ed" category="paragraph">수신 정책을 구성해야 합니다. 수신 정책은 트래픽을 다른 COS 그룹으로 분류한 것으로 매핑합니다. 이 예에서 RDMA 트래픽은 COS 그룹 5에 매핑되고 iSCSI 트래픽은 COS 그룹 4에 매핑됩니다. 수신 정책은 MetroCluster 인터페이스를 연결하는 스위치 포트 및 MetroCluster 트래픽을 전달하는 ISL 포트에 사용됩니다.</block>
+  <block id="66a59d5a8e6aaa9cf1a591ec9c2aebb3" category="paragraph">NetApp은 다음 예와 같이 MetroCluster 인터페이스를 연결하는 스위치 포트에 트래픽을 형성할 것을 권장합니다.</block>
+  <block id="fa2cdd1d9c185220534e9a5f6e581f57" category="section-title">노드 포트를 구성하는 예</block>
+  <block id="6c19da68939fc2775a2a8c23908971ef" category="paragraph">노드 포트를 브레이크아웃 모드로 구성해야 할 수도 있습니다. 다음 예에서 포트 25 및 26은 4 x 25Gbps 브레이크아웃 모드로 구성됩니다.</block>
+  <block id="f9d3b2b553dd7e256aefbf7a7cb80c85" category="paragraph">MetroCluster 인터페이스 포트 속도를 구성해야 할 수 있습니다. 다음 예에서는 속도를 * auto * 또는 40Gbps 모드로 구성하는 방법을 보여줍니다.</block>
+  <block id="a510a743559d6f2f71e9d8bf3b5f0f30" category="paragraph">다음 예제는 MetroCluster 인터페이스를 연결하도록 구성된 스위치 포트를 보여줍니다. MTU 9216의 VLAN 10의 액세스 모드 포트이며 기본 속도로 작동합니다. 대칭(보내기 및 받기) 흐름 제어(일시 중지)가 활성화되고 MetroCluster 수신 및 송신 정책이 할당됩니다.</block>
+  <block id="a791c23bf43a913e9bc2dd3fbb04acf3" category="paragraph">25Gbps 포트에서는 다음 예와 같이 FEC(Forward Error Correction) 설정을 "OFF"로 설정해야 할 수 있습니다.</block>
+  <block id="c1e9e67d43bd92599acf6de487a61c65" category="section-title">네트워크를 통한 ISL 포트 구성의 예</block>
+  <block id="18b91592ae3775f34f65c991d793f843" category="paragraph">MetroCluster 호환 스위치는 MetroCluster 인터페이스를 직접 연결하는 중급 스위치로 간주됩니다. MetroCluster 호환 스위치에서 MetroCluster 트래픽을 전달하는 ISL 포트는 중간 스위치의 ISL 포트와 동일한 방식으로 구성해야 합니다. 을 참조하십시오 <block ref="d4732e32817c639c5e57cf150621c360" category="inline-link-macro-rx"></block> 지침 및 예를 참조하십시오.</block>
+  <block id="a05b3cdfc5cc23ee6b2d90f33be54635" category="admonition">일부 정책 맵은 MetroCluster 인터페이스를 연결하는 스위치 포트와 MetroCluster 트래픽을 전달하는 ISL에 대해 동일합니다. 이러한 두 포트 사용에 대해 동일한 정책 맵을 사용할 수 있습니다.</block>
+  <block id="80d1269e99768d5e883ffa70dd8f6aeb" category="summary">요구 사항에 따라 공유 계층 2 또는 계층 3 네트워크를 사용하여 MetroCluster를 배포할 수 있습니다.</block>
+  <block id="1c46b7bbd317f603895892a646ef8b2d" category="doc">공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항</block>
+  <block id="2ff08728ea0124138aa06bf0f8c8ea31" category="paragraph">ONTAP 9.6부터 지원되는 Cisco 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL(Inter-Switch Link)에 대해 기존 네트워크를 공유할 수 있습니다. 이 토폴로지는 _shared layer 2 networks_라고 합니다.</block>
+  <block id="cc723d7803ba423b47b353cc9dfa54ff" category="paragraph">ONTAP 9.9.1부터 MetroCluster IP 구성은 IP 라우팅(계층 3) 백엔드 연결로 구현할 수 있습니다. 이 토폴로지는 _shared layer 3 networks_라고 합니다.</block>
+  <block id="80a482ff4ac144c8d8c1e668a348dd67" category="list-text">네트워크 용량이 충분하고 ISL 크기가 구성에 적합한지 확인해야 합니다. MetroCluster 사이트 간 데이터 복제에는 짧은 지연 시간이 매우 중요합니다. 이러한 연결에서 지연 문제가 클라이언트 입출력에 영향을 줄 수 있습니다</block>
+  <block id="37eee3b9ac9781ca0484f54aeef70602" category="list-text">MetroCluster 백엔드 스위치에 대한 모든 참조는 NetApp 검증 스위치 또는 MetroCluster 규정을 준수하는 스위치를 지칭합니다. 을 참조하십시오 <block ref="16daa185b92984fefaae8aa04a4cd437" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="fb51bd6bc8df92b67b0dbb637314bf54" category="section-title">계층 2 및 계층 3 네트워크의 ISL 요구 사항</block>
+  <block id="58137a1ac83de260ca60eccfcb17156d" category="paragraph">다음은 계층 2 및 계층 3 네트워크에 적용됩니다.</block>
+  <block id="0993d8fc99c85994b32658ca6ec6793e" category="list-text">MetroCluster 스위치와 중간 네트워크 스위치 간의 ISL의 속도와 수는 일치할 필요가 없습니다. 마찬가지로 중간 네트워크 스위치 간의 속도는 일치할 필요가 없습니다.</block>
+  <block id="e86033c89acfedd6f1712d0fc113d65e" category="paragraph">예를 들어, MetroCluster 스위치는 하나의 40Gbps ISL을 사용하여 중간 스위치에 연결할 수 있고, 중간 스위치는 두 개의 100Gbps ISL을 사용하여 서로 연결할 수 있습니다.</block>
+  <block id="8eb2d711b28ba52fd757990156cc9af3" category="list-text">사용, 오류(삭제, 링크 플랩, 손상 등)를 모니터링하려면 중간 네트워크에서 네트워크 모니터링을 구성해야 합니다. 있습니다.</block>
+  <block id="f7b423d1ee713bf3285829978ce48331" category="list-text">MetroCluster 종단 간 트래픽을 전달하는 모든 포트에서 MTU 크기를 9216으로 설정해야 합니다.</block>
+  <block id="f9e9b76449caab6e71a42abee6aba4e7" category="list-text">다른 트래픽은 서비스 클래스(COS) 5보다 높은 우선 순위로 구성할 수 없습니다.</block>
+  <block id="13b4ddbad8ca7740efa748e6262e919e" category="list-text">종단 간 MetroCluster 트래픽을 전달하는 모든 경로에 대해 명시적 정체 알림(ECN)을 구성해야 합니다.</block>
+  <block id="0b98609b51a21604f1a00a4828047fa4" category="list-text">MetroCluster 트래픽을 전달하는 ISL은 스위치 간의 네이티브 링크여야 합니다.</block>
+  <block id="d68cc50331576837c5a83b1affefcd38" category="paragraph">MPLS(Multiprotocol Label Switching) 링크와 같은 링크 공유 서비스는 지원되지 않습니다.</block>
+  <block id="b76b15693c2f8c16c80e09ae0fe2b441" category="list-text">레이어 2 VLAN은 기본적으로 사이트를 포괄해야 합니다. VXLAN(Virtual Extensible LAN)과 같은 VLAN 오버레이는 지원되지 않습니다.</block>
+  <block id="2156b2d970617b3d65eafda966103652" category="list-text">중간 스위치의 수는 제한되지 않습니다. 하지만 스위치 수를 필요한 최소 수준으로 유지하는 것이 좋습니다 NetApp.</block>
+  <block id="b0dbac2ed11a4ffb9cf551a68744fc3b" category="list-text">MetroCluster 스위치의 ISL은 다음과 같이 구성됩니다.</block>
+  <block id="5e34055a3e0591bb621f4758f8ab5c63" category="list-text">LACP 포트 채널의 일부로 포트 모드 '트렁크'를 전환합니다</block>
+  <block id="a819f04829e8d3d3f22e5c1321e7af0d" category="list-text">MTU 크기는 9216입니다</block>
+  <block id="3276e46322c8ba3f79ce3ea27b68265d" category="list-text">네이티브 VLAN이 구성되지 않았습니다</block>
+  <block id="c4e0b3187c97c7f37c8ce07e79b76791" category="list-text">사이트 간 MetroCluster 트래픽을 전달하는 VLAN만 허용됩니다</block>
+  <block id="b6c4e1e2f2a0c06e8d9a324d954bc763" category="list-text">스위치 기본 VLAN은 허용되지 않습니다</block>
+  <block id="3f3bba6728c947cfa6f369c605b7118b" category="section-title">계층 2 네트워크에 대한 고려 사항</block>
+  <block id="64dd6d9e6b2c1c66728d029e3b45abd2" category="paragraph">MetroCluster 백엔드 스위치가 고객 네트워크에 연결됩니다.</block>
+  <block id="11ab87f335ed35c8bcf058a70cebc2be" category="image-alt">MCC 레이어2</block>
+  <block id="6acf5532efb336e0d8001419f26ef951" category="list-text">중간 네트워크는 사이트 간에 동일한 VLAN을 제공해야 합니다. RCF 파일에 설정된 MetroCluster VLAN과 일치해야 합니다.</block>
+  <block id="ac8a1f1bfd836ba146d1ab2feb59b2fa" category="list-text">RcfFileGenerator는 특정 VLAN ID가 나중에 사용하도록 의도된 경우 사용을 제한할 수 있습니다. 일반적으로 예약된 VLAN은 최대 100개까지 가능합니다.</block>
+  <block id="d4a11c01614c17bddc7d41960498137a" category="paragraph-title">ONTAP의 VLAN 구성</block>
+  <block id="2fdb610706dea62a50ca16baa1d63c2a" category="paragraph">인터페이스 생성 중에만 VLAN을 지정할 수 있습니다. MetroCluster 인터페이스를 생성한 후에는 VLAN ID를 변경할 수 없습니다. 인터페이스 생성 중에 다른 VLAN을 구성할 수 있지만 VLAN은 10 ~ 20 범위 내에 있거나 101 ~ 4096 범위 내에 있어야 합니다(또는 스위치 공급업체에서 지원하는 수 중 더 작은 수).</block>
+  <block id="5c7b46710dbc52038abeae30dc7410f8" category="admonition">일부 스위치 공급업체는 특정 VLAN 사용을 예약할 수 있습니다.</block>
+  <block id="c42b50e941d0ad3822d8ba3c571ef6c4" category="paragraph">다음 시스템은 ONTAP 내에서 VLAN 구성이 필요하지 않습니다. VLAN은 스위치 포트 구성에 의해 지정됩니다.</block>
+  <block id="24eb498f969850d03efc1a22afbc9649" category="list-text">FAS8200 및 AFF A300</block>
+  <block id="1bcc0cae878ae9cc7fa87246f0d4540c" category="list-text">FAS9000 및 AFF A700</block>
+  <block id="7d60aa55363e89f3edb95d64f7738599" category="list-text">AFF A800, ASA A800, AFF C800 및 ASA C800입니다</block>
+  <block id="9726fef0e4dc57d416750f1437b801d2" category="admonition">위에 나열된 시스템은 VLAN 100 이하를 사용하여 구성할 수 있습니다. 그러나 이 범위의 일부 VLAN은 다른 용도로 예약되거나 나중에 사용하도록 예약될 수 있습니다.</block>
+  <block id="d113a6ed852ea26337d713450639ad33" category="paragraph">다른 모든 시스템의 경우 ONTAP에서 MetroCluster 인터페이스를 생성할 때 VLAN을 구성해야 합니다. 다음과 같은 제한 사항이 적용됩니다.</block>
+  <block id="69cb699eb5cb6fc6aac153a3486a2d02" category="list-text">기본 VLAN은 10과 20입니다</block>
+  <block id="6954b86244a9da40b24d29171fe19dd2" category="list-text">ONTAP 9.7 이하를 실행하는 경우 기본 VLAN 10 및 20만 사용할 수 있습니다.</block>
+  <block id="c3a01939286fd058fa14f456bdf7fe55" category="list-text">ONTAP 9.8 이상을 실행하는 경우 기본 VLAN 10 및 20을 사용할 수 있으며 100(101 이상)을 초과하는 VLAN도 사용할 수 있습니다.</block>
+  <block id="383a9ccc3c329cd46717d48764d2a3a1" category="section-title">계층 3 네트워크에 대한 고려 사항</block>
+  <block id="262180f9a3b542d7e9252ccb29c6e05a" category="paragraph">MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 <block ref="311f44367ad647b525912f40849bbd78" category="inline-link-macro-rx"></block>. 설치 및 케이블 연결 절차를 수행할 때 계층 3 구성에 해당하는 단계를 수행해야 합니다. 다음은 계층 3 구성에 적용됩니다.</block>
+  <block id="9754d5ef829b115c83fcfad16e037150" category="list-text">MetroCluster 스위치를 라우터에 직접 연결하거나 하나 이상의 중간 스위치에 연결할 수 있습니다.</block>
+  <block id="ed94574fa9ed2387bee462bdd7cd3ba5" category="list-text">MetroCluster IP 인터페이스를 라우터 또는 중간 스위치 중 하나에 직접 연결할 수 있습니다.</block>
+  <block id="f1596f206c54f2be9203577a2eff12b5" category="list-text">VLAN은 게이트웨이 장치로 확장되어야 합니다.</block>
+  <block id="9b0be62b5e24c67f7d0b3aa7b31b6604" category="list-text">를 사용합니다<block ref="952b62648c6a534516a9c3c7315a7c7d" prefix=" " category="inline-code"></block> IP 게이트웨이 주소를 사용하여 MetroCluster IP 인터페이스 주소를 구성합니다.</block>
+  <block id="f6d02847cab7cb4beb1719ebf258e2f2" category="list-text">MetroCluster VLAN의 VLAN ID는 각 사이트에서 동일해야 합니다. 그러나 서브넷은 다를 수 있습니다.</block>
+  <block id="b7b42132f8e93917eac40b208d22bece" category="list-text">다음 기능은 지원되지 않습니다.</block>
+  <block id="e175f2efef635374c81a1849be567459" category="list-text">4노드 MetroCluster 구성 업데이트</block>
+  <block id="737fb92f35cc9bdf093b6e69cc63f06d" category="paragraph">라우터 및 게이트웨이 IP 주소를 구성할 때는 다음 요구 사항을 충족해야 합니다.</block>
+  <block id="a90528fa780e67a14116d1611ce717d2" category="list-text">한 노드의 두 인터페이스에 같은 게이트웨이 IP 주소를 지정할 수 없습니다.</block>
+  <block id="70bfc0d0b45a011747af6c74384efe16" category="section-title">중간 스위치에 필요한 설정입니다</block>
+  <block id="447dfac8aa099d425869681811719a30" category="paragraph">MetroCluster 트래픽이 중간 네트워크에서 ISL을 통과하는 경우 중간 스위치의 구성을 통해 MetroCluster 트래픽(RDMA 및 스토리지)이 MetroCluster 사이트 간 전체 경로에서 필요한 서비스 수준을 충족하는지 확인해야 합니다.</block>
+  <block id="6b8d702de4699c80d4f08e3290e0ae78" category="paragraph">다음 다이어그램은 NetApp 검증 Cisco 스위치를 사용할 때 필요한 설정을 간략하게 보여 줍니다.</block>
+  <block id="d64d8900b94544769fb9967383f0fd7c" category="paragraph">다음 다이어그램은 외부 스위치가 Broadcom IP 스위치일 때 공유 네트워크에 필요한 설정을 간략하게 보여 줍니다.</block>
+  <block id="05b4b53d3b59a13fd2e65542e7891e26" category="list-text">를 클릭합니다<block ref="f63a844b3a8b746d4843c729ac11c60a" prefix=" " category="inline-code"></block> 정책은 MetroCluster IP 스위치에 접속하는 중간 스위치의 포트에 적용됩니다.</block>
+  <block id="52ef9029aac6ce5ffcb9c3d6cff86d7f" category="paragraph">를 클릭합니다<block ref="f63a844b3a8b746d4843c729ac11c60a" prefix=" " category="inline-code"></block> 정책은 들어오는 태그 트래픽을 중간 스위치의 적절한 큐에 매핑합니다.</block>
+  <block id="15ab0cd88b7fb9a6fd629378a99a2295" category="list-text">A<block ref="f9720e3c5caef8b7a1d232011f766afa" prefix=" " category="inline-code"></block> 정책은 중간 스위치 간의 ISL에 연결하는 중간 스위치의 포트에 적용됩니다.</block>
+  <block id="18d81090280ae3c4bb12ecd8a2bed4be" category="paragraph">다음 예는 Cisco Nexus 3232C 및 9336C-FX2 스위치용입니다. 스위치 공급업체 및 모델에 따라 중간 스위치의 구성이 적절한지 확인해야 합니다.</block>
+  <block id="dbf22513b7658f718a783a9c9ca05c25" category="paragraph-title">중간 스위치 ISL 포트에 대한 클래스 맵을 구성합니다</block>
+  <block id="2f8cbfda819bd44eb1b6d0b8413c7380" category="paragraph">다음 예제에서는 수신 시 트래픽을 분류해야 하는지 또는 일치시켜야 하는지에 따라 클래스 맵 정의를 보여 줍니다.</block>
+  <block id="920163af25aaf3412edc4e2617944413" category="open-title">수신 시 트래픽 분류:</block>
+  <block id="5195f66a2dd1582077857da153dfc3e7" category="open-title">수신 시 트래픽 일치:</block>
+  <block id="fe70aaf6db42e3ca503ed0f831ec3013" category="paragraph-title">중간 스위치의 ISL 포트에 수신 정책 맵을 생성합니다.</block>
+  <block id="ed8f4f6efa89e6154543c4f612bf78ba" category="paragraph">다음 예에서는 수신 시 트래픽을 분류하거나 일치시켜야 하는지 여부에 따라 수신 정책 맵을 생성하는 방법을 보여 줍니다.</block>
+  <block id="fd2f21fa2367388327b48baf4eba2d34" category="open-title">수신 시 트래픽 분류:</block>
+  <block id="116d60d710def294128331f31f4e99fe" category="open-title">수신 시 트래픽 일치:</block>
+  <block id="59b0f4b7ca0808cc39159f8f430b2a40" category="paragraph-title">ISL 포트에 대한 송신 큐 처리 정책을 구성합니다</block>
+  <block id="aff7033715e65e12ff4650459dd9ff39" category="paragraph">다음 예에서는 송신 큐 처리 정책을 구성하는 방법을 보여 줍니다.</block>
+  <block id="dfb0c4a1486181d12349fddc19976e09" category="paragraph">이러한 설정은 MetroCluster 트래픽을 전달하는 모든 스위치 및 ISL에 적용되어야 합니다.</block>
+  <block id="b938eb18ad1590315ab79c5e36f76620" category="paragraph">이 예에서는 Q4 및 Q5가 로 구성되어 있습니다<block ref="5d143ead1084d921d2b83df6e0907a26" prefix=" " category="inline-code"></block>. 구성에 따라 다음 예와 같이 최소 및 최대 임계값을 설정해야 할 수도 있습니다.</block>
+  <block id="9cc02e1ad38d785896ce26b51fb60102" category="admonition">최소값과 최대값은 스위치 및 요구 사항에 따라 다릅니다.</block>
+  <block id="6cda46b8128670310f45ae18ae21c334" category="paragraph-title">예 1: Cisco</block>
+  <block id="df31e88a5390c4402f1d983b088515a0" category="paragraph">구성에 Cisco 스위치가 있는 경우 중간 스위치의 첫 번째 수신 포트를 분류할 필요가 없습니다. 그런 다음 다음과 같은 맵 및 정책을 구성합니다.</block>
+  <block id="51c0b14fe2b02fc7801ff18c8af17a3d" category="list-text"><block ref="c32bdab64a5102128e49f0e258738d79" prefix="" category="inline-code"></block></block>
+  <block id="4498fe5bbba88f97458a16049737b887" category="list-text"><block ref="96565419e14f3fe6879ee17ff6782d2f" prefix="" category="inline-code"></block></block>
+  <block id="b326fb23b2e8262075e282eafc7e2b3d" category="list-text"><block ref="229440853e909add465ca7b5f5413e8b" prefix="" category="inline-code"></block></block>
+  <block id="94256cf7c85ad240f4ba47c6ced26a6c" category="paragraph">를 할당합니다<block ref="229440853e909add465ca7b5f5413e8b" prefix=" " category="inline-code"></block> MetroCluster 트래픽을 전달하는 ISL 포트에 대한 정책 매핑입니다.</block>
+  <block id="0ec5acbb5f8936a859017b5f986d1624" category="paragraph-title">예 2: Broadcom</block>
+  <block id="d7b3d145846ddade4db7a38d17e1b38e" category="paragraph">구성에 Broadcom 스위치가 있는 경우 중간 스위치의 첫 번째 수신 포트를 분류해야 합니다. 그런 다음 다음과 같은 맵 및 정책을 구성합니다.</block>
+  <block id="01d873f1d9e0aba8247cb464d76ea43f" category="list-text"><block ref="75c2563b7e6183480d77905c311117ee" prefix="" category="inline-code"></block></block>
+  <block id="d964707c5bc946eced7a043ad795f097" category="list-text"><block ref="4e445a7c8509b9986edc65399089887f" prefix="" category="inline-code"></block></block>
+  <block id="56a9521c621b33f42304f5ab63fca1eb" category="list-text"><block ref="8e5d0e16f4ef973f194b24b671764f57" prefix="" category="inline-code"></block></block>
+  <block id="f5d105ae84b71f8c7b3e300d059f40dc" category="list-text"><block ref="7539fea0476c31185bf673fa66164f2d" prefix="" category="inline-code"></block></block>
+  <block id="6e73ee887ad940172c7a88d077bf0772" category="list-text"><block ref="51c0649c1214c3a7cb1b5422c6b9dd5f" prefix="" category="inline-code"></block></block>
+  <block id="9fd450aaf744ef2f0f02e43876522bfe" category="paragraph">사용자가 할당합니다<block ref="67a94f8e22c0892a226d626753340cc4" prefix=" " category="inline-code"></block> 정책 맵은 Broadcom 스위치를 연결하는 중간 스위치의 ISL 포트에 연결됩니다.</block>
+  <block id="4eaf14eb10c7f173afbdacfeab39777a" category="paragraph">를 할당합니다<block ref="229440853e909add465ca7b5f5413e8b" prefix=" " category="inline-code"></block> MetroCluster 트래픽을 전송하지만 Broadcom 스위치에 연결하지 않는 중간 스위치의 ISL 포트에 대한 정책 매핑</block>
+  <block id="5af97d9502169db37645c08f238777a6" category="summary">ONTAP 9.7부터 MetroCluster IP 구성을 사용하면 MetroCluster 호환 스위치를 사용할 수 있습니다. 이러한 스위치는 NetApp의 검증을 받지 않지만 NetApp 사양을 준수합니다. 이 항목에서는 MetroCluster 호환 스위치의 일반 요구사항 및 제한 사항에 대해 간략하게 설명합니다.</block>
+  <block id="47fffbd3afdf8fa76a079477bd59709f" category="doc">MetroCluster 규정 준수 스위치를 사용할 때의 요구사항 및 제한 사항</block>
+  <block id="ed0f2729a4bf35a687f00daa041997c7" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성을 사용하면 MetroCluster 호환 스위치를 사용할 수 있습니다. 이러한 스위치는 NetApp의 검증을 받지 않지만 NetApp 사양을 준수합니다. 그러나 NetApp는 검증되지 않은 스위치에 대해 문제 해결 또는 구성 지원 서비스를 제공하지 않습니다. MetroCluster 호환 스위치를 사용할 때는 일반 요구사항 및 제한 사항을 숙지해야 합니다.</block>
+  <block id="9948bad86a0ee0273515c6ce814edbfc" category="paragraph">MetroCluster IP 인터페이스를 연결하는 스위치는 다음과 같은 일반 요구 사항을 충족해야 합니다.</block>
+  <block id="b67e189b705bbcc9f23d7cfa3f63039e" category="list-text">스위치는 QoS(Quality of Service) 및 트래픽 분류를 지원해야 합니다.</block>
+  <block id="0abd4d7fe8e048cb4f96973a179b5dee" category="list-text">스위치는 로드 밸런싱 정책을 지원해야 경로 순서를 유지할 수 있습니다.</block>
+  <block id="09e2c61b537dad80acb6a181f4206358" category="list-text">스위치 포트는 전용 속도를 제공해야 하며 초과 할당되어서는 안 됩니다.</block>
+  <block id="331dfa751b96c23b76a7e7322f4a12e0" category="list-text">노드를 스위치에 연결하는 케이블 및 트랜시버는 NetApp에서 제공해야 합니다. 이러한 케이블은 스위치 공급업체에서 지원해야 합니다. 광 케이블을 사용하는 경우 스위치의 송수신기가 NetApp에서 제공되지 않을 수 있습니다. 컨트롤러의 트랜시버와 호환되는지 확인해야 합니다.</block>
+  <block id="1deb959e67bae44ee05547e71ee4436a" category="list-text">MetroCluster 노드를 연결하는 스위치는 비 MetroCluster 트래픽을 전달할 수 있습니다.</block>
+  <block id="196918e4613993957d5d65aa2c49625e" category="list-text">각 스위치 패브릭마다 2개씩 4개의 IP 스위치가 필요합니다. 디렉터를 사용하는 경우 각 측면에서 단일 디렉터를 사용할 수 있지만 MetroCluster IP 인터페이스는 해당 디렉터의 서로 다른 두 장애 도메인에 있는 서로 다른 두 블레이드에 연결해야 합니다.</block>
+  <block id="d578b667256f73cf0054ce85e9a803c1" category="list-text">한 노드의 MetroCluster 인터페이스는 2개의 네트워크 스위치 또는 블레이드에 연결해야 합니다. 한 노드의 MetroCluster 인터페이스를 동일한 네트워크, 스위치 또는 블레이드에 연결할 수 없습니다.</block>
+  <block id="dbc6bc08f5767f194c92081755bcebc7" category="list-text">네트워크는 다음 섹션에 요약된 요구 사항을 충족해야 합니다.</block>
+  <block id="3a1583c43d5c26bc5494a0499ae33c72" category="list-text"><block ref="3a1583c43d5c26bc5494a0499ae33c72" category="inline-link-macro-rx"></block></block>
+  <block id="919e8522ca559ecdaf4e3c760661ca3c" category="list-text"><block ref="919e8522ca559ecdaf4e3c760661ca3c" category="inline-link-macro-rx"></block></block>
+  <block id="80e63f439f45f04f3bd1d9233a23c06b" category="list-text">MetroCluster IP 트래픽을 전달하는 모든 스위치에서 MTU(Maximum Transmission Unit)가 9216으로 구성되어야 합니다.</block>
+  <block id="1190064be457a70251f83cf8ed90fbae" category="list-text">ONTAP 9.6 이하 버전으로 되돌리는 것은 지원되지 않습니다.</block>
+  <block id="dded0c2f57164482346a6b6658d31507" category="paragraph">두 사이트에서 MetroCluster IP 인터페이스를 연결하는 스위치 간에 사용하는 모든 중간 스위치는 요구 사항을 충족해야 하며 에 설명된 대로 구성해야 합니다 <block ref="919e8522ca559ecdaf4e3c760661ca3c" category="inline-link-macro-rx"></block>.</block>
+  <block id="6ce75f6758ededfae6e3e174dee1b0ba" category="section-title">MetroCluster 호환 스위치 사용 시 제한 사항</block>
+  <block id="41fd40944ef8fe76d651f6ed528b7847" category="paragraph">로컬 클러스터 연결이 스위치에 연결되어 있어야 하는 구성이나 기능은 사용할 수 없습니다. 예를 들어, MetroCluster 호환 스위치에는 다음 구성 및 절차를 사용할 수 없습니다.</block>
+  <block id="09c51db2a0d87cd77a2ca402ad79db18" category="list-text">로컬 클러스터 및 MetroCluster 트래픽에 대한 물리적 인터페이스를 공유하는 플랫폼 을 참조하십시오 <block ref="286286065c1258176357731fa5aef554" category="inline-link-macro-rx"></block> 지원되는 속도.</block>
+  <block id="dc3593c035434198a7961c4f6d12d947" category="summary">MetroCluster 구성 및 네트워크가 모든 ISL 요구 사항을 충족하는지 확인하는 데 필요한 정보를 알아보십시오.</block>
+  <block id="efd281456c0c33d38a0841ccb8331143" category="doc">ISL 요구사항 개요</block>
+  <block id="7c4aed3b24a800ab4c4ec111c0a0a428" category="paragraph">MetroCluster IP 구성 및 네트워크가 모든 ISL(Inter-Switch Link) 요구 사항을 충족하는지 확인해야 합니다. 특정 요구 사항이 구성에 적용되지 않을 수도 있지만 전체 구성을 보다 잘 이해하려면 모든 ISL 요구 사항을 알고 있어야 합니다.</block>
+  <block id="402532c1895565feb3dce23c34cffb5f" category="paragraph">다음 표는 이 섹션에서 다루는 항목의 개요를 제공합니다.</block>
+  <block id="b78a3223503896721cca1303f776159b" category="cell">제목</block>
+  <block id="16daa185b92984fefaae8aa04a4cd437" category="cell"><block ref="16daa185b92984fefaae8aa04a4cd437" category="inline-link-macro-rx"></block></block>
+  <block id="5feb584dda6da1d0566cba066fddf124" category="cell">에서는 스위치 요구 사항을 설명합니다.
+
+백엔드 스위치를 포함하여 MetroCluster 구성에 사용되는 모든 스위치에 적용됩니다.</block>
+  <block id="a8e05c7ee6fd39022fc67143bc5251ba" category="cell">ISL 요구 사항에 대해 설명합니다.
+
+네트워크 토폴로지, NetApp 검증 스위치 또는 MetroCluster 규정 준수 스위치를 사용하는지에 관계없이 모든 MetroCluster 구성에 적용됩니다.</block>
+  <block id="6220e2336a0586f7b524ec64a336fe1c" category="inline-link-macro">MetroCluster를 공유 계층 2 또는 계층 3 네트워크에 배포할 때 고려해야 할 사항</block>
+  <block id="466b71f8831d64eada053719fd961798" category="cell"><block ref="466b71f8831d64eada053719fd961798" category="inline-link-macro-rx"></block></block>
+  <block id="f3c54f8b1b081afe141797ddcf3459e0" category="cell">에서는 공유 계층 2 또는 계층 3 네트워크에 대한 요구 사항을 설명합니다.
+
+MetroCluster 구성을 제외한 모든 구성에 적용, NetApp 검증 스위치 사용 및 직접 연결 ISL 사용</block>
+  <block id="a5a4c52ad165d0f2ece1f7aefc7d482c" category="inline-link-macro">MetroCluster 호환 스위치 사용 시 고려 사항</block>
+  <block id="469660356a0585d894a2477073c83c97" category="cell"><block ref="469660356a0585d894a2477073c83c97" category="inline-link-macro-rx"></block></block>
+  <block id="b7cda7e4a23f216c9f7830dfa3e8bc23" category="cell">MetroCluster 호환 스위치에 대한 요구사항을 설명합니다.
+
+NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적용됩니다.</block>
+  <block id="c8a876018fbb152e3e9beb9a87f3cd4e" category="cell"><block ref="c8a876018fbb152e3e9beb9a87f3cd4e" category="inline-link-macro-rx"></block></block>
+  <block id="529fcc581410686227b4df2b0fb6b6c2" category="cell">에는 다양한 MetroCluster 네트워크 토폴로지의 예가 나와 있습니다.
+
+모든 MetroCluster 구성에 적용됩니다.</block>
+  <block id="20f7078fb96bd6060a10b9fed9306941" category="sidebar">MetroCluster 규정 준수 스위치의 요구사항 및 제한 사항</block>
+  <block id="3c24829f69028dca3ac0aa982abad68d" category="sidebar">MetroCluster 호환 스위치를 위한 네트워크 속도 및 스위치 포트 모드</block>
 </blocks>
