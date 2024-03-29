@@ -192,6 +192,13 @@ https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/index.html["Sys
 +
 https://docs.netapp.com/us-en/ontap/index.html#about-ontap-system-manager["ONTAP 시스템 관리자(버전 9.7 이상)"]
 
+.. 서비스 프로세서(SP)를 구성합니다.
++
+link:https://docs.netapp.com/us-en/ontap/system-admin/sp-bmc-network-config-concept.html["SP/BMC 네트워크를 구성합니다"^]
+
++
+link:https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_service_processors.html["시스템 관리자 - ONTAP 9.7 이하가 설치된 서비스 프로세서를 사용합니다"^]
+
 
 
 . 프롬프트에 따라 다음 컨트롤러를 부팅하고 클러스터에 연결합니다.

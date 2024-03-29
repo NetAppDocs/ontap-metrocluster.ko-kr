@@ -6161,7 +6161,6 @@
   <block id="a8d2847903c576898fb0a7f696b03aa1" category="paragraph">ISL 포트의 거리를 변경하려면...</block>
   <block id="ad6e34d4719cd2f503bdb298311a85e4" category="paragraph">Fabric의 두 스위치에서 "portcfglongdistance_port number port distance_" 명령을 사용합니다.</block>
   <block id="43a533d4a7711d238594840dabecdae9" category="paragraph">ISL을 제거하려면...</block>
-  <block id="0251accfd0a01d6b6678e4acc31b0511" category="paragraph">링크 \(케이블\)를 분리하십시오.</block>
   <block id="31e0f1d7c104cf71dda69e0e141d7dfa" category="paragraph">ISL 추가...</block>
   <block id="30157269456de4c3887b93d1ec060d5c" category="paragraph">ISL 재배치...</block>
   <block id="aef3cfb377e896595d24bea72737dbb1" category="paragraph">ISL을 재배치하는 작업은 ISL을 제거한 다음 추가하는 것과 같습니다. 먼저, 링크를 분리하여 ISL을 제거한 다음 ISL 포트로 추가할 포트에 SFP를 삽입합니다.</block>
@@ -13239,7 +13238,6 @@
   <block id="baf55d93093b54950152b6be3f9bfec2" category="list-text">하나의 Fabric에 있는 ISL은 모두 속도와 길이가 같아야 합니다.</block>
   <block id="4b00dc01ca120693f1539bf736f11069" category="list-text">두 패브릭의 ISL은 속도와 길이가 같아야 합니다.</block>
   <block id="ef6ab3e28db1093c7315b30edeb84730" category="list-text">패브릭 1과 패브릭 2 간의 최대 지원 거리 차이는 20km 또는 0.2ms입니다.</block>
-  <block id="1b6ceb9b8db71407a3be0617e754101e" category="list-text">한 Fabric의 ISL은 동일한 토폴로지를 가져야 합니다. 예를 들어, 모두 직접 링크여야 하거나 구성에서 WDM을 사용하는 경우 모두 WDM을 사용해야 합니다.</block>
   <block id="ddf41f2636c98d00a2698837f55a3f74" category="list-text">ISL 속도는 10Gbps 이상이어야 합니다.</block>
   <block id="cb806a9b25dfb1d4470413a3c2dd9944" category="list-text">Fabric당 10Gbps ISL 포트가 하나 이상 있어야 합니다.</block>
   <block id="25b13aa97e6e9eb228478bfddbcc84e9" category="paragraph">다음은 site_A와 site_B에서 MetroCluster IP 스위치 간의 왕복 트래픽에 적용되며, MetroCluster 구성이 정상 작동 중입니다.</block>
@@ -13500,4 +13498,20 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
 모든 MetroCluster 구성에 적용됩니다.</block>
   <block id="20f7078fb96bd6060a10b9fed9306941" category="sidebar">MetroCluster 규정 준수 스위치의 요구사항 및 제한 사항</block>
   <block id="3c24829f69028dca3ac0aa982abad68d" category="sidebar">MetroCluster 호환 스위치를 위한 네트워크 속도 및 스위치 포트 모드</block>
+  <block id="61a6d655671eebbd633c1d84fae09e17" category="cell">만약...</block>
+  <block id="9bb5e66f509f87b2056c49d88c3c1ad3" category="cell">다음 절차를 사용합니다.</block>
+  <block id="585259c85fa7332b7408c2bdbdccbd7e" category="cell">요구 사항을 충족하는 RCF가 있어야 합니다</block>
+  <block id="6cd8985ef1c9ac5bb3c5ba019968286f" category="list-text"><block ref="6cd8985ef1c9ac5bb3c5ba019968286f" category="inline-link-macro-rx"></block></block>
+  <block id="876679dae881403e2f232efc9dd0bb3f" category="inline-link-macro">RCF 파일을 사용하여 Cisco FC 스위치를 구성합니다</block>
+  <block id="eb93031c42594d52b52dea4aa8c60cc7" category="list-text"><block ref="eb93031c42594d52b52dea4aa8c60cc7" category="inline-link-macro-rx"></block></block>
+  <block id="f95c75e9e3d1a3f06e2b3b15e304cf53" category="cell">RCF가 없거나 요구 사항을 충족하지 않는 RCF가 없습니다</block>
+  <block id="a7479abd1216b38814805eeb38bdbc15" category="list-text"><block ref="a7479abd1216b38814805eeb38bdbc15" category="inline-link-macro-rx"></block></block>
+  <block id="36d1363cb78273718bac11302a6ed445" category="paragraph">링크를 분리합니다.</block>
+  <block id="cde774a461b1ae0ea7e1a404c874f2a4" category="admonition">ISL 포트를 변경할 때 WDM 공급업체가 권장하는 추가 설정을 적용해야 할 수도 있습니다. 지침은 WDM 공급업체 문서를 참조하십시오.</block>
+  <block id="05ad4e95aa7945d2b5bc1c7c8a6eb220" category="list-text">서비스 프로세서(SP)를 구성합니다.</block>
+  <block id="0e74984a18b6236a912a70cd78328256" category="inline-link-macro">SP/BMC 네트워크를 구성합니다</block>
+  <block id="1aea5f30cf555d730902505e498f4fd0" category="paragraph"><block ref="1aea5f30cf555d730902505e498f4fd0" category="inline-link-macro-rx"></block></block>
+  <block id="4010f2b8e90ddf85f94ac358d78075c1" category="inline-link-macro">시스템 관리자 - ONTAP 9.7 이하가 설치된 서비스 프로세서를 사용합니다</block>
+  <block id="eaa2669881cbe475b9e0b278420a4005" category="paragraph"><block ref="eaa2669881cbe475b9e0b278420a4005" category="inline-link-macro-rx"></block></block>
+  <block id="adf442d82428813618df31b5f35c8c5d" category="list-text">ISL의 토폴로지는 동일해야 합니다. 예를 들어, 모두 직접 링크여야 하거나 구성에서 WDM을 사용하는 경우 모두 WDM을 사용해야 합니다.</block>
 </blocks>

@@ -12,3 +12,22 @@ summary:
 
 [role="lead"]
 RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.
+
+[cols="2*"]
+|===
+| 만약... | 다음 절차를 사용합니다. 
+
+
+| 요구 사항을 충족하는 RCF가 있어야 합니다  a| 
+* link:task_reset_the_brocade_fc_switch_to_factory_defaults.html["RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다"]
+* link:task_reset_the_cisco_fc_switch_to_factory_defaults.html["RCF 파일을 사용하여 Cisco FC 스위치를 구성합니다"]
+
+
+
+
+| RCF가 없거나 요구 사항을 충족하지 않는 RCF가 없습니다  a| 
+* link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
+* link:task_fcsw_cisco_configure_a_cisco_switch_supertask.html["Cisco FC 스위치를 수동으로 구성합니다"]
+
+
+|===
