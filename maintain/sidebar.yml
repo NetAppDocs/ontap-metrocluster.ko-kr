@@ -106,12 +106,18 @@ entries:
   url: "/maintain/task_move_a_metadata_volume_in_mcc_configurations.html"
 - title: MetroCluster 구성에서 클러스터의 이름을 바꿉니다
   url: "/maintain/task_rename_the_cluster_for_mcc_configuration.html"
-- title: 데이터 센터의 전원을 끄고 전원을 켭니다
-  url: "/maintain/task_power_on_and_power_off_a_data_center.html"
-- title: 전체 MetroCluster IP 구성의 전원을 끕니다
-  url: "/maintain/task_power_off_an_entire_mcc_ip_configuration.html"
-- title: 전체 MetroCluster FC 구성의 전원을 끕니다
-  url: "/maintain/task_power_off_an_entire_mcc_fc_configuration.html"
+- title: 단일 MetroCluster 사이트의 전원을 끄고 켭니다
+  entries:
+  - title: MetroCluster IP 구성에서 단일 사이트의 전원을 끄고 켭니다
+    url: "/maintain/task_power_on_and_power_off_a_data_center.html"
+  - title: MetroCluster FC 구성에서 단일 사이트의 전원을 끄고 켭니다
+    url: "/maintain/task-power-on-and-power-off-a-fc-site.html"
+- title: 전체 MetroCluster 구성의 전원을 끕니다
+  entries:
+  - title: 전체 MetroCluster IP 구성의 전원을 끕니다
+    url: "/maintain/task_power_off_an_entire_mcc_ip_configuration.html"
+  - title: 전체 MetroCluster FC 구성의 전원을 끕니다
+    url: "/maintain/task_power_off_an_entire_mcc_fc_configuration.html"
 - title: ONTAP 9.x 전에 구성된 FC 스위치 레이아웃을 재구성합니다
   url: "/maintain/task_do_not_use_for_9_8_and_later_reconfigure_the_fc_switch_layout_for_ontap_9_1_or_later.html"
 - title: FC 스위치에 대한 포트 할당

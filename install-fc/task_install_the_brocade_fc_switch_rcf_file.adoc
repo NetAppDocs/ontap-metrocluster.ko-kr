@@ -115,7 +115,6 @@ FC_switch_A_1:admin> portcfgspeed port number port speed
 
 +
 ** 8Gbps FC-VI 어댑터를 사용하고 스위치 포트 속도를 8Gbps로 설정해야 할 경우 상호 연결 스위치 포트 속도를 변경해야 합니다.
-** ATTO FiberBridge 6500N에 8Gbps HBA 어댑터를 사용하는 경우 스위치 포트 속도를 변경해야 합니다.
 ** ISL이 16Gbps에서 실행될 수 없는 경우 ISL 포트의 속도를 변경해야 합니다.
 
 

@@ -28,7 +28,7 @@ NOTE: FiberBridge 6500N 브리지는 ONTAP 9.8 이상을 실행하는 구성에�
  a| 
 FiberBridge 7500N 브리지는 단일 FC 포트를 사용하여 단일 스택에 연결하여 FiberBridge 6500N 브리지와 동일하게 구성해야 합니다. FiberBridge 7500N의 두 번째 FC 포트는 사용해서는 안 됩니다.
  a| 
-link:task_replace_a_sle_fc_to_sas_bridge.html["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
 
 
 

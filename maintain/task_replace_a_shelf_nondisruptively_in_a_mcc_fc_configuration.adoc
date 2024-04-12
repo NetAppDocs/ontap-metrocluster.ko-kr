@@ -103,10 +103,6 @@ FC_switch_A_2(config)# end
 ----
 ** 브리지가 둘 이상의 SAS 스택을 연결하는 경우 브리지를 대상 셸프에 연결하는 SAS 포트(+'SASportDisable_port number_')를 비활성화합니다
 +
-
-NOTE: FiberBridge 6500 브리지에는 적용되지 않습니다.
-
-+
 다음 예는 4개의 SAS 스택을 연결하는 브리지 쌍을 보여줍니다. SAS 스택 2에는 타겟 쉘프가 포함되어 있습니다.
 
 +
@@ -252,9 +248,6 @@ SASPortEnable A
 SAS Port A has been enabled.
 ----
 
-
-
-NOTE: ATTO 6500 FiberBridges에는 적용되지 않습니다.
 
 |===
 . 이전에 스위치 포트를 비활성화한 경우 포트가 활성화되어 있고 온라인 상태인지, 그리고 모든 장치가 올바르게 로그인했는지 확인합니다.

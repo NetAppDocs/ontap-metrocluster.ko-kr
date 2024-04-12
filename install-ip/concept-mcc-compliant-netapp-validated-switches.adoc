@@ -8,6 +8,7 @@ summary: 이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요�
 :allow-uri-read: 
 
 
+[role="lead"]
 백엔드 스위치를 포함하여 구성에 사용되는 모든 스위치는 NetApp에서 검증하거나 MetroCluster 규정을 준수해야 합니다.
 
 

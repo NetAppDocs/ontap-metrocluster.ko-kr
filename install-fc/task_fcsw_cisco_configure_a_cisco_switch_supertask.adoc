@@ -2528,7 +2528,7 @@ NOTE: 각 Fabric에 있는 스위치 하나에서만 이 단계를 수행합니�
 
 +
 --
-** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 위한 영역 지정"]
+** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 대한 조닝"]
 ** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["두 FC 포트를 모두 사용하는 FiberBridge 7500N 브리지에 대한 조닝(Zoning"]
 
 
@@ -2613,7 +2613,7 @@ NOTE: Fabric에 있는 스위치 하나에서만 이 단계를 수행합니다.
 
 +
 --
-** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 위한 영역 지정"]
+** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 대한 조닝"]
 ** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["두 FC 포트를 모두 사용하는 FiberBridge 7500N 브리지에 대한 조닝(Zoning"]
 
 

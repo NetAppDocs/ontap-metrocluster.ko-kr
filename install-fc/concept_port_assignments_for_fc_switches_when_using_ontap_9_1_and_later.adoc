@@ -68,7 +68,7 @@ ISL 고려 사항에 대한 섹션을 참조하십시오.
 |===
 
 
-5+| FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N을 사용하는 구성입니다 
+5+| FC 포트(FC1 또는 FC2)를 사용한 FiberBridge 7500N 또는 7600N을 사용한 구성 
 
 
 5+| MetroCluster 1 또는 DR 그룹 1 
@@ -262,7 +262,7 @@ HBA 포트 d
 |===
 
 
-5+| FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N을 사용하는 구성입니다 
+5+| FC 포트(FC1 또는 FC2)를 사용한 FiberBridge 7500N 또는 7600N을 사용한 구성 
 
 
 5+| MetroCluster 1 또는 DR 그룹 1 
@@ -383,7 +383,7 @@ Bridge_x_yb입니다
 |===
 
 
-8+| FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N을 사용하는 구성입니다 
+8+| FC 포트(FC1 또는 FC2)를 사용한 FiberBridge 7500N 또는 7600N을 사용한 구성 
 
 
 8+| MetroCluster 2 또는 DR 그룹 2 
@@ -2791,7 +2791,7 @@ HBA 포트 d
 4+| Cisco 9396S 
 
 
-| FC 포트 2개를 사용하는 FiberBridge 7500 | 포트 | 스위치 1 | 스위치 2 
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | 스위치 1 | 스위치 2 
 
 
  a| 
@@ -2961,7 +2961,7 @@ FC2
 4+| Cisco 9148S 
 
 
-| FC 포트 2개를 사용하는 FiberBridge 7500 | 포트 | 스위치 1 | 스위치 2 
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | 스위치 1 | 스위치 2 
 
 
  a| 
@@ -3131,7 +3131,7 @@ FC2
 4+| Cisco 9250i 
 
 
-| FC 포트 2개를 사용하는 FiberBridge 7500 | 포트 | 스위치 1 | 스위치 2 
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | 스위치 1 | 스위치 2 
 
 
  a| 
@@ -3295,15 +3295,15 @@ FC2
 |===
 두 번째 DR 그룹 또는 두 번째 MetroCluster 구성에 대한 추가 브리지는 동일한 패턴에 따라 포트 25 - 48을 사용하여 연결할 수 있습니다.
 
-다음 표는 FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 6500 브리지 또는 FiberBridge 7500 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다. FC 포트 하나를 사용하는 FiberBridge 7500 브리지의 경우 FC1 또는 FC2를 FC1로 표시된 포트에 케이블로 연결할 수 있습니다. 25-48번 포트를 사용하여 추가 브리지를 연결할 수 있습니다.
+다음 표는 FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다. FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지의 경우 FC1 또는 FC2를 FC1로 표시된 포트에 케이블로 연결할 수 있습니다. 25-48번 포트를 사용하여 추가 브리지를 연결할 수 있습니다.
 
 |===
 
 
-4+| FC 포트 하나를 사용하는 FiberBridge 6500 브리지 또는 FiberBridge 7500 브리지 
+4+| FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지 
 
 
-.2+| FC 포트 1개를 사용하는 FiberBridge 6500 브리지 또는 FiberBridge 7500 .2+| 포트 2+| Cisco 9396S 
+.2+| FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N .2+| 포트 2+| Cisco 9396S 
 
 
 | 스위치 1 | 스위치 2 
@@ -3489,7 +3489,7 @@ FC1
 |===
 
 
-4+| FC 포트 하나를 사용하는 FiberBridge 6500 브리지 또는 FiberBridge 7500 브리지 
+4+| FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지 
 
 
 .2+| 브리지 .2+| 포트 2+| Cisco 9148S 
@@ -3681,7 +3681,7 @@ FC1
 4+| Cisco 9250i 
 
 
-| FC 포트 1개를 사용하는 FiberBridge 6500 브리지 또는 FiberBridge 7500 | 포트 | 스위치 1 | 스위치 2 
+| FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N | 포트 | 스위치 1 | 스위치 2 
 
 
  a| 
@@ -4358,7 +4358,7 @@ LEM2-8을 참조하십시오
 4+|  2+| 4노드 | 8개 노드 
 
 
-2+| FC 포트 2개를 사용하는 FiberBridge 7500 | 포트 | FC_SWITCH에 연결... | 9132T(1x LEM) | 9132T(2x LEM) | 9132T(2x LEM) 
+2+| FC 포트 2개를 사용하는 FiberBridge 7500N | 포트 | FC_SWITCH에 연결... | 9132T(1x LEM) | 9132T(2x LEM) | 9132T(2x LEM) 
 
 
  a| 

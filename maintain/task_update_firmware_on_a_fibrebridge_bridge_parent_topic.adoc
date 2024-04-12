@@ -258,9 +258,9 @@ flashimages
 
 
 
-== ONTAP 9.3.x 이하 또는 6500N 브리지를 실행하는 구성에서 FiberBridge 7500N의 펌웨어를 업데이트합니다
+== ONTAP 9.3.x 이하를 실행하는 구성에서 FiberBridge 7500N의 펌웨어 업데이트
 
-FiberBridge 브리지의 펌웨어를 업데이트하여 최신 기능을 사용하거나 가능한 문제를 해결해야 할 수 있습니다. 이 절차는 ONTAP 9.3.x를 실행하는 구성에서 FiberBridge 7500N에 사용하거나 지원되는 모든 버전의 ONTAP에서 FiberBridge 6500N 브리지에 사용해야 합니다.
+FiberBridge 브리지의 펌웨어를 업데이트하여 최신 기능이 있는지 확인하거나 가능한 문제를 해결해야 할 수 있습니다. 이 절차는 ONTAP 9.3.x를 실행하는 구성의 FiberBridge 7500N에 사용해야 합니다
 
 .시작하기 전에
 * MetroCluster 구성이 정상적으로 작동해야 합니다.
@@ -276,7 +276,7 @@ IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션�
 
 
 
-FiberBridge 7500N 또는 6500N 브리지에서 이 작업을 사용할 수 있습니다. ONTAP 9.3부터 ONTAP storage bridge firmware update 명령을 사용하여 FiberBridge 7500N 브리지의 브리지 펌웨어를 업데이트할 수 있습니다.
+ONTAP 9.3부터 ONTAP storage bridge firmware update 명령을 사용하여 FiberBridge 7500N 브리지의 브리지 펌웨어를 업데이트할 수 있습니다.
 
 link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["ONTAP 9.4 이상을 실행하는 구성에서 FiberBridge 7600N 또는 7500N 브리지에서 펌웨어 업데이트"]
 
@@ -305,17 +305,15 @@ https://mysupport.netapp.com/site/products/all/details/atto-fibrebridge/download
 . 각 브리지에서 펌웨어를 업데이트하라는 지시가 있을 때 참조할 수 있도록 ATTO FiberBridge 펌웨어 다운로드 페이지 및 릴리스 노트를 복사합니다.
 . 브리지 업데이트:
 +
-.. FiberBridge 브리지에 펌웨어를 설치합니다.
+.. FiberBridge 7500N 브리지에 펌웨어를 설치합니다.
 +
-*** ATTO FiberBridge 7500N 브리지를 사용하는 경우, _ATTO FiberBridge 7500N 설치 및 작동 설명서_의 ""펌웨어 업데이트"" 섹션에 나와 있는 지침을 참조해야 합니다.
-*** ATTO FiberBridge 6500N 브리지를 사용하는 경우, _ATTO FiberBridge 6500N 설치 및 작동 설명서_의 ""펌웨어 업데이트"" 섹션에 나와 있는 지침을 참조해야 합니다.
+ATTO FiberBridge 7500N 설치 및 작동 설명서 _ 의 ""펌웨어 업데이트" 섹션에 제공된 지침을 참조하십시오.
+
 +
 * 주의: * 지금 개별 브리지의 전원을 껐다 켜십시오. 스택의 두 브리지 전원을 동시에 껐다가 켜면 컨트롤러에서 드라이브에 대한 액세스 권한을 상실하여 plex 장애가 발생하거나 여러 디스크 패닉이 발생할 수 있습니다.
 
 +
 브리지가 다시 시작됩니다.
-
-
 
 .. 두 컨트롤러 중 하나의 콘솔에서 브리지가 올바르게 다시 시작되었는지 확인합니다.
 +

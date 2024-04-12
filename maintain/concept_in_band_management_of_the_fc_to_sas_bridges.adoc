@@ -36,7 +36,7 @@ link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-bridge-with-a-repla
 
 link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-7500n-with-a-7600n-bridge["FiberBridge 7500N을 7600N 브리지로 핫 스와핑"]
 
-link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-a-6500n-bridge-with-a-fibrebrdige-7600n-or-7500n-bridge["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
 
 link:task_fb_hot_add_stack_of_shelves_and_bridges.html#hot-adding-a-stack-of-sas-disk-shelves-and-bridges["SAS 디스크 쉘프 및 브리지 스택 핫 추가"]
 

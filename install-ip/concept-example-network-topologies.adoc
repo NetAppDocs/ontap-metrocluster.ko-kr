@@ -10,6 +10,7 @@ summary: ONTAP 9.6부터 MetroCluster IP 구성에 대해 몇 가지 추가 네�
 :imagesdir: ../media/
 
 
+[role="lead"]
 ONTAP 9.6부터 MetroCluster IP 구성에 대해 몇 가지 추가 네트워크 구성이 지원됩니다. 이 섹션에서는 지원되는 네트워크 구성의 몇 가지 예를 제공합니다. 지원되는 토폴로지 중 일부는 나열되지 않습니다.
 
 이러한 토폴로지에서는 ISL 및 중간 네트워크가 에 설명된 요구 사항에 따라 구성된 것으로 가정합니다 link:concept-requirements-isls.html["ISL에 대한 고려 사항"].

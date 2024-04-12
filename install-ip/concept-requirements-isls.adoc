@@ -10,6 +10,7 @@ summary: '이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토
 :imagesdir: ../media/
 
 
+[role="lead"]
 모든 MetroCluster IP 구성과 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에는 특정 요구 사항이 있습니다. 이러한 요구 사항은 고객 스위치 간에 ISL이 직접 또는 공유되는지 여부에 관계없이 MetroCluster 트래픽을 전달하는 모든 ISL에 적용됩니다.
 
 

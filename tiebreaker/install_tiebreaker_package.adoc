@@ -8,6 +8,7 @@ summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위�
 :allow-uri-read: 
 
 
+[role="lead"]
 MetroCluster 구성을 모니터링하려면 로컬 컴퓨터에 MetroCluster Tiebreaker 소프트웨어를 설치하거나 업그레이드해야 합니다.
 
 .이 작업에 대해

@@ -1,5 +1,5 @@
 ---
-permalink: install-fc/task_fb_new_install.html 
+permalink: install-fc/task_install_fc_sas_bridges_shelves.html 
 sidebar: sidebar 
 keywords: install, installing, fc-to-sas, fc, sas, bridges, disk, shelves, atto, fibrebridge 
 summary: 구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다. 
@@ -140,7 +140,7 @@ NOTE: MetroCluster 구성의 SAS 쉘프는 ACP 케이블 연결을 지원하지 
 9.5 이전 버전의 ONTAP를 사용 중이거나 텔넷 또는 기타 IP 포트 프로토콜 및 서비스(FTP, ExpressNAV, ICMP 또는 Quicknav)를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.
 
 .이 작업에 대해
-ATTO FiberBridge 7500N 및 6500N 브리지와 달리 FiberBridge 7600N 브리지는 모든 IP 포트 프로토콜 및 서비스가 비활성화된 상태로 제공됩니다.
+ATTO FiberBridge 7500N 브리지와 달리 FiberBridge 7600N 브리지는 모든 IP 포트 프로토콜 및 서비스가 비활성화된 상태로 출하됩니다.
 
 ONTAP 9.5부터 브리지의 _ 대역 내 관리 _ 가 지원됩니다. 즉, 브리지에 대한 FC 연결을 통해 ONTAP CLI에서 브리지를 구성 및 모니터링할 수 있습니다. 브리지 이더넷 포트를 통해 브리지에 물리적으로 액세스할 필요는 없으며 브리지 사용자 인터페이스는 필요하지 않습니다.
 
@@ -311,9 +311,8 @@ ONTAP 9.5 이상을 실행하는 시스템에서 대역내 관리를 사용하�
 --
 지원되는 FC 데이터 속도는 모델 브리지에 따라 다릅니다.
 
-*** FiberBridge 7600 브리지는 최대 32, 16 또는 8Gbps를 지원합니다.
-*** FiberBridge 7500 브리지는 최대 16, 8 또는 4Gbps를 지원합니다.
-*** FiberBridge 6500 브리지는 최대 8, 4 또는 2Gbps를 지원합니다.
+*** FiberBridge 7600N 브리지는 최대 32, 16 또는 8Gbps를 지원합니다.
+*** FiberBridge 7500N 브리지는 최대 16, 8 또는 4Gbps를 지원합니다.
 
 
 
@@ -324,7 +323,7 @@ CLI를 사용하는 경우 다음 명령을 실행해야 합니다.
 'Set FCDataRate_port-number__port-speed_'
 
 --
-.. FiberBridge 7500N 또는 6500N 브리지를 구성하는 경우 해당 포트가 PTP에 사용하는 연결 모드를 구성합니다.
+.. FiberBridge 7500N 브리지를 구성하는 경우 포트가 "PTP"에 사용하는 연결 모드를 구성합니다.
 +
 
 NOTE: FiberBridge 7600N 브리지를 구성할 때는 FCConnMode 설정이 필요하지 않습니다.
@@ -459,7 +458,6 @@ link:task_fb_new_install.html["FC-to-SAS 브리지의 대역 내 관리"]
 .선택
 * <<cabling_fb_7600N_7500N_with_iom12,IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다>>
 * <<cabling_fb_7600N_7500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 쉘프에 케이블 연결>>
-* <<cabling_fb_6500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 6500N 브리지와 디스크 쉘프 케이블링>>
 
 
 
@@ -548,39 +546,6 @@ image::../media/mcc_cabling_bridge_and_sas_stack_with_7500n_four_stacks.gif[7500
 
 
 
-==== IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 6500N 브리지와 디스크 쉘프 케이블링
-
-브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 6500N 브리지는 QSFP 커넥터를 사용합니다.
-
-.이 작업에 대해
-포트를 연결하기 전에 10초 이상 기다립니다. SAS 케이블 커넥터는 SAS 포트에 올바르게 연결되었을 때 딸깍 소리가 나면서 제자리에 끼며 디스크 쉘프 SAS 포트 LNK LED가 녹색으로 켜집니다. 디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에 있음) SAS 케이블 커넥터를 삽입합니다.
-
-FiberBridge 6500N 브리지는 IOM12를 사용하는 디스크 쉘프를 지원하지 않습니다.
-
-.단계
-. 각 스택의 디스크 쉘프를 데이지 체인 방식으로 연결합니다.
-+
-디스크 쉘프 데이지 체인 방식으로 연결하는 방법에 대한 자세한 내용은 디스크 쉘프 모델의 _설치 및 서비스 가이드_를 참조하십시오.
-
-. 디스크 쉘프 각 스택의 IOM A 사각형 포트를 FiberBridge A의 SAS 포트 A에 연결합니다
-. 각 디스크 쉘프 스택에 대해 마지막 쉘프의 IOM B 원형 포트를 FiberBridge B의 SAS 포트 A에 연결합니다
-+
-각 브리지는 디스크 쉘프 쌓기 위한 하나의 경로를 가집니다. 브리지 A는 첫 번째 쉘프를 통해 스택의 A 측에 연결되고, 브리지 B는 마지막 쉘프를 통해 스택의 B 측에 연결됩니다.
-
-+
-
-NOTE: SAS 포트 B 브리지가 비활성화됩니다.
-
-+
-다음 그림에서는 4개의 디스크 쉘프 스택에 연결된 브리지 세트를 보여 줍니다.
-
-+
-image::../media/mcc_cabling_bridge_and_sas_stack.gif[MCC 케이블 연결 브리지 및 SAS 스택]
-
-
-
-
-
 === 브리지 연결 확인 및 브리지 FC 포트 케이블 연결
 
 각 브리지가 모든 디스크 드라이브를 감지할 수 있는지 확인한 다음 각 브리지를 로컬 FC 스위치에 케이블로 연결해야 합니다.
@@ -620,12 +585,10 @@ ATTO ExpressNAV GUI
 '아스타우다스다'
 
 |===
-
-
++
 출력에는 브리지가 연결된 장치(디스크 및 디스크 쉘프)가 표시됩니다. 출력 줄은 순차적으로 번호가 매겨지며, 이를 통해 장치의 수를 빠르게 계산할 수 있습니다. 예를 들어, 다음 출력에서는 10개의 디스크가 연결되어 있음을 보여 줍니다.
 
-를 누릅니다
-
++
 [listing]
 ----
 Tgt VendorID ProductID        Type        SerialNumber
@@ -640,7 +603,9 @@ Tgt VendorID ProductID        Type        SerialNumber
   8 NETAPP   X410_S15K6288A15 DISK        3QP1FY0T00009940G8PA
   9 NETAPP   X410_S15K6288A15 DISK        3QP1FXW600009940VERQ
 ----
-+참고: 출력 시작 부분에 "spondse Truncated"(응답 잘림) 텍스트가 나타나면 텔넷을 사용하여 브리지에 연결하고 동일한 명령을 입력하여 모든 출력을 볼 수 있습니다.
++
+
+NOTE: 출력 시작 부분에 ""응답 잘림"" 텍스트가 나타나면 텔넷을 사용하여 브리지에 연결하고 같은 명령을 입력하여 모든 출력을 볼 수 있습니다.
 
 . 명령 출력에 브리지가 연결될 스택의 모든 디스크 및 디스크 쉘프에 연결되어 있는지 확인합니다.
 +

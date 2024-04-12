@@ -8,6 +8,7 @@ summary: MetroCluster 구성 및 네트워크가 모든 ISL 요구 사항을 충
 :allow-uri-read: 
 
 
+[role="lead"]
 MetroCluster IP 구성 및 네트워크가 모든 ISL(Inter-Switch Link) 요구 사항을 충족하는지 확인해야 합니다. 특정 요구 사항이 구성에 적용되지 않을 수도 있지만 전체 구성을 보다 잘 이해하려면 모든 ISL 요구 사항을 알고 있어야 합니다.
 
 다음 표는 이 섹션에서 다루는 항목의 개요를 제공합니다.

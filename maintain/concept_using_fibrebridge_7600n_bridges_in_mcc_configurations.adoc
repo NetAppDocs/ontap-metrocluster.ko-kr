@@ -43,7 +43,7 @@ link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-7500n-w
  a| 
 FiberBridge 7600N 브리지는 FiberBridge 6500N 브리지와 동일하게 구성해야 합니다.
  a| 
-link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-6500n-bridge-with-a-fibrebridge-7600n-or-7500n-bridge["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
+link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]
 
 
 

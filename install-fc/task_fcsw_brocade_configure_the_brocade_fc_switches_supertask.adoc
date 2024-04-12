@@ -1725,7 +1725,7 @@ Port   Configured    Active   Configured   Active  Speed
 
 == Brocade FC 스위치에서 조닝 구성
 
-스위치 포트를 별도의 영역에 할당하여 컨트롤러 및 스토리지 트래픽을 분리해야 합니다. FiberBridge 7500N 또는 FiberBridge 6500N 브리지 사용 여부에 따라 시술이 달라집니다.
+스위치 포트를 별도의 영역에 할당하여 컨트롤러 및 스토리지 트래픽을 분리해야 합니다.
 
 
 
@@ -1947,9 +1947,9 @@ QOSH2_MC1_FAB_2_FCVI(6520)
 |===
 
 
-=== FC 포트 하나를 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 위한 영역 지정
+=== FC 포트 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 대한 조닝
 
-FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 두 FC 포트 중 하나만 사용하는 경우 브리지 포트에 대한 스토리지 영역을 만들어야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.
+FC 포트 2개 중 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용하는 경우 브리지 포트에 대한 스토리지 존을 생성해야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.
 
 이 예에서는 DR 그룹 1에 대해서만 조닝을 보여 줍니다. 구성에 두 번째 DR 그룹이 포함된 경우 컨트롤러 및 브리지의 해당 포트를 사용하여 두 번째 DR 그룹의 조닝을 동일한 방식으로 구성합니다.
 
@@ -1999,7 +1999,6 @@ A 또는 B입니다
 +
 스택 그룹은 10개 이상의 스토리지 쉘프를 포함할 수 없습니다.
 
-* FiberBridge 6500N 브리지는 스택 그룹에서 단일 스택만 지원합니다.
 
  a| 
 1, 2 등
@@ -2443,7 +2442,6 @@ A 또는 B입니다
 +
 스택 그룹은 10개 이상의 스토리지 쉘프를 포함할 수 없습니다.
 
-* FiberBridge 6500N 브리지는 스택 그룹에서 단일 스택만 지원합니다.
 
  a| 
 1, 2 등
@@ -4294,7 +4292,7 @@ FC-VI 포트 영역과 스토리지 포트 영역을 구분하여 컨트롤러 �
 
 link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC-VI 포트를 위한 조닝"]
 
-link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 6500N 브리지 또는 FiberBridge 7500N 또는 7600N 브리지를 위한 영역 지정"]
+link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["FC 포트 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 대한 조닝"]
 
 link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["두 FC 포트를 모두 사용하는 FiberBridge 7500N 브리지에 대한 조닝(Zoning"]
 
