@@ -7020,7 +7020,6 @@
   <block id="4a18eaea016103675a5da405a57fbed8" category="paragraph">다음 조건이 참인 경우에도 이 절차를 사용할 수 있습니다.</block>
   <block id="49304b5a3e77f6b22f9f39b8cf0e1186" category="list-text">두 브리지 모두 동일한 SAS 스토리지 스택에 연결된 FiberBridge 6500N 브리지 쌍을 교체하고 있습니다.</block>
   <block id="520879137e3e1dd05fc10803bb01fbcd" category="list-text">이전에 페어에서 FiberBridge 6500N 브리지 하나를 교체했으며, 스토리지 스택은 FiberBridge 6500N 브리지 1개와 FiberBridge 7600N 브리지 1개 또는 7500N 브리지로 구성됩니다.</block>
-  <block id="73152dad4acad3208bc063c3951344c5" category="paragraph">이 경우 FiberBridge 7600N 또는 7500N 브리지를 사용하여 ""하단"" FiberBridge 6500N 브리지를 핫 스왑하려면 아래 단계부터 시작해야 합니다.</block>
   <block id="f9c1933f3b94ffee14ef186b2709352c" category="paragraph">다음 다이어그램은 FiberBridge 6500N 브리지 4개가 SAS 스토리지 스택 2개를 연결하는 초기 구성의 예를 보여 줍니다.</block>
   <block id="3dcba5083263c26dc21f695136013a58" category="image-alt">이전 스택 통합</block>
   <block id="dc876c7ff2512b544d84916000f3f0d0" category="list-text">FiberBridge 7600N 또는 7500N 브리지 FC1 포트를 스위치 또는 컨트롤러에 연결합니다.</block>
@@ -13429,8 +13428,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="480cf83fd6c463ccef2ed2a9d0dce2c4" category="list-text">를 입력합니다<block ref="bedfcd4488b13f5b7062e121a6a8baa5" prefix=" " category="inline-code"></block> 포트를 영구적으로 사용하도록 설정하는 명령입니다. 이 작업은 정상 작동 사이트의 두 스위치에서 수행해야 합니다.</block>
   <block id="9d1a338762e03c980c82e8098eb03744" category="list-text">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다. 오프라인 플렉스를 다시 온라인 상태로 전환합니다. 이렇게 하면 재동기화 작업이 다시 시작되고 SyncMirror가 다시 설정됩니다.</block>
   <block id="9f6a23c1abc971d714730192ce961b96" category="paragraph">의 지침을 따릅니다 <block ref="9c0d52e0ce7a57d643217990aba10043" category="inline-link-macro-rx"></block> MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.</block>
-  <block id="92833b015ed412068659d576a7df1599" category="list-text">다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지와 ""상단" FiberBridge 6500N 브리지를 핫 스왑합니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>:</block>
-  <block id="3753c208918127350b444c3dc052115f" category="list-text">다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지로 ""하단" FiberBridge 6500N 브리지를 핫 스왑합니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>:</block>
   <block id="0b4bc6296d77be28e33d3b50e0ea0797" category="paragraph"><block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block></block>
   <block id="e49bc35e0118f2b5a5904c13e1833761" category="section-title">ONTAP 9.3.x 이하를 실행하는 구성에서 FiberBridge 7500N의 펌웨어 업데이트</block>
   <block id="1a5e839afe7a716dd2640f7fdb69669a" category="paragraph">FiberBridge 브리지의 펌웨어를 업데이트하여 최신 기능이 있는지 확인하거나 가능한 문제를 해결해야 할 수 있습니다. 이 절차는 ONTAP 9.3.x를 실행하는 구성의 FiberBridge 7500N에 사용해야 합니다</block>
@@ -13458,4 +13455,11 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ad1b97f0744b9c154b01cc69afb505d7" category="list-text">2개의 로컬 클러스터 인터페이스</block>
   <block id="861e1910edbd7f3e677dab91f10869b0" category="sidebar">단일 MetroCluster 사이트의 전원을 끄고 켭니다</block>
   <block id="b54f4d527d126f4e54869800ed0e43ac" category="sidebar">전체 MetroCluster 구성의 전원을 끕니다</block>
+  <block id="3918b9a89aceefd41e40355d1f97ba48" category="list-text">새 노드를 각각 재부팅합니다.</block>
+  <block id="fedca74b48d819e0ff016411f2964078" category="paragraph"><block ref="d690f5fb4faed2f81ce54caed818eaf8" prefix="" category="inline-code"></block></block>
+  <block id="0266a1f477a71d63c95d6ad418f2a596" category="paragraph">의 절차에 따라 조닝을 변경하거나 FiberBridge 6500N에서 FiberBridge 7500N으로 업그레이드할 수 있습니다 <block ref="7352d8244ff0bfad7d2b5214b0bb9616" category="inline-link-macro-rx"></block>.</block>
+  <block id="72a027f2830c7a189cc919fbbc72c98b" category="paragraph">이 경우 아래 단계부터 시작하여 하단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑해야 합니다.</block>
+  <block id="5a74832dfdf0bb3064f1c60224b5cf2a" category="list-text">다음 지침에 따라 의 절차에 따라 상단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>:</block>
+  <block id="ea8d3ee31ee0fcdd012de17493f6fb2c" category="list-text">다음 지침에 따라 의 절차에 따라 하단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>:</block>
+  <block id="16bdceed077292999c9190c699d66beb" category="list-text">자동 되돌리기 기능을 다시 사용하도록 모든 클러스터 LIF를 수정합니다.</block>
 </blocks>

@@ -1005,6 +1005,10 @@ cluster_A::*> metrocluster configure -refresh true
 
 [Job 726] Job succeeded: Configure is successful.
 ----
+.. 새 노드를 각각 재부팅합니다.
++
+`node reboot -node <node_name> -inhibit-takeover true`
+
 .. 관리자 권한 모드로 돌아가기:
 +
 'Set-Privilege admin'입니다

@@ -109,7 +109,7 @@ FiberBridge 7600N 또는 7500N 브리지 쌍을 사용하여 구성을 만들려
 * 두 브리지 모두 동일한 SAS 스토리지 스택에 연결된 FiberBridge 6500N 브리지 쌍을 교체하고 있습니다.
 * 이전에 페어에서 FiberBridge 6500N 브리지 하나를 교체했으며, 스토리지 스택은 FiberBridge 6500N 브리지 1개와 FiberBridge 7600N 브리지 1개 또는 7500N 브리지로 구성됩니다.
 +
-이 경우 FiberBridge 7600N 또는 7500N 브리지를 사용하여 ""하단"" FiberBridge 6500N 브리지를 핫 스왑하려면 아래 단계부터 시작해야 합니다.
+이 경우 아래 단계부터 시작하여 하단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑해야 합니다.
 
 
 
@@ -118,7 +118,7 @@ FiberBridge 7600N 또는 7500N 브리지 쌍을 사용하여 구성을 만들려
 image::../media/consolidating_stacks_before.gif[이전 스택 통합]
 
 .단계
-. 다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지와 ""상단" FiberBridge 6500N 브리지를 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
+. 다음 지침에 따라 의 절차에 따라 상단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
 +
 ** FiberBridge 7600N 또는 7500N 브리지 FC1 포트를 스위치 또는 컨트롤러에 연결합니다.
 +
@@ -182,7 +182,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 		.
 		.
 ----
-. 다음 지침에 따라 의 절차에 따라 FiberBridge 7600N 또는 7500N 브리지로 ""하단" FiberBridge 6500N 브리지를 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
+. 다음 지침에 따라 의 절차에 따라 하단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
 +
 ** FiberBridge 7600N 또는 7500N 브리지 FC2 포트를 스위치 또는 컨트롤러에 연결합니다.
 +
