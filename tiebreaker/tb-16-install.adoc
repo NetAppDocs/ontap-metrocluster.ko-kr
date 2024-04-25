@@ -2,7 +2,7 @@
 permalink: tiebreaker/tb-16-install.html 
 sidebar: sidebar 
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
-summary:  
+summary: 호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.6으로 업그레이드하여 MetroCluster 구성을 모니터링합니다. 
 ---
 = 타이브레이커 1.6을 설치합니다
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary:
 
 
 [role="lead"]
-타이브레이커 소프트웨어를 새로 설치하거나 업그레이드합니다.
+호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.6으로 업그레이드하여 MetroCluster 구성을 모니터링합니다.
 
 .이 작업에 대해
 * 스토리지 시스템에서 ONTAP 9.12.1 이상을 실행해야 합니다.
@@ -21,7 +21,7 @@ summary:
 .단계
 . MetroCluster Tiebreaker 1.6 소프트웨어를 다운로드합니다.
 +
-https://mysupport.netapp.com/site/["NetApp Support 사이트"^]
+https://mysupport.netapp.com/site/products/all/details/metrocluster-tiebreaker/downloads-tab["MetroCluster Tiebreaker (다운로드) - NetApp Support 사이트"^]
 
 . 호스트에 루트 사용자로 로그인합니다.
 . 업그레이드를 수행하는 경우 실행 중인 Tiebreaker 버전을 확인합니다.
@@ -231,19 +231,6 @@ Started NetApp MetroCluster Tiebreaker software services
 Successfully installed NetApp MetroCluster Tiebreaker software version 1.6.
 
 
-IMPORTANT: Please ensure you store the following private key used to decrypt audit logs securely in a safe location.
-Consider the following recommendations:
-- Save it to an encrypted storage device or file.
-- Use strong, unique passwords to protect the storage device or file.
-- Restrict access to the private key file to authorized individuals only.
-
-The Private key is:
-
------BEGIN PRIVATE KEY-----
-
-<private_key_id>
-
------END PRIVATE KEY-----
 ----
 
 
@@ -439,18 +426,6 @@ Successfully upgraded NetApp MetroCluster Tiebreaker software to version 1.6.
 Cleaning up / removing...
    2:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
 
-
-IMPORTANT: Please ensure you store the following private key used to decrypt audit logs securely in a safe location.
-Consider the following recommendations:
-- Save it to an encrypted storage device or file.
-- Use strong, unique passwords to protect the storage device or file.
-- Restrict access to the private key file to authorized individuals only.
-
-The Private key is:
-
------BEGIN PRIVATE KEY-----
-<private_key_id>
------END PRIVATE KEY-----
 
 ----
 
@@ -649,19 +624,6 @@ Started NetApp MetroCluster Tiebreaker software services
 Successfully upgraded NetApp MetroCluster Tiebreaker software to version 1.6.
 Cleaning up / removing...
    2:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
-
-
- IMPORTANT: Please ensure you store the following private key used to decrypt audit logs securely in a safe location.
-Consider the following recommendations:
-- Save it to an encrypted storage device or file.
-- Use strong, unique passwords to protect the storage device or file.
-- Restrict access to the private key file to authorized individuals only.
-
-The Private key is:
-
------BEGIN PRIVATE KEY-----
-<private_key_id>
------END PRIVATE KEY-----
 ----
 
 

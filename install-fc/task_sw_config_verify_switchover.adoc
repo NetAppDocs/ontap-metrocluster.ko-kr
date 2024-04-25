@@ -3372,7 +3372,7 @@ mccint-fas9000-0304
 .관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"^]
+link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 및 LIF 관리"^]
 
 
 
@@ -3500,7 +3500,7 @@ controller_A_2 controller_A_1 true     Connected to controller_A_1
 
 
 .관련 정보
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["고가용성 구성"^]
+link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA 쌍 관리"^]
 
 
 

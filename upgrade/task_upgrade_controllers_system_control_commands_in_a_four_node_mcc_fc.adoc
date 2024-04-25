@@ -17,10 +17,10 @@ summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroClus
 
 == 지원되는 플랫폼 조합
 
-* 지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 link:concept_choosing_controller_upgrade_mcc.html#metrocluster-fc-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
+* 지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  link:concept_choosing_controller_upgrade_mcc.html#supported-metrocluster-fc-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
 
 
-을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
+을 참조하십시오 link:concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
 
 
 
@@ -35,7 +35,7 @@ summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroClus
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
-* 이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"]. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.
+* 이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"]. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.
 * MetroCluster 사이트가 물리적으로 두 곳에 있는 경우 자동화된 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.
 * 이 자동화된 통계청 기반의 컨트롤러 업그레이드 절차를 통해 MetroCluster 재해 복구(DR) 사이트로 컨트롤러 교체를 시작할 수 있습니다. 한 번에 한 사이트에서만 컨트롤러 교체를 시작할 수 있습니다.
 * 사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.
@@ -241,7 +241,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
 
 .단계
-. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["기존 MetroCluster 구성을 제거합니다"^] Tiebreaker 소프트웨어
+. link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["기존 MetroCluster 구성을 제거합니다"] Tiebreaker 소프트웨어
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +
 응용 프로그램 설명서를 참조하십시오.
@@ -400,7 +400,7 @@ https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명�
 이 작업은 각각의 새 컨트롤러 모듈에서 수행됩니다.
 
 .단계
-. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. 에 액세스합니다 link:https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 . NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 ONTAP-version_image.tgz 파일을 저장합니다.
 . 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
 +

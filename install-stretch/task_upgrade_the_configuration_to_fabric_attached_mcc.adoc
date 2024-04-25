@@ -33,7 +33,7 @@ NOTE: 의 "패브릭 연결 MetroCluster 구성 케이블 연결" 섹션의 절�
 
 . 다음 단계를 사용하여 MetroCluster 구성을 새로 고칩니다.
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html[Fabric-attached MetroCluster 설치 및 구성 링크에서 "ONTAP에서 MetroCluster 소프트웨어 구성" 섹션의 절차를 사용하지 마십시오.
+의 "ONTAP에서 MetroCluster 소프트웨어 구성" 섹션에 있는 절차를 사용하지 마십시오 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"].
 
 +
 .. 고급 권한 모드로 들어갑니다: + " * set-privilege advanced *"

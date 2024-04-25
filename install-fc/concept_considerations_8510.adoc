@@ -6,7 +6,12 @@ summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키�
 ---
 = Brocade DCX 8510-8 스위치 사용에 대한 요구 사항
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
+
+[role="lead"]
+MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다.
 
 * MetroCluster 구성에 사용되는 DCX 8510-8 스위치는 NetApp에서 구입해야 합니다.
 * 확장성을 위해 4x48 포트 모듈에서 2개의 MetroClusters만 케이블로 연결하는 경우 MetroCluster 구성 간에 포트-청크를 하나만 남겨두어야 합니다. 이를 통해 MetroCluster 구성에서 포트 사용을 재설정하지 않고 확장할 수 있습니다.

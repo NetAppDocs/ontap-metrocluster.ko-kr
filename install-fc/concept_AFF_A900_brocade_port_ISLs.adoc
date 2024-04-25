@@ -10,6 +10,7 @@ summary: 다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 I
 :imagesdir: ../media/
 
 
+[role="lead"]
 다음 표에서는 AFF A900 또는 FAS9500 시스템의 Brocade 스위치에 대한 ISL 포트 사용을 보여 줍니다.
 
 

@@ -1,5 +1,6 @@
 ---
 permalink: disaster-recovery/concept_dr_workflow.html 
+sidebar: sidebar 
 keywords: workflow, perform, disaster, recovery 
 summary: 워크플로우를 사용하여 재해 복구를 수행합니다. 
 ---

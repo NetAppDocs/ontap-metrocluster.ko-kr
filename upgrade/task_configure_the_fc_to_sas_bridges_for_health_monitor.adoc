@@ -10,6 +10,9 @@ summary: FiberBridge 브리지는 타사 SNMP 모니터링 도구를 지원하�
 :imagesdir: ../media/
 
 
+[role="lead"]
+상태 모니터링을 위해 FC-SAS 브리지를 구성하는 방법에 대해 알아보십시오.
+
 .이 작업에 대해
 * FiberBridge 브리지는 타사 SNMP 모니터링 도구를 지원하지 않습니다.
 * ONTAP 9.8부터 FC-SAS 브리지는 기본적으로 대역내 연결을 통해 모니터링되며 추가 구성은 필요하지 않습니다.

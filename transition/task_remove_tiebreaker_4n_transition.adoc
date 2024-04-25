@@ -15,7 +15,7 @@ summary: '전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 �
 
 . Tiebreaker 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["MetroCluster 구성을 제거하는 중입니다"]
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성을 제거하는 중입니다"]
 
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +

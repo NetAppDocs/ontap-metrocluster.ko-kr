@@ -28,8 +28,15 @@ link:tb-16-install.html["타이브레이커 1.6을 설치합니다"]
 
 
  a| 
-타이브레이커 1.5 또는 1.4
+타이브레이커 1.5
  a| 
-link:install_dependencies.html["Tiebreaker 1.5 또는 1.4를 설치합니다"]
+link:task_configure_ssh_ontapi.html["타이브레이커 1.5를 설치합니다"]
+
+
+
+ a| 
+타이브레이커 1.4
+ a| 
+link:install-dependencies-14.html["Tiebreaker 1.4를 설치합니다"]
 
 |===

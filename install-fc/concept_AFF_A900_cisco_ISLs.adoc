@@ -10,6 +10,7 @@ summary: 다음 표에서는 ISL 포트 사용을 보여 줍니다.
 :imagesdir: ../media/
 
 
+[role="lead"]
 다음 표에서는 ISL 포트 사용을 보여 줍니다. ISL 포트 사용은 구성의 모든 스위치에서 동일합니다.
 
 |===

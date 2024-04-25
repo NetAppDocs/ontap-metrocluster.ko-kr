@@ -6,9 +6,12 @@ summary: 사이트 간에 실행되는 WAN ISL 포트에서만 MACsec 암호화�
 ---
 = Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
 :allow-uri-read: 
+:firstname: [.lead]
+:author: [.lead]
+:authorinitials: [
+:authors: [.lead]
+:revdate: You can configure MACsec encryption on the WAN ISL ports that run between the sites. You must configure MACsec after applying the correct RCF file.
 
-
-필요한 경우 사이트 간에 실행되는 WAN ISL 포트에서 MACsec 암호화를 구성할 수 있습니다. 올바른 RCF 파일을 적용한 후 MACsec을 구성해야 합니다.
 
 
 NOTE: MACsec 암호화는 WAN ISL 포트에만 적용할 수 있습니다.

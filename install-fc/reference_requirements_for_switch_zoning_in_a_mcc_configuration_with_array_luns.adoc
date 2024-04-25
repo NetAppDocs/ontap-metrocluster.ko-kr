@@ -27,7 +27,7 @@ summary: 어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝을 �
 * MetroCluster 구성에 사용되는 FC 스위치의 기본 구성을 수행해야 합니다.
 +
 ** link:task_fcsw_cisco_configure_a_cisco_switch_supertask.html["Cisco FC 스위치를 수동으로 구성합니다"]
-** link:ask_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
+** link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
 
 
 

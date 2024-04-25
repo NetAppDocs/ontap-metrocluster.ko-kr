@@ -20,7 +20,7 @@ entries:
       url: "/tiebreaker/install-choose-procedure.html"
     - title: 타이브레이커 1.6을 설치합니다
       url: "/tiebreaker/tb-16-install.html"
-    - title: Tiebreaker 1.5 또는 1.4를 설치합니다
+    - title: 타이브레이커 1.5를 설치합니다
       entries:
       - title: ONTAPI 및 SSH에 대한 관리자 액세스를 구성합니다
         url: "/tiebreaker/task_configure_ssh_ontapi.html"
@@ -28,6 +28,12 @@ entries:
         url: "/tiebreaker/install_dependencies.html"
       - title: 소프트웨어 패키지를 설치합니다
         url: "/tiebreaker/install_tiebreaker_package.html"
+    - title: Tiebreaker 1.4를 설치합니다
+      entries:
+      - title: 종속 항목을 설치합니다
+        url: "/tiebreaker/install-dependencies-14.html"
+      - title: 소프트웨어 패키지를 설치합니다
+        url: "/tiebreaker/install-tiebreaker-package-14.html"
 - title: 호스트를 업그레이드합니다
   url: "/tiebreaker/upgrade_host.html"
 - title: Tiebreaker 소프트웨어를 구성합니다

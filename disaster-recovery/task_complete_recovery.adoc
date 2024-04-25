@@ -10,6 +10,9 @@ summary: FabricPool 미러에 있는 오브젝트 저장소 중 하나가 MetroC
 :imagesdir: ../media/
 
 
+[role="lead"]
+다중 컨트롤러 또는 스토리지 장애 복구를 완료하려면 필요한 작업을 수행합니다.
+
 
 
 == FabricPool 구성에 대한 오브젝트 저장소를 다시 설정합니다

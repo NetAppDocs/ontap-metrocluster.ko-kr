@@ -80,7 +80,7 @@ FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 시리즈 시스템
  a| 
 기타 모든 시스템
  a| 
-네부트 http://__web_server_ip/path_to_web-accessible_directory__/<ontap_version>_image.tgz`[]
+`netboot \http://__web_server_ip/path_to_web-accessible_directory__/<ontap_version>_image.tgz`
 
 |===
 +

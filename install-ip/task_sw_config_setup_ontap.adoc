@@ -184,7 +184,7 @@ Where is the controller located []: site_A
 ----
 .. 노드 구성은 완료하지만 데이터 애그리게이트는 생성하지 않습니다.
 +
-ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 .
+ONTAP System Manager를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소(\https://172.17.12.153).
 
 +
 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/index.html["System Manager(ONTAP 9.7 이하)를 사용하여 클러스터 관리"^]

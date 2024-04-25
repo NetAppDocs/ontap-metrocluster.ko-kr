@@ -41,7 +41,6 @@
   <block id="25c779b977dab5ebed0156b6fb5f864b" category="paragraph"><block ref="25c779b977dab5ebed0156b6fb5f864b" category="inline-link-rx"></block></block>
   <block id="45ffc94e7a6a06c5cc630808204d30c2" category="list-text">지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.</block>
   <block id="c00379eb260028495e53ff62fa9b3a5a" category="inline-link">Cisco 소프트웨어 다운로드</block>
-  <block id="2e3e8617975ce08f365e434cca216c04" category="paragraph"><block ref="2e3e8617975ce08f365e434cca216c04" category="inline-link-rx"></block></block>
   <block id="696deaa8173dd6cec00abf83cfff691a" category="list-text">스위치 소프트웨어를 스위치에 복사합니다.</block>
   <block id="ebe7a0ec71a29ec2457b7e515243bbdb" category="paragraph">'copy sftp://root@server-ip-address/tftpboot/nx-os-file-name bootflash:vrf management'</block>
   <block id="170843e6f61a9a5c90fed2eb71e3c3b1" category="paragraph">이 예제에서 nxos.7.0.3.I4.6.bin 파일은 SFTP 서버 10.10.99.99에서 로컬 bootflash로 복사됩니다.</block>
@@ -364,7 +363,6 @@
   <block id="68bb3c77ae0d3938cb714cb02f09e0b2" category="section-title">MetroCluster 구성에 대한 네트워킹 및 LIF 생성 지침입니다</block>
   <block id="0ac1f475b7a9f3738281c9bdc175cf16" category="paragraph">MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.</block>
   <block id="4344cf9672839a368c8fd958fef1ec6a" category="inline-link">네트워크 및 LIF 관리</block>
-  <block id="8dc768991d5b26a5dd964209b0336989" category="paragraph"><block ref="8dc768991d5b26a5dd964209b0336989" category="inline-link-rx"></block></block>
   <block id="49792a2ba0435fdceb8523c637044b2d" category="inline-link-macro">IPSpace 객체 복제 및 서브넷 구성 요구 사항</block>
   <block id="5ad988ba21e33f2eef07904f31d92c7b" category="paragraph"><block ref="5ad988ba21e33f2eef07904f31d92c7b" category="inline-link-macro-rx"></block></block>
   <block id="6f5f4699ad0efc26fb8b554c8e359e36" category="inline-link-macro">MetroCluster 구성에서 LIF 생성을 위한 요구사항</block>
@@ -482,7 +480,6 @@
   <block id="8c6652271cf9962cf25d57593f2e0998" category="list-text">프롬프트에 응답하여 라이센스를 추가하고 클러스터 관리 SVM을 설정한 다음 DNS 정보를 입력합니다.</block>
   <block id="529c1647bb7154274999ead05402d316" category="list-text">프롬프트에 응답하여 스토리지 페일오버를 설정하고 노드를 설정합니다.</block>
   <block id="b842db396e001f50d74b654f1314df5d" category="list-text">노드 구성은 완료하지만 데이터 애그리게이트는 생성하지 않습니다.</block>
-  <block id="3dda58d6d9375a71c538f50ab53299f6" category="paragraph">ONTAP 시스템 관리자를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소를 지정할 수 있습니다 <block ref="a014d2689df7be806072ba0665b78ca6" category="inline-link-rx"></block>.</block>
   <block id="a20a27311b456fc6207eda19880125cd" category="inline-link">ONTAP 시스템 관리자(버전 9.7 이상)</block>
   <block id="1ca0d9647eb663a44ff0a5fef980ff52" category="paragraph"><block ref="1ca0d9647eb663a44ff0a5fef980ff52" category="inline-link-rx"></block></block>
   <block id="cbb4f42385447257b0524c80bc88c203" category="list-text">프롬프트에 따라 다음 컨트롤러를 부팅하고 클러스터에 연결합니다.</block>
@@ -697,7 +694,6 @@
   <block id="c827f7df05c6916afe05fd36408cafb0" category="paragraph">쿼터 3: 베이 24-35</block>
   <block id="93dcc09acf50956dd3f108153247603c" category="paragraph">베이 24-29</block>
   <block id="77c79465aa008b1bff68e784406b5273" category="paragraph">베이 36-41</block>
-  <block id="a66208eb43ca07208dc54b23ce6f191c" category="paragraph">각 사이트에서 2개의 쉘프를 사용하는 경우, 하프 쉘프 정책을 사용하여 디스크가 할당됩니다. 쉘프가 완전히 채워지지 않은 경우, 쉘프 양쪽 끝에서 드라이브를 동일하게 설치합니다.</block>
   <block id="dbaf1635e32fb5c1cc5e8aca3a390c3e" category="paragraph">예를 들어, 24개 드라이브 쉘프에 12개의 드라이브를 설치하는 경우 베이 0-5와 18-23에 드라이브를 설치합니다.</block>
   <block id="2ab5641f353f5df97a5b55aecef151f4" category="section-title">수동 드라이브 할당(ONTAP 9.5)</block>
   <block id="c3d1a88e0877d50245bcf17b1d6331bb" category="paragraph">ONTAP 9.5에서는 다음과 같은 쉘프 구성을 가진 시스템에서 드라이브를 수동으로 할당해야 합니다.</block>
@@ -1393,7 +1389,6 @@
   <block id="ab3f375bc99623514d0ee5394dabbe3e" category="paragraph">MetroCluster check show 명령은 최근 MetroCluster check run 명령의 결과를 보여준다. MetroCluster check show 명령을 사용하기 전에 항상 MetroCluster check run 명령을 실행하여 표시되는 정보가 최신 정보가 되도록 해야 합니다.</block>
   <block id="4f231b4fb4fb8bbd617c648b5efd351f" category="paragraph">다음 예는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check aggregate show' 명령 출력을 보여줍니다.</block>
   <block id="2dd10a99a16640634ad6093b398b6036" category="paragraph">다음 예에서는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check cluster show' 명령 출력을 보여 줍니다. 이는 필요한 경우 클러스터가 협상된 전환을 수행할 준비가 되었음을 나타냅니다.</block>
-  <block id="bc3d619cb2db28a4bb6fdf98a10e1f1f" category="paragraph"><block ref="bc3d619cb2db28a4bb6fdf98a10e1f1f" category="inline-link-rx"></block></block>
   <block id="ccc25c1a9a6f63d4acf6c9390b850b64" category="section-title">ONTAP 구성을 완료하는 중입니다</block>
   <block id="938a9f49acfde2902a8737d1aadbf6a1" category="paragraph">MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 SVM, 네트워크 인터페이스 및 기타 ONTAP 기능을 추가하여 클러스터 구성을 완료할 수 있습니다.</block>
   <block id="fb2c0ebeb18b9e1080333a65b192bdc3" category="list-text">ONTAP 중재자의 기존 인스턴스를 사용하는 경우 ONTAP 중재자 서비스를 ONTAP에 추가합니다.</block>
@@ -1450,7 +1445,6 @@
   <block id="8fdea79aece0ad1322e81be87031775a" category="list-text">Cisco 9336C-FX2 공유 스위치를 사용하는 구성은 지원되지 않습니다.</block>
   <block id="392719c196c4e0847676792f7c332ab2" category="section-title">MetroCluster 구성의 모든 SAN 어레이 시스템 지원</block>
   <block id="21cdd63bb00e685a661edb2068282e6e" category="paragraph">일부 SAN 어레이(ASA)는 MetroCluster 구성에서 지원됩니다. MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.</block>
-  <block id="75d7363908012fa0907c5a27d0b79c63" category="paragraph">지원되는 플랫폼 구성은 에 나와 있습니다<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block>.</block>
   <block id="ff63653e290a8e5b339966cb9855555f" category="summary">MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="882861c4cbc2720bbf7b9b7ae1dbada9" category="doc">MetroCluster 구성을 제거할 때의 고려 사항</block>
   <block id="598ab8da90f7b08fb85eebf2cdb5b642" category="doc">MetroCluster 규격 스위치를 사용할 때의 고려 사항</block>
@@ -1832,26 +1826,17 @@
   <block id="218877da4a1f52ca69f6dc597a153b50" category="list-text">클러스터 피어링 네트워크가 오랜 기간 동안 중단되었고 메타데이터 볼륨이 전환 후 온라인 상태가 아닌 경우 메타데이터가 손실됩니다.</block>
   <block id="355c33d19fef368cb732f4540374aa89" category="admonition">언급되지 않은 시나리오가 있을 수 있습니다. NetApp은 액티브 모드에서 MetroCluster Tiebreaker를 사용하지 않을 경우 발생할 수 있는 어떠한 손상에도 책임을 지지 않습니다. 위험 및 제한이 허용되지 않는 경우 MetroCluster Tiebreaker를 활성 모드에서 사용하지 마십시오.</block>
   <block id="d5e32abfbd3e5376cc7d90c1003b3516" category="summary">Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.</block>
-  <block id="995e564ca3c05e931e1da79c841f6b29" category="paragraph">Tiebreaker 소프트웨어는 세 번째 사이트에 설치되며, 이를 통해 ISL(Inter-Switch Link) 장애(사이트 간 링크가 다운된 경우)와 사이트 장애를 구분할 수 있습니다. MetroCluster 구성을 모니터링하기 위해 로컬 컴퓨터에 Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템이 특정 요구 사항을 충족해야 합니다.</block>
   <block id="1622cddcc8d92c2f521cf45ebeeb83b0" category="list-text">MariaDB 5.5.52.x/MySQL Server 5.6x</block>
   <block id="f211a801e18d8052b211fd5a87a83253" category="list-text">4GB RAM</block>
   <block id="6d6a8e3be3c8694034944ec6e631c4be" category="list-text">디스크 용량: 8GB</block>
   <block id="4c009b85d61ad347b56add00274e7453" category="list-text">방화벽:</block>
   <block id="3c78850f45b6edfc4af8ec0a93a2a1ab" category="list-text">AutoSupport 메시지 설정을 위한 직접 액세스</block>
   <block id="cde2b4acd898c32670d230559bc6a550" category="list-text">SSH(포트 22/TCP), HTTPS(포트 443/TCP) 및 ping(ICMP)</block>
-  <block id="d622b09f9e4518b80b223d0f3d83f9cd" category="section-title">MetroCluster Tiebreaker 종속성 설치</block>
   <block id="b56e6f0af6a9b1b27daa95d4a36afdc4" category="list-text">MySQL 또는 MariaDB 서버 설치:</block>
   <block id="6d3e1ad458b8305490e7f3f555ee8c93" category="cell">Linux 호스트가 인 경우</block>
   <block id="c1325f6903ebb5ebb2bb519a73ddb1b0" category="cell">그러면...</block>
   <block id="bbc93c3b548f7e6b61051cdcdda436b9" category="paragraph">Red Hat Enterprise Linux 7/CentOS 7</block>
-  <block id="2f4f94cc5a0950a910a46c35cf923e05" category="paragraph">MySQL을 설치합니다</block>
-  <block id="1635ad66e06d76cdccc25bb248323398" category="inline-xref">Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전 설치</block>
-  <block id="9955d510e571b5772146c4294aa083ad" category="paragraph"><block ref="dcceacb3de1856e2fea539e535a7cebb" category="inline-xref-macro-rx"></block></block>
   <block id="5508505cbdbe4c572010783025a1150d" category="paragraph">Red Hat Enterprise Linux 8</block>
-  <block id="4edc6e3711a7b2b1f3ee14f852711a72" category="paragraph">MariaDB를 설치합니다</block>
-  <block id="6b415ecff4f67f832fb78f9c6ed7945a" category="inline-xref">Red Hat Enterprise Linux 8에 MariaDB 서버 설치</block>
-  <block id="8ced9fc9cddb4453095058632c12c49f" category="paragraph"><block ref="fcc472ae70179ceec6c9e23c4db15f10" category="inline-xref-macro-rx"></block></block>
-  <block id="4a857d4819f55ec889deb5379b9ce9c7" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다.</block>
   <block id="982777ff7445d76450443abffc937386" category="list-text">호스트 시스템에 MySQL 리포지토리를 추가합니다.</block>
   <block id="76597904d13ed6703126a060cc752f6b" category="paragraph">([root@mcctb~]#yum localinstall\https://dev.mysql.com/get/mysql57-community-release-el6-11.noarch.rpm`)</block>
   <block id="b668a67d489eec4f62521bbd12885266" category="paragraph">'[root@mctb~]#yum-config-manager--disable mysql57-community'</block>
@@ -1869,11 +1854,9 @@
   <block id="436d3553136413496f4c1ab193b0224a" category="list-text">MySQL 로그인이 작동하는지 확인합니다.</block>
   <block id="a4fddf98cdbecd6a73cbff1c16747db4" category="paragraph">'[root@mctb~]#mysql-u root –p'</block>
   <block id="b1cef06f6d0dbb6b0907ba2828c01658" category="paragraph">MySQL 로그인이 작동 중이면 출력이 mysql&gt; 프롬프트로 종료됩니다.</block>
-  <block id="ee2d0facfca7cf9da7afc98606d041bb" category="section-title">MySQL 자동 시작 설정을 활성화합니다</block>
   <block id="907482e03a773bacd1197e79ad353d1a" category="list-text">부팅할 때 MySQL이 자동 시작되도록 설정되었는지 확인합니다.</block>
   <block id="9828a53574d333fd2cfd570e38922b4f" category="paragraph">([root@mcctb~]#systemctl list-unit-files mysqld.service`)</block>
   <block id="6b78bf98fe8a405df5e22ad1b5b3a1ba" category="paragraph">부팅할 때 MySQL이 자동 시작되도록 설정되지 않은 경우 MySQL 설명서를 참조하여 설치에 대한 자동 시작 기능을 활성화하십시오.</block>
-  <block id="42effa8417ecaca249eb75ef3af93551" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다.</block>
   <block id="f514e222790761ef9b22f805623d3f36" category="paragraph">호스트 시스템은 Red Hat Enterprise Linux(RHEL) 8에서 실행 중이어야 합니다.</block>
   <block id="cef7dfc261d8a8420d1938a361c69aa9" category="paragraph">'[root@mctb~]#yum install MariaDB-server.x86_64'</block>
   <block id="60d8aee94c480f814db37523f4bf4e7c" category="list-text">MariaDB 서버 시작:</block>
@@ -1884,9 +1867,6 @@
   <block id="702b74d571398b97d529b92567ce42a7" category="paragraph">'[root@mcctb~]#systemctl enable mariadb.service`</block>
   <block id="5c77e1603fd1c29c92901cf08deda7ef" category="list-text">부팅할 때 MariaDB가 자동 시작되도록 설정되었는지 확인합니다.</block>
   <block id="20859c72927d81163c0ef8c70e5f5855" category="paragraph">([root@mcctb~]#systemctl list-unit-files mariadb.service`)</block>
-  <block id="998939e20c88d175779417ce100fafed" category="section-title">소프트웨어 패키지 설치 또는 업그레이드</block>
-  <block id="aa0bf4d75253e028ce83fbc2fe035e54" category="paragraph">MetroCluster 구성을 모니터링하려면 로컬 컴퓨터에 MetroCluster Tiebreaker 소프트웨어를 설치하거나 업그레이드해야 합니다.</block>
-  <block id="3f18eec2af554a1393e91a90bacbc4e0" category="list-text">스토리지 시스템에서 ONTAP 8.3.x 이상을 실행해야 합니다.</block>
   <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link">NetApp 지원</block>
   <block id="0181a996142ce88d36927257090dd51b" category="list-text">호스트에 루트 사용자로 로그인합니다.</block>
   <block id="5c0951f5a767642dcb5de6e5878a5032" category="cell">이 명령 실행...</block>
@@ -2603,7 +2583,6 @@
   <block id="dde95b5b53c4eb899d678641fd957d06" category="section-title">중재자 또는 타이차단기 모니터링 제거</block>
   <block id="8721fdb505c6c36bb5be2e19130e698c" category="paragraph">플랫폼을 업그레이드하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.</block>
   <block id="bcbf87e4f078f82908e59d6fe8c31f6e" category="list-text">다음 명령의 출력을 수집합니다.</block>
-  <block id="a244701f5abda60a99d71bfb0315fea7" category="paragraph"><block ref="0ef4432e8d7270c716b0b9fdd42f2d64" category="inline-link-rx"></block> MetroCluster Tiebreaker 설치 및 구성 가이드 _</block>
   <block id="2582e010e97c2f1b4ef7a684672e4598" category="list-text">클러스터에 로그인합니다.</block>
   <block id="0f08c117fa6e12343d030b7741d1d666" category="paragraph">유지보수 윈도우 시간(main유지보수-window-in-hours) 매개변수는 유지보수 윈도우 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="047c004f2f53364ce170133f533be47f" category="list-text">파트너 사이트에서 이 단계를 반복합니다.</block>
@@ -2916,7 +2895,6 @@
   <block id="2b378caa5145e2c7adf8d8e9a477ac03" category="paragraph">다음 표에서는 컨트롤러 업그레이드에 지원되는 모델 매트릭스를 보여 줍니다.</block>
   <block id="7c5ee56a01b06b00d2d910cc295d8c56" category="paragraph"><block ref="7c5ee56a01b06b00d2d910cc295d8c56" category="inline-link-rx"></block></block>
   <block id="0e490704226a6f678e043e59eee46210" category="inline-link">"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다</block>
-  <block id="433c23ac1d50e2f792a96846827071e3" category="list-text">이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오<block ref="ce0fc11b0e13b00ed4b15a0d6c2e1624" category="inline-link-rx"></block>. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.</block>
   <block id="8c6987e319eda195c069e8158e10721f" category="list-text">MetroCluster 사이트가 물리적으로 두 곳에 있는 경우 자동화된 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.</block>
   <block id="7ad155deddf063088b2af594f769192c" category="list-text">이 자동화된 통계청 기반의 컨트롤러 업그레이드 절차를 통해 MetroCluster 재해 복구(DR) 사이트로 컨트롤러 교체를 시작할 수 있습니다. 한 번에 한 사이트에서만 컨트롤러 교체를 시작할 수 있습니다.</block>
   <block id="7399fd0657c56a93aa88aad61e36136e" category="list-text">사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.</block>
@@ -3126,7 +3104,6 @@
   <block id="2bfe0466886d075338fffdda007a312b" category="list-text">포트 사용을 계획하고 필요한 경우 다음 표를 입력하여 각 새 노드에 대한 참조를 확인합니다.</block>
   <block id="45eedb3b70627315a33ac77a1f76c1b9" category="list-text">새 컨트롤러를 설치할 때 케이블을 쉽게 식별할 수 있도록 기존 컨트롤러의 케이블에 레이블을 부착합니다.</block>
   <block id="996ae2958095991e77250398220eb3d5" category="paragraph">전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)을 사용하여 기존 구성을 모니터링하는 경우, 전환 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.</block>
-  <block id="25b61bcede8b65f37afa4e4a2a2fab02" category="paragraph"><block ref="25b61bcede8b65f37afa4e4a2a2fab02" category="inline-link-rx"></block></block>
   <block id="4f2a0c0685e8129ff9ccf99a0212fda8" category="list-text">자동 지원 케이스 생성을 방지하려면 유지 관리가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.</block>
   <block id="22a619e2119eac132eeee61c7997aae7" category="paragraph">유지보수 윈도우는 유지보수 윈도우 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="11f455c88de297768de186a1110cfdf6" category="paragraph">이 작업을 완료하면 cluster_a가 활성 상태이며 두 사이트에 대한 데이터를 제공합니다. Cluster_B는 비활성 상태이며 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다.</block>
@@ -3322,7 +3299,6 @@
   <block id="c05c7a2303ef34ab95234ebadd79fc8f" category="paragraph">부팅 환경 프롬프트에서 'ifconfig e0M-auto'를 사용하여 연결을 자동으로 구성합니다</block>
   <block id="19e185aea92cb0890229c16489d9c4cc" category="paragraph">실행 중이 아닙니다</block>
   <block id="78da5f94688332d9080947e0f923b416" category="paragraph">부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=&lt;filer_addr&gt; -mask=&lt;netmask&gt; -GW=&lt;gateway&gt; -DNS=&lt;DNS_addr&gt; domain=&lt;DNS_domain&gt;'</block>
-  <block id="8cadcd3d278c7bf112a3d2eb870dfb3e" category="list-text">node_B_1:'netboot' http://&lt;web_server_ip/path_to_web_accessible_directory&gt;/netboot/kernel` 에서 netboot를 수행한다</block>
   <block id="e31ad1284b7618a9c10777ed99b12e64" category="inline-xref">2단계</block>
   <block id="85bd8aebb41cb27f7bc364e977313958" category="admonition">부팅을 중단하지 마십시오.</block>
   <block id="2653300b079109b65a613fd185414faa" category="list-text">부팅 메뉴에서 ''(7) Install new software first(새 소프트웨어를 먼저 설치합니다)' 옵션을 선택합니다 이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다. 참고: "이 절차는 HA 쌍의 무중단 업그레이드를 지원하지 않습니다."라는 메시지는 무시하십시오 이 노트는 컨트롤러 업그레이드가 아닌 무중단 ONTAP 소프트웨어 업그레이드에 적용됩니다.</block>
@@ -3452,7 +3428,6 @@
   <block id="204216aae6f9292b8a5efb27c92a401f" category="admonition">인터페이스에 다른 매개 변수가 필요할 수 있습니다. 자세한 내용은 LOADER 프롬프트에서 help ifconfig 명령어를 사용한다.</block>
   <block id="10b41884caecbbf69bf85b01824d86cc" category="list-text">LOADER 프롬프트에서 새 노드를 netboot 합니다.</block>
   <block id="461d7e2424f72a59c55adf97e846017a" category="paragraph">네부트<block ref="06f9d34e62d99a2aae0864928de56974" category="inline-link-rx"></block></block>
-  <block id="12d8187c539b6d3d79f907aa6887be93" category="paragraph">네부트<block ref="5b83c67dc948392fb21e3e1b9f0f33e8" category="inline-link-rx"></block></block>
   <block id="cf124bc53615caa2c48815c1933e56b6" category="paragraph">"_path_to_the_web-Accessible_directory_"는 다운로드된 "&lt;ONTAP_version&gt;_image.tgz" 파일의 위치입니다.</block>
   <block id="22c9d9a00223b907dbadee79be036b87" category="list-text">표시된 메뉴에서 * 새 소프트웨어 먼저 설치 * 옵션을 선택합니다.</block>
   <block id="adcfa58e9fef1d45cc4bd403ac68eb9f" category="paragraph">이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.</block>
@@ -3561,7 +3536,6 @@
   <block id="3e740d926a40d82c2fcc72ee1fb84e5b" category="list-text">노드 1에서 netboot를 수행한다<block ref="489fdc1c448bf7fbb7b53d2ad099b1ec" category="inline-link-rx"></block>"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
   <block id="188edb9f514b65304cf0a3564a7bc692" category="list-text">부팅 메뉴에서 '(7) Install new software first(새 소프트웨어를 먼저 설치)' 옵션을 선택합니다. 이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.</block>
   <block id="81ff6a54875aaf720a2c324484bc2178" category="admonition">다음 메시지는 무시하십시오: "이 절차는 HA 쌍의 무중단 업그레이드를 지원하지 않습니다. 이 노트는 컨트롤러 업그레이드가 아닌 무중단 ONTAP 소프트웨어 업그레이드에 적용됩니다. 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.</block>
-  <block id="9fbd27646b729fd730070da29cb836c5" category="list-text">절차를 계속하라는 메시지가 나타나면 "y"를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.<block ref="a2ba1d0ee1c156220079edd2f4d50848" category="inline-link-rx"></block></block>
   <block id="e127fec27e4f62227f578ce3dd283c35" category="list-text">다음과 같은 프롬프트가 나타나면 재부팅하려면 y를 입력합니다. 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해야 합니다. 지금 재부팅하시겠습니까? {y|n}'</block>
   <block id="504d065328326a8677a260e4447bea63" category="paragraph">부팅 장치가 다시 포맷되어 구성 데이터를 복원해야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.</block>
   <block id="f02a9a7436db38c9278de96d8940fedc" category="list-text">아래 메시지가 표시되면 yes를 선택합니다. 그러면 클러스터 구성원을 포함한 중요한 시스템 구성이 삭제됩니다. 경고: 인계된 HA 노드에서 이 옵션을 실행하지 마십시오. 계속 하고 싶으세요</block>
@@ -4177,7 +4151,6 @@
   <block id="6a8e34b4c80df4e54d2a29a452f84682" category="list-text">필요한 스위치 및 FC-to-SAS 브리지를 설치, 케이블 연결 및 구성합니다.</block>
   <block id="b7195ecc3920afa55c50750064ed75a4" category="admonition">의 "패브릭 연결 MetroCluster 구성 케이블 연결" 섹션의 절차를 사용해야 합니다 <block ref="a1fd01e320574c534b3b8a75cd17d943" category="inline-link-macro-rx"></block>.</block>
   <block id="c9317ff0e4b7b54f3924e65fc0d6376a" category="list-text">다음 단계를 사용하여 MetroCluster 구성을 새로 고칩니다.</block>
-  <block id="481db0d99428fce199355e8490acb803" category="paragraph">https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html[Fabric-attached MetroCluster 설치 및 구성 링크에서 "ONTAP에서 MetroCluster 소프트웨어 구성" 섹션의 절차를 사용하지 마십시오.</block>
   <block id="18231447c3931680b999f9ce6cf1666c" category="list-text">고급 권한 모드로 들어갑니다: + " * set-privilege advanced *"</block>
   <block id="16a2d47b4316750cf2be8b8b4a74891b" category="list-text">MetroCluster 설정 새로 고침: + " * MetroCluster configure-refresh true *"</block>
   <block id="97f1e8fe7462868a200d0b48ca70735a" category="paragraph">다음 명령을 실행하면 controller_a_1이 포함된 DR 그룹의 모든 노드에 대한 MetroCluster 구성이 새로 고쳐집니다.</block>
@@ -5655,7 +5628,6 @@
   <block id="97730fe9a08541e432c243803e14fc87" category="paragraph">다음 그림에서는 MetroCluster FC 구성을 보여 줍니다. HA 인터커넥트는 클러스터 스위치를 통해 제공되는 경우를 제외하고 MetroCluster IP 구성에서는 HA 기능이 동일합니다.</block>
   <block id="aafe8a4ce4016fbab5e120bfc5e08251" category="image-alt">MCC HW 아키텍처 로컬 ha</block>
   <block id="2fb654e5399843c45685502bcc696315" category="inline-link">고가용성 구성</block>
-  <block id="af49f84fdbd0ceabe619e6c96b5c3965" category="paragraph"><block ref="af49f84fdbd0ceabe619e6c96b5c3965" category="inline-link-rx"></block></block>
   <block id="4a2c464d69fb9288517ee974b525f8a9" category="section-title">MetroCluster 구성에서 데이터 및 구성 복제를 제공하는 방법</block>
   <block id="8a08fc76a4bf535752fb08fa04755908" category="paragraph">MetroCluster 구성에서는 다양한 ONTAP 기능을 사용하여 두 MetroCluster 사이트 간에 동기식 데이터 및 구성 복제를 제공합니다.</block>
   <block id="ea916db9690756aca3d8ff98e0a4dcb5" category="section-title">구성 복제 서비스를 통한 구성 보호</block>
@@ -8683,7 +8655,6 @@
   <block id="6e9ffd16aec825895cde46ff6fe91ad0" category="list-text">FlexCache의 다른 쪽 끝(VS2의 origin_1)은 site_C(MetroCluster 구성이 아님)에 있습니다.</block>
   <block id="64df84e5dd9457f7ff6fca59541532f7" category="paragraph">ONTAP 구성은 MetroCluster 9.7부터 FabricPool 스토리지 계층을 지원합니다.</block>
   <block id="9f437bd3f304cff4e9dd7b48cc5a9500" category="paragraph">이 IPspace는 기본 IPspace 또는 관리가 생성한 IPspace가 될 수 있습니다. 이 IPspace는 FabricPool 오브젝트 저장소 구성 설정에 사용됩니다.</block>
-  <block id="302236925d66f4e5011613180b9839b1" category="admonition">애그리게이트를 구성하기 전에 의 "MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"에 설명된 대로 오브젝트 저장소를 설정해야 합니다<block ref="6ca1f1c4f557736e9b169b0bb2581c65" category="inline-link-rx"></block></block>
   <block id="99dc2e42eb5cbad5dfa0fe00d5193924" category="list-text">에 설명된 대로 Aggregate를 사용하여 FabricPool 미러를 생성합니다<block ref="d80da76762d0e5fadaefb2c12eee2740" category="inline-link-rx"></block></block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">관련 정보</block>
   <block id="17ac4e298c56ff01c8eed4b136996add" category="paragraph"><block ref="168c33302730d6ed47dbebd9e3cc10f4" category="inline-xref-macro-rx"></block></block>
@@ -9238,7 +9209,6 @@
   <block id="fff6b95b10852166fc3f382ad27c765d" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 FC 스위치에서 반복해야 합니다.</block>
   <block id="c25ab44b50d7096a2ad90bccd3cd2c9b" category="admonition">표시된 출력은 Cisco IP 스위치용으로 표시되지만 Cisco FC 스위치에도 적용할 수 있습니다.</block>
   <block id="ed2bdca812d4a492e40bce0bf250aea0" category="inline-link">Cisco 다운로드 페이지</block>
-  <block id="2f625a7deff483a3e15edd07e62f829f" category="paragraph"><block ref="2f625a7deff483a3e15edd07e62f829f" category="inline-link-rx"></block></block>
   <block id="e0f676df07e9272737ae4f0ef7b19999" category="paragraph">이 예에서 'nxos.7.0.3.I4.6.bin' 파일은 SFTP 서버 10.10.99.99에서 로컬 bootflash로 복사됩니다.</block>
   <block id="0accadb30c276163922df0107c0ac2cc" category="paragraph">'dir bootflash'</block>
   <block id="4c4925e228bd1e5e874e3d635b25fdc9" category="paragraph">다음 예에서는 파일이 'ip_switch_a_1'에 있음을 보여줍니다.</block>
@@ -11177,7 +11147,6 @@
   <block id="0af6886a9c45bb0f127ab39da3242e24" category="paragraph">다음 예에서는 LIF "datalif1"을 새 홈 포트 "e1b"로 되돌립니다.</block>
   <block id="65dc196cc8a195ab3fc51f0ddc804a67" category="paragraph">다음 예에서는 포트 ""e0a", ""e0b"", ""e0c"" 및 ""e0d""가 이제 클러스터 포트로 표시되어 있음을 보여줍니다.</block>
   <block id="61a9d2fcb1a19cf607c57206c54d6509" category="inline-link">기존 MetroCluster 구성을 제거합니다</block>
-  <block id="b24e63ce15f1e7e3e5cb5bd1ce3fad34" category="list-text"><block ref="89b361038893a3d43bca666b6da4721b" category="inline-link-rx"></block> Tiebreaker 소프트웨어</block>
   <block id="b13266858f69c83d67ff15214dfa7a27" category="paragraph">전환을 시작하기 전에 자동화 작업이 일시 중지되므로 사이트 B에서 모든 LIF가 ""가동""인지 수동으로 확인할 수 있습니다 필요한 경우 'down'인 LIF를 'up'으로 가져가 'system controller replace resume' 명령을 사용하여 자동화 작업을 다시 시작합니다.</block>
   <block id="06dd50ba0fbb8fe8e1275ce3a8f1780c" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIF는 전환 사이트(cluster_a)에 설치되므로 "가동" 및 "운영"으로 관리"됩니다.</block>
   <block id="e5d9bbeb62634011317a03db540cbd41" category="paragraph">예를 들어, ""e0d""는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. ""e0d""는 클러스터 포트로 사용하거나 새 컨트롤러에서 사용되지 않습니다.</block>
@@ -11245,7 +11214,6 @@
   <block id="7603191f0254db94419fd8d36cf742f6" category="list-text">FC 포트 구성을 복구합니다.</block>
   <block id="a77229060b2e30fc1aecdae29d9000fd" category="list-text">변수 값을 확인합니다.</block>
   <block id="2eb016ab0f18b2ada34df66ecade6e4b" category="list-text">유지보수 모드를 종료하고 로더 프롬프트를 표시합니다.</block>
-  <block id="2872394e3c89268bb37adaa024dc9195" category="paragraph">를 클릭합니다<block ref="6e7f74aa9001f0524a965144f528bbc2" category="inline-link-rx"></block> 새로운 기능, 업그레이드 노트, 해결된 문제, 알려진 제한 사항 및 알려진 문제에 대해 설명합니다.</block>
   <block id="64c598a52dd8cdadea545647c7d064a6" category="summary">MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp의 광범위한 문서를 참조하십시오.</block>
   <block id="04d9ec83167120e239825f4726f351cc" category="paragraph">Active IQ Unified Manager 설명서<block ref="1cf4a9f6324bfcec73ee8652129ceb47" category="inline-link-rx"></block></block>
   <block id="7b173496e8f6041144abc83f7e17506f" category="list-text">정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태이고("가동 상태"를 나타냄), 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.</block>
@@ -11368,8 +11336,6 @@
   <block id="f1573b913aebef18602249e23e196f67" category="paragraph"><block ref="09965663397032e7c8c3dcc98b9deca2" category="inline-link-rx"></block> 추가 정보를 포함합니다.</block>
   <block id="3b60cd7b393721dca2be281ca53a4351" category="paragraph">ONTAP 9.2부터는 다음과 같은 경우에 ISL 공유를 사용할 수 있습니다.</block>
   <block id="8adae693d3240e468a2042cfca460ce7" category="inline-link">NetApp MetroCluster 솔루션 아키텍처 및 설계, TR-4705</block>
-  <block id="414fe9bb5df6ded9e2e5bb6d9f0f44f8" category="cell"><block ref="414fe9bb5df6ded9e2e5bb6d9f0f44f8" category="inline-link-rx"></block></block>
-  <block id="6e5c7bc246474fb731e86f864362b4fb" category="cell"><block ref="6e5c7bc246474fb731e86f864362b4fb" category="inline-link-rx"></block></block>
   <block id="2afcc48289d48527e519adacbd3a8bce" category="paragraph"><block ref="2afcc48289d48527e519adacbd3a8bce" category="inline-link-rx"></block></block>
   <block id="ba3a8565a212242efc7fb4b43feb56d5" category="list-text">구성 파일이 스위치 도메인을 설정했는지 확인합니다.</block>
   <block id="c3473aa37fb65a96d05747e3b9043979" category="paragraph">필요한 경우 IP 주소를 설정할 수 있습니다.</block>
@@ -11464,7 +11430,6 @@
   <block id="398ca4e3f9e65b681f95fee13804bab9" category="list-text">디렉토리 목록에는 &lt;ONTAP_VERSION&gt;\_IMAGE.tgz 가 포함되어야 합니다.</block>
   <block id="befdb6ab41f0cd39ff57e00b0ee8c3f6" category="paragraph">"&lt;filer_addr&gt;"은(는) 스토리지 시스템의 IP 주소입니다. "&lt;netmask&gt;"는 스토리지 시스템의 네트워크 마스크입니다. '&lt;gateway&gt;'는 스토리지 시스템의 게이트웨이입니다. "&lt;dns_addr&gt;"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '&lt;dns_domain&gt;'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.</block>
   <block id="f9917e026c23b682e18bcd6bc125c1b9" category="paragraph">"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;\_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
-  <block id="b04e99a0adbd90ade4803bbd436b76af" category="list-text">절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL인 http://&lt;web_server_ip/path_to_web-accessible_directory&gt;/&lt;ontap_version&gt;\_image.tgz` 를 입력합니다</block>
   <block id="dbfa5994b398cd0fb3a814715f0dc252" category="list-text">부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 \ *&gt;가 나타날 때까지 프롬프트에 "yes"를 선택합니다.</block>
   <block id="76c06c220bafe4dc7e175b4584717344" category="paragraph"><block ref="76c06c220bafe4dc7e175b4584717344" category="inline-link-macro-rx"></block></block>
   <block id="2445f74267948c10619896a5e47cd3d6" category="paragraph">의 단계를 수행합니다 <block ref="0e3caa859006182753aee07c6f57c3cf" category="inline-link-macro-rx"></block>.</block>
@@ -11484,7 +11449,6 @@
   <block id="3ee537e70a06614ada97e070ef70fe96" category="paragraph">FAS8300/A400/FAS8700</block>
   <block id="8e41be9a68008dd9f01c00807dd75f69" category="section-title">MetroCluster 구성에서 일관성 그룹 지원</block>
   <block id="b36742dbca767f044c826ec8fbe9b099" category="inline-link">정합성 보장 그룹</block>
-  <block id="2b9902d272c75c4def3400c620342746" category="paragraph">ONTAP 9.11.1부터<block ref="cf613318e210a5e8a8ae9de011eafc43" category="inline-link-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
   <block id="8a4f175190a1710cdcd52e7efde01268" category="section-title">MetroCluster IP 구성에서 Cisco MACsec 암호화 WAN ISL을 활성화합니다</block>
   <block id="dbbfd3dd70a4d25284d890b07ad9bc31" category="section-title">MACsec 키 체인 및 키를 구성합니다</block>
   <block id="2903318a6fa99cbae17be8d84747e6f4" category="section-title">MACsec 정책을 구성합니다</block>
@@ -11991,7 +11955,6 @@
   <block id="8435af9be97e0c50b0d730d64b42f198" category="paragraph"><block ref="8435af9be97e0c50b0d730d64b42f198" category="inline-link-macro-rx"></block></block>
   <block id="f7080628c8d078c209fb6b6b18f03a3a" category="paragraph"><block ref="f7080628c8d078c209fb6b6b18f03a3a" category="inline-link-macro-rx"></block></block>
   <block id="4975610bd246038bf0371f5dff472f85" category="list-text">MetroCluster FC 구성에서 이 절차를 사용하는 경우에만 특정 플랫폼 모델을 새로 고칠 수 있습니다.</block>
-  <block id="0defe01fed70ecdf301ed45ee130f658" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 <block ref="5e51ded3128b8f60bc0b91c41dccbb25" category="inline-link-macro-rx"></block>.</block>
   <block id="7aeedda5f35486a7239b2a68ae68fb9a" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택할 수 있습니다.</block>
   <block id="959c17d1eadff13225c68a5578c6da93" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
   <block id="789c52582d523f3977d636da81e92dc0" category="list-text">ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.</block>
@@ -12042,7 +12005,6 @@
   <block id="ad06b1bad80df72d4f2fa24312c0a9bf" category="cell">새로 고침 방법</block>
   <block id="56ad29882b1f5aa7a765e42a0bd3ca97" category="paragraph"><block ref="56ad29882b1f5aa7a765e42a0bd3ca97" category="inline-link-macro-rx"></block></block>
   <block id="65fc2b3acec6ee29de6484f084e9ad51" category="paragraph">MetroCluster FC 구성에서 스위치오버 및 스위치백 작업을 사용하여 특정 플랫폼을 업그레이드할 수 있습니다.</block>
-  <block id="7c5f3ae5aa1416c77224608ca167ed4c" category="paragraph">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오 <block ref="5e51ded3128b8f60bc0b91c41dccbb25" category="inline-link-macro-rx"></block>.</block>
   <block id="524f05419622851f7f6289320cc91a6e" category="sidebar">MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다</block>
   <block id="81cce2035bed6113b6ccecaeb9cf25a9" category="sidebar">확장 절차를 선택합니다</block>
   <block id="87663f3a8212644181733b0573eae80d" category="sidebar">스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)</block>
@@ -12165,12 +12127,7 @@
   <block id="c212b56e6344256b819057aa0ff26e93" category="list-text">볼트 설치를 보호합니다</block>
   <block id="adfa274b93101556376a5c1c110a25b1" category="inline-link-macro">생산 강화</block>
   <block id="3de794741da4d53ee89d2cfb65848ddb" category="paragraph"><block ref="3de794741da4d53ee89d2cfb65848ddb" category="inline-link-macro-rx"></block></block>
-  <block id="f2bc12f5f4eebffc4fcfe148f063406b" category="list-text">JRE를 설치합니다.</block>
-  <block id="1eb28a6954d3f0d52944773f2001d377" category="inline-xref">JRE를 설치합니다</block>
-  <block id="441101d3b94f5fe418ef67bd1081c0a6" category="paragraph"><block ref="06f50206a2b466fef1529155ff096c98" category="inline-xref-macro-rx"></block></block>
-  <block id="6641dbbe07c8e6fe53f1f58917a97776" category="list-text">Vault 설치 및 구성</block>
   <block id="f798a783218170fc044aaf03491e8c63" category="inline-xref">Vault 설치 및 구성</block>
-  <block id="ef1f1252873864d80f380df4f260b300" category="paragraph"><block ref="11cd3d25aa255f8670dd0bfb1bb1d11c" category="inline-xref-macro-rx"></block></block>
   <block id="037b7d55a30f474064c10ac0edbaf6d3" category="list-text">고급 권한 모드로 변경할 수 있는 "루트" 사용자 또는 sudo 사용자로 로그인합니다.</block>
   <block id="75c3358765861dfefd4446691eccaebc" category="paragraph">로컬 볼트 서버를 가지고 있지 않거나 사용하고자 하는 경우, Vault를 설치해야 합니다. Vault를 설치하려면 이 표준 절차를 참조하거나, 다른 지침은 Hashicorp 설치 지침을 참조하십시오.</block>
   <block id="6ab2b19db2409ff46893b7cf13d70d9d" category="list-text">볼트 zip 파일을 다운로드합니다.</block>
@@ -12189,7 +12146,6 @@
   <block id="c74f17ce72c64bc3a5d3eacc0affa867" category="paragraph">MySQL 데몬에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. MySQL 데몬을 켜면 MetroCluster Tiebreaker 소프트웨어가 상주하는 시스템이 재부팅될 경우 MySQL이 자동으로 다시 시작됩니다. MySQL 데몬이 실행되고 있지 않으면 Tiebreaker 소프트웨어가 계속 실행되지만 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
   <block id="7b21144e83a2d9bef049269b16711fb4" category="list-text">로 로그인합니다<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block> sudo를 고급 권한 모드로 설정할 수 있는 사용자 또는 사용자입니다.</block>
   <block id="a85ec808ef0cc8f00cfefb33625bee2e" category="list-text">MariaDB 서버가 시작되었는지 확인합니다.</block>
-  <block id="fe62eeb322eff90b81676630826cee46" category="list-text">을 사용하여 OpenJDK를 설치해야 합니다<block ref="366f2699f7c6384b966350ad31d76b9d" prefix=" " category="inline-code"></block> 명령. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다. 예제의 출력에는 JRE 1.8.0이 표시됩니다. (JRE 8).</block>
   <block id="b11583eaa66ec31ee30afd4772390654" category="paragraph"><block ref="b11583eaa66ec31ee30afd4772390654" category="inline-link-rx"></block></block>
   <block id="afe5c13e8c0820ecf86c92cb3af131ee" category="list-text">RPM 파일을 확인합니다.</block>
   <block id="65efc23e428017c909aa7ce5f2ab429e" category="list-text">RPM 키 파일을 다운로드하고 가져옵니다.</block>
@@ -12199,7 +12155,6 @@
   <block id="e5dc6ecd3ca37b58ada5f81277474d69" category="admonition">서명을 확인한 후에만 설치를 진행해야 합니다.</block>
   <block id="1181eacfe8bc53d389900389ceb7d577" category="list-text">[[install-tiebreaker]] Tiebreaker 소프트웨어 설치 또는 업그레이드:</block>
   <block id="fe5c4e6d23d7df5197bb3306f0890eba" category="admonition">Tiebreaker 버전 1.4에서 업그레이드할 때만 Tiebreaker 버전 1.5로 업그레이드할 수 있습니다. 이전 버전에서 Tiebreaker 1.5로의 업그레이드는 지원되지 않습니다.</block>
-  <block id="f02f0088b75e56893084f3c6d0e11382" category="paragraph">새 설치를 수행하는지 또는 기존 설치를 업그레이드하는지에 따라 아래에서 올바른 절차를 선택하십시오.</block>
   <block id="53a3299075fc91e0efbd249fca6a3b62" category="open-title">새 설치를 수행합니다</block>
   <block id="d0797ac7be86e76f779b0cdc4f75e306" category="list-text">지원되는 버전의 OpenJDK가 설치되어 있고 호스트에 있는 최신 Java 버전인지 확인합니다.</block>
   <block id="bf9295a397fc51fb6414b02eb7dce4e7" category="admonition">Tiebreaker 1.5로 업그레이드하려면 OpenJDK 버전 17, 18 또는 19를 설치해야 합니다.</block>
@@ -12232,7 +12187,6 @@
   <block id="d8e49cb116ea5302a217647ce0506ea6" category="list-text">4노드 구성의 경우 모든 노드에서 ONTAP 9.8 이상을 실행해야 합니다.</block>
   <block id="b8c86c478bbb73c53f5440966b9fb7d1" category="list-text">이 조합을 사용하는 플랫폼의 '아래쪽'에 대한 오브젝트 제한을 초과하지 마십시오. 두 플랫폼의 객체 하한값을 적용합니다.</block>
   <block id="c5c0eb8cddac9e2347091241dce72719" category="list-text">타겟 플랫폼 제한값이 MetroCluster 제한보다 낮을 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한보다 낮거나 같은 상태로 다시 구성해야 합니다.</block>
-  <block id="b6f6c085e7f98b78ea8fa6d3dd82bb6d" category="list-text">을 참조하십시오 <block ref="62911b0739c1772914819ee9e7282ee4" category="inline-link-macro-rx"></block> 플랫폼 제한.</block>
   <block id="dc63943b5b97ad0f10f23219d6f93cd4" category="list-text">각 클러스터에 대해 전환된 IP 노드의 클러스터 피어에 대한 IP 주소를 수정합니다.</block>
   <block id="6ea6f99dac44cf31a220dfe1e63e9825" category="list-text">를 사용하여 cluster_a 피어를 식별합니다<block ref="ecb6aba8bb04d2d32562d54c8601a0e1" prefix=" " category="inline-code"></block> 명령:</block>
   <block id="f01a5704368544da9ef6bb24a5a2e763" category="list-text">cluster_a 피어 IP 주소를 수정합니다.</block>
@@ -12458,7 +12412,6 @@
   <block id="5e14931fa3c39251787af92197392ae0" category="cell"><block ref="b5713f91ed0348a8e6565b40d2be523a" prefix="" category="inline-code"></block></block>
   <block id="7794a024d3134acafeb3b112e36c9a3f" category="cell">파티션 3:</block>
   <block id="6129d8bcf6f4ed452d528f954ce79ee6" category="admonition">ONTAP 9.5부터 에서 디스크 자동 할당을 활성화해야 합니다<block ref="9518ee5351ea31dd67cceada18bfcfd6" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="00427bfa7d8d8bd516409a3466e96821" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="ee9beb37ef6441cda28497e9b5b08a94" category="inline-link-macro-rx"></block>.</block>
   <block id="5338d1a8478f350f9f873b7c89a98b0f" category="summary">MetroCluster FC 백엔드 스위치 또는 ATTO 브리지의 IP 주소를 수정한 후 기존 상태 모니터링 IP 주소를 대체합니다.</block>
   <block id="ab82e5baf31743b1a6f1bdd378ba458b" category="doc">상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다</block>
   <block id="e3dbdae2799d2ed863a853d87ba77fd1" category="paragraph">MetroCluster FC 백엔드 스위치 및 ATTO 브리지의 IP 주소를 수정한 후에는 기존 상태 모니터링 IP 주소를 새 값으로 바꿔야 합니다.</block>
@@ -12549,12 +12502,7 @@
   <block id="9df52fd51f68e1f0a1c54d87fbcf2d9f" category="paragraph">두 클러스터를 모니터링하고 세 번째 사이트에서 클러스터 간 연결 상태를 모니터링하려는 경우에만 Tiebreaker 소프트웨어가 필요합니다. Tiebreaker 소프트웨어는 세 번째 사이트의 Linux 호스트에 상주하며, 클러스터의 각 파트너가 사이트 간 링크가 다운될 때 ISL 장애를 사이트 장애와 구분할 수 있도록 합니다.</block>
   <block id="776aa0db93dc60ccb39a1a2bac58edd0" category="paragraph">Tiebreaker 소프트웨어는 최대 15개의 MetroCluster 구성을 동시에 모니터링할 수 있습니다. MetroCluster IP, MetroCluster FC, 확장 MetroCluster 구성의 조합을 지원합니다.</block>
   <block id="2c6d3f6cb9e7e0273e71c2ee07e103ef" category="paragraph">호스트 Linux 운영 체제에 따라 Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 MySQL 또는 MariaDB 서버를 설치해야 합니다.</block>
-  <block id="8844126d289515e2e309c080e84ee43c" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 JRE를 설치해야 합니다. Tiebreaker 1.4 이하를 실행하는 시스템의 경우 JRE 8을 실행합니다. Tiebreaker 1.5 이상을 실행하는 시스템의 경우 OpenJDK 17, 18 또는 19를 실행합니다.</block>
-  <block id="b5331b4efb390ddc30f3887a25420519" category="admonition">다음 예의 출력은 JRE 1.8.0입니다. (JRE 8).</block>
-  <block id="154b8d6790ee60fd4d75865b3817482f" category="list-text">사용 가능한 JRE 버전 확인:</block>
   <block id="7865dda488c185a7d613d74e7df3f15e" category="paragraph"><block ref="a99f9b32ea34805f9efcc4f331f10afc" prefix="" category="inline-code"></block></block>
-  <block id="dbdea63ff1558fc908b06e926327423d" category="list-text">설치할 Tiebreaker 버전에 적합한 JRE 버전을 설치합니다.</block>
-  <block id="27ed5e7119f96428586081a25adfe698" category="paragraph"><block ref="2ca50315d5ef6249cb28806653cc3bfe" prefix="" category="inline-code"></block></block>
   <block id="b90b751e14131dd4f7b6cf9757e8e97a" category="admonition">네트워크에 Vault 서버가 있는 경우, MetroCluster Tiebreaker 호스트가 볼트 설치를 사용하도록 구성할 수 있습니다. 이렇게 하면 호스트에 Vault를 설치할 필요가 없습니다.</block>
   <block id="5ecbe9b96b4eb8694b1debe91d9978db" category="list-text">로 이동합니다<block ref="1e80cb7e0fbfc9f5c0509a465ecdf6cf" prefix=" " category="inline-code"></block> 디렉터리:</block>
   <block id="2cfe406f28049c6dd9fc09b125ac017c" category="list-text">로 이동합니다<block ref="887904812217cca9bc2b9adb875daf42" prefix=" " category="inline-code"></block> 디렉터리:</block>
@@ -12572,7 +12520,6 @@
   <block id="e03f788bbf29419e636a27e1f472e11a" category="list-text">에서<block ref="8a496517030fe431ec5836d0c8ae9ba7" prefix=" " category="inline-code"></block> 프롬프트, 복사, 다음 명령을 실행하여 Vault 서비스 파일을 작성합니다.</block>
   <block id="9b064180fbc505f7486a763d137edca1" category="list-text">MariaDB 서버 설치:</block>
   <block id="6b79acfbbc5bbc131d2f2f0095452588" category="admonition">루트 암호를 묻는 메시지가 표시되면 암호를 비워 두고 Enter 키를 눌러 보안 및 암호 설정을 계속 구성합니다.</block>
-  <block id="6f176c8a2e23e14b4e6fbf22deaea7f1" category="section-title">MariaDB 서버에 대한 자동 시작 설정을 사용하도록 설정합니다</block>
   <block id="b0d6d2175ecec830760ddc378a14c197" category="paragraph">MariaDB 서버에 대해 자동 시작 기능이 설정되어 있는지 확인해야 합니다. 자동 시작 기능을 활성화하지 않고 MetroCluster Tiebreaker 소프트웨어가 있는 시스템을 재부팅해야 하는 경우 Tiebreaker 소프트웨어는 계속 실행되지만 MariaDB 서비스를 다시 시작할 수 없으며 구성을 변경할 수 없습니다.</block>
   <block id="457e8f6231f529b8a11028ebae92d27b" category="doc">Tiebreaker 호스트 및 데이터베이스 설치를 보호합니다</block>
   <block id="e97506311a4625245b4c7a4b57176ce3" category="section-title">사용자 관리 권장 사항</block>
@@ -12585,8 +12532,6 @@
   <block id="8fdb4169cdca0d0e1f02d4b06965140f" category="inline-link-macro">MySQL Enterprise TDE(Transparent Data Encryption)에 대해 자세히 알아보기</block>
   <block id="8d9f6f71afbbb7fa07ef3e65a4faa015" category="paragraph"><block ref="8d9f6f71afbbb7fa07ef3e65a4faa015" category="inline-link-macro-rx"></block></block>
   <block id="287230691bdd80a939d056f48b82a01a" category="admonition">Tiebreaker 소프트웨어를 설치하기 전에 암호화 설정을 활성화해야 합니다.</block>
-  <block id="74ca9f2037f85f9bee172d20503c7375" category="paragraph"><block ref="74ca9f2037f85f9bee172d20503c7375" category="inline-link-rx"></block></block>
-  <block id="6d4aa18fe97585a33f001d298b030e6f" category="list-text">를 다운로드합니다<block ref="24c30cbfcff7f858d1a30b6193122a01" prefix=" " category="inline-code"></block> 키:</block>
   <block id="bf23d230569e17dc83fe9974217175d4" category="list-text">루트가 아닌 사용자 및 를 생성합니다<block ref="d5a9c5909d563fb968e1c3dc3e45cd64" prefix=" " category="inline-code"></block> 그룹.</block>
   <block id="38197215de6dcb136775c6796090b013" category="list-text">루트가 아닌 사용자를 생성하고 암호를 설정합니다.</block>
   <block id="da3c3579b3acc10ce03265f6ec0f662b" category="paragraph">다음 명령 예에서는 라는 루트 사용자가 아닌 사용자를 생성합니다<block ref="9a0193f01098d3db3f929747ecaa2bda" prefix=" " category="inline-code"></block>:</block>
@@ -12610,8 +12555,6 @@
   <block id="09eecd50480033ff43835a86efed6607" category="list-text">Red Hat Enterprise Linux 7 - 7.9</block>
   <block id="ae1dfcc629f4542382fd6286dbfe5a0d" category="list-text">CentOS 7 - 7.9 64비트</block>
   <block id="3f4ac8596d411de0ef0ad341cbeb82aa" category="paragraph">CentOS 사용 시:</block>
-  <block id="66df7c0e2a0c107715ece74d340b7499" category="paragraph">* MariaDB 10.x("yum install MariaDB-server.x86_64"를 사용하여 설치된 기본 버전 사용)
-* JRE 8</block>
   <block id="024464eb7b3fd909a9746dff88c6b9c9" category="section-title">추가 요구 사항</block>
   <block id="4b0a6058e6a6f2eafcc1db1a3a9573fb" category="paragraph">다음과 같은 추가 요구사항을 알고 있어야 합니다.</block>
   <block id="64f896c377dcdc9e0d5ae4809d1c3a73" category="list-text">Tiebreaker 소프트웨어에 대한 NTP(Network Time Protocol) 소스를 선택할 때는 로컬 NTP 소스를 사용해야 합니다. 타이브레이커 소프트웨어는 타이브레이커 소프트웨어가 모니터링하는 MetroCluster 사이트와 동일한 소스를 사용해서는 안 됩니다.</block>
@@ -12864,7 +12807,6 @@
   <block id="5993b684cff34ce50e30b3a1293c1f25" category="paragraph">* 참고 1 *: MetroCluster IP 구성에서 전환이 완료된 후 수동으로 미러링되지 않은 애그리게이트를 온라인 상태로 전환할 수 있습니다.</block>
   <block id="0fc1dc5210ab6635b5582671b5100aaf" category="paragraph">에 대해 자세히 알아보십시오 <block ref="26007d4b0afff1c47eeefe43a1492ee9" category="inline-xref-macro-rx"></block>.</block>
   <block id="edcdea907176b4b6176bfac47c1c23cc" category="doc">타이브레이커 1.6을 설치합니다</block>
-  <block id="51e78330040131fe6b93cb04e0fa15ec" category="paragraph">타이브레이커 소프트웨어를 새로 설치하거나 업그레이드합니다.</block>
   <block id="9a9884d3e2c33b612fd52c46591cdf8b" category="list-text">스토리지 시스템에서 ONTAP 9.12.1 이상을 실행해야 합니다.</block>
   <block id="f616ec898f7359b274487a4c46b54cfc" category="list-text">Tiebreaker 설치를 수행하고, 테이블과 사용자를 만들고, 사용자 암호를 설정할 수 있는 충분한 관리 권한이 있는 비루트 사용자로 MetroCluster Tiebreaker를 설치할 수 있습니다.</block>
   <block id="e19f14d0b2d10c8920d70cbad23314da" category="list-text">MetroCluster Tiebreaker 1.6 소프트웨어를 다운로드합니다.</block>
@@ -12900,10 +12842,6 @@
   <block id="686cbe9ae98dac9e3c34fe747bedda27" category="doc">설치 절차를 선택합니다</block>
   <block id="de537937e28d6ff9bfed73c24f238620" category="paragraph">타이브레이커 1.6</block>
   <block id="3d0eb4e198ae6fd77a45e8e5eeab8df8" category="paragraph"><block ref="3d0eb4e198ae6fd77a45e8e5eeab8df8" category="inline-link-macro-rx"></block></block>
-  <block id="fc8e9fcd20abea214d32b4b417fe9ee7" category="paragraph">타이브레이커 1.5 또는 1.4</block>
-  <block id="2ffd1c81489309e0073aecd5609369ad" category="inline-link-macro">Tiebreaker 1.5 또는 1.4를 설치합니다</block>
-  <block id="133f62a92e5c4fe1c8e0583979dbcf43" category="paragraph"><block ref="133f62a92e5c4fe1c8e0583979dbcf43" category="inline-link-macro-rx"></block></block>
-  <block id="9fc6565c0dbc4f2911a9e92430c80179" category="list-text">MetroCluster Tiebreaker 소프트웨어를 다운로드합니다. 이 예제에서는 버전 1.5를 사용합니다.</block>
   <block id="92c6c9c27fa6ff626915d050a03cd801" category="doc">Tiebreaker 모니터가 실행 중인 호스트를 업그레이드합니다</block>
   <block id="bb6cdee210874ecf03d44e914a8ca0e2" category="paragraph">Tiebreaker 모니터가 실행 중인 호스트를 업그레이드해야 할 수 있습니다.</block>
   <block id="5d7ada76e0c335aff8880d70d7058de7" category="list-text">Tiebreaker 소프트웨어를 제거합니다.</block>
@@ -12919,7 +12857,6 @@
   <block id="9d0101bb262cf2b07ff8dcfa1f6cf004" category="list-text">관리자 암호와 HTTP, FTP, SFTP 또는 TFTP(Trivial File Transfer Protocol) 서버에 액세스해야 합니다.</block>
   <block id="c422062a1c7b3d9ed9b2282378699dc7" category="paragraph"><block ref="c422062a1c7b3d9ed9b2282378699dc7" category="inline-link-macro-rx"></block></block>
   <block id="f54824b249675e35c90a450877126d13" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
-  <block id="da09acdb1d2e578a9e771c592cf62afa" category="paragraph"><block ref="da09acdb1d2e578a9e771c592cf62afa" category="inline-link-macro-rx"></block></block>
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
   <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
   <block id="1399637937931de009069d1a13a152fb" category="paragraph">* 참고 1: * 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
@@ -13061,12 +12998,7 @@
   <block id="b07b13f7f6740ff05e2edecf69453d1e" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="54dac02f94a6488bb50eb2223b2531dc" category="inline-link-macro-rx"></block>.</block>
   <block id="6c788f4f91230d4481264ef0fc97d4b2" category="inline-link-macro">ONTAP mediator가 MetroCluster IP 구성에서 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
   <block id="83401bd8eb751fc79a9ff9e2e69be029" category="paragraph"><block ref="ff41f8886897126f1b4109a0b09cd291" category="inline-link-macro-rx"></block>.</block>
-  <block id="8ee0349da94a79740c2458822156c3f3" category="paragraph">ONTAP 9.13.1 이하</block>
-  <block id="58ff5f456710e2c10351958a374f1bae" category="paragraph">ONTAP 9.11.1 이전 버전</block>
-  <block id="0b0ec9f1cc28b3c19dc6c36dcd5af7cc" category="paragraph">1.3</block>
-  <block id="7477ed6488d6dd27883a39484d4cd5f8" category="paragraph">ONTAP 9.10.1 이하</block>
   <block id="09e34111ef8649a5302b1889e0c7d303" category="list-text">JRE 8</block>
-  <block id="d434765df1b814e459b22676bed43318" category="paragraph">1.21배입니다</block>
   <block id="b3c0f57dcdb05faa9fbc38832a492a4e" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지는 일반적으로 예상되지 않습니다. 그러나 SSH를 사용하여 로그인한 경우 다음 오류가 발생할 수 있습니다.<block ref="f6ffe33fb36eb714adf6f81147c665f6" prefix=" " category="inline-code"></block></block>
   <block id="c15b62e6a5ff15a0315735efe0205145" category="doc">MetroCluster IP 구성에서 주소, 넷마스크 및 게이트웨이를 수정합니다</block>
   <block id="907d0a00eecf52dcc4562775faad470a" category="paragraph">ONTAP 9.10.1.1부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
@@ -13204,7 +13136,6 @@
   <block id="a510a743559d6f2f71e9d8bf3b5f0f30" category="paragraph">다음 예제는 MetroCluster 인터페이스를 연결하도록 구성된 스위치 포트를 보여줍니다. MTU 9216의 VLAN 10의 액세스 모드 포트이며 기본 속도로 작동합니다. 대칭(보내기 및 받기) 흐름 제어(일시 중지)가 활성화되고 MetroCluster 수신 및 송신 정책이 할당됩니다.</block>
   <block id="a791c23bf43a913e9bc2dd3fbb04acf3" category="paragraph">25Gbps 포트에서는 다음 예와 같이 FEC(Forward Error Correction) 설정을 "OFF"로 설정해야 할 수 있습니다.</block>
   <block id="c1e9e67d43bd92599acf6de487a61c65" category="section-title">네트워크를 통한 ISL 포트 구성의 예</block>
-  <block id="18b91592ae3775f34f65c991d793f843" category="paragraph">MetroCluster 호환 스위치는 MetroCluster 인터페이스를 직접 연결하는 중급 스위치로 간주됩니다. MetroCluster 호환 스위치에서 MetroCluster 트래픽을 전달하는 ISL 포트는 중간 스위치의 ISL 포트와 동일한 방식으로 구성해야 합니다. 을 참조하십시오 <block ref="d4732e32817c639c5e57cf150621c360" category="inline-link-macro-rx"></block> 지침 및 예를 참조하십시오.</block>
   <block id="a05b3cdfc5cc23ee6b2d90f33be54635" category="admonition">일부 정책 맵은 MetroCluster 인터페이스를 연결하는 스위치 포트와 MetroCluster 트래픽을 전달하는 ISL에 대해 동일합니다. 이러한 두 포트 사용에 대해 동일한 정책 맵을 사용할 수 있습니다.</block>
   <block id="80d1269e99768d5e883ffa70dd8f6aeb" category="summary">요구 사항에 따라 공유 계층 2 또는 계층 3 네트워크를 사용하여 MetroCluster를 배포할 수 있습니다.</block>
   <block id="1c46b7bbd317f603895892a646ef8b2d" category="doc">공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항</block>
@@ -13462,4 +13393,119 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5a74832dfdf0bb3064f1c60224b5cf2a" category="list-text">다음 지침에 따라 의 절차에 따라 상단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>:</block>
   <block id="ea8d3ee31ee0fcdd012de17493f6fb2c" category="list-text">다음 지침에 따라 의 절차에 따라 하단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>:</block>
   <block id="16bdceed077292999c9190c699d66beb" category="list-text">자동 되돌리기 기능을 다시 사용하도록 모든 클러스터 LIF를 수정합니다.</block>
+  <block id="0b066e9ada255be8bb3edf9bbafc5857" category="paragraph">의 "ONTAP에서 MetroCluster 소프트웨어 구성" 섹션에 있는 절차를 사용하지 마십시오 <block ref="a1fd01e320574c534b3b8a75cd17d943" category="inline-link-macro-rx"></block>.</block>
+  <block id="bd679c1b50ef29c3a2537bd953a296b8" category="paragraph">지원되는 플랫폼 구성은 에 나와 있습니다 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="98bcbbda2dba004809da92e37f439632" category="list-text">을 참조하십시오 <block ref="b733b3de6818a363ac85112743571bca" category="inline-link-macro-rx"></block> 플랫폼 제한.</block>
+  <block id="88f5df506ae767ece15283ecefae4507" category="paragraph"><block ref="033cb4615d688419178b9228444df52e" prefix="" category="inline-code"></block></block>
+  <block id="99b40f9970dd46441776d7fc691341bd" category="paragraph">상태 모니터링을 위해 FC-SAS 브리지를 구성하는 방법에 대해 알아보십시오.</block>
+  <block id="89ce1e648a3661d4fdaf064dad88bb5a" category="list-text">node_B_1에서 netboot 수행:<block ref="83a4445bcfef2bd179eaffaabe3b3c20" prefix=" " category="inline-code"></block><block ref="61d04e9e86f00700e5224db919a90d37" prefix=" " category="inline-code"></block></block>
+  <block id="c9c51a398271de7dac80eb6ae49f5a4a" category="list-text">절차를 계속하라는 메시지가 나타나면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.<block ref="e882cf97975cf7cbc82946fdfbfc50d7" prefix=" " category="inline-code"></block></block>
+  <block id="453251ed281496384c5feb5900cc31ba" category="paragraph">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
+  <block id="3929d13da5d4b97eff76f8a6ec8c5501" category="list-text">에 액세스합니다 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.</block>
+  <block id="94416aa661a92cc8d67b1bd6459ef472" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
+  <block id="636a367cc04fb36c02707f67c1a70771" category="paragraph">을 참조하십시오 <block ref="ff174d1e305f5f579b29dcdb0a617c23" category="inline-link-macro-rx"></block> 을 참조하십시오.</block>
+  <block id="332fe4e638c485c04f214b0a13747f6d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 <block ref="0fe967effd4f0eaf84576f897dbfd368" category="inline-link-macro-rx"></block>. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.</block>
+  <block id="75132a926df50e23a26bd72dde0371b7" category="list-text"><block ref="46f4c9c8d582aa241b60c75ea3bcb2c9" category="inline-link-macro-rx"></block> Tiebreaker 소프트웨어</block>
+  <block id="3f37428974fb63458f8dd07028049c05" category="paragraph">을 참조하십시오 <block ref="9fe99ab9f2ddf89daf4666d8f9010550" category="inline-link-macro-rx"></block> 을 참조하십시오.</block>
+  <block id="d1f739b347487947f18d3ad9cfbc668e" category="paragraph">플랫폼 모델의 포트 사용은 를 참조하십시오 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block></block>
+  <block id="0b22fb8d0feec85055f45c8c4a298766" category="list-text">절차를 계속하라는 메시지가 나타나면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.</block>
+  <block id="84ea00dba7c6a1cf0426e58385307e4f" category="paragraph"><block ref="5b9047ebb0d87499d679fd69fbda42cf" prefix="" category="inline-code"></block></block>
+  <block id="b57c06e6dad65cb8a7fb01050706349f" category="paragraph">ONTAP System Manager를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소(\https://172.17.12.153).</block>
+  <block id="29b27683e4b3c944e67201fc18022943" category="paragraph">QSFP-SFP 어댑터를 사용할 때 포트가 브레이크아웃 모드인지 네이티브 속도 모드인지 여부는 스위치 모델 및 펌웨어에 따라 다릅니다. 예를 들어, NX-OS 펌웨어 9.x 또는 10.x를 실행하는 Cisco 9336C 스위치와 함께 QSFP-SFP 어댑터를 사용하려면 포트를 기본 속도 모드로 구성해야 합니다.</block>
+  <block id="55caf57bfe7d9bc28b6ffc6c7d49f237" category="admonition">RCF를 구성하는 경우 올바른 속도 모드를 선택하거나 적절한 속도 모드의 포트를 사용하는지 확인합니다.</block>
+  <block id="46dd6914bcca3c3b8a2609c6a420dc0c" category="paragraph"><block ref="46dd6914bcca3c3b8a2609c6a420dc0c" category="inline-link-macro-rx"></block></block>
+  <block id="aaf601495cda3687aff1783b9f086561" category="paragraph">MetroCluster 호환 스위치는 MetroCluster 인터페이스를 직접 연결하는 중급 스위치로 간주됩니다. MetroCluster 호환 스위치에서 MetroCluster 트래픽을 전달하는 ISL 포트는 중간 스위치의 ISL 포트와 동일한 방식으로 구성해야 합니다. 을 참조하십시오 <block ref="a55ec765b3e97100c983e617f9d68e39" category="inline-link-macro-rx"></block> 지침 및 예를 참조하십시오.</block>
+  <block id="7c1481d1c9b970b7d299c0c5dad3d8b5" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="6b54dfc1103fb8ab70a56160f0fd8161" category="inline-link-macro-rx"></block>.</block>
+  <block id="688da24e96580a94ac368ba20c7993eb" category="paragraph">내부 및 외부 드라이브를 사용하는 경우 먼저 ADP를 사용하는 내부 드라이브만으로 MetroCluster를 초기화합니다. 그런 다음 설치 또는 설정 작업을 완료한 후 외부 선반을 수동으로 연결합니다.</block>
+  <block id="724b35256a117cacc7c70cc2777472fb" category="inline-xref">시스템별 ADP 및 디스크 할당 차이</block>
+  <block id="b97518c4a28d7962f4cab20f62a9403c" category="paragraph">에 나와 있는 것처럼 내부 쉘프의 최소 권장 드라이브 수를 사용해야 합니다 <block ref="ededfefc169c9cc0e0251fda89f5bc17" category="inline-xref-macro-rx"></block>.</block>
+  <block id="e704d09991934a15e8d23053550c2b89" category="paragraph">내부 및 외부 드라이브 모두에 대해 에 설명된 대로 부분적으로 전체 쉘프를 작성해야 합니다 <block ref="ecc5b42a6ea0f9e8652c9de01d6a9fd8" category="inline-xref-macro-rx"></block>.</block>
+  <block id="4566c4fa13f90f4737cd5d791e5fb12e" category="paragraph">다음 표는 24개 드라이브 내부 쉘프에 16개의 디스크를 배치하는 방법의 예를 보여줍니다.</block>
+  <block id="76fc4cbf8ed1ecf271a1492d3a7004eb" category="cell">24개의 드라이브 베이는 4개의 분기로 나뉩니다.</block>
+  <block id="fde574379c71eb09acde49d6562d4638" category="cell">각 분기의 처음 4개 베이에 4개의 드라이브를 설치합니다.</block>
+  <block id="8456de52cfbc9bf31f8ec12ada868660" category="paragraph">1분기: 베이 0-5</block>
+  <block id="06be898ea2064ea890d25f80d955e244" category="paragraph">베이 0-3</block>
+  <block id="6933f32f73e1ecebba5ce7f14d601258" category="paragraph">2분기: 베이 6-11</block>
+  <block id="19190dbecce756f4c55169a24c17d3ca" category="paragraph">베이 6-9</block>
+  <block id="5192974bc80c661fde58a493fc941742" category="paragraph">분기 3 : 베이 12~17입니다</block>
+  <block id="db6232695faa98029dec20606cea2f02" category="paragraph">베이 12-15를 참조하십시오</block>
+  <block id="abff8504421e7d3697d654877cde8fcb" category="paragraph">4분기: 18번~23번 베이</block>
+  <block id="df01ff151b76cec5843a2eccb978e938" category="paragraph">만 18-21입니다</block>
+  <block id="ad20882646761a02dd54414dbeca9ccb" category="paragraph">각 사이트에서 2개의 외부 쉘프를 사용하는 경우 1/2 쉘프 정책을 사용하여 디스크가 할당됩니다. 쉘프가 완전히 채워지지 않은 경우, 쉘프 양쪽 끝에서 드라이브를 동일하게 설치합니다.</block>
+  <block id="48b5b1437ce3b483bb5ca8daf97655ff" category="summary">호스트 Linux 운영 체제에서 새로 설치하거나 tiebreaker 1.5로 업그레이드하여 MetroCluster 구성을 모니터링합니다.</block>
+  <block id="f8d2f649ab74ec933c327952e8bb2928" category="doc">Tiebreaker 1.5를 설치하거나 업그레이드합니다</block>
+  <block id="d0326b8b5ab3d73f0c473a86657f8120" category="list-text">스토리지 시스템에서 지원되는 ONTAP 버전을 실행하고 있어야 합니다. 를 참조하십시오 <block ref="baa1c8503450ae393332ce081dcd2dcb" category="inline-link-macro-rx"></block> 표 을 참조하십시오.</block>
+  <block id="9dcb328e6e745d546e4551bec0b851f5" category="list-text">을 사용하여 OpenJDK를 설치해야 합니다<block ref="366f2699f7c6384b966350ad31d76b9d" prefix=" " category="inline-code"></block> 명령. Tiebreaker 1.5 이상은 OpenJDK 17, 18 또는 19를 지원합니다.</block>
+  <block id="96894f4b4543e59d1a0f367969a6dde7" category="list-text">MetroCluster Tiebreaker 소프트웨어 및 MetroCluster_tiebreaker_RPM_GPG 키를 다운로드합니다.</block>
+  <block id="a5bed4d92c3921863940826187da9e98" category="admonition">MetroCluster_tiebreaker_RPM_GPG 키는 NetApp Support 사이트의 tiebreaker 1.5용 소프트웨어 패키지를 다운로드한 페이지와 동일한 페이지에서 다운로드할 수 있습니다.</block>
+  <block id="912c701bea2a07b0f2e994ecbbfe39bb" category="inline-link">MetroCluster Tiebreaker (다운로드) - NetApp Support 사이트</block>
+  <block id="c91ec8afdbbb8c5302115832907272a9" category="paragraph"><block ref="c91ec8afdbbb8c5302115832907272a9" category="inline-link-rx"></block></block>
+  <block id="a02a46a02dea350b2d7c3fe6c8195784" category="paragraph">새 설치를 수행하는지 아니면 기존 설치를 업그레이드하는지에 따라 올바른 절차를 선택합니다.</block>
+  <block id="42a6071f1b74c23c6f01ed4ee83e84a9" category="summary">호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.4로 업그레이드하여 MetroCluster 구성을 모니터링합니다.</block>
+  <block id="fb40d4c34084890fcaf25f365a76ac12" category="doc">Tiebreaker 1.4를 설치하거나 업그레이드합니다</block>
+  <block id="ac6b423e5ba71dfd63c97271456a6104" category="list-text">을 사용하여 OpenJDK를 설치해야 합니다<block ref="366f2699f7c6384b966350ad31d76b9d" prefix=" " category="inline-code"></block> 명령. Tiebreaker 1.4 및 이전 버전은 JDK 1.8.0(JRE 8)을 지원합니다.</block>
+  <block id="4eb7fa04b05f83fec825fec60b3d37e2" category="list-text">MetroCluster Tiebreaker 소프트웨어를 다운로드합니다.</block>
+  <block id="17506b44d3cfa6cc5f2f179b8cbb9798" category="list-text">다음을 실행하여 Tiebreaker 소프트웨어를 설치합니다.</block>
+  <block id="6007545ec605289d47e5a070851a6ae7" category="paragraph"><block ref="805b9922cac1dbcb1d1759c3f16ff8c5" prefix="" category="inline-code"></block></block>
+  <block id="9cd57fceaa8db70100b7208b29c2c079" category="open-title">기존 설치를 업그레이드합니다</block>
+  <block id="3dca3d249f3a84b4f5a55036870e7d54" category="summary">Tiebreaker 1.5 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.</block>
+  <block id="610f72644dc6ccb3bdc02753fac9e40d" category="doc">MetroCluster Tiebreaker 1.5 종속성 설치</block>
+  <block id="6a3551c9dec48fcefff0bc798b26377a" category="inline-xref">JDK를 설치합니다</block>
+  <block id="54adfea66c44ae53db53d861cde177b3" category="list-text"><block ref="a9e34c1f0eacc89d99d89ac6db5755f3" category="inline-xref-macro-rx"></block></block>
+  <block id="64fadfb89c70aba2596b6e898f7407c0" category="list-text"><block ref="13bc549387f74fffb9fb85518815a4cf" category="inline-xref-macro-rx"></block></block>
+  <block id="6b2a10b36edc245209f8197126ad892c" category="inline-xref">Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치합니다</block>
+  <block id="b05c84f48a507c37a035eb90f1b6c263" category="paragraph"><block ref="74ab92a4a42a2343cbaea196d9ceb7fd" category="inline-xref-macro-rx"></block></block>
+  <block id="130d22d651a0bfe0d3bffb9a78c07b35" category="inline-xref">Red Hat Enterprise Linux 8에 MariaDB 서버를 설치합니다</block>
+  <block id="88f1b3322487dc544fa1497636c53c3f" category="paragraph"><block ref="38f5e34ed2b52836f2486dd4da76671d" category="inline-xref-macro-rx"></block></block>
+  <block id="8631612f56a0f0da48ccb69a5eea4dea" category="paragraph">Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 호스트 시스템에 JDK를 설치해야 합니다. Tiebreaker 1.5 이상은 OpenJDK 17, 18 또는 19를 지원합니다.</block>
+  <block id="5b98f0672601b4637ec30dd3a1bf5971" category="list-text">사용 가능한 JDK 버전 확인:</block>
+  <block id="4611184615658a82d926bbdd22cead09" category="list-text">JDK 17,18 또는 19를 설치합니다.</block>
+  <block id="788e6d81c6159e5597665dfbda001f3b" category="paragraph">다음 명령을 실행하면 JDK 17이 설치됩니다.</block>
+  <block id="1a2fcbb7ed3658f96924e4c40d25238f" category="paragraph"><block ref="65a8cc094f7c9bd3e6406d7b03afe579" prefix="" category="inline-code"></block></block>
+  <block id="fac4447e0ea2e4cd1a2d9e2fefeab694" category="list-text">설치를 확인합니다.</block>
+  <block id="d349bda8382351b9fe435583c56eca3b" category="paragraph"><block ref="5d7f69486483ec9123c78fb391309819" prefix="" category="inline-code"></block></block>
+  <block id="710a5de3b1bfbb26f90cb380ca34843a" category="paragraph">설치가 완료되면 다음 출력이 표시됩니다.</block>
+  <block id="bce356412a95327bfdb1db19b9151953" category="inline-xref">MariaDB 서버를 설치합니다</block>
+  <block id="3f808a8a84dbaf66d2b1d4ec08d41caa" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다. Red Hat Enterprise Linux 8의 경우 <block ref="cce1670a787ab2bd35f1046a8f26c68f" category="inline-xref-macro-rx"></block>.</block>
+  <block id="532310374e7793ddf9ac8cbed30210c8" category="section-title">MySQL 자동 시작 설정을 활성화합니다</block>
+  <block id="6db66be6094d7b7ca07b0b3051e97f54" category="inline-xref">MySQL Server를 설치합니다</block>
+  <block id="6b1d36d5ec1c94e1eec93df2718edee7" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다. Red Hat Enterprise Linux 7 또는 CentOS 7의 경우 <block ref="d6e81ea95129f7cd9f785433c5e134df" category="inline-xref-macro-rx"></block>.</block>
+  <block id="fa386ba9d241750f0dd45fd600a79941" category="section-title">MariaDB 서버에 대한 자동 시작 설정을 활성화합니다</block>
+  <block id="adbb94f0ccbbe34d5296dc1c35a84726" category="summary">Tiebreaker 1.4 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다.</block>
+  <block id="1e9941e8f30babc5f8d431af23393f7b" category="doc">MetroCluster Tiebreaker 1.4 종속성 설치</block>
+  <block id="b42aef8e8328a4c8ad2b06e4b83e7881" category="paragraph">호스트 Linux 운영 체제에 따라 Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 MySQL 또는 MariaDB 서버를 설치하십시오.</block>
+  <block id="d657089a50577a75e88660c58f4d436a" category="list-text"><block ref="096ececee6bc95e521d7c85980720207" category="inline-xref-macro-rx"></block>.</block>
+  <block id="76cb36f0dbb8e7d76743141613cda859" category="paragraph">Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 호스트 시스템에 JDK를 설치해야 합니다. Tiebreaker 1.4 및 이전 버전은 JDK 1.8.0을 지원합니다. (JRE 8).</block>
+  <block id="10636ba52a9f69969f1baeff2e8772ce" category="list-text">"루트" 사용자로 로그인합니다.</block>
+  <block id="45ce42c9ad0e5706beb13690d8d1c528" category="list-text">JDK 1.8.0 설치:</block>
+  <block id="a5bdeb77664eccd64392e790b5c620a8" category="paragraph"><block ref="350a7ebb397b46f12bb07dab4792547e" prefix="" category="inline-code"></block></block>
+  <block id="433d65bdb306eb4928e6ae75fb7922c9" category="inline-xref">MariaDB 서버를 설치합니다</block>
+  <block id="fccf81e975f1d68aff179d395513ad66" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다.  Red Hat Enterprise Linux 8의 경우 <block ref="5d0470d05292387d11d62aa5fd312b3d" category="inline-xref-macro-rx"></block>.</block>
+  <block id="34ddff2815f871a4f2a5c1843943d259" category="list-text">루트 사용자로 로그인합니다.</block>
+  <block id="7a695adbd64da12b14f0e04ae1c198fb" category="paragraph">MySQL 로그인이 예상대로 작동하면 출력이 에서 종료됩니다<block ref="ed49d1cb9ebac71351e6bbd4d88ef634" prefix=" " category="inline-code"></block> 메시지가 표시됩니다.</block>
+  <block id="aa8305dc53f7db3e2d15d3f5d4b0fd91" category="paragraph">Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다.  Red Hat Enterprise Linux 7 또는 CentOS 7의 경우 <block ref="d6e81ea95129f7cd9f785433c5e134df" category="inline-xref-macro-rx"></block>.</block>
+  <block id="7ccb3226f303f524c6a3b00fc264270f" category="list-text">로 로그인합니다<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block> 사용자.</block>
+  <block id="9cd256a82b5d6fd3425bcd9646641d4b" category="paragraph">ONTAP 9.8에서 ONTAP 9.14.1까지</block>
+  <block id="a6f5218693cab1cdc7285498cbdf0ce8" category="paragraph">ONTAP 9.1에서 ONTAP 9.9.1</block>
+  <block id="80dd536fbb98ad1689bfbebc73338f0e" category="list-text">Tiebreaker 소프트웨어는 세 번째 사이트에 설치되며, 이를 통해 ISL(Inter-Switch Link) 장애(사이트 간 링크가 다운된 경우)와 사이트 장애를 구분할 수 있습니다. MetroCluster 구성을 모니터링하기 위해 Tiebreaker 소프트웨어를 설치 또는 업그레이드하려면 호스트 시스템이 특정 요구 사항을 충족해야 합니다.</block>
+  <block id="b4c29468243fd329e285a7eb342829dc" category="paragraph">타이브레이커 1.5</block>
+  <block id="4f5b54f9c941cadc92b42e83ba2d625f" category="inline-link-macro">타이브레이커 1.5를 설치합니다</block>
+  <block id="53bf421364084851b0e9802944474422" category="paragraph"><block ref="53bf421364084851b0e9802944474422" category="inline-link-macro-rx"></block></block>
+  <block id="7dfc6eda1cb7a514db22096a11fb5874" category="paragraph">타이브레이커 1.4</block>
+  <block id="06aef4d1d6158c53520054dd04cc3a52" category="inline-link-macro">Tiebreaker 1.4를 설치합니다</block>
+  <block id="bd7d740c7178aa2df12a81e3a095cf7a" category="paragraph"><block ref="bd7d740c7178aa2df12a81e3a095cf7a" category="inline-link-macro-rx"></block></block>
+  <block id="afd755a1fe90c01febccbd2e397b9780" category="summary">호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.6으로 업그레이드하여 MetroCluster 구성을 모니터링합니다.</block>
+  <block id="92cf4933e9c8bfb818863f455e477af5" category="paragraph"><block ref="92cf4933e9c8bfb818863f455e477af5" category="inline-link-macro-rx"></block></block>
+  <block id="00395061ba5a721f2a906e4ac75f9fde" category="inline-link-macro">MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소를 설정합니다</block>
+  <block id="e0e300856a5e4a2a419fdf0d5fb20e62" category="admonition">애그리게이트를 구성하기 전에 에 설명된 대로 오브젝트 저장소를 설정해야 합니다 <block ref="bf6f1feb5dfb0381998cf99478ab26ea" category="inline-link-macro-rx"></block>.</block>
+  <block id="39998026607048d04a8bc09fac18fa8f" category="paragraph">ONTAP 9.11.1부터 <block ref="7a1a77fa3bd3a175233cd6cdfe493836" category="inline-link-macro-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
+  <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link-macro">HA 쌍 관리</block>
+  <block id="fc0b22bb38f11521c03de86c56643d5d" category="paragraph"><block ref="fc0b22bb38f11521c03de86c56643d5d" category="inline-link-macro-rx"></block></block>
+  <block id="0f87578f11104e3d1178b1b6a73f5684" category="paragraph"><block ref="0f87578f11104e3d1178b1b6a73f5684" category="inline-link-macro-rx"></block></block>
+  <block id="3973235e869d719328cf4b37e59562e5" category="paragraph"><block ref="3973235e869d719328cf4b37e59562e5" category="inline-link-macro-rx"></block></block>
+  <block id="c5d34bb560e327e8975a1da2f0e0c0fe" category="cell"><block ref="c5d34bb560e327e8975a1da2f0e0c0fe" category="inline-link-macro-rx"></block></block>
+  <block id="25f1ab87c0a26d25aae4f64158a13958" category="cell"><block ref="25f1ab87c0a26d25aae4f64158a13958" category="inline-link-macro-rx"></block></block>
+  <block id="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="paragraph"><block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block></block>
+  <block id="2a35142a0e6eda28748cdf00899dc98b" category="paragraph">를 클릭합니다 <block ref="0c7bf211a7cb9712977652add2e31f3e" category="inline-link-macro-rx"></block> 새로운 기능, 업그레이드 노트, 해결된 문제, 알려진 제한 사항 및 알려진 문제에 대해 설명합니다.</block>
+  <block id="0f25553cdf8eb8de83ad715008d4617b" category="paragraph">다중 컨트롤러 또는 스토리지 장애 복구를 완료하려면 필요한 작업을 수행합니다.</block>
 </blocks>

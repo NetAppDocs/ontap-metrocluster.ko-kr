@@ -393,11 +393,11 @@ MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF
 
 지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+link:https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 . 지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.
 +
-https://software.cisco.com/download/home["Cisco 소프트웨어 다운로드"]
+link:https://software.cisco.com/download/home["Cisco 소프트웨어 다운로드"^]
 
 . 스위치 소프트웨어를 스위치에 복사합니다. '+copy sftp://root@server-ip-address/tftpboot/nx-os-file-name bootflash:vrf management+'
 +

@@ -6,6 +6,8 @@ summary: 구성에 미러링되지 않은 애그리게이트가 포함된 경우
 ---
 = 미러링되지 않은 애그리게이트를 사용할 때의 고려 사항
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 

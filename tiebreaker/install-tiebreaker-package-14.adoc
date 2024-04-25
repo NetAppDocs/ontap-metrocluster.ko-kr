@@ -1,0 +1,113 @@
+---
+permalink: tiebreaker/install-tiebreaker-package-14.html 
+sidebar: sidebar 
+keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
+summary: 호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.4로 업그레이드하여 MetroCluster 구성을 모니터링합니다. 
+---
+= Tiebreaker 1.4를 설치하거나 업그레이드합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.4로 업그레이드하여 MetroCluster 구성을 모니터링합니다.
+
+.이 작업에 대해
+* 스토리지 시스템에서 지원되는 ONTAP 버전을 실행하고 있어야 합니다. 를 참조하십시오 link:install_prepare.html#software-requirements["소프트웨어 요구 사항"] 표 을 참조하십시오.
+* 을 사용하여 OpenJDK를 설치해야 합니다 `yum install java-x.x.x-openjdk` 명령. Tiebreaker 1.4 및 이전 버전은 JDK 1.8.0(JRE 8)을 지원합니다.
+
+
+.단계
+. MetroCluster Tiebreaker 소프트웨어를 다운로드합니다.
++
+https://mysupport.netapp.com/site/products/all/details/metrocluster-tiebreaker/downloads-tab["MetroCluster Tiebreaker (다운로드) - NetApp Support 사이트"^]
+
+. 호스트에 루트 사용자로 로그인합니다.
+. [[install-tiebreaker]] Tiebreaker 소프트웨어 설치 또는 업그레이드:
++
+새 설치를 수행하는지 아니면 기존 설치를 업그레이드하는지에 따라 올바른 절차를 선택합니다.
+
++
+[role="tabbed-block"]
+====
+.새 설치를 수행합니다
+--
+.. 다음을 실행하여 Tiebreaker 소프트웨어를 설치합니다.
++
+`rpm -ivh NetApp-MetroCluster-Tiebreaker-Software-1.4-1.x86_64.rpm`
+
++
+성공적인 설치를 위해 다음과 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
+Post installation start Fri Apr  5 02:28:09 EDT 2024
+Enter MetroCluster Tiebreaker user password:
+
+Please enter mysql root password when prompted
+Enter password:
+Synchronizing state of netapp-metrocluster-tiebreaker-software.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable netapp-metrocluster-tiebreaker-software
+Created symlink /etc/systemd/system/multi-user.target.wants/netapp-metrocluster-tiebreaker-software.service → /etc/systemd/system/netapp-metrocluster-tiebreaker-software.service.
+Attempting to start NetApp MetroCluster Tiebreaker software services
+Started NetApp MetroCluster Tiebreaker software services
+Enabled autostart of NetApp MetroCluster Tiebreaker software daemon during boot
+Created symbolic link for NetApp MetroCluster Tiebreaker software CLI
+Post installation end Fri Apr  5 02:28:22 EDT 2024
+Successfully installed NetApp MetroCluster Tiebreaker software version 1.4.
+----
+
+
+--
+.기존 설치를 업그레이드합니다
+--
+.. Tiebreaker 소프트웨어를 업그레이드합니다.
++
+[listing]
+----
+[root@mcctb ~]# rpm -Uvh NetApp-MetroCluster-Tiebreaker-Software-1.4-1.x86_64.rpm
+----
++
+성공적인 업그레이드를 위해 다음과 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Upgrading NetApp MetroCluster Tiebreaker software....
+Stopping NetApp MetroCluster Tiebreaker software services before upgrade.
+Updating / installing...
+   1:NetApp-MetroCluster-Tiebreaker-So################################# [ 50%]
+Post installation start Mon Apr  8 06:29:51 EDT 2024
+Synchronizing state of netapp-metrocluster-tiebreaker-software.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable netapp-metrocluster-tiebreaker-software
+Attempting to start NetApp MetroCluster Tiebreaker software services
+Started NetApp MetroCluster Tiebreaker software services
+Enabled autostart of NetApp MetroCluster Tiebreaker software daemon during boot
+Created symbolic link for NetApp MetroCluster Tiebreaker software CLI
+Post upgrade end Mon Apr  8 06:29:51 EDT 2024
+Successfully upgraded NetApp MetroCluster Tiebreaker software to version 1.4.
+Cleaning up / removing...
+   2:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
+
+----
+
+
+--
+====
++
+
+NOTE: 잘못된 MySQL root 패스워드를 입력하면 Tiebreaker 소프트웨어는 성공적으로 설치되었음을 나타내지만 "Access denied" 메시지를 표시합니다. 이 문제를 해결하려면 "rpm -e" 명령을 사용하여 Tiebreaker 소프트웨어를 제거한 다음 올바른 MySQL root 암호를 사용하여 소프트웨어를 다시 설치해야 합니다.
+
+. Tiebreaker 호스트에서 각 노드 관리 LIF 및 클러스터 관리 LIF까지 SSH 연결을 열어 MetroCluster 소프트웨어에 대한 Tiebreaker 연결을 확인합니다.
+
+
+.관련 정보
+https://mysupport.netapp.com/site/["NetApp 지원"^]

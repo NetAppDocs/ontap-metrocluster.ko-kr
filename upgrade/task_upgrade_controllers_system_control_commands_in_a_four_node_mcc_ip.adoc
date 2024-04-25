@@ -35,7 +35,7 @@ NOTE: 설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또�
 
 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 link:concept_choosing_controller_upgrade_mcc.html#supported-metrocluster-ip-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
 
-을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
+을 참조하십시오 link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
 
 
 
@@ -269,7 +269,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
 
 .단계
-. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-34C97A45-0BFF-46DD-B104-2AB2805A983D.html["기존 MetroCluster 구성을 제거합니다"^] Tiebreaker 소프트웨어
+. link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["기존 MetroCluster 구성을 제거합니다"] Tiebreaker 소프트웨어
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +
 응용 프로그램 설명서를 참조하십시오.
@@ -318,7 +318,7 @@ SAN 및 NAS를 포함한 모든 데이터 LIF는 전환 사이트(cluster_a)에 
 예를 들어, ""e0d""는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. ""e0d""는 클러스터 포트로 사용하거나 새 컨트롤러에서 사용되지 않습니다.
 
 +
-플랫폼 모델의 포트 사용은 를 참조하십시오 https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
+플랫폼 모델의 포트 사용은 를 참조하십시오 link:https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 .. 공통 포트를 홈 포트로 사용하도록 모든 데이터 LIF를 수정합니다.
 +
@@ -428,7 +428,7 @@ https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시�
 이 작업은 각각의 새 컨트롤러 모듈에서 수행됩니다.
 
 .단계
-. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. 에 액세스합니다 link:https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
 . NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 ONTAP-version_image.tgz 파일을 저장합니다.
 . 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
 +

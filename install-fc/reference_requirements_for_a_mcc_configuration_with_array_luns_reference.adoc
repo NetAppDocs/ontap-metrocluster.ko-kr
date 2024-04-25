@@ -71,7 +71,7 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 link:task_fcsw_cisco_configure_a_cisco_switch_supertask.html["Cisco FC 스위치를 수동으로 구성합니다"]
 
 +
-link:ask_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
+link:task_fcsw_brocade_configure_the_brocade_fc_switches_supertask.html["Brocade FC 스위치를 수동으로 구성합니다"]
 
 
 

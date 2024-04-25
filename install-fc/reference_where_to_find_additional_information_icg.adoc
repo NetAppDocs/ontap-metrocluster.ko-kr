@@ -24,21 +24,21 @@ MetroCluster 구성 및 작동에 대해 자세히 알아볼 수 있습니다.
 
 
  a| 
-https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 설명서"^]
+link:https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 설명서"^]
  a| 
 * 모든 MetroCluster 정보
 
 
 
 
-| https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf["NetApp MetroCluster 솔루션 아키텍처 및 설계, TR-4705"^]  a| 
+| link:https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf["NetApp MetroCluster 솔루션 아키텍처 및 설계, TR-4705"^]  a| 
 * MetroCluster FC 구성 및 작동에 대한 기술적 개요
 * MetroCluster FC 구성의 모범 사례
 
 
 
 
-| https://www.netapp.com/pdf.html?item=/media/13481-tr4689.pdf["MetroCluster IP 솔루션 아키텍처 및 설계, TR-4689"^]  a| 
+| link:https://www.netapp.com/pdf.html?item=/media/13481-tr4689.pdf["MetroCluster IP 솔루션 아키텍처 및 설계, TR-4689"^]  a| 
 * MetroCluster IP 구성 및 작동에 대한 기술적 개요
 * MetroCluster IP 구성의 모범 사례
 

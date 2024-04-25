@@ -8,7 +8,7 @@ summary: 구성이 깨끗한지 확인하려면 컨트롤러 모듈에서 기본
 :allow-uri-read: 
 
 
-[role="lead"]
+[role="lead lead"]
 컨트롤러 모듈에서 기본값을 재설정 및 복원합니다.
 
 . LOADER 프롬프트에서 환경 변수를 기본 설정인 'Set-defaults'로 되돌립니다

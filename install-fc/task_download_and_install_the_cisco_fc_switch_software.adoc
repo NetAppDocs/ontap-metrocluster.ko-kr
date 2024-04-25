@@ -21,7 +21,7 @@ MetroCluster 패브릭 구성의 각 스위치에 스위치 운영 체제 파일
 
 지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 NOTE: 표시된 출력은 Cisco IP 스위치용으로 표시되지만 Cisco FC 스위치에도 적용할 수 있습니다.
@@ -29,7 +29,7 @@ NOTE: 표시된 출력은 Cisco IP 스위치용으로 표시되지만 Cisco FC �
 .단계
 . 지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.
 +
-https://software.cisco.com/download/home["Cisco 다운로드 페이지"]
+link:https://software.cisco.com/download/home["Cisco 다운로드 페이지"^]
 
 . 스위치 소프트웨어를 스위치에 복사합니다.
 +

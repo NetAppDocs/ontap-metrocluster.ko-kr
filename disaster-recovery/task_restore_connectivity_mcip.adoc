@@ -10,6 +10,7 @@ summary: 남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 연결
 :imagesdir: ../media/
 
 
+[role="lead"]
 남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 연결을 복구해야 합니다.
 
 .이 작업에 대해

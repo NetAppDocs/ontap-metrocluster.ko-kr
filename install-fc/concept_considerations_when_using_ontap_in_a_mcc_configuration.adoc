@@ -82,7 +82,7 @@ FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 link:h
 === 미러링된 FabricPool에서 사용하도록 애그리게이트 구성
 
 
-NOTE: 애그리게이트를 구성하기 전에 의 "MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"에 설명된 대로 오브젝트 저장소를 설정해야 합니다https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"]
+NOTE: 애그리게이트를 구성하기 전에 에 설명된 대로 오브젝트 저장소를 설정해야 합니다 link:https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소를 설정합니다"^].
 
 .단계
 FabricPool에서 사용할 Aggregate를 구성하려면 다음을 수행합니다.
@@ -116,7 +116,7 @@ ONTAP 9.6 MetroCluster 구성부터 FlexGroup 볼륨을 지원합니다.
 
 == MetroCluster 구성에서 일관성 그룹 지원
 
-ONTAP 9.11.1부터 https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["정합성 보장 그룹"^] MetroCluster 구성에서 지원됩니다.
+ONTAP 9.11.1부터 link:https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["정합성 보장 그룹"^] MetroCluster 구성에서 지원됩니다.
 
 
 
@@ -148,7 +148,7 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.
 
 .관련 정보
-* https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["네트워크 및 LIF 관리"]
+* link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 및 LIF 관리"^]
 * 파트너 클러스터로 IPspace 객체를 복제하고 MetroCluster 구성에서 서브넷 및 IPv6를 구성하기 위한 요구사항을 알고 있어야 합니다.
 +
 <<ipspace_obj_rep,IPSpace 객체 복제 및 서브넷 구성 요구 사항>>

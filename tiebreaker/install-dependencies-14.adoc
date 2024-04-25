@@ -1,21 +1,20 @@
 ---
-permalink: tiebreaker/install_dependencies.html 
+permalink: tiebreaker/install-dependencies-14.html 
 sidebar: sidebar 
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
-summary: Tiebreaker 1.5 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
+summary: Tiebreaker 1.4 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
 ---
-= MetroCluster Tiebreaker 1.5 종속성 설치
+= MetroCluster Tiebreaker 1.4 종속성 설치
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-호스트 Linux 운영 체제에 따라 Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 MySQL 또는 MariaDB 서버를 설치해야 합니다.
+호스트 Linux 운영 체제에 따라 Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 MySQL 또는 MariaDB 서버를 설치하십시오.
 
 .단계
-. <<install-java-17,JDK를 설치합니다>>
-. <<install-vault,Vault 설치 및 구성>>
+. <<install-java-1-8,JDK를 설치합니다>>.
 . MySQL 또는 MariaDB 서버 설치:
 +
 [cols="30,70"]
@@ -44,10 +43,10 @@ Red Hat Enterprise Linux 8
 
 == JDK를 설치합니다
 
-Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 호스트 시스템에 JDK를 설치해야 합니다. Tiebreaker 1.5 이상은 OpenJDK 17, 18 또는 19를 지원합니다.
+Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 호스트 시스템에 JDK를 설치해야 합니다. Tiebreaker 1.4 및 이전 버전은 JDK 1.8.0을 지원합니다. (JRE 8).
 
 .단계
-. 고급 권한 모드로 변경할 수 있는 "루트" 사용자 또는 sudo 사용자로 로그인합니다.
+. "루트" 사용자로 로그인합니다.
 +
 [listing]
 ----
@@ -56,324 +55,47 @@ login as: root
 root@mcctb's password:
 Last login: Fri Jan  8 21:33:00 2017 from host.domain.com
 ----
-. 사용 가능한 JDK 버전 확인:
+. JDK 1.8.0 설치:
 +
-`yum search openjdk`
-
-. JDK 17,18 또는 19를 설치합니다.
-+
-다음 명령을 실행하면 JDK 17이 설치됩니다.
-
-+
-`yum install java-17-openjdk`
-
-. 설치를 확인합니다.
-+
-`java -version`
-
-+
-설치가 완료되면 다음 출력이 표시됩니다.
+`yum install java-1.8.0-openjdk.x86_64`
 
 +
 [listing]
 ----
+[root@mcctb ~]# yum install java-1.8.0-openjdk.x86_64
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+... shortened....
+Dependencies Resolved
 
-openjdk version "17.0.2" 2022-01-18 LTS
-OpenJDK Runtime Environment 21.9 (build 17.0.2+8-LTS)
-OpenJDK 64-Bit Server VM 21.9 (build 17.0.2+8-LTS, mixed mode, sharing)
-----
+=======================================================================
+Package               Arch   Version                 Repository    Size
+=======================================================================
+Installing:
+ java-1.8.0-openjdk  x86_64  1:1.8.0.144-0.b01.el7_4 updates      238 k
+ ..
+ ..
+Transaction Summary
+=======================================================================
+Install  1 Package  (+ 4 Dependent packages)
 
+Total download size: 34 M
+Is this ok [y/d/N]: y
 
-
-
-== Vault 설치 및 구성
-
-로컬 볼트 서버를 가지고 있지 않거나 사용하고자 하는 경우, Vault를 설치해야 합니다. Vault를 설치하려면 이 표준 절차를 참조하거나, 다른 지침은 Hashicorp 설치 지침을 참조하십시오.
-
-
-NOTE: 네트워크에 Vault 서버가 있는 경우, MetroCluster Tiebreaker 호스트가 볼트 설치를 사용하도록 구성할 수 있습니다. 이렇게 하면 호스트에 Vault를 설치할 필요가 없습니다.
-
-.단계
-. 로 이동합니다 `/bin` 디렉터리:
-+
-[listing]
+Installed:
+java-1.8.0-openjdk.x86_64 1:1.8.0.144-0.b01.el7_4
+Complete!
 ----
-[root@mcctb] cd /bin
-----
-. 볼트 zip 파일을 다운로드합니다.
-+
-[listing]
-----
-[root@mcctb /bin]#  curl -sO https://releases.hashicorp.com/vault/1.12.2/vault_1.12.2_linux_amd64.zip
-----
-. 볼트 파일의 압축을 풉니다.
-+
-[listing]
-----
-[root@mcctb /bin]# unzip vault_1.12.2_linux_amd64.zip
-Archive:  vault_1.12.2_linux_amd64.zip
-  inflating: vault
-----
-. 설치를 확인합니다.
-+
-[listing]
-----
-[root@mcctb /bin]# vault -version
-Vault v1.12.2 (415e1fe3118eebd5df6cb60d13defdc01aa17b03), built 2022-11-23T12:53:46Z
-----
-. 로 이동합니다 `/root` 디렉터리:
-+
-[listing]
-----
-[root@mcctb /bin] cd /root
-----
-. 아래에 볼트 설정 파일을 작성합니다 `/root` 디렉토리.
-+
-에서 `[root@mcctb ~]` 메시지를 표시하고, 복사하고, 다음 명령을 실행하여 를 생성합니다 `config.hcl` 파일:
-
-+
-[source, cli]
-----
-# cat > config.hcl << EOF
- storage "file" {
-  address = "127.0.0.1:8500"
-  path    = "/mcctb_vdata/data"
- }
- listener "tcp" {
-   address     = "127.0.0.1:8200"
-   tls_disable = 1
- }
-EOF
-----
-. 볼트 서버 시작:
-+
-[listing]
-----
-[root@mcctb ~] vault server -config config.hcl &
-----
-. Vault 주소를 내보냅니다.
-+
-[listing]
-----
-[root@mcctb ~]# export VAULT_ADDR="http://127.0.0.1:8200"
-----
-. 볼트 초기화
-+
-[listing]
-----
-[root@mcctb ~]# vault operator init
-2022-12-15T14:57:22.113+0530 [INFO]  core: security barrier not initialized
-2022-12-15T14:57:22.113+0530 [INFO]  core: seal configuration missing, not initialized
-2022-12-15T14:57:22.114+0530 [INFO]  core: security barrier not initialized
-2022-12-15T14:57:22.116+0530 [INFO]  core: security barrier initialized: stored=1 shares=5 threshold=3
-2022-12-15T14:57:22.118+0530 [INFO]  core: post-unseal setup starting
-2022-12-15T14:57:22.137+0530 [INFO]  core: loaded wrapping token key
-2022-12-15T14:57:22.137+0530 [INFO]  core: Recorded vault version: vault version=1.12.2 upgrade time="2022-12-15 09:27:22.137200412 +0000 UTC" build date=2022-11-23T12:53:46Z
-2022-12-15T14:57:22.137+0530 [INFO]  core: successfully setup plugin catalog: plugin-directory=""
-2022-12-15T14:57:22.137+0530 [INFO]  core: no mounts; adding default mount table
-2022-12-15T14:57:22.143+0530 [INFO]  core: successfully mounted backend: type=cubbyhole version="" path=cubbyhole/
-2022-12-15T14:57:22.144+0530 [INFO]  core: successfully mounted backend: type=system version="" path=sys/
-2022-12-15T14:57:22.144+0530 [INFO]  core: successfully mounted backend: type=identity version="" path=identity/
-2022-12-15T14:57:22.148+0530 [INFO]  core: successfully enabled credential backend: type=token version="" path=token/ namespace="ID: root. Path: "
-2022-12-15T14:57:22.149+0530 [INFO]  rollback: starting rollback manager
-2022-12-15T14:57:22.149+0530 [INFO]  core: restoring leases
-2022-12-15T14:57:22.150+0530 [INFO]  expiration: lease restore complete
-2022-12-15T14:57:22.150+0530 [INFO]  identity: entities restored
-2022-12-15T14:57:22.150+0530 [INFO]  identity: groups restored
-2022-12-15T14:57:22.151+0530 [INFO]  core: usage gauge collection is disabled
-2022-12-15T14:57:23.385+0530 [INFO]  core: post-unseal setup complete
-2022-12-15T14:57:23.387+0530 [INFO]  core: root token generated
-2022-12-15T14:57:23.387+0530 [INFO]  core: pre-seal teardown starting
-2022-12-15T14:57:23.387+0530 [INFO]  rollback: stopping rollback manager
-2022-12-15T14:57:23.387+0530 [INFO]  core: pre-seal teardown complete
-Unseal Key 1: <unseal_key_1_id>
-Unseal Key 2: <unseal_key_2_id>
-Unseal Key 3: <unseal_key_3_id>
-Unseal Key 4: <unseal_key_4_id>
-Unseal Key 5: <unseal_key_5_id>
-
-Initial Root Token: <initial_root_token_id>
-
-
-Vault initialized with 5 key shares and a key threshold of 3. Please securely
-distribute the key shares printed above. When the Vault is re-sealed,
-restarted, or stopped, you must supply at least 3 of these keys to unseal it
-before it can start servicing requests.
-
-Vault does not store the generated root key. Without at least 3 keys to
-reconstruct the root key, Vault will remain permanently sealed!
-
-It is possible to generate new unseal keys, provided you have a quorum of
-existing unseal keys shares. See "vault operator rekey" for more information.
-----
-+
-
-IMPORTANT: 이 절차의 뒷부분에서 사용할 수 있도록 키 ID와 초기 루트 토큰을 안전한 위치에 기록하고 저장해야 합니다.
-
-. 볼트 루트 토큰을 내보냅니다.
-+
-[listing]
-----
-[root@mcctb ~]#  export VAULT_TOKEN="<initial_root_token_id>"
-----
-. 생성된 다섯 개의 키 중 세 개를 사용하여 Vault의 봉인을 해제합니다.
-+
-를 실행해야 합니다 `vault operator unseal` 세 키 각각에 대한 명령:
-
-+
-.. 첫 번째 키를 사용하여 볼트 봉인을 해제합니다.
-+
-[listing]
-----
-[root@mcctb ~]# vault operator unseal
-Unseal Key (will be hidden):
-Key                Value
----                -----
-Seal Type          shamir
-Initialized        true
-Sealed             true
-Total Shares       5
-Threshold          3
-Unseal Progress    1/3
-Unseal Nonce       <unseal_key_1_id>
-Version            1.12.2
-Build Date         2022-11-23T12:53:46Z
-Storage Type       file
-HA Enabled         false
-----
-.. 두 번째 키를 사용하여 볼트 봉인을 해제합니다.
-+
-[listing]
-----
-[root@mcctb ~]# vault operator unseal
-Unseal Key (will be hidden):
-Key                Value
----                -----
-Seal Type          shamir
-Initialized        true
-Sealed             true
-Total Shares       5
-Threshold          3
-Unseal Progress    2/3
-Unseal Nonce       <unseal_key_2_id>
-Version            1.12.2
-Build Date         2022-11-23T12:53:46Z
-Storage Type       file
-HA Enabled         false
-----
-.. 세 번째 키를 사용하여 볼트 봉인을 해제합니다.
-+
-[listing]
-----
-[root@mcctb ~]# vault operator unseal
-Unseal Key (will be hidden):
-2022-12-15T15:15:00.980+0530 [INFO]  core.cluster-listener.tcp: starting listener: listener_address=127.0.0.1:8201
-2022-12-15T15:15:00.980+0530 [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=127.0.0.1:8201
-2022-12-15T15:15:00.981+0530 [INFO]  core: post-unseal setup starting
-2022-12-15T15:15:00.981+0530 [INFO]  core: loaded wrapping token key
-2022-12-15T15:15:00.982+0530 [INFO]  core: successfully setup plugin catalog: plugin-directory=""
-2022-12-15T15:15:00.983+0530 [INFO]  core: successfully mounted backend: type=system version="" path=sys/
-2022-12-15T15:15:00.984+0530 [INFO]  core: successfully mounted backend: type=identity version="" path=identity/
-2022-12-15T15:15:00.984+0530 [INFO]  core: successfully mounted backend: type=cubbyhole version="" path=cubbyhole/
-2022-12-15T15:15:00.986+0530 [INFO]  core: successfully enabled credential backend: type=token version="" path=token/ namespace="ID: root. Path: "
-2022-12-15T15:15:00.986+0530 [INFO]  rollback: starting rollback manager
-2022-12-15T15:15:00.987+0530 [INFO]  core: restoring leases
-2022-12-15T15:15:00.987+0530 [INFO]  expiration: lease restore complete
-2022-12-15T15:15:00.987+0530 [INFO]  identity: entities restored
-2022-12-15T15:15:00.987+0530 [INFO]  identity: groups restored
-2022-12-15T15:15:00.988+0530 [INFO]  core: usage gauge collection is disabled
-2022-12-15T15:15:00.989+0530 [INFO]  core: post-unseal setup complete
-2022-12-15T15:15:00.989+0530 [INFO]  core: vault is unsealed
-Key             Value
----             -----
-Seal Type       shamir
-Initialized     true
-Sealed          false
-Total Shares    5
-Threshold       3
-Version         1.12.2
-Build Date      2022-11-23T12:53:46Z
-Storage Type    file
-Cluster Name    vault-cluster
-Cluster ID      <cluster_id>
-HA Enabled      false
-----
-
-
-. 볼트 봉인 상태가 거짓인지 확인합니다.
-+
-[listing]
-----
-[root@mcctb ~]# vault status
-Key             Value
----             -----
-Seal Type       shamir
-Initialized     true
-Sealed          false
-Total Shares    5
-Threshold       3
-Version         1.12.2
-Build Date      2022-11-23T12:53:46Z
-Storage Type    file
-Cluster Name    vault-cluster
-Cluster ID      <cluster_id>
-HA Enabled      false
-----
-. Vault 서비스가 부팅될 때 시작되도록 구성합니다.
-+
-.. 다음 명령을 실행합니다. `cd /etc/systemd/system`
-+
-[listing]
-----
-[root@mcctb ~]#  cd /etc/systemd/system
-----
-.. 에서 `[root@mcctb system]` 프롬프트, 복사, 다음 명령을 실행하여 Vault 서비스 파일을 작성합니다.
-+
-[source, cli]
-----
-# cat > vault.service << EOF
-[Unit]
-Description=Vault Service
-After=mariadb.service
-
-[Service]
-Type=forking
-ExecStart=/usr/bin/vault server -config /root/config.hcl &
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-EOF
-----
-.. 다음 명령을 실행합니다. `systemctl daemon-reload`
-+
-[listing]
-----
-[root@mcctb system]#  systemctl daemon-reload
-----
-.. 다음 명령을 실행합니다. `systemctl enable vault.service`
-+
-[listing]
-----
-[root@mcctb system]#  systemctl enable vault.service
-Created symlink /etc/systemd/system/multi-user.target.wants/vault.service → /etc/systemd/system/vault.service.
-----
-+
-
-NOTE: MetroCluster Tiebreaker를 설치하는 동안 이 기능을 사용하라는 메시지가 표시됩니다. 볼트 밀봉을 해제하는 방법을 변경하려면 MetroCluster Tiebreaker 소프트웨어를 제거하고 다시 설치해야 합니다.
-
-
-
 
 
 
 
 == Red Hat Enterprise Linux 7 또는 CentOS 7에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치합니다
 
-Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다. Red Hat Enterprise Linux 8의 경우 <<install-mariadb,MariaDB 서버를 설치합니다>>.
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MySQL Server 5.5.30 이상 및 5.6.x 버전을 설치해야 합니다.  Red Hat Enterprise Linux 8의 경우 <<install-mariadb,MariaDB 서버를 설치합니다>>.
 
 .단계
-. 고급 권한 모드로 변경할 수 있는 루트 사용자 또는 sudo 사용자로 로그인합니다.
+. 루트 사용자로 로그인합니다.
 +
 [listing]
 ----
@@ -661,7 +383,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ----
 +
-MySQL 로그인이 작동 중이면 출력이 mysql> 프롬프트로 종료됩니다.
+MySQL 로그인이 예상대로 작동하면 출력이 에서 종료됩니다 `mysql>` 메시지가 표시됩니다.
 
 
 
@@ -693,13 +415,13 @@ mysqld.service     enabled
 
 == Red Hat Enterprise Linux 8에 MariaDB 서버를 설치합니다
 
-Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다. Red Hat Enterprise Linux 7 또는 CentOS 7의 경우 <<install-mysql-redhat,MySQL Server를 설치합니다>>.
+Tiebreaker 소프트웨어를 설치하거나 업그레이드하기 전에 호스트 시스템에 MariaDB 서버를 설치해야 합니다.  Red Hat Enterprise Linux 7 또는 CentOS 7의 경우 <<install-mysql-redhat,MySQL Server를 설치합니다>>.
 
 .시작하기 전에
 호스트 시스템은 Red Hat Enterprise Linux(RHEL) 8에서 실행 중이어야 합니다.
 
 .단계
-. 로 로그인합니다 `root` sudo를 고급 권한 모드로 설정할 수 있는 사용자 또는 사용자입니다.
+. 로 로그인합니다 `root` 사용자.
 +
 [listing]
 ----
@@ -847,7 +569,7 @@ will take effect immediately.
 
 *Reload privilege tables now? [Y/n]*
 
- ... Success!
+  ... Success!
 
 Cleaning up...
 
@@ -880,5 +602,6 @@ MariaDB 서버에 대해 자동 시작 기능이 설정되어 있는지 확인�
 UNIT FILE          State
 ------------------ ----------
 mariadb.service    enabled
+
 ----
 
