@@ -57,7 +57,7 @@ NOTE: 출력에는 백업 파일, 보존된 파일 또는 이 두 가지 모두�
 +
 [listing, subs="+quotes"]
 ----
-cumulus@IP_switch_A_1:mgmt:~$ sudo python3 MSN2100_v1.0_IP_switch_A_1.py
+cumulus@IP_switch_A_1:mgmt:~$ sudo python3 SN2100_v2.0.0_IP_switch_A_1.py
 [sudo] password for cumulus:
 >>> Opened RcfApplyLog
 *A RCF configuration has been successfully applied.*
@@ -96,7 +96,7 @@ cumulus@IP_switch_A_1:mgmt:~$
 +
 [listing]
 ----
-cumulus@IP_switch_A_1:mgmt:~$ sudo python3 MSN2100_v1.0_IP_switch_A_2.py restoreDefaults
+cumulus@IP_switch_A_1:mgmt:~$ sudo python3 SN2100_v2.0.0_IP_switch_A_2.py restoreDefaults
 [sudo] password for cumulus:
 >>> Opened RcfApplyLog
 Can restore from backup directory. Continuing.
@@ -112,7 +112,7 @@ RCF 파일을 적용하기 전에 스위치가 재설정되고 관리 네트워�
 
 
 
-=== [[Cumulus-install-option] Cumulus 설치 옵션을 사용하여 스위치를 재설정합니다
+=== [[Cumulus-install-option]] Cumulus 소프트웨어를 다운로드하고 설치합니다
 
 .이 작업에 대해
 Cumulus 이미지를 적용하여 스위치를 완전히 재설정하려면 다음 단계를 사용하십시오.
@@ -130,14 +130,14 @@ NOTE: Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 
 .단계
 . Cumulus 콘솔에서 스위치 소프트웨어 설치를 "onie-install-a-i" 명령과 함께 스위치 소프트웨어의 파일 경로를 다운로드하고 대기하십시오.
 +
-이 예에서는 펌웨어 파일 'cumulus-linux-4.4.2-mlx-amd64.bin'이 HTTP 서버 '50.50.50.50'에서 로컬 스위치로 복사됩니다.
+이 예에서는 펌웨어 파일입니다 `cumulus-linux-4.4.3-mlx-amd64.bin` HTTP 서버 '50.50.50.50.50'에서 로컬 스위치로 복사됩니다.
 
 +
 [listing]
 ----
-cumulus@IP_switch_A_1:mgmt:~$ sudo onie-install -a -i http://50.50.50.50/switchsoftware/cumulus-linux-4.4.2-mlx-amd64.bin
-Fetching installer: http://50.50.50.50/switchsoftware/cumulus-linux-4.4.2-mlx-amd64.bin
-Downloading URL: http://50.50.50.50/switchsoftware/cumulus-linux-4.4.2-mlx-amd64.bin
+cumulus@IP_switch_A_1:mgmt:~$ sudo onie-install -a -i http://50.50.50.50/switchsoftware/cumulus-linux-4.4.3-mlx-amd64.bin
+Fetching installer: http://50.50.50.50/switchsoftware/cumulus-linux-4.4.3-mlx-amd64.bin
+Downloading URL: http://50.50.50.50/switchsoftware/cumulus-linux-4.4.3-mlx-amd64.bin
 ######################################################################### 100.0%
 Success: HTTP download complete.
 tar: ./sysroot.tar: time stamp 2021-01-30 17:00:58 is 53895092.604407122 s in the future
@@ -207,7 +207,7 @@ Changing password for cumulus.
 Current password:
 New password:
 Retype new password:
-Linux cumulus 4.19.0-cl-1-amd64 #1 SMP Cumulus 4.19.206-1+cl4.4.2u1 (2021-12-18) x86_64
+Linux cumulus 4.19.0-cl-1-amd64 #1 SMP Cumulus 4.19.206-1+cl4.4.3u1 (2021-12-18) x86_64
 
 Welcome to NVIDIA Cumulus (R) Linux (R)
 
@@ -222,13 +222,21 @@ cumulus@cumulus:mgmt:~$
 ----
 . 관리 네트워크 인터페이스를 구성합니다.
 +
-
-NOTE: 다음 예에서는 'net add hostname <hostname>', 'net add interface eth0 ip address <IPAddress/mask>', 'net add interface eth0 ip address <IPAddress/mask>', 'net add interface eth0 IP gateway>' 명령을 사용하여 호스트 이름(IP_switch_a_1), IP 주소(10.10.10.10), 넷마스크(255.255.255.0(24))) 및 게이트웨이(10.10.10.10.1)를 구성하는 방법을 보여 줍니다.
+사용하는 명령은 실행 중인 스위치 펌웨어 버전에 따라 다릅니다.
 
 +
+
+NOTE: 다음 예제 명령에서는 호스트 이름을 IP_SWITCH_A_1로, IP 주소는 10.10.10.10.10으로, 넷마스크 255.255.255.0(24), 게이트웨이 주소는 10.10.10.10.10.10.1로 구성합니다.
+
++
+[role="tabbed-block"]
+====
+.Cumulus 4.4.x입니다
+--
+다음 명령은 Cumulus 4.4.x를 실행하는 스위치에서 호스트 이름, IP 주소, 넷마스크 및 게이트웨이를 구성합니다
+
 [listing]
 ----
-
 cumulus@cumulus:mgmt:~$ net add hostname IP_switch_A_1
 cumulus@cumulus:mgmt:~$ net add interface eth0 ip address 10.0.10.10/24
 cumulus@cumulus:mgmt:~$ net add interface eth0 ip gateway 10.10.10.1
@@ -257,6 +265,19 @@ cumulus 2021-05-17 22:21:57.635729 net add interface eth0 ip gateway 10.10.10.1
 
 cumulus@cumulus:mgmt:~$
 ----
+--
+.Cumulus 5.4.x 이상
+--
+다음 명령은 Cumulus 5.4.x를 실행하는 스위치에서 호스트 이름, IP 주소, 넷마스크 및 게이트웨이를 구성합니다 이상.
+
+[listing]
+----
+cumulus@cumulus:mgmt:~$ nv set system hostname IP_switch_A_1
+cumulus@cumulus:mgmt:~$ nv set interface eth0 ip address 10.0.10.10/24 cumulus@cumulus:mgmt:~$ nv set interface eth0 ip gateway 10.10.10.1 cumulus@cumulus:mgmt:~$ nv config apply
+cumulus@cumulus:mgmt:~$ nv config save
+----
+--
+====
 . 'SUDO reboot' 명령어를 사용하여 스위치를 reboot 한다.
 +
 [listing]
@@ -302,11 +323,12 @@ cumulus@IP_switch_A_1:mgmt:~$ pwd
 /home/cumulus
 cumulus@IP_switch_A_1:mgmt:~$
 ----
-.. RCF 파일을 이 디렉토리에 다운로드합니다. 다음 예에서는 SCP를 사용하여 서버 '50.50.50.50'에서 홈 디렉토리로 MSN2100_v1.0_IP_SWITCH_A_1.txt 파일을 다운로드하여 MSN2100_v1.0_IP_SWITCH_A_1.py로 저장하는 것을 보여 줍니다.
+.. RCF 파일을 이 디렉토리에 다운로드합니다.
+다음 예에서는 SCP를 사용하여 파일을 다운로드하는 방법을 보여 줍니다 `SN2100_v2.0.0_IP_switch_A_1.txt` 서버 '50.50.50.50'에서 홈 디렉토리로 이동한 후 로 저장합니다 `SN2100_v2.0.0_IP_switch_A_1.py`:
 +
 [listing]
 ----
-cumulus@Switch-A-1:mgmt:~$ scp username@50.50.50.50:/RcfFiles/MSN2100_v1.0_IP_switch_A_1.txt ./MSN2100_v1.0_IP_switch-A1.py
+cumulus@Switch-A-1:mgmt:~$ scp username@50.50.50.50:/RcfFiles/SN2100_v2.0.0_IP_switch_A_1.txt ./SN2100_v2.0.0_IP_switch-A1.py
 The authenticity of host '50.50.50.50 (50.50.50.50)' can't be established.
 RSA key fingerprint is SHA256:B5gBtOmNZvdKiY+dPhh8=ZK9DaKG7g6sv+2gFlGVF8E.
 Are you sure you want to continue connecting (yes/no)? yes
@@ -315,7 +337,7 @@ Warning: Permanently added '50.50.50.50' (RSA) to the list of known hosts.
 Banner of the SCP server
 ***********************************************************************
 username@50.50.50.50's password:
-MSN2100_v1.0-X2_IP_switch_A1.txt 100% 55KB 1.4MB/s 00:00
+SN2100_v2.0.0_IP_switch_A1.txt 100% 55KB 1.4MB/s 00:00
 cumulus@IP_switch_A_1:mgmt:~$
 ----
 
@@ -325,7 +347,7 @@ cumulus@IP_switch_A_1:mgmt:~$
 [listing]
 ----
 
-cumulus@IP_switch_A_1:mgmt:~$ sudo python3 MSN2100_v1.0_IP_switch_A_1.py
+cumulus@IP_switch_A_1:mgmt:~$ sudo python3 SN2100_v2.0.0_IP_switch_A_1.py
 all
 [sudo] password for cumulus:
 The switch will be rebooted after the step(s) have been run.
@@ -343,6 +365,35 @@ Running Step 24: Final reboot of the switch
 
 ... The switch will reboot if all steps applied successfully ...
 ----
+. 구성에서 DAC 케이블을 사용하는 경우 스위치 포트에서 DAC 옵션을 활성화합니다.
++
+[listing]
+----
+cumulus@IP_switch_A_1:mgmt:~$ sudo python3 SN2100_v2.0.0-X10_Switch-A1.py runCmd <switchport> DacOption [enable | disable]
+----
++
+다음 예에서는 포트에 대해 DAC 옵션을 활성화합니다 `swp7`:
+
++
+[listing]
+----
+cumulus@IP_switch_A_1:mgmt:~$ sudo python3 SN2100_v2.00_Switch-A1.py runCmd swp7 DacOption enable
+    Running cumulus version  : 5.4.0
+    Running RCF file version : v2.00
+    Running command: Enabling the DacOption for port swp7
+    runCmd: 'nv set interface swp7 link fast-linkup on', ret: 0
+    runCmd: committed, ret: 0
+    Completion: SUCCESS
+cumulus@IP_switch_A_1:mgmt:~$
+----
+. 스위치 포트에서 DAC 옵션을 활성화한 후 스위치를 재부팅합니다.
++
+`sudo reboot`
+
++
+
+NOTE: 여러 스위치 포트에 대해 DAC 옵션을 설정하면 스위치를 한 번만 재부팅하면 됩니다.
+
 
 
 

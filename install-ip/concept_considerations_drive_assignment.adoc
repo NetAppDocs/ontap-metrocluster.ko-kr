@@ -59,7 +59,7 @@ ADP는 시스템의 초기 구성 중에 자동으로 수행됩니다.
 
 NOTE: ONTAP 9.5부터 에서 디스크 자동 할당을 활성화해야 합니다 `storage disk option modify -autoassign on` 명령.
 
-ha-config 상태를 로 설정해야 합니다 `mccip` 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 link:install-ip/task_sw_config_verify_haconfig.html["구성 요소의 ha-config 상태 확인"].
+ha-config 상태를 로 설정해야 합니다 `mccip` 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 link:task_sw_config_verify_haconfig.html["구성 요소의 ha-config 상태 확인"].
 
 설치 중에 최대 96개의 드라이브를 자동으로 분할할 수 있습니다. 초기 설치 후에 드라이브를 추가할 수 있습니다.
 

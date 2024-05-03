@@ -5993,9 +5993,6 @@
   <block id="ab09caec1407f77495e6c20853fcfd75" category="list-text">구성 상태를 확인합니다.</block>
   <block id="a755a72f514254c41e2fe4747c117fd7" category="list-text">첫 번째 스위치에 소프트웨어를 설치합니다.</block>
   <block id="8385ca59dee772c25d8029fd40151e4e" category="admonition">스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.</block>
-  <block id="4aa7e4d6b953bc95aa19b29e1c0020aa" category="paragraph">스위치 유형이 Broadcom인지 Cisco인지 여부에 따라 _MetroCluster IP 설치 및 구성_정보의 관련 항목에 있는 스위치 소프트웨어 설치 단계를 따르십시오.</block>
-  <block id="05ac71f0be33c2ad0cfeeb90e5f985a7" category="list-text"><block ref="05ac71f0be33c2ad0cfeeb90e5f985a7" category="inline-link-macro-rx"></block></block>
-  <block id="a0a108afed95784cbb847a6b3ff2ea68" category="list-text"><block ref="a0a108afed95784cbb847a6b3ff2ea68" category="inline-link-macro-rx"></block></block>
   <block id="220d6c1bfe741784a72c631856e0b298" category="list-text">각 스위치에 대해 이전 단계를 반복합니다.</block>
   <block id="24b79d1109d169b3428eb16d56510160" category="list-text">1단계를 반복하여 구성의 상태를 확인합니다.</block>
   <block id="f323ad60392fa7c75997f3419493d6c3" category="summary">유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster IP 구성 및 모든 장비의 전원을 꺼야 합니다.</block>
@@ -11523,8 +11520,6 @@
   <block id="03b9eedf57c55a2eb9b4feaa990c85f6" category="list-text">MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다.</block>
   <block id="52ad3b024ecc6eae02e8415cef1140ba" category="summary">백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다.</block>
   <block id="9e93b10c56fcff9e0d1564e5ad629c03" category="doc">스위치 구성</block>
-  <block id="e3af9bb8aab2257a1ad4ff7a5c3ecd15" category="list-text"><block ref="e3af9bb8aab2257a1ad4ff7a5c3ecd15" category="inline-link-macro-rx"></block></block>
-  <block id="72f9c6aaf4948fa7910f533f9d8355a5" category="list-text"><block ref="72f9c6aaf4948fa7910f533f9d8355a5" category="inline-link-macro-rx"></block></block>
   <block id="8c6cfac074d0567f4c5a941062f42343" category="paragraph">이 절차는 ONTAP 9.8 이상에서 지원됩니다. ONTAP 9.7 이하를 실행하는 시스템의 경우 기술 자료 문서를 참조하십시오</block>
   <block id="d5d6932337b2af2eda1bd96fd5aa3832" category="inline-link-macro">MetroCluster 구성에서 DR 그룹을 제거하는 방법</block>
   <block id="44fa5f61d97cbf15ad67ee9c5aedc1c6" category="paragraph"><block ref="44fa5f61d97cbf15ad67ee9c5aedc1c6" category="inline-link-macro-rx"></block></block>
@@ -11810,12 +11805,10 @@
   <block id="b6446010a605d2f225bc5b4a651d77f6" category="admonition">출력에는 백업 파일, 보존된 파일 또는 이 두 가지 모두가 표시될 수 있습니다. 백업 파일 또는 보존된 파일이 출력에 표시되지 않으면 이 절차를 사용할 수 없습니다.</block>
   <block id="50fc7f4fc4780b7f326a480f73bd0267" category="list-text">RCF 파일을 실행하여 기본값 복원: RestoreDefaults 옵션을 사용합니다</block>
   <block id="389656231e83b20cf8f1080911ace092" category="list-text">프롬프트에 '예'로 응답합니다. 스위치가 원래 구성으로 되돌아가고 재부팅됩니다.</block>
-  <block id="9c7625742f7f1ccd999df088ad4a3ae7" category="paragraph">RCF 파일을 적용하기 전에 스위치가 재설정되고 관리 네트워크 구성 및 현재 자격 증명과 같은 초기 구성이 그대로 유지됩니다. 재부팅 후 동일한 또는 다른 버전의 RCF 파일을 사용하여 새 구성을 적용할 수 있습니다.</block>
   <block id="8ea07ce14527ee98182ee1d95fed9b57" category="paragraph">Cumulus 이미지를 적용하여 스위치를 완전히 재설정하려면 다음 단계를 사용하십시오.</block>
   <block id="7ad863bb2a72d36c0234f4f6bfc2e19f" category="list-text">Cumulus 스위치 소프트웨어 이미지는 HTTP를 통해 액세스할 수 있습니다.</block>
   <block id="f230e571a49fa16f56965586613d2b79" category="list-text">명령에 대한 'SUDO'에 대한 루트 암호가 있어야 합니다.</block>
   <block id="c67ce273436af6008876bf44654fd767" category="list-text">Cumulus 콘솔에서 스위치 소프트웨어 설치를 "onie-install-a-i" 명령과 함께 스위치 소프트웨어의 파일 경로를 다운로드하고 대기하십시오.</block>
-  <block id="c6f62465ade5eb8bf0739b3b9e260823" category="paragraph">이 예에서는 펌웨어 파일 'cumulus-linux-4.4.2-mlx-amd64.bin'이 HTTP 서버 '50.50.50.50'에서 로컬 스위치로 복사됩니다.</block>
   <block id="0271d2dea0397f75aa8c0d5cd4c35209" category="list-text">이미지 다운로드 및 확인 시 설치 확인을 위해 프롬프트에 "y"를 응답합니다.</block>
   <block id="efb5ccaab9d7fe2b2ab5b9f178475a7a" category="list-text">스위치를 재부팅하여 새 소프트웨어 'SUDO 재부팅'을 설치합니다</block>
   <block id="1f66fcbdc3a63bbe8e57cebc96e1d8a9" category="admonition">스위치가 재부팅되고 스위치 소프트웨어 설치 상태로 전환되며, 이 과정에서 시간이 다소 소요됩니다. 설치가 완료되면 스위치가 재부팅되고 '로그인' 메시지가 표시됩니다.</block>
@@ -11823,7 +11816,6 @@
   <block id="c6f0365546c55b3f9de31ce3118ed962" category="list-text">스위치가 부팅되고 로그인 프롬프트에서 로그인하고 암호를 변경합니다.</block>
   <block id="9d837b283737463bc96b390a448572da" category="admonition">사용자 이름은 'cumulus'이고 기본 암호는 'cumulus'입니다.</block>
   <block id="462a12e5e5fc8a8f0f2503ac82e01e16" category="list-text">관리 네트워크 인터페이스를 구성합니다.</block>
-  <block id="404f235a0e668325747a3bbe34a85550" category="admonition">다음 예에서는 'net add hostname &lt;hostname&gt;', 'net add interface eth0 ip address &lt;IPAddress/mask&gt;', 'net add interface eth0 ip address &lt;IPAddress/mask&gt;', 'net add interface eth0 IP gateway&gt;' 명령을 사용하여 호스트 이름(IP_switch_a_1), IP 주소(10.10.10.10), 넷마스크(255.255.255.0(24))) 및 게이트웨이(10.10.10.10.1)를 구성하는 방법을 보여 줍니다.</block>
   <block id="fd56421b5278bf3b069d8729f920f29e" category="list-text">'SUDO reboot' 명령어를 사용하여 스위치를 reboot 한다.</block>
   <block id="c55cbcd30055e2eecf2070469bd7907a" category="paragraph">스위치가 재부팅되면 의 단계를 사용하여 새 구성을 적용할 수 있습니다 <block ref="67df29514d3fd31c6e0b92fb5ef28c21" category="inline-xref-macro-rx"></block>.</block>
   <block id="62217055050b5f95ab3ac1b301982bec" category="list-text">스위치 소프트웨어가 설치되고 관리 네트워크가 구성됩니다.</block>
@@ -11835,7 +11827,6 @@
   <block id="a68522a1adf950d13a0dab9b74d36669" category="list-text">를 다운로드합니다<block ref="b3f8a8564bd91efeacbc3b6197426c6e" category="inline-link-rx"></block>.</block>
   <block id="38325ef6d268e93ab480af3cd0b3bd5f" category="list-text">MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 사용할 RCF 파일을 생성합니다.</block>
   <block id="7332a56dad899da7a26afe16c9ca077a" category="list-text">홈 디렉토리로 이동합니다. '누적'으로 기록되면 파일 경로는 '/home/cumulus'입니다.</block>
-  <block id="323d6ef10b6c3c66d13f049670cbdb83" category="list-text">RCF 파일을 이 디렉토리에 다운로드합니다. 다음 예에서는 SCP를 사용하여 서버 '50.50.50.50'에서 홈 디렉토리로 MSN2100_v1.0_IP_SWITCH_A_1.txt 파일을 다운로드하여 MSN2100_v1.0_IP_SWITCH_A_1.py로 저장하는 것을 보여 줍니다.</block>
   <block id="59c778d760eb930375b77337b3ee45b9" category="list-text">RCF 파일을 실행합니다. RCF 파일에는 하나 이상의 단계를 적용하는 옵션이 필요합니다. 기술 지원 부서의 지시가 없는 한, RCF 파일을 명령줄 옵션 없이 실행합니다. RCF 파일의 다양한 단계 완료 상태를 확인하려면 '-1' 또는 '모두' 옵션을 사용하여 모든 단계(보류 중)를 적용합니다.</block>
   <block id="91fda6ec6c364088ae4a9e6553b26f99" category="doc">NVIDIA 지원 SN2100 IP 스위치를 위한 플랫폼 포트 할당</block>
   <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">지원되는 구성</block>
@@ -11921,7 +11912,6 @@
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">작업을 마친 후</block>
   <block id="ebf8099b0d57d09213f64014fd257ea1" category="section-title">[[Reset-the-switch]] NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="841793e4a1e005b1b9596c374804395a" category="section-title">[[RCF-FILE-OPTION]] RCF 파일 옵션을 사용하여 스위치를 재설정합니다</block>
-  <block id="261e7c7b4c25948690ce095224937522" category="section-title">[[Cumulus-install-option] Cumulus 설치 옵션을 사용하여 스위치를 재설정합니다</block>
   <block id="66dfac56c9206023b345746e3fd92eae" category="section-title">[[다운로드 및 설치]] NVIDIA RCF 파일을 다운로드하여 설치합니다</block>
   <block id="c938b5cfd075c2f653372f886805b37a" category="paragraph-title">구성 테이블을 사용하기 전에 이러한 고려 사항을 검토하십시오</block>
   <block id="3f710cadb0123c693533da68aaf5b596" category="paragraph-title">다음 단계</block>
@@ -12017,8 +12007,6 @@
   <block id="7f3573698486df0e906484a42b56260a" category="list-text">첫 번째 MetroCluster IP 노드(node_a_3-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
   <block id="2cc9b0ebb585ef702d75e1a9560e44ee" category="list-text">두 번째 MetroCluster IP 노드(node_a_4-IP)를 기존 MetroCluster FC 구성에 연결합니다.</block>
   <block id="43978c682537332f0c17e45dcf81c394" category="list-text">이 단계를 반복하여 node_B_3-IP 및 node_B_4-IP를 cluster_B에 연결합니다</block>
-  <block id="56276c01f8fdea330f7d547910dbe817" category="inline-link-macro">계층 3 광역 네트워크에 대한 고려 사항</block>
-  <block id="5464631d6fd9ed12f95c271bf666c4bc" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다. 또한 ONTAP 9.9.1부터 계층 3 구성을 사용하는 경우 도 지정해야 합니다<block ref="50e57debf79bf52aa078c6e993f8969f" prefix=" " category="inline-code"></block> MetroCluster IP 인터페이스를 생성할 때의 매개 변수입니다. 을 참조하십시오 <block ref="1e1496262359096cc1cfeecfa4cefcb5" category="inline-link-macro-rx"></block></block>
   <block id="d62d7bce1fe91e6c1145e8a56018d13e" category="admonition">ADP(Advanced Drive Partitioning)로 구성된 시스템에서 컨테이너 유형은 예제 출력에 표시된 것처럼 "remote"가 아니라 "공유"입니다.</block>
   <block id="bad8ee5726316ec5f26bb0039cbf4bc6" category="summary">MetroCluster Tiebreaker 작업이 이벤트 로그 파일에 기록됩니다.</block>
   <block id="08b9323d7a1af549de439f419bb3096a" category="doc">MetroCluster Tiebreaker용 이벤트 로그 파일</block>
@@ -13415,7 +13403,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="55caf57bfe7d9bc28b6ffc6c7d49f237" category="admonition">RCF를 구성하는 경우 올바른 속도 모드를 선택하거나 적절한 속도 모드의 포트를 사용하는지 확인합니다.</block>
   <block id="46dd6914bcca3c3b8a2609c6a420dc0c" category="paragraph"><block ref="46dd6914bcca3c3b8a2609c6a420dc0c" category="inline-link-macro-rx"></block></block>
   <block id="aaf601495cda3687aff1783b9f086561" category="paragraph">MetroCluster 호환 스위치는 MetroCluster 인터페이스를 직접 연결하는 중급 스위치로 간주됩니다. MetroCluster 호환 스위치에서 MetroCluster 트래픽을 전달하는 ISL 포트는 중간 스위치의 ISL 포트와 동일한 방식으로 구성해야 합니다. 을 참조하십시오 <block ref="a55ec765b3e97100c983e617f9d68e39" category="inline-link-macro-rx"></block> 지침 및 예를 참조하십시오.</block>
-  <block id="7c1481d1c9b970b7d299c0c5dad3d8b5" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="6b54dfc1103fb8ab70a56160f0fd8161" category="inline-link-macro-rx"></block>.</block>
   <block id="688da24e96580a94ac368ba20c7993eb" category="paragraph">내부 및 외부 드라이브를 사용하는 경우 먼저 ADP를 사용하는 내부 드라이브만으로 MetroCluster를 초기화합니다. 그런 다음 설치 또는 설정 작업을 완료한 후 외부 선반을 수동으로 연결합니다.</block>
   <block id="724b35256a117cacc7c70cc2777472fb" category="inline-xref">시스템별 ADP 및 디스크 할당 차이</block>
   <block id="b97518c4a28d7962f4cab20f62a9403c" category="paragraph">에 나와 있는 것처럼 내부 쉘프의 최소 권장 드라이브 수를 사용해야 합니다 <block ref="ededfefc169c9cc0e0251fda89f5bc17" category="inline-xref-macro-rx"></block>.</block>
@@ -13508,4 +13495,31 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="paragraph"><block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block></block>
   <block id="2a35142a0e6eda28748cdf00899dc98b" category="paragraph">를 클릭합니다 <block ref="0c7bf211a7cb9712977652add2e31f3e" category="inline-link-macro-rx"></block> 새로운 기능, 업그레이드 노트, 해결된 문제, 알려진 제한 사항 및 알려진 문제에 대해 설명합니다.</block>
   <block id="0f25553cdf8eb8de83ad715008d4617b" category="paragraph">다중 컨트롤러 또는 스토리지 장애 복구를 완료하려면 필요한 작업을 수행합니다.</block>
+  <block id="77252e9ff1622351efd32757cb7fd9a1" category="paragraph">스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 _MetroCluster IP 설치 및 Configuration_information 의 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.</block>
+  <block id="4b6132c87b7872df013c5b52ce9f608e" category="inline-link-macro">Broadcom 스위치 EFOS 소프트웨어를 다운로드하고 설치합니다</block>
+  <block id="25fec8f604c77fe35ba611e08af94f79" category="list-text"><block ref="25fec8f604c77fe35ba611e08af94f79" category="inline-link-macro-rx"></block></block>
+  <block id="fc5c2b5017628187d434fc142f96b244" category="inline-link-macro">Cisco 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다</block>
+  <block id="80fb3b0595ae64cb5753d8098a1999cd" category="list-text"><block ref="80fb3b0595ae64cb5753d8098a1999cd" category="inline-link-macro-rx"></block></block>
+  <block id="75b44b50a5c15f2121717071fc8e9fc0" category="inline-link-macro">NVIDIA SN2100 스위치 Cumulus 소프트웨어를 다운로드하고 설치합니다</block>
+  <block id="99534ab88dcf6802b885593070964693" category="list-text"><block ref="99534ab88dcf6802b885593070964693" category="inline-link-macro-rx"></block></block>
+  <block id="5b2fc0c613f01db3129e4c4e07ac3dfe" category="list-text"><block ref="5b2fc0c613f01db3129e4c4e07ac3dfe" category="inline-link-macro-rx"></block></block>
+  <block id="b482922c3bf6cd48549cdf23465ffee6" category="list-text"><block ref="b482922c3bf6cd48549cdf23465ffee6" category="inline-link-macro-rx"></block></block>
+  <block id="31108c872023e7ac673e45c455e290ec" category="list-text"><block ref="31108c872023e7ac673e45c455e290ec" category="inline-link-macro-rx"></block></block>
+  <block id="d28f21bcfe7f0ae76389ce8cf95e1346" category="paragraph">RCF 파일을 적용하기 전에 스위치가 재설정되고 관리 네트워크 구성 및 현재 자격 증명과 같은 초기 구성이 그대로 유지됩니다. 재부팅 후 동일한 또는 다른 버전의 RCF 파일을 사용하여 새 구성을 적용할 수 있습니다.</block>
+  <block id="2d0212aab3adea9540211da211dead7b" category="section-title">[[Cumulus-install-option]] Cumulus 소프트웨어를 다운로드하고 설치합니다</block>
+  <block id="db1e46070818ae5017128cd6bc947832" category="paragraph">이 예에서는 펌웨어 파일입니다<block ref="4ccf3b2a33cad12d73e94030666c8a82" prefix=" " category="inline-code"></block> HTTP 서버 '50.50.50.50.50'에서 로컬 스위치로 복사됩니다.</block>
+  <block id="b222983bdfd49d6eaf81c6bdad295f48" category="paragraph">사용하는 명령은 실행 중인 스위치 펌웨어 버전에 따라 다릅니다.</block>
+  <block id="c037a3297de5abc94037c3a2e03f541b" category="admonition">다음 예제 명령에서는 호스트 이름을 IP_SWITCH_A_1로, IP 주소는 10.10.10.10.10으로, 넷마스크 255.255.255.0(24), 게이트웨이 주소는 10.10.10.10.10.10.1로 구성합니다.</block>
+  <block id="994152d74e48a466138cc94ea00d9544" category="open-title">Cumulus 4.4.x입니다</block>
+  <block id="00426c3291d7b46b67f032205cd267e2" category="paragraph">다음 명령은 Cumulus 4.4.x를 실행하는 스위치에서 호스트 이름, IP 주소, 넷마스크 및 게이트웨이를 구성합니다</block>
+  <block id="061b61b3da356e61661b659f583cab6c" category="open-title">Cumulus 5.4.x 이상</block>
+  <block id="8e9e9451c7eaa7165ca329f12d4b9496" category="paragraph">다음 명령은 Cumulus 5.4.x를 실행하는 스위치에서 호스트 이름, IP 주소, 넷마스크 및 게이트웨이를 구성합니다 이상.</block>
+  <block id="9a7c2416d2a958ffd9fdf601590c46f3" category="list-text">RCF 파일을 이 디렉토리에 다운로드합니다.
+다음 예에서는 SCP를 사용하여 파일을 다운로드하는 방법을 보여 줍니다<block ref="56eaf0568fc86b865db040080e6d9d87" prefix=" " category="inline-code"></block> 서버 '50.50.50.50'에서 홈 디렉토리로 이동한 후 로 저장합니다<block ref="3fa5a0083455c62011c0be341b6d2a84" prefix=" " category="inline-code"></block>:</block>
+  <block id="2c0880b7d8a4269afa516ff7c87aeea3" category="list-text">구성에서 DAC 케이블을 사용하는 경우 스위치 포트에서 DAC 옵션을 활성화합니다.</block>
+  <block id="0eef844c9af7a72ab3dd5887ff9918d4" category="paragraph">다음 예에서는 포트에 대해 DAC 옵션을 활성화합니다<block ref="e9c5c6daf1a059d5e7448ef86c2b728e" prefix=" " category="inline-code"></block>:</block>
+  <block id="b8ef1f0c843b6612ef80c11ce9a1ae3b" category="list-text">스위치 포트에서 DAC 옵션을 활성화한 후 스위치를 재부팅합니다.</block>
+  <block id="a7684986aa13d220654f08fd150ba1b1" category="paragraph"><block ref="06d12c03aa485826b7f204affe755aa8" prefix="" category="inline-code"></block></block>
+  <block id="2cd7949ba857b629dd50d21989a67ec7" category="admonition">여러 스위치 포트에 대해 DAC 옵션을 설정하면 스위치를 한 번만 재부팅하면 됩니다.</block>
+  <block id="0b2bf1a9f2d59771c09560dc455e2f55" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="bcb6d9c56d14cbd4808073431b182e91" category="inline-link-macro-rx"></block>.</block>
 </blocks>

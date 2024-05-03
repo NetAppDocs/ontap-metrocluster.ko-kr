@@ -86,11 +86,14 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 NOTE: 스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.
 
 +
-스위치 유형이 Broadcom인지 Cisco인지 여부에 따라 _MetroCluster IP 설치 및 구성_정보의 관련 항목에 있는 스위치 소프트웨어 설치 단계를 따르십시오.
+스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 _MetroCluster IP 설치 및 Configuration_information 의 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-switch-efos-software["Broadcom 스위치 EFOS 소프트웨어 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-switch-nx-os-software["Cisco 스위치 NX-OS 소프트웨어 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-switch-efos-software["Broadcom 스위치 EFOS 소프트웨어를 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-switch-nx-os-software["Cisco 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-cumulus-software["NVIDIA SN2100 스위치 Cumulus 소프트웨어를 다운로드하고 설치합니다"]
+
+
 
 
 . 각 스위치에 대해 이전 단계를 반복합니다.
