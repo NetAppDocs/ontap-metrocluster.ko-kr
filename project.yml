@@ -13,8 +13,7 @@ sidebar:
   entries:
   - title: MetroCluster 문서
     url: "/index.html"
-  - title: 릴리즈 노트
-    url: "/releasenotes.html"
+  - section: releasenotes
   - section: install-fc
   - section: install-ip
   - section: install-stretch

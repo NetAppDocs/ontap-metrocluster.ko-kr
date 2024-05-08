@@ -1,0 +1,13 @@
+---
+permalink: releasenotes/releasenotes.html 
+sidebar: sidebar 
+keywords: release, notes, new, features, fixed, issues, known, limitations, 7-mode, transition, tool 
+summary: 새로운 기능, 업그레이드 정보, 해결된 문제, 알려진 제한 사항 및 알려진 문제에 대해 설명합니다. 
+---
+= MetroCluster 릴리즈 노트
+:allow-uri-read: 
+
+
+ONTAP 9 데이터 관리 소프트웨어가 릴리즈될 때마다 ONTAP MetroCluster 구성의 기능, 관리 효율 및 성능을 개선하는 새롭고 향상된 기능을 제공합니다.
+
+모든 ONTAP 9 버전의 하드웨어 플랫폼 및 스위치 지원, 알려진 문제 및 제한 사항에 대한 자세한 내용 또는 ONTAP 9.9.1 이전 릴리스에서 도입된 기능에 대한 자세한 내용은 를 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP 9 릴리즈 노트"^]. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.

@@ -1,0 +1,37 @@
+---
+permalink: releasenotes/mcc-fc-config-support-brocade-cisco-switches.html 
+sidebar: sidebar 
+keywords: metrocluster, fc configuration, support for brocade and cisco switches 
+summary:  
+---
+= Brocade 스위치에 대한 MetroCluster FC의 새로운 기능
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[cols="2*"]
+|===
+| Brocade FC 스위치 | 처음부터 사용할 수 있습니다 
+
+
+ a| 
+G720
+ a| 
+ONTAP 9.8 을 참조하십시오
+
+
+
+ a| 
+G620-1, G630-1
+ a| 
+ONTAP 9.8 을 참조하십시오
+
+
+
+ a| 
+G630
+ a| 
+ONTAP 9.6 을 참조하십시오
+
+|===
