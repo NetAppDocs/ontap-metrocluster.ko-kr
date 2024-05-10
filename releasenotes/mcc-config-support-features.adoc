@@ -10,6 +10,11 @@ summary:
 :imagesdir: ./media/
 
 
+[role="lead"]
+ONTAP 9 데이터 관리 소프트웨어가 릴리즈될 때마다 ONTAP MetroCluster 구성의 기능, 관리 효율 및 성능을 개선하는 새롭고 향상된 기능을 제공합니다.
+
+ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 및 업그레이드 주의 사항에 대한 자세한 내용은 를 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP 9 릴리즈 노트"^]. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.
+
 [cols="20,65,15"]
 |===
 | MetroCluster 구성에서 지원되는 기능 | 설명 | 처음부터 사용할 수 있습니다 
@@ -33,17 +38,6 @@ MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그�
 
 https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-mcc-task.html["MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성합니다"]
  a| 
-ONTAP 9.14.1
-
-
-
- a| 
-ONTAP mediator 1.5는 MetroCluster IP 구성에서 지원됩니다
- a| 
-ONTAP mediator 1.5는 MetroCluster IP 구성을 모니터링하는 데 사용할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"]
- a| 
 ONTAP 9.12.1
 
 
@@ -55,17 +49,6 @@ MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 
 
 https://docs.netapp.com/us-en/ontap/networking/configure_ip_security_@ipsec@_over_wire_encryption.html["유선 암호화를 통해 IP 보안(IPsec)을 구성합니다"]
  a| 
-ONTAP 9.12.1
-
-
-
- a| 
-ONTAP 중재자 1.4
- a| 
-ONTAP mediator 소프트웨어 버전 1.4는 MetroCluster IP 구성에서 지원됩니다.
-
-https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"]
- a| 
 ONTAP 9.11.1
 
 
@@ -76,17 +59,6 @@ ONTAP 9.11.1
 정합성 보장 그룹은 MetroCluster 구성에서 지원됩니다.
 
 https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"]
- a| 
-ONTAP 9.11.1
-
-
-
- a| 
-ONTAP mediator는 MetroCluster IP 구성에서 지원됩니다
- a| 
-ONTAP mediator 서비스는 상태 정보에 대한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성에서 예기치 않은 자동 전환을 수행할 수 있도록 지원할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성"]
  a| 
 ONTAP 9.7 을 참조하십시오
 

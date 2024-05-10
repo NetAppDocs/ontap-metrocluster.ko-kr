@@ -12,10 +12,6 @@ entries:
   url: "/releasenotes/mcc-ip-config-platform-support.html"
 - title: MetroCluster FC 구성 지원의 새로운 기능
   url: "/releasenotes/mcc-fc-config-platform-support.html"
-- title: MetroCluster FC에서 Brocade 스위치를 지원하는 새로운 기능
-  url: "/releasenotes/mcc-fc-config-support-brocade-cisco-switches.html"
-- title: MetroCluster IP에서 Broadcom, Cisco, NVIDIA 스위치를 지원하는 새로운 기능
-  url: "/releasenotes/mcc-ip-configuration-support-broadcom-cisco-nvidia-switches.html"
 - title: ONTAP 중재자 지원의 새로운 기능
   url: "/releasenotes/mcc-mediator-whats-new.html"
 - title: MetroCluster Tiebreaker 지원의 새로운 기능

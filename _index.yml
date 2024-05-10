@@ -1,0 +1,86 @@
+---
+indexpage:
+  title: MetroCluster 문서
+  summary: NetApp MetroCluster 구성에서는 어레이 기반 클러스터링을 동기식 복제와 결합하여 지속적인 가용성을 제공하고 모든
+    미션 크리티컬 데이터를 트랜잭션별로 즉시 복제합니다.
+  keywords: metrocluster configuration, array-based, clustering, synchronous, replication,
+    duplicating, mission critical data
+  lead: NetApp MetroCluster 구성에서는 어레이 기반 클러스터링을 동기식 복제와 결합하여 지속적인 가용성을 제공하고 모든 미션
+    크리티컬 데이터를 트랜잭션별로 즉시 복제합니다. MetroCluster 구성을 사용하면 NetApp 하드웨어와 ONTAP 스토리지 소프트웨어에
+    내장된 고가용성과 무중단 운영성을 더욱 향상하고 전체 스토리지와 호스트 환경에 대한 추가적인 보호 계층을 확보할 수 있습니다.
+  tiles:
+  - title: 시작하십시오
+    links:
+    - title: MetroCluster IP를 설치합니다
+      url: "/install-ip/index.html"
+    - title: 패브릭 연결 MetroCluster를 설치합니다
+      url: "/install-fc/index.html"
+    - title: Stretch MetroCluster를 설치합니다
+      url: "/install-stretch/index.html"
+    - title: Tiebreaker를 설치합니다
+      url: "/tiebreaker/concept_overview_of_the_tiebreaker_software.html"
+    - title: 중재자 설치(MetroCluster IP만 해당)
+      url: "/install-ip/concept_mediator_requirements.html"
+  - title: 유지 관리
+    links:
+    - title: FC 스위치
+      summary: MetroCluster FC 구성에서 FC 스위치를 유지 관리 및 교체합니다.
+      url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html"
+    - title: IP 스위치
+      summary: MetroCluster IP 구성에서 IP 스위치를 유지 관리하고 교체합니다.
+      url: "/maintain/task_replace_an_ip_switch.html"
+    - title: ATTO 브리지
+      summary: MetroCluster FC 구성에서 ATTO FC-to-SAS 브리지를 유지 관리하고 교체합니다.
+      url: "/maintain/concept_using_fibrebridge_7600n_bridges_in_mcc_configurations.html"
+    - title: 드라이브 쉘프
+      summary: 드라이브 쉘프를 핫 애드인으로 무중단 교체 MetroCluster FC 구성
+      url: "/maintain/index.html"
+  - title: RCF 파일
+    links:
+    - title: MetroCluster RCF 파일
+      summary: MetroCluster 스위치용 RCF 파일을 생성하거나 다운로드합니다.
+      url: https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/docsandkb-tab
+  - title: 자세한 정보
+    links:
+    - title: NetApp MetroCluster 솔루션 아키텍처 및 설계 | TR-4705
+      summary: MetroCluster FC 솔루션을 이해합니다.
+      url: https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf
+    - title: MetroCluster IP 솔루션 아키텍처 및 설계 | TR-4689
+      summary: MetroCluster IP 솔루션 이해
+      url: https://www.netapp.com/pdf.html?item=/media/13481-tr4689.pdf
+  - title: 업그레이드, 확장, 변환
+    links:
+    - title: 하드웨어 업그레이드 및 업데이트
+      summary: MetroCluster 구성에서 컨트롤러를 업그레이드합니다.
+      url: "/upgrade/concept_choosing_an_upgrade_method_mcc.html"
+    - title: 2노드 MetroCluster를 확장합니다
+      summary: MetroCluster 구성에 컨트롤러를 추가하여 4노드 또는 8노드 구성을 생성합니다.
+      url: "/upgrade/task_expand_a_two_node_mcc_fc_configuration_to_a_four_node_fc_configuration_supertask.html"
+    - title: 4노드 MetroCluster를 확장합니다
+      summary: MetroCluster 구성에 컨트롤러를 추가하여 8노드 구성을 생성합니다.
+      url: "/upgrade/task_expand_a_four_node_mcc_fc_configuration_to_an_eight_node_configuration.html"
+    - title: MetroCluster FC를 MetroCluster IP로 변환합니다
+      summary: 기존 MetroCluster IP 구성을 MetroCluster IP 구성으로 전환합니다.
+      url: "/transition/concept_choosing_your_transition_procedure_mcc_transition.html"
+    - title: MetroCluster IP RCF 파일을 업그레이드합니다
+      summary: MetroCluster IP 구성에서 스위치 RCF 파일을 업그레이드합니다.
+      url: "/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html"
+  - title: ATTO 브리지 펌웨어
+    links:
+    - title: FiberBridge 7600N
+      summary: 7600 브리지에 대한 펌웨어를 다운로드합니다.
+      url: https://mysupport.netapp.com/NOW/cgi-bin/software/?product=Protocol+Bridge&platform=ATTO+FibreBridge+7600N
+    - title: FiberBridge 7500N
+      summary: 7500 브리지용 펌웨어를 다운로드합니다.
+      url: https://mysupport.netapp.com/NOW/cgi-bin/software/?product=Protocol+Bridge&platform=ATTO+FibreBridge+7500N
+  - title: 더 많은 리소스
+    links:
+    - title: NetApp Config Advisor를 참조하십시오
+      summary: 구성 및 케이블 연결을 확인합니다.
+      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+    - title: NetApp Hardware Universe를 참조하십시오
+      summary: 하드웨어가 지원되는지 확인합니다.
+      url: https://hwu.netapp.com/
+    - title: NetApp 지원 기술 자료
+      summary: 지원 질문에 대한 답변을 검색합니다.
+      url: https://kb.netapp.com/

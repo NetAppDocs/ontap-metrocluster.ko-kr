@@ -4,11 +4,15 @@ sidebar: sidebar
 keywords: metrocluster, fc configuration, platform, support 
 summary:  
 ---
-= MetroCluster FC 플랫폼의 새로운 기능
+= MetroCluster FC 플랫폼 및 스위치 지원의 새로운 기능
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
+
+
+
+== 플랫폼 지원
 
 [cols="2*"]
 |===
@@ -40,5 +44,34 @@ ONTAP 9.7 을 참조하십시오
 AFF A300 및 FAS8200
  a| 
 ONTAP 9.5 를 참조하십시오
+
+|===
+
+
+== 스위치 지원
+
+[cols="2*"]
+|===
+| Brocade FC 스위치 | 처음부터 사용할 수 있습니다 
+
+
+ a| 
+G720
+ a| 
+ONTAP 9.8 을 참조하십시오
+
+
+
+ a| 
+G620-1, G630-1
+ a| 
+ONTAP 9.8 을 참조하십시오
+
+
+
+ a| 
+G630
+ a| 
+ONTAP 9.6 을 참조하십시오
 
 |===

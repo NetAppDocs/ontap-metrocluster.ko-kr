@@ -15,6 +15,7 @@ MetroCluster IP 스위치에서 펌웨어를 업그레이드해야 할 수 있�
 
 각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.
 
+[[step_1_fw_upgrade]]
 .단계
 . 구성 상태를 확인합니다.
 +
@@ -86,7 +87,7 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 NOTE: 스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.
 
 +
-스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 _MetroCluster IP 설치 및 Configuration_information 의 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.
+스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-switch-efos-software["Broadcom 스위치 EFOS 소프트웨어를 다운로드하고 설치합니다"]
@@ -94,8 +95,6 @@ NOTE: 스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, swit
 ** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-cumulus-software["NVIDIA SN2100 스위치 Cumulus 소프트웨어를 다운로드하고 설치합니다"]
 
 
-
-
 . 각 스위치에 대해 이전 단계를 반복합니다.
-. 1단계를 반복하여 구성의 상태를 확인합니다.
+. 반복합니다 <<step_1_fw_upgrade,1단계>> 구성 상태를 확인합니다.
 

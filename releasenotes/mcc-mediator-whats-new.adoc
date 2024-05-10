@@ -13,34 +13,26 @@ summary: ONTAP 중재자의 새로운 기능은 각 릴리스에 제공됩니다
 [role="lead"]
 ONTAP 중재자의 새로운 개선 사항은 각 릴리스에 제공됩니다.  새로운 기능
 
+MetroCluster 구성에서 ONTAP mediator를 설치하거나 업그레이드하는 방법에 대한 자세한 내용은 를 참조하십시오 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_mediator_requirements.html["ONTAP 중재자 서비스 설치 준비"^].
+
 [cols="75,25"]
 |===
 
 
-| ONTAP 중재자 버전/기능 | ONTAP 버전 
+| ONTAP 중재자 기능 | ONTAP 버전 
 
 
  a| 
-ONTAP mediator 1.5는 MetroCluster IP 구성을 모니터링하는 데 사용할 수 있습니다.
+환경 종료 시 중재자 지원 자동 계획되지 않은 전환(MAUSO)이 지원됩니다.
 
-link:https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"^]
+환경 가동 중단으로 인해 한 사이트가 정상적으로 종료되면 MAUSO가 트리거됩니다.
  a| 
-ONTAP 9.12.1
-
-
-
- a| 
-ONTAP mediator 소프트웨어 버전 1.4는 MetroCluster IP 구성에서 지원됩니다.
-
-link:https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"^]
- a| 
-ONTAP 9.11.1
+ONTAP 9.13.1 을 참조하십시오
 
 
 
  a| 
-ONTAP mediator 서비스는 상태 정보에 대한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성에서 예기치 않은 자동 전환을 수행할 수 있도록 지원할 수 있습니다.
-계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성
+MetroCluster IP 구성에서 ONTAP 중재자 서비스에 대한 초기 지원
  a| 
 ONTAP 9.7 을 참조하십시오
 

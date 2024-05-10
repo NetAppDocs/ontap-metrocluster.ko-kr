@@ -18,7 +18,7 @@ summary:
  a| 
 MetroCluster IP 및 이더넷 연결 스토리지의 공유 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP로 전환합니다
  a| 
-공유 스위치를 사용하면 MetroCluster FC에서 MetroCluster IP 구성(ONTAP 9.8 이상)으로 중단 없이 전환할 수 있습니다.
+공유 스토리지 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환할 수 있습니다.
 
 https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)"]
  a| 
@@ -254,16 +254,5 @@ MetroCluster 전환 및 스위치백
 https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster 전환 및 스위치백"]
  a| 
 ONTAP 9.6 을 참조하십시오
-
-
-
- a| 
-ONTAP System Manager로 클러스터를 업데이트합니다
- a| 
-MetroCluster 구성에서 클러스터를 업데이트할 수 있습니다. MetroCluster 구성의 클러스터의 경우 클러스터 업데이트를 제외하고 두 클러스터에서 각 작업을 수행해야 합니다.
-
-https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/index.html["System Manager를 사용하여 클러스터 관리"]
- a| 
-ONTAP 9.5 를 참조하십시오
 
 |===

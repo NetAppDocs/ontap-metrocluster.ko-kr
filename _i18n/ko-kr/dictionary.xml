@@ -3225,9 +3225,6 @@
   <block id="a38c8b65ec97b4e54f007517a94544d5" category="section-title">컨트롤러를 업그레이드하기 전에 MetroCluster 스위치 RCF 파일을 업데이트합니다</block>
   <block id="381666f515959bb42f36179e1ccf18b0" category="inline-link-macro">RcfFileGenerator 도구</block>
   <block id="01624fead9baaddc3669cdd47ad795ed" category="list-text">스위치가 지원되는 최소 RCF 파일 버전으로 구성되지 않은 경우 RCF 파일을 업데이트해야 합니다. 사용 중인 스위치 모델에 맞는 RCF 파일 버전은 를 참조하십시오 <block ref="da64f60a95327a9651de90bff4a67cd3" category="inline-link-macro-rx"></block>. 다음 단계는 RCF 파일 애플리케이션을 위한 것입니다.</block>
-  <block id="590efa3b2ef6486e61048a848e166d21" category="inline-link-macro">MetroCluster IP 설치 및 구성</block>
-  <block id="1f41258ab009387cbd7e42b144372d55" category="paragraph">에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 <block ref="1a8a3204a30c37aed38d8cb8818b0107" category="inline-link-macro-rx"></block> 콘텐츠.</block>
-  <block id="e886156cd00bbd9320ba94c39cce2772" category="paragraph">의 단계를 따릅니다 <block ref="1a8a3204a30c37aed38d8cb8818b0107" category="inline-link-macro-rx"></block> 콘텐츠.</block>
   <block id="dadca3d57b191a678f23de76f79b283e" category="section-title">이전 노드의 포트를 새 노드로 매핑합니다</block>
   <block id="0c8985d7cfbb81f5f054993ed8285211" category="section-title">사이트 업그레이드 전에 MetroCluster 상태를 확인하십시오</block>
   <block id="35ea33e0235c583b6402101248b20260" category="paragraph">각 클러스터에서 이 명령을 실행해야 합니다. 'cluster date' 명령을 사용하여 시간 및 시간대를 구성할 수 있습니다.</block>
@@ -5994,7 +5991,6 @@
   <block id="a755a72f514254c41e2fe4747c117fd7" category="list-text">첫 번째 스위치에 소프트웨어를 설치합니다.</block>
   <block id="8385ca59dee772c25d8029fd40151e4e" category="admonition">스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.</block>
   <block id="220d6c1bfe741784a72c631856e0b298" category="list-text">각 스위치에 대해 이전 단계를 반복합니다.</block>
-  <block id="24b79d1109d169b3428eb16d56510160" category="list-text">1단계를 반복하여 구성의 상태를 확인합니다.</block>
   <block id="f323ad60392fa7c75997f3419493d6c3" category="summary">유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster IP 구성 및 모든 장비의 전원을 꺼야 합니다.</block>
   <block id="5c79413a4833df0080080fe8fe2e7c15" category="doc">전체 MetroCluster IP 구성의 전원을 끕니다</block>
   <block id="5a862a97aa2605f3cbb2987eba34c9a9" category="list-text">MetroCluster 구성 및 운영 모드가 정상인지 확인합니다. '* MetroCluster show * '</block>
@@ -11419,7 +11415,6 @@
   <block id="6405f02626b672ea5ce042f43244f057" category="paragraph"><block ref="6405f02626b672ea5ce042f43244f057" category="inline-link-macro-rx"></block></block>
   <block id="f62e57388ece8ed3ab39425498977dae" category="paragraph"><block ref="f62e57388ece8ed3ab39425498977dae" category="inline-link-macro-rx"></block></block>
   <block id="291349860e45161d05b403e88ba2f28b" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 <block ref="e3d7ead0f01b9fa985ec5c35c22c44f3" category="inline-link-macro-rx"></block>.</block>
-  <block id="070a06c68e9e4e7cecc2e9719193b28c" category="summary">BYou는 MetroCluster 스위치오버 운영을 사용하여 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
   <block id="35b541137c97f0d986b3779c7a322603" category="list-text"><block ref="35b541137c97f0d986b3779c7a322603" category="inline-link-macro-rx"></block></block>
   <block id="7781c27327814c0f7935ce903ca1101f" category="list-text"><block ref="7781c27327814c0f7935ce903ca1101f" category="inline-link-macro-rx"></block></block>
   <block id="8e077a574605e13d75ee083e7cd96f27" category="list-text"><block ref="8e077a574605e13d75ee083e7cd96f27" category="inline-link-macro-rx"></block></block>
@@ -11790,8 +11785,6 @@
   <block id="7c3ceaca0865f6c6621d894d5c1f5274" category="paragraph">다음 방법 중 하나를 선택하여 스위치를 공장 출하시 기본 설정으로 재설정할 수 있습니다.</block>
   <block id="61168c45da9c3d852ce200a8e6fe5441" category="inline-xref">RCF 파일 옵션을 사용하여 스위치를 재설정합니다</block>
   <block id="f39c98e742374a832c3bc1976a82c99a" category="list-text"><block ref="4d1a1da583a14975a026f863f46efa9e" category="inline-xref-macro-rx"></block></block>
-  <block id="2905d1a656f6dd8b76df3793ca9d808a" category="inline-xref">Cumulus 설치 옵션을 사용하여 스위치를 재설정합니다</block>
-  <block id="07e63a61b44e7110afc73ee228b45e9f" category="list-text"><block ref="c5c4030964ab0fc53589e1f003b13a41" category="inline-xref-macro-rx"></block></block>
   <block id="465c9065d10e2d00f4f4116734ac1084" category="paragraph">새 RCF 구성을 설치하기 전에 NVIDIA 스위치 설정을 되돌려야 합니다.</block>
   <block id="4cc34c69d718b06fff00dea4b3e4a9d7" category="paragraph">스위치를 기본 설정으로 복원하려면 RestoreDefaults 옵션을 사용하여 RCF 파일을 실행합니다. 이 옵션은 원래 백업된 파일을 원래 위치로 복사한 다음 스위치를 재부팅합니다. 재부팅 후, 스위치는 RCF 파일을 처음 실행하여 스위치를 구성할 때 있던 원래 구성과 함께 온라인 상태로 제공됩니다.</block>
   <block id="2678e0ba955ea31dc3a2b8d425811dfc" category="paragraph">다음 구성 세부 정보는 재설정되지 않습니다.</block>
@@ -13495,7 +13488,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="paragraph"><block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block></block>
   <block id="2a35142a0e6eda28748cdf00899dc98b" category="paragraph">를 클릭합니다 <block ref="0c7bf211a7cb9712977652add2e31f3e" category="inline-link-macro-rx"></block> 새로운 기능, 업그레이드 노트, 해결된 문제, 알려진 제한 사항 및 알려진 문제에 대해 설명합니다.</block>
   <block id="0f25553cdf8eb8de83ad715008d4617b" category="paragraph">다중 컨트롤러 또는 스토리지 장애 복구를 완료하려면 필요한 작업을 수행합니다.</block>
-  <block id="77252e9ff1622351efd32757cb7fd9a1" category="paragraph">스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 _MetroCluster IP 설치 및 Configuration_information 의 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.</block>
   <block id="4b6132c87b7872df013c5b52ce9f608e" category="inline-link-macro">Broadcom 스위치 EFOS 소프트웨어를 다운로드하고 설치합니다</block>
   <block id="25fec8f604c77fe35ba611e08af94f79" category="list-text"><block ref="25fec8f604c77fe35ba611e08af94f79" category="inline-link-macro-rx"></block></block>
   <block id="fc5c2b5017628187d434fc142f96b244" category="inline-link-macro">Cisco 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다</block>
@@ -13522,7 +13514,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a7684986aa13d220654f08fd150ba1b1" category="paragraph"><block ref="06d12c03aa485826b7f204affe755aa8" prefix="" category="inline-code"></block></block>
   <block id="2cd7949ba857b629dd50d21989a67ec7" category="admonition">여러 스위치 포트에 대해 DAC 옵션을 설정하면 스위치를 한 번만 재부팅하면 됩니다.</block>
   <block id="0b2bf1a9f2d59771c09560dc455e2f55" category="paragraph">ha-config 상태를 로 설정해야 합니다<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block> 자동 용량 할당을 수행하기 전에 적절한 루트 볼륨 크기를 허용하도록 올바른 파티션 크기가 선택되었는지 확인합니다. 자세한 내용은 을 참조하십시오 <block ref="bcb6d9c56d14cbd4808073431b182e91" category="inline-link-macro-rx"></block>.</block>
-  <block id="b0ef37dfa15ebf32b4dbd0ae9b0d9954" category="doc">Brocade 스위치에 대한 MetroCluster FC의 새로운 기능</block>
   <block id="b7cc806082929b5b8f498af052398f01" category="cell">Brocade FC 스위치</block>
   <block id="198fc1af468509094e8d40e07916c836" category="cell">처음부터 사용할 수 있습니다</block>
   <block id="2abfff2974f589f7a217325f304e0ec5" category="paragraph">ONTAP 9.8 을 참조하십시오</block>
@@ -13530,7 +13521,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b611d537ec3462ead9e641968d17d570" category="paragraph">G630</block>
   <block id="7dd2a92fd3f41a5334edf46f95d77e71" category="paragraph">ONTAP 9.6 을 참조하십시오</block>
   <block id="2429e1917793f4046beb8fe2642382e4" category="doc">MetroCluster IP 플랫폼 지원의 새로운 기능</block>
-  <block id="1297db8be9c9c9dc4b4ddc3d4655b2a0" category="paragraph">MetroCluster IP 구성은 어레이 LUN에서 지원되지 않습니다.</block>
   <block id="7616cb7bf661fe6377270c352ec2ff82" category="cell">MetroCluster IP 구성에서 지원되는 플랫폼</block>
   <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="paragraph">AFF A150</block>
   <block id="f57f1967d5e316f5c38c14ea29884a9a" category="paragraph">ONTAP 9.13.1 이상 ONTAP 릴리스</block>
@@ -13539,7 +13529,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="fc0954dc49e631cf41dcb343d7e02893" category="paragraph">ONTAP 9.10.1P12</block>
   <block id="7c3d41bb91a832b194d140ed72b101e7" category="paragraph">AFF C250, AFF C400, AFF C800</block>
   <block id="f2bdeb410b49732e0c1482361af1d1d5" category="paragraph">ONTAP 9.13.1 GA 이상 ONTAP 릴리즈.</block>
-  <block id="839c501c003baf01642160068d3b89ee" category="paragraph">이러한 플랫폼은 ONTAP 9.13.1 RC1에서는 지원되지 않습니다.</block>
   <block id="ab8296c5ef7a7b056b384680f89a9379" category="paragraph">ONTAP 9.10.1</block>
   <block id="e86c8b5cecd7918c55b2a357c7668d30" category="paragraph">SolidFire의 인수를 완료했습니다</block>
   <block id="2ba4f1a86eaaf58dbde1ea31ab19c1c5" category="paragraph">MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.</block>
@@ -13557,22 +13546,15 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="54c9cab829044acca6994285d3185409" category="paragraph">MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성할 수 있습니다.</block>
   <block id="ea0c90724ad3d5959704fb91a048c28c" category="inline-link">MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성합니다</block>
   <block id="7a5d298867b0efc5adf88dfe965f7137" category="paragraph"><block ref="7a5d298867b0efc5adf88dfe965f7137" category="inline-link-rx"></block></block>
-  <block id="43b4c6f5c6770a1f4cd11cb10516ccf4" category="paragraph">ONTAP mediator 1.5는 MetroCluster IP 구성에서 지원됩니다</block>
-  <block id="8b81da9bca97d2bd0f5a62805a363707" category="paragraph">ONTAP mediator 1.5는 MetroCluster IP 구성을 모니터링하는 데 사용할 수 있습니다.</block>
   <block id="cd18beb67ffb0ec95fecaca021fc2541" category="paragraph"><block ref="cd18beb67ffb0ec95fecaca021fc2541" category="inline-link-rx"></block></block>
   <block id="594e1ec3daa27e540baa061f731f028f" category="paragraph">ONTAP 9.12.1</block>
   <block id="6eaae443849a6746c6ace7f4204bd085" category="paragraph">MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜에 대한 IPsec 지원</block>
   <block id="d70d383ef18fafd59eb655545c1017bd" category="paragraph">MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜(예: NFS 및 iSCSI)에 대한 IPsec 지원을 사용할 수 있습니다.</block>
   <block id="3d84ccfa2f8722220108717d5cfdc457" category="inline-link">유선 암호화를 통해 IP 보안(IPsec)을 구성합니다</block>
   <block id="ad8910c15c5709955bf29783dc65c7b6" category="paragraph"><block ref="ad8910c15c5709955bf29783dc65c7b6" category="inline-link-rx"></block></block>
-  <block id="21b1af0acdaa98f7c573b54a229cef88" category="paragraph">ONTAP 중재자 1.4</block>
-  <block id="df3517bd826ee685104e3f6cbe1cdbf9" category="paragraph">ONTAP mediator 소프트웨어 버전 1.4는 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="b59cced8914a5ae4b2997c54c8cfeb8d" category="paragraph">ONTAP 9.11.1</block>
   <block id="6165c4352e1504dbaeef34d0cc50c187" category="paragraph">정합성 보장 그룹</block>
   <block id="3fb697436dcc4f2ae2cdd29dc91fd043" category="paragraph">정합성 보장 그룹은 MetroCluster 구성에서 지원됩니다.</block>
-  <block id="cbaad17e9e28a1ce42215011f9596b78" category="paragraph">ONTAP mediator는 MetroCluster IP 구성에서 지원됩니다</block>
-  <block id="47dbbe9898ba28cfece0cd9485a165eb" category="paragraph">ONTAP mediator 서비스는 상태 정보에 대한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성에서 예기치 않은 자동 전환을 수행할 수 있도록 지원할 수 있습니다.</block>
-  <block id="ef75c59ee0b21aa5485c12ab2eb869a7" category="paragraph"><block ref="ef75c59ee0b21aa5485c12ab2eb869a7" category="inline-link-rx"></block></block>
   <block id="7b25d54164390a979173c966708bcd3e" category="paragraph">MetroCluster 구성의 FabricPool 미러</block>
   <block id="456a60d3d7f70b899491cde66c53e366" category="paragraph">MetroCluster 구성에서 미러링된 FabricPool를 설정하여 콜드 데이터를 두 개의 서로 다른 장애 영역으로 계층화할 수 있습니다.</block>
   <block id="50adf775e4799022cdc6de484f49f3f1" category="inline-link">MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정</block>
@@ -13582,14 +13564,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="47d81ac708cab22da7ea952550b6f757" category="summary">ONTAP 중재자의 새로운 기능은 각 릴리스에 제공됩니다.  새로운 기능</block>
   <block id="3261bd656e2112e78b0313c87c039420" category="doc">ONTAP 중재자 지원의 새로운 기능</block>
   <block id="9d01d502466559c8d4ff8682b3e00d92" category="paragraph">ONTAP 중재자의 새로운 개선 사항은 각 릴리스에 제공됩니다.  새로운 기능</block>
-  <block id="1cbc22a4f6eb33175d313f6ebcd56fd9" category="cell">ONTAP 중재자 버전/기능</block>
   <block id="e8467e9b509c4924668c01eb7ab2adde" category="cell">ONTAP 버전</block>
-  <block id="cee4df42e3e78ea996ff39fd7cfe320a" category="paragraph">ONTAP mediator 서비스는 상태 정보에 대한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성에서 예기치 않은 자동 전환을 수행할 수 있도록 지원할 수 있습니다.
-계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성</block>
   <block id="63b6c1d0d10ce89604932c62d9b6f4d7" category="doc">MetroCluster의 새로운 기능</block>
   <block id="3100460fa3d7ba2ea001abefda93f3bc" category="cell">설명 및 자세한 내용</block>
   <block id="677eca4ee8daca8d2b9156735c70729b" category="paragraph">MetroCluster IP 및 이더넷 연결 스토리지의 공유 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP로 전환합니다</block>
-  <block id="d935deb4654475cd01823b1943de7d00" category="paragraph">공유 스위치를 사용하면 MetroCluster FC에서 MetroCluster IP 구성(ONTAP 9.8 이상)으로 중단 없이 전환할 수 있습니다.</block>
   <block id="9b9a95d11d51a9dc8ad8f89b7072a66d" category="paragraph"><block ref="9b9a95d11d51a9dc8ad8f89b7072a66d" category="inline-link-rx"></block></block>
   <block id="c8c7ff2d320bb817b5265b97fc451f0b" category="paragraph">8노드 MetroCluster FC 구성에서 MetroCluster IP 구성으로 무중단 전환</block>
   <block id="5b9e0c49b03f990a762696dc03ba2d75" category="paragraph">기존 8노드 MetroCluster FC 구성에서 새 MetroCluster IP 구성으로 중단 없이 워크로드와 데이터를 전환할 수 있습니다.</block>
@@ -13659,11 +13637,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="684d63e7608a9651e2d8bee21d68cf7f" category="paragraph"><block ref="684d63e7608a9651e2d8bee21d68cf7f" category="inline-link-rx"></block></block>
   <block id="19aa48eac8765adacdffd4326cf95a85" category="paragraph">한 클러스터 사이트가 다른 클러스터 사이트의 작업을 넘겨받도록 허용할 수 있습니다. 이 기능을 사용하면 재해에 대한 유지 관리 또는 복구를 보다 용이하게 수행할 수 있습니다.</block>
   <block id="5b8155e42c3d2db8152488c62b6cf9ea" category="paragraph"><block ref="5b8155e42c3d2db8152488c62b6cf9ea" category="inline-link-rx"></block></block>
-  <block id="c93a01651caeb8f0903789f4e2c6ca82" category="paragraph">ONTAP System Manager로 클러스터를 업데이트합니다</block>
-  <block id="4ea7a398beabdb4718811003918eda21" category="paragraph">MetroCluster 구성에서 클러스터를 업데이트할 수 있습니다. MetroCluster 구성의 클러스터의 경우 클러스터 업데이트를 제외하고 두 클러스터에서 각 작업을 수행해야 합니다.</block>
-  <block id="c7e90c4bd08c796e50d8af0c6b346a93" category="inline-link">System Manager를 사용하여 클러스터 관리</block>
-  <block id="785cf49e3cfc99670cc23b949297cd4c" category="paragraph"><block ref="785cf49e3cfc99670cc23b949297cd4c" category="inline-link-rx"></block></block>
-  <block id="cee937d02b9156f604109cd50b3658d1" category="doc">Broadcom, Cisco 및 NVIDIA 스위치를 지원하는 MetroCluster IP의 새로운 기능을 소개합니다</block>
   <block id="5575ad3a333d0c5383b802ef33e4e17a" category="cell">Broadcom IP 스위치</block>
   <block id="db639aacb326d316570b69a39011f1b2" category="paragraph">Quanta IX8 을 참조하십시오</block>
   <block id="a28a8f1b6ed98f7c514003193e44ac48" category="cell">Cisco IP 스위치</block>
@@ -13672,7 +13645,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ef0b6886d8755e5cb21c0bd5f9f81c01" category="cell">NVIDIA 스위치</block>
   <block id="d4acd79e74a2b88899e53bc903561aae" category="paragraph">동일한 NVIDIA SN2100 스위치에 다수의 MC IP 구성</block>
   <block id="155bba03249764c61fd72335fd0c56c8" category="paragraph">SN2100</block>
-  <block id="cc1b247a7668beb64785f6df1f981bd6" category="doc">MetroCluster FC 플랫폼의 새로운 기능</block>
   <block id="0aa28fce3490c51be9c1cc5c337f1c9d" category="cell">MetroCluster FC 구성에서 지원되는 플랫폼</block>
   <block id="f0291c0e14447de291af4fef3e275d43" category="paragraph">ASA AFF A700 및 ASA AFF A400</block>
   <block id="3fb7588c5c073b8764e9fba5e74f631a" category="paragraph">ONTAP 9.7P5</block>
@@ -13684,8 +13656,78 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3cc716dba68d44285ae03d4a0e650afb" category="sidebar">MetroCluster 기능의 새로운 기능</block>
   <block id="7a9ee1321dd82cefa7736a4643b1d4cb" category="sidebar">MetroCluster IP 구성 지원의 새로운 기능</block>
   <block id="d793294f059b1014ac708a3a85a786cb" category="sidebar">MetroCluster FC 구성 지원의 새로운 기능</block>
-  <block id="f53be3830567c46eb450137d81abd1eb" category="sidebar">MetroCluster FC에서 Brocade 스위치를 지원하는 새로운 기능</block>
-  <block id="c50301ea3686b38b168720b817903229" category="sidebar">MetroCluster IP에서 Broadcom, Cisco, NVIDIA 스위치를 지원하는 새로운 기능</block>
   <block id="986acab97d190ab2df45c246e97ca539" category="sidebar">ONTAP 중재자 지원의 새로운 기능</block>
   <block id="72b08fce3cdf931f9f180e97f8508090" category="sidebar">MetroCluster Tiebreaker 지원의 새로운 기능</block>
+  <block id="9ae85011061f6a07b3199cc6631e205d" category="paragraph">해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.</block>
+  <block id="5a3808eade7ae7dfc1128e76ac8a6b87" category="inline-link-macro">Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="c1d5e0b646c085cbf6cc97f215844ce8" category="list-text"><block ref="c1d5e0b646c085cbf6cc97f215844ce8" category="inline-link-macro-rx"></block></block>
+  <block id="10d9704804fc9a126c35cc824525113d" category="inline-link-macro">Cisco IP 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="7665201fdf545ef872524ea717a6b5e4" category="list-text"><block ref="7665201fdf545ef872524ea717a6b5e4" category="inline-link-macro-rx"></block></block>
+  <block id="159f95fdae86e1ad5e17a192aee59c43" category="inline-link-macro">NVIDIA IP 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="5548bb09ca13f0f29cfa2b29502f1f32" category="list-text"><block ref="5548bb09ca13f0f29cfa2b29502f1f32" category="inline-link-macro-rx"></block></block>
+  <block id="c3ea36c26671f8c16b968aeffbf12c7d" category="inline-link-macro">Broadcom RCF 파일을 다운로드하여 설치합니다</block>
+  <block id="368aaabd8ccd78edfaeb1e279944bf6d" category="list-text"><block ref="368aaabd8ccd78edfaeb1e279944bf6d" category="inline-link-macro-rx"></block></block>
+  <block id="76dff903c42af8953fcd64558dc34099" category="inline-link-macro">Cisco IP RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="89fdba60efe33dd9621db371306f12e5" category="list-text"><block ref="89fdba60efe33dd9621db371306f12e5" category="inline-link-macro-rx"></block></block>
+  <block id="8fa6539999f2d3aff134c30600c80e41" category="inline-link-macro">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="2812633e4be142ea6fef81aa2fc3b357" category="list-text"><block ref="2812633e4be142ea6fef81aa2fc3b357" category="inline-link-macro-rx"></block></block>
+  <block id="ea9534759740df7ca366f32a3eb8a0ec" category="inline-xref">Cumulus 소프트웨어를 다운로드하고 설치합니다</block>
+  <block id="a6c37e682cfc0729046dd2e498ad461c" category="list-text"><block ref="ef78584b865ab255d612a5aa6725b10d" category="inline-xref-macro-rx"></block></block>
+  <block id="4d8d9056b62fc01f5cd3f0898c551fde" category="section-title">플랫폼 지원</block>
+  <block id="9b6c50e7cbf80c446a0078ceb63104d0" category="section-title">스위치 지원</block>
+  <block id="9342c35c4399c8e6faf7c07d8bae26c5" category="paragraph">ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 및 업그레이드 주의 사항에 대한 자세한 내용은 를 참조하십시오<block ref="6e7f74aa9001f0524a965144f528bbc2" category="inline-link-rx"></block>. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.</block>
+  <block id="542203888545c733d7713856ba607788" category="paragraph">MetroCluster 구성에서 ONTAP mediator를 설치하거나 업그레이드하는 방법에 대한 자세한 내용은 를 참조하십시오 <block ref="98d8e0da2148573045cbd111c9373b18" category="inline-link-macro-rx"></block>.</block>
+  <block id="ab67c4c2b9b0f6070e68d79d3a0b6c63" category="cell">ONTAP 중재자 기능</block>
+  <block id="5793a46a4020e2b9d210afaa14008d67" category="paragraph">환경 종료 시 중재자 지원 자동 계획되지 않은 전환(MAUSO)이 지원됩니다.</block>
+  <block id="4765407452f01930deae2b9481b69e36" category="paragraph">MetroCluster IP 구성에서 ONTAP 중재자 서비스에 대한 초기 지원</block>
+  <block id="de09b0e8b75c62ac84c620713e05647b" category="paragraph">공유 스토리지 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환할 수 있습니다.</block>
+  <block id="76a27f1dad18a5de567d4849d3e76b69" category="doc">MetroCluster FC 플랫폼 및 스위치 지원의 새로운 기능</block>
+  <block id="0f40216c1ad47c12e8ccc087d555570f" category="doc">ONTAP 릴리즈 노트</block>
+  <block id="2dfc17cf61c3aebedc1a1f7f467baa26" category="paragraph">스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.</block>
+  <block id="9caf870a1494e70481403791fcece589" category="list-text">반복합니다 <block ref="b2da07bc854b8a63875843471604110c" category="inline-xref-macro-rx"></block> 구성 상태를 확인합니다.</block>
+  <block id="67d7197766de9fc9cf6113211650818b" category="sidebar">NetApp MetroCluster 구성에서는 어레이 기반 클러스터링을 동기식 복제와 결합하여 지속적인 가용성을 제공하고 모든 미션 크리티컬 데이터를 트랜잭션별로 즉시 복제합니다. MetroCluster 구성을 사용하면 NetApp 하드웨어와 ONTAP 스토리지 소프트웨어에 내장된 고가용성과 무중단 운영성을 더욱 향상하고 전체 스토리지와 호스트 환경에 대한 추가적인 보호 계층을 확보할 수 있습니다.</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하십시오</block>
+  <block id="2ef693575e01de24e090245f10a59777" category="sidebar">MetroCluster IP를 설치합니다</block>
+  <block id="5a3b01a5bff3f06441fb7188a02f105e" category="sidebar">패브릭 연결 MetroCluster를 설치합니다</block>
+  <block id="fdb8b17580937ddecfddeee4298a1482" category="sidebar">Stretch MetroCluster를 설치합니다</block>
+  <block id="18bd3543357b4fa11f6a58101dfa61a5" category="sidebar">Tiebreaker를 설치합니다</block>
+  <block id="d2875782347edc6066d3025cecc9df38" category="sidebar">중재자 설치(MetroCluster IP만 해당)</block>
+  <block id="ade01a5a398372194a42c36e9f5279ac" category="sidebar">유지 관리</block>
+  <block id="7b8e5f5947a6dadc276f09b5a095667d" category="sidebar">MetroCluster FC 구성에서 FC 스위치를 유지 관리 및 교체합니다.</block>
+  <block id="7f5d1cf6b92b5f6a9e5fe290c7d568fa" category="sidebar">IP 스위치</block>
+  <block id="e9e6a0d40b20996536edcfae7b0ca501" category="sidebar">MetroCluster IP 구성에서 IP 스위치를 유지 관리하고 교체합니다.</block>
+  <block id="5360721f5d15a4a50d1c0ea177551d33" category="sidebar">ATTO 브리지</block>
+  <block id="6659ad060d95c49da27c02efe70880ee" category="sidebar">MetroCluster FC 구성에서 ATTO FC-to-SAS 브리지를 유지 관리하고 교체합니다.</block>
+  <block id="c89a58741e7240ddf3c43ec7dbb21cd7" category="sidebar">드라이브 쉘프</block>
+  <block id="bb2a6473813b98ffe9edacc863bb749e" category="sidebar">드라이브 쉘프를 핫 애드인으로 무중단 교체 MetroCluster FC 구성</block>
+  <block id="9deb979aa141eacec55a34ce9dfd4cc9" category="sidebar">RCF 파일</block>
+  <block id="277ccac115bb10401c3dbe796a5fd555" category="sidebar">MetroCluster RCF 파일</block>
+  <block id="f4ff45e882d7ee5ad1b4a9e07301850d" category="sidebar">MetroCluster 스위치용 RCF 파일을 생성하거나 다운로드합니다.</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="sidebar">자세한 정보</block>
+  <block id="b92dd7cb5813aceca4052255be1046a0" category="sidebar">NetApp MetroCluster 솔루션 아키텍처 및 설계 | TR-4705</block>
+  <block id="c8ed4eb56c00a193e2bf85d5a38119ee" category="sidebar">MetroCluster FC 솔루션을 이해합니다.</block>
+  <block id="d821955413ef2ce3b63ac32371a5186e" category="sidebar">MetroCluster IP 솔루션 아키텍처 및 설계 | TR-4689</block>
+  <block id="33d6c0f3568f32d65b84533fcc9dcbcb" category="sidebar">MetroCluster IP 솔루션 이해</block>
+  <block id="3d5cf400e4fb829207d0ab81798b6587" category="sidebar">업그레이드, 확장, 변환</block>
+  <block id="64cd3f6f5347e9d6c92e09aa1c656f87" category="sidebar">하드웨어 업그레이드 및 업데이트</block>
+  <block id="fdc7fb09ec4ebc533362a55d221d305f" category="sidebar">MetroCluster 구성에서 컨트롤러를 업그레이드합니다.</block>
+  <block id="e912938f380bdbc5125a46cb6974c985" category="sidebar">2노드 MetroCluster를 확장합니다</block>
+  <block id="c495f5fb55d923c4b5bdcc9031d17504" category="sidebar">MetroCluster 구성에 컨트롤러를 추가하여 4노드 또는 8노드 구성을 생성합니다.</block>
+  <block id="8b9fb0a48d871747071a5767bb11c3c9" category="sidebar">4노드 MetroCluster를 확장합니다</block>
+  <block id="f0de1d093d27614c73e83446489eec92" category="sidebar">MetroCluster 구성에 컨트롤러를 추가하여 8노드 구성을 생성합니다.</block>
+  <block id="daf3fcb291d6eb9e42a7777197caa458" category="sidebar">MetroCluster FC를 MetroCluster IP로 변환합니다</block>
+  <block id="689a3f6927feed4862b6b5b03d4f0018" category="sidebar">기존 MetroCluster IP 구성을 MetroCluster IP 구성으로 전환합니다.</block>
+  <block id="822970998ef8866cd59ed6ba8d63af83" category="sidebar">MetroCluster IP RCF 파일을 업그레이드합니다</block>
+  <block id="b2899a6511f7a2ac6656022f75581e5a" category="sidebar">MetroCluster IP 구성에서 스위치 RCF 파일을 업그레이드합니다.</block>
+  <block id="b7c02f1bc7ffc889ddb9e99702663c56" category="sidebar">ATTO 브리지 펌웨어</block>
+  <block id="ddac5beff5f77bf22595caa98bac08f9" category="sidebar">FiberBridge 7600N</block>
+  <block id="7189e471dda7f4816814f7b74c6948d1" category="sidebar">7600 브리지에 대한 펌웨어를 다운로드합니다.</block>
+  <block id="dcb741f9e6e5d6050aeb3d8fd347e9fd" category="sidebar">FiberBridge 7500N</block>
+  <block id="81defdfe6f2018754b9c90215acaf8c1" category="sidebar">7500 브리지용 펌웨어를 다운로드합니다.</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
+  <block id="fa0344a10c89a05b4e9232391d5feb01" category="sidebar">NetApp Config Advisor를 참조하십시오</block>
+  <block id="7bde48e6b0d33c17d731b283a4674428" category="sidebar">구성 및 케이블 연결을 확인합니다.</block>
+  <block id="d5552b01bf48dde88719269e524ddbb9" category="sidebar">하드웨어가 지원되는지 확인합니다.</block>
+  <block id="3f2b90ec5a9b43745b9c8c9fedf48d8d" category="sidebar">NetApp 지원 기술 자료</block>
+  <block id="b2cdf9234a2dabbbb6acb6f71e098209" category="sidebar">지원 질문에 대한 답변을 검색합니다.</block>
 </blocks>
