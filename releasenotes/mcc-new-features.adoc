@@ -10,9 +10,51 @@ summary:
 :imagesdir: ./media/
 
 
+[role="lead"]
+새로운 MetroCluster 기능에 대해 알아보십시오.
+
 [cols="20,65,15"]
 |===
 | MetroCluster 구성에서 지원되는 기능 | 설명 및 자세한 내용 | 처음부터 사용할 수 있습니다 
+
+
+ a| 
+MetroCluster IP는 엔드 투 엔드 암호화를 지원합니다
+ a| 
+AFF A400, FAS8300, FAS8700 시스템에서 엔드 투 엔드 암호화가 지원되어 MetroCluster IP 구성의 사이트 간에 NVlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화합니다.
+
+link:../maintain//task-configure-encryption.html["MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다"]
+ a| 
+ONTAP 9.15.1
+
+
+
+ a| 
+AFF A800 및 AFF C800 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 증가
+ a| 
+4노드 MetroCluster IP 구성에서 AFF A800 및 AFF C800 시스템에 대한 다음 볼륨 제한이 증가했습니다.
+
+* 애그리게이트당 최대 FlexVol 볼륨 수가 200개에서 625개로 증가했습니다.
+* 노드당 최대 FlexVol 볼륨 수가 800개에서 1250개로 증가했습니다.
+* 고가용성(HA) 쌍당 최대 FlexVol 볼륨 수가 1600개에서 2500개로 증가했습니다.
+
+ a| 
+ONTAP 9.15.1
+
+
+
+ a| 
+AFF A900 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 인상
+ a| 
+4노드 MetroCluster IP 구성에서는 AFF A900 시스템에 대한 다음 볼륨 제한이 증가했습니다.
+
+* 애그리게이트당 최대 FlexVol 볼륨 수가 200개에서 625개로 증가했습니다.
+* 노드당 최대 FlexVol 볼륨 수가 800개에서 1250개로 증가했습니다.
+* 고가용성(HA) 쌍당 최대 FlexVol 볼륨 수가 1600개에서 2500개로 증가했습니다.
+
+ a| 
+ONTAP 9.14.1
+
 
 
  a| 
@@ -53,7 +95,7 @@ ONTAP 9.13.1 을 참조하십시오
  a| 
 환경 가동 중단으로 인해 한 사이트가 정상적으로 종료되면 MAUSO가 트리거됩니다.
 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_considerations_mediator.html#interoperability-of-ontap-mediator-with-other-applications-and-appliances["다른 애플리케이션 및 어플라이언스와 함께 하는 ONTAP 중재자의 상호 운용성"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html["ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법"]
  a| 
 ONTAP 9.13.1 을 참조하십시오
 

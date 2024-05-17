@@ -55,6 +55,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 NOTE: 4노드 MetroCluster IP 구성에서는 ARL(Aggregate Relocation)을 사용하여 "system controller replace" 명령을 사용하여 업그레이드를 수행할 수 없습니다.
 
+* 시스템에서 활성화되어 있는 경우 link:../maintain/task-configure-encryption.html#disable-end-to-end-encryption["종단간 암호화를 비활성화합니다"] 업그레이드를 수행하기 전에
 * 자동 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.
 * 이 자동화된 통계청 기반의 컨트롤러 업그레이드 절차를 통해 MetroCluster 재해 복구(DR) 사이트로 컨트롤러 교체를 시작할 수 있습니다. 한 번에 한 사이트에서만 컨트롤러 교체를 시작할 수 있습니다.
 * 사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.
@@ -1145,9 +1146,15 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
-=== Tiebreaker 모니터링 복원 중
+=== Tiebreaker 모니터링을 복원합니다
 
 이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.
 
 . 의 단계를 사용합니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-7259BCA4-104C-49C6-BAD0-1068CA2A3DA5.html["MetroCluster 구성 추가"].
 
+
+
+
+=== 엔드 투 엔드 암호화 구성
+
+시스템에서 지원되는 경우, nvlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 MetroCluster IP 사이트 간에 암호화할 수 있습니다. 을 참조하십시오 link:../maintain/task-configure-encryption.html["엔드 투 엔드 암호화 구성"] 를 참조하십시오.

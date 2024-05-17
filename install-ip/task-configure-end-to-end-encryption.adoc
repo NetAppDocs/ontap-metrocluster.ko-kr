@@ -1,0 +1,260 @@
+---
+permalink: install-ip/task-configure-end-to-end-encryption.html 
+sidebar: sidebar 
+keywords: metrocluster, ip, encryption, end-to-end, backend, aff a400, fas8300, fas8700, encrypt, enable, disable 
+summary:  
+---
+= 엔드 투 엔드 암호화 구성
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.15.1부터 MetroCluster IP 구성의 사이트 간에 nvlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화하도록 엔드 투 엔드 암호화를 구성할 수 있습니다.
+
+.이 작업에 대해
+* 이 작업을 수행하려면 클러스터 관리자여야 합니다.
+* 종단 간 암호화를 구성하려면 먼저 해야 합니다 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-concept.html["외부 키 관리를 구성합니다"^].
+* MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성하는 데 필요한 지원되는 시스템 및 최소 ONTAP 릴리스를 검토합니다.
++
+|===
+
+
+| 최소 ONTAP 릴리스 | 지원되는 시스템 
+
+
+ a| 
+ONTAP 9.15.1
+ a| 
+** AFF A400
+** FAS8300
+** FAS8700
+
+
+|===
+
+
+
+
+== 엔드 투 엔드 암호화 지원
+
+종단 간 암호화를 활성화하려면 다음 단계를 수행하십시오.
+
+.단계
+. MetroCluster 구성의 상태를 확인합니다.
++
+.. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+[source, cli]
+----
+metrocluster check run
+----
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+----
++
+작업은 백그라운드에서 실행됩니다.
+
+.. 를 누릅니다 `metrocluster check run` 작업이 완료되면 다음을 실행합니다.
++
+[source, cli]
+----
+metrocluster check show
+----
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+cluster_A:::*> metrocluster check show
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+.. 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
++
+[source, cli]
+----
+metrocluster operation history show -job-id <id>
+----
+.. 상태 경고가 없는지 확인합니다.
++
+[source, cli]
+----
+system health alert show
+----
+
+
+. 외부 키 관리가 두 클러스터 모두에서 구성되었는지 확인:
++
+[source, cli]
+----
+security key-manager external show-status
+----
+. 각 DR 그룹에 대해 엔드 투 엔드 암호화 활성화:
++
+[source, cli]
+----
+metrocluster modify -is-encryption-enabled true -dr-group-id <dr_group_id>
+----
++
+* 예 *
+
++
+[listing]
+----
+cluster_A::*> metrocluster modify -is-encryption-enabled true -dr-group-id 1
+Warning: Enabling encryption for a DR Group will secure NVLog and Storage
+         replication data sent between MetroCluster nodes and have an impact on
+         performance. Do you want to continue? {y|n}: y
+[Job 244] Job succeeded: Modify is successful.
+----
++
+구성의 각 DR 그룹에 대해 이 단계를 반복합니다.
+
+. 엔드 투 엔드 암호화가 활성화되어 있는지 확인합니다.
++
+[source, cli]
+----
+metrocluster node show -fields is-encryption-enabled
+----
++
+* 예 *
+
++
+[listing]
+----
+cluster_A::*> metrocluster node show -fields is-encryption-enabled
+
+dr-group-id cluster    node      configuration-state is-encryption-enabled
+----------- ---------- --------  ------------------- -----------------
+1           cluster_A  node_A_1  configured          true
+1           cluster_A  node_A_2  configured          true
+1           cluster_B  node_B_1  configured          true
+1           cluster_B  node_B_2  configured          true
+4 entries were displayed.
+----
+
+
+
+
+== 종단간 암호화를 비활성화합니다
+
+종단 간 암호화를 비활성화하려면 다음 단계를 수행하십시오.
+
+.단계
+. MetroCluster 구성의 상태를 확인합니다.
++
+.. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+[source, cli]
+----
+metrocluster check run
+----
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+
+----
++
+작업은 백그라운드에서 실행됩니다.
+
+.. 를 누릅니다 `metrocluster check run` 작업이 완료되면 다음을 실행합니다.
++
+[source, cli]
+----
+metrocluster check show
+----
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+cluster_A:::*> metrocluster check show
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+.. 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
++
+[source, cli]
+----
+metrocluster operation history show -job-id <id>
+----
+.. 상태 경고가 없는지 확인합니다.
++
+[source, cli]
+----
+system health alert show
+----
+
+
+. 외부 키 관리가 두 클러스터 모두에서 구성되었는지 확인:
++
+[source, cli]
+----
+security key-manager external show-status
+----
+. 각 DR 그룹에서 종단간 암호화 사용 안 함:
++
+[source, cli]
+----
+metrocluster modify -is-encryption-enabled false -dr-group-id <dr_group_id>
+----
++
+* 예 *
+
++
+[listing]
+----
+cluster_A::*> metrocluster modify -is-encryption-enabled false -dr-group-id 1
+[Job 244] Job succeeded: Modify is successful.
+----
++
+구성의 각 DR 그룹에 대해 이 단계를 반복합니다.
+
+. 엔드 투 엔드 암호화가 비활성화되었는지 확인합니다.
++
+[source, cli]
+----
+metrocluster node show -fields is-encryption-enabled
+----
++
+* 예 *
+
++
+[listing]
+----
+cluster_A::*> metrocluster node show -fields is-encryption-enabled
+
+dr-group-id cluster    node      configuration-state is-encryption-enabled
+----------- ---------- --------  ------------------- -----------------
+1           cluster_A  node_A_1  configured          false
+1           cluster_A  node_A_2  configured          false
+1           cluster_B  node_B_1  configured          false
+1           cluster_B  node_B_2  configured          false
+4 entries were displayed.
+----
+

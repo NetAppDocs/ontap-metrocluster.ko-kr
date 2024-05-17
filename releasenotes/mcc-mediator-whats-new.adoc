@@ -26,6 +26,8 @@ MetroCluster 구성에서 ONTAP mediator를 설치하거나 업그레이드하�
 환경 종료 시 중재자 지원 자동 계획되지 않은 전환(MAUSO)이 지원됩니다.
 
 환경 가동 중단으로 인해 한 사이트가 정상적으로 종료되면 MAUSO가 트리거됩니다.
+
+https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html["ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법"]
  a| 
 ONTAP 9.13.1 을 참조하십시오
 

@@ -21,6 +21,17 @@ ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 �
 
 
  a| 
+NVMe에 대한 MetroCluster IP 지원
+ a| 
+NVMe/TCP 프런트 엔드 호스트 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.
+
+link:https://docs.netapp.com/us-en/ontap/san-admin/san-config-mcc-concept.html["MetroCluster 환경의 SAN 구성입니다"^]
+ a| 
+ONTAP 9.15.1
+
+
+
+ a| 
 미러링된 및 미러링되지 않은 애그리게이트에서 S3 오브젝트 스토리지 지원
  a| 
 MetroCluster IP 및 FC 구성의 경우, 미러링되거나 미러링되지 않은 애그리게이트의 SVM에서 S3 오브젝트 스토리지 서버를 사용하도록 설정할 수 있습니다.
@@ -43,6 +54,17 @@ ONTAP 9.12.1
 
 
  a| 
+NVMe에 대한 MetroCluster IP 지원
+ a| 
+NVMe/FC 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.
+
+link:https://docs.netapp.com/us-en/ontap/san-admin/san-config-mcc-concept.html["MetroCluster 환경의 SAN 구성입니다"^]
+ a| 
+ONTAP 9.12.1
+
+
+
+ a| 
 MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜에 대한 IPsec 지원
  a| 
 MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜(예: NFS 및 iSCSI)에 대한 IPsec 지원을 사용할 수 있습니다.
@@ -57,8 +79,6 @@ ONTAP 9.11.1
 정합성 보장 그룹
  a| 
 정합성 보장 그룹은 MetroCluster 구성에서 지원됩니다.
-
-https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"]
  a| 
 ONTAP 9.7 을 참조하십시오
 

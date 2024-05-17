@@ -5120,8 +5120,6 @@
   <block id="af9bbac55d29c3c2c171173c55105059" category="list-text">미러를 다시 설정합니다.</block>
   <block id="61b8b52da112fd41a570a138f0a75446" category="list-text">모든 미러가 재설정되고 모든 집계가 미러된 정상 상태로 표시될 때까지 플렉스에서 재동기화 및 미러링 상태를 모니터링합니다.</block>
   <block id="6b1a2eef5ea82e265caa75d1009aaae1" category="summary">하드웨어 구성 요소를 교체해야 하는 경우 개별 하드웨어 교체 및 설치 가이드를 사용하여 교체해야 합니다.</block>
-  <block id="b3847c80d357e0d5d221ce737320c2b4" category="doc">하드웨어 교체 및 새 컨트롤러 부팅</block>
-  <block id="217c96dcd79e3325e1857aed771a5c40" category="section-title">재해 사이트에서 하드웨어 교체</block>
   <block id="83a10d9e95eee16293468c7f346cce1e" category="paragraph">스토리지 컨트롤러의 전원을 끄거나 계속 정지해야 합니다(로더 프롬프트 표시).</block>
   <block id="b5de74a1fd2187d9589df11fe3f78707" category="list-text">필요에 따라 구성 요소를 교체하십시오.</block>
   <block id="f62bcce98f7e25ff88aa77d67a701b6b" category="admonition">이 단계에서는 장애가 발생하기 전에 케이블로 연결한 것과 정확히 동일한 방식으로 구성 요소를 교체하고 케이블을 연결합니다. 구성 요소의 전원을 켜서는 안 됩니다.</block>
@@ -5182,7 +5180,6 @@
   <block id="c4f544053cff7408e816016df0403a9a" category="list-text">시스템이 AFF A220, AFF A400, FAS2750, FAS8300, FAS8700 또는 FAS8700 모델인 경우, VLAN ID 확인:</block>
   <block id="a299904397c0c53d0dff20464bb5a6fb" category="paragraph">VLAN ID는 출력의 Adapter 열에 표시된 어댑터 이름에 포함됩니다.</block>
   <block id="53e60741b7dea71b0fc08dfdab30d92c" category="paragraph">이 예에서 VLAN ID는 120과 130입니다.</block>
-  <block id="d57d00f698e8ac4eaa665b2d710b970a" category="section-title">정상적인 사이트에서 교체 드라이브 격리(MetroCluster IP 구성)</block>
   <block id="faf1b2de9b3420669edf161ef2d98b43" category="paragraph">남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 접속을 끊어 교체 드라이브를 격리해야 합니다.</block>
   <block id="36e6d0da6dd22d30492f26d039f7b332" category="paragraph">이 절차는 MetroCluster IP 구성에만 필요합니다.</block>
   <block id="79899d65096477dbbe2b3da6bfd80528" category="list-text">남아 있는 노드의 프롬프트에서 고급 권한 레벨로 변경합니다.</block>
@@ -9137,7 +9134,6 @@
   <block id="177f79b7f42518cbd6ed3a48de1f222b" category="paragraph">FC 스위치가 IOD용으로 구성된 경우 IOD에 대해 ONTAP 소프트웨어를 구성해야 합니다. 마찬가지로 FC 스위치가 유드에 대해 구성된 경우 유드에 대해 ONTAP를 구성해야 합니다.</block>
   <block id="0a9b432f5f5621ba3d2bafdaa8d5be41" category="paragraph">'MetroCluster interconnect adapter modify -node_node_name_-is-ood-enabled true</block>
   <block id="b88127542a36dbd88f1d9b0eb0e66dc0" category="paragraph">ONTAP는 현재 AES-128 암호화를 지원합니다.</block>
-  <block id="f9f9baab7ad1908bd1cdbdf27a3f1041" category="paragraph">RO 액세스가 필요한 경우, "User (ro):" 뒤에 "snmpv3user"를 지정합니다(예:</block>
   <block id="7c36b0e12ce814681762efb6b2ec6cc4" category="paragraph">이 예제에서는 읽기 전용 사용자를 구성하는 방법을 보여 줍니다. 필요한 경우 RW 사용자를 조정할 수 있습니다.</block>
   <block id="046a4dbe28831449e896740fded1c064" category="paragraph">또한 사용하지 않는 계정에 대한 암호를 설정하여 계정을 보호하고 ONTAP 릴리스에서 제공되는 최상의 암호화를 사용해야 합니다.</block>
   <block id="220a5f3f86ae97f0476676c92a412f16" category="paragraph">초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.</block>
@@ -10849,7 +10845,6 @@
   <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
   <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
-  <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">릴리즈 노트</block>
   <block id="13c1fe346da53d3c9c58ab0c190eb172" category="sidebar">MetroCluster 데이터 보호 및 재해 복구 이해</block>
   <block id="f6ded8bde676e251409725df18ef579a" category="sidebar">MetroCluster가 데이터를 보호하고 재해 복구를 제공하는 방법</block>
   <block id="d5bca41ec2c9b2bc82b68b782983610c" category="sidebar">MetroCluster IP 구성을 설치합니다</block>
@@ -13546,7 +13541,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="54c9cab829044acca6994285d3185409" category="paragraph">MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성할 수 있습니다.</block>
   <block id="ea0c90724ad3d5959704fb91a048c28c" category="inline-link">MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성합니다</block>
   <block id="7a5d298867b0efc5adf88dfe965f7137" category="paragraph"><block ref="7a5d298867b0efc5adf88dfe965f7137" category="inline-link-rx"></block></block>
-  <block id="cd18beb67ffb0ec95fecaca021fc2541" category="paragraph"><block ref="cd18beb67ffb0ec95fecaca021fc2541" category="inline-link-rx"></block></block>
   <block id="594e1ec3daa27e540baa061f731f028f" category="paragraph">ONTAP 9.12.1</block>
   <block id="6eaae443849a6746c6ace7f4204bd085" category="paragraph">MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜에 대한 IPsec 지원</block>
   <block id="d70d383ef18fafd59eb655545c1017bd" category="paragraph">MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜(예: NFS 및 iSCSI)에 대한 IPsec 지원을 사용할 수 있습니다.</block>
@@ -13579,7 +13573,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b57d94c823165bcbbdd40797c37fc13a" category="paragraph"><block ref="b57d94c823165bcbbdd40797c37fc13a" category="inline-link-rx"></block></block>
   <block id="de19903f1baec8a806f09acbc21c609c" category="paragraph">환경 종료를 위해 중재자 지원 자동 계획되지 않은 전환(MAUSO)이 트리거됩니다</block>
   <block id="8a6db987355c97228c7eda746c7aab92" category="paragraph">환경 가동 중단으로 인해 한 사이트가 정상적으로 종료되면 MAUSO가 트리거됩니다.</block>
-  <block id="0b97e7c3b0f44c35cdd69948234f7fcc" category="paragraph"><block ref="0b97e7c3b0f44c35cdd69948234f7fcc" category="inline-link-rx"></block></block>
   <block id="2baf765df55a69e9c032792bec126f2c" category="paragraph">8노드 MetroCluster IP 구성 지원</block>
   <block id="5e3aa18041f614fb450ca9a1c9ff1a5b" category="paragraph">8노드 MetroCluster IP 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있도록 구성을 임시 12노드 구성으로 확장한 다음 이전 DR 그룹을 제거하면 됩니다.</block>
   <block id="ee794ce3325c3c2b6f8e58083826be5a" category="paragraph"><block ref="ee794ce3325c3c2b6f8e58083826be5a" category="inline-link-rx"></block></block>
@@ -13651,11 +13644,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="be0230807be10234aa034e45c6825280" category="paragraph">AFF A400 및 FAS8300</block>
   <block id="0cf4c92a4ea3edbf66b4866978237ff3" category="doc">MetroCluster Tiebreaker 지원의 새로운 기능</block>
   <block id="e90d1c6a70648051cbe5131fdb8a8227" category="paragraph">ONTAP 9 데이터 관리 소프트웨어가 릴리즈될 때마다 ONTAP MetroCluster 구성의 기능, 관리 효율 및 성능을 개선하는 새롭고 향상된 기능을 제공합니다.</block>
-  <block id="8c1bba32ed1c0d98d05106a264d07469" category="paragraph">모든 ONTAP 9 버전의 하드웨어 플랫폼 및 스위치 지원, 알려진 문제 및 제한 사항에 대한 자세한 내용 또는 ONTAP 9.9.1 이전 릴리스에서 도입된 기능에 대한 자세한 내용은 를 참조하십시오<block ref="6e7f74aa9001f0524a965144f528bbc2" category="inline-link-rx"></block>. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.</block>
-  <block id="a4c25ce93017fa1e39ea1f02e454b5dd" category="sidebar">ONTAP 기능 지원의 새로운 기능</block>
   <block id="3cc716dba68d44285ae03d4a0e650afb" category="sidebar">MetroCluster 기능의 새로운 기능</block>
-  <block id="7a9ee1321dd82cefa7736a4643b1d4cb" category="sidebar">MetroCluster IP 구성 지원의 새로운 기능</block>
-  <block id="d793294f059b1014ac708a3a85a786cb" category="sidebar">MetroCluster FC 구성 지원의 새로운 기능</block>
   <block id="986acab97d190ab2df45c246e97ca539" category="sidebar">ONTAP 중재자 지원의 새로운 기능</block>
   <block id="72b08fce3cdf931f9f180e97f8508090" category="sidebar">MetroCluster Tiebreaker 지원의 새로운 기능</block>
   <block id="9ae85011061f6a07b3199cc6631e205d" category="paragraph">해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.</block>
@@ -13682,7 +13671,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4765407452f01930deae2b9481b69e36" category="paragraph">MetroCluster IP 구성에서 ONTAP 중재자 서비스에 대한 초기 지원</block>
   <block id="de09b0e8b75c62ac84c620713e05647b" category="paragraph">공유 스토리지 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환할 수 있습니다.</block>
   <block id="76a27f1dad18a5de567d4849d3e76b69" category="doc">MetroCluster FC 플랫폼 및 스위치 지원의 새로운 기능</block>
-  <block id="0f40216c1ad47c12e8ccc087d555570f" category="doc">ONTAP 릴리즈 노트</block>
   <block id="2dfc17cf61c3aebedc1a1f7f467baa26" category="paragraph">스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.</block>
   <block id="9caf870a1494e70481403791fcece589" category="list-text">반복합니다 <block ref="b2da07bc854b8a63875843471604110c" category="inline-xref-macro-rx"></block> 구성 상태를 확인합니다.</block>
   <block id="67d7197766de9fc9cf6113211650818b" category="sidebar">NetApp MetroCluster 구성에서는 어레이 기반 클러스터링을 동기식 복제와 결합하여 지속적인 가용성을 제공하고 모든 미션 크리티컬 데이터를 트랜잭션별로 즉시 복제합니다. MetroCluster 구성을 사용하면 NetApp 하드웨어와 ONTAP 스토리지 소프트웨어에 내장된 고가용성과 무중단 운영성을 더욱 향상하고 전체 스토리지와 호스트 환경에 대한 추가적인 보호 계층을 확보할 수 있습니다.</block>
@@ -13730,4 +13718,68 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d5552b01bf48dde88719269e524ddbb9" category="sidebar">하드웨어가 지원되는지 확인합니다.</block>
   <block id="3f2b90ec5a9b43745b9c8c9fedf48d8d" category="sidebar">NetApp 지원 기술 자료</block>
   <block id="b2cdf9234a2dabbbb6acb6f71e098209" category="sidebar">지원 질문에 대한 답변을 검색합니다.</block>
+  <block id="67ed9530c4069b662839f89c94d4a160" category="inline-link-macro">종단간 암호화를 비활성화합니다</block>
+  <block id="ade87983ca16ac3bdbf2b32cf6e9b0d5" category="list-text">시스템에서 활성화되어 있는 경우 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block> 컨트롤러 업그레이드를 수행하기 전에.</block>
+  <block id="3d8fb38a661b136fb35b34201d24ef76" category="section-title">엔드 투 엔드 암호화 구성</block>
+  <block id="df4377d05c61041e2e8ae85ae5db4fad" category="paragraph">시스템에서 지원되는 경우, nvlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 MetroCluster IP 사이트 간에 암호화할 수 있습니다. 을 참조하십시오 <block ref="ffcb318089fda8d2418bcd406342779d" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="8f883162e124fc09a7ae40b02d457abc" category="list-text">시스템에서 활성화되어 있는 경우 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block> 업그레이드를 수행하기 전에</block>
+  <block id="5aa9df9bfe2a9d3dcb9eaf7420818fac" category="inline-link-macro">엔드 투 엔드 암호화 지원</block>
+  <block id="bd7a871cd772a6f8f044f086ccc3ed68" category="list-text">시스템에서 엔드 투 엔드 암호화를 지원하는 경우 다음을 수행할 수 있습니다 <block ref="2fd1db8c2a0ebb290526de8f46b28acd" category="inline-link-macro-rx"></block> 새 DR 그룹에 추가합니다.</block>
+  <block id="0088c1e15cccccdb2e3dc23e762335e0" category="list-text">종단간 암호화가 활성화된 경우 - 단계를 따릅니다 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="7b27e86dbf07563fca6c99e2fca83549" category="list-text">새 노드를 추가하기 전에 종단 간 암호화를 비활성화한 경우 의 단계를 따라 다시 활성화할 수 있습니다 <block ref="2fd1db8c2a0ebb290526de8f46b28acd" category="inline-link-macro-rx"></block>.</block>
+  <block id="149bff96621a57d63b9a824d96957df7" category="open-title">Brocade 스위치</block>
+  <block id="250f3098aa37d3a08b48b8157db8a62e" category="open-title">Cisco 스위치</block>
+  <block id="6204028fd0e3ba079ca2fce4bb224e24" category="paragraph"><block ref="010303eb2e404f6eb49cc314fc8aa294" prefix="" category="inline-code"></block></block>
+  <block id="a1032909a057927264a07294a53b91b5" category="paragraph">RO 액세스가 필요한 경우 "User(ro):" 뒤에 "snmpv3user"를 지정합니다. 다음 예에서는 Brocade 스위치를 사용합니다.</block>
+  <block id="b4656d073f9b3064260089f7e9a12e66" category="paragraph">ONTAP 9.15.1부터 MetroCluster IP 구성의 사이트 간에 nvlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화하도록 엔드 투 엔드 암호화를 구성할 수 있습니다.</block>
+  <block id="ddaa39224424042ba35394afbe714a70" category="list-text">이 작업을 수행하려면 클러스터 관리자여야 합니다.</block>
+  <block id="ffe47e3eda7ee0a88fa1a1b82a09899e" category="inline-link-macro">외부 키 관리를 구성합니다</block>
+  <block id="ca6ec36bc37ffec6b208710049cf5f93" category="list-text">종단 간 암호화를 구성하려면 먼저 해야 합니다 <block ref="16044a12704308be53c493c61be8d30c" category="inline-link-macro-rx"></block>.</block>
+  <block id="04070a9cbaae869f3877454cee7e3949" category="list-text">MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성하는 데 필요한 지원되는 시스템 및 최소 ONTAP 릴리스를 검토합니다.</block>
+  <block id="59489a60854fece7ae72228144da61ce" category="cell">최소 ONTAP 릴리스</block>
+  <block id="933247e0be7796a309cfa4c95bd34938" category="cell">지원되는 시스템</block>
+  <block id="8cd7d5cbedf290a9b729cc263d9b289c" category="paragraph">ONTAP 9.15.1</block>
+  <block id="e93d47f017ad237de98b35aad9fcb874" category="paragraph">종단 간 암호화를 활성화하려면 다음 단계를 수행하십시오.</block>
+  <block id="837070b3add2f869a83c272371c71943" category="list-text">를 누릅니다<block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block> 작업이 완료되면 다음을 실행합니다.</block>
+  <block id="cc69fb16e9b5f75fc5721d1ad8277443" category="list-text">외부 키 관리가 두 클러스터 모두에서 구성되었는지 확인:</block>
+  <block id="689610e955be8fb22e796c52df915481" category="list-text">각 DR 그룹에 대해 엔드 투 엔드 암호화 활성화:</block>
+  <block id="655bf96cae9bcf362fa2b9cb1dc6329b" category="paragraph">구성의 각 DR 그룹에 대해 이 단계를 반복합니다.</block>
+  <block id="c5298fbea590442bc5dccc0f0c0a42ce" category="list-text">엔드 투 엔드 암호화가 활성화되어 있는지 확인합니다.</block>
+  <block id="450b20a9e1e9a7c24bdce85480153300" category="paragraph">종단 간 암호화를 비활성화하려면 다음 단계를 수행하십시오.</block>
+  <block id="77b90866eb30c2c119140e82f8c5f4d2" category="list-text">각 DR 그룹에서 종단간 암호화 사용 안 함:</block>
+  <block id="882fe58a6392388c2ce927c31a93371f" category="list-text">엔드 투 엔드 암호화가 비활성화되었는지 확인합니다.</block>
+  <block id="db03999c5b24c225561e85043c8ca2c1" category="paragraph">NVMe에 대한 MetroCluster IP 지원</block>
+  <block id="0c9f8df361f16ae4ec9468c24acaafae" category="paragraph">NVMe/TCP 프런트 엔드 호스트 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.</block>
+  <block id="21f44b7d67ca22b4dfdc5b37402d6176" category="inline-link-macro">MetroCluster 환경의 SAN 구성입니다</block>
+  <block id="0523cf29ce37abad9282f80ffd3f533e" category="paragraph"><block ref="0523cf29ce37abad9282f80ffd3f533e" category="inline-link-macro-rx"></block></block>
+  <block id="f09a5dc7d9c973e1f6ab3e9ffa36921c" category="paragraph">NVMe/FC 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.</block>
+  <block id="581b029a5b5e612bbb2ff34e6b1ff9ad" category="paragraph"><block ref="581b029a5b5e612bbb2ff34e6b1ff9ad" category="inline-link-rx"></block></block>
+  <block id="629ea23148e9d8c2d0f002e89411b05a" category="paragraph">새로운 MetroCluster 기능에 대해 알아보십시오.</block>
+  <block id="efd20e2b544e4614b2e657ac6783ec0a" category="paragraph">MetroCluster IP는 엔드 투 엔드 암호화를 지원합니다</block>
+  <block id="4a4b85199291f3e23fc84fb47fb5ca30" category="paragraph">AFF A400, FAS8300, FAS8700 시스템에서 엔드 투 엔드 암호화가 지원되어 MetroCluster IP 구성의 사이트 간에 NVlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화합니다.</block>
+  <block id="a9734ca6d9ffb317f9b6a802b2dbb3aa" category="inline-link-macro">MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다</block>
+  <block id="c39138b0d883de358017e1fce7fa55a9" category="paragraph"><block ref="c39138b0d883de358017e1fce7fa55a9" category="inline-link-macro-rx"></block></block>
+  <block id="aec0d8caac35e70ca6b42831fa957b4d" category="paragraph">AFF A800 및 AFF C800 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 증가</block>
+  <block id="cbd27762af6b4c6335bac75a098542ce" category="paragraph">4노드 MetroCluster IP 구성에서 AFF A800 및 AFF C800 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
+  <block id="2c18214fb090b3346dccf036f48c7f39" category="list-text">애그리게이트당 최대 FlexVol 볼륨 수가 200개에서 625개로 증가했습니다.</block>
+  <block id="3f35c7e20a8d7d81feeb64eb6d5afa09" category="list-text">노드당 최대 FlexVol 볼륨 수가 800개에서 1250개로 증가했습니다.</block>
+  <block id="b30d9c31e8ee4ad2f0b8474d6a8c7b5d" category="list-text">고가용성(HA) 쌍당 최대 FlexVol 볼륨 수가 1600개에서 2500개로 증가했습니다.</block>
+  <block id="34211e4d6128da1dfdf7db696c0d2aad" category="paragraph">AFF A900 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 인상</block>
+  <block id="84e9aa8f760c1f5f0f19cf4fc3153c4b" category="paragraph">4노드 MetroCluster IP 구성에서는 AFF A900 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
+  <block id="69cd959e02d2a7b70720f5426f4f0888" category="list-text">원래 시스템이 종단 간 암호화용으로 구성된 경우 대체 노드의 각 Loader 프롬프트에서 다음 bootarg를 설정합니다.</block>
+  <block id="635e42fd721973aab43465fb05d0c976" category="paragraph"><block ref="62c037d8665e336dd114412a0b756bfc" prefix="" category="inline-code"></block></block>
+  <block id="5a8c7594ee8269dda78a3c94154a49fc" category="doc">하드웨어 교체 및 새 컨트롤러 부팅</block>
+  <block id="81a393ca01b7355292a9de6a418b7506" category="section-title">재해 사이트에서 하드웨어를 교체합니다</block>
+  <block id="341755fab7492718abaee90d7addc0e1" category="section-title">이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID를 확인합니다</block>
+  <block id="7783c9328f785a62c6d922c7aee5f5bf" category="section-title">정상 사이트에서 교체 드라이브 격리(MetroCluster IP 구성)</block>
+  <block id="2b8101509ea4735a4334fe0f417a56e5" category="section-title">새 컨트롤러 모듈을 NetBoot합니다</block>
+  <block id="e766bf7ee3198b936508b04c961bee1c" category="section-title">교체 컨트롤러 모듈의 시스템 ID를 확인합니다</block>
+  <block id="853b9b549a9a87e8693e5e1457ccc627" category="section-title">원래 시스템에서 엔드 투 엔드 암호화가 활성화되었는지 확인합니다</block>
+  <block id="b6f65762cf35ba4ac4c9366142731eb4" category="paragraph">원래 시스템이 종단 간 암호화에 맞게 구성되었는지 확인해야 합니다.</block>
+  <block id="f900ea78fef7de22abe3c887295c3554" category="list-text">정상적인 사이트에서 다음 명령을 실행합니다.</block>
+  <block id="c1604d057494bf6abab3a40147fecf7c" category="paragraph"><block ref="eea57ee5f23bab30ed50dbeb23a75f4f" prefix="" category="inline-code"></block></block>
+  <block id="bd000f3bd62ff510f9146882628ce226" category="paragraph">암호화가 활성화된 경우 다음 출력이 표시됩니다.</block>
+  <block id="98db7bcad911ca4f97f6c512fd15dba5" category="admonition">을 참조하십시오 <block ref="21cf3ec43c40018cebe1c66cf55306b2" category="inline-link-macro-rx"></block> 지원되는 시스템의 경우.</block>
+  <block id="03e22cbc7470f9e3b1bc635479554ca9" category="sidebar">ONTAP 기능에 대한 MetroCluster 지원의 새로운 기능</block>
+  <block id="89753eb00eabd16383d2c616cc908230" category="sidebar">MetroCluster IP 플랫폼 및 스위치 지원의 새로운 기능</block>
 </blocks>

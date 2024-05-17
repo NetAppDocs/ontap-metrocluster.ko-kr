@@ -514,6 +514,10 @@ setenv bootarg.mcc.lun_part true
 ----
 
 
+. 원래 시스템이 종단 간 암호화용으로 구성된 경우 대체 노드의 각 Loader 프롬프트에서 다음 bootarg를 설정합니다.
++
+`setenv bootarg.mccip.encryption_enabled 1`
+
 . 원래 시스템이 ADP에 대해 구성된 경우 각 교체 노드의 로더 프롬프트에서 원래 시스템 ID(* 교체 컨트롤러 모듈의 시스템 ID가 * 아님) 및 노드의 DR 파트너의 시스템 ID를 설정합니다.
 +
 'setenv bootarg.MCC.local_config_id original-sysid'

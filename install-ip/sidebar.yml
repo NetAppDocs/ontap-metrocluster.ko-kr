@@ -100,6 +100,8 @@ entries:
     url: "/install-ip/task_sw_config_setup_ontap.html"
   - title: 클러스터를 MetroCluster 구성으로 구성합니다
     url: "/install-ip/task_sw_config_configure_clusters.html"
+  - title: 엔드 투 엔드 암호화 구성
+    url: "/install-ip/task-configure-end-to-end-encryption.html"
   - title: 전환, 복구, 스위치백을 확인합니다
     url: "/install-ip/task_sw_config_verify_switchover.html"
   - title: MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다

@@ -1202,4 +1202,5 @@ node_A_4-new      false
 ----
 
 
+. 시스템에서 엔드 투 엔드 암호화를 지원하는 경우 다음을 수행할 수 있습니다 link:../maintain/task-configure-encryption.html#enable-end-to-end-encryption["엔드 투 엔드 암호화 지원"] 새 DR 그룹에 추가합니다.
 
