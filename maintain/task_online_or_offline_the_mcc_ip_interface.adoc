@@ -1,0 +1,120 @@
+---
+permalink: maintain/task_online_or_offline_the_mcc_ip_interface.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, online, offline, ip, interface port 
+summary: 유지 관리를 수행할 때 MetroCluster IP 인터페이스 포트를 중지해야 할 수 있습니다. 
+---
+= 온라인 또는 오프라인 MetroCluster IP 인터페이스 포트
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+유지보수 작업을 수행할 때 MetroCluster IP 인터페이스 포트를 오프라인 또는 온라인 상태로 전환해야 할 수 있습니다.
+
+다음 단계에 따라 MetroCluster IP 인터페이스 포트를 오프라인 또는 온라인 상태로 전환할 수 있습니다.
+
+.단계
+. 권한 수준을 고급으로 설정합니다.
++
+[source, cli]
+----
+set -privilege advanced
+----
++
+* 예제 출력 *
+
++
+[listing]
+----
+Cluster A_1::> set -privilege advanced
+Warning: These advanced commands are potentially dangerous; use them only when
+         directed to do so by NetApp personnel.
+Do you want to continue? {y|n}: y
+----
+. MetroCluster IP 인터페이스 포트를 오프라인 상태로 전환합니다.
++
+[source, cli]
+----
+system ha interconnect link off -node <node_name> -link <link_num, 0 or 1>
+----
++
+* 예제 출력 *
+
++
+[listing]
+----
+Cluster_A1::*> system ha interconnect link off -node node-a1 -link 0
+----
++
+.. MetroCluster IP 인터페이스가 오프라인 상태인지 확인합니다.
++
+[source, cli]
+----
+Cluster_A1::*> system ha interconnect port show
+----
++
+* 예제 출력 *
+
++
+[listing]
+----
+Cluster_A1::*> system ha interconnect port show
+                               Physical  Link
+                Link           Layer     Layer      Physical   Physical  Active
+Node            Monitor  Port  State     State       Link Up  Link Down  Link
+--------------  -------  ----  --------  ---------  --------  ---------  ------
+node-a1        off
+                            0  disabled  down              4          3  false
+                            1  linkup    active            4          2  true
+node-a2        off
+                            0  linkup    active            4          2  true
+                            1  linkup    active            4          2  true
+2 entries were displayed.
+----
+
+
+. MetroCluster IP 인터페이스 포트를 온라인 상태로 전환합니다.
++
+[source, cli]
+----
+system ha interconnect link on -node <node_name> -link <link_num, 0 or 1>
+----
++
+* 예제 출력 *
+
++
+[listing]
+----
+Cluster_A1::*> system ha interconnect link on -node node-a1 -link 0
+----
++
+.. MetroCluster IP 인터페이스 포트가 온라인 상태인지 확인합니다.
++
+[source, cli]
+----
+Cluster_A1::*> system ha interconnect port show
+----
++
+* 예제 출력 *
+
++
+[listing]
+----
+Cluster_A1::*> system ha interconnect port show
+                               Physical  Link
+                Link           Layer     Layer      Physical   Physical  Active
+Node            Monitor  Port  State     State       Link Up  Link Down  Link
+--------------  -------  ----  --------  ---------  --------  ---------  ------
+node-a1        off
+                            0  linkup    active            5          3  true
+                            1  linkup    active            4          2  true
+node-a2        off
+                            0  linkup    active            4          2  true
+                            1  linkup    active            4          2  true
+2 entries were displayed.
+----
+
+
+

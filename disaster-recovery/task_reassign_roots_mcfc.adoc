@@ -38,7 +38,7 @@ summary: 재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하�
 
 
 
-이전 및 새 시스템 ID는 에서 식별되었습니다 link:task_replace_hardware_and_boot_new_controllers.html#determining-the-system-ids-and-vlan-ids-of-the-old-controller-modules["교체 컨트롤러 모듈의 시스템 ID 확인"].
+이전 및 새 시스템 ID는 에서 식별되었습니다 link:task_replace_hardware_and_boot_new_controllers.html["하드웨어 교체 및 새 컨트롤러 부팅"].
 
 이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
 

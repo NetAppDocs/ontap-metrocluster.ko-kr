@@ -4710,8 +4710,6 @@
   <block id="f62e57c2cd756c745cc8c3dc7899bd5d" category="list-text">원래 시스템이 ADP에 대해 구성된 경우 각 교체 노드의 로더 프롬프트에서 원래 시스템 ID(* 교체 컨트롤러 모듈의 시스템 ID가 * 아님) 및 노드의 DR 파트너의 시스템 ID를 설정합니다.</block>
   <block id="c980bf2e616d28dd836425b5a356ce9b" category="paragraph">'setenv bootarg.MCC.local_config_id original-sysid'</block>
   <block id="92670efa1844903ee0c7e2a809aaa8af" category="paragraph">'etenv bootarg.MCC.dr_partner dr_partner-sysid'</block>
-  <block id="a9daabfd9077566a0e834967642d46ae" category="inline-link-macro">이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID 확인</block>
-  <block id="a425862b94ecb00f4800b22c5dddfa63" category="paragraph"><block ref="a425862b94ecb00f4800b22c5dddfa63" category="inline-link-macro-rx"></block></block>
   <block id="8738db0f33e8971f5ce60fa831912fe3" category="paragraph">다음 예제는 node_a_1에서 시스템 ID를 설정하기 위한 명령을 보여줍니다.</block>
   <block id="bf344da7325a3258f9334bfb457fdaa2" category="list-text">node_A_1의 이전 시스템 ID는 4068741258입니다.</block>
   <block id="033a40861cdc97bad119d5799567c3af" category="list-text">node_B_1의 시스템 ID는 4068741254입니다.</block>
@@ -4908,8 +4906,6 @@
   <block id="23675c6086d437e89b00c51e2c7953b0" category="summary">재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하나 또는 둘 모두를 교체한 경우 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다.</block>
   <block id="a80638f76a6a6dafc444e1d6a0f9cf81" category="paragraph">재해 사이트에서 컨트롤러 모듈 또는 NVRAM 카드 중 하나 또는 둘 모두를 교체한 경우 시스템 ID가 변경되었으며 루트 애그리게이트에 속한 디스크를 교체 컨트롤러 모듈에 재할당해야 합니다.</block>
   <block id="5240450a2525b228e6d6ffeb304e12e9" category="paragraph">노드가 전환 모드에 있고 복구가 완료되었기 때문에 이 섹션에서는 재해 사이트의 pool1에 있는 루트 애그리게이트를 포함하는 디스크만 재할당합니다. 현재 이전 시스템 ID가 소유한 유일한 디스크입니다.</block>
-  <block id="51b67fd3c27836fe854876631b03708d" category="inline-link-macro">교체 컨트롤러 모듈의 시스템 ID 확인</block>
-  <block id="ec6baca39edfa454417f6efd043215c9" category="paragraph">이전 및 새 시스템 ID는 에서 식별되었습니다 <block ref="05dda3d9932a412ba342505a3437a308" category="inline-link-macro-rx"></block>.</block>
   <block id="0ce159ef649591974fe60d01c47f9f48" category="cell">노드 수</block>
   <block id="aaa604aee4f1d55f642aae75e1420a87" category="paragraph">1574774991</block>
   <block id="8d7b3d6b83c0a517eac07e1aac94b773" category="paragraph">변경되지 않음</block>
@@ -12542,7 +12538,6 @@
   <block id="bc66e40e6d2b679666709d4696a3e3a0" category="cell">타이브레이커 버전</block>
   <block id="2ff01ce7887ede183a0dcb4bf579a040" category="cell">CentOS 7 - 7.9</block>
   <block id="e409cbaf30133c40afd8ba79b71e06ee" category="paragraph">42번, 포트 12부터 15까지 Brocade 7840 스위치의 두 번째 MetroCluster 또는 DR 그룹에 예약되어 있습니다.</block>
-  <block id="2a8e60d3a0b3d603c27fa9c4562178bf" category="summary">NetApp MetroCluster 구성에서는 어레이 기반 클러스터링을 동기식 복제와 결합하여 지속적인 가용성을 제공하고 모든 미션 크리티컬 데이터를 트랜잭션별로 즉시 복제합니다.</block>
   <block id="99d7ea00899cf98fde6ae4bd7a763fe6" category="list-text">AUSO(Automatic Unplanned Switchover) 장애 도메인의 상태를 확인합니다.</block>
   <block id="914c0f805af7b6a979c9b14a8fca637d" category="admonition">다음 출력 예는 ONTAP 9.13.1 이상에 적용됩니다. ONTAP 9.12.1 이하 버전의 경우 AUSO 오류 도메인 상태는 이어야 합니다<block ref="8371e13c4fc64771e634f39be50ec198" prefix=" " category="inline-code"></block>.</block>
   <block id="1d2738c61f2ddb3b312cabca3378259b" category="list-text">필요에 따라 MetroCluster 자동 강제 전환을 구성합니다.</block>
@@ -13333,7 +13328,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b5b517b5bd160188f72a49194aee565c" category="paragraph">자동 부팅이 활성화된 경우 키를 누릅니다<block ref="08102569ee3581db669c9d763e14b983" prefix=" " category="inline-code"></block> 컨트롤러의 자동 부팅을 중지합니다.</block>
   <block id="235d6d36d1eabe510af7ea0ec5e96c6b" category="paragraph">같은 명령을 사용할 수 있습니다<block ref="2aa3751083baf48c1e1ddef8df4ddcc3" prefix=" " category="inline-code"></block> ATTO CLI에서.</block>
   <block id="480cf83fd6c463ccef2ed2a9d0dce2c4" category="list-text">를 입력합니다<block ref="bedfcd4488b13f5b7062e121a6a8baa5" prefix=" " category="inline-code"></block> 포트를 영구적으로 사용하도록 설정하는 명령입니다. 이 작업은 정상 작동 사이트의 두 스위치에서 수행해야 합니다.</block>
-  <block id="9d1a338762e03c980c82e8098eb03744" category="list-text">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다. 오프라인 플렉스를 다시 온라인 상태로 전환합니다. 이렇게 하면 재동기화 작업이 다시 시작되고 SyncMirror가 다시 설정됩니다.</block>
   <block id="9f6a23c1abc971d714730192ce961b96" category="paragraph">의 지침을 따릅니다 <block ref="9c0d52e0ce7a57d643217990aba10043" category="inline-link-macro-rx"></block> MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.</block>
   <block id="0b4bc6296d77be28e33d3b50e0ea0797" category="paragraph"><block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block></block>
   <block id="e49bc35e0118f2b5a5904c13e1833761" category="section-title">ONTAP 9.3.x 이하를 실행하는 구성에서 FiberBridge 7500N의 펌웨어 업데이트</block>
@@ -13681,43 +13675,26 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="18bd3543357b4fa11f6a58101dfa61a5" category="sidebar">Tiebreaker를 설치합니다</block>
   <block id="d2875782347edc6066d3025cecc9df38" category="sidebar">중재자 설치(MetroCluster IP만 해당)</block>
   <block id="ade01a5a398372194a42c36e9f5279ac" category="sidebar">유지 관리</block>
-  <block id="7b8e5f5947a6dadc276f09b5a095667d" category="sidebar">MetroCluster FC 구성에서 FC 스위치를 유지 관리 및 교체합니다.</block>
   <block id="7f5d1cf6b92b5f6a9e5fe290c7d568fa" category="sidebar">IP 스위치</block>
-  <block id="e9e6a0d40b20996536edcfae7b0ca501" category="sidebar">MetroCluster IP 구성에서 IP 스위치를 유지 관리하고 교체합니다.</block>
   <block id="5360721f5d15a4a50d1c0ea177551d33" category="sidebar">ATTO 브리지</block>
-  <block id="6659ad060d95c49da27c02efe70880ee" category="sidebar">MetroCluster FC 구성에서 ATTO FC-to-SAS 브리지를 유지 관리하고 교체합니다.</block>
   <block id="c89a58741e7240ddf3c43ec7dbb21cd7" category="sidebar">드라이브 쉘프</block>
-  <block id="bb2a6473813b98ffe9edacc863bb749e" category="sidebar">드라이브 쉘프를 핫 애드인으로 무중단 교체 MetroCluster FC 구성</block>
   <block id="9deb979aa141eacec55a34ce9dfd4cc9" category="sidebar">RCF 파일</block>
   <block id="277ccac115bb10401c3dbe796a5fd555" category="sidebar">MetroCluster RCF 파일</block>
-  <block id="f4ff45e882d7ee5ad1b4a9e07301850d" category="sidebar">MetroCluster 스위치용 RCF 파일을 생성하거나 다운로드합니다.</block>
   <block id="d59048f21fd887ad520398ce677be586" category="sidebar">자세한 정보</block>
   <block id="b92dd7cb5813aceca4052255be1046a0" category="sidebar">NetApp MetroCluster 솔루션 아키텍처 및 설계 | TR-4705</block>
-  <block id="c8ed4eb56c00a193e2bf85d5a38119ee" category="sidebar">MetroCluster FC 솔루션을 이해합니다.</block>
   <block id="d821955413ef2ce3b63ac32371a5186e" category="sidebar">MetroCluster IP 솔루션 아키텍처 및 설계 | TR-4689</block>
-  <block id="33d6c0f3568f32d65b84533fcc9dcbcb" category="sidebar">MetroCluster IP 솔루션 이해</block>
   <block id="3d5cf400e4fb829207d0ab81798b6587" category="sidebar">업그레이드, 확장, 변환</block>
   <block id="64cd3f6f5347e9d6c92e09aa1c656f87" category="sidebar">하드웨어 업그레이드 및 업데이트</block>
-  <block id="fdc7fb09ec4ebc533362a55d221d305f" category="sidebar">MetroCluster 구성에서 컨트롤러를 업그레이드합니다.</block>
   <block id="e912938f380bdbc5125a46cb6974c985" category="sidebar">2노드 MetroCluster를 확장합니다</block>
-  <block id="c495f5fb55d923c4b5bdcc9031d17504" category="sidebar">MetroCluster 구성에 컨트롤러를 추가하여 4노드 또는 8노드 구성을 생성합니다.</block>
   <block id="8b9fb0a48d871747071a5767bb11c3c9" category="sidebar">4노드 MetroCluster를 확장합니다</block>
-  <block id="f0de1d093d27614c73e83446489eec92" category="sidebar">MetroCluster 구성에 컨트롤러를 추가하여 8노드 구성을 생성합니다.</block>
   <block id="daf3fcb291d6eb9e42a7777197caa458" category="sidebar">MetroCluster FC를 MetroCluster IP로 변환합니다</block>
-  <block id="689a3f6927feed4862b6b5b03d4f0018" category="sidebar">기존 MetroCluster IP 구성을 MetroCluster IP 구성으로 전환합니다.</block>
   <block id="822970998ef8866cd59ed6ba8d63af83" category="sidebar">MetroCluster IP RCF 파일을 업그레이드합니다</block>
-  <block id="b2899a6511f7a2ac6656022f75581e5a" category="sidebar">MetroCluster IP 구성에서 스위치 RCF 파일을 업그레이드합니다.</block>
   <block id="b7c02f1bc7ffc889ddb9e99702663c56" category="sidebar">ATTO 브리지 펌웨어</block>
   <block id="ddac5beff5f77bf22595caa98bac08f9" category="sidebar">FiberBridge 7600N</block>
-  <block id="7189e471dda7f4816814f7b74c6948d1" category="sidebar">7600 브리지에 대한 펌웨어를 다운로드합니다.</block>
   <block id="dcb741f9e6e5d6050aeb3d8fd347e9fd" category="sidebar">FiberBridge 7500N</block>
-  <block id="81defdfe6f2018754b9c90215acaf8c1" category="sidebar">7500 브리지용 펌웨어를 다운로드합니다.</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
   <block id="fa0344a10c89a05b4e9232391d5feb01" category="sidebar">NetApp Config Advisor를 참조하십시오</block>
-  <block id="7bde48e6b0d33c17d731b283a4674428" category="sidebar">구성 및 케이블 연결을 확인합니다.</block>
-  <block id="d5552b01bf48dde88719269e524ddbb9" category="sidebar">하드웨어가 지원되는지 확인합니다.</block>
   <block id="3f2b90ec5a9b43745b9c8c9fedf48d8d" category="sidebar">NetApp 지원 기술 자료</block>
-  <block id="b2cdf9234a2dabbbb6acb6f71e098209" category="sidebar">지원 질문에 대한 답변을 검색합니다.</block>
   <block id="67ed9530c4069b662839f89c94d4a160" category="inline-link-macro">종단간 암호화를 비활성화합니다</block>
   <block id="ade87983ca16ac3bdbf2b32cf6e9b0d5" category="list-text">시스템에서 활성화되어 있는 경우 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block> 컨트롤러 업그레이드를 수행하기 전에.</block>
   <block id="3d8fb38a661b136fb35b34201d24ef76" category="section-title">엔드 투 엔드 암호화 구성</block>
@@ -13758,7 +13735,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="efd20e2b544e4614b2e657ac6783ec0a" category="paragraph">MetroCluster IP는 엔드 투 엔드 암호화를 지원합니다</block>
   <block id="4a4b85199291f3e23fc84fb47fb5ca30" category="paragraph">AFF A400, FAS8300, FAS8700 시스템에서 엔드 투 엔드 암호화가 지원되어 MetroCluster IP 구성의 사이트 간에 NVlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화합니다.</block>
   <block id="a9734ca6d9ffb317f9b6a802b2dbb3aa" category="inline-link-macro">MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다</block>
-  <block id="c39138b0d883de358017e1fce7fa55a9" category="paragraph"><block ref="c39138b0d883de358017e1fce7fa55a9" category="inline-link-macro-rx"></block></block>
   <block id="aec0d8caac35e70ca6b42831fa957b4d" category="paragraph">AFF A800 및 AFF C800 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 증가</block>
   <block id="cbd27762af6b4c6335bac75a098542ce" category="paragraph">4노드 MetroCluster IP 구성에서 AFF A800 및 AFF C800 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
   <block id="2c18214fb090b3346dccf036f48c7f39" category="list-text">애그리게이트당 최대 FlexVol 볼륨 수가 200개에서 625개로 증가했습니다.</block>
@@ -13782,4 +13758,20 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="98db7bcad911ca4f97f6c512fd15dba5" category="admonition">을 참조하십시오 <block ref="21cf3ec43c40018cebe1c66cf55306b2" category="inline-link-macro-rx"></block> 지원되는 시스템의 경우.</block>
   <block id="03e22cbc7470f9e3b1bc635479554ca9" category="sidebar">ONTAP 기능에 대한 MetroCluster 지원의 새로운 기능</block>
   <block id="89753eb00eabd16383d2c616cc908230" category="sidebar">MetroCluster IP 플랫폼 및 스위치 지원의 새로운 기능</block>
+  <block id="1a8f5be2d2808b5d69a091661c1fdb57" category="paragraph"><block ref="1a8f5be2d2808b5d69a091661c1fdb57" category="inline-link-macro-rx"></block></block>
+  <block id="d8654b161561461c8ec014d5d660db0d" category="list-text">스토리지가 표시되는지 확인합니다.</block>
+  <block id="8c31a85fbae513d968c02205e8c210d4" category="list-text">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다. 오프라인 플렉스를 다시 온라인 상태로 전환하여 재동기화 작업을 다시 시작하고 SyncMirror를 다시 설정합니다.</block>
+  <block id="262891df0c6ebb50acbcb126fb5c8761" category="summary">유지 관리를 수행할 때 MetroCluster IP 인터페이스 포트를 중지해야 할 수 있습니다.</block>
+  <block id="4261a47766ada379b26b2c3a719f75b2" category="doc">온라인 또는 오프라인 MetroCluster IP 인터페이스 포트</block>
+  <block id="cb6838ec9d371f50679bbbc58c45370a" category="paragraph">유지보수 작업을 수행할 때 MetroCluster IP 인터페이스 포트를 오프라인 또는 온라인 상태로 전환해야 할 수 있습니다.</block>
+  <block id="c8611b3438fb84a6c442fe7b05f52a15" category="paragraph">다음 단계에 따라 MetroCluster IP 인터페이스 포트를 오프라인 또는 온라인 상태로 전환할 수 있습니다.</block>
+  <block id="3c84f1de018751821bb0b4202f14bf0a" category="list-text">권한 수준을 고급으로 설정합니다.</block>
+  <block id="6ca857f7a44a21cfffda914cf9549710" category="paragraph">* 예제 출력 *</block>
+  <block id="260ab9e602296cf4759b74ba30cbd850" category="list-text">MetroCluster IP 인터페이스 포트를 오프라인 상태로 전환합니다.</block>
+  <block id="fdc6d534c52f6619e898db680403f69b" category="list-text">MetroCluster IP 인터페이스가 오프라인 상태인지 확인합니다.</block>
+  <block id="2d393525a6ebfc702ca856ed72512167" category="list-text">MetroCluster IP 인터페이스 포트를 온라인 상태로 전환합니다.</block>
+  <block id="0ab751f551b18333e82474f5ca9b4122" category="list-text">MetroCluster IP 인터페이스 포트가 온라인 상태인지 확인합니다.</block>
+  <block id="e387b7f8f98fe6ef00364ba0984c08a9" category="paragraph">이전 및 새 시스템 ID는 에서 식별되었습니다 <block ref="ce17cf746f0f051ba197f9e3096bf7f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="124ba57298a92342f8aec06ebcfb6415" category="inline-link-macro">이전 컨트롤러 모듈의 시스템 ID를 확인합니다</block>
+  <block id="3ac27de4b4347c98785ff06870fe7221" category="paragraph"><block ref="3ac27de4b4347c98785ff06870fe7221" category="inline-link-macro-rx"></block></block>
 </blocks>

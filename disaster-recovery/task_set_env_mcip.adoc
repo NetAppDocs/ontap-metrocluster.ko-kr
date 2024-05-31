@@ -526,7 +526,7 @@ setenv bootarg.mcc.lun_part true
 'etenv bootarg.MCC.dr_partner dr_partner-sysid'
 
 +
-link:task_replace_hardware_and_boot_new_controllers.html#determining-the-system-ids-of-the-replacement-controller-modules["이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID 확인"]
+link:task_replace_hardware_and_boot_new_controllers.html#determine-the-system-ids-and-vlan-ids-of-the-old-controller-modules["이전 컨트롤러 모듈의 시스템 ID를 확인합니다"]
 
 +
 .. node_a_1에서 변수를 설정합니다.

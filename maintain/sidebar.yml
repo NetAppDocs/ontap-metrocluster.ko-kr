@@ -58,6 +58,8 @@ entries:
   entries:
   - title: IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다
     url: "/maintain/task_replace_an_ip_switch.html"
+  - title: 온라인 또는 오프라인 MetroCluster IP 인터페이스 포트
+    url: "/maintain/task_online_or_offline_the_mcc_ip_interface.html"
   - title: MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다
     url: "/maintain/task_upgrade_firmware_on_mcc_ip_switches.html"
   - title: MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다

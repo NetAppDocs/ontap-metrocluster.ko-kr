@@ -28,7 +28,7 @@ sidebar:
   - section: upgrade
   - section: disaster-recovery
   - title: 법적 고지
-    url: "/legal_notices.html"
+    url: "/legal-notices.html"
 product-family:
   name: ONTAP
   repo: ontap-family

@@ -331,10 +331,10 @@ Cisco FC 스위치의 경우...
 다음 장비는 표시된 순서대로 꺼야 합니다.
 
 +
-** MetroCluster FC 스위치
 ** 스토리지 컨트롤러 - 스토리지 컨트롤러는 현재 에 있어야 합니다 `LOADER` 프롬프트, 전원을 완전히 꺼야 합니다.
-** 스토리지 쉘프
+** MetroCluster FC 스위치
 ** ATTO FiberBridges(있는 경우)
+** 스토리지 쉘프
 
 
 
@@ -567,10 +567,6 @@ switch_A_1# copy running-config startup-config
 
 
 . FC 스위치에서 ISL을 사용하지 않도록 설정합니다.
-. 스토리지 컨트롤러의 전원을 켜고 가 표시될 때까지 기다립니다 `LOADER` 메시지가 표시됩니다. 컨트롤러는 완전히 부팅되지 않아야 합니다.
-+
-자동 부팅이 활성화된 경우 키를 누릅니다 `Ctrl+C` 컨트롤러의 자동 부팅을 중지합니다.
-
 . 쉘프 전원을 켜고 전원을 완전히 켤 때까지 충분한 시간을 둡니다.
 . FiberBridge 브리지의 전원을 켭니다.
 +
@@ -669,7 +665,15 @@ switch_A_1#
 
 
 |===
-. 남아 있는 사이트에서 스토리지가 표시되는지 확인합니다. 오프라인 플렉스를 다시 온라인 상태로 전환합니다. 이렇게 하면 재동기화 작업이 다시 시작되고 SyncMirror가 다시 설정됩니다.
+. 스토리지가 표시되는지 확인합니다.
++
+.. 남아 있는 사이트에서 스토리지가 표시되는지 확인합니다. 오프라인 플렉스를 다시 온라인 상태로 전환하여 재동기화 작업을 다시 시작하고 SyncMirror를 다시 설정합니다.
+.. 유지 관리 모드의 노드에서 로컬 스토리지가 표시되는지 확인합니다.
++
+'디스크 쇼-v'
+
+
+
 . MetroCluster 구성을 다시 설정합니다.
 +
 의 지침을 따릅니다 link:../disaster-recovery/task_recover_from_a_non_controller_failure_mcc_dr.html#verifying-that-your-system-is-ready-for-a-switchback["시스템 스위치백을 수행할 준비가 되었는지 확인합니다"] MetroCluster 구성에 따라 복구 및 스위치백 작업을 수행합니다.
