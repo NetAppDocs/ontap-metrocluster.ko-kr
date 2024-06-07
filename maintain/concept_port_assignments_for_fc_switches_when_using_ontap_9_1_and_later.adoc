@@ -3972,7 +3972,7 @@ ISL 4
 
 == ONTAP 9.4 이상을 실행하는 MetroCluster 4노드 및 8노드 구성에서 Cisco 9132T 포트를 사용합니다
 
-다음 표에는 Cisco 9132T 스위치의 포트 사용량이 나와 있습니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.
+다음 표에서는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.
 
 
 NOTE: 8노드 구성의 경우 RCF가 제공되지 않기 때문에 수동으로 조닝을 수행해야 합니다.
@@ -3980,392 +3980,18 @@ NOTE: 8노드 구성의 경우 RCF가 제공되지 않기 때문에 수동으로
 |===
 
 
-7+| FC 포트(FC1 및 FC2)를 모두 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 구성 
+4+| Cisco 9132T(LEM 1개 포함) 
 
 
-7+| MetroCluster 1 또는 DR 그룹 1 
+4+| MetroCluster 1 또는 DR 그룹 1 
 
 
-4+|  2+| 4노드 | 8개 노드 
+3+|  | 4노드 
 
 
-2+| 구성 요소 | 포트 | FC_SWITCH에 연결... | 9132T(1x LEM) | 9132T(2x LEM) | 9132T(2x LEM) 
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | FC_SWITCH에 연결... | 9132T(1x LEM) 
 
 
- a| 
-컨트롤러_x_1
- a| 
-FC-VI 포트 A
- a| 
-1
- a| 
-LEM1-1
- a| 
-LEM1-1
- a| 
-LEM1-1
-
-
-
- a| 
-FC-VI 포트 b
- a| 
-2
- a| 
-LEM1-1
- a| 
-LEM1-1
- a| 
-LEM1-1
-
-
-
- a| 
-FC-VI 포트 c
- a| 
-1
- a| 
-LEM1-2
- a| 
-LEM1-2
- a| 
-LEM1-2
-
-
-
- a| 
-FC-VI 포트 d
- a| 
-2
- a| 
-LEM1-2
- a| 
-LEM1-2
- a| 
-LEM1-2
-
-
-
- a| 
-HBA 포트 A
- a| 
-1
- a| 
-LEM1-5
- a| 
-LEM1-5
- a| 
-LEM1-3
-
-
-
- a| 
-HBA 포트 b
- a| 
-2
- a| 
-LEM1-5
- a| 
-LEM1-5
- a| 
-LEM1-3
-
-
-
- a| 
-HBA 포트 c
- a| 
-1
- a| 
-LEM1-6
- a| 
-LEM1-6
- a| 
-LEM1-4
-
-
-
- a| 
-HBA 포트 d
- a| 
-2
- a| 
-LEM1-6
- a| 
-LEM1-6
- a| 
-LEM1-4
-
-
-
- a| 
-컨트롤러_x_2
- a| 
-FC-VI 포트 A
- a| 
-1
- a| 
-LEM1-7
- a| 
-LEM1-7
- a| 
-LEM1-5
-
-
-
- a| 
-FC-VI 포트 b
- a| 
-2
- a| 
-LEM1-7
- a| 
-LEM1-7
- a| 
-LEM1-5
-
-
-
- a| 
-FC-VI 포트 c
- a| 
-1
- a| 
-LEM1-8
- a| 
-LEM1-8
- a| 
-LEM1-6
-
-
-
- a| 
-FC-VI 포트 d
- a| 
-2
- a| 
-LEM1-8
- a| 
-LEM1-8
- a| 
-LEM1-6
-
-
-
- a| 
-HBA 포트 A
- a| 
-1
- a| 
-LEM1-11
- a| 
-LEM1-11
- a| 
-LEM1-7
-
-
-
- a| 
-HBA 포트 b
- a| 
-2
- a| 
-LEM1-11
- a| 
-LEM1-11
- a| 
-LEM1-7
-
-
-
- a| 
-HBA 포트 c
- a| 
-1
- a| 
-LEM1-12
- a| 
-LEM1-12
- a| 
-LEM1-8
-
-
-
- a| 
-HBA 포트 d
- a| 
-2
- a| 
-LEM1-12
- a| 
-LEM1-12
- a| 
-LEM1-8
-
-
-
-7+| MetroCluster 2 또는 DR 그룹 2 
-
-
- a| 
-컨트롤러_x_3
- a| 
-FC-VI 포트 A
- a| 
-1
-|  |   a| 
-LEM2-1
-
-
-
- a| 
-FC-VI 포트 b
- a| 
-2
-|  |   a| 
-LEM2-1
-
-
-
- a| 
-FC-VI 포트 c
- a| 
-1
-|  |   a| 
-LEM2-2
-
-
-
- a| 
-FC-VI 포트 d
- a| 
-2
-|  |   a| 
-LEM2-2
-
-
-
- a| 
-HBA 포트 A
- a| 
-1
-|  |   a| 
-LEM2-3
-
-
-
- a| 
-HBA 포트 b
- a| 
-2
-|  |   a| 
-LEM2-3
-
-
-
- a| 
-HBA 포트 c
- a| 
-1
-|  |   a| 
-LEM2-4
-
-
-
- a| 
-HBA 포트 d
- a| 
-2
-|  |   a| 
-LEM2-4
-
-
-
- a| 
-컨트롤러_x_4
- a| 
-FC-VI-1 포트 A
- a| 
-1
-|  |   a| 
-LEM2-5를 참조하십시오
-
-
-
- a| 
-FC-VI-1 포트 b
- a| 
-2
-|  |   a| 
-LEM2-5를 참조하십시오
-
-
-
- a| 
-FC-VI-1 포트 c
- a| 
-1
-|  |   a| 
-LEM2-6을 참조하십시오
-
-
-
- a| 
-FC-VI-1 포트 d
- a| 
-2
-|  |   a| 
-LEM2-6을 참조하십시오
-
-
-
- a| 
-HBA 포트 A
- a| 
-1
-|  |   a| 
-LEM2-7을 참조하십시오
-
-
-
- a| 
-HBA 포트 b
- a| 
-2
-|  |   a| 
-LEM2-7을 참조하십시오
-
-
-
- a| 
-HBA 포트 c
- a| 
-1
-|  |   a| 
-LEM2-8을 참조하십시오
-
-
-
- a| 
-HBA 포트 d
- a| 
-2
-|  |   a| 
-LEM2-8을 참조하십시오
-
-
-
-7+| MetroCluster 1 또는 DR 그룹 1 
-
-
-4+|  2+| 4노드 | 8개 노드 
-
-
-2+| FC 포트 2개를 사용하는 FiberBridge 7500N | 포트 | FC_SWITCH에 연결... | 9132T(1x LEM) | 9132T(2x LEM) | 9132T(2x LEM) 
-
-
- a| 
-스택 1
  a| 
 Bridge_x_1a
  a| 
@@ -4374,10 +4000,6 @@ FC1
 1
  a| 
 LEM1-13
- a| 
-LEM1-13
- a| 
-LEM1-9
 
 
 
@@ -4387,8 +4009,235 @@ FC2
 2
  a| 
 LEM1-13
+
+
+
+ a| 
+Bridge_x_1b
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-14
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-14
+
+|===
+
+NOTE: 1개의 LEM 모듈이 있는 9132T 스위치를 사용하면 1개의 브리지 스택만 지원됩니다.
+
+|===
+
+
+4+| LEM 2개 및 4노드 MetroCluster 또는 DR 그룹 1개가 포함된 Cisco 9132T 
+
+
+4+| MetroCluster 1 또는 DR 그룹 1 
+
+
+3+|  | 4노드 
+
+
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | FC_SWITCH에 연결... | 9132T(2x LEM) 
+
+
+ a| 
+Bridge_x_1a
+ a| 
+FC1
+ a| 
+1
  a| 
 LEM1-13
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-13
+
+
+
+ a| 
+Bridge_x_1b
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-14
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-14
+
+
+
+ a| 
+bridge_x_2a
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-15
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-15
+
+
+
+ a| 
+Bridge_x_2b
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-16
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-16
+
+
+
+ a| 
+Bridge_x_3a
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM2-1
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM2-1
+
+
+
+ a| 
+Bridge_x_3b
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM2-2
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM2-2
+
+
+
+ a| 
+브리지 x _ 야
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM2-3
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM2-3
+
+
+
+ a| 
+Bridge_x_yb입니다
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM2-4
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM2-4
+
+|===
+
+NOTE: 4노드 구성에서 LEM 2개가 있는 LEM2-5부터 LEM2-8까지 LEM2-8까지 추가 브리지를 연결할 수 있습니다.
+
+|===
+
+
+4+| 4노드 MetroCluster 2개 또는 DR 그룹 2개가 포함된 8노드 MetroCluster 1개가 포함된 Cisco 9132T 
+
+
+4+| MetroCluster 1 또는 DR 그룹 1 
+
+
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | FC_SWITCH에 연결... | 9132T(2x LEM) 
+
+
+ a| 
+Bridge_x_1a
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-9
+
+
+
+ a| 
+FC2
+ a| 
+2
  a| 
 LEM1-9
 
@@ -4401,10 +4250,6 @@ FC1
  a| 
 1
  a| 
-LEM1-14
- a| 
-LEM1-14
- a| 
 LEM1-10
 
 
@@ -4414,24 +4259,16 @@ FC2
  a| 
 2
  a| 
-LEM1-14
- a| 
-LEM1-14
- a| 
 LEM1-10
 
 
 
- a| 
-스택 2
  a| 
 bridge_x_2a
  a| 
 FC1
  a| 
 1
-|   a| 
-LEM1-15
  a| 
 LEM1-11
 
@@ -4441,8 +4278,6 @@ LEM1-11
 FC2
  a| 
 2
-|   a| 
-LEM1-15
  a| 
 LEM1-11
 
@@ -4454,8 +4289,6 @@ Bridge_x_2b
 FC1
  a| 
 1
-|   a| 
-LEM1-16
  a| 
 LEM1-12
 
@@ -4465,23 +4298,23 @@ LEM1-12
 FC2
  a| 
 2
-|   a| 
-LEM1-16
  a| 
 LEM1-12
 
 
 
- a| 
-스택 3
+4+| MetroCluster 2 또는 DR 그룹 2 
+
+
+| FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N | 포트 | FC_SWITCH에 연결... | 9132T(2x LEM) 
+
+
  a| 
 Bridge_x_3a
  a| 
 FC1
  a| 
 1
-|   a| 
-LEM2-1
  a| 
 LEM2-9
 
@@ -4491,8 +4324,6 @@ LEM2-9
 FC2
  a| 
 2
-|   a| 
-LEM2-1
  a| 
 LEM2-9
 
@@ -4504,8 +4335,6 @@ Bridge_x_3b
 FC1
  a| 
 1
-|   a| 
-LEM2-2
  a| 
 LEM2-10
 
@@ -4515,23 +4344,17 @@ LEM2-10
 FC2
  a| 
 2
-|   a| 
-LEM2-2
  a| 
 LEM2-10
 
 
 
  a| 
-스택 y
- a| 
 브리지 x _ 야
  a| 
 FC1
  a| 
 1
-|   a| 
-LEM2-3
  a| 
 LEM2-11
 
@@ -4541,8 +4364,6 @@ LEM2-11
 FC2
  a| 
 2
-|   a| 
-LEM2-3
  a| 
 LEM2-11
 
@@ -4554,8 +4375,6 @@ Bridge_x_yb입니다
 FC1
  a| 
 1
-|   a| 
-LEM2-4
  a| 
 LEM2-12
 
@@ -4565,20 +4384,13 @@ LEM2-12
 FC2
  a| 
 2
-|   a| 
-LEM2-4
  a| 
 LEM2-12
 
 |===
-[NOTE]
-====
-* 4노드 구성에서 LEM 2개가 있는 LEM2-5부터 LEM2-8까지 LEM2-8까지 추가 브리지를 연결할 수 있습니다.
-* 8노드 구성에서 LEM2-13 포트부터 LEM2-16 IN 9132T 스위치까지 2개의 LEM으로 추가 브리지를 연결할 수 있습니다.
-* 1개의 LEM 모듈이 있는 9132T 스위치를 사용하면 1개의 브리지 스택만 지원됩니다.
 
+NOTE: 8노드 구성에서 LEM2-13 포트부터 LEM2-16 IN 9132T 스위치까지 2개의 LEM으로 추가 브리지를 연결할 수 있습니다.
 
-====
 
 
 == ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 4노드 및 8노드 구성의 ISL용 Cisco 9132T 포트 사용

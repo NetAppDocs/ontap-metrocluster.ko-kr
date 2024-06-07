@@ -12755,12 +12755,7 @@
   <block id="da1fe90f1a7c8d5426c9fb653143159c" category="inline-xref">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 Cisco 9132T의 ISL 포트 사용</block>
   <block id="ebaff03f6ed502f4a413a1ce08e7b523" category="admonition">Cisco 9132T의 경우 를 참조하십시오 <block ref="745f667c2207ac60e33bebf6a26d4908" category="inline-xref-macro-rx"></block>.</block>
   <block id="b6adc54642d6ea9466bf5956bfd90921" category="section-title">ONTAP 9.4 이상을 실행하는 MetroCluster 4노드 및 8노드 구성에서 Cisco 9132T 포트를 사용합니다</block>
-  <block id="34adac1b835db756e4bda81aeab17aee" category="paragraph">다음 표에는 Cisco 9132T 스위치의 포트 사용량이 나와 있습니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.</block>
   <block id="65ac5210a13e16ff0c09cc508d39f010" category="admonition">8노드 구성의 경우 RCF가 제공되지 않기 때문에 수동으로 조닝을 수행해야 합니다.</block>
-  <block id="24ce95dff7cdbe82f47d82b0c5e3c3bd" category="paragraph">LEM2-5를 참조하십시오</block>
-  <block id="d1219ba7b45f6028da9ef53dc1d962dc" category="paragraph">LEM2-6을 참조하십시오</block>
-  <block id="d72635ed8e78c8bf248888485d54fefc" category="paragraph">LEM2-7을 참조하십시오</block>
-  <block id="bf56acff15a22deda5e2b827afffd42e" category="paragraph">LEM2-8을 참조하십시오</block>
   <block id="148fa39b011d75fbf87b5c6a6e4eb7ac" category="list-text">4노드 구성에서 LEM 2개가 있는 LEM2-5부터 LEM2-8까지 LEM2-8까지 추가 브리지를 연결할 수 있습니다.</block>
   <block id="1b3edf8d6e61a53c159f115111d76631" category="list-text">8노드 구성에서 LEM2-13 포트부터 LEM2-16 IN 9132T 스위치까지 2개의 LEM으로 추가 브리지를 연결할 수 있습니다.</block>
   <block id="7aff2de5bc0a96f53245830100b31a76" category="section-title">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 4노드 및 8노드 구성의 ISL용 Cisco 9132T 포트 사용</block>
@@ -13274,7 +13269,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f9805d94598bd6a841fddbff1c6ddc7b" category="paragraph">다음 표는 FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다. FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지의 경우 FC1 또는 FC2를 FC1로 표시된 포트에 케이블로 연결할 수 있습니다. 25-48번 포트를 사용하여 추가 브리지를 연결할 수 있습니다.</block>
   <block id="126b9e3a8501d897a2356aba96828af6" category="cell">FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지</block>
   <block id="69abf6cf7deeba7ace2f747f7661208f" category="cell">FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N</block>
-  <block id="1b3c29a52da9672be1cb789bb6d06ae8" category="cell">FC 포트 2개를 사용하는 FiberBridge 7500N</block>
   <block id="0351289236b3260f9d0c35b64f62689c" category="paragraph">하나의 FC 포트(FC1 또는 FC2)만 사용하여 FiberBridge 7500N 또는 7600N 브리지의 케이블 연결을 따를 수 있습니다. 4개의 이니시에이터를 사용하는 대신 2개의 이니시에이터만 연결하고 다른 2개는 스위치 포트에 연결된 상태로 두십시오.</block>
   <block id="4883312b6c36aa2f1d5ce2e2f17638bd" category="paragraph">조닝을 수동으로 수행하는 경우 FC 포트(FC1 또는 FC2) 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 사용되는 조닝을 따르십시오. 이 시나리오에서는 Fabric당 각 존 구성원에 2개가 아닌 1개의 이니시에이터 포트가 추가됩니다.</block>
   <block id="1e008e69dc731ad28df3d6927462a7f3" category="paragraph">의 절차에 따라 조닝을 변경하거나 FiberBridge 6500N에서 FiberBridge 7500N으로 업그레이드할 수 있습니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>.</block>
@@ -13774,4 +13768,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="e387b7f8f98fe6ef00364ba0984c08a9" category="paragraph">이전 및 새 시스템 ID는 에서 식별되었습니다 <block ref="ce17cf746f0f051ba197f9e3096bf7f5" category="inline-link-macro-rx"></block>.</block>
   <block id="124ba57298a92342f8aec06ebcfb6415" category="inline-link-macro">이전 컨트롤러 모듈의 시스템 ID를 확인합니다</block>
   <block id="3ac27de4b4347c98785ff06870fe7221" category="paragraph"><block ref="3ac27de4b4347c98785ff06870fe7221" category="inline-link-macro-rx"></block></block>
+  <block id="478093bd7e01c5abe587038bf808af00" category="paragraph">다음 표에서는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.</block>
+  <block id="9e667988f536ce55f0a4c5cf0908d042" category="cell">LEM 2개 및 4노드 MetroCluster 또는 DR 그룹 1개가 포함된 Cisco 9132T</block>
+  <block id="7d83eb0736445dbf18519e99146d2fff" category="cell">4노드 MetroCluster 2개 또는 DR 그룹 2개가 포함된 8노드 MetroCluster 1개가 포함된 Cisco 9132T</block>
 </blocks>
