@@ -4046,8 +4046,6 @@
   <block id="f230aa9272cfae103f41403290ae21df" category="list-text">쉘프_A_1_2</block>
   <block id="3045f5f4f1093cf13cd0757dba1576cb" category="list-text">셸프_B_1_1</block>
   <block id="1a10354dd8ac3ce1f01a352c0c19ac1d" category="list-text">쉘프_B_1_2</block>
-  <block id="10f02f59043b28fac9ff50a9e24e6044" category="inline-link">NetApp 상호 운용성</block>
-  <block id="d5d16fad39e71fb59dc90d88df5e1025" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="ac420cca75b9dbbf7e4e74995a005185" category="inline-link-rx"></block></block>
   <block id="e5e4a159b56e91f667faa79be11c280f" category="paragraph">쉘프 혼합에 대한 자세한 내용은 다음을 참조하십시오.<block ref="96c52bfd2d59063b848ae852888ce36d" category="inline-link-rx"></block></block>
   <block id="fbe01200b5d7a3c4261e8ea34a15d550" category="list-text">MetroCluster 구성 요소의 위치를 계획합니다.</block>
   <block id="ff3374bc6b913cd83c99bdca241ba935" category="paragraph">필요한 랙 공간의 양은 스토리지 컨트롤러의 플랫폼 모델, 스위치 유형 및 구성의 디스크 쉘프 스택 수에 따라 달라집니다.</block>
@@ -6487,7 +6485,6 @@
   <block id="623d27fb1a71775c853589b6aa232fcb" category="paragraph">쉘프를 추가하기 전에 MetroCluster 구성 전체에서 디스크 및 쉘프 펌웨어를 업데이트할 수 있습니다.</block>
   <block id="f9cf9415d2ebe0c1351e0f7a1221a2d8" category="inline-link">업그레이드, 되돌리기 또는 다운그레이드를 수행할 수 있습니다</block>
   <block id="c3204e26e12ab80395709eeaa0f8642d" category="paragraph"><block ref="c3204e26e12ab80395709eeaa0f8642d" category="inline-link-rx"></block></block>
-  <block id="c073c8226440025a816eb4efa16a17a3" category="admonition">시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일한 스택 내에서 IOM12 모듈과 IOM6 모듈의 조합이 지원됩니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 여부를 확인하려면 상호 운용성 매트릭스 툴(IMT). https://mysupport.netapp.com/NOW/products/interoperability[NetApp 상호 운용성]. 사용 중인 ONTAP 버전이 지원되지 않으며, 기존 스택이나 지원되는 IOM 모듈 조합에 추가할 새 셸프에서 IOM 모듈을 업그레이드 또는 다운그레이드할 수 없는 경우, 다음 중 하나를 수행해야 합니다.</block>
   <block id="64974d0b5eb2e258428a89835ce229c9" category="list-text">새 SAS 포트에서 새 스택을 시작합니다(브리지 페어에서 지원되는 경우).</block>
   <block id="ad45a06e82c1f0983fdfd0e3d30dc8f8" category="list-text">추가 브리지 쌍에서 새 스택을 시작합니다.</block>
   <block id="b7b17808a6e64c132f3bf8c4f253b38d" category="list-text">NetApp Support 사이트에서 다음 문서를 다운로드하거나 볼 수 있습니다.</block>
@@ -6584,49 +6581,8 @@
   <block id="a2ff4a69c8e810edbb5274ee75363ce0" category="paragraph">새 스위치가 동일한 경우 새 스위치의 전원을 켭니다. 스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켭니다. 이 구성은 두 번째 네트워크가 업데이트될 때까지 각 사이트에 있는 두 개의 서로 다른 스위치로 작동할 수 있습니다.</block>
   <block id="4d7ea7c5860513bb0b675638d55fcd77" category="paragraph">첫 번째 네트워크에서 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 몇 가지 경고가 표시될 수 있습니다.</block>
   <block id="c997b3e19c99644bd488baf3bfa8890d" category="admonition">네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 모든 단계를 반복합니다.</block>
-  <block id="a89a5b71cb60acbd82724db1a629420a" category="summary">FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 포트 할당은 ONTAP 9.0 이상 버전의 ONTAP에서 다릅니다.</block>
-  <block id="3db4017b12769c890b399a8cee60dfb5" category="paragraph">지원되는 RCF 파일이 사용되는 경우 ISL 포트는 여기에 표시된 동일한 포트에 연결할 수 없으며 수동으로 재구성해야 할 수 있습니다.</block>
-  <block id="7cdeeb5d6c1afe20f2835793af3716df" category="section-title">MetroCluster 9.0을 실행하는 8노드 ONTAP 구성의 컨트롤러 연결에 대한 Brocade 포트 사용</block>
-  <block id="4c400b3f7160abe1ed688a9b8979589e" category="paragraph">다음 표에는 Brocade 모델 Brocade 6505, 6510 또는 DCX 8510-8의 컨트롤러 포트 사용량이 나와 있습니다.</block>
-  <block id="afad1c27cb5fc5d1d792e5ba791ef840" category="section-title">MetroCluster 9.0을 실행하는 8노드 ONTAP 구성에서 FC-SAS 브리지 연결을 위한 Brocade 포트 사용</block>
-  <block id="fac64949de3a43257f3c8a97a35449a1" category="cell">브리지 포트</block>
-  <block id="ecbaae7ed0bf3689e37afedee8f6c249" category="section-title">ONTAP 9.0을 실행하는 8노드 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량</block>
-  <block id="394f60a83bf45a2e06134eded4e6adc2" category="paragraph">다음 표에는 Brocade 6505, 6510 또는 DCX 8510-8 스위치의 ISL 포트 사용량이 나와 있습니다.</block>
-  <block id="720e1fb07c36d94aa69e0ee7eb5cb7f3" category="section-title">MetroCluster 9.0을 실행하는 4노드 ONTAP 구성의 컨트롤러에 대한 Brocade 포트 사용</block>
-  <block id="253a9adeaa7038a2700f39aad347d73d" category="paragraph">케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다. 다음 표에는 Brocade 6505, 6510 및 DCX 8510-8 스위치의 사용량이 나와 있습니다.</block>
-  <block id="bb98798a94eabd991690e4d98bb1e93d" category="section-title">MetroCluster 9.0을 실행하는 4노드 ONTAP 구성의 브리지에 대한 Brocade 포트 사용</block>
-  <block id="814568b4249c0114f7f5acf6d86149fb" category="cell">FiberBridge 7500 브리지</block>
-  <block id="4b1342698b69db9277c10ae5d059e837" category="cell">FC_SWITCH_x_1(6510 또는 DCX 8510-8)</block>
-  <block id="e49423aa401904cc19d9c93b1dba3f71" category="cell">FC_SWITCH_x_2(6510 또는 DCX 8510-8)</block>
-  <block id="8e8e002bc58d3a842d05c1be7b04ba4c" category="cell">FC_SWITCH_x_1(6505)</block>
-  <block id="7ab09fefe83fcbd6007a5ac115dfefbc" category="cell">FC_SWITCH_x_2(6505)</block>
-  <block id="5cf1fa7f2c6c9825315b7608236abe2b" category="cell">추가 브리지는 포트 19를 통해 케이블로 연결한 다음 포트 24에서 47까지 연결할 수 있습니다</block>
-  <block id="c4381a0b6bf2d250fd5afa1d8db80d48" category="cell">포트 23을 통해 추가 브리지를 케이블로 연결할 수 있습니다</block>
-  <block id="3f0d7bda291f9b3c6f2f35a20a63c52e" category="section-title">ONTAP 9.0을 실행하는 4노드 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량</block>
-  <block id="69862326bc727c309184d534a3f3cff8" category="paragraph">다음 표에는 ISL 포트 사용량이 나와 있습니다.</block>
-  <block id="160cef04b33948c7b91144a2fdf46988" category="section-title">MetroCluster 9.0을 실행하는 2노드 ONTAP 구성의 컨트롤러에 대한 Brocade 포트 사용</block>
-  <block id="7699bf8a4df6f7e15f159269bd8927e4" category="paragraph">케이블 연결은 스위치 패브릭의 각 FC 스위치에 대해 동일합니다. 다음 표에서는 Brocade 6505, 6510 및 DCX 8510-8 스위치의 케이블 연결을 보여 줍니다.</block>
-  <block id="4d3b4ab0ee0d27226cd4d951952dc8aa" category="section-title">MetroCluster 9.0을 실행하는 2노드 ONTAP 구성의 브리지에 대한 Brocade 포트 사용</block>
-  <block id="f87cb62014b08eabb93a84e435b02ea9" category="section-title">ONTAP 9.0을 실행하는 2노드 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량</block>
-  <block id="851032b3e8ee16b9eb2ed6098216108e" category="paragraph">다음 표에는 Brocade 6505, 6510 및 DCX 8510-8 스위치의 ISL 포트 사용량이 나와 있습니다.</block>
-  <block id="944ef169ea9b385ec2fc06c60bcdd267" category="section-title">ONTAP 9.0을 실행하는 8노드 MetroCluster 구성의 컨트롤러에 대한 Cisco 포트 사용</block>
-  <block id="062caca7c0bb29ebff9fcc7a33a75d93" category="paragraph">다음 표에는 Cisco 9148 및 9148S 스위치의 컨트롤러 포트 사용량이 나와 있습니다.</block>
-  <block id="7dd0f293a7e09ad1d4ac1014f18a018a" category="section-title">ONTAP 9.0을 실행하는 8노드 MetroCluster 구성의 FC-SAS 브리지에 대한 Cisco 포트 사용</block>
-  <block id="c4739fa521713dbbe264a1366afde348" category="section-title">ONTAP 9.0을 실행하는 8노드 MetroCluster 구성에서 ISL에 대한 Cisco 포트 사용량</block>
-  <block id="524e7c19dbf542bdc24be3909a68aa5b" category="paragraph">다음 표에는 Cisco 9148 및 9148S 스위치의 ISL 포트 사용량이 나와 있습니다.</block>
   <block id="84a71a9e63ead8784cd365088a3be8c4" category="cell">ISL 포트</block>
-  <block id="bf9995231adba64383dd274717591fad" category="section-title">4노드 MetroCluster 구성의 컨트롤러에 대한 Cisco 포트 사용</block>
-  <block id="9009bb494f588eb453c941a0f5346de2" category="paragraph">다음 표에는 Cisco 9148, 9148S 및 9250i 스위치의 컨트롤러 포트 사용량이 나와 있습니다.</block>
-  <block id="8a960a450c78ddb1326827d52c10a15a" category="section-title">ONTAP 9.0을 실행하는 4노드 MetroCluster 구성의 FC-SAS 브리지에 대한 Cisco 포트 사용</block>
-  <block id="6fcd6dc740970bb42bde0c9a37d97275" category="section-title">ONTAP 9.0을 실행하는 4노드 MetroCluster 구성의 ISL에 대한 Cisco 9148 및 9148S 포트 사용량</block>
-  <block id="d8547f2a1e0767433bffe41b5c4ca3bc" category="section-title">ONTAP 9.0을 실행하는 4노드 MetroCluster 구성의 ISL에 대한 Cisco 9250i 포트 사용량</block>
-  <block id="183f17b261b81d0d886cf2452983cce8" category="paragraph">Cisco 9250i 스위치는 ISL에 FCIP 포트를 사용합니다.</block>
   <block id="4389b93bd76334095ae6f5fdb926d4ee" category="paragraph">포트 40에서 48은 10GbE 포트이며 MetroCluster 구성에서 사용되지 않습니다.</block>
-  <block id="fa69aa564bc90d7adecfb54c289d23be" category="section-title">2노드 MetroCluster 구성의 컨트롤러에 대한 Cisco 포트 사용</block>
-  <block id="762b426bcd4ea34fc55a0f899cf2086d" category="section-title">ONTAP 9.0을 실행하는 2노드 MetroCluster 구성의 FC-SAS 브리지에 대한 Cisco 포트 사용</block>
-  <block id="ba2044d8a6c35bb667c35d13e7a3277d" category="section-title">ONTAP 9.0을 실행하는 2노드 MetroCluster 구성의 ISL에 대한 Cisco 9148 또는 9148S 포트 사용량</block>
-  <block id="2bc92937819403549f510c08d8a54058" category="paragraph">다음 표에는 Cisco 9148 또는 9148S 스위치의 ISL 포트 사용량이 나와 있습니다.</block>
-  <block id="e936a0e4e03d3d3120e966eca42a0b28" category="section-title">ONTAP 9.0을 실행하는 2노드 MetroCluster 구성의 ISL에 대한 Cisco 9250i 포트 사용량</block>
   <block id="e5fe800fef736c2c8af1453a59683d3c" category="summary">Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Brocade 관련 명령을 사용하여 스위치를 비활성화하고 펌웨어 변경을 수행 및 확인하고 스위치를 재부팅 및 다시 활성화해야 합니다.</block>
   <block id="1ab0f1fa27ba43bfea0e9de2529316c8" category="doc">Brocade FC 스위치에서 펌웨어 업그레이드 또는 다운그레이드</block>
   <block id="04dbc16ee806b5ebad0693ef3708205e" category="list-text">시스템에 장애가 발생한 구성 요소가 없을 수 있습니다.</block>
@@ -7178,7 +7134,6 @@
   <block id="e36320198d71e90e7fbc80a9b47b9394" category="paragraph">어느 스위치에서든 RCF 파일의 버전을 나타내는 출력 줄을 찾습니다. 예를 들어, 다음 출력은 RCF 파일 버전이 ""v1.80""임을 나타내는 Cisco 스위치에서 출력되었습니다.</block>
   <block id="c7534d571d84fdfe4912d24b4f1f30bf" category="list-text">특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 RcfFileGenerator 를 사용합니다. 보유하고 있거나 업그레이드하려는 구성에 대해 RCF 파일을 생성할 수 있으면 해당 파일이 지원됩니다.</block>
   <block id="282bc05e82ec2895ab48f3f9377e06d3" category="list-text">스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.</block>
-  <block id="8ae1a8b6dc4a3df150f27ca419fb9a6c" category="list-text"><block ref="8ae1a8b6dc4a3df150f27ca419fb9a6c" category="inline-link-rx"></block></block>
   <block id="bde0605fb74695c23ddd122685cfc65e" category="section-title">RCF 파일을 업그레이드합니다</block>
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
   <block id="c58c2c8b494a438765beae02806faf3a" category="paragraph">스위치 공급업체의 단계를 따르십시오.</block>
@@ -9243,7 +9198,6 @@
   <block id="0298c9d72aff4562d5434fe4a448c6a1" category="doc">ONTAP 시스템에서 사용할 스토리지 어레이 준비</block>
   <block id="6ceeef6f6fdaf06b95cae87e460cfe9b" category="paragraph">구성에서 사용하려는 스토리지 어레이, 펌웨어 및 스위치는 특정 ONTAP 버전에서 지원되어야 합니다.</block>
   <block id="a011aa6047381b9696e67c3b40f1802e" category="inline-link">NetApp 상호 운용성(IMT)</block>
-  <block id="adbd7f6da5b8c687e8c9973fbac44739" category="list-text"><block ref="adbd7f6da5b8c687e8c9973fbac44739" category="inline-link-rx"></block></block>
   <block id="567997ebab95ad5c797a8c2164e69988" category="paragraph">스토리지 시스템에서 이 작업을 수행하려면 스토리지 시스템 관리자와 협력해야 합니다.</block>
   <block id="c6d70523707016c24377e7ebb500eef1" category="list-text">MetroCluster 구성의 노드 수에 따라 스토리지 시스템에 LUN을 생성합니다.</block>
   <block id="b30da40dcd4e32f00364fe223122c3ab" category="paragraph">MetroCluster 구성의 각 노드에는 루트 애그리게이트, 데이터 애그리게이트 및 스페어를 위한 어레이 LUN이 필요합니다.</block>
@@ -9639,14 +9593,6 @@
   <block id="05d031d4d0c0ba6aad9ddd1f447198d6" category="paragraph">컨트롤러_B_2: 포트 FC-VI b</block>
   <block id="864a46879aea9e809b12d7e54e89e27a" category="list-text">스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
   <block id="f4b10c0ed251e84acdbc56fffb876121" category="paragraph"><block ref="f4b10c0ed251e84acdbc56fffb876121" category="inline-link-macro-rx"></block></block>
-  <block id="1070ce9e7bae97d7e7228e149c0b9eb4" category="paragraph">다음 표에는 Brocade 스위치의 컨트롤러 포트 사용량이 나와 있습니다.</block>
-  <block id="cd45205e4fc2077e0c4d75cfa092a45c" category="cell">MetroCluster 8노드 구성</block>
-  <block id="8fa7af407bf3527ae51a64903584fb97" category="cell">MetroCluster 4노드 구성</block>
-  <block id="b568f2bc70056e5c549443721bcfb52b" category="cell">Brocade 6510 또는 DCX 8510-8</block>
-  <block id="6ffb8f2c32009a20c314f0eeec771f81" category="cell">Brocade 6510, DCX 8510-8</block>
-  <block id="a435d7a239e10d99dd0bb66c0966f44d" category="paragraph">다음 표에는 Cisco 스위치의 컨트롤러 포트 사용량이 나와 있습니다.</block>
-  <block id="b54c734a5be7921355fc2aa93b69ba59" category="cell">Cisco 9148 또는 9148S</block>
-  <block id="11278506140805617313d6fd9ed8b0fc" category="cell">Cisco 9148, 9148S 또는 9250i</block>
   <block id="326883a949c64d870c3948f5ef42eb94" category="summary">MetroCluster 구성의 ONTAP 시스템이 최소 2개의 경로를 통해 특정 스토리지 LUN에 액세스할 수 있도록 스토리지 어레이를 FC 스위치에 연결해야 합니다.</block>
   <block id="6f2e49325d4369f56d3fd8abdc32fecd" category="doc">MetroCluster 구성에서 스토리지 어레이를 FC 스위치에 케이블로 연결합니다</block>
   <block id="2cf27dfe3b49602bd7cbe0f68237179e" category="list-text">스토리지 LUN을 ONTAP에 제공할 수 있도록 스토리지 시스템을 설정해야 합니다.</block>
@@ -11169,7 +11115,6 @@
   <block id="abb1e047e2333a743b5e05cb2a26c2c8" category="list-text">중복 LIF: IPspace에서 동일한 IP 주소(중복 LIF)를 사용하여 여러 LIF를 생성할 수 없습니다.</block>
   <block id="9678ea3a4b3cf82f2a3d066928c01fbf" category="list-text">NFS 및 SAN 구성: 미러링되지 않은 애그리게이트와 미러링된 애그리게이트 모두에 대해 서로 다른 SVM(스토리지 가상 머신)을 사용해야 합니다.</block>
   <block id="562c481a4722b64967a4fc3b654ce42b" category="paragraph">이 절차에서 예로 사용된 권장 이름은 브리지가 연결되는 컨트롤러 모듈과 포트를 나타냅니다.</block>
-  <block id="76379c0e7357a2749284a8099ed9c896" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="02d7a1e934f8b62a0243dc749b1b650b" category="inline-link-rx"></block></block>
   <block id="40478efcbffc865e999b3e1e2108a0cc" category="paragraph">쉘프 혼합에 대한 자세한 내용은 다음을 참조하십시오.<block ref="532c1f47a9370f9e21538610051f3830" category="inline-link-rx"></block></block>
   <block id="44b34304fe9dbc559df5c8eec0e37bb6" category="admonition">ONTAP 9.8부터 ' * storage bridge * ' 명령은 ' * system bridge * ' 명령으로 대체됩니다. 다음 단계에서는 '* storage bridge*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system bridge*' 명령을 사용하는 것이 좋습니다.</block>
   <block id="4eddf6976105fa027f2ae8a47fff2624" category="summary">MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp 설명서를 참조하십시오.</block>
@@ -11389,7 +11334,6 @@
   <block id="6257739eb87a755c28bf814ad261df2d" category="section-title">MetroCluster FC 노드에서 클러스터 접속을 이동합니다</block>
   <block id="9d8f122e284d64a31d50c5040fe4f338" category="section-title">이동할 연결입니다</block>
   <block id="508763c5ecfa3096ab25520f14c971f5" category="paragraph">에 설명된 포트를 사용합니다 <block ref="10769c5348734bed7e40370eea435ab1" category="inline-xref-macro-rx"></block>.</block>
-  <block id="fe45fe811f6f58baafc88df1114b43df" category="paragraph">링크:../install-ip/concept_mediator_requirements.html #configuring-the-ontap-중재자-service-from-a-MetroCluster-IP 구성 [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
   <block id="353f64efd56caa103dcbf2b9e24c3129" category="paragraph">링크:../install-ip/concept_mediator_requirements.html</block>
   <block id="dd23316b696cd08f3479c6e2d7baadc0" category="inline-link">AFF 또는 FAS 시스템의 설치 절차</block>
   <block id="17959b19c1c128d5d74608a22de28cf9" category="paragraph"><block ref="17959b19c1c128d5d74608a22de28cf9" category="inline-link-rx"></block></block>
@@ -12441,7 +12385,6 @@
   <block id="3e3df3be76a18ca2c89904765d97f078" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.</block>
   <block id="3963205d7c5d1cb2f000d61f16c10f1d" category="paragraph">내부 드라이브 24개</block>
   <block id="7632b8724806890acaf96c668d641251" category="inline-link-macro">MetroCluster IP 구성의 자동 드라이브 할당 및 ADP 시스템에 대해 자세히 알아보십시오</block>
-  <block id="85488d881ebf03beb1eca3be4b5fda44" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="e78382cc6f841e7f00c97b18a2e30f41" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="5fdc7ff67ace146413ecd7d44157aca4" category="paragraph">쉘프 혼합에 대한 자세한 내용은 를 참조하십시오<block ref="532c1f47a9370f9e21538610051f3830" category="inline-link-rx"></block></block>
   <block id="e868bded76541295e018b74bb15a7920" category="inline-link-macro">NVIDIA SN2100 스위치의 설치 및 구성 개요</block>
   <block id="b86c7f3554d9472f6a1e417c7f70fb18" category="admonition">Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 <block ref="ac21c0d53d9fcd547ee85e9d73d53854" category="inline-link-macro-rx"></block></block>
@@ -12723,9 +12666,7 @@
   <block id="fdf5e2eb479f201de0c9c62e9a32e769" category="paragraph">기본 브로드캐스트 도메인 없이 기존 클러스터에 새 노드를 추가할 경우, 예상 이름 대신 UUID(Universal Unique Identifier)를 사용하여 새 노드에 대한 노드 관리 LIF가 생성됩니다. 자세한 내용은 기술 자료 문서를 참조하십시오<block ref="4808e3ddae1b3b2c14dc148b67bd36ea" category="inline-link-rx"></block>.</block>
   <block id="f6410291c32fa961402f5a821c332f6c" category="list-text">플랫폼 혼합에 대해 기존 플랫폼 모델과 새 플랫폼 모델이 지원되는지 확인합니다.</block>
   <block id="e220a628f1c5f8fb65824aaeb387520e" category="list-text">이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인합니다.</block>
-  <block id="56f1ca12910041b73ea6fcc9bc18a954" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 ADP(고급 드라이브 파티셔닝)를 사용한 새로운 설치를 지원합니다.</block>
   <block id="72a38a5af8be1c706e478add3356ba90" category="paragraph">MetroCluster IP 구성과 함께 ADP를 사용할 때는 다음 사항을 고려해야 합니다.</block>
-  <block id="3cae0a231aac97485961fb33cea76ca2" category="list-text">MetroCluster IP 구성과 함께 ADP를 사용하려면 ONTAP 9.4 이상이 필요합니다.</block>
   <block id="959bb45d9851a2b3efaeb05db74e0a80" category="list-text">ADPv2는 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="a393732e5defe7b7a921a586e53ec51d" category="list-text">루트 애그리게이트는 두 사이트의 모든 노드에 대해 파티션 3에 위치해야 합니다.</block>
   <block id="9ef6aecb7d030435d81fe80cacca477e" category="list-text">파티셔닝과 디스크 할당은 MetroCluster 사이트의 초기 구성 중에 자동으로 수행됩니다.</block>
@@ -13272,12 +13213,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0351289236b3260f9d0c35b64f62689c" category="paragraph">하나의 FC 포트(FC1 또는 FC2)만 사용하여 FiberBridge 7500N 또는 7600N 브리지의 케이블 연결을 따를 수 있습니다. 4개의 이니시에이터를 사용하는 대신 2개의 이니시에이터만 연결하고 다른 2개는 스위치 포트에 연결된 상태로 두십시오.</block>
   <block id="4883312b6c36aa2f1d5ce2e2f17638bd" category="paragraph">조닝을 수동으로 수행하는 경우 FC 포트(FC1 또는 FC2) 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 사용되는 조닝을 따르십시오. 이 시나리오에서는 Fabric당 각 존 구성원에 2개가 아닌 1개의 이니시에이터 포트가 추가됩니다.</block>
   <block id="1e008e69dc731ad28df3d6927462a7f3" category="paragraph">의 절차에 따라 조닝을 변경하거나 FiberBridge 6500N에서 FiberBridge 7500N으로 업그레이드할 수 있습니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>.</block>
-  <block id="803d845c069720e0ec75ee03ea5a43d4" category="paragraph">다음 표는 FiberBridge 7500N 및 7600N 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다.</block>
-  <block id="2cd1f3df6c3bbd7c9891d742ad23d04a" category="cell">FiberBridge 7500N 또는 7600N 브리지</block>
-  <block id="81b2aac60df91543fcf4f05563b1f80e" category="paragraph">다음 표는 FiberBridge 7500N 및 7600N 브리지를 사용할 때 포트 17까지의 브리지 포트 사용량을 보여 줍니다. 추가 브리지는 포트 18 ~ 23에 연결할 수 있습니다.</block>
-  <block id="85878b4f87459062c8904a27720ba2be" category="paragraph">다음 표는 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 23까지 브리지 포트 사용량을 보여 줍니다. 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="6f40fc62599b436af99e9090bcb1fe21" category="paragraph">다음 표는 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 14까지의 브리지 포트 사용량을 보여 줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="836f2645702f9125726ff7335ed42bd5" category="paragraph">다음 표는 FiberBridge 7500N 및 7600N 브리지를 사용할 때 포트 14까지의 브리지 포트 사용량을 보여 줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.</block>
   <block id="7f921cbd9f23de85fa3d483b640e428b" category="open-title">노드 전원이 꺼져 있는 경우:</block>
   <block id="5f4eaac69c780a3f8ab154192e4a1a26" category="paragraph">노드의 전원을 켭니다.</block>
   <block id="2900f8420dafccee0a2692e48506c6cb" category="open-title">LOADER 프롬프트에 노드가 있는 경우:</block>
@@ -13339,12 +13274,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1cef707d96d59ea52cd45984a36d2f11" category="list-text">IP 스위치의 전원을 켭니다.</block>
   <block id="ac8327044a4ce63889944095a1b6aed8" category="list-text">쉘프의 전원을 완전히 켜는 데 충분한 시간이 필요합니다.</block>
   <block id="d5061566f9570e151daa3fd59fb31405" category="list-text">유지 관리 모드의 노드에서 로컬 스토리지가 표시되는지 확인합니다.</block>
-  <block id="7a492d8ba3deac8ecd729c56c1058794" category="paragraph">다음 표는 FiberBridge 7500N 또는 7600N 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다.</block>
-  <block id="2d5d944d1466716b339b20936cc4b7ec" category="paragraph">다음 표는 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 17까지의 브리지 포트 사용량을 보여 줍니다. 추가 브리지는 포트 18 ~ 23에 연결할 수 있습니다.</block>
-  <block id="f912eaa76cd834cbed98a7201254e72e" category="paragraph">다음 표는 Brocade 6505, 6510 및 DCX 8510-8 스위치와 함께 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 17까지의 브리지 포트 사용량을 보여 줍니다. 추가 브리지는 포트 18 ~ 23에 연결할 수 있습니다.</block>
-  <block id="e75c88d98fec123855e6503ffa20ae16" category="paragraph">다음 표는 Cisco 9148 또는 9148S 스위치를 사용하는 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 23까지의 브리지 포트 사용량을 보여 줍니다.</block>
-  <block id="0d792f55f305e85c0f763a05b6d33ae1" category="paragraph">다음 표는 Cisco 9148, 9148S 또는 9250i 스위치와 함께 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 14까지의 브리지 포트 사용량을 보여 줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="972c5512c843cde59ea3263b1073efea" category="paragraph">다음 표는 Cisco 9148, 9148S 및 9250i 스위치와 함께 FiberBridge 7500N 또는 7600N 브리지를 사용할 때 포트 14까지의 브리지 포트 사용량을 보여 줍니다. 동일한 패턴에 따라 포트 15에서 32까지 추가 브리지를 연결할 수 있습니다.</block>
   <block id="8bc67669b17eba9ca754ee74dd34564c" category="list-text">FIPS 호환 버전의 EFOS를 사용하는 경우 ECDSA 키를 생성합니다. 다음 예제에서는 길이가 521인 키를 만듭니다. 유효한 값은 256, 384 또는 521입니다.</block>
   <block id="8eb0b3dc24b7128748cd767385d5a9f2" category="paragraph">MetroCluster IP 구성의 각 노드에는 백엔드 IP 네트워크 연결을 위한 전용 인터페이스가 있습니다.</block>
   <block id="ad1b97f0744b9c154b01cc69afb505d7" category="list-text">2개의 로컬 클러스터 인터페이스</block>
@@ -13771,4 +13700,15 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="478093bd7e01c5abe587038bf808af00" category="paragraph">다음 표에서는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.</block>
   <block id="9e667988f536ce55f0a4c5cf0908d042" category="cell">LEM 2개 및 4노드 MetroCluster 또는 DR 그룹 1개가 포함된 Cisco 9132T</block>
   <block id="7d83eb0736445dbf18519e99146d2fff" category="cell">4노드 MetroCluster 2개 또는 DR 그룹 2개가 포함된 8노드 MetroCluster 1개가 포함된 Cisco 9132T</block>
+  <block id="a786547181c9c8f446791420d2be691f" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="f93341e63c1888be05256ff042174623" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
+  <block id="27211cf5d485f8491ca9b566aefe2d6d" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다.</block>
+  <block id="e528d26e96f91b34e70a35c4661d620d" category="list-text">AFF 및 ASA 시스템에서 ADP를 MetroCluster IP 구성과 함께 사용하려면 ONTAP 9.4 이상이 필요합니다.</block>
+  <block id="bacc4dbebf17d22c9a0361ded0994067" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block></block>
+  <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="inline-link">NetApp 상호 운용성 매트릭스</block>
+  <block id="769db6797bc8c70f9ceb0ea238fcfef2" category="list-text"><block ref="769db6797bc8c70f9ceb0ea238fcfef2" category="inline-link-rx"></block></block>
+  <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link-macro">상호 운용성 매트릭스 툴(IMT)</block>
+  <block id="520ac91f29d97371c4fac829efc70617" category="admonition">시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일한 스택 내에서 IOM12 모듈과 IOM6 모듈의 조합이 지원됩니다. 사용 중인 ONTAP 버전에서 쉘프 혼합을 지원하는지 확인하려면 을 참조하십시오 <block ref="cd3982462c40dc1b1a511ada7c72bab9" category="inline-link-macro-rx"></block>. 사용 중인 ONTAP 버전이 지원되지 않고 기존 스택이나 지원되는 IOM 모듈 조합에 추가할 새 쉘프에서 IOM 모듈을 업그레이드하거나 다운그레이드할 수 없는 경우 다음 중 하나를 수행해야 합니다.</block>
+  <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
+  <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
+  <block id="8872b0d09737dfd9b6fcafd4e8c2356b" category="list-text"><block ref="8872b0d09737dfd9b6fcafd4e8c2356b" category="inline-link-rx"></block></block>
 </blocks>

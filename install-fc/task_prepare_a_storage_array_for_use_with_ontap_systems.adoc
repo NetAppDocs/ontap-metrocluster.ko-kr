@@ -16,7 +16,7 @@ summary: 스토리지 LUN이 포함된 MetroCluster 구성에서 ONTAP 시스템
 .시작하기 전에
 구성에서 사용하려는 스토리지 어레이, 펌웨어 및 스위치는 특정 ONTAP 버전에서 지원되어야 합니다.
 
-* https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성(IMT)"]
+* https://imt.netapp.com/matrix/["NetApp 상호 운용성(IMT)"^]
 +
 IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
 

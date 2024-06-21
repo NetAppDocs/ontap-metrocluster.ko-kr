@@ -11,11 +11,11 @@ summary: 'ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파�
 
 
 [role="lead"]
-ONTAP 9.4부터 MetroCluster IP 구성에서는 ADP(고급 드라이브 파티셔닝)를 사용한 새로운 설치를 지원합니다.
+ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다.
 
 MetroCluster IP 구성과 함께 ADP를 사용할 때는 다음 사항을 고려해야 합니다.
 
-* MetroCluster IP 구성과 함께 ADP를 사용하려면 ONTAP 9.4 이상이 필요합니다.
+* AFF 및 ASA 시스템에서 ADP를 MetroCluster IP 구성과 함께 사용하려면 ONTAP 9.4 이상이 필요합니다.
 * ADPv2는 MetroCluster IP 구성에서 지원됩니다.
 * 루트 애그리게이트는 두 사이트의 모든 노드에 대해 파티션 3에 위치해야 합니다.
 * 파티셔닝과 디스크 할당은 MetroCluster 사이트의 초기 구성 중에 자동으로 수행됩니다.

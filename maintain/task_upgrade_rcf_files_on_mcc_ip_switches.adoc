@@ -53,7 +53,7 @@ Filename : NX3232_v1.80_Switch-A2.txt
 . 스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.
 +
 ** https://hwu.netapp.com["Hardware Universe"]
-** https://mysupport.netapp.com/NOW/products/interoperability["NetApp 상호 운용성"]
+** https://imt.netapp.com/matrix/["NetApp 상호 운용성 매트릭스"^]
 
 
 

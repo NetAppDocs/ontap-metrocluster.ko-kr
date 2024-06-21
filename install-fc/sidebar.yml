@@ -56,8 +56,6 @@ entries:
       url: "/install-fc/task_cable_the_isl_between_the_mcc_sites_fabric_config.html"
     - title: 이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
       url: "/install-fc/concept_port_assignments_for_systems_using_two_initiator_ports.html"
-    - title: ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당
-      url: "/install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html"
     - title: ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당
       url: "/install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html"
     - title: AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당
