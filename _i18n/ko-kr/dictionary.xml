@@ -13711,4 +13711,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
   <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
   <block id="8872b0d09737dfd9b6fcafd4e8c2356b" category="list-text"><block ref="8872b0d09737dfd9b6fcafd4e8c2356b" category="inline-link-rx"></block></block>
+  <block id="6136261711c49bf0e8e1dcb22a2c524f" category="paragraph">해당 없음</block>
 </blocks>
