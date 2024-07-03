@@ -12,23 +12,22 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 .단계
 . 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
 +
-_MetroCluster IP 설치 및 구성_섹션에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.
-
-+
-link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
 +
-에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"].
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일을 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF 파일을 다운로드하고 설치합니다"]
 
 
 

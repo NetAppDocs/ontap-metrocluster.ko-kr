@@ -20,18 +20,36 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 
 
 
-== FAS2750 또는 AFF A220 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
+== 구성에 맞는 올바른 케이블 연결 표를 선택합니다
 
-image::../media/mcc_ip_cabling_a_fas2750_or_a220_to_a_cisco_3132q_v_switch.png[Cisco 3132q v 스위치에 fas2750 또는 A220 MCC IP 케이블 연결]
+다음 표를 사용하여 따라야 할 케이블 연결 테이블을 결정합니다.
 
-
-
-== FAS9000 또는 AFF A700 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
-
-image::../media/mcc_ip_cabling_a_fas9000_or_aff_a700_to_a_cisco_3132q_v_switch.png[MCC IP fas9000 또는 AFF a700을 Cisco 3132q v 스위치에 케이블로 연결합니다]
+[cols="2*"]
+|===
+| 시스템이 다음과 같은 경우... | 케이블 연결 표 사용... 
 
 
+ a| 
+FAS2750, AFF A220
+| <<table_1_cisco_3132q,Cisco 3132Q-V 플랫폼 포트 할당(그룹 1)>> 
 
-== AFF A800 또는 ASA A800 시스템 및 Cisco 3132Q-V 스위치의 포트 사용
 
-image::../media/cabling_an_aff_a800_to_a_cisco_3132q_v_switch.png[AFF A800을 Cisco 3132q v 스위치에 케이블로 연결합니다]
+| FAS9000, AFF A700 | <<table_2_cisco_3132q,Cisco 3132Q-V 플랫폼 포트 할당(그룹 2)>> 
+
+
+| AFF A800, ASA A800 | <<table_3_cisco_3132q,Cisco 3132Q-V 플랫폼 포트 할당(그룹 3)>> 
+|===
+.Cisco 3132Q-V 플랫폼 포트 할당(그룹 1)
+FAS2750 또는 AFF A220 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
+
+image::../media/mcc_ip_cabling_a_fas2750_or_a220_to_a_cisco_3132q_v_switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
+
+.Cisco 3132Q-V 플랫폼 포트 할당(그룹 2)
+FAS9000 또는 AFF A700 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
+
+image::../media/mcc_ip_cabling_a_fas9000_or_aff_a700_to_a_cisco_3132q_v_switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
+
+.Cisco 3132Q-V 플랫폼 포트 할당(그룹 3)
+AFF A800 또는 ASA A800 시스템을 Cisco 3132Q-V 스위치에 연결하기 위해 플랫폼 포트 할당을 검토합니다.
+
+image::../media/cabling_an_aff_a800_to_a_cisco_3132q_v_switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]

@@ -496,10 +496,6 @@
   <block id="337d79852891a37d41285c9101c3fff4" category="list-text">다음 명령을 실행합니다.</block>
   <block id="54744df94a6fdb7104348dee41697c48" category="summary">MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.</block>
   <block id="14681192c7f80e2d7631c3a070df9619" category="doc">Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="3b83c4ddd89aceae283e372313711a0d" category="section-title">FAS2750 또는 AFF A220 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
-  <block id="0d1dedffee468c654fc7737c161a5ef6" category="image-alt">Cisco 3132q v 스위치에 fas2750 또는 A220 MCC IP 케이블 연결</block>
-  <block id="f300420ccf8e917fff4dcf018758ab75" category="image-alt">MCC IP fas9000 또는 AFF a700을 Cisco 3132q v 스위치에 케이블로 연결합니다</block>
-  <block id="4ab951cbcd9d68b32f922b0a2d6e39c2" category="image-alt">AFF A800을 Cisco 3132q v 스위치에 케이블로 연결합니다</block>
   <block id="09cb6984bdf1b82c9749906ba1a69331" category="summary">MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
   <block id="d7fffb0ac95f2fd216c5e3fd04365cca" category="paragraph">이러한 속성을 업데이트해야 할 수 있습니다. 예를 들어, 중복된 IP 주소가 감지되거나 라우터 구성 변경으로 인해 계층 3 네트워크의 경우 게이트웨이가 변경되어야 할 수 있습니다.</block>
   <block id="383d9b07e1ef0cfcfa9ec36fecccfe02" category="paragraph">한 번에 하나의 인터페이스만 변경할 수 있습니다. 다른 인터페이스가 업데이트되고 연결이 다시 설정될 때까지 해당 인터페이스에 트래픽 중단이 발생할 수 있습니다.</block>
@@ -850,8 +846,6 @@
   <block id="9998da0c6596ccc4b44b68b91eee576b" category="list-text">8노드 MetroCluster 구성</block>
   <block id="68ce13809f636bb102d35b897931709c" category="list-text">MetroCluster FC에서 MetroCluster IP 구성으로 전환</block>
   <block id="541a17569d4a90ee94a9fd4035349deb" category="list-text">4노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
-  <block id="dea9eb47178beaeb21ad431dae613392" category="image-alt">MCC IP 케이블 AFF a300 또는 fas8200을 Broadcom의 53248 스위치에 연결합니다</block>
-  <block id="99abcc4b4e656e7c9d684acf6c9c05d8" category="image-alt">MCC IP Broadcom의 53248 스위치에 AFF A320 케이블 연결</block>
   <block id="449a2bdc6a969f884c1d33fb66eecea7" category="section-title">ISL의 지연 시간 및 패킷 손실 제한</block>
   <block id="5b39512a68b8704473f81b0e6ba1272e" category="paragraph">대기 시간에 영향을 주는 모든 장치를 고려해야 합니다.</block>
   <block id="616cfd3e2d847183316a89a2940d8ba6" category="paragraph">고객이 제공한 중간 스위치는 다음 요구 사항을 충족해야 합니다.</block>
@@ -1405,7 +1399,6 @@
   <block id="240c641ec7d44f443373981bb513fa5c" category="list-text">MetroCluster IP용 RcfFileGenerator는 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다.</block>
   <block id="e13e5f806fc6cae09bcb9fed7eecf125" category="paragraph">이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.</block>
   <block id="9ae436c3a98ee403124b8482b69c2296" category="section-title">스위치에 2개의 MetroCluster 구성을 케이블로 연결합니다</block>
-  <block id="08c525f5d86974627253ff3c6ab1498f" category="image-alt">MCC IP AFF a300 또는 fas8200을 Cisco 32c 또는 Cisco 9336c 스위치에 케이블로 연결합니다</block>
   <block id="4d8cac4d4c182ff6fe50e9fb53cc4d82" category="summary">구성이 깨끗한지 확인하려면 컨트롤러 모듈에서 기본값을 재설정 및 복원해야 합니다.</block>
   <block id="10f945412d3c12928d4e6dc1b7107119" category="doc">ONTAP MetroCluster 구성의 차이점</block>
   <block id="7590f50d513217fd399b68fb75ecf5f6" category="paragraph">모든 구성에서 두 MetroCluster 사이트는 각각 ONTAP 클러스터로 구성됩니다. 2노드 MetroCluster 구성에서는 각 노드를 단일 노드 클러스터로 구성합니다.</block>
@@ -2380,14 +2373,12 @@
   <block id="48f1cbfd98903541f8e454a15e0879c3" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 컨트롤러 업그레이드(ONTAP 9.8 이상)</block>
   <block id="bcd52c133e0292437778058a5ed793b1" category="list-text">플랫폼은 ONTAP 9.8 이상을 실행해야 합니다.</block>
   <block id="5606659eb62f79273b91080445f7165a" category="list-text">이 절차는 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.</block>
-  <block id="b93f37f9b29ffcc5ed4a451ba3da2f03" category="paragraph">내부 쉘프가 있는 플랫폼 모델은 지원되지 않습니다.</block>
   <block id="d9ac7caa0b14c170344b2e959f8034c0" category="cell">더 빠르고 확실하게 구축</block>
   <block id="9ced91efcf548438eaefe7f78378491e" category="cell">새로운 플랫폼 모델</block>
   <block id="b8c2f69c5a69a0de627c50e7bc6a4cf9" category="list-text">구성의 모든 컨트롤러는 동일한 유지보수 기간 동안 업그레이드해야 합니다.</block>
   <block id="4eef4343ca82afa388103a13e5acd0be" category="paragraph">이 유지 관리 활동 외부에서는 컨트롤러 유형이 서로 다른 MetroCluster 구성을 작동하는 것이 지원되지 않습니다.</block>
   <block id="60182e6504cabd5c1f32193f850cc537" category="list-text">IP 스위치는 지원되는 펌웨어 버전을 실행하고 있어야 합니다.</block>
   <block id="5c2f8b522f7cee27716379e96d7e9f9b" category="list-text">새 플랫폼의 슬롯이 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다.</block>
-  <block id="85a877eb6731bf16cfd35e46ab6896fb" category="paragraph">자세한 내용은 를 참조하십시오<block ref="bf137fbaca3418d969a7cbbc6acb278c" category="inline-link-rx"></block>.</block>
   <block id="6aad6e6acf8d07a11804f458ffbdcd50" category="list-text">새 플랫폼에서는 원래 플랫폼의 IP 주소, 넷마스크 및 게이트웨이를 다시 사용합니다.</block>
   <block id="d56109dc6cdff9e5d4982aefd8e09776" category="list-text">다음 예제 이름이 이 절차에 사용됩니다.</block>
   <block id="e9a54e1b4684f979a8cb74d5905f649a" category="list-text">사이트_A</block>
@@ -2402,7 +2393,6 @@
   <block id="8b9cf8e3d13d6e63ca169861310c3b62" category="paragraph">워크플로 다이어그램을 사용하여 업그레이드 작업을 계획할 수 있습니다.</block>
   <block id="ea10aa2075899edae7e9fbbdb6876804" category="image-alt">워크플로우 IP 업그레이드</block>
   <block id="39636ee3d838e1ad79f4b6b17f397cb2" category="paragraph">기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고, 새 플랫폼을 준비하고, 기타 작업을 수행해야 합니다.</block>
-  <block id="19db2dcc6162bfe47d927fb0cf29bf57" category="section-title">컨트롤러를 업그레이드하기 전에 MetroCluster 스위치 RCF 파일을 업데이트합니다</block>
   <block id="b61b94c87764061cb7ada38fa4273155" category="paragraph">이전 플랫폼 모델에 따라 또는 스위치 구성이 최소 버전이 아니거나 백엔드 MetroCluster 연결에 사용되는 VLAN ID를 변경하려는 경우 플랫폼 업그레이드 절차를 시작하기 전에 스위치 RCF 파일을 업데이트해야 합니다.</block>
   <block id="6a17bc0f56c24d8e5fe4a9640dca29f0" category="paragraph">다음 시나리오에서 RCF 파일을 업데이트해야 합니다.</block>
   <block id="0aa42d3b4e9fea86e18bc380dd4833e1" category="list-text">특정 플랫폼 모델의 경우 스위치는 백엔드 MetroCluster IP 연결에 지원되는 VLAN ID를 사용해야 합니다. 이전 또는 새로운 플랫폼 모델이 다음 표 * 에 있고 지원되는 VLAN ID를 사용하지 * 인 경우, 스위치 RCF 파일을 업데이트해야 합니다.</block>
@@ -2422,11 +2412,9 @@
   <block id="21eaf0cdaaa2f979118e1696c6ca3fe7" category="paragraph">VLAN ID 범위는 101 ~ 4096입니다.</block>
   <block id="c613f1172544a92bcf8317b060382224" category="paragraph">site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레이드됩니다.</block>
   <block id="ec4d7a4fea778584666b7963923e3cf1" category="list-text">새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.</block>
-  <block id="3f658efe332bd845e7510d36acbf1d9b" category="paragraph">에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 <block ref="4ab496c462bc9a729fe703221c683545" category="inline-link-macro-rx"></block>.</block>
   <block id="680a4f630b21eab8e23842ce1e77c536" category="list-text"><block ref="680a4f630b21eab8e23842ce1e77c536" category="inline-link-macro-rx"></block></block>
   <block id="fe829dd203a0238e92149d6e50fe01a3" category="list-text"><block ref="fe829dd203a0238e92149d6e50fe01a3" category="inline-link-macro-rx"></block></block>
   <block id="d93b7c25b0652bbfad8e295f71218dcb" category="list-text">RCF 파일을 다운로드하고 설치합니다.</block>
-  <block id="87a57e0ac6e285a70735aa5e28358f19" category="paragraph">의 단계를 따릅니다 <block ref="4ab496c462bc9a729fe703221c683545" category="inline-link-macro-rx"></block>.</block>
   <block id="87c6a5076eda134fab631a4899bd23d4" category="list-text"><block ref="87c6a5076eda134fab631a4899bd23d4" category="inline-link-macro-rx"></block></block>
   <block id="9b2c056caaa39d420a60a6eafd686719" category="list-text"><block ref="9b2c056caaa39d420a60a6eafd686719" category="inline-link-macro-rx"></block></block>
   <block id="2a372adca69c8c9dbcba25f7ba412726" category="section-title">이전 노드에서 새 노드로 포트 매핑</block>
@@ -2469,9 +2457,6 @@
   <block id="5b1b8c3f072422a936e63f0d977e41e0" category="list-text">웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.</block>
   <block id="5649001554632acee7f17de29854ba9d" category="cell">플랫폼 모델이 다음과 같은 경우</block>
   <block id="383b9c142d0ac9c95fc6323618a87c9b" category="paragraph">FAS/AFF8000 시리즈 시스템</block>
-  <block id="919f7f36404cea05fca3d95f800b6a87" category="paragraph">대상 디렉토리에 '__ONTAP-version__image.tgz' 파일의 내용을 추출합니다.</block>
-  <block id="94d7ac945e4b9bc029d78b52830217e8" category="paragraph">'tar-zxvf__ontap-version__image.tgz'</block>
-  <block id="c1dd02c14fa2c25490f315821ab11142" category="admonition">Windows에서 내용을 추출하는 경우 7-Zip 또는 WinRAR을 사용하여 netboot 이미지를 추출합니다. 디렉토리 목록에는 커널 파일 netboot/kernel의 netboot 폴더가 포함되어야 합니다</block>
   <block id="6850735b567ffc238538643166a7d89e" category="paragraph">디렉토리 목록에는 커널 파일이 있는 netboot 폴더가 포함되어야 합니다.</block>
   <block id="3a1d38fb3626e6c6f9c179d11fad1cdc" category="paragraph">넷부트/커널</block>
   <block id="edc91455dc5116cbd53031ff17548c91" category="paragraph">기타 모든 시스템</block>
@@ -2486,7 +2471,6 @@
   <block id="c1ebb7e2c78f5822be6dd1d59f8ae92a" category="paragraph">수동 연결을 구성합니다.</block>
   <block id="f54a24cc66a313efd5a257045a3ed5ce" category="paragraph">'ifconfig e0M-addr=_ip_addr_-mask=_netmask_-GW=_gateway_'</block>
   <block id="b56cf2ce5654e2819a05a6d3ce028d0c" category="list-text">netboot 수행</block>
-  <block id="21e59fdf137b01bd3ad24d6c8d9c3697" category="paragraph">네부트<block ref="39059b69b4b1e2f472c6abfae5cd7747" category="inline-link-rx"></block></block>
   <block id="93aa31e0fca191c5cb8bdcc4dd998b67" category="paragraph">"netboot\http://_web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz`</block>
   <block id="b24a4bccb6b1dcb2f41814efd594a0f6" category="list-text">부팅 메뉴에서 옵션**(7) Install new software first**(새 소프트웨어를 먼저 설치**)를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.</block>
   <block id="c0c1ca8a9ddeae72e1e2be38243a2522" category="paragraph">다음 메시지는 무시하십시오.</block>
@@ -2509,7 +2493,6 @@
   <block id="ba68bac0be7ad49544e9629601cb670c" category="paragraph">확인 프롬프트에 yes로 응답합니다.</block>
   <block id="2fa38a35d5b9cc8f1b69fd7f9bbe4303" category="paragraph">노드가 재부팅되고 부팅 메뉴가 다시 표시됩니다.</block>
   <block id="01e10c4c054845c383133ebfd17fccdf" category="list-text">부팅 메뉴에서 옵션 * 5 * 를 선택하여 시스템을 유지보수 모드로 부팅합니다.</block>
-  <block id="3be0f13e0002babd0d114da920d4f43c" category="section-title">사이트 업그레이드 전에 MetroCluster 상태 확인</block>
   <block id="e53a7c24d7a4423f5e6dc1e0489f4650" category="paragraph">업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.</block>
   <block id="e64a7827901a0e6216b6c75c3b100902" category="list-text">노드 multipathed 여부 확인: + 'node run-node_node-name_sysconfig-a</block>
   <block id="542da501ed6fd2c5eec24de28539644a" category="paragraph">MetroCluster 구성의 각 노드에 대해 이 명령을 실행해야 합니다.</block>
@@ -2580,7 +2563,6 @@
   <block id="fb46345d4cd3f7e829969de1d6aa05e7" category="list-text">기존 노드의 시스템 ID 수집:</block>
   <block id="1e3274490101aef5fa048a9bc641d5ec" category="paragraph">MetroCluster node show-fields node-systemid, ha-partner-systemid, dr-partner-systemid, dr-auxiliary-systemid</block>
   <block id="6f439aaac5a6f2528f54f717e0c55a39" category="paragraph">다음 출력은 재할당된 드라이브를 보여 줍니다.</block>
-  <block id="dde95b5b53c4eb899d678641fd957d06" category="section-title">중재자 또는 타이차단기 모니터링 제거</block>
   <block id="8721fdb505c6c36bb5be2e19130e698c" category="paragraph">플랫폼을 업그레이드하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.</block>
   <block id="bcbf87e4f078f82908e59d6fe8c31f6e" category="list-text">다음 명령의 출력을 수집합니다.</block>
   <block id="2582e010e97c2f1b4ef7a684672e4598" category="list-text">클러스터에 로그인합니다.</block>
@@ -2599,10 +2581,8 @@
   <block id="5426384928a13db30fcee7b4f5c3da08" category="list-text">작업이 완료된 후 노드가 절체 상태에 있는지 확인합니다.</block>
   <block id="058e49cbd0c1f29381ec01c701554a62" category="list-text">MetroCluster 노드의 상태를 점검한다.</block>
   <block id="982f6eba58d95bda2318d44b2dcea2e3" category="paragraph">컨트롤러 업그레이드 중에 협상된 전환 후 애그리게이트 자동 복구가 해제됩니다.</block>
-  <block id="0febc7a50cf575550de8c5a5e4653448" category="section-title">인터페이스 구성을 제거하고 이전 컨트롤러를 제거합니다</block>
   <block id="0486f17c3c2c0ba93636ea2cc6f050dd" category="paragraph">데이터 LIF를 공통 포트로 이동하고, 이전 컨트롤러에서 VLAN 및 인터페이스 그룹을 제거한 다음, 컨트롤러를 물리적으로 제거해야 합니다.</block>
   <block id="895a79b8b51d133ae9c32d8cb48b9eb7" category="list-text">이러한 단계는 이전 컨트롤러(node_B_1 - old, node_B_2 - old)에서 수행됩니다.</block>
-  <block id="ce5b96ed5021e8b8adf776950ea4178d" category="list-text">에서 수집한 정보를 참조하십시오 <block ref="ab9fddb5e9f46cc8a59622b30650af49" category="inline-link-macro-rx"></block>.</block>
   <block id="4339dfdd37f410724931874e2a95e452" category="list-text">이전 노드를 부팅하고 노드에 로그인합니다.</block>
   <block id="bf1d9c5801bc3674bc765551ff2f2964" category="paragraph">부트 ONTAP</block>
   <block id="ba77a2c608c7c3d0b48158b1141a5d60" category="list-text">이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새로운 컨트롤러 모듈 모두에서 동일한 공통 포트에 할당합니다.</block>
@@ -2612,7 +2592,6 @@
   <block id="de300d23f1d76028b547f5e2d80ae21c" category="list-text">출력을 검토하여 클러스터 포트로 사용되지 않는 이전 컨트롤러와 새 컨트롤러 모두에서 동일한 일반적인 물리적 네트워크 포트를 찾습니다.</block>
   <block id="ed83b408ff26c6639c42df9053bd18df" category="paragraph">예를 들어, e0d는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. e0d는 클러스터 포트 또는 새 컨트롤러에 사용되지 않습니다.</block>
   <block id="caa0bb28d7e90a537d89a447ec00dffc" category="paragraph">플랫폼 모델의 포트 사용은 를 참조하십시오<block ref="bf137fbaca3418d969a7cbbc6acb278c" category="inline-link-rx"></block></block>
-  <block id="413dc1f955eeef6eaab86d04447b0b90" category="list-text">공통 포트를 홈 포트로 사용하도록 모든 데이터 LIFS를 수정합니다. + 'network interface modify -vserver_svm -name_-lif_data-lif_-home-port_port -id_'</block>
   <block id="e465fd7874ef2b67011c612ab62f55a2" category="paragraph">다음 예에서는 "e0d"입니다.</block>
   <block id="accd214a61f142828c1572a8d975d7b3" category="list-text">클러스터 포트를 구성원 포트로 사용하고 클러스터 포트를 구성원 포트로 사용하여 ifgrp를 사용하는 VLAN 포트를 모두 제거합니다.</block>
   <block id="d88bda4b2500817109e6d220b8faf816" category="list-text">VLAN 포트 삭제: + 'network port vlan delete-node_node-name_-vlan-name_portID-vlanDID_'</block>
@@ -2630,7 +2609,6 @@
   <block id="5b720ae65bf7d21d6a225f04b05193ed" category="list-text">node_B_1-old 및 node_B_2-old에서 스토리지 및 네트워크 연결을 끊고 새 노드에 다시 연결할 수 있도록 케이블에 레이블을 지정합니다.</block>
   <block id="179dbbeb7c6a0fa6264cc8d28907ccfe" category="list-text">node_B_1 - old 및 node_B_2 - old에서 전원 케이블을 분리합니다.</block>
   <block id="0f8df768c820d4ea7a6ff9e730270f41" category="list-text">랙에서 node_B_1-old 및 node_B_2-old 컨트롤러를 분리합니다.</block>
-  <block id="d617ad9f7b5f53578f97dc832b934e0c" category="section-title">새로운 플랫폼을 수용하기 위해 스위치 RCF를 업데이트합니다</block>
   <block id="4c21e041670c346a702fabcf0aa3b403" category="paragraph">새 플랫폼 모델을 지원하는 구성으로 스위치를 업데이트해야 합니다.</block>
   <block id="9c7486b863d548a10cb42f0cf9fbf593" category="paragraph">현재 업그레이드 중인 컨트롤러가 포함된 사이트에서 이 작업을 수행합니다. 이 절차의 예에서는 먼저 site_B를 업그레이드하고 있습니다.</block>
   <block id="4ab496c462bc9a729fe703221c683545" category="paragraph"><block ref="4ab496c462bc9a729fe703221c683545" category="inline-link-macro-rx"></block></block>
@@ -2640,7 +2618,6 @@
   <block id="86008a0b4a5488741f7256f8ff1f242e" category="paragraph">새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.</block>
   <block id="d7d5207b6a402327d717590c53126a62" category="list-text">필요에 따라 새 컨트롤러 모듈 및 스토리지 쉘프를 포지셔닝합니다.</block>
   <block id="001201e7e95e93ec36501bc42b2e7e9b" category="paragraph">랙 공간은 컨트롤러 모듈의 플랫폼 모델, 스위치 유형 및 구성의 스토리지 쉘프 수에 따라 다릅니다.</block>
-  <block id="f394db30bc798c9a165a6baa7029734d" category="list-text"><block ref="f394db30bc798c9a165a6baa7029734d" category="inline-link-macro-rx"></block></block>
   <block id="fa14a702e51b19084e9474a2f3ee6905" category="list-text">새 노드의 전원을 켜고 유지보수 모드로 부팅합니다.</block>
   <block id="8154d55f73ab64571f60299356015117" category="section-title">HBA 구성을 복구합니다</block>
   <block id="a8635badf0c3725452ad27dcb306f849" category="paragraph">컨트롤러 모듈에 있는 HBA 카드의 존재 여부와 구성에 따라 사이트 용도에 맞게 HBA 카드를 올바르게 구성해야 합니다.</block>
@@ -2669,7 +2646,6 @@
   <block id="5b56c16675df5128ad1509d1d30f5292" category="list-text">컨트롤러 또는 섀시의 시스템 상태가 표시되지 않으면 HA 상태를 설정합니다.</block>
   <block id="7e658f7d65797e8810c06b822120b6e2" category="section-title">MetroCluster IP bootarg 변수 설정</block>
   <block id="78a0010898f446d1e157f43c3797a937" category="paragraph">특정 MetroCluster IP bootarg 값은 새 컨트롤러 모듈에서 구성해야 합니다. 이 값은 이전 컨트롤러 모듈에 구성된 값과 일치해야 합니다.</block>
-  <block id="95aa43cb18dc6c3c8a08c38fce7fb365" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 사용합니다 <block ref="37cedcbeb13672af73bf33b51c9eed66" category="inline-link-macro-rx"></block>.</block>
   <block id="ae33f232a65af78b38ef0d615f9b4685" category="list-text">업그레이드하는 노드가 AFF A400, FAS8300 또는 FAS8700 모델인 경우 LOADER 프롬프트에서 다음 boots를 설정합니다.</block>
   <block id="24fd796e809805ceabe716e5a810aaeb" category="paragraph">'setenv bootarg.MCC.port_a_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address, vlan-id_'</block>
   <block id="6c327b80857b5a3cbd49a3950dfabb41" category="paragraph">'setenv bootarg.MCC.port_b_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address, vlan-id_'</block>
@@ -2679,8 +2655,6 @@
   <block id="44f9e07ea9ebd3af9d897a1fd22a2893" category="paragraph">다음 예에서는 기본 VLAN을 사용할 때 node_B_1-new에 대한 명령을 보여 줍니다.</block>
   <block id="39587765d8074fb3d6e4963abb2b1998" category="paragraph">다음 예에서는 기본 VLAN을 사용할 때 node_B_2-new에 대한 명령을 보여 줍니다.</block>
   <block id="d81eefa1c7e616946da2c21d8091ff22" category="list-text">업그레이드 중인 노드가 이전 단계에 나열된 시스템이 아닌 경우, 로더 프롬프트에서 남아 있는 각 노드에 대해 다음 boots를 local_ip/mask로 설정합니다.</block>
-  <block id="26b1251566eccdf74347c79f9384bd75" category="paragraph">'setenv bootarg.MCC.port_a_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address_'</block>
-  <block id="a7512258d5bdefc29c19bcb0a0fe4b7d" category="paragraph">'setenv bootarg.MCC.port_b_ip_config_local-ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address_'</block>
   <block id="ad660c4b2e3b57b6c520334fa6e9e973" category="paragraph">다음 명령을 실행하면 node_B_1-new에 대한 값이 설정됩니다.</block>
   <block id="e99a6d6afe39a84ad08205e484b19f40" category="paragraph">다음 명령을 실행하면 node_B_2-new에 대한 값이 설정됩니다.</block>
   <block id="b6eb4854ed8abef4df5eb8ee192a6d06" category="list-text">새 노드의 LOADER 프롬프트에서 UUID를 설정합니다.</block>
@@ -2772,9 +2746,7 @@
   <block id="48e70a95a504e447ce8a3651dbabebad" category="paragraph"><block ref="48e70a95a504e447ce8a3651dbabebad" category="inline-link-rx"></block></block>
   <block id="cc7470404d19816588d1ae5af4d078ba" category="inline-link">물리적 포트를 결합하여 인터페이스 그룹을 생성합니다</block>
   <block id="5c45da4ca5ec7e9d28eb987314a5305e" category="paragraph"><block ref="5c45da4ca5ec7e9d28eb987314a5305e" category="inline-link-rx"></block></block>
-  <block id="6d4f6be7717a152007a9425e8cca666c" category="section-title">LIF 구성 확인 및 복원</block>
   <block id="43ff4ab1c4898911d769055ba707316a" category="paragraph">업그레이드 절차를 시작할 때 LIF가 적절한 노드 및 포트에 매핑되어 있는지 확인합니다.</block>
-  <block id="4fa2e2fe6ee1548739930856d071d1de" category="list-title">이 문제에 대해서</block>
   <block id="6c8ff53e27cab2a88cabead47af570d0" category="list-text">이 작업은 site_B에서 수행됩니다</block>
   <block id="eee74a5fbb91c1e61f0861dec4f05ecf" category="list-text">에서 생성한 포트 매핑 계획을 참조하십시오 <block ref="ab9fddb5e9f46cc8a59622b30650af49" category="inline-link-macro-rx"></block>.</block>
   <block id="24f91f070271318621e83fbab3117da8" category="list-text">스위치백 이전에 해당 노드 및 포트에서 LIF가 호스팅되었는지 확인합니다.</block>
@@ -3277,7 +3249,6 @@
   <block id="990ac8bd3d980454d3baa7da8bb565b3" category="list-text">각 노드의 슬롯 7에 두 번째 X91146A 카드를 설치합니다.</block>
   <block id="4d53d8734246840e8cc7377b52dcff98" category="list-text">e5b 연결을 e7b로 이동합니다.</block>
   <block id="b4a1f6cc311a2721673beb38252e64cd" category="list-text">e5a 연결을 e5b로 이동합니다.</block>
-  <block id="6b3474c97724b722e0f4afafdb143ea5" category="admonition">클러스터의 모든 노드에 있는 슬롯 7은 에 설명된 대로 비어 있어야 합니다 <block ref="04564f03a6f25e350965a2fc164d5b65" category="inline-xref-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="40df7dd3e533077084269f150cea5390" category="list-text">섀시의 전원을 켜고 직렬 콘솔에 연결합니다.</block>
   <block id="4b1896a388d931f5ee8a3a3563435c42" category="list-text">BIOS 초기화 후 노드가 자동 부팅을 시작한 경우 Control-C를 눌러 자동 부팅을 중단합니다</block>
   <block id="dbfff16b33eb93cb017deebdc2430716" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드가 중지됩니다. 시간에 자동 부팅을 중단하지 않고 노드 1이 부팅을 시작하는 경우 Ctrl-C를 눌러 부팅 메뉴로 이동하라는 메시지가 표시될 때까지 기다립니다. 부팅 메뉴에서 노드가 중지되면 옵션 8을 사용하여 노드를 재부팅하고 재부팅 중에 자동 부팅을 중단합니다.</block>
@@ -3319,13 +3290,9 @@
   <block id="29258939e19faf1f3be001f515073564" category="list-text">'Saveenv' 설정을 저장합니다</block>
   <block id="86c3751b98ae9444b01e92915c46d8a1" category="list-text">환경 변수(printenv)를 수집합니다</block>
   <block id="be0b6a98215b32fa336f5289e308bab4" category="section-title">새로운 플랫폼을 수용하기 위해 스위치 RCF 파일을 업데이트합니다</block>
-  <block id="be3edf21917c2b9508f9213de509a28f" category="paragraph">_MetroCluster IP 설치 및 구성_섹션에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.</block>
-  <block id="2ee1af8e4e5351668f22135734a19afe" category="paragraph"><block ref="2ee1af8e4e5351668f22135734a19afe" category="inline-link-macro-rx"></block></block>
-  <block id="c95457ebb6c5066a71bd9bd8a9043652" category="paragraph">에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 <block ref="2ee1af8e4e5351668f22135734a19afe" category="inline-link-macro-rx"></block>.</block>
   <block id="bb28ee6b56d9ec48711bd507235842da" category="section-title">새 컨트롤러를 구성합니다</block>
   <block id="828f6c6a3595190219f93563b5e5d00b" category="paragraph">이때 새 컨트롤러를 준비하고 케이블로 연결해야 합니다.</block>
   <block id="7fd4b1f7108b9b2c3ed56f3b322c5cf0" category="section-title">MetroCluster IP bootarg 변수를 설정합니다</block>
-  <block id="d025af30a7a3d39a3e8e64897642a280" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 사용합니다 <block ref="2941b01e553e3d0d332e404f6a7b6b88" category="inline-link-macro-rx"></block>.</block>
   <block id="4752737bf69a9a73631fc4c897d39fd1" category="list-text">LOADER&gt; 프롬프트에서 다음 boots를 site_B의 새 노드에 설정합니다.</block>
   <block id="f4bf8a33623175950570a179be08c55a" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하는 node_B_1-A900에 대한 값을 설정합니다.</block>
   <block id="d3576c5978cab799623d0e1628936abd" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하는 node_B_2-A900에 대한 값을 설정합니다.</block>
@@ -3356,14 +3323,12 @@
   <block id="c1fc0a4a7f1fea35640bca40ed7e7cea" category="paragraph"><block ref="c1fc0a4a7f1fea35640bca40ed7e7cea" category="inline-link-rx"></block></block>
   <block id="8f412490be08aa3679894cbe0d187a24" category="paragraph"><block ref="8f412490be08aa3679894cbe0d187a24" category="inline-link-rx"></block></block>
   <block id="2aa1e589f48d5061f8c1767a650f3b5c" category="section-title">LIF 구성을 확인 및 복원합니다</block>
-  <block id="d5ac67b7fa756d22ccbdcccd64dab9d7" category="list-text">에서 생성한 포트 매핑 계획을 참조하십시오 <block ref="df85374975da04ab32373fe6fedb9bd1" category="inline-link-macro-rx"></block>.</block>
   <block id="06909dd9c08fe502cc96f625a1038a5b" category="section-title">MetroCluster 구성을 다시 전환합니다</block>
   <block id="968f84559c2abd0caee37a550c003bec" category="image-alt">MCC 업그레이드 클러스터 A 스위치백 A900</block>
   <block id="6cfc40927d48ae02cd2d52dce98f7b35" category="list-text">site_B에서 'MetroCluster node show' 명령어를 실행하여 출력을 확인한다.</block>
   <block id="101e1b8f1960d663f1bbb6c01eb00f6b" category="section-title">MetroCluster 구성의 상태를 확인합니다</block>
   <block id="3536088a256cc132e9bb50bb6b37d844" category="section-title">site_a의 노드를 업그레이드합니다</block>
   <block id="be30a56e6d2717e49b1a24ec4b5435b9" category="paragraph">site_A에서 업그레이드 작업을 반복해야 합니다</block>
-  <block id="343d98ffad90e979903b8bd5def2f91c" category="list-text">부터 시작하여 site_a의 노드를 업그레이드하려면 단계를 반복합니다 <block ref="e8971f193bd5ef38f76b660d12d17607" category="inline-link-macro-rx"></block>.</block>
   <block id="98c99ee34c8774fa11a9a533fe708618" category="paragraph">작업을 수행할 때 사이트와 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, 사이트_A에서 스위치오버로 예제를 제공할 경우 site_B에서 전환합니다</block>
   <block id="4a73711f675c6d654d190ca9589e5da1" category="section-title">Tiebreaker 또는 중재자 모니터링을 복원합니다</block>
   <block id="0c429b26fd1db8d4b7bb104d284c1cea" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
@@ -4477,7 +4442,6 @@
   <block id="361772e9851772534036695f2c569190" category="paragraph">폴링 간격 때문에 모든 데이터를 반영하는 데 15분 정도 걸릴 수 있습니다. ONTAP 상태 모니터는 '상태' 열의 값이 '정상'이고 WWN(월드와이드 이름) 등의 정보가 표시되면 브리지와 연결하고 모니터링할 수 있습니다.</block>
   <block id="c0aba19592ccfed38799730fe622ca35" category="list-text">더 자세한 결과 표시:</block>
   <block id="e36a6837628a0758c6b3c069f31a53c0" category="inline-link-macro">재해에 복구합니다</block>
-  <block id="170c6a73ca1b8d1e73e7e0351dabb4a7" category="list-text">에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 <block ref="254ad853feafba6ecd93b7da1cfc7daf" category="inline-link-macro-rx"></block>.</block>
   <block id="5af69ae57a9a4e104da0dc7bf9b476fe" category="paragraph">를 클릭합니다 <block ref="717caad659837ead96fd39bedd8a12bf" category="inline-link-macro-rx"></block> 구성 백업 관리 섹션에 대한 추가 정보가 포함되어 있습니다.</block>
   <block id="ba09a762470f462f66de565149da671e" category="summary">2노드 MetroCluster SAS 연결 구성에서는 스토리지 컨트롤러가 SAS 케이블을 통해 스토리지에 직접 연결되는 2개의 단일 노드 클러스터를 포함하여 여러 부품이 필요합니다.</block>
   <block id="682ba0abaad6793ecc8615228c146375" category="doc">2노드 SAS 연결 스트레치 MetroCluster 구성의 일부</block>
@@ -4675,24 +4639,15 @@
   <block id="c19058170bee0e83b964c0c32018bf9a" category="cell">MetroCluster IP 인터페이스에서 VLAN ID를 사용하는 플랫폼 모델</block>
   <block id="84880048c8db4bb557c571e15f6437c7" category="list-text">정상적인 사이트에서 재해 사이트에 있는 MetroCluster 인터페이스의 IP 주소를 수집합니다.</block>
   <block id="7a401d723d877e99188e0a3d18003e13" category="paragraph">필수 주소는 * Destination Network Address * 열에 표시된 DR 파트너 주소입니다.</block>
-  <block id="8047e025044062a427d5cffcf9081f39" category="paragraph">다음 출력에서는 포트 e5a 및 e5b에서 MetroCluster IP 인터페이스를 사용하는 AFF A700 및 FAS9000 시스템의 구성 IP 주소를 보여 줍니다. 인터페이스는 플랫폼 유형에 따라 다릅니다.</block>
   <block id="940e6eb81cb9ea67ed6a7924fe4f6444" category="list-text">인터페이스의 VLAN ID 또는 게이트웨이 주소를 확인해야 하는 경우 작동하는 사이트에서 VLAN ID를 확인합니다.</block>
-  <block id="6d163a47115629df3ea44c4520a04a85" category="list-text">플랫폼 모델이 VLAN ID를 사용하고(위 목록 참조) 기본 VLAN ID를 사용하지 않는 경우 VLAN ID가 필요합니다.</block>
   <block id="384d5f4f76da778fcce70e7722a5a724" category="inline-link-macro">계층 3 광역 네트워크</block>
   <block id="9bf56cc2253be8d861d865a698757a1d" category="list-text">을(를) 사용하는 경우 게이트웨이 주소가 필요합니다 <block ref="ce44afd681653d8855acb4c64f0faa01" category="inline-link-macro-rx"></block>.</block>
   <block id="70f2df2269f2a1af431f6c7afe2c28b0" category="paragraph">VLAN ID는 출력의 * Network Address * 열에 포함됩니다. 게이트웨이 * 열에 게이트웨이 IP 주소가 표시됩니다.</block>
   <block id="04b05a0396e80bba731a6b78af98fe76" category="paragraph">이 예에서 인터페이스는 VLAN ID가 120인 e0a 및 VLAN ID 130인 e0b입니다.</block>
-  <block id="11e7e6595c504f48454989a09a151821" category="list-text">재해 사이트 노드가 VLAN ID(위 목록 참조)를 사용하는 경우 각 재해 사이트 노드에 대한 로더 프롬프트에서 다음 boots를 설정합니다.</block>
-  <block id="20a95a7388607aaac599e65e41eee939" category="list-text">인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.</block>
   <block id="cc997c6aa09f0b58d3cda4d07c45dfea" category="inline-link-macro">Layer3 광역 네트워크</block>
   <block id="d992f59da3c242fbd359bd74609b115f" category="list-text">구성에서 를 사용하지 않는 경우 <block ref="18d2d299a9720b9b0e4881f2a80c6547" category="inline-link-macro-rx"></block>, _gateway-ip-address_의 값은 * 0 * (0)입니다.</block>
-  <block id="2a024d6446ccb9812285d645afc9df0f" category="inline-link-macro">계층 3 백엔드 접속</block>
-  <block id="b5296cc665bcb78f1b32e25a91eaac3b" category="list-text">구성에서 를 사용하지 않는 경우 <block ref="4d43eeb1c4dd2964e20e7d00e2eda7b0" category="inline-link-macro-rx"></block>, _gateway-ip-address_의 값은 * 0 * (0)입니다.</block>
   <block id="fb767d614f1f408436a71720cc6d0d6f" category="paragraph">다음 명령은 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_a_1에 대한 값을 설정합니다.</block>
   <block id="4cdd25046d5b2527b052f754ec55b8b2" category="paragraph">다음 예에서는 VLAN ID가 없는 node_a_1에 대한 명령을 보여 줍니다.</block>
-  <block id="de6098dc00ee60c22e36b46e64f7d011" category="list-text">재해 사이트 노드가 VLAN ID를 사용하는 시스템이 아닌 경우 각 재해 노드에 대한 로더 프롬프트에서 local_ip/mask, gateway를 사용하여 다음 boots를 설정합니다.</block>
-  <block id="5d694dae48634a09054e5b45fb9171a4" category="list-text">구성에서 를 사용하지 않는 경우 <block ref="ce44afd681653d8855acb4c64f0faa01" category="inline-link-macro-rx"></block>, _gateway-ip-address_의 값은 * 0 * (0)입니다.</block>
-  <block id="da1732811b01efa6de90a9c50b7f263a" category="paragraph">다음 명령을 실행하면 node_a_1에 대한 값이 설정됩니다. 이 예에서는 _gateway-ip-address_와 _vlan-id_값이 사용되지 않습니다.</block>
   <block id="0aecb14aeba06394d83cc9c3fb3d1827" category="list-text">정상적인 사이트에서 재해 사이트의 UUID를 수집합니다.</block>
   <block id="ccab7d39c48aef13baabf4e9fbb6addb" category="list-text">교체 노드의 LOADER 프롬프트에서 UUID를 설정합니다.</block>
   <block id="3b7b5e7b6cd63ede76e8d61ad229f06d" category="list-text">node_a_1에서 UUID를 설정합니다.</block>
@@ -6076,7 +6031,6 @@
   <block id="469d35ee2356ac7866ba1f33ad4ca9bb" category="paragraph">시스템이 올바르게 구성되어 있고 모든 패브릭 스위치가 작동하고 오류가 없는지 확인합니다.</block>
   <block id="661604461505145652969fabf65d24ae" category="paragraph">ISL 링크의 장비가 변경되고 새 링크 구성이 현재 구성 -- 트렁킹 및 주문된 전달을 더 이상 지원하지 않는 경우, 올바른 라우팅 정책(IOD(In-Order-Delivery) 또는 주문되지 않은 전달(Good))을 위해 패브릭을 재구성해야 합니다.</block>
   <block id="f6d3da7597130394978bc016f2f97262" category="inline-link-macro">ONTAP 소프트웨어에서 프레임의 주문 전달 또는 주문 후 전달 구성</block>
-  <block id="8f58bcdadb5bb7beb970f5dc847bd3d9" category="admonition">ONTAP 소프트웨어에서 Good을 변경하려면 다음 단계를 수행하십시오. <block ref="25d31fd6671e14a19ec69c049e264c50" category="inline-link-macro-rx"></block></block>
   <block id="75f1949f0ec923f528f29c80814ca67e" category="list-text">FCVI 및 스토리지 HBA 포트를 해제합니다.</block>
   <block id="cd3e85ca6cdde4505d957a3f7b60ade5" category="paragraph">"portcfgpersistentdisable_port number _"</block>
   <block id="3eb8ef44a3abaf03b599a8d7dbf26707" category="paragraph">기본적으로 FCVI 및 스토리지 HBA에 처음 8개 포트(포트 0 - 7)가 사용됩니다. 스위치를 재부팅할 때 포트가 비활성화된 상태로 유지되도록 포트를 영구적으로 비활성화해야 합니다.</block>
@@ -11066,7 +11020,6 @@
   <block id="1cab2231671234cf1e23b1ca0a52ef3e" category="list-text">새 MetroCluster IP 노드에서 다음 절차를 사용하여 인터클러스터 LIF를 구성합니다.</block>
   <block id="bc13f269b8fcdbac7ef84f083e616363" category="paragraph">MetroCluster 구성 설정 및 연결에 대한 자세한 내용은 다음을 참조하십시오.</block>
   <block id="cd60490d5712d0d4fead93178d76d0d7" category="paragraph">스위치 공급업체에 대한 절차의 단계를 따르십시오.</block>
-  <block id="143982074a2586885b81ca0686673560" category="list-text">에 설명된 대로 컨트롤러를 IP 스위치에 연결합니다 <block ref="4ab496c462bc9a729fe703221c683545" category="inline-link-macro-rx"></block>.</block>
   <block id="c09c91c40853cc803259a2c27d8fa946" category="paragraph">시스템 ID 변경 프롬프트에 ""y""를 응답합니다. 두 번째 재부팅 메시지가 나타날 때까지 기다립니다.</block>
   <block id="f1318dc614d34488bcb6f8bef3e32bff" category="paragraph">옵션 "'11'"</block>
   <block id="37ef00a03e6b4bacbc26b2ee369f838f" category="paragraph">키 관리자 설정에 따라 첫 번째 부팅 메뉴 프롬프트에서 옵션 ""10"" 또는 옵션 ""11", 옵션 "6"을 차례로 선택하여 복구 절차를 수행합니다. 노드를 완전히 부팅하려면 옵션 ""1"(일반 부팅)에서 계속 진행하는 복구 절차를 반복해야 할 수 있습니다.</block>
@@ -11350,10 +11303,6 @@
   <block id="6405f02626b672ea5ce042f43244f057" category="paragraph"><block ref="6405f02626b672ea5ce042f43244f057" category="inline-link-macro-rx"></block></block>
   <block id="f62e57388ece8ed3ab39425498977dae" category="paragraph"><block ref="f62e57388ece8ed3ab39425498977dae" category="inline-link-macro-rx"></block></block>
   <block id="291349860e45161d05b403e88ba2f28b" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 <block ref="e3d7ead0f01b9fa985ec5c35c22c44f3" category="inline-link-macro-rx"></block>.</block>
-  <block id="35b541137c97f0d986b3779c7a322603" category="list-text"><block ref="35b541137c97f0d986b3779c7a322603" category="inline-link-macro-rx"></block></block>
-  <block id="7781c27327814c0f7935ce903ca1101f" category="list-text"><block ref="7781c27327814c0f7935ce903ca1101f" category="inline-link-macro-rx"></block></block>
-  <block id="8e077a574605e13d75ee083e7cd96f27" category="list-text"><block ref="8e077a574605e13d75ee083e7cd96f27" category="inline-link-macro-rx"></block></block>
-  <block id="5860040c16ad914f0dc769bbc79c2a6d" category="list-text"><block ref="5860040c16ad914f0dc769bbc79c2a6d" category="inline-link-macro-rx"></block></block>
   <block id="398ca4e3f9e65b681f95fee13804bab9" category="list-text">디렉토리 목록에는 &lt;ONTAP_VERSION&gt;\_IMAGE.tgz 가 포함되어야 합니다.</block>
   <block id="befdb6ab41f0cd39ff57e00b0ee8c3f6" category="paragraph">"&lt;filer_addr&gt;"은(는) 스토리지 시스템의 IP 주소입니다. "&lt;netmask&gt;"는 스토리지 시스템의 네트워크 마스크입니다. '&lt;gateway&gt;'는 스토리지 시스템의 게이트웨이입니다. "&lt;dns_addr&gt;"은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '&lt;dns_domain&gt;'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. 참고: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.</block>
   <block id="f9917e026c23b682e18bcd6bc125c1b9" category="paragraph">"&lt;path_to_the_web-Accessible_directory&gt;"는 에서 "&lt;ONTAP_version&gt;\_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="28cd24b5ecf937229eb419cc55587b9d" category="inline-xref-macro-rx"></block>.</block>
@@ -11789,7 +11738,6 @@
   <block id="c163452b6d6fda6fddd3c92df9b52e8f" category="section-title">이 절차에서 지원하는 플랫폼</block>
   <block id="3af8c4bc8c1236580221c8d8a69ebe0a" category="list-text">대상(새) 플랫폼은 원래 플랫폼과 다른 모델이어야 합니다.</block>
   <block id="1105b1e9f2d843b22143dc8f0c9ab49c" category="list-text">MetroCluster IP 구성에서 이 절차를 사용하여 특정 플랫폼 모델만 업그레이드할 수 있습니다.</block>
-  <block id="173073f2b4c10001197b8ecb42c6e83b" category="paragraph">8000 시리즈 시스템</block>
   <block id="cc4c5c397558976c3fb0387232297737" category="sidebar">여기서 시작 - 절차를 선택합니다</block>
   <block id="db267dea88bedafa5679df8ad5247270" category="sidebar">컨트롤러 업그레이드, 시스템 업데이트 또는 확장을 선택하십시오</block>
   <block id="676a1a7f93fd600585d02e62f2d0a51b" category="sidebar">컨트롤러 업그레이드 절차를 선택합니다</block>
@@ -11876,7 +11824,6 @@
   <block id="7aeedda5f35486a7239b2a68ae68fb9a" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택할 수 있습니다.</block>
   <block id="959c17d1eadff13225c68a5578c6da93" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
   <block id="789c52582d523f3977d636da81e92dc0" category="list-text">ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.</block>
-  <block id="316cc41a2ded57b927048db5915a847f" category="section-title">스위치오버 및 스위치백 프로세스를 사용하는 절차 선택</block>
   <block id="310848f15048cc78b3cbee9c61235054" category="paragraph">아래 FC 또는 IP 표에서 현재 플랫폼을 선택합니다. 현재 플랫폼 행과 대상 플랫폼 열이 교차하는 부분이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
   <block id="569cf9bf2c0f655af1cc3b1657f11706" category="section-title">MetroCluster IP 컨트롤러 업그레이드가 지원됩니다</block>
   <block id="871aaccc4c0a59b618736750595955e7" category="list-text">참고 1: 이 업그레이드의 경우 절차를 사용하십시오 <block ref="f668bd1de55e6e087edcf0e6120e96e3" category="inline-link-macro-rx"></block></block>
@@ -11917,7 +11864,6 @@
   <block id="f775e4c4edc895975c9cd478e2a512c1" category="paragraph"><block ref="f775e4c4edc895975c9cd478e2a512c1" category="inline-link-macro-rx"></block></block>
   <block id="cc6f5bdcaa380f5a02b85aa487423648" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 <block ref="a934c7831e4c0e5d9741460d2b55f4b9" category="inline-link-macro-rx"></block>.</block>
   <block id="5f565b56a7ba868b460ab51ab73790d6" category="paragraph">을 참조하십시오<block ref="6ddc20d2276dd2fc9d58822a83f46769" category="inline-link-rx"></block> 을 참조하십시오.</block>
-  <block id="3cdc2ade26b9bc4adc9df14235e19c7e" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
   <block id="d0b28fd083b63a9e12330f486ca47625" category="section-title">지원되는 MetroCluster FC 기술 업데이트 조합</block>
   <block id="cfd1300cd3db131e8f69dc38177b5658" category="section-title">지원되는 MetroCluster IP 기술 업데이트 조합</block>
   <block id="ad06b1bad80df72d4f2fa24312c0a9bf" category="cell">새로 고침 방법</block>
@@ -12091,8 +12037,6 @@
   <block id="8e65b308ba381d7e7d885330e749b55d" category="list-text">AFF A700 유형의 4노드 MetroCluster 구성 2개를 케이블로 연결한 경우 첫 번째 MetroCluster를 "MetroCluster 1"로 연결하고 두 번째 MetroCluster를 AFF A700 표에서 "MetroCluster 2"로 연결합니다.</block>
   <block id="e5c3d25338f9cf52b0644af8df5dd491" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 포트 13s0-3 및 14s0-3으로 표시됩니다.</block>
   <block id="0995dd589b8b5229e4b9e28862db9b91" category="paragraph">둘 이상의 MetroCluster 구성을 Cisco 3132Q-V 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster에 케이블을 연결해야 합니다. 예를 들어, FAS2750과 AFF A700을 동일한 Cisco 3132Q-V 스위치에 케이블로 연결하는 경우 그런 다음 표 1의 "MetroCluster 1"에 따라 FAS2750과 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 AFF A700을 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
-  <block id="b1ae03d0492f9071184bcc685e4d9008" category="image-alt">MCC IP 케이블 연결 a150 A250 을 Cisco 32c 또는 Cisco 9336c 스위치에 연결합니다</block>
-  <block id="cf6033c90446afb2f2e4bf0a87384e97" category="image-alt">MCC IP 케이블 연결 A320 a400 a700 A800 a900 Cisco 3232C 또는 9336c 스위치</block>
   <block id="52d00daf67aaaf387590e09043aff43a" category="list-text"><block ref="52d00daf67aaaf387590e09043aff43a" category="inline-link-macro-rx"></block></block>
   <block id="49cc90fa19d302674a7ac32a31b7a0c8" category="list-text"><block ref="49cc90fa19d302674a7ac32a31b7a0c8" category="inline-link-macro-rx"></block></block>
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
@@ -12140,8 +12084,6 @@
   <block id="7085ef0783c3069c714c62b941d51195" category="summary">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다.</block>
   <block id="be2a104272635035d829d9eb66247a6e" category="doc">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)으로 컨트롤러 업그레이드</block>
   <block id="7644562e2fb618084cb09ad85c576c00" category="paragraph">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
-  <block id="db8b16f8a162b64f9227ab0fe83ffe4c" category="paragraph">플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 <block ref="2a99f679e02927fd36d8e489a7ee9535" category="inline-link-macro-rx"></block>.</block>
-  <block id="e9f3eb39072498fcd6fd79f6beb0b0f4" category="list-text">이 절차는 ONTAP 9.13.1 이상을 실행하는 4노드 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.</block>
   <block id="d6777f90334e4deb82616ecb9b6f9fb9" category="list-text">MetroCluster 시스템은 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
   <block id="55a7a35f233fa5c7dc761790158ed06d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 전환 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 컨트롤러를 업그레이드할 수 있습니다.</block>
   <block id="c5825fe35515c4155fffecab1329d16f" category="admonition">4노드 MetroCluster IP 구성에서는 ARL(Aggregate Relocation)을 사용하여 "system controller replace" 명령을 사용하여 업그레이드를 수행할 수 없습니다.</block>
@@ -12167,7 +12109,6 @@
   <block id="96a30b5e5305a12e0752b81f173e6fc6" category="paragraph">다음 예제는 node_B_1에서 값을 설정하는 명령을 보여 줍니다.</block>
   <block id="ed8d1dfb2569c85ee7b108aa3e6a5466" category="list-text">node_B_2에서 변수를 설정합니다.</block>
   <block id="bacd790164cac2c217ca06a37ce78e9c" category="paragraph">다음 예제는 node_B_2에서 값을 설정하는 명령을 보여 줍니다.</block>
-  <block id="1f9d34c7d1e2d2f573c7d5fc014693cd" category="paragraph">에서 이전 시스템 ID를 식별했습니다 <block ref="88d9e20523438a3ef8e09cf426f5ea87" category="inline-link-macro-rx"></block>.</block>
   <block id="ca0df34f59e377032b2f4b42096b5055" category="admonition">MetroCluster IP 시스템에 고급 디스크 파티셔닝이 구성되어 있는 경우 을 실행하여 DR 파트너 시스템 ID를 포함해야 합니다<block ref="1d9572d24113365244a97e4cb81d5a77" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="3d76ebef670d0f7bd3eab697fb186812" category="paragraph">옵션 ""6"" 후 재부팅 중 하나가 진행되는 동안 확인 메시지가 표시됩니다<block ref="adeeb123a02ab1bcf79fc4bdffdd3b9f" prefix=" " category="inline-code"></block> 나타납니다. 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="16de7447f84bfaba1c8cf72b93fbf6ee" category="paragraph"><block ref="16de7447f84bfaba1c8cf72b93fbf6ee" category="inline-link-macro-rx"></block></block>
@@ -12179,7 +12120,6 @@
   <block id="3d296dee09f5acd9721e7bd1f885a1ff" category="doc">MetroCluster IP 구성 확장</block>
   <block id="f7ebd0c3919ed1a579352a95f757a9e6" category="paragraph">ONTAP 버전에 따라 4개의 새 노드를 새 DR 그룹으로 추가하여 MetroCluster IP 구성을 확장할 수 있습니다.</block>
   <block id="5ffb6f10d2a660f5653c90be923e511a" category="section-title">두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합</block>
-  <block id="c7a5837b5fbd32fe6a2e393e60dbd4a3" category="paragraph">다음 표에는 8노드 IP 구성에 지원되는 플랫폼 조합이 나와 있습니다.</block>
   <block id="a321522d8592d70cc3e6c26d2e63f256" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
   <block id="999074f8fe2e3e48d827312298ab3915" category="list-text">이 표에 표시된 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
   <block id="33ad7ee6bdd54750e4657cc259182b15" category="list-text">하나의 DR 그룹에 있는 모든 노드의 유형과 구성이 동일해야 합니다.</block>
@@ -12221,7 +12161,6 @@
   <block id="338b3842cbe6f0ae991509f38e7d0cca" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
   <block id="0fa55a9001a26a5414307fd992cd4661" category="image-alt">MetroCluster IP 기술 업데이트 조합</block>
   <block id="c38f34e2c50bf5ed2113077f8269019c" category="list-text">타겟 플랫폼 제한이 MetroCluster 제한보다 낮은 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한값 이하로 재구성해야 합니다.</block>
-  <block id="fdc1be4b61fa768dbfcc3e8f0dab2595" category="paragraph">다음 표에는 8노드 MetroCluster FC 구성에 지원되는 플랫폼 조합이 나와 있습니다.</block>
   <block id="49782ec67fb4809f5d138aa07412fd9d" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
   <block id="ea95591996a43e78cc0b5f96cb4d8f1c" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
   <block id="08d29117f113494cf7bd34ddc0d0a7e0" category="doc">IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다</block>
@@ -12291,7 +12230,6 @@
   <block id="12651c133a2edc8c764efaddca32ca42" category="sidebar">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="f11af7573a10a71e1161a2099db36bcc" category="sidebar">MetroCluster IP 구성을 확장합니다</block>
   <block id="f60298ca20150ed82728ebbcf934dcdd" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 점검을 통과하지 못하거나 업그레이드를 진행하지 않도록 선택하는 경우 반드시 다음을 수행해야 합니다 <block ref="27c582b1d219a53bd62704e35b9572aa" category="inline-xref-macro-rx"></block>.</block>
-  <block id="cf26e00f9d9d62aac6ab045ca55c7c29" category="list-text">에서 수집한 정보를 사용합니다 <block ref="4349c160b4ba85d15c9d1b99e7fab03e" category="inline-xref-macro-rx"></block>.</block>
   <block id="a6d521ed969131c6ad881b1c930a769c" category="list-text">새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 스위치를 물리적으로 분리합니다.</block>
   <block id="3e49e5936cffd2e96856c25fa0417df2" category="inline-link-macro">네트워크 관리</block>
   <block id="a4c47e03a7d497b0826db4991d94d6d6" category="paragraph">아직 할당되지 않은 경우 새 컨트롤러에서 사용할 수 있는 새 포트를 브로드캐스트 도메인에 추가해야 합니다. 필요한 경우 새 포트에 VLAN 또는 인터페이스 그룹을 생성합니다. 을 참조하십시오 <block ref="1c21ab35e530b06d4d331f67f55dccef" category="inline-link-macro-rx"></block></block>
@@ -12402,10 +12340,6 @@
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
   <block id="0e5e2d82a1039e41c19d2248f3b64787" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다.</block>
   <block id="6212a1ad66c5ad9d3c50380aa91aab6a" category="list-text">하드웨어 오류가 없습니다</block>
-  <block id="36cbaf4511461b23b06f56ad7754e17d" category="paragraph">이 절차는 ONTAP 9.13.1 이상을 실행하는 시스템에서 다음 컨트롤러 업그레이드를 지원합니다.</block>
-  <block id="cfdade9e474e805958704ec0836f18ac" category="cell">교체 컨트롤러</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
-  <block id="4992f0045a6913a2fb77a09884c4e55c" category="admonition">설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또는 9.11.1을 실행하는 시스템에서 위 표에 나열된 컨트롤러 업그레이드를 수행할 수 있습니다 <block ref="4254cdc4ef28ceba663ec4031c88c9dd" category="inline-link-macro-rx"></block>.</block>
   <block id="050dafe962829ef847f34f7607e36eb3" category="list-text"><block ref="050dafe962829ef847f34f7607e36eb3" category="inline-link-macro-rx"></block></block>
   <block id="2af958a8143c65676390b5e251abe90a" category="list-text">를 확인합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다<block ref="b0c94f1494e22d963244e235719a2582" prefix=" " category="inline-code"></block> 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다<block ref="685ca42026debec2f3691cc5faae67d5" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="1f52bd2314f9805b0a0098b0f56a0dc4" category="paragraph">이 경우 노드를 재부팅해야 할 수 있습니다.</block>
@@ -12594,38 +12528,18 @@
   <block id="53eaf367aa3b61105b8ddce45278ab85" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="eef6283454e42ed2d47fdb00a9ff3e0c" category="inline-link-macro-rx"></block> 문서화:</block>
   <block id="e896a08242f1b8600bd891680083c89c" category="paragraph">표를 사용하기 전에 다음 지침을 검토하십시오.</block>
   <block id="11b0a2bdfcd224ea773788cafe8f7027" category="list-text">MetroCluster FC에서 IP로 전환되도록 스위치를 구성하는 경우, 포트 5, 포트 6, 포트 13 또는 포트 14를 사용하여 MetroCluster FC 노드의 로컬 클러스터 인터페이스를 연결할 수 있습니다. 을 참조하십시오 <block ref="46a459674905c476821f71bc8486a4ba" category="inline-link-macro-rx"></block> 이 구성의 케이블 연결에 대한 자세한 내용은 생성된 케이블 연결 파일을 참조하십시오. 다른 모든 연결의 경우 표에 나열된 포트 사용 할당을 사용할 수 있습니다.</block>
-  <block id="96072cdace8aeeb7214cc70597039994" category="section-title">FAS9000 또는 AFF A700 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
-  <block id="e0bf993f0bc1586df5f9dfb72954e8da" category="section-title">AFF A800 또는 ASA A800 시스템 및 Cisco 3132Q-V 스위치의 포트 사용</block>
   <block id="91166ddb2661684df8dbc56e903ec043" category="paragraph">다음 구성은 현재 지원되지 않습니다.</block>
   <block id="ffbf0166c7ab0c630d8081caba93b8ff" category="list-text">8노드 또는 2개의 4노드 MetroCluster 구성을 연결하려면 ONTAP 9.14.1 이상 및 RCF 파일 버전 2.00 이상이 필요합니다.</block>
-  <block id="df1cd5b519ca6d9ac61c3fcdeed5dbc5" category="section-title">AFF A150, ASA A150, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 NVIDIA SN2100 스위치까지</block>
-  <block id="b65df01fa47ee7a17ae4ac22e4f80fe1" category="image-alt">MCC IP 케이블 AFF ASA a150 fas500f A250 C250 MSN2100</block>
-  <block id="600e74c5a86bfaafeac18b9626b2b791" category="section-title">FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, FAS8700, FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 NVIDIA SN2100 스위치로 마이그레이션합니다</block>
-  <block id="52447c97a913b0a7009beba2a860f2f1" category="image-alt">MCC IP 케이블 fas8300 AFF ASA C400 a400 fas8700 fas9000 a700 A800 a900 fas9500 MSN2100</block>
   <block id="2f37bf7d3a80ef892a37b5867710dc5e" category="paragraph">*참고 1*: X91440A 어댑터(40Gbps)를 사용하는 경우 e4a 및 e4e 또는 e4a 및 e8a 포트를 사용합니다. X91153A 어댑터(100Gbps)를 사용하는 경우 e4a 및 e4b 또는 e4a 및 e8a 포트를 사용합니다.</block>
   <block id="8232ac4b6380b290738aa1ce5cc7cff3" category="paragraph">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2, MetroCluster 3 또는 MetroCluster 4)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 도구가 필요합니다.</block>
   <block id="554d0ed2f8464fefa6da872d6dbcf5c5" category="list-text">MetroCluster ISL의 25G 브레이크아웃 모드를 사용하려면 RCF 파일 버전 v2.10 이상이 필요합니다.</block>
   <block id="5b43fcab432560bae73db4e0c9e34232" category="list-text">"MetroCluster 4" 그룹에서 FAS8200 또는 AFF A300 이외의 플랫폼을 사용하려면 ONTAP 9.13.1 이상 및 RCF 파일 버전 2.00이 필요합니다.</block>
-  <block id="3c2d958a2069bca526b0229b6a1b15d8" category="section-title">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 Cisco 9336-FX2C 스위치에 연결합니다</block>
-  <block id="0c52a66510db282f2898b1934e18c757" category="section-title">FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 Cisco 9336C 스위치에 케이블 연결합니다</block>
   <block id="959103b0e0798459de77e2b5d8985ab3" category="paragraph">이전 RCF 파일에서 업그레이드하는 경우 케이블 연결 구성에서 "MetroCluster 4" 그룹(포트 25/26 및 29/30)의 포트를 사용하고 있을 수 있습니다.</block>
-  <block id="dbbcebd42c4edb43711e86d3bbc61485" category="section-title">AFF A320, FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, FAS8700, FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900, 또는 ASA A900 시스템에서 Cisco 3232C 또는 Cisco 9336C-FX2 스위치로 마이그레이션합니다</block>
   <block id="905eeaf0eb85efa82c94d09cf33bd250" category="admonition">"MetroCluster 4" 그룹의 포트를 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
   <block id="57434776bd5888e009d9e57f22c69e23" category="doc">Cisco 9336C-FX2 공유 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="732d615839cca3ffb6814dbae606c495" category="list-text">하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다.</block>
   <block id="3209e9c123d4238593063149c7f8b0e2" category="list-text">스위치 연결 NS224 쉘프를 지원하지 않는 플랫폼은 2차 MetroCluster 구성으로만 연결하거나 2차 DR 그룹으로 연결할 수 있습니다.</block>
   <block id="dae9a493a0381746910b46f271097afc" category="list-text">RcfFileGenerator는 첫 번째 플랫폼을 선택한 경우에만 적합한 플랫폼을 표시합니다.</block>
   <block id="dfaaea754370da30cfd269ee856da3a9" category="list-text">1개의 8노드 또는 2개의 4노드 MetroCluster 구성을 연결하려면 ONTAP 9.14.1 이상이 필요합니다.</block>
-  <block id="b03c615d318e9480b137520def0c0019" category="section-title">AFF A320, AFF C400, ASA C400, AFF A400, ASA A400, AFF A700, AFF C800, ASA C800, AFF A800, AFF A900, 또는 ASA A900 시스템에서 Cisco 9336C-FX2 공유 스위치로 이동할 수 있습니다</block>
-  <block id="6bb6a0936af73cac3f2bdbf32254d719" category="image-alt">MCC IP 케이블 A320 C400 a400 a700 C800 A800 a900에서 Cisco 9336c 공유 스위치에 연결합니다</block>
-  <block id="bf136b704de578c59a07363b76151378" category="section-title">AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블 연결합니다</block>
-  <block id="dcbe5e1c651d61678fa6f79f5f231f44" category="image-alt">AFF a150 ASA a150 fas27500 AFF A220을 Cisco 9336c 공유 스위치에 MCC IP 케이블로 연결합니다</block>
-  <block id="e5d9d3d0d01df5d39a8698af57def92a" category="section-title">FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블 연결합니다</block>
-  <block id="76df3d556d3a4275629b963054352251" category="image-alt">MCC IP 케이블 연결 c250 ASA c250 A250 ASA A250 - Cisco 9336c 공유 스위치</block>
-  <block id="3fdaa78573cae6b8e4c297b899acfe37" category="section-title">FAS8200 또는 AFF A300 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블 연결</block>
-  <block id="89d6082264fd0fa3fcf9fe31279df2a7" category="image-alt">Cisco 9336c 공유 스위치에 대한 MCC IP 케이블 연결 fas8200 affa300입니다</block>
-  <block id="7cbcd9b9ad1f63a9723831b696a1d54d" category="section-title">FAS8300, FAS8700, FAS9000 또는 FAS9500 시스템을 Cisco 9336C-FX2 공유 스위치에 케이블로 연결합니다</block>
-  <block id="ae163524dd2fe8e287d9f71b5de5920f" category="image-alt">MCC IP 케이블 연결 fas8300 fas8700 fas9000 fas9500에서 Cisco 9336c 공유 스위치에 연결합니다</block>
   <block id="82e2d7798ab15559f8ebbae8125f55c3" category="list-title">표를 사용하기 전에 다음 정보를 검토하십시오.</block>
   <block id="a5d0cab9bff9a930a5eb4ad5c7bce183" category="list-text">MetroCluster FC에서 IP로의 전환을 위해 스위치를 구성하는 경우 선택하는 타겟 플랫폼에 따라 다음 포트가 사용됩니다.</block>
   <block id="f2a26c5fb823530f83a5b4d6bf512eb9" category="cell">대상 플랫폼</block>
@@ -12633,33 +12547,17 @@
   <block id="a346e4e54905b86ccf19d436cac4f72d" category="cell">포트 1-6, 10Gbps</block>
   <block id="520f683aecf042eb1afbf14be7588551" category="cell">FAS8200 또는 AFF A300 플랫폼</block>
   <block id="81d990a756b6f5e5f14a9df8a16bbe34" category="cell">포트 3-4 및 9-12, 10Gbps</block>
-  <block id="2df5ca4f8a203d43ca2d6ee0dcd3ffc5" category="list-title">표에 참조된 참고 사항:</block>
   <block id="afc53d7c7e597c30acb18fa3ed38cc86" category="list-text">*참고 1*: 이 포트를 사용하려면 추가 라이센스가 필요합니다.</block>
   <block id="87b750ce6fbbe87d62cbc08d2dc73e1f" category="list-text">*참고 2*: AFF A320 시스템을 사용하는 단일 4-노드 MetroCluster만 스위치에 연결할 수 있습니다.</block>
-  <block id="5e32839c7226a47e6623ae1f3ffc146d" category="paragraph">이 구성에서는 MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차를 비롯하여 스위치 클러스터가 필요한 기능이 지원되지 않습니다.</block>
-  <block id="01ee52aecc80516ef9b51d0a149683a6" category="list-text">*참고 3*: BES-53248 스위치는 4포트 그룹의 모든 포트가 동일한 속도로 작동해야 합니다. AFF 150, ASA A150, FAS2750, AFF A220 및 FAS500f, AFF C250, ASA C250, AFF A250 및 ASA A250 플랫폼을 혼합해서 연결하려면 별도의 4포트 그룹에 위치한 스위치 포트를 사용해야 합니다. 이러한 유형의 구성이 필요한 경우 다음 사항이 적용됩니다.</block>
-  <block id="23b8a1af268a574d717d9ea3d20d1b88" category="list-text">에 있습니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block>, "MetroCluster 1" 및 "MetroCluster 2"의 드롭다운 필드는 MetroCluster 3 또는 "MetroCluster 4"의 플랫폼을 선택한 후에만 채워집니다.  을 참조하십시오 <block ref="4dfd72a31c74d2e269d1ca49dcbd7291" category="inline-link-macro-rx"></block> 포트 테이블 사용 방법에 대한 자세한 내용은 를 참조하십시오.</block>
-  <block id="f94a1422b62d10932fbf032c0b5f1c48" category="list-text">두 MetroCluster 구성이 동일한 플랫폼을 사용하는 경우, NetApp는 하나의 구성에 대해 "MetroCluster 3" 그룹을 선택하고 다른 구성에 대해서는 "MetroCluster 4" 그룹을 선택하는 것이 좋습니다. 플랫폼이 다른 경우 첫 번째 구성으로 "MetroCluster 3" 또는 "MetroCluster 4"를 선택하고 두 번째 구성으로 "MetroCluster 1" 또는 "MetroCluster 2"를 선택해야 합니다.</block>
-  <block id="67515cf8b1cb1eb3a194348da0494b5a" category="section-title">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 - Broadcom BES-53248 스위치</block>
-  <block id="c1362aea3362cced26c169c7f2579830" category="image-alt">MCC IP는 AFF ASA a150 A220 c250 A250 fas2750을 Broadcom bes 53248 스위치에 케이블로 연결합니다</block>
-  <block id="ae988cdaab88cda23ac7eae94e718156" category="section-title">FAS8200, AFF A300 또는 AFF A320 시스템을 Broadcom BES-53248 스위치에 케이블 연결합니다</block>
-  <block id="5c48415a3384935ba5be90eee889bb15" category="section-title">FAS8300, AFF C400, ASA C400, AFF A400, ASA A400 또는 FAS8700 시스템을 Broadcom BES-53248 스위치에 케이블 연결합니다</block>
-  <block id="f9e62124423900674e7c280534c2b0d1" category="image-alt">MCC IP는 fas8300 a400 C400 또는 fas8700을 Broadcom bes 53248 스위치에 케이블로 연결합니다</block>
   <block id="5b5bc0c2a68a3a5df60e045184c265e7" category="paragraph">의 * 스위치 * 섹션을 참조하십시오 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 지원되는 트랜시버를 확인합니다.</block>
   <block id="30ec0ec381148de730ef6f636244409c" category="paragraph">ONTAP 9.13.1부터 이 절차는 MetroCluster와 드라이브 쉘프가 동일한 IP 스위치(공유 스토리지 스위치 구성)에 연결되는 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="63d08c3cedf8143a5b62917cdffc9a26" category="image-alt">MetroCluster FC IP 전환 매트릭스 914</block>
   <block id="7411369ee6af7c3b06eeb0cb088ed313" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
   <block id="af03c8177e63c13156d2341adae52d1d" category="paragraph">업그레이드 절차에서는 컨트롤러가 새 컨트롤러 모델로 교체됩니다. 스토리지 쉘프 모델은 업그레이드되지 않습니다.</block>
-  <block id="a42deea73d6695bcde6da0ac8925f0f8" category="paragraph">컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 * 일치해야 합니다.</block>
   <block id="5fd3c01d6ba82ebe581c794d9a655304" category="list-text">FAS 시스템을 FAS 시스템으로 업그레이드하거나 AFF A-Series를 AFF A-Series로 업그레이드할 수 있습니다.</block>
   <block id="f4dbbbaca7fd3336a645956878f8c04c" category="list-text">FAS 시스템을 AFF A-Series로 또는 AFF A-Series를 AFF C-Series로 업그레이드할 수 없습니다.</block>
   <block id="9d437f50da0d309aac4a2fd5117cc07f" category="paragraph">예를 들어, 업그레이드하려는 플랫폼이 FAS8200인 경우 FAS9000으로 업그레이드할 수 있습니다. FAS8200 시스템을 AFF A700 시스템으로 업그레이드할 수 없습니다.</block>
-  <block id="78dd72417c3e7e39a5c94c9fe04d72d2" category="image-alt">MetroCluster IP 업그레이드 표 914</block>
-  <block id="7e895ffe56c2c22085a060323bcc3b91" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 새로운 컨트롤러는 기존 컨트롤러와 동일한 ONTAP 버전을 실행해야 합니다.</block>
-  <block id="4bdc0ece89d77527b0c94aa60d045b78" category="image-alt">MetroCluster FC 업그레이드 표 914</block>
   <block id="613e72a9b729773a1554cb0002fc99e8" category="list-text">참고 4: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
-  <block id="825d65b3b18d444d8008136946a33a99" category="list-text">참고 5: 컨트롤러 업그레이드는 ONTAP 9.14.1 이상을 실행하는 시스템에서 지원됩니다.</block>
-  <block id="50338c34cfec6d9e54eae1256352e18d" category="image-alt">MetroCluster FC 기술 업데이트 914</block>
   <block id="94487339ee219de4122a1e81d3919b34" category="admonition">루트 애그리게이트 디스크란 컨트롤러 업그레이드 프로세스 중에 다시 할당해야 하는 유일한 디스크입니다. 데이터 애그리게이트의 디스크 소유권은 스위치오버/스위치백 작업의 일부로 처리됩니다.</block>
   <block id="67c0d618a712fed303dbbf2eaf09695a" category="list-text">이전 노드에 생성된 기본 브로드캐스트 도메인이 있는지 확인합니다.</block>
   <block id="4fff770200a5d089fd8db4325afa94fc" category="inline-link">UUID 이름으로 새로 추가된 노드의 노드 관리 LIF</block>
@@ -12863,7 +12761,6 @@
   <block id="2bba389392c3b789eaa9d1c8c6fc87d2" category="paragraph">FAS8300, AFF A400, ASA A400, ASA C400 및 AFF C400</block>
   <block id="2adc2b7878fdb2191078a23343a8729e" category="paragraph">FAS2750, AFF A150, ASA A150 및 AFF A220</block>
   <block id="58783907a3fbb2ae3dd67c785764d060" category="paragraph">FAS500f, AFF A250, ASA A250, ASA C250 및 AFF C250</block>
-  <block id="1b2e916922e69cdb49ce0690307dd784" category="admonition">MetroCluster IP 시스템에는 전용 고가용성(HA) 포트가 없습니다. ONTAP 하드웨어 시스템 설명서 _ 를 사용하여 플랫폼을 설치하는 경우 클러스터 및 HA 포트에 케이블을 연결하기 위해 지침을 따르지 마십시오.</block>
   <block id="689365c2d6e4fb2ffa83031a799cb8a1" category="inline-link-macro">수동 복구를 수행합니다</block>
   <block id="b6933415b566c13842c75e7153f5e0bd" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. MAUSO 또는 tiebreaker 소프트웨어를 반드시 사용해야 하는 것은 아니지만, 이러한 서비스를 사용하지 않을 경우에는 반드시 사용해야 합니다 <block ref="ffc76c5e8798538fa424ea31c8f712bb" category="inline-link-macro-rx"></block> 재해가 발생한 경우</block>
   <block id="b65bf2d95ccaa5163ee3e519ccc4f46c" category="inline-link-macro">ONTAP 중재자가 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
@@ -12874,8 +12771,6 @@
   <block id="c81d9f1aaf4df29053805f321b5b089d" category="section-title">AFF A150, ASA A150 및 AFF A220 시스템에서 ADP 및 디스크 할당</block>
   <block id="f7895982d569530633368489a09d6077" category="section-title">AFF C250, AFF A250, ASA A250, ASA C250 및 FAS500f 시스템에서 ADP 및 디스크 할당</block>
   <block id="6a0fb9ba6a0c02751fb5fc909455894f" category="section-title">AFF C400, AFF A400, ASA C400 및 ASA A400 시스템에서 ADP 및 디스크 할당</block>
-  <block id="ce18baa4e98793cae29bac3255df9775" category="section-title">AFF C800, ASA C800, ASA A800, AFF A800 시스템에서 ADP 및 디스크 할당</block>
-  <block id="fbb4c9d136a3689d23c5be288b1f395e" category="section-title">AFF A900 및 ASA A900 시스템에서 ADP 및 디스크 할당</block>
   <block id="fd659a09a0244eaf6b3f61e3ca61a14d" category="paragraph">ONTAP 중재자는 MetroCluster IP 노드에 대한 상태 정보를 저장할 메일박스 LUN을 제공합니다. 이러한 LUN은 ONTAP 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 MetroCluster 중재자의 공동 위치입니다. MetroCluster IP 노드는 사서함 정보를 사용하여 DR(재해 복구) 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO(중재자 지원 계획되지 않은 전환)를 구현할 수 있습니다.</block>
   <block id="30340ec1ae42c7ca90b5fdd7fab0a4a3" category="paragraph">절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다. 기본적으로 MAUSO는 다음 시나리오에서 시작됩니다.</block>
   <block id="44c6a8e31f1720ca268816c13cea4bb0" category="list-text">사이트 재해가 발생하는 경우 사이트 재해는 동일한 사이트에 있는 _ALL_NODES의 장애입니다.</block>
@@ -13435,15 +13330,11 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2429e1917793f4046beb8fe2642382e4" category="doc">MetroCluster IP 플랫폼 지원의 새로운 기능</block>
   <block id="7616cb7bf661fe6377270c352ec2ff82" category="cell">MetroCluster IP 구성에서 지원되는 플랫폼</block>
   <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="paragraph">AFF A150</block>
-  <block id="f57f1967d5e316f5c38c14ea29884a9a" category="paragraph">ONTAP 9.13.1 이상 ONTAP 릴리스</block>
   <block id="f3975a91159eff9969dbd4feb2dec392" category="paragraph">ONTAP 9.12.1P1</block>
   <block id="ee64dfb34bd2ed3e08d63eaf38462ec7" category="paragraph">ONTAP 9.11.1P8</block>
   <block id="fc0954dc49e631cf41dcb343d7e02893" category="paragraph">ONTAP 9.10.1P12</block>
   <block id="7c3d41bb91a832b194d140ed72b101e7" category="paragraph">AFF C250, AFF C400, AFF C800</block>
-  <block id="f2bdeb410b49732e0c1482361af1d1d5" category="paragraph">ONTAP 9.13.1 GA 이상 ONTAP 릴리즈.</block>
   <block id="ab8296c5ef7a7b056b384680f89a9379" category="paragraph">ONTAP 9.10.1</block>
-  <block id="e86c8b5cecd7918c55b2a357c7668d30" category="paragraph">SolidFire의 인수를 완료했습니다</block>
-  <block id="2ba4f1a86eaaf58dbde1ea31ab19c1c5" category="paragraph">MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.</block>
   <block id="3447b91e516e4fc6b5dba827fcb68bee" category="paragraph">ONTAP 9.7 을 참조하십시오</block>
   <block id="b9893a4b8d000616198b04d3642b5fb8" category="paragraph">ONTAP 9.6P3을 참조하십시오</block>
   <block id="0fcf2ee62acd9eae83b609a0e7ecaa72" category="paragraph">ONTAP 9.5 를 참조하십시오</block>
@@ -13619,10 +13510,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="fa0344a10c89a05b4e9232391d5feb01" category="sidebar">NetApp Config Advisor를 참조하십시오</block>
   <block id="3f2b90ec5a9b43745b9c8c9fedf48d8d" category="sidebar">NetApp 지원 기술 자료</block>
   <block id="67ed9530c4069b662839f89c94d4a160" category="inline-link-macro">종단간 암호화를 비활성화합니다</block>
-  <block id="ade87983ca16ac3bdbf2b32cf6e9b0d5" category="list-text">시스템에서 활성화되어 있는 경우 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block> 컨트롤러 업그레이드를 수행하기 전에.</block>
   <block id="3d8fb38a661b136fb35b34201d24ef76" category="section-title">엔드 투 엔드 암호화 구성</block>
   <block id="df4377d05c61041e2e8ae85ae5db4fad" category="paragraph">시스템에서 지원되는 경우, nvlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 MetroCluster IP 사이트 간에 암호화할 수 있습니다. 을 참조하십시오 <block ref="ffcb318089fda8d2418bcd406342779d" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="8f883162e124fc09a7ae40b02d457abc" category="list-text">시스템에서 활성화되어 있는 경우 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block> 업그레이드를 수행하기 전에</block>
   <block id="5aa9df9bfe2a9d3dcb9eaf7420818fac" category="inline-link-macro">엔드 투 엔드 암호화 지원</block>
   <block id="bd7a871cd772a6f8f044f086ccc3ed68" category="list-text">시스템에서 엔드 투 엔드 암호화를 지원하는 경우 다음을 수행할 수 있습니다 <block ref="2fd1db8c2a0ebb290526de8f46b28acd" category="inline-link-macro-rx"></block> 새 DR 그룹에 추가합니다.</block>
   <block id="0088c1e15cccccdb2e3dc23e762335e0" category="list-text">종단간 암호화가 활성화된 경우 - 단계를 따릅니다 <block ref="8a6f29aee2b87dab72caa4c63be583f5" category="inline-link-macro-rx"></block>.</block>
@@ -13711,5 +13600,371 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
   <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
   <block id="8872b0d09737dfd9b6fcafd4e8c2356b" category="list-text"><block ref="8872b0d09737dfd9b6fcafd4e8c2356b" category="inline-link-rx"></block></block>
-  <block id="6136261711c49bf0e8e1dcb22a2c524f" category="paragraph">해당 없음</block>
+  <block id="fe06217dfe728a4663456cded8fa4095" category="list-text"><block ref="fe06217dfe728a4663456cded8fa4095" category="inline-link-macro-rx"></block></block>
+  <block id="80d79e74efb3cf7c2ad45e7e1c96223d" category="inline-link-macro">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="9dce4db3e352a666d92ce25dd5f94a51" category="list-text"><block ref="9dce4db3e352a666d92ce25dd5f94a51" category="inline-link-macro-rx"></block></block>
+  <block id="4f586337d2fd3e18706fce945038a04a" category="list-text"><block ref="4f586337d2fd3e18706fce945038a04a" category="inline-link-macro-rx"></block></block>
+  <block id="59908dc1540a829f2e5b2241e8bda0cd" category="inline-link-macro">NVIDIA IP RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="73f5dfd8823a821a2efabbc978e0229c" category="list-text"><block ref="73f5dfd8823a821a2efabbc978e0229c" category="inline-link-macro-rx"></block></block>
+  <block id="c61e96543ff55077f64d8dd03940c2c6" category="list-text">AFF A70 를 참조하십시오</block>
+  <block id="50c089c00eacadfe94238545067e1673" category="list-text">AFF A90 를 참조하십시오</block>
+  <block id="0be7ecaeb710959e64858a36fa1f8783" category="list-text">AFF A1K 를 참조하십시오</block>
+  <block id="5304f5c74d3938f229fd289a3a4c7335" category="paragraph">명령 출력은 플랫폼 모델에 따라 다릅니다.</block>
+  <block id="a5742dd38006c09197d0e488bba89bf7" category="open-title">ONTAP 9.15.1 이상에서 도입된 시스템</block>
+  <block id="566a13604e83a8fff73bdf14020a980a" category="paragraph">ONTAP 9.15.1 이상(AFF A70, AFF A90 및 AFF A1K)에 도입된 시스템에는 다음 출력 예와 같이 HA 및 DR용으로 별도의 포트가 있습니다.</block>
+  <block id="5703319e138fc00c827014acd16d0376" category="paragraph">다음 출력에서는 포트 e5a 및 e5b에서 MetroCluster IP 인터페이스를 사용하는 AFF A700 및 FAS9000 시스템의 구성 IP 주소를 보여 줍니다. 인터페이스는 플랫폼 유형에 따라 다를 수 있습니다.</block>
+  <block id="b843496219829d61ebc41138be0194e6" category="list-text">플랫폼 모델이 VLAN ID(위 목록 참조)를 사용하고 기본 VLAN ID를 사용하지 않는 경우 VLAN ID가 필요합니다.</block>
+  <block id="e2974b23926ca4d7d377fe83a01893cc" category="list-text">각 재해 사이트 노드에 대해 LOADER 프롬프트에서 플랫폼 모델에 따라 bootarg 값을 설정합니다.</block>
+  <block id="ac0f64413607e314a8c6c9ca1bcf8171" category="list-text">인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델이 VLAN ID를 사용하지 않는 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.</block>
+  <block id="7e9ada96e6c7ea5b82a0e953f38fc85c" category="paragraph">ONTAP 9.15.1 이상에서 도입된 시스템에서는 DR 및 HA용 포트가 별도로 있으므로 _HA-PARTNER-IP-ADDRESS_의 값을 * 0 * (0)으로 설정해야 합니다.</block>
+  <block id="fd053f45281bc461c7ff13c80dc7a0ef" category="paragraph">다음 bootarg를 설정합니다.</block>
+  <block id="b1656b6f4acc345525c67f4fc0341f24" category="section-title">AFF C800, ASA C800, ASA A800, AFF A800, AFF A70, 및 AFF A90 시스템</block>
+  <block id="9f4ca92781c17387aacdcaad01922666" category="section-title">AFF A900, ASA A900 및 AFF A1K 시스템에서 ADP 및 디스크 할당</block>
+  <block id="855e77b312a37887818fdd759e02e635" category="paragraph">X50132A를 참조하십시오</block>
+  <block id="cb90ff75f6769672089edcf1b5a430c2" category="paragraph">슬롯 2</block>
+  <block id="1861ea3bcf41c2d0077d0ec89bff163f" category="paragraph">e2a, e2b</block>
+  <block id="e6f9eb6f48a1c73f8869c3018d94ce49" category="paragraph">AFF A90 및 AFF A1K</block>
+  <block id="7c941395c7474fbf4256f8c308a5d9a8" category="paragraph">슬롯 2, 슬롯 3</block>
+  <block id="00e2655d7c31ea9101ed27d4696d5c94" category="paragraph">e2b, e3b</block>
+  <block id="875e533ea6255c6d2f92900744fe1528" category="paragraph">*참고:* 포트 e2a 및 e3a는 사용되지 않은 상태로 유지해야 합니다. 이러한 포트를 프런트엔드 네트워크 또는 피어링에 사용하는 것은 지원되지 않습니다.</block>
+  <block id="ab29addd4fe461fb9b64af6fddd54dad" category="section-title">구성에 맞는 올바른 케이블 연결 표를 선택합니다</block>
+  <block id="ded30e9993ee1dec39c9a577af98ed86" category="paragraph">다음 표를 사용하여 따라야 할 케이블 연결 테이블을 결정합니다.</block>
+  <block id="378f02db97047434844d749310da83f4" category="cell">시스템이 다음과 같은 경우...</block>
+  <block id="797ace9b557574e9e0b101225be4602a" category="cell">케이블 연결 표 사용...</block>
+  <block id="3468d9323ffee76cf151228c3bc4bb50" category="paragraph">FAS2750, AFF A220</block>
+  <block id="c564e5e6ba6216ba72b8985cd713bec2" category="inline-xref">Cisco 3132Q-V 플랫폼 포트 할당(그룹 1)</block>
+  <block id="29b68b735369de02347560fd1796cc0f" category="cell"><block ref="7ab899a6294ca709283b0b94918acac5" category="inline-xref-macro-rx"></block></block>
+  <block id="3a12696b33d539cb34844edab628e562" category="cell">FAS9000, AFF A700</block>
+  <block id="7f394da1dbe41aaa9340cf65d9afe258" category="inline-xref">Cisco 3132Q-V 플랫폼 포트 할당(그룹 2)</block>
+  <block id="ea7e9a96ecbd1edc5a3811758d1f303d" category="cell"><block ref="ae942639e12f01d51947b7b009dd9fd2" category="inline-xref-macro-rx"></block></block>
+  <block id="cd89e453925d1901395397754a492681" category="cell">AFF A800, ASA A800</block>
+  <block id="ed8fa34972ac300763a3b8c083ee5d1b" category="inline-xref">Cisco 3132Q-V 플랫폼 포트 할당(그룹 3)</block>
+  <block id="d48221b8ea9bda63ed30c8f2e4d54546" category="cell"><block ref="dc218d9302b7ff7ec2652cf71967e577" category="inline-xref-macro-rx"></block></block>
+  <block id="2ef9155f2653dcb22ca9e8ea8eb3401d" category="paragraph">FAS2750 또는 AFF A220 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="8d0d4c4989ca3a66a7d2d68ea1014ba3" category="image-alt">은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다</block>
+  <block id="bc96235583bdab0e6796c3feabb688a2" category="paragraph">FAS9000 또는 AFF A700 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="f147a65f5cf3438e76a8b0e61ed4bc9a" category="paragraph">AFF A800 또는 ASA A800 시스템을 Cisco 3132Q-V 스위치에 연결하기 위해 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="c04953afd7340fd5dc8facf4675172a9" category="paragraph">AFF A150, ASA A150, FAS2750, AFF A220</block>
+  <block id="3e28b7f2fae6fd64638704a6984b0c6b" category="paragraph">FAS500f, AFF C250, ASA C250, AFF A250, ASA A250</block>
+  <block id="a55997bcb52ea47d76c7693089c4411b" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 1)</block>
+  <block id="c024b3c7d421518d7eb77f06a0afffb1" category="cell"><block ref="6d3d31dd5453e3b467ac6e4ca8f02d56" category="inline-xref-macro-rx"></block></block>
+  <block id="0b3e5d156cf864da2f269d95d3fcc8fa" category="cell">FAS8200, AFF A300</block>
+  <block id="d69442b5898944629a5487cffc295997" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 2)</block>
+  <block id="8cba878eab4d29dbb50e86dfd2827de3" category="cell"><block ref="379e0d419d9bbcf57ca750dab429b41b" category="inline-xref-macro-rx"></block></block>
+  <block id="393d2d284444ca547331678bf39eda23" category="cell">AFF A320 FAS8300, AFF C400, ASA C400, FAS8700 AFF A400, ASA A400</block>
+  <block id="b61bfc412023d6416e90b961ea301bb4" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 3)</block>
+  <block id="293c0fae6effbd3bba1d18e296547ebf" category="cell"><block ref="1e85efe101fc552b243f3b78cf215749" category="inline-xref-macro-rx"></block></block>
+  <block id="054b22baf62d3195ebaf8ecfe2361739" category="cell">FAS9000, AFF A700 AFF C800, ASA C800, AFF A800, ASA A800 FAS9500, AFF A900, ASA A900 탑재</block>
+  <block id="2226e1588cfda1f99bdd93ae81369cbc" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 4)</block>
+  <block id="c943d58a767750622bb22e4321d98b49" category="cell"><block ref="959c288a998a0080d9480c0767159234" category="inline-xref-macro-rx"></block></block>
+  <block id="1d895f249034078e8d0864ccac388901" category="cell">AFF A70 AFF A90 AFF A1K * 참고: * 이러한 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
+  <block id="59c59d66414422c937d61eff4de12116" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 5)</block>
+  <block id="fe7a114e5e984cbae45640593d3154ca" category="cell"><block ref="80843075b55b672cbe9cacce61884d3c" category="inline-xref-macro-rx"></block></block>
+  <block id="2f08fa253f72ece3683a45d943018e9e" category="paragraph">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 9336C 스위치로 연결하는 경우:</block>
+  <block id="bf6685eed0c6a9487e122c2316929af4" category="image-alt">에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다</block>
+  <block id="95b3cf0d5bfefca59c78627146fba641" category="paragraph">FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="be6fae0369c7f11eec2fbd1d464b74fd" category="paragraph">AFF A320, FAS8300, AFF C400, ASA C400, FAS8700, AFF A400, 또는 ASA A400 시스템에서 Cisco 3232C 또는 9336C 스위치로:</block>
+  <block id="9d55c6ea91959d97bbe3100622e6c086" category="paragraph">FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 Cisco 3232C 또는 9336C 스위치로 이동하는 방법:</block>
+  <block id="e2f3683f965e8d15cad454e450ed2654" category="paragraph">AFF A70, AFF A90 또는 AFF A1K 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="ead5ac015522b2debf023fd3b632c5b7" category="admonition">이 표의 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
+  <block id="e896857ceffdb603548885cb5100edfc" category="list-text">하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다.</block>
+  <block id="bc72159143eff0b74341b77947b6f3ff" category="paragraph">구성에 대한 올바른 포트 할당 표를 검토합니다. 이 섹션에는 두 가지 케이블 연결 테이블 세트가 있습니다.</block>
+  <block id="1c704961a2a6e9aa5979ae30105b7b6f" category="inline-xref">스위치 연결 NS224 쉘프에 연결하는 컨트롤러의 케이블 연결 테이블</block>
+  <block id="2232317158ae51b05261974b0c73c774" category="list-text"><block ref="92b842ddd2dcaae5c7414e419a533afa" category="inline-xref-macro-rx"></block></block>
+  <block id="612a54a1de7e14e37101146d6448b987" category="inline-xref">스위치 연결 NS224 쉘프에 연결되지 않은 컨트롤러의 케이블 연결 테이블</block>
+  <block id="6dd7317a4f079d3bca808073726abb0c" category="list-text"><block ref="d1b10ae26df34f20f35d30de5bce7767" category="inline-xref-macro-rx"></block></block>
+  <block id="21759b5180c8d8babd82ff285718a079" category="section-title">스위치 연결 NS224 쉘프에 연결하는 컨트롤러</block>
+  <block id="e076c64926b9d6d75c7a680f36a971c0" category="paragraph">스위치 연결 NS224 쉘프에 연결하는 컨트롤러에 대해 따라야 할 포트 할당 표를 결정합니다.</block>
+  <block id="419f3742e6de8e0ec4b22cce005e7630" category="cell">플랫폼</block>
+  <block id="be031e3e2925732e58a2cb37db830517" category="cell">AFF A320 AFF C400, ASA C400 AFF A400, ASA A400</block>
+  <block id="f8c4528af0dcdcdae34719f193d9cc9b" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 1)</block>
+  <block id="0b0b44133e290c34f8dea44fec707f9e" category="cell"><block ref="540e171a753e86bd73dfe99d0743b82c" category="inline-xref-macro-rx"></block></block>
+  <block id="b6098cea8a2777e5c03f397eddba1384" category="cell">AFF A700 AFF C800, ASA C800, AFF A800 AFF A900, ASA A900</block>
+  <block id="97686b663fd0ef0bfb1351a275bd7837" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 2)</block>
+  <block id="c476b4dbd1c1a1575bd0cb7b9b6cee78" category="cell"><block ref="72d365170c1b13f78ac51fd21ca790fe" category="inline-xref-macro-rx"></block></block>
+  <block id="c297b27e164f9fd07153033bee6aaf14" category="cell">AFF A90 AFF A70 AFF A1K * 참고: * 이러한 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
+  <block id="48d80fb496b1141bc0d1f4a4840501c2" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 3)</block>
+  <block id="a294de1141d085225e66991a6734d64b" category="cell"><block ref="8e3178499467cafbbfb2609edfa411f5" category="inline-xref-macro-rx"></block></block>
+  <block id="e4880392f55e1cdd66933d586afaff9b" category="paragraph-title">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 1)</block>
+  <block id="0e5c3d14d0398df92da81a253e1b221e" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF A320, AFF C400, ASA C400, AFF A400 또는 ASA A400 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="fc1f8aadea7c94e59bd258cb88466087" category="image-alt">에는 Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당이 나와 있습니다</block>
+  <block id="4ba16f9ec1ea989c0867b1ad14e3e091" category="paragraph-title">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 2)</block>
+  <block id="c20e08f5a68ee9f336acc3f80791cdce" category="paragraph">AFF A700, AFF C800, ASA C800, AFF A800, AFF A900 및 또는 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 ASA A900 시스템:</block>
+  <block id="b9fb7e19d674be0780dc144fff0db677" category="paragraph-title">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 3)</block>
+  <block id="d6e68f55f351c47669a81d202281bc62" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF A90, AFF A70 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="2132d8564677098806bf7e79d1419f3a" category="paragraph">스위치가 연결된 클러스터의 경우 AFF A90 또는 AFF A70 노드의 동일한 클러스터 포트가 동일한 스위치에 있어야 합니다. 예를 들어, 노드1의 E1A와 노드2의 E1A는 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 노드1의 E1A가 IP_Switch_x_1에 연결되고 노드2의 E1A가 IP_Switch_x_2에 연결된 공유 클러스터 HA 포트의 교차 연결은 HA 통신 실패를 방지합니다.</block>
+  <block id="78de8bf922780f385bf681428e5b091b" category="section-title">컨트롤러가 스위치 연결 NS224 쉘프에 연결되지 않음</block>
+  <block id="b75c967687ccfedfdc9af6a7cf47fb61" category="paragraph">스위치 연결 NS224 쉘프에 연결되지 않은 컨트롤러에 대해 따라야 하는 포트 할당 표를 결정합니다.</block>
+  <block id="f767a875f72b50f5b4ba095c00dd1361" category="cell">AFF A150, ASA A150 FAS2750, AFF A220</block>
+  <block id="320197c44c5a2bfa0ef4783c1891047b" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 4)</block>
+  <block id="819461ccb150f80740e4b719f03fb5a4" category="cell"><block ref="45c8171ea8358d622e0f29ed63cf68ee" category="inline-xref-macro-rx"></block></block>
+  <block id="c4a769675a2e89fcb65e84a2b2c8e6c1" category="cell">FAS500f AFF C250, ASA C250 AFF A250, ASA A250</block>
+  <block id="598cde4c76afa98039e2123bffe9a9e0" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 5)</block>
+  <block id="c3e9cb3ab828df155f62b05cf84026de" category="cell"><block ref="2a5db636fcd422105bb7d2120d9ab60f" category="inline-xref-macro-rx"></block></block>
+  <block id="b3d39e1de10317a22681104f98025f7c" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 6)</block>
+  <block id="1d3c4364253180c31aadc7e665f06be3" category="cell"><block ref="fb232079a476121800e01709dcbcc120" category="inline-xref-macro-rx"></block></block>
+  <block id="91f9dc9723422ab53422ac629769dc01" category="cell">AFF A320 FAS8300, AFF C400, ASA C400, FAS8700 AFF A900, ASA A900</block>
+  <block id="69ecd98e97e7a9e1d19f24f861c7f0f2" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 7)</block>
+  <block id="fa79f841a4132d671e388738264a459b" category="cell"><block ref="26dd3b4b92a8d6ecee286fef2ed17617" category="inline-xref-macro-rx"></block></block>
+  <block id="55a266c14b9f53227c9727ac67fc90d4" category="cell">FAS9000, AFF A700 AFF C800, ASA C800, AFF A800, ASA A800 FAS9500, AFF A900, ASA A900 탑재</block>
+  <block id="904d397f65f10d055c2a6d861b352f55" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 8)</block>
+  <block id="e47721726dfeff358f63e741e895a946" category="cell"><block ref="0acebee679a0d6934b6a25a504b83902" category="inline-xref-macro-rx"></block></block>
+  <block id="add9cee3ec42c30fa800cd2b10ceab50" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 9)</block>
+  <block id="f5d39b661f1b607b1cb9e19c6f0a29cd" category="cell"><block ref="4259e291cf96a051ba158f8842cba3e1" category="inline-xref-macro-rx"></block></block>
+  <block id="af4a78f3683e4ee93b8c4c5940a04438" category="paragraph">스위치가 연결된 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="8418c0c9975450b9880acd41079c06de" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="a1b0f4d668ec59f7dde1f302ecf91dd8" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 FAS8200 또는 AFF A300 시스템의 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="5a3997adc2101fe7308066cf14ece169" category="paragraph">AFF A320, FAS8300, AFF C400, ASA C400, FAS8700, 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A900 또는 ASA A900 시스템:</block>
+  <block id="6ece60b094d75c94ab49d4300d236c1e" category="paragraph">FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템:</block>
+  <block id="d54985a1df7bc0a159fa1afcc15f305e" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A70, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="e3703245932789dbe7c10cc1431475fa" category="paragraph">AFF A150, ASA A150</block>
+  <block id="d8e09f41a0140bcadce2023c9fc846c8" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 1)</block>
+  <block id="76e892ed2593b2d95aee4f548fdf5623" category="cell"><block ref="7a1d34aae389c65629b6ff5d8aa067cc" category="inline-xref-macro-rx"></block></block>
+  <block id="e06b024281c7cdf3ebfd2b766f6f43c5" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 2)</block>
+  <block id="90420831b8c7eb4b97a2ed9ca0a00b65" category="cell"><block ref="68bb8cc85fd20bf3f45bd9460be72e37" category="inline-xref-macro-rx"></block></block>
+  <block id="9577a62a7a4a3fcdd643b0c673764643" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 3)</block>
+  <block id="8b639859245978443bd0190c4ff18f32" category="cell"><block ref="a09975192bdb70297f7244cbba6de184" category="inline-xref-macro-rx"></block></block>
+  <block id="c6916bfa8df5b4f385519fca765412ed" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 4)</block>
+  <block id="2e332260fe5069855a7823f04b4b2e33" category="cell"><block ref="7ac25557ae91f7c67a94ffe517c00092" category="inline-xref-macro-rx"></block></block>
+  <block id="6dc837b2d92b555916641eb5178ac221" category="cell">FAS8300 AFF C400, ASA C400 AFF A400, ASA A400 FAS8700</block>
+  <block id="72aa90afbb81d6632cf26a27161a2306" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 5)</block>
+  <block id="d84a2275237d2dfdf7470ae3bf75d519" category="cell"><block ref="c0fb5bc0e1afd91054b4474cd4d01adf" category="inline-xref-macro-rx"></block></block>
+  <block id="a8555df1d95c0e209452ad8fca7eb194" category="paragraph">AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="d815cc46256555eeb86fa2dab3f52e4f" category="image-alt">에서는 Broadcom BES-53248 플랫폼 포트 할당을 보여 줍니다</block>
+  <block id="f55f3df4f3171bcc7a7bfd50fb62fb31" category="list-text">두 MetroCluster 구성이 동일한 플랫폼을 사용하는 경우 NetApp는 하나의 구성에 대해 그룹 "MetroCluster 3"을 선택하고 다른 구성에 대해 그룹 "MetroCluster 4"를 선택하는 것이 좋습니다. 플랫폼이 다른 경우 첫 번째 구성은 "MetroCluster 3" 또는 "MetroCluster 4"를, 두 번째 구성은 "MetroCluster 1" 또는 "MetroCluster 2"를 선택해야 합니다.</block>
+  <block id="b31708d50ebc601c86f3f8602ebf83c3" category="paragraph">FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="3c788eb4704d0411c6e2ca4cafb1176a" category="paragraph">FAS8200 또는 AFF A300 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="743ba1b47d944967c67af3d8630176fa" category="paragraph">AFF A320 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="f9472a5c5416ee506e1b4d2e4b3c8e73" category="paragraph">스위치 클러스터가 필요한 기능은 이 구성에서 지원되지 않습니다. MetroCluster FC에서 IP로의 전환 및 기술 업데이트 절차가 포함됩니다.</block>
+  <block id="c29521e70ff45434a6957c2a6dafc62b" category="paragraph">FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, 케이블 연결을 위한 플랫폼 포트 할당 검토 또는 FAS8700 시스템에서 Broadcom BES-53248 스위치로 마이그레이션합니다.</block>
+  <block id="cb11078c5524bd0fbae837fd1a919c50" category="paragraph">AFF C250, ASA C250</block>
+  <block id="e4582c1646820728c642cb9c8d742e95" category="paragraph">AFF A250, ASA A250</block>
+  <block id="4961cf8f10192a5b4ad33671042c096d" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 1)</block>
+  <block id="c8625985c8052ac6551e3c107f7f5866" category="cell"><block ref="1a5cebf616f7d490fdd4c196a20d55ae" category="inline-xref-macro-rx"></block></block>
+  <block id="9c2e8c459a4e1a4d1a809eac240a9c3c" category="cell">FAS8300 AFF C400, ASA C400 AFF A400, ASA A400 FAS8700 FAS9000, AFF A700</block>
+  <block id="4dc29e675f26e4b6e6499807939c9fe6" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 2)</block>
+  <block id="f6b8e6b89e3c57d0ca377b29792960e1" category="cell"><block ref="53c3bba0fc4d571e7510994b846bb2c8" category="inline-xref-macro-rx"></block></block>
+  <block id="41ac1c2c88009e74b42da1aa691550ad" category="cell">AFF C800, ASA C800 AFF A800, ASA A800 FAS9500 AFF A900, ASA A900</block>
+  <block id="c0578483b49594ace701f1c947438778" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 3)</block>
+  <block id="ab7b2bc607214982d8195f7f426e2552" category="cell"><block ref="7196cc602c9c7af038c726b07ed2eebb" category="inline-xref-macro-rx"></block></block>
+  <block id="3fd729260e3da24bd6a804a69288d3a0" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 4)</block>
+  <block id="9da9e77e27a298779dde7229f987f90e" category="cell"><block ref="e522fa81c7b717996bb7f3ed80dbae98" category="inline-xref-macro-rx"></block></block>
+  <block id="b99e4b4aab95a094663bf529c9a168e3" category="paragraph">AFF A150, ASA A150, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 NVIDIA SN2100 스위치로 연결:</block>
+  <block id="5169dd4952c3ed61fc8c586565b6f671" category="image-alt">에는 NVIDIA SN2100 플랫폼 포트 할당이 나와 있습니다</block>
+  <block id="8c0dfd424cf2846a6c5d57af4d4c1c67" category="paragraph">FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, 케이블 연결을 위한 플랫폼 포트 할당 검토 FAS8700, FAS9000 또는 AFF A700 시스템에서 NVIDIA SN2100 스위치로 연결:</block>
+  <block id="359054a58638f835e3a1aabcead61be2" category="paragraph">AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 NVIDIA SN2100 스위치로 연결:</block>
+  <block id="8aa8fb06f3ec29afe8a9aeb09f780eac" category="paragraph">플랫폼 포트 할당을 검토하여 AFF A90, AFF A70 또는 AFF A1K 시스템을 NVIDIA SN2100 스위치에 연결합니다.</block>
+  <block id="d3b56d16ca05e3f25ef1d8c401cfa7c7" category="admonition">MetroCluster IP 시스템에는 전용 고가용성(HA) 포트가 없습니다. 플랫폼에 따라 MetroCluster, 로컬 클러스터 또는 공유 클러스터/MetroCluster 인터페이스를 사용하여 HA 트래픽을 처리합니다. ONTAP 하드웨어 시스템 설명서 _ 를 사용하여 플랫폼을 설치하는 경우 클러스터 및 HA 포트에 케이블을 연결하기 위해 지침을 따르지 마십시오.</block>
+  <block id="829170dbc66398be3778968ebb183d6b" category="section-title">MetroCluster IP 인터페이스의 스위치 포트 속도를 설정합니다</block>
+  <block id="6a0285e4a2b9116faf78c0ce3f22b522" category="paragraph">다음 시스템의 스위치 포트 속도를 100G로 설정하려면 다음 절차를 수행하십시오.</block>
+  <block id="8ccc4e1d836f85f652e6e078b6923ac4" category="list-text">속도를 설정하려면 옵션과 함께 RCF 파일을<block ref="696986061877bd4d6acb62036c428a66" prefix=" " category="inline-code"></block> 사용합니다. 이렇게 하면 설정이 적용되고 구성이 저장됩니다.</block>
+  <block id="04dfa0b1df6387b5be0fe6bbff1286f7" category="paragraph">다음은 MetroCluster 인터페이스 및 의 속도를 설정하는 명령입니다.<block ref="e9c5c6daf1a059d5e7448ef86c2b728e" prefix=" " category="inline-code"></block><block ref="aeef091266f2ea49353e0048626a93bf" prefix=" " category="inline-code"></block></block>
+  <block id="9ec3477ddf53d3e8d6d42a2fb56d2dff" category="list-text">에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 <block ref="bbee29d44b7926be9c2be6dc914059f5" category="inline-link-macro-rx"></block>사용합니다.</block>
+  <block id="65bd6763ac7ddd88c7008054cb6bc624" category="admonition">ONTAP 소프트웨어에서 UND를 변경하려면 다음 단계를 수행하십시오. <block ref="b0ca457fe34ed30c44119bccf9b89d7d" category="inline-link-macro-rx"></block></block>
+  <block id="7b195fd8d412843052bdca8035a73b9b" category="paragraph">MetroCluster IP 플랫폼 지원의 새로운 기능에 대해 알아봅니다.</block>
+  <block id="5fa70989a3e04b27c407da750f3d94fe" category="paragraph">AFF A70, AFF A90, AFF A1K</block>
+  <block id="4b96de8aec25594d2021f91d86aa38cb" category="paragraph">ONTAP 9.15.1 이상</block>
+  <block id="09165c2d4ac9e01ef347c57ffcbe1ce5" category="paragraph">ASA A150, ASA A250, ASA A400, ASA A800, ASA A900, ASA C250, ASA C400, ASA C800</block>
+  <block id="fafe6583a668a5a00cfd6d5e611b9ce3" category="paragraph">ONTAP 9.14.1 이상</block>
+  <block id="f8f1cacc3272f3e60fb1b860d1134be6" category="paragraph">ONTAP 9.13.1 GA 이상</block>
+  <block id="2f709669cbfb385626cf55d7c80120be" category="paragraph">ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800</block>
+  <block id="e4d3a0569925dd58f4e2c0c40b889993" category="paragraph">AFF A220, FAS2750</block>
+  <block id="fc028e3a959d5040cb2c7b0ceac73cf8" category="paragraph">AFF A300, FAS8200</block>
+  <block id="28cf84e4b9c7d19ba37159218fdea6f0" category="section-title">컨트롤러 업그레이드를 지원했습니다</block>
+  <block id="df9d5dab8402039e8e49491ea2b155f4" category="admonition">4노드 MetroCluster IP 구성에서 명령을 사용하여 지원되는 업그레이드는<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 의 표를 참조하십시오 <block ref="cdc5d26dd7214bbc9da99c730f208713" category="inline-link-macro-rx"></block></block>
+  <block id="00422b8712ec5454364e6489bb81ba29" category="list-text">컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 다음과 일치해야 합니다 *.</block>
+  <block id="ea246a6495df1b87df40d7c322d23942" category="list-text">MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
+  <block id="5505f24f1b03305d31aacdd035c7f251" category="paragraph-title">AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다</block>
+  <block id="fcb21df516134bd5563b8b7bef30f98b" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="bda013124fcd29c13b3794671c5907a2" category="admonition">AFF A90, AFF A70 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
+  <block id="7b8670a76cf1dc8cbe357ce34cc11736" category="image-alt">MetroCluster IP 업그레이드 So sb AFF FAS</block>
+  <block id="ae189029f72cc261fbad1afff41d9552" category="list-text">참고 3: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.</block>
+  <block id="39eb8422a5f49fae94f0335febb78701" category="list-text">참고 4: 컨트롤러 모듈을 교체해야 합니다.</block>
+  <block id="2d5d2a9ece12ce430adc9f20c9e9464d" category="paragraph-title">ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다</block>
+  <block id="1fdcb939cb28cfa6612abe5d949f5cdb" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.</block>
+  <block id="6d340f03110b449d466e554ef5a4a7af" category="image-alt">MetroCluster IP 업그레이드 So sb ASA FAS</block>
+  <block id="9311605dda14c8d475dd817b196dbe33" category="list-text">참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
+  <block id="e201b3063a835c6ab815286f4d0dc126" category="paragraph-title">AFF 및 FAS MetroCluster FC 컨트롤러 업그레이드를 지원했습니다</block>
+  <block id="9226549359438ca0927aca7ed11e792d" category="paragraph">다음 표는 MetroCluster FC 구성에서 AFF 또는 FAS 시스템 업그레이드에 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="42fdabcf525a2dc5ddf8a1947d5c021c" category="image-alt">MetroCluster FC 업그레이드 표 AFF FAS</block>
+  <block id="9de01608b3afdda557e8dc72a8f54f9d" category="paragraph-title">ASA MetroCluster FC 컨트롤러 업그레이드를 지원했습니다</block>
+  <block id="4936f470b844f0a840df121f57a42c28" category="paragraph">다음 표는 MetroCluster FC 구성에서 ASA 시스템 업그레이드에 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="c0764f159306f05d07f48e0541152883" category="cell">소스 MetroCluster FC 플랫폼</block>
+  <block id="c37c8b9741cf94a92dd368334a9ffe6f" category="cell">대상 MetroCluster FC 플랫폼</block>
+  <block id="75081d083f8217ae9cd827e03e7cf043" category="cell">지원 여부</block>
+  <block id="5efea76f9855288a2e4056189fbdd4f4" category="cell">ASA A400 를 참조하십시오</block>
+  <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900 를 참조하십시오</block>
+  <block id="3b3bac6f9814e600a71bd7dee73d67ae" category="cell">예(참고 1 참조)</block>
+  <block id="a9bd1dae72a1648615403907e11a612e" category="list-text">참고 1: 컨트롤러 업그레이드는 ONTAP 9.14.1 이상을 실행하는 시스템에서 지원됩니다.</block>
+  <block id="e7e6cdb5cfee309b1153178c377a4331" category="section-title">스위치오버 및 스위치백 프로세스를 사용하는 절차를 선택합니다</block>
+  <block id="d0596ea7a1e5e6103d63e7af154cd668" category="paragraph">지원되는 업그레이드 조합을 검토한 후 구성에 맞는 올바른 컨트롤러 업그레이드 절차를 선택하십시오.</block>
+  <block id="5f59766a690e00008d7b09d26244b85f" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
+  <block id="cf35ca12d11c5730282da68bdb26e696" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster IP 기술 업데이트 조합</block>
+  <block id="3a2b3b39311d9a61b3a9bb66f7feec5c" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.</block>
+  <block id="70fdfec9430ed4893168e5c59eb64e08" category="admonition">AFF A70, AFF A90 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
+  <block id="cb8925996d20b2dc27bec26b66db8e61" category="paragraph-title">지원되는 ASA MetroCluster IP 기술 업데이트 조합</block>
+  <block id="03c48c75d06f3446ef94029cbbce579a" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.</block>
+  <block id="a3a15df2eb8fb472342a575b30857763" category="image-alt">MetroCluster IP ASA 기술 업데이트 조합</block>
+  <block id="dd7839e40ca87d3a10325ec8faa9f00a" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster FC 기술 업데이트 조합</block>
+  <block id="e92f8af91d314776a12f672c7baff7dc" category="paragraph">다음 표는 MetroCluster FC 구성에서 AFF 또는 FAS 시스템을 업데이트하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="88ea8505ba0420be98c64dcb7f91e23c" category="image-alt">MetroCluster FC 기술 업데이트</block>
+  <block id="d97a61d7c707c4943aa3fc012673ac5f" category="paragraph-title">지원되는 ASA MetroCluster FC 기술 업데이트 조합</block>
+  <block id="15113532723434e57bb04f9f92c80622" category="paragraph">다음 표는 MetroCluster FC 구성에서 ASA 시스템을 업데이트하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="e77b4fbf2d652f95ca1b769a66ffc98d" category="section-title">새로 고침 절차를 선택합니다</block>
+  <block id="24f82a0a6568abe9e5d80d202d6f185f" category="paragraph">다음 표에서 구성에 대한 새로 고침 절차를 선택합니다.</block>
+  <block id="2d5b8d6ce35df65b14dd0febe1deecfe" category="paragraph">다음 표는 8노드 MetroCluster FC 구성에서 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="d0c6db4a2c6e1a30907b1a05768a4a2b" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster FC 확장 조합</block>
+  <block id="8369af1d6c4f09b151f41daf8459bcb3" category="paragraph">다음 표는 MetroCluster FC 구성에서 AFF 또는 FAS 시스템을 확장할 때 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="355d859dcfdb92d98748f226e183b158" category="paragraph-title">지원되는 ASA MetroCluster FC 확장 조합</block>
+  <block id="83b4bda1bf654ac13c4188c2487240ab" category="paragraph">다음 표는 MetroCluster FC 구성에서 ASA 시스템을 확장할 때 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="afe02acc345f4f57d38f2922dbfb2be3" category="cell">8노드 DR 그룹 1</block>
+  <block id="561e0dbd4b4b1343ca844c5058cb54e9" category="cell">8노드 DR 그룹 2</block>
+  <block id="2653fa879e50e7b880dab8fa2e3967ae" category="paragraph">다음 표에서는 8노드 MetroCluster IP 구성에서 지원되는 플랫폼 조합을 보여 줍니다.</block>
+  <block id="573cf4c0aff376944ba2b059e8c7e9c2" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster IP 확장 조합</block>
+  <block id="880302e3a957f3d2d56cda5417dd9fb9" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="b1705b27cbcba17a6877fcb4c39148d9" category="paragraph-title">지원되는 ASA MetroCluster IP 확장 조합</block>
+  <block id="466ce3655b07eea61b5dbce58f9e9824" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="ee27c265dcfda7fda27ab9bdc5c36d3c" category="admonition">클러스터의 모든 노드에 있는 슬롯 7은 섹션에서 언급한 대로 비어 있어야 <block ref="9c46692563a7a73a73f8ba6108f40e8e" category="inline-xref-macro-rx"></block> 합니다.</block>
+  <block id="fb20207a51becbf976606b241efcac29" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <block ref="f77cee4785a8119ccabf189619823a17" category="inline-xref-macro-rx"></block>사용합니다.</block>
+  <block id="1d54ab78a8d8a5d4636ecd98bafaa94c" category="list-text">에서 생성한 포트 매핑 계획을 참조하십시오 <block ref="9c46692563a7a73a73f8ba6108f40e8e" category="inline-xref-macro-rx"></block></block>
+  <block id="4588d3b79e3f8ce0a7e6076cf876c211" category="list-text">이 단계를 반복하여 부터 사이트_A의 노드를 업그레이드합니다. <block ref="7fa78a877decced6b84ff8ffe1fa85ad" category="inline-xref-macro-rx"></block></block>
+  <block id="6ba7fae9c91de06a7a5516b00fcb41ba" category="list-text">업그레이드 구성에서 기존 컨트롤러 및 새 컨트롤러에서 MetroCluster IP 스위치(스위치 유형, 공급업체 및 모델) 및 펌웨어 버전을 지원해야 합니다.</block>
+  <block id="a1dc413e9196fca73e67e1bc8dc0d617" category="paragraph"><block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>지원되는 스위치 및 펌웨어 버전은 또는 를 <block ref="4bda12a91fa486a6aaeafafb55098b01" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="cb2b71f7328cfbc51d68290fdef5e64a" category="inline-link-macro">종단간 암호화를 비활성화합니다</block>
+  <block id="2843a33605079ab99cc2f26a41a2bcbb" category="list-text">시스템에서 활성화되어 있는 <block ref="7a9d12e6dbd7c75c145032be8c2b8549" category="inline-link-macro-rx"></block> 경우 업그레이드를 수행하기 전에</block>
+  <block id="973338f6a10e6b7ac7c39f19d7b492b2" category="list-text">새 플랫폼에서 원래 플랫폼의 IP 주소, 넷마스크 및 게이트웨이를 재사용합니다.</block>
+  <block id="728081f5343425576647f8cdc1547b4f" category="section-title">기존 시스템에서 필요한 부트문자를 설정합니다</block>
+  <block id="b497fddd1b7ae2c734d492c373d8a31d" category="paragraph">AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하려면 다음 단계에 따라 bootarg를<block ref="b4317656058abaf147d385d72f465e96" prefix=" " category="inline-code"></block> 설정합니다.</block>
+  <block id="eab65329b52feb70202b3b63019614c9" category="admonition">AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하려면 업그레이드를 수행하기 전에 * 이 작업을 완료해야 합니다. 이 작업 * 만 * 은 지원되는 시스템에서 AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하는 경우에 적용됩니다. 다른 모든 업그레이드의 경우 이 작업을 건너뛰고 로 바로 이동할 수 있습니다 <block ref="0433885c96c3661856ac21abb470fe33" category="inline-xref-macro-rx"></block>.</block>
+  <block id="77cd2bc0bfe264cad96e3619cb8678b1" category="list-text">각 사이트에서 1개의 노드를 중지하고 HA 파트너가 노드의 스토리지 테이크오버를 수행하도록 합니다.</block>
+  <block id="8b0fde7ba026b4e4de5c975b52e10b78" category="paragraph"><block ref="fc0e5e4abc6e1b590b3364b384105526" prefix="" category="inline-code"></block></block>
+  <block id="807f12cb6d4e38b470996608263f29ac" category="list-text"><block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block>중지된 노드의 프롬프트에서 다음을 입력합니다.</block>
+  <block id="80ce63b6e2ae11a72a38bf7e4ef35369" category="paragraph"><block ref="924cd73da4c8e153eb2de352d5e9a0e1" prefix="" category="inline-code"></block></block>
+  <block id="a0fd3a832d10febc3517df104c662c1d" category="paragraph"><block ref="c3e347fd62df99318c1112b24c25c070" prefix="" category="inline-code"></block></block>
+  <block id="7fea19d34419d662a854d37c6044222a" category="list-text">노드가 부팅되면 프롬프트에서 노드에 대해 반환 작업을 수행합니다.</block>
+  <block id="9fd57da49ac1975b29677831c2286586" category="paragraph"><block ref="fb72d634bc57a858bd0751f5c6335d6e" prefix="" category="inline-code"></block></block>
+  <block id="c5b67774bb32fdf25c42ebcc33f3e43d" category="list-text">업그레이드 중인 DR 그룹의 각 노드에서 단계를 반복합니다.</block>
+  <block id="6986e6230a992abf2372b5ddb288c1ec" category="list-text"><block ref="6986e6230a992abf2372b5ddb288c1ec" category="inline-link-macro-rx"></block></block>
+  <block id="9cf1b9d10ebe2c0f0ae4072a054220a3" category="list-text"><block ref="9cf1b9d10ebe2c0f0ae4072a054220a3" category="inline-link-macro-rx"></block></block>
+  <block id="0bc8e4789fc33f4aefa1d33adc11eb9f" category="list-text"><block ref="0bc8e4789fc33f4aefa1d33adc11eb9f" category="inline-link-macro-rx"></block></block>
+  <block id="d71cd39faa20e04542bb87bdbf15456a" category="list-text"><block ref="d71cd39faa20e04542bb87bdbf15456a" category="inline-link-macro-rx"></block></block>
+  <block id="a3b6bdcb84b2fd3938bbc199daa24115" category="section-title">새 컨트롤러를 netboot합니다</block>
+  <block id="1d6634f1d19b7ad582264acf3f3975d4" category="list-text">노드가 multipathed:+ 인지 확인한다<block ref="395c8c225a0f5ec95ae5122ac1899d9b" prefix=" " category="inline-code"></block></block>
+  <block id="91fc6bc3bb3d5233e07a5711c347aacc" category="list-text"><block ref="26e87d29815f03eb07832113d7eb8723" prefix="" category="inline-code"></block></block>
+  <block id="cd2907c0af6cc6fce6a7f22620877696" category="list-text"><block ref="dd4d0826932c1a91377b7c8cafbf9333" prefix="" category="inline-code"></block></block>
+  <block id="7005721f9e503dcf5e499db791fb72eb" category="list-text"><block ref="603a3b06e44c5b810c855e57db286d21" prefix="" category="inline-code"></block></block>
+  <block id="fcaa00c301f58a5b9568a88b62ea4f4a" category="list-text"><block ref="9eeab8230297d6f291aeab0f2d474946" prefix="" category="inline-code"></block></block>
+  <block id="54da5f337bc8e950aac1a62ca05dbcf7" category="list-text"><block ref="2ec3d870b7e0919a03439842ac20b1dc" prefix="" category="inline-code"></block></block>
+  <block id="867d07f6b3db913c01d46cfdfba609dc" category="list-text"><block ref="af6162d6ad577b31ffeaee3aabe401dc" prefix="" category="inline-code"></block></block>
+  <block id="eb7ead4ebc1b8fb1973480e7ff4df23a" category="list-text"><block ref="dcb54aa5c6e1195dc43cf43c7130da89" prefix="" category="inline-code"></block></block>
+  <block id="21abd3e611a550d5b10a01fcf5ca52e4" category="list-text"><block ref="d0e63dc99f0f9ab0cd3804cc52f2f14d" prefix="" category="inline-code"></block></block>
+  <block id="d9014ee527061be66eca52c07922ed61" category="section-title">인터페이스 구성을 제거하고 이전 컨트롤러를 제거합니다</block>
+  <block id="d2d52925cbd8484ff94ad34530b8e39e" category="list-text">에서 수집한 정보를 <block ref="00db6c743ab233bbb7a0f2af5426c89f" category="inline-link-macro-rx"></block>확인합니다.</block>
+  <block id="adb5e3c9ae1ad5b6f24674dd9ebfd089" category="list-text">공통 포트를 홈 포트로 사용하도록 모든 데이터 LIFS를 수정합니다. +<block ref="0fb328b10f563b95b74bd7f9f7c1dff8" prefix=" " category="inline-code"></block></block>
+  <block id="80525b50d6d20908e1237b7fcfb33f33" category="paragraph"><block ref="d49e4d90611cfe958eb08579bdba1a56" prefix="" category="inline-code"></block></block>
+  <block id="73d1f75273a2727c2821ff6d3dad9a15" category="list-text">VLAN 포트 삭제: +<block ref="5663bc15ef357125573b62d1575462ad" prefix=" " category="inline-code"></block></block>
+  <block id="a9740b622407b4b1cb11613b0b703741" category="paragraph"><block ref="75591c74cd0c39b92f12b931a0a3e201" prefix="" category="inline-code"></block></block>
+  <block id="51017ecdaa03d67322318ad19d069c5f" category="paragraph"><block ref="fc8582827be91f912558bf2abf8a3a0d" prefix="" category="inline-code"></block></block>
+  <block id="9527b7e6d25fbd673c7aa986d53e3613" category="list-text">필요에 따라 다른 물리적 포트를 구성원으로 사용하도록 인터페이스 그룹 포트를 수정합니다.</block>
+  <block id="3ee1dd792a8a0d98f869dbe20e9b97fd" category="paragraph"><block ref="3aff4c494709a6fa57ba8e7f89683ca4" prefix="" category="inline-code"></block></block>
+  <block id="5a3861a411bc9378f869f34214613778" category="section-title">새 컨트롤러를 설정합니다</block>
+  <block id="e7c47d238f75412631a564557da2bc71" category="list-text">업그레이드를 통해 컨트롤러 모듈을 교체해야 하는 경우(예: AFF 800에서 AFF A90 시스템으로 업그레이드), 컨트롤러 모듈을 교체할 때 섀시에서 컨트롤러 모듈을 분리해야 합니다. 다른 모든 업그레이드의 경우 로 <block ref="24265808136e02e671f66c0cb3dc4c8f" category="inline-xref-macro-rx"></block>건너뜁니다.</block>
+  <block id="e0db71ee18c918b2fb9cf7bb7bc22103" category="paragraph">섀시 앞면에서 엄지 손가락으로 각 드라이브를 단단히 눌러 정지가 느껴질 때까지 밀어넣습니다. 이렇게 하면 드라이브가 섀시 중앙판에 단단히 장착되어 있음을 확인할 수 있습니다.</block>
+  <block id="cfbaa04507f429235b91aeb8a2e58b69" category="image-alt">는 섀시에서 컨트롤러 모듈을 분리하는 것을 보여 줍니다</block>
+  <block id="5c022366b2db3d6cabc706b5adfd5d02" category="list-text">[[ip_upgrades_so_sb_4]] 컨트롤러 모듈을 설치합니다.</block>
+  <block id="5096ae3aa61d737563ca50af57b6a84c" category="admonition">AFF 800에서 AFF A90 시스템으로 업그레이드하는 것과 같은 컨트롤러 모듈을 교체해야 하는지 여부에 따라 설치 단계가 달라집니다.</block>
+  <block id="17382e6c05506fde2286b2e5dae91856" category="open-title">컨트롤러 모듈을 교체하는</block>
+  <block id="6b50d38047bdebbcc32c9ca6b9323732" category="paragraph">새 컨트롤러를 별도로 설치하는 것은 예를 들어, AFF A800 시스템에서 AFF A90 시스템으로 전환하는 것과 같이 동일한 섀시에 있는 디스크 및 컨트롤러가 있는 통합 시스템을 업그레이드하는 경우에는 적용되지 않습니다. 아래 이미지와 같이 이전 컨트롤러의 전원을 끈 후에는 새 컨트롤러 모듈과 I/O 카드를 교체해야 합니다.</block>
+  <block id="4037df45fcdc21d8082737fa6a5f619c" category="paragraph">다음 예제 이미지는 설명을 위한 것이며 컨트롤러 모듈과 I/O 카드는 시스템마다 다를 수 있습니다.</block>
+  <block id="ae5b8daa970b204d0926f573edfb5cfc" category="image-alt">컨트롤러 모듈 스왑을 표시합니다</block>
+  <block id="6792e24f226516b977ca3032c72dc9c0" category="open-title">기타 모든 업그레이드</block>
+  <block id="1bedc0026c41c72d7a7aa8b440ef5bef" category="inline-link-macro">MetroCluster IP 스위치 케이블 연결</block>
+  <block id="b2e5e44e032ff888908bf30a6d1363e9" category="list-text">에 설명된 대로 컨트롤러의 전원, 직렬 콘솔 및 관리 연결을 케이블로 연결합니다 <block ref="372cb7466d83d18a80a5c66f3e7de0d7" category="inline-link-macro-rx"></block></block>
+  <block id="7bcb5422335c0a99341ce4ca865d4d51" category="paragraph"><block ref="a9d89a967736a4739d72a512b1135fdc" prefix="" category="inline-code"></block></block>
+  <block id="799d4aa3e6d958764f8d2ce8e3acbe7b" category="paragraph"><block ref="baffa317cbf489e351762c96e205eda3" prefix="" category="inline-code"></block></block>
+  <block id="2c49372dd5cdc60d281c7eb567cf96ae" category="paragraph"><block ref="62e24a463974fe4c20f07377ffc9a58b" prefix="" category="inline-code"></block></block>
+  <block id="b2b270a2a9d3a1f14f095dedffe4bc3f" category="paragraph"><block ref="2d38451b61b4c10cbe50c754c9661bb6" prefix="" category="inline-code"></block></block>
+  <block id="b8fe0a8693128aac6ce1d22f685daa23" category="list-text">NS224 쉘프 또는 스토리지 스위치에 연결된 이더넷 포트를 확인하고 수정합니다.</block>
+  <block id="7f6f42bd2529b2f016d19c5a5d11a0de" category="list-text">NS224 쉘프 또는 스토리지 스위치에 연결된 이더넷 포트를 확인합니다.</block>
+  <block id="d75813e35497e6772c951cd78d3c71cb" category="paragraph"><block ref="90e0991b70398b08e4e3eb0ae46c4163" prefix="" category="inline-code"></block></block>
+  <block id="d6d299b2660a875485e23fbbc923abe9" category="list-text">스토리지 및 클러스터의 공유 스위치를 포함하여 이더넷 쉘프 또는 스토리지 스위치에 연결된 모든 이더넷 포트를 모드로 설정합니다<block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block> .</block>
+  <block id="c09a10e8c8eb7df75bc1e7c71c068ce1" category="paragraph"><block ref="879197ca203f9b35caec5106d7e15b58" prefix="" category="inline-code"></block></block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">예:</block>
+  <block id="2b12e1cd88a050cc4ef4573b7b8ed185" category="admonition">업그레이드를 성공적으로 수행하려면 영향을 받는 모든 포트에 이 설정을 설정해야 합니다.</block>
+  <block id="4674a3884dbcf3d07ba55d73b36083ff" category="paragraph">이더넷 포트에 연결된 쉘프의 디스크는 출력에 보고됩니다.<block ref="7939c23e48e62d500cafffa3ef074000" prefix=" " category="inline-code"></block></block>
+  <block id="ee0313699461965bf1b1ef53c7a817b7" category="paragraph">업그레이드할 시스템의 스토리지 포트에 대한 자세한 내용은 을 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="4b679e72a63d0449bb929b4db3f51f3e" category="list-text">모드가 설정되어 있는지<block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block> 확인하고 포트가 온라인 상태인지 확인합니다.</block>
+  <block id="ef53a1465284a8eba202285b88ef0eb2" category="section-title">새 플랫폼을 수용하도록 스위치 RCF를 업데이트합니다</block>
+  <block id="8aedcbe06dc4ee85bfbfe46c6a62713c" category="paragraph">현재 업그레이드 중인 컨트롤러가 포함된 사이트에서 이 작업을 수행합니다. 이 절차에 나와 있는 예에서는 먼저 site_B를 업그레이드합니다.</block>
+  <block id="097b5e4a3935e7904f9e57e130711c8b" category="inline-link-macro">NVIDIA IP SN2100 스위치 RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="28e2bd4eabf6ae375e91c35fdc2b3bde" category="list-text"><block ref="28e2bd4eabf6ae375e91c35fdc2b3bde" category="inline-link-macro-rx"></block></block>
+  <block id="a0738c0401f656b59d11c3e37bee47f0" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <block ref="a74b37b1135e46e1745610d5ef77ba43" category="inline-xref-macro-rx"></block>사용합니다.</block>
+  <block id="080c153c3d5c3f5a7519058826d07cb8" category="paragraph"><block ref="579363eabf2a70eb9e6c8d9b1bca9609" prefix="" category="inline-code"></block></block>
+  <block id="ba2a7c5e352255c376b6b0d315a1ffc1" category="paragraph"><block ref="3edfeb45325920fedac6b21b22c6872d" prefix="" category="inline-code"></block></block>
+  <block id="862fde34d3847472911a47c752a908d7" category="paragraph"><block ref="89ed4000c8f8ef2820e346fa5400a05a" prefix="" category="inline-code"></block></block>
+  <block id="d45e24cad9f9369e3d68aa5fb105c745" category="paragraph"><block ref="bf4900d508399da9f73f695794148642" prefix="" category="inline-code"></block></block>
+  <block id="53eeb8487a1b47736074a390cc992c92" category="paragraph"><block ref="cce414ec64a9c4e23a2e870045abf8dc" prefix="" category="inline-code"></block></block>
+  <block id="88e5cedcd18951b04046ff208ab8ff3a" category="paragraph"><block ref="38241bd430968bdc944f07594d46f2ea" prefix="" category="inline-code"></block></block>
+  <block id="39531e530d83708f9ed5390dc12c1a07" category="paragraph"><block ref="1a08db264211390895870fb4d46031c2" prefix="" category="inline-code"></block></block>
+  <block id="7ded60d41422b104da0e6bf2fa0e0587" category="paragraph"><block ref="a9c6170c4ca106274584dbad5a17d091" prefix="" category="inline-code"></block></block>
+  <block id="15d6ef8ab62dd9e68138f6ef4b764ed7" category="paragraph"><block ref="baecb29b29788eb70bc968dcb30d8daa" prefix="" category="inline-code"></block></block>
+  <block id="81ab252d895614b88ddb7c33d52336a4" category="list-text">가동 중인 사이트에서 다음 명령을 실행하여 원래 시스템이 ADP(Advanced Drive Partitioning)용으로 구성되었는지 확인합니다.</block>
+  <block id="321b6c6bb38af8149fa392e785bcd4ef" category="paragraph">ADP가 구성된 경우 "컨테이너 유형" 열에 출력에 "공유"가<block ref="63328c72194085e2f8ff497b866f6d24" prefix=" " category="inline-code"></block> 표시됩니다. "컨테이너 유형"에 다른 값이 있으면 ADP가 시스템에 구성되지 않습니다. 다음 출력 예는 ADP로 구성된 시스템을 보여 줍니다.</block>
+  <block id="75820e0601a3c59aad8a8dceec394bd6" category="list-text">원래 시스템이 ADP용으로 분할된 디스크로 구성된 경우 각 교체 노드에 대한 프롬프트에서 활성화합니다<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> .</block>
+  <block id="8022cf4f701be252369cf100dd5baa7b" category="paragraph"><block ref="e0d0774e240e04e4dbb4273a2eaee9f6" prefix="" category="inline-code"></block></block>
+  <block id="9ebcad9e46018b72734aa9fbbdfa219b" category="paragraph"><block ref="fbd3e774e33f59804bebcd92ab2a4244" prefix="" category="inline-code"></block></block>
+  <block id="3ae0893018c6b1f91afe11d7988c558d" category="admonition">디스크 재할당을 진행하기 전에 노드의 루트 애그리게이트에 속한 pool0 및 pool1 디스크가 출력에 표시되는지 확인해야<block ref="63328c72194085e2f8ff497b866f6d24" prefix=" " category="inline-code"></block> 합니다. 다음 예제에서 출력에는 node_B_1-old가 소유한 pool0 및 pool1 디스크가 나열됩니다.</block>
+  <block id="f4c6f29ba66b2f3a6e2464ffa195af0e" category="paragraph"><block ref="787c105d1c5bfa1b8d60ab9af669c3a8" prefix="" category="inline-code"></block></block>
+  <block id="696c94c37fce23292aa92ad48ca067a6" category="paragraph"><block ref="1e939dd587f894b1b60a5423d23202c2" prefix="" category="inline-code"></block></block>
+  <block id="9245451042eaae2bfd411dd23d891968" category="paragraph"><block ref="ae2fc05183e1e2ad0194df7ea8b55230" prefix="" category="inline-code"></block></block>
+  <block id="16feb6344cb59773e0102b14fc1a8eff" category="paragraph"><block ref="7a335bb8975fb9841c98d6e90670668d" prefix="" category="inline-code"></block></block>
+  <block id="32c64742b195a65781738c8b44e4a352" category="paragraph"><block ref="6292300caa922eb09cdd1732fcc043df" prefix="" category="inline-code"></block></block>
+  <block id="00c407fe45f64374369a1722aa8f9a72" category="paragraph"><block ref="1c8d45cfa7c093e5e83aa2b0c6f041ba" prefix="" category="inline-code"></block></block>
+  <block id="81c0cfa4d81a326f65d742ed4d1ee46b" category="paragraph"><block ref="ab36db401b8d98490b7c51ef5a618243" prefix="" category="inline-code"></block></block>
+  <block id="fdf8e4fe9b3e05181cd8befb0c17897f" category="paragraph"><block ref="a8dfa60f338d6757ce57f0b05c861249" prefix="" category="inline-code"></block></block>
+  <block id="fb0d5feb3def76f90b6408f32f99f4b7" category="list-text">새로 업그레이드된 컨트롤러의 데이터 포트에 대해 새 브로드캐스트 도메인이 생성된 경우 브로드캐스트 도메인을 삭제합니다.</block>
+  <block id="3ab5e50e5fd6dc477690730212c6785f" category="admonition">새 브로드캐스트 도메인만 삭제합니다. 업그레이드를 시작하기 전에 있던 브로드캐스트 도메인을 삭제하지 마십시오.</block>
+  <block id="8cb8d05546274856c8c2cb56b7cd62ac" category="paragraph"><block ref="7bbb7f17a19e67be5ebaaa8410749ad2" prefix="" category="inline-code"></block></block>
+  <block id="c46b37082c4b8a5ecb54ed082719f5fa" category="paragraph"><block ref="6ed2488c75aad6332e02665ab7c30031" prefix="" category="inline-code"></block></block>
+  <block id="a51de836d51a26774e16aa7066519185" category="paragraph"><block ref="6a6db1083e2f8c53b07cc196dec3cafb" prefix="" category="inline-code"></block></block>
+  <block id="641cba091515001a3bb48d030bddd608" category="section-title">cluster_A에서 노드를 업그레이드합니다</block>
+  <block id="2ce39beb4bd7e0662d271e0be20e56c4" category="paragraph">업그레이드를 시작하기 전에 다음 고려 사항을 검토하여 구성이 지원되는지 확인하십시오.</block>
+  <block id="43b1f641e5f77402602790aae4de8aa8" category="image-alt">MCC IP 시스템 컨트롤러가 AFF FAS를 대체합니다</block>
+  <block id="a63b5e3f602b86fc07da490951d07b9f" category="list-text">참고 2: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.</block>
+  <block id="3b2d91208084a85415d107e904b61128" category="list-text">참고 3: 컨트롤러 모듈을 교체해야 합니다.</block>
+  <block id="15301c23263e749022234eacd3de3300" category="paragraph">ASA 시스템에서는 명령을 사용하여 컨트롤러를 업그레이드할<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 수 없습니다.</block>
+  <block id="8f93576e78d28328ad0cf696ed0604e4" category="list-text">업그레이드 구성에서 기존 컨트롤러 및 새 컨트롤러에서 MetroCluster IP 스위치(스위치 유형, 공급업체 및 모델) 및 펌웨어 버전을 지원해야 합니다.</block>
+  <block id="65fecbe73cb3b9a9e0cbd9f4bbf96d31" category="admonition">AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하려면 업그레이드를 수행하기 전에 * 이 작업을 완료해야 합니다. 이 작업 * 만 * 은 지원되는 시스템에서 AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하는 경우에 적용됩니다. 다른 모든 업그레이드의 경우 이 작업을 건너뛰고 로 바로 이동할 수 있습니다 <block ref="02f6e5eb3c922d029954da501f60e8dc" category="inline-xref-macro-rx"></block>.</block>
+  <block id="1df73bda435b5d96d663aead5cdd3220" category="list-text"><block ref="d6f593c128c20b2b477999ba1d624969" prefix="" category="inline-code"></block></block>
+  <block id="b9e74339cddf2376c4fcf457d7d9967e" category="list-text"><block ref="ed3509e3e823bae2ba10a9a7ec8eaff4" prefix="" category="inline-code"></block></block>
+  <block id="a96df66ebe1c662a8a888ba2287dfdeb" category="list-text"><block ref="e787e952889da363af52a21e43548b99" prefix="" category="inline-code"></block></block>
+  <block id="821ecda5b12a4ae913a41ee4e1c8f69d" category="list-text"><block ref="1538762b856ca2c2223e05fc9fec0cea" prefix="" category="inline-code"></block></block>
+  <block id="05c698302b9abd36f7cf0a1dc90a86d3" category="section-title">이전 컨트롤러를 교체하고 새 컨트롤러를 부팅합니다</block>
+  <block id="2dfa544e322fc5325af38a1322229fbf" category="section-title">이전 컨트롤러의 네트워크 구성을 준비합니다</block>
+  <block id="fc5dda3d1f939197b1b70fd3a5d0a9d2" category="list-text">에서 수집한 정보를 <block ref="02f6e5eb3c922d029954da501f60e8dc" category="inline-xref-macro-rx"></block>사용합니다.</block>
+  <block id="3e455a613e5c171ec2e4181d0ad70184" category="paragraph"><block ref="0fb328b10f563b95b74bd7f9f7c1dff8" prefix="" category="inline-code"></block></block>
+  <block id="55dbcede861ea070999275166b475f91" category="paragraph"><block ref="69175deff8fb24f558ddfe600d2027fd" prefix="" category="inline-code"></block></block>
+  <block id="87e5d57130567bbc85fc6eb99a2cedc9" category="paragraph"><block ref="7ecace99fc10588df8f1c6ed5522cef4" prefix="" category="inline-code"></block></block>
+  <block id="7ca5ad1218fd49cb8be4c2f58208a262" category="paragraph"><block ref="50cc72d7aeb82600112fda815ec11fb6" prefix="" category="inline-code"></block></block>
+  <block id="074fadb71a046a27015177e7ca5cc993" category="list-text">브로드캐스트 도메인에서 VLAN 및 인터페이스 그룹 포트 제거:</block>
+  <block id="36f35af4019cb5c58ee0704181d060cb" category="paragraph"><block ref="6a09bfab96d691e097c0193857bfe613" prefix="" category="inline-code"></block></block>
+  <block id="ac2ed3241e44a82e5e64c36b76836980" category="paragraph"><block ref="ec6fcea2c4874df3647526f88e0bcc1c" prefix="" category="inline-code"></block></block>
+  <block id="9e638affbbd1393718538967090cf19b" category="paragraph"><block ref="7f982816e7f246ae34f4204aca737000" prefix="" category="inline-code"></block></block>
+  <block id="c9d109c912be03296cc2456120162642" category="list-text">노드가 프롬프트에 있는지<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> 확인하고 현재 환경 변수를 수집 및 유지합니다.</block>
+  <block id="df6f7543a4649f72632e2cd4f87e78a9" category="list-text">컨트롤러가 업그레이드되는 사이트에서 노드 및 쉘프의 전원을 끕니다.</block>
+  <block id="a3ead214eb8bf55a0be2a34576e9b461" category="list-text">업그레이드를 통해 컨트롤러 모듈을 교체해야 하는 경우(예: AFF 800에서 AFF A90 시스템으로 업그레이드), 컨트롤러 모듈을 교체할 때 섀시에서 컨트롤러 모듈을 분리해야 합니다. 다른 모든 업그레이드의 경우 로 <block ref="4ee00eba6649125448d979c5e5c0a049" category="inline-xref-macro-rx"></block>건너뜁니다.</block>
+  <block id="4bd95e3200fc7290c93acc7331fe6ab7" category="list-text">[[IP_UPGRADE_REPLACE_4]] 컨트롤러 모듈을 설치합니다.</block>
+  <block id="7b4b195a48028efcfbd1e629573dc6ce" category="open-title">컨트롤러 모듈을 교체해야 하는 업그레이드</block>
+  <block id="58d7ca4c8c3e89d8d921fc52e28adc1c" category="list-text">새 노드의 전원을 켜고 프롬프트가 표시되면 Ctrl-C를 누릅니다<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> .</block>
+  <block id="b18f9742d77912f838f8a0bc859bbf11" category="list-text"><block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block>프롬프트에서 관리 LIF에 대한 NetBoot 연결을 구성합니다.</block>
+  <block id="7c9dbc13c4af0588948dc0974ad07931" category="paragraph">명령을 실행한 후 프롬프트에서 노드가 멈출 때까지<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> 기다립니다.</block>
+  <block id="1eeedf4cd6f5dec243d5f4e1418fc445" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <block ref="9c150672da580a5dceed21dfb73c4b76" category="inline-xref-macro-rx"></block>사용합니다.</block>
+  <block id="fee55a9e6e115fa7d775bb57b8cb4b87" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1의 값을 설정합니다.</block>
+  <block id="2046d129795b588ef0d8a2657f550cbc" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2의 값을 설정합니다.</block>
+  <block id="6efdcf657072c6d286d4dff5b0919f19" category="list-text">원래 시스템이 ADP용으로 구성된 경우 교체 노드의 각<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> 프롬프트에서 ADP를 사용하도록 설정합니다.</block>
+  <block id="2a881aa88a35b35de21b4af29f7c41a7" category="paragraph">이전 시스템 ID는 에서 식별되었습니다. <block ref="315917271da740413467f609180e49f8" category="inline-xref-macro-rx"></block></block>
+  <block id="b2d1a6a95156d238b86f82d812e29748" category="admonition">디스크 재할당을 진행하기 전에 노드의 루트 애그리게이트에 속한 pool0 및 pool1 디스크가 출력에 표시되는지 확인해야<block ref="63328c72194085e2f8ff497b866f6d24" prefix=" " category="inline-code"></block> 합니다. 다음 예제에서 출력에는 node_B_1-old가 소유한 pool0 및 pool1 디스크가 나열됩니다.</block>
+  <block id="c200b51f243e6499b1e4aff027683496" category="paragraph"><block ref="4ce4e1d2d83eceacd4a0a0cf1bad8e14" prefix="" category="inline-code"></block></block>
+  <block id="c848af1101f629db69baafb2b08b9915" category="paragraph"><block ref="ce889b95687da5aee0c3d9ec48e819b4" prefix="" category="inline-code"></block></block>
+  <block id="2d425665af37b9989f89179649650990" category="section-title">업그레이드를 완료합니다</block>
 </blocks>

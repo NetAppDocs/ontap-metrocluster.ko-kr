@@ -2221,7 +2221,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
-. 에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 link:https:../manage/index.html["재해에 복구합니다"].
+. 에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 link:../manage/task_perform_switchover_for_tests_or_maintenance.html["전환, 복구, 스위치백을 수행합니다"]사용합니다.
 
 
 

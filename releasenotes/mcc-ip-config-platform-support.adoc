@@ -10,6 +10,9 @@ summary:
 :imagesdir: ./media/
 
 
+[role="lead"]
+MetroCluster IP 플랫폼 지원의 새로운 기능에 대해 알아봅니다.
+
 
 
 == 플랫폼 지원
@@ -20,9 +23,23 @@ summary:
 
 
  a| 
+AFF A70, AFF A90, AFF A1K
+ a| 
+ONTAP 9.15.1 이상
+
+
+
+ a| 
+ASA A150, ASA A250, ASA A400, ASA A800, ASA A900, ASA C250, ASA C400, ASA C800
+ a| 
+ONTAP 9.14.1 이상
+
+
+
+ a| 
 AFF A150
  a| 
-ONTAP 9.13.1 이상 ONTAP 릴리스
+ONTAP 9.13.1 이상
 
 ONTAP 9.12.1P1
 
@@ -37,7 +54,7 @@ AFF C250, AFF C400, AFF C800
  a| 
 ONTAP 9.12.1P1
 
-ONTAP 9.13.1 GA 이상 ONTAP 릴리즈.
+ONTAP 9.13.1 GA 이상
 
 
 
@@ -63,9 +80,7 @@ ONTAP 9.8 을 참조하십시오
 
 
  a| 
-SolidFire의 인수를 완료했습니다
-
-MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.
+ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800
  a| 
 ONTAP 9.7 을 참조하십시오
 
@@ -79,14 +94,14 @@ ONTAP 9.6P3을 참조하십시오
 
 
  a| 
-AFF A220 및 FAS2750
+AFF A220, FAS2750
  a| 
 ONTAP 9.6 을 참조하십시오
 
 
 
  a| 
-AFF A300 및 FAS8200
+AFF A300, FAS8200
  a| 
 ONTAP 9.5 를 참조하십시오
 

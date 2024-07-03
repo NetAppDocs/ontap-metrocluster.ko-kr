@@ -522,7 +522,7 @@ NOTE: MetroCluster를 구성하기 전에 내부 드라이브의 절반이 할�
 |===
 
 
-=== AFF C800, ASA C800, ASA A800, AFF A800 시스템에서 ADP 및 디스크 할당
+=== AFF C800, ASA C800, ASA A800, AFF A800, AFF A70, 및 AFF A90 시스템
 
 |===
 
@@ -567,7 +567,7 @@ NOTE: MetroCluster를 구성하기 전에 내부 드라이브의 절반이 할�
 |===
 
 
-=== AFF A900 및 ASA A900 시스템에서 ADP 및 디스크 할당
+=== AFF A900, ASA A900 및 AFF A1K 시스템에서 ADP 및 디스크 할당
 
 |===
 

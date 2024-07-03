@@ -40,7 +40,7 @@ image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
 
 == 두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합
 
-다음 표에는 8노드 MetroCluster FC 구성에 지원되는 플랫폼 조합이 나와 있습니다.
+다음 표는 8노드 MetroCluster FC 구성에서 지원되는 플랫폼 조합을 보여줍니다.
 
 [IMPORTANT]
 ====
@@ -51,4 +51,27 @@ image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
 
 
 ====
-image::../media/8node_comb_fc_914.png[8노드 구성을 위한 플랫폼 조합]
+.지원되는 AFF 및 FAS MetroCluster FC 확장 조합
+다음 표는 MetroCluster FC 구성에서 AFF 또는 FAS 시스템을 확장할 때 지원되는 플랫폼 조합을 보여줍니다.
+
+image::../media/8node_comb_fc.png[8노드 구성을 위한 플랫폼 조합]
+
+.지원되는 ASA MetroCluster FC 확장 조합
+다음 표는 MetroCluster FC 구성에서 ASA 시스템을 확장할 때 지원되는 플랫폼 조합을 보여줍니다.
+
+[cols="3*"]
+|===
+| 8노드 DR 그룹 1 | 8노드 DR 그룹 2 | 지원 여부 
+
+
+.2+| ASA A400 를 참조하십시오 | ASA A400 를 참조하십시오 | 예 
+
+
+| ASA A900 를 참조하십시오 | 아니요 
+
+
+.2+| ASA A900 를 참조하십시오 | ASA A400 를 참조하십시오 | 아니요 
+
+
+| ASA A900 를 참조하십시오 | 예 
+|===

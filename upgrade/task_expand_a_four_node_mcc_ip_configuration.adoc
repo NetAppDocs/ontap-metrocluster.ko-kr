@@ -76,7 +76,7 @@ dr_group_2 - 신규
 
 == 두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합
 
-다음 표에는 8노드 IP 구성에 지원되는 플랫폼 조합이 나와 있습니다.
+다음 표에서는 8노드 MetroCluster IP 구성에서 지원되는 플랫폼 조합을 보여 줍니다.
 
 [IMPORTANT]
 ====
@@ -87,11 +87,22 @@ dr_group_2 - 신규
 
 
 ====
-image::../media/8node_comb_ip_914.png[8노드 구성을 위한 플랫폼 조합]
+.지원되는 AFF 및 FAS MetroCluster IP 확장 조합
+다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.
+
+
+NOTE: AFF A70, AFF A90 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.
+
+image::../media/8node_comb_ip_aff_fas.png[8노드 구성을 위한 플랫폼 조합]
 
 * * 참고 1 *: 이러한 조합에는 ONTAP 9.9.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.
 * * 참고 2 *: 이러한 조합에는 ONTAP 9.13.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.
 
+
+.지원되는 ASA MetroCluster IP 확장 조합
+다음 표는 MetroCluster IP 구성에서 ASA 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.
+
+image::../media/8node_comb_ip_asa.png[8노드 구성을 위한 플랫폼 조합]
 
 
 

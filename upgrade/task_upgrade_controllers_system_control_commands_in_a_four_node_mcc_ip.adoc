@@ -17,23 +17,36 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 
 == 지원되는 플랫폼 조합
 
-이 절차는 ONTAP 9.13.1 이상을 실행하는 시스템에서 다음 컨트롤러 업그레이드를 지원합니다.
+업그레이드를 시작하기 전에 다음 고려 사항을 검토하여 구성이 지원되는지 확인하십시오.
 
-|===
+* 플랫폼이 나열되지 않은 경우 지원되는 컨트롤러 업그레이드 조합이 없습니다.
+* 컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 다음과 일치해야 합니다 *.
++
+** FAS 시스템을 FAS 시스템으로 업그레이드하거나 AFF A-Series를 AFF A-Series로 업그레이드할 수 있습니다.
+** FAS 시스템을 AFF A-Series로 또는 AFF A-Series를 AFF C-Series로 업그레이드할 수 없습니다.
++
+예를 들어, 업그레이드하려는 플랫폼이 FAS8200인 경우 FAS9000으로 업그레이드할 수 있습니다. FAS8200 시스템을 AFF A700 시스템으로 업그레이드할 수 없습니다.
 
 
-| 더 오래 된 컨트롤러 | 교체 컨트롤러 
+
+* MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다.
 
 
-| AFF A300 | AFF A900 
+.AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
+다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
 
 
-| FAS8200 | FAS9500 
-|===
+NOTE: AFF A90, AFF A70 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.
 
-NOTE: 설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또는 9.11.1을 실행하는 시스템에서 위 표에 나열된 컨트롤러 업그레이드를 수행할 수 있습니다 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html["여기"].
+image::../media/mcc_ip_system_controller_replace_aff_fas.png[MCC IP 시스템 컨트롤러가 AFF FAS를 대체합니다]
 
-플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오 link:concept_choosing_controller_upgrade_mcc.html#supported-metrocluster-ip-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
+* 참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.
+* 참고 2: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.
+* 참고 3: 컨트롤러 모듈을 교체해야 합니다.
+
+
+.ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다
+ASA 시스템에서는 명령을 사용하여 컨트롤러를 업그레이드할 `system controller replace` 수 없습니다.
 
 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
 
@@ -45,9 +58,9 @@ NOTE: 설명된 수동 업그레이드 절차를 사용하여 ONTAP 9.12.1 또�
 +
 스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소는 동시에 업그레이드할 수 없습니다.
 
-* 이 절차는 ONTAP 9.13.1 이상을 실행하는 4노드 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.
+* 업그레이드 구성에서 기존 컨트롤러 및 새 컨트롤러에서 MetroCluster IP 스위치(스위치 유형, 공급업체 및 모델) 및 펌웨어 버전을 지원해야 합니다.
 +
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
+link:https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]지원되는 스위치 및 펌웨어 버전은 또는 를 link:https://imt.netapp.com/matrix/["IMT"^] 참조하십시오.
 
 * MetroCluster 시스템은 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.
 * 이 절차를 사용하면 통계청 기반의 자동 전환 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 컨트롤러를 업그레이드할 수 있습니다.
@@ -55,7 +68,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 NOTE: 4노드 MetroCluster IP 구성에서는 ARL(Aggregate Relocation)을 사용하여 "system controller replace" 명령을 사용하여 업그레이드를 수행할 수 없습니다.
 
-* 시스템에서 활성화되어 있는 경우 link:../maintain/task-configure-encryption.html#disable-end-to-end-encryption["종단간 암호화를 비활성화합니다"] 업그레이드를 수행하기 전에
+* 시스템에서 활성화되어 있는 link:../maintain/task-configure-encryption.html#disable-end-to-end-encryption["종단간 암호화를 비활성화합니다"] 경우 업그레이드를 수행하기 전에
 * 자동 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.
 * 이 자동화된 통계청 기반의 컨트롤러 업그레이드 절차를 통해 MetroCluster 재해 복구(DR) 사이트로 컨트롤러 교체를 시작할 수 있습니다. 한 번에 한 사이트에서만 컨트롤러 교체를 시작할 수 있습니다.
 * 사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.
@@ -95,6 +108,41 @@ NOTE: 4노드 MetroCluster IP 구성에서는 ARL(Aggregate Relocation)을 사�
 
 
 
+
+
+
+
+== 기존 시스템에서 필요한 부트문자를 설정합니다
+
+AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하려면 다음 단계에 따라 bootarg를 `hw.cxgbe.toe_keepalive_disable=1` 설정합니다.
+
+
+CAUTION: AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하려면 업그레이드를 수행하기 전에 * 이 작업을 완료해야 합니다. 이 작업 * 만 * 은 지원되는 시스템에서 AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드하는 경우에 적용됩니다. 다른 모든 업그레이드의 경우 이 작업을 건너뛰고 로 바로 이동할 수 있습니다 <<prepare_system_replace_upgrade,업그레이드를 준비합니다>>.
+
+.단계
+. 각 사이트에서 1개의 노드를 중지하고 HA 파트너가 노드의 스토리지 테이크오버를 수행하도록 합니다.
++
+`halt  -node <node_name>`
+
+.  `LOADER`중지된 노드의 프롬프트에서 다음을 입력합니다.
++
+`setenv hw.cxgbe.toe_keepalive_disable 1`
+
++
+'사베에프'
+
++
+`printenv hw.cxgbe.toe_keepalive_disable`
+
+. 노드를 부팅합니다.
++
+부트 ONTAP
+
+. 노드가 부팅되면 프롬프트에서 노드에 대해 반환 작업을 수행합니다.
++
+`storage failover giveback -ofnode <node_name>`
+
+. 업그레이드 중인 DR 그룹의 각 노드에서 단계를 반복합니다.
 
 
 
@@ -142,7 +190,7 @@ Node-A-1    Failed         MetroCluster check failed. Reason : MCC check showed 
 
 
 
-=== 업그레이드 전에 정보를 수집하는 중입니다
+=== 업그레이드하기 전에 정보를 수집합니다
 
 업그레이드하기 전에 루트 볼륨이 암호화된 경우 백업 키 및 기타 정보를 수집하여 이전에 암호화된 루트 볼륨으로 새 컨트롤러를 부팅해야 합니다.
 
@@ -210,15 +258,23 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 
 +
 ** 네트워크 인터페이스 show-role cluster, node-mgmt
-** 네트워크 포트 show-node_node-name_-type physical
-** 'network port vlan show-node_node-name _'
-** 'network port ifgrp show -node_node_name_-instance'
+** `network port show -node <node-name> -type physical`
+** `network port vlan show -node <node-name>`
+** `network port ifgrp show -node <node-name> -instance`
 ** 네트워크 포트 브로드캐스트 도메인 쇼
 ** 네트워크 포트 도달 가능성 세부 정보
 ** 네트워크 IPspace 쇼
 ** '볼륨 쇼'
 ** '스토리지 집계 쇼'
-** 'system node run-node_node-name_sysconfig-a'
+** `system node run -node <node-name> sysconfig -a`
+** `aggr show -r`
+** '디스크 쇼'
+** `system node run <node-name> disk show`
+** `vol show -fields type`
+** `vol show -fields type , space-guarantee`
+** 'vserver fcp initiator show'를 선택합니다
+** 스토리지 디스크 쇼
+** 'MetroCluster configuration-settings interface show'를 선택합니다
 
 
 . MetroCluster 노드가 SAN 구성에 있는 경우 관련 정보를 수집합니다.
@@ -265,7 +321,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 
 
 
-=== Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성 제거
+=== Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
 
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
 
@@ -291,13 +347,13 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 
 
 
-=== 이전 컨트롤러의 네트워크 구성 준비
+=== 이전 컨트롤러의 네트워크 구성을 준비합니다
 
 새로운 컨트롤러에서 네트워킹이 완전히 다시 시작되도록 하려면 LIF를 공통 포트로 이동한 다음 이전 컨트롤러의 네트워킹 구성을 제거해야 합니다.
 
 .이 작업에 대해
 * 이 작업은 각 이전 노드에서 수행해야 합니다.
-* 에서 수집한 정보를 사용합니다 <<업그레이드를 준비합니다>>.
+* 에서 수집한 정보를 <<prepare_system_replace_upgrade,업그레이드를 준비합니다>>사용합니다.
 
 
 .단계
@@ -323,7 +379,7 @@ SAN 및 NAS를 포함한 모든 데이터 LIF는 전환 사이트(cluster_a)에 
 
 .. 공통 포트를 홈 포트로 사용하도록 모든 데이터 LIF를 수정합니다.
 +
-'network interface modify -vserver_svm -name_-lif_data-lif_-home-port_port -id_'
+`network interface modify -vserver <svm-name> -lif <data-lif> -home-port <port-id>`
 
 +
 다음 예에서는 ""e0d""입니다.
@@ -340,7 +396,7 @@ network interface modify -vserver vs0 -lif datalif1 -home-port e0d
 
 . 브로드캐스트 도메인을 수정하여 삭제해야 하는 VLAN 및 물리적 포트를 제거합니다.
 +
-'broadcast-domain remove-ports-broadcast-domain_broadcast-domain-name_-ports_node-name:port-id_'
+`broadcast-domain remove-ports -broadcast-domain <broadcast-domain-name>-ports <node-name:port-id>`
 
 +
 모든 VLAN 및 물리적 포트에 대해 이 단계를 반복합니다.
@@ -349,7 +405,7 @@ network interface modify -vserver vs0 -lif datalif1 -home-port e0d
 +
 .. VLAN 포트 삭제:
 +
-'network port vlan delete-node_node-name_-vlan-name_portID-vlanDID_'
+`network port vlan delete -node <node-name> -vlan-name <portid-vlandid>`
 
 +
 예를 들면 다음과 같습니다.
@@ -361,7 +417,7 @@ network port vlan delete -node node1 -vlan-name e1c-80
 ----
 .. 인터페이스 그룹에서 물리적 포트를 제거합니다.
 +
-'network port ifgrp remove-port-node_node-name_-ifgrp_interface-group-name_-port_portID_'
+`network port ifgrp remove-port -node <node-name> -ifgrp <interface-group-name> -port <portid>`
 
 +
 예를 들면 다음과 같습니다.
@@ -373,26 +429,32 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 ----
 .. 브로드캐스트 도메인에서 VLAN 및 인터페이스 그룹 포트 제거:
 +
-"네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace_IPSpace_-broadcast-domain_broadcast-domain-name_-ports_nodename:portname,nodname:portname_,."
+`network port broadcast-domain remove-ports -ipspace <ipspace> -broadcast-domain <broadcast-domain-name>-ports <nodename:portname,nodename:portname>,..`
 
 .. 필요에 따라 다른 물리적 포트를 구성원으로 사용하도록 인터페이스 그룹 포트를 수정합니다.
 +
-'ifgrp add-port-node_node-name_-ifgrp_interface-group-name_-port_port-id_'
+`ifgrp add-port -node <node-name> -ifgrp <interface-group-name> -port <port-id>`
 
 
 
 . 노드 중단:
 +
-'halt-inhibit-takeover TRUE-node_node-name_'
+`halt -inhibit-takeover true -node <node-name>`
 
 +
 이 단계는 두 노드에서 모두 수행해야 합니다.
 
+. 노드가 프롬프트에 있는지 `LOADER` 확인하고 현재 환경 변수를 수집 및 유지합니다.
+. bootarg 값을 수집합니다.
++
+'printenv'
+
+. 컨트롤러가 업그레이드되는 사이트에서 노드 및 쉘프의 전원을 끕니다.
 
 
 
 
-=== 새 컨트롤러 설정
+=== 새 컨트롤러를 설정합니다
 
 새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.
 
@@ -402,27 +464,49 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 랙 공간은 컨트롤러 모듈의 플랫폼 모델, 스위치 유형 및 구성의 스토리지 쉘프 수에 따라 다릅니다.
 
 . 적절하게 접지합니다.
-. 랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
+. 업그레이드를 통해 컨트롤러 모듈을 교체해야 하는 경우(예: AFF 800에서 AFF A90 시스템으로 업그레이드), 컨트롤러 모듈을 교체할 때 섀시에서 컨트롤러 모듈을 분리해야 합니다. 다른 모든 업그레이드의 경우 로 <<ip_upgrades_replace_4,4단계>>건너뜁니다.
 +
-https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시스템 설명서"^]
+섀시 앞면에서 엄지 손가락으로 각 드라이브를 단단히 눌러 정지가 느껴질 때까지 밀어넣습니다. 이렇게 하면 드라이브가 섀시 중앙판에 단단히 장착되어 있음을 확인할 수 있습니다.
 
-. 새 컨트롤러 모듈에 자체 FC-VI 카드가 제공되지 않았거나 이전 컨트롤러의 FC-VI 카드가 새 컨트롤러에서 호환되는 경우 FC-VI 카드를 교체하고 올바른 슬롯에 설치합니다.
 +
-를 참조하십시오 link:https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] FC-VI 카드의 슬롯 정보
+image::../media/drw_a800_drive_seated.png[는 섀시에서 컨트롤러 모듈을 분리하는 것을 보여 줍니다]
 
-. MetroCluster 설치 및 구성 가이드 _ 에 설명된 대로 컨트롤러의 전원, 직렬 콘솔 및 관리 연결에 케이블을 연결합니다.
+. [[IP_UPGRADE_REPLACE_4]] 컨트롤러 모듈을 설치합니다.
++
+
+NOTE: AFF 800에서 AFF A90 시스템으로 업그레이드하는 것과 같은 컨트롤러 모듈을 교체해야 하는지 여부에 따라 설치 단계가 달라집니다.
+
++
+[role="tabbed-block"]
+====
+.컨트롤러 모듈을 교체해야 하는 업그레이드
+--
+새 컨트롤러를 별도로 설치하는 것은 예를 들어, AFF A800 시스템에서 AFF A90 시스템으로 전환하는 것과 같이 동일한 섀시에 있는 디스크 및 컨트롤러가 있는 통합 시스템을 업그레이드하는 경우에는 적용되지 않습니다. 아래 이미지와 같이 이전 컨트롤러의 전원을 끈 후에는 새 컨트롤러 모듈과 I/O 카드를 교체해야 합니다.
+
+다음 예제 이미지는 설명을 위한 것이며 컨트롤러 모듈과 I/O 카드는 시스템마다 다를 수 있습니다.
+
+image::../media/a90_a70_pcm_swap.png[컨트롤러 모듈 스왑을 표시합니다]
+
+--
+.기타 모든 업그레이드
+--
+랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
+
+--
+====
+. 에 설명된 대로 컨트롤러의 전원, 직렬 콘솔 및 관리 연결을 케이블로 연결합니다 link:../install-ip/using_rcf_generator.html["MetroCluster IP 스위치 케이블 연결"]
 +
 현재 이전 컨트롤러에서 분리된 다른 케이블을 연결하지 마십시오.
 
 +
 https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시스템 설명서"^]
 
-. 새 노드의 전원을 켜고 로더 프롬프트를 표시할 때 Ctrl-C를 누릅니다.
+. 새 노드의 전원을 켜고 프롬프트가 표시되면 Ctrl-C를 누릅니다 `LOADER` .
 
 
 
 
-=== 새 컨트롤러를 Netbooting 합니다
+=== 새 컨트롤러를 netboot합니다
 
 새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
 
@@ -438,7 +522,7 @@ https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시�
 +
 ONTAP-version_image.tgz 파일은 추출할 필요가 없습니다.
 
-. 로더 프롬프트에서 관리 LIF의 netboot 연결을 구성합니다.
+.  `LOADER`프롬프트에서 관리 LIF에 대한 NetBoot 연결을 구성합니다.
 +
 ** IP 주소 지정이 DHCP인 경우 자동 연결을 구성합니다.
 +
@@ -452,15 +536,7 @@ ifconfig e0M-addr=ip_addr-mask=netmask"-GW=gateway입니다
 
 . netboot 수행
 +
-** 플랫폼이 80xx 시리즈 시스템인 경우 다음 명령을 사용합니다.
-+
-"netboot\http://web_server_ip/path_to_web-accessible_directory/netboot/kernel`
-
-** 플랫폼이 다른 시스템인 경우 다음 명령을 사용합니다.
-+
 "netboot\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz`
-
-
 
 . 부팅 메뉴에서 옵션 * (7) 새 소프트웨어를 먼저 설치 * 를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.
 +
@@ -484,7 +560,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-=== 컨트롤러 모듈의 구성 지우기
+=== 컨트롤러 모듈의 구성을 지웁니다
 
 [role="lead"]
 MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
@@ -545,28 +621,28 @@ boot_ontap 메뉴
  a| 
 CNA FC
  a| 
-'ucadmin modify -m fc -t initiator_adapter-name_'
+`ucadmin modify -m fc -t initiator <adapter-name>`
 
 
 
  a| 
 CNA 이더넷
  a| 
-'ucadmin modify-mode CNA_adapter-name _'
+`ucadmin modify -mode cna <adapter-name>`
 
 
 
  a| 
 FC 타겟
  a| 
-'fcadmin config -t target_adapter-name_'
+`fcadmin config -t target <adapter-name>`
 
 
 
  a| 
 FC 이니시에이터
  a| 
-'fcadmin config -t initiator_adapter-name_'
+`fcadmin config -t initiator <adapter-name>`
 
 |===
 . 유지 관리 모드 종료:
@@ -574,7 +650,7 @@ FC 이니시에이터
 "중지"
 
 +
-명령을 실행한 후 LOADER 프롬프트에서 노드가 중지될 때까지 기다립니다.
+명령을 실행한 후 프롬프트에서 노드가 멈출 때까지 `LOADER` 기다립니다.
 
 . 노드를 유지보수 모드로 다시 부팅하여 구성 변경 사항이 적용되도록 합니다.
 +
@@ -624,6 +700,41 @@ ha-config modify controller mcip.(컨트롤러 mccip 수정
 +
 ha-config modify chassis mccip.(섀시 mcip 수정
 
+. NS224 쉘프 또는 스토리지 스위치에 연결된 이더넷 포트를 확인하고 수정합니다.
++
+.. NS224 쉘프 또는 스토리지 스위치에 연결된 이더넷 포트를 확인합니다.
++
+`storage port show`
+
+.. 스토리지 및 클러스터의 공유 스위치를 포함하여 이더넷 쉘프 또는 스토리지 스위치에 연결된 모든 이더넷 포트를 모드로 설정합니다 `storage` .
++
+`storage port modify -p <port> -m storage`
+
++
+예:
+
++
+[listing]
+----
+*> storage port modify -p e5b -m storage
+Changing NVMe-oF port e5b to storage mode
+----
++
+
+NOTE: 업그레이드를 성공적으로 수행하려면 영향을 받는 모든 포트에 이 설정을 설정해야 합니다.
+
++
+이더넷 포트에 연결된 쉘프의 디스크는 출력에 보고됩니다. `sysconfig -v`
+
++
+업그레이드할 시스템의 스토리지 포트에 대한 자세한 내용은 을 link:https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 참조하십시오.
+
+.. 모드가 설정되어 있는지 `storage` 확인하고 포트가 온라인 상태인지 확인합니다.
++
+`storage port show`
+
+
+
 . 노드를 정지시킵니다
 +
 LOADER> 프롬프트에서 노드가 정지되어야 합니다.
@@ -650,23 +761,22 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 .단계
 . 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
 +
-_MetroCluster IP 설치 및 구성_섹션에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.
-
-+
-link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
 +
-에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"].
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일을 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF 파일을 다운로드하고 설치합니다"]
 
 
 
@@ -678,15 +788,15 @@ link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
 특정 MetroCluster IP bootarg 값은 새 컨트롤러 모듈에서 구성해야 합니다. 이 값은 이전 컨트롤러 모듈에 구성된 값과 일치해야 합니다.
 
 .이 작업에 대해
-이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 사용합니다 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#gathering-information-before-the-upgrade["업그레이드 전에 정보를 수집하는 중입니다"].
+이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <<gather_info_system_replace,업그레이드하기 전에 정보를 수집합니다>>사용합니다.
 
 .단계
 . LOADER> 프롬프트에서 다음 boots를 site_B의 새 노드에 설정합니다.
 +
-'setenv bootarg.MCC.port_a_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address, vlan-id_'
+`setenv bootarg.mcc.port_a_ip_config <local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id>`
 
 +
-'setenv bootarg.MCC.port_b_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address, vlan-id_'
+`setenv bootarg.mcc.port_b_ip_config <local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id>`
 
 +
 다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_1에 대한 값을 설정합니다.
@@ -706,21 +816,43 @@ setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,
 setenv bootarg.mcc.port_a_ip_config 172.17.26.11/23,0,172.17.26.10,172.17.26.12,172.17.26.13,120
 setenv bootarg.mcc.port_b_ip_config 172.17.27.11/23,0,172.17.27.10,172.17.27.12,172.17.27.13,130
 ----
++
+다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1의 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config
+172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12
+setenv bootarg.mcc.port_b_ip_config
+172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12
+----
++
+다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2의 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config
+172.17.26.11/23,0,172.17.26.10,172.17.26.12,172.17.26.13
+setenv bootarg.mcc.port_b_ip_config
+172.17.27.11/23,0,172.17.27.10,172.17.27.12,172.17.27.13
+----
 . 새 노드의 'LOADER' 프롬프트에서 UUID를 설정합니다.
 +
-'setenv bootarg.mgwd.partner_cluster_uuuid_partner-cluster-UUID_'
+`setenv bootarg.mgwd.partner_cluster_uuid <partner-cluster-UUID>`
 
 +
-'setenv bootarg.mgwd.cluster_uuuid_local-cluster-UUID_'
+`setenv bootarg.mgwd.cluster_uuid <local-cluster-UUID>`
 
 +
-'setenv bootarg.mcc.pri_partner_uuuid_dr-partner-node-UUID_'
+`setenv bootarg.mcc.pri_partner_uuid <DR-partner-node-UUID>`
 
 +
-'setenv bootarg.mcc.aux_partner_uuid_dr-aux-partner-node-UUID_'
+`setenv bootarg.mcc.aux_partner_uuid <DR-aux-partner-node-UUID>`
 
 +
-'setenv bootarg.mcc_iscsi.node_uuid_local-node-UUID_'
+`setenv bootarg.mcc_iscsi.node_uuid <local-node-UUID>`
 
 +
 .. node_B_1에서 UUID를 설정합니다.
@@ -751,16 +883,37 @@ setenv bootarg.mcc_iscsi.node_uuid aa9a7a7a-9a81-11e7-a4e9-00a098908c35
 ----
 
 
-. 원래 시스템이 ADP에 대해 구성된 경우 각 교체 노드의 LOADER 프롬프트에서 ADP를 활성화합니다.
+. 가동 중인 사이트에서 다음 명령을 실행하여 원래 시스템이 ADP(Advanced Drive Partitioning)용으로 구성되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+ADP가 구성된 경우 "컨테이너 유형" 열에 출력에 "공유"가 `disk show` 표시됩니다. "컨테이너 유형"에 다른 값이 있으면 ADP가 시스템에 구성되지 않습니다. 다음 출력 예는 ADP로 구성된 시스템을 보여 줍니다.
+
++
+[listing]
+----
+::> disk show
+                    Usable               Disk    Container   Container
+Disk                Size       Shelf Bay Type    Type        Name      Owner
+
+Info: This cluster has partitioned disks. To get a complete list of spare disk
+      capacity use "storage aggregate show-spare-disks".
+----------------    ---------- ----- --- ------- ----------- --------- --------
+1.11.0              894.0GB    11    0   SSD      shared     testaggr  node_A_1
+1.11.1              894.0GB    11    1   SSD      shared     testaggr  node_A_1
+1.11.2              894.0GB    11    2   SSD      shared     testaggr  node_A_1
+----
+. 원래 시스템이 ADP용으로 구성된 경우 교체 노드의 각 `LOADER` 프롬프트에서 ADP를 사용하도록 설정합니다.
 +
 'etenv bootarg.MCC.adp_enabled true'
 
 . 다음 변수를 설정합니다.
 +
-'setenv bootarg.MCC.local_config_id_original-sys-id_'
+`setenv bootarg.mcc.local_config_id <original-sys-id>`
 
 +
-'etenv boottar.MCC.dr_partner_dr-partner-sys-id_'
+`setenv bootarg.mcc.dr_partner <dr-partner-sys-id>`
 
 +
 
@@ -806,14 +959,14 @@ setenv bootarg.mcc.dr_partner 537403323
 
 
 
-=== 루트 애그리게이트 디스크를 다시 할당합니다
+=== 루트 애그리게이트 디스크를 재할당합니다
 
 앞에서 수집한 'sids'를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
 
 .이 작업에 대해
 이 작업은 유지보수 모드에서 수행됩니다.
 
-에서 이전 시스템 ID를 식별했습니다 link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_ip.html#gathering-information-before-the-upgrade["업그레이드 전에 정보를 수집하는 중입니다"].
+이전 시스템 ID는 에서 식별되었습니다. <<gather_info_system_replace,업그레이드하기 전에 정보를 수집합니다>>
 
 이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
 
@@ -833,7 +986,7 @@ setenv bootarg.mcc.dr_partner 537403323
 |===
 .단계
 . 다른 모든 연결을 새 컨트롤러 모듈(FC-VI, 스토리지, 클러스터 인터커넥트 등)에 케이블로 연결합니다.
-. 시스템을 중지하고 LOADER 프롬프트에서 유지보수 모드로 부팅합니다.
+. 시스템을 중지하고 "Loader(로더)" 프롬프트에서 유지보수 모드로 부팅합니다.
 +
 boot_ONTAP maint를 선택합니다
 
@@ -843,6 +996,10 @@ boot_ONTAP maint를 선택합니다
 
 +
 명령 출력에는 새 컨트롤러 모듈의 시스템 ID(1574774970)가 표시됩니다. 그러나 루트 애그리게이트 디스크는 여전히 이전 시스템 ID(4068741254)가 소유합니다. 이 예는 MetroCluster 구성에서 다른 노드가 소유한 드라이브를 표시하지 않습니다.
+
++
+
+CAUTION: 디스크 재할당을 진행하기 전에 노드의 루트 애그리게이트에 속한 pool0 및 pool1 디스크가 출력에 표시되는지 확인해야 `disk show` 합니다. 다음 예제에서 출력에는 node_B_1-old가 소유한 pool0 및 pool1 디스크가 나열됩니다.
 
 +
 [listing]
@@ -863,7 +1020,7 @@ rr18:9.126L27 node_B_1-old(4068741254)   Pool0  S0M1PSDW         node_B_1-old(40
 ----
 . 드라이브 쉘프의 루트 애그리게이트 디스크를 새 컨트롤러에 재할당합니다.
 +
-"디스크 재할당 -s_old-sysid_-d_new-sysid_"
+`disk reassign -s <old-sysid> -d <new-sysid>`
 
 +
 
@@ -941,16 +1098,16 @@ VLAN 및 인터페이스 그룹을 재구성할 수 있습니다. 필요한 경�
 
 . 외부 키 관리자가 구성된 경우 관련 boots를 설정합니다.
 +
-'bootarg.kmip.init.ipaddr_ip-address_'
+`setenv bootarg.kmip.init.ipaddr <ip-address>`
 
 +
-'셋틴 bootarg.kmip.init.netmask_netmask_'
+`setenv bootarg.kmip.init.netmask <netmask>`
 
 +
-'bootarg.kmip.init.gateway_gateway-address_'
+`setenv bootarg.kmip.init.gateway <gateway-address>`
 
 +
-'setenv bootarg.kmip.init.interface_interface-id_'
+`setenv bootarg.kmip.init.interface <interface-id>`
 
 . 부팅 메뉴를 표시합니다.
 +
@@ -1041,6 +1198,14 @@ Rebooting to load the restored env file...
 +
 네트워크 포트 브로드캐스트 도메인 쇼
 
+.. 새로 업그레이드된 컨트롤러의 데이터 포트에 대해 새 브로드캐스트 도메인이 생성된 경우 브로드캐스트 도메인을 삭제합니다.
++
+
+NOTE: 새 브로드캐스트 도메인만 삭제합니다. 업그레이드를 시작하기 전에 있던 브로드캐스트 도메인을 삭제하지 마십시오.
+
++
+`broadcast-domain delete -broadcast-domain <broadcast_domain_name>`
+
 .. 필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58A3-46C9-BF0C-BA1D1D1475F9.html["브로드캐스트 도메인에서 포트 추가 또는 제거"^]
@@ -1090,7 +1255,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
  a| 
 외부 키 관리
  a| 
-'Security key-manager external restore-vserver_SVM_-node_node_-key-server_host_name|ip_address:port_-key-id key_id-key-tag key_tag_node-name_'
+`security key-manager external restore -vserver <svm-name> -node <node-name> -key-server <host_name|IP_address:port> -key-id <key_id> -key-tag key_tag <node-name>`
 
 자세한 내용은 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-32DA96C3-9B04-4401-92B8-EAF323C3C863.html["외부 키 관리 암호화 키 복원"^].
 
@@ -1110,7 +1275,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
-== 업그레이드를 완료하는 중입니다
+== 업그레이드를 완료합니다
 
 자동화 작업은 검증 시스템 검사를 실행한 다음 일시 중지하여 네트워크 연결 상태를 확인할 수 있습니다. 확인 후 리소스 다시 찾기 단계가 시작되고 자동화 작업이 사이트 A에서 스위치백을 실행하고 업그레이드 후 확인 시 일시 중지됩니다. 자동화 작업을 다시 시작하면 업그레이드 후 검사가 수행되고 오류가 발견되지 않으면 업그레이드가 완료된 것으로 표시됩니다.
 

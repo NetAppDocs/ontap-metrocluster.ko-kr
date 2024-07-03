@@ -197,6 +197,30 @@ AFF A320
  a| 
 e0g, e0h
 
+
+
+ a| 
+AFF A70 를 참조하십시오
+ a| 
+X50132A를 참조하십시오
+ a| 
+슬롯 2
+ a| 
+e2a, e2b
+
+
+
+ a| 
+AFF A90 및 AFF A1K
+ a| 
+X50132A를 참조하십시오
+ a| 
+슬롯 2, 슬롯 3
+ a| 
+e2b, e3b
+
+*참고:* 포트 e2a 및 e3a는 사용되지 않은 상태로 유지해야 합니다. 이러한 포트를 프런트엔드 네트워크 또는 피어링에 사용하는 것은 지원되지 않습니다.
+
 |===
 link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자동 드라이브 할당 및 ADP 시스템에 대해 자세히 알아보십시오"].
 

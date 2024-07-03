@@ -32,6 +32,6 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클
 
 +
 
-NOTE: MetroCluster IP 시스템에는 전용 고가용성(HA) 포트가 없습니다. ONTAP 하드웨어 시스템 설명서 _ 를 사용하여 플랫폼을 설치하는 경우 클러스터 및 HA 포트에 케이블을 연결하기 위해 지침을 따르지 마십시오.
+NOTE: MetroCluster IP 시스템에는 전용 고가용성(HA) 포트가 없습니다. 플랫폼에 따라 MetroCluster, 로컬 클러스터 또는 공유 클러스터/MetroCluster 인터페이스를 사용하여 HA 트래픽을 처리합니다. ONTAP 하드웨어 시스템 설명서 _ 를 사용하여 플랫폼을 설치하는 경우 클러스터 및 HA 포트에 케이블을 연결하기 위해 지침을 따르지 마십시오.
 
 

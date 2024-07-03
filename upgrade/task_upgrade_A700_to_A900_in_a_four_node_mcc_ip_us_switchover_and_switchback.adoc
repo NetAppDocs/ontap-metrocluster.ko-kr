@@ -583,7 +583,7 @@ image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈]
 .. e5a 연결을 e5b로 이동합니다.
 +
 
-NOTE: 클러스터의 모든 노드에 있는 슬롯 7은 에 설명된 대로 비어 있어야 합니다 <<이전 노드의 포트를 새 노드로 매핑합니다>> 섹션을 참조하십시오.
+NOTE: 클러스터의 모든 노드에 있는 슬롯 7은 섹션에서 언급한 대로 비어 있어야 <<upgrade_a700_a900_ip_map,이전 노드의 포트를 새 노드로 매핑합니다>> 합니다.
 
 
 
@@ -821,23 +821,22 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 .단계
 . 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
 +
-_MetroCluster IP 설치 및 구성_섹션에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.
-
-+
-link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
 +
-에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/index.html["MetroCluster IP 설치 및 구성"].
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일을 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF 파일을 다운로드하고 설치합니다"]
 
 
 
@@ -855,7 +854,7 @@ link:../install-ip/index.html["MetroCluster IP 설치 및 구성"]
 특정 MetroCluster IP bootarg 값은 새 컨트롤러 모듈에서 구성해야 합니다. 이 값은 이전 컨트롤러 모듈에 구성된 값과 일치해야 합니다.
 
 .이 작업에 대해
-이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 사용합니다 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#gathering-information-before-the-upgrade["업그레이드 전에 정보를 수집하는 중입니다"].
+이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <<업그레이드하기 전에 정보를 수집합니다>>사용합니다.
 
 .단계
 . LOADER> 프롬프트에서 다음 boots를 site_B의 새 노드에 설정합니다.
@@ -1266,7 +1265,7 @@ https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_
 
 .이 작업에 대해
 * 이 작업은 site_B에서 수행됩니다
-* 에서 생성한 포트 매핑 계획을 참조하십시오 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#mapping-ports-from-the-old-nodes-to-the-new-nodes["이전 노드에서 새 노드로 포트 매핑"].
+* 에서 생성한 포트 매핑 계획을 참조하십시오 <<upgrade_a700_a900_ip_map,이전 노드의 포트를 새 노드로 매핑합니다>>
 
 
 .단계
@@ -1416,7 +1415,7 @@ MetroCluster 체크 쇼
 site_A에서 업그레이드 작업을 반복해야 합니다
 
 .단계
-. 부터 시작하여 site_a의 노드를 업그레이드하려면 단계를 반복합니다 link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html#preparing-for-the-upgrade["업그레이드를 준비합니다"].
+. 이 단계를 반복하여 부터 사이트_A의 노드를 업그레이드합니다. <<upgrade_a700_a900_ip_prepare,업그레이드를 준비합니다>>
 +
 작업을 수행할 때 사이트와 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, 사이트_A에서 스위치오버로 예제를 제공할 경우 site_B에서 전환합니다
 

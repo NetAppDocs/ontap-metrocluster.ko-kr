@@ -216,6 +216,9 @@ e5b
 
 
  a| 
+* AFF A70 를 참조하십시오
+* AFF A90 를 참조하십시오
+* AFF A1K 를 참조하십시오
 * AFF A220
 * AFF A250
 * AFF A400
@@ -237,9 +240,48 @@ e5b
 필수 주소는 * Destination Network Address * 열에 표시된 DR 파트너 주소입니다.
 
 +
-다음 출력에서는 포트 e5a 및 e5b에서 MetroCluster IP 인터페이스를 사용하는 AFF A700 및 FAS9000 시스템의 구성 IP 주소를 보여 줍니다. 인터페이스는 플랫폼 유형에 따라 다릅니다.
+명령 출력은 플랫폼 모델에 따라 다릅니다.
 
 +
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 이상에서 도입된 시스템
+--
+ONTAP 9.15.1 이상(AFF A70, AFF A90 및 AFF A1K)에 도입된 시스템에는 다음 출력 예와 같이 HA 및 DR용으로 별도의 포트가 있습니다.
+
+[listing]
+----
+cluster_B::*> metrocluster configuration-settings connection show
+DR                    Source          Destination
+DR                    Source          Destination
+Group Cluster Node    Network Address Network Address Partner Type Config State
+----- ------- ------- --------------- --------------- ------------ ------------
+1     cluster_B
+              node_B_1
+                 Home Port: e5a
+                      172.17.26.13    172.17.26.10    DR Partner   completed
+                 Home Port: e5a
+                      172.17.26.13    172.17.26.11    DR Auxiliary completed
+                 Home Port: e5b
+                      172.17.27.13    172.17.27.10    DR Partner   completed
+                 Home Port: e5b
+                      172.17.27.13    172.17.27.11    DR Auxiliary completed
+              node_B_2
+                 Home Port: e5a
+                      172.17.26.12    172.17.26.11    DR Partner   completed
+                 Home Port: e5a
+                      172.17.26.12    172.17.26.10    DR Auxiliary completed
+                 Home Port: e5b
+                      172.17.27.12    172.17.27.11    DR Partner   completed
+                 Home Port: e5b
+                      172.17.27.12    172.17.27.10    DR Auxiliary completed
+12 entries were displayed.
+----
+--
+.기타 모든 시스템
+--
+다음 출력에서는 포트 e5a 및 e5b에서 MetroCluster IP 인터페이스를 사용하는 AFF A700 및 FAS9000 시스템의 구성 IP 주소를 보여 줍니다. 인터페이스는 플랫폼 유형에 따라 다를 수 있습니다.
+
 [listing]
 ----
 cluster_B::*> metrocluster configuration-settings connection show
@@ -276,12 +318,14 @@ Group Cluster Node    Network Address Network Address Partner Type Config State
                       172.17.27.12    172.17.27.10    DR Auxiliary completed
 12 entries were displayed.
 ----
+--
+====
 . 인터페이스의 VLAN ID 또는 게이트웨이 주소를 확인해야 하는 경우 작동하는 사이트에서 VLAN ID를 확인합니다.
 +
 'MetroCluster configuration-settings interface show'를 선택합니다
 
 +
-** 플랫폼 모델이 VLAN ID를 사용하고(위 목록 참조) 기본 VLAN ID를 사용하지 않는 경우 VLAN ID가 필요합니다.
+** 플랫폼 모델이 VLAN ID(위 목록 참조)를 사용하고 기본 VLAN ID를 사용하지 않는 경우 VLAN ID가 필요합니다.
 ** 을(를) 사용하는 경우 게이트웨이 주소가 필요합니다 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크"].
 +
 VLAN ID는 출력의 * Network Address * 열에 포함됩니다. 게이트웨이 * 열에 게이트웨이 IP 주소가 표시됩니다.
@@ -306,27 +350,56 @@ Group Cluster Node     Network Address Netmask         Gateway         State
 ----
 
 
-. 재해 사이트 노드가 VLAN ID(위 목록 참조)를 사용하는 경우 각 재해 사이트 노드에 대한 로더 프롬프트에서 다음 boots를 설정합니다.
+. 각 재해 사이트 노드에 대해 LOADER 프롬프트에서 플랫폼 모델에 따라 bootarg 값을 설정합니다.
 +
+[NOTE]
+====
+** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델이 VLAN ID를 사용하지 않는 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
+** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["Layer3 광역 네트워크"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
+
+
+====
++
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 이상에서 도입된 시스템
 --
+ONTAP 9.15.1 이상에서 도입된 시스템에서는 DR 및 HA용 포트가 별도로 있으므로 _HA-PARTNER-IP-ADDRESS_의 값을 * 0 * (0)으로 설정해야 합니다.
+
+다음 bootarg를 설정합니다.
+
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config local-IP-address/local-IP-mask,gateway-IP-address,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id
+
+setenv bootarg.mcc.port_b_ip_config local-IP-address/local-IP-mask,gateway-IP-address,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id
+----
+다음 명령은 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_a_1에 대한 값을 설정합니다.
+
+....
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,0,172.17.26.13,172.17.26.12,120
+
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,0,172.17.27.13,172.17.27.12,130
+....
+다음 예에서는 VLAN ID가 없는 node_a_1에 대한 명령을 보여 줍니다.
+
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,0,172.17.26.13,172.17.26.12
+
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,0,172.17.27.13,172.17.27.12
+----
+--
+.기타 모든 시스템
+--
+다음 bootarg를 설정합니다.
+
 ....
 setenv bootarg.mcc.port_a_ip_config local-IP-address/local-IP-mask,gateway-IP-address,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id
 
 setenv bootarg.mcc.port_b_ip_config local-IP-address/local-IP-mask,gateway-IP-address,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id
 ....
-[NOTE]
-====
-** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
-** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["Layer3 광역 네트워크"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
-
-
-====
-** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
-** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["계층 3 백엔드 접속"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
-+
 다음 명령은 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_a_1에 대한 값을 설정합니다.
-
-
 
 ....
 setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12,120
@@ -335,37 +408,14 @@ setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,
 ....
 다음 예에서는 VLAN ID가 없는 node_a_1에 대한 명령을 보여 줍니다.
 
-....
+[listing]
+----
 setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12
 
 setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12
-....
+----
 --
-. 재해 사이트 노드가 VLAN ID를 사용하는 시스템이 아닌 경우 각 재해 노드에 대한 로더 프롬프트에서 local_ip/mask, gateway를 사용하여 다음 boots를 설정합니다.
-+
-....
-setenv bootarg.mcc.port_a_ip_config local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address
-
-
-setenv bootarg.mcc.port_b_ip_config local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address
-....
-+
-[NOTE]
 ====
-** 인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델에 VLAN이 필요하지 않은 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.
-** 구성에서 를 사용하지 않는 경우 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크"], _gateway-ip-address_의 값은 * 0 * (0)입니다.
-
-
-====
-+
-다음 명령을 실행하면 node_a_1에 대한 값이 설정됩니다. 이 예에서는 _gateway-ip-address_와 _vlan-id_값이 사용되지 않습니다.
-
-+
-....
-setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12
-
-setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12
-....
 . 정상적인 사이트에서 재해 사이트의 UUID를 수집합니다.
 +
 'MetroCluster node show-fields node-cluster-uuid, node-uuuid
