@@ -70,7 +70,7 @@ AFF A250, ASA A250
 AFF A150, ASA A150, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 NVIDIA SN2100 스위치로 연결:
 
 [#table_1_nvidia_sn2100]
-image::../media/mcc_ip_cabling_aff_asa_a150_fas500f_A250_C250_MSN2100.png[에는 NVIDIA SN2100 플랫폼 포트 할당이 나와 있습니다]
+image::../media/mcc-ip-cabling-aff-asa-a150-fas500f-a25-c250-MSN2100.png[에는 NVIDIA SN2100 플랫폼 포트 할당이 나와 있습니다]
 
 .NVIDIA SN2100 플랫폼 포트 할당(그룹 2)
 FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, 케이블 연결을 위한 플랫폼 포트 할당 검토 FAS8700, FAS9000 또는 AFF A700 시스템에서 NVIDIA SN2100 스위치로 연결:

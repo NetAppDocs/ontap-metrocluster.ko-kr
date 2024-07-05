@@ -52,4 +52,4 @@ image::../media/mcc_ip_cabling_a_fas9000_or_aff_a700_to_a_cisco_3132q_v_switch.p
 .Cisco 3132Q-V 플랫폼 포트 할당(그룹 3)
 AFF A800 또는 ASA A800 시스템을 Cisco 3132Q-V 스위치에 연결하기 위해 플랫폼 포트 할당을 검토합니다.
 
-image::../media/cabling_an_aff_a800_to_a_cisco_3132q_v_switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
+image::../media/cabling-an-aff-a800-to-a-cisco-3132q-v-switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]

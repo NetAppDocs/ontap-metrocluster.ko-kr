@@ -67,12 +67,12 @@ FAS500f, AFF C250, ASA C250, AFF A250, ASA A250
 .Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 1)
 AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 9336C 스위치로 연결하는 경우:
 
-image::../media/mcc_ip_cabling_a150_a220_a250_to_a_cisco_3232c_or_cisco_9336c_switch.png[에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다]
+image::../media/mcc-ip-cabling-a150-a220-a250-to-a-cisco-3232c-or-cisco-9336c-switch.png[에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다]
 
 .Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 2)
 FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mcc_ip_cabling_a_aff_a300_or_fas8200_to_a_cisco_3232c_or_cisco_9336c_switch.png[에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다]
+image::../media/mcc-ip-cabling-a-aff-a300-or-fas8200-to-a-cisco-3232c-or-cisco-9336c-switch.png[에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다]
 
 이전 RCF 파일에서 업그레이드하는 경우 케이블 연결 구성에서 "MetroCluster 4" 그룹(포트 25/26 및 29/30)의 포트를 사용하고 있을 수 있습니다.
 
