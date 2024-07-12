@@ -2,37 +2,48 @@
 :allow-uri-read: 
 
 
+특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20).
+
++ 지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도 있습니다 `-vlan-id` `metrocluster configuration-settings interface create` .
+
++ 다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다. `-vlan-id`
+
++** FAS8200 및 AFF A300** AFF A320** FAS9000 및 AFF A700 ** AFF C800, ASA C800, AFF A800 및 ASA A800
+
++ 다른 모든 플랫폼은 `-vlan-id` 매개 변수를 지원합니다.
+
++ 기본 및 유효한 VLAN 할당은 플랫폼이 매개 변수를 지원하는지 여부에 따라 `-vlan-id` 달라집니다.
+
 를 누릅니다
 
---
-[NOTE]
+[role="tabbed-block"]
 ====
-* 특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).
-* ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
-
-
-====
+.<code>-vlan-id </code>를 지원하는 플랫폼입니다
 --
-+다음 플랫폼 모델은 사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.
+기본 VLAN:
 
-를 누릅니다
-
-|===
-
-
-| AFF 플랫폼 | FAS 플랫폼 
+*  `-vlan-id`매개 변수를 지정하지 않으면 "A" 포트의 경우 VLAN 10과 "B" 포트의 경우 VLAN 20을 사용하여 인터페이스가 생성됩니다.
+* 지정된 VLAN은 RCF에서 선택한 VLAN과 일치해야 합니다.
 
 
- a| 
-* AFF A220
-* AFF A250
-* AFF A400
+유효한 VLAN 범위:
 
- a| 
-* FAS2750
-* 500f로 설정합니다
-* FAS8300
-* FAS8700
+* 기본 VLAN 10 및 20
+* VLAN 101 이상(101과 4095 사이)
 
 
-|===
+--
+.<code>-vlan-id </code>를 지원하지 않는 플랫폼
+--
+기본 VLAN:
+
+* 해당 없음. 인터페이스를 위해 MetroCluster 인터페이스에 VLAN을 지정할 필요가 없습니다. 스위치 포트는 사용되는 VLAN을 정의합니다.
+
+
+유효한 VLAN 범위:
+
+* RCF를 생성할 때 모든 VLAN이 명시적으로 제외되지 않았습니다. RCF는 VLAN이 유효하지 않은 경우 사용자에게 경고합니다.
+
+
+--
+====

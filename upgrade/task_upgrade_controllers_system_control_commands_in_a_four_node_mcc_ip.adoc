@@ -35,9 +35,6 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 .AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
 다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
 
-
-NOTE: AFF A90, AFF A70 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.
-
 image::../media/mcc_ip_system_controller_replace_aff_fas.png[MCC IP 시스템 컨트롤러가 AFF FAS를 대체합니다]
 
 * 참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.

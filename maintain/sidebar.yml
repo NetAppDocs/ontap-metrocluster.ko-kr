@@ -70,7 +70,7 @@ entries:
     url: "/maintain/task_rename_a_cisco_ip_switch.html"
   - title: Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다
     url: "/maintain/task_add_remove_or_change_isl_ports_nondisruptively.html"
-- title: MetroCluster IP 구성에서 주소, 넷마스크 및 게이트웨이를 수정합니다
+- title: MetroCluster IP 인터페이스의 속성을 수정합니다
   url: "/maintain/task-modify-ip-netmask-properties.html"
 - title: 상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다
   url: "/maintain/task_modify_switch_or_bridge_ip_address_for_health_monitoring.html"

@@ -679,7 +679,7 @@ unit 	active 	   backup   current-active  next-active
 
 == Broadcom RCF 파일 다운로드 및 설치
 
-MetroCluster IP 구성의 각 스위치에 스위치 RCF 파일을 다운로드하고 설치해야 합니다.
+스위치 RCF 파일을 생성하고 MetroCluster IP 구성의 각 스위치에 설치해야 합니다.
 
 .시작하기 전에
 이 작업에는 FTP, TFTP, SFTP 또는 SCP와 같은 파일 전송 소프트웨어가 필요합니다. 스위치에 파일을 복사합니다.
@@ -739,7 +739,7 @@ NOTE: EFOS 버전 3.4.4.6 이상 3.4.x.x.x용 RCF 파일 릴리즈 버전과 EFO
 .단계
 . MetroCluster IP용 Broadcom RCF 파일을 생성합니다.
 +
-.. 를 다운로드합니다 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"]
+.. 를 다운로드하십시오 https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"^]
 .. MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다.
 +
 

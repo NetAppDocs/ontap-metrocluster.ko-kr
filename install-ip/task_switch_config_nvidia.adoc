@@ -293,7 +293,7 @@ cumulus@cumulus:~$ sudo reboot
 
 == [[다운로드 및 설치]] NVIDIA RCF 파일을 다운로드하여 설치합니다
 
-MetroCluster IP 구성의 각 스위치에 스위치 RCF 파일을 다운로드하고 설치해야 합니다.
+스위치 RCF 파일을 생성하고 MetroCluster IP 구성의 각 스위치에 설치해야 합니다.
 
 .시작하기 전에
 * 명령에 대한 'SUDO'에 대한 루트 암호가 있어야 합니다.

@@ -1719,8 +1719,6 @@ HA-config modify 섀시 mcip
 .이 작업에 대해
 이 작업은 네이티브 NetApp 스토리지를 사용하는 2노드 MetroCluster 구성에 사용됩니다.
 
-새로운 MetroCluster 시스템은 사전 구성되어 있으므로 이 단계를 수행할 필요가 없습니다. 그러나 AutoSupport를 구성해야 합니다.
-
 이 작업은 MetroCluster 구성의 두 클러스터 모두에서 수행해야 합니다.
 
 ONTAP 설정에 대한 자세한 내용은 _ 소프트웨어 설치 안내서 _ 를 참조하십시오

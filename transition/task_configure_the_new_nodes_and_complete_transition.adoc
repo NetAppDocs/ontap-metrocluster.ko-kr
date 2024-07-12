@@ -19,57 +19,75 @@ summary: 새 노드가 추가되면 전환 단계를 완료하고 MetroCluster I
 
 MetroCluster IP 연결을 구현하고, MetroCluster 구성을 새로 고치고, 전환 모드를 비활성화해야 합니다.
 
+.단계
 . controller node_a_1-IP에서 다음 명령을 실행하여 DR 그룹으로 새 노드를 구성합니다.
 +
-'MetroCluster configuration-settings dr-group create-partner-cluster peer-cluster-name-local-node local-controller-name-remote-node remote-controller-name'
+`metrocluster configuration-settings dr-group create -partner-cluster <peer_cluster_name> -local-node <local_controller_name> -remote-node <remote_controller_name>`
 
 +
 'MetroCluster configuration-settings dr-group show'를 선택합니다
 
 . MetroCluster IP 인터페이스 생성(node_A_1-IP, node_A_2-IP, node_B_1-IP, node_B_2-IP) -- 컨트롤러당 2개의 인터페이스 생성 필요, 총 8개의 인터페이스:
 +
-MetroCluster configuration-settings interface create-cluster-name cluster-name-home-node controller-name-home-port port-address-netmask-vlan-id vlan-id ``metrocluster configuration-settings interface show’
+`metrocluster configuration-settings interface create -cluster-name <cluster_name> -home-node <controller_name> -home-port <port_name> -address <ip_address> -netmask <netmask_address> -vlan-id <vlan_id>`
 
 +
-
-NOTE: ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
-
-+
-기본 VLAN ID를 사용하지 않는 경우에만 -vlan-id 매개 변수가 필요합니다. 특정 시스템만 기본 VLAN ID가 아닌 VLAN ID를 지원합니다.
+'MetroCluster configuration-settings interface show'를 선택합니다
 
 +
---
-[NOTE]
+특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20).
+
++
+지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도 있습니다 `-vlan-id` `metrocluster configuration-settings interface create` .
+
++
+다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다 `-vlan-id` .
+
++
+** FAS8200 및 AFF A300
+** AFF A320
+** FAS9000 및 AFF A700
+** AFF C800, ASA C800, AFF A800 및 ASA A800
++
+다른 모든 플랫폼은 `-vlan-id` 매개 변수를 지원합니다.
+
++
+기본 및 유효한 VLAN 할당은 플랫폼에서 매개 변수를 지원하는지 여부에 따라 `-vlan-id` 달라집니다.
+
++
+[role="tabbed-block"]
 ====
-** 특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).
-** ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 link:../install-ip/concept_considerations_layer_3.html["계층 3 광역 네트워크에 대한 고려 사항"].
-
-
-====
+.<code>-vlan-id </code>를 지원하는 플랫폼입니다
 --
-+
-사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 다음 플랫폼 모델을 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.
+기본 VLAN:
 
-+
-|===
-
-
-| AFF 플랫폼 | FAS 플랫폼 
+***  `-vlan-id`매개 변수를 지정하지 않으면 "A" 포트의 경우 VLAN 10과 "B" 포트의 경우 VLAN 20을 사용하여 인터페이스가 생성됩니다.
+*** 지정된 VLAN은 RCF에서 선택한 VLAN과 일치해야 합니다.
 
 
- a| 
-** AFF A220
-** AFF A250
-** AFF A400
+유효한 VLAN 범위:
 
- a| 
-** FAS2750
-** 500f로 설정합니다
-** FAS8300
-** FAS8700
+*** 기본 VLAN 10 및 20
+*** VLAN 101 이상(101과 4095 사이)
 
 
-|===
+--
+.<code>-vlan-id </code>를 지원하지 않는 플랫폼
+--
+기본 VLAN:
+
+*** 해당 없음. 인터페이스를 위해 MetroCluster 인터페이스에 VLAN을 지정할 필요가 없습니다. 스위치 포트는 사용되는 VLAN을 정의합니다.
+
+
+유효한 VLAN 범위:
+
+*** RCF를 생성할 때 모든 VLAN이 명시적으로 제외되지 않았습니다. RCF는 VLAN이 유효하지 않은 경우 사용자에게 경고합니다.
+
+
+--
+====
+
+
 
 
 . 컨트롤러 node_a_1-IP에서 MetroCluster 연결 작업을 수행하여 MetroCluster 사이트를 연결합니다. -- 이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
@@ -237,11 +255,11 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 .. 필요한 경우 LIF 구성을 수정합니다.
 +
-'vserver config override -command' network interface modify -vserver vserver_name -home-port active_port_after_upgrade -lif lif_name -home-node new_node_name'
+`vserver config override -command "network interface modify -vserver <svm_name> -home-port <active_port_after_upgrade> -lif <lif_name> -home-node <new_node_name>`
 
 .. LIF를 홈 포트로 되돌리기:
 +
-'네트워크 인터페이스 되돌리기 * - vserver_vserver_name_'
+`network interface revert * -vserver <svm_name>`
 
 
 
@@ -260,7 +278,7 @@ LIF 구성의 변경 사항으로 인해 새 노드에서 SVM을 다시 시작�
 
 . ""-mc" 접미사가 없는 cluster_a에서 SVM을 다시 시작합니다.
 +
-'vserver start-vserver svm-name-force true'
+`vserver start -vserver <svm_name> -force true`
 
 . 파트너 클러스터에서 이전 단계를 반복합니다.
 . 모든 SVM이 정상 상태인지 확인합니다.
@@ -289,7 +307,7 @@ LIF 구성의 변경 사항으로 인해 새 노드에서 SVM을 다시 시작�
 +
 .. 컨트롤러 node_a_2-IP에 미러링된 애그리게이트를 만들어 시스템 볼륨을 유지합니다.
 +
-"aggr create-aggregate new_node_a_2-ip_aggr-diskcount 10-mirror true-node nodename_node_a_2-IP"를 나타냅니다
+`aggr create -aggregate new_node_A_2-IP_aggr -diskcount 10 -mirror true -node node_A_2-IP`
 
 +
 '어거 쇼'
@@ -305,7 +323,7 @@ LIF 구성의 변경 사항으로 인해 새 노드에서 SVM을 다시 시작�
 'vserver show'
 
 +
-'volume show-vserver_admin-vserver-name_'
+`volume show -vserver <admin_svm_name>`
 
 +
 site_A가 소유한 Aggregate에 포함된 볼륨을 식별해야 합니다 site_B 시스템 볼륨도 표시됩니다.
@@ -316,7 +334,7 @@ site_A가 소유한 Aggregate에 포함된 볼륨을 식별해야 합니다 site
 +
 .. 가능한 대상 애그리게이트 확인:
 +
-'volume move target-aggr show -vserver_admin -vserver-name_-volume system_vol_MDV_B'
+`volume move target-aggr show -vserver <admin_svm_name> -volume MDV_CRS_*_B`
 
 +
 node_a_2-ip에서 새로 생성된 애그리게이트를 나열해야 합니다.
@@ -326,18 +344,18 @@ node_a_2-ip에서 새로 생성된 애그리게이트를 나열해야 합니다.
 진일진일보한 것
 
 +
-'volume move start-vserver_admin-vserver_-volume system_vol_MDV_B-destination-aggregate new_node_A_2-IP_aggr-cutover-window 40'
+`volume move start -vserver <admin_svm_name> -volume MDV_CRS_*_B -destination-aggregate new_node_A_2-IP_aggr -cutover-window 40`
 
 .. 이동 작업의 상태를 점검합니다.
 +
-'volume move show -vserver_admin -vserver-name_-volume system_vol_MDV_B'
+`volume move show -vserver <admin_svm_name> -volume MDV_CRS_*_B`
 
 .. 이동 작업이 완료되면, MDV_CRS_*_B 시스템이 node_A_2-IP의 새 집계에 포함되어 있는지 확인합니다.
 +
 '관리자 설정'을 선택합니다
 
 +
-'volume show-vserver_admin-vserver_'
+`volume show -vserver <admin_svm_name>`
 
 
 

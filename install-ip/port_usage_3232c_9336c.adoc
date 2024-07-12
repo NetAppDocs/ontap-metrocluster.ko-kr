@@ -30,6 +30,9 @@ MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2, MetroCluster 3 또는
 
 
 
+NOTE: RCF 파일 버전은 파일을 생성하는 데 사용되는 RCFfilegenerator 도구의 버전과 다릅니다. 예를 들어 RCFfilegenerator v1.6c를 사용하여 RCF 파일 버전 2.00을 생성할 수 있습니다.
+
+
 
 == 스위치에 2개의 MetroCluster 구성을 케이블로 연결합니다
 

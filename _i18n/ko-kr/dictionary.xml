@@ -57,7 +57,6 @@
   <block id="1aa8373a0298a0a1429ac4238b72a2d0" category="paragraph">다음 예는 출력을 보여줍니다.</block>
   <block id="15035122b1bddd8c3fe67b67b0705420" category="list-text">MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.</block>
   <block id="11a5f8de5dc8fd3561b2b849e4277433" category="section-title">Cisco IP RCF 파일 다운로드 및 설치</block>
-  <block id="ae5a9e1b352beed4f4e81e14f93b2027" category="paragraph">RCF 파일은 MetroCluster IP 구성의 각 스위치에 다운로드해야 합니다.</block>
   <block id="ea0d999dd84d8036206106a29fbde270" category="paragraph">RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.</block>
   <block id="bbc155fb2b111bf61c4f5ff892915e6b" category="cell">스위치</block>
   <block id="ce03f8603301ea51b9ff5d168605b3a2" category="cell">RCF 파일</block>
@@ -70,7 +69,6 @@
   <block id="c2a6f21d9468636e0845f2fa91c6865a" category="paragraph">NX3232_v1.80_Switch-B1.txt</block>
   <block id="6e4e89c7b914560c1a65ea32734c6bfc" category="paragraph">IP_SWITCH_B_2</block>
   <block id="fed227599b689943135c765d47b6045a" category="paragraph">NX3232_v1.80_Switch-B2.txt</block>
-  <block id="837bb09325ae9b33d183f31d5f605c2f" category="list-text">MetroCluster IP RCF 파일을 다운로드합니다.</block>
   <block id="516e7c19b1a750a903f4fd9e3624c57a" category="list-text">RCF 파일을 스위치에 복사합니다.</block>
   <block id="f1902b8db7b7d15899c7c9bbe42f5589" category="list-text">RCF 파일을 첫 번째 스위치에 복사합니다.</block>
   <block id="d40094c20302b8d483bb43b07d043c82" category="paragraph">복사 sftp://root@ftp-server-ip-address/tftpboot/switch-specific-bootRCF flash:vrf management</block>
@@ -501,7 +499,6 @@
   <block id="383d9b07e1ef0cfcfa9ec36fecccfe02" category="paragraph">한 번에 하나의 인터페이스만 변경할 수 있습니다. 다른 인터페이스가 업데이트되고 연결이 다시 설정될 때까지 해당 인터페이스에 트래픽 중단이 발생할 수 있습니다.</block>
   <block id="8450a359c3efc774857fe0f3189456e0" category="paragraph">MetroCluster IP interface 속성을 변경하려면 MetroCluster configuration-settings interface modify 명령을 사용한다.</block>
   <block id="6a644f6158922e284b18d4232a152b9f" category="admonition">이러한 명령은 특정 포트의 특정 노드에 대한 구성을 변경합니다. 전체 네트워크 연결을 복원하려면 다른 포트에 유사한 명령이 필요합니다. 마찬가지로 네트워크 스위치도 구성을 업데이트해야 합니다. 예를 들어, 게이트웨이가 업데이트되는 경우 HA Pair의 두 노드에서 변경되기가 이상적입니다. 또한 해당 노드에 연결된 스위치도 게이트웨이를 업데이트해야 합니다.</block>
-  <block id="7c7233877526ac5d7617b812df525ea4" category="paragraph">MetroCluster configuration-settings interface show, MetroCluster connection check, MetroCluster connection show 명령을 사용하여 모든 인터페이스가 정상적으로 동작하는지 확인한다.</block>
   <block id="700215bf58e5cc6edce60155aeb7c44a" category="section-title">IP 주소, 넷마스크 및 게이트웨이를 수정합니다</block>
   <block id="2747f7ff86cce509295bfb4ba2b1c4fa" category="list-text">단일 노드 및 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 'MetroCluster configuration-settings interface modify'로 업데이트합니다</block>
   <block id="2f545dcb650b5848061814c5ce3b4cf4" category="paragraph">다음 명령을 실행하면 IP 주소, 넷마스크 및 게이트웨이를 업데이트하는 방법이 표시됩니다.</block>
@@ -1177,43 +1174,28 @@
   <block id="86983ba76f02422a54a19be9cff0fcaa" category="inline-link-macro">MetroCluster IP 구성을 위한 고려 사항</block>
   <block id="cb8db61556b998f0533a4e329749c0f3" category="list-text">동일한 VLAN에 모든 MetroCluster IP 인터페이스 "A" 포트를 생성하고 다른 VLAN에 모든 MetroCluster IP 인터페이스 "B" 포트를 생성해야 합니다. 을 참조하십시오 <block ref="0d7e2206ca44f9cb7344ddf469b6d625" category="inline-link-macro-rx"></block>.</block>
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">를 누릅니다</block>
-  <block id="e4194351c70f628f28ee542a65494961" category="list-text">특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20). 'MetroCluster configuration-settings interface create' 명령에서 '-vlan-id 매개 변수'를 사용하여 100보다 큰(기본 아님) VLAN을 지정할 수도 있습니다(101 ~ 4095 사이).</block>
-  <block id="9ace720c417350af9e7b31ebc811b5de" category="cell">AFF 플랫폼</block>
-  <block id="cc04b828d9f0654ce99362fa4a96bb32" category="cell">FAS 플랫폼</block>
   <block id="540dacfeb5577ce4282c41e9c7518680" category="list-text">AFF A400</block>
   <block id="1752b126dd5e4219fbf53c09ee63d51e" category="list-text">FAS8300</block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="list-text">FAS8700</block>
   <block id="d92b732ac2371228690ac4aa3a45c76d" category="paragraph">이 예에서는 다음과 같은 IP 주소와 서브넷이 사용됩니다.</block>
-  <block id="7836fec023af8279b6813ce6178cea83" category="paragraph">MetroCluster IP 인터페이스에서 사용하는 물리적 포트는 다음 표와 같이 플랫폼 모델에 따라 다릅니다.</block>
   <block id="76b11ed48986c915dad0ad468f5f7076" category="cell">MetroCluster IP 포트입니다</block>
-  <block id="3b0649c72650c313a357338dcdfb64ec" category="cell">참고</block>
   <block id="7f9098b3aa499fc3c45fc1b938fa2983" category="paragraph">e5b</block>
-  <block id="ef552e9c89303b51a8bdce9d5298edba" category="paragraph">e7b</block>
   <block id="22fe67c2e87caff18249cf1804bbeaad" category="paragraph">e0b</block>
   <block id="e737b5ac24a63afc00e81377a906728d" category="paragraph">e1b</block>
   <block id="ce8a9ea1be6239e906e9f5393a9f9ea5" category="paragraph">e5a</block>
   <block id="cbd803f54be888bcec7290684e827de3" category="paragraph">e0g</block>
   <block id="09f2306a6f2ede6943b6299ba6f08e6f" category="paragraph">e0h</block>
   <block id="9cb7b36b3f2bccc776862e6f2f494077" category="paragraph">E1A</block>
-  <block id="8f3d53e328e933c1c823ad812070ee9a" category="paragraph">AFF A220 및 FAS2750</block>
   <block id="922c556baf6272bffc4fa28b2e9a0bbc" category="paragraph">e0a</block>
-  <block id="b33c216ed444f03f1d7617747a6e7d14" category="paragraph">이러한 시스템에서는 이러한 물리적 포트도 클러스터 인터페이스로 사용됩니다.</block>
   <block id="96640993dd2592a16c29226daf83b860" category="paragraph">e0c</block>
-  <block id="5191792b1ad05675fea3bbf015036b3b" category="paragraph">e0d</block>
-  <block id="e84adb514eb7cf544f0458fa9f233a94" category="paragraph">FAS8300 및 FAS8700</block>
-  <block id="bb696bca91d9d001f9391644f8ffc55b" category="paragraph">다음 예제의 포트 사용은 AFF A700 또는 FAS9000 시스템에 대한 것입니다.</block>
   <block id="815655232c25fc83e97a6545a3d32ad0" category="list-text">각 노드에 디스크 자동 할당이 설정되었는지 확인합니다.</block>
   <block id="3053279e92827f88ac749b07c55736e4" category="paragraph">'스토리지 디스크 옵션 표시'</block>
   <block id="26474283e53d2bcc6e465bb015d10ac6" category="paragraph">디스크 자동 할당은 풀 0 및 풀 1 디스크를 쉘프별로 할당합니다.</block>
   <block id="3b5ce19996941b3d479b35bc903fc3c5" category="paragraph">자동 할당 열은 디스크 자동 할당이 설정되었는지 여부를 나타냅니다.</block>
   <block id="a6f575cfbb092754b19dcdd7684049de" category="list-text">노드에서 MetroCluster IP 인터페이스를 생성할 수 있는지 검증:</block>
   <block id="9f7283c1c792ddad181076fee0869a5a" category="paragraph">모든 노드가 준비되어 있어야 함:</block>
-  <block id="d6bd32bf1126979c2d4e6ece8c95299c" category="list-text">다음 예의 포트 용도는 AFF A700 또는 FAS9000 시스템(e5a 및 e5b)에 대한 것입니다. 위에서 설명한 대로 플랫폼 모델에 맞는 포트에 인터페이스를 구성해야 합니다.</block>
-  <block id="5164fe99511e449f9e8845c15ef34f48" category="list-text">MetroCluster IP 인터페이스에 VLAN을 지원하는 플랫폼 모델에서 기본 VLAN ID를 사용하지 않으려면 '-vlan-id' 매개 변수를 포함할 수 있습니다.</block>
-  <block id="45ad6e06c40844c6f5b57d8932e2f7ff" category="paragraph">'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5a-address_ip-address_-netmask_mask_'</block>
   <block id="27dcaaf47e1da08f00a2b2187c12fb1c" category="paragraph">다음 예에서는 IP 주소 "10.1.1.1"이 있는 "node_a_1"에서 포트 "e5a"에 인터페이스를 생성하는 방법을 보여 줍니다.</block>
   <block id="05dbfe1f868a1f51583d39356b69e4e2" category="list-text">"node_a_1"의 포트 "e5b"에서 인터페이스를 구성합니다.</block>
-  <block id="20c3f3b4b951b2af82631bde02fb51b9" category="paragraph">'MetroCluster configuration-settings interface create-cluster-name_cluster-name_-home-node_node-name_-home-port e5b-address_ip-address_-netmask_mask_'</block>
   <block id="1803e10a14f354e79a75c68f1ec4c3c3" category="paragraph">다음 예에서는 IP 주소 "10.1.2.1"을 사용하여 "node_a_1"에서 포트 "e5b"에 인터페이스를 생성하는 방법을 보여 줍니다.</block>
   <block id="7038283390e1896174a1ee9c0a0abffd" category="admonition">'MetroCluster configuration-settings interface show' 명령을 사용하여 이러한 인터페이스가 있는지 확인할 수 있습니다.</block>
   <block id="3facfe536f4f52048e9d7222f2d8250f" category="list-text">"node_a_2"의 포트 "e5a"에서 인터페이스를 구성합니다.</block>
@@ -1234,7 +1216,6 @@
   <block id="7cdacd92c7d25c56a3b4cd267ceaeb45" category="list-text">노드가 MetroCluster 인터페이스를 연결할 준비가 되었는지 확인합니다.</block>
   <block id="81b3ec87aa382eaeed6816109d653991" category="paragraph">다음 예제에서는 "연결 준비 완료" 상태의 모든 노드를 보여 줍니다.</block>
   <block id="e84d9abe5e1fc391ac4a450f001b2f71" category="paragraph">'MetroCluster configuration-settings connection connect'를 선택합니다</block>
-  <block id="b3aefc653b3e34234962d0fd4751384e" category="paragraph">이 명령을 실행한 후에는 IP 주소를 변경할 수 없습니다.</block>
   <block id="1e17943d4720a25913c03b742e2d9603" category="list-text">연결이 설정되었는지 확인합니다.</block>
   <block id="18247a699f6a66787ed75bb08c337588" category="paragraph">모든 노드의 구성 설정 상태는 다음과 같이 완료되어야 합니다.</block>
   <block id="bfef0aed3eee854d17924912c8945230" category="list-text">iSCSI 연결이 설정되었는지 확인합니다.</block>
@@ -1272,7 +1253,6 @@
   <block id="90af9ef996b5fb77ffc1784de8f3de0c" category="list-text">MetroCluster IP 구성의 각 노드에서 원격 드라이브를 풀 1에 할당합니다.</block>
   <block id="93a05e12a5b6edba257e33f8d132f672" category="list-text">할당되지 않은 드라이브 목록 표시:</block>
   <block id="9541d0a2ec2001b79a5021245bc8097d" category="paragraph">"디스크 show-host-adapter 0m-container-type unassigned"를 선택합니다</block>
-  <block id="43e6ad4a7595ffb998ecabca800a4499" category="paragraph">Disk assign-disk_disk-id_-pool 1-owner_owner-node-name _</block>
   <block id="3eb645c2e2e57a4fa839c890ce5500a5" category="list-text">드라이브가 풀 1에 할당되었는지 확인합니다.</block>
   <block id="0b9ffe41b53e309536e3f5708172ef6b" category="admonition">원격 드라이브에 액세스하는 데 사용되는 iSCSI 연결이 0m로 나타납니다.</block>
   <block id="39e93eb17757fd8fb52d7c9292dd9372" category="list-text">사이트 B에서 이 단계를 반복합니다</block>
@@ -1285,7 +1265,6 @@
   <block id="ea0ac128cbb46e41c5edee49bafee325" category="list-text">MetroCluster IP 구성의 각 노드에서 원격 디스크를 풀 1에 할당합니다.</block>
   <block id="94427a4d5177b2ba3264de4433e877c3" category="list-text">할당되지 않은 디스크 목록을 표시합니다.</block>
   <block id="97047fcf259462467b79b76f81bc261f" category="list-text">원격 디스크(0m)를 선택하고 첫 번째 노드의 풀 1에 디스크 소유권을 할당합니다(예: "node_a_1").</block>
-  <block id="1df04fb323d4da59ba3f98ebc5f1b64e" category="paragraph">'디스크 ID'는 오너 노드 이름(owner-node-name)의 원격 셸프에서 디스크를 식별해야 합니다.</block>
   <block id="123e6c3d9c94f11e38d58164f434bdf4" category="paragraph">ONTAP 디스크 자동 할당 기능은 지정된 디스크가 포함된 원격 셸프의 모든 디스크를 할당합니다.</block>
   <block id="81b4294a2f342064d8a63544ff17f60d" category="list-text">디스크 자동 할당이 시작될 때까지 60초 이상 기다린 후 셸프의 원격 디스크가 풀 1에 자동 할당되었는지 확인합니다.</block>
   <block id="22d6fa72a4ea2e4fe27cd33123cd3604" category="admonition">원격 디스크에 액세스하는 데 사용되는 iSCSI 연결이 0m 장치로 나타납니다.</block>
@@ -1293,7 +1272,6 @@
   <block id="dc39a7bb0328bf49da6969242ecc1465" category="section-title">ONTAP 9.4에서 자동 드라이브 할당을 활성화합니다</block>
   <block id="86bd4aae23931ee0da1b105523dd6302" category="paragraph">ONTAP 9.4에서 이 절차의 이전 지시에 따라 자동 드라이브 할당을 해제한 경우 모든 노드에서 자동 드라이브 할당을 다시 사용하도록 설정해야 합니다.</block>
   <block id="e1ba2dd99f6f83bc8a965b69cf5d438e" category="list-text">자동 드라이브 할당 활성화:</block>
-  <block id="c6aa0c3762cef91596cb5364dc0519ff" category="paragraph">'스토리지 디스크 옵션 modify -node_node_name_-autostassign on'</block>
   <block id="c6929687122880aa90a062df554ef575" category="paragraph">MetroCluster IP 구성의 모든 노드에서 이 명령을 실행해야 합니다.</block>
   <block id="819ee06312cd6d1f1e601fb41b4fdd44" category="section-title">루트 애그리게이트를 미러링합니다</block>
   <block id="401011589809818b57f424ca64552b73" category="paragraph">루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다.</block>
@@ -1346,7 +1324,6 @@
   <block id="181565e0d5a61ce819e8e64ea713e991" category="list-text">사이트 A에서 구성을 확인합니다.</block>
   <block id="3fc44516e07f7c4278d79a805adf2be2" category="list-text">사이트 B의 구성을 확인합니다.</block>
   <block id="317d0fe753c44e0c763e684785e3b0bd" category="list-text">비휘발성 메모리 미러링에서 발생할 수 있는 문제를 방지하려면 4개 노드를 각각 재부팅하십시오.</block>
-  <block id="752dca7721b956b1795d215187b7376f" category="paragraph">'node reboot-node_node-name_-inhibit-takeover TRUE</block>
   <block id="0a61a44a1765390d027f85da70024fd8" category="list-text">두 클러스터에서 'MetroCluster show' 명령을 실행하여 구성을 다시 확인합니다.</block>
   <block id="43a86ca9910ac10add49d293714b50f6" category="section-title">8노드 구성에서 두 번째 DR 그룹 구성</block>
   <block id="5526d75deed345c5b83d6ead8ab0bdad" category="paragraph">이전 작업을 반복하여 두 번째 DR 그룹의 노드를 구성합니다.</block>
@@ -1474,7 +1451,6 @@
   <block id="797647e34bade9092632b77423181a50" category="list-text">소스 클러스터에서 소스 클러스터를 대상 클러스터에 인증합니다.</block>
   <block id="93bd31ad3f01a4e23f09c1115d310eba" category="list-text">각 노드에 다음 명령을 입력하여 DR 그룹을 생성할 준비가 되었는지 확인합니다.</block>
   <block id="1e1bd4d49c72f5651a7bf56c3b28ad9e" category="list-text">DR 그룹 생성:</block>
-  <block id="398261489fd871e4bf365185e2f10654" category="paragraph">'MetroCluster configuration-settings dr-group create-partner-cluster_partner-cluster-name_-local-node_local-node-name_-remote-node_remote-node-name_'</block>
   <block id="8f955ed5a582fae9866401d6c28b2e2b" category="list-text">node_a_1에 인터페이스를 생성합니다.</block>
   <block id="6fdec1a2f60a774bc364863d2853cc3f" category="list-text">"node_a_1"의 포트 "e5a"에서 인터페이스를 구성합니다.</block>
   <block id="c22374f63564b93ff51df38b4b1bd900" category="list-text">node_a_2에 인터페이스를 생성합니다.</block>
@@ -1489,7 +1465,6 @@
   <block id="4a4f0dbbec7c6fc22577537e368451fa" category="list-text">풀 1 디스크가 자동으로 할당되었는지 확인합니다.</block>
   <block id="322e2c846116040bff9937c4eb03cb07" category="paragraph">드라이브 자동 할당에서는 "node_A_1"에 쿼터 1개(드라이브 8개)를, "node_A_2"에 분기당 1개를 할당했습니다. 나머지 드라이브는 "node_B_1" 및 "node_B_2"에 대한 원격(풀 1) 디스크입니다.</block>
   <block id="ebf25afcc7ec4438e4e8b495a9c10a1b" category="list-text">원격 드라이브(0m)의 소유권을 첫 번째 노드의 풀 1(예: node_a_1)에 할당합니다.</block>
-  <block id="d2d4ec61bf8acc60eba25fa2650dd53e" category="paragraph">'디스크 ID'는 '소유자-노드-이름'의 원격 셸프에서 드라이브를 식별해야 합니다.</block>
   <block id="7d3e47253a900358f15197bcd198cc0a" category="paragraph">다음 출력에서는 쉘프 23의 드라이브가 할당되지 않은 드라이브 목록에 더 이상 표시되지 않으므로 할당된 것으로 나타납니다.</block>
   <block id="17da74bf82e8d747a23d8c6d18cc7bf9" category="list-text">이 단계를 반복하여 사이트 A의 두 번째 노드에 풀 1 드라이브를 할당합니다(예: "node_a_2").</block>
   <block id="7ac859a003981d6ae416588202d0dbb4" category="paragraph">각 노드에 대해 디스크 쉘프가 3개 이상 있는 경우 ONTAP의 자동 할당 기능을 사용하여 원격(pool1) 디스크를 자동으로 할당합니다.</block>
@@ -1707,7 +1682,6 @@
   <block id="21503dd058c083f2c8288ad1b831c098" category="list-text">스위치 기본 설정을 구성합니다. 4단계 이후 단계를 따릅니다. <block ref="81dd2e7703b01026953a118a21c6d543" category="inline-xref-macro-rx"></block></block>
   <block id="6203ae92559f362819dad2bdb9d3f689" category="list-text">에 설명된 대로 RCF 파일을 생성하고 적용합니다 <block ref="15d7dec1f8455303bd6b922890dd2535" category="inline-xref-macro-rx"></block></block>
   <block id="69178c95258ab0089e5d81bfed9c36dd" category="section-title">Broadcom RCF 파일 다운로드 및 설치</block>
-  <block id="5d975c1dd11d51c95b55f14295457c6d" category="paragraph">MetroCluster IP 구성의 각 스위치에 스위치 RCF 파일을 다운로드하고 설치해야 합니다.</block>
   <block id="96bc7e386002b4dc974033398a2a3df2" category="paragraph">v1.32_Switch-A1.txt</block>
   <block id="6596521956b6496dffb9f5e9a7463b91" category="paragraph">v1.32_Switch-A2.txt</block>
   <block id="eb451e7e039cd76a8d46e5e9948b30c5" category="paragraph">v1.32_Switch-B1.txt</block>
@@ -1719,7 +1693,6 @@
   <block id="30fb21972afba53cd103c9063e54815b" category="cell">3.7.x.x</block>
   <block id="ca06807503101d86e21d40fd5c8ff94b" category="cell">V2.x</block>
   <block id="ab4a2de3931dbed092e0d44be3c87116" category="list-text">MetroCluster IP용 Broadcom RCF 파일을 생성합니다.</block>
-  <block id="fd550a9c3a7b7c6106ae07bc6bb69106" category="list-text">를 다운로드합니다<block ref="166489b3c340ece1eccb5706fda90624" category="inline-link-rx"></block></block>
   <block id="0fde531bbbf90d47fe7905001a962dde" category="paragraph">이 예에서 "BES-53248_v1.32_Switch-A1.txt" RCF 파일은 SFTP 서버에서 "50.50.50"의 로컬 bootflash로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.</block>
   <block id="e1e09f5dca0aef21d822f07bad5eea3b" category="list-text">RCF 파일이 스크립트로 저장되었는지 확인합니다.</block>
   <block id="406bb351c55daa6b29920fa6ce644c29" category="paragraph">'스크립트 목록'</block>
@@ -2196,7 +2169,6 @@
   <block id="cff1f1e3d1bd4979f788b1439a65b093" category="paragraph">유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.</block>
   <block id="98b62c826619c29a4bad696e74f75477" category="list-text">자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.</block>
   <block id="7df74d0e0c825c9d4fe156e6bd9676e5" category="list-text">다음 명령을 실행합니다.</block>
-  <block id="fe7cd7570699a4adf147f5f7b9a04721" category="paragraph">'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"</block>
   <block id="217c8768ad5ec1b4b90b1244cd1221a7" category="paragraph">이 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.</block>
   <block id="626b3d2c42e820bd7603e0a6c34ff781" category="paragraph">시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="84e33342856c02e8a00ad96f47bd4d9f" category="list-text">파트너 클러스터에서 명령을 반복합니다.</block>
@@ -2241,16 +2213,10 @@
   <block id="09a5ba598e7357ef745825da8cab1892" category="paragraph">이 작업은 새 노드 각각에 대해 수행해야 합니다.</block>
   <block id="c63a77ef39a96105eac912bc9b3dd2fb" category="paragraph">다음 단계에서는 노드의 구성을 지우고 새 드라이브의 메일박스 영역을 지웁니다.</block>
   <block id="4d2a12dbb40eebfdeb323911fc06c5ce" category="list-text">새 컨트롤러를 랙에 장착하십시오.</block>
-  <block id="f6acb42dff1f31025b3df225af9cfeb7" category="list-text">_MetroCluster 설치 및 구성에 표시된 대로 새 MetroCluster IP 노드를 IP 스위치에 케이블로 연결합니다. _</block>
-  <block id="657bcb6c51639854c4fdede551507755" category="paragraph"><block ref="657bcb6c51639854c4fdede551507755" category="inline-link-macro-rx"></block></block>
-  <block id="f8f9e49e85005888d8da2b71cfd36720" category="list-text">MetroCluster 설치 및 구성의 다음 섹션을 사용하여 MetroCluster IP 노드를 구성합니다. _</block>
   <block id="1cbfeb82dbc642ca3cfc8e2db84c469c" category="list-text"><block ref="1cbfeb82dbc642ca3cfc8e2db84c469c" category="inline-link-macro-rx"></block></block>
-  <block id="80fb18040e16ccb3a6c8dc20fc5f11f1" category="list-text"><block ref="80fb18040e16ccb3a6c8dc20fc5f11f1" category="inline-link-macro-rx"></block></block>
   <block id="251fa3a6289ecafe7b95d67056605968" category="list-text"><block ref="251fa3a6289ecafe7b95d67056605968" category="inline-link-macro-rx"></block></block>
-  <block id="55f78f2dd63e2732947016115017bd0f" category="list-text"><block ref="55f78f2dd63e2732947016115017bd0f" category="inline-link-macro-rx"></block></block>
   <block id="d93785c679dd9ecbbe55df9329146a8d" category="list-text">유지보수 모드에서 halt 명령을 실행하여 유지보수 모드를 종료한 다음 boot_ONTAP 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 이동합니다.</block>
   <block id="ccaa4e34c729aaba9db9c5a44c41381f" category="paragraph">지금은 클러스터 마법사 또는 노드 마법사를 완료하지 마십시오.</block>
-  <block id="b425f6bdd0c31b91b100e2fdd5e1f615" category="section-title">클러스터에 새 노드 연결</block>
   <block id="6fd67a5ed9276ba994c073cf2c532faf" category="paragraph">4개의 새 MetroCluster IP 노드를 기존 MetroCluster 구성에 추가해야 합니다.</block>
   <block id="b74949b8fefb7fd6ee33defaa6372e00" category="paragraph">두 클러스터 모두에서 이 작업을 수행해야 합니다.</block>
   <block id="dd1fe3592fd98072942cfb0278eb80b6" category="list-text">새 MetroCluster IP 노드를 기존 MetroCluster 구성에 추가합니다.</block>
@@ -2287,7 +2253,6 @@
   <block id="6c46e592d5f16891d3a16e5f364e031b" category="section-title">새 노드 추가 완료</block>
   <block id="756f29d7bcbe7decf6b979c0706fc9a1" category="paragraph">새 DR 그룹을 MetroCluster 구성에 통합하고 새 노드에 미러링된 데이터 애그리게이트를 생성해야 합니다.</block>
   <block id="b24de9180a5deb759a394eebcd1a0305" category="list-text">각 새 MetroCluster 노드에서 미러링된 데이터 애그리게이트를 생성합니다.</block>
-  <block id="170c0bd348671980b8974da23b1a29d5" category="paragraph">'Storage aggregate create-aggregate_aggregate-name_-node_node-name_-diskcount_no-of-diskdisks_-mirror true'</block>
   <block id="aabce8f4cea0092b527adf5c08e57ba7" category="admonition">사이트당 하나 이상의 미러링된 데이터 애그리게이트를 만들어야 합니다. MetroCluster IP 노드에서 사이트당 두 개의 미러링된 데이터 집계를 사용하여 MDV 볼륨을 호스팅하는 것이 좋지만 사이트당 단일 집계를 지원하는 것은 권장되지 않습니다. MetroCluster의 한 사이트는 단일 미러링된 데이터 애그리게이트를 가지고 있고, 다른 사이트는 둘 이상의 미러링된 데이터 애그리게이트를 가지고 있습니다.</block>
   <block id="7062dd7205e5ed0cba84efd4203bc9cc" category="paragraph">다음 예에서는 node_A_1-new에 Aggregate를 생성하는 방법을 보여 줍니다.</block>
   <block id="f00a8c2c5126c8a92b929c756950f0f8" category="list-text">새 노드 중 하나에서 MetroCluster 구성을 새로 고칩니다.</block>
@@ -2299,19 +2264,15 @@
   <block id="b0d21d87e852192022d32882c31d8709" category="paragraph">다음 예에서는 'volume show' 출력의 MDV 볼륨을 보여 줍니다.</block>
   <block id="ef5472688f1420b45325cbf6180440eb" category="list-text">고급 권한 수준 설정:</block>
   <block id="de01f17b24f9e658f1690bddd46b771d" category="list-text">MDV 볼륨을 한 번에 하나씩 이동합니다.</block>
-  <block id="b7eb0ab9143e83a0ba9eaa1b24abb788" category="paragraph">'volume move start-volume_mdv-volume_-destination-aggregate_aggr-on-new-node_-vserver_vserver-name_'</block>
   <block id="aacab676cefc900d32e2155650f1b66e" category="paragraph">다음 예에서는 "node_a_3"에서 "data_A3"을 집계하기 위해 "MDV_CRS_d6b0313ff5611e9837100a098544e51_A"를 이동하는 명령 및 출력을 보여 줍니다.</block>
   <block id="91065ab9ce24d9b5cf714f2c930ae111" category="list-text">volume show 명령을 사용하여 MDV 볼륨이 성공적으로 이동되었는지 확인합니다.</block>
-  <block id="a25df1c27211fa258fda2429e25619ba" category="paragraph">'volume show_mdv-name _'</block>
   <block id="15824d097492897385ee13d6bbfb3727" category="paragraph">다음 출력에서는 MDV 볼륨이 성공적으로 이동되었음을 보여 줍니다.</block>
   <block id="12ad2a7a15e12ee368e4e0bc2e2ab5bb" category="list-text">관리자 모드로 돌아가기:</block>
   <block id="35e9915a736701c4f891d4dd42880e39" category="list-text">이전 노드에서 새 노드로 epsilon 이동:</block>
   <block id="cc863d7088764c07fa87ffea3cae245e" category="list-text">현재 epsilon이 있는 노드 식별:</block>
   <block id="19b075b0ff8fbdf79efbef8787bbf0d7" category="paragraph">'클러스터 표시-필드 epsilon'</block>
   <block id="7361f37b651295feb8d60f3f566081f2" category="list-text">이전 노드(node_a_1-old)에서 epsilon을 FALSE로 설정합니다.</block>
-  <block id="d75b73420fff0db8b490d51327d3ac30" category="paragraph">'cluster modify -node_old-node_-epsilon FALSE *'</block>
   <block id="327221e852c98244ddf26f6a4f3c61c5" category="list-text">새 노드에서 epsilon을 TRUE로 설정합니다(node_A_3 - 신규).</block>
-  <block id="7e8573f61e56d88c570a9b47a35d2872" category="paragraph">'cluster modify -node_new-node_-epsilon TRUE</block>
   <block id="468a7d44a90e2d51ce44106bf786e824" category="list-text">epsilon이 올바른 노드로 이동했는지 확인합니다.</block>
   <block id="35d676d40251234f334da9cb38c6961c" category="summary">MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다. 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된 \(계획된\) 스위치오버 또는 스위치백 작업을 수행하기 전에 확인해야 합니다.</block>
   <block id="a1b11df58600d9eb13a2901f3b33b814" category="summary">미러링된 Aggregate가 있는 구성에서 AFF 시스템을 사용하고 있고 노드에 디스크\(SSD\)가 올바르게 할당되지 않은 경우, 각 쉘프의 디스크 절반을 로컬 노드 1개에 할당하고 나머지 절반은 HA 파트너 노드에 할당해야 합니다. 각 노드의 로컬 및 원격 디스크 풀에서 디스크 수가 동일한 구성을 생성해야 합니다.</block>
@@ -4365,7 +4326,6 @@
   <block id="6e3e824a90910b9e25e5e78ce4c4cdd8" category="section-title">2노드 MetroCluster 구성에서 ONTAP 설정</block>
   <block id="4c286a4533c555f62039858a256b6e7f" category="paragraph">2노드 MetroCluster 구성에서는 각 클러스터에서 노드를 부팅하고 클러스터 설정 마법사를 종료한 다음 'cluster setup' 명령을 사용하여 노드를 단일 노드 클러스터로 구성해야 합니다.</block>
   <block id="3d97e23b9e037dc67358be022977af8f" category="paragraph">이 작업은 네이티브 NetApp 스토리지를 사용하는 2노드 MetroCluster 구성에 사용됩니다.</block>
-  <block id="0db317f78e958b4fc0a151a64a160872" category="paragraph">새로운 MetroCluster 시스템은 사전 구성되어 있으므로 이 단계를 수행할 필요가 없습니다. 그러나 AutoSupport를 구성해야 합니다.</block>
   <block id="81d86459e5a3e2353ad75db0c4cc1230" category="paragraph">ONTAP 설정에 대한 자세한 내용은 를 참조하십시오 <block ref="b344da29565aaa689911ef5c966296ae" category="inline-link-macro-rx"></block></block>
   <block id="65ed7b3de2c8dfe1b7246d59c4b26a4f" category="list-text">첫 번째 노드의 전원을 켭니다.</block>
   <block id="53f541e3adb858602815a998339e0b0c" category="admonition">DR(재해 복구) 사이트의 노드에서 이 단계를 반복해야 합니다.</block>
@@ -4635,8 +4595,6 @@
   <block id="4d02019723a4017318fe7fcb3cebc7cc" category="list-text">e5b:172.17.27.13</block>
   <block id="54a37fb90fee103691197fc9d5ac4722" category="list-text">e5a: 172.17.26.12</block>
   <block id="8a5c2788729f7d71adc6ea3073bef0a7" category="list-text">e5b:172.17.27.12</block>
-  <block id="293eb0cec46bbaec87fb533441fc6a62" category="paragraph">다음 표에는 MetroCluster IP 인터페이스에서 VLAN ID를 사용하는 플랫폼 모델이 나와 있습니다. 이러한 모델은 기본 VLAN ID를 사용하지 않는 경우 추가 단계가 필요할 수 있습니다.</block>
-  <block id="c19058170bee0e83b964c0c32018bf9a" category="cell">MetroCluster IP 인터페이스에서 VLAN ID를 사용하는 플랫폼 모델</block>
   <block id="84880048c8db4bb557c571e15f6437c7" category="list-text">정상적인 사이트에서 재해 사이트에 있는 MetroCluster 인터페이스의 IP 주소를 수집합니다.</block>
   <block id="7a401d723d877e99188e0a3d18003e13" category="paragraph">필수 주소는 * Destination Network Address * 열에 표시된 DR 파트너 주소입니다.</block>
   <block id="940e6eb81cb9ea67ed6a7924fe4f6444" category="list-text">인터페이스의 VLAN ID 또는 게이트웨이 주소를 확인해야 하는 경우 작동하는 사이트에서 VLAN ID를 확인합니다.</block>
@@ -8052,11 +8010,8 @@
   <block id="2f27031fa0ef15874103f9c3c2bb2cdb" category="section-title">MetroCluster IP 노드 구성 및 전환 비활성화</block>
   <block id="328e2e9e10966db8ddcc53513bf291f7" category="paragraph">MetroCluster IP 연결을 구현하고, MetroCluster 구성을 새로 고치고, 전환 모드를 비활성화해야 합니다.</block>
   <block id="303070df2456faa853aadfa7ea3999db" category="list-text">controller node_a_1-IP에서 다음 명령을 실행하여 DR 그룹으로 새 노드를 구성합니다.</block>
-  <block id="e7973dc96fbf00a42cc73b5c38c79955" category="paragraph">'MetroCluster configuration-settings dr-group create-partner-cluster peer-cluster-name-local-node local-controller-name-remote-node remote-controller-name'</block>
   <block id="ba687aa6b66d0caad63c23e4f8056daa" category="list-text">MetroCluster IP 인터페이스 생성(node_A_1-IP, node_A_2-IP, node_B_1-IP, node_B_2-IP) -- 컨트롤러당 2개의 인터페이스 생성 필요, 총 8개의 인터페이스:</block>
-  <block id="fa8131efc320bb8e280052bd108e5171" category="paragraph">MetroCluster configuration-settings interface create-cluster-name cluster-name-home-node controller-name-home-port port-address-netmask-vlan-id vlan-id ``metrocluster configuration-settings interface show’</block>
   <block id="eae306387b2384204fa6a3c19690890a" category="admonition">ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 <block ref="babfc343bda1ae07500c981be392a72d" category="inline-link-macro-rx"></block>.</block>
-  <block id="e236c571f68a8abbf9f63cbdda82b284" category="paragraph">기본 VLAN ID를 사용하지 않는 경우에만 -vlan-id 매개 변수가 필요합니다. 특정 시스템만 기본 VLAN ID가 아닌 VLAN ID를 지원합니다.</block>
   <block id="9a0b9eb8837eefadab01d020fa11e1d5" category="list-text">컨트롤러 node_a_1-IP에서 MetroCluster 연결 작업을 수행하여 MetroCluster 사이트를 연결합니다. -- 이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</block>
   <block id="5d8ecedd372251a662a8070efd4d44a1" category="list-text">iSCSI 연결을 통해 각 컨트롤러에서 원격 클러스터 디스크가 표시되는지 확인합니다.</block>
   <block id="7f4213ba547153050e227bb7e83660cf" category="paragraph">구성에 다른 노드에 속한 원격 디스크가 표시됩니다.</block>
@@ -8095,13 +8050,11 @@
   <block id="92c03821cf1fd0c73a5e49dcca72a754" category="paragraph">에서 수집한 정보를 참조하십시오 <block ref="5526fc01172ddb0cb9f7fe4ff9dd9143" category="inline-link-macro-rx"></block>.</block>
   <block id="0f017cab6ec74ba1f4afec8f68cba30b" category="paragraph">네트워크 인터페이스 show-field home-port</block>
   <block id="ebb1f0f568f8a927428fc83bb9ebb26c" category="list-text">필요한 경우 LIF 구성을 수정합니다.</block>
-  <block id="cf5ad87d9cad301afa5079b192ec4fe1" category="paragraph">'vserver config override -command' network interface modify -vserver vserver_name -home-port active_port_after_upgrade -lif lif_name -home-node new_node_name'</block>
   <block id="d97bb8f76cd270b3d3f4ad15bf1ad581" category="list-text">LIF를 홈 포트로 되돌리기:</block>
   <block id="d75d76809aa06d21a97ad9fe9321f1aa" category="section-title">SVM을 가져오는 중입니다</block>
   <block id="55e81917f17be0fde525c762d18e803b" category="paragraph">LIF 구성의 변경 사항으로 인해 새 노드에서 SVM을 다시 시작해야 합니다.</block>
   <block id="1d7b64edfdea8f80d1f2ac282bdb2bc3" category="list-text">SVM 상태 확인:</block>
   <block id="ff52cbccdf312c3ea8a620732c8adcbb" category="list-text">""-mc" 접미사가 없는 cluster_a에서 SVM을 다시 시작합니다.</block>
-  <block id="92227e5460eb525c285dd05f872c0b0b" category="paragraph">'vserver start-vserver svm-name-force true'</block>
   <block id="eb612851318a6ca8e82057ddee9b9f8c" category="list-text">파트너 클러스터에서 이전 단계를 반복합니다.</block>
   <block id="f62ca81f37424307e221ec33ca15ce2c" category="list-text">모든 SVM이 정상 상태인지 확인합니다.</block>
   <block id="10ccf225d5b66e557c92de3b160a830f" category="list-text">모든 데이터 LIF가 온라인 상태인지 확인합니다.</block>
@@ -8112,25 +8065,19 @@
   <block id="8f8d06a8dad308b531eba66926b2f2fc" category="list-text">디스크 자동 할당을 활성화합니다.</block>
   <block id="b2a4f8ac895a8d07c2ac00ec1569efdf" category="list-text">site_A의 다음 단계를 사용하여 _B 시스템 볼륨을 node_A_1-IP에서 node_A_2-IP로 이동합니다</block>
   <block id="1accc6cb1f1118e060a5ddb1cbcdc858" category="list-text">컨트롤러 node_a_2-IP에 미러링된 애그리게이트를 만들어 시스템 볼륨을 유지합니다.</block>
-  <block id="0df1338723e7e2dede2b69ee215ab08d" category="paragraph">"aggr create-aggregate new_node_a_2-ip_aggr-diskcount 10-mirror true-node nodename_node_a_2-IP"를 나타냅니다</block>
   <block id="10404496bc3fdbc20b1a8cb6f40290ac" category="paragraph">'어거 쇼'</block>
   <block id="90b6980aa9c6eec01e7b50296b5e3215" category="paragraph">미러링된 애그리게이트에는 컨트롤러 node_A_2-IP가 소유하는 풀 0 5개와 풀 1 스페어 디스크 5개가 필요합니다.</block>
   <block id="7bfd01cb125fbc7dbcaca1c1a5ba6b84" category="paragraph">고급 옵션인 "'-force-small-aggregate true'"는 디스크가 부족한 경우 풀 0 3개와 풀 1 디스크 3개로 디스크 사용을 제한하는 데 사용할 수 있습니다.</block>
   <block id="07d91fa2c5be95dfee421615bc50eb6a" category="list-text">관리 SVM과 관련된 시스템 볼륨을 나열합니다.</block>
   <block id="d18522f509115a3fc2cb993d3bb07341" category="paragraph">'vserver show'</block>
-  <block id="2bcc2af8321d27cf62ad615dcc09c890" category="paragraph">'volume show-vserver_admin-vserver-name_'</block>
   <block id="c526c532810479af3143f75c0b926db1" category="paragraph">site_A가 소유한 Aggregate에 포함된 볼륨을 식별해야 합니다 site_B 시스템 볼륨도 표시됩니다.</block>
   <block id="7803c32341af959dbb8295c7d3f2c5b3" category="list-text">site_A의 MDV_CRS_ * _B 시스템 볼륨을 컨트롤러 node_A_2-IP에 생성된 미러링된 Aggregate로 이동합니다</block>
   <block id="de77dddd8bae21c040010b1563afa176" category="list-text">가능한 대상 애그리게이트 확인:</block>
-  <block id="1785091900894e2dd266e14ada9cac43" category="paragraph">'volume move target-aggr show -vserver_admin -vserver-name_-volume system_vol_MDV_B'</block>
   <block id="c7da5ceb7c66f40a7eb4760c7fa708a6" category="paragraph">node_a_2-ip에서 새로 생성된 애그리게이트를 나열해야 합니다.</block>
   <block id="f5863f82786e791434401c19871905fc" category="list-text">node_A_2-IP에서 새로 생성된 Aggregate로 볼륨을 이동합니다.</block>
-  <block id="05b2e5e5779185fe4f513ff169317139" category="paragraph">'volume move start-vserver_admin-vserver_-volume system_vol_MDV_B-destination-aggregate new_node_A_2-IP_aggr-cutover-window 40'</block>
   <block id="79a5088dfdd3b710c037e8edaced2831" category="list-text">이동 작업의 상태를 점검합니다.</block>
-  <block id="28764cb9000d8ef2fcf0b5d81981277b" category="paragraph">'volume move show -vserver_admin -vserver-name_-volume system_vol_MDV_B'</block>
   <block id="6fbae0f85a9fb1a4a76eda149fb886d3" category="list-text">이동 작업이 완료되면, MDV_CRS_*_B 시스템이 node_A_2-IP의 새 집계에 포함되어 있는지 확인합니다.</block>
   <block id="7d751970b8113a85136b22a70fa38bcc" category="paragraph">'관리자 설정'을 선택합니다</block>
-  <block id="ef4b82047d91f505fc870c69b3a59831" category="paragraph">'volume show-vserver_admin-vserver_'</block>
   <block id="34d1cfcdcf18bab93eb2f50683525124" category="list-text">site_B(node_B_1-IP 및 node_B_2-IP)에서 위의 단계를 반복합니다.</block>
   <block id="80161bd3062933aab7f174ce293237dc" category="summary">모든 요구 사항을 검토하고 전환을 준비한 후 전환 절차를 수행합니다. 각 작업을 순서대로 수행해야 하며, 다음 작업으로 이동하기 전에 각 작업의 모든 단계를 완료해야 합니다. 지시가 있을 때까지 새 컨트롤러 또는 스토리지 쉘프를 기존 구성에 연결하면 안 됩니다.</block>
   <block id="68ca4c8699281e1858977752c796cd45" category="paragraph">MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동해야 합니다.</block>
@@ -10991,7 +10938,6 @@
   <block id="c1420c708cdb03e8e6259f7cb1285a08" category="paragraph">컨트롤러 모듈 및 섀시에는 "mcip" 값이 표시되어야 합니다.</block>
   <block id="717daacc38ffb11ae03c79a7871ba94a" category="list-text">컨트롤러의 표시된 시스템 상태가 "mcip"이 아닌 경우 컨트롤러의 HA 상태를 설정합니다.</block>
   <block id="1be7c4ddc79016b4335125e64b368241" category="list-text">섀시의 표시된 시스템 상태가 "mcip"이 아닌 경우 섀시의 HA 상태를 설정합니다.</block>
-  <block id="1631c24dd2645318c89e780c4904812a" category="list-text">ONTAP 9.9.1부터 Layer 3 구성을 사용하는 경우 MetroCluster IP 인터페이스를 생성할 때 '-gateway' 매개변수도 지정해야 합니다. 을 참조하십시오 <block ref="c0c95b98444cb413fd783099a9c566d2" category="inline-link-macro-rx"></block>.</block>
   <block id="9bdf1ed180b1b862f7cea11085897aca" category="paragraph">예(ONTAP 9.4 시작)</block>
   <block id="a27983e963a18385eebdc3381062e49b" category="paragraph">예(ONTAP 9.8부터 시작)</block>
   <block id="098fadefd1319cbc560b7d741aa7210e" category="paragraph">예(ONTAP 9.7부터 시작)</block>
@@ -11314,9 +11260,7 @@
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
   <block id="83e579bcd33d25206730a931a64a84a1" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block>.</block>
   <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
-  <block id="90cd0db781b4639c1c46407e5a4f0a93" category="paragraph">+다음 플랫폼 모델은 사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
-  <block id="37e445da4970f1c0106716e8dba83be8" category="paragraph">사용된 VLAN이 10/20 이상인 경우 기존 MetroCluster 구성에 다음 플랫폼 모델을 추가할 수 있습니다. 다른 VLAN을 사용하는 경우 MetroCluster 인터페이스를 구성할 수 없으므로 기존 구성에 이러한 플랫폼을 추가할 수 없습니다. 다른 플랫폼을 사용하는 경우 ONTAP에서는 필요하지 않으므로 VLAN 구성은 관련이 없습니다.</block>
   <block id="9e9a93655547f7858baef5194a909e2c" category="cell">Cisco 3132Q-V, 3232C 또는 9336C-FX2</block>
   <block id="a825d9b135e0604b1a8244aa950f4952" category="paragraph">FC 노드의 로컬 클러스터 인터페이스입니다</block>
   <block id="32e69a0f5d950aefcb7cefee34c73d19" category="paragraph">FAS500f/A250</block>
@@ -11912,8 +11856,6 @@
   <block id="779a44ac931df50e9ba3ac26bbca035e" category="list-text">를 누릅니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 성공적으로 완료된 후 컨트롤러 모듈이 실패했습니다. 이전 표를 사용하여 올바른 복구 절차를 확인하십시오.</block>
   <block id="57c5f3148ec34d732973b7f905f1ca84" category="section-title">MetroCluster FC-to-IP 전환 중 컨트롤러 모듈 장애 시나리오</block>
   <block id="b79001d76282bba800ccc9b5187d2ad4" category="list-text">데이터 LIF를 오프라인 상태로 이동합니다.<block ref="58d060d8bc95409e743c7b8e95e72710" prefix=" " category="inline-code"></block></block>
-  <block id="6bf7a249268f3de77afe5f47cab93371" category="list-text"><block ref="6bf7a249268f3de77afe5f47cab93371" category="inline-link-macro-rx"></block></block>
-  <block id="6a6fc2b9cb4bc74b0b6f0528b0da3e1e" category="list-text"><block ref="6a6fc2b9cb4bc74b0b6f0528b0da3e1e" category="inline-link-macro-rx"></block></block>
   <block id="467f07382f2568a4248a6dee67437d64" category="paragraph"><block ref="467f07382f2568a4248a6dee67437d64" category="inline-link-macro-rx"></block></block>
   <block id="d570f5d821344a6838aaa260987eafc8" category="inline-link-macro">고가용성 쌍 관리</block>
   <block id="519460f530eb0c6817aeafcaef72fd69" category="paragraph">4노드 MetroCluster 구성에서는 장애가 발생한 구성요소에 따라 이 장애가 발생하면 장애가 발생한 노드가 자동 또는 협상된 테이크오버 상태로 될 수 있습니다. 데이터 복구에 대한 설명은 에 나와 있습니다 <block ref="098c4bee7c591ea5429ed6be6c4ddd42" category="inline-link-macro-rx"></block> .</block>
@@ -12802,12 +12744,10 @@
   <block id="83401bd8eb751fc79a9ff9e2e69be029" category="paragraph"><block ref="ff41f8886897126f1b4109a0b09cd291" category="inline-link-macro-rx"></block>.</block>
   <block id="09e34111ef8649a5302b1889e0c7d303" category="list-text">JRE 8</block>
   <block id="b3c0f57dcdb05faa9fbc38832a492a4e" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지는 일반적으로 예상되지 않습니다. 그러나 SSH를 사용하여 로그인한 경우 다음 오류가 발생할 수 있습니다.<block ref="f6ffe33fb36eb714adf6f81147c665f6" prefix=" " category="inline-code"></block></block>
-  <block id="c15b62e6a5ff15a0315735efe0205145" category="doc">MetroCluster IP 구성에서 주소, 넷마스크 및 게이트웨이를 수정합니다</block>
   <block id="907d0a00eecf52dcc4562775faad470a" category="paragraph">ONTAP 9.10.1.1부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
   <block id="5e1f7c325aa2c4eb9ee527a8279eb798" category="list-text">[[3단계]] 모든 연결이 작동하는지 확인합니다.</block>
   <block id="cf07fc29a0bf48b43804bd5e97849449" category="summary">MetroCluster 호환 스위치를 사용하는 경우 플랫폼별 네트워크 속도 및 스위치 포트 모드 요구 사항을 알고 있어야 합니다.</block>
   <block id="b6c12395a961cf95058c6e4d4412ac09" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다. 표에 따라 스위치 포트 모드를 구성해야 합니다.</block>
-  <block id="f2ac555a8b496557dba2555170124225" category="image-alt">MCC 호환 스위치 네트워크 속도</block>
   <block id="8c425f952493015588fb91113b5b2dd8" category="summary">이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에 대한 요구 사항을 다룹니다.</block>
   <block id="422a6c8c8d23cb29ed822adac0da8cd9" category="paragraph">모든 MetroCluster IP 구성과 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에는 특정 요구 사항이 있습니다. 이러한 요구 사항은 고객 스위치 간에 ISL이 직접 또는 공유되는지 여부에 관계없이 MetroCluster 트래픽을 전달하는 모든 ISL에 적용됩니다.</block>
   <block id="78464639db6e6acf657d9d576a0f2888" category="section-title">일반 MetroCluster ISL 요구사항</block>
@@ -12969,7 +12909,6 @@
   <block id="6acf5532efb336e0d8001419f26ef951" category="list-text">중간 네트워크는 사이트 간에 동일한 VLAN을 제공해야 합니다. RCF 파일에 설정된 MetroCluster VLAN과 일치해야 합니다.</block>
   <block id="ac8a1f1bfd836ba146d1ab2feb59b2fa" category="list-text">RcfFileGenerator는 특정 VLAN ID가 나중에 사용하도록 의도된 경우 사용을 제한할 수 있습니다. 일반적으로 예약된 VLAN은 최대 100개까지 가능합니다.</block>
   <block id="d4a11c01614c17bddc7d41960498137a" category="paragraph-title">ONTAP의 VLAN 구성</block>
-  <block id="2fdb610706dea62a50ca16baa1d63c2a" category="paragraph">인터페이스 생성 중에만 VLAN을 지정할 수 있습니다. MetroCluster 인터페이스를 생성한 후에는 VLAN ID를 변경할 수 없습니다. 인터페이스 생성 중에 다른 VLAN을 구성할 수 있지만 VLAN은 10 ~ 20 범위 내에 있거나 101 ~ 4096 범위 내에 있어야 합니다(또는 스위치 공급업체에서 지원하는 수 중 더 작은 수).</block>
   <block id="5c7b46710dbc52038abeae30dc7410f8" category="admonition">일부 스위치 공급업체는 특정 VLAN 사용을 예약할 수 있습니다.</block>
   <block id="c42b50e941d0ad3822d8ba3c571ef6c4" category="paragraph">다음 시스템은 ONTAP 내에서 VLAN 구성이 필요하지 않습니다. VLAN은 스위치 포트 구성에 의해 지정됩니다.</block>
   <block id="24eb498f969850d03efc1a22afbc9649" category="list-text">FAS8200 및 AFF A300</block>
@@ -13613,9 +13552,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a5742dd38006c09197d0e488bba89bf7" category="open-title">ONTAP 9.15.1 이상에서 도입된 시스템</block>
   <block id="566a13604e83a8fff73bdf14020a980a" category="paragraph">ONTAP 9.15.1 이상(AFF A70, AFF A90 및 AFF A1K)에 도입된 시스템에는 다음 출력 예와 같이 HA 및 DR용으로 별도의 포트가 있습니다.</block>
   <block id="5703319e138fc00c827014acd16d0376" category="paragraph">다음 출력에서는 포트 e5a 및 e5b에서 MetroCluster IP 인터페이스를 사용하는 AFF A700 및 FAS9000 시스템의 구성 IP 주소를 보여 줍니다. 인터페이스는 플랫폼 유형에 따라 다를 수 있습니다.</block>
-  <block id="b843496219829d61ebc41138be0194e6" category="list-text">플랫폼 모델이 VLAN ID(위 목록 참조)를 사용하고 기본 VLAN ID를 사용하지 않는 경우 VLAN ID가 필요합니다.</block>
   <block id="e2974b23926ca4d7d377fe83a01893cc" category="list-text">각 재해 사이트 노드에 대해 LOADER 프롬프트에서 플랫폼 모델에 따라 bootarg 값을 설정합니다.</block>
-  <block id="ac0f64413607e314a8c6c9ca1bcf8171" category="list-text">인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델이 VLAN ID를 사용하지 않는 경우(위 목록 참조) _vlan-id_는 필요하지 않습니다.</block>
   <block id="7e9ada96e6c7ea5b82a0e953f38fc85c" category="paragraph">ONTAP 9.15.1 이상에서 도입된 시스템에서는 DR 및 HA용 포트가 별도로 있으므로 _HA-PARTNER-IP-ADDRESS_의 값을 * 0 * (0)으로 설정해야 합니다.</block>
   <block id="fd053f45281bc461c7ff13c80dc7a0ef" category="paragraph">다음 bootarg를 설정합니다.</block>
   <block id="b1656b6f4acc345525c67f4fc0341f24" category="section-title">AFF C800, ASA C800, ASA A800, AFF A800, AFF A70, 및 AFF A90 시스템</block>
@@ -13774,7 +13711,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ea246a6495df1b87df40d7c322d23942" category="list-text">MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
   <block id="5505f24f1b03305d31aacdd035c7f251" category="paragraph-title">AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다</block>
   <block id="fcb21df516134bd5563b8b7bef30f98b" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
-  <block id="bda013124fcd29c13b3794671c5907a2" category="admonition">AFF A90, AFF A70 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
   <block id="7b8670a76cf1dc8cbe357ce34cc11736" category="image-alt">MetroCluster IP 업그레이드 So sb AFF FAS</block>
   <block id="ae189029f72cc261fbad1afff41d9552" category="list-text">참고 3: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.</block>
   <block id="39eb8422a5f49fae94f0335febb78701" category="list-text">참고 4: 컨트롤러 모듈을 교체해야 합니다.</block>
@@ -13799,7 +13735,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5f59766a690e00008d7b09d26244b85f" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
   <block id="cf35ca12d11c5730282da68bdb26e696" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster IP 기술 업데이트 조합</block>
   <block id="3a2b3b39311d9a61b3a9bb66f7feec5c" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.</block>
-  <block id="70fdfec9430ed4893168e5c59eb64e08" category="admonition">AFF A70, AFF A90 및 AFF A1K 시스템에는 ONTAP 9.15.1 이상이 필요합니다.</block>
   <block id="cb8925996d20b2dc27bec26b66db8e61" category="paragraph-title">지원되는 ASA MetroCluster IP 기술 업데이트 조합</block>
   <block id="03c48c75d06f3446ef94029cbbce579a" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.</block>
   <block id="a3a15df2eb8fb472342a575b30857763" category="image-alt">MetroCluster IP ASA 기술 업데이트 조합</block>
@@ -13966,4 +13901,113 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c848af1101f629db69baafb2b08b9915" category="paragraph"><block ref="ce889b95687da5aee0c3d9ec48e819b4" prefix="" category="inline-code"></block></block>
   <block id="2d425665af37b9989f89179649650990" category="section-title">업그레이드를 완료합니다</block>
   <block id="0ca215bc0428424e5cb9556db1b478d9" category="paragraph">AFF A320, FAS8300, AFF C400, ASA C400, FAS8700, 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A400 또는 ASA A400 시스템:</block>
+  <block id="7bf9d1ef7aeb37de6171f77014cb7475" category="paragraph">특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20).</block>
+  <block id="b676a1207e184308799f51c46b2c49b4" category="paragraph">+ 지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도 있습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block><block ref="f2986433c79fe84ff207e72d4ed9fd6f" prefix=" " category="inline-code"></block> .</block>
+  <block id="89ec7be62a41e52b11c54d2aedfc03bf" category="paragraph">+ 다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다.<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block></block>
+  <block id="94c7b7802191ba5792f013727a36b74a" category="paragraph">+** FAS8200 및 AFF A300** AFF A320** FAS9000 및 AFF A700 ** AFF C800, ASA C800, AFF A800 및 ASA A800</block>
+  <block id="4c2e03631cb543e4bf4e7ef67224daf1" category="paragraph">+ 다른 모든 플랫폼은<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 매개 변수를 지원합니다.</block>
+  <block id="4a1ac4ba70bb5d6773aeed24d616a2f3" category="paragraph">+ 기본 및 유효한 VLAN 할당은 플랫폼이 매개 변수를 지원하는지 여부에 따라<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 달라집니다.</block>
+  <block id="aabac265f84bb9461925573aa630c391" category="open-title">&lt;code&gt;-vlan-id &lt;/code&gt;를 지원하는 플랫폼입니다</block>
+  <block id="009e0a1c99c8ad5bfabf6f11303ce60a" category="paragraph">기본 VLAN:</block>
+  <block id="a78983875cad001a26c3723e0f50eb6a" category="list-text"><block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block>매개 변수를 지정하지 않으면 "A" 포트의 경우 VLAN 10과 "B" 포트의 경우 VLAN 20을 사용하여 인터페이스가 생성됩니다.</block>
+  <block id="02b813307ad3752283ec290b82273753" category="list-text">지정된 VLAN은 RCF에서 선택한 VLAN과 일치해야 합니다.</block>
+  <block id="1715ee402796bdf40dff29a889304866" category="paragraph">유효한 VLAN 범위:</block>
+  <block id="8ea94730f2193c8723e3b27c5aebe078" category="list-text">기본 VLAN 10 및 20</block>
+  <block id="01ec4d3102007958d709faf3df32136d" category="list-text">VLAN 101 이상(101과 4095 사이)</block>
+  <block id="aaa04ff0a589d6aed0e5512a0e4a08e3" category="open-title">&lt;code&gt;-vlan-id &lt;/code&gt;를 지원하지 않는 플랫폼</block>
+  <block id="20b1ece0621452d9d6d4e784484585f1" category="list-text">해당 없음. 인터페이스를 위해 MetroCluster 인터페이스에 VLAN을 지정할 필요가 없습니다. 스위치 포트는 사용되는 VLAN을 정의합니다.</block>
+  <block id="a5bd965731e0cc4104031ebde55f5c85" category="list-text">RCF를 생성할 때 모든 VLAN이 명시적으로 제외되지 않았습니다. RCF는 VLAN이 유효하지 않은 경우 사용자에게 경고합니다.</block>
+  <block id="0afa15de79026c2cb84906cb7a4acaa3" category="paragraph">지원되는 경우 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도<block ref="883efb435dfcdbab29a2ff69d0287888" prefix=" " category="inline-code"></block> 있습니다.</block>
+  <block id="3a62ad5f83f9a3bdc5429900d03b6af5" category="paragraph">다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다<block ref="883efb435dfcdbab29a2ff69d0287888" prefix=" " category="inline-code"></block> .</block>
+  <block id="f3ab2c03b6ddff7d085fba83ebc3a6b3" category="list-text">AFF C800, ASA C800, AFF A800 및 ASA A800</block>
+  <block id="f70f8fd274ec7fa58bf8ba6d99937b3c" category="paragraph">다른 모든 플랫폼은<block ref="883efb435dfcdbab29a2ff69d0287888" prefix=" " category="inline-code"></block> 매개 변수를 지원합니다.</block>
+  <block id="318e6115888f5535c580151d3c337eeb" category="inline-xref">위에 나열하십시오</block>
+  <block id="601779c42f052b558b7ac9443d399420" category="list-text">플랫폼 모델이 VLAN ID를 지원하고(참조) 기본 VLAN ID를 사용하지 않는 경우 VLAN ID를 확인해야 <block ref="05a2d2a273433dceaaaa95abd8b74c34" category="inline-xref-macro-rx"></block>합니다.</block>
+  <block id="99d8e07cf22b54bf1c4fe9ecde3bd413" category="list-text">인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델이 VLAN ID를 사용하지 않는 경우( 참조 <block ref="05a2d2a273433dceaaaa95abd8b74c34" category="inline-xref-macro-rx"></block>) _vlan-id_는 필요하지 않습니다.</block>
+  <block id="26c0375297253dbcc942fe30cefa7b4b" category="paragraph">인터페이스 생성 중에만 VLAN을 지정할 수 있습니다. 기본 VLAN 10 및 20 또는 101에서 4096 사이의 VLAN(또는 스위치 공급업체에서 지원하는 수 중 더 작은 수)을 구성할 수 있습니다. MetroCluster 인터페이스를 생성한 후에는 VLAN ID를 변경할 수 없습니다.</block>
+  <block id="3faee78823aa7a1dc8ffca46972f6fb2" category="image-alt">에는 MetroCluster 호환 스위치의 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다.</block>
+  <block id="c189be7568f7fe77db4a889353024935" category="admonition">RCF 파일 버전은 파일을 생성하는 데 사용되는 RCFfilegenerator 도구의 버전과 다릅니다. 예를 들어 RCFfilegenerator v1.6c를 사용하여 RCF 파일 버전 2.00을 생성할 수 있습니다.</block>
+  <block id="a796207f93572cbc190249400ba34b9b" category="paragraph"><block ref="08689ca588d2fd5d0e0a12366a8cd0a6" prefix="" category="inline-code"></block></block>
+  <block id="fc902c4c5eb117926b80fc3a1066d5f9" category="paragraph"><block ref="31e96f11307c41bb11d8a37f3c919979" prefix="" category="inline-code"></block></block>
+  <block id="10c6f8561201e68a979db34a4c1af328" category="open-title">ONTAP 9.6 이상에서 다음을 실행합니다.</block>
+  <block id="3bc064a1902725a8ae62c8e84b7feb99" category="paragraph"><block ref="c37572c95fddef7657d9a0fcd9b24e75" prefix="" category="inline-code"></block></block>
+  <block id="ec9ff736da1fa54423820b62f41ff662" category="open-title">ONTAP 9.5 이하 버전에서는 다음을 실행합니다.</block>
+  <block id="243afd0bf9b328c9bc054e76fad2abe8" category="paragraph"><block ref="85428d08b368376af762be33f6c812b4" prefix="" category="inline-code"></block></block>
+  <block id="86ef160c7fdcafc5a4252298190d95a2" category="paragraph"><block ref="761632925b707d885dfeb15b72afe768" prefix="" category="inline-code"></block></block>
+  <block id="b98723dad5619921c9fbdb7e0e0050ad" category="paragraph"><block ref="e66e929e19af3d0ee4af9e0e58bd7e5c" prefix="" category="inline-code"></block></block>
+  <block id="80dcc4edac2d765045f64b4c38d1d603" category="paragraph"><block ref="8e2d8ef88fdca0c2d84f0bc37a725a61" prefix="" category="inline-code"></block></block>
+  <block id="51f368c2c1d8b5478b6282cb7c1d5750" category="paragraph"><block ref="d80e7838e2fc707884fbff7e375981c9" prefix="" category="inline-code"></block></block>
+  <block id="4ae2f4a2aef26662b47c70763eb4279d" category="paragraph"><block ref="90a8f7d7f597974a89c88091d170056f" prefix="" category="inline-code"></block></block>
+  <block id="ddf0bc53a0486fe472c9c2802cb8a024" category="inline-link-macro">MetroCluster IP 인터페이스의 속성을 수정합니다</block>
+  <block id="c2101bcd2959ec896c34ad3ac441e668" category="list-text">ONTAP 버전에 따라 초기 구성 후 일부 MetroCluster IP 인터페이스 속성을 변경할 수 있습니다. 지원되는 기능에 대한 자세한 내용은 을 <block ref="b5882dba0d9962f87b1ec9d2a9ef135c" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="fdc2f9c59b3906cedb6920c830ed095c" category="paragraph">지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도 있습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block><block ref="f2986433c79fe84ff207e72d4ed9fd6f" prefix=" " category="inline-code"></block> .</block>
+  <block id="eb2b66b1668ae6b216f98bedcd551ca7" category="paragraph">다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> .</block>
+  <block id="b98986071c014fdcc3eb14230209b05d" category="paragraph">다른 모든 플랫폼은<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 매개 변수를 지원합니다.</block>
+  <block id="777f7436eaaa59005ece3683cc156ffb" category="paragraph">기본 및 유효한 VLAN 할당은 플랫폼에서 매개 변수를 지원하는지 여부에 따라<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 달라집니다.</block>
+  <block id="519e24d9a1a55a3bd63ec91a1eb5f3a2" category="list-text">MetroCluster IP 인터페이스에 사용되는 물리적 포트는 플랫폼 모델에 따라 다릅니다. 시스템의 포트 사용법은 을 <block ref="7176836221733e9bf6fcbaccc1aa9ffd" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="1b629c5d185b0a312899fd30cf61b757" category="list-text">이 절차에서는 다음 예를 사용합니다.</block>
+  <block id="1609e614328e6c8547b5eb4d2587160c" category="paragraph">AFF A700 또는 FAS9000 시스템용 포트(e5a 및 e5b)입니다.</block>
+  <block id="dbf6dd8fe37bef64292c8bb330136895" category="paragraph">AFF A220 시스템의 포트는 지원되는 플랫폼에서 매개 변수를 사용하는 방법을 보여줍니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> .</block>
+  <block id="5744d7aa47c69584562886d1537eef6c" category="paragraph">플랫폼 모델에 적합한 포트에 인터페이스를 구성합니다.</block>
+  <block id="66139ebecd22b7bd276fa21a6e992e09" category="paragraph"><block ref="9f7725524d39b585acc780018710c3b5" prefix="" category="inline-code"></block></block>
+  <block id="3649ee884444b305dd9be194280a7e4c" category="paragraph"><block ref="d768449437ec0f2ec05972fa5734930a" prefix="" category="inline-code"></block></block>
+  <block id="69ec827ee345a01514240a2f136400ed" category="paragraph">ONTAP 9.10.1 이전 버전을 실행 중인 경우 이 명령을 실행한 후에는 IP 주소를 변경할 수 없습니다.</block>
+  <block id="1eaed4d1bc56491d94753ba682a805e3" category="paragraph"><block ref="7e6322a29fc1352727c14f0ff12a2160" prefix="" category="inline-code"></block></block>
+  <block id="df2b000d2262493c81df70ac97ba9f57" category="paragraph"><block ref="9817e7d5e354e00e27c230cd87198379" prefix="" category="inline-code"></block> 의 원격 쉘프에 있는 드라이브를 식별해야 합니다<block ref="b17fa57bf075ee17088a62c487e99a79" prefix=" " category="inline-code"></block>.</block>
+  <block id="69eed086d7a8a5fd87cfc0c2ec925654" category="paragraph"><block ref="222508883cb9789fa0260600a3a92e79" prefix="" category="inline-code"></block></block>
+  <block id="d2c8fe635684963077359ae30bbb97d8" category="paragraph">은<block ref="9817e7d5e354e00e27c230cd87198379" prefix=" " category="inline-code"></block> 의 원격 쉘프에 있는 디스크를 식별해야<block ref="b17fa57bf075ee17088a62c487e99a79" prefix=" " category="inline-code"></block>합니다.</block>
+  <block id="8a97215f1bc3ba891c3674a251e6f272" category="paragraph"><block ref="ca7759d53e9fa9fc63fbc14e6519386b" prefix="" category="inline-code"></block></block>
+  <block id="d99c28bd9db861f076913fb0ceac646d" category="paragraph"><block ref="e0764014c3bd1ac6934ad9c6d416ff33" prefix="" category="inline-code"></block></block>
+  <block id="96c0692401701908c0022bdceb9555d2" category="paragraph"><block ref="59cae235ae742e8f746c0ec9daf9709c" prefix="" category="inline-code"></block></block>
+  <block id="0b15bc4339fc9ca757229e60724602c3" category="paragraph"><block ref="e786ea4dfa5c88bb0e334e54700ffb79" prefix="" category="inline-code"></block></block>
+  <block id="fc8cd930b76d28c02db9703a924fcbc5" category="paragraph"><block ref="7604ec0db3686df86574dac0a83e939c" prefix="" category="inline-code"></block></block>
+  <block id="dee14e1bdab8dbac6ebd23082f44ad6c" category="paragraph"><block ref="e88be64a9e3e854938970e5cd537eab0" prefix="" category="inline-code"></block></block>
+  <block id="acc972bbe2508be48bbc4c72aa01da78" category="paragraph"><block ref="1c2fae678145f8165afe06d13aac27d2" prefix="" category="inline-code"></block></block>
+  <block id="970fd9ae6b41014fb26adcdd699de900" category="paragraph"><block ref="07f05fef8407c50eb9469e72873810d1" prefix="" category="inline-code"></block></block>
+  <block id="7628c397a6518a332d1e7c6b45b4d3c8" category="paragraph"><block ref="29f2c8c292b68f6f42c1df6782b911b3" prefix="" category="inline-code"></block></block>
+  <block id="cf3326a1f08e63b551e2d071556e0598" category="paragraph">스위치 RCF 파일을 생성하고 MetroCluster IP 구성의 각 스위치에 설치해야 합니다.</block>
+  <block id="a7ecf6e9de3b493515ff606fc0532227" category="list-text">를 다운로드하십시오<block ref="b3f8a8564bd91efeacbc3b6197426c6e" category="inline-link-rx"></block></block>
+  <block id="b0e1fb1b9093a23db84f9fe9ec414a05" category="paragraph">MetroCluster IP 구성의 각 스위치에 RCF 파일을 생성하고 설치해야 합니다.</block>
+  <block id="5f6300d6cef757d6670c2170d0ee50fb" category="list-text">MetroCluster IP에 대한 Cisco RCF 파일을 생성합니다.</block>
+  <block id="f0af72ee7b95606742238881f6d3d746" category="list-text">, 및 명령을 사용하여<block ref="0dea99cd92a8ce54e8bf65bd553a3e89" prefix=" " category="inline-code"></block><block ref="05f7f2ea3536c78a494ee9ec91b6fef9" prefix=" " category="inline-code"></block><block ref="1fb1e9c05efc96eb745333b035ce6d59" prefix=" " category="inline-code"></block> 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다.</block>
+  <block id="696ca372052e4e85401e9ef266b57375" category="paragraph">MetroCluster IP 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 수정하려면 다음 단계를 수행하십시오.</block>
+  <block id="164748ab1cab79cb53ebb8d067fb41df" category="paragraph"><block ref="3b73cc9aa0167fa80aa8a786a4871e88" prefix="" category="inline-code"></block></block>
+  <block id="8c8de216c09126479bba8f0a636ceac7" category="paragraph"><block ref="34b1158d44c89ca8031563bdf424ba84" prefix="" category="inline-code"></block></block>
+  <block id="711aa9967b438e020ee72c9773739e5d" category="paragraph"><block ref="c7462aa9b4e3acfeadac46864ab81636" prefix="" category="inline-code"></block></block>
+  <block id="f33223d33643f0a6a65b83484e66763b" category="paragraph"><block ref="bbe7345a3b57d077a14ca7c861fdc510" prefix="" category="inline-code"></block></block>
+  <block id="9058dcd22d8900bb4bf3607938ba011e" category="paragraph"><block ref="50b65f64b784537f4059e17dbc0cddb8" prefix="" category="inline-code"></block></block>
+  <block id="10b199a11023cc52bf03a4affa5f0105" category="paragraph"><block ref="3110c51feae074637e0930ba61181573" prefix="" category="inline-code"></block></block>
+  <block id="edc1d1fde5aa71226989f69fc30ad581" category="paragraph"><block ref="a10c5f9f83d239029a4f450d6915ef80" prefix="" category="inline-code"></block></block>
+  <block id="2b17135ccdcd7ba37ad016691c03a649" category="paragraph"><block ref="a93cf91a50990ac0c34a2db5a2934eb0" prefix="" category="inline-code"></block></block>
+  <block id="3d49a79afad45f39959ecfef872b641e" category="paragraph"><block ref="64c7ad0cb2888e06ba6c73486d3dff85" prefix="" category="inline-code"></block></block>
+  <block id="88cea512e9153abf88fe978449806ce2" category="paragraph"><block ref="8472522f9b339858f68ec32c5fba569e" prefix="" category="inline-code"></block></block>
+  <block id="7efe6a75c4cace6f7d8d2037b41fcb11" category="paragraph"><block ref="9c6a2d5ce4c1bdc82e1982314ba6847d" prefix="" category="inline-code"></block></block>
+  <block id="a36b67419575cf5ffa05ec3b5f7683a4" category="section-title">새 DR 그룹을 추가할 때 VLAN에 대한 고려 사항</block>
+  <block id="d22d7ddfee8653f07bbab4b5554c7e8d" category="list-text">MetroCluster IP 구성을 확장할 때 다음 VLAN 고려 사항이 적용됩니다.</block>
+  <block id="180998c1506f167022c7569e93485cf6" category="list-text">4노드에서 8노드 MetroCluster 구성으로 확장하는 경우 두 DR 그룹 모두 동일한 VLAN을 사용합니다.</block>
+  <block id="14cbcb11bb60726b28bad9deb474ecca" category="list-text">두 DR 그룹을 동일한 VLAN을 사용하여 구성할 수 없는 경우 매개 변수를 지원하지 않는 DR 그룹을 업그레이드하여 다른 DR 그룹에서 지원하는 VLAN을 사용해야<block ref="883efb435dfcdbab29a2ff69d0287888" prefix=" " category="inline-code"></block> 합니다.</block>
+  <block id="ff265cea659d94d2bb616f30f406a802" category="paragraph">확장을 수행하기 전에 MetroCluster 구성의 상태 및 연결을 확인해야 합니다.</block>
+  <block id="9ff1de752473d0e8f9618f724dd22ff9" category="paragraph"><block ref="e0c8c2b46ec80ac4a0d764213e3acc22" prefix="" category="inline-code"></block></block>
+  <block id="8b2ecfdc07e5fe6a0cccb7c1f6495624" category="inline-link-macro">IP 스위치를 케이블로 연결합니다</block>
+  <block id="76793d2295cd7f845d6a07404968d739" category="list-text">에서와 같이 새 MetroCluster IP 노드를 IP 스위치에 <block ref="f8673193926534b844ce0bb3f56d4c82" category="inline-link-macro-rx"></block>연결합니다.</block>
+  <block id="daecb091e8e1b92970e1e47c88cae707" category="list-text">다음 절차를 사용하여 MetroCluster IP 노드를 구성합니다.</block>
+  <block id="c9e5d01137879d19a0099ceaee84e6a0" category="list-text"><block ref="c9e5d01137879d19a0099ceaee84e6a0" category="inline-link-macro-rx"></block></block>
+  <block id="336a0d2c139a7b999e8638c73ae958c8" category="inline-link-macro">컨트롤러 모듈에서 시스템 기본값을 복원합니다</block>
+  <block id="1d593a4f9525e6f2ca9ec32621f1db90" category="list-text"><block ref="1d593a4f9525e6f2ca9ec32621f1db90" category="inline-link-macro-rx"></block></block>
+  <block id="f66b08223139cc88d367e9f8ba658bb8" category="list-text"><block ref="f66b08223139cc88d367e9f8ba658bb8" category="inline-link-macro-rx"></block></block>
+  <block id="355e13ab500dceb89a56c4317cdfae82" category="inline-link-macro">풀 0에 대해 수동으로 드라이브 할당(ONTAP 9.4 이상)</block>
+  <block id="825d410ac3ad0bbf292a80f8c6135d02" category="list-text"><block ref="825d410ac3ad0bbf292a80f8c6135d02" category="inline-link-macro-rx"></block></block>
+  <block id="01a84b5c8cad7ed0a15f89b1e64d1751" category="inline-link-macro">Broadcom IP RCF 파일을 다운로드하여 설치합니다</block>
+  <block id="2cb55225768d53c7a8c62d73b71595b8" category="list-text"><block ref="2cb55225768d53c7a8c62d73b71595b8" category="inline-link-macro-rx"></block></block>
+  <block id="bda05896fe9c6a54adda73ed2403937c" category="list-text"><block ref="bda05896fe9c6a54adda73ed2403937c" category="inline-link-macro-rx"></block></block>
+  <block id="7d7b3e7f82a4c62f0a1e1c6c7bf36942" category="admonition">L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스'에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.</block>
+  <block id="78047aee32ead93280f971895b902f6f" category="section-title">새 노드를 클러스터에 가입합니다</block>
+  <block id="07d3f381efeb375a8fe18cc6f11404e7" category="list-text">예제에 사용된 홈 포트는 플랫폼별로 다릅니다. MetroCluster IP 노드 플랫폼별 홈 포트를 사용해야 합니다.</block>
+  <block id="78697dcb303aaaf46c68a191d70983f2" category="list-text">이 작업을 수행하기 전에 의 정보를 <block ref="f8cbfe9b9b2f8ea45f944b8dcf8bd730" category="inline-xref-macro-rx"></block> 검토하십시오.</block>
+  <block id="e337731f47dd5caec3953f6c88c4ba3f" category="list-text">지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수 있습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block><block ref="f2986433c79fe84ff207e72d4ed9fd6f" prefix=" " category="inline-code"></block> . 지원되는 플랫폼 정보는 을 <block ref="f8cbfe9b9b2f8ea45f944b8dcf8bd730" category="inline-xref-macro-rx"></block> 참조하십시오.</block>
+  <block id="24e03425b754f9c14624daf47f474e76" category="paragraph"><block ref="5b8e8c4a107a486fdbb855e0962cf1ee" prefix="" category="inline-code"></block></block>
+  <block id="2868832443fa457c67292a9b7be9937e" category="paragraph"><block ref="8d2b5e6dcd7abb7368984243bc33eb7d" prefix="" category="inline-code"></block></block>
+  <block id="ef5e947e6fcfcc998981842db2980963" category="paragraph"><block ref="03c173f1a61527f819558186b9d61be9" prefix="" category="inline-code"></block></block>
+  <block id="f17f69c6edf98777a15cba11703ecfa4" category="paragraph"><block ref="3e67c1f4fcc76e1369016e8e183fdf3b" prefix="" category="inline-code"></block></block>
+  <block id="0f137b9473f8c1720c69f6c82c079dba" category="paragraph"><block ref="3b297593c0c2375482cbced8777ea2a8" prefix="" category="inline-code"></block></block>
 </blocks>

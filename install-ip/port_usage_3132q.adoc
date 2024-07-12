@@ -42,12 +42,12 @@ FAS2750, AFF A220
 .Cisco 3132Q-V 플랫폼 포트 할당(그룹 1)
 FAS2750 또는 AFF A220 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mcc_ip_cabling_a_fas2750_or_a220_to_a_cisco_3132q_v_switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
+image::../media/mcc-ip-cabling-a-fas2750-or-a220-to-a-cisco-3132q-v-switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
 
 .Cisco 3132Q-V 플랫폼 포트 할당(그룹 2)
 FAS9000 또는 AFF A700 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mcc_ip_cabling_a_fas9000_or_aff_a700_to_a_cisco_3132q_v_switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
+image::../media/mcc-ip-cabling-a-fas9000-or-aff-a700-to-a-cisco-3132q-v-switch.png[은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다]
 
 .Cisco 3132Q-V 플랫폼 포트 할당(그룹 3)
 AFF A800 또는 ASA A800 시스템을 Cisco 3132Q-V 스위치에 연결하기 위해 플랫폼 포트 할당을 검토합니다.
