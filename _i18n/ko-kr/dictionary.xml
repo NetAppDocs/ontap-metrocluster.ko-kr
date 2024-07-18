@@ -8961,7 +8961,6 @@
   <block id="aa5e90893b7f412ef5c52dd995d1a238" category="paragraph">* 사이트 B의 디스크 쉘프 *</block>
   <block id="60e70e31928f915722e922383e40f330" category="list-text">필요한 경우 연결된 디스크 쉘프의 디스크를 적절한 풀에 명시적으로 할당합니다.</block>
   <block id="f271a505e3d3d46c62979906b1ac4922" category="paragraph">명령에서 와일드카드를 사용하면 하나의 명령으로 디스크 쉘프의 모든 디스크를 할당할 수 있습니다. 'storage show disk-x' 명령을 사용하여 각 디스크의 디스크 쉘프 ID와 베이를 식별할 수 있습니다.</block>
-  <block id="cc1fc0be4e8cd8fa55b631956b8bd17f" category="paragraph">디스크_디스크_이름_-p_pool_-n_디스크 수 _</block>
   <block id="7e902fb75b9d2939fe12e5e54d005da1" category="paragraph">"디스크 할당 - 쉘프_디스크_쉘프_이름_-p_pool_"</block>
   <block id="f96aff9bb92f47a99bb9e80c8aefd182" category="list-text"><block ref="0ce177c637860f04ef435f1d4df8c7a1" category="inline-xref-macro-rx"></block></block>
   <block id="80f5aa2c1fd8d40ec861adc9b8554601" category="inline-xref">8모드 또는 4노드 MetroCluster 구성에서 ONTAP 설정</block>
@@ -11758,7 +11757,6 @@
   <block id="e167cf704969390451b66b4604d89501" category="list-text">스위치가 없는 클러스터 인터커넥트를 위한 전용 포트를 제공하는 플랫폼만 MetroCluster 호환 스위치와 함께 사용할 수 있습니다. MetroCluster 트래픽 및 MetroCluster 인터커넥트 트래픽이 동일한 네트워크 포트를 공유하기 때문에 FAS2750 및 AFF A220과 같은 플랫폼을 사용할 수 없습니다.</block>
   <block id="832bfdec136453c59e06674dc5b1fbfc" category="paragraph">로컬 클러스터 연결에 MetroCluster 호환 스위치를 사용해서는 안 됩니다.</block>
   <block id="999a0234ad26235f40e860b0131203f6" category="admonition">값이 누락되면 플랫폼을 MetroCluster 호환 스위치와 함께 사용할 수 없음을 나타냅니다.</block>
-  <block id="421c8863e1f7223f216aacf99393b7dd" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="60ddbd1babdd945c26fbc431202fea6c" category="inline-link-macro">Hardware Universe</block>
   <block id="6e2ee39d0f9ccdad593782674a048e67" category="inline-link-macro">절차 링크</block>
   <block id="0a623e8d3b5ae84e14f2fe4f454a3abb" category="paragraph"><block ref="0a623e8d3b5ae84e14f2fe4f454a3abb" category="inline-link-macro-rx"></block></block>
@@ -12493,7 +12491,6 @@
   <block id="87b750ce6fbbe87d62cbc08d2dc73e1f" category="list-text">*참고 2*: AFF A320 시스템을 사용하는 단일 4-노드 MetroCluster만 스위치에 연결할 수 있습니다.</block>
   <block id="5b5bc0c2a68a3a5df60e045184c265e7" category="paragraph">의 * 스위치 * 섹션을 참조하십시오 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 지원되는 트랜시버를 확인합니다.</block>
   <block id="30ec0ec381148de730ef6f636244409c" category="paragraph">ONTAP 9.13.1부터 이 절차는 MetroCluster와 드라이브 쉘프가 동일한 IP 스위치(공유 스토리지 스위치 구성)에 연결되는 MetroCluster IP 구성에서 지원됩니다.</block>
-  <block id="63d08c3cedf8143a5b62917cdffc9a26" category="image-alt">MetroCluster FC IP 전환 매트릭스 914</block>
   <block id="7411369ee6af7c3b06eeb0cb088ed313" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
   <block id="af03c8177e63c13156d2341adae52d1d" category="paragraph">업그레이드 절차에서는 컨트롤러가 새 컨트롤러 모델로 교체됩니다. 스토리지 쉘프 모델은 업그레이드되지 않습니다.</block>
   <block id="5fd3c01d6ba82ebe581c794d9a655304" category="list-text">FAS 시스템을 FAS 시스템으로 업그레이드하거나 AFF A-Series를 AFF A-Series로 업그레이드할 수 있습니다.</block>
@@ -12517,8 +12514,6 @@
   <block id="aa71e3dcbe0cdabbe4cce28385ab2fd6" category="paragraph">ONTAP 버전 또는 스위치 펌웨어 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.</block>
   <block id="9f4a5b5c7a3f862c1d0ff77f72d3eea0" category="paragraph">ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.</block>
   <block id="c471c44c2f26c78f9327863d90427cb7" category="admonition">ONTAP 중재자가 다운된 경우<block ref="1eafb93bfc40f298e60cf17e8a8c598c" prefix=" " category="inline-code"></block> 명령에서는 여전히 ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지를 표시하고 MetroCluster 구성에서 ONTAP 중재자 서비스를 제거합니다.</block>
-  <block id="21b5cf2db61fccc0ace8b80bac8b35b7" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스에 대해 40GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
-  <block id="13cdbd43c145584bcad75658a29e498d" category="list-text">참고 3: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 하드웨어 시스템 설명서</block>
   <block id="a6060d4587fc5fc5f841d3287d08316c" category="paragraph"><block ref="a6060d4587fc5fc5f841d3287d08316c" category="inline-link-rx"></block></block>
   <block id="777cc85682fbb64f0c41aa09dccf0ca4" category="paragraph"><block ref="777cc85682fbb64f0c41aa09dccf0ca4" category="inline-link-rx"></block></block>
@@ -14010,4 +14005,35 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ef5e947e6fcfcc998981842db2980963" category="paragraph"><block ref="03c173f1a61527f819558186b9d61be9" prefix="" category="inline-code"></block></block>
   <block id="f17f69c6edf98777a15cba11703ecfa4" category="paragraph"><block ref="3e67c1f4fcc76e1369016e8e183fdf3b" prefix="" category="inline-code"></block></block>
   <block id="0f137b9473f8c1720c69f6c82c079dba" category="paragraph"><block ref="3b297593c0c2375482cbced8777ea2a8" prefix="" category="inline-code"></block></block>
+  <block id="df0de59a7d82bfac9aeb4c3a4d0ff3d5" category="paragraph"><block ref="593e2b872fdc863863b3175980b503ee" prefix="" category="inline-code"></block></block>
+  <block id="ce4d776f761276cab4718597907e9b25" category="paragraph"><block ref="ce4d776f761276cab4718597907e9b25" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4bbabfb39bdaa67802b5f83f085672a9" category="image-alt">에는 IP에서 FC로의 전환을 위해 지원되는 플랫폼 조합이 나와 있습니다</block>
+  <block id="32571d30b5ea67a42d51725233459057" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.13.1 이상이 필요합니다.</block>
+  <block id="c6a7b9b858b4fca6a11eb81808875db0" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
+  <block id="5a4027b63d6ed294211392e256667c2c" category="list-text">새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용하도록 이전 컨트롤러의 인터클러스터 LIF를 수정합니다.</block>
+  <block id="931a74601edef3262a75c3d8d8e6acda" category="admonition">이 단계는 성공적인 업그레이드를 위해 필요합니다.</block>
+  <block id="f7f8cd16da4423b24e25a4d21cb4bc83" category="paragraph">이전 컨트롤러의 인터클러스터 LIF는 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용해야 합니다. 예를 들어, AFF A90 컨트롤러로 업그레이드할 때 HA 인터커넥트 포트는 e1A와 e7a이고, MetroCluster IP DR 인터커넥트 포트는 e2b와 e3b입니다. 이전 컨트롤러가 포트 E1A, e7a, e2b 또는 e3b에서 호스팅되는 경우 인터클러스터 LIF를 이동해야 합니다.</block>
+  <block id="8a09de643687f0a8327c0493bea75cfb" category="paragraph">새 노드에서의 포트 분배 및 할당은 를<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block>참조하십시오.</block>
+  <block id="898c71cbc0947646bf37a832e77fa31f" category="list-text">이전 컨트롤러에서 인터클러스터 LIF를 확인하십시오.</block>
+  <block id="ebaeb89c15e72f7de931e5d21d67c21b" category="paragraph"><block ref="a8ef5efd140dbfca42670e5d3b15ccff" prefix="" category="inline-code"></block></block>
+  <block id="1e81235f7b13b0f2e88bd765d2e46a34" category="paragraph">이전 컨트롤러의 인터클러스터 LIF가 새 컨트롤러의 MetroCluster IP DR 인터커넥트에 사용되는 포트와 동일한 포트를 사용하는지 여부에 따라 다음 작업 중 하나를 수행합니다.</block>
+  <block id="9e1cf8f40a604f4c38391100a2f69945" category="cell">클러스터 간 LIF가 필요한 경우...</block>
+  <block id="9ff403929760ba2610f86579a49399e0" category="cell">동일한 홈 포트를 사용합니다</block>
+  <block id="ed8c1f612253f0c38c2a68c1be34ff71" category="inline-xref">하위 단계 b</block>
+  <block id="27efb084ea8cfb0b1acbce0b33637bf2" category="cell"><block ref="310c42a30486c061e617f12669b1cb31" category="inline-xref-macro-rx"></block></block>
+  <block id="667c8b04e1c765d2ac10d6029d6c4a67" category="cell">다른 홈 포트를 사용합니다</block>
+  <block id="97508d4e4a3b7631b6c05c3f42e9f3c7" category="cell"><block ref="177a8a15f5f4315b71d3ece7c721a178" category="inline-xref-macro-rx"></block></block>
+  <block id="d19c71c5a36e79bee005548e97a3430a" category="list-text">[[controller_manual_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 클러스터 간 LIF를 수정합니다.</block>
+  <block id="ecc099ad90b879286453572c6448dca3" category="paragraph"><block ref="7d49fda2e15c7e56a195e4a13068da53" prefix="" category="inline-code"></block></block>
+  <block id="67feed2eb0a24db24a92109ddf08b1d3" category="list-text">모든 인터클러스터 LIF가 새 홈 포트에 설정되었는지 확인합니다.</block>
+  <block id="eceba4f3e0b4a9871c405b2a29588160" category="paragraph"><block ref="e4179081ff1589282042af635786a6a1" prefix="" category="inline-code"></block></block>
+  <block id="e053c6b6612e1badd81926ae9048a6d0" category="paragraph">명령 출력은 모든 인터클러스터 LIF가 각 홈 포트에 있어야 한다는 것을 나타내는 비워 두어야 합니다.</block>
+  <block id="424031e17e88451da4f8822abbe10ecc" category="list-text">홈 포트에 없는 LIF가 있는 경우 다음 명령을 사용하여 되돌립니다.</block>
+  <block id="85c3f52ae5c990518a32da157e1d43de" category="paragraph"><block ref="7f926cf3edf705b92de0cde858fac3c8" prefix="" category="inline-code"></block></block>
+  <block id="39b8c0f5fb5a1532d766cc2a0500ae92" category="paragraph">홈 포트에 있지 않은 각 인터클러스터 LIF에 대해 명령을 반복하십시오.</block>
+  <block id="270f1324a7b7f1a7e5f85816e9ee67a1" category="list-text">[[controller_manual_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈 모두에서 동일한 공통 포트에 할당합니다.</block>
+  <block id="fc655e61a175b85fccd1c37c00f3ccaa" category="cell"><block ref="ea90f75ed68d4ddf4266e92157cc0fae" category="inline-xref-macro-rx"></block></block>
+  <block id="b0b6d9c342452ad19a9b24e1caf2ff35" category="cell"><block ref="e7896f2437c8c50a74bfea383fc26eb3" category="inline-xref-macro-rx"></block></block>
+  <block id="3872acc735c86484cf5289e6f36d9d09" category="list-text">[[controller_replace_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 인터클러스터 LIF를 수정합니다.</block>
+  <block id="bd14e125f8f9035fe1f7a46be559035d" category="list-text">[[controller_replace_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈에서 모두 동일한 공통 포트에 할당합니다.</block>
 </blocks>

@@ -105,4 +105,4 @@ AFF A70, AFF A90 또는 AFF A1K 시스템을 Cisco 3232C 또는 9336C 스위치�
 
 NOTE: 이 표의 시스템에는 ONTAP 9.15.1 이상이 필요합니다.
 
-image::../media/mcc_ip_cabling_a90_a70_a1k_cisco_3232C_or_9336c_switch.png[에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다]
+image:../media/mcc-ip-cabling-a90-a70-a1k-cisco-3232C-or-9336c-switch.png["에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다"]

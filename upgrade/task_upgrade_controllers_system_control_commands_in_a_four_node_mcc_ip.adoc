@@ -358,7 +358,57 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 +
 부트 ONTAP
 
-. 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새로운 컨트롤러 모듈 모두에서 동일한 공통 포트에 할당합니다.
+. 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용하도록 이전 컨트롤러의 인터클러스터 LIF를 수정합니다.
++
+
+NOTE: 이 단계는 성공적인 업그레이드를 위해 필요합니다.
+
++
+이전 컨트롤러의 인터클러스터 LIF는 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용해야 합니다. 예를 들어, AFF A90 컨트롤러로 업그레이드할 때 HA 인터커넥트 포트는 e1A와 e7a이고, MetroCluster IP DR 인터커넥트 포트는 e2b와 e3b입니다. 이전 컨트롤러가 포트 E1A, e7a, e2b 또는 e3b에서 호스팅되는 경우 인터클러스터 LIF를 이동해야 합니다.
+
++
+새 노드에서의 포트 분배 및 할당은 를 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]참조하십시오.
+
++
+.. 이전 컨트롤러에서 인터클러스터 LIF를 확인하십시오.
++
+`network interface show  -role intercluster`
+
++
+이전 컨트롤러의 인터클러스터 LIF가 새 컨트롤러의 MetroCluster IP DR 인터커넥트에 사용되는 포트와 동일한 포트를 사용하는지 여부에 따라 다음 작업 중 하나를 수행합니다.
+
++
+[cols="2*"]
+|===
+| 클러스터 간 LIF가 필요한 경우... | 이동... 
+
+
+| 동일한 홈 포트를 사용합니다 | <<controller_replace_upgrade_prepare_network_ports_2b,하위 단계 b>> 
+
+
+| 다른 홈 포트를 사용합니다 | <<controller_replace_upgrade_prepare_network_ports_3,3단계>> 
+|===
+.. [[controller_replace_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 인터클러스터 LIF를 수정합니다.
++
+`network interface modify -vserver <vserver> -lif <intercluster_lif> -home-port <port-not-used-for-ha-interconnect-or-mcc-ip-dr-interconnect-on-new-nodes>`
+
+.. 모든 인터클러스터 LIF가 새 홈 포트에 설정되었는지 확인합니다.
++
+`network interface show -role intercluster -is-home  false`
+
++
+명령 출력은 모든 인터클러스터 LIF가 각 홈 포트에 있어야 한다는 것을 나타내는 비워 두어야 합니다.
+
+.. 홈 포트에 없는 LIF가 있는 경우 다음 명령을 사용하여 되돌립니다.
++
+`network interface revert -lif <intercluster_lif>`
+
++
+홈 포트에 있지 않은 각 인터클러스터 LIF에 대해 명령을 반복하십시오.
+
+
+
+. [[controller_replace_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈에서 모두 동일한 공통 포트에 할당합니다.
 +
 .. LIF 표시:
 +
