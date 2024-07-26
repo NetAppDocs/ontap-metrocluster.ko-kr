@@ -2782,8 +2782,6 @@
   <block id="0f0db6d55e9bbb84af3413a7e8b1da70" category="list-text">구성 및 스위치 모델에 대한 표를 사용하여 FC-VI 포트 및 HBA 포트에 케이블을 연결합니다.</block>
   <block id="9eecb7c801dc57fbe6e2bb323f2ab061" category="inline-link-macro">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</block>
   <block id="0984e83667fc512bfc1adc48478ded1c" category="list-text"><block ref="0984e83667fc512bfc1adc48478ded1c" category="inline-link-macro-rx"></block></block>
-  <block id="b061acf9e57b52553e1039e7a5289a52" category="inline-link-macro">ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당</block>
-  <block id="314a33d74f4f0a6e853b23a18224e122" category="list-text"><block ref="314a33d74f4f0a6e853b23a18224e122" category="inline-link-macro-rx"></block></block>
   <block id="8db12a7f598538a4f3273d8beec78fa9" category="inline-link-macro">이니시에이터 포트 2개를 사용하는 시스템의 포트 할당</block>
   <block id="2f311d11b06ed91a28142e5c25bbdfb5" category="list-text"><block ref="2f311d11b06ed91a28142e5c25bbdfb5" category="inline-link-macro-rx"></block></block>
   <block id="5a98349a16ef99aa33ddb5a7e72e858f" category="paragraph">다음 예에서는 시스템 SVM "cluster01"의 페일오버 그룹 "intercluster01"에 포트 "e0e" 및 "e0f"를 할당합니다.</block>
@@ -4868,8 +4866,6 @@
   <block id="5133a626e09df7fc69c5d34ca2b588f5" category="paragraph">다음 명령을 실행하면 22개의 드라이브가 할당됩니다.</block>
   <block id="b04cfca24a6159d3846c140fb98e810d" category="summary">재해 사이트에서 FC 스위치를 교체한 경우 공급업체별 절차를 사용하여 구성해야 합니다.</block>
   <block id="6fc1ae41ce34d8dbe0674eae90086def" category="paragraph">재해 사이트에서 FC 스위치를 교체한 경우 공급업체별 절차를 사용하여 구성해야 합니다. 하나의 스위치를 구성하고 정상 작동하는 사이트의 스토리지 액세스가 영향을 받지 않는지 확인한 다음 두 번째 스위치를 구성해야 합니다.</block>
-  <block id="914dab9fff1417a4f447a3feac720983" category="inline-link-macro">9.0을 사용하는 경우 FC 스위치에 대한 포트 할당</block>
-  <block id="6c720f524797154130f39ef291f10146" category="paragraph"><block ref="6c720f524797154130f39ef291f10146" category="inline-link-macro-rx"></block></block>
   <block id="ebfcfc0cdc71cf93176408da80c45caa" category="section-title">사이트 재해 후 Brocade FC 스위치 구성</block>
   <block id="550c787ba4aa16cc8545b89a8c4aaf2f" category="paragraph">이 Brocade 관련 절차를 사용하여 교체 스위치를 구성하고 ISL 포트를 활성화해야 합니다.</block>
   <block id="9cd24631c8e8a5c743856849d29d48fd" category="paragraph">이 절차의 예는 다음과 같은 가정을 기반으로 합니다.</block>
@@ -8592,8 +8588,6 @@
   <block id="6ccf095006c1d816e28e52dc0e9bd0f6" category="paragraph">사용 중인 ONTAP 버전에 대한 포트 할당을 참조하십시오.</block>
   <block id="62610238a732474c3b050bbde67a6d1e" category="list-text">파트너 사이트의 브리지에서 이전 단계를 반복합니다.</block>
   <block id="fb60c06f4120cd75fc9ac39720fd32d8" category="paragraph"><block ref="fb60c06f4120cd75fc9ac39720fd32d8" category="inline-link-macro-rx"></block></block>
-  <block id="249227e2d8f8114c9bdc6db2520e9445" category="paragraph"><block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block></block>
-  <block id="979780f3d72e1e779c1418145ea73bcb" category="paragraph">FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 포트 할당은 ONTAP 9.0 이상 버전의 ONTAP에서 다릅니다.</block>
   <block id="9f39b4378a3d44f4f0a500c832ddf6b3" category="list-text">"unsecurebridge" 명령을 사용하여 이더넷 포트를 다시 활성화할 수 있습니다.</block>
   <block id="92ce9352258f4fd51a93e19057e163df" category="list-text">ONTAP 9.7 및 이전 버전에서는 ATTO FiberBridge에서 'ecurebridge' 명령을 실행하면 파트너 클러스터의 브리지 상태가 올바르게 업데이트되지 않을 수 있습니다. 이 경우 협력클러스터에서 'ecurebridge' 명령어를 실행한다.</block>
   <block id="896822419043c00441403336af7e4108" category="paragraph">'cluster_a&gt; storage bridge run-cli-bridge_a_1-command securebridge</block>
@@ -10720,7 +10714,6 @@
   <block id="9e22e5887d35d0e7eed7b0656d5e7bfa" category="sidebar">MetroCluster 구성을 모니터링합니다</block>
   <block id="6e1b901662872166ef0e661d1481924c" category="sidebar">2노드 MetroCluster FC 구성을 4노드 구성으로 확장합니다</block>
   <block id="fbda6a351e5c32b65583383006360afa" category="sidebar">MetroCluster 구성의 상태를 확인합니다</block>
-  <block id="c3f3140743256f4b3b23e2414dda5987" category="sidebar">MetroCluster 구성에 noxdes를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="b8e92406eb7a6fca550b1d6570cceffc" category="sidebar">패브릭 연결 MetroCluster 구성에 컨트롤러 모듈을 추가할 때 새 컨트롤러 포트의 영역입니다</block>
   <block id="5718f7671797ad3f1f095d0aebd2f2df" category="sidebar">각 클러스터에 새 컨트롤러 모듈을 추가합니다</block>
   <block id="b29a91a2b18a5fff75e62a034da2c030" category="sidebar">컨트롤러 모듈의 구성을 지웁니다</block>
@@ -11257,7 +11250,6 @@
   <block id="b0f85a0199d1b83b2b8a32a5f34bdd8d" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="4da30401760153ceb5481ac559dbe601" category="inline-link-macro-rx"></block>.</block>
   <block id="f44903a02a813582e3877d0c017bdfcb" category="paragraph"><block ref="f44903a02a813582e3877d0c017bdfcb" category="inline-link-macro-rx"></block></block>
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
-  <block id="83e579bcd33d25206730a931a64a84a1" category="paragraph">구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 <block ref="249227e2d8f8114c9bdc6db2520e9445" category="inline-link-macro-rx"></block>.</block>
   <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
   <block id="9e9a93655547f7858baef5194a909e2c" category="cell">Cisco 3132Q-V, 3232C 또는 9336C-FX2</block>
@@ -11280,7 +11272,6 @@
   <block id="dc58a5917fbb05da0e560a4cbcb1f72c" category="list-text">MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인 및 정책을 제거합니다.</block>
   <block id="c988e8ca5d6e6bb62b67254721e13586" category="paragraph">MACsec keychain keychain-name policy-name 없음</block>
   <block id="8d0f34f00997c62960ad51adbe64457d" category="list-text"><block ref="8d0f34f00997c62960ad51adbe64457d" category="inline-link-rx"></block></block>
-  <block id="2687b88898e3642fcc69aaef6be8e73c" category="paragraph">MetroCluster IP 구성으로 전환할 때는 지원되는 플랫폼 모델을 조합하여 사용해야 합니다. 또한 MetroCluster IP 플랫폼이 MetroCluster FC 구성에서 MetroCluster IP 구성으로 전환하려는 로드에 적합한 크기인지 확인해야 합니다.</block>
   <block id="d9599a6265b31306f6c79d760a47a9aa" category="paragraph">다음 표에서는 지원되는 플랫폼 조합을 보여 줍니다. 색이 지정된 표 셀에 표시된 대로 왼쪽 열의 플랫폼에서 오른쪽 열의 지원되는 대로 나열된 플랫폼으로 전환할 수 있습니다.</block>
   <block id="d84d4239724af43bfdc3b74836c335fe" category="paragraph">구성이 완료되면 v0a(v0b 등)가 지속적으로 연결을 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(파손된 구성이 운영 중단 후에만 표시됨).</block>
   <block id="222561f9cba21343a81a9b2ee1890d68" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block></block>
@@ -12369,18 +12360,11 @@
   <block id="91d96627fcbee13a9d474587060d13f8" category="paragraph">AFF C250 및 AFF A250 시스템에 대한 동일한 디스크 할당 지침 및 규칙이 FAS500f 시스템에 적용됩니다. FAS500f 시스템에 디스크를 할당하는 방법은 을 참조하십시오 <block ref="62481755a241b3efc5c68e4e7dd00bb5" category="inline-xref-macro-rx"></block> 표.</block>
   <block id="d39fc122b5bc72857d3bc1cb28b2528b" category="summary">FC 스위치의 공급업체를 변경하거나(Cisco에서 Brocade로, 또는 그 반대) 스위치 모델을 변경하거나, 둘 다 변경해야 할 수 있습니다.</block>
   <block id="dc97a56f45d09eb47627be2f51eaacac" category="doc">FC 스위치의 공급업체 또는 모델을 변경합니다</block>
-  <block id="588f711b0852bf6ebac518663e6bf15c" category="paragraph">FC 스위치의 공급업체를 Cisco에서 Brocade로 변경하거나 그 반대로 변경하거나 스위치 모델을 변경하거나, 두 가지를 모두 변경해야 할 수 있습니다.</block>
   <block id="34b3750efa9ad33069e758e1d20702b2" category="list-text">이 절차는 NetApp 검증 스위치를 사용하는 경우에 적용됩니다.</block>
   <block id="038dcdf6b816f0dea514171c0fbec340" category="list-text">구성의 두 Fabric에 대해 한 번에 하나의 Fabric에 대해 이 절차의 단계를 수행해야 합니다.</block>
   <block id="12e792350f2f2a26f26efec238939f8c" category="list-text">[[STEP_1, 1단계]] 구성의 상태를 확인합니다.</block>
-  <block id="2aadc0e8757be310d2a25c139de10d8a" category="paragraph">의 단계를 따릅니다 <block ref="71433a7a2e7b6001aee2288bc93568fd" category="inline-link-macro-rx"></block>.</block>
-  <block id="4b0b73acfce5119dcc60f2f7b6dac2c4" category="list-text">다음 순서로 연결부를 분리하여 이전 스위치에서 연결을 끊습니다.</block>
   <block id="66700e9b823419320bcf568412b3c8f5" category="list-text">MetroCluster ISL을 분리합니다.</block>
-  <block id="c4f64a0c7e0a39b3f68c6c76b119f9b7" category="list-text">이전 스위치의 전원을 끄고 케이블을 제거한 다음 기존 스위치를 새 스위치로 물리적으로 교체합니다.</block>
   <block id="39c4de53c442cd522fc67edfc4cc59c8" category="list-text">다음과 같은 순서로 스위치를 케이블로 연결합니다.</block>
-  <block id="0f192214376d7c0e958d509a331b7c82" category="inline-link-macro">MetroCluster 구성 요소를 설치하고 케이블을 연결합니다</block>
-  <block id="ca71188f7f4bbd1ad7fb2b3ac50145fa" category="paragraph">의 단계를 수행해야 합니다 <block ref="f09498c56b761bf8471aa49436b9c6b5" category="inline-link-macro-rx"></block>.</block>
-  <block id="d7c72b026579f98d6108723379befa5c" category="list-text">스위치 전원을 켭니다.</block>
   <block id="4c49ac5fd96c13efa7ddbce7575dd9e4" category="list-text">MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <block ref="70a312d559ac5bac88a63c5c7c2e52d3" category="inline-xref-macro-rx"></block>.</block>
   <block id="b81576b1956a4793e86cfb62d8774b3f" category="list-text">구성의 두 번째 Fabric에 대해 1단계부터 7단계까지 반복합니다.</block>
   <block id="899dd799064eace0f16728f2bf38c96b" category="paragraph">RCF(Reference Configuration Files)를 사용할 수 있도록 FC 스위치 포트 사용량은 설명서에 설명된 사용량과 일치해야 합니다.</block>
@@ -12691,8 +12675,6 @@
   <block id="8c8b7a01f7186e24025ef8e89ee4deb8" category="admonition">하나 이상의 이더넷에 연결된 NVMe 쉘프가 필요합니다</block>
   <block id="ad87745a64591ff679affa48fe663b39" category="paragraph">9336C-FX2 – SAS 및 이더넷 스토리지</block>
   <block id="462b36259caf681453d6d7b142217c3d" category="paragraph"><block ref="419f67b8b89585d3be41af97b158dd9e" prefix="" category="inline-code"></block></block>
-  <block id="3a9ef4ec11f1ec3fddae2461f053c31a" category="list-text">MetroCluster FC 인터페이스를 분리합니다.</block>
-  <block id="439c5d8621fe2376ba1455a5e5502727" category="list-text">MetroCluster FC 인터페이스를 케이블로 연결합니다.</block>
   <block id="6a62571ce4203a1671da10509f3013e0" category="cell">AFF A900, ASA A900 및 FAS9500</block>
   <block id="d7b1c9d4f2a52b2d3648ce28baa0dd5c" category="paragraph">AFF A800, AFF C800, ASA A800 및 ASA C800입니다</block>
   <block id="2bba389392c3b789eaa9d1c8c6fc87d2" category="paragraph">FAS8300, AFF A400, ASA A400, ASA C400 및 AFF C400</block>
@@ -12876,7 +12858,6 @@
   <block id="a05b3cdfc5cc23ee6b2d90f33be54635" category="admonition">일부 정책 맵은 MetroCluster 인터페이스를 연결하는 스위치 포트와 MetroCluster 트래픽을 전달하는 ISL에 대해 동일합니다. 이러한 두 포트 사용에 대해 동일한 정책 맵을 사용할 수 있습니다.</block>
   <block id="80d1269e99768d5e883ffa70dd8f6aeb" category="summary">요구 사항에 따라 공유 계층 2 또는 계층 3 네트워크를 사용하여 MetroCluster를 배포할 수 있습니다.</block>
   <block id="1c46b7bbd317f603895892a646ef8b2d" category="doc">공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항</block>
-  <block id="2ff08728ea0124138aa06bf0f8c8ea31" category="paragraph">ONTAP 9.6부터 지원되는 Cisco 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL(Inter-Switch Link)에 대해 기존 네트워크를 공유할 수 있습니다. 이 토폴로지는 _shared layer 2 networks_라고 합니다.</block>
   <block id="cc723d7803ba423b47b353cc9dfa54ff" category="paragraph">ONTAP 9.9.1부터 MetroCluster IP 구성은 IP 라우팅(계층 3) 백엔드 연결로 구현할 수 있습니다. 이 토폴로지는 _shared layer 3 networks_라고 합니다.</block>
   <block id="80a482ff4ac144c8d8c1e668a348dd67" category="list-text">네트워크 용량이 충분하고 ISL 크기가 구성에 적합한지 확인해야 합니다. MetroCluster 사이트 간 데이터 복제에는 짧은 지연 시간이 매우 중요합니다. 이러한 연결에서 지연 문제가 클라이언트 입출력에 영향을 줄 수 있습니다</block>
   <block id="37eee3b9ac9781ca0484f54aeef70602" category="list-text">MetroCluster 백엔드 스위치에 대한 모든 참조는 NetApp 검증 스위치 또는 MetroCluster 규정을 준수하는 스위치를 지칭합니다. 을 참조하십시오 <block ref="16daa185b92984fefaae8aa04a4cd437" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
@@ -14008,8 +13989,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="df0de59a7d82bfac9aeb4c3a4d0ff3d5" category="paragraph"><block ref="593e2b872fdc863863b3175980b503ee" prefix="" category="inline-code"></block></block>
   <block id="ce4d776f761276cab4718597907e9b25" category="paragraph"><block ref="ce4d776f761276cab4718597907e9b25" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4bbabfb39bdaa67802b5f83f085672a9" category="image-alt">에는 IP에서 FC로의 전환을 위해 지원되는 플랫폼 조합이 나와 있습니다</block>
-  <block id="32571d30b5ea67a42d51725233459057" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.13.1 이상이 필요합니다.</block>
-  <block id="c6a7b9b858b4fca6a11eb81808875db0" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다. 이 플랫폼 조합을 사용하려면 ONTAP 9.11.1 이상이 필요합니다.</block>
   <block id="5a4027b63d6ed294211392e256667c2c" category="list-text">새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용하도록 이전 컨트롤러의 인터클러스터 LIF를 수정합니다.</block>
   <block id="931a74601edef3262a75c3d8d8e6acda" category="admonition">이 단계는 성공적인 업그레이드를 위해 필요합니다.</block>
   <block id="f7f8cd16da4423b24e25a4d21cb4bc83" category="paragraph">이전 컨트롤러의 인터클러스터 LIF는 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용해야 합니다. 예를 들어, AFF A90 컨트롤러로 업그레이드할 때 HA 인터커넥트 포트는 e1A와 e7a이고, MetroCluster IP DR 인터커넥트 포트는 e2b와 e3b입니다. 이전 컨트롤러가 포트 E1A, e7a, e2b 또는 e3b에서 호스팅되는 경우 인터클러스터 LIF를 이동해야 합니다.</block>
@@ -14036,4 +14015,28 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b0b6d9c342452ad19a9b24e1caf2ff35" category="cell"><block ref="e7896f2437c8c50a74bfea383fc26eb3" category="inline-xref-macro-rx"></block></block>
   <block id="3872acc735c86484cf5289e6f36d9d09" category="list-text">[[controller_replace_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 인터클러스터 LIF를 수정합니다.</block>
   <block id="bd14e125f8f9035fe1f7a46be559035d" category="list-text">[[controller_replace_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈에서 모두 동일한 공통 포트에 할당합니다.</block>
+  <block id="bf8ab32fb11672e6514cae71dc5fafe7" category="paragraph">ONTAP 9.6부터 지원되는 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL(Inter-Switch Link)을 위해 기존 네트워크를 공유할 수 있습니다. 이 토폴로지는 _shared layer 2 networks_라고 합니다.</block>
+  <block id="ecf6e6f3fcedd63b625249365c65593c" category="list-text">일부 네트워크 토폴로지에서는 일부 기능이 지원되지 않습니다.</block>
+  <block id="8358ac5f612a66f1c1de4d949b9a86ae" category="doc">FC 스위치의 공급업체 또는 모델을 변경합니다</block>
+  <block id="52fe3712857160698c1b014e83579ba9" category="paragraph">FC 스위치의 공급업체를 Cisco에서 Brocade로 변경하거나 그 반대로 변경하거나 스위치 모델을 변경하거나, 두 가지를 모두 변경해야 할 수 있습니다.</block>
+  <block id="32e3da7a69b04d14731b2ee761e658ba" category="list-text">설치하기 전에 새 스위치를 구성하십시오.</block>
+  <block id="26f5dee585e3373bb2d4d532d8840b7a" category="paragraph">의 단계를 <block ref="8891b6de7b2070c584bdeb67b522b51b" category="inline-link-macro-rx"></block>따릅니다.</block>
+  <block id="da05a72c6769f77035f88e9c4a38fa5f" category="list-text">다음 순서로 연결부를 분리하여 이전 스위치에서 연결을 끊습니다.</block>
+  <block id="02ee3aa1129af6cfff90a9db0232239e" category="list-text">MetroCluster FC 및 FCVI 인터페이스를 분리합니다.</block>
+  <block id="f4682cedd049931c51d74f398ef3fb36" category="list-text">ATTO FiberBridge 브리지를 분리합니다.</block>
+  <block id="450cb91595a8d54efc773a3e450fd1f3" category="list-text">이전 스위치의 전원을 끄고 케이블을 제거한 다음 기존 스위치를 새 스위치로 물리적으로 교체합니다.</block>
+  <block id="a139b1c04214aec0693f828d23631fcf" category="paragraph">의 단계를 수행해야 <block ref="37a983721e8c37719820fe5091c30d35" category="inline-link-macro-rx"></block>합니다.</block>
+  <block id="0695aadd5e22ca576036ee74e37a609e" category="list-text">ATTO FiberBridge 브리지를 케이블로 연결합니다.</block>
+  <block id="bc1e1a74eeb5d30d0aec52f0e7d3fc2c" category="list-text">MetroCluster FC 및 FCVI 인터페이스에 케이블을 연결합니다.</block>
+  <block id="0498d59ca3d1dcff64193b28d0aad43b" category="list-text">스위치 전원을 켭니다.</block>
+  <block id="7e78f2c6ef0bb1c644bf13957f799b3e" category="paragraph">MetroCluster IP 구성으로 전환할 때는 지원되는 플랫폼 모델을 조합하여 사용해야 합니다.</block>
+  <block id="4c3904f4170d85c115c47ba3f7c7991f" category="paragraph">또한 MetroCluster IP 플랫폼이 MetroCluster FC 구성에서 MetroCluster IP 구성으로 전환하려는 로드에 적합한 크기인지 확인해야 합니다.</block>
+  <block id="b58285eb9b24d9fe796b9063f265bfb5" category="paragraph-title">지원되는 AFF 및 FAS 전환 조합</block>
+  <block id="c1e51816977e0a0a7222c23da2cc2cb9" category="list-text">참고 1: 이 플랫폼 조합에는 ONTAP 9.11.1 이상이 필요합니다.</block>
+  <block id="234207cc1f3002485022da1892b4559b" category="list-text">참고 2: FC 노드의 로컬 클러스터 인터페이스를 위해 40GbE 인터페이스가 있어야 합니다.</block>
+  <block id="6ae32e231af4316f91162f3b9a761e43" category="list-text">참고 3: FC 노드의 로컬 클러스터 인터페이스를 위해 100GbE 인터페이스가 있어야 합니다.</block>
+  <block id="2e16237b0ca66b75b7c3d7fdd40e4d39" category="paragraph-title">지원되는 ASA 전환 플랫폼 조합</block>
+  <block id="5feb826151198d290926a00c8f0166bd" category="paragraph">다음 표에는 ASA 시스템에서 지원되는 플랫폼 조합이 나와 있습니다.</block>
+  <block id="26f5174a535725c2475715c5b1747824" category="cell">대상 MetroCluster IP 플랫폼</block>
+  <block id="315289188a5b2b11bb8fe0c80160e8d4" category="sidebar">노드를 MetroCluster 구성에 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
 </blocks>

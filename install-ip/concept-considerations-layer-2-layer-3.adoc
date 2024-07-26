@@ -11,12 +11,13 @@ summary: 요구 사항에 따라 공유 계층 2 또는 계층 3 네트워크를
 [role="lead"]
 요구 사항에 따라 공유 계층 2 또는 계층 3 네트워크를 사용하여 MetroCluster를 배포할 수 있습니다.
 
-ONTAP 9.6부터 지원되는 Cisco 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL(Inter-Switch Link)에 대해 기존 네트워크를 공유할 수 있습니다. 이 토폴로지는 _shared layer 2 networks_라고 합니다.
+ONTAP 9.6부터 지원되는 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL(Inter-Switch Link)을 위해 기존 네트워크를 공유할 수 있습니다. 이 토폴로지는 _shared layer 2 networks_라고 합니다.
 
 ONTAP 9.9.1부터 MetroCluster IP 구성은 IP 라우팅(계층 3) 백엔드 연결로 구현할 수 있습니다. 이 토폴로지는 _shared layer 3 networks_라고 합니다.
 
 [NOTE]
 ====
+* 일부 네트워크 토폴로지에서는 일부 기능이 지원되지 않습니다.
 * 네트워크 용량이 충분하고 ISL 크기가 구성에 적합한지 확인해야 합니다. MetroCluster 사이트 간 데이터 복제에는 짧은 지연 시간이 매우 중요합니다. 이러한 연결에서 지연 문제가 클라이언트 입출력에 영향을 줄 수 있습니다
 * MetroCluster 백엔드 스위치에 대한 모든 참조는 NetApp 검증 스위치 또는 MetroCluster 규정을 준수하는 스위치를 지칭합니다. 을 참조하십시오 link:mcc-compliant-netapp-validated-switches.html["NetApp의 검증된 MetroCluster 호환 스위치"] 를 참조하십시오.
 

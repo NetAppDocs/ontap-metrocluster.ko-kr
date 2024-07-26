@@ -53,8 +53,6 @@ Group Cluster Node           State          Mirroring Mode
 ----
 cluster_A::> metrocluster check run
 
-Last Checked On: 10/1/2014 16:03:37
-
 Component           Result
 ------------------- ---------
 nodes               ok
@@ -69,39 +67,26 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 .. '* 시스템 상태 경고 표시*'라는 상태 경고가 없는지 확인하십시오
 
 
-. 설치하기 전에 새 스위치를 구성합니다.
+. 설치하기 전에 새 스위치를 구성하십시오.
 +
-의 단계를 따릅니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_reset_the_brocade_fc_switch_to_factory_defaults.html["FC 스위치를 구성합니다"].
+의 단계를 link:../install-fc/concept-configure-fc-switches.html["FC 스위치를 구성합니다"]따릅니다.
 
 . 다음 순서로 연결부를 분리하여 이전 스위치에서 연결을 끊습니다.
 +
-.. 로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:
-+
-... 로컬 클러스터 인터페이스를 분리합니다
-... 로컬 클러스터 ISL을 분리합니다
-
-
-.. MetroCluster FC 인터페이스를 분리합니다.
+.. MetroCluster FC 및 FCVI 인터페이스를 분리합니다.
+.. ATTO FiberBridge 브리지를 분리합니다.
 .. MetroCluster ISL을 분리합니다.
 
 
 . 이전 스위치의 전원을 끄고 케이블을 제거한 다음 기존 스위치를 새 스위치로 물리적으로 교체합니다.
 . 다음과 같은 순서로 스위치를 케이블로 연결합니다.
 +
-의 단계를 수행해야 합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_rack_the_hardware_components_mcc_fabric_and_ip.html["MetroCluster 구성 요소를 설치하고 케이블을 연결합니다"].
+의 단계를 수행해야 link:../install-fc/task_configure_the_mcc_hardware_components_fabric.html["패브릭 연결 MetroCluster 구성 케이블링"]합니다.
 
 +
 .. 원격 사이트에 ISL 케이블 연결
-.. MetroCluster FC 인터페이스를 케이블로 연결합니다.
-.. 로컬 클러스터 인터페이스에 케이블을 연결합니다.
-+
-로컬 클러스터 인터페이스가 스위치에 연결되어 있는 경우:
-
-+
-... 로컬 클러스터 인터페이스에 케이블을 연결합니다.
-... 로컬 클러스터 ISL 케이블 연결
-
-
+.. ATTO FiberBridge 브리지를 케이블로 연결합니다.
+.. MetroCluster FC 및 FCVI 인터페이스에 케이블을 연결합니다.
 
 
 . 스위치 전원을 켭니다.

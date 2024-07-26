@@ -38,7 +38,7 @@ entries:
     url: "/upgrade/task_expand_a_two_node_mcc_fc_configuration_to_a_four_node_fc_configuration_supertask.html"
   - title: MetroCluster 구성의 상태를 확인합니다
     url: "/upgrade/task_verify_the_state_of_the_mcc_configuration_mcc_expansion.html"
-  - title: MetroCluster 구성에 noxdes를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+  - title: 노드를 MetroCluster 구성에 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
     url: "/upgrade/task_send_a_custom_autosupport_message_before_add_nodes_to_the_mcc_configuration_2_node_to_4_node.html"
   - title: 패브릭 연결 MetroCluster 구성에 컨트롤러 모듈을 추가할 때 새 컨트롤러 포트의 영역입니다
     url: "/upgrade/task_zone_for_the_new_controller_ports_in_a_fabric_attached_mcc_configuration_four_node_expansion.html"

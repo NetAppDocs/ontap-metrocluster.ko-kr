@@ -18,7 +18,6 @@ summary: 어레이 LUN을 사용하여 8노드 패브릭 연결 MetroCluster 구
 * MetroCluster 구성에서 스토리지 LUN 외에 디스크를 사용하려는 경우 디스크 구성에 지정된 HBA 포트와 스위치 포트를 사용해야 합니다.
 +
 ** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
-** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"]
 
 
 

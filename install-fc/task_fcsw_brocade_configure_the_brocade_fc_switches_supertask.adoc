@@ -783,8 +783,6 @@ xWDM/TDM 장비로 작업할 때 "portCfgLongDistance" 명령을 실행할 때 L
 
 다음 표에서는 ONTAP 9.1 또는 9.2를 실행하는 구성에서 여러 스위치에 대한 ISL 포트와 다양한 ISL 수를 보여 줍니다. 이 섹션에 나와 있는 예는 Brocade 6505 스위치입니다. 스위치 유형에 적용되는 포트를 사용하도록 예제를 수정해야 합니다.
 
-구성에서 ONTAP 9.0 이하를 실행 중인 경우 를 참조하십시오 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_0.html["ONTAP 9.0을 사용하는 경우 FC 스위치에 대한 포트 할당"].
-
 구성에 필요한 ISL 수를 사용해야 합니다.
 
 |===
