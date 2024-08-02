@@ -59,8 +59,9 @@ entries:
     - title: ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당
       url: "/install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html"
     - title: AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당
-      url: "/install-fc/concept_AFF_A900_port_assign_fc_switches_ontap_9_1.html"
       entries:
+      - title: AFF A900 또는 FAS9500 시스템 사용 시 FC 스위치에 대한 포트 할당
+        url: "/install-fc/concept_AFF_A900_port_assign_fc_switches_ontap_9_1.html"
       - title: ONTAP 9.10.1 이상을 실행하는 컨트롤러에 대한 AFF A900 Brocade 포트 사용
         url: "/install-fc/concept_AFF_A900_brocade_port_config.html"
       - title: ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Brocade 포트 사용량

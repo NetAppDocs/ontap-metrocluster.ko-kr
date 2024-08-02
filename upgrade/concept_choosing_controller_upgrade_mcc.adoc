@@ -23,14 +23,19 @@ summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다�
 
 == 컨트롤러 업그레이드를 지원했습니다
 
-아래 FC 또는 IP 표에서 현재 플랫폼을 선택합니다. 현재 플랫폼 행과 대상 플랫폼 열이 교차하는 부분이 비어 있으면 업그레이드가 지원되지 않습니다.
-
-
-NOTE: 4노드 MetroCluster IP 구성에서 명령을 사용하여 지원되는 업그레이드는 `system controller replace` 의 표를 참조하십시오 link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_ip.html["스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)으로 컨트롤러 업그레이드"]
+지원되는 MetroCluster IP 및 FC 컨트롤러 업그레이드 조합에 대해 알아보십시오.
 
 
 
-=== MetroCluster IP 컨트롤러 업그레이드가 지원됩니다
+=== "system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
+
+지원되는 플랫폼에 대해서는 의 표를 link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_ip.html["스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)으로 컨트롤러 업그레이드"] 참조하십시오.
+
+
+
+=== 기타 지원되는 모든 MetroCluster IP 컨트롤러 업그레이드
+
+이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.
 
 * 플랫폼이 나열되지 않은 경우 지원되는 컨트롤러 업그레이드 조합이 없습니다.
 * 컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 다음과 일치해야 합니다 *.
@@ -46,7 +51,7 @@ NOTE: 4노드 MetroCluster IP 구성에서 명령을 사용하여 지원되는 �
 
 
 .AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
-다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
+다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
 
 image::../media/metrocluster_ip_upgrade_so_sb_aff_fas.png[MetroCluster IP 업그레이드 So sb AFF FAS]
 
@@ -57,7 +62,7 @@ image::../media/metrocluster_ip_upgrade_so_sb_aff_fas.png[MetroCluster IP 업그
 
 
 .ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다
-다음 표는 MetroCluster IP 구성에서 ASA 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.
+다음 표는 MetroCluster IP 구성에서 ASA 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.
 
 image::../media/metrocluster_ip_upgrade_so_sb_asa_fas.png[MetroCluster IP 업그레이드 So sb ASA FAS]
 
@@ -67,6 +72,8 @@ image::../media/metrocluster_ip_upgrade_so_sb_asa_fas.png[MetroCluster IP 업그
 
 
 === 지원되는 MetroCluster FC 컨트롤러 업그레이드
+
+이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.
 
 * 플랫폼이 나열되지 않은 경우 지원되는 컨트롤러 업그레이드 조합이 없습니다.
 * 컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 다음과 일치해야 합니다 *.

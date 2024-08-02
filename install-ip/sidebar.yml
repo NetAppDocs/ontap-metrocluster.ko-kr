@@ -26,16 +26,16 @@ entries:
       url: "/install-ip/concept-requirements-isls.html"
     - title: 공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항
       url: "/install-ip/concept-considerations-layer-2-layer-3.html"
-    - title: MetroCluster 규격 스위치를 사용할 때의 고려 사항
-      entries:
-      - title: MetroCluster 규정 준수 스위치의 요구사항 및 제한 사항
-        url: "/install-ip/concept-requirement-and-limitations-mcc-compliant-switches.html"
-      - title: MetroCluster 호환 스위치를 위한 네트워크 속도 및 스위치 포트 모드
-        url: "/install-ip/concept-network-speeds-and-switchport-modes.html"
-      - title: 스위치 포트 구성 예
-        url: "/install-ip/concept-configure-mcc-compliant-switches.html"
     - title: MetroCluster 네트워크 토폴로지의 예
       url: "/install-ip/concept-example-network-topologies.html"
+  - title: MetroCluster 규격 스위치를 사용할 때의 고려 사항
+    entries:
+    - title: MetroCluster 규정 준수 스위치의 요구사항 및 제한 사항
+      url: "/install-ip/concept-requirement-and-limitations-mcc-compliant-switches.html"
+    - title: MetroCluster 호환 스위치를 위한 네트워크 속도 및 스위치 포트 모드
+      url: "/install-ip/concept-network-speeds-and-switchport-modes.html"
+    - title: 스위치 포트 구성 예
+      url: "/install-ip/concept-configure-mcc-compliant-switches.html"
   - title: MetroCluster IP 구성의 미러링되지 않은 애그리게이트
     url: "/install-ip/concept_considerations_unmirrored_aggrs.html"
   - title: MetroCluster 사이트의 방화벽 사용

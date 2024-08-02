@@ -15,7 +15,9 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 
 
 
-== 지원되는 플랫폼 조합
+== "system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
+
+이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.
 
 업그레이드를 시작하기 전에 다음 고려 사항을 검토하여 구성이 지원되는지 확인하십시오.
 
@@ -33,7 +35,7 @@ summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 Met
 
 
 .AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
-다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
+다음 표는 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
 
 image::../media/mcc_ip_system_controller_replace_aff_fas.png[MCC IP 시스템 컨트롤러가 AFF FAS를 대체합니다]
 
@@ -812,8 +814,8 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_switch_config_broadcom.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#reset-the-nvidia-ip-sn2100-switch-to-factory-defaults["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . RCF 파일을 다운로드하고 설치합니다.
@@ -822,7 +824,7 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCF 파일을 다운로드하여 설치합니다"]
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
 ** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF 파일을 다운로드하고 설치합니다"]
 
 

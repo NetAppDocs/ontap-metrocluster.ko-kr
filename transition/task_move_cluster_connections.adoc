@@ -278,7 +278,7 @@ MetroCluster IP 노드가 지원하는 최신 펌웨어를 사용해야 합니�
 .. 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
 +
 *** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"] **
-*** link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_switch_config_broadcom.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+*** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 .. 스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.

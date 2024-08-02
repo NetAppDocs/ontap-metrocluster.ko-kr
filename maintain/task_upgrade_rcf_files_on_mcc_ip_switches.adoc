@@ -124,16 +124,16 @@ MetroCluster 운용사 show-job-id 38
 스위치 공급업체의 단계를 따르십시오.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#reset-the-nvidia-ip-sn2100-switch-to-factory-defaults["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . 스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.
 +
-** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom IP RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom IP RCF 파일을 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF 파일을 다운로드하고 설치합니다"]
 +
 
 NOTE: L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스위치의 ISL 포트를 조정해야 할 수 있습니다. 스위치 포트 모드가 '액세스'에서 '트렁크' 모드로 변경될 수 있습니다. 스위치 A_1과 B_1 사이의 네트워크 연결이 완전히 작동하고 네트워크가 정상 상태인 경우 두 번째 스위치 쌍(A_2, B_2)만 업그레이드를 진행하십시오.

@@ -13,20 +13,48 @@ summary: Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설�
 [role="lead"]
 Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설정을 구성해야 합니다.
 
+.이 작업에 대해
+* Tiebreaker 1.6은 SNMPv3만 지원합니다.
+* Tiebreaker 1.5 및 1.4가 SNMPv1 및 SNMPv3를 지원하지만 NetApp에서는 최적의 보안을 위해 SNMPv3를 구성할 것을 적극 권장합니다.
+
+
+.단계
 . Tiebreaker CLI를 사용합니다 `snmp config wizard` 명령을 사용하여 MetroCluster 구성을 추가합니다.
 +
 
 NOTE: 현재 하나의 SNMP 트랩 호스트만 지원됩니다.
 
 +
-다음 예에서는 IP 주소가 10.240.45.66이고 포트 번호가 162인 SNMP V3을 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.
+ `snmp config wizard`명령 응답은 실행 중인 Tiebreaker 버전에 따라 다릅니다.
 
 +
+[role="tabbed-block"]
+====
+.타이브레이커 1.6
+--
+다음 예에서는 트랩 메시지에 대한 IP 주소 192.0.2.255 및 포트 번호 162를 사용하여 SNMPv3를 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.
+
+
+NOTE: Tiebreaker 1.6은 SNMPv3만 지원합니다
+
+[listing]
+----
+NetApp MetroCluster Tiebreaker :> snmp config wizard
+Enter SNMP Host: 192.0.2.255
+Enter SNMP Port: 162
+Enter SNMP V3 Security Name: v3sec
+Enter SNMP V3 Authentication password:
+----
+--
+.타이브레이커 1.5 및 1.4
+--
+다음 예에서는 트랩 메시지에 대한 IP 주소 192.0.2.255 및 포트 번호 162를 사용하여 SNMPv3를 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.
+
 ....
 
 NetApp MetroCluster Tiebreaker :> snmp config wizard
 Enter SNMP Version[V1/V3]: v3
-Enter SNMP Host: 10.240.45.66
+Enter SNMP Host: 192.0.2.255
 Enter SNMP Port: 162
 Enter SNMP V3 Security Name: v3sec
 Enter SNMP V3 Authentication password:
@@ -34,10 +62,11 @@ Enter SNMP V3 Privacy password:
 Engine ID : 8000031504932eff571825192a6f1193b265e24593
 Successfully added SNMP properties to NetApp MetroCluster Tiebreaker software.
 ....
-+
 
-NOTE: SNMPv1이 안전하지 않으므로 SNMPv3을 구성해야 합니다. 기본 커뮤니티 문자열이 public으로 설정되어 있지 * 않은지 확인합니다.
+NOTE: SNMPv1이 안전하지 않으므로 SNMPv3을 구성해야 합니다. 기본 커뮤니티 문자열이 public으로 * Not * 설정되어 있는지 확인합니다.
 
+--
+====
 . SNMP 설정이 구성되었는지 확인합니다.
 +
 NMP 구성 테스트
@@ -49,7 +78,7 @@ NMP 구성 테스트
 ....
 
 NetApp MetroCluster Tiebreaker :> snmp config test
-Sending SNMP trap to localhost. Version : V1.
+Sending SNMP trap to localhost. Version : V3.
 Successfully sent SNMP trap for event TEST_SNMP_CONFIG
 NetApp MetroCluster Tiebreaker :>
 ....

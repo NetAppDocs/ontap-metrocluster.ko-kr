@@ -465,7 +465,6 @@
   <block id="1fc34dc1a2bf40981cbdbe67372e71b6" category="list-text">MetroCluster 구성에 케이블로 연결되어 있어야 합니다.</block>
   <block id="2dafecd33d1bcc030e5a4330614efcc0" category="list-text">서비스 프로세서를 구성하지 않아야 합니다.</block>
   <block id="54c72213164ddf62947d8c886cbf1580" category="inline-link-macro">새 컨트롤러 모듈을 Netbooting 합니다</block>
-  <block id="da6a152013b01d35131c7e6a0a834b28" category="paragraph">새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오 <block ref="3b790cf59184cbd534b9cbce1ed9244d" category="inline-link-macro-rx"></block>.</block>
   <block id="f82209ba761a7a3841706c46b4b7c662" category="paragraph">이 작업은 MetroCluster 구성의 두 클러스터 모두에서 수행해야 합니다.</block>
   <block id="6ac62fa13c69ad320702cd9a98f97b12" category="list-text">아직 전원을 공급하지 않은 경우 로컬 사이트에서 각 노드의 전원을 켜고 모든 노드가 완전히 부팅되도록 합니다.</block>
   <block id="c77851b696911673647cb7bed20ed179" category="paragraph">시스템이 유지보수 모드인 경우 유지보수 모드를 종료하려면 halt 명령을 실행한 다음 'boot_ONTAP' 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 들어가야 합니다.</block>
@@ -5242,8 +5241,6 @@
   <block id="12a839df1b665dc905f649011126b347" category="doc">재해 사이트의 풀 1 디스크에 대한 디스크 소유권 재할당(MetroCluster IP 구성)</block>
   <block id="e15b0161757a3ccf3600819bf65e09fa" category="paragraph">노드가 전환 모드에 있으므로 재해 사이트의 pool1에 있는 루트 애그리게이트를 포함하는 디스크만 이 작업에 재할당됩니다. 현재 이전 시스템 ID가 소유한 유일한 디스크입니다.</block>
   <block id="22916732ba49d4a12ff6d80e0cc481a4" category="paragraph">이 예시는 다음과 같은 가정을 합니다.</block>
-  <block id="20898dec082f98c2108752693993068d" category="inline-link-macro">교체 컨트롤러 모듈의 새 시스템 ID 확인</block>
-  <block id="5e1cb1cee330d4cf39f42acae38f029c" category="paragraph">이전 및 새 시스템 ID는 에서 식별되었습니다 <block ref="47d4637528cdda0f4f546dfe2a3e35e6" category="inline-link-macro-rx"></block>.</block>
   <block id="bee007a62c2d24423af8145fa5ac8988" category="list-text">유지보수 모드의 교체 노드에서 시스템이 ADP 및 ONTAP 버전으로 구성되었는지 여부에 따라 올바른 명령을 사용하여 루트 애그리게이트 디스크를 재할당합니다.</block>
   <block id="04a28b895155936f643b8081ddfbb3a4" category="paragraph">메시지가 표시되면 재할당을 진행할 수 있습니다.</block>
   <block id="3f1ca0ba3af1d2e7a950a549093a765c" category="cell">시스템에서 ADP를 사용하는 경우...</block>
@@ -8115,7 +8112,6 @@
   <block id="ffaeaa66271f98acd0156b9dadf03b5b" category="list-text"><block ref="ffaeaa66271f98acd0156b9dadf03b5b" category="inline-link-macro-rx"></block></block>
   <block id="1a031f58441757494134fdebb9c1beb1" category="list-text"><block ref="1a031f58441757494134fdebb9c1beb1" category="inline-link-macro-rx"></block></block>
   <block id="343c2d0dbf210b79686912b38bd4f45d" category="list-text"><block ref="680a4f630b21eab8e23842ce1e77c536" category="inline-link-macro-rx"></block> **</block>
-  <block id="d618e096c793dc69ae5eecca55aed391" category="list-text"><block ref="d618e096c793dc69ae5eecca55aed391" category="inline-link-macro-rx"></block></block>
   <block id="b9fc40955441f593ff27513c0973dab6" category="list-text">스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.</block>
   <block id="9ef17a3f10f59d77a32bb5649c8cc21a" category="list-text">스위치_A_1_IP에 그룹 A 포트를 다시 연결합니다.</block>
   <block id="ef76ba53937977597a1570cbdefcf95c" category="list-text">모든 클러스터 포트가 작동 중인지 확인합니다. 'network port show-ipSpace cluster'</block>
@@ -11587,8 +11583,6 @@
   <block id="ec8b479c503bdd6824b5e3505ef1d0df" category="paragraph">다음 예에서는 오프라인인 집계 aggr_data_A1을 보여 줍니다.</block>
   <block id="aa8cd184e817ada870c8b763be695d0b" category="paragraph">다음 예제는 삭제되는 집계 aggr_data_A1을 보여줍니다.</block>
   <block id="d2038b70348bcc50135596de145913db" category="admonition">스위치_A_1, 스위치_B_1, 스위치_A_2, 스위치_B_2 순서로 스위치를 업데이트합니다</block>
-  <block id="c1e630c896fe7378e2dd05cd5272a6ff" category="list-text"><block ref="c1e630c896fe7378e2dd05cd5272a6ff" category="inline-link-macro-rx"></block></block>
-  <block id="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="list-text"><block ref="e36e202b6cdca1dbc2cdea18cfdd7bdb" category="inline-link-macro-rx"></block></block>
   <block id="f6d453c97574893aee9bca0a4faee686" category="paragraph">'storage failover modify -node_node -name _ -enable false'</block>
   <block id="f91adcd268075ddcfabf631a5a33611e" category="list-text">각 데이터 애그리게이트를 오프라인 상태로 전환하고 삭제합니다.</block>
   <block id="d4fbfd12406441eb6b750cde2dcb9137" category="list-text">사이트 간 ISL(Inter-Switch Link)이 작동 중이고 포트 채널이 작동 중인지 확인합니다.</block>
@@ -11757,8 +11751,6 @@
   <block id="7aeedda5f35486a7239b2a68ae68fb9a" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택할 수 있습니다.</block>
   <block id="959c17d1eadff13225c68a5578c6da93" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
   <block id="789c52582d523f3977d636da81e92dc0" category="list-text">ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.</block>
-  <block id="310848f15048cc78b3cbee9c61235054" category="paragraph">아래 FC 또는 IP 표에서 현재 플랫폼을 선택합니다. 현재 플랫폼 행과 대상 플랫폼 열이 교차하는 부분이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
-  <block id="569cf9bf2c0f655af1cc3b1657f11706" category="section-title">MetroCluster IP 컨트롤러 업그레이드가 지원됩니다</block>
   <block id="871aaccc4c0a59b618736750595955e7" category="list-text">참고 1: 이 업그레이드의 경우 절차를 사용하십시오 <block ref="f668bd1de55e6e087edcf0e6120e96e3" category="inline-link-macro-rx"></block></block>
   <block id="59710baa552439a5c3866c2907720be7" category="section-title">지원되는 MetroCluster FC 컨트롤러 업그레이드</block>
   <block id="9ae1fbeadb6e0efc4e024384fb8a4f8d" category="inline-link">기술 자료 문서</block>
@@ -11956,8 +11948,6 @@
   <block id="8ac6e9edd68ffb00104a32fd0a3ef455" category="list-text">Tiebreaker 호스트에서 각 노드 관리 LIF 및 클러스터 관리 LIF까지 SSH 연결을 열어 MetroCluster 소프트웨어에 대한 Tiebreaker 연결을 확인합니다.</block>
   <block id="92d17a99a2247a42900b1a4c61e8e7d0" category="paragraph">Tiebreaker 소프트웨어와 함께 SNMP를 사용하려면 SNMP 설정을 구성해야 합니다.</block>
   <block id="b108689bc1b65903b90d77f19e30d295" category="list-text">Tiebreaker CLI를 사용합니다<block ref="5ef546c28db0706808d8d451d5a71029" prefix=" " category="inline-code"></block> 명령을 사용하여 MetroCluster 구성을 추가합니다.</block>
-  <block id="c852f510264f0662076b7dc87a75f8f3" category="paragraph">다음 예에서는 IP 주소가 10.240.45.66이고 포트 번호가 162인 SNMP V3을 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.</block>
-  <block id="6eeb81da538b4f61a034b7c239d160a7" category="admonition">SNMPv1이 안전하지 않으므로 SNMPv3을 구성해야 합니다. 기본 커뮤니티 문자열이 public으로 설정되어 있지 * 않은지 확인합니다.</block>
   <block id="a645efc9b9e1d2189f4d79d85cfaefce" category="sidebar">스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster FC 구성에서 컨트롤러(AFF A700/FAS9000을 AFF A900/FAS9500으로 업그레이드</block>
   <block id="6f4c27e539cc3005215fed00a58a0521" category="sidebar">새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
   <block id="da3f2d04a7e97d4412b48daacd47915e" category="sidebar">새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결</block>
@@ -12624,10 +12614,6 @@
   <block id="ae236ebe2cd05ce4da7fe73d504f4946" category="list-text">있는 경우 <block ref="54f4a86aff0fc5aba4d6e37b225734c0" category="inline-link-macro-rx"></block>새로운 노드에는 루트 애그리게이트 및 예비 디스크를 위한 적절한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 필요합니다.</block>
   <block id="30db39dffca5d3a3ab759b48303153b1" category="list-text">제거할 DR 그룹에 로드 공유 미러 볼륨이 포함되어 있으면 이동할 수 없습니다.  다른 DR 그룹에 모든 로드 공유 미러 볼륨을 다시 생성한 다음 제거할 DR 그룹에서 로드 공유 미러 볼륨을 삭제합니다.</block>
   <block id="0108924065f583138162139c8d2325c4" category="list-text">Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2의 순서로 한 번에 하나의 스위치에서 단계를 수행합니다.</block>
-  <block id="4c73c980356e24dbc4b9bfa823ff3540" category="inline-link-macro">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
-  <block id="5ea045545da6545f166122f615c720c2" category="list-text"><block ref="5ea045545da6545f166122f615c720c2" category="inline-link-macro-rx"></block></block>
-  <block id="9d2a9152feb1a65b3472b15d2e557bca" category="inline-link-macro">NVIDIA IP RCF 파일 다운로드 및 설치</block>
-  <block id="3ebe02a815587b2ddedbada8c501d0ef" category="list-text"><block ref="3ebe02a815587b2ddedbada8c501d0ef" category="inline-link-macro-rx"></block></block>
   <block id="61cdeb097cfdf5250ae69244ebf01a62" category="list-text">xWDM 구성을 사용하는 경우 ISL에 대한 추가 설정이 필요할 수 있습니다. 자세한 내용은 xWDM 공급업체 설명서를 참조하십시오.</block>
   <block id="91debec19d39d0379223807f0659efab" category="section-title">MetroCluster 구성에서 구성을 복구합니다</block>
   <block id="40a0ce393bbc07b8791fe3c093d906bf" category="paragraph">MetroCluster FC 구성에서는 복구 작업을 특정 순서로 수행하여 전환 후 MetroCluster 기능을 복원합니다.</block>
@@ -13217,7 +13203,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="75b44b50a5c15f2121717071fc8e9fc0" category="inline-link-macro">NVIDIA SN2100 스위치 Cumulus 소프트웨어를 다운로드하고 설치합니다</block>
   <block id="99534ab88dcf6802b885593070964693" category="list-text"><block ref="99534ab88dcf6802b885593070964693" category="inline-link-macro-rx"></block></block>
   <block id="5b2fc0c613f01db3129e4c4e07ac3dfe" category="list-text"><block ref="5b2fc0c613f01db3129e4c4e07ac3dfe" category="inline-link-macro-rx"></block></block>
-  <block id="b482922c3bf6cd48549cdf23465ffee6" category="list-text"><block ref="b482922c3bf6cd48549cdf23465ffee6" category="inline-link-macro-rx"></block></block>
   <block id="31108c872023e7ac673e45c455e290ec" category="list-text"><block ref="31108c872023e7ac673e45c455e290ec" category="inline-link-macro-rx"></block></block>
   <block id="d28f21bcfe7f0ae76389ce8cf95e1346" category="paragraph">RCF 파일을 적용하기 전에 스위치가 재설정되고 관리 네트워크 구성 및 현재 자격 증명과 같은 초기 구성이 그대로 유지됩니다. 재부팅 후 동일한 또는 다른 버전의 RCF 파일을 사용하여 새 구성을 적용할 수 있습니다.</block>
   <block id="2d0212aab3adea9540211da211dead7b" category="section-title">[[Cumulus-install-option]] Cumulus 소프트웨어를 다운로드하고 설치합니다</block>
@@ -13381,8 +13366,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="368aaabd8ccd78edfaeb1e279944bf6d" category="list-text"><block ref="368aaabd8ccd78edfaeb1e279944bf6d" category="inline-link-macro-rx"></block></block>
   <block id="76dff903c42af8953fcd64558dc34099" category="inline-link-macro">Cisco IP RCF 파일을 다운로드하고 설치합니다</block>
   <block id="89fdba60efe33dd9621db371306f12e5" category="list-text"><block ref="89fdba60efe33dd9621db371306f12e5" category="inline-link-macro-rx"></block></block>
-  <block id="8fa6539999f2d3aff134c30600c80e41" category="inline-link-macro">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
-  <block id="2812633e4be142ea6fef81aa2fc3b357" category="list-text"><block ref="2812633e4be142ea6fef81aa2fc3b357" category="inline-link-macro-rx"></block></block>
   <block id="ea9534759740df7ca366f32a3eb8a0ec" category="inline-xref">Cumulus 소프트웨어를 다운로드하고 설치합니다</block>
   <block id="a6c37e682cfc0729046dd2e498ad461c" category="list-text"><block ref="ef78584b865ab255d612a5aa6725b10d" category="inline-xref-macro-rx"></block></block>
   <block id="4d8d9056b62fc01f5cd3f0898c551fde" category="section-title">플랫폼 지원</block>
@@ -13471,7 +13454,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="84e9aa8f760c1f5f0f19cf4fc3153c4b" category="paragraph">4노드 MetroCluster IP 구성에서는 AFF A900 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
   <block id="69cd959e02d2a7b70720f5426f4f0888" category="list-text">원래 시스템이 종단 간 암호화용으로 구성된 경우 대체 노드의 각 Loader 프롬프트에서 다음 bootarg를 설정합니다.</block>
   <block id="635e42fd721973aab43465fb05d0c976" category="paragraph"><block ref="62c037d8665e336dd114412a0b756bfc" prefix="" category="inline-code"></block></block>
-  <block id="5a8c7594ee8269dda78a3c94154a49fc" category="doc">하드웨어 교체 및 새 컨트롤러 부팅</block>
   <block id="81a393ca01b7355292a9de6a418b7506" category="section-title">재해 사이트에서 하드웨어를 교체합니다</block>
   <block id="341755fab7492718abaee90d7addc0e1" category="section-title">이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID를 확인합니다</block>
   <block id="7783c9328f785a62c6d922c7aee5f5bf" category="section-title">정상 사이트에서 교체 드라이브 격리(MetroCluster IP 구성)</block>
@@ -13498,7 +13480,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="fdc6d534c52f6619e898db680403f69b" category="list-text">MetroCluster IP 인터페이스가 오프라인 상태인지 확인합니다.</block>
   <block id="2d393525a6ebfc702ca856ed72512167" category="list-text">MetroCluster IP 인터페이스 포트를 온라인 상태로 전환합니다.</block>
   <block id="0ab751f551b18333e82474f5ca9b4122" category="list-text">MetroCluster IP 인터페이스 포트가 온라인 상태인지 확인합니다.</block>
-  <block id="e387b7f8f98fe6ef00364ba0984c08a9" category="paragraph">이전 및 새 시스템 ID는 에서 식별되었습니다 <block ref="ce17cf746f0f051ba197f9e3096bf7f5" category="inline-link-macro-rx"></block>.</block>
   <block id="124ba57298a92342f8aec06ebcfb6415" category="inline-link-macro">이전 컨트롤러 모듈의 시스템 ID를 확인합니다</block>
   <block id="3ac27de4b4347c98785ff06870fe7221" category="paragraph"><block ref="3ac27de4b4347c98785ff06870fe7221" category="inline-link-macro-rx"></block></block>
   <block id="478093bd7e01c5abe587038bf808af00" category="paragraph">다음 표에서는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.</block>
@@ -13515,10 +13496,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
   <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
   <block id="8872b0d09737dfd9b6fcafd4e8c2356b" category="list-text"><block ref="8872b0d09737dfd9b6fcafd4e8c2356b" category="inline-link-rx"></block></block>
-  <block id="fe06217dfe728a4663456cded8fa4095" category="list-text"><block ref="fe06217dfe728a4663456cded8fa4095" category="inline-link-macro-rx"></block></block>
   <block id="80d79e74efb3cf7c2ad45e7e1c96223d" category="inline-link-macro">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="9dce4db3e352a666d92ce25dd5f94a51" category="list-text"><block ref="9dce4db3e352a666d92ce25dd5f94a51" category="inline-link-macro-rx"></block></block>
-  <block id="4f586337d2fd3e18706fce945038a04a" category="list-text"><block ref="4f586337d2fd3e18706fce945038a04a" category="inline-link-macro-rx"></block></block>
   <block id="59908dc1540a829f2e5b2241e8bda0cd" category="inline-link-macro">NVIDIA IP RCF 파일을 다운로드하고 설치합니다</block>
   <block id="73f5dfd8823a821a2efabbc978e0229c" category="list-text"><block ref="73f5dfd8823a821a2efabbc978e0229c" category="inline-link-macro-rx"></block></block>
   <block id="c61e96543ff55077f64d8dd03940c2c6" category="list-text">AFF A70 를 참조하십시오</block>
@@ -13682,16 +13661,13 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="e4d3a0569925dd58f4e2c0c40b889993" category="paragraph">AFF A220, FAS2750</block>
   <block id="fc028e3a959d5040cb2c7b0ceac73cf8" category="paragraph">AFF A300, FAS8200</block>
   <block id="28cf84e4b9c7d19ba37159218fdea6f0" category="section-title">컨트롤러 업그레이드를 지원했습니다</block>
-  <block id="df9d5dab8402039e8e49491ea2b155f4" category="admonition">4노드 MetroCluster IP 구성에서 명령을 사용하여 지원되는 업그레이드는<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 의 표를 참조하십시오 <block ref="cdc5d26dd7214bbc9da99c730f208713" category="inline-link-macro-rx"></block></block>
   <block id="00422b8712ec5454364e6489bb81ba29" category="list-text">컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 다음과 일치해야 합니다 *.</block>
   <block id="ea246a6495df1b87df40d7c322d23942" category="list-text">MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
   <block id="5505f24f1b03305d31aacdd035c7f251" category="paragraph-title">AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다</block>
-  <block id="fcb21df516134bd5563b8b7bef30f98b" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="7b8670a76cf1dc8cbe357ce34cc11736" category="image-alt">MetroCluster IP 업그레이드 So sb AFF FAS</block>
   <block id="ae189029f72cc261fbad1afff41d9552" category="list-text">참고 3: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.</block>
   <block id="39eb8422a5f49fae94f0335febb78701" category="list-text">참고 4: 컨트롤러 모듈을 교체해야 합니다.</block>
   <block id="2d5d2a9ece12ce430adc9f20c9e9464d" category="paragraph-title">ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다</block>
-  <block id="1fdcb939cb28cfa6612abe5d949f5cdb" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.</block>
   <block id="6d340f03110b449d466e554ef5a4a7af" category="image-alt">MetroCluster IP 업그레이드 So sb ASA FAS</block>
   <block id="9311605dda14c8d475dd817b196dbe33" category="list-text">참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="e201b3063a835c6ab815286f4d0dc126" category="paragraph-title">AFF 및 FAS MetroCluster FC 컨트롤러 업그레이드를 지원했습니다</block>
@@ -13755,7 +13731,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c5b67774bb32fdf25c42ebcc33f3e43d" category="list-text">업그레이드 중인 DR 그룹의 각 노드에서 단계를 반복합니다.</block>
   <block id="6986e6230a992abf2372b5ddb288c1ec" category="list-text"><block ref="6986e6230a992abf2372b5ddb288c1ec" category="inline-link-macro-rx"></block></block>
   <block id="9cf1b9d10ebe2c0f0ae4072a054220a3" category="list-text"><block ref="9cf1b9d10ebe2c0f0ae4072a054220a3" category="inline-link-macro-rx"></block></block>
-  <block id="0bc8e4789fc33f4aefa1d33adc11eb9f" category="list-text"><block ref="0bc8e4789fc33f4aefa1d33adc11eb9f" category="inline-link-macro-rx"></block></block>
   <block id="d71cd39faa20e04542bb87bdbf15456a" category="list-text"><block ref="d71cd39faa20e04542bb87bdbf15456a" category="inline-link-macro-rx"></block></block>
   <block id="a3b6bdcb84b2fd3938bbc199daa24115" category="section-title">새 컨트롤러를 netboot합니다</block>
   <block id="1d6634f1d19b7ad582264acf3f3975d4" category="list-text">노드가 multipathed:+ 인지 확인한다<block ref="395c8c225a0f5ec95ae5122ac1899d9b" prefix=" " category="inline-code"></block></block>
@@ -13806,7 +13781,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ef53a1465284a8eba202285b88ef0eb2" category="section-title">새 플랫폼을 수용하도록 스위치 RCF를 업데이트합니다</block>
   <block id="8aedcbe06dc4ee85bfbfe46c6a62713c" category="paragraph">현재 업그레이드 중인 컨트롤러가 포함된 사이트에서 이 작업을 수행합니다. 이 절차에 나와 있는 예에서는 먼저 site_B를 업그레이드합니다.</block>
   <block id="097b5e4a3935e7904f9e57e130711c8b" category="inline-link-macro">NVIDIA IP SN2100 스위치 RCF 파일을 다운로드하고 설치합니다</block>
-  <block id="28e2bd4eabf6ae375e91c35fdc2b3bde" category="list-text"><block ref="28e2bd4eabf6ae375e91c35fdc2b3bde" category="inline-link-macro-rx"></block></block>
   <block id="a0738c0401f656b59d11c3e37bee47f0" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <block ref="a74b37b1135e46e1745610d5ef77ba43" category="inline-xref-macro-rx"></block>사용합니다.</block>
   <block id="080c153c3d5c3f5a7519058826d07cb8" category="paragraph"><block ref="579363eabf2a70eb9e6c8d9b1bca9609" prefix="" category="inline-code"></block></block>
   <block id="ba2a7c5e352255c376b6b0d315a1ffc1" category="paragraph"><block ref="3edfeb45325920fedac6b21b22c6872d" prefix="" category="inline-code"></block></block>
@@ -14039,4 +14013,56 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5feb826151198d290926a00c8f0166bd" category="paragraph">다음 표에는 ASA 시스템에서 지원되는 플랫폼 조합이 나와 있습니다.</block>
   <block id="26f5174a535725c2475715c5b1747824" category="cell">대상 MetroCluster IP 플랫폼</block>
   <block id="315289188a5b2b11bb8fe0c80160e8d4" category="sidebar">노드를 MetroCluster 구성에 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
+  <block id="dff95cb9e5adc8c22082286195b9c18b" category="list-text"><block ref="dff95cb9e5adc8c22082286195b9c18b" category="inline-link-macro-rx"></block></block>
+  <block id="86e4bcdd91ae737b95a3cf066dd128f7" category="paragraph">이전 시스템 ID와 새 시스템 ID는 에서 식별되었습니다. <block ref="e3858d0d76295d35179b2ac088c574f3" category="inline-link-macro-rx"></block></block>
+  <block id="f411a218519aacec5088cc5a3d23eb64" category="paragraph">이전 시스템 ID와 새 시스템 ID는 에서 식별되었습니다. <block ref="372daca62ea6308294fd70c00fcc8af2" category="inline-link-macro-rx"></block></block>
+  <block id="11ceccfd751fe28a61b558ba07583aff" category="section-title">FiberBridge 7600N 및 7500N 브리지에서 지원되는 디스크 및 쉘프 수</block>
+  <block id="ff2961229b46cc89dffec4aab67d010d" category="paragraph">다음 표에는 FibreBridge 7600N 및 7500N 브리지 한 쌍 이후에 지원되는 디스크 및 쉘프 수가 나와 있습니다.</block>
+  <block id="b8cbb75a8c2b1413bcddd7c532ccc064" category="list-text">도달한 첫 번째 제한이 적용됩니다.</block>
+  <block id="2a3f0c8b0ca6744889b3ffa76d4b9f5b" category="list-text">DS460C 쉘프를 사용하는 경우 최대 240개의 드라이브만 사용할 수 있으며, 이는 4개의 쉘프에 해당합니다.</block>
+  <block id="5ccf1f9193b673f77fa0a023f0c64238" category="list-text">DS212C 쉘프를 사용하는 경우 최대 120개의 드라이브만 사용할 수 있으며, 이는 10개의 쉘프에 해당합니다.</block>
+  <block id="402fb729f11d0452c518d4172b605b2c" category="paragraph-title">지원되는 디스크 수입니다</block>
+  <block id="c75f82dd210bf38bdd42ff246823dd9e" category="paragraph">FiberBridge 7600N 또는 7500N 브리지 한 쌍 뒤에 지원되는 디스크 수를 검토합니다.</block>
+  <block id="3baa66bdd3ca9158478ad78d6079db1c" category="cell">디스크 구성</block>
+  <block id="3d0bf05155f3dfd0eeccf9e953d46156" category="cell">디스크 유형입니다</block>
+  <block id="eda8b8dec444e51f3afb1c089a183afc" category="cell">브리지 페어당 총 디스크 수</block>
+  <block id="4a761ba24826218f4585e8feddc64d7c" category="cell">모두 SSD로 제공</block>
+  <block id="34df20bab5e85dc75bfc94ef569cced9" category="cell">SSD를 지원합니다</block>
+  <block id="b0df25be54449fa53d1180d01ad8bdc5" category="cell">모든 HDD</block>
+  <block id="9c2dc227590d4220750b52b21b0aeb99" category="cell">HDD</block>
+  <block id="335f5352088d7d9bf74191e006d8e24c" category="cell">240</block>
+  <block id="de97ed9eb6dc112873264b693e05c88c" category="cell">혼합(96개 SSD)</block>
+  <block id="0a09c8844ba8f0936c20bd791130d6b6" category="cell">144</block>
+  <block id="1b48b5dfad482eb966c69b885c217e13" category="cell">혼합(SSD 72개)</block>
+  <block id="006f52e9102a8d3be2fe5614f42ba989" category="cell">168</block>
+  <block id="79fa5a72c63f064bf5ae4709ac221926" category="cell">혼합(48개 SSD)</block>
+  <block id="58a2fc6ed39fd083f55d4182bf88826d" category="cell">192</block>
+  <block id="1c151db89d2679449be5c45bb7b8d994" category="cell">혼합(24개 SSD)</block>
+  <block id="45fbc6d3e05ebd93369ce542e8f2322d" category="cell">216</block>
+  <block id="c742d6affaef84b501d784319fca6de4" category="paragraph-title">지원되는 쉘프 수입니다</block>
+  <block id="22daa6b9c9c5e98028929434af5223de" category="paragraph">FiberBridge 7600N 및 7500N 브리지 한 쌍 뒤에 지원되는 셸프 수를 검토합니다.</block>
+  <block id="ca7ac3a83947da614de147e934674475" category="cell">총 쉘프 수</block>
+  <block id="699b4f79215d191584653efebf156e52" category="cell">혼합</block>
+  <block id="04e334293a29a0fcdf98b56004e27edc" category="section-title">MetroCluster 준수 스위치와 NetApp 검증 스위치 비교</block>
+  <block id="5c5c34d5e7843e9424f3ca2380ae18ea" category="list-text"><block ref="5c5c34d5e7843e9424f3ca2380ae18ea" category="inline-link-macro-rx"></block></block>
+  <block id="a629fe794ff2e51df541a99e4468ebb2" category="paragraph">새 컨트롤러를 netboot해야 하는 경우 를 참조하십시오 <block ref="a7e3b7fa9390de21e9e66df9d4048c53" category="inline-link-macro-rx"></block>.</block>
+  <block id="910d0f6661c3968f4e7402c808d31b3f" category="list-text"><block ref="910d0f6661c3968f4e7402c808d31b3f" category="inline-link-macro-rx"></block></block>
+  <block id="740c0d0f6d37afa212fad2bd272a4212" category="list-text">Tiebreaker 1.6은 SNMPv3만 지원합니다.</block>
+  <block id="a98720fe58fe46f2a22c59d172b69fbf" category="list-text">Tiebreaker 1.5 및 1.4가 SNMPv1 및 SNMPv3를 지원하지만 NetApp에서는 최적의 보안을 위해 SNMPv3를 구성할 것을 적극 권장합니다.</block>
+  <block id="c93871f59c253b2d1ca21a1ce2a00ff8" category="paragraph"><block ref="5ef546c28db0706808d8d451d5a71029" prefix=" " category="inline-code"></block>명령 응답은 실행 중인 Tiebreaker 버전에 따라 다릅니다.</block>
+  <block id="bb4e2064b1b9dc64a3fb5d4bbdce1c6d" category="paragraph">다음 예에서는 트랩 메시지에 대한 IP 주소 192.0.2.255 및 포트 번호 162를 사용하여 SNMPv3를 지원하는 SNMP 수신기의 구성을 보여 줍니다. Tiebreaker 소프트웨어는 지정한 SNMP 수신기에 트랩을 보낼 준비가 되었습니다.</block>
+  <block id="17a3b20a7dea5f1be315df3d2d4ba571" category="admonition">Tiebreaker 1.6은 SNMPv3만 지원합니다</block>
+  <block id="837173a04a89631774aea0ce8c3f374d" category="open-title">타이브레이커 1.5 및 1.4</block>
+  <block id="b2962497ee34ee0b78461915f42ef154" category="admonition">SNMPv1이 안전하지 않으므로 SNMPv3을 구성해야 합니다. 기본 커뮤니티 문자열이 public으로 * Not * 설정되어 있는지 확인합니다.</block>
+  <block id="b30066626a2a1f5bfd537d010ce36f51" category="paragraph">지원되는 MetroCluster IP 및 FC 컨트롤러 업그레이드 조합에 대해 알아보십시오.</block>
+  <block id="8babc09a7497ad4c2756db165bd8cd5c" category="section-title">"system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러 업그레이드를 지원했습니다</block>
+  <block id="190421b938f84b927163204510df7319" category="paragraph">지원되는 플랫폼에 대해서는 의 표를 <block ref="cdc5d26dd7214bbc9da99c730f208713" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="8e30d2803b603d7bc1c9f3584b57c881" category="section-title">기타 지원되는 모든 MetroCluster IP 컨트롤러 업그레이드</block>
+  <block id="17c7cb78cf2f2286d3034a3959bc800e" category="paragraph">이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
+  <block id="ece07deebff7293937869fc01fd521f0" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="8430e377fbc83f194587bd875ac99b4b" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.</block>
+  <block id="13457800bf31e25265b68e75f49b98c7" category="inline-link-macro">[Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다</block>
+  <block id="0f664d89fa7312c24449004d102db687" category="list-text"><block ref="0f664d89fa7312c24449004d102db687" category="inline-link-macro-rx"></block></block>
+  <block id="8a97a528989bc12cbf81ee0102a889dc" category="list-text"><block ref="8a97a528989bc12cbf81ee0102a889dc" category="inline-link-macro-rx"></block></block>
+  <block id="5517f0f4079cbe32b861155b72575d78" category="paragraph">다음 표는 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
 </blocks>
