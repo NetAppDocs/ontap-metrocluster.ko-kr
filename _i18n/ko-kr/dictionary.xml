@@ -10944,7 +10944,6 @@
   <block id="26a1b5abfaa8d36a512417a3da776baf" category="summary">MetroCluster 구성 및 작동에 대해 자세히 알아볼 수 있습니다.</block>
   <block id="be66634f5c72a17ac1efdaa2b09a1da6" category="paragraph"><block ref="be66634f5c72a17ac1efdaa2b09a1da6" category="inline-link-macro-rx"></block></block>
   <block id="2f4dfa9b4c405812623b1a34ea79a216" category="list-text">모든 MetroCluster 정보</block>
-  <block id="01f9eb8f1fd390bc11c63296bd1aa6ad" category="paragraph"><block ref="01f9eb8f1fd390bc11c63296bd1aa6ad" category="inline-link-rx"></block></block>
   <block id="7abce9dabe03b4e216be9445267a37a1" category="paragraph"><block ref="7abce9dabe03b4e216be9445267a37a1" category="inline-link-rx"></block></block>
   <block id="61eb859904ba2d6f08ea80ad772e9aba" category="paragraph">FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.</block>
   <block id="408d7b2d5acc0ee56e5deef74d263b2e" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 이전에 생성한 케이블 연결 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.</block>
@@ -14065,4 +14064,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0f664d89fa7312c24449004d102db687" category="list-text"><block ref="0f664d89fa7312c24449004d102db687" category="inline-link-macro-rx"></block></block>
   <block id="8a97a528989bc12cbf81ee0102a889dc" category="list-text"><block ref="8a97a528989bc12cbf81ee0102a889dc" category="inline-link-macro-rx"></block></block>
   <block id="5517f0f4079cbe32b861155b72575d78" category="paragraph">다음 표는 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="0ef5c60e365bf027441cd538ad7f03c9" category="paragraph"><block ref="0ef5c60e365bf027441cd538ad7f03c9" category="inline-link-rx"></block></block>
 </blocks>

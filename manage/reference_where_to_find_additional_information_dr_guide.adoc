@@ -32,7 +32,7 @@ link:../index.html["MetroCluster 문서"]
 
 
  a| 
-http://www.netapp.com/us/media/tr-4375.pdf["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^]
+https://www.netapp.com/pdf.html?item=/media/13482-tr4375pdf.pdf["NetApp 기술 보고서 4375: ONTAP 9.3을 위한 NetApp MetroCluster"^]
  a| 
 * MetroCluster 구성 및 작동에 대한 기술적 개요
 * MetroCluster 구성에 대한 모범 사례
