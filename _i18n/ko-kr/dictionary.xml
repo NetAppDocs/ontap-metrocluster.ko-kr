@@ -1133,7 +1133,6 @@
   <block id="3bad2dd7623ea523622748f7e327cfb7" category="section-title">공유 데이터 포트에 대한 인터클러스터 LIF 구성</block>
   <block id="cf620fa6f3ed9766bc13dc1be2e365fd" category="paragraph">데이터 네트워크와 공유하는 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 인터클러스터 네트워킹에 필요한 포트 수가 줄어듭니다.</block>
   <block id="79535297ba63fe49ca425eaa96a5e72f" category="list-text">시스템 SVM에 대한 인터클러스터 LIF 생성:</block>
-  <block id="376d4fd6163673e8ce3ef73b91ff9c9d" category="paragraph">'network interface create-vserver_system_SVM_-lif_LIF_name_-service-policy default-인터클러스터-home-node_node_-home-port_port_-address_port_ip_-netmask_mask_'</block>
   <block id="5f525e4e0761764585e348a27dac8bf6" category="paragraph">'network interface create-vserver_system_SVM_-lif_LIF_name_-role l인터클러스터-home-node_node_-home-port_port_-address_port_ip_-netmask_mask_'</block>
   <block id="5ab4feb401d03d5e1244365c91dc7539" category="paragraph">다음 예에서는 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"를 생성합니다.</block>
   <block id="af38ecaa21f292a282a9ff2da5fa8c28" category="paragraph">'network interface show – service-policy default-인터클러스터-failover'</block>
@@ -4552,16 +4551,12 @@
   <block id="84976775b57e1cc840a09f2c88a286ac" category="summary">컨트롤러 장애가 MetroCluster 구성에서 DR 그룹 한쪽 면의 모든 컨트롤러 모듈로 확장되는 경우\(2노드 MetroCluster 구성의 단일 컨트롤러 포함\) 또는 스토리지를 교체한 경우 장비를 교체하고 드라이브 소유권을 재할당하여 재해로부터 복구해야 합니다.</block>
   <block id="5b15a3f0a5da2641b113bfa00db4f4cd" category="doc">멀티 컨트롤러 또는 스토리지 장애로부터 복구</block>
   <block id="24f844bc7daaf81496d7a3c7d46e885b" category="paragraph">컨트롤러 장애가 MetroCluster 구성의 DR 그룹 중 한 쪽에 있는 모든 컨트롤러 모듈로 확장되는 경우(2노드 MetroCluster 구성의 단일 컨트롤러 포함) 또는 스토리지를 교체한 경우, 재해 복구를 위해 장비를 교체하고 드라이브 소유권을 재할당해야 합니다.</block>
-  <block id="ec5ed92d6a768271cc29ccf291c8dc38" category="list-text">이 절차를 사용하기 전에 사용 가능한 복구 절차를 검토해야 합니다.</block>
   <block id="82bbfcee09add33fd33001d4761a8949" category="inline-link-macro">올바른 복구 절차 선택</block>
   <block id="de8c0fb03e206ceba27f199881fead35" category="paragraph"><block ref="de8c0fb03e206ceba27f199881fead35" category="inline-link-macro-rx"></block></block>
-  <block id="789f8748d0208455975814250fce3373" category="list-text">재해 사이트는 차단해야 합니다.</block>
   <block id="43f5f5a19bf60d6ad8ac66652cef316d" category="inline-link-macro">재해 사이트에서 펜싱</block>
   <block id="4ec51c7a14aec89211955ef5982bc635" category="paragraph"><block ref="9d20893d97b1f685de0a5e2bbba0f4a9" category="inline-link-macro-rx"></block>.</block>
-  <block id="250b09385f6cdc02560becd09aac8d01" category="list-text">전환을 수행해야 합니다.</block>
   <block id="be832f713abe208d3c2b4ab97540b471" category="inline-link-macro">강제 전환 수행</block>
   <block id="bf2e2751dcaaaee268be12b1bacadb6b" category="paragraph"><block ref="72a3a195ac0fa089c021b23e356908eb" category="inline-link-macro-rx"></block>.</block>
-  <block id="aa046910a7ecd63d9a04798d1b9149b4" category="list-text">교체 드라이브와 컨트롤러 모듈은 새 드라이브여야 하며 이전에 소유권을 할당해서는 안 됩니다.</block>
   <block id="d8dfcd71dcf8c400455bfbfc7ec188d2" category="list-text">이 절차의 예는 2노드 또는 4노드 구성을 보여 줍니다. 8노드 구성(DR 그룹 2개)이 있는 경우 모든 장애를 고려하여 추가 컨트롤러 모듈에서 필요한 복구 작업을 수행해야 합니다.</block>
   <block id="c79468b94118562478a247649c7e919d" category="image-alt">워크플로 흡연 분화구 회복</block>
   <block id="333c2429701c5b1407dd5f1815377913" category="paragraph">이 절차는 장애가 발생했을 때 전환 중에 있던 시스템에서 복구를 수행할 때 사용할 수 있습니다. 이 경우 절차에 설명된 대로 스위치백을 준비할 때 적절한 단계를 수행해야 합니다.</block>
@@ -6210,12 +6205,6 @@
   <block id="5c8b06614b34d1cc8bfcc4d0913c331c" category="list-text">SAS 연결을 확인합니다.</block>
   <block id="b51ae922bb862c3daed086b031b039a1" category="summary">Cisco FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Cisco 관련 명령을 사용하여 스위치를 비활성화하고 업그레이드를 수행 및 검증하고 스위치를 재부팅 및 재활성화해야 합니다.</block>
   <block id="7dd5dd10d7f07bdbe6967e7acfbcce32" category="doc">Cisco FC 스위치에서 펌웨어 업그레이드 또는 다운그레이드</block>
-  <block id="0f294b3681e7ea001f509f89246b65d2" category="list-text">시스템의 케이블이 올바르게 연결되어 있어야 합니다.</block>
-  <block id="bc395a51f08bad16bb57e9887139d5c8" category="list-text">스토리지 쉘프에 대한 모든 경로를 사용할 수 있어야 합니다.</block>
-  <block id="e0d2e110035c5d5f573b9877e7fa674e" category="list-text">디스크 쉘프 스택은 안정적이어야 합니다.</block>
-  <block id="cd824f26e7bab15b79976a27f27c206d" category="list-text">FC 스위치 패브릭은 양호한 상태여야 합니다.</block>
-  <block id="5288f12ee509f0c3b2cc280c5be85d44" category="list-text">시스템의 모든 구성 요소가 정상 상태여야 합니다.</block>
-  <block id="dc3821b7037b803e8843a37994a7bc2e" category="list-text">시스템이 정상적으로 작동해야 합니다.</block>
   <block id="37152fbf6505ff7869875fddafc189ff" category="paragraph">펌웨어 업그레이드 또는 다운그레이드 중에는 스위치 패브릭을 사용할 수 없으며 MetroCluster 구성은 두 번째 Fabric에 의존하여 작업을 계속합니다.</block>
   <block id="59ec1a2958e0d74f2e94cf39df69df0a" category="paragraph">모든 스위치가 동일한 펌웨어 버전을 실행하고 있는지 확인하려면 각 스위치 패브릭에서 이 작업을 연속으로 반복해야 합니다.</block>
   <block id="168f20b249437abf8c684700d798efa2" category="paragraph">펌웨어 파일이 있어야 합니다.</block>
@@ -6490,8 +6479,6 @@
   <block id="4389b93bd76334095ae6f5fdb926d4ee" category="paragraph">포트 40에서 48은 10GbE 포트이며 MetroCluster 구성에서 사용되지 않습니다.</block>
   <block id="e5fe800fef736c2c8af1453a59683d3c" category="summary">Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Brocade 관련 명령을 사용하여 스위치를 비활성화하고 펌웨어 변경을 수행 및 확인하고 스위치를 재부팅 및 다시 활성화해야 합니다.</block>
   <block id="1ab0f1fa27ba43bfea0e9de2529316c8" category="doc">Brocade FC 스위치에서 펌웨어 업그레이드 또는 다운그레이드</block>
-  <block id="04dbc16ee806b5ebad0693ef3708205e" category="list-text">시스템에 장애가 발생한 구성 요소가 없을 수 있습니다.</block>
-  <block id="d2b16b08756dbd9f703dd67a7e2f8759" category="list-text">FTP 또는 SCP 서버에 대한 관리자 암호 및 액세스 권한이 있어야 합니다.</block>
   <block id="db6e0c8057b108f77da141b83e047b8d" category="paragraph">펌웨어 업그레이드 또는 다운그레이드 중에는 스위치 패브릭을 사용할 수 없으며 MetroCluster 구성은 두 번째 Fabric에 의존하여 작업을 계속합니다.</block>
   <block id="6751765455c440079966f9a59475b0bc" category="paragraph">이 작업은 모든 스위치가 동일한 펌웨어 버전을 실행할 수 있도록 각 스위치 Fabric에 대해 연속적으로 수행해야 합니다.</block>
   <block id="caa7d61db1eb82b4e70aa0ad9d519b89" category="paragraph">다음 단계의 예에서는 스위치 FC_SWITCH_A_1을 사용합니다.</block>
@@ -7020,7 +7007,6 @@
   <block id="1d831089411388d88325ad5510a3865e" category="list-text">스토리지 시스템이 예상대로 작동하는지 확인합니다.</block>
   <block id="bd19bf00e1fbfd96fcc2339c755e0467" category="summary">추가 또는 더 빠른 컨트롤러 또는 더 빠른 스위치와 같은 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다.</block>
   <block id="a6237977252c00c91d0b5db5336baec2" category="doc">Cisco 스위치에 lSLs 추가</block>
-  <block id="23ccb323627c51faf14f36b4cb4ca713" category="paragraph">한 스위치에서 완료된 단계는 ISL 연결을 보장하기 위해 다른 스위치에서도 완료해야 합니다.</block>
   <block id="de71f5ad868db8c978c7f3225fdfdf6a" category="list-text">Fabric의 두 스위치에 추가할 ISL의 ISL 포트 비활성화:</block>
   <block id="2853dcfcc60d2e6dc08e90bf6acb95f6" category="paragraph">``FC_SWITCH_A_1#config t *’</block>
   <block id="5cd2ac3c7ee0ee9b3836b2cdeb2a3924" category="paragraph">구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.</block>
@@ -13472,7 +13458,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="262891df0c6ebb50acbcb126fb5c8761" category="summary">유지 관리를 수행할 때 MetroCluster IP 인터페이스 포트를 중지해야 할 수 있습니다.</block>
   <block id="4261a47766ada379b26b2c3a719f75b2" category="doc">온라인 또는 오프라인 MetroCluster IP 인터페이스 포트</block>
   <block id="cb6838ec9d371f50679bbbc58c45370a" category="paragraph">유지보수 작업을 수행할 때 MetroCluster IP 인터페이스 포트를 오프라인 또는 온라인 상태로 전환해야 할 수 있습니다.</block>
-  <block id="c8611b3438fb84a6c442fe7b05f52a15" category="paragraph">다음 단계에 따라 MetroCluster IP 인터페이스 포트를 오프라인 또는 온라인 상태로 전환할 수 있습니다.</block>
   <block id="3c84f1de018751821bb0b4202f14bf0a" category="list-text">권한 수준을 고급으로 설정합니다.</block>
   <block id="6ca857f7a44a21cfffda914cf9549710" category="paragraph">* 예제 출력 *</block>
   <block id="260ab9e602296cf4759b74ba30cbd850" category="list-text">MetroCluster IP 인터페이스 포트를 오프라인 상태로 전환합니다.</block>
@@ -14065,4 +14050,52 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8a97a528989bc12cbf81ee0102a889dc" category="list-text"><block ref="8a97a528989bc12cbf81ee0102a889dc" category="inline-link-macro-rx"></block></block>
   <block id="5517f0f4079cbe32b861155b72575d78" category="paragraph">다음 표는 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="0ef5c60e365bf027441cd538ad7f03c9" category="paragraph"><block ref="0ef5c60e365bf027441cd538ad7f03c9" category="inline-link-rx"></block></block>
+  <block id="218202ab36e31b93dc4b302be0cb5ac3" category="paragraph">NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.</block>
+  <block id="7a15fb36e18a42514f358533c9af4dae" category="list-text">유지 관리 중에는 AutoSupport를 활성화된 상태로 둡니다.</block>
+  <block id="a6c9ebf435ce24dbca32935db32b4e35" category="list-text">유지 관리 전후에 유지 관리 AutoSupport 메시지를 트리거하여 유지 관리 활동 기간 동안 케이스 생성을 비활성화합니다.</block>
+  <block id="4b48b65f16187f40e68db0c4df7cb08a" category="inline-link-macro">예약된 유지 보수 기간 동안 자동 케이스 생성을 억제하는 방법</block>
+  <block id="0eafdee0286606284032d28995910629" category="paragraph">기술 자료 문서를 <block ref="43a9e9e8f025f3c2afe24aebcd141a3a" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="fb42fce84a1f5a648367e2e027a6c941" category="inline-link-macro">ONTAP 시스템에 대한 최적의 연결을 위해 PuTTY를 구성하는 방법</block>
+  <block id="e7eb1d6e4b304d33e217b4f030083151" category="list-text">모든 CLI 세션에 대해 세션 로깅을 설정합니다. 세션 로깅을 활성화하는 방법에 대한 지침은 기술 자료 문서의 "로깅 세션 출력" 섹션을 <block ref="ae1393e25ee1e0fef17808399d9484a8" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="ae4e133851dd07ec525f234788c266ff" category="summary">장치에서 콘솔 로깅을 활성화합니다.</block>
+  <block id="bf2e41df1fe93346157f93aa59a48dd6" category="doc">콘솔 로깅을 활성화합니다</block>
+  <block id="fc8027ada1541f34dcd52a5227ef9bad" category="paragraph">하드웨어 교체 및 새 컨트롤러 부팅을 진행하기 전에 장치에서 콘솔 로깅을 활성화합니다.</block>
+  <block id="4a2da7d198b8a877d8b4732bccaba7a7" category="paragraph">이 절차를 사용하기 전에 다음 작업을 확인하고 수행했는지 확인하십시오.</block>
+  <block id="b8974eaac3807720c168d885dd734501" category="list-text">이 절차를 사용하도록 결정하기 전에 사용 가능한 복구 절차를 검토하십시오.</block>
+  <block id="1aae3e6bab44ed7ab10e4bad0142ad21" category="list-text">장치에서 콘솔 로깅이 활성화되어 있는지 확인합니다.</block>
+  <block id="946d513cb1710a22af3c951f5fd8d11a" category="paragraph"><block ref="946d513cb1710a22af3c951f5fd8d11a" category="inline-link-macro-rx"></block></block>
+  <block id="ed70e782190a12cec566e8f2d271ca08" category="list-text">재해 사이트가 차단되었는지 확인합니다.</block>
+  <block id="5d8bc995547a4fd7415d44fbfe0b7c8d" category="list-text">전환이 수행되었는지 확인합니다.</block>
+  <block id="a4de6cfbccf4ecc5b3859b3d67703a6d" category="list-text">교체 드라이브 및 컨트롤러 모듈이 새 것이어야 하며 이전에 소유권을 할당하지 않았어야 합니다.</block>
+  <block id="221a3239afd85b15c0a082e006cc9d76" category="summary">유지 관리 작업을 수행하기 전에 장치에서 콘솔 로깅을 사용하도록 설정합니다.</block>
+  <block id="377bd72f596f8fb4cb973eb33ab1c3c3" category="doc">유지 관리 작업을 수행하기 전에 콘솔 로깅을 사용하도록 설정합니다</block>
+  <block id="60fda9f0d4f66fd0b517637868752be0" category="paragraph">NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 유지 관리 절차를 수행하기 전에 다음 작업을 수행할 것을 적극 권장합니다.</block>
+  <block id="1ba38a7c71055c7f849086255d5169f3" category="list-text">ISL 접속을 보장하기 위해 두 스위치 모두에서 모든 단계를 완료합니다.</block>
+  <block id="d83f1e34f43df0bbaa3ee4017c09e1b4" category="list-text"><block ref="88e4990ce21c0256eb827c7e19fa0648" category="inline-link-macro-rx"></block> 이 작업을 수행하기 전에</block>
+  <block id="403a10bd737423e3cac1fc37dacbdcd3" category="list-text">ISL 접속을 보장하기 위해 두 스위치 모두에서 모든 단계를 완료합니다.</block>
+  <block id="66673dfafcae9371f075b879dc217aa9" category="paragraph">다음 단계에 따라 MetroCluster IP 인터페이스 포트를 온라인 상태로 전환하거나 오프라인으로 전환할 수 있습니다.</block>
+  <block id="423cc95dedd4ee68f0dd8126c7d0dc86" category="paragraph">구성에 대해 다음 작업을 확인하고 수행했는지 확인합니다.</block>
+  <block id="577c57afc12db82055cff4fa1ef601e7" category="list-text">펌웨어 파일이 있습니다.</block>
+  <block id="c6fa690d72fcffddb9bdb475dd8ae167" category="list-text">시스템에 케이블이 올바르게 연결되어 있습니다.</block>
+  <block id="fb4bd25875431d37c83447b250f9d281" category="list-text">스토리지 셸프에 대한 모든 경로를 사용할 수 있습니다.</block>
+  <block id="8f644e9a7993858252a69ddaf2937d0c" category="list-text">디스크 쉘프 스택은 안정적입니다.</block>
+  <block id="99eca056429a99dde78e7b139fd2b975" category="list-text">FC 스위치 패브릭이 정상 상태입니다.</block>
+  <block id="165c653c6ed0625748424aeeeb0ef24e" category="list-text">시스템에 장애가 발생한 구성 요소가 없습니다.</block>
+  <block id="48bfd850a47cde148101474e67b99af6" category="list-text">시스템이 정상적으로 작동하고 있습니다.</block>
+  <block id="7b61bf1ddfda66ef66b87ef9e5dcd5e4" category="list-text">관리자 암호와 FTP 또는 SCP 서버에 대한 액세스 권한이 있습니다.</block>
+  <block id="229c127d4cd1b67df183593436247200" category="list-text">콘솔 로깅이 활성화됩니다.</block>
+  <block id="88e4990ce21c0256eb827c7e19fa0648" category="paragraph"><block ref="88e4990ce21c0256eb827c7e19fa0648" category="inline-link-macro-rx"></block></block>
+  <block id="1106f5bc975d7a5d94945cc9443c00f1" category="list-text">FC 스위치 패브릭이 정상 상태입니다.</block>
+  <block id="2f92d909a1337c9b15582940d470ab00" category="list-text">시스템의 모든 구성 요소가 정상입니다.</block>
+  <block id="7a8e384268b9400de9a6ef3a88bdf329" category="paragraph">이 작업을 수행하기 전에 장치에서 콘솔 로깅을 활성화하십시오.</block>
+  <block id="7e850954ab384102f5d4e5df99c6d067" category="summary">전용 또는 공유 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다.</block>
+  <block id="ccee519a1fcde58f406284ffad2387a9" category="paragraph">전용 및 공유 포트에 대한 인터클러스터 LIF를 구성하는 방법에 대해 알아보십시오.</block>
+  <block id="50165fcf3d7c35a722bd224b3bf13c54" category="paragraph">전용 포트에 대한 인터클러스터 LIF를 구성하여 복제 트래픽에 사용 가능한 대역폭을 늘릴 수 있습니다.</block>
+  <block id="fd16b3ea934ba7646ac0406aa7920e8e" category="paragraph"><block ref="cbfe237569042c016ace79222e8d1dc9" prefix="" category="inline-code"></block></block>
+  <block id="bc67b6197fe081f8d788efcd57f33aa4" category="paragraph"><block ref="321305800246910a9b8518ff256b173e" prefix="" category="inline-code"></block></block>
+  <block id="f809d9a3338a2f0d5ef91a9a558afeda" category="paragraph"><block ref="a5e9df1216c92a4ed4602bf96263cd9d" prefix="" category="inline-code"></block></block>
+  <block id="7d98f261082c6c1cb481396d03302b0e" category="paragraph">데이터 네트워크와 공유되는 포트에 대한 인터클러스터 LIF를 구성하여 인터클러스터 네트워킹에 필요한 포트 수를 줄일 수 있습니다.</block>
+  <block id="764a523cf339780ca4471f143c5ae04c" category="paragraph"><block ref="d1f7a93b5f0792c01647ca314d5d7e27" prefix="" category="inline-code"></block></block>
+  <block id="6e7eea4bc90b7da31497a85ace82eec8" category="paragraph"><block ref="751a8e9d76de229f9092fac6fb23b628" prefix="" category="inline-code"></block></block>
+  <block id="f1fe27301697eb21073abfcd231c91ab" category="section-title">새로 고침 절차를 수행합니다</block>
 </blocks>

@@ -13,8 +13,12 @@ summary: Cisco IP 스위치의 이름을 변경하여 구성 전체에서 일관
 [role="lead"]
 Cisco IP 스위치의 이름을 변경하여 구성 전체에서 일관된 이름을 지정해야 할 수도 있습니다.
 
-이 작업의 예시에서 스위치 이름은 myswitch에서 ip_switch_a_1 로 변경된다.
+.이 작업에 대해
+* 이 작업의 예시에서 스위치 이름은 myswitch에서 ip_switch_a_1 로 변경된다.
+* link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
+
+.단계
 . 글로벌 구성 모드 시작:
 +
 '* 터미널 구성 * '

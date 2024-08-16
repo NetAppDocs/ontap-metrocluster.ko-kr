@@ -26,6 +26,8 @@ NOTE: NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치
 .시작하기 전에
 의 * 스위치 * 섹션을 참조하십시오 link:https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 지원되는 트랜시버를 확인합니다.
 
+link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
+
 .단계
 . 변경할 Fabric의 두 스위치 모두에서 ISL의 ISL 포트를 비활성화합니다.
 +

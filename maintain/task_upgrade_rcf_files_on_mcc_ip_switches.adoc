@@ -67,6 +67,7 @@ Filename : NX3232_v1.80_Switch-A2.txt
 .이 작업에 대해
 * 이 절차는 RCF 파일이 업그레이드된 스위치의 트래픽을 중단시킵니다. 새 RCF 파일이 적용되면 트래픽이 재개됩니다.
 * Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2의 순서로 한 번에 하나의 스위치에서 단계를 수행합니다.
+* link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
 
 .단계

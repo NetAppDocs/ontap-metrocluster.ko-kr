@@ -13,6 +13,11 @@ summary: MetroCluster FC에서 IP 노드로 무중단 전환하는 경우 FC SAN
 [role="lead"]
 MetroCluster FC에서 IP 노드로 무중단 전환하는 경우 FC SAN 호스트 개체를 MetroCluster FC에서 IP 노드로 중단 없이 이동해야 합니다.
 
+
+
+== FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
+
+.단계
 . MetroCluster IP 노드에서 새 FC 인터페이스(LIF) 설정:
 +
 .. 필요한 경우 MetroCluster IP 노드에서 FC 타겟 퍼스낼리티에 대한 클라이언트 연결에 사용할 FC 포트를 수정합니다.

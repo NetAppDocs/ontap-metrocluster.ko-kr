@@ -13,6 +13,9 @@ summary: 구성 전체에서 일관된 이름을 보장하기 위해 Brocade FC 
 [role="lead"]
 구성 전체에서 일관된 이름을 보장하기 위해 Brocade FC 스위치의 이름을 변경해야 할 수 있습니다.
 
+.이 작업에 대해
+link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
+
 .단계
 . 하나의 Fabric에서 스위치나 스위치를 영구적으로 비활성화합니다.
 +

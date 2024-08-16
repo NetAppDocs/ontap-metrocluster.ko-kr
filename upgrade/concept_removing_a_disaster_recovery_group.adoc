@@ -29,6 +29,20 @@ image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
 
 
 
+== 콘솔 로깅을 활성화합니다
+
+NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
+
+* 유지 관리 중에는 AutoSupport를 활성화된 상태로 둡니다.
+* 유지 관리 전후에 유지 관리 AutoSupport 메시지를 트리거하여 유지 관리 활동 기간 동안 케이스 생성을 비활성화합니다.
++
+기술 자료 문서를 link:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["예약된 유지 보수 기간 동안 자동 케이스 생성을 억제하는 방법"^]참조하십시오.
+
+* 모든 CLI 세션에 대해 세션 로깅을 설정합니다. 세션 로깅을 활성화하는 방법에 대한 지침은 기술 자료 문서의 "로깅 세션 출력" 섹션을 link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["ONTAP 시스템에 대한 최적의 연결을 위해 PuTTY를 구성하는 방법"^]참조하십시오.
+
+
+
+
 == 각 클러스터에서 DR 그룹 노드 제거
 
 .시작하기 전에

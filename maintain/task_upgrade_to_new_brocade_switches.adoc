@@ -24,6 +24,7 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
 
 * 이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소요됩니다.
 * FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+* link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
 
 스위치 패브릭은 한 번에 하나씩 업그레이드됩니다.

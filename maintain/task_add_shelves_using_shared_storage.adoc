@@ -19,6 +19,7 @@ ONTAP 9.10.1부터 공유 스토리지/MetroCluster 스위치를 사용하여 Me
 * 노드는 ONTAP 9.9.1 이상을 실행해야 합니다.
 * 현재 연결된 모든 NS224 쉘프는 MetroCluster(공유 스토리지/MetroCluster 스위치 구성)와 동일한 스위치에 연결되어야 합니다.
 * 이 절차를 사용하여 전용 이더넷 스위치에 직접 연결된 NS224 셸프 또는 NS224 셸프가 있는 구성을 공유 스토리지/MetroCluster 스위치를 사용하는 구성으로 변환할 수 없습니다.
+* link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
 
 

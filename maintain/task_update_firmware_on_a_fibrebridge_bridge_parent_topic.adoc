@@ -13,6 +13,9 @@ summary: 브리지 펌웨어 업데이트 절차는 브리지 모델과 ONTAP �
 [role="lead"]
 브리지 펌웨어 업데이트 절차는 브리지 모델과 ONTAP 버전에 따라 다릅니다.
 
+.이 작업에 대해
+link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
+
 
 
 == ONTAP 9.4 이상을 실행하는 구성에서 FiberBridge 7600N 또는 7500N 브리지에서 펌웨어 업데이트

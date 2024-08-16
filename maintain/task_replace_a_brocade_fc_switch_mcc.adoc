@@ -13,7 +13,10 @@ summary: 장애가 발생한 스위치를 교체하려면 이 Brocade 관련 절
 [role="lead"]
 장애가 발생한 스위치를 교체하려면 이 Brocade 관련 절차를 사용해야 합니다.
 
+.이 작업에 대해
 FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+
+link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
 다음 예에서는 FC_SWITCH_A_1이 정상 스위치이고 FC_SWITCH_B_1이 손상된 스위치입니다. 이 예의 스위치 포트 사용은 다음 표에 나와 있습니다.
 

@@ -13,6 +13,7 @@ FC 스위치의 공급업체를 Cisco에서 Brocade로 변경하거나 그 반�
 
 .이 작업에 대해
 * 이 절차는 NetApp 검증 스위치를 사용하는 경우에 적용됩니다.
+* link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 * 구성의 두 Fabric에 대해 한 번에 하나의 Fabric에 대해 이 절차의 단계를 수행해야 합니다.
 
 

@@ -12,6 +12,8 @@ entries:
   entries:
   - title: 시작하기 전에
     url: "/disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html"
+  - title: 콘솔 로깅을 활성화합니다
+    url: "/disaster-recovery/task-enable-console-logging.html"
   - title: 하드웨어를 교체하고 새 컨트롤러를 부팅합니다
     url: "/disaster-recovery/task_replace_hardware_and_boot_new_controllers.html"
   - title: MetroCluster IP 구성에서 스위치백을 준비합니다

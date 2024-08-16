@@ -13,8 +13,12 @@ summary: ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도�
 [role="lead"]
 ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도를 변경해야 할 수 있습니다. 더 먼 거리를 이동하는 ISL의 경우 품질을 개선하기 위해 속도를 낮춰야 할 수 있습니다.
 
-ISL 연결을 보장하려면 두 스위치 모두에서 모든 단계를 완료해야 합니다.
+.이 작업에 대해
+* ISL 접속을 보장하기 위해 두 스위치 모두에서 모든 단계를 완료합니다.
+* link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
+
+.단계
 . Fabric의 두 스위치에서 속도를 변경하려는 ISL의 ISL 포트 비활성화:
 +
 ``FC_SWITCH_A_1#config t *’

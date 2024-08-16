@@ -10,6 +10,8 @@ entries:
     url: "/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html"
   - title: MetroCluster FC에서 MetroCluster IP 구성으로 전환할 준비를 합니다
     entries:
+    - title: 콘솔 로깅을 활성화합니다
+      url: "/transition/task-enable-console-logging.html"
     - title: 무중단 FC-to-IP 전환 요구사항
       url: "/transition/concept_requirements_for_fc_to_ip_transition_mcc.html"
     - title: 전환이 MetroCluster 하드웨어 구성 요소에 미치는 영향
