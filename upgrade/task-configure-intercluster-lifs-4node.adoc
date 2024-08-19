@@ -1,0 +1,397 @@
+---
+permalink: upgrade/task-configure-intercluster-lifs-4node.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, configure, intercluster, lif, dedicated, ports, shared 
+summary: 전용 또는 공유 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 
+---
+= 인터클러스터 LIF를 구성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전용 및 공유 포트에 대한 인터클러스터 LIF를 구성하는 방법에 대해 알아보십시오.
+
+[role="tabbed-block"]
+====
+.전용 포트에 대한 인터클러스터 LIF를 구성합니다
+--
+전용 포트에 대한 인터클러스터 LIF를 구성하여 복제 트래픽에 사용 가능한 대역폭을 늘릴 수 있습니다.
+
+.단계
+. 클러스터의 포트 나열:
++
+네트워크 포트 쇼
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예는 cluster01의 네트워크 포트를 보여줍니다.
+
++
+[listing]
+----
+
+cluster01::> network port show
+                                                             Speed (Mbps)
+Node   Port      IPspace      Broadcast Domain Link   MTU    Admin/Oper
+------ --------- ------------ ---------------- ----- ------- ------------
+cluster01-01
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+       e0e       Default      Default          up     1500   auto/1000
+       e0f       Default      Default          up     1500   auto/1000
+cluster01-02
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+       e0e       Default      Default          up     1500   auto/1000
+       e0f       Default      Default          up     1500   auto/1000
+----
+. 인터클러스터 통신 전용으로 사용할 수 있는 포트를 확인합니다.
++
+네트워크 인터페이스 보기 필드 홈 포트, 통화 포트
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 포트 "e0e" 및 "e0f"에 LIF가 할당되지 않은 것을 보여 줍니다.
+
++
+[listing]
+----
+
+cluster01::> network interface show -fields home-port,curr-port
+vserver lif                  home-port curr-port
+------- -------------------- --------- ---------
+Cluster cluster01-01_clus1   e0a       e0a
+Cluster cluster01-01_clus2   e0b       e0b
+Cluster cluster01-02_clus1   e0a       e0a
+Cluster cluster01-02_clus2   e0b       e0b
+cluster01
+        cluster_mgmt         e0c       e0c
+cluster01
+        cluster01-01_mgmt1   e0c       e0c
+cluster01
+        cluster01-02_mgmt1   e0c       e0c
+----
+. 전용 포트에 대한 페일오버 그룹을 생성합니다.
++
+`network interface failover-groups create -vserver <system_SVM> -failover-group <failover_group> -targets <physical_or_logical_ports>`
+
++
+다음 예에서는 시스템 SVM "cluster01"의 페일오버 그룹 "intercluster01"에 포트 "e0e" 및 "e0f"를 할당합니다.
+
++
+[listing]
+----
+cluster01::> network interface failover-groups create -vserver cluster01 -failover-group
+intercluster01 -targets
+cluster01-01:e0e,cluster01-01:e0f,cluster01-02:e0e,cluster01-02:e0f
+----
+. 페일오버 그룹이 생성되었는지 확인합니다.
++
+네트워크 인터페이스 페일오버 그룹들이 보여줌
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+[listing]
+----
+cluster01::> network interface failover-groups show
+                                  Failover
+Vserver          Group            Targets
+---------------- ---------------- --------------------------------------------
+Cluster
+                 Cluster
+                                  cluster01-01:e0a, cluster01-01:e0b,
+                                  cluster01-02:e0a, cluster01-02:e0b
+cluster01
+                 Default
+                                  cluster01-01:e0c, cluster01-01:e0d,
+                                  cluster01-02:e0c, cluster01-02:e0d,
+                                  cluster01-01:e0e, cluster01-01:e0f
+                                  cluster01-02:e0e, cluster01-02:e0f
+                 intercluster01
+                                  cluster01-01:e0e, cluster01-01:e0f
+                                  cluster01-02:e0e, cluster01-02:e0f
+----
+. 시스템 SVM에 대한 인터클러스터 LIF를 생성한 다음 이를 페일오버 그룹에 할당합니다.
++
+[cols="1,3"]
+|===
+
+
+| ONTAP 버전입니다 | 명령 
+
+
+ a| 
+9.6 이상
+ a| 
+`network interface create -vserver <system_SVM> -lif <LIF_name> -service-policy default-intercluster -home-node <node> -home-port <port> -address <port_IP> -netmask <netmask> -failover-group <failover_group>`
+
+
+
+ a| 
+9.5 이하
+ a| 
+`network interface create -vserver system_SVM -lif <LIF_name> -role intercluster -home-node <node> -home-port <port> -address <port_IP> -netmask <netmask> -failover-group <failover_group>`
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 페일오버 그룹 "intercluster01"에 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"를 생성합니다.
+
++
+[listing]
+----
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl01 -service-
+policy default-intercluster -home-node cluster01-01 -home-port e0e -address 192.168.1.201
+-netmask 255.255.255.0 -failover-group intercluster01
+
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl02 -service-
+policy default-intercluster -home-node cluster01-02 -home-port e0e -address 192.168.1.202
+-netmask 255.255.255.0 -failover-group intercluster01
+----
+. 인터클러스터 LIF가 생성되었는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+네트워크 인터페이스 show-service-policy default-인터클러스터
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터(network interface show-role 인터클러스터)
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+cluster01
+            cluster01_icl01
+                       up/up      192.168.1.201/24   cluster01-01  e0e     true
+            cluster01_icl02
+                       up/up      192.168.1.202/24   cluster01-02  e0f     true
+----
+. 인터클러스터 LIF가 중복되는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+네트워크 인터페이스 show-service-policy default-인터클러스터-failover를 선택합니다
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터-failover를 참조하십시오
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 SVM "e0e" 포트에 대한 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0f" 포트로 페일오버된다는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster –failover
+         Logical         Home                  Failover        Failover
+Vserver  Interface       Node:Port             Policy          Group
+-------- --------------- --------------------- --------------- --------
+cluster01
+         cluster01_icl01 cluster01-01:e0e   local-only      intercluster01
+                            Failover Targets:  cluster01-01:e0e,
+                                               cluster01-01:e0f
+         cluster01_icl02 cluster01-02:e0e   local-only      intercluster01
+                            Failover Targets:  cluster01-02:e0e,
+                                               cluster01-02:e0f
+----
+
+
+--
+.공유 데이터 포트에 대한 인터클러스터 LIF를 구성합니다
+--
+데이터 네트워크와 공유되는 포트에 대한 인터클러스터 LIF를 구성하여 인터클러스터 네트워킹에 필요한 포트 수를 줄일 수 있습니다.
+
+.단계
+. 클러스터의 포트 나열:
++
+네트워크 포트 쇼
+
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예는 cluster01의 네트워크 포트를 보여줍니다.
+
++
+[listing]
+----
+
+cluster01::> network port show
+                                                             Speed (Mbps)
+Node   Port      IPspace      Broadcast Domain Link   MTU    Admin/Oper
+------ --------- ------------ ---------------- ----- ------- ------------
+cluster01-01
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+cluster01-02
+       e0a       Cluster      Cluster          up     1500   auto/1000
+       e0b       Cluster      Cluster          up     1500   auto/1000
+       e0c       Default      Default          up     1500   auto/1000
+       e0d       Default      Default          up     1500   auto/1000
+----
+. 시스템 SVM에 대한 인터클러스터 LIF 생성:
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+`network interface create -vserver <system_SVM> -lif <LIF_name> -service-policy default-intercluster -home-node <node> -home-port <port> -address <port_IP> -netmask <netmask>`
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+`network interface create -vserver <system_SVM> -lif <LIF_name> -role intercluster -home-node <node> -home-port <port> -address <port_IP> -netmask <netmask>`
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 인터클러스터 LIF 'cluster01_icl01'과 'cluster01_icl02'를 생성합니다.
+
++
+[listing]
+----
+
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl01 -service-
+policy default-intercluster -home-node cluster01-01 -home-port e0c -address 192.168.1.201
+-netmask 255.255.255.0
+
+cluster01::> network interface create -vserver cluster01 -lif cluster01_icl02 -service-
+policy default-intercluster -home-node cluster01-02 -home-port e0c -address 192.168.1.202
+-netmask 255.255.255.0
+----
+. 인터클러스터 LIF가 생성되었는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+네트워크 인터페이스 show-service-policy default-인터클러스터
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터(network interface show-role 인터클러스터)
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+cluster01
+            cluster01_icl01
+                       up/up      192.168.1.201/24   cluster01-01  e0c     true
+            cluster01_icl02
+                       up/up      192.168.1.202/24   cluster01-02  e0c     true
+----
+. 인터클러스터 LIF가 중복되는지 확인합니다.
++
+|===
+
+
+| * ONTAP 9.6 이상: * 
+
+
+ a| 
+'network interface show – service-policy default-인터클러스터-failover'
+
+
+
+| * ONTAP 9.5 및 이전 버전의 경우: * 
+
+
+ a| 
+네트워크 인터페이스 show-role 인터클러스터-failover를 참조하십시오
+
+|===
++
+전체 명령 구문은 man 페이지를 참조하십시오.
+
++
+다음 예에서는 "e0c" 포트의 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0d" 포트로 페일오버되는 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster01::> network interface show -service-policy default-intercluster –failover
+         Logical         Home                  Failover        Failover
+Vserver  Interface       Node:Port             Policy          Group
+-------- --------------- --------------------- --------------- --------
+cluster01
+         cluster01_icl01 cluster01-01:e0c   local-only      192.168.1.201/24
+                            Failover Targets: cluster01-01:e0c,
+                                              cluster01-01:e0d
+         cluster01_icl02 cluster01-02:e0c   local-only      192.168.1.201/24
+                            Failover Targets: cluster01-02:e0c,
+                                              cluster01-02:e0d
+----
+
+
+--
+====

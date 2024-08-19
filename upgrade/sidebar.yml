@@ -135,11 +135,7 @@ entries:
     - title: 클러스터를 MetroCluster 구성으로 구성합니다
       entries:
       - title: 인터클러스터 LIF를 구성합니다
-        entries:
-        - title: 전용 포트에 대한 인터클러스터 LIF를 구성합니다
-          url: "/upgrade/task_configure_intercluster_lifs_to_use_dedicated_intercluster_ports.html"
-        - title: 공유 데이터 포트에 대한 인터클러스터 LIF를 구성합니다
-          url: "/upgrade/task_configure_intercluster_lifs_to_share_data_ports.html"
+        url: "/upgrade/task-configure-intercluster-lifs-4node.html"
       - title: 루트 애그리게이트를 미러링합니다
         url: "/upgrade/task_mirror_the_root_aggregates_mcc.html"
       - title: MetroCluster 구성을 구현합니다
