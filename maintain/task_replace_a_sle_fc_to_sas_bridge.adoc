@@ -407,11 +407,12 @@ NOTE: 이더넷 포트 MP2도 활성화된 경우 포트 MP2에 대해 이전 �
 
 
 
+. FC 케이블을 새 브리지의 동일한 포트에 연결합니다.
 . 각 브리지에서 FiberBridge 펌웨어를 업데이트합니다.
 +
-새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster Maintenance _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.
+새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. 을 참조하십시오 link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어 업데이트 중"]
 
-. [[step17-reconnect-Newbridge] SAS와 FC 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.
+. [[step18-reconnect-Newbridge]] SAS 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.
 +
 브리지를 셸프 스택의 상단 또는 하단에 연결하는 케이블을 교체해야 합니다. FiberBridge 7600N 및 7500N 브리지는 이러한 연결을 위해 미니 SAS 케이블이 필요합니다.
 
@@ -419,7 +420,7 @@ NOTE: 이더넷 포트 MP2도 활성화된 경우 포트 MP2에 대해 이전 �
 
 NOTE: 포트를 연결하기 전에 10초 이상 기다립니다. SAS 케이블 커넥터는 SAS 포트에 올바르게 연결되었을 때 딸깍 소리가 나면서 제자리에 끼며 디스크 쉘프 SAS 포트 LNK LED가 녹색으로 켜집니다. 디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에 있음) SAS 케이블 커넥터를 삽입합니다. 컨트롤러의 경우 SAS 포트 방향은 플랫폼 모델에 따라 다를 수 있으므로 SAS 케이블 커넥터의 올바른 방향은 서로 다릅니다.
 
-. [[step18-verify-each-bridge] 각 브리지에서 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 볼 수 있는지 확인합니다.
+. [[step19-verify-each-bridge] 각 브리지에서 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 볼 수 있는지 확인합니다.
 +
 [cols="35,65"]
 |===
@@ -494,15 +495,15 @@ Tgt VendorID ProductID        Type SerialNumber
  a| 
 정답입니다
  a| 
-반복합니다 <<step18-verify-each-bridge,18단계>> 각 나머지 브리지에 대해.
+<<step19-verify-each-bridge,19단계>>나머지 브리지에 대해 반복합니다.
 
 
 
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step17-reconnect-newbridge,17단계>>.
-.. 반복합니다 <<step18-verify-each-bridge,18단계>>.
+.. SAS 케이블이 느슨한지 확인하거나 반복하여 SAS 케이블을 <<step18-reconnect-newbridge,18단계>>수정합니다.
+.. 반복하십시오<<step19-verify-each-bridge,19단계>>.
 
 
 |===

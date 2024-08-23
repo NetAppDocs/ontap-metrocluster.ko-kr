@@ -7150,16 +7150,11 @@
   <block id="6034c41ee64b1c1443ab14b13a6b7527" category="paragraph">'SASPortDisable_SAS-PORT_'를 선택합니다</block>
   <block id="73ddd59b62d7cac14fe61d1197513233" category="list-text">컨트롤러 프롬프트에서 브릿지의 상태를 'Storage bridge show'로 확인한다</block>
   <block id="4fbce0abe0f7baa2bbb93f9658cfc55b" category="list-text">이더넷 포트 MP1이 활성화된 경우 다음 명령을 실행합니다.</block>
-  <block id="9013c925bc3a423f843c073690ed8081" category="list-text">[[step17-reconnect-Newbridge] SAS와 FC 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.</block>
   <block id="3b5ef1874490ddb39e2ab56e91c15fd9" category="admonition">포트를 연결하기 전에 10초 이상 기다립니다. SAS 케이블 커넥터는 SAS 포트에 올바르게 연결되었을 때 딸깍 소리가 나면서 제자리에 끼며 디스크 쉘프 SAS 포트 LNK LED가 녹색으로 켜집니다. 디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에 있음) SAS 케이블 커넥터를 삽입합니다. 컨트롤러의 경우 SAS 포트 방향은 플랫폼 모델에 따라 다를 수 있으므로 SAS 케이블 커넥터의 올바른 방향은 서로 다릅니다.</block>
-  <block id="6795687b051fe5f1cb692559517648dd" category="list-text">[[step18-verify-each-bridge] 각 브리지에서 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 볼 수 있는지 확인합니다.</block>
   <block id="cf6dbfa4f0192b540abc550aae0f260f" category="list-text">지원되는 웹 브라우저의 브라우저 상자에 브리지의 IP 주소를 입력합니다.</block>
   <block id="34edf66bb3dff09e9c2aaf868d030164" category="paragraph">링크가 있는 ATTO FiberBridge 홈페이지로 이동합니다.</block>
   <block id="b9da98e99c8057fc3b9a54d9d19ff501" category="inline-xref">18단계</block>
-  <block id="828e19cfb619dbe3f082c13af71c8804" category="paragraph">반복합니다 <block ref="eecb3f0fe03b243e2ecc1f82fe37ecc5" category="inline-xref-macro-rx"></block> 각 나머지 브리지에 대해.</block>
   <block id="9c709df0d0930ada3ab147bf9abe8f06" category="inline-xref">17단계</block>
-  <block id="78cffeb475b967afce30e7091b0a7aec" category="list-text">SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <block ref="34712c7e0b7391b53f3aade40f6e2ba2" category="inline-xref-macro-rx"></block>.</block>
-  <block id="daae67946266f0e5177fa51a3f38fec3" category="list-text">반복합니다 <block ref="eecb3f0fe03b243e2ecc1f82fe37ecc5" category="inline-xref-macro-rx"></block>.</block>
   <block id="2273b85e84dfebeb5a21bbd359461d0f" category="list-text">브리지가 패브릭 연결 MetroCluster 구성에 있는 경우 이 절차를 시작할 때 비활성화한 FC 스위치 포트를 다시 활성화합니다.</block>
   <block id="9a20682ddc8cef489d77b087b78b3e16" category="paragraph">이 포트는 브리지에 연결되는 포트여야 합니다.</block>
   <block id="253278bf8807d2fb353066f7109cc7f2" category="list-text">두 컨트롤러 모듈의 시스템 콘솔에서 모든 컨트롤러 모듈이 새 브리지를 통해 디스크 쉘프에 액세스할 수 있는지(즉, 시스템이 다중 경로 HA를 위해 케이블로 연결되어 있는지) 확인합니다.</block>
@@ -14098,4 +14093,14 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="764a523cf339780ca4471f143c5ae04c" category="paragraph"><block ref="d1f7a93b5f0792c01647ca314d5d7e27" prefix="" category="inline-code"></block></block>
   <block id="6e7eea4bc90b7da31497a85ace82eec8" category="paragraph"><block ref="751a8e9d76de229f9092fac6fb23b628" prefix="" category="inline-code"></block></block>
   <block id="f1fe27301697eb21073abfcd231c91ab" category="section-title">새로 고침 절차를 수행합니다</block>
+  <block id="a713923def413049fcd7bd32d239c3b4" category="list-text">FC 케이블을 새 브리지의 동일한 포트에 연결합니다.</block>
+  <block id="c09b16f8a5b97a430a942e2624c2ffc8" category="paragraph">새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. 을 참조하십시오 <block ref="55e804464be1a7c24451c93244c66ff0" category="inline-link-macro-rx"></block></block>
+  <block id="b5a56495c6cd7b15008b12f44e1c09f9" category="list-text">[[step18-reconnect-Newbridge]] SAS 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.</block>
+  <block id="1bf1e8417c00edaec85599df5b47ee94" category="list-text">[[step19-verify-each-bridge] 각 브리지에서 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 볼 수 있는지 확인합니다.</block>
+  <block id="287bc804244a679c73d0cac4cb0c0b2c" category="inline-xref">19단계</block>
+  <block id="c582e7ac4118500a1aaf382ea318eeeb" category="paragraph"><block ref="1c41b1b96665f865995fbed1d8884dfe" category="inline-xref-macro-rx"></block>나머지 브리지에 대해 반복합니다.</block>
+  <block id="2788b7f6b6e21bc5a33df0d4aebf4730" category="list-text">SAS 케이블이 느슨한지 확인하거나 반복하여 SAS 케이블을 <block ref="4f69a23cfa1cdd17cebbee3d88ffc0e9" category="inline-xref-macro-rx"></block>수정합니다.</block>
+  <block id="dd59329be100bd10605cd63312522627" category="list-text">반복하십시오<block ref="1c41b1b96665f865995fbed1d8884dfe" category="inline-xref-macro-rx"></block>.</block>
+  <block id="0b9029dad5ded8eb8b9621381b59b85b" category="paragraph">다음 단계를 사용하여 MetroCluster FC 구성을 업데이트합니다.</block>
+  <block id="e80b737c5dcc4e6b9a5a4eecb2dc9582" category="paragraph">다음 단계를 사용하여 MetroCluster IP 구성을 새로 고칩니다.</block>
 </blocks>
