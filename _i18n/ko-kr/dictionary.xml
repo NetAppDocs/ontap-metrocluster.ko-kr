@@ -6045,50 +6045,12 @@
   <block id="2d93cc223819a02757a7e9885b50c780" category="paragraph">모든 명령을 입력한 후 줄당 하나의 구성 명령만 입력하고 Ctrl-Z를 눌러야 합니다.</block>
   <block id="cf7aba35b26c53d9d39f432d24bb6b7f" category="paragraph">다음 예와 같이 명령 출력에 ISL 인터페이스가 표시되어야 합니다.</block>
   <block id="502351f7672bedb2e8f4f7aedd01b7bd" category="list-text">패브릭 2에 대해 이 절차를 반복합니다.</block>
-  <block id="d30f280fa32f9327e8485ff0aa1b5b70" category="summary">기존 FC 스위치 레이아웃이 ONTAP 9.1 이전에 구성된 경우 포트 레이아웃을 재구성하고 최신 RCF(Reference Configuration Files)를 적용해야 합니다. 이 절차는 MetroCluster FC 구성에만 적용됩니다.</block>
-  <block id="27e12f4375f6135e191cf9fdfdc8740d" category="doc">ONTAP 9.x 전에 구성된 FC 스위치 레이아웃을 재구성합니다</block>
-  <block id="37ce42e81f71d3eac5866566739a5a56" category="paragraph">Fabric 도메인에 있는 FC 스위치를 식별해야 합니다.</block>
-  <block id="6ab6438f0b6c0d5ab216b0f2dc672c2e" category="paragraph">ONTAP 9.1 이전에 기존 FC 스위치 레이아웃을 구성한 경우 이 작업을 수행해야 합니다. ONTAP 9.1 이상으로 구성된 기존 스위치 레이아웃에서 업그레이드하는 경우 _not_required 입니다.</block>
-  <block id="27370eebc219409a38405d3941b09a1a" category="paragraph">이 절차는 무중단 운영이며 디스크를 제로화하면 완료하는 데 약 4시간이 소요됩니다(랙 및 스택 제외).</block>
-  <block id="44eade3f5fe22102f71568e6a040834d" category="section-title">스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
-  <block id="3a836223b6604b6ae4f5479bf7fe0514" category="paragraph">스위치를 재구성하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.</block>
-  <block id="4182632d122852a0c49c462c18353a59" category="paragraph">'시스템 노드 AutoSupport invoke-node * -type all-message maINT=__maintenance -window-in-hours__ *'</block>
-  <block id="eb390d7711c86498789967f550c75248" category="paragraph">유지 보수 기간 - 시간 단위 는 유지 보수 기간 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="ce1ec3b6f165be8cdde0654c531487e5" category="list-text">MetroCluster 구성 요소가 정상인지 확인합니다.</block>
   <block id="f005234d35c44406394bfc86ede22866" category="paragraph">작업은 백그라운드에서 실행됩니다.</block>
   <block id="76344f5124c3b049ee1046220d232959" category="list-text">MetroCluster check run 작업이 완료되면 MetroCluster check show를 실행하여 결과를 확인한다.</block>
   <block id="070a4bbedae89743ad2f6646a3f23205" category="paragraph">약 5분 후 다음 결과가 표시됩니다.</block>
-  <block id="4aacf10413f2025df69fa26f79853c18" category="list-text">실행 중인 MetroCluster check 작업의 상태를 확인하려면 다음 명령을 사용합니다.</block>
   <block id="fbd55aa6c7d3ee9ec90836dfa01b62d2" category="paragraph">MetroCluster 운용사 show-job-id 38</block>
   <block id="74553544aa9c0c94d16a5a5ed85d6720" category="list-text">상태 경고가 없는지 확인합니다.</block>
-  <block id="c1b65c5cd6ee7e42ed9d791d4a851c81" category="section-title">MetroCluster 구성 오류를 확인하는 중입니다</block>
-  <block id="7111f40126e236c3f7858ae25ad53307" category="paragraph">NetApp Support 사이트에서 제공되는 Config Advisor 툴을 사용하여 일반적인 구성 오류를 확인할 수 있습니다.</block>
-  <block id="2ab488316643cd79f8df87e5b7c70e52" category="list-text">Config Advisor 도구를 다운로드합니다.</block>
-  <block id="2b0dca859d8f4eb608d5e51fc09097c7" category="list-text">Config Advisor를 실행하고, 출력을 검토하고, 권장 사항을 따라 문제를 해결하십시오.</block>
-  <block id="9caeb2266f1da8ebaac621f3b3642734" category="section-title">스위치를 영구적으로 비활성화합니다</block>
-  <block id="54df0e073e21c236c69bb55be46a0eef" category="paragraph">구성을 수정할 수 있도록 Fabric에서 스위치를 영구적으로 비활성화해야 합니다.</block>
-  <block id="ede6141978802cdf393c52a40bfc7002" category="paragraph">switch 명령줄에서 명령을 실행하여 스위치를 사용하지 않도록 설정합니다. 이 명령에 사용되는 명령은 ONTAP 명령이 아닙니다.</block>
-  <block id="f93acf16d7cf836bd48acbaead6bc9d8" category="list-text">스위치를 영구적으로 비활성화합니다.</block>
-  <block id="c3479b623d30c22ee4c1435262b41e3f" category="list-text">다음 명령을 사용하여 Brocade 스위치를 영구적으로 사용하지 않도록 설정합니다.</block>
-  <block id="9b90a4b5b26f54949d3a81c4f9f9a996" category="paragraph">'FC_SWITCH_A_1:admin&gt;switchCfgPersistentDisable'</block>
-  <block id="91bdff5df0a4d2a8dfa3b9c5b74ac20a" category="list-text">다음 명령을 사용하여 Cisco 스위치를 영구적으로 사용하지 않도록 설정할 수 있습니다.</block>
-  <block id="888372be024925328ca6e321c9a44891" category="paragraph">VSAN[vsna#] 일시 중단</block>
-  <block id="37e68b1ed6861ebdf386fc5e91c46ae5" category="list-text">사용<block ref="df3a11b0f7b8977a7ee2ae6dd464c6cb" category="inline-link-rx"></block> 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 확인합니다.</block>
-  <block id="62f6cc0bf7eb35e158a953058ca74eca" category="section-title">RCF 파일을 적용하고 스위치를 다시 사용할 수 있습니다</block>
-  <block id="240180de393c4a94b035628cb25892f2" category="paragraph">새로운 노드를 수용하기 위해 스위치를 재구성하기 위해 적절한 RCF(Reference Configuration) 파일을 적용해야 합니다. RCF 파일을 적용한 후 스위치를 다시 사용할 수 있습니다.</block>
-  <block id="f2fa326e6e1c8de922a1dcd02e4670eb" category="paragraph">FC 스위치 포트 사용량은 에 설명된 사용량과 일치해야 합니다<block ref="df3a11b0f7b8977a7ee2ae6dd464c6cb" category="inline-link-rx"></block> 따라서 RCFs를 사용할 수 있습니다.</block>
-  <block id="220db66641d211d0d3595a586d08eda4" category="paragraph">사용 중인 스위치 모델에 맞는 RCF 파일을 사용해야 합니다.</block>
-  <block id="3315a7a2a1080bb831b79f80476cf1d9" category="list-text">RCF 파일을 다운로드 페이지의 지침에 따라 적용하고 필요에 따라 ISL 설정을 조정합니다.</block>
-  <block id="4799633d9eb6a31235d0102c0d2b1812" category="list-text">스위치 구성이 저장되었는지 확인합니다.</block>
-  <block id="7f09dafa16f678414e4772965c72d08c" category="list-text">"새 케이블링 레이아웃 결정" 섹션에서 작성한 케이블링 레이아웃을 사용하여 FC-SAS 브리지를 FC 스위치에 연결합니다.</block>
-  <block id="9537b49cfa32d77c52482152d98a6cb7" category="list-text">Brocade 스위치의 경우 'switchshow' 명령을 사용합니다.</block>
-  <block id="aba9e9476576cc9dee4b245d76d4b296" category="list-text">Cisco 스위치의 경우 'show interface brief' 명령어를 사용한다.</block>
-  <block id="8a2a15ae261b57a2a7df03e71f7e6475" category="list-text">FC-VI 포트를 컨트롤러에서 스위치로 케이블로 연결합니다.</block>
-  <block id="f3c7f494d0dbc1a358d6608915190a02" category="section-title">스위치를 영구적으로 활성화합니다</block>
-  <block id="2df3dd26d8dceded8e8da8277098895a" category="paragraph">Fabric에서 스위치를 영구적으로 활성화해야 합니다.</block>
-  <block id="1b9078b6f6fd34ef368d1162644a9f35" category="list-text">Brocade 스위치의 경우 'witchCfgPersistentenable' 명령을 사용합니다.</block>
-  <block id="8a6ebe5990af3d6fd69fc6576202deea" category="list-text">Cisco 스위치의 경우 'uspend' 명령을 사용합니다. 다음 명령을 실행하면 Brocade 스위치가 영구적으로 설정됩니다.</block>
-  <block id="ed9a4f5db580dee6eccfdb4d4ba452e7" category="paragraph">다음 명령을 실행하면 Cisco 스위치가 활성화됩니다.</block>
   <block id="8fa3ff2a6684e6aa12c0df1acfb993a7" category="summary">ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
   <block id="f4ace2d74922a56d6954c4cdcc593514" category="doc">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</block>
   <block id="83be746defb3baacbca8a27913d5e887" category="summary">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster에 NS224 쉘프를 추가해야 할 수 있습니다.</block>
@@ -6160,12 +6122,7 @@
   <block id="5bf5c688b9dbc9805774208febfec2ef" category="paragraph">미러링된 Aggregate에서 플렉스를 제거하려면 Aggregate의 미러를 해제해야 합니다.</block>
   <block id="0d70078385b01668ecfcc33dcc7785e4" category="summary">각 패브릭에 대해 단일 이니시에이터 포트와 각 컨트롤러에 대한 2개의 이니시에이터 포트를 사용하여 FAS8020, AFF8020, FAS8200 및 AFF A300 시스템을 구성할 수 있습니다.</block>
   <block id="a8a2bf560173c2071776e7eb62881e05" category="paragraph">다음 표에서는 ONTAP 9.1 이상을 사용할 때 FC 스위치에 대한 포트 할당을 보여 줍니다.</block>
-  <block id="967f94774fd0a441a676db03d0d50895" category="cell">Brocade 스위치 모델 6505, 6510, 6520, 7840, G620, G610, DCX 8510-8</block>
   <block id="5cbc856360b7f465a0b074d28f0718d0" category="paragraph">다음 표에서는 ONTAP 9.0을 사용할 때의 FC 스위치에 대한 포트 할당을 보여 줍니다.</block>
-  <block id="d722491b52482ec53cf477c1e69352b1" category="cell">MetroCluster 2노드 구성</block>
-  <block id="609fa7857733696aaaf69e46a20136b8" category="cell">Brocade 6505, 6510 또는 DCX 8510-8</block>
-  <block id="2a6ce6ad185ff3e30d6b4377d106ed67" category="cell">fc_switch_x_1</block>
-  <block id="83224d834f0020489fdb99fe4b7aac03" category="cell">fc_switch_x_2</block>
   <block id="e1af59c4560e3899befd23783e6a3c93" category="summary">FiberBridge 7600N 브리지는 FiberBridge 7500N 또는 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 ONTAP 9.5 이상에서 지원됩니다. 브리지의 FC 포트 사용과 관련된 조닝 요구 사항 및 제한은 FiberBridge 7500N 브리지의 경우와 동일합니다.</block>
   <block id="0a0b2f8493bfc4e7fb3cb00d79943c6b" category="doc">MetroCluster 구성에서 FiberBridge 7600N 브리지 지원</block>
   <block id="d996c9171711ede1bccddd47d17c5a7c" category="paragraph">FiberBridge 7600N 브리지는 FiberBridge 7500N 또는 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 ONTAP 9.5 이상에서 지원됩니다. 브리지의 FC 포트 사용과 관련된 조닝 요구 사항 및 제한은 FiberBridge 7500N 브리지의 조닝 요구 사항과 동일합니다.</block>
@@ -6399,16 +6356,9 @@
   <block id="1e20cffa93df3d0429097954136bfc8c" category="paragraph">FRU 교체(컨트롤러 모듈, PCIe 카드, FC-VI 카드 등)</block>
   <block id="d42cf82f955fcaf61a8de7f584bf0e63" category="admonition">MetroCluster 스토리지 시스템 간에 스토리지 컨트롤러 모듈 또는 NVRAM 카드를 이동하는 것은 지원되지 않습니다.</block>
   <block id="1b11a607d1bb5556b64964d84ade46e0" category="paragraph">업그레이드 및 확장</block>
-  <block id="ec9ed7bffd77d0096865ed2f7cdcc6cb" category="inline-link-macro">MetroCluster ® 업그레이드 및 확장</block>
   <block id="85c536a9f52fed53890ea4e081f3019f" category="paragraph">FC에서 IP 연결로 전환</block>
   <block id="a8125364ced10d8a90aedca98aa02032" category="paragraph"><block ref="a8125364ced10d8a90aedca98aa02032" category="inline-link-macro-rx"></block></block>
   <block id="efc8f4d1076344beccb8353312cb002a" category="paragraph">드라이브 쉘프</block>
-  <block id="07a97cc57ffcdb5b353eb14a9697dd19" category="paragraph">선반 추가(다리 또는 개별 선반이 있는 스택)</block>
-  <block id="df54bbed28c805d5ed5ce92b8e5ce3ee" category="inline-link-macro">기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택 핫 추가</block>
-  <block id="5a302b1db223d113f18ba828a7728831" category="paragraph"><block ref="5a302b1db223d113f18ba828a7728831" category="inline-link-macro-rx"></block></block>
-  <block id="11a48e261ca60d0969a5485e63b91320" category="inline-link-macro">SAS 디스크 쉘프 스택에 SAS 디스크 쉘프 핫 추가</block>
-  <block id="d16b39d610f212ffa73f1912eed06d2a" category="paragraph">쉘프 제거</block>
-  <block id="19b62c619e1b1ed88877f41babaf2907" category="paragraph"><block ref="19b62c619e1b1ed88877f41babaf2907" category="inline-link-macro-rx"></block></block>
   <block id="4d3b05b4c57a27fdba495a23ae2199d7" category="paragraph">기타 모든 선반 정비 절차. 표준 절차를 사용할 수 있습니다.</block>
   <block id="46c7885131c64f238f576be014b213f0" category="inline-link">DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다</block>
   <block id="53c3a61c42f70985acf2b36a3d805bcb" category="paragraph"><block ref="53c3a61c42f70985acf2b36a3d805bcb" category="inline-link-rx"></block></block>
@@ -6416,30 +6366,13 @@
   <block id="08b87b0df84f23bedc3bd35f30bfa073" category="paragraph">미러링되지 않은 애그리게이트의 쉘프를 추가하는 경우 를 참조하십시오<block ref="a4e92f124c7c2dcbe4223de70278d181" category="inline-link-rx"></block></block>
   <block id="4739016d267c9c4917ce4213d11c83cd" category="paragraph">IOM6 쉘프 스택에 IOM12 쉘프를 핫 추가합니다</block>
   <block id="d9c753202dcda649fdbebfcfe01fdbf3" category="paragraph"><block ref="d9c753202dcda649fdbebfcfe01fdbf3" category="inline-link-rx"></block></block>
-  <block id="4a7b1f278e95c16aeb152d77c51a31c9" category="paragraph">FC-to-SAS 브릿지</block>
-  <block id="088bc7cf0aba7ea72e19a6aa38382a91" category="paragraph">브리지 교체</block>
   <block id="8e643c3ca73adb5dac6c928509883e6a" category="inline-link-macro">단일 FC-to-SAS 브릿지 교체</block>
   <block id="37fea72dd65c3c3bb1c69b5e48efd919" category="paragraph"><block ref="37fea72dd65c3c3bb1c69b5e48efd919" category="inline-link-macro-rx"></block></block>
   <block id="5ca856b03fe79053ae04c49f8e00f8ed" category="inline-link-macro">FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체</block>
   <block id="a3edc491058c69b0f7afc6c29c43921b" category="paragraph"><block ref="a3edc491058c69b0f7afc6c29c43921b" category="inline-link-macro-rx"></block></block>
-  <block id="a4c2e8f420b48fffbcfeb95e6fcb05f5" category="paragraph">펌웨어 업그레이드</block>
-  <block id="32fe641ee6223371b080db4d75084a7d" category="inline-link-macro">FiberBridge 브리지에서 펌웨어 업데이트</block>
-  <block id="2af6912779c3feff3e2151c0db3ee788" category="paragraph"><block ref="2af6912779c3feff3e2151c0db3ee788" category="inline-link-macro-rx"></block></block>
-  <block id="ae812c4a3f8b00f477368617db18a5e4" category="paragraph">장애가 발생한 전원 공급 장치 모듈 교체</block>
   <block id="ff8f31b4f55a0b3e8f6ce5aaecf788eb" category="inline-link-macro">오류가 발생한 전원 공급 장치 모듈 핫 교체</block>
-  <block id="d3380d661f526d50196f8ea9623c6f20" category="paragraph"><block ref="d3380d661f526d50196f8ea9623c6f20" category="inline-link-macro-rx"></block></block>
   <block id="29a14686d79f5076a368c0039ffef9c5" category="paragraph">FC 스위치</block>
-  <block id="73ac0f2aa90906d870a9021d492b9c37" category="paragraph">스위치 업그레이드</block>
   <block id="e47d25d316f8dd834533da4922fbfd3f" category="inline-link-macro">새 Brocade FC 스위치로 업그레이드</block>
-  <block id="45762fb7405a9b1d8399ad43a945c82d" category="paragraph"><block ref="45762fb7405a9b1d8399ad43a945c82d" category="inline-link-macro-rx"></block></block>
-  <block id="371700c31188204ce3ac3b4f6b8cfd97" category="paragraph">스위치 교체</block>
-  <block id="ed4a502c887b2722808aaf25fe0da89e" category="inline-link-macro">Brocade FC 스위치(MetroCluster) 교체</block>
-  <block id="b794b47a4588cd82ddcc2d4139618618" category="paragraph"><block ref="b794b47a4588cd82ddcc2d4139618618" category="inline-link-macro-rx"></block></block>
-  <block id="4ea1a11c006b334a1497dd9d7789547c" category="paragraph"><block ref="4ea1a11c006b334a1497dd9d7789547c" category="inline-link-macro-rx"></block></block>
-  <block id="f689e6e9b515e75d91cdc511bc0ce0c4" category="inline-link-macro">Brocade FC 스위치에서 펌웨어를 업데이트하는 중입니다</block>
-  <block id="0b0a37d5ae718d4d68f10c5a752437bb" category="paragraph"><block ref="0b0a37d5ae718d4d68f10c5a752437bb" category="inline-link-macro-rx"></block></block>
-  <block id="7468e609fefb605430146763cd15a282" category="inline-link-macro">Cisco FC 스위치에서 펌웨어를 업데이트하는 중입니다</block>
-  <block id="d7ef6a0ac4569dd5ea389384efc59fe4" category="paragraph"><block ref="d7ef6a0ac4569dd5ea389384efc59fe4" category="inline-link-macro-rx"></block></block>
   <block id="11c88611295bbd4991975499f28e409a" category="summary">FiberBridge 7500N 브리지는 FiberBridge 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 지원됩니다. 지원되는 구성에는 브리지의 FC 포트, 스택 및 스토리지 쉘프 제한에 대한 조닝 요구 사항 및 제한 사항이 있습니다.</block>
   <block id="69795ca6dc0dac25282b5469283a7e08" category="doc">MetroCluster 구성에서 FiberBridge 7500N 브리지 지원</block>
   <block id="074655e8b1cc12e66a73fa4302ee6f80" category="paragraph">FiberBridge 7500N 브리지는 FiberBridge 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 지원됩니다. 지원되는 구성에는 브리지의 FC 포트, 스택 및 스토리지 쉘프 제한에 대한 조닝 요구 사항 및 제한 사항이 있습니다.</block>
@@ -6568,7 +6501,6 @@
   <block id="ad2d5ff88922ccf7648298e4e6db9116" category="list-text">보안되지 않은 브리지의 포트 상태를 + "정보"로 확인한다</block>
   <block id="86254a145944d6d620409fa51c07d7e9" category="list-text">이더넷 포트 MP1이 활성화된 경우 +'et EthernetPort mp1 disabled' 명령을 실행합니다</block>
   <block id="0d0c0c98576403d7d46bc7ee7fa9fa7a" category="list-text">각 브리지에서 FiberBridge 펌웨어를 업데이트합니다.</block>
-  <block id="9d23044e8a096f70e4fa3708828bc920" category="paragraph">새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster 유지 관리 가이드 _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.</block>
   <block id="3878b2b5ea6cb41ab05f2bc818ae2072" category="list-text">[[step10-cable-shelf-bridges]] 브리지에 디스크 쉘프 케이블 연결:</block>
   <block id="bd468be4cba5d023dbb07a79b6aab89b" category="list-text">각 디스크 쉘프 스택의 경우, 첫 번째 쉘프의 IOM A를 FiberBridge A의 SAS 포트 A에 케이블로 연결한 다음, 마지막 쉘프의 IOM B를 FiberBridge B의 SAS 포트 A에 연결합니다</block>
   <block id="db75f957082457028ec2184a6d766883" category="paragraph">각 브리지는 디스크 쉘프 쌓기 위한 하나의 경로를 가지고 있으며, 브리지 A는 첫 번째 쉘프를 통해 스택의 A 측에 연결되고, 브리지 B는 마지막 쉘프를 통해 스택의 B 측에 연결됩니다.</block>
@@ -7154,7 +7086,6 @@
   <block id="cf6dbfa4f0192b540abc550aae0f260f" category="list-text">지원되는 웹 브라우저의 브라우저 상자에 브리지의 IP 주소를 입력합니다.</block>
   <block id="34edf66bb3dff09e9c2aaf868d030164" category="paragraph">링크가 있는 ATTO FiberBridge 홈페이지로 이동합니다.</block>
   <block id="b9da98e99c8057fc3b9a54d9d19ff501" category="inline-xref">18단계</block>
-  <block id="9c709df0d0930ada3ab147bf9abe8f06" category="inline-xref">17단계</block>
   <block id="2273b85e84dfebeb5a21bbd359461d0f" category="list-text">브리지가 패브릭 연결 MetroCluster 구성에 있는 경우 이 절차를 시작할 때 비활성화한 FC 스위치 포트를 다시 활성화합니다.</block>
   <block id="9a20682ddc8cef489d77b087b78b3e16" category="paragraph">이 포트는 브리지에 연결되는 포트여야 합니다.</block>
   <block id="253278bf8807d2fb353066f7109cc7f2" category="list-text">두 컨트롤러 모듈의 시스템 콘솔에서 모든 컨트롤러 모듈이 새 브리지를 통해 디스크 쉘프에 액세스할 수 있는지(즉, 시스템이 다중 경로 HA를 위해 케이블로 연결되어 있는지) 확인합니다.</block>
@@ -7178,9 +7109,7 @@
   <block id="d3e773c90c2f10b1056c13626dbce351" category="list-text">사용하지 않는 SAS 포트를 비활성화합니다.</block>
   <block id="58d455c7b2801cd5eeb527ca8396f7db" category="paragraph">SAS 포트 A만 사용하는 경우 SAS 포트 B, C 및 D를 비활성화해야 합니다. 다음 예는 SAS 포트 B의 비활성화를 보여줍니다 마찬가지로 SAS 포트 C와 D를 비활성화해야 합니다.</block>
   <block id="58526b08e7cdc669652273e38d20baba" category="paragraph">다음 명령을 실행해야 합니다. +</block>
-  <block id="256c8a611262d54b0191b523d808d2b8" category="list-text">[[step17-reconnect-cables]] SAS 및 FC 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.</block>
   <block id="9f08d83ff8539a60ce02d5d7293917e8" category="list-text">각 브리지에서 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 볼 수 있는지 확인합니다.</block>
-  <block id="bb7f8c90f44682a83aac0108f830fc48" category="list-text">SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <block ref="04eae9cec0b1e83e8848a749b9bb23bd" category="inline-xref-macro-rx"></block>.</block>
   <block id="30e93ef6aed941f2711c93aadc09b0fb" category="list-text">이전 단계를 반복합니다.</block>
   <block id="857c8bba1f1c70a3585ef173517e8b2f" category="list-text">브리지가 패브릭 연결 MetroCluster 구성에 있는 경우 이 절차를 시작할 때 비활성화한 FC 스위치 포트를 다시 활성화합니다.</block>
   <block id="5ea5a50808839fb10f76cf539d4d3979" category="paragraph">"SNMP를 가져오십시오.</block>
@@ -7203,9 +7132,7 @@
   <block id="b3448783273e2d77f8347ce02e5539af" category="list-text">전원 코드와 필요한 경우 차폐된 이더넷 케이블을 다시 연결합니다.</block>
   <block id="817f269e652650758e06ee9eef604071" category="admonition">이때 SAS 또는 FC 케이블을 다시 연결하지 마십시오.</block>
   <block id="16a836cc760dc411dc4d6668ea558dde" category="list-text">FiberBridge 7600N 또는 7500N 브리지에 대한 상태 모니터링을 켭니다.</block>
-  <block id="e4c7547aec9cb016415580acae98cf9d" category="list-text">[[step17-recable]] SAS 및 FC 케이블을 새 브리지의 SAS A 및 파이버 채널 1 포트에 다시 연결합니다.</block>
   <block id="86e8a5efe0acb34c416ea5c15ac0d647" category="paragraph">SAS 포트는 FiberBridge 6500N 브리지가 연결된 동일한 쉘프 포트에 케이블로 연결되어야 합니다.</block>
-  <block id="a299f825436b865fc593f57cf2530ace" category="paragraph">FC 포트는 FiberBridge 6500N 브리지가 연결된 동일한 스위치 또는 컨트롤러 포트에 케이블로 연결되어야 합니다.</block>
   <block id="bd3dddee659e976302c36446b8c28f87" category="admonition">커넥터를 포트에 억지로 밀어 넣지 마십시오. 미니 SAS 케이블은 SAS 포트에 올바르게 연결되었을 때 딸깍 소리가 나면서 SAS 케이블이 제자리에 고정되며 디스크 쉘프 SAS 포트 LNK LED가 녹색으로 켜집니다. 디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여 SAS 케이블 커넥터를 삽입합니다(커넥터 아래쪽에 있음). 컨트롤러의 경우 SAS 포트의 방향은 플랫폼 모델에 따라 다를 수 있으므로 SAS 케이블 커넥터의 올바른 방향은 서로 다릅니다.</block>
   <block id="5a37cd86b4e1aabbbbc70bc9e75246c9" category="list-text">브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 감지할 수 있는지 확인합니다.</block>
   <block id="563574c6f034a7f77fe1c663dcc98e24" category="list-text">다음 명령을 입력한 다음 * 제출 * 을 클릭하여 브리지에 표시되는 디스크 목록을 확인합니다.</block>
@@ -7213,7 +7140,6 @@
   <block id="7077cd2cd21f10438aeeb3c4a40de35e" category="paragraph">출력에는 브리지가 연결된 장치(디스크 및 디스크 쉘프)가 표시됩니다. 출력 줄은 순차적으로 번호가 매겨지며, 이를 통해 장치의 수를 빠르게 계산할 수 있습니다. 예를 들어, 다음 출력에서는 10개의 디스크가 연결되어 있음을 보여 줍니다.</block>
   <block id="8305406946a60e1818d2a348b851475b" category="admonition">출력 시작 부분에 "respongse 잘린" 텍스트가 나타나면 텔넷을 사용하여 브리지에 액세스하고 동일한 명령을 입력하여 모든 출력을 볼 수 있습니다.</block>
   <block id="ebbf8bec1cdbf3fbbfc4364ea03e05af" category="list-text">명령 출력에 브리지가 스택의 모든 필수 디스크 및 디스크 쉘프에 연결되어 있는지 확인합니다.</block>
-  <block id="eb2dc3b03a2e44937ef05ba889d58803" category="list-text">SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <block ref="aea98f9277e5f61a9dbd74fc91b6a01c" category="inline-xref-macro-rx"></block>.</block>
   <block id="0431067b6c41659cab8cdd9db401130e" category="list-text">브리지에 연결되는 FC 스위치 포트를 다시 활성화합니다.</block>
   <block id="46f03cfe658451b3cda06c84b1f935ad" category="list-text">두 컨트롤러의 시스템 콘솔에서 새 브리지를 통해 디스크 쉘프(다중 경로 HA를 위해 시스템이 케이블로 연결됨)에 액세스할 수 있는지 확인합니다.</block>
   <block id="3951ec8f2fc02767a1eae0cd589a3733" category="paragraph">예를 들어, 다음 출력은 시스템이 다중 경로 HA에 대해 케이블로 연결되었음을 보여 줍니다.</block>
@@ -7430,18 +7356,13 @@
   <block id="e77d3a7eef090446f52766c77e52b0b8" category="list-text">루트 애그리게이트의 원격 플렉스를 삭제하여 루트 애그리게이트의 미러를 해제합니다.</block>
   <block id="1efe167765f1d1b76bbdd7a13d7660ff" category="list-text">'Storage aggregate show-root true'라는 루트 애그리게이트를 식별합니다</block>
   <block id="d8f5c717f6753e9c636863ed40fb421c" category="list-text">pool1 집계, 'Storage aggregate plex show-pool 1'을 표시합니다</block>
-  <block id="8ca93a1989675c9f5b847cda35e96cbb" category="list-text">root aggregate의 local plex: 'aggr plex delete aggr-name-plex-name'을 삭제합니다</block>
-  <block id="40a253fd8a0d1626668e6621d260585b" category="list-text">오프라인: 루트 애그리게이트의 원격 플렉스: '루트 집계를 위한 aggr plex offline root-aggregate-plex remote-for-root-aggregate'</block>
   <block id="37fcec9f20620ee9e865677dabe5477b" category="list-text">각 컨트롤러에서 다음 명령을 사용하여 계속하기 전에 메일박스 수, 디스크 자동 할당 및 전환 모드를 확인하십시오.</block>
   <block id="cb8db7c965d04720bc3a0cc471f1ef33" category="list-text">각 컨트롤러 모듈에 대해 스토리지 장애 조치 사서함-디스크 표시(storage failover mailbox-disk show)라는 사서함 드라이브가 3개만 표시되는지 확인합니다</block>
   <block id="b0059d0b79642bdfca0964b7ccdb74c7" category="list-text">전환 모드가 Disruptive:MetroCluster transition show 인지 확인합니다</block>
   <block id="76a10ffeec3e950e07cad72092730b7c" category="list-text">깨진 디스크가 있는지 확인합니다</block>
   <block id="1386fe2aa13f522d092b3464f52b0080" category="list-text">손상된 디스크를 제거하거나 교체합니다</block>
-  <block id="edec72b79c2270f13acc30b5854ba26f" category="list-text">node_A_1-FC 및 node_B_1-FC에서 다음 명령을 사용하여 애그리게이트가 정상인지 확인합니다. 'storage aggregate show' 'storage aggregate plex show'</block>
   <block id="fe39ec1928a5e3d9dcfcb8ef22108aac" category="paragraph">storage aggregate show 명령은 루트 애그리게이트가 미러링되지 않은 상태임을 나타냅니다.</block>
-  <block id="516e25a0ffd701288d7eb2200302b4e4" category="list-text">VLAN 또는 인터페이스 그룹이 있는지 확인합니다. 'network port ifgrp show' network port vlan show'</block>
   <block id="1a1d50bcedd5c9c7aef63070e6355e9c" category="paragraph">없는 경우 다음 두 단계를 건너뜁니다.</block>
-  <block id="910f948576ca9c1fa9bc16f91a18935e" category="list-text">VLAN 또는 ifgrp를 사용하여 LIO 목록을 표시합니다. network interface show-fields home-port, curr-port, network port show-type if-group | vlan</block>
   <block id="309d2209742b6a204a0cc9a518fdf011" category="list-text">VLAN 및 인터페이스 그룹을 제거합니다.</block>
   <block id="0c393450c2efffb4cffdc6b98b71fb5a" category="paragraph">mc 접미사가 있는 SVM을 포함하여 모든 SVM에 있는 모든 LIF에 대해 다음 단계를 수행해야 합니다.</block>
   <block id="2a8b613d3fe84a46b0a5dbaa5971de84" category="list-text">VLAN 또는 인터페이스 그룹을 사용하여 모든 LIF를 사용 가능한 포트('network interface modify -vserver vserver -name -lif lif_name -home-port port port')로 이동합니다</block>
@@ -7449,7 +7370,6 @@
   <block id="d8715b358c925c0ad833083aae10f1b3" category="list-text">모든 LIF를 각각의 홈 포트로 되돌리기: 'network interface revert-vserver vserver_name-lif lif_name'</block>
   <block id="db8063ee68fd813ee8828540f59f300c" category="list-text">모든 LIF가 홈 포트에 있는지 확인합니다. 'network interface show-is-home false'</block>
   <block id="6619c49b61b0c99f58314c33b4db2d0d" category="paragraph">출력에는 LIF가 나타나지 않아야 합니다.</block>
-  <block id="4d4b0fba938f5f7e51eb288ee469e27d" category="list-text">브로드캐스트 도메인에서 VLAN 및 ifgrp 포트를 제거합니다. :: ' 네트워크 포트 브로드캐스트 - 도메인 제거 - 포트 - IPSpace IPSpace - 브로드캐스트 - 도메인 브로드캐스트 - 도메인 이름 - 포트 이름 - 포트 이름: portname, nodename: portname,....</block>
   <block id="0b3b57bfe8846822e49e90a82bc5fec4" category="list-text">모든 VLAN 및 ifgrp 포트가 브로드캐스트 도메인('network port show-type if-group|vlan')에 할당되지 않았는지 확인합니다</block>
   <block id="43f7ed46e47d1fb3ee0b12ce55bf5e7d" category="list-text">모든 VLAN 삭제:'network port vlan delete-node nodename-vlan-name vlan-name'</block>
   <block id="21fa87cc2db83469e6d0cf27b8357bd7" category="list-text">Delete interface groups:'network port ifgrp delete-node nodename-ifgrp ifgrp-name'</block>
@@ -10797,7 +10717,6 @@
   <block id="40414fb3a79648f825985d2f107661f0" category="sidebar">MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다</block>
   <block id="6fc3e23fc447e1c003feca250d853db5" category="sidebar">Cisco IP 스위치의 이름을 바꿉니다</block>
   <block id="8939a3071227e9e768ef56f5cc7f2c4d" category="sidebar">MetroCluster IP 구성에서 스토리지를 식별하는 방법</block>
-  <block id="1c833178608e8e9495706619170addcc" category="sidebar">공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에 쉘프를 추가합니다</block>
   <block id="806e10b1bc39f5ac90158ffc4013b751" category="sidebar">MetroCluster FC 구성에 스토리지를 핫 추가합니다</block>
   <block id="c8e8c322046c66265b3b3896286ff1b6" category="sidebar">SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성에서 SAS 디스크 쉘프를 핫 추가합니다</block>
   <block id="f960e55760a30ac5cc26624c00ddaf08" category="sidebar">SAS 스토리지를 브리지 연결 MetroCluster FC 구성에 핫 추가합니다</block>
@@ -10812,8 +10731,6 @@
   <block id="d73f3d20e01c0ae11b268d892b9c7514" category="sidebar">MetroCluster 구성에서 클러스터의 이름을 바꿉니다</block>
   <block id="87e3fddd4347c3eea1eee68f594f1a43" category="sidebar">전체 MetroCluster IP 구성의 전원을 끕니다</block>
   <block id="98e0abbb33a3ee2f9258bc3cb733233b" category="sidebar">전체 MetroCluster FC 구성의 전원을 끕니다</block>
-  <block id="01f252af90871f7cd362d1ce68d6a434" category="sidebar">ONTAP 9.x 전에 구성된 FC 스위치 레이아웃을 재구성합니다</block>
-  <block id="973a6b26175b423fb0a4f4dc634c5595" category="sidebar">FC 스위치에 대한 포트 할당</block>
   <block id="2e1da8890bf2e6b2753bc66ee08ecc81" category="sidebar">상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보를 찾는 방법</block>
   <block id="7d99024812c834245ed49bdb48ef6233" category="sidebar">전환 절차를 선택합니다</block>
   <block id="5161086b8500acec535c8d396bff49e5" category="sidebar">MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</block>
@@ -11209,10 +11126,6 @@
   <block id="97f70489df0d405722087f0f98dc7c3f" category="paragraph"><block ref="97f70489df0d405722087f0f98dc7c3f" category="inline-link-macro-rx"></block></block>
   <block id="6b85600ee1be273e93253da5e134fb16" category="admonition">노드 장애 복구에 대한 자세한 내용은 의 "올바른 복구 절차 선택" 섹션을 참조하십시오 <block ref="e623fd8091406f43d52a7bc3543c2f9f" category="inline-link-macro-rx"></block>.</block>
   <block id="8ef2465c629a51ad799f916321355ab0" category="paragraph"><block ref="8ef2465c629a51ad799f916321355ab0" category="inline-link-macro-rx"></block></block>
-  <block id="8b8800e8b5ac43d8ac015a60e243a711" category="admonition">ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 <block ref="97f70489df0d405722087f0f98dc7c3f" category="inline-link-macro-rx"></block> 및 <block ref="a8125364ced10d8a90aedca98aa02032" category="inline-link-macro-rx"></block>.</block>
-  <block id="ebe3b07d927344896c24a9e5e5eee917" category="paragraph"><block ref="ebe3b07d927344896c24a9e5e5eee917" category="inline-link-macro-rx"></block></block>
-  <block id="5e6d9dff4a682d0558edb1406ac87060" category="paragraph"><block ref="5e6d9dff4a682d0558edb1406ac87060" category="inline-link-macro-rx"></block></block>
-  <block id="80063a26d9eb84904fdbb388ac3a5629" category="list-text">에 설명된 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="be2bdafda4a97cad52118e4d9ef914b5" category="inline-link-rx"></block>.</block>
   <block id="e3d7ead0f01b9fa985ec5c35c22c44f3" category="paragraph"><block ref="e3d7ead0f01b9fa985ec5c35c22c44f3" category="inline-link-macro-rx"></block></block>
   <block id="6405f02626b672ea5ce042f43244f057" category="paragraph"><block ref="6405f02626b672ea5ce042f43244f057" category="inline-link-macro-rx"></block></block>
   <block id="f62e57388ece8ed3ab39425498977dae" category="paragraph"><block ref="f62e57388ece8ed3ab39425498977dae" category="inline-link-macro-rx"></block></block>
@@ -11288,7 +11201,6 @@
   <block id="c24d2fcd8511c8b51a6aef773200e0d8" category="paragraph">스위치백 작업을 수행하기 전에 새 컨트롤러의 라이센스를 설치해야 합니다.</block>
   <block id="07beb3f4161a6f204edf78213ee21dd3" category="list-text"><block ref="07beb3f4161a6f204edf78213ee21dd3" category="inline-link-macro-rx"></block></block>
   <block id="42f4edc2efb2c786550a905c38a8416c" category="admonition">LOADER 프롬프트가 없는 경우 오류 메시지를 기록합니다. 시스템이 부팅 메뉴를 표시하는 경우 재부팅하여 부팅 프로세스를 다시 중단하십시오.</block>
-  <block id="8c4c17369ebab47cd3919b9e6b1e8537" category="admonition">케이블이 RCFs를 사용할 수 없는 경우 이 절차를 사용하지 마십시오.</block>
   <block id="8d9fb55ee32f6df582d661812847c467" category="doc">AFF A900 또는 FAS9500 시스템 사용 시 FC 스위치에 대한 포트 할당</block>
   <block id="4382ff0992965ffdabb9c638b6f2ecf2" category="list-text">AFF A900 또는 FAS9500 스토리지 시스템에는 8개의 FC-VI 포트가 필요합니다. AFF A900 또는 FAS9500을 사용하는 경우 8포트 구성을 사용해야 합니다. 구성에 다른 스토리지 시스템 모델이 포함된 경우, 표에 표시된 케이블을 사용하되 불필요한 FC-VI 포트의 케이블은 무시합니다.</block>
   <block id="649ae78fb315c7c5f6a700dfdf86f4bb" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성에서 ISL에 대한 AFF A900 또는 FAS9500-Cisco 포트 사용</block>
@@ -12229,15 +12141,6 @@
   <block id="b86c7f3554d9472f6a1e417c7f70fb18" category="admonition">Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 <block ref="ac21c0d53d9fcd547ee85e9d73d53854" category="inline-link-macro-rx"></block></block>
   <block id="d173c8f64c2c9e1ca6a4cc8814f4c2ec" category="paragraph"><block ref="04a1df006b1c7589273df10cf6fc5ac4" category="inline-link-macro-rx"></block>.</block>
   <block id="7dd57dad7ab33a64ea80d69dc576695f" category="list-text">MetroCluster IP 구성은 이미 NS224 쉘프 또는 전용 스토리지 스위치에 직접 연결할 수 있습니다.</block>
-  <block id="e6b54b2dde2da7a5ff5d226fbb4c72a9" category="paragraph">IP 스위치</block>
-  <block id="c2940722935f500be2023f23b7bc5ee0" category="paragraph">스위치 교체 또는 사용 변경</block>
-  <block id="805f56a5319b24b11dbae19c7fafc0bc" category="paragraph"><block ref="805f56a5319b24b11dbae19c7fafc0bc" category="inline-link-macro-rx"></block></block>
-  <block id="21ebe2933dbecca61d158de684e14ba8" category="paragraph">RCF 파일 업그레이드</block>
-  <block id="c9e8474b98ce13361ef8538974668a72" category="paragraph">스위치 이름을 바꿉니다</block>
-  <block id="3c6fae50d09fb30ac9a98fc022f76605" category="paragraph"><block ref="3c6fae50d09fb30ac9a98fc022f76605" category="inline-link-macro-rx"></block></block>
-  <block id="3b6ad9086b47f9a90b8bbef5ab85d430" category="paragraph"><block ref="3b6ad9086b47f9a90b8bbef5ab85d430" category="inline-link-macro-rx"></block></block>
-  <block id="3d371ae53e0538b3e0a7ddbfb529f302" category="paragraph"><block ref="3d371ae53e0538b3e0a7ddbfb529f302" category="inline-link-macro-rx"></block></block>
-  <block id="d9d6b58e57305b9866d95c493eb0aa7a" category="paragraph"><block ref="d9d6b58e57305b9866d95c493eb0aa7a" category="inline-link-macro-rx"></block></block>
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
   <block id="0e5e2d82a1039e41c19d2248f3b64787" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다.</block>
   <block id="6212a1ad66c5ad9d3c50380aa91aab6a" category="list-text">하드웨어 오류가 없습니다</block>
@@ -12337,7 +12240,6 @@
   <block id="39c4de53c442cd522fc67edfc4cc59c8" category="list-text">다음과 같은 순서로 스위치를 케이블로 연결합니다.</block>
   <block id="4c49ac5fd96c13efa7ddbce7575dd9e4" category="list-text">MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <block ref="70a312d559ac5bac88a63c5c7c2e52d3" category="inline-xref-macro-rx"></block>.</block>
   <block id="b81576b1956a4793e86cfb62d8774b3f" category="list-text">구성의 두 번째 Fabric에 대해 1단계부터 7단계까지 반복합니다.</block>
-  <block id="899dd799064eace0f16728f2bf38c96b" category="paragraph">RCF(Reference Configuration Files)를 사용할 수 있도록 FC 스위치 포트 사용량은 설명서에 설명된 사용량과 일치해야 합니다.</block>
   <block id="c1f9897c71a9ecfa3b9c9f7cf2180518" category="paragraph">이 설명서의 예제로 사용된 제안된 이름은 아래와 같이 브리지가 연결되는 컨트롤러 모듈과 스택을 식별합니다.</block>
   <block id="498655ab09377cb9366dc958acdc9ea7" category="section-title">사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다</block>
   <block id="ff0ff0079f0279d8fee034046e8fa982" category="paragraph">불필요한 상태 경고를 방지하기 위해 사용하지 않는 ISL 포트 및 포트 채널을 비활성화하는 것이 좋습니다 NetApp.</block>
@@ -12988,7 +12890,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="69abf6cf7deeba7ace2f747f7661208f" category="cell">FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N</block>
   <block id="0351289236b3260f9d0c35b64f62689c" category="paragraph">하나의 FC 포트(FC1 또는 FC2)만 사용하여 FiberBridge 7500N 또는 7600N 브리지의 케이블 연결을 따를 수 있습니다. 4개의 이니시에이터를 사용하는 대신 2개의 이니시에이터만 연결하고 다른 2개는 스위치 포트에 연결된 상태로 두십시오.</block>
   <block id="4883312b6c36aa2f1d5ce2e2f17638bd" category="paragraph">조닝을 수동으로 수행하는 경우 FC 포트(FC1 또는 FC2) 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 사용되는 조닝을 따르십시오. 이 시나리오에서는 Fabric당 각 존 구성원에 2개가 아닌 1개의 이니시에이터 포트가 추가됩니다.</block>
-  <block id="1e008e69dc731ad28df3d6927462a7f3" category="paragraph">의 절차에 따라 조닝을 변경하거나 FiberBridge 6500N에서 FiberBridge 7500N으로 업그레이드할 수 있습니다 <block ref="0b4bc6296d77be28e33d3b50e0ea0797" category="inline-link-macro-rx"></block>.</block>
   <block id="7f921cbd9f23de85fa3d483b640e428b" category="open-title">노드 전원이 꺼져 있는 경우:</block>
   <block id="5f4eaac69c780a3f8ab154192e4a1a26" category="paragraph">노드의 전원을 켭니다.</block>
   <block id="2900f8420dafccee0a2692e48506c6cb" category="open-title">LOADER 프롬프트에 노드가 있는 경우:</block>
@@ -13053,8 +12954,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8bc67669b17eba9ca754ee74dd34564c" category="list-text">FIPS 호환 버전의 EFOS를 사용하는 경우 ECDSA 키를 생성합니다. 다음 예제에서는 길이가 521인 키를 만듭니다. 유효한 값은 256, 384 또는 521입니다.</block>
   <block id="8eb0b3dc24b7128748cd767385d5a9f2" category="paragraph">MetroCluster IP 구성의 각 노드에는 백엔드 IP 네트워크 연결을 위한 전용 인터페이스가 있습니다.</block>
   <block id="ad1b97f0744b9c154b01cc69afb505d7" category="list-text">2개의 로컬 클러스터 인터페이스</block>
-  <block id="861e1910edbd7f3e677dab91f10869b0" category="sidebar">단일 MetroCluster 사이트의 전원을 끄고 켭니다</block>
-  <block id="b54f4d527d126f4e54869800ed0e43ac" category="sidebar">전체 MetroCluster 구성의 전원을 끕니다</block>
   <block id="3918b9a89aceefd41e40355d1f97ba48" category="list-text">새 노드를 각각 재부팅합니다.</block>
   <block id="fedca74b48d819e0ff016411f2964078" category="paragraph"><block ref="d690f5fb4faed2f81ce54caed818eaf8" prefix="" category="inline-code"></block></block>
   <block id="0266a1f477a71d63c95d6ad418f2a596" category="paragraph">의 절차에 따라 조닝을 변경하거나 FiberBridge 6500N에서 FiberBridge 7500N으로 업그레이드할 수 있습니다 <block ref="7352d8244ff0bfad7d2b5214b0bb9616" category="inline-link-macro-rx"></block>.</block>
@@ -14103,4 +14002,32 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="dd59329be100bd10605cd63312522627" category="list-text">반복하십시오<block ref="1c41b1b96665f865995fbed1d8884dfe" category="inline-xref-macro-rx"></block>.</block>
   <block id="0b9029dad5ded8eb8b9621381b59b85b" category="paragraph">다음 단계를 사용하여 MetroCluster FC 구성을 업데이트합니다.</block>
   <block id="e80b737c5dcc4e6b9a5a4eecb2dc9582" category="paragraph">다음 단계를 사용하여 MetroCluster IP 구성을 새로 고칩니다.</block>
+  <block id="8c7c7786a78ed0525be3fc73d05a9bd2" category="list-title">다양한 유형의 MetroCluster 구성에 대한 유지 관리 절차</block>
+  <block id="04b213f51089d6bf4fefca757c297895" category="inline-link-macro">MetroCluster IP 구성에 대한 유지 관리 절차</block>
+  <block id="c684e4d9d94884e7e064b5fce2bca01c" category="list-text">MetroCluster IP 구성을 사용하는 경우 의 절차를 <block ref="0fd30218129ebfd04df2ceba50901cb7" category="inline-link-macro-rx"></block>검토하십시오.</block>
+  <block id="d54055ff3c5572f8c84a9331b9d6f630" category="inline-link-macro">MetroCluster FC 구성 유지 관리 절차</block>
+  <block id="629c2e5f54aec646ad030b6bd9c36e9a" category="list-text">MetroCluster FC 구성을 사용하는 경우 의 절차를 <block ref="b7da12df1c6b6528408292b68d3e17c8" category="inline-link-macro-rx"></block>검토하십시오.</block>
+  <block id="891544421d87df0c89a78fb379467fd9" category="inline-link-macro">모든 MetroCluster 구성에 대한 유지 보수 절차</block>
+  <block id="0267a80a5a9443a94284e8739a1c0df9" category="list-text">구성에 대한 특정 섹션에서 절차를 찾을 수 없는 경우 의 절차를 검토하십시오<block ref="575f5c21664760f90fc8fdb8bf84e67f" category="inline-link-macro-rx"></block>.</block>
+  <block id="50d82ac3e29031ae2fa0f3c900b19d9f" category="paragraph-title">기타 모든 유지보수 절차</block>
+  <block id="f1516c089ad8cc5de225d5d61f38ddcd" category="paragraph">다음 표에는 위에 나열된 세 섹션에 없는 MetroCluster 유지 보수 관련 절차에 대한 링크가 나와 있습니다.</block>
+  <block id="69932a91d0a8db4816d852d8b7778b43" category="paragraph"><block ref="69932a91d0a8db4816d852d8b7778b43" category="inline-link-macro-rx"></block></block>
+  <block id="ed11e086b792684da8bb6cb811e96f94" category="list-text">[[step18-reconnect-cables]] SAS 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.</block>
+  <block id="6ab4575668afdb7eac943932c3dea771" category="list-text">SAS 케이블이 느슨한지 확인하거나 반복하여 SAS 케이블을 <block ref="450668906eddc32a23ba920c82feab91" category="inline-xref-macro-rx"></block>수정합니다.</block>
+  <block id="22bc2931c6c73777a3f0500dd76305a8" category="list-text">FC 케이블을 새 브리지의 Fibre Channel 1 포트에 연결합니다.</block>
+  <block id="a4ca97e0f50e50637d6cebec3a987d91" category="paragraph">FC 포트는 FiberBridge 6500N 브리지가 연결된 동일한 스위치 또는 컨트롤러 포트에 케이블을 연결해야 합니다.</block>
+  <block id="3dd891e7c2d146d3f085dff35d6e6c9d" category="paragraph">새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 브리지에서 지원하는 ONTAP의 최신 펌웨어 및 버전으로 업그레이드하십시오.</block>
+  <block id="862ce99c1f9bd630d0a2c4dd77d2e736" category="list-text">[[step18-recable]]] SAS 케이블을 새 브리지의 SAS A 포트에 다시 연결합니다.</block>
+  <block id="08d52f96324eeb7fd30d3a14d53ba1a8" category="list-text">SAS 케이블이 느슨한지 확인하거나 반복하여 SAS 케이블을 <block ref="f7538abcada9d63e3f84a80358d7b02f" category="inline-xref-macro-rx"></block>수정합니다.</block>
+  <block id="b1bdbe6e206639a0a939322468dfe7a0" category="list-text">오프라인 상태에서 루트 애그리게이트의 원격 플렉스를 삭제합니다. +<block ref="6b21b58d884088201c5cf41517c19ec7" prefix=" " category="inline-code"></block></block>
+  <block id="69a02fa1d7e331868472706a4552508d" category="paragraph"><block ref="7a06cbed7906fd149c64814276b88ab4" prefix="" category="inline-code"></block></block>
+  <block id="02f2398af4f05836ffd8a293b813567a" category="list-text">node_A_1-FC 및 node_B_1-FC에서 다음 명령을 사용하여 애그리게이트가 정상인지 확인합니다.</block>
+  <block id="85bbe0ed3e79b68a5dde9c57b9dd4d35" category="list-text">VLAN 또는 인터페이스 그룹을 확인합니다.</block>
+  <block id="668c0014fabb7b9c53aeeddba81cd3f5" category="paragraph"><block ref="21ae3cd30d3faa7f1f8d97766b196a1a" prefix="" category="inline-code"></block></block>
+  <block id="793d1d4f275c1119fa9ef4c6bdeb245e" category="paragraph"><block ref="7e487668bc88674f5d71e47878b4625d" prefix="" category="inline-code"></block></block>
+  <block id="a382880d8259c3f5525bbf92c1128dff" category="list-text">VLAN 또는 ifgrp를 사용하여 LIFS 목록을 표시합니다.</block>
+  <block id="ffaee332c1ecb4f195fa078c89f05cab" category="paragraph"><block ref="d0277d313084abb1fd93e8c7e109589d" prefix="" category="inline-code"></block></block>
+  <block id="4ac7d2ae8e04576a892556ab9a493959" category="list-text">브로드캐스트 도메인에서 VLAN 및 ifgrp 포트 제거:<block ref="bd72bbf935a7a9d39c21cf3731500f70" prefix=" " category="inline-code"></block></block>
+  <block id="07b3edb46d2774fa411b0f9a1b01bead" category="sidebar">MetroCluster 유지 보수를 준비합니다</block>
+  <block id="053564114ce5591908a1b29312289c15" category="sidebar">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP 구성에 쉘프를 추가합니다</block>
 </blocks>

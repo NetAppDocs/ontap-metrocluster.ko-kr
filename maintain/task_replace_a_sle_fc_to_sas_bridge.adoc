@@ -831,11 +831,12 @@ NOTE: 이더넷 포트 MP2도 활성화된 경우 포트 MP2에 대해 이전 �
 
 
 
+. FC 케이블을 새 브리지의 동일한 포트에 연결합니다.
 . 각 브리지에서 FiberBridge 펌웨어를 업데이트합니다.
 +
-link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["ONTAP 9.4 이상을 실행하는 구성에서 FiberBridge 7600N 또는 7500N 브리지에서 펌웨어 업데이트"]
+link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어를 업데이트합니다"]
 
-. [[step17-reconnect-cables]] SAS 및 FC 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.
+. [[step18-reconnect-cables]] SAS 케이블을 새 브리지의 동일한 포트에 다시 연결합니다.
 +
 
 NOTE: 포트를 연결하기 전에 10초 이상 기다립니다. SAS 케이블 커넥터는 SAS 포트에 올바르게 연결되었을 때 딸깍 소리가 나면서 제자리에 끼며 디스크 쉘프 SAS 포트 LNK LED가 녹색으로 켜집니다. 디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에 있음) SAS 케이블 커넥터를 삽입합니다. 컨트롤러의 경우 SAS 포트 방향은 플랫폼 모델에 따라 다를 수 있으므로 SAS 케이블 커넥터의 올바른 방향은 서로 다릅니다.
@@ -884,7 +885,7 @@ Tgt VendorID ProductID        Type        SerialNumber
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step17-reconnect-cables,17단계>>.
+.. SAS 케이블이 느슨한지 확인하거나 반복하여 SAS 케이블을 <<step18-reconnect-cables,18단계>>수정합니다.
 .. 이전 단계를 반복합니다.
 
 
@@ -1226,16 +1227,20 @@ NOTE: 이더넷 포트 MP2도 활성화된 경우 포트 MP2에 대해 이전 �
 
 
 . FiberBridge 7600N 또는 7500N 브리지에 대한 상태 모니터링을 켭니다.
+. FC 케이블을 새 브리지의 Fibre Channel 1 포트에 연결합니다.
++
+FC 포트는 FiberBridge 6500N 브리지가 연결된 동일한 스위치 또는 컨트롤러 포트에 케이블을 연결해야 합니다.
+
 . 각 브리지에서 FiberBridge 펌웨어를 업데이트합니다.
 +
-새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster 유지 관리 가이드 _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.
+새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 브리지에서 지원하는 ONTAP의 최신 펌웨어 및 버전으로 업그레이드하십시오.
 
-. [[step17-recable]] SAS 및 FC 케이블을 새 브리지의 SAS A 및 파이버 채널 1 포트에 다시 연결합니다.
++
+link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어를 업데이트합니다"]
+
+. [[step18-recable]]] SAS 케이블을 새 브리지의 SAS A 포트에 다시 연결합니다.
 +
 SAS 포트는 FiberBridge 6500N 브리지가 연결된 동일한 쉘프 포트에 케이블로 연결되어야 합니다.
-
-+
-FC 포트는 FiberBridge 6500N 브리지가 연결된 동일한 스위치 또는 컨트롤러 포트에 케이블로 연결되어야 합니다.
 
 +
 
@@ -1320,7 +1325,7 @@ NOTE: 출력 시작 부분에 "respongse 잘린" 텍스트가 나타나면 텔�
  a| 
 정답이 아닙니다
  a| 
-.. SAS 케이블이 느슨하게 연결되었는지 확인하거나 SAS 케이블을 다시 연결하여 문제를 해결하십시오 <<step17-recable,17단계>>.
+.. SAS 케이블이 느슨한지 확인하거나 반복하여 SAS 케이블을 <<step18-recable,18단계>>수정합니다.
 .. 나머지 각 브리지에 대해 이전 단계를 반복합니다.
 
 

@@ -2,137 +2,133 @@
 section: maintain
 title: MetroCluster 구성 요소를 유지보수하십시오
 entries:
-- title: MetroCluster 유지 관리 작업의 절차를 찾는 방법
-  url: "/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html"
-- title: MetroCluster 장애 및 복구 시나리오
-  url: "/maintain/reference_mcc_failure_scenarios.html"
-- title: 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
-  url: "/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html"
-- title: 유지 관리 작업을 수행하기 전에 콘솔 로깅을 사용하도록 설정합니다
-  url: "/maintain/enable-console-logging-before-maintenance.html"
-- title: FC-to-SAS 브리지 유지 관리
+- title: MetroCluster 유지 보수를 준비합니다
   entries:
-  - title: MetroCluster 구성에서 FiberBridge 7600N 브리지 지원
-    url: "/maintain/concept_using_fibrebridge_7600n_bridges_in_mcc_configurations.html"
-  - title: MetroCluster 구성에서 FiberBridge 7500N 브리지 지원
-    url: "/maintain/concept_using_fibrebridge_7500n_bridges_in_mcc_configurations.html"
-  - title: 필요한 경우 FiberBridge 7600N 브리지에서 IP 포트 액세스를 활성화합니다
-    url: "/maintain/task_enable_ip_port_access_on_the_fibrebridge_7600n_bridge_guides.html"
-  - title: FiberBridge 브리지에서 펌웨어를 업데이트합니다
-    url: "/maintain/task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html"
-  - title: 단일 FC-to-SAS 브리지를 교체합니다
-    url: "/maintain/task_replace_a_sle_fc_to_sas_bridge.html"
-  - title: FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체합니다
-    url: "/maintain/task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html"
-  - title: FiberBridge 브리지를 구성 및 관리하기 위한 다른 인터페이스 사용 요구 사항
-    url: "/maintain/reference_requirements_for_using_other_interfaces_to_configure_and_manage_fibrebridge_bridges.html"
-  - title: 오류가 발생한 전원 공급 장치 모듈을 핫 스왑(hot-replace) 합니다
-    url: "/maintain/reference_fb_replace_a_power_supply.html"
-  - title: FC-to-SAS 브리지의 대역 내 관리
-    url: "/maintain/concept_in_band_management_of_the_fc_to_sas_bridges.html"
-  - title: FiberBridge 브리지를 고정하거나 고정하지 않습니다
-    url: "/maintain/task_secur_or_unsecur_a_fibrebridge_bridge.html"
-- title: FC 스위치 유지 관리 및 교체
+  - title: 유지 관리 작업을 수행하기 전에 콘솔 로깅을 사용하도록 설정합니다
+    url: "/maintain/enable-console-logging-before-maintenance.html"
+  - title: 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
+    url: "/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html"
+  - title: MetroCluster 장애 및 복구 시나리오
+    url: "/maintain/reference_mcc_failure_scenarios.html"
+  - title: 상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보를 찾는 방법
+    url: "/maintain/concept_using_the_interoperability_matrix_tool_to_find_mcc_information.html"
+  - title: MetroCluster 유지 관리 작업의 절차를 찾는 방법
+    url: "/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html"
+- title: MetroCluster FC 구성 유지 관리 절차
   entries:
-  - title: Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다
-    url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html"
-  - title: Cisco FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다
-    url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html"
-  - title: 새 Brocade FC 스위치로 업그레이드하십시오
-    url: "/maintain/task_upgrade_to_new_brocade_switches.html"
-  - title: Brocade FC 스위치를 교체합니다
-    url: "/maintain/task_replace_a_brocade_fc_switch_mcc.html"
-  - title: Brocade FC 스위치의 이름을 바꿉니다
-    url: "/maintain/task_rename_a_brocade_fc_switch.html"
-  - title: Brocade FC 스위치에서 암호화를 해제합니다
-    url: "/maintain/task_disable_encryption_on_brocade_fc_switches.html"
-  - title: Brocade 스위치에서 ISL 속성, ISL 포트 또는 IOD/ood 구성을 변경합니다
-    url: "/maintain/task_change_isl_properties_isl_ports_or_the_iod_ood_configuration_on_a_brocade_switch.html"
-  - title: Cisco FC 스위치를 교체합니다
-    url: "/maintain/task_replace_a_cisco_fc_switch_mcc.html"
-  - title: Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다
-    url: "/maintain/task_change_speed_of_isl_ports_on_a_cisco_fc_switch.html"
-  - title: Cisco 스위치에 lSLs 추가
-    url: "/maintain/task_add_lsls_to_a_cisco_fc_switch.html"
-  - title: FC 스위치의 공급업체 또는 모델을 변경합니다
-    url: "/maintain/task_change_an_fc_switch.html"
-- title: IP 스위치 유지 보수 및 교체
-  entries:
-  - title: IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다
-    url: "/maintain/task_replace_an_ip_switch.html"
-  - title: 온라인 또는 오프라인 MetroCluster IP 인터페이스 포트
-    url: "/maintain/task_online_or_offline_the_mcc_ip_interface.html"
-  - title: MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다
-    url: "/maintain/task_upgrade_firmware_on_mcc_ip_switches.html"
-  - title: MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
-    url: "/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html"
-  - title: Cleanupfiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다
-    url: "/maintain/task_upgrade_rcf_files_on_cisco_ip_switches_with_cleanupfiles.html"
-  - title: Cisco IP 스위치의 이름을 바꿉니다
-    url: "/maintain/task_rename_a_cisco_ip_switch.html"
-  - title: Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다
-    url: "/maintain/task_add_remove_or_change_isl_ports_nondisruptively.html"
-- title: MetroCluster IP 인터페이스의 속성을 수정합니다
-  url: "/maintain/task-modify-ip-netmask-properties.html"
-- title: 상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다
-  url: "/maintain/task_modify_switch_or_bridge_ip_address_for_health_monitoring.html"
-- title: MetroCluster IP 구성에서 스토리지를 식별하는 방법
-  url: "/maintain/concept_identifying_storage_in_a_mcc_ip_configuration.html"
-- title: 공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에 쉘프를 추가합니다
-  url: "/maintain/task_add_shelves_using_shared_storage.html"
-- title: MetroCluster FC 구성에 스토리지를 핫 추가합니다
-  entries:
-  - title: SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성에서 SAS 디스크 쉘프를 핫 추가합니다
-    url: "/maintain/task_hot_add_a_sas_disk_shelf_in_a_direct_attached_mcc_configuration_us_sas_optical_cables.html"
-  - title: SAS 스토리지를 브리지 연결 MetroCluster FC 구성에 핫 추가합니다
+  - title: 상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다
+    url: "/maintain/task_modify_switch_or_bridge_ip_address_for_health_monitoring.html"
+  - title: FC-to-SAS 브리지 유지 관리
     entries:
-    - title: 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 추가합니다
-      url: "/maintain/task_hot_add_a_stack_to_exist_7500n_pair.html"
-    - title: SAS 디스크 쉘프 및 브리지 스택을 MetroCluster 시스템에 핫 추가합니다
-      url: "/maintain/task_fb_hot_add_stack_of_shelves_and_bridges.html"
-    - title: SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가합니다
+    - title: MetroCluster 구성에서 FiberBridge 7600N 브리지 지원
+      url: "/maintain/concept_using_fibrebridge_7600n_bridges_in_mcc_configurations.html"
+    - title: MetroCluster 구성에서 FiberBridge 7500N 브리지 지원
+      url: "/maintain/concept_using_fibrebridge_7500n_bridges_in_mcc_configurations.html"
+    - title: 필요한 경우 FiberBridge 7600N 브리지에서 IP 포트 액세스를 활성화합니다
+      url: "/maintain/task_enable_ip_port_access_on_the_fibrebridge_7600n_bridge_guides.html"
+    - title: FiberBridge 브리지에서 펌웨어를 업데이트합니다
+      url: "/maintain/task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html"
+    - title: 단일 FC-to-SAS 브리지를 교체합니다
+      url: "/maintain/task_replace_a_sle_fc_to_sas_bridge.html"
+    - title: FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체합니다
+      url: "/maintain/task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html"
+    - title: FiberBridge 브리지를 구성 및 관리하기 위한 다른 인터페이스 사용 요구 사항
+      url: "/maintain/reference_requirements_for_using_other_interfaces_to_configure_and_manage_fibrebridge_bridges.html"
+    - title: 오류가 발생한 전원 공급 장치 모듈을 핫 스왑(hot-replace) 합니다
+      url: "/maintain/reference_fb_replace_a_power_supply.html"
+    - title: FC-to-SAS 브리지의 대역 내 관리
+      url: "/maintain/concept_in_band_management_of_the_fc_to_sas_bridges.html"
+    - title: FiberBridge 브리지를 고정하거나 고정하지 않습니다
+      url: "/maintain/task_secur_or_unsecur_a_fibrebridge_bridge.html"
+  - title: FC 스위치 유지 관리 및 교체
+    entries:
+    - title: Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다
+      url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html"
+    - title: Cisco FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다
+      url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html"
+    - title: 새 Brocade FC 스위치로 업그레이드하십시오
+      url: "/maintain/task_upgrade_to_new_brocade_switches.html"
+    - title: Brocade FC 스위치를 교체합니다
+      url: "/maintain/task_replace_a_brocade_fc_switch_mcc.html"
+    - title: Brocade FC 스위치의 이름을 바꿉니다
+      url: "/maintain/task_rename_a_brocade_fc_switch.html"
+    - title: Brocade FC 스위치에서 암호화를 해제합니다
+      url: "/maintain/task_disable_encryption_on_brocade_fc_switches.html"
+    - title: Brocade 스위치에서 ISL 속성, ISL 포트 또는 IOD/ood 구성을 변경합니다
+      url: "/maintain/task_change_isl_properties_isl_ports_or_the_iod_ood_configuration_on_a_brocade_switch.html"
+    - title: Cisco FC 스위치를 교체합니다
+      url: "/maintain/task_replace_a_cisco_fc_switch_mcc.html"
+    - title: Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다
+      url: "/maintain/task_change_speed_of_isl_ports_on_a_cisco_fc_switch.html"
+    - title: Cisco 스위치에 lSLs 추가
+      url: "/maintain/task_add_lsls_to_a_cisco_fc_switch.html"
+    - title: FC 스위치의 공급업체 또는 모델을 변경합니다
+      url: "/maintain/task_change_an_fc_switch.html"
+  - title: 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다
+    url: "/maintain/task_replace_a_shelf_nondisruptively_in_a_mcc_fc_configuration.html"
+  - title: MetroCluster FC 구성에 스토리지를 핫 추가합니다
+    entries:
+    - title: SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성에서 SAS 디스크 쉘프를 핫 추가합니다
+      url: "/maintain/task_hot_add_a_sas_disk_shelf_in_a_direct_attached_mcc_configuration_us_sas_optical_cables.html"
+    - title: SAS 스토리지를 브리지 연결 MetroCluster FC 구성에 핫 추가합니다
       entries:
-      - title: SAS 디스크 쉘프 핫 추가 준비
-        url: "/maintain/task_fb_hot_add_shelf_prepare_7500n.html"
-      - title: 디스크 쉘프 핫 추가
-        url: "/maintain/task_fb_hot_add_a_disk_shelf_install_7500n.html"
-    - title: 브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다
-      url: "/maintain/task_hot_add_an_iom12_disk_shelf_to_a_stack_of_iom6_disk_shelves.html"
-- title: MetroCluster FC 구성에서 스토리지를 핫 제거할 수 있습니다
-  url: "/maintain/task_hot_remove_storage_from_a_mcc_fc_configuration.html"
-- title: 확장 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다
-  url: "/maintain/task_replace_a_shelf_nondisruptively_in_a_stretch_mcc_configuration.html"
-- title: 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다
-  url: "/maintain/task_replace_a_shelf_nondisruptively_in_a_mcc_fc_configuration.html"
-- title: 루트 볼륨을 새 대상으로 마이그레이션하는 시기
-  url: "/maintain/concept_migrating_root_volumes_to_a_new_destination.html"
-- title: MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다
-  url: "/maintain/task-configure-encryption.html"
-- title: MetroCluster 구성에서 메타데이터 볼륨 이동
-  url: "/maintain/task_move_a_metadata_volume_in_mcc_configurations.html"
-- title: MetroCluster 구성에서 클러스터의 이름을 바꿉니다
-  url: "/maintain/task_rename_the_cluster_for_mcc_configuration.html"
-- title: 단일 MetroCluster 사이트의 전원을 끄고 켭니다
-  entries:
-  - title: MetroCluster IP 구성에서 단일 사이트의 전원을 끄고 켭니다
-    url: "/maintain/task_power_on_and_power_off_a_data_center.html"
+      - title: 기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 추가합니다
+        url: "/maintain/task_hot_add_a_stack_to_exist_7500n_pair.html"
+      - title: SAS 디스크 쉘프 및 브리지 스택을 MetroCluster 시스템에 핫 추가합니다
+        url: "/maintain/task_fb_hot_add_stack_of_shelves_and_bridges.html"
+      - title: SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가합니다
+        entries:
+        - title: SAS 디스크 쉘프 핫 추가 준비
+          url: "/maintain/task_fb_hot_add_shelf_prepare_7500n.html"
+        - title: 디스크 쉘프 핫 추가
+          url: "/maintain/task_fb_hot_add_a_disk_shelf_install_7500n.html"
+      - title: 브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다
+        url: "/maintain/task_hot_add_an_iom12_disk_shelf_to_a_stack_of_iom6_disk_shelves.html"
+  - title: MetroCluster FC 구성에서 스토리지를 핫 제거할 수 있습니다
+    url: "/maintain/task_hot_remove_storage_from_a_mcc_fc_configuration.html"
   - title: MetroCluster FC 구성에서 단일 사이트의 전원을 끄고 켭니다
     url: "/maintain/task-power-on-and-power-off-a-fc-site.html"
-- title: 전체 MetroCluster 구성의 전원을 끕니다
-  entries:
-  - title: 전체 MetroCluster IP 구성의 전원을 끕니다
-    url: "/maintain/task_power_off_an_entire_mcc_ip_configuration.html"
   - title: 전체 MetroCluster FC 구성의 전원을 끕니다
     url: "/maintain/task_power_off_an_entire_mcc_fc_configuration.html"
-- title: ONTAP 9.x 전에 구성된 FC 스위치 레이아웃을 재구성합니다
-  url: "/maintain/task_do_not_use_for_9_8_and_later_reconfigure_the_fc_switch_layout_for_ontap_9_1_or_later.html"
-- title: FC 스위치에 대한 포트 할당
+- title: MetroCluster IP 구성에 대한 유지 관리 절차
   entries:
-  - title: 이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
-    url: "/maintain/concept_port_assignments_for_systems_using_two_initiator_ports.html"
-  - title: ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당
-    url: "/maintain/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html"
-- title: 상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보를 찾는 방법
-  url: "/maintain/concept_using_the_interoperability_matrix_tool_to_find_mcc_information.html"
-- title: 추가 정보를 찾을 수 있는 위치
-  url: "/maintain/reference_where_to_find_additional_information_mcc_service_guide.html"
+  - title: MetroCluster IP 인터페이스의 속성을 수정합니다
+    url: "/maintain/task-modify-ip-netmask-properties.html"
+  - title: IP 스위치 유지 보수 및 교체
+    entries:
+    - title: IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다
+      url: "/maintain/task_replace_an_ip_switch.html"
+    - title: 온라인 또는 오프라인 MetroCluster IP 인터페이스 포트
+      url: "/maintain/task_online_or_offline_the_mcc_ip_interface.html"
+    - title: MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다
+      url: "/maintain/task_upgrade_firmware_on_mcc_ip_switches.html"
+    - title: MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다
+      url: "/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html"
+    - title: Cleanupfiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다
+      url: "/maintain/task_upgrade_rcf_files_on_cisco_ip_switches_with_cleanupfiles.html"
+    - title: Cisco IP 스위치의 이름을 바꿉니다
+      url: "/maintain/task_rename_a_cisco_ip_switch.html"
+    - title: Cisco IP 스위치에서 ISL 포트를 중단 없이 추가, 제거 또는 변경합니다
+      url: "/maintain/task_add_remove_or_change_isl_ports_nondisruptively.html"
+  - title: MetroCluster IP 구성에서 스토리지를 식별하는 방법
+    url: "/maintain/concept_identifying_storage_in_a_mcc_ip_configuration.html"
+  - title: 공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP 구성에 쉘프를 추가합니다
+    url: "/maintain/task_add_shelves_using_shared_storage.html"
+  - title: MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다
+    url: "/maintain/task-configure-encryption.html"
+  - title: MetroCluster IP 구성에서 단일 사이트의 전원을 끄고 켭니다
+    url: "/maintain/task_power_on_and_power_off_a_data_center.html"
+  - title: 전체 MetroCluster IP 구성의 전원을 끕니다
+    url: "/maintain/task_power_off_an_entire_mcc_ip_configuration.html"
+- title: 모든 MetroCluster 구성에 대한 유지 보수 절차
+  entries:
+  - title: 확장 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다
+    url: "/maintain/task_replace_a_shelf_nondisruptively_in_a_stretch_mcc_configuration.html"
+  - title: 루트 볼륨을 새 대상으로 마이그레이션하는 시기
+    url: "/maintain/concept_migrating_root_volumes_to_a_new_destination.html"
+  - title: MetroCluster 구성에서 메타데이터 볼륨 이동
+    url: "/maintain/task_move_a_metadata_volume_in_mcc_configurations.html"
+  - title: MetroCluster 구성에서 클러스터의 이름을 바꿉니다
+    url: "/maintain/task_rename_the_cluster_for_mcc_configuration.html"
+  - title: 추가 정보를 찾을 수 있는 위치
+    url: "/maintain/reference_where_to_find_additional_information_mcc_service_guide.html"

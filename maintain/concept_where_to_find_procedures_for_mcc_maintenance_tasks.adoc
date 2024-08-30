@@ -13,8 +13,14 @@ summary: MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올�
 [role="lead"]
 MetroCluster 하드웨어 유지보수 작업을 수행할 때는 올바른 절차를 선택해야 합니다.
 
+.다양한 유형의 MetroCluster 구성에 대한 유지 관리 절차
+* MetroCluster IP 구성을 사용하는 경우 의 절차를 link:task-modify-ip-netmask-properties.html["MetroCluster IP 구성에 대한 유지 관리 절차"]검토하십시오.
+* MetroCluster FC 구성을 사용하는 경우 의 절차를 link:task_modify_switch_or_bridge_ip_address_for_health_monitoring.html["MetroCluster FC 구성 유지 관리 절차"]검토하십시오.
+* 구성에 대한 특정 섹션에서 절차를 찾을 수 없는 경우 의 절차를 검토하십시오link:task_replace_a_shelf_nondisruptively_in_a_stretch_mcc_configuration.html["모든 MetroCluster 구성에 대한 유지 보수 절차"].
 
-NOTE: ONTAP 9.8이 출시됨에 따라 MetroCluster 업그레이드 및 확장 절차가 로 옮겨졌습니다 link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 업그레이드 및 확장"] 및 link:../transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"].
+
+.기타 모든 유지보수 절차
+다음 표에는 위에 나열된 세 섹션에 없는 MetroCluster 유지 보수 관련 절차에 대한 링크가 나와 있습니다.
 
 |===
 
@@ -50,7 +56,7 @@ https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명�
  a| 
 업그레이드 및 확장
  a| 
-link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster ® 업그레이드 및 확장"]
+link:../upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 업그레이드 및 확장"]
 
 
 
@@ -63,28 +69,6 @@ link:../transition/concept_choosing_your_transition_procedure_mcc_transition.htm
 
  a| 
 드라이브 쉘프
- a| 
-FC
- a| 
-선반 추가(다리 또는 개별 선반이 있는 스택)
- a| 
-link:task_hot_add_a_stack_to_exist_7500n_pair.html["기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택 핫 추가"]
-
-link:task_fb_hot_add_stack_of_shelves_and_bridges.html["MetroCluster 시스템에 SAS 디스크 쉘프 및 브리지 스택 핫 추가"]
-
-link:task_fb_hot_add_shelf_prepare_7500n.html["SAS 디스크 쉘프 스택에 SAS 디스크 쉘프 핫 추가"]
-
-
-
- a| 
-FC
- a| 
-쉘프 제거
- a| 
-link:task_hot_remove_storage_from_a_mcc_fc_configuration.html["MetroCluster FC 구성에서 스토리지 핫 제거"]
-
-
-
  a| 
 FC
  a| 
@@ -111,111 +95,5 @@ https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.ht
 IOM6 쉘프 스택에 IOM12 쉘프를 핫 추가합니다
  a| 
 https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"^]
-
-
-
- a| 
-FC-to-SAS 브릿지
- a| 
-FC
- a| 
-브리지 교체
- a| 
-link:task_replace_a_sle_fc_to_sas_bridge.html["단일 FC-to-SAS 브릿지 교체"]
-
-link:task_fb_consolidate_replace_a_pair_of_fibrebridge_6500n_bridges_with_7500n_bridges.html["FiberBridge 6500N 브리지 쌍을 7600N 또는 7500N 브리지로 교체"]
-
-link:task_replace_a_sle_fc_to_sas_bridge.html#hot-swapping-a-fibrebridge-7500n-with-a-7600n-bridge["FiberBridge 7500N을 7600N 브리지로 핫 스와핑"]
-
-
-
- a| 
-FC
- a| 
-펌웨어 업그레이드
- a| 
-link:task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어 업데이트"]
-
-
-
- a| 
-FC
- a| 
-장애가 발생한 전원 공급 장치 모듈 교체
- a| 
-link:reference_fb_replace_a_power_supply.html["오류가 발생한 전원 공급 장치 모듈 핫 교체"]
-
-
-
- a| 
-FC 스위치
- a| 
-FC
- a| 
-스위치 업그레이드
- a| 
-link:task_upgrade_to_new_brocade_switches.html["새 Brocade FC 스위치로 업그레이드"]
-
-
-
- a| 
-FC
- a| 
-스위치 교체
- a| 
-link:task_replace_a_brocade_fc_switch_mcc.html["Brocade FC 스위치(MetroCluster) 교체"]
-
-link:task_replace_a_cisco_fc_switch_mcc.html["Cisco FC 스위치 교체"]
-
-
-
- a| 
-FC
- a| 
-펌웨어 업그레이드
- a| 
-link:task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html["Brocade FC 스위치에서 펌웨어를 업데이트하는 중입니다"]
-
-link:task_upgrade_or_downgrad_the_firmware_on_a_cisco_fc_switch_mcc.html["Cisco FC 스위치에서 펌웨어를 업데이트하는 중입니다"]
-
-
-
- a| 
-IP 스위치
- a| 
-IP
- a| 
-스위치 교체 또는 사용 변경
- a| 
-link:task_replace_an_ip_switch.html["IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다"]
-
-
-
- a| 
-IP
- a| 
-펌웨어 업그레이드
- a| 
-link:task_upgrade_firmware_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다"]
-
-
-
- a| 
-IP
- a| 
-RCF 파일 업그레이드
- a| 
-link:task_upgrade_rcf_files_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다"]
-
-link:task_upgrade_rcf_files_on_cisco_ip_switches_with_cleanupfiles.html["CleanUpFiles를 사용하여 Cisco IP 스위치에서 RCF 파일을 업그레이드합니다"]
-
-
-
- a| 
-IP
- a| 
-스위치 이름을 바꿉니다
- a| 
-link:task_rename_a_cisco_ip_switch.html["Cisco IP 스위치의 이름을 바꿉니다"]
 
 |===
