@@ -1063,20 +1063,32 @@ aggr_data_a2
 +
 세트 프리빌리지 고급
 
-.. 새 노드 중 하나에서 MetroCluster 구성을 새로 고칩니다.
+.. 다음과 같이 모든 노드에서 MetroCluster 구성을 업데이트합니다.
 +
-'MetroCluster 설정'
+[cols="30,70"]
+|===
 
-+
-다음 예는 두 DR 그룹 모두에서 새로 고쳐진 MetroCluster 구성을 보여 줍니다.
 
-+
-[listing]
-----
-cluster_A::*> metrocluster configure -refresh true
+| MetroCluster 구성에 다음 기능이 있는 경우 | 다음을 수행하십시오. 
 
-[Job 726] Job succeeded: Configure is successful.
-----
+
+ a| 
+데이터 애그리게이트가 여러 개 있습니다
+ a| 
+노드의 프롬프트에서 다음을 실행합니다.
+
+`metrocluster configure <node-name>`
+
+
+
+ a| 
+하나 또는 두 사이트에 미러링된 단일 데이터 애그리게이트
+ a| 
+노드의 프롬프트에서 `-allow-with-one-aggregate true` 매개 변수를 사용하여 MetroCluster를 구성합니다.
+
+`metrocluster configure -allow-with-one-aggregate true <node-name>`
+
+|===
 .. 새 노드를 각각 재부팅합니다.
 +
 `node reboot -node <node_name> -inhibit-takeover true`
@@ -1093,7 +1105,7 @@ cluster_A::*> metrocluster configure -refresh true
 
 +
 
-NOTE: 사이트당 하나 이상의 미러링된 데이터 애그리게이트를 만들어야 합니다. MetroCluster IP 노드에서 사이트당 두 개의 미러링된 데이터 집계를 사용하여 MDV 볼륨을 호스팅하는 것이 좋지만 사이트당 단일 집계를 지원하는 것은 권장되지 않습니다. MetroCluster의 한 사이트는 단일 미러링된 데이터 애그리게이트를 가지고 있고, 다른 사이트는 둘 이상의 미러링된 데이터 애그리게이트를 가지고 있습니다.
+NOTE: 사이트당 하나 이상의 미러링된 데이터 애그리게이트를 만들어야 합니다. MetroCluster IP 노드에서 사이트당 두 개의 미러링된 데이터 집계를 사용하여 MDV 볼륨을 호스팅하는 것이 좋지만 사이트당 단일 집계를 지원하는 것은 권장되지 않습니다. MetroCluster의 한 사이트에 단일 미러링된 데이터 애그리게이트가 있고 다른 사이트에 둘 이상의 미러링된 데이터 애그리게이트가 있는 것은 허용됩니다.
 
 +
 다음 예에서는 node_A_1-new에 Aggregate를 생성하는 방법을 보여 줍니다.
@@ -1161,12 +1173,14 @@ Group Cluster Node               State          Mirroring Mode
 
 cluster_A::*>
 ----
-. MDV_CRS 볼륨을 이전 노드에서 고급 권한이 있는 새 노드로 이동합니다.
+. 고급 권한 모드에서 MDV_CRS 볼륨을 이동합니다.
 +
 .. MDV 볼륨을 식별하기 위해 볼륨을 표시합니다.
 +
+사이트당 하나의 미러링된 데이터 집계를 사용하는 경우 두 MDV 볼륨을 모두 이 단일 집계로 이동합니다. 미러링 데이터 애그리게이트가 두 개 이상인 경우 각 MDV 볼륨을 다른 Aggregate로 이동합니다.
 
-NOTE: 사이트당 하나의 미러링된 데이터 집계를 사용하는 경우 두 MDV 볼륨을 모두 이 단일 집계로 이동합니다. 미러링 데이터 애그리게이트가 두 개 이상인 경우 각 MDV 볼륨을 다른 Aggregate로 이동합니다.
++
+4노드 MetroCluster 구성을 영구적인 8노드 구성으로 확장하는 경우 MDV 볼륨 중 하나를 새 DR 그룹으로 이동해야 합니다.
 
 +
 다음 예에서는 'volume show' 출력의 MDV 볼륨을 보여 줍니다.
