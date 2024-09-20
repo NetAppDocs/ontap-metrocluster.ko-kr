@@ -674,6 +674,122 @@ MetroCluster 구성을 활성화합니다.
 |===
 
 
+== 유지보수 모드에서 구성요소의 HA 상태 확인 및 구성
+
+MetroCluster FC 구성에서 스토리지 시스템을 구성할 경우 컨트롤러 모듈 및 섀시 구성 요소의 HA(고가용성) 상태가 MCC 또는 MCC-2n인지 확인하여 구성 요소가 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.
+
+[CAUTION]
+====
+컨트롤러 모듈 및 섀시의 HA 상태가 잘못된 경우 노드를 다시 초기화하지 않고 MetroCluster을 구성할 수 없습니다. 이 절차를 사용하여 설정을 수정한 후 다음 절차 중 하나를 사용하여 시스템을 초기화해야 합니다.
+
+* MetroCluster IP 구성에서 의 단계를 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_sw_config_verify_haconfig.html["컨트롤러 모듈에서 시스템 기본값을 복원합니다"]따릅니다.
+* MetroCluster FC 구성에서 의 단계를 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/concept_configure_the_mcc_software_in_ontap.html#restoring-system-defaults-and-configuring-the-hba-type-on-a-controller-module["시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다"]따릅니다.
+
+
+====
+.시작하기 전에
+시스템이 유지 관리 모드인지 확인합니다.
+
+.단계
+. 유지보수 모드에서 컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.
++
+하구성 쇼
+
++
+올바른 HA 상태는 MetroCluster 구성에 따라 다릅니다.
+
++
+|===
+
+
+| MetroCluster 구성 유형입니다 | 모든 구성 요소의 HA 상태... 
+
+
+ a| 
+8 또는 4노드 MetroCluster FC 구성
+ a| 
+MCC
+
+
+
+ a| 
+2노드 MetroCluster FC 구성
+ a| 
+MCC - 2n
+
+
+
+ a| 
+8 또는 4노드 MetroCluster IP 구성
+ a| 
+mcip
+
+|===
+. 컨트롤러의 표시된 시스템 상태가 올바르지 않으면 컨트롤러 모듈의 구성에 맞는 올바른 HA 상태를 설정합니다.
++
+|===
+
+
+| MetroCluster 구성 유형입니다 | 명령 
+
+
+ a| 
+8 또는 4노드 MetroCluster FC 구성
+ a| 
+하구성 수정 컨트롤러 MCC
+
+
+
+ a| 
+2노드 MetroCluster FC 구성
+ a| 
+ha-config modify controller MCC-2n
+
+
+
+ a| 
+8 또는 4노드 MetroCluster IP 구성
+ a| 
+ha-config modify controller mcip.(컨트롤러 mccip 수정
+
+|===
+. 섀시의 표시된 시스템 상태가 올바르지 않은 경우 섀시 구성에 대한 올바른 HA 상태를 설정합니다.
++
+|===
+
+
+| MetroCluster 구성 유형입니다 | 명령 
+
+
+ a| 
+8 또는 4노드 MetroCluster FC 구성
+ a| 
+하구성 수정 새시 MCC
+
+
+
+ a| 
+2노드 MetroCluster FC 구성
+ a| 
+ha-config modify chassis MCC-2n
+
+
+
+ a| 
+8 또는 4노드 MetroCluster IP 구성
+ a| 
+ha-config modify chassis mccip.(섀시 mcip 수정
+
+|===
+. 노드를 ONTAP로 부팅합니다.
++
+부트 ONTAP
+
+. 이 전체 절차를 반복하여 MetroCluster 구성의 각 노드에서 HA 상태를 확인합니다.
+
+
+
+
 == 시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다
 
 .이 작업에 대해
@@ -1502,116 +1618,6 @@ DR 파트너의 풀 1
 
 
 
-
-
-
-
-== 유지보수 모드에서 구성요소의 HA 상태 확인 및 구성
-
-MetroCluster 구성에서 스토리지 시스템을 구성할 때는 컨트롤러 모듈 및 섀시 구성 요소의 고가용성(HA) 상태가 MCC 또는 MCC-2n인지 확인해야 구성 요소가 제대로 부팅됩니다.
-
-.시작하기 전에
-시스템이 유지보수 모드여야 합니다.
-
-.이 작업에 대해
-이 작업은 공장에서 입고된 시스템에는 필요하지 않습니다.
-
-.단계
-. 유지보수 모드에서 컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.
-+
-하구성 쇼
-
-+
-올바른 HA 상태는 MetroCluster 구성에 따라 다릅니다.
-
-+
-|===
-
-
-| MetroCluster 구성의 컨트롤러 수입니다 | 모든 구성요소의 HA 상태는... 
-
-
- a| 
-8노드 또는 4노드 MetroCluster FC 구성
- a| 
-MCC
-
-
-
- a| 
-2노드 MetroCluster FC 구성
- a| 
-MCC - 2n
-
-
-
- a| 
-MetroCluster IP 구성
- a| 
-mcip
-
-|===
-. 표시된 컨트롤러 시스템 상태가 정확하지 않은 경우 컨트롤러 모듈에 대한 HA 상태를 설정합니다.
-+
-|===
-
-
-| MetroCluster 구성의 컨트롤러 수입니다 | 명령 
-
-
- a| 
-8노드 또는 4노드 MetroCluster FC 구성
- a| 
-HA-config 수정 컨트롤러 MCC
-
-
-
- a| 
-2노드 MetroCluster FC 구성
- a| 
-HA-config 수정 컨트롤러 MCC-2n
-
-
-
- a| 
-MetroCluster IP 구성
- a| 
-HA-config modify controller mcip
-
-|===
-. 표시된 섀시 시스템 상태가 올바르지 않으면 섀시의 HA 상태를 설정합니다.
-+
-|===
-
-
-| MetroCluster 구성의 컨트롤러 수입니다 | 명령 
-
-
- a| 
-8노드 또는 4노드 MetroCluster FC 구성
- a| 
-HA-config 섀시 MCC를 수정합니다
-
-
-
- a| 
-2노드 MetroCluster FC 구성
- a| 
-HA-config 섀시 MCC-2n을 수정합니다
-
-
-
- a| 
-MetroCluster IP 구성
- a| 
-HA-config modify 섀시 mcip
-
-|===
-. 노드를 ONTAP로 부팅합니다.
-+
-부트 ONTAP
-
-. MetroCluster 구성의 각 노드에서 이 단계를 반복합니다.
 
 
 

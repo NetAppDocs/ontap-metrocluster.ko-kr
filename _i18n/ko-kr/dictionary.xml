@@ -1066,7 +1066,6 @@
   <block id="7a56c93af328a3c1fa4e3fccdc177cb5" category="summary">출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 mcip로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다.</block>
   <block id="6260a0c66ccd92620d9889772b65cffe" category="doc">구성 요소의 ha-config 상태 확인</block>
   <block id="3293f2fb312a722f96251c9029636630" category="paragraph">시스템이 유지보수 모드여야 합니다.</block>
-  <block id="d0dddd5779102f5b72e8edf336fef717" category="list-text">컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.</block>
   <block id="70cfb57c22486ea2d08d331675532dce" category="paragraph">하구성 쇼</block>
   <block id="5878093a3e92b9c4d3e64a93fc927a8a" category="paragraph">ha-config modify controller mcip.(컨트롤러 mccip 수정</block>
   <block id="b687dd86b8db3b030c46a3fbc2a2d024" category="paragraph">ha-config modify chassis mccip.(섀시 mcip 수정</block>
@@ -10591,7 +10590,6 @@
   <block id="bc2027184e27075969cdcd60662c6642" category="sidebar">Cisco IP 스위치를 구성합니다</block>
   <block id="84a335bc70808c0497de1c62a99aaf43" category="sidebar">기본 설정을 구성합니다</block>
   <block id="175313fe612a432e5a51082817a697f1" category="sidebar">Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다</block>
-  <block id="2e513789c4a513cc3bc3dbb07880d342" category="sidebar">8노드 구성을 구성하는 방법</block>
   <block id="41aa5998b40e00d8eb4f7bb40bb2bc22" category="sidebar">필요한 정보를 수집합니다</block>
   <block id="4497ab40f5579cccfc00e6aed35cdae9" category="sidebar">구성 요소의 ha-config 상태를 확인합니다</block>
   <block id="aa9c71b40476a8ccda9213b9a9416d55" category="sidebar">클러스터를 MetroCluster 구성으로 구성합니다</block>
@@ -10817,10 +10815,6 @@
   <block id="04be3a6c5ee416a84b497452ccd41ffd" category="list-text">ONTAP 9.4부터는 ADP용으로 구성된 컨트롤러 모듈이 지원됩니다.</block>
   <block id="c94a009c5a39824e241500e9f7d49cad" category="summary">ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다.</block>
   <block id="7dec0067013edb1b7d2d18b5bc21f4a8" category="paragraph">ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다. 프런트엔드 네트워킹의 이중화를 위한 VIP와 BGP를 결합하여 백엔드 MetroCluster 이중화를 통해 Layer 3 재해 복구 솔루션을 제공합니다.</block>
-  <block id="b09496e62afe76db185677ab92dd3695" category="paragraph">출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 " mccip "로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다.</block>
-  <block id="c1420c708cdb03e8e6259f7cb1285a08" category="paragraph">컨트롤러 모듈 및 섀시에는 "mcip" 값이 표시되어야 합니다.</block>
-  <block id="717daacc38ffb11ae03c79a7871ba94a" category="list-text">컨트롤러의 표시된 시스템 상태가 "mcip"이 아닌 경우 컨트롤러의 HA 상태를 설정합니다.</block>
-  <block id="1be7c4ddc79016b4335125e64b368241" category="list-text">섀시의 표시된 시스템 상태가 "mcip"이 아닌 경우 섀시의 HA 상태를 설정합니다.</block>
   <block id="9bdf1ed180b1b862f7cea11085897aca" category="paragraph">예(ONTAP 9.4 시작)</block>
   <block id="a27983e963a18385eebdc3381062e49b" category="paragraph">예(ONTAP 9.8부터 시작)</block>
   <block id="098fadefd1319cbc560b7d741aa7210e" category="paragraph">예(ONTAP 9.7부터 시작)</block>
@@ -14035,4 +14029,19 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3635681631407e08104ac78c0039ed70" category="paragraph"><block ref="0825cd88596408a485ffc279f70b9da9" prefix="" category="inline-code"></block></block>
   <block id="753303bac17f77fab4f01ca22a7ff80e" category="list-text">고급 권한 모드에서 MDV_CRS 볼륨을 이동합니다.</block>
   <block id="4e934a5efc9ac0d78daef92737cd79bf" category="paragraph">4노드 MetroCluster 구성을 영구적인 8노드 구성으로 확장하는 경우 MDV 볼륨 중 하나를 새 DR 그룹으로 이동해야 합니다.</block>
+  <block id="dbe62ccc612e92f8dc68e42a4661fecb" category="paragraph">컨트롤러 모듈 및 섀시의 HA 상태가 잘못된 경우 노드를 다시 초기화하지 않고 MetroCluster을 구성할 수 없습니다. 이 절차를 사용하여 설정을 수정한 후 다음 절차 중 하나를 사용하여 시스템을 초기화해야 합니다.</block>
+  <block id="a86b0de4e0b4c477962412e4fb878fa1" category="list-text">MetroCluster IP 구성에서 의 단계를 <block ref="46904e83320ab310261c288a6a607871" category="inline-link-macro-rx"></block>따릅니다.</block>
+  <block id="73fa02989b9da1f069817272869a683b" category="inline-link-macro">시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다</block>
+  <block id="20e47a9aa4ad4f6197046707d54204fc" category="list-text">MetroCluster FC 구성에서 의 단계를 <block ref="61b5232c30227f4608eee40560fc97c5" category="inline-link-macro-rx"></block>따릅니다.</block>
+  <block id="db298781944827895a870278a91cf51d" category="paragraph">시스템이 유지 관리 모드인지 확인합니다.</block>
+  <block id="8043a3bf6cce640e7454f2cd339995d4" category="cell">MetroCluster 구성 유형입니다</block>
+  <block id="b2044c373529567844418af6b99b9c47" category="cell">모든 구성 요소의 HA 상태...</block>
+  <block id="3ec28b19df1922ba15c732a6c9ce26e7" category="paragraph">8 또는 4노드 MetroCluster FC 구성</block>
+  <block id="02c92aa95863fe523d726679c13e1c11" category="paragraph">8 또는 4노드 MetroCluster IP 구성</block>
+  <block id="8d1f63834a0230ca4c300e584f887131" category="list-text">컨트롤러의 표시된 시스템 상태가 올바르지 않으면 컨트롤러 모듈의 구성에 맞는 올바른 HA 상태를 설정합니다.</block>
+  <block id="46be68db9978eb3b9ac4054e394c92ce" category="list-text">섀시의 표시된 시스템 상태가 올바르지 않은 경우 섀시 구성에 대한 올바른 HA 상태를 설정합니다.</block>
+  <block id="330acb0fa4964235e5dabc85b0488f57" category="list-text">이 전체 절차를 반복하여 MetroCluster 구성의 각 노드에서 HA 상태를 확인합니다.</block>
+  <block id="84afb0fe12dfc2a5fa1e2e978393b33c" category="paragraph">MetroCluster FC 구성에서 스토리지 시스템을 구성할 경우 컨트롤러 모듈 및 섀시 구성 요소의 HA(고가용성) 상태가 MCC 또는 MCC-2n인지 확인하여 구성 요소가 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.</block>
+  <block id="cbc29e9b371b7013e6625c2fa3c7ec20" category="paragraph">MetroCluster IP 구성에서 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 "'mcip'"으로 설정되어 있는지 확인하여 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.</block>
+  <block id="b6eb7f38a057c8f63ffc29f23e6be071" category="sidebar">8노드 구성을 구성하는 방법</block>
 </blocks>
