@@ -682,7 +682,7 @@ MetroCluster FC 구성에서 스토리지 시스템을 구성할 경우 컨트�
 ====
 컨트롤러 모듈 및 섀시의 HA 상태가 잘못된 경우 노드를 다시 초기화하지 않고 MetroCluster을 구성할 수 없습니다. 이 절차를 사용하여 설정을 수정한 후 다음 절차 중 하나를 사용하여 시스템을 초기화해야 합니다.
 
-* MetroCluster IP 구성에서 의 단계를 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_sw_config_verify_haconfig.html["컨트롤러 모듈에서 시스템 기본값을 복원합니다"]따릅니다.
+* MetroCluster IP 구성에서 의 단계를 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_sw_config_restore_defaults.html["컨트롤러 모듈에서 시스템 기본값을 복원합니다"]따릅니다.
 * MetroCluster FC 구성에서 의 단계를 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/concept_configure_the_mcc_software_in_ontap.html#restoring-system-defaults-and-configuring-the-hba-type-on-a-controller-module["시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다"]따릅니다.
 
 

@@ -6,6 +6,8 @@ summary: 공장에서 사전 구성된 시스템을 받지 못한 경우 풀 0 �
 ---
 = 풀 0에 드라이브를 수동으로 할당합니다
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

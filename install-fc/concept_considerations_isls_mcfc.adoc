@@ -6,6 +6,8 @@ summary: MetroCluster 구성에서 각 FC 스위치 패브릭에 필요한 ISL �
 ---
 = ISL에 대한 고려 사항
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

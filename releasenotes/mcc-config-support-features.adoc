@@ -7,7 +7,7 @@ summary:
 = ONTAP 기능에 대한 MetroCluster 구성의 새로운 기능
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -6,6 +6,8 @@ summary: 클러스터를 피어로 사용하고, 루트 애그리게이트를 �
 ---
 = 클러스터를 MetroCluster 구성으로 구성합니다
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

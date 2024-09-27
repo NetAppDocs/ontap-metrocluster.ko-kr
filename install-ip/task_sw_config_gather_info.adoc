@@ -6,6 +6,8 @@ summary: 구성 프로세스를 시작하기 전에 컨트롤러 모듈에 필�
 ---
 = 필요한 정보를 수집하는 중입니다
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

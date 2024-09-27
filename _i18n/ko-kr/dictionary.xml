@@ -1024,7 +1024,6 @@
   <block id="7fd453474071dccd50ff62492d227dec" category="paragraph">ONTAP 중재자와 함께 전환을 트리거할 수 있는 타사 애플리케이션이나 어플라이언스를 사용할 수 없습니다. 또한 ONTAP 중재자를 사용할 때는 MetroCluster Tiebreaker 소프트웨어를 사용하여 MetroCluster 구성을 모니터링하는 기능이 지원되지 않습니다.</block>
   <block id="b4a4356f509fb6c32e40ddbcc18b8a1a" category="section-title">ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법</block>
   <block id="1fb135b5dd970a96db5c2b3025ddcbf8" category="list-text">종료를 시작합니다. 예를 들면 다음과 같습니다.</block>
-  <block id="23b070f17dffe8e66479102b1681ffad" category="doc">MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용</block>
   <block id="3c17e9573f8b45dda43321f58bfcd2bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 다음 섹션을 참조하십시오.</block>
   <block id="e8c0139663de0f382f275109978b357d" category="inline-link">* VIP(가상 IP) LIF 구성 *</block>
   <block id="0f64075c5a4db39d50ab6b8476c41ebf" category="paragraph"><block ref="0f64075c5a4db39d50ab6b8476c41ebf" category="inline-link-rx"></block></block>
@@ -1040,7 +1039,6 @@
   <block id="a63e8da5ab0d323dfa2d8c1590db4fed" category="paragraph">ONTAP 버전에 따라 시스템 또는 데이터 SVM이 아닌 노드 SVM에서 BGP 피어링 LIF를 구성해야 합니다. 9.8에서는 BGP LIF가 클러스터(시스템) SVM에서 보이고 노드 SVM은 더 이상 존재하지 않습니다.</block>
   <block id="d82838a19649e1da12902c98b4ee5149" category="paragraph">각 데이터 SVM에는 잠재적인 모든 1차 홉 게이트웨이 주소(일반적으로 BGP 라우터 피어링 IP 주소)를 구성해야 하므로, LIF 마이그레이션이나 MetroCluster 페일오버가 발생하는 경우 반환 데이터 경로를 사용할 수 있습니다.</block>
   <block id="5f88fc6eb6dcc7e2d28378195f6e0208" category="paragraph">BGP LIF는 노드마다 다르며, 인터클러스터 LIF와 유사합니다. 각 노드에는 고유한 구성이 있으므로 DR 사이트 노드에 복제할 필요가 없습니다.</block>
-  <block id="e3bb1ae61b6d4dc1b02fdb23cab46189" category="paragraph">구성된 경우, v0a(v0b 등)가 지속적으로 연결을 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(파손된 구성이 중단 후에만 표시됨).</block>
   <block id="b9654173e237320a0dc69e69fd436e4f" category="paragraph">아키텍처의 주요 차이점은 클라이언트가 더 이상 데이터 SVM의 VIP와 동일한 IP 서브넷을 공유해서는 안 된다는 점입니다. 적절한 엔터프라이즈급 복원력과 이중화 기능(예: VRRP/HSRP)이 활성화된 L3 라우터는 VIP가 올바르게 작동하려면 스토리지와 클라이언트 사이의 경로에 있어야 합니다.</block>
   <block id="298fef8c148afa4bfa7475e494967b57" category="paragraph">BGP의 안정적인 업데이트 프로세스는 약간 더 빠르고 일부 클라이언트에 대한 중단 가능성이 낮기 때문에 LIF 마이그레이션을 더 원활하게 수행할 수 있습니다</block>
   <block id="53c5da85c9b955107fabdb0323fc0619" category="paragraph">적절하게 구성된 경우, BGP를 구성하여 일부 네트워크 클래스를 감지하거나 LACP보다 더 빠르게 스위치 오동작을 감지할 수 있습니다.</block>
@@ -2210,8 +2208,6 @@
   <block id="09a5ba598e7357ef745825da8cab1892" category="paragraph">이 작업은 새 노드 각각에 대해 수행해야 합니다.</block>
   <block id="c63a77ef39a96105eac912bc9b3dd2fb" category="paragraph">다음 단계에서는 노드의 구성을 지우고 새 드라이브의 메일박스 영역을 지웁니다.</block>
   <block id="4d2a12dbb40eebfdeb323911fc06c5ce" category="list-text">새 컨트롤러를 랙에 장착하십시오.</block>
-  <block id="1cbfeb82dbc642ca3cfc8e2db84c469c" category="list-text"><block ref="1cbfeb82dbc642ca3cfc8e2db84c469c" category="inline-link-macro-rx"></block></block>
-  <block id="251fa3a6289ecafe7b95d67056605968" category="list-text"><block ref="251fa3a6289ecafe7b95d67056605968" category="inline-link-macro-rx"></block></block>
   <block id="d93785c679dd9ecbbe55df9329146a8d" category="list-text">유지보수 모드에서 halt 명령을 실행하여 유지보수 모드를 종료한 다음 boot_ONTAP 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 이동합니다.</block>
   <block id="ccaa4e34c729aaba9db9c5a44c41381f" category="paragraph">지금은 클러스터 마법사 또는 노드 마법사를 완료하지 마십시오.</block>
   <block id="6fd67a5ed9276ba994c073cf2c532faf" category="paragraph">4개의 새 MetroCluster IP 노드를 기존 MetroCluster 구성에 추가해야 합니다.</block>
@@ -7171,14 +7167,11 @@
   <block id="e485e2a29b3e88e7af57a872271ec004" category="list-text">케이블을 분리하고 비활성화된 스위치를 제거합니다.</block>
   <block id="6ab8d2ea7c4ab8de2d0240533675a5ba" category="list-text">랙에 새 스위치를 설치합니다.</block>
   <block id="9db38090d74d3c900ffdd688465bb5e8" category="image-alt">Brocade upgr to G620 대체 1</block>
-  <block id="7b78e18dcd3185c34c9f26454f6f184a" category="paragraph">이 명령을 실행하면 스위치 패브릭의 두 스위치가 모두 비활성화됩니다.</block>
   <block id="d0ec9e05561bfe12c0306959eddf56c8" category="list-text">권장되는 포트 할당을 사용하여 새 스위치에 케이블을 연결합니다.</block>
   <block id="98865fdc5c9769318f840c5f626b7ec2" category="list-text">파트너 MetroCluster 사이트에서 이러한 하위 단계를 반복하여 첫 번째 스위치 패브릭의 두 번째 스위치를 교체합니다.</block>
   <block id="5a5070abc66ad4ba93c9599236c17675" category="paragraph">패브릭 1의 두 스위치가 모두 교체되었습니다.</block>
   <block id="9359b4d4c7ebe7a35b725df2addeaf7b" category="image-alt">Brocade upgr to G620 대체 b 1</block>
   <block id="0fd8560791ae174b08c82bd0ee74f32e" category="list-text">새 스위치를 켜고 부팅하십시오.</block>
-  <block id="54f59ef2ee1220bd27c7e59f620f7e4a" category="list-text">새로운 스위치용 RCF 파일을 다운로드합니다.</block>
-  <block id="b71b5bca0bcdc72655be357f3c8b1c42" category="list-text">RCF 파일을 다운로드 페이지의 지침에 따라 패브릭의 두 새 스위치에 모두 적용합니다.</block>
   <block id="44a651ee20f59b8ff5887857d2eb80dc" category="list-text">스위치 구성을 저장합니다.</block>
   <block id="8baaacde06cbd685134e16e9023a6e85" category="list-text">구성이 안정화될 때까지 10분간 기다립니다.</block>
   <block id="f7a6db45ff24ce0a158fab57e41dfafb" category="list-text">스위치 프롬프트로 돌아가 스위치 펌웨어 버전을 확인합니다.</block>
@@ -8025,8 +8018,6 @@
   <block id="012f755687424dd2475cf31eee8a99ff" category="paragraph">MetroCluster FC 노드(node_A_x-FC 및 node_B_x-FC)는 현재 케이블로 연결되어 있습니다.</block>
   <block id="b42bad79baad4f4f943c81fc37bedccd" category="list-text">에 나와 있는 것처럼 MetroCluster IP 노드를 IP 스위치에 케이블로 연결합니다 <block ref="657bcb6c51639854c4fdede551507755" category="inline-link-macro-rx"></block>.</block>
   <block id="4852598a3e684943b3bfcba06307b21d" category="list-text">다음 섹션을 사용하여 MetroCluster IP 노드를 구성합니다.</block>
-  <block id="87389a8ef852aa6f8fecae947cf8fd86" category="list-text"><block ref="87389a8ef852aa6f8fecae947cf8fd86" category="inline-link-macro-rx"></block></block>
-  <block id="42aa3219583515464abe8c61ef6c61d3" category="list-text"><block ref="42aa3219583515464abe8c61ef6c61d3" category="inline-link-macro-rx"></block></block>
   <block id="fbb3c6ac39d170b58b6e9006735f762f" category="list-text">다른 MetroCluster IP 노드에서 이 단계를 반복합니다.</block>
   <block id="4bbea8707e4088cc6fdffe956c4f7177" category="doc">2노드 MetroCluster FC에서 4노드 MetroCluster IP 구성으로 중단 없이 전환(ONTAP 9.8 이상)</block>
   <block id="5aeb375a0d131f3be9e7b2a27545a8ce" category="paragraph">다음 그림에서는 이 전환 절차 전과 후의 구성을 간단히 보여 줍니다.</block>
@@ -10813,7 +10804,6 @@
   <block id="8bcabb3e778663882c95082b775c75b8" category="summary">ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다.</block>
   <block id="b8f6677db24add5f2af4be56aa22ea68" category="list-text">ONTAP 9.5부터 FAS 시스템에 새로운 MetroCluster IP 설치가 지원됩니다.</block>
   <block id="04be3a6c5ee416a84b497452ccd41ffd" category="list-text">ONTAP 9.4부터는 ADP용으로 구성된 컨트롤러 모듈이 지원됩니다.</block>
-  <block id="c94a009c5a39824e241500e9f7d49cad" category="summary">ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다.</block>
   <block id="7dec0067013edb1b7d2d18b5bc21f4a8" category="paragraph">ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(BGP)을 사용하여 계층 3 연결을 지원합니다. 프런트엔드 네트워킹의 이중화를 위한 VIP와 BGP를 결합하여 백엔드 MetroCluster 이중화를 통해 Layer 3 재해 복구 솔루션을 제공합니다.</block>
   <block id="9bdf1ed180b1b862f7cea11085897aca" category="paragraph">예(ONTAP 9.4 시작)</block>
   <block id="a27983e963a18385eebdc3381062e49b" category="paragraph">예(ONTAP 9.8부터 시작)</block>
@@ -10987,7 +10977,6 @@
   <block id="943a908bae2e5cad97a1e4ca8bc9285c" category="paragraph">'집계 online_plex name _'</block>
   <block id="5cf4f09c879b5351ee5ea2aa9136f228" category="paragraph">'집계 상태 - r&lt;집계 이름&gt;'</block>
   <block id="41d3daf78b9924040f76f4e2cb27a68d" category="admonition">ONTAP 9.8부터 ' * storage bridge * ' 명령은 ' * system bridge * '로 대체됩니다. 다음 단계에서는 '* storage bridge*' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '* system bridge*' 명령을 사용하는 것이 좋습니다.</block>
-  <block id="a0c9a11807b32c8820a3f0a43340ed14" category="list-text">새 스위치를 비활성화합니다.</block>
   <block id="189dcabe783d4f7f34d39c30c43d1896" category="paragraph">고급 모드로 계속 진행하고 고급 모드 프롬프트(*&gt;)를 보려면 ""y""로 응답해야 합니다.</block>
   <block id="2b114f6498e5132b0cbcc04ccda11d53" category="list-text">이 케이블은 _MetroCluster 설치 및 구성_절차에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.</block>
   <block id="80a501c7c310f786642caeb4ba98a43d" category="paragraph">의 1단계에서 확인한 LIF를 이동해야 합니다 <block ref="f19930c3c7cb7f705cf91593411955ab" category="inline-link-macro-rx"></block>.</block>
@@ -14030,7 +14019,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="753303bac17f77fab4f01ca22a7ff80e" category="list-text">고급 권한 모드에서 MDV_CRS 볼륨을 이동합니다.</block>
   <block id="4e934a5efc9ac0d78daef92737cd79bf" category="paragraph">4노드 MetroCluster 구성을 영구적인 8노드 구성으로 확장하는 경우 MDV 볼륨 중 하나를 새 DR 그룹으로 이동해야 합니다.</block>
   <block id="dbe62ccc612e92f8dc68e42a4661fecb" category="paragraph">컨트롤러 모듈 및 섀시의 HA 상태가 잘못된 경우 노드를 다시 초기화하지 않고 MetroCluster을 구성할 수 없습니다. 이 절차를 사용하여 설정을 수정한 후 다음 절차 중 하나를 사용하여 시스템을 초기화해야 합니다.</block>
-  <block id="a86b0de4e0b4c477962412e4fb878fa1" category="list-text">MetroCluster IP 구성에서 의 단계를 <block ref="46904e83320ab310261c288a6a607871" category="inline-link-macro-rx"></block>따릅니다.</block>
   <block id="73fa02989b9da1f069817272869a683b" category="inline-link-macro">시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다</block>
   <block id="20e47a9aa4ad4f6197046707d54204fc" category="list-text">MetroCluster FC 구성에서 의 단계를 <block ref="61b5232c30227f4608eee40560fc97c5" category="inline-link-macro-rx"></block>따릅니다.</block>
   <block id="db298781944827895a870278a91cf51d" category="paragraph">시스템이 유지 관리 모드인지 확인합니다.</block>
@@ -14044,4 +14032,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="84afb0fe12dfc2a5fa1e2e978393b33c" category="paragraph">MetroCluster FC 구성에서 스토리지 시스템을 구성할 경우 컨트롤러 모듈 및 섀시 구성 요소의 HA(고가용성) 상태가 MCC 또는 MCC-2n인지 확인하여 구성 요소가 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.</block>
   <block id="cbc29e9b371b7013e6625c2fa3c7ec20" category="paragraph">MetroCluster IP 구성에서 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 "'mcip'"으로 설정되어 있는지 확인하여 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.</block>
   <block id="b6eb7f38a057c8f63ffc29f23e6be071" category="sidebar">8노드 구성을 구성하는 방법</block>
+  <block id="37887b7927053bae8056fe215242ac04" category="list-text">MetroCluster IP 구성에서 의 단계를 <block ref="e39e92837d61810422f20d9c0acf650b" category="inline-link-macro-rx"></block>따릅니다.</block>
+  <block id="654458233d1a8772886f997ae2b46c7c" category="paragraph">v0a(v0b 등)가 존재하면 연결을 지속적으로 확인하여 LIF 마이그레이션 또는 페일오버가 성공하는지 보장합니다(L2와 달리, 중단된 구성은 중단 후에만 표시됨).</block>
+  <block id="705abb444ac66e0442a9ae4646471061" category="list-text">두 스위치 모두에서 다음 명령을 실행하여 새 스위치를 사용하지 않도록 설정합니다.</block>
+  <block id="f67761c61087dd0914ed518ef2c5f8e3" category="list-text">다음 절차 중 하나를 사용하여 Brocade FC 스위치를 구성합니다.</block>
+  <block id="4aa62d2d0cdae8fdaf47d41d558bac24" category="list-text"><block ref="4aa62d2d0cdae8fdaf47d41d558bac24" category="inline-link-macro-rx"></block></block>
 </blocks>

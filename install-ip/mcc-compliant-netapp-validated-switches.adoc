@@ -6,6 +6,8 @@ summary: 이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요�
 ---
 = NetApp의 검증된 MetroCluster 호환 스위치
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

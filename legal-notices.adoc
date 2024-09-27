@@ -7,7 +7,7 @@ summary: 법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 
 = 법적 고지
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead lead"]

@@ -6,6 +6,8 @@ summary: 백엔드 MetroCluster FC 연결을 제공하도록 FC 스위치를 구
 ---
 = 스위치 구성
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

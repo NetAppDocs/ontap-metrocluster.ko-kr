@@ -6,6 +6,8 @@ summary: MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키�
 ---
 = 클러스터 피어링
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

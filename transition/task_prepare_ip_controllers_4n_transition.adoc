@@ -30,10 +30,10 @@ MetroCluster FC 노드(node_A_x-FC 및 node_B_x-FC)는 현재 케이블로 연�
 . 에 나와 있는 것처럼 MetroCluster IP 노드를 IP 스위치에 케이블로 연결합니다 link:../install-ip/using_rcf_generator.html["IP 스위치 케이블 연결"].
 . 다음 섹션을 사용하여 MetroCluster IP 노드를 구성합니다.
 +
-.. link:../install-ip/task_sw_config_gather_info.html["필요한 정보를 수집하는 중입니다"]
-.. link:../install-ip/task_sw_config_restore_defaults.html["컨트롤러 모듈의 구성 지우기"]
-.. link:../install-ip/task_sw_config_verify_haconfig.html["구성 요소의 ha-config 상태 확인"]
-.. link:../install-ip/task_sw_config_assign_pool0.html["풀 0에 드라이브 수동 할당(ONTAP 9.4 이상)"]
+.. link:../install-ip/task_sw_config_gather_info.html["필요한 정보를 수집합니다"]
+.. link:../install-ip/task_sw_config_restore_defaults.html["컨트롤러 모듈에서 시스템 기본값을 복원합니다"]
+.. link:../install-ip/task_sw_config_verify_haconfig.html["구성 요소의 ha-config 상태를 확인합니다"]
+.. link:../install-ip/task_sw_config_assign_pool0.html["풀 0에 대해 수동으로 드라이브 할당(ONTAP 9.4 이상)"]
 
 
 . 유지보수 모드에서 halt 명령을 실행하여 유지보수 모드를 종료한 다음 boot_ONTAP 명령을 실행하여 시스템을 부팅하고 클러스터 설정으로 이동합니다.

@@ -6,6 +6,8 @@ summary: 사이트 간에 실행되는 WAN ISL 포트에서만 MACsec 암호화�
 ---
 = Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 :firstname: [.lead]
 :author: [.lead]
 :authorinitials: [

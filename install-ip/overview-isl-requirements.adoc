@@ -6,6 +6,8 @@ summary: MetroCluster 구성 및 네트워크가 모든 ISL 요구 사항을 충
 ---
 = ISL 요구사항 개요
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -6,6 +6,8 @@ summary: MetroCluster 구성에서 각 클러스터의 노드 구성은 표준 �
 ---
 = 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

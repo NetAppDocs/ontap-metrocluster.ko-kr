@@ -6,6 +6,8 @@ summary: 'MetroCluster 구성은 네이티브(NetApp) 디스크 쉘프만 사용
 ---
 = 네이티브 디스크 쉘프 또는 어레이 LUN을 사용하는 MetroCluster 구성에 대한 고려사항
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

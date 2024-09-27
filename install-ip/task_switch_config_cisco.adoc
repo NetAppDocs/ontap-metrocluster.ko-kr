@@ -6,6 +6,8 @@ summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 �
 ---
 = Cisco IP 스위치 구성
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

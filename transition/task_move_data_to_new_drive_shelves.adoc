@@ -6,6 +6,8 @@ summary: 전환 중에 MetroCluster FC 구성의 드라이브 쉘프에서 새�
 ---
 = 데이터를 새 드라이브 쉘프로 이동
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

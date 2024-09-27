@@ -7,7 +7,7 @@ summary:
 = MetroCluster FC 플랫폼 및 스위치 지원의 새로운 기능
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 

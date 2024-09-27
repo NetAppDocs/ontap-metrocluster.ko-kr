@@ -6,6 +6,8 @@ summary: 각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수
 ---
 = ONTAP 설정
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]
