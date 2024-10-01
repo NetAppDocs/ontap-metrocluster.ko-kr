@@ -497,7 +497,6 @@
   <block id="d7fffb0ac95f2fd216c5e3fd04365cca" category="paragraph">이러한 속성을 업데이트해야 할 수 있습니다. 예를 들어, 중복된 IP 주소가 감지되거나 라우터 구성 변경으로 인해 계층 3 네트워크의 경우 게이트웨이가 변경되어야 할 수 있습니다.</block>
   <block id="383d9b07e1ef0cfcfa9ec36fecccfe02" category="paragraph">한 번에 하나의 인터페이스만 변경할 수 있습니다. 다른 인터페이스가 업데이트되고 연결이 다시 설정될 때까지 해당 인터페이스에 트래픽 중단이 발생할 수 있습니다.</block>
   <block id="8450a359c3efc774857fe0f3189456e0" category="paragraph">MetroCluster IP interface 속성을 변경하려면 MetroCluster configuration-settings interface modify 명령을 사용한다.</block>
-  <block id="6a644f6158922e284b18d4232a152b9f" category="admonition">이러한 명령은 특정 포트의 특정 노드에 대한 구성을 변경합니다. 전체 네트워크 연결을 복원하려면 다른 포트에 유사한 명령이 필요합니다. 마찬가지로 네트워크 스위치도 구성을 업데이트해야 합니다. 예를 들어, 게이트웨이가 업데이트되는 경우 HA Pair의 두 노드에서 변경되기가 이상적입니다. 또한 해당 노드에 연결된 스위치도 게이트웨이를 업데이트해야 합니다.</block>
   <block id="700215bf58e5cc6edce60155aeb7c44a" category="section-title">IP 주소, 넷마스크 및 게이트웨이를 수정합니다</block>
   <block id="2747f7ff86cce509295bfb4ba2b1c4fa" category="list-text">단일 노드 및 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 'MetroCluster configuration-settings interface modify'로 업데이트합니다</block>
   <block id="2f545dcb650b5848061814c5ce3b4cf4" category="paragraph">다음 명령을 실행하면 IP 주소, 넷마스크 및 게이트웨이를 업데이트하는 방법이 표시됩니다.</block>
@@ -605,7 +604,6 @@
   <block id="8011c86f99772e8ed45b9d5da11cfad0" category="list-text">ONTAP 중재자 서비스는 최대 5개의 MetroCluster IP 구성으로 구성할 수 있습니다.</block>
   <block id="f8dc7177731310562718d80a3440fa9d" category="paragraph">'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'</block>
   <block id="1645e08f0bfdf72de9dd9cf2ec8208de" category="admonition">중재자 관리자 사용자 계정의 사용자 이름과 암호를 묻는 메시지가 표시됩니다.</block>
-  <block id="80e98c813fb4e1db7539339fdcc19d00" category="list-text">의 자동 전환 기능이 활성화되어 있는지 확인합니다.</block>
   <block id="43b1490f27c278cc1257cf8b95b331a9" category="paragraph">MetroCluster 쇼</block>
   <block id="5c0eb063c7de9ced4fcf06367dc8cf49" category="list-text">중재자가 실행되고 있는지 확인합니다.</block>
   <block id="241c04bf46a427ee9559a37db9cfc64c" category="list-text">중재자 가상 디스크를 표시합니다.</block>
@@ -12393,10 +12391,8 @@
   <block id="a7f55356cc47030db5528f30a58edfb2" category="list-text">타이브레이커 소프트웨어를 설치하거나 업그레이드합니다.</block>
   <block id="aad71198aa2c8b35c39182535fa9f425" category="paragraph">Tiebreaker 1.6을 새로 설치하려면 다음 단계를 따르십시오.</block>
   <block id="73bcbbea382be16f93642da3ea4e23a7" category="list-text">에서 다음 명령을 실행합니다<block ref="e9af9a0ef1d120bf3a16357375ed6d36" prefix=" " category="inline-code"></block> 설치를 시작하라는 메시지 표시:</block>
-  <block id="30c295d71ca99219187fc6466ee21568" category="open-title">Tiebreaker 1.5에서 1.6으로 업그레이드하십시오</block>
   <block id="8be93a7c27b9b66803ef47f46f3d4a36" category="paragraph">다음 단계에 따라 Tiebreaker 1.5 소프트웨어 버전을 Tiebreaker 1.6으로 업그레이드합니다.</block>
   <block id="b9a8b4d6a676fac167bcd49bac74376b" category="list-text">에서 다음 명령을 실행합니다<block ref="e9af9a0ef1d120bf3a16357375ed6d36" prefix=" " category="inline-code"></block> 소프트웨어를 업그레이드하라는 메시지 표시:</block>
-  <block id="cf316c5c67469aab7dcc16eed2309753" category="open-title">Tiebreaker 1.4에서 1.6으로 업그레이드합니다</block>
   <block id="b6afd444ae977b739cc436bd2a8b5c0b" category="paragraph">다음 단계에 따라 tiebreaker 1.4 소프트웨어 버전을 tiebreaker 1.6으로 업그레이드합니다.</block>
   <block id="67449e50a32d34759e501e37496d3308" category="doc">타이브레이커 설치 워크플로우</block>
   <block id="a6812db2442ae325a9ccd39373bbd9dd" category="paragraph-title">이 워크플로 정보</block>
@@ -12419,7 +12415,6 @@
   <block id="4a558332080902b1daf6c9eb900f075a" category="summary">사용하는 타이브레이커 설치 절차는 설치하는 타이브레이커의 버전에 따라 다릅니다.</block>
   <block id="686cbe9ae98dac9e3c34fe747bedda27" category="doc">설치 절차를 선택합니다</block>
   <block id="de537937e28d6ff9bfed73c24f238620" category="paragraph">타이브레이커 1.6</block>
-  <block id="3d0eb4e198ae6fd77a45e8e5eeab8df8" category="paragraph"><block ref="3d0eb4e198ae6fd77a45e8e5eeab8df8" category="inline-link-macro-rx"></block></block>
   <block id="92c6c9c27fa6ff626915d050a03cd801" category="doc">Tiebreaker 모니터가 실행 중인 호스트를 업그레이드합니다</block>
   <block id="bb6cdee210874ecf03d44e914a8ca0e2" category="paragraph">Tiebreaker 모니터가 실행 중인 호스트를 업그레이드해야 할 수 있습니다.</block>
   <block id="5d7ada76e0c335aff8880d70d7058de7" category="list-text">Tiebreaker 소프트웨어를 제거합니다.</block>
@@ -12430,7 +12425,6 @@
   <block id="be7c560a571a01eeb644e3be4ae88e59" category="list-text">설치 용이성 향상</block>
   <block id="6106648cc4773cdde37c48ca810022c0" category="cell">Red Hat 7 - 7.9</block>
   <block id="7d04b9af5dfbfc78c7040183f68afdc4" category="cell">Red Hat 8.1 - 8.7</block>
-  <block id="33ef1f5aa9b12ecd01c340c91d8f9150" category="cell">Red Hat 8.8 -9.2</block>
   <block id="003d136e5089a4f9ae0f1df3f6fc37fa" category="cell">Rocky Linux 9.0</block>
   <block id="9d0101bb262cf2b07ff8dcfa1f6cf004" category="list-text">관리자 암호와 HTTP, FTP, SFTP 또는 TFTP(Trivial File Transfer Protocol) 서버에 액세스해야 합니다.</block>
   <block id="c422062a1c7b3d9ed9b2282378699dc7" category="paragraph"><block ref="c422062a1c7b3d9ed9b2282378699dc7" category="inline-link-macro-rx"></block></block>
@@ -13778,7 +13772,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b0e1fb1b9093a23db84f9fe9ec414a05" category="paragraph">MetroCluster IP 구성의 각 스위치에 RCF 파일을 생성하고 설치해야 합니다.</block>
   <block id="5f6300d6cef757d6670c2170d0ee50fb" category="list-text">MetroCluster IP에 대한 Cisco RCF 파일을 생성합니다.</block>
   <block id="f0af72ee7b95606742238881f6d3d746" category="list-text">, 및 명령을 사용하여<block ref="0dea99cd92a8ce54e8bf65bd553a3e89" prefix=" " category="inline-code"></block><block ref="05f7f2ea3536c78a494ee9ec91b6fef9" prefix=" " category="inline-code"></block><block ref="1fb1e9c05efc96eb745333b035ce6d59" prefix=" " category="inline-code"></block> 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다.</block>
-  <block id="696ca372052e4e85401e9ef266b57375" category="paragraph">MetroCluster IP 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 수정하려면 다음 단계를 수행하십시오.</block>
   <block id="164748ab1cab79cb53ebb8d067fb41df" category="paragraph"><block ref="3b73cc9aa0167fa80aa8a786a4871e88" prefix="" category="inline-code"></block></block>
   <block id="8c8de216c09126479bba8f0a636ceac7" category="paragraph"><block ref="34b1158d44c89ca8031563bdf424ba84" prefix="" category="inline-code"></block></block>
   <block id="711aa9967b438e020ee72c9773739e5d" category="paragraph"><block ref="c7462aa9b4e3acfeadac46864ab81636" prefix="" category="inline-code"></block></block>
@@ -14037,4 +14030,243 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="705abb444ac66e0442a9ae4646471061" category="list-text">두 스위치 모두에서 다음 명령을 실행하여 새 스위치를 사용하지 않도록 설정합니다.</block>
   <block id="f67761c61087dd0914ed518ef2c5f8e3" category="list-text">다음 절차 중 하나를 사용하여 Brocade FC 스위치를 구성합니다.</block>
   <block id="4aa62d2d0cdae8fdaf47d41d558bac24" category="list-text"><block ref="4aa62d2d0cdae8fdaf47d41d558bac24" category="inline-link-macro-rx"></block></block>
+  <block id="bfa00e3106960b2480f83fadff713a4f" category="paragraph">1.6P1를 참조하십시오</block>
+  <block id="6bfcd5ea08a80cd94155fdf88dcf6123" category="paragraph">다음 표는 타이브레이커 버전별로 지원되는 운영 체제를 나타냅니다.</block>
+  <block id="1b768ce691e5eb1aa740065a1f672bfa" category="cell">타이브레이커용 OS</block>
+  <block id="540490e777cd8d6d9e7c6fc96ae66c78" category="paragraph">록키 리눅스 9.4</block>
+  <block id="5462f235f897a01fa661bab622beabc8" category="paragraph">록키 리눅스 8.10</block>
+  <block id="a19c888b1dfc0d7cae495bcb3d337fc0" category="paragraph">Red Hat 9.4</block>
+  <block id="3e6f4ea6825b1c15c5caa424f32e8e56" category="paragraph">Red Hat 9.3</block>
+  <block id="990892a05d2ae7871bb10520e7d92e70" category="paragraph">Red Hat 9.2</block>
+  <block id="b846d756ce474e84306c1784e17929a2" category="paragraph">Red Hat 9.1</block>
+  <block id="a9a9af4fc514b12a09fbdb4e9dc69b3e" category="paragraph">Red Hat 9.0</block>
+  <block id="7f1240813348dba5070feb8fcbcd1ef6" category="paragraph">Red Hat 8.11 - 9.0</block>
+  <block id="dfb323b8bbf2e9913deb2acdece0c7f4" category="paragraph">Red Hat 8.10</block>
+  <block id="df0cfaadf30e71fdaa61f84b52c44994" category="paragraph">Red Hat 8.9 를 참조하십시오</block>
+  <block id="04dca81afefd0df779a73a7d71167788" category="paragraph">Red Hat 8.8 을 참조하십시오</block>
+  <block id="38a72bda83bf45017fe822ff4eba9612" category="summary">ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 관리할 수 있습니다. 여기에는 두 클러스터를 설정, 피어링 및 구성하는 작업이 포함됩니다.</block>
+  <block id="36f25b89c535d52dd7602dc98235602e" category="doc">MetroCluster IP 사이트를 구성합니다</block>
+  <block id="28899ffbbfaa5ea10173ff0ea7d1a3c4" category="paragraph">ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 관리할 수 있습니다. 여기에는 두 클러스터 설정, 클러스터 피어링 수행 및 클러스터 구성이 포함됩니다.</block>
+  <block id="ab5b4f0eeffd1a9db4154301438d854e" category="paragraph">다음 절차를 완료하십시오.</block>
+  <block id="db2d063a7c49bffea6360ca914ed7b80" category="inline-link-macro">MetroCluster IP 사이트를 설정합니다</block>
+  <block id="6752a5e24c893d34589e26378fa69a36" category="list-text"><block ref="6752a5e24c893d34589e26378fa69a36" category="inline-link-macro-rx"></block></block>
+  <block id="666700b42fe1d56ec812d1016bf00474" category="inline-link-macro">MetroCluster IP 피어링을 설정합니다</block>
+  <block id="432b1852c060822f86f6a936e2d5a657" category="list-text"><block ref="432b1852c060822f86f6a936e2d5a657" category="inline-link-macro-rx"></block></block>
+  <block id="11de751fc3a61ece2c4369c7f228d262" category="section-title">클러스터 간 연결을 구성합니다</block>
+  <block id="4f98dcf943b7a3cd7ed4f88ca8839b1b" category="list-text">사이트 중 하나에서 System Manager에 로그인하고 * Dashboard * 를 선택합니다.</block>
+  <block id="d3ab8079aafa01dd2443858e1958cde3" category="paragraph">MetroCluster * 섹션에서 그래픽은 MetroCluster 사이트를 위해 설정하고 피어링한 두 클러스터를 보여줍니다. 작업 중인 클러스터(로컬 클러스터)가 왼쪽에 표시됩니다.</block>
+  <block id="4dbd519ea68e9fdd1535b92dd4afd5fb" category="list-text">MetroCluster 구성 * 을 클릭합니다. 이 창에서 다음 단계를 수행하십시오.</block>
+  <block id="1786426d5d80efd6c5165d556166c28b" category="list-text">MetroCluster 구성에서 각 클러스터의 노드가 표시됩니다. 드롭다운 목록을 사용하여 원격 클러스터의 노드와 함께 재해 복구 파트너가 될 로컬 클러스터의 노드를 선택합니다.</block>
+  <block id="5b4f1da4fd53e0370a93b132cee09135" category="inline-link-macro">ONTAP 중재자 서비스를 구성합니다</block>
+  <block id="79929ab5271f1ea472573389b4d83491" category="list-text">ONTAP 중재자 서비스를 구성하려면 확인란을 클릭합니다. 을 <block ref="5f1311c68626dc6800182a56591c319d" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="2e04b49bb4e33ec691ac2f426d41203d" category="list-text">두 클러스터에 암호화를 활성화할 수 있는 라이센스가 있으면 * Encryption * 섹션이 표시됩니다.</block>
+  <block id="12d02fba21726eafac4f9ce09b0d1801" category="paragraph">암호화를 활성화하려면 암호를 입력합니다.</block>
+  <block id="39391d3e9d1021130d7922046a90931b" category="list-text">MetroCluster를 공유 계층 3 네트워크로 구성하려면 이 확인란을 클릭합니다.</block>
+  <block id="efe042b7cd567da6e7a1991e57562f95" category="admonition">노드에 연결되는 HA 파트너 노드와 네트워크 스위치에 일치하는 구성이 있어야 합니다.</block>
+  <block id="3ff0da84e96e24c0f2119aa4d9252fc8" category="list-text">MetroCluster 사이트를 구성하려면 * 저장 * 을 클릭합니다.</block>
+  <block id="a84590effe20f7cfc7a37800f946342b" category="paragraph">대시보드 * 의 * MetroCluster * 섹션에서 그래픽은 두 클러스터 간의 링크에 확인 표시를 표시하여 양호한 연결을 나타냅니다.</block>
+  <block id="0a2cb077aceb828b74111b3c72d0875f" category="summary">ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 사이트 작업을 관리할 수 있습니다. 여기에는 두 클러스터를 설정하고 클러스터 피어링을 수행하는 작업이 포함됩니다.</block>
+  <block id="2fecebbfac11150535911d877966c9e3" category="paragraph">ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 관리할 수 있습니다. 두 클러스터를 설정한 후 클러스터 간에 피어링을 설정합니다.</block>
+  <block id="8301378659a3e958b3ed8bee628d4fed" category="paragraph">2개의 클러스터를 설정합니다. <block ref="6752a5e24c893d34589e26378fa69a36" category="inline-link-macro-rx"></block>절차를 참조하십시오.</block>
+  <block id="fd52b08a1d5c4aa668d8747cad70b430" category="paragraph">이 프로세스의 특정 단계는 각 클러스터의 지리적 위치에 있는 여러 시스템 관리자가 수행합니다. 이 프로세스를 설명하기 위해 클러스터를 "사이트 A 클러스터" 및 "사이트 B 클러스터"라고 합니다.</block>
+  <block id="800f6bec4d7bccca8986aece418ad1de" category="section-title">사이트 A에서 피어링 프로세스를 수행합니다</block>
+  <block id="91e08e596d03b4598a0cb6e18b3b7323" category="paragraph">이 프로세스는 사이트 A의 시스템 관리자가 수행합니다</block>
+  <block id="1b22a2a59202338d982fba5bbb33fa30" category="list-text">사이트 A 클러스터에 로그인합니다.</block>
+  <block id="37d02710ca9beb5be0727430fb2162b8" category="list-text">System Manager의 왼쪽 탐색 열에서 * Dashboard * 를 선택하여 클러스터 개요를 표시합니다.</block>
+  <block id="400cef5b08c0727ecc8dc2c820f4cc03" category="paragraph">대시보드에는 이 클러스터(사이트 A)에 대한 세부 정보가 표시됩니다. MetroCluster * 섹션의 왼쪽에 사이트 A 클러스터가 표시됩니다.</block>
+  <block id="6107d832d713643417cdcb1247850b8d" category="list-text">파트너 클러스터 연결 * 을 클릭합니다.</block>
+  <block id="1ad364a11b40005802e1f84d90d041cf" category="list-text">사이트 A 클러스터의 노드가 사이트 B 클러스터의 노드와 통신할 수 있도록 허용하는 네트워크 인터페이스의 세부 정보를 입력합니다.</block>
+  <block id="e2aa96095bb2f8cb065ca1dbb1797062" category="list-text">저장 후 계속 * 을 클릭합니다.</block>
+  <block id="0fb2a7e128a2eac45533dd8f9ae55f5e" category="list-text">Attach Partner Cluster * 창에서 * I do not have a passphrase * 를 선택합니다. 그러면 암호를 생성할 수 있습니다.</block>
+  <block id="c049d3b7f45a9d71a026303b72bd3c89" category="list-text">생성된 암호를 복사하여 사이트 B의 시스템 관리자와 공유합니다</block>
+  <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">닫기 * 를 선택합니다.</block>
+  <block id="b05890405a4f635e4f56b65031e75631" category="section-title">사이트 B에서 피어링 프로세스를 수행합니다</block>
+  <block id="0b4aea80df80bf888adc9518474f6947" category="paragraph">이 프로세스는 사이트 B의 시스템 관리자가 수행합니다</block>
+  <block id="dd50214e47fa588d26e3c92a3d198338" category="list-text">사이트 B 클러스터에 로그인합니다.</block>
+  <block id="734cc1d7de8d108a27e917887214636f" category="list-text">System Manager에서 * 대시보드 * 를 선택하여 클러스터 개요를 표시합니다.</block>
+  <block id="1f10efcab03c53da22ba08cb6bbc8598" category="paragraph">대시보드에는 이 클러스터(사이트 B)에 대한 세부 정보가 표시됩니다. MetroCluster 섹션의 왼쪽에 사이트 B 클러스터가 표시됩니다.</block>
+  <block id="b7c19af97bcc09d6c21203f84e692348" category="list-text">피어링 프로세스를 시작하려면 * 파트너 클러스터 연결 * 을 클릭합니다.</block>
+  <block id="8ca83d09916f639dd29a3ed4f3b639b4" category="list-text">사이트 B 클러스터의 노드가 사이트 A 클러스터의 노드와 통신할 수 있도록 허용하는 네트워크 인터페이스의 세부 정보를 입력합니다.</block>
+  <block id="bfee858eb2d3fe3045afebb6acac2a29" category="list-text">Attach Partner Cluster * 창에서 * I have a passphrase * 를 선택합니다. 사이트 A의 시스템 관리자로부터 받은 암호를 입력할 수 있습니다</block>
+  <block id="3dada8e82959cb16ca8382065e3028f9" category="list-text">피어링 프로세스를 완료하려면 * 피어 * 를 선택합니다.</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">다음 단계</block>
+  <block id="1d5ce8d0636fdf8fd5bc5cb4e8a960df" category="paragraph">피어링 프로세스가 성공적으로 완료되면 클러스터를 구성합니다. 을 <block ref="f4b8cb4c8ba1cae03984184387785b0f" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="6860105c09c16d5d7eaa1e78fed2b5e5" category="summary">ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 사이트를 설정할 수 있습니다.</block>
+  <block id="466f762f177e526457605fb9ac8c08f3" category="paragraph">MetroCluster 사이트는 2개의 클러스터로 구성됩니다. 일반적으로 클러스터는 다양한 지리적 위치에 있습니다.</block>
+  <block id="b0d3ebac943d2ae6f9252023ec4372af" category="inline-link">설치 및 설정 지침</block>
+  <block id="ad7d040781ae344cb798e4643b544189" category="list-text">시스템과 함께 제공된 에 따라 시스템이 이미 설치되어 있고 케이블이 연결되어 있어야<block ref="fe37fd3178daac666b0ecf82dc69d67e" category="inline-link-rx"></block> 합니다.</block>
+  <block id="3521850b1984afef04220756150edd6f" category="list-text">클러스터 내 통신을 위해 각 클러스터의 각 노드에서 클러스터 네트워크 인터페이스를 구성해야 합니다.</block>
+  <block id="333626d7eac89dbbbfc0adb558126fa5" category="section-title">노드 관리 IP 주소를 할당합니다</block>
+  <block id="b6aad8c4ffa5342dbf2d86461d5eacd0" category="section-title">Windows 시스템</block>
+  <block id="5239b38f72ba4e5cf31c91f53e96fbed" category="paragraph">Windows 컴퓨터를 컨트롤러와 동일한 서브넷에 연결해야 합니다. 이렇게 하면 노드 관리 IP 주소가 시스템에 자동으로 할당됩니다.</block>
+  <block id="3ce0ea9ab77c17a59c6c5bc699f28c5f" category="list-text">Windows 시스템에서 * Network * 드라이브를 열어 노드를 검색합니다.</block>
+  <block id="19695fc87bb0fcfd896be28e7208553d" category="list-text">노드를 두 번 클릭하여 클러스터 설정 마법사를 시작합니다.</block>
+  <block id="4df67b430c2c93a881bdfcb608ac9d64" category="section-title">기타 시스템</block>
+  <block id="088e15bd429f3ce14d70d95c30e1e122" category="paragraph">클러스터의 노드 중 하나에 대한 노드 관리 IP 주소를 구성해야 합니다. 이 노드 관리 IP 주소를 사용하여 클러스터 설정 마법사를 시작할 수 있습니다.</block>
+  <block id="35993a777fd55e9b8652d85b9bcdb437" category="inline-link-macro">첫 번째 노드에서 클러스터 생성</block>
+  <block id="f6d314ce096e8231f7a5bc9785329bcb" category="paragraph">노드 관리 IP 주소 할당에 대한 자세한 내용은 을 <block ref="6a6a97d50b361c85b6a1efd6b8465455" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="01aefac0a86b676c1949a51d6e866a82" category="section-title">클러스터를 초기화하고 구성합니다</block>
+  <block id="49fad8a8e436dfc1d8668e654044de3c" category="paragraph">클러스터에 대한 관리 암호를 설정하고 클러스터 관리 및 노드 관리 네트워크를 설정하여 클러스터를 초기화합니다. 또한 DNS(도메인 이름 서버)와 같은 서비스를 구성하여 호스트 이름을 확인하고 NTP 서버를 구성하여 시간을 동기화할 수도 있습니다.</block>
+  <block id="cc1405b96b23f7d6e3c371baa8cee9fd" category="list-text">웹 브라우저에서 구성한 노드 관리 IP 주소를 입력합니다. <block ref="c3d870229fd69ece8d3d772339d7351c" category="inline-link-rx"></block></block>
+  <block id="b4ab57535e2494a9072f367bc0cc66ac" category="paragraph">System Manager가 클러스터의 나머지 노드를 자동으로 검색합니다.</block>
+  <block id="b32feae1add7ad238c11b701aebd6a4d" category="list-text">Initialize Storage System * 창에서 다음을 수행합니다.</block>
+  <block id="0723981d0cd8540448ade0ad0c2bce4f" category="list-text">클러스터 관리 네트워크 구성 데이터를 입력합니다.</block>
+  <block id="d9e5bca04bba2210fd7133286123d23b" category="list-text">모든 노드의 노드 관리 IP 주소를 입력합니다.</block>
+  <block id="89b17fac13461899552af00e761c444f" category="list-text">DNS 세부 정보를 제공합니다.</block>
+  <block id="f2cf1382fae972d1f657f56bdf1ccd2f" category="list-text">기타 * 섹션에서 * 시간 서비스 사용(NTP) * 확인란을 선택하여 시간 서버를 추가합니다.</block>
+  <block id="d385f8f7be7049af17b707b814da972d" category="paragraph">Submit * 을 클릭하면 클러스터가 생성 및 구성될 때까지 기다립니다. 그런 다음 유효성 검사 프로세스가 발생합니다.</block>
+  <block id="e66cf0363da426ff5fc40b5dff923ee7" category="paragraph-title">다음 단계</block>
+  <block id="fb0527aaad3b8834bb5bd8b9aaac2d14" category="paragraph">두 클러스터가 설정, 초기화 및 구성된 후 [MetroCluster IP 피어링 설정] 절차를 수행합니다.</block>
+  <block id="5a8cb11351ec1c2ae0f6ece191a675b3" category="section-title">새 클러스터 비디오에서 ONTAP를 구성합니다</block>
+  <block id="de87e59d2852e752153034440b599942" category="summary">System Manager를 사용하면 중재자를 관리하는 작업을 수행할 수 있습니다.</block>
+  <block id="4a75c782083d91f8442fa0793b7cfbf5" category="doc">System Manager로 ONTAP 중재자 관리</block>
+  <block id="a92f4998e6033fa7b4c91230afa4eb31" category="paragraph">System Manager를 사용하면 ONTAP 중재자를 관리하는 작업을 수행할 수 있습니다.</block>
+  <block id="58d9a382438a6ccf3362b70996f2217e" category="paragraph-title">수행할 수 있습니다</block>
+  <block id="06d19fcd882f22629288f03ed5b7cdbf" category="paragraph">ONTAP 9.8부터는 System Manager를 사용하여 4노드 MetroCluster IP 구성을 간편하게 관리할 수 있습니다. 여기에는 세 번째 위치에 설치된 ONTAP 중재자가 포함될 수 있습니다.</block>
+  <block id="7cd65d7812b2b9ccfca9369428e81afc" category="paragraph">ONTAP 9.14.1부터는 System Manager를 사용하여 8노드 MetroCluster IP 사이트에 대해 이러한 작업을 수행할 수 있습니다. System Manager를 사용하여 8노드 시스템을 설정 또는 확장할 수 없지만, 8노드 MetroCluster IP 시스템을 이미 설정한 경우에는 이러한 작업을 수행할 수 있습니다.</block>
+  <block id="cf5d5c60759eb97116f97dba2f94928f" category="paragraph">ONTAP 중재자를 관리하려면 다음 작업을 수행합니다.</block>
+  <block id="34c30a40821bf0600cbb66a443eaa256" category="cell">이 작업을 수행하려면...</block>
+  <block id="ed48cbb0bf6ff16f983dee37b0fa56db" category="cell">다음 작업 수행...</block>
+  <block id="fbdb3c4696d4af3abdd40a7c4d39dff1" category="paragraph">중재자 서비스를 구성합니다</block>
+  <block id="5887ba6bb1083b1733f935c989ce8798" category="paragraph">MetroCluster 사이트의 두 클러스터를 모두 살펴보고 기록해야 합니다.</block>
+  <block id="e41b8f6d50b100db120f723ab2d80b55" category="list-text">ONTAP 9.8의 시스템 관리자에서 * 클러스터 &gt; 설정 * 을 선택합니다.</block>
+  <block id="5ad3e303fff11348579be9fa7186a3bf" category="inline-image-macro">작업 아이콘</block>
+  <block id="91137d8840d5756932cbbe95191ebef9" category="list-text">mediator * 섹션에서 를 <block ref="7d54718dbc3f6ea214f7c0852ad5f778" category="inline-image-macro-rx" type="image"></block>클릭합니다.</block>
+  <block id="08e18262fd4a21acec4d96a4a34ce874" category="list-text">중재자 구성 * 창에서 * 추가 + * 를 클릭합니다.</block>
+  <block id="7106fd9d66839587984098b5b110af62" category="list-text">ONTAP 중재자의 구성 세부 정보를 입력합니다.</block>
+  <block id="4454fd0f209c519ab968807065d1d63d" category="paragraph">System Manager로 ONTAP 중재자를 구성하는 동안 다음 세부 정보를 입력할 수 있습니다.</block>
+  <block id="2396a51918b19da4a570bb6eeefaf733" category="list-text">중재자의 IP 주소입니다.</block>
+  <block id="bf3c0dfedfed52264992478ab75c11ab" category="list-text">사용자 이름입니다.</block>
+  <block id="818e503323563216b4a9556e8c414a99" category="list-text">암호입니다.</block>
+  <block id="db76a646cbffaec942b46f13ae610cdf" category="paragraph">MAUSO(mediator-assisted Automatic Switchover) 활성화 또는 비활성화</block>
+  <block id="8a9b7c6da233afe1b94f2908370636ae" category="list-text">System Manager에서 * 대시보드 * 를 클릭합니다.</block>
+  <block id="33ba5213ca4a1cf4e94a02d0ba4e50a8" category="list-text">MetroCluster 섹션으로 스크롤합니다.</block>
+  <block id="9b5ce2fc82e55a2629051893f8d8d4ff" category="inline-image-macro">메뉴 아이콘</block>
+  <block id="8048f4b95111b36ae736e0db22032afc" category="list-text">MetroCluster 사이트 이름 옆에 있는 을 클릭합니다 <block ref="fc003bdefc684d1fa6047f466b3a4572" category="inline-image-macro-rx" type="image"></block> .</block>
+  <block id="5451b90704453cd0f976a20853b71515" category="list-text">활성화 * 또는 * 비활성화 * 를 선택합니다.</block>
+  <block id="e7d8532df0bf3db8251352a8238be289" category="list-text">관리자 사용자 이름과 암호를 입력한 다음 * 활성화 * 또는 * 비활성화 * 를 클릭합니다.</block>
+  <block id="1f48f2b275c8a8c7c346ee84a099bf8d" category="admonition">중재자에 도달할 수 있고 두 사이트 모두 ""정상"" 모드에 있을 때 중재자를 활성화 또는 비활성화할 수 있습니다. MetroCluster 시스템이 정상인 경우 MAUSO가 활성화 또는 비활성화되어도 중재자에 연결할 수 있습니다.</block>
+  <block id="7f4fa61d4e9b9b925c8fb71469e17d9d" category="paragraph">MetroCluster 구성에서 중재자를 제거합니다</block>
+  <block id="90e2fb7737ff30cfb4976eadc47866a4" category="list-text">중재자 제거 * 를 선택합니다.</block>
+  <block id="08c3fe5d52a59ab36d7b3b7acab670d1" category="list-text">관리자 사용자 이름과 암호를 입력한 다음 * 제거 * 를 클릭합니다.</block>
+  <block id="7f4010553b429e7c90d3b1f0da9fa64b" category="paragraph">중재자의 상태를 점검합니다</block>
+  <block id="88696f657e6e364490e66c4462936660" category="inline-link-macro">MetroCluster 구성의 상태를 확인합니다</block>
+  <block id="b01e706bfb46755bbdbe42d170a1b23a" category="paragraph">에서 System Manager의 특정 단계를 <block ref="1dc6f14de17f840d44d583754a4c8527" category="inline-link-macro-rx"></block>수행합니다.</block>
+  <block id="d643e31d547d643afdddd05a8a4f7112" category="paragraph">스위치오버 및 스위치백을 수행합니다</block>
+  <block id="95232b2668851dd7e6d065abeee1ed20" category="inline-link-macro">시스템 관리자를 사용하여 전환 및 스위치백 수행(MetroCluster IP 구성만 해당)</block>
+  <block id="94728a8f449ff84b5ac878653ab4ad67" category="paragraph">의 단계를 <block ref="5b3a204b8bc535419d3d88f0ef6f3046" category="inline-link-macro-rx"></block>수행합니다.</block>
+  <block id="a4d7653998b91da503a24fc71e65ad4f" category="list-text">자동 전환 기능이 활성화되어 있는지 확인합니다.</block>
+  <block id="b03614d885f56be6dafeebbbaa010a5f" category="paragraph">이어지는 절차는 ONTAP System Manager를 사용하는지 CLI를 사용하는지 여부에 따라 다릅니다.</block>
+  <block id="26ed02718973e705cd69ee6e109400e0" category="open-title">시스템 관리자</block>
+  <block id="a8f22e0a130b300278ead25d693a43d5" category="paragraph">System Manager를 사용하여 IP 주소, 넷마스크 및 게이트웨이 속성을 수정합니다.</block>
+  <block id="7cdf282c18fa11c6df4d9d55af90d450" category="paragraph">각 노드와 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 업데이트합니다.</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="open-title">CLI를 참조하십시오</block>
+  <block id="f9a65892b48ad466104ac3eb33403881" category="paragraph">CLI를 사용하여 IP 주소, 넷마스크 및 게이트웨이 속성을 수정합니다.</block>
+  <block id="0efcd0c9061820674001fdd91f087bf1" category="admonition">이러한 명령은 특정 포트의 특정 노드에 대한 구성을 변경합니다. 전체 네트워크 연결을 복원하려면 다른 포트에 유사한 명령이 필요합니다. 마찬가지로 네트워크 스위치도 구성을 업데이트해야 합니다. 예를 들어, 게이트웨이가 업데이트되는 경우 HA Pair의 두 노드에서 변경되기가 이상적입니다. 이러한 노드에 연결된 스위치 역시 게이트웨이를 업데이트해야 합니다.</block>
+  <block id="1e7bea8d62062fd522d5f5c2523a3c72" category="summary">MetroCluster 구성 요소가 정상인지 확인하는 방법에 대해 알아봅니다.</block>
+  <block id="f505230c63d40beb8fbcb47fba267ed7" category="list-text">MetroCluster IP 및 FC 구성에서는 CLI를 사용하여 상태 점검 명령을 실행하고 MetroCluster 구성 요소의 상태를 확인할 수 있습니다.</block>
+  <block id="8b0de0e20dd0b02520681f56e79ebae0" category="list-text">ONTAP 9 .8 이상을 실행하는 MetroCluster IP 구성에서는 ONTAP System Manager를 사용하여 상태 점검 경고를 모니터링하고 문제를 해결할 수도 있습니다.</block>
+  <block id="1583d2d97747ba72311f2e67c5e8cbb4" category="paragraph">CLI를 사용하는지 System Manager를 사용하는지 여부에 따라 MetroCluster 구성의 상태를 확인하십시오.</block>
+  <block id="37dcbbe313fadb76f239174825a5a989" category="paragraph">CLI를 사용하여 MetroCluster 구성의 상태를 확인하려면 다음 단계를 사용하십시오.</block>
+  <block id="c4a17569a8bf29b7e14beddf0509bffc" category="list-text">작업이 완료되면<block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block> 결과를 표시합니다.</block>
+  <block id="207b1edaa970369e13d7a443fcd16244" category="open-title">ONTAP 시스템 관리자(MetroCluster IP만 해당)</block>
+  <block id="a2c21bc044f933ab565d513bcc14eb44" category="paragraph">ONTAP 9.8부터 System Manager는 MetroCluster IP 구성의 상태를 모니터링하여 문제 발생 가능성을 식별하고 해결하는 데 도움을 줍니다.</block>
+  <block id="d679b550fc7e920c8d317b30292d5b72" category="paragraph">System Manager는 MetroCluster IP 구성의 상태를 정기적으로 확인합니다. 대시보드에서 MetroCluster 섹션을 볼 때 일반적으로 "MetroCluster system are healthy"라는 메시지가 표시됩니다.</block>
+  <block id="744b05e9d4a2bf5cfaf4233e162b7287" category="paragraph">그러나 문제가 발생하면 메시지에 이벤트 수가 표시됩니다. 이 메시지를 클릭하여 다음 구성 요소에 대한 상태 점검 결과를 볼 수 있습니다.</block>
+  <block id="fbebc6739678d32573bdcc8e7d9712a2" category="list-text">네트워크 인터페이스</block>
+  <block id="9db57734568bdbbb6cb1f1ae0e91c96e" category="list-text">계층(스토리지)</block>
+  <block id="249694a485fc5d3289c38986b4f8e887" category="list-text">클러스터</block>
+  <block id="c2cc7082a89c1ad6631a2f66af5f00c0" category="list-text">연결</block>
+  <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="list-text">볼륨</block>
+  <block id="21094294c878b9478fc6a4481429dd3b" category="list-text">구성 복제</block>
+  <block id="b06582224c79e1b61467fdec14da2228" category="paragraph">Status* 열은 문제가 있는 구성 요소를 식별하며 * Details* 열은 문제를 해결하는 방법을 제안합니다.</block>
+  <block id="1d1e5cd96b3e552f9fc410fb90447401" category="list-text">System Manager에서 * 대시보드 * 를 선택합니다.</block>
+  <block id="68c5b182341ec0270d2cfc783a5cb3a8" category="list-text">MetroCluster * 섹션에서 메시지 보기:</block>
+  <block id="2e957c43738afa0268a948e2ddbfc90a" category="list-text">메시지가 MetroCluster 구성이 정상이고 클러스터와 ONTAP 중재자 사이의 연결이 양호하다는 것을 나타내면(확인 표시와 함께 표시됨) 수정할 문제가 없는 것입니다.</block>
+  <block id="5ead04b6add34a12036cdfd7b3076e12" category="list-text">메시지에 이벤트 수가 나열되거나 연결이 중단된 경우("X"로 표시됨) 다음 단계를 계속합니다.</block>
+  <block id="5eade9ac1d44db33dfd4a3c509a9f1db" category="list-text">이벤트 수를 표시하는 메시지를 클릭합니다.</block>
+  <block id="2c0ee5124aa4e5392364a27cc1881b73" category="paragraph">MetroCluster 상태 보고서가 표시됩니다.</block>
+  <block id="0d5b953768363f4a9dfdd80e2f7c966b" category="list-text">세부 정보 * 열의 제안을 사용하여 보고서에 나타나는 문제를 해결합니다.</block>
+  <block id="b9a9a239553d33237233de0bfd8f65f6" category="list-text">모든 문제가 해결되면 * MetroCluster 상태 확인 * 을 클릭합니다.</block>
+  <block id="e4fd105ae14d31c18bec3c48cfbb91dd" category="admonition">MetroCluster 상태 점검은 많은 양의 리소스를 사용하므로 검사를 실행하기 전에 모든 문제 해결 작업을 수행해야 합니다.</block>
+  <block id="aafba8024f058e44bbc108aceb7544c0" category="paragraph">MetroCluster 상태 점검은 백그라운드에서 실행됩니다. 작업이 완료될 때까지 기다리는 동안 다른 작업을 수행할 수 있습니다.</block>
+  <block id="f3f0554af4f46e3b78864e3ee8cf634d" category="paragraph">유지 관리를 수행하거나 문제에서 복구할 수 있도록 한 MetroCluster IP 사이트에서 다른 사이트로 제어를 전환할 수 있습니다.</block>
+  <block id="e332e690f18abf1e6fbf15bb2839f91f" category="admonition">전환 및 스위치백 절차는 MetroCluster IP 구성에 대해서만 지원됩니다.</block>
+  <block id="476bb76a6bf7614cd646479d690f0355" category="section-title">스위치오버 및 스위치백 개요</block>
+  <block id="4e487442ec743c75d773efc8d7eb4975" category="paragraph">전환은 다음 두 가지 경우에 발생할 수 있습니다.</block>
+  <block id="7d22a9492e26d8b6f7e62e754b8038bc" category="list-text">* 계획된 전환 *</block>
+  <block id="122a8d927b5f2bfbd5c05e151d100ecf" category="paragraph">이 전환은 System Manager를 사용하는 시스템 관리자가 시작합니다. 계획된 전환을 통해 로컬 클러스터의 시스템 관리자가 제어 기능을 전환하여 원격 클러스터의 데이터 서비스를 로컬 클러스터에서 처리할 수 있습니다. 그런 다음 원격 클러스터 위치의 시스템 관리자가 원격 클러스터에 대한 유지 관리를 수행할 수 있습니다.</block>
+  <block id="e8fac69a545ec9a20c2f066fd2d5c64c" category="list-text">* 계획되지 않은 전환 *</block>
+  <block id="7ee58ef1472684aca1fe0fe874b6d592" category="paragraph">경우에 따라 MetroCluster 클러스터가 중단되거나 클러스터 간 연결이 끊긴 경우 ONTAP는 스위치오버를 자동으로 시작하여 계속 실행 중인 클러스터가 중단된 클러스터의 데이터 처리 책임을 처리하도록 합니다.</block>
+  <block id="97ea4ec8c53cbd7aa2f77e41af35214d" category="paragraph">또는 ONTAP에서 클러스터 중 하나의 상태를 확인할 수 없는 경우 작업 중인 사이트의 시스템 관리자가 다른 사이트의 데이터 처리 책임을 관리하기 위해 전환을 시작합니다.</block>
+  <block id="b04fc1c1a947340b6295bca4e15296fa" category="paragraph">모든 유형의 스위치오버 절차에서 데이터 서비스 기능은 _스위치백_프로세스를 사용하여 클러스터로 반환됩니다.</block>
+  <block id="3a6a5031743305019642718d6b386a76" category="paragraph">ONTAP 9.7 및 9.8에 대해 서로 다른 스위치오버 및 스위치백 프로세스를 수행합니다.</block>
+  <block id="e6930e280c751418022003bf9fa97d63" category="inline-xref">ONTAP 9.7의 System Manager를 사용하여 전환 및 스위치백을 수행할 수 있습니다</block>
+  <block id="fbb89290a9f0639df9fd99dd91afccee" category="list-text"><block ref="256c277ba57abb095e4dc34a115bfd87" category="inline-xref-macro-rx"></block></block>
+  <block id="90984242656b59b4ec4bc8b2dc652b47" category="inline-xref">ONTAP 9.8의 System Manager를 사용하여 전환 및 스위치백을 수행할 수 있습니다</block>
+  <block id="7bf20936df7319e027dcb25cf3be240e" category="list-text"><block ref="b26721d6058aa62e04e032c9956f0274" category="inline-xref-macro-rx"></block></block>
+  <block id="84e994bcb8ec0880899d43da827eb4f8" category="list-text">ONTAP 9.7에서 System Manager에 로그인합니다.</block>
+  <block id="ef676a956a1111a97c4b6d5a5313ec0c" category="list-text">(클래식 버전으로 돌아가기) * 를 클릭합니다.</block>
+  <block id="c6b17260f6c04748cb3b263e07841d9c" category="list-text">구성 &gt; MetroCluster * 를 클릭합니다.</block>
+  <block id="9512c15d06f8ebc094a9ff5468e46042" category="paragraph">System Manager는 협상된 전환이 가능한지 여부를 확인합니다.</block>
+  <block id="1184e7d21efeb90e1213fb76b1a8ab92" category="list-text">검증 프로세스가 완료되면 다음 하위 단계 중 하나를 수행합니다.</block>
+  <block id="d70c82e05495e05abc2021dc54100a96" category="list-text">검증이 실패했지만 사이트 B가 작동 중이면 오류가 발생했습니다. 예를 들어, 하위 시스템에 문제가 있거나 NVRAM 미러링이 동기화되지 않을 수 있습니다.</block>
+  <block id="158ad5b32c8309811884b5700c04c866" category="list-text">오류의 원인이 되는 문제를 해결하고 * 닫기 * 를 클릭한 다음 2단계에서 다시 시작합니다.</block>
+  <block id="2da490367d961d43e4786cecfbde3d6b" category="inline-link-macro">계획되지 않은 전환 수행</block>
+  <block id="37950e07940a13e856cb50dc1a9291b9" category="list-text">사이트 B 노드를 중지하고 * 닫기 * 를 클릭한 다음 의 단계를 <block ref="fb6c16196bc2d21511884d5617718b51" category="inline-link-macro-rx"></block>수행합니다.</block>
+  <block id="47cb9ca4992d157c03e7725803af8e2a" category="list-text">유효성 검사에 실패하고 사이트 B가 다운되면 연결 문제가 있을 가능성이 높습니다. 사이트 B가 다운되었는지 확인한 다음 의 단계를 <block ref="fb6c16196bc2d21511884d5617718b51" category="inline-link-macro-rx"></block>수행합니다.</block>
+  <block id="f40d6676f14af4f7006dc55f7866a8cc" category="list-text">사이트 B에서 사이트 A * 로 전환 을 클릭하여 전환 프로세스를 시작합니다.</block>
+  <block id="3fa63b2ebfe34a52015afed9c4be0676" category="list-text">새로운 환경으로 전환 * 을 클릭합니다.</block>
+  <block id="a0bbb21498df4682785de3ad118d2112" category="section-title">계획된 전환 수행(ONTAP 9.8)</block>
+  <block id="7032cb0fb8b2c734e0b3330b170287a8" category="list-text">ONTAP 9.8에서 System Manager에 로그인합니다.</block>
+  <block id="d86b98757fa72a3091b65699a17b3724" category="list-text">대시보드 * 를 선택합니다. MetroCluster * 섹션에서 두 클러스터는 연결 상태로 표시됩니다.</block>
+  <block id="b7833a52299d966f41b82417259c5239" category="inline-image-macro">케밥 아이콘</block>
+  <block id="6b466076a02d34c371b188caa9b5a5ea" category="list-text">로컬 클러스터(왼쪽에 표시)에서 를 클릭하고 <block ref="2f6e127087f9ef4b927e204474c5d0b2" category="inline-image-macro-rx" type="image"></block>* 로컬 사이트로 원격 데이터 서비스 전환 * 을 선택합니다.</block>
+  <block id="aa0bfd6a3a3db9e5b0409213f48708d9" category="paragraph">전환 요청이 검증되면 원격 사이트에서 로컬 사이트로 제어가 전송됩니다. 로컬 사이트는 두 클러스터에 대한 데이터 서비스 요청을 수행합니다.</block>
+  <block id="3c8328130d9ea4793e2bc9f3551b90e0" category="paragraph">원격 클러스터가 재부팅되지만 스토리지 구성요소가 비활성 상태이므로 클러스터가 데이터 요청을 처리하지 않습니다. 이제 정기 유지 보수에 사용할 수 있습니다.</block>
+  <block id="6f83354e8ce958bae1f9ffca3c39c278" category="admonition">스위치백을 수행하기 전에는 원격 클러스터를 데이터 서비스에 사용해서는 안 됩니다.</block>
+  <block id="defaf88320e88f259a284fdbcd5986c2" category="section-title">계획되지 않은 전환 수행(ONTAP 9.8)</block>
+  <block id="ef7ccb5f4ce99dc2e349e8c6c47a3d17" category="paragraph">계획되지 않은 스위치오버는 ONTAP에서 자동으로 시작할 수 있습니다. ONTAP에서 스위치백 필요 여부를 확인할 수 없는 경우 여전히 실행 중인 MetroCluster 사이트의 시스템 관리자가 다음 단계를 수행하여 스위치오버를 시작합니다.</block>
+  <block id="612770839809215b203a58fa260be49e" category="list-text">대시보드 * 를 선택합니다.</block>
+  <block id="940768454917470cad252dfa341a9bae" category="paragraph">MetroCluster * 섹션에서 두 클러스터 간의 연결이 "X"로 표시됩니다. 즉, 연결을 감지할 수 없고 연결 또는 클러스터가 다운된 것입니다.</block>
+  <block id="0b85c3b32c8fd95dfef8906dc740c0b2" category="paragraph">오류로 인해 전환이 실패하는 경우 오류 메시지에서 "View details" 링크를 클릭하고 예상치 못한 전환을 확인합니다.</block>
+  <block id="b2a8c150e46a4d6da48aa21c7035a5ec" category="paragraph">클러스터를 다시 온라인 상태로 전환하기 전에 복구해야 합니다.</block>
+  <block id="dacd599c11508c590c3afe8309bc777e" category="admonition">원격 클러스터가 온라인으로 전환된 후에는 스위치백을 수행할 때까지 데이터 서비스에 원격 클러스터를 사용해서는 안 됩니다.</block>
+  <block id="b7066bce35bcdc9bde30393cfe83bbdd" category="section-title">스위치백 수행(ONTAP 9.8)</block>
+  <block id="83d20468f433e569baf2f41de2670745" category="paragraph">계획된 유지 관리로 인해 또는 재해로 인해 원격 클러스터가 다운된 경우 이제 원격 클러스터가 가동되어 전환될 때까지 기다려야 합니다.</block>
+  <block id="a91ed0fc67b86b9a97667032dc887550" category="list-text">로컬 클러스터에서 ONTAP 9.8의 System Manager에 로그인합니다.</block>
+  <block id="e722eda52729a565e292380da3b9cd9e" category="paragraph">MetroCluster * 섹션에 두 개의 클러스터가 표시됩니다.</block>
+  <block id="3964a12029e4869f90c22d4b7b86e4d7" category="list-text">로컬 클러스터(왼쪽에 표시)에서 을 클릭하고 <block ref="2f6e127087f9ef4b927e204474c5d0b2" category="inline-image-macro-rx" type="image"></block>* Take back control * 을 선택합니다.</block>
+  <block id="9650db837519c6f15dca6f446f677c65" category="paragraph">데이터가 두 클러스터 간에 동기화되고 미러링되는지 확인하기 위해 _turned_first를 수행합니다.</block>
+  <block id="76cc37c77093b53852f92d0bedaab777" category="list-text">데이터 복구가 완료되면 를 클릭하고 <block ref="2f6e127087f9ef4b927e204474c5d0b2" category="inline-image-macro-rx" type="image"></block>* 스위치 백 시작 * 을 선택합니다.</block>
+  <block id="99ce5ee29ba72294092dc372ec9cdde8" category="paragraph">스위치백을 완료하면 두 클러스터가 모두 활성 상태이며 데이터 요청을 처리합니다. 또한 데이터가 클러스터 간에 미러링되고 동기화됩니다.</block>
+  <block id="1634280924da564c571e77a82a5ca015" category="paragraph">타이브레이커 1.6 이상</block>
+  <block id="10090a98eb5a0c97ffdfee7c207fcda3" category="inline-link-macro">Tiebreaker 1.6 이상을 설치합니다</block>
+  <block id="01edf779844a94aabbe0472729e9db87" category="paragraph"><block ref="01edf779844a94aabbe0472729e9db87" category="inline-link-macro-rx"></block></block>
+  <block id="96e17598e0060c107f4db8b804505693" category="inline-link-macro">Rocky Linux 제품 설명서</block>
+  <block id="98f9ad5cd8db49b652b4f699146c5868" category="list-text"><block ref="98f9ad5cd8db49b652b4f699146c5868" category="inline-link-macro-rx"></block></block>
+  <block id="95bf514988fe6b2ae6d2c4683d39fc01" category="paragraph">호스트 Linux 운영 체제에서 Tiebreaker 1.6 또는 tiebreaker 1.6P1로 새로 설치하거나 업그레이드하여 MetroCluster 구성을 모니터링합니다.</block>
+  <block id="a83518fbb29b384795513d23f16fd04e" category="section-title">Tiebreaker 1.6P1을(를) 설치하거나 업그레이드합니다</block>
+  <block id="d09d293bdd140120cf0307019e78b0cd" category="paragraph">Tiebreaker 1.6P1을 설치하거나 Tiebreaker 1.6, 1.5 또는 1.4에서 Tiebreaker 1.6P1로 업그레이드할 수 있습니다.</block>
+  <block id="05a80bec4c4faf7292bd76d0ea9f6892" category="list-text">MetroCluster Tiebreaker 1.6P1 소프트웨어를 다운로드합니다.</block>
+  <block id="1363760bda4dfedc53bb20d35c4168e0" category="open-title">Tiebreaker 1.6P1을 설치합니다</block>
+  <block id="0497a99a53a8d060e80a9df590a19dc2" category="paragraph">Tiebreaker 1.6P1을 새로 설치하려면 다음 단계를 따르십시오.</block>
+  <block id="0c1fd6dcabaf349cd3a6aa337ab277da" category="open-title">1.6을 1.6P1로 업그레이드합니다</block>
+  <block id="ac34f0a5488c43ea34fb716ad2b99542" category="paragraph">다음 단계에 따라 Tiebreaker 1.6 소프트웨어 버전을 Tiebreaker 1.6P1로 업그레이드하십시오.</block>
+  <block id="c9c37d73e375ec3a682ea8da2ddda245" category="admonition">1.6에서 Tiebreaker 1.6P1로 업그레이드한 후 기존 모니터를 제거하고 모니터링을 위해 MetroCluster 구성을 다시 추가합니다.</block>
+  <block id="5fd58ebc01ff0738d8e9d5d32822a902" category="list-text">의 단계에 따라 MetroCluster 구성을 제거했다가 다시 추가합니다<block ref="eb6675758f8fdd2ff1cefe24d56fcfaa" category="inline-link-macro-rx"></block>.</block>
+  <block id="aeaf036ca6e5c33b5742d712e2156fbb" category="open-title">1.5를 1.6P1로 업그레이드합니다</block>
+  <block id="bbda4afc2f394a21e70bf3c4c7453f1d" category="paragraph">다음 단계에 따라 Tiebreaker 1.5 소프트웨어 버전을 Tiebreaker 1.6P1로 업그레이드하십시오.</block>
+  <block id="e9465edd6afc2f3bafbc90e1474f330a" category="open-title">1.4를 1.6P1로 업그레이드합니다</block>
+  <block id="507339937a8a4d04acddad9a85364c30" category="paragraph">다음 단계에 따라 Tiebreaker 1.4 소프트웨어 버전을 Tiebreaker 1.6P1로 업그레이드하십시오.</block>
+  <block id="0981d7670ea8cbff51e1b8ebf522d26f" category="section-title">Tiebreaker 1.6를 설치하거나 업그레이드합니다</block>
+  <block id="a04a5cbd4bb79cf4f0cf1dc258588888" category="paragraph">Tiebreaker 1.6을 설치하거나 Tiebreaker 1.5 또는 1.4에서 Tiebreaker 1.6으로 업그레이드할 수 있습니다.</block>
+  <block id="0f9ed37231c3e05c40c3439b54c05a31" category="open-title">1.5를 1.6으로 업그레이드합니다</block>
+  <block id="6377e594d18868747f42ff493652c09e" category="open-title">1.4를 1.6으로 업그레이드합니다</block>
+  <block id="27a3d314127445dc4a7f93184b84d65e" category="sidebar">MetroCluster 클러스터에서 ONTAP를 업그레이드합니다</block>
+  <block id="4e04b2ebfeef2f344cfa9299a14a7f15" category="sidebar">MetroCluster를 사용한 데이터 보호</block>
+  <block id="eb2ce2e6e8dd207e0722c727b11bf523" category="sidebar">CLI를 사용하여 MetroCluster 소프트웨어를 구성합니다</block>
+  <block id="ae58261cc60a8a566f51001fa9647cc8" category="sidebar">System Manager를 사용하여 MetroCluster 소프트웨어를 구성합니다</block>
+  <block id="7dbb00295563db0482d1cd647c85ce79" category="sidebar">시스템 관리자로 ONTAP 중재자를 관리합니다</block>
+  <block id="08df7de62062ac541a6aa573389a0bff" category="sidebar">MetroCluster 구성의 상태를 확인합니다</block>
 </blocks>

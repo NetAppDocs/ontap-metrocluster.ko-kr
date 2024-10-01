@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: install-ip/set-up-mcc-site-system-manager.html 
+keywords: system manager, metrocluster, set up, setup, start, initialize, cluster, config, nodes 
+summary: ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 사이트를 설정할 수 있습니다. 
+---
+= MetroCluster IP 사이트를 설정합니다
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 사이트를 설정할 수 있습니다.
+
+MetroCluster 사이트는 2개의 클러스터로 구성됩니다. 일반적으로 클러스터는 다양한 지리적 위치에 있습니다.
+
+.시작하기 전에
+* 시스템과 함께 제공된 에 따라 시스템이 이미 설치되어 있고 케이블이 연결되어 있어야 https://docs.netapp.com/us-en/ontap-systems/index.html["설치 및 설정 지침"^] 합니다.
+* 클러스터 내 통신을 위해 각 클러스터의 각 노드에서 클러스터 네트워크 인터페이스를 구성해야 합니다.
+
+
+
+
+== 노드 관리 IP 주소를 할당합니다
+
+
+
+=== Windows 시스템
+
+Windows 컴퓨터를 컨트롤러와 동일한 서브넷에 연결해야 합니다. 이렇게 하면 노드 관리 IP 주소가 시스템에 자동으로 할당됩니다.
+
+.단계
+. Windows 시스템에서 * Network * 드라이브를 열어 노드를 검색합니다.
+. 노드를 두 번 클릭하여 클러스터 설정 마법사를 시작합니다.
+
+
+
+
+=== 기타 시스템
+
+클러스터의 노드 중 하나에 대한 노드 관리 IP 주소를 구성해야 합니다. 이 노드 관리 IP 주소를 사용하여 클러스터 설정 마법사를 시작할 수 있습니다.
+
+노드 관리 IP 주소 할당에 대한 자세한 내용은 을 link:https://docs.netapp.com/us-en/ontap/software_setup/task_create_the_cluster_on_the_first_node.html["첫 번째 노드에서 클러스터 생성"^]참조하십시오.
+
+
+
+== 클러스터를 초기화하고 구성합니다
+
+클러스터에 대한 관리 암호를 설정하고 클러스터 관리 및 노드 관리 네트워크를 설정하여 클러스터를 초기화합니다. 또한 DNS(도메인 이름 서버)와 같은 서비스를 구성하여 호스트 이름을 확인하고 NTP 서버를 구성하여 시간을 동기화할 수도 있습니다.
+
+.단계
+. 웹 브라우저에서 구성한 노드 관리 IP 주소를 입력합니다. "https://node-management-IP"[]
++
+System Manager가 클러스터의 나머지 노드를 자동으로 검색합니다.
+
+. Initialize Storage System * 창에서 다음을 수행합니다.
++
+.. 클러스터 관리 네트워크 구성 데이터를 입력합니다.
+.. 모든 노드의 노드 관리 IP 주소를 입력합니다.
+.. DNS 세부 정보를 제공합니다.
+.. 기타 * 섹션에서 * 시간 서비스 사용(NTP) * 확인란을 선택하여 시간 서버를 추가합니다.
+
+
+
+
+Submit * 을 클릭하면 클러스터가 생성 및 구성될 때까지 기다립니다. 그런 다음 유효성 검사 프로세스가 발생합니다.
+
+.다음 단계
+두 클러스터가 설정, 초기화 및 구성된 후 [MetroCluster IP 피어링 설정] 절차를 수행합니다.
+
+
+
+== 새 클러스터 비디오에서 ONTAP를 구성합니다
+
+video::PiX41bospbQ[youtube,width=848,height=480]

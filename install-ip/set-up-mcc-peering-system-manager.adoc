@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: install-ip/set-up-mcc-peering-system-manager.html 
+keywords: metrocluster, peer, peering, pair, pairing, configuration, config, mcc, HA 
+summary: ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 사이트 작업을 관리할 수 있습니다. 여기에는 두 클러스터를 설정하고 클러스터 피어링을 수행하는 작업이 포함됩니다. 
+---
+= MetroCluster IP 피어링을 설정합니다
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 관리할 수 있습니다. 두 클러스터를 설정한 후 클러스터 간에 피어링을 설정합니다.
+
+.시작하기 전에
+2개의 클러스터를 설정합니다. link:set-up-mcc-site-system-manager.html["MetroCluster IP 사이트를 설정합니다"]절차를 참조하십시오.
+
+이 프로세스의 특정 단계는 각 클러스터의 지리적 위치에 있는 여러 시스템 관리자가 수행합니다. 이 프로세스를 설명하기 위해 클러스터를 "사이트 A 클러스터" 및 "사이트 B 클러스터"라고 합니다.
+
+
+
+== 사이트 A에서 피어링 프로세스를 수행합니다
+
+이 프로세스는 사이트 A의 시스템 관리자가 수행합니다
+
+.단계
+. 사이트 A 클러스터에 로그인합니다.
+. System Manager의 왼쪽 탐색 열에서 * Dashboard * 를 선택하여 클러스터 개요를 표시합니다.
++
+대시보드에는 이 클러스터(사이트 A)에 대한 세부 정보가 표시됩니다. MetroCluster * 섹션의 왼쪽에 사이트 A 클러스터가 표시됩니다.
+
+. 파트너 클러스터 연결 * 을 클릭합니다.
+. 사이트 A 클러스터의 노드가 사이트 B 클러스터의 노드와 통신할 수 있도록 허용하는 네트워크 인터페이스의 세부 정보를 입력합니다.
+. 저장 후 계속 * 을 클릭합니다.
+. Attach Partner Cluster * 창에서 * I do not have a passphrase * 를 선택합니다. 그러면 암호를 생성할 수 있습니다.
+. 생성된 암호를 복사하여 사이트 B의 시스템 관리자와 공유합니다
+. 닫기 * 를 선택합니다.
+
+
+
+
+== 사이트 B에서 피어링 프로세스를 수행합니다
+
+이 프로세스는 사이트 B의 시스템 관리자가 수행합니다
+
+.단계
+. 사이트 B 클러스터에 로그인합니다.
+. System Manager에서 * 대시보드 * 를 선택하여 클러스터 개요를 표시합니다.
++
+대시보드에는 이 클러스터(사이트 B)에 대한 세부 정보가 표시됩니다. MetroCluster 섹션의 왼쪽에 사이트 B 클러스터가 표시됩니다.
+
+. 피어링 프로세스를 시작하려면 * 파트너 클러스터 연결 * 을 클릭합니다.
+. 사이트 B 클러스터의 노드가 사이트 A 클러스터의 노드와 통신할 수 있도록 허용하는 네트워크 인터페이스의 세부 정보를 입력합니다.
+. 저장 후 계속 * 을 클릭합니다.
+. Attach Partner Cluster * 창에서 * I have a passphrase * 를 선택합니다. 사이트 A의 시스템 관리자로부터 받은 암호를 입력할 수 있습니다
+. 피어링 프로세스를 완료하려면 * 피어 * 를 선택합니다.
+
+
+.다음 단계
+피어링 프로세스가 성공적으로 완료되면 클러스터를 구성합니다. 을 link:configure-mcc-site-system-manager.html["MetroCluster IP 사이트를 구성합니다"]참조하십시오.

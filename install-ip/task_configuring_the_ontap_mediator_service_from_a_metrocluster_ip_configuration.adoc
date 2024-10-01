@@ -41,7 +41,7 @@ CAUTION: ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강
 
 NOTE: 중재자 관리자 사용자 계정의 사용자 이름과 암호를 묻는 메시지가 표시됩니다.
 
-. 의 자동 전환 기능이 활성화되어 있는지 확인합니다.
+. 자동 전환 기능이 활성화되어 있는지 확인합니다.
 +
 MetroCluster 쇼
 

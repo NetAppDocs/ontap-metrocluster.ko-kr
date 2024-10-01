@@ -47,6 +47,7 @@ NOTE: 이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 
 .관련 정보
 * link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/["Red Hat Enterprise Linux 8 제품 설명서"^]
 * link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/["Red Hat Enterprise Linux 9 제품 설명서"^]
+* link:https://docs.rockylinux.org["Rocky Linux 제품 설명서"^]
 
 
 
@@ -95,6 +96,7 @@ NOTE: OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 �
 .관련 정보
 * link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/["Red Hat Enterprise Linux 8 제품 설명서"^]
 * link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/["Red Hat Enterprise Linux 9 제품 설명서"^]
+* link:https://docs.rockylinux.org["Rocky Linux 제품 설명서"^]
 
 
 

@@ -33,12 +33,6 @@ indexpage:
     links:
     - title: MetroCluster RCF 파일
       url: https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/docsandkb-tab
-  - title: 자세한 정보
-    links:
-    - title: NetApp MetroCluster 솔루션 아키텍처 및 설계 | TR-4705
-      url: https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf
-    - title: MetroCluster IP 솔루션 아키텍처 및 설계 | TR-4689
-      url: https://www.netapp.com/pdf.html?item=/media/13481-tr4689.pdf
   - title: 업그레이드, 확장, 변환
     links:
     - title: 하드웨어 업그레이드 및 업데이트
@@ -51,6 +45,16 @@ indexpage:
       url: "/transition/concept_choosing_your_transition_procedure_mcc_transition.html"
     - title: MetroCluster IP RCF 파일을 업그레이드합니다
       url: "/maintain/task_upgrade_rcf_files_on_mcc_ip_switches.html"
+    - title: MetroCluster 클러스터에서 ONTAP를 업그레이드합니다
+      url: https://docs.netapp.com/us-en/ontap/task_metrocluster_ANDU_upgrade.html
+  - title: MetroCluster를 사용한 데이터 보호
+    links:
+    - title: MetroCluster 데이터 보호 및 재해 복구 이해
+      url: "/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html"
+    - title: 전환, 복구, 스위치백을 수행합니다
+      url: "/manage/task_perform_switchover_for_tests_or_maintenance.html"
+    - title: 재해에 복구합니다
+      url: "/disaster-recovery/concept_dr_workflow.html"
   - title: ATTO 브리지 펌웨어
     links:
     - title: FiberBridge 7600N
@@ -65,3 +69,9 @@ indexpage:
       url: https://hwu.netapp.com/
     - title: NetApp 지원 기술 자료
       url: https://kb.netapp.com/
+  - title: 자세한 정보
+    links:
+    - title: NetApp MetroCluster 솔루션 아키텍처 및 설계 | TR-4705
+      url: https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf
+    - title: MetroCluster IP 솔루션 아키텍처 및 설계 | TR-4689
+      url: https://www.netapp.com/pdf.html?item=/media/13481-tr4689.pdf

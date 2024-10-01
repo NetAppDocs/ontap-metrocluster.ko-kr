@@ -82,32 +82,42 @@ entries:
       url: "/install-ip/task_config_switch_health.html"
 - title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
   entries:
-  - title: 개요
-    url: "/install-ip/concept_configure_the_mcc_software_in_ontap.html"
-  - title: 8노드 구성을 구성하는 방법
-    url: "/install-ip/task_sw_config_8n.html"
-  - title: 필요한 정보를 수집합니다
-    url: "/install-ip/task_sw_config_gather_info.html"
-  - title: 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
-    url: "/install-ip/task_sw_config_differences.html"
-  - title: 구성 요소의 ha-config 상태를 확인합니다
-    url: "/install-ip/task_sw_config_verify_haconfig.html"
-  - title: 컨트롤러 모듈에서 시스템 기본값을 복원합니다
-    url: "/install-ip/task_sw_config_restore_defaults.html"
-  - title: 풀 0에 드라이브를 수동으로 할당합니다
-    url: "/install-ip/task_sw_config_assign_pool0.html"
-  - title: ONTAP 설정
-    url: "/install-ip/task_sw_config_setup_ontap.html"
-  - title: 클러스터를 MetroCluster 구성으로 구성합니다
-    url: "/install-ip/task_sw_config_configure_clusters.html"
-  - title: 엔드 투 엔드 암호화 구성
-    url: "/install-ip/task-configure-end-to-end-encryption.html"
-  - title: 전환, 복구, 스위치백을 확인합니다
-    url: "/install-ip/task_sw_config_verify_switchover.html"
-  - title: MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다
-    url: "/install-ip/task_sw_config_configure_mediator.html"
-  - title: 구성 백업 파일을 보호합니다
-    url: "/install-ip/task_sw_config_protect_backup.html"
+  - title: CLI를 사용하여 MetroCluster 소프트웨어를 구성합니다
+    entries:
+    - title: 개요
+      url: "/install-ip/concept_configure_the_mcc_software_in_ontap.html"
+    - title: 8노드 구성을 구성하는 방법
+      url: "/install-ip/task_sw_config_8n.html"
+    - title: 필요한 정보를 수집합니다
+      url: "/install-ip/task_sw_config_gather_info.html"
+    - title: 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
+      url: "/install-ip/task_sw_config_differences.html"
+    - title: 구성 요소의 ha-config 상태를 확인합니다
+      url: "/install-ip/task_sw_config_verify_haconfig.html"
+    - title: 컨트롤러 모듈에서 시스템 기본값을 복원합니다
+      url: "/install-ip/task_sw_config_restore_defaults.html"
+    - title: 풀 0에 드라이브를 수동으로 할당합니다
+      url: "/install-ip/task_sw_config_assign_pool0.html"
+    - title: ONTAP 설정
+      url: "/install-ip/task_sw_config_setup_ontap.html"
+    - title: 클러스터를 MetroCluster 구성으로 구성합니다
+      url: "/install-ip/task_sw_config_configure_clusters.html"
+    - title: 엔드 투 엔드 암호화 구성
+      url: "/install-ip/task-configure-end-to-end-encryption.html"
+    - title: 전환, 복구, 스위치백을 확인합니다
+      url: "/install-ip/task_sw_config_verify_switchover.html"
+    - title: MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다
+      url: "/install-ip/task_sw_config_configure_mediator.html"
+    - title: 구성 백업 파일을 보호합니다
+      url: "/install-ip/task_sw_config_protect_backup.html"
+  - title: System Manager를 사용하여 MetroCluster 소프트웨어를 구성합니다
+    entries:
+    - title: MetroCluster IP 사이트를 설정합니다
+      url: "/install-ip/set-up-mcc-site-system-manager.html"
+    - title: MetroCluster IP 피어링을 설정합니다
+      url: "/install-ip/set-up-mcc-peering-system-manager.html"
+    - title: MetroCluster IP 사이트를 구성합니다
+      url: "/install-ip/configure-mcc-site-system-manager.html"
 - title: 계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다
   entries:
   - title: ONTAP 중재자 서비스 설치 준비
@@ -120,6 +130,8 @@ entries:
     url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
   - title: ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법
     url: "/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html"
+  - title: 시스템 관리자로 ONTAP 중재자를 관리합니다
+    url: "/install-ip/task-sm-mediator.html"
 - title: MetroCluster 구성을 테스트하는 중입니다
   url: "/install-ip/task_test_the_mcc_configuration.html"
 - title: MetroCluster 구성을 제거할 때의 고려 사항

@@ -130,5 +130,7 @@ entries:
     url: "/maintain/task_move_a_metadata_volume_in_mcc_configurations.html"
   - title: MetroCluster 구성에서 클러스터의 이름을 바꿉니다
     url: "/maintain/task_rename_the_cluster_for_mcc_configuration.html"
+  - title: MetroCluster 구성의 상태를 확인합니다
+    url: "/maintain/verify-health-mcc-config.html"
   - title: 추가 정보를 찾을 수 있는 위치
     url: "/maintain/reference_where_to_find_additional_information_mcc_service_guide.html"

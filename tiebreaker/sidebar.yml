@@ -18,7 +18,7 @@ entries:
     entries:
     - title: 설치 절차를 선택합니다
       url: "/tiebreaker/install-choose-procedure.html"
-    - title: 타이브레이커 1.6을 설치합니다
+    - title: Tiebreaker 1.6 이상을 설치합니다
       url: "/tiebreaker/tb-16-install.html"
     - title: 타이브레이커 1.5를 설치합니다
       entries:

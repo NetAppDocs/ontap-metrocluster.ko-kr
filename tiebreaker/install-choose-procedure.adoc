@@ -21,9 +21,9 @@ summary: 사용하는 타이브레이커 설치 절차는 설치하는 타이브
 
 
  a| 
-타이브레이커 1.6
+타이브레이커 1.6 이상
  a| 
-link:tb-16-install.html["타이브레이커 1.6을 설치합니다"]
+link:tb-16-install.html["Tiebreaker 1.6 이상을 설치합니다"]
 
 
 

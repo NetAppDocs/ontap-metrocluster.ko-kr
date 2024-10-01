@@ -1,0 +1,128 @@
+---
+permalink: maintain/verify-health-mcc-config.html 
+sidebar: sidebar 
+keywords: metrocluster, ip, fc, verify, health, troubleshoot, cli, system manager, error, event, problem, maintenance, fix, correction, check 
+summary: MetroCluster 구성 요소가 정상인지 확인하는 방법에 대해 알아봅니다. 
+---
+= MetroCluster 구성의 상태를 확인합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 구성 요소가 정상인지 확인하는 방법에 대해 알아봅니다.
+
+.이 작업에 대해
+* MetroCluster IP 및 FC 구성에서는 CLI를 사용하여 상태 점검 명령을 실행하고 MetroCluster 구성 요소의 상태를 확인할 수 있습니다.
+* ONTAP 9 .8 이상을 실행하는 MetroCluster IP 구성에서는 ONTAP System Manager를 사용하여 상태 점검 경고를 모니터링하고 문제를 해결할 수도 있습니다.
+
+
+.단계
+CLI를 사용하는지 System Manager를 사용하는지 여부에 따라 MetroCluster 구성의 상태를 확인하십시오.
+
+[role="tabbed-block"]
+====
+.CLI를 참조하십시오
+--
+CLI를 사용하여 MetroCluster 구성의 상태를 확인하려면 다음 단계를 사용하십시오.
+
+.단계
+. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+[source, cli]
+----
+metrocluster check run
+----
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+----
++
+작업은 백그라운드에서 실행됩니다.
+
+. 작업이 완료되면 `metrocluster check run` 결과를 표시합니다.
++
+[source, cli]
+----
+metrocluster check show
+----
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+cluster_A:::*> metrocluster check show
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+clusters            ok
+connections         not-applicable
+volumes             ok
+7 entries were displayed.
+----
+. 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
++
+[source, cli]
+----
+metrocluster operation history show -job-id <id>
+----
+. 상태 경고가 없는지 확인합니다.
++
+[source, cli]
+----
+system health alert show
+----
+
+
+--
+.ONTAP 시스템 관리자(MetroCluster IP만 해당)
+--
+ONTAP 9.8부터 System Manager는 MetroCluster IP 구성의 상태를 모니터링하여 문제 발생 가능성을 식별하고 해결하는 데 도움을 줍니다.
+
+System Manager는 MetroCluster IP 구성의 상태를 정기적으로 확인합니다. 대시보드에서 MetroCluster 섹션을 볼 때 일반적으로 "MetroCluster system are healthy"라는 메시지가 표시됩니다.
+
+그러나 문제가 발생하면 메시지에 이벤트 수가 표시됩니다. 이 메시지를 클릭하여 다음 구성 요소에 대한 상태 점검 결과를 볼 수 있습니다.
+
+* 노드
+* 네트워크 인터페이스
+* 계층(스토리지)
+* 클러스터
+* 연결
+* 볼륨
+* 구성 복제
+
+
+Status* 열은 문제가 있는 구성 요소를 식별하며 * Details* 열은 문제를 해결하는 방법을 제안합니다.
+
+.단계
+. System Manager에서 * 대시보드 * 를 선택합니다.
+. MetroCluster * 섹션에서 메시지 보기:
++
+.. 메시지가 MetroCluster 구성이 정상이고 클러스터와 ONTAP 중재자 사이의 연결이 양호하다는 것을 나타내면(확인 표시와 함께 표시됨) 수정할 문제가 없는 것입니다.
+.. 메시지에 이벤트 수가 나열되거나 연결이 중단된 경우("X"로 표시됨) 다음 단계를 계속합니다.
+
+
+. 이벤트 수를 표시하는 메시지를 클릭합니다.
++
+MetroCluster 상태 보고서가 표시됩니다.
+
+. 세부 정보 * 열의 제안을 사용하여 보고서에 나타나는 문제를 해결합니다.
+. 모든 문제가 해결되면 * MetroCluster 상태 확인 * 을 클릭합니다.
++
+
+NOTE: MetroCluster 상태 점검은 많은 양의 리소스를 사용하므로 검사를 실행하기 전에 모든 문제 해결 작업을 수행해야 합니다.
+
++
+MetroCluster 상태 점검은 백그라운드에서 실행됩니다. 작업이 완료될 때까지 기다리는 동안 다른 작업을 수행할 수 있습니다.
+
+
+
+--
+====
