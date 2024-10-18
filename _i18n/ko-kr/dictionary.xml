@@ -8029,7 +8029,6 @@
   <block id="0bc360ed08fdc8afeea8f81d91928a49" category="cell">구성을 시작하는 중입니다</block>
   <block id="1a6ef31c02bc656e4fbac4327c5198d9" category="cell">중단 또는 무중단</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="cell">요구 사항</block>
-  <block id="ae4bcbe3a4d8a4dd251ebc90c0689dc3" category="paragraph">4개 노드</block>
   <block id="b8910962b1d031cc1eb8e8ad588c4c48" category="paragraph">무중단</block>
   <block id="b1967383562a98a66ed0eff3ea640595" category="paragraph">새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.</block>
   <block id="5c85f685c62c106f7c5565f5f9efa724" category="paragraph">2개 노드</block>
@@ -10588,7 +10587,6 @@
   <block id="4a013e1601591220c48257d9b4f85901" category="sidebar">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다</block>
   <block id="f49bd82ec28b5ed1e86bb99d8be7e44e" category="sidebar">MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다</block>
   <block id="2497da01927dd78867fe48a11bd87f93" category="sidebar">MetroCluster 구성을 테스트합니다</block>
-  <block id="b25d5935c651d85fc394ce7858eb2c60" category="sidebar">MetroCluster Tiebreaker 설치 및 구성</block>
   <block id="38484792ce18e1ac90df07df1cbe4040" category="sidebar">Tiebreaker 소프트웨어를 설치합니다</block>
   <block id="77d873129b2551d3791bd53918453706" category="sidebar">Tiebreaker 소프트웨어를 구성합니다</block>
   <block id="842ed7dcbaa63b60b53e91a89a33e02c" category="sidebar">Tiebreaker 소프트웨어의 SNMP 설정을 구성합니다</block>
@@ -11087,7 +11085,6 @@
   <block id="5981ded82c976bff5c9a73686842655a" category="list-text">중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
   <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
   <block id="844f223d5d27d9ea92473e2d258ee969" category="list-text">부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 <block ref="af64d870205b209887217377e716cd40" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
-  <block id="455aeb5b6e6bb2c51d7485e26da56e30" category="paragraph">링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]</block>
   <block id="861ef6676813cbc81369ee701ae73269" category="paragraph">타사 방화벽을 사용하는 경우:</block>
   <block id="041f3a27fe8b40cc213210949eb4f036" category="list-text">HTTPS 액세스를 활성화해야 합니다.</block>
   <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
@@ -12101,7 +12098,6 @@
   <block id="2e53212ba8ca8b35cbf4ed2b9eb52b0c" category="doc">기존 FiberBridge 7600N 또는 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가합니다</block>
   <block id="e3e17f353727a0bf80bc5f781fadd978" category="list-text">FiberBridge 7600N 또는 7500N 브리지가 연결되어 있고 사용 가능한 SAS 포트가 있어야 합니다.</block>
   <block id="7ec840edd23c7b1a5bd3b9167d726942" category="list-text">새 스택을 추가한 후 브리지에 대한 상태 알림이 있는지 확인합니다.</block>
-  <block id="4aa202a3c65f2813f56a71404d4e0d9f" category="paragraph">8개 노드</block>
   <block id="74c873abf18bb043c43561d25adce539" category="paragraph"><block ref="74c873abf18bb043c43561d25adce539" category="inline-link-macro-rx"></block></block>
   <block id="0159b80d745d9b405520a30a29416d2d" category="paragraph">업그레이드하기 전에 이전 노드 각각에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.</block>
   <block id="3b2740b2f65f79e770509c9b837df2de" category="paragraph">업그레이드 절차 중에 이러한 이전 시스템 ID를 컨트롤러 모듈의 시스템 ID로 교체합니다.</block>
@@ -13192,7 +13188,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="19aa48eac8765adacdffd4326cf95a85" category="paragraph">한 클러스터 사이트가 다른 클러스터 사이트의 작업을 넘겨받도록 허용할 수 있습니다. 이 기능을 사용하면 재해에 대한 유지 관리 또는 복구를 보다 용이하게 수행할 수 있습니다.</block>
   <block id="5b8155e42c3d2db8152488c62b6cf9ea" category="paragraph"><block ref="5b8155e42c3d2db8152488c62b6cf9ea" category="inline-link-rx"></block></block>
   <block id="5575ad3a333d0c5383b802ef33e4e17a" category="cell">Broadcom IP 스위치</block>
-  <block id="db639aacb326d316570b69a39011f1b2" category="paragraph">Quanta IX8 을 참조하십시오</block>
   <block id="a28a8f1b6ed98f7c514003193e44ac48" category="cell">Cisco IP 스위치</block>
   <block id="f0936c8d947d6fc9958bb86b9f3f74f8" category="paragraph">Nexus 9336C-FX2</block>
   <block id="aff36115ba8ba0cb671d3dfa2208bed1" category="paragraph">9336C</block>
@@ -14269,4 +14264,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ae58261cc60a8a566f51001fa9647cc8" category="sidebar">System Manager를 사용하여 MetroCluster 소프트웨어를 구성합니다</block>
   <block id="7dbb00295563db0482d1cd647c85ce79" category="sidebar">시스템 관리자로 ONTAP 중재자를 관리합니다</block>
   <block id="08df7de62062ac541a6aa573389a0bff" category="sidebar">MetroCluster 구성의 상태를 확인합니다</block>
+  <block id="bcaee96b0ab793907da56767503991e2" category="admonition">MetroCluster IP 및 연결된 스위치 포트는 MetroCluster IP 인터페이스를 생성할 때까지 온라인 상태로 전환되지 않습니다.</block>
+  <block id="6db27f68adde7b6578b513891108402f" category="paragraph">BES-53248을 참조하십시오</block>
+  <block id="c71b2061a1720b5d01c7a9a079938384" category="paragraph">4개 또는 8개 노드</block>
+  <block id="be0859f362012838e5040b2ef44bc04b" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block>..</block>
+  <block id="04615ba020125ab8e6efd72006cee7b6" category="sidebar">MetroCluster Tiebreaker 설치 및 구성</block>
 </blocks>

@@ -1967,7 +1967,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-링크:../install-ip/concept_mediator_requirements.html [MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성]
+link:../install-ip/concept_mediator_requirements.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"]..
 
 
 

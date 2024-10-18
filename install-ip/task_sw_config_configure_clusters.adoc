@@ -712,6 +712,9 @@ Cluster_A::> metrocluster configuration-settings dr-group create -partner-cluste
 
 각 노드의 스토리지 및 비휘발성 캐시의 복제에 사용되는 MetroCluster IP 인터페이스를 구성해야 합니다. 그런 다음 MetroCluster IP 인터페이스를 사용하여 연결을 설정합니다. 이렇게 하면 스토리지 복제에 대한 iSCSI 연결이 생성됩니다.
 
+
+NOTE: MetroCluster IP 및 연결된 스위치 포트는 MetroCluster IP 인터페이스를 생성할 때까지 온라인 상태로 전환되지 않습니다.
+
 .이 작업에 대해
 * 각 노드에 대해 2개의 인터페이스를 생성해야 합니다. 인터페이스는 MetroCluster RCF 파일에 정의된 VLAN과 연결되어야 합니다.
 * ONTAP 버전에 따라 초기 구성 후 일부 MetroCluster IP 인터페이스 속성을 변경할 수 있습니다. 지원되는 기능에 대한 자세한 내용은 을 link:../maintain/task-modify-ip-netmask-properties.html["MetroCluster IP 인터페이스의 속성을 수정합니다"] 참조하십시오.

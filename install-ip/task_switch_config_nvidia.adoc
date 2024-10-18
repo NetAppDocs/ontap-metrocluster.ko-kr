@@ -273,7 +273,13 @@ cumulus@cumulus:mgmt:~$
 [listing]
 ----
 cumulus@cumulus:mgmt:~$ nv set system hostname IP_switch_A_1
-cumulus@cumulus:mgmt:~$ nv set interface eth0 ip address 10.0.10.10/24 cumulus@cumulus:mgmt:~$ nv set interface eth0 ip gateway 10.10.10.1 cumulus@cumulus:mgmt:~$ nv config apply
+
+cumulus@cumulus:mgmt:~$ nv set interface eth0 ip address 10.0.10.10/24
+
+cumulus@cumulus:mgmt:~$ nv set interface eth0 ip gateway 10.10.10.1
+
+cumulus@cumulus:mgmt:~$ nv config apply
+
 cumulus@cumulus:mgmt:~$ nv config save
 ----
 --

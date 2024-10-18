@@ -80,18 +80,7 @@ image::../media/4node-transition-9151-update.png[에는 IP에서 FC로의 전환
 
 
  a| 
-8개 노드
- a| 
-무중단
- a| 
-새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.
- a| 
-link:concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["절차 링크"]
-
-
-
- a| 
-4개 노드
+4개 또는 8개 노드
  a| 
 무중단
  a| 
