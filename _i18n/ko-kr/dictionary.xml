@@ -12596,7 +12596,6 @@
   <block id="d92546772d08abd00db8e99ff54c7ecb" category="paragraph">40Gbps를 사용하는 ISL 6개</block>
   <block id="0274c7930fb2689bb0d5d7900b24b372" category="paragraph">10Gbps를 사용하는 16개의 ISL</block>
   <block id="cdd7ce1b4fb53a24815dfe597e2d9bf4" category="paragraph">40Gbps 또는 100Gbps를 사용하는 6 ISL</block>
-  <block id="5f464862c3ad92817ffd0d939008e569" category="paragraph">10을 사용하는 16개의 ISL</block>
   <block id="a47530745311f9d2efa307163eb1ee61" category="paragraph">기본 포트(참고 2)</block>
   <block id="a86749ca3f0eb199f6cde6d8cc60d442" category="paragraph">40Gbps 또는 100Gbps를 사용하는 4 ISL</block>
   <block id="83462a2f17a5fa1e38b557632ec6d366" category="paragraph">브레이크아웃 케이블(참고 2)</block>
@@ -14269,4 +14268,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c71b2061a1720b5d01c7a9a079938384" category="paragraph">4개 또는 8개 노드</block>
   <block id="be0859f362012838e5040b2ef44bc04b" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block>..</block>
   <block id="04615ba020125ab8e6efd72006cee7b6" category="sidebar">MetroCluster Tiebreaker 설치 및 구성</block>
+  <block id="f292b4f87450c271c690d67e1d3a03e8" category="paragraph">10Gbps 또는 25Gbps를 사용하는 16 ISL</block>
+  <block id="d20d5c9d070e6369690ed4a79cf3c4bd" category="admonition">따라서 노드를 특정 순서로 재부팅할 필요는 없지만 한 노드가 완전히 부팅되고 모든 연결이 설정될 때까지 기다린 후 다음 노드를 재부팅해야 합니다.</block>
 </blocks>

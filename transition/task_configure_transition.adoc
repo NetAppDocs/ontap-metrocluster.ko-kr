@@ -645,6 +645,14 @@ NOTE: MetroCluster configure-refresh true를 * 하지 않고 MetroCluster config
 
 NOTE: 모범 사례는 미러링된 데이터 애그리게이트를 여러 개 사용하는 것입니다. 미러링된 Aggregate가 하나만 있으면 메타데이터 볼륨이 별도의 Aggregate가 아닌 동일한 Aggregate에 있기 때문에 보호가 덜 됩니다.
 
+. 새 노드를 각각 재부팅합니다.
++
+`node reboot -node <node_name> -inhibit-takeover true`
+
++
+
+NOTE: 따라서 노드를 특정 순서로 재부팅할 필요는 없지만 한 노드가 완전히 부팅되고 모든 연결이 설정될 때까지 기다린 후 다음 노드를 재부팅해야 합니다.
+
 . 노드가 DR 그룹에 추가되었는지 확인합니다.
 +
 'MetroCluster node show'
