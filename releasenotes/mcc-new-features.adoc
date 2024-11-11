@@ -19,6 +19,17 @@ summary:
 
 
  a| 
+자격 증명을 사용하여 Fiberbridge 펌웨어 업데이트
+ a| 
+서버에서 펌웨어 패키지를 다운로드해야 하는 경우 자격 증명을 사용하여 Fiberbridge 브리지에서 펌웨어를 업데이트할 수 있습니다.
+
+link:../maintain/task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어를 업데이트합니다"]
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
 MetroCluster IP는 엔드 투 엔드 암호화를 지원합니다
  a| 
 AFF A400, FAS8300, FAS8700 시스템에서 엔드 투 엔드 암호화가 지원되어 MetroCluster IP 구성의 사이트 간에 NVlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화합니다.

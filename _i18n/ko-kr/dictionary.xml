@@ -6579,10 +6579,8 @@
   <block id="c26c639e8cf709cd25c32f2c4fa89315" category="list-text">컨트롤러 모듈이 네트워크에 액세스할 수 있는 네트워크 위치에 펌웨어 파일을 배치합니다.</block>
   <block id="0eb57575de5c7f4d680f1a39b29ec2b1" category="paragraph">두 컨트롤러 모듈 중 하나의 콘솔에서 나머지 단계에 명령을 입력할 수 있습니다.</block>
   <block id="1f06fb185175c42c17ad8392e330767e" category="paragraph">고급 모드로 계속 진행하고 고급 모드 프롬프트(*&gt;)를 보려면 ""y""로 응답해야 합니다.</block>
-  <block id="661e2204cb2e8d5d76cdeb2ec6dd4c82" category="paragraph">'Storage bridge firmware update-bridge name-Uri_url-of-firmware-package_</block>
   <block id="4b3afe92d6efd942da2f6c9cc0193156" category="list-text">펌웨어 업그레이드가 완료되었는지 확인합니다.</block>
   <block id="e8ecfd692141a2af654944f772388550" category="paragraph">'job show-name'_job-name_'</block>
-  <block id="c91321ecefb3f3097824082b2b8ad47e" category="paragraph">다음 예에서는 "'Storage bridge firmware update'(저장소 브리지 펌웨어 업데이트) 작업이 여전히 실행 중인 것을 보여 줍니다.</block>
   <block id="57218ce2b3683cc3d220300cdb1a5112" category="paragraph">약 10분 후 새 펌웨어가 완전히 설치되고 작업 상태가 성공:</block>
   <block id="1023e499127e1c9705dbc019dc65ffca" category="list-text">대역내 관리가 활성화되었는지 여부와 시스템이 실행 중인 ONTAP의 버전에 따라 다음 단계를 완료합니다.</block>
   <block id="ad4a04ec96320f2893d5f6989086846f" category="list-text">ONTAP 9.4를 실행 중인 경우 대역내 관리가 지원되지 않으며 브리지 콘솔에서 명령을 실행해야 합니다.</block>
@@ -6590,9 +6588,7 @@
   <block id="26fdc702129a16aafe7405c5c6bbf046" category="admonition">이 예에서는 1차 플래시 이미지에 새 펌웨어 이미지가 표시되고 2차 플래시 이미지에는 이전 이미지가 표시됩니다.</block>
   <block id="fc586f4b0980908d4372323e410963a4" category="list-text">브리지에서 firmwarerestart 명령을 실행하여 브리지를 재부팅합니다.</block>
   <block id="d47da404b64fa7f223a274546a4f333a" category="list-text">ONTAP 9.5 이상을 실행 중인 경우 대역 내 관리가 지원되며 클러스터 프롬프트에서 명령을 실행할 수 있습니다.</block>
-  <block id="dae4d2e67917b362ddd1f681a84bbf3c" category="list-text">'storage bridge run-cli-name_bridge-name_-command FlashImages' 명령을 실행합니다.</block>
   <block id="5bd4b5b50c5ac874303a8d602e07a3df" category="list-text">필요한 경우 브리지를 다시 시작합니다.</block>
-  <block id="58a8b36ecd6128fba6f2a930d1870915" category="paragraph">'Storage bridge run-cli-name ATTO_7500N_IB_1 - command FirmwareRestart</block>
   <block id="2667ea3cde22695f6975f497f96d298f" category="list-text">브리지가 올바르게 다시 시작되었는지 확인합니다.</block>
   <block id="6e4b7fcf9090d34cd27cab087264a169" category="paragraph">다중 경로 고가용성을 위해 시스템을 케이블로 연결해야 합니다. 두 컨트롤러 모두 각 스택의 디스크 쉘프에 대한 브리지를 통해 액세스할 수 있습니다.</block>
   <block id="67fe76fc6c243ad7a07dba1bedbd68be" category="list-text">FiberBridge 펌웨어가 업데이트되었는지 확인합니다.</block>
@@ -13499,10 +13495,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="65bd6763ac7ddd88c7008054cb6bc624" category="admonition">ONTAP 소프트웨어에서 UND를 변경하려면 다음 단계를 수행하십시오. <block ref="b0ca457fe34ed30c44119bccf9b89d7d" category="inline-link-macro-rx"></block></block>
   <block id="7b195fd8d412843052bdca8035a73b9b" category="paragraph">MetroCluster IP 플랫폼 지원의 새로운 기능에 대해 알아봅니다.</block>
   <block id="5fa70989a3e04b27c407da750f3d94fe" category="paragraph">AFF A70, AFF A90, AFF A1K</block>
-  <block id="4b96de8aec25594d2021f91d86aa38cb" category="paragraph">ONTAP 9.15.1 이상</block>
   <block id="09165c2d4ac9e01ef347c57ffcbe1ce5" category="paragraph">ASA A150, ASA A250, ASA A400, ASA A800, ASA A900, ASA C250, ASA C400, ASA C800</block>
-  <block id="fafe6583a668a5a00cfd6d5e611b9ce3" category="paragraph">ONTAP 9.14.1 이상</block>
-  <block id="f8f1cacc3272f3e60fb1b860d1134be6" category="paragraph">ONTAP 9.13.1 GA 이상</block>
   <block id="2f709669cbfb385626cf55d7c80120be" category="paragraph">ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800</block>
   <block id="e4d3a0569925dd58f4e2c0c40b889993" category="paragraph">AFF A220, FAS2750</block>
   <block id="fc028e3a959d5040cb2c7b0ceac73cf8" category="paragraph">AFF A300, FAS8200</block>
@@ -14270,4 +14263,28 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="04615ba020125ab8e6efd72006cee7b6" category="sidebar">MetroCluster Tiebreaker 설치 및 구성</block>
   <block id="f292b4f87450c271c690d67e1d3a03e8" category="paragraph">10Gbps 또는 25Gbps를 사용하는 16 ISL</block>
   <block id="d20d5c9d070e6369690ed4a79cf3c4bd" category="admonition">따라서 노드를 특정 순서로 재부팅할 필요는 없지만 한 노드가 완전히 부팅되고 모든 연결이 설정될 때까지 기다린 후 다음 노드를 재부팅해야 합니다.</block>
+  <block id="65a32997b66c0fa9964c46d8ce3023c5" category="admonition">ONTAP 9.8부터<block ref="81f0734b378bc1ed5fb99125faf1d47a" prefix=" " category="inline-code"></block> 명령이 을<block ref="c5c5939ad24a4bc4cca8c77f5105d463" prefix=" " category="inline-code"></block>대체합니다. 다음 단계에 명령이 나와<block ref="81f0734b378bc1ed5fb99125faf1d47a" prefix=" " category="inline-code"></block> 있지만 ONTAP 9.8 이전 버전을 실행 중인 경우에는 명령을 사용해야<block ref="c5c5939ad24a4bc4cca8c77f5105d463" prefix=" " category="inline-code"></block> 합니다.</block>
+  <block id="e0b676f47094dac51c79372806a1021a" category="list-text">브리지 펌웨어를 업데이트합니다.</block>
+  <block id="1e8d4e4a0ce5b464f6997d0bbb8d8ba2" category="paragraph">ONTAP 9.16.1부터 서버에서 펌웨어 패키지를 다운로드하는 데 필요한 경우 자격 증명을 사용하여 브리지 펌웨어를 업데이트할 수 있습니다.</block>
+  <block id="38cbc38ca036975e59d1ee4168bc50a2" category="open-title">자격 증명이 필요하지 않은 경우:</block>
+  <block id="db7fff50b13f73830f7aaaf34fd5371e" category="open-title">자격 증명이 필요한 경우:</block>
+  <block id="c540a55c1af8888d4507b7c80af2d372" category="list-text">브리지 펌웨어를 업데이트하고 필요한 사용자 이름을 지정합니다.</block>
+  <block id="e9b9a2eac9e5ccde661c85666e1bebfc" category="list-text">다음 예제와 같이 출력에 메시지가 표시되면 암호를 입력합니다.</block>
+  <block id="9f81eba7dfa3609b17894df364395597" category="paragraph">다음 예는 "'시스템 브리지 펌웨어 업데이트'" 작업이 여전히 실행 중임을 보여줍니다.</block>
+  <block id="92289ea5a47b731862869f48712c9527" category="list-text"><block ref="e595c34083a230fd789d64c7de21c72a" prefix=" " category="inline-code"></block>명령을 실행합니다.</block>
+  <block id="52e06a42c952a2b1bdb77dfc0f6f90ff" category="paragraph"><block ref="a51df89c214b1838fdbc8273e8704555" prefix="" category="inline-code"></block></block>
+  <block id="968258a4c4370a9f6fe8b87ce4255cca" category="paragraph"><block ref="6604a22a7f45489dfc4b36fa6c37c036" prefix="" category="inline-code"></block></block>
+  <block id="afdf08fe53823e29ce4e277959c64b1e" category="paragraph">MetroCluster 구성 마이그레이션에 대한 SVM 데이터 이동성 지원</block>
+  <block id="61576ee193ce4ae8f8a1aea237cc4781" category="paragraph">ONTAP은 MetroCluster가 아닌 HA 쌍에서 MetroCluster 구성으로 또는 MetroCluster 구성에서 MetroCluster가 아닌 HA 쌍으로 SVM을 마이그레이션할 수 있도록 지원합니다. MetroCluster 구성 간에 SVM을 마이그레이션할 수 없습니다.</block>
+  <block id="aeaa758085c5e2389b9072b1ced2dc57" category="inline-link-macro">SVM 데이터 이동성</block>
+  <block id="deff601e347d3753345e223f0dece2ac" category="paragraph"><block ref="deff601e347d3753345e223f0dece2ac" category="inline-link-macro-rx"></block></block>
+  <block id="31272abf1c9209ab4acd0bf10f129338" category="paragraph">ONTAP 9.16.1</block>
+  <block id="b186fa8da6778f3ac2d4aa8499deffeb" category="paragraph">BGP 피어 그룹에 대한 MD5 인증 지원</block>
+  <block id="a74281ed4b15e1a42fc798b20f31018b" category="paragraph">ONTAP는 BGP 피어 그룹에서 MD5 인증을 지원하여 BGP 세션을 보호합니다. MD5가 활성화되면 승인된 피어 사이에서만 BGP 세션을 설정 및 처리할 수 있으므로 권한이 없는 행위자에 의한 세션 중단을 방지할 수 있습니다.</block>
+  <block id="ef78f11e7aec890f1dc53f6a0176cdf4" category="inline-link-macro">가상 IP(VIP) LIF를 구성합니다</block>
+  <block id="43d93948b7becfd15462e91085fd63cc" category="paragraph"><block ref="43d93948b7becfd15462e91085fd63cc" category="inline-link-macro-rx"></block></block>
+  <block id="94ffd34b73e540c50265688d834cea45" category="paragraph">ONTAP 9.13.1 GA</block>
+  <block id="0cb8709673d91d9b41f7a2d9110be6db" category="paragraph">자격 증명을 사용하여 Fiberbridge 펌웨어 업데이트</block>
+  <block id="cca6b3113bea250bb0e5ecb42fcd1f6b" category="paragraph">서버에서 펌웨어 패키지를 다운로드해야 하는 경우 자격 증명을 사용하여 Fiberbridge 브리지에서 펌웨어를 업데이트할 수 있습니다.</block>
+  <block id="7f35c16e72037a8dea668c5bb0e6327d" category="paragraph"><block ref="7f35c16e72037a8dea668c5bb0e6327d" category="inline-link-macro-rx"></block></block>
 </blocks>

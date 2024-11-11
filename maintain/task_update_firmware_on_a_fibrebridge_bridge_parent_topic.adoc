@@ -41,7 +41,7 @@ IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션�
 NOTE: 이 절차는 무중단으로 진행되며 완료하는 데 약 30분이 소요됩니다.
 
 
-NOTE: ONTAP 9.8부터 스토리지 브리지 명령이 시스템 브리지로 바뀌었습니다. 다음 단계에서는 'Storage bridge' 명령어를 보여주지만, ONTAP 9.8 이상을 실행 중인 경우에는 'system bridge' 명령어를 사용한다.
+NOTE: ONTAP 9.8부터 `system bridge` 명령이 을 `storage bridge`대체합니다. 다음 단계에 명령이 나와 `system bridge` 있지만 ONTAP 9.8 이전 버전을 실행 중인 경우에는 명령을 사용해야 `storage bridge` 합니다.
 
 .단계
 . 유지 관리의 시작을 나타내는 AutoSupport 메시지를 호출합니다.
@@ -70,15 +70,52 @@ https://mysupport.netapp.com/site/products/all/details/atto-fibrebridge/download
 +
 고급 모드로 계속 진행하고 고급 모드 프롬프트(*>)를 보려면 ""y""로 응답해야 합니다.
 
-. 브리지 펌웨어 업데이트:
+. 브리지 펌웨어를 업데이트합니다.
 +
-'Storage bridge firmware update-bridge name-Uri_url-of-firmware-package_
+ONTAP 9.16.1부터 서버에서 펌웨어 패키지를 다운로드하는 데 필요한 경우 자격 증명을 사용하여 브리지 펌웨어를 업데이트할 수 있습니다.
 
 +
+[role="tabbed-block"]
+====
+.자격 증명이 필요하지 않은 경우:
+--
+.. 브리지 펌웨어 업데이트:
+
+
+[source, cli]
+----
+system bridge firmware update -bridge <name> -uri <URL-of-firmware-package>
+----
+.예
 [listing]
 ----
-cluster_A> storage bridge firmware update -bridge bridge_A_1a -uri http://192.168.132.97/firmware.ZBD
+cluster_A> system bridge firmware update -bridge bridge_A_1a -uri http://192.168.132.97/firmware.ZBD
 ----
+--
+.자격 증명이 필요한 경우:
+--
+.. 브리지 펌웨어를 업데이트하고 필요한 사용자 이름을 지정합니다.
++
+[source, cli]
+----
+system bridge firmware update -bridge <name> -uri <URL-of-firmware-package> -username <name>
+----
+.. 다음 예제와 같이 출력에 메시지가 표시되면 암호를 입력합니다.
+
+
+.예
+[listing]
+----
+cluster_A> system bridge firmware update -bridge bridge_A_1a -uri http://192.168.132.97/firmware.ZBD -username abc
+
+(system bridge)
+
+Enter the password:
+
+[Job 70] Job is queued: System bridge firmware update job.
+----
+--
+====
 . 관리자 권한 레벨로 돌아갑니다.
 +
 'Set-Privilege admin'입니다
@@ -88,12 +125,12 @@ cluster_A> storage bridge firmware update -bridge bridge_A_1a -uri http://192.16
 'job show-name'_job-name_'
 
 +
-다음 예에서는 "'Storage bridge firmware update'(저장소 브리지 펌웨어 업데이트) 작업이 여전히 실행 중인 것을 보여 줍니다.
+다음 예는 "'시스템 브리지 펌웨어 업데이트'" 작업이 여전히 실행 중임을 보여줍니다.
 
 +
 [listing]
 ----
-cluster_A> job show -name "storage bridge firmware update"
+cluster_A> job show -name "system bridge firmware update"
 Owning
 
 Job ID Name                 Vserver    Node           State
@@ -102,7 +139,7 @@ Job ID Name                 Vserver    Node           State
                             cluster_A
                                        node_A_1
                                                       Running
-Description: Storage bridge firmware update job
+Description: System bridge firmware update job
 ----
 +
 약 10분 후 새 펌웨어가 완전히 설치되고 작업 상태가 성공:
@@ -110,16 +147,16 @@ Description: Storage bridge firmware update job
 +
 [listing]
 ----
-cluster_A> job show -name "storage bridge firmware update"
+cluster_A> job show -name "system bridge firmware update"
 
                             Owning
 Job ID Name                 Vserver    Node           State
 ------ -------------------- ---------- -------------- ----------
-2246   Storage bridge firmware update
+2246   System bridge firmware update
                             cluster_A
                                        node_A_1
                                                       Success
-Description: Storage bridge firmware update job
+Description: System bridge firmware update job
 ----
 . 대역내 관리가 활성화되었는지 여부와 시스템이 실행 중인 ONTAP의 버전에 따라 다음 단계를 완료합니다.
 +
@@ -151,7 +188,7 @@ Ready.
 *** ONTAP 9.5 이상을 실행 중인 경우 대역 내 관리가 지원되며 클러스터 프롬프트에서 명령을 실행할 수 있습니다.
 
 
-.. 'storage bridge run-cli-name_bridge-name_-command FlashImages' 명령을 실행합니다.
+..  `system bridge run-cli -name _bridge-name_ -command FlashImages`명령을 실행합니다.
 +
 
 NOTE: 이 예에서는 1차 플래시 이미지에 새 펌웨어 이미지가 표시되고 2차 플래시 이미지에는 이전 이미지가 표시됩니다.
@@ -159,7 +196,7 @@ NOTE: 이 예에서는 1차 플래시 이미지에 새 펌웨어 이미지가 �
 +
 [listing]
 ----
-cluster_A> storage bridge run-cli -name ATTO_7500N_IB_1 -command FlashImages
+cluster_A> system bridge run-cli -name ATTO_7500N_IB_1 -command FlashImages
 
 [Job 2257]
 
@@ -174,7 +211,7 @@ Ready.
 ----
 .. 필요한 경우 브리지를 다시 시작합니다.
 +
-'Storage bridge run-cli-name ATTO_7500N_IB_1 - command FirmwareRestart
+`system bridge run-cli -name ATTO_7500N_IB_1 -command FirmwareRestart`
 
 +
 
@@ -201,12 +238,12 @@ System Storage Configuration: Quad-Path HA
 ----
 . FiberBridge 펌웨어가 업데이트되었는지 확인합니다.
 +
-스토리지 브리지 표시 필드 FW 버전, 심볼릭 이름
+`system bridge show -fields fw-version,symbolic-name`
 
 +
 [listing]
 ----
-cluster_A> storage bridge show -fields fw-version,symbolic-name
+cluster_A> system bridge show -fields fw-version,symbolic-name
 name fw-version symbolic-name
 ----------------- ----------------- -------------
 ATTO_20000010affeaffe 3.10 A06X bridge_A_1a

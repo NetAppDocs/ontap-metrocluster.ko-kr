@@ -21,6 +21,28 @@ ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 �
 
 
  a| 
+MetroCluster 구성 마이그레이션에 대한 SVM 데이터 이동성 지원
+ a| 
+ONTAP은 MetroCluster가 아닌 HA 쌍에서 MetroCluster 구성으로 또는 MetroCluster 구성에서 MetroCluster가 아닌 HA 쌍으로 SVM을 마이그레이션할 수 있도록 지원합니다. MetroCluster 구성 간에 SVM을 마이그레이션할 수 없습니다.
+
+link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html["SVM 데이터 이동성"^]
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
+BGP 피어 그룹에 대한 MD5 인증 지원
+ a| 
+ONTAP는 BGP 피어 그룹에서 MD5 인증을 지원하여 BGP 세션을 보호합니다. MD5가 활성화되면 승인된 피어 사이에서만 BGP 세션을 설정 및 처리할 수 있으므로 권한이 없는 행위자에 의한 세션 중단을 방지할 수 있습니다.
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_virtual_ip_@vip@_lifs.html["가상 IP(VIP) LIF를 구성합니다"^]
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
 NVMe에 대한 MetroCluster IP 지원
  a| 
 NVMe/TCP 프런트 엔드 호스트 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.
