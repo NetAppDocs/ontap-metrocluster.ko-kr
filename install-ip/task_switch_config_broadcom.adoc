@@ -308,6 +308,7 @@ MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF
 
 ====
 .단계
+. 에서 스위치 펌웨어를 link:https://www.broadcom.com/support/bes-switch["Broadcom 지원 사이트"^]다운로드합니다.
 . 'show FIPS status' 명령을 사용하여 사용자의 EFOS 버전이 FIPS 호환 버전인지 또는 비 FIPS 호환 버전인지 확인합니다. 다음 예에서는 IP_SWITCH_A_1이 FIPS 호환 EFOS를 사용하고 있으며 IP_SWITCH_A_2는 FIPS 비호환 EFOS를 사용하고 있습니다.
 +
 * 예 1 *
