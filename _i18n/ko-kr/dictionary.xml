@@ -906,7 +906,6 @@
   <block id="1cee36e7d177f47699c566a98cdd28b7" category="paragraph">AFF A300 및 FAS8200</block>
   <block id="777915564b2f2870366331ca85d7d9a9" category="paragraph">X1116A</block>
   <block id="d30fc67c2a1cee6e54e9714145270705" category="paragraph">온보드 포트</block>
-  <block id="f1044ba6bab78a278fa587f690217ea7" category="paragraph">슬롯 0</block>
   <block id="021129e5b6cda3c7398d4240f38ab938" category="paragraph">e0a, e0b</block>
   <block id="931c3299e4495428df74c7ef15981af6" category="paragraph">AFF A250 및 FAS500f</block>
   <block id="976dfaa29917d0a4edcbb9a22b57a8e5" category="paragraph">e0c, e0d</block>
@@ -1332,7 +1331,6 @@
   <block id="99202cf08ee605465b048d280b130030" category="list-text">미러링되지 않은 애그리게이트를 포함할 디스크 쉘프를 설치 및 케이블로 연결합니다.</block>
   <block id="b2fa14e3df9342c7d9ce9f5ac1643744" category="paragraph">플랫폼 및 디스크 쉘프에 대한 _Installation 및 Setup_설명서의 절차를 사용할 수 있습니다.</block>
   <block id="2d1ee8760a765460b6dcc34dbf24e95d" category="list-text">새 쉘프의 모든 디스크를 적절한 노드에 수동으로 할당합니다.</block>
-  <block id="29d368b17fa8f6a4c00f53e0b1b0ddcd" category="paragraph">디스크 할당 - disk_disk -id_-owner_owner -node -name _</block>
   <block id="6d6f602efa1b388ca6264b6013787a0e" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 -node 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.</block>
   <block id="c867a6fd725cedea57bb7663de5a37c2" category="paragraph">또한 미러링되지 않은 쉘프의 드라이브만 애그리게이트에 포함되어 있는지 확인해야 합니다.</block>
   <block id="0c14f54e968697b22703046426aae7f1" category="paragraph">다음 명령을 실행하면 10개의 디스크로 구성된 미러링되지 않은 Aggregate가 생성됩니다.</block>
@@ -14266,4 +14264,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="7e8efc833fbde0ff722d85e00415edec" category="list-text">에서 스위치 펌웨어를 <block ref="7b0bfad9e7dd6186ed0f14c867034109" category="inline-link-macro-rx"></block>다운로드합니다.</block>
   <block id="e6d64e0eb5e781bce7f755d1457a9170" category="paragraph"><block ref="b2f8990b0f3f5de2520bc483556b14eb" prefix="" category="inline-code"></block></block>
   <block id="b0782c02cc2d2b20315a3f6a825b3fbe" category="list-text"><block ref="2586ba33015a99bfc10dda523f819039" prefix=" " category="inline-code"></block>명령을 실행합니다.</block>
+  <block id="a32cead873928387fe22f14cfa816430" category="admonition">온보드 포트는 컨트롤러 하드웨어(슬롯 0)에 내장되어 있으며 교체할 수 없으므로 어댑터에 필요한 슬롯은 적용할 수 없습니다.</block>
+  <block id="ca024a4ac8a10799527aecc96451c4ce" category="paragraph">슬롯 1 / 온보드 포트에는 적용되지 않음</block>
+  <block id="ad084693a846cdc2cf77ad2bb2e7382a" category="paragraph"><block ref="1c61f86d2f111f8c80a5d8ff728df70d" prefix="" category="inline-code"></block></block>
+  <block id="5f9a9e91fc7e98f1998a1dcee4eab83f" category="paragraph">Aggregate에 미러링되지 않은 쉘프의 드라이브만 포함하는지 확인합니다.</block>
+  <block id="6f1eb898d916ac10201421006f5406e2" category="admonition">명령에서 매개 변수를 사용하여 애그리게이트에 사용할 디스크를 지정할 수도<block ref="2ee4c97cd7e2dff2e12ae3225818c09b" prefix=" " category="inline-code"></block> 있습니다.</block>
 </blocks>
