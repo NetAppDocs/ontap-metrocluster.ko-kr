@@ -14269,4 +14269,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ad084693a846cdc2cf77ad2bb2e7382a" category="paragraph"><block ref="1c61f86d2f111f8c80a5d8ff728df70d" prefix="" category="inline-code"></block></block>
   <block id="5f9a9e91fc7e98f1998a1dcee4eab83f" category="paragraph">Aggregate에 미러링되지 않은 쉘프의 드라이브만 포함하는지 확인합니다.</block>
   <block id="6f1eb898d916ac10201421006f5406e2" category="admonition">명령에서 매개 변수를 사용하여 애그리게이트에 사용할 디스크를 지정할 수도<block ref="2ee4c97cd7e2dff2e12ae3225818c09b" prefix=" " category="inline-code"></block> 있습니다.</block>
+  <block id="668c968f31daa1f3b0b86ddf4b09543e" category="list-text">LIF를 생성하기 전에 서브넷 개체를 생성해야 합니다. 서브넷 개체는 연결된 브로드캐스트 도메인이 있으므로 ONTAP가 대상 클러스터에서 페일오버 대상을 확인할 수 있도록 합니다.</block>
 </blocks>

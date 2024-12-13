@@ -2444,8 +2444,6 @@ FC_switch_B_1# show zoneset active
 +
 *** VSAN 10의 FC_SWITCH_A_1에 Zoneset_A가 있습니다
 *** VSAN 20의 FC_SWITCH_B_1에 Zoneset_B가 있습니다
-
-
 +
 [listing]
 ----
@@ -2453,6 +2451,8 @@ FC_switch_A_1# no zoneset activate name ZoneSet_A vsan 10
 
 FC_switch_B_1# no zoneset activate name ZoneSet_B vsan 20
 ----
+
+
 .. 모든 영역 세트를 비활성화한 후 영역 데이터베이스를 지웁니다.
 +
 clear zone database_zone-name _
