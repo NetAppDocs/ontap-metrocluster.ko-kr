@@ -490,7 +490,6 @@
   <block id="76c896ac6b7a90ae2d17c2b3934e8219" category="paragraph">다음 예에서는 node_A_1에 있는 두 개의 클러스터 포트를 보여 줍니다.</block>
   <block id="cdf29de4c8a5a778670e597ff53bb862" category="list-text">파트너 클러스터에서 이 단계를 반복합니다.</block>
   <block id="c5f6ae1a3a37c521928e14a692842c6b" category="paragraph">ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.</block>
-  <block id="337d79852891a37d41285c9101c3fff4" category="list-text">다음 명령을 실행합니다.</block>
   <block id="54744df94a6fdb7104348dee41697c48" category="summary">MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.</block>
   <block id="14681192c7f80e2d7631c3a070df9619" category="doc">Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당</block>
   <block id="09cb6984bdf1b82c9749906ba1a69331" category="summary">MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
@@ -2528,7 +2527,6 @@
   <block id="5426384928a13db30fcee7b4f5c3da08" category="list-text">작업이 완료된 후 노드가 절체 상태에 있는지 확인합니다.</block>
   <block id="058e49cbd0c1f29381ec01c701554a62" category="list-text">MetroCluster 노드의 상태를 점검한다.</block>
   <block id="982f6eba58d95bda2318d44b2dcea2e3" category="paragraph">컨트롤러 업그레이드 중에 협상된 전환 후 애그리게이트 자동 복구가 해제됩니다.</block>
-  <block id="0486f17c3c2c0ba93636ea2cc6f050dd" category="paragraph">데이터 LIF를 공통 포트로 이동하고, 이전 컨트롤러에서 VLAN 및 인터페이스 그룹을 제거한 다음, 컨트롤러를 물리적으로 제거해야 합니다.</block>
   <block id="895a79b8b51d133ae9c32d8cb48b9eb7" category="list-text">이러한 단계는 이전 컨트롤러(node_B_1 - old, node_B_2 - old)에서 수행됩니다.</block>
   <block id="4339dfdd37f410724931874e2a95e452" category="list-text">이전 노드를 부팅하고 노드에 로그인합니다.</block>
   <block id="bf1d9c5801bc3674bc765551ff2f2964" category="paragraph">부트 ONTAP</block>
@@ -3965,8 +3963,6 @@
   <block id="69608c2ceb31fca5fdb927683327f5d0" category="paragraph">디스크 쉘프 데이지 체인 방식 및 쉘프 ID 설정에 대한 자세한 내용은 디스크 쉘프 모델의 해당 가이드를 참조하십시오.</block>
   <block id="b7d2754cdbe9c97a2528e9763625cb55" category="admonition">쉘프 ID는 각 MetroCluster DR 그룹(두 사이트 포함)의 각 SAS 디스크 쉘프에 대해 고유해야 합니다. 쉘프 ID를 수동으로 설정할 경우 디스크 쉘프의 전원을 껐다가 다시 켜야 합니다.</block>
   <block id="dddcbe39d238e711998c52c432aeaa31" category="summary">디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다.</block>
-  <block id="9e67b76e63359167fbde69e351c8b8b0" category="doc">브리지에 디스크 쉘프 케이블링</block>
-  <block id="d970522a2c535f4a798076f2c36b8af8" category="paragraph">이러한 디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다.</block>
   <block id="babbebe817de4ac640d017ba3dca7743" category="summary">MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다.</block>
   <block id="90fc932ee050a39faa7916b30886ecf0" category="doc">2노드 브리지 연결 스트레치 MetroCluster 구성 케이블링</block>
   <block id="4db2eceaa8145339affc67a0413885ce" category="image-alt">워크플로우 하드웨어 설치 및 구성 2노드 브리지가 연결됨</block>
@@ -4096,8 +4092,6 @@
   <block id="0866074540e2383e942cca1f39a3d785" category="list-text">SAS 포트에 케이블을 연결합니다.</block>
   <block id="8ac606a0dd69d4325efa2a1a90114847" category="paragraph">다음 그림에서는 연결을 보여 줍니다. 포트 사용은 컨트롤러 모듈에서 사용 가능한 SAS 및 FC-VI 포트에 따라 다를 수 있습니다.</block>
   <block id="669658bc088793bad84241188a655bf0" category="image-alt">MCC 2노드 광 SAS 공간 구성</block>
-  <block id="d08fe7e603a9a3906a2ac376ce5a88c1" category="summary">새 MetroCluster 시스템의 일부로 브리지를 설치할 준비가 되면 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 여기에는 브리지의 설정 및 구성 요구 사항을 충족하는 작업이 포함됩니다. 기타 요구사항으로는 필요한 문서 다운로드, ATTO Quicknav 유틸리티 및 브리지 펌웨어 등이 있습니다.</block>
-  <block id="6f47fdb0056f04198e0f13d4914a9c42" category="doc">설치 준비 중</block>
   <block id="58eb0a3f95df2104f4ac005bbd51d244" category="list-text">시스템이 시스템 캐비닛에 제공되지 않은 경우 랙에 설치되어 있어야 합니다.</block>
   <block id="f824444af694573f23438938a9e1aa1e" category="list-text">지원되는 하드웨어 모델 및 소프트웨어 버전을 사용하여 구성해야 합니다.</block>
   <block id="b5281259f02365989ee0c66878541c97" category="paragraph">IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.</block>
@@ -4416,35 +4410,21 @@
   <block id="eed818e49f4e9b9c4ed8931067fb0efd" category="doc">ONTAP MetroCluster 구성의 차이점</block>
   <block id="9edea398610f8b9e7bf8eb4d72f75daa" category="summary">DR\(재해 복구\) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="9a220a3f22f8641906ad7cfa0dd3502b" category="paragraph">DR(재해 복구) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
-  <block id="4b82b05e56bc303e7e70ebb815ebfc6c" category="summary">2노드 브리지 연결 MetroCluster 구성의 컨트롤러 모듈에 브리지를 연결해야 합니다.</block>
-  <block id="468824e6d6059f37612b1e891b27c464" category="doc">2노드 브리지 연결 MetroCluster 구성에서 FC-SAS 브리지를 컨트롤러 모듈에 케이블로 연결합니다</block>
-  <block id="a977177241046fa392e812a609420ace" category="list-text">[[step1-verify-detect]] 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 각 브리지가 감지할 수 있는지 확인합니다.</block>
   <block id="51618dab77295eddd5c15097ed80ca2d" category="cell">를 사용하는 경우...</block>
   <block id="8d7a98cf0e3de35b46f4b4e7fca074f1" category="paragraph">ATTO ExpressNAV GUI</block>
   <block id="281dc8254fa2b1d3b1bb2349471c1b69" category="list-text">지원되는 웹 브라우저의 브라우저 상자에 브리지의 IP 주소를 입력합니다.</block>
-  <block id="3a23706b743b24f9521e22417f1d30d0" category="paragraph">입력한 IP 주소에 대한 브리지 링크의 ATTO FiberBridge 홈페이지로 이동합니다.</block>
-  <block id="6a711c2982ba094c44be794ffb3bf1a2" category="list-text">링크를 클릭한 다음 브리지를 구성할 때 지정한 사용자 이름과 암호를 입력합니다.</block>
   <block id="2c289d2564b7ae64ce5ddd32d176f7d8" category="paragraph">브리지의 ATTO FiberBridge 상태 페이지가 나타나고 왼쪽 메뉴가 나타납니다.</block>
   <block id="33c31ec720ddb611e48abaebec39e651" category="list-text">메뉴에서 * 고급 * 을 클릭합니다.</block>
-  <block id="13174ed6300232fa48d1a5b59eb7e2f4" category="list-text">다음 명령을 실행한 다음 * Submit *: + sastargaTS를 클릭합니다</block>
   <block id="e8d7052a5c5d6f5275211cad62210ccd" category="paragraph">직렬 포트 연결</block>
   <block id="9dd06574fbddaf5fab3ebc3605d80dae" category="paragraph">'아스타우다스다'</block>
   <block id="3fff43b275954b2824b3aee6836ae256" category="paragraph">'astargataks' 명령 출력에는 브리지에 연결된 디바이스(디스크 및 디스크 쉘프)가 표시됩니다. 출력 줄에 순차적으로 번호가 매겨서 장치를 빠르게 계산할 수 있습니다.</block>
-  <block id="3d40cc4f5f094dc369c0eb1e445aecea" category="admonition">출력 시작 부분에 ""텍스트 응답 잘림""이 나타나면 텔넷을 사용하여 브리지에 연결하고 동일한 명령을 실행하여 모든 출력을 볼 수 있습니다.</block>
   <block id="436b7e523e46e6ba6d8fedac266d39ab" category="paragraph">다음 출력에서는 10개의 디스크가 연결되어 있음을 보여 줍니다.</block>
-  <block id="4948cb8b3eded5b39ec6d64f06687462" category="list-text">명령 출력에 브리지가 연결될 스택의 모든 디스크 및 디스크 쉘프에 연결되어 있는지 확인합니다.</block>
   <block id="29219bad186be0330f9ec59a1f483a14" category="cell">출력이 다음과 같은 경우...</block>
   <block id="d0a3892a5b340ce4f3472dc7595dce02" category="paragraph">정답입니다</block>
   <block id="065575055836b7cada67fa8852ea3ef7" category="paragraph">반복합니다 <block ref="760439458840ee59fb7794af4bb5b199" category="inline-xref-macro-rx"></block> 각 나머지 브리지에 대해.</block>
   <block id="03f13166de52c74a41327e27684b674e" category="paragraph">정답이 아닙니다</block>
   <block id="1d1fa4befa7e2188095e2cc64c17fc9e" category="list-text">디스크 쉘프를 브리지에 재연결하여 SAS 케이블이 느슨한지 확인하거나 SAS 케이블을 수정합니다.</block>
-  <block id="4c86d491f2865662ab58a2679a13b3ab" category="paragraph"><block ref="4c86d491f2865662ab58a2679a13b3ab" category="inline-link-macro-rx"></block></block>
   <block id="fa5d02c46c643a9eedee519211b4d9d4" category="list-text">반복합니다 <block ref="760439458840ee59fb7794af4bb5b199" category="inline-xref-macro-rx"></block> 각 나머지 브리지에 대해.</block>
-  <block id="b29b8c83f7d8c55b39ae87067330f426" category="list-text">[[step3-cable-each-bridge] 각 브리지를 컨트롤러 모듈에 연결합니다.</block>
-  <block id="4422c879aa9ea654583488de1d4d4e82" category="list-text">브리지의 FC 포트 1을 cluster_A의 컨트롤러 모듈에 있는 FC 포트에 케이블로 연결합니다</block>
-  <block id="db0e7a22facf5e7460258a2022b5e9d5" category="list-text">브리지의 FC 포트 2를 cluster_B의 컨트롤러 모듈에 있는 FC 포트에 케이블로 연결합니다</block>
-  <block id="48dda5bb7b1f8b58b068fa47d9879c67" category="paragraph">컨트롤러 모듈이 둘 이상의 FC 어댑터로 구성된 경우 두 브리지 포트를 동일한 어댑터에 케이블로 연결하지 마십시오. 단일 장애 지점을 방지하려면 FC 포트 1을 어댑터 A에, FC 포트 2를 어댑터 B에 배포해야 합니다.</block>
-  <block id="67d7a49e616a0e579f0506ada050a36b" category="image-alt">클러스터 피어링 네트워크</block>
   <block id="2d5ce426423eeeead4f35769cd8b1b27" category="inline-xref">3단계</block>
   <block id="13044932159e150c28f3e3cabd33ea68" category="list-text">반복합니다 <block ref="92a9f0aaafd1755c239f3740bca9b5f0" category="inline-xref-macro-rx"></block> 모든 브리지가 케이블로 연결될 때까지 다른 브리지에 연결합니다.</block>
   <block id="00ba2d14b7be89e77994c1a63febf02b" category="summary">Active IQ Unified Manager 및 ONTAP System Manager는 클러스터의 GUI 관리 및 구성 모니터링에 사용할 수 있습니다.</block>
@@ -4510,8 +4490,6 @@
   <block id="93ba9bcaf75f3b305567eed2f5797513" category="summary">구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다.</block>
   <block id="a9ed40443a225cecce5742ada138b243" category="doc">FC-to-SAS 브릿지 및 SAS 디스크 쉘프 설치</block>
   <block id="a2d4b828805dc92004efb97c8e85045a" category="paragraph">공장에서 출하된 시스템의 경우 FC-to-SAS 브리지가 사전 구성되어 있으며 추가 구성이 필요하지 않습니다.</block>
-  <block id="632ac78de4a389af16d655089761a651" category="paragraph">이 절차에서는 ATTO ExpressNAV GUI 및 ATTO Quicknav 유틸리티와 같은 권장 브리지 관리 인터페이스를 사용하고 있다고 가정합니다.</block>
-  <block id="132ab6e1ba78a445b535028fd5d74260" category="paragraph">ATTO ExpressNAV GUI를 사용하여 브리지를 구성 및 관리하고 브리지 펌웨어를 업데이트합니다. ATTO Quicknav 유틸리티를 사용하여 브리지 이더넷 관리 1 포트를 구성합니다.</block>
   <block id="b6b0aa1e441ae0f9c94362e6f0aae763" category="paragraph">필요한 경우 직렬 포트 또는 텔넷과 같은 다른 관리 인터페이스를 사용하여 브리지를 구성 및 관리하고 이더넷 관리 1 포트 및 브리지 펌웨어를 업데이트하는 FTP를 구성할 수 있습니다.</block>
   <block id="76545d4e8668be942098ed242d25351a" category="image-alt">워크플로우 브리지 설치 및 구성</block>
   <block id="4a4442f93bedaff86c4d502cdec5989f" category="summary">클러스터 피어링에 사용되는 컨트롤러 모듈 포트에 케이블을 연결하여 파트너 사이트의 클러스터와 연결해야 합니다.</block>
@@ -8417,23 +8395,16 @@
   <block id="5ba93b1d1631308a58a7b506c740bfa2" category="paragraph">세트 ipaddress mp1 ip-address</block>
   <block id="698baf99e373b8d4f943031badc7d3e7" category="paragraph">세트 ipsubnetmask mp1 subnet-mask</block>
   <block id="d239a1837adf4e352883e5bb91938a87" category="paragraph">'Set bridgename_bridge_name _'</block>
-  <block id="63f92d601e0f07d76d9c59bbdcfeed47" category="paragraph">'Set FCDataRate_port-number__port-speed_'</block>
   <block id="4bba2584f57904f148583d5ad0ce4a34" category="list-text">브리지 상태 보기:</block>
   <block id="b937671578dea012b5d9e0ca996417fc" category="list-text">브리지 보안:</block>
   <block id="cf574293b8ab8a752912f9e7ad222e6b" category="paragraph">'괴한다리'</block>
-  <block id="98e83072472ff49bb361fe30e4df171e" category="paragraph"><block ref="98e83072472ff49bb361fe30e4df171e" category="inline-link-macro-rx"></block></block>
   <block id="6ef697f11922be2e4de0971f7d70997f" category="list-title">선택</block>
-  <block id="4e14469d1b9cb5857e2b83704c8ab8d4" category="list-text"><block ref="d277051460abcb0f3a19fb6f4b09af32" category="inline-xref-macro-rx"></block></block>
-  <block id="1098ebf3ac123d908705a49af90988ba" category="inline-xref">IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 쉘프에 케이블 연결</block>
-  <block id="572e966b8fd8a186b019d7c5d26ff32c" category="list-text"><block ref="f3f03af6d08c988efd686559fcd15483" category="inline-xref-macro-rx"></block></block>
   <block id="fcf216ba8187b4017a22716585d4a6fa" category="paragraph">브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다.</block>
-  <block id="779c08e01ec265d0aff357c180fceb48" category="list-text">스택의 논리적 첫 번째 쉘프로 시작하여 IOM A가 연결될 때까지 IOM A 포트 3을 다음 쉘프의 IOM A 포트 1에 연결합니다.</block>
   <block id="46fee005531651ebcbae735c06b5ef74" category="list-text">디스크 쉘프의 전원을 켠 다음 쉘프 ID를 설정합니다.</block>
   <block id="a7a19c162ddb589e248198c402b08a0c" category="list-text">디스크 쉘프 첫 번째 스택의 경우, 첫 번째 쉘프의 케이블 IOM A를 FiberBridge A의 SAS 포트 A에, 마지막 쉘프의 케이블 IOM B를 FiberBridge B의 SAS 포트 A에 연결합니다</block>
   <block id="2c5e8c1a90d9fac55613816da8484fd4" category="paragraph">브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 7600N 또는 7500N 브리지는 미니 SAS 커넥터를 사용하며 IOM6 또는 IOM3 모듈을 사용하는 쉘프를 지원합니다.</block>
   <block id="dffac67a0b66f79e4f2ff0361643edd1" category="paragraph"><block ref="dffac67a0b66f79e4f2ff0361643edd1" category="inline-link-rx"></block></block>
   <block id="f7e3d93b4c145bf696a9e6f193ce4fb7" category="list-text">추가 쉘프 스택의 경우 FiberBridge 브리지에서 사용 가능한 다음 SAS 포트를 사용하여 이전 단계를 반복하고, 두 번째 스택의 경우 포트 B, 세 번째 스택의 경우 포트 C, 네 번째 스택의 경우 포트 D를 사용합니다.</block>
-  <block id="8cbdbb5be51e2a78d7b472e23327b938" category="section-title">브리지 연결 확인 및 브리지 FC 포트 케이블 연결</block>
   <block id="605157b79e898676481d263489be287d" category="paragraph">각 브리지가 모든 디스크 드라이브를 감지할 수 있는지 확인한 다음 각 브리지를 로컬 FC 스위치에 케이블로 연결해야 합니다.</block>
   <block id="8bfac37f0565c6922aeced47caf18f6a" category="list-text">[[step1_bridge] 각 브리지가 연결된 모든 디스크 드라이브와 디스크 쉘프를 검색할 수 있는지 확인합니다.</block>
   <block id="bf532d59144bc55a10c7ae835f098f56" category="paragraph">링크가 있는 IP 주소를 입력한 브리지의 ATTO FiberBridge 홈페이지로 이동합니다.</block>
@@ -8442,7 +8413,6 @@
   <block id="540e154d4e289b6bfd793dd86036768d" category="list-text">명령 출력에 브리지가 연결될 스택의 모든 디스크 및 디스크 쉘프에 연결되어 있는지 확인합니다.</block>
   <block id="eb443924112f8c71329400ac78de9284" category="paragraph">반복합니다 <block ref="2f9ed640880ac5dd95c2cb30edbb02d0" category="inline-xref-macro-rx"></block> 각 나머지 브리지에 대해.</block>
   <block id="234d9ba6039ff899b95d32b2d5738596" category="list-text">케이블을 반복하여 SAS 케이블이 느슨한지 확인하거나 SAS 케이블을 수정합니다.</block>
-  <block id="0aeba4fd83ea38faeb00ddbf389be6ad" category="paragraph"><block ref="48f604bdf2d3bf06f58ee9f10e668948" category="inline-xref-macro-rx"></block></block>
   <block id="2c0892c11c37aec07e0a746c4c7fbe0d" category="list-text">반복합니다 <block ref="2f9ed640880ac5dd95c2cb30edbb02d0" category="inline-xref-macro-rx"></block>.</block>
   <block id="22fa5db9179793221a81bd3cfceea63a" category="list-text">구성 및 스위치 모델, FC-to-SAS 브리지 모델을 위해 표의 케이블을 사용하여 각 브리지를 로컬 FC 스위치에 연결합니다.</block>
   <block id="cbf21b0a1a6cb9d0bb203c817705311a" category="admonition">FiberBridge 7500N 브리지의 두 번째 FC 포트 연결은 조닝이 완료될 때까지 케이블로 연결해서는 안 됩니다.</block>
@@ -10886,7 +10856,6 @@
   <block id="2eb016ab0f18b2ada34df66ecade6e4b" category="list-text">유지보수 모드를 종료하고 로더 프롬프트를 표시합니다.</block>
   <block id="64c598a52dd8cdadea545647c7d064a6" category="summary">MetroCluster 구성 및 작동에 대한 자세한 내용은 NetApp의 광범위한 문서를 참조하십시오.</block>
   <block id="04d9ec83167120e239825f4726f351cc" category="paragraph">Active IQ Unified Manager 설명서<block ref="1cf4a9f6324bfcec73ee8652129ceb47" category="inline-link-rx"></block></block>
-  <block id="7b173496e8f6041144abc83f7e17506f" category="list-text">정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태이고("가동 상태"를 나타냄), 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.</block>
   <block id="90755aace4dbf79660e4f610c3481e12" category="paragraph">MetroCluster 구성의 동기화 대상 애그리게이트에는 식별을 위해 이름에 ""-mc" 접미사가 자동으로 추가됩니다.</block>
   <block id="a06ba402461ed4d507397d322c6630a2" category="list-text">ONTAP 9.5부터 재해 사이트 노드가 부팅된 상태로 유지되면 로컬 및 원격 플렉스가 모두 온라인 상태로 유지됩니다.</block>
   <block id="9c02f16bec605fc43993ca0ced188f41" category="paragraph">ONTAP 9.5부터 MetroCluster IP 구성에서 협상된 전환 작업 중에 복구가 자동화됩니다. ONTAP 9.6부터 예정되지 않은 스위치오버 후 자동 복구가 지원됩니다. 이렇게 하면 MetroCluster 환원 명령을 실행할 필요가 없어집니다.</block>
@@ -12105,7 +12074,6 @@
   <block id="cbabd53b8268cb963ad7b2c67de0b634" category="paragraph">LUN은 MetroCluster FC 노드 인터페이스에만 보고되므로 클라이언트는 FC 노드를 통한 경로만 표시합니다. 이는 의 출력에서 확인할 수 있습니다<block ref="41dc2c94e82e1c56ba876085acf5a974" prefix=" " category="inline-code"></block> 및<block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="7162464dfaefdef75b18029dcb1bb1f1" category="list-text">호스트에서 SCSI 버스를 다시 검색하여 새로 추가된 경로를 검색합니다.<block ref="9e65638d5d13acb691c4bec2ede5a483" prefix=" " category="inline-code"></block></block>
   <block id="9b3bd2afae038f8967e9373560a3b6d2" category="list-text">클라이언트에서 SCSI 버스를 다시 검색합니다.<block ref="06653a48f6165608045bd55ec32d95fb" prefix=" " category="inline-code"></block></block>
-  <block id="77139d079fd912afd88e4ca7f5623393" category="paragraph">컨트롤러 모듈이 4중 포트 FC 어댑터로 구성된 경우 스토리지 스택이 같은 ASIC에 있는 두 개의 FC 포트에 연결되어 있지 않은지 확인합니다. 포트 A와 포트 b는 동일한 ASIC를 공유하고, 포트 c와 포트 d는 동일한 ASIC를 공유합니다. 포트 A 및 포트 b에 쉘프 스택을 연결하지 마십시오 대신 포트 a와 포트 c를 사용하거나, ASIC에 장애가 발생할 경우 포트 b와 포트 d를 사용하여 단일 장애 지점을 방지합니다.</block>
   <block id="9df52fd51f68e1f0a1c54d87fbcf2d9f" category="paragraph">두 클러스터를 모니터링하고 세 번째 사이트에서 클러스터 간 연결 상태를 모니터링하려는 경우에만 Tiebreaker 소프트웨어가 필요합니다. Tiebreaker 소프트웨어는 세 번째 사이트의 Linux 호스트에 상주하며, 클러스터의 각 파트너가 사이트 간 링크가 다운될 때 ISL 장애를 사이트 장애와 구분할 수 있도록 합니다.</block>
   <block id="776aa0db93dc60ccb39a1a2bac58edd0" category="paragraph">Tiebreaker 소프트웨어는 최대 15개의 MetroCluster 구성을 동시에 모니터링할 수 있습니다. MetroCluster IP, MetroCluster FC, 확장 MetroCluster 구성의 조합을 지원합니다.</block>
   <block id="2c6d3f6cb9e7e0273e71c2ee07e103ef" category="paragraph">호스트 Linux 운영 체제에 따라 Tiebreaker 소프트웨어를 설치 또는 업그레이드하기 전에 MySQL 또는 MariaDB 서버를 설치해야 합니다.</block>
@@ -13626,7 +13594,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="fb0d5feb3def76f90b6408f32f99f4b7" category="list-text">새로 업그레이드된 컨트롤러의 데이터 포트에 대해 새 브로드캐스트 도메인이 생성된 경우 브로드캐스트 도메인을 삭제합니다.</block>
   <block id="3ab5e50e5fd6dc477690730212c6785f" category="admonition">새 브로드캐스트 도메인만 삭제합니다. 업그레이드를 시작하기 전에 있던 브로드캐스트 도메인을 삭제하지 마십시오.</block>
   <block id="8cb8d05546274856c8c2cb56b7cd62ac" category="paragraph"><block ref="7bbb7f17a19e67be5ebaaa8410749ad2" prefix="" category="inline-code"></block></block>
-  <block id="c46b37082c4b8a5ecb54ed082719f5fa" category="paragraph"><block ref="6ed2488c75aad6332e02665ab7c30031" prefix="" category="inline-code"></block></block>
   <block id="a51de836d51a26774e16aa7066519185" category="paragraph"><block ref="6a6db1083e2f8c53b07cc196dec3cafb" prefix="" category="inline-code"></block></block>
   <block id="641cba091515001a3bb48d030bddd608" category="section-title">cluster_A에서 노드를 업그레이드합니다</block>
   <block id="2ce39beb4bd7e0662d271e0be20e56c4" category="paragraph">업그레이드를 시작하기 전에 다음 고려 사항을 검토하여 구성이 지원되는지 확인하십시오.</block>
@@ -14270,4 +14237,94 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5f9a9e91fc7e98f1998a1dcee4eab83f" category="paragraph">Aggregate에 미러링되지 않은 쉘프의 드라이브만 포함하는지 확인합니다.</block>
   <block id="6f1eb898d916ac10201421006f5406e2" category="admonition">명령에서 매개 변수를 사용하여 애그리게이트에 사용할 디스크를 지정할 수도<block ref="2ee4c97cd7e2dff2e12ae3225818c09b" prefix=" " category="inline-code"></block> 있습니다.</block>
   <block id="668c968f31daa1f3b0b86ddf4b09543e" category="list-text">LIF를 생성하기 전에 서브넷 개체를 생성해야 합니다. 서브넷 개체는 연결된 브로드캐스트 도메인이 있으므로 ONTAP가 대상 클러스터에서 페일오버 대상을 확인할 수 있도록 합니다.</block>
+  <block id="6d42a1c65d48ed3ec77f037a50004258" category="list-text">상태 모니터링을 위해 전용 네트워크를 사용하는 경우 각 노드에 해당 전용 네트워크 내에 노드 관리 LIF가 있어야 합니다.</block>
+  <block id="b729f80ba307f8a8e8ea6189b1ed6313" category="paragraph">NetApp에서는 MetroCluster FC 구성의 구성 요소를 모니터링하기 위해 다음 툴만 지원합니다.</block>
+  <block id="f60d1385c75cfef525be8497e2137ee8" category="list-text">BNA(Brocade Network Advisor)</block>
+  <block id="138e272b0320fc1ffcdc8dee378b177b" category="list-text">Brocade 산나브</block>
+  <block id="865e9b4ef52f3b0d3050c8b3c14eb660" category="list-text">Active IQ Config Advisor</block>
+  <block id="5ed4e53c285d1a7046c38f429a94ef7b" category="list-text">NetApp 상태 모니터링(ONTAP)</block>
+  <block id="fb4d5d69523a984853a5295db93de123" category="list-text">MetroCluster 데이터 수집기(MC_DC)</block>
+  <block id="0d48c29aadd238b08bcb06f357acd9d8" category="section-title">설치를 준비합니다</block>
+  <block id="e30f0ace1e7e67755e7318eeab1b0204" category="section-title">FC-to-SAS 브리지 및 SAS 쉘프를 설치합니다</block>
+  <block id="0dc04f427f83d4c5afa311fe8042eddc" category="list-text">직렬 케이블을 FiberBridge 7600N 브리지의 직렬 포트에 연결하여 브리지 콘솔 인터페이스에 액세스합니다.</block>
+  <block id="2323990b6fbb7b7ee5ee14dbdb21eaf0" category="section-title">FC-to-SAS 브리지를 구성합니다</block>
+  <block id="ff48ad0dc104d3885573fa0f45161299" category="paragraph"><block ref="77d54c8e2e9adc9e2bc031facbe82b7c" prefix="" category="inline-code"></block></block>
+  <block id="a21e2af264b592c03f6b1f88af93dd36" category="paragraph"><block ref="a32ef1a4f91191b408d6aa3ceeed03a8" prefix="" category="inline-code"></block></block>
+  <block id="49cc2eac13c61da60904b157e05ec5dc" category="paragraph"><block ref="e9580cd86794b774ad27b65b0a805b73" prefix="" category="inline-code"></block></block>
+  <block id="b2c196d04c27ee6d1c55877714d8d6f9" category="section-title">디스크 쉘프를 브리지에 케이블로 연결합니다</block>
+  <block id="4273704f66fca16606c90100e4c57808" category="inline-xref">IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다</block>
+  <block id="242108261e892329ec8e41357fad0678" category="list-text"><block ref="57fecdddd64dc6d4f5e9d97874ea43bc" category="inline-xref-macro-rx"></block></block>
+  <block id="e3136c071e40d473a2ed2f7295c2ead2" category="inline-xref">IOM6 또는 IOM3 모듈을 사용하여 디스크 쉘프에 FiberBridge 7600N 또는 7500N 브리지를 연결합니다</block>
+  <block id="e88d980772f7b12fbca752322a5e5307" category="list-text"><block ref="e59f261da41fd9be2eaf7f1b955dc162" category="inline-xref-macro-rx"></block></block>
+  <block id="e42bb9af7fd1e3b1641a18782a424fb0" category="list-text">스택의 논리적 첫 번째 쉘프부터 시작하여 스택의 각 IOM A가 연결될 때까지 IOM A 포트 3을 다음 쉘프의 IOM A 포트 1에 연결합니다.</block>
+  <block id="df728bff4207a1d17e007189ab445eaa" category="section-title">IOM6 또는 IOM3 모듈을 사용하여 쉘프에 케이블을 장착하여 FiberBridge 7600N 또는 7500N 브리지를 연결합니다</block>
+  <block id="8a6b192e89e003168a9dec4c4b9059a7" category="section-title">브리지 FC 포트의 연결 및 케이블 연결을 확인합니다</block>
+  <block id="1127370baf663b49c7993f8a6ab9f41e" category="paragraph"><block ref="eba7ba40406886cad3add195d043cd08" category="inline-xref-macro-rx"></block></block>
+  <block id="d277bf5cc4237c95ff26e4f98eefaf07" category="paragraph">새로운 스토리지를 구성에 추가할 때 ATTO FiberBridge 브리지와 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다.</block>
+  <block id="760e34100c7db8b067f655d415a342c1" category="paragraph">대역 내 관리를 사용하는 경우, 브리지에 대한 FC 연결을 통해 ONTAP CLI에서 브리지를 관리하고 모니터링할 수 있습니다. 브리지 이더넷 포트를 통해 브리지에 물리적으로 액세스할 필요가 없으므로 브리지의 보안 취약점이 줄어듭니다.</block>
+  <block id="74f6533c5153d90867b32b519b275c65" category="list-text">ONTAP 9.5 이전에는 대역외 SNMP 관리만 지원됩니다.</block>
+  <block id="967c96558959e91e943843e6263ec970" category="paragraph">Bridge CLI 명령은 ONTAP 인터페이스의 ONTAP interface 명령에서 실행할 수<block ref="52f6597c8dcf79b6137c2435b9c9efcb" prefix=" " category="inline-code"></block> 있습니다.</block>
+  <block id="d22ab9487f4f57c6ecf56a0875e0c070" category="paragraph">새 MetroCluster 시스템의 일부로 브리지 설치를 준비하는 경우 브리지에 대한 설정 및 구성 요구 사항을 충족하는 등 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 기타 요구사항으로는 필요한 문서 다운로드, ATTO Quicknav 유틸리티 및 브리지 펌웨어 등이 있습니다.</block>
+  <block id="9d46de9346ca8af89ab03ed382fc9ab1" category="paragraph">에서<block ref="a5900d751cd970c3de875b616ebb9e28" category="inline-link-rx"></block> * 스토리지 솔루션 * 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 구성 요소 탐색기 * 를 사용하여 구성 요소를 선택하고 ONTAP 버전을 선택하여 검색을 구체화할 수 있습니다. 결과 표시 * 를 선택하여 기준과 일치하는 지원되는 설정 목록을 표시할 수 있습니다.</block>
+  <block id="1654c802242a5762f6e28996b1f5e854" category="list-text">각 FC 컨트롤러에는 하나의 브리지에서 FC 포트에 연결할 수 있도록 사용할 수 있는 FC 포트가 있어야 합니다.</block>
+  <block id="4178aa1558026aafc5b0376eacf267e6" category="list-text">SAS 케이블 처리 방법과 디스크 쉘프 설치 및 케이블 연결을 위한 고려 사항 및 모범 사례를 잘 알고 있어야 합니다.</block>
+  <block id="e0661cfc6d44d7098774766995e5913c" category="list-text">50미크론 다중 모드 광섬유 케이블을 사용하는 디스크 선반, FC 컨트롤러 및 백업 테이프 장치의 최대 거리에 대한 시스템 연결 요구 사항은 FiberBridge 브리지에도 적용됩니다.</block>
+  <block id="7bcf16804afe2d3ed86d658c4f355f74" category="paragraph"><block ref="eece6350c77c4c173bc5eac22d38a3d8" prefix="" category="inline-code"></block></block>
+  <block id="8f94293e801572ab9458b1e91111b45b" category="list-text">스택의 논리적 첫 번째 쉘프부터 시작하여 스택의 각 IOM A가 연결될 때까지 IOM A 포트 3을 다음 쉘프의 IOM A 포트 1에 연결합니다.</block>
+  <block id="a73aaf062bae9a1d7a52d1bdd78a1927" category="section-title">브리지 연결을 확인하고 FC-to-SAS 브리지를 컨트롤러 FC 포트에 케이블로 연결합니다</block>
+  <block id="40eba83ddff63a60c0f3132156cbb034" category="paragraph">2노드 브리지가 연결된 MetroCluster 구성에서는 컨트롤러 FC 포트에 브리지를 케이블로 연결해야 합니다.</block>
+  <block id="3ce46fc9a15b5c37d69e1d5ae43448c1" category="list-text">[[step1-verify-detect]]] 각 브리지가 연결되어 있는 디스크 드라이브와 디스크 쉘프를 모두 감지할 수 있는지 확인합니다.</block>
+  <block id="78d9123f52b553c11386801c7e6ee30c" category="list-text">명령 출력에 브리지가 스택의 올바른 디스크 및 디스크 쉘프에 연결되었는지 확인합니다.</block>
+  <block id="84be3f4668a661e6d6ab8a9c8e8b7640" category="list-text">[[step3-cable-each-bridge]] 각 브리지를 컨트롤러 FC 포트에 케이블 연결:</block>
+  <block id="1832e58c6444b28a1738bf5e7d5f4bad" category="list-text">브리지의 FC 포트 1을 클러스터_A에 있는 컨트롤러의 FC 포트에 케이블 연결합니다</block>
+  <block id="147fb5a8c36cf6f6239310bbf3fbd96d" category="list-text">브리지의 FC 포트 2를 클러스터_B에 있는 컨트롤러의 FC 포트에 케이블 연결합니다</block>
+  <block id="620ef8e255d79ca87184c0f6bd5b96c6" category="list-text">컨트롤러가 4중 포트 FC 어댑터로 구성된 경우 스토리지 스택 양 끝에 있는 브리지가 같은 ASIC에 있는 두 개의 FC 포트에 연결되어 있지 않은지 확인하십시오. 예를 들면 다음과 같습니다.</block>
+  <block id="7def08188c3514b9c48ff9e90fc4b0e8" category="list-text">포트 A와 포트 b는 동일한 ASIC를 공유합니다.</block>
+  <block id="02ab53167e774ae8d9d95cd3bfbfc09a" category="list-text">포트 c 와 포트 d 는 동일한 ASIC를 공유합니다.</block>
+  <block id="00476bfdbf527b84c0b7fbcbde326f75" category="paragraph">이 예에서는 FC_bridge_a_1을 포트 A에 연결하고 FC_bridge_A2를 포트 C에 연결합니다</block>
+  <block id="db25c93b70e2d449bc0eacd997bc5392" category="list-text">컨트롤러에 둘 이상의 FC 어댑터가 구성되어 있는 경우, 스토리지 스택의 양 끝에 있는 브리지를 같은 어댑터에 연결하지 마십시오.</block>
+  <block id="860a61ba6dae3941046ced6d468fe4e9" category="paragraph">이 시나리오에서는 FC_bridge_a_1을 온보드 FC 포트에 연결하고 FC_bridge_a_2를 확장 슬롯에 있는 어댑터의 FC 포트에 연결해야 합니다.</block>
+  <block id="fdd11dfe0e9d69317902be2abf4845cf" category="inline-image-macro">클러스터 피어링 네트워크 그림</block>
+  <block id="56571215fb83a5614f4f1ed3deb7e93c" category="paragraph"><block ref="56571215fb83a5614f4f1ed3deb7e93c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c451d21d9b1e4faa6b241f172e690c0b" category="paragraph"><block ref="deceade8c0d17544f65a6ede664b23e2" prefix="" category="inline-code"></block></block>
+  <block id="be4fd0012ddc006ea303591c9df6f76d" category="paragraph"><block ref="39b06b9a26b49c3db6d9409a6abaa9d8" prefix="" category="inline-code"></block></block>
+  <block id="9e1d9b9e8b88355df08194559af6865a" category="summary">스위치오버 중에는 특정 작업을 수행하지 않아야 합니다.</block>
+  <block id="fa33dcb38c0cd6e15dd757f1ef3072ee" category="doc">MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다</block>
+  <block id="5722cde27dfa05f795a5466b6d0859c9" category="paragraph">시스템이 전환 중일 때는 특정 작업을 수행하지 않아야 합니다. 시스템 전환 시 제한된 작업에 대해 알아봅니다.</block>
+  <block id="b72a4837907e7fef0771c42da901c811" category="section-title">스위치오버 시 작업이 제한됩니다</block>
+  <block id="1b5f91752d52b3bac4319cf07ea0efb8" category="paragraph">다음 작업은 시스템이 전환 중일 때 지원되지 않습니다.</block>
+  <block id="272c8dfc8e0821088d85ed5d0fe037a8" category="list-text">Aggregate 및 볼륨 생성 또는 삭제</block>
+  <block id="d825dd35fde2fe33a56ef95c52f545a0" category="list-text">SVM 생성 또는 삭제</block>
+  <block id="8c120d60e412429a6f43b748c02dc233" category="list-text">LIF 생성 또는 삭제</block>
+  <block id="9cc6607cba1650bc799439425f9b085e" category="list-text">디스크 추가 또는 제거(복구 절차의 일부로 디스크를 교체하는 경우에만 해당)</block>
+  <block id="8fe0d36b4759e6e40b887b096584644e" category="list-text">SnapMirror SVM DR에 대한 구성 변경 수행</block>
+  <block id="d6509169a6409458c70d9934cd8159d0" category="list-text">기존 브로드캐스트 도메인을 수정하거나 새 브로드캐스트 도메인을 만듭니다</block>
+  <block id="0e4fc6663e95531e1c48cb8fcdc5fc7c" category="list-text">네트워크 서브넷을 수정합니다</block>
+  <block id="be2a1f6ebcf2096180a7211fc2d40f49" category="section-title">전환 시 하드웨어 교체</block>
+  <block id="1bf38e1e76b1ffa01784928faef533bd" category="paragraph">시스템이 스위치오버 중일 때 컨트롤러 하드웨어를 교체하려면 다음 절차를 따르십시오.</block>
+  <block id="35ee9e73034b599a0e2236f1e215fb3d" category="list-text">스위치오버가 아닌 사이트에서 동일한 유형의 컨트롤러를 교체해야 하는 경우 ~ 절차를 따릅니다<block ref="9b067f6cfdd46edd11b6f92353f05956" category="inline-link-macro-rx"></block>.</block>
+  <block id="787b5b0c67b18976c91dc3f6628778e0" category="list-text">정상 사이트에서 노드 스위치를 전환하는 동안 컨트롤러 모듈과 섀시를 교체해야 하는 경우 두 컨트롤러를 모두 종료하고 에 절차를 <block ref="9b067f6cfdd46edd11b6f92353f05956" category="inline-link-macro-rx"></block>수행하십시오.</block>
+  <block id="49ad2bb3d2de07281d3d8fd2e16644ed" category="list-text">컨트롤러를 다른 유형의 컨트롤러로 교체해야 하는 경우 의 구성 절차를 <block ref="1bee30f9c5932b39ca60631e46d351c4" category="inline-link-macro-rx"></block>따르십시오.</block>
+  <block id="e9e319505f06fc728bd8dcb2a9b67412" category="list-text">컨트롤러 장애로 인해 시스템이 전환 중이거나 스위치오버 중에 컨트롤러 장애가 발생한 경우 먼저 컨트롤러 하드웨어를 교체하고 스위치백을 수행한 다음 컨트롤러 업그레이드를 수행해야 합니다.</block>
+  <block id="d54ffc167bc880d77acd9d1b6d020080" category="list-text">컨트롤러 하드웨어를 교체하고 스위치백을 수행하려면 을 참조하십시오<block ref="9b067f6cfdd46edd11b6f92353f05956" category="inline-link-macro-rx"></block>.</block>
+  <block id="f63242f4292325b063838517abc2c1a1" category="list-text">하드웨어를 교체한 후 의 절차에 따라 컨트롤러 업그레이드를 <block ref="1bee30f9c5932b39ca60631e46d351c4" category="inline-link-macro-rx"></block>수행합니다.</block>
+  <block id="1dc725a140606a258f54d59d9ad3d9bd" category="list-text">정상적인 클러스터의 모든 동기화 대상 SVM이 휴면 상태인지 확인합니다("'stop'"의 운영 상태 표시).</block>
+  <block id="5dfed22feb54647dbd9e9ae827290f6b" category="paragraph"><block ref="67611e9f528c6078257c414670af6b52" prefix="" category="inline-code"></block></block>
+  <block id="1225fe0de146a130add7eeefae9e0925" category="list-text">재해 클러스터에서 동기화 소스 SVM이 실행 중인지 확인합니다.</block>
+  <block id="ad29c49a8377862a59f9aae0ab4431cd" category="paragraph">LIF 배치가 올바른지 확인합니다. 그런 다음 이전 컨트롤러에서 VLAN 및 인터페이스 그룹을 제거하고 컨트롤러를 물리적으로 제거합니다.</block>
+  <block id="253982549e381b6f58f66b3e289a0a83" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="45cc57eb3654a2ae89efabc6fb9d271a" category="inline-xref-macro-rx"></block>.</block>
+  <block id="ba20cbe478ea7b912f1d044734df2884" category="list-text">[[upgrades_manual_without_matching_ports]] 브로드캐스트 도메인을 수정하여 삭제되어야 하는 VLAN 및 물리적 포트를 제거합니다.</block>
+  <block id="ae359c5763df3f6130f697d17d090551" category="admonition">스위치백을 수행하기 전에 데이터 LIF 위치가 새 노드에서 올바른지 확인해야 합니다. 구성을 다시 전환하면 ONTAP은 LIF에서 사용하는 홈 포트에서 트래픽을 다시 시작하려고 합니다. 스위치 포트 및 VLAN에 대한 홈 포트 연결이 잘못되면 I/O 장애가 발생할 수 있습니다.</block>
+  <block id="1c780702501fd89538731057505e0a04" category="list-text">스위치백 전에 LIF가 적절한 노드 및 포트에서 호스팅되는지 확인합니다.</block>
+  <block id="bc12d3bc2a2c1526b655930b56efc183" category="list-text">LIF를 표시하고 각 데이터 LIF가 올바른 홈 포트를 사용 중인지 확인합니다.</block>
+  <block id="b98ffe19185977668c0712d9626bb6b1" category="list-text">올바른 홈 포트를 사용하고 있지 않은 LIF를 수정합니다.</block>
+  <block id="823bc5ae6e724dd8994efcc4dbeb49d2" category="paragraph">명령에서 오류가 반환되면 포트 구성을 재정의할 수 있습니다.</block>
+  <block id="ec14487a214982a1ea6572636724761f" category="paragraph"><block ref="afdc229346561af3e5aba3a6d67eea09" prefix="" category="inline-code"></block></block>
+  <block id="c9ba655979127851f6a6f01489815e47" category="list-text">모든 데이터 LIF가 이제 올바른 홈 포트에 있는지 확인합니다.</block>
+  <block id="fd7b222b3cb6aff1e0aef0b1e7a16998" category="paragraph">새 컨트롤러에서 네트워킹을 처음 재개하려면 LIF 배치가 올바른지 확인하고 이전 컨트롤러의 네트워킹 구성을 제거합니다.</block>
+  <block id="ef1038ce81a2c9d70181057dd381a59a" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="186451ebe57c46550834233237ebac90" category="inline-xref-macro-rx"></block>.</block>
+  <block id="3432abc562d1049e115fc0bcb6f569ab" category="list-text">[[upgrades_assisted_without_matching_ports]] 브로드캐스트 도메인을 수정하여 삭제해야 하는 VLAN 및 물리적 포트를 제거합니다.</block>
+  <block id="07bfa9093a8ef293dfd6099e38fde255" category="list-text">MetroCluster가 올바르게 구성되어 있는지 확인합니다. 노드 상태 확인:</block>
+  <block id="d64694bac02c7b4eea890e175a53a0c7" category="paragraph">자동 스위치백 작업을 진행하기 전에 LIF가 적절한 노드에 호스팅되는지 확인하십시오.</block>
+  <block id="db85d3fd5e7d7beaa319d4ebe299145b" category="sidebar">시스템 전환 시 제한 사항</block>
 </blocks>

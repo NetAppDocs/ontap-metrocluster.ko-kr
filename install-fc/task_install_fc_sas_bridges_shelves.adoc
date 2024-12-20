@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, installing, fc-to-sas, fc, sas, bridges, disk, shelves, atto, fibrebridge 
 summary: 구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다. 
 ---
-= FC-to-SAS 브릿지 및 SAS 디스크 쉘프 설치
+= FC-to-SAS 브릿지와 SAS 디스크 쉘프를 설치합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -89,7 +89,7 @@ FiberBridge 7600N 및 7500N 브리지 부착 시 제한 사항 및 고려 사항
 |===
 
 
-== 설치 준비 중
+== 설치를 준비합니다
 
 새 MetroCluster 시스템의 일부로 브리지를 설치할 준비가 되면 브리지의 설치 및 구성 요구 사항을 충족하는 등 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 기타 요구사항으로는 필요한 문서 다운로드, ATTO Quicknav 유틸리티 및 브리지 펌웨어 등이 있습니다.
 
@@ -112,7 +112,8 @@ ATTO 제품 릴리스 노트_에는 지원되는 웹 브라우저의 최신 목�
 
 .단계
 . 디스크 쉘프 모델의 _설치 및 서비스 가이드_를 다운로드하십시오.
-. FiberBridge 모델에 제공된 링크를 사용하여 ATTO 웹 사이트에 액세스하고 설명서 및 Qunickav 유틸리티를 다운로드합니다.
++
+.. FiberBridge 모델에 제공된 링크를 사용하여 ATTO 웹 사이트에 액세스하고 설명서 및 Qunickav 유틸리티를 다운로드합니다.
 +
 [NOTE]
 ====
@@ -121,6 +122,8 @@ ATTO 제품 릴리스 노트_에는 지원되는 웹 브라우저의 최신 목�
 ATTO Fiberbridge Description(ATTO Fiberbridge 설명) 페이지에 제공된 링크를 사용하여 ATTO 웹 사이트의 이 콘텐츠 및 기타 콘텐츠에 액세스할 수 있습니다.
 
 ====
+
+
 . 권장되는 브리지 관리 인터페이스, ATTO ExpressNAV GUI 및 ATTO Qunav 유틸리티를 사용하는 데 필요한 하드웨어 및 정보를 수집합니다.
 +
 .. 기본 사용자 이름과 암호가 아닌 사용자 이름 및 암호를 확인합니다(브리지 액세스용).
@@ -139,7 +142,7 @@ ATTO Fiberbridge Description(ATTO Fiberbridge 설명) 페이지에 제공된 링
 
 
 
-== FC-to-SAS 브리지 및 SAS 쉘프 설치
+== FC-to-SAS 브리지 및 SAS 쉘프를 설치합니다
 
 시스템이 ""설치 준비""의 모든 요구 사항을 충족하는지 확인한 후 새 시스템을 설치할 수 있습니다.
 
@@ -187,7 +190,7 @@ ONTAP 9.8부터 브리지의 _ 대역내 관리 _ 가 기본적으로 지원되�
 이 작업은 브리지 관리를 위해 대역내 관리를 사용하지 않는 경우 * 필요합니다. 이 경우 이더넷 관리 포트를 통해 브리지를 구성해야 합니다.
 
 .단계
-. FiberBridge 7600N 브리지의 직렬 포트에 직렬 케이블을 연결하여 브리지의 콘솔 인터페이스에 액세스합니다.
+. 직렬 케이블을 FiberBridge 7600N 브리지의 직렬 포트에 연결하여 브리지 콘솔 인터페이스에 액세스합니다.
 . 콘솔을 사용하여 액세스 서비스를 활성화한 다음 구성을 저장합니다.
 +
 "이것도 안 됐습니다.
@@ -233,7 +236,7 @@ SNMP는 별도의 enable 명령을 필요로 하는 유일한 프로토콜입니
 
 
 
-=== FC-to-SAS 브릿지 구성
+=== FC-to-SAS 브리지를 구성합니다
 
 FC-to-SAS 브릿지의 모델을 케이블로 연결하기 전에 FiberBridge 소프트웨어에서 설정을 구성해야 합니다.
 
@@ -358,7 +361,7 @@ NOTE: 선택한 FCDataRate 속도는 브리지 포트가 연결되는 컨트롤�
 
 CLI를 사용하는 경우 다음 명령을 실행해야 합니다.
 
-'Set FCDataRate_port-number__port-speed_'
+`set FCDataRate <port-number> <port-speed>`
 
 --
 .. FiberBridge 7500N 브리지를 구성하는 경우 포트가 "PTP"에 사용하는 연결 모드를 구성합니다.
@@ -370,14 +373,14 @@ NOTE: FiberBridge 7600N 브리지를 구성할 때는 FCConnMode 설정이 필�
 CLI를 사용하는 경우 다음 명령을 실행해야 합니다.
 
 +
-'Set FCConnMode_port-number_PTP'를 선택합니다
+`set FCConnMode <port-number> ptp`
 
 .. FiberBridge 7600N 또는 7500N 브리지를 구성하는 경우 FC2 포트를 구성하거나 비활성화해야 합니다.
 +
 *** 두 번째 포트를 사용하는 경우 FC2 포트에 대해 이전 하위 단계를 반복해야 합니다.
 *** 두 번째 포트를 사용하지 않는 경우 포트를 비활성화해야 합니다.
 +
-'FCPortDisable_port-number _'
+`FCPortDisable <port-number>`
 
 +
 다음 예는 FC 포트 2의 비활성화 상태를 보여줍니다.
@@ -484,23 +487,20 @@ link:../maintain/index.html["MetroCluster 부품 유지 관리"]
 
 
 
-.관련 정보
-link:task_fb_new_install.html["FC-to-SAS 브리지의 대역 내 관리"]
 
 
-
-=== 브리지에 디스크 쉘프 케이블링
+=== 디스크 쉘프를 브리지에 케이블로 연결합니다
 
 디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다.
 
 .선택
-* <<cabling_fb_7600N_7500N_with_iom12,IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다>>
-* <<cabling_fb_7600N_7500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 쉘프에 케이블 연결>>
+* <<cabling_fb_7600N_7500N_with_iom12,IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다>>
+* <<cabling_fb_7600N_7500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 디스크 쉘프에 FiberBridge 7600N 또는 7500N 브리지를 연결합니다>>
 
 
 
 
-==== IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다
+==== IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다
 
 브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다.
 
@@ -510,7 +510,7 @@ link:task_fb_new_install.html["FC-to-SAS 브리지의 대역 내 관리"]
 .단계
 . 각 스택의 디스크 쉘프를 데이지 체인 방식으로 연결:
 +
-.. 스택의 논리적 첫 번째 쉘프로 시작하여 IOM A가 연결될 때까지 IOM A 포트 3을 다음 쉘프의 IOM A 포트 1에 연결합니다.
+.. 스택의 논리적 첫 번째 쉘프부터 시작하여 스택의 각 IOM A가 연결될 때까지 IOM A 포트 3을 다음 쉘프의 IOM A 포트 1에 연결합니다.
 .. IOM B에 대해 이전 하위 단계를 반복합니다
 .. 각 스택에 대해 이전 하위 단계를 반복합니다.
 
@@ -545,7 +545,7 @@ image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks
 
 
 
-==== IOM6 또는 IOM3 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 선반과 케이블로 연결합니다
+==== IOM6 또는 IOM3 모듈을 사용하여 쉘프에 케이블을 장착하여 FiberBridge 7600N 또는 7500N 브리지를 연결합니다
 
 브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 7600N 또는 7500N 브리지는 미니 SAS 커넥터를 사용하며 IOM6 또는 IOM3 모듈을 사용하는 쉘프를 지원합니다.
 
@@ -582,7 +582,7 @@ image::../media/mcc_cabling_bridge_and_sas_stack_with_7500n_four_stacks.gif[7500
 
 
 
-=== 브리지 연결 확인 및 브리지 FC 포트 케이블 연결
+=== 브리지 FC 포트의 연결 및 케이블 연결을 확인합니다
 
 각 브리지가 모든 디스크 드라이브를 감지할 수 있는지 확인한 다음 각 브리지를 로컬 FC 스위치에 케이블로 연결해야 합니다.
 
@@ -664,7 +664,7 @@ NOTE: 출력 시작 부분에 ""응답 잘림"" 텍스트가 나타나면 텔넷
  a| 
 .. 케이블을 반복하여 SAS 케이블이 느슨한지 확인하거나 SAS 케이블을 수정합니다.
 +
-<<브리지에 디스크 쉘프 케이블링>>
+<<디스크 쉘프를 브리지에 케이블로 연결합니다>>
 
 .. 반복합니다 <<step1_bridge,1단계>>.
 
@@ -682,13 +682,13 @@ IMPORTANT: FiberBridge 7500N 브리지의 두 번째 FC 포트 연결은 조닝�
 
 
 .관련 정보
-link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
-
 ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다.
 
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 
 
-== FiberBridge 브리지 고정 또는 고정 해제
+
+== FiberBridge 브리지를 고정하거나 고정하지 않습니다
 
 ONTAP 9.5부터 브리지에서 안전하지 않을 수 있는 이더넷 프로토콜을 쉽게 비활성화하여 브리지를 보호할 수 있습니다. 이렇게 하면 브리지의 이더넷 포트가 비활성화됩니다. 이더넷 액세스를 다시 설정할 수도 있습니다.
 

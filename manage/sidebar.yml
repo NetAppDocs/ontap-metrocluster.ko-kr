@@ -6,6 +6,8 @@ entries:
   entries:
   - title: 개요
     url: "/manage/task_perform_switchover_for_tests_or_maintenance.html"
+  - title: 시스템 전환 시 제한 사항
+    url: "/manage/switchover-limitations.html"
   - title: 시스템을 전환할 준비가 되었는지 확인합니다
     url: "/manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html"
   - title: 협상된 전환 전에 맞춤형 AutoSupport 메시지를 전송하십시오

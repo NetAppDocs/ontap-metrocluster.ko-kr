@@ -31,34 +31,41 @@ aggr_b2    227.1GB   227.1GB    0% online       0 node_B_2   raid_dp,
                                                                    mirrored,
                                                                    normal
 ----
-. 정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태이고("가동 상태"를 나타냄), 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.
+. 정상적인 클러스터의 모든 동기화 대상 SVM이 휴면 상태인지 확인합니다("'stop'"의 운영 상태 표시).
++
+`vserver show -subtype sync-destination`
+
++
+[listing]
+----
+node_B_1::> vserver show -subtype sync-destination
+                                 Admin    Operational  Root
+Vserver       Type    Subtype    State    State        Volume    Aggregate
+-----------   ------- ---------- -------- ----------   --------  ----------
+...
+cluster_A-vs1a-mc data sync-destination
+                               running    stopped    vs1a_vol   aggr_b2
+
+----
++
+MetroCluster 구성의 동기화 대상 애그리게이트에는 식별을 위해 이름에 ""-mc" 접미사가 자동으로 추가됩니다.
+
+. 재해 클러스터에서 동기화 소스 SVM이 실행 중인지 확인합니다.
 +
 'vserver show-subtype sync-source'를 선택합니다
 
 +
 [listing]
 ----
-node_B_1::> vserver show -subtype sync-source
-                               Admin      Root                       Name    Name
-Vserver     Type    Subtype    State      Volume     Aggregate       Service Mapping
------------ ------- ---------- ---------- ---------- ----------      ------- -------
+node_A_1::> vserver show -subtype sync-source
+                                  Admin    Operational  Root
+Vserver        Type    Subtype    State    State        Volume     Aggregate
+-----------    ------- ---------- -------- ----------   --------   ----------
 ...
-vs1a        data    sync-source
-                               running    vs1a_vol   node_B_2        file    file
-                                                                     aggr_b2
+vs1a           data    sync-source
+                                  running  running    vs1a_vol  aggr_b2
 
-node_A_1::> vserver show -subtype sync-destination
-                               Admin      Root                         Name    Name
-Vserver            Type    Subtype    State      Volume     Aggregate  Service Mapping
------------        ------- ---------- ---------- ---------- ---------- ------- -------
-...
-cluster_A-vs1a-mc  data    sync-destination
-                                      stopped    vs1a_vol   sosb_      file    file
-                                                                       aggr_b2
 ----
-+
-MetroCluster 구성의 동기화 대상 애그리게이트에는 식별을 위해 이름에 ""-mc" 접미사가 자동으로 추가됩니다.
-
 . MetroCluster operation show 명령을 사용하여 스위치백 작업이 성공했는지 확인합니다.
 +
 |===

@@ -1,0 +1,52 @@
+---
+permalink: manage/switchover-limitations.html 
+sidebar: sidebar 
+keywords: switchover, perform, heal, operation, restore, metrocluster, functionality, fc, configuration, ip, limitations, 
+summary: 스위치오버 중에는 특정 작업을 수행하지 않아야 합니다. 
+---
+= MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+시스템이 전환 중일 때는 특정 작업을 수행하지 않아야 합니다. 시스템 전환 시 제한된 작업에 대해 알아봅니다.
+
+
+
+== 스위치오버 시 작업이 제한됩니다
+
+다음 작업은 시스템이 전환 중일 때 지원되지 않습니다.
+
+* Aggregate 및 볼륨 생성 또는 삭제
+* SVM 생성 또는 삭제
+* LIF 생성 또는 삭제
+* 디스크 추가 또는 제거(복구 절차의 일부로 디스크를 교체하는 경우에만 해당)
+* SnapMirror SVM DR에 대한 구성 변경 수행
+* 기존 브로드캐스트 도메인을 수정하거나 새 브로드캐스트 도메인을 만듭니다
+* 네트워크 서브넷을 수정합니다
+
+
+
+
+== 전환 시 하드웨어 교체
+
+시스템이 스위치오버 중일 때 컨트롤러 하드웨어를 교체하려면 다음 절차를 따르십시오.
+
+* 스위치오버가 아닌 사이트에서 동일한 유형의 컨트롤러를 교체해야 하는 경우 ~ 절차를 따릅니다link:../disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 컨트롤러 또는 스토리지 장애로부터 복구합니다"].
++
+** 정상 사이트에서 노드 스위치를 전환하는 동안 컨트롤러 모듈과 섀시를 교체해야 하는 경우 두 컨트롤러를 모두 종료하고 에 절차를 link:../disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 컨트롤러 또는 스토리지 장애로부터 복구합니다"]수행하십시오.
+
+
+* 컨트롤러를 다른 유형의 컨트롤러로 교체해야 하는 경우 의 구성 절차를 link:../upgrade/concept_choosing_controller_upgrade_mcc.html["컨트롤러 업그레이드 절차를 선택합니다"]따르십시오.
++
+** 컨트롤러 장애로 인해 시스템이 전환 중이거나 스위치오버 중에 컨트롤러 장애가 발생한 경우 먼저 컨트롤러 하드웨어를 교체하고 스위치백을 수행한 다음 컨트롤러 업그레이드를 수행해야 합니다.
++
+... 컨트롤러 하드웨어를 교체하고 스위치백을 수행하려면 을 참조하십시오link:../disaster-recovery/task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 컨트롤러 또는 스토리지 장애로부터 복구합니다"].
+... 하드웨어를 교체한 후 의 절차에 따라 컨트롤러 업그레이드를 link:../upgrade/concept_choosing_controller_upgrade_mcc.html["컨트롤러 업그레이드 절차를 선택합니다"]수행합니다.
+
+
+
+
+

@@ -3029,10 +3029,19 @@ Fabric OS 9.0.1부터는 SNMPv2가 Brocade 스위치의 상태 모니터링에 �
 [NOTE]
 ====
 * 다른 소스의 간섭을 방지하려면 전용 네트워크에 브리지 및 노드 관리 LIF를 배치해야 합니다.
-* 상태 모니터링을 위한 전용 네트워크를 사용하는 경우 각 노드에는 해당 전용 네트워크에 노드 관리 LIF가 있어야 합니다.
+* 상태 모니터링을 위해 전용 네트워크를 사용하는 경우 각 노드에 해당 전용 네트워크 내에 노드 관리 LIF가 있어야 합니다.
 
 
 ====
+NetApp에서는 MetroCluster FC 구성의 구성 요소를 모니터링하기 위해 다음 툴만 지원합니다.
+
+* BNA(Brocade Network Advisor)
+* Brocade 산나브
+* Active IQ Config Advisor
+* NetApp 상태 모니터링(ONTAP)
+* MetroCluster 데이터 수집기(MC_DC)
+
+
 
 
 ==== 상태 모니터링을 위해 MetroCluster FC 스위치 구성
