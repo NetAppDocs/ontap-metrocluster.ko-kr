@@ -2591,17 +2591,8 @@
   <block id="5b56c16675df5128ad1509d1d30f5292" category="list-text">컨트롤러 또는 섀시의 시스템 상태가 표시되지 않으면 HA 상태를 설정합니다.</block>
   <block id="7e658f7d65797e8810c06b822120b6e2" category="section-title">MetroCluster IP bootarg 변수 설정</block>
   <block id="78a0010898f446d1e157f43c3797a937" category="paragraph">특정 MetroCluster IP bootarg 값은 새 컨트롤러 모듈에서 구성해야 합니다. 이 값은 이전 컨트롤러 모듈에 구성된 값과 일치해야 합니다.</block>
-  <block id="ae33f232a65af78b38ef0d615f9b4685" category="list-text">업그레이드하는 노드가 AFF A400, FAS8300 또는 FAS8700 모델인 경우 LOADER 프롬프트에서 다음 boots를 설정합니다.</block>
   <block id="24fd796e809805ceabe716e5a810aaeb" category="paragraph">'setenv bootarg.MCC.port_a_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address, vlan-id_'</block>
   <block id="6c327b80857b5a3cbd49a3950dfabb41" category="paragraph">'setenv bootarg.MCC.port_b_ip_config_local -ip-address/local-ip-mask, 0, HA-partner-ip-address, dr-partner-ip-address, dr-aux-partnerip-address, vlan-id_'</block>
-  <block id="b776a192613301675eb8a9978b122c2e" category="admonition">인터페이스가 기본 VLAN을 사용하는 경우에는 VLAN-id가 필요하지 않습니다.</block>
-  <block id="f15ac8125bcf03a0a837e92a4cc50161" category="paragraph">다음 명령을 실행하면 첫 번째 네트워크에 대해 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_1-new에 대한 값이 설정됩니다.</block>
-  <block id="e74024ee9d7f8e95f3e626a5c873a315" category="paragraph">다음 명령을 실행하면 첫 번째 네트워크에 대해 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_2-new에 대한 값이 설정됩니다.</block>
-  <block id="44f9e07ea9ebd3af9d897a1fd22a2893" category="paragraph">다음 예에서는 기본 VLAN을 사용할 때 node_B_1-new에 대한 명령을 보여 줍니다.</block>
-  <block id="39587765d8074fb3d6e4963abb2b1998" category="paragraph">다음 예에서는 기본 VLAN을 사용할 때 node_B_2-new에 대한 명령을 보여 줍니다.</block>
-  <block id="d81eefa1c7e616946da2c21d8091ff22" category="list-text">업그레이드 중인 노드가 이전 단계에 나열된 시스템이 아닌 경우, 로더 프롬프트에서 남아 있는 각 노드에 대해 다음 boots를 local_ip/mask로 설정합니다.</block>
-  <block id="ad660c4b2e3b57b6c520334fa6e9e973" category="paragraph">다음 명령을 실행하면 node_B_1-new에 대한 값이 설정됩니다.</block>
-  <block id="e99a6d6afe39a84ad08205e484b19f40" category="paragraph">다음 명령을 실행하면 node_B_2-new에 대한 값이 설정됩니다.</block>
   <block id="b6eb4854ed8abef4df5eb8ee192a6d06" category="list-text">새 노드의 LOADER 프롬프트에서 UUID를 설정합니다.</block>
   <block id="5f9339f0fc5a25b78e34e163e9133809" category="paragraph">'setenv bootarg.mgwd.partner_cluster_uuuid_partner-cluster-UUID_'</block>
   <block id="5229b6390d81a107845a706c9c0bd6c6" category="paragraph">'setenv bootarg.mgwd.cluster_uuuid_local-cluster-UUID_'</block>
@@ -11835,17 +11826,6 @@
   <block id="8351b67dee4e0c692cf4f28e83b54b0a" category="paragraph">자동화 작업이 전환 작업을 시작합니다. 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다<block ref="5fb641c5977b93de82b81e36db0454cf" prefix=" " category="inline-code"></block> 앞서 모였습니다.</block>
   <block id="956cd19055bcda776c4aa38d849f5270" category="paragraph">디렉토리 목록에는 커널 파일 ONTAP-version_image.tgz가 있는 netboot 폴더가 포함되어야 합니다</block>
   <block id="d58685908c79a70d5ff1a6db6c223402" category="paragraph">ONTAP-version_image.tgz 파일은 추출할 필요가 없습니다.</block>
-  <block id="f3b7262f888ca591450dde27d2e71aaf" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_1에 대한 값을 설정합니다.</block>
-  <block id="65197a1036db006851c7578b94728a50" category="paragraph">다음 예에서는 첫 번째 네트워크에 VLAN 120을 사용하고 두 번째 네트워크에 대해 VLAN 130을 사용하여 node_B_2에 대한 값을 설정합니다.</block>
-  <block id="bf8bfdf49f6f753bf2394e6dce1882b0" category="list-text">node_B_1에서 UUID를 설정합니다.</block>
-  <block id="5eac2f82a290cf5f7626a80d0e2c07aa" category="paragraph">다음 예에서는 node_B_1에서 UUID를 설정하기 위한 명령을 보여 줍니다.</block>
-  <block id="f2925ea98441cdf274d96211ca1ada37" category="list-text">node_B_2에서 UUID 설정:</block>
-  <block id="812568fdfa215d28245c0e27f1e6f5ce" category="paragraph">다음 예에서는 node_B_2에서 UUID를 설정하기 위한 명령을 보여 줍니다.</block>
-  <block id="384df789341519934d49ceef6f3f8c5e" category="admonition">를 클릭합니다<block ref="12f728ceb5fc82e860ec81c090369ca5" prefix=" " category="inline-code"></block> 변수를 * Original * 컨트롤러 모듈 node_B_1의 sys-id로 설정해야 합니다.</block>
-  <block id="1e9e20507e30afe8b79feaf697336037" category="list-text">node_B_1에서 변수를 설정합니다.</block>
-  <block id="96a30b5e5305a12e0752b81f173e6fc6" category="paragraph">다음 예제는 node_B_1에서 값을 설정하는 명령을 보여 줍니다.</block>
-  <block id="ed8d1dfb2569c85ee7b108aa3e6a5466" category="list-text">node_B_2에서 변수를 설정합니다.</block>
-  <block id="bacd790164cac2c217ca06a37ce78e9c" category="paragraph">다음 예제는 node_B_2에서 값을 설정하는 명령을 보여 줍니다.</block>
   <block id="ca0df34f59e377032b2f4b42096b5055" category="admonition">MetroCluster IP 시스템에 고급 디스크 파티셔닝이 구성되어 있는 경우 을 실행하여 DR 파트너 시스템 ID를 포함해야 합니다<block ref="1d9572d24113365244a97e4cb81d5a77" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="3d76ebef670d0f7bd3eab697fb186812" category="paragraph">옵션 ""6"" 후 재부팅 중 하나가 진행되는 동안 확인 메시지가 표시됩니다<block ref="adeeb123a02ab1bcf79fc4bdffdd3b9f" prefix=" " category="inline-code"></block> 나타납니다. 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="16de7447f84bfaba1c8cf72b93fbf6ee" category="paragraph"><block ref="16de7447f84bfaba1c8cf72b93fbf6ee" category="inline-link-macro-rx"></block></block>
@@ -13567,11 +13547,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ef53a1465284a8eba202285b88ef0eb2" category="section-title">새 플랫폼을 수용하도록 스위치 RCF를 업데이트합니다</block>
   <block id="8aedcbe06dc4ee85bfbfe46c6a62713c" category="paragraph">현재 업그레이드 중인 컨트롤러가 포함된 사이트에서 이 작업을 수행합니다. 이 절차에 나와 있는 예에서는 먼저 site_B를 업그레이드합니다.</block>
   <block id="097b5e4a3935e7904f9e57e130711c8b" category="inline-link-macro">NVIDIA IP SN2100 스위치 RCF 파일을 다운로드하고 설치합니다</block>
-  <block id="a0738c0401f656b59d11c3e37bee47f0" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <block ref="a74b37b1135e46e1745610d5ef77ba43" category="inline-xref-macro-rx"></block>사용합니다.</block>
   <block id="080c153c3d5c3f5a7519058826d07cb8" category="paragraph"><block ref="579363eabf2a70eb9e6c8d9b1bca9609" prefix="" category="inline-code"></block></block>
   <block id="ba2a7c5e352255c376b6b0d315a1ffc1" category="paragraph"><block ref="3edfeb45325920fedac6b21b22c6872d" prefix="" category="inline-code"></block></block>
-  <block id="862fde34d3847472911a47c752a908d7" category="paragraph"><block ref="89ed4000c8f8ef2820e346fa5400a05a" prefix="" category="inline-code"></block></block>
-  <block id="d45e24cad9f9369e3d68aa5fb105c745" category="paragraph"><block ref="bf4900d508399da9f73f695794148642" prefix="" category="inline-code"></block></block>
   <block id="53eeb8487a1b47736074a390cc992c92" category="paragraph"><block ref="cce414ec64a9c4e23a2e870045abf8dc" prefix="" category="inline-code"></block></block>
   <block id="88e5cedcd18951b04046ff208ab8ff3a" category="paragraph"><block ref="38241bd430968bdc944f07594d46f2ea" prefix="" category="inline-code"></block></block>
   <block id="39531e530d83708f9ed5390dc12c1a07" category="paragraph"><block ref="1a08db264211390895870fb4d46031c2" prefix="" category="inline-code"></block></block>
@@ -13626,9 +13603,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="58d7ca4c8c3e89d8d921fc52e28adc1c" category="list-text">새 노드의 전원을 켜고 프롬프트가 표시되면 Ctrl-C를 누릅니다<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> .</block>
   <block id="b18f9742d77912f838f8a0bc859bbf11" category="list-text"><block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block>프롬프트에서 관리 LIF에 대한 NetBoot 연결을 구성합니다.</block>
   <block id="7c9dbc13c4af0588948dc0974ad07931" category="paragraph">명령을 실행한 후 프롬프트에서 노드가 멈출 때까지<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> 기다립니다.</block>
-  <block id="1eeedf4cd6f5dec243d5f4e1418fc445" category="paragraph">이 작업에서는 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 <block ref="9c150672da580a5dceed21dfb73c4b76" category="inline-xref-macro-rx"></block>사용합니다.</block>
-  <block id="fee55a9e6e115fa7d775bb57b8cb4b87" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1의 값을 설정합니다.</block>
-  <block id="2046d129795b588ef0d8a2657f550cbc" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2의 값을 설정합니다.</block>
   <block id="6efdcf657072c6d286d4dff5b0919f19" category="list-text">원래 시스템이 ADP용으로 구성된 경우 교체 노드의 각<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block> 프롬프트에서 ADP를 사용하도록 설정합니다.</block>
   <block id="2a881aa88a35b35de21b4af29f7c41a7" category="paragraph">이전 시스템 ID는 에서 식별되었습니다. <block ref="315917271da740413467f609180e49f8" category="inline-xref-macro-rx"></block></block>
   <block id="b2d1a6a95156d238b86f82d812e29748" category="admonition">디스크 재할당을 진행하기 전에 노드의 루트 애그리게이트에 속한 pool0 및 pool1 디스크가 출력에 표시되는지 확인해야<block ref="63328c72194085e2f8ff497b866f6d24" prefix=" " category="inline-code"></block> 합니다. 다음 예제에서 출력에는 node_B_1-old가 소유한 pool0 및 pool1 디스크가 나열됩니다.</block>
@@ -14327,4 +14301,30 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="07bfa9093a8ef293dfd6099e38fde255" category="list-text">MetroCluster가 올바르게 구성되어 있는지 확인합니다. 노드 상태 확인:</block>
   <block id="d64694bac02c7b4eea890e175a53a0c7" category="paragraph">자동 스위치백 작업을 진행하기 전에 LIF가 적절한 노드에 호스팅되는지 확인하십시오.</block>
   <block id="db85d3fd5e7d7beaa319d4ebe299145b" category="sidebar">시스템 전환 시 제한 사항</block>
+  <block id="e2b04aa38f9463877227eab80f2afa55" category="list-text">의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID가 <block ref="a74b37b1135e46e1745610d5ef77ba43" category="inline-xref-macro-rx"></block>필요합니다.</block>
+  <block id="1ee9e9c6e0682332b92cf414d56216e5" category="list-text">플랫폼 모델에 따라 매개 변수를 사용하여 VLAN ID를 지정할 수<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 있습니다. 다음 플랫폼에서는 매개 변수를 지원하지<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 않습니다.</block>
+  <block id="2c17b709cf340ae9f4b202df67582f0d" category="list-text">AFF C800, ASA C800, AFF A800 및 ASA A800입니다</block>
+  <block id="9a7bf3cb6e6fcf5bc8021ad8b24c709d" category="list-text">설정하는 MetroCluster bootarg 값은 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 달라집니다.</block>
+  <block id="01c711ec30c5984ab759c03d8ae83dbc" category="paragraph">다음 표에 나열된 시스템은 * 공유 MetroCluster/HA 포트 * 를 사용합니다.</block>
+  <block id="72b13aee8e15cbc1635a37e0cc999b15" category="paragraph">다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.</block>
+  <block id="b4a6f2e0f896be0b4aa0ce4693340515" category="cell">공유 MetroCluster/HA 포트를 사용하는 AFF 및 ASA 시스템</block>
+  <block id="a92298a0da357308bf3f327f1d13f333" category="cell">공유 MetroCluster/HA 포트를 사용하는 FAS 시스템</block>
+  <block id="8f7306dd779bf45e84d3417319068f67" category="list-text">AFF A250, ASA A250</block>
+  <block id="58588e3dc50a2798e7501fa654fd258f" category="list-text">AFF C400, ASA C400</block>
+  <block id="3620dab5844cf978130a9d0a58017f2a" category="list-text">AFF A400, ASA A400</block>
+  <block id="9d4b0febc0f20a3a06297c23c3559983" category="list-text">AFF C800, ASA C800</block>
+  <block id="9576d309dc6946e2591793a503a98da6" category="list-text">AFF A900, ASA A900</block>
+  <block id="1891901e07a2b1183ae0bdb153f73f5b" category="paragraph">수행할 단계는 새 플랫폼 모델에서 사용하는 포트에 따라 다릅니다.</block>
+  <block id="194a07d9daae191baeeb97eb547e1768" category="open-title">공유 클러스터/HA 포트를 사용하는 시스템</block>
+  <block id="66e20f51e3a078b6cbc064932bff53cc" category="list-text">다음 bootargs를 설정합니다.</block>
+  <block id="365c4529a692b9621626b7a16d6f1fcf" category="paragraph"><block ref="44edf5bc5c9ded025ac5ca02d1f1dc5b" prefix="" category="inline-code"></block></block>
+  <block id="b53e7075a1894b2cbd85248fb5a648ef" category="paragraph"><block ref="057e6af1be749fa6fb8d9dd6a88adc62" prefix="" category="inline-code"></block></block>
+  <block id="945d0ede3512e9e4eaadb1711c02216c" category="admonition">인터페이스에서 기본 VLAN ID를 사용하는 경우<block ref="883efb435dfcdbab29a2ff69d0287888" prefix=" " category="inline-code"></block> 매개 변수가 필요하지 않습니다.</block>
+  <block id="b07af26bfbb0ba81d6796450189f5cf8" category="paragraph">다음 예에서는 첫 번째 네트워크에는 VLAN 120을 사용하고 두 번째 네트워크에는 VLAN 130을 사용하는 node_B_1-new에 대한 값을 설정합니다.</block>
+  <block id="a06bd9649be55565fd74562b1ee1756e" category="paragraph">다음 예에서는 첫 번째 네트워크에는 VLAN 120을 사용하고 두 번째 네트워크에는 VLAN 130을 사용하는 node_B_2-new에 대한 값을 설정합니다.</block>
+  <block id="a1909236f08f260f2b52aebf539344be" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1 - new에 대한 값을 설정합니다.</block>
+  <block id="a0436481bda3531d4a5eda5dac0e5608" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2-new에 대한 값을 설정합니다.</block>
+  <block id="1a5991cd222add52b1f5aa51350d470e" category="list-title">공유 MetroCluster/HA 포트를 사용하는 시스템입니다</block>
+  <block id="f4c0383379a5ae93d0b5e4c4f8586e47" category="open-title">공유 클러스터/HA 포트를 사용하는 시스템</block>
+  <block id="fce1683696c48d3d34e98e19d634ae19" category="open-title">공유 MetroCluster/HA 포트를 사용하는 시스템</block>
 </blocks>
