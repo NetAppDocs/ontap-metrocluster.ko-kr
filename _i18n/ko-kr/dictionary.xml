@@ -12371,7 +12371,6 @@
   <block id="ec714ba3bea7bae033524709c8ddb144" category="list-text">'network-admin' 그룹이 생성되었는지 확인합니다.</block>
   <block id="a24bdf92e7d1dc2d2e5714305a56e0eb" category="paragraph"><block ref="77aa57f376fe73c9581fb729ddeb38eb" prefix="" category="inline-code"></block></block>
   <block id="6697365f2e46593a5513af21ee61a084" category="list-text">Broadcom IP 스위치에서 SNMPv3 사용자를 구성합니다.</block>
-  <block id="3289ce0836654122a2c0d3bfd4fab942" category="paragraph">다음 예와 같이 인증 및 개인 정보 암호 주위에 따옴표를 사용해야 합니다.</block>
   <block id="9253168d7e5e9b3b8152a8ff1870743f" category="open-title">Cisco IP 스위치의 경우</block>
   <block id="4a2ec710ab28d8f45e2fdabacdc2dfc6" category="list-text">다음 명령을 실행하여 Cisco IP 스위치에서 SNMPv3 사용자를 구성합니다.</block>
   <block id="a8b5c32b456efe8e0fcb23cd218c6b6c" category="list-text">SNMPv3 사용자가 스위치에 구성되어 있는지 확인합니다.</block>
@@ -14327,4 +14326,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1a5991cd222add52b1f5aa51350d470e" category="list-title">공유 MetroCluster/HA 포트를 사용하는 시스템입니다</block>
   <block id="f4c0383379a5ae93d0b5e4c4f8586e47" category="open-title">공유 클러스터/HA 포트를 사용하는 시스템</block>
   <block id="fce1683696c48d3d34e98e19d634ae19" category="open-title">공유 MetroCluster/HA 포트를 사용하는 시스템</block>
+  <block id="eabf799ca909dc7fa9808c3abb476773" category="paragraph">메시지가 나타나면 인증 암호를 입력합니다.</block>
 </blocks>

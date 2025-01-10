@@ -38,15 +38,17 @@ IMPORTANT: 명령에서 인증 및 개인 정보 보호 프로토콜을 모두 �
 [listing]
 ----
 (IP_switch_1)# config
-(IP_switch_1) (Config)# snmp-server user <user_name> network-admin [auth-md5/auth-sha/noauth] "<auth_password>" [priv-aes128/priv-des] "<priv_password>"
+(IP_switch_1) (Config)# snmp-server user <user_name> network-admin auth-sha priv-aes128
 ----
 +
-다음 예와 같이 인증 및 개인 정보 암호 주위에 따옴표를 사용해야 합니다.
+메시지가 나타나면 인증 암호를 입력합니다.
 
 +
 [listing]
 ----
-snmp-server user admin1 network-admin auth-md5 "password" priv-des "password"
+#snmp-server user admin1 network-admin auth-sha priv-aes128
+
+Enter Authentication Password:
 ----
 
 
