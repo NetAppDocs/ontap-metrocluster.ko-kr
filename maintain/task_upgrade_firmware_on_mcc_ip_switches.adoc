@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, service, upgrade, firmware. ip, switches, cisco, broadcom, efos, nxos, nx-os, software, install 
 summary: MetroCluster IP 스위치에서 펌웨어 업그레이드 
 ---
-= MetroCluster IP 스위치에서 펌웨어 업그레이드
+= MetroCluster IP 스위치에서 펌웨어를 업그레이드합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -63,9 +63,22 @@ Group Cluster Node           State          Mirroring Mode
 +
 [listing]
 ----
-cluster_A::> metrocluster check run
+cluster_A::*> metrocluster check run
+----
++
+작업은 백그라운드에서 실행됩니다.
 
-Last Checked On: 10/1/2014 16:03:37
+.. 를 누릅니다 `metrocluster check run` 작업이 완료되면 다음을 실행합니다.
++
+MetroCluster 체크 쇼
+
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+cluster_A:::*> metrocluster check show
 
 Component           Result
 ------------------- ---------
@@ -73,10 +86,10 @@ nodes               ok
 lifs                ok
 config-replication  ok
 aggregates          ok
-4 entries were displayed.
-
-Command completed. Use the "metrocluster check show -instance" command or sub-commands in "metrocluster check" directory for detailed results.
-To check if the nodes are ready to do a switchover or switchback operation, run "metrocluster switchover -simulate" or "metrocluster switchback -simulate", respectively.
+clusters            ok
+connections         ok
+volumes             ok
+7 entries were displayed.
 ----
 .. 상태 경고가 없는지 확인합니다.
 +

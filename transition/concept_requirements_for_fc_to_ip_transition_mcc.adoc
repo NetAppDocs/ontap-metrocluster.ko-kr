@@ -11,19 +11,28 @@ summary: 전환 프로세스를 시작하기 전에 구성이 요구사항을 �
 
 
 [role="lead"]
-전환 프로세스를 시작하기 전에 구성이 요구사항을 충족하는지 확인해야 합니다.
+전환 프로세스를 시작하기 전에 구성이 요구사항을 충족하는지 확인하십시오.
 
-* 8노드 구성의 경우 모든 노드에서 ONTAP 9.13.1 이상을 실행해야 합니다.
-* 4노드 구성의 경우 모든 노드에서 ONTAP 9.8 이상을 실행해야 합니다.
-* 기존 플랫폼과 새 플랫폼의 조합은 전환이 지원되는 조합이어야 합니다.
+구성이 다음 요구사항을 충족하는 경우 FC-to-IP 전환을 중단 없이 수행할 수 있습니다.
+
+* 8노드 구성의 경우 모든 노드에서 ONTAP 9.13.1 이상을 실행합니다.
+* 4노드 구성의 경우 모든 노드에서 ONTAP 9.8 이상을 실행합니다.
+* 기존 플랫폼과 신규 플랫폼은 전환을 지원하는 조합입니다.
 +
 link:concept_choosing_your_transition_procedure_mcc_transition.html["무중단 전환을 지원하는 플랫폼"]
 
-* 스위치가 있는 클러스터 구성을 지원해야 합니다.
+* 이 구성은 스위치 클러스터 구성을 지원합니다.
 +
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+https://hwu.netapp.com["Hardware Universe"^]
 
-* 이 케이블은 _MetroCluster 설치 및 구성_절차에 설명된 대로 모든 요구 사항 및 케이블 연결을 충족해야 합니다.
+
+
+[CAUTION]
+====
+공유 스토리지 MetroCluster 스위치를 사용하는 경우 4노드 MetroCluster IP 구성으로만 전환할 수 있습니다. 공유 스토리지 MetroCluster 스위치를 사용하여 8노드 MetroCluster IP 구성으로 전환하는 것은 지원되지 않습니다. 4노드 MetroCluster IP 구성으로 전환을 완료한 후에는 다음을 수행할 수 link:../upgrade/task_expand_a_four_node_mcc_ip_configuration.html["8노드 MetroCluster IP 구성으로 확장"]있습니다.
+
+====
+* 이 구성은 모든 요구 사항을 충족하며 다음_MetroCluster 설치 및 구성_절차에 설명된 대로 케이블로 연결됩니다.
 +
 link:../install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"]
 
