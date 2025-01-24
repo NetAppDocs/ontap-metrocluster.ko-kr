@@ -1,0 +1,167 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-uninstall-controllers.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 데이터 LIF를 공통 포트로 이동하고, 이전 컨트롤러에서 VLAN 및 인터페이스 그룹을 제거한 다음, 컨트롤러를 물리적으로 제거합니다. 
+---
+= 인터페이스 구성을 제거하고 이전 MetroCluster IP 컨트롤러를 제거합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LIF 배치가 올바른지 확인합니다. 그런 다음 이전 컨트롤러에서 VLAN 및 인터페이스 그룹을 제거하고 컨트롤러를 물리적으로 제거합니다.
+
+.이 작업에 대해
+* 이전 컨트롤러(node_B_1-old, node_B_2-old)에서 다음 단계를 수행합니다.
+* 이 절차에서 사용하기 위해 수집한 정보가 link:upgrade-mcc-ip-prepare-system.html#map-ports-from-the-old-nodes-to-the-new-nodes["이전 노드의 포트를 새 노드로 매핑합니다"]필요합니다.
+
+
+.단계
+. 이전 노드를 부팅하고 노드에 로그인합니다.
++
+부트 ONTAP
+
+. 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용하도록 이전 컨트롤러의 인터클러스터 LIF를 수정합니다.
++
+
+NOTE: 이 단계는 성공적인 업그레이드를 위해 필요합니다.
+
++
+이전 컨트롤러의 인터클러스터 LIF는 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용해야 합니다. 예를 들어, AFF A90 컨트롤러로 업그레이드할 때 HA 인터커넥트 포트는 e1A와 e7a이고, MetroCluster IP DR 인터커넥트 포트는 e2b와 e3b입니다. 이전 컨트롤러가 포트 E1A, e7a, e2b 또는 e3b에서 호스팅되는 경우 인터클러스터 LIF를 이동해야 합니다.
+
++
+새 노드에서의 포트 분배 및 할당은 를 https://hwu.netapp.com["Hardware Universe"]참조하십시오.
+
++
+.. 이전 컨트롤러에서 인터클러스터 LIF를 확인하십시오.
++
+`network interface show  -role intercluster`
+
++
+이전 컨트롤러의 인터클러스터 LIF가 새 컨트롤러의 MetroCluster IP DR 인터커넥트에 사용되는 포트와 동일한 포트를 사용하는지 여부에 따라 다음 작업 중 하나를 수행합니다.
+
++
+[cols="2*"]
+|===
+| 클러스터 간 LIF가 필요한 경우... | 이동... 
+
+
+| 동일한 홈 포트를 사용합니다 | <<controller_manual_upgrade_prepare_network_ports_2b,하위 단계 b>> 
+
+
+| 다른 홈 포트를 사용합니다 | <<controller_manual_upgrade_prepare_network_ports_3,3단계>> 
+|===
+.. [[controller_manual_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 클러스터 간 LIF를 수정합니다.
++
+`network interface modify -vserver <vserver> -lif <intercluster_lif> -home-port <port-not-used-for-ha-interconnect-or-mcc-ip-dr-interconnect-on-new-nodes>`
+
+.. 모든 인터클러스터 LIF가 새 홈 포트에 설정되었는지 확인합니다.
++
+`network interface show -role intercluster -is-home  false`
+
++
+명령 출력은 모든 인터클러스터 LIF가 각 홈 포트에 있어야 한다는 것을 나타내는 비워 두어야 합니다.
+
+.. 홈 포트에 없는 LIF를 되돌립니다.
++
+`network interface revert -lif <intercluster_lif>`
+
++
+홈 포트에 있지 않은 각 인터클러스터 LIF에 대해 명령을 반복하십시오.
+
+
+
+. [[controller_manual_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈 모두에서 동일한 공통 포트에 할당합니다.
++
+
+CAUTION: 이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<<upgrades_manual_without_matching_ports,4단계>>.
+
++
+.. LIF 표시:
++
+네트워크 인터페이스 쇼
+
++
+SAN 및 NAS를 포함한 모든 데이터 LIFS는 스위치오버 사이트(cluster_A)에서 작동하므로 관리자가 가동되고 운영상 중단됩니다.
+
+.. 출력을 검토하여 클러스터 포트로 사용되지 않는 이전 컨트롤러와 새 컨트롤러 모두에서 동일한 일반적인 물리적 네트워크 포트를 찾습니다.
++
+예를 들어, e0d는 이전 컨트롤러의 물리적 포트이며 새 컨트롤러에도 존재합니다. e0d는 클러스터 포트 또는 새 컨트롤러에 사용되지 않습니다.
+
++
+플랫폼 모델의 포트 사용에 대해서는 을 참조하십시오 https://hwu.netapp.com/["Hardware Universe"]
+
+.. 공통 포트를 홈 포트로 사용하도록 모든 데이터 LIFS를 수정합니다. +
+`network interface modify -vserver <svm-name> -lif <data-lif> -home-port <port-id>`
++
+다음 예에서는 "e0d"입니다.
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network interface modify -vserver vs0 -lif datalif1 -home-port e0d
+----
+
+
+. [[upgrades_manual_without_matching_ports]] 브로드캐스트 도메인을 수정하여 삭제되어야 하는 VLAN 및 물리적 포트를 제거합니다.
++
+`broadcast-domain remove-ports -broadcast-domain <broadcast-domain-name> -ports <node-name:port-id>`
+
++
+모든 VLAN 및 물리적 포트에 대해 이 단계를 반복합니다.
+
+. 클러스터 포트를 구성원 포트로 사용하고 클러스터 포트를 구성원 포트로 사용하는 인터페이스 그룹을 사용하여 VLAN 포트를 제거합니다.
++
+.. VLAN 포트 삭제: +
+`network port vlan delete -node <node_name> -vlan-name <portid-vlandid>`
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network port vlan delete -node node1 -vlan-name e1c-80
+----
+.. 인터페이스 그룹에서 물리적 포트를 제거합니다.
++
+`network port ifgrp remove-port -node <node_name> -ifgrp <interface-group-name> -port <portid>`
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
+----
+.. 브로드캐스트 도메인에서 VLAN 및 인터페이스 그룹 포트 제거:
++
+`network port broadcast-domain remove-ports -ipspace <ipspace> -broadcast-domain <broadcast-domain-name> -ports <nodename:portname,nodename:portnamee>,..`
+
+.. 필요에 따라 다른 물리적 포트를 구성원으로 사용하도록 인터페이스 그룹 포트를 수정합니다.
++
+`ifgrp add-port -node <node_name> -ifgrp <interface-group-name> -port <port-id>`
+
+
+
+. 프롬프트에서 노드를 중지합니다 `LOADER`.
++
+'HALT-INHIBIT-Takeover TRUE'
+
+. site_B에서 이전 컨트롤러(node_B_1-old 및 node_B_2-old)의 시리얼 콘솔에 연결하여 프롬프트가 표시되는지 확인합니다 `LOADER`.
+. bootarg 값을 수집합니다.
++
+'printenv'
+
+. node_B_1-old 및 node_B_2-old에서 스토리지 및 네트워크 접속을 끊습니다. 케이블을 새 노드에 다시 연결할 수 있도록 케이블에 레이블을 지정합니다.
+. node_B_1 - old 및 node_B_2 - old에서 전원 케이블을 분리합니다.
+. 랙에서 node_B_1-old 및 node_B_2-old 컨트롤러를 분리합니다.
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-setup-controllers.html["새 컨트롤러를 설정합니다"]..

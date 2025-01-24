@@ -1,0 +1,206 @@
+---
+permalink: upgrade/upgrade-mcc-ip-system-controller-replace-setup-new-controllers.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 컨트롤러를 넷부팅하기 전에 새 컨트롤러를 설정하여 새로운 노드가 원래 노드와 동일한 버전의 ONTAP를 실행하고 있는지 확인합니다. 
+---
+= 새 MetroCluster IP 컨트롤러를 설정하고 NetBoot합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러를 넷부팅하기 전에 새 컨트롤러를 설정하여 새로운 노드가 원래 노드와 동일한 버전의 ONTAP를 실행하고 있는지 확인합니다.
+
+
+
+== 새 컨트롤러를 설정합니다
+
+새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.
+
+.단계
+. 필요에 따라 새 컨트롤러 모듈 및 스토리지 쉘프를 포지셔닝합니다.
++
+랙 공간은 컨트롤러 모듈의 플랫폼 모델, 스위치 유형 및 구성의 스토리지 쉘프 수에 따라 다릅니다.
+
+. 적절하게 접지합니다.
+. 업그레이드를 통해 컨트롤러 모듈을 교체해야 하는 경우(예: AFF A800에서 AFF A90 시스템으로 업그레이드 또는 AFF C800에서 AFF C80 시스템으로 업그레이드), 컨트롤러 모듈을 교체할 때 섀시에서 컨트롤러 모듈을 분리해야 합니다. 다른 모든 업그레이드의 경우 로 <<ip_upgrades_replace_4,4단계>>건너뜁니다.
++
+섀시 앞면에서 엄지 손가락으로 각 드라이브를 단단히 눌러 정지가 느껴질 때까지 밀어넣습니다. 이렇게 하면 드라이브가 섀시 중앙판에 단단히 장착되어 있음을 확인할 수 있습니다.
+
++
+image::../media/drw-a800-drive-seated.png[는 섀시에서 컨트롤러 모듈을 분리하는 것을 보여 줍니다]
+
+. [[IP_UPGRADE_REPLACE_4]] 컨트롤러 모듈을 설치합니다.
++
+따르는 설치 단계는 업그레이드를 위해 컨트롤러 모듈을 교체해야 하는지 또는 IOM 모듈이 이전 컨트롤러를 외부 쉘프로 변환해야 하는지에 따라 다릅니다.
+
++
+[cols="2*"]
+|===
+| 업그레이드하려는 경우... | 다음 단계를 수행합니다. 
+
+
+ a| 
+** AFF A20 시스템에 대한 AFF A150
+** AFF A20 시스템에 대한 AFF A220
+
+| 컨트롤러를 외부 쉘프로 변환할 수 있습니다 
+
+
+ a| 
+** AFF A90 시스템에 대한 AFF A800
+** AFF C80 시스템에 대한 AFF C800
+
+| 컨트롤러 모듈 교체 
+
+
+| 기타 컨트롤러 업그레이드 조합 | 기타 모든 업그레이드 
+|===
++
+[role="tabbed-block"]
+====
+.컨트롤러를 외부 쉘프로 변환할 수 있습니다
+--
+원래 MetroCluster IP 컨트롤러가 AFF A150 또는 AFF A220 모델인 경우, AFF A150 또는 AFF A220 HA 쌍을 DS224C 드라이브 쉘프로 변환한 후 새 노드에 연결할 수 있습니다.
+
+예를 들어, AFF A150 또는 AFF A220 시스템에서 AFF A20 시스템으로 업그레이드할 경우 AFF A150 또는 AFF A220 컨트롤러 모듈을 IOM12 모듈과 교체하여 AFF A150 또는 AFF A220 HA 쌍을 DS224C 쉘프로 변환할 수 있습니다.
+
+.단계
+.. 변환하려는 노드에서 IOM12 쉘프 모듈로 컨트롤러 모듈을 교체합니다.
++
+https://hwu.netapp.com["Hardware Universe"^]
+
+.. 드라이브 쉘프 ID를 설정합니다.
++
+섀시를 포함한 각 드라이브 쉘프에 고유 ID가 필요합니다.
+
+.. 필요에 따라 다른 드라이브 쉘프 ID를 재설정하십시오.
+.. 쉘프 전원을 끕니다.
+.. 변환된 드라이브 쉘프를 새 시스템의 SAS 포트에 연결하고, 아웃오브밴드 ACP 케이블을 사용하는 경우 새 노드의 ACP 포트에 연결합니다.
+.. 변환된 드라이브 쉘프 및 새 노드에 연결된 다른 드라이브 쉘프의 전원을 켭니다.
+.. 새 노드의 전원을 켠 다음 Ctrl+C를 눌러 각 노드의 부팅 프로세스를 중단함으로써 부팅 환경 프롬프트에 액세스합니다.
+
+
+--
+.컨트롤러 모듈 교체
+--
+새 컨트롤러를 별도로 설치하는 것은 예를 들어, AFF A800 시스템에서 AFF A90 시스템으로 전환하는 것과 같이 동일한 섀시에 있는 디스크 및 컨트롤러가 있는 통합 시스템을 업그레이드하는 경우에는 적용되지 않습니다. 아래 이미지와 같이 이전 컨트롤러의 전원을 끈 후에는 새 컨트롤러 모듈과 I/O 카드를 교체해야 합니다.
+
+다음 예제 이미지는 설명을 위한 것이며 컨트롤러 모듈과 I/O 카드는 시스템마다 다를 수 있습니다.
+
+image::../media/a90-a70-pcm-swap.png[컨트롤러 모듈 스왑을 표시합니다]
+
+--
+.기타 모든 업그레이드
+--
+랙 또는 캐비닛에 컨트롤러 모듈을 설치합니다.
+
+--
+====
+. 에 설명된 대로 컨트롤러의 전원, 직렬 콘솔 및 관리 연결을 케이블로 연결합니다 link:../install-ip/using_rcf_generator.html["MetroCluster IP 스위치에 케이블을 연결합니다"]
++
+현재 이전 컨트롤러에서 분리된 다른 케이블을 연결하지 마십시오.
+
++
+https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시스템 설명서"^]
+
+. 새 노드의 전원을 켜고 프롬프트가 표시되면 Ctrl-C를 누릅니다 `LOADER` .
+
+
+
+
+== 새 컨트롤러를 netboot합니다
+
+새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
+
+이 작업은 각각의 새 컨트롤러 모듈에서 수행됩니다.
+
+.단계
+. 에 액세스합니다 link:https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 'ONTAP-version_image.tgz' 파일을 저장합니다.
+. 웹 액세스 가능 디렉터리로 이동하여 필요한 파일을 사용할 수 있는지 확인합니다.
++
+디렉토리 목록에는 커널 파일이 있는 NetBoot 폴더가 포함되어야 합니다. `ontap-version_image.tgz`
+
++
+파일의 압축을 풀 필요가 `ontap-version_image.tgz` 없습니다.
+
+.  `LOADER`프롬프트에서 관리 LIF에 대한 NetBoot 연결을 구성합니다.
++
+** IP 주소 지정이 DHCP인 경우 자동 연결을 구성합니다.
++
+ifconfig e0M-auto를 선택합니다
+
+** IP 주소 지정이 정적이면 수동 연결을 구성합니다.
++
+ifconfig e0M-addr=ip_addr-mask=netmask"-GW=gateway입니다
+
+
+
+. netboot 수행
++
+"netboot\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz`
+
+. 부팅 메뉴에서 옵션 * (7) 새 소프트웨어를 먼저 설치 * 를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.
++
+ Disregard the following message: "This procedure is not supported for Non-Disruptive Upgrade on an HA pair". It applies to nondisruptive upgrades of software, not to upgrades of controllers.
+. 절차를 계속하라는 메시지가 나타나면 y를 입력하고 패키지를 입력하라는 메시지가 나타나면 이미지 파일의 URL('\http://web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz` )을 입력합니다
++
+....
+Enter username/password if applicable, or press Enter to continue.
+....
+. 다음과 유사한 프롬프트가 표시되면 백업 복구를 건너뛰려면 "n"을 입력해야 합니다.
++
+....
+Do you want to restore the backup configuration now? {y|n}
+....
+. 다음과 유사한 프롬프트가 나타나면 y를 입력하여 재부팅합니다.
++
+....
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+....
+
+
+
+
+== 컨트롤러 모듈의 구성을 지웁니다
+
+MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
+
+.단계
+. 필요한 경우 노드를 중지하여 프롬프트를 표시합니다 `LOADER`.
++
+"중지"
+
+.  `LOADER`프롬프트에서 환경 변수를 기본값으로 설정합니다.
++
+세트 기본값
+
+. 환경 저장:
++
+'사베에프'
+
+.  `LOADER`프롬프트에서 부팅 메뉴를 실행합니다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴 프롬프트에서 구성을 지웁니다.
++
+휘폰무화과
+
++
+확인 프롬프트에 yes로 응답합니다.
+
++
+노드가 재부팅되고 부팅 메뉴가 다시 표시됩니다.
+
+. 부팅 메뉴에서 옵션 * 5 * 를 선택하여 시스템을 유지보수 모드로 부팅합니다.
++
+확인 프롬프트에 yes로 응답합니다.
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-system-controller-replace-restore-hba-set-ha.html["HBA 구성을 복구하고 HA 상태를 설정합니다"]..

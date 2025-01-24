@@ -1,0 +1,92 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-requirements.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc, requirements 
+summary: 컨트롤러 업그레이드를 수행하기 전에 시스템이 모든 요구 사항을 충족하는지 확인하십시오. 
+---
+= 이 MetroCluster IP 업그레이드 절차를 사용하기 위한 요구 사항입니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 업그레이드를 수행하기 전에 시스템이 모든 요구사항을 충족하는지 확인하십시오.
+
+
+
+== 이 절차에서 지원하는 플랫폼
+
+* 플랫폼은 ONTAP 9.8 이상을 실행해야 합니다.
+* 대상(새) 플랫폼은 원래 플랫폼과 다른 모델이어야 합니다.
+* MetroCluster IP 구성에서 이 절차를 사용하여 특정 플랫폼 모델만 업그레이드할 수 있습니다.
++
+** 지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오link:concept_choosing_controller_upgrade_mcc.html["컨트롤러 업그레이드 절차를 선택합니다"].
++
+을 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_controller_upgrade_mcc.html#choosing-a-procedure-that-uses-the-switchover-and-switchback-process["업그레이드 또는 새로 고침 방법 선택"] 을 참조하십시오.
+
+
+
+
+
+
+
+== 요구 사항
+
+* 이 절차는 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.
+* 구성의 모든 컨트롤러는 동일한 유지보수 기간 동안 업그레이드해야 합니다.
++
+이 유지 관리 활동 외부에서는 컨트롤러 유형이 서로 다른 MetroCluster 구성을 작동하는 것이 지원되지 않습니다.
+
+* MetroCluster IP 시스템이 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.
+* 업그레이드 구성에서 기존 컨트롤러 및 새 컨트롤러에서 MetroCluster IP 스위치(스위치 유형, 공급업체 및 모델) 및 펌웨어 버전을 지원해야 합니다.
++
+link:https://hwu.netapp.com["Hardware Universe"^]지원되는 스위치 및 펌웨어 버전은 또는 를 link:https://imt.netapp.com/matrix/["IMT"^] 참조하십시오.
+
+* 새 시스템보다 더 많은 슬롯이나 포트가 있는 시스템에서 업그레이드할 경우 새 시스템에 충분한 슬롯과 포트가 있는지 확인해야 합니다.
++
+업그레이드를 시작하기 전에 를 link:https://hwu.netapp.com["Hardware Universe"^] 참조하여 새 시스템의 슬롯 및 포트 수를 확인하십시오.
+
+* 시스템에서 사용하도록 설정되어 있는 link:../maintain/task-configure-encryption.html#disable-end-to-end-encryption["종단간 암호화를 비활성화합니다"]경우 업그레이드를 수행하기 전에
+* 새 플랫폼의 슬롯이 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다.
+* 새 플랫폼에서 원래 플랫폼의 IP 주소, 넷마스크 및 게이트웨이를 재사용합니다.
+
+
+다음 예제 이름이 이 절차에 사용됩니다.
+
+* 사이트_A의 클러스터_A
++
+** 업그레이드 전:
++
+*** 노드_A_1 - 이전
+*** 노드_A_2 - 이전
+
+
+** 업그레이드 후:
++
+*** Node_A_1 - 신규
+*** Node_A_2 - 신규
+
+
+
+
+* site_B의 cluster_B입니다
++
+** 업그레이드 전:
++
+*** 노드_B_1 - 이전
+*** 노드_B_2 - 이전
+
+
+** 업그레이드 후:
++
+*** Node_B_1 - 신규
+*** Node_B_2 - 신규
+
+
+
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-console-logging.html["콘솔 로깅을 활성화합니다"]..

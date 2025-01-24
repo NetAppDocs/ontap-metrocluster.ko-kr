@@ -1,0 +1,80 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-switchback.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 전환 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌립니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다. 
+---
+= MetroCluster IP 구성을 다시 전환합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+전환 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌립니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.
+
+image::../media/mcc_upgrade_cluster_a_switchback.png[MCC 업그레이드 클러스터 A 스위치백]
+
+.단계
+. site_B에서 'MetroCluster node show' 명령어를 실행하여 출력을 확인한다.
++
+.. 새 노드가 올바르게 표시되는지 확인합니다.
+.. 새 노드가 "스위치백 대기 중" 상태에 있는지 확인합니다.
+
+
+. 액티브 클러스터의 모든 노드에서 필수 명령을 실행하여 복구 및 스위치백을 수행합니다(업그레이드를 받지 않는 클러스터).
++
+.. 데이터 애그리게이트 수정: + 'MetroCluster 환원 Aggregate
+.. 루트 애그리게이트 수정:
++
+MetroCluster 환원 루트
+
+.. 클러스터 스위치백:
++
+MetroCluster 스위치백
+
+
+
+. 스위치백 작업의 진행률을 확인합니다.
++
+MetroCluster 쇼
+
++
+출력물에 '대기 중-스위치백'이 표시되면 스위치백 작업이 진행 중입니다.
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_B         Configuration state configured
+                          Mode                switchover
+                          AUSO Failure Domain -
+Remote: cluster_A         Configuration state configured
+                          Mode                waiting-for-switchback
+                          AUSO Failure Domain -
+----
++
+출력이 정상(Normal)으로 표시되면 스위치백 작업이 완료된 것입니다.
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster                   Entry Name          State
+------------------------- ------------------- -----------
+ Local: cluster_B         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain -
+Remote: cluster_A         Configuration state configured
+                          Mode                normal
+                          AUSO Failure Domain -
+----
++
+스위치백을 완료하는 데 시간이 오래 걸리는 경우 'MetroCluster config-replication resync resync-status show' 명령을 사용하여 진행 중인 기준선의 상태를 확인할 수 있습니다. 이 명령은 고급 권한 수준에 있습니다.
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-complete-upgrade.html["업그레이드를 완료합니다"]..

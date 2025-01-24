@@ -1,0 +1,78 @@
+---
+permalink: upgrade/upgrade-mcc-ip-system-controller-replace-complete-upgrade.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 네트워크 가용성을 확인하고 모니터링 구성을 복원하여 자동 컨트롤러 업그레이드 프로세스를 완료합니다. 
+---
+= MetroCluster IP 컨트롤러 업그레이드를 완료합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+네트워크 가용성을 확인하고 모니터링 구성을 복원하여 자동 컨트롤러 업그레이드 프로세스를 완료합니다.
+
+
+
+== 네트워크 가용성을 확인합니다
+
+자동화 작업은 검증 시스템 검사를 실행한 다음 일시 중지하여 네트워크 연결 상태를 확인할 수 있습니다. 확인 후 리소스 다시 찾기 단계가 시작되고 자동화 작업이 사이트 A에서 스위치백을 실행하고 업그레이드 후 확인 시 일시 중지됩니다. 자동화 작업을 다시 시작하면 업그레이드 후 검사가 수행되고 오류가 발견되지 않으면 업그레이드가 완료된 것으로 표시됩니다.
+
+.단계
+. 콘솔 메시지를 따라 네트워크 연결 상태를 확인합니다.
+. 검증을 완료한 후 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+. 자동화 작업이 수행됩니다 `heal-aggregate`, `heal-root-aggregate`사이트 A의 스위치백 작업과 업그레이드 후 점검 작업을 수행할 수 있습니다. 작업이 일시 중지되면 SAN LIF 상태를 수동으로 확인하고 콘솔 메시지에 따라 네트워크 구성을 확인합니다.
+. 검증을 완료한 후 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+. 업그레이드 후 점검 상태 확인:
++
+'시스템 컨트롤러 교체 쇼
+
++
+업그레이드 후 검사에서 오류가 보고되지 않으면 업그레이드가 완료된 것입니다.
+
+. 컨트롤러 업그레이드를 완료한 후 사이트 B에 로그인하여 교체된 컨트롤러가 올바르게 구성되었는지 확인합니다.
+
+
+
+
+== cluster_A에서 노드를 업그레이드합니다
+
+사이트 A에서 cluster_A의 노드를 업그레이드하려면 업그레이드 작업을 반복해야 합니다
+
+.단계
+. 이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.link:upgrade-mcc-ip-system-controller-replace-supported-platforms.html["업그레이드를 준비합니다"]
++
+작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다.
+
+
+
+
+
+== ONTAP 중재자를 재구성합니다
+
+업그레이드를 시작하기 전에 자동으로 제거된 ONTAP 중재자를 수동으로 구성합니다.
+
+. 의 단계를 사용합니다 link:../install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다"].
+
+
+
+
+== Tiebreaker 모니터링을 복원합니다
+
+이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.
+
+. 의 단계를 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-7259BCA4-104C-49C6-BAD0-1068CA2A3DA5.html["MetroCluster 구성 추가"] 사용합니다.
+
+
+
+
+== 엔드 투 엔드 암호화 구성
+
+시스템에서 지원되는 경우, nvlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 MetroCluster IP 사이트 간에 암호화할 수 있습니다. 을 참조하십시오 link:../maintain/task-configure-encryption.html["엔드 투 엔드 암호화 구성"] 를 참조하십시오.

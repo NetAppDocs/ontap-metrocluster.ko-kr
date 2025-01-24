@@ -1,0 +1,166 @@
+---
+permalink: upgrade/upgrade-mcc-ip-system-controller-replace-restore-hba-set-ha.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 컨트롤러 모듈에서 HBA 카드를 구성하고 컨트롤러 및 섀시의 HA 상태를 확인 및 설정합니다. 
+---
+= HBA 구성을 복구하고 MetroCluster IP 컨트롤러 및 섀시의 HA 상태를 설정합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 모듈에서 HBA 카드를 구성하고 컨트롤러 및 섀시의 HA 상태를 확인 및 설정합니다.
+
+
+
+== HBA 구성을 복구합니다
+
+컨트롤러 모듈에 있는 HBA 카드의 존재 여부 및 구성에 따라 사이트에 맞게 HBA 카드를 올바르게 구성해야 합니다.
+
+.단계
+. 유지 관리 모드에서 시스템의 모든 HBA에 대한 설정을 구성합니다.
++
+.. 포트의 현재 설정을 확인합니다. 'ucadmin show'
+.. 필요에 따라 포트 설정을 업데이트합니다.
+
+
++
+|===
+
+
+| 이 유형의 HBA와 원하는 모드가 있는 경우... | 이 명령 사용... 
+
+
+ a| 
+CNA FC
+ a| 
+`ucadmin modify -m fc -t initiator <adapter-name>`
+
+
+
+ a| 
+CNA 이더넷
+ a| 
+`ucadmin modify -mode cna <adapter-name>`
+
+
+
+ a| 
+FC 타겟
+ a| 
+`fcadmin config -t target <adapter-name>`
+
+
+
+ a| 
+FC 이니시에이터
+ a| 
+`fcadmin config -t initiator <adapter-name>`
+
+|===
+. 유지 관리 모드 종료:
++
+"중지"
+
++
+명령을 실행한 후 프롬프트에서 노드가 멈출 때까지 `LOADER` 기다립니다.
+
+. 노드를 유지 관리 모드로 다시 부팅하여 구성 변경 사항을 적용합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. 변경 사항을 확인합니다.
++
+|===
+
+
+| 이 유형의 HBA가 있는 경우... | 이 명령 사용... 
+
+
+ a| 
+CNA
+ a| 
+'ucadmin 쇼'
+
+
+
+ a| 
+FC
+ a| 
+fcadmin 쇼
+
+|===
+
+
+
+
+== 새 컨트롤러 및 섀시에서 HA 상태를 설정합니다
+
+컨트롤러 및 섀시의 HA 상태를 확인하고, 필요한 경우 시스템 구성에 맞게 상태를 업데이트해야 합니다.
+
+.단계
+. 유지보수 모드에서 컨트롤러 모듈 및 섀시의 HA 상태를 표시합니다.
++
+하구성 쇼
+
++
+모든 부품의 HA 상태는 'mcip'이어야 한다.
+
+. 컨트롤러 또는 섀시의 시스템 상태가 표시되지 않으면 HA 상태를 설정합니다.
++
+ha-config modify controller mcip.(컨트롤러 mccip 수정
+
++
+ha-config modify chassis mccip.(섀시 mcip 수정
+
+. NS224 쉘프 또는 스토리지 스위치에 연결된 이더넷 포트를 확인하고 수정합니다.
++
+.. NS224 쉘프 또는 스토리지 스위치에 연결된 이더넷 포트를 확인합니다.
++
+`storage port show`
+
+.. 스토리지 및 클러스터의 공유 스위치를 포함하여 이더넷 쉘프 또는 스토리지 스위치에 연결된 모든 이더넷 포트를 모드로 설정합니다 `storage` .
++
+`storage port modify -p <port> -m storage`
+
++
+예:
+
++
+[listing]
+----
+*> storage port modify -p e5b -m storage
+Changing NVMe-oF port e5b to storage mode
+----
++
+
+NOTE: 업그레이드를 성공적으로 수행하려면 영향을 받는 모든 포트에 이 설정을 설정해야 합니다.
+
++
+이더넷 포트에 연결된 쉘프의 디스크는 출력에 보고됩니다. `sysconfig -v`
+
++
+업그레이드할 시스템의 스토리지 포트에 대한 자세한 내용은 을 link:https://hwu.netapp.com["Hardware Universe"^] 참조하십시오.
+
+.. 모드가 설정되어 있는지 `storage` 확인하고 포트가 온라인 상태인지 확인합니다.
++
+`storage port show`
+
+
+
+. 노드를 정지시킵니다
++
+LOADER> 프롬프트에서 노드가 정지되어야 합니다.
+
+. 각 노드에서 시스템 날짜, 시간 및 시간대를 '날짜 표시'로 확인합니다
+. 필요한 경우 UTC 또는 GMT:'SET DATE<MM/dd/yyyy>'로 날짜를 설정합니다
+. 부팅 환경 프롬프트에서 'show time'을 사용하여 시간을 확인한다
+. 필요한 경우 시간을 UTC 또는 GMT:'설정 시간<hh:mm:ss>'로 설정합니다
+. 'Saveenv' 설정을 저장합니다
+. 환경 변수(printenv)를 수집합니다
+
+
+.다음 단계
+link:upgrade-mcc-ip-system-controller-replace-apply-rcf-set-bootarg.html["스위치 RCF 파일을 업데이트하고 MetroCluster IP bootarg 값을 설정합니다"]..

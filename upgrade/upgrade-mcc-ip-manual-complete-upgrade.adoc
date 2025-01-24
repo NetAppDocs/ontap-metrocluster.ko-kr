@@ -1,0 +1,125 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-complete-upgrade.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc, complete 
+summary: 컨트롤러 모듈을 업그레이드한 후 컨트롤러 업그레이드를 완료하는 데 필요한 작업을 수행하십시오. 
+---
+= MetroCluster IP 컨트롤러 업그레이드를 완료합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 모듈을 업그레이드한 후 컨트롤러 업그레이드를 완료하는 데 필요한 작업을 수행하십시오.
+
+
+
+== MetroCluster 구성의 상태를 확인합니다
+
+컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.
+
+.이 작업에 대해
+MetroCluster 구성의 모든 노드에서 이 작업을 수행할 수 있습니다.
+
+.단계
+. MetroCluster 구성 작동을 확인합니다.
++
+.. MetroCluster 설정을 확인하고 운영 모드가 정상인지 확인합니다. + 'MetroCluster show'
+.. MetroCluster check 수행: + 'MetroCluster check run
+.. MetroCluster 검사 결과를 표시합니다.
++
+MetroCluster 체크 쇼
+
+
+
+. MetroCluster 접속 상태와 상태를 확인합니다.
++
+.. MetroCluster IP 연결을 확인합니다.
++
+'Storage iSCSI-initiator show'를 선택합니다
+
+.. 노드가 작동 중인지 확인합니다.
++
+'MetroCluster node show'
+
+.. MetroCluster IP 인터페이스가 작동하는지 확인합니다.
++
+'MetroCluster configuration-settings interface show'를 선택합니다
+
+.. 로컬 페일오버가 설정되었는지 확인합니다.
++
+'스토리지 페일오버 쇼'
+
+
+
+
+
+
+
+== cluster_A에서 노드를 업그레이드합니다
+
+사이트 A에서 cluster_A의 노드를 업그레이드하려면 업그레이드 작업을 반복해야 합니다
+
+.단계
+. 이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.link:upgrade-mcc-ip-manual-requirements.html["업그레이드를 준비합니다"]
++
+작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다
+
+
+
+
+
+== Tiebreaker 또는 중재자 모니터링을 복원합니다
+
+MetroCluster 구성 업그레이드를 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.
+
+.단계
+. 필요한 경우 구성 절차를 사용하여 모니터링을 복원합니다.
++
+|===
+| 사용 중인 경우... | 이 절차를 사용합니다 
+
+
+ a| 
+Tiebreaker입니다
+ a| 
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations["MetroCluster 구성 추가"]..
+
+
+
+ a| 
+중재자
+ a| 
+link:../install-ip/concept_mediator_requirements.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다"]..
+
+
+
+ a| 
+타사 응용 프로그램
+ a| 
+제품 설명서를 참조하십시오.
+
+|===
+
+
+
+
+== 유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다
+
+업그레이드를 완료한 후에는 유지 보수 종료를 알리는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.
+
+.단계
+. 자동 지원 케이스 생성을 재개하려면 유지 관리가 완료되었음을 나타내는 AutoSupport 메시지를 보냅니다.
++
+.. 'system node AutoSupport invoke -node * -type all-message maINT=end' 명령을 실행합니다
+.. 파트너 클러스터에서 명령을 반복합니다.
+
+
+
+
+
+
+== 엔드 투 엔드 암호화 구성
+
+시스템에서 지원되는 경우, nvlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 MetroCluster IP 사이트 간에 암호화할 수 있습니다. 을 참조하십시오 link:../maintain/task-configure-encryption.html["엔드 투 엔드 암호화 구성"] 를 참조하십시오.

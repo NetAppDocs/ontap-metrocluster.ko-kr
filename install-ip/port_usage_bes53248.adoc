@@ -13,9 +13,9 @@ summary: MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플�
 [role="lead"]
 MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.
 
-스위치는 속도가 다른 원격 ISL 포트(예: 10Gbps ISL 포트에 연결된 25Gbps 포트)와 함께 사용할 수 없습니다.
+구성 테이블을 사용하기 전에 다음 고려 사항을 검토하십시오.
 
-.표를 사용하기 전에 다음 정보를 검토하십시오.
+* 속도가 다른 원격 ISL 포트(예: 10Gbps ISL 포트에 연결된 25Gbps 포트)에서는 스위치를 사용할 수 없습니다.
 * MetroCluster FC에서 IP로의 전환을 위해 스위치를 구성하는 경우 선택하는 타겟 플랫폼에 따라 다음 포트가 사용됩니다.
 +
 [cols="75,25"]
@@ -63,13 +63,16 @@ AFF A220
 | FAS500f AFF C250, ASA C250 AFF A250, ASA A250 | <<table_2_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 2)>> 
 
 
-| FAS8200, AFF A300 | <<table_3_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 3)>> 
+| AFF A20 AFF C30, AFF A30 AFF C60 | <<table_3_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 3)>> 
 
 
-| AFF A320 | <<table_4_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 4)>> 
+| FAS8200, AFF A300 | <<table_4_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 4)>> 
 
 
-| FAS8300 AFF C400, ASA C400 AFF A400, ASA A400 FAS8700 | <<table_5_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 5)>> 
+| AFF A320 | <<table_5_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 5)>> 
+
+
+| FAS8300 AFF C400, ASA C400 AFF A400, ASA A400 FAS8700 | <<table_6_bes_53248,Broadcom BES-53248 플랫폼 포트 할당(그룹 6)>> 
 |===
 .Broadcom BES-53248 플랫폼 포트 할당(그룹 1)
 AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
@@ -90,14 +93,22 @@ image::../media/mcc_ip_cabling_a_aff_asa_c250_a250_fas500f_to_a_broadcom_bes_532
 
 
 .Broadcom BES-53248 플랫폼 포트 할당(그룹 3)
-FAS8200 또는 AFF A300 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
+AFF A20, AFF C30, AFF A30 또는 AFF C60 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mcc-ip-cabling-a-aff-a300-or-fas8200-to-a-broadcom-bes-53248-switch.png[에서는 Broadcom BES-53248 플랫폼 포트 할당을 보여 줍니다]
+image:../media/mcc-ip-cabling-aff-a20-a30-c30-c60-to-a-broadcom-bes-53248-switch.png["에서는 Broadcom BES-53248 플랫폼 포트 할당을 보여 줍니다"]
 
 * *참고 1*: 이 포트를 사용하려면 추가 라이센스가 필요합니다.
 
 
 .Broadcom BES-53248 플랫폼 포트 할당(그룹 4)
+FAS8200 또는 AFF A300 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
+
+image::../media/mcc-ip-cabling-a-aff-a300-or-fas8200-to-a-broadcom-bes-53248-switch-9161.png[에서는 Broadcom BES-53248 플랫폼 포트 할당을 보여 줍니다]
+
+* *참고 1*: 이 포트를 사용하려면 추가 라이센스가 필요합니다.
+
+
+.Broadcom BES-53248 플랫폼 포트 할당(그룹 5)
 AFF A320 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
 image::../media/mcc-ip-cabling-a-aff-a320-to-a-broadcom-bes-53248-switch.png[에서는 Broadcom BES-53248 플랫폼 포트 할당을 보여 줍니다]
@@ -109,7 +120,7 @@ image::../media/mcc-ip-cabling-a-aff-a320-to-a-broadcom-bes-53248-switch.png[에
 
 
 
-.Broadcom BES-53248 플랫폼 포트 할당(그룹 5)
+.Broadcom BES-53248 플랫폼 포트 할당(그룹 6)
 FAS8300, AFF C400, ASA C400, AFF A400, ASA A400, 케이블 연결을 위한 플랫폼 포트 할당 검토 또는 FAS8700 시스템에서 Broadcom BES-53248 스위치로 마이그레이션합니다.
 
 image::../media/mcc-ip-cabling-a-fas8300-a400-c400-or-fas8700-to-a-broadcom-bes-53248-switch.png[에서는 Broadcom BES-53248 플랫폼 포트 할당을 보여 줍니다]

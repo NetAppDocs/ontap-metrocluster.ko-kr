@@ -1,0 +1,29 @@
+---
+permalink: upgrade/upgrade-mcc-ip-system-controller-replace.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 
+---
+= "system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러를 업그레이드하기 위한 워크플로(ONTAP 9.13.1 이상)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+이 안내된 자동화된 MetroCluster 스위치오버 작업을 사용하여 ONTAP 9.13.1 이후 버전을 실행하는 4노드 MetroCluster IP 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.
+
+.이 워크플로 정보
+이 워크플로우를 사용하여 명령으로 스위치오버 및 스위치백을 사용하여 ONTAP 9.13.1 이상을 실행하는 MetroCluster IP 컨트롤러를 업그레이드할 수 `system controller replace` 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:upgrade-mcc-ip-system-controller-replace-supported-platforms.html["업그레이드 준비"]
+[role="quick-margin-para"]
+지원되는 업그레이드 조합 및 요구사항을 검토하고 필요한 작업을 완료하여 컨트롤러 업그레이드를 준비합니다. 자동 컨트롤러 업그레이드 프로세스는 사용자가 구성 정보를 수집하고 기존 모니터링 소프트웨어를 제거하기 전에 일련의 사전 점검으로 시작됩니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"]link:upgrade-mcc-ip-system-controller-replace-prepare-network-configuration.html["컨트롤러를 업그레이드합니다"]
+[role="quick-margin-para"]
+자동화 작업이 전환 작업을 시작합니다. 이러한 작업이 완료되면 작업이 일시 중지되므로 이전 컨트롤러의 네트워크 구성을 준비하고, 새 컨트롤러를 랙에 설치하고, 루트 애그리게이트 디스크를 재할당하고, 새 컨트롤러를 부팅할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"]link:upgrade-mcc-ip-system-controller-replace-complete-upgrade.html["업그레이드를 완료합니다"]
+[role="quick-margin-para"]
+네트워크 가용성을 확인하고, 두 번째 사이트에서 업그레이드 작업을 반복하고, 모니터링 구성을 복원하여 자동 컨트롤러 업그레이드를 완료합니다.

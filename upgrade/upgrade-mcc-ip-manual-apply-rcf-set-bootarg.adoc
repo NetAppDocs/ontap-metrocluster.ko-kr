@@ -1,0 +1,351 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-apply-rcf-set-bootarg.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, rcf, bootarg 
+summary: 새 플랫폼의 스위치 RCF 파일을 업데이트하고 컨트롤러 모듈에서 MetroCluster IP bootarg 값을 설정합니다. 
+---
+= 스위치 RCF를 업데이트하고 MetroCluster IP bootarg 값을 설정합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 플랫폼에 대한 스위치 참조 구성 파일(RCF)을 업데이트하고 컨트롤러 모듈에서 MetroCluster IP bootarg 값을 설정합니다.
+
+
+
+== 새 플랫폼을 수용하도록 스위치 RCF를 업데이트합니다
+
+새 플랫폼 모델을 지원하는 구성으로 스위치를 업데이트해야 합니다.
+
+.이 작업에 대해
+현재 업그레이드 중인 컨트롤러가 포함된 사이트에서 이 작업을 수행합니다. 이 절차의 예에서는 먼저 site_B를 업그레이드하고 있습니다.
+
+site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레이드됩니다.
+
+.단계
+. 새 RCF의 적용을 위한 IP 스위치를 준비합니다.
++
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#reset-the-nvidia-ip-sn2100-switch-to-factory-defaults["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
+
+
+. RCF를 다운로드하여 설치합니다.
++
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCFs를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF를 다운로드하여 설치합니다"]
+
+
+
+
+
+
+== MetroCluster IP bootarg 변수를 설정합니다
+
+새 컨트롤러 모듈에서 특정 MetroCluster IP bootarg 값을 구성해야 합니다. bootarg 값은 이전 컨트롤러 모듈에 구성된 값과 일치해야 합니다.
+
+.이 작업에 대해
+* 의 업그레이드 절차에서 앞서 확인한 UUID 및 시스템 ID를 link:upgrade-mcc-ip-prepare-system.html#gather-information-before-the-upgrade["업그레이드하기 전에 정보를 수집합니다"]사용합니다.
+* 플랫폼 모델에 따라 매개 변수를 사용하여 VLAN ID를 지정할 수 `-vlan-id` 있습니다. 다음 플랫폼에서는 매개 변수를 지원하지 `-vlan-id` 않습니다.
++
+** FAS8200 및 AFF A300
+** AFF A320
+** FAS9000 및 AFF A700
+** AFF C800, ASA C800, AFF A800 및 ASA A800입니다
++
+다른 모든 플랫폼은 `-vlan-id` 매개 변수를 지원합니다.
+
+
+
+* 설정하는 MetroCluster bootarg 값은 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 달라집니다.
++
+다음 표에 나열된 시스템은 * 공유 MetroCluster/HA 포트 * 를 사용합니다.
+
++
+다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.
+
++
+[cols="2*"]
+|===
+| 공유 MetroCluster/HA 포트를 사용하는 AFF 및 ASA 시스템 | 공유 MetroCluster/HA 포트를 사용하는 FAS 시스템 
+
+
+ a| 
+** AFF A150, ASA A150
+** AFF A220
+** AFF C250, ASA C250
+** AFF A250, ASA A250
+** AFF A300
+** AFF A320
+** AFF C400, ASA C400
+** AFF A400, ASA A400
+** AFF A700
+** AFF C800, ASA C800
+** AFF A800, ASA A800
+** AFF A900, ASA A900
+
+ a| 
+** FAS2750
+** 500f로 설정합니다
+** FAS8200
+** FAS8300
+** FAS8700
+** FAS9000
+** FAS9500
+
+
+|===
+
+
+.단계
+. LOADER> 프롬프트에서 다음 boots를 site_B의 새 노드에 설정합니다.
++
+다음 단계는 새 플랫폼 모델에서 사용하는 포트에 따라 다릅니다.
+
++
+[role="tabbed-block"]
+====
+.공유 클러스터/HA 포트를 사용하는 시스템
+--
+.. 다음 bootargs를 설정합니다.
++
+`setenv bootarg.mcc.port_a_ip_config <local-IP-address/local-IP-mask,0,0,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id>`
+
++
+`setenv bootarg.mcc.port_b_ip_config <local-IP-address/local-IP-mask,0,0,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id>`
+
++
+
+NOTE: 인터페이스에서 기본 VLAN ID를 사용하는 경우 `vlan-id` 매개 변수가 필요하지 않습니다.
+
++
+다음 예에서는 첫 번째 네트워크에는 VLAN 120을 사용하고 두 번째 네트워크에는 VLAN 130을 사용하는 node_B_1-new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,0,172.17.26.13,172.17.26.12,120
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,0,172.17.27.13,172.17.27.12,130
+----
++
+다음 예에서는 첫 번째 네트워크에는 VLAN 120을 사용하고 두 번째 네트워크에는 VLAN 130을 사용하는 node_B_2-new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config 172.17.26.11/23,0,0,172.17.26.12,172.17.26.13,120
+setenv bootarg.mcc.port_b_ip_config 172.17.27.11/23,0,0,172.17.27.12,172.17.27.13,130
+----
++
+다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1 - new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config
+172.17.26.10/23,0,0,172.17.26.13,172.17.26.12
+setenv bootarg.mcc.port_b_ip_config
+172.17.27.10/23,0,0,172.17.27.13,172.17.27.12
+----
++
+다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2-new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config
+172.17.26.11/23,0,0,172.17.26.12,172.17.26.13
+setenv bootarg.mcc.port_b_ip_config
+172.17.27.11/23,0,0,172.17.27.12,172.17.27.13
+----
+
+
+--
+.공유 MetroCluster/HA 포트를 사용하는 시스템입니다
+.. 다음 bootargs를 설정합니다.
++
+`setenv bootarg.mcc.port_a_ip_config <local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id>`
+
++
+`setenv bootarg.mcc.port_b_ip_config <local-IP-address/local-IP-mask,0,HA-partner-IP-address,DR-partner-IP-address,DR-aux-partnerIP-address,vlan-id>`
+
++
+
+NOTE: 인터페이스에서 기본 VLAN ID를 사용하는 경우 `vlan-id` 매개 변수가 필요하지 않습니다.
+
++
+다음 예에서는 첫 번째 네트워크에는 VLAN 120을 사용하고 두 번째 네트워크에는 VLAN 130을 사용하는 node_B_1-new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config 172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12,120
+setenv bootarg.mcc.port_b_ip_config 172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12,130
+----
++
+다음 예에서는 첫 번째 네트워크에는 VLAN 120을 사용하고 두 번째 네트워크에는 VLAN 130을 사용하는 node_B_2-new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config 172.17.26.11/23,0,172.17.26.10,172.17.26.12,172.17.26.13,120
+setenv bootarg.mcc.port_b_ip_config 172.17.27.11/23,0,172.17.27.10,172.17.27.12,172.17.27.13,130
+----
++
+다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1 - new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config
+172.17.26.10/23,0,172.17.26.11,172.17.26.13,172.17.26.12
+setenv bootarg.mcc.port_b_ip_config
+172.17.27.10/23,0,172.17.27.11,172.17.27.13,172.17.27.12
+----
++
+다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2-new에 대한 값을 설정합니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.port_a_ip_config
+172.17.26.11/23,0,172.17.26.10,172.17.26.12,172.17.26.13
+setenv bootarg.mcc.port_b_ip_config
+172.17.27.11/23,0,172.17.27.10,172.17.27.12,172.17.27.13
+----
+
+
+--
+
+--
+====
+. 새 노드의 LOADER 프롬프트에서 UUID를 설정합니다.
++
+`setenv bootarg.mgwd.partner_cluster_uuid <partner-cluster-UUID>`
+
++
+`setenv bootarg.mgwd.cluster_uuid <local-cluster-UUID>`
+
++
+`setenv bootarg.mcc.pri_partner_uuid <DR-partner-node-UUID>`
+
++
+`setenv bootarg.mcc.aux_partner_uuid <DR-aux-partner-node-UUID>`
+
++
+`setenv bootarg.mcc_iscsi.node_uuid <local-node-UUID>`
+
++
+.. node_B_1에서 UUID 설정 - 신규:
++
+다음 예에서는 node_B_1-new에서 UUID를 설정하기 위한 명령을 보여 줍니다.
+
++
+[listing]
+----
+setenv bootarg.mgwd.cluster_uuid ee7db9d5-9a82-11e7-b68b-00a098908039
+setenv bootarg.mgwd.partner_cluster_uuid 07958819-9ac6-11e7-9b42-00a098c9e55d
+setenv bootarg.mcc.pri_partner_uuid f37b240b-9ac1-11e7-9b42-00a098c9e55d
+setenv bootarg.mcc.aux_partner_uuid bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f
+setenv bootarg.mcc_iscsi.node_uuid f03cb63c-9a7e-11e7-b68b-00a098908039
+----
+.. node_B_2에서 UUID 설정 - 신규:
++
+다음 예에서는 node_B_2-new에서 UUID를 설정하기 위한 명령을 보여 줍니다.
+
++
+[listing]
+----
+setenv bootarg.mgwd.cluster_uuid ee7db9d5-9a82-11e7-b68b-00a098908039
+setenv bootarg.mgwd.partner_cluster_uuid 07958819-9ac6-11e7-9b42-00a098c9e55d
+setenv bootarg.mcc.pri_partner_uuid bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f
+setenv bootarg.mcc.aux_partner_uuid f37b240b-9ac1-11e7-9b42-00a098c9e55d
+setenv bootarg.mcc_iscsi.node_uuid aa9a7a7a-9a81-11e7-a4e9-00a098908c35
+----
+
+
+. 가동 중인 사이트에서 다음 명령을 실행하여 원래 시스템이 ADP(Advanced Drive Partitioning)용으로 구성되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+ADP가 구성된 경우 "컨테이너 유형" 열에 출력에 "공유"가 `disk show` 표시됩니다. "컨테이너 유형"에 다른 값이 있으면 ADP가 시스템에 구성되지 않습니다. 다음 출력 예는 ADP로 구성된 시스템을 보여 줍니다.
+
++
+[listing]
+----
+::> disk show
+                    Usable               Disk    Container   Container
+Disk                Size       Shelf Bay Type    Type        Name      Owner
+
+Info: This cluster has partitioned disks. To get a complete list of spare disk
+      capacity use "storage aggregate show-spare-disks".
+----------------    ---------- ----- --- ------- ----------- --------- --------
+1.11.0              894.0GB    11    0   SSD      shared     testaggr  node_A_1
+1.11.1              894.0GB    11    1   SSD      shared     testaggr  node_A_1
+1.11.2              894.0GB    11    2   SSD      shared     testaggr  node_A_1
+----
+. 원래 시스템이 ADP용으로 분할된 디스크로 구성된 경우 각 교체 노드에 대한 프롬프트에서 활성화합니다 `LOADER` .
++
+'etenv bootarg.MCC.adp_enabled true'
+
+. 다음 변수를 설정합니다.
++
+`setenv bootarg.mcc.local_config_id <original-sys-id>`
+
++
+`setenv bootarg.mcc.dr_partner <dr-partner-sys-id>`
+
++
+
+NOTE: 'setenv bootarg.local_config_id' 변수는 * original * controller module, node_B_1-old의 sys-id로 설정되어야 한다.
+
++
+.. node_B_1-new에 변수를 설정합니다.
++
+다음 예는 node_B_1-new에서 값을 설정하는 명령을 보여 줍니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.local_config_id 537403322
+setenv bootarg.mcc.dr_partner 537403324
+----
+.. node_B_2-new에 변수를 설정합니다.
++
+다음 예는 node_B_2-new에서 값을 설정하는 명령을 보여 줍니다.
+
++
+[listing]
+----
+setenv bootarg.mcc.local_config_id 537403321
+setenv bootarg.mcc.dr_partner 537403323
+----
+
+
+. 외부 키 관리자와 함께 암호화를 사용하는 경우 필요한 boots를 설정합니다.
++
+세테네 bootarg.kmip.init.ipaddr`
+
++
+세테네 bootarg.kmip.kmip.init.netmask`
+
++
+세테네 bootarg.kmip.kmip.init.gateway`
+
++
+세테네 bootarg.kmip.kmip.init.interface`
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-reassign-root-agg.html["루트 집계 디스크를 재할당합니다"]..

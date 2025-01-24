@@ -23,7 +23,12 @@ ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 �
  a| 
 MetroCluster 구성 마이그레이션에 대한 SVM 데이터 이동성 지원
  a| 
-ONTAP은 MetroCluster가 아닌 HA 쌍에서 MetroCluster 구성으로 또는 MetroCluster 구성에서 MetroCluster가 아닌 HA 쌍으로 SVM을 마이그레이션할 수 있도록 지원합니다. MetroCluster 구성 간에 SVM을 마이그레이션할 수 없습니다.
+ONTAP은 다음 MetroCluster SVM 마이그레이션을 지원합니다.
+
+* 비 MetroCluster HA 쌍 및 MetroCluster IP 구성 간에 SVM 마이그레이션
+* 2개의 MetroCluster IP 구성 간에 SVM 마이그레이션
+* MetroCluster FC 구성과 MetroCluster IP 구성 간에 SVM 마이그레이션
+
 
 link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html["SVM 데이터 이동성"^]
  a| 
@@ -58,7 +63,7 @@ ONTAP 9.15.1
  a| 
 MetroCluster IP 및 FC 구성의 경우, 미러링되거나 미러링되지 않은 애그리게이트의 SVM에서 S3 오브젝트 스토리지 서버를 사용하도록 설정할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap/s3-config/index.html["S3 구성 개요"]
+https://docs.netapp.com/us-en/ontap/s3-config/index.html["S3 구성 개요"^]
  a| 
 ONTAP 9.14.1
 
@@ -69,7 +74,7 @@ MetroCluster 클러스터의 미러링된 애그리게이트 및 미러링되지
  a| 
 MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-mcc-task.html["MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성합니다"]
+https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-mcc-task.html["MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성합니다"^]
  a| 
 ONTAP 9.12.1
 
@@ -91,7 +96,7 @@ MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 
  a| 
 MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜(예: NFS 및 iSCSI)에 대한 IPsec 지원을 사용할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap/networking/configure_ip_security_@ipsec@_over_wire_encryption.html["유선 암호화를 통해 IP 보안(IPsec)을 구성합니다"]
+https://docs.netapp.com/us-en/ontap/networking/configure_ip_security_@ipsec@_over_wire_encryption.html["유선 암호화를 통해 IP 보안(IPsec)을 구성합니다"^]
  a| 
 ONTAP 9.11.1
 
@@ -111,7 +116,7 @@ MetroCluster 구성의 FabricPool 미러
  a| 
 MetroCluster 구성에서 미러링된 FabricPool를 설정하여 콜드 데이터를 두 개의 서로 다른 장애 영역으로 계층화할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"]
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소 설정"^]
  a| 
 ONTAP 9.7 을 참조하십시오
 

@@ -47,24 +47,25 @@ summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다�
 
 
 
-* MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다.
+* MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다. 해당 조합에 대해 지원되는 최소 ONTAP 버전은 를 link:https://hwu.netapp.com["Hardware Universe"^]참조하십시오.
 
 
 .AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
 다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
 
-image::../media/metrocluster_ip_upgrade_so_sb_aff_fas.png[MetroCluster IP 업그레이드 So sb AFF FAS]
+image:../media/mccip_manual_controller_upgrade_comb.png["에는 스위치오버 및 스위치백을 사용하여 컨트롤러를 수동으로 업그레이드할 수 있도록 지원되는 AFF 및 FAS 플랫폼이 나와 있습니다"]
 
 * 참고 1: 이 업그레이드의 경우 절차를 사용하십시오 link:task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html["스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)"]
 * 참고 2: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.
 * 참고 3: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.
 * 참고 4: 컨트롤러 모듈을 교체해야 합니다.
+* 참고 5: IOM 모듈이 이전 컨트롤러를 외부 SAS 쉘프로 변환해야 합니다. 지원되는 IOM 모듈은 을 link:https://hwu.netapp.com/["Hardware Universe"^]참조하십시오.
 
 
 .ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다
 다음 표는 MetroCluster IP 구성에서 ASA 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.
 
-image::../media/metrocluster_ip_upgrade_so_sb_asa_fas.png[MetroCluster IP 업그레이드 So sb ASA FAS]
+image:../media/mcc-ip-upgrade-asa-comb-9161.png["에는 ASA 지원 MetroCluster IP 컨트롤러 업그레이드 플랫폼 조합이 나와 있습니다"]
 
 * 참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.
 
@@ -85,7 +86,7 @@ image::../media/metrocluster_ip_upgrade_so_sb_asa_fas.png[MetroCluster IP 업그
 
 
 
-* MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다.
+* MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다. 해당 조합에 대해 지원되는 최소 ONTAP 버전은 를 link:https://hwu.netapp.com["Hardware Universe"^]참조하십시오.
 
 
 .AFF 및 FAS MetroCluster FC 컨트롤러 업그레이드를 지원했습니다

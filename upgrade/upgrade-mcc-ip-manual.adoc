@@ -1,0 +1,29 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언트에 무중단 서비스를 제공하는 동시에 파트너 클러스터의 컨트롤러 모듈을 업그레이드할 수 있습니다. 
+---
+= 스위치백 및 스위치백을 사용한 MetroCluster IP 컨트롤러 업그레이드를 위한 워크플로우(ONTAP 9.8 이상)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언트에 무중단 서비스를 제공하는 동시에 파트너 클러스터의 컨트롤러 모듈을 업그레이드할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.
+
+.이 워크플로 정보
+이 워크플로우를 사용하여 ONTAP 9.8 이상을 실행하는 시스템에서 스위치오버 및 스위치백을 사용하여 MetroCluster IP 컨트롤러를 업그레이드할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:upgrade-mcc-ip-manual-requirements.html["업그레이드 준비"]
+[role="quick-margin-para"]
+지원되는 업그레이드 조합 및 요구사항을 검토하고 필요한 작업을 완료하여 컨트롤러 업그레이드를 준비합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"]link:upgrade-mcc-ip-manual-switchover.html["컨트롤러를 업그레이드합니다"]
+[role="quick-margin-para"]
+스위치백을 수행하기 전에 이전 컨트롤러에서 구성을 제거하고, 새 컨트롤러를 랙 장착 및 설치하고, 루트 애그리게이트 디스크를 재할당하고, 새 컨트롤러를 부팅하려면 MetroCluster 구성을 전환하십시오.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"]link:upgrade-mcc-ip-manual-complete-upgrade.html["업그레이드를 완료합니다"]
+[role="quick-margin-para"]
+두 번째 사이트에서 업그레이드 작업을 반복하고 모니터링 구성을 복원하여 컨트롤러 업그레이드를 완료합니다.

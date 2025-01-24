@@ -18,4 +18,4 @@ MetroCluster 호환 스위치를 사용하는 경우 플랫폼별 네트워크 �
 
 NOTE: 값이 누락되면 플랫폼을 MetroCluster 호환 스위치와 함께 사용할 수 없음을 나타냅니다.
 
-image::../media/mcc-compliant-switches-network-speed-9151.png[에는 MetroCluster 호환 스위치의 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다.]
+image:../media/mcc-compliant-network-speed-9161.png["에는 MetroCluster 호환 스위치의 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다."]

@@ -1,0 +1,725 @@
+---
+permalink: upgrade/upgrade-mcc-ip-prepare-system.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고, 새 플랫폼을 준비하고, 기타 작업을 수행해야 합니다. 
+---
+= 업그레이드를 위해 MetroCluster IP 시스템을 준비합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고 새 플랫폼을 준비하고 기타 작업을 수행합니다.
+
+
+
+== 컨트롤러를 업그레이드하기 전에 MetroCluster 스위치 RCF를 업데이트합니다
+
+컨트롤러를 업그레이드하기 전에 기존 플랫폼 및 새 플랫폼 모델에 따라 MetroCluster 스위치 RCF(참조 구성 파일)를 업데이트해야 할 수 있습니다.
+
+.이 작업에 대해
+다음과 같은 상황에서 이 작업을 수행합니다.
+
+* 스위치 RCF 구성이 최소 버전에 없습니다.
+* 백엔드 MetroCluster 연결에 사용되는 VLAN ID를 변경해야 합니다.
+
+
+.시작하기 전에
+컨트롤러를 업그레이드하기 전에 RCF를 업데이트해야 하는지 여부를 확인합니다.
+
+* 스위치 구성이 지원되는 최소 RCF 버전으로 구성되지 않은 경우 컨트롤러를 업그레이드하기 전에 RCF를 업데이트해야 합니다.
++
+|===
+
+
+| 모델 전환 | 필요한 RCF 버전입니다 
+
+
+ a| 
+Cisco 3132Q-V
+ a| 
+1.7 이상
+
+
+
+ a| 
+Cisco 3232C
+ a| 
+1.7 이상
+
+
+
+ a| 
+Broadcom BES-53248
+ a| 
+1.3 이상
+
+
+
+ a| 
+nVidia SN2100
+ a| 
+2.0 이상
+
+|===
+* 이전 플랫폼 모델과 새 플랫폼 모델이 모두 다음 목록에 있는 경우 컨트롤러를 업그레이드하기 전에 VLAN ID를 업데이트할 필요가 * 없습니다.
++
+** FAS8200 또는 AFF A300
+** AFF A320
+** FAS9000 또는 AFF A700
+** AFF A800, AFF C800, ASA A800 또는 ASA C800
++
+이전 또는 새 플랫폼 모델 중 하나가 위에 나열되지 않은 경우 MetroCluster 인터페이스에서 지원되는 VLAN ID를 사용하고 있는지 확인해야 합니다. MetroCluster 인터페이스에 대해 지원되는 VLAN ID는 10, 20 또는 101~4096 범위입니다.
+
++
+[CAUTION]
+====
+*** VLAN ID가 10, 20이 아니거나 101에서 4096 사이의 범위인 경우 컨트롤러를 업그레이드하기 전에 스위치 RCF를 업그레이드해야 합니다.
+*** 로컬 클러스터 연결은 모든 VLAN을 사용할 수 있으며 지정된 범위에 있을 필요는 없습니다.
+*** 업그레이드하려는 새 RCF는 VLAN 10, 20을 사용해야 하며, 101에서 4096 사이의 범위에 있어야 합니다. 필요한 경우가 아니면 로컬 클러스터의 VLAN을 변경하지 마십시오.
+
+
+====
+
+
+
+
+.단계
+. 새 RCF의 적용을 위한 IP 스위치를 준비합니다.
++
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
+
++
+
+NOTE: 스위치는 다음과 같은 순서로 업데이트해야 합니다. switch_A_1, switch_B_1, switch_A_2, switch_B_2.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#reset-the-nvidia-ip-sn2100-switch-to-factory-defaults["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
+
+
+. RCF를 다운로드하여 설치합니다.
++
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCFs를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF를 다운로드하여 설치합니다"]
+
+
+
+
+
+
+== 이전 노드의 포트를 새 노드로 매핑합니다
+
+node_A_1-old의 물리적 포트가 node_A_1-new의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 이렇게 하면 node_A_1-new가 업그레이드 후 클러스터의 다른 노드 및 네트워크와 통신할 수 있습니다.
+
+.이 작업에 대해
+업그레이드 프로세스 중에 새 노드가 처음 부팅되면 새 노드가 교체되는 이전 노드의 최신 구성을 재생합니다. node_A_1-new를 부팅할 때 ONTAP는 node_A_1-old에서 사용된 것과 동일한 포트에 LIF를 호스팅하려고 시도합니다. 즉, 업그레이드 중에 포트와 LIF 구성을 조정해야 하기 때문에 이전 노드의 구성과 호환됩니다. 업그레이드 절차 중에 이전 노드와 새 노드에서 단계를 수행하여 클러스터, 관리 및 데이터 LIF가 올바르게 구성되도록 합니다
+
+다음 표에서는 새 노드의 포트 요구 사항과 관련된 구성 변경의 예를 보여 줍니다.
+
+|===
+
+
+3+| 클러스터 인터커넥트 물리적 포트 
+
+
+| 더 오래 된 컨트롤러 | 새로운 컨트롤러 | 필요한 조치 
+
+
+ a| 
+e0a, e0b
+ a| 
+e3a, e3b
+ a| 
+일치하는 포트가 없습니다. 업그레이드 후에는 클러스터 포트를 다시 생성해야 합니다.
+
+
+
+ a| 
+e0c, e0d
+ a| 
+e0a, e0b, e0c, e0d
+ a| 
+e0c 및 e0d가 일치하는 포트입니다. 구성을 변경할 필요는 없지만, 업그레이드 후 사용 가능한 클러스터 포트로 클러스터 LIF를 분산할 수 있습니다.
+
+|===
+.단계
+. 새 컨트롤러에서 사용할 수 있는 물리적 포트와 포트에서 호스팅할 수 있는 LIF를 확인합니다.
++
+컨트롤러의 포트 사용량은 플랫폼 모듈과 MetroCluster IP 구성에서 사용할 스위치에 따라 다릅니다. 에서 새 플랫폼의 포트 사용을 수집할 수 link:https://hwu.netapp.com["Hardware Universe"^]있습니다.
+
+. 포트 사용을 계획하고 새 노드 각각에 대한 참조를 위해 다음 표를 채웁니다.
++
+업그레이드 절차를 수행할 때 표를 참조하십시오.
+
++
+|===
+
+
+|  3+| 노드_A_1 - 이전 3+| Node_A_1 - 신규 
+
+
+| LIF | 포트 | IPspace | 브로드캐스트 도메인 | 포트 | IPspace | 브로드캐스트 도메인 
+
+
+ a| 
+클러스터 1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+클러스터 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+클러스터 3
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+클러스터 4
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+노드 관리
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+클러스터 관리
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+데이터 1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+데이터 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+데이터 3
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+데이터 4
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+산
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+인터클러스터 포트
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+
+
+
+
+== 새 컨트롤러를 netboot합니다
+
+새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
+
+.단계
+. 새 컨트롤러를 Netboot에 다음과 같이 합니다.
++
+.. 에 액세스합니다 link:https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
+.. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 'ONTAP-version_image.tgz' 파일을 저장합니다.
+.. 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
++
+디렉토리 목록에는 커널 파일이 있는 netboot 폴더가 포함되어야 합니다.
+
++
+'_ONTAP-version_image.tgz'
+
++
+파일의 압축을 풀 필요가 `_ontap-version_image.tgz` 없습니다.
+
+..  `LOADER`프롬프트에서 관리 LIF에 대한 NetBoot 연결을 구성합니다.
++
+|===
+
+
+| IP 주소 지정이... | 그러면... 
+
+
+ a| 
+DHCP를 선택합니다
+ a| 
+자동 연결을 구성합니다.
+
+ifconfig e0M-auto를 선택합니다
+
+
+
+ a| 
+정적
+ a| 
+수동 연결을 구성합니다.
+
+'ifconfig e0M-addr=_ip_addr_-mask=_netmask_-GW=_gateway_'
+
+|===
+.. netboot 수행
++
+"netboot\http://_web_server_ip/path_to_web-accessible_directory/ontap-version_image.tgz`
+
+.. 부팅 메뉴에서 옵션**(7) Install new software first**(새 소프트웨어를 먼저 설치**)를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.
++
+다음 메시지는 무시하십시오.
+
++
+""이 절차는 HA 쌍의 무중단 업그레이드에는 지원되지 않습니다." 무중단 소프트웨어 업그레이드에는 적용되며 컨트롤러 업그레이드에는 적용되지 않습니다.
+
+.. 절차를 계속하라는 메시지가 나타나면 "y"를 입력하고 패키지를 입력하라는 메시지가 나타나면 이미지 파일의 URL을 입력합니다.
++
+"http://__web_server_ip/path_to_web-accessible_directory/ontap-version___image.tgz`
+
+.. 해당하는 경우 사용자 이름과 암호를 입력하거나 Enter 키를 눌러 계속합니다.
+.. 다음과 유사한 프롬프트가 표시되면 백업 복구를 건너뛰려면 "n"을 입력해야 합니다.
++
+[listing]
+----
+Do you want to restore the backup configuration now? {y|n} n
+----
+.. 다음과 유사한 프롬프트가 나타나면 '* y*'를 입력하여 재부팅합니다.
++
+[listing]
+----
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+----
+
+
+
+
+
+
+== 컨트롤러 모듈의 구성을 지웁니다
+
+MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
+
+.단계
+. 필요한 경우 노드를 중지하여 프롬프트를 표시합니다 `LOADER`.
++
+"중지"
+
+.  `LOADER`프롬프트에서 환경 변수를 기본값으로 설정합니다.
++
+세트 기본값
+
+. 환경 저장:
++
+'사베에프'
+
+.  `LOADER`프롬프트에서 부팅 메뉴를 실행합니다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴 프롬프트에서 구성을 지웁니다.
++
+휘폰무화과
+
++
+확인 프롬프트에 yes로 응답합니다.
+
++
+노드가 재부팅되고 부팅 메뉴가 다시 표시됩니다.
+
+. 부팅 메뉴에서 옵션 * 5 * 를 선택하여 시스템을 유지보수 모드로 부팅합니다.
++
+확인 프롬프트에 yes로 응답합니다.
+
+
+
+
+
+== 사이트 업그레이드 전에 MetroCluster 상태를 확인하십시오
+
+업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.
+
+.단계
+. ONTAP에서 MetroCluster 구성 작동을 확인합니다.
++
+.. 노드가 multipathed:+ 인지 확인한다
+`node run -node <node_name> sysconfig -a`
++
+MetroCluster 구성의 각 노드에 대해 이 명령을 실행합니다.
+
+.. 구성에서 손상된 디스크가 없는지 확인합니다. + '스토리지 디스크 표시 - 파손'
++
+MetroCluster 구성의 각 노드에서 이 명령을 실행합니다.
+
+.. 상태 알림을 확인합니다.
++
+'시스템 상태 경고 표시
+
++
+각 클러스터에서 이 명령을 실행합니다.
+
+.. 클러스터의 라이센스를 확인합니다.
++
+'시스템 사용권 프로그램'
+
++
+각 클러스터에서 이 명령을 실행합니다.
+
+.. 노드에 연결된 디바이스를 확인합니다.
++
+네트워크 디바이스 발견 쇼
+
++
+각 클러스터에서 이 명령을 실행합니다.
+
+.. 두 사이트 모두에서 표준 시간대와 시간이 올바르게 설정되었는지 확인합니다.
++
+'클러스터 날짜 표시'
+
++
+각 클러스터에서 이 명령을 실행합니다. 명령을 사용하여 시간과 시간대를 구성할 수 `cluster date` 있습니다.
+
+
+
+. MetroCluster 구성의 운영 모드를 확인하고 MetroCluster 검사를 수행합니다.
++
+.. MetroCluster 설정을 확인하고 운영 모드가 정상 모드인지 확인한 후 MetroCluster show를 실행합니다
+.. 예상되는 모든 노드가 표시되는지 확인합니다. + "MetroCluster node show"
+.. 다음 명령을 실행합니다.
++
+'MetroCluster check run
+
+.. MetroCluster 검사 결과를 표시합니다.
++
+MetroCluster 체크 쇼
+
+
+
+. Config Advisor 도구를 사용하여 MetroCluster 케이블 연결을 확인합니다.
++
+.. Config Advisor를 다운로드하고 실행합니다.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp 다운로드: Config Advisor"]
+
+.. Config Advisor를 실행한 후 도구의 출력을 검토하고 출력에서 권장 사항을 따라 발견된 문제를 해결하십시오.
+
+
+
+
+
+
+== 업그레이드하기 전에 정보를 수집합니다
+
+업그레이드하기 전에 각 노드에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
+
+.단계
+. 각 노드의 물리적 케이블 연결을 기록하고 필요에 따라 새 노드의 올바른 케이블 연결을 허용하도록 케이블에 레이블을 지정합니다.
+. 각 노드에 대한 인터커넥트, 포트 및 LIF 정보를 수집합니다.
++
+각 노드에 대해 다음 명령의 출력을 수집합니다.
+
++
+** MetroCluster interconnect show
+** 'MetroCluster configuration-settings connection show'를 선택합니다
+** 네트워크 인터페이스 show-role cluster, node-mgmt
+** `network port show -node <node_name> -type physical`
+** `network port vlan show -node <node_name>`
+** `network port ifgrp show -node <node_name> -instance`
+** 네트워크 포트 브로드캐스트 도메인 쇼
+** 네트워크 포트 도달 가능성 세부 정보
+** 네트워크 IPspace 쇼
+** '볼륨 쇼'
+** '스토리지 집계 쇼'
+** `system node run -node <node_name> sysconfig -a`
+** `aggr show -r`
+** '디스크 쇼'
+** `system node run <node-name> disk show`
+** `vol show -fields type`
+** `vol show -fields type , space-guarantee`
+** 'vserver fcp initiator show'를 선택합니다
+** 스토리지 디스크 쇼
+** 'MetroCluster configuration-settings interface show'를 선택합니다
+
+
+. Site_B(플랫폼을 현재 업그레이드 중인 사이트)의 UUID를 수집합니다.
++
+'MetroCluster node show-fields node-cluster-uuid, node-uuuid
+
++
+성공적으로 업그레이드하려면 새 site_B 컨트롤러 모듈에서 이러한 값을 정확하게 구성해야 합니다. 값을 파일에 복사하여 나중에 업그레이드 프로세스에서 명령으로 복사할 수 있습니다.
+
++
+다음 예는 UUID를 사용한 명령 출력을 보여 줍니다.
+
++
+[listing]
+----
+cluster_B::> metrocluster node show -fields node-cluster-uuid, node-uuid
+  (metrocluster node show)
+dr-group-id cluster     node   node-uuid                            node-cluster-uuid
+----------- --------- -------- ------------------------------------ ------------------------------
+1           cluster_A node_A_1 f03cb63c-9a7e-11e7-b68b-00a098908039 ee7db9d5-9a82-11e7-b68b-00a098908039
+1           cluster_A node_A_2 aa9a7a7a-9a81-11e7-a4e9-00a098908c35 ee7db9d5-9a82-11e7-b68b-00a098908039
+1           cluster_B node_B_1 f37b240b-9ac1-11e7-9b42-00a098c9e55d 07958819-9ac6-11e7-9b42-00a098c9e55d
+1           cluster_B node_B_2 bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f 07958819-9ac6-11e7-9b42-00a098c9e55d
+4 entries were displayed.
+cluster_B::*
+----
++
+NetApp은 다음과 유사한 테이블에 UUID를 기록할 것을 권장합니다.
+
++
+|===
+
+
+| 클러스터 또는 노드 | UUID입니다 
+
+
+ a| 
+클러스터_B
+ a| 
+07958819-9ac6-11e7-9b42-00a098c9e55d
+
+
+
+ a| 
+노드_B_1
+ a| 
+f37b240b-9ac1-11e7-9b42-00a098c9e55d
+
+
+
+ a| 
+노드_B_2
+ a| 
+bf8e3f8f-9ac4-11e7-bd4e-00a098ca379f
+
+
+
+ a| 
+클러스터_A
+ a| 
+ee7db9d5-9a82-11e7-b68b-00a098908039
+
+
+
+ a| 
+노드_A_1
+ a| 
+f03cb63c-9a7e-11e7-b68b-00a098908039
+
+
+
+ a| 
+노드_A_2
+ a| 
+a9a7a7a-9a81-11e7-a4e9-00a098908c35
+
+|===
+. MetroCluster 노드가 SAN 구성에 있는 경우 관련 정보를 수집합니다.
++
+다음 명령의 출력을 수집합니다.
+
++
+** FCP 어댑터 show-instance(FCP 어댑터 show-instance)
+** FCP 인터페이스의 show-instance입니다
+** iSCSI 인터페이스 쇼
+** 'ucadmin 쇼'
+
+
+. 루트 볼륨이 암호화된 경우 키 관리자에 사용되는 암호를 수집하고 저장합니다.
++
+보안 키 관리자 백업 쇼
+
+. MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
++
+자세한 내용은 를 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"].
+
++
+.. Onboard Key Manager가 설정된 경우: +'보안 키 관리자 온보드 show-backup
++
+나중에 업그레이드 절차에서 암호가 필요합니다.
+
+.. 엔터프라이즈 키 관리(KMIP)를 구성한 경우 다음 명령을 실행하십시오.
++
+'보안 키 관리자 외부 쇼 인스턴스' 보안 키 관리자 키 쿼리
+
+
+
+. 기존 노드의 시스템 ID 수집:
++
+MetroCluster node show-fields node-systemid, ha-partner-systemid, dr-partner-systemid, dr-auxiliary-systemid
+
++
+다음 출력은 재할당된 드라이브를 보여 줍니다.
+
++
+[listing]
+----
+::> metrocluster node show -fields node-systemid,ha-partner-systemid,dr-partner-systemid,dr-auxiliary-systemid
+
+dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-systemid dr-auxiliary-systemid
+----------- ----------- -------- ------------- ------------------- ------------------- ---------------------
+1           cluster_A node_A_1   537403324     537403323           537403321           537403322
+1           cluster_A node_A_2   537403323     537403324           537403322           537403321
+1           cluster_B node_B_1   537403322     537403321           537403323           537403324
+1           cluster_B node_B_2   537403321     537403322           537403324           537403323
+4 entries were displayed.
+----
+
+
+
+
+== 중재자 또는 타이차단기 모니터링을 제거합니다
+
+플랫폼을 업그레이드하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.
+
+.단계
+. 다음 명령의 출력을 수집합니다.
++
+'Storage iSCSI-initiator show'를 선택합니다
+
+. 전환을 시작할 수 있는 Tiebreaker, 중재자 또는 기타 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.
++
+|===
+
+
+| 사용 중인 경우... | 다음 절차를 사용하십시오. 
+
+
+ a| 
+Tiebreaker입니다
+ a| 
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성 제거"]
+
+
+
+ a| 
+중재자
+ a| 
+ONTAP 프롬프트에서 다음 명령을 실행합니다.
+
+'MetroCluster configuration-settings 중재자 제거
+
+
+
+ a| 
+타사 응용 프로그램
+ a| 
+제품 설명서를 참조하십시오.
+
+|===
+
+
+
+
+== 유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+
+유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
+
+.이 작업에 대해
+이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
+
+.단계
+. 클러스터에 로그인합니다.
+. 유지 관리의 시작을 나타내는 AutoSupport 메시지를 호출합니다.
++
+'시스템 노드 AutoSupport invoke-node * -type all-message maINT=__maintenance -window-in-hours_'
+
++
+유지보수 윈도우 시간(main유지보수-window-in-hours) 매개변수는 유지보수 윈도우 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.
+
++
+'System node AutoSupport invoke-node * -type all-message maINT=end'
+
+. 파트너 사이트에서 이 단계를 반복합니다.
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-switchover.html["MetroCluster 구성을 전환합니다"]..

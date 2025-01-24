@@ -1,0 +1,305 @@
+---
+permalink: upgrade/upgrade-mcc-ip-system-controller-replace-prechecks.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 컨트롤러 업그레이드를 준비하기 위해 시스템 사전 점검을 수행하고 구성 정보를 수집합니다. 
+---
+= 업그레이드를 위해 MetroCluster IP 시스템을 준비합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 업그레이드를 준비하려면 이전 플랫폼 모델과 새로운 플랫폼 모델에 따라 스위치 참조 구성 파일(RCF)을 업그레이드해야 할 수 있습니다. 그런 다음 시스템 사전 점검을 수행하고 구성 정보를 수집하며 기존 모니터링 소프트웨어를 제거합니다.
+
+
+
+== 컨트롤러를 업그레이드하기 전에 MetroCluster 스위치 RCF를 업데이트합니다
+
+컨트롤러를 업그레이드하기 전에 기존 플랫폼 및 새 플랫폼 모델에 따라 MetroCluster 스위치 RCF(참조 구성 파일)를 업데이트해야 할 수 있습니다.
+
+.이 작업에 대해
+다음과 같은 상황에서 이 작업을 수행합니다.
+
+* 스위치 RCF 구성이 최소 버전에 없습니다.
+* 백엔드 MetroCluster 연결에 사용되는 VLAN ID를 변경해야 합니다.
+
+
+.시작하기 전에
+컨트롤러를 업그레이드하기 전에 RCF를 업데이트해야 하는지 여부를 확인합니다.
+
+* 스위치 구성이 지원되는 최소 RCF 버전으로 구성되지 않은 경우 컨트롤러를 업그레이드하기 전에 RCF를 업데이트해야 합니다.
++
+|===
+
+
+| 모델 전환 | 필요한 RCF 버전입니다 
+
+
+ a| 
+Cisco 3132Q-V
+ a| 
+1.7 이상
+
+
+
+ a| 
+Cisco 3232C
+ a| 
+1.7 이상
+
+
+
+ a| 
+Broadcom BES-53248
+ a| 
+1.3 이상
+
+
+
+ a| 
+nVidia SN2100
+ a| 
+2.0 이상
+
+|===
+* 이전 플랫폼 모델과 새 플랫폼 모델이 모두 다음 목록에 있는 경우 컨트롤러를 업그레이드하기 전에 VLAN ID를 업데이트할 필요가 * 없습니다.
++
+** FAS8200 또는 AFF A300
+** AFF A320
+** FAS9000 또는 AFF A700
+** AFF A800, AFF C800, ASA A800 또는 ASA C800
++
+이전 또는 새 플랫폼 모델 중 하나가 위에 나열되지 않은 경우 MetroCluster 인터페이스에서 지원되는 VLAN ID를 사용하고 있는지 확인해야 합니다. MetroCluster 인터페이스에 대해 지원되는 VLAN ID는 10, 20 또는 101~4096 범위입니다.
+
++
+[CAUTION]
+====
+*** VLAN ID가 10, 20이 아니거나 101에서 4096 사이의 범위인 경우 컨트롤러를 업그레이드하기 전에 스위치 RCF를 업그레이드해야 합니다.
+*** 로컬 클러스터 연결은 모든 VLAN을 사용할 수 있으며 지정된 범위에 있을 필요는 없습니다.
+*** 업그레이드하려는 새 RCF는 VLAN 10, 20을 사용해야 하며, 101에서 4096 사이의 범위에 있어야 합니다. 필요한 경우가 아니면 로컬 클러스터의 VLAN을 변경하지 마십시오.
+
+
+====
+
+
+
+
+.단계
+. 새 RCF의 적용을 위한 IP 스위치를 준비합니다.
++
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
+
++
+
+NOTE: 스위치는 다음과 같은 순서로 업데이트해야 합니다. switch_A_1, switch_B_1, switch_A_2, switch_B_2.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#reset-the-nvidia-ip-sn2100-switch-to-factory-defaults["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
+
+
+. RCF를 다운로드하여 설치합니다.
++
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
+
++
+** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCFs를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF를 다운로드하여 설치합니다"]
+
+
+
+
+
+
+== 시스템 사전 점검을 수행합니다
+
+사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 검사가 실패하거나 업그레이드를 진행하지 않기로 선택한 경우 수동으로 수행해야 link:../install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["ONTAP 중재자 서비스를 다시 구성합니다"]합니다.
+
+업그레이드 중 어느 단계에서든 사이트 A에서 'system controller replace show' 또는 'system controller replace show-details' 명령을 실행하여 상태를 확인할 수 있습니다. 명령이 빈 출력을 반환하는 경우 몇 분 정도 기다린 후 명령을 다시 실행합니다.
+
+.단계
+. 사이트 A에서 자동 컨트롤러 교체 절차를 시작하여 사이트 B에서 컨트롤러를 교체합니다.
++
+`system controller replace start -nso true`
+
++
+자동 작업으로 사전 점검을 실행합니다. 문제가 발견되지 않으면 작업이 일시 중지되므로 수동으로 구성 관련 정보를 수집할 수 있습니다.
+
++
+[NOTE]
+====
+** 를 실행하지 않는 경우 `system controller replace start -nso true` 명령, 컨트롤러 업그레이드 절차는 MetroCluster IP 시스템의 기본 절차로 통계청 기반의 자동 전환 및 스위치백을 선택합니다.
+** 현재 소스 시스템 및 호환되는 모든 타겟 시스템이 표시됩니다. 소스 컨트롤러를 다른 ONTAP 버전 또는 호환되지 않는 플랫폼으로 교체한 경우 자동화 작업이 중단되고 새 노드가 부팅된 후 오류가 보고됩니다. 클러스터를 정상 상태로 전환하려면 수동 복구 절차를 따라야 합니다.
++
+'system controller replace start' 명령을 실행하면 다음과 같은 사전 검사 오류가 보고될 수 있습니다.
+
++
+[listing]
+----
+Cluster-A::*>system controller replace show
+Node        Status         Error-Action
+----------- -------------- ------------------------------------
+Node-A-1    Failed         MetroCluster check failed. Reason : MCC check showed errors in component aggregates
+----
++
+미러링되지 않은 애그리게이트가 있거나 다른 애그리게이트 문제로 인해 이 오류가 발생했는지 확인합니다. 미러링된 모든 애그리게이트가 정상 상태이고 성능이 저하되거나 미러 성능이 저하되지 않았는지 확인합니다. 이 오류가 미러링되지 않은 애그리게이트에만 기인하는 경우, '시스템 컨트롤러 교체 시작' 명령에서 '-skip-MetroCluster-check TRUE' 옵션을 선택하면 이 오류를 덮어쓸 수 있습니다. 원격 스토리지에 액세스할 수 있는 경우 미러링되지 않은 애그리게이트는 전환 후 온라인 상태로 전환됩니다. 원격 스토리지 링크에 장애가 발생하면 미러링되지 않은 애그리게이트가 온라인 상태가 되지 않습니다.
+
+
+
+====
+. 사이트 B에 로그인하고 'system controller replace show' 또는 'system controller replace show-details' 명령 아래 콘솔 메시지에 나열된 명령어를 수행하여 수동으로 구성정보를 수집한다.
+
+
+
+
+== 업그레이드하기 전에 정보를 수집합니다
+
+업그레이드하기 전에 루트 볼륨이 암호화된 경우 백업 키 및 기타 정보를 수집하여 이전에 암호화된 루트 볼륨으로 새 컨트롤러를 부팅해야 합니다.
+
+.이 작업에 대해
+이 작업은 기존 MetroCluster IP 구성에서 수행됩니다.
+
+.단계
+. 새 컨트롤러를 설정할 때 케이블을 쉽게 식별할 수 있도록 기존 컨트롤러의 케이블에 레이블을 지정합니다.
+. 백업 키 및 기타 정보를 캡처하는 명령을 표시합니다.
++
+'시스템 컨트롤러 교체 쇼
+
++
+파트너 클러스터의 'show' 명령 아래에 나열된 명령을 실행합니다.
+
++
+를 클릭합니다 `show` 명령 출력에는 MetroCluster 인터페이스 IP, 시스템 ID 및 시스템 UUID가 포함된 세 개의 테이블이 표시됩니다. 이 정보는 나중에 새 노드를 부팅할 때 boots를 설정하는 절차에 필요합니다.
+
+. MetroCluster 구성에서 노드의 시스템 ID를 수집합니다.
++
+--
+'MetroCluster node show-fields node-systemid, dr-partner-systemid
+
+업그레이드 절차 중에 이러한 이전 시스템 ID를 새 컨트롤러 모듈의 시스템 ID로 교체합니다.
+
+이 예에서 4노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
+
+** NODE_A_1 - 이전: 4068741258
+** NODE_A_2 - 이전: 4068741260
+** NODE_B_1 - 이전: 4068741254
+** NODE_B_2 - 이전: 4068741256
+
+
+[listing]
+----
+metrocluster-siteA::> metrocluster node show -fields node-systemid,ha-partner-systemid,dr-partner-systemid,dr-auxiliary-systemid
+dr-group-id        cluster           node            node-systemid     ha-partner-systemid     dr-partner-systemid    dr-auxiliary-systemid
+-----------        ---------------   ----------      -------------     -------------------     -------------------    ---------------------
+1                    Cluster_A       Node_A_1-old    4068741258        4068741260              4068741256             4068741256
+1                    Cluster_A       Node_A_2-old    4068741260        4068741258              4068741254             4068741254
+1                    Cluster_B       Node_B_1-old    4068741254        4068741256              4068741258             4068741260
+1                    Cluster_B       Node_B_2-old    4068741256        4068741254              4068741260             4068741258
+4 entries were displayed.
+----
+이 예에서는 2노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.
+
+** 노드_A_1:4068741258
+** 노드_B_1:4068741254
+
+
+[listing]
+----
+metrocluster node show -fields node-systemid,dr-partner-systemid
+
+dr-group-id cluster    node          node-systemid dr-partner-systemid
+----------- ---------- --------      ------------- ------------
+1           Cluster_A  Node_A_1-old  4068741258    4068741254
+1           Cluster_B  node_B_1-old  -             -
+2 entries were displayed.
+----
+--
+. 이전 각 노드에 대한 포트 및 LIF 정보를 수집합니다.
++
+각 노드에 대해 다음 명령의 출력을 수집해야 합니다.
+
++
+** 네트워크 인터페이스 show-role cluster, node-mgmt
+** `network port show -node <node-name> -type physical`
+** `network port vlan show -node <node-name>`
+** `network port ifgrp show -node <node-name> -instance`
+** 네트워크 포트 브로드캐스트 도메인 쇼
+** 네트워크 포트 도달 가능성 세부 정보
+** 네트워크 IPspace 쇼
+** '볼륨 쇼'
+** '스토리지 집계 쇼'
+** `system node run -node <node-name> sysconfig -a`
+** `aggr show -r`
+** '디스크 쇼'
+** `system node run <node-name> disk show`
+** `vol show -fields type`
+** `vol show -fields type , space-guarantee`
+** 'vserver fcp initiator show'를 선택합니다
+** 스토리지 디스크 쇼
+** 'MetroCluster configuration-settings interface show'를 선택합니다
+
+
+. MetroCluster 노드가 SAN 구성에 있는 경우 관련 정보를 수집합니다.
++
+다음 명령의 출력을 수집해야 합니다.
+
++
+** FCP 어댑터 show-instance(FCP 어댑터 show-instance)
+** FCP 인터페이스의 show-instance입니다
+** iSCSI 인터페이스 쇼
+** 'ucadmin 쇼'
+
+
+. 루트 볼륨이 암호화된 경우 키 관리자에 사용되는 암호를 수집하여 저장합니다.
++
+보안 키 관리자 백업 쇼
+
+. MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
++
+자세한 내용은 를 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"^].
+
++
+.. Onboard Key Manager가 구성된 경우:
++
+보안 키 관리자 온보드 쇼 백업
+
++
+나중에 업그레이드 절차에서 암호가 필요합니다.
+
+.. 엔터프라이즈 키 관리(KMIP)를 구성한 경우 다음 명령을 실행하십시오.
++
+'보안 키 관리자 외부 쇼 인스턴스'
+
++
+보안 키 관리자 키 쿼리
+
+
+
+. 구성 정보 수집을 마친 후 작업을 다시 시작합니다.
++
+시스템 컨트롤러 교체 재개
+
+
+
+
+
+== Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
+
+업그레이드를 시작하기 전에 Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다.
+
+전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
+
+.단계
+. link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["기존 MetroCluster 구성을 제거합니다"] Tiebreaker 소프트웨어
+. 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
++
+응용 프로그램 설명서를 참조하십시오.
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-system-controller-replace-prepare-network-configuration.html["이전 컨트롤러의 네트워크 구성을 준비합니다"]..

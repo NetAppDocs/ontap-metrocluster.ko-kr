@@ -94,7 +94,7 @@ dr_group_2 - 신규
 
 [IMPORTANT]
 ====
-* MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다.
+* MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다. 해당 조합에 대해 지원되는 최소 ONTAP 버전은 를 link:https://hwu.netapp.com["Hardware Universe"^]참조하십시오.
 * 이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.
 * 이 표에 표시된 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.
 * 하나의 DR 그룹에 있는 모든 노드의 유형과 구성이 동일해야 합니다.
@@ -104,7 +104,7 @@ dr_group_2 - 신규
 .지원되는 AFF 및 FAS MetroCluster IP 확장 조합
 다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.
 
-image::../media/8node_comb_ip_aff_fas.png[8노드 구성을 위한 플랫폼 조합]
+image::../media/mccip_expand_ip_8node_9161.png[8노드 구성을 위한 플랫폼 조합]
 
 * * 참고 1 *: 이러한 조합에는 ONTAP 9.9.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.
 * * 참고 2 *: 이러한 조합에는 ONTAP 9.13.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.

@@ -1,0 +1,131 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-reassign-root-agg.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 앞에서 수집한 시스템 ID를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 재할당합니다. 
+---
+= 루트 집계 디스크를 새 MetroCluster IP 컨트롤러 모듈에 재할당합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+앞에서 수집한 시스템 ID를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 재할당합니다.
+
+.이 작업에 대해
+이전 시스템 ID는 에서 식별되었습니다. link:upgrade-mcc-ip-prepare-system.html#gather-information-before-the-upgrade["업그레이드하기 전에 정보를 수집합니다"]
+
+유지 관리 모드에서 이 단계를 수행합니다.
+
+
+NOTE: 루트 애그리게이트 디스크란 컨트롤러 업그레이드 프로세스 중에 다시 할당해야 하는 유일한 디스크입니다. 데이터 애그리게이트의 디스크 소유권은 스위치오버/스위치백 작업의 일부로 처리됩니다.
+
+.단계
+. 시스템을 유지보수 모드로 부팅합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. 유지보수 모드 프롬프트에서 node_B_1에 새 디스크를 표시합니다.
++
+'디스크 쇼-A'
+
++
+
+CAUTION: 디스크 재할당을 진행하기 전에 노드의 루트 애그리게이트에 속한 pool0 및 pool1 디스크가 출력에 표시되는지 `disk show` 확인합니다. 다음 예제에서 출력에는 node_B_1-old가 소유한 pool0 및 pool1 디스크가 나열됩니다.
+
++
+명령 출력에는 새 컨트롤러 모듈의 시스템 ID(1574774970)가 표시됩니다. 그러나 이전 시스템 ID(537403322)는 여전히 루트 애그리게이트 디스크를 소유합니다. 이 예에서는 MetroCluster 구성에서 다른 노드가 소유한 드라이브는 표시하지 않습니다.
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 1574774970
+DISK                  OWNER                 POOL   SERIAL NUMBER   HOME                  DR HOME
+------------          ---------             -----  -------------   -------------         -------------
+prod3-rk18:9.126L44   node_B_1-old(537403322)  Pool1  PZHYN0MD     node_B_1-old(537403322)  node_B_1-old(537403322)
+prod4-rk18:9.126L49   node_B_1-old(537403322)  Pool1  PPG3J5HA     node_B_1-old(537403322)  node_B_1-old(537403322)
+prod4-rk18:8.126L21   node_B_1-old(537403322)  Pool1  PZHTDSZD     node_B_1-old(537403322)  node_B_1-old(537403322)
+prod2-rk18:8.126L2    node_B_1-old(537403322)  Pool0  S0M1J2CF     node_B_1-old(537403322)  node_B_1-old(537403322)
+prod2-rk18:8.126L3    node_B_1-old(537403322)  Pool0  S0M0CQM5     node_B_1-old(537403322)  node_B_1-old(537403322)
+prod1-rk18:9.126L27   node_B_1-old(537403322)  Pool0  S0M1PSDW     node_B_1-old(537403322)  node_B_1-old(537403322)
+.
+.
+.
+----
+. 드라이브 쉘프의 루트 애그리게이트 디스크를 새 컨트롤러에 재할당합니다.
++
+|===
+
+
+| ADP를 사용하는 경우... | 다음 명령을 사용하십시오. 
+
+
+ a| 
+예
+ a| 
+`disk reassign -s <old-sysid> -d <new-sysid> -r <dr-partner-sysid>`
+
+
+
+ a| 
+아니요
+ a| 
+`disk reassign -s <old-sysid> -d <new-sysid>`
+
+|===
+. 드라이브 쉘프의 루트 애그리게이트 디스크를 새 컨트롤러에 재할당합니다.
++
+`disk reassign -s <old-sysid> -d <new-sysid>`
+
++
+다음 예에서는 비 ADP 구성에서 드라이브 재할당을 보여 줍니다.
+
++
+[listing]
+----
+*> disk reassign -s 537403322 -d 1574774970
+Partner node must not be in Takeover mode during disk reassignment from maintenance mode.
+Serious problems could result!!
+Do not proceed with reassignment if the partner is in takeover mode. Abort reassignment (y/n)? n
+
+After the node becomes operational, you must perform a takeover and giveback of the HA partner node to ensure disk reassignment is successful.
+Do you want to continue (y/n)? y
+Disk ownership will be updated on all disks previously belonging to Filer with sysid 537403322.
+Do you want to continue (y/n)? y
+----
+. 루트 애그리게이트의 디스크가 올바르게 재할당되었는지 확인합니다.
++
+'디스크 쇼'
+
++
+'스토리지 애그리게이션 상태
+
++
+[listing]
+----
+
+*> disk show
+Local System ID: 537097247
+
+  DISK                    OWNER                    POOL   SERIAL NUMBER   HOME                     DR HOME
+------------              -------------            -----  -------------   -------------            -------------
+prod03-rk18:8.126L18 node_B_1-new(537097247)  Pool1  PZHYN0MD        node_B_1-new(537097247)   node_B_1-new(537097247)
+prod04-rk18:9.126L49 node_B_1-new(537097247)  Pool1  PPG3J5HA        node_B_1-new(537097247)   node_B_1-new(537097247)
+prod04-rk18:8.126L21 node_B_1-new(537097247)  Pool1  PZHTDSZD        node_B_1-new(537097247)   node_B_1-new(537097247)
+prod02-rk18:8.126L2  node_B_1-new(537097247)  Pool0  S0M1J2CF        node_B_1-new(537097247)   node_B_1-new(537097247)
+prod02-rk18:9.126L29 node_B_1-new(537097247)  Pool0  S0M0CQM5        node_B_1-new(537097247)   node_B_1-new(537097247)
+prod01-rk18:8.126L1  node_B_1-new(537097247)  Pool0  S0M1PSDW        node_B_1-new(537097247)   node_B_1-new(537097247)
+::>
+::> aggr status
+           Aggr          State           Status                Options
+aggr0_node_B_1           online          raid_dp, aggr         root, nosnap=on,
+                                         mirrored              mirror_resync_priority=high(fixed)
+                                         fast zeroed
+                                         64-bit
+----
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-boot-new-controllers.html["새 컨트롤러를 부팅하고 LIF 구성을 복원합니다"]..

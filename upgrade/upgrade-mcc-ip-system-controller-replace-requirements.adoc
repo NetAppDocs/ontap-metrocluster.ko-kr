@@ -1,0 +1,77 @@
+---
+permalink: upgrade/upgrade-mcc-ip-system-controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 컨트롤러 업그레이드를 수행하기 전에 시스템이 모든 요구 사항을 충족하는지 확인하십시오. 
+---
+= 이 MetroCluster IP 업그레이드 절차를 사용하기 위한 요구 사항입니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+컨트롤러 업그레이드를 수행하기 전에 시스템이 모든 요구사항을 충족하는지 확인하십시오.
+
+* 이 절차는 컨트롤러 업그레이드에만 사용할 수 있습니다.
++
+스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소는 동시에 업그레이드할 수 없습니다.
+
+* 업그레이드 구성에서 기존 컨트롤러 및 새 컨트롤러에서 MetroCluster IP 스위치(스위치 유형, 공급업체 및 모델) 및 펌웨어 버전을 지원해야 합니다.
++
+link:https://hwu.netapp.com["Hardware Universe"^]지원되는 스위치 및 펌웨어 버전은 또는 를 link:https://imt.netapp.com/matrix/["IMT"^] 참조하십시오.
+
+* MetroCluster IP 시스템이 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.
+* 새 시스템보다 더 많은 슬롯이나 포트가 있는 시스템에서 업그레이드할 경우 새 시스템에 충분한 슬롯과 포트가 있는지 확인해야 합니다.
++
+업그레이드를 시작하기 전에 를 link:https://hwu.netapp.com["Hardware Universe"^] 참조하여 새 시스템의 슬롯 및 포트 수를 확인하십시오.
+
+* 이 절차를 사용하면 통계청 기반의 자동 전환 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 컨트롤러를 업그레이드할 수 있습니다.
++
+
+NOTE: 4노드 MetroCluster IP 구성에서는 ARL(Aggregate replace)을 "systems controller replace" 명령으로 Aggregate relocation(ARL)을 사용하여 업그레이드를 수행할 수 없습니다.
+
+* 시스템에서 활성화되어 있는 link:../maintain/task-configure-encryption.html#disable-end-to-end-encryption["종단간 암호화를 비활성화합니다"] 경우 업그레이드를 수행하기 전에
+* 자동 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.
+* 이 자동화된 통계청 기반의 컨트롤러 업그레이드 절차를 통해 MetroCluster 재해 복구(DR) 사이트로 컨트롤러 교체를 시작할 수 있습니다. 한 번에 한 사이트에서만 컨트롤러 교체를 시작할 수 있습니다.
+* 사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.
+
+
+다음 예제 이름이 이 절차에 사용됩니다.
+
+* 사이트_A의 클러스터_A
++
+** 업그레이드 전:
++
+*** 노드_A_1 - 이전
+*** 노드_A_2 - 이전
+
+
+** 업그레이드 후:
++
+*** Node_A_1 - 신규
+*** Node_A_2 - 신규
+
+
+
+
+* site_B의 cluster_B입니다
++
+** 업그레이드 전:
++
+*** 노드_B_1 - 이전
+*** 노드_B_2 - 이전
+
+
+** 업그레이드 후:
++
+*** Node_B_1 - 신규
+*** Node_B_2 - 신규
+
+
+
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-system-controller-replace-console-logging.html["콘솔 로깅을 활성화합니다"]..

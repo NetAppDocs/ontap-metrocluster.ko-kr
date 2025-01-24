@@ -1,0 +1,57 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-switchover.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
+summary: 사이트_B의 플랫폼을 업그레이드할 수 있도록 구성을 사이트_A로 전환합니다. 
+---
+= MetroCluster IP 구성을 전환합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+사이트_B의 플랫폼을 업그레이드할 수 있도록 구성을 사이트_A로 전환합니다.
+
+.이 작업에 대해
+이 작업은 site_A에서 수행해야 합니다
+
+이 작업을 완료한 후 다음을 수행합니다.
+
+* Cluster_A는 활성 상태이며 두 사이트에 대해 데이터를 제공합니다.
+* Cluster_B가 비활성 상태이며 업그레이드 프로세스를 시작할 준비가 되었습니다.
+
+
+image::../media/mcc_upgrade_cluster_a_in_switchover.png[에는 cluster_A가 업그레이드 준비 상태이고 cluster_B가 전환 중임을 보여 줍니다]
+
+.단계
+. site_B의 노드를 업그레이드할 수 있도록 MetroCluster 구성을 site_A로 전환합니다.
++
+.. cluster_a에서 다음 명령을 실행합니다.
++
+'MetroCluster switchover - controller-replacement true'
+
++
+작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
+
+.. 절체 동작 모니터링:
++
+MetroCluster 동작쇼
+
+.. 작업이 완료된 후 노드가 절체 상태에 있는지 확인합니다.
++
+MetroCluster 쇼
+
+.. MetroCluster 노드의 상태를 점검한다.
++
+'MetroCluster node show'
+
++
+컨트롤러 업그레이드 중에는 협상된 전환 후 애그리게이트 자동 복구가 비활성화됩니다.
+
+
+
+
+
+.다음 단계
+link:upgrade-mcc-ip-manual-uninstall-controllers.html["인터페이스 구성을 제거하고 이전 컨트롤러를 제거합니다"]..

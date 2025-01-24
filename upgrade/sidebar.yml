@@ -14,20 +14,82 @@ entries:
     url: "/upgrade/concept_choosing_expansion_method_mcc.html"
 - title: 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP에서 컨트롤러를 업그레이드합니다. "시스템 컨트롤러 교체" 명령(ONTAP
     9.13.1 이상)
-  url: "/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_ip.html"
+  entries:
+  - title: 워크플로우 업그레이드
+    url: "/upgrade/upgrade-mcc-ip-system-controller-replace.html"
+  - title: 업그레이드 준비
+    entries:
+    - title: '"system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러 업그레이드를 지원했습니다'
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-supported-platforms.html"
+    - title: 이 업그레이드 절차를 사용하기 위한 요구 사항
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-requirements.html"
+    - title: 콘솔 로깅을 활성화합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-console-logging.html"
+    - title: 필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하는 경우)
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-set-bootarg.html"
+    - title: 업그레이드를 위해 시스템을 준비합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-prechecks.html"
+  - title: 컨트롤러를 업그레이드합니다
+    entries:
+    - title: 이전 컨트롤러의 네트워크 구성을 준비합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-prepare-network-configuration.html"
+    - title: 새 컨트롤러를 설정하고 NetBoot합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-setup-new-controllers.html"
+    - title: HBA 구성을 복구하고 HA 상태를 설정합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-restore-hba-set-ha.html"
+    - title: 스위치 RCF 파일을 업데이트하고 MetroCluster IP bootarg 값을 설정합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-apply-rcf-set-bootarg.html"
+    - title: 루트 애그리게이트 디스크를 재할당합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-reassign-root-agg.html"
+    - title: 새 컨트롤러를 부팅하고 LIF 구성을 복원합니다
+      url: "/upgrade/upgrade-mcc-ip-system-controller-replace-boot-new-controllers.html"
+  - title: 업그레이드를 완료합니다
+    url: "/upgrade/upgrade-mcc-ip-system-controller-replace-complete-upgrade.html"
+- title: 스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)
+  entries:
+  - title: 워크플로우 업그레이드
+    url: "/upgrade/upgrade-mcc-ip-manual.html"
+  - title: 업그레이드 준비
+    entries:
+    - title: 이 업그레이드 절차를 사용하기 위한 요구 사항
+      url: "/upgrade/upgrade-mcc-ip-manual-requirements.html"
+    - title: 콘솔 로깅을 활성화합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-console-logging.html"
+    - title: 필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하는 경우)
+      url: "/upgrade/upgrade-mcc-ip-manual-set-bootarg.html"
+    - title: 업그레이드를 위해 시스템을 준비합니다
+      url: "/upgrade/upgrade-mcc-ip-prepare-system.html"
+  - title: 컨트롤러를 업그레이드합니다
+    entries:
+    - title: MetroCluster 구성을 전환합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-switchover.html"
+    - title: 인터페이스 구성을 제거하고 이전 컨트롤러를 제거합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-uninstall-controllers.html"
+    - title: 새 컨트롤러를 설정합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-setup-controllers.html"
+    - title: HBA 구성을 복구하고 HA 상태를 설정합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-hba-set-ha.html"
+    - title: 스위치 RCF 파일을 업데이트하고 MetroCluster IP bootarg 값을 설정합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-apply-rcf-set-bootarg.html"
+    - title: 루트 애그리게이트 디스크를 재할당합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-reassign-root-agg.html"
+    - title: 새 컨트롤러를 부팅하고 LIF 구성을 복원합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-boot-new-controllers.html"
+    - title: 구성을 다시 전환합니다
+      url: "/upgrade/upgrade-mcc-ip-manual-switchback.html"
+  - title: 업그레이드를 완료합니다
+    url: "/upgrade/upgrade-mcc-ip-manual-complete-upgrade.html"
+- title: 스위치백 및 스위치백을 사용하는 MetroCluster IP의 컨트롤러(AFF A700에서 AFF A900로, FAS9000에서 FAS9500로)
+    업그레이드(ONTAP 9.10.1 이상)
+  url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html"
 - title: 스위치오버 및 스위치백을 사용하여 MetroCluster FC에서 컨트롤러를 업그레이드합니다
   url: "/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html"
-- title: 스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster FC 구성에서 컨트롤러(AFF A700/FAS9000을
-    AFF A900/FAS9500으로 업그레이드
+- title: 스위치백 및 스위치백을 사용하는 MetroCluster FC 구성에서 컨트롤러(AFF A700를 AFF A900로, FAS9000에서
+    FAS9500로) 업그레이드(ONTAP 9.10.1 이상)
   url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_fc_us_switchover_and_switchback.html"
 - title: 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC에서 컨트롤러를 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1
     이상)으로 업그레이드
   url: "/upgrade/task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_fc.html"
-- title: 스위치오버 및 스위치백을 사용하여 MetroCluster IP의 컨트롤러 업그레이드(ONTAP 9.8 이상)
-  url: "/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html"
-- title: 스위치오버 및 스위치백(ONTAP 9.10.1 이상)을 사용하여 MetroCluster IP의 컨트롤러(AFF A700/FAS9000을
-    AFF A900/FAS9500으로 업그레이드
-  url: "/upgrade/task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html"
 - title: 4노드 MetroCluster FC 구성을 업데이트합니다
   url: "/upgrade/task_refresh_4n_mcc_fc.html"
 - title: 4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)

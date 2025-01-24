@@ -1,0 +1,113 @@
+---
+permalink: upgrade/upgrade-mcc-ip-manual-set-bootarg.html 
+sidebar: sidebar 
+keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc, bootarg 
+summary: ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하려면 먼저 부트마크를 설정해야 컨트롤러 업그레이드를 진행할 수 있습니다. 
+---
+= 필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 MetroCluster IP 업그레이드)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.15.1 이상에서 도입된 시스템으로 컨트롤러를 업그레이드하려면 먼저 bootarg를 설정해야 업그레이드를 시작할 수 있습니다.
+
+
+
+== 단계 1: 이전 컨트롤러에 설정해야 하는 부트아그를 결정합니다
+
+다음 시스템에 대해 지원되는 모든 업그레이드를 수행하려면 컨트롤러 업그레이드를 수행하기 전에 이전 컨트롤러에 대해 bootarg를 설정해야 합니다.
+
+* AFF A70, AFF A90, AFF A1K
+* FAS70, FAS90
+* AFF C80 를 참조하십시오
+* AFF A50, AFF A20, AFF A30
+* AFF C30, AFF C60
+
+
+
+CAUTION: 나열된 시스템으로 업그레이드하는 경우 업그레이드를 수행하기 전에 * 기존 시스템에 필요한 부트마크를 * 설정해야 합니다. 다른 모든 업그레이드의 경우 이 작업을 건너뛰고 로 바로 이동할 수 있습니다 link:upgrade-mcc-ip-prepare-system.html["업그레이드를 위해 시스템을 준비합니다"].
+
+ONTAP 9.15.1 이상 버전에서 도입된 시스템을 업그레이드할 때는 이전 컨트롤러에서 bootarg를 설정해야 `hw.cxgbe.toe_keepalive_disable` 합니다. 그러나 특정 업그레이드 경로에서는 bootarg를 대신 설정해야 `bootarg.siw.interop_enabled` 합니다.
+
+다음 표를 사용하여 특정 업그레이드 조합에 대해 설정해야 하는 부트카를 결정합니다.
+
+[cols="2*"]
+|===
+| 업그레이드 대상... | bootarg 설정... 
+
+
+| AFF A250에서 AFF A30까지 | `bootarg.siw.interop_enabled` 
+
+
+| AFF C250에서 AFF C30까지 | `bootarg.siw.interop_enabled` 
+
+
+| AFF A150에서 AFF A20까지 | `bootarg.siw.interop_enabled` 
+
+
+| AFF A220에서 AFF A20까지 | `bootarg.siw.interop_enabled` 
+
+
+| 기타 모든 지원되는 업그레이드는 AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30 또는 AFF C60 시스템입니다 | `hw.cxgbe.toe_keepalive_disable` 
+|===
+
+
+== 단계 2: 이전 컨트롤러에 필요한 부트아그를 설정합니다
+
+이 작업은 * AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30 또는 AFF C60 시스템으로 업그레이드할 때만 필요합니다.
+
+.단계
+. 각 사이트에서 1개의 노드를 중지하고 HA 파트너가 노드의 스토리지 테이크오버를 수행하도록 합니다.
++
+`halt  -node <node_name>`
+
+. 업그레이드 조합에 필요한 bootarg를 설정합니다. 의 테이블을 사용하여 <<upgrade_paths_bootarg_manual,설정할 부트문자를 결정합니다>>설정해야 하는 부트아그를 이미 확인했습니다.
++
+[role="tabbed-block"]
+====
+.hw.cxgbe.toe_keepalive_disable을 선택합니다
+--
+..  `LOADER`중지된 노드의 프롬프트에서 다음을 입력합니다.
++
+`setenv hw.cxgbe.toe_keepalive_disable 1`
+
++
+'사베에프'
+
++
+`printenv hw.cxgbe.toe_keepalive_disable`
+
+
+
+--
+.bootarg.siw.interop_enabled
+--
+..  `LOADER`중지된 노드의 프롬프트에서 다음을 입력합니다.
++
+`setenv bootarg.siw.interop_enabled 1`
+
++
+'사베에프'
+
++
+`printenv bootarg.siw.interop_enabled`
+
+
+
+--
+====
+. 노드를 부팅합니다.
++
+부트 ONTAP
+
+. 노드가 부팅되면 프롬프트에서 노드에 대해 반환 작업을 수행합니다.
++
+`storage failover giveback -ofnode <node_name>`
+
+. 업그레이드 중인 DR 그룹의 각 노드에서 단계를 반복합니다.
+
+
+.다음 단계
+link:upgrade-mcc-ip-prepare-system.html["업그레이드를 위해 시스템을 준비합니다"]..
