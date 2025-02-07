@@ -10841,7 +10841,6 @@
   <block id="390dacdbc1f467c1f2e09b1a7cbe743f" category="list-text">손상된 스위치가 계속 작동하는 경우 각 포트에 대해 해당 스위치에서 FC-VI 및 HBA 포트를 비활성화합니다.</block>
   <block id="f1772bf3ab42f5c48020304db711ce88" category="list-text">손상된 스위치가 계속 작동한다면 'SWIchshow' 명령에서 출력을 수집합니다.</block>
   <block id="6f17ef717caa10c840154e66037357c2" category="list-text">스위치의 펌웨어 버전이 다른 FC 스위치의 버전과 일치하는지 확인합니다.</block>
-  <block id="e31d24f4c7323385ac2a49d1fd0bb0e7" category="list-text">ISL 암호화를 활성화하려면 에서 해당 작업을 완료하십시오 <block ref="a1fd01e320574c534b3b8a75cd17d943" category="inline-link-macro-rx"></block>.</block>
   <block id="656775e20786e6a8e6b7aa630d1d08a0" category="list-text">가상 패브릭을 비활성화합니다</block>
   <block id="ba6eab3f1d8d6e906b6a15425ba84446" category="list-text">페이로드를 설정합니다</block>
   <block id="c903fafc5d225ee7da0b8589482d4f6f" category="list-text">인증 정책을 설정합니다</block>
@@ -12289,7 +12288,6 @@
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
   <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
   <block id="1399637937931de009069d1a13a152fb" category="paragraph">* 참고 1: * 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
-  <block id="9ae99044ddcd14d01b26630cedd8846d" category="list-text">의 단계에 따라 새 스위치를 구성합니다 <block ref="435cf525be06a494222aa18eba4f6000" category="inline-link-macro-rx"></block>.</block>
   <block id="02d80d458a48a16bd927a203d6bb2c73" category="list-text">조닝 구성을 확인합니다.</block>
   <block id="62c870995fe52ce6aa5f9fc71ef4da98" category="paragraph"><block ref="ed3badb92af3298762df5a811de2da80" prefix="" category="inline-code"></block></block>
   <block id="79787dbf023f957de1bd4970858b26be" category="summary">상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다.</block>
@@ -14622,4 +14620,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="17c2940e7b2cfcc2faa4d1ef00e56d9e" category="sidebar">구성을 다시 전환합니다</block>
   <block id="11174a5afd588b4b0362df983b5f76c6" category="sidebar">스위치백 및 스위치백을 사용하는 MetroCluster IP의 컨트롤러(AFF A700에서 AFF A900로, FAS9000에서 FAS9500로) 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="9154ca816ab69e291b499f5a2579f66c" category="sidebar">스위치백 및 스위치백을 사용하는 MetroCluster FC 구성에서 컨트롤러(AFF A700를 AFF A900로, FAS9000에서 FAS9500로) 업그레이드(ONTAP 9.10.1 이상)</block>
+  <block id="cb037476ec4486d51b86d5dbeede8008" category="inline-link-macro">로그 수집을 구성합니다</block>
+  <block id="661221d64894eb71f90ac5ef75331837" category="paragraph">필요한 경우 의 단계를 <block ref="d3ee677e2efae042d4f3199a44815074" category="inline-link-macro-rx"></block>따릅니다.</block>
+  <block id="3931310703263c726d52a1768504781f" category="list-text">의 Brocade 절차에 따라 새 스위치를 <block ref="8891b6de7b2070c584bdeb67b522b51b" category="inline-link-macro-rx"></block>구성합니다.</block>
+  <block id="a01a953cf57a4a3591be7c4dd9dd14fa" category="list-text">ISL 암호화를 활성화하려면 을 <block ref="fb6e086ddbfd6d800d2c601996554df4" category="inline-link-macro-rx"></block>참조하십시오.</block>
 </blocks>

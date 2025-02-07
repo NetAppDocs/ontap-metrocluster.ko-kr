@@ -111,3 +111,6 @@ ONTAP에서 SNMPv3 사용자를 구성하려면 다음 단계를 따르십시오
 
 
 
+
+.작업을 마친 후
+필요한 경우 의 단계를 link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cshm/config-log-collection.html["로그 수집을 구성합니다"^]따릅니다.
