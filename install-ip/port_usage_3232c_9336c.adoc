@@ -78,7 +78,9 @@ AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또
 image:../media/mcc-ip-cabling-a150-a220-a250-to-a-cisco-3232c-or-cisco-9336c-switch-9161.png["에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다"]
 
 .Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 2)
-플랫폼 포트 할당을 검토하여 AFF A20 시스템을 Cisco 3232C 또는 9336C 스위치에 연결합니다. image:../media/mcc-ip-cabling-aff-a20-9161.png["에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다"]
+AFF A20 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
+
+image:../media/mcc-ip-cabling-aff-a20-9161.png["에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다"]
 
 .Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 3)
 AFF A30, AFF C30 또는 AFF C60 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
@@ -118,4 +120,4 @@ NOTE: "MetroCluster 4" 그룹의 포트를 사용하려면 ONTAP 9.13.1 이상�
 .Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 8)
 AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image:../media/mcc-ip-cabling-a90-fas90-c80-fas70-a70-a1k-cisco-3232C-or-9336c-switch.png["에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다"]
+image:../media/mcc-ip-cabling-a90-fas90-c80-fas70-a70-a1k-cisco-3232C-or-9336c-switch-updated.png["에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다"]

@@ -281,34 +281,41 @@ aggr_b2          -         -     - unknown      - node_A_1
 +
 재해 사이트에 미러링되지 않은 애그리게이트가 포함되어 있고 미러링되지 않은 애그리게이트가 더 이상 존재하지 않는 경우, 스토리지 aggregate show 명령의 출력에 ""알 수 없음"" 상태가 표시됩니다. 기술 지원 부서에 문의하여 미러링되지 않은 애그리게이트에 대한 오래된 항목을 제거하려면 기술 자료 문서를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_stale_unmirrored_aggregate_entries_in_a_MetroCluster_following_disaster_where_storage_was_lost["스토리지가 손실된 재해 발생 후 MetroCluster에서 오래된 미러링되지 않은 애그리게이트 항목을 제거하는 방법"^]
 
-. 정상 작동하는 클러스터의 모든 동기화 대상 SVM이 휴면 상태(관리 상태 "최고" 표시)이고 재해 클러스터의 동기화 소스 SVM이 실행 중인지 확인합니다.
+. 정상적인 클러스터의 모든 동기화 대상 SVM이 휴면 상태인지 확인합니다("'stop'"의 운영 상태 표시).
++
+`vserver show -subtype sync-destination`
+
++
+[listing]
+----
+node_B_1::> vserver show -subtype sync-destination
+                                 Admin    Operational  Root
+Vserver       Type    Subtype    State    State        Volume    Aggregate
+-----------   ------- ---------- -------- ----------   --------  ----------
+...
+cluster_A-vs1a-mc data sync-destination
+                               running    stopped    vs1a_vol   aggr_b2
+
+----
++
+MetroCluster 구성의 동기화 대상 애그리게이트에는 식별을 위해 이름에 ""-mc" 접미사가 자동으로 추가됩니다.
+
+. 재해 클러스터에서 동기화 소스 SVM이 실행 중인지 확인합니다.
 +
 'vserver show-subtype sync-source'를 선택합니다
 
 +
 [listing]
 ----
-node_B_1::> vserver show -subtype sync-source
-                               Admin      Root                       Name    Name
-Vserver     Type    Subtype    State      Volume     Aggregate       Service Mapping
------------ ------- ---------- ---------- ---------- ----------      ------- -------
+node_A_1::> vserver show -subtype sync-source
+                                  Admin    Operational  Root
+Vserver        Type    Subtype    State    State        Volume     Aggregate
+-----------    ------- ---------- -------- ----------   --------   ----------
 ...
-vs1a        data    sync-source
-                               running    vs1a_vol   node_B_2        file    file
-                                                                     aggr_b2
+vs1a           data    sync-source
+                                  running  running    vs1a_vol  aggr_b2
 
-node_A_1::> vserver show -subtype sync-destination
-                               Admin      Root                         Name    Name
-Vserver            Type    Subtype    State      Volume     Aggregate  Service Mapping
------------        ------- ---------- ---------- ---------- ---------- ------- -------
-...
-cluster_A-vs1a-mc  data    sync-destination
-                                      stopped    vs1a_vol   sosb_      file    file
-                                                                       aggr_b2
 ----
-+
-MetroCluster 구성의 동기화 대상 애그리게이트에는 쉽게 식별할 수 있도록 이름에 접미사 "-mc"가 자동으로 추가됩니다.
-
 . MetroCluster operation show 명령을 사용하여 스위치백 작업이 성공했는지 확인합니다.
 +
 |===

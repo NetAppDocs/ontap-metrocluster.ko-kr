@@ -30,7 +30,7 @@ NOTE: 이 절차는 패브릭 연결 MetroCluster 구성에서만 사용할 수 
 'aggr offline_plex_name_'
 
 +
-이 예에서는 clustered TNAP를 실행하는 컨트롤러에 대한 Plex를 오프라인으로 전환하기 위한 명령을 보여 줍니다.
+이 예에서는 ONTAP를 실행 중인 컨트롤러에서 플렉스를 오프라인으로 전환하기 위한 명령이 나와 있습니다.
 
 +
 [listing]

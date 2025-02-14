@@ -84,6 +84,10 @@ to skip the remaining dialogs.
 스위치 이름, 관리 주소 및 게이트웨이를 포함하여 다음 프롬프트 세트에 기본 정보를 입력하고 SSH with RSA를 선택합니다.
 
 +
+
+NOTE: 이 예에서는 RCF를 구성하는 데 필요한 최소 정보를 보여 주며, RCF를 적용한 후 추가 옵션을 구성할 수 있습니다. 예를 들어 RCF를 적용한 후 SNMPv3, NTP 또는 SCP/SFTP를 구성할 수 있습니다.
+
++
 [listing]
 ----
 Would you like to enter the basic configuration dialog (yes/no): yes

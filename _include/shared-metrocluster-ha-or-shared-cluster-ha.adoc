@@ -1,0 +1,40 @@
+= 
+:allow-uri-read: 
+
+
+다음 표에 나열된 시스템은 * 공유 MetroCluster/HA 포트 * 를 사용합니다.
+
++ 다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.
+
+를 누릅니다
+
+[cols="2*"]
+|===
+| 공유 MetroCluster/HA 포트를 사용하는 AFF 및 ASA 시스템 | 공유 MetroCluster/HA 포트를 사용하는 FAS 시스템 
+
+
+ a| 
+* AFF A150, ASA A150
+* AFF A220
+* AFF C250, ASA C250
+* AFF A250, ASA A250
+* AFF A300
+* AFF A320
+* AFF C400, ASA C400
+* AFF A400, ASA A400
+* AFF A700
+* AFF C800, ASA C800
+* AFF A800, ASA A800
+* AFF A900, ASA A900
+
+ a| 
+* FAS2750
+* 500f로 설정합니다
+* FAS8200
+* FAS8300
+* FAS8700
+* FAS9000
+* FAS9500
+
+
+|===

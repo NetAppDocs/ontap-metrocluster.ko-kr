@@ -81,7 +81,7 @@ image:../media/mcc_ip_cabling_a700_c800_a800_a900_to_cisco_9336c_shared_switch.p
 .Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 5)
 스위치가 연결된 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF A70, AFF C80, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mcc-ip-cabling-a70-c80-a90-a1k-to-cisco-9336c-shared-switch.png[에는 Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당이 나와 있습니다]
+image::../media/mcc-ip-cabling-a70-c80-a90-a1k-to-cisco-9336c-shared-switch-updated.png[에는 Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당이 나와 있습니다]
 
 
 
@@ -165,4 +165,4 @@ image::../media/mcc_ip_cabling_a700_a800_fas9000_fas9500_to_cisco_9336c_shared_s
 .Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 14)
 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mcc-ip-cabling-aff-a70-fas70-c80-fas90-a90-a1k-cisco-9336c-shared-switch-not-connecting.png[에는 Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당이 나와 있습니다]
+image::../media/mcc-ip-cabling-aff-a70-fas70-c80-fas90-a90-a1k-cisco-9336c-shared-switch-not-connecting-updated.png[에는 Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당이 나와 있습니다]

@@ -28,13 +28,13 @@ MetroCluster 구성에서 현재 Brocade 6510 스위치를 사용하지 않는 �
 
 * 4개의 Brocade 6510 스위치 각각에서 새 MetroCluster 구성 요소의 포트를 연결하려면 24번~45번 포트를 사용할 수 있어야 합니다.
 * 기존 ISL(Inter-Switch Link)이 포트 46 및 47에 있는지 확인해야 합니다.
-* Brocade 6510 스위치는 7-Mode 패브릭 MetroCluster 및 clustered ONTAP MetroCluster 구성 모두에서 지원되는 FOS 펌웨어 버전을 실행해야 합니다.
+* Brocade 6510 스위치는 7-Mode 패브릭 MetroCluster 및 ONTAP MetroCluster 구성에서 지원되는 FOS 펌웨어 버전을 실행해야 합니다.
 
 
 .작업을 마친 후
 패브릭을 공유하고 MetroCluster 구성을 완료한 후 7-Mode 패브릭 MetroCluster 구성에서 데이터를 전환할 수 있습니다.
 
-데이터를 전환한 후 7-Mode 패브릭 MetroCluster 케이블을 제거하고 필요에 따라 clustered ONTAP MetroCluster 케이블 연결을 7-Mode MetroCluster 케이블 연결에 사용했던 낮은 번호의 포트로 이동할 수 있습니다. 포트는 "4노드 MetroCluster에 대한 FC 스위치 포트 할당 검토" 섹션에 나와 있습니다. 재배열된 포트의 조닝을 조정해야 합니다.
+데이터를 전환한 후 7-Mode 패브릭 MetroCluster 케이블 연결을 제거하고, 원하는 경우 ONTAP MetroCluster 케이블을 7-Mode MetroCluster 케이블 연결에 사용된 더 낮은 번호 포트로 이동할 수 있습니다. 포트는 "4노드 MetroCluster에 대한 FC 스위치 포트 할당 검토" 섹션에 나와 있습니다. 재정렬된 포트에 대해 조닝을 조정해야 합니다.
 
 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
 

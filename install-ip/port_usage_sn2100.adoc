@@ -114,4 +114,4 @@ image::../media/mcc_ip_cabling_fas8300_aff_asa_a800_a900_fas9500_MSN2100.png[에
 .NVIDIA SN2100 플랫폼 포트 할당(그룹 7)
 FAS70, AFF A70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 NVIDIA SN2100 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.
 
-image::../media/mccip-cabling-fas90-fas70-aff-a70--a90-c80-a1k-nvidia-sn2100.png[에는 NVIDIA SN2100 플랫폼 포트 할당이 나와 있습니다]
+image::../media/mccip-cabling-fas90-fas70-aff-a70--a90-c80-a1k-nvidia-sn2100-updated.png[에는 NVIDIA SN2100 플랫폼 포트 할당이 나와 있습니다]
