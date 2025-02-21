@@ -336,6 +336,10 @@ Group Cluster Node               State          Mirroring Mode
 ....
 . 새로 가입된 MetroCluster IP 노드에 대해 MetroCluster IP 인터페이스를 구성합니다.
 +
+
+CAUTION: 동일한 범위의 시스템 자동 생성 인터페이스 IP 주소와 충돌을 피하기 위해 MetroCluster IP 인터페이스를 생성할 때 169.254.17.x 또는 169.254.18.x IP 주소를 사용하지 마십시오.
+
++
 'MetroCluster configuration-settings interface create-cluster-name'입니다
 
 +

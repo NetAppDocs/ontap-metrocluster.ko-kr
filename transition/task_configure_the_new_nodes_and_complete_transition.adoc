@@ -29,6 +29,10 @@ MetroCluster IP 연결을 구현하고, MetroCluster 구성을 새로 고치고,
 
 . MetroCluster IP 인터페이스 생성(node_A_1-IP, node_A_2-IP, node_B_1-IP, node_B_2-IP) -- 컨트롤러당 2개의 인터페이스 생성 필요, 총 8개의 인터페이스:
 +
+
+CAUTION: 동일한 범위의 시스템 자동 생성 인터페이스 IP 주소와 충돌을 피하기 위해 MetroCluster IP 인터페이스를 생성할 때 169.254.17.x 또는 169.254.18.x IP 주소를 사용하지 마십시오.
+
++
 `metrocluster configuration-settings interface create -cluster-name <cluster_name> -home-node <controller_name> -home-port <port_name> -address <ip_address> -netmask <netmask_address> -vlan-id <vlan_id>`
 
 +

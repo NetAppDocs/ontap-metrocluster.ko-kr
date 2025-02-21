@@ -492,16 +492,6 @@
   <block id="c5f6ae1a3a37c521928e14a692842c6b" category="paragraph">ONTAP 명령줄 인터페이스로 돌아가서 다음 작업을 수행하여 MetroCluster 구성을 완료합니다.</block>
   <block id="54744df94a6fdb7104348dee41697c48" category="summary">MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다.</block>
   <block id="14681192c7f80e2d7631c3a070df9619" category="doc">Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="09cb6984bdf1b82c9749906ba1a69331" category="summary">MetroCluster IP 인터페이스, IP 주소 및 마스크, 게이트웨이의 다음 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
-  <block id="d7fffb0ac95f2fd216c5e3fd04365cca" category="paragraph">이러한 속성을 업데이트해야 할 수 있습니다. 예를 들어, 중복된 IP 주소가 감지되거나 라우터 구성 변경으로 인해 계층 3 네트워크의 경우 게이트웨이가 변경되어야 할 수 있습니다.</block>
-  <block id="383d9b07e1ef0cfcfa9ec36fecccfe02" category="paragraph">한 번에 하나의 인터페이스만 변경할 수 있습니다. 다른 인터페이스가 업데이트되고 연결이 다시 설정될 때까지 해당 인터페이스에 트래픽 중단이 발생할 수 있습니다.</block>
-  <block id="8450a359c3efc774857fe0f3189456e0" category="paragraph">MetroCluster IP interface 속성을 변경하려면 MetroCluster configuration-settings interface modify 명령을 사용한다.</block>
-  <block id="700215bf58e5cc6edce60155aeb7c44a" category="section-title">IP 주소, 넷마스크 및 게이트웨이를 수정합니다</block>
-  <block id="2747f7ff86cce509295bfb4ba2b1c4fa" category="list-text">단일 노드 및 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 'MetroCluster configuration-settings interface modify'로 업데이트합니다</block>
-  <block id="2f545dcb650b5848061814c5ce3b4cf4" category="paragraph">다음 명령을 실행하면 IP 주소, 넷마스크 및 게이트웨이를 업데이트하는 방법이 표시됩니다.</block>
-  <block id="c8a08760312508ec804450cb7fad4702" category="list-text">[[step2]] 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다. 'MetroCluster configuration-settings interface show'</block>
-  <block id="3fc201ecdcbc7e37cc8a9b91bd0c01b3" category="paragraph">다음 명령을 실행하면 모든 인터페이스에서 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.</block>
-  <block id="1a8c6f33d0bdd54f26272fc3c497ec01" category="paragraph">다음 명령을 실행하면 모든 연결이 작동하는지 확인하는 방법이 표시됩니다.</block>
   <block id="967e7fe5e26ac9c522059f0a938773bb" category="section-title">ISL 요구 사항</block>
   <block id="67500937686453a2388ecdf97823b682" category="section-title">중간 스위치에 필요한 설정</block>
   <block id="6c3d514454f211b4331e09486e926e74" category="image-alt">Cisco 스위치를 사용하여 트래픽을 전환합니다</block>
@@ -1372,7 +1362,6 @@
   <block id="237e9199acfc2099c6fdb2422149d307" category="cell">* 2노드 브리지 연결 *</block>
   <block id="6154b5bc195e8c515f02ba57209f1335" category="cell">* 2노드 직접 연결 *</block>
   <block id="e5e45159e2d2510782860c93c2e99b08" category="paragraph">컨트롤러 수입니다</block>
-  <block id="ea90d32d257870c8f91747a3c4a8f0d5" category="paragraph">4 또는 8 *</block>
   <block id="7e3e02d13212719c3d8773beef5f7abe" category="paragraph">4개 또는 8개</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="paragraph">2개</block>
   <block id="242a70418ad236145729860e4eb9b40d" category="paragraph">FC 스위치 스토리지 패브릭을 사용합니다</block>
@@ -1391,12 +1380,8 @@
   <block id="f002a8ca79e81570742f83664f1ef8c0" category="paragraph">예(ONTAP 중재자를 조합하지 않음)</block>
   <block id="531b50f22671e8795591ed8a4dc6f932" category="inline-xref">모든 SAN 어레이</block>
   <block id="fac065b7050351a30490ea7f2e2b6ef4" category="cell">지원 <block ref="695031be3524d896e2d9482b9b2c38c3" category="inline-xref-macro-rx"></block></block>
-  <block id="2dc54bb9a28c3c1cdc37fbc81153563b" category="paragraph">* 중요 *</block>
-  <block id="c01b9d68c1a553405e5fe6d96621e245" category="paragraph">8노드 MetroCluster IP 구성의 경우 다음 사항을 고려하십시오.</block>
   <block id="1f6f2e3f30d4f600718cbbaa7e3ab6f1" category="list-text">NetApp에서 검증된 MetroCluster 스위치(NetApp에서 주문)만 지원됩니다.</block>
   <block id="defba62f473a0ece29de1061c423edbd" category="list-text">IP 라우팅(계층 3) 백엔드 접속을 사용하는 구성은 지원되지 않습니다.</block>
-  <block id="9a4e34d604d657bc7d946d4a0a4e96e4" category="list-text">공유 사설 계층 2 네트워크를 사용하는 구성은 지원되지 않습니다.</block>
-  <block id="8fdea79aece0ad1322e81be87031775a" category="list-text">Cisco 9336C-FX2 공유 스위치를 사용하는 구성은 지원되지 않습니다.</block>
   <block id="392719c196c4e0847676792f7c332ab2" category="section-title">MetroCluster 구성의 모든 SAN 어레이 시스템 지원</block>
   <block id="21cdd63bb00e685a661edb2068282e6e" category="paragraph">일부 SAN 어레이(ASA)는 MetroCluster 구성에서 지원됩니다. MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.</block>
   <block id="ff63653e290a8e5b339966cb9855555f" category="summary">MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
@@ -10970,7 +10955,6 @@
   <block id="6257739eb87a755c28bf814ad261df2d" category="section-title">MetroCluster FC 노드에서 클러스터 접속을 이동합니다</block>
   <block id="9d8f122e284d64a31d50c5040fe4f338" category="section-title">이동할 연결입니다</block>
   <block id="508763c5ecfa3096ab25520f14c971f5" category="paragraph">에 설명된 포트를 사용합니다 <block ref="10769c5348734bed7e40370eea435ab1" category="inline-xref-macro-rx"></block>.</block>
-  <block id="353f64efd56caa103dcbf2b9e24c3129" category="paragraph">링크:../install-ip/concept_mediator_requirements.html</block>
   <block id="dd23316b696cd08f3479c6e2d7baadc0" category="inline-link">AFF 또는 FAS 시스템의 설치 절차</block>
   <block id="17959b19c1c128d5d74608a22de28cf9" category="paragraph"><block ref="17959b19c1c128d5d74608a22de28cf9" category="inline-link-rx"></block></block>
   <block id="e5303b615c196a6ae1c68873f1d05073" category="sidebar">Brocade FC 스위치를 수동으로 구성합니다</block>
@@ -12396,8 +12380,6 @@
   <block id="83401bd8eb751fc79a9ff9e2e69be029" category="paragraph"><block ref="ff41f8886897126f1b4109a0b09cd291" category="inline-link-macro-rx"></block>.</block>
   <block id="09e34111ef8649a5302b1889e0c7d303" category="list-text">JRE 8</block>
   <block id="b3c0f57dcdb05faa9fbc38832a492a4e" category="admonition">구성을 적용하는 동안 몇 가지 경고 메시지가 나타납니다. 오류 메시지는 일반적으로 예상되지 않습니다. 그러나 SSH를 사용하여 로그인한 경우 다음 오류가 발생할 수 있습니다.<block ref="f6ffe33fb36eb714adf6f81147c665f6" prefix=" " category="inline-code"></block></block>
-  <block id="907d0a00eecf52dcc4562775faad470a" category="paragraph">ONTAP 9.10.1.1부터 MetroCluster IP 인터페이스의 IP 주소 및 마스크, 게이트웨이 속성을 변경할 수 있습니다. 모든 매개 변수 조합을 사용하여 업데이트할 수 있습니다.</block>
-  <block id="5e1f7c325aa2c4eb9ee527a8279eb798" category="list-text">[[3단계]] 모든 연결이 작동하는지 확인합니다.</block>
   <block id="cf07fc29a0bf48b43804bd5e97849449" category="summary">MetroCluster 호환 스위치를 사용하는 경우 플랫폼별 네트워크 속도 및 스위치 포트 모드 요구 사항을 알고 있어야 합니다.</block>
   <block id="b6c12395a961cf95058c6e4d4412ac09" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다. 표에 따라 스위치 포트 모드를 구성해야 합니다.</block>
   <block id="8c425f952493015588fb91113b5b2dd8" category="summary">이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에 대한 요구 사항을 다룹니다.</block>
@@ -13500,8 +13482,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="80dcc4edac2d765045f64b4c38d1d603" category="paragraph"><block ref="8e2d8ef88fdca0c2d84f0bc37a725a61" prefix="" category="inline-code"></block></block>
   <block id="51f368c2c1d8b5478b6282cb7c1d5750" category="paragraph"><block ref="d80e7838e2fc707884fbff7e375981c9" prefix="" category="inline-code"></block></block>
   <block id="4ae2f4a2aef26662b47c70763eb4279d" category="paragraph"><block ref="90a8f7d7f597974a89c88091d170056f" prefix="" category="inline-code"></block></block>
-  <block id="ddf0bc53a0486fe472c9c2802cb8a024" category="inline-link-macro">MetroCluster IP 인터페이스의 속성을 수정합니다</block>
-  <block id="c2101bcd2959ec896c34ad3ac441e668" category="list-text">ONTAP 버전에 따라 초기 구성 후 일부 MetroCluster IP 인터페이스 속성을 변경할 수 있습니다. 지원되는 기능에 대한 자세한 내용은 을 <block ref="b5882dba0d9962f87b1ec9d2a9ef135c" category="inline-link-macro-rx"></block> 참조하십시오.</block>
   <block id="fdc2f9c59b3906cedb6920c830ed095c" category="paragraph">지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도 있습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block><block ref="f2986433c79fe84ff207e72d4ed9fd6f" prefix=" " category="inline-code"></block> .</block>
   <block id="eb2b66b1668ae6b216f98bedcd551ca7" category="paragraph">다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> .</block>
   <block id="b98986071c014fdcc3eb14230209b05d" category="paragraph">다른 모든 플랫폼은<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 매개 변수를 지원합니다.</block>
@@ -13531,7 +13511,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a7ecf6e9de3b493515ff606fc0532227" category="list-text">를 다운로드하십시오<block ref="b3f8a8564bd91efeacbc3b6197426c6e" category="inline-link-rx"></block></block>
   <block id="b0e1fb1b9093a23db84f9fe9ec414a05" category="paragraph">MetroCluster IP 구성의 각 스위치에 RCF 파일을 생성하고 설치해야 합니다.</block>
   <block id="5f6300d6cef757d6670c2170d0ee50fb" category="list-text">MetroCluster IP에 대한 Cisco RCF 파일을 생성합니다.</block>
-  <block id="f0af72ee7b95606742238881f6d3d746" category="list-text">, 및 명령을 사용하여<block ref="0dea99cd92a8ce54e8bf65bd553a3e89" prefix=" " category="inline-code"></block><block ref="05f7f2ea3536c78a494ee9ec91b6fef9" prefix=" " category="inline-code"></block><block ref="1fb1e9c05efc96eb745333b035ce6d59" prefix=" " category="inline-code"></block> 모든 인터페이스에서 모든 연결이 작동하는지 확인합니다.</block>
   <block id="164748ab1cab79cb53ebb8d067fb41df" category="paragraph"><block ref="3b73cc9aa0167fa80aa8a786a4871e88" prefix="" category="inline-code"></block></block>
   <block id="8c8de216c09126479bba8f0a636ceac7" category="paragraph"><block ref="34b1158d44c89ca8031563bdf424ba84" prefix="" category="inline-code"></block></block>
   <block id="711aa9967b438e020ee72c9773739e5d" category="paragraph"><block ref="c7462aa9b4e3acfeadac46864ab81636" prefix="" category="inline-code"></block></block>
@@ -13584,7 +13563,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ed8c1f612253f0c38c2a68c1be34ff71" category="inline-xref">하위 단계 b</block>
   <block id="27efb084ea8cfb0b1acbce0b33637bf2" category="cell"><block ref="310c42a30486c061e617f12669b1cb31" category="inline-xref-macro-rx"></block></block>
   <block id="667c8b04e1c765d2ac10d6029d6c4a67" category="cell">다른 홈 포트를 사용합니다</block>
-  <block id="97508d4e4a3b7631b6c05c3f42e9f3c7" category="cell"><block ref="177a8a15f5f4315b71d3ece7c721a178" category="inline-xref-macro-rx"></block></block>
   <block id="d19c71c5a36e79bee005548e97a3430a" category="list-text">[[controller_manual_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 클러스터 간 LIF를 수정합니다.</block>
   <block id="ecc099ad90b879286453572c6448dca3" category="paragraph"><block ref="7d49fda2e15c7e56a195e4a13068da53" prefix="" category="inline-code"></block></block>
   <block id="67feed2eb0a24db24a92109ddf08b1d3" category="list-text">모든 인터클러스터 LIF가 새 홈 포트에 설정되었는지 확인합니다.</block>
@@ -13594,7 +13572,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="39b8c0f5fb5a1532d766cc2a0500ae92" category="paragraph">홈 포트에 있지 않은 각 인터클러스터 LIF에 대해 명령을 반복하십시오.</block>
   <block id="270f1324a7b7f1a7e5f85816e9ee67a1" category="list-text">[[controller_manual_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈 모두에서 동일한 공통 포트에 할당합니다.</block>
   <block id="fc655e61a175b85fccd1c37c00f3ccaa" category="cell"><block ref="ea90f75ed68d4ddf4266e92157cc0fae" category="inline-xref-macro-rx"></block></block>
-  <block id="b0b6d9c342452ad19a9b24e1caf2ff35" category="cell"><block ref="e7896f2437c8c50a74bfea383fc26eb3" category="inline-xref-macro-rx"></block></block>
   <block id="3872acc735c86484cf5289e6f36d9d09" category="list-text">[[controller_replace_upgrade_prepare_network_ports_2b]] 다른 홈 포트를 사용하도록 인터클러스터 LIF를 수정합니다.</block>
   <block id="bd14e125f8f9035fe1f7a46be559035d" category="list-text">[[controller_replace_upgrade_prepare_network_ports_3]] 이전 컨트롤러에 있는 모든 데이터 LIF의 홈 포트를 이전 컨트롤러 모듈과 새 컨트롤러 모듈에서 모두 동일한 공통 포트에 할당합니다.</block>
   <block id="bf8ab32fb11672e6514cae71dc5fafe7" category="paragraph">ONTAP 9.6부터 지원되는 스위치가 있는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하는 대신 ISL(Inter-Switch Link)을 위해 기존 네트워크를 공유할 수 있습니다. 이 토폴로지는 _shared layer 2 networks_라고 합니다.</block>
@@ -13883,13 +13860,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="95232b2668851dd7e6d065abeee1ed20" category="inline-link-macro">시스템 관리자를 사용하여 전환 및 스위치백 수행(MetroCluster IP 구성만 해당)</block>
   <block id="94728a8f449ff84b5ac878653ab4ad67" category="paragraph">의 단계를 <block ref="5b3a204b8bc535419d3d88f0ef6f3046" category="inline-link-macro-rx"></block>수행합니다.</block>
   <block id="a4d7653998b91da503a24fc71e65ad4f" category="list-text">자동 전환 기능이 활성화되어 있는지 확인합니다.</block>
-  <block id="b03614d885f56be6dafeebbbaa010a5f" category="paragraph">이어지는 절차는 ONTAP System Manager를 사용하는지 CLI를 사용하는지 여부에 따라 다릅니다.</block>
-  <block id="26ed02718973e705cd69ee6e109400e0" category="open-title">시스템 관리자</block>
-  <block id="a8f22e0a130b300278ead25d693a43d5" category="paragraph">System Manager를 사용하여 IP 주소, 넷마스크 및 게이트웨이 속성을 수정합니다.</block>
-  <block id="7cdf282c18fa11c6df4d9d55af90d450" category="paragraph">각 노드와 인터페이스의 IP 주소, 넷마스크 및 게이트웨이를 업데이트합니다.</block>
   <block id="91af5705f16502125e8b2187e64202c0" category="open-title">CLI를 참조하십시오</block>
-  <block id="f9a65892b48ad466104ac3eb33403881" category="paragraph">CLI를 사용하여 IP 주소, 넷마스크 및 게이트웨이 속성을 수정합니다.</block>
-  <block id="0efcd0c9061820674001fdd91f087bf1" category="admonition">이러한 명령은 특정 포트의 특정 노드에 대한 구성을 변경합니다. 전체 네트워크 연결을 복원하려면 다른 포트에 유사한 명령이 필요합니다. 마찬가지로 네트워크 스위치도 구성을 업데이트해야 합니다. 예를 들어, 게이트웨이가 업데이트되는 경우 HA Pair의 두 노드에서 변경되기가 이상적입니다. 이러한 노드에 연결된 스위치 역시 게이트웨이를 업데이트해야 합니다.</block>
   <block id="1e7bea8d62062fd522d5f5c2523a3c72" category="summary">MetroCluster 구성 요소가 정상인지 확인하는 방법에 대해 알아봅니다.</block>
   <block id="f505230c63d40beb8fbcb47fba267ed7" category="list-text">MetroCluster IP 및 FC 구성에서는 CLI를 사용하여 상태 점검 명령을 실행하고 MetroCluster 구성 요소의 상태를 확인할 수 있습니다.</block>
   <block id="8b0de0e20dd0b02520681f56e79ebae0" category="list-text">ONTAP 9 .8 이상을 실행하는 MetroCluster IP 구성에서는 ONTAP System Manager를 사용하여 상태 점검 경고를 모니터링하고 문제를 해결할 수도 있습니다.</block>
@@ -13927,12 +13898,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="7ee58ef1472684aca1fe0fe874b6d592" category="paragraph">경우에 따라 MetroCluster 클러스터가 중단되거나 클러스터 간 연결이 끊긴 경우 ONTAP는 스위치오버를 자동으로 시작하여 계속 실행 중인 클러스터가 중단된 클러스터의 데이터 처리 책임을 처리하도록 합니다.</block>
   <block id="97ea4ec8c53cbd7aa2f77e41af35214d" category="paragraph">또는 ONTAP에서 클러스터 중 하나의 상태를 확인할 수 없는 경우 작업 중인 사이트의 시스템 관리자가 다른 사이트의 데이터 처리 책임을 관리하기 위해 전환을 시작합니다.</block>
   <block id="b04fc1c1a947340b6295bca4e15296fa" category="paragraph">모든 유형의 스위치오버 절차에서 데이터 서비스 기능은 _스위치백_프로세스를 사용하여 클러스터로 반환됩니다.</block>
-  <block id="3a6a5031743305019642718d6b386a76" category="paragraph">ONTAP 9.7 및 9.8에 대해 서로 다른 스위치오버 및 스위치백 프로세스를 수행합니다.</block>
-  <block id="e6930e280c751418022003bf9fa97d63" category="inline-xref">ONTAP 9.7의 System Manager를 사용하여 전환 및 스위치백을 수행할 수 있습니다</block>
-  <block id="fbb89290a9f0639df9fd99dd91afccee" category="list-text"><block ref="256c277ba57abb095e4dc34a115bfd87" category="inline-xref-macro-rx"></block></block>
-  <block id="90984242656b59b4ec4bc8b2dc652b47" category="inline-xref">ONTAP 9.8의 System Manager를 사용하여 전환 및 스위치백을 수행할 수 있습니다</block>
-  <block id="7bf20936df7319e027dcb25cf3be240e" category="list-text"><block ref="b26721d6058aa62e04e032c9956f0274" category="inline-xref-macro-rx"></block></block>
-  <block id="84e994bcb8ec0880899d43da827eb4f8" category="list-text">ONTAP 9.7에서 System Manager에 로그인합니다.</block>
   <block id="ef676a956a1111a97c4b6d5a5313ec0c" category="list-text">(클래식 버전으로 돌아가기) * 를 클릭합니다.</block>
   <block id="c6b17260f6c04748cb3b263e07841d9c" category="list-text">구성 &gt; MetroCluster * 를 클릭합니다.</block>
   <block id="9512c15d06f8ebc094a9ff5468e46042" category="paragraph">System Manager는 협상된 전환이 가능한지 여부를 확인합니다.</block>
@@ -13944,24 +13909,19 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="47cb9ca4992d157c03e7725803af8e2a" category="list-text">유효성 검사에 실패하고 사이트 B가 다운되면 연결 문제가 있을 가능성이 높습니다. 사이트 B가 다운되었는지 확인한 다음 의 단계를 <block ref="fb6c16196bc2d21511884d5617718b51" category="inline-link-macro-rx"></block>수행합니다.</block>
   <block id="f40d6676f14af4f7006dc55f7866a8cc" category="list-text">사이트 B에서 사이트 A * 로 전환 을 클릭하여 전환 프로세스를 시작합니다.</block>
   <block id="3fa63b2ebfe34a52015afed9c4be0676" category="list-text">새로운 환경으로 전환 * 을 클릭합니다.</block>
-  <block id="a0bbb21498df4682785de3ad118d2112" category="section-title">계획된 전환 수행(ONTAP 9.8)</block>
-  <block id="7032cb0fb8b2c734e0b3330b170287a8" category="list-text">ONTAP 9.8에서 System Manager에 로그인합니다.</block>
   <block id="d86b98757fa72a3091b65699a17b3724" category="list-text">대시보드 * 를 선택합니다. MetroCluster * 섹션에서 두 클러스터는 연결 상태로 표시됩니다.</block>
   <block id="b7833a52299d966f41b82417259c5239" category="inline-image-macro">케밥 아이콘</block>
   <block id="6b466076a02d34c371b188caa9b5a5ea" category="list-text">로컬 클러스터(왼쪽에 표시)에서 를 클릭하고 <block ref="2f6e127087f9ef4b927e204474c5d0b2" category="inline-image-macro-rx" type="image"></block>* 로컬 사이트로 원격 데이터 서비스 전환 * 을 선택합니다.</block>
   <block id="aa0bfd6a3a3db9e5b0409213f48708d9" category="paragraph">전환 요청이 검증되면 원격 사이트에서 로컬 사이트로 제어가 전송됩니다. 로컬 사이트는 두 클러스터에 대한 데이터 서비스 요청을 수행합니다.</block>
   <block id="3c8328130d9ea4793e2bc9f3551b90e0" category="paragraph">원격 클러스터가 재부팅되지만 스토리지 구성요소가 비활성 상태이므로 클러스터가 데이터 요청을 처리하지 않습니다. 이제 정기 유지 보수에 사용할 수 있습니다.</block>
   <block id="6f83354e8ce958bae1f9ffca3c39c278" category="admonition">스위치백을 수행하기 전에는 원격 클러스터를 데이터 서비스에 사용해서는 안 됩니다.</block>
-  <block id="defaf88320e88f259a284fdbcd5986c2" category="section-title">계획되지 않은 전환 수행(ONTAP 9.8)</block>
   <block id="ef7ccb5f4ce99dc2e349e8c6c47a3d17" category="paragraph">계획되지 않은 스위치오버는 ONTAP에서 자동으로 시작할 수 있습니다. ONTAP에서 스위치백 필요 여부를 확인할 수 없는 경우 여전히 실행 중인 MetroCluster 사이트의 시스템 관리자가 다음 단계를 수행하여 스위치오버를 시작합니다.</block>
   <block id="612770839809215b203a58fa260be49e" category="list-text">대시보드 * 를 선택합니다.</block>
   <block id="940768454917470cad252dfa341a9bae" category="paragraph">MetroCluster * 섹션에서 두 클러스터 간의 연결이 "X"로 표시됩니다. 즉, 연결을 감지할 수 없고 연결 또는 클러스터가 다운된 것입니다.</block>
   <block id="0b85c3b32c8fd95dfef8906dc740c0b2" category="paragraph">오류로 인해 전환이 실패하는 경우 오류 메시지에서 "View details" 링크를 클릭하고 예상치 못한 전환을 확인합니다.</block>
   <block id="b2a8c150e46a4d6da48aa21c7035a5ec" category="paragraph">클러스터를 다시 온라인 상태로 전환하기 전에 복구해야 합니다.</block>
   <block id="dacd599c11508c590c3afe8309bc777e" category="admonition">원격 클러스터가 온라인으로 전환된 후에는 스위치백을 수행할 때까지 데이터 서비스에 원격 클러스터를 사용해서는 안 됩니다.</block>
-  <block id="b7066bce35bcdc9bde30393cfe83bbdd" category="section-title">스위치백 수행(ONTAP 9.8)</block>
   <block id="83d20468f433e569baf2f41de2670745" category="paragraph">계획된 유지 관리로 인해 또는 재해로 인해 원격 클러스터가 다운된 경우 이제 원격 클러스터가 가동되어 전환될 때까지 기다려야 합니다.</block>
-  <block id="a91ed0fc67b86b9a97667032dc887550" category="list-text">로컬 클러스터에서 ONTAP 9.8의 System Manager에 로그인합니다.</block>
   <block id="e722eda52729a565e292380da3b9cd9e" category="paragraph">MetroCluster * 섹션에 두 개의 클러스터가 표시됩니다.</block>
   <block id="3964a12029e4869f90c22d4b7b86e4d7" category="list-text">로컬 클러스터(왼쪽에 표시)에서 을 클릭하고 <block ref="2f6e127087f9ef4b927e204474c5d0b2" category="inline-image-macro-rx" type="image"></block>* Take back control * 을 선택합니다.</block>
   <block id="9650db837519c6f15dca6f446f677c65" category="paragraph">데이터가 두 클러스터 간에 동기화되고 미러링되는지 확인하기 위해 _turned_first를 수행합니다.</block>
@@ -14131,7 +14091,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5dfed22feb54647dbd9e9ae827290f6b" category="paragraph"><block ref="67611e9f528c6078257c414670af6b52" prefix="" category="inline-code"></block></block>
   <block id="1225fe0de146a130add7eeefae9e0925" category="list-text">재해 클러스터에서 동기화 소스 SVM이 실행 중인지 확인합니다.</block>
   <block id="ad29c49a8377862a59f9aae0ab4431cd" category="paragraph">LIF 배치가 올바른지 확인합니다. 그런 다음 이전 컨트롤러에서 VLAN 및 인터페이스 그룹을 제거하고 컨트롤러를 물리적으로 제거합니다.</block>
-  <block id="253982549e381b6f58f66b3e289a0a83" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="45cc57eb3654a2ae89efabc6fb9d271a" category="inline-xref-macro-rx"></block>.</block>
   <block id="ae359c5763df3f6130f697d17d090551" category="admonition">스위치백을 수행하기 전에 데이터 LIF 위치가 새 노드에서 올바른지 확인해야 합니다. 구성을 다시 전환하면 ONTAP은 LIF에서 사용하는 홈 포트에서 트래픽을 다시 시작하려고 합니다. 스위치 포트 및 VLAN에 대한 홈 포트 연결이 잘못되면 I/O 장애가 발생할 수 있습니다.</block>
   <block id="1c780702501fd89538731057505e0a04" category="list-text">스위치백 전에 LIF가 적절한 노드 및 포트에서 호스팅되는지 확인합니다.</block>
   <block id="bc12d3bc2a2c1526b655930b56efc183" category="list-text">LIF를 표시하고 각 데이터 LIF가 올바른 홈 포트를 사용 중인지 확인합니다.</block>
@@ -14139,7 +14098,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="823bc5ae6e724dd8994efcc4dbeb49d2" category="paragraph">명령에서 오류가 반환되면 포트 구성을 재정의할 수 있습니다.</block>
   <block id="ec14487a214982a1ea6572636724761f" category="paragraph"><block ref="afdc229346561af3e5aba3a6d67eea09" prefix="" category="inline-code"></block></block>
   <block id="c9ba655979127851f6a6f01489815e47" category="list-text">모든 데이터 LIF가 이제 올바른 홈 포트에 있는지 확인합니다.</block>
-  <block id="ef1038ce81a2c9d70181057dd381a59a" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="186451ebe57c46550834233237ebac90" category="inline-xref-macro-rx"></block>.</block>
   <block id="3432abc562d1049e115fc0bcb6f569ab" category="list-text">[[upgrades_assisted_without_matching_ports]] 브로드캐스트 도메인을 수정하여 삭제해야 하는 VLAN 및 물리적 포트를 제거합니다.</block>
   <block id="07bfa9093a8ef293dfd6099e38fde255" category="list-text">MetroCluster가 올바르게 구성되어 있는지 확인합니다. 노드 상태 확인:</block>
   <block id="d64694bac02c7b4eea890e175a53a0c7" category="paragraph">자동 스위치백 작업을 진행하기 전에 LIF가 적절한 노드에 호스팅되는지 확인하십시오.</block>
@@ -14446,7 +14404,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="cd171858353ac5afefcde1a10ecc4d2b" category="paragraph">새 노드에서의 포트 분배 및 할당은 를<block ref="e8018b6e740a667345f4bcc94e4023fc" category="inline-link-rx"></block>참조하십시오.</block>
   <block id="609705d960d3eb8865688141bee64514" category="list-text">홈 포트에 없는 LIF를 되돌립니다.</block>
   <block id="2c33fd0cf23bb7e3394bbefc985bb336" category="paragraph">홈 포트에 있지 않은 각 인터클러스터 LIF에 대해 명령을 반복하십시오.</block>
-  <block id="5d017d18dffe9ea2002cf58c5028e761" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIFS는 스위치오버 사이트(cluster_A)에서 작동하므로 관리자가 가동되고 운영상 중단됩니다.</block>
   <block id="6f4692f84dcb13549704950c86285bed" category="paragraph">플랫폼 모델의 포트 사용에 대해서는 을 참조하십시오<block ref="5e0886f1b46d76ea4adb1e1719b4ddb5" category="inline-link-rx"></block></block>
   <block id="404849d025b51f7a9b000948be830642" category="list-text">[[upgrades_manual_without_matching_ports]] 브로드캐스트 도메인을 수정하여 삭제되어야 하는 VLAN 및 물리적 포트를 제거합니다.</block>
   <block id="b5232e117010c63512e6646cdcc5b782" category="list-text">프롬프트에서 노드를 중지합니다<block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block>.</block>
@@ -14648,4 +14605,33 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f6c5a69060b62d046efbd190570cf383" category="admonition">이 예에서는 RCF를 구성하는 데 필요한 최소 정보를 보여 주며, RCF를 적용한 후 추가 옵션을 구성할 수 있습니다. 예를 들어 RCF를 적용한 후 SNMPv3, NTP 또는 SCP/SFTP를 구성할 수 있습니다.</block>
   <block id="6ca034f6a518722187e6a10bfc2df9e6" category="admonition">컨트롤러의 전원을 켜기 전에 쉘프의 전원을 먼저 켜지 마십시오. 이렇게 하면 컨트롤러가 의도하지 않은 ONTAP로 부팅되지 않습니다.</block>
   <block id="604b473cd250fb4d83bbbab434f091fb" category="paragraph">이 예에서는 ONTAP를 실행 중인 컨트롤러에서 플렉스를 오프라인으로 전환하기 위한 명령이 나와 있습니다.</block>
+  <block id="936bfa47a2c0392f1aef9da55dad3561" category="paragraph">4개 또는 8개 1</block>
+  <block id="28f44037af103f0c930309365629f8ef" category="paragraph">* 참고 *</block>
+  <block id="a4bfae8e34cf1d1bbf19c5b03ef542b9" category="list-text">8노드 MetroCluster IP 구성에 대한 다음 고려 사항을 검토하십시오.</block>
+  <block id="b00f9fea7b2da4a95f4ab93fed2362de" category="admonition">동일한 범위의 시스템 자동 생성 인터페이스 IP 주소와 충돌을 피하기 위해 MetroCluster IP 인터페이스를 생성할 때 169.254.17.x 또는 169.254.18.x IP 주소를 사용하지 마십시오.</block>
+  <block id="bd9583bc7d13557a4fd4255bd92c14c6" category="paragraph">따를 전환 및 스위치백 프로세스는 ONTAP 버전에 따라 다릅니다.</block>
+  <block id="701536f308a46b56b600117d2f954760" category="inline-xref">ONTAP 9.6 또는 9.7에서 시스템 관리자를 사용하여 전환 및 스위치백을 수행할 수 있습니다</block>
+  <block id="c5ae21487220da0e90bc5df3979248c6" category="list-text"><block ref="40e2b7a5ccaae357ec2a83e7dbfc7121" category="inline-xref-macro-rx"></block></block>
+  <block id="a5d16be6688eb5e01f6f153d46483384" category="inline-xref">ONTAP 9.8 이상에서 System Manager를 사용하여 전환 및 스위치백을 수행합니다</block>
+  <block id="96d0b994840dcc9602e98d75b1d7dc37" category="list-text"><block ref="d169c24aedb9d9132bec54ece222a51c" category="inline-xref-macro-rx"></block></block>
+  <block id="6aafb5589dbe30793ebafd1bf5623b9f" category="list-text">ONTAP 9.6 또는 9.7에서 System Manager에 로그인합니다.</block>
+  <block id="988579e6530038a6bc87a8dffa9be811" category="section-title">계획된 스위치오버 수행(ONTAP 9.8 이상)</block>
+  <block id="33fef937840ce57f6a4070e352228fd4" category="list-text">ONTAP 9.8 이상에서 System Manager에 로그인합니다.</block>
+  <block id="70de6eed617bf2598c428ab602bacd20" category="section-title">계획되지 않은 전환 수행(ONTAP 9.8 이상)</block>
+  <block id="2441e03051d41aa2f6f9d9e39c577a3e" category="section-title">스위치백 수행(ONTAP 9.8 이상)</block>
+  <block id="2a6e3f78c9b73af2855a7bc5191bf5b1" category="list-text">로컬 클러스터에서 ONTAP 9.8 이상으로 System Manager에 로그인합니다.</block>
+  <block id="22049fef22b0ddad50caf9ded819a4f1" category="paragraph"><block ref="22049fef22b0ddad50caf9ded819a4f1" category="inline-link-macro-rx"></block></block>
+  <block id="a6a86c7d4711a3d450ec4121102de402" category="list-text">업그레이드 대상 시스템이 다음 표에 없는 경우 MetroCluster IP 인터페이스에서 지원되는 IP 주소를 사용하고 있는지 확인하십시오.</block>
+  <block id="8210c1e569b4a7f0d685a838881f7f66" category="cell">AFF 및 ASA 시스템</block>
+  <block id="d5d4923aa83e46af2152de920946ba41" category="cell">FAS 시스템</block>
+  <block id="fa8ce860967d0ec751385e3e150d223a" category="list-text">이전 컨트롤러에서 MetroCluster 인터페이스의 IP 주소를 확인합니다.</block>
+  <block id="09542928ac9f09905359ce0cdc32a079" category="inline-link-macro">기술 문서 "MetroCluster IP 인터페이스의 속성을 수정하는 방법"</block>
+  <block id="f80e9f0a9fba665f77ab307a250b7fd3" category="list-text">MetroCluster 인터페이스에서 169.254.17.x 또는 169.254.18.x IP 주소를 사용하는 경우, 업그레이드를 진행하기 전에 인터페이스 IP 주소를 수정하려면 을 참조하십시오.<block ref="d1c038803b45479df32bbfd628b2e8b5" category="inline-link-macro-rx"></block></block>
+  <block id="400bb3d32423e6384fb4cfe6867b0ccc" category="admonition">MetroCluster 인터페이스가 169.254.17.x 또는 169.254.18.x IP 주소로 구성된 경우 표에 나열되지 않은 시스템으로의 업그레이드는 지원되지 않습니다.</block>
+  <block id="e7997597817a3facf42bc030e3a35309" category="cell"><block ref="92a96fa95be44bd76fa573ac0e371c6f" category="inline-xref-macro-rx"></block></block>
+  <block id="6165ea79c58238b8f7f4d2edcab21f29" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="19d16029d22befc9cf5c2bffaac61331" category="inline-xref-macro-rx"></block>.</block>
+  <block id="abcdb4b4b1872daf29ecc9031115f937" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIF가 스위치오버 사이트(cluster_A)에 있기 때문에 관리 작업이 중지되고 있습니다.</block>
+  <block id="6750be268fde99a8fc70da3cae96763b" category="cell"><block ref="dc13cd459e510658615266395ba927b0" category="inline-xref-macro-rx"></block></block>
+  <block id="3485285ca38e1ca4c0a680f9bcf47989" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="d2fd743661c244ff041df8d51a55b2b7" category="inline-xref-macro-rx"></block>.</block>
+  <block id="57e1aa86ef1214c6b5a618674a806136" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIF는 스위치오버 사이트(cluster_A)에 있기 때문에 관리 ""업""과 운영 "'다운""이 될 것입니다.</block>
 </blocks>

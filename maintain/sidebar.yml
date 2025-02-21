@@ -92,8 +92,6 @@ entries:
     url: "/maintain/task_power_off_an_entire_mcc_fc_configuration.html"
 - title: MetroCluster IP 구성에 대한 유지 관리 절차
   entries:
-  - title: MetroCluster IP 인터페이스의 속성을 수정합니다
-    url: "/maintain/task-modify-ip-netmask-properties.html"
   - title: IP 스위치 유지 보수 및 교체
     entries:
     - title: IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다
