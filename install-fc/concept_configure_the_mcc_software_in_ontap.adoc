@@ -3021,6 +3021,9 @@ Priv Protocol [DES(1)/noPriv(2)/AES128(3)/AES256(4)]): (2..2) [3]
 
 MetroCluster 구성에서 구성 요소를 모니터링하기 전에 몇 가지 특수 구성 단계를 수행해야 합니다.
 
+
+NOTE: 보안을 강화하기 위해 NetApp 스위치 상태를 모니터링하도록 SNMPv2 또는 SNMPv3을 구성하는 것이 좋습니다.
+
 .이 작업에 대해
 이러한 작업은 FC-to-SAS 브리지가 있는 시스템에만 적용됩니다.
 
@@ -3049,7 +3052,7 @@ NetApp에서는 MetroCluster FC 구성의 구성 요소를 모니터링하기 �
 패브릭 연결 MetroCluster 구성에서는 FC 스위치를 모니터링하기 위한 몇 가지 추가 구성 단계를 수행해야 합니다.
 
 
-NOTE: ONTAP 9.8부터는 스토리지 스위치 명령이 시스템 스위치로 대체됩니다. 다음 단계에서는 '스토리지 스위치' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '시스템 스위치' 명령을 사용하는 것이 좋습니다.
+NOTE: ONTAP 9.8부터 `storage switch` 명령이 로 대체됩니다. `system switch fibre-channel` 다음 단계에서는 `storage switch` 명령이 표시되지만 ONTAP 9.8 이상을 실행하는 경우에는 `system switch fibre-channel` 명령이 권장됩니다.
 
 .단계
 . 각 MetroCluster 노드에 IP 주소가 있는 스위치를 추가합니다.

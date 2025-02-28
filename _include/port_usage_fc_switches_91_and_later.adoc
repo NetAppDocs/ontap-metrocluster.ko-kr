@@ -4302,7 +4302,7 @@ FC1
 
 
 
-== ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성의 ISL에 대한 Cisco 포트 사용량
+== ONTAP 9.1 이상을 실행하는 8노드 MetroCluster 구성의 ISL용 Cisco 포트 사용
 
 다음 표에서는 ISL 포트 사용을 보여 줍니다. ISL 포트 사용은 구성의 모든 스위치에서 동일합니다.
 

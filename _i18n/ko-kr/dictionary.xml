@@ -3734,7 +3734,6 @@
   <block id="968f63536cc26e1ac460060836284646" category="paragraph">Bridge_x_8a</block>
   <block id="4409c993164a314b23d52edf9f7ddb07" category="paragraph">Bridge_x_8b</block>
   <block id="de8504b73ea228d0ea9bbce69752092e" category="cell">브리지</block>
-  <block id="4968e1c4a92e0df27646933918f92be2" category="section-title">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성의 ISL에 대한 Cisco 포트 사용량</block>
   <block id="81cc761cd2e2757421a8e9242e8e12cc" category="paragraph">다음 표에서는 ISL 포트 사용을 보여 줍니다. ISL 포트 사용은 구성의 모든 스위치에서 동일합니다.</block>
   <block id="10ca333ef19b78048d2fedd61c4432e9" category="paragraph">ISL 1</block>
   <block id="d13ad1889e4cd054285464f94de707e7" category="paragraph">ISL 2</block>
@@ -6071,8 +6070,6 @@
   <block id="1b90568b607149e86214f36f7e1c89a5" category="paragraph">다음 절차를 사용하여 MetroCluster 구성에서 MetroCluster 관련 하드웨어 구성요소를 유지할 수 있습니다.</block>
   <block id="a57ca36aaadd79a0f7796b97ef93ea4b" category="paragraph">MetroCluster 시스템의 서비스 절차에는 드라이브 쉘프, IP 스위치, FC 스위치, FC-to-SAS 브리지 및 SAS 케이블에 대한 펌웨어 업그레이드 및 하드웨어 교체 절차가 포함됩니다.</block>
   <block id="0f03e15eba6bd2b5d72c3bf12b9e6464" category="summary">성능을 저하시키지 않고 스토리지를 증가하려는 경우 디스크 쉘프를 핫 추가할 수 있습니다.</block>
-  <block id="85c019b69442635697fc1b5b3f6cfad3" category="inline-xref-macro">SAS 디스크 쉘프 핫 추가 준비</block>
-  <block id="5c96ab4a94ce2c03e50e3170dc50e8be" category="list-text">쉘프를 핫 애드할 경우 환경은 다음 시나리오 중 하나를 충족해야 합니다.</block>
   <block id="dc7e96665a67891a688cad5299c9216d" category="list-text">2개의 FiberBridge 7500N 브리지가 SAS 디스크 쉘프 스택에 연결되어 있습니다.</block>
   <block id="bbe46ae98258b21267300cd00fda2d33" category="list-text">이 절차는 디스크 쉘프를 스택의 마지막 디스크 쉘프에 핫 추가하기 위한 것입니다.</block>
   <block id="de765cbcb90d504e6ac736ad12d5610f" category="paragraph">이 절차는 스택의 마지막 디스크 쉘프가 IOM A에서 브리지 A로, IOM B에서 브리지 B로 연결된다고 가정하고 작성되었습니다</block>
@@ -6083,18 +6080,10 @@
   <block id="2d0d17a81f0643f24076c9d6053d77c6" category="admonition">디스크 쉘프를 핫 추가하려면 고급 모드에서 '스토리지 디스크 펌웨어 업데이트' 명령을 실행하여 핫 추가 디스크 쉘프의 디스크 드라이브 펌웨어를 업데이트해야 합니다. 시스템의 기존 디스크 드라이브의 펌웨어가 이전 버전인 경우 이 명령을 실행하면 작업이 중단될 수 있습니다.</block>
   <block id="15fe2b61bbdb206c7e56441ae3b5eecc" category="admonition">SAS 케이블을 잘못된 포트에 삽입한 경우 SAS 포트에서 케이블을 분리할 때 다른 SAS 포트에 케이블을 연결하기 전에 최소 120초 정도 기다려야 합니다. 그렇지 않으면 시스템이 케이블이 다른 포트로 이동되었음을 인식하지 못합니다.</block>
   <block id="6cf82bfa742937a27072b88c527e1707" category="list-text">다음 중 하나의 컨트롤러의 시스템 콘솔에서 디스크 쉘프의 연결을 확인합니다.</block>
-  <block id="14eed54cda8c3aab4e76c858751a1903" category="paragraph">' * sysconfig-v * '</block>
   <block id="e9a0680136bcf6c65f2b08336c359725" category="paragraph">출력은 다음과 유사합니다.</block>
   <block id="71acbd7b99f4163d9bdf49cc4896c1d8" category="list-text">FiberBridge 7500N 브리지 세트에 디스크 쉘프를 핫 추가하면 다음과 같은 결과를 얻을 수 있습니다. 예를 들어, 개별 라인과 각 FC 포트 아래에 각 브리지가 표시됩니다.</block>
   <block id="ee60b9bc622c703e1065f07dcdc02e73" category="list-text">각 FC 포트 아래의 개별 행에 있는 각 디스크 쉘프:</block>
   <block id="4f4cc17134e7a0dec2fd6c91d9961c0e" category="list-text">각 디스크 드라이브는 각 FC 포트 아래의 별도의 줄에 있으며 이 포트가 표시됩니다.</block>
-  <block id="12c600f2f4991508e5f17240b49e8493" category="list-text">시스템에 다음 중 하나의 컨트롤러의 콘솔에서 디스크 자동 할당이 활성화되었는지 확인합니다.</block>
-  <block id="128d6bb86b0214622ee2f48931f27dc8" category="paragraph">'* 스토리지 디스크 옵션 표시 *'</block>
-  <block id="3afff8040872589b8f259af1b1b02113" category="paragraph">자동 할당 정책이 자동 할당 열에 표시됩니다.</block>
-  <block id="37ecabf9d8255c1ef714fdd4b6878eb6" category="list-text">시스템에 디스크 자동 할당이 설정되어 있지 않거나 동일한 스택에 있는 디스크 드라이브가 두 컨트롤러가 소유하는 경우 디스크 드라이브를 적절한 풀에 할당합니다.</block>
-  <block id="21dc7cf52756619aa7572059edd48927" category="paragraph">두 컨트롤러 사이에 단일 디스크 쉘프 스택을 분할하는 경우 디스크 소유권을 할당하기 전에 디스크 자동 할당을 비활성화해야 합니다. 그렇지 않으면 단일 디스크 드라이브를 할당할 때 나머지 디스크 드라이브가 동일한 컨트롤러 및 풀에 자동으로 할당될 수 있습니다.</block>
-  <block id="c6a74b565a0bfaf4ae27e4430afa45d3" category="paragraph">'storage disk option modify -node_node -name_ -autoassign off' 명령은 디스크 자동 할당을 비활성화합니다.</block>
-  <block id="5b63e4a9bc611666d00f442d845ec5c6" category="admonition">디스크 드라이브 및 디스크 쉘프 펌웨어가 업데이트될 때까지 디스크 드라이브를 애그리게이트 또는 볼륨에 추가할 수 없습니다.</block>
   <block id="8a58a56b38ad1b914e9565360ad9f6b0" category="list-text">다운로드한 펌웨어의 지침을 사용하여 디스크 쉘프 펌웨어를 최신 버전으로 업데이트합니다.</block>
   <block id="03aa0e95dbfb628416dcdc56332bc6b4" category="paragraph">두 컨트롤러의 시스템 콘솔에서 절차의 명령을 실행할 수 있습니다.</block>
   <block id="6805cea5c8147284b27002a3dfc8e4af" category="inline-link">NetApp 다운로드: 디스크 쉘프 펌웨어</block>
@@ -6111,12 +6100,8 @@
   <block id="345e380efa5afa2a2afb3abe3096922a" category="list-text">시스템 콘솔에서 디스크 드라이브 펌웨어를 최신 버전으로 업데이트합니다.</block>
   <block id="9b862d0c04151d954efe49c5341a3541" category="inline-link">NetApp 다운로드: 디스크 드라이브 펌웨어</block>
   <block id="6d8db2137b9e061e374fe522ee024f3c" category="paragraph"><block ref="6d8db2137b9e061e374fe522ee024f3c" category="inline-link-rx"></block></block>
-  <block id="7c4d248493f91032503b9fa1ff16b78a" category="list-text">고급 권한 수준으로 변경: + " * set-privilege advanced * "</block>
-  <block id="0ffb0a1b769b7a5cb0f4a4adc97d95ff" category="list-text">시스템 콘솔에서 디스크 드라이브 펌웨어를 최신 버전으로 업데이트합니다: + " * 스토리지 디스크 펌웨어 업데이트 * "</block>
-  <block id="87576e79d18b52132e5cb37d09d7cf8b" category="list-text">관리자 권한 수준(+' * set-privilege admin * ')으로 돌아갑니다</block>
   <block id="06157b5d60c5ad595acb6690d509af40" category="list-text">다른 컨트롤러에서 이전 하위 단계를 반복합니다.</block>
   <block id="fa634ad56afbbccc6627976c9b99f372" category="paragraph">' * node run-node_node-name_sysconfig-a * '</block>
-  <block id="b6c8d49615b2216ec73c49f38815ee2b" category="list-text">디스크 쉘프를 하나 이상 핫 추가할 경우, 핫 추가할 각 디스크 쉘프에 대해 이전 단계를 반복합니다.</block>
   <block id="89ddd460f27ddf4dacfc453eddcd2ecb" category="summary">ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도를 변경해야 할 수 있습니다. 더 먼 거리를 이동하는 ISL의 경우 품질을 개선하기 위해 속도를 낮춰야 할 수 있습니다.</block>
   <block id="30c3b951201788d25b66c685dcd79fd0" category="doc">Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다</block>
   <block id="866cada809bef010c2994bedea815659" category="list-text">Fabric의 두 스위치에서 속도를 변경하려는 ISL의 ISL 포트 비활성화:</block>
@@ -6216,7 +6201,6 @@
   <block id="620e5ae83bbcc366a09c7f2b1cddd13a" category="paragraph">이 예는 cmode를 다시 온라인 상태로 실행하는 컨트롤러에 플렉스를 배치하기 위한 명령을 보여줍니다.</block>
   <block id="b3c0c4fe077b345cb9de91466a5abe85" category="paragraph">플렉스가 재동기화되기 시작합니다.</block>
   <block id="0603c73cf9470cfd549fa2ceb0683f8f" category="admonition">'aggr status_-raggr_name_' 명령을 사용하여 재동기화 진행률을 모니터링할 수 있습니다.</block>
-  <block id="5cb7ce670094889d3c954b543759f688" category="summary">SAS 디스크 쉘프 핫 추가를 준비하기 위해 디스크 드라이브와 디스크 쉘프 펌웨어를 함께 다운로드하십시오.</block>
   <block id="98f4bbee1fe7223d4a878a15a9e719ad" category="list-text">시스템은 지원되는 구성이어야 하며 지원되는 ONTAP 버전을 실행 중이어야 합니다.</block>
   <block id="79fb12280740c382675b2f2b02401b80" category="list-text">시스템의 모든 디스크 드라이브와 디스크 쉘프는 최신 펌웨어 버전을 실행해야 합니다.</block>
   <block id="623d27fb1a71775c853589b6aa232fcb" category="paragraph">쉘프를 추가하기 전에 MetroCluster 구성 전체에서 디스크 및 쉘프 펌웨어를 업데이트할 수 있습니다.</block>
@@ -10571,7 +10555,6 @@
   <block id="8d07a21c40606b1098d1a2ff5a5b5f1c" category="sidebar">기존 FiberBridge 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 추가합니다</block>
   <block id="8780e2c60443de7cb84cd78e41b4b572" category="sidebar">SAS 디스크 쉘프 및 브리지 스택을 MetroCluster 시스템에 핫 추가합니다</block>
   <block id="404bb11b70239a316af681095fbdeff7" category="sidebar">SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가합니다</block>
-  <block id="46738ba3e846392ff7b6408dfb3589f6" category="sidebar">디스크 쉘프 핫 추가</block>
   <block id="26efac9be7856206ad935a9151a6a64c" category="sidebar">브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다</block>
   <block id="cabfdbae66cbee4984c63ed2d5544390" category="sidebar">MetroCluster FC 구성에서 스토리지를 핫 제거할 수 있습니다</block>
   <block id="40a09e232a862af1f1a00bbe4b0defb8" category="sidebar">확장 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다</block>
@@ -10793,8 +10776,6 @@
   <block id="d7bfe70794b33ffd8c90fd65c603c05e" category="list-text">'Storage aggregate delete -aggregate_agr_name_-plex_plex_name_' 명령을 사용하여 플렉스를 제거합니다.</block>
   <block id="ea2d02575786a7fa133f48cd51fc230e" category="paragraph">Plex는 "plex3" 또는 "plex6" 등의 플렉스 이름을 정의합니다.</block>
   <block id="3e364a62394cf176526399560d023208" category="paragraph">ONTAP 9.5부터 ONTAP CLI를 사용하여 FiberBridge 명령을 브리지로 전달하고 해당 명령의 결과를 표시할 수 있습니다.</block>
-  <block id="e57ca4b3df83a88b6254675613163df0" category="list-text">시스템은 의 모든 요구 사항을 충족해야 합니다 <block ref="08d6c3cbf42a81a0c26843f87c874545" category="inline-link-macro-rx"></block>.</block>
-  <block id="680f2c91c58cc6532106b87cb564cc68" category="admonition">이 단계에서는 링크에 제공된 지침의 다운로드 부분만 완료합니다. 에 나와 있는 단계를 따라야 합니다 <block ref="47adb28a466429763b049bd78d160e0f" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="b2d9f80a5c71fe34bed7839914c2fd68" category="paragraph">새 브리지가 파트너 브리지와 동일한 유형인 경우 파트너 브리지와 동일한 펌웨어로 업그레이드하십시오. 새 브리지가 파트너 브리지와 다른 유형인 경우 ONTAP 브리지 및 버전에서 지원하는 최신 펌웨어로 업그레이드하십시오. MetroCluster Maintenance _ 의 "FiberBridge 브리지에서 펌웨어 업데이트" 섹션을 참조하십시오.</block>
   <block id="3240aad2738f70e3ab16c6dadcff4f64" category="list-text">브리지 펌웨어 업데이트:</block>
   <block id="befb8d9c3b9caecfce0121a43afa3ce1" category="admonition">ATTO 펌웨어 버전 2.95부터 브리지가 자동으로 다시 시작되며 이 단계는 필요하지 않습니다.</block>
@@ -10882,7 +10863,6 @@
   <block id="e2090ebbf2ac14963bfb6c9602cbc750" category="paragraph">이 절차에서 사용되는 예: site_a</block>
   <block id="49ed603bb0e65ebf6cbe5de7d5a6e0c6" category="paragraph">이 절차에서 사용되는 예: controller_a_1</block>
   <block id="4e0ca507efddc63c28aeb3319df00d5d" category="paragraph">이 절차에서 사용되는 예: controller_a_2</block>
-  <block id="51070538b9cde5e5b54a8cbc07f43009" category="admonition">ONTAP 9.8부터는 스토리지 스위치 명령이 시스템 스위치로 대체됩니다. 다음 단계에서는 '스토리지 스위치' 명령을 보여 주지만 ONTAP 9.8 이상을 실행하는 경우에는 '시스템 스위치' 명령을 사용하는 것이 좋습니다.</block>
   <block id="d483490d3082f02c6057abcd983c34e6" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="218502de673c582fbc556024d0b3de54" category="inline-link-rx"></block></block>
   <block id="f1573b913aebef18602249e23e196f67" category="paragraph"><block ref="09965663397032e7c8c3dcc98b9deca2" category="inline-link-rx"></block> 추가 정보를 포함합니다.</block>
   <block id="3b60cd7b393721dca2be281ca53a4351" category="paragraph">ONTAP 9.2부터는 다음과 같은 경우에 ISL 공유를 사용할 수 있습니다.</block>
@@ -13144,7 +13124,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="inline-link">NetApp 상호 운용성 매트릭스</block>
   <block id="769db6797bc8c70f9ceb0ea238fcfef2" category="list-text"><block ref="769db6797bc8c70f9ceb0ea238fcfef2" category="inline-link-rx"></block></block>
   <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link-macro">상호 운용성 매트릭스 툴(IMT)</block>
-  <block id="520ac91f29d97371c4fac829efc70617" category="admonition">시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일한 스택 내에서 IOM12 모듈과 IOM6 모듈의 조합이 지원됩니다. 사용 중인 ONTAP 버전에서 쉘프 혼합을 지원하는지 확인하려면 을 참조하십시오 <block ref="cd3982462c40dc1b1a511ada7c72bab9" category="inline-link-macro-rx"></block>. 사용 중인 ONTAP 버전이 지원되지 않고 기존 스택이나 지원되는 IOM 모듈 조합에 추가할 새 쉘프에서 IOM 모듈을 업그레이드하거나 다운그레이드할 수 없는 경우 다음 중 하나를 수행해야 합니다.</block>
   <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
   <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
   <block id="8872b0d09737dfd9b6fcafd4e8c2356b" category="list-text"><block ref="8872b0d09737dfd9b6fcafd4e8c2356b" category="inline-link-rx"></block></block>
@@ -13603,7 +13582,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f411a218519aacec5088cc5a3d23eb64" category="paragraph">이전 시스템 ID와 새 시스템 ID는 에서 식별되었습니다. <block ref="372daca62ea6308294fd70c00fcc8af2" category="inline-link-macro-rx"></block></block>
   <block id="04e334293a29a0fcdf98b56004e27edc" category="section-title">MetroCluster 준수 스위치와 NetApp 검증 스위치 비교</block>
   <block id="5c5c34d5e7843e9424f3ca2380ae18ea" category="list-text"><block ref="5c5c34d5e7843e9424f3ca2380ae18ea" category="inline-link-macro-rx"></block></block>
-  <block id="a629fe794ff2e51df541a99e4468ebb2" category="paragraph">새 컨트롤러를 netboot해야 하는 경우 를 참조하십시오 <block ref="a7e3b7fa9390de21e9e66df9d4048c53" category="inline-link-macro-rx"></block>.</block>
   <block id="910d0f6661c3968f4e7402c808d31b3f" category="list-text"><block ref="910d0f6661c3968f4e7402c808d31b3f" category="inline-link-macro-rx"></block></block>
   <block id="740c0d0f6d37afa212fad2bd272a4212" category="list-text">Tiebreaker 1.6은 SNMPv3만 지원합니다.</block>
   <block id="a98720fe58fe46f2a22c59d172b69fbf" category="list-text">Tiebreaker 1.5 및 1.4가 SNMPv1 및 SNMPv3를 지원하지만 NetApp에서는 최적의 보안을 위해 SNMPv3를 구성할 것을 적극 권장합니다.</block>
@@ -14578,7 +14556,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="391ee14bc6581827dc4f2d88ff91afcf" category="paragraph">같은 패턴 후 포트 33 - 40을 사용하여 두 번째 DR 그룹 또는 두 번째 MetroCluster 구성에 대한 추가 브리지를 연결할 수 있습니다.</block>
   <block id="785ca789cd5d47a1b40d11e4fa3a608a" category="paragraph">동일한 패턴의 포트 25 ~ 48을 사용하여 두 번째 DR 그룹 또는 두 번째 MetroCluster 구성에 대한 추가 브리지를 연결할 수 있습니다.</block>
   <block id="3914736797bebae05c8e9387dd6727f0" category="paragraph">다음 표는 FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다. FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지의 경우 FC1로 표시된 포트에 FC1 또는 FC2를 연결할 수 있습니다. 포트 25-48을 사용하여 추가 브리지를 연결할 수도 있습니다.</block>
-  <block id="8e92988c7461b180dbee8d97f92e6742" category="paragraph">동일한 패턴으로 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.</block>
   <block id="23a48f21ed38a9e3df523f469f325385" category="paragraph">다음 표에서는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다.</block>
   <block id="b38a704e8751bf228cfb309f0668b3e1" category="section-title">FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N을 사용하는 컨트롤러 구성</block>
   <block id="2d98516f0953aef9ad21de45b1d6ed89" category="paragraph">다음 표는 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N을 사용하는 컨트롤러 구성을 보여줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.</block>
@@ -14634,4 +14611,36 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6750be268fde99a8fc70da3cae96763b" category="cell"><block ref="dc13cd459e510658615266395ba927b0" category="inline-xref-macro-rx"></block></block>
   <block id="3485285ca38e1ca4c0a680f9bcf47989" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="d2fd743661c244ff041df8d51a55b2b7" category="inline-xref-macro-rx"></block>.</block>
   <block id="57e1aa86ef1214c6b5a618674a806136" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIF는 스위치오버 사이트(cluster_A)에 있기 때문에 관리 ""업""과 운영 "'다운""이 될 것입니다.</block>
+  <block id="10a71a5f735ab2b1b550a2d004b57ffb" category="paragraph">동일한 패턴으로 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.</block>
+  <block id="937a8da9d8c2c67fd94deda08131bfdd" category="section-title">ONTAP 9.1 이상을 실행하는 8노드 MetroCluster 구성의 ISL용 Cisco 포트 사용</block>
+  <block id="3940782c6ee1e8e37bce75ab000a6d7d" category="admonition">보안을 강화하기 위해 NetApp 스위치 상태를 모니터링하도록 SNMPv2 또는 SNMPv3을 구성하는 것이 좋습니다.</block>
+  <block id="0d81f0b5554e85bb5f4956551639b630" category="admonition">ONTAP 9.8부터<block ref="688266bc53c9ead911ef4b45027ac96a" prefix=" " category="inline-code"></block> 명령이 로 대체됩니다.<block ref="07a3b9d70f925392ee8d0581b56ebc10" prefix=" " category="inline-code"></block> 다음 단계에서는<block ref="688266bc53c9ead911ef4b45027ac96a" prefix=" " category="inline-code"></block> 명령이 표시되지만 ONTAP 9.8 이상을 실행하는 경우에는<block ref="07a3b9d70f925392ee8d0581b56ebc10" prefix=" " category="inline-code"></block> 명령이 권장됩니다.</block>
+  <block id="c8b1f4f0bee22e8e9a9aaaca29899782" category="paragraph">새 컨트롤러를 netboot해야 하는 경우 를 참조하십시오 <block ref="afb88e8c89f7c0d7fb7d1ebfbdc283e2" category="inline-link-macro-rx"></block>.</block>
+  <block id="a6aee16f598d71d2363e2ad405b96904" category="section-title">1단계: SAS 디스크 쉘프를 핫 추가할 준비를 합니다</block>
+  <block id="cd4905b4e7a5872ce137a31e09bec11f" category="paragraph">SAS 디스크 쉘프의 핫 추가를 준비하려면 디스크 드라이브 및 디스크 쉘프 펌웨어와 함께 문서를 다운로드해야 합니다.</block>
+  <block id="1078b9b6fada180d5d2977e8dc4eb310" category="list-text">시스템이 지원되는 구성이고 지원되는 ONTAP 버전을 실행하고 있는지 확인합니다.</block>
+  <block id="a68f0e2c7746e4949e616e09deefa430" category="list-text">시스템의 모든 디스크 드라이브 및 디스크 쉘프에서 최신 펌웨어 버전이 실행되고 있는지 확인합니다.</block>
+  <block id="658991cef9031aff484b78a0f664f5f0" category="paragraph">쉘프를 추가하기 전에 MetroCluster 구성 전반에서 디스크 및 쉘프 펌웨어를 업데이트할 수 있습니다.</block>
+  <block id="7cbe99d38a9a2492f41bfc34788b6fac" category="paragraph">시스템에서 지원되는 ONTAP 버전을 실행하는 경우 동일한 스택 내에서 IOM12 모듈과 IOM6 모듈을 함께 사용할 수 있습니다. ONTAP 버전에서 쉘프 혼합을 지원하는지 확인하려면 을 <block ref="cd3982462c40dc1b1a511ada7c72bab9" category="inline-link-macro-rx"></block>참조하십시오. 사용 중인 ONTAP 버전이 지원되지 않고 기존 스택이나 지원되는 IOM 모듈 조합에 추가할 새 쉘프에서 IOM 모듈을 업그레이드하거나 다운그레이드할 수 없는 경우 다음 중 하나를 수행해야 합니다.</block>
+  <block id="918d32b75f0ab883abba3a8dc0c3ae8d" category="inline-link">상호 운용성 매트릭스 툴</block>
+  <block id="5ea32bc696ea7fb5909f26eb6fb24417" category="list-text"><block ref="5ea32bc696ea7fb5909f26eb6fb24417" category="inline-link-rx"></block></block>
+  <block id="0f0f148d21dd2972977d97fb2e7ff5e9" category="paragraph"><block ref="0f0f148d21dd2972977d97fb2e7ff5e9" category="inline-link-rx"></block></block>
+  <block id="8645e21bfe6e4af4b86dc7f347ff1ad6" category="inline-xref">디스크 쉘프를 핫 추가합니다</block>
+  <block id="b3394ffae831094f34a567e6f5658dfb" category="admonition">이 단계에서는 지침의 다운로드 부분만 완료합니다. 의 단계에 따라 디스크 쉘프를 설치해야 <block ref="bd373ad10590b532f39995f449879640" category="inline-xref-macro-rx"></block>합니다.</block>
+  <block id="cbeb50ea11dcfbcf2a36bc8effcd7514" category="section-title">2단계: 디스크 쉘프를 핫 추가</block>
+  <block id="c206cf1f63422466bcc0a56ffa34123c" category="paragraph">다음 절차를 사용하여 디스크 쉘프를 스택에 핫 추가합니다.</block>
+  <block id="d465e46678961f39056474479053b77c" category="inline-xref">핫 추가 SAS 디스크 쉘프를 준비합니다</block>
+  <block id="28c3aa6a67e1038d45e0f61906e2d210" category="list-text">시스템이 의 모든 요구 사항을 충족하는지 <block ref="c0573ce1dde2ba325b85f674f143ecea" category="inline-xref-macro-rx"></block>확인합니다.</block>
+  <block id="0c91ecf1246b9e97873b4360209bb137" category="list-text">쉘프를 핫 추가하기 전에 환경이 다음 시나리오 중 하나를 충족하는지 확인하십시오.</block>
+  <block id="9fec734595e2181d9080ae32be062c8e" category="paragraph">SAS 케이블을 잘못된 포트에 삽입한 경우, SAS 포트에서 케이블을 분리한 후 120초 이상 기다린 후 다른 SAS 포트에 케이블을 연결해야 합니다. 그렇게 하지 않으면 시스템에서 케이블을 다른 포트로 이동한 것을 인식하지 못합니다.</block>
+  <block id="6d23583b72982551e4b1285062f3285d" category="list-text">시스템에 두 컨트롤러 중 하나의 콘솔에서 디스크 자동 할당이 활성화되어 있는지 확인합니다.</block>
+  <block id="109bce5ec1f0d60b99a07c70667f9ec6" category="paragraph">자동 할당 정책이 자동 할당 열에 표시됩니다.</block>
+  <block id="d34edb1bb0aabf3ee05da705ddbc6721" category="list-text">시스템에 디스크 자동 할당이 활성화되어 있지 않거나 동일한 스택에 있는 디스크 드라이브가 두 컨트롤러 모두에 의해 소유된 경우 디스크 드라이브를 적절한 풀에 할당합니다.</block>
+  <block id="d5d63af17881e8ca258c6181c1cfda6f" category="list-text">두 컨트롤러 간에 단일 디스크 쉘프 스택을 분할하는 경우, 디스크 소유권을 할당하기 전에 디스크 자동 할당을 해제해야 합니다. 그렇지 않으면 단일 디스크 드라이브를 할당할 때 나머지 디스크 드라이브가 동일한 컨트롤러 및 풀에 자동으로 할당될 수 있습니다.</block>
+  <block id="dbde8ddb53b3da1d0f1fca94208162fb" category="paragraph"><block ref="525fe6a472b1a0c1313c938f9357b6f3" prefix=" " category="inline-code"></block>명령을 실행하면 디스크 자동 할당이 비활성화됩니다.</block>
+  <block id="f8133ef8bfee82369ae5763e817990e8" category="list-text">디스크 드라이브 및 디스크 쉘프 펌웨어를 업데이트할 때까지 드라이브를 Aggregate 또는 볼륨에 추가할 수 없습니다.</block>
+  <block id="13985cb259a6148e54b3c766e90f12d3" category="list-text">advanced 권한 수준으로 변경합니다. +<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
+  <block id="1925007e066bed6950af241a5bb2641e" category="list-text">시스템 콘솔에서 디스크 드라이브 펌웨어를 최신 버전으로 업데이트합니다. +<block ref="da6a6b7cd3f4972b2a5426b567597f96" prefix=" " category="inline-code"></block></block>
+  <block id="0dfe9ec4ea6b3d29900dd8df5b21179e" category="list-text">Active IQ Config Advisor를 실행합니다.</block>
+  <block id="c4d48c87201e87b08fdc19bd686fd707" category="list-text">핫 추가할 디스크 쉘프가 2개 이상인 경우, 핫 애드할 각 디스크 쉘프에 대해 이전 단계를 반복합니다.</block>
 </blocks>
