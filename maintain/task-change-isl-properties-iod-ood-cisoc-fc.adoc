@@ -1,0 +1,288 @@
+---
+permalink: maintain/task-change-isl-properties-iod-ood-ciso-fc.html 
+sidebar: sidebar 
+keywords: metrocluster, maintain, service, change, isl, properties, isl, ports, iod, ood,configuration, cisco, switch 
+summary: 'Cisco FC 스위치에서 ISL(Inter-Switch Link)을 추가하고, ISL 속도를 변경하고, IOD(In-Order Delivery) 또는 ORD(Out-Of-Order) 설정을 재구성할 수 있습니다.' 
+---
+= Cisco FC 스위치에서 ISL 속성 및 IOD/UP 구성을 변경합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco FC 스위치에서 ISL(Inter-Switch Link)을 추가하고, ISL 속도를 변경하고, IOD(In-Order Delivery) 또는 ORD(Out-Of-Order) 설정을 재구성할 수 있습니다.
+
+
+
+== Cisco FC 스위치에 ISL 추가
+
+예를 들어 더 빠른 컨트롤러 또는 더 빠른 스위치를 추가하거나 업그레이드하는 것과 같이 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다.
+
+.이 작업에 대해
+Fabric의 두 스위치에서 다음 단계를 수행하여 ISL 접속을 확인합니다.
+
+.단계
+. Fabric의 두 스위치에 추가할 ISL의 ISL 포트 비활성화:
++
+`FC_switch_A_1#config t`
+
++
+다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 구성 명령을 입력한 후 CTRL-Z를 입력합니다.
+
++
+[listing]
+----
+
+	FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# shut
+	FC_switch_A_1(config)# end
+----
+. ISL 포트로 추가할 포트에 SFP를 삽입하고 에 따라 케이블을 link:../install-fc/task_configure_the_mcc_hardware_components_fabric.html["패브릭 연결 MetroCluster 구성에 케이블을 연결합니다"]연결합니다.
++
+이러한 포트가 추가할 스위치 모델의 케이블 연결 설명서에 나열되어 있는지 확인합니다.
+
+. 의 단계에 따라 ISL 포트를 link:../install-fc/task_cable_the_isl_between_the_mcc_sites_fabric_config.html["MetroCluster 사이트 간 ISL 케이블 연결"]구성합니다.
+. Fabric의 두 스위치에서 모든 ISL 포트(활성화되지 않은 경우)를 활성화합니다.
++
+`FC_switch_A_1# config t`
+
++
+다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1# interface fc1/36
+	FC_switch_A_1(config-if)# no shut
+	FC_switch_A_1(config)# end
+----
+. 두 스위치 간에 ISL이 설정되었는지 확인합니다.
++
+`show topology isl`
+
+. 두 번째 패브릭에서 이 절차를 반복합니다.
++
+[listing]
+----
+--------------------------------------------------------------------------------
+	__________Local_________ _________Remote_________ VSAN Cost I/F  PC    I/F  Band
+	 PC Domain SwName   Port  Port   SwName Domain PC          Stat Stat Speed width
+	--------------------------------------------------------------------------------
+	  1   0x11 cisco9 fc1/36  fc1/36 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/40  fc1/40 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/44  fc1/44 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/48  fc1/48 cisco9 0xbc    1    1   15 up   up    16g   64g
+----
+
+
+
+
+== Cisco FC 스위치에서 ISL 포트 속도를 변경합니다
+
+스위치에서 ISL 포트의 속도를 변경하여 ISL의 품질을 향상시킬 수 있습니다. 예를 들어, 더 먼 거리를 이동하는 ISL의 속도를 낮출 수 있습니다.
+
+.이 작업에 대해
+Fabric의 두 스위치에서 다음 단계를 수행하여 ISL 접속을 확인합니다.
+
+.단계
+. Fabric의 두 스위치에서 속도를 변경할 ISL에 대해 ISL 포트를 비활성화합니다.
++
+`FC_switch_A_1# config t`
+
++
+다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# shut
+	FC_switch_A_1(config)# end
+----
+. Fabric의 두 스위치에서 ISL 포트의 속도를 변경합니다.
++
+`FC_switch_A_1# config t`
+
++
+다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# switchport speed 16000
+----
++
+
+NOTE: 포트 속도는 16 = 16,000Gbps, 8 = 8,000Gbps, 4 = 4,000Gbps입니다.
+
++
+스위치의 ISL 포트가 에 나열되어 있는지 link:../install-fc/index.html["패브릭 연결 MetroCluster 구성을 설치합니다"]확인합니다.
+
+. Fabric의 두 스위치에서 모든 ISL 포트(활성화되지 않은 경우)를 활성화합니다.
++
+`FC_switch_A_1# config t`
+
++
+다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.
+
++
+[listing]
+----
+
+ FC_switch_A_1(config)# interface fc1/36
+	FC_switch_A_1(config-if)# no shut
+	FC_switch_A_1(config)# end
+----
+. 두 스위치 간에 ISL이 설정되었는지 확인합니다.
++
+`show topology isl`
+
++
+[listing]
+----
+--------------------------------------------------------------------------------
+	__________Local_________ _________Remote_________ VSAN Cost I/F  PC    I/F  Band
+	 PC Domain SwName   Port  Port   SwName Domain PC          Stat Stat Speed width
+	--------------------------------------------------------------------------------
+	  1   0x11 cisco9 fc1/36  fc1/36 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/40  fc1/40 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/44  fc1/44 cisco9 0xbc    1    1   15 up   up    16g   64g
+	  1   0x11 cisco9 fc1/48  fc1/48 cisco9 0xbc    1    1   15 up   up    16g   64g
+----
+. 두 번째 스위치 패브릭에 대해 이 절차를 반복합니다.
+
+
+
+
+== VSAN을 재구성하여 IOD 또는 충분한 프레임 구성을 보장합니다
+
+표준 IOD 설정을 권장합니다. 필요한 경우에만 Zood를 재구성해야 합니다.
+
+
+
+=== IOD를 재구성합니다
+
+프레임의 IOD를 재구성하려면 다음 단계를 수행하십시오.
+
+.단계
+. 구성 모드 시작:
++
+"구성"
+
+. VSAN에 대한 교환 주문 보장 활성화:
++
+`in-order-guarantee vsan <vsan-ID>`
+
++
+
+IMPORTANT: FC-VI VSAN(FCVI_1_10 및 FCVI_2_30)의 경우 VSAN 10에서만 프레임 및 교환을 순서대로 보장해야 합니다.
+
++
+.. VSAN에 대한 로드 밸런싱 설정:
++
+`vsan <vsan-ID> loadbalancing src-dst-id`
+
+.. 구성 모드 종료:
++
+"끝"
+
+.. running-config를 startup-config에 복사합니다.
++
+'copy running-config startup-config'를 선택합니다
+
++
+FC_SWITCH_A_1에서 프레임의 IOD를 구성하는 명령은 다음과 같습니다.
+
++
+[listing]
+----
+FC_switch_A_1# config t
+FC_switch_A_1(config)# in-order-guarantee vsan 10
+FC_switch_A_1(config)# vsan database
+FC_switch_A_1(config-vsan-db)# vsan 10 loadbalancing src-dst-id
+FC_switch_A_1(config-vsan-db)# end
+FC_switch_A_1# copy running-config startup-config
+----
++
+FC_SWITCH_B_1에서 프레임의 IOD를 구성하는 명령은 다음과 같습니다.
+
++
+[listing]
+----
+FC_switch_B_1# config t
+FC_switch_B_1(config)# in-order-guarantee vsan 10
+FC_switch_B_1(config)# vsan database
+FC_switch_B_1(config-vsan-db)# vsan 10 loadbalancing src-dst-id
+FC_switch_B_1(config-vsan-db)# end
+FC_switch_B_1# copy running-config startup-config
+----
+
+
+
+
+
+
+=== 후드를 재구성합니다
+
+프레임의 후드를 재구성하려면 다음 단계를 수행하십시오.
+
+.단계
+. 구성 모드 시작:
++
+"구성"
+
+. VSAN에 대한 교환 주문 보장 비활성화:
++
+`no in-order-guarantee vsan <vsan-ID>`
+
+. VSAN에 대한 로드 밸런싱 설정:
++
+`vsan <vsan-ID> loadbalancing src-dst-id`
+
+. 구성 모드 종료:
++
+"끝"
+
+. running-config를 startup-config에 복사합니다.
++
+'copy running-config startup-config'를 선택합니다
+
++
+FC_SWITCH_A_1에서 프레임 풀을 구성하는 명령:
+
++
+[listing]
+----
+FC_switch_A_1# config t
+FC_switch_A_1(config)# no in-order-guarantee vsan 10
+FC_switch_A_1(config)# vsan database
+FC_switch_A_1(config-vsan-db)# vsan 10 loadbalancing src-dst-id
+FC_switch_A_1(config-vsan-db)# end
+FC_switch_A_1# copy running-config startup-config
+----
++
+FC_SWITCH_B_1에서 프레임의 우드를 구성하는 명령은 다음과 같습니다.
+
++
+[listing]
+----
+FC_switch_B_1# config t
+FC_switch_B_1(config)# no in-order-guarantee vsan 10
+FC_switch_B_1(config)# vsan database
+FC_switch_B_1(config-vsan-db)# vsan 10 loadbalancing src-dst-id
+FC_switch_B_1(config-vsan-db)# end
+FC_switch_B_1# copy running-config startup-config
+----
++
+
+NOTE: 컨트롤러 모듈에서 ONTAP를 구성할 때는 MetroCluster 구성의 각 컨트롤러 모듈에서 유드로 명시적으로 구성해야 합니다.
+
++
+link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#configuring-in-order-delivery-or-out-of-order-delivery-of-frames-on-ontap-software["ONTAP 소프트웨어에서 IOD 또는 프레임의 우드를 구성하는 방법에 대해 알아봅니다"]..
+
+

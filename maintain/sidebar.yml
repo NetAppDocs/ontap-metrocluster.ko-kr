@@ -58,10 +58,8 @@ entries:
       url: "/maintain/task_change_isl_properties_isl_ports_or_the_iod_ood_configuration_on_a_brocade_switch.html"
     - title: Cisco FC 스위치를 교체합니다
       url: "/maintain/task_replace_a_cisco_fc_switch_mcc.html"
-    - title: Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다
-      url: "/maintain/task_change_speed_of_isl_ports_on_a_cisco_fc_switch.html"
-    - title: Cisco 스위치에 lSLs 추가
-      url: "/maintain/task_add_lsls_to_a_cisco_fc_switch.html"
+    - title: Cisco FC 스위치에서 ISL 속성 또는 IOD/UP 구성을 변경합니다
+      url: "/maintain/task-change-isl-properties-iod-ood-ciso-fc.html"
     - title: FC 스위치의 공급업체 또는 모델을 변경합니다
       url: "/maintain/task_change_an_fc_switch.html"
   - title: 패브릭 연결 MetroCluster 구성에서 쉘프를 중단 없이 교체합니다

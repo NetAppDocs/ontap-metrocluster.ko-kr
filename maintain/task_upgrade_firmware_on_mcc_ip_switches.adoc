@@ -13,6 +13,62 @@ summary: MetroCluster IP 스위치에서 펌웨어 업그레이드
 [role="lead"]
 MetroCluster IP 스위치에서 펌웨어를 업그레이드해야 할 수 있습니다.
 
+
+
+== RCF가 지원되는지 확인합니다
+
+ONTAP 버전 또는 스위치 펌웨어 버전을 변경하는 경우 해당 버전에 대해 지원되는 RCF(참조 구성 파일)가 있는지 확인해야 합니다. 이  도구를 사용하면 link:https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["RcfFileGenerator 를 참조하십시오"^]구성에 맞는 올바른 RCF가 생성됩니다.
+
+.단계
+. 스위치에서 다음 명령을 사용하여 RCF 버전을 확인합니다.
++
+[cols="30,70"]
+|===
+
+
+| 이 스위치에서... | 이 명령 실행... 
+
+
+ a| 
+Broadcom 스위치
+ a| 
+'(ip_switch_a_1)#show clibanner'
+
+
+
+ a| 
+Cisco 스위치
+ a| 
+'ip_switch_a_1#배너 mott'를 표시합니다
+
+
+
+ a| 
+NVIDIA SN2100 스위치
+ a| 
+`cumulus@mcc1:mgmt:~$ nv config find message`
+
+|===
++
+명령 출력에서 RCF 버전을 나타내는 줄을 찾습니다. 예를 들어, Cisco 스위치의 다음 출력은 RCF 버전이 "'v1.80'"임을 나타냅니다.
+
++
+....
+Filename : NX3232_v1.80_Switch-A2.txt
+....
+. 특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 를 link:https://mysupport.netapp.com/site/tools/tool-eula/rcffilegenerator["MetroCluster IP용 RcfFileGenerator입니다"^]사용합니다. 가지고 있거나 업그레이드하려는 구성에 대한 RCF를 생성할 수 있는 경우 지원됩니다.
+. 스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.
++
+** https://hwu.netapp.com["Hardware Universe"]
+** https://imt.netapp.com/matrix/["NetApp 상호 운용성 매트릭스"^]
+
+
+
+
+
+
+== 스위치 펌웨어를 업그레이드합니다
+
 .이 작업에 대해
 각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.
 

@@ -6102,17 +6102,8 @@
   <block id="6d8db2137b9e061e374fe522ee024f3c" category="paragraph"><block ref="6d8db2137b9e061e374fe522ee024f3c" category="inline-link-rx"></block></block>
   <block id="06157b5d60c5ad595acb6690d509af40" category="list-text">다른 컨트롤러에서 이전 하위 단계를 반복합니다.</block>
   <block id="fa634ad56afbbccc6627976c9b99f372" category="paragraph">' * node run-node_node-name_sysconfig-a * '</block>
-  <block id="89ddd460f27ddf4dacfc453eddcd2ecb" category="summary">ISL의 품질을 개선하려면 스위치에서 ISL 포트의 속도를 변경해야 할 수 있습니다. 더 먼 거리를 이동하는 ISL의 경우 품질을 개선하기 위해 속도를 낮춰야 할 수 있습니다.</block>
-  <block id="30c3b951201788d25b66c685dcd79fd0" category="doc">Cisco FC 스위치에서 ISL 포트의 속도를 변경합니다</block>
-  <block id="866cada809bef010c2994bedea815659" category="list-text">Fabric의 두 스위치에서 속도를 변경하려는 ISL의 ISL 포트 비활성화:</block>
-  <block id="3c595fcd34c5fc9805912b055f7f5203" category="paragraph">``FC_SWITCH_A_1#config t *’</block>
-  <block id="53e97e8405f4a684269ecbe1412c46c1" category="paragraph">구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.</block>
   <block id="a60e468ca4246b442f30c733d507bb4b" category="list-text">Fabric의 두 스위치에서 ISL 포트의 속도를 변경합니다.</block>
-  <block id="a469e3145e2f36a1540af79d9519e45b" category="admonition">포트의 속도는 16 = 16,000Gbps, 8 = 8,000Gbps, 4 = 4,000Gbps입니다.</block>
-  <block id="21719ecdb94ad4662618cad46e3fb543" category="paragraph">스위치의 ISL 포트가 _Fabric 연결 MetroCluster 설치 및 구성 가이드_에 나열되어 있는지 확인합니다.</block>
   <block id="e94b889ef4d4456639810f5c4d896aa7" category="list-text">Fabric의 두 스위치에서 모든 ISL 포트(활성화되지 않은 경우)를 활성화합니다.</block>
-  <block id="d79fafd1f79b18f46b5fdc4eba3a3a7a" category="list-text">두 스위치 간에 ISL이 설정되었는지 확인합니다.</block>
-  <block id="ccbbe54d32019572b537370d771a1004" category="paragraph">'* show topology ISL * '</block>
   <block id="a3bf857f81a4bba7e1f5e22c53499add" category="list-text">두 번째 스위치 패브릭에 대해 이 절차를 반복합니다.</block>
   <block id="9d9aef7264cbb39bb4c46c285f3b1647" category="paragraph">'* 볼륨 표시 MDV_CRS**'</block>
   <block id="43f3f166376065e515d7eb33479e4f37" category="paragraph">`* MetroCluster check config-replication show-aggregate-eligibility * '</block>
@@ -6789,25 +6780,14 @@
   <block id="3d279499ea2a81f9a00ce4066b98ca8b" category="list-text">애그리게이트를 미러링하여 삭제된 플렉스를 다시 생성합니다.</block>
   <block id="f4505b4308dc25601259bdbab60912b4" category="list-text">재동기화를 시작할 때 플렉스를 모니터링합니다.</block>
   <block id="1d831089411388d88325ad5510a3865e" category="list-text">스토리지 시스템이 예상대로 작동하는지 확인합니다.</block>
-  <block id="bd19bf00e1fbfd96fcc2339c755e0467" category="summary">추가 또는 더 빠른 컨트롤러 또는 더 빠른 스위치와 같은 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다.</block>
-  <block id="a6237977252c00c91d0b5db5336baec2" category="doc">Cisco 스위치에 lSLs 추가</block>
   <block id="de71f5ad868db8c978c7f3225fdfdf6a" category="list-text">Fabric의 두 스위치에 추가할 ISL의 ISL 포트 비활성화:</block>
-  <block id="2853dcfcc60d2e6dc08e90bf6acb95f6" category="paragraph">``FC_SWITCH_A_1#config t *’</block>
-  <block id="5cd2ac3c7ee0ee9b3836b2cdeb2a3924" category="paragraph">구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.</block>
-  <block id="e72fe1ad6bd48d2d759bab610449f53c" category="list-text">ISL 포트로 추가할 포트에 SFP를 삽입하고 _설치 및 구성 가이드_에 따라 케이블을 연결합니다.</block>
-  <block id="02f19ced711a6a7d0bf2f837384b28a6" category="paragraph">이러한 포트가 추가하는 스위치의 _설치 및 구성 안내서_에 나열되어 있는지 확인합니다.</block>
-  <block id="9f753983c9b33e720e4ef00de71d5f0d" category="list-text">설치 및 구성 가이드 _ 에 따라 ISL 포트를 구성합니다.</block>
-  <block id="6e9af0fa4284c99ebba7edb2cb79c46a" category="paragraph">구성 명령을 한 줄에 하나씩 입력합니다. CTRL-Z로 끝냅니다</block>
   <block id="5ed8f44307454ec26dcecaa85949ef5b" category="list-text">두 번째 패브릭에서 이 절차를 반복합니다.</block>
   <block id="e0b252916154b49ca991301bb62d8e77" category="summary">MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드를 모두 새로운 RCF 파일이 필요합니다.</block>
   <block id="56ba5c8d245e7af9f26245ccc8eddba9" category="doc">MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다</block>
-  <block id="bdff20b545d5f7f451d6cc86cddcd9d5" category="list-text">RCF 파일의 버전을 확인하려면 스위치에서 다음 명령을 사용합니다.</block>
   <block id="cb1e716ab831d1ef2a5741deabd44bd7" category="cell">이 스위치에서...</block>
   <block id="196859a46785802c1b55cf0cc9501818" category="paragraph">'(ip_switch_a_1)#show clibanner'</block>
   <block id="4b7e6b18c6a39aa5ac2a1c68aebcc388" category="paragraph">Cisco 스위치</block>
   <block id="9b3b2c674f3b4b1f564ace7400510bbc" category="paragraph">'ip_switch_a_1#배너 mott'를 표시합니다</block>
-  <block id="e36320198d71e90e7fbc80a9b47b9394" category="paragraph">어느 스위치에서든 RCF 파일의 버전을 나타내는 출력 줄을 찾습니다. 예를 들어, 다음 출력은 RCF 파일 버전이 ""v1.80""임을 나타내는 Cisco 스위치에서 출력되었습니다.</block>
-  <block id="c7534d571d84fdfe4912d24b4f1f30bf" category="list-text">특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 RcfFileGenerator 를 사용합니다. 보유하고 있거나 업그레이드하려는 구성에 대해 RCF 파일을 생성할 수 있으면 해당 파일이 지원됩니다.</block>
   <block id="282bc05e82ec2895ab48f3f9377e06d3" category="list-text">스위치 펌웨어가 지원되는지 확인하려면 다음을 참조하십시오.</block>
   <block id="bde0605fb74695c23ddd122685cfc65e" category="section-title">RCF 파일을 업그레이드합니다</block>
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
@@ -12143,9 +12123,6 @@
   <block id="9ef6aecb7d030435d81fe80cacca477e" category="list-text">파티셔닝과 디스크 할당은 MetroCluster 사이트의 초기 구성 중에 자동으로 수행됩니다.</block>
   <block id="82d98fe86a7b6dbc49abc0913b83f2ac" category="paragraph">ADP는 시스템의 초기 구성 중에 자동으로 수행됩니다.</block>
   <block id="2d183ed725bd043df73111a219fb4c10" category="list-text">모든 MetroCluster 구성 요소가 지원되어야 합니다.</block>
-  <block id="a6ab1915ab3c895c47d4e04f54324428" category="paragraph">MetroCluster IP 스위치에서 RCF 파일을 업그레이드해야 할 수 있습니다. 예를 들어, 스위치에서 실행 중인 RCF 파일 버전이 ONTAP 버전, 스위치 펌웨어 버전 또는 둘 다에서 지원되지 않는 경우</block>
-  <block id="3c895cdeb8d2489a220d797e54ab8b6f" category="section-title">RCF 파일이 지원되는지 확인합니다</block>
-  <block id="aa71e3dcbe0cdabbe4cce28385ab2fd6" category="paragraph">ONTAP 버전 또는 스위치 펌웨어 버전을 변경하는 경우 해당 버전에서 지원되는 RCF 파일이 있는지 확인해야 합니다. RCF 생성기를 사용하는 경우 올바른 RCF 파일이 생성됩니다.</block>
   <block id="9f4a5b5c7a3f862c1d0ff77f72d3eea0" category="paragraph">ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.</block>
   <block id="c471c44c2f26c78f9327863d90427cb7" category="admonition">ONTAP 중재자가 다운된 경우<block ref="1eafb93bfc40f298e60cf17e8a8c598c" prefix=" " category="inline-code"></block> 명령에서는 여전히 ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지를 표시하고 MetroCluster 구성에서 ONTAP 중재자 서비스를 제거합니다.</block>
   <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 하드웨어 시스템 설명서</block>
@@ -13619,9 +13596,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="221a3239afd85b15c0a082e006cc9d76" category="summary">유지 관리 작업을 수행하기 전에 장치에서 콘솔 로깅을 사용하도록 설정합니다.</block>
   <block id="377bd72f596f8fb4cb973eb33ab1c3c3" category="doc">유지 관리 작업을 수행하기 전에 콘솔 로깅을 사용하도록 설정합니다</block>
   <block id="60fda9f0d4f66fd0b517637868752be0" category="paragraph">NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 유지 관리 절차를 수행하기 전에 다음 작업을 수행할 것을 적극 권장합니다.</block>
-  <block id="1ba38a7c71055c7f849086255d5169f3" category="list-text">ISL 접속을 보장하기 위해 두 스위치 모두에서 모든 단계를 완료합니다.</block>
   <block id="d83f1e34f43df0bbaa3ee4017c09e1b4" category="list-text"><block ref="88e4990ce21c0256eb827c7e19fa0648" category="inline-link-macro-rx"></block> 이 작업을 수행하기 전에</block>
-  <block id="403a10bd737423e3cac1fc37dacbdcd3" category="list-text">ISL 접속을 보장하기 위해 두 스위치 모두에서 모든 단계를 완료합니다.</block>
   <block id="66673dfafcae9371f075b879dc217aa9" category="paragraph">다음 단계에 따라 MetroCluster IP 인터페이스 포트를 온라인 상태로 전환하거나 오프라인으로 전환할 수 있습니다.</block>
   <block id="423cc95dedd4ee68f0dd8126c7d0dc86" category="paragraph">구성에 대해 다음 작업을 확인하고 수행했는지 확인합니다.</block>
   <block id="577c57afc12db82055cff4fa1ef601e7" category="list-text">펌웨어 파일이 있습니다.</block>
@@ -14083,10 +14058,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1ee9e9c6e0682332b92cf414d56216e5" category="list-text">플랫폼 모델에 따라 매개 변수를 사용하여 VLAN ID를 지정할 수<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 있습니다. 다음 플랫폼에서는 매개 변수를 지원하지<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block> 않습니다.</block>
   <block id="2c17b709cf340ae9f4b202df67582f0d" category="list-text">AFF C800, ASA C800, AFF A800 및 ASA A800입니다</block>
   <block id="9a7bf3cb6e6fcf5bc8021ad8b24c709d" category="list-text">설정하는 MetroCluster bootarg 값은 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 달라집니다.</block>
-  <block id="01c711ec30c5984ab759c03d8ae83dbc" category="paragraph">다음 표에 나열된 시스템은 * 공유 MetroCluster/HA 포트 * 를 사용합니다.</block>
-  <block id="72b13aee8e15cbc1635a37e0cc999b15" category="paragraph">다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.</block>
-  <block id="b4a6f2e0f896be0b4aa0ce4693340515" category="cell">공유 MetroCluster/HA 포트를 사용하는 AFF 및 ASA 시스템</block>
-  <block id="a92298a0da357308bf3f327f1d13f333" category="cell">공유 MetroCluster/HA 포트를 사용하는 FAS 시스템</block>
   <block id="8f7306dd779bf45e84d3417319068f67" category="list-text">AFF A250, ASA A250</block>
   <block id="58588e3dc50a2798e7501fa654fd258f" category="list-text">AFF C400, ASA C400</block>
   <block id="3620dab5844cf978130a9d0a58017f2a" category="list-text">AFF A400, ASA A400</block>
@@ -14567,7 +14538,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d1d3effcd2e3b543a6d69f1de82ab93f" category="paragraph">다음 표에서는 LEM 1개와 4노드 MetroCluster 또는 DR 그룹 1개가 있는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다.</block>
   <block id="59bea19cbabb48065c7357317b97432c" category="paragraph">다음 표에는 LEM 2개와 4노드 MetroCluster 또는 DR 그룹 1개가 있는 Cisco 9132T 스위치의 포트 사용량이 나와 있습니다.</block>
   <block id="71b8d98cdcca6f6c9703e8e704b1bc15" category="paragraph">다음 표에는 4노드 MetroCluster 2개 또는 2개의 DR 그룹이 포함된 8노드 MetroCluster 1개가 있는 Cisco 9132T 스위치의 포트 사용량이 나와 있습니다.</block>
-  <block id="401f98cd1747471e0821c98c1d0564ff" category="paragraph">+ 다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.</block>
   <block id="9fc6290b0188dfeebf0e0bc3aa659923" category="list-text">설정하는 MetroCluster bootarg 값은 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 달라집니다. 다음 정보를 사용하여 시스템의 포트를 확인합니다.</block>
   <block id="9e6ae12e9968c12ca89b65cbfc98c1a6" category="paragraph">명령 출력은 플랫폼 모델이 공유 클러스터/HA 포트를 사용하는지 공유 MetroCluster/HA 포트를 사용하는지에 따라 다릅니다.</block>
   <block id="f4c0383379a5ae93d0b5e4c4f8586e47" category="open-title">공유 클러스터/HA 포트를 사용하는 시스템</block>
@@ -14598,13 +14568,11 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2441e03051d41aa2f6f9d9e39c577a3e" category="section-title">스위치백 수행(ONTAP 9.8 이상)</block>
   <block id="2a6e3f78c9b73af2855a7bc5191bf5b1" category="list-text">로컬 클러스터에서 ONTAP 9.8 이상으로 System Manager에 로그인합니다.</block>
   <block id="22049fef22b0ddad50caf9ded819a4f1" category="paragraph"><block ref="22049fef22b0ddad50caf9ded819a4f1" category="inline-link-macro-rx"></block></block>
-  <block id="a6a86c7d4711a3d450ec4121102de402" category="list-text">업그레이드 대상 시스템이 다음 표에 없는 경우 MetroCluster IP 인터페이스에서 지원되는 IP 주소를 사용하고 있는지 확인하십시오.</block>
   <block id="8210c1e569b4a7f0d685a838881f7f66" category="cell">AFF 및 ASA 시스템</block>
   <block id="d5d4923aa83e46af2152de920946ba41" category="cell">FAS 시스템</block>
   <block id="fa8ce860967d0ec751385e3e150d223a" category="list-text">이전 컨트롤러에서 MetroCluster 인터페이스의 IP 주소를 확인합니다.</block>
   <block id="09542928ac9f09905359ce0cdc32a079" category="inline-link-macro">기술 문서 "MetroCluster IP 인터페이스의 속성을 수정하는 방법"</block>
   <block id="f80e9f0a9fba665f77ab307a250b7fd3" category="list-text">MetroCluster 인터페이스에서 169.254.17.x 또는 169.254.18.x IP 주소를 사용하는 경우, 업그레이드를 진행하기 전에 인터페이스 IP 주소를 수정하려면 을 참조하십시오.<block ref="d1c038803b45479df32bbfd628b2e8b5" category="inline-link-macro-rx"></block></block>
-  <block id="400bb3d32423e6384fb4cfe6867b0ccc" category="admonition">MetroCluster 인터페이스가 169.254.17.x 또는 169.254.18.x IP 주소로 구성된 경우 표에 나열되지 않은 시스템으로의 업그레이드는 지원되지 않습니다.</block>
   <block id="e7997597817a3facf42bc030e3a35309" category="cell"><block ref="92a96fa95be44bd76fa573ac0e371c6f" category="inline-xref-macro-rx"></block></block>
   <block id="6165ea79c58238b8f7f4d2edcab21f29" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="19d16029d22befc9cf5c2bffaac61331" category="inline-xref-macro-rx"></block>.</block>
   <block id="abcdb4b4b1872daf29ecc9031115f937" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIF가 스위치오버 사이트(cluster_A)에 있기 때문에 관리 작업이 중지되고 있습니다.</block>
@@ -14643,4 +14611,73 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1925007e066bed6950af241a5bb2641e" category="list-text">시스템 콘솔에서 디스크 드라이브 펌웨어를 최신 버전으로 업데이트합니다. +<block ref="da6a6b7cd3f4972b2a5426b567597f96" prefix=" " category="inline-code"></block></block>
   <block id="0dfe9ec4ea6b3d29900dd8df5b21179e" category="list-text">Active IQ Config Advisor를 실행합니다.</block>
   <block id="c4d48c87201e87b08fdc19bd686fd707" category="list-text">핫 추가할 디스크 쉘프가 2개 이상인 경우, 핫 애드할 각 디스크 쉘프에 대해 이전 단계를 반복합니다.</block>
+  <block id="5fe059efbf355f70430f354b19571fc3" category="open-title">공유 클러스터/HA 포트</block>
+  <block id="7c8b5a5d3c0fc199728d7336238824b0" category="paragraph">다음 표에 나열된 시스템은 공유 클러스터/HA 포트를 사용합니다.</block>
+  <block id="f8f6ba2d572ef729148f2d89d8ff810a" category="list-text">AFF A30</block>
+  <block id="bab1b59b0a2ad746796448276777fdbd" category="list-text">AFF C30</block>
+  <block id="7a1f08f539146079eaeae8f4a563cce2" category="list-text">AFF C60</block>
+  <block id="017db3debbf4b1ed577798b78fd96b66" category="list-text">FAS70를 참조하십시오</block>
+  <block id="649e9f4912bcf4af7efe489c6866eb1d" category="list-text">FAS90를 참조하십시오</block>
+  <block id="e5c17292b927d6196fc40c54d712ac26" category="open-title">공유 MetroCluster/HA 포트</block>
+  <block id="050f8b121af1c77b0d9da988edad7d47" category="paragraph">다음 표에 나열된 시스템은 공유 MetroCluster/HA 포트를 사용합니다.</block>
+  <block id="390d12d84818f7c716a940532ce50205" category="section-title">25Gbps 연결을 사용하는 시스템에 대해 Forward Error Correction(전달 오류 수정)을 설정합니다</block>
+  <block id="63c0e07285d0bc5e3f178d40a2cc138a" category="paragraph">25Gbps 연결을 사용하여 시스템을 구성한 경우 RCF를 적용한 후 FEC(Forward Error Correction) 매개변수를 OFF(꺼짐)로 수동으로 설정합니다. RCF는 이 설정을 적용하지 않습니다.</block>
+  <block id="2b06467580858574b4de36094cbe0f09" category="list-text">이 작업은 25Gbps 연결을 사용하는 플랫폼에만 적용됩니다. 을 <block ref="9778b8e12bd12224da54abd0721799c9" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="cf176f6e59c0efd3aa8a1d07663e5a99" category="list-text">각 스위치 포트를 개별적으로 업데이트해야 하며 명령에서 여러 포트 또는 포트 범위를 지정할 수 없습니다.</block>
+  <block id="a756347fcced8a90ebe1a3f908f44775" category="list-text">25Gbps 연결을 사용하는 첫 번째 스위치 포트에 대해 매개 변수를 off로 설정합니다<block ref="68e129acd99d4b65789a3c9e07fcbfc0" prefix=" " category="inline-code"></block>.</block>
+  <block id="c74173a1567bd19c3837172c99113a4e" category="paragraph"><block ref="1c9e50455fa99a855bbafb050c6ba1b5" prefix="" category="inline-code"></block></block>
+  <block id="1e0a72eef9348c35673f119115449f0e" category="list-text">컨트롤러 모듈에 연결된 각 25Gbps 스위치 포트에 대해 이 단계를 반복합니다.</block>
+  <block id="b21ae041ed0e5d2ef9aa406e906a4523" category="paragraph">불필요한 상태 경고를 방지하기 위해 사용하지 않는 ISL 포트 및 포트 채널을 비활성화하는 것이 좋습니다 NetApp. 각 포트 또는 포트 채널을 개별적으로 사용하지 않도록 설정해야 하며 명령에서 여러 포트 또는 포트 범위를 지정할 수 없습니다.</block>
+  <block id="a91958c89b083b7c1a304b4ab6d373b7" category="summary">Cisco FC 스위치에서 ISL(Inter-Switch Link)을 추가하고, ISL 속도를 변경하고, IOD(In-Order Delivery) 또는 ORD(Out-Of-Order) 설정을 재구성할 수 있습니다.</block>
+  <block id="c9225e4e350cd9d9fe3a38da85b0536e" category="doc">Cisco FC 스위치에서 ISL 속성 및 IOD/UP 구성을 변경합니다</block>
+  <block id="337b5d15a9edec82de3f2f7329a42550" category="section-title">Cisco FC 스위치에 ISL 추가</block>
+  <block id="0b3736750926237891eb6c12411b51e8" category="paragraph">예를 들어 더 빠른 컨트롤러 또는 더 빠른 스위치를 추가하거나 업그레이드하는 것과 같이 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다.</block>
+  <block id="e5198e8f84dbcc2351ff644eef3918f5" category="paragraph">Fabric의 두 스위치에서 다음 단계를 수행하여 ISL 접속을 확인합니다.</block>
+  <block id="2501a812babbfc76897b6c713f0e09d8" category="paragraph"><block ref="084d52e6652401a693230b55f1e7ccfc" prefix="" category="inline-code"></block></block>
+  <block id="24137179282647bd5bf799b5c9f444e8" category="paragraph">다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 구성 명령을 입력한 후 CTRL-Z를 입력합니다.</block>
+  <block id="3e2bff28c4d5a6902deb1da7418b5633" category="list-text">ISL 포트로 추가할 포트에 SFP를 삽입하고 에 따라 케이블을 <block ref="e771511c0206e82d9e035f5f51bd9261" category="inline-link-macro-rx"></block>연결합니다.</block>
+  <block id="5a4cc4195ef40bb04c8f05db04504ca4" category="paragraph">이러한 포트가 추가할 스위치 모델의 케이블 연결 설명서에 나열되어 있는지 확인합니다.</block>
+  <block id="bd823b9a4f2bded3e52b9ff6d0255318" category="list-text">의 단계에 따라 ISL 포트를 <block ref="e5672860f046da2596ebb8703ae94ba4" category="inline-link-macro-rx"></block>구성합니다.</block>
+  <block id="98714de8ac0f228ff45b434fcb7d89fa" category="paragraph"><block ref="a35badd5d667a1ad392acb2670119390" prefix="" category="inline-code"></block></block>
+  <block id="5e86bcc5d9fe6a28b01c182d6535501b" category="paragraph">다음 구성 명령을 한 줄에 하나씩 입력합니다. 모든 설정 명령을 입력한 후 CTRL-Z로 종료합니다.</block>
+  <block id="7bf2b8aa2965c469cbed666283cc688a" category="list-text">두 스위치 간에 ISL이 설정되었는지 확인합니다.</block>
+  <block id="735f5f934e3776fdadb038d27c6c8c8f" category="paragraph"><block ref="2b81923b7cbaf73bd4adfab23db890e3" prefix="" category="inline-code"></block></block>
+  <block id="96ba5659c42c8abdd694919d9383f29b" category="section-title">Cisco FC 스위치에서 ISL 포트 속도를 변경합니다</block>
+  <block id="a75f0012d38fb3b2e0a0fefdf030079c" category="paragraph">스위치에서 ISL 포트의 속도를 변경하여 ISL의 품질을 향상시킬 수 있습니다. 예를 들어, 더 먼 거리를 이동하는 ISL의 속도를 낮출 수 있습니다.</block>
+  <block id="e90de5e523869f526cdba04fee0f25a7" category="list-text">Fabric의 두 스위치에서 속도를 변경할 ISL에 대해 ISL 포트를 비활성화합니다.</block>
+  <block id="7b746326ba036c54b13006e2edbd06c3" category="admonition">포트 속도는 16 = 16,000Gbps, 8 = 8,000Gbps, 4 = 4,000Gbps입니다.</block>
+  <block id="73dd2fadef4a732de76f6c50f6d5a164" category="inline-link-macro">패브릭 연결 MetroCluster 구성을 설치합니다</block>
+  <block id="4e72bc8b7b9232777cec9124cdcf38e6" category="paragraph">스위치의 ISL 포트가 에 나열되어 있는지 <block ref="a0d2080afba0f53144cd7a8949b63e7f" category="inline-link-macro-rx"></block>확인합니다.</block>
+  <block id="aaeb982f0ec8d00f37aadad52615e727" category="section-title">VSAN을 재구성하여 IOD 또는 충분한 프레임 구성을 보장합니다</block>
+  <block id="21acc3a14a019ef2634f56e73c781f1d" category="paragraph">표준 IOD 설정을 권장합니다. 필요한 경우에만 Zood를 재구성해야 합니다.</block>
+  <block id="f9dd74d50e6d4e8c6ec0191ce2905da9" category="section-title">IOD를 재구성합니다</block>
+  <block id="cb39dfe5f68bcd5edd296b6fdc8de53a" category="paragraph">프레임의 IOD를 재구성하려면 다음 단계를 수행하십시오.</block>
+  <block id="4f375b24a0d5774a1f8b8fb169ffd561" category="paragraph"><block ref="aa4366e67ba9c1780e754fa8dc23d135" prefix="" category="inline-code"></block></block>
+  <block id="853c6fb07fb64c752f80dd74a122ddd1" category="paragraph"><block ref="4e988219ece70ad722f6d97e866c6f20" prefix="" category="inline-code"></block></block>
+  <block id="b76d6746168e22522c19327d1971ea3c" category="paragraph">FC_SWITCH_A_1에서 프레임의 IOD를 구성하는 명령은 다음과 같습니다.</block>
+  <block id="a108ae2a3d92ce4d59636979b61ebeb8" category="paragraph">FC_SWITCH_B_1에서 프레임의 IOD를 구성하는 명령은 다음과 같습니다.</block>
+  <block id="79fb406afe400b547ae1b57a2b1cd1c8" category="section-title">후드를 재구성합니다</block>
+  <block id="d55dddb22fef3c45c8e1b3b1db03b98a" category="paragraph">프레임의 후드를 재구성하려면 다음 단계를 수행하십시오.</block>
+  <block id="fbb1911474a5cabe61d1dafab91eb1b7" category="paragraph"><block ref="6a7129a1a8fafc695808b8f7ce3b6296" prefix="" category="inline-code"></block></block>
+  <block id="ff049fa50dad139a4c89167b72cabb9f" category="paragraph">FC_SWITCH_A_1에서 프레임 풀을 구성하는 명령:</block>
+  <block id="e8fa834f1f574b3a7727a4445e5c9457" category="paragraph">FC_SWITCH_B_1에서 프레임의 우드를 구성하는 명령은 다음과 같습니다.</block>
+  <block id="21daa05855e2dfd058474b417b918f85" category="inline-link-macro">ONTAP 소프트웨어에서 IOD 또는 프레임의 우드를 구성하는 방법에 대해 알아봅니다</block>
+  <block id="9297e3a651ea4ae16b4ad5bebebd2d89" category="paragraph"><block ref="4bccef683c79c68508e9369e74e9379b" category="inline-link-macro-rx"></block>..</block>
+  <block id="01c59b552b3cfa63d40f5f7a1882a0e3" category="doc">Brocade 스위치에서 ISL 속성, ISL 포트 또는 IOD/ood 구성을 변경합니다</block>
+  <block id="cd973e88c2cc2bfeeee999660f342900" category="section-title">RCF가 지원되는지 확인합니다</block>
+  <block id="978f47a3dee30dd1d7757c24a1c6cf0c" category="paragraph">ONTAP 버전 또는 스위치 펌웨어 버전을 변경하는 경우 해당 버전에 대해 지원되는 RCF(참조 구성 파일)가 있는지 확인해야 합니다. 이  도구를 사용하면 <block ref="46a459674905c476821f71bc8486a4ba" category="inline-link-macro-rx"></block>구성에 맞는 올바른 RCF가 생성됩니다.</block>
+  <block id="4f7c3897327570dec3984f1aab62a690" category="list-text">스위치에서 다음 명령을 사용하여 RCF 버전을 확인합니다.</block>
+  <block id="6cce5d78fc7baf999a2f91945cec4681" category="paragraph">NVIDIA SN2100 스위치</block>
+  <block id="350f96a9ce42f36a9a9f5b4c8b9d84d4" category="paragraph"><block ref="deaca175ac9500a5b1b1280356cacbae" prefix="" category="inline-code"></block></block>
+  <block id="6402d49dd52ac4a97e3a5b5df13a2b01" category="paragraph">명령 출력에서 RCF 버전을 나타내는 줄을 찾습니다. 예를 들어, Cisco 스위치의 다음 출력은 RCF 버전이 "'v1.80'"임을 나타냅니다.</block>
+  <block id="372302cd9a52d50f8bbec355aa5caad3" category="list-text">특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 를 <block ref="3d323bfcd2e7c90d6e420b3bfd1a01ed" category="inline-link-macro-rx"></block>사용합니다. 가지고 있거나 업그레이드하려는 구성에 대한 RCF를 생성할 수 있는 경우 지원됩니다.</block>
+  <block id="5892dc73aeb0908038bb8e9380fb53c4" category="section-title">스위치 펌웨어를 업그레이드합니다</block>
+  <block id="28abab10271202d2140cfed5d173dff5" category="paragraph">MetroCluster IP 스위치에서 RCF(참조 구성 파일) 파일을 업그레이드해야 할 수 있습니다. 예를 들어, 스위치에서 실행 중인 RCF 버전이 ONTAP 버전, 스위치 펌웨어 버전 또는 둘 다에서 지원되지 않는 경우</block>
+  <block id="463c4e9c177d926f8a70723419e27185" category="inline-link-macro">RCF가 지원되는지 확인합니다</block>
+  <block id="31e4a45ff8bf040780bcaeea92eaf273" category="list-text">RCF를 업그레이드하기 전에<block ref="0cb16fc2594f35c2b9b081a93af72ead" category="inline-link-macro-rx"></block>.</block>
+  <block id="72d26e3e5a2756a67ae4a487db269cd2" category="list-text">이 절차는 RCF 파일이 업그레이드된 스위치의 트래픽을 중단시킵니다. 새 RCF 파일이 적용되면 트래픽이 재개됩니다.</block>
+  <block id="085e87b6ec813d01dd3f597186e26f1e" category="list-text">업그레이드 대상 시스템에서 * 공유 클러스터/HA 포트 * 를 사용하는 경우 MetroCluster IP 인터페이스에서 지원되는 IP 주소를 사용하고 있는지 확인하십시오.</block>
+  <block id="11f90eb1d0dccabe5ea84d5795fc2ef7" category="paragraph">다음 정보를 사용하여 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 여부를 확인하십시오.</block>
+  <block id="fb1ce5d087cc4c4bd39c43bc3af7058b" category="admonition">MetroCluster 인터페이스가 169.254.17.x 또는 169.254.18.x IP 주소로 구성된 경우 * 공유 클러스터/HA 포트 * 를 사용하는 시스템으로의 업그레이드는 지원되지 않습니다.</block>
+  <block id="25b129509e36ff88d2beb94d08667a62" category="sidebar">Cisco FC 스위치에서 ISL 속성 또는 IOD/UP 구성을 변경합니다</block>
 </blocks>

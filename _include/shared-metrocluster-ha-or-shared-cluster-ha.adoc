@@ -2,15 +2,42 @@
 :allow-uri-read: 
 
 
-다음 표에 나열된 시스템은 * 공유 MetroCluster/HA 포트 * 를 사용합니다.
-
-+ 다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.
-
-를 누릅니다
+[role="tabbed-block"]
+====
+.공유 클러스터/HA 포트
+--
+다음 표에 나열된 시스템은 공유 클러스터/HA 포트를 사용합니다.
 
 [cols="2*"]
 |===
-| 공유 MetroCluster/HA 포트를 사용하는 AFF 및 ASA 시스템 | 공유 MetroCluster/HA 포트를 사용하는 FAS 시스템 
+| AFF 및 ASA 시스템 | FAS 시스템 
+
+
+ a| 
+* AFF A20 를 참조하십시오
+* AFF A30
+* AFF C30
+* AFF A50 를 참조하십시오
+* AFF C60
+* AFF C80 를 참조하십시오
+* AFF A70 를 참조하십시오
+* AFF A90 를 참조하십시오
+* AFF A1K 를 참조하십시오
+
+ a| 
+* FAS70를 참조하십시오
+* FAS90를 참조하십시오
+
+
+|===
+--
+.공유 MetroCluster/HA 포트
+--
+다음 표에 나열된 시스템은 공유 MetroCluster/HA 포트를 사용합니다.
+
+[cols="2*"]
+|===
+| AFF 및 ASA 시스템 | FAS 시스템 
 
 
  a| 
@@ -38,3 +65,5 @@
 
 
 |===
+--
+====

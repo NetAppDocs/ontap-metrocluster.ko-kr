@@ -232,15 +232,42 @@ e5b
 |===
 * 설정하는 MetroCluster bootarg 값은 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 달라집니다. 다음 정보를 사용하여 시스템의 포트를 확인합니다.
 +
-다음 표에 나열된 시스템은 * 공유 MetroCluster/HA 포트 * 를 사용합니다.
+[role="tabbed-block"]
+====
+.공유 클러스터/HA 포트
+--
+다음 표에 나열된 시스템은 공유 클러스터/HA 포트를 사용합니다.
 
-+
-다른 모든 시스템은 * 공유 클러스터/HA 포트 * 를 사용합니다.
-
-+
 [cols="2*"]
 |===
-| 공유 MetroCluster/HA 포트를 사용하는 AFF 및 ASA 시스템 | 공유 MetroCluster/HA 포트를 사용하는 FAS 시스템 
+| AFF 및 ASA 시스템 | FAS 시스템 
+
+
+ a| 
+** AFF A20 를 참조하십시오
+** AFF A30
+** AFF C30
+** AFF A50 를 참조하십시오
+** AFF C60
+** AFF C80 를 참조하십시오
+** AFF A70 를 참조하십시오
+** AFF A90 를 참조하십시오
+** AFF A1K 를 참조하십시오
+
+ a| 
+** FAS70를 참조하십시오
+** FAS90를 참조하십시오
+
+
+|===
+--
+.공유 MetroCluster/HA 포트
+--
+다음 표에 나열된 시스템은 공유 MetroCluster/HA 포트를 사용합니다.
+
+[cols="2*"]
+|===
+| AFF 및 ASA 시스템 | FAS 시스템 
 
 
  a| 
@@ -268,6 +295,8 @@ e5b
 
 
 |===
+--
+====
 
 
 .단계
