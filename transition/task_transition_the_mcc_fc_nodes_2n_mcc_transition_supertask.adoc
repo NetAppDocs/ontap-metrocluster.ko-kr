@@ -233,9 +233,118 @@ mc 접미사가 있는 SVM을 포함하여 모든 SVM에 있는 모든 LIF에 �
 
 . MetroCluster FC 컨트롤러 모듈(node_A_1-FC 및 node_B_1-FC), FC-SAS 브리지(있는 경우), FC 스위치(있는 경우) 및 이러한 노드에 연결된 각 스토리지 쉘프를 중지하고 끕니다.
 . MetroCluster FC 컨트롤러에서 쉘프를 분리하고 각 클러스터에 대한 로컬 스토리지인 쉘프를 기록합니다.
+. 구성에서 FC-to-SAS 브리지 또는 FC 백엔드 스위치를 사용하는 경우 연결을 끊고 제거합니다.
 +
-구성에서 FC-to-SAS 브리지 또는 FC 백엔드 스위치를 사용하는 경우 연결을 끊고 제거합니다.
+[role="tabbed-block"]
+====
+.FC-SAS 브리지를 제거합니다
+--
+.. 브리지 식별:
++
+`system bridge show`
 
+.. 브리지 제거:
++
+`system bridge remove -name <bridge_name>`
+
+.. 브리지가 제거되었는지 확인합니다.
++
+`system bridge show`
+
+
+
+다음 예는 브리지가 제거되었음을 보여줍니다.
+
+.예
+[%collapsible]
+=====
+[listing]
+----
+cluster1::> system bridge remove -name ATTO_10.226.197.16
+cluster1::> system bridge show
+                                                                Is        Monitor
+    Bridge     Symbolic Name Vendor  Model     Bridge WWN       Monitored Status
+    ---------- ------------- ------- --------- ---------------- --------- -------
+    ATTO_FibreBridge6500N_1
+               Bridge Number 16
+                             Atto    FibreBridge 6500N
+                                               2000001086603824 false     -
+    ATTO_FibreBridge6500N_2
+               Not Set       Atto    FibreBridge 6500N
+                                               20000010866037e8 false     -
+    ATTO_FibreBridge6500N_3
+               Not Set       Atto    FibreBridge 6500N
+                                               2000001086609e0e false     -
+    ATTO_FibreBridge6500N_4
+               Not Set       Atto    FibreBridge 6500N
+                                               2000001086609c06 false     -
+    4 entries were displayed.
+----
+=====
+--
+.FC 스위치를 제거합니다
+--
+.. 스위치 식별:
++
+`system switch fibre-channel show`
+
+.. 스위치를 분리합니다.
++
+`system switch fibre-channel remove -switch-name <switch_name>`
+
+.. 스위치가 제거되었는지 확인합니다.
++
+`system switch fibre-channel show`
+
+
+
+.예
+[%collapsible]
+=====
+[listing]
+----
+cluster1::> system switch fibre-channel show
+                Symbolic                                     Is        Monitor
+    Switch      Name     Vendor  Model      Switch WWN       Monitored Status
+    ----------- -------- ------- ---------- ---------------- --------- -------
+    Cisco_10.226.197.34
+                mcc-cisco-8Gb-fab-4
+                         Cisco   DS-C9148-16P-K9
+                                            2000547fee78f088 true      ok
+    mcc-cisco-8Gb-fab-1
+                mcc-cisco-8Gb-fab-1
+                         Cisco   -          -                false     -
+    mcc-cisco-8Gb-fab-2
+                mcc-cisco-8Gb-fab-2
+                         Cisco   -          -                false     -
+    mcc-cisco-8Gb-fab-3
+                mcc-cisco-8Gb-fab-3
+                         Cisco   -          -                false     -
+    4 entries were displayed.
+cluster1::> system switch fibre-channel remove -switch-name Cisco_10.226.197.34
+cluster1::> system switch fibre-channel show
+                Symbolic                                     Is        Monitor
+    Switch      Name     Vendor  Model      Switch WWN       Monitored Status
+    ----------- -------- ------- ---------- ---------------- --------- -------
+    mcc-cisco-8Gb-fab-4
+                mcc-cisco-8Gb-fab-4
+                         Cisco
+                                 -          -                false     -
+    mcc-cisco-8Gb-fab-1
+                mcc-cisco-8Gb-fab-1
+                         Cisco   -          -                false     -
+    mcc-cisco-8Gb-fab-2
+                mcc-cisco-8Gb-fab-2
+                         Cisco   -          -                false     -
+    mcc-cisco-8Gb-fab-3
+                mcc-cisco-8Gb-fab-3
+                         Cisco   -          -                false     -
+    4 entries were displayed
+cluster1::>
+----
+=====
+--
+====
 . MetroCluster FC 노드(node_A_1-FC 및 node_B_1-FC)의 유지 관리 모드에서 연결된 디스크가 없는지 확인합니다
 . MetroCluster FC 노드의 전원을 끄고 분리합니다.
 
