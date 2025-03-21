@@ -14516,8 +14516,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3692c9ba1350a63df24145cf798b7a8d" category="paragraph-title">MetroCluster 2 또는 DR 그룹 2</block>
   <block id="3931538ae618e65321b4b3317e9b03d1" category="paragraph">다음 표는 FC 포트(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 경우 MetroCluster 2 또는 DR 그룹 2에서 지원되는 쉘프 구성을 보여줍니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
   <block id="2903ceed0cbc44b8b559bfff7873b906" category="list-text">6520 스위치에서 추가 브리지를 포트 64-69 및 72-93에 케이블로 연결할 수 있습니다.</block>
-  <block id="38429f80adfb1ee89a7fbf6f07f19fd5" category="section-title">FC 포트(FC1 또는 FC2)를 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성</block>
-  <block id="6a72af091f5308d35341ed6e94d995c3" category="paragraph">다음 표에는 두 FC 포트(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 쉘프 구성이 나와 있습니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
   <block id="90630a6ca649afd90e4b45c9af3d157d" category="paragraph">다음 표에는 두 FC 포트(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 MetroCluster 2 또는 DR 그룹 2에서 지원되는 쉘프 구성이 나와 있습니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
   <block id="742bcddd5d6452c898c549e1b60cd513" category="paragraph">포트 17 - 40 및 57 - 88을 사용하여 동일한 패턴으로 추가 브리지를 연결할 수 있습니다.</block>
   <block id="391ee14bc6581827dc4f2d88ff91afcf" category="paragraph">같은 패턴 후 포트 33 - 40을 사용하여 두 번째 DR 그룹 또는 두 번째 MetroCluster 구성에 대한 추가 브리지를 연결할 수 있습니다.</block>
@@ -14703,4 +14701,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a7bb11a2d517e74f775b8aefe3c16638" category="list-text">스위치를 분리합니다.</block>
   <block id="027e94eee8bf21f30bcb532977a993c1" category="paragraph"><block ref="4f1415de9c82b1c8c8506139320b0115" prefix="" category="inline-code"></block></block>
   <block id="fdb1649f24689923739f1476888a8957" category="list-text">스위치가 제거되었는지 확인합니다.</block>
+  <block id="02637489efdd2722934159348bf04810" category="section-title">FC 포트(FC1 및 FC2)를 모두 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성</block>
+  <block id="19c5470fc0cd91ca38fde0aea868fce3" category="paragraph">다음 표는 FC 포트(FC1 및 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 쉘프 구성을 보여줍니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
+  <block id="844fb1aaef97c4328b587658a21a78d2" category="paragraph">QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.</block>
 </blocks>
