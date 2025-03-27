@@ -16,44 +16,95 @@ summary: 다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 I
 
 NOTE: AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, 및 G720 스위치
 
+[cols="2a,2a,2a"]
 |===
 | 모델 전환 | ISL 포트 | 스위치 포트 
 
 
  a| 
 6510, G620, G620-1, G630, G630-1, G720
-| ISL1 | 40 
+ a| 
+ISL1
+ a| 
+40
 
 
-| ISL2 | 41 
+
+ a| 
+ISL2
+ a| 
+41
 
 
-| ISL3 | 42 
+
+ a| 
+ISL3
+ a| 
+42
 
 
-| ISL4 | 43 
+
+ a| 
+ISL4
+ a| 
+43
 
 
-| ISL5 | 44 
+
+ a| 
+ISL5
+ a| 
+44
 
 
-| ISL6 | 45 
+
+ a| 
+ISL6
+ a| 
+45
 
 
-| ISL7 | 46 
+
+ a| 
+ISL7
+ a| 
+46
 
 
-| ISL8 | 47 
+
+ a| 
+ISL8
+ a| 
+47
 
 
-.4+| 6505, G610 | ISL1 | 20 
+
+ a| 
+6505, G610
+ a| 
+ISL1
+ a| 
+20
 
 
-| ISL2 | 21 
+
+ a| 
+ISL2
+ a| 
+21
 
 
-| ISL3 | 22 
+
+ a| 
+ISL3
+ a| 
+22
 
 
-| ISL4 | 23 
+
+ a| 
+ISL4
+ a| 
+23
+
 |===

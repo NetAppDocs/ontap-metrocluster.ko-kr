@@ -9308,8 +9308,6 @@
   <block id="6eadef8f58c5652471c6fde6bd5bcea0" category="list-text">Metro-E 및 TDM(SONET/SDH)은 지원되지 않으며 비 FC 네이티브 프레임 또는 신호는 지원되지 않습니다.</block>
   <block id="50e3a52a02d2d225339b996dd2aae728" category="paragraph">Metro-E는 Metro 거리 또는 일부 TDM(Time-Division Multiplexing), MPLS(Multiprotocol Label Switching) 또는 WDM(Wavelength-Division Multiplexing)을 통해 이더넷 프레임 또는 신호가 기본적으로 발생하는 것을 의미합니다.</block>
   <block id="fcdc08d4065e5763ed7b6bf90f0fa228" category="list-text">MetroCluster FC 스위치 패브릭에서는 TDM, FCR(네이티브 FC 라우팅) 또는 FCIP 확장이 지원되지 않습니다.</block>
-  <block id="13032557b3a76e59b63458b53f6d1410" category="list-text">MetroCluster FC 스위치 패브릭의 특정 스위치는 암호화 또는 압축을 지원하며 경우에 따라 두 스위치를 모두 지원합니다.</block>
-  <block id="82224eb6f53e517d9764730a573763df" category="paragraph"><block ref="82224eb6f53e517d9764730a573763df" category="inline-link-rx"></block></block>
   <block id="b54ac66ca0ca34c593eeed1fe8cd4e03" category="list-text">Brocade VF(Virtual Fabric) 기능은 지원되지 않습니다.</block>
   <block id="c51b448f36df4e8b4b68e7af4df4c6b8" category="list-text">도메인 포트를 기반으로 하는 FC 조닝이 지원되지만 WWN(Worldwide Name)을 기반으로 하는 조닝은 지원되지 않습니다.</block>
   <block id="5f864e9896e626c0a0c857ef2de8b1d6" category="list-text">라이센스가 설치되었는지 확인합니다.</block>
@@ -12906,10 +12904,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1f9fcd1010f1e0dd33b166603da0ce84" category="paragraph">MetroCluster FC 구성에서 AFF A250 또는 FAS500f MetroCluster IP 구성으로 전환</block>
   <block id="56d5901b9c1bf4f73e626ae675e092f1" category="paragraph">MetroCluster FC 구성에서 AFF A250 또는 FAS500f MetroCluster IP 구성으로 전환할 수 있습니다.</block>
   <block id="082e2199f2e8e7e6ff724185b8487f99" category="paragraph"><block ref="082e2199f2e8e7e6ff724185b8487f99" category="inline-link-rx"></block></block>
-  <block id="1e18e1f9085022bf9b99cbfaf58ab4d5" category="paragraph">MetroCluster IP 구성에서 계층 3 MetroCluster IP 주소 구성</block>
-  <block id="6b289b60214afb640cb3b88389dfe97e" category="paragraph">계층 3 구성에서 노드의 MetroCluster IP 주소, 넷마스크 및 게이트웨이를 편집할 수 있습니다.</block>
-  <block id="bacf5875940eb96c091917a5d1b9e1ad" category="inline-link">MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정</block>
-  <block id="bf130f5d7d338872a9f3b57415d62749" category="paragraph"><block ref="bf130f5d7d338872a9f3b57415d62749" category="inline-link-rx"></block></block>
   <block id="cdafe0852c5285bf1f5846616c50f62d" category="paragraph">MetroCluster FC 구성에서 노드에 대한 컨트롤러 업그레이드를 간소화합니다</block>
   <block id="407ce0bae822f5f1b99e4d9c2a25b062" category="paragraph">스위치오버와 스위치백을 사용한 업그레이드 프로세스의 업그레이드 절차가 간소화되었습니다.</block>
   <block id="f897370f92c3d8ec5324c468747e4210" category="paragraph"><block ref="f897370f92c3d8ec5324c468747e4210" category="inline-link-rx"></block></block>
@@ -14704,4 +14698,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="02637489efdd2722934159348bf04810" category="section-title">FC 포트(FC1 및 FC2)를 모두 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성</block>
   <block id="19c5470fc0cd91ca38fde0aea868fce3" category="paragraph">다음 표는 FC 포트(FC1 및 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 쉘프 구성을 보여줍니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
   <block id="844fb1aaef97c4328b587658a21a78d2" category="paragraph">QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.</block>
+  <block id="1894908b5d36f7ab21f7b1b1afcc630c" category="list-text">다음 Brocade FC 스위치는 MetroCluster FC 백엔드 패브릭에 대해 WAN ISL 암호화 및 압축을 지원합니다.</block>
+  <block id="0df6785d5da501ba31bbeb3f6ee67c24" category="list-text">Brocade G630</block>
 </blocks>

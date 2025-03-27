@@ -168,17 +168,6 @@ ONTAP 9.11.1
 
 
  a| 
-MetroCluster IP 구성에서 계층 3 MetroCluster IP 주소 구성
- a| 
-계층 3 구성에서 노드의 MetroCluster IP 주소, 넷마스크 및 게이트웨이를 편집할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_modify_ip_netmask_gateway_properties.html["MetroCluster IP에서 주소, 넷마스크 및 게이트웨이 수정"]
- a| 
-ONTAP 9.10.1
-
-
-
- a| 
 MetroCluster FC 구성에서 노드에 대한 컨트롤러 업그레이드를 간소화합니다
  a| 
 스위치오버와 스위치백을 사용한 업그레이드 프로세스의 업그레이드 절차가 간소화되었습니다.

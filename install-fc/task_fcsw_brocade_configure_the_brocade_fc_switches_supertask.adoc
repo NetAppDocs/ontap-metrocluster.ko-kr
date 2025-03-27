@@ -50,12 +50,15 @@ link:concept_tdm_wdm.html["패브릭 연결 MetroCluster 구성에서 TDM/WDM �
 Metro-E는 Metro 거리 또는 일부 TDM(Time-Division Multiplexing), MPLS(Multiprotocol Label Switching) 또는 WDM(Wavelength-Division Multiplexing)을 통해 이더넷 프레임 또는 신호가 기본적으로 발생하는 것을 의미합니다.
 
 * MetroCluster FC 스위치 패브릭에서는 TDM, FCR(네이티브 FC 라우팅) 또는 FCIP 확장이 지원되지 않습니다.
-* MetroCluster FC 스위치 패브릭의 특정 스위치는 암호화 또는 압축을 지원하며 경우에 따라 두 스위치를 모두 지원합니다.
+* 다음 Brocade FC 스위치는 MetroCluster FC 백엔드 패브릭에 대해 WAN ISL 암호화 및 압축을 지원합니다.
 +
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴(IMT)"]
+** Brocade G720
+** Brocade G630
+** Brocade G620
+** Brocade 6520
 
-+
-IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.
+
+
 
 * Brocade VF(Virtual Fabric) 기능은 지원되지 않습니다.
 * 도메인 포트를 기반으로 하는 FC 조닝이 지원되지만 WWN(Worldwide Name)을 기반으로 하는 조닝은 지원되지 않습니다.
