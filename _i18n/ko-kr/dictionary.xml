@@ -4312,22 +4312,8 @@
   <block id="666f4c68ad2b23bd5d3ab29cdc509eea" category="doc">관리 및 데이터 연결 케이블 연결</block>
   <block id="c6d7a629c5e04881bf417a6aa090bdff" category="paragraph">이 작업은 두 MetroCluster 사이트에서 각각의 새 컨트롤러에 대해 반복해야 합니다.</block>
   <block id="e3e199b7ae425cf085e49fc59cee2346" category="paragraph">컨트롤러와 클러스터 스위치 관리 포트를 네트워크의 기존 스위치에 연결할 수 있습니다. 또한 NetApp CN1601 클러스터 관리 스위치와 같은 새 전용 네트워크 스위치에 컨트롤러를 연결할 수도 있습니다.</block>
-  <block id="ad8e8ab9d7dd9fdd53e93282fd80eae0" category="summary">각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다. System Manager의 DateTime 편집 대화 상자를 사용하여 NTP 서버를 구성할 수 있습니다.</block>
-  <block id="26f6d501ffabe9c7ad9fbc7a0be7f99a" category="doc">NTP를 사용하여 시스템 시간 동기화</block>
-  <block id="bb8457428e540a2ecc7ca86490da2d06" category="paragraph">각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다. System Manager의 DateTime 편집 대화 상자를 사용하여 NTP 서버를 구성할 수 있습니다.</block>
-  <block id="fff420db73f86f193b0309d5cb8fae2f" category="paragraph">System Manager를 다운로드하여 설치했는지 확인합니다. System Manager는 NetApp Support 사이트에서 이용할 수 있습니다.</block>
   <block id="5ddac338fa0803205a82e38309aa44f9" category="list-text">테이크오버가 발생한 후에는 장애가 발생한 노드나 파트너 노드에 대한 표준 시간대 설정을 수정할 수 없습니다.</block>
-  <block id="1233b18bcf0b766fe8554df5722d0b10" category="list-text">MetroCluster FC 구성의 각 클러스터에는 노드에 사용되는 자체 NTP 서버 또는 서버와 해당 MetroCluster 사이트에 있는 FC-to-SAS 브리지가 있어야 합니다.</block>
   <block id="51f9f77f4b6f08d6cef95e89d987dcd7" category="paragraph">MetroCluster Tiebreaker 소프트웨어를 사용하는 경우 자체 별도의 NTP 서버가 있어야 합니다.</block>
-  <block id="c5dddb6f48dfe7bad75aa75b08a168e5" category="list-text">홈 페이지에서 해당 스토리지 시스템을 두 번 클릭합니다.</block>
-  <block id="2f1819be5da5f595812f08859147866f" category="list-text">왼쪽 탐색 창에서 * Cluster * 계층 구조를 확장합니다.</block>
-  <block id="9e7f090cf218416824ff52a2f745720c" category="list-text">탐색 창에서 * 구성 * &gt; * 시스템 도구 * &gt; * DateTime * 을 클릭합니다.</block>
-  <block id="4a1938d0e423380a1497b6177cf5dc1c" category="list-text">편집 * 을 클릭합니다.</block>
-  <block id="171705b89a6dffbcefe65773ad5683dc" category="list-text">시간대를 선택합니다.</block>
-  <block id="d36ba297073b650757db8dc78bc7b55b" category="list-text">시간 서버의 IP 주소를 지정한 다음 * 추가 * 를 클릭합니다.</block>
-  <block id="7058ebab280ed6fa87fe7b620b0dd2f8" category="paragraph">시간 서버 목록에 NTP 서버를 추가해야 합니다. 도메인 컨트롤러는 신뢰할 수 있는 서버가 될 수 있습니다.</block>
-  <block id="a72cc47fad7d1846d19b085d2e77e5ba" category="list-text">확인 * 을 클릭합니다.</block>
-  <block id="f187886704aceb7f6cb59f5184330063" category="list-text">날짜 및 시간 창에서 날짜 및 시간 설정에 대한 변경 사항을 확인합니다.</block>
   <block id="eed818e49f4e9b9c4ed8931067fb0efd" category="doc">ONTAP MetroCluster 구성의 차이점</block>
   <block id="9edea398610f8b9e7bf8eb4d72f75daa" category="summary">DR\(재해 복구\) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="9a220a3f22f8641906ad7cfa0dd3502b" category="paragraph">DR(재해 복구) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
@@ -4349,12 +4335,9 @@
   <block id="2d5ce426423eeeead4f35769cd8b1b27" category="inline-xref">3단계</block>
   <block id="13044932159e150c28f3e3cabd33ea68" category="list-text">반복합니다 <block ref="92a9f0aaafd1755c239f3740bca9b5f0" category="inline-xref-macro-rx"></block> 모든 브리지가 케이블로 연결될 때까지 다른 브리지에 연결합니다.</block>
   <block id="00ba2d14b7be89e77994c1a63febf02b" category="summary">Active IQ Unified Manager 및 ONTAP System Manager는 클러스터의 GUI 관리 및 구성 모니터링에 사용할 수 있습니다.</block>
-  <block id="88ff9d984c80d54e420fe8ed786e3bb0" category="doc">추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager 사용</block>
   <block id="186047a757cb9863fcb93d32f5c0c989" category="paragraph">Active IQ Unified Manager 및 ONTAP System Manager를 사용하여 클러스터의 GUI를 관리하고 구성을 모니터링할 수 있습니다.</block>
   <block id="006bae6091d901cbcc3c76defab3d2cd" category="paragraph">각 노드에는 ONTAP System Manager가 사전 설치되어 있습니다. System Manager를 로드하려면 클러스터 관리 LIF 주소를 노드에 연결된 웹 브라우저에서 URL로 입력합니다.</block>
   <block id="2fbf290ea4b2fee461e8994983403917" category="paragraph">Active IQ Unified Manager를 사용하여 MetroCluster 구성을 모니터링할 수도 있습니다.</block>
-  <block id="24e3ecf566a6a17e0fcc8ca1c34e6379" category="inline-link">Active IQ Unified Manager 및 ONTAP 시스템 관리자 설명서</block>
-  <block id="663ca2bb9d69f00e40b12629c141073d" category="paragraph"><block ref="663ca2bb9d69f00e40b12629c141073d" category="inline-link-rx"></block></block>
   <block id="ba47f416cbc346bd4f20db246cb5ea02" category="summary">시스템이 "설치 준비" 섹션의 모든 요구 사항을 충족하는지 확인한 후 새 시스템을 설치할 수 있습니다.</block>
   <block id="edf7f1b6b2a6033eca74c6ef56b34a95" category="doc">FC-to-SAS 브리지 및 SAS 쉘프 설치</block>
   <block id="44cf292b45fcf91c7481e1ee996ccaec" category="paragraph">시스템이 ""설치 준비"" 섹션의 모든 요구 사항을 충족하는지 확인한 후 새 시스템을 설치할 수 있습니다.</block>
@@ -9249,10 +9232,8 @@
   <block id="49c1b21db78bd2699cc6cdc18d922d3a" category="image-alt">2노드 MCC가 결합된 패브릭 디스크</block>
   <block id="263427407c4a9482adc0747a4e1c97cb" category="paragraph">다음 그림에서는 ONTAP 시스템과 어레이 LUN 간의 연결을 보여 줍니다. 포트 1a~1d는 디스크 연결에 사용되므로 스토리지 LUN에 연결하는 데 HBA 포트 0a에서 0d가 사용됩니다.</block>
   <block id="accc2dacc412db66a942735964423c25" category="image-alt">두 노드 MCC가 결합된 패브릭 arrayluns</block>
-  <block id="65196051a9405ef54277cea01cdbc891" category="paragraph">System Manager를 다운로드하여 설치해야 합니다. System Manager는 NetApp Support 사이트에서 이용할 수 있습니다.</block>
   <block id="40d4b0790c7c1d827412f3a79c31612b" category="list-text">테이크오버가 발생한 후에는 장애가 발생한 노드나 파트너 노드에 대한 표준 시간대 설정을 수정할 수 없습니다.</block>
   <block id="26e412e124f0e9c78b247288bfd03abd" category="list-text">MetroCluster FC 구성의 각 클러스터에는 해당 MetroCluster 사이트의 노드, FC 스위치 및 FC-to-SAS 브리지에서 사용하는 자체 NTP 서버 또는 서버가 있어야 합니다.</block>
-  <block id="e7f78ef846f1e6e4f4517bf5c0ce40bc" category="list-text">날짜 및 시간 * 창에서 날짜 및 시간 설정에 대한 변경 사항을 확인합니다.</block>
   <block id="538b94639e6cbcf51578ca8e73fa1108" category="summary">디스크 및 어레이 LUN에 사용할 MetroCluster 구성을 계획할 때는 스토리지 액세스 설정 순서, 루트 애그리게이트 위치, FC 이니시에이터 포트, 스위치 및 FC-to-SAS 브릿지 사용 등과 같은 다양한 요소를 고려해야 합니다.</block>
   <block id="510ef9f96e237cda2b6cc4ad3c1ead0f" category="doc">디스크 및 스토리지 LUN을 사용하여 MetroCluster 구성을 구축할 때의 고려 사항</block>
   <block id="94bbfdcfaed5ce2a4bd4fda59231e633" category="paragraph">구성을 계획할 때 다음 표의 정보를 고려하십시오.</block>
@@ -10952,7 +10933,6 @@
   <block id="dc58a5917fbb05da0e560a4cbcb1f72c" category="list-text">MACsec 구성을 제거하기 위해 인터페이스에 구성된 키 체인 및 정책을 제거합니다.</block>
   <block id="c988e8ca5d6e6bb62b67254721e13586" category="paragraph">MACsec keychain keychain-name policy-name 없음</block>
   <block id="8d0f34f00997c62960ad51adbe64457d" category="list-text"><block ref="8d0f34f00997c62960ad51adbe64457d" category="inline-link-rx"></block></block>
-  <block id="d9599a6265b31306f6c79d760a47a9aa" category="paragraph">다음 표에서는 지원되는 플랫폼 조합을 보여 줍니다. 색이 지정된 표 셀에 표시된 대로 왼쪽 열의 플랫폼에서 오른쪽 열의 지원되는 대로 나열된 플랫폼으로 전환할 수 있습니다.</block>
   <block id="d84d4239724af43bfdc3b74836c335fe" category="paragraph">구성이 완료되면 v0a(v0b 등)가 지속적으로 연결을 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(파손된 구성이 운영 중단 후에만 표시됨).</block>
   <block id="222561f9cba21343a81a9b2ee1890d68" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block></block>
   <block id="81fe00b955881476878ae80a1ff92b24" category="list-text">의 단계를 사용합니다. <block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
@@ -11428,7 +11408,6 @@
   <block id="7aeedda5f35486a7239b2a68ae68fb9a" category="paragraph">장비 업그레이드의 범위에 따라 컨트롤러 업그레이드 절차, 시스템 새로 고침 절차 또는 확장 절차를 선택할 수 있습니다.</block>
   <block id="959c17d1eadff13225c68a5578c6da93" category="paragraph">사용하는 컨트롤러 업그레이드 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다.</block>
   <block id="789c52582d523f3977d636da81e92dc0" category="list-text">ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.</block>
-  <block id="871aaccc4c0a59b618736750595955e7" category="list-text">참고 1: 이 업그레이드의 경우 절차를 사용하십시오 <block ref="f668bd1de55e6e087edcf0e6120e96e3" category="inline-link-macro-rx"></block></block>
   <block id="59710baa552439a5c3866c2907720be7" category="section-title">지원되는 MetroCluster FC 컨트롤러 업그레이드</block>
   <block id="9ae1fbeadb6e0efc4e024384fb8a4f8d" category="inline-link">기술 자료 문서</block>
   <block id="6bd20d1a4e5bd1d6bed1627ed32e934c" category="list-text">참고 1: 기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 포트 1c 및 1d를 사용할 때 컨트롤러를 업그레이드하려면 다음을 참조하십시오<block ref="058c6692589b3956d6bd485ac9c6cea6" category="inline-link-rx"></block>.</block>
@@ -11696,8 +11675,6 @@
   <block id="999074f8fe2e3e48d827312298ab3915" category="list-text">이 표에 표시된 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
   <block id="33ad7ee6bdd54750e4657cc259182b15" category="list-text">하나의 DR 그룹에 있는 모든 노드의 유형과 구성이 동일해야 합니다.</block>
   <block id="0f186c4f0b005580a0159670474d7e66" category="image-alt">8노드 구성을 위한 플랫폼 조합</block>
-  <block id="ef426871118095ccbed64997bc2ebf1e" category="list-text">* 참고 1 *: 이러한 조합에는 ONTAP 9.9.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
-  <block id="06f9380c619d2fa649d0592c6129e260" category="list-text">* 참고 2 *: 이러한 조합에는 ONTAP 9.13.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
   <block id="cd2c073603609b9fcdfdc1ca7075bc5b" category="doc">4노드 또는 8노드 MetroCluster IP 구성 업데이트(ONTAP 9.8 이상)</block>
   <block id="60a88be17742c8d2f99c1b27c311dca1" category="paragraph">이 절차를 사용하여 4노드 또는 8노드 구성으로 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="3104ce50b7a53b01f1c0af3e3fc54e43" category="paragraph">ONTAP 9.13.1 버전부터는 구성을 임시 12노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 8노드 MetroCluster IP 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.</block>
@@ -11731,7 +11708,6 @@
   <block id="5abae7190ce598d45fe390e44304cde0" category="paragraph">9.13.1 이상</block>
   <block id="80fd06bae5a00e691ac9334058ccace5" category="paragraph"><block ref="80fd06bae5a00e691ac9334058ccace5" category="inline-link-macro-rx"></block></block>
   <block id="338b3842cbe6f0ae991509f38e7d0cca" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
-  <block id="0fa55a9001a26a5414307fd992cd4661" category="image-alt">MetroCluster IP 기술 업데이트 조합</block>
   <block id="c38f34e2c50bf5ed2113077f8269019c" category="list-text">타겟 플랫폼 제한이 MetroCluster 제한보다 낮은 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한값 이하로 재구성해야 합니다.</block>
   <block id="49782ec67fb4809f5d138aa07412fd9d" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
   <block id="ea95591996a43e78cc0b5f96cb4d8f1c" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
@@ -12085,8 +12061,6 @@
   <block id="5b43fcab432560bae73db4e0c9e34232" category="list-text">"MetroCluster 4" 그룹에서 FAS8200 또는 AFF A300 이외의 플랫폼을 사용하려면 ONTAP 9.13.1 이상 및 RCF 파일 버전 2.00이 필요합니다.</block>
   <block id="959103b0e0798459de77e2b5d8985ab3" category="paragraph">이전 RCF 파일에서 업그레이드하는 경우 케이블 연결 구성에서 "MetroCluster 4" 그룹(포트 25/26 및 29/30)의 포트를 사용하고 있을 수 있습니다.</block>
   <block id="905eeaf0eb85efa82c94d09cf33bd250" category="admonition">"MetroCluster 4" 그룹의 포트를 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
-  <block id="57434776bd5888e009d9e57f22c69e23" category="doc">Cisco 9336C-FX2 공유 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="3209e9c123d4238593063149c7f8b0e2" category="list-text">스위치 연결 NS224 쉘프를 지원하지 않는 플랫폼은 2차 MetroCluster 구성으로만 연결하거나 2차 DR 그룹으로 연결할 수 있습니다.</block>
   <block id="dae9a493a0381746910b46f271097afc" category="list-text">RcfFileGenerator는 첫 번째 플랫폼을 선택한 경우에만 적합한 플랫폼을 표시합니다.</block>
   <block id="dfaaea754370da30cfd269ee856da3a9" category="list-text">1개의 8노드 또는 2개의 4노드 MetroCluster 구성을 연결하려면 ONTAP 9.14.1 이상이 필요합니다.</block>
   <block id="a5d0cab9bff9a930a5eb4ad5c7bce183" category="list-text">MetroCluster FC에서 IP로의 전환을 위해 스위치를 구성하는 경우 선택하는 타겟 플랫폼에 따라 다음 포트가 사용됩니다.</block>
@@ -12202,7 +12176,6 @@
   <block id="f54824b249675e35c90a450877126d13" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
   <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
-  <block id="1399637937931de009069d1a13a152fb" category="paragraph">* 참고 1: * 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
   <block id="02d80d458a48a16bd927a203d6bb2c73" category="list-text">조닝 구성을 확인합니다.</block>
   <block id="62c870995fe52ce6aa5f9fc71ef4da98" category="paragraph"><block ref="ed3badb92af3298762df5a811de2da80" prefix="" category="inline-code"></block></block>
   <block id="79787dbf023f957de1bd4970858b26be" category="summary">상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다.</block>
@@ -13127,66 +13100,16 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8d0d4c4989ca3a66a7d2d68ea1014ba3" category="image-alt">은 Cisco 3132Q-V 플랫폼 포트 할당을 보여 줍니다</block>
   <block id="bc96235583bdab0e6796c3feabb688a2" category="paragraph">FAS9000 또는 AFF A700 시스템을 Cisco 3132Q-V 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="f147a65f5cf3438e76a8b0e61ed4bc9a" category="paragraph">AFF A800 또는 ASA A800 시스템을 Cisco 3132Q-V 스위치에 연결하기 위해 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="a55997bcb52ea47d76c7693089c4411b" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 1)</block>
-  <block id="c024b3c7d421518d7eb77f06a0afffb1" category="cell"><block ref="6d3d31dd5453e3b467ac6e4ca8f02d56" category="inline-xref-macro-rx"></block></block>
   <block id="0b3e5d156cf864da2f269d95d3fcc8fa" category="cell">FAS8200, AFF A300</block>
-  <block id="d69442b5898944629a5487cffc295997" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 2)</block>
-  <block id="8cba878eab4d29dbb50e86dfd2827de3" category="cell"><block ref="379e0d419d9bbcf57ca750dab429b41b" category="inline-xref-macro-rx"></block></block>
   <block id="393d2d284444ca547331678bf39eda23" category="cell">AFF A320 FAS8300, AFF C400, ASA C400, FAS8700 AFF A400, ASA A400</block>
-  <block id="b61bfc412023d6416e90b961ea301bb4" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 3)</block>
-  <block id="293c0fae6effbd3bba1d18e296547ebf" category="cell"><block ref="1e85efe101fc552b243f3b78cf215749" category="inline-xref-macro-rx"></block></block>
   <block id="054b22baf62d3195ebaf8ecfe2361739" category="cell">FAS9000, AFF A700 AFF C800, ASA C800, AFF A800, ASA A800 FAS9500, AFF A900, ASA A900 탑재</block>
-  <block id="2226e1588cfda1f99bdd93ae81369cbc" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 4)</block>
-  <block id="c943d58a767750622bb22e4321d98b49" category="cell"><block ref="959c288a998a0080d9480c0767159234" category="inline-xref-macro-rx"></block></block>
-  <block id="59c59d66414422c937d61eff4de12116" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 5)</block>
-  <block id="fe7a114e5e984cbae45640593d3154ca" category="cell"><block ref="80843075b55b672cbe9cacce61884d3c" category="inline-xref-macro-rx"></block></block>
-  <block id="2f08fa253f72ece3683a45d943018e9e" category="paragraph">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 9336C 스위치로 연결하는 경우:</block>
-  <block id="bf6685eed0c6a9487e122c2316929af4" category="image-alt">에는 Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당이 나와 있습니다</block>
-  <block id="95b3cf0d5bfefca59c78627146fba641" category="paragraph">FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="be6fae0369c7f11eec2fbd1d464b74fd" category="paragraph">AFF A320, FAS8300, AFF C400, ASA C400, FAS8700, AFF A400, 또는 ASA A400 시스템에서 Cisco 3232C 또는 9336C 스위치로:</block>
-  <block id="9d55c6ea91959d97bbe3100622e6c086" category="paragraph">FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 Cisco 3232C 또는 9336C 스위치로 이동하는 방법:</block>
-  <block id="e896857ceffdb603548885cb5100edfc" category="list-text">하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다.</block>
   <block id="bc72159143eff0b74341b77947b6f3ff" category="paragraph">구성에 대한 올바른 포트 할당 표를 검토합니다. 이 섹션에는 두 가지 케이블 연결 테이블 세트가 있습니다.</block>
-  <block id="1c704961a2a6e9aa5979ae30105b7b6f" category="inline-xref">스위치 연결 NS224 쉘프에 연결하는 컨트롤러의 케이블 연결 테이블</block>
-  <block id="2232317158ae51b05261974b0c73c774" category="list-text"><block ref="92b842ddd2dcaae5c7414e419a533afa" category="inline-xref-macro-rx"></block></block>
-  <block id="612a54a1de7e14e37101146d6448b987" category="inline-xref">스위치 연결 NS224 쉘프에 연결되지 않은 컨트롤러의 케이블 연결 테이블</block>
-  <block id="6dd7317a4f079d3bca808073726abb0c" category="list-text"><block ref="d1b10ae26df34f20f35d30de5bce7767" category="inline-xref-macro-rx"></block></block>
-  <block id="21759b5180c8d8babd82ff285718a079" category="section-title">스위치 연결 NS224 쉘프에 연결하는 컨트롤러</block>
-  <block id="e076c64926b9d6d75c7a680f36a971c0" category="paragraph">스위치 연결 NS224 쉘프에 연결하는 컨트롤러에 대해 따라야 할 포트 할당 표를 결정합니다.</block>
   <block id="419f3742e6de8e0ec4b22cce005e7630" category="cell">플랫폼</block>
   <block id="be031e3e2925732e58a2cb37db830517" category="cell">AFF A320 AFF C400, ASA C400 AFF A400, ASA A400</block>
-  <block id="f8c4528af0dcdcdae34719f193d9cc9b" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 1)</block>
-  <block id="0b0b44133e290c34f8dea44fec707f9e" category="cell"><block ref="540e171a753e86bd73dfe99d0743b82c" category="inline-xref-macro-rx"></block></block>
   <block id="b6098cea8a2777e5c03f397eddba1384" category="cell">AFF A700 AFF C800, ASA C800, AFF A800 AFF A900, ASA A900</block>
-  <block id="97686b663fd0ef0bfb1351a275bd7837" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 2)</block>
-  <block id="c476b4dbd1c1a1575bd0cb7b9b6cee78" category="cell"><block ref="72d365170c1b13f78ac51fd21ca790fe" category="inline-xref-macro-rx"></block></block>
-  <block id="48d80fb496b1141bc0d1f4a4840501c2" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 3)</block>
-  <block id="a294de1141d085225e66991a6734d64b" category="cell"><block ref="8e3178499467cafbbfb2609edfa411f5" category="inline-xref-macro-rx"></block></block>
-  <block id="e4880392f55e1cdd66933d586afaff9b" category="paragraph-title">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 1)</block>
-  <block id="0e5c3d14d0398df92da81a253e1b221e" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF A320, AFF C400, ASA C400, AFF A400 또는 ASA A400 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="fc1f8aadea7c94e59bd258cb88466087" category="image-alt">에는 Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당이 나와 있습니다</block>
-  <block id="4ba16f9ec1ea989c0867b1ad14e3e091" category="paragraph-title">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 2)</block>
-  <block id="c20e08f5a68ee9f336acc3f80791cdce" category="paragraph">AFF A700, AFF C800, ASA C800, AFF A800, AFF A900 및 또는 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 ASA A900 시스템:</block>
-  <block id="b9fb7e19d674be0780dc144fff0db677" category="paragraph-title">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 3)</block>
-  <block id="78de8bf922780f385bf681428e5b091b" category="section-title">컨트롤러가 스위치 연결 NS224 쉘프에 연결되지 않음</block>
-  <block id="b75c967687ccfedfdc9af6a7cf47fb61" category="paragraph">스위치 연결 NS224 쉘프에 연결되지 않은 컨트롤러에 대해 따라야 하는 포트 할당 표를 결정합니다.</block>
   <block id="f767a875f72b50f5b4ba095c00dd1361" category="cell">AFF A150, ASA A150 FAS2750, AFF A220</block>
-  <block id="320197c44c5a2bfa0ef4783c1891047b" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 4)</block>
   <block id="c4a769675a2e89fcb65e84a2b2c8e6c1" category="cell">FAS500f AFF C250, ASA C250 AFF A250, ASA A250</block>
-  <block id="598cde4c76afa98039e2123bffe9a9e0" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 5)</block>
-  <block id="b3d39e1de10317a22681104f98025f7c" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 6)</block>
-  <block id="1d3c4364253180c31aadc7e665f06be3" category="cell"><block ref="fb232079a476121800e01709dcbcc120" category="inline-xref-macro-rx"></block></block>
-  <block id="69ecd98e97e7a9e1d19f24f861c7f0f2" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 7)</block>
-  <block id="fa79f841a4132d671e388738264a459b" category="cell"><block ref="26dd3b4b92a8d6ecee286fef2ed17617" category="inline-xref-macro-rx"></block></block>
   <block id="55a266c14b9f53227c9727ac67fc90d4" category="cell">FAS9000, AFF A700 AFF C800, ASA C800, AFF A800, ASA A800 FAS9500, AFF A900, ASA A900 탑재</block>
-  <block id="904d397f65f10d055c2a6d861b352f55" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 8)</block>
-  <block id="e47721726dfeff358f63e741e895a946" category="cell"><block ref="0acebee679a0d6934b6a25a504b83902" category="inline-xref-macro-rx"></block></block>
-  <block id="add9cee3ec42c30fa800cd2b10ceab50" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 9)</block>
-  <block id="f5d39b661f1b607b1cb9e19c6f0a29cd" category="cell"><block ref="4259e291cf96a051ba158f8842cba3e1" category="inline-xref-macro-rx"></block></block>
-  <block id="af4a78f3683e4ee93b8c4c5940a04438" category="paragraph">스위치가 연결된 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="8418c0c9975450b9880acd41079c06de" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="a1b0f4d668ec59f7dde1f302ecf91dd8" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 FAS8200 또는 AFF A300 시스템의 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="6ece60b094d75c94ab49d4300d236c1e" category="paragraph">FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템:</block>
   <block id="e3703245932789dbe7c10cc1431475fa" category="paragraph">AFF A150, ASA A150</block>
   <block id="d8e09f41a0140bcadce2023c9fc846c8" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 1)</block>
   <block id="76e892ed2593b2d95aee4f548fdf5623" category="cell"><block ref="7a1d34aae389c65629b6ff5d8aa067cc" category="inline-xref-macro-rx"></block></block>
@@ -13215,8 +13138,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4dc29e675f26e4b6e6499807939c9fe6" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 2)</block>
   <block id="f6b8e6b89e3c57d0ca377b29792960e1" category="cell"><block ref="53c3bba0fc4d571e7510994b846bb2c8" category="inline-xref-macro-rx"></block></block>
   <block id="41ac1c2c88009e74b42da1aa691550ad" category="cell">AFF C800, ASA C800 AFF A800, ASA A800 FAS9500 AFF A900, ASA A900</block>
-  <block id="c0578483b49594ace701f1c947438778" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 3)</block>
-  <block id="ab7b2bc607214982d8195f7f426e2552" category="cell"><block ref="7196cc602c9c7af038c726b07ed2eebb" category="inline-xref-macro-rx"></block></block>
   <block id="3fd729260e3da24bd6a804a69288d3a0" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 4)</block>
   <block id="9da9e77e27a298779dde7229f987f90e" category="cell"><block ref="e522fa81c7b717996bb7f3ed80dbae98" category="inline-xref-macro-rx"></block></block>
   <block id="b99e4b4aab95a094663bf529c9a168e3" category="paragraph">AFF A150, ASA A150, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 NVIDIA SN2100 스위치로 연결:</block>
@@ -13259,7 +13180,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d0596ea7a1e5e6103d63e7af154cd668" category="paragraph">지원되는 업그레이드 조합을 검토한 후 구성에 맞는 올바른 컨트롤러 업그레이드 절차를 선택하십시오.</block>
   <block id="5f59766a690e00008d7b09d26244b85f" category="paragraph">사용하는 시스템 새로 고침 절차는 플랫폼 모델 및 MetroCluster 구성 유형에 따라 다릅니다. 업데이트 절차는 컨트롤러 및 스토리지 쉘프에 적용됩니다. 새로 고침 절차에서는 MetroCluster 구성에 새 컨트롤러와 쉘프를 추가하여 두 번째 DR 그룹을 생성한 다음, 데이터가 새 노드로 중단 없이 마이그레이션됩니다. 그러면 원래 컨트롤러가 폐기됩니다.</block>
   <block id="cf35ca12d11c5730282da68bdb26e696" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster IP 기술 업데이트 조합</block>
-  <block id="3a2b3b39311d9a61b3a9bb66f7feec5c" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.</block>
   <block id="cb8925996d20b2dc27bec26b66db8e61" category="paragraph-title">지원되는 ASA MetroCluster IP 기술 업데이트 조합</block>
   <block id="03c48c75d06f3446ef94029cbbce579a" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.</block>
   <block id="a3a15df2eb8fb472342a575b30857763" category="image-alt">MetroCluster IP ASA 기술 업데이트 조합</block>
@@ -13279,7 +13199,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="561e0dbd4b4b1343ca844c5058cb54e9" category="cell">8노드 DR 그룹 2</block>
   <block id="2653fa879e50e7b880dab8fa2e3967ae" category="paragraph">다음 표에서는 8노드 MetroCluster IP 구성에서 지원되는 플랫폼 조합을 보여 줍니다.</block>
   <block id="573cf4c0aff376944ba2b059e8c7e9c2" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster IP 확장 조합</block>
-  <block id="880302e3a957f3d2d56cda5417dd9fb9" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="b1705b27cbcba17a6877fcb4c39148d9" category="paragraph-title">지원되는 ASA MetroCluster IP 확장 조합</block>
   <block id="466ce3655b07eea61b5dbce58f9e9824" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="ee27c265dcfda7fda27ab9bdc5c36d3c" category="admonition">클러스터의 모든 노드에 있는 슬롯 7은 섹션에서 언급한 대로 비어 있어야 <block ref="9c46692563a7a73a73f8ba6108f40e8e" category="inline-xref-macro-rx"></block> 합니다.</block>
@@ -13390,7 +13309,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c200b51f243e6499b1e4aff027683496" category="paragraph"><block ref="4ce4e1d2d83eceacd4a0a0cf1bad8e14" prefix="" category="inline-code"></block></block>
   <block id="c848af1101f629db69baafb2b08b9915" category="paragraph"><block ref="ce889b95687da5aee0c3d9ec48e819b4" prefix="" category="inline-code"></block></block>
   <block id="2d425665af37b9989f89179649650990" category="section-title">업그레이드를 완료합니다</block>
-  <block id="0ca215bc0428424e5cb9556db1b478d9" category="paragraph">AFF A320, FAS8300, AFF C400, ASA C400, FAS8700, 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A400 또는 ASA A400 시스템:</block>
   <block id="7bf9d1ef7aeb37de6171f77014cb7475" category="paragraph">특정 플랫폼은 MetroCluster IP 인터페이스에 VLAN을 사용합니다. 기본적으로 두 포트 각각은 서로 다른 VLAN을 사용합니다(10 및 20).</block>
   <block id="b676a1207e184308799f51c46b2c49b4" category="paragraph">+ 지원되는 경우 명령에서 매개 변수를 사용하여 100보다 큰(101에서 4095 사이) 다른(기본값이 아닌) VLAN을 지정할 수도 있습니다<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block><block ref="f2986433c79fe84ff207e72d4ed9fd6f" prefix=" " category="inline-code"></block> .</block>
   <block id="89ec7be62a41e52b11c54d2aedfc03bf" category="paragraph">+ 다음 플랫폼에서는 매개 변수를 지원하지 * 않습니다.<block ref="6790c40b1680557da1f80536ae186301" prefix=" " category="inline-code"></block></block>
@@ -13497,7 +13415,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f17f69c6edf98777a15cba11703ecfa4" category="paragraph"><block ref="3e67c1f4fcc76e1369016e8e183fdf3b" prefix="" category="inline-code"></block></block>
   <block id="0f137b9473f8c1720c69f6c82c079dba" category="paragraph"><block ref="3b297593c0c2375482cbced8777ea2a8" prefix="" category="inline-code"></block></block>
   <block id="df0de59a7d82bfac9aeb4c3a4d0ff3d5" category="paragraph"><block ref="593e2b872fdc863863b3175980b503ee" prefix="" category="inline-code"></block></block>
-  <block id="4bbabfb39bdaa67802b5f83f085672a9" category="image-alt">에는 IP에서 FC로의 전환을 위해 지원되는 플랫폼 조합이 나와 있습니다</block>
   <block id="5a4027b63d6ed294211392e256667c2c" category="list-text">새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용하도록 이전 컨트롤러의 인터클러스터 LIF를 수정합니다.</block>
   <block id="931a74601edef3262a75c3d8d8e6acda" category="admonition">이 단계는 성공적인 업그레이드를 위해 필요합니다.</block>
   <block id="f7f8cd16da4423b24e25a4d21cb4bc83" category="paragraph">이전 컨트롤러의 인터클러스터 LIF는 새 컨트롤러의 HA 인터커넥트 또는 MetroCluster IP DR 인터커넥트에 사용되는 포트와 다른 홈 포트를 사용해야 합니다. 예를 들어, AFF A90 컨트롤러로 업그레이드할 때 HA 인터커넥트 포트는 e1A와 e7a이고, MetroCluster IP DR 인터커넥트 포트는 e2b와 e3b입니다. 이전 컨트롤러가 포트 E1A, e7a, e2b 또는 e3b에서 호스팅되는 경우 인터클러스터 LIF를 이동해야 합니다.</block>
@@ -13562,9 +13479,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="190421b938f84b927163204510df7319" category="paragraph">지원되는 플랫폼에 대해서는 의 표를 <block ref="cdc5d26dd7214bbc9da99c730f208713" category="inline-link-macro-rx"></block> 참조하십시오.</block>
   <block id="8e30d2803b603d7bc1c9f3584b57c881" category="section-title">기타 지원되는 모든 MetroCluster IP 컨트롤러 업그레이드</block>
   <block id="17c7cb78cf2f2286d3034a3959bc800e" category="paragraph">이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
-  <block id="ece07deebff7293937869fc01fd521f0" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="8430e377fbc83f194587bd875ac99b4b" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.</block>
-  <block id="5517f0f4079cbe32b861155b72575d78" category="paragraph">다음 표는 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="0ef5c60e365bf027441cd538ad7f03c9" category="paragraph"><block ref="0ef5c60e365bf027441cd538ad7f03c9" category="inline-link-rx"></block></block>
   <block id="218202ab36e31b93dc4b302be0cb5ac3" category="paragraph">NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.</block>
   <block id="7a15fb36e18a42514f358533c9af4dae" category="list-text">유지 관리 중에는 AutoSupport를 활성화된 상태로 둡니다.</block>
@@ -13763,7 +13678,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f2cf1382fae972d1f657f56bdf1ccd2f" category="list-text">기타 * 섹션에서 * 시간 서비스 사용(NTP) * 확인란을 선택하여 시간 서버를 추가합니다.</block>
   <block id="d385f8f7be7049af17b707b814da972d" category="paragraph">Submit * 을 클릭하면 클러스터가 생성 및 구성될 때까지 기다립니다. 그런 다음 유효성 검사 프로세스가 발생합니다.</block>
   <block id="e66cf0363da426ff5fc40b5dff923ee7" category="paragraph-title">다음 단계</block>
-  <block id="fb0527aaad3b8834bb5bd8b9aaac2d14" category="paragraph">두 클러스터가 설정, 초기화 및 구성된 후 [MetroCluster IP 피어링 설정] 절차를 수행합니다.</block>
   <block id="5a8cb11351ec1c2ae0f6ece191a675b3" category="section-title">새 클러스터 비디오에서 ONTAP를 구성합니다</block>
   <block id="de87e59d2852e752153034440b599942" category="summary">System Manager를 사용하면 중재자를 관리하는 작업을 수행할 수 있습니다.</block>
   <block id="4a75c782083d91f8442fa0793b7cfbf5" category="doc">System Manager로 ONTAP 중재자 관리</block>
@@ -14088,13 +14002,11 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5a242666138c5c7e9c4d2facda243c69" category="list-text"><block ref="5a242666138c5c7e9c4d2facda243c69" category="inline-link-macro-rx"></block></block>
   <block id="d220a64cb2cd81dfbeab831c88a1e91d" category="inline-link-macro">NVIDIA IP RCF를 다운로드하여 설치합니다</block>
   <block id="cae1b37282b7f5677f3224d10650f07f" category="list-text"><block ref="cae1b37282b7f5677f3224d10650f07f" category="inline-link-macro-rx"></block></block>
-  <block id="8186a6f3c6857ac00360d47ac04a1203" category="paragraph"><block ref="8186a6f3c6857ac00360d47ac04a1203" category="inline-image-macro-rx" type="image"></block></block>
   <block id="17354808febb5791d3c64764c271fc5b" category="paragraph">각 쉘프의 파티션은 루트 애그리게이트를 만드는 데 사용됩니다. 루트 애그리게이트에 있는 두 플렉스의 각각에는 다음 파티션이 있습니다.</block>
   <block id="4b38b69284009d5af792544d8b0be650" category="paragraph">* 참고: * 내부 드라이브의 절반은 MetroCluster를 구성하기 전에 할당되지 않은 상태로 남아 있습니다.</block>
   <block id="dcf482ebabd734e754ede4590987cfb5" category="section-title">AFF A250, AFF C250, ASA A250, ASA C250, FAS500f, AFF A20, AFF A30 및 AFF C30 시스템에서 ADP 및 디스크 할당</block>
   <block id="ac754ee1e551645a6db1392cbe6546c9" category="paragraph">48개 드라이브(외부 드라이브만 해당, 내부 드라이브 없음)</block>
   <block id="6634a8c56506159fbd87caadfa2bb1c0" category="paragraph">48개 드라이브(외부 및 내부 드라이브)</block>
-  <block id="6c1db89bd0ceda01b95e84451e63deaa" category="paragraph">내부 파티션은 4개의 동일한 그룹(분기)으로 나뉩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다. 외부 쉘프의 드라이브는 4개의 동일한 그룹(분기)으로 분류됩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다.</block>
   <block id="560b7cb44949466818bcf1ce98e6f01a" category="section-title">AFF A50 및 AFF C60 시스템에서 ADP 및 디스크 할당</block>
   <block id="d1501f0cbc9e2d325ef6e1725a424549" category="paragraph">로컬 HA 쌍에는 하나의 쉘프가 사용됩니다. 원격 HA 쌍은 두 번째 쉘프를 사용합니다.</block>
   <block id="ce18baa4e98793cae29bac3255df9775" category="section-title">AFF C800, ASA C800, ASA A800, AFF A800 시스템에서 ADP 및 디스크 할당</block>
@@ -14106,60 +14018,18 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="03e4e34912e74f99bcc188842b2088d2" category="paragraph">AFF A90, AFF A1K, FAS90, AFF C80</block>
   <block id="cc6089132b9a5e4af29a76834480cc1a" category="paragraph">AFF A50 를 참조하십시오</block>
   <block id="b4f15258765c83a1223f6ad33f797dbd" category="paragraph">X60134A를 참조하십시오</block>
-  <block id="1cb4f6c34cb1af85680c6d9e63b2a86d" category="paragraph">AFF A30, AFF C30, AFF C60</block>
   <block id="9d9de1698f7e401c78687204de906ee5" category="paragraph">AFF A20 를 참조하십시오</block>
   <block id="764552ebb0f871bc4b68c98b31d746d0" category="paragraph">X60132A를 참조하십시오</block>
   <block id="6fa048cd3558a7c8e85c121dd6b53c9c" category="paragraph">슬롯 4, 슬롯 2</block>
   <block id="e3ff124e75bf3d8e6a3ed71982b4a775" category="paragraph">e2b, e4b</block>
   <block id="3c1618b255b11d5961631276508d6713" category="paragraph">구성 테이블을 사용하기 전에 다음 고려 사항을 검토하십시오.</block>
-  <block id="2d6d56b43e4a834788f26c1cd6e48426" category="cell">AFF A150, ASA A150, FAS2750, AFF A220 FAS500f, ASA A250, ASA C250, AFF A250, AFF C250</block>
-  <block id="1c6bff44c8cb48ef51ded46c607872c5" category="cell">AFF A30, AFF C30 AFF C60</block>
-  <block id="1e152cfb71fc591846d262cbd9c05737" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 6)</block>
-  <block id="cf7225c2369f8007e72d8f26a60c7547" category="cell"><block ref="fa098c30ae489e9ffb1312675247b796" category="inline-xref-macro-rx"></block></block>
-  <block id="b70c12944934893c90b896af1d842e59" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 7)</block>
-  <block id="1f4c9e06210f9e72c2b6974a8d201b1e" category="cell"><block ref="23f0031045d4c5a6d0a31d66a4414eaa" category="inline-xref-macro-rx"></block></block>
   <block id="cef91d9ca2107b217772ee91bf4476b2" category="cell">FAS70, AFF A70 AFF C80 FAS90, AFF A90 AFF A1K</block>
-  <block id="de34f03873cad278e1b5cd4034a7ed03" category="inline-xref">Cisco 3232C 또는 Cisco 9336C 플랫폼 포트 할당(그룹 8)</block>
-  <block id="f17bf6b1d2e916bc883701ca762c7d31" category="cell"><block ref="4ae0459daad462bd8cb96fe95602c48c" category="inline-xref-macro-rx"></block></block>
-  <block id="9e741c4a3ec9010708b84c50ab61cf6e" category="paragraph"><block ref="9e741c4a3ec9010708b84c50ab61cf6e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="85f49e412a48aec206a5bcf559b8fb51" category="paragraph">AFF A30, AFF C30 또는 AFF C60 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="4ddd72f5e814500908f0ff1c734ddaf1" category="paragraph"><block ref="4ddd72f5e814500908f0ff1c734ddaf1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="267e30226a55e10038a24c84fc6de6d0" category="paragraph">AFF A50 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="ca69a76035ac5f2a63eff361c33eb7c2" category="paragraph">*참고 1*: X91440A 어댑터(40Gbps)를 사용하는 경우 e4a 및 e4e 또는 e4a 및 e8a를 사용합니다. X91153A 어댑터(100Gbps)를 사용하는 경우 포트 e4a 및 e4b 또는 e4a 및 e8a를 사용합니다.</block>
-  <block id="5e579c5398f759c591e5b8c0846adbb0" category="paragraph">AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="da0acefbf33111de9e67d3fee11be371" category="cell">AFF C30, AFF A30 AFF C60</block>
-  <block id="c13a6988988f63fb2f0783cdb7f3480a" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 4)</block>
-  <block id="80013ebf782c405ff60125a0a3b79606" category="cell"><block ref="9ad543bbe652f0e404a3df2b4a4d1b1f" category="inline-xref-macro-rx"></block></block>
   <block id="44d35f94e4a501d55fdfa6b53538e69c" category="cell">AFF A70 AFF C80 AFF A90 AFF A1K 를 참조하십시오</block>
-  <block id="0eafd073bf4026904c5daafe661c747c" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 5)</block>
-  <block id="7a1eb95696daac0dca1551d649074117" category="cell"><block ref="ee60950f7332a78c3b30312d3652b3ef" category="inline-xref-macro-rx"></block></block>
-  <block id="507ea3ef945286961cf543c4f96379f1" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF C30, AFF A30 또는 AFF C60 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="65afbc35a986d1cfa9a50f2cb2f5c44d" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF A50 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="2891ff907bd9a2918aeaefa751bd8b7e" category="paragraph"><block ref="2891ff907bd9a2918aeaefa751bd8b7e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="84db7c71380402803e5d913e48b35f9a" category="paragraph"><block ref="84db7c71380402803e5d913e48b35f9a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="68976b911135d6d243ebf110e9f88265" category="paragraph">스위치가 연결된 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하는 AFF A70, AFF C80, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="4fd79b147d352f14562f4c5d7e89f964" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 10)</block>
-  <block id="c7d921dc9f69695e913778aed6fb550a" category="cell"><block ref="cf3df2d950f3000c56f3761e778688b1" category="inline-xref-macro-rx"></block></block>
-  <block id="12879b167ec75cedd2db08e4e1e21f30" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 11)</block>
-  <block id="449215cbb598b048f38ac62a19edaccc" category="cell"><block ref="f346d8d091e3e8c5429e3c222db57782" category="inline-xref-macro-rx"></block></block>
-  <block id="69274cffd982cace552cf08333fd2197" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 12)</block>
-  <block id="fcdb378438479c3a2b9f59a508a7c5dd" category="cell"><block ref="fcc464a5306b3b14bb86df291d905ee3" category="inline-xref-macro-rx"></block></block>
-  <block id="286f9d0abf2865761c8318556c3ce84b" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 13)</block>
-  <block id="6d12b70b56483f7a9a17d9c9246b0486" category="cell"><block ref="905d9f873e6d338924d7e00318dbac8e" category="inline-xref-macro-rx"></block></block>
-  <block id="8d1cfa543fa92c144d23d144a2d727f3" category="inline-xref">Cisco 9336C-FX2 공유 스위치 플랫폼 포트 할당(그룹 14)</block>
-  <block id="e89910d5913faa95f696c756b3e7db34" category="cell"><block ref="b35ee61663441f30da82bb8ec139d4c5" category="inline-xref-macro-rx"></block></block>
-  <block id="ce88107e356865e8486d9e02f7bb585b" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A20 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="81b5cc186cb1dd31d7bddf749a59442b" category="paragraph"><block ref="81b5cc186cb1dd31d7bddf749a59442b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a212a7a5cb7dccf83a8209b64b53ce39" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A30, AFF C30 또는 AFF C60 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="3d8a9d7f8aa09c53731690f8feed0d87" category="paragraph"><block ref="3d8a9d7f8aa09c53731690f8feed0d87" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7df7474e58c19dd78cdaa94db11e8aa2" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A50 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="bc7ed33551532e8e8d306161aa5071b6" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 공유 스위치에 연결하지 않는 AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="d092f23abfbbe763c64b549b968de1d8" category="list-text">속도가 다른 원격 ISL 포트(예: 10Gbps ISL 포트에 연결된 25Gbps 포트)에서는 스위치를 사용할 수 없습니다.</block>
-  <block id="99cd6147dd59c5abb2b297eb370705fd" category="cell">AFF A20 AFF C30, AFF A30 AFF C60</block>
   <block id="42abd6d583788764c25c15490505431f" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 6)</block>
   <block id="0f0bfb73ae173d3403dfb828e3b70090" category="cell"><block ref="9b5811314abfca1bd43a24f4e0adf3bc" category="inline-xref-macro-rx"></block></block>
-  <block id="88f4a3e621c1e03d3874437f6fd99649" category="paragraph">AFF A20, AFF C30, AFF A30 또는 AFF C60 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="12e60ca81eb494c1b5e0d457d7d02e5e" category="paragraph"><block ref="12e60ca81eb494c1b5e0d457d7d02e5e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0249844e1f636ba2a87d5274987756b9" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 5)</block>
   <block id="d7ec8f712b0287990517bca50b922dd2" category="cell"><block ref="8a9b949124695689f864f9f14f50eeaa" category="inline-xref-macro-rx"></block></block>
   <block id="efde678a43c998c7a8714fa732aeef5c" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 6)</block>
@@ -14167,7 +14037,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="392dc7f33e7aa7683783fda67e23d99a" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 7)</block>
   <block id="1b9fa75426bc9ea5a3e240768f7a5026" category="cell"><block ref="061897057bd63bf85fce438fefe1968e" category="inline-xref-macro-rx"></block></block>
   <block id="b8daabd197dd8e2bc7a41f393d355429" category="paragraph">AFF A20 시스템을 NVIDIA SN2100 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="8b744dad2482b2535e39efca18cba426" category="paragraph">플랫폼 포트 할당을 검토하여 AFF C30, AFF A30 또는 AFF C60 시스템을 NVIDIA SN2100 스위치에 연결합니다.</block>
   <block id="84c81745f11cf4b9dd01463dfef9dbc3" category="paragraph">AFF A50 시스템을 NVIDIA SN2100 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="035caab2257a510c9564c10c61d3be85" category="paragraph">FAS70, AFF A70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 NVIDIA SN2100 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="831ac3266017b395cbffe218fe03bd88" category="list-text">모든 노드를 동일한 방식으로 케이블로 연결해야 합니다. 노드를 케이블로 연결하는 데 사용할 수 있는 다른 포트 조합 옵션이 있는 경우 모든 노드는 동일한 포트 조합을 사용해야 합니다. 예를 들어, 노드1의 E1A와 노드2의 E1A는 하나의 스위치에 연결해야 합니다. 마찬가지로 두 노드의 두 번째 포트를 두 번째 스위치에 연결해야 합니다.</block>
@@ -14186,8 +14055,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="913f5a631a4dd475cc429d73f4eb5562" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다. 해당 조합에 대해 지원되는 최소 ONTAP 버전은 를 <block ref="b733b3de6818a363ac85112743571bca" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="acbf04eb6bf5b13ddd4c3b937f1a2977" category="admonition">SVM 마이그레이션이 진행 중인 경우 모든 마이그레이션 프로세스가 완료될 때까지 기다린 후 컨트롤러 업그레이드 또는 시스템 업데이트 절차를 시작하십시오. 업그레이드 또는 업데이트 프로세스 중에 새로운 SVM 마이그레이션 작업을 시작하지 마십시오.</block>
   <block id="796c8474326dba1b1854d83dffa10f16" category="list-text">MetroCluster 구성의 모든 노드(이전 노드 및 새 노드)에서 동일한 ONTAP 버전을 실행해야 합니다. 해당 조합에 대해 지원되는 최소 ONTAP 버전은 를 <block ref="b733b3de6818a363ac85112743571bca" category="inline-link-macro-rx"></block>참조하십시오.</block>
-  <block id="0c8cc583e1b78e7d1f1c2177a5d48391" category="inline-image-macro">에는 스위치오버 및 스위치백을 사용하여 컨트롤러를 수동으로 업그레이드할 수 있도록 지원되는 AFF 및 FAS 플랫폼이 나와 있습니다</block>
-  <block id="ab2fd3384da8987a5d6b168cf98589bc" category="paragraph"><block ref="ab2fd3384da8987a5d6b168cf98589bc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="06eb0e84d2d75da0fab3f5ad095287d5" category="list-text">참고 5: IOM 모듈이 이전 컨트롤러를 외부 SAS 쉘프로 변환해야 합니다. 지원되는 IOM 모듈은 을 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="fd62dc6a841ff0a9f6159888bf7d8458" category="inline-image-macro">에는 ASA 지원 MetroCluster IP 컨트롤러 업그레이드 플랫폼 조합이 나와 있습니다</block>
   <block id="d7aa961bff867be5607fff47afcc1269" category="paragraph"><block ref="d7aa961bff867be5607fff47afcc1269" category="inline-image-macro-rx" type="image"></block></block>
@@ -14286,10 +14153,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="744cbc5aaac839f431e460a5364441e5" category="cell">AFF C250에서 AFF C30까지</block>
   <block id="1587ade3a80eae494164e86cb2dd5734" category="cell">AFF A150에서 AFF A20까지</block>
   <block id="66d5b6c0a5d29009937264288b2bed0e" category="cell">AFF A220에서 AFF A20까지</block>
-  <block id="98dc42b6205c2e3f5114dc1e108cea47" category="cell">기타 모든 지원되는 업그레이드는 AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30 또는 AFF C60 시스템입니다</block>
   <block id="3ea751f5e7ad018c7a1c4ebe22608ee6" category="cell"><block ref="ee06f9ce95f0e4407845e7566ca3219e" prefix="" category="inline-code"></block></block>
   <block id="4e154455580c2924ab538f717efce366" category="section-title">단계 2: 이전 컨트롤러에 필요한 부트아그를 설정합니다</block>
-  <block id="2b8367c2b0fd32c8f7c396289d11179f" category="paragraph">이 작업은 * AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30 또는 AFF C60 시스템으로 업그레이드할 때만 필요합니다.</block>
   <block id="31bb07ea477e7a663bf099ca3ed9b374" category="inline-xref">설정할 부트문자를 결정합니다</block>
   <block id="b0eddbd28deec4566b9a1e2f57d34c8f" category="list-text">업그레이드 조합에 필요한 bootarg를 설정합니다. 의 테이블을 사용하여 <block ref="092a73eeb155f2a0de79637a5ae185e0" category="inline-xref-macro-rx"></block>설정해야 하는 부트아그를 이미 확인했습니다.</block>
   <block id="ee06f9ce95f0e4407845e7566ca3219e" category="open-title">hw.cxgbe.toe_keepalive_disable을 선택합니다</block>
@@ -14465,8 +14330,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="15d63e3040229aa69f2bacf54450c8aa" category="paragraph">파일의 압축을 풀 필요가<block ref="24f58b52875ae0cf9e2f71f5f4715aba" prefix=" " category="inline-code"></block> 없습니다.</block>
   <block id="553c80eee3874db37c74026e9cd54f1c" category="paragraph"><block ref="669980a1306854f119900d6a8876f53d" category="inline-link-macro-rx"></block>..</block>
   <block id="1134c88b3e27b3208779089225a7548e" category="summary">MetroCluster IP 컨트롤러 업그레이드를 시작하기 전에 업그레이드 조합이 지원되는지 확인해야 합니다.</block>
-  <block id="7624bf7be4ed54fdaaf6abd264ec56f1" category="inline-image-macro">에는 시스템 컨트롤러 교체 명령을 사용한 MetroCluster IP 업그레이드에 대해 지원되는 플랫폼 조합이 나와 있습니다.</block>
-  <block id="eea98b077c7972fc76313c08c73fcd8d" category="paragraph"><block ref="eea98b077c7972fc76313c08c73fcd8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3bd44928438eecd88373e90938479338" category="list-text">참고 4: IOM 모듈이 이전 컨트롤러를 외부 SAS 쉘프로 변환해야 합니다. 지원되는 IOM 모듈은 을 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="fd82efb2b9fc7033a2ee19efb493d464" category="inline-link-macro">업그레이드 또는 새로 고침 방법을 선택합니다</block>
   <block id="cbbc95c0b1d7c5d8feea0d31eafa9a28" category="paragraph">추가 절차는 을 <block ref="1547bd533de8078ec6c6f72dc3468122" category="inline-link-macro-rx"></block>참조하십시오.</block>
@@ -14534,9 +14397,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="e29199cddef5792300b3b221f3ce1de2" category="paragraph">ONTAP MetroCluster 구성의 각 컨트롤러에서 FC-VI 어댑터와 HBA를 기존 FC 스위치의 특정 포트에 케이블로 연결해야 합니다.</block>
   <block id="7c18898ad95897990e485c3e2e9a3d5a" category="list-text">Brocade 6510 스위치는 7-Mode 패브릭 MetroCluster 및 ONTAP MetroCluster 구성에서 지원되는 FOS 펌웨어 버전을 실행해야 합니다.</block>
   <block id="f408004d3c0a89f19911c0f8ff32d59b" category="paragraph">데이터를 전환한 후 7-Mode 패브릭 MetroCluster 케이블 연결을 제거하고, 원하는 경우 ONTAP MetroCluster 케이블을 7-Mode MetroCluster 케이블 연결에 사용된 더 낮은 번호 포트로 이동할 수 있습니다. 포트는 "4노드 MetroCluster에 대한 FC 스위치 포트 할당 검토" 섹션에 나와 있습니다. 재정렬된 포트에 대해 조닝을 조정해야 합니다.</block>
-  <block id="ca7159868d1e601ba93c3e1c51f92171" category="paragraph">AFF A20 시스템을 Cisco 3232C 또는 9336C 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
-  <block id="cc80c8cbafd505af3cd79f69a7bd10e3" category="paragraph"><block ref="cc80c8cbafd505af3cd79f69a7bd10e3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ae95cdcb11c16af71b2c54420e47f0dd" category="paragraph"><block ref="ae95cdcb11c16af71b2c54420e47f0dd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f6c5a69060b62d046efbd190570cf383" category="admonition">이 예에서는 RCF를 구성하는 데 필요한 최소 정보를 보여 주며, RCF를 적용한 후 추가 옵션을 구성할 수 있습니다. 예를 들어 RCF를 적용한 후 SNMPv3, NTP 또는 SCP/SFTP를 구성할 수 있습니다.</block>
   <block id="6ca034f6a518722187e6a10bfc2df9e6" category="admonition">컨트롤러의 전원을 켜기 전에 쉘프의 전원을 먼저 켜지 마십시오. 이렇게 하면 컨트롤러가 의도하지 않은 ONTAP로 부팅되지 않습니다.</block>
   <block id="604b473cd250fb4d83bbbab434f091fb" category="paragraph">이 예에서는 ONTAP를 실행 중인 컨트롤러에서 플렉스를 오프라인으로 전환하기 위한 명령이 나와 있습니다.</block>
@@ -14700,4 +14560,221 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="844fb1aaef97c4328b587658a21a78d2" category="paragraph">QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.</block>
   <block id="1894908b5d36f7ab21f7b1b1afcc630c" category="list-text">다음 Brocade FC 스위치는 MetroCluster FC 백엔드 패브릭에 대해 WAN ISL 암호화 및 압축을 지원합니다.</block>
   <block id="0df6785d5da501ba31bbeb3f6ee67c24" category="list-text">Brocade G630</block>
+  <block id="4a58c6ba2ac7cf0f2cd001d223b14e50" category="inline-link-macro">Active IQ Unified Manager 문서</block>
+  <block id="4bb04ed07739791e279da021a18bbbcd" category="paragraph"><block ref="4bb04ed07739791e279da021a18bbbcd" category="inline-link-macro-rx"></block></block>
+  <block id="d85e5cacacd757755e3d09416d2a8bf8" category="list-text">FAS50를 참조하십시오</block>
+  <block id="f4269c2c6413fc36701dcf76aec56bc6" category="paragraph">ONTAP 버전에 따라 System Manager UI의 * 클러스터 * 또는 * 인사이트 * 탭에서 NTP를 구성할 수 있습니다.</block>
+  <block id="4f383215a6acaf25212b983a0a8955a1" category="paragraph">System Manager의 * Cluster * 탭에서 ONTAP 버전에 따라 다음과 같은 두 가지 옵션을 사용하여 NTP를 구성할 수 있습니다.</block>
+  <block id="664ec3509112d78c1e1c2bf5fec31c8b" category="paragraph-title">ONTAP 9.8 이상:</block>
+  <block id="3d25ba41cf261ff487664f2b5437bfac" category="paragraph">다음 단계를 사용하여 ONTAP 9.8 이상의 * 클러스터 * 탭에서 NTP를 동기화합니다.</block>
+  <block id="c6daf27bddf1a1f48ef0e1498a9dc189" category="list-text">클러스터 &gt; 개요 * 로 이동합니다</block>
+  <block id="d3da97e2d9aee5c8fbe03156ad051c99" category="inline-image-macro">더 보기</block>
+  <block id="56d496a19cf2a9b0de74e719673ec625" category="list-text">그런 다음 <block ref="3e691d90fe1bf6bc3c1c91810ca21f4e" category="inline-image-macro-rx" type="image"></block>옵션을 선택하고 * 편집 * 을 선택합니다.</block>
+  <block id="f6e448747182828dc29f04040facf506" category="list-text">Edit Cluster Details * 창에서 NTP Servers 아래의 * + Add * 옵션을 선택합니다.</block>
+  <block id="f636a9032dff98cf583faa0f3c650151" category="list-text">이름, 위치를 추가하고 시간 서버의 IP 주소를 지정합니다.</block>
+  <block id="c4d6c88e7b0105b8924f50d61a0dbec2" category="list-text">그런 다음 * 저장 * 을 선택합니다.</block>
+  <block id="422a24e37159aa68c3b58da2e580b15b" category="list-text">추가 시간 서버에 대해 이 단계를 반복합니다.</block>
+  <block id="0b1befdd95e6010a22094927f42538bf" category="paragraph-title">ONTAP 9.11.1 이상:</block>
+  <block id="b0e09de98445e45cdb09c7796a0853d6" category="paragraph">다음 단계를 사용하여 ONTAP 9.11.1 이상의 * 클러스터 * 탭에 있는 * 인사이트 * 창에서 NTP를 동기화합니다.</block>
+  <block id="57c3eaa8036694c5a21c3887179eb0d4" category="list-text">페이지의 * 인사이트 * 창으로 스크롤하여 * 구성된 NTP 서버가 너무 적음 * 을 찾은 다음 * 수정 * 을 선택합니다.</block>
+  <block id="2b66fb9210950c629ce8de5813cda059" category="list-text">시간 서버의 IP 주소를 지정한 다음 * 저장 * 을 선택합니다.</block>
+  <block id="e6dbd48cc7064f054abfe1bd7e4c0202" category="list-text">추가 시간 서버에 대해 이전 단계를 반복합니다.</block>
+  <block id="f1c9e9af80bb533618f5bdefe333747d" category="open-title">인사이트</block>
+  <block id="06e57c67e462db7d596c55b9f2ff56c3" category="paragraph">ONTAP 9.11.1 이상에서 시스템 관리자의 * 인사이트 * 탭을 사용하여 NTP를 구성할 수도 있습니다.</block>
+  <block id="a1cabaf7f1a81532beee6190e4628669" category="list-text">System Manager UI에서 * Insights * 탭으로 이동합니다.</block>
+  <block id="60ba0fe34a83db3137aaad4ef92a2685" category="list-text">아래로 스크롤하여 * 너무 적은 NTP 서버가 구성됨 * 으로 이동한 후 * Fix it * 을 선택합니다.</block>
+  <block id="84b4abdd3b2327d529014e09c966c735" category="doc">Active IQ Unified Manager 및 ONTAP System Manager를 사용하여 구성 및 모니터링을 수행할 수 있습니다</block>
+  <block id="8f331b9c0fe948d4d36e636ae3c61443" category="summary">각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다.</block>
+  <block id="3053e08077bad755ce68edce5863f6eb" category="paragraph">각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다.</block>
+  <block id="eff6a3df3a68a6652b79b0a81ba75dda" category="list-text">AFF A30, AFF C30, AFF C60 및 FAS50 시스템은 25Gbps 네트워크 속도를 지원하기 위해 컨트롤러의 카드에 QSFP-SFP+ 어댑터가 필요합니다.</block>
+  <block id="8f8d75e3465f8e6ca35857c6cf19f63e" category="paragraph"><block ref="8f8d75e3465f8e6ca35857c6cf19f63e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f7bbc76208ab5ade611be3b207fc4964" category="paragraph">내부 파티션은 4개의 동일한 그룹(분기)으로 나뉩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다. 외부 쉘프의 드라이브는 4개의 동일한 그룹(분기)으로 분류됩니다. 각 분기 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
+  <block id="951ecdd1fc2eee9520c3a6959e6b80fd" category="section-title">FAS50 시스템의 디스크 할당</block>
+  <block id="eac1566268bcf590649d38dfbbc071d8" category="paragraph">AFF A30, AFF C30, AFF C60, FAS50</block>
+  <block id="aa004c86c9d246df59c413de8bb07fa4" category="doc">Cisco 3232C 또는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
+  <block id="d7c09c5c93549b76361e49c52e9d96da" category="cell">AFF A150, ASA A150 FAS2750, AFF A220 FAS500f, AFF C250, ASA C250 AFF A250, ASA A250</block>
+  <block id="ed0a8c1dcd72cbf4d807c21d5b375b44" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 1)</block>
+  <block id="f4d9a05d20269fa8131e3f2ad476038b" category="cell"><block ref="2617a916d647f27524de777e23ed7a4f" category="inline-xref-macro-rx"></block></block>
+  <block id="2d0104bee0c422b5f888265258715398" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 2)</block>
+  <block id="01861fc1534333e6f46a254828d6f9e4" category="cell"><block ref="3ba764bfdfb400a3de21b6050f6d79f8" category="inline-xref-macro-rx"></block></block>
+  <block id="c53e044ea472203092cf961cfaa90ba7" category="cell">AFF A30, AFF C30 FAS50 AFF C60</block>
+  <block id="356570243533cc6975cfb5ceea4cfd23" category="paragraph">따르는 표는 25G(그룹 3a) 또는 100G(그룹 3b) 이더넷 카드를 사용하는지 여부에 따라 다릅니다.</block>
+  <block id="9f0cd6d623c01edf5643b74fa00cd6fd" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 3a-25G)</block>
+  <block id="85f6ab131a3e5448cde1e4a2d4b95c39" category="list-text"><block ref="94417a7d020366abeef0b0723f8d67ad" category="inline-xref-macro-rx"></block></block>
+  <block id="9b8bf89b3c0f9c6a5c38bf7ff19b0c58" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 3b-100G)</block>
+  <block id="5128f839046943d98d1e49dd120ce493" category="list-text"><block ref="2e2492272ee4139c0b8d30b59a7dc0bc" category="inline-xref-macro-rx"></block></block>
+  <block id="c6cdb33f9e222d46d2a4fab60b01cbab" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 4)</block>
+  <block id="60a9877d1de8d00431b38c0566e97d0c" category="cell"><block ref="a1b77c438fb720f0e3e018673390c7f6" category="inline-xref-macro-rx"></block></block>
+  <block id="dc0296952b3f70332ec16b784a712ff2" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 5)</block>
+  <block id="015efe401ca2c1dbd2725cda225c9d5e" category="cell"><block ref="93ef23795c012b746e5389151e3c7579" category="inline-xref-macro-rx"></block></block>
+  <block id="d67fae545b3910a786e8629d54b45203" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 6)</block>
+  <block id="41ad9af52e987c25dff55bd1112cd533" category="cell"><block ref="67a1026696a68dd85ede9571a0d5e50a" category="inline-xref-macro-rx"></block></block>
+  <block id="25308fcfd3741ca03a84c440665e77af" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 7)</block>
+  <block id="1d8eb67d43491daaf3be918501e45849" category="cell"><block ref="bd67821e1c951fc75bbad01f30e523a0" category="inline-xref-macro-rx"></block></block>
+  <block id="b579f4faad8d9cdb9cfc4fe6124fc3d9" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 8)</block>
+  <block id="6bfae65709a0b9238f0ec0555e860dd9" category="cell"><block ref="cf10d01655dbe0c1aeda215f90ae4552" category="inline-xref-macro-rx"></block></block>
+  <block id="1640e00122751bafa542f181ee67ce43" category="paragraph">AFF A150, ASA A150, FAS2750, AFF A220, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에서 Cisco 3232C 또는 9336C-FX2 스위치로 연결하는 경우:</block>
+  <block id="12724d26e78004fbe0e1d54bb774c032" category="inline-image-macro">에는 Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당이 나와 있습니다</block>
+  <block id="e5a48d1e7dc73a2ef0139129774d8c2a" category="paragraph"><block ref="e5a48d1e7dc73a2ef0139129774d8c2a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="02be91f0404cbcd51f0cbcd45f546f02" category="paragraph">AFF A20 시스템을 Cisco 3232C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="0f3f5975a2227dfdb9d8f300639c20f2" category="paragraph"><block ref="0f3f5975a2227dfdb9d8f300639c20f2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ffedbefed87e595ccfa63ecb9855338e" category="paragraph-title">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 3a)</block>
+  <block id="47229de680ac21164a8516156805e1ac" category="paragraph">4포트 25G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 Cisco 3232C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="c078bfa4b8bc74a683eac22ce3ce6c56" category="admonition">이 구성에서는 로컬 클러스터와 HA 인터페이스를 연결하기 위해 슬롯 4에 4포트 25G 이더넷 카드가 필요합니다.</block>
+  <block id="b2813804beaabdc4be6fdf8a4997209b" category="paragraph"><block ref="b2813804beaabdc4be6fdf8a4997209b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dee69df4c30b5bc8e497535073fb1c9d" category="paragraph-title">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 3b)</block>
+  <block id="89744653da413368bba74f828b23743e" category="paragraph">2포트 100G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 Cisco 3232C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="a24a7f7fce891faea9ff510d6a00b23a" category="admonition">이 구성에서는 로컬 클러스터와 HA 인터페이스를 연결하기 위해 슬롯 4에 2포트 100G 이더넷 카드가 필요합니다.</block>
+  <block id="4644d5e69b146d9d0ff600d483678d60" category="paragraph"><block ref="4644d5e69b146d9d0ff600d483678d60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="01b2af111136cb4bcc5ad69612648e1a" category="paragraph">FAS8200 또는 AFF A300 시스템을 Cisco 32C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="df10fc4b1e04550b3f257f780c5ad4d1" category="paragraph">AFF A320, FAS8300, AFF C400, ASA C400, FAS8700, AFF A400, 또는 ASA A400 시스템에서 Cisco 3232C 또는 9336C-FX2 스위치로:</block>
+  <block id="be1bb56d98cc7f8289e47cfd478f0896" category="paragraph">AFF A50 시스템을 Cisco 3232C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="a46b0b81f79736912aabc245374edb1e" category="paragraph">FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 Cisco 3232C 또는 9336C-FX2 스위치로 이동하는 방법:</block>
+  <block id="0d3017d486c8217c6fd8ab61555e1cba" category="paragraph">AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 Cisco 3232C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="4b19e8be7b088862285a882fc40c46eb" category="paragraph"><block ref="4b19e8be7b088862285a882fc40c46eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="978829a52b7fb14e061e9c30e8ff7842" category="doc">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
+  <block id="6aa15c1667845a9503228a8c33084aa0" category="list-text">NS224 스토리지에 연결된 Cisco 9336C-FX2 스위치에 케이블을 연결할 경우 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있으며, 하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다. 스위치 연결 NS224 쉘프를 지원하지 않는 플랫폼은 2차 MetroCluster 구성으로만 연결하거나 2차 DR 그룹으로 연결할 수 있습니다.</block>
+  <block id="e2fe191f4e95fee618e24c803250f26e" category="admonition">이 표는 하나 이상의 MetroCluster 구성 또는 DR 그룹이 NS224 쉘프를 MetroCluster 스위치에 연결하고 있는 경우에만 사용합니다. 전용 스토리지 스위치를 사용하여 NS224 쉘프를 연결하는 경우 의 표에 따라 스위치를 케이블로 연결합니다.<block ref="172429233fb9c5bb35fb8fe69de88b73" category="inline-link-macro-rx"></block></block>
+  <block id="81831b2f87876ca86e780e32db6c147b" category="inline-xref">스위치 연결 NS224 쉘프를 연결하는 컨트롤러의 케이블 테이블</block>
+  <block id="52c7315ab051ee37478d469443321dba" category="list-text"><block ref="00f586e7c20fe471e99ea3d5eded6927" category="inline-xref-macro-rx"></block></block>
+  <block id="de97d5568eefaebab398acd69978f881" category="inline-xref">스위치 연결 NS224 쉘프가 연결되지 않은 컨트롤러의 케이블 연결 테이블</block>
+  <block id="eba155d5569b8147cc0e843694acf2d4" category="list-text"><block ref="e5bf56183cc95b8553efe8a86fa2b0b1" category="inline-xref-macro-rx"></block></block>
+  <block id="be572f1f8a76f85bd07c0436427d2a5f" category="section-title">컨트롤러가 스위치 연결 NS224 쉘프를 연결합니다</block>
+  <block id="0056b60c7096f2e045b1ccb66afc6894" category="paragraph">스위치가 연결된 NS224 쉘프를 연결하는 컨트롤러의 포트 할당 표를 결정합니다.</block>
+  <block id="83f2a5b610dfb7c0551195a75b8756a1" category="paragraph">따르는 표는 25G(그룹 1a) 또는 100G(그룹 1b) 이더넷 카드를 사용하는지 여부에 따라 다릅니다.</block>
+  <block id="ca496ec8ec3ead0878b8508a07b543e2" category="inline-xref">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 1a-25G)</block>
+  <block id="b84999f81a5ca484ac466660f39b9a2e" category="list-text"><block ref="565e7613250d5ac33e28ff0e25c37f14" category="inline-xref-macro-rx"></block></block>
+  <block id="377912c6dca3d99bd95ba164330b17fa" category="inline-xref">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 1b-100G)</block>
+  <block id="41ee5f1818bda0e0bbabf0085b68ac28" category="list-text"><block ref="9e7616ca3329b72b52127b7cd58a0f4e" category="inline-xref-macro-rx"></block></block>
+  <block id="f14613af0655f02473df53f2652785b1" category="inline-xref">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 2)</block>
+  <block id="672a2caadf2174985cc759241ea1dfe9" category="cell"><block ref="214688b1665482dce258814a43c9cdf7" category="inline-xref-macro-rx"></block></block>
+  <block id="a38c7c6d45e707435a851ae2e41cf375" category="inline-xref">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 3)</block>
+  <block id="14de414a4f55c47c9c700c9e0947b111" category="cell"><block ref="23879577dffa023cc7ed3810b8c4c0df" category="inline-xref-macro-rx"></block></block>
+  <block id="b4b51fcd741abc234c8929d569245c11" category="inline-xref">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 4)</block>
+  <block id="48814e38ddd1eecab02fb9a28d3852c3" category="cell"><block ref="cbad1100120b64e7d785a4185eace341" category="inline-xref-macro-rx"></block></block>
+  <block id="faa310ef03e8cc13789ce37fd9d433e5" category="inline-xref">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 5)</block>
+  <block id="eb6843c11ff72f26f6d0e24823f98f90" category="cell"><block ref="6fd3f73e5da43279ea1b84516a37ba17" category="inline-xref-macro-rx"></block></block>
+  <block id="a738138cb9e4b016ac3f949b92aa8374" category="paragraph-title">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 1a)</block>
+  <block id="c105e193363f2077bee9b984780df36b" category="paragraph">4포트 25G 이더넷 카드를 사용하여 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하는 AFF A30, AFF C30 또는 AFF C60 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="ebb3fa78fb5003535cef7567aa556ce2" category="inline-image-macro">에서는 NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치를 보여 줍니다</block>
+  <block id="11c0c74f69fc2a0c746578c6aad3ccca" category="paragraph"><block ref="11c0c74f69fc2a0c746578c6aad3ccca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="26f9489a1c833a65aa538d673c844ff9" category="paragraph-title">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 1b)</block>
+  <block id="05ddb7b459f4d1e351fac0a9f717e9c7" category="paragraph">2포트 100G 이더넷 카드를 사용하여 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하는 AFF A30, AFF C30 또는 AFF C60 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="96d9eeeab1f8d3cf26b9ac95515dc576" category="paragraph"><block ref="96d9eeeab1f8d3cf26b9ac95515dc576" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c236cc3ec0da6886912e7ad250b61eab" category="paragraph-title">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 2)</block>
+  <block id="09b260a1b067f9a582c157a8e605c8e9" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하는 AFF A320, AFF C400, ASA C400, AFF A400 또는 ASA A400 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="7465602bfd4a9479562cb8388c74c71c" category="paragraph-title">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 3)</block>
+  <block id="ffc3bc2e4b34b45fefb2567de9411642" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하는 AFF A50 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="0d827a57d928b98c476f3cb1739a9d5d" category="paragraph"><block ref="0d827a57d928b98c476f3cb1739a9d5d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="22b68caf8dbffdf88eb7f5f39a558951" category="paragraph-title">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 4)</block>
+  <block id="e94f7d9d6398a652cbdfeb1dae77c47a" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하는 AFF A700, AFF C800, ASA C800, AFF A800, AFF A900 또는 ASA A900 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="5460d7f5fec2905f3003320c765ea0c7" category="paragraph"><block ref="5460d7f5fec2905f3003320c765ea0c7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8b663287a5e6f449fd57f7ff16d8eeea" category="paragraph-title">NS224 스토리지 플랫폼 포트 할당을 연결하는 Cisco 9336C-FX2 스위치(그룹 5)</block>
+  <block id="3622897798545e09105b3ad1d3653063" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하는 AFF A70, AFF C80, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="ccab0fc4fd83108faa5f30b7c68bc19d" category="section-title">컨트롤러가 스위치 연결 NS224 쉘프를 연결하지 않음</block>
+  <block id="2f608c0d58894f791c41096f2cc6b9ba" category="paragraph">스위치 연결 NS224 쉘프에 연결되지 않은 컨트롤러에 대해 따라야 하는 포트 할당 표를 결정합니다.</block>
+  <block id="7bb43f00945b89f658e73a251593adee" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 6)</block>
+  <block id="93f0d83f9cb0b25a29c497e531de1319" category="cell"><block ref="0acf1173c64f13905d848c17861d436b" category="inline-xref-macro-rx"></block></block>
+  <block id="5d116ac6469b554365af09df6ba5d554" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 7)</block>
+  <block id="49f99537358147cf4f6dc452a0796893" category="cell"><block ref="fd2799f59c55d28b66298668f9222eab" category="inline-xref-macro-rx"></block></block>
+  <block id="02a5ee0891192d3eb9dcf14a23a4d1f7" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 8)</block>
+  <block id="5148ab0ba980f2129e753142f66d6100" category="cell"><block ref="e1f5a75cfe513ad775461d1069e28449" category="inline-xref-macro-rx"></block></block>
+  <block id="44e285bb7713a99a383a813130b0fcc1" category="cell">AFF C30, AFF A30 FAS50 AFF C60</block>
+  <block id="a0ff0785aa6728bf6cd92eb98394bc85" category="paragraph">따르는 표는 25G(그룹 9a) 또는 100G(그룹 9b) 이더넷 카드를 사용하는지 여부에 따라 다릅니다.</block>
+  <block id="4508ecab81d43c8d0428c62e4c5f614c" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 9a)</block>
+  <block id="145811c254ae6665243f5df2a064718a" category="list-text"><block ref="11c2cf00b8f8a7c7deeea639d897f5b1" category="inline-xref-macro-rx"></block></block>
+  <block id="8bb10235352f378fca0245d9df3fe35b" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 9b)</block>
+  <block id="6384fb9589b17739eff38675bb336c51" category="list-text"><block ref="799c19593c51462d76e3e35a26f2501d" category="inline-xref-macro-rx"></block></block>
+  <block id="cec98ffd6090e26973950fe3452c3bcd" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 10)</block>
+  <block id="dcfe540fce92be277afe0cdbbe632c13" category="cell"><block ref="e79ba5db1ff62b3ff07fdf838d78216d" category="inline-xref-macro-rx"></block></block>
+  <block id="9c8e1e68707a017f6fc41cfcea385650" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 11)</block>
+  <block id="009e8eb0c5f78b00d7f7da4a5ec87949" category="cell"><block ref="8385577091ec2b578deeb37f79ef6bef" category="inline-xref-macro-rx"></block></block>
+  <block id="f776cc1c5ed25b61dcb9d071c32a1da5" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 12)</block>
+  <block id="5d06f7930cbcf01ef08e34586c797954" category="cell"><block ref="aa34378d7dd83b3f1296d8b68c05d010" category="inline-xref-macro-rx"></block></block>
+  <block id="3912f04efc5b48e8b0ce60f344a70999" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 13)</block>
+  <block id="1cd621efb25211cc3d15a7ff4ca1c693" category="cell"><block ref="0908c8fab4467851cc96278817ace622" category="inline-xref-macro-rx"></block></block>
+  <block id="1465d175c6ce0e241d5677bf9384d9ec" category="inline-xref">Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음(그룹 14)</block>
+  <block id="400ed63e00fec3e7a62ba1e1acf84b1f" category="cell"><block ref="76e2a5f9d2cd6c0f8a626df3dfd2d549" category="inline-xref-macro-rx"></block></block>
+  <block id="a6cb91fff03d7e25bc8953fdc96a013f" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A150, ASA A150, FAS2750 또는 AFF A220 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="c542648982a05f977ce667101f8efa8c" category="image-alt">은 Cisco 9336C-FX2 스위치가 NS224 스토리지 플랫폼 포트 할당을 연결하지 않음을 보여 줍니다</block>
+  <block id="ac3ae29f44804b42d07e44aaff0e181e" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A20 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="fc60167844c648557e47a9825d816561" category="paragraph"><block ref="fc60167844c648557e47a9825d816561" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="681b4b6137a07b7fed939ed03c0d8a11" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="b17db933ffceac0d14ecaed410c9b4b3" category="paragraph">4포트 25G 이더넷 카드를 사용하여 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="0880116c770efd6d7b130d2265ff161c" category="paragraph"><block ref="0880116c770efd6d7b130d2265ff161c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6293ddb80a04e84f2102b72a8f60d47" category="paragraph">2포트 100G 이더넷 카드를 사용하여 스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="a1bc8f8ee00e2acf0d7eaa2ebf3f02f0" category="paragraph"><block ref="a1bc8f8ee00e2acf0d7eaa2ebf3f02f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a6a7d27b4f38670eb52bfc739edbcab6" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 FAS8200 또는 AFF A300 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="d1fac8cb5ba3c69c7b0151776a9d2b97" category="paragraph">스위치 연결 NSS24 쉘프를 FAS8300 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A320 ASA A400, FAS8700, AFF C400 AFF A400, ASA C400 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="854e83700ad56cd3066ff32dbbb27e13" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A50 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="a0d7040157255e2857be956d49e402cc" category="paragraph">스위치 연결 NSS24 쉘프를 ASA C800 Cisco 9336C-FX2 스위치에 연결하지 않는 FAS9000, AFF A800, ASA A800, AFF A700, AFF C800, FAS9500, AFF A900 또는 ASA A900 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="37d0ebec67a9c1e4ef4eb11a13c2fdd4" category="paragraph">스위치 연결 NSS24 쉘프를 Cisco 9336C-FX2 스위치에 연결하지 않는 AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템에 케이블을 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="b745b3078e5e02c9ad0466c2376632e0" category="inline-xref">Broadcom BES-53248 플랫폼 포트 할당(그룹 7)</block>
+  <block id="b1d2e952c9c4a1b92f30e09d2aba62de" category="cell"><block ref="291ff012c96cac6897586e062c05d97a" category="inline-xref-macro-rx"></block></block>
+  <block id="d871146b1b5d4005fb234cebdd63c835" category="paragraph">AFF A20 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="e3ced3f8081430abe4171e125084c129" category="paragraph"><block ref="e3ced3f8081430abe4171e125084c129" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fb7482f14dfe20757399def03deaeb5a" category="paragraph">4포트 25G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 Broadcom BES-53248 스위치에 케이블로 연결하는 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="c853e89e76b8a6a88e07b597fc6eb2dc" category="list-text">이 구성에서는 25Gbps 네트워크 속도를 지원하려면 컨트롤러의 카드에 QSFP-SFP+ 어댑터가 필요합니다.</block>
+  <block id="f9f6063ab2e4c652dd2dddd9b4d5788d" category="paragraph"><block ref="f9f6063ab2e4c652dd2dddd9b4d5788d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="defd0914b5a5958473fb3fab60cdee58" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 3a-25G)</block>
+  <block id="11fa795c472f2bc01c0bf86aa73ed31b" category="list-text"><block ref="908dbeac718daa394d9d438b49ad2f7b" category="inline-xref-macro-rx"></block></block>
+  <block id="8f75153142ad93fe23335651eeaa3d65" category="inline-xref">NVIDIA SN2100 플랫폼 포트 할당(그룹 3b-100G)</block>
+  <block id="db095e1576be6850def49105024e16d1" category="list-text"><block ref="b6cf0b7861b6ddd48cf527a5abdbbcac" category="inline-xref-macro-rx"></block></block>
+  <block id="c52ee8ff8f4ed67e7d05c5c94fa6d9aa" category="paragraph-title">NVIDIA SN2100 플랫폼 포트 할당(그룹 3a)</block>
+  <block id="3bd797350913b6b33458e6193a3b3979" category="paragraph">4포트 25G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 NVIDIA SN2100 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="2370a37bab400a0e8d33f8044d531556" category="paragraph-title">NVIDIA SN2100 플랫폼 포트 할당(그룹 3b)</block>
+  <block id="a53cad8e3bc7be708a9abd5a9cb4b705" category="paragraph">2포트 100G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 NVIDIA SN2100 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="d885a516b306a52c5c6d20f267bd0c2f" category="paragraph">두 클러스터가 설정, 초기화 및 구성된 후 <block ref="8179a385c1f3477c35e40695f98692e3" category="inline-link-macro-rx"></block>절차를 수행합니다.</block>
+  <block id="93d56b045c52fef746c56d3757e8b1ca" category="list-text">MetroCluster IP 구성의 각 클러스터에는 해당 MetroCluster 사이트의 노드 및 IP 스위치에 의해 사용되는 개별 NTP 서버가 있어야 합니다.</block>
+  <block id="1710bbbb86f98005a1733d849713bff0" category="list-text">MetroCluster Tiebreaker 또는 ONTAP mediator를 사용하는 경우 별도의 NTP 서버도 있어야 합니다.</block>
+  <block id="9e76c1fff7bfa72695f0e2dc020391fa" category="list-text">이 절차에서는 MetroCluster IP 클러스터를 이미 설정한 후에 NTP를 구성하는 방법을 보여 줍니다. System Manager를 사용하여 클러스터를 구성한 경우 클러스터 설정의 일부로 NTP 서버를 이미 구성한 것이어야 합니다. 자세한 내용은 을 <block ref="51295696618b7e6b6b70b8c957e10e14" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="be7f9934dcf1e52178e7c113688d8eb1" category="list-text">AFF A70, AFF A90, AFF A1K, AFF C80의 약어입니다</block>
+  <block id="2379124e94f1f9f9e131f9feb02c1b9b" category="list-text">AFF A30, AFF C30, AFF A50, AFF C60의 약어입니다</block>
+  <block id="f43ddc8e411f0e30e99b0b62de9ddab3" category="list-text">FAS50, FAS70, FAS90</block>
+  <block id="4181d9fab64a09b3acf101c6436bfb88" category="list-text">확장 MetroCluster 구성의 각 클러스터에는 해당 MetroCluster 사이트의 노드에서 사용하는 개별 NTP 서버가 있어야 합니다.</block>
+  <block id="8ba555af076a8cd2f32c0040e32d9762" category="paragraph">ONTAP 9.16.1GA</block>
+  <block id="08be5ec63e0c229f47e0fc7a6aabbb61" category="paragraph">다음 표에서는 지원되는 플랫폼 조합을 보여 줍니다. 색이 지정된 표 셀에 표시된 대로 첫 번째 열의 플랫폼에서 오른쪽 열에 지원되는 것으로 나열된 플랫폼으로 전환할 수 있습니다.</block>
+  <block id="8b2af27c76da67376cde3cd8b8739655" category="paragraph">테이블은 두 그룹으로 나뉩니다.</block>
+  <block id="332040137765e9fc361fbe3662e1f12f" category="list-text">* 그룹 1 * 은 AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF C400 C30, AFF A400 A30, AFF A250, AFF A300, AFF A320, FAS8300, AFF, AFF 및 FAS8700 시스템으로의 전환을 위한 조합을 보여줍니다.</block>
+  <block id="e13328519cf16d131d85dc664ffa42a6" category="list-text">* 그룹 2 * 는 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF A900, AFF, AFF A90, AFF C800, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 전환을 위한 조합을 보여줍니다.</block>
+  <block id="538fe7a68ac3c5dfb792a7019b443bf6" category="paragraph">다음 참고 사항은 두 그룹에 모두 적용됩니다.</block>
+  <block id="a14a86532b8a58a5ed52506da005902a" category="open-title">AFF 및 FAS 조합 그룹 1</block>
+  <block id="d8658e4a3bb879abe545c902476267a6" category="paragraph">AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF C30, AFF A400 A30, AFF A250, AFF C400, AFF A320, FAS8300, AFF A300, AFF 및 FAS8700 시스템으로의 전환에 대해 지원되는 조합을 검토합니다.</block>
+  <block id="aaafc97f473b322875bb22d3e2576e0a" category="inline-image-macro">에는 그룹 1 플랫폼에 대해 지원되는 전환이 나와 있습니다</block>
+  <block id="f8c6c6e8382954ef1f5489400bba7a82" category="paragraph"><block ref="f8c6c6e8382954ef1f5489400bba7a82" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18a2ae00aac550658a57d8352bc1c234" category="open-title">AFF 및 FAS 조합 그룹 2</block>
+  <block id="01d976088948509fcf5d1a953d51210d" category="paragraph">AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로 전환하기 위해 지원되는 조합을 검토합니다.</block>
+  <block id="fe32c060ef848bad9e4c398c36341ee9" category="inline-image-macro">에는 그룹 2 플랫폼에 대해 지원되는 전환이 나와 있습니다</block>
+  <block id="db6fd8d6b75da3bc14f50519025d77b8" category="paragraph"><block ref="db6fd8d6b75da3bc14f50519025d77b8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6c834dab8834b1d3d2203c3e37ef2191" category="paragraph">다음 표에서는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 수동으로 업그레이드하는 데 지원되는 플랫폼 조합을 두 그룹으로 나누어 보여 줍니다.</block>
+  <block id="d7af7e47f81f4f7c4489da039b77e70d" category="list-text">* 그룹 1 * 은 AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF C400 C30, AFF A400 A30, AFF A250, AFF A300, AFF A320, FAS8300, AFF, AFF 및 FAS8700 시스템으로의 업그레이드를 위한 조합을 보여줍니다.</block>
+  <block id="a7ba0dd2959a18811933a4a35ddd0b02" category="list-text">* 그룹 2 * 는 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF A900, AFF, AFF A90, AFF C800, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드를 위한 조합을 보여줍니다.</block>
+  <block id="ce5c45aa28b627dea1701e4272315ea8" category="list-text">참고 1: 이 업그레이드의 경우 절차를 사용하십시오 <block ref="f668bd1de55e6e087edcf0e6120e96e3" category="inline-link-macro-rx"></block></block>
+  <block id="4dfad0a1187ed0e6cfa14928c99199bb" category="paragraph">FAS8700, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, AFF A250, FAS50, AFF C30, AFF A400 A30, FAS8200, AFF C400, AFF A320, FAS8300, AFF A300, AFF, AFF A150 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.</block>
+  <block id="2bc7ff337081393e35318ab937e531a6" category="inline-image-macro">에서는 그룹 1 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다</block>
+  <block id="b33459fffe46ec3b9d80f18bbf0ca86f" category="paragraph"><block ref="b33459fffe46ec3b9d80f18bbf0ca86f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9e37fc850a66f0dca0578ede62cb8799" category="paragraph">AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.</block>
+  <block id="de3a07c0dc84d4fdfe71adee21062ff1" category="inline-image-macro">에서는 그룹 2 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다</block>
+  <block id="f1b4dd0636035b92daabcb6740a8afb2" category="paragraph"><block ref="f1b4dd0636035b92daabcb6740a8afb2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9f6b95a9493d80d4878ea6a3d8899475" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다. 테이블은 두 그룹으로 나뉩니다.</block>
+  <block id="76677d2a7baa40ca594e96f3789575f2" category="list-text">* 그룹 1 * 은 AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF C30, AFF A400 A30, AFF A250, AFF C400, AFF A320, FAS8300, AFF A300, AFF 및 FAS8700 시스템의 조합을 보여줍니다.</block>
+  <block id="507731d894d9ee976f7066af87b9f8dd" category="list-text">* 그룹 2 * 는 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, FAS9500, AFF A900, AFF, AFF A70, AFF C800, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템의 조합을 보여줍니다.</block>
+  <block id="631b6e3500618cca623678eeea878eff" category="list-text">참고 1: 이 조합을 사용하려면 ONTAP 9.13.1 이상이 필요합니다.</block>
+  <block id="abb7cc70e284f0ed722020e127761cca" category="paragraph">FAS8700, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, AFF A250, FAS50, AFF C400 C30, AFF A400 A30, FAS8200, AFF A300, AFF A320, FAS8300, AFF, AFF, AFF A150 시스템에 대한 시스템 업데이트 조합을 검토합니다.</block>
+  <block id="59ff548a332288bd57d4f0ca4aa314e6" category="paragraph"><block ref="59ff548a332288bd57d4f0ca4aa314e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c5d494e02cd7d07ceac57455beee52d" category="paragraph">AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, FAS9500, AFF A900, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템에 대한 시스템 업데이트 조합을 검토합니다.</block>
+  <block id="528441634286ef2ca2ed32e39f67505e" category="paragraph"><block ref="528441634286ef2ca2ed32e39f67505e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1b5a467b5c765105dcad39cc0ff04c3" category="paragraph">다음 표에서는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여 줍니다. 테이블은 두 그룹으로 나뉩니다.</block>
+  <block id="6252dce29b710e0cb61942b23fc053a5" category="list-text">참고 1: 이러한 조합을 사용하려면 ONTAP 9.9.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
+  <block id="2077cee62d2dc819ca10d6e3f6a4f59b" category="list-text">참고 2: 이러한 조합을 사용하려면 ONTAP 9.13.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
+  <block id="9bc3cb19080afd7c3475f6c80b5ee013" category="paragraph">AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF A300 C30, AFF A400 A30, AFF A250, AFF, AFF A320, FAS8300, AFF C400, AFF 및 FAS8700 시스템에 대한 확장 조합을 검토합니다.</block>
+  <block id="503da6450f4dc7f5885bedbd17199939" category="paragraph"><block ref="503da6450f4dc7f5885bedbd17199939" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99032e371bac241eac644b68481b2c7c" category="paragraph">AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, FAS9500, AFF A900, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템에 대한 확장 조합을 검토합니다.</block>
+  <block id="0bd384b68663640af8e4d0e1b69579ff" category="paragraph"><block ref="0bd384b68663640af8e4d0e1b69579ff" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5667d434150380e4826a9c5749e3611d" category="cell">기타 모든 지원되는 업그레이드는 AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드됩니다</block>
+  <block id="1f33c4b21d6c848bec5712e27807c50a" category="paragraph">이 작업은 * AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드할 때만 필요합니다.</block>
+  <block id="63856cfb46890240aad0d97a958b298b" category="paragraph">다음 표는 두 그룹으로 나뉘어 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="c21a199bc091a4db6d90366971734cf9" category="paragraph"><block ref="c21a199bc091a4db6d90366971734cf9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d4e0d3e34b6b8a05aa28d2f8e68fab4" category="paragraph"><block ref="4d4e0d3e34b6b8a05aa28d2f8e68fab4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e94f3a81af196da788fa0f158f9d57fc" category="sidebar">Active IQ Unified Manager 및 System Manager를 사용하여 추가 구성 및 모니터링을 수행하는 방법에 대해 알아보십시오</block>
 </blocks>

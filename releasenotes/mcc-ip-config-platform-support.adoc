@@ -23,6 +23,13 @@ MetroCluster IP 플랫폼 지원의 새로운 기능에 대해 알아봅니다.
 
 
  a| 
+FAS50를 참조하십시오
+ a| 
+ONTAP 9.16.1GA
+
+
+
+ a| 
 AFF A20, AFF A30, AFF A50, AFF C30, AFF C60, AFF C80
  a| 
 ONTAP 9.16.1

@@ -1,0 +1,12 @@
+= 
+:allow-uri-read: 
+
+
+Active IQ Unified Manager 및 ONTAP System Manager를 사용하여 클러스터의 GUI를 관리하고 구성을 모니터링할 수 있습니다.
+
+각 노드에는 ONTAP System Manager가 사전 설치되어 있습니다. System Manager를 로드하려면 클러스터 관리 LIF 주소를 노드에 연결된 웹 브라우저에서 URL로 입력합니다.
+
+Active IQ Unified Manager를 사용하여 MetroCluster 구성을 모니터링할 수도 있습니다.
+
+.관련 정보
+link:https://docs.netapp.com/us-en/active-iq-unified-manager/["Active IQ Unified Manager 문서"^]

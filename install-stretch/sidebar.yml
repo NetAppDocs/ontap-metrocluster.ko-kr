@@ -78,9 +78,10 @@ entries:
   url: "/install-stretch/concept_considerations_when_removing_mcc_configurations.html"
 - title: 추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법
   entries:
-  - title: 개요
+  - title: Active IQ Unified Manager 및 System Manager를 사용하여 추가 구성 및 모니터링을 수행하는 방법에
+      대해 알아보십시오
     url: "/install-stretch/concept_using_the_oncommand_management_tools_for_further_configuration_and_monitoring.html"
-  - title: NTP를 사용하여 시스템 시간 동기화
+  - title: NTP를 사용하여 시스템 시간을 동기화합니다
     url: "/install-stretch/task_synchronize_the_system_time_us_ntp.html"
 - title: MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
   url: "/install-stretch/concept_considerations_when_using_ontap_in_a_mcc_configuration.html"

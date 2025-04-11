@@ -238,7 +238,7 @@ e2a, e2b
 
 
  a| 
-AFF A30, AFF C30, AFF C60
+AFF A30, AFF C30, AFF C60, FAS50
  a| 
 X60134A를 참조하십시오
  a| 
