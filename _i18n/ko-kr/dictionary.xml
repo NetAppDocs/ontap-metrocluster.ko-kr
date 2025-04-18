@@ -13209,14 +13209,12 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="cb2b71f7328cfbc51d68290fdef5e64a" category="inline-link-macro">종단간 암호화를 비활성화합니다</block>
   <block id="2843a33605079ab99cc2f26a41a2bcbb" category="list-text">시스템에서 활성화되어 있는 <block ref="7a9d12e6dbd7c75c145032be8c2b8549" category="inline-link-macro-rx"></block> 경우 업그레이드를 수행하기 전에</block>
   <block id="973338f6a10e6b7ac7c39f19d7b492b2" category="list-text">새 플랫폼에서 원래 플랫폼의 IP 주소, 넷마스크 및 게이트웨이를 재사용합니다.</block>
-  <block id="77cd2bc0bfe264cad96e3619cb8678b1" category="list-text">각 사이트에서 1개의 노드를 중지하고 HA 파트너가 노드의 스토리지 테이크오버를 수행하도록 합니다.</block>
   <block id="8b0fde7ba026b4e4de5c975b52e10b78" category="paragraph"><block ref="fc0e5e4abc6e1b590b3364b384105526" prefix="" category="inline-code"></block></block>
   <block id="807f12cb6d4e38b470996608263f29ac" category="list-text"><block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block>중지된 노드의 프롬프트에서 다음을 입력합니다.</block>
   <block id="80ce63b6e2ae11a72a38bf7e4ef35369" category="paragraph"><block ref="924cd73da4c8e153eb2de352d5e9a0e1" prefix="" category="inline-code"></block></block>
   <block id="a0fd3a832d10febc3517df104c662c1d" category="paragraph"><block ref="c3e347fd62df99318c1112b24c25c070" prefix="" category="inline-code"></block></block>
   <block id="7fea19d34419d662a854d37c6044222a" category="list-text">노드가 부팅되면 프롬프트에서 노드에 대해 반환 작업을 수행합니다.</block>
   <block id="9fd57da49ac1975b29677831c2286586" category="paragraph"><block ref="fb72d634bc57a858bd0751f5c6335d6e" prefix="" category="inline-code"></block></block>
-  <block id="c5b67774bb32fdf25c42ebcc33f3e43d" category="list-text">업그레이드 중인 DR 그룹의 각 노드에서 단계를 반복합니다.</block>
   <block id="6986e6230a992abf2372b5ddb288c1ec" category="list-text"><block ref="6986e6230a992abf2372b5ddb288c1ec" category="inline-link-macro-rx"></block></block>
   <block id="9cf1b9d10ebe2c0f0ae4072a054220a3" category="list-text"><block ref="9cf1b9d10ebe2c0f0ae4072a054220a3" category="inline-link-macro-rx"></block></block>
   <block id="d71cd39faa20e04542bb87bdbf15456a" category="list-text"><block ref="d71cd39faa20e04542bb87bdbf15456a" category="inline-link-macro-rx"></block></block>
@@ -14136,7 +14134,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3d8c3985ef8f7b9c50308a5dfab923c4" category="paragraph"><block ref="f85c62a3a981a8b83a61b1dc7959165b" category="inline-link-macro-rx"></block>..</block>
   <block id="ed1dd620ec6ed4baac7e1208e4a9d25d" category="summary">ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하려면 먼저 부트마크를 설정해야 컨트롤러 업그레이드를 진행할 수 있습니다.</block>
   <block id="496db1855de52190cc06d85f972a650b" category="doc">필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 MetroCluster IP 업그레이드)</block>
-  <block id="46e4bb8c59f161cfa278e9cc00ce227a" category="paragraph">ONTAP 9.15.1 이상에서 도입된 시스템으로 컨트롤러를 업그레이드하려면 먼저 bootarg를 설정해야 업그레이드를 시작할 수 있습니다.</block>
   <block id="59b020257dd689cba5d5780a512943fd" category="section-title">단계 1: 이전 컨트롤러에 설정해야 하는 부트아그를 결정합니다</block>
   <block id="6e9eadf85899a23a56a99cb9a6df7652" category="paragraph">다음 시스템에 대해 지원되는 모든 업그레이드를 수행하려면 컨트롤러 업그레이드를 수행하기 전에 이전 컨트롤러에 대해 bootarg를 설정해야 합니다.</block>
   <block id="724bf3ae18d86521a5b9d77a13fcfddb" category="list-text">AFF C80 를 참조하십시오</block>
@@ -14777,4 +14774,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c21a199bc091a4db6d90366971734cf9" category="paragraph"><block ref="c21a199bc091a4db6d90366971734cf9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4d4e0d3e34b6b8a05aa28d2f8e68fab4" category="paragraph"><block ref="4d4e0d3e34b6b8a05aa28d2f8e68fab4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e94f3a81af196da788fa0f158f9d57fc" category="sidebar">Active IQ Unified Manager 및 System Manager를 사용하여 추가 구성 및 모니터링을 수행하는 방법에 대해 알아보십시오</block>
+  <block id="5c1f1ec5000a0efcdda7a9cf624dafe7" category="paragraph">ONTAP 9.15.1 이상에 도입된 시스템으로 컨트롤러를 업그레이드하려면 업그레이드를 시작하기 전에 이전 컨트롤러에 부트아그를 설정해야 합니다.</block>
+  <block id="d7aa339b18c7637dfafa2ace54386b6c" category="admonition">업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에 필요한 bootarg를 설정해야 합니다.</block>
+  <block id="ac37738788377720cfa00ec2fd76c841" category="list-text">두 사이트에서 하나의 노드를 중지하고 HA 파트너가 노드의 스토리지 인수를 수행하도록 합니다.</block>
+  <block id="0fd6026f96835994e1e5d178235825d6" category="list-text">업그레이드할 DR 그룹 또는 DR 그룹의 모든 노드에 대해 이 단계를 반복합니다.</block>
+  <block id="29a7afcbdc44731ef5db6482e263bc76" category="paragraph">ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하려면 업그레이드를 시작하기 전에 이전 컨트롤러에서 부트아그를 설정해야 합니다.</block>
+  <block id="ffb8d6643ebe516c638a6ca5b500299d" category="list-text">업그레이드 중인 DR 그룹의 4개 노드 모두에 대해 이 단계를 반복합니다.</block>
 </blocks>
