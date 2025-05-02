@@ -166,7 +166,7 @@ ONTAP 9.8 을 참조하십시오
 
 
  a| 
-동일한 NVIDIA SN2100 스위치에 다수의 MC IP 구성
+동일한 NVIDIA SN2100 스위치에 여러 개의 MetroCluster IP 구성
  a| 
 ONTAP 9.14.1
 

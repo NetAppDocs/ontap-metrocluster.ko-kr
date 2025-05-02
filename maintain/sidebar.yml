@@ -2,9 +2,11 @@
 section: maintain
 title: MetroCluster 구성 요소를 유지보수하십시오
 entries:
+- title: MetroCluster 유지 관리에 대해 자세히 알아보십시오
+  url: "/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html"
 - title: MetroCluster 유지 보수를 준비합니다
   entries:
-  - title: 유지 관리 작업을 수행하기 전에 콘솔 로깅을 사용하도록 설정합니다
+  - title: 콘솔 로깅을 활성화합니다
     url: "/maintain/enable-console-logging-before-maintenance.html"
   - title: 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
     url: "/maintain/concept_remove_mediator_or_tiebreaker_when_performing_maintenance_tasks.html"
@@ -12,8 +14,6 @@ entries:
     url: "/maintain/reference_mcc_failure_scenarios.html"
   - title: 상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보를 찾는 방법
     url: "/maintain/concept_using_the_interoperability_matrix_tool_to_find_mcc_information.html"
-  - title: MetroCluster 유지 관리 작업의 절차를 찾는 방법
-    url: "/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html"
 - title: MetroCluster FC 구성 유지 관리 절차
   entries:
   - title: 상태 모니터링을 위해 스위치 또는 ATTO 브리지 IP 주소를 수정합니다

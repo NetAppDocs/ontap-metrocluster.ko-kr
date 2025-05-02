@@ -11,7 +11,9 @@ summary:
 
 
 [role="lead"]
-새로운 MetroCluster 기능에 대해 알아보십시오.
+ONTAP 9 데이터 관리 소프트웨어가 릴리즈될 때마다 ONTAP MetroCluster 구성의 기능, 관리 효율 및 성능을 개선하는 새롭고 향상된 기능을 제공합니다.
+
+ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 및 업그레이드 주의 사항에 대한 자세한 내용은 를 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP 9 릴리즈 노트"^]. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.
 
 [cols="20,65,15"]
 |===
@@ -24,6 +26,33 @@ summary:
 서버에서 펌웨어 패키지를 다운로드해야 하는 경우 자격 증명을 사용하여 Fiberbridge 브리지에서 펌웨어를 업데이트할 수 있습니다.
 
 link:../maintain/task_update_firmware_on_a_fibrebridge_bridge_parent_topic.html["FiberBridge 브리지에서 펌웨어를 업데이트합니다"]
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
+MetroCluster 구성 마이그레이션에 대한 SVM 데이터 이동성 지원
+ a| 
+ONTAP은 다음 MetroCluster SVM 마이그레이션을 지원합니다.
+
+* 비 MetroCluster HA 쌍 및 MetroCluster IP 구성 간에 SVM 마이그레이션
+* 2개의 MetroCluster IP 구성 간에 SVM 마이그레이션
+* MetroCluster FC 구성과 MetroCluster IP 구성 간에 SVM 마이그레이션
+
+
+link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html["SVM 데이터 이동성"^]
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
+BGP 피어 그룹에 대한 MD5 인증 지원
+ a| 
+ONTAP는 BGP 피어 그룹에서 MD5 인증을 지원하여 BGP 세션을 보호합니다. MD5가 활성화되면 승인된 피어 사이에서만 BGP 세션을 설정 및 처리할 수 있으므로 권한이 없는 행위자에 의한 세션 중단을 방지할 수 있습니다.
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_virtual_ip_@vip@_lifs.html["가상 IP(VIP) LIF를 구성합니다"^]
  a| 
 ONTAP 9.16.1
 
@@ -55,6 +84,17 @@ ONTAP 9.15.1
 
 
  a| 
+NVMe에 대한 MetroCluster IP 지원
+ a| 
+NVMe/TCP 프런트 엔드 호스트 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.
+
+link:https://docs.netapp.com/us-en/ontap/san-admin/san-config-mcc-concept.html["MetroCluster 환경의 SAN 구성입니다"^]
+ a| 
+ONTAP 9.15.1
+
+
+
+ a| 
 AFF A900 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 인상
  a| 
 4노드 MetroCluster IP 구성에서는 AFF A900 시스템에 대한 다음 볼륨 제한이 증가했습니다.
@@ -63,6 +103,28 @@ AFF A900 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 인상
 * 노드당 최대 FlexVol 볼륨 수가 800개에서 1250개로 증가했습니다.
 * 고가용성(HA) 쌍당 최대 FlexVol 볼륨 수가 1600개에서 2500개로 증가했습니다.
 
+ a| 
+ONTAP 9.14.1
+
+
+
+ a| 
+미러링된 및 미러링되지 않은 애그리게이트에서 S3 오브젝트 스토리지 지원
+ a| 
+MetroCluster IP 및 FC 구성의 경우, 미러링되거나 미러링되지 않은 애그리게이트의 SVM에서 S3 오브젝트 스토리지 서버를 사용하도록 설정할 수 있습니다.
+
+https://docs.netapp.com/us-en/ontap/s3-config/ontap-version-support-s3-concept.html#s3-support-with-metrocluster["MetroCluster를 통해 S3 지원"^]
+ a| 
+ONTAP 9.14.1
+
+
+
+ a| 
+MetroCluster 클러스터의 미러링된 애그리게이트 및 미러링되지 않은 애그리게이트에서 S3 버킷을 프로비저닝할 수 있습니다
+ a| 
+MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 버킷을 생성할 수 있습니다.
+
+link:https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-mcc-task.html#process-to-create-buckets["MetroCluster 구성의 경우 미러링된 또는 미러링되지 않은 애그리게이트에 ONTAP S3 버킷을 생성합니다"^]
  a| 
 ONTAP 9.14.1
 
@@ -84,7 +146,7 @@ ONTAP 9.13.1 을 참조하십시오
  a| 
 기존 8노드 MetroCluster FC 구성에서 새 MetroCluster IP 구성으로 중단 없이 워크로드와 데이터를 전환할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환"]
+https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환합니다"]
  a| 
 ONTAP 9.13.1 을 참조하십시오
 
@@ -117,7 +179,7 @@ ONTAP 9.13.1 을 참조하십시오
  a| 
 8노드 MetroCluster IP 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있도록 구성을 임시 12노드 구성으로 확장한 다음 이전 DR 그룹을 제거하면 됩니다.
 
-https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html["4노드 MetroCluster IP 구성을 새로 고칩니다"]
+https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_refresh_4n_mcc_ip.html["4노드 MetroCluster IP 구성을 업데이트합니다"]
  a| 
 ONTAP 9.13.1 을 참조하십시오
 
@@ -128,7 +190,7 @@ ONTAP 9.13.1 을 참조하십시오
  a| 
 MetroCluster IP 구성을 공유 스토리지 MetroCluster 스위치 구성으로 변환할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_replace_an_ip_switch.html["IP 스위치 교체"]
+https://docs.netapp.com/us-en/ontap-metrocluster/maintain/task_replace_an_ip_switch.html["IP 스위치를 교체합니다"]
  a| 
 ONTAP 9.13.1 을 참조하십시오
 
@@ -150,14 +212,36 @@ MetroCluster IP 구성의 미러링되지 않은 애그리게이트에서 SVM에
  a| 
 MetroCluster IP 구성의 미러링되지 않은 애그리게이트의 SVM에서 ONTAP S3(Simple Storage Service) 오브젝트 스토리지 서버를 사용하도록 설정할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap/s3-config/index.html#s3-configuration-with-system-manager-and-the-ontap-cli["System Manager 및 ONTAP CLI를 사용하는 S3 구성"]
+https://docs.netapp.com/us-en/ontap/s3-config/ontap-version-support-s3-concept.html#s3-support-with-metrocluster["MetroCluster를 통해 S3 지원"^]
  a| 
 ONTAP 9.12.1
 
 
 
  a| 
-MetroCluster FC 구성에서 AFF A250 또는 FAS500f MetroCluster IP 구성으로 전환
+NVMe에 대한 MetroCluster IP 지원
+ a| 
+NVMe/FC 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.
+
+link:https://docs.netapp.com/us-en/ontap/san-admin/san-config-mcc-concept.html["MetroCluster 환경의 SAN 구성입니다"^]
+ a| 
+ONTAP 9.12.1
+
+
+
+ a| 
+MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜에 대한 IPsec 지원
+ a| 
+MetroCluster IP 및 MetroCluster 패브릭 연결 구성에서 프런트 엔드 호스트 프로토콜(예: NFS 및 iSCSI)에 대한 IPsec 지원을 사용할 수 있습니다.
+
+https://docs.netapp.com/us-en/ontap/networking/configure_ip_security_@ipsec@_over_wire_encryption.html["유선 암호화를 통해 IP 보안(IPsec)을 구성합니다"^]
+ a| 
+ONTAP 9.12.1
+
+
+
+ a| 
+MetroCluster FC 구성에서 AFF A250 또는 FAS500f MetroCluster IP 구성으로 전환합니다
  a| 
 MetroCluster FC 구성에서 AFF A250 또는 FAS500f MetroCluster IP 구성으로 전환할 수 있습니다.
 
@@ -168,11 +252,22 @@ ONTAP 9.11.1
 
 
  a| 
+정합성 보장 그룹
+ a| 
+정합성 보장 그룹은 MetroCluster 구성에서 지원됩니다.
+
+https://docs.netapp.com/us-en/ontap/consistency-groups/index.html#multi-admin-verification-support-for-consistency-groups["MetroCluster 구성의 일관성 그룹"^]
+ a| 
+ONTAP 9.11.1
+
+
+
+ a| 
 MetroCluster FC 구성에서 노드에 대한 컨트롤러 업그레이드를 간소화합니다
  a| 
 스위치오버와 스위치백을 사용한 업그레이드 프로세스의 업그레이드 절차가 간소화되었습니다.
 
-https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러 업그레이드"]
+https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다"]
  a| 
 ONTAP 9.10.1
 
@@ -190,111 +285,12 @@ ONTAP 9.9.1
 
 
  a| 
-8노드 클러스터 지원
+8노드 MetroCluster 구성 지원
  a| 
-영구 8노드 클러스터는 IP 및 패브릭 연결 구성으로 지원됩니다.
+영구 8노드 클러스터는 IP 및 패브릭 연결 MetroCluster 구성으로 지원됩니다.
 
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_install_and_cable_the_mcc_components.html["MetroCluster 구성 요소 설치 및 케이블 연결"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_install_and_cable_the_mcc_components.html["MetroCluster 구성 요소를 설치하고 케이블을 연결합니다"]
  a| 
 ONTAP 9.9.1
-
-
-
- a| 
-System Manager로 IP MetroCluster 작업을 관리하는 간단한 인터페이스
- a| 
-IP MetroCluster 사이트 설정, 사이트 페어링, 클러스터 구성을 포함하여 System Manager를 통해 IP MetroCluster 작업을 관리할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap/concept_metrocluster_manage_nodes.html["MetroCluster 사이트 관리"]
- a| 
-ONTAP 9.8 을 참조하십시오
-
-
-
- a| 
-System Manager를 통한 IP MetroCluster 스위치백 및 스위치백
- a| 
-System Manager를 사용하여 IP MetroCluster 구성에 대한 계획된 또는 계획되지 않은 전환 및 스위치백 절차를 모두 수행할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap/task_metrocluster_switchover_switchback.html["MetroCluster 전환 및 스위치백"]
- a| 
-ONTAP 9.8 을 참조하십시오
-
-
-
- a| 
-MetroCluster FC에서 MetroCluster IP 구성으로 전환
- a| 
-워크로드와 데이터를 기존 4노드 MetroCluster FC 구성에서 새 MetroCluster IP 구성으로 전환할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다"]
-
-https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"]
- a| 
-ONTAP 9.8 을 참조하십시오
-
-
-
- a| 
-새로운 업그레이드 및 업데이트 절차
- a| 
-4노드 MetroCluster FC 및 IP 구성의 하드웨어 업그레이드 또는 갱신이 지원됩니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다"]
-
-https://docs.netapp.com/us-en/ontap-metrocluster/transition/concept_choosing_your_transition_procedure_mcc_transition.html["MetroCluster FC에서 MetroCluster IP로 전환합니다"]
- a| 
-ONTAP 9.8 을 참조하십시오
-
-
-
- a| 
-미러링되지 않은 애그리게이트
- a| 
-미러링되지 않은 애그리게이트는 MetroCluster IP 구성에서 지원됩니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/considerations_unmirrored_aggrs.html["미러링되지 않은 애그리게이트의 고려 사항"]
- a| 
-ONTAP 9.8 을 참조하십시오
-
-
-
- a| 
-MetroCluster 호환 스위치
- a| 
-MetroCluster IP 구성은 NetApp 사양을 준수하는 경우 NetApp가 아닌 스위치를 지원할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_considerations_mc_compliant_switches.html["MetroCluster 규격 스위치를 사용할 때의 고려 사항"]
- a| 
-ONTAP 9.7 을 참조하십시오
-
-
-
- a| 
-사설 계층 2 네트워크 공유
- a| 
-지원되는 Cisco 스위치를 사용하는 MetroCluster IP 구성은 전용 MetroCluster ISL을 사용하지 않고 ISL에 대해 기존 네트워크를 공유할 수 있습니다. 이전 ONTAP 버전에는 전용 ISL이 필요합니다.
-
-MetroCluster IP 스위치는 MetroCluster 구성 전용이며 공유할 수 없습니다. MetroCluster IP 스위치의 MetroCluster ISL 포트만 공유 스위치에 연결할 수 있습니다.
-
-[CAUTION]
-====
-공유 네트워크를 사용하는 경우 고객은 공유 네트워크의 MetroCluster 네트워크 요구 사항을 충족해야 합니다.
-
-====
-https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/index.html["MetroCluster IP 설치 및 구성"]
- a| 
-ONTAP 9.6 을 참조하십시오
-
-
-
- a| 
-MetroCluster 전환 및 스위치백
- a| 
-한 클러스터 사이트가 다른 클러스터 사이트의 작업을 넘겨받도록 허용할 수 있습니다. 이 기능을 사용하면 재해에 대한 유지 관리 또는 복구를 보다 용이하게 수행할 수 있습니다.
-
-https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster 전환 및 스위치백"]
- a| 
-ONTAP 9.6 을 참조하십시오
 
 |===

@@ -2,8 +2,6 @@
 section: releasenotes
 title: MetroCluster 릴리즈 노트
 entries:
-- title: ONTAP 기능에 대한 MetroCluster 지원의 새로운 기능
-  url: "/releasenotes/mcc-config-support-features.html"
 - title: MetroCluster 기능의 새로운 기능
   url: "/releasenotes/mcc-new-features.html"
 - title: MetroCluster IP 플랫폼 및 스위치 지원의 새로운 기능
