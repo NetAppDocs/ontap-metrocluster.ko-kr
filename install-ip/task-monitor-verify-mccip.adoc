@@ -1,0 +1,61 @@
+---
+permalink: install-ip/task-monitor-verify-mccip.html 
+sidebar: sidebar 
+keywords: ip, switch, connection, configuring, configure, health, monitoring 
+summary: 상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다. 
+---
+= MetroCluster IP 구성에서 이더넷 스위치 모니터링 확인
+:allow-uri-read: 
+
+
+[role="lead"]
+CSHM(이더넷 스위치 상태 모니터)은 검색한 스위치를 자동으로 모니터링하려고 하지만, 스위치가 올바르게 구성되지 않은 경우 모니터링이 자동으로 수행되지 않을 수 있습니다. 스위치를 모니터링하도록 상태 모니터가 올바르게 구성되어 있는지 확인해야 합니다.
+
+
+
+== 연결된 이더넷 스위치의 모니터링을 확인합니다
+
+.이 작업에 대해
+연결된 이더넷 스위치가 모니터링되고 있는지 확인하려면 다음을 실행합니다.
+
+[source, cli]
+----
+system switch ethernet show
+----
+열에 * 기타 * 가 표시되거나 `IS Monitored` 필드에 * 거짓 * 이 표시되면 `Model` ONTAP에서 스위치를 모니터링할 수 없습니다. 기타 * 의 값은 일반적으로 ONTAP가 상태 모니터링을 위해 해당 스위치를 지원하지 않음을 나타냅니다.
+
+ `IS Monitored`필드에 지정된 이유로 필드가 * FALSE * 로 `Reason` 설정됩니다.
+
+[NOTE]
+====
+명령 출력에 스위치가 나열되어 있지 않으면 ONTAP이 해당 스위치를 검색하지 않은 것 같습니다. 스위치의 케이블이 올바르게 연결되었는지 확인합니다. 필요한 경우 스위치를 수동으로 추가할 수 있습니다. 자세한 내용은 을 link:manage-monitor.html["이더넷 스위치 모니터링을 관리합니다"] 참조하십시오.
+
+====
+
+
+== 펌웨어 및 RCF 버전이 최신 버전인지 확인합니다
+
+스위치에서 지원되는 최신 펌웨어를 실행하고 있고 호환되는 참조 구성 파일(RCF)이 적용되었는지 확인합니다. 자세한 내용은 를 https://mysupport.netapp.com/site/downloads["NetApp 지원 다운로드 페이지"^]참조하십시오.
+
+기본적으로 상태 모니터는 모니터링을 위해 커뮤니티 문자열 * cshm1! * 와 함께 SNMPv2c를 사용하지만 SNMPv3도 구성할 수 있습니다.
+
+기본 SNMPv2c 커뮤니티 문자열을 변경해야 하는 경우 스위치에서 원하는 SNMPv2c 커뮤니티 문자열이 구성되어 있는지 확인하십시오.
+
+[source, cli]
+----
+system switch ethernet modify -device SwitchA -snmp-version SNMPv2c -community-or-username newCommunity!
+----
+
+NOTE: SNMPv3을 사용하도록 구성하는 방법에 대한 자세한 내용은 을 link:config-snmpv3.html["선택 사항: SNMPv3을 구성합니다"]참조하십시오.
+
+
+
+== 관리 네트워크 연결을 확인합니다
+
+스위치의 관리 포트가 관리 네트워크에 연결되어 있는지 확인합니다.
+
+ONTAP에서 SNMP 쿼리 및 로그 수집을 수행하려면 올바른 관리 포트 연결이 필요합니다.
+
+.관련 정보
+* link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cshm/monitor-troubleshoot.html["알림 문제 해결"^]
+

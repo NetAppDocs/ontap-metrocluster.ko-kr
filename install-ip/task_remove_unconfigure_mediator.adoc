@@ -1,23 +1,23 @@
 ---
 permalink: install-ip/task_remove_unconfigure_mediator.html 
 sidebar: sidebar 
-keywords: ontap, mediator, service, assist, remove, unconfigure, requirements, mediator requirements 
-summary: MetroCluster IP 구성에서 ONTAP 중재자 서비스를 제거할 수 있습니다. 
+keywords: ontap, mediator, assist, remove, unconfigure, requirements, mediator requirements 
+summary: MetroCluster IP 구성에서 ONTAP 중재자를 제거할 수 있습니다. 
 ---
-= MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다
+= MetroCluster IP 구성에서 ONTAP Mediator 구성 해제
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제할 수 있습니다.
+MetroCluster IP 구성에서 ONTAP Mediator의 구성을 해제할 수 있습니다.
 
 .시작하기 전에
-두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 ONTAP 중재자를 성공적으로 설치 및 구성해야 합니다.
+MetroCluster 사이트 모두에 접근할 수 있는 네트워크 위치에 ONTAP Mediator를 성공적으로 설치하고 구성했어야 합니다.
 
 .단계
-. 다음 명령을 사용하여 ONTAP 중재자 서비스를 구성 해제합니다.
+. 다음 명령을 사용하여 ONTAP Mediator 구성을 해제합니다.
 +
 'MetroCluster configuration-settings 중재자 제거
 
@@ -26,7 +26,7 @@ ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라�
 
 +
 
-NOTE: ONTAP 중재자가 다운된 경우 `metrocluster configuration-settings mediator remove` 명령에서는 여전히 ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지를 표시하고 MetroCluster 구성에서 ONTAP 중재자 서비스를 제거합니다.
+NOTE: ONTAP Mediator가 다운되면  `metrocluster configuration-settings mediator remove` 명령을 실행해도 ONTAP Mediator 관리자 계정에 대한 사용자 이름과 비밀번호를 입력하라는 메시지가 표시되고 MetroCluster 구성에서 ONTAP Mediator가 제거됩니다.
 
 +
 .. 다음 명령을 사용하여 손상된 디스크가 있는지 확인합니다.
@@ -42,7 +42,7 @@ There are no entries matching your query.
 ....
 
 
-. 두 클러스터에서 다음 명령을 실행하여 ONTAP 중재자 서비스가 MetroCluster 구성에서 제거되었는지 확인합니다.
+. 다음 명령을 두 클러스터에서 실행하여 MetroCluster 구성에서 ONTAP Mediator가 제거되었는지 확인하세요.
 +
 .. `metrocluster configuration-settings mediator show`
 +

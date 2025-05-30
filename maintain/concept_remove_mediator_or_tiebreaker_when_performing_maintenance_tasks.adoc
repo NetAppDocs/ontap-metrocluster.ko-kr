@@ -66,7 +66,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metro
  a| 
 중재자
  a| 
-link:../install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성"] MetroCluster IP 설치 및 구성 섹션에서
+link:../install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["MetroCluster IP 구성에서 ONTAP Mediator 구성"] _MetroCluster IP 설치 및 구성_ 섹션에서.
 
 
 

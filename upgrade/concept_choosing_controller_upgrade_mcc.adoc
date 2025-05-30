@@ -82,7 +82,7 @@ image:../media/manual-upgrade-combination-group-1.png["에서는 그룹 1 플랫
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.
 
-image:../media/manual-upgrade-combination-group-2.png["에서는 그룹 2 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다"]
+image:../media/manual-upgrade-combination-group-2-updated.png["에서는 그룹 2 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다"]
 
 --
 ====

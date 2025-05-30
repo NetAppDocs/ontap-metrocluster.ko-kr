@@ -1,0 +1,24 @@
+---
+permalink: install-ip/configure-cshm-mccip.html 
+sidebar: sidebar 
+keywords: ip, switch, connection, configuring, configure, snmp, health, monitoring 
+summary: 상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다. 
+---
+= MetroCluster IP 구성에서 스위치 상태 모니터링 개요
+:allow-uri-read: 
+
+
+[role="lead"]
+이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다.
+
+
+
+== MetroCluster IP 구성에서 CSHM을 구성하기 위한 중요 참고 사항
+
+이 섹션에서는 Cisco, Broadcom 및 NVIDIA SN2100 스위치에서 SNMPv3를 구성하고 로그를 수집하는 일반적인 단계를 설명합니다. MetroCluster IP 구성에서 지원되는 스위치 펌웨어 버전에 대한 단계를 따라야 합니다 . link:https://hwu.netapp.com/["Hardware Universe"^] 지원되는 펌웨어 버전을 확인하세요.
+
+MetroCluster 구성에서는 로컬 클러스터 스위치에서만 상태 모니터링을 구성합니다.
+
+Broadcom 및 Cisco 스위치에서 로그를 수집하려면 로그 수집이 활성화된 각 클러스터에 대해 스위치에 새 사용자를 생성해야 합니다. MetroCluster 구성에서는 MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4 모두 스위치에 별도의 사용자를 구성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.
+
+CSHM을 구성하기 전에 불필요한 ISL 경고를 방지하기 위해 사용하지 않는 ISL을 비활성화해야 합니다.

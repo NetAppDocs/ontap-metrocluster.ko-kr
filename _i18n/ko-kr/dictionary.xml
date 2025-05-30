@@ -295,9 +295,7 @@
   <block id="531b740381cddffce7b8440283ae7533" category="paragraph">MACsec 키 체인 구성에 대한 자세한 내용은 해당 스위치에 대한 Cisco 설명서를 참조하십시오.</block>
   <block id="89e65a2d93c278fd151107cff24c1e27" category="doc">MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어 구성</block>
   <block id="860e1e683db2fc2e67aeec00dc74b357" category="paragraph">MetroCluster 구성에서 두 클러스터에 대한 네트워크 연결이 가능한 Linux 호스트가 있어야 합니다. 구체적인 요구사항은 MetroCluster Tiebreaker 또는 ONTAP 중재자 설명서에 나와 있습니다.</block>
-  <block id="ffd76385e89b64e24fcfe106dc5b4533" category="paragraph">기존 Tiebreaker 또는 ONTAP 중재자 인스턴스에 연결하는 경우 Tiebreaker 또는 중재자 서비스의 사용자 이름, 암호 및 IP 주소가 필요합니다.</block>
   <block id="9d4b44162692abd2769e8e0a1c1f0155" category="paragraph">ONTAP 중재자의 새 인스턴스를 설치해야 하는 경우 지침에 따라 소프트웨어를 설치하고 구성합니다.</block>
-  <block id="6d83b3cc0c5c986a38aa0e7f75c60a63" category="inline-link-macro">계획되지 않은 자동 전환을 위한 ONTAP 중재자 서비스 구성</block>
   <block id="d605b9788bd8c2e1d6694fb74ab24c77" category="inline-link-macro">소프트웨어 설치 및 구성 지침</block>
   <block id="cc65b45d9cd6a58be27baf40866d52dc" category="paragraph">Tiebreaker 소프트웨어의 새 인스턴스를 설치해야 하는 경우, 에 따르십시오 <block ref="41bac20da3e04dcec3e43f3b27170310" category="inline-link-macro-rx"></block>.</block>
   <block id="b935de63e2396f2d2fe997c9028969f7" category="inline-link">MetroCluster Tiebreaker 소프트웨어 설치 및 구성</block>
@@ -306,7 +304,6 @@
   <block id="9cb623298dd6b51e66fbc2bbb1086057" category="inline-link-macro">ONTAP 중재자 또는 MetroCluster Tiebreaker를 사용할 때의 고려 사항</block>
   <block id="3390d4f6bfc1502eb6b943d94b2ccf81" category="paragraph"><block ref="3390d4f6bfc1502eb6b943d94b2ccf81" category="inline-link-macro-rx"></block></block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">단계</block>
-  <block id="8e57e18da9d7e1ec40a754e3453835ac" category="list-text">ONTAP 중재자 서비스 또는 Tiebreaker 소프트웨어 구성:</block>
   <block id="2df82e698bfc14af74dd0684edfa8af0" category="paragraph">'MetroCluster configuration-settings 중재자-address-of-중재자-host'</block>
   <block id="18d0853d5e7ac8e89859a9c8915979f9" category="inline-link-macro">Tiebreaker 문서</block>
   <block id="b268877da374fd4b7e106d3ffa6da9f8" category="list-text">Tiebreaker 소프트웨어를 사용하는 경우 을 참조하십시오 <block ref="62330c976dd51c7f2d31efa54ddec6c7" category="inline-link-macro-rx"></block>.</block>
@@ -581,15 +578,9 @@
   <block id="c209703458c468cdf952f490276996a0" category="summary">노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다.</block>
   <block id="780b12826a73e1109ad45282f1b731dc" category="doc">ONTAP에서 MetroCluster 소프트웨어 구성</block>
   <block id="ef6b52b87a839f50cbfacc69d34de0af" category="image-alt">워크플로우 MCC IP 상위 레벨 노드 및 클러스터 구성 소프트웨어</block>
-  <block id="c3294642ebc4a24320ba23b1a71d691f" category="summary">ONTAP 중재자 서비스는 MetroCluster IP 구성에서 사용할 수 있도록 ONTAP 노드에서 구성해야 합니다.</block>
-  <block id="be2b988a9bd1cbe3fb5a48e44bcd446d" category="doc">MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성</block>
-  <block id="e1e93a7a154af533c59fc4dcfb6cd4d3" category="list-text">ONTAP 중재자는 두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 성공적으로 설치되어 있어야 합니다.</block>
-  <block id="7e2df0de08c4c32c4dc448510aced1c2" category="list-text">ONTAP 중재자 서비스를 실행하는 호스트의 IP 주소가 있어야 합니다.</block>
-  <block id="76fa3c63020c0f7cc5ffedb4c90cbdcb" category="list-text">ONTAP 중재자 서비스를 위한 사용자 이름과 암호가 있어야 합니다.</block>
   <block id="a21b356af516769ddf9586489a22e6f8" category="list-text">MetroCluster IP 구성의 모든 노드가 온라인 상태여야 합니다.</block>
   <block id="5213788f29292b96ef1a650e5fce6938" category="list-text">이 작업은 기본적으로 예상치 못한 자동 전환을 활성화합니다.</block>
   <block id="ada003c5d7b06ea1b392045334928823" category="list-text">이 작업은 MetroCluster IP 구성에 있는 노드의 ONTAP 인터페이스에서 수행할 수 있습니다.</block>
-  <block id="8011c86f99772e8ed45b9d5da11cfad0" category="list-text">ONTAP 중재자 서비스는 최대 5개의 MetroCluster IP 구성으로 구성할 수 있습니다.</block>
   <block id="f8dc7177731310562718d80a3440fa9d" category="paragraph">'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'</block>
   <block id="1645e08f0bfdf72de9dd9cf2ec8208de" category="admonition">중재자 관리자 사용자 계정의 사용자 이름과 암호를 묻는 메시지가 표시됩니다.</block>
   <block id="43b1490f27c278cc1257cf8b95b331a9" category="paragraph">MetroCluster 쇼</block>
@@ -994,7 +985,6 @@
   <block id="0a5c3ac0f47ed8e3d45c2e4219d97b00" category="paragraph">MetroCluster 구성마다 다른 상황에서 자동 전환이 수행됩니다.</block>
   <block id="aaa4db48fe39708ddc84c0b74e004845" category="list-text">* MetroCluster IP 구성에 없는 AUSO 기능을 사용하는 MetroCluster FC 구성 *</block>
   <block id="54b00572b4fb9c96346da414c5a1780b" category="paragraph">이러한 구성에서 AUSO는 컨트롤러에 장애가 발생했지만 스토리지(및 브리지(있는 경우)가 작동 중인 경우 시작됩니다.</block>
-  <block id="f25509e4a4010e30eda740d9ef693bf9" category="list-text">MetroCluster 중재 서비스(ONTAP 9.7 이상)를 사용하는 * ONTAP IP 구성</block>
   <block id="8a15f9f5afd6ffb27ec4a9af854624f7" category="paragraph">이러한 구성에서 MAUSO는 위에서 설명한 AUSO와 동일한 상황에서 그리고 전체 사이트 장애(컨트롤러, 스토리지 및 스위치)가 발생한 후에 시작됩니다.</block>
   <block id="e5edd8dd9b2717b8f0d5e2c5e9c4563d" category="list-text">* 활성 모드에서 Tiebreaker 소프트웨어를 사용하는 MetroCluster IP 또는 FC 구성 *</block>
   <block id="d252bbe03c515e14d80ddc7cae716a23" category="paragraph">이러한 구성에서 Tiebreaker는 전체 사이트 장애 후 계획되지 않은 전환을 시작합니다.</block>
@@ -1335,7 +1325,6 @@
   <block id="2dd10a99a16640634ad6093b398b6036" category="paragraph">다음 예에서는 양호한 4노드 MetroCluster 구성을 위한 'MetroCluster check cluster show' 명령 출력을 보여 줍니다. 이는 필요한 경우 클러스터가 협상된 전환을 수행할 준비가 되었음을 나타냅니다.</block>
   <block id="ccc25c1a9a6f63d4acf6c9390b850b64" category="section-title">ONTAP 구성을 완료하는 중입니다</block>
   <block id="938a9f49acfde2902a8737d1aadbf6a1" category="paragraph">MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 SVM, 네트워크 인터페이스 및 기타 ONTAP 기능을 추가하여 클러스터 구성을 완료할 수 있습니다.</block>
-  <block id="fb2c0ebeb18b9e1080333a65b192bdc3" category="list-text">ONTAP 중재자의 기존 인스턴스를 사용하는 경우 ONTAP 중재자 서비스를 ONTAP에 추가합니다.</block>
   <block id="4978301a508dcc7f7e8778cdb2401e04" category="section-title">구성 백업 파일을 보호합니다</block>
   <block id="afc362bb21237b3cf262e5bb73c2e7ce" category="paragraph">로컬 클러스터의 기본 위치 외에 구성 백업 파일을 업로드할 원격 URL(HTTP 또는 FTP)을 지정하여 클러스터 구성 백업 파일에 대한 추가 보호를 제공할 수 있습니다.</block>
   <block id="d459dc1ddad8d856203ba30b84fd6675" category="list-text">구성 백업 파일의 원격 대상 URL을 설정합니다.</block>
@@ -1572,7 +1561,6 @@
   <block id="1a6a0860d4f85d812a58145da3c63dd2" category="list-text">서비스 포트가 올바르게 구성되었는지 확인합니다.</block>
   <block id="054f736f28a6918e0571caad3b5d1440" category="paragraph">서비스서비스</block>
   <block id="3f0f3a6fe3831ca46e275019ef0c0976" category="paragraph">다음 예에서는 포트가 작동 가능하며 올바른 주소가 할당되었음을 보여 줍니다.</block>
-  <block id="f279cda33d8658b285d1ba4a42773651" category="list-text">필요한 경우 SSH 서버를 구성합니다.</block>
   <block id="f0630dda98a33b3b99be916ac28603b0" category="admonition">RCF 파일은 텔넷 프로토콜을 비활성화합니다. SSH 서버를 구성하지 않으면 직렬 포트 연결을 통해서만 브리지에 액세스할 수 있습니다.</block>
   <block id="4cbd2061568d423e0fdf461dfa55b473" category="list-text">RSA 키를 생성합니다.</block>
   <block id="bb618b144b7c6895aa5a8818fa66c1b2" category="list-text">DSA 키 생성(선택 사항)</block>
@@ -1702,11 +1690,7 @@
   <block id="c49e3aaaa51f771668bea65f43e92229" category="paragraph"><block ref="c49e3aaaa51f771668bea65f43e92229" category="inline-link-macro-rx"></block></block>
   <block id="63ffe4f1eeb56d0485132cbf234244c7" category="inline-link-macro">클러스터 피어링 연결에 케이블로 연결합니다</block>
   <block id="a72d2a4ca552186cbf62f182a7dfbe82" category="paragraph"><block ref="a72d2a4ca552186cbf62f182a7dfbe82" category="inline-link-macro-rx"></block></block>
-  <block id="d7bc3e4699ceee82586454b661f07889" category="list-text">ONTAP 중재자 서비스와 MetroCluster Tiebreaker 소프트웨어를 동일한 MetroCluster 구성과 함께 사용해서는 안 됩니다.</block>
-  <block id="8b0f66b1cb7f0a192803547cc01ef5c4" category="list-text">ONTAP 중재자는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.</block>
-  <block id="965fd53f15f7bf99e2336c9a442ebb53" category="list-text">ONTAP 중재자 서비스는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
   <block id="c1444ba460cdd9b59c8ecf988ca907c4" category="list-text">ONTAP 9.7 이상에서는 자동 비계획 전환이 지원됩니다.</block>
-  <block id="927ed696d98572bdb5039cbffcfdb480" category="section-title">MetroCluster 구성에서 중재자를 사용하기 위한 네트워크 요구 사항</block>
   <block id="1a03f6720968dfb968df6cc034114444" category="list-text">MTU</block>
   <block id="6b55a3ff2ffe6275beb9e73d58d08007" category="paragraph">MTU 크기는 1400 이상이어야 합니다.</block>
   <block id="64ddceb2cbf941d1fc93373ce9219a1f" category="list-text">패킷 손실</block>
@@ -1723,8 +1707,6 @@
   <block id="5395ab3ceab5345ee4a1117e436bec89" category="paragraph">3260/TCP</block>
   <block id="1c44912242a1c1688be9805f25a62dbd" category="paragraph">ONTAP는 iSCSI 대상을 중재합니다</block>
   <block id="a3993ea912c0ecd6926aed69b72fd59a" category="paragraph">메일박스에 대한 iSCSI 데이터 접속</block>
-  <block id="63639615515d028231f302c56bab6ad7" category="section-title">MetroCluster 구성에서 ONTAP 중재자를 업그레이드하기 위한 지침입니다</block>
-  <block id="2eb1029cd264d9f182cfb37b0492ad43" category="paragraph">ONTAP 중재자를 업그레이드하는 경우 Linux 버전 요구 사항을 충족하고 업그레이드 지침을 따라야 합니다.</block>
   <block id="80f0fa63ac735fb302ee06c9c1c515ae" category="list-text">모든 중재자 버전은 ONTAP 9.7 이상을 실행하는 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="fe8f2bed933b5baccdaadbe566f09126" category="section-title">업그레이드 후</block>
   <block id="ed92588fcdb50fce92fb0e01fb8449b0" category="paragraph">중재자 및 운영 체제 업그레이드가 완료된 후 'storage iscsi-initiator show' 명령을 실행하여 중재자 연결이 작동 중인지 확인해야 합니다.</block>
@@ -2323,11 +2305,7 @@
   <block id="79ddbe00231bda83f336a9a9821115f2" category="paragraph">1.3 이상</block>
   <block id="c613f1172544a92bcf8317b060382224" category="paragraph">site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레이드됩니다.</block>
   <block id="ec4d7a4fea778584666b7963923e3cf1" category="list-text">새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.</block>
-  <block id="680a4f630b21eab8e23842ce1e77c536" category="list-text"><block ref="680a4f630b21eab8e23842ce1e77c536" category="inline-link-macro-rx"></block></block>
-  <block id="fe829dd203a0238e92149d6e50fe01a3" category="list-text"><block ref="fe829dd203a0238e92149d6e50fe01a3" category="inline-link-macro-rx"></block></block>
   <block id="d93b7c25b0652bbfad8e295f71218dcb" category="list-text">RCF 파일을 다운로드하고 설치합니다.</block>
-  <block id="87c6a5076eda134fab631a4899bd23d4" category="list-text"><block ref="87c6a5076eda134fab631a4899bd23d4" category="inline-link-macro-rx"></block></block>
-  <block id="9b2c056caaa39d420a60a6eafd686719" category="list-text"><block ref="9b2c056caaa39d420a60a6eafd686719" category="inline-link-macro-rx"></block></block>
   <block id="2a372adca69c8c9dbcba25f7ba412726" category="section-title">이전 노드에서 새 노드로 포트 매핑</block>
   <block id="c6edbee73f13da76aae089309d6aadd0" category="paragraph">업그레이드 프로세스 중에 새 노드를 처음 부팅하면 교체 중인 이전 노드의 최신 구성이 재생됩니다. node_A_1-new를 부팅할 때 ONTAP는 node_A_1-old에서 사용된 것과 동일한 포트에 LIF를 호스팅하려고 시도합니다. 따라서 업그레이드의 일환으로 포트와 LIF 구성이 이전 노드의 구성과 호환되도록 조정해야 합니다. 업그레이드 절차를 진행하는 동안 이전 노드와 새 노드 모두에서 단계를 수행하여 클러스터, 관리 및 데이터 LIF 구성이 올바른지 확인할 수 있습니다.</block>
   <block id="6562b03bf0a58d2216ac02b131bb94d6" category="paragraph">다음 표에서는 새 노드의 포트 요구 사항과 관련된 구성 변경의 예를 보여 줍니다.</block>
@@ -4942,7 +4920,6 @@
   <block id="0e1d41be551b6f86ae2030be358827f1" category="paragraph">이전 컨트롤러 모듈이 소유한 디스크는 여전히 이러한 시스템 ID를 소유합니다.</block>
   <block id="1315b8e97bb6745adcb67f2fc72c2557" category="paragraph">이 2노드 MetroCluster 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
   <block id="3e549b591bbba6cbf6756b33b34f68fe" category="paragraph">이전 컨트롤러 모듈이 소유한 디스크는 여전히 이 시스템 ID를 소유합니다.</block>
-  <block id="e3e61f7dd475a76c42d1d59900653255" category="list-text">ONTAP 중재자 서비스를 사용하는 MetroCluster IP 구성의 경우 ONTAP 중재자 서비스의 IP 주소를 가져옵니다.</block>
   <block id="659363869c399765c0ca11454433fd36" category="paragraph">'스토리지 iSCSI-initiator show-node * -label 중재자'</block>
   <block id="c4f544053cff7408e816016df0403a9a" category="list-text">시스템이 AFF A220, AFF A400, FAS2750, FAS8300, FAS8700 또는 FAS8700 모델인 경우, VLAN ID 확인:</block>
   <block id="a299904397c0c53d0dff20464bb5a6fb" category="paragraph">VLAN ID는 출력의 Adapter 열에 표시된 어댑터 이름에 포함됩니다.</block>
@@ -5180,16 +5157,11 @@
   <block id="d40a957fa3e93ed5d5f356b1d7f5672b" category="paragraph">다음 예에서는 루트 애그리게이트가 미러링되는 것을 보여 줍니다.</block>
   <block id="e9c063d9bb3c8e2aec36505fc1d417d7" category="list-text">다른 루트 애그리게이트에 대해 이 단계를 반복합니다.</block>
   <block id="ad135407afbeef1d508888cf6fde2d7a" category="paragraph">미러링된 상태가 없는 루트 애그리게이트는 미러링해야 합니다.</block>
-  <block id="ac156973f0c5652ffc5768a0a0cb6e91" category="section-title">ONTAP 중재자 서비스 재구성(MetroCluster IP 구성)</block>
-  <block id="2e987e1db02c7e6de720b2d7a135fffa" category="paragraph">ONTAP 중재자 서비스로 구성된 MetroCluster IP 구성이 있는 경우 중재자와 연결을 제거하고 다시 구성해야 합니다.</block>
-  <block id="96b411dfba94dc262934c26a2e256ab9" category="list-text">ONTAP 중재자 서비스를 위한 IP 주소와 사용자 이름 및 암호가 있어야 합니다.</block>
-  <block id="fe396bc9ed401ba34109f9d641f9bfcc" category="list-text">ONTAP 중재자 서비스는 Linux 호스트에서 구성 및 운영되어야 합니다.</block>
   <block id="65dced407d70b84632e5546dc4c5a806" category="list-text">기존 ONTAP 중재자 구성을 제거합니다.</block>
   <block id="19b5c269cad57490a0fce25bc6b54d85" category="list-text">ONTAP 중재자 구성 재구성:</block>
   <block id="ea68a78317b0e56b996bf3edfcb88e02" category="paragraph">MetroCluster 설정-설정 중재자 추가-주소 중재자-IP-주소</block>
   <block id="efd3c43e2ecab0f8cda4a72f049c7c27" category="list-text">'-simulate' 파라미터로 절체 동작 수행:</block>
   <block id="4844b6a2b007af265e80282e7822ba27" category="paragraph">'MetroCluster switchover-simulate</block>
-  <block id="a9db7bbf9222d08712b683e237d0e9c6" category="list-text">ONTAP 중재자 서비스를 사용하는 MetroCluster IP 구성의 경우 중재자 서비스가 작동 중인지 확인합니다.</block>
   <block id="e7dd8552505ef5a78c36791abf769764" category="list-text">중재 디스크가 시스템에 표시되는지 확인합니다.</block>
   <block id="f9954f099782de6889367e8b36f704d8" category="paragraph">스토리지 페일오버 사서함-디스크 쇼</block>
   <block id="b0e33d9e8081b3bc1757198d90404342" category="paragraph">다음 예에서는 메일박스 디스크가 인식되었음을 보여 줍니다.</block>
@@ -5728,7 +5700,6 @@
   <block id="64977ab6a02737ff27944bb4e643f9a9" category="paragraph">다음 링크를 사용하여 Tiebreaker 또는 중재자를 설치 및 구성합니다.</block>
   <block id="416e335daad496ad8619dd5e0873c083" category="inline-link-macro">MetroCluster Tiebreaker 소프트웨어를 설치하고 구성합니다</block>
   <block id="3e124f4767179cdcf91533c7d87b883f" category="list-text"><block ref="3e124f4767179cdcf91533c7d87b883f" category="inline-link-macro-rx"></block></block>
-  <block id="4eb00e76349103bb49f834540fdce720" category="inline-link-macro">계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다</block>
   <block id="4d60f545ef2535cd524505ef40a30ea5" category="section-title">NetApp MetroCluster Tiebreaker 소프트웨어가 장애를 감지하는 방식</block>
   <block id="65e5269f8fb0f709f4c3258e226f2c6a" category="paragraph">이 유형의 네트워크는 두 개의 이중화 FC 스위치 패브릭으로 구성됩니다. 각 스위치 패브릭은 2개의 FC 스위치를 가지고 있으며, 각 스위치 패브릭은 클러스터와 함께 배치되어 있습니다. 각 클러스터에는 각 스위치 패브릭에서 하나씩 두 개의 FC 스위치가 있습니다. 모든 노드에는 공동 배치된 각 IP 스위치에 대한 FC(NV 상호 연결 및 FCP 이니시에이터) 연결이 있습니다. 데이터는 ISL을 통해 클러스터에서 클러스터로 복제됩니다.</block>
   <block id="beca4c261f58e41e37cd354316dd0a6e" category="paragraph">Tiebreaker 소프트웨어는 노드에서 사이트 간 연결 상태를 정기적으로 검색합니다. NV 상호 연결 연결이 끊어지고 인터클러스터 피어링이 핑에 응답하지 않는 경우 클러스터는 사이트가 격리되었다고 간주하고 Tiebreaker 소프트웨어는 경고를 "AllLinksSegan"으로 트리거합니다. 클러스터에서 "AllLinksSegable" 상태를 식별하고 다른 클러스터에 연결할 수 없는 경우 Tiebreaker 소프트웨어는 경고를 "재해"로 트리거합니다.</block>
@@ -6771,7 +6742,6 @@
   <block id="bde0605fb74695c23ddd122685cfc65e" category="section-title">RCF 파일을 업그레이드합니다</block>
   <block id="1a9778326fd00d0e011a777089b2bc6a" category="list-text">실행 중인 MetroCluster 점검 작업의 상태를 점검한다.</block>
   <block id="c58c2c8b494a438765beae02806faf3a" category="paragraph">스위치 공급업체의 단계를 따르십시오.</block>
-  <block id="97a377942f4f2e5cbecdba36cbfb77ea" category="inline-link-macro">Broadcom IP RCF 파일 다운로드 및 설치</block>
   <block id="695e87d61d65625619e3a56919865a2c" category="list-text">최신 디스크 및 디스크 쉘프 펌웨어를 다운로드해야 합니다.</block>
   <block id="8b82688b3d28b8ce8fbcbb8c09b13ce3" category="list-text">MetroCluster 구성의 모든 디스크 쉘프(기존 쉘프)에서 동일한 펌웨어 버전을 실행해야 합니다. 하나 이상의 디스크 또는 쉘프에서 최신 펌웨어 버전을 실행하지 않는 경우 새 디스크 또는 쉘프를 연결하기 전에 펌웨어를 업데이트합니다.</block>
   <block id="8d372617f83f8c0b84203a0c342601a0" category="paragraph">ATTO ExpressNAV GUI를 사용하여 브리지를 구성 및 관리하고 브리지 펌웨어를 업데이트할 수 있습니다. ATTO Quicknav 유틸리티를 사용하여 브리지 이더넷 관리 1 포트를 구성할 수 있습니다.</block>
@@ -7572,10 +7542,8 @@
   <block id="a912eb9ea94a61a941a8ab99a7048c7c" category="paragraph">새 스위치를 사용하는 경우 이 작업이 필요합니다.</block>
   <block id="bc3a9e61d9aac8c49e720b685b62e3d1" category="inline-xref-macro">로컬 클러스터 연결 이동</block>
   <block id="3c53e5775877727336cb67e854c78a79" category="list-text">새 IP 스위치를 설치하고 랙에 설치합니다.</block>
-  <block id="b1ef007668b1430e7bb2daaf954e2579" category="paragraph">에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 <block ref="14be4efa102104b75024e48b7a0a89f8" category="inline-link-macro-rx"></block></block>
   <block id="bc4f214d80008718500b069cac10f107" category="list-text">필요한 경우 스위치의 펌웨어를 지원되는 버전으로 업데이트합니다.</block>
   <block id="0031dbc1afe1c2ec91d4c02136da5eb6" category="list-text">RCF 생성기 툴을 사용하여 스위치 공급업체와 플랫폼 모델에 따라 RCF 파일을 생성한 다음 스위치를 파일로 업데이트합니다.</block>
-  <block id="9ce923539fb1123fe118101d429941ae" category="list-text"><block ref="9ce923539fb1123fe118101d429941ae" category="inline-link-macro-rx"></block></block>
   <block id="26335ad95c44f5e233c28d27ab09f461" category="doc">무중단 FC-to-IP 전환 요구사항</block>
   <block id="39128f9051c3d4355aead1a61c996c25" category="summary">MetroCluster 업그레이드, 확장 또는 전환 간의 차이점을 이해하고 목표에 맞는 절차를 선택해야 합니다.</block>
   <block id="c614230ffa3ceef0cb27e7fbc1f50307" category="doc">사용할 절차를 결정합니다</block>
@@ -7816,9 +7784,6 @@
   <block id="680d0532e2fa054a6d2c7c2641ed0aba" category="list-text">플랫폼 조합 및 전환을 위해 생성된 RCF 파일을 사용하여 SWITCH_A_1_IP를 재구성합니다.</block>
   <block id="99707115a113f625cec106ca47592425" category="list-text">필요한 경우 새 스위치 펌웨어를 다운로드하여 설치합니다.</block>
   <block id="30fb5638808aa1cf88e688e78e820b58" category="paragraph">MetroCluster IP 노드가 지원하는 최신 펌웨어를 사용해야 합니다.</block>
-  <block id="ffaeaa66271f98acd0156b9dadf03b5b" category="list-text"><block ref="ffaeaa66271f98acd0156b9dadf03b5b" category="inline-link-macro-rx"></block></block>
-  <block id="1a031f58441757494134fdebb9c1beb1" category="list-text"><block ref="1a031f58441757494134fdebb9c1beb1" category="inline-link-macro-rx"></block></block>
-  <block id="343c2d0dbf210b79686912b38bd4f45d" category="list-text"><block ref="680a4f630b21eab8e23842ce1e77c536" category="inline-link-macro-rx"></block> **</block>
   <block id="b9fc40955441f593ff27513c0973dab6" category="list-text">스위치 공급업체에 따라 IP RCF 파일을 다운로드하여 설치합니다.</block>
   <block id="9ef17a3f10f59d77a32bb5649c8cc21a" category="list-text">스위치_A_1_IP에 그룹 A 포트를 다시 연결합니다.</block>
   <block id="ef76ba53937977597a1570cbdefcf95c" category="list-text">모든 클러스터 포트가 작동 중인지 확인합니다. 'network port show-ipSpace cluster'</block>
@@ -8954,7 +8919,6 @@
   <block id="b418e6f88f4c95341a5b126a8b9b98f9" category="doc">클러스터를 설정하는 중입니다</block>
   <block id="f515fca759b029639b19b471d7a2c1ed" category="inline-link">MetroCluster IP 솔루션 아키텍처 및 설계, TR-4689</block>
   <block id="8d4727f84fc5ba727eb23a4ce93c87c2" category="list-text">MetroCluster IP 구성 및 작동에 대한 기술적 개요</block>
-  <block id="dd6ee1233d0e34b47648ba9732a67411" category="list-text">MetroCluster IP 구성의 모범 사례</block>
   <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="paragraph">Active IQ 디지털 자문 문서</block>
   <block id="5fd8df07f07be8ba9b4318226aef95c2" category="summary">어레이 LUN을 사용하여 MetroCluster 구성을 설정할 수 있습니다. 스트레치 및 패브릭 연결 구성이 모두 지원됩니다. AFF 시스템은 어레이 LUN에서 지원되지 않습니다.</block>
   <block id="d7d568faf1e89736369daad49b871f32" category="doc">어레이 LUN에서 지원되는 MetroCluster 구성</block>
@@ -10387,9 +10351,6 @@
   <block id="4497ab40f5579cccfc00e6aed35cdae9" category="sidebar">구성 요소의 ha-config 상태를 확인합니다</block>
   <block id="aa9c71b40476a8ccda9213b9a9416d55" category="sidebar">클러스터를 MetroCluster 구성으로 구성합니다</block>
   <block id="899561732a5d01981ad7459377a19442" category="sidebar">MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다</block>
-  <block id="a9ff5216cd4c113510a74e308ff5a81d" category="sidebar">ONTAP 중재자 서비스 설치 준비</block>
-  <block id="71a38375f76a7ed87f8e28fa9645d356" category="sidebar">ONTAP 중재자 서비스를 설치하거나 업그레이드합니다</block>
-  <block id="4a013e1601591220c48257d9b4f85901" category="sidebar">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다</block>
   <block id="f49bd82ec28b5ed1e86bb99d8be7e44e" category="sidebar">MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다</block>
   <block id="2497da01927dd78867fe48a11bd87f93" category="sidebar">MetroCluster 구성을 테스트합니다</block>
   <block id="38484792ce18e1ac90df07df1cbe4040" category="sidebar">Tiebreaker 소프트웨어를 설치합니다</block>
@@ -10585,11 +10546,9 @@
   <block id="625658dcf56e073788050ba3b314f569" category="sidebar">디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성을 구축합니다</block>
   <block id="8b3aeec8c25c17c966b0b882195c6050" category="sidebar">NTP를 사용하여 시스템 시간을 동기화합니다</block>
   <block id="b1d3a32a00e7d497fcf31c70542c202e" category="summary">MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨어 또는 세 번째 사이트에 다운로드하여 설치할 수 있습니다.</block>
-  <block id="156878e33ba2293bd900b486f895c7ae" category="paragraph"><block ref="156878e33ba2293bd900b486f895c7ae" category="inline-link-macro-rx"></block></block>
   <block id="0e0fb7c8f8c90679b6de81eb83cc9c05" category="paragraph">ONTAP 9.7부터 MetroCluster 볼륨은 FlexCache 구성에서 지원됩니다. 스위치오버 또는 스위치백 작업 후 수동 재시행을 위한 요구 사항을 숙지해야 합니다.</block>
   <block id="324411cbb41cb55bc8c2f637443ed820" category="paragraph">ONTAP 9.6 MetroCluster 구성부터 FlexGroup 볼륨을 지원합니다.</block>
   <block id="595a0070423d641189b233c03827a69e" category="paragraph">ONTAP 9.5부터 MetroCluster 구성의 활성 SVM(스토리지 가상 시스템)을 SnapMirror SVM 재해 복구 기능에서 소스로 사용할 수 있습니다. 대상 SVM은 MetroCluster 구성 외부의 세 번째 클러스터에 있어야 합니다.</block>
-  <block id="22ad9a689b8447af0ecfb5eb5b5495b3" category="list-text">ONTAP 중재자 서비스를 ONTAP에 추가합니다.</block>
   <block id="f0ff1470e66c8950946e7e3e5058f8a8" category="paragraph"><block ref="f0ff1470e66c8950946e7e3e5058f8a8" category="inline-link-rx"></block></block>
   <block id="f52969ece4bf2f4994203a22fa76dc44" category="paragraph"><block ref="f52969ece4bf2f4994203a22fa76dc44" category="inline-link-rx"></block></block>
   <block id="7ea45478f88955067c811efc5ed26534" category="paragraph"><block ref="7ea45478f88955067c811efc5ed26534" category="inline-link-rx"></block></block>
@@ -10617,7 +10576,6 @@
   <block id="c7892ebbb139886662c6f2fc8c450710" category="cell">제목</block>
   <block id="fa06f628b32f0d1ba3fc7ece00862b96" category="paragraph"><block ref="fa06f628b32f0d1ba3fc7ece00862b96" category="inline-link-rx"></block></block>
   <block id="9f6ef9d803a6a101c30a47069149abd6" category="list-text">EFOS 버전 3.7.x.x 이상부터는 FIPS를 준수하지 않는 버전과 FIPS 호환 버전을 사용할 수 있습니다. FIPS를 준수하지 않는 버전에서 로 이동하거나 FIPS를 준수하는 버전으로 전환할 때 다른 단계가 적용됩니다. FIPS를 준수하지 않는 버전에서 FIPS를 준수하는 버전으로 또는 그 반대로 EFOS를 변경하면 스위치가 공장 출하 시 기본값으로 재설정됩니다. 이 절차를 수행하려면 직렬 콘솔 포트를 통해 액세스해야 합니다.</block>
-  <block id="c92c490b97a94b8ad700c26b41c33c18" category="summary">ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성을 지원하여 예상치 못한 자동 전환을 수행할 수 있습니다.</block>
   <block id="e90535a051902416d901e147c4c59930" category="summary">이 정보는 MetroCluster Tiebreaker 소프트웨어를 설치하고 구성하는 방법을 설명합니다.</block>
   <block id="884324de7d536976016cc7e2b34b0da9" category="paragraph">이 정보를 사용하여 MetroCluster Tiebreaker 소프트웨어를 설치해야 합니다.</block>
   <block id="26a1b5abfaa8d36a512417a3da776baf" category="summary">MetroCluster 구성 및 작동에 대해 자세히 알아볼 수 있습니다.</block>
@@ -10778,7 +10736,6 @@
   <block id="679c1dc70b523e1092eb2a7b3129711d" category="paragraph">포트 및 브로드캐스트 도메인에 대해 MTU 설정이 올바르게 설정되어 있는지 확인하고 변경합니다.</block>
   <block id="dd29cf7134047c7a311edc4776b9021e" category="paragraph">2노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 <block ref="ef88855c7d052c0aa5ce46e187d01954" category="inline-link-macro-rx"></block>.</block>
   <block id="2912e0eba45e116506958546503977b9" category="paragraph"><block ref="2912e0eba45e116506958546503977b9" category="inline-link-macro-rx"></block></block>
-  <block id="0297e6ce2162b2f01b03b57027b0de3f" category="paragraph">_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.</block>
   <block id="7efa6fc838c006d396e42638b4ff25d1" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block></block>
   <block id="bc77bf857b365d445270101e2d7ce03f" category="list-text">MetroCluster FC 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster FC 구성에서 사용되는 단계입니다.</block>
   <block id="58f51e86971b6d1d53b59f46792a926c" category="list-text">MetroCluster IP 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster IP 구성에서 사용되는 단계입니다.</block>
@@ -10877,9 +10834,6 @@
   <block id="df181c6434803cd5a18218c45eca6655" category="list-text">FEC를 OFF: FEC OFF로 설정한다</block>
   <block id="344fc0c43530ccad90a38944b632b1e4" category="list-text">설정 모드 종료: '종료</block>
   <block id="9c0c1022f821ad4ee9fd20c2731bc6f1" category="list-text">문제 해결을 지원하기 위해 각 MetroCluster DR 그룹 내의 각 SAS 디스크 쉘프에 대해 고유한 쉘프 ID를 적극 권장합니다.</block>
-  <block id="70fef59fffa5df67d10b024d11f37399" category="paragraph"><block ref="70fef59fffa5df67d10b024d11f37399" category="inline-link-macro-rx"></block></block>
-  <block id="c5cd3d887ef507cadc249c592410542a" category="list-text">Linux 버전을 업데이트할 계획이라면 최신 ONTAP 중재자 서비스를 설치하기 전에 업데이트를 수행하십시오.</block>
-  <block id="5981ded82c976bff5c9a73686842655a" category="list-text">중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
   <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
   <block id="844f223d5d27d9ea92473e2d258ee969" category="list-text">부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 <block ref="af64d870205b209887217377e716cd40" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
   <block id="861ef6676813cbc81369ee701ae73269" category="paragraph">타사 방화벽을 사용하는 경우:</block>
@@ -10912,7 +10866,6 @@
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
   <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
-  <block id="9e9a93655547f7858baef5194a909e2c" category="cell">Cisco 3132Q-V, 3232C 또는 9336C-FX2</block>
   <block id="a825d9b135e0604b1a8244aa950f4952" category="paragraph">FC 노드의 로컬 클러스터 인터페이스입니다</block>
   <block id="32e69a0f5d950aefcb7cefee34c73d19" category="paragraph">FAS500f/A250</block>
   <block id="22c9730efa04ff77f4d689d1554cb1af" category="paragraph">FAS8200/A300</block>
@@ -10947,14 +10900,8 @@
   <block id="63e64e288714d32cded7a6ed8dfec32c" category="list-text">MetroCluster FC 스위치(사용 중이고 구성이 2노드 확장 구성이 아닌 경우)</block>
   <block id="a2a7d27c6bf1ad121aeada48fc70ca1d" category="list-text">30분 정도 기다린 후 현장에서 다음 장비의 전원을 켭니다.</block>
   <block id="383d92c84e46dd00caa3dbad6de7fe2f" category="paragraph"><block ref="903819e2154a41f8227f7c0192db71f6" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
-  <block id="688f019e2f851b28c81904e0acd0c450" category="paragraph"><block ref="6f99ee259693716af238b16f6b3287d3" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 섹션에서</block>
   <block id="be8e7921b8bc696adb0f989ee98b7e9f" category="list-text">'속도'는 100이나 1000이 될 수 있습니다.</block>
   <block id="e44042693910b4bd1a0494893ddc1892" category="doc">SVM이 실행되고 있고 애그리게이트가 온라인 상태인지 확인합니다</block>
-  <block id="0f6663ce923ab095e111674a6a00e20f" category="summary">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 제거할 수 있습니다.</block>
-  <block id="dbef88bf7072abf7cb1500b76c098158" category="doc">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다</block>
-  <block id="b265dc310dca1d74417a4715e46c4168" category="paragraph">MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제할 수 있습니다.</block>
-  <block id="db31f506e34352cf979355688abceeac" category="paragraph">두 MetroCluster 사이트에서 연결할 수 있는 네트워크 위치에 ONTAP 중재자를 성공적으로 설치 및 구성해야 합니다.</block>
-  <block id="c8dd54fd6141594c239adba6bd3401ff" category="list-text">다음 명령을 사용하여 ONTAP 중재자 서비스를 구성 해제합니다.</block>
   <block id="0c87e171b9e1156bebc0a65b722d174d" category="list-text">다음 명령을 사용하여 손상된 디스크가 있는지 확인합니다.</block>
   <block id="27bf55792722dd4b16925981ef8953b4" category="paragraph">'디스크 쇼-파단'</block>
   <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 예 *</block>
@@ -11094,14 +11041,11 @@
   <block id="b88bf0c809fffc695990879900c60d29" category="paragraph">환경은 특정 요구 사항을 충족해야 합니다.</block>
   <block id="a624bf1cb8ea6541888d2e3bfed29f37" category="paragraph">다음 요구 사항은 하나의 DR 그룹(재해 복구 그룹)에 적용됩니다. 에 대해 자세히 알아보십시오 <block ref="0244a225d1215475caa277f136d50b4a" category="inline-link-macro-rx"></block>.</block>
   <block id="9f6204fe619ab6c1e9a1fcd03de81cb5" category="paragraph">ONTAP 중재자와 각 사이트 간의 연결은 두 개의 개별 장애 도메인이어야 합니다.</block>
-  <block id="5030719f4c55271135b32bdf9c634c88" category="paragraph">MetroCluster 구성에 ONTAP 중재자 서비스를 설치하려면 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.</block>
   <block id="ceeccb67c4ca8801e51075063d898307" category="paragraph">최대 지연 시간이 75ms(RTT) 미만입니다.</block>
   <block id="2c66766b3cbb0e01db3809a4370c911e" category="paragraph">지터는 5ms를 넘지 않아야 합니다.</block>
   <block id="192e68ef3df9e07712be5cfbedf63575" category="paragraph">ICMP(Internet Control Message Protocol)와 TCP 트래픽 모두에서 패킷 손실은 0.01% 미만이어야 합니다.</block>
-  <block id="918d95987e6cf19fe89998499e6e9348" category="paragraph">중재자 서비스와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.</block>
   <block id="4f1f2bb1718b231428cfd539cdbe7657" category="list-text">독립적 연결</block>
   <block id="d4fda9bf787c3a38a379763f5d621600" category="paragraph">각 사이트와 ONTAP 중재자 간의 독립적인 연결이 필요합니다. 한 사이트의 장애가 다른 두 개의 영향을 받지 않는 사이트 간의 IP 연결을 중단해서는 안 됩니다.</block>
-  <block id="f743e29bd73cf3b477b5b3c15fcf6ec1" category="section-title">MetroCluster 구성에서 ONTAP 중재자를 위한 호스트 요구 사항</block>
   <block id="fec21bcdc858f42f1c942fd943d09de4" category="paragraph">구성이 여러 호스트 요구 사항을 충족하는지 확인해야 합니다.</block>
   <block id="aecf60a0046b893cbed6332405eb3aa3" category="list-text">ONTAP 중재자는 두 ONTAP 클러스터와 물리적으로 분리된 외부 사이트에 설치해야 합니다.</block>
   <block id="6f044e53b0f973c21b9f45e9f29dd890" category="list-text">ONTAP 중재자가 최대 5개의 MetroCluster 구성을 지원합니다.</block>
@@ -11218,7 +11162,6 @@
   <block id="578f0ca9e0f2b8dc5eca3447de5f13b7" category="paragraph">로 진행합니다 <block ref="3ea650e98c5c617b3f8d234e7fcf7e38" category="inline-xref-macro-rx"></block></block>
   <block id="c9e7a6f18b5625d689b9621860dc8f89" category="admonition">사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패닉: NVRAM 컨텐츠가 잘못되었습니다."라는 메시지와 함께 패닉이 발생할 수 있습니다 이 경우 를 반복합니다 <block ref="25689aeb5a175ff3bbdb354620fd37b8" category="inline-xref-macro-rx"></block> 시스템을 ONTAP 프롬프트로 부팅합니다. 그런 다음 해야 합니다 <block ref="98b89efafafc6baeefb50e35f16eee3c" category="inline-xref-macro-rx"></block></block>
   <block id="39297c491b5456e17752798ab9be67b0" category="paragraph">이 업그레이드를 수행할 때 MetroCluster 스위치에서 RCF 파일을 업데이트해야 합니다. 다음 표에는 AFF A900/FAS9500 MetroCluster IP 구성에서 지원되는 VLAN 범위가 나와 있습니다.</block>
-  <block id="d267ad4b716836a6875d9be23fc81c21" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 섹션에서</block>
   <block id="d07bebb0e23926af3c78f855a3108b26" category="admonition">MetroCluster check run과 MetroCluster check show를 실행하면 다음과 유사한 오류 메시지가 표시됩니다.</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">예</block>
   <block id="6870468a3fe6a4b5c829d30e0702c5fd" category="paragraph">이는 업그레이드 프로세스 중 컨트롤러 불일치로 인한 것으로 예상되며 오류 메시지는 무시해도 됩니다.</block>
@@ -11335,7 +11278,6 @@
   <block id="dda33fc9a3cc083db08123f7d7e692a8" category="inline-link-macro">MetroCluster 자동 강제 적용 시 위험 및 제한 사항</block>
   <block id="a6e62874574d6ae8ffc9dc6ea98c08e7" category="paragraph">MetroCluster 자동 강제 전환 기능을 활성화하면 사이트 장애가 감지되면 자동으로 전환됩니다. 이 기능을 사용하여 MetroCluster IP 자동 전환 기능을 보완할 수 있습니다.</block>
   <block id="80f6a6e12e6ca0304707e7a67581f248" category="paragraph">Broadcom 스위치</block>
-  <block id="530dbe55cb10e603b69b517d0cb2f4bc" category="list-text">두 클러스터에서 다음 명령을 실행하여 ONTAP 중재자 서비스가 MetroCluster 구성에서 제거되었는지 확인합니다.</block>
   <block id="49b7410e94a7ca7d1c674a14241ebe49" category="list-text"><block ref="7200673afad174d0ff258c801fbb9def" prefix="" category="inline-code"></block></block>
   <block id="f85af53e3d7c278ec6cd756cf3365359" category="list-text">예비 부품 없음</block>
   <block id="385f02022cf6cb2f3cfc0aa026b7c3d7" category="list-text">구성과 일치하는 옵션을 선택하고 cluster_A에서 올바른 명령을 실행합니다.</block>
@@ -11477,7 +11419,6 @@
   <block id="fd9b3eaeebb236fdcf40b5456ccc900e" category="admonition">AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, 및 G720 스위치</block>
   <block id="81d4bf20c117cfe06c727511dd63382b" category="paragraph">6510, G620, G620-1, G630, G630-1, G720</block>
   <block id="64cdec386f8cc50c2a2ec9316633b629" category="paragraph">러닝을 시작하기 전에<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block>HA 모드 및 DR 미러링이 활성화되어 있지 않으며 이 예상 동작과 관련된 오류 메시지가 표시될 수 있습니다. 나중에 명령을 실행할 때 HA 모드 및 DR 미러링을 사용하도록 설정할 수 있습니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 구성을 구현합니다.</block>
-  <block id="929a405a00082b7cddc01ac6b47159f6" category="list-text">MetroCluster에 단일 데이터 Aggregate가 있는지 또는 여러 데이터 Aggregate가 있는지 여부에 따라 다음과 같이 구성합니다.</block>
   <block id="5ffd33f8dea25274cffabd9b7ab1c36e" category="paragraph">에 응답해야 합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 고급 모드로 계속 진행하라는 메시지가 나타나면 고급 모드 프롬프트(*)가 나타납니다.</block>
   <block id="1fd3081a4bf2b2b1ccafeb89c824a5d2" category="admonition">모범 사례는 미러링된 데이터 애그리게이트를 여러 개 사용하는 것입니다. 미러링된 Aggregate가 하나만 있으면 메타데이터 볼륨이 별도의 Aggregate가 아닌 동일한 Aggregate에 있기 때문에 보호가 덜 됩니다.</block>
   <block id="3a02d8d4d0c731efe2550cb0db8b9626" category="inline-link-macro">MetroCluster 설치 중 컨트롤러 모듈 장애 시나리오</block>
@@ -11666,7 +11607,6 @@
   <block id="9d278f0716d4f0b8bdeaa91150592096" category="list-text">자동화 작업이 수행됩니다<block ref="f62e58c376725d0e22a9e8040934124c" prefix=" " category="inline-code"></block>,<block ref="f71080a9d0eed0afac5e99d0ac5f5781" prefix=" " category="inline-code"></block>사이트 A의 스위치백 작업과 업그레이드 후 점검 작업을 수행할 수 있습니다. 작업이 일시 중지되면 SAN LIF 상태를 수동으로 확인하고 콘솔 메시지에 따라 네트워크 구성을 확인합니다.</block>
   <block id="7058a4e91dbbbe7dcf2fde3987421db0" category="section-title">ONTAP 중재자를 재구성합니다</block>
   <block id="37a1beb7755a7b8722d2585dbc965263" category="paragraph">업그레이드를 시작하기 전에 자동으로 제거된 ONTAP 중재자를 수동으로 구성합니다.</block>
-  <block id="72912b568eb3bd0af2dc6a3ba324a1c9" category="list-text">의 단계를 사용합니다 <block ref="f90e9d8e118936cdbb24903820a79eb3" category="inline-link-macro-rx"></block>.</block>
   <block id="eae1d6e5dc6115799413390aecfa0c7c" category="paragraph">자동화 작업으로 인해 전환이 시작됩니다.<block ref="4bc031ebd90e06c679bed249595b6c90" prefix=" " category="inline-code"></block>, 및<block ref="a233091efff166ee24ee5a89d344dcdf" prefix=" " category="inline-code"></block> 운영: 이러한 작업이 완료되면 * paused for user intervention * 에서 작업이 일시 중지되므로 컨트롤러를 랙에 설치하고 파트너 컨트롤러를 부팅한 다음 를 사용하여 플래시 백업에서 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당할 수 있습니다<block ref="5fb641c5977b93de82b81e36db0454cf" prefix=" " category="inline-code"></block> 앞서 모였습니다.</block>
   <block id="3d296dee09f5acd9721e7bd1f885a1ff" category="doc">MetroCluster IP 구성 확장</block>
   <block id="f7ebd0c3919ed1a579352a95f757a9e6" category="paragraph">ONTAP 버전에 따라 4개의 새 노드를 새 DR 그룹으로 추가하여 MetroCluster IP 구성을 확장할 수 있습니다.</block>
@@ -11701,7 +11641,6 @@
   <block id="e50b66bedcb52077182d77c650db0ca0" category="paragraph">이전 DR 그룹을 제거한 후 다음 이미지와 같이 구성이 나타납니다.</block>
   <block id="47468b9007c8d1b64ee8a7229933b739" category="image-title">8노드 구성</block>
   <block id="e73093705babe6125a16df08eedb00cc" category="image-alt">MCC DR 그룹 C5</block>
-  <block id="68f99a795ff5a89f522232c02dc3bdef" category="paragraph"><block ref="ded257afb157d474a6461a3bc1b48d84" category="inline-link-macro-rx"></block> MetroCluster IP 설치 및 구성 _.</block>
   <block id="d64734f1819a8d6339e74ffe37dc5430" category="paragraph">플랫폼이 나열되지 않은 경우 지원되는 컨트롤러 업그레이드 조합이 없습니다.</block>
   <block id="183ffd679adb1c9e843df285f2b91466" category="list-text">참고 2: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="5abae7190ce598d45fe390e44304cde0" category="paragraph">9.13.1 이상</block>
@@ -11876,7 +11815,6 @@
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에 대해 최소 20%의 여유 공간을 유지하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 권장사항은 10%이지만, 파일 시스템이 증분 변경을 흡수하기 위해 추가 10%의 공간을 사용할 수 있습니다. 증분식으로 변경하면 ONTAP의 COW Snapshot 기반 아키텍처로 인해 미러링된 애그리게이트의 공간 활용률이 증가합니다. 이러한 모범 사례를 준수하지 않을 경우 성능에 부정적인 영향을 미칠 수 있습니다.</block>
   <block id="0e5e2d82a1039e41c19d2248f3b64787" category="admonition">두 클러스터 중 하나에서 MetroCluster IP 인터페이스를 구성할 수 있습니다.</block>
   <block id="6212a1ad66c5ad9d3c50380aa91aab6a" category="list-text">하드웨어 오류가 없습니다</block>
-  <block id="050dafe962829ef847f34f7607e36eb3" category="list-text"><block ref="050dafe962829ef847f34f7607e36eb3" category="inline-link-macro-rx"></block></block>
   <block id="2af958a8143c65676390b5e251abe90a" category="list-text">를 확인합니다<block ref="a78608714add699f555f2a66df0ee249" prefix=" " category="inline-code"></block> 패키지가 Linux 호스트에 설치됩니다. 그러면 가 필요하지 않습니다<block ref="b0c94f1494e22d963244e235719a2582" prefix=" " category="inline-code"></block> 를 사용하여 새로 매핑된 LUN에 대해 Linux 호스트를 다시 검색할 때 오류가 발생했습니다<block ref="685ca42026debec2f3691cc5faae67d5" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="1f52bd2314f9805b0a0098b0f56a0dc4" category="paragraph">이 경우 노드를 재부팅해야 할 수 있습니다.</block>
   <block id="ab85fd4f549c390675df901a8ef3f78e" category="list-text">모든 SAN SVM에 대해 IP 노드에서 FC LIFS/인터페이스를 생성합니다. 선택적으로 새로 생성된 FC LIF의 WWPN이 FC SAN 스위치에 로그인되어 있는지 확인합니다</block>
@@ -12091,7 +12029,6 @@
   <block id="82d98fe86a7b6dbc49abc0913b83f2ac" category="paragraph">ADP는 시스템의 초기 구성 중에 자동으로 수행됩니다.</block>
   <block id="2d183ed725bd043df73111a219fb4c10" category="list-text">모든 MetroCluster 구성 요소가 지원되어야 합니다.</block>
   <block id="9f4a5b5c7a3f862c1d0ff77f72d3eea0" category="paragraph">ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.</block>
-  <block id="c471c44c2f26c78f9327863d90427cb7" category="admonition">ONTAP 중재자가 다운된 경우<block ref="1eafb93bfc40f298e60cf17e8a8c598c" prefix=" " category="inline-code"></block> 명령에서는 여전히 ONTAP 중재자 관리자 계정의 사용자 이름과 암호를 입력하라는 메시지를 표시하고 MetroCluster 구성에서 ONTAP 중재자 서비스를 제거합니다.</block>
   <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 하드웨어 시스템 설명서</block>
   <block id="a6060d4587fc5fc5f841d3287d08316c" category="paragraph"><block ref="a6060d4587fc5fc5f841d3287d08316c" category="inline-link-rx"></block></block>
   <block id="777cc85682fbb64f0c41aa09dccf0ca4" category="paragraph"><block ref="777cc85682fbb64f0c41aa09dccf0ca4" category="inline-link-rx"></block></block>
@@ -12170,7 +12107,6 @@
   <block id="6106648cc4773cdde37c48ca810022c0" category="cell">Red Hat 7 - 7.9</block>
   <block id="7d04b9af5dfbfc78c7040183f68afdc4" category="cell">Red Hat 8.1 - 8.7</block>
   <block id="003d136e5089a4f9ae0f1df3f6fc37fa" category="cell">Rocky Linux 9.0</block>
-  <block id="9d0101bb262cf2b07ff8dcfa1f6cf004" category="list-text">관리자 암호와 HTTP, FTP, SFTP 또는 TFTP(Trivial File Transfer Protocol) 서버에 액세스해야 합니다.</block>
   <block id="c422062a1c7b3d9ed9b2282378699dc7" category="paragraph"><block ref="c422062a1c7b3d9ed9b2282378699dc7" category="inline-link-macro-rx"></block></block>
   <block id="f54824b249675e35c90a450877126d13" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
@@ -12178,33 +12114,7 @@
   <block id="02d80d458a48a16bd927a203d6bb2c73" category="list-text">조닝 구성을 확인합니다.</block>
   <block id="62c870995fe52ce6aa5f9fc71ef4da98" category="paragraph"><block ref="ed3badb92af3298762df5a811de2da80" prefix="" category="inline-code"></block></block>
   <block id="79787dbf023f957de1bd4970858b26be" category="summary">상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다.</block>
-  <block id="3a4aa5b142f66d14a43abf77cc49c599" category="doc">상태 모니터링을 위해 MetroCluster IP 스위치를 구성합니다</block>
   <block id="877caefa8e802eac248e66b46636c94b" category="paragraph">MetroCluster IP 구성에서 IP 스위치의 상태를 모니터링하도록 SNMPv3을 구성할 수 있습니다.</block>
-  <block id="b3d73929ddf74bb4c7d3cac6eeda8684" category="section-title">1단계: MetroCluster IP 스위치에서 SNMPv3 사용자를 구성합니다</block>
-  <block id="038fbd2fc792b1165c5e88791a09113a" category="paragraph">다음 단계를 사용하여 MetroCluster IP 스위치에서 SNMPv3 사용자를 구성하십시오.</block>
-  <block id="f1407eaef69e4aa9948574be11c0a49b" category="admonition">명령에서 인증 및 개인 정보 보호 프로토콜을 모두 사용해야 합니다. 개인 정보 보호 없이 인증을 사용하는 것은 지원되지 않습니다.</block>
-  <block id="165237cf57452c2427f247f1c6589434" category="open-title">Broadcom IP 스위치용</block>
-  <block id="8d09188a2cfea4cc57e0f38750b68c97" category="list-text">'network-admin' 사용자 그룹이 존재하지 않는 경우 다음을 생성합니다.</block>
-  <block id="0f3a15963e4657a9c97ab6b3db322d27" category="paragraph"><block ref="173ceda524dbc87af297f813b0f50cd8" prefix="" category="inline-code"></block></block>
-  <block id="ec714ba3bea7bae033524709c8ddb144" category="list-text">'network-admin' 그룹이 생성되었는지 확인합니다.</block>
-  <block id="a24bdf92e7d1dc2d2e5714305a56e0eb" category="paragraph"><block ref="77aa57f376fe73c9581fb729ddeb38eb" prefix="" category="inline-code"></block></block>
-  <block id="6697365f2e46593a5513af21ee61a084" category="list-text">Broadcom IP 스위치에서 SNMPv3 사용자를 구성합니다.</block>
-  <block id="9253168d7e5e9b3b8152a8ff1870743f" category="open-title">Cisco IP 스위치의 경우</block>
-  <block id="4a2ec710ab28d8f45e2fdabacdc2dfc6" category="list-text">다음 명령을 실행하여 Cisco IP 스위치에서 SNMPv3 사용자를 구성합니다.</block>
-  <block id="a8b5c32b456efe8e0fcb23cd218c6b6c" category="list-text">SNMPv3 사용자가 스위치에 구성되어 있는지 확인합니다.</block>
-  <block id="dcc1c100b3f25557081f2e0b39235331" category="paragraph"><block ref="b74f60eeed5179550ade1e96ba13e2f9" prefix="" category="inline-code"></block></block>
-  <block id="82551d68c685b978ef7462fc2759040f" category="paragraph">다음 출력 예는 해당 사용자를 보여줍니다<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> SNMPv3에 대해 구성됨:</block>
-  <block id="54095e9794a9fd93e475a7911543f88e" category="section-title">2단계: ONTAP에서 SNMPv3 사용자를 구성합니다</block>
-  <block id="584b7eab2aafafcbe01855419f896b21" category="paragraph">ONTAP에서 SNMPv3 사용자를 구성하려면 다음 단계를 따르십시오.</block>
-  <block id="1bff762b431027892d402682570d40ac" category="list-text">ONTAP에서 SNMPv3 사용자를 구성합니다.</block>
-  <block id="ddc11f6ac980cbb07f08bef9febcc0e7" category="paragraph"><block ref="d122104842549610cab7a5c1c6e791ab" prefix="" category="inline-code"></block></block>
-  <block id="c74135dc000c228de7018358eaf099e5" category="list-text">새 SNMPv3 사용자를 사용하여 스위치를 모니터링하도록 스위치 상태 모니터링을 구성합니다.</block>
-  <block id="19acda7cb8d15af8dcf62dcf74bcbe00" category="paragraph"><block ref="536a54b756351ba8978169ff37fc419d" prefix="" category="inline-code"></block></block>
-  <block id="102bc61adb74b49384536c35a485dea4" category="list-text">새로 생성된 SNMPv3 사용자와 함께 모니터링될 장치 일련 번호가 올바른지 확인합니다.</block>
-  <block id="189afc0f727c57bbef41f18728ebe44a" category="list-text">스위치 상태 모니터링 폴링 시간 기간을 표시합니다.</block>
-  <block id="4e8c2092c0a2bb40fde077763873c66c" category="paragraph"><block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix="" category="inline-code"></block></block>
-  <block id="b9035c5f27542cbf7fb14fced8e330ba" category="list-text">폴링 시간이 경과하면 다음 명령을 실행합니다.</block>
-  <block id="20c4c39b07a94d810605541c0137f531" category="paragraph"><block ref="9214d4fe696fff6386a131ecee126bc4" prefix="" category="inline-code"></block></block>
   <block id="e389e5759cd93883cfbee1a000ab0c47" category="list-text">MetroCluster 패브릭 구성의 각 Brocade FC 스위치에서 이러한 단계를 반복해야 합니다.</block>
   <block id="9dc72cfc812a43dbca6ba4e6357b2b04" category="paragraph">ONTAP 9.13.1부터 8노드 MetroCluster 구성을 임시로 확장하여 컨트롤러 및 스토리지를 업데이트할 수 있습니다. 을 참조하십시오 <block ref="df5e6373f54c9330727709bb1055a079" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="e6f19b92e0e69fc5d74e94088b442a26" category="inline-link-macro">4노드 또는 8노드 MetroCluster IP 구성 업데이트</block>
@@ -12272,7 +12182,6 @@
   <block id="62dab2247ca5697a261fd865abf3712d" category="paragraph">4분기: 베이 36-47</block>
   <block id="c81d9f1aaf4df29053805f321b5b089d" category="section-title">AFF A150, ASA A150 및 AFF A220 시스템에서 ADP 및 디스크 할당</block>
   <block id="6a0fb9ba6a0c02751fb5fc909455894f" category="section-title">AFF C400, AFF A400, ASA C400 및 ASA A400 시스템에서 ADP 및 디스크 할당</block>
-  <block id="fd659a09a0244eaf6b3f61e3ca61a14d" category="paragraph">ONTAP 중재자는 MetroCluster IP 노드에 대한 상태 정보를 저장할 메일박스 LUN을 제공합니다. 이러한 LUN은 ONTAP 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 MetroCluster 중재자의 공동 위치입니다. MetroCluster IP 노드는 사서함 정보를 사용하여 DR(재해 복구) 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO(중재자 지원 계획되지 않은 전환)를 구현할 수 있습니다.</block>
   <block id="30340ec1ae42c7ca90b5fdd7fab0a4a3" category="paragraph">절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다. 기본적으로 MAUSO는 다음 시나리오에서 시작됩니다.</block>
   <block id="44c6a8e31f1720ca268816c13cea4bb0" category="list-text">사이트 재해가 발생하는 경우 사이트 재해는 동일한 사이트에 있는 _ALL_NODES의 장애입니다.</block>
   <block id="b33abe56d950c95329c1ac6ab46d5bdc" category="paragraph">MAUSO는 다음과 같은 종료 시나리오에서 _NOT_initiated입니다.</block>
@@ -12835,7 +12744,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3fb697436dcc4f2ae2cdd29dc91fd043" category="paragraph">정합성 보장 그룹은 MetroCluster 구성에서 지원됩니다.</block>
   <block id="47d81ac708cab22da7ea952550b6f757" category="summary">ONTAP 중재자의 새로운 기능은 각 릴리스에 제공됩니다.  새로운 기능</block>
   <block id="3261bd656e2112e78b0313c87c039420" category="doc">ONTAP 중재자 지원의 새로운 기능</block>
-  <block id="9d01d502466559c8d4ff8682b3e00d92" category="paragraph">ONTAP 중재자의 새로운 개선 사항은 각 릴리스에 제공됩니다.  새로운 기능</block>
   <block id="e8467e9b509c4924668c01eb7ab2adde" category="cell">ONTAP 버전</block>
   <block id="63b6c1d0d10ce89604932c62d9b6f4d7" category="doc">MetroCluster의 새로운 기능</block>
   <block id="3100460fa3d7ba2ea001abefda93f3bc" category="cell">설명 및 자세한 내용</block>
@@ -12897,10 +12805,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4d8d9056b62fc01f5cd3f0898c551fde" category="section-title">플랫폼 지원</block>
   <block id="9b6c50e7cbf80c446a0078ceb63104d0" category="section-title">스위치 지원</block>
   <block id="9342c35c4399c8e6faf7c07d8bae26c5" category="paragraph">ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 및 업그레이드 주의 사항에 대한 자세한 내용은 를 참조하십시오<block ref="6e7f74aa9001f0524a965144f528bbc2" category="inline-link-rx"></block>. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.</block>
-  <block id="542203888545c733d7713856ba607788" category="paragraph">MetroCluster 구성에서 ONTAP mediator를 설치하거나 업그레이드하는 방법에 대한 자세한 내용은 를 참조하십시오 <block ref="98d8e0da2148573045cbd111c9373b18" category="inline-link-macro-rx"></block>.</block>
   <block id="ab67c4c2b9b0f6070e68d79d3a0b6c63" category="cell">ONTAP 중재자 기능</block>
   <block id="5793a46a4020e2b9d210afaa14008d67" category="paragraph">환경 종료 시 중재자 지원 자동 계획되지 않은 전환(MAUSO)이 지원됩니다.</block>
-  <block id="4765407452f01930deae2b9481b69e36" category="paragraph">MetroCluster IP 구성에서 ONTAP 중재자 서비스에 대한 초기 지원</block>
   <block id="de09b0e8b75c62ac84c620713e05647b" category="paragraph">공유 스토리지 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환할 수 있습니다.</block>
   <block id="76a27f1dad18a5de567d4849d3e76b69" category="doc">MetroCluster FC 플랫폼 및 스위치 지원의 새로운 기능</block>
   <block id="2dfc17cf61c3aebedc1a1f7f467baa26" category="paragraph">스위치 유형이 Broadcom, Cisco 또는 NVIDIA인지 여부에 따라 관련 항목에서 스위치 소프트웨어 설치 단계를 따르십시오.</block>
@@ -13010,7 +12916,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a786547181c9c8f446791420d2be691f" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="f93341e63c1888be05256ff042174623" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="27211cf5d485f8491ca9b566aefe2d6d" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다.</block>
   <block id="e528d26e96f91b34e70a35c4661d620d" category="list-text">AFF 및 ASA 시스템에서 ADP를 MetroCluster IP 구성과 함께 사용하려면 ONTAP 9.4 이상이 필요합니다.</block>
-  <block id="bacc4dbebf17d22c9a0361ded0994067" category="paragraph"><block ref="bacc4dbebf17d22c9a0361ded0994067" category="inline-link-macro-rx"></block></block>
   <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="inline-link">NetApp 상호 운용성 매트릭스</block>
   <block id="769db6797bc8c70f9ceb0ea238fcfef2" category="list-text"><block ref="769db6797bc8c70f9ceb0ea238fcfef2" category="inline-link-rx"></block></block>
   <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link-macro">상호 운용성 매트릭스 툴(IMT)</block>
@@ -13567,8 +13472,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d3ab8079aafa01dd2443858e1958cde3" category="paragraph">MetroCluster * 섹션에서 그래픽은 MetroCluster 사이트를 위해 설정하고 피어링한 두 클러스터를 보여줍니다. 작업 중인 클러스터(로컬 클러스터)가 왼쪽에 표시됩니다.</block>
   <block id="4dbd519ea68e9fdd1535b92dd4afd5fb" category="list-text">MetroCluster 구성 * 을 클릭합니다. 이 창에서 다음 단계를 수행하십시오.</block>
   <block id="1786426d5d80efd6c5165d556166c28b" category="list-text">MetroCluster 구성에서 각 클러스터의 노드가 표시됩니다. 드롭다운 목록을 사용하여 원격 클러스터의 노드와 함께 재해 복구 파트너가 될 로컬 클러스터의 노드를 선택합니다.</block>
-  <block id="5b4f1da4fd53e0370a93b132cee09135" category="inline-link-macro">ONTAP 중재자 서비스를 구성합니다</block>
-  <block id="79929ab5271f1ea472573389b4d83491" category="list-text">ONTAP 중재자 서비스를 구성하려면 확인란을 클릭합니다. 을 <block ref="5f1311c68626dc6800182a56591c319d" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="2e04b49bb4e33ec691ac2f426d41203d" category="list-text">두 클러스터에 암호화를 활성화할 수 있는 라이센스가 있으면 * Encryption * 섹션이 표시됩니다.</block>
   <block id="12d02fba21726eafac4f9ce09b0d1801" category="paragraph">암호화를 활성화하려면 암호를 입력합니다.</block>
   <block id="39391d3e9d1021130d7922046a90931b" category="list-text">MetroCluster를 공유 계층 3 네트워크로 구성하려면 이 확인란을 클릭합니다.</block>
@@ -13627,24 +13530,16 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d385f8f7be7049af17b707b814da972d" category="paragraph">Submit * 을 클릭하면 클러스터가 생성 및 구성될 때까지 기다립니다. 그런 다음 유효성 검사 프로세스가 발생합니다.</block>
   <block id="e66cf0363da426ff5fc40b5dff923ee7" category="paragraph-title">다음 단계</block>
   <block id="5a8cb11351ec1c2ae0f6ece191a675b3" category="section-title">새 클러스터 비디오에서 ONTAP를 구성합니다</block>
-  <block id="de87e59d2852e752153034440b599942" category="summary">System Manager를 사용하면 중재자를 관리하는 작업을 수행할 수 있습니다.</block>
-  <block id="4a75c782083d91f8442fa0793b7cfbf5" category="doc">System Manager로 ONTAP 중재자 관리</block>
-  <block id="a92f4998e6033fa7b4c91230afa4eb31" category="paragraph">System Manager를 사용하면 ONTAP 중재자를 관리하는 작업을 수행할 수 있습니다.</block>
   <block id="58d9a382438a6ccf3362b70996f2217e" category="paragraph-title">수행할 수 있습니다</block>
   <block id="06d19fcd882f22629288f03ed5b7cdbf" category="paragraph">ONTAP 9.8부터는 System Manager를 사용하여 4노드 MetroCluster IP 구성을 간편하게 관리할 수 있습니다. 여기에는 세 번째 위치에 설치된 ONTAP 중재자가 포함될 수 있습니다.</block>
   <block id="7cd65d7812b2b9ccfca9369428e81afc" category="paragraph">ONTAP 9.14.1부터는 System Manager를 사용하여 8노드 MetroCluster IP 사이트에 대해 이러한 작업을 수행할 수 있습니다. System Manager를 사용하여 8노드 시스템을 설정 또는 확장할 수 없지만, 8노드 MetroCluster IP 시스템을 이미 설정한 경우에는 이러한 작업을 수행할 수 있습니다.</block>
-  <block id="cf5d5c60759eb97116f97dba2f94928f" category="paragraph">ONTAP 중재자를 관리하려면 다음 작업을 수행합니다.</block>
   <block id="34c30a40821bf0600cbb66a443eaa256" category="cell">이 작업을 수행하려면...</block>
   <block id="ed48cbb0bf6ff16f983dee37b0fa56db" category="cell">다음 작업 수행...</block>
-  <block id="fbdb3c4696d4af3abdd40a7c4d39dff1" category="paragraph">중재자 서비스를 구성합니다</block>
   <block id="5887ba6bb1083b1733f935c989ce8798" category="paragraph">MetroCluster 사이트의 두 클러스터를 모두 살펴보고 기록해야 합니다.</block>
   <block id="e41b8f6d50b100db120f723ab2d80b55" category="list-text">ONTAP 9.8의 시스템 관리자에서 * 클러스터 &gt; 설정 * 을 선택합니다.</block>
   <block id="5ad3e303fff11348579be9fa7186a3bf" category="inline-image-macro">작업 아이콘</block>
   <block id="91137d8840d5756932cbbe95191ebef9" category="list-text">mediator * 섹션에서 를 <block ref="7d54718dbc3f6ea214f7c0852ad5f778" category="inline-image-macro-rx" type="image"></block>클릭합니다.</block>
   <block id="08e18262fd4a21acec4d96a4a34ce874" category="list-text">중재자 구성 * 창에서 * 추가 + * 를 클릭합니다.</block>
-  <block id="7106fd9d66839587984098b5b110af62" category="list-text">ONTAP 중재자의 구성 세부 정보를 입력합니다.</block>
-  <block id="4454fd0f209c519ab968807065d1d63d" category="paragraph">System Manager로 ONTAP 중재자를 구성하는 동안 다음 세부 정보를 입력할 수 있습니다.</block>
-  <block id="2396a51918b19da4a570bb6eeefaf733" category="list-text">중재자의 IP 주소입니다.</block>
   <block id="bf3c0dfedfed52264992478ab75c11ab" category="list-text">사용자 이름입니다.</block>
   <block id="818e503323563216b4a9556e8c414a99" category="list-text">암호입니다.</block>
   <block id="db76a646cbffaec942b46f13ae610cdf" category="paragraph">MAUSO(mediator-assisted Automatic Switchover) 활성화 또는 비활성화</block>
@@ -13654,11 +13549,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8048f4b95111b36ae736e0db22032afc" category="list-text">MetroCluster 사이트 이름 옆에 있는 을 클릭합니다 <block ref="fc003bdefc684d1fa6047f466b3a4572" category="inline-image-macro-rx" type="image"></block> .</block>
   <block id="5451b90704453cd0f976a20853b71515" category="list-text">활성화 * 또는 * 비활성화 * 를 선택합니다.</block>
   <block id="e7d8532df0bf3db8251352a8238be289" category="list-text">관리자 사용자 이름과 암호를 입력한 다음 * 활성화 * 또는 * 비활성화 * 를 클릭합니다.</block>
-  <block id="1f48f2b275c8a8c7c346ee84a099bf8d" category="admonition">중재자에 도달할 수 있고 두 사이트 모두 ""정상"" 모드에 있을 때 중재자를 활성화 또는 비활성화할 수 있습니다. MetroCluster 시스템이 정상인 경우 MAUSO가 활성화 또는 비활성화되어도 중재자에 연결할 수 있습니다.</block>
-  <block id="7f4fa61d4e9b9b925c8fb71469e17d9d" category="paragraph">MetroCluster 구성에서 중재자를 제거합니다</block>
   <block id="90e2fb7737ff30cfb4976eadc47866a4" category="list-text">중재자 제거 * 를 선택합니다.</block>
   <block id="08c3fe5d52a59ab36d7b3b7acab670d1" category="list-text">관리자 사용자 이름과 암호를 입력한 다음 * 제거 * 를 클릭합니다.</block>
-  <block id="7f4010553b429e7c90d3b1f0da9fa64b" category="paragraph">중재자의 상태를 점검합니다</block>
   <block id="88696f657e6e364490e66c4462936660" category="inline-link-macro">MetroCluster 구성의 상태를 확인합니다</block>
   <block id="b01e706bfb46755bbdbe42d170a1b23a" category="paragraph">에서 System Manager의 특정 단계를 <block ref="1dc6f14de17f840d44d583754a4c8527" category="inline-link-macro-rx"></block>수행합니다.</block>
   <block id="d643e31d547d643afdddd05a8a4f7112" category="paragraph">스위치오버 및 스위치백을 수행합니다</block>
@@ -13759,7 +13651,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4e04b2ebfeef2f344cfa9299a14a7f15" category="sidebar">MetroCluster를 사용한 데이터 보호</block>
   <block id="eb2ce2e6e8dd207e0722c727b11bf523" category="sidebar">CLI를 사용하여 MetroCluster 소프트웨어를 구성합니다</block>
   <block id="ae58261cc60a8a566f51001fa9647cc8" category="sidebar">System Manager를 사용하여 MetroCluster 소프트웨어를 구성합니다</block>
-  <block id="7dbb00295563db0482d1cd647c85ce79" category="sidebar">시스템 관리자로 ONTAP 중재자를 관리합니다</block>
   <block id="08df7de62062ac541a6aa573389a0bff" category="sidebar">MetroCluster 구성의 상태를 확인합니다</block>
   <block id="bcaee96b0ab793907da56767503991e2" category="admonition">MetroCluster IP 및 연결된 스위치 포트는 MetroCluster IP 인터페이스를 생성할 때까지 온라인 상태로 전환되지 않습니다.</block>
   <block id="6db27f68adde7b6578b513891108402f" category="paragraph">BES-53248을 참조하십시오</block>
@@ -13926,7 +13817,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a1909236f08f260f2b52aebf539344be" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_1 - new에 대한 값을 설정합니다.</block>
   <block id="a0436481bda3531d4a5eda5dac0e5608" category="paragraph">다음 예에서는 모든 MetroCluster IP DR 연결에 기본 VLAN을 사용하여 node_B_2-new에 대한 값을 설정합니다.</block>
   <block id="1a5991cd222add52b1f5aa51350d470e" category="list-title">공유 MetroCluster/HA 포트를 사용하는 시스템입니다</block>
-  <block id="eabf799ca909dc7fa9808c3abb476773" category="paragraph">메시지가 나타나면 인증 암호를 입력합니다.</block>
   <block id="8c62b33499e87d946c3be674c109e802" category="inline-link-macro">8노드 MetroCluster IP 구성으로 확장</block>
   <block id="d3f54bf5e1d7bcb93c8d615f71713d7f" category="paragraph">공유 스토리지 MetroCluster 스위치를 사용하는 경우 4노드 MetroCluster IP 구성으로만 전환할 수 있습니다. 공유 스토리지 MetroCluster 스위치를 사용하여 8노드 MetroCluster IP 구성으로 전환하는 것은 지원되지 않습니다. 4노드 MetroCluster IP 구성으로 전환을 완료한 후에는 다음을 수행할 수 <block ref="6dee49609367b51155e32a3a9526bace" category="inline-link-macro-rx"></block>있습니다.</block>
   <block id="2e6fac9e7be327118126470b28ac80e9" category="paragraph">플랫폼 모델 및 스위치 지원에 대한 자세한 내용은 을<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> 참조하십시오.</block>
@@ -14045,7 +13935,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c0d421f4948fca7693af31b81667650d" category="list-text">이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.<block ref="fdc81b8422a2d3a4dc8579b364ffd7ac" category="inline-link-macro-rx"></block></block>
   <block id="9708813a6edf75a072848cc8c19d1d0b" category="inline-link-macro">MetroCluster 구성 추가</block>
   <block id="1452de87b0c5b157dc8a7594223b5265" category="paragraph"><block ref="9b8797650089db2aa56d22b65e4ec45b" category="inline-link-macro-rx"></block>..</block>
-  <block id="448025dd8ef817882b16f81c3c2c401f" category="paragraph"><block ref="65a4078ac1b82a84ce7a38a387b8b31c" category="inline-link-macro-rx"></block>..</block>
   <block id="337d2ccc4953efb0209e4bf2012ca1be" category="summary">컨트롤러 업그레이드를 수행하기 전에 장치에서 콘솔 로깅을 활성화합니다.</block>
   <block id="ec75a12b665b34d0cdc8d12746fc8cfa" category="doc">MetroCluster IP 컨트롤러를 업그레이드하기 전에 콘솔 로깅을 사용하도록 설정합니다</block>
   <block id="f31a964269837fa383f7baad3584db47" category="inline-link-macro">필요한 bootarg 설정(9.15.1 이상 버전에서 도입된 시스템으로의 업그레이드용)</block>
@@ -14235,8 +14124,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c458b5225672f84c61d5b9931863ae60" category="paragraph">컨트롤러 업그레이드를 준비하려면 이전 플랫폼 모델과 새로운 플랫폼 모델에 따라 스위치 참조 구성 파일(RCF)을 업그레이드해야 할 수 있습니다. 그런 다음 시스템 사전 점검을 수행하고 구성 정보를 수집하며 기존 모니터링 소프트웨어를 제거합니다.</block>
   <block id="0c21b75966b293902f32e19c44cfee40" category="list-text">스위치 RCF 구성이 최소 버전에 없습니다.</block>
   <block id="cbde96365d4f8077bc47cc3245bf5730" category="section-title">시스템 사전 점검을 수행합니다</block>
-  <block id="b5fe45c4891c6d19896e92fee5883a19" category="inline-link-macro">ONTAP 중재자 서비스를 다시 구성합니다</block>
-  <block id="be523ee24c95ff3261d845514671c9b1" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 검사가 실패하거나 업그레이드를 진행하지 않기로 선택한 경우 수동으로 수행해야 <block ref="059689c27028be05419054623185eb12" category="inline-link-macro-rx"></block>합니다.</block>
   <block id="2592dc8685229c73a77e91741c837a63" category="paragraph">자세한 내용은 를 참조하십시오<block ref="8d2708bcc3f1eaf7281ec3a4227ab734" category="inline-link-rx"></block>.</block>
   <block id="0db7751284ee845ba2b1c67a8d8704db" category="section-title">Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다</block>
   <block id="0cd4dc9ba4eb47708afdb2049d98c13a" category="paragraph">업그레이드를 시작하기 전에 Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다.</block>
@@ -14294,8 +14181,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="17c2940e7b2cfcc2faa4d1ef00e56d9e" category="sidebar">구성을 다시 전환합니다</block>
   <block id="11174a5afd588b4b0362df983b5f76c6" category="sidebar">스위치백 및 스위치백을 사용하는 MetroCluster IP의 컨트롤러(AFF A700에서 AFF A900로, FAS9000에서 FAS9500로) 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="9154ca816ab69e291b499f5a2579f66c" category="sidebar">스위치백 및 스위치백을 사용하는 MetroCluster FC 구성에서 컨트롤러(AFF A700를 AFF A900로, FAS9000에서 FAS9500로) 업그레이드(ONTAP 9.10.1 이상)</block>
-  <block id="cb037476ec4486d51b86d5dbeede8008" category="inline-link-macro">로그 수집을 구성합니다</block>
-  <block id="661221d64894eb71f90ac5ef75331837" category="paragraph">필요한 경우 의 단계를 <block ref="d3ee677e2efae042d4f3199a44815074" category="inline-link-macro-rx"></block>따릅니다.</block>
   <block id="3931310703263c726d52a1768504781f" category="list-text">의 Brocade 절차에 따라 새 스위치를 <block ref="8891b6de7b2070c584bdeb67b522b51b" category="inline-link-macro-rx"></block>구성합니다.</block>
   <block id="a01a953cf57a4a3591be7c4dd9dd14fa" category="list-text">ISL 암호화를 활성화하려면 을 <block ref="fb6e086ddbfd6d800d2c601996554df4" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="180e0613653267779e5c48b1089eec2b" category="paragraph">이니시에이터 포트, FC-VI 포트 또는 ISL을 연결하는 데 사용되지 않는 포트를 재구성하여 스토리지 포트 역할을 할 수 있습니다. 그러나 지원되는 RCF를 사용하는 경우 그에 따라 조닝을 변경해야 합니다.</block>
@@ -14359,7 +14244,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="70de6eed617bf2598c428ab602bacd20" category="section-title">계획되지 않은 전환 수행(ONTAP 9.8 이상)</block>
   <block id="2441e03051d41aa2f6f9d9e39c577a3e" category="section-title">스위치백 수행(ONTAP 9.8 이상)</block>
   <block id="2a6e3f78c9b73af2855a7bc5191bf5b1" category="list-text">로컬 클러스터에서 ONTAP 9.8 이상으로 System Manager에 로그인합니다.</block>
-  <block id="22049fef22b0ddad50caf9ded819a4f1" category="paragraph"><block ref="22049fef22b0ddad50caf9ded819a4f1" category="inline-link-macro-rx"></block></block>
   <block id="8210c1e569b4a7f0d685a838881f7f66" category="cell">AFF 및 ASA 시스템</block>
   <block id="d5d4923aa83e46af2152de920946ba41" category="cell">FAS 시스템</block>
   <block id="fa8ce860967d0ec751385e3e150d223a" category="list-text">이전 컨트롤러에서 MetroCluster 인터페이스의 IP 주소를 확인합니다.</block>
@@ -14699,7 +14583,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b33459fffe46ec3b9d80f18bbf0ca86f" category="paragraph"><block ref="b33459fffe46ec3b9d80f18bbf0ca86f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9e37fc850a66f0dca0578ede62cb8799" category="paragraph">AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.</block>
   <block id="de3a07c0dc84d4fdfe71adee21062ff1" category="inline-image-macro">에서는 그룹 2 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다</block>
-  <block id="f1b4dd0636035b92daabcb6740a8afb2" category="paragraph"><block ref="f1b4dd0636035b92daabcb6740a8afb2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9f6b95a9493d80d4878ea6a3d8899475" category="paragraph">다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다. 테이블은 두 그룹으로 나뉩니다.</block>
   <block id="76677d2a7baa40ca594e96f3789575f2" category="list-text">* 그룹 1 * 은 AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF C30, AFF A400 A30, AFF A250, AFF C400, AFF A320, FAS8300, AFF A300, AFF 및 FAS8700 시스템의 조합을 보여줍니다.</block>
   <block id="507731d894d9ee976f7066af87b9f8dd" category="list-text">* 그룹 2 * 는 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, FAS9500, AFF A900, AFF, AFF A70, AFF C800, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템의 조합을 보여줍니다.</block>
@@ -14718,8 +14601,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5667d434150380e4826a9c5749e3611d" category="cell">기타 모든 지원되는 업그레이드는 AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드됩니다</block>
   <block id="1f33c4b21d6c848bec5712e27807c50a" category="paragraph">이 작업은 * AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드할 때만 필요합니다.</block>
   <block id="63856cfb46890240aad0d97a958b298b" category="paragraph">다음 표는 두 그룹으로 나뉘어 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
-  <block id="c21a199bc091a4db6d90366971734cf9" category="paragraph"><block ref="c21a199bc091a4db6d90366971734cf9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4d4e0d3e34b6b8a05aa28d2f8e68fab4" category="paragraph"><block ref="4d4e0d3e34b6b8a05aa28d2f8e68fab4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e94f3a81af196da788fa0f158f9d57fc" category="sidebar">Active IQ Unified Manager 및 System Manager를 사용하여 추가 구성 및 모니터링을 수행하는 방법에 대해 알아보십시오</block>
   <block id="5c1f1ec5000a0efcdda7a9cf624dafe7" category="paragraph">ONTAP 9.15.1 이상에 도입된 시스템으로 컨트롤러를 업그레이드하려면 업그레이드를 시작하기 전에 이전 컨트롤러에 부트아그를 설정해야 합니다.</block>
   <block id="d7aa339b18c7637dfafa2ace54386b6c" category="admonition">업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에 필요한 bootarg를 설정해야 합니다.</block>
@@ -14752,4 +14633,267 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="47c5dc57c727f22af1ac884b3169ca06" category="paragraph">8노드 MetroCluster 구성 지원</block>
   <block id="61c5b898fb73fa93fc5e839741da576e" category="paragraph">영구 8노드 클러스터는 IP 및 패브릭 연결 MetroCluster 구성으로 지원됩니다.</block>
   <block id="0f58a32a1bffeb9bb247bbf5ce1a2f3f" category="paragraph"><block ref="0f58a32a1bffeb9bb247bbf5ce1a2f3f" category="inline-link-rx"></block></block>
+  <block id="62e327d2b6ddff400e7d504d270e8f37" category="paragraph"><block ref="62e327d2b6ddff400e7d504d270e8f37" category="inline-link-macro-rx"></block></block>
+  <block id="97c5969afb75d5f5fcf94bd41d9aa879" category="list-text">MetroCluster IP 구성을 위한 모범 사례.</block>
+  <block id="f14613b83e9dfb7ecf4d15a3e8d4ce71" category="section-title">ONTAP Mediator 재구성(MetroCluster IP 구성)</block>
+  <block id="16b859a14f691774ca3d8870b4291e5a" category="paragraph">ONTAP Mediator로 구성된 MetroCluster IP 구성이 있는 경우 ONTAP Mediator와의 연결을 제거하고 다시 구성해야 합니다.</block>
+  <block id="d9378f13dfa9cc55384c198d6ed26792" category="list-text">ONTAP Mediator에 대한 IP 주소, 사용자 이름 및 비밀번호가 있어야 합니다.</block>
+  <block id="4909f94e68644f4b8929d502b5ecffad" category="list-text">ONTAP Mediator는 Linux 호스트에서 구성되고 작동해야 합니다.</block>
+  <block id="5a48f707e19c36416ef6eff0f5d83d11" category="list-text">ONTAP Mediator를 사용하는 MetroCluster IP 구성의 경우 ONTAP Mediator가 작동 중인지 확인하세요.</block>
+  <block id="7f35eaed1f76b042a28d0b2d509e2d06" category="list-text">ONTAP Mediator를 사용하는 MetroCluster IP 구성의 경우 ONTAP Mediator의 IP 주소를 가져옵니다.</block>
+  <block id="39c789871bbddfdfff37230e0c6aa461" category="admonition">EngineID의 경우 *ENTER*를 눌러 기본값을 지정합니다.</block>
+  <block id="0fc80f14ab8b45ef10e0e44892619d77" category="doc">ONTAP Mediator가 자동 계획되지 않은 전환을 지원하는 방식</block>
+  <block id="1d3879377158a3eb01f004df2464ce87" category="paragraph">ONTAP Mediator는 MetroCluster IP 노드의 상태 정보를 저장하는 사서함 LUN을 제공합니다. 이 LUN은 MetroCluster 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 ONTAP Mediator와 함께 배치됩니다. MetroCluster IP 노드는 사서함 정보를 사용하여 DR(재해 복구) 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO(중재자 지원 계획되지 않은 전환)를 구현할 수 있습니다.</block>
+  <block id="2d65375dfa4df44be16a94af9f9abf58" category="list-text">*ONTAP Mediator(ONTAP 9.7 이상)를 사용한 MetroCluster IP 구성*</block>
+  <block id="b87375524e9177103b13d71483ba0693" category="summary">ONTAP 9.7부터 ONTAP Mediator는 상태 정보에 대한 물리적으로 분리된 저장소를 제공함으로써 MetroCluster IP 구성이 계획되지 않은 자동 전환을 수행하도록 지원할 수 있습니다.</block>
+  <block id="dfcddace895e6d15eaa29a365e239546" category="doc">ONTAP Mediator 설치 준비</block>
+  <block id="a02702c70aea42098864f08e7416a2d3" category="list-text">Linux 버전을 업데이트할 계획이라면 ONTAP Mediator의 최신 버전을 설치하기 전에 업데이트하세요.</block>
+  <block id="c53d5657445f71b92e34d86103a86f85" category="list-text">ONTAP Mediator와 MetroCluster Tiebreaker 소프트웨어는 동일한 MetroCluster 구성과 함께 사용할 수 없습니다.</block>
+  <block id="059b37c83fb6387899a2deb16d02458f" category="list-text">ONTAP Mediator는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.</block>
+  <block id="857725e43c3ed86c03193f33f6382417" category="list-text">ONTAP Mediator는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
+  <block id="c9ffad835642fcae631d9df1be00fc38" category="section-title">MetroCluster 구성에서 ONTAP Mediator를 사용하기 위한 네트워크 요구 사항</block>
+  <block id="4f7415d27a43620353acfcd34858e996" category="paragraph">MetroCluster 구성에 ONTAP Mediator를 설치하려면 해당 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.</block>
+  <block id="f96926f4c01d2573af8b25445cc69961" category="paragraph">ONTAP Mediator와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.</block>
+  <block id="3e7704befa86eb1c7abc5636dc751c2d" category="section-title">MetroCluster 구성에서 ONTAP Mediator에 대한 호스트 요구 사항</block>
+  <block id="25b9f376929fe7dbe0cb4b7eaa33fd68" category="section-title">MetroCluster 구성에서 ONTAP Mediator 업그레이드를 위한 지침</block>
+  <block id="df091e4083ea919fc3a0a8939d1edf09" category="paragraph">ONTAP Mediator를 업그레이드하는 경우 Linux 버전 요구 사항을 충족해야 하며 업그레이드 지침을 따라야 합니다.</block>
+  <block id="2a3e7adab0cb4c934f05558fd4b11142" category="list-text">ONTAP Mediator는 바로 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
+  <block id="931e10d7f833f6006078c296b8f49e42" category="inline-link-macro">ONTAP Mediator 설치 또는 업그레이드</block>
+  <block id="e4fc8483908a1fd217bb07557b043e20" category="paragraph"><block ref="e4fc8483908a1fd217bb07557b043e20" category="inline-link-macro-rx"></block></block>
+  <block id="c2f5dea80e3ceaa485bfe3b7ffaf114f" category="paragraph">*참고:* e5a 및 e7a 포트는 클러스터 간 LIF에만 사용할 수 있습니다. 이 포트는 데이터 LIF에 사용할 수 없습니다.</block>
+  <block id="dfcad5a3f6729276e992c858459078cf" category="paragraph">MetroCluster 구성은 RAID-DP, RAID4, RAID-TEC를 지원합니다.</block>
+  <block id="c452f245605b541913c8927f2fb39f4b" category="inline-link-macro">자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항</block>
+  <block id="9648215f493ab7d57f334a1db39291f3" category="admonition">ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다. 자세한 내용은 을 <block ref="b265df9824eecc73bbbf36d6341665a3" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="cbeca2fa89a3ea8f375e96b634c42759" category="doc">MetroCluster IP 스위치에서 SNMPv3 구성</block>
+  <block id="630f606ab1d9cdb74f5fddde24450385" category="paragraph">이 작업은 스위치에서 SNMPv3를 구성하는 일반적인 단계를 보여줍니다. 나열된 일부 스위치 펌웨어 버전은 MetroCluster IP 구성에서 지원되지 않을 수 있습니다.</block>
+  <block id="578f5e3d8693dd5b8f97c29bf9aec80b" category="paragraph">MetroCluster IP 구성에서 지원되는 스위치 펌웨어 버전에 대한 단계를 따라야 합니다 . <block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block> 지원되는 펌웨어 버전을 확인하세요.</block>
+  <block id="1451684986f1c945fdb4e4f2a8b904be" category="list-text">SNMPv3는 ONTAP 9.12.1 이상에서만 지원됩니다.</block>
+  <block id="e43f0bacec59589637fec825db76ae04" category="list-text">ONTAP 9.13.1P12, 9.14.1P9, 9.15.1P5, 9.16.1 및 이후 버전은 다음 두 가지 문제를 해결합니다.</block>
+  <block id="b0dd8ee150ec6ec9cbd4e76f7441983f" category="inline-link-macro">Cisco 스위치의 ONTAP 상태 모니터링의 경우 모니터링을 위해 SNMPv3으로 전환한 후에도 SNMPv2 트래픽이 계속 표시될 수 있습니다.</block>
+  <block id="f51d6ba5c14f0f9f7e1e94040870b36a" category="list-text"><block ref="f51d6ba5c14f0f9f7e1e94040870b36a" category="inline-link-macro-rx"></block></block>
+  <block id="703ad3e359e69f75421f8e8fdf1c4374" category="inline-link-macro">SNMP 장애 발생 시 거짓 양성 스위치 팬 및 전원 경고</block>
+  <block id="972989a7e914db02b9462470b520ed9e" category="list-text"><block ref="972989a7e914db02b9462470b520ed9e" category="inline-link-macro-rx"></block></block>
+  <block id="5fb3828593766d454e79a0dcf52fed9d" category="paragraph">다음 명령은 * Broadcom *, * Cisco * 및 * NVIDIA * 스위치에서 SNMPv3 사용자 이름을 구성하는 데 사용됩니다.</block>
+  <block id="77f3beca20fcd78f77236507e8d9b4af" category="open-title">Broadcom 스위치</block>
+  <block id="89fe808c6ef5fe301085b5abe4406d35" category="paragraph">Broadcom BES-53248 스위치에서 SNMPv3 사용자 이름 네트워크 운영자를 구성합니다.</block>
+  <block id="c59df2c71925eefec8dc03aa685125c8" category="list-text">인증 없음 * 의 경우:</block>
+  <block id="4c58055d9b16c25c354c591188cb27ae" category="list-text">MD5/SHA 인증 * 의 경우:</block>
+  <block id="b00500f501ccb5c8ab2313d810b6ff29" category="list-text">AES/DES 암호화를 사용하는 * MD5/SHA 인증 *:</block>
+  <block id="ce23d8cb44ce288570eb2dcc49f1f2f7" category="paragraph">다음 명령을 실행하면 ONTAP 측에서 SNMPv3 사용자 이름이 구성됩니다.</block>
+  <block id="760c6e9b6b587e6f977e0e7116b69f45" category="paragraph">다음 명령을 실행하면 CSHM에서 SNMPv3 사용자 이름이 설정됩니다.</block>
+  <block id="d3280214c17ea96ca13a6e79765d0b3c" category="list-text">인증 및 암호화를 사용하도록 스위치에서 SNMPv3 사용자를 설정합니다.</block>
+  <block id="8379e83fc1ad68bfb1ad877f1b7fda6b" category="list-text">ONTAP 측에서 SNMPv3 사용자를 설정합니다.</block>
+  <block id="6b9f542dd155c40aa5e4484b5ff61711" category="list-text">새로운 SNMPv3 사용자와 함께 모니터링하도록 CSHM을 구성합니다.</block>
+  <block id="f1d85c8d2abe8fba947527035ed0f381" category="list-text">CSHM 폴링 기간을 기다린 후 이더넷 스위치의 일련 번호가 채워졌는지 확인하세요.</block>
+  <block id="0fdfed50bdfb7a964741d7f6016dd332" category="paragraph">Cisco 9336C-FX2 스위치에서 SNMPv3 사용자 이름 SNMPv3_user 구성:</block>
+  <block id="d4d693d9dd779d0daf149c2e448b60b2" category="list-text">새로 생성된 SNMPv3 사용자로 쿼리할 일련 번호가 CSHM 폴링 기간이 완료된 후 이전 단계에서 자세히 설명한 일련 번호와 동일한지 확인합니다.</block>
+  <block id="05918726f836c344025fecbcf0275f1b" category="open-title">엔비디아 - CL 5.4.0</block>
+  <block id="c19095c0c8945d1d4e4e73ec7a11354c" category="paragraph">CLI 5.4.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
+  <block id="cd12738ab621b27db86ca1b02e9d118c" category="open-title">엔비디아 - CL 5.11.0</block>
+  <block id="1d478fc1ce1613a790d5d77707c188f6" category="paragraph">CLI 5.11.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
+  <block id="8ec049d1fe155ff0c4df415c3d4691e2" category="doc">MetroCluster IP 구성에서 스위치 상태 모니터링 개요</block>
+  <block id="8ae4eeaa7baed19106cc30ea02483c5e" category="paragraph">이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다.</block>
+  <block id="4ae61f4d1ec2f0efafd8ee4274e49ccf" category="section-title">MetroCluster IP 구성에서 CSHM을 구성하기 위한 중요 참고 사항</block>
+  <block id="b38569be2d36a20e8902840c1ea976fe" category="paragraph">이 섹션에서는 Cisco, Broadcom 및 NVIDIA SN2100 스위치에서 SNMPv3를 구성하고 로그를 수집하는 일반적인 단계를 설명합니다. MetroCluster IP 구성에서 지원되는 스위치 펌웨어 버전에 대한 단계를 따라야 합니다 . <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block> 지원되는 펌웨어 버전을 확인하세요.</block>
+  <block id="f75a60c3cd68bf003c2bb72becccc57d" category="paragraph">MetroCluster 구성에서는 로컬 클러스터 스위치에서만 상태 모니터링을 구성합니다.</block>
+  <block id="84a426c437e5bc752203a8e9a402890b" category="paragraph">Broadcom 및 Cisco 스위치에서 로그를 수집하려면 로그 수집이 활성화된 각 클러스터에 대해 스위치에 새 사용자를 생성해야 합니다. MetroCluster 구성에서는 MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4 모두 스위치에 별도의 사용자를 구성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.</block>
+  <block id="feed060dbea766c7d4e1b26f14b08e82" category="paragraph">CSHM을 구성하기 전에 불필요한 ISL 경고를 방지하기 위해 사용하지 않는 ISL을 비활성화해야 합니다.</block>
+  <block id="61ef80ea8d9e92d0a652bb75148884d3" category="inline-link-macro">ONTAP Mediator 구성</block>
+  <block id="05381b1a498b05222c00536e559ed905" category="list-text">ONTAP Mediator를 구성하려면 확인란을 클릭하세요. 을 <block ref="c84fb84e87e58e2bf063235733828347" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="ca1ebe89fe0d391a3c3924e2b6fa0066" category="summary">대부분의 경우 이더넷 스위치는 ONTAP에 의해 자동으로 검색되고 CSHM에 의해 모니터링됩니다. 스위치에 적용된 RCF(Reference Configuration File)는 CDP(Cisco Discovery Protocol) 및/또는 LLDP(Link Layer Discovery Protocol)를 활성화합니다.</block>
+  <block id="ea9baff86b324b08aa0d9f60e5d09833" category="doc">MetroCluster IP 구성에서 이더넷 스위치 모니터링 관리</block>
+  <block id="a1c2fc220383716c158399e227f0b34f" category="paragraph">대부분의 경우 이더넷 스위치는 ONTAP에 의해 자동으로 검색되고 CSHM에 의해 모니터링됩니다. 스위치에 적용된 RCF(Reference Configuration File)는 CDP(Cisco Discovery Protocol) 및/또는 LLDP(Link Layer Discovery Protocol)를 활성화합니다. 그러나 검색되지 않은 스위치를 수동으로 추가하거나 더 이상 사용하지 않는 스위치를 제거해야 할 수도 있습니다. 또한 유지 보수 중과 같이 구성에 스위치를 유지하는 동안 활성 모니터링을 중지할 수 있습니다.</block>
+  <block id="2b77bb88cf2794536ac9c658ce053c6b" category="section-title">ONTAP에서 모니터링할 수 있도록 스위치 항목을 만듭니다</block>
+  <block id="4aa02798c2feea1f87e6fb5301e10d30" category="paragraph">명령을 사용하여<block ref="e59cde6e921a1b23eb9bf8c1c9068aca" prefix=" " category="inline-code"></block> 지정된 이더넷 스위치에 대한 모니터링을 수동으로 구성하고 사용하도록 설정합니다. 이 기능은 ONTAP가 스위치를 자동으로 추가하지 않거나 이전에 스위치를 제거했다가 다시 추가하려는 경우에 유용합니다.</block>
+  <block id="82b694a75e07a035b8cd3b7aae86fdb8" category="paragraph">일반적인 예는 IP 주소가 1.2.3.4이고 SNMPv2c 자격 증명이 * cshm1! * 로 설정된 [DeviceName]이라는 스위치를 추가하는 것입니다. 스토리지 스위치를 구성하는 경우 대신<block ref="0f3e90baa25250f9896e5ad67dd9d1f6" prefix=" " category="inline-code"></block> 를<block ref="0fa5a8d20ad4f199ce4bb17e333f0a4a" prefix=" " category="inline-code"></block> 사용합니다.</block>
+  <block id="9e2f728fd093bf40641895bd7ab81ffc" category="section-title">스위치를 삭제하지 않고 모니터링을 비활성화합니다</block>
+  <block id="71ea82a6a71bd6b5e0857ef4469e6824" category="paragraph">특정 스위치에 대한 모니터링을 일시 중지하거나 중지하지만 향후 모니터링을 위해 유지하려는 경우<block ref="a95032ab49a61ccce65cbef4bf991ebd" prefix=" " category="inline-code"></block> 매개 변수를 삭제하는 대신 매개 변수를 수정합니다.</block>
+  <block id="254dbd09c58880fcc321f2394e42803d" category="paragraph">이를 통해 새 경고를 생성하거나 다시 검색하지 않고도 스위치 세부 정보와 구성을 유지할 수 있습니다.</block>
+  <block id="5c87ebc68b8545e621c4293650f66e8e" category="section-title">더 이상 필요하지 않은 스위치를 제거합니다</block>
+  <block id="c68359f3f21922e686e683f2b1fb2d69" category="paragraph"><block ref="72fd318795f4bf274ff150d0a09106e1" prefix=" " category="inline-code"></block>연결이 끊겼거나 더 이상 필요하지 않은 스위치를 삭제하는 데 사용합니다.</block>
+  <block id="0dcda35c85e27aa3498fa4ab30cb7dae" category="paragraph">기본적으로 이 명령은 ONTAP가 현재 CDP 또는 LLDP를 통해 스위치를 감지하지 못하는 경우에만 성공합니다. 검색된 스위치를 제거하려면<block ref="02e554f8f135bc49b80e8fc45a341757" prefix=" " category="inline-code"></block> 매개 변수를 사용합니다.</block>
+  <block id="6625e054d05a0ea2ca1ae3049f75717e" category="paragraph">를 사용하는 경우<block ref="02e554f8f135bc49b80e8fc45a341757" prefix=" " category="inline-code"></block> ONTAP에서 스위치를 다시 감지하면 스위치가 자동으로 다시 추가될 수 있습니다.</block>
+  <block id="4e4facc560c88d40d47ce2b1369d5552" category="doc">MetroCluster IP 스위치에서 로그 수집 구성</block>
+  <block id="d5a5c9619599da12d87af6daeab1ece6" category="paragraph">MetroCluster IP 구성에서는 디버깅 목적으로 스위치 로그를 수집하도록 로그 수집을 구성할 수 있습니다.</block>
+  <block id="7c51c84110459cf460a444094be133c4" category="admonition">Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클러스터에 대해 새로운 사용자가 필요합니다. 예를 들어, MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4는 모두 스위치에 별도의 사용자를 구성해야 합니다. 동일한 사용자에 대해 여러 개의 SSH 키를 사용하는 것은 지원되지 않습니다.</block>
+  <block id="8ac20e3719b6b58e94e5a4385e87b52e" category="paragraph">이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다. 이 절차는 수집을 설정하고, 자세한 * 지원 * 로그를 요청하며, AutoSupport에서 수집하는 * 주기적 * 데이터의 시간별 수집을 활성화하는 과정을 안내합니다.</block>
+  <block id="2ded3ff3862adfc6f54d2a2f3ebf1147" category="paragraph">* 참고: * FIPS 모드를 활성화한 경우 다음을 완료해야 합니다.</block>
+  <block id="81f0d5b127adfd87f50ce10bc85e1e65" category="list-text">공급업체의 지침에 따라 스위치에서 SSH 키를 다시 생성합니다.</block>
+  <block id="a60a00967db7342947b326a8f7618f52" category="list-text">를 사용하여 ONTAP에서 SSH 키를 재생성합니다<block ref="c079360670e0f4f9441a54ac1d262788" prefix=" " category="inline-code"></block></block>
+  <block id="fe85427bc017f31f0f2b913e65e8d888" category="list-text"><block ref="36ac3c1f3bae8142b5d110fb906ba03e" prefix=" " category="inline-code"></block>명령을 사용하여 로그 수집 설정 루틴을 다시 실행하십시오</block>
+  <block id="ca243f374acfb56a77236e0d30935f7f" category="list-text">사용자가 스위치 명령에 액세스할 수 있어야<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> 합니다. 이러한 사용자를 사용할 수 없는 경우 새 사용자를 만들고 사용자에게 필요한 권한을 부여합니다.</block>
+  <block id="8d36506446d5ad8477c75d9150e6528f" category="list-text">스위치에 대해 스위치 상태 모니터링을 활성화해야 합니다. 이를 확인하려면 다음을 확인하세요. <block ref="83bb5774e6e4dc96959b12bfa4334f18" prefix=" " category="inline-code"></block> 필드는 출력에서 *true*로 설정됩니다. <block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="40b03f9635c63b20aade0ff8145eafb8" category="list-text">Broadcom 및 Cisco 스위치를 사용한 로그 수집:</block>
+  <block id="89f1dd995a5c07ea1e13abc5993d9d59" category="list-text">사용자에게 네트워크 관리자 Privileges가 있어야 합니다.</block>
+  <block id="60f743043272b873831b17c5e7290445" category="list-text">로그 수집이 활성화된 상태에서 각 클러스터 설정에 대해 스위치에 새 사용자를 생성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.</block>
+  <block id="c1433b541d8d99faed86a93460cb0bad" category="list-text">NVIDIA 스위치를 사용한 지원 로그 수집의 경우<block ref="c85737d6a0d20328583b59ea7320a5ef" prefix=" " category="inline-code"></block> 암호를 제공하지 않고 명령을 실행할 수 있는 _user_ 로그 수집이 허용되어야 합니다. 이 사용을 허용하려면 다음 명령을 실행합니다.</block>
+  <block id="a0379ee208b1ca86b0ce11e60c0e73eb" category="paragraph"><block ref="83e3f80a08612b0113ac48e3b9a3432e" prefix="" category="inline-code"></block></block>
+  <block id="4b96de8aec25594d2021f91d86aa38cb" category="open-title">ONTAP 9.15.1 이상</block>
+  <block id="09a5c8e72e479c23dfcdb0045312203a" category="list-text">로그 수집을 설정하려면 각 스위치에 대해 다음 명령을 실행합니다. 로그 수집을 위해 스위치 이름, 사용자 이름 및 암호를 입력하라는 메시지가 표시됩니다.</block>
+  <block id="8922abf783ebcd2485e871d83f810001" category="paragraph">*참고:* 사용자 지정 프롬프트에 *y*로 응답하는 경우 사용자에게 다음에 설명된 대로 필요한 권한이 있는지 확인하십시오. <block ref="c36e4b8d8c2789dd7986c4af4bd3d942" category="inline-xref-macro-rx"></block> .</block>
+  <block id="0af41f793380f36203c150e88680ae0d" category="admonition">CL 5.11.1의 경우, 사용자 *cumulus*를 생성하고 다음 프롬프트에 *y*로 응답합니다. 로그 수집에 admin 이외의 사용자를 지정하시겠습니까? {y|n}: *y*</block>
+  <block id="9516895d06a737348108b47f990aebff" category="list-text">[[step2]]주기적 로그 수집 활성화:</block>
+  <block id="679c69dadfb9ebf6a73c6cb1e48f610e" category="list-text">지원 로그 수집 요청:</block>
+  <block id="9c7ca9d82e20f27a701fcb23071651ef" category="list-text">활성화, 상태 메시지, 주기적 수집의 이전 타임스탬프 및 파일 이름, 요청 상태, 상태 메시지, 지원 수집의 이전 타임스탬프 및 파일 이름을 포함한 로그 수집의 모든 세부 정보를 보려면 다음을 사용합니다.</block>
+  <block id="098a6be90d7d0f41999537981c29585d" category="open-title">ONTAP 9.14.1 이하</block>
+  <block id="921a23933bb7a508423ca6a0ad00bfd3" category="paragraph">*참고:* 사용자 사양 프롬프트에 응답하는 경우<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, 사용자가 에 설명된 대로 필요한 권한을 가지고 <block ref="c36e4b8d8c2789dd7986c4af4bd3d942" category="inline-xref-macro-rx"></block>있는지 확인하십시오.</block>
+  <block id="86433b1c6cd2dfe18ff408f3c045d2d1" category="list-text">[[step2]] 지원 로그 수집을 요청하고 주기적 수집을 활성화하려면 다음 명령을 실행하세요. 이렇게 하면 상세 로그와 시간별 데이터 수집이라는 두 가지 유형의 로그 수집이 시작됩니다.<block ref="db5eb84117d06047c97c9a0191b5fffe" prefix=" " category="inline-code"></block><block ref="cdcc32a064503184053bd2018d1c0e7e" prefix=" " category="inline-code"></block></block>
+  <block id="aae263170b5a7f23d3045f8a2b09091f" category="paragraph">10분간 기다린 후 로그 수집이 완료되었는지 확인합니다.</block>
+  <block id="da28641e557d1527788801659dc81fd5" category="inline-link-macro">로그 수집 문제를 해결합니다</block>
+  <block id="b55b60679cb3be6b758030b014704077" category="admonition">로그 수집 기능에 의해 오류 상태가 보고되는 경우(의 출력에 표시됨<block ref="88354d538ba5d4e1746193ec5949ab4b" prefix=" " category="inline-code"></block>) 자세한 내용은 을 참조하십시오. <block ref="59a5019a80938ff66a962755304e5efc" category="inline-link-macro-rx"></block></block>
+  <block id="0d967557c644a46919d28917c9e20c81" category="doc">MetroCluster IP 구성에서 이더넷 스위치 모니터링 확인</block>
+  <block id="7d446387be9f1d7a1583327a693c81a1" category="paragraph">CSHM(이더넷 스위치 상태 모니터)은 검색한 스위치를 자동으로 모니터링하려고 하지만, 스위치가 올바르게 구성되지 않은 경우 모니터링이 자동으로 수행되지 않을 수 있습니다. 스위치를 모니터링하도록 상태 모니터가 올바르게 구성되어 있는지 확인해야 합니다.</block>
+  <block id="25784bbce13fd0c509a0fd1c5f248f3d" category="section-title">연결된 이더넷 스위치의 모니터링을 확인합니다</block>
+  <block id="570122e6553f3a17e7188a6ca23d70d9" category="paragraph">연결된 이더넷 스위치가 모니터링되고 있는지 확인하려면 다음을 실행합니다.</block>
+  <block id="7eaabdc7d2364e9a43feeb5cf07593dc" category="paragraph">열에 * 기타 * 가 표시되거나<block ref="7a19db03ac26c54be196969b77d657a6" prefix=" " category="inline-code"></block> 필드에 * 거짓 * 이 표시되면<block ref="a559b87068921eec05086ce5485e9784" prefix=" " category="inline-code"></block> ONTAP에서 스위치를 모니터링할 수 없습니다. 기타 * 의 값은 일반적으로 ONTAP가 상태 모니터링을 위해 해당 스위치를 지원하지 않음을 나타냅니다.</block>
+  <block id="8d86e89da688f620dafbc70269059388" category="paragraph"><block ref="7a19db03ac26c54be196969b77d657a6" prefix=" " category="inline-code"></block>필드에 지정된 이유로 필드가 * FALSE * 로<block ref="fffcb4d1e12c96b2f571f77ad25878b8" prefix=" " category="inline-code"></block> 설정됩니다.</block>
+  <block id="f9f5c952edf43434e02a625f00102b19" category="inline-link-macro">이더넷 스위치 모니터링을 관리합니다</block>
+  <block id="f6ec6bfa57123a9616038a55e7f332a5" category="paragraph">명령 출력에 스위치가 나열되어 있지 않으면 ONTAP이 해당 스위치를 검색하지 않은 것 같습니다. 스위치의 케이블이 올바르게 연결되었는지 확인합니다. 필요한 경우 스위치를 수동으로 추가할 수 있습니다. 자세한 내용은 을 <block ref="ee7db2a0a5f0654c3c81941bc38adb11" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="ed7061b9b8f8c50684797c64a5576941" category="section-title">펌웨어 및 RCF 버전이 최신 버전인지 확인합니다</block>
+  <block id="43558d02214bf83729998ce237b6cdea" category="inline-link">NetApp 지원 다운로드 페이지</block>
+  <block id="9be0ccf5f4aae992d69ea7f079f6d048" category="paragraph">스위치에서 지원되는 최신 펌웨어를 실행하고 있고 호환되는 참조 구성 파일(RCF)이 적용되었는지 확인합니다. 자세한 내용은 를 <block ref="49046ae6b122d9765935bb9b378618a5" category="inline-link-rx"></block>참조하십시오.</block>
+  <block id="14bb00b56dfdaad98ccaf9d2ff1c1eb5" category="paragraph">기본적으로 상태 모니터는 모니터링을 위해 커뮤니티 문자열 * cshm1! * 와 함께 SNMPv2c를 사용하지만 SNMPv3도 구성할 수 있습니다.</block>
+  <block id="35011d870229aa144aa6a66350d2279e" category="paragraph">기본 SNMPv2c 커뮤니티 문자열을 변경해야 하는 경우 스위치에서 원하는 SNMPv2c 커뮤니티 문자열이 구성되어 있는지 확인하십시오.</block>
+  <block id="2ae26c52de113e0592fc26619e9e73d1" category="inline-link-macro">선택 사항: SNMPv3을 구성합니다</block>
+  <block id="3d8bd273ce46782520a3a188e037f316" category="admonition">SNMPv3을 사용하도록 구성하는 방법에 대한 자세한 내용은 을 <block ref="ec5440e4cc2d261dc76dac84e641c0ab" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="f97512ee27e4fc37982423d301b8b2cd" category="section-title">관리 네트워크 연결을 확인합니다</block>
+  <block id="4c3dc933dd2f14499a5b966f0d0f1242" category="paragraph">스위치의 관리 포트가 관리 네트워크에 연결되어 있는지 확인합니다.</block>
+  <block id="7be780b96e93a50316d019e9c7358c89" category="paragraph">ONTAP에서 SNMP 쿼리 및 로그 수집을 수행하려면 올바른 관리 포트 연결이 필요합니다.</block>
+  <block id="6e86085a8f5bd83a0c4b0ef8d4280d0c" category="inline-link-macro">알림 문제 해결</block>
+  <block id="b51f053f94d5176ca18b8272d64010f0" category="list-text"><block ref="b51f053f94d5176ca18b8272d64010f0" category="inline-link-macro-rx"></block></block>
+  <block id="c2f363b557f11042735dbadbfbd534d3" category="summary">이 절차를 사용하여 NVIDIA SN2100 클러스터 스위치의 클러스터 스위치 상태 모니터링을 위한 해당 구성 파일을 설치할 수 있습니다.</block>
+  <block id="1972298f5ec1d5e6b5fe96dd4ba6f4d3" category="doc">이더넷 스위치 상태 모니터 구성 파일을 설치합니다</block>
+  <block id="5e702c967ba07c588e80787874b7d19d" category="paragraph">NVIDIA 이더넷 스위치에서 이더넷 스위치 상태 모니터링을 구성하려면 다음 절차를 따르세요.</block>
+  <block id="4d6e856387f9dc1d4c04534d7e8abc6b" category="paragraph">이 지침은 NVIDIA X190006-PE 및 X190006-PI 스위치가 제대로 감지되지 않은 경우 적용되며 다음을 실행하여 확인할 수 있습니다. <block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 모델에 *OTHER*가 표시되는지 확인하세요. NVIDIA 스위치 모델을 식별하려면 다음 명령을 사용하여 부품 번호를 찾으세요. <block ref="eca133854d2cdb8697246596d25a5eb3" prefix=" " category="inline-code"></block> NVIDIA CL 5.8 및 이전 버전용 또는 <block ref="28b95eb6cef78e03af3129f8108edf3e" prefix=" " category="inline-code"></block> 이후 버전용.</block>
+  <block id="d63c11f73a289e709f02f89a7fd9bc50" category="paragraph">다음 ONTAP 릴리스에서 NVIDIA CL 5.11.x를 사용할 때 상태 모니터링 및 로그 수집이 의도한 대로 작동하도록 하려면 이 단계를 따르는 것이 좋습니다. 이 단계를 따르지 않아도 상태 모니터링 및 로그 수집이 작동할 수 있지만, 모든 것이 제대로 작동하는지 확인하려면 이 단계를 따르세요.</block>
+  <block id="22ade9a0f286817cb6e7960fb4e222fa" category="list-text">9.10.1P20, 9.11.1P18, 9.12.1P16, 9.13.1P8, 9.14.1, 9.15.1 및 이후 패치 릴리스</block>
+  <block id="294206f940bbd4f3ec7f79996b76c616" category="list-text">ONTAP 클러스터가 작동 중이고 실행 중인지 확인합니다.</block>
+  <block id="486e5bfc1a37635afcdd9af389c406cc" category="list-text">CSHM에서 제공하는 모든 기능을 사용하려면 스위치에서 SSH를 활성화하세요.</block>
+  <block id="0a7c753e8699d579b1dd4105b9e6b566" category="list-text">모든 노드에서 디렉토리를 지웁니다<block ref="8be5dd683a73b3d7c1a85aa778b3c099" prefix=" " category="inline-code"></block>.</block>
+  <block id="ccbc1b6fe0fb2c14a182936d44b7998a" category="list-text">노드 쉘을 입력합니다.</block>
+  <block id="fbae52a4debd6c92af11b0063f9a23d8" category="paragraph"><block ref="ce0584b63a66ddeac8919682fc93ce1a" prefix="" category="inline-code"></block></block>
+  <block id="efe7a477280f5bfdffb85faa6e94d148" category="list-text">고급 권한으로 변경:</block>
+  <block id="04f8c8c881d9c66c4b51ab93a42ab746" category="paragraph"><block ref="37c965129cc09840500d7671b0accef3" prefix="" category="inline-code"></block></block>
+  <block id="771d6c6c56d83746eaa82bd62e11363c" category="list-text">디렉터리의 구성 파일을<block ref="e4b3e6938bc5f3e3c811cf46ae8b7d53" prefix=" " category="inline-code"></block> 나열합니다. 디렉토리가 있고 구성 파일이 포함되어 있으면 파일 이름이 나열됩니다.</block>
+  <block id="6e89d35fb8a737baae7064c5ba2d6485" category="paragraph"><block ref="47f0187f585158fcdf3257a96c5d4bab" prefix="" category="inline-code"></block></block>
+  <block id="cefefc2081d40fa592f23faffcb8f1e0" category="list-text">연결된 스위치 모델에 해당하는 모든 구성 파일을 삭제합니다.</block>
+  <block id="90842b83190886e90bf2403d6e93be1b" category="paragraph">확실하지 않은 경우 위에 나열된 지원 모델에 대한 모든 구성 파일을 제거한 다음 해당 모델에 대한 최신 구성 파일을 다운로드하여 설치합니다.</block>
+  <block id="ff9495347e1ccb9f937f04b4bbdd58bb" category="paragraph"><block ref="529be1cf6940ca38f1fda287a22c9fda" prefix="" category="inline-code"></block></block>
+  <block id="77dab6429e3fe4aca5fa3d7f0cd46d71" category="list-text">삭제된 구성 파일이 더 이상 디렉터리에 없는지 확인합니다.</block>
+  <block id="0cfea6e2910f570cd17c24fb74c90378" category="inline-link">NVIDIA 이더넷 스위치</block>
+  <block id="363c0c7cf08dfd2752b66f1fc2506a0a" category="list-text">해당 ONTAP 릴리스 버전을 기반으로 이더넷 스위치 상태 모니터 구성 zip 파일을 다운로드합니다. 이 파일은 페이지에서 사용할 수<block ref="308b26f7678235b6ac179b42eaa22162" category="inline-link-rx"></block> 있습니다.</block>
+  <block id="68de66680b1bf357acb893d8dfe0f0bc" category="list-text">NVIDIA SN2100 소프트웨어 다운로드 페이지에서 * Nvidia CSHM File * 을 선택합니다.</block>
+  <block id="6b98b47c20b7ca9e9919fa3a77bf7814" category="list-text">주의/읽어야 함 페이지에서 동의할 확인란을 선택합니다.</block>
+  <block id="c36caaf00f9a67804cb39871b93b4fb1" category="list-text">최종 사용자 사용권 계약 페이지에서 동의할 확인란을 선택하고 * Accept &amp; Continue * 를 클릭합니다.</block>
+  <block id="e5e0b87b73538c14eb1223ba2685b479" category="list-text">Nvidia CSHM 파일 - 다운로드 페이지에서 해당 구성 파일을 선택합니다. 다음 파일을 사용할 수 있습니다.</block>
+  <block id="76bde9294ef84452f21b2745228ae290" category="list-text">MSN2100-CB2FC-v1.4.zip</block>
+  <block id="85c07a49f236d7b33a2e8b48d076ed48" category="list-text">MSN2100-CB2RC-v1.4.zip</block>
+  <block id="ae5e87300b042b85bdd2853f386265e7" category="list-text">X190006-PE-v1.4.zip</block>
+  <block id="ab58ebe2dd50e3692c204585184a34f7" category="list-text">X190006-PI-v1.4.zip</block>
+  <block id="9fc9e8ea7a5cdfe68b4528fb16936bf1" category="open-title">ONTAP 9.11.1 ~ 9.14.1</block>
+  <block id="c3a1ef8a44fcace6af948f51ef4d8258" category="list-text">MSN2100-CB2FC_PRIOR_R9.15.1-v1.4.zip</block>
+  <block id="11ef8d241b319efa4a76430a0c6a78dd" category="list-text">MSN2100-CB2RC_PRIOR_R9.15.1-v1.4.zip</block>
+  <block id="0179c8f8dd0b9cba4199d46bd95ddd3b" category="list-text">X190006-PE_PRIOR_9.15.1-v1.4.zip</block>
+  <block id="3dd005cf004a39e1cb3e400094afa4c6" category="list-text">X190006-PI_PRIOR_9.15.1-v1.4.zip</block>
+  <block id="3e5315d19591c6790a6c062127cf9a8e" category="list-text">[[step2]] 해당 zip 파일을 내부 웹 서버에 업로드합니다.</block>
+  <block id="e319ecf1cb942a0710da7d0d525af1db" category="list-text">클러스터의 ONTAP 시스템 중 하나에서 고급 모드 설정에 액세스합니다.</block>
+  <block id="4072831dc74599297a173c0e1d86b538" category="list-text">switch 상태 monitor configure 명령을 실행합니다.</block>
+  <block id="bdfd509ce621aa984c1f0a9cdf92ae88" category="list-text">명령 출력이 ONTAP 버전에 대한 다음 텍스트로 끝나는지 확인합니다.</block>
+  <block id="ff62e28086747c31b6e4bbd897aaaf54" category="paragraph">이더넷 스위치 상태 모니터링이 구성 파일을 설치했습니다.</block>
+  <block id="3f54ec95c3fc7563a38988f9c2a7a823" category="paragraph">shm이 구성 파일을 설치했습니다.</block>
+  <block id="74d14036e96594d67869316b84c6d566" category="paragraph">CSHM 다운로드 패키지가 성공적으로 처리되었습니다.</block>
+  <block id="89c6b3e5f896b8d329ae4e4fe91cc812" category="paragraph">오류가 발생하면 NetApp 지원 팀에 문의하십시오.</block>
+  <block id="a6fd16052b19595c024aa4e5bcb0b366" category="list-text">[[step6]] 다음 단계를 완료하기 전에 를 실행하여 찾은 이더넷 스위치 상태 모니터 폴링 간격을 최대 2배까지 기다립니다<block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix=" " category="inline-code"></block>.</block>
+  <block id="c947c5faccdddd0a9a87be7895f50511" category="list-text">ONTAP 시스템에서 명령을<block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 실행하고 모니터링되는 필드가 * True * 로 설정되어 있고 일련 번호 필드가 * Unknown * 으로 표시되지 않는 상태에서 클러스터 스위치가 검색되는지 확인합니다.</block>
+  <block id="d57382f230671f8cd52f47dc80838934" category="admonition">구성 파일을 적용한 후에도 모델에 * 기타 * 가 계속 표시되면 NetApp 지원에 문의하십시오.</block>
+  <block id="58a19c530e54f6364edd838f35b1830e" category="inline-link-macro">스위치 상태 모니터링을 구성합니다</block>
+  <block id="d47e3b820b4e0ef60cfed3bd03049a46" category="paragraph"><block ref="402ba92b413c133107b7e0b0a0255bc4" category="inline-link-macro-rx"></block>..</block>
+  <block id="39bebc7717e889c1a699f7a132be15d1" category="summary">System Manager를 사용하면 Mediator를 관리하는 작업을 수행할 수 있습니다.</block>
+  <block id="10a30b2f347ad83646f6f7b416a1789f" category="doc">System Manager를 사용하여 ONTAP Mediator 관리</block>
+  <block id="b8766a9191a865e2bcc649bcb60af9b0" category="paragraph">System Manager를 사용하면 ONTAP Mediator를 관리하는 작업을 수행할 수 있습니다.</block>
+  <block id="cdd299b559468613a4234f4cea959b86" category="paragraph">ONTAP Mediator를 관리하려면 다음 작업을 수행하세요.</block>
+  <block id="eabb1e5dafa14c5ff70166177793fa24" category="list-text">ONTAP Mediator에 대한 구성 세부 정보를 입력하세요.</block>
+  <block id="4a0ceb9a29f3d3bad1a2492ea1f4d0ed" category="paragraph">System Manager로 ONTAP Mediator를 구성하는 동안 다음 세부 정보를 입력할 수 있습니다.</block>
+  <block id="74b8f2c7983019e930256dabc972809b" category="list-text">ONTAP Mediator의 IP 주소입니다.</block>
+  <block id="13473e928a938c8e314f2ac9fe84874b" category="admonition">ONTAP Mediator에 접속할 수 있고 두 사이트 모두 "정상" 모드일 때 ONTAP Mediator를 활성화 또는 비활성화할 수 있습니다. MetroCluster 시스템이 정상 상태이면 MAUSO를 활성화 또는 비활성화해도 ONTAP Mediator에 계속 접속할 수 있습니다.</block>
+  <block id="f4cd744e1baeaad2982194e397a1fb70" category="paragraph">MetroCluster 구성에서 ONTAP Mediator 제거</block>
+  <block id="4714b05ec8f683c0cb2e0b88e87b6126" category="paragraph">ONTAP Mediator의 상태를 확인하세요</block>
+  <block id="0d17bee62349f3938bc17d61ce23f7e3" category="summary">ONTAP Mediator는 MetroCluster IP 구성에서 사용하려면 ONTAP 노드에 구성되어야 합니다.</block>
+  <block id="1870c8477ec97f68d37924256a5873cc" category="doc">MetroCluster IP 구성에서 ONTAP Mediator 구성</block>
+  <block id="c9c78db1df5763fa1ed9a33d8364ecd6" category="list-text">ONTAP Mediator는 MetroCluster 사이트 둘 다에서 접근할 수 있는 네트워크 위치에 성공적으로 설치되어야 합니다.</block>
+  <block id="f3a4ed516d3573c05bec448b098ee829" category="list-text">ONTAP Mediator를 실행하는 호스트의 IP 주소가 있어야 합니다.</block>
+  <block id="81526f6b8e9033c7824d444ad8950ae4" category="list-text">ONTAP Mediator에 대한 사용자 이름과 비밀번호가 있어야 합니다.</block>
+  <block id="c69fdc77c5b94d40ff8bd9d1129290c3" category="list-text">ONTAP Mediator를 한 번 설치하면 최대 5개의 MetroCluster IP 구성을 구성할 수 있습니다.</block>
+  <block id="5954e0574dae3d22be232db113f0f328" category="list-text">ONTAP에 ONTAP Mediator 추가:</block>
+  <block id="fffcc6d8d0cf061a4a3bb3e984bed6a4" category="summary">MetroCluster IP 구성에서 ONTAP 중재자를 제거할 수 있습니다.</block>
+  <block id="7f0eed44b544654d8519a5ce7f8a8e69" category="doc">MetroCluster IP 구성에서 ONTAP Mediator 구성 해제</block>
+  <block id="0ca0841611aff3d2fa5059343e27e7fa" category="paragraph">MetroCluster IP 구성에서 ONTAP Mediator의 구성을 해제할 수 있습니다.</block>
+  <block id="b1819878894f9631db397400afc8a1f3" category="paragraph">MetroCluster 사이트 모두에 접근할 수 있는 네트워크 위치에 ONTAP Mediator를 성공적으로 설치하고 구성했어야 합니다.</block>
+  <block id="856c17a21ae1d7e96d1d4e67f8404cd2" category="list-text">다음 명령을 사용하여 ONTAP Mediator 구성을 해제합니다.</block>
+  <block id="a568c1157fa9b77a182f5a050b86df43" category="admonition">ONTAP Mediator가 다운되면 <block ref="1eafb93bfc40f298e60cf17e8a8c598c" prefix=" " category="inline-code"></block> 명령을 실행해도 ONTAP Mediator 관리자 계정에 대한 사용자 이름과 비밀번호를 입력하라는 메시지가 표시되고 MetroCluster 구성에서 ONTAP Mediator가 제거됩니다.</block>
+  <block id="66e992bd34634b96ff376561bcfc2e28" category="list-text">다음 명령을 두 클러스터에서 실행하여 MetroCluster 구성에서 ONTAP Mediator가 제거되었는지 확인하세요.</block>
+  <block id="d7815b39229175e9cef8440d269e9083" category="paragraph">기존 Tiebreaker 또는 ONTAP Mediator 인스턴스에 연결하는 경우 Tiebreaker 또는 Mediator의 사용자 이름, 비밀번호 및 IP 주소가 필요합니다.</block>
+  <block id="cb9e9645bca58c43f581c94e79f865c6" category="inline-link-macro">계획되지 않은 자동 전환을 위해 ONTAP Mediator 구성</block>
+  <block id="ef4d5dbb54aab5ddc81d5a09c43fd638" category="paragraph"><block ref="ef4d5dbb54aab5ddc81d5a09c43fd638" category="inline-link-macro-rx"></block></block>
+  <block id="ec27e6e598b1a296a852caf789607b06" category="list-text">ONTAP Mediator 또는 Tiebreaker 소프트웨어 구성:</block>
+  <block id="277ce71d2845b1d818a8dfb7a570dee5" category="list-text">ONTAP Mediator의 기존 인스턴스를 사용하는 경우 ONTAP에 ONTAP Mediator를 추가합니다.</block>
+  <block id="28dbef8bf8bfa7a533967cae561dd5e4" category="list-text">SSH 서버를 구성합니다.</block>
+  <block id="70231bf92659b36f9fbf0d3c7eebc754" category="list-text">로그 수집 및 기타 외부 도구를 사용하려면 SSH 서버를 구성해야 합니다.</block>
+  <block id="21f1152f9e753501bbaf5dee2e85bff5" category="paragraph">이 예에서 nxos.7.0.3.I4.6.bin 파일과 EPLD 이미지는 SFTP 서버 10.10.99.99에서 로컬 부트플래시로 복사됩니다.</block>
+  <block id="3e59b0e11242ccaa0aa06829a5a285e1" category="list-text">EPLD 이미지를 업그레이드하고 스위치를 reboot한다.</block>
+  <block id="f3bf0508f81cb16d8f1183a5babd44ab" category="list-text">[[step8]] 스위치 재부팅 후 다시 로그인하여 새 버전의 EPLD가 성공적으로 로드되었는지 확인합니다.</block>
+  <block id="5658313bc2d771ddd3aa8b49a8989c97" category="paragraph"><block ref="d74cfd95066d6ba37eb0991341ab588b" prefix="" category="inline-code"></block></block>
+  <block id="088e2dfc579975f8f02f060463f1c6b6" category="paragraph"><block ref="b57db2992c51195e5ea40f358db2287c" category="inline-link-macro-rx"></block> _MetroCluster IP 설치 및 구성_ 섹션에서.</block>
+  <block id="11e389769edd0ffd96bc52520e736666" category="paragraph">네트워크에서 두 스위치의 이름을 모두 바꾸는 경우 각 스위치에서 동일한 명령을 사용하세요.</block>
+  <block id="daf179095240111942b292cddbac4271" category="list-text">관리자 비밀번호와 HTTP, FTP 또는 TFTP(Trivial File Transfer Protocol) 서버에 대한 액세스 권한이 필요합니다.</block>
+  <block id="dfd2868dd5a4b44891e23870faf6ecda" category="list-text"><block ref="dfd2868dd5a4b44891e23870faf6ecda" category="inline-link-macro-rx"></block></block>
+  <block id="54485326fb6c0b4a273ca75c003d6a9d" category="paragraph">ONTAP Mediator는 각 릴리스마다 새로운 기능 향상을 제공합니다. 새로운 기능</block>
+  <block id="0294813eff3958ef43f353e390bb4729" category="paragraph">MetroCluster 구성에서 ONTAP Mediator를 설치하거나 업그레이드하는 방법에 대한 자세한 내용은 다음을 참조하세요. <block ref="f7ab7b3d6222d761ab5a933510823b89" category="inline-link-macro-rx"></block> .</block>
+  <block id="3114aeea55539bf595af1665b8572d3a" category="paragraph"><block ref="3114aeea55539bf595af1665b8572d3a" category="inline-link-rx"></block></block>
+  <block id="f818e428c62e3fad315884b1e49da0dc" category="paragraph">MetroCluster IP 구성에서 ONTAP Mediator에 대한 초기 지원</block>
+  <block id="8fa6539999f2d3aff134c30600c80e41" category="inline-link-macro">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
+  <block id="132de37afb8814bbaa7f373ed2768fe7" category="list-text"><block ref="132de37afb8814bbaa7f373ed2768fe7" category="inline-link-macro-rx"></block></block>
+  <block id="4d543daf001aece3c0f679d1c47e50c7" category="list-text">두 클러스터 모두에 단일 또는 여러 개의 데이터 집계가 있는지 여부에 따라 MetroCluster를 구성합니다.</block>
+  <block id="4bb0a0fe5f7512432807833d24660b3c" category="paragraph">두 클러스터 모두에서 여러 데이터 집계</block>
+  <block id="cea15dc4611e6036f3dd9fe7aea7cfc4" category="paragraph">두 클러스터 모두에 단일 미러링된 데이터 집계</block>
+  <block id="04afdd621fe01bc52800f10af27a7c2a" category="list-text"><block ref="2812633e4be142ea6fef81aa2fc3b357" category="inline-link-macro-rx"></block> ]</block>
+  <block id="1fec7b2b0af82b649786a3fafea0cceb" category="paragraph">5, 6</block>
+  <block id="f4206dbe8a14ad08108f277413f07552" category="paragraph">Cisco 3232C 또는 9336C-FX2</block>
+  <block id="dd03025041053e9c69b290436fd5dc5d" category="paragraph">5, 6, 또는 13, 14</block>
+  <block id="4a1b19255812edcb60c6c44b6d7a5e9a" category="paragraph">*참고:* 스위치 포트 13과 14는 두 가지 속도 모드를 선택한 경우에만 사용할 수 있습니다.</block>
+  <block id="e4ecc909d465ec5014d76b60d5fb3593" category="paragraph">Cisco 9336C-FX2 공유</block>
+  <block id="c12aeba3053f31f9a1d1d57376477e54" category="paragraph">3, 4, 또는 11, 12</block>
+  <block id="f8997e771791c9a981180a00129637ec" category="paragraph">*참고:* 스위치 포트 11과 12는 두 가지 속도 모드를 선택한 경우에만 사용할 수 있습니다.</block>
+  <block id="319106ed9ce9f52242209111123407d6" category="paragraph">5, 6, 또는 11, 12</block>
+  <block id="b8466cace8606dd997df70d225fbe406" category="list-text"><block ref="b8466cace8606dd997df70d225fbe406" category="inline-link-macro-rx"></block></block>
+  <block id="636e793526fcef1247efd0dcb03d56f1" category="list-text"><block ref="636e793526fcef1247efd0dcb03d56f1" category="inline-link-macro-rx"></block></block>
+  <block id="657069a60f3b73194611d9d1908eb00a" category="inline-link-macro">NVIDIA Cumulus 소프트웨어를 다운로드하고 설치하세요</block>
+  <block id="27ee4e40c5f3eb2ea060786d1154f3e6" category="list-text"><block ref="27ee4e40c5f3eb2ea060786d1154f3e6" category="inline-link-macro-rx"></block></block>
+  <block id="3edf268443c9814e0eed5e843a649be0" category="inline-link-macro">Broadcom IP RCF 파일 다운로드 및 설치</block>
+  <block id="73c8065362066c84bd91ee876292e355" category="list-text"><block ref="73c8065362066c84bd91ee876292e355" category="inline-link-macro-rx"></block></block>
+  <block id="9c3901db21e5ef4b43840d754abbff35" category="inline-link-macro">Cisco IP RCF 파일 다운로드 및 설치</block>
+  <block id="59f9ba6f0e3ac7d7d39f19d4f7446462" category="list-text"><block ref="59f9ba6f0e3ac7d7d39f19d4f7446462" category="inline-link-macro-rx"></block></block>
+  <block id="2812633e4be142ea6fef81aa2fc3b357" category="list-text"><block ref="2812633e4be142ea6fef81aa2fc3b357" category="inline-link-macro-rx"></block></block>
+  <block id="647ce27315841f29cbbfa6476808aa3a" category="paragraph"><block ref="647ce27315841f29cbbfa6476808aa3a" category="inline-link-macro-rx"></block></block>
+  <block id="36cd648a4936aded88f52937ad165653" category="paragraph"><block ref="36cd648a4936aded88f52937ad165653" category="inline-link-macro-rx"></block></block>
+  <block id="999478e5c5f08d315895f0b8ce0c4f9e" category="paragraph"><block ref="999478e5c5f08d315895f0b8ce0c4f9e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8dd25dc01f672f7f9138b09d96be9fc9" category="paragraph"><block ref="eb2e2a96b50d4592c6a439044f60d9a8" category="inline-link-macro-rx"></block> _MetroCluster IP 설치 및 구성_에서.</block>
+  <block id="467d42fef84e236db1f47c3587c7d61b" category="paragraph"><block ref="647ce27315841f29cbbfa6476808aa3a" category="inline-link-macro-rx"></block> _MetroCluster IP 설치 및 구성_ 섹션에서.</block>
+  <block id="3e85cb460e24d971aa2fdfb16bdd62f2" category="paragraph"><block ref="647ce27315841f29cbbfa6476808aa3a" category="inline-link-macro-rx"></block>..</block>
+  <block id="8c4be7f96d2a221be5676296eb0ed2f9" category="list-text">의 단계를 <block ref="b57db2992c51195e5ea40f358db2287c" category="inline-link-macro-rx"></block>사용합니다.</block>
+  <block id="3a87d2978f2a15ce761167e415fd6848" category="inline-link-macro">ONTAP Mediator 재구성</block>
+  <block id="3f8e81dc1fd352800762ed073cd5264a" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 검사가 실패하거나 업그레이드를 진행하지 않기로 선택한 경우 수동으로 수행해야 <block ref="45ecea135b28343f3e201d1ca7699d4b" category="inline-link-macro-rx"></block>합니다.</block>
+  <block id="90700c1e50cb21bc8204f5e8e63ff08f" category="inline-image-macro">AFF 및 FAS 업그레이드 조합 그룹 1을 보여줍니다.</block>
+  <block id="2b3092608ec3c36288b967b8d2e51cd0" category="paragraph"><block ref="2b3092608ec3c36288b967b8d2e51cd0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c86a11671a0682bdfafd478847f74282" category="inline-image-macro">AFF 및 FAS 업그레이드 조합 그룹 2를 보여줍니다.</block>
+  <block id="51cfa502e93acea429147cf299cd152c" category="paragraph"><block ref="51cfa502e93acea429147cf299cd152c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ffbff14d15222d12cd1d90edd7e729d" category="sidebar">NVIDIA SN2100 스위치를 구성합니다</block>
+  <block id="96a5ba855b4ee3dba60ecf722a706b29" category="sidebar">CSHM 파일을 설치합니다</block>
+  <block id="eb4b6887e705dad904287c0e3641b25e" category="sidebar">MetroCluster IP 스위치 상태 모니터링</block>
+  <block id="114ebfe3afc4e1772fb2a3ff9760e42e" category="sidebar">MetroCluster IP 구성에서 스위치 상태 모니터링에 대해 알아보세요</block>
+  <block id="0eaedccc418ca7fe214ff0e2f2fb9d4f" category="sidebar">MetroCluster IP 스위치에서 로그 수집 구성</block>
+  <block id="fa19a8bee183bfbc767660e140eae8dc" category="sidebar">이더넷 스위치 모니터링 관리</block>
+  <block id="eb781ca5db4579a64062bcf161d91cbe" category="sidebar">이더넷 스위치 모니터링 확인</block>
+  <block id="3ef38a7332e8a3a92f8540dfdb80708d" category="sidebar">MetroCluster IP 구성에서 ONTAP Mediator 구성</block>
+  <block id="84e085c408a358fe4e512066e45c3837" category="sidebar">System Manger를 사용하여 ONTAP Mediator 관리</block>
 </blocks>

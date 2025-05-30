@@ -59,7 +59,7 @@ summary: 네트워크 가용성을 확인하고 모니터링 구성을 복원하
 
 업그레이드를 시작하기 전에 자동으로 제거된 ONTAP 중재자를 수동으로 구성합니다.
 
-. 의 단계를 사용합니다 link:../install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성합니다"].
+. 의 단계를 link:../install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html["MetroCluster IP 구성에서 ONTAP Mediator 구성"]사용합니다.
 
 
 

@@ -122,7 +122,17 @@ NOTE: 온보드 포트는 컨트롤러 하드웨어(슬롯 0)에 내장되어 �
 | 플랫폼 모델 | 기가비트 이더넷 어댑터가 필요합니다 | 어댑터에 필요한 슬롯입니다 | 포트 
 
 
-| AFF A900, ASA A900 및 FAS9500 | X91146A | 슬롯 5, 슬롯 7 | e5b, e7b 
+ a| 
+AFF A900, ASA A900 및 FAS9500
+ a| 
+X91146A
+ a| 
+슬롯 5, 슬롯 7
+ a| 
+e5b, e7b
+
+*참고:* e5a 및 e7a 포트는 클러스터 간 LIF에만 사용할 수 있습니다. 이 포트는 데이터 LIF에 사용할 수 없습니다.
+
 
 
  a| 
@@ -284,7 +294,10 @@ link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자
 
 지원되는 최소 구성에서는 사이트당 쉘프가 하나 이상 필요합니다.
 
-MetroCluster 구성은 RAID-DP 및 RAID4를 지원합니다.
+MetroCluster 구성은 RAID-DP, RAID4, RAID-TEC를 지원합니다.
+
+
+NOTE: ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다. 자세한 내용은 을 link:../install-ip/concept_considerations_drive_assignment.html["자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항"] 참조하십시오.
 
 
 

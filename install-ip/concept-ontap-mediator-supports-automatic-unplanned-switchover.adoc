@@ -1,17 +1,17 @@
 ---
 permalink: install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html 
 sidebar: sidebar 
-keywords: ontap, mediator, service, assist, metrocluster, ip, configuration, perform, automatic, unplan, switchover, physical, repository, status, information, configuring, configure, install, configuring, configure, forced 
+keywords: ontap, mediator, assist, metrocluster, ip, configuration, perform, automatic, unplan, switchover, physical, repository, status, information, configuring, configure, install, configuring, configure, forced 
 summary:  
 ---
-= ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법
+= ONTAP Mediator가 자동 계획되지 않은 전환을 지원하는 방식
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ONTAP 중재자는 MetroCluster IP 노드에 대한 상태 정보를 저장할 메일박스 LUN을 제공합니다. 이러한 LUN은 ONTAP 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 MetroCluster 중재자의 공동 위치입니다. MetroCluster IP 노드는 사서함 정보를 사용하여 DR(재해 복구) 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO(중재자 지원 계획되지 않은 전환)를 구현할 수 있습니다.
+ONTAP Mediator는 MetroCluster IP 노드의 상태 정보를 저장하는 사서함 LUN을 제공합니다. 이 LUN은 MetroCluster 사이트와 물리적으로 분리된 Linux 호스트에서 실행되는 ONTAP Mediator와 함께 배치됩니다. MetroCluster IP 노드는 사서함 정보를 사용하여 DR(재해 복구) 파트너의 상태를 모니터링하고 재해 발생 시 MAUSO(중재자 지원 계획되지 않은 전환)를 구현할 수 있습니다.
 
 
 NOTE: MAUSO는 MetroCluster FC 구성에서 지원되지 않습니다.

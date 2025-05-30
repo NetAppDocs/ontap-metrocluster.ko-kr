@@ -2,23 +2,23 @@
 permalink: install-ip/task-sm-mediator.html 
 sidebar: sidebar 
 keywords: system manager, mediator, metrocluster, mcc, 8-node, ip, configure, remove, mauso, mediator-assisted automatic switchover, switchover, switchback, health 
-summary: System Manager를 사용하면 중재자를 관리하는 작업을 수행할 수 있습니다. 
+summary: System Manager를 사용하면 Mediator를 관리하는 작업을 수행할 수 있습니다. 
 ---
-= System Manager로 ONTAP 중재자 관리
+= System Manager를 사용하여 ONTAP Mediator 관리
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-System Manager를 사용하면 ONTAP 중재자를 관리하는 작업을 수행할 수 있습니다.
+System Manager를 사용하면 ONTAP Mediator를 관리하는 작업을 수행할 수 있습니다.
 
 .수행할 수 있습니다
 ONTAP 9.8부터는 System Manager를 사용하여 4노드 MetroCluster IP 구성을 간편하게 관리할 수 있습니다. 여기에는 세 번째 위치에 설치된 ONTAP 중재자가 포함될 수 있습니다.
 
 ONTAP 9.14.1부터는 System Manager를 사용하여 8노드 MetroCluster IP 사이트에 대해 이러한 작업을 수행할 수 있습니다. System Manager를 사용하여 8노드 시스템을 설정 또는 확장할 수 없지만, 8노드 MetroCluster IP 시스템을 이미 설정한 경우에는 이러한 작업을 수행할 수 있습니다.
 
-ONTAP 중재자를 관리하려면 다음 작업을 수행합니다.
+ONTAP Mediator를 관리하려면 다음 작업을 수행하세요.
 
 [cols="30,70"]
 |===
@@ -28,7 +28,7 @@ ONTAP 중재자를 관리하려면 다음 작업을 수행합니다.
 
 
  a| 
-중재자 서비스를 구성합니다
+ONTAP Mediator 구성
  a| 
 MetroCluster 사이트의 두 클러스터를 모두 살펴보고 기록해야 합니다.
 
@@ -36,12 +36,12 @@ MetroCluster 사이트의 두 클러스터를 모두 살펴보고 기록해야 �
 . ONTAP 9.8의 시스템 관리자에서 * 클러스터 > 설정 * 을 선택합니다.
 . mediator * 섹션에서 를 image:icon_gear.gif["작업 아이콘"]클릭합니다.
 . 중재자 구성 * 창에서 * 추가 + * 를 클릭합니다.
-. ONTAP 중재자의 구성 세부 정보를 입력합니다.
+. ONTAP Mediator에 대한 구성 세부 정보를 입력하세요.
 +
-System Manager로 ONTAP 중재자를 구성하는 동안 다음 세부 정보를 입력할 수 있습니다.
+System Manager로 ONTAP Mediator를 구성하는 동안 다음 세부 정보를 입력할 수 있습니다.
 
 +
-** 중재자의 IP 주소입니다.
+** ONTAP Mediator의 IP 주소입니다.
 ** 사용자 이름입니다.
 ** 암호입니다.
 
@@ -61,14 +61,14 @@ MAUSO(mediator-assisted Automatic Switchover) 활성화 또는 비활성화
 . 관리자 사용자 이름과 암호를 입력한 다음 * 활성화 * 또는 * 비활성화 * 를 클릭합니다.
 +
 
-NOTE: 중재자에 도달할 수 있고 두 사이트 모두 ""정상"" 모드에 있을 때 중재자를 활성화 또는 비활성화할 수 있습니다. MetroCluster 시스템이 정상인 경우 MAUSO가 활성화 또는 비활성화되어도 중재자에 연결할 수 있습니다.
+NOTE: ONTAP Mediator에 접속할 수 있고 두 사이트 모두 "정상" 모드일 때 ONTAP Mediator를 활성화 또는 비활성화할 수 있습니다. MetroCluster 시스템이 정상 상태이면 MAUSO를 활성화 또는 비활성화해도 ONTAP Mediator에 계속 접속할 수 있습니다.
 
 
 
 
 
  a| 
-MetroCluster 구성에서 중재자를 제거합니다
+MetroCluster 구성에서 ONTAP Mediator 제거
  a| 
 .단계
 . System Manager에서 * 대시보드 * 를 클릭합니다.
@@ -81,7 +81,7 @@ MetroCluster 구성에서 중재자를 제거합니다
 
 
  a| 
-중재자의 상태를 점검합니다
+ONTAP Mediator의 상태를 확인하세요
  a| 
 에서 System Manager의 특정 단계를 link:../maintain/verify-health-mcc-config.html["MetroCluster 구성의 상태를 확인합니다"]수행합니다.
 

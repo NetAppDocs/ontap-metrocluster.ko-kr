@@ -2920,6 +2920,10 @@ Controller_A_1::> security login create -user-or-group-name snmpv3user -applicat
 ----
 . 현장에서 필요에 따라 다음 프롬프트에 응답합니다.
 +
+
+NOTE: EngineID의 경우 *ENTER*를 눌러 기본값을 지정합니다.
+
++
 [listing]
 ----
 

@@ -1,10 +1,10 @@
 ---
 permalink: install-ip/concept_mediator_requirements.html 
 sidebar: sidebar 
-keywords: ontap, mediator, service, assist, metrocluster, ip, configuration, perform, automatic, unplan, switchover, physical, repository, status, information, configuring, configure, install, configuring, configure, mtu size, packet loss, bandwidth, firewall, rhel, centos, linux, revert, kernal, upgrade, latency 
-summary: ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물리적으로 분리된 리포지토리를 제공하여 MetroCluster IP 구성을 지원하여 예상치 못한 자동 전환을 수행할 수 있습니다. 
+keywords: ontap, mediator, assist, metrocluster, ip, configuration, perform, automatic, unplan, switchover, physical, repository, status, information, configuring, configure, install, configuring, configure, mtu size, packet loss, bandwidth, firewall, rhel, centos, linux, revert, kernal, upgrade, latency 
+summary: ONTAP 9.7부터 ONTAP Mediator는 상태 정보에 대한 물리적으로 분리된 저장소를 제공함으로써 MetroCluster IP 구성이 계획되지 않은 자동 전환을 수행하도록 지원할 수 있습니다. 
 ---
-= ONTAP 중재자 서비스 설치 준비
+= ONTAP Mediator 설치 준비
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,22 +15,22 @@ summary: ONTAP 중재 서비스는 ONTAP 9.7부터 상태 정보를 위한 물�
 
 다음 요구 사항은 하나의 DR 그룹(재해 복구 그룹)에 적용됩니다. 에 대해 자세히 알아보십시오 link:concept_parts_of_an_ip_mcc_configuration_mcc_ip.html#disaster-recovery-dr-groups["DR 그룹"].
 
-* Linux 버전을 업데이트할 계획이라면 최신 ONTAP 중재자 서비스를 설치하기 전에 업데이트를 수행하십시오.
-* ONTAP 중재자 서비스와 MetroCluster Tiebreaker 소프트웨어를 동일한 MetroCluster 구성과 함께 사용해서는 안 됩니다.
-* ONTAP 중재자는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.
+* Linux 버전을 업데이트할 계획이라면 ONTAP Mediator의 최신 버전을 설치하기 전에 업데이트하세요.
+* ONTAP Mediator와 MetroCluster Tiebreaker 소프트웨어는 동일한 MetroCluster 구성과 함께 사용할 수 없습니다.
+* ONTAP Mediator는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.
 +
 ONTAP 중재자와 각 사이트 간의 연결은 두 개의 개별 장애 도메인이어야 합니다.
 
-* ONTAP 중재자 서비스는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.
+* ONTAP Mediator는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.
 * ONTAP 9.7 이상에서는 자동 비계획 전환이 지원됩니다.
 * IPv6는 ONTAP 중재자에서 지원되지 않습니다.
 
 
 
 
-== MetroCluster 구성에서 중재자를 사용하기 위한 네트워크 요구 사항
+== MetroCluster 구성에서 ONTAP Mediator를 사용하기 위한 네트워크 요구 사항
 
-MetroCluster 구성에 ONTAP 중재자 서비스를 설치하려면 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.
+MetroCluster 구성에 ONTAP Mediator를 설치하려면 해당 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.
 
 * 지연 시간
 +
@@ -49,7 +49,7 @@ ICMP(Internet Control Message Protocol)와 TCP 트래픽 모두에서 패킷 손
 
 * 대역폭
 +
-중재자 서비스와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.
+ONTAP Mediator와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.
 
 * 독립적 연결
 +
@@ -59,7 +59,7 @@ ICMP(Internet Control Message Protocol)와 TCP 트래픽 모두에서 패킷 손
 
 
 
-== MetroCluster 구성에서 ONTAP 중재자를 위한 호스트 요구 사항
+== MetroCluster 구성에서 ONTAP Mediator에 대한 호스트 요구 사항
 
 구성이 여러 호스트 요구 사항을 충족하는지 확인해야 합니다.
 
@@ -143,15 +143,15 @@ ONTAP는 iSCSI 대상을 중재합니다
 |===
 
 
-== MetroCluster 구성에서 ONTAP 중재자를 업그레이드하기 위한 지침입니다
+== MetroCluster 구성에서 ONTAP Mediator 업그레이드를 위한 지침
 
-ONTAP 중재자를 업그레이드하는 경우 Linux 버전 요구 사항을 충족하고 업그레이드 지침을 따라야 합니다.
+ONTAP Mediator를 업그레이드하는 경우 Linux 버전 요구 사항을 충족해야 하며 업그레이드 지침을 따라야 합니다.
 
-* 중재자 서비스는 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.
+* ONTAP Mediator는 바로 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.
 * 모든 중재자 버전은 ONTAP 9.7 이상을 실행하는 MetroCluster IP 구성에서 지원됩니다.
 
 
-link:https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP 중재자 서비스를 설치하거나 업그레이드합니다"^]
+link:https://docs.netapp.com/us-en/ontap/mediator/index.html["ONTAP Mediator 설치 또는 업그레이드"^]
 
 
 

@@ -1,0 +1,263 @@
+---
+permalink: install-ip/task-configure-log-collection-mccip.html 
+sidebar: sidebar 
+keywords: ip, switch, connection, configuring, configure, log, collection, snmp, debugging 
+summary: 상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다. 
+---
+= MetroCluster IP 스위치에서 로그 수집 구성
+:allow-uri-read: 
+
+
+[role="lead"]
+MetroCluster IP 구성에서는 디버깅 목적으로 스위치 로그를 수집하도록 로그 수집을 구성할 수 있습니다.
+
+
+CAUTION: Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클러스터에 대해 새로운 사용자가 필요합니다. 예를 들어, MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4는 모두 스위치에 별도의 사용자를 구성해야 합니다. 동일한 사용자에 대해 여러 개의 SSH 키를 사용하는 것은 지원되지 않습니다.
+
+.이 작업에 대해
+이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다. 이 절차는 수집을 설정하고, 자세한 * 지원 * 로그를 요청하며, AutoSupport에서 수집하는 * 주기적 * 데이터의 시간별 수집을 활성화하는 과정을 안내합니다.
+
+* 참고: * FIPS 모드를 활성화한 경우 다음을 완료해야 합니다.
+
+[NOTE]
+====
+. 공급업체의 지침에 따라 스위치에서 SSH 키를 다시 생성합니다.
+. 를 사용하여 ONTAP에서 SSH 키를 재생성합니다 `debug system regenerate-systemshell-key-pair`
+.  `system switch ethernet log setup-password`명령을 사용하여 로그 수집 설정 루틴을 다시 실행하십시오
+
+
+====
+
+
+== 시작하기 전에
+
+* 사용자가 스위치 명령에 액세스할 수 있어야 `show` 합니다. 이러한 사용자를 사용할 수 없는 경우 새 사용자를 만들고 사용자에게 필요한 권한을 부여합니다.
+* 스위치에 대해 스위치 상태 모니터링을 활성화해야 합니다. 이를 확인하려면 다음을 확인하세요.  `Is Monitored:` 필드는 출력에서 *true*로 설정됩니다.  `system switch ethernet show` 명령.
+* Broadcom 및 Cisco 스위치를 사용한 로그 수집:
++
+** 사용자에게 네트워크 관리자 Privileges가 있어야 합니다.
+** 로그 수집이 활성화된 상태에서 각 클러스터 설정에 대해 스위치에 새 사용자를 생성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.
+
+
+* NVIDIA 스위치를 사용한 지원 로그 수집의 경우 `cl-support` 암호를 제공하지 않고 명령을 실행할 수 있는 _user_ 로그 수집이 허용되어야 합니다. 이 사용을 허용하려면 다음 명령을 실행합니다.
++
+`echo '_<user>_ ALL = NOPASSWD: /usr/cumulus/bin/cl-support' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
+
+
+
+
+
+== 단계
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 이상
+--
+. 로그 수집을 설정하려면 각 스위치에 대해 다음 명령을 실행합니다. 로그 수집을 위해 스위치 이름, 사용자 이름 및 암호를 입력하라는 메시지가 표시됩니다.
++
+*참고:* 사용자 지정 프롬프트에 *y*로 응답하는 경우 사용자에게 다음에 설명된 대로 필요한 권한이 있는지 확인하십시오. <<시작하기 전에>> .
+
++
+[source, cli]
+----
+system switch ethernet log setup-password
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs1*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs2*
+
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+----
+
+
+
+NOTE: CL 5.11.1의 경우, 사용자 *cumulus*를 생성하고 다음 프롬프트에 *y*로 응답합니다. 로그 수집에 admin 이외의 사용자를 지정하시겠습니까? {y|n}: *y*
+
+. [[step2]]주기적 로그 수집 활성화:
++
+[source, cli]
+----
+system switch ethernet log modify -device <switch-name> -periodic-enabled true
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log modify -device cs1 -periodic-enabled true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+*cs1*: Periodic log collection has been scheduled to run every hour.
+
+cluster1::*> *system switch ethernet log modify -device cs2 -periodic-enabled true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+*cs2*: Periodic log collection has been scheduled to run every hour.
+
+cluster1::*> *system switch ethernet log show*
+                                          Periodic    Periodic    Support
+Switch                                    Log Enabled Log State   Log State
+
+cs1                                       true        scheduled   never-run
+cs2                                       true        scheduled   never-run
+2 entries were displayed.
+----
+. 지원 로그 수집 요청:
++
+[source, cli]
+----
+system switch ethernet log collect-support-log -device <switch-name>
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log collect-support-log -device cs1*
+
+*cs1*: Waiting for the next Ethernet switch polling cycle to begin support collection.
+
+cluster1::*> *system switch ethernet log collect-support-log -device cs2*
+
+*cs2*: Waiting for the next Ethernet switch polling cycle to begin support collection.
+
+cluster1::*> *system switch ethernet log show
+                                          Periodic    Periodic    Support
+Switch                                    Log Enabled Log State   Log State
+
+cs1                                       false       halted      initiated
+cs2                                       true        scheduled   initiated
+2 entries were displayed.
+----
+. 활성화, 상태 메시지, 주기적 수집의 이전 타임스탬프 및 파일 이름, 요청 상태, 상태 메시지, 지원 수집의 이전 타임스탬프 및 파일 이름을 포함한 로그 수집의 모든 세부 정보를 보려면 다음을 사용합니다.
++
+[source, cli]
+----
+system switch ethernet log show -instance
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log show -instance*
+
+                    Switch Name: cs1
+           Periodic Log Enabled: true
+            Periodic Log Status: Periodic log collection has been scheduled to run every hour.
+    Last Periodic Log Timestamp: 3/11/2024 11:02:59
+          Periodic Log Filename: cluster1:/mroot/etc/log/shm-cluster-info.tgz
+          Support Log Requested: false
+             Support Log Status: Successfully gathered support logs - see filename for their location.
+     Last Support Log Timestamp: 3/11/2024 11:14:20
+           Support Log Filename: cluster1:/mroot/etc/log/shm-cluster-log.tgz
+
+                    Switch Name: cs2
+           Periodic Log Enabled: false
+            Periodic Log Status: Periodic collection has been halted.
+    Last Periodic Log Timestamp: 3/11/2024 11:05:18
+          Periodic Log Filename: cluster1:/mroot/etc/log/shm-cluster-info.tgz
+          Support Log Requested: false
+             Support Log Status: Successfully gathered support logs - see filename for their location.
+     Last Support Log Timestamp: 3/11/2024 11:18:54
+           Support Log Filename: cluster1:/mroot/etc/log/shm-cluster-log.tgz
+2 entries were displayed.
+----
+
+
+--
+.ONTAP 9.14.1 이하
+--
+. 로그 수집을 설정하려면 각 스위치에 대해 다음 명령을 실행합니다. 로그 수집을 위해 스위치 이름, 사용자 이름 및 암호를 입력하라는 메시지가 표시됩니다.
++
+*참고:* 사용자 사양 프롬프트에 응답하는 경우 `y`, 사용자가 에 설명된 대로 필요한 권한을 가지고 <<시작하기 전에>>있는지 확인하십시오.
+
++
+[source, cli]
+----
+system switch ethernet log setup-password
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs1*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs2*
+
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+----
+
+
+
+NOTE: CL 5.11.1의 경우, 사용자 *cumulus*를 생성하고 다음 프롬프트에 *y*로 응답합니다. 로그 수집에 admin 이외의 사용자를 지정하시겠습니까? {y|n}: *y*
+
+. [[step2]] 지원 로그 수집을 요청하고 주기적 수집을 활성화하려면 다음 명령을 실행하세요. 이렇게 하면 상세 로그와 시간별 데이터 수집이라는 두 가지 유형의 로그 수집이 시작됩니다. `Support` `Periodic`
++
+[source, cli]
+----
+system switch ethernet log modify -device <switch-name> -log-request true
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+
+cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+----
++
+10분간 기다린 후 로그 수집이 완료되었는지 확인합니다.
+
++
+[source, cli]
+----
+system switch ethernet log show
+----
+
+
+--
+====
+
+CAUTION: 로그 수집 기능에 의해 오류 상태가 보고되는 경우(의 출력에 표시됨 `system switch ethernet log show`) 자세한 내용은 을 참조하십시오. link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cshm/log-collection-troubleshoot.html["로그 수집 문제를 해결합니다"^]

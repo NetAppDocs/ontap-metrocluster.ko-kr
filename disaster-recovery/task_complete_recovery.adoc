@@ -448,13 +448,13 @@ cluster_A::>
 
 
 
-== ONTAP 중재자 서비스 재구성(MetroCluster IP 구성)
+== ONTAP Mediator 재구성(MetroCluster IP 구성)
 
-ONTAP 중재자 서비스로 구성된 MetroCluster IP 구성이 있는 경우 중재자와 연결을 제거하고 다시 구성해야 합니다.
+ONTAP Mediator로 구성된 MetroCluster IP 구성이 있는 경우 ONTAP Mediator와의 연결을 제거하고 다시 구성해야 합니다.
 
 .시작하기 전에
-* ONTAP 중재자 서비스를 위한 IP 주소와 사용자 이름 및 암호가 있어야 합니다.
-* ONTAP 중재자 서비스는 Linux 호스트에서 구성 및 운영되어야 합니다.
+* ONTAP Mediator에 대한 IP 주소, 사용자 이름 및 비밀번호가 있어야 합니다.
+* ONTAP Mediator는 Linux 호스트에서 구성되고 작동해야 합니다.
 
 
 .단계
@@ -554,7 +554,7 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 
 
 
-. ONTAP 중재자 서비스를 사용하는 MetroCluster IP 구성의 경우 중재자 서비스가 작동 중인지 확인합니다.
+. ONTAP Mediator를 사용하는 MetroCluster IP 구성의 경우 ONTAP Mediator가 작동 중인지 확인하세요.
 +
 .. 중재 디스크가 시스템에 표시되는지 확인합니다.
 +

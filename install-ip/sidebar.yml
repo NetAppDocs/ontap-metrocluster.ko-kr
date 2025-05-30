@@ -77,9 +77,23 @@ entries:
       - title: Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
         url: "/install-ip/task_switch_config_cisco_macsec.html"
     - title: NVIDIA IP 스위치를 구성합니다
-      url: "/install-ip/task_switch_config_nvidia.html"
-    - title: 상태 모니터링을 위해 MetroCluster IP 스위치를 구성합니다
-      url: "/install-ip/task_config_switch_health.html"
+      entries:
+      - title: NVIDIA SN2100 스위치를 구성합니다
+        url: "/install-ip/task_switch_config_nvidia.html"
+      - title: CSHM 파일을 설치합니다
+        url: "/install-ip/task-nvidia-health-monitoring.html"
+  - title: MetroCluster IP 스위치 상태 모니터링
+    entries:
+    - title: MetroCluster IP 구성에서 스위치 상태 모니터링에 대해 알아보세요
+      url: "/install-ip/configure-cshm-mccip.html"
+    - title: MetroCluster IP 스위치에서 SNMPv3 구성
+      url: "/install-ip/config-snmpv3.html"
+    - title: MetroCluster IP 스위치에서 로그 수집 구성
+      url: "/install-ip/task-configure-log-collection-mccip.html"
+    - title: 이더넷 스위치 모니터링 관리
+      url: "/install-ip/manage-monitor.html"
+    - title: 이더넷 스위치 모니터링 확인
+      url: "/install-ip/task-monitor-verify-mccip.html"
 - title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
   entries:
   - title: CLI를 사용하여 MetroCluster 소프트웨어를 구성합니다
@@ -118,19 +132,19 @@ entries:
       url: "/install-ip/set-up-mcc-peering-system-manager.html"
     - title: MetroCluster IP 사이트를 구성합니다
       url: "/install-ip/configure-mcc-site-system-manager.html"
-- title: 계획되지 않은 자동 전환을 위해 ONTAP 중재자 서비스를 구성합니다
+- title: 계획되지 않은 자동 전환을 위해 ONTAP Mediator 구성
   entries:
-  - title: ONTAP 중재자 서비스 설치 준비
+  - title: ONTAP Mediator 설치 준비
     url: "/install-ip/concept_mediator_requirements.html"
-  - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스 구성
+  - title: MetroCluster IP 구성에서 ONTAP Mediator 구성
     url: "/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html"
-  - title: MetroCluster IP 구성에서 ONTAP 중재자 서비스를 구성 해제합니다
+  - title: MetroCluster IP 구성에서 ONTAP Mediator 구성 해제
     url: "/install-ip/task_remove_unconfigure_mediator.html"
   - title: MetroCluster 구성을 다른 ONTAP 중재자 인스턴스에 연결합니다
     url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
-  - title: ONTAP 중재자가 자동 계획되지 않은 전환을 지원하는 방법
+  - title: ONTAP Mediator가 자동 계획되지 않은 전환을 지원하는 방식
     url: "/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html"
-  - title: 시스템 관리자로 ONTAP 중재자를 관리합니다
+  - title: System Manger를 사용하여 ONTAP Mediator 관리
     url: "/install-ip/task-sm-mediator.html"
 - title: MetroCluster 구성을 테스트하는 중입니다
   url: "/install-ip/task_test_the_mcc_configuration.html"

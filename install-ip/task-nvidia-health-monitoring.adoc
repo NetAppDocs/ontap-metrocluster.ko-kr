@@ -1,0 +1,137 @@
+---
+permalink: install-ip/task-nvidia-health-monitoring.html 
+sidebar: sidebar 
+keywords: install, applicable, configuration, file, nvidia, cluster, switch, health, monitor, ontap, 
+summary: 이 절차를 사용하여 NVIDIA SN2100 클러스터 스위치의 클러스터 스위치 상태 모니터링을 위한 해당 구성 파일을 설치할 수 있습니다. 
+---
+= 이더넷 스위치 상태 모니터 구성 파일을 설치합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NVIDIA 이더넷 스위치에서 이더넷 스위치 상태 모니터링을 구성하려면 다음 절차를 따르세요.
+
+이 지침은 NVIDIA X190006-PE 및 X190006-PI 스위치가 제대로 감지되지 않은 경우 적용되며 다음을 실행하여 확인할 수 있습니다.  `system switch ethernet show` 모델에 *OTHER*가 표시되는지 확인하세요. NVIDIA 스위치 모델을 식별하려면 다음 명령을 사용하여 부품 번호를 찾으세요.  `nv show platform hardware` NVIDIA CL 5.8 및 이전 버전용 또는  `nv show platform` 이후 버전용.
+
+[NOTE]
+====
+다음 ONTAP 릴리스에서 NVIDIA CL 5.11.x를 사용할 때 상태 모니터링 및 로그 수집이 의도한 대로 작동하도록 하려면 이 단계를 따르는 것이 좋습니다. 이 단계를 따르지 않아도 상태 모니터링 및 로그 수집이 작동할 수 있지만, 모든 것이 제대로 작동하는지 확인하려면 이 단계를 따르세요.
+
+* 9.10.1P20, 9.11.1P18, 9.12.1P16, 9.13.1P8, 9.14.1, 9.15.1 및 이후 패치 릴리스
+
+
+====
+.시작하기 전에
+* ONTAP 클러스터가 작동 중이고 실행 중인지 확인합니다.
+* CSHM에서 제공하는 모든 기능을 사용하려면 스위치에서 SSH를 활성화하세요.
+* 모든 노드에서 디렉토리를 지웁니다 `/mroot/etc/cshm_nod/nod_sign/`.
++
+.. 노드 쉘을 입력합니다.
++
+`system node run -node <name>`
+
+.. 고급 권한으로 변경:
++
+`priv set advanced`
+
+.. 디렉터리의 구성 파일을 `/etc/cshm_nod/nod_sign` 나열합니다. 디렉토리가 있고 구성 파일이 포함되어 있으면 파일 이름이 나열됩니다.
++
+`ls /etc/cshm_nod/nod_sign`
+
+.. 연결된 스위치 모델에 해당하는 모든 구성 파일을 삭제합니다.
++
+확실하지 않은 경우 위에 나열된 지원 모델에 대한 모든 구성 파일을 제거한 다음 해당 모델에 대한 최신 구성 파일을 다운로드하여 설치합니다.
+
++
+`rm /etc/cshm_nod/nod_sign/<filename>`
+
+.. 삭제된 구성 파일이 더 이상 디렉터리에 없는지 확인합니다.
++
+`ls /etc/cshm_nod/nod_sign`
+
+
+
+
+
+.단계
+. 해당 ONTAP 릴리스 버전을 기반으로 이더넷 스위치 상태 모니터 구성 zip 파일을 다운로드합니다. 이 파일은 페이지에서 사용할 수 https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA 이더넷 스위치"^] 있습니다.
++
+.. NVIDIA SN2100 소프트웨어 다운로드 페이지에서 * Nvidia CSHM File * 을 선택합니다.
+.. 주의/읽어야 함 페이지에서 동의할 확인란을 선택합니다.
+.. 최종 사용자 사용권 계약 페이지에서 동의할 확인란을 선택하고 * Accept & Continue * 를 클릭합니다.
+.. Nvidia CSHM 파일 - 다운로드 페이지에서 해당 구성 파일을 선택합니다. 다음 파일을 사용할 수 있습니다.
+
+
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 이상
+--
+* MSN2100-CB2FC-v1.4.zip
+* MSN2100-CB2RC-v1.4.zip
+* X190006-PE-v1.4.zip
+* X190006-PI-v1.4.zip
+
+
+--
+.ONTAP 9.11.1 ~ 9.14.1
+--
+* MSN2100-CB2FC_PRIOR_R9.15.1-v1.4.zip
+* MSN2100-CB2RC_PRIOR_R9.15.1-v1.4.zip
+* X190006-PE_PRIOR_9.15.1-v1.4.zip
+* X190006-PI_PRIOR_9.15.1-v1.4.zip
+
+
+--
+====
+. [[step2]] 해당 zip 파일을 내부 웹 서버에 업로드합니다.
+. 클러스터의 ONTAP 시스템 중 하나에서 고급 모드 설정에 액세스합니다.
++
+세트 프리빌리지 고급
+
+. switch 상태 monitor configure 명령을 실행합니다.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system switch ethernet*
+----
+. 명령 출력이 ONTAP 버전에 대한 다음 텍스트로 끝나는지 확인합니다.
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 이상
+--
+이더넷 스위치 상태 모니터링이 구성 파일을 설치했습니다.
+
+--
+.ONTAP 9.11.1 ~ 9.14.1
+--
+shm이 구성 파일을 설치했습니다.
+
+--
+.ONTAP 9.10.1
+--
+CSHM 다운로드 패키지가 성공적으로 처리되었습니다.
+
+--
+====
+오류가 발생하면 NetApp 지원 팀에 문의하십시오.
+
+. [[step6]] 다음 단계를 완료하기 전에 를 실행하여 찾은 이더넷 스위치 상태 모니터 폴링 간격을 최대 2배까지 기다립니다 `system switch ethernet polling-interval show`.
+. ONTAP 시스템에서 명령을 `system switch ethernet show` 실행하고 모니터링되는 필드가 * True * 로 설정되어 있고 일련 번호 필드가 * Unknown * 으로 표시되지 않는 상태에서 클러스터 스위치가 검색되는지 확인합니다.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system switch ethernet show*
+----
+
+
+
+NOTE: 구성 파일을 적용한 후에도 모델에 * 기타 * 가 계속 표시되면 NetApp 지원에 문의하십시오.
+
+.다음 단계
+link:configure-cshm-mccip.html["스위치 상태 모니터링을 구성합니다"]..

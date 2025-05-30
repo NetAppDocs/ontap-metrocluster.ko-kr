@@ -37,7 +37,7 @@ MetroCluster * 섹션에서 그래픽은 MetroCluster 사이트를 위해 설정
 . MetroCluster 구성 * 을 클릭합니다. 이 창에서 다음 단계를 수행하십시오.
 +
 .. MetroCluster 구성에서 각 클러스터의 노드가 표시됩니다. 드롭다운 목록을 사용하여 원격 클러스터의 노드와 함께 재해 복구 파트너가 될 로컬 클러스터의 노드를 선택합니다.
-.. ONTAP 중재자 서비스를 구성하려면 확인란을 클릭합니다. 을 link:./task-sm-mediator.html["ONTAP 중재자 서비스를 구성합니다"]참조하십시오.
+.. ONTAP Mediator를 구성하려면 확인란을 클릭하세요. 을 link:./task-sm-mediator.html["ONTAP Mediator 구성"]참조하십시오.
 .. 두 클러스터에 암호화를 활성화할 수 있는 라이센스가 있으면 * Encryption * 섹션이 표시됩니다.
 +
 암호화를 활성화하려면 암호를 입력합니다.

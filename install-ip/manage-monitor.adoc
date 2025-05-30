@@ -1,0 +1,57 @@
+---
+permalink: install-ip/manage-monitor.html 
+sidebar: sidebar 
+keywords: ip, switch, connection, manage, broadcom, snmp, health, monitoring 
+summary: '대부분의 경우 이더넷 스위치는 ONTAP에 의해 자동으로 검색되고 CSHM에 의해 모니터링됩니다. 스위치에 적용된 RCF(Reference Configuration File)는 CDP(Cisco Discovery Protocol) 및/또는 LLDP(Link Layer Discovery Protocol)를 활성화합니다.' 
+---
+= MetroCluster IP 구성에서 이더넷 스위치 모니터링 관리
+:allow-uri-read: 
+
+
+[role="lead"]
+대부분의 경우 이더넷 스위치는 ONTAP에 의해 자동으로 검색되고 CSHM에 의해 모니터링됩니다. 스위치에 적용된 RCF(Reference Configuration File)는 CDP(Cisco Discovery Protocol) 및/또는 LLDP(Link Layer Discovery Protocol)를 활성화합니다. 그러나 검색되지 않은 스위치를 수동으로 추가하거나 더 이상 사용하지 않는 스위치를 제거해야 할 수도 있습니다. 또한 유지 보수 중과 같이 구성에 스위치를 유지하는 동안 활성 모니터링을 중지할 수 있습니다.
+
+
+
+== ONTAP에서 모니터링할 수 있도록 스위치 항목을 만듭니다
+
+.이 작업에 대해
+명령을 사용하여 `system switch ethernet create` 지정된 이더넷 스위치에 대한 모니터링을 수동으로 구성하고 사용하도록 설정합니다. 이 기능은 ONTAP가 스위치를 자동으로 추가하지 않거나 이전에 스위치를 제거했다가 다시 추가하려는 경우에 유용합니다.
+
+[source, cli]
+----
+system switch ethernet create -device DeviceName -address 1.2.3.4 -snmp-version SNMPv2c -community-or-username cshm1! -model NX3132V -type cluster-network
+----
+일반적인 예는 IP 주소가 1.2.3.4이고 SNMPv2c 자격 증명이 * cshm1! * 로 설정된 [DeviceName]이라는 스위치를 추가하는 것입니다. 스토리지 스위치를 구성하는 경우 대신 `-type cluster-network` 를 `-type storage-network` 사용합니다.
+
+
+
+== 스위치를 삭제하지 않고 모니터링을 비활성화합니다
+
+특정 스위치에 대한 모니터링을 일시 중지하거나 중지하지만 향후 모니터링을 위해 유지하려는 경우 `is-monitoring-enabled-admim` 매개 변수를 삭제하는 대신 매개 변수를 수정합니다.
+
+예를 들면 다음과 같습니다.
+
+[source, cli]
+----
+system switch ethernet modify -device DeviceName -is-monitoring-enabled-admin false
+----
+이를 통해 새 경고를 생성하거나 다시 검색하지 않고도 스위치 세부 정보와 구성을 유지할 수 있습니다.
+
+
+
+== 더 이상 필요하지 않은 스위치를 제거합니다
+
+ `system switch ethernet delete`연결이 끊겼거나 더 이상 필요하지 않은 스위치를 삭제하는 데 사용합니다.
+
+[source, cli]
+----
+system switch ethernet delete -device DeviceName
+----
+기본적으로 이 명령은 ONTAP가 현재 CDP 또는 LLDP를 통해 스위치를 감지하지 못하는 경우에만 성공합니다. 검색된 스위치를 제거하려면 `-force` 매개 변수를 사용합니다.
+
+[source, cli]
+----
+system switch ethernet delete -device DeviceName -force
+----
+를 사용하는 경우 `-force` ONTAP에서 스위치를 다시 감지하면 스위치가 자동으로 다시 추가될 수 있습니다.

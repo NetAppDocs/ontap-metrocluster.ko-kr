@@ -191,7 +191,7 @@ link:https://software.cisco.com/download/home["Cisco 소프트웨어 다운로�
 'copy sftp://root@server-ip-address/tftpboot/nx-os-file-name bootflash:vrf management'
 
 +
-이 예제에서 nxos.7.0.3.I4.6.bin 파일은 SFTP 서버 10.10.99.99에서 로컬 bootflash로 복사됩니다.
+이 예에서 nxos.7.0.3.I4.6.bin 파일과 EPLD 이미지는 SFTP 서버 10.10.99.99에서 로컬 부트플래시로 복사됩니다.
 
 +
 [listing]
@@ -205,6 +205,18 @@ Fetching /tftpboot/nxos.7.0.3.I4.6.bin to /bootflash/nxos.7.0.3.I4.6.bin
 /tftpboot/nxos.7.0.3.I4.6.bin                 100%  666MB   7.2MB/s   01:32
 sftp> exit
 Copy complete, now saving to disk (please wait)...
+Copy complete.
+
+IP_switch_A_1# copy sftp://root@10.10.99.99/tftpboot/n9000-epld.9.3.5.img bootflash: vrf management
+root@10.10.99.99's password: password
+sftp> progress
+Progress meter enabled
+sftp> get   /tftpboot/n9000-epld.9.3.5.img  /bootflash/n9000-epld.9.3.5.img
+Fetching /tftpboot/n9000-epld.9.3.5.img to /bootflash/n9000-epld.9.3.5.img
+/tftpboot/n9000-epld.9.3.5.img                 161MB   9.5MB/s   00:16
+sftp> exit
+Copy complete, now saving to disk (please wait)...
+Copy complete.
 ----
 . 각 스위치에서 스위치 NX-OS 파일이 각 스위치의 bootflash 디렉토리에 있는지 확인합니다.
 +
@@ -369,6 +381,47 @@ plugin
   Core Plugin, Ethernet Plugin
 IP_switch_A_1#
 ----
+. EPLD 이미지를 업그레이드하고 스위치를 reboot한다.
++
+[listing]
+----
+IP_switch_A_1# install epld bootflash:n9000-epld.9.3.5.img module 1
+Compatibility check:
+Module        Type         Upgradable    Impact      Reason
+------  ------------------ ------------- ----------- -----------------
+     1         SUP         Yes           disruptive  Module Upgradable
+
+Retrieving EPLD versions.... Please wait.
+Images will be upgraded according to following table:
+Module  Type   EPLD              Running-Version   New-Version  Upg-Required
+------- ------ ----------------- ----------------- ------------ ------------
+     1  SUP    MI FPGA           0x07              0x07         No
+     1  SUP    IO FPGA           0x17              0x19         Yes
+     1  SUP    MI FPGA2          0x02              0x02         No
+The above modules require upgrade.
+The switch will be reloaded at the end of the upgrade
+Do you want to continue (y/n) ?  [n] y
+
+Proceeding to upgrade Modules.
+
+Starting Module 1 EPLD Upgrade
+
+Module 1 : IO FPGA [Programming] : 100.00% (     64 of      64 sectors)
+Module 1 EPLD upgrade is successful.
+Module   Type  Upgrade-Result
+-------- ----- --------------
+     1   SUP   Success
+
+EPLDs upgraded.
+
+Module 1 EPLD upgrade is successful.
+----
+
+
+. [[step8]] 스위치 재부팅 후 다시 로그인하여 새 버전의 EPLD가 성공적으로 로드되었는지 확인합니다.
++
+`show version module 1 epld`
+
 . MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.
 
 

@@ -20,24 +20,23 @@ MetroCluster IP 구성에 새로운 IP 스위치를 사용하는 경우 사용�
 . 새 IP 스위치를 설치하고 랙에 설치합니다.
 . 새로운 RCF 파일 적용을 위한 IP 스위치를 준비합니다.
 +
-에서 스위치 공급업체에 대한 섹션의 단계를 따릅니다 link:../install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"]
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
-** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#resetting-the-broadcom-ip-switch-to-factory-defaults["Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_cisco.html#resetting-the-cisco-ip-switch-to-factory-defaults["Cisco IP 스위치를 출하 시 기본값으로 재설정합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#reset-the-nvidia-ip-sn2100-switch-to-factory-defaults["NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다"]
 
 
 . 필요한 경우 스위치의 펌웨어를 지원되는 버전으로 업데이트합니다.
 . RCF 생성기 툴을 사용하여 스위치 공급업체와 플랫폼 모델에 따라 RCF 파일을 생성한 다음 스위치를 파일로 업데이트합니다.
 +
-_MetroCluster IP 설치 및 구성_에서 스위치 공급업체의 섹션에 있는 단계를 따르십시오.
+해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.
 
 +
-link:../install-ip/concept_considerations_differences.html["MetroCluster IP 설치 및 구성"]
-
-+
-** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP RCF 파일 다운로드 및 설치"]
-** link:../install-ip/task_switch_config_cisco.html["Cisco IP RCF 파일 다운로드 및 설치"]
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP RCF 파일을 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP RCF 파일을 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-cumulus-software["NVIDIA RCF 파일을 다운로드하고 설치합니다"]
 
 
 

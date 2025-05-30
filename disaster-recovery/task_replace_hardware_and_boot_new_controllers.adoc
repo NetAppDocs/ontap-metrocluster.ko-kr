@@ -282,7 +282,7 @@ dr-group-id cluster    node      node-systemid dr-partner-systemid
 ----
 
 
-. ONTAP 중재자 서비스를 사용하는 MetroCluster IP 구성의 경우 ONTAP 중재자 서비스의 IP 주소를 가져옵니다.
+. ONTAP Mediator를 사용하는 MetroCluster IP 구성의 경우 ONTAP Mediator의 IP 주소를 가져옵니다.
 +
 '스토리지 iSCSI-initiator show-node * -label 중재자'
 

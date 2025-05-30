@@ -54,14 +54,14 @@ MetroCluster IP 컨트롤러 업그레이드를 시작하기 전에 업그레이
 --
 FAS8700, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, AFF A250, FAS50, AFF C30, AFF A400 A30, FAS8200, AFF C400, AFF A320, FAS8300, AFF A300, AFF, AFF A150 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.
 
-image:../media/assisted-group-1.png[""]
+image:../media/assisted-group-1.png["AFF 및 FAS 업그레이드 조합 그룹 1을 보여줍니다."]
 
 --
 .AFF 및 FAS 조합 그룹 2
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.
 
-image:../media/assisted-group-2.png[""]
+image:../media/assisted-group-2-updated.png["AFF 및 FAS 업그레이드 조합 그룹 2를 보여줍니다."]
 
 --
 ====
