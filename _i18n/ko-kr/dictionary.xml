@@ -12514,7 +12514,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2900f8420dafccee0a2692e48506c6cb" category="open-title">LOADER 프롬프트에 노드가 있는 경우:</block>
   <block id="796bd1c27d5eea106367802d9fd5bd0e" category="paragraph">다음 명령을 실행합니다.<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block></block>
   <block id="4129cca17421055c633ccbc72f65d61f" category="list-text">노드 부팅이 완료된 후 루트 애그리게이트가 미러링되는지 확인합니다.</block>
-  <block id="f691b46b240bca97e906bfb1366247a7" category="paragraph">두 플렉스가 모두 있는 경우 재동기화가 자동으로 시작됩니다. 플렉스에 장애가 발생하면 플렉스를 제거하고 다음 명령을 사용하여 미러를 다시 생성하여 미러 관계를 다시 설정합니다.</block>
   <block id="9abd59a18f57d6cb4282adb209f8b563" category="list-text">SAS 디스크 쉘프 스택에 연결되는 FiberBridge 7600N 브리지 2개를 사용할 수 있습니다.</block>
   <block id="fc35f0bbf60965f7ec34001ad687a3f3" category="list-text">SAS 디스크 쉘프 스택에 FibreBridge 7500N 브리지 1개와 FibreBridge 7600N 브리지 1개를 연결할 수 있습니다.</block>
   <block id="3ed94c5d90da7ee057d27e4a111e2d56" category="list-text">ATTO 브리지의 전원을 끄고 브리지에 연결된 전원 케이블을 제거합니다.</block>
@@ -12561,7 +12560,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b13f7000aa5add9a5264da17e3dc4f67" category="list-text">각 노드에서 다음 명령을 실행하여 노드를 중지합니다.</block>
   <block id="de48c3af46bd57dad9f2ad02bbb26041" category="paragraph"><block ref="8a921c8973814d1a72edcc98a6686da9" prefix="" category="inline-code"></block></block>
   <block id="84b0c3d7ab439004e978c709f15fc230" category="paragraph">표시된 순서대로 다음 장비의 전원을 꺼야 합니다.</block>
-  <block id="98734a3d5b75c8baf95c27fbc27a15f1" category="list-text">모든 하드웨어, 스토리지 컨트롤러, IP 스위치, FiberBridges 및 스토리지 셸프를 물리적으로 재배치합니다.</block>
   <block id="1cef707d96d59ea52cd45984a36d2f11" category="list-text">IP 스위치의 전원을 켭니다.</block>
   <block id="ac8327044a4ce63889944095a1b6aed8" category="list-text">쉘프의 전원을 완전히 켜는 데 충분한 시간이 필요합니다.</block>
   <block id="d5061566f9570e151daa3fd59fb31405" category="list-text">유지 관리 모드의 노드에서 로컬 스토리지가 표시되는지 확인합니다.</block>
@@ -14665,7 +14663,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c452f245605b541913c8927f2fb39f4b" category="inline-link-macro">자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항</block>
   <block id="9648215f493ab7d57f334a1db39291f3" category="admonition">ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다. 자세한 내용은 을 <block ref="b265df9824eecc73bbbf36d6341665a3" category="inline-link-macro-rx"></block> 참조하십시오.</block>
   <block id="cbeca2fa89a3ea8f375e96b634c42759" category="doc">MetroCluster IP 스위치에서 SNMPv3 구성</block>
-  <block id="630f606ab1d9cdb74f5fddde24450385" category="paragraph">이 작업은 스위치에서 SNMPv3를 구성하는 일반적인 단계를 보여줍니다. 나열된 일부 스위치 펌웨어 버전은 MetroCluster IP 구성에서 지원되지 않을 수 있습니다.</block>
   <block id="578f5e3d8693dd5b8f97c29bf9aec80b" category="paragraph">MetroCluster IP 구성에서 지원되는 스위치 펌웨어 버전에 대한 단계를 따라야 합니다 . <block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block> 지원되는 펌웨어 버전을 확인하세요.</block>
   <block id="1451684986f1c945fdb4e4f2a8b904be" category="list-text">SNMPv3는 ONTAP 9.12.1 이상에서만 지원됩니다.</block>
   <block id="e43f0bacec59589637fec825db76ae04" category="list-text">ONTAP 9.13.1P12, 9.14.1P9, 9.15.1P5, 9.16.1 및 이후 버전은 다음 두 가지 문제를 해결합니다.</block>
@@ -14691,7 +14688,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c19095c0c8945d1d4e4e73ec7a11354c" category="paragraph">CLI 5.4.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
   <block id="cd12738ab621b27db86ca1b02e9d118c" category="open-title">엔비디아 - CL 5.11.0</block>
   <block id="1d478fc1ce1613a790d5d77707c188f6" category="paragraph">CLI 5.11.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
-  <block id="8ec049d1fe155ff0c4df415c3d4691e2" category="doc">MetroCluster IP 구성에서 스위치 상태 모니터링 개요</block>
   <block id="8ae4eeaa7baed19106cc30ea02483c5e" category="paragraph">이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다.</block>
   <block id="4ae61f4d1ec2f0efafd8ee4274e49ccf" category="section-title">MetroCluster IP 구성에서 CSHM을 구성하기 위한 중요 참고 사항</block>
   <block id="b38569be2d36a20e8902840c1ea976fe" category="paragraph">이 섹션에서는 Cisco, Broadcom 및 NVIDIA SN2100 스위치에서 SNMPv3를 구성하고 로그를 수집하는 일반적인 단계를 설명합니다. MetroCluster IP 구성에서 지원되는 스위치 펌웨어 버전에 대한 단계를 따라야 합니다 . <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block> 지원되는 펌웨어 버전을 확인하세요.</block>
@@ -14896,4 +14892,18 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="eb781ca5db4579a64062bcf161d91cbe" category="sidebar">이더넷 스위치 모니터링 확인</block>
   <block id="3ef38a7332e8a3a92f8540dfdb80708d" category="sidebar">MetroCluster IP 구성에서 ONTAP Mediator 구성</block>
   <block id="84e085c408a358fe4e512066e45c3837" category="sidebar">System Manger를 사용하여 ONTAP Mediator 관리</block>
+  <block id="d2dfa94f0ec6119f137b05b65f72b726" category="open-title">플렉스가 실패하는 경우:</block>
+  <block id="a3d50ad07bbec0a08b055954bb66cfcb" category="list-text">실패한 플렉스를 파괴하세요:</block>
+  <block id="eb10fb6e54a620d06a2f18c1a660ffe4" category="paragraph"><block ref="10736eb62e72d120f2dcaa0fe0b7666f" prefix="" category="inline-code"></block></block>
+  <block id="b78dcdf12c052d8955dc51b3b3b7b105" category="list-text">거울을 다시 만들어 거울 관계를 재설정합니다.</block>
+  <block id="e6534782a81c039714b69e68abd6dd24" category="open-title">Plex가 오프라인인 경우:</block>
+  <block id="5bf31f2147933b41528417b67db14d59" category="paragraph">플렉스 온라인:</block>
+  <block id="db0df63b9e668f95fb18ff3a3c311c03" category="paragraph"><block ref="abdcc012bb91335575fa83e50f5bd9f2" prefix="" category="inline-code"></block></block>
+  <block id="173d04d1482af7bc613216daa9c54d3b" category="open-title">두 플렉스가 모두 존재하는 경우:</block>
+  <block id="0cb322072bf2ca0a4a593635bde1f36d" category="paragraph">이 절차에서는 스위치에서 SNMPv3를 구성하는 일반적인 단계를 보여줍니다. 나열된 일부 스위치 펌웨어 버전은 MetroCluster IP 구성에서 지원되지 않을 수 있습니다.</block>
+  <block id="00f60657daab6d52f5bc57575661559b" category="list-text">모든 하드웨어, 스토리지 컨트롤러, IP 스위치, 스토리지 선반을 물리적으로 이전합니다.</block>
+  <block id="ba17277e87e849f2a38d0126b17905d8" category="list-text">유지 관리 모드에서 저장소가 표시되는지 확인하세요.</block>
+  <block id="ef1806576a0dffd58481510c7525ed90" category="list-text">유지 관리 모드로 부팅합니다.</block>
+  <block id="41af2ca5f1002ab08c75f010d70581a4" category="list-text">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다.</block>
+  <block id="b496741d8a784412385f91b26ad4e4f1" category="list-text">유지 관리 모드에서 노드에서 로컬 저장소가 표시되는지 확인하세요.</block>
 </blocks>
