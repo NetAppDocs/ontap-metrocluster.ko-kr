@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cabling, cable, component, link, site, management, network, networks, hardware, component, switch, cluster, connection, management, data, configuring, configure 
 summary: MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다. 
 ---
-= Cisco 3232C 또는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
+= Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,8 +15,15 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 
 구성 테이블을 사용하기 전에 다음 고려 사항을 검토하십시오.
 
+* 이 섹션의 표는 NS224 스토리지에 연결되지 않은 Cisco 3232C 스위치 또는 36포트 Cisco 9336C-FX2 스위치에 대한 것입니다.
++
+12포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. link:port-usage-9336c-fx-2-12-port.html["12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"] .
+
++
+36포트 Cisco 9336C-FX2 스위치가 있고 최소 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하는 경우 다음 표를 사용하십시오. link:port_usage_9336c_shared.html["NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당"] .
+
 * 다음 표에는 사이트 A의 포트 사용량이 나와 있습니다 사이트 B에 동일한 케이블이 사용됩니다
-* 스위치는 속도가 다른 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 구성할 수 없습니다.
+* 서로 다른 속도의 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 스위치를 구성할 수 없습니다.
 * 스위치를 사용하여 단일 MetroCluster를 구성하는 경우 * MetroCluster 1 * 포트 그룹을 사용합니다.
 +
 MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2, MetroCluster 3 또는 MetroCluster 4)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 도구가 필요합니다.
@@ -31,12 +38,6 @@ MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2, MetroCluster 3 또는
 
 
 NOTE: RCF 파일 버전은 파일을 생성하는 데 사용되는 RCFfilegenerator 도구의 버전과 다릅니다. 예를 들어 RCFfilegenerator v1.6c를 사용하여 RCF 파일 버전 2.00을 생성할 수 있습니다.
-
-
-
-== 스위치에 2개의 MetroCluster 구성을 케이블로 연결합니다
-
-둘 이상의 MetroCluster 구성을 Cisco 3132Q-V 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster에 케이블을 연결해야 합니다. 예를 들어, FAS2750과 AFF A700을 동일한 Cisco 3132Q-V 스위치에 케이블로 연결하는 경우 그런 다음 표 1의 "MetroCluster 1"에 따라 FAS2750과 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 AFF A700을 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.
 
 
 

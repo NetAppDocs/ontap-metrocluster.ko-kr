@@ -1333,7 +1333,6 @@
   <block id="1b58c8498876b494bed537a676c855cc" category="paragraph"><block ref="1b58c8498876b494bed537a676c855cc" category="inline-link-rx"></block></block>
   <block id="d74c7ca1ea000f4f70f344a02c2ae570" category="paragraph">표를 사용하기 전에 다음 사항을 검토하십시오.</block>
   <block id="bbea4b02ce438e1ae0146e4c5cabb671" category="list-text">다음 표에는 사이트 A의 포트 사용량이 나와 있습니다 사이트 B에 동일한 케이블이 사용됩니다</block>
-  <block id="f57f407b5a71435a3bd46aac8befd7b8" category="list-text">스위치는 속도가 다른 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 구성할 수 없습니다.</block>
   <block id="c57a7dcc596f78ac23d59a9297d99a56" category="list-text">스위치를 사용하여 단일 MetroCluster를 구성하는 경우 * MetroCluster 1 * 포트 그룹을 사용합니다.</block>
   <block id="240c641ec7d44f443373981bb513fa5c" category="list-text">MetroCluster IP용 RcfFileGenerator는 각 스위치에 대한 포트별 케이블 연결 개요도 제공합니다.</block>
   <block id="e13e5f806fc6cae09bcb9fed7eecf125" category="paragraph">이 케이블 연결 개요를 사용하여 케이블 연결을 확인하십시오.</block>
@@ -1388,10 +1387,8 @@
   <block id="c37feb3492d999b3f216448183986be2" category="paragraph">FAS8200</block>
   <block id="5b97f056c47eb55f7ac2ec585e184dd9" category="summary">RCF 파일을 올바르게 생성하려면 포트 테이블의 정보를 사용하는 방법을 이해해야 합니다.</block>
   <block id="673f5a3eeb8366a43231216d5889b9fc" category="doc">RcfFileGenerator 도구나 여러 MetroCluster 구성에서 포트 테이블 사용</block>
-  <block id="6852fcac58b417258b30784060002d89" category="list-text">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 등)을 추적합니다. 이 구성 절차의 뒷부분에 설명된 대로 RcfFileGenerator 도구를 사용할 때 이 정보가 필요합니다.</block>
   <block id="ebd9fb85557b54bcafec3d1a1ac1c292" category="inline-link">MetroCluster IP용 RcfFileGenerator입니다</block>
   <block id="b12eae1983992a43e1aff6798c40b450" category="section-title">8노드 MetroCluster 구성에 케이블을 연결합니다</block>
-  <block id="134c13e2a51797233ea2a5ce24406813" category="paragraph">이러한 구성의 경우 위에서 설명한 것과 동일한 방법을 사용합니다. 보조 MetroCluster 대신 4노드 DR 그룹을 추가로 케이블로 연결합니다.</block>
   <block id="d5e8fd3a5a09a2e20b7a2ae3865f7eef" category="paragraph">예를 들어, 사용자의 구성에는 다음이 포함됩니다.</block>
   <block id="d05e0033e800da35d05e3a88b52e765d" category="list-text">Cisco 3132Q-V 스위치</block>
   <block id="87ede0cd4f69bd1090135509c97d39fc" category="list-text">MetroCluster 1:FAS2750 플랫폼</block>
@@ -11550,7 +11547,6 @@
   <block id="3e0a52646b307379f47860044c088d60" category="paragraph">각 외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="8e65b308ba381d7e7d885330e749b55d" category="list-text">AFF A700 유형의 4노드 MetroCluster 구성 2개를 케이블로 연결한 경우 첫 번째 MetroCluster를 "MetroCluster 1"로 연결하고 두 번째 MetroCluster를 AFF A700 표에서 "MetroCluster 2"로 연결합니다.</block>
   <block id="e5c3d25338f9cf52b0644af8df5dd491" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 포트 13s0-3 및 14s0-3으로 표시됩니다.</block>
-  <block id="0995dd589b8b5229e4b9e28862db9b91" category="paragraph">둘 이상의 MetroCluster 구성을 Cisco 3132Q-V 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster에 케이블을 연결해야 합니다. 예를 들어, FAS2750과 AFF A700을 동일한 Cisco 3132Q-V 스위치에 케이블로 연결하는 경우 그런 다음 표 1의 "MetroCluster 1"에 따라 FAS2750과 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 AFF A700을 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
   <block id="52d00daf67aaaf387590e09043aff43a" category="list-text"><block ref="52d00daf67aaaf387590e09043aff43a" category="inline-link-macro-rx"></block></block>
   <block id="49cc90fa19d302674a7ac32a31b7a0c8" category="list-text"><block ref="49cc90fa19d302674a7ac32a31b7a0c8" category="inline-link-macro-rx"></block></block>
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
@@ -12774,8 +12770,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="74eb178224c5fa701fbcd96998feaafe" category="paragraph">ONTAP 9.9.1</block>
   <block id="5575ad3a333d0c5383b802ef33e4e17a" category="cell">Broadcom IP 스위치</block>
   <block id="a28a8f1b6ed98f7c514003193e44ac48" category="cell">Cisco IP 스위치</block>
-  <block id="f0936c8d947d6fc9958bb86b9f3f74f8" category="paragraph">Nexus 9336C-FX2</block>
-  <block id="aff36115ba8ba0cb671d3dfa2208bed1" category="paragraph">9336C</block>
   <block id="ef0b6886d8755e5cb21c0bd5f9f81c01" category="cell">NVIDIA 스위치</block>
   <block id="155bba03249764c61fd72335fd0c56c8" category="paragraph">SN2100</block>
   <block id="0aa28fce3490c51be9c1cc5c337f1c9d" category="cell">MetroCluster FC 구성에서 지원되는 플랫폼</block>
@@ -14417,7 +14411,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f7bbc76208ab5ade611be3b207fc4964" category="paragraph">내부 파티션은 4개의 동일한 그룹(분기)으로 나뉩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다. 외부 쉘프의 드라이브는 4개의 동일한 그룹(분기)으로 분류됩니다. 각 분기 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="951ecdd1fc2eee9520c3a6959e6b80fd" category="section-title">FAS50 시스템의 디스크 할당</block>
   <block id="eac1566268bcf590649d38dfbbc071d8" category="paragraph">AFF A30, AFF C30, AFF C60, FAS50</block>
-  <block id="aa004c86c9d246df59c413de8bb07fa4" category="doc">Cisco 3232C 또는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
   <block id="d7c09c5c93549b76361e49c52e9d96da" category="cell">AFF A150, ASA A150 FAS2750, AFF A220 FAS500f, AFF C250, ASA C250 AFF A250, ASA A250</block>
   <block id="ed0a8c1dcd72cbf4d807c21d5b375b44" category="inline-xref">Cisco 3232C 또는 Cisco 9336C-FX2 플랫폼 포트 할당(그룹 1)</block>
   <block id="f4d9a05d20269fa8131e3f2ad476038b" category="cell"><block ref="2617a916d647f27524de777e23ed7a4f" category="inline-xref-macro-rx"></block></block>
@@ -14458,9 +14451,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a46b0b81f79736912aabc245374edb1e" category="paragraph">FAS9000, AFF A700, AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템에서 Cisco 3232C 또는 9336C-FX2 스위치로 이동하는 방법:</block>
   <block id="0d3017d486c8217c6fd8ab61555e1cba" category="paragraph">AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 Cisco 3232C 또는 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
   <block id="4b19e8be7b088862285a882fc40c46eb" category="paragraph"><block ref="4b19e8be7b088862285a882fc40c46eb" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="978829a52b7fb14e061e9c30e8ff7842" category="doc">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="6aa15c1667845a9503228a8c33084aa0" category="list-text">NS224 스토리지에 연결된 Cisco 9336C-FX2 스위치에 케이블을 연결할 경우 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있으며, 하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다. 스위치 연결 NS224 쉘프를 지원하지 않는 플랫폼은 2차 MetroCluster 구성으로만 연결하거나 2차 DR 그룹으로 연결할 수 있습니다.</block>
-  <block id="e2fe191f4e95fee618e24c803250f26e" category="admonition">이 표는 하나 이상의 MetroCluster 구성 또는 DR 그룹이 NS224 쉘프를 MetroCluster 스위치에 연결하고 있는 경우에만 사용합니다. 전용 스토리지 스위치를 사용하여 NS224 쉘프를 연결하는 경우 의 표에 따라 스위치를 케이블로 연결합니다.<block ref="172429233fb9c5bb35fb8fe69de88b73" category="inline-link-macro-rx"></block></block>
   <block id="81831b2f87876ca86e780e32db6c147b" category="inline-xref">스위치 연결 NS224 쉘프를 연결하는 컨트롤러의 케이블 테이블</block>
   <block id="52c7315ab051ee37478d469443321dba" category="list-text"><block ref="00f586e7c20fe471e99ea3d5eded6927" category="inline-xref-macro-rx"></block></block>
   <block id="de97d5568eefaebab398acd69978f881" category="inline-xref">스위치 연결 NS224 쉘프가 연결되지 않은 컨트롤러의 케이블 연결 테이블</block>
@@ -14854,12 +14844,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="cea15dc4611e6036f3dd9fe7aea7cfc4" category="paragraph">두 클러스터 모두에 단일 미러링된 데이터 집계</block>
   <block id="04afdd621fe01bc52800f10af27a7c2a" category="list-text"><block ref="2812633e4be142ea6fef81aa2fc3b357" category="inline-link-macro-rx"></block> ]</block>
   <block id="1fec7b2b0af82b649786a3fafea0cceb" category="paragraph">5, 6</block>
-  <block id="f4206dbe8a14ad08108f277413f07552" category="paragraph">Cisco 3232C 또는 9336C-FX2</block>
   <block id="dd03025041053e9c69b290436fd5dc5d" category="paragraph">5, 6, 또는 13, 14</block>
-  <block id="4a1b19255812edcb60c6c44b6d7a5e9a" category="paragraph">*참고:* 스위치 포트 13과 14는 두 가지 속도 모드를 선택한 경우에만 사용할 수 있습니다.</block>
-  <block id="e4ecc909d465ec5014d76b60d5fb3593" category="paragraph">Cisco 9336C-FX2 공유</block>
   <block id="c12aeba3053f31f9a1d1d57376477e54" category="paragraph">3, 4, 또는 11, 12</block>
-  <block id="f8997e771791c9a981180a00129637ec" category="paragraph">*참고:* 스위치 포트 11과 12는 두 가지 속도 모드를 선택한 경우에만 사용할 수 있습니다.</block>
   <block id="319106ed9ce9f52242209111123407d6" category="paragraph">5, 6, 또는 11, 12</block>
   <block id="b8466cace8606dd997df70d225fbe406" category="list-text"><block ref="b8466cace8606dd997df70d225fbe406" category="inline-link-macro-rx"></block></block>
   <block id="636e793526fcef1247efd0dcb03d56f1" category="list-text"><block ref="636e793526fcef1247efd0dcb03d56f1" category="inline-link-macro-rx"></block></block>
@@ -14906,4 +14892,84 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ef1806576a0dffd58481510c7525ed90" category="list-text">유지 관리 모드로 부팅합니다.</block>
   <block id="41af2ca5f1002ab08c75f010d70581a4" category="list-text">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다.</block>
   <block id="b496741d8a784412385f91b26ad4e4f1" category="list-text">유지 관리 모드에서 노드에서 로컬 저장소가 표시되는지 확인하세요.</block>
+  <block id="93ba613931cbee0caca0df20b5380feb" category="doc">12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
+  <block id="a696f18cbd32872428df323dcf124b0f" category="list-text">이 섹션의 표는 12포트 Cisco 9336C-FX2 스위치용입니다.</block>
+  <block id="9e1541acccf8eedc84b54f8f9ba9022a" category="inline-link-macro">Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
+  <block id="c144049e87444b7880d439a35cc6dcb2" category="paragraph">NS224 셸프를 연결하지 않는 36포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. <block ref="5e1610ecd3627713f0895c655a667651" category="inline-link-macro-rx"></block> .</block>
+  <block id="7092da1e1fea0fcc1131162478f82fda" category="inline-link-macro">NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당</block>
+  <block id="c0fa50622de6b0941fc67782df76fef3" category="paragraph">36포트 Cisco 9336C-FX2 스위치가 있고 최소 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하는 경우 다음 표를 사용하십시오. <block ref="0bde9be66bb65d34d39560c7bec9f5ff" category="inline-link-macro-rx"></block> .</block>
+  <block id="347cf39e3d412a2e80f417e602ae78af" category="admonition">12포트 Cisco 9336C-FX2 스위치는 NS224 셸프를 MetroCluster 스위치에 연결하는 것을 지원하지 않습니다.</block>
+  <block id="23aa6285fa7c3546b4aa52950c9ac869" category="list-text">서로 다른 속도의 포트(예: 100Gbps 포트와 40Gbps 포트 혼합)로 스위치를 구성할 수 없습니다.</block>
+  <block id="4f713bc0f7eb8977f1792b2dbce2b165" category="paragraph">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2)을 추적하세요. 이 구성 절차의 뒷부분에서 설명하는 RcfFileGenerator 도구를 사용할 때 필요합니다.</block>
+  <block id="897239c8574f5b63edd50dd13c6d7cf3" category="cell">AFF A150, ASA A150 FAS500f AFF C250, ASA C250 AFF A250, ASA A250</block>
+  <block id="80b2c26f194ad890539872b7c92f3895" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 1)</block>
+  <block id="85a14427800ed439393b5bb470be7d80" category="cell"><block ref="3b548f50ac951005c3b57697db89b587" category="inline-xref-macro-rx"></block></block>
+  <block id="ae8f6037879765647f43daa463c2d9f6" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 2)</block>
+  <block id="57ced6fae2801d6d06484d467d1b63a8" category="cell"><block ref="c72ebc3377994a6acace391540a4f437" category="inline-xref-macro-rx"></block></block>
+  <block id="43a85af0db0b94c52523571a361da240" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 3a - 25G)</block>
+  <block id="d9ccb9e9bd638d71976fd2fd85b324fc" category="list-text"><block ref="7c0cdee2b7c5be6b24b403e15778ce3c" category="inline-xref-macro-rx"></block></block>
+  <block id="1dad8ed122139324dfbff2465006f86b" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 3b - 100G)</block>
+  <block id="69e8634976c147c576f1e214a0550e9a" category="list-text"><block ref="5b9cf5c0f4a61285ad67d0bb263ce927" category="inline-xref-macro-rx"></block></block>
+  <block id="faf0f53c2e9a3fadbedb926822ee4f24" category="cell">FAS8300, AFF C400, ASA C400, FAS8700 AFF A400, ASA A400</block>
+  <block id="6acd1e486078b3860e26aa16cc1b08e4" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 4)</block>
+  <block id="98c2e72a6811dff2a23cd82069bf1526" category="cell"><block ref="7f59e713b9cd81ce166c2146060aa315" category="inline-xref-macro-rx"></block></block>
+  <block id="0edb652fa75412b08f664efe991094b6" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 5)</block>
+  <block id="9985428e868977a96682979580a7f4fe" category="cell"><block ref="74b8e214ff73dc8452e34a7234af634f" category="inline-xref-macro-rx"></block></block>
+  <block id="900e51ace73e4af65fb0f92750aed2cd" category="cell">AFF C800, ASA C800, AFF A800, ASA A800 FAS9500, AFF A900, ASA A900</block>
+  <block id="4761e464022d0e7898566aca053e3d5d" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 6)</block>
+  <block id="a78dfa75a27672d9dcf736e820aea965" category="cell"><block ref="bd344fa4a429b5434b9580b2e855451e" category="inline-xref-macro-rx"></block></block>
+  <block id="9f87e37a7ba63b4c380dfb27098af511" category="inline-xref">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 7)</block>
+  <block id="22b08261fbebc7afc5117f5ecf037d83" category="cell"><block ref="efd81923e5d5e6f3bb4df0963dc6cdf6" category="inline-xref-macro-rx"></block></block>
+  <block id="eee1675a365933d14d4875fe05b47f41" category="paragraph">AFF A150, ASA A150, FAS500f, AFF C250, ASA C250, AFF A250 또는 ASA A250 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토하세요.</block>
+  <block id="1b751257539482b3f103553b01553514" category="inline-image-macro">Cisco 9336C-FX2 12포트 플랫폼 포트 할당을 보여줍니다.</block>
+  <block id="469dff43e2041efcb134544af24084bd" category="paragraph"><block ref="469dff43e2041efcb134544af24084bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dbb5afc1b3ce5a4d7ef4e08f5bbcd1bc" category="paragraph">*참고 1:* 포트 19와 20 또는 21과 22만 설정할 수 있습니다. 포트 19와 20을 먼저 사용하면 포트 21과 22가 차단됩니다. 포트 21과 22를 먼저 사용하면 포트 19와 20이 차단됩니다.</block>
+  <block id="a8860ed3e6d63bb3e5748a3216f78f95" category="paragraph">AFF A20 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토하세요.</block>
+  <block id="ead11a9d0b6c45c78bafddaa95af4a5f" category="paragraph"><block ref="ead11a9d0b6c45c78bafddaa95af4a5f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9f89da036eea3b2de29658c5897d57aa" category="paragraph-title">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 3a)</block>
+  <block id="4b70457b584f1d886a4ef66e6a7dae3d" category="paragraph">4포트 25G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="54555a6009e372e2ba222be819e827ce" category="paragraph"><block ref="54555a6009e372e2ba222be819e827ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e978c01908eb6448e1c901bc64974fd" category="paragraph-title">Cisco 9336C-FX2 12포트 플랫폼 포트 할당(그룹 3b)</block>
+  <block id="b324ed6fa7073456924606243edae554" category="paragraph">2포트 100G 이더넷 카드를 사용하여 AFF A30, AFF C30, AFF C60 또는 FAS50 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토합니다.</block>
+  <block id="b1360434e23230f6a7d340c38e9303bf" category="paragraph"><block ref="b1360434e23230f6a7d340c38e9303bf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b3d5e9e94a54d8bdabf7080283b01dad" category="paragraph">FAS8300, AFF C400, ASA C400, FAS8700, AFF A400 또는 ASA A400 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토하세요.</block>
+  <block id="4d0ccc5efafaf248ac4b73006cd81b20" category="paragraph">AFF A50 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토하세요.</block>
+  <block id="23135c110d0e57e34de1287d76a39da3" category="paragraph">AFF C800, ASA C800, AFF A800, ASA A800, FAS9500, AFF A900 또는 ASA A900 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토하세요.</block>
+  <block id="9e60ac33bc092c405a097555835b594f" category="paragraph">*참고 2:* X91440A 어댑터(40Gbps)를 사용하는 경우 e4a와 e4e 포트 또는 e4a와 e8a 포트를 사용하세요. X91153A 어댑터(100Gbps)를 사용하는 경우 포트 e4a 및 e4b 또는 e4a 및 e8a를 사용합니다.</block>
+  <block id="c69b12ce9784f26bc437bc6fde404a3a" category="paragraph">AFF A70, FAS70, AFF C80, FAS90, AFF A90 또는 AFF A1K 시스템을 12포트 Cisco 9336C-FX2 스위치에 케이블로 연결하기 위한 플랫폼 포트 할당을 검토하세요.</block>
+  <block id="d1a900bdae5e9590c4fdafef8c37dedf" category="paragraph"><block ref="d1a900bdae5e9590c4fdafef8c37dedf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18b57c847127e5c2b7dd8598cc05067c" category="list-text">이 섹션의 표는 NS224 스토리지에 연결되지 않은 Cisco 3232C 스위치 또는 36포트 Cisco 9336C-FX2 스위치에 대한 것입니다.</block>
+  <block id="ca2ba184117d249efe6f978511379d06" category="paragraph">12포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. <block ref="67221021aed93298a4f5ea2fd779fba0" category="inline-link-macro-rx"></block> .</block>
+  <block id="045ecf3a2dbe25ed7ed0298e865ad8aa" category="paragraph">36포트 Cisco 9336C-FX2 스위치가 있고 최소 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하는 경우 다음 표를 사용하십시오. <block ref="0bde9be66bb65d34d39560c7bec9f5ff" category="inline-link-macro-rx"></block> .</block>
+  <block id="24a2b83846d1cc0fd499ffd7c44a8766" category="list-text">이 섹션의 표는 최소한 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결할 때 사용되는 36포트 Cisco 9336C-FX2 스위치에 대한 것입니다.</block>
+  <block id="be04f167387be19d404ab8525e42eb36" category="paragraph">NS224 스토리지를 연결하지 않는 36포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. <block ref="5e1610ecd3627713f0895c655a667651" category="inline-link-macro-rx"></block> .</block>
+  <block id="67f1cdced842853dcaa748f1574de4a2" category="inline-link-macro">12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
+  <block id="38f841f1e9d996375153a7c10a011d16" category="paragraph">12포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. <block ref="ce9e67085330d921aaa0fff0495dc70b" category="inline-link-macro-rx"></block> .</block>
+  <block id="01c9231aeeef68ed3519963715841bfa" category="list-text">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 MetroCluster 구성 또는 DR 그룹은 최대 두 개까지만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결해야 합니다. 스위치에 연결된 NS224 셸프를 연결하지 않는 플랫폼만 두 번째 MetroCluster 구성 또는 두 번째 DR 그룹으로 연결할 수 있습니다.</block>
+  <block id="674e97a0c22c1388979c98f80b98f4b5" category="inline-xref">스위치 부착 NS224 선반을 연결하지 않는 컨트롤러용 케이블링 테이블</block>
+  <block id="93a0ba86005851fcdd55129adf1c0b46" category="paragraph">두 번째 MetroCluster 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하지 않으면 다음을 따르십시오. <block ref="b9dbe6880b7454d3bcbbe8f7d7793db4" category="inline-xref-macro-rx"></block> .</block>
+  <block id="b3e24b8d0d23855e43550444290c1574" category="list-text">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 등)을 추적합니다. 이 정보는 이 구성 절차의 뒷부분에서 설명하는 대로 RcfFileGenerator 도구를 사용할 때 필요합니다.</block>
+  <block id="b8b3268e24f1bc7df35cfea685b9683b" category="paragraph">두 개 이상의 MetroCluster 구성을 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster를 케이블로 연결합니다. 예를 들어, FAS2750과 AFF A700을 같은 스위치에 케이블로 연결하는 경우, FAS2750은 표 1의 "MetroCluster 1"에 따라, AFF A700은 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
+  <block id="663e9f366c9d01f8e5aae5c69a84c421" category="paragraph">8노드 구성의 경우 위에 설명된 것과 동일한 방법을 사용합니다. 보조 MetroCluster 대신 4노드 DR 그룹을 추가로 케이블로 연결합니다.</block>
+  <block id="ae82224d59846a6a4a61ec394a0de4cc" category="paragraph">9336C-FX2(12포트)</block>
+  <block id="912e887f8c2036c3f03ac7df63957dfd" category="paragraph">9336C-FX2(36포트)</block>
+  <block id="5f972a786e3a36fb039bc945267e120a" category="paragraph">3132Q-V를 참조하십시오</block>
+  <block id="f403fff2bbc7f3e506dae47b9dff52fc" category="paragraph">3232C를 참조하십시오</block>
+  <block id="addb9e70976c2f94b8ccfc3736a31888" category="paragraph-title">중요 정보</block>
+  <block id="4debc1eb094b4eed6a7da2386ab54e6c" category="paragraph">전환, 새로 고침 및 확장 절차 중에 MetroCluster 구성에 새 플랫폼 모델을 추가할 수 있습니다. 이러한 절차 중 어느 단계에서든 기존 MetroCluster 구성에 *공유 클러스터/HA 포트*를 사용하는 플랫폼이 포함된 경우, ONTAP 버전을 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않으면 *공유 MetroCluster/HA 포트*를 사용하는 플랫폼을 해당 구성에 추가할 수 없습니다.</block>
+  <block id="d10323563cbf4f5c4867c9d231bc7a43" category="paragraph">이 절차를 사용하기 전에 다음 표의 정보를 주의 깊게 검토하십시오. 기존 플랫폼이 첫 번째 열에 나열되어 있고 구성에 추가하려는 플랫폼이 두 번째 열에 나열되어 있는 경우, 이 절차를 지원하려면 구성의 모든 노드가 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.</block>
+  <block id="2a42ab8cc2bb0692767bdb976d98e5de" category="admonition">기존 플랫폼과 구성에 추가하려는 플랫폼은 모두 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.</block>
+  <block id="38c9e66a6eb25313e0ea3390ba7ee1fc" category="cell">기존 MetroCluster에 다음이 포함되어 있는 경우..</block>
+  <block id="afe6ad7caef50aaad15afb83c6f40ca0" category="cell">그리고 당신이 추가하는 플랫폼은...</block>
+  <block id="12f30f47d5034530ccaa816ade9953fc" category="paragraph">*공유 클러스터/HA 포트*를 사용하는 AFF 시스템:</block>
+  <block id="1524c1b66420bec4703072f8c83b957d" category="paragraph">*공유 클러스터/HA 포트*를 사용하는 FAS 시스템:</block>
+  <block id="9f32876abf46baa803dc6fa1757df9d6" category="paragraph">*공유 MetroCluster/HA 포트*를 사용하는 AFF 시스템:</block>
+  <block id="86ae7e30048a3216a8dd99ea94895709" category="paragraph">*공유 MetroCluster/HA 포트*를 사용하는 FAS 시스템:</block>
+  <block id="8d0d6d36ce6ea8a131eb2d92d46724a0" category="cell">기존 MetroCluster 구성에 새 플랫폼을 추가하기 전에 기존 및 새 구성의 모든 노드를 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하세요.</block>
+  <block id="f83ed54662eb344a7625fece5276d265" category="paragraph">Cisco 3232C 또는 9336C-FX2(36포트)</block>
+  <block id="c352fb103e076b7d23028394a1aa47c7" category="paragraph">*참고:* 스위치 포트 13과 14를 사용하려면 두 가지 속도 모드를 선택해야 합니다.</block>
+  <block id="c82f2ff1cbd6e1d62e65daba43978db4" category="paragraph">Cisco 9336C-FX2 공유(36포트)</block>
+  <block id="d44a3adbc7ddf926ace3174c29e594fe" category="paragraph">*참고:* 스위치 포트 11과 12를 사용하려면 두 가지 속도 모드를 선택해야 합니다.</block>
+  <block id="22e6a6026dec5bb5059565b00cc3631c" category="paragraph">전환, 새로 고침, 8노드 설치 및 4노드 확장 절차 중에 MetroCluster 구성에 새 플랫폼 모델을 추가할 수 있습니다. 이러한 절차 중 어느 단계에서든 기존 MetroCluster 구성에 *공유 클러스터/HA 포트*를 사용하는 플랫폼이 포함된 경우, ONTAP 버전을 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않으면 *공유 MetroCluster/HA 포트*를 사용하는 플랫폼을 해당 구성에 추가할 수 없습니다.</block>
+  <block id="29c802ab86e25c329e4ce82ab207d848" category="sidebar">12포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당</block>
 </blocks>

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cabling, cable, component, link, site, management, network, networks, hardware, component, shared, switch, cluster, connection, management, data, configuring, configure 
 summary: MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다. 
 ---
-= NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
+= NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,10 +15,20 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 
 구성 테이블을 사용하기 전에 다음 고려 사항을 검토하십시오.
 
-* NS224 스토리지에 연결된 Cisco 9336C-FX2 스위치에 케이블을 연결할 경우 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있으며, 하나 이상의 MetroCluster 구성 또는 DR 그룹이 스위치 연결 NS224 쉘프를 지원해야 합니다. 스위치 연결 NS224 쉘프를 지원하지 않는 플랫폼은 2차 MetroCluster 구성으로만 연결하거나 2차 DR 그룹으로 연결할 수 있습니다.
+* 이 섹션의 표는 최소한 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결할 때 사용되는 36포트 Cisco 9336C-FX2 스위치에 대한 것입니다.
++
+NS224 스토리지를 연결하지 않는 36포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. link:port_usage_3232c_9336c.html["Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"] .
+
++
+12포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. link:port-usage-9336c-fx-2-12-port.html["12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"] .
+
 +
 
-CAUTION: 이 표는 하나 이상의 MetroCluster 구성 또는 DR 그룹이 NS224 쉘프를 MetroCluster 스위치에 연결하고 있는 경우에만 사용합니다. 전용 스토리지 스위치를 사용하여 NS224 쉘프를 연결하는 경우 의 표에 따라 스위치를 케이블로 연결합니다.link:port_usage_3232c_9336c.html["Cisco 3232C 또는 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"]
+NOTE: 12포트 Cisco 9336C-FX2 스위치는 NS224 셸프를 MetroCluster 스위치에 연결하는 것을 지원하지 않습니다.
+
+* NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 MetroCluster 구성 또는 DR 그룹은 최대 두 개까지만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결해야 합니다. 스위치에 연결된 NS224 셸프를 연결하지 않는 플랫폼만 두 번째 MetroCluster 구성 또는 두 번째 DR 그룹으로 연결할 수 있습니다.
++
+두 번째 MetroCluster 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하지 않으면 다음을 따르십시오. <<tables_not_connecting_ns224,스위치 부착 NS224 선반을 연결하지 않는 컨트롤러용 케이블링 테이블>> .
 
 * RcfFileGenerator는 첫 번째 플랫폼을 선택한 경우에만 적합한 플랫폼을 표시합니다.
 * 1개의 8노드 또는 2개의 4노드 MetroCluster 구성을 연결하려면 ONTAP 9.14.1 이상이 필요합니다.
