@@ -49,7 +49,7 @@ summary: 네트워크 가용성을 확인하고 모니터링 구성을 복원하
 .단계
 . 이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.link:upgrade-mcc-ip-system-controller-replace-supported-platforms.html["업그레이드를 준비합니다"]
 +
-작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다.
+이 절차를 반복하면 클러스터와 노드에 대한 모든 예제 참조가 반전됩니다.
 
 
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, nondisruptive, controller, switchover, switchback, fc, configuration, net, boot, root, aggregate, mcc 
 summary: 'MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.' 
 ---
-= 스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러 업그레이드
+= 스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -113,15 +113,18 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
-== 업그레이드를 준비하는 중입니다
+== 업그레이드를 준비합니다
 
 기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고, 새 플랫폼을 준비하고, 기타 작업을 수행해야 합니다.
 
 
 
-=== MetroCluster 구성 상태 확인
+=== MetroCluster 구성의 상태를 확인합니다
 
-업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.
+업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결성을 확인합니다.
+
+
+CAUTION: 첫 번째 사이트에서 컨트롤러를 업그레이드한 후 두 번째 사이트를 업그레이드하기 전에 다음을 실행합니다.  `metrocluster check run` 이어서  `metrocluster check show` 오류가 반환됩니다  `config-replication` 필드. 이 오류는 각 사이트의 노드 간 NVRAM 크기 불일치를 나타내며, 두 사이트에 서로 다른 플랫폼 모델이 있는 경우 예상되는 동작입니다. DR 그룹의 모든 노드에 대한 컨트롤러 업그레이드가 완료될 때까지 이 오류를 무시해도 됩니다.
 
 .단계
 . ONTAP에서 MetroCluster 구성 작동을 확인합니다.
@@ -207,7 +210,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
-=== 이전 노드에서 새 노드로 포트 매핑
+=== 이전 노드의 포트를 새 노드로 매핑합니다
 
 이전 노드의 물리적 포트에 있는 LIF를 새 노드의 물리적 포트에 매핑해야 합니다.
 
@@ -400,7 +403,7 @@ e0c 및 e0d가 일치하는 포트입니다. 구성을 변경할 필요는 없�
 
 
 
-=== 업그레이드 전에 정보를 수집하는 중입니다
+=== 업그레이드하기 전에 정보를 수집합니다
 
 업그레이드하기 전에 이전 노드 각각에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
 
@@ -511,14 +514,14 @@ dr-group-id cluster    node      node-systemid dr-partner-systemid
 
 
 
-=== Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성 제거
+=== Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
 
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)을 사용하여 기존 구성을 모니터링하는 경우, 전환 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
 
 .단계
 . Tiebreaker 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.
 +
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성을 제거하는 중입니다"]
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성을 제거합니다"]
 
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +
@@ -645,7 +648,7 @@ cluster_A::> metrocluster operation show
 
 
 
-== 이전 컨트롤러의 네트워크 구성 준비
+== 이전 컨트롤러의 네트워크 구성을 준비합니다
 
 새로운 컨트롤러에서 네트워킹이 완전히 다시 시작되도록 하려면 LIF를 공통 포트로 이동한 다음 이전 컨트롤러의 네트워킹 구성을 제거해야 합니다.
 
@@ -746,7 +749,7 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 
 
 
-== 이전 플랫폼을 제거하는 중입니다
+== 오래된 플랫폼을 제거하세요
 
 이전 컨트롤러를 구성에서 제거해야 합니다.
 
@@ -762,13 +765,13 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 
 
 
-== 새 컨트롤러 구성
+== 새 컨트롤러를 구성합니다
 
 컨트롤러를 랙에 설치하고 유지보수 모드에서 필요한 설정을 수행한 다음 컨트롤러를 부팅하고 LIF 구성을 확인해야 합니다.
 
 
 
-=== 새 컨트롤러 설정
+=== 새 컨트롤러를 설정합니다
 
 새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.
 
@@ -798,7 +801,7 @@ https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명�
 
 
 
-=== 새 컨트롤러를 Netbooting 합니다
+=== 새 컨트롤러를 netboot합니다
 
 새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
 
@@ -866,7 +869,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-=== 컨트롤러 모듈의 구성 지우기
+=== 컨트롤러 모듈의 구성을 지웁니다
 
 MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
 
@@ -987,7 +990,7 @@ fcadmin 쇼
 
 
 
-=== 새 컨트롤러 및 섀시의 HA 상태 설정
+=== 새 컨트롤러 및 섀시에서 HA 상태를 설정합니다
 
 컨트롤러 및 섀시의 HA 상태를 확인하고, 필요한 경우 시스템 구성에 맞게 상태를 업데이트해야 합니다.
 
@@ -1048,14 +1051,14 @@ ha-config modify chassis MCC-2n
 
 
 
-=== 루트 애그리게이트 디스크를 다시 할당합니다
+=== 루트 애그리게이트 디스크를 재할당합니다
 
 앞에서 수집한 sysids를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
 
 .이 작업에 대해
 이 작업은 유지보수 모드에서 수행됩니다.
 
-에서 이전 시스템 ID를 식별했습니다 link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["업그레이드 전에 정보를 수집하는 중입니다"].
+이전 시스템 ID는 에서 식별되었습니다. link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["업그레이드하기 전에 정보를 수집합니다"]
 
 이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.
 
@@ -1355,7 +1358,7 @@ RECOVER_EXTERNAL_keymanager'입니다
 
 .. 필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58A3-46C9-BF0C-BA1D1D1475F9.html["브로드캐스트 도메인에서 포트 추가 또는 제거"]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58A3-46C9-BF0C-BA1D1D1475F9.html["브로드캐스트 도메인에서 포트를 추가하거나 제거합니다"]
 
 .. 인터클러스터 LIF를 호스팅할 물리적 포트를 해당 브로드캐스트 도메인에 추가합니다.
 .. 새 물리적 포트를 홈 포트로 사용하도록 인터클러스터 LIF를 수정합니다.
@@ -1364,14 +1367,14 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58
 클러스터 피어링을 다시 구성해야 할 수 있습니다.
 
 +
-link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#peering-the-clusters["클러스터 피어 관계 생성"]
+link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#peering-the-clusters["클러스터 피어 관계를 생성합니다"]
 
 .. 필요에 따라 VLAN 및 인터페이스 그룹을 다시 생성합니다.
 +
 VLAN 및 인터페이스 그룹 멤버쉽은 이전 노드의 멤버쉽과 다를 수 있습니다.
 
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-8929FCE2-5888-4051-B8C0-E27CAF3F2A63.html["VLAN을 생성하는 중입니다"^]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-8929FCE2-5888-4051-B8C0-E27CAF3F2A63.html["VLAN을 생성합니다"^]
 
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EAB7-430A-A773-4E3420EE2AA1.html["물리적 포트를 결합하여 인터페이스 그룹을 생성합니다"^]
@@ -1407,7 +1410,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
-=== LIF 구성을 확인하는 중입니다
+=== LIF 구성을 확인합니다
 
 스위치백 이전에 LIF가 적절한 노드/포트에서 호스팅되었는지 확인합니다. 다음 단계를 수행해야 합니다
 
@@ -1515,7 +1518,7 @@ Remote: cluster_A         Configuration state configured
 
 
 
-== MetroCluster 구성 상태 점검
+== MetroCluster 구성의 상태를 확인합니다
 
 컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.
 
@@ -1557,20 +1560,20 @@ Failed to validate the node and cluster components before the switchover operati
 
 
 
-== cluster_a의 노드 업그레이드
+== cluster_A에서 노드를 업그레이드합니다
 
 cluster_A에서 업그레이드 작업을 반복해야 합니다
 
 .단계
-. 단계를 반복하여 cluster_A의 노드를 부터 업그레이드합니다 link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["업그레이드를 준비하는 중입니다"].
+. 이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.link:task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["업그레이드를 준비합니다"]
 +
-작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다
+이 절차를 반복하면 클러스터와 노드에 대한 모든 예제 참조가 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다
 
 
 
 
 
-== 유지 관리 후 사용자 지정 AutoSupport 메시지 보내기
+== 유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다
 
 업그레이드를 완료한 후에는 유지 보수 종료를 알리는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.
 
@@ -1588,9 +1591,9 @@ cluster_A에서 업그레이드 작업을 반복해야 합니다
 
 
 
-== Tiebreaker 모니터링 복원 중
+== Tiebreaker 모니터링을 복원합니다
 
 이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.
 
-. 의 단계를 사용합니다 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-7259BCA4-104C-49C6-BAD0-1068CA2A3DA5.html["MetroCluster 구성 추가"^] In_MetroCluster Tiebreaker 설치 및 구성 _.
+. 다음 단계를 사용하세요.  http://docs.netapp.com/ontap-9/topic/com.netapp.doc.hw-metrocluster-tiebreaker/GUID-7259BCA4-104C-49C6-BAD0-1068CA2A3DA5.html["MetroCluster 구성 추가"^] _MetroCluster Tiebreaker 설치 및 구성_에서.
 

@@ -2331,7 +2331,6 @@
   <block id="4006ebc8b1e151da2d8e1860f1657adc" category="paragraph">데이터 4</block>
   <block id="62a0282d39568be094470486eaf70c4f" category="paragraph">산</block>
   <block id="9e825d496d7663757ece1259e7a96304" category="paragraph">인터클러스터 포트</block>
-  <block id="1494e61022d43a77210d5dc678a3a88d" category="section-title">새 컨트롤러를 Netbooting 합니다</block>
   <block id="edc643a9505fab515a007a1aa3dc38cc" category="paragraph">새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.</block>
   <block id="a22d8b3d45a0a714676015f3d6879afe" category="list-text">새 컨트롤러를 Netboot에 다음과 같이 합니다.</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp Support 사이트</block>
@@ -2372,7 +2371,6 @@
   <block id="ba68bac0be7ad49544e9629601cb670c" category="paragraph">확인 프롬프트에 yes로 응답합니다.</block>
   <block id="2fa38a35d5b9cc8f1b69fd7f9bbe4303" category="paragraph">노드가 재부팅되고 부팅 메뉴가 다시 표시됩니다.</block>
   <block id="01e10c4c054845c383133ebfd17fccdf" category="list-text">부팅 메뉴에서 옵션 * 5 * 를 선택하여 시스템을 유지보수 모드로 부팅합니다.</block>
-  <block id="e53a7c24d7a4423f5e6dc1e0489f4650" category="paragraph">업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.</block>
   <block id="e64a7827901a0e6216b6c75c3b100902" category="list-text">노드 multipathed 여부 확인: + 'node run-node_node-name_sysconfig-a</block>
   <block id="542da501ed6fd2c5eec24de28539644a" category="paragraph">MetroCluster 구성의 각 노드에 대해 이 명령을 실행해야 합니다.</block>
   <block id="c894c5114918cbfc56f415ba352bca28" category="list-text">구성에서 손상된 디스크가 없는지 확인합니다. + '스토리지 디스크 표시 - 파손'</block>
@@ -2445,7 +2443,6 @@
   <block id="2582e010e97c2f1b4ef7a684672e4598" category="list-text">클러스터에 로그인합니다.</block>
   <block id="0f08c117fa6e12343d030b7741d1d666" category="paragraph">유지보수 윈도우 시간(main유지보수-window-in-hours) 매개변수는 유지보수 윈도우 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="047c004f2f53364ce170133f533be47f" category="list-text">파트너 사이트에서 이 단계를 반복합니다.</block>
-  <block id="89e7124fca5c192493e832d03a3de9d2" category="section-title">MetroCluster 구성을 전환합니다</block>
   <block id="332d6b9e68571fab560335a786aee2d6" category="paragraph">site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전환해야 합니다.</block>
   <block id="2ed2f89a99daa3452e8fc315262c95f5" category="paragraph">이 작업은 site_A에서 수행해야 합니다</block>
   <block id="803c81253d05dfea0833a4f1be138dea" category="image-alt">전환 중인 MCC 업그레이드 클러스터 A</block>
@@ -2484,14 +2481,12 @@
   <block id="4c21e041670c346a702fabcf0aa3b403" category="paragraph">새 플랫폼 모델을 지원하는 구성으로 스위치를 업데이트해야 합니다.</block>
   <block id="9c7486b863d548a10cb42f0cf9fbf593" category="paragraph">현재 업그레이드 중인 컨트롤러가 포함된 사이트에서 이 작업을 수행합니다. 이 절차의 예에서는 먼저 site_B를 업그레이드하고 있습니다.</block>
   <block id="4ab496c462bc9a729fe703221c683545" category="paragraph"><block ref="4ab496c462bc9a729fe703221c683545" category="inline-link-macro-rx"></block></block>
-  <block id="3cfa77e26dd6c256a6f41b6a62be5341" category="section-title">새 컨트롤러 구성</block>
   <block id="4a9f94a6bfc29e6a892ce5bcc1a54ee2" category="paragraph">컨트롤러를 랙에 설치하고 유지보수 모드에서 필요한 설정을 수행한 다음 컨트롤러를 부팅하고 LIF 구성을 확인해야 합니다.</block>
   <block id="7e7fa25a4f3d72e0aeb3841f8bab2d05" category="section-title">새 컨트롤러 설정</block>
   <block id="86008a0b4a5488741f7256f8ff1f242e" category="paragraph">새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.</block>
   <block id="d7d5207b6a402327d717590c53126a62" category="list-text">필요에 따라 새 컨트롤러 모듈 및 스토리지 쉘프를 포지셔닝합니다.</block>
   <block id="001201e7e95e93ec36501bc42b2e7e9b" category="paragraph">랙 공간은 컨트롤러 모듈의 플랫폼 모델, 스위치 유형 및 구성의 스토리지 쉘프 수에 따라 다릅니다.</block>
   <block id="fa14a702e51b19084e9474a2f3ee6905" category="list-text">새 노드의 전원을 켜고 유지보수 모드로 부팅합니다.</block>
-  <block id="8154d55f73ab64571f60299356015117" category="section-title">HBA 구성을 복구합니다</block>
   <block id="a8635badf0c3725452ad27dcb306f849" category="paragraph">컨트롤러 모듈에 있는 HBA 카드의 존재 여부와 구성에 따라 사이트 용도에 맞게 HBA 카드를 올바르게 구성해야 합니다.</block>
   <block id="8afdaf07ff0e43cdf1c5459d3d9ff0e6" category="list-text">유지 관리 모드에서 시스템의 모든 HBA에 대한 설정을 구성합니다.</block>
   <block id="4914915cce8730456110c7e52223f703" category="list-text">포트의 현재 설정을 확인합니다.</block>
@@ -2513,7 +2508,6 @@
   <block id="68b3177cae966fde225c197ecb4fd253" category="paragraph">CNA</block>
   <block id="6b8f0029ce30f9b4d5fe0def33875511" category="paragraph">FC</block>
   <block id="694429499062fa756d61dfdb6d5f0786" category="paragraph">fcadmin 쇼</block>
-  <block id="b4c1503dedd04ac2f19bda6b60200205" category="section-title">새 컨트롤러 및 섀시의 HA 상태 설정</block>
   <block id="68f4cfb521940b7d319f1fa0c86e6659" category="paragraph">컨트롤러 및 섀시의 HA 상태를 확인하고, 필요한 경우 시스템 구성에 맞게 상태를 업데이트해야 합니다.</block>
   <block id="5b56c16675df5128ad1509d1d30f5292" category="list-text">컨트롤러 또는 섀시의 시스템 상태가 표시되지 않으면 HA 상태를 설정합니다.</block>
   <block id="7e658f7d65797e8810c06b822120b6e2" category="section-title">MetroCluster IP bootarg 변수 설정</block>
@@ -2545,7 +2539,6 @@
   <block id="0c54c8841d11ffe1771cde1a0b9978df" category="paragraph">세테네 bootarg.kmip.kmip.init.netmask`</block>
   <block id="6a501a90a98494acc3cd36e3061b90f2" category="paragraph">세테네 bootarg.kmip.kmip.init.gateway`</block>
   <block id="97ef3c34a163d7f0a826ad6c3be35b43" category="paragraph">세테네 bootarg.kmip.kmip.init.interface`</block>
-  <block id="e97c2d73dc1c54dfe8c4452dcb629eb7" category="section-title">루트 애그리게이트 디스크를 다시 할당합니다</block>
   <block id="4411dfb6aa3376ff6e193dce2ecf78a8" category="paragraph">앞에서 수집한 sysids를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다.</block>
   <block id="1164aff9955557c32004ea947ebc9f51" category="paragraph">이러한 단계는 유지 관리 모드에서 수행됩니다.</block>
   <block id="060a63634cca0324fa03e4cd8f9f681e" category="list-text">시스템을 유지보수 모드로 부팅합니다.</block>
@@ -2561,7 +2554,6 @@
   <block id="72fda708886722ee16316796671128fa" category="paragraph">'Disk reassign-s old-sysid-d new-sysid'</block>
   <block id="682312d6fb2d213713dbbccaf667e448" category="paragraph">다음 예에서는 비 ADP 구성에서 드라이브 재할당을 보여 줍니다.</block>
   <block id="4fffcdaf9b06abc8214cb9aa5c543e74" category="paragraph">'스토리지 애그리게이션 상태</block>
-  <block id="7a6002540ecd362954aac55e62be8b2d" category="section-title">새 컨트롤러를 부팅합니다</block>
   <block id="ee0682e27073aa7ab2b44c7bee29901f" category="paragraph">bootarg 변수가 올바른지 확인하고 필요한 경우 암호화 복구 단계를 수행하기 위해 새 컨트롤러를 부팅해야 합니다.</block>
   <block id="ff5b593f0ddbe1960558539ae27dd364" category="list-text">새 노드를 중단합니다.</block>
   <block id="f08f2a629e02fddb1ce77481e388117c" category="list-text">외부 키 관리자가 구성된 경우 관련 boots를 설정합니다.</block>
@@ -2598,7 +2590,6 @@
   <block id="33928d4ecda567e3601cb7a7751bbb76" category="list-text">브로드캐스트 도메인 보기:</block>
   <block id="7891ca9ce66a6010c0a0c81f73c751a7" category="list-text">필요에 따라 브로드캐스트 도메인에 포트를 추가합니다.</block>
   <block id="af2cff7842d78b021641e08a464843b0" category="inline-link">브로드캐스트 도메인에서 포트 추가 또는 제거</block>
-  <block id="c65b5a40a33c87dbddaf6f6ae7b632bb" category="paragraph"><block ref="c65b5a40a33c87dbddaf6f6ae7b632bb" category="inline-link-rx"></block></block>
   <block id="3a55d609c352263354400d0d692b7107" category="list-text">필요에 따라 VLAN 및 인터페이스 그룹을 다시 생성합니다.</block>
   <block id="01c8a680f5810522a1ede00d0a15d7a0" category="paragraph">VLAN 및 인터페이스 그룹 멤버쉽은 이전 노드의 멤버쉽과 다를 수 있습니다.</block>
   <block id="d9c67b11fb081a3a5fd6ab259edb40ca" category="inline-link">VLAN을 생성하는 중입니다</block>
@@ -2612,7 +2603,6 @@
   <block id="c0ba3201f16158e00581af8a4e633953" category="list-text">인터페이스를 홈 노드로 되돌리기:</block>
   <block id="99f4b5df4f6dc50627e069f95f4b85eb" category="paragraph">'네트워크 인터페이스 되돌리기 * - vserver_vserver-name_'</block>
   <block id="79db05c6325341be1f197094f1f39dfe" category="paragraph">필요에 따라 모든 SVM에서 이 단계를 수행합니다.</block>
-  <block id="101eb63fc89b71f07d6fd64ec364e567" category="section-title">MetroCluster 구성을 다시 전환합니다</block>
   <block id="dba3f9f02c6f652d3660c771b87088da" category="paragraph">이 작업에서는 스위치백 작업을 수행하고 MetroCluster 구성을 정상 작동으로 되돌립니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.</block>
   <block id="11d18258d14c6b6638680b58c7d402a0" category="image-alt">MCC 업그레이드 클러스터 A 스위치백</block>
   <block id="6020286e609621d7a51cfb1ca1931a66" category="list-text">site_B에서 'MetroCluster node show' 명령어를 실행하여 출력을 확인한다.</block>
@@ -2627,7 +2617,6 @@
   <block id="867c64f0b04ea0a720229d699e306466" category="paragraph">출력물에 '대기 중-스위치백'이 표시되면 스위치백 작업이 진행 중입니다.</block>
   <block id="b349d9011e6c4e1cf8a591559716772a" category="paragraph">출력이 정상(Normal)으로 표시되면 스위치백 작업이 완료된 것입니다.</block>
   <block id="4e744856add58c0bc300801dfd73d288" category="paragraph">스위치백을 완료하는 데 시간이 오래 걸리는 경우 'MetroCluster config-replication resync resync-status show' 명령을 사용하여 진행 중인 기준선의 상태를 확인할 수 있습니다. 이 명령은 고급 권한 수준에 있습니다.</block>
-  <block id="2d5e8e0b0617d8e83a29861c69918b2c" category="section-title">MetroCluster 구성 상태 점검</block>
   <block id="033ac696c5afc4de42fea770a0d17cd5" category="paragraph">컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.</block>
   <block id="5f7ba0a24f19494561e556afe3a5c074" category="paragraph">이 작업은 MetroCluster 구성의 모든 노드에서 수행할 수 있습니다.</block>
   <block id="bb8721e2ff2df30ad696bfea212b7dad" category="list-text">MetroCluster 구성 작동을 확인합니다.</block>
@@ -2638,9 +2627,7 @@
   <block id="c6d8f1ba7d8fdd49dbd2774b5b8bf5b0" category="list-text">노드가 작동 중인지 확인합니다.</block>
   <block id="cd362c3b9348d205eeb9271f7b848b82" category="list-text">MetroCluster IP 인터페이스가 작동하는지 확인합니다.</block>
   <block id="e93b4f4b950c6b2eecdda6126421a501" category="list-text">로컬 페일오버가 설정되었는지 확인합니다.</block>
-  <block id="f181d34cde32a783c686d54cd89b5f4f" category="section-title">cluster_a의 노드 업그레이드</block>
   <block id="0c3130a0855ad337dbe1f4a605eaacf9" category="paragraph">cluster_A에서 업그레이드 작업을 반복해야 합니다</block>
-  <block id="491f4a55b5ac3a5330d799d5311315e8" category="paragraph">작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다</block>
   <block id="ea7ae12637786fd2df51e9007bb6f639" category="section-title">Tiebreaker 또는 중재자 모니터링 복원</block>
   <block id="19c6ec23fb83ad84775f1d2419c27ab9" category="paragraph">MetroCluster 구성 업그레이드를 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.</block>
   <block id="b8f4d9367862f5c87fb645221621118e" category="list-text">필요한 경우 구성 절차를 사용하여 모니터링을 복원합니다.</block>
@@ -2710,7 +2697,6 @@
   <block id="ad2fe5bd0b1ed16a69e3bb29b59b4ba0" category="paragraph">'network options switchless-cluster modify -enabled true'</block>
   <block id="9b093ed5af987195e9be73a81b45ccfb" category="admonition">스위치가 없는 2노드 클러스터 시스템의 기존 노드에 대한 클러스터 인터페이스 생성은 새 컨트롤러 모듈의 netboot를 통해 클러스터 설정이 완료된 후에 완료됩니다.</block>
   <block id="c305ce21377f146200c5e9ef13536599" category="summary">안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroCluster FC 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다.</block>
-  <block id="f49f60b6304797900db897e855566402" category="doc">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드</block>
   <block id="66c25daffc009801ab74d25814bedafb" category="paragraph">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster FC 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
   <block id="b33f40e27c2c4b0024c1160808166b4d" category="list-text">이 절차는 컨트롤러 업그레이드에만 사용할 수 있습니다.</block>
   <block id="9b7868adf853e7eebe0da1408c6ccd24" category="paragraph">스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소는 동시에 업그레이드할 수 없습니다.</block>
@@ -2725,10 +2711,7 @@
   <block id="7399fd0657c56a93aa88aad61e36136e" category="list-text">사이트 A에서 컨트롤러 교체를 시작하려면 사이트 B에서 컨트롤러 교체 시작 명령을 실행해야 합니다 이 작업은 사이트 A에서만 두 노드의 컨트롤러를 교체할 수 있도록 안내합니다. 사이트 B에서 컨트롤러를 교체하려면 사이트 A에서 컨트롤러 교체 시작 명령을 실행해야 합니다 컨트롤러를 교체하는 사이트를 식별하는 메시지가 표시됩니다.</block>
   <block id="60b2b0f6400af78e603c06413100168c" category="paragraph">컨트롤러 업그레이드를 준비하려면 시스템 사전 점검을 수행하고 구성 정보를 수집해야 합니다.</block>
   <block id="73ad115378efdb25c08af588822361c8" category="paragraph">업그레이드 중 어느 단계에서든 사이트 A에서 'system controller replace show' 또는 'system controller replace show-details' 명령을 실행하여 상태를 확인할 수 있습니다. 명령이 빈 출력을 반환하는 경우 몇 분 정도 기다린 후 명령을 다시 실행합니다.</block>
-  <block id="0b31bcfeca87d4774cd67b62b4046694" category="list-text">사이트 A에서 자동 컨트롤러 교체 절차를 시작하여 사이트 B에서 컨트롤러를 교체합니다.</block>
   <block id="9ba5ebf2ab22ccd4b9b8065d168c7b7b" category="paragraph">시스템 컨트롤러 교체 시작</block>
-  <block id="74bf6e65171bf6ee65dc9487114a8bfa" category="paragraph">자동 작업으로 사전 점검을 실행합니다. 문제가 발견되지 않으면 작업이 일시 중지되므로 수동으로 구성 관련 정보를 수집할 수 있습니다.</block>
-  <block id="bc966781e77c2e4acdbeca5c5d81d3a6" category="admonition">현재 소스 시스템 및 호환되는 모든 타겟 시스템이 표시됩니다. 소스 컨트롤러를 다른 ONTAP 버전 또는 호환되지 않는 플랫폼으로 교체한 경우 자동화 작업이 중단되고 새 노드가 부팅된 후 오류가 보고됩니다. 클러스터를 정상 상태로 전환하려면 수동 복구 절차를 따라야 합니다.</block>
   <block id="ea7b87ede287b27be45723feb0a2e4d0" category="paragraph">'system controller replace start' 명령을 실행하면 다음과 같은 사전 검사 오류가 보고될 수 있습니다.</block>
   <block id="9319c19c2a50b74bb162c257218ac3e9" category="paragraph">미러링되지 않은 애그리게이트가 있거나 다른 애그리게이트 문제로 인해 이 오류가 발생했는지 확인합니다. 미러링된 모든 애그리게이트가 정상 상태이고 성능이 저하되거나 미러 성능이 저하되지 않았는지 확인합니다. 이 오류가 미러링되지 않은 애그리게이트에만 기인하는 경우, '시스템 컨트롤러 교체 시작' 명령에서 '-skip-MetroCluster-check TRUE' 옵션을 선택하면 이 오류를 덮어쓸 수 있습니다. 원격 스토리지에 액세스할 수 있는 경우 미러링되지 않은 애그리게이트는 전환 후 온라인 상태로 전환됩니다. 원격 스토리지 링크에 장애가 발생하면 미러링되지 않은 애그리게이트가 온라인 상태가 되지 않습니다.</block>
   <block id="f5095e87ada35bc113e0f036c8e69f97" category="list-text">사이트 B에 로그인하고 'system controller replace show' 또는 'system controller replace show-details' 명령 아래 콘솔 메시지에 나열된 명령어를 수행하여 수동으로 구성정보를 수집한다.</block>
@@ -2759,12 +2742,9 @@
   <block id="0680bb5259d11fc9085b95eff42515e4" category="section-title">Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성 제거</block>
   <block id="7080e7642990f343422154f3680f5f54" category="paragraph">전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.</block>
   <block id="8db7c34118d5425403025b6210cacb71" category="list-text">Tiebreaker 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.</block>
-  <block id="2cd5138ffea77134b2eaf87275680e03" category="section-title">이전 컨트롤러를 교체하고 새 컨트롤러를 부팅합니다</block>
   <block id="f7a00e5a4faa1093e067a4074671fd4f" category="paragraph">정보를 수집하고 작업을 재개한 후에는 전환 작업을 계속 진행합니다.</block>
-  <block id="5e744c4240b735a2a086be5884b09ed3" category="section-title">이전 컨트롤러의 네트워크 구성 준비</block>
   <block id="f02f75fbbe89500c3766deab4ccf2d4d" category="paragraph">새로운 컨트롤러에서 네트워킹이 완전히 다시 시작되도록 하려면 LIF를 공통 포트로 이동한 다음 이전 컨트롤러의 네트워킹 구성을 제거해야 합니다.</block>
   <block id="dd3d39a72e683fc82c6e4dd4c8f79169" category="list-text">이 작업은 각 이전 노드에서 수행해야 합니다.</block>
-  <block id="134c86cd6759685fca4e3083cca3c8dd" category="list-text">에서 수집한 정보를 사용합니다 <block ref="d24bc3082c34acd97b0b951a86de3913" category="inline-xref-macro-rx"></block>.</block>
   <block id="222865f12c5217fc8874b26cdd58fd1e" category="list-text">이전 노드를 부팅하고 노드에 로그인합니다.</block>
   <block id="790ffccea2ff9cd7b795660c9047f0af" category="paragraph">플랫폼 모델의 포트 사용은 를 참조하십시오<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block></block>
   <block id="028b25f6521e5676c4e9361429c13f69" category="list-text">공통 포트를 홈 포트로 사용하도록 모든 데이터 LIF를 수정합니다.</block>
@@ -2803,7 +2783,6 @@
   <block id="f3fced65783d96fe674e1249b62fdd67" category="list-text">포트의 현재 설정을 확인합니다. 'ucadmin show'</block>
   <block id="664faa773b897771d732ec0de99d505a" category="paragraph">앞에서 수집한 'sids'를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다</block>
   <block id="656b3430f6aeb54a5747ced587d5f2ef" category="paragraph">이 작업은 유지보수 모드에서 수행됩니다.</block>
-  <block id="34c4e01a7077e9106112da52b0cc894e" category="paragraph">에서 이전 시스템 ID를 식별했습니다 <block ref="c251a9631962af6f05d9aa0aeb7678df" category="inline-link-macro-rx"></block>.</block>
   <block id="ad3d8189e8e55c3028771da773eed75a" category="paragraph">이 절차의 예는 다음과 같은 시스템 ID가 있는 컨트롤러를 사용합니다.</block>
   <block id="e791539ee9176ad79d314a9cd36bba19" category="cell">이전 시스템 ID입니다</block>
   <block id="959f559d380ae4cad20f5e8bb59190c9" category="cell">새 시스템 ID입니다</block>
@@ -2831,7 +2810,6 @@
   <block id="2ebcfc4e6e9e59e780050b367202dd4c" category="list-text">새 물리적 포트를 홈 포트로 사용하도록 인터클러스터 LIF를 수정합니다.</block>
   <block id="f953e6cfed541804735d21b7602e3be7" category="list-text">인터클러스터 LIF가 가동된 후 클러스터 피어 상태를 확인하고 필요에 따라 클러스터 피어링을 다시 설정합니다.</block>
   <block id="f19333f1035e0715716b1478e3988a40" category="paragraph">클러스터 피어링을 다시 구성해야 할 수 있습니다.</block>
-  <block id="8a538153882e92cc056162106b1709ea" category="paragraph"><block ref="8a538153882e92cc056162106b1709ea" category="inline-link-macro-rx"></block></block>
   <block id="4bffe29d6d1104677dcfeb9e99ac549e" category="paragraph"><block ref="4bffe29d6d1104677dcfeb9e99ac549e" category="inline-link-rx"></block></block>
   <block id="7b79bd2b52b89f70edfedac8da540bb3" category="paragraph"><block ref="7b79bd2b52b89f70edfedac8da540bb3" category="inline-link-rx"></block></block>
   <block id="e702f20ce17b63dcf599797f8a5ab500" category="paragraph">자세한 내용은 을 참조하십시오<block ref="3b9b19971dde2aae15e577f665c13b3c" category="inline-link-rx"></block>.</block>
@@ -2839,7 +2817,6 @@
   <block id="f15497fde7585731affbb2484431a8a8" category="list-text">작업을 다시 시작하기 전에 MetroCluster가 올바르게 구성되어 있는지 확인합니다. 노드 상태 확인:</block>
   <block id="088c19240da89dbb9f8682a7168eea93" category="paragraph">새 노드(site_B)가 site_A에서 스위치백 상태 * 를 기다리는 * 상태인지 확인합니다</block>
   <block id="3b70100fce1839004dba40191f90a2c9" category="list-text">작업을 다시 시작합니다.</block>
-  <block id="4475fe40cbdeb04db8c9562cf8b91ab1" category="section-title">업그레이드를 완료하는 중입니다</block>
   <block id="cddd37c26961b651e776113f46191ca7" category="paragraph">자동화 작업은 검증 시스템 검사를 실행한 다음 일시 중지하여 네트워크 연결 상태를 확인할 수 있습니다. 확인 후 리소스 다시 찾기 단계가 시작되고 자동화 작업이 사이트 A에서 스위치백을 실행하고 업그레이드 후 확인 시 일시 중지됩니다. 자동화 작업을 다시 시작하면 업그레이드 후 검사가 수행되고 오류가 발견되지 않으면 업그레이드가 완료된 것으로 표시됩니다.</block>
   <block id="ade29ab679ccb0c0ffae494ab79cb975" category="list-text">콘솔 메시지를 따라 네트워크 연결 상태를 확인합니다.</block>
   <block id="325cfe0fbca444947dffe8b494e6621b" category="list-text">검증을 완료한 후 작업을 다시 시작합니다.</block>
@@ -2889,7 +2866,6 @@
   <block id="75f7d2bcde6cf0fe3c3db259a2547dbc" category="cell">MetroCluster 형식입니다</block>
   <block id="a12a3079e14ced46e69ba52b8a90b21a" category="paragraph">IP</block>
   <block id="4f7dd0fe0940df4a5fda327a4ee4ddbd" category="paragraph">9.8</block>
-  <block id="3f28886cbb43f1c7c0c4f4d35ecafdde" category="inline-link-macro">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 컨트롤러 업그레이드</block>
   <block id="398ab86a6e7a78acb117ab7d140d06d6" category="list-text">방법: MetroCluster 구성을 확장한 다음 이전 노드를 제거합니다</block>
   <block id="da72e287071989d880a84bc9f714faf6" category="section-title">집계 재배치를 사용하여 프로시저 선택</block>
   <block id="04c19f5eb2ebdc099239a7074f8d6534" category="paragraph">9.10.1 이상</block>
@@ -2939,7 +2915,6 @@
   <block id="33e64bb1016dec9153a09112c1918728" category="list-text">루트 애그리게이트를 수정합니다.</block>
   <block id="64a2c948ff5f5a4a19945315df55d3f1" category="list-text">에서 수집한 정보를 사용합니다 <block ref="1ed1cd4ef8bd2fcdaf4ac61e442842fa" category="inline-link-macro-rx"></block>.</block>
   <block id="5db2619ab3a7ccb178b98644ee1d4e05" category="list-text">브로드캐스트 도메인을 수정하여 삭제해야 하는 VLAN 및 물리적 포트를 제거합니다.</block>
-  <block id="9c72ecff6f02b2c92e12130effa540d4" category="section-title">이전 플랫폼을 제거하는 중입니다</block>
   <block id="fb7af1863497df9dda3e65ea0159d317" category="paragraph">이전 컨트롤러를 구성에서 제거해야 합니다.</block>
   <block id="9c1c5be053b28ba5edd13b92cac80497" category="paragraph">모든 구성 요소의 HA 상태는 MCC 여야 합니다.</block>
   <block id="fe8b2cbe27aeee8cf3fd12fd4f19075c" category="cell">MetroCluster 구성에 다음과 같은 문제가 있는 경우</block>
@@ -2972,7 +2947,6 @@
   <block id="dca37c43ff68fc6fc781f9dccaf1eb93" category="paragraph">새 컨트롤러를 구성한 후 MetroCluster 구성을 다시 전환하여 구성을 정상 작동 상태로 되돌립니다.</block>
   <block id="1d3a92008f392950faeb257ca2a9e106" category="paragraph">이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.</block>
   <block id="4e13d70ad15aa48ae9a770aa54dd268d" category="paragraph">출력이 '정상'으로 표시되면 스위치백 작업이 완료된 것입니다.</block>
-  <block id="ac95cad470acdacec0fa69881c030cfb" category="list-text">단계를 반복하여 cluster_A의 노드를 부터 업그레이드합니다 <block ref="355740dbae62093c04ee9cfd151fed4a" category="inline-link-macro-rx"></block>.</block>
   <block id="95b65883f84353940114b168cc4a2fb7" category="summary">netboot를 통해 새 컨트롤러 모듈 구성을 완료하기 전에 디스크를 할당해야 합니다.</block>
   <block id="1ebf9d232c6a6c71ae4c747bbcbc12a6" category="doc">새 컨트롤러 모듈에 디스크 할당</block>
   <block id="8e0924168893ae55cb4d00ab91a2d08e" category="paragraph">기존 애그리게이트에 포함되어 있지 않은 충분한 스페어, 할당되지 않은 디스크 또는 할당 디스크가 있는지 확인해야 합니다.</block>
@@ -7745,10 +7719,6 @@
   <block id="7d751970b8113a85136b22a70fa38bcc" category="paragraph">'관리자 설정'을 선택합니다</block>
   <block id="34d1cfcdcf18bab93eb2f50683525124" category="list-text">site_B(node_B_1-IP 및 node_B_2-IP)에서 위의 단계를 반복합니다.</block>
   <block id="80161bd3062933aab7f174ce293237dc" category="summary">모든 요구 사항을 검토하고 전환을 준비한 후 전환 절차를 수행합니다. 각 작업을 순서대로 수행해야 하며, 다음 작업으로 이동하기 전에 각 작업의 모든 단계를 완료해야 합니다. 지시가 있을 때까지 새 컨트롤러 또는 스토리지 쉘프를 기존 구성에 연결하면 안 됩니다.</block>
-  <block id="68ca4c8699281e1858977752c796cd45" category="paragraph">MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동해야 합니다.</block>
-  <block id="faa907fa21172fe5049a9e06b580a22f" category="paragraph">MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동해야 합니다. 이 단계는 기존 IP 스위치를 사용하고 있는지 또는 새 IP 스위치를 사용하고 있는지에 따라 달라집니다.</block>
-  <block id="a4508902f6a0e0fe2638bb2698abffe9" category="paragraph">두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.</block>
-  <block id="9a6a031361d5fc2d07e0496f2d3f35aa" category="paragraph">다음 작업에서는 클러스터 연결에 2개의 포트를 사용하는 컨트롤러 모듈을 가정합니다. 일부 컨트롤러 모듈 모델은 클러스터 연결에 4개 이상의 포트를 사용합니다. 이 예에서는 포트가 두 그룹으로 나뉘어 두 그룹 간에 번갈아 연결됩니다</block>
   <block id="e3690631412410cb5e14d123997d91cb" category="paragraph">다음 표에서는 이 작업에 사용된 포트의 예를 보여 줍니다.</block>
   <block id="aa1ccf5a59fb4b87223a8ad637a79f6e" category="cell">컨트롤러 모듈의 클러스터 연결 수입니다</block>
   <block id="db3466b88d5f757d29e9341b7952b4e9" category="cell">포트를 그룹화합니다</block>
@@ -7762,8 +7732,6 @@
   <block id="dcf4881a93cea43ae1634b2f0f7939ac" category="cell">스위치 포트</block>
   <block id="5cf0603a9cc38118a92d6f62afbc27ad" category="cell">에 연결합니다</block>
   <block id="ed36a1ef76a59ee3f15180e0441188ad" category="cell">모두</block>
-  <block id="41add71327ff82aa85f0074583131e05" category="section-title">새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다</block>
-  <block id="f96b1e8d8ce6fb44d55bd62523f1fffd" category="paragraph">새 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 새 스위치로 물리적으로 이동해야 합니다.</block>
   <block id="971a965432d70710e6faba87f3271008" category="list-text">MetroCluster FC 노드 그룹 A 클러스터 연결을 새 IP 스위치로 이동합니다.</block>
   <block id="158a9eaed207074e679175ceadae600d" category="list-text">스위치에서 모든 그룹 A 포트를 분리하거나, MetroCluster FC 구성이 스위치가 없는 클러스터인 경우 파트너 노드에서 연결을 끊습니다.</block>
   <block id="dd6ad065820d004f2add01d31b8a8ddc" category="list-text">노드_A_1-FC 및 노드_A_2-FC에서 그룹 A 포트를 분리합니다.</block>
@@ -7771,8 +7739,6 @@
   <block id="28e1b92081a0233d120e8fe4d0750051" category="list-text">node_A_2-FC의 그룹 A 포트를 switch_A_1-IP의 FC 노드에 대한 스위치 포트에 연결합니다</block>
   <block id="d674fde4628671c3e1078935d12e7997" category="paragraph">이 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.</block>
   <block id="8b823623a0b9f814903822d0b4e22769" category="list-text">두 노드(node_A_1-FC 및 node_A_2-FC)에서 위의 단계를 수행하여 클러스터 인터페이스의 그룹 B 포트를 이동합니다.</block>
-  <block id="cf55ede06abe62887dc32793cdfd9bbd" category="section-title">기존 IP 스위치를 재사용할 때 로컬 클러스터 연결을 이동합니다</block>
-  <block id="2eff4e6f516a51fa071f0dd51ef97adf" category="paragraph">기존 IP 스위치를 재사용하는 경우 펌웨어를 업데이트하고 올바른 RCFs(Reference Configure Files)를 사용하여 스위치를 재구성한 후 한 번에 하나의 스위치로 연결을 올바른 포트로 이동해야 합니다.</block>
   <block id="30b06baa6c7c1619d917876c364f7745" category="paragraph">이 작업은 FC 노드가 기존 IP 스위치에 연결되어 있고 스위치를 재사용하는 경우에만 필요합니다.</block>
   <block id="355050c57a45e185e0c77d3cafe8995d" category="list-text">SWITCH_A_1_IP에 연결된 로컬 클러스터 연결을 끊습니다</block>
   <block id="eaab124dfff7034db019e452d97087c0" category="list-text">기존 IP 스위치에서 그룹 A 포트를 분리합니다.</block>
@@ -7788,8 +7754,6 @@
   <block id="afdaa41b5df1e3c7f106953ec438e3be" category="list-text">로컬 클러스터 ISL 포트를 다시 연결합니다.</block>
   <block id="e470656b8036e7f5882de8fbc378732c" category="list-text">스위치 B_1_IP 및 스위치 B_2_IP에 대해 사이트_B에서 위의 단계를 반복합니다.</block>
   <block id="2855c2152991ed77e103e3f82c9f9ee2" category="list-text">사이트 간에 원격 ISL을 연결합니다.</block>
-  <block id="05ab5de1b64b7ffa583c25e602a5a02e" category="section-title">클러스터 연결이 이동되고 클러스터가 정상 상태인지 확인</block>
-  <block id="0e3c3cc7ec01dfea5815eb2e529e3dad" category="paragraph">적절하게 접속되어 있고 전환 프로세스를 진행할 준비가 되었는지 확인하려면 클러스터 연결이 올바르게 이동되었는지, 클러스터 스위치가 인식되는지, 클러스터가 정상인지 확인해야 합니다.</block>
   <block id="ec1db698ac5a047f7cb7cbb554180668" category="paragraph">각 스위치에서 이 단계를 수행해야 합니다.</block>
   <block id="f5c4e8875a7725a7e200e3c8dac7cbc7" category="paragraph">이 예에서는 스위치 A-3-IP에서 노드가 검색되었는지 확인하는 방법을 보여 줍니다.</block>
   <block id="e8baecf182348ff524129d2cd089003a" category="paragraph">이 예에서는 스위치 A-4-IP에서 노드가 검색되었는지 확인하는 방법을 보여 줍니다.</block>
@@ -10604,7 +10568,6 @@
   <block id="e230d4e771549b231a7eda2894a670a5" category="list-text">부팅 메뉴에서 ""6"" 옵션을 실행합니다.</block>
   <block id="4c3c853efc0864d6f85e88e17a282dba" category="admonition">옵션 ""6"은 완료되기 전에 노드를 두 번 재부팅합니다.</block>
   <block id="2a4c3faed5b4f37080aceb516872d752" category="paragraph">키 관리자 설정에 따라 첫 번째 부팅 메뉴 프롬프트에서 옵션 ""10"" 또는 옵션 ""11", 옵션 ""6""을 차례로 선택하여 복구 절차를 수행합니다. 노드를 완전히 부팅하려면 옵션 ""1"(일반 부팅)에서 계속 진행하는 복구 절차를 반복해야 할 수 있습니다.</block>
-  <block id="decbfc8b8a7a71731aab8ff640f90638" category="list-text">의 단계를 사용합니다<block ref="8a40a48df09f86826787416776d41780" category="inline-link-rx"></block>.</block>
   <block id="56bf84e32d22ab8fb694fbc5332432dc" category="paragraph">FC 스위치를 수동으로 구성한 경우 새 컨트롤러 모듈의 이니시에이터 연결에 대해 조닝이 올바른지 확인해야 합니다. 의 조닝 관련 섹션을 참조하십시오 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block>.</block>
   <block id="dedcc0638aa1bf3276ae388ea4613c81" category="summary">ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="75aa8d2f84e0be26d2847e91f37f74e2" category="list-text">자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.</block>
@@ -10806,7 +10769,6 @@
   <block id="806422c50772a82e317db68491ffe3e4" category="paragraph">두 노드 중 하나가 Takeover 모드에 있는 경우 Giveback을 수행합니다.</block>
   <block id="411fd118744e7bc163c41845c9fedb88" category="paragraph">'스토리지 페일오버 반환</block>
   <block id="c9616da62905adb15396b653b4d8475b" category="paragraph">클러스터 피어링을 다시 구성해야 할 수 있습니다.</block>
-  <block id="b196fb7a2e0b15c158585ec325406b3c" category="list-text">의 단계를 사용합니다<block ref="abdcb9b507d42a49d77fa45291426271" category="inline-link-rx"></block> In_MetroCluster Tiebreaker 설치 및 구성 _.</block>
   <block id="6feea37f7c9ba85a19752c43872c3438" category="inline-link-macro">유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다</block>
   <block id="c53469c0e05ec04d4c7bf601859fd9fb" category="admonition">유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.<block ref="a0ba112c9c0ab9c29c24131f966b9b69" category="inline-link-macro-rx"></block></block>
   <block id="5713f2c18fca6cff15f3222aca93a2a6" category="summary">Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다</block>
@@ -10838,7 +10800,6 @@
   <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784 및 3260에서 액세스를 허용하도록 구성해야 합니다.</block>
   <block id="cc1e6f116b4b45ffde821f0aef59e030" category="paragraph">기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우, 중재자를 설치하는 동안 방화벽이 자동으로 구성됩니다.</block>
   <block id="a6bcf63661955f7af02bb69a2cd4d604" category="section-title">기존 구성에 쉘프 추가</block>
-  <block id="6257739eb87a755c28bf814ad261df2d" category="section-title">MetroCluster FC 노드에서 클러스터 접속을 이동합니다</block>
   <block id="9d8f122e284d64a31d50c5040fe4f338" category="section-title">이동할 연결입니다</block>
   <block id="508763c5ecfa3096ab25520f14c971f5" category="paragraph">에 설명된 포트를 사용합니다 <block ref="10769c5348734bed7e40370eea435ab1" category="inline-xref-macro-rx"></block>.</block>
   <block id="dd23316b696cd08f3479c6e2d7baadc0" category="inline-link">AFF 또는 FAS 시스템의 설치 절차</block>
@@ -11594,7 +11555,6 @@
   <block id="55a7a35f233fa5c7dc761790158ed06d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 전환 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 컨트롤러를 업그레이드할 수 있습니다.</block>
   <block id="77eb4e36d322d7ab218107d7c498326a" category="list-text">자동 통계청 컨트롤러 업그레이드 절차를 사용하여 두 사이트의 컨트롤러를 순차적으로 업그레이드해야 합니다.</block>
   <block id="3cc4806cb19cbb655dbea9a73d4aab85" category="paragraph"><block ref="4baef16133ebdeaa64de2abee5aaa778" prefix="" category="inline-code"></block></block>
-  <block id="ad84135061ac4d026b0f6b6b0b90c976" category="list-text">를 실행하지 않는 경우<block ref="4baef16133ebdeaa64de2abee5aaa778" prefix=" " category="inline-code"></block> 명령, 컨트롤러 업그레이드 절차는 MetroCluster IP 시스템의 기본 절차로 통계청 기반의 자동 전환 및 스위치백을 선택합니다.</block>
   <block id="c37cd78225bfd28b27aba6fdb4ffdb05" category="paragraph">이 작업은 기존 MetroCluster IP 구성에서 수행됩니다.</block>
   <block id="41658c9a662bf36d1d1079b0d7e61f18" category="paragraph">를 클릭합니다<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> 명령 출력에는 MetroCluster 인터페이스 IP, 시스템 ID 및 시스템 UUID가 포함된 세 개의 테이블이 표시됩니다. 이 정보는 나중에 새 노드를 부팅할 때 boots를 설정하는 절차에 필요합니다.</block>
   <block id="103e238a461bced8a19653fadfc6b06f" category="paragraph">이 예에서 4노드 MetroCluster IP 구성의 경우 다음과 같은 이전 시스템 ID가 검색됩니다.</block>
@@ -12579,7 +12539,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="453251ed281496384c5feb5900cc31ba" category="paragraph">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
   <block id="3929d13da5d4b97eff76f8a6ec8c5501" category="list-text">에 액세스합니다 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.</block>
   <block id="94416aa661a92cc8d67b1bd6459ef472" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
-  <block id="636a367cc04fb36c02707f67c1a70771" category="paragraph">을 참조하십시오 <block ref="ff174d1e305f5f579b29dcdb0a617c23" category="inline-link-macro-rx"></block> 을 참조하십시오.</block>
   <block id="332fe4e638c485c04f214b0a13747f6d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 <block ref="0fe967effd4f0eaf84576f897dbfd368" category="inline-link-macro-rx"></block>. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.</block>
   <block id="75132a926df50e23a26bd72dde0371b7" category="list-text"><block ref="46f4c9c8d582aa241b60c75ea3bcb2c9" category="inline-link-macro-rx"></block> Tiebreaker 소프트웨어</block>
   <block id="0b22fb8d0feec85055f45c8c4a298766" category="list-text">절차를 계속하라는 메시지가 나타나면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.</block>
@@ -12712,7 +12671,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1fc1c42abe6e66843d72990324979a36" category="paragraph">G620-1, G630-1</block>
   <block id="b611d537ec3462ead9e641968d17d570" category="paragraph">G630</block>
   <block id="7dd2a92fd3f41a5334edf46f95d77e71" category="paragraph">ONTAP 9.6 을 참조하십시오</block>
-  <block id="2429e1917793f4046beb8fe2642382e4" category="doc">MetroCluster IP 플랫폼 지원의 새로운 기능</block>
   <block id="7616cb7bf661fe6377270c352ec2ff82" category="cell">MetroCluster IP 구성에서 지원되는 플랫폼</block>
   <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="paragraph">AFF A150</block>
   <block id="f3975a91159eff9969dbd4feb2dec392" category="paragraph">ONTAP 9.12.1P1</block>
@@ -12998,7 +12956,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="04dfa0b1df6387b5be0fe6bbff1286f7" category="paragraph">다음은 MetroCluster 인터페이스 및 의 속도를 설정하는 명령입니다.<block ref="e9c5c6daf1a059d5e7448ef86c2b728e" prefix=" " category="inline-code"></block><block ref="aeef091266f2ea49353e0048626a93bf" prefix=" " category="inline-code"></block></block>
   <block id="9ec3477ddf53d3e8d6d42a2fb56d2dff" category="list-text">에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 <block ref="bbee29d44b7926be9c2be6dc914059f5" category="inline-link-macro-rx"></block>사용합니다.</block>
   <block id="65bd6763ac7ddd88c7008054cb6bc624" category="admonition">ONTAP 소프트웨어에서 UND를 변경하려면 다음 단계를 수행하십시오. <block ref="b0ca457fe34ed30c44119bccf9b89d7d" category="inline-link-macro-rx"></block></block>
-  <block id="7b195fd8d412843052bdca8035a73b9b" category="paragraph">MetroCluster IP 플랫폼 지원의 새로운 기능에 대해 알아봅니다.</block>
   <block id="5fa70989a3e04b27c407da750f3d94fe" category="paragraph">AFF A70, AFF A90, AFF A1K</block>
   <block id="09165c2d4ac9e01ef347c57ffcbe1ce5" category="paragraph">ASA A150, ASA A250, ASA A400, ASA A800, ASA A900, ASA C250, ASA C400, ASA C800</block>
   <block id="2f709669cbfb385626cf55d7c80120be" category="paragraph">ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800</block>
@@ -13886,7 +13843,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="fd62dc6a841ff0a9f6159888bf7d8458" category="inline-image-macro">에는 ASA 지원 MetroCluster IP 컨트롤러 업그레이드 플랫폼 조합이 나와 있습니다</block>
   <block id="d7aa961bff867be5607fff47afcc1269" category="paragraph"><block ref="d7aa961bff867be5607fff47afcc1269" category="inline-image-macro-rx" type="image"></block></block>
   <block id="48b9a403e4a45281e156e3aab3850410" category="list-text">MetroCluster 구성의 모든 노드에서 동일한 ONTAP 버전을 실행해야 합니다. 예를 들어, 8노드 구성의 경우 8노드 모두에서 동일한 ONTAP 버전을 실행해야 합니다. 해당 조합에 대해 지원되는 최소 ONTAP 버전은 를 <block ref="b733b3de6818a363ac85112743571bca" category="inline-link-macro-rx"></block>참조하십시오.</block>
-  <block id="b994a29eaf12e18a7cce3c9305a59fad" category="paragraph">일치하는 포트가 없습니다. 업그레이드 후 클러스터 포트를 다시 생성합니다. <block ref="2305a256def4f5c38d82352fac177e1d" category="inline-link-macro-rx"></block></block>
   <block id="31234814056be4e15bcffbd10fa0cd65" category="summary">새 플랫폼의 스위치 RCF 파일을 업데이트하고 컨트롤러 모듈에서 MetroCluster IP bootarg 값을 설정합니다.</block>
   <block id="572d3ffeed6df6220869d4a086c5f363" category="doc">스위치 RCF를 업데이트하고 MetroCluster IP bootarg 값을 설정합니다</block>
   <block id="5787d7fabbad5b870fc2724fd3a9ecef" category="paragraph">새 플랫폼에 대한 스위치 참조 구성 파일(RCF)을 업데이트하고 컨트롤러 모듈에서 MetroCluster IP bootarg 값을 설정합니다.</block>
@@ -14108,14 +14064,12 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4653682314828cb5425dae789da06002" category="section-title">네트워크 가용성을 확인합니다</block>
   <block id="2f7033d68b421f3c87221d29b6075017" category="paragraph">업그레이드 후 검사에서 오류가 보고되지 않으면 업그레이드가 완료된 것입니다.</block>
   <block id="37c813460b2b0635d69e528d1110fffc" category="list-text">이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.<block ref="2e9e222a79bc86deb25c4111d82b6614" category="inline-link-macro-rx"></block></block>
-  <block id="e21d56847dfd42d679e8b2e0c0314d6e" category="paragraph">작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다.</block>
   <block id="6055a0810b2c2df62e85dfcb8b447c2e" category="list-text">의 단계를<block ref="9dc3875c163144dba4e47010e217fce8" category="inline-link-rx"></block> 사용합니다.</block>
   <block id="83162cb24e71760f89d5962835905ed0" category="doc">MetroCluster IP를 업그레이드하기 전에 콘솔 로깅을 사용하도록 설정합니다</block>
   <block id="bab0338cc638de785269282fe0b4df1e" category="paragraph">의 정보를 <block ref="e0071a426543185e159ab522bd36850e" category="inline-link-macro-rx"></block>검토하여 기존 시스템에서 필수 부트아그를 설정해야 하는지 확인합니다.</block>
   <block id="cb990f25bc5eb8215bf8eb74c16807f3" category="summary">컨트롤러 업그레이드를 준비하기 위해 시스템 사전 점검을 수행하고 구성 정보를 수집합니다.</block>
   <block id="c458b5225672f84c61d5b9931863ae60" category="paragraph">컨트롤러 업그레이드를 준비하려면 이전 플랫폼 모델과 새로운 플랫폼 모델에 따라 스위치 참조 구성 파일(RCF)을 업그레이드해야 할 수 있습니다. 그런 다음 시스템 사전 점검을 수행하고 구성 정보를 수집하며 기존 모니터링 소프트웨어를 제거합니다.</block>
   <block id="0c21b75966b293902f32e19c44cfee40" category="list-text">스위치 RCF 구성이 최소 버전에 없습니다.</block>
-  <block id="cbde96365d4f8077bc47cc3245bf5730" category="section-title">시스템 사전 점검을 수행합니다</block>
   <block id="2592dc8685229c73a77e91741c837a63" category="paragraph">자세한 내용은 를 참조하십시오<block ref="8d2708bcc3f1eaf7281ec3a4227ab734" category="inline-link-rx"></block>.</block>
   <block id="0db7751284ee845ba2b1c67a8d8704db" category="section-title">Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다</block>
   <block id="0cd4dc9ba4eb47708afdb2049d98c13a" category="paragraph">업그레이드를 시작하기 전에 Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다.</block>
@@ -14863,8 +14817,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="467d42fef84e236db1f47c3587c7d61b" category="paragraph"><block ref="647ce27315841f29cbbfa6476808aa3a" category="inline-link-macro-rx"></block> _MetroCluster IP 설치 및 구성_ 섹션에서.</block>
   <block id="3e85cb460e24d971aa2fdfb16bdd62f2" category="paragraph"><block ref="647ce27315841f29cbbfa6476808aa3a" category="inline-link-macro-rx"></block>..</block>
   <block id="8c4be7f96d2a221be5676296eb0ed2f9" category="list-text">의 단계를 <block ref="b57db2992c51195e5ea40f358db2287c" category="inline-link-macro-rx"></block>사용합니다.</block>
-  <block id="3a87d2978f2a15ce761167e415fd6848" category="inline-link-macro">ONTAP Mediator 재구성</block>
-  <block id="3f8e81dc1fd352800762ed073cd5264a" category="paragraph">사전 점검을 시작하기 전에 ONTAP 중재자가 설치된 경우 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료하거나 사전 검사가 실패하거나 업그레이드를 진행하지 않기로 선택한 경우 수동으로 수행해야 <block ref="45ecea135b28343f3e201d1ca7699d4b" category="inline-link-macro-rx"></block>합니다.</block>
   <block id="90700c1e50cb21bc8204f5e8e63ff08f" category="inline-image-macro">AFF 및 FAS 업그레이드 조합 그룹 1을 보여줍니다.</block>
   <block id="2b3092608ec3c36288b967b8d2e51cd0" category="paragraph"><block ref="2b3092608ec3c36288b967b8d2e51cd0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c86a11671a0682bdfafd478847f74282" category="inline-image-macro">AFF 및 FAS 업그레이드 조합 그룹 2를 보여줍니다.</block>
@@ -14972,4 +14924,48 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d44a3adbc7ddf926ace3174c29e594fe" category="paragraph">*참고:* 스위치 포트 11과 12를 사용하려면 두 가지 속도 모드를 선택해야 합니다.</block>
   <block id="22e6a6026dec5bb5059565b00cc3631c" category="paragraph">전환, 새로 고침, 8노드 설치 및 4노드 확장 절차 중에 MetroCluster 구성에 새 플랫폼 모델을 추가할 수 있습니다. 이러한 절차 중 어느 단계에서든 기존 MetroCluster 구성에 *공유 클러스터/HA 포트*를 사용하는 플랫폼이 포함된 경우, ONTAP 버전을 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않으면 *공유 MetroCluster/HA 포트*를 사용하는 플랫폼을 해당 구성에 추가할 수 없습니다.</block>
   <block id="29c802ab86e25c329e4ce82ab207d848" category="sidebar">12포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당</block>
+  <block id="a65cd2f2d334d9927f9c0f2a89dbb2d0" category="paragraph">MetroCluster IP 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.</block>
+  <block id="cf42f488bd58e2f8f8819f7c720b93a1" category="paragraph">각 클러스터에서 고급 권한 모드로 이 단계를 수행해야 합니다.</block>
+  <block id="c836d30393b0f25c968423f5df80b134" category="paragraph">MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동합니다.</block>
+  <block id="036d42aa7c6025107d4154a4eae998ad" category="section-title">1단계: MetroCluster FC 노드에서 클러스터 연결 이동</block>
+  <block id="97a06e86dcad9f5f1a204e4e18aa5587" category="paragraph">MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동합니다. 수행하는 단계는 기존 IP 스위치를 사용하는지 또는 새 IP 스위치를 사용하는지에 따라 달라집니다.</block>
+  <block id="47b7fa620271bc0d65be97aba9478061" category="list-text">이 작업은 두 MetroCluster 사이트 모두에서 수행합니다.</block>
+  <block id="4668bf30f5f14b9dd79deeee4cfbb82e" category="paragraph">다음 작업은 컨트롤러 모듈이 클러스터 연결에 두 개의 포트를 사용한다고 가정합니다. 일부 컨트롤러 모듈 모델은 클러스터 연결에 4개 이상의 포트를 사용합니다. 이 예에서는 포트를 두 그룹으로 나누어 두 그룹 간에 포트를 번갈아 사용합니다.</block>
+  <block id="d43283bd7e2e0dd9fa9a70ef441a163c" category="paragraph">시스코 9336C-FX2(12포트)</block>
+  <block id="f555518160d0f4ec7334c3fd0cfa3e7a" category="section-title">새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다.</block>
+  <block id="8557ed3cfd8b031a64a0203ce8cde201" category="paragraph">새로운 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 물리적으로 새 스위치로 이동합니다.</block>
+  <block id="e753dda2048534c92b6edc39dabe8c5b" category="section-title">기존 IP 스위치를 재사용할 때 로컬 클러스터 연결을 이동합니다.</block>
+  <block id="2cbb62835ce48b7e189acff1c7d6d1b8" category="paragraph">기존 IP 스위치를 재사용하는 경우 펌웨어를 업데이트하고 올바른 참조 구성 파일(RCF)로 스위치를 재구성하고 한 번에 한 스위치씩 연결을 올바른 포트로 이동합니다.</block>
+  <block id="a25f5594b1ed1bf3a7c6a87384e601fd" category="section-title">2단계: 클러스터 연결이 이동되었고 클러스터가 정상인지 확인합니다.</block>
+  <block id="4281f25941f74ed8eb6fd4a91fdb0244" category="paragraph">적절한 연결이 있는지 확인하고 구성이 전환 프로세스를 진행할 준비가 되었는지 확인하려면 클러스터 연결이 올바르게 이동되었는지, 클러스터 스위치가 인식되었는지, 클러스터가 정상인지 확인하세요.</block>
+  <block id="e5f42a416489ba426aa3b5e5a99528be" category="admonition">첫 번째 사이트에서 컨트롤러를 업그레이드한 후 두 번째 사이트를 업그레이드하기 전에 다음을 실행합니다. <block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block> 이어서 <block ref="da68e7539bf844a8366ded5d17b246d7" prefix=" " category="inline-code"></block> 오류가 반환됩니다 <block ref="74c687e9cfa94f775ac8c7b51ec31cd9" prefix=" " category="inline-code"></block> 필드. 이 오류는 각 사이트의 노드 간 NVRAM 크기 불일치를 나타내며, 두 사이트에 서로 다른 플랫폼 모델이 있는 경우 예상되는 동작입니다. DR 그룹의 모든 노드에 대한 컨트롤러 업그레이드가 완료될 때까지 이 오류를 무시해도 됩니다.</block>
+  <block id="a787053687877f10051bad9d8a2c320b" category="paragraph">업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결성을 확인합니다.</block>
+  <block id="ac471314e8ba72086a54a227b4a6abe8" category="paragraph">일치하는 포트가 없습니다. 업그레이드 후 클러스터 포트를 다시 생성합니다. <block ref="c40693a26d31adda8e50d2bd3c959775" category="inline-link-macro-rx"></block></block>
+  <block id="02f80d1409d40adabdcd4b00959239b0" category="inline-link-macro">MetroCluster 구성을 제거합니다</block>
+  <block id="c4a00ba197c84f92cac51496436d38e3" category="paragraph"><block ref="c4a00ba197c84f92cac51496436d38e3" category="inline-link-macro-rx"></block></block>
+  <block id="9950d05faf2c2104ac64b2891c5a8822" category="section-title">오래된 플랫폼을 제거하세요</block>
+  <block id="d723056ef76e64c3b3faae704eb71dd4" category="paragraph">이전 시스템 ID는 에서 식별되었습니다. <block ref="6b24ae8f1e4581fe7e87c8c4194af177" category="inline-link-macro-rx"></block></block>
+  <block id="75a193e4d11dd894af19600ff20d5c03" category="paragraph"><block ref="75a193e4d11dd894af19600ff20d5c03" category="inline-link-rx"></block></block>
+  <block id="a8c155984c849e4f60c4f4b7fa09827a" category="paragraph"><block ref="a8c155984c849e4f60c4f4b7fa09827a" category="inline-link-macro-rx"></block></block>
+  <block id="8758d509fe3fbac15620de0ba380f93d" category="list-text">이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.<block ref="0e6ccb461a8e4072917a7db8187a2ba6" category="inline-link-macro-rx"></block></block>
+  <block id="d6841746fb065917e2837a0dda6d27b5" category="paragraph">이 절차를 반복하면 클러스터와 노드에 대한 모든 예제 참조가 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다</block>
+  <block id="cbc2197d8e356cefd5c16b0e6b12733b" category="list-text">다음 단계를 사용하세요. <block ref="903dcdb9cff1ed237b5a384a8899e234" category="inline-link-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_에서.</block>
+  <block id="86c26e1621d0bd8e2c4210c81fd2b539" category="doc">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드</block>
+  <block id="eeda2a8f0828294ad51fab60acf4c866" category="paragraph">추가 절차는 을 <block ref="8cbfebe03d7025df7187c11c17a18941" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="7767fca1c0d3e02d34e1f2ec3fef20ef" category="list-text">사이트 B의 컨트롤러를 교체하려면 사이트 A에서 다음 명령을 실행하세요.</block>
+  <block id="00799101d1f09c8fafcefe8296b49d8f" category="list-text">한 사이트의 컨트롤러를 이미 교체한 후 다른 사이트에서 이 절차를 반복하면 각 사이트의 노드 간 불일치로 인해 오류가 발생합니다. 이는 두 사이트의 플랫폼 모델이 서로 다를 때 예상되는 현상입니다.</block>
+  <block id="a97ec5b5308c51ab2e1d07f3ac6b07f8" category="paragraph">불일치 오류만 반환되는 경우 다음을 사용할 수 있습니다. <block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> 옵션과 함께 <block ref="2b4e2bfd3f993678e0b6870d28304a76" prefix=" " category="inline-code"></block> MetroCluster 검사를 건너뛰기 위한 명령입니다.</block>
+  <block id="7530b73de7ae0c3f4a36c9d811a5cb93" category="paragraph">자동화된 작업을 통해 검사가 실행됩니다. 문제가 발견되지 않으면 작업이 일시 중지되므로 수동으로 구성 관련 정보를 수집할 수 있습니다.</block>
+  <block id="9de208a34e24280ae2b31dec32ba42d3" category="paragraph">현재 소스 시스템 및 호환되는 모든 타겟 시스템이 표시됩니다. 소스 컨트롤러를 다른 ONTAP 버전이나 호환되지 않는 플랫폼의 컨트롤러로 교체한 경우, 새 노드가 부팅된 후 자동화 작업이 중단되고 오류가 보고됩니다. 클러스터를 정상 상태로 되돌리려면 수동 복구 절차를 따르십시오.</block>
+  <block id="05c698302b9abd36f7cf0a1dc90a86d3" category="section-title">이전 컨트롤러를 교체하고 새 컨트롤러를 부팅합니다</block>
+  <block id="cf26e00f9d9d62aac6ab045ca55c7c29" category="list-text">에서 수집한 정보를 <block ref="4349c160b4ba85d15c9d1b99e7fab03e" category="inline-xref-macro-rx"></block>사용합니다.</block>
+  <block id="85712ea7206c9c772aaa7768f1e0353a" category="paragraph">이전 시스템 ID는 에서 식별되었습니다. <block ref="c90ff01403a996149cb5d17c8951ce45" category="inline-link-macro-rx"></block></block>
+  <block id="0915ed822e1ba9e1cdfa24d003dfbeb4" category="inline-xref">업그레이드를 준비합니다</block>
+  <block id="7425accfdceff5df29eb1bcc069522b4" category="list-text">이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.<block ref="4c03382d918a1ade2291b20c09997610" category="inline-xref-macro-rx"></block></block>
+  <block id="fe0329da478f91bf09739c8563bb23f0" category="paragraph">이 절차를 반복하면 클러스터와 노드에 대한 모든 예제 참조가 반전됩니다.</block>
+  <block id="8641ecafe3cb9cda290c67fe2e7975a5" category="section-title">컨트롤러 교체 작업 시작</block>
+  <block id="7ac2bd5992f95f4f0bfc51ae90968d8c" category="paragraph">자동 컨트롤러 교체 작업을 시작하면 작업에서 일련의 사전 점검이 수행된 후 일시 중지되어 구성 관련 정보를 수동으로 수집할 수 있습니다.</block>
+  <block id="b5fe45c4891c6d19896e92fee5883a19" category="inline-link-macro">ONTAP 중재자 서비스를 다시 구성합니다</block>
+  <block id="6b28386c147e051088cbc4ae11351a61" category="paragraph">MetroCluster 검사가 시작되기 전에 ONTAP Mediator가 설치되어 있으면 자동으로 감지되어 제거됩니다. 제거를 확인하려면 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다. 업그레이드를 완료한 후 사전 검사가 실패하거나 업그레이드를 진행하지 않기로 선택한 경우, 수동으로 <block ref="059689c27028be05419054623185eb12" category="inline-link-macro-rx"></block> .</block>
+  <block id="574eaa9b58d677670f6f75d0941c1eba" category="list-text">사용하지 않으면 <block ref="880d39d0efc2f0e9e812ea98923bdc40" prefix=" " category="inline-code"></block> 명령의 매개변수를 통해 컨트롤러 업그레이드 절차는 MetroCluster IP 시스템의 기본 절차로 NSO 기반 자동 전환 및 스위치백을 선택합니다.</block>
 </blocks>

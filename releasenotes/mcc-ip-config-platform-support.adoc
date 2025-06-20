@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: metrocluster, ip configuration, platform, support 
 summary:  
 ---
-= MetroCluster IP 플랫폼 지원의 새로운 기능
+= MetroCluster IP 플랫폼 및 스위치 지원의 새로운 기능
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-MetroCluster IP 플랫폼 지원의 새로운 기능에 대해 알아봅니다.
+MetroCluster IP 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.
 
 
 

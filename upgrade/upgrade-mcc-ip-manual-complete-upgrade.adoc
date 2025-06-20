@@ -64,7 +64,7 @@ MetroCluster 체크 쇼
 .단계
 . 이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.link:upgrade-mcc-ip-manual-requirements.html["업그레이드를 준비합니다"]
 +
-작업을 수행할 때 클러스터 및 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다
+이 절차를 반복하면 클러스터와 노드에 대한 모든 예제 참조가 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다
 
 
 
