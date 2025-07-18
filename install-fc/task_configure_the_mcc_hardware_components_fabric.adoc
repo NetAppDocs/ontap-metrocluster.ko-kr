@@ -2,7 +2,7 @@
 permalink: install-fc/task_configure_the_mcc_hardware_components_fabric.html 
 sidebar: sidebar 
 keywords: metrocluster, fabric, installation, cable, configuration 
-summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다. 
+summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 
 ---
 = 패브릭 연결 MetroCluster 구성 케이블링
 :allow-uri-read: 
@@ -11,6 +11,6 @@ summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적�
 
 
 [role="lead"]
-MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다.
+MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다.
 
 image::../media/workflow_hardware_installation_and_configuration_4_node_or_2_node_fabric.gif[워크플로우 하드웨어 설치 및 구성 4 노드 또는 2 노드 패브릭]

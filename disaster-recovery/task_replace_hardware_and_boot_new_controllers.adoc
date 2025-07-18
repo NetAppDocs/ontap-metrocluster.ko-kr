@@ -127,7 +127,7 @@ link:http://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설
 . 모든 구성 요소가 구성에 맞게 케이블로 올바르게 연결되어 있는지 확인합니다.
 +
 ** link:../install-ip/using_rcf_generator.html["MetroCluster IP 구성"]
-** link:../install-fc/task_fmc_mcc_transition_cable_the_new_mcc_controllers_to_the_exist_fc_fabrics.html["MetroCluster 패브릭 연결 구성"]
+** link:../install-fc/index.html["MetroCluster 패브릭 연결 구성"]
 
 
 

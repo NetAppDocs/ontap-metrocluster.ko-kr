@@ -1,7 +1,7 @@
 ---
 permalink: install-ip/concept_considerations_mcip.html 
 sidebar: sidebar 
-keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, array luns, mediator, tiebreaker 
+keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, mediator, tiebreaker 
 summary: 컨트롤러가 원격 스토리지에 액세스하는 방법과 MetroCluster IP 주소가 작동하는 방식을 이해해야 합니다. 
 ---
 = MetroCluster IP 구성을 위한 고려 사항

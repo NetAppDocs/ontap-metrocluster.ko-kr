@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="2ac5b29f2d20bbfbdc32651d31618463" category="summary">8노드 구성은 2개의 DR 그룹으로 구성됩니다. 이 섹션의 작업을 사용하여 첫 번째 DR 그룹을 구성합니다.</block>
-  <block id="146d142d8ea797f93d593a6fe9556787" category="doc">8노드 구성 처리</block>
-  <block id="0cd02877aca872fed2b891e70e7d6d9d" category="inline-link-macro">4노드 MetroCluster IP 구성을 8노드 구성으로 확장</block>
-  <block id="dd42913fad72868b65fced98cfecfcd6" category="paragraph">그런 다음 의 작업을 수행합니다 <block ref="3e70f7d1f526cf6dd7a89a97c88d0cc8" category="inline-link-macro-rx"></block></block>
   <block id="426935cb277802e33f3b6af9b3badb1a" category="summary">클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 Cisco IP 스위치를 구성해야 합니다.</block>
   <block id="e0dd6c69ebcc82355424ad704fd214bc" category="doc">Cisco IP 스위치 구성</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="list-title">이 작업에 대해</block>
@@ -558,23 +554,19 @@
   <block id="e95cf3aef5a080c0def37ff65465786d" category="list-text">부팅 메뉴에서 옵션 4를 선택하고 계속 진행합니다.</block>
   <block id="52239e8f1ddb4afa2e6bacb01bd05eb6" category="list-text">부팅 메뉴의 옵션 4를 사용하여 사이트 B에서 각 노드를 부팅합니다.</block>
   <block id="e23227abfbbf3f39097241194ae51e5e" category="summary">구성에 미러링되지 않은 애그리게이트가 포함된 경우, 전환 작업 후 잠재적 액세스 문제를 알고 있어야 합니다.</block>
-  <block id="fdf0e783eca74a7abe3d6795a4f8efc9" category="doc">미러링되지 않은 애그리게이트의 고려 사항</block>
   <block id="3867ac83522577ac1e3b5b5d7cd98009" category="section-title">전원 종료가 필요한 유지 관리 수행 시 미러링되지 않은 애그리게이트의 고려 사항</block>
   <block id="db90962864d575501326aa078b763137" category="paragraph">사이트 전체의 전원을 차단해야 하는 유지 관리 이유로 협상된 전환을 수행하는 경우, 먼저 재해 사이트에서 소유한 미러링되지 않은 애그리게이트를 수동으로 오프라인으로 전환해야 합니다.</block>
   <block id="57039a40a88640f58fa3d2e40f388c8b" category="paragraph">그렇지 않으면 다중 디스크 패닉이 발생하여 정상적인 사이트의 노드가 다운될 수 있습니다. 이 문제는 전원 종료 또는 ISL 손실로 인해 재해 사이트에서 스토리지에 대한 연결이 손실되어 전환용 미러링되지 않은 애그리게이트가 오프라인 상태가 되거나 누락되는 경우에 발생할 수 있습니다.</block>
   <block id="659e0582c65f61e8b4d3a9e29353485a" category="section-title">미러링되지 않은 애그리게이트 및 계층적 네임스페이스에 대한 고려 사항</block>
   <block id="ce02e334c176443baacfb1d15850936c" category="paragraph">계층적 네임스페이스를 사용하는 경우 해당 경로의 모든 볼륨이 미러링된 애그리게이트에만 있거나 미러링되지 않은 애그리게이트에만 있도록 접합 경로를 구성해야 합니다. 접합 경로에 미러링되지 않은 애그리게이트와 미러링된 애그리게이트를 혼합하여 구성할 경우, 전환 작업 후 미러링되지 않은 애그리게이트에 액세스하지 못할 수 있습니다.</block>
   <block id="bb00fbc514d8616f8f15c47e99d5a5cb" category="section-title">미러링되지 않은 애그리게이트 및 CRS 메타데이터 볼륨과 데이터 SVM 루트 볼륨의 고려 사항</block>
-  <block id="8e1b87e111c6a25dd28266989f14eb98" category="paragraph">CRS(구성 복제 서비스) 메타데이터 볼륨 및 데이터 SVM 루트 볼륨은 미러링된 Aggregate에 있어야 합니다. 이러한 볼륨을 미러링되지 않은 애그리게이트로 이동할 수 없습니다. 미러링되지 않은 애그리게이트에 있는 경우 협상된 전환 및 스위치백 작업이 거부됩니다. 이 경우 MetroCluster check 명령이 경고를 표시합니다.</block>
   <block id="8d0403b9deec1058b07790ba46b5072c" category="section-title">미러링되지 않은 애그리게이트 및 SVM에 대한 고려사항</block>
   <block id="2bdd511f4580eff308a5d77e78e121e5" category="paragraph">SVM은 미러링된 애그리게이트에만 구성하거나 미러링되지 않은 애그리게이트에만 구성해야 합니다. 미러링되지 않은 애그리게이트와 미러링된 애그리게이트를 혼합하여 구성하면 스위치오버 작업이 120초 이상 수행되어 미러링되지 않은 애그리게이트가 온라인 상태가 아닌 경우 데이터 중단이 발생할 수 있습니다.</block>
   <block id="708d7124490b473687f7923a27935eab" category="section-title">미러링되지 않은 애그리게이트 및 SAN에 대한 고려사항</block>
   <block id="853e6bb3641c0d71f39b6809c0ac2110" category="paragraph">9.9.1 이전의 ONTAP 버전에서는 LUN이 미러링되지 않은 애그리게이트에 있어서는 안 됩니다. 미러링되지 않은 애그리게이트에 LUN을 구성하면 스위치오버 작업이 120초를 초과하고 데이터 중단이 발생할 수 있습니다.</block>
   <block id="a1bf01274d938e19b1e43eb57fc3c557" category="summary">MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.</block>
   <block id="328809e93421c332a5773a41c7dbc7c5" category="doc">전환, 복구, 스위치백을 확인하는 중입니다</block>
-  <block id="3771e54725752637c5b1cf7cce911622" category="list-text">MetroCluster 관리 및 재해 복구 가이드 _ 에 설명되어 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용하십시오.</block>
   <block id="cee14a47b638f8dc20d2b5241487a64a" category="inline-link">MetroCluster 관리 및 재해 복구</block>
-  <block id="e60d9e6a9fb9bfbe61031a7440923aa7" category="paragraph"><block ref="e60d9e6a9fb9bfbe61031a7440923aa7" category="inline-link-rx"></block></block>
   <block id="c209703458c468cdf952f490276996a0" category="summary">노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다.</block>
   <block id="780b12826a73e1109ad45282f1b731dc" category="doc">ONTAP에서 MetroCluster 소프트웨어 구성</block>
   <block id="ef6b52b87a839f50cbfacc69d34de0af" category="image-alt">워크플로우 MCC IP 상위 레벨 노드 및 클러스터 구성 소프트웨어</block>
@@ -1014,11 +1006,6 @@
   <block id="1c09b1804e1d406edf051119d3e37e17" category="paragraph">외부 BGP(EBGP)는 ONTAP 노드와 피어링 라우터 간에 서로 다른 숫자를 사용하며, 라우터에서 라우팅 집계 및 재배포를 용이하게 하기 위해 선호되는 배포입니다. 내부 BGP(IBGP) 및 루트 리플렉터 사용은 불가능하지는 않지만 간단한 VIP 설정의 범위를 벗어납니다.</block>
   <block id="fdcb2c641a4d466eabbd2feb9d05e4eb" category="paragraph">구축 후에는 연결된 가상 LIF가 각 사이트의 모든 노드(MetroCluster 전환 포함) 간에 마이그레이션될 때 데이터 SVM에 액세스할 수 있는지 확인하여 동일한 데이터 SVM에 대한 정적 경로가 올바르게 구성되었는지 확인해야 합니다.</block>
   <block id="7a0c2e686d14eac5cabd2f1b223952e5" category="paragraph">VIP는 대부분의 IP 기반 프로토콜(NFS, SMB, iSCSI)에서 작동합니다.</block>
-  <block id="6e951796cc7b3ef0b3cbdf6750702b5c" category="doc">미러링되지 않은 애그리게이트 사용</block>
-  <block id="794fb422ed7feaa8e2fd8e01503528af" category="paragraph">CRS(구성 복제 서비스) 메타데이터 볼륨 및 데이터 SVM 루트 볼륨은 미러링된 Aggregate에 있어야 합니다. 이러한 볼륨을 미러링되지 않은 애그리게이트로 이동할 수 없습니다. 미러링되지 않은 애그리게이트에 있는 경우 협상된 전환 및 스위치백 작업이 거부됩니다. 이 경우 MetroCluster check 명령을 실행하면 경고가 표시됩니다.</block>
-  <block id="691a1c982701a36663600612625b18c0" category="paragraph">ONTAP 9.9.1 이전에는 LUN이 미러링되지 않은 애그리게이트에 있어서는 안 됩니다. 미러링되지 않은 애그리게이트에 LUN을 구성하면 스위치오버 작업이 120초를 초과하고 데이터 중단이 발생할 수 있습니다.</block>
-  <block id="aeaa739c92ec82faf927b61679580290" category="section-title">미러링되지 않은 애그리게이트를 위한 스토리지 쉘프 추가 시 고려 사항</block>
-  <block id="88e934baa541b7e8fd87cf4d8e9c9b2d" category="admonition">MetroCluster IP 구성에서 미러링되지 않은 애그리게이트에 사용될 쉘프를 추가하려면 다음을 수행해야 합니다.</block>
   <block id="bcf2ba64f8ca400962c78be17e4f72b5" category="list-text">쉘프 추가 절차를 시작하기 전에 다음 명령을 실행합니다.</block>
   <block id="9a2a15d781f7232859f638bf1caffe2c" category="paragraph">MetroCluster modify-enable-미러링되지 않은-aggr-deployment true</block>
   <block id="015a5eb76cbc28273197c813cce60b75" category="list-text">자동 디스크 할당이 꺼져 있는지 확인합니다.</block>
@@ -1293,11 +1280,9 @@
   <block id="5526d75deed345c5b83d6ead8ab0bdad" category="paragraph">이전 작업을 반복하여 두 번째 DR 그룹의 노드를 구성합니다.</block>
   <block id="3bb62bd0db01d5a91a87b5aad29c21cf" category="section-title">미러링되지 않은 데이터 애그리게이트를 생성합니다</block>
   <block id="bf2497e5dbebaf427ad038e5a165371f" category="paragraph">선택적으로 MetroCluster 구성에서 제공되는 이중 미러링이 필요하지 않은 데이터에 대해 미러링되지 않은 데이터 애그리게이트를 만들 수 있습니다.</block>
-  <block id="e8918a09def2aeb7defc8280332cfebd" category="list-text">새 애그리게이트에 어떤 드라이브 또는 어레이 LUN을 사용할 것인지 알아야 합니다.</block>
   <block id="397974d0ae4f4d3b113de9be111199f8" category="list-text">시스템에 여러 드라이브 유형(이기종 스토리지)이 있는 경우 올바른 드라이브 유형이 선택되었는지 확인하는 방법을 이해해야 합니다.</block>
   <block id="7ef4b332b4b48ccab13ab1bb737930c5" category="admonition">MetroCluster IP 구성에서는 전환 후 원격 미러링되지 않은 애그리게이트에 액세스할 수 없습니다</block>
   <block id="e9634520326541bac31db4b18c1f9afb" category="admonition">미러링되지 않은 애그리게이트는 해당 애그리게이트를 소유하는 노드에 로컬이어야 합니다.</block>
-  <block id="fb5b647ceadafa64bdabb02e963b9224" category="list-text">드라이브 및 어레이 LUN은 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브가 동일한 노드에 소유되어야 하며, 이 노드가 해당 애그리게이트의 홈 노드가 됩니다.</block>
   <block id="4b8414b2021cbbd4b58cc5b95bc166cd" category="list-text">_ 디스크 및 애그리게이트 관리 _ 는 미러링 Aggregate에 대한 자세한 정보를 포함합니다.</block>
   <block id="1f28277756aaed1f919fd03c2fa92a26" category="list-text">미러링되지 않은 애그리게이트 구축 사용:</block>
   <block id="99202cf08ee605465b048d280b130030" category="list-text">미러링되지 않은 애그리게이트를 포함할 디스크 쉘프를 설치 및 케이블로 연결합니다.</block>
@@ -1361,7 +1346,6 @@
   <block id="56fd520ce25840b9ef58f91a32184982" category="paragraph">ADP를 지원합니다</block>
   <block id="8f5c309995e5ddcf857afca4860e9894" category="paragraph">로컬 HA 지원</block>
   <block id="a43cff4f46ece5ce4e0cdb1c7a0fd40e" category="paragraph">미러링되지 않은 애그리게이트를 지원합니다</block>
-  <block id="3a7525345e0b5c609b38b98f11a46394" category="paragraph">어레이 LUN을 지원합니다</block>
   <block id="5679e05fd5a83a4470281f9a9fff0881" category="paragraph">ONTAP 중재자 지원</block>
   <block id="c14e505d04b15e11337934ec4262ec2b" category="paragraph">MetroCluster Tiebreaker 지원</block>
   <block id="f002a8ca79e81570742f83664f1ef8c0" category="paragraph">예(ONTAP 중재자를 조합하지 않음)</block>
@@ -1372,7 +1356,6 @@
   <block id="392719c196c4e0847676792f7c332ab2" category="section-title">MetroCluster 구성의 모든 SAN 어레이 시스템 지원</block>
   <block id="21cdd63bb00e685a661edb2068282e6e" category="paragraph">일부 SAN 어레이(ASA)는 MetroCluster 구성에서 지원됩니다. MetroCluster 설명서에서 AFF 모델에 대한 정보는 해당 ASA 시스템에 적용됩니다. 예를 들어, AFF A400 시스템의 모든 케이블 연결 및 기타 정보는 ASA AFF A400 시스템에도 적용됩니다.</block>
   <block id="ff63653e290a8e5b339966cb9855555f" category="summary">MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
-  <block id="882861c4cbc2720bbf7b9b7ae1dbada9" category="doc">MetroCluster 구성을 제거할 때의 고려 사항</block>
   <block id="598ab8da90f7b08fb85eebf2cdb5b642" category="doc">MetroCluster 규격 스위치를 사용할 때의 고려 사항</block>
   <block id="c33e2f23b789dd4d078b0a5b51963f75" category="list-text">MetroCluster IP 인터페이스는 요구 사항을 충족하도록 구성할 수 있는 모든 스위치 포트에 연결할 수 있습니다.</block>
   <block id="4ff5b50b72910d305ce187223bd1d86d" category="list-text">스위치는 ECN(명시적 정체 알림)을 지원해야 합니다.</block>
@@ -1386,7 +1369,6 @@
   <block id="ec5c696a4bc57321a5a79c91b886d5ff" category="paragraph">FAS9000</block>
   <block id="c37feb3492d999b3f216448183986be2" category="paragraph">FAS8200</block>
   <block id="5b97f056c47eb55f7ac2ec585e184dd9" category="summary">RCF 파일을 올바르게 생성하려면 포트 테이블의 정보를 사용하는 방법을 이해해야 합니다.</block>
-  <block id="673f5a3eeb8366a43231216d5889b9fc" category="doc">RcfFileGenerator 도구나 여러 MetroCluster 구성에서 포트 테이블 사용</block>
   <block id="ebd9fb85557b54bcafec3d1a1ac1c292" category="inline-link">MetroCluster IP용 RcfFileGenerator입니다</block>
   <block id="b12eae1983992a43e1aff6798c40b450" category="section-title">8노드 MetroCluster 구성에 케이블을 연결합니다</block>
   <block id="d5e8fd3a5a09a2e20b7a2ae3865f7eef" category="paragraph">예를 들어, 사용자의 구성에는 다음이 포함됩니다.</block>
@@ -1453,8 +1435,6 @@
   <block id="e4aa649e735d4adbdb401bf82feea340" category="paragraph">MetroCluster modify-enable-미러링되지 않은-aggr-deployment true</block>
   <block id="8b7b059c92f4f38b7b88f2770bc9e405" category="list-text">디스크 자동 할당이 비활성화되었는지 확인합니다.</block>
   <block id="8a9f1a9fa3d7dcf9bab5aa2cdbeb6b5e" category="paragraph">플랫폼 및 디스크 쉘프에 대한 설치 및 설정 설명서의 절차를 사용할 수 있습니다.</block>
-  <block id="a6480a829f17700a2c732897b3a46dd7" category="list-text">애그리게이트에 추가될 특정 드라이브 또는 어레이 LUN의 목록입니다</block>
-  <block id="ad222f1b99fd82273d6e96c71c66a371" category="list-text">RAID 그룹에 포함될 수 있는 최대 드라이브 또는 어레이 LUN 수</block>
   <block id="ef2f43e3af3c4fa749e73a7911ab793f" category="list-text">RPM이 다른 드라이브가 허용되는지 여부</block>
   <block id="6002be2e075c56f18d1738b11fc6e4f4" category="paragraph">MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다.</block>
   <block id="af6415b8e23291050b1c66bd2a86ffaf" category="paragraph">초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다.</block>
@@ -3511,7 +3491,6 @@
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">구성 요소</block>
   <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">포트</block>
   <block id="d151432733d339221bd143c714a56a84" category="cell">FC 스위치에 연결...</block>
-  <block id="b23f9c7f7d005f5b0859bf207898cd47" category="cell">스위치 포트에 연결...</block>
   <block id="85e2ca58f06c6fc43bb1278027917574" category="paragraph">컨트롤러_x_1</block>
   <block id="65698eca856b16c1879cd89757f6c190" category="paragraph">FC-VI 포트 A</block>
   <block id="c4ca4238a0b923820dcc509a6f75849b" category="paragraph">1</block>
@@ -3596,17 +3575,11 @@
   <block id="1c383cd30b7c298ab50293adfecb7b18" category="paragraph">35</block>
   <block id="093f65e080a295f8076b1c5722a46aa2" category="paragraph">59</block>
   <block id="49fd30fd43d4f8a06753b8f9677ba26a" category="cell">FC 포트(FC1 및 FC2)를 모두 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 구성</block>
-  <block id="f5ab0ecfb91169073465c75b07499fce" category="cell">Brocade 스위치 모델 6505, 6510, 6520, 7810, 7840, G610, G620, G620-1, G630, G630-1, DCX 8510-8</block>
-  <block id="d67bdc8865becf65979a7e07c7541fe7" category="cell">Brocade 스위치 G720</block>
   <block id="d752b12b0fc874dddc6f67101b900706" category="paragraph">FC1</block>
   <block id="ff9971710c5b208a0619e9b58d986c82" category="paragraph">FC2</block>
   <block id="e4d23e9ee95792ff4779580e194ca64b" category="paragraph">Bridge_x_1B</block>
   <block id="0ff59550d91336dce7c587ecb719fd1e" category="paragraph">Bridge_x_2B</block>
-  <block id="b662e152b43011e1e0296b8084a2d147" category="paragraph">12 *</block>
   <block id="0444d322c0716ad675e8eb52f423fbe6" category="paragraph">Bridge_x_3B</block>
-  <block id="4fcb10feecff8bf153e2155f987003d3" category="paragraph">13 *</block>
-  <block id="6d8c2a2025c082966f6b8171ae6d840e" category="paragraph">14 *</block>
-  <block id="f5edf414716a52037ee3226c67a63760" category="paragraph">15 *</block>
   <block id="19ca14e7ea6328a42e0eb13d585e4c22" category="paragraph">36</block>
   <block id="072b030ba126b2f4b2374f342be9ed44" category="paragraph">60</block>
   <block id="c2125bffc7f055acd5daa68020a0fc3d" category="paragraph">Bridge_x_53B</block>
@@ -3664,8 +3637,6 @@
   <block id="e79bc5599ed43bf573992c327fb00274" category="cell">스위치 1</block>
   <block id="14b42c7d1896b7605692e8c1af5df50d" category="cell">스위치 2</block>
   <block id="9e56f2203627e1f0f852b03165f1f73c" category="cell">Cisco 9148S</block>
-  <block id="4d5ea9cc493e38f0bd25ce9f073330be" category="cell">Cisco 9132T</block>
-  <block id="0f39a39e2e8a1309b826dae2289dd8fb" category="cell">MDS 모듈 1</block>
   <block id="14f265c9ad9a81b21c667b4042fc7575" category="admonition">다음 표에는 FC-VI 포트가 2개인 시스템이 나와 있습니다. AFF A700 및 FAS9000 시스템에는 4개의 FC-VI 포트(a, b, c 및 d)가 있습니다. AFF A700 또는 FAS9000 시스템을 사용하는 경우 포트 할당이 한 위치씩 이동합니다. 예를 들어, FC-VI 포트 c와 d는 스위치 포트 2로, HBA 포트 a와 b는 스위치 포트 3으로 이동합니다.</block>
   <block id="cab785737f7e01bc6cf334a3297e22c3" category="cell">Cisco 9250i 참고: Cisco 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
   <block id="7454ecd5190b690ccf9ee77f2e438c0c" category="section-title">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 FC-to-SAS 브리지에 대한 Cisco 포트 사용</block>
@@ -3689,10 +3660,6 @@
   <block id="d218ff19674f8525bccde81cb4f28d00" category="paragraph">ISL 4</block>
   <block id="26657d5ff9020d2abefe558796b99584" category="paragraph">96</block>
   <block id="670a9fef898ab1cd3ff1896d659f86f0" category="paragraph">24포트 라이센스가 있는 Cisco 9250i</block>
-  <block id="8b55f988e917813fe6beb8fdb5bd7199" category="paragraph">MDS 모듈 1 포트 13</block>
-  <block id="1d1d1c73cc531c7d72d9f4366c2896d6" category="paragraph">MDS 모듈 1 포트 14</block>
-  <block id="efeb11e85e07a24cb0d088e6f9190e1e" category="paragraph">MDS 모듈 1 포트 15</block>
-  <block id="f18a998f4fcf5bb3410843686e56a3b4" category="paragraph">MDS 모듈 1 포트 16</block>
   <block id="612b0bea750a7c462182730d395e1bde" category="doc">미러링되지 않은 애그리게이트를 사용할 때의 고려 사항</block>
   <block id="52f712c2fbff067a3f9ecef9e0c00853" category="paragraph">구성에 미러링되지 않은 애그리게이트가 포함된 경우 전환 작업 후 발생할 수 있는 액세스 문제를 알고 있어야 합니다.</block>
   <block id="2a2f14d553a58533b16ebe9c6aeee86d" category="paragraph">사이트 전체의 전원을 차단해야 하는 유지 관리 이유로 협상된 전환을 수행하는 경우, 먼저 재해 사이트에서 소유한 미러링되지 않은 애그리게이트를 수동으로 오프라인으로 전환해야 합니다.</block>
@@ -3833,7 +3800,6 @@
   <block id="69608c2ceb31fca5fdb927683327f5d0" category="paragraph">디스크 쉘프 데이지 체인 방식 및 쉘프 ID 설정에 대한 자세한 내용은 디스크 쉘프 모델의 해당 가이드를 참조하십시오.</block>
   <block id="b7d2754cdbe9c97a2528e9763625cb55" category="admonition">쉘프 ID는 각 MetroCluster DR 그룹(두 사이트 포함)의 각 SAS 디스크 쉘프에 대해 고유해야 합니다. 쉘프 ID를 수동으로 설정할 경우 디스크 쉘프의 전원을 껐다가 다시 켜야 합니다.</block>
   <block id="dddcbe39d238e711998c52c432aeaa31" category="summary">디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다.</block>
-  <block id="babbebe817de4ac640d017ba3dca7743" category="summary">MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 어레이 LUN이 있는 시스템이 아니라 네이티브 디스크 쉘프가 있는 시스템의 경우 이 단계가 약간 다릅니다.</block>
   <block id="90fc932ee050a39faa7916b30886ecf0" category="doc">2노드 브리지 연결 스트레치 MetroCluster 구성 케이블링</block>
   <block id="4db2eceaa8145339affc67a0413885ce" category="image-alt">워크플로우 하드웨어 설치 및 구성 2노드 브리지가 연결됨</block>
   <block id="f4e2ba9b259f06c1661bed9f349c22f3" category="summary">FiberBridge 7500N 또는 7600N 브리지가 있는 ONTAP 9.5부터 브리지의 대역 내 관리가 브리지 IP 관리 대신 지원됩니다. ONTAP 9.8부터는 대역외 관리가 사용되지 않습니다.</block>
@@ -3898,18 +3864,6 @@
   <block id="dccc10186ac064ab449808b79985f9eb" category="list-text"><block ref="dccc10186ac064ab449808b79985f9eb" category="inline-link-macro-rx"></block></block>
   <block id="fce1978f4576d27ac2f35a1205c3d45f" category="list-text"><block ref="fce1978f4576d27ac2f35a1205c3d45f" category="inline-link-macro-rx"></block></block>
   <block id="2952c7f5a6490056bf0aa7f218cacddf" category="list-text"><block ref="2952c7f5a6490056bf0aa7f218cacddf" category="inline-link-macro-rx"></block></block>
-  <block id="966e300bc237c2583e3926b37d7a021b" category="summary">기본 디스크 및 어레이 LUN을 사용하여 확장 MetroCluster 구성을 설정하려면 FC-to-SAS 브릿지 또는 SAS 광 케이블을 사용하여 ONTAP 시스템을 디스크 쉘프에 연결해야 합니다. FC 스위치를 사용하여 스토리지 LUN을 ONTAP 시스템에 접속해야 합니다.</block>
-  <block id="766c566dbd5b91e42bf430eaa1f8283e" category="doc">디스크 및 어레이 LUN이 있는 2노드 스트레치 MetroCluster 구성의 예</block>
-  <block id="9c99fef0430bb16c4a28d231ae5f8299" category="paragraph">기본 디스크 및 어레이 LUN을 사용하여 확장 MetroCluster 구성을 설정하려면 FC-to-SAS 브릿지 또는 SAS 광 케이블을 사용하여 ONTAP 시스템을 디스크 쉘프에 연결해야 합니다. 또한 FC 스위치를 사용하여 스토리지 LUN을 ONTAP 시스템에 접속해야 합니다.</block>
-  <block id="f1ab023e5e9e9bdeb7a934c85edec3d1" category="paragraph">ONTAP 시스템이 기본 디스크와 스토리지 LUN 모두에 접속하려면 최소 8개의 HBA 포트가 필요합니다.</block>
-  <block id="920da881cae411ea78d6cb953a970a64" category="paragraph">디스크 및 어레이 LUN이 있는 2노드 스트레치 MetroCluster 구성을 나타내는 다음 예에서는 스토리지 LUN에 연결하는 데 HBA 포트 0a에서 0d를 사용합니다. HBA 포트 1a~1d는 기본 디스크와의 연결에 사용됩니다.</block>
-  <block id="cd05172187157436bfb2ba5bf1f04694" category="paragraph">다음 그림에서는 SAS 광 케이블을 사용하여 기본 디스크를 ONTAP 시스템에 연결하는 2노드 스트레치 MetroCluster 구성을 보여 줍니다.</block>
-  <block id="6a948ca671c2d574b369b36c9b564cfe" category="image-alt">2노드 MCC 결합 glowworm</block>
-  <block id="ea8debab29aa9d3caee7fdbdd472b388" category="paragraph">다음 그림에서는 네이티브 디스크가 FC-to-SAS 브리지를 사용하여 ONTAP 시스템에 연결되는 2노드 스트레치 MetroCluster 구성을 보여 줍니다.</block>
-  <block id="61b0bed0c90072afb0d78607c64b82d6" category="image-alt">2노드 MCC Combined armadillo</block>
-  <block id="aec5f0d4a94e162c2240aba8a39d6d3b" category="paragraph">다음 그림에서는 스토리지 LUN 연결이 있는 2노드 스트레치 MetroCluster 구성을 보여 줍니다.</block>
-  <block id="4af712bd642e4d41dbe4210b1548a13d" category="image-alt">2노드 MCC가 결합된 스토리지 LUN</block>
-  <block id="8f00d8c4d67b46b0db1826d8ba6477c7" category="admonition">필요한 경우 동일한 FC 스위치를 사용하여 MetroCluster 구성의 컨트롤러에 기본 디스크와 어레이 LUN을 모두 연결할 수도 있습니다.</block>
   <block id="db7c7fcb177be4b76e7cfd3b25b6911b" category="summary">MetroCluster 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지해야 합니다.</block>
   <block id="4e588a29bf7a5758c2948246b9400ed6" category="summary">패브릭 연결 MetroCluster 구성에서는 노드가 서로 다른 위치에 있습니다. 이러한 지리적 차이로 인해 재해 보호가 증가합니다. 확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환하기 위해서는 FC 스위치를 추가해야 하며, 필요한 경우 FC-to-SAS 브리지를 구성에 추가해야 합니다.</block>
   <block id="1042cc8a57642a50cc069324d117567c" category="doc">확장 구성에서 패브릭 연결 MetroCluster 구성으로 전환</block>
@@ -4256,7 +4210,6 @@
   <block id="090182ab3424eee2fbfc86e2a955ec1d" category="paragraph">스토리지 컨트롤러는 SAS 케이블을 사용하여 스토리지에 직접 연결합니다.</block>
   <block id="ec7770ca503ad90a46ee5c3850ef8ae5" category="list-text">더 짧은 거리에는 구리 SAS 케이블을 사용할 수 있습니다.</block>
   <block id="e510f66049d1338325f0a62dd3ffc0f4" category="list-text">광 SAS 케이블을 사용하여 장거리 작업을 수행할 수 있습니다.</block>
-  <block id="6262d156e479edd8f826ba586e43575b" category="admonition">E-Series 어레이 LUN을 사용하는 시스템에서는 스토리지 컨트롤러를 E-Series 스토리지 어레이에 직접 연결할 수 있습니다. 다른 스토리지 LUN의 경우 FC 스위치를 통한 접속이 필요합니다.</block>
   <block id="0436e28291e6fd4996a22e3dd3eb4dcc" category="summary">각 스토리지 컨트롤러의 관리 및 데이터 포트를 사이트 네트워크에 케이블로 연결해야 합니다.</block>
   <block id="666f4c68ad2b23bd5d3ab29cdc509eea" category="doc">관리 및 데이터 연결 케이블 연결</block>
   <block id="c6d7a629c5e04881bf417a6aa090bdff" category="paragraph">이 작업은 두 MetroCluster 사이트에서 각각의 새 컨트롤러에 대해 반복해야 합니다.</block>
@@ -4265,7 +4218,6 @@
   <block id="51f9f77f4b6f08d6cef95e89d987dcd7" category="paragraph">MetroCluster Tiebreaker 소프트웨어를 사용하는 경우 자체 별도의 NTP 서버가 있어야 합니다.</block>
   <block id="eed818e49f4e9b9c4ed8931067fb0efd" category="doc">ONTAP MetroCluster 구성의 차이점</block>
   <block id="9edea398610f8b9e7bf8eb4d72f75daa" category="summary">DR\(재해 복구\) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
-  <block id="9a220a3f22f8641906ad7cfa0dd3502b" category="paragraph">DR(재해 복구) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="51618dab77295eddd5c15097ed80ca2d" category="cell">를 사용하는 경우...</block>
   <block id="8d7a98cf0e3de35b46f4b4e7fca074f1" category="paragraph">ATTO ExpressNAV GUI</block>
   <block id="281dc8254fa2b1d3b1bb2349471c1b69" category="list-text">지원되는 웹 브라우저의 브라우저 상자에 브리지의 IP 주소를 입력합니다.</block>
@@ -4302,18 +4254,7 @@
   <block id="8d3d41bad87a31195e4ce8080361725c" category="paragraph">ONTAP 버전에 따라 시스템 또는 데이터 SVM이 아닌 노드 SVM에서 BGP 피어링 LIF를 구성해야 합니다. ONTAP 9.8에서는 BGP LIF가 클러스터(시스템) SVM에서 볼 수 있으며 노드 SVM은 더 이상 존재하지 않습니다.</block>
   <block id="06e503b938af1986ad6b869ecf063f9b" category="paragraph">v0a(v0b 등)는 연결을 지속적으로 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(L2와는 달리 운영 중단 후에만 손상된 구성이 표시됨).</block>
   <block id="b310c02e6f3ce7879b405d0b4fabd46d" category="paragraph">BGP의 안정적인 업데이트 프로세스는 약간 더 빠르고 일부 클라이언트에 대한 중단 가능성이 낮기 때문에 LIF 마이그레이션을 더 원활하게 수행할 수 있습니다.</block>
-  <block id="4edc653428a721030056cbd92bbca350" category="summary">어레이 LUN이 있는 확장 MetroCluster 구성에서는 컨트롤러 간 직접 연결을 위해 FC-VI 포트에 케이블을 연결해야 합니다. 또한 각 컨트롤러 HBA 포트에 케이블을 연결하여 해당 FC 스위치의 포트를 전환해야 합니다. 어레이 LUN에 대한 케이블 연결은 직접 연결할 수 있는 E-Series 어레이 LUN을 제외하고 패브릭 연결 MetroCluster의 케이블 연결과 동일합니다.</block>
-  <block id="ef9c0fffdd4221e0f411cf0eb8571a76" category="doc">스토리지 LUN이 있는 확장 MetroCluster 구성의 예</block>
-  <block id="0ffc0e2ae7ba61a77fa089b0c2d828c4" category="paragraph">다음 그림에서는 확장 MetroCluster 구성에서 컨트롤러 A와 B에 케이블로 연결된 FC-VI 포트를 보여 줍니다.</block>
-  <block id="cfb8ca2ced7d2725056a8a692aebe95e" category="image-alt">FC vi 연결 캠퍼스</block>
-  <block id="9adf86b613b71705284eb2183a603ee7" category="admonition">FAS9000 스토리지 시스템 컨트롤러 모듈은 각각 4개의 FC-VI 포트를 사용합니다.</block>
-  <block id="d7b5e0a93ac97158d874e410a750d532" category="paragraph">E-Series 어레이 LUN을 사용하는 구성의 경우 E-Series LUN을 직접 연결할 수 있습니다.</block>
-  <block id="0ec188bebf461562e9c65ab306049b07" category="inline-link">NetApp E-Series 어레이를 통한 Stretch MetroCluster 구성에 대한 직접 연결 지원</block>
-  <block id="534cf18dc088a1002737c913b7090410" category="paragraph"><block ref="534cf18dc088a1002737c913b7090410" category="inline-link-rx"></block></block>
-  <block id="eb4c2154e73813f8ea66d1960d562b2e" category="paragraph">FC-VI 포트를 연결하는 경우를 제외하고, 이 절차의 나머지 부분에서는 E-Series 어레이 LUN을 사용하지 않는 어레이 LUN을 사용하여 MetroCluster 구성을 설정하는 것입니다. 따라서 패브릭 연결 구성에서 어레이 LUN을 사용하는 것과 동일한 FC 스위치가 필요합니다.</block>
-  <block id="e0dd1e85604316427a557d67b3079843" category="summary">FlexArray LUN을 사용하고 있는지 여부와 스토리지 컨트롤러가 스토리지 쉘프에 연결하는 방법을 기준으로 올바른 설치 절차를 선택해야 합니다.</block>
   <block id="c4680bcc4ac229ac4b7d5d145927a0ea" category="doc">구성에 맞는 올바른 설치 절차를 선택합니다</block>
-  <block id="e754262d6877963456252dcb8071c9a7" category="image-alt">워크플로 MetroCluster 구성 늘이기 를 선택합니다</block>
   <block id="76d06141fa1529c2e8193f48995d1030" category="cell">이 설치 유형의 경우...</block>
   <block id="0f59b15f885e3a80b7effe6a49fde4a8" category="cell">다음 절차를 사용하십시오...</block>
   <block id="4925c3e92cbc558459ac4884fe1553e3" category="paragraph">FC-SAS 브릿지를 사용하는 2노드 스트레치 구성</block>
@@ -4322,13 +4263,6 @@
   <block id="427173fb02da33c03f2d6549b04b93e9" category="paragraph">직접 연결 SAS 케이블로 연결된 2노드 스트레치 구성</block>
   <block id="09856c1072ca086e89cf2b213c6273c6" category="inline-link-macro">2노드 SAS 연결 스트레치 MetroCluster 구성의 케이블 연결</block>
   <block id="0c0fa1382f3ba1efffa3113209ab5940" category="list-text"><block ref="0c0fa1382f3ba1efffa3113209ab5940" category="inline-link-macro-rx"></block></block>
-  <block id="8630c587ad199d5d6526081d02e02b77" category="paragraph">스토리지 LUN을 사용한 설치</block>
-  <block id="4af4320fd946843f703662b771726b60" category="inline-link-macro">스토리지 LUN이 있는 확장 MetroCluster 구성의 연결</block>
-  <block id="1447ee27cf944008f8e33d4ce56f25cb" category="paragraph"><block ref="1447ee27cf944008f8e33d4ce56f25cb" category="inline-link-macro-rx"></block></block>
-  <block id="4de79eb6151b19b810b541965efd86d3" category="summary">E-Series 스토리지 어레이 LUN을 사용하는 확장 MetroCluster 구성에서는 스토리지 컨트롤러와 스토리지 어레이를 직접 연결할 수 있습니다. 다른 스토리지 LUN과 달리 FC 스위치는 필요하지 않습니다.</block>
-  <block id="3abc441c70e965211102be1acce8f4a1" category="doc">E-Series 스토리지 어레이를 사용하는 스트레치 MetroCluster 구성의 예</block>
-  <block id="56d23b4bd36ea7e836bbc1283db551b3" category="paragraph">E-Series 스토리지 어레이 LUN을 사용하는 확장 MetroCluster 구성에서는 스토리지 컨트롤러와 스토리지 어레이를 직접 연결할 수 있습니다. 다른 스토리지 LUN과 달리 FC 스위치는 필요하지 않습니다.</block>
-  <block id="3194674804f66d71138f3d227b29f143" category="paragraph">를 클릭합니다 <block ref="58ed8621fbf888b6b052231ede94da3e" category="inline-link-macro-rx"></block> 기술 자료 문서에서는 E-Series 어레이 LUN의 구성 예를 제공합니다.</block>
   <block id="43441b39bffebee3ed9f59ea9dc91306" category="image-alt">워크플로우 하드웨어 설치 및 구성 2노드 SAS 연결</block>
   <block id="54ce61bb83aa359dcf6fd5be3a23f0e8" category="summary">MetroCluster 구성에는 다양한 하드웨어 구성요소가 필요합니다. 편리함과 명확성을 위해 MetroCluster 설명서 전반에 걸쳐 구성 요소의 표준 이름이 사용됩니다. 한 사이트는 사이트 A라고 하며 다른 사이트는 사이트 B라고 합니다</block>
   <block id="7c53c51d939566adc8b93c1646e124e6" category="doc">2노드 SAS 연결 스트레치 구성에 필요한 MetroCluster 하드웨어 구성요소 및 명명 지침</block>
@@ -4341,16 +4275,12 @@
   <block id="3e203d1fe20288fbdc8e4b477bffda73" category="paragraph">SAS 연결 스트레치 MetroCluster 구성에는 최소 2개의 SAS 디스크 쉘프가 필요합니다. 4개의 SAS 디스크 쉘프가 권장됩니다.</block>
   <block id="a862108f875d286d39adac239f0619d5" category="paragraph">쉘프별로 디스크를 소유할 수 있도록 각 사이트에 2개의 쉘프를 사용하는 것이 좋습니다. 각 사이트에서 최소 하나의 쉘프가 지원됩니다.</block>
   <block id="93ba9bcaf75f3b305567eed2f5797513" category="summary">구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다.</block>
-  <block id="a9ed40443a225cecce5742ada138b243" category="doc">FC-to-SAS 브릿지 및 SAS 디스크 쉘프 설치</block>
   <block id="a2d4b828805dc92004efb97c8e85045a" category="paragraph">공장에서 출하된 시스템의 경우 FC-to-SAS 브리지가 사전 구성되어 있으며 추가 구성이 필요하지 않습니다.</block>
   <block id="b6b0aa1e441ae0f9c94362e6f0aae763" category="paragraph">필요한 경우 직렬 포트 또는 텔넷과 같은 다른 관리 인터페이스를 사용하여 브리지를 구성 및 관리하고 이더넷 관리 1 포트 및 브리지 펌웨어를 업데이트하는 FTP를 구성할 수 있습니다.</block>
   <block id="76545d4e8668be942098ed242d25351a" category="image-alt">워크플로우 브리지 설치 및 구성</block>
   <block id="4a4442f93bedaff86c4d502cdec5989f" category="summary">클러스터 피어링에 사용되는 컨트롤러 모듈 포트에 케이블을 연결하여 파트너 사이트의 클러스터와 연결해야 합니다.</block>
   <block id="8d53ecfd699255ffe464faea9e7525a9" category="paragraph">클러스터 피어링에 사용되는 컨트롤러 모듈 포트에 케이블을 연결하여 파트너 사이트에서 클러스터와 연결해야 합니다.</block>
   <block id="fc484e6d94d323d750d5724ac9f98e2b" category="paragraph">클러스터 피어링은 전용 포트 또는 데이터 포트에서 수행할 수 있습니다. 전용 포트를 사용하면 클러스터 피어링 트래픽에 더 높은 처리량을 제공할 수 있습니다.</block>
-  <block id="b38ee4e0ef85030df13c9983cc2db8fe" category="summary">어레이 LUN이 있는 확장 MetroCluster 구성에서는 컨트롤러 간에 FC-VI 포트를 연결해야 합니다. 컨트롤러와 E-Series 스토리지 어레이 간에 직접 연결이 지원됩니다. 다른 모든 스토리지 LUN 구성에서는 FC 스위치를 사용해야 합니다.</block>
-  <block id="3abb76413b81aeec2b1531b8193b98d1" category="paragraph">확장 MetroCluster 구성에서 어레이 LUN을 사용하려면 컨트롤러 간에 FC-VI 포트를 연결해야 합니다. 컨트롤러와 E-Series 스토리지 어레이 간에 직접 연결이 지원됩니다. 다른 모든 LUN 구성 어레이의 경우 구성에 FC 스위치를 사용해야 합니다.</block>
-  <block id="3d13d30ef61321e1bd349933232825f8" category="paragraph">디스크 및 어레이 LUN을 모두 사용하여 확장 MetroCluster 구성을 설정할 수도 있습니다. 이러한 구성에서는 FC-to-SAS 브릿지 또는 SAS 광 케이블을 사용하여 컨트롤러를 디스크에 연결해야 합니다.</block>
   <block id="12e1a43f9bf6da32583b815f8c9f66e1" category="summary">브리지를 구성한 후 시스템 케이블을 시작할 수 있습니다.</block>
   <block id="c53ab245e3b357260ea30380dfbae527" category="doc">IOM12 모듈을 사용하여 FiberBridge 7600N 또는 7500N 브리지를 디스크 셸프에 케이블로 연결합니다</block>
   <block id="6fd15be7f6a37829673663b10699e3a1" category="paragraph">디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에) SAS 케이블 커넥터를 삽입합니다.</block>
@@ -4874,7 +4804,6 @@
   <block id="cb6e41c3f8129beba0a46eb91ae56058" category="inline-link-macro">MetroCluster IP 구성</block>
   <block id="45a90cf1797a736ff538fdca7b5c8902" category="list-text"><block ref="45a90cf1797a736ff538fdca7b5c8902" category="inline-link-macro-rx"></block></block>
   <block id="4e3b6dac43e0506da50eaa98573ccb1c" category="inline-link-macro">MetroCluster 패브릭 연결 구성</block>
-  <block id="e1b883336b514336526e9cd258980864" category="list-text"><block ref="e1b883336b514336526e9cd258980864" category="inline-link-macro-rx"></block></block>
   <block id="efc7bd2b93394141f506b62b353e26a8" category="paragraph">재해 사이트에서 모든 하드웨어를 교체한 후 교체한 컨트롤러 모듈의 시스템 ID를 확인해야 합니다. 디스크를 새 컨트롤러 모듈에 재할당할 때 이전 시스템 ID가 필요합니다. 시스템이 AFF A220, AFF A250, AFF A400, AFF A800, FAS2750인 경우 FAS8300 또는 FAS8700 모델 FAS8700 모델에서는 MetroCluster IP 인터페이스에서 사용하는 VLAN ID도 결정해야 합니다.</block>
   <block id="3093030037c9fc57bbabc09d91167ff4" category="paragraph">재해 사이트의 모든 장비의 전원을 꺼야 합니다.</block>
   <block id="822168a839dec742c54affa947049201" category="paragraph">이 토론에서는 2노드 및 4노드 구성의 예를 제공합니다. 8노드 구성의 경우 두 번째 DR 그룹의 추가 노드에 장애가 있는지 고려해야 합니다.</block>
@@ -6192,7 +6121,6 @@
   <block id="4d7ea7c5860513bb0b675638d55fcd77" category="paragraph">첫 번째 네트워크에서 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 몇 가지 경고가 표시될 수 있습니다.</block>
   <block id="c997b3e19c99644bd488baf3bfa8890d" category="admonition">네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 모든 단계를 반복합니다.</block>
   <block id="84a71a9e63ead8784cd365088a3be8c4" category="cell">ISL 포트</block>
-  <block id="4389b93bd76334095ae6f5fdb926d4ee" category="paragraph">포트 40에서 48은 10GbE 포트이며 MetroCluster 구성에서 사용되지 않습니다.</block>
   <block id="e5fe800fef736c2c8af1453a59683d3c" category="summary">Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Brocade 관련 명령을 사용하여 스위치를 비활성화하고 펌웨어 변경을 수행 및 확인하고 스위치를 재부팅 및 다시 활성화해야 합니다.</block>
   <block id="db6e0c8057b108f77da141b83e047b8d" category="paragraph">펌웨어 업그레이드 또는 다운그레이드 중에는 스위치 패브릭을 사용할 수 없으며 MetroCluster 구성은 두 번째 Fabric에 의존하여 작업을 계속합니다.</block>
   <block id="6751765455c440079966f9a59475b0bc" category="paragraph">이 작업은 모든 스위치가 동일한 펌웨어 버전을 실행할 수 있도록 각 스위치 Fabric에 대해 연속적으로 수행해야 합니다.</block>
@@ -7932,42 +7860,9 @@
   <block id="56d500861746841ddcacc45e24e27b8e" category="list-text">모든 클러스터 LIF가 작동 중인지 확인합니다. 'network interface show -vserver cluster'</block>
   <block id="57a4fa53e3465d653412fcd3d899eec6" category="paragraph">각 클러스터 LIF는 "홈"에 대해 "참"으로, "상태 관리/작업"에 대해 "위쪽/위쪽"으로 표시되어야 합니다.</block>
   <block id="d29b9ac8693b89c3d872bc186706e288" category="list-text">모든 클러스터 LIF에서 'network interface show-vserver Cluster-fields auto-revert'라는 자동 되돌리기 기능이 설정되어 있는지 확인합니다</block>
-  <block id="fa1d5846fb86ab7458fc7fb29c179947" category="summary">스토리지 LUN을 사용하여 MetroCluster 구성을 설정하기 위해 ONTAP 시스템을 FC 스위치에 연결하는 경우, 각 컨트롤러의 FC-VI 및 HBA 포트를 특정 스위치 포트에 연결해야 합니다.</block>
-  <block id="4c8abe61a9f555c472220dec3b18291c" category="doc">스토리지 LUN이 있는 MetroCluster 구성에 필요한 스위치 포트</block>
-  <block id="ef420f89026ee115708305b6c2890190" category="paragraph">MetroCluster 구성에서 어레이 LUN과 디스크를 모두 사용하는 경우 컨트롤러 포트가 디스크 구성에 권장되는 스위치 포트에 연결되어 있는지 확인한 다음 나머지 포트를 어레이 LUN과 함께 구성하는 데 사용해야 합니다.</block>
-  <block id="21cc04de9b4e43b74a0ebdb43d82128a" category="paragraph">다음 표에는 어레이 LUN이 포함된 8노드 MetroCluster 구성에서 서로 다른 컨트롤러 포트를 연결해야 하는 특정 FC 스위치 포트가 나와 있습니다.</block>
-  <block id="c70273bf25434e94ddf0a0a169f3ce69" category="section-title">어레이 LUN의 전반적인 케이블 연결 지침</block>
-  <block id="c6d0df845a3b8a38a01661bcc6106c57" category="list-text">FAS8200 스토리지 시스템은 FC-VI 연결을 위한 두 가지 옵션 중 하나로 주문할 수 있습니다.</block>
-  <block id="6db2108e71ff83caaec94293aa2cf458" category="list-text">FAS9000 스토리지 시스템에는 FC-VI 포트 4개가 필요합니다. 다음 표에서는 각 컨트롤러에 FC-VI 포트 4개가 있는 FC 스위치의 케이블 연결을 보여 줍니다.</block>
-  <block id="f4ea8e671475f27580e6f99503c8a19c" category="section-title">MetroCluster 구성의 컨트롤러에 대한 Brocade 포트 사용</block>
-  <block id="d46eb15689b894ebe07f0a4793cadbf8" category="paragraph">다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 2개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. 더 작은 구성의 경우, 추가 컨트롤러 모듈의 행을 무시합니다. Brocade 6510 및 G620 스위치에서 8개의 ISL이 지원됩니다.</block>
-  <block id="aba82c87f118329e288f10e6f42dbe23" category="admonition">8노드 MetroCluster 구성에서 Brocade 6505 스위치의 포트 사용량이 표시되지 않습니다. 포트 수가 제한되기 때문에 컨트롤러 모듈 모델과 사용 중인 ISL 및 브리지 페어의 수에 따라 사이트별로 포트 할당을 수행해야 합니다.</block>
-  <block id="1814dedb1c790c23078fe46b6940b212" category="paragraph">다음 표에서는 첫 번째 DR 그룹의 케이블 연결을 보여 줍니다.</block>
-  <block id="2611efab71dc5ad5e6a3700e648dc52b" category="cell">Brocade 6520, 6510, 6505, G620, G610, 또는 7840 스위치</block>
   <block id="b4244340f0935c1a99a9f6b1a5c587ed" category="cell">* 구성 요소 *</block>
   <block id="5ddcf17f54788a5bb9148e8671562c06" category="cell">* 포트 *</block>
-  <block id="72be3cab576c552263b273dfbaea5e16" category="cell">* 스위치 1 *</block>
-  <block id="bb12412086f61c678c1c222a3af43eca" category="cell">* 스위치 2 *</block>
-  <block id="8e0f977b7c0c1dee57d9b995dabcdbfc" category="paragraph">다음 표에서는 두 번째 DR 그룹의 케이블 연결을 보여 줍니다.</block>
-  <block id="813a305fd70f4862aee889950c31f869" category="cell">Brocade 6510</block>
   <block id="1dde0a938f669adb0ba03f105ef1eb58" category="cell">Brocade G620</block>
-  <block id="42fcd78062a81a04d2e4877d8f54bccf" category="cell">ISL *</block>
-  <block id="7722ff24296d2f8d65961c1711971328" category="paragraph">ISL 5</block>
-  <block id="589bdc08f2808f49e7f406733b5df633" category="paragraph">ISL 6</block>
-  <block id="51727c22119966c8bba12291937d46b6" category="paragraph">ISL 7</block>
-  <block id="e6022c6ed129f3537ce8c59725dbe8e6" category="paragraph">ISL 8</block>
-  <block id="3748d9307fea4a17476891841b1c77f8" category="paragraph">이 표에는 2개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. 더 작은 구성의 경우, 추가 컨트롤러 모듈의 행을 무시합니다.</block>
-  <block id="673fe878b4e386d90c155e4e3a9dd011" category="section-title">Cisco 9396S 포트 사용</block>
-  <block id="309e1f2c9f2c466159e70783bd606770" category="section-title">Cisco 9148S 포트 사용</block>
-  <block id="b3442e9eecb3975a759a9ce14ac644c4" category="section-title">Cisco 9132T 포트 사용</block>
-  <block id="bae1aad05f778b08fcdd54d3fd3ea761" category="cell">* MDS 모듈 2 *</block>
-  <block id="9903cabc0b19b07a1afc7f881e87d454" category="section-title">Cisco 9250 포트 사용</block>
-  <block id="84025710c8716672d86db32fd2ba79ca" category="cell">Cisco 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
-  <block id="8d37a99e8b575522e0a290291ef1d44a" category="section-title">스토리지 LUN이 있는 MetroCluster 구성에 대한 공유 이니시에이터 및 공유 타겟 지원</block>
-  <block id="45b7bd1bce2e60e45d43effa073a2382" category="paragraph">지정된 FC 이니시에이터 포트 또는 타겟 포트를 공유할 수 있으면 사용되는 이니시에이터 또는 타겟 포트의 수를 최소화하려는 조직에 유용합니다. 예를 들어, FC 이니시에이터 포트 또는 타겟 포트에서 낮은 I/O 사용량을 기대하는 조직은 각 FC 이니시에이터 포트를 단일 타겟 포트에 할당하는 대신 FC 이니시에이터 포트 또는 타겟 포트를 공유하는 것을 선호할 수 있습니다.</block>
-  <block id="6ee4ac48a4e5ef238551d28b737ce993" category="paragraph">그러나 이니시에이터 또는 타겟 포트를 공유하면 성능에 부정적인 영향을 미칠 수 있습니다.</block>
-  <block id="d41c1579eb4eae4520d18e1d89c0324f" category="inline-link">MetroCluster 환경에서 스토리지 LUN과 공유 이니시에이터 및 공유 타겟 구성을 지원하는 방법</block>
-  <block id="7f983eabd66fb53d7d43c6cfad62b74d" category="paragraph"><block ref="7f983eabd66fb53d7d43c6cfad62b74d" category="inline-link-rx"></block></block>
   <block id="4c9e12fec4832bc4e599f3f834b24296" category="summary">MetroCluster 설치를 준비할 때 MetroCluster 하드웨어 아키텍처와 필수 구성 요소를 이해해야 합니다.</block>
   <block id="d4826be7d298f36261991629d290d30d" category="doc">패브릭 연결 MetroCluster 구성에서 TDM/WDM 장비를 사용하기 위한 고려 사항</block>
   <block id="eb2d15265b5fd439593bf6b8ee75d9aa" category="paragraph">Hardware Universe 도구는 패브릭 연결 MetroCluster 구성을 사용하기 위해 TDM(Time Division Multiplexing) 또는 WDM(Wavelength Division Multiplexing) 장비가 충족해야 하는 요구 사항에 대해 설명합니다. 이러한 노트에는 다양한 구성에 대한 정보도 포함되어 있어 프레임 IOD(In-Order Delivery) 또는 프레임 부족(Out-of-Order Delivery) 사용 시기를 결정할 수 있습니다.</block>
@@ -8010,11 +7905,6 @@
   <block id="79b482a227e1595f7ab841ee8be94f5a" category="paragraph"><block ref="79b482a227e1595f7ab841ee8be94f5a" category="inline-link-macro-rx"></block></block>
   <block id="96bbb7fffd6c295d8680b093897365fc" category="inline-link-macro">사이트 B 워크시트</block>
   <block id="bd9a676bb80dff5cc6dc6052bee08f56" category="paragraph"><block ref="bd9a676bb80dff5cc6dc6052bee08f56" category="inline-link-macro-rx"></block></block>
-  <block id="6e1085c3a7f7f5dad713d84dc9829d1d" category="summary">어레이 LUN을 포함하는 MetroCluster 구성을 설정하는 데 필요한 하드웨어 구성요소가 올바르게 랙에 장착되어 있는지 확인해야 합니다.</block>
-  <block id="38d158f9e55938f2b0dc9dd64167a8f9" category="doc">스토리지 LUN을 사용하여 MetroCluster 구성에서 하드웨어 구성 요소 랙 설치</block>
-  <block id="06b34b4d4fbdbda5eda4c6c60b4a50aa" category="paragraph">두 MetroCluster 사이트 모두에서 이 작업을 수행해야 합니다.</block>
-  <block id="099521a7112509edbce04bcd0ca911e7" category="paragraph">랙 공간은 스토리지 컨트롤러의 플랫폼 모델, 스위치 유형 및 구성의 디스크 쉘프 스택 수에 따라 달라집니다.</block>
-  <block id="173460488dce7240a263945ff8eca309" category="admonition">AFF 시스템은 어레이 LUN에서 지원되지 않습니다.</block>
   <block id="c8c3719034d9b9b752000ca4d3b5b2c2" category="list-text">랙 또는 캐비닛에 FC 스위치를 설치합니다.</block>
   <block id="e7b2ab89026c8038792876d17344e2a9" category="admonition">ucadmin 명령을 사용하여 FC 포트를 FC-VI 포트로 변환하는 작업은 FAS8020 및 AFF 8020 시스템에서만 지원됩니다. 다른 플랫폼에서는 FC 포트를 FCVI 포트로 변환할 수 없습니다.</block>
   <block id="7264088d4f9d193f30e9a2464dab74fb" category="list-text">재해 사이트에서 노드를 부팅합니다.</block>
@@ -8041,67 +7931,9 @@
   <block id="27ce43d817fe68cdce3cb2115e6e9a6c" category="paragraph">재치히다</block>
   <block id="4db09a8f6409fa18f56dc96045b59540" category="list-text">패브릭의 두 번째 스위치를 다시 활성화합니다.</block>
   <block id="3947964670abb8a1db104755363b45e9" category="list-text">10분 이상 기다린 다음 다른 스위치 패브릭에서 위 단계를 반복합니다.</block>
-  <block id="c2b6b0e868d1d64740864a0e6e2839e1" category="summary">기본 디스크 및 어레이 LUN을 사용하여 MetroCluster 구성을 구현하려면 구성에 사용된 ONTAP 시스템이 스토리지 어레이에 연결될 수 있는지 확인해야 합니다.</block>
-  <block id="16a5724d7c98fb4a344abbd866c29d17" category="doc">디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성 구축</block>
-  <block id="8d567693df21dd007bca2cab1786c41e" category="paragraph">디스크 및 어레이 LUN이 있는 MetroCluster 구성에는 2개 또는 4개의 노드가 있을 수 있습니다. 4노드 MetroCluster 구성은 패브릭을 연결해야 하지만, 2노드 구성은 확장 또는 패브릭 연결 구성일 수 있습니다.</block>
   <block id="02bbbf38700dabcfb5519437d1e2d0bb" category="paragraph">에 있습니다<block ref="a5900d751cd970c3de875b616ebb9e28" category="inline-link-rx"></block>에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션을 선택할 수 있습니다. 부품 탐색기 * 를 사용하여 부품 및 ONTAP 버전을 선택하여 검색을 구체화합니다. 결과 표시 * 를 클릭하여 조건에 맞는 지원되는 설정 목록을 표시할 수 있습니다.</block>
-  <block id="64d6dcdca907cf2218bf062bdef6f301" category="paragraph">기본 디스크 및 어레이 LUN을 포함하는 2노드 패브릭 연결 MetroCluster 구성 또는 4노드 MetroCluster 구성을 설정하려면 FC-SAS 브리지를 사용하여 ONTAP 시스템을 FC 스위치를 통해 디스크 쉘프와 연결해야 합니다. FC 스위치를 통해 어레이 LUN을 ONTAP 시스템에 연결할 수 있습니다.</block>
-  <block id="0ef1bc9fe8d1512f00aec0835ae1b38a" category="inline-link-macro">디스크 및 어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성의 예</block>
-  <block id="133e5cbc5686e035d77f84f694299e20" category="paragraph"><block ref="133e5cbc5686e035d77f84f694299e20" category="inline-link-macro-rx"></block></block>
-  <block id="ecc31eabe27d6246e7698a7bf860c23b" category="inline-link-macro">디스크 및 어레이 LUN이 있는 4노드 MetroCluster 구성의 예</block>
-  <block id="a2a2dcbf66bceb16c822e146bfd4ee0d" category="paragraph"><block ref="a2a2dcbf66bceb16c822e146bfd4ee0d" category="inline-link-macro-rx"></block></block>
-  <block id="a84d3843dc1716053ed4001478a35595" category="summary">스토리지 LUN과 함께 사용할 각 MetroCluster 노드에 V_StorageAttach 라이센스를 설치해야 합니다. 라이센스가 설치될 때까지 Aggregate에서 어레이 LUN을 사용할 수 없습니다.</block>
-  <block id="9d61f0176cee0faa3e591c2beb64eb10" category="doc">MetroCluster 구성에서 스토리지 LUN 사용을 위한 라이센스 설치</block>
-  <block id="6dce6a8d34576d6e6d2f961c8b413963" category="list-text">클러스터를 설치해야 합니다.</block>
-  <block id="46828fa53ffc65db6a237d68a35398f5" category="list-text">V_StorageAttach 라이센스에 대한 라이센스 키가 있어야 합니다.</block>
-  <block id="4075d07234c68dc30461eda09f77ca39" category="paragraph">V_StorageAttach 라이센스를 설치할 각 노드에 대해 별도의 라이센스 키를 사용해야 합니다.</block>
-  <block id="a7ee2c4a10e1570860b0601ec209e4e8" category="list-text">V_StorageAttach 라이센스를 설치합니다.</block>
-  <block id="5da2b156280daaa1fc2fe1cb2772416f" category="paragraph">'시스템 사용권 추가'</block>
-  <block id="0e6c46605ec1bda2ec4ae95381224c25" category="paragraph">라이센스를 설치할 각 클러스터 노드에 대해 이 단계를 반복합니다.</block>
-  <block id="b2b6e23ab57653d1006049cf37bfed5b" category="list-text">V_StorageAttach 라이센스가 클러스터의 모든 필수 노드에 설치되었는지 확인합니다.</block>
-  <block id="c4f2ecfddbca137434d6171dc1d881dd" category="paragraph">다음 샘플 출력에서는 cluster_A의 노드에 V_StorageAttach 라이센스가 설치되어 있음을 보여 줍니다.</block>
-  <block id="81f0867bac9efadacfd599f0fb66c839" category="summary">MetroCluster 구성은 네이티브(NetApp) 디스크 쉘프만 사용하거나 어레이 LUN만 사용하거나 둘 모두를 결합하여 설치할 수 있습니다.</block>
-  <block id="8e98ddf5c7184de31606d8ca05864c67" category="doc">네이티브 디스크 쉘프 또는 어레이 LUN을 사용하는 MetroCluster 구성에 대한 고려사항</block>
-  <block id="b75a46fc53502d73a9aba497366b09e6" category="paragraph">AFF 시스템은 스토리지 LUN을 지원하지 않습니다.</block>
   <block id="a1350ff79863130a11a81a4223c96e8c" category="inline-link-macro">패브릭 연결 MetroCluster 구성 케이블링</block>
-  <block id="12b05343ddb9ee449eb02e9df256be16" category="paragraph"><block ref="12b05343ddb9ee449eb02e9df256be16" category="inline-link-macro-rx"></block></block>
-  <block id="33cb94ec8653b1f632148976c8a040cd" category="inline-link-macro">스토리지 LUN을 사용한 MetroCluster 구성 계획 및 설치</block>
-  <block id="70894d5c0a41692947485c0d0a19e60a" category="inline-link">FlexArray 가상화 설치 요구 사항 및 참조 자료</block>
-  <block id="cefd59017a4a065f49d52af021a7df7a" category="paragraph"><block ref="cefd59017a4a065f49d52af021a7df7a" category="inline-link-rx"></block></block>
-  <block id="76612d8038518e7aa7b303db3045593f" category="summary">어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝을 사용하는 경우 특정 기본 요구사항을 준수해야 합니다.</block>
-  <block id="67d003a4abde4b84eb28863c6288534e" category="doc">어레이 LUN이 있는 MetroCluster 구성의 스위치 조닝에 대한 요구사항</block>
-  <block id="5163480f9a9877452e514b2b8e14d3b9" category="paragraph">어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝에 대한 요구 사항은 다음과 같습니다.</block>
-  <block id="84a9505accf67e9e387d354ed58a7611" category="list-text">MetroCluster 구성은 단일 이니시에이터에서 단일 타겟 조닝(zoning) 방식을 따라야 합니다.</block>
-  <block id="57f1c6242da9740173e005e0cdb2561d" category="paragraph">단일 이니시에이터에서 단일 타겟 조닝으로 인해 각 존이 단일 FC 이니시에이터 포트 및 단일 타겟 포트로 제한됩니다.</block>
-  <block id="2b2c8f585b721e9343a9f5be4b8c163a" category="list-text">FC-VI 포트는 패브릭 전체에서 엔드 투 엔드 조닝되어야 합니다.</block>
-  <block id="9377aa6f276f8ec401ff97cad8c3288f" category="list-text">여러 이니시에이터 포트를 단일 타겟 포트와 공유하면 성능 문제가 발생할 수 있습니다.</block>
-  <block id="4213e2e4219d8c646fb0d77e759bd1e7" category="paragraph">마찬가지로, 여러 타겟 포트를 단일 이니시에이터 포트와 공유하면 성능 문제가 발생할 수 있습니다.</block>
-  <block id="a97092f773742097739d9703f62392b9" category="list-text">MetroCluster 구성에 사용되는 FC 스위치의 기본 구성을 수행해야 합니다.</block>
-  <block id="ed167884ebcfbf8e54d556f8a50a60c2" category="list-text">스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
-  <block id="0bf5a919f9397252a1fb8ee826f70bcb" category="inline-link-macro">어레이 LUN이 있는 2노드 MetroCluster 구성에서 스위치 조닝의 예</block>
-  <block id="a90e829037a5fa8775e3eae393aa9ee4" category="paragraph"><block ref="a90e829037a5fa8775e3eae393aa9ee4" category="inline-link-macro-rx"></block></block>
-  <block id="db08f81e8313778dec890ddaca5cb3d3" category="inline-link-macro">어레이 LUN이 있는 4노드 MetroCluster 구성의 스위치 조닝의 예</block>
-  <block id="da94a7db0f9882c4b3c67c4b02d65a87" category="paragraph"><block ref="da94a7db0f9882c4b3c67c4b02d65a87" category="inline-link-macro-rx"></block></block>
-  <block id="207c024d1855ef3c7e08eb0a0aceac8f" category="inline-link-macro">어레이 LUN이 있는 8노드 MetroCluster 구성의 스위치 조닝의 예</block>
-  <block id="6e2b6e2786426e2aeed4db0ecc5b8890" category="paragraph"><block ref="6e2b6e2786426e2aeed4db0ecc5b8890" category="inline-link-macro-rx"></block></block>
-  <block id="752420a765705b56e0d18f0c93527266" category="summary">스토리지 LUN을 스토리지로 사용할 Aggregate에 추가하려면 먼저 노드가 소유해야 합니다.</block>
-  <block id="53f2462178712ede2ca2861f93c1e5d5" category="doc">스토리지 LUN의 소유권을 할당합니다</block>
-  <block id="65938c3330bedaa6834bdda7ac520511" category="list-text">백엔드 구성 테스트(ONTAP 시스템 뒤에 있는 장치의 연결 및 구성 테스트)를 완료해야 합니다.</block>
-  <block id="309ab14cd8f12cb8629f1c861eca199b" category="list-text">할당하려는 스토리지 LUN은 ONTAP 시스템에 제공되어야 합니다.</block>
-  <block id="88627428a34504bf05af531d65851c29" category="paragraph">다음과 같은 특성을 가진 스토리지 LUN의 소유권을 할당할 수 있습니다.</block>
-  <block id="d57ac8a739fe5a79b6d6e918dae44d1e" category="list-text">소유하지 않은 것입니다.</block>
-  <block id="40603ec338b8ba195bb067fc323eb998" category="list-text">다음과 같은 스토리지 배열 구성 오류가 없습니다.</block>
-  <block id="d24963140562f725a6ebfc5013c135f3" category="list-text">스토리지 LUN이 ONTAP가 지원하는 크기보다 작거나 큽니다.</block>
-  <block id="077c35822587e579b6f9f7bf8dd018aa" category="list-text">LDEV는 하나의 포트에만 매핑됩니다.</block>
-  <block id="c080299df472c3b3d98b2e86c3cdbfb8" category="list-text">LDEV에 일관적이지 않은 LUN ID가 할당되어 있습니다.</block>
-  <block id="55d3dc722242b02d84ab2478e409889c" category="list-text">LUN은 하나의 경로에서만 사용할 수 있습니다.</block>
-  <block id="90728b906a78c507b1e15fe5090db627" category="paragraph">ONTAP는 ONTAP 시스템과 함께 작동하는 스토리지 시스템을 방해할 수 있는 백엔드 구성 오류로 어레이 LUN의 소유권을 할당하려고 하면 오류 메시지를 표시합니다. 어레이 LUN 할당을 계속하려면 먼저 이러한 오류를 수정해야 합니다.</block>
-  <block id="f2ff71670cd376e228a30b5ba452b8c5" category="paragraph">ONTAP는 중복 오류가 있는 어레이 LUN을 할당하려고 할 때 사용자에게 경고를 표시합니다. 예를 들어 이 어레이 LUN에 대한 모든 경로는 동일한 컨트롤러에 연결되거나 어레이 LUN에 대한 하나의 경로에만 연결됩니다. LUN의 소유권을 할당하기 전이나 후에 중복 오류를 수정할 수 있습니다.</block>
-  <block id="17abf9dec5e60d6f3fa370163fa1392c" category="list-text">아직 노드에 할당되지 않은 스토리지 LUN 보기:</block>
   <block id="93b4c54527bd19b6e0c8b5146ea23761" category="paragraph">스토리지 디스크 show-container-type unassigned</block>
-  <block id="374f507736292301c0def9697bcbea95" category="list-text">이 노드에 어레이 LUN을 할당합니다.</block>
-  <block id="5f13d85a2947066162a034c5f8f6ca1b" category="paragraph">'storage disk assign-disk_array_lun_name_-owner_nodename_'</block>
-  <block id="290408f07cabf51b8bcef2a4892e46e9" category="paragraph">디스크 할당 후 중복 오류를 해결하려면 스토리지 디스크 할당 명령에 '-force' 매개 변수를 사용해야 합니다.</block>
   <block id="26c467a24332bb8d92780a3eb059ce38" category="summary">RCF\(참조 구성\) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
   <block id="4fbbc0ce852ccef3a7adceb0f9bc2c27" category="doc">Brocade FC 스위치 RCF 파일 다운로드</block>
   <block id="b5909b79c9831ace5a37a88ecc8d8221" category="paragraph">RCF(Reference Configuration) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
@@ -8133,8 +7965,6 @@
   <block id="b3597a38069ce88bd5e71904ddba930d" category="paragraph">MetroCluster 절체 후 'Storage aggregate plex show' 명령을 실행하면 전환된 루트 애그리게이트의 Plex0 상태가 불확정되며 "failed"로 표시됩니다. 이 시간 동안 전환된 루트는 업데이트되지 않습니다. 이 플렉의 실제 상태는 MetroCluster 복구 단계 이후에만 확인할 수 있습니다.</block>
   <block id="15036251faefea85ea9b6ffa4f283c29" category="list-text">"vol-dr-force-nvfail" 매개 변수를 "on"으로 설정하여 스위치오버 시 NVFAIL을 트리거하도록 MetroCluster 구성 활성화:</block>
   <block id="a0672ab43d6a3c035ef982f4bbdf4ec8" category="paragraph">'* vol modify -vserver_vserver -name_-volume_volume -name_-dr-force -nvfail on *</block>
-  <block id="7d327c8684dadf853cfb8ee6a8c362c8" category="summary">MetroCluster 구성에 대한 자세한 계획을 생성하면 스토리지 어레이에서 LUN을 사용하는 MetroCluster 구성의 고유한 요구사항을 이해할 수 있습니다. MetroCluster 구성을 설치하려면 여러 장치를 연결하고 구성해야 합니다. 이러한 작업은 여러 사람이 수행할 수 있습니다. 따라서 이 계획을 통해 설치 관련 다른 사람과 의사 소통하는 데 도움이 됩니다.</block>
-  <block id="a3d19320c14020f923dda13e7501b231" category="doc">스토리지 LUN이 포함된 MetroCluster 구성 계획</block>
   <block id="cbbfaef273014b8355328497ea2a64a8" category="summary">FC-to-SAS 브리지는 SAS 연결 디스크와 FC 스위치 패브릭 간의 프로토콜 브리징을 제공합니다.</block>
   <block id="1da4d9acb2ddf3dadc76f2d24f6e0fff" category="doc">이중 FC-to-SAS 브리지의 그림</block>
   <block id="6ae03157542266ed3043d8026451ccf4" category="image-alt">MCC HW 아키텍처 쉘프 스택</block>
@@ -8214,11 +8044,6 @@
   <block id="9b29c7d440706a3b6701509f3b6512fe" category="paragraph">'cluster_a&gt; storage bridge run-cli-bridge bridge_a_1 - command savececonturation'</block>
   <block id="2622744a230b337241ab6444c641a6cb" category="paragraph">'Storage bridge run-cli-bridge_bridge-name_-command firmwarerestart'</block>
   <block id="def2bebf11566298ccfc0636cb9cff59" category="paragraph">'cluster_a&gt; storage bridge run-cli-bridge_a_1 - 명령 firmwarerestart'</block>
-  <block id="7ca3f4cc3e8719be42bc9af9a1f301e9" category="doc">7-Mode에서 ONTAP로 전환할 때의 고려 사항</block>
-  <block id="d217125741b05656b3f76b2c03bf99c5" category="paragraph">전환 툴을 사용하여 데이터를 7-Mode MetroCluster 구성에서 ONTAP 구성으로 이동하기 전에 새로운 MetroCluster 구성이 완전히 구성 및 작동 중이어야 합니다. 7-Mode 구성에서 Brocade 6510 스위치를 사용하는 경우 새로운 구성이 기존 패브릭을 공유하여 하드웨어 요구 사항을 줄일 수 있습니다.</block>
-  <block id="f75b95c3a1dfa9ff587686284536247d" category="paragraph">Brocade 6510 스위치가 있고 7-Mode 패브릭 MetroCluster와 ONTAP에서 실행되는 MetroCluster 간에 스위치 패브릭을 공유하려는 경우 MetroCluster 구성 요소를 구성하기 위한 특정 절차를 사용해야 합니다.</block>
-  <block id="448dad771b84bd40298b25d3b34702b9" category="inline-link-macro">전환 중 7-Mode Brocade 6510 FC 패브릭을 공유하기 위한 MetroCluster 하드웨어 구성</block>
-  <block id="15fde4f082e6ff5ca3488be202f0dbcb" category="paragraph"><block ref="15fde4f082e6ff5ca3488be202f0dbcb" category="inline-link-macro-rx"></block></block>
   <block id="da677daf9723918166ed931256a804a8" category="image-alt">워크플로우 하드웨어 설치 및 구성 4 노드 또는 2 노드 패브릭</block>
   <block id="96cf9ddcf3fc08fd3054be11d6e19c44" category="summary">이 표에는 DR 그룹에 8개의 AFF A900 컨트롤러 모듈이 있는 지원되는 최대 구성이 나와 있습니다.</block>
   <block id="f537ff78df4afb387541f1166be1d417" category="list-text">9132T 스위치는 MetroCluster 2 또는 DR 2를 지원하지 않습니다.</block>
@@ -8275,98 +8100,11 @@
   <block id="acd95c371f9a123c4bb4a54343e4fd2b" category="list-text">MyAutoSupport(시스템 위험이 오탐 표시 가능)</block>
   <block id="2283aeba9a8b2a086fb5b2ef95e65235" category="list-text">Active IQ Unified Manager(이전의 OnCommand Unified Manager)</block>
   <block id="25e406bace0d04355538052e51cb9463" category="admonition">이 설정에 필요한 모든 구성 요소가 에 있는지 확인합니다<block ref="ae0acc7a1cf35a69eb7b42685c902841" category="inline-link-rx"></block>. 지원되는 구성에 대한 자세한 내용은 상호 운용성 매트릭스 툴의 참고 섹션을 참조하십시오.</block>
-  <block id="d66138e7de87b53a340e87e48042957d" category="summary">MetroCluster 구성에 사용되는 ONTAP 시스템, 스토리지 어레이 및 FC 스위치는 이러한 유형의 구성에 대한 요구사항을 충족해야 합니다. 또한 어레이 LUN을 사용하는 MetroCluster 구성에 대한 SyncMirror 요구 사항도 고려해야 합니다.</block>
-  <block id="aea48cdfc5800125bb39de01bb53c503" category="doc">스토리지 LUN이 포함된 MetroCluster 구성 요구 사항</block>
-  <block id="0d2543656d3d6ee0d0708750b1227727" category="section-title">ONTAP 시스템에 대한 요구 사항</block>
-  <block id="31c7601b3ddd76c89bdb9c7f651e6565" category="list-text">ONTAP 시스템은 MetroCluster 구성에서 지원되는 것으로 식별되어야 합니다.</block>
-  <block id="8f16a0302e18449a6fe9801e318a21ac" category="admonition">상호 운용성 매트릭스 에서 선택한 구성과 관련된 경고 세부 정보를 참조해야 합니다.</block>
-  <block id="b0a79d0ab79284c3f2f69466e99e3562" category="list-text">MetroCluster 구성의 모든 ONTAP 시스템은 동일한 모델이어야 합니다.</block>
-  <block id="1ed1490f1fedbec3aa46979875437d66" category="list-text">FC-VI 어댑터는 모델에 따라 각 ONTAP 시스템의 적절한 슬롯에 설치해야 합니다.</block>
-  <block id="d3e1f29d5998c9fd1a893993c7c437fc" category="section-title">요구사항을 충족해야 합니다</block>
-  <block id="7c9e25bb04a28bc816b0d1b3f80cb8a3" category="list-text">스토리지 어레이는 MetroCluster 구성에서 지원되는 것으로 식별되어야 합니다.</block>
-  <block id="7a7c50dc3d480e65fc0fc47e93a949d3" category="list-text">MetroCluster 구성의 스토리지 어레이는 대칭이어야 합니다.</block>
-  <block id="90a3b4e9946334088a78dea287724e93" category="list-text">두 스토리지 어레이는 동일한 지원되는 공급업체 제품군에서 가져온 것이어야 하며 동일한 펌웨어 버전이 설치되어 있어야 합니다.</block>
-  <block id="82d37cddebcbc53beaf89f22ddf1f310" category="inline-link">NetApp E-Series 스토리지를 위한 FlexArray 가상화 구축</block>
-  <block id="6dbb334cbf32f0f174c61a77a3bd9cf8" category="paragraph"><block ref="6dbb334cbf32f0f174c61a77a3bd9cf8" category="inline-link-rx"></block></block>
-  <block id="2e97596bf006ab4a63eb1ab1532e9166" category="inline-link">타사 스토리지를 위한 FlexArray 가상화 구축</block>
-  <block id="ea99f1dcf0d09ce14e57dde04d25f1dc" category="paragraph"><block ref="ea99f1dcf0d09ce14e57dde04d25f1dc" category="inline-link-rx"></block></block>
-  <block id="98c912a8ebc7fe33bb468aeb86b73d0d" category="list-text">미러링된 스토리지에 사용되는 디스크 유형(예: SATA, SSD 또는 SAS)은 두 스토리지 어레이에서 동일해야 합니다.</block>
-  <block id="a5c2b9a46f707221354fce1142ddb350" category="list-text">RAID 유형 및 계층화와 같은 스토리지 배열 구성에 대한 매개 변수는 두 사이트 간에 동일해야 합니다.</block>
-  <block id="4fde1977c0712026d27420be2b851917" category="section-title">FC 스위치 요구 사항</block>
-  <block id="d729ae9faac07f81f2be521fde99983b" category="list-text">스위치 및 스위치 펌웨어는 MetroCluster 구성에서 지원되는 것으로 식별되어야 합니다.</block>
-  <block id="efe2f1a5b22c4c08760a2c8298133cbc" category="list-text">각 Fabric에는 2개의 FC 스위치가 있어야 합니다.</block>
-  <block id="633329c29defa71e64bad7e22f7391d6" category="list-text">각 ONTAP 시스템은 중복 구성 요소를 사용하여 스토리지에 연결해야 장치 및 경로 장애가 발생할 경우 이중화가 가능합니다.</block>
-  <block id="00cf1532f7b3f1f9e9e57c27005e5afe" category="paragraph">스위치는 MetroCluster 기본 스위치 구성, ISL 설정 및 FC-VI 구성을 사용해야 합니다.</block>
-  <block id="bc8f1fcb589a975f8303117094ef8f50" category="section-title">SyncMirror 요구 사항</block>
-  <block id="3e033f133aa9e3ec8a824c1f70405edc" category="list-text">MetroCluster를 구성하려면 SyncMirror가 필요합니다.</block>
-  <block id="faa2c24aa0bff134c46b610cc5cad1bc" category="list-text">미러링된 스토리지를 사용하려면 각 사이트에 하나씩 두 개의 개별 스토리지 어레이가 필요합니다.</block>
-  <block id="620e8832cbaba361ae8b2c33837fb80f" category="list-text">두 세트의 스토리지 LUN이 필요합니다.</block>
-  <block id="019169cff6a8d33215c0a9ba8e769d33" category="paragraph">로컬 스토리지 어레이(pool0)의 Aggregate에 한 세트가 필요하고 원격 스토리지 어레이에서 애그리게이트의 미러에 대한 다른 세트(pool1)가 필요합니다.</block>
-  <block id="44bfd90bf25fc1afc744f3b97ad23cac" category="paragraph">어레이 LUN의 크기는 애그리게이트를 미러링할 때 동일해야 합니다.</block>
-  <block id="84607472aeb104b5de394a50678b1615" category="list-text">미러링되지 않은 애그리게이트는 MetroCluster 구성에서도 지원됩니다.</block>
-  <block id="7ba040de83fb2facf86a7f32503e4830" category="paragraph">사이트 재해 발생 시 보호되지 않습니다.</block>
   <block id="347d1a24edd39c6b694a17cc073652b1" category="summary">FC-VI 포트 및 HBA\(호스트 버스 어댑터\)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="c1e58eae0c6e51d54fa87f2ad6f0eb1c" category="paragraph">FC-VI 포트 및 HBA(호스트 버스 어댑터)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="99a578284ada1b8807f86cb25b927d6b" category="inline-link-macro">AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당</block>
   <block id="5383551238fc98d2f75e63be48523c04" category="list-text"><block ref="5383551238fc98d2f75e63be48523c04" category="inline-link-macro-rx"></block></block>
   <block id="72b3f4df9ba178ac37c68c3130df2a2c" category="list-text"><block ref="72b3f4df9ba178ac37c68c3130df2a2c" category="inline-link-macro-rx"></block></block>
-  <block id="d3eeac5beb8e07b719903a04da02d1bc" category="summary">어레이 LUN이 있는 MetroCluster 구성에서는 이중 포트 쌍을 구성하는 스토리지 어레이 포트를 대체 FC 스위치에 연결해야 합니다.</block>
-  <block id="1addc2812f42a224a528766398234c1c" category="doc">4노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예</block>
-  <block id="3273b13a598da7072827c4fff2c6e3ee" category="paragraph">다음 참조 그림에서는 스토리지 LUN이 있는 4노드 MetroCluster 구성의 스토리지 어레이와 FC 스위치 간 연결을 보여 줍니다.</block>
-  <block id="4d1045be17a65ed688137aab3deb80b5" category="image-alt">이 그림에서는 스토리지 LUN이 포함된 MetroCluster 구성의 예를 보여 줍니다. 그래픽은 주변 텍스트로 설명됩니다.</block>
-  <block id="e6609ef3b852f1384712b8ac719fa7df" category="paragraph">MetroCluster 구성에서 스토리지 LUN 외에 디스크를 사용하려는 경우 디스크를 사용하여 구성할 때 지정한 스위치 포트를 사용해야 합니다.</block>
-  <block id="4ab4d970fb8af5d1f4c1e0cb6fd926a7" category="paragraph">그림에서 두 사이트의 이중화 스토리지 포트 쌍은 다음과 같습니다.</block>
-  <block id="c332d936b257145c1cc3454af2388c2d" category="list-text">사이트 A의 스토리지 어레이:</block>
-  <block id="285e7ae75fae6bfd987ed78b335b0664" category="list-text">포트 1A 및 2A</block>
-  <block id="031886a195833ebbc083c70b7bf434fe" category="list-text">포트 1B 및 2B</block>
-  <block id="079411045cab825a55a4a50c281aa6d9" category="list-text">포트 1C 및 2C</block>
-  <block id="be723993aaa605c3e026f84bcf88cfa9" category="list-text">1D 및 2D 포트</block>
-  <block id="b52ad2a7748e6376363173eb3d2f5fd8" category="list-text">사이트 B의 스토리지 시스템:</block>
-  <block id="a6379b6cb1c8208cb3ace060d4d79291" category="list-text">포트 1A' 및 2A'</block>
-  <block id="8403f1370fb633d5e2f10178316c5125" category="list-text">포트 1B' 및 2B'</block>
-  <block id="2309541e9a6d2f4f4fe79a9494b03443" category="list-text">포트 1C' 및 2C'</block>
-  <block id="eed21cf5c84291c909da461e812530d7" category="list-text">포트 1D' 및 2D'</block>
-  <block id="6c9261f39674f261af1b4c72a79e0bc9" category="paragraph">사이트 A의 FC_SWITCH_A_1 및 사이트 B의 FC_SWITCH_B_1은 fabric_1로 연결됩니다. 마찬가지로 사이트 A 및 FC_SWITCH_B_2의 FC_SWITCH_A_2도 fabric_2에 연결됩니다.</block>
-  <block id="2da198d4f6d2f72b9d990176ae47c5ed" category="paragraph">다음 표에는 MetroCluster 그림에 대한 스토리지 어레이 포트와 FC 스위치 간의 연결이 나와 있습니다.</block>
-  <block id="ed468bfcdad1cc2741071425248f75c7" category="cell">스토리지 LUN 포트입니다</block>
-  <block id="e67c6ed583012dd4f53d11eeb663f51e" category="cell">FC 스위치 포트</block>
-  <block id="7fd8cd91ebe95d1e1d1f678239e69f78" category="cell">스위치 패브릭</block>
-  <block id="62d022aa0f823c217b7e899a703898ae" category="cell">* 사이트 A *</block>
-  <block id="0723dfd10075aee37a1804a728349dc3" category="paragraph">1a</block>
-  <block id="59c0034d2d9d0fe621407c76cd223cfa" category="paragraph">FC_SWITCH_A_1, 포트 7</block>
-  <block id="9eee8129e6d14b921514cf91712c4c3a" category="paragraph">패브릭_1</block>
-  <block id="5f5468d54f2b86e7e60fac196581d7d0" category="paragraph">2A</block>
-  <block id="aba66caaab3de396f32af719231f2413" category="paragraph">FC_SWITCH_A_2, 포트 11</block>
-  <block id="046ec0714cdd1970caf1ae1431468d24" category="paragraph">패브릭_2</block>
-  <block id="aeaf67915b97d360e4d26f0659dd9b2a" category="paragraph">1b</block>
-  <block id="e6015ff43e98b5a572875fc519f9abdf" category="paragraph">FC_SWITCH_A_1, 포트 8</block>
-  <block id="49ba7582631e47241f284a64b40e5a06" category="paragraph">2B</block>
-  <block id="deadeb2e7290916fb160d7e5719fe4cc" category="paragraph">FC_SWITCH_A_2, 포트 10</block>
-  <block id="c1bf41d82adc8c5d53cce0ede0c16bbc" category="paragraph">1C</block>
-  <block id="d8b7c6b1c310f122ea66021cb1f3cf36" category="paragraph">FC_SWITCH_A_1, 포트 9</block>
-  <block id="4754db5769c907992ef049f3e46ab107" category="paragraph">2C</block>
-  <block id="1e4491af51148429c32657e5c9b737cc" category="paragraph">FC_SWITCH_A_2, 포트 9</block>
-  <block id="f149c23cf5b13e619e76d9f013ca0d5e" category="paragraph">1D</block>
-  <block id="dca96968aedf5e8f8f269d63910400ad" category="paragraph">FC_SWITCH_A_1, 포트 10</block>
-  <block id="8c94134f25efe7680f9743b2774e8e1f" category="paragraph">2D</block>
-  <block id="049576c6d6f621038ae59f92574a2859" category="paragraph">FC_SWITCH_A_2, 포트 8</block>
-  <block id="42f816081f37ac884d6c90c0e99ec036" category="cell">* 사이트 B *</block>
-  <block id="6979db78a9a662e2fbb4b2e0b6b8263b" category="paragraph">1a'</block>
-  <block id="b7692c2449d6631289728f44611a701f" category="paragraph">FC_SWITCH_B_1, 포트 7</block>
-  <block id="8242137e048583013e5ef4e7ab1807bb" category="paragraph">2A인치</block>
-  <block id="7372b1dfc54767cd6edc9fae878bf133" category="paragraph">FC_SWITCH_B_2, 포트 11</block>
-  <block id="1fa13f8170bb3e4edd56a10609265afc" category="paragraph">1b'</block>
-  <block id="2f1b3b18be838c3d25904fbe68c4e779" category="paragraph">FC_SWITCH_B_1, 포트 8</block>
-  <block id="0e2193fc06e659bc886d6d30bb3e3f42" category="paragraph">2B'</block>
-  <block id="03cf313d0b727563bff93017f0c613cc" category="paragraph">FC_SWITCH_B_2, 포트 10</block>
-  <block id="5a6fe8791caa69a2e616883aaa276b66" category="paragraph">1C'</block>
-  <block id="b545dbe2381a07e6fd7252d18c829008" category="paragraph">FC_SWITCH_B_1, 포트 9</block>
-  <block id="141a8908bae6697438460e5309d01d54" category="paragraph">2C'</block>
-  <block id="dafd2efa90620ebf28016d4d5f8de8f0" category="paragraph">FC_SWITCH_B_2, 포트 9</block>
-  <block id="475c4d5fd174cf47065b7660550ebae9" category="paragraph">1차원</block>
-  <block id="db106db5cbbf033794be16d74552d5e7" category="paragraph">FC_SWITCH_B_1, 포트 10</block>
-  <block id="594f3713c946f8f145b1b0fe9347dfcc" category="paragraph">2D'</block>
-  <block id="893b12a1608cb12c1decd0a94ca1f909" category="paragraph">FC_SWITCH_B_2, 포트 8</block>
   <block id="91e18356a7709afa40abb10b89a17636" category="summary">FC 스위치 패브릭을 활성화하고 스위치 및 디바이스가 올바르게 작동하는지 확인해야 합니다.</block>
   <block id="812485d2987632a33cf46fd5403f564d" category="doc">스위치 패브릭을 재설정하고 작업을 확인합니다</block>
   <block id="c941b5c4cf46259dd41b222aa38a58f3" category="paragraph">'스치치치프트PersistentEnable'</block>
@@ -8377,7 +8115,6 @@
   <block id="bad3a2380613a08cffd8b317771de374" category="list-text">FMC_DC 유틸리티를 실행하여 7-Mode 패브릭 MetroCluster가 올바르게 작동하는지 확인합니다.</block>
   <block id="f2a62a2226a776063a92a12ed167e429" category="paragraph">TI(Traffic Isolation) 조닝 및 트렁킹과 관련된 오류를 무시할 수 있습니다.</block>
   <block id="ee964d83d74573b3328048ead7b3c04e" category="list-text">두 번째 스위치 패브릭에 대해 작업을 반복합니다.</block>
-  <block id="713771fbe82877a6f1defe1e3ba7da98" category="summary">노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다. 네이티브 디스크 쉘프가 있는 시스템의 단계는 어레이 LUN이 있는 시스템의 단계와 약간 다릅니다.</block>
   <block id="0e10a4686c50286be43ddc081aadc85a" category="section-title">사이트 A의 IP 네트워크 정보 워크시트입니다</block>
   <block id="301c604b31537e51dee2712cb5564939" category="section-title">사이트 A 스위치 정보(스위치 클러스터)</block>
   <block id="5bbaf8bfd4ec4ca633710382799ad91f" category="paragraph">시스템에 케이블을 연결할 때는 각 클러스터 스위치에 대한 호스트 이름과 관리 IP 주소가 필요합니다. 스위치가 없는 2노드 클러스터를 사용하거나 2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 이 정보가 필요하지 않습니다.</block>
@@ -8564,8 +8301,6 @@
   <block id="14a8fc6fe6b58444388acfef6a176529" category="inline-link">구성 백업 관리</block>
   <block id="6c0e4fd4b7e2ef11d891ac59729c5f3e" category="inline-link">클러스터 관리</block>
   <block id="3d324eced25a10d4e6f55d473d59805b" category="paragraph"><block ref="3d324eced25a10d4e6f55d473d59805b" category="inline-link-rx"></block></block>
-  <block id="70367474f34c61043e3966733d8833ab" category="summary">MetroCluster 구성에서 스토리지 시스템을 구성할 때는 컨트롤러 모듈 및 섀시 구성 요소의 고가용성 \(HA\) 상태가 MCC 또는 MCC-2n인지 확인해야 구성 요소가 제대로 부팅됩니다.</block>
-  <block id="37d5ffce46489714232e65f691577fa4" category="paragraph">MetroCluster 구성에서 스토리지 시스템을 구성할 때는 컨트롤러 모듈 및 섀시 구성 요소의 고가용성(HA) 상태가 "MCC" 또는 "MCC-2n"인지 확인해야 합니다.</block>
   <block id="289895aab699c5956a58644cc2118b0c" category="section-title">사이트 B에 대한 IP 네트워크 정보 워크시트입니다</block>
   <block id="9de6a3d21baa3d2477fcc28e8859e959" category="paragraph">본 가이드에 사용된 예: site_B</block>
   <block id="f841368b0e6e89de1f7f957dad84a039" category="paragraph">이 설명서에 사용된 예: controller_B_1</block>
@@ -8645,17 +8380,6 @@
   <block id="5f54259a5f9e2ed501dcd8fc387862ef" category="cell">* Brocade 6505, 6510 또는 DCX 8510-8 *</block>
   <block id="6977c96a61a5177850b42609237488c3" category="cell">* FC_SWITCH_x_1 *</block>
   <block id="0b2c75644662ed2b76683bc2b8eaf012" category="cell">* FC_SWITCH_x_2 *</block>
-  <block id="4efb93e6e74e61398b92661ce23351c2" category="summary">어레이 LUN을 사용하여 8노드 패브릭 연결 MetroCluster 구성을 설정하는 경우 FC-VI 포트와 HBA 포트를 스위치 포트에 연결해야 합니다.</block>
-  <block id="3b3f9b1e3b78cf5c7c6c5dd771ebcbe6" category="doc">스토리지 LUN을 사용하여 8노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트를 케이블로 연결합니다</block>
-  <block id="0730001c1b3a9bf182126b7bfb9845ab" category="list-text">두 MetroCluster 사이트의 각 컨트롤러에 대해 이 작업을 반복해야 합니다.</block>
-  <block id="0b330ff5d92560115255d72e2d65164b" category="list-text">MetroCluster 구성에서 스토리지 LUN 외에 디스크를 사용하려는 경우 디스크 구성에 지정된 HBA 포트와 스위치 포트를 사용해야 합니다.</block>
-  <block id="db45d2962a244516b91cdcdb10eabed7" category="list-text">각 컨트롤러에서 대체 FC 스위치의 포트에 FC-VI 포트 및 HBA 포트를 케이블로 연결합니다. 다음 표를 참조하십시오.</block>
-  <block id="c53f3bcfbfbf43639df7a126107c5b72" category="section-title">두 FC 포트를 모두 사용하여 FiberBridge 7500N 또는 7600N의 케이블 연결 구성</block>
-  <block id="01b947c9660f7bd492362c0e04ea9733" category="cell">* 포트 12 ~ 15는 Brocade 7840 스위치의 두 번째 MetroCluster 또는 DR 그룹용으로 예약되어 있습니다.</block>
-  <block id="fc2aa4a46638845f6620a574d1499700" category="cell">* 참고 *: G620, G630, G620-1 및 G630-1 스위치의 포트 16, 17, 20 및 21에 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="de3a9779bda95b68b0ba21de688db620" category="paragraph">MetroCluster 사이트에서 FC 스위치 사이에 ISL을 케이블로 연결해야 합니다.</block>
-  <block id="ec983aa599aee0ee199ad40c258bab91" category="section-title">Cisco 9250i의 케이블 연결 구성</block>
-  <block id="3db30a6fa1c05224aef86dc9b48a9085" category="cell">Cisco 9250i *</block>
   <block id="a3661db3c5039bc04c7fae548c92950e" category="summary">MetroCluster 패브릭 구성의 각 스위치에 스위치 운영 체제 파일 및 RCF 파일을 다운로드해야 합니다.</block>
   <block id="bfa98b16040a9e239a71e4da0eb6a7b1" category="doc">Cisco FC 스위치 NX-OS 소프트웨어 다운로드 및 설치</block>
   <block id="fff6b95b10852166fc3f382ad27c765d" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 FC 스위치에서 반복해야 합니다.</block>
@@ -8706,14 +8430,6 @@
   <block id="43ec517d68b6edd3015b3edc9a11367b" category="cell">81</block>
   <block id="9778d5d219c5080b9a6a17bef029331c" category="cell">82</block>
   <block id="fe9fc289c3ff0af142b6d3bead98a923" category="cell">83</block>
-  <block id="e7c51f571509030a8b7301dc8bc8a7fe" category="summary">스토리지 LUN이 포함된 MetroCluster 구성에서 ONTAP 시스템을 설정하기 전에 스토리지 시스템 관리자는 ONTAP에서 사용할 스토리지를 준비해야 합니다.</block>
-  <block id="0298c9d72aff4562d5434fe4a448c6a1" category="doc">ONTAP 시스템에서 사용할 스토리지 어레이 준비</block>
-  <block id="6ceeef6f6fdaf06b95cae87e460cfe9b" category="paragraph">구성에서 사용하려는 스토리지 어레이, 펌웨어 및 스위치는 특정 ONTAP 버전에서 지원되어야 합니다.</block>
-  <block id="a011aa6047381b9696e67c3b40f1802e" category="inline-link">NetApp 상호 운용성(IMT)</block>
-  <block id="567997ebab95ad5c797a8c2164e69988" category="paragraph">스토리지 시스템에서 이 작업을 수행하려면 스토리지 시스템 관리자와 협력해야 합니다.</block>
-  <block id="c6d70523707016c24377e7ebb500eef1" category="list-text">MetroCluster 구성의 노드 수에 따라 스토리지 시스템에 LUN을 생성합니다.</block>
-  <block id="b30da40dcd4e32f00364fe223122c3ab" category="paragraph">MetroCluster 구성의 각 노드에는 루트 애그리게이트, 데이터 애그리게이트 및 스페어를 위한 어레이 LUN이 필요합니다.</block>
-  <block id="4040897121df220e5ae9b68b9fe58f41" category="list-text">ONTAP에서 작업하는 데 필요한 스토리지 배열의 매개 변수를 구성합니다.</block>
   <block id="4efd0f534426cd87bd38f908ed343b5f" category="summary">MetroCluster 구성을 계획할 때 하드웨어 구성 요소 및 상호 연결 방법을 이해해야 합니다.</block>
   <block id="a34704fddd968b075e961a99c962b021" category="doc">Fabric MetroCluster 구성의 일부</block>
   <block id="d3cb8032b7f0dac126972650ae3f3895" category="paragraph">Fabric MetroCluster 구성은 MetroCluster 구성의 노드 수에 따라 1개 또는 2개의 DR 그룹으로 구성됩니다. 각 DR 그룹은 4개의 노드로 구성됩니다.</block>
@@ -8780,33 +8496,6 @@
   <block id="da7f70f0d336d8136bbf9793f9953df9" category="list-text">DR 그룹 1에 AFF A700 시스템 4개가 포함되어 있는 경우 ISL 6개가 필요합니다.</block>
   <block id="a4909c9a8501be1b83be0e99627fbac1" category="list-text">DR 그룹 2에 FAS8200 시스템 4개가 포함된 경우 ISL 2개가 필요합니다.</block>
   <block id="f1112ee4c5c62e63ac5c07e89a792360" category="list-text">스위치 Fabric에 권장되는 총 ISL 수는 8개입니다.</block>
-  <block id="e3ae9940fbffd31f3b022a7e38fc3a88" category="summary">스토리지 LUN을 사용하여 4노드 패브릭 연결 MetroCluster 구성을 설정하는 경우 FC-VI 포트와 HBA 포트를 스위치 포트에 연결해야 합니다.</block>
-  <block id="fe5772d11639aff667f09bb55dd4726b" category="doc">스토리지 LUN을 사용하여 4노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트를 케이블로 연결합니다</block>
-  <block id="ac806aec6265809634e09b30a4132e8d" category="list-text">각 컨트롤러의 FC-VI 포트를 대체 FC 스위치의 포트에 연결합니다.</block>
-  <block id="839bbab9c47b80ce59f376113ae51b46" category="paragraph">다음 예에서는 사이트 A의 FC-VI 포트와 스위치 포트 간의 연결을 보여 줍니다.</block>
-  <block id="7f555680e47e89a10d18c1bd7deca2a2" category="image-alt">4노드 MCC fc vi 스위치 연결</block>
-  <block id="5925a6a5a52b3caca8a0d82899ad4e16" category="list-text">두 MetroCluster 사이트 모두에서 컨트롤러-스위치 케이블 연결을 수행합니다.</block>
-  <block id="1501a34a02832e5f146e25f23420d129" category="paragraph">컨트롤러에서 스위치로의 연결에는 중복성이 보장되어야 합니다. 따라서 사이트의 각 컨트롤러에 대해 같은 포트 쌍의 두 HBA 포트가 대체 FC 스위치에 연결되어 있는지 확인해야 합니다.</block>
-  <block id="76463ab3a4ce7f9fd7d1af70740c4fdb" category="paragraph">다음 예에서는 사이트 A의 HBA 포트와 스위치 포트 간의 접속을 보여 줍니다.</block>
-  <block id="3d02e71d3b6a29bc047a2e8e35939912" category="image-alt">4노드 MCC HBA 스위치 연결</block>
-  <block id="e183b31085bae0f246bfc28900f575fa" category="paragraph">다음 표에는 controller_a_1의 HBA 포트와 그림의 FC 스위치 포트 간의 연결이 나와 있습니다.</block>
-  <block id="0805ade74966c90f6faa083e6ffe0944" category="cell">HBA 포트</block>
-  <block id="dc3310fe82b8aa736508dff9756c1c6a" category="cell">스위치 포트</block>
-  <block id="d77a4b02f2c33715a9263c3d71973023" category="cell">* 포트 쌍 *</block>
-  <block id="172f431672cad316a2d2d9b742a2304d" category="paragraph">포트 A</block>
-  <block id="7f54d1f2cabbe35f245d99c2ed8ea123" category="paragraph">FC_SWITCH_A_1, 포트 2</block>
-  <block id="5721d2a077bcdadb83ea5006178fe7ed" category="paragraph">포트 d</block>
-  <block id="8e86f45147ccf0ac737f7026c2a9a07d" category="paragraph">FC_SWITCH_A_2, 포트 3</block>
-  <block id="64f3d4edf5527de7d3dd7136af076a41" category="paragraph">포트 b</block>
-  <block id="db3e9838cac655d970657aee4aa91c64" category="paragraph">FC_SWITCH_A_2, 포트 2</block>
-  <block id="60178183a41a41298abe58fd5982c3e1" category="paragraph">포트 c</block>
-  <block id="82e7b6a00c7f7bfea586ccd977a765ed" category="paragraph">FC_SWITCH_A_1, 포트 3</block>
-  <block id="36478ff48487a66154cdd1525efbfc6f" category="paragraph">다음 표에는 controller_a_2의 HBA 포트와 그림의 FC 스위치 포트 간의 연결이 나와 있습니다.</block>
-  <block id="235974f690166b5a37673990c904136b" category="paragraph">FC_SWITCH_A_1, 포트 5</block>
-  <block id="cd5de81b330bab5c5937507e7754a4bd" category="paragraph">FC_SWITCH_A_2, 포트 6</block>
-  <block id="425a8d79e9e6167c4f1a26cbad37adfa" category="paragraph">FC_SWITCH_A_2, 포트 5</block>
-  <block id="c2fc34aee5387e476c0c882dba132312" category="paragraph">FC_SWITCH_A_1, 포트 6</block>
-  <block id="f7c6b8ed8135f0c2d169fb0831e7a0c0" category="paragraph"><block ref="f7c6b8ed8135f0c2d169fb0831e7a0c0" category="inline-link-macro-rx"></block></block>
   <block id="e30d5ec5eece78451cf9285cb678b934" category="summary">패브릭 연결 MetroCluster 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다.</block>
   <block id="f2b75487be86fe362165761ed32f9169" category="list-text"><block ref="d8800598dd130bed5c7eb4a12dcecf69" category="inline-link-macro-rx"></block>.</block>
   <block id="11be15880eab3352c16856fa1475d4db" category="list-text"><block ref="11be15880eab3352c16856fa1475d4db" category="inline-link-macro-rx"></block></block>
@@ -8842,54 +8531,11 @@
   <block id="ec25303fa6412309bf87b276dbbd7a8c" category="paragraph">각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch Link)을 포함합니다. 데이터는 ISL을 통해 사이트 간에 복제됩니다. 이중화를 위해 각 스위치 패브릭은 서로 다른 물리적 경로에 있어야 합니다.</block>
   <block id="09011b1854f3ff9c194f9a18281f450c" category="image-alt">MCC HW 아키텍처 스위치 패브릭</block>
   <block id="17b763891dc41f73db80a8c33a9fe082" category="paragraph"><block ref="17b763891dc41f73db80a8c33a9fe082" category="inline-link-macro-rx"></block></block>
-  <block id="2800f662942cd56689afae5d423911a1" category="summary">어레이 LUN을 사용하여 2노드 패브릭 연결 MetroCluster 구성을 설정하는 경우 FC-VI 포트와 HBA 포트를 스위치 포트에 연결해야 합니다.</block>
-  <block id="c05e9825d7228d49f8ffdac3e463c19a" category="doc">스토리지 LUN을 사용하여 2노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트를 케이블로 연결합니다</block>
-  <block id="a951c887d9b704391ce2444ecd9583e9" category="list-text">컨트롤러에서 대체 스위치 포트로 FC-VI 포트를 연결합니다.</block>
-  <block id="7ed6e41f08166c60018119e5afcdd18e" category="paragraph">다음 예에서는 컨트롤러 A의 HBA 포트와 FC_SWITCH_A_1의 포트 및 FC_SWITCH_A_2의 포트 간 연결을 보여 줍니다.</block>
-  <block id="f7c3bc386fad56fdbb486f0f05eaa8df" category="image-alt">2노드 MCC HBA 접속</block>
-  <block id="fd1aa96777bed25bc9d45ab892b63ddd" category="paragraph">다음 표에는 그림에 나와 있는 HBA 포트와 FC 스위치 포트 간의 연결이 나와 있습니다.</block>
-  <block id="300a0492b022851e50376a948b5ecdca" category="summary">어레이 LUN과 함께 사용하도록 ONTAP를 구성하려면 루트 애그리게이트 및 루트 볼륨을 구성하고, 진단 및 복구 작업을 위한 공간을 예약하고, 클러스터를 설정해야 합니다.</block>
-  <block id="6a478f2c1aa3b5c071c7350c437211ff" category="doc">스토리지 LUN만 사용하는 시스템에서 ONTAP 구성</block>
-  <block id="d1b9838e152135ce9ffe100e6014cb3a" category="list-text">ONTAP 시스템은 스토리지 시스템에 접속되어 있어야 합니다.</block>
-  <block id="38319872cf169982110419df88248d72" category="list-text">스토리지 시스템 관리자가 LUN을 생성하여 ONTAP에 제공해야 합니다.</block>
-  <block id="6b32da1f7cce9cb3998793b8ef2e7d47" category="list-text">스토리지 시스템 관리자가 LUN 보안을 구성해야 합니다.</block>
-  <block id="7750f529ccd4dfc7797bfc40a22ade86" category="paragraph">어레이 LUN에 사용할 각 노드를 구성해야 합니다. 노드가 HA 쌍에 있는 경우 파트너 노드의 구성을 계속하기 전에 한 노드에서 구성 프로세스를 완료해야 합니다.</block>
-  <block id="96cede592ba750ee2979e747848a4443" category="list-text">콘솔에 다음 메시지가 표시되면 Ctrl-C를 눌러 기본 노드의 전원을 켜고 부팅 프로세스를 중단합니다.</block>
-  <block id="5a6b0c07d1959bfdcc4073773ad61d4e" category="paragraph">특별부팅 메뉴는 Ctrl-C를 누릅니다</block>
-  <block id="83e35738db40dde0a1373bf0ccffd063" category="list-text">부팅 메뉴에서 옵션 * 4 (Clean configuration and initialize all disks) * 를 선택합니다.</block>
-  <block id="a98eb1e6d9dfd94b037faeb2a3d5ee4a" category="paragraph">ONTAP에서 사용할 수 있는 스토리지 LUN 목록이 표시됩니다. 또한 루트 볼륨 생성에 필요한 스토리지 LUN 크기도 지정됩니다. 루트 볼륨 생성에 필요한 크기는 ONTAP 시스템마다 다릅니다.</block>
-  <block id="232ff69144efec75e69fe200f1be2c22" category="list-text">이전에 할당된 어레이 LUN이 없는 경우 다음 예에서와 같이 ONTAP에서 사용 가능한 스토리지 LUN을 감지하고 표시합니다.</block>
-  <block id="b7e852993928c4e804ad159f81b18dd3" category="list-text">예를 들어, 유지보수 모드를 통해 어레이 LUN이 이전에 할당된 경우, ONTAP를 설치하려는 노드나 해당 HA 파트너에 따라 사용 가능한 어레이 LUN 목록에 로컬 또는 파트너로 표시됩니다.</block>
-  <block id="b1a8f267ececa17f8208e3711d27356c" category="paragraph">이 예에서는 인덱스 번호가 3과 6인 스토리지 LUN이 이전에 이 특정 노드에서 할당되었기 때문에 "로컬"으로 표시됩니다.</block>
-  <block id="d079f2e30de913d73887a98d1cee68af" category="list-text">루트 볼륨으로 할당할 스토리지 LUN에 해당하는 인덱스 번호를 선택합니다.</block>
-  <block id="0a6510897dc1ff3e4879e54d5d9b1945" category="paragraph">스토리지 LUN의 크기가 루트 볼륨을 생성하는 데 충분해야 합니다.</block>
-  <block id="726f5d4cf933f75d16ab4a8cab070408" category="paragraph">루트 볼륨 생성을 위해 선택한 스토리지 LUN이 "local (root)"로 표시됩니다.</block>
-  <block id="f92afc3b026d78a33abacb0eee1d4b6b" category="paragraph">다음 예에서는 인덱스 번호가 3인 스토리지 LUN이 루트 볼륨 생성을 위해 표시됩니다.</block>
-  <block id="19a35567fb97930c9e7468e6db094640" category="list-text">진단 및 복구 옵션에 사용할 스토리지 LUN에 해당하는 인덱스 번호를 선택합니다.</block>
-  <block id="a49550c8bd50a25526042b3f4e8eee41" category="paragraph">어레이 LUN의 크기는 진단 및 복구 옵션에 사용하기에 충분해야 합니다. 필요한 경우 결합된 크기가 지정된 크기보다 크거나 같은 여러 스토리지 LUN을 선택할 수도 있습니다. 여러 항목을 선택하려면 진단 및 복구 옵션을 선택할 스토리지 LUN에 해당하는 모든 인덱스 번호의 쉼표로 구분된 값을 입력해야 합니다.</block>
-  <block id="c58db60c9a8af2206e008f65968c9335" category="paragraph">다음 예에서는 루트 볼륨 생성 및 진단 및 복구 옵션을 위해 선택된 스토리지 LUN 목록을 보여 줍니다.</block>
-  <block id="a56ca1bced28ab8c76d1e02d951c4242" category="admonition">"아니요"를 선택하면 LUN 선택이 지워집니다.</block>
-  <block id="576cf228c62281f16ae7e9209f20e477" category="list-text">설치 프로세스를 계속하라는 메시지가 나타나면 '* y*'를 입력합니다.</block>
-  <block id="e79badcaf0b3c7829bf21e2008722e24" category="paragraph">루트 애그리게이트 및 루트 볼륨이 생성되고 나머지 설치 프로세스가 계속됩니다.</block>
-  <block id="e6db32df0d7371b10a45ab8ee955ef22" category="list-text">노드 관리 인터페이스를 생성하는 데 필요한 세부 정보를 입력합니다.</block>
-  <block id="e054c18e078c1fcdf1a17bbe019cf061" category="paragraph">다음 예는 노드 관리 인터페이스 생성을 확인하는 메시지와 함께 노드 관리 인터페이스 화면을 보여 줍니다.</block>
-  <block id="42852d7e6ae9d60030cef736173c2dc5" category="inline-link">클러스터 설정 프로세스</block>
-  <block id="34d298a9dd158abbbe5e88976e2de31e" category="paragraph">어레이 LUN에 사용할 모든 노드에서 ONTAP를 구성한 후 를 완료해야 합니다<block ref="062e8840bdcbe73415320ae1d4fd5e29" category="inline-link-rx"></block></block>
-  <block id="362e2d2a6e8982e15e2256010f520f95" category="summary">스위치 구성 절차와 명령은 스위치 공급업체에 따라 다릅니다.</block>
-  <block id="34ba78cbd58ca4736a4ec9afcd4a2529" category="summary">클러스터를 설정하려면 각 노드를 설정하고, 첫 번째 노드에서 클러스터를 생성하고, 나머지 노드를 클러스터에 가입해야 합니다.</block>
-  <block id="b418e6f88f4c95341a5b126a8b9b98f9" category="doc">클러스터를 설정하는 중입니다</block>
   <block id="f515fca759b029639b19b471d7a2c1ed" category="inline-link">MetroCluster IP 솔루션 아키텍처 및 설계, TR-4689</block>
   <block id="8d4727f84fc5ba727eb23a4ce93c87c2" category="list-text">MetroCluster IP 구성 및 작동에 대한 기술적 개요</block>
   <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="paragraph">Active IQ 디지털 자문 문서</block>
-  <block id="5fd8df07f07be8ba9b4318226aef95c2" category="summary">어레이 LUN을 사용하여 MetroCluster 구성을 설정할 수 있습니다. 스트레치 및 패브릭 연결 구성이 모두 지원됩니다. AFF 시스템은 어레이 LUN에서 지원되지 않습니다.</block>
-  <block id="d7d568faf1e89736369daad49b871f32" category="doc">어레이 LUN에서 지원되는 MetroCluster 구성</block>
-  <block id="5bb8727e41ba71e243518e25b55701c5" category="paragraph">MetroCluster 구성에서 지원되는 기능은 구성 유형에 따라 다릅니다. 다음 표에는 스토리지 LUN을 사용하는 다양한 유형의 MetroCluster 구성에서 지원되는 기능이 나와 있습니다.</block>
-  <block id="754122881e650d3d6c0d6e0a7e765f05" category="cell">패브릭 연결 구성</block>
   <block id="4250e51248bc5d54f8b7bf7f3f4a57f6" category="cell">8개 노드</block>
   <block id="95e351a6be60cc62a4dd8db3ec98a00f" category="cell">4노드</block>
-  <block id="a8729440d8cdaab0e3c51cb11e55074a" category="cell">2노드</block>
-  <block id="3a0a89576bfaaff699e1f3de4f7b9103" category="cell">자동 절체를 지원합니다</block>
-  <block id="21c13c7f9394de1842ff80b5397e9e79" category="paragraph"><block ref="21c13c7f9394de1842ff80b5397e9e79" category="inline-link-macro-rx"></block></block>
   <block id="7e853595389f6b90dc22efe3da872888" category="summary">8노드 또는 4노드 MetroCluster 구성이 있고 HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우 컨트롤러 간 HA 인터커넥트에 케이블을 연결해야 합니다.</block>
   <block id="82107984563a4d014cd48345b86ec376" category="doc">HA 인터커넥트 케이블 연결</block>
   <block id="c1c364c532b2c947b4b100558d68dfe9" category="list-text">이 작업은 2노드 MetroCluster 구성에는 적용되지 않습니다.</block>
@@ -8993,211 +8639,22 @@
   <block id="879aa1ccbf6e80f288abbb4c745cb2a3" category="list-text">조닝이 제대로 복제되었는지 확인합니다.</block>
   <block id="3224625bd46e32d6cc08d37895053bd7" category="paragraph">cfgshow+ 조네쇼</block>
   <block id="592c191df8a18376b1323c0c806866e6" category="paragraph">두 출력 모두 두 스위치에 대해 동일한 구성 정보와 조닝 정보를 표시해야 합니다.</block>
-  <block id="478ccac00464b99572734ae91318d07a" category="summary">스토리지 LUN을 사용하여 MetroCluster 구성을 설정하려면 스토리지 컨트롤러를 FC 스위치에 케이블로 연결하고 ISL을 케이블로 연결하여 사이트를 연결해야 합니다. 또한 스토리지 어레이를 FC 스위치에 연결해야 합니다.</block>
-  <block id="3ca39819e2e07c2104732811215f1a97" category="doc">어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소 설치 및 케이블 연결</block>
-  <block id="79d1eabb3b4c3024eae6de87ff7920f8" category="summary">Clustered ONTAP MetroCluster 구성의 각 컨트롤러에서 FC-VI 어댑터와 HBA를 기존 FC 스위치의 특정 포트에 케이블로 연결해야 합니다.</block>
-  <block id="2afb7d32516fb529a3e53b6573b3f8f5" category="doc">새 MetroCluster 컨트롤러를 기존 FC 패브릭에 케이블로 연결합니다</block>
-  <block id="2d010e96fad956349ccad086ca0223ca" category="list-text">다음 표에 따라 FC-VI 및 HBA 포트를 케이블로 연결합니다.</block>
-  <block id="acbfb20c99ccdab992cc5a41ff38ea28" category="cell">이 사이트를 구성 요소와 포트에 연결...</block>
-  <block id="8d6c98cf7663854efe9bfe3134475fe2" category="cell">FC_SWITCH_A_1 포트...</block>
-  <block id="081a8a034abff5e8a3aee345aa959d6e" category="cell">이 사이트 B 구성 요소 및 포트 연결...</block>
-  <block id="a0360cedb3a8fbc0f04ad6df5db7bd47" category="cell">FC_SWITCH_B_1 포트...</block>
-  <block id="e8e28248fd91c46dc9fe5215a6735b33" category="paragraph">컨트롤러_A_1 FC-VI 포트 1</block>
-  <block id="c460339807572a76cb3f01377f95cb34" category="paragraph">컨트롤러_B_1 FC-VI 포트 1</block>
-  <block id="898bb68e58a290882a9b0d524367bb15" category="paragraph">컨트롤러_A_1 HBA 포트 1</block>
-  <block id="b0efbb5d6facee6761f5cbf2e18177f2" category="paragraph">컨트롤러_B_1 HBA 포트 1</block>
-  <block id="62a6bacf4457b79667d0da60ac3ccb58" category="paragraph">컨트롤러_A_1 HBA 포트 2</block>
-  <block id="1bf582444829b829b9f1b8aed9ad54c5" category="paragraph">컨트롤러_B_1 HBA 포트 2</block>
-  <block id="617e42580d959b131d81bde3a43fbe81" category="paragraph">컨트롤러_A_2 FC-VI 포트 1</block>
-  <block id="7db50023c9c431e8534499409c8db4d2" category="paragraph">컨트롤러_B_2 FC-VI 포트 1</block>
-  <block id="21bb8913cacd0e92a9b024599ca51b29" category="paragraph">컨트롤러_A_2 HBA 1</block>
-  <block id="26192731c7e8c8bb6fe12832bc0c0232" category="paragraph">컨트롤러_B_2 HBA 1</block>
-  <block id="a042cc00f31537d30813f04d24803dcc" category="paragraph">컨트롤러_A_2 HBA 2</block>
-  <block id="78ccb51c280c2b69d82288d2e5397072" category="paragraph">컨트롤러_B_2 HBA 2</block>
-  <block id="c3cb0a9a37a1b24a86667c16a44f6dc2" category="list-text">첫 번째 스위치 패브릭의 각 FC-SAS 브리지를 FC 스위치에 케이블로 연결합니다.</block>
-  <block id="998b92bcb83db7f3d9b63a4bba6f97f4" category="paragraph">브리지 수는 SAS 스토리지 스택 수에 따라 다릅니다.</block>
-  <block id="c46ab491f3f1db2ee40af91120c6721e" category="cell">이 사이트에 브리지를 케이블로 연결...</block>
-  <block id="45cf5e837e53f8bad95e757f9b00492b" category="cell">이 사이트 B 브리지에 케이블 연결...</block>
-  <block id="d8d2978490c3f3e8bc40e631c3b313ab" category="paragraph">Bridge_A_1_38</block>
-  <block id="3138a30dec63b4e834c6c55ecbbdf6d4" category="paragraph">브리지 B_1_38</block>
-  <block id="cd6e62aee1c72b6bbc41d2930b4212e3" category="paragraph">브리지_A_1_39</block>
-  <block id="43a95c4514832adb75c72ca204f48d8d" category="paragraph">Bridge_B_1_39</block>
-  <block id="383a7a87beac37121647140257311536" category="list-text">두 번째 스위치 패브릭의 각 브리지를 FC 스위치에 케이블로 연결합니다.</block>
-  <block id="5a5eae0a504aa3e55d62526d8bb6c817" category="cell">FC_SWITCH_A_2 포트...</block>
-  <block id="7ff2efb4c48f80117173d90c6b431c0c" category="cell">FC_SWITCH_B_2 포트...</block>
-  <block id="98df66de367366cf8d26c5d44eb29cd9" category="paragraph">브리지_A_2_38</block>
-  <block id="afe5ba613963e18d8a7550d3db8483e8" category="paragraph">Bridge_B_2_38</block>
-  <block id="00df76c8f3daf21fd37b30cb58f87196" category="paragraph">브리지_A_2_39</block>
-  <block id="2724870f9e9182322144fd6f560d824f" category="paragraph">브리지_B_2_39</block>
-  <block id="37e9679eddc91b6127c75399d29f2bd4" category="summary">스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
-  <block id="d9308227a30c606613f4fa3412e37ce9" category="paragraph">어레이 LUN이 포함된 4노드 MetroCluster 구성에 대한 조닝(zoning)을 결정할 때 다음 예제를 참조할 수 있습니다. 이 예에서는 MetroCluster 구성을 위한 단일 이니시에이터에서 단일 타겟 조닝을 보여 줍니다. 다음 예제의 줄은 연결이 아닌 영역을 나타냅니다. 각 줄은 해당 영역 번호로 레이블이 지정됩니다.</block>
-  <block id="c148ee17ac2c6ca06fe9e799a4345ca2" category="image-alt">이 그림에서는 스토리지 LUN이 있는 MetroCluster 구성의 예를 보여 주는 스위치 영역을 보여 줍니다. 그래픽은 주변 텍스트로 설명됩니다.</block>
-  <block id="1d01bb12bbd3ba0f599885c78fe9f103" category="paragraph">그림에서 스토리지 LUN은 MetroCluster 구성을 위해 각 스토리지 시스템에 할당됩니다. 크기가 같은 LUN은 두 사이트의 스토리지 시스템에 프로비저닝되며, 이는 SyncMirror 요구 사항입니다. 각 ONTAP 시스템에는 어레이 LUN에 대한 경로가 2개 있습니다. 스토리지 배열의 포트는 중복됩니다.</block>
-  <block id="c981fbe146de912c1d6ac296cc97304b" category="paragraph">각 스토리지 배열의 이중화 포트 쌍은 대체 경로를 형성합니다. 따라서 포트 쌍의 두 포트는 해당 스토리지 시스템의 LUN에 액세스할 수 있습니다.</block>
-  <block id="468c4e31b83836c58547baa1d09db6fc" category="paragraph">다음 표에는 이 예에 대한 영역이 나와 있습니다.</block>
-  <block id="0050758146bf0e40ef606abb0aa7e067" category="section-title">FC_SWITCH_A_1에 대한 존</block>
-  <block id="f8f6ae4305722fa58dcdf70d9c4ece5d" category="cell">ONTAP 컨트롤러 및 이니시에이터 포트</block>
-  <block id="bf4e8b9b80fd765928f4b38fe78a6032" category="cell">스토리지 배열 포트입니다</block>
-  <block id="3b770ebe9b04f171f0ead0e07d8e2882" category="paragraph">Z1</block>
-  <block id="028f2b49f446d208a687c241fe0e8daf" category="paragraph">컨트롤러_A_1: 포트 0a</block>
-  <block id="937bc752933a1d2f43140d6838632208" category="paragraph">포트 1A</block>
-  <block id="a61d1457beb4684e254ce60379c8ae7b" category="paragraph">Z3</block>
-  <block id="5e8fd592b1a82470ec63db47be9f4741" category="paragraph">컨트롤러_A_1: 포트 0c</block>
-  <block id="8ed7b758790091dc0f03580dc8cbdb2f" category="paragraph">포트 1A'</block>
-  <block id="4afbd36dfbe0916ea993c5ca93ffedb5" category="paragraph">Z5</block>
-  <block id="3e33ad5ebf04c4a12ec2f4748e6b2002" category="paragraph">컨트롤러_A_2: 포트 0a</block>
-  <block id="13b92750c8ca93b93261b23d974fd8b2" category="paragraph">포트 1B</block>
-  <block id="9ab4c1b5e09f493aa9b452766cddb7ee" category="paragraph">Z7</block>
-  <block id="bb8b604f83bef79b7a51f5f757fc1401" category="paragraph">컨트롤러_A_2: 포트 0c</block>
-  <block id="81b11478027607d054c32ad485519ce5" category="paragraph">포트 1B'</block>
-  <block id="24a276862acd14eb7c7208da4e845d52" category="section-title">FC_SWITCH_A_2에 대한 존</block>
-  <block id="5cb7e380d019de63c643aef55b8534d0" category="paragraph">Z2</block>
-  <block id="7ec0e9c61514dd4136c437463f0215a2" category="paragraph">컨트롤러_A_1: 포트 0b</block>
-  <block id="5233a229e5b7e573f46134d360071ce3" category="paragraph">포트 2A'</block>
-  <block id="8ed54f04419ffb305225370abdaba82d" category="paragraph">Z4</block>
-  <block id="24c46c09a44df294142a98187e64b907" category="paragraph">controller_a_1: 포트 0d</block>
-  <block id="9fb5ee9a2670bac76369240ae031e209" category="paragraph">포트 2A</block>
-  <block id="4d0ce1d0c3837c91f11658e2cf303259" category="paragraph">Z6</block>
-  <block id="3a37195aa888a33ccb894eccf8aecd71" category="paragraph">컨트롤러_A_2: 포트 0b</block>
-  <block id="87bb16d42cbb629fcc2c1d47ed8db016" category="paragraph">포트 2B'</block>
-  <block id="298a60807e4f1433233c2dc093f01258" category="paragraph">Z8</block>
-  <block id="840b0d10d6134ca37eb25e7c6b72b7d9" category="paragraph">controller_a_2: 포트 0d</block>
-  <block id="8e3deb9fe51ba100136489ababfe5b68" category="paragraph">포트 2B</block>
-  <block id="e1cd84eb6479ce1c4e21561421bdf4c5" category="section-title">FC_SWITCH_B_1에 대한 존</block>
-  <block id="1fde6c364c9c1516fd4e14b266863cd6" category="paragraph">Z9</block>
-  <block id="83f43352c70a43e4c94460322053d520" category="paragraph">컨트롤러_B_1: 포트 0a</block>
-  <block id="8a7c2aa0bcfbcd3b3db1a51373e911e5" category="paragraph">포트 1C'</block>
-  <block id="dfcc19b25601ee11aa171e7ea9a985eb" category="paragraph">Z11</block>
-  <block id="08a6b244dbd521e4118d1f87826a36bf" category="paragraph">컨트롤러_B_1: 포트 0c</block>
-  <block id="0786a53a28b0fabd58ea34b6fd56f1c4" category="paragraph">포트 1C</block>
-  <block id="8e1f7d9525fb0fcbfd0942397a892b6f" category="paragraph">z13</block>
-  <block id="5647278de7cea4bad4f55da433713a4d" category="paragraph">컨트롤러_B_2: 포트 0a</block>
-  <block id="823a6aedb3b721942a09edfaf29a95ac" category="paragraph">포트 1D'</block>
-  <block id="50a146fe02adea49f66d85b5c0dc1d1a" category="paragraph">Z15</block>
-  <block id="ca1b1a191c8fe348e8effff7dc7c3f44" category="paragraph">컨트롤러_B_2: 포트 0c</block>
-  <block id="452f196c5b73b7bbe9fee407ba02c7a5" category="paragraph">포트 1D</block>
-  <block id="ce01dade681445bf0352e4096f1cc5d1" category="section-title">FC_SWITCH_B_2에 대한 존</block>
-  <block id="71b743082db14682f473f43d4540a5d0" category="paragraph">Z10</block>
-  <block id="72320c5074125979dc10f75936de77c8" category="paragraph">컨트롤러_B_1: 포트 0b</block>
-  <block id="c8551f217c315bd77dd0be859adf3b09" category="paragraph">포트 2C</block>
-  <block id="1cfd85b4b16bd74555013b09a732afbd" category="paragraph">Z12</block>
-  <block id="34cdcdc6c5ba02b62b5cf3dfe9a2f25f" category="paragraph">controller_B_1: 포트 0d</block>
-  <block id="28aa98cc9da8d95b3582775cfe2d95aa" category="paragraph">포트 2C'</block>
-  <block id="e91c0434f606153c3646f60e4c52fa61" category="paragraph">Z14</block>
-  <block id="1ee24aa1696fef4e47195ad72926cdb5" category="paragraph">컨트롤러_B_2: 포트 0b</block>
-  <block id="fb69a17305c61b25876dda372f59d99b" category="paragraph">포트 2D</block>
-  <block id="bf73b5318257eb20d832e72af8b83eca" category="paragraph">Z16</block>
-  <block id="4dc68403e9770c97674af560295ee1b9" category="paragraph">컨트롤러_B_2: 포트 0d</block>
-  <block id="fc3b457225fd8e608f075aa7fc9a72b5" category="paragraph">포트 2D'</block>
-  <block id="710f465b190acd2b3eaa58df7ef07228" category="section-title">사이트 A의 FC-VI 연결 영역</block>
-  <block id="a3b9005346e50e7b1b754b4bbb8499a4" category="cell">ONTAP 컨트롤러 및 FC 이니시에이터 포트</block>
-  <block id="1f3c57dd04ac52fd92f3346ca51f00ec" category="paragraph">ZX</block>
-  <block id="1430685283edcfd3c27aa67406bde7fa" category="paragraph">컨트롤러_A_1: 포트 FC-VI A</block>
-  <block id="f48c79e2ae4ebf22cc206ee1cbd36607" category="paragraph">ZY</block>
-  <block id="ed7dfe40a73d09564f0297a5570b5df3" category="paragraph">controller_a_1: 포트 FC-VI b</block>
-  <block id="ccdaaaa8fea5344bdff3988854ee5d0d" category="paragraph">컨트롤러_A_2: 포트 FC-VI A</block>
-  <block id="13fe4be471f6120acdff84d95d02a458" category="paragraph">controller_a_2: 포트 FC-VI b</block>
-  <block id="9518d05b4d3b9ea347fd7aea2307cd60" category="section-title">사이트 B의 FC-VI 연결 영역</block>
-  <block id="83db2b1266b3a9bec7a67961d39abec9" category="paragraph">컨트롤러_B_1: 포트 FC-VI A</block>
-  <block id="575e1ed1d3138b38fdd685736a6a47b9" category="paragraph">컨트롤러_B_1: 포트 FC-VI b</block>
-  <block id="e48060ce0dce850ba08838b0bbacf939" category="paragraph">컨트롤러_B_2: 포트 FC-VI A</block>
-  <block id="05d031d4d0c0ba6aad9ddd1f447198d6" category="paragraph">컨트롤러_B_2: 포트 FC-VI b</block>
-  <block id="864a46879aea9e809b12d7e54e89e27a" category="list-text">스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
-  <block id="f4b10c0ed251e84acdbc56fffb876121" category="paragraph"><block ref="f4b10c0ed251e84acdbc56fffb876121" category="inline-link-macro-rx"></block></block>
-  <block id="326883a949c64d870c3948f5ef42eb94" category="summary">MetroCluster 구성의 ONTAP 시스템이 최소 2개의 경로를 통해 특정 스토리지 LUN에 액세스할 수 있도록 스토리지 어레이를 FC 스위치에 연결해야 합니다.</block>
-  <block id="6f2e49325d4369f56d3fd8abdc32fecd" category="doc">MetroCluster 구성에서 스토리지 어레이를 FC 스위치에 케이블로 연결합니다</block>
-  <block id="2cf27dfe3b49602bd7cbe0f68237179e" category="list-text">스토리지 LUN을 ONTAP에 제공할 수 있도록 스토리지 시스템을 설정해야 합니다.</block>
-  <block id="dfdd5e97717bb8a40f71d55c0c79448a" category="list-text">ONTAP 컨트롤러는 FC 스위치에 연결해야 합니다.</block>
-  <block id="8ee39baac7c1da189386fc75fe841bdb" category="list-text">ISL은 MetroCluster 사이트에서 FC 스위치 간에 케이블로 연결되어야 합니다.</block>
-  <block id="ae6dfff9523938f205e9cf68c702f717" category="list-text">두 MetroCluster 사이트의 각 스토리지 어레이에 대해 이 작업을 반복해야 합니다.</block>
-  <block id="71dcc8069f5f74b92ceef1d5c9db2841" category="list-text">MetroCluster 구성의 컨트롤러를 FC 스위치를 통해 스토리지 어레이에 연결해야 합니다.</block>
-  <block id="03e323a28bbe7c699090507bcdefa17d" category="list-text">스토리지 어레이 포트를 FC 스위치 포트에 연결합니다.</block>
-  <block id="030467ecaf0ffcaec3cc6f902037c1d1" category="paragraph">각 사이트에서 스토리지 시스템의 이중 포트 쌍을 대체 패브릭의 FC 스위치에 연결합니다. 이렇게 하면 스토리지 LUN을 액세스하기 위한 경로에 이중화를 제공할 수 있습니다.</block>
-  <block id="99fa0f82949c7aac46618689ac0fcdbe" category="list-text">스위치 조닝을 구성하면 MetroCluster 구성에서 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
-  <block id="4a2fdc22a1eb9a68e0facd6612db20d8" category="inline-link-macro">어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝</block>
-  <block id="706480a61d9e0992be9182b5010a6f28" category="inline-link-macro">2노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 케이블로 연결하는 예</block>
-  <block id="3d46a6eeb65ebe391571feddc1cc5164" category="paragraph"><block ref="3d46a6eeb65ebe391571feddc1cc5164" category="inline-link-macro-rx"></block></block>
-  <block id="9eecc3d31e1dca8ff5a3adf6988fa6d7" category="paragraph"><block ref="9eecc3d31e1dca8ff5a3adf6988fa6d7" category="inline-link-macro-rx"></block></block>
-  <block id="81af25de9f68ba8cc7b0883b71b9d3cb" category="inline-link-macro">8노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예</block>
-  <block id="2740d289d4d49097464e045111134762" category="paragraph"><block ref="2740d289d4d49097464e045111134762" category="inline-link-macro-rx"></block></block>
-  <block id="00d4cbf182edd341649687e5a604f3be" category="summary">각 노드에서 데이터 애그리게이트를 만들어 MetroCluster 구성을 구현하고 확인해야 합니다.</block>
-  <block id="7be9a52451d19cd9d90976cf283647b2" category="doc">MetroCluster 구성에서 데이터 애그리게이트를 생성, 구현 및 확인</block>
-  <block id="f53bbb5c5322a9297f53af7bd98a2d9f" category="list-text">각 노드에서 데이터 애그리게이트 생성:</block>
-  <block id="b8a418bfdd11bf6855f54b269c217252" category="list-text">각 노드에 미러링된 데이터 애그리게이트 생성:</block>
   <block id="f6a27c7799db7275b366d6aa5824f156" category="inline-link-macro">루트 애그리게이트를 미러링합니다</block>
-  <block id="4b7160ab170e2ce4f8b900945b99bba0" category="paragraph"><block ref="9be599aa0e226aea6f088a2fa4d362aa" category="inline-link-macro-rx"></block>.</block>
-  <block id="970a6efa6508b55722a891bc57572c0d" category="list-text">필요한 경우 미러링되지 않은 데이터 애그리게이트를 생성합니다.</block>
   <block id="2c406d90770788a5a37dd44ddf644295" category="inline-link-macro">각 노드에 미러링된 데이터 애그리게이트를 생성합니다</block>
-  <block id="f87dd08c00f70b3a575fa9699d2f3d13" category="paragraph"><block ref="89893a7120b70c9352d55ab698293fc3" category="inline-link-macro-rx"></block>.</block>
   <block id="cf2536b9d0ad43a511c5a32c1e924ea9" category="inline-link-macro">MetroCluster 구성을 구현합니다</block>
-  <block id="0c7efc3f8f259556bd2f3da69ebf54d7" category="list-text"><block ref="8f08cb1055cdb4a369896e616b0773db" category="inline-link-macro-rx"></block>.</block>
-  <block id="cbc27474ad8404f4ab4c0b0d46510f3f" category="inline-link-macro">상태 모니터링을 위해 MetroCluster FC 스위치를 구성합니다</block>
-  <block id="51f74944bdea22bdfce54f66e54c71c8" category="list-text"><block ref="bbfeae7503afad1c4e0a2cd3684b1825" category="inline-link-macro-rx"></block>.</block>
-  <block id="0a7ce847789e8e3505b0d6b947a9a554" category="list-text">구성을 확인하고 확인합니다.</block>
   <block id="0686a40a013d93595f8f86de2753f9f5" category="inline-link-macro">MetroCluster 설정을 확인한다</block>
-  <block id="18030bfb91f5e4d63267e26fb1ebcff8" category="list-text"><block ref="5c7e447fa493cc50fe35282654f2e1be" category="inline-link-macro-rx"></block>.</block>
   <block id="862af1b6897b484b4c8140d8ad62c5f4" category="inline-link-macro">Config Advisor에서 MetroCluster 구성 오류를 확인합니다</block>
-  <block id="8c947225988c013e9d09a9c97527a784" category="list-text"><block ref="305e316eb8a443f60a624c250c5e15ea" category="inline-link-macro-rx"></block>.</block>
   <block id="9759ad3dfabdb9631ec5fba47d71c313" category="inline-link-macro">전환, 복구, 스위치백을 확인합니다</block>
-  <block id="2081e48017a6ee75217a36fd8b2f7d8a" category="list-text"><block ref="769446b4dc032ab58f2f17b2a80ec492" category="inline-link-macro-rx"></block>.</block>
-  <block id="2d938722cbdc0e27f1bf8a4621b922c8" category="list-text">MetroCluster Tiebreaker 소프트웨어 설치 및 구성:</block>
-  <block id="dfbddd6e1165ec700e2c766fc53a826c" category="inline-link-macro">Tiebreaker 소프트웨어를 설치합니다</block>
-  <block id="aa746e8f9884e017b8a2cf95d83c6f98" category="list-text"><block ref="6a656079a634d1dbb37fdd6960f90ddd" category="inline-link-macro-rx"></block>.</block>
-  <block id="f4435460af1eceef12baf7f16d269716" category="inline-link-macro">Tiebreaker 소프트웨어를 구성합니다</block>
-  <block id="287644c0dd9dfb3768d110055e197bde" category="list-text"><block ref="bfaa51242e41c04376a31866ee30c54d" category="inline-link-macro-rx"></block>.</block>
-  <block id="922d574d4eea7d46f1335f2c544e277e" category="list-text">구성 백업 파일의 대상을 설정합니다.</block>
   <block id="de45266e760bc51404ead34f9f895183" category="inline-link-macro">구성 백업 파일을 보호합니다</block>
-  <block id="7edc9ae22c0cf875e5a35338bef1bdef" category="paragraph"><block ref="07c84706bf0793d59796fc2be1470117" category="inline-link-macro-rx"></block>.</block>
   <block id="8c9ca8086755018358ea4d5d0c638cf9" category="paragraph">컨트롤러 및 클러스터 스위치 관리 포트를 네트워크의 기존 스위치 또는 NetApp CN1601 클러스터 관리 스위치와 같은 새로운 전용 네트워크 스위치에 연결할 수 있습니다.</block>
   <block id="6de9fb8b7b5d44322728235b0d0a7791" category="summary">8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1개 또는 2개의 HA 쌍으로 구성된 스토리지 컨트롤러로 구성됩니다. 따라서 하나의 스토리지 컨트롤러에 장애가 발생할 경우 로컬 HA 파트너가 이를 대신 처리할 수 있도록 로컬 이중화가 가능합니다. 이러한 장애는 MetroCluster 전환 작업 없이 처리할 수 있습니다.</block>
-  <block id="06064d055f6d7447dfd3dcd333779a7c" category="summary">네이티브 디스크 및 어레이 LUN을 사용하여 2노드 패브릭 연결 MetroCluster 구성을 설정하려면 FC-SAS 브리지를 사용하여 ONTAP 시스템을 FC 스위치를 통해 디스크 쉘프와 연결해야 합니다. FC 스위치를 통해 어레이 LUN을 ONTAP 시스템에 연결할 수 있습니다.</block>
-  <block id="80e82def12ca4d8fe60bc7a3e4a368e0" category="paragraph">다음 그림은 디스크 및 어레이 LUN이 포함된 2노드 패브릭 연결 MetroCluster 구성의 예입니다. 두 구성 모두 동일한 MetroCluster 구성을 나타내며, 디스크 및 어레이 LUN의 표현은 간소화를 위해 분리되었습니다.</block>
-  <block id="463edce3dc5dcbbb41e7db373b98fdc2" category="paragraph">다음 그림에서는 ONTAP 시스템과 디스크 간의 연결을 보여 줍니다. HBA 포트 1a~1d는 FC-SAS 브리지를 통해 디스크 연결에 사용됩니다.</block>
-  <block id="49c1b21db78bd2699cc6cdc18d922d3a" category="image-alt">2노드 MCC가 결합된 패브릭 디스크</block>
-  <block id="263427407c4a9482adc0747a4e1c97cb" category="paragraph">다음 그림에서는 ONTAP 시스템과 어레이 LUN 간의 연결을 보여 줍니다. 포트 1a~1d는 디스크 연결에 사용되므로 스토리지 LUN에 연결하는 데 HBA 포트 0a에서 0d가 사용됩니다.</block>
-  <block id="accc2dacc412db66a942735964423c25" category="image-alt">두 노드 MCC가 결합된 패브릭 arrayluns</block>
   <block id="40d4b0790c7c1d827412f3a79c31612b" category="list-text">테이크오버가 발생한 후에는 장애가 발생한 노드나 파트너 노드에 대한 표준 시간대 설정을 수정할 수 없습니다.</block>
   <block id="26e412e124f0e9c78b247288bfd03abd" category="list-text">MetroCluster FC 구성의 각 클러스터에는 해당 MetroCluster 사이트의 노드, FC 스위치 및 FC-to-SAS 브리지에서 사용하는 자체 NTP 서버 또는 서버가 있어야 합니다.</block>
-  <block id="538b94639e6cbcf51578ca8e73fa1108" category="summary">디스크 및 어레이 LUN에 사용할 MetroCluster 구성을 계획할 때는 스토리지 액세스 설정 순서, 루트 애그리게이트 위치, FC 이니시에이터 포트, 스위치 및 FC-to-SAS 브릿지 사용 등과 같은 다양한 요소를 고려해야 합니다.</block>
-  <block id="510ef9f96e237cda2b6cc4ad3c1ead0f" category="doc">디스크 및 스토리지 LUN을 사용하여 MetroCluster 구성을 구축할 때의 고려 사항</block>
-  <block id="94bbfdcfaed5ce2a4bd4fda59231e633" category="paragraph">구성을 계획할 때 다음 표의 정보를 고려하십시오.</block>
-  <block id="1424e9d02955a063766be77a82c6d273" category="cell">고려 사항</block>
-  <block id="6862765a8295e08416a8dec36208faf0" category="paragraph">스토리지에 대한 액세스를 설정하는 순서입니다</block>
-  <block id="4a72767bf087b503af409e5bc1b0c8be" category="paragraph">먼저 디스크 또는 어레이 LUN에 대한 액세스를 설정할 수 있습니다. 다른 유형의 스토리지를 설정하기 전에 해당 스토리지 유형에 대한 모든 설정을 완료하고 올바르게 설정되었는지 확인해야 합니다.</block>
-  <block id="566a6125da9a04a1062506e783e3c147" category="paragraph">루트 애그리게이트의 위치입니다</block>
-  <block id="d0d3305da640b52679a3566b8de7dfe3" category="list-text">디스크와 어레이 LUN을 모두 사용하여 _new_MetroCluster 구축을 설정하는 경우 네이티브 디스크에 루트 애그리게이트를 생성해야 합니다.</block>
-  <block id="6ae15bf56376ed9cca59e060d3cd9ce5" category="paragraph">이렇게 하려면 각 사이트에 _디스크 쉘프(디스크 드라이브 24개 포함)가 하나 이상 설정되어 있어야 합니다.</block>
-  <block id="d94f4daf8b9866dbbf5b2f6780afa978" category="list-text">어레이 LUN을 사용하는 _existing_MetroCluster 구성에 네이티브 디스크를 추가하는 경우 루트 애그리게이트는 어레이 LUN에 남아 있을 수 있습니다.</block>
-  <block id="e667b860cf8d51a6b38cec65edf15da9" category="paragraph">스위치 및 FC-to-SAS 브릿지 사용</block>
-  <block id="2cf96570d05093e79354fdebf6a25c6f" category="paragraph">FC-to-SAS 브릿지는 4노드 구성과 2노드 패브릭 연결 구성에서 ONTAP 시스템을 스위치를 통해 디스크 쉘프에 연결하는 데 필요합니다.</block>
-  <block id="f1b073b17d11b6a85cff8fafe775f23e" category="paragraph">동일한 스위치를 사용하여 스토리지 어레이와 FC-to-SAS 브리지에 연결해야 합니다.</block>
-  <block id="209a28f98adf7a11fd98e407f778da76" category="paragraph">FC 이니시에이터 포트 사용</block>
-  <block id="ef12494cb70befc7ca544b62bf01bf89" category="paragraph">FC-to-SAS 브리지에 연결하는 데 사용되는 이니시에이터 포트는 스토리지 어레이에 연결하는 스위치에 연결하는 데 사용되는 포트와 달라야 합니다.</block>
-  <block id="3ebd69be8f45faaa179163c252992c0c" category="paragraph">ONTAP 시스템을 디스크 및 어레이 LUN 모두에 연결하려면 최소 8개의 이니시에이터 포트가 필요합니다.</block>
   <block id="5d0d3aae2229d219e319065b67183178" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
-  <block id="0bcabcdf892c04cd4dc85578329f2f27" category="paragraph"><block ref="0bcabcdf892c04cd4dc85578329f2f27" category="inline-link-macro-rx"></block></block>
   <block id="7cd3fb6e6f6deaf7b1a2916711a6b7e0" category="inline-link-macro">Cisco FC 스위치를 수동으로 구성합니다</block>
-  <block id="bc9a0903e5b84a09704b1124717ea8e7" category="paragraph"><block ref="bc9a0903e5b84a09704b1124717ea8e7" category="inline-link-macro-rx"></block></block>
-  <block id="5d80f4634e8ee066c641d17f726ec994" category="paragraph"><block ref="5d80f4634e8ee066c641d17f726ec994" category="inline-link-macro-rx"></block></block>
-  <block id="f0237c84831c6f90ee896e4e970c25aa" category="list-text">스위치 조닝은 연결된 노드 간 경로를 정의합니다. 조닝을 구성하면 특정 ONTAP 시스템에서 볼 수 있는 어레이 LUN을 정의할 수 있습니다.</block>
-  <block id="a9376b40838c95dc0e4da39abdfa72b0" category="summary">스토리지 LUN을 사용하는 MetroCluster 구성에서 ISL(Inter-Switch Link)\)을 통해 사이트 전체에 FC 스위치를 접속해야 스위치 패브릭을 형성할 수 있습니다.</block>
-  <block id="54ac487d2d6ff680a517207a9eced839" category="doc">스토리지 LUN을 사용하여 MetroCluster 구성에서 ISL 케이블 연결</block>
-  <block id="ba35d7d9c18ec17168ae6aa733de311d" category="paragraph">스토리지 LUN을 사용하는 MetroCluster 구성에서 ISL(Inter-Switch Link)을 통해 사이트 전체에 FC 스위치를 접속해야 스위치 패브릭을 형성할 수 있습니다.</block>
-  <block id="86104e2083d4e42f39e08b4bf231db53" category="list-text">구성 및 스위치 모델에 해당하는 표의 케이블을 사용하여 각 사이트의 스위치를 ISL 또는 ISL에 연결합니다.</block>
-  <block id="246805b2f5e8b3611b6b0467b8adcb2f" category="paragraph">FC ISL에 사용할 수 있는 스위치 포트 번호는 다음과 같습니다.</block>
-  <block id="013d9d1788f79068cc17e1128a0db3ad" category="cell">모드 l</block>
-  <block id="051877dc61179a5af3a2aea7072b0a87" category="cell">* Cisco 9250i 스위치는 ISL에 FCIP 포트를 사용합니다. FCIP 포트를 사용하는 경우 몇 가지 제한 사항과 절차가 있습니다.</block>
   <block id="aef9e13f2797744b62209b58e52a9a40" category="paragraph">ONTAP 9.10.1 이상을 사용하는 경우 FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
   <block id="69e92926786e575346dbd083b8dec2f2" category="paragraph"><block ref="69e92926786e575346dbd083b8dec2f2" category="inline-link-macro-rx"></block></block>
   <block id="7beedda8cb5d2fb431ddb232b7ee7fe0" category="summary">MetroCluster 구성의 모든 노드 또는 DR\(재해 복구 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다.</block>
-  <block id="0ea00d4fc48d7eb7ff02d29820696767" category="paragraph">MetroCluster 구성의 모든 노드 또는 DR(재해 복구) 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다. MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
-  <block id="0e4e5f5b554c7c950c50cf7c70e283f3" category="summary">네이티브 디스크 및 어레이 LUN을 사용하여 4노드 MetroCluster 구성을 설정하려면 FC-SAS 브리지를 사용하여 FC 스위치를 통해 ONTAP 시스템을 디스크 쉘프와 연결해야 합니다. FC 스위치를 통해 어레이 LUN을 ONTAP 시스템에 연결할 수 있습니다.</block>
-  <block id="28e93f86c8423ba4281e1a3fe65f7edd" category="paragraph">ONTAP 시스템에서 기본 디스크와 어레이 LUN에 모두 연결하려면 최소 8개의 이니시에이터 포트가 필요합니다.</block>
-  <block id="226d65578ffcfe4912277bbf0f5b32f0" category="paragraph">다음 그림은 디스크 및 어레이 LUN이 있는 MetroCluster 구성의 예입니다. 두 구성 모두 동일한 MetroCluster 구성을 나타내며, 디스크 및 어레이 LUN의 표현은 간소화를 위해 분리되었습니다.</block>
-  <block id="c66b146c7ac8e4bd0dc36455f8c17999" category="paragraph">다음 그림에서는 ONTAP 시스템과 디스크 간의 연결을 보여 줍니다. HBA 포트 1a~1d는 FC-SAS 브리지를 통해 디스크 연결에 사용됩니다.</block>
-  <block id="bdeabf77afacd398dedff72c9d8d51e6" category="image-alt">디스크 및 스토리지 LUN을 사용한 MCC 구성 1</block>
-  <block id="df0ddc6b2606b325169b0db05e673efc" category="paragraph">다음 그림에서는 ONTAP 시스템과 어레이 LUN 간의 연결을 보여 줍니다. 포트 1a~1d는 디스크 연결에 사용되므로 스토리지 LUN에 연결하는 데 HBA 포트 0a에서 0d가 사용됩니다.</block>
-  <block id="ec31df7d1f18c6948a41ebc1330adb9e" category="image-alt">이 그림은 MetroCluster 구성의 예를 보여 줍니다. 그래픽은 주변 텍스트에 설명되어 있습니다.</block>
   <block id="0e08aa01426827fb0ba8dd3c64010d0e" category="paragraph">MetroCluster 구성에서 각 Brocade 스위치 패브릭을 구성해야 합니다.</block>
   <block id="be6d4fd9ef5a89a5a97f30ce5723e2c7" category="list-text">FC 스위치에 대한 텔넷 또는 SSH(Secure Shell) 액세스 권한이 있는 PC 또는 UNIX 워크스테이션이 있어야 합니다.</block>
   <block id="76007d3219cd7268161d932f8bd49acc" category="list-text">동일한 모델의 지원되는 Brocade 스위치 4개를 동일한 Brocade FOS(Fabric Operating System) 버전 및 라이센스로 사용해야 합니다.</block>
@@ -9708,94 +9165,14 @@
   <block id="e92da0acc4bee3a3a9505ad31255de8d" category="paragraph">포트컴쇼</block>
   <block id="8f174bdbb5f730ad428ce156e59872b7" category="paragraph">다음 예에서는 포트 8 및 12에서 암호화가 활성화되어 있음을 보여 줍니다.</block>
   <block id="068922da5c55fc7fde527b818131d4b1" category="paragraph">MetroCluster 구성에서 다른 Fabric의 스위치에 대한 모든 단계를 수행합니다.</block>
-  <block id="eee9ac9add755308c95d6b192ee994a9" category="paragraph">어레이 LUN이 포함된 2노드 패브릭 연결 MetroCluster 구성에 대한 조닝(zoning)을 결정할 때 다음 예제를 참조할 수 있습니다.</block>
-  <block id="ff03fa1ec9a5368dacb089cc3ddf3a5b" category="image-alt">2노드 MCC 패브릭 연결 조닝</block>
-  <block id="a1a6f8d15b87bea02a0b382a7103d7bb" category="paragraph">이 예에서는 MetroCluster 구성에 대한 단일 이니시에이터에서 단일 타겟 조닝(zoning)을 보여 줍니다. 이 예제의 줄은 연결이 아닌 영역을 나타냅니다. 각 줄은 해당 영역 번호로 레이블이 지정됩니다.</block>
-  <block id="ec2e1b253e1f2bc7fe575feec245f8af" category="paragraph">이 예에서는 스토리지 LUN이 각 스토리지 시스템에 할당됩니다. 크기가 같은 LUN은 두 사이트의 스토리지 시스템에 프로비저닝되며, 이는 SyncMirror 요구 사항입니다. 각 ONTAP 시스템에는 어레이 LUN에 대한 경로가 2개 있습니다. 스토리지 배열의 포트는 중복됩니다.</block>
-  <block id="8865e044b5cae9c361459da496941229" category="paragraph">두 사이트의 중복 어레이 포트 쌍은 다음과 같습니다.</block>
-  <block id="226fdabe43814b487f6bc80ba78ce7f8" category="paragraph">다음 표에는 그림에 대한 구역이 나와 있습니다.</block>
-  <block id="06f47b6f3cf41b8d50ffeed35c737172" category="cell">* FC_SWITCH_A_1 *</block>
-  <block id="01b6a9b037a9428eeaa993882b105ea0" category="paragraph">컨트롤러 A: 포트 0a</block>
-  <block id="15833fe7a86a64ec49a86a5cc7a13229" category="paragraph">컨트롤러 A: 포트 0c</block>
-  <block id="198a488c4e17ea8598f0627cd6cca5e7" category="cell">* FC_SWITCH_A_2 *</block>
-  <block id="fcd4a1ee1dde89868898e398385930b1" category="paragraph">컨트롤러 A: 포트 0b</block>
-  <block id="9d7686f1afdd5a4a71976e17e2761fb3" category="paragraph">컨트롤러 A: 포트 0d</block>
-  <block id="59064ad2a8c60c028df6bae1d172ef67" category="cell">* FC_SWITCH_B_1 *</block>
-  <block id="c07d80f37d7e1a9223132980e54397c1" category="paragraph">컨트롤러 B: 포트 0a</block>
-  <block id="c3d510481d7702ec023d4a0221727e22" category="paragraph">컨트롤러 B: 포트 0c</block>
-  <block id="cac05c8971d13247d1cd68d3070748db" category="cell">* FC_SWITCH_B_2 *</block>
-  <block id="156dcc3e764a085bc3e61528c9eb5be4" category="paragraph">컨트롤러 B: 포트 0b</block>
-  <block id="e5d71b14db9c42a420aacb199eb2012e" category="paragraph">컨트롤러 B: 포트 0d</block>
-  <block id="934ad02d03684df4e01cc1007f8491ce" category="paragraph">다음 표에는 FC-VI 접속에 대한 영역이 나와 있습니다.</block>
-  <block id="ca5db0cf62275a7a7a7dfb94149dd7df" category="paragraph">컨트롤러 A: 포트 FC-VI A</block>
-  <block id="d909a5c4df40fcfae94b0192fb76e4fa" category="paragraph">컨트롤러 A: 포트 FC-VI b</block>
-  <block id="0b663693f1c571e72e27497183e38ee4" category="paragraph">컨트롤러 B: 포트 FC-VI A</block>
-  <block id="32b2837586f2ffaf3da8eb6441d53979" category="paragraph">컨트롤러 B: 포트 FC-VI b</block>
-  <block id="18f32fa11e73a9fe745c10d58cd7d052" category="list-text">어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝을 사용하는 경우 특정 기본 요구사항을 준수해야 합니다.</block>
-  <block id="257df35fd3fbc9a63102dd0f6f026234" category="summary">ISL(Inter-Switch Link)\)이 동일한 포트 그룹에 있는지 확인하고 MetroCluster 구성이 스위치 패브릭을 성공적으로 공유할 수 있도록 조닝을 구성해야 합니다.</block>
-  <block id="0d5aa6202df4a0c6cdd0be57f7686057" category="doc">ISL이 동일한 포트 그룹에 있는지 확인하고 조닝을 구성합니다</block>
-  <block id="7c696c89bb9e1077a5f5aa7f1aa1cdac" category="paragraph">ISL(Inter-Switch Link)이 동일한 포트 그룹에 있는지 확인하고 MetroCluster 구성이 스위치 패브릭을 성공적으로 공유할 수 있도록 조닝을 구성해야 합니다.</block>
-  <block id="14038cfc02361d0022c1b06e91cf2e65" category="list-text">ISL이 동일한 포트 그룹에 없으면 ISL 포트 중 하나를 다른 포트와 동일한 포트 그룹으로 이동합니다.</block>
-  <block id="025d4fdb30387e506bc23ebe1a2b948c" category="paragraph">새 MetroCluster 구성에 사용되는 32-45를 제외한 모든 사용 가능한 포트를 사용할 수 있습니다. 권장 ISL 포트는 46 및 47입니다.</block>
-  <block id="affc2dad5d0c570ef33673937b9be675" category="list-text">의 단계를 따릅니다 <block ref="3165f1b1a2826f5bf149f919c95e9838" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="b5b548972cd6ad9de463f417a7b88d65" category="inline-link-macro">Brocade FC 스위치에서 E-포트(ISL 포트)를 구성합니다</block>
-  <block id="a33a00ea9f83279f39be404461d06dc1" category="paragraph">Fabric을 공유할 때의 포트 번호는 섹션에 나와 있는 포트 번호와 다릅니다. 공유할 때는 ISL 포트에 대해 포트 46과 47을 사용합니다. ISL 포트를 이동한 경우 의 절차를 사용해야 합니다 <block ref="57ce78b7c8c4db3fb44a8dbd447a3f1f" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="f9fb6c5e4b8031455acc4725fedc46e3" category="inline-link-macro">Brocade 스위치에서 비 E 포트 구성</block>
-  <block id="978310327d2cf95049892dccc0c3977b" category="list-text">[[step3_zones]]의 단계를 따릅니다 <block ref="b87ab593768bb285307eccf2a018cf92" category="inline-link-macro-rx"></block> 섹션을 참조하여 비 E 포트를 구성합니다.</block>
-  <block id="853e75cf2478dbfaa7c7c69dda1f99f1" category="list-text">의 TI(트래픽 격리) 영역을 제외하고 백엔드 스위치(7-Mode 패브릭 MetroCluster용)에 이미 있는 영역 또는 영역 세트를 삭제하지 마십시오 <block ref="bcf6119e8b5b0fd52fe08bbf1a5147d1" category="inline-xref-macro-rx"></block>.</block>
-  <block id="e330f533c615c9f14ec2e4e50d325424" category="list-text">의 단계를 따릅니다 <block ref="57ce78b7c8c4db3fb44a8dbd447a3f1f" category="inline-link-macro-rx"></block> 섹션을 클릭하여 새 MetroCluster에 필요한 영역을 기존 영역 집합에 추가합니다.</block>
-  <block id="e94a402556eac1e8c6946a1a93250c32" category="paragraph">다음 예는 영역을 생성하기 위한 명령 및 시스템 출력을 보여줍니다.</block>
-  <block id="753f32245e09a5cb3c0f8ea57c219e5d" category="summary">7-Mode 패브릭 MetroCluster 구성에서 Brocade 6510 스위치를 사용하는 경우 기존 스위치 패브릭을 새로운 clustered MetroCluster 구성과 공유할 수 있습니다. 공유 스위치 패브릭은 새로운 MetroCluster 구성에 새로운 개별 스위치 Fabric이 필요하지 않음을 의미합니다. 이 임시 구성은 전환을 위해 Brocade 6510 스위치에서만 지원됩니다.</block>
-  <block id="5a567289b578af5903f3224cb335d3fb" category="doc">전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어 구성</block>
-  <block id="27e6c2849190239762206fcf113f7086" category="list-text">7-Mode 패브릭 MetroCluster는 Brocade 6510 스위치를 사용해야 합니다.</block>
-  <block id="87628103a6b8c7eaf8360ed724a64ebf" category="paragraph">MetroCluster 구성에서 현재 Brocade 6510 스위치를 사용하지 않는 경우 이 절차를 수행하기 전에 스위치를 Brocade 6510으로 업그레이드해야 합니다.</block>
-  <block id="a050d7522cdf278d0ebc45dfd612aa47" category="list-text">7-Mode 패브릭 MetroCluster 구성에서는 SAS 스토리지 쉘프만 사용해야 합니다.</block>
-  <block id="eba3539147e0d862df33659bc68c3062" category="paragraph">기존 구성에 FC 스토리지 쉘프(예: DS14mk4 FC)가 포함된 경우 FC 스위치 패브릭 공유는 지원되지 않습니다.</block>
-  <block id="d64f0a03e0ff9a67e55d8cbd83c6dc5c" category="list-text">새로운 clustered MetroCluster 구성에 사용되는 스위치 포트의 SFP는 16Gbps의 속도를 지원해야 합니다.</block>
-  <block id="0216568f67e5d703868ec3f45bbaaa79" category="paragraph">기존 7-Mode 패브릭 MetroCluster는 8Gbps 또는 16Gbps SFP를 사용하여 포트에 연결된 상태를 유지할 수 있습니다.</block>
-  <block id="05d631d42f259bf07f58147a7f7c98d4" category="list-text">4개의 Brocade 6510 스위치 각각에서 새 MetroCluster 구성 요소의 포트를 연결하려면 24번~45번 포트를 사용할 수 있어야 합니다.</block>
-  <block id="a009195558b1c4cd3b61cdf61cb6fb25" category="list-text">기존 ISL(Inter-Switch Link)이 포트 46 및 47에 있는지 확인해야 합니다.</block>
-  <block id="121789800a2a17c2b44944d1aba6cec3" category="paragraph">패브릭을 공유하고 MetroCluster 구성을 완료한 후 7-Mode 패브릭 MetroCluster 구성에서 데이터를 전환할 수 있습니다.</block>
   <block id="c860f7f0a8aaf5b10a9ec71f48b87682" category="inline-link-macro">가상 IP LIF를 구성합니다</block>
   <block id="8a1bb3556c5253b390b70da7c5d3cb7c" category="paragraph">브리지 모델의 _ATTO FiberBridge 설치 및 작동 설명서_ 에는 자세한 정보와 설치 그림이 포함되어 있습니다.</block>
   <block id="ce24d226f8ee508a2ea1001f5b67e265" category="admonition">적절한 포트 공간 액세스 및 FRU 서비스 가능성을 위해 브리지 쌍 아래에 1U 공간을 두고 공구가 필요 없는 블랭킹 패널을 사용하여 이 공간을 덮어야 합니다.</block>
-  <block id="85b8c51389720a3d7d709e4a1462d7ae" category="summary">FlexArray LUN을 사용하는지, MetroCluster 구성에서 노드 수, 7-Mode 패브릭 MetroCluster에서 사용하는 기존 FC 스위치 패브릭을 공유하는지 여부에 따라 올바른 설치 절차를 선택해야 합니다.</block>
-  <block id="1d82097ca48b595918af9c2a939393d9" category="image-alt">워크플로우 MetroCluster 구성 패브릭을 선택합니다</block>
-  <block id="9a7522c7f21e36b291f1a44da46f7bcb" category="paragraph">NetApp(네이티브) 디스크를 사용하는 패브릭 연결 구성</block>
-  <block id="60bd1a2e6e7581b5d37f41673f11b0bf" category="list-text"><block ref="60bd1a2e6e7581b5d37f41673f11b0bf" category="inline-link-macro-rx"></block></block>
-  <block id="7979981215c4c0559046a0fa0a757edd" category="paragraph">기존 FC 스위치 패브릭과 공유할 때 패브릭 연결 구성</block>
-  <block id="cb83c34f31283467f133410ad28c7f21" category="paragraph">이 구성은 Brocade 6510 스위치를 사용하는 7-Mode 패브릭 MetroCluster 구성의 임시 구성으로만 지원됩니다.</block>
-  <block id="dcd39c14ed9181b99eedc066ac1d65c1" category="list-text">의 절차를 사용하여 인터클러스터 LIF 구성:</block>
-  <block id="76171250896c5dfe6901a6c8c3fb3f68" category="paragraph"><block ref="76171250896c5dfe6901a6c8c3fb3f68" category="inline-link-macro-rx"></block></block>
-  <block id="0690a5c4248a898ac79d4ea42b64f808" category="list-text">의 절차를 사용하여 클러스터 피어 관계를 생성합니다.</block>
-  <block id="dc4f0f08d29c6f89700794f3a34384f2" category="paragraph"><block ref="dc4f0f08d29c6f89700794f3a34384f2" category="inline-link-macro-rx"></block></block>
   <block id="2f02a7617f22d45dd2c91c2ad0c9bf2b" category="summary">MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 네트워크를 통해 들여다봅니다. 클러스터 피어링은 사이트 간에 SVM(이전의 vserver\)의 동기식 스토리지 가상 시스템 미러링을 지원합니다.</block>
   <block id="4ff9b388af4d661484920a7b2002bc50" category="image-alt">MCC HW 아키텍처 클러스터 피어링</block>
   <block id="8bd0cd6715687fc71d09455137c040b9" category="paragraph"><block ref="8bd0cd6715687fc71d09455137c040b9" category="inline-link-macro-rx"></block></block>
   <block id="2cc78fe607addfc425964003bfef4c37" category="paragraph"><block ref="2cc78fe607addfc425964003bfef4c37" category="inline-link-macro-rx"></block></block>
-  <block id="90ca2ba118d725d3d2c212d37d698f66" category="summary">데이터 보호를 위해서는 MetroCluster 구성에서 루트 애그리게이트를 미러링해야 합니다.</block>
-  <block id="7c9ce51ecda69bd6b8e4f23c6195b311" category="paragraph">스토리지 LUN을 사용하는 MetroCluster 구성에 대한 SyncMirror 요구 사항이 충족되었는지 확인해야 합니다. 을 참조하십시오<block ref="dde9fbc727f8cd4c9b4ba4b7030d98ee" category="inline-link-macro-rx"></block>.</block>
-  <block id="0e4fdb537ab94dcc88ee68afa6872a59" category="paragraph">MetroCluster 구성의 각 컨트롤러에 대해 이 작업을 반복해야 합니다.</block>
-  <block id="213c74678d0f02b098b6031dd389187f" category="list-text">미러링되지 않은 루트 애그리게이트 미러링:</block>
-  <block id="eab8b55bcdb4287e02366668fee8df5a" category="paragraph">루트 애그리게이트는 pool1의 어레이 LUN으로 미러링됩니다.</block>
-  <block id="7b831eb812dd2b6fede966eed2e6593d" category="summary">구성을 수정할 수 있도록 스위치 패브릭 중 하나를 비활성화해야 합니다. 구성을 완료하고 스위치 패브릭을 다시 설정한 후 다른 패브릭에서도 이 프로세스를 반복합니다.</block>
-  <block id="5a9d27de0e81ed1e9c65c8ae1bb271cb" category="doc">스위치 패브릭 중 하나를 비활성화합니다</block>
-  <block id="3da36f821e9896cb94c0304f348f247a" category="paragraph">기존 7-Mode 패브릭 MetroCluster 구성에서 FMC_DC 유틸리티를 실행하고 구성 프로세스를 시작하기 전에 문제를 해결해야 합니다.</block>
-  <block id="403fffa2cd931d0a9c1d44aa728210c6" category="paragraph">MetroCluster 구성을 계속 작동하려면 첫 번째 Fabric이 비활성화된 상태에서 두 번째 Fabric을 비활성화해서는 안 됩니다.</block>
   <block id="4028a8e16d4b841012a85c08963c7c51" category="paragraph">'스치치치프트PersistentDisable'을 선택합니다</block>
-  <block id="b126157cb6dc26c65104d970cf85bb9e" category="paragraph">이 명령어를 사용할 수 없는 경우 'witchDisable' 명령어를 사용한다.</block>
-  <block id="a147ba77b587976b23efb0cab251ec49" category="list-text">중복 패브릭을 사용하여 7-Mode MetroCluster 구성이 올바르게 작동하는지 확인합니다.</block>
-  <block id="c5a261fd95941fcb6c642a92e85a9c7f" category="list-text">컨트롤러 페일오버가 정상 상태인지 확인합니다. + "CF 상태"</block>
-  <block id="303ac55e6ca0222f3e4f7511c42b6d50" category="list-text">디스크가 표시되는지 확인합니다. +'Storage show disk –p'</block>
-  <block id="a4624bf4e4cb6a15bc97fd7c39d6b621" category="list-text">애그리게이트가 정상 상태인지 확인합니다. + "집계 상태</block>
-  <block id="c88edc4c15fee94b757ac367781bb561" category="paragraph">8노드 MetroCluster 구성은 2개의 4노드 DR 그룹으로 구성됩니다. 첫 번째 DR 그룹은 다음 노드로 구성됩니다.</block>
-  <block id="6873448bb983f2d98dc888336e992a66" category="paragraph">두 번째 DR 그룹은 다음 노드로 구성됩니다.</block>
-  <block id="eed30f9d99bbd7faa235645e344fed96" category="list-text">컨트롤러_A_3</block>
-  <block id="978805a3a6abf9261e8e019354261f30" category="list-text">컨트롤러_A_4</block>
-  <block id="16bcaa3538e88b0ec91eb7bc2706f2b9" category="list-text">컨트롤러_B_3</block>
-  <block id="96ea41d688f79c1f69453f2e11f526d4" category="list-text">컨트롤러_B_4</block>
-  <block id="e8d525684cd5e49193aace5d41cf9819" category="paragraph">스위치 조닝을 구성하려면 첫 번째 DR 그룹에 대해 4노드 MetroCluster 구성에 대한 조닝 예제를 사용할 수 있습니다.</block>
-  <block id="3ef6acae51a1b36c66c78b51d4585513" category="paragraph">두 번째 DR 그룹에 대해 조닝을 구성하려면 두 번째 DR 그룹의 컨트롤러에 속한 FC 이니시에이터 포트와 어레이 LUN에 대한 동일한 예와 요구 사항을 따르십시오.</block>
   <block id="7bff7ee71aa08abe16552f96511c6124" category="doc">Cisco FC 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="da490e4cad45c10def878a2b7c965b5e" category="list-text">기존 구성 지우기: + `* 쓰기 지우기 * '</block>
   <block id="4eec5768b0acba2b883e4b34537af3c1" category="list-text">스위치 소프트웨어를 다시 로드합니다: + " * reload * "</block>
@@ -10257,20 +9634,6 @@
   <block id="9b347cb6379286ba1cd7bac7435ed0cd" category="section-title">FC 스위치 구성이 저장되었는지 확인합니다</block>
   <block id="15cca06ba2cf6c3ae3aa84e18984c915" category="paragraph">모든 스위치에서 FC 스위치 구성이 시작 구성에 저장되었는지 확인해야 합니다.</block>
   <block id="aa3da2977894ededc70174629f42daa7" category="paragraph">두 FC 스위치 패브릭에서 다음 명령을 실행합니다.</block>
-  <block id="8664664e713a383e7208ad181c9a1484" category="paragraph">첫 번째 DR 그룹의 어레이 포트에 케이블을 연결하려면 첫 번째 DR 그룹의 4노드 MetroCluster 구성에 대한 케이블 연결 예를 사용할 수 있습니다.</block>
-  <block id="3e50d9cbf27f15e843e5239619287ac0" category="paragraph">두 번째 DR 그룹의 어레이 포트에 케이블을 연결하려면 같은 예제를 따라 두 번째 DR 그룹의 컨트롤러에 속한 FC-VI 포트와 FC 이니시에이터 포트를 추정합니다.</block>
-  <block id="5da1ba53dad54d5e6efca627cd4e913f" category="summary">기존 TI 조닝을 삭제하고 스위치 패브릭에서 IOD\(In-order-delivery\) 설정을 재구성해야 합니다.</block>
-  <block id="bda671bafb9e307e601d1f48d41ee87e" category="doc">TI 조닝 삭제 및 IOD 설정 구성</block>
-  <block id="393345450fdab1c4a8707cdc5ac357e1" category="paragraph">기존 TI 조닝을 삭제하고 스위치 패브릭에서 IOD(In-Order-Delivery) 설정을 재구성해야 합니다.</block>
-  <block id="9593ac79e77c9f1bdc7761a29356b43b" category="list-text">Fabric에 구성된 TI 영역을 확인합니다.</block>
-  <block id="865ddca429147e4550622a4faf410a07" category="paragraph">존 쇼</block>
-  <block id="e76a2e6193256d5905ebdad93c975dac" category="paragraph">다음 예는 FCVI_TI_FAB_2 영역을 보여줍니다.</block>
-  <block id="872fd99863394fd03b49ac281e05c37f" category="list-text">TI 영역을 삭제합니다.</block>
-  <block id="bf3eac6d426cdce2672ed22591953fd5" category="paragraph">"영역--삭제_영역-이름_"</block>
-  <block id="d541030421372525eadee31c0c3196d3" category="paragraph">다음 예는 영역 FCVI_TI_FAB_2의 삭제를 보여줍니다.</block>
-  <block id="8dd2ba92d37be5f033feede59afb1372" category="list-text">영역이 삭제되었는지 확인합니다.</block>
-  <block id="ac0321498317235c480942be9e861d45" category="list-text">주문 후 배송 활성화:</block>
-  <block id="4f3c80eb4c7058a48ce3a8802614c67e" category="list-text">APT(Advanced Performance Tuning) 정책 1을 선택합니다. 포트 기반 라우팅 정책:</block>
   <block id="4cd1110435955b3b14ac2d145c6baae1" category="paragraph">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지하고, 이러한 관계에 공유 또는 전용 포트를 사용할지 여부를 결정해야 합니다.</block>
   <block id="72fa0ea37e0389a6c2e6107de6bbcbe8" category="summary">다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 ISL 포트 사용량을 보여 줍니다.</block>
   <block id="f3089a69f0cb0a583fab7f5c1ea7226c" category="cell">6505, G610</block>
@@ -10282,10 +9645,6 @@
   <block id="cf9793806e6e4a04213f68a860b2fd56" category="summary">Cisco FC 스위치를 구성하려면 스위치 설정을 초기 기본값으로 재설정하고 스위치 소프트웨어를 설치한 다음 특정 구성에 대한 전체 스위치 설정을 제공하는 참조 구성\(RCF\) 파일을 다운로드하여 적용해야 합니다.</block>
   <block id="64fb3fc78b6d09b80f739c2efaebdd9d" category="doc">RCF 파일을 사용하여 Cisco FC 스위치 구성</block>
   <block id="02043b3a3b802db01041709dec8e7509" category="paragraph">Cisco FC 스위치를 구성하려면 스위치 설정을 초기 기본값으로 재설정하고 스위치 소프트웨어를 설치한 다음, 특정 구성에 대한 전체 스위치 설정을 제공하는 RCF(Reference Configuration) 파일을 다운로드하여 적용해야 합니다.</block>
-  <block id="98c5e9ced1b91fd70bc3cbf2050260a7" category="paragraph">다음 그림에서는 스토리지 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성에서 스토리지 어레이와 FC 스위치 간의 연결을 보여 줍니다.</block>
-  <block id="fe5c83ba1ba3a36ad5d4ca3acb30c79e" category="image-alt">2노드 패브릭 연결 MCC 구성</block>
-  <block id="926641fa5f513d7cc22f4efc08afd65a" category="paragraph">스토리지 어레이 포트와 FC 스위치 포트 간의 연결은 스토리지 LUN을 사용하는 2노드 MetroCluster 구성의 확장 및 패브릭 연결 변형에서 유사합니다.</block>
-  <block id="d2dda80f1fff01d0e113ebb44b5f1ed8" category="paragraph">다음 표에는 스토리지 어레이 포트와 FC 스위치 간의 연결 예가 MetroCluster 그림에 나와 있습니다.</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
@@ -10298,7 +9657,6 @@
   <block id="10fb6eda16d44576f048cbbd98a21f49" category="sidebar">MetroCluster 설치를 준비합니다</block>
   <block id="06800b31fe5394b22e1a11163137b326" category="sidebar">ONTAP 중재자와 MetroCluster Tiebreaker 간의 결정</block>
   <block id="4ae1141d3ba10797d5f82641406d5702" category="sidebar">ONTAP 9.4 이상의 자동 드라이브 할당 및 ADP 시스템</block>
-  <block id="d3afb6862c8b819caa7f03082d2af919" category="sidebar">MetroCluster IP 구성의 미러링되지 않은 애그리게이트</block>
   <block id="b8e55c88d2ead2425b022ce67ac4bb75" category="sidebar">하드웨어 구성 요소를 랙에 장착하십시오</block>
   <block id="5a4d16a157dad9438b527caaa9b4b2ab" category="sidebar">MetroCluster IP 스위치에 케이블을 연결합니다</block>
   <block id="e42ae5049bd4441f35fc1a5c789393b6" category="sidebar">RcfFileGenerator 도구 또는 여러 MetroCluster 구성에서 포트 테이블을 사용하는 방법</block>
@@ -10478,33 +9836,6 @@
   <block id="04feb40ba41d7f08a0ed11c320036b50" category="sidebar">Cisco FC 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다</block>
   <block id="3c25e8c40f06568b29ce946fd777d561" category="sidebar">Cisco FC RCF 파일을 다운로드하고 설치합니다</block>
   <block id="9ee7e057ce8f87d9c6d58a3ac45b4a14" category="sidebar">Cisco FC 스위치를 수동으로 구성합니다</block>
-  <block id="a843b71ec15aadada63575eb83031c0b" category="sidebar">전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어를 구성합니다</block>
-  <block id="7a624101744abdf7e3500edd9f2b8245" category="sidebar">Brocade 라이센스 요구 사항을 검토합니다</block>
-  <block id="bf3919a06ddf0ec27a0504fe47bad7b2" category="sidebar">새 MetroCluster 컨트롤러를 기존 FC 패브릭에 연결합니다</block>
-  <block id="7bd89e108931ce636e15123e89248e50" category="sidebar">7-Mode와 clustered MetroCluster 구성 간에 스위치 패브릭을 공유할 수 있습니다</block>
-  <block id="1c2eab36143e7d0d27484d242e30fa69" category="sidebar">스위치 패브릭 중 하나를 비활성화합니다</block>
-  <block id="6dcbc3ddfa4366cb8ba086eccc404332" category="sidebar">TI 조닝을 삭제하고 IOD 설정을 구성합니다</block>
-  <block id="a0d866aecd15331d9714ca9e4532bbc9" category="sidebar">ISL이 동일한 포트 그룹에 있는지 확인하고 조닝을 구성합니다</block>
-  <block id="cd6d15e2b46d3e2f47014c4828615a8e" category="sidebar">스위치 패브릭을 다시 설정하고 작업을 확인합니다</block>
-  <block id="80f976c9a0f2d21f314ed374e33cd352" category="sidebar">스토리지 LUN을 사용하여 MetroCluster 구성을 계획 및 설치합니다</block>
-  <block id="c8b19b92d4a50bed297998d47df26051" category="sidebar">스토리지 LUN을 사용한 MetroCluster 구성 계획</block>
-  <block id="93a308f93d8d5ca19cae9d08e22adb09" category="sidebar">어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다</block>
-  <block id="fee2d524a67123cd96bfd7853ae5408a" category="sidebar">어레이 LUN이 있는 MetroCluster 구성에서 하드웨어 구성 요소를 랙에 구성합니다</block>
-  <block id="70c598f8277affd6e17085bb627890ca" category="sidebar">ONTAP 시스템에서 사용할 스토리지 어레이를 준비합니다</block>
-  <block id="da4b9b1e8c5a8c0384dc20493d174c59" category="sidebar">스토리지 LUN이 있는 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다</block>
-  <block id="d017c47eb70c050107462722a35d0b3a" category="sidebar">어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다</block>
-  <block id="f804d68a8997c439232d5fdd9ef960d8" category="sidebar">스토리지 LUN을 사용하는 4노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다</block>
-  <block id="6f735fbd16bebf7e5bc182e7c89a7f5c" category="sidebar">스토리지 LUN을 사용하는 8노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다</block>
-  <block id="08e9dda3455a57aa7a1a245e6ea0f304" category="sidebar">스토리지 LUN이 있는 MetroCluster 구성에서 ISL 케이블 연결</block>
-  <block id="c57c9eb0f376e2aa407c1ab2c90aa9b4" category="sidebar">8노드 또는 4노드 구성으로 클러스터 인터커넥트에 케이블을 연결합니다</block>
-  <block id="b98d15dba7d8fefd8d980d63a4e11a61" category="sidebar">MetroCluster 구성에서 스토리지 어레이를 FC 스위치에 케이블로 연결합니다</block>
-  <block id="8226496b91995cbdb411fc748863b4a9" category="sidebar">어레이 LUN이 있는 MetroCluster 구성에서 ONTAP를 설정합니다</block>
-  <block id="e23243448b3ec49d7f5b13275d7f6335" category="sidebar">클러스터를 설정합니다</block>
-  <block id="731325ca2f2fc3bced1b8025aca12524" category="sidebar">MetroCluster 구성에서 스토리지 LUN을 사용하기 위한 라이센스를 설치합니다</block>
-  <block id="273c4b6f5e2cdfbb64c441af81ec9535" category="sidebar">스토리지 LUN의 소유권을 할당합니다</block>
-  <block id="34e36cd434217e95f9efd2a4ff5396a5" category="sidebar">클러스터를 피합니다</block>
-  <block id="58a2e0468310e7617d4e119676028f57" category="sidebar">MetroCluster 구성에서 데이터 애그리게이트를 생성, 구축, 검증합니다</block>
-  <block id="625658dcf56e073788050ba3b314f569" category="sidebar">디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성을 구축합니다</block>
   <block id="8b3aeec8c25c17c966b0b882195c6050" category="sidebar">NTP를 사용하여 시스템 시간을 동기화합니다</block>
   <block id="b1d3a32a00e7d497fcf31c70542c202e" category="summary">MetroCluster 9.7부터 ONTAP 중재자인 ONTAP Tiebreaker 소프트웨어 또는 세 번째 사이트에 다운로드하여 설치할 수 있습니다.</block>
   <block id="0e0fb7c8f8c90679b6de81eb83cc9c05" category="paragraph">ONTAP 9.7부터 MetroCluster 볼륨은 FlexCache 구성에서 지원됩니다. 스위치오버 또는 스위치백 작업 후 수동 재시행을 위한 요구 사항을 숙지해야 합니다.</block>
@@ -10758,7 +10089,6 @@
   <block id="39589e51e55e8de5e8ef15bb661355d7" category="list-text">48로 제어 TCP 연결을 구성하고 데이터 연결을 26으로 구성하여 해당 DSCP(Differentiated Services Code Point) 값에 있는 모든 패킷을 표시합니다.</block>
   <block id="62e6ef0d9ca5ed550d07c950fb908783" category="list-text">48에 대한 제어 TCP 연결 및 26에 대한 데이터 연결을 구성하여 해당 DSCP(Differentiated Services Code Point) 값에 있는 모든 패킷을 표시합니다.</block>
   <block id="cae6c8fdb4bf6ec6d4303accb806c01e" category="list-text">다음 프로파일 이름으로 FCIP 프로파일을 구성합니다.</block>
-  <block id="186580027a6082f2b0bf52acc31fef23" category="list-text">IOD 설정을 확인합니다.</block>
   <block id="d805df154de0ed954114c0b8a30d6cf0" category="list-text">각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화됩니다.</block>
   <block id="539aa46206b59c007151f02f46d35617" category="list-text">정상적인 사이트의 노드 중 테이크오버 상태가 아닌 노드는 없습니다.</block>
   <block id="9630e0ae86014261ce835fe1e1ffcd0e" category="paragraph">각 스위치에 대해 이 작업을 연속으로 반복해야 합니다.</block>
@@ -10802,8 +10132,6 @@
   <block id="a6bcf63661955f7af02bb69a2cd4d604" category="section-title">기존 구성에 쉘프 추가</block>
   <block id="9d8f122e284d64a31d50c5040fe4f338" category="section-title">이동할 연결입니다</block>
   <block id="508763c5ecfa3096ab25520f14c971f5" category="paragraph">에 설명된 포트를 사용합니다 <block ref="10769c5348734bed7e40370eea435ab1" category="inline-xref-macro-rx"></block>.</block>
-  <block id="dd23316b696cd08f3479c6e2d7baadc0" category="inline-link">AFF 또는 FAS 시스템의 설치 절차</block>
-  <block id="17959b19c1c128d5d74608a22de28cf9" category="paragraph"><block ref="17959b19c1c128d5d74608a22de28cf9" category="inline-link-rx"></block></block>
   <block id="e5303b615c196a6ae1c68873f1d05073" category="sidebar">Brocade FC 스위치를 수동으로 구성합니다</block>
   <block id="2e7e413d490de09cb96837b5567b668c" category="paragraph"><block ref="2e7e413d490de09cb96837b5567b668c" category="inline-link-macro-rx"></block></block>
   <block id="97f70489df0d405722087f0f98dc7c3f" category="paragraph"><block ref="97f70489df0d405722087f0f98dc7c3f" category="inline-link-macro-rx"></block></block>
@@ -10820,9 +10148,7 @@
   <block id="76c06c220bafe4dc7e175b4584717344" category="paragraph"><block ref="76c06c220bafe4dc7e175b4584717344" category="inline-link-macro-rx"></block></block>
   <block id="2445f74267948c10619896a5e47cd3d6" category="paragraph">의 단계를 수행합니다 <block ref="0e3caa859006182753aee07c6f57c3cf" category="inline-link-macro-rx"></block>.</block>
   <block id="b0f85a0199d1b83b2b8a32a5f34bdd8d" category="paragraph">기존 스위치를 사용하는 경우 로 진행합니다 <block ref="4da30401760153ceb5481ac559dbe601" category="inline-link-macro-rx"></block>.</block>
-  <block id="f44903a02a813582e3877d0c017bdfcb" category="paragraph"><block ref="f44903a02a813582e3877d0c017bdfcb" category="inline-link-macro-rx"></block></block>
   <block id="255e6fa1222b0f5f7521f1965844c1bf" category="paragraph">계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 <block ref="245303d2c60ac1935683ed89eb13f165" category="inline-link-macro-rx"></block>.</block>
-  <block id="bc08b638ff7480a2fa85e0dcdee0d692" category="paragraph"><block ref="bc08b638ff7480a2fa85e0dcdee0d692" category="inline-link-macro-rx"></block></block>
   <block id="26ae7bdd1d6fb8c4886e6fde8d12601c" category="list-text">지연 시간</block>
   <block id="a825d9b135e0604b1a8244aa950f4952" category="paragraph">FC 노드의 로컬 클러스터 인터페이스입니다</block>
   <block id="32e69a0f5d950aefcb7cefee34c73d19" category="paragraph">FAS500f/A250</block>
@@ -10880,13 +10206,11 @@
   <block id="4382ff0992965ffdabb9c638b6f2ecf2" category="list-text">AFF A900 또는 FAS9500 스토리지 시스템에는 8개의 FC-VI 포트가 필요합니다. AFF A900 또는 FAS9500을 사용하는 경우 8포트 구성을 사용해야 합니다. 구성에 다른 스토리지 시스템 모델이 포함된 경우, 표에 표시된 케이블을 사용하되 불필요한 FC-VI 포트의 케이블은 무시합니다.</block>
   <block id="649ae78fb315c7c5f6a700dfdf86f4bb" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성에서 ISL에 대한 AFF A900 또는 FAS9500-Cisco 포트 사용</block>
   <block id="a0bc38f50488b4f686bd2fe145def041" category="inline-link-macro">MetroCluster 구성 - 해결 가이드에서 노드를 제거하는 방법</block>
-  <block id="8b54a6608c7aceee8d4dfde954124547" category="admonition">MetroCluster 구성 해제를 되돌릴 수 없습니다. 이 프로세스는 기술 지원 부서의 도움을 받아야 합니다. NetApp 기술 지원 팀에 문의하여 에서 구성에 적합한 가이드를 참조하십시오 <block ref="c2ef60fcbce343052d34da400cf98089" category="inline-link-macro-rx"></block></block>
   <block id="8ec1014b27ed523596c5c910443b0827" category="paragraph">AFF A900 및 FAS9500</block>
   <block id="87ba2462050ce75d6d9915d834efe9b7" category="doc">AFF ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 ISL에 대한 A900 또는 FAS9500 - Brocade 포트 사용</block>
   <block id="801938c63db0b16215aa712c6d1fd12c" category="paragraph">다음 표에서는 AFF A900 또는 FAS9500 시스템의 Brocade 스위치에 대한 ISL 포트 사용을 보여 줍니다.</block>
   <block id="1dcd768f9d116bda4a2253d295e01fb8" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 또는 FAS9500 컨트롤러에 Brocade 포트를 사용합니다</block>
   <block id="e33ab3eabb81d3db08bba17fee6ed399" category="paragraph">다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 4개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. AFF A900 및 FAS9500 시스템에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.</block>
-  <block id="e0477011a5767f5250fc49bfe9ab153c" category="list-text">AFF A700, FAS9000, AFF A900 및 FAS9500 스토리지 시스템은 패브릭당 최대 8개의 ISL을 지원합니다. 다른 스토리지 시스템 모델은 Fabric당 최대 4개의 ISL을 지원합니다.</block>
   <block id="f7326e6cfc29ebefdb936677ae7dd110" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 또는 FAS9500 컨트롤러에 대한 Cisco 포트 사용</block>
   <block id="dfed8939b1f16a32e24cbf7db94e77b4" category="paragraph">이 표에는 DR 그룹에 AFF A900 또는 FAS9500 컨트롤러 모듈 8개가 포함된 지원되는 최대 구성이 나와 있습니다.</block>
   <block id="850f7b79a5d7e3532f3461f2abbf9036" category="list-text">다음 표에는 FC-VI 포트가 8개인 시스템이 나와 있습니다. AFF A900 및 FAS9500에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.</block>
@@ -11508,7 +10832,6 @@
   <block id="3e0a52646b307379f47860044c088d60" category="paragraph">각 외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="8e65b308ba381d7e7d885330e749b55d" category="list-text">AFF A700 유형의 4노드 MetroCluster 구성 2개를 케이블로 연결한 경우 첫 번째 MetroCluster를 "MetroCluster 1"로 연결하고 두 번째 MetroCluster를 AFF A700 표에서 "MetroCluster 2"로 연결합니다.</block>
   <block id="e5c3d25338f9cf52b0644af8df5dd491" category="admonition">포트 13 및 14는 40Gbps 및 100Gbps를 지원하는 기본 속도 모드 또는 4 × 25Gbps 또는 4 × 10Gbps 지원을 위한 브레이크아웃 모드에서 사용할 수 있습니다. 기본 속도 모드를 사용하는 경우 포트 13과 14로 표시됩니다. 브레이크아웃 모드(4×25Gbps 또는 4×10Gbps)를 사용하는 경우 포트 13s0-3 및 14s0-3으로 표시됩니다.</block>
-  <block id="52d00daf67aaaf387590e09043aff43a" category="list-text"><block ref="52d00daf67aaaf387590e09043aff43a" category="inline-link-macro-rx"></block></block>
   <block id="49cc90fa19d302674a7ac32a31b7a0c8" category="list-text"><block ref="49cc90fa19d302674a7ac32a31b7a0c8" category="inline-link-macro-rx"></block></block>
   <block id="566b66a4b36764e94944f56424f3b3ca" category="paragraph">다음 명령을 실행합니다.<block ref="fdb848f6761ac46e0ea7678b5269bd3c" prefix=" " category="inline-code"></block></block>
   <block id="65cc666ecd4a5bdf3c624b12e425c91f" category="admonition">구성을 변경하려면 컨트롤러를 재부팅해야 합니다.</block>
@@ -11744,7 +11067,6 @@
   <block id="3c8938b87b13dff113f84a2814ddff39" category="paragraph"><block ref="f7fd6058274b87da3f8cba419f53bb7e" prefix="" category="inline-code"></block></block>
   <block id="1ad5a70ead9bdd722df6000495e21c24" category="list-text">Fabric OS 8.2.x 이하를 실행 중인 경우 라이센스 방법을 동적으로 변경해야 합니다.</block>
   <block id="7fafa568d6f3c9a0ee98323f64b1c01c" category="admonition">Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.</block>
-  <block id="0b6c4085e3a8dba280dd11e4bbbbeee1" category="paragraph">'license' 명령을 사용하여 라이센스가 설치되었는지 확인할 수 있습니다.</block>
   <block id="6c05b41ac12af301a1c1201b16997220" category="paragraph">두 사이트에서 동시에 이 절차의 단계를 수행해야 합니다.</block>
   <block id="a934aebb7868eacad4999d15212ac85f" category="list-text">4노드 또는 8노드 MetroCluster 구성의 경우 를 사용합니다<block ref="1f019d491fcfc3956d780ccfd54601ba" prefix=" " category="inline-code"></block> 및<block ref="6c99881ddd2f188436900ed8d41d99ba" prefix=" " category="inline-code"></block> 매개 변수:</block>
   <block id="28289de886d4bf23487d962fb6a696a3" category="summary">사용 가능한 포트가 있는 기존 FiberBridge 7600N 또는 7500N 브리지 쌍에 SAS 디스크 쉘프 스택을 핫 추가할 수 있습니다.</block>
@@ -12064,7 +11386,6 @@
   <block id="7d04b9af5dfbfc78c7040183f68afdc4" category="cell">Red Hat 8.1 - 8.7</block>
   <block id="003d136e5089a4f9ae0f1df3f6fc37fa" category="cell">Rocky Linux 9.0</block>
   <block id="c422062a1c7b3d9ed9b2282378699dc7" category="paragraph"><block ref="c422062a1c7b3d9ed9b2282378699dc7" category="inline-link-macro-rx"></block></block>
-  <block id="f54824b249675e35c90a450877126d13" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
   <block id="94d0fc55d9356d3d18534836cae75c1d" category="doc">FC 스위치 구성 개요</block>
   <block id="67af9bc4271944d43da3bdca5451bf73" category="paragraph">RCF 파일을 사용하여 Cisco 및 Brocade FC 스위치를 구성하거나, 필요한 경우 스위치를 수동으로 구성할 수 있습니다.</block>
   <block id="02d80d458a48a16bd927a203d6bb2c73" category="list-text">조닝 구성을 확인합니다.</block>
@@ -12627,7 +11948,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="06aef4d1d6158c53520054dd04cc3a52" category="inline-link-macro">Tiebreaker 1.4를 설치합니다</block>
   <block id="bd7d740c7178aa2df12a81e3a095cf7a" category="paragraph"><block ref="bd7d740c7178aa2df12a81e3a095cf7a" category="inline-link-macro-rx"></block></block>
   <block id="afd755a1fe90c01febccbd2e397b9780" category="summary">호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.6으로 업그레이드하여 MetroCluster 구성을 모니터링합니다.</block>
-  <block id="92cf4933e9c8bfb818863f455e477af5" category="paragraph"><block ref="92cf4933e9c8bfb818863f455e477af5" category="inline-link-macro-rx"></block></block>
   <block id="00395061ba5a721f2a906e4ac75f9fde" category="inline-link-macro">MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소를 설정합니다</block>
   <block id="e0e300856a5e4a2a419fdf0d5fb20e62" category="admonition">애그리게이트를 구성하기 전에 에 설명된 대로 오브젝트 저장소를 설정해야 합니다 <block ref="bf6f1feb5dfb0381998cf99478ab26ea" category="inline-link-macro-rx"></block>.</block>
   <block id="39998026607048d04a8bc09fac18fa8f" category="paragraph">ONTAP 9.11.1부터 <block ref="7a1a77fa3bd3a175233cd6cdfe493836" category="inline-link-macro-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
@@ -12871,7 +12191,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link-macro">상호 운용성 매트릭스 툴(IMT)</block>
   <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
   <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
-  <block id="8872b0d09737dfd9b6fcafd4e8c2356b" category="list-text"><block ref="8872b0d09737dfd9b6fcafd4e8c2356b" category="inline-link-rx"></block></block>
   <block id="80d79e74efb3cf7c2ad45e7e1c96223d" category="inline-link-macro">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="9dce4db3e352a666d92ce25dd5f94a51" category="list-text"><block ref="9dce4db3e352a666d92ce25dd5f94a51" category="inline-link-macro-rx"></block></block>
   <block id="59908dc1540a829f2e5b2241e8bda0cd" category="inline-link-macro">NVIDIA IP RCF 파일을 다운로드하고 설치합니다</block>
@@ -13388,7 +12707,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="330acb0fa4964235e5dabc85b0488f57" category="list-text">이 전체 절차를 반복하여 MetroCluster 구성의 각 노드에서 HA 상태를 확인합니다.</block>
   <block id="84afb0fe12dfc2a5fa1e2e978393b33c" category="paragraph">MetroCluster FC 구성에서 스토리지 시스템을 구성할 경우 컨트롤러 모듈 및 섀시 구성 요소의 HA(고가용성) 상태가 MCC 또는 MCC-2n인지 확인하여 구성 요소가 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.</block>
   <block id="cbc29e9b371b7013e6625c2fa3c7ec20" category="paragraph">MetroCluster IP 구성에서 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 "'mcip'"으로 설정되어 있는지 확인하여 올바르게 부팅되도록 해야 합니다. 이 값은 공장에서 받은 시스템에서 미리 구성되어야 하지만 계속하기 전에 설정을 확인해야 합니다.</block>
-  <block id="b6eb7f38a057c8f63ffc29f23e6be071" category="sidebar">8노드 구성을 구성하는 방법</block>
   <block id="37887b7927053bae8056fe215242ac04" category="list-text">MetroCluster IP 구성에서 의 단계를 <block ref="e39e92837d61810422f20d9c0acf650b" category="inline-link-macro-rx"></block>따릅니다.</block>
   <block id="654458233d1a8772886f997ae2b46c7c" category="paragraph">v0a(v0b 등)가 존재하면 연결을 지속적으로 확인하여 LIF 마이그레이션 또는 페일오버가 성공하는지 보장합니다(L2와 달리, 중단된 구성은 중단 후에만 표시됨).</block>
   <block id="705abb444ac66e0442a9ae4646471061" category="list-text">두 스위치 모두에서 다음 명령을 실행하여 새 스위치를 사용하지 않도록 설정합니다.</block>
@@ -14169,9 +13487,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f4c0383379a5ae93d0b5e4c4f8586e47" category="open-title">공유 클러스터/HA 포트를 사용하는 시스템</block>
   <block id="fce1683696c48d3d34e98e19d634ae19" category="open-title">공유 MetroCluster/HA 포트를 사용하는 시스템</block>
   <block id="d28dfcbdf9345468d87d930393f61e28" category="list-text"><block ref="82b8350d28f0a14e36de1958b3be9205" prefix=" " category="inline-code"></block>각 재해 사이트 노드에 대한 프롬프트에서 플랫폼 모델이 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 bootarg 값을 설정합니다.</block>
-  <block id="e29199cddef5792300b3b221f3ce1de2" category="paragraph">ONTAP MetroCluster 구성의 각 컨트롤러에서 FC-VI 어댑터와 HBA를 기존 FC 스위치의 특정 포트에 케이블로 연결해야 합니다.</block>
-  <block id="7c18898ad95897990e485c3e2e9a3d5a" category="list-text">Brocade 6510 스위치는 7-Mode 패브릭 MetroCluster 및 ONTAP MetroCluster 구성에서 지원되는 FOS 펌웨어 버전을 실행해야 합니다.</block>
-  <block id="f408004d3c0a89f19911c0f8ff32d59b" category="paragraph">데이터를 전환한 후 7-Mode 패브릭 MetroCluster 케이블 연결을 제거하고, 원하는 경우 ONTAP MetroCluster 케이블을 7-Mode MetroCluster 케이블 연결에 사용된 더 낮은 번호 포트로 이동할 수 있습니다. 포트는 "4노드 MetroCluster에 대한 FC 스위치 포트 할당 검토" 섹션에 나와 있습니다. 재정렬된 포트에 대해 조닝을 조정해야 합니다.</block>
   <block id="f6c5a69060b62d046efbd190570cf383" category="admonition">이 예에서는 RCF를 구성하는 데 필요한 최소 정보를 보여 주며, RCF를 적용한 후 추가 옵션을 구성할 수 있습니다. 예를 들어 RCF를 적용한 후 SNMPv3, NTP 또는 SCP/SFTP를 구성할 수 있습니다.</block>
   <block id="6ca034f6a518722187e6a10bfc2df9e6" category="admonition">컨트롤러의 전원을 켜기 전에 쉘프의 전원을 먼저 켜지 마십시오. 이렇게 하면 컨트롤러가 의도하지 않은 ONTAP로 부팅되지 않습니다.</block>
   <block id="604b473cd250fb4d83bbbab434f091fb" category="paragraph">이 예에서는 ONTAP를 실행 중인 컨트롤러에서 플렉스를 오프라인으로 전환하기 위한 명령이 나와 있습니다.</block>
@@ -14664,7 +13979,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ca243f374acfb56a77236e0d30935f7f" category="list-text">사용자가 스위치 명령에 액세스할 수 있어야<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> 합니다. 이러한 사용자를 사용할 수 없는 경우 새 사용자를 만들고 사용자에게 필요한 권한을 부여합니다.</block>
   <block id="8d36506446d5ad8477c75d9150e6528f" category="list-text">스위치에 대해 스위치 상태 모니터링을 활성화해야 합니다. 이를 확인하려면 다음을 확인하세요. <block ref="83bb5774e6e4dc96959b12bfa4334f18" prefix=" " category="inline-code"></block> 필드는 출력에서 *true*로 설정됩니다. <block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="40b03f9635c63b20aade0ff8145eafb8" category="list-text">Broadcom 및 Cisco 스위치를 사용한 로그 수집:</block>
-  <block id="89f1dd995a5c07ea1e13abc5993d9d59" category="list-text">사용자에게 네트워크 관리자 Privileges가 있어야 합니다.</block>
   <block id="60f743043272b873831b17c5e7290445" category="list-text">로그 수집이 활성화된 상태에서 각 클러스터 설정에 대해 스위치에 새 사용자를 생성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.</block>
   <block id="c1433b541d8d99faed86a93460cb0bad" category="list-text">NVIDIA 스위치를 사용한 지원 로그 수집의 경우<block ref="c85737d6a0d20328583b59ea7320a5ef" prefix=" " category="inline-code"></block> 암호를 제공하지 않고 명령을 실행할 수 있는 _user_ 로그 수집이 허용되어야 합니다. 이 사용을 허용하려면 다음 명령을 실행합니다.</block>
   <block id="a0379ee208b1ca86b0ce11e60c0e73eb" category="paragraph"><block ref="83e3f80a08612b0113ac48e3b9a3432e" prefix="" category="inline-code"></block></block>
@@ -14981,4 +14295,32 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b8aa75f85ab89774f69f787c3912bd4a" category="section-title">새 컨트롤러에 내부 드라이브를 다시 추가합니다.</block>
   <block id="a5418696f5bd16fb72497595b65b899d" category="admonition">이 작업은 특정 업그레이드 조합에만 적용됩니다. 자세한 내용은 을 <block ref="63ae90b2306cb4f5a770ba51c50d383a" category="inline-link-macro-rx"></block> 참조하십시오.</block>
   <block id="f98f4af1e88acc06b614726a822ddb15" category="paragraph">. 업그레이드 조합에 *참고 2* 표시가 있는 경우 새 시스템에서 내부 드라이브를 제거하거나 분리해야 합니다</block>
+  <block id="39e8057e214765dae86d121a785344c8" category="list-text"><block ref="39e8057e214765dae86d121a785344c8" category="inline-link-macro-rx"></block></block>
+  <block id="e499949cff5b1814cf723856fb14bc68" category="summary">노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다.</block>
+  <block id="1015149d257695c82b3ee87b4d5e55b7" category="list-text">새로운 집계에서 어떤 드라이브가 사용될지 확인하세요.</block>
+  <block id="f4aae2f587ce3bbaed06f1f3e8edfafe" category="paragraph">MetroCluster 구성을 제거해야 하는 경우 기술 지원 부서에 문의하십시오.</block>
+  <block id="cadbbddc821f7f9f40f0ee060234d48b" category="paragraph">NetApp 기술 지원팀에 문의하여 구성에 적합한 가이드를 참조하세요. <block ref="c2ef60fcbce343052d34da400cf98089" category="inline-link-macro-rx"></block></block>
+  <block id="8acdc5308983b14f48ef0491a4b7dca2" category="admonition">MetroCluster 구성 해제를 되돌릴 수 없습니다. 이 프로세스는 기술 지원 부서의 도움을 받아야 합니다. MetroCluster 구성을 제거한 후에는 모든 디스크 연결 및 상호 연결을 지원되는 상태로 조정해야 합니다.</block>
+  <block id="34dbe0f08a22a7e96d372d8f047dd0aa" category="summary">MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다.</block>
+  <block id="c5ec40ca0858141f1dfc6090c1afe26a" category="section-title">8노드 MetroCluster IP 구성 구성</block>
+  <block id="baf389d8079bcd40a8512f15620a6504" category="inline-link-macro">4노드 MetroCluster IP 구성을 8노드 구성으로 확장</block>
+  <block id="da5260de1bd80de8e37a9ab8f4f2535c" category="paragraph">8노드 MetroCluster 구성은 2개의 DR 그룹으로 구성됩니다. 첫 번째 DR 그룹을 구성하려면 이 섹션의 작업을 완료하세요. 첫 번째 DR 그룹을 구성한 후 다음 단계를 따르세요. <block ref="ca181c37200e98f54ddb8db46d698258" category="inline-link-macro-rx"></block> .</block>
+  <block id="bc538e17b00371638bfeff8aa7231dc1" category="doc">MetroCluster IP 구성에서 미러링되지 않은 집계에 대해 알아보세요.</block>
+  <block id="bfc0c2345be1e56a7198a484e17e4342" category="section-title">미러링되지 않은 집계 및 계층적 네임스페이스</block>
+  <block id="26a653ff364d1b6a39f4759a824c3c1a" category="section-title">전원 차단이 필요한 미러링되지 않은 집계 및 유지 관리</block>
+  <block id="c714c7e022d3dca698d41798c7772c9e" category="paragraph">사이트 전체의 전원을 차단해야 하는 유지 관리를 위한 협상된 전환을 수행하는 경우 먼저 재해 사이트가 소유한 미러링되지 않은 집계를 수동으로 오프라인으로 설정해야 합니다.</block>
+  <block id="b948fd74f64e5338e8ffa07d28662207" category="paragraph">재해 사이트가 소유한 미러링되지 않은 집계를 오프라인으로 설정하지 않으면, 다중 디스크 패닉으로 인해 정상 운영 사이트의 노드가 다운될 수 있습니다. 이는 정전이나 ISL 손실로 인해 재해 사이트의 스토리지 연결이 끊어져 스위치오버된 미러링되지 않은 집계가 오프라인 상태가 되거나 누락되는 경우에 발생할 수 있습니다.</block>
+  <block id="499fa42e89a3bcf83d69094c44340ab1" category="section-title">미러링되지 않은 집계, CRS 메타데이터 볼륨 및 데이터 SVM 루트 볼륨</block>
+  <block id="56ea87073f92be67542e7a1d2954ab40" category="paragraph">CRS(구성 복제 서비스) 메타데이터 볼륨 및 데이터 SVM 루트 볼륨은 미러링된 Aggregate에 있어야 합니다. 이러한 볼륨을 미러링되지 않은 애그리게이트로 이동할 수 없습니다. 미러링되지 않은 집계에 있는 경우 협상된 전환 및 스위치백 작업은 거부되며 <block ref="76dc6201d136e34774708961e9b61505" prefix=" " category="inline-code"></block> 명령은 경고를 반환합니다.</block>
+  <block id="abdaef6a3d1ec476877395bc542ad2eb" category="section-title">미러링되지 않은 집계 및 SVM</block>
+  <block id="a74f73bf026b4aedceebc15d2a039449" category="paragraph">SVM은 미러링된 집계에만 구성하거나 미러링되지 않은 집계에만 구성해야 합니다. 미러링되지 않은 집계와 미러링된 집계를 모두 혼합하여 SVM을 구성하면 전환 작업에 120초가 초과될 수 있습니다. 미러링되지 않은 집계가 온라인 상태가 되지 않으면 데이터 중단이 발생할 수 있습니다.</block>
+  <block id="2c19869470daf1847ae41e2fd8e9afed" category="section-title">미러링되지 않은 집계 및 SAN</block>
+  <block id="a2b50dd773b41712ce2e75c040d9bb4d" category="paragraph">ONTAP 9.9.1 이전에는 LUN을 미러링되지 않은 집계에 위치시키면 안 됩니다. 미러링되지 않은 애그리게이트에 LUN을 구성하면 스위치오버 작업이 120초를 초과하고 데이터 중단이 발생할 수 있습니다.</block>
+  <block id="2fc694052b4d0c9fddb171c279d9ff41" category="section-title">거울이 없는 골재에 보관 선반을 추가합니다.</block>
+  <block id="340ee9c6b389308075f20882f44ee863" category="paragraph">선반을 추가하고 MetroCluster IP 구성에서 미러링되지 않은 집계에 사용하려는 경우 다음을 수행해야 합니다.</block>
+  <block id="fb945b959f6754639fad6c6e9e9469b9" category="list-text">로컬 사용자는 네트워크 관리자 권한이 있어야 합니다.</block>
+  <block id="5ea27988b4071e332e850721389e951a" category="doc">올바른 MetroCluster IP 스위치 구성 절차를 선택하세요</block>
+  <block id="b9b3d7865c01f9cccab728c6d2bb7296" category="paragraph">백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 따라야 할 절차는 스위치 공급업체에 따라 다릅니다.</block>
+  <block id="528aafe8fc362d0088ddcc230e89b62a" category="doc">여러 MetroCluster IP 구성에서 포트 테이블을 사용하는 방법</block>
+  <block id="760419501f92fb637e39b91dbfd2ea18" category="summary">저장 컨트롤러가 저장 선반에 연결되는 방식에 따라 올바른 설치 절차를 선택해야 합니다.</block>
 </blocks>

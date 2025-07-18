@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: ip, switch, configuring 
 summary: 백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 
 ---
-= 스위치 구성
+= 올바른 MetroCluster IP 스위치 구성 절차를 선택하세요
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다.
+백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 따라야 할 절차는 스위치 공급업체에 따라 다릅니다.
 
 * link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
 * link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]

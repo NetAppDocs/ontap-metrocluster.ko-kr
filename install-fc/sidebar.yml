@@ -10,10 +10,6 @@ entries:
     url: "/install-fc/concept_considerations_differences.html"
   - title: 클러스터 피어링
     url: "/install-fc/concept_considerations_peering.html"
-  - title: 네이티브 디스크 쉘프 또는 어레이 LUN을 사용하는 MetroCluster 구성에 대한 고려사항
-    url: "/install-fc/concept_considerations_array_luns.html"
-  - title: 7-Mode에서 ONTAP로 전환할 때의 고려 사항
-    url: "/install-fc/concept_considerations_7mt.html"
   - title: ISL에 대한 고려 사항
     url: "/install-fc/concept_considerations_isls_mcfc.html"
   - title: 패브릭 연결 MetroCluster 구성에서 TDM/WDM 장비를 사용하기 위한 고려 사항
@@ -24,8 +20,6 @@ entries:
     url: "/install-fc/concept_considerations_unmirrored_aggrs.html"
   - title: MetroCluster 사이트의 방화벽 사용
     url: "/install-fc/concept_considerations_firewalls.html"
-- title: 구성에 맞는 올바른 설치 절차를 선택하십시오
-  url: "/install-fc/concept_choosing_the_correct_installation_procedure_for_your_configuration_mcc_install.html"
 - title: 패브릭 연결 MetroCluster 구성에 케이블을 연결합니다
   entries:
   - title: 개요
@@ -104,118 +98,14 @@ entries:
       url: "/install-fc/task_fcsw_cisco_configure_a_cisco_switch_supertask.html"
   - title: FC-to-SAS 브릿지와 SAS 디스크 쉘프를 설치합니다
     url: "/install-fc/task_install_fc_sas_bridges_shelves.html"
-- title: 전환 중에 Brocade 6510 FC 패브릭을 공유하기 위한 하드웨어를 구성합니다
-  entries:
-  - title: 개요
-    url: "/install-fc/task_fmc_mcc_transition_configure_the_mcc_hardware_for_share_a_7_mode_brocade_6510_fc_fabric_dure_transition.html"
-  - title: Brocade 라이센스 요구 사항을 검토합니다
-    url: "/install-fc/concept_fcsw_brocade_reviewing_brocade_license_requirements.html"
-  - title: 하드웨어 구성 요소를 랙에 장착하십시오
-    url: "/install-fc/task_rack_the_hardware_components_mcc_fabric_and_ip.html"
-  - title: 새 MetroCluster 컨트롤러를 기존 FC 패브릭에 연결합니다
-    url: "/install-fc/task_fmc_mcc_transition_cable_the_new_mcc_controllers_to_the_exist_fc_fabrics.html"
-  - title: 7-Mode와 clustered MetroCluster 구성 간에 스위치 패브릭을 공유할 수 있습니다
-    entries:
-    - title: 스위치 패브릭 중 하나를 비활성화합니다
-      url: "/install-fc/task_fmc_mcc_transition_disable_one_of_the_switch_fabrics.html"
-    - title: TI 조닝을 삭제하고 IOD 설정을 구성합니다
-      url: "/install-fc/task_fmc_mcc_transition_configure_zone_and_qos.html"
-    - title: ISL이 동일한 포트 그룹에 있는지 확인하고 조닝을 구성합니다
-      url: "/install-fc/task_fmc_mcc_transition_ensure_isls_are_in_the_same_port_group_and_configure_zon.html"
-    - title: 스위치 패브릭을 다시 설정하고 작업을 확인합니다
-      url: "/install-fc/task_fmc_mcc_transition_reenable_the_switch_fabric_and_verify_operation.html"
 - title: ONTAP에서 MetroCluster 소프트웨어를 구성합니다
   url: "/install-fc/concept_configure_the_mcc_software_in_ontap.html"
 - title: MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항
   url: "/install-fc/concept_considerations_for_using_virtual_ip_and_border_gateway_protocol_with_a_mcc_configuration.html"
 - title: MetroCluster 구성을 테스트합니다
   url: "/install-fc/task_test_the_mcc_configuration.html"
-- title: MetroCluster 구성을 제거할 때의 고려 사항
+- title: MetroCluster 구성을 제거합니다
   url: "/install-fc/concept_considerations_when_removing_mcc_configurations.html"
-- title: 스토리지 LUN을 사용하여 MetroCluster 구성을 계획 및 설치합니다
-  entries:
-  - title: 스토리지 LUN을 사용한 MetroCluster 구성 계획
-    url: "/install-fc/concept_planning_for_a_mcc_configuration_with_array_luns.html"
-  - title: 어레이 LUN에서 지원되는 MetroCluster 구성
-    url: "/install-fc/reference_supported_mcc_configuration_with_array_luns.html"
-  - title: 스토리지 LUN이 포함된 MetroCluster 구성 요구 사항
-    url: "/install-fc/reference_requirements_for_a_mcc_configuration_with_array_luns_reference.html"
-  - title: 어레이 LUN을 사용하는 구성에서 MetroCluster 구성 요소를 설치하고 케이블로 연결합니다
-    entries:
-    - title: 어레이 LUN이 있는 MetroCluster 구성에서 하드웨어 구성 요소를 랙에 구성합니다
-      url: "/install-fc/task_rack_the_hardware_components_in_a_mcc_configuration_with_array_luns.html"
-    - title: ONTAP 시스템에서 사용할 스토리지 어레이를 준비합니다
-      url: "/install-fc/task_prepare_a_storage_array_for_use_with_ontap_systems.html"
-    - title: 스토리지 LUN이 있는 MetroCluster 구성에 필요한 스위치 포트
-      url: "/install-fc/concept_switch_ports_required_for_a_eight_node_mcc_configuration_with_array_luns.html"
-    - title: 스토리지 LUN이 있는 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
-      entries:
-      - title: 어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
-        url: "/install-fc/task_cable_the_fc_vi_and_hba_ports_to_switches_in_a_two_node_fabric_attached_mcc_configuration_with_array_luns.html"
-      - title: 스토리지 LUN을 사용하는 4노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
-        url: "/install-fc/task_cable_the_fc_vi_and_hba_ports_to_switches_in_a_four_node_fabric_attached_mcc_configuration_with_array_luns.html"
-      - title: 스토리지 LUN을 사용하는 8노드 패브릭 연결 MetroCluster 구성에서 FC-VI 및 HBA 포트에 케이블을 연결합니다
-        url: "/install-fc/task_cable_the_fc_vi_and_hba_ports_to_switches_in_an_eight_node_fabric_attached_mcc_configuration_with_array_luns.html"
-    - title: 스토리지 LUN이 있는 MetroCluster 구성에서 ISL 케이블 연결
-      url: "/install-fc/task_cable_the_isls_in_a_mcc_configuration_with_array_luns.html"
-    - title: 8노드 또는 4노드 구성으로 클러스터 인터커넥트에 케이블을 연결합니다
-      url: "/install-fc/task_cable_the_cluster_interconnect_in_four_node_configurations.html"
-    - title: 클러스터 피어링 연결에 케이블을 연결합니다
-      url: "/install-fc/task_cable_the_cluster_peering_connections.html"
-    - title: 필요한 경우 HA 인터커넥트에 케이블을 연결합니다
-      url: "/install-fc/task_cable_the_ha_interconnect.html"
-    - title: 관리 및 데이터 연결에 케이블을 연결합니다
-      url: "/install-fc/task_cable_the_management_and_data_connections.html"
-    - title: MetroCluster 구성에서 스토리지 어레이를 FC 스위치에 케이블로 연결합니다
-      entries:
-      - title: 개요
-        url: "/install-fc/task_cable_storage_arrays_to_fc_switches_in_a_mcc_configuration.html"
-      - title: 2노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 케이블로 연결하는 예
-        url: "/install-fc/reference_example_of_cabling_array_luns_to_fc_switches_in_a_two_node_mcc_configuration.html"
-      - title: 4노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예
-        url: "/install-fc/reference_example_of_cabling_array_luns_to_fc_switches_in_a_four_node_mcc_configuration.html"
-      - title: 8노드 MetroCluster 구성에서 스토리지 어레이 포트를 FC 스위치에 연결하는 예
-        url: "/install-fc/reference_example_of_cabling_array_luns_to_fc_switches_in_an_eight_node_mcc_configuration.html"
-  - title: 어레이 LUN이 있는 MetroCluster 구성에서 스위치 조닝
-    entries:
-    - title: 어레이 LUN이 있는 MetroCluster 구성의 스위치 조닝에 대한 요구사항
-      url: "/install-fc/reference_requirements_for_switch_zoning_in_a_mcc_configuration_with_array_luns.html"
-    - title: 어레이 LUN이 있는 2노드 MetroCluster 구성에서 스위치 조닝의 예
-      url: "/install-fc/concept_example_of_switch_zoning_in_a_two_node_mcc_configuration_with_array_luns.html"
-    - title: 어레이 LUN이 있는 4노드 MetroCluster 구성의 스위치 조닝의 예
-      url: "/install-fc/concept_example_of_switch_zoning_in_a_four_node_mcc_configuration_with_array_luns.html"
-    - title: 어레이 LUN이 있는 8노드 MetroCluster 구성의 스위치 조닝의 예
-      url: "/install-fc/concept_example_of_switch_zoning_in_an_eight_node_mcc_configuration_with_array_luns.html"
-  - title: 어레이 LUN이 있는 MetroCluster 구성에서 ONTAP를 설정합니다
-    entries:
-    - title: 유지보수 모드에서 구성요소의 HA 상태 확인 및 구성
-      url: "/install-fc/task_verify_the_ha_state_of_components_is_mcc_or_mcc_2n_in_maintenance_mode.html"
-    - title: 스토리지 LUN만 사용하는 시스템에서 ONTAP 구성
-      url: "/install-fc/task_configure_ontap_on_a_system_that_uses_only_array_luns.html"
-    - title: 클러스터를 설정합니다
-      url: "/install-fc/concept_setting_up_the_cluster.html"
-    - title: MetroCluster 구성에서 스토리지 LUN을 사용하기 위한 라이센스를 설치합니다
-      url: "/install-fc/task_install_the_license_for_us_array_luns_in_a_mcc_configuration.html"
-    - title: FAS8020 시스템에서 X1132A-R6 4중 포트 카드의 FC-VI 포트를 구성합니다
-      url: "/install-fc/task_configure_fc_vi_ports_on_a_x1132a_r6_quad_port_card.html"
-    - title: 스토리지 LUN의 소유권을 할당합니다
-      url: "/install-fc/task_assign_ownership_of_array_luns.html"
-    - title: 클러스터를 피합니다
-      url: "/install-fc/task_peer_the_clusters_mcc_with_array_luns.html"
-    - title: 루트 애그리게이트를 미러링합니다
-      url: "/install-fc/task_mirror_the_root_aggregates_mcc_with_array_luns.html"
-    - title: MetroCluster 구성에서 데이터 애그리게이트를 생성, 구축, 검증합니다
-      url: "/install-fc/task_create_data_aggregates_and_implement_the_configuration_mcc_with_array_luns.html"
-  - title: 디스크 및 어레이 LUN을 모두 사용하여 MetroCluster 구성을 구축합니다
-    entries:
-    - title: 개요
-      url: "/install-fc/concept_implementing_a_mcc_configuration_with_both_disks_and_array_luns.html"
-    - title: 디스크 및 스토리지 LUN을 사용하여 MetroCluster 구성을 구축할 때의 고려 사항
-      url: "/install-fc/concept_considerations_for_implementing_a_mcc_configuration_with_disks_and_array_luns.html"
-    - title: 디스크 및 어레이 LUN이 있는 2노드 패브릭 연결 MetroCluster 구성의 예
-      url: "/install-fc/reference_example_of_a_two_node_fabric_attached_mcc_configuration_with_disks_and_array_luns.html"
-    - title: 디스크 및 어레이 LUN이 있는 4노드 MetroCluster 구성의 예
-      url: "/install-fc/concept_example_of_a_four_node_mcc_configuration_with_disks_and_array_luns.html"
 - title: 추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하는 방법
   entries:
   - title: Active IQ Unified Manager 및 System Manager를 사용하여 추가 구성 및 모니터링을 수행하는 방법에

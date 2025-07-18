@@ -1,0 +1,8 @@
+---
+permalink: install-ip/considerations_unmirrored_aggrs.html 
+redirect: ontap-metrocluster/install-ip/concept_considerations_unmirrored_aggrs.html 
+---
+= 
+:allow-uri-read: 
+
+

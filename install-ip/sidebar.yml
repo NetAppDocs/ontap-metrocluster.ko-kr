@@ -36,7 +36,7 @@ entries:
       url: "/install-ip/concept-network-speeds-and-switchport-modes.html"
     - title: 스위치 포트 구성 예
       url: "/install-ip/concept-configure-mcc-compliant-switches.html"
-  - title: MetroCluster IP 구성의 미러링되지 않은 애그리게이트
+  - title: MetroCluster IP 구성에서 미러링되지 않은 집계에 대해 알아보세요.
     url: "/install-ip/concept_considerations_unmirrored_aggrs.html"
   - title: MetroCluster 사이트의 방화벽 사용
     url: "/install-ip/concept_considerations_firewalls.html"
@@ -70,6 +70,8 @@ entries:
     url: "/install-ip/task_cable_other_connections.html"
   - title: MetroCluster IP 스위치를 구성합니다
     entries:
+    - title: 올바른 MetroCluster IP 스위치 구성 절차를 선택하세요
+      url: "/install-ip/task_install_and_cable_the_mcc_components.html"
     - title: Broadcom IP 스위치를 구성합니다
       url: "/install-ip/task_switch_config_broadcom.html"
     - title: Cisco IP 스위치를 구성합니다
@@ -102,8 +104,6 @@ entries:
     entries:
     - title: 개요
       url: "/install-ip/concept_configure_the_mcc_software_in_ontap.html"
-    - title: 8노드 구성을 구성하는 방법
-      url: "/install-ip/task_sw_config_8n.html"
     - title: 필요한 정보를 수집합니다
       url: "/install-ip/task_sw_config_gather_info.html"
     - title: 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
@@ -120,8 +120,6 @@ entries:
       url: "/install-ip/task_sw_config_configure_clusters.html"
     - title: 엔드 투 엔드 암호화 구성
       url: "/install-ip/task-configure-end-to-end-encryption.html"
-    - title: 전환, 복구, 스위치백을 확인합니다
-      url: "/install-ip/task_sw_config_verify_switchover.html"
     - title: MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다
       url: "/install-ip/task_sw_config_configure_mediator.html"
     - title: 구성 백업 파일을 보호합니다
@@ -150,7 +148,7 @@ entries:
     url: "/install-ip/task-sm-mediator.html"
 - title: MetroCluster 구성을 테스트하는 중입니다
   url: "/install-ip/task_test_the_mcc_configuration.html"
-- title: MetroCluster 구성을 제거할 때의 고려 사항
+- title: MetroCluster 구성을 제거합니다
   url: "/install-ip/concept_considerations_when_removing_mcc_configurations.html"
 - title: MetroCluster 구성에서 ONTAP를 사용할 때의 고려 사항
   url: "/install-ip/concept_considerations_when_using_ontap_in_a_mcc_configuration.html"

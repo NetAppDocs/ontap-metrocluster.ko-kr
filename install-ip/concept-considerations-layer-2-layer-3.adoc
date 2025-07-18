@@ -1,7 +1,7 @@
 ---
 permalink: install-ip/concept-considerations-layer-2-layer-3.html 
 sidebar: sidebar 
-keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, array luns, mediator, tiebreaker 
+keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, mediator, tiebreaker 
 summary: 요구 사항에 따라 공유 계층 2 또는 계층 3 네트워크를 사용하여 MetroCluster를 배포할 수 있습니다. 
 ---
 = 공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항

@@ -26,10 +26,6 @@ MetroCluster 구성에는 다음과 같은 주요 하드웨어 요소가 포함�
 ** 더 짧은 거리에는 구리 SAS 케이블을 사용할 수 있습니다.
 ** 광 SAS 케이블을 사용하여 장거리 작업을 수행할 수 있습니다.
 +
-
-NOTE: E-Series 어레이 LUN을 사용하는 시스템에서는 스토리지 컨트롤러를 E-Series 스토리지 어레이에 직접 연결할 수 있습니다. 다른 스토리지 LUN의 경우 FC 스위치를 통한 접속이 필요합니다.
-
-+
 https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 
 +
