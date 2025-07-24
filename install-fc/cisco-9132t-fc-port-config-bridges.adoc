@@ -1,0 +1,276 @@
+---
+permalink: install-fc/cisco-9132t-fc-port-config-bridges.html 
+sidebar: sidebar 
+keywords: ONTAP, FAS, FC, Cisco, metrocluster 
+summary: 두 FC 포트를 모두 사용하여 Cisco 9132T FC 스위치를 FC-SAS 브리지에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요. 
+---
+= MetroCluster FC 구성에서 FC-SAS 브리지를 위한 Cisco 9132T 포트 사용
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+두 FC 포트를 모두 사용하여 Cisco 9132T FC 스위치를 FC-SAS 브리지에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.
+
+
+NOTE: 1xLEM 모듈이 있는 Cisco 9132T 스위치를 사용하면 브리지 스택을 하나만(1) 지원됩니다.
+
+
+
+== MetroCluster 1 또는 DR 그룹 1
+
+다음 표는 Cisco 9132T 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
+
+* 4노드 구성에서는 2개의 LEM이 있는 Cisco 9132T 스위치의 포트 LEM2-1~LEM2-8에 추가 브리지를 케이블로 연결할 수 있습니다.
+
+
+[cols="2a,2a,2a,2a,2a,2a,2a"]
+|===
+2+| * 구성 요소 * | * 포트 * | *FC_switch에 연결합니다...* | *9132T 1x LEM(4노드)* | *9132T 2x LEM(4노드)* | *9132T 2x LEM(8노드)* 
+
+
+ a| 
+스택 1
+ a| 
+Bridge_x_1a
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-13
+ a| 
+LEM1-13
+ a| 
+LEM1-9
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-13
+ a| 
+LEM1-13
+ a| 
+LEM1-9
+
+
+
+ a| 
+Bridge_x_1b
+ a| 
+FC1
+ a| 
+1
+ a| 
+LEM1-14
+ a| 
+LEM1-14
+ a| 
+LEM1-10
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+LEM1-14
+ a| 
+LEM1-14
+ a| 
+LEM1-10
+
+
+
+ a| 
+스택 2
+ a| 
+bridge_x_2a
+ a| 
+FC1
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+LEM1-15
+ a| 
+LEM1-11
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+LEM1-15
+ a| 
+LEM1-11
+
+
+
+ a| 
+Bridge_x_2b
+ a| 
+FC1
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+LEM1-16
+ a| 
+LEM1-12
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+LEM1-16
+ a| 
+LEM1-12
+
+|===
+
+
+== MetroCluster 2 또는 DR 그룹 2
+
+다음 표는 Cisco 9132T 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
+
+* 8노드 구성에서는 2개의 LEM이 있는 Cisco 9132T 스위치의 포트 LEM2-13~LEM2-16에 추가 브리지를 케이블로 연결할 수 있습니다.
+
+
+[cols="2a,2a,2a,2a,2a,2a,2a"]
+|===
+2+| * 구성 요소 * | * 포트 * | *FC_switch에 연결합니다...* | *9132T 1x LEM(4노드)* | *9132T 2x LEM(4노드)* | *9132T 2x LEM(8노드)* 
+
+
+ a| 
+스택 1
+ a| 
+Bridge_x_1a
+ a| 
+FC1
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-9
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-9
+
+
+
+ a| 
+Bridge_x_1b
+ a| 
+FC1
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-10
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-10
+
+
+
+ a| 
+스택 2
+ a| 
+bridge_x_2a
+ a| 
+FC1
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-11
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-11
+
+
+
+ a| 
+Bridge_x_2b
+ a| 
+FC1
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-12
+
+
+
+ a| 
+FC2
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM1-12
+
+|===

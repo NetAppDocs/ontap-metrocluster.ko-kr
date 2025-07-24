@@ -2641,8 +2641,6 @@
   <block id="52b86a073bf9ac18b54bb7fb93dbeb18" category="doc">새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
   <block id="f6065aa4b898691ab4eb065db8775ac0" category="paragraph">새 컨트롤러 모듈의 FC-VI 포트와 HBA(호스트 버스 어댑터)는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="0f0db6d55e9bbb84af3413a7e8b1da70" category="list-text">구성 및 스위치 모델에 대한 표를 사용하여 FC-VI 포트 및 HBA 포트에 케이블을 연결합니다.</block>
-  <block id="9eecb7c801dc57fbe6e2bb323f2ab061" category="inline-link-macro">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</block>
-  <block id="0984e83667fc512bfc1adc48478ded1c" category="list-text"><block ref="0984e83667fc512bfc1adc48478ded1c" category="inline-link-macro-rx"></block></block>
   <block id="8db12a7f598538a4f3273d8beec78fa9" category="inline-link-macro">이니시에이터 포트 2개를 사용하는 시스템의 포트 할당</block>
   <block id="2f311d11b06ed91a28142e5c25bbdfb5" category="list-text"><block ref="2f311d11b06ed91a28142e5c25bbdfb5" category="inline-link-macro-rx"></block></block>
   <block id="5a98349a16ef99aa33ddb5a7e72e858f" category="paragraph">다음 예에서는 시스템 SVM "cluster01"의 페일오버 그룹 "intercluster01"에 포트 "e0e" 및 "e0f"를 할당합니다.</block>
@@ -3465,10 +3463,6 @@
   <block id="535a1b9f22b2c711bbc48344a4608a4b" category="paragraph">명령을 실행한 후 부팅 메뉴가 표시될 때까지 기다립니다.</block>
   <block id="924380a68efbb68301d2373e39ae8ac9" category="list-text">부팅 메뉴 프롬프트에 ""wpeconfig""를 입력하여 노드 구성을 지우고 Enter 키를 누릅니다.</block>
   <block id="a45eb6ab149dfb9c88ab3dcd2184e695" category="doc">전반적인 케이블 연결 지침</block>
-  <block id="ec976e4d69eacba58f181f263322d975" category="paragraph">FC 스위치에 ONTAP 9.1 이상을 사용하여 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
-  <block id="2688c925fec0ab4e936ae385ba142c24" category="paragraph">이니시에이터 포트, FC-VI 포트 또는 ISL을 연결하는 데 사용되지 않는 포트를 스토리지 포트로 재구성할 수 있습니다. 그러나 지원되는 RCFs를 사용하는 경우에는 그에 따라 조닝을 변경해야 합니다.</block>
-  <block id="4ba7b2148c0c37b3307983c474a84cab" category="paragraph">지원되는 RCF를 사용하는 경우 ISL 포트가 표시된 동일한 포트에 연결되지 않을 수 있으므로 수동으로 다시 구성해야 할 수 있습니다.</block>
-  <block id="1f4464840c2d203f1ec68e9cad46e18f" category="paragraph">ONTAP 9에 대한 포트 할당을 사용하여 스위치를 구성한 경우 이전 할당을 계속 사용할 수 있습니다. 그러나 ONTAP 9.1 이상 릴리즈를 실행하는 새 구성에서는 여기에 표시된 포트 할당을 사용해야 합니다.</block>
   <block id="c41d521acb0fc63853fafb5270777e87" category="paragraph">케이블 연결 테이블을 사용할 때 다음 지침을 숙지해야 합니다.</block>
   <block id="85efea09b8971fa839b814e34e5b06b9" category="list-text">Brocade 및 Cisco 스위치는 다른 포트 번호를 사용합니다.</block>
   <block id="f4761f37bd40b125eed6852317322784" category="list-text">Brocade 스위치에서 첫 번째 포트는 0으로 번호가 지정됩니다.</block>
@@ -3481,16 +3475,10 @@
   <block id="07b5749c33833d737c3d6ecc5b49605b" category="paragraph">이러한 포트는 비워 둘 수 있습니다.</block>
   <block id="ad9247c5063d371cbeae77c052764316" category="list-text">AFF A400 및 FAS8300 스토리지 시스템은 FC-VI 연결에 포트 2a 및 2b를 사용합니다.</block>
   <block id="5accdde0d283f37f6ecfa6339938cadf" category="list-text">ISL을 공유하는 MetroCluster 구성이 2개인 경우 8노드 MetroCluster 케이블 연결과 동일한 포트 할당을 사용합니다.</block>
-  <block id="d532a0e00e8b45b9e829639739e4a87d" category="paragraph">케이블 연결 ISL 수는 사이트의 요구 사항에 따라 다를 수 있습니다.</block>
   <block id="ebfae2d3948048a9601c4d22e5b3e877" category="paragraph">ISL 고려 사항에 대한 섹션을 참조하십시오.</block>
-  <block id="f52aa4eb5a4ffb67854f161a49692e68" category="section-title">MetroCluster 9.1 이상을 실행하는 ONTAP 구성의 컨트롤러에 대한 Brocade 포트 사용</block>
-  <block id="cc7661e50a302a4dca954cd3d5b1345e" category="paragraph">다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 2개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. 더 작은 구성의 경우, 추가 컨트롤러 모듈의 행을 무시합니다. Brocade 6510, Brocade DCX 8510-8, G620, G630, G620-1, G630-1 및 G720 스위치</block>
-  <block id="fcfaf6ac87b8961e0ed64190d5d0371a" category="list-text">8노드 MetroCluster 구성에서 Brocade 6505 및 Brocade G610 스위치의 포트 사용량이 표시되지 않습니다. 포트 수가 제한되기 때문에 컨트롤러 모듈 모델과 사용 중인 ISL 및 브리지 페어의 수에 따라 사이트별로 포트 할당을 수행해야 합니다.</block>
   <block id="e9b5c48d343ae71e6b37dc8ebad61866" category="list-text">Brocade DCX 8510-8 스위치는 7840 스위치와 6510 스위치 * _ 또는 _ * 같은 포트 레이아웃을 사용할 수 있습니다.</block>
-  <block id="dbe4a4387a11d1625ae218ef9f43a996" category="cell">MetroCluster 1 또는 DR 그룹 1</block>
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">구성 요소</block>
   <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">포트</block>
-  <block id="d151432733d339221bd143c714a56a84" category="cell">FC 스위치에 연결...</block>
   <block id="85e2ca58f06c6fc43bb1278027917574" category="paragraph">컨트롤러_x_1</block>
   <block id="65698eca856b16c1879cd89757f6c190" category="paragraph">FC-VI 포트 A</block>
   <block id="c4ca4238a0b923820dcc509a6f75849b" category="paragraph">1</block>
@@ -3528,13 +3516,7 @@
   <block id="4a87af04f657dbee0a87a82c074c8b74" category="paragraph">브리지 x _ 야</block>
   <block id="9bf31c7ff062936a96d3c8bd1f8f2ff3" category="paragraph">15</block>
   <block id="5021af697beed999ef21aef7e7c30df5" category="paragraph">Bridge_x_yb입니다</block>
-  <block id="36fc2959d3a1c97d86b1331aa7ad751f" category="cell">MetroCluster 2 또는 DR 그룹 2</block>
-  <block id="dd8bf985111cb958a0114d6fab888dfb" category="cell">Brocade 스위치 모델</block>
-  <block id="28eb6ba701b729e5df3fbc86e28c4f9a" category="cell">FC_SWITCH에 연결...</block>
-  <block id="76cbfe30b2ad6750afe58491b0fc5142" category="cell">6510, DCX 8510-8</block>
   <block id="80fee67c8a4c4989bf8a580b4bbb0cd2" category="cell">6520</block>
-  <block id="2046068284134580db959759e035db76" category="cell">7840, DCX 8510-8</block>
-  <block id="dcbe97b426f669f9827aa9af89d67017" category="cell">G620, G620-1, G630, G630-1</block>
   <block id="cf65f95fa367a2305970ced3f3532b96" category="cell">G720</block>
   <block id="9bf4e8720024939a31910559506487e8" category="paragraph">컨트롤러_x_3</block>
   <block id="1ff1de774005f8da13f42943881c655f" category="paragraph">24</block>
@@ -3591,9 +3573,6 @@
   <block id="a2f788120886d7c7eb7f12ec724169e1" category="paragraph">Bridge_x_5yb</block>
   <block id="d67d8ab4f4c10bf22aa353e27879133c" category="paragraph">39</block>
   <block id="03afdbd66e7929b125f8597834fa83a4" category="paragraph">63</block>
-  <block id="f140d3cb033a0d8cb337abc8ffd37e35" category="section-title">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 ISL에 대한 Brocade 포트 사용량</block>
-  <block id="31140865c6da8bd64c2cc352591fd97f" category="paragraph">다음 표에는 Brocade 스위치에 대한 ISL 포트 사용량이 나와 있습니다.</block>
-  <block id="16efd6bef533569cdadd01e7d8f034c9" category="admonition">AFF A700 또는 FAS9000 시스템은 성능 향상을 위해 최대 8개의 ISL을 지원합니다. Brocade 6510 및 G620 스위치에서 8개의 ISL이 지원됩니다.</block>
   <block id="780738b38ccf649c36173b77e28ff349" category="cell">ISL 포트</block>
   <block id="68fac66b44be174fb115574547203ed5" category="cell">스위치 포트</block>
   <block id="d5f5f490a3cccca8c5b838e6c295ef55" category="paragraph">Brocade 6520</block>
@@ -3623,26 +3602,16 @@
   <block id="2dfde955a5c1370edb596a721713e819" category="paragraph">ge5(10Gbps)</block>
   <block id="f78b26114789afe03f4c6c9ed2c4ad38" category="paragraph">ge6(10Gbps)</block>
   <block id="46c7a2d5e4e53c2d36981c49348c1637" category="paragraph">ge7(10Gbps)</block>
-  <block id="eeccf7f36c3dfb3972605d539dced738" category="paragraph">Brocade 7840</block>
-  <block id="6fc1a0c4ecbbd59364bf4b20f10bd0b6" category="paragraph">* 참고 *: Brocade 7840 스위치는 FCIP ISL 생성을 위해 스위치당 2개의 40Gbps VE 포트 또는 최대 4개의 10Gbps VE 포트를 지원합니다.</block>
   <block id="974b84080d7a27f07b7022b14041d6fc" category="paragraph">GE0(40Gbps) 또는 ge2(10Gbps)</block>
   <block id="bd489b1b0ced1fd7ea33e249a59f65f8" category="paragraph">ge1(40Gbps) 또는 ge3(10Gbps)</block>
   <block id="6d7e8e0a21c6f160db390b67a024d441" category="paragraph">ge10(10Gbps)</block>
   <block id="bb03fb8535b0f15cb7573f343198a826" category="paragraph">ge11(10Gbps)</block>
-  <block id="12bb1d11ead6c73227745725e5d0bfd7" category="paragraph">Brocade G610</block>
   <block id="1cb639581481681dd0b3dd79349c9623" category="paragraph">Brocade G620, G620-1, G630, G630-1, G720</block>
-  <block id="d85e6b2239cc6bf654493edd06de0604" category="section-title">ONTAP 9.4 이상을 실행하는 MetroCluster 구성에서 컨트롤러의 Cisco 포트 사용</block>
   <block id="1177ce2d22c07bbd50d26ba5478b5b1d" category="paragraph">이 표에는 2개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. 더 작은 구성의 경우, 추가 컨트롤러 모듈의 행을 무시합니다.</block>
-  <block id="913aa541dca049189d5c94b434fcd5e4" category="cell">Cisco 9396S</block>
   <block id="e79bc5599ed43bf573992c327fb00274" category="cell">스위치 1</block>
   <block id="14b42c7d1896b7605692e8c1af5df50d" category="cell">스위치 2</block>
-  <block id="9e56f2203627e1f0f852b03165f1f73c" category="cell">Cisco 9148S</block>
-  <block id="14f265c9ad9a81b21c667b4042fc7575" category="admonition">다음 표에는 FC-VI 포트가 2개인 시스템이 나와 있습니다. AFF A700 및 FAS9000 시스템에는 4개의 FC-VI 포트(a, b, c 및 d)가 있습니다. AFF A700 또는 FAS9000 시스템을 사용하는 경우 포트 할당이 한 위치씩 이동합니다. 예를 들어, FC-VI 포트 c와 d는 스위치 포트 2로, HBA 포트 a와 b는 스위치 포트 3으로 이동합니다.</block>
-  <block id="cab785737f7e01bc6cf334a3297e22c3" category="cell">Cisco 9250i 참고: Cisco 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
-  <block id="7454ecd5190b690ccf9ee77f2e438c0c" category="section-title">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 FC-to-SAS 브리지에 대한 Cisco 포트 사용</block>
   <block id="5f3d7a8eab09d202517da1abc99331dc" category="paragraph">Bridge_x_3b</block>
   <block id="b2f10ca95ea95e075db7adc2d019047e" category="paragraph">Bridge_x_4a</block>
-  <block id="f656d69f7bbae519056da03a8e9e50d0" category="cell">Cisco 9250i</block>
   <block id="f49308486cec24e5559590a8e8ab5f10" category="paragraph">Bridge_x_5a</block>
   <block id="eb5edae8fa155daf7b0c78acbc5c622e" category="paragraph">Bridge_x_5b</block>
   <block id="2f18a86c8432805a00900af0153918f1" category="paragraph">Bridge_x_6a</block>
@@ -3651,15 +3620,9 @@
   <block id="f5bad2a06048272d8713fb8303c967a5" category="paragraph">Bridge_x_7b</block>
   <block id="968f63536cc26e1ac460060836284646" category="paragraph">Bridge_x_8a</block>
   <block id="4409c993164a314b23d52edf9f7ddb07" category="paragraph">Bridge_x_8b</block>
-  <block id="de8504b73ea228d0ea9bbce69752092e" category="cell">브리지</block>
   <block id="81cc761cd2e2757421a8e9242e8e12cc" category="paragraph">다음 표에서는 ISL 포트 사용을 보여 줍니다. ISL 포트 사용은 구성의 모든 스위치에서 동일합니다.</block>
-  <block id="10ca333ef19b78048d2fedd61c4432e9" category="paragraph">ISL 1</block>
-  <block id="d13ad1889e4cd054285464f94de707e7" category="paragraph">ISL 2</block>
-  <block id="f2e301b218b62fc21a28a8720dff5e99" category="paragraph">ISL 3</block>
   <block id="92cc227532d17e56e07902b254dfad10" category="paragraph">92</block>
-  <block id="d218ff19674f8525bccde81cb4f28d00" category="paragraph">ISL 4</block>
   <block id="26657d5ff9020d2abefe558796b99584" category="paragraph">96</block>
-  <block id="670a9fef898ab1cd3ff1896d659f86f0" category="paragraph">24포트 라이센스가 있는 Cisco 9250i</block>
   <block id="612b0bea750a7c462182730d395e1bde" category="doc">미러링되지 않은 애그리게이트를 사용할 때의 고려 사항</block>
   <block id="52f712c2fbff067a3f9ecef9e0c00853" category="paragraph">구성에 미러링되지 않은 애그리게이트가 포함된 경우 전환 작업 후 발생할 수 있는 액세스 문제를 알고 있어야 합니다.</block>
   <block id="2a2f14d553a58533b16ebe9c6aeee86d" category="paragraph">사이트 전체의 전원을 차단해야 하는 유지 관리 이유로 협상된 전환을 수행하는 경우, 먼저 재해 사이트에서 소유한 미러링되지 않은 애그리게이트를 수동으로 오프라인으로 전환해야 합니다.</block>
@@ -5789,8 +5752,6 @@
   <block id="070a4bbedae89743ad2f6646a3f23205" category="paragraph">약 5분 후 다음 결과가 표시됩니다.</block>
   <block id="fbd55aa6c7d3ee9ec90836dfa01b62d2" category="paragraph">MetroCluster 운용사 show-job-id 38</block>
   <block id="74553544aa9c0c94d16a5a5ed85d6720" category="list-text">상태 경고가 없는지 확인합니다.</block>
-  <block id="8fa3ff2a6684e6aa12c0df1acfb993a7" category="summary">ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
-  <block id="f4ace2d74922a56d6954c4cdcc593514" category="doc">ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당</block>
   <block id="83be746defb3baacbca8a27913d5e887" category="summary">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster에 NS224 쉘프를 추가해야 할 수 있습니다.</block>
   <block id="81614ec1c85e193dd436e86dd56ed40d" category="doc">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP에 쉘프 추가</block>
   <block id="0aefe0e277b60b987afe007a43a31ca0" category="paragraph">ONTAP 9.10.1부터 공유 스토리지/MetroCluster 스위치를 사용하여 MetroCluster에서 NS224 쉘프를 추가할 수 있습니다. 한 번에 둘 이상의 쉘프를 추가할 수 있습니다.</block>
@@ -5859,8 +5820,6 @@
   <block id="2f82be6245b88138fd384006f6debd3b" category="paragraph">쉘프 모델의 _SAS 디스크 쉘프 서비스 가이드_에 나온 지침에 따라 쉘프를 핫 제거할 수 있습니다.</block>
   <block id="5bf5c688b9dbc9805774208febfec2ef" category="paragraph">미러링된 Aggregate에서 플렉스를 제거하려면 Aggregate의 미러를 해제해야 합니다.</block>
   <block id="0d70078385b01668ecfcc33dcc7785e4" category="summary">각 패브릭에 대해 단일 이니시에이터 포트와 각 컨트롤러에 대한 2개의 이니시에이터 포트를 사용하여 FAS8020, AFF8020, FAS8200 및 AFF A300 시스템을 구성할 수 있습니다.</block>
-  <block id="a8a2bf560173c2071776e7eb62881e05" category="paragraph">다음 표에서는 ONTAP 9.1 이상을 사용할 때 FC 스위치에 대한 포트 할당을 보여 줍니다.</block>
-  <block id="5cbc856360b7f465a0b074d28f0718d0" category="paragraph">다음 표에서는 ONTAP 9.0을 사용할 때의 FC 스위치에 대한 포트 할당을 보여 줍니다.</block>
   <block id="e1af59c4560e3899befd23783e6a3c93" category="summary">FiberBridge 7600N 브리지는 FiberBridge 7500N 또는 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 ONTAP 9.5 이상에서 지원됩니다. 브리지의 FC 포트 사용과 관련된 조닝 요구 사항 및 제한은 FiberBridge 7500N 브리지의 경우와 동일합니다.</block>
   <block id="0a0b2f8493bfc4e7fb3cb00d79943c6b" category="doc">MetroCluster 구성에서 FiberBridge 7600N 브리지 지원</block>
   <block id="d996c9171711ede1bccddd47d17c5a7c" category="paragraph">FiberBridge 7600N 브리지는 FiberBridge 7500N 또는 6500N 브리지를 대체하거나 MetroCluster 구성에 새 스토리지를 추가할 때 ONTAP 9.5 이상에서 지원됩니다. 브리지의 FC 포트 사용과 관련된 조닝 요구 사항 및 제한은 FiberBridge 7500N 브리지의 조닝 요구 사항과 동일합니다.</block>
@@ -6575,9 +6534,6 @@
   <block id="cb7dd255a00caeb3656fc12d26dfd266" category="list-text">기존 스위치가 케이블로 연결된 것과 정확히 같은 방식으로 교체 스위치에 케이블을 연결합니다.</block>
   <block id="0b8991fc8b1b16fde79b335d5036fc22" category="list-text">새 FC 스위치의 전원을 켭니다.</block>
   <block id="5b691943b638699219228555b1403d22" category="paragraph">ISL 암호화를 설정하는 경우 다음 작업을 완료해야 합니다.</block>
-  <block id="b8deab374054d584aa802931724a1fd8" category="list-text">페이로드를 설정합니다</block>
-  <block id="a08221f97ef0613d8a038c614b3853e9" category="list-text">인증 정책 설정</block>
-  <block id="f1ab300d72ead487f13159fa63426873" category="list-text">Brocade 스위치에서 ISL 암호화 설정</block>
   <block id="eefcede87e8886dbea647e95a660f850" category="list-text">새 스위치 구성을 완료합니다.</block>
   <block id="5441e0807607c2a0bbc771e2fb427115" category="list-text">FC 브리지에 연결하는 스토리지 포트를 설정합니다.</block>
   <block id="227e826d18f89115d726442eaecb6fbf" category="list-text">스토리지, HBA 및 FC-VI 포트를 설정합니다.</block>
@@ -7938,7 +7894,6 @@
   <block id="4fbbc0ce852ccef3a7adceb0f9bc2c27" category="doc">Brocade FC 스위치 RCF 파일 다운로드</block>
   <block id="b5909b79c9831ace5a37a88ecc8d8221" category="paragraph">RCF(Reference Configuration) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
   <block id="d2bd72e53c2a5d47d1f0bb05a3b47e86" category="paragraph">이러한 RCF 파일을 사용하려면 시스템에서 ONTAP 9.1 이상을 실행해야 하며 ONTAP 9.1 이상에 대해 포트 레이아웃을 사용해야 합니다.</block>
-  <block id="46bbf7d1bdaf2d46301fc4945e69d890" category="paragraph">FiberBridge 브리지에서 FC 포트 중 하나만 사용하려는 경우, 섹션에 나와 있는 지침에 따라 백엔드 Fibre Channel 스위치를 수동으로 구성합니다. <block ref="fb60c06f4120cd75fc9ac39720fd32d8" category="inline-link-macro-rx"></block>.</block>
   <block id="842acf8263038e7278a435d288defafa" category="list-text">Brocade RCF 다운로드 페이지의 RCF 파일 표를 참조하여 구성의 각 스위치에 대한 올바른 RCF 파일을 식별합니다.</block>
   <block id="d7a31e24d4a31d091e030bcf962857a2" category="paragraph">RCF 파일은 올바른 스위치에 적용해야 합니다.</block>
   <block id="28a95a083b2cfe8b9ffb5bddf7064e7b" category="inline-link">MetroCluster RCF 다운로드</block>
@@ -7972,26 +7927,15 @@
   <block id="057d39d20a60e359f693d2aa4cf243c0" category="inline-link-macro">이중 FC 스위치 패브릭</block>
   <block id="1d4b7051717f4998d1a0600fb1e7a878" category="paragraph"><block ref="1d4b7051717f4998d1a0600fb1e7a878" category="inline-link-macro-rx"></block></block>
   <block id="a022874e7e093c6eb907a009ffd5005e" category="paragraph"><block ref="a022874e7e093c6eb907a009ffd5005e" category="inline-link-macro-rx"></block></block>
-  <block id="dac255183ddd968b772755feaa9b4cd7" category="summary">다음 표에서는 ISL 포트 사용을 보여 줍니다.</block>
-  <block id="83e876af5f485a9a733864cbf5a3e21b" category="cell">Cisco 9132T(LEM 1개 포함)</block>
-  <block id="629f8f8fa5cb9442f2cf5a2289a1e051" category="cell">ISL1</block>
   <block id="e7e6eebc5253d1872205b3e8e4fe67cb" category="cell">LEM1-15</block>
-  <block id="223cdfda01976fdfe10e4f0b9d72aaf3" category="cell">ISL2</block>
   <block id="84c88c7fdb171c136ff58d7835e46603" category="cell">LEM1-16</block>
-  <block id="ed225b3337a5893f671e29d15e0e6464" category="cell">Cisco 9132T 및 2x LEM</block>
   <block id="0dddffd8cf99c04ddb89559281d8d451" category="cell">LEM2-9</block>
   <block id="61034ea4c48aeebf00c78c16ee398c07" category="cell">LEM2-10</block>
-  <block id="7c2a40fb2c7847a883176b97db0e798f" category="cell">ISL3</block>
   <block id="8082164e318ca645ecef714ee3200c01" category="cell">LEM2-11</block>
-  <block id="2f4ec157f97271fb7d3e4db69ca7acea" category="cell">ISL4</block>
   <block id="e08ecbf668ccff5a3408dc6d75c437a0" category="cell">LEM2-12</block>
-  <block id="e8a8b9a6b3babd9f619213d9328c5ec4" category="cell">ISL5</block>
   <block id="1e0cb8a22f3dd13fd9f1e5bb52ccec58" category="cell">LEM2-13</block>
-  <block id="d127bd9ff97d620b3194f68dfd2f7499" category="cell">ISL6</block>
   <block id="491cfbee8f9edd7629dbc08caf6344f9" category="cell">LEM2-14</block>
-  <block id="0c33dddb48935b133ef0b1895b47f87e" category="cell">ISL7</block>
   <block id="53b92dc74faa6cb21d248d206f657cf3" category="cell">LEM2-15</block>
-  <block id="8ea7d7250e65620033ebe8e6de7604db" category="cell">ISL8</block>
   <block id="a443a45b4f59f90651355f5e7502dd6d" category="cell">LEM2-16</block>
   <block id="22352eb03ff7e6b8795e4f237f27d8d1" category="paragraph">이 절차는 ATTO ExpressNAV GUI 및 ATTO Quicknav 유틸리티라는 권장 브리지 관리 인터페이스를 사용하고 있다고 가정하고 작성되었습니다.</block>
   <block id="124cab4a0c8129881bfe483bc9e5655a" category="admonition">ONTAP 9.8부터 스토리지 브리지 명령이 시스템 브리지로 바뀌었습니다. 다음 단계에서는 'Storage bridge' 명령어를 보여주지만, ONTAP 9.8 이상을 실행 중인 경우에는 'system bridge' 명령어를 사용한다.</block>
@@ -8035,7 +7979,6 @@
   <block id="cbf21b0a1a6cb9d0bb203c817705311a" category="admonition">FiberBridge 7500N 브리지의 두 번째 FC 포트 연결은 조닝이 완료될 때까지 케이블로 연결해서는 안 됩니다.</block>
   <block id="6ccf095006c1d816e28e52dc0e9bd0f6" category="paragraph">사용 중인 ONTAP 버전에 대한 포트 할당을 참조하십시오.</block>
   <block id="62610238a732474c3b050bbde67a6d1e" category="list-text">파트너 사이트의 브리지에서 이전 단계를 반복합니다.</block>
-  <block id="fb60c06f4120cd75fc9ac39720fd32d8" category="paragraph"><block ref="fb60c06f4120cd75fc9ac39720fd32d8" category="inline-link-macro-rx"></block></block>
   <block id="9f39b4378a3d44f4f0a500c832ddf6b3" category="list-text">"unsecurebridge" 명령을 사용하여 이더넷 포트를 다시 활성화할 수 있습니다.</block>
   <block id="92ce9352258f4fd51a93e19057e163df" category="list-text">ONTAP 9.7 및 이전 버전에서는 ATTO FiberBridge에서 'ecurebridge' 명령을 실행하면 파트너 클러스터의 브리지 상태가 올바르게 업데이트되지 않을 수 있습니다. 이 경우 협력클러스터에서 'ecurebridge' 명령어를 실행한다.</block>
   <block id="896822419043c00441403336af7e4108" category="paragraph">'cluster_a&gt; storage bridge run-cli-bridge_a_1-command securebridge</block>
@@ -8045,11 +7988,6 @@
   <block id="2622744a230b337241ab6444c641a6cb" category="paragraph">'Storage bridge run-cli-bridge_bridge-name_-command firmwarerestart'</block>
   <block id="def2bebf11566298ccfc0636cb9cff59" category="paragraph">'cluster_a&gt; storage bridge run-cli-bridge_a_1 - 명령 firmwarerestart'</block>
   <block id="da677daf9723918166ed931256a804a8" category="image-alt">워크플로우 하드웨어 설치 및 구성 4 노드 또는 2 노드 패브릭</block>
-  <block id="96cf9ddcf3fc08fd3054be11d6e19c44" category="summary">이 표에는 DR 그룹에 8개의 AFF A900 컨트롤러 모듈이 있는 지원되는 최대 구성이 나와 있습니다.</block>
-  <block id="f537ff78df4afb387541f1166be1d417" category="list-text">9132T 스위치는 MetroCluster 2 또는 DR 2를 지원하지 않습니다.</block>
-  <block id="e0c3bd3b17898f5fa1d870e22fd0b2a7" category="cell">Cisco 스위치 모델</block>
-  <block id="105a26504e48c255c684a48adb3a654d" category="cell">9132T(1x LEM)</block>
-  <block id="def5ab424d21e2182ae0eb3e2ecba26b" category="cell">9132T(2x LEM)</block>
   <block id="8c93e327aae0010e180a20a21a38697d" category="cell">FC-VI-1 포트 A</block>
   <block id="8c8c9f29da894a1180db67fad874400a" category="cell">LEM1-1</block>
   <block id="92c2443c832f44e0514098816d1316ae" category="cell">FC-VI-1 포트 b</block>
@@ -8072,16 +8010,13 @@
   <block id="b43852712ee192a8abd1d919fb8d9216" category="cell">LEM1-12</block>
   <block id="ec2f4d9ba560ba3daa62615538e094a1" category="cell">LEM1-13</block>
   <block id="31ce3f4d7fa2f27464e1a39018fcc70a" category="cell">LEM1-14</block>
-  <block id="d3aabbdfcbd11eeefb0a59700e2f86e4" category="cell">LEM1-15</block>
   <block id="8ec9827d0870cf533674a47e0e45c905" category="cell">LEM2-1</block>
   <block id="9135f01e21f3378e93e8e79d77b55ba9" category="cell">LEM2-2</block>
   <block id="fab602535b4be80321a95b9f39dfb023" category="cell">LEM2-3</block>
   <block id="9886bd0d1558f3c4c6b4b7c6ccd6d4ca" category="cell">LEM2-4</block>
-  <block id="a2529b9a22421965b80dca74f0e8ac35" category="list-text">1개의 LEM 모듈이 있는 9132T 스위치를 사용하면 1개의 브리지 스택만 지원됩니다.</block>
   <block id="abe33df3535e13a3617386203a1efcee" category="doc">Brocade DCX 8510-8 스위치 사용에 대한 요구 사항</block>
   <block id="46921e96d32ca8da20b383833d3a4a04" category="list-text">MetroCluster 구성에 사용되는 DCX 8510-8 스위치는 NetApp에서 구입해야 합니다.</block>
   <block id="0ea858176a453f0d6d0d985f851b3c41" category="list-text">확장성을 위해 4x48 포트 모듈에서 2개의 MetroClusters만 케이블로 연결하는 경우 MetroCluster 구성 간에 포트-청크를 하나만 남겨두어야 합니다. 이를 통해 MetroCluster 구성에서 포트 사용을 재설정하지 않고 확장할 수 있습니다.</block>
-  <block id="51af5f9273b0bde121a10742b4065824" category="list-text">MetroCluster 구성의 각 Brocade DCX 8510-8 스위치는 ISL 포트 및 스토리지 연결에 대해 올바르게 구성되어야 합니다. 포트 사용에 대한 자세한 내용은 다음 섹션을 참조하십시오. <block ref="fb60c06f4120cd75fc9ac39720fd32d8" category="inline-link-macro-rx"></block>.</block>
   <block id="aa52baabaa64213b146b53d05b409470" category="list-text">ISL은 공유할 수 없으며 각 MetroCluster에는 각 Fabric에 두 개의 ISL이 필요합니다.</block>
   <block id="56057f242f1f5c49cb02e388225e4182" category="list-text">백엔드 MetroCluster 연결에 사용되는 DCX 8510-8 스위치는 다른 연결에 사용해서는 안 됩니다.</block>
   <block id="381a48dac090aad23fea1b4ca0508628" category="paragraph">비 MetroCluster 장치는 이러한 스위치에 연결하면 안 되며, 비 MetroCluster 트래픽은 DCX 8510-8 스위치를 통해 흐르지 않습니다.</block>
@@ -8102,9 +8037,6 @@
   <block id="25e406bace0d04355538052e51cb9463" category="admonition">이 설정에 필요한 모든 구성 요소가 에 있는지 확인합니다<block ref="ae0acc7a1cf35a69eb7b42685c902841" category="inline-link-rx"></block>. 지원되는 구성에 대한 자세한 내용은 상호 운용성 매트릭스 툴의 참고 섹션을 참조하십시오.</block>
   <block id="347d1a24edd39c6b694a17cc073652b1" category="summary">FC-VI 포트 및 HBA\(호스트 버스 어댑터\)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="c1e58eae0c6e51d54fa87f2ad6f0eb1c" category="paragraph">FC-VI 포트 및 HBA(호스트 버스 어댑터)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
-  <block id="99a578284ada1b8807f86cb25b927d6b" category="inline-link-macro">AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당</block>
-  <block id="5383551238fc98d2f75e63be48523c04" category="list-text"><block ref="5383551238fc98d2f75e63be48523c04" category="inline-link-macro-rx"></block></block>
-  <block id="72b3f4df9ba178ac37c68c3130df2a2c" category="list-text"><block ref="72b3f4df9ba178ac37c68c3130df2a2c" category="inline-link-macro-rx"></block></block>
   <block id="91e18356a7709afa40abb10b89a17636" category="summary">FC 스위치 패브릭을 활성화하고 스위치 및 디바이스가 올바르게 작동하는지 확인해야 합니다.</block>
   <block id="812485d2987632a33cf46fd5403f564d" category="doc">스위치 패브릭을 재설정하고 작업을 확인합니다</block>
   <block id="c941b5c4cf46259dd41b222aa38a58f3" category="paragraph">'스치치치프트PersistentEnable'</block>
@@ -8373,13 +8305,8 @@
   <block id="3d1d2171594b743d57aea4950c25e08d" category="paragraph">RCF는 2노드, 4노드 및 8노드 MetroCluster 구성에 적용됩니다. 이러한 파일은 기본적으로 IOD(In-Order Delivery)를 위해 패브릭을 구성합니다.</block>
   <block id="ebac59afd8758611eb5f58946397378e" category="paragraph">RCF 다운로드 페이지는 다양한 스위치 모델에서 지원하는 노드 수를 나타냅니다.</block>
   <block id="be4390855c7255687268115d7024953b" category="cell">* MetroCluster 1 또는 DR 그룹 1 *</block>
-  <block id="12504d160a257d30aeee1aa86bcd4320" category="cell">* Brocade 스위치 모델 6505, 6510, 6520, 7840, G620, G610, DCX 8510-8 *</block>
   <block id="0617e4d07d12b0af8212c27b7e1c91bc" category="cell">* FC 스위치에 연결... *</block>
   <block id="7194695af22d9907d88793ccd2044dec" category="cell">* 스위치 포트에 연결합니다... *</block>
-  <block id="b038f1001ec881b2fc953981da4334de" category="cell">* MetroCluster 2노드 구성 *</block>
-  <block id="5f54259a5f9e2ed501dcd8fc387862ef" category="cell">* Brocade 6505, 6510 또는 DCX 8510-8 *</block>
-  <block id="6977c96a61a5177850b42609237488c3" category="cell">* FC_SWITCH_x_1 *</block>
-  <block id="0b2c75644662ed2b76683bc2b8eaf012" category="cell">* FC_SWITCH_x_2 *</block>
   <block id="a3661db3c5039bc04c7fae548c92950e" category="summary">MetroCluster 패브릭 구성의 각 스위치에 스위치 운영 체제 파일 및 RCF 파일을 다운로드해야 합니다.</block>
   <block id="bfa98b16040a9e239a71e4da0eb6a7b1" category="doc">Cisco FC 스위치 NX-OS 소프트웨어 다운로드 및 설치</block>
   <block id="fff6b95b10852166fc3f382ad27c765d" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 FC 스위치에서 반복해야 합니다.</block>
@@ -8393,22 +8320,13 @@
   <block id="618e4240a8fc7b99797de82ab415ba5a" category="list-text">스위치 소프트웨어가 설치되었는지 확인합니다.</block>
   <block id="7c68cb6d1d2efbce76002169b10f787d" category="paragraph">'How version'입니다</block>
   <block id="8ad53292346af0e49ae9217c0cd8ff40" category="list-text">MetroCluster 패브릭 구성의 나머지 FC 스위치 3개에 대해 이 단계를 반복합니다.</block>
-  <block id="6a3afd8e0bd4d7b0e5cc9f66134c7c8d" category="summary">다음 표에는 AFF A900 시스템용 Brocade 스위치의 포트 사용량이 나와 있습니다</block>
   <block id="a3fc981af450752046be179185ebc8b5" category="cell">6510</block>
-  <block id="56e8146206df37b2e114695d0ee8d127" category="cell">6505, G610</block>
-  <block id="6468480fd8b1a2f75ef118118bd03a58" category="cell">G620, G620-1</block>
-  <block id="81df3dccd5bcac9f92dc3ce6a45f1ac2" category="cell">G630, G630-1</block>
-  <block id="ab68570d864607486c1180cfc078bffe" category="admonition">6510 스위치의 16-19번 포트에 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="4666df6ebbda163e6f057c4b31891b34" category="admonition">MetroCluster 2 또는 DR 2는 6510 스위치가 있는 2개의 브리지 스택만 지원합니다.</block>
-  <block id="e0053b8c93593c200bdc54f5bb00c037" category="admonition">MetroCluster 2 또는 DR 2는 6505, G610 스위치에서 지원되지 않습니다.</block>
-  <block id="00034e5e10fbaeb9189d2ff4061517d7" category="cell">MetroCluster 3 또는 DR 그룹 3</block>
   <block id="38b4de1c2368cfc9d297e81801968302" category="cell">컨트롤러_x_5</block>
   <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
   <block id="fc490ca45c00b1249bbe3554a4fdf6fb" category="cell">65</block>
   <block id="3045acc0b412f30b1cac4aff7c2b57e2" category="cell">컨트롤러_x_6</block>
   <block id="a3f390d88e4c41f2747bfa2f1b5f87db" category="cell">68</block>
   <block id="14bfa6bb14875e45bba028a21ed38046" category="cell">69</block>
-  <block id="6c0f7d9b39283d0bc397ed2f4859a99d" category="cell">MetroCluster 4 또는 DR 그룹 4</block>
   <block id="0462f04ffe605f44b782254855cd652a" category="cell">컨트롤러_x_7</block>
   <block id="3295c76acbf4caaed33c36b1b5fc2cb1" category="cell">66</block>
   <block id="735b90b4568125ed6c3f678819b6e058" category="cell">67</block>
@@ -8521,7 +8439,6 @@
   <block id="f86146750d5caee0dd0ee6f541390137" category="list-text">각 스위치에서 RCF 파일이 각 스위치의 'bootflash' 디렉토리에 있는지 확인합니다.</block>
   <block id="e98444d7d3279149fb170762eaa09685" category="paragraph">bootflash: __switch-specific-RCF__.txt running-config를 복사합니다</block>
   <block id="c283e6d33e5ab7ba05309d0bdb85144e" category="summary">MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다.</block>
-  <block id="1895119723122826713ca9b3d616a96b" category="doc">Brocade 라이센스 요구 사항 검토</block>
   <block id="020376a3fd370a6b9dfc23a3f92f2cba" category="paragraph">MetroCluster 구성에는 다음과 같은 Brocade 라이센스 요구 사항이 있습니다.</block>
   <block id="f8be51f3f662dda8b5a8214d2d88adfe" category="list-text">권장 사항에 따라 두 개 이상의 ISL을 사용하는 시스템에 대한 트렁킹 라이센스입니다.</block>
   <block id="e7acec6ea00d47c0f7752735341c6bb3" category="list-text">확장된 Fabric 라이센스(6km 이상의 ISL 거리용)</block>
@@ -8534,8 +8451,6 @@
   <block id="f515fca759b029639b19b471d7a2c1ed" category="inline-link">MetroCluster IP 솔루션 아키텍처 및 설계, TR-4689</block>
   <block id="8d4727f84fc5ba727eb23a4ce93c87c2" category="list-text">MetroCluster IP 구성 및 작동에 대한 기술적 개요</block>
   <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="paragraph">Active IQ 디지털 자문 문서</block>
-  <block id="4250e51248bc5d54f8b7bf7f3f4a57f6" category="cell">8개 노드</block>
-  <block id="95e351a6be60cc62a4dd8db3ec98a00f" category="cell">4노드</block>
   <block id="7e853595389f6b90dc22efe3da872888" category="summary">8노드 또는 4노드 MetroCluster 구성이 있고 HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우 컨트롤러 간 HA 인터커넥트에 케이블을 연결해야 합니다.</block>
   <block id="82107984563a4d014cd48345b86ec376" category="doc">HA 인터커넥트 케이블 연결</block>
   <block id="c1c364c532b2c947b4b100558d68dfe9" category="list-text">이 작업은 2노드 MetroCluster 구성에는 적용되지 않습니다.</block>
@@ -8650,9 +8565,7 @@
   <block id="6de9fb8b7b5d44322728235b0d0a7791" category="summary">8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1개 또는 2개의 HA 쌍으로 구성된 스토리지 컨트롤러로 구성됩니다. 따라서 하나의 스토리지 컨트롤러에 장애가 발생할 경우 로컬 HA 파트너가 이를 대신 처리할 수 있도록 로컬 이중화가 가능합니다. 이러한 장애는 MetroCluster 전환 작업 없이 처리할 수 있습니다.</block>
   <block id="40d4b0790c7c1d827412f3a79c31612b" category="list-text">테이크오버가 발생한 후에는 장애가 발생한 노드나 파트너 노드에 대한 표준 시간대 설정을 수정할 수 없습니다.</block>
   <block id="26e412e124f0e9c78b247288bfd03abd" category="list-text">MetroCluster FC 구성의 각 클러스터에는 해당 MetroCluster 사이트의 노드, FC 스위치 및 FC-to-SAS 브리지에서 사용하는 자체 NTP 서버 또는 서버가 있어야 합니다.</block>
-  <block id="5d0d3aae2229d219e319065b67183178" category="inline-link-macro">Brocade FC 스위치를 수동으로 구성합니다</block>
   <block id="7cd3fb6e6f6deaf7b1a2916711a6b7e0" category="inline-link-macro">Cisco FC 스위치를 수동으로 구성합니다</block>
-  <block id="aef9e13f2797744b62209b58e52a9a40" category="paragraph">ONTAP 9.10.1 이상을 사용하는 경우 FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
   <block id="69e92926786e575346dbd083b8dec2f2" category="paragraph"><block ref="69e92926786e575346dbd083b8dec2f2" category="inline-link-macro-rx"></block></block>
   <block id="7beedda8cb5d2fb431ddb232b7ee7fe0" category="summary">MetroCluster 구성의 모든 노드 또는 DR\(재해 복구 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다.</block>
   <block id="0e08aa01426827fb0ba8dd3c64010d0e" category="paragraph">MetroCluster 구성에서 각 Brocade 스위치 패브릭을 구성해야 합니다.</block>
@@ -8674,7 +8587,6 @@
   <block id="c51b448f36df4e8b4b68e7af4df4c6b8" category="list-text">도메인 포트를 기반으로 하는 FC 조닝이 지원되지만 WWN(Worldwide Name)을 기반으로 하는 조닝은 지원되지 않습니다.</block>
   <block id="5f864e9896e626c0a0c857ef2de8b1d6" category="list-text">라이센스가 설치되었는지 확인합니다.</block>
   <block id="4d8abf4bb34371dfeb410341732e506b" category="paragraph">이러한 라이센스가 없는 경우 계속하기 전에 영업 담당자에게 문의하십시오.</block>
-  <block id="29beb95dbfa349b40c8e018564927306" category="section-title">Brocade FC 스위치 값을 출하 시 기본값으로 설정합니다</block>
   <block id="bc9a8f24ac7c37a611a7d6eccad46c1a" category="paragraph">성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 또한 각 스위치에 고유한 이름을 할당해야 합니다.</block>
   <block id="3744ff2a3bc1a90b0f8d4c247c723bba" category="paragraph">이 절차의 예에서 패브릭은 브로데SwitchA 및 브로데스위치B로 구성됩니다.</block>
   <block id="2aafc0e78e657c4c62ca362fd66838f9" category="list-text">콘솔을 연결하고 하나의 Fabric에 있는 두 스위치에 로그인합니다.</block>
@@ -8699,7 +8611,6 @@
   <block id="e39c65b9d816e2a7741f1d5584f8ae65" category="paragraph">'위츠cfgtrunk 0'</block>
   <block id="ae6d4e9d4497377541a0ac6446e39a09" category="list-text">Brocade 6510 스위치에서 Brocade VF(Virtual Fabrics) 기능을 비활성화합니다.</block>
   <block id="5592272feb1a1ba6847cf13d1a8c1474" category="list-text">AD(관리 도메인) 구성을 지웁니다.</block>
-  <block id="41f75670bd6513f25d1942c68f417ebb" category="section-title">기본 스위치 설정 구성</block>
   <block id="b5200136ba99d499e1f31b6fc5df9dcc" category="paragraph">Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.</block>
   <block id="402d1d9024cb07a63926bd7becbf4af3" category="paragraph">이 작업에는 두 MetroCluster 사이트의 각 스위치에 대해 수행해야 하는 단계가 포함됩니다.</block>
   <block id="53fcfa0383947fa34e7a95d871d5584c" category="paragraph">이 절차에서는 다음 예제와 같이 각 스위치에 대해 고유한 도메인 ID를 설정합니다. 이 예에서 도메인 ID 5와 7은 fabric_1을, 도메인 ID 6과 8은 fabric_2를 형성합니다.</block>
@@ -8734,7 +8645,6 @@
   <block id="431f5b1374f309f2d879bfefd088097b" category="paragraph">무정책</block>
   <block id="1e70080b98ddae7448b1d47e364336a4" category="paragraph">'칼쇼'</block>
   <block id="53989b83805e7661f392318f958a6584" category="admonition">컨트롤러 모듈에서 ONTAP를 구성할 때는 MetroCluster 구성의 각 컨트롤러 모듈에서 유드로 명시적으로 구성해야 합니다.</block>
-  <block id="555d0eb5e8f5efea1f9923360c2e1807" category="paragraph"><block ref="555d0eb5e8f5efea1f9923360c2e1807" category="inline-link-rx"></block></block>
   <block id="8e6415ee4068075bb4d9b0908c9e0ba1" category="list-text">스위치가 동적 포트 라이센스 방식을 사용하고 있는지 확인합니다.</block>
   <block id="39c3f713772acf06f906fa354070ccae" category="admonition">8.0 이전의 Brocade FabricOS 버전에서는 다음 명령을 관리자 및 버전 8.0으로 실행한 후 루트로 실행하십시오.</block>
   <block id="bb455cc655a37d9370a7b572be5c356a" category="list-text">루트 사용자를 설정합니다.</block>
@@ -8751,7 +8661,6 @@
   <block id="785289a22c2fa50a39647310c5cf0fcc" category="list-text">원하는 커뮤니티 문자열을 입력합니다.</block>
   <block id="653fe400fb6e06a90cfb64671de23b6a" category="paragraph">FC_SWITCH_A_1:</block>
   <block id="49533700e5940fd034672714047ee066" category="paragraph">FC_SWITCH_B_1:</block>
-  <block id="ffdc5cae0a16300c812b579b6e79a52f" category="section-title">Brocade DCX 8510-8 스위치의 기본 스위치 설정 구성</block>
   <block id="d60e69c7c22761403ce10ecb1e758088" category="paragraph">두 MetroCluster 사이트에서 각 스위치에 대해 단계를 수행해야 합니다. 이 절차에서는 다음 예에 표시된 대로 각 스위치에 대한 도메인 ID를 설정합니다.</block>
   <block id="366484bf5f1172659a2137faedacb7f6" category="paragraph">이전 예제에서 도메인 ID 5와 7은 fabric_1을 형성하고 도메인 ID 6과 8은 fabric_2를 형성합니다.</block>
   <block id="6dfc9c3bc75f83debd37e9025c164b18" category="admonition">이 절차를 사용하여 사이트당 DCX 8510-8 스위치를 하나만 사용할 경우 스위치를 구성할 수도 있습니다.</block>
@@ -8774,7 +8683,6 @@
   <block id="5708c57518293fee3e7483972ef15222" category="paragraph">''lscfg--config fabricID - slot slot-port lowest-port-highest-port''</block>
   <block id="1898627ff004308e407f57912594fc3a" category="admonition">논리적 패브릭을 형성하는 블레이드(예 스위치 1 블레이드 1 및 스위치 3 블레이드 1) 패브릭 ID가 동일해야 합니다.</block>
   <block id="97c275ee11d6b8887300898b0c961322" category="paragraph"><block ref="97c275ee11d6b8887300898b0c961322" category="inline-link-macro-rx"></block></block>
-  <block id="b331597dfd8949b795485e607b086f34" category="section-title">FC 포트를 사용하여 Brocade FC 스위치에서 E-포트 구성</block>
   <block id="a1beeca3f671a399d79fdf9dd080dc2f" category="paragraph">ISL(Inter-Switch Link)이 FC 포트를 사용하여 구성되는 Brocade 스위치의 경우 ISL을 연결하는 각 스위치 패브릭의 스위치 포트를 구성해야 합니다. 이러한 ISL 포트를 E-포트라고도 합니다.</block>
   <block id="5a2cebf8cdac8012983c6feab1664a29" category="list-text">FC 스위치 패브릭의 모든 ISL은 동일한 속도와 거리로 구성해야 합니다.</block>
   <block id="8353dac27cce0695c3f55842205bacaa" category="list-text">스위치 포트와 SFP(Small Form-Factor Pluggable)의 조합은 속도를 지원해야 합니다.</block>
@@ -8845,7 +8753,6 @@
   <block id="36e4088fba42f5536c7db99b9e4f73c4" category="list-text">모든 회로가 성공적으로 생성되었는지 확인합니다.</block>
   <block id="ebc158918c39cac81b5edec3fcbd6552" category="paragraph">포트쇼 fcipcircuit all</block>
   <block id="479ad00e4e26651f0d510a5473c4bc0f" category="paragraph">다음 명령을 실행하면 회로와 회로의 상태가 표시됩니다.</block>
-  <block id="13fdbeed3dbd65fea7cf159f43b1c7c8" category="section-title">Brocade 7810 및 7840 FC 스위치에서 40Gbps VE 포트 구성</block>
   <block id="9a9d25cf726fc7bdc9432debe16c7592" category="paragraph">ISL에 FCIP를 사용하는 두 개의 40GbE VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.</block>
   <block id="ba42e5d021a14dc3a0181cd37e790201" category="paragraph">이 절차의 예에서는 두 개의 스위치를 사용합니다.</block>
   <block id="ea8a03c3c0c4e09ce10edab5726c6db6" category="list-text">Fabric의 두 스위치에서 40Gbps 포트에 대한 IP 인터페이스(ipif) 주소를 생성합니다.</block>
@@ -8865,7 +8772,6 @@
   <block id="e2888e6a387844312506cc21988bd68a" category="paragraph">"portcfg fcipcircuit 24 create 1-S source-ip-address-D destination-ip-address--min-comm-rate 10000000--max-comm-rate 10000000"</block>
   <block id="18dc0fe59569e711bfa00eacf9be1c19" category="paragraph">다음 명령을 실행하면 DP1에 대한 스위치 FC_SWITCH_B_1에 회로가 생성됩니다.</block>
   <block id="75bb42b43550c6f4c4f45dd215a6e916" category="paragraph">다음 예에서는 회로를 나열하고 해당 OpStatus가 UP 상태라는 것을 보여줍니다.</block>
-  <block id="63954a6bf5ff3a5f86ce48e3e3ddeca9" category="section-title">Brocade 스위치에서 비 E-포트 구성</block>
   <block id="6cc9e317e29f9919b47b275cb1f06ee6" category="paragraph">FC 스위치에서 E 포트가 아닌 포트를 구성해야 합니다. MetroCluster 구성에서는 스위치를 HBA 이니시에이터, FC-VI 상호 연결 및 FC-SAS 브리지에 연결하는 포트를 사용합니다. 이러한 단계는 각 포트에 대해 수행해야 합니다.</block>
   <block id="68f8217df4d4a62af0ef1860555b65aa" category="paragraph">다음 예에서는 포트가 FC-to-SAS 브리지를 연결합니다.</block>
   <block id="7ba38760507f3ea411dc7d0eea1ced60" category="list-text">Site_A의 FC_FC_SWITCH_A_1에 있는 포트 6</block>
@@ -8879,7 +8785,6 @@
   <block id="71e35ac1088e2928b93b7396384ec9a1" category="list-text">연결된 HBA의 최대 속도는 16GB입니다. 이 경우 가장 높은 공통 속도는 16GB이므로 포트를 16GB의 속도로 구성해야 합니다.</block>
   <block id="70ccad21ddf44bd527e619885d14f9b9" category="paragraph">포르cfgshow</block>
   <block id="3edba8ef83110c63b2c8997300817d45" category="paragraph">예제 출력에서 포트 6에는 다음과 같은 설정이 있습니다. 속도가 16G 로 설정되어 있습니다.</block>
-  <block id="7e90af18bded5877b54bf70d5afe26d6" category="section-title">Brocade G620 스위치의 ISL 포트에 대한 압축 구성</block>
   <block id="d43359da21a9d67928755ce1d77ace83" category="paragraph">Brocade G620 스위치를 사용하고 ISL에서 압축을 설정하는 경우 스위치의 각 E-포트에서 구성해야 합니다.</block>
   <block id="3731120fdfeba2922e43774a5cdf8e8f" category="paragraph">이 작업은 ISL을 사용하여 두 스위치의 ISL 포트에서 수행해야 합니다.</block>
   <block id="7982dcd2197d5e9c1968156a58309942" category="list-text">압축을 구성하려는 포트를 비활성화합니다.</block>
@@ -8893,7 +8798,6 @@
   <block id="ae39bb80eb3250930bf68b437b7701d9" category="paragraph">다음 예에서는 포트 0에서 압축을 설정합니다.</block>
   <block id="df09a476320acebda6f08f8d250d6e6d" category="paragraph">islShow 명령을 사용하여 E_port가 암호화 또는 압축 구성 및 활성 상태로 온라인 상태인지 확인할 수 있습니다.</block>
   <block id="978fbde67977c63ea58137daf2a0c897" category="paragraph">portEncCompShow 명령을 사용하여 활성 포트를 확인할 수 있습니다. 이 예에서는 암호화 및 압축이 포트 0에서 구성되고 활성화된다는 것을 알 수 있습니다.</block>
-  <block id="e0be7ea022244db5d1c1da820a4f5ad8" category="section-title">Brocade FC 스위치에서 조닝 구성</block>
   <block id="f10d463e2d297fe413356e23e7923de9" category="section-title">FC-VI 포트를 위한 조닝</block>
   <block id="caf28de9f878439a25ca8c39e1e746b5" category="paragraph">MetroCluster의 각 DR 그룹에 대해 컨트롤러-컨트롤러 트래픽을 허용하는 FC-VI 연결을 위해 두 개의 존을 구성해야 합니다. 이러한 존에는 컨트롤러 모듈 FC-VI 포트에 연결되는 FC 스위치 포트가 포함되어 있습니다. 이러한 영역은 QoS(서비스 품질) 존입니다.</block>
   <block id="c6e4ca0d92238d04023b15c34ba48994" category="paragraph">QoS 존 이름은 접두사 QOSHid_로 시작하고 그 뒤에 사용자 정의 문자열을 사용하여 일반 영역과 구분합니다. 이러한 QoS 존은 사용 중인 FiberBridge 브리지 모델과 상관없이 동일합니다.</block>
@@ -8979,7 +8883,6 @@
   <block id="3c140973dafbe403da4d648de7fb7d10" category="paragraph">브리지는 다음 예를 사용합니다. bridge_site_stack greplocation in pair</block>
   <block id="6ac3ebc05b8cdd56c4904aff99967340" category="section-title">DR 그룹 1 - Site_A의 스택 1</block>
   <block id="1eb1ef295df992c6014ca6e1028e6634" category="paragraph">* DrGroup 1: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1: *</block>
-  <block id="a4fbb62b4b37689fce8a8f06a9424092" category="cell">Brocade 6505, 6510, 6520, G620 또는 G610 스위치 포트</block>
   <block id="14ec94fd0c476c4bd7018cb6d4fa2d08" category="cell">컨트롤러_A_1 포트 0a</block>
   <block id="2731de8db009036146d408fbd8eb9ef1" category="cell">컨트롤러_A_1 포트 0c</block>
   <block id="38501d9fd0cf6b30fe0f3d8c0661d5d8" category="cell">컨트롤러_A_2 포트 0a</block>
@@ -9014,7 +8917,6 @@
   <block id="7deb3b288f41c3d2063c6c45fc567baa" category="cell">6,2; 6,3; 6,6; 6,7; 8,2; 8,3; 8,6; 8,7; 6,9</block>
   <block id="ab5b296da7d3953c47f497911d584d4c" category="section-title">DR 그룹 1 - Site_B의 스택 1</block>
   <block id="ac8974a058fdc5f9347a89da6c986c1d" category="paragraph">* MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1: *</block>
-  <block id="d6fcfc633d11152371d4270aab5c3914" category="cell">Brocade 6505, 6510, 6520, G620 또는 G610 스위치</block>
   <block id="a5ae6e111cf4b3ff85940fa8a84a0b8d" category="cell">Bridge_B_1a FC1</block>
   <block id="26ca7608e70fea938d8647c736a25785" category="cell">MC1_INIT_GRP_1_SITE_B_STK_GRP_1_TOP_FC1</block>
   <block id="4c4c88b6c80549b73030b5e3dce2ca3a" category="cell">5,2; 5,3; 5,6; 5,7; 7,2; 7,3; 7,6; 7,7; 7,8</block>
@@ -9039,13 +8941,10 @@
   <block id="4cefff4e058c741f9f182f8d97f39da1" category="list-text">HBA 이니시에이터 포트 4개(각 컨트롤러에 연결 1개)</block>
   <block id="87066f22c3b6b44dea00a2e227d37331" category="paragraph">이 예에서는 각 사이트에 있는 두 개의 스택 그룹을 연결하는 두 쌍의 브리지를 보여 줍니다. 각 브리지는 하나의 FC 포트를 사용하므로 패브릭당 총 8개의 스토리지 영역이 있습니다(총 16개).</block>
   <block id="763b7699a7efae656cdc98f0083c04a3" category="paragraph">브리지 쌍 내의 브리지. 한 쌍의 브리지는 특정 스택 그룹에 연결됩니다.</block>
-  <block id="5b64307da6d102d4578562dfb0285d03" category="cell">6505/6510/G610/G620 포트</block>
   <block id="578424ee26e9f9f40830941c7d319c58" category="paragraph">5,2; 5,6; 7,2; 7,6; 5,8</block>
   <block id="56dd5898b5b26ba0128b8d925c3fa4ee" category="paragraph">* DrGroup 1: MC1_INIT_GRP_2_SITE_A_STK_GRP_1_TOP_FC1: *</block>
-  <block id="795529eca9940387b728f02f14d2d32b" category="cell">6505/6510/G610 포트</block>
   <block id="a6e22114737cb5bbd7a59aed8a5d802a" category="paragraph">MC1_INIT_GRP_2_SITE_A_STK_GRP_1_BOT_FC1</block>
   <block id="6608353d1c8916d4afa2c66437fde092" category="paragraph">5,3; 5,7; 7,3; 7,7; 5,9</block>
-  <block id="b106e97acb697fbd87f3500dea6d8608" category="cell">6505/6510/G610</block>
   <block id="c694e0a8e38ad7060b3f58faa164a3c6" category="paragraph">Bridge_A_1a FC2</block>
   <block id="b9bf9caa4975dbe459de10443ee27ff0" category="paragraph">MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC2</block>
   <block id="cef9ae476f0c17fbb2c8e69d051a1d70" category="paragraph">6,2; 6,6; 8,2; 8,6; 6,8</block>
@@ -9114,14 +9013,12 @@
   <block id="645e1a11097be087c81f29b03f075f99" category="paragraph">'cfgenable config_name'입니다</block>
   <block id="1b7b10d17a55b8e0d5de70aab62c36c2" category="list-text">조닝 구성을 검증합니다.</block>
   <block id="6b641bd213f3598b418df528bf39204a" category="paragraph">존-검증</block>
-  <block id="0f125e34df5493e0ac69ad88c9812972" category="section-title">Brocade 6510 또는 G620 스위치에서 ISL 암호화 설정</block>
   <block id="dbfd245648c5a87ea34a2a2a21bdf92b" category="paragraph">Brocade 6510 또는 G620 스위치의 경우 ISL 연결에서 Brocade 암호화 기능을 선택적으로 사용할 수 있습니다. 암호화 기능을 사용하려면 MetroCluster 구성의 각 스위치에 대해 추가 구성 단계를 수행해야 합니다.</block>
   <block id="6deac9c8727545b07ef6dc1aec14bf89" category="list-text">Brocade 6510 또는 G620 스위치가 있어야 합니다.</block>
   <block id="3a4dae143b7f6ea094523ac94bc48c69" category="admonition">Brocade G620 스위치에서 ISL 암호화 지원은 ONTAP 9.4 이상에서만 지원됩니다.</block>
   <block id="48fad1aaa24226c554ad5a9b9c420612" category="list-text">동일한 Fabric에서 두 스위치를 선택해야 합니다.</block>
   <block id="166bda82da37718bae11abdc8d92df7d" category="list-text">대역폭 및 포트 제한을 확인하려면 스위치 및 패브릭 운영 체제 버전에 대한 Brocade 설명서를 검토해야 합니다.</block>
   <block id="d1399dea786744d88b8b5d939a008024" category="paragraph">이 단계는 동일한 Fabric에 있는 두 스위치에서 수행해야 합니다.</block>
-  <block id="d7e77d64eaaa173b1a6b7cf41ddaea33" category="section-title">가상 Fabric을 해제하는 중입니다</block>
   <block id="2c1f3089ca89ab9aec4ef8cfdbf4fe11" category="paragraph">ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 스위치에서 가상 패브릭을 모두 비활성화해야 합니다.</block>
   <block id="b8f512d291b08df4ae80d48046b4aeb0" category="list-text">스위치 콘솔에서 다음 명령을 입력하여 가상 패브릭을 비활성화합니다.</block>
   <block id="bdc4e88054166f5dd11450d23245abba" category="paragraph">'fosconfig -- VF 비활성화'</block>
@@ -9404,7 +9301,6 @@
   <block id="c0aab801718ede1d11f40e038a616dac" category="list-text">포트 VSAN 번호는 ISL(일반적으로 기본 VSAN 1)이 포함된 VSAN과 같아야 합니다.</block>
   <block id="64d3e6e965448474fe6b3db44751c908" category="list-text">두 스위치에서 인터페이스 구성을 종료합니다.</block>
   <block id="8e77aa98231758c6cfdeec05a6e05dbb" category="list-text">두 Fabric의 시작 구성에 업데이트된 구성을 복사합니다.</block>
-  <block id="201493476a4a8eafce0cb8596c732440" category="paragraph">ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 을 참조하십시오 <block ref="fb60c06f4120cd75fc9ac39720fd32d8" category="inline-link-macro-rx"></block></block>
   <block id="974c315b5484ce058af22acba5a6b832" category="paragraph">FCIP 프로파일과 인터페이스를 생성한 다음 이를 IPStorage1/1GbE 인터페이스에 할당하여 ISL(E-port)을 연결하는 FCIP 스위치 포트를 구성해야 합니다.</block>
   <block id="5f56c574c0d6ba7c640a378e740843cd" category="paragraph">이 작업은 각 스위치에서 IPStorage1/1 인터페이스를 사용하는 스위치 패브릭당 단일 ISL을 사용하는 구성에만 해당됩니다.</block>
   <block id="e705380f4d0e8a32e3a9788cc8f7307a" category="paragraph">이 작업은 각 FC 스위치에서 수행해야 합니다.</block>
@@ -9635,8 +9531,6 @@
   <block id="15cca06ba2cf6c3ae3aa84e18984c915" category="paragraph">모든 스위치에서 FC 스위치 구성이 시작 구성에 저장되었는지 확인해야 합니다.</block>
   <block id="aa3da2977894ededc70174629f42daa7" category="paragraph">두 FC 스위치 패브릭에서 다음 명령을 실행합니다.</block>
   <block id="4cd1110435955b3b14ac2d145c6baae1" category="paragraph">각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지하고, 이러한 관계에 공유 또는 전용 포트를 사용할지 여부를 결정해야 합니다.</block>
-  <block id="72fa0ea37e0389a6c2e6107de6bbcbe8" category="summary">다음 표에서는 AFF A900 시스템의 Brocade 스위치에 대한 ISL 포트 사용량을 보여 줍니다.</block>
-  <block id="f3089a69f0cb0a583fab7f5c1ea7226c" category="cell">6505, G610</block>
   <block id="e376bd1a00beeb72bd5c4ab256198e27" category="summary">MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려면 광섬유 ISL(Inter-Switch Link)을 통해 각 사이트의 FC 스위치를 연결해야 합니다.</block>
   <block id="6fde06e36c7ea040984ee2ff8627888d" category="doc">MetroCluster 사이트 간 ISL 케이블 연결</block>
   <block id="9975aea079146076493a918bda06f349" category="paragraph">MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려면 광섬유 ISL(Inter-Switch Link)을 통해 각 사이트의 FC 스위치를 연결해야 합니다.</block>
@@ -9821,10 +9715,6 @@
   <block id="52ce4442255e41018df454294b3648fd" category="sidebar">패브릭 연결 MetroCluster 구성에 케이블을 연결합니다</block>
   <block id="e43d65812abd17cff1b088f40916853a" category="sidebar">FC 스위치 및 FC-to-SAS 브리지에 대한 구성 워크시트</block>
   <block id="52d560f5b6575a3dfa8df66e28e9d3d0" category="sidebar">MetroCluster 사이트 간 ISL 케이블 연결</block>
-  <block id="b6d684e18fbacf209337f80ec1a6dbd2" category="sidebar">ONTAP 9.10.1 이상을 실행하는 컨트롤러에 대한 AFF A900 Brocade 포트 사용</block>
-  <block id="20be931e6a91f7361d271248d9c2f477" category="sidebar">ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Brocade 포트 사용량</block>
-  <block id="224ad006d44a9886d7665e4aad6a905c" category="sidebar">ONTAP 9.10.1 이상을 실행하는 AFF A900 Cisco 포트 사용 컨트롤러</block>
-  <block id="0cf55ee73ddb0d8fbba68a1054b00154" category="sidebar">ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Cisco 포트 사용량</block>
   <block id="d6467b2ffdd24b6a7c9602e4a3965668" category="sidebar">필요한 경우 HA 인터커넥트에 케이블을 연결합니다</block>
   <block id="e7408290c726a494ea225eebcc1cdff7" category="sidebar">FC 스위치를 구성합니다</block>
   <block id="2b747976a95b28cafe22f97ba37e8062" category="sidebar">RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다</block>
@@ -10202,18 +10092,9 @@
   <block id="c24d2fcd8511c8b51a6aef773200e0d8" category="paragraph">스위치백 작업을 수행하기 전에 새 컨트롤러의 라이센스를 설치해야 합니다.</block>
   <block id="07beb3f4161a6f204edf78213ee21dd3" category="list-text"><block ref="07beb3f4161a6f204edf78213ee21dd3" category="inline-link-macro-rx"></block></block>
   <block id="42f4edc2efb2c786550a905c38a8416c" category="admonition">LOADER 프롬프트가 없는 경우 오류 메시지를 기록합니다. 시스템이 부팅 메뉴를 표시하는 경우 재부팅하여 부팅 프로세스를 다시 중단하십시오.</block>
-  <block id="8d9fb55ee32f6df582d661812847c467" category="doc">AFF A900 또는 FAS9500 시스템 사용 시 FC 스위치에 대한 포트 할당</block>
   <block id="4382ff0992965ffdabb9c638b6f2ecf2" category="list-text">AFF A900 또는 FAS9500 스토리지 시스템에는 8개의 FC-VI 포트가 필요합니다. AFF A900 또는 FAS9500을 사용하는 경우 8포트 구성을 사용해야 합니다. 구성에 다른 스토리지 시스템 모델이 포함된 경우, 표에 표시된 케이블을 사용하되 불필요한 FC-VI 포트의 케이블은 무시합니다.</block>
-  <block id="649ae78fb315c7c5f6a700dfdf86f4bb" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 8노드 구성에서 ISL에 대한 AFF A900 또는 FAS9500-Cisco 포트 사용</block>
   <block id="a0bc38f50488b4f686bd2fe145def041" category="inline-link-macro">MetroCluster 구성 - 해결 가이드에서 노드를 제거하는 방법</block>
   <block id="8ec1014b27ed523596c5c910443b0827" category="paragraph">AFF A900 및 FAS9500</block>
-  <block id="87ba2462050ce75d6d9915d834efe9b7" category="doc">AFF ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 ISL에 대한 A900 또는 FAS9500 - Brocade 포트 사용</block>
-  <block id="801938c63db0b16215aa712c6d1fd12c" category="paragraph">다음 표에서는 AFF A900 또는 FAS9500 시스템의 Brocade 스위치에 대한 ISL 포트 사용을 보여 줍니다.</block>
-  <block id="1dcd768f9d116bda4a2253d295e01fb8" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 또는 FAS9500 컨트롤러에 Brocade 포트를 사용합니다</block>
-  <block id="e33ab3eabb81d3db08bba17fee6ed399" category="paragraph">다음 표에는 Brocade 스위치의 포트 사용량이 나와 있습니다. 이 표에는 4개의 DR 그룹에 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다. AFF A900 및 FAS9500 시스템에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.</block>
-  <block id="f7326e6cfc29ebefdb936677ae7dd110" category="doc">ONTAP 9.10.1 이상을 실행하는 MetroCluster 구성에서 AFF A900 또는 FAS9500 컨트롤러에 대한 Cisco 포트 사용</block>
-  <block id="dfed8939b1f16a32e24cbf7db94e77b4" category="paragraph">이 표에는 DR 그룹에 AFF A900 또는 FAS9500 컨트롤러 모듈 8개가 포함된 지원되는 최대 구성이 나와 있습니다.</block>
-  <block id="850f7b79a5d7e3532f3461f2abbf9036" category="list-text">다음 표에는 FC-VI 포트가 8개인 시스템이 나와 있습니다. AFF A900 및 FAS9500에는 FC-VI 포트 8개(FC-VI-1 및 FC-VI-2의 경우 a, b, c, d)가 있습니다.</block>
   <block id="756d409209ace98589705774b5011aa0" category="paragraph">FAS9500</block>
   <block id="dd6721b9055a32492dda0434480da44d" category="admonition">다운로드 후 RCF 파일을 수정할 수 없습니다.</block>
   <block id="03b9eedf57c55a2eb9b4feaa990c85f6" category="list-text">MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다.</block>
@@ -10698,8 +10579,6 @@
   <block id="690f8ff3b8b65da4f1bc779fb507da9d" category="sidebar">MetroCluster Tiebreaker 이벤트 로그 파일</block>
   <block id="fd8a65566a0bac859d93882f20cc0c7d" category="paragraph"><block ref="fd8a65566a0bac859d93882f20cc0c7d" category="inline-link-macro-rx"></block></block>
   <block id="43119522ff803c1f1fa88bdbaffe20b7" category="admonition">iSCSI 포트는 MetroCluster IP 구성에서만 필요합니다.</block>
-  <block id="fd9b3eaeebb236fdcf40b5456ccc900e" category="admonition">AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, 및 G720 스위치</block>
-  <block id="81d4bf20c117cfe06c727511dd63382b" category="paragraph">6510, G620, G620-1, G630, G630-1, G720</block>
   <block id="64cdec386f8cc50c2a2ec9316633b629" category="paragraph">러닝을 시작하기 전에<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block>HA 모드 및 DR 미러링이 활성화되어 있지 않으며 이 예상 동작과 관련된 오류 메시지가 표시될 수 있습니다. 나중에 명령을 실행할 때 HA 모드 및 DR 미러링을 사용하도록 설정할 수 있습니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 구성을 구현합니다.</block>
   <block id="5ffd33f8dea25274cffabd9b7ab1c36e" category="paragraph">에 응답해야 합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 고급 모드로 계속 진행하라는 메시지가 나타나면 고급 모드 프롬프트(*)가 나타납니다.</block>
   <block id="1fd3081a4bf2b2b1ccafeb89c824a5d2" category="admonition">모범 사례는 미러링된 데이터 애그리게이트를 여러 개 사용하는 것입니다. 미러링된 Aggregate가 하나만 있으면 메타데이터 볼륨이 별도의 Aggregate가 아닌 동일한 Aggregate에 있기 때문에 보호가 덜 됩니다.</block>
@@ -11319,15 +11198,7 @@
   <block id="af8a69aa12393a4d9b6992e884f1c919" category="sidebar">MetroCluster 문서</block>
   <block id="b8b5370c063dd2b4ce4021558a49ac07" category="paragraph">ONTAP 9.8 이하를 실행하는 MetroCluster 구성의 경우, 업그레이드를 전환하기 위해 수행되는 일부 절차에서는 임시 8노드 구성을 만들기 위해 구성에 두 번째 4노드 DR 그룹을 추가해야 합니다.  ONTAP 9.9.1부터 영구 8노드 MetroCluster 구성이 지원됩니다.</block>
   <block id="0abe9117fda19697d2dbf1bd1d754e02" category="list-text">이 절차는 4노드 DR 그룹 하나를 기존 MetroCluster IP 구성에 추가하는 데 필요한 단계를 설명합니다. 8노드 구성을 업데이트하는 경우 각 DR 그룹에 대해 전체 절차를 반복하면서 한 번에 하나씩 추가해야 합니다.</block>
-  <block id="84d04e0c7f711ba6800f8d3bd5bc0847" category="inline-xref">ONTAP 9.4 이상을 실행하는 MetroCluster 구성에서 Cisco 9132T 포트 사용</block>
-  <block id="ccdfc130a534c248f558d6495323cb02" category="admonition">Cisco 9132T의 경우 를 참조하십시오 <block ref="3db7a367aafc64164b814f36e8341eaa" category="inline-xref-macro-rx"></block>.</block>
-  <block id="da1fe90f1a7c8d5426c9fb653143159c" category="inline-xref">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 Cisco 9132T의 ISL 포트 사용</block>
-  <block id="ebaff03f6ed502f4a413a1ce08e7b523" category="admonition">Cisco 9132T의 경우 를 참조하십시오 <block ref="745f667c2207ac60e33bebf6a26d4908" category="inline-xref-macro-rx"></block>.</block>
-  <block id="b6adc54642d6ea9466bf5956bfd90921" category="section-title">ONTAP 9.4 이상을 실행하는 MetroCluster 4노드 및 8노드 구성에서 Cisco 9132T 포트를 사용합니다</block>
   <block id="65ac5210a13e16ff0c09cc508d39f010" category="admonition">8노드 구성의 경우 RCF가 제공되지 않기 때문에 수동으로 조닝을 수행해야 합니다.</block>
-  <block id="148fa39b011d75fbf87b5c6a6e4eb7ac" category="list-text">4노드 구성에서 LEM 2개가 있는 LEM2-5부터 LEM2-8까지 LEM2-8까지 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="1b3edf8d6e61a53c159f115111d76631" category="list-text">8노드 구성에서 LEM2-13 포트부터 LEM2-16 IN 9132T 스위치까지 2개의 LEM으로 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="7aff2de5bc0a96f53245830100b31a76" category="section-title">ONTAP 9.1 이상을 실행하는 MetroCluster 구성에서 4노드 및 8노드 구성의 ISL용 Cisco 9132T 포트 사용</block>
   <block id="e919df0feb57e826b9f8b6224efe2e04" category="paragraph">다음 표에서는 Cisco 9132T 스위치의 ISL 포트 사용량을 보여 줍니다.</block>
   <block id="a261c053c0fcf9998b34ce893b64a413" category="paragraph"><block ref="c0d0f2b19dc6b7f887420d5bf33adaba" prefix="" category="inline-code"></block></block>
   <block id="8eca95447c2280ec1cef00c74fbdd026" category="paragraph"><block ref="08781b24c8be1fcc1ac4a86a67a6752f" prefix="" category="inline-code"></block></block>
@@ -11335,7 +11206,6 @@
   <block id="bd0d55b78c7361cb6bee641b1a3f51f1" category="paragraph">출력이 표시됩니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 의 경우<block ref="555bf8344ca0caf09b42f55e185526d8" prefix=" " category="inline-code"></block> 모든 노드에 대한 필드입니다.</block>
   <block id="a52d9220769f6761bf129d7261ce8c50" category="list-text">새로 연결된 MetroCluster IP 노드에 연결된 모든 디스크가 있는지 확인합니다.</block>
   <block id="31fd58e5bb5b343f46192bb2a5c46678" category="list-text">다음 명령을 실행하여 MetroCluster 구성의 상태를 확인합니다.</block>
-  <block id="0684ea3076044d6489f161fa34d1768f" category="list-text">2x LEM 모듈이 있는 9132T 스위치의 LEM2-5부터 LEM2-8까지 추가 브리지를 연결할 수 있습니다.</block>
   <block id="2f446d31523b281d945a5fb6d94e09f7" category="cell">MetroCluster FC 구성 상태입니다</block>
   <block id="b25919189b4340e1b84dd00de09921d3" category="cell">MetroCluster IP 구성 상태입니다</block>
   <block id="e402ac65c66b96e2f07562ac550c53d8" category="paragraph">오프라인(참고 1)</block>
@@ -11781,11 +11651,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a4ee4d0f79fa6f1bac894cfc957089d6" category="paragraph">FC 포트 2개 중 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용하는 경우 브리지 포트에 대한 스토리지 존을 생성해야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.</block>
   <block id="7e95951a529361ac1e326cd54359d011" category="paragraph"><block ref="7e95951a529361ac1e326cd54359d011" category="inline-link-macro-rx"></block></block>
   <block id="4c79922838c9f8d530f20efcd3382822" category="cell">FC 포트(FC1 또는 FC2)를 사용한 FiberBridge 7500N 또는 7600N을 사용한 구성</block>
-  <block id="3a4842c9952a7c657d04e55a3d69b1a4" category="cell">FC 포트 2개를 사용하는 FibreBridge 7500N 또는 7600N</block>
-  <block id="126b9e3a8501d897a2356aba96828af6" category="cell">FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지</block>
-  <block id="69abf6cf7deeba7ace2f747f7661208f" category="cell">FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N</block>
-  <block id="0351289236b3260f9d0c35b64f62689c" category="paragraph">하나의 FC 포트(FC1 또는 FC2)만 사용하여 FiberBridge 7500N 또는 7600N 브리지의 케이블 연결을 따를 수 있습니다. 4개의 이니시에이터를 사용하는 대신 2개의 이니시에이터만 연결하고 다른 2개는 스위치 포트에 연결된 상태로 두십시오.</block>
-  <block id="4883312b6c36aa2f1d5ce2e2f17638bd" category="paragraph">조닝을 수동으로 수행하는 경우 FC 포트(FC1 또는 FC2) 하나를 사용하여 FiberBridge 7500N 또는 7600N 브리지에 사용되는 조닝을 따르십시오. 이 시나리오에서는 Fabric당 각 존 구성원에 2개가 아닌 1개의 이니시에이터 포트가 추가됩니다.</block>
   <block id="7f921cbd9f23de85fa3d483b640e428b" category="open-title">노드 전원이 꺼져 있는 경우:</block>
   <block id="5f4eaac69c780a3f8ab154192e4a1a26" category="paragraph">노드의 전원을 켭니다.</block>
   <block id="2900f8420dafccee0a2692e48506c6cb" category="open-title">LOADER 프롬프트에 노드가 있는 경우:</block>
@@ -12120,7 +11985,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="250f3098aa37d3a08b48b8157db8a62e" category="open-title">Cisco 스위치</block>
   <block id="6204028fd0e3ba079ca2fce4bb224e24" category="paragraph"><block ref="010303eb2e404f6eb49cc314fc8aa294" prefix="" category="inline-code"></block></block>
   <block id="a1032909a057927264a07294a53b91b5" category="paragraph">RO 액세스가 필요한 경우 "User(ro):" 뒤에 "snmpv3user"를 지정합니다. 다음 예에서는 Brocade 스위치를 사용합니다.</block>
-  <block id="b4656d073f9b3064260089f7e9a12e66" category="paragraph">ONTAP 9.15.1부터 MetroCluster IP 구성의 사이트 간에 nvlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화하도록 엔드 투 엔드 암호화를 구성할 수 있습니다.</block>
   <block id="ddaa39224424042ba35394afbe714a70" category="list-text">이 작업을 수행하려면 클러스터 관리자여야 합니다.</block>
   <block id="ffe47e3eda7ee0a88fa1a1b82a09899e" category="inline-link-macro">외부 키 관리를 구성합니다</block>
   <block id="ca6ec36bc37ffec6b208710049cf5f93" category="list-text">종단 간 암호화를 구성하려면 먼저 해야 합니다 <block ref="16044a12704308be53c493c61be8d30c" category="inline-link-macro-rx"></block>.</block>
@@ -12150,7 +12014,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="cbd27762af6b4c6335bac75a098542ce" category="paragraph">4노드 MetroCluster IP 구성에서 AFF A800 및 AFF C800 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
   <block id="2c18214fb090b3346dccf036f48c7f39" category="list-text">애그리게이트당 최대 FlexVol 볼륨 수가 200개에서 625개로 증가했습니다.</block>
   <block id="3f35c7e20a8d7d81feeb64eb6d5afa09" category="list-text">노드당 최대 FlexVol 볼륨 수가 800개에서 1250개로 증가했습니다.</block>
-  <block id="b30d9c31e8ee4ad2f0b8474d6a8c7b5d" category="list-text">고가용성(HA) 쌍당 최대 FlexVol 볼륨 수가 1600개에서 2500개로 증가했습니다.</block>
   <block id="34211e4d6128da1dfdf7db696c0d2aad" category="paragraph">AFF A900 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 인상</block>
   <block id="84e9aa8f760c1f5f0f19cf4fc3153c4b" category="paragraph">4노드 MetroCluster IP 구성에서는 AFF A900 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
   <block id="69cd959e02d2a7b70720f5426f4f0888" category="list-text">원래 시스템이 종단 간 암호화용으로 구성된 경우 대체 노드의 각 Loader 프롬프트에서 다음 bootarg를 설정합니다.</block>
@@ -12181,8 +12044,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0ab751f551b18333e82474f5ca9b4122" category="list-text">MetroCluster IP 인터페이스 포트가 온라인 상태인지 확인합니다.</block>
   <block id="124ba57298a92342f8aec06ebcfb6415" category="inline-link-macro">이전 컨트롤러 모듈의 시스템 ID를 확인합니다</block>
   <block id="3ac27de4b4347c98785ff06870fe7221" category="paragraph"><block ref="3ac27de4b4347c98785ff06870fe7221" category="inline-link-macro-rx"></block></block>
-  <block id="9e667988f536ce55f0a4c5cf0908d042" category="cell">LEM 2개 및 4노드 MetroCluster 또는 DR 그룹 1개가 포함된 Cisco 9132T</block>
-  <block id="7d83eb0736445dbf18519e99146d2fff" category="cell">4노드 MetroCluster 2개 또는 DR 그룹 2개가 포함된 8노드 MetroCluster 1개가 포함된 Cisco 9132T</block>
   <block id="a786547181c9c8f446791420d2be691f" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="f93341e63c1888be05256ff042174623" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="27211cf5d485f8491ca9b566aefe2d6d" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다.</block>
   <block id="e528d26e96f91b34e70a35c4661d620d" category="list-text">AFF 및 ASA 시스템에서 ADP를 MetroCluster IP 구성과 함께 사용하려면 ONTAP 9.4 이상이 필요합니다.</block>
@@ -13446,42 +13307,20 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="11174a5afd588b4b0362df983b5f76c6" category="sidebar">스위치백 및 스위치백을 사용하는 MetroCluster IP의 컨트롤러(AFF A700에서 AFF A900로, FAS9000에서 FAS9500로) 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="9154ca816ab69e291b499f5a2579f66c" category="sidebar">스위치백 및 스위치백을 사용하는 MetroCluster FC 구성에서 컨트롤러(AFF A700를 AFF A900로, FAS9000에서 FAS9500로) 업그레이드(ONTAP 9.10.1 이상)</block>
   <block id="3931310703263c726d52a1768504781f" category="list-text">의 Brocade 절차에 따라 새 스위치를 <block ref="8891b6de7b2070c584bdeb67b522b51b" category="inline-link-macro-rx"></block>구성합니다.</block>
-  <block id="a01a953cf57a4a3591be7c4dd9dd14fa" category="list-text">ISL 암호화를 활성화하려면 을 <block ref="fb6e086ddbfd6d800d2c601996554df4" category="inline-link-macro-rx"></block>참조하십시오.</block>
-  <block id="180e0613653267779e5c48b1089eec2b" category="paragraph">이니시에이터 포트, FC-VI 포트 또는 ISL을 연결하는 데 사용되지 않는 포트를 재구성하여 스토리지 포트 역할을 할 수 있습니다. 그러나 지원되는 RCF를 사용하는 경우 그에 따라 조닝을 변경해야 합니다.</block>
   <block id="29c89e3d0b280775787b67d96a4087d3" category="list-text">FC-VI 연결을 위한 2가지 옵션 중 하나로 AFF A300 및 FAS8200 스토리지 시스템을 주문할 수 있습니다.</block>
-  <block id="731feab1fd0d4fca6b5d978a166b21f9" category="section-title">FiberBridge 7500N 또는 7600N 브리지를 사용하는 컨트롤러 구성</block>
-  <block id="e840d63b8d91be60055156853f6cb3c0" category="paragraph">다음 표에는 FibreBridge 7500N 또는 7600N 브리지를 사용하는 컨트롤러의 Brocade 포트 사용량이 나와 있습니다.</block>
-  <block id="0dae6454bb8066f80d3cee1de6e36505" category="cell">Brocade 스위치 모델 포트 연결</block>
-  <block id="536d2d681b1289cbeefda0c9fdcc09f3" category="cell">G720, G730</block>
   <block id="3aeb504465245afd2f26ab0917c07244" category="section-title">FC 포트(FC1 또는 FC2)를 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성</block>
   <block id="50c0f59cb89ba3dd0b9b105da94810f5" category="paragraph-title">MetroCluster 1 또는 DR 그룹 1</block>
-  <block id="d7628d9cfe849878c0b1b626bda3e165" category="paragraph">다음 표는 FibreBridge 7500N 또는 7600N을 사용하는 MetroCluster 1 또는 DR 그룹 1에서 지원되는 쉘프 구성을 보여주고 FC 포트(FC1 또는 FC2)를 하나만 사용하는 것입니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
-  <block id="9fc34d6bbec9982b1e0510d6a6fef0a1" category="list-text">6510 및 DCX 8510-8 스위치에서 포트 16-19에 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="9678df63e5e138898c1a3a9d745f250a" category="list-text">6520 스위치에서 추가 브리지를 포트 16-21과 24-45에 케이블로 연결할 수 있습니다.</block>
   <block id="1938afd24289f82f1eccb1f5fc03bee0" category="paragraph">스택 4</block>
   <block id="b02ceda2473562359e0f31ddee5b9fd7" category="paragraph">스택 5</block>
   <block id="d6dc0baaa910da78635865e2a526300a" category="paragraph">스택 6</block>
   <block id="384b8992b8f33d81d1be8af75815ce43" category="paragraph">스택 7</block>
   <block id="d711b8d9ad84315aa5329b39f947dedd" category="paragraph">스택 8</block>
   <block id="3692c9ba1350a63df24145cf798b7a8d" category="paragraph-title">MetroCluster 2 또는 DR 그룹 2</block>
-  <block id="3931538ae618e65321b4b3317e9b03d1" category="paragraph">다음 표는 FC 포트(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 경우 MetroCluster 2 또는 DR 그룹 2에서 지원되는 쉘프 구성을 보여줍니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
-  <block id="2903ceed0cbc44b8b559bfff7873b906" category="list-text">6520 스위치에서 추가 브리지를 포트 64-69 및 72-93에 케이블로 연결할 수 있습니다.</block>
-  <block id="90630a6ca649afd90e4b45c9af3d157d" category="paragraph">다음 표에는 두 FC 포트(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 MetroCluster 2 또는 DR 그룹 2에서 지원되는 쉘프 구성이 나와 있습니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
-  <block id="742bcddd5d6452c898c549e1b60cd513" category="paragraph">포트 17 - 40 및 57 - 88을 사용하여 동일한 패턴으로 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="391ee14bc6581827dc4f2d88ff91afcf" category="paragraph">같은 패턴 후 포트 33 - 40을 사용하여 두 번째 DR 그룹 또는 두 번째 MetroCluster 구성에 대한 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="785ca789cd5d47a1b40d11e4fa3a608a" category="paragraph">동일한 패턴의 포트 25 ~ 48을 사용하여 두 번째 DR 그룹 또는 두 번째 MetroCluster 구성에 대한 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="3914736797bebae05c8e9387dd6727f0" category="paragraph">다음 표는 FC 포트(FC1 또는 FC2)를 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용할 때의 브리지 포트 사용량을 보여 줍니다. FC 포트 하나를 사용하는 FiberBridge 7500N 또는 7600N 브리지의 경우 FC1로 표시된 포트에 FC1 또는 FC2를 연결할 수 있습니다. 포트 25-48을 사용하여 추가 브리지를 연결할 수도 있습니다.</block>
-  <block id="23a48f21ed38a9e3df523f469f325385" category="paragraph">다음 표에서는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다.</block>
-  <block id="b38a704e8751bf228cfb309f0668b3e1" category="section-title">FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N을 사용하는 컨트롤러 구성</block>
   <block id="2d98516f0953aef9ad21de45b1d6ed89" category="paragraph">다음 표는 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N을 사용하는 컨트롤러 구성을 보여줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.</block>
   <block id="24ce95dff7cdbe82f47d82b0c5e3c3bd" category="paragraph">LEM2-5를 참조하십시오</block>
   <block id="d1219ba7b45f6028da9ef53dc1d962dc" category="paragraph">LEM2-6를 참조하십시오</block>
   <block id="d72635ed8e78c8bf248888485d54fefc" category="paragraph">LEM2-7를 참조하십시오</block>
   <block id="bf56acff15a22deda5e2b827afffd42e" category="paragraph">LEM2-8를 참조하십시오</block>
-  <block id="ebbda15a69930ca8edcac4149ee0cd6b" category="section-title">LEM 1개와 4노드 MetroCluster 또는 DR 그룹 1개가 포함된 Cisco 9132T</block>
-  <block id="d1d3effcd2e3b543a6d69f1de82ab93f" category="paragraph">다음 표에서는 LEM 1개와 4노드 MetroCluster 또는 DR 그룹 1개가 있는 Cisco 9132T 스위치의 포트 사용량을 보여 줍니다.</block>
-  <block id="59bea19cbabb48065c7357317b97432c" category="paragraph">다음 표에는 LEM 2개와 4노드 MetroCluster 또는 DR 그룹 1개가 있는 Cisco 9132T 스위치의 포트 사용량이 나와 있습니다.</block>
-  <block id="71b8d98cdcca6f6c9703e8e704b1bc15" category="paragraph">다음 표에는 4노드 MetroCluster 2개 또는 2개의 DR 그룹이 포함된 8노드 MetroCluster 1개가 있는 Cisco 9132T 스위치의 포트 사용량이 나와 있습니다.</block>
   <block id="9fc6290b0188dfeebf0e0bc3aa659923" category="list-text">설정하는 MetroCluster bootarg 값은 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 또는 공유 MetroCluster/HA 포트를 사용하는지 여부에 따라 달라집니다. 다음 정보를 사용하여 시스템의 포트를 확인합니다.</block>
   <block id="9e6ae12e9968c12ca89b65cbfc98c1a6" category="paragraph">명령 출력은 플랫폼 모델이 공유 클러스터/HA 포트를 사용하는지 공유 MetroCluster/HA 포트를 사용하는지에 따라 다릅니다.</block>
   <block id="f4c0383379a5ae93d0b5e4c4f8586e47" category="open-title">공유 클러스터/HA 포트를 사용하는 시스템</block>
@@ -13516,8 +13355,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6750be268fde99a8fc70da3cae96763b" category="cell"><block ref="dc13cd459e510658615266395ba927b0" category="inline-xref-macro-rx"></block></block>
   <block id="3485285ca38e1ca4c0a680f9bcf47989" category="admonition">이전 컨트롤러와 새 컨트롤러에 공통 포트가 없는 경우 데이터 LIF를 수정할 필요가 없습니다. 이 단계를 건너뛰고 바로 로 이동합니다<block ref="d2fd743661c244ff041df8d51a55b2b7" category="inline-xref-macro-rx"></block>.</block>
   <block id="57e1aa86ef1214c6b5a618674a806136" category="paragraph">SAN 및 NAS를 포함한 모든 데이터 LIF는 스위치오버 사이트(cluster_A)에 있기 때문에 관리 ""업""과 운영 "'다운""이 될 것입니다.</block>
-  <block id="10a71a5f735ab2b1b550a2d004b57ffb" category="paragraph">동일한 패턴으로 포트 25 ~ 48을 사용하여 추가 브리지를 연결할 수 있습니다.</block>
-  <block id="937a8da9d8c2c67fd94deda08131bfdd" category="section-title">ONTAP 9.1 이상을 실행하는 8노드 MetroCluster 구성의 ISL용 Cisco 포트 사용</block>
   <block id="3940782c6ee1e8e37bce75ab000a6d7d" category="admonition">보안을 강화하기 위해 NetApp 스위치 상태를 모니터링하도록 SNMPv2 또는 SNMPv3을 구성하는 것이 좋습니다.</block>
   <block id="0d81f0b5554e85bb5f4956551639b630" category="admonition">ONTAP 9.8부터<block ref="688266bc53c9ead911ef4b45027ac96a" prefix=" " category="inline-code"></block> 명령이 로 대체됩니다.<block ref="07a3b9d70f925392ee8d0581b56ebc10" prefix=" " category="inline-code"></block> 다음 단계에서는<block ref="688266bc53c9ead911ef4b45027ac96a" prefix=" " category="inline-code"></block> 명령이 표시되지만 ONTAP 9.8 이상을 실행하는 경우에는<block ref="07a3b9d70f925392ee8d0581b56ebc10" prefix=" " category="inline-code"></block> 명령이 권장됩니다.</block>
   <block id="c8b1f4f0bee22e8e9a9aaaca29899782" category="paragraph">새 컨트롤러를 netboot해야 하는 경우 를 참조하십시오 <block ref="afb88e8c89f7c0d7fb7d1ebfbdc283e2" category="inline-link-macro-rx"></block>.</block>
@@ -13645,7 +13482,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="027e94eee8bf21f30bcb532977a993c1" category="paragraph"><block ref="4f1415de9c82b1c8c8506139320b0115" prefix="" category="inline-code"></block></block>
   <block id="fdb1649f24689923739f1476888a8957" category="list-text">스위치가 제거되었는지 확인합니다.</block>
   <block id="02637489efdd2722934159348bf04810" category="section-title">FC 포트(FC1 및 FC2)를 모두 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성</block>
-  <block id="19c5470fc0cd91ca38fde0aea868fce3" category="paragraph">다음 표는 FC 포트(FC1 및 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 쉘프 구성을 보여줍니다. 이 구성 테이블을 사용할 때 다음 사항에 유의하십시오.</block>
   <block id="844fb1aaef97c4328b587658a21a78d2" category="paragraph">QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.</block>
   <block id="1894908b5d36f7ab21f7b1b1afcc630c" category="list-text">다음 Brocade FC 스위치는 MetroCluster FC 백엔드 패브릭에 대해 WAN ISL 암호화 및 압축을 지원합니다.</block>
   <block id="0df6785d5da501ba31bbeb3f6ee67c24" category="list-text">Brocade G630</block>
@@ -14323,4 +14159,205 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b9b3d7865c01f9cccab728c6d2bb7296" category="paragraph">백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 따라야 할 절차는 스위치 공급업체에 따라 다릅니다.</block>
   <block id="528aafe8fc362d0088ddcc230e89b62a" category="doc">여러 MetroCluster IP 구성에서 포트 테이블을 사용하는 방법</block>
   <block id="760419501f92fb637e39b91dbfd2ea18" category="summary">저장 컨트롤러가 저장 선반에 연결되는 방식에 따라 올바른 설치 절차를 선택해야 합니다.</block>
+  <block id="ef78e28e8b4e7855b7b5095e4cbd705a" category="paragraph">ONTAP 9.15.1부터 지원되는 시스템에서 종단 간 암호화를 구성하여 MetroCluster IP 구성의 사이트 간 백엔드 트래픽(예: NVlog 및 스토리지 복제 데이터)을 암호화할 수 있습니다.</block>
+  <block id="ea1ad38d91c2e87ef2e9571bd55654fd" category="paragraph">ONTAP 9.17.1</block>
+  <block id="4aa636d0c8e798111a1395c5cf44abef" category="list-text">AFF A800, AFF C800</block>
+  <block id="d29f60ae06680289bfe22ab30d654095" category="list-text">AFF A20, AFF A30, AFF C30, AFF A50, AFF C60</block>
+  <block id="28fb49ef5a1c34b423f9e9450932ddd8" category="list-text">AFF A70, AFF A90, AFF A1K, AFF C80</block>
+  <block id="973a6b26175b423fb0a4f4dc634c5595" category="inline-link-macro">FC 스위치에 대한 포트 할당</block>
+  <block id="33749a4c2032d71184be94c72f9614ff" category="paragraph"><block ref="33749a4c2032d71184be94c72f9614ff" category="inline-link-macro-rx"></block></block>
+  <block id="75169829fcf3d13846621c36c893c338" category="summary">다음 표는 Brocade 스위치의 포트 사용량을 보여줍니다.</block>
+  <block id="e12a85c23a32c6e40e9495c669d34500" category="doc">MetroCluster FC 구성에서 FC-SAS 브리지에 대한 Brocade 포트 사용</block>
+  <block id="e3f486dbe2a6f716cd5e55f61d1287e5" category="paragraph">Brocade FC 스위치를 FC-SAS 브리지에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요. 포트 할당은 브리지가 FC 포트를 하나 사용하는지 두 개 사용하는지에 따라 달라집니다.</block>
+  <block id="f8c77306f72c386cb2cc2a57898dd287" category="admonition">Brocade 7810 스위치는 하나의 DR 그룹만 지원합니다.</block>
+  <block id="1ba3ed3163aabf09306cddf57fc55f1c" category="section-title">FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지를 사용한 선반 구성</block>
+  <block id="abd326f192450495e3403be5ef139fd0" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="d8ba4be44646d369564696383d55404f" category="list-text">Brocade 6505, G610, G710, G620, G620-1, G630 및 G630-1 스위치에서는 추가 브리지를 포트 12~15에 케이블로 연결할 수 있습니다.</block>
+  <block id="534d8b7bdf4ca2d198fae23cc3c45936" category="list-text">Brocade 6510 및 DCX 8510-8 스위치에서는 추가 브리지를 포트 12~19에 케이블로 연결할 수 있습니다.</block>
+  <block id="2f9db2a251c4a12e14fe21437be45a84" category="list-text">Brocade 6520 스위치에서는 추가 브리지를 포트 12-21 및 24-45에 케이블로 연결할 수 있습니다.</block>
+  <block id="fb5207adf531a5d74567d43d983b2b24" category="list-text">Brocade 7810 및 7840 스위치에서는 MetroCluster 1 또는 DR 그룹 1이 두 개의 브리지 스택만 지원합니다.</block>
+  <block id="de0b05ff24a07fc641e1a94bae600264" category="list-text">Brocade G720 및 G730 스위치에서는 추가 브리지를 포트 16~21에 케이블로 연결할 수 있습니다.</block>
+  <block id="cb7386637328b93b6e9999fd699bf9f5" category="cell">*6505, G610, G710 포트*</block>
+  <block id="192f9f6332f071c1c43d2b01d5313154" category="cell">*6510, DCX 8510-8 포트*</block>
+  <block id="960455452c0b3ed8547fc0a0ea491e21" category="cell">*6520 포트*</block>
+  <block id="85e1344c500bb044742454415e5b3f9f" category="cell">*7810 포트*</block>
+  <block id="bd158107f7d5da708f42677cabbaef13" category="cell">*7840 포트*</block>
+  <block id="6ba5bcc340303f1a24a0870e678237ee" category="cell">*G620, G620-1, G630, G630-1 포트*</block>
+  <block id="0532d1084b82473d2ec4e7781a5cb9e3" category="cell">*G720, G730 포트*</block>
+  <block id="00ed6b41199d0b08f19fcca96f702590" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="32858bc372a5417fedbd1aad6b465663" category="list-text">Brocade 6510, DCX 8510-8 및 7840 스위치에서는 MetroCluster 2 또는 DR 그룹 2가 두 개의 브리지 스택만 지원합니다.</block>
+  <block id="936c5313bce7f2e31a21146b7908f5c0" category="list-text">Brocade 6520 스위치에서는 추가 브리지를 포트 60-69와 72-93에 케이블로 연결할 수 있습니다.</block>
+  <block id="00e407a97c44ac9daf53d3d4a4e4abec" category="list-text">Brocade G620, G620-1, G630 및 G630-1 스위치에서는 추가 브리지를 포트 32-35에 케이블로 연결할 수 있습니다.</block>
+  <block id="436e0635a5c0438fc32b4d930570e390" category="list-text">Brocade G720 및 G730 스위치에서는 추가 브리지를 포트 36-39에 케이블로 연결할 수 있습니다.</block>
+  <block id="088ef638cce47e0e69ac0a5bd047b269" category="list-text">8노드 MetroCluster 구성에서 Brocade 6505, G610 및 G710 스위치의 포트 사용량은 표시되지 않습니다. 포트 수가 제한되어 있으므로 컨트롤러 모델과 사용 중인 ISL 및 브리지 쌍 수에 따라 사이트별로 포트를 할당해야 합니다.</block>
+  <block id="274b68192b056e268f128ff63bfcd4a4" category="paragraph">해당 없음</block>
+  <block id="b6c6a6f7bf18f912e536a46277e3cc30" category="section-title">MetroCluster 3 또는 DR 그룹 3</block>
+  <block id="c8154ee20c7c57c37f25d674a21bc3de" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 3 또는 DR 그룹 3에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="4cf00342088c406cc006b65d067ae860" category="list-text">Brocade G630 및 G630-1 스위치에서는 추가 브리지를 포트 60-63에 케이블로 연결할 수 있습니다.</block>
+  <block id="a19614fe61c689287113f025fb2a9341" category="list-text">Brocade G730 스위치에서는 추가 브리지를 포트 64, 65, 68, 69에 케이블로 연결할 수 있습니다.</block>
+  <block id="acede4f3a519c957d0080f4ff6e8a119" category="cell">*G630, G630-1포트*</block>
+  <block id="5fdd3323bf58d9d63489996cf3ff0fc4" category="cell">*G730 포트*</block>
+  <block id="102fc69a57fe4073ee1cc96a47ea5822" category="section-title">MetroCluster 4 또는 DR 그룹 4</block>
+  <block id="ca09aa52324244f6259bc162f54dd485" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 4 또는 DR 그룹 4에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="b7c9c5f46040127042888d27aa3dc682" category="list-text">Brocade G630 및 G630-1 스위치에서는 추가 브리지를 포트 80-83에 케이블로 연결할 수 있습니다.</block>
+  <block id="4d84d81cd54a387cb67211d5435c9409" category="list-text">Brocade G730 스위치에서는 추가 브리지를 포트 84~95에 케이블로 연결할 수 있습니다.</block>
+  <block id="f6abe3ad540a98d1f7107d422600f876" category="paragraph">다음 표는 Brocade 스위치에서 FibreBridge 7500N 또는 7600N과 FC 포트(FC1 또는 FC2) 하나만 사용하는 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="ba3a0fd672b6de7fa25e13df0e7e0e32" category="list-text">Brocade 6505, G610, G710, G620, G620-1, G630 및 G630-1 스위치에서는 추가 브리지 포트 12-15가 있습니다.</block>
+  <block id="4ab229866f65e0d5d38ff56141d203bd" category="list-text">Brocade 6520 스위치에서는 추가 브리지를 포트 16-21 및 24-45에 케이블로 연결할 수 있습니다.</block>
+  <block id="19e21692f0353afdfb9e6993fc84c91c" category="list-text">Brocade G720 및 G730 스위치에서는 추가 브리지를 포트 16~21에 케이블로 연결할 수 있습니다.</block>
+  <block id="5996cf3be07521c49c5c7ce7e81243b3" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="41c0495e949efa120632beb8647bf45c" category="list-text">Brocade G620, G620-1, G630, G630-1 스위치에서는 추가 브리지를 포트 32-35에 케이블로 연결할 수 있습니다.</block>
+  <block id="0f30723303f5142c77e206ef6d8c81cd" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 3 또는 DR 그룹 3에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="02e05becadc975293e78a79d8ef65dfe" category="list-text">Brocade G730 스위치에서는 추가 브리지를 포트 64, 65, 68, 69에 케이블로 연결할 수 있습니다.</block>
+  <block id="528ac8847278382d2e61595e966e0665" category="paragraph">다음 표는 Brocade 스위치에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 4 또는 DR 그룹 4에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="ecee2db9c391f0cf695a482b393e860a" category="list-text">Brocade G730 스위치에서는 추가 브리지를 포트 84~95에 케이블로 연결할 수 있습니다.</block>
+  <block id="7c35e4bcc45255dd28973dfb6bc092e8" category="summary">다음 표는 Brocade 스위치의 포트 사용량을 보여줍니다. 표는 DR 그룹당 컨트롤러 모듈 4개를 포함한 최대 지원 구성을 보여줍니다.</block>
+  <block id="04ca0955bf0432f214d97bf4155460a6" category="doc">MetroCluster FC 구성의 컨트롤러에 대한 Brocade 포트 사용</block>
+  <block id="9b38dc5d5eebe42d871aca5978ac8c01" category="paragraph">Brocade FC 스위치를 컨트롤러에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="6c78a3e22fc0b508564ffbc7875429ee" category="paragraph">다음 표는 DR 그룹당 4개의 컨트롤러 모듈을 사용하는 최대 지원 구성을 보여줍니다. 구성이 더 작은 경우 추가 컨트롤러 모듈 행은 무시하십시오. 8개의 ISL은 Brocade 6510, Brocade DCX 8510-8, G620, G630, G620-1, G630-1, G720 및 G730 스위치에서만 지원됩니다.</block>
+  <block id="98158532aa9902a4c45eecc32259d7fd" category="paragraph">이 표를 사용하기 전에 다음 정보를 검토하세요.</block>
+  <block id="9e162df39d45c70dd1a9ef6e5f0f9f5a" category="list-text">8노드 MetroCluster 구성에서 Brocade 6505, G610 및 G710 스위치의 포트 사용량은 표시되지 않습니다. 포트 수가 제한되어 있으므로, 컨트롤러 모듈 모델과 사용 중인 ISL 및 브리지 쌍 수에 따라 사이트별로 포트를 할당해야 합니다.</block>
+  <block id="c9b0f40fd7ed63e362523c53f9b60034" category="list-text">Brocade 6520, 7810 및 7840 스위치는 8개의 FC-VI 포트(AFF A900 및 FAS9500 시스템)를 사용하는 시스템에서는 지원되지 않습니다.</block>
+  <block id="6639b99f7d6bc630b1fe27bd494e8ef5" category="paragraph">다음 표는 Brocade 스위치의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 컨트롤러 구성을 보여줍니다.</block>
+  <block id="1b1296238d82362d7bc3879f7a860f9c" category="paragraph">다음 표는 Brocade 스위치의 MetroCluster 2 또는 DR 그룹 2에서 지원되는 컨트롤러 구성을 보여줍니다.</block>
+  <block id="4556c3836df21c2b779af9c592086a7d" category="paragraph">다음 표는 Brocade 스위치의 MetroCluster 3 또는 DR 그룹 3에서 지원되는 컨트롤러 구성을 보여줍니다.</block>
+  <block id="97cea14251c34ae796de98b29c609155" category="paragraph">다음 표는 Brocade 스위치의 MetroCluster 4 또는 DR 그룹 4에서 지원되는 컨트롤러 구성을 보여줍니다.</block>
+  <block id="066ddccbcec755351e94d462b9bfc6f4" category="doc">MetroCluster FC 구성의 ISL에 대한 Brocade 포트 사용</block>
+  <block id="137828143b4d97f557c847a0d63d1ab8" category="paragraph">Brocade FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="2e6614d3d86c8dd2665d62393cbf3e6d" category="list-text">AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, G720 및 G730 스위치에서는 8개의 ISL이 지원됩니다.</block>
+  <block id="44085db2c9c912fa11bf5f9e214f39c4" category="list-text">Brocade 6520 스위치는 8개의 ISL을 지원하지만 AFF A900 및 FAS9500 시스템은 지원하지 않습니다.</block>
+  <block id="34d3c50b5df90678ffad3adb88036855" category="cell">*ISL 포트*</block>
+  <block id="110199ce8c9e41e7a9043ca63029964d" category="cell">*7840(10Gbps) 포트*</block>
+  <block id="02856897ce584b64806e6644b744629d" category="cell">*7840(40Gbps) 포트*</block>
+  <block id="28f9c26734be91d2267500e23b81b5a0" category="cell">*6510, G620, G620-1, G630, G630-1, G720, G730 포트*</block>
+  <block id="df3d777f1328292fcdeba16660b5b8f4" category="paragraph">ge2</block>
+  <block id="e75ac9994da166118cb97bc8f3a9d2c5" category="paragraph">ge0</block>
+  <block id="634e17b415a24a66736acb108dcbc482" category="paragraph">ge3</block>
+  <block id="4ad977318914c1602e0bef281007cbc3" category="paragraph">ge1</block>
+  <block id="4c41bcd47076a2465cf860270ba825d8" category="paragraph">ge4</block>
+  <block id="a38350c12fe0a53569f3e01e74ddbe10" category="paragraph">ge10</block>
+  <block id="15e8a75834a70404958ba71a09f7bc39" category="paragraph">ge5</block>
+  <block id="8b8278d099e7c8bc7476ba252363116f" category="paragraph">ge11</block>
+  <block id="b1b22d3d0ad784f5fb624d20b0d1aaf5" category="paragraph">ge6</block>
+  <block id="1e5b8a9fc432259fc7f690b710a2a783" category="paragraph">ge7</block>
+  <block id="f4b9ec30ad9f68f89b29639786cb62ef" category="paragraph">94</block>
+  <block id="35c62b607885ce330b046b4c4c25d432" category="summary">두 FC 포트를 모두 사용하여 Cisco 9132T FC 스위치를 FC-SAS 브리지에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="56ab6416564ba264205838c8d99b988a" category="doc">MetroCluster FC 구성에서 FC-SAS 브리지를 위한 Cisco 9132T 포트 사용</block>
+  <block id="02316aeafe3ffaef70eae274a0ffcf70" category="admonition">1xLEM 모듈이 있는 Cisco 9132T 스위치를 사용하면 브리지 스택을 하나만(1) 지원됩니다.</block>
+  <block id="0e59e2fa2fbd6da7a44ef7047fdd8b22" category="paragraph">다음 표는 Cisco 9132T 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="6a3bcf00f947d18cc38e11a54c60f748" category="list-text">4노드 구성에서는 2개의 LEM이 있는 Cisco 9132T 스위치의 포트 LEM2-1~LEM2-8에 추가 브리지를 케이블로 연결할 수 있습니다.</block>
+  <block id="60a0cc2ca3fac754f1e302f3ec0511db" category="cell">*FC_switch에 연결합니다...*</block>
+  <block id="72620a0e5508b07e86bc62ace781a36f" category="cell">*9132T 1x LEM(4노드)*</block>
+  <block id="5aa76a17f018d889962e9e4176df4c02" category="cell">*9132T 2x LEM(4노드)*</block>
+  <block id="7c82dbb68df3b7b1441ac19e565175b6" category="cell">*9132T 2x LEM(8노드)*</block>
+  <block id="2cbddf47cae4ae3b81473f3a1ef728f3" category="paragraph">다음 표는 Cisco 9132T 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="1980ae472da2763212721ebb0d5d3ae4" category="list-text">8노드 구성에서는 2개의 LEM이 있는 Cisco 9132T 스위치의 포트 LEM2-13~LEM2-16에 추가 브리지를 케이블로 연결할 수 있습니다.</block>
+  <block id="1299fad6f0b50301794653cbdb70917c" category="summary">Cisco 9132T FC 스위치를 컨트롤러에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="1ddf53f884a8f63645cb8f979db407ec" category="doc">MetroCluster FC 구성의 컨트롤러에 대한 Cisco 9132T 포트 사용</block>
+  <block id="97bb088e2bc1ea4fb3055f582f8c3c9c" category="paragraph">다음 표는 Cisco 9132T 스위치의 MetroCluster 1 또는 DR 그룹 1에 지원되는 컨트롤러 구성을 보여줍니다. 이 구성 표를 사용할 때 다음 사항에 유의해야 합니다.</block>
+  <block id="bb219e301578bfa9d60000f47dffdc69" category="list-text">AFF A900 및 FAS9500 시스템에는 8개의 FC-VI 포트(FC-VI-1 및 FC-VI-2의 경우 a, b, c 및 d)가 있습니다.</block>
+  <block id="d65de277d287f1f63013cbb6420f5c7e" category="paragraph">다음 표는 Cisco 9132T 스위치의 MetroCluster 2 또는 DR 그룹 2에 지원되는 Cisco 9132T 컨트롤러 구성을 보여줍니다. 이 구성 표를 사용할 때 다음 사항에 유의해야 합니다.</block>
+  <block id="8603bd481185ead75394e22a8729fc66" category="list-text">MetroCluster 2 또는 DR 그룹 2는 AFF A900 및 FAS9500 시스템용 Cisco 9132T 스위치에서 지원되지 않습니다.</block>
+  <block id="220812c41e9ead6b356318521a2d0ed9" category="list-text">MetroCluster 2 또는 DR 그룹 2는 8노드 MetroCluster 구성에서만 지원됩니다.</block>
+  <block id="2baa0dc9f32f8e851abd52550f49a83e" category="summary">Cisco 9132T FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="d5c1e6dea84f9936fa53bede45b168fd" category="doc">MetroCluster FC 구성의 ISL에 대한 Cisco 9132T 포트 사용</block>
+  <block id="e94cac7e2fa07773c5666a1456ca5ec6" category="summary">Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 FC-SAS 브리지에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="da5350efa43bdbe43ac41af094f3b075" category="doc">MetroCluster FC 구성에서 FC-SAS 브리지에 대한 Cisco 포트 사용</block>
+  <block id="8a0c778a1dfbc5963919678c4b1be670" category="paragraph">Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 FC-SAS 브리지에 연결하는 데 필요한 포트 할당에 대해 알아보세요. 포트 할당은 브리지가 FC 포트를 하나 사용하는지 두 개 사용하는지에 따라 달라집니다.</block>
+  <block id="61d8da56c7dfb983f6fc2c5209926e54" category="inline-link-macro">MetroCluster FC 구성에서 FC-SAS 브리지를 위한 Cisco 9132t 포트 사용</block>
+  <block id="740edfedde29aa500e1b2c6e62b6bfa9" category="admonition">Cisco 9132T의 경우 다음을 참조하세요. <block ref="1102c4869b2ac52eccc6ed033152f390" category="inline-link-macro-rx"></block> .</block>
+  <block id="0563604beb831d28c2a03632b3eb45a9" category="paragraph">다음 표는 Cisco 스위치(9132T 제외)에서 FibreBridge 7500N 또는 7600N 브리지와 두 개의 FC 포트(FC1 및 FC2)를 사용하는 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="27a0870b0eadade107d795b8343f3cea" category="list-text">Cisco 9124V 및 9148V 스위치에서는 추가 MetroCluster 1 또는 DR 그룹 1 브리지를 포트 21~24에 케이블로 연결할 수 있습니다.</block>
+  <block id="8b4f66daec6bb64dee84e9f3bff2c36b" category="list-text">Cisco 9250i 스위치에서는 추가 MetroCluster 1 또는 DR 그룹 1 브리지를 포트 17~40에 케이블로 연결할 수 있습니다.</block>
+  <block id="8380580c6c773450839151b10655f779" category="list-text">Cisco 9396S 스위치에서는 추가 MetroCluster 1 또는 DR 그룹 1 브리지를 포트 17-32에 케이블로 연결할 수 있습니다.</block>
+  <block id="d8d9c726ed1dbaaa319dbaeb5cc221d9" category="cell">*9124V 포트*</block>
+  <block id="15fd9fbf739edf8bb19e249d108fec8d" category="cell">*9148S 포트*</block>
+  <block id="fb095f517048f850d8c0f2a432193607" category="cell">*9148V 포트*</block>
+  <block id="83344f2c2be4f7d65b6210b16a0513a1" category="cell">*9250i 포트*</block>
+  <block id="bc820fd7c4489b456648d614cd582363" category="cell">*9396S 포트*</block>
+  <block id="cc110b0d32f154624d6a8701b256148e" category="paragraph">다음 표는 Cisco 스위치(9132T 제외)에서 FibreBridge 7500N 또는 7600N과 두 개의 FC 포트(FC1 및 FC2)를 사용하는 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 케이블링 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="2fa8b10602ef83d3db5802e430a7b823" category="list-text">Cisco 9124V 및 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
+  <block id="1ff52bd220af0ed442fe60501dd9a4dd" category="list-text">Cisco 9148V 스위치에서는 추가 MetroCluster 2(DR 그룹 2) 브리지를 포트 45-48에 케이블로 연결할 수 있습니다.</block>
+  <block id="4ad78f3c5a5f97a5e8272e4c4bc26d50" category="list-text">Cisco 9396S 스위치에서는 추가 MetroCluster 2(DR 그룹 2) 브리지를 포트 65-80에 케이블로 연결할 수 있습니다.</block>
+  <block id="83445047ad163ad67b87b846a01587b9" category="paragraph">다음 표는 Cisco 스위치(9132T 제외)에서 FC 포트 1개(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 참조 구성 파일(RCF)은 FibreBridge 브리지에서 FC 포트 1개를 지원하지 않으므로 백엔드 파이버 채널 스위치를 수동으로 구성해야 합니다.</block>
+  <block id="386cc47615db5ce48b5c404c6eea225c" category="paragraph">케이블 테이블을 사용할 때 다음 사항을 알아야 합니다.</block>
+  <block id="bc777ffe08cd674bdc3359a52b9fb780" category="paragraph">다음 표는 Cisco 스위치(9132T 제외)에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.</block>
+  <block id="1e146fea5111ab418168eb4c45ec07b3" category="list-text">Cisco 9124V 및 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
+  <block id="e0ef9d346792785ec9cd13ea2bec5466" category="list-text">Cisco 9148V 스위치에서는 추가 MetroCluster 2 또는 DR 그룹 2 브리지를 포트 45-48에 케이블로 연결할 수 있습니다.</block>
+  <block id="62ca2163e57a9e289cffdf64df962520" category="list-text">Cisco 9396S 스위치에서는 추가 MetroCluster 2 또는 DR 그룹 2 브리지를 포트 65-80에 케이블로 연결할 수 있습니다.</block>
+  <block id="534943aa74fec8ca87b27eadb1b21265" category="summary">Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 컨트롤러에 케이블로 연결하는 방법을 알아보세요.</block>
+  <block id="1e9316dece6d131851d2c13d7fbd2589" category="doc">MetroCluster FC 구성의 컨트롤러에 대한 Cisco 포트 사용</block>
+  <block id="1fe08027caebd89506854d0ded6ecca5" category="paragraph">Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 컨트롤러에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="624be4321648a3a3bfb79af4d4edf752" category="list-text">Cisco 9132T의 경우 다음을 참조하세요. <block ref="c436bcac3df72f1f5a61a77d8f2b10b3" category="inline-link-macro-rx"></block> .</block>
+  <block id="3cfc60f7aebb0681869ca719fc198a9f" category="list-text">Cisco 9124V 및 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
+  <block id="f8aa3022f754800c7ee15f2a8230fb8a" category="paragraph">다음 표는 Cisco 스위치(9132T 제외)의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 컨트롤러 구성을 보여줍니다.</block>
+  <block id="e74d1350ff25573a9ce1cffab4845ede" category="paragraph">다음 표는 Cisco 스위치(9132T 제외)의 MetroCluster 2 또는 DR 그룹 2에서 지원되는 컨트롤러 구성을 보여줍니다.</block>
+  <block id="b75fa4bac47c908e6d933a7d59e278ea" category="summary">Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.</block>
+  <block id="53b7de75a7b8bff61718b5b8491ec9b1" category="doc">MetroCluster FC 구성의 ISL에 대한 Cisco 포트 사용</block>
+  <block id="ebae98863f530f12d5543aa741db5149" category="list-text">Cisco 9132T의 경우 다음을 참조하세요. <block ref="1a628121665a8df5523955e5258ce6e8" category="inline-link-macro-rx"></block> .</block>
+  <block id="4b4406a8a0ced8e1c35f6b11c92bf04a" category="list-text">Cisco 9250i 스위치에는 24포트 라이센스가 필요합니다.</block>
+  <block id="472c07eb3fa2f73960a80e6ff02e65a9" category="list-text">MetroCluster 구성의 각 Brocade DCX 8510-8 스위치는 ISL 포트 및 스토리지 연결에 맞게 올바르게 구성되어야 합니다. 포트 사용에 대한 자세한 내용은 다음 섹션을 참조하십시오. <block ref="9281602316965ab108ebb4b3e24c2e1a" category="inline-link-macro-rx"></block> .</block>
+  <block id="ddeb395837d97d20c515df993777b6fa" category="paragraph">각 패브릭에 대해 하나의 이니시에이터 포트를 사용하고 각 컨트롤러에 대해 두 개의 이니시에이터 포트를 사용하여 FAS8200 및 AFF A300 시스템을 구성할 수 있습니다.</block>
+  <block id="a7bcae5400d91e898a936b6613fbcf1a" category="paragraph">FibreBridge 7600N 브리지 케이블 연결은 FC 포트(FC1 또는 FC2) 하나만 사용하여 수행할 수 있습니다. 이니시에이터 네 개를 사용하는 대신, 이니시에이터 두 개만 연결하고 스위치 포트에 연결된 나머지 두 개는 비워 두세요.</block>
+  <block id="a244f8c648b858e99297df169be16fbe" category="paragraph">수동으로 구역 설정을 수행하는 경우, FC 포트 하나(FC1 또는 FC2)를 사용하는 FibreBridge 7600N 브리지에 사용된 구역 설정을 따릅니다. 이 경우 패브릭당 각 구역 멤버에 두 개가 아닌 하나의 이니시에이터 포트가 추가됩니다.</block>
+  <block id="746888951c0c0c068fe0ecb423bc3647" category="paragraph">다음 표는 각 패브릭에 대해 단일 이니시에이터 포트를 사용하고 각 컨트롤러에 대해 두 개의 이니시에이터 포트를 사용할 때 Brocade FC 스위치의 포트 할당을 보여줍니다.</block>
+  <block id="8cda044a83a93a8694b82c69f07472b8" category="paragraph">*6505, 6510, 6520, 7840, G620, G630, G610, G710, G720, G730 및 DCX 8510-8*</block>
+  <block id="2962e17ae4f065d8bdf06bd568d735fe" category="summary">FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하고 있는지 확인해야 합니다.</block>
+  <block id="bbbad8b5461f0f1902f847c2533d5d10" category="doc">MetroCluster FC 스위치에 대한 포트 할당</block>
+  <block id="9cca88f85e7d8fa6ed049464eccda25a" category="paragraph">이니시에이터 포트, FC-VI 포트 또는 ISL 연결에 사용되지 않는 포트를 스토리지 포트로 재구성할 수 있습니다. 단, 지원되는 RCF를 사용하는 경우 조닝을 그에 맞게 변경해야 합니다.</block>
+  <block id="d18fbf8af3ac1bbccb6f8e18401b26bc" category="paragraph">지원되는 RCF를 사용하는 경우 ISL 포트가 표시된 동일한 포트에 연결되지 않을 수 있으며 수동으로 재구성해야 할 수도 있습니다.</block>
+  <block id="c65a3f3a9ad7f6fb95c5c0c9c2f60f04" category="paragraph">ONTAP 9용 포트 할당을 사용하여 스위치를 구성한 경우 이전 할당을 계속 사용할 수 있습니다. 그러나 ONTAP 9.1 이상을 실행하는 새로운 구성에서는 여기에 표시된 포트 할당을 사용해야 합니다.</block>
+  <block id="ff4a35aa4ee768c93c0ab25dfcf33191" category="list-text">케이블로 연결하는 ISL의 수는 현장 요구 사항에 따라 달라질 수 있습니다.</block>
+  <block id="b39821ed319840f31d0be0c4ae8cfd9d" category="section-title">AFF A900 및 FAS9500 케이블링 지침</block>
+  <block id="225164626c35447b3e92828638545188" category="list-text"><block ref="225164626c35447b3e92828638545188" category="inline-link-macro-rx"></block></block>
+  <block id="9281602316965ab108ebb4b3e24c2e1a" category="list-text"><block ref="9281602316965ab108ebb4b3e24c2e1a" category="inline-link-macro-rx"></block></block>
+  <block id="83203a7d47efc86f2bd5ef6d13fbed5d" category="paragraph">FibreBridge 브리지에서 FC 포트 중 하나만 사용하려는 경우 섹션에 있는 지침을 사용하여 백엔드 파이버 채널 스위치를 수동으로 구성하십시오. <block ref="9281602316965ab108ebb4b3e24c2e1a" category="inline-link-macro-rx"></block> .</block>
+  <block id="7a624101744abdf7e3500edd9f2b8245" category="section-title">Brocade 라이선스 요구 사항 검토</block>
+  <block id="a0514b0eaae24deaa163425bb252002a" category="section-title">Brocade FC 스위치 값을 공장 기본값으로 설정</block>
+  <block id="3561a7e149ea2ddff2f76e7be9f49628" category="section-title">기본 스위치 설정 구성</block>
+  <block id="0aa9c793fa7f1fcc118a282b94f54f30" category="inline-link">ONTAP 소프트웨어에서 프레임의 순차적 전달 또는 비순차적 전달 구성</block>
+  <block id="cad2bf87303d43b36bd15c02f70b9ae5" category="paragraph"><block ref="cad2bf87303d43b36bd15c02f70b9ae5" category="inline-link-rx"></block></block>
+  <block id="adbeb89dc96320420692ebdd1b629865" category="section-title">Brocade DCX 8510-8 스위치에서 기본 스위치 설정 구성</block>
+  <block id="f212064f164fdbfa18222ba76b79ebf2" category="section-title">FC 포트를 사용하여 Brocade FC 스위치에서 E-포트 구성</block>
+  <block id="ca6b37b231dd9c9149ee7e02a33849f5" category="cell">Brocade G610, G710</block>
+  <block id="5358190ead6d3dea762b96f6645e7238" category="section-title">Brocade 7810 및 7840 FC 스위치에서 40Gbps VE 포트 구성</block>
+  <block id="43d662d1662ba1cceb003ccdab3e6f96" category="section-title">Brocade 스위치에서 비 E-포트 구성</block>
+  <block id="3cef333ca3e4e98d22444149f0792bd8" category="section-title">Brocade G620 스위치의 ISL 포트에 압축 구성</block>
+  <block id="e3946c52fbbde777b77a7c581a5fbddb" category="section-title">Brocade FC 스위치에서 구역 설정 구성</block>
+  <block id="5bc6f92d36054f446f4349568be67c5d" category="section-title">FC-VI 포트 구역 지정</block>
+  <block id="2213a2a5601f7a1cd4f4deb2431665e7" category="section-title">하나의 FC 포트를 사용하는 Zone FibreBridge 7500N 또는 7600N 브리지</block>
+  <block id="5cf728d1859b2ad0a8336e72b84e0298" category="cell">Brocade 6505, 6510, 6520, G620, G610 또는 G710 스위치 포트</block>
+  <block id="1397e60d228d717bb0a7a23c75956b8e" category="cell">Brocade 6505, 6510, 6520, G620, G610 또는 G710 스위치</block>
+  <block id="10ca51cc895493fb81a3329ff788f13a" category="section-title">두 FC 포트를 모두 사용하는 Zone FibreBridge 7500N 브리지</block>
+  <block id="0d05a8e80e8873105e8d49c2b0b39c2f" category="cell">6505 / 6510 / G610 / G710 / G620 포트</block>
+  <block id="c221af1e22a3ba5250ea3e4880fcde46" category="cell">6505 / 6510 / G610 / G710 포트</block>
+  <block id="abdc6cd37ae142d01247e456cde4ba0e" category="cell">6505 / 6510 / G610 / G710</block>
+  <block id="2f68cf40b9da9404a5af380678ac3afd" category="section-title">Brocade FC 스위치 구역 지정</block>
+  <block id="5adfaf472d45117dbae7720aa1d0e7cd" category="section-title">Brocade 6510 또는 G620 스위치에 ISL 암호화 설정</block>
+  <block id="84bd4d33c6c4c4c0caef9d37b13d0240" category="section-title">가상 패브릭 비활성화</block>
+  <block id="e24e67332454ba142d36a4b5d5e0b512" category="paragraph">FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하고 있는지 확인해야 합니다. 다음을 참조하세요. <block ref="9281602316965ab108ebb4b3e24c2e1a" category="inline-link-macro-rx"></block></block>
+  <block id="f60acd2a26821f2d2c220ec2a4aa9154" category="list-text">ISL 암호화를 활성화하려면 다음을 참조하세요. <block ref="86b16351dbd120be1801efdebd06973d" category="inline-link-macro-rx"></block> .</block>
+  <block id="eeb430d3bc018806b9ef6143d11130ff" category="paragraph">G710</block>
+  <block id="4214529c36f622a91e27a5d3bf07d42b" category="paragraph">MetroCluster IP 구성의 사이트 간 백엔드 트래픽(예: NVlog 및 스토리지 복제 데이터)을 암호화하기 위해 다음 시스템에서는 엔드투엔드 암호화가 지원됩니다.</block>
+  <block id="c233a85eb73b71147110728c6ea138b0" category="paragraph">MetroCluster IP 구성에 대한 변경 제한</block>
+  <block id="94c7b5632b2258cfb4caff7ce69a46fc" category="paragraph">ONTAP 9.17.1에는 4노드 MetroCluster IP 구성에 대한 다음과 같은 제한 업데이트가 포함되어 있습니다.</block>
+  <block id="1d45c357dffa07d4d43a5f9ba15da5c3" category="list-text">AFF C800, AFF A800, AFF A900, AFF A90 및 AFF A1K 시스템에는 다음과 같은 업데이트된 제한이 있습니다.</block>
+  <block id="e93bc32a64acd9280eef6044bf07e7f6" category="list-text">노드당 FlexVol volume 제한: 1250</block>
+  <block id="3f51737f77066219e4ef03091fb5b85d" category="list-text">SVM 제한: 클러스터당 64개 SVM</block>
+  <block id="9c57f3673465ed59c3b08ebac2be1ed3" category="list-text">LIF 수: 클러스터당 256개 LIF</block>
+  <block id="ddb7605ec5049e970ab35c9ad2ff89fc" category="list-text">AFF A400, AFF C400, ASA A400, ASA C400, AFF C80, AFF A70 및 AFF A50 시스템에는 다음과 같은 업데이트된 제한이 있습니다.</block>
+  <block id="c5053b59fbc1700ab606b123bbd97a75" category="list-text">집계당 FlexVol volume 제한(단일 또는 다중): 625</block>
+  <block id="fe57c6f7ead75bdf60c675612c2792a2" category="list-text">고가용성(HA) 쌍당 FlexVol volume 제한: 2500</block>
+  <block id="f7411497578d3c715ce980056c9a3dc5" category="list-text">MetroCluster 클러스터당 FlexVol volume 제한: 5000</block>
+  <block id="e012362a4f10b2d00ba77a0342c80c6d" category="list-text">HA 쌍당 FlexVol 볼륨의 최대 수가 1600에서 2500으로 증가했습니다.</block>
+  <block id="6dea0f46f4307533bbff7dfe880a75ea" category="sidebar">FC 스위치의 포트 할당 표를 사용하는 방법을 알아보세요.</block>
+  <block id="ae6b17a796a400159e3071c16b88da41" category="sidebar">컨트롤러용 Brocade 포트 사용</block>
+  <block id="fce2ba1c56eeaddb6aa1390cdcfff6a9" category="sidebar">FC-SAS 브리지를 위한 Brocade 포트 사용</block>
+  <block id="c21019da4f3d26c9393362cd3ab9d36a" category="sidebar">ISL을 위한 Brocade 포트 사용</block>
+  <block id="73129fdee8e44c819b858c9086a408a8" category="sidebar">컨트롤러에 대한 Cisco 포트 사용( Cisco 9132T 제외)</block>
+  <block id="ae8bca833180d714a6eceac516392b83" category="sidebar">FC-SAS 브리지를 위한 Cisco 포트 사용( Cisco 9132T 제외)</block>
+  <block id="71fb98471e3a7909163e01fb92f917b4" category="sidebar">ISL에 대한 Cisco 포트 사용( Cisco 9132T 제외)</block>
+  <block id="3099965dec41589836e8937197d5c208" category="sidebar">컨트롤러용 Cisco 9132T 포트 사용</block>
+  <block id="25e9b3ef06577abf9b26600f0c390fc3" category="sidebar">FC-SAS 브리지를 위한 Cisco 9132T 포트 사용</block>
+  <block id="b25c20328b0418f22f0fbc4d47e42988" category="sidebar">ISL을 위한 Cisco 9132T 포트 사용</block>
 </blocks>

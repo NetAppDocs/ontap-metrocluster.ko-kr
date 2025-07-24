@@ -1,0 +1,148 @@
+---
+permalink: install-fc/cisco-fc-port-config-isls.html 
+sidebar: sidebar 
+keywords: ONTAP, FAS, FC, Cisco, metrocluster 
+summary: Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요. 
+---
+= MetroCluster FC 구성의 ISL에 대한 Cisco 포트 사용
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.
+
+다음 표에서는 ISL 포트 사용을 보여 줍니다. ISL 포트 사용은 구성의 모든 스위치에서 동일합니다.
+
+[NOTE]
+====
+* Cisco 9132T의 경우 다음을 참조하세요. link:cisco-9132t-fc-port-config-isls.html["MetroCluster FC 구성의 ISL에 대한 Cisco 9132T 포트 사용"] .
+* Cisco 9250i 스위치에는 24포트 라이센스가 필요합니다.
+
+
+====
+[cols="2a,2a,2a,2a,2a,2a"]
+|===
+| *ISL 포트* | *9124V 포트* | *9148S 포트* | *9148V 포트* | *9250i 포트* | *9396S 포트* 
+
+
+ a| 
+ISL 포트 1
+ a| 
+9
+ a| 
+20
+ a| 
+9
+ a| 
+12
+ a| 
+44
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+10
+ a| 
+24
+ a| 
+10
+ a| 
+16
+ a| 
+48
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+11
+ a| 
+44
+ a| 
+11
+ a| 
+20
+ a| 
+92
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+12
+ a| 
+48
+ a| 
+12
+ a| 
+24
+ a| 
+96
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+33
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+34
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+ISL 포트 7
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+35
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+ISL 포트 8
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+36
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+|===

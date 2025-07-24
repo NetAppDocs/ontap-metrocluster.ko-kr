@@ -1,0 +1,109 @@
+---
+permalink: install-fc/cisco-9132t-fc-port-config-isls.html 
+sidebar: sidebar 
+keywords: ONTAP, FAS, FC, Cisco, metrocluster 
+summary: Cisco 9132T FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요. 
+---
+= MetroCluster FC 구성의 ISL에 대한 Cisco 9132T 포트 사용
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco 9132T FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.
+
+다음 표에서는 Cisco 9132T 스위치의 ISL 포트 사용량을 보여 줍니다.
+
+[cols="2a,2a,2a,2a"]
+|===
+| *ISL 포트* | *9132T 1x LEM(4노드)* | *9132T 2x LEM(4노드)* | *9132T 2x LEM(8노드)* 
+
+
+ a| 
+ISL 포트 1
+ a| 
+LEM1-15
+ a| 
+LEM2-9
+ a| 
+LEM1-13
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+LEM1-16
+ a| 
+LEM2-10
+ a| 
+LEM1-14
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+해당 없음
+ a| 
+LEM2-11
+ a| 
+LEM1-15
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+해당 없음
+ a| 
+LEM2-12
+ a| 
+LEM1-16
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+해당 없음
+ a| 
+LEM2-13
+ a| 
+해당 없음
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+해당 없음
+ a| 
+LEM2-14
+ a| 
+해당 없음
+
+
+
+ a| 
+ISL 포트 7
+ a| 
+해당 없음
+ a| 
+LEM2-15
+ a| 
+해당 없음
+
+
+
+ a| 
+ISL 포트 8
+ a| 
+해당 없음
+ a| 
+LEM2-16
+ a| 
+해당 없음
+
+|===

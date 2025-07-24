@@ -2,17 +2,27 @@
 :allow-uri-read: 
 
 
-ONTAP 9.15.1부터 MetroCluster IP 구성의 사이트 간에 nvlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화하도록 엔드 투 엔드 암호화를 구성할 수 있습니다.
+ONTAP 9.15.1부터 지원되는 시스템에서 종단 간 암호화를 구성하여 MetroCluster IP 구성의 사이트 간 백엔드 트래픽(예: NVlog 및 스토리지 복제 데이터)을 암호화할 수 있습니다.
 
 .이 작업에 대해
 * 이 작업을 수행하려면 클러스터 관리자여야 합니다.
 * 종단 간 암호화를 구성하려면 먼저 해야 합니다 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-concept.html["외부 키 관리를 구성합니다"^].
 * MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성하는 데 필요한 지원되는 시스템 및 최소 ONTAP 릴리스를 검토합니다.
 +
+[cols="2*"]
 |===
-
-
 | 최소 ONTAP 릴리스 | 지원되는 시스템 
+
+
+ a| 
+ONTAP 9.17.1
+ a| 
+** AFF A800, AFF C800
+** AFF A20, AFF A30, AFF C30, AFF A50, AFF C60
+** AFF A70, AFF A90, AFF A1K, AFF C80
+** FAS50, FAS70, FAS90
+
+
 
 
  a| 

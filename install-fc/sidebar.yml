@@ -48,22 +48,30 @@ entries:
       url: "/install-fc/task_cable_the_controller_module_s_fc_vi_hba_ports_to_the_fc_switches_controller_to_fc_sw.html"
     - title: MetroCluster 사이트 간 ISL 케이블 연결
       url: "/install-fc/task_cable_the_isl_between_the_mcc_sites_fabric_config.html"
-    - title: 이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
-      url: "/install-fc/concept_port_assignments_for_systems_using_two_initiator_ports.html"
-    - title: ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당
-      url: "/install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html"
-    - title: AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당
+    - title: FC 스위치에 대한 포트 할당
       entries:
-      - title: AFF A900 또는 FAS9500 시스템 사용 시 FC 스위치에 대한 포트 할당
-        url: "/install-fc/concept_AFF_A900_port_assign_fc_switches_ontap_9_1.html"
-      - title: ONTAP 9.10.1 이상을 실행하는 컨트롤러에 대한 AFF A900 Brocade 포트 사용
-        url: "/install-fc/concept_AFF_A900_brocade_port_config.html"
-      - title: ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Brocade 포트 사용량
-        url: "/install-fc/concept_AFF_A900_brocade_port_ISLs.html"
-      - title: ONTAP 9.10.1 이상을 실행하는 AFF A900 Cisco 포트 사용 컨트롤러
-        url: "/install-fc/concept_AFF_A900_cisco_port_config.html"
-      - title: ONTAP 9.10.1 이상을 실행하는 ISL에 대한 AFF A900 Cisco 포트 사용량
-        url: "/install-fc/concept_AFF_A900_cisco_ISLs.html"
+      - title: FC 스위치의 포트 할당 표를 사용하는 방법을 알아보세요.
+        url: "/install-fc/fc-switch-port-assignment-overview.html"
+      - title: 이니시에이터 포트 2개를 사용하는 시스템의 포트 할당
+        url: "/install-fc/concept_port_assignments_for_systems_using_two_initiator_ports.html"
+      - title: 컨트롤러용 Brocade 포트 사용
+        url: "/install-fc/brocade-fc-port-config-controllers.html"
+      - title: FC-SAS 브리지를 위한 Brocade 포트 사용
+        url: "/install-fc/brocade-fc-port-config-bridges.html"
+      - title: ISL을 위한 Brocade 포트 사용
+        url: "/install-fc/brocade-fc-port-config-isls.html"
+      - title: 컨트롤러에 대한 Cisco 포트 사용( Cisco 9132T 제외)
+        url: "/install-fc/cisco-fc-port-config-controllers.html"
+      - title: FC-SAS 브리지를 위한 Cisco 포트 사용( Cisco 9132T 제외)
+        url: "/install-fc/cisco-fc-port-config-bridges.html"
+      - title: ISL에 대한 Cisco 포트 사용( Cisco 9132T 제외)
+        url: "/install-fc/cisco-fc-port-config-isls.html"
+      - title: 컨트롤러용 Cisco 9132T 포트 사용
+        url: "/install-fc/cisco-9132t-fc-port-config-controllers.html"
+      - title: FC-SAS 브리지를 위한 Cisco 9132T 포트 사용
+        url: "/install-fc/cisco-9132t-fc-port-config-bridges.html"
+      - title: ISL을 위한 Cisco 9132T 포트 사용
+        url: "/install-fc/cisco-9132t-fc-port-config-isls.html"
     - title: 8노드 또는 4노드 구성으로 클러스터 인터커넥트 케이블 연결
       url: "/install-fc/task_cable_the_cluster_interconnect_in_four_node_configurations.html"
     - title: 클러스터 피어링 연결에 케이블을 연결합니다

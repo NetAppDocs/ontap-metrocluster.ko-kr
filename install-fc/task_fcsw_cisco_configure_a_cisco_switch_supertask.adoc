@@ -353,7 +353,7 @@ MetroCluster 구성에서 F 포트는 스위치를 HBA 이니시에이터, FC-VI
 
 다음 섹션을 참조하여 구성의 F-포트(스위치-노드)를 식별하십시오.
 
-* link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+* link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["FC 스위치에 대한 포트 할당"]
 
 
 이 작업은 MetroCluster 구성의 각 스위치에 대해 수행해야 합니다.
@@ -1184,7 +1184,7 @@ FC_switch_B_1# copy running-config startup-config
 
 
 .관련 정보
-ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다. 을 참조하십시오 link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하고 있는지 확인해야 합니다. 다음을 참조하세요. link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["FC 스위치에 대한 포트 할당"]
 
 
 

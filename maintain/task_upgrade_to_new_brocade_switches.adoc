@@ -64,7 +64,7 @@ FC_switch_A_1:admin> switchCfgPersistentDisable
 ----
 .. 권장되는 포트 할당을 사용하여 새 스위치에 케이블을 연결합니다.
 +
-link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["FC 스위치에 대한 포트 할당"]
 
 .. 파트너 MetroCluster 사이트에서 이러한 하위 단계를 반복하여 첫 번째 스위치 패브릭의 두 번째 스위치를 교체합니다.
 +

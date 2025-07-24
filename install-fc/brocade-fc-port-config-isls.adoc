@@ -1,0 +1,162 @@
+---
+permalink: install-fc/brocade-fc-port-config-isls.html 
+sidebar: sidebar 
+keywords: ONTAP, FAS, FC, Brocade, metrocluster 
+summary: 다음 표는 Brocade 스위치의 포트 사용량을 보여줍니다. 
+---
+= MetroCluster FC 구성의 ISL에 대한 Brocade 포트 사용
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Brocade FC 스위치를 ISL에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.
+
+[NOTE]
+====
+* AFF A900 및 FAS9500 시스템은 8개의 ISL을 지원합니다. Brocade 6510, G620, G620-1, G630, G630-1, G720 및 G730 스위치에서는 8개의 ISL이 지원됩니다.
+* Brocade 6520 스위치는 8개의 ISL을 지원하지만 AFF A900 및 FAS9500 시스템은 지원하지 않습니다.
+
+
+====
+[cols="2a,2a,2a,2a,2a,2a,2a"]
+|===
+| *ISL 포트* | *6505, G610, G710 포트* | *6520 포트* | *7810 포트* | *7840(10Gbps) 포트* | *7840(40Gbps) 포트* | *6510, G620, G620-1, G630, G630-1, G720, G730 포트* 
+
+
+ a| 
+ISL 포트 1
+ a| 
+20
+ a| 
+22
+ a| 
+ge2
+ a| 
+ge2
+ a| 
+ge0
+ a| 
+40
+
+
+
+ a| 
+ISL 포트 2
+ a| 
+21
+ a| 
+23
+ a| 
+ge3
+ a| 
+ge3
+ a| 
+ge1
+ a| 
+41
+
+
+
+ a| 
+ISL 포트 3
+ a| 
+22
+ a| 
+46
+ a| 
+ge4
+ a| 
+ge10
+ a| 
+해당 없음
+ a| 
+42
+
+
+
+ a| 
+ISL 포트 4
+ a| 
+23
+ a| 
+47
+ a| 
+ge5
+ a| 
+ge11
+ a| 
+해당 없음
+ a| 
+43
+
+
+
+ a| 
+ISL 포트 5
+ a| 
+해당 없음
+ a| 
+70
+ a| 
+ge6
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+44
+
+
+
+ a| 
+ISL 포트 6
+ a| 
+해당 없음
+ a| 
+71
+ a| 
+ge7
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+45
+
+
+
+ a| 
+ISL 포트 7
+ a| 
+해당 없음
+ a| 
+94
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+46
+
+
+
+ a| 
+ISL 포트 8
+ a| 
+해당 없음
+ a| 
+95
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+47
+
+|===

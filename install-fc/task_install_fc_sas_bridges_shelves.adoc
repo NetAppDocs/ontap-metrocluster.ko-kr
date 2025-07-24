@@ -682,9 +682,9 @@ IMPORTANT: FiberBridge 7500N 브리지의 두 번째 FC 포트 연결은 조닝�
 
 
 .관련 정보
-ONTAP 9.1 이상을 사용할 때 FC 스위치에 케이블을 연결할 때 지정한 포트 할당을 사용하고 있는지 확인해야 합니다.
+FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하고 있는지 확인해야 합니다.
 
-link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["FC 스위치에 대한 포트 할당"]
 
 
 

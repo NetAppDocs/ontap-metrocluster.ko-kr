@@ -19,7 +19,7 @@ MetroCluster 구성 요소를 연결하는 스위치 패브릭을 형성하려�
 .단계
 . 구성 및 스위치 모델에 해당하는 표의 케이블을 사용하여 각 사이트의 FC 스위치를 모든 ISL에 연결합니다.
 +
-** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
+** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["FC 스위치에 대한 포트 할당"]
 
 
 

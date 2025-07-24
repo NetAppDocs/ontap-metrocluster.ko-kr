@@ -16,9 +16,7 @@ FC-VI 포트 및 HBA(호스트 버스 어댑터)는 MetroCluster 구성의 각 �
 .단계
 . 구성 및 스위치 모델에 대한 표를 사용하여 FC-VI 포트 및 HBA 포트에 케이블을 연결합니다.
 +
-** link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.html["ONTAP 9.1 이상을 사용할 경우 FC 스위치에 대한 포트 할당"]
-** link:concept_AFF_A900_port_assign_fc_switches_ontap_9_1.html["AFF A900 시스템을 사용하는 경우 FC 스위치에 대한 포트 할당"]
-** link:concept_port_assignments_for_systems_using_two_initiator_ports.html["이니시에이터 포트 2개를 사용하는 시스템의 포트 할당"]
+** link:fc-switch-port-assignment-overview.html["FC 스위치에 대한 포트 할당"]
 
 
 

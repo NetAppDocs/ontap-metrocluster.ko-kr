@@ -1,0 +1,680 @@
+---
+permalink: install-fc/cisco-9132t-fc-port-config-controllers.html 
+sidebar: sidebar 
+keywords: ONTAP, FAS, FC, Cisco, metrocluster 
+summary: Cisco 9132T FC 스위치를 컨트롤러에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요. 
+---
+= MetroCluster FC 구성의 컨트롤러에 대한 Cisco 9132T 포트 사용
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco 9132T FC 스위치를 컨트롤러에 케이블로 연결하는 데 필요한 포트 할당에 대해 알아보세요.
+
+다음 표는 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N을 사용하는 컨트롤러 구성을 보여줍니다. 이 표에는 2개의 DR 그룹에 4개 및 8개의 컨트롤러 모듈이 포함된 최대 지원 구성이 나와 있습니다.
+
+
+NOTE: 8노드 구성의 경우 RCF가 제공되지 않기 때문에 수동으로 조닝을 수행해야 합니다.
+
+
+
+== MetroCluster 1 또는 DR 그룹 1
+
+다음 표는 Cisco 9132T 스위치의 MetroCluster 1 또는 DR 그룹 1에 지원되는 컨트롤러 구성을 보여줍니다. 이 구성 표를 사용할 때 다음 사항에 유의해야 합니다.
+
+* AFF A900 및 FAS9500 시스템에는 8개의 FC-VI 포트(FC-VI-1 및 FC-VI-2의 경우 a, b, c 및 d)가 있습니다.
+
+
+[cols="2a,2a,2a,2a,2a,2a,2a"]
+|===
+2+| * 구성 요소 * | * 포트 * | *FC_switch에 연결합니다...* | *9132T 1x LEM(4노드)* | *9132T 2x LEM(4노드)* | *9132T 2x LEM(8노드)* 
+
+
+ a| 
+컨트롤러_x_1
+ a| 
+FC-VI 포트 A
+ a| 
+1
+ a| 
+LEM1-1
+ a| 
+LEM1-1
+ a| 
+LEM1-1
+
+
+
+ a| 
+FC-VI 포트 b
+ a| 
+2
+ a| 
+LEM1-1
+ a| 
+LEM1-1
+ a| 
+LEM1-1
+
+
+
+ a| 
+FC-VI 포트 c
+ a| 
+1
+ a| 
+LEM1-2
+ a| 
+LEM1-2
+ a| 
+LEM1-2
+
+
+
+ a| 
+FC-VI 포트 d
+ a| 
+2
+ a| 
+LEM1-2
+ a| 
+LEM1-2
+ a| 
+LEM1-2
+
+
+
+ a| 
+FC-VI-2 포트 A
+ a| 
+1
+ a| 
+LEM1-3
+ a| 
+LEM1-3
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 b
+ a| 
+2
+ a| 
+LEM1-3
+ a| 
+LEM1-3
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 c
+ a| 
+1
+ a| 
+LEM1-4
+ a| 
+LEM1-4
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 d
+ a| 
+2
+ a| 
+LEM1-4
+ a| 
+LEM1-4
+ a| 
+해당 없음
+
+
+
+ a| 
+HBA 포트 A
+ a| 
+1
+ a| 
+LEM1-5
+ a| 
+LEM1-5
+ a| 
+LEM1-3
+
+
+
+ a| 
+HBA 포트 b
+ a| 
+2
+ a| 
+LEM1-5
+ a| 
+LEM1-5
+ a| 
+LEM1-3
+
+
+
+ a| 
+HBA 포트 c
+ a| 
+1
+ a| 
+LEM1-6
+ a| 
+LEM1-6
+ a| 
+LEM1-4
+
+
+
+ a| 
+HBA 포트 d
+ a| 
+2
+ a| 
+LEM1-6
+ a| 
+LEM1-6
+ a| 
+LEM1-4
+
+
+
+ a| 
+컨트롤러_x_2
+ a| 
+FC-VI 포트 A
+ a| 
+1
+ a| 
+LEM1-7
+ a| 
+LEM1-7
+ a| 
+LEM1-5
+
+
+
+ a| 
+FC-VI 포트 b
+ a| 
+2
+ a| 
+LEM1-7
+ a| 
+LEM1-7
+ a| 
+LEM1-5
+
+
+
+ a| 
+FC-VI 포트 c
+ a| 
+1
+ a| 
+LEM1-8
+ a| 
+LEM1-8
+ a| 
+LEM1-6
+
+
+
+ a| 
+FC-VI 포트 d
+ a| 
+2
+ a| 
+LEM1-8
+ a| 
+LEM1-8
+ a| 
+LEM1-6
+
+
+
+ a| 
+FC-VI-2 포트 A
+ a| 
+1
+ a| 
+LEM1-9
+ a| 
+LEM1-9
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 b
+ a| 
+2
+ a| 
+LEM1-9
+ a| 
+LEM1-9
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 c
+ a| 
+1
+ a| 
+LEM1-10
+ a| 
+LEM1-10
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 d
+ a| 
+2
+ a| 
+LEM1-10
+ a| 
+LEM1-10
+ a| 
+해당 없음
+
+
+
+ a| 
+HBA 포트 A
+ a| 
+1
+ a| 
+LEM1-11
+ a| 
+LEM1-11
+ a| 
+LEM1-7
+
+
+
+ a| 
+HBA 포트 b
+ a| 
+2
+ a| 
+LEM1-11
+ a| 
+LEM1-11
+ a| 
+LEM1-7
+
+
+
+ a| 
+HBA 포트 c
+ a| 
+1
+ a| 
+LEM1-12
+ a| 
+LEM1-12
+ a| 
+LEM1-8
+
+
+
+ a| 
+HBA 포트 d
+ a| 
+2
+ a| 
+LEM1-12
+ a| 
+LEM1-12
+ a| 
+LEM1-8
+
+|===
+
+
+== MetroCluster 2 또는 DR 그룹 2
+
+다음 표는 Cisco 9132T 스위치의 MetroCluster 2 또는 DR 그룹 2에 지원되는 Cisco 9132T 컨트롤러 구성을 보여줍니다. 이 구성 표를 사용할 때 다음 사항에 유의해야 합니다.
+
+* AFF A900 및 FAS9500 시스템에는 8개의 FC-VI 포트(FC-VI-1 및 FC-VI-2의 경우 a, b, c 및 d)가 있습니다.
+* MetroCluster 2 또는 DR 그룹 2는 AFF A900 및 FAS9500 시스템용 Cisco 9132T 스위치에서 지원되지 않습니다.
+* MetroCluster 2 또는 DR 그룹 2는 8노드 MetroCluster 구성에서만 지원됩니다.
+
+
+[cols="2a,2a,2a,2a,2a,2a,2a"]
+|===
+2+| * 구성 요소 * | * 포트 * | *FC_switch에 연결합니다...* | *9132T 1x LEM(4노드)* | *9132T 2x LEM(4노드)* | *9132T 2x LEM(8노드)* 
+
+
+ a| 
+컨트롤러_x_3
+ a| 
+FC-VI 포트 A
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-1
+
+
+
+ a| 
+FC-VI 포트 b
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-1
+
+
+
+ a| 
+FC-VI 포트 c
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-2
+
+
+
+ a| 
+FC-VI 포트 d
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-2
+
+
+
+ a| 
+FC-VI-2 포트 A
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 b
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 c
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 d
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+HBA 포트 A
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-3
+
+
+
+ a| 
+HBA 포트 b
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-3
+
+
+
+ a| 
+HBA 포트 c
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-4
+
+
+
+ a| 
+HBA 포트 d
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-4
+
+
+
+ a| 
+컨트롤러_x_4
+ a| 
+FC-VI-1 포트 A
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-5를 참조하십시오
+
+
+
+ a| 
+FC-VI-1 포트 b
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-5를 참조하십시오
+
+
+
+ a| 
+FC-VI-1 포트 c
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-6를 참조하십시오
+
+
+
+ a| 
+FC-VI-1 포트 d
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-6를 참조하십시오
+
+
+
+ a| 
+FC-VI-2 포트 A
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 b
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 c
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+FC-VI-2 포트 d
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+해당 없음
+
+
+
+ a| 
+HBA 포트 A
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-7를 참조하십시오
+
+
+
+ a| 
+HBA 포트 b
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-7를 참조하십시오
+
+
+
+ a| 
+HBA 포트 c
+ a| 
+1
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-8를 참조하십시오
+
+
+
+ a| 
+HBA 포트 d
+ a| 
+2
+ a| 
+해당 없음
+ a| 
+해당 없음
+ a| 
+LEM2-8를 참조하십시오
+
+|===
