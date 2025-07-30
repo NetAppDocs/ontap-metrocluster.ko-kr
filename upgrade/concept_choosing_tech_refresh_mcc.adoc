@@ -45,14 +45,14 @@ summary: 사용하는 업데이트 절차는 플랫폼 모델, 업그레이드 �
 --
 FAS8700, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, AFF A250, FAS50, AFF C400 C30, AFF A400 A30, FAS8200, AFF A300, AFF A320, FAS8300, AFF, AFF, AFF A150 시스템에 대한 시스템 업데이트 조합을 검토합니다.
 
-image:../media/tech-refresh-ip-group-1.png[""]
+image:../media/tech-refresh-ip-group-1-updated.png[""]
 
 --
 .AFF 및 FAS 조합 그룹 2
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, FAS9500, AFF A900, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템에 대한 시스템 업데이트 조합을 검토합니다.
 
-image:../media/tech-refresh-ip-group-2.png[""]
+image:../media/tech-refresh-ip-group-2-updated.png[""]
 
 --
 ====

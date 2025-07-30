@@ -185,14 +185,14 @@ dr_group_2 - 신규
 --
 AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF A300 C30, AFF A400 A30, AFF A250, AFF, AFF A320, FAS8300, AFF C400, AFF 및 FAS8700 시스템에 대한 확장 조합을 검토합니다.
 
-image:../media/expand-ip-group-1.png[""]
+image:../media/expand-ip-group-1-updated.png[""]
 
 --
 .AFF 및 FAS 조합 그룹 2
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, FAS9500, AFF A900, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템에 대한 확장 조합을 검토합니다.
 
-image:../media/expand-ip-group-2.png[""]
+image:../media/expand-ip-group-2-updated.png[""]
 
 --
 ====
