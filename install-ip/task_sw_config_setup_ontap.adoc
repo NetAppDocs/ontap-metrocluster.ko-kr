@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, ontap, setup 
 summary: 각 노드를 부팅하면 기본 노드 및 클러스터 구성을 수행하라는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다. 
 ---
-= ONTAP 설정
+= MetroCluster IP 구성에서 ONTAP 노드 설정
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

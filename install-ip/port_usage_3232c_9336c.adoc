@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cabling, cable, component, link, site, management, network, networks, hardware, component, switch, cluster, connection, management, data, configuring, configure 
 summary: MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유형에 따라 다릅니다. 
 ---
-= Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
+= MetroCluster IP 구성의 Cisco 3232C 또는 36포트 Cisco 9336C 스위치에 대한 플랫폼 포트 할당
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

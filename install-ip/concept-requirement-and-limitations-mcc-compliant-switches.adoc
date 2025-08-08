@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-compliant, requirements, compliant, limitations 
 summary: ONTAP 9.7부터 MetroCluster IP 구성을 사용하면 MetroCluster 호환 스위치를 사용할 수 있습니다. 이러한 스위치는 NetApp의 검증을 받지 않지만 NetApp 사양을 준수합니다. 이 항목에서는 MetroCluster 호환 스위치의 일반 요구사항 및 제한 사항에 대해 간략하게 설명합니다. 
 ---
-= MetroCluster 규정 준수 스위치를 사용할 때의 요구사항 및 제한 사항
+= MetroCluster 호환 스위치에 대한 요구 사항 및 제한 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

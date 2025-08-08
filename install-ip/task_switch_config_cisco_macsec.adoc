@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cisco, MACsec encryption 
 summary: 사이트 간에 실행되는 WAN ISL 포트에서만 MACsec 암호화를 구성해야 합니다. 올바른 RCF 파일을 적용한 후 MACsec을 구성해야 합니다. 
 ---
-= Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
+= MetroCluster IP 사이트의 Cisco 9336C 스위치에서 MACsec 암호화 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

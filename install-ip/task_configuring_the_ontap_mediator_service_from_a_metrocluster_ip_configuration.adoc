@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, mediator, configure 
 summary: ONTAP Mediator는 MetroCluster IP 구성에서 사용하려면 ONTAP 노드에 구성되어야 합니다. 
 ---
-= MetroCluster IP 구성에서 ONTAP Mediator 구성
+= MetroCluster IP 구성을 위한 ONTAP Mediator 설정
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, mediator, configure, connect 
 summary: MetroCluster 노드를 다른 ONTAP 중재자 인스턴스에 연결하려면 ONTAP 소프트웨어에서 중재자 연결을 구성 해제한 다음 다시 구성해야 합니다. 
 ---
-= 다른 ONTAP 중재 인스턴스에 MetroCluster 구성 연결
+= MetroCluster IP 구성을 다른 ONTAP Mediator 인스턴스에 연결합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

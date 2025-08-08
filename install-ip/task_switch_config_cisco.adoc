@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip, switch, configuring, configure, factory defaults, cisco, MACsec encryption, 9336C, 9336, forward error correction, fec 
 summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 Cisco IP 스위치를 구성해야 합니다. 
 ---
-= Cisco IP 스위치 구성
+= 클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 Cisco IP 스위치 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

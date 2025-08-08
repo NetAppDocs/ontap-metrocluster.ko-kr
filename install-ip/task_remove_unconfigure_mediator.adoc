@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ontap, mediator, assist, remove, unconfigure, requirements, mediator requirements 
 summary: MetroCluster IP 구성에서 ONTAP 중재자를 제거할 수 있습니다. 
 ---
-= MetroCluster IP 구성에서 ONTAP Mediator 구성 해제
+= MetroCluster IP 구성에서 ONTAP Mediator 제거
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

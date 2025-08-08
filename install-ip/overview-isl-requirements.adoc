@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: isls, ip, layer 2, layer 3, shared switch 
 summary: MetroCluster 구성 및 네트워크가 모든 ISL 요구 사항을 충족하는지 확인하는 데 필요한 정보를 알아보십시오. 
 ---
-= ISL 요구사항 개요
+= MetroCluster IP 구성을 위한 스위치 간 링크 요구 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

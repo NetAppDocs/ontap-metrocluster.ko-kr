@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, ip, configuration, hardware, component, interconnect, part, key, element, disaster, recovery, dr, group, illustration, local, ha, pair, configuration, cluster, interconnect, network, peer 
 summary: MetroCluster IP 구성을 계획할 때 하드웨어 구성 요소 및 상호 연결 방법을 이해해야 합니다. 
 ---
-= MetroCluster IP 구성의 일부
+= MetroCluster IP 구성에서 하드웨어 구성 요소 상호 연결에 대해 알아보세요.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

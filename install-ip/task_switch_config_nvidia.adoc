@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip, switch, connection, configuring, configure, NVIDIA, factory defaults, MSN2100, SN2100 
 summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 사용할 NVIDIA IP 스위치를 구성해야 합니다. 
 ---
-= NVIDIA IP SN2100 스위치를 구성합니다
+= 클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 NVIDIA IP SN2100 스위치 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

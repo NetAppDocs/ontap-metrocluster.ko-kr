@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: system manager, mediator, metrocluster, mcc, 8-node, ip, configure, remove, mauso, mediator-assisted automatic switchover, switchover, switchback, health 
 summary: System Manager를 사용하면 Mediator를 관리하는 작업을 수행할 수 있습니다. 
 ---
-= System Manager를 사용하여 ONTAP Mediator 관리
+= MetroCluster IP 구성에서 System Manager를 사용하여 ONTAP Mediator를 관리합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

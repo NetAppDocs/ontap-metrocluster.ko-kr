@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, setup, metrocluster configuration-settings interface create, pool 0, drive assignment, peer, peering, intercluster lifs, dr group, metrocluster ip interfaces, mcc-ip, mcc-ip interfaces, vlan, pool 1, pool1, pool0 
 summary: 클러스터를 피어로 사용하고, 루트 애그리게이트를 미러링하고, 미러링된 데이터 애그리게이트를 생성한 다음, 명령을 실행하여 MetroCluster 작업을 구현해야 합니다. 
 ---
-= 클러스터를 MetroCluster 구성으로 구성합니다
+= MetroCluster IP 구성에서 ONTAP 클러스터 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

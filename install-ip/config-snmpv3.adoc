@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip, switch, connection, configuring, configure, broadcom, snmp, health, monitoring 
 summary: 상태 모니터링에 SNMPv3을 사용하도록 IP 스위치를 구성할 수 있습니다. 
 ---
-= MetroCluster IP 스위치에서 SNMPv3 구성
+= MetroCluster IP 스위치의 상태를 모니터링하기 위해 SNMPv3 구성
 :allow-uri-read: 
 
 

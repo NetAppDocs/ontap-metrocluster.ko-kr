@@ -103,7 +103,7 @@ Rocky Linux 9.0
 
 
  a| 
-Red Hat 9.4
+레드햇 엔터프라이즈 리눅스(RHEL) 9.5
  a| 
 예
  a| 
@@ -116,7 +116,20 @@ Red Hat 9.4
 
 
  a| 
-Red Hat 9.3
+RHEL 9.4
+ a| 
+예
+ a| 
+아니요
+ a| 
+아니요
+ a| 
+아니요
+
+
+
+ a| 
+RHEL 9.3
  a| 
 아니요
  a| 
@@ -129,7 +142,7 @@ Red Hat 9.3
 
 
  a| 
-Red Hat 9.2
+RHEL 9.2
  a| 
 예
  a| 
@@ -142,7 +155,7 @@ Red Hat 9.2
 
 
  a| 
-Red Hat 9.1
+RHEL 9.1
  a| 
 아니요
  a| 
@@ -155,7 +168,7 @@ Red Hat 9.1
 
 
  a| 
-Red Hat 9.0
+RHEL 9.0
  a| 
 아니요
  a| 
@@ -168,7 +181,7 @@ Red Hat 9.0
 
 
  a| 
-Red Hat 8.11 - 9.0
+RHEL 8.11 - 9.0
  a| 
 아니요
  a| 
@@ -181,7 +194,7 @@ Red Hat 8.11 - 9.0
 
 
  a| 
-Red Hat 8.10
+RHEL 8.10
  a| 
 예
  a| 
@@ -194,7 +207,7 @@ Red Hat 8.10
 
 
  a| 
-Red Hat 8.9 를 참조하십시오
+RHEL 8.9
  a| 
 아니요
  a| 
@@ -207,7 +220,7 @@ Red Hat 8.9 를 참조하십시오
 
 
  a| 
-Red Hat 8.8 을 참조하십시오
+RHEL 8.8
  a| 
 예
  a| 
@@ -220,7 +233,7 @@ Red Hat 8.8 을 참조하십시오
 
 
  a| 
-Red Hat 8.1 - 8.7
+RHEL 8.1 - 8.7
  a| 
 아니요
  a| 
@@ -233,7 +246,7 @@ Red Hat 8.1 - 8.7
 
 
  a| 
-Red Hat 7 - 7.9
+RHEL 7 - 7.9
  a| 
 아니요
  a| 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-compliant, requirements, compliant, configuration 
 summary: 다양한 스위치 포트 구성에 대해 알아봅니다. 
 ---
-= 스위치 포트 구성 예
+= MetroCluster IP 스위치 구성 예
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

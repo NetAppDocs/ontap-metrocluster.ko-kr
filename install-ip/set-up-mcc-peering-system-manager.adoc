@@ -4,7 +4,7 @@ permalink: install-ip/set-up-mcc-peering-system-manager.html
 keywords: metrocluster, peer, peering, pair, pairing, configuration, config, mcc, HA 
 summary: ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 사이트 작업을 관리할 수 있습니다. 여기에는 두 클러스터를 설정하고 클러스터 피어링을 수행하는 작업이 포함됩니다. 
 ---
-= MetroCluster IP 피어링을 설정합니다
+= ONTAP 시스템 관리자를 사용하여 MetroCluster IP 피어링 설정
 :hardbreaks:
 :toclevels: 1
 :allow-uri-read: 

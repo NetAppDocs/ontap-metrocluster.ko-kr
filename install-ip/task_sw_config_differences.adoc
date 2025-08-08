@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, configuration, ontap, node-level, configuration, node, site, relationship, configuring, configure, similarities, difference, 
 summary: MetroCluster 구성에서 각 클러스터의 노드 구성은 표준 클러스터의 노드 구성과 비슷합니다. 
 ---
-= 표준 클러스터와 MetroCluster 구성의 유사점과 차이점
+= ONTAP 표준 클러스터와 MetroCluster 구성을 비교하세요
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

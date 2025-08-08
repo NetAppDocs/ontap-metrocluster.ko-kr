@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, configuration, gather information 
 summary: 구성 프로세스를 시작하기 전에 컨트롤러 모듈에 필요한 IP 주소를 수집해야 합니다. 
 ---
-= 필요한 정보를 수집하는 중입니다
+= MetroCluster IP 구성에 필요한 정보를 수집하세요.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-compliant, compliant, network speed, switch port mode 
 summary: MetroCluster 호환 스위치를 사용하는 경우 플랫폼별 네트워크 속도 및 스위치 포트 모드 요구 사항을 알고 있어야 합니다. 
 ---
-= MetroCluster 호환 스위치를 위한 플랫폼 특정 네트워크 속도 및 스위치 포트 모드
+= MetroCluster 호환 스위치에 대한 ONTAP 플랫폼별 네트워크 속도 및 스위치 포트 모드
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

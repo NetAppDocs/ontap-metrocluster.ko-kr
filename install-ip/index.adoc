@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, ip, installation 
 summary: MetroCluster IP 구성을 설치하려면 올바른 순서로 여러 절차를 수행해야 합니다. 
 ---
-= 개요
+= MetroCluster IP 설치 워크플로
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

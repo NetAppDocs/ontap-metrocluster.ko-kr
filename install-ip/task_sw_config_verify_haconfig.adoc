@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, ha-config, mccip, haconfig, verify, high-availability 
 summary: 출하 시 사전 구성되지 않은 MetroCluster IP 구성에서는 컨트롤러 및 섀시 구성 요소의 ha-config 상태가 mcip로 설정되어 제대로 부팅되는지 확인해야 합니다. 공장에서 받은 시스템의 경우 이 값이 사전 구성되어 있으므로 확인할 필요가 없습니다. 
 ---
-= 구성 요소의 ha-config 상태 확인
+= MetroCluster IP 구성에서 컨트롤러 및 섀시 구성 요소의 HA 구성 상태를 확인하세요.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster ip, metrocluster-compliant switches, metrocluster-compliant, requirements, compliant, configuration 
 summary: ONTAP 9.6부터 MetroCluster IP 구성에 대해 몇 가지 추가 네트워크 구성이 지원됩니다. 
 ---
-= MetroCluster 네트워크 토폴로지의 예
+= MetroCluster IP 구성 네트워크 토폴로지 예
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

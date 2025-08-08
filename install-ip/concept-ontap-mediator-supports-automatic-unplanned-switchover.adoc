@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ontap, mediator, assist, metrocluster, ip, configuration, perform, automatic, unplan, switchover, physical, repository, status, information, configuring, configure, install, configuring, configure, forced 
 summary:  
 ---
-= ONTAP Mediator가 자동 계획되지 않은 전환을 지원하는 방식
+= ONTAP Mediator가 MetroCluster IP 구성에서 자동 계획되지 않은 전환을 지원하는 방법
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

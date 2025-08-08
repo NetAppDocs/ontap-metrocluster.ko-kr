@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: isls, ip, layer 2, layer 3, shared switch 
 summary: 이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요구 사항을 충족하는지 확인하는 데 필요한 정보를 제공합니다. 
 ---
-= NetApp의 검증된 MetroCluster 호환 스위치
+= MetroCluster IP 구성의 NetApp 검증 및 MetroCluster 호환 스위치
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

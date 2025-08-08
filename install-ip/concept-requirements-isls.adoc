@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: isl, isls, layer 2, layer 3, shared switch 
 summary: '이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에 대한 요구 사항을 다룹니다.' 
 ---
-= ISL에 대한 고려 사항
+= MetroCluster IP 구성의 ISL(Inter-Switch Links)에 대한 요구 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: differences, eight-node, four-node, fabric-attached, stretch, metrocluster ip, storage, bridges, fc-to-sas, atto, fibrebridge, SAS, local HA, auso, automatic unplanned switchover, mediator, tiebreaker, all san array, asa 
 summary: 다양한 MetroCluster 구성에 필요한 구성 요소의 주요 차이점이 있습니다. 
 ---
-= ONTAP MetroCluster 구성의 차이점
+= ONTAP MetroCluster 구성 지원 매트릭스
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

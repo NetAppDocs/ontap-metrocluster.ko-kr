@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: considertaions, cluster peering, shared peering ports, dedicated peering ports 
 summary: 각 MetroCluster 사이트는 파트너 사이트에 대한 피어로 구성됩니다. 
 ---
-= 클러스터 피어링
+= MetroCluster IP 구성에서 클러스터 피어링에 대한 요구 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
