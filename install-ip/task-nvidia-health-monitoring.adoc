@@ -133,5 +133,7 @@ cluster1::> *system switch ethernet show*
 
 NOTE: 구성 파일을 적용한 후에도 모델에 * 기타 * 가 계속 표시되면 NetApp 지원에 문의하십시오.
 
+를 참조하십시오 https://docs.netapp.com/us-en/ontap-cli/system-switch-ethernet-configure-health-monitor.html["시스템 스위치 이더넷 구성-상태-모니터"^] 자세한 내용은 명령을 참조하세요.
+
 .다음 단계
 link:configure-cshm-mccip.html["스위치 상태 모니터링을 구성합니다"]..

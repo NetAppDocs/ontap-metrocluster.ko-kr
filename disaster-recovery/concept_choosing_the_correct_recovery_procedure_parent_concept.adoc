@@ -22,7 +22,7 @@ MetroCluster 구성에서 장애가 발생한 후에는 올바른 복구 절차�
 
 
  a| 
-* 하드웨어 오류가 없습니다
+* 하드웨어 오류(예: 정전)가 없습니다.
 
  a| 
 link:task_recover_from_a_non_controller_failure_mcc_dr.html["컨트롤러 이외의 장애 복구"]

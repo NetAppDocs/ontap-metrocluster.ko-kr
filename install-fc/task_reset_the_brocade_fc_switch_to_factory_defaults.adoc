@@ -112,27 +112,19 @@ FC_switch_A_1:admin> portcfgdefault <port number>
 +
 각 포트에 대해 이 단계를 완료해야 합니다.
 
-. 스위치가 POD(Dynamic Port On Demand) 방법을 사용하고 있는지 확인합니다.
+. FOS 9.0 이전 버전을 사용하는 경우 스위치가 동적 POD(Port on Demand) 방식을 사용하는지 확인하세요.
 +
 
-NOTE: Brocade Fabric OS 8.0 이전 버전에서는 다음 명령을 admin으로 실행하고 버전 8.0 이상에서는 root로 실행합니다.
+NOTE: Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.
+
++
+Brocade Fabric OS 8.0 이전 버전에서는 다음 명령을 admin으로 실행하고 버전 8.0 이상에서는 root로 실행합니다.
 
 +
 .. 다음 라이센스 명령을 실행합니다.
 +
-[role="tabbed-block"]
-====
-.Data Fabric OS 8.2.x 및 그 이전 버전
---
-명령을 실행합니다 `licenseport --show`.
+`licenseport --show` .
 
---
-.Fabric OS 9.0 이상
---
-명령을 실행합니다 `license --show -port`.
-
---
-====
 +
 [listing]
 ----
@@ -150,19 +142,8 @@ FC_switch_A_1:admin> rootaccess --set consoleonly
 ----
 .. 다음 라이센스 명령을 실행합니다.
 +
-[role="tabbed-block"]
-====
-.Data Fabric OS 8.2.x 및 그 이전 버전
---
-명령을 실행합니다 `licenseport --show`.
+`licenseport --show` .
 
---
-.Fabric OS 9.0 이상
---
-명령을 실행합니다 `license --show -port`.
-
---
-====
 +
 [listing]
 ----
@@ -182,10 +163,6 @@ FC_switch_A_1:admin> licenseport --method dynamic
 The POD method has been changed to dynamic.
 Please reboot the switch now for this change to take effect
 ----
-+
-
-NOTE: Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.
-
 
 
 . 스위치를 재부팅합니다.

@@ -479,23 +479,16 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/concept_configure_th
 
 
 
-. 스위치가 동적 포트 라이센스 방식을 사용하고 있는지 확인합니다.
+. FOS 9.0 이전 버전을 사용하는 경우 스위치가 동적 POD(Port on Demand) 라이선싱 방식을 사용하는지 확인하세요.
++
+
+NOTE: Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.
+
 +
 .. 다음 라이센스 명령을 실행합니다.
 +
-[role="tabbed-block"]
-====
-.Data Fabric OS 8.2.x 및 그 이전 버전
---
-명령을 실행합니다 `licenseport --show`.
+`licenseport --show`
 
---
-.Fabric OS 9.0 이상
---
-명령을 실행합니다 `license --show -port`.
-
---
-====
 +
 [listing]
 ----
@@ -541,10 +534,6 @@ FC_switch_A_1:admin> licenseport --method dynamic
 The POD method has been changed to dynamic.
 Please reboot the switch now for this change to take effect
 ----
-+
-
-NOTE: Fabric OS 9.0 이상에서는 라이센스 방법이 기본적으로 동적입니다. 정적 라이센스 방법은 지원되지 않습니다.
-
 
 
 . ONTAP에서 스위치의 상태를 성공적으로 모니터링하려면 T11-FC-ZONE-SERVER-MIB에 대한 트랩을 활성화합니다.
