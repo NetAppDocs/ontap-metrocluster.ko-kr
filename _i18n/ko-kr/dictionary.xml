@@ -12515,7 +12515,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="07b3edb46d2774fa411b0f9a1b01bead" category="sidebar">MetroCluster 유지 보수를 준비합니다</block>
   <block id="053564114ce5591908a1b29312289c15" category="sidebar">공유 스토리지 MetroCluster 스위치를 사용하여 MetroCluster IP 구성에 쉘프를 추가합니다</block>
   <block id="59a029b0a65d8928b8afd42fd7a5bfe2" category="admonition">사이트당 하나 이상의 미러링된 데이터 애그리게이트를 만들어야 합니다. MetroCluster IP 노드에서 사이트당 두 개의 미러링된 데이터 집계를 사용하여 MDV 볼륨을 호스팅하는 것이 좋지만 사이트당 단일 집계를 지원하는 것은 권장되지 않습니다. MetroCluster의 한 사이트에 단일 미러링된 데이터 애그리게이트가 있고 다른 사이트에 둘 이상의 미러링된 데이터 애그리게이트가 있는 것은 허용됩니다.</block>
-  <block id="478e4322f0111cf3e7bdad12bea24701" category="list-text">다음과 같이 모든 노드에서 MetroCluster 구성을 업데이트합니다.</block>
   <block id="4ad402ea3fb0bcfdc921fd3083047f45" category="paragraph">노드의 프롬프트에서 다음을 실행합니다.</block>
   <block id="28d0a71b806dfc9c57cc495498c72954" category="paragraph">하나 또는 두 사이트에 미러링된 단일 데이터 애그리게이트</block>
   <block id="d419812c67afb77388be54f4cb41eb86" category="paragraph">노드의 프롬프트에서<block ref="d972f8bbe9b04d39b8b96b699cf921e9" prefix=" " category="inline-code"></block> 매개 변수를 사용하여 MetroCluster를 구성합니다.</block>
@@ -14400,4 +14399,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6eb6a2663a1f73cd3119f3cb6f287206" category="paragraph"><block ref="c3d759c84d82a17cd2fc31c0bbd2be02" prefix="" category="inline-code"></block> .</block>
   <block id="5667ca92a697e03bc95d429bfe20fda5" category="inline-link">시스템 스위치 이더넷 구성-상태-모니터</block>
   <block id="a7692359e6ab53408219d1f4fbab4614" category="paragraph">를 참조하십시오<block ref="e8f3e733a7456e37aaeb3c329fac3e94" category="inline-link-rx"></block> 자세한 내용은 명령을 참조하세요.</block>
+  <block id="d2d6100dc04e04ad658d21c2678b2c9e" category="list-text">새로 추가된 노드에서 MetroCluster 구성을 새로 고칩니다.</block>
 </blocks>
