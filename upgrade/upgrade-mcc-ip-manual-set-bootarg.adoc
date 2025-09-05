@@ -11,29 +11,43 @@ summary: ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하�
 
 
 [role="lead"]
-ONTAP 9.15.1 이상에 도입된 시스템으로 컨트롤러를 업그레이드하려면 업그레이드를 시작하기 전에 이전 컨트롤러에 부트아그를 설정해야 합니다.
+ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하는 경우 일반적으로 업그레이드를 시작하기 전에 이전 컨트롤러에 bootarg를 설정해야 합니다.
 
 
-NOTE: 업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에 필요한 bootarg를 설정해야 합니다.
-
-
-
-== 단계 1: 이전 컨트롤러에 설정해야 하는 부트아그를 결정합니다
-
-다음 시스템에 대해 지원되는 모든 업그레이드를 수행하려면 컨트롤러 업그레이드를 수행하기 전에 이전 컨트롤러에 대해 bootarg를 설정해야 합니다.
-
-* AFF A70, AFF A90, AFF A1K
-* FAS70, FAS90
-* AFF C80 를 참조하십시오
-* AFF A50, AFF A20, AFF A30
-* AFF C30, AFF C60
-* FAS50를 참조하십시오
+NOTE: 업그레이드 조합이 영향을 받는 경우, 성공적인 업그레이드를 위해 모든 이전 컨트롤러에 bootarg를 설정해야 합니다.  업그레이드 조합에 bootarg 설정이 필요한지, 그리고 조합에 맞는 올바른 bootarg를 설정하는 방법을 확인하려면 이 섹션의 정보를 주의 깊게 검토하세요.
 
 
 
-CAUTION: 나열된 시스템으로 업그레이드하는 경우 업그레이드를 수행하기 전에 * 기존 시스템에 필요한 부트마크를 * 설정해야 합니다. 다른 모든 업그레이드의 경우 이 작업을 건너뛰고 로 바로 이동할 수 있습니다 link:upgrade-mcc-ip-prepare-system.html["업그레이드를 위해 시스템을 준비합니다"].
+== 1단계: 이전 컨트롤러에 bootarg를 설정해야 하는지 확인
 
-ONTAP 9.15.1 이상 버전에서 도입된 시스템을 업그레이드할 때는 이전 컨트롤러에서 bootarg를 설정해야 `hw.cxgbe.toe_keepalive_disable` 합니다. 그러나 특정 업그레이드 경로에서는 bootarg를 대신 설정해야 `bootarg.siw.interop_enabled` 합니다.
+업그레이드를 시작하기 전에 필수 bootarg를 설정해야 하는지 확인하려면 다음 정보를 사용하세요.
+
+* 다음 시스템에 지원되는 업그레이드를 위해서는 달리 명시되지 않는 한 이전 컨트롤러에 bootarg를 설정해야 합니다.
++
+** AFF A70, AFF A90, AFF A1K
+** FAS70, FAS90
+** AFF C80 를 참조하십시오
+** AFF A50, AFF A20, AFF A30
+** AFF C30, AFF C60
+** FAS50를 참조하십시오
+
+
+* 업그레이드가 다음 조합 중 하나인 경우 이전 컨트롤러에 bootarg를 설정할 필요가 *없습니다*.
++
+** AFF A70 시스템에서 AFF A90 시스템으로
+** FAS70 시스템에서 FAS90 시스템으로
+
+
+
+
+
+CAUTION: 업그레이드에 bootarg를 설정할 필요가 없는 경우 이 작업을 건너뛰고 바로 다음으로 이동할 수 있습니다.link:upgrade-mcc-ip-prepare-system.html["업그레이드를 위해 시스템을 준비합니다"] .
+
+
+
+== 2단계: 이전 컨트롤러에 설정해야 하는 bootarg를 결정합니다.
+
+영향을 받는 대부분의 업그레이드에는 다음을 설정해야 합니다. `hw.cxgbe.toe_keepalive_disable` 이전 컨트롤러의 bootarg.  그러나 특정 업그레이드 경로에서는 다음을 설정해야 합니다. `bootarg.siw.interop_enabled` 대신 bootarg를 사용하세요.
 
 다음 표를 사용하여 특정 업그레이드 조합에 대해 설정해야 하는 부트카를 결정합니다.
 
@@ -54,13 +68,20 @@ ONTAP 9.15.1 이상 버전에서 도입된 시스템을 업그레이드할 때�
 | AFF A220에서 AFF A20까지 | `bootarg.siw.interop_enabled` 
 
 
-| 기타 모든 지원되는 업그레이드는 AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드됩니다 | `hw.cxgbe.toe_keepalive_disable` 
+ a| 
+AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 대한 기타 모든 업그레이드
+
+*참고:* AFF A70 에서 AFF A90 시스템으로, 또는 FAS70에서 FAS90 시스템으로 업그레이드하는 경우 bootarg를 설정할 필요가 없습니다.
+| `hw.cxgbe.toe_keepalive_disable` 
 |===
 
 
-== 단계 2: 이전 컨트롤러에 필요한 부트아그를 설정합니다
+== 3단계: 이전 컨트롤러에 필요한 bootarg 설정
 
-이 작업은 * AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드할 때만 필요합니다.
+업그레이드 조합에 필요한 bootarg를 확인한 후, 다음 단계에 따라 이전 컨트롤러에 bootarg를 설정합니다.  이 작업은 영향을 받는 업그레이드에만 필요합니다.
+
+
+NOTE: 업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에서 bootarg를 설정해야 합니다.
 
 .단계
 . 두 사이트에서 하나의 노드를 중지하고 HA 파트너가 노드의 스토리지 인수를 수행하도록 합니다.

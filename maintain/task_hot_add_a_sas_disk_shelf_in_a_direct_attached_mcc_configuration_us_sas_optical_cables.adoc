@@ -15,7 +15,6 @@ SAS 광 케이블을 사용하여 직접 연결 MetroCluster FC 구성의 기존
 
 * 이 절차는 무중단으로 진행되며 완료까지 약 2시간이 소요됩니다.
 * FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
-* IOM6 쉘프 스택에 IOM12 쉘프를 추가하려면 을 참조하십시오 link:https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 쉘프 스택에 IOM12 쉘프 핫 추가"].
 
 
 이 작업은 스토리지가 SAS 케이블로 스토리지 컨트롤러에 직접 연결되는 MetroCluster FC 구성에 적용됩니다. FC-to-SAS 브릿지 또는 FC 스위치 패브릭을 사용하는 MetroCluster FC 구성에는 적용되지 않습니다.

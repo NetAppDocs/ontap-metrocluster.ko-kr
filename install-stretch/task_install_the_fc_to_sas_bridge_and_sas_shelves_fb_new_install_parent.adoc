@@ -25,7 +25,6 @@ NOTE: DR(재해 복구) 그룹의 모든 디스크는 미러링된 Aggregate 또
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
-* IOM12 모듈과 IOM3 모듈의 혼합은 동일한 스토리지 스택 내에서 지원되지 않습니다. 시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일한 스토리지 스택 내에서 IOM12 모듈과 IOM6 모듈의 조합이 지원됩니다.
 
 
 [NOTE]

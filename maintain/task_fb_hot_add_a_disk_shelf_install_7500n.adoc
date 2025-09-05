@@ -30,15 +30,6 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ug-rdg/home.html["�
 
 
 
-[NOTE]
-====
-시스템에서 지원되는 ONTAP 버전을 실행하는 경우 동일한 스택 내에서 IOM12 모듈과 IOM6 모듈을 함께 사용할 수 있습니다. ONTAP 버전에서 쉘프 혼합을 지원하는지 확인하려면 을 link:https://imt.netapp.com/matrix/["상호 운용성 매트릭스 툴(IMT)"^]참조하십시오. 사용 중인 ONTAP 버전이 지원되지 않고 기존 스택이나 지원되는 IOM 모듈 조합에 추가할 새 쉘프에서 IOM 모듈을 업그레이드하거나 다운그레이드할 수 없는 경우 다음 중 하나를 수행해야 합니다.
-
-* 새 SAS 포트에서 새 스택을 시작합니다(브리지 페어에서 지원되는 경우).
-* 추가 브리지 쌍에서 새 스택을 시작합니다.
-
-
-====
 .단계
 . NetApp Support 사이트에서 다음 문서를 다운로드하거나 볼 수 있습니다.
 +

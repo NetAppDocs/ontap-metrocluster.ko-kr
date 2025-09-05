@@ -159,7 +159,6 @@ NOTE: 재해 복구 그룹의 모든 디스크는 미러링된 Aggregate 또는 
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
-* IOM12 모듈과 IOM3 모듈의 혼합은 동일한 스토리지 스택 내에서 지원되지 않습니다. 시스템에서 지원되는 ONTAP 버전을 실행 중인 경우 동일한 스토리지 스택 내에서 IOM12 모듈과 IOM6 모듈의 조합이 지원됩니다.
 
 
 [NOTE]
@@ -489,18 +488,7 @@ link:../maintain/index.html["MetroCluster 부품 유지 관리"]
 
 
 
-=== 디스크 쉘프를 브리지에 케이블로 연결합니다
-
-디스크 쉘프의 케이블을 연결하는 데 올바른 FC-to-SAS 브리지를 사용해야 합니다.
-
-.선택
-* <<cabling_fb_7600N_7500N_with_iom12,IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다>>
-* <<cabling_fb_7600N_7500N_with_iom6_iom3,IOM6 또는 IOM3 모듈을 사용하여 디스크 쉘프에 FiberBridge 7600N 또는 7500N 브리지를 연결합니다>>
-
-
-
-
-==== IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다
+=== IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다
 
 브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다.
 
@@ -528,7 +516,7 @@ link:../maintain/index.html["MetroCluster 부품 유지 관리"]
 +
 .. 디스크 쉘프 첫 번째 스택의 경우, 첫 번째 쉘프의 케이블 IOM A를 FiberBridge A의 SAS 포트 A에, 마지막 쉘프의 케이블 IOM B를 FiberBridge B의 SAS 포트 A에 연결합니다
 .. 추가 쉘프 스택의 경우 FiberBridge 브리지에서 사용 가능한 다음 SAS 포트를 사용하여 이전 단계를 반복하고, 두 번째 스택의 경우 포트 B, 세 번째 스택의 경우 포트 C, 네 번째 스택의 경우 포트 D를 사용합니다.
-.. 케이블 연결 중에 IOM12 및 IOM3/IOM6 모듈을 기준으로 하는 스택이 별도의 SAS 포트에 연결되어 있는 한 동일한 브리지에 연결됩니다.
+.. 케이블링 중에 IOM12 모듈 기반 스택을 별도의 SAS 포트에 연결되어 있는 한 동일한 브리지에 연결합니다.
 +
 --
 
@@ -540,43 +528,6 @@ image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks
 
 --
 
-
-
-
-
-
-==== IOM6 또는 IOM3 모듈을 사용하여 쉘프에 케이블을 장착하여 FiberBridge 7600N 또는 7500N 브리지를 연결합니다
-
-브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다. FiberBridge 7600N 또는 7500N 브리지는 미니 SAS 커넥터를 사용하며 IOM6 또는 IOM3 모듈을 사용하는 쉘프를 지원합니다.
-
-.이 작업에 대해
-IOM3 모듈은 FiberBridge 7600N 브리지에서 지원되지 않습니다.
-
-디스크 쉘프의 경우 당김 탭을 아래로 향하게 하여(커넥터 아래쪽에 있음) SAS 케이블 커넥터를 삽입합니다.
-
-.단계
-. 각 스택의 쉘프를 데이지 체인 방식으로 연결합니다.
-+
---
-.. 쉘프 첫 번째 스택의 경우 IOM A를 FiberBridge A의 SAS 포트 A에 첫 번째 쉘프의 사각형 포트를 연결합니다
-.. 첫 번째 쉘프 스택의 경우, 마지막 쉘프의 IOM B 원형 포트를 FiberBridge B의 SAS 포트 A에 연결합니다
-
-
-쉘프 모델의 _설치 및 서비스 안내서_에서는 데이지 체인 방식의 쉘프에 대한 자세한 정보를 제공합니다.
-
-https://library.netapp.com/ecm/ecm_download_file/ECMP1119629["DS4243, DS2246, DS4486 및 DS4246용 SAS 디스크 쉘프 설치 및 서비스 가이드"^]
-
-다음 그림에서는 쉘프 스택에 연결된 브리지 세트를 보여 줍니다.
-
-image::../media/mcc_cabling_bridge_and_sas_stack_with_7500n_and_single_stack.gif[7500n 및 단일 스택으로 MCC 케이블 연결 브리지 및 SAS 스택]
-
---
-. 추가 쉘프 스택의 경우 FiberBridge 브리지에서 사용 가능한 다음 SAS 포트를 사용하여 이전 단계를 반복하고, 두 번째 스택의 경우 포트 B, 세 번째 스택의 경우 포트 C, 네 번째 스택의 경우 포트 D를 사용합니다.
-+
-다음 그림에서는 FiberBridge 7600N 또는 7500N 브리지 쌍에 연결된 4개의 스택을 보여 줍니다.
-
-+
-image::../media/mcc_cabling_bridge_and_sas_stack_with_7500n_four_stacks.gif[7500n 4개의 스택으로 MCC 케이블 연결 브리지 및 SAS 스택]
 
 
 
@@ -664,7 +615,7 @@ NOTE: 출력 시작 부분에 ""응답 잘림"" 텍스트가 나타나면 텔넷
  a| 
 .. 케이블을 반복하여 SAS 케이블이 느슨한지 확인하거나 SAS 케이블을 수정합니다.
 +
-<<디스크 쉘프를 브리지에 케이블로 연결합니다>>
+<<IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다>>
 
 .. 반복합니다 <<step1_bridge,1단계>>.
 

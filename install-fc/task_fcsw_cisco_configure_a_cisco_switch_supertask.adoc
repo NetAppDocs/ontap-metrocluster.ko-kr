@@ -2418,7 +2418,7 @@ exit
 .이 작업에 대해
 이러한 단계는 두 FC 스위치 Fabric 모두에서 수행해야 합니다.
 
-다음 단계에서는 4노드 MetroCluster 구성에서 FiberBridge 7500N에 대한 영역 지정 섹션에 설명된 조닝을 사용합니다. 을 참조하십시오 link:task_fcsw_cisco_configure_a_cisco_switch_supertask.html#configuring-fcip-ports-for-a-dual-isl-on-cisco-9250i-fc-switches["FC-VI 포트를 위한 조닝"].
+다음 단계에서는 4노드 MetroCluster 구성의 FibreBridge 7500N에 대한 구역 지정 섹션에 설명된 구역 지정을 사용합니다.
 
 .단계
 . 기존 존 및 존 세트(있는 경우)를 지웁니다.

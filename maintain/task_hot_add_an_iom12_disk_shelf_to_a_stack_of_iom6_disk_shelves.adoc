@@ -1,16 +1,8 @@
 ---
 permalink: maintain/task_hot_add_an_iom12_disk_shelf_to_a_stack_of_iom6_disk_shelves.html 
-sidebar: sidebar 
-keywords: metrocluster, maintain, service, hot, add, iom12, stack, iom6, disk, shelves, bridge, attached 
-summary: ONTAP 버전에 따라 IOM12 디스크 쉘프를 브리지 연결 MetroCluster 구성의 IOM6 디스크 쉘프 스택에 핫 추가할 수 있습니다. 
+redirect: ontap-metrocluster/index.html 
 ---
-= 브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
-ONTAP 버전에 따라 IOM12 디스크 쉘프를 브리지 연결 MetroCluster 구성의 IOM6 디스크 쉘프 스택에 핫 추가할 수 있습니다.
-
-이 절차를 수행하려면 을 참조하십시오 https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"].

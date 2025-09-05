@@ -54,7 +54,7 @@ ONTAP 9.15.1 이상 버전에서 도입된 시스템을 업그레이드할 때�
 | AFF A220에서 AFF A20까지 | `bootarg.siw.interop_enabled` 
 
 
-| 기타 모든 지원되는 업그레이드는 AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드됩니다 | `hw.cxgbe.toe_keepalive_disable` 
+| AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 대한 기타 모든 지원 업그레이드 | `hw.cxgbe.toe_keepalive_disable` 
 |===
 
 

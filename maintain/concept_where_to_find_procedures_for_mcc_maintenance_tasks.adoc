@@ -102,13 +102,4 @@ IP
  a| 
 https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.html["DS460C DS224C 및 DS212C 디스크 쉘프를 유지합니다"^]
 
-
-
- a| 
-둘 다 해당되며
- a| 
-IOM6 쉘프 스택에 IOM12 쉘프를 핫 추가합니다
- a| 
-https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-mix-hotadd/home.html["IOM6 모듈을 사용해 쉘프 스택에 IOM12 모듈을 장착한 상태로 쉘프 추가"^]
-
 |===

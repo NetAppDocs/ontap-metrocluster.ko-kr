@@ -76,8 +76,6 @@ entries:
         url: "/maintain/task_fb_hot_add_stack_of_shelves_and_bridges.html"
       - title: SAS 디스크 쉘프 스택에 SAS 디스크 쉘프를 핫 추가합니다
         url: "/maintain/task_fb_hot_add_a_disk_shelf_install_7500n.html"
-      - title: 브리지 연결 MetroCluster 구성에서 IOM6 디스크 쉘프 스택에 IOM12 디스크 쉘프를 핫 추가합니다
-        url: "/maintain/task_hot_add_an_iom12_disk_shelf_to_a_stack_of_iom6_disk_shelves.html"
   - title: MetroCluster FC 구성에서 스토리지를 핫 제거할 수 있습니다
     url: "/maintain/task_hot_remove_storage_from_a_mcc_fc_configuration.html"
   - title: MetroCluster FC 구성에서 단일 사이트의 전원을 끄고 켭니다
