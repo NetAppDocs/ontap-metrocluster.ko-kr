@@ -903,7 +903,6 @@
   <block id="89cd18493d151ae11e875d4edf6b6e66" category="list-text">2분기에는 6개, 7개, 8개, 9개의 드라이브가 있습니다</block>
   <block id="8d48afc2af7642b1eb38cbfe7c3b33d8" category="list-text">3분기에 4개의 드라이브: 12, 13, 14, 15</block>
   <block id="807910399f003942a09396612760caef" category="list-text">4분기에는 18, 19, 20, 21의 4개 드라이브가 있습니다</block>
-  <block id="2ad434ab593fd445c83cdbf1d5d00216" category="section-title">스택에서 IOM12와 IOM 6 모듈 혼합</block>
   <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="inline-link">NetApp 상호 운용성 매트릭스 툴(IMT)</block>
   <block id="a735c149377d586b0e9640f66438ba41" category="summary">클러스터 피어링, 관리, 데이터 연결에 사용되는 컨트롤러 모듈 포트에 케이블을 연결해야 합니다.</block>
   <block id="fab2d1136024b7f31159542f9304df3c" category="paragraph">이 작업은 MetroCluster 구성의 각 컨트롤러 모듈에서 수행해야 합니다.</block>
@@ -3129,42 +3128,28 @@
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="summary">새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.</block>
   <block id="fd1f71815b5abfc5d58a282353d2ba84" category="doc">새 케이블 연결 레이아웃 결정</block>
   <block id="6485f9afbf9c5f34e988054e67e3b142" category="paragraph">이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.</block>
-  <block id="cba784dbb6dad30cadc1fcb2d1b5ee81" category="paragraph"><block ref="cba784dbb6dad30cadc1fcb2d1b5ee81" category="inline-link-rx"></block></block>
   <block id="19df577c80891b37cfa2f1b29c518f6e" category="paragraph">8노드 구성에는 2개의 4노드 DR 그룹으로 구성된 8개 노드가 포함됩니다.</block>
   <block id="efe4097a762524c1e1628fcad46084ae" category="image-alt">MCC DR 그룹 8개 노드</block>
-  <block id="e66e23247af7503f663027daef188754" category="paragraph">DR 그룹을 제거하면 4개의 노드가 구성에 남아 있습니다.</block>
-  <block id="1c08e40b56822a43e7877e2eb26a97fd" category="section-title">각 클러스터에서 DR 그룹 노드 제거</block>
   <block id="50c188ed93e1182ae7f08e39dbbb2ec5" category="list-text">두 클러스터 모두에서 이 단계를 수행해야 합니다.</block>
   <block id="f2bf546b53e3f6cc54f274876ab2cb36" category="list-text">MetroCluster remove-dr-group 명령은 ONTAP 9.8 이상에서만 지원됩니다.</block>
-  <block id="cdfb112bdd5ad036d9715bddf30e7912" category="list-text">아직 DR 그룹이 없으면 제거할 준비를 합니다.</block>
   <block id="95e7c6b72cfdf5397dbe8a6653bdc7c1" category="list-text">모든 데이터 볼륨을 다른 DR 그룹으로 이동합니다.</block>
   <block id="25898a6422d7ded47f2936026a1df6c1" category="list-text">제거할 DR 그룹에 있을 수 있는 모든 MDV_AUD 메타데이터 볼륨을 삭제합니다.</block>
-  <block id="92cccd899142da5e06923ac8991bc5fc" category="list-text">다음 예에 표시된 대로 제거할 DR 그룹의 모든 데이터 애그리게이트를 삭제합니다.</block>
   <block id="73f68d9b46d6064cae47a18da8004723" category="admonition">루트 애그리게이트는 삭제되지 않습니다.</block>
-  <block id="29771e568737c4148ab90cda182257df" category="list-text">모든 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. ''network interface show-home-node_old_node_'</block>
   <block id="4ed819934d8eb4ecfa162dc35324fc32" category="list-text">클러스터 관리 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다.</block>
   <block id="91f41d8c6028070fa5f4cd7a2c56f7be" category="paragraph">네트워크 인터페이스 show-role cluster-mgmt</block>
-  <block id="0eb68bef79fda0557a1bd86cd43b0afa" category="paragraph">노드 관리 및 클러스터 간 LIF는 마이그레이션되지 않습니다.</block>
   <block id="85d38d4ee3b9248e142229cf9e215620" category="list-text">필요한 경우 epsilon을 다른 DR 그룹의 노드로 전송합니다.</block>
   <block id="aac7ac3bfa9117ebc1368d396b746e00" category="list-text">DR 그룹을 식별하고 제거합니다.</block>
   <block id="b32745668eaff06c12feb45539c339e0" category="list-text">제거할 올바른 DR 그룹을 식별합니다.</block>
   <block id="0373e81430a1cc22dafabd61d4a3cd0e" category="list-text">DR 그룹 노드를 제거합니다. + 'MetroCluster remove-dr-group-dr-group-id 1'</block>
   <block id="c31e08573cdaea3b8de26a9f74105469" category="paragraph">다음 예에서는 cluster_A에서 DR 그룹 구성을 제거하는 방법을 보여 줍니다</block>
   <block id="d9b49bc2577d68e37a84f80273248aee" category="list-text">파트너 클러스터에서 이전 단계를 반복합니다.</block>
-  <block id="4ed5c490b4a22cb265bc48e25109096a" category="list-text">MetroCluster IP 구성에 있는 경우 이전 DR 그룹의 노드에서 MetroCluster 연결을 제거합니다.</block>
-  <block id="a64d27abe280b12e33befc92f146357d" category="paragraph">이러한 명령은 두 클러스터 모두에서 실행할 수 있으며 두 클러스터를 포괄하는 전체 DR 그룹에 적용할 수 있습니다.</block>
   <block id="d172777a2cbbb0c3ec9b70dc45780c5f" category="list-text">다음 연결부를 분리하십시오.</block>
-  <block id="08a665929056fef6a8490b5b0b04f474" category="paragraph">'MetroCluster configuration-settings connection disconnect_dr-group-id_</block>
   <block id="e18600ad5da962c033022e8657b0fab3" category="list-text">이전 DR 그룹의 노드에서 MetroCluster 인터페이스를 삭제합니다.</block>
   <block id="eb5c2cb295b7a9fd5ee2ed559f176f9e" category="paragraph">'MetroCluster configuration-settings interface delete</block>
   <block id="deba5df0dea3cbba9463f219100e5ba4" category="list-text">이전 DR 그룹의 구성을 삭제합니다. + 'MetroCluster configuration-settings dr-group delete</block>
   <block id="8d3c998ce16ecd4cdc06e3ddd8c757e6" category="list-text">이전 DR 그룹의 노드 연결을 해제합니다.</block>
   <block id="b30c893d5895266607a2a417b5123132" category="paragraph">각 클러스터에서 이 단계를 수행해야 합니다.</block>
-  <block id="ed2e5c7ebbd6b2c749bdb92415d9787c" category="list-text">스토리지 페일오버 해제:</block>
-  <block id="cdab15f9840a783bfc35d8f8baa514e9" category="list-text">노드: + 'cluster unjoin-node_node-name_'의 연결을 해제합니다</block>
   <block id="ff6434ad658fa9ed7826817a3f9f0dff" category="paragraph">이전 DR 그룹의 다른 로컬 노드에 대해 이 단계를 반복합니다.</block>
-  <block id="06b28530123c83dfb519d35b8e3e11f5" category="list-text">admin 권한 수준 설정: +'Set-Privilege admin'</block>
-  <block id="47b7f94ac9af47dcafeea8d4a5f0d377" category="list-text">새 DR 그룹에서 클러스터 HA를 다시 설정합니다.</block>
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph">군산하수정-구성 진실</block>
   <block id="8917e80351843363583600f118c2fa84" category="list-text">이전 컨트롤러 모듈 및 스토리지 쉘프를 중지하고 전원을 끄고 분리합니다.</block>
   <block id="1ad92a7ca654c056085b209325047d52" category="summary">컨트롤러 모듈을 기존 MetroCluster 구성에 추가할 때 새 컨트롤러 모듈에 netboot와 ONTAP 운영 체제를 설치하기 위한 특정 단계를 수행해야 합니다.</block>
@@ -10043,9 +10028,7 @@
   <block id="03b9eedf57c55a2eb9b4feaa990c85f6" category="list-text">MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다.</block>
   <block id="52ad3b024ecc6eae02e8415cef1140ba" category="summary">백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다.</block>
   <block id="9e93b10c56fcff9e0d1564e5ad629c03" category="doc">스위치 구성</block>
-  <block id="8c6cfac074d0567f4c5a941062f42343" category="paragraph">이 절차는 ONTAP 9.8 이상에서 지원됩니다. ONTAP 9.7 이하를 실행하는 시스템의 경우 기술 자료 문서를 참조하십시오</block>
   <block id="d5d6932337b2af2eda1bd96fd5aa3832" category="inline-link-macro">MetroCluster 구성에서 DR 그룹을 제거하는 방법</block>
-  <block id="44fa5f61d97cbf15ad67ee9c5aedc1c6" category="paragraph"><block ref="44fa5f61d97cbf15ad67ee9c5aedc1c6" category="inline-link-macro-rx"></block></block>
   <block id="240e83062f934da5c217268779ad19cc" category="inline-link-macro">기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 사용되는 경우 컨트롤러 업그레이드에서는 포트 1c 및 1d를 사용합니다.</block>
   <block id="7d52f2b0abe5122410e02b6a1f5063c2" category="admonition">원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 기술 자료 문서를 참조하십시오 <block ref="932e72f00053653311064be7a28a435b" category="inline-link-macro-rx"></block></block>
   <block id="0304fb1b1795f11d66da6052c99f1cca" category="list-text">두 사이트의 라이센스가 일치해야 합니다. 에서 새 라이센스를 얻을 수 있습니다 <block ref="3bd7a72b5bb22d07b50aba30cd6fdbe6" category="inline-link-macro-rx"></block>.</block>
@@ -10292,7 +10275,6 @@
   <block id="ec8b479c503bdd6824b5e3505ef1d0df" category="paragraph">다음 예에서는 오프라인인 집계 aggr_data_A1을 보여 줍니다.</block>
   <block id="aa8cd184e817ada870c8b763be695d0b" category="paragraph">다음 예제는 삭제되는 집계 aggr_data_A1을 보여줍니다.</block>
   <block id="d2038b70348bcc50135596de145913db" category="admonition">스위치_A_1, 스위치_B_1, 스위치_A_2, 스위치_B_2 순서로 스위치를 업데이트합니다</block>
-  <block id="f6d453c97574893aee9bca0a4faee686" category="paragraph">'storage failover modify -node_node -name _ -enable false'</block>
   <block id="f91adcd268075ddcfabf631a5a33611e" category="list-text">각 데이터 애그리게이트를 오프라인 상태로 전환하고 삭제합니다.</block>
   <block id="d4fbfd12406441eb6b750cde2dcb9137" category="list-text">사이트 간 ISL(Inter-Switch Link)이 작동 중이고 포트 채널이 작동 중인지 확인합니다.</block>
   <block id="0e199c470dcfb3a63ccc62156cd2085f" category="paragraph">다음 예에서 ISL 포트 "Eth1/15"에서 "Eth1/20"은 원격 사이트 링크에 대해 "Po10"으로 구성되고 "Eth1/7"에서 "Eth1/8"은 로컬 클러스터 ISL에 대해 "PO1"로 구성됩니다. "Eth1/15"~"Eth1/20", "Eth1/7"~"Eth1/8", "Po10" 및 "PO1" 상태는 'UP'이어야 합니다.</block>
@@ -10404,9 +10386,6 @@
   <block id="a417bfe3b0e85c20658fe71357feb3ef" category="paragraph">전체 명령 구문은 man 페이지를 참조하십시오. 다음 예에서는 인터클러스터 LIF cluster01_icl01 및 cluster01_icl02를 생성합니다.</block>
   <block id="0074a60c2f111fa09e324bfc6f086bfd" category="paragraph">다음 명령을 실행합니다.<block ref="08fd4296d1145ee217b3ba481add0899" prefix=" " category="inline-code"></block></block>
   <block id="bb084c29063404b6611bde28d4ed57d3" category="paragraph">다음 명령을 실행합니다.<block ref="4686e63f75ecbb5593b9aac27ab89dd7" prefix=" " category="inline-code"></block></block>
-  <block id="3c01c02ef0bb0d39aaf5f9cbc5c8ea4b" category="paragraph"><block ref="6b5ac3bb2bcffd222567cf972f8a2548" prefix="" category="inline-code"></block></block>
-  <block id="f7967c2b46538ede39d7960526ce1fa4" category="list-text">데이터 LIF를 다시 온라인 상태로 전환합니다.<block ref="c5b63f9c60f25a11e5c1cde65fb540f1" prefix=" " category="inline-code"></block></block>
-  <block id="f677111a20e676139c4a865021fafa0d" category="paragraph"><block ref="850d7b5cf3d569632a8982fc791023b0" prefix="" category="inline-code"></block></block>
   <block id="00b7088169fa7f91ce7c54fd96b41d7b" category="list-text">인터클러스터 LIF를 호스팅할 물리적 포트를 해당 브로드캐스트 도메인에 추가합니다.</block>
   <block id="e64aaeac172dbd7d324ded015d3b620f" category="list-text">파트너 클러스터에 연결할 수 있고 구성이 파트너 클러스터에서 성공적으로 재동기화되었는지 확인합니다.</block>
   <block id="e3c9aa07778be11d3bb374e3a6486e23" category="paragraph"><block ref="982b6fd5e36acd031c5af800a9951ed1" prefix="" category="inline-code"></block></block>
@@ -10533,7 +10512,6 @@
   <block id="6a9c67444d70fbe1484e9983092ffff8" category="admonition">의 단계를 수행해야 합니다 <block ref="b6e3e97b1b6ab70165db8088036aef95" category="inline-link-macro-rx"></block> 각 컨트롤러(교체 컨트롤러 포함)에서 이전 구성이 제거되었는지 확인합니다.</block>
   <block id="779a44ac931df50e9ba3ac26bbca035e" category="list-text">를 누릅니다<block ref="3b3242ced99842a6c2c16f489b78e773" prefix=" " category="inline-code"></block> 명령이 성공적으로 완료된 후 컨트롤러 모듈이 실패했습니다. 이전 표를 사용하여 올바른 복구 절차를 확인하십시오.</block>
   <block id="57c5f3148ec34d732973b7f905f1ca84" category="section-title">MetroCluster FC-to-IP 전환 중 컨트롤러 모듈 장애 시나리오</block>
-  <block id="b79001d76282bba800ccc9b5187d2ad4" category="list-text">데이터 LIF를 오프라인 상태로 이동합니다.<block ref="58d060d8bc95409e743c7b8e95e72710" prefix=" " category="inline-code"></block></block>
   <block id="467f07382f2568a4248a6dee67437d64" category="paragraph"><block ref="467f07382f2568a4248a6dee67437d64" category="inline-link-macro-rx"></block></block>
   <block id="d570f5d821344a6838aaa260987eafc8" category="inline-link-macro">고가용성 쌍 관리</block>
   <block id="519460f530eb0c6817aeafcaef72fd69" category="paragraph">4노드 MetroCluster 구성에서는 장애가 발생한 구성요소에 따라 이 장애가 발생하면 장애가 발생한 노드가 자동 또는 협상된 테이크오버 상태로 될 수 있습니다. 데이터 복구에 대한 설명은 에 나와 있습니다 <block ref="098c4bee7c591ea5429ed6be6c4ddd42" category="inline-link-macro-rx"></block> .</block>
@@ -11200,7 +11178,6 @@
   <block id="9dc72cfc812a43dbca6ba4e6357b2b04" category="paragraph">ONTAP 9.13.1부터 8노드 MetroCluster 구성을 임시로 확장하여 컨트롤러 및 스토리지를 업데이트할 수 있습니다. 을 참조하십시오 <block ref="df5e6373f54c9330727709bb1055a079" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="e6f19b92e0e69fc5d74e94088b442a26" category="inline-link-macro">4노드 또는 8노드 MetroCluster IP 구성 업데이트</block>
   <block id="ae236ebe2cd05ce4da7fe73d504f4946" category="list-text">있는 경우 <block ref="54f4a86aff0fc5aba4d6e37b225734c0" category="inline-link-macro-rx"></block>새로운 노드에는 루트 애그리게이트 및 예비 디스크를 위한 적절한 디스크와 함께 이전 노드의 데이터를 수용할 수 있는 충분한 스토리지가 필요합니다.</block>
-  <block id="30db39dffca5d3a3ab759b48303153b1" category="list-text">제거할 DR 그룹에 로드 공유 미러 볼륨이 포함되어 있으면 이동할 수 없습니다.  다른 DR 그룹에 모든 로드 공유 미러 볼륨을 다시 생성한 다음 제거할 DR 그룹에서 로드 공유 미러 볼륨을 삭제합니다.</block>
   <block id="0108924065f583138162139c8d2325c4" category="list-text">Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2의 순서로 한 번에 하나의 스위치에서 단계를 수행합니다.</block>
   <block id="61cdeb097cfdf5250ae69244ebf01a62" category="list-text">xWDM 구성을 사용하는 경우 ISL에 대한 추가 설정이 필요할 수 있습니다. 자세한 내용은 xWDM 공급업체 설명서를 참조하십시오.</block>
   <block id="91debec19d39d0379223807f0659efab" category="section-title">MetroCluster 구성에서 구성을 복구합니다</block>
@@ -11975,13 +11952,11 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0ab751f551b18333e82474f5ca9b4122" category="list-text">MetroCluster IP 인터페이스 포트가 온라인 상태인지 확인합니다.</block>
   <block id="124ba57298a92342f8aec06ebcfb6415" category="inline-link-macro">이전 컨트롤러 모듈의 시스템 ID를 확인합니다</block>
   <block id="3ac27de4b4347c98785ff06870fe7221" category="paragraph"><block ref="3ac27de4b4347c98785ff06870fe7221" category="inline-link-macro-rx"></block></block>
-  <block id="a786547181c9c8f446791420d2be691f" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 을 참조하십시오<block ref="f93341e63c1888be05256ff042174623" category="inline-link-rx"></block> 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 다음을 참조하십시오.</block>
   <block id="27211cf5d485f8491ca9b566aefe2d6d" category="paragraph">ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다.</block>
   <block id="e528d26e96f91b34e70a35c4661d620d" category="list-text">AFF 및 ASA 시스템에서 ADP를 MetroCluster IP 구성과 함께 사용하려면 ONTAP 9.4 이상이 필요합니다.</block>
   <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="inline-link">NetApp 상호 운용성 매트릭스</block>
   <block id="769db6797bc8c70f9ceb0ea238fcfef2" category="list-text"><block ref="769db6797bc8c70f9ceb0ea238fcfef2" category="inline-link-rx"></block></block>
   <block id="c5dcd35af16918a17ee9c3a5c153f0af" category="inline-link">IMT</block>
-  <block id="24d65add9a27d74b80e9a9cebdfc8e56" category="paragraph">사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오.<block ref="30796bf173a80af0dc9c120f98ffaed6" category="inline-link-rx"></block></block>
   <block id="80d79e74efb3cf7c2ad45e7e1c96223d" category="inline-link-macro">NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="9dce4db3e352a666d92ce25dd5f94a51" category="list-text"><block ref="9dce4db3e352a666d92ce25dd5f94a51" category="inline-link-macro-rx"></block></block>
   <block id="59908dc1540a829f2e5b2241e8bda0cd" category="inline-link-macro">NVIDIA IP RCF 파일을 다운로드하고 설치합니다</block>
@@ -13974,7 +13949,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c82f2ff1cbd6e1d62e65daba43978db4" category="paragraph">Cisco 9336C-FX2 공유(36포트)</block>
   <block id="d44a3adbc7ddf926ace3174c29e594fe" category="paragraph">*참고:* 스위치 포트 11과 12를 사용하려면 두 가지 속도 모드를 선택해야 합니다.</block>
   <block id="22e6a6026dec5bb5059565b00cc3631c" category="paragraph">전환, 새로 고침, 8노드 설치 및 4노드 확장 절차 중에 MetroCluster 구성에 새 플랫폼 모델을 추가할 수 있습니다. 이러한 절차 중 어느 단계에서든 기존 MetroCluster 구성에 *공유 클러스터/HA 포트*를 사용하는 플랫폼이 포함된 경우, ONTAP 버전을 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않으면 *공유 MetroCluster/HA 포트*를 사용하는 플랫폼을 해당 구성에 추가할 수 없습니다.</block>
-  <block id="29c802ab86e25c329e4ce82ab207d848" category="sidebar">12포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당</block>
   <block id="a65cd2f2d334d9927f9c0f2a89dbb2d0" category="paragraph">MetroCluster IP 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.</block>
   <block id="cf42f488bd58e2f8f8819f7c720b93a1" category="paragraph">각 클러스터에서 고급 권한 모드로 이 단계를 수행해야 합니다.</block>
   <block id="c836d30393b0f25c968423f5df80b134" category="paragraph">MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동합니다.</block>
@@ -14373,4 +14347,56 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ada21e32b58b8c3670abec0c9bd43b39" category="paragraph">업그레이드 조합에 필요한 bootarg를 확인한 후, 다음 단계에 따라 이전 컨트롤러에 bootarg를 설정합니다.  이 작업은 영향을 받는 업그레이드에만 필요합니다.</block>
   <block id="5c60cc2ba2a9eb0236f0d3ba52d42179" category="admonition">업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에서 bootarg를 설정해야 합니다.</block>
   <block id="51e9ae39fa32c368d27f8e565c6a0512" category="cell">AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 대한 기타 모든 지원 업그레이드</block>
+  <block id="9f0a4554064856ae78dbf1c08bc876ce" category="doc">MetroCluster 구성에서 DR 그룹 제거</block>
+  <block id="2f5075fd2401e26a07990d72f3087874" category="paragraph">ONTAP 9.8부터 8노드 MetroCluster 구성에서 재해 복구(DR) 그룹을 제거하여 4노드 MetroCluster 구성을 생성할 수 있습니다.</block>
+  <block id="73ac4183b96cb40ebb14a9dc72a13298" category="admonition">이러한 단계는 전환 및 시스템 새로 고침 워크플로우 동안 사용됩니다.</block>
+  <block id="a17f6afa75b317e25d154b29624badd3" category="section-title">각 클러스터에서 DR 그룹 노드를 제거합니다.</block>
+  <block id="b928a73ca232c9fc08d935ad673557de" category="paragraph">이 절차는 ONTAP 9.8부터 지원됩니다.  ONTAP 9.7 이하 버전을 실행하는 시스템의 경우 기술 자료 문서를 참조하세요.<block ref="806d9b447def65eba3e3e2e790c033b4" category="inline-link-macro-rx"></block> .</block>
+  <block id="622b8cea53ef096337834121912a63f3" category="paragraph">DR 그룹을 제거하면 구성에 4개의 노드가 남습니다.</block>
+  <block id="c1e5c91114c66e4b9a57d82fcc652acd" category="list-text">아직 DR 그룹을 제거하지 않았다면 제거할 준비를 하세요.</block>
+  <block id="8ab89d8f614450ad9b0a76ce08cf67b8" category="list-text">제거할 DR 그룹에 부하 공유 미러 볼륨이 있는 경우 다른 DR 그룹에 모든 부하 공유 미러 볼륨을 다시 만들고 제거할 DR 그룹에서 해당 볼륨을 삭제합니다.</block>
+  <block id="a59820a1c3cb9db44ad34809c30b9b83" category="list-text">제거할 DR 그룹의 모든 데이터 집계를 삭제합니다.</block>
+  <block id="18fa955273f3f4dcd76a502f9692c60d" category="list-text">NFS 및 CIFS(SMB)에 사용하는 모든 NAS 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. + <block ref="7317cdd2b96cce163d969aceb2ba0c1d" prefix=" " category="inline-code"></block></block>
+  <block id="8e0e33777ea372d5fe416dcfc835ca44" category="paragraph"><block ref="8eceacf63a83bbfbc3898284abfafa5f" prefix="" category="inline-code"></block></block>
+  <block id="2b3b2e728783f7895871de7434a53e12" category="list-text">데이터 LIF를 다른 DR 그룹의 새 홈 노드로 이동합니다.<block ref="80e0d406ea5fcb2ea137507fb844b0fb" prefix=" " category="inline-code"></block></block>
+  <block id="a91858ed54f0d68645cd08be7b25782c" category="paragraph"><block ref="e5bd5c510f2d91722adf52ff19bb0ab9" prefix="" category="inline-code"></block></block>
+  <block id="d92e3b22372c2adfe757906a8734d8f4" category="list-text">노드 관리 및 클러스터 간 LIF는 마이그레이션되지 않습니다.  필요에 따라 DR 그룹의 노드에 새로운 노드 관리 및 클러스터 간 LIF를 만듭니다.</block>
+  <block id="6a16ef52c4b06b07d8c8d1060e0d49d8" category="list-text">노드 간 블록 액세스(SAN)에 사용되는 FCP 인터페이스는 마이그레이션하거나 이동할 수 없습니다.  필요에 따라 새로운 FCP 인터페이스를 만듭니다.</block>
+  <block id="e4abc9f15e37b97db879c5cf483a2d4b" category="list-text">홈 노드와 홈 포트를 업데이트하려면 iSCSI SAN LIF가 다운되어야 합니다.</block>
+  <block id="8f13be73804a56335a7ee2724f13e633" category="list-text">이전 DR 그룹의 노드에서 스토리지 장애 조치를 비활성화합니다.</block>
+  <block id="696370864f4b1ce13a84661501b202e5" category="paragraph"><block ref="8c709b243402dd4272dff4833554f25c" prefix="" category="inline-code"></block></block>
+  <block id="05b39754e7e99ec7d60818c2d3ef5bba" category="list-text">MetroCluster IP 구성을 사용하는 경우 다음 단계를 수행하여 루트 집계의 원격 플렉스를 삭제하고 이전 DR 그룹의 노드에서 디스크 소유권을 제거합니다.</block>
+  <block id="fd413373865c0b35424cdf1d99f3c10f" category="paragraph">이러한 단계는 각 사이트의 HA 쌍에 있는 두 노드 모두에 대해 수행되어야 합니다.</block>
+  <block id="84822d6e81d1f35f15b06141981b397f" category="list-text">삭제할 DR 그룹의 노드에 있는 루트 집계의 원격 플렉스를 표시합니다.</block>
+  <block id="0bd15b64439187d8dac987c630d7df6d" category="paragraph"><block ref="1bb66b043b34f4120f55cc168b2da3dc" prefix="" category="inline-code"></block></block>
+  <block id="eab2196a69a6fdade5e5bf5d4f300856" category="list-text">원격 플렉스를 삭제합니다.</block>
+  <block id="7e159c5d7c595db32d7b3fef9000ac19" category="paragraph"><block ref="9f7f42d9161c2d3ca3716315c375f827" prefix="" category="inline-code"></block></block>
+  <block id="fe068f70e1fc61243b2a0632bd6f34cb" category="list-text">DR 그룹의 노드가 소유한 원격 디스크를 식별합니다.</block>
+  <block id="15ce741616536c482daa7a0532c76ca8" category="paragraph">사용하는 명령은 분할/공유 디스크를 사용하는지 또는 전체 디스크를 사용하는지에 따라 달라집니다.</block>
+  <block id="176b8742a87f8e897cb6ea9548977e72" category="admonition">쉼표로 구분된 목록을 사용하세요.<block ref="0953dae02add83b063cc8af7a6dbbff8" prefix=" " category="inline-code"></block> 삭제할 DR 그룹의 노드 이름을 지정하는 필드입니다.</block>
+  <block id="4bb92469cfa95bb7785c0e8c0cdc02eb" category="open-title">분할/공유 디스크:</block>
+  <block id="0279e95982eb46292810910c2a4325ef" category="list-text">원격 디스크를 표시합니다.</block>
+  <block id="3c1f3ce500e52cec2b93fb29390a174e" category="paragraph"><block ref="749c9bcb383ea88a6558e404e0fa8cb5" prefix="" category="inline-code"></block></block>
+  <block id="52bb09b18cdb1e6dd2fb3324062c1c47" category="open-title">전체 디스크:</block>
+  <block id="0d1726dab779821975a9ad578a9f0677" category="paragraph"><block ref="6e0d34e5eb1c8ece221755c754743354" prefix="" category="inline-code"></block></block>
+  <block id="3e9c37ca50692bcf4d950da60ba31dd1" category="list-text">디스크 자동 할당 비활성화:</block>
+  <block id="b2bd91ffa581589b010f7b0cee5b040a" category="paragraph"><block ref="c24efecdd42a886db73de2bcc158cbdc" prefix="" category="inline-code"></block></block>
+  <block id="b06a58f7c6886b9c75c2b66e25e3b03c" category="list-text">삭제할 각 DR 그룹 노드에서 pool1 디스크의 소유권을 제거합니다.  제거할 각 노드에서 이 단계를 수행합니다.</block>
+  <block id="e352d5e820576fb81acd295d2fa6b382" category="list-text">노드셸로 이동합니다.</block>
+  <block id="48b6c5e6c91f5afdf4db95fdce26e45f" category="paragraph"><block ref="1bdb752f72609d817a6beb669061c8b6" prefix="" category="inline-code"></block></block>
+  <block id="0d5dee87e76c9a9f9127dd55f7b1e2eb" category="list-text">pool1 디스크를 식별합니다.</block>
+  <block id="7cb1b8282d7b16c1d998b3403dc7a91f" category="paragraph"><block ref="978a127cc866f54e1830776b846eb9b8" prefix="" category="inline-code"></block></block>
+  <block id="c0b861216beaceb3d375fd9c6df6e6c3" category="paragraph">노드가 소유한 pool0 및 pool1 예비 디스크를 포함하여 모든 예비 디스크가 표시됩니다.</block>
+  <block id="6e07f225393b79b609cb8fc3d86279bf" category="list-text">각 pool1 예비 디스크에 대한 디스크 소유권을 제거합니다.</block>
+  <block id="8d0b8b84becd485c7891597b01240458" category="paragraph"><block ref="a2548e43cec4e94df11e259aa9a83a68" prefix="" category="inline-code"></block></block>
+  <block id="c218a756cd011fd52e8951a24e6900e7" category="paragraph">분할된 디스크의 경우, 파티션 소유권을 제거한 다음 컨테이너 디스크 소유권을 제거합니다.</block>
+  <block id="096ee0b68ed0c4989612306aa1e3fbb5" category="list-text">MetroCluster IP 구성을 사용하는 경우 이전 DR 그룹의 노드에서 MetroCluster 연결을 제거합니다.</block>
+  <block id="bac7003f0be2f7c1ffe91ec5e8146e9e" category="paragraph">이러한 명령은 두 클러스터 중 하나에서 발행될 수 있으며 두 클러스터 모두에 걸쳐 있는 전체 DR 그룹에 적용됩니다.</block>
+  <block id="d30c3b2671a8fe1038b0b3608133c703" category="paragraph"><block ref="6864950bb23886bbe435bbce576bc0d6" prefix="" category="inline-code"></block></block>
+  <block id="b1bd9ffb7ba04ba41a6ed8fd479dceb1" category="admonition">이 단계는 DR 그룹의 각 노드에서 반복되어야 합니다.</block>
+  <block id="d321eb0a25003ddc996afe17a7149d6f" category="paragraph">각 클러스터에서 이 단계를 수행합니다.</block>
+  <block id="5dd0fc60033d456ae0a90e5edc267878" category="list-text">노드 가입 해제: +<block ref="1f9e5247574dddf29bedc560cf209d11" prefix=" " category="inline-code"></block></block>
+  <block id="e1bde148bbf0582fd279d9a3c915b31a" category="list-text">관리자 권한 수준을 설정합니다.</block>
+  <block id="5465fc7f055cf03040fda6f777f9a2da" category="list-text">새 DR 그룹에서 클러스터 HA가 활성화되어 있는지 확인하세요.  필요한 경우 클러스터 HA를 다시 활성화합니다.</block>
+  <block id="4e7f0491b8337902ce9619e04977796b" category="sidebar">NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
 </blocks>

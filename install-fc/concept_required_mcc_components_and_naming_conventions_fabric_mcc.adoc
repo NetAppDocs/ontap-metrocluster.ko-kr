@@ -152,12 +152,6 @@ MetroCluster 구성은 RAID-DP 및 RAID4를 지원합니다.
 
 
 
-== 스택에서 IOM12와 IOM 6 모듈 혼합
-
-사용 중인 ONTAP 버전은 쉘프 혼합을 지원해야 합니다. 사용 중인 ONTAP 버전이 쉘프 혼합을 지원하는지 확인하려면 상호 운용성 매트릭스 툴(IMT) 을 참조하십시오. https://imt.netapp.com/matrix/["IMT"^]
-
-
-
 == 브리지 명명 규칙
 
 브리지는 다음 이름 지정을 사용합니다.

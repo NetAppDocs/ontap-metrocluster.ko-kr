@@ -58,9 +58,9 @@ entries:
       url: "/install-ip/port_usage_3132q.html"
     - title: Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port_usage_3232c_9336c.html"
-    - title: 12포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당
+    - title: 12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port-usage-9336c-fx-2-12-port.html"
-    - title: NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치의 플랫폼 포트 할당
+    - title: NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port_usage_9336c_shared.html"
     - title: Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당
       url: "/install-ip/port_usage_bes53248.html"

@@ -4,28 +4,17 @@ sidebar: sidebar
 keywords:  
 summary: ONTAP 9.8부터 8노드 MetroCluster 구성에서 DR 그룹을 제거하여 4노드 MetroCluster 구성을 만들 수 있습니다. 
 ---
-= 재해 복구 그룹 제거
+= MetroCluster 구성에서 DR 그룹 제거
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ONTAP 9.8부터 8노드 MetroCluster 구성에서 DR 그룹을 제거하여 4노드 MetroCluster 구성을 만들 수 있습니다.
+ONTAP 9.8부터 8노드 MetroCluster 구성에서 재해 복구(DR) 그룹을 제거하여 4노드 MetroCluster 구성을 생성할 수 있습니다.
 
-이 절차는 ONTAP 9.8 이상에서 지원됩니다. ONTAP 9.7 이하를 실행하는 시스템의 경우 기술 자료 문서를 참조하십시오
 
-link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_a_DR-Group_from_a_MetroCluster["MetroCluster 구성에서 DR 그룹을 제거하는 방법"]
-
-https://mysupport.netapp.com/site/global/dashboard["NetApp 지원"]
-
-8노드 구성에는 2개의 4노드 DR 그룹으로 구성된 8개 노드가 포함됩니다.
-
-image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
-
-DR 그룹을 제거하면 4개의 노드가 구성에 남아 있습니다.
-
-image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+NOTE: 이러한 단계는 전환 및 시스템 새로 고침 워크플로우 동안 사용됩니다.
 
 
 
@@ -43,7 +32,18 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
-== 각 클러스터에서 DR 그룹 노드 제거
+== 각 클러스터에서 DR 그룹 노드를 제거합니다.
+
+이 절차는 ONTAP 9.8부터 지원됩니다.  ONTAP 9.7 이하 버전을 실행하는 시스템의 경우 기술 자료 문서를 참조하세요.link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_a_DR-Group_from_a_MetroCluster["MetroCluster 구성에서 DR 그룹을 제거하는 방법"^] .
+
+.이 작업에 대해
+8노드 구성에는 2개의 4노드 DR 그룹으로 구성된 8개 노드가 포함됩니다.
+
+image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
+
+DR 그룹을 제거하면 구성에 4개의 노드가 남습니다.
+
+image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
 
 .시작하기 전에
 * 두 클러스터 모두에서 이 단계를 수행해야 합니다.
@@ -51,13 +51,13 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 .단계
-. 아직 DR 그룹이 없으면 제거할 준비를 합니다.
+. 아직 DR 그룹을 제거하지 않았다면 제거할 준비를 하세요.
 +
 .. 모든 데이터 볼륨을 다른 DR 그룹으로 이동합니다.
-.. 제거할 DR 그룹에 로드 공유 미러 볼륨이 포함되어 있으면 이동할 수 없습니다.  다른 DR 그룹에 모든 로드 공유 미러 볼륨을 다시 생성한 다음 제거할 DR 그룹에서 로드 공유 미러 볼륨을 삭제합니다.
+.. 제거할 DR 그룹에 부하 공유 미러 볼륨이 있는 경우 다른 DR 그룹에 모든 부하 공유 미러 볼륨을 다시 만들고 제거할 DR 그룹에서 해당 볼륨을 삭제합니다.
 .. 에 따라 모든 MDV_CRS 메타데이터 볼륨을 다른 DR 그룹으로 이동합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_move_a_metadata_volume_in_mcc_configurations.html["MetroCluster 구성에서 메타데이터 볼륨 이동"] 절차를 참조하십시오.
 .. 제거할 DR 그룹에 있을 수 있는 모든 MDV_AUD 메타데이터 볼륨을 삭제합니다.
-.. 다음 예에 표시된 대로 제거할 DR 그룹의 모든 데이터 애그리게이트를 삭제합니다.
+.. 제거할 DR 그룹의 모든 데이터 집계를 삭제합니다.
 +
 [listing]
 ----
@@ -70,24 +70,29 @@ ClusterB::> aggr delete -aggregate aggregate_name
 
 NOTE: 루트 애그리게이트는 삭제되지 않습니다.
 
-.. 데이터 LIF를 오프라인 상태로 이동합니다.
-`network interface modify -vserver _svm-name_ -lif _data-lif_ -status-admin down`
-.. 모든 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. ''network interface show-home-node_old_node_'
+.. NFS 및 CIFS(SMB)에 사용하는 모든 NAS 데이터 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다. + 
+`network interface show -home-node <old_node>`
 +
-`network interface modify -vserver _svm-name_ -lif _data-lif_ -home-node _new_node_ -home-port _port-id_`
+`network interface migrate -vserver <svm_name> -lif <data_lif> -destination-node <new_node> -destination-port <port>`
 
-.. 데이터 LIF를 다시 온라인 상태로 전환합니다.
-`network interface modify -vserver _svm-name_ -lif _data-lif_ -status-admin up`
+.. 데이터 LIF를 다른 DR 그룹의 새 홈 노드로 이동합니다.
+`network interface modify -vserver <svm-name> -lif <data-lif> -home-node <new_node> -home-port <port>`
 .. 클러스터 관리 LIF를 다른 DR 그룹의 홈 노드로 마이그레이션합니다.
 +
 네트워크 인터페이스 show-role cluster-mgmt
 
 +
-`network interface modify -vserver _svm-name_ -lif _cluster_mgmt_ -home-node _new_node_ -home-port _port-id_`
+`network interface modify -vserver <svm-name> -lif <cluster_mgmt> -home-node <new_node> -home-port <port-id>`
 
 +
-노드 관리 및 클러스터 간 LIF는 마이그레이션되지 않습니다.
+[NOTE]
+====
+*** 노드 관리 및 클러스터 간 LIF는 마이그레이션되지 않습니다.  필요에 따라 DR 그룹의 노드에 새로운 노드 관리 및 클러스터 간 LIF를 만듭니다.
+*** 노드 간 블록 액세스(SAN)에 사용되는 FCP 인터페이스는 마이그레이션하거나 이동할 수 없습니다.  필요에 따라 새로운 FCP 인터페이스를 만듭니다.
+*** 홈 노드와 홈 포트를 업데이트하려면 iSCSI SAN LIF가 다운되어야 합니다.
 
+
+====
 .. 필요한 경우 epsilon을 다른 DR 그룹의 노드로 전송합니다.
 +
 [listing]
@@ -117,6 +122,9 @@ ClusterB::*> set admin
 다음 예에서는 cluster_A에서 DR 그룹 구성을 제거하는 방법을 보여 줍니다
 
 +
+.예
+[%collapsible]
+====
 [listing]
 ----
 cluster_A::*>
@@ -150,19 +158,127 @@ Do you want to continue? {y|n}: y
 
 cluster_A::*>
 ----
+====
 
 
 . 파트너 클러스터에서 이전 단계를 반복합니다.
-. MetroCluster IP 구성에 있는 경우 이전 DR 그룹의 노드에서 MetroCluster 연결을 제거합니다.
+. 이전 DR 그룹의 노드에서 스토리지 장애 조치를 비활성화합니다.
 +
-이러한 명령은 두 클러스터 모두에서 실행할 수 있으며 두 클러스터를 포괄하는 전체 DR 그룹에 적용할 수 있습니다.
+`storage failover modify -node <node-name> -enable false`
+
+. MetroCluster IP 구성을 사용하는 경우 다음 단계를 수행하여 루트 집계의 원격 플렉스를 삭제하고 이전 DR 그룹의 노드에서 디스크 소유권을 제거합니다.
++
+이러한 단계는 각 사이트의 HA 쌍에 있는 두 노드 모두에 대해 수행되어야 합니다.
+
++
+.. 삭제할 DR 그룹의 노드에 있는 루트 집계의 원격 플렉스를 표시합니다.
++
+`storage aggregate plex show -aggregate <root_aggr_name> -pool 1`
+
+.. 원격 플렉스를 삭제합니다.
++
+`storage aggregate plex delete -aggregate <root_aggr_name> -plex <plex_from_previous_step>`
+
+.. DR 그룹의 노드가 소유한 원격 디스크를 식별합니다.
++
+사용하는 명령은 분할/공유 디스크를 사용하는지 또는 전체 디스크를 사용하는지에 따라 달라집니다.
+
++
+
+NOTE: 쉼표로 구분된 목록을 사용하세요. `-owner <node_names>` 삭제할 DR 그룹의 노드 이름을 지정하는 필드입니다.
+
++
+[role="tabbed-block"]
+====
+.분할/공유 디스크:
+--
+... 권한 수준을 고급으로 설정합니다.
++
+진일진일보한 것
+
+... 원격 디스크를 표시합니다.
++
+`storage disk show -pool Pool1 -owner <node_names> -partition-ownership`
+
+
+
+--
+.전체 디스크:
+--
+... 권한 수준을 고급으로 설정합니다.
++
+진일진일보한 것
+
+... 원격 디스크를 표시합니다.
++
+`storage disk show -pool Pool1 -owner <node_names>`
+
+
+
+--
+====
+.. 디스크 자동 할당 비활성화:
++
+`disk option modify -node <node_names_in_the_DR_group_to_be_deleted>  -autoassign off`
+
+.. 삭제할 각 DR 그룹 노드에서 pool1 디스크의 소유권을 제거합니다.  제거할 각 노드에서 이 단계를 수행합니다.
++
+... 노드셸로 이동합니다.
++
+`run -node <node_name>`
+
+... pool1 디스크를 식별합니다.
++
+`aggr status -s`
+
++
+노드가 소유한 pool0 및 pool1 예비 디스크를 포함하여 모든 예비 디스크가 표시됩니다.
+
+... 각 pool1 예비 디스크에 대한 디스크 소유권을 제거합니다.
++
+`disk remove_ownership <disk_name>`
+
++
+분할된 디스크의 경우, 파티션 소유권을 제거한 다음 컨테이너 디스크 소유권을 제거합니다.
+
+
+
+
+
+. MetroCluster IP 구성을 사용하는 경우 이전 DR 그룹의 노드에서 MetroCluster 연결을 제거합니다.
++
+이러한 명령은 두 클러스터 중 하나에서 발행될 수 있으며 두 클러스터 모두에 걸쳐 있는 전체 DR 그룹에 적용됩니다.
 
 +
 .. 다음 연결부를 분리하십시오.
 +
-'MetroCluster configuration-settings connection disconnect_dr-group-id_
+`metrocluster configuration-settings connection disconnect -dr-group-id <dr_group_id>`
 
++
+.예
+[%collapsible]
+====
+[listing]
+----
+cluster_A::*> metrocluster configuration-settings connection disconnect -dr-group-id 1
+
+Warning: For the nodes in the DR group 1, this command will remove the existing connections that are used to mirror NV logs and access remote storage.
+Do you want to continue? {y|n}: y
+
+Warning: Before proceeding with disconnect, you must verify the following:
+      1. Unmirrored aggregates do not have disks in remote plexes.
+      2. Aggregates are not mirrored.
+      3. No disks are assigned in Pool1.
+      4. Storage failover is not enabled.
+      Follow the "MetroCluster Installation and Configuration guide" for detailed instructions to verify this.
+Do you want to continue? {y|n}: y
+----
+====
 .. 이전 DR 그룹의 노드에서 MetroCluster 인터페이스를 삭제합니다.
++
+
+NOTE: 이 단계는 DR 그룹의 각 노드에서 반복되어야 합니다.
+
 +
 'MetroCluster configuration-settings interface delete
 
@@ -171,30 +287,30 @@ cluster_A::*>
 
 . 이전 DR 그룹의 노드 연결을 해제합니다.
 +
-각 클러스터에서 이 단계를 수행해야 합니다.
+각 클러스터에서 이 단계를 수행합니다.
 
 +
 .. 고급 권한 수준 설정:
 +
 세트 프리빌리지 고급
 
-.. 스토리지 페일오버 해제:
-+
-'storage failover modify -node_node -name _ -enable false'
-
-.. 노드: + 'cluster unjoin-node_node-name_'의 연결을 해제합니다
+.. 노드 가입 해제: +
+`cluster unjoin -node <node-name>`
 +
 이전 DR 그룹의 다른 로컬 노드에 대해 이 단계를 반복합니다.
 
-.. admin 권한 수준 설정: +'Set-Privilege admin'
+.. 관리자 권한 수준을 설정합니다.
++
+'Set-Privilege admin'입니다
 
 
-. 새 DR 그룹에서 클러스터 HA를 다시 설정합니다.
+
+. 새 DR 그룹에서 클러스터 HA가 활성화되어 있는지 확인하세요.  필요한 경우 클러스터 HA를 다시 활성화합니다.
 +
 군산하수정-구성 진실
 
 +
-각 클러스터에서 이 단계를 수행해야 합니다.
+각 클러스터에서 이 단계를 수행합니다.
 
 . 이전 컨트롤러 모듈 및 스토리지 쉘프를 중지하고 전원을 끄고 분리합니다.
 
