@@ -78,7 +78,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 워크플로 다이어그램을 사용하여 업그레이드 작업을 계획할 수 있습니다.
 
-image::../media/workflow_ip_upgrade.png[워크플로우 IP 업그레이드]
+image::../media/workflow_ip_upgrade.png[MetroCluster IP 구성에서 컨트롤러 업그레이드를 위한 워크플로]
 
 
 
@@ -438,7 +438,7 @@ site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전�
 
 이 작업을 완료한 후 site_a가 활성화되어 두 사이트의 데이터를 제공합니다. Site_B가 비활성화되어 업그레이드 프로세스를 시작할 준비가 되었습니다.
 
-image::../media/mcc_upgrade_cluster_a_in_switchover_A900.png[스위치오버 A900의 MCC 업그레이드 클러스터 A]
+image::../media/mcc_upgrade_cluster_a_in_switchover_A900.png[MetroCluster 전환 후 Site_B가 비활성화되어 업그레이드 준비가 되었습니다.]
 
 .단계
 . site_B의 노드를 업그레이드할 수 있도록 MetroCluster 구성을 site_A로 전환합니다.
@@ -493,7 +493,7 @@ MetroCluster 쇼
 +
 .. 캠 핸들의 주황색 버튼을 잠금 해제할 때까지 아래로 밉니다.
 +
-image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈]
+image::../media/drw_9500_remove_PCM.png[섀시에서 컨트롤러 모듈 제거: 잠금 해제 및 슬라이드 아웃]
 
 +
 |===
@@ -524,7 +524,7 @@ image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈]
 .. 캠 래치가 수평 위치에 올 때까지 아래로 돌립니다. NVS는 섀시에서 분리되어 몇 인치 정도 이동합니다.
 .. 모듈 면의 측면에 있는 당김 탭을 당겨 섀시에서 NVS를 제거합니다.
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[모듈을 제거합니다]
+image::../media/drw_a900_move-remove_NVRAM_module.png[섀시에서 NVRAM 모듈 제거: 탭 잠금 해제 및 당기기]
 
 +
 |===
@@ -559,7 +559,7 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[모듈을 제거합니다]
 . NVS를 슬롯 6의 섀시 입구 가장자리에 맞춥니다.
 . 문자 및 번호가 매겨진 I/O 캠 래치가 I/O 캠 핀과 맞물릴 때까지 NVS를 슬롯에 부드럽게 밀어 넣은 다음 I/O 캠 래치를 끝까지 밀어 NVS를 제자리에 고정합니다.
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[모듈을 제거합니다]
+image::../media/drw_a900_move-remove_NVRAM_module.png[섀시에 NVRAM 모듈 설치: 제자리에 정렬하고 잠금]
 
 +
 |===
@@ -583,7 +583,7 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[모듈을 제거합니다]
 . 컨트롤러 모듈이 중앙판과 만나 완전히 장착될 때까지 섀시 안으로 단단히 밀어 넣습니다. 컨트롤러 모듈이 완전히 장착되면 잠금 래치가 올라갑니다. 주의: 커넥터의 손상을 방지하려면 컨트롤러 모듈을 섀시에 밀어 넣을 때 과도한 힘을 가하지 마십시오.
 . 컨트롤러 모듈에 관리 및 콘솔 포트를 연결합니다.
 +
-image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈]
+image::../media/drw_9500_remove_PCM.png[섀시에 컨트롤러 모듈 설치: 정렬, 좌석 및 케이블]
 
 +
 |===
@@ -1320,7 +1320,7 @@ https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_
 
 이 작업에서는 스위치백 작업을 수행하고 MetroCluster 구성을 정상 작동으로 되돌립니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.
 
-image::../media/mcc_upgrade_cluster_a_switchback_A900.png[MCC 업그레이드 클러스터 A 스위치백 A900]
+image::../media/mcc_upgrade_cluster_a_switchback_A900.png[MetroCluster 스위치백 후 업그레이드를 기다리는 Site_A]
 
 .단계
 . site_B에서 'MetroCluster node show' 명령어를 실행하여 출력을 확인한다.

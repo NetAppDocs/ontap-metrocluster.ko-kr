@@ -122,7 +122,7 @@ image:../media/mcc-ip-upgrade-asa-comb-9161.png["에는 ASA 지원 MetroCluster 
 
 다음 표는 MetroCluster FC 구성에서 AFF 또는 FAS 시스템 업그레이드에 지원되는 플랫폼 조합을 보여줍니다.
 
-image::../media/metrocluster_fc_upgrade_table_aff_fas.png[MetroCluster FC 업그레이드 표 AFF FAS]
+image::../media/metrocluster_fc_upgrade_table_aff_fas.png[MetroCluster FC 컨트롤러 업그레이드를 위한 지원 플랫폼 조합]
 
 * 참고 1: 기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 포트 1c 및 1d를 사용할 때 컨트롤러를 업그레이드하려면 다음을 참조하십시오https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/Upgrading_controllers_when_FCVI_connections_on_existing_FAS8020_or_AFF8020_nodes_use_ports_1c_and_1d["기술 자료 문서"^].
 * 참고 2: 온보드 포트 0e 및 0f 를 FC-VI 연결로 사용하는 AFF A300 또는 FAS8200 플랫폼에서 컨트롤러 업그레이드는 다음 시스템에서만 지원됩니다.

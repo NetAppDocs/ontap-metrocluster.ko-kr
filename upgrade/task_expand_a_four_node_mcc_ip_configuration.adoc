@@ -18,12 +18,16 @@ ONTAP 9.13.1부터 8노드 MetroCluster 구성을 임시로 확장하여 컨트�
 ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그룹으로 추가할 수 있습니다. 그러면 8노드 MetroCluster 구성이 생성됩니다.
 
 .중요 정보
-전환, 새로 고침, 8노드 설치 및 4노드 확장 절차 중에 MetroCluster 구성에 새 플랫폼 모델을 추가할 수 있습니다. 이러한 절차 중 어느 단계에서든 기존 MetroCluster 구성에 *공유 클러스터/HA 포트*를 사용하는 플랫폼이 포함된 경우, ONTAP 버전을 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않으면 *공유 MetroCluster/HA 포트*를 사용하는 플랫폼을 해당 구성에 추가할 수 없습니다.
+다음 지침은 ONTAP 9.15.1 이전에 출시된 플랫폼인 이전 플랫폼 모델을 ONTAP 9.15.1 이상에서 출시된 최신 플랫폼 모델이 포함된 기존 MetroCluster 구성에 추가해야 하는 흔하지 않은 시나리오를 위한 것입니다.
 
-이 절차를 사용하기 전에 다음 표의 정보를 주의 깊게 검토하십시오. 기존 플랫폼이 첫 번째 열에 나열되어 있고 구성에 추가하려는 플랫폼이 두 번째 열에 나열되어 있는 경우, 이 절차를 지원하려면 구성의 모든 노드가 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.
+기존 MetroCluster 구성에 *공유 클러스터/HA 포트*( ONTAP 9.15.1 이상에서 출시된 플랫폼)를 사용하는 플랫폼이 포함된 경우, 구성의 모든 노드를 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않고는 *공유 MetroCluster/HA 포트*( ONTAP 9.15.1 이전에 출시된 플랫폼)를 사용하는 플랫폼을 추가할 수 없습니다.
 
+[CAUTION]
+====
+*공유/ MetroCluster HA 포트*를 사용하는 이전 플랫폼 모델을 *공유 클러스터/HA 포트*를 사용하는 최신 플랫폼 모델이 포함된 MetroCluster 에 추가하는 것은 흔하지 않은 시나리오이며 대부분의 조합에는 영향을 미치지 않습니다.
 
-CAUTION: 기존 플랫폼과 구성에 추가하려는 플랫폼은 모두 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.
+====
+다음 표를 사용하여 해당 조합이 영향을 받는지 확인하세요.  기존 플랫폼이 첫 번째 열에 나열되어 있고, 구성에 추가하려는 플랫폼이 두 번째 열에 나열되어 있는 경우, 새 DR 그룹을 추가하려면 구성의 모든 노드가 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.
 
 [cols="20,20,20,20,20"]
 |===
@@ -185,14 +189,14 @@ dr_group_2 - 신규
 --
 AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF A300 C30, AFF A400 A30, AFF A250, AFF, AFF A320, FAS8300, AFF C400, AFF 및 FAS8700 시스템에 대한 확장 조합을 검토합니다.
 
-image:../media/expand-ip-group-1-updated.png[""]
+image:../media/expand-ip-group-1-updated.png["MetroCluster IP의 AFF 및 FAS 그룹 1 플랫폼에 대한 확장 조합"]
 
 --
 .AFF 및 FAS 조합 그룹 2
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, FAS9500, AFF A900, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템에 대한 확장 조합을 검토합니다.
 
-image:../media/expand-ip-group-2-updated.png[""]
+image:../media/expand-ip-group-2-updated.png["MetroCluster IP의 AFF 및 FAS 그룹 2 플랫폼에 대한 확장 조합"]
 
 --
 ====

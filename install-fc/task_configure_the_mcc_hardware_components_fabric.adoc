@@ -13,4 +13,4 @@ summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적�
 [role="lead"]
 MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다.
 
-image::../media/workflow_hardware_installation_and_configuration_4_node_or_2_node_fabric.gif[워크플로우 하드웨어 설치 및 구성 4 노드 또는 2 노드 패브릭]
+image::../media/workflow_hardware_installation_and_configuration_4_node_or_2_node_fabric.gif[워크플로 하드웨어 설치 및 구성 4노드 또는 2노드 패브릭]

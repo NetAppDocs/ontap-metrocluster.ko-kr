@@ -115,7 +115,7 @@ FiberBridge 7600N 또는 7500N 브리지 쌍을 사용하여 구성을 만들려
 
 다음 다이어그램은 FiberBridge 6500N 브리지 4개가 SAS 스토리지 스택 2개를 연결하는 초기 구성의 예를 보여 줍니다.
 
-image::../media/consolidating_stacks_before.gif[이전 스택 통합]
+image::../media/consolidating_stacks_before.gif[FibreBridge 교체 전 스택 통합]
 
 .단계
 . 다음 지침에 따라 의 절차에 따라 상단 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지와 핫 스왑합니다 link:task_replace_a_sle_fc_to_sas_bridge.html#hot_swap_6500n["FiberBridge 7600N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 핫 스와핑합니다"]:
@@ -128,7 +128,7 @@ image::../media/consolidating_stacks_before.gif[이전 스택 통합]
 
 
 +
-image::../media/consolidating_stacks_1st_7500n_in_place.gif[스택 첫 번째 7500n을 제자리에 통합]
+image::../media/consolidating_stacks_1st_7500n_in_place.gif[첫 번째 FibreBridge 7500N을 사용하여 스택 통합]
 
 . 브리지 연결 디스크에 대한 연결을 확인하고 새 FiberBridge 7500N이 구성에 표시되는지 확인합니다.
 +
@@ -188,7 +188,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 +
 이는 FiberBridge 6500N 브리지 FC1 포트와 동일한 연결입니다.
 
-** 이때 FiberBridge 7600N 또는 7500N 브리지 FC1 포트를 연결하지 마십시오.image:../media/consolidating_stacks_2nd_7500n_in_place.gif[""]
+** 지금은 FibreBridge 7600N 또는 7500N 브리지 FC1 포트를 연결하지 마세요.image:../media/consolidating_stacks_2nd_7500n_in_place.gif["두 번째 FibreBridge 7500N을 사용하여 스택 통합"]
 
 
 . 브리지 연결 디스크에 대한 연결을 확인합니다.
@@ -267,28 +267,28 @@ NOTE: 포트를 연결하기 전에 10초 이상 기다립니다. SAS 케이블 
 다음 예에서는 케이블이 파란색으로 표시됩니다.
 
 +
-image::../media/consolidating_stacks_sas_top_before.gif[이전에는 SAS 상단을 통합하고]
+image::../media/consolidating_stacks_sas_top_before.gif[FibreBridge 7500N에 케이블링하기 전에 SAS 스택 통합]
 
 . 미니 SAS 커넥터가 있는 케이블을 사용하여 스토리지 쉘프의 동일한 SAS 포트를 상단 FiberBridge 7600N 또는 7500N 브리지의 SAS B 포트에 연결합니다.
 +
 다음 예에서는 케이블이 파란색으로 표시됩니다.
 
 +
-image::../media/consolidating_stacks_sas_top_after.gif[이후 SAS 상단을 통합하는 중입니다]
+image::../media/consolidating_stacks_sas_top_after.gif[통합 후 SAS 상단 케이블링]
 
 . 하단 FiberBridge 6500N 브리지의 SAS A 포트를 상단 SAS 쉘프에 연결하는 케이블을 분리합니다. 이 때 연결되는 스토리지 쉘프에 있는 SAS 포트를 반드시 확인하십시오.
 +
 이 케이블은 다음 예에서 녹색으로 표시됩니다.
 
 +
-image::../media/consolidating_stacks_sas_bottom_before.gif[이전 스택 SAS 하단 통합]
+image::../media/consolidating_stacks_sas_bottom_before.gif[하단 선반 통합 전 녹색 SAS 케이블링]
 
 . 미니 SAS 커넥터가 있는 케이블을 사용하여 스토리지 쉘프의 동일한 SAS 포트를 하단 FiberBridge 7600N 또는 7500N 브리지의 SAS B 포트에 연결합니다.
 +
 이 케이블은 다음 예에서 녹색으로 표시됩니다.
 
 +
-image::../media/consolidating_stacks_sas_bottom_after.gif[통합 후 SAS 하단]
+image::../media/consolidating_stacks_sas_bottom_after.gif[통합 후 SAS 하단 케이블링]
 
 . 브리지 연결 디스크에 대한 연결을 확인합니다.
 +
@@ -351,7 +351,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 각 SAS 스택은 상단 및 하단 브리지의 동일한 SAS 포트에 연결해야 합니다. 예를 들어, 스택의 상단 연결이 상단 브리지 SAS B 포트에 연결된 경우 하단 연결을 하단 브리지의 SAS B 포트에 연결해야 합니다.
 
 +
-image::../media/consolidation_sas_bottom_connection_4_stacks.gif[통합 SAS 하단 연결 4 스택]
+image::../media/consolidation_sas_bottom_connection_4_stacks.gif[4개 스택을 위한 SAS 하단 케이블링]
 
 
 
@@ -374,7 +374,7 @@ ONTAP의 문제를 방지하려면 조닝(zoning)을 변경해야 합니다. 이
 
 다음 다이어그램은 변경 전 site_a의 조닝을 보여줍니다.
 
-image::../media/zoning_consolidation_site_a_before.gif[전에 통합 사이트 A를 조닝(zoning)하십시오]
+image::../media/zoning_consolidation_site_a_before.gif[FibreBridge 변경 전 사이트 A의 구역 통합]
 
 .단계
 . 각 기존 존에서 이니시에이터 포트의 절반을 제거하고 FiberBridge 7500N FC2 포트에 대한 새 영역을 만들어 FC 스위치의 스토리지 영역을 업데이트합니다.
@@ -479,7 +479,7 @@ STOR_A_1b-FC2
 |===
 다음 다이어그램은 통합 후 site_a의 조닝을 보여줍니다.
 
-image::../media/zoning_consolidation_site_a_after.gif[그 후 통합 사이트 A를 조닝(Zoning)합니다]
+image::../media/zoning_consolidation_site_a_after.gif[FibreBridge 변경 후 사이트 A의 구역 통합]
 
 
 
@@ -519,11 +519,11 @@ FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 교�
 .단계
 . 상단 브리지의 FC2 포트를 FC_SWITCH_A_2의 올바른 포트에 연결합니다.
 +
-image::../media/consolidating_stacks_sas_ports_recabled.gif[스택 SAS 포트 통합이 필요합니다]
+image::../media/consolidating_stacks_sas_ports_recabled.gif[FC_switch_A_2에 통합 후 FC2 포트 케이블링]
 
 . 하단 브리지의 FC1 포트를 FC_SWITCH_A_1의 올바른 포트에 연결합니다.
 +
-image::../media/consolidating_stacks_final.gif[스택 통합 최종]
+image::../media/consolidating_stacks_final.gif[최종 스택 통합 케이블링]
 
 . 브리지 연결 디스크에 대한 연결을 확인합니다.
 +

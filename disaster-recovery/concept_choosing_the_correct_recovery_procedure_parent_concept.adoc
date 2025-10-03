@@ -132,7 +132,7 @@ link:task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 �
 이 시나리오는 4노드 MetroCluster 구성에도 적용됩니다.
 
 +
-image::../media/mcc_dr_groups_8_node_with_a_single_controller_failure.gif[단일 컨트롤러 장애가 있는 MCC DR 그룹 8개 노드]
+image::../media/mcc_dr_groups_8_node_with_a_single_controller_failure.gif[단일 컨트롤러 장애가 있는 8개 노드 MetroCluster DR 그룹]
 
 
 
@@ -146,7 +146,7 @@ link:task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 �
 
 이 시나리오는 4노드 MetroCluster 구성에도 적용됩니다.
 
-image::../media/mcc_dr_groups_8_node_with_a_multi_controller_failure.gif[MCC DR 그룹 다중 컨트롤러 오류가 있는 8개 노드입니다]
+image::../media/mcc_dr_groups_8_node_with_a_multi_controller_failure.gif[다중 컨트롤러 장애가 있는 8개 노드 MetroCluster DR 그룹]
 
 
 
@@ -167,7 +167,7 @@ link:task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 �
 
 
 
-image::../media/mcc_dr_groups_8_node_with_two_single_controller_failures.gif[MCC DR 그룹 - 단일 컨트롤러 2개에 장애가 발생한 8개 노드]
+image::../media/mcc_dr_groups_8_node_with_two_single_controller_failures.gif[2개의 단일 컨트롤러 오류가 있는 8개 노드 MetroCluster DR 그룹]
 
 
 
@@ -181,7 +181,7 @@ DR 그룹 2에 대해 플랫폼별 컨트롤러 모듈 FRU 교체 절차를 사�
 
 https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명서"^]
 
-image::../media/mcc_dr_groups_8_node_with_a_3_controller_failure.gif[MCC DR 그룹 3개 컨트롤러 장애가 있는 8개 노드]
+image::../media/mcc_dr_groups_8_node_with_a_3_controller_failure.gif[3개의 컨트롤러 오류가 있는 8개 노드 MetroCluster DR 그룹]
 
 
 
@@ -199,4 +199,4 @@ link:task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 �
 
 
 
-image::../media/mcc_dr_groups_2_node_with_a_single_controller_failure.gif[단일 컨트롤러 장애가 있는 MCC DR 그룹 2노드]
+image::../media/mcc_dr_groups_2_node_with_a_single_controller_failure.gif[단일 컨트롤러 장애가 있는 2노드 MetroCluster DR 그룹]

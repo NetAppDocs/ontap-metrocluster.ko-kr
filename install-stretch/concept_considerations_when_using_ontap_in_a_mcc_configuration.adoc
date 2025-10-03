@@ -357,14 +357,14 @@ SnapMirror 재해 복구와 함께 SVM을 사용할 때의 다음과 같은 요�
 다음 이미지는 SVM 재해 복구 동작이 일정한 상태를 유지함을 나타냅니다.
 
 +
-image::../media/svm_dr_normal_behavior.gif[SVM DR 정상 동작]
+image::../media/svm_dr_normal_behavior.gif[정상 상태 작동 중 SVM 재해 복구]
 
 * SVM DR 관계의 소스가 동기화 소스 SVM인 경우 소스 SVM DR 관계 정보가 MetroCluster 파트너에게 복제됩니다.
 +
 이렇게 하면 다음 이미지와 같이 전환 후에도 SVM DR 업데이트를 계속할 수 있습니다.
 
 +
-image::../media/svm_dr_image_2.gif[SVM DR 이미지 2]
+image::../media/svm_dr_image_2.gif[전환 후 SVM 업데이트]
 
 * 스위치오버 및 스위치백 프로세스 중에 SVM DR 대상에 대한 복제가 실패할 수 있습니다.
 +
@@ -382,7 +382,7 @@ image::../media/svm_dr_image_2.gif[SVM DR 이미지 2]
 
 재동기화 중에 소스 SVM(cluster_a)은 다음 이미지와 같이 일시적으로 대상 SVM으로 작동합니다.
 
-image::../media/svm_dr_resynchronization.gif[SVM DR 재동기화]
+image::../media/svm_dr_resynchronization.gif[SVM 재해 복구 재동기화]
 
 
 

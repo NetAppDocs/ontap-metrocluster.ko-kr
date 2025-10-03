@@ -13,7 +13,7 @@ summary: FC-to-SAS 브리지는 SAS 연결 디스크와 FC 스위치 패브릭 �
 [role="lead"]
 FC-to-SAS 브리지는 SAS 연결 디스크와 FC 스위치 패브릭 간의 프로토콜 브리징을 제공합니다.
 
-image::../media/mcc_hw_architecture_shelf_stacks.gif[MCC HW 아키텍처 쉘프 스택]
+image::../media/mcc_hw_architecture_shelf_stacks.gif[쉘프 스택을 보여주는 하드웨어 아키텍처를 갖춘 FC-SAS 브리지]
 
 .관련 정보
 link:concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html["MetroCluster 구성의 로컬 HA 쌍 그림"]

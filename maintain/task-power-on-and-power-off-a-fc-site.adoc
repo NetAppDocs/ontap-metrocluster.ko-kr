@@ -17,7 +17,7 @@ MetroCluster FC 구성에서 사이트 유지보수를 수행하거나 단일 �
 
 다음 다이어그램은 MetroCluster 구성을 보여 줍니다. 유지 관리를 위해 Cluster_B의 전원이 꺼져 있습니다.
 
-image::power-on-off-data-center.gif[데이터 센터의 전원을 끕니다]
+image::power-on-off-data-center.gif[유지 관리를 위해 클러스터 전원이 꺼진 MetroCluster]
 
 
 

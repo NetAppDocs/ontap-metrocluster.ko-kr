@@ -1606,7 +1606,7 @@ FCIP 프로파일과 인터페이스를 생성한 다음 IPStorage1/1 및 IPStor
 
 이 작업은 각 FC 스위치에서 수행해야 합니다.
 
-image::../media/fcip_ports_dual_isl.gif[FCIP 포트 이중 ISL]
+image::../media/fcip_ports_dual_isl.gif[각 스위치에 이중 ISL 구성이 있는 FCIP 포트를 보여주는 다이어그램]
 
 작업 및 예제에서는 다음 프로파일 구성 테이블을 사용합니다.
 

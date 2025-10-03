@@ -650,7 +650,7 @@ MetroCluster 구성의 클러스터 중 하나에서 이 절차를 수행하여 
 
 NOTE: DR 그룹을 생성한 후에는 DR 관계를 변경할 수 없습니다.
 
-image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+image::../media/mcc_dr_groups_4_node.gif[4노드 구성의 MetroCluster DR 그룹]
 
 .단계
 . 각 노드에 다음 명령을 입력하여 DR 그룹을 생성할 준비가 되었는지 확인합니다.

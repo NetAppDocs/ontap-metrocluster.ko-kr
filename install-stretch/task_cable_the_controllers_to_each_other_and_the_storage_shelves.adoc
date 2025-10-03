@@ -18,7 +18,7 @@ summary: 컨트롤러 FC-VI 어댑터는 서로 직접 케이블로 연결되어
 .단계
 . FC-VI 포트에 케이블을 연결합니다.
 +
-image::../media/mcc_cabling_fc_vi_controller_to_partner.gif[MCC 케이블 FC vi 컨트롤러를 파트너에 연결합니다]
+image::../media/mcc_cabling_fc_vi_controller_to_partner.gif[MetroCluster FC VI 컨트롤러를 파트너에 케이블링]
 
 +
 위 그림은 대표적인 케이블 연결입니다. 특정 FC-VI 포트는 컨트롤러 모듈에 따라 다릅니다.
@@ -39,6 +39,6 @@ image::../media/mcc_cabling_fc_vi_controller_to_partner.gif[MCC 케이블 FC vi 
 다음 그림에서는 연결을 보여 줍니다. 포트 사용은 컨트롤러 모듈에서 사용 가능한 SAS 및 FC-VI 포트에 따라 다를 수 있습니다.
 
 +
-image::../media/mcc_two_node_optical_sas_space_configuration.png[MCC 2노드 광 SAS 공간 구성]
+image::../media/mcc_two_node_optical_sas_space_configuration.png[2노드 광 SAS 구성]
 
 

@@ -33,7 +33,7 @@ MetroCluster 구성에서 HA 쌍이 작동하는 방식을 이해해야 합니�
 
 다음 그림에서는 MetroCluster FC 구성을 보여 줍니다. HA 인터커넥트는 클러스터 스위치를 통해 제공되는 경우를 제외하고 MetroCluster IP 구성에서는 HA 기능이 동일합니다.
 
-image::../media/mcc_hw_architecture_local_ha.gif[MCC HW 아키텍처 로컬 ha]
+image::../media/mcc_hw_architecture_local_ha.gif[MetroCluster 구성의 로컬 HA]
 
 .관련 정보
 link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용성 구성"^]
@@ -83,11 +83,11 @@ SVM에 속한 볼륨의 데이터와 SVM 구성(LIF, 프로토콜 및 서비스)
 
 
 
-image::../media/mcc_mirroring_of_svms.gif[MCC SVM 미러링]
+image::../media/mcc_mirroring_of_svms.gif[SVM의 MetroCluster 미러링]
 
 스위치오버가 발생하면 작동하는 클러스터의 원격 플렉스에서 온라인 상태가 되고 보조 SVM에서 데이터 서비스를 시작합니다.
 
-image::../media/mcc_svms_after_switchover.gif[스위치오버 이후 MCC SVM]
+image::../media/mcc_svms_after_switchover.gif[전환 후 MetroCluster SVM]
 
 스위치오버 후 원격 플렉스의 가용성은 MetroCluster 구성 유형에 따라 다릅니다.
 
@@ -163,7 +163,7 @@ NOTE: 스위치오버 후 미러링되지 않은 애그리게이트는 DR 파트
 
 IMPORTANT: 하이브리드 애그리게이트를 사용하는 경우, SSD(Solid-State Disk) 계층 충진으로 인해 SyncMirror plex가 장애가 발생한 이후에 성능 저하가 발생할 수 있습니다.
 
-image::../media/mcc_mirroring_of_pools.gif[풀의 MCC 미러링]
+image::../media/mcc_mirroring_of_pools.gif[스토리지 풀의 MetroCluster 미러링]
 
 
 
@@ -185,9 +185,9 @@ MetroCluster 구성에 포함되지 않은 HA 쌍에서는 각 스토리지 컨�
 
 
  a| 
-image:../media/mcc_nvram_quartering.gif[""]
+image:../media/mcc_nvram_quartering.gif["MetroCluster 구성에서 비휘발성 캐시 분기화"]
  a| 
-image:../media/mcc_nvram_split_in_non_mcc_ha_pair.gif[""]
+image:../media/mcc_nvram_split_in_non_mcc_ha_pair.gif["비휘발성 캐시가 MetroCluster HA 쌍이 아닌 쌍으로 분할됨"]
 
 |===
 비휘발성 캐시는 다음 내용을 저장합니다.
@@ -212,7 +212,7 @@ DR 보조 파트너는 로컬 노드의 DR 파트너의 HA 파트너입니다. H
 
 예를 들어, 노드의 로컬 캐시(node_a_1)는 MetroCluster 사이트에서 로컬 및 원격으로 미러링됩니다. 다음 그림에서는 node_A_1의 로컬 캐시가 HA 파트너(node_A_2) 및 DR 파트너(node_B_1)에 미러링됨을 보여 줍니다.
 
-image::../media/mcc_nvram_mirroring_example.gif[MCC NVRAM 미러링의 예]
+image::../media/mcc_nvram_mirroring_example.gif[MetroCluster NVRAM 미러링 예제]
 
 
 
@@ -222,7 +222,7 @@ image::../media/mcc_nvram_mirroring_example.gif[MCC NVRAM 미러링의 예]
 
 예를 들어, node_B_1이 실패하고 node_B_2에 의해 인계됩니다. node_A_1의 로컬 캐시는 더 이상 node_B_1에 미러링될 수 없습니다. 미러링이 DR 보조 파트너인 node_B_2로 전환됩니다.
 
-image::../media/mcc_nvram_mirroring_example_dynamic_dr_aux.gif[MCC NVRAM 미러링 예: 동적 DR Aux]
+image::../media/mcc_nvram_mirroring_example_dynamic_dr_aux.gif[DR 보조 기능을 갖춘 MetroCluster NVRAM 미러링]
 
 
 
@@ -557,7 +557,7 @@ MetroCluster 구성 내에서 디스크의 원래 소유자의 ID입니다.
 |===
 다음 그림 및 표에는 cluster_B에 물리적으로 위치한 node_A_1의 디스크 풀 1의 디스크에 대한 소유권이 변경되는 방법의 예가 나와 있습니다
 
-image::../media/mcc_disk_ownership.gif[MCC 디스크 소유권]
+image::../media/mcc_disk_ownership.gif[MetroCluster 디스크 소유권]
 
 |===
 
@@ -839,7 +839,7 @@ MetroCluster operation show 명령을 사용하여 재해 사이트 노드의 �
 
 ONTAP 9.4 이하를 실행하는 MetroCluster IP 구성에는 여전히 수동 복구 명령이 필요합니다.
 
-image::../media/mcc_so_sb_with_autoheal.gif[MCC가 누구를 사치아로 만다]
+image::../media/mcc_so_sb_with_autoheal.gif[자동 복구를 통한 MetroCluster 전환 및 스위치백]
 
 
 
@@ -865,7 +865,7 @@ MetroCluster operation show 명령을 사용하여 재해 사이트 노드의 �
 
 
 
-image::../media/mcc_uso_with_autoheal.gif[자동 복구 기능이 있는 MCC USO]
+image::../media/mcc_uso_with_autoheal.gif[자동 복구를 통한 MetroCluster 예정되지 않은 전환]
 
 
 

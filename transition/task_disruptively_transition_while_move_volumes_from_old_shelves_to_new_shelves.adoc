@@ -94,7 +94,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 전환을 준비할 때 사이트 간 여행을 계획하십시오. 원격 노드가 랙에 설치되고 케이블이 연결된 후에는 노드에 대한 직렬 터미널 액세스가 필요합니다. 노드가 구성될 때까지 서비스 프로세서 액세스를 사용할 수 없습니다.
 
-image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[워크플로 2n 데이터 이동을 새로운 쉘프로 변환]
+image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[전환 중 새로운 선반으로 데이터를 이동하기 위한 워크플로]
 
 
 

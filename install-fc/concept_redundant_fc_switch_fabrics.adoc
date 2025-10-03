@@ -13,7 +13,7 @@ summary: '각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch 
 [role="lead"]
 각 스위치 패브릭은 사이트를 연결하는 ISL(Inter-Switch Link)을 포함합니다. 데이터는 ISL을 통해 사이트 간에 복제됩니다. 이중화를 위해 각 스위치 패브릭은 서로 다른 물리적 경로에 있어야 합니다.
 
-image::../media/mcc_hw_architecture_switch_fabrics.gif[MCC HW 아키텍처 스위치 패브릭]
+image::../media/mcc_hw_architecture_switch_fabrics.gif[MetroCluster 하드웨어 아키텍처 중복 스위치 패브릭]
 
 .관련 정보
 link:concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html["MetroCluster 구성의 로컬 HA 쌍 그림"]

@@ -16,7 +16,7 @@ summary: 각 컨트롤러의 FC-VI 어댑터는 파트너에게 직접 케이블
 .단계
 . FC-VI 포트에 케이블을 연결합니다.
 +
-image::../media/mcc_cabling_fc_vi_controller_to_partner.gif[MCC 케이블 FC vi 컨트롤러를 파트너에 연결합니다]
+image::../media/mcc_cabling_fc_vi_controller_to_partner.gif[MetroCluster FC VI 컨트롤러를 파트너에 케이블링]
 
 +
 위 그림은 필요한 케이블의 일반적인 표현입니다. 특정 FC-VI 포트는 컨트롤러 모듈에 따라 다릅니다.

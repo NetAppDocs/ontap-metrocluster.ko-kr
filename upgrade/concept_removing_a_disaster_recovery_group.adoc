@@ -39,11 +39,11 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 .이 작업에 대해
 8노드 구성에는 2개의 4노드 DR 그룹으로 구성된 8개 노드가 포함됩니다.
 
-image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
+image::../media/mcc_dr_groups_8_node.gif[2개의 DR 그룹에 8개의 노드가 있는 MetroCluster 구성]
 
 DR 그룹을 제거하면 구성에 4개의 노드가 남습니다.
 
-image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+image::../media/mcc_dr_groups_4_node.gif[DR 그룹 제거 후 4개 노드가 있는 MetroCluster 구성]
 
 .시작하기 전에
 * 두 클러스터 모두에서 이 단계를 수행해야 합니다.

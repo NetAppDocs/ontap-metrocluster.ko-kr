@@ -15,7 +15,7 @@ summary: 8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1�
 
 로컬 HA 페일오버 및 반환 작업은 MetroCluster가 아닌 구성과 동일한 방식으로 스토리지 페일오버 명령을 통해 수행됩니다.
 
-image::../media/mcc_hw_architecture_local_ha.gif[MCC HW 아키텍처 로컬 ha]
+image::../media/mcc_hw_architecture_local_ha.gif[MetroCluster 하드웨어 아키텍처 로컬 HA 쌍]
 
 .관련 정보
 link:concept_illustration_of_redundant_fc_to_sas_bridges.html["이중 FC-to-SAS 브리지의 그림"]

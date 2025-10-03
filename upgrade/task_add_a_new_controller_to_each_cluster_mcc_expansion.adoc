@@ -41,4 +41,4 @@ NOTE: 일부 시스템에서는 이 구성이 지원되지 않습니다.
 * 이 작업은 다음 워크플로를 사용합니다.
 
 
-image::../media/workflow_mcc_2_to_4_node_expansion_adding_nodes.gif[워크플로우 MCC 2-4노드 확장 노드 추가]
+image::../media/workflow_mcc_2_to_4_node_expansion_adding_nodes.gif[MetroCluster 2노드에서 4노드로 확장하여 새로운 컨트롤러 모듈을 추가하기 위한 워크플로]

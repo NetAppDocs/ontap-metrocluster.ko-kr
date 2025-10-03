@@ -351,4 +351,4 @@ cluster1::>
 
 이 시점에서 MetroCluster FC 컨트롤러가 제거되고 쉘프가 모든 컨트롤러에서 분리되었습니다.
 
-image::../media/transition_2n_remove_fc_nodes.png[전환 2n FC 노드를 제거합니다]
+image::../media/transition_2n_remove_fc_nodes.png[전환 중 FC 노드 제거]

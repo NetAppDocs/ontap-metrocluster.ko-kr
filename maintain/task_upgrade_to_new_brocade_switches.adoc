@@ -31,7 +31,7 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^]
 
 이 절차가 끝나면 4개의 스위치가 모두 새 스위치로 업그레이드됩니다.
 
-image::../media/brocade_upgr_to_g620_replacement_completed.gif[Brocade upgr to G620 교체가 완료되었습니다]
+image::../media/brocade_upgr_to_g620_replacement_completed.gif[완료 후 Brocade G620으로 업그레이드]
 
 .단계
 . 첫 번째 스위치 패브릭을 비활성화합니다.
@@ -44,14 +44,14 @@ image::../media/brocade_upgr_to_g620_replacement_completed.gif[Brocade upgr to G
 FC_switch_A_1:admin> switchCfgPersistentDisable
 ----
 +
-image::../media/brocade_upgr_to_g620_fab_1_down.gif[Brocade upgr을 G620 Fab 1로 업그레이드]
+image::../media/brocade_upgr_to_g620_fab_1_down.gif[Brocade Fabric 1을 중단하고 G620으로 업그레이드했습니다.]
 
 . 한 MetroCluster 사이트에서 이전 스위치를 교체합니다.
 +
 .. 케이블을 분리하고 비활성화된 스위치를 제거합니다.
 .. 랙에 새 스위치를 설치합니다.
 +
-image::../media/brocade_upgr_to_g620_replaced_a_1.gif[Brocade upgr to G620 대체 1]
+image::../media/brocade_upgr_to_g620_replaced_a_1.gif[A1을 교체하여 G620으로 Brocade 업그레이드]
 
 .. 두 스위치 모두에서 다음 명령을 실행하여 새 스위치를 사용하지 않도록 설정합니다.
 +
@@ -71,7 +71,7 @@ link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.htm
 패브릭 1의 두 스위치가 모두 교체되었습니다.
 
 +
-image::../media/brocade_upgr_to_g620_replaced_b_1.gif[Brocade upgr to G620 대체 b 1]
+image::../media/brocade_upgr_to_g620_replaced_b_1.gif[Brocade B1을 교체하여 G620으로 업그레이드]
 
 
 
@@ -174,4 +174,4 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 
 이 단계를 반복하면 4개의 스위치가 모두 업그레이드되고 MetroCluster 구성이 정상적으로 작동합니다.
 
-image::../media/brocade_upgr_to_g620_replacement_completed.gif[Brocade upgr to G620 교체가 완료되었습니다]
+image::../media/brocade_upgr_to_g620_replacement_completed.gif[Brocade G620 스위치 교체 및 업그레이드 완료 후 MetroCluster 워크플로]

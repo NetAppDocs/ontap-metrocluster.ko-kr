@@ -18,12 +18,16 @@ ONTAP 9.13.1 버전부터는 구성을 임시 12노드 구성으로 확장한 �
 ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전 DR 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.
 
 .중요 정보
-전환, 새로 고침 및 확장 절차 중에 MetroCluster 구성에 새 플랫폼 모델을 추가할 수 있습니다. 이러한 절차 중 어느 단계에서든 기존 MetroCluster 구성에 *공유 클러스터/HA 포트*를 사용하는 플랫폼이 포함된 경우, ONTAP 버전을 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않으면 *공유 MetroCluster/HA 포트*를 사용하는 플랫폼을 해당 구성에 추가할 수 없습니다.
+다음 지침은 ONTAP 9.15.1 이전에 출시된 플랫폼인 이전 플랫폼 모델을 ONTAP 9.15.1 이상에서 출시된 최신 플랫폼 모델이 포함된 기존 MetroCluster 구성에 추가해야 하는 흔하지 않은 시나리오를 위한 것입니다.
 
-이 절차를 사용하기 전에 다음 표의 정보를 주의 깊게 검토하십시오. 기존 플랫폼이 첫 번째 열에 나열되어 있고 구성에 추가하려는 플랫폼이 두 번째 열에 나열되어 있는 경우, 이 절차를 지원하려면 구성의 모든 노드가 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.
+기존 MetroCluster 구성에 *공유 클러스터/HA 포트*( ONTAP 9.15.1 이상에서 출시된 플랫폼)를 사용하는 플랫폼이 포함된 경우, 구성의 모든 노드를 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않고는 *공유 MetroCluster/HA 포트*( ONTAP 9.15.1 이전에 출시된 플랫폼)를 사용하는 플랫폼을 추가할 수 없습니다.
 
+[CAUTION]
+====
+*공유/ MetroCluster HA 포트*를 사용하는 이전 플랫폼 모델을 *공유 클러스터/HA 포트*를 사용하는 최신 플랫폼 모델이 포함된 MetroCluster 에 추가하는 것은 흔하지 않은 시나리오이며 대부분의 조합에는 영향을 미치지 않습니다.
 
-CAUTION: 기존 플랫폼과 구성에 추가하려는 플랫폼은 모두 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.
+====
+다음 표를 사용하여 해당 조합이 영향을 받는지 확인하세요.  기존 플랫폼이 첫 번째 열에 나열되어 있고, 구성에 추가하려는 플랫폼이 두 번째 열에 나열되어 있는 경우, 새 DR 그룹을 추가하려면 구성의 모든 노드가 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.
 
 [cols="20,20,20,20,20"]
 |===
@@ -85,10 +89,11 @@ CAUTION: 기존 플랫폼과 구성에 추가하려는 플랫폼은 모두 ONTAP
 * IP 스위치도 업그레이드하는 경우 이 새로 고침 절차를 수행하기 전에 IP 스위치를 업그레이드해야 합니다.
 * 이 절차에서는 4노드 DR 그룹 하나를 새로 고치는 데 필요한 단계를 설명합니다. 8노드 구성(DR 그룹 2개)이 있는 경우 하나 또는 두 DR 그룹을 모두 새로 고칠 수 있습니다.
 +
-두 DR 그룹을 모두 업데이트하는 경우 한 번에 하나의 DR 그룹을 새로 고쳐야 합니다.
-
-* "이전 노드"에 대한 참조는 바꾸려는 노드를 의미합니다.
-* 8노드 구성의 경우 소스 및 타겟 8노드 MetroCluster 플랫폼 조합을 지원해야 합니다.
+....
+ Refresh DR groups one at a time.
+* References to "old nodes" mean the nodes that you intend to replace.
+* For eight-node configurations, the source and target eight-node MetroCluster platform combination must be supported.
+....
 +
 
 NOTE: 두 DR 그룹을 모두 새로 고치면 첫 번째 DR 그룹을 새로 고친 후 플랫폼 조합이 지원되지 않을 수 있습니다. 지원되는 8노드 구성을 달성하려면 두 DR 그룹을 모두 새로 고쳐야 합니다.
@@ -132,19 +137,19 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 이 단계에서는 다음 이미지와 같이 4노드 구성이 나타납니다.
 
 +
-image::../media/mcc_dr_group_a.png[MCC DR 그룹 A]
+image::../media/mcc_dr_group_a.png[확장 전 MetroCluster IP 4노드 구성]
 
 +
 8노드 구성은 다음 이미지와 같이 나타납니다.
 
 +
-image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
+image::../media/mcc_dr_groups_8_node.gif[확장 후 8개 노드로 구성된 MetroCluster IP 구성]
 
 . 자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.
 +
 .. 다음 명령을 실행합니다. +'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"
 +
-다음 예에서는 10시간의 유지 보수 기간을 지정합니다. 계획에 따라 추가 시간을 허용할 수 있습니다.
+다음 예에서는 10시간의 유지 관리 기간을 지정합니다.  귀하의 계획에 따라 추가 시간을 허용하세요.
 
 +
 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.
@@ -212,11 +217,11 @@ ONTAP 프롬프트에서 다음 명령을 실행합니다.
 
 +
 .일시적인 8노드 구성
-image::../media/mcc_dr_group_b.png[MCC DR 그룹 b]
+image::../media/mcc_dr_group_b.png[확장 및 CRS 볼륨 마이그레이션 후 MetroCluster 구성]
 
 +
 .임시 12노드 구성
-image::../media/mcc_dr_group_c4.png[MCC DR 그룹 C4]
+image::../media/mcc_dr_group_c4.png[임시 12노드 MetroCluster 구성]
 
 . 두 클러스터 모두에서 다음 명령을 실행하여 테이크오버 가능하고 노드가 연결되어 있는지 확인합니다.
 +
@@ -352,17 +357,17 @@ cluster_B::>
 
 
 . 의 단계를 따릅니다 link:concept_removing_a_disaster_recovery_group.html["재해 복구 그룹 제거"] 기존 DR 그룹을 제거합니다.
-. 8노드 구성에서 두 DR 그룹을 모두 새로 고치려면 각 DR 그룹에 대해 전체 절차를 반복해야 합니다.
+. 8노드 구성에서 두 DR 그룹을 모두 새로 고쳐야 하는 경우 각 DR 그룹에 대해 전체 절차를 반복합니다.
 +
 이전 DR 그룹을 제거한 후 다음 이미지와 같이 구성이 나타납니다.
 
 +
 .4노드 구성
-image::../media/mcc_dr_group_d.png[MCC DR 그룹 d]
+image::../media/mcc_dr_group_d.png[이전 DR 그룹을 제거한 후 MetroCluster 구성]
 
 +
 .8노드 구성
-image::../media/mcc_dr_group_c5.png[MCC DR 그룹 C5]
+image::../media/mcc_dr_group_c5.png[최종 8노드 MetroCluster 구성]
 
 . MetroCluster 구성의 운영 모드를 확인하고 MetroCluster 검사를 수행합니다.
 +

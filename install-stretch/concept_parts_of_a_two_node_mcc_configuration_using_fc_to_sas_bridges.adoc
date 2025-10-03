@@ -34,7 +34,7 @@ FC-to-SAS 브릿지는 SAS 스토리지 스택을 컨트롤러의 FC 이니시�
 
 다음 그림은 MetroCluster 구성의 간단한 뷰를 보여 줍니다. 일부 연결의 경우, 단일 선은 구성 요소 간의 여러 중복 연결을 나타냅니다. 데이터 및 관리 네트워크 연결이 표시되지 않습니다.
 
-image::../media/mcc_hardware_architecture_both_clusters_2_node_atto.gif[MCC 하드웨어 아키텍처 두 클러스터 모두 2노드 ATTO입니다]
+image::../media/mcc_hardware_architecture_both_clusters_2_node_atto.gif[FC-SAS 브리지를 갖춘 두 개의 노드 MetroCluster 하드웨어 아키텍처]
 
 * 이 구성은 2개의 단일 노드 클러스터로 구성됩니다.
 * 각 사이트에는 하나 이상의 SAS 스토리지 스택이 있습니다.

@@ -64,7 +64,7 @@ Cluster_A_2::> storage aggregate show -aggr dataA_2_data
 다음 예는 타겟 쉘프가 포함된 단일 SAS 스택을 연결하는 브리지 쌍을 보여줍니다.
 
 +
-image::../media/mcc_shelf_replacement_bridges_with_a_single_stack.gif[MCC 셸프 교체 브리지는 단일 스택으로 제공됩니다]
+image::../media/mcc_shelf_replacement_bridges_with_a_single_stack.gif[싱글 스택이 있는 선반 교체 브리지]
 
 +
 각 스위치의 스위치 포트 8과 9는 브리지를 네트워크에 연결합니다.
@@ -106,7 +106,7 @@ FC_switch_A_2(config)# end
 다음 예는 4개의 SAS 스택을 연결하는 브리지 쌍을 보여줍니다. SAS 스택 2에는 타겟 쉘프가 포함되어 있습니다.
 
 +
-image::../media/mcc_shelf_replacement_bridges_with_four_stacks.gif[MCC 셸프 교체 브리지는 4개의 스택으로 구성됩니다]
+image::../media/mcc_shelf_replacement_bridges_with_four_stacks.gif[4개의 스택이 있는 선반 교체 브리지]
 
 +
 SAS 포트 B는 브리지를 타겟 쉘프에 연결합니다. 두 쉘프 모두에서 SAS 포트 B만 비활성화하면 교체 절차 중에도 다른 SAS 스택에서도 데이터 작업을 계속 수행할 수 있습니다.

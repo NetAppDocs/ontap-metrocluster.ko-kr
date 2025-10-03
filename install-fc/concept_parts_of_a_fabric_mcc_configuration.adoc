@@ -25,11 +25,11 @@ Fabric MetroCluster 구성은 MetroCluster 구성의 노드 수에 따라 1개 �
 
 다음 그림에서는 8노드 MetroCluster 구성의 노드 구성을 보여 줍니다.
 
-image::../media/mcc_dr_groups_8_node.gif[MCC DR 그룹 8개 노드]
+image::../media/mcc_dr_groups_8_node.gif[MetroCluster DR 그룹 8개 노드]
 
 다음 그림에서는 4노드 MetroCluster 구성의 노드 구성을 보여 줍니다.
 
-image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+image::../media/mcc_dr_groups_4_node.gif[MetroCluster DR 그룹 4개 노드]
 
 
 
@@ -83,11 +83,11 @@ SVM 구성은 클러스터 피어링 네트워크를 통해 복제
 
 다음 그림에서는 4노드 Fabric MetroCluster 구성의 단순한 뷰를 보여 줍니다. 일부 연결의 경우, 단일 선은 구성 요소 간의 여러 중복 연결을 나타냅니다. 데이터 및 관리 네트워크 연결이 표시되지 않습니다.
 
-image::../media/mcc_hardware_architecture_both_clusters.gif[MCC 하드웨어 아키텍처 두 클러스터 모두]
+image::../media/mcc_hardware_architecture_both_clusters.gif[4노드 패브릭 MetroCluster 구성 두 클러스터 모두]
 
 다음 그림에서는 단일 MetroCluster 클러스터(두 클러스터 모두 동일한 구성)의 접속 구성을 보다 자세히 보여 줍니다.
 
-image::../media/mcc_hardware_architecture_cluster_a_with_7500n.gif[7500n을 사용하는 MCC 하드웨어 아키텍처 클러스터 A]
+image::../media/mcc_hardware_architecture_cluster_a_with_7500n.gif[FibreBridge 7500N 브리지를 사용한 MetroCluster 클러스터 A 연결]
 
 
 
@@ -95,7 +95,7 @@ image::../media/mcc_hardware_architecture_cluster_a_with_7500n.gif[7500n을 사�
 
 다음 그림에서는 2노드 Fabric MetroCluster 구성의 단순한 뷰를 보여 줍니다. 일부 연결의 경우, 단일 선은 구성 요소 간의 여러 중복 연결을 나타냅니다. 데이터 및 관리 네트워크 연결이 표시되지 않습니다.
 
-image::../media/mcc_hardware_architecture_both_clusters_2_node_fabric.gif[MCC 하드웨어 아키텍처 두 클러스터 모두 2노드 Fabric입니다]
+image::../media/mcc_hardware_architecture_both_clusters_2_node_fabric.gif[두 노드 패브릭 MetroCluster 구성 두 클러스터 모두]
 
 2노드 구성은 지리적으로 분산된 사이트에 각각 하나씩, 2개의 클러스터로 구성됩니다. Cluster_A는 첫 번째 MetroCluster 사이트에 있습니다. Cluster_B는 두 번째 MetroCluster 사이트에 있습니다. 각 사이트에는 1개의 SAS 스토리지 스택이 있습니다. 추가 스토리지 스택은 지원되지만 각 사이트에는 하나만 표시됩니다.
 
@@ -104,7 +104,7 @@ NOTE: 2노드 구성에서는 노드가 HA 쌍으로 구성되지 않습니다.
 
 다음 그림에서는 단일 MetroCluster 클러스터(두 클러스터 모두 동일한 구성)의 접속 구성을 보다 자세히 보여 줍니다.
 
-image::../media/mcc_hardware_architecture_cluster_a_2_node_with_7500n.gif[7500n을 사용하는 MCC 하드웨어 아키텍처 클러스터 A 2노드]
+image::../media/mcc_hardware_architecture_cluster_a_2_node_with_7500n.gif[FibreBridge 7500N 브리지를 사용한 2노드 MetroCluster 클러스터 A 연결]
 
 2노드 구성에는 다음과 같은 연결이 포함됩니다.
 

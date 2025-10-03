@@ -30,7 +30,7 @@ summary: 구성에 새 컨트롤러 모듈 4개와 추가 스토리지 쉘프를
 
 다음 예에서는 새 컨트롤러 모듈을 수용하기 위한 스토리지를 제공하기 위해 각 사이트에 2개의 추가 스토리지 쉘프를 추가합니다.
 
-image::../media/transition_2n_4_new_ip_nodes_and_shelves.png[전환 2n 새로운 IP 노드 및 쉘프 4개]
+image::../media/transition_2n_4_new_ip_nodes_and_shelves.png[전환을 위한 새로운 IP 노드 및 쉘프 케이블링]
 
 .단계
 . 필요에 따라 새 컨트롤러 모듈 및 스토리지 쉘프를 포지셔닝합니다.
@@ -588,7 +588,7 @@ LIF가 원하는 포트에 있는 경우 이 작업의 나머지 단계를 건�
 * Node_B_2 - IP
 
 
-image::../media/transition_2n_booting_a_2_and_b_2.png[전환 2n 2 및 b 2 부팅]
+image::../media/transition_2n_booting_a_2_and_b_2.png[전환 중 새 IP 노드 부팅]
 
 .단계
 . 부팅 옵션 ""9c""를 사용하여 새 노드를 부팅합니다.
@@ -802,7 +802,8 @@ node_A_1-IP
              Data: interface_reachable
              ICMP: interface_reachable true       true            true
 node_A_2-IP
-           cluster_B                   node_B_1-IP
+
+image::../media/transition_2n_booting_a_2_and_b_2.png["Booting new IP nodes during transition"]
              Data: interface_reachable
              ICMP: interface_reachable true       true            true
                                        node_B_2-IP

@@ -93,7 +93,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 전환을 준비할 때 사이트 간 여행을 계획하십시오. 원격 노드가 랙에 설치되고 케이블이 연결된 후에는 노드에 대한 직렬 터미널 액세스가 필요합니다. 노드가 구성될 때까지 서비스 프로세서 액세스를 사용할 수 없습니다.
 
-image::../media/workflow_2n_transition_old_shelves_not_supported.png[워크플로 2n 이전 선반이 지원되지 않습니다]
+image::../media/workflow_2n_transition_old_shelves_not_supported.png[기존 선반이 지원되지 않는 경우 전환을 위한 워크플로]
 
 
 
@@ -115,7 +115,7 @@ MetroCluster IP 구성으로 전환하기 전에 기존 컨트롤러 모듈에 �
 .이 작업에 대해
 다음 그림에서는 MetroCluster FC 구성에 연결된 새 셸프를 보여 줍니다.
 
-image::../media/transition_2n_unsupported_old_new_shelves_to_old_controllers.png[지원되지 않는 이전 신규 쉘프를 이전 컨트롤러로 2n 이전]
+image::../media/transition_2n_unsupported_old_new_shelves_to_old_controllers.png[전환 중 새 선반을 기존 컨트롤러에 케이블 연결]
 
 .단계
 . node_A_1-FC 및 node_A_2-FC에서 디스크 자동 할당을 해제합니다.

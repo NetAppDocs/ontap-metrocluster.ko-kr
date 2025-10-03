@@ -15,7 +15,7 @@ MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 
 
 인터클러스터 LIF는 MetroCluster 구성의 각 노드에 구성해야 하며 피어링을 위해 클러스터를 구성해야 합니다. 인터클러스터 LIF의 포트는 고객이 제공한 클러스터 피어링 네트워크에 연결됩니다. SVM 구성 복제는 구성 복제 서비스를 통해 이 네트워크를 통해 수행됩니다.
 
-image::../media/mcc_hw_architecture_cluster_peering.gif[MCC HW 아키텍처 클러스터 피어링]
+image::../media/mcc_hw_architecture_cluster_peering.gif[MetroCluster 구성에서 클러스터 피어링 네트워크를 보여주는 하드웨어 아키텍처]
 
 .관련 정보
 link:concept_illustration_of_the_local_ha_pairs_in_a_mcc_configuration.html["MetroCluster 구성의 로컬 HA 쌍 그림"]

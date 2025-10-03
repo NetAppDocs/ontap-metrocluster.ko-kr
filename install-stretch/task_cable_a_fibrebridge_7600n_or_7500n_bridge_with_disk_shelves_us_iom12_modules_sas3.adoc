@@ -48,4 +48,4 @@ NOTE: 각 스택은 IOM의 다양한 모델을 사용할 수 있지만 스택 �
 
 
 
-image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks.gif[7500n 및 다중 스택을 사용한 MCC 케이블 연결 브리지 및 sas3 스택]
+image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks.gif[여러 SAS3 스택이 있는 FibreBridge를 위한 MetroCluster 케이블링]

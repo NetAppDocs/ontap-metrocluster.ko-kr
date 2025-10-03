@@ -83,7 +83,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 이 경우 다음 그림과 같이 추가 스토리지 쉘프가 필요할 수 있습니다.
 
 +
-image::../media/transition_2n_4_new_ip_nodes_on_the_shelves.png[선반에서 2개의 새로운 IP 노드 전환]
+image::../media/transition_2n_4_new_ip_nodes_on_the_shelves.png[기존 선반에 4개의 새로운 IP 노드로 전환]
 
 +
 세 번째 및 네 번째 컨트롤러(node_A_2-IP 및 node_B_2-IP)에 대해 각각 14-18개의 드라이브를 추가해야 합니다.
@@ -112,7 +112,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 전환을 준비할 때 사이트 간 여행을 계획하십시오. 원격 노드가 랙에 설치되고 케이블이 연결된 후에는 노드에 대한 직렬 터미널 액세스가 필요합니다. 노드가 구성될 때까지 서비스 프로세서 액세스를 사용할 수 없습니다.
 
-image::../media/workflow_2n_transition_bsaic.png[워크플로 2n 전환 bsaic]
+image::../media/workflow_2n_transition_bsaic.png[2노드 전환을 위한 워크플로]
 
 
 

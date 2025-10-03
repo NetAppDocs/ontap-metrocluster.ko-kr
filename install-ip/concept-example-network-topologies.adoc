@@ -24,7 +24,7 @@ NOTE: MetroCluster가 아닌 트래픽과 ISL을 공유하는 경우 MetroCluste
 
 이 토폴로지에서는 두 개의 개별 사이트가 직접 링크로 연결됩니다. 이러한 링크는 xWDM 및 TDM 디바이스 또는 스위치 사이에 있을 수 있습니다. ISL의 용량은 MetroCluster 트래픽 전용이 아니라 다른 비 MetroCluster 트래픽과 공유됩니다.
 
-image::../media/mcc_ip_networking_with_shared_isls.gif[공유 ISL을 통한 MCC IP 네트워킹]
+image::../media/mcc_ip_networking_with_shared_isls.gif[공유 ISL을 사용한 MetroCluster IP 네트워킹 예시]
 
 
 
@@ -33,7 +33,7 @@ image::../media/mcc_ip_networking_with_shared_isls.gif[공유 ISL을 통한 MCC 
 이 토폴로지에서 MetroCluster 사이트는 직접 연결되지 않지만 MetroCluster 및 호스트 트래픽은 네트워크를 통해 이동합니다.
 네트워크는 일련의 xWDM, TDM 및 스위치로 구성될 수 있지만 직접 ISL을 사용하는 공유 구성과 달리 사이트 간 링크는 직접 구성되지 않습니다. 사이트 간의 인프라에 따라 네트워크 구성을 원하는 대로 조합할 수 있습니다.
 
-image::../media/mcc_ip_networking_with_intermediate_private_networks.gif[중간 사설 네트워크를 통한 MCC IP 네트워킹]
+image::../media/mcc_ip_networking_with_intermediate_private_networks.gif[중간 개인 네트워크를 사용한 MetroCluster IP 네트워킹 예시]
 
 
 
@@ -44,7 +44,7 @@ image::../media/mcc_ip_networking_with_intermediate_private_networks.gif[중간 
 
 NOTE: "MetroCluster One" 또는 "MetroCluster 2" 모두 8노드 MetroCluster 구성 1개 또는 4노드 MetroCluster 구성 2개를 사용할 수 있습니다.
 
-image::../media/mcc_ip_two_mccs_sharing_the_same_shared_network_sx.gif[MCC IP 동일한 공유 네트워크 SX를 공유하는 두 개의 MCC]
+image::../media/mcc_ip_two_mccs_sharing_the_same_shared_network_sx.gif[동일한 중간 네트워크를 공유하는 두 가지 구성을 갖춘 MetroCluster IP 케이블링]
 
 
 
@@ -52,4 +52,4 @@ image::../media/mcc_ip_two_mccs_sharing_the_same_shared_network_sx.gif[MCC IP �
 
 두 개의 개별 MetroCluster 구성은 동일한 중간 스위치를 공유합니다. 여기서 한 MetroCluster는 공유 계층 2 구성(MetroCluster 1)에서 NetApp 검증 스위치를 사용하여 구성되고 다른 MetroCluster는 중간 스위치(MetroCluster 2)에 직접 연결된 MetroCluster 호환 스위치를 사용하여 구성됩니다.
 
-image::../media/mcc_ip_unsupported_two_mccs_direct_to_shared_switches.png[MCC IP 지원되지 않는 두 개의 MCC가 공유 스위치에 직접 연결됩니다]
+image::../media/mcc_ip_unsupported_two_mccs_direct_to_shared_switches.png[공유 스위치에 직접 케이블로 연결된 두 개의 MetroClusters의 지원되지 않는 구성 예]

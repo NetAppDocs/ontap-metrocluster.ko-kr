@@ -15,7 +15,7 @@ ONTAP 9.8부터 기존 2노드 MetroCluster FC 구성에서 새로운 4노드 Me
 
 다음 그림에서는 이 전환 절차 전과 후의 구성을 간단히 보여 줍니다.
 
-image::../media/transition_2n_begin_to_end.png[전환 2n 이(가) 끝으로 시작됩니다]
+image::../media/transition_2n_begin_to_end.png[2노드 FC에서 4노드 IP 구성으로 전환]
 
 * 이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.
 * 이 절차는 중단을 따릅니다.

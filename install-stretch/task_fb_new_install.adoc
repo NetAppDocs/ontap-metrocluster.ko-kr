@@ -24,7 +24,7 @@ ATTO ExpressNAV GUI를 사용하여 브리지를 구성 및 관리하고 브리�
 
 이 절차에서는 다음 워크플로를 사용합니다.
 
-image::../media/workflow_bridge_installation_and_configuration.gif[워크플로우 브리지 설치 및 구성]
+image::../media/workflow_bridge_installation_and_configuration.gif[FC-SAS 브리지 설치 및 구성을 위한 워크플로]
 
 
 
@@ -524,7 +524,7 @@ NOTE: 각 스택은 IOM의 다양한 모델을 사용할 수 있지만 스택 �
 
 다음 그림에서는 FiberBridge 7600N 또는 7500N 브리지 쌍에 연결된 디스크 쉘프를 보여 줍니다.
 
-image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks.gif[7500n 및 다중 스택을 사용한 MCC 케이블 연결 브리지 및 sas3 스택]
+image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks.gif[여러 SAS3 스택을 사용한 MetroCluster 케이블링 FibreBridge 구성]
 
 --
 

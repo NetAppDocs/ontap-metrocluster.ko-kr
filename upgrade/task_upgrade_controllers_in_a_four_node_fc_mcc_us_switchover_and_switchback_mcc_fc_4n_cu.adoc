@@ -567,7 +567,7 @@ site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전�
 
 이 작업을 완료하면 cluster_a가 활성 상태이며 두 사이트에 대한 데이터를 제공합니다. Cluster_B는 비활성 상태이며 다음 그림과 같이 업그레이드 프로세스를 시작할 준비가 되어 있습니다.
 
-image::../media/mcc_upgrade_cluster_a_in_switchover.png[전환 중인 MCC 업그레이드 클러스터 A]
+image::../media/mcc_upgrade_cluster_a_in_switchover.png[MetroCluster 전환 후 Site_B가 비활성화되어 업그레이드 준비가 되었습니다.]
 
 .단계
 . site_B의 노드를 업그레이드할 수 있도록 MetroCluster 구성을 site_A로 전환합니다.
@@ -1462,7 +1462,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 .이 작업에 대해
 이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.
 
-image::../media/mcc_upgrade_cluster_a_switchback.png[MCC 업그레이드 클러스터 A 스위치백]
+image::../media/mcc_upgrade_cluster_a_switchback.png[MetroCluster 스위치백 후 업그레이드를 기다리는 Site_A]
 
 .단계
 . site_B에서 'MetroCluster node show' 명령어를 실행하여 출력을 확인한다.

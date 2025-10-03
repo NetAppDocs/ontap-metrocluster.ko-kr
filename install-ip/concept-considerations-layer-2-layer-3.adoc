@@ -60,7 +60,7 @@ MPLS(Multiprotocol Label Switching) 링크와 같은 링크 공유 서비스는 
 
 MetroCluster 백엔드 스위치가 고객 네트워크에 연결됩니다.
 
-image::../media/MCC_layer2.png[MCC 레이어2]
+image::../media/MCC_layer2.png[MetroCluster 레이어 2 네트워크 구성]
 
 고객이 제공한 중간 스위치는 다음 요구 사항을 충족해야 합니다.
 
@@ -101,7 +101,7 @@ NOTE: 위에 나열된 시스템은 VLAN 100 이하를 사용하여 구성할 �
 
 MetroCluster 백엔드 스위치는 라우팅된 IP 네트워크에 직접 연결됩니다(다음 간단한 예에 표시된 것처럼). 또는 다른 개입 스위치를 통해 연결됩니다.
 
-image::../media/mcc_layer3_backend.png[MCC layer3 백엔드]
+image::../media/mcc_layer3_backend.png[MetroCluster 레이어 3 백엔드 네트워크 구성]
 
 MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 구성되고 케이블로 연결됩니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_parts_of_an_ip_mcc_configuration_mcc_ip.html["MetroCluster 하드웨어 구성 요소를 구성합니다"]. 설치 및 케이블 연결 절차를 수행할 때 계층 3 구성에 해당하는 단계를 수행해야 합니다. 다음은 계층 3 구성에 적용됩니다.
 
@@ -138,11 +138,11 @@ MetroCluster 트래픽이 중간 네트워크에서 ISL을 통과하는 경우 �
 
 다음 다이어그램은 NetApp 검증 Cisco 스위치를 사용할 때 필요한 설정을 간략하게 보여 줍니다.
 
-image::../media/switch_traffic_with_cisco_switches.png[Cisco 스위치를 사용하여 트래픽을 전환합니다]
+image::../media/switch_traffic_with_cisco_switches.png[MetroCluster 트래픽에 NetApp 검증 Cisco 스위치를 사용할 때 필요한 설정]
 
 다음 다이어그램은 외부 스위치가 Broadcom IP 스위치일 때 공유 네트워크에 필요한 설정을 간략하게 보여 줍니다.
 
-image::../media/switch_traffic_with_broadcom_switches.png[Broadcom 스위치를 사용하여 트래픽을 전환합니다]
+image::../media/switch_traffic_with_broadcom_switches.png[Broadcom IP 스위치 사용 시 공유 네트워크에 필요한 설정]
 
 이 예에서는 MetroCluster 트래픽에 대해 다음 정책과 맵이 생성됩니다.
 

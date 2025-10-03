@@ -15,7 +15,7 @@ ONTAP 9.5부터 ONTAP는 가상 IP(VIP) 및 경계 게이트웨이 프로토콜(
 
 계층 3 솔루션을 계획할 때 다음 지침과 그림을 검토하십시오. ONTAP에서 VIP 및 BGP 구현에 대한 자세한 내용은 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/networking/configure_virtual_ip_@vip@_lifs.html["가상 IP LIF를 구성합니다"^].
 
-image::../media/vip_and_bgp_in_metrocluster_2.png[MetroCluster 2의 VIP 및 BGP]
+image::../media/vip_and_bgp_in_metrocluster_2.png[MetroCluster 의 가상 IP 및 경계 게이트웨이 프로토콜]
 
 
 

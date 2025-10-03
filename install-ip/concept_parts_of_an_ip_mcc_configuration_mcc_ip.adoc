@@ -41,7 +41,7 @@ MetroCluster IP 구성에는 다음과 같은 주요 하드웨어 요소가 포�
 
 
 
-image::../media/mcc_ip_hardware_architecture_mcc_ip.gif[MCC IP 하드웨어 아키텍처 MCC IP입니다]
+image::../media/mcc_ip_hardware_architecture_mcc_ip.gif[MetroCluster IP 하드웨어 아키텍처]
 
 
 
@@ -51,7 +51,7 @@ MetroCluster IP 구성은 4개 노드로 구성된 DR 그룹 1개로 구성됩�
 
 다음 그림에서는 4노드 MetroCluster 구성의 노드 구성을 보여 줍니다.
 
-image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
+image::../media/mcc_dr_groups_4_node.gif[4노드 구성의 MetroCluster DR 그룹]
 
 
 
@@ -61,7 +61,7 @@ image::../media/mcc_dr_groups_4_node.gif[MCC DR 그룹 4개 노드]
 
 로컬 HA 페일오버 및 반환 작업은 MetroCluster가 아닌 구성과 동일한 방식으로 스토리지 페일오버 명령을 통해 수행됩니다.
 
-image::../media/mcc_ip_hardware_architecture_ha_pairs.gif[MCC IP 하드웨어 아키텍처 하 쌍]
+image::../media/mcc_ip_hardware_architecture_ha_pairs.gif[MetroCluster IP 하드웨어 아키텍처 HA 쌍]
 
 .관련 정보
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["ONTAP 개념"]
@@ -72,7 +72,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["
 
 ONTAP 클러스터에는 일반적으로 클러스터 인터커넥트 네트워크가 포함되어 있어 클러스터 내의 노드 간 트래픽을 처리합니다. MetroCluster IP 구성에서 이 네트워크는 MetroCluster 사이트 간에 데이터 복제 트래픽을 전송하는 데에도 사용됩니다.
 
-image::../media/mcc_ip_hardware_architecture_ip_interconnect.png[MCC IP 하드웨어 아키텍처 IP 상호 연결]
+image::../media/mcc_ip_hardware_architecture_ip_interconnect.png[MetroCluster IP 하드웨어 아키텍처 IP 상호 연결]
 
 MetroCluster IP 구성의 각 노드에는 백엔드 IP 네트워크 연결을 위한 전용 인터페이스가 있습니다.
 
@@ -82,7 +82,7 @@ MetroCluster IP 구성의 각 노드에는 백엔드 IP 네트워크 연결을 �
 
 다음 그림에서는 이러한 인터페이스를 보여 줍니다. 표시된 포트 용도는 AFF A700 또는 FAS9000 시스템에 대한 것입니다.
 
-image::../media/mcc_ip_lif_usage.gif[MCC IP lif 사용]
+image::../media/mcc_ip_lif_usage.gif[MetroCluster IP LIF 사용]
 
 .관련 정보
 link:concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 사항"]
@@ -95,7 +95,7 @@ MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 
 
 인터클러스터 LIF는 MetroCluster 구성의 각 노드에 구성해야 하며 피어링을 위해 클러스터를 구성해야 합니다. 인터클러스터 LIF의 포트는 고객이 제공한 클러스터 피어링 네트워크에 연결됩니다. SVM 구성 복제는 구성 복제 서비스를 통해 이 네트워크를 통해 수행됩니다.
 
-image::../media/mcc_ip_hardware_architecture_cluster_peering_network.gif[MCC IP 하드웨어 아키텍처 클러스터 피어링 네트워크]
+image::../media/mcc_ip_hardware_architecture_cluster_peering_network.gif[MetroCluster IP 하드웨어 아키텍처 클러스터 피어링 네트워크]
 
 .관련 정보
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["클러스터 및 SVM 피어링 Express 구성"]
