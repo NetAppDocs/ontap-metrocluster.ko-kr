@@ -205,7 +205,7 @@ cluster_B::*>
 +
 [listing]
 ----
-node_A_1::*> halt -node _node-name_
+siteA::*> halt -node <node-name>
 ----
 . 다음 boots가 설정되었는지 확인합니다.
 +

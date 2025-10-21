@@ -175,7 +175,6 @@
   <block id="feda56ed0396074f051138ea4466f982" category="doc">MetroCluster 구성을 테스트하는 중입니다</block>
   <block id="397065d1ea76a7267c1165f18aff1479" category="section-title">협상된 전환을 확인하는 중입니다</block>
   <block id="03daa0db748f01eb3873a439b3ee1ab5" category="paragraph">협상된(계획된) 전환 작업을 테스트하여 중단 없는 데이터 가용성을 확인할 수 있습니다.</block>
-  <block id="3b84985a3046a49bcea85f56e3a28bac" category="paragraph">이 테스트에서는 클러스터를 두 번째 데이터 센터로 전환하여 데이터 가용성이 영향을 받지 않음을 검증합니다(Microsoft SMB(Server Message Block) 및 Solaris Fibre Channel 프로토콜은 제외).</block>
   <block id="224eed3317652f7fd4510c7cd1f9c926" category="paragraph">이 테스트는 약 30분 정도 소요됩니다.</block>
   <block id="962f0cdcd4aeaa5d7a845c907458b869" category="paragraph">이 절차에는 다음과 같은 예상 결과가 있습니다.</block>
   <block id="1faa3b4e66d97f34777f91b4ea9930d9" category="list-text">MetroCluster 절체 명령은 경고 메시지를 표시합니다.</block>
@@ -1415,7 +1414,6 @@
   <block id="af6415b8e23291050b1c66bd2a86ffaf" category="paragraph">초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다.</block>
   <block id="def4f4e87a159ca662e15a890598d539" category="paragraph">또한 협상된(계획된) 스위치오버 또는 스위치백 작업 전에 확인해야 합니다.</block>
   <block id="7ad4770864f194efb59a5eb45626bdf3" category="list-text">가장 최근의 MetroCluster check run 명령을 통해 더 자세한 결과를 표시합니다.</block>
-  <block id="2e012ade7bab556f0392337c78739376" category="paragraph">다음 예에서는 양호한 4노드 MetroCluster 구성에 대한 MetroCluster check cluster show 명령 출력을 보여 줍니다. 이는 필요한 경우 클러스터가 협상된 전환을 수행할 준비가 되었음을 나타냅니다.</block>
   <block id="b74877bc98b6da48aee4c72ca5dfa190" category="doc">MetroCluster 구성에서 가상 IP 및 경계 게이트웨이 프로토콜 사용에 대한 고려 사항</block>
   <block id="59c752e25a69d70bccc622aa7ccf88b4" category="paragraph">* ONTAP 제한 사항 *</block>
   <block id="6f510aa16aa27f68b3f76e76de440227" category="paragraph">* MetroCluster 구성과 함께 이 레이어 3 솔루션 사용 지침 *</block>
@@ -4282,8 +4280,6 @@
   <block id="086931408c5e31d7ddeb337f5faf83eb" category="paragraph">'aggr mirror root-aggr-name'</block>
   <block id="45793c6373c7317ce40fb3f662407b87" category="list-text">소유되지 않은 디스크를 로컬 노드의 pool0에 할당합니다</block>
   <block id="f433c39c3c339b913b2223e31d633f9d" category="list-text">유지 관리 모드로 돌아갑니다.</block>
-  <block id="b89bea07847accf12561ace475459c4d" category="list-text">노드를 Maintenance로 부팅합니다.</block>
-  <block id="fd02d447099008ddc827133dc034246f" category="paragraph">모드: boot_ONTAP maint</block>
   <block id="3c5b2b94f65ffc6fc4f76f89cd80b62b" category="list-text">메일박스 디스크의 내용을 삭제합니다.</block>
   <block id="7f7deb46e1585e846e2fd054b1b2af5a" category="paragraph">'데일박스 파기 지역</block>
   <block id="77036813f81882d81f97721da98db74b" category="list-text">노드 중단: + "중지"</block>
@@ -11764,8 +11760,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="daf3fcb291d6eb9e42a7777197caa458" category="sidebar">MetroCluster FC를 MetroCluster IP로 변환합니다</block>
   <block id="822970998ef8866cd59ed6ba8d63af83" category="sidebar">MetroCluster IP RCF 파일을 업그레이드합니다</block>
   <block id="b7c02f1bc7ffc889ddb9e99702663c56" category="sidebar">ATTO 브리지 펌웨어</block>
-  <block id="ddac5beff5f77bf22595caa98bac08f9" category="sidebar">FiberBridge 7600N</block>
-  <block id="dcb741f9e6e5d6050aeb3d8fd347e9fd" category="sidebar">FiberBridge 7500N</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
   <block id="fa0344a10c89a05b4e9232391d5feb01" category="sidebar">NetApp Config Advisor를 참조하십시오</block>
   <block id="3f2b90ec5a9b43745b9c8c9fedf48d8d" category="sidebar">NetApp 지원 기술 자료</block>
@@ -13815,7 +13809,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="912e887f8c2036c3f03ac7df63957dfd" category="paragraph">9336C-FX2(36포트)</block>
   <block id="5f972a786e3a36fb039bc945267e120a" category="paragraph">3132Q-V를 참조하십시오</block>
   <block id="f403fff2bbc7f3e506dae47b9dff52fc" category="paragraph">3232C를 참조하십시오</block>
-  <block id="addb9e70976c2f94b8ccfc3736a31888" category="paragraph-title">중요 정보</block>
   <block id="38c9e66a6eb25313e0ea3390ba7ee1fc" category="cell">기존 MetroCluster에 다음이 포함되어 있는 경우..</block>
   <block id="afe6ad7caef50aaad15afb83c6f40ca0" category="cell">그리고 당신이 추가하는 플랫폼은...</block>
   <block id="12f30f47d5034530ccaa816ade9953fc" category="paragraph">*공유 클러스터/HA 포트*를 사용하는 AFF 시스템:</block>
@@ -14423,4 +14416,11 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="55eb6bfcca1bd3820b0fdab3d788f833" category="image-alt">섀시에 NVRAM 모듈 설치: 제자리에 정렬하고 잠금</block>
   <block id="40a8cc8505d7467bde3321410a6e4017" category="image-alt">섀시에 컨트롤러 모듈 설치: 정렬, 좌석 및 케이블</block>
   <block id="ede06bff35d481aeb275fc59e8e85067" category="image-alt">MetroCluster 스위치백 후 업그레이드를 기다리는 Site_A</block>
+  <block id="cee412eec19a9c7ecf8848f3e299f815" category="list-text">노드를 유지 관리 모드로 부팅합니다.</block>
+  <block id="a9efd65de6ec4fcf881629fcb763598c" category="paragraph">이 테스트는 클러스터를 두 번째 데이터 센터로 전환함으로써 데이터 가용성에 영향을 미치지 않는지(SMB 및 파이버 채널 프로토콜 제외) 확인합니다.</block>
+  <block id="85d885cec8ed47ee2262192224675e42" category="paragraph-title">이전 플랫폼 모델을 추가하는 경우 중요한 정보</block>
+  <block id="5176f2410e7713f8043052235a3684ca" category="inline-link-macro">필요한 bootarg를 설정하세요</block>
+  <block id="101589f08b3d384effc16cfe928ff010" category="admonition">*컨트롤러를 업그레이드할 때마다 이 절차를 설명된 대로 수행해야 합니다.* 새로운 플랫폼이 출시되면 따라야 할 새 단계나 수정된 ​​단계가 있을 수 있습니다. 예를 들어 ONTAP 9.15.1 이상에서 도입된 플랫폼으로 업그레이드하는 경우 다음을 수행해야 합니다. <block ref="c06c0a0b6c863a89cb5464010bbb6325" category="inline-link-macro-rx"></block> 성공적인 업그레이드를 위해 다른 추가 단계를 수행합니다.</block>
+  <block id="362bfa10bf4c8597f25d4428db1f1ff6" category="admonition">*컨트롤러를 업그레이드할 때마다 이 절차를 설명된 대로 수행해야 합니다.* 새로운 플랫폼이 출시되면 따라야 할 새 단계나 수정된 ​​단계가 있을 수 있습니다. 예를 들어 ONTAP 9.15.1 이상에서 도입된 플랫폼으로 업그레이드하는 경우 다음을 수행해야 합니다. <block ref="cecfc2493a1700137e5c8906925909ad" category="inline-link-macro-rx"></block> 성공적인 업그레이드를 위해 다른 추가 단계를 수행합니다.</block>
+  <block id="8fe05c00237e990eab631a7b042cf93c" category="sidebar">ATTO FibreBridge 펌웨어 다운로드</block>
 </blocks>

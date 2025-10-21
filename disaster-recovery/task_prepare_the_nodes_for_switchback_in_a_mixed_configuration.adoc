@@ -92,9 +92,9 @@ NOTE: 사용한 교체 컨트롤러의 NVRAM 내용을 지우지 않으면 "패�
 +
 "중지"
 
-.. 노드를 Maintenance로 부팅합니다.
+.. 노드를 유지 관리 모드로 부팅합니다.
 +
-모드: boot_ONTAP maint
+boot_ONTAP maint를 선택합니다
 
 
 
@@ -148,7 +148,7 @@ Group Cluster Node               State          Mirroring Mode
 +
 [listing]
 ----
-node_A_1::*> halt -node _node-name_
+siteA::*> halt -node <node-name>
 ----
 . 다음 boots가 설정되었는지 확인합니다.
 +

@@ -20,7 +20,7 @@ summary:
 협상된(계획된) 전환 작업을 테스트하여 중단 없는 데이터 가용성을 확인할 수 있습니다.
 
 .이 작업에 대해
-이 테스트에서는 클러스터를 두 번째 데이터 센터로 전환하여 데이터 가용성이 영향을 받지 않음을 검증합니다(Microsoft SMB(Server Message Block) 및 Solaris Fibre Channel 프로토콜은 제외).
+이 테스트는 클러스터를 두 번째 데이터 센터로 전환함으로써 데이터 가용성에 영향을 미치지 않는지(SMB 및 파이버 채널 프로토콜 제외) 확인합니다.
 
 이 테스트는 약 30분 정도 소요됩니다.
 
@@ -100,8 +100,6 @@ MetroCluster 동작쇼
 +
 [listing]
 ----
-cluster_A::>  metrocluster operation show
-
 cluster_A::> metrocluster operation show
   Operation: switchover
       State: successful
@@ -142,7 +140,7 @@ Group Cluster Node               State          Mirroring Mode
               node_A_1         configured     enabled   heal roots completed
       cluster_B
               node_B_2         unreachable    -         switched over
-42 entries were displayed.metrocluster operation show
+42 entries were displayed.
 ----
 . 모든 애그리게이트가 미러링되었는지 확인:
 +
