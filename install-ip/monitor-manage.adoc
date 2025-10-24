@@ -1,5 +1,5 @@
 ---
-permalink: install-ip/manage-monitor.html 
+permalink: install-ip/monitor-manage.html 
 sidebar: sidebar 
 keywords: ip, switch, connection, manage, broadcom, snmp, health, monitoring 
 summary: '대부분의 경우 이더넷 스위치는 ONTAP에 의해 자동으로 검색되고 CSHM에 의해 모니터링됩니다. 스위치에 적용된 RCF(Reference Configuration File)는 CDP(Cisco Discovery Protocol) 및/또는 LLDP(Link Layer Discovery Protocol)를 활성화합니다.' 

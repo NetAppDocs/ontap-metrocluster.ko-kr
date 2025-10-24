@@ -11156,13 +11156,11 @@
   <block id="b6c12395a961cf95058c6e4d4412ac09" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다. 표에 따라 스위치 포트 모드를 구성해야 합니다.</block>
   <block id="8c425f952493015588fb91113b5b2dd8" category="summary">이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에 대한 요구 사항을 다룹니다.</block>
   <block id="422a6c8c8d23cb29ed822adac0da8cd9" category="paragraph">모든 MetroCluster IP 구성과 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에는 특정 요구 사항이 있습니다. 이러한 요구 사항은 고객 스위치 간에 ISL이 직접 또는 공유되는지 여부에 관계없이 MetroCluster 트래픽을 전달하는 모든 ISL에 적용됩니다.</block>
-  <block id="78464639db6e6acf657d9d576a0f2888" category="section-title">일반 MetroCluster ISL 요구사항</block>
   <block id="a5c426f5b72cbfd96a6dec4a6e3046d2" category="paragraph">다음은 모든 MetroCluster IP 구성의 ISL에 적용됩니다.</block>
   <block id="f2fe3be43c081827bf52c1013416d414" category="list-text">두 Fabric의 ISL 수는 동일해야 합니다.</block>
   <block id="baf55d93093b54950152b6be3f9bfec2" category="list-text">하나의 Fabric에 있는 ISL은 모두 속도와 길이가 같아야 합니다.</block>
   <block id="4b00dc01ca120693f1539bf736f11069" category="list-text">두 패브릭의 ISL은 속도와 길이가 같아야 합니다.</block>
   <block id="ef6ab3e28db1093c7315b30edeb84730" category="list-text">패브릭 1과 패브릭 2 간의 최대 지원 거리 차이는 20km 또는 0.2ms입니다.</block>
-  <block id="ddf41f2636c98d00a2698837f55a3f74" category="list-text">ISL 속도는 10Gbps 이상이어야 합니다.</block>
   <block id="cb806a9b25dfb1d4470413a3c2dd9944" category="list-text">Fabric당 10Gbps ISL 포트가 하나 이상 있어야 합니다.</block>
   <block id="25b13aa97e6e9eb228478bfddbcc84e9" category="paragraph">다음은 site_A와 site_B에서 MetroCluster IP 스위치 간의 왕복 트래픽에 적용되며, MetroCluster 구성이 정상 작동 중입니다.</block>
   <block id="ae36a5fd21eb894eb914590a632f59c9" category="list-text">두 MetroCluster 사이트 간의 거리가 증가하면 지연 시간이 증가하며, 일반적으로 100km(62마일)당 1ms의 왕복 지연 시간이 증가합니다. 지연 시간은 또한 ISL 링크의 대역폭, 패킷 드롭 속도 및 네트워크의 지터 측면에서 네트워크 SLA(Service Level Agreement)에 따라 달라집니다. 낮은 대역폭, 높은 지터 및 임의 패킷 손실은 성공적인 패킷 전달을 위해 스위치에 의한 다른 복구 메커니즘 또는 컨트롤러 모듈의 TCP 엔진으로 이어집니다. 이러한 복구 메커니즘은 전반적인 대기 시간을 늘릴 수 있습니다. 라운드 트립 지연 시간 및 구성에 대한 최대 거리 요구 사항에 대한 자세한 내용은 을 참조하십시오 <block ref="44be38b301d3bfae89cdec57afffd9be" category="inline-link-macro-rx"></block></block>
@@ -14423,4 +14421,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="101589f08b3d384effc16cfe928ff010" category="admonition">*컨트롤러를 업그레이드할 때마다 이 절차를 설명된 대로 수행해야 합니다.* 새로운 플랫폼이 출시되면 따라야 할 새 단계나 수정된 ​​단계가 있을 수 있습니다. 예를 들어 ONTAP 9.15.1 이상에서 도입된 플랫폼으로 업그레이드하는 경우 다음을 수행해야 합니다. <block ref="c06c0a0b6c863a89cb5464010bbb6325" category="inline-link-macro-rx"></block> 성공적인 업그레이드를 위해 다른 추가 단계를 수행합니다.</block>
   <block id="362bfa10bf4c8597f25d4428db1f1ff6" category="admonition">*컨트롤러를 업그레이드할 때마다 이 절차를 설명된 대로 수행해야 합니다.* 새로운 플랫폼이 출시되면 따라야 할 새 단계나 수정된 ​​단계가 있을 수 있습니다. 예를 들어 ONTAP 9.15.1 이상에서 도입된 플랫폼으로 업그레이드하는 경우 다음을 수행해야 합니다. <block ref="cecfc2493a1700137e5c8906925909ad" category="inline-link-macro-rx"></block> 성공적인 업그레이드를 위해 다른 추가 단계를 수행합니다.</block>
   <block id="8fe05c00237e990eab631a7b042cf93c" category="sidebar">ATTO FibreBridge 펌웨어 다운로드</block>
+  <block id="4500ea599da00d6db7bf0ffa4e13554f" category="section-title">MetroCluster ISL 요구 사항</block>
+  <block id="1e2cb5bcdb8947c91d9b70a1c5ee21c0" category="list-text">필요한 최소 ISL 속도는 플랫폼 모델에 따라 다릅니다.</block>
+  <block id="fe25d0e834bbf213fee0bc910f4a7054" category="list-text">AFF A1K 및 AFF A90 시스템에서는 ISL 속도가 최소 100Gbps여야 합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 영업팀에 문의하세요.</block>
+  <block id="9260215cd28aa0daaf49857a4307ca43" category="list-text">다른 모든 플랫폼에서는 ISL 속도가 최소 10Gbps여야 합니다.</block>
 </blocks>
