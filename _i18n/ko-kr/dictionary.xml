@@ -1759,8 +1759,6 @@
   <block id="da82ec774885b0fd4ea7e17756ffc01b" category="paragraph">NMP 구성 테스트</block>
   <block id="c4aa541ec1b33e5e76d09363d75995f8" category="paragraph">다음 예에서는 tiebreaker 소프트웨어가 이벤트 test_snmp_Config에 대한 SNMP 트랩을 보낼 수 있음을 보여 줍니다.</block>
   <block id="88360ff6d6d5e3d5d618e2ab14b30049" category="summary">Tiebreaker 소프트웨어를 설치한 후 MetroCluster 구성을 추가 또는 수정하거나 Tiebreaker 소프트웨어에서 제거할 수 있습니다.</block>
-  <block id="84b5999a36db8b18180d5b58bd61c503" category="doc">Tiebreaker 소프트웨어 구성</block>
-  <block id="1f160d9eb389f42ea44f6394967f985f" category="section-title">Tiebreaker 소프트웨어 CLI 시작</block>
   <block id="c3dadd67840f8db5df2397f22e3266bd" category="list-text">소프트웨어를 설치한 호스트의 프롬프트에서 CLI를 시작합니다.</block>
   <block id="cefc8e2ff0cb055845c8a3c508972733" category="paragraph">'NetApp-MetroCluster-Tiebreaker-software-CLI'</block>
   <block id="0c3de4f48f152830cf54a3c7110e5b3e" category="section-title">MetroCluster 구성 추가</block>
@@ -3090,7 +3088,6 @@
   <block id="be30a56e6d2717e49b1a24ec4b5435b9" category="paragraph">site_A에서 업그레이드 작업을 반복해야 합니다</block>
   <block id="98c99ee34c8774fa11a9a533fe708618" category="paragraph">작업을 수행할 때 사이트와 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, 사이트_A에서 스위치오버로 예제를 제공할 경우 site_B에서 전환합니다</block>
   <block id="4a73711f675c6d654d190ca9589e5da1" category="section-title">Tiebreaker 또는 중재자 모니터링을 복원합니다</block>
-  <block id="0c429b26fd1db8d4b7bb104d284c1cea" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
   <block id="26eeb9c2ed8ad703fd7436c1c5091b0b" category="section-title">유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="summary">새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.</block>
   <block id="fd1f71815b5abfc5d58a282353d2ba84" category="doc">새 케이블 연결 레이아웃 결정</block>
@@ -6786,7 +6783,6 @@
   <block id="34996021b2242b1689cf2c93fe281ab0" category="paragraph">이 작업은 MetroCluster FC 구성에서 수행됩니다.</block>
   <block id="9784a9ef130e7d3b3d90574becda9acb" category="paragraph">'node run-node-name sysconfig-a'</block>
   <block id="cbd4d4672378f350894bea8cdbc4bb91" category="list-text">노드가 비-HA 모드인지 확인합니다.</block>
-  <block id="99121f5c6ebd942309c1151523466608" category="paragraph"><block ref="99121f5c6ebd942309c1151523466608" category="inline-link-macro-rx"></block></block>
   <block id="c5ca83d0e723113560fb2c95b33b532b" category="doc">무중단 전환을 지원하는 플랫폼</block>
   <block id="1799408ec992ed3e5561f7b04ccef0fe" category="paragraph">예를 들어 AFF8060 컨트롤러 모듈로 구성된 MetroCluster FC 구성에서 AFF A400 컨트롤러 모듈로 구성된 IP 구성으로 전환할 수 있습니다.</block>
   <block id="1e5e78662df1059700ef33c3a063b1d8" category="summary">기존 MetroCluster FC 노드에서 정보를 수집하고, 유지 관리를 시작하라는 AutoSupport 메시지를 보내고, 노드를 전환해야 합니다.</block>
@@ -9614,7 +9610,6 @@
   <block id="56bf84e32d22ab8fb694fbc5332432dc" category="paragraph">FC 스위치를 수동으로 구성한 경우 새 컨트롤러 모듈의 이니시에이터 연결에 대해 조닝이 올바른지 확인해야 합니다. 의 조닝 관련 섹션을 참조하십시오 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block>.</block>
   <block id="dedcc0638aa1bf3276ae388ea4613c81" category="summary">ONTAP 9.8부터 구성을 임시 8노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 4노드 MetroCluster IP 구성에서 컨트롤러와 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="75aa8d2f84e0be26d2847e91f37f74e2" category="list-text">자동 지원 케이스 생성을 방지하려면 업그레이드가 진행 중임을 알리는 AutoSupport 메시지를 보내십시오.</block>
-  <block id="f0c5b568bbaab2490082e4d2aaf08123" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 _.</block>
   <block id="7965e118387157e57593becb6ae60117" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 새로운 스토리지 시스템, 디스크 쉘프 및 FC-to-SAS 브릿지를 랙에 장착</block>
   <block id="bd583895c72d99233af8746d9463ab07" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 8노드 MetroCluster 구성의 포트 사용을 사용하여 스위치 유형에 대한 케이블 연결 레이아웃을 생성합니다.</block>
   <block id="7215f927afe2ef194199487494b76dd7" category="paragraph">FC 스위치 포트 사용은 RCFs(Reference Configuration Files)를 사용할 수 있도록 절차에 설명된 용법과 일치해야 합니다.</block>
@@ -9738,7 +9733,6 @@
   <block id="679c1dc70b523e1092eb2a7b3129711d" category="paragraph">포트 및 브로드캐스트 도메인에 대해 MTU 설정이 올바르게 설정되어 있는지 확인하고 변경합니다.</block>
   <block id="dd29cf7134047c7a311edc4776b9021e" category="paragraph">2노드 MetroCluster FC 구성이 있는 경우 를 참조하십시오 <block ref="ef88855c7d052c0aa5ce46e187d01954" category="inline-link-macro-rx"></block>.</block>
   <block id="2912e0eba45e116506958546503977b9" category="paragraph"><block ref="2912e0eba45e116506958546503977b9" category="inline-link-macro-rx"></block></block>
-  <block id="7efa6fc838c006d396e42638b4ff25d1" category="paragraph"><block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block></block>
   <block id="bc77bf857b365d445270101e2d7ce03f" category="list-text">MetroCluster FC 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster FC 구성에서 사용되는 단계입니다.</block>
   <block id="58f51e86971b6d1d53b59f46792a926c" category="list-text">MetroCluster IP 워크플로우에서 스위치오버, 복구 및 스위치백 단계는 MetroCluster IP 구성에서 사용되는 단계입니다.</block>
   <block id="be841ef50614c5c74b8d6a685c367458" category="cell">협상된 전환에서 이 워크플로우 사용...</block>
@@ -9881,9 +9875,6 @@
   <block id="c988e8ca5d6e6bb62b67254721e13586" category="paragraph">MACsec keychain keychain-name policy-name 없음</block>
   <block id="8d0f34f00997c62960ad51adbe64457d" category="list-text"><block ref="8d0f34f00997c62960ad51adbe64457d" category="inline-link-rx"></block></block>
   <block id="d84d4239724af43bfdc3b74836c335fe" category="paragraph">구성이 완료되면 v0a(v0b 등)가 지속적으로 연결을 확인하여 LIF 마이그레이션 또는 페일오버가 성공하도록 보장합니다(파손된 구성이 운영 중단 후에만 표시됨).</block>
-  <block id="222561f9cba21343a81a9b2ee1890d68" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block></block>
-  <block id="81fe00b955881476878ae80a1ff92b24" category="list-text">의 단계를 사용합니다. <block ref="7efa6fc838c006d396e42638b4ff25d1" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성_섹션에서</block>
-  <block id="61324fd73aeb16a8318bff07556941ad" category="paragraph"><block ref="222561f9cba21343a81a9b2ee1890d68" category="inline-link-macro-rx"></block> MetroCluster Tiebreaker 설치 및 구성 내용 _</block>
   <block id="1fe9ee738ca0e6e9e3aeec4c7902cb67" category="paragraph">다음 다이어그램은 MetroCluster 구성을 보여 줍니다. 유지 관리를 위해 Cluster_B의 전원이 꺼져 있습니다.</block>
   <block id="04609bc4c74d3a1d83089f636a27a4b0" category="paragraph">ONTAP 9.11.1부터 MetroCluster 구성 내의 두 사이트는 다음 이미지와 같이 FAS 또는 AFF 대상 클러스터와 SVM DR 관계의 소스가 될 수 있습니다.</block>
   <block id="66a9b9ac77fa7e18f707ae56e903dd9c" category="inline-image-macro">SVM DR 새로운 토폴로지</block>
@@ -11515,7 +11506,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3929d13da5d4b97eff76f8a6ec8c5501" category="list-text">에 액세스합니다 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.</block>
   <block id="94416aa661a92cc8d67b1bd6459ef472" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
   <block id="332fe4e638c485c04f214b0a13747f6d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 <block ref="0fe967effd4f0eaf84576f897dbfd368" category="inline-link-macro-rx"></block>. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.</block>
-  <block id="75132a926df50e23a26bd72dde0371b7" category="list-text"><block ref="46f4c9c8d582aa241b60c75ea3bcb2c9" category="inline-link-macro-rx"></block> Tiebreaker 소프트웨어</block>
   <block id="0b22fb8d0feec85055f45c8c4a298766" category="list-text">절차를 계속하라는 메시지가 나타나면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.</block>
   <block id="84ea00dba7c6a1cf0426e58385307e4f" category="paragraph"><block ref="5b9047ebb0d87499d679fd69fbda42cf" prefix="" category="inline-code"></block></block>
   <block id="b57c06e6dad65cb8a7fb01050706349f" category="paragraph">ONTAP System Manager를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소(\https://172.17.12.153).</block>
@@ -12823,7 +12813,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="92f5715a55706897a1d8dd41533ea2ad" category="paragraph">사이트 A에서 cluster_A의 노드를 업그레이드하려면 업그레이드 작업을 반복해야 합니다</block>
   <block id="c0d421f4948fca7693af31b81667650d" category="list-text">이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.<block ref="fdc81b8422a2d3a4dc8579b364ffd7ac" category="inline-link-macro-rx"></block></block>
   <block id="9708813a6edf75a072848cc8c19d1d0b" category="inline-link-macro">MetroCluster 구성 추가</block>
-  <block id="1452de87b0c5b157dc8a7594223b5265" category="paragraph"><block ref="9b8797650089db2aa56d22b65e4ec45b" category="inline-link-macro-rx"></block>..</block>
   <block id="337d2ccc4953efb0209e4bf2012ca1be" category="summary">컨트롤러 업그레이드를 수행하기 전에 장치에서 콘솔 로깅을 활성화합니다.</block>
   <block id="ec75a12b665b34d0cdc8d12746fc8cfa" category="doc">MetroCluster IP 컨트롤러를 업그레이드하기 전에 콘솔 로깅을 사용하도록 설정합니다</block>
   <block id="f31a964269837fa383f7baad3584db47" category="inline-link-macro">필요한 bootarg 설정(9.15.1 이상 버전에서 도입된 시스템으로의 업그레이드용)</block>
@@ -13836,7 +13825,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a787053687877f10051bad9d8a2c320b" category="paragraph">업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결성을 확인합니다.</block>
   <block id="ac471314e8ba72086a54a227b4a6abe8" category="paragraph">일치하는 포트가 없습니다. 업그레이드 후 클러스터 포트를 다시 생성합니다. <block ref="c40693a26d31adda8e50d2bd3c959775" category="inline-link-macro-rx"></block></block>
   <block id="02f80d1409d40adabdcd4b00959239b0" category="inline-link-macro">MetroCluster 구성을 제거합니다</block>
-  <block id="c4a00ba197c84f92cac51496436d38e3" category="paragraph"><block ref="c4a00ba197c84f92cac51496436d38e3" category="inline-link-macro-rx"></block></block>
   <block id="9950d05faf2c2104ac64b2891c5a8822" category="section-title">오래된 플랫폼을 제거하세요</block>
   <block id="d723056ef76e64c3b3faae704eb71dd4" category="paragraph">이전 시스템 ID는 에서 식별되었습니다. <block ref="6b24ae8f1e4581fe7e87c8c4194af177" category="inline-link-macro-rx"></block></block>
   <block id="75a193e4d11dd894af19600ff20d5c03" category="paragraph"><block ref="75a193e4d11dd894af19600ff20d5c03" category="inline-link-rx"></block></block>
@@ -14425,4 +14413,25 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1e2cb5bcdb8947c91d9b70a1c5ee21c0" category="list-text">필요한 최소 ISL 속도는 플랫폼 모델에 따라 다릅니다.</block>
   <block id="fe25d0e834bbf213fee0bc910f4a7054" category="list-text">AFF A1K 및 AFF A90 시스템에서는 ISL 속도가 최소 100Gbps여야 합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 영업팀에 문의하세요.</block>
   <block id="9260215cd28aa0daaf49857a4307ca43" category="list-text">다른 모든 플랫폼에서는 ISL 속도가 최소 10Gbps여야 합니다.</block>
+  <block id="d1de43c2b2a882d5549ca6caea0cd796" category="paragraph"><block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
+  <block id="e91d78e049c73a532e8c4014365c7f0d" category="doc">MetroCluster Tiebreaker 소프트웨어 구성</block>
+  <block id="2369e844c90397a4181ffafd2f64be4a" category="section-title">Tiebreaker 소프트웨어 CLI를 실행합니다.</block>
+  <block id="157265493f45de2399bb80a595184137" category="section-title">수입증명서</block>
+  <block id="d300dfa20523cd7fb435a3f19eeaa42c" category="paragraph">Tiebreaker 1.6 이상에서 원활한 모니터링을 활성화하려면 ONTAP 에서 서버 SSL(Secure Sockets Layer) 인증서, 중간 인증서(있는 경우), 루트 인증서를 Java Virtual Machine(JVM)의 키 저장소로 가져와야 합니다.</block>
+  <block id="0516bb5d84f5cf404394a670c34b9a44" category="list-text">이 작업은 Tiebreaker 1.6 이상에서 필요합니다.</block>
+  <block id="f6484eb9f6332a380224c51c4ff965b5" category="list-text">Tiebreaker에 MetroCluster 구성을 성공적으로 추가한 후 또는 인증서가 만료된 경우 이 작업을 수행합니다.</block>
+  <block id="637b609978ba2d910c8867550742b9e9" category="list-text">가져와야 하는 각 인증서(SSL 서버, 중간 인증서 또는 루트 인증서)에 대해 다음 명령을 실행합니다.</block>
+  <block id="31a3f75f34ce843c2ab3b773d9072924" category="paragraph"><block ref="599a2d70deb4d0bbc781269687e6189f" prefix="" category="inline-code"></block></block>
+  <block id="ffcde617fee5d26e3005c8a089c3ecd6" category="list-text">그만큼<block ref="b8b954588c74798aed8b6a1a5c867bec" prefix=" " category="inline-code"></block> value는 가져오려는 인증서의 파일 이름을 지정합니다.</block>
+  <block id="eb2fdb57a4efd845d6aeb1d9d0f9042f" category="list-text">그만큼<block ref="1f4e0d0417f12bfdf15fa538de9f9f9a" prefix=" " category="inline-code"></block> value는 인증서를 JVM으로 가져온 후 저장할 이름을 지정합니다.</block>
+  <block id="61946575308b3d651099211c764d921e" category="paragraph">다음 예제에서는 파일 이름으로 루트 인증서를 가져오는 방법을 보여줍니다.<block ref="a62f7df2640c2a527e31c848f274ea05" prefix=" " category="inline-code"></block> 그리고 파일 이름이 포함된 SSL 서버 인증서<block ref="ca11bb462642b431904085550b5375b6" prefix=" " category="inline-code"></block>:</block>
+  <block id="7efb1ea0d372ab5c16aca840df49ca79" category="paragraph"><block ref="7efb1ea0d372ab5c16aca840df49ca79" category="inline-link-macro-rx"></block></block>
+  <block id="5659c81fbc5304275ab0c57df4fa5e4d" category="paragraph"><block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block></block>
+  <block id="a212e7395bb60258b12e96d4b25f0a25" category="paragraph"><block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_에서.</block>
+  <block id="67431d9e5972e3763ce39925ca6172fe" category="paragraph"><block ref="67431d9e5972e3763ce39925ca6172fe" category="inline-link-macro-rx"></block></block>
+  <block id="34e872e7651a932e20637ef1b9ef55f0" category="list-text">다음 단계를 사용하세요. <block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
+  <block id="c8e5fb4095abed5cb973a724e5e4cca7" category="paragraph"><block ref="67431d9e5972e3763ce39925ca6172fe" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성 콘텐츠_</block>
+  <block id="50579aa28b2b0ac01c180e6e07119273" category="paragraph"><block ref="50579aa28b2b0ac01c180e6e07119273" category="inline-link-macro-rx"></block></block>
+  <block id="9a1a464601bee502d12616aa9be06bb3" category="list-text"><block ref="d77847ddf2a5535e4974575f39191ae2" category="inline-link-macro-rx"></block> 타이브레이커 소프트웨어에서.</block>
+  <block id="ba13dd5c52c50f7bb5ef919e4d340c98" category="paragraph"><block ref="83029083d25b0153769c6039afb8beb5" category="inline-link-macro-rx"></block>.</block>
 </blocks>

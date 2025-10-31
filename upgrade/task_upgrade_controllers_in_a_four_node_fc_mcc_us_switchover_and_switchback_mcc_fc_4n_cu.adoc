@@ -521,7 +521,7 @@ dr-group-id cluster    node      node-systemid dr-partner-systemid
 .단계
 . Tiebreaker 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.
 +
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성을 제거합니다"]
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#remove-metrocluster-configurations["MetroCluster 구성을 제거합니다"]
 
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: installation, tiebreaker, software, add, modify, metrocluster, configuration, remove, configuring, configure, launch, cli, add, command, modify, removing 
 summary: Tiebreaker 소프트웨어를 설치한 후 MetroCluster 구성을 추가 또는 수정하거나 Tiebreaker 소프트웨어에서 제거할 수 있습니다. 
 ---
-= Tiebreaker 소프트웨어 구성
+= MetroCluster Tiebreaker 소프트웨어 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,7 +15,7 @@ Tiebreaker 소프트웨어를 설치한 후 MetroCluster 구성을 추가 또는
 
 
 
-== Tiebreaker 소프트웨어 CLI 시작
+== Tiebreaker 소프트웨어 CLI를 실행합니다.
 
 Tiebreaker 소프트웨어를 설치한 후 소프트웨어를 구성하려면 CLI를 시작해야 합니다.
 
@@ -78,6 +78,39 @@ Are you sure you want to enable automatic switchover capability for monitor "8pa
 
 .관련 정보
 link:concept_risks_and_limitation_of_using_mcc_tiebreaker_in_active_mode.html["활성 모드에서 MetroCluster Tiebreaker를 사용할 때의 위험 및 제한 사항"]
+
+
+
+== 수입증명서
+
+Tiebreaker 1.6 이상에서 원활한 모니터링을 활성화하려면 ONTAP 에서 서버 SSL(Secure Sockets Layer) 인증서, 중간 인증서(있는 경우), 루트 인증서를 Java Virtual Machine(JVM)의 키 저장소로 가져와야 합니다.
+
+.이 작업에 대해
+* 이 작업은 Tiebreaker 1.6 이상에서 필요합니다.
+* Tiebreaker에 MetroCluster 구성을 성공적으로 추가한 후 또는 인증서가 만료된 경우 이 작업을 수행합니다.
+
+
+.단계
+. 가져와야 하는 각 인증서(SSL 서버, 중간 인증서 또는 루트 인증서)에 대해 다음 명령을 실행합니다.
++
+`/opt/netapp/java/bin/keytool -import -trustcacerts -file <certificate_file_name> -keystore "/opt/netapp/java/lib/security/cacerts" -alias <certificate>`
+
++
+** 그만큼 `<certificate_file_name>` value는 가져오려는 인증서의 파일 이름을 지정합니다.
+** 그만큼 `-alias <certificate>` value는 인증서를 JVM으로 가져온 후 저장할 이름을 지정합니다.
++
+다음 예제에서는 파일 이름으로 루트 인증서를 가져오는 방법을 보여줍니다. `root.crt` 그리고 파일 이름이 포함된 SSL 서버 인증서 `ssl_cert.crt`:
+
++
+[listing]
+----
+/opt/netapp/java/bin/keytool -import -trustcacerts -file root.crt -keystore "/opt/netapp/java/lib/security/cacerts" -alias root
+
+/opt/netapp/java/bin/keytool -import -trustcacerts -file ssl_cert.crt -keystore "/opt/netapp/java/lib/security/cacerts" -alias ssl_cert
+----
+
+
+
 
 
 
@@ -180,7 +213,7 @@ update-mctb-password(업데이트-mctb-암호)
 |===
 
 
-== MetroCluster 구성을 제거하는 중입니다
+== MetroCluster 구성을 제거합니다
 
 MetroCluster 구성을 더 이상 모니터링하지 않으려는 경우 Tiebreaker 소프트웨어에서 모니터링하는 MetroCluster 구성을 제거할 수 있습니다.
 

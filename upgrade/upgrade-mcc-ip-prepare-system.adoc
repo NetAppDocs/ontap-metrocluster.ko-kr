@@ -679,7 +679,7 @@ dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-sy
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성 제거"]
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#remove-metrocluster-configurations["MetroCluster 구성 제거"]
 
 
 

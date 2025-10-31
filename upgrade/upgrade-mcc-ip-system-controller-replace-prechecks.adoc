@@ -303,7 +303,7 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
 
 .단계
-. link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["기존 MetroCluster 구성을 제거합니다"] Tiebreaker 소프트웨어
+. link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#remove-metrocluster-configurations["기존 MetroCluster 구성을 제거합니다"] 타이브레이커 소프트웨어에서.
 . 전환을 시작할 수 있는 타사 애플리케이션에서 기존 MetroCluster 구성을 제거합니다.
 +
 응용 프로그램 설명서를 참조하십시오.

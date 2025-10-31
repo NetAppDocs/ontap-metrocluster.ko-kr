@@ -382,7 +382,7 @@ dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-sy
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#removing-metrocluster-configurations["MetroCluster 구성 제거"] MetroCluster Tiebreaker 설치 및 구성 내용 _
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#remove-metrocluster-configurations["MetroCluster 구성 제거"] _MetroCluster Tiebreaker 설치 및 구성 콘텐츠_
 
 
 
@@ -1454,7 +1454,7 @@ MetroCluster 구성 업그레이드를 완료한 후 Tiebreaker 또는 중재자
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations["MetroCluster 구성 추가"] MetroCluster Tiebreaker 설치 및 구성_섹션에서
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#add-metrocluster-configurations["MetroCluster 구성 추가"] _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.
 
 
 

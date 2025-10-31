@@ -59,7 +59,7 @@ ONTAP 프롬프트에서 다음 명령을 실행합니다.
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#adding-metrocluster-configurations["MetroCluster 구성 추가"] MetroCluster Tiebreaker 설치 및 구성_섹션에서
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#add-metrocluster-configurations["MetroCluster 구성 추가"] _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.
 
 
 
