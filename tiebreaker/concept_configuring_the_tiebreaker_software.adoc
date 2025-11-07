@@ -110,6 +110,10 @@ Tiebreaker 1.6 이상에서 원활한 모니터링을 활성화하려면 ONTAP �
 ----
 
 
+. 타이브레이커 소프트웨어를 다시 시작하세요:
++
+`systemctl restart netapp-metrocluster-tiebreaker-software`
+
 
 
 

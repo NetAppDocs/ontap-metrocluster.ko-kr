@@ -223,6 +223,15 @@ Do you want to use this configuration? {yes, no} [yes]: yes
 
 
 . 이 단계를 반복하여 node_B_3-IP 및 node_B_4-IP를 cluster_B에 연결합니다
+. Onboard Key Manager를 사용하는 경우 새 노드를 추가한 클러스터에서 다음 단계를 수행하세요.
++
+.. 키 관리자 구성을 동기화합니다.
++
+보안 키매니저 온보드 동기화
+
+.. 메시지가 표시되면 Onboard Key Manager 암호를 입력하세요.
+
+
 
 
 

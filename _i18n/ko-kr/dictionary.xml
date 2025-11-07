@@ -7504,7 +7504,6 @@
   <block id="1a6ef31c02bc656e4fbac4327c5198d9" category="cell">중단 또는 무중단</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="cell">요구 사항</block>
   <block id="b8910962b1d031cc1eb8e8ad588c4c48" category="paragraph">무중단</block>
-  <block id="b1967383562a98a66ed0eff3ea640595" category="paragraph">새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.</block>
   <block id="5c85f685c62c106f7c5565f5f9efa724" category="paragraph">2개 노드</block>
   <block id="fb36a3d5cdf2e3b5ecef9b3c9fbab504" category="paragraph">성능</block>
   <block id="8377dec7f2f76b3e412145b87daa08da" category="paragraph">새로운 스토리지 쉘프는 원래 플랫폼과 새 플랫폼 모두에서 지원됩니다.</block>
@@ -10547,7 +10546,6 @@
   <block id="7bfd4ffe50f69a1805344bce9b252c81" category="section-title">전환 프로세스 워크플로우</block>
   <block id="feb6447b54e85b35757c82bf8e07abf7" category="summary">ONTAP 9.13.1 부터는 기존 8노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.</block>
   <block id="3d24a5eddf097cddc7e369398b35f959" category="paragraph">기존 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.</block>
-  <block id="31c4d6a80fe871ada10a219d5727c166" category="paragraph">ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.</block>
   <block id="1bf2c57ed29fc24c2ccb26dcba0c45be" category="list-text">이 절차는 4노드 및 8노드 MetroCluster FC 구성에만 적용됩니다.</block>
   <block id="99e6dcb4734e7eef8858b52e3c36d08c" category="list-text">이 절차에서는 4노드 FC DR 그룹 하나를 전환하는 데 필요한 단계를 설명합니다. 8노드 구성(FC DR 그룹 2개)이 있는 경우 각 FC DR 그룹에 대해 전체 절차를 반복해야 합니다.</block>
   <block id="7085ef0783c3069c714c62b941d51195" category="summary">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster IP 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다.</block>
@@ -13635,7 +13633,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="74d14036e96594d67869316b84c6d566" category="paragraph">CSHM 다운로드 패키지가 성공적으로 처리되었습니다.</block>
   <block id="89c6b3e5f896b8d329ae4e4fe91cc812" category="paragraph">오류가 발생하면 NetApp 지원 팀에 문의하십시오.</block>
   <block id="a6fd16052b19595c024aa4e5bcb0b366" category="list-text">[[step6]] 다음 단계를 완료하기 전에 를 실행하여 찾은 이더넷 스위치 상태 모니터 폴링 간격을 최대 2배까지 기다립니다<block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix=" " category="inline-code"></block>.</block>
-  <block id="c947c5faccdddd0a9a87be7895f50511" category="list-text">ONTAP 시스템에서 명령을<block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 실행하고 모니터링되는 필드가 * True * 로 설정되어 있고 일련 번호 필드가 * Unknown * 으로 표시되지 않는 상태에서 클러스터 스위치가 검색되는지 확인합니다.</block>
   <block id="d57382f230671f8cd52f47dc80838934" category="admonition">구성 파일을 적용한 후에도 모델에 * 기타 * 가 계속 표시되면 NetApp 지원에 문의하십시오.</block>
   <block id="58a19c530e54f6364edd838f35b1830e" category="inline-link-macro">스위치 상태 모니터링을 구성합니다</block>
   <block id="d47e3b820b4e0ef60cfed3bd03049a46" category="paragraph"><block ref="402ba92b413c133107b7e0b0a0255bc4" category="inline-link-macro-rx"></block>..</block>
@@ -14434,4 +14431,17 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="50579aa28b2b0ac01c180e6e07119273" category="paragraph"><block ref="50579aa28b2b0ac01c180e6e07119273" category="inline-link-macro-rx"></block></block>
   <block id="9a1a464601bee502d12616aa9be06bb3" category="list-text"><block ref="d77847ddf2a5535e4974575f39191ae2" category="inline-link-macro-rx"></block> 타이브레이커 소프트웨어에서.</block>
   <block id="ba13dd5c52c50f7bb5ef919e4d340c98" category="paragraph"><block ref="83029083d25b0153769c6039afb8beb5" category="inline-link-macro-rx"></block>.</block>
+  <block id="62633c6c7bc1e478b0c226fc706ce7d1" category="list-text">명령을 실행하세요<block ref="350d65f100fdbc8d411ce22a179f4b29" prefix=" " category="inline-code"></block> ONTAP 시스템에서 클러스터 스위치가 모니터링 필드가 *True*로 설정되어 있고 일련 번호 필드에 *Unknown*이 표시되지 않는지 확인합니다.</block>
+  <block id="f53c5f8d2c3b0e3b1854e0c8f280aac0" category="list-text">타이브레이커 소프트웨어를 다시 시작하세요:</block>
+  <block id="3b879e464448b1abbc76cb49a3e48f67" category="paragraph"><block ref="5c46787eed9475e8e2a2351216605e90" prefix="" category="inline-code"></block></block>
+  <block id="f4c717f63bbf7bf7a91d2fde6f9051f1" category="paragraph">새로운 플랫폼에는 새로운 보관 선반이 필요합니다.  전환이 완료되면 이전 컨트롤러, 셸프 및 디스크가 클러스터에서 제거됩니다.</block>
+  <block id="0c6fc3d80e5d75918b6f2d338a395bfe" category="paragraph">*참고:* 이 절차는 다음 FC에서 IP로의 전환을 지원합니다.</block>
+  <block id="b9a67b79bf8805e04026764220f5644c" category="list-text">4노드 MetroCluster FC 구성에서 4노드 MetroCluster IP 구성으로</block>
+  <block id="b5c21ffa00510d1334f85119eb48a645" category="list-text">8노드 MetroCluster FC 구성에서 8노드 MetroCluster IP 구성으로</block>
+  <block id="7a2504e84fd0f2574207d002a4e82d9a" category="paragraph">ONTAP 9.13.1부터 기존 8노드 MetroCluster FC 구성에서 새로운 8노드 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.  이 절차를 사용하여 4노드 FC DR 그룹 하나를 전환하고, 빈 FC DR 그룹을 제거한 다음, 두 번째 FC DR 그룹에 대해 절차를 반복합니다. </block>
+  <block id="e59a63f4705f92f189efd0bae23c593c" category="paragraph">ONTAP 9.8부터 기존 4노드 MetroCluster FC 구성에서 새로운 4노드 MetroCluster IP 구성으로 워크로드와 데이터를 중단 없이 전환할 수 있습니다.  전환을 완료한 후 필요한 경우 8노드 MetroCluster IP 구성으로 확장할 수 있습니다. 보다<block ref="3a5645d9f79878fa2875b4b5fe2e8c9e" category="inline-link-macro-rx"></block> .</block>
+  <block id="584e8e12c74fdc178c6cb5a7049fb874" category="admonition">이 절차의 일부로 DR 그룹을 추가하거나 제거하는 경우 다른 DR 그룹을 추가하거나 제거하기 전에 DR 그룹 제거 또는 추가가 성공적으로 완료되었는지 확인해야 합니다.</block>
+  <block id="d134f3e8bbc2dfac90ce02f2d628c649" category="list-text">Onboard Key Manager를 사용하는 경우 새 노드를 추가한 클러스터에서 다음 단계를 수행하세요.</block>
+  <block id="87f7e23221d5cdfbe745a1b00fcf1068" category="list-text">키 관리자 구성을 동기화합니다.</block>
+  <block id="65ce095af1b3ce283b41ed1ff6456ed9" category="list-text">메시지가 표시되면 Onboard Key Manager 암호를 입력하세요.</block>
 </blocks>

@@ -113,9 +113,15 @@ image:../media/transition-combinations-group-2.png["에는 그룹 2 플랫폼에
  a| 
 무중단
  a| 
-새로운 스토리지 쉘프가 새로운 플랫폼에서 지원됩니다.
+새로운 플랫폼에는 새로운 보관 선반이 필요합니다.  전환이 완료되면 이전 컨트롤러, 셸프 및 디스크가 클러스터에서 제거됩니다.
  a| 
 link:concept_nondisruptively_transitioning_from_a_four_node_mcc_fc_to_a_mcc_ip_configuration.html["절차 링크"]
+
+*참고:* 이 절차는 다음 FC에서 IP로의 전환을 지원합니다.
+
+* 4노드 MetroCluster FC 구성에서 4노드 MetroCluster IP 구성으로
+* 8노드 MetroCluster FC 구성에서 8노드 MetroCluster IP 구성으로
+
 
 
 
