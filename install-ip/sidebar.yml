@@ -5,6 +5,7 @@ entries:
 - title: 개요
   url: "/install-ip/index.html"
 - title: MetroCluster 설치를 준비합니다
+  pdf-filename: MetroCluster IP 설치 준비
   entries:
   - title: ONTAP MetroCluster 구성의 차이점
     url: "/install-ip/concept_considerations_differences.html"
@@ -136,7 +137,7 @@ entries:
   entries:
   - title: ONTAP Mediator 설치 준비
     url: "/install-ip/concept_mediator_requirements.html"
-  - title: MetroCluster IP 구성에서 ONTAP Mediator 구성
+  - title: MetroCluster IP 구성을 위한 ONTAP Mediator 구성
     url: "/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html"
   - title: MetroCluster IP 구성에서 ONTAP Mediator 구성 해제
     url: "/install-ip/task_remove_unconfigure_mediator.html"

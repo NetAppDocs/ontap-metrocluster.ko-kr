@@ -11,7 +11,7 @@ summary: ONTAP Mediator는 MetroCluster IP 구성에서 사용하려면 ONTAP �
 
 
 [role="lead"]
-ONTAP Mediator는 MetroCluster IP 구성에서 사용하려면 ONTAP 노드에 구성되어야 합니다.
+MetroCluster IP 구성에서 사용하려면 ONTAP 노드에서 ONTAP Mediator를 구성해야 합니다.
 
 .시작하기 전에
 * ONTAP Mediator는 MetroCluster 사이트 둘 다에서 접근할 수 있는 네트워크 위치에 성공적으로 설치되어야 합니다.
@@ -29,18 +29,54 @@ CAUTION: ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강
 .이 작업에 대해
 * 이 작업은 기본적으로 예상치 못한 자동 전환을 활성화합니다.
 * 이 작업은 MetroCluster IP 구성에 있는 노드의 ONTAP 인터페이스에서 수행할 수 있습니다.
-* ONTAP Mediator를 한 번 설치하면 최대 5개의 MetroCluster IP 구성을 구성할 수 있습니다.
+* ONTAP 9.18.1 및 ONTAP Mediator 1.11부터 단일 ONTAP Mediator 인스턴스가 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다.  이전 릴리스에서는 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있었습니다.
 
 
 .단계
-. ONTAP에 ONTAP Mediator 추가:
+. ONTAP 에 ONTAP Mediator를 추가합니다.  단계는 IPv4 주소를 사용할지 IPv6 주소를 사용할지에 따라 달라집니다.
 +
-'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'
+[NOTE]
+====
+** IPv6를 사용하려면 ONTAP 9.18.1 이상 및 ONTAP Mediator 1.11 이상을 실행해야 합니다.
+** 클러스터에서 IPv6를 활성화하면 나중에 비활성화할 수 없습니다.
+
+
+====
++
+[role="tabbed-block"]
+====
+.IPv4 사용
+--
+.. 다음 명령을 실행하여 ONTAP Mediator를 추가합니다.
++
+`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ip_address>`
 
 +
 
-NOTE: 중재자 관리자 사용자 계정의 사용자 이름과 암호를 묻는 메시지가 표시됩니다.
+NOTE: Mediator 관리자 계정의 사용자 이름과 비밀번호를 입력하라는 메시지가 표시됩니다.
 
+
+
+--
+.IPv6 사용
+--
+.. 두 클러스터에서 다음 명령을 실행합니다.
++
+`network options ipv6 modify -enabled true`
+
+.. 4개 노드 모두에서 IPv6 주소를 사용하여 node-mgmt IP 주소를 구성합니다.
+.. ONTAP 중재자를 추가합니다.
++
+`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ipv6_ip_address>`
+
++
+
+NOTE: Mediator 관리자 계정의 사용자 이름과 비밀번호를 입력하라는 메시지가 표시됩니다.
+
+
+
+--
+====
 . 자동 전환 기능이 활성화되어 있는지 확인합니다.
 +
 MetroCluster 쇼

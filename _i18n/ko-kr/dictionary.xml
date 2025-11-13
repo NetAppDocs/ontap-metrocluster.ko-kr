@@ -561,7 +561,6 @@
   <block id="5213788f29292b96ef1a650e5fce6938" category="list-text">이 작업은 기본적으로 예상치 못한 자동 전환을 활성화합니다.</block>
   <block id="ada003c5d7b06ea1b392045334928823" category="list-text">이 작업은 MetroCluster IP 구성에 있는 노드의 ONTAP 인터페이스에서 수행할 수 있습니다.</block>
   <block id="f8dc7177731310562718d80a3440fa9d" category="paragraph">'MetroCluster configuration-settings 중재자 add-중재자-address_ip-address-of-중재자-host_'</block>
-  <block id="1645e08f0bfdf72de9dd9cf2ec8208de" category="admonition">중재자 관리자 사용자 계정의 사용자 이름과 암호를 묻는 메시지가 표시됩니다.</block>
   <block id="43b1490f27c278cc1257cf8b95b331a9" category="paragraph">MetroCluster 쇼</block>
   <block id="5c0eb063c7de9ced4fcf06367dc8cf49" category="list-text">중재자가 실행되고 있는지 확인합니다.</block>
   <block id="241c04bf46a427ee9559a37db9cfc64c" category="list-text">중재자 가상 디스크를 표시합니다.</block>
@@ -667,7 +666,6 @@
   <block id="7b1967ab8b38aa7f5c2c50d91fb6d616" category="section-title">MetroCluster IP 구성의 시스템별 ADP 및 디스크 할당 차이</block>
   <block id="a9a5083f94ce7d550f0b47f6cc2c908f" category="paragraph">MetroCluster IP 구성에서 ADP(고급 드라이브 파티셔닝) 및 자동 디스크 할당의 작동은 시스템 모델에 따라 다릅니다.</block>
   <block id="d28feffd6ede91f566713f192c5dfd64" category="admonition">ADP를 사용하는 시스템에서는 각 드라이브가 P1, P2, P3 파티션으로 분할되는 파티션을 사용하여 애그리게이트를 생성합니다. 루트 애그리게이트는 P3 파티션을 사용하여 생성됩니다.</block>
-  <block id="bfaf3f06462f8d34cf668e3270ad1d65" category="paragraph">지원되는 최대 드라이브 수 및 기타 지침에 대해서는 MetroCluster 제한을 충족해야 합니다.</block>
   <block id="81c8a8438f05c7253ddb8e89ac70d5d9" category="section-title">AFF A320 시스템의 ADP 및 디스크 할당</block>
   <block id="a3928106022ce5ea0abce2ce87ea7487" category="cell">지침</block>
   <block id="d466ded16012c3dc3fc619cdfe020258" category="cell">사이트당 드라이브 수</block>
@@ -10020,7 +10018,6 @@
   <block id="d4fda9bf787c3a38a379763f5d621600" category="paragraph">각 사이트와 ONTAP 중재자 간의 독립적인 연결이 필요합니다. 한 사이트의 장애가 다른 두 개의 영향을 받지 않는 사이트 간의 IP 연결을 중단해서는 안 됩니다.</block>
   <block id="fec21bcdc858f42f1c942fd943d09de4" category="paragraph">구성이 여러 호스트 요구 사항을 충족하는지 확인해야 합니다.</block>
   <block id="aecf60a0046b893cbed6332405eb3aa3" category="list-text">ONTAP 중재자는 두 ONTAP 클러스터와 물리적으로 분리된 외부 사이트에 설치해야 합니다.</block>
-  <block id="6f044e53b0f973c21b9f45e9f29dd890" category="list-text">ONTAP 중재자가 최대 5개의 MetroCluster 구성을 지원합니다.</block>
   <block id="00dcc4021e9b5b5c4107ab832d8a3b22" category="list-text">ONTAP 중재자의 경우 CPU 및 메모리(RAM)에 대한 호스트 운영 체제의 최소 요구 사항보다 더 많은 작업이 필요하지 않습니다.</block>
   <block id="3238177a17500506d8e25597811d95a1" category="list-text">호스트 운영 체제의 최소 요구 사항 외에 최소 30GB의 추가 가용 디스크 공간을 사용할 수 있어야 합니다.</block>
   <block id="d87323d7c443195bdfe43686953d17da" category="list-text">각 DR 그룹에는 최대 200MB의 디스크 공간이 필요합니다.</block>
@@ -10964,7 +10961,6 @@
   <block id="fdf5e2eb479f201de0c9c62e9a32e769" category="paragraph">기본 브로드캐스트 도메인 없이 기존 클러스터에 새 노드를 추가할 경우, 예상 이름 대신 UUID(Universal Unique Identifier)를 사용하여 새 노드에 대한 노드 관리 LIF가 생성됩니다. 자세한 내용은 기술 자료 문서를 참조하십시오<block ref="4808e3ddae1b3b2c14dc148b67bd36ea" category="inline-link-rx"></block>.</block>
   <block id="f6410291c32fa961402f5a821c332f6c" category="list-text">플랫폼 혼합에 대해 기존 플랫폼 모델과 새 플랫폼 모델이 지원되는지 확인합니다.</block>
   <block id="e220a628f1c5f8fb65824aaeb387520e" category="list-text">이전 플랫폼 모델과 새 플랫폼 모델이 모두 IP 스위치에서 지원되는지 확인합니다.</block>
-  <block id="72a38a5af8be1c706e478add3356ba90" category="paragraph">MetroCluster IP 구성과 함께 ADP를 사용할 때는 다음 사항을 고려해야 합니다.</block>
   <block id="959bb45d9851a2b3efaeb05db74e0a80" category="list-text">ADPv2는 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="a393732e5defe7b7a921a586e53ec51d" category="list-text">루트 애그리게이트는 두 사이트의 모든 노드에 대해 파티션 3에 위치해야 합니다.</block>
   <block id="9ef6aecb7d030435d81fe80cacca477e" category="list-text">파티셔닝과 디스크 할당은 MetroCluster 사이트의 초기 구성 중에 자동으로 수행됩니다.</block>
@@ -11657,8 +11653,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6165c4352e1504dbaeef34d0cc50c187" category="paragraph">정합성 보장 그룹</block>
   <block id="3fb697436dcc4f2ae2cdd29dc91fd043" category="paragraph">정합성 보장 그룹은 MetroCluster 구성에서 지원됩니다.</block>
   <block id="47d81ac708cab22da7ea952550b6f757" category="summary">ONTAP 중재자의 새로운 기능은 각 릴리스에 제공됩니다.  새로운 기능</block>
-  <block id="3261bd656e2112e78b0313c87c039420" category="doc">ONTAP 중재자 지원의 새로운 기능</block>
-  <block id="e8467e9b509c4924668c01eb7ab2adde" category="cell">ONTAP 버전</block>
   <block id="63b6c1d0d10ce89604932c62d9b6f4d7" category="doc">MetroCluster의 새로운 기능</block>
   <block id="3100460fa3d7ba2ea001abefda93f3bc" category="cell">설명 및 자세한 내용</block>
   <block id="677eca4ee8daca8d2b9156735c70729b" category="paragraph">MetroCluster IP 및 이더넷 연결 스토리지의 공유 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP로 전환합니다</block>
@@ -13205,7 +13199,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d98545518df18c073a4a75d72759ddfe" category="list-text">소스 또는 대상이 MetroCluster 클러스터인 경우 FabricPool에서 SVM 마이그레이션이 지원되지 않습니다.</block>
   <block id="de60962ea114e8e20b41343aa7431cbf" category="inline-link-macro">SVM 데이터 이동성에 대해 자세히 알아보십시오</block>
   <block id="cb692d9778a8fa1464d6b442ab90722f" category="paragraph"><block ref="53c488ccbc80272b509e45a126fd033b" category="inline-link-macro-rx"></block>..</block>
-  <block id="b4911e786bbd878f489a84835fcee570" category="list-text">IPv6는 ONTAP 중재자에서 지원되지 않습니다.</block>
   <block id="d247a27201590148c4ea6bf493729fd1" category="list-text">22/TCP 포트는 정상 작동에는 필요하지 않지만 유지보수를 위해 일시적으로 사용하도록 설정하고 유지보수 세션이 끝나면 사용하지 않도록 설정할 수 있습니다.</block>
   <block id="02674a4ef33e11c879283629996c8ff8" category="cell">방향</block>
   <block id="c5df47f9068f6d11f238ec77908abf18" category="paragraph">22/TCP</block>
@@ -13484,7 +13477,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a02702c70aea42098864f08e7416a2d3" category="list-text">Linux 버전을 업데이트할 계획이라면 ONTAP Mediator의 최신 버전을 설치하기 전에 업데이트하세요.</block>
   <block id="c53d5657445f71b92e34d86103a86f85" category="list-text">ONTAP Mediator와 MetroCluster Tiebreaker 소프트웨어는 동일한 MetroCluster 구성과 함께 사용할 수 없습니다.</block>
   <block id="059b37c83fb6387899a2deb16d02458f" category="list-text">ONTAP Mediator는 MetroCluster 사이트와 별도의 위치에 있는 Linux 호스트에 설치해야 합니다.</block>
-  <block id="857725e43c3ed86c03193f33f6382417" category="list-text">ONTAP Mediator는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
   <block id="c9ffad835642fcae631d9df1be00fc38" category="section-title">MetroCluster 구성에서 ONTAP Mediator를 사용하기 위한 네트워크 요구 사항</block>
   <block id="4f7415d27a43620353acfcd34858e996" category="paragraph">MetroCluster 구성에 ONTAP Mediator를 설치하려면 해당 구성이 여러 네트워크 요구 사항을 충족하는지 확인해야 합니다.</block>
   <block id="f96926f4c01d2573af8b25445cc69961" category="paragraph">ONTAP Mediator와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역폭을 가져야 합니다.</block>
@@ -13650,8 +13642,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c9c78db1df5763fa1ed9a33d8364ecd6" category="list-text">ONTAP Mediator는 MetroCluster 사이트 둘 다에서 접근할 수 있는 네트워크 위치에 성공적으로 설치되어야 합니다.</block>
   <block id="f3a4ed516d3573c05bec448b098ee829" category="list-text">ONTAP Mediator를 실행하는 호스트의 IP 주소가 있어야 합니다.</block>
   <block id="81526f6b8e9033c7824d444ad8950ae4" category="list-text">ONTAP Mediator에 대한 사용자 이름과 비밀번호가 있어야 합니다.</block>
-  <block id="c69fdc77c5b94d40ff8bd9d1129290c3" category="list-text">ONTAP Mediator를 한 번 설치하면 최대 5개의 MetroCluster IP 구성을 구성할 수 있습니다.</block>
-  <block id="5954e0574dae3d22be232db113f0f328" category="list-text">ONTAP에 ONTAP Mediator 추가:</block>
   <block id="fffcc6d8d0cf061a4a3bb3e984bed6a4" category="summary">MetroCluster IP 구성에서 ONTAP 중재자를 제거할 수 있습니다.</block>
   <block id="7f0eed44b544654d8519a5ce7f8a8e69" category="doc">MetroCluster IP 구성에서 ONTAP Mediator 구성 해제</block>
   <block id="0ca0841611aff3d2fa5059343e27e7fa" category="paragraph">MetroCluster IP 구성에서 ONTAP Mediator의 구성을 해제할 수 있습니다.</block>
@@ -13674,8 +13664,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="11e389769edd0ffd96bc52520e736666" category="paragraph">네트워크에서 두 스위치의 이름을 모두 바꾸는 경우 각 스위치에서 동일한 명령을 사용하세요.</block>
   <block id="daf179095240111942b292cddbac4271" category="list-text">관리자 비밀번호와 HTTP, FTP 또는 TFTP(Trivial File Transfer Protocol) 서버에 대한 액세스 권한이 필요합니다.</block>
   <block id="dfd2868dd5a4b44891e23870faf6ecda" category="list-text"><block ref="dfd2868dd5a4b44891e23870faf6ecda" category="inline-link-macro-rx"></block></block>
-  <block id="54485326fb6c0b4a273ca75c003d6a9d" category="paragraph">ONTAP Mediator는 각 릴리스마다 새로운 기능 향상을 제공합니다. 새로운 기능</block>
-  <block id="0294813eff3958ef43f353e390bb4729" category="paragraph">MetroCluster 구성에서 ONTAP Mediator를 설치하거나 업그레이드하는 방법에 대한 자세한 내용은 다음을 참조하세요. <block ref="f7ab7b3d6222d761ab5a933510823b89" category="inline-link-macro-rx"></block> .</block>
   <block id="3114aeea55539bf595af1665b8572d3a" category="paragraph"><block ref="3114aeea55539bf595af1665b8572d3a" category="inline-link-rx"></block></block>
   <block id="f818e428c62e3fad315884b1e49da0dc" category="paragraph">MetroCluster IP 구성에서 ONTAP Mediator에 대한 초기 지원</block>
   <block id="8fa6539999f2d3aff134c30600c80e41" category="inline-link-macro">NVIDIA RCF 파일을 다운로드하고 설치합니다</block>
@@ -13714,7 +13702,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0eaedccc418ca7fe214ff0e2f2fb9d4f" category="sidebar">MetroCluster IP 스위치에서 로그 수집 구성</block>
   <block id="fa19a8bee183bfbc767660e140eae8dc" category="sidebar">이더넷 스위치 모니터링 관리</block>
   <block id="eb781ca5db4579a64062bcf161d91cbe" category="sidebar">이더넷 스위치 모니터링 확인</block>
-  <block id="3ef38a7332e8a3a92f8540dfdb80708d" category="sidebar">MetroCluster IP 구성에서 ONTAP Mediator 구성</block>
   <block id="84e085c408a358fe4e512066e45c3837" category="sidebar">System Manger를 사용하여 ONTAP Mediator 관리</block>
   <block id="d2dfa94f0ec6119f137b05b65f72b726" category="open-title">플렉스가 실패하는 경우:</block>
   <block id="a3d50ad07bbec0a08b055954bb66cfcb" category="list-text">실패한 플렉스를 파괴하세요:</block>
@@ -14113,7 +14100,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="dbbd0d3a920fcce3e934fa0740097c19" category="doc">MetroCluster IP 구성의 ISL(Inter-Switch Links)에 대한 요구 사항</block>
   <block id="e7a6b008ef2ebf568f593e71d5f62762" category="doc">MetroCluster IP 구성에서 ONTAP 노드 및 클러스터 설정</block>
   <block id="c6929b82d09d520230d3410f013a4beb" category="doc">ONTAP MetroCluster 구성 지원 매트릭스</block>
-  <block id="26e7329446b9653c1afcd63d2340cfbf" category="doc">자동 드라이브 할당 및 ADP 시스템에 대한 MetroCluster IP 고려 사항</block>
   <block id="a2e3b015ada3007372f3890d911b3685" category="doc">MetroCluster IP 구성을 위한 방화벽 포트 요구 사항</block>
   <block id="1bcaecfd01f4e5a2ce59bf09e79ab95f" category="doc">MetroCluster IP 구성에서 가상 IP 및 Border Gateway Protocol을 사용하는 방법에 대해 알아보세요.</block>
   <block id="75ab17da123365d00f2ec499305169d8" category="doc">원격 스토리지 및 MetroCluster IP 구성에 대해 알아보세요</block>
@@ -14444,4 +14430,55 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d134f3e8bbc2dfac90ce02f2d628c649" category="list-text">Onboard Key Manager를 사용하는 경우 새 노드를 추가한 클러스터에서 다음 단계를 수행하세요.</block>
   <block id="87f7e23221d5cdfbe745a1b00fcf1068" category="list-text">키 관리자 구성을 동기화합니다.</block>
   <block id="65ce095af1b3ce283b41ed1ff6456ed9" category="list-text">메시지가 표시되면 Onboard Key Manager 암호를 입력하세요.</block>
+  <block id="2105de6863814cadf13f4a5adf30bcf8" category="doc">자동 드라이브 할당 및 ADP 시스템에 대한 MetroCluster IP 요구 사항</block>
+  <block id="8407092afa5cdc22ea9a94ffac556a37" category="paragraph">MetroCluster IP 구성에서 ADP를 사용할 때 다음 사항을 알고 있어야 합니다.</block>
+  <block id="a88e04c5993ff7e8b685db2d115453a3" category="paragraph">표를 사용하기 전에 다음 요구 사항을 검토하세요.</block>
+  <block id="28b8efa498ff52a7274720a8171ce1d8" category="list-text">지원되는 드라이브의 최대 수와 기타 지침에 대한 MetroCluster 제한을 충족해야 합니다. 를 참조하세요<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block> .</block>
+  <block id="d13c49a2255fa0364f3eb44e91f11a98" category="inline-link-macro">디스크에서 ONTAP 소유권 제거</block>
+  <block id="207c7128f49aebfb0e6e2a985d7331f7" category="list-text">외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다<block ref="472eb82215883a6679f6be68392349e7" category="inline-link-macro-rx"></block> .</block>
+  <block id="2c3b5a5bcad371b696f81fddf09453f4" category="section-title">Flash Cache를 사용하는 FAS50 시스템의 디스크 할당</block>
+  <block id="10d1ab0c8cf052d4ea0d37de04e41090" category="paragraph">ONTAP 9.18.1부터 Flash Cache는 MetroCluster IP 구성을 위한 FAS50 시스템에서 지원됩니다.</block>
+  <block id="6b3168d94d2d3e334f52748aea390dba" category="list-text">내부 선반에 Flash Cache 드라이브가 있는 경우 데이터 집계와 루트 집계를 모두 가질 수 없습니다.</block>
+  <block id="653607d5d7d3af18614ca6042833ed8a" category="list-text">슬롯 0과 23은 플래시 캐시 드라이브에 사용됩니다.</block>
+  <block id="8e61d02677cd63addf1b7c325e4f7ac0" category="list-text">외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다<block ref="a28575c3c82c68e34920359e77fd18f4" category="inline-link-macro-rx"></block> .</block>
+  <block id="da0670d9828b0c4a39fd70e8176cd286" category="paragraph">36개 드라이브(12개 내부 드라이브 및 24개 외부 드라이브 - 외부 셸프에 데이터 집계, 내부 셸프에 루트 집계)</block>
+  <block id="13825b1621d2d8ab9420fd458a556917" category="paragraph">내부 드라이브는 4개의 동일한 그룹(4분의 1)으로 나뉩니다.  각 분기는 자동으로 별도의 풀에 할당됩니다.  외부 선반의 드라이브는 4개의 동일한 그룹(4분의 1)으로 나뉩니다.  각 4분의 1 선반은 자동으로 별도의 풀에 할당됩니다.</block>
+  <block id="fcbd19b726fdd6160dfe2ab43f285a55" category="paragraph">*참고사항:*</block>
+  <block id="db7a2b68018b688d638484b17a61fde8" category="list-text">내부 및 외부 드라이브를 사용하는 경우 먼저 ONTAP 설치하고 내부 드라이브만으로 로컬 클러스터를 구성해야 합니다.  설치나 설정 작업을 완료한 후 외부 선반을 수동으로 연결합니다.</block>
+  <block id="f1839293460380c463f11487c07a0a03" category="list-text">루트 집계에는 최소 12개의 내부 드라이브가 필요합니다.  슬롯 1에 루트 내부 드라이브를 배치해야 합니다.  예를 들어, 내부 드라이브가 12개인 경우 슬롯 1-3, 6-8, 12-14, 18-20을 사용합니다.</block>
+  <block id="ebe553e3b0c5ac8c6b06cd6914cd1875" category="paragraph">24개의 외부 드라이브</block>
+  <block id="8fe5d17841821de914d5209eef34ab37" category="list-text">ONTAP 9.18.1 및 ONTAP Mediator 1.11부터 단일 ONTAP Mediator 인스턴스가 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다.  이전 릴리스에서는 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있었습니다.</block>
+  <block id="ed0eda41e396ef5ea6f36bac23db4825" category="list-text">ONTAP 9.18.1부터 MetroCluster IP 구성에서 ONTAP Mediator 1.11 이상에 대해 IPv6가 지원됩니다.</block>
+  <block id="760ee33a4b5ef0f8b6e53de05243e44d" category="paragraph">MetroCluster IP 구성에서 사용하려면 ONTAP 노드에서 ONTAP Mediator를 구성해야 합니다.</block>
+  <block id="f0fe71516e304fd8465b87447ccb2410" category="list-text">ONTAP 에 ONTAP Mediator를 추가합니다.  단계는 IPv4 주소를 사용할지 IPv6 주소를 사용할지에 따라 달라집니다.</block>
+  <block id="2123705c6998ca910a5e950a54dcbe12" category="list-text">IPv6를 사용하려면 ONTAP 9.18.1 이상 및 ONTAP Mediator 1.11 이상을 실행해야 합니다.</block>
+  <block id="fa66e734e4c55bd261d853e5039fbe1f" category="list-text">클러스터에서 IPv6를 활성화하면 나중에 비활성화할 수 없습니다.</block>
+  <block id="3b84df93f9af27f6e1ffc9a619bab72d" category="open-title">IPv4 사용</block>
+  <block id="a1c25aeecadb66052deb23e0403a5921" category="list-text">다음 명령을 실행하여 ONTAP Mediator를 추가합니다.</block>
+  <block id="43af59b9fd4e41413d9a6f0348be897c" category="paragraph"><block ref="d795c90e620cf7aa453d5e920147531a" prefix="" category="inline-code"></block></block>
+  <block id="6abf1e89985863ce5f318d51791232d7" category="admonition">Mediator 관리자 계정의 사용자 이름과 비밀번호를 입력하라는 메시지가 표시됩니다.</block>
+  <block id="5be30efa94af9b795d71ee2d7b145d2b" category="open-title">IPv6 사용</block>
+  <block id="612061c2bc2a413707af3751bd332876" category="list-text">두 클러스터에서 다음 명령을 실행합니다.</block>
+  <block id="d957a10f1dd8c769f317478657c276ae" category="paragraph"><block ref="a9f92466cd774c45f91bfd0c0a18c08e" prefix="" category="inline-code"></block></block>
+  <block id="36aef5098db9d54c0f3f8908f76cf3f9" category="list-text">4개 노드 모두에서 IPv6 주소를 사용하여 node-mgmt IP 주소를 구성합니다.</block>
+  <block id="a5ae27866152c64d13caa7491b407c4f" category="list-text">ONTAP 중재자를 추가합니다.</block>
+  <block id="3bd8e4fdfb5d625cdaa4c9ff27e8ce16" category="paragraph"><block ref="26623cc20cef21441276d0bbf177cf0e" prefix="" category="inline-code"></block></block>
+  <block id="6ed3fcc536a033a1e0dbf1249734de16" category="paragraph">MetroCluster FC 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.</block>
+  <block id="29a236ce865da06e20bbbd8ea0ab52a7" category="doc">MetroCluster 에 대한 ONTAP Mediator 지원의 새로운 기능</block>
+  <block id="5bf7798853f8a5c7ca4569ca703439aa" category="paragraph">ONTAP Mediator 지원을 위한 새로운 MetroCluster 기능과 향상된 기능에 대해 알아보세요.</block>
+  <block id="7f29812fdda9b63b5432343e48888f3e" category="inline-link-macro">ONTAP Mediator의 새로운 기능</block>
+  <block id="ddb6a6aeab3697bf98a9f8ec6246d66d" category="paragraph">ONTAP Mediator의 각 릴리스에 대한 기능 및 향상된 기능에 대한 자세한 내용은 다음을 참조하세요.<block ref="e9f46c418b00d5917fe7eb2e94490962" category="inline-link-macro-rx"></block> .</block>
+  <block id="0812efe70fdb78c8000d6ba26954775e" category="paragraph">IPv6는 MetroCluster IP 구성의 ONTAP Mediator 1.11 이상에서 지원됩니다.</block>
+  <block id="f2048d473088527114dc19a006677413" category="paragraph"><block ref="f2048d473088527114dc19a006677413" category="inline-link-macro-rx"></block></block>
+  <block id="e48e73e576f724fd4213ab1eca7edb4a" category="paragraph">ONTAP 9.18.1</block>
+  <block id="9e56101ef16e61af6d774b1081c9574f" category="paragraph">ONTAP Mediator 1.11에서는 단일 ONTAP Mediator 인스턴스를 사용하여 최대 10개의 MetroCluster IP 구성을 관리할 수 있는 지원 기능이 추가되었습니다.</block>
+  <block id="6cd038268950ad67448da19d251b8b00" category="inline-link-macro">MetroCluster IP 구성에 ONTAP Mediator를 설치할 준비를 합니다.</block>
+  <block id="1089521b875f07ae57f1135eb98b2377" category="paragraph"><block ref="1089521b875f07ae57f1135eb98b2377" category="inline-link-macro-rx"></block></block>
+  <block id="112400235efe61457dd84a5025980501" category="paragraph">MetroCluster IP 구성의 FAS50 시스템에 대한 Flash Cache 지원</block>
+  <block id="d29d70f24544dd96e722beaa46df1aab" category="paragraph">Flash Cache는 MetroCluster IP 구성의 FAS50 시스템에서 지원됩니다.</block>
+  <block id="05d0c37c094748aa6cfa52ca49f7fc2a" category="paragraph"><block ref="05d0c37c094748aa6cfa52ca49f7fc2a" category="inline-link-macro-rx"></block></block>
+  <block id="cef6c5c1ddb810d5c9674f38a9521196" category="sidebar">MetroCluster FC 설치 준비</block>
+  <block id="163074dbb0b4f8b495d1b19b615e87eb" category="sidebar">MetroCluster IP 설치 준비</block>
+  <block id="42f362146dbe8748970967efe562f3c8" category="sidebar">MetroCluster IP 구성을 위한 ONTAP Mediator 구성</block>
+  <block id="9ac9cffddfe08e79e2955f5af452fef4" category="sidebar">MetroCluster 스트레치 설치 준비</block>
 </blocks>

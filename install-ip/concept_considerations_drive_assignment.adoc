@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: drive auto-assignment, drive, adp, advanced disk partitioning, root disk, unmirrored root, data partition, root partition, shelf-by-shelf, AFF A320, AFF A220, AFF A250, C250, AFF A300, AFF A400, C400, AFF A700, AFF A800, FAS2750, FAS8200, FAS500f, FAS9000 
 summary: 'ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파티셔닝)를 사용하는 AFF 시스템에 새로 설치할 수 있습니다.' 
 ---
-= 자동 드라이브 할당 및 ADP 시스템에 대한 MetroCluster IP 고려 사항
+= 자동 드라이브 할당 및 ADP 시스템에 대한 MetroCluster IP 요구 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 'ONTAP 9.4부터 MetroCluster IP 구성은 ADP(고급 드라이브 파�
 [role="lead"]
 ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 및 ADP(고급 드라이브 파티셔닝)를 사용하여 새로운 설치를 지원합니다.
 
-MetroCluster IP 구성과 함께 ADP를 사용할 때는 다음 사항을 고려해야 합니다.
+MetroCluster IP 구성에서 ADP를 사용할 때 다음 사항을 알고 있어야 합니다.
 
 * AFF 및 ASA 시스템에서 ADP를 MetroCluster IP 구성과 함께 사용하려면 ONTAP 9.4 이상이 필요합니다.
 * ADPv2는 MetroCluster IP 구성에서 지원됩니다.
@@ -238,9 +238,11 @@ MetroCluster IP 구성에서 ADP(고급 드라이브 파티셔닝) 및 자동 �
 
 NOTE: ADP를 사용하는 시스템에서는 각 드라이브가 P1, P2, P3 파티션으로 분할되는 파티션을 사용하여 애그리게이트를 생성합니다. 루트 애그리게이트는 P3 파티션을 사용하여 생성됩니다.
 
-지원되는 최대 드라이브 수 및 기타 지침에 대해서는 MetroCluster 제한을 충족해야 합니다.
+표를 사용하기 전에 다음 요구 사항을 검토하세요.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+* 지원되는 드라이브의 최대 수와 기타 지침에 대한 MetroCluster 제한을 충족해야 합니다. 를 참조하세요 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"] .
+* 외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다link:https://docs.netapp.com/us-en/ontap/disks-aggregates/remove-ownership-disk-task.html["디스크에서 ONTAP 소유권 제거"^] .
+
 
 
 
@@ -839,6 +841,60 @@ AFF C250 및 AFF A250 시스템에 대한 동일한 디스크 할당 지침 및 
 최소 지원 드라이브 수(사이트당)
  a| 
 24개 드라이브
+ a| 
+드라이브는 4개의 동일한 그룹으로 나뉩니다. 각 분기 쉘프는 별도의 풀에 자동으로 할당됩니다.
+ a| 
+해당 없음
+
+|===
+
+
+=== Flash Cache를 사용하는 FAS50 시스템의 디스크 할당
+
+ONTAP 9.18.1부터 Flash Cache는 MetroCluster IP 구성을 위한 FAS50 시스템에서 지원됩니다.
+
+[CAUTION]
+====
+* 내부 선반에 Flash Cache 드라이브가 있는 경우 데이터 집계와 루트 집계를 모두 가질 수 없습니다.
+* 슬롯 0과 23은 플래시 캐시 드라이브에 사용됩니다.
+* 외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다link:https://docs.netapp.com/us-en/ontap/disks-aggregates/remove-ownership-disk-task.html["디스크에서 ONTAP 소유권 제거"] .
+
+
+====
+|===
+
+
+| 지침 | 사이트당 드라이브 수 | 드라이브 할당 규칙 | 루트 파티션에 대한 ADP 레이아웃입니다 
+
+
+.2+| 최소 권장 드라이브 수(사이트당)  a| 
+48개 드라이브(외부 드라이브만 해당, 내부 드라이브 없음)
+ a| 
+각 외부 쉘프의 드라이브는 두 개의 동일한 그룹(절반)으로 나뉩니다. 각 반쪽 쉘프는 별도의 풀에 자동으로 할당됩니다.
+ a| 
+해당 없음
+
+
+
+ a| 
+36개 드라이브(12개 내부 드라이브 및 24개 외부 드라이브 - 외부 셸프에 데이터 집계, 내부 셸프에 루트 집계)
+ a| 
+내부 드라이브는 4개의 동일한 그룹(4분의 1)으로 나뉩니다.  각 분기는 자동으로 별도의 풀에 할당됩니다.  외부 선반의 드라이브는 4개의 동일한 그룹(4분의 1)으로 나뉩니다.  각 4분의 1 선반은 자동으로 별도의 풀에 할당됩니다.
+
+*참고사항:*
+
+* 내부 및 외부 드라이브를 사용하는 경우 먼저 ONTAP 설치하고 내부 드라이브만으로 로컬 클러스터를 구성해야 합니다.  설치나 설정 작업을 완료한 후 외부 선반을 수동으로 연결합니다.
+* 루트 집계에는 최소 12개의 내부 드라이브가 필요합니다.  슬롯 1에 루트 내부 드라이브를 배치해야 합니다.  예를 들어, 내부 드라이브가 12개인 경우 슬롯 1-3, 6-8, 12-14, 18-20을 사용합니다.
+
+ a| 
+해당 없음
+
+
+
+ a| 
+최소 지원 드라이브 수(사이트당)
+ a| 
+24개의 외부 드라이브
  a| 
 드라이브는 4개의 동일한 그룹으로 나뉩니다. 각 분기 쉘프는 별도의 풀에 자동으로 할당됩니다.
  a| 

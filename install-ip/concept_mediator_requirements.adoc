@@ -21,9 +21,9 @@ summary: ONTAP 9.7부터 ONTAP Mediator는 상태 정보에 대한 물리적으�
 +
 ONTAP 중재자와 각 사이트 간의 연결은 두 개의 개별 장애 도메인이어야 합니다.
 
-* ONTAP Mediator는 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.
 * ONTAP 9.7 이상에서는 자동 비계획 전환이 지원됩니다.
-* IPv6는 ONTAP 중재자에서 지원되지 않습니다.
+* ONTAP 9.18.1 및 ONTAP Mediator 1.11부터 단일 ONTAP Mediator 인스턴스가 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다.  이전 릴리스에서는 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있었습니다.
+* ONTAP 9.18.1부터 MetroCluster IP 구성에서 ONTAP Mediator 1.11 이상에 대해 IPv6가 지원됩니다.
 
 
 
@@ -64,7 +64,6 @@ ONTAP Mediator와 하나의 DR 그룹 간의 링크는 최소 20Mbps의 대역�
 구성이 여러 호스트 요구 사항을 충족하는지 확인해야 합니다.
 
 * ONTAP 중재자는 두 ONTAP 클러스터와 물리적으로 분리된 외부 사이트에 설치해야 합니다.
-* ONTAP 중재자가 최대 5개의 MetroCluster 구성을 지원합니다.
 * ONTAP 중재자의 경우 CPU 및 메모리(RAM)에 대한 호스트 운영 체제의 최소 요구 사항보다 더 많은 작업이 필요하지 않습니다.
 * 호스트 운영 체제의 최소 요구 사항 외에 최소 30GB의 추가 가용 디스크 공간을 사용할 수 있어야 합니다.
 +

@@ -274,8 +274,6 @@ link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자
 
 == 풀 및 드라이브 요구 사항(최소 지원)
 
-쉘프당 디스크 소유권을 허용하려면 SAS 디스크 쉘프 8개(각 사이트에 쉘프 4개)가 권장됩니다.
-
 4노드 MetroCluster IP 구성에서는 각 사이트에서 최소 구성을 수행해야 합니다.
 
 * 각 노드에는 사이트에 하나 이상의 로컬 풀과 하나의 원격 풀이 있습니다.

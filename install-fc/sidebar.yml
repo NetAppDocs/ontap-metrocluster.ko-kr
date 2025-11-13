@@ -5,6 +5,7 @@ entries:
 - title: 개요
   url: "/install-fc/index.html"
 - title: MetroCluster 설치를 준비합니다
+  pdf-filename: MetroCluster FC 설치 준비
   entries:
   - title: ONTAP MetroCluster 구성의 차이점
     url: "/install-fc/concept_considerations_differences.html"

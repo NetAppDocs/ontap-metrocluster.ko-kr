@@ -10,6 +10,9 @@ summary:
 :imagesdir: ../media/
 
 
+[role="lead"]
+MetroCluster FC 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.
+
 
 
 == 플랫폼 지원
