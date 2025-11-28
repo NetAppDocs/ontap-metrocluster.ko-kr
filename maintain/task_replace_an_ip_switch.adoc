@@ -240,6 +240,10 @@ NOTE: 네트워크를 업그레이드하거나 다운그레이드하는 경우 �
 ----
 network interface modify -vserver <vserver_name> -lif <lif_name> -auto-revert true
 ----
+. 현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.
++
+`network interface revert -vserver * -lif *`
+
 . 선택적으로 NS224 쉘프를 이동합니다.
 +
 NS224 셸프를 MetroCluster IP 스위치에 연결하지 않는 MetroCluster IP 구성을 재구성할 경우 적절한 절차에 따라 NS224 셸프를 추가하거나 이동합니다.

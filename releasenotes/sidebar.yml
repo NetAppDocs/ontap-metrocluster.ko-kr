@@ -8,7 +8,7 @@ entries:
   url: "/releasenotes/mcc-ip-config-platform-support.html"
 - title: MetroCluster FC 플랫폼 및 스위치 지원의 새로운 기능
   url: "/releasenotes/mcc-fc-config-platform-support.html"
-- title: ONTAP 중재자 지원의 새로운 기능
+- title: MetroCluster IP에 대한 ONTAP Mediator 지원의 새로운 기능
   url: "/releasenotes/mcc-mediator-whats-new.html"
 - title: MetroCluster Tiebreaker 지원의 새로운 기능
   url: "/releasenotes/mcc-tiebreaker-whats-new.html"

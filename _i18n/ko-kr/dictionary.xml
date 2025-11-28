@@ -11693,7 +11693,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0cf4c92a4ea3edbf66b4866978237ff3" category="doc">MetroCluster Tiebreaker 지원의 새로운 기능</block>
   <block id="e90d1c6a70648051cbe5131fdb8a8227" category="paragraph">ONTAP 9 데이터 관리 소프트웨어가 릴리즈될 때마다 ONTAP MetroCluster 구성의 기능, 관리 효율 및 성능을 개선하는 새롭고 향상된 기능을 제공합니다.</block>
   <block id="3cc716dba68d44285ae03d4a0e650afb" category="sidebar">MetroCluster 기능의 새로운 기능</block>
-  <block id="986acab97d190ab2df45c246e97ca539" category="sidebar">ONTAP 중재자 지원의 새로운 기능</block>
   <block id="72b08fce3cdf931f9f180e97f8508090" category="sidebar">MetroCluster Tiebreaker 지원의 새로운 기능</block>
   <block id="9ae85011061f6a07b3199cc6631e205d" category="paragraph">해당 스위치 공급업체에 대한 섹션의 단계를 따릅니다.</block>
   <block id="5a3808eade7ae7dfc1128e76ac8a6b87" category="inline-link-macro">Broadcom IP 스위치를 출하 시 기본값으로 재설정합니다</block>
@@ -14464,8 +14463,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a5ae27866152c64d13caa7491b407c4f" category="list-text">ONTAP 중재자를 추가합니다.</block>
   <block id="3bd8e4fdfb5d625cdaa4c9ff27e8ce16" category="paragraph"><block ref="26623cc20cef21441276d0bbf177cf0e" prefix="" category="inline-code"></block></block>
   <block id="6ed3fcc536a033a1e0dbf1249734de16" category="paragraph">MetroCluster FC 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.</block>
-  <block id="29a236ce865da06e20bbbd8ea0ab52a7" category="doc">MetroCluster 에 대한 ONTAP Mediator 지원의 새로운 기능</block>
-  <block id="5bf7798853f8a5c7ca4569ca703439aa" category="paragraph">ONTAP Mediator 지원을 위한 새로운 MetroCluster 기능과 향상된 기능에 대해 알아보세요.</block>
   <block id="7f29812fdda9b63b5432343e48888f3e" category="inline-link-macro">ONTAP Mediator의 새로운 기능</block>
   <block id="ddb6a6aeab3697bf98a9f8ec6246d66d" category="paragraph">ONTAP Mediator의 각 릴리스에 대한 기능 및 향상된 기능에 대한 자세한 내용은 다음을 참조하세요.<block ref="e9f46c418b00d5917fe7eb2e94490962" category="inline-link-macro-rx"></block> .</block>
   <block id="0812efe70fdb78c8000d6ba26954775e" category="paragraph">IPv6는 MetroCluster IP 구성의 ONTAP Mediator 1.11 이상에서 지원됩니다.</block>
@@ -14481,4 +14478,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="163074dbb0b4f8b495d1b19b615e87eb" category="sidebar">MetroCluster IP 설치 준비</block>
   <block id="42f362146dbe8748970967efe562f3c8" category="sidebar">MetroCluster IP 구성을 위한 ONTAP Mediator 구성</block>
   <block id="9ac9cffddfe08e79e2955f5af452fef4" category="sidebar">MetroCluster 스트레치 설치 준비</block>
+  <block id="b023032dbbcf1a80203228bb95af2a1d" category="list-text">현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.</block>
+  <block id="b4ebcf376ab05c920671af65b7daaf8c" category="paragraph"><block ref="985591930e85610706940dd82967bd61" prefix="" category="inline-code"></block></block>
+  <block id="4154034eef64dfe94bce158c1c207659" category="doc">MetroCluster IP에 대한 ONTAP Mediator 지원의 새로운 기능</block>
+  <block id="f0dceba3fe3c3556e6c20da7fc8c7520" category="paragraph">ONTAP Mediator 지원을 위한 새로운 MetroCluster IP 기능과 향상된 기능에 대해 알아보세요.</block>
+  <block id="25deb3b52bcb888e53232afb4a495c12" category="sidebar">MetroCluster IP에 대한 ONTAP Mediator 지원의 새로운 기능</block>
 </blocks>

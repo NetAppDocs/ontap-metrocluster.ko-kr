@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: metrocluster, mediator, new, release, update, install, 
 summary: ONTAP 중재자의 새로운 기능은 각 릴리스에 제공됩니다.  새로운 기능 
 ---
-= MetroCluster 에 대한 ONTAP Mediator 지원의 새로운 기능
+= MetroCluster IP에 대한 ONTAP Mediator 지원의 새로운 기능
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ONTAP Mediator 지원을 위한 새로운 MetroCluster 기능과 향상된 기능에 대해 알아보세요.
+ONTAP Mediator 지원을 위한 새로운 MetroCluster IP 기능과 향상된 기능에 대해 알아보세요.
 
 ONTAP Mediator의 각 릴리스에 대한 기능 및 향상된 기능에 대한 자세한 내용은 다음을 참조하세요.link:https://docs.netapp.com/us-en/ontap/mediator/whats-new-concept.html["ONTAP Mediator의 새로운 기능"^] .
 
