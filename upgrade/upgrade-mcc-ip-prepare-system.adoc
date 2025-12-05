@@ -364,7 +364,7 @@ ifconfig e0M-auto를 선택합니다
 "http://__web_server_ip/path_to_web-accessible_directory/ontap-version___image.tgz`
 
 .. 해당하는 경우 사용자 이름과 암호를 입력하거나 Enter 키를 눌러 계속합니다.
-.. 다음과 유사한 프롬프트가 표시되면 백업 복구를 건너뛰려면 "n"을 입력해야 합니다.
+.. 입력하다 `n` 다음과 유사한 메시지가 나타나면 백업 복구를 건너뜁니다.
 +
 [listing]
 ----
@@ -374,8 +374,12 @@ Do you want to restore the backup configuration now? {y|n} n
 +
 [listing]
 ----
-The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n} y
 ----
++
+
+NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해야 합니다.
+
 
 
 

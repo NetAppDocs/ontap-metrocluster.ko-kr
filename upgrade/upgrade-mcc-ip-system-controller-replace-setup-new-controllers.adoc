@@ -151,16 +151,20 @@ ifconfig e0M-addr=ip_addr-mask=netmask"-GW=gateway입니다
 ....
 Enter username/password if applicable, or press Enter to continue.
 ....
-. 다음과 유사한 프롬프트가 표시되면 백업 복구를 건너뛰려면 "n"을 입력해야 합니다.
+. 입력하다 `n` 다음과 유사한 메시지가 나타나면 백업 복구를 건너뜁니다.
 +
 ....
-Do you want to restore the backup configuration now? {y|n}
+Do you want to restore the backup configuration now? {y|n} n
 ....
 . 다음과 유사한 프롬프트가 나타나면 y를 입력하여 재부팅합니다.
 +
 ....
-The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n} y
 ....
++
+
+NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해야 합니다.
+
 
 
 
