@@ -95,7 +95,7 @@ MetroCluster 구성 업그레이드를 완료한 후 Tiebreaker 또는 중재자
  a| 
 Tiebreaker입니다
  a| 
-link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#add-metrocluster-configurations["MetroCluster 구성 추가"].
+link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#add-mcc-config-tb["MetroCluster 구성 추가"].
 
 
 

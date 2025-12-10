@@ -326,3 +326,27 @@ NetApp MetroCluster Tiebreaker :> monitor dump -status
 MetroCluster Tiebreaker status successfully dumped in file /var/log/netapp/mcctb/metrocluster-tiebreaker-status.xml
 ----
 
+
+
+
+== 타이브레이커 관찰 모드 비활성화
+
+Tiebreaker 소프트웨어의 관찰자 모드를 비활성화하면 사이트 장애가 감지된 후 자동으로 전환이 시작됩니다.
+
+
+NOTE: Tiebreaker 1.6 이상 버전에서는 모니터를 추가할 때 자동 전환 기능을 활성화할 수 있습니다. `monitor add wizard` 명령. 참조하다link:concept_configuring_the_tiebreaker_software.html#add-mcc-config-tb["MetroCluster 구성 추가"] .
+
+.단계
+. 관찰자 모드 비활성화:
++
+MONITOR MODIFY-MONITOR-NAME MONITOR_NAME - 관찰자 - 모드 거짓
+
++
+[listing]
+----
+NetApp MetroCluster Tiebreaker :> monitor modify -monitor-name 8pack -observer-mode false
+Warning: If you are turning observer-mode to false, make sure to review the 'risks and limitations'
+as described in the MetroCluster Tiebreaker installation and configuration.
+Are you sure you want to enable automatic switchover capability for monitor "8pack"? [Y/N]: y
+----
+

@@ -121,6 +121,9 @@ NOTE: Tiebreaker 버전 1.4에서 업그레이드할 때만 Tiebreaker 버전 1.
 NOTE: 설치 중에 메시지가 표시되면 이전에 만들어 에 할당한 루트가 아닌 사용자를 제공합니다 `mcctbgrp` 그룹.
 
 +
+.예
+[%collapsible]
+=====
 [listing]
 ----
 Verifying...                          ################################# [100%]
@@ -158,6 +161,7 @@ Started NetApp MetroCluster Tiebreaker software services
 Successfully installed NetApp MetroCluster Tiebreaker software version 1.5.
 
 ----
+=====
 
 
 --
@@ -203,6 +207,9 @@ HA Enabled      false
 성공적인 업그레이드를 위해 다음과 같은 출력이 표시됩니다.
 
 +
+.예
+[%collapsible]
+=====
 [listing]
 ----
 
@@ -242,6 +249,7 @@ Successfully upgraded NetApp MetroCluster Tiebreaker software to version 1.5.
 Cleaning up / removing...
    2:NetApp-MetroCluster-Tiebreaker-So################################# [100%]
 ----
+=====
 
 
 --

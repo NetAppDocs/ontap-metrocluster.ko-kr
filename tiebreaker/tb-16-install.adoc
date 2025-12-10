@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
 summary: 호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.6으로 업그레이드하여 MetroCluster 구성을 모니터링합니다. 
 ---
-= Tiebreaker 1.6 이상을 설치합니다
+= Tiebreaker 1.6 또는 1.6P1을 설치하세요.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -62,7 +62,7 @@ sh MetroClusterTiebreakerInstall-1.6P1
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----
@@ -262,7 +262,7 @@ sh MetroClusterTiebreakerInstall-1.6P1
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----
@@ -379,7 +379,7 @@ sh MetroClusterTiebreakerInstall-1.6P1
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----
@@ -578,7 +578,7 @@ sh MetroClusterTiebreakerInstall-1.6P1
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----
@@ -810,7 +810,7 @@ sh MetroClusterTiebreakerInstall-1.6
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----
@@ -1007,7 +1007,7 @@ sh MetroClusterTiebreakerInstall-1.6
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----
@@ -1206,7 +1206,7 @@ sh MetroClusterTiebreakerInstall-1.6
 
 +
 .예
-[%collapsible%open]
+[%collapsible]
 =====
 [listing]
 ----

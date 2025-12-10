@@ -11091,9 +11091,6 @@
   <block id="462b36259caf681453d6d7b142217c3d" category="paragraph"><block ref="419f67b8b89585d3be41af97b158dd9e" prefix="" category="inline-code"></block></block>
   <block id="6a62571ce4203a1671da10509f3013e0" category="cell">AFF A900, ASA A900 및 FAS9500</block>
   <block id="d7b1c9d4f2a52b2d3648ce28baa0dd5c" category="paragraph">AFF A800, AFF C800, ASA A800 및 ASA C800입니다</block>
-  <block id="2bba389392c3b789eaa9d1c8c6fc87d2" category="paragraph">FAS8300, AFF A400, ASA A400, ASA C400 및 AFF C400</block>
-  <block id="2adc2b7878fdb2191078a23343a8729e" category="paragraph">FAS2750, AFF A150, ASA A150 및 AFF A220</block>
-  <block id="58783907a3fbb2ae3dd67c785764d060" category="paragraph">FAS500f, AFF A250, ASA A250, ASA C250 및 AFF C250</block>
   <block id="689365c2d6e4fb2ffa83031a799cb8a1" category="inline-link-macro">수동 복구를 수행합니다</block>
   <block id="b6933415b566c13842c75e7153f5e0bd" category="paragraph">ONTAP 9.7부터 MetroCluster IP 구성에서 ONTAP MUSO(중재자 지원 자동 예상치 못한 전환)를 사용하거나 MetroCluster Tiebreaker 소프트웨어를 사용할 수 있습니다. MAUSO 또는 tiebreaker 소프트웨어를 반드시 사용해야 하는 것은 아니지만, 이러한 서비스를 사용하지 않을 경우에는 반드시 사용해야 합니다 <block ref="ffc76c5e8798538fa424ea31c8f712bb" category="inline-link-macro-rx"></block> 재해가 발생한 경우</block>
   <block id="b65bf2d95ccaa5163ee3e519ccc4f46c" category="inline-link-macro">ONTAP 중재자가 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오</block>
@@ -11770,7 +11767,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f09a5dc7d9c973e1f6ab3e9ffa36921c" category="paragraph">NVMe/FC 프로토콜은 4노드 MetroCluster IP 구성에서 지원됩니다.</block>
   <block id="581b029a5b5e612bbb2ff34e6b1ff9ad" category="paragraph"><block ref="581b029a5b5e612bbb2ff34e6b1ff9ad" category="inline-link-rx"></block></block>
   <block id="efd20e2b544e4614b2e657ac6783ec0a" category="paragraph">MetroCluster IP는 엔드 투 엔드 암호화를 지원합니다</block>
-  <block id="4a4b85199291f3e23fc84fb47fb5ca30" category="paragraph">AFF A400, FAS8300, FAS8700 시스템에서 엔드 투 엔드 암호화가 지원되어 MetroCluster IP 구성의 사이트 간에 NVlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화합니다.</block>
   <block id="a9734ca6d9ffb317f9b6a802b2dbb3aa" category="inline-link-macro">MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다</block>
   <block id="aec0d8caac35e70ca6b42831fa957b4d" category="paragraph">AFF A800 및 AFF C800 시스템에서 4노드 MetroCluster IP 구성의 볼륨 제한 증가</block>
   <block id="cbd27762af6b4c6335bac75a098542ce" category="paragraph">4노드 MetroCluster IP 구성에서 AFF A800 및 AFF C800 시스템에 대한 다음 볼륨 제한이 증가했습니다.</block>
@@ -12500,8 +12496,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="76cc37c77093b53852f92d0bedaab777" category="list-text">데이터 복구가 완료되면 를 클릭하고 <block ref="2f6e127087f9ef4b927e204474c5d0b2" category="inline-image-macro-rx" type="image"></block>* 스위치 백 시작 * 을 선택합니다.</block>
   <block id="99ce5ee29ba72294092dc372ec9cdde8" category="paragraph">스위치백을 완료하면 두 클러스터가 모두 활성 상태이며 데이터 요청을 처리합니다. 또한 데이터가 클러스터 간에 미러링되고 동기화됩니다.</block>
   <block id="1634280924da564c571e77a82a5ca015" category="paragraph">타이브레이커 1.6 이상</block>
-  <block id="10090a98eb5a0c97ffdfee7c207fcda3" category="inline-link-macro">Tiebreaker 1.6 이상을 설치합니다</block>
-  <block id="01edf779844a94aabbe0472729e9db87" category="paragraph"><block ref="01edf779844a94aabbe0472729e9db87" category="inline-link-macro-rx"></block></block>
   <block id="96e17598e0060c107f4db8b804505693" category="inline-link-macro">Rocky Linux 제품 설명서</block>
   <block id="98f9ad5cd8db49b652b4f699146c5868" category="list-text"><block ref="98f9ad5cd8db49b652b4f699146c5868" category="inline-link-macro-rx"></block></block>
   <block id="95bf514988fe6b2ae6d2c4683d39fc01" category="paragraph">호스트 Linux 운영 체제에서 Tiebreaker 1.6 또는 tiebreaker 1.6P1로 새로 설치하거나 업그레이드하여 MetroCluster 구성을 모니터링합니다.</block>
@@ -12719,8 +12713,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d31a1f5cad351cb7b22068350f8211d3" category="section-title">AFF A70, AFF A90 및 AFF C80 시스템에서 ADP 및 디스크 할당</block>
   <block id="18d6e0751db8b96d97053bf7cd9ad014" category="paragraph">내부 파티션은 4개의 동일한 그룹(분기)으로 나뉩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다. 외부 쉘프의 드라이브는 쉘프 단위로 자동으로 할당되며 각 쉘프의 모든 드라이브는 MetroCluster 구성에서 4개 노드 중 하나에 할당됩니다.</block>
   <block id="18ee6168fcb42f4cbb19836787e6aa0c" category="section-title">FAS9000, FAS9500, FAS70 및 FAS90 시스템에 디스크 할당</block>
-  <block id="2d1fe013e868579afa18af7cb56220c2" category="paragraph">AFF A70, FAS70</block>
-  <block id="03e4e34912e74f99bcc188842b2088d2" category="paragraph">AFF A90, AFF A1K, FAS90, AFF C80</block>
   <block id="cc6089132b9a5e4af29a76834480cc1a" category="paragraph">AFF A50 를 참조하십시오</block>
   <block id="b4f15258765c83a1223f6ad33f797dbd" category="paragraph">X60134A를 참조하십시오</block>
   <block id="9d9de1698f7e401c78687204de906ee5" category="paragraph">AFF A20 를 참조하십시오</block>
@@ -14072,7 +14064,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="45fc6e02d529201467decbef1f3eacab" category="paragraph">를 참조하세요 <block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block> 자세한 내용은.</block>
   <block id="567a833b899417b8be640e2472fc9c60" category="paragraph">자격 증명을 사용한 FibreBridge 펌웨어 업데이트</block>
   <block id="5a870516b9d31d269ea6a8afce2ec1e6" category="paragraph">서버에서 펌웨어 패키지를 다운로드하는 데 필요한 경우 자격 증명을 사용하여 FibreBridge 브리지의 펌웨어를 업데이트할 수 있습니다.</block>
-  <block id="798a9759457492658d53527d57355221" category="paragraph">레드햇 엔터프라이즈 리눅스(RHEL) 9.5</block>
   <block id="b225d9c59432e8a8fb3706648e471b89" category="paragraph">RHEL 9.4</block>
   <block id="5a4423695d5636fb42d9142a09b58340" category="paragraph">RHEL 9.3</block>
   <block id="c87e38c84927fcd003b4fdc775e74821" category="paragraph">RHEL 9.2</block>
@@ -14391,7 +14382,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1e2cb5bcdb8947c91d9b70a1c5ee21c0" category="list-text">필요한 최소 ISL 속도는 플랫폼 모델에 따라 다릅니다.</block>
   <block id="fe25d0e834bbf213fee0bc910f4a7054" category="list-text">AFF A1K 및 AFF A90 시스템에서는 ISL 속도가 최소 100Gbps여야 합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 영업팀에 문의하세요.</block>
   <block id="9260215cd28aa0daaf49857a4307ca43" category="list-text">다른 모든 플랫폼에서는 ISL 속도가 최소 10Gbps여야 합니다.</block>
-  <block id="d1de43c2b2a882d5549ca6caea0cd796" category="paragraph"><block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
   <block id="e91d78e049c73a532e8c4014365c7f0d" category="doc">MetroCluster Tiebreaker 소프트웨어 구성</block>
   <block id="2369e844c90397a4181ffafd2f64be4a" category="section-title">Tiebreaker 소프트웨어 CLI를 실행합니다.</block>
   <block id="157265493f45de2399bb80a595184137" category="section-title">수입증명서</block>
@@ -14404,14 +14394,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="eb2fdb57a4efd845d6aeb1d9d0f9042f" category="list-text">그만큼<block ref="1f4e0d0417f12bfdf15fa538de9f9f9a" prefix=" " category="inline-code"></block> value는 인증서를 JVM으로 가져온 후 저장할 이름을 지정합니다.</block>
   <block id="61946575308b3d651099211c764d921e" category="paragraph">다음 예제에서는 파일 이름으로 루트 인증서를 가져오는 방법을 보여줍니다.<block ref="a62f7df2640c2a527e31c848f274ea05" prefix=" " category="inline-code"></block> 그리고 파일 이름이 포함된 SSL 서버 인증서<block ref="ca11bb462642b431904085550b5375b6" prefix=" " category="inline-code"></block>:</block>
   <block id="7efb1ea0d372ab5c16aca840df49ca79" category="paragraph"><block ref="7efb1ea0d372ab5c16aca840df49ca79" category="inline-link-macro-rx"></block></block>
-  <block id="5659c81fbc5304275ab0c57df4fa5e4d" category="paragraph"><block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block></block>
-  <block id="a212e7395bb60258b12e96d4b25f0a25" category="paragraph"><block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_에서.</block>
   <block id="67431d9e5972e3763ce39925ca6172fe" category="paragraph"><block ref="67431d9e5972e3763ce39925ca6172fe" category="inline-link-macro-rx"></block></block>
-  <block id="34e872e7651a932e20637ef1b9ef55f0" category="list-text">다음 단계를 사용하세요. <block ref="5659c81fbc5304275ab0c57df4fa5e4d" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
   <block id="c8e5fb4095abed5cb973a724e5e4cca7" category="paragraph"><block ref="67431d9e5972e3763ce39925ca6172fe" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성 콘텐츠_</block>
   <block id="50579aa28b2b0ac01c180e6e07119273" category="paragraph"><block ref="50579aa28b2b0ac01c180e6e07119273" category="inline-link-macro-rx"></block></block>
   <block id="9a1a464601bee502d12616aa9be06bb3" category="list-text"><block ref="d77847ddf2a5535e4974575f39191ae2" category="inline-link-macro-rx"></block> 타이브레이커 소프트웨어에서.</block>
-  <block id="ba13dd5c52c50f7bb5ef919e4d340c98" category="paragraph"><block ref="83029083d25b0153769c6039afb8beb5" category="inline-link-macro-rx"></block>.</block>
   <block id="62633c6c7bc1e478b0c226fc706ce7d1" category="list-text">명령을 실행하세요<block ref="350d65f100fdbc8d411ce22a179f4b29" prefix=" " category="inline-code"></block> ONTAP 시스템에서 클러스터 스위치가 모니터링 필드가 *True*로 설정되어 있고 일련 번호 필드에 *Unknown*이 표시되지 않는지 확인합니다.</block>
   <block id="f53c5f8d2c3b0e3b1854e0c8f280aac0" category="list-text">타이브레이커 소프트웨어를 다시 시작하세요:</block>
   <block id="3b879e464448b1abbc76cb49a3e48f67" category="paragraph"><block ref="5c46787eed9475e8e2a2351216605e90" prefix="" category="inline-code"></block></block>
@@ -14484,4 +14470,61 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="7043cc5b7b924f62a8af6f3d2e706c77" category="list-text">입력하다<block ref="7b8b965ad4bca0e41ab51de7b31363a1" prefix=" " category="inline-code"></block> 다음 메시지가 나타나면 백업 복구를 건너뜁니다.</block>
   <block id="78531eca4abf30d4c07d610d913a17b4" category="list-text">입력하다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 다음 메시지가 나타나면 재부팅하세요.</block>
   <block id="6b5a6f62b70ef753e19336e7f4298c82" category="paragraph"><block ref="dc1cb730bc2868b03f1ab6ee685b8beb" prefix="" category="inline-code"></block></block>
+  <block id="c9996a1b1fe92047dfbcfbef9989c233" category="list-text">AFF C400</block>
+  <block id="7fd3cdaaba74a0b0ef3d707a8545df7c" category="paragraph">1.7</block>
+  <block id="2a81eb3b4a7f22fb1fdb159561b71f3f" category="list-text">버그 수정</block>
+  <block id="11574a03547d555cf191ab6e9136f88f" category="list-text">CLI를 사용한 전환 시뮬레이션 지원을 추가합니다.</block>
+  <block id="6fbe6a8c71d451ebdda6d9faf413cda1" category="paragraph">레드햇 엔터프라이즈 리눅스(RHEL) 9.6</block>
+  <block id="92a9848c1fb5697892193dd4ff6e8f2d" category="paragraph">RHEL 9.5</block>
+  <block id="a1c30b24be11ecf2a6d8debac1870fde" category="paragraph">MetroCluster IP 구성에 필요한 하드웨어 및 소프트웨어 구성 요소와 지원되는 구성 요소를 식별합니다.  문서 예시에서 구성 요소에 사용되는 명명 규칙을 검토하십시오.</block>
+  <block id="bf76ee4501fdd9fae56487ad105f9cd0" category="paragraph">FAS8300, AFF A400, ASA A400, ASA C400, AFF C400</block>
+  <block id="00327edd9d8765d46ab56e3b0980903e" category="paragraph">FAS2750, AFF A150, ASA A150, AFF A220</block>
+  <block id="f96110c8f7346ebfb781d05634cd4049" category="paragraph">FAS500f, AFF A250, ASA A250, ASA C250, AFF C250</block>
+  <block id="87c712f745ecf87eb856cfed663b2a15" category="paragraph">AFF A70, FAS70, AFF C80</block>
+  <block id="d805011ad8efc8ec2fc078873f4643a6" category="paragraph">AFF A90, AFF A1K, FAS90</block>
+  <block id="d67e92f6cf688c69bd6f477c433e7d63" category="paragraph"><block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
+  <block id="3a5736e3efeba2abba824451060f0e8c" category="paragraph">AFF A400, AFF C400, FAS8300 및 FAS8700 시스템은 MetroCluster IP 구성의 사이트 간 NVlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 암호화하기 위해 종단 간 암호화를 지원합니다.</block>
+  <block id="3b2e338cb9699827ddcf4059b9343104" category="list-text">단계별 절차와 예상되는 명령 출력은 사용 중인 Tiebreaker 버전에 따라 다릅니다.</block>
+  <block id="845ecf6124e1ae7663abd58c5c290bf4" category="open-title">동점자 처리 1.5 또는 이전</block>
+  <block id="c235e2a63587607e546ce23e3aa3f429" category="paragraph"><block ref="340f3772c8514ee6adeb9334c1090b2b" prefix="" category="inline-code"></block></block>
+  <block id="7b1c9a2f5a83c33057ec6c4c00ca9f66" category="list-text">Tiebreaker 버전에 맞는 단계를 수행하여 누락된 인증서를 가져오세요.<block ref="92b9649dc166097f560c612aa552fd41" category="inline-xref-macro-rx"></block> .</block>
+  <block id="b4409eb500913b49e5983d79343adf86" category="list-text">Tiebreaker 1.7 이상 버전에서는 전환 시뮬레이션을 수행하여 인증서를 가져와야 하는지 여부를 확인할 수 있습니다.  전환 시뮬레이션이 실패하면 ONTAP 에서 Java 가상 머신(JVM)의 키 저장소로 인증서를 가져와야 합니다.</block>
+  <block id="af6be912cb9928f2a8b149136fcb95cf" category="open-title">동점자 처리 1.7 이상</block>
+  <block id="eb49a1138d5a52d43b58b3e179697e3f" category="list-text">인증서를 가져와야 하는지 확인하려면 전환 시뮬레이션을 실행하세요.</block>
+  <block id="42d13f8ba94aec1bc59d5a90679693bc" category="list-text">타이브레이커 모니터링 상태를 확인하세요:<block ref="7f09554f3b428339c3f534ff2c033739" prefix=" " category="inline-code"></block></block>
+  <block id="bb95eb1081a895c8cb78bdaee7da9ef6" category="list-text">전환 시뮬레이션을 시작하세요:</block>
+  <block id="947062c10bc54a7d20d50f8bbaa0c13a" category="paragraph"><block ref="eca495e6e12f12898ee3f847cb6c0c9b" prefix="" category="inline-code"></block></block>
+  <block id="5bdaf09274dc521b698ce17fb52deaf8" category="paragraph">JVM에 인증서를 가져와야 하는 경우 해당 명령은 다음과 같은 출력을 반환합니다.</block>
+  <block id="8fc6098280042a868aba93d428eae4b8" category="list-text">전환 시뮬레이션 점검을 다시 수행하십시오.</block>
+  <block id="78eca7e4ec98898015905b1e4548a383" category="open-title">동점자 처리 규칙 1.6 또는 1.6P1</block>
+  <block id="28aca2b572a275aebd465d2d2fd4cdef" category="list-text">ONTAP 에서 모든 인증서를 가져옵니다. 가져와야 하는 각 인증서(SSL 서버, 중간 인증서 또는 루트 인증서)에 대해 다음 명령을 실행합니다.</block>
+  <block id="4588af49e6444b900fecf33e5b46364a" category="section-title">타이브레이커 관찰 모드 비활성화</block>
+  <block id="0d93de7458c000c3fdfec7afd50e0442" category="paragraph">Tiebreaker 소프트웨어의 관찰자 모드를 비활성화하면 사이트 장애가 감지된 후 자동으로 전환이 시작됩니다.</block>
+  <block id="a1f8c8c62c04c20068aa93f576fa9690" category="admonition">Tiebreaker 1.6 이상 버전에서는 모니터를 추가할 때 자동 전환 기능을 활성화할 수 있습니다.<block ref="cd3bf079d0da00fdccce85e2519add01" prefix=" " category="inline-code"></block> 명령. 참조하다<block ref="c18ee48110dfc5f3e03244ba138d0938" category="inline-link-macro-rx"></block> .</block>
+  <block id="c00e147177076015256c9df010c971c2" category="list-text">관찰자 모드 비활성화:</block>
+  <block id="eedc07636a5991cd4eb9800d304a16ba" category="paragraph">동점자 결정전 1.7</block>
+  <block id="071aedff010617c733bba1a48a1df49f" category="inline-link-macro">Tiebreaker 1.7을 설치하세요</block>
+  <block id="8788535e7eb158e8970021610d3ed9da" category="paragraph"><block ref="8788535e7eb158e8970021610d3ed9da" category="inline-link-macro-rx"></block></block>
+  <block id="3d24188ac7751bfbb22d07dce3299f1e" category="inline-link-macro">Tiebreaker 1.6 또는 1.6P1을 설치하세요.</block>
+  <block id="87ad7c1746b46707f06848b1618643ce" category="paragraph"><block ref="87ad7c1746b46707f06848b1618643ce" category="inline-link-macro-rx"></block></block>
+  <block id="800d94b1914e36803b31fcf9895abae5" category="summary">Tiebreaker 1.7 버전부터는 전환을 시뮬레이션하여 Tiebreaker 작동을 확인할 수 있습니다.</block>
+  <block id="e4ed18ab6d3d5544045db1a3e751e965" category="doc">MetroCluster Tiebreaker를 사용하여 전환을 시뮬레이션합니다.</block>
+  <block id="7093ecc93a73f513ca55a9e8f3afdde6" category="paragraph">Tiebreaker 1.7 버전부터는 MetroCluster Tiebreaker의 전환 기능을 테스트하기 위해 전환 시뮬레이션을 수행할 수 있습니다.</block>
+  <block id="79eb78d821b3ee6435ad7e4923386085" category="list-text">그만큼<block ref="2182cff8b3f98462b1b1b9f67a9e98d6" prefix=" " category="inline-code"></block> 이 명령어는 Tiebreaker 1.7 이상 버전에서만 지원됩니다.</block>
+  <block id="efd72f1f13c88a25047ed85c76b50038" category="list-text">전환 시뮬레이션을 수행하십시오.</block>
+  <block id="028ce40e56d402dfb0df4f094a41fde6" category="paragraph">명령이 성공적으로 실행되면 다음과 같은 출력이 표시됩니다.</block>
+  <block id="8e70b918f55470877368261e9be2a7c6" category="doc">MetroCluster Tiebreaker 1.7을 설치하세요.</block>
+  <block id="f1d3e8cbaa3f907f1f1d9c23342040db" category="paragraph">MetroCluster 구성을 모니터링하려면 Linux 호스트에 Tiebreaker 1.7을 설치하거나 업그레이드하십시오.</block>
+  <block id="5a59d868721cb5e9a140856077e385d9" category="list-text">Tiebreaker 1.6P1 버전에서만 Tiebreaker 1.7 버전으로 업그레이드할 수 있습니다. 참조하다<block ref="87ad7c1746b46707f06848b1618643ce" category="inline-link-macro-rx"></block> .</block>
+  <block id="d3304a80fc4dc1ea2d716877d36eadac" category="list-text">MetroCluster Tiebreaker 1.7 소프트웨어를 다운로드하십시오.</block>
+  <block id="ad73fbe1d3c75ebdc29af85c6946f907" category="list-text">업그레이드를 진행하는 경우, 현재 실행 중인 Tiebreaker 버전을 확인하십시오.</block>
+  <block id="0684c921e825a58cdb4b10dbcfd5597b" category="paragraph">다음 예시는 Tiebreaker 1.6P1을 보여줍니다.</block>
+  <block id="119069080fcdc97e5697bcdf7709ee2e" category="paragraph">Tiebreaker 1.7을 새로 설치하려면 다음 단계를 따르십시오.</block>
+  <block id="5f423725fb28e9d5d9b02b9c16b5a368" category="open-title">1.6P1을 1.7로 업그레이드하세요</block>
+  <block id="a7fd6df6d65c00fc1df7543b6a663ef0" category="paragraph">Tiebreaker 1.6P1 소프트웨어 버전을 Tiebreaker 1.7로 업그레이드하려면 다음 단계를 따르십시오.</block>
+  <block id="f496457a4e5f70370a95812c3bd8a7a1" category="admonition">인증서가 없어서 업그레이드가 실패하는 경우 다음을 참조하십시오.<block ref="683f110921efb534660320b85a54a9a9" category="inline-link-macro-rx"></block> .  인증서를 가져온 후 다시 업그레이드를 시도해 보세요.</block>
+  <block id="c1e5bf8480750ae5cad48df028e9ef8f" category="paragraph"><block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block></block>
+  <block id="cd12f62ca79514b05b68e5de4836ba52" category="paragraph"><block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_에서.</block>
+  <block id="a72abbb5319ccc5e06e530d32ebda9a2" category="list-text">다음 단계를 사용하세요. <block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
+  <block id="cbefd3f7361c94b64426b0cea58a0328" category="paragraph"><block ref="fea9123e6c4e9558906e90d28dff7dce" category="inline-link-macro-rx"></block>.</block>
 </blocks>

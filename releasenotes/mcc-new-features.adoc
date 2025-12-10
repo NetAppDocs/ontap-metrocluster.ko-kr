@@ -119,7 +119,7 @@ ONTAP 9.16.1
  a| 
 MetroCluster IP는 엔드 투 엔드 암호화를 지원합니다
  a| 
-AFF A400, FAS8300, FAS8700 시스템에서 엔드 투 엔드 암호화가 지원되어 MetroCluster IP 구성의 사이트 간에 NVlog 및 스토리지 복제 데이터와 같은 백 엔드 트래픽을 암호화합니다.
+AFF A400, AFF C400, FAS8300 및 FAS8700 시스템은 MetroCluster IP 구성의 사이트 간 NVlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 암호화하기 위해 종단 간 암호화를 지원합니다.
 
 link:../maintain/task-configure-encryption.html["MetroCluster IP 구성에서 엔드 투 엔드 암호화를 구성합니다"]
  a| 

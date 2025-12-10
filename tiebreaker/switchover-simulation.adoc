@@ -1,0 +1,72 @@
+---
+permalink: tiebreaker/switchover-simulation.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, operation, netapp, documentation, additional, information, miscellaneous, guide, tiebreaker, switchover, simulation 
+summary: Tiebreaker 1.7 버전부터는 전환을 시뮬레이션하여 Tiebreaker 작동을 확인할 수 있습니다. 
+---
+= MetroCluster Tiebreaker를 사용하여 전환을 시뮬레이션합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tiebreaker 1.7 버전부터는 MetroCluster Tiebreaker의 전환 기능을 테스트하기 위해 전환 시뮬레이션을 수행할 수 있습니다.
+
+.이 작업에 대해
+* 그만큼 `monitor switchover-simulate` 이 명령어는 Tiebreaker 1.7 이상 버전에서만 지원됩니다.
+
+
+.단계
+. 타이브레이커 모니터링 상태를 확인하세요:
+`monitor show -status`
++
+.예
+[%collapsible]
+====
+[listing]
+----
+NetApp MetroCluster Tiebreaker :> monitor show -status
+MetroCluster: A700
+    Disaster: false
+    Monitor State: Normal
+    Observer Mode: false
+    Silent Period: 5
+    Override Vetoes: false
+    Cluster: ClusterA_siteA(UUID:713e5ab2-b4e8-11f0-91aa-00a098ef36a2)
+        Reachable: true
+        Intersite Connectivity Available: true
+            Node: node_A1(UUID:9f6cecbf-b4e4-11f0-9d0f-00a098ef36a2)
+                Reachable: true
+                Intersite Connectivity Available: true
+                State: normal
+            Node: node_A2(UUID:2719bb56-b4e7-11f0-996c-00a09897caa3)
+                Reachable: true
+                Intersite Connectivity Available: true
+                State: normal
+    Cluster: ClusterB_siteB(UUID:72839591-b4e8-11f0-b688-00a09897cb73)
+        Reachable: true
+        Intersite Connectivity Available: true
+            Node: node_B1(UUID:abfeab89-b4e4-11f0-a077-00a09897cb73)
+                Reachable: true
+                Intersite Connectivity Available: true
+                State: normal
+            Node: node_B2(UUID:31e395bf-b4e7-11f0-bf99-00a09897cb2f)
+                Reachable: true
+                Intersite Connectivity Available: true
+                State: normal
+----
+====
+. 전환 시뮬레이션을 수행하십시오.
++
+`monitor switchover-simulate -monitor-name <monitor_name> -cluster <cluster_name>`
+
++
+명령이 성공적으로 실행되면 다음과 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+Successfully triggered Switchover Simulation. Please check the status of the Switchover Simulation on the ONTAP cluster using command "metrocluster operation history show"
+----
+

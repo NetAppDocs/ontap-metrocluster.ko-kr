@@ -18,7 +18,9 @@ entries:
     entries:
     - title: 설치 절차를 선택합니다
       url: "/tiebreaker/install-choose-procedure.html"
-    - title: Tiebreaker 1.6 이상을 설치합니다
+    - title: Tiebreaker 1.7을 설치하세요
+      url: "/tiebreaker/tb-17-install.html"
+    - title: Tiebreaker 1.6 또는 1.6P1을 설치하세요.
       url: "/tiebreaker/tb-16-install.html"
     - title: 타이브레이커 1.5를 설치합니다
       entries:
@@ -46,6 +48,8 @@ entries:
   url: "/tiebreaker/concept_risks_and_limitation_of_using_mcc_tiebreaker_in_active_mode.html"
 - title: MetroCluster Tiebreaker의 방화벽 요구 사항
   url: "/tiebreaker/reference_firewall_requirements_for_mcc_tiebreaker.html"
+- title: MetroCluster Tiebreaker를 사용하여 전환을 시뮬레이션합니다.
+  url: "/tiebreaker/switchover-simulation.html"
 - title: MetroCluster Tiebreaker 이벤트 로그 파일
   url: "/tiebreaker/concept-mcc-tiebreaker-event-logs.html"
 - title: 추가 정보를 찾을 수 있는 위치

@@ -21,9 +21,16 @@ summary: 사용하는 타이브레이커 설치 절차는 설치하는 타이브
 
 
  a| 
-타이브레이커 1.6 이상
+동점자 결정전 1.7
  a| 
-link:tb-16-install.html["Tiebreaker 1.6 이상을 설치합니다"]
+link:tb-17-install.html["Tiebreaker 1.7을 설치하세요"]
+
+
+
+ a| 
+동점자 처리 규칙 1.6 또는 1.6P1
+ a| 
+link:tb-16-install.html["Tiebreaker 1.6 또는 1.6P1을 설치하세요."]
 
 
 
