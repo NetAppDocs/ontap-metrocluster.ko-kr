@@ -10815,7 +10815,6 @@
   <block id="024464eb7b3fd909a9746dff88c6b9c9" category="section-title">추가 요구 사항</block>
   <block id="4b0a6058e6a6f2eafcc1db1a3a9573fb" category="paragraph">다음과 같은 추가 요구사항을 알고 있어야 합니다.</block>
   <block id="64f896c377dcdc9e0d5ae4809d1c3a73" category="list-text">Tiebreaker 소프트웨어에 대한 NTP(Network Time Protocol) 소스를 선택할 때는 로컬 NTP 소스를 사용해야 합니다. 타이브레이커 소프트웨어는 타이브레이커 소프트웨어가 모니터링하는 MetroCluster 사이트와 동일한 소스를 사용해서는 안 됩니다.</block>
-  <block id="490414e0366b091220802d406e52c076" category="doc">새로운 기능</block>
   <block id="c1748037d10cffabb8e95e4ccf77c613" category="section-title">향상된 기능</block>
   <block id="6a2fab1a92eaec5f3c3d9b2d28d580c4" category="list-text">지원 라이브러리 업데이트</block>
   <block id="5f6c185eb38c56187fc699dfbe62654b" category="list-text">보안 강화</block>
@@ -14509,7 +14508,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="87ad7c1746b46707f06848b1618643ce" category="paragraph"><block ref="87ad7c1746b46707f06848b1618643ce" category="inline-link-macro-rx"></block></block>
   <block id="800d94b1914e36803b31fcf9895abae5" category="summary">Tiebreaker 1.7 버전부터는 전환을 시뮬레이션하여 Tiebreaker 작동을 확인할 수 있습니다.</block>
   <block id="e4ed18ab6d3d5544045db1a3e751e965" category="doc">MetroCluster Tiebreaker를 사용하여 전환을 시뮬레이션합니다.</block>
-  <block id="7093ecc93a73f513ca55a9e8f3afdde6" category="paragraph">Tiebreaker 1.7 버전부터는 MetroCluster Tiebreaker의 전환 기능을 테스트하기 위해 전환 시뮬레이션을 수행할 수 있습니다.</block>
   <block id="79eb78d821b3ee6435ad7e4923386085" category="list-text">그만큼<block ref="2182cff8b3f98462b1b1b9f67a9e98d6" prefix=" " category="inline-code"></block> 이 명령어는 Tiebreaker 1.7 이상 버전에서만 지원됩니다.</block>
   <block id="efd72f1f13c88a25047ed85c76b50038" category="list-text">전환 시뮬레이션을 수행하십시오.</block>
   <block id="028ce40e56d402dfb0df4f094a41fde6" category="paragraph">명령이 성공적으로 실행되면 다음과 같은 출력이 표시됩니다.</block>
@@ -14527,4 +14525,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="cd12f62ca79514b05b68e5de4836ba52" category="paragraph"><block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_에서.</block>
   <block id="a72abbb5319ccc5e06e530d32ebda9a2" category="list-text">다음 단계를 사용하세요. <block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
   <block id="cbefd3f7361c94b64426b0cea58a0328" category="paragraph"><block ref="fea9123e6c4e9558906e90d28dff7dce" category="inline-link-macro-rx"></block>.</block>
+  <block id="7c6d58b5ff7d328112a439ee0ef9df40" category="paragraph">MetroCluster Tiebreaker 1.7 버전부터는 전환 시뮬레이션을 통해 Tiebreaker 전환 기능을 테스트할 수 있습니다.</block>
 </blocks>

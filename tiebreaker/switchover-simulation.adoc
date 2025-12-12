@@ -11,7 +11,7 @@ summary: Tiebreaker 1.7 버전부터는 전환을 시뮬레이션하여 Tiebreak
 
 
 [role="lead"]
-Tiebreaker 1.7 버전부터는 MetroCluster Tiebreaker의 전환 기능을 테스트하기 위해 전환 시뮬레이션을 수행할 수 있습니다.
+MetroCluster Tiebreaker 1.7 버전부터는 전환 시뮬레이션을 통해 Tiebreaker 전환 기능을 테스트할 수 있습니다.
 
 .이 작업에 대해
 * 그만큼 `monitor switchover-simulate` 이 명령어는 Tiebreaker 1.7 이상 버전에서만 지원됩니다.
