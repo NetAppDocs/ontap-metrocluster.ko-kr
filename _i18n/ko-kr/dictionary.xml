@@ -14379,8 +14379,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8fe05c00237e990eab631a7b042cf93c" category="sidebar">ATTO FibreBridge 펌웨어 다운로드</block>
   <block id="4500ea599da00d6db7bf0ffa4e13554f" category="section-title">MetroCluster ISL 요구 사항</block>
   <block id="1e2cb5bcdb8947c91d9b70a1c5ee21c0" category="list-text">필요한 최소 ISL 속도는 플랫폼 모델에 따라 다릅니다.</block>
-  <block id="fe25d0e834bbf213fee0bc910f4a7054" category="list-text">AFF A1K 및 AFF A90 시스템에서는 ISL 속도가 최소 100Gbps여야 합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 영업팀에 문의하세요.</block>
-  <block id="9260215cd28aa0daaf49857a4307ca43" category="list-text">다른 모든 플랫폼에서는 ISL 속도가 최소 10Gbps여야 합니다.</block>
   <block id="e91d78e049c73a532e8c4014365c7f0d" category="doc">MetroCluster Tiebreaker 소프트웨어 구성</block>
   <block id="2369e844c90397a4181ffafd2f64be4a" category="section-title">Tiebreaker 소프트웨어 CLI를 실행합니다.</block>
   <block id="157265493f45de2399bb80a595184137" category="section-title">수입증명서</block>
@@ -14526,4 +14524,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a72abbb5319ccc5e06e530d32ebda9a2" category="list-text">다음 단계를 사용하세요. <block ref="c1e5bf8480750ae5cad48df028e9ef8f" category="inline-link-macro-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_ 섹션에서.</block>
   <block id="cbefd3f7361c94b64426b0cea58a0328" category="paragraph"><block ref="fea9123e6c4e9558906e90d28dff7dce" category="inline-link-macro-rx"></block>.</block>
   <block id="7c6d58b5ff7d328112a439ee0ef9df40" category="paragraph">MetroCluster Tiebreaker 1.7 버전부터는 전환 시뮬레이션을 통해 Tiebreaker 전환 기능을 테스트할 수 있습니다.</block>
+  <block id="e4e3590eb665c0a0f5d5b3467636e5a7" category="list-text">ONTAP 9.18.1 버전부터 MetroCluster IP 백엔드 포트 속도가 100G인 플랫폼은 최소 100Gbps의 ISL 링크 속도가 필요합니다. 다른 ISL 속도를 사용하려면 기능 변경 요청(FPVR)이 필요합니다. FPVR을 제출하려면 NetApp 영업팀에 문의하십시오.</block>
+  <block id="deaa86cf36be952b15db4ccf35d9a39d" category="list-text">다른 모든 플랫폼에서 지원되는 최소 ISL 링크 속도는 10Gbps입니다.</block>
 </blocks>
