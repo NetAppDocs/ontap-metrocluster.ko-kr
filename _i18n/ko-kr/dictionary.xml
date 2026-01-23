@@ -13702,7 +13702,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ba17277e87e849f2a38d0126b17905d8" category="list-text">유지 관리 모드에서 저장소가 표시되는지 확인하세요.</block>
   <block id="ef1806576a0dffd58481510c7525ed90" category="list-text">유지 관리 모드로 부팅합니다.</block>
   <block id="41af2ca5f1002ab08c75f010d70581a4" category="list-text">남아 있는 사이트에서 스토리지가 표시되는지 확인합니다.</block>
-  <block id="b496741d8a784412385f91b26ad4e4f1" category="list-text">유지 관리 모드에서 노드에서 로컬 저장소가 표시되는지 확인하세요.</block>
   <block id="93ba613931cbee0caca0df20b5380feb" category="doc">12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
   <block id="a696f18cbd32872428df323dcf124b0f" category="list-text">이 섹션의 표는 12포트 Cisco 9336C-FX2 스위치용입니다.</block>
   <block id="9e1541acccf8eedc84b54f8f9ba9022a" category="inline-link-macro">Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
@@ -14526,4 +14525,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="7c6d58b5ff7d328112a439ee0ef9df40" category="paragraph">MetroCluster Tiebreaker 1.7 버전부터는 전환 시뮬레이션을 통해 Tiebreaker 전환 기능을 테스트할 수 있습니다.</block>
   <block id="e4e3590eb665c0a0f5d5b3467636e5a7" category="list-text">ONTAP 9.18.1 버전부터 MetroCluster IP 백엔드 포트 속도가 100G인 플랫폼은 최소 100Gbps의 ISL 링크 속도가 필요합니다. 다른 ISL 속도를 사용하려면 기능 변경 요청(FPVR)이 필요합니다. FPVR을 제출하려면 NetApp 영업팀에 문의하십시오.</block>
   <block id="deaa86cf36be952b15db4ccf35d9a39d" category="list-text">다른 모든 플랫폼에서 지원되는 최소 ISL 링크 속도는 10Gbps입니다.</block>
+  <block id="e8c32d7ccca6662808649d7c3e536c38" category="list-text">유지보수 모드에 있는 노드에서 로컬 및 원격 스토리지가 보이는지 확인하십시오:</block>
+  <block id="613654d6d797f748d730bca666bd5f45" category="list-text">새 펌웨어 버전이 솔루션과 호환되는지 확인하십시오. 자세한 내용은 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
 </blocks>
