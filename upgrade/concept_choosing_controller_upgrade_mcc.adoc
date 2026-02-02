@@ -65,7 +65,7 @@ summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다�
 * 참고 1: 이 업그레이드의 경우 절차를 사용하십시오 link:task_upgrade_A700_to_A900_in_a_four_node_mcc_ip_us_switchover_and_switchback.html["스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700/FAS9000을 AFF A900/FAS9500으로 컨트롤러 업그레이드(ONTAP 9.10.1 이상)"]
 * 참고 2: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.
 * 참고 3: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.
-* 참고 4: 컨트롤러 모듈을 교체해야 합니다.
+* 참고 4: 통합 시스템(동일한 섀시의 디스크 및 컨트롤러)을 업그레이드하려면 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체해야 합니다.
 * 참고 5: IOM 모듈이 이전 컨트롤러를 외부 SAS 쉘프로 변환해야 합니다. 지원되는 IOM 모듈은 을 link:https://hwu.netapp.com/["Hardware Universe"^]참조하십시오.
 
 
@@ -82,7 +82,7 @@ image:../media/manual-upgrade-combination-group-1.png["에서는 그룹 1 플랫
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.
 
-image:../media/manual-upgrade-combination-group-2-a90-fas90.png["에서는 그룹 2 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다"]
+image:../media/manual-upgrade-combination-group-2-a90-fas90-updated.png["에서는 그룹 2 플랫폼에 대해 지원되는 업그레이드 조합을 보여 줍니다"]
 
 --
 ====

@@ -11899,7 +11899,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="00422b8712ec5454364e6489bb81ba29" category="list-text">컨트롤러 업그레이드를 수행할 때 이전 플랫폼과 새 플랫폼 유형 * 이 다음과 일치해야 합니다 *.</block>
   <block id="5505f24f1b03305d31aacdd035c7f251" category="paragraph-title">AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다</block>
   <block id="ae189029f72cc261fbad1afff41d9552" category="list-text">참고 3: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.</block>
-  <block id="39eb8422a5f49fae94f0335febb78701" category="list-text">참고 4: 컨트롤러 모듈을 교체해야 합니다.</block>
   <block id="2d5d2a9ece12ce430adc9f20c9e9464d" category="paragraph-title">ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다</block>
   <block id="9311605dda14c8d475dd817b196dbe33" category="list-text">참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="e201b3063a835c6ab815286f4d0dc126" category="paragraph-title">AFF 및 FAS MetroCluster FC 컨트롤러 업그레이드를 지원했습니다</block>
@@ -12019,7 +12018,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="641cba091515001a3bb48d030bddd608" category="section-title">cluster_A에서 노드를 업그레이드합니다</block>
   <block id="2ce39beb4bd7e0662d271e0be20e56c4" category="paragraph">업그레이드를 시작하기 전에 다음 고려 사항을 검토하여 구성이 지원되는지 확인하십시오.</block>
   <block id="a63b5e3f602b86fc07da490951d07b9f" category="list-text">참고 2: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.</block>
-  <block id="3b2d91208084a85415d107e904b61128" category="list-text">참고 3: 컨트롤러 모듈을 교체해야 합니다.</block>
   <block id="15301c23263e749022234eacd3de3300" category="paragraph">ASA 시스템에서는 명령을 사용하여 컨트롤러를 업그레이드할<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 수 없습니다.</block>
   <block id="8f93576e78d28328ad0cf696ed0604e4" category="list-text">업그레이드 구성에서 기존 컨트롤러 및 새 컨트롤러에서 MetroCluster IP 스위치(스위치 유형, 공급업체 및 모델) 및 펌웨어 버전을 지원해야 합니다.</block>
   <block id="1df73bda435b5d96d663aead5cdd3220" category="list-text"><block ref="d6f593c128c20b2b477999ba1d624969" prefix="" category="inline-code"></block></block>
@@ -12826,13 +12824,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3d8c3985ef8f7b9c50308a5dfab923c4" category="paragraph"><block ref="f85c62a3a981a8b83a61b1dc7959165b" category="inline-link-macro-rx"></block>..</block>
   <block id="ed1dd620ec6ed4baac7e1208e4a9d25d" category="summary">ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하려면 먼저 부트마크를 설정해야 컨트롤러 업그레이드를 진행할 수 있습니다.</block>
   <block id="496db1855de52190cc06d85f972a650b" category="doc">필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 MetroCluster IP 업그레이드)</block>
-  <block id="59b020257dd689cba5d5780a512943fd" category="section-title">단계 1: 이전 컨트롤러에 설정해야 하는 부트아그를 결정합니다</block>
-  <block id="6e9eadf85899a23a56a99cb9a6df7652" category="paragraph">다음 시스템에 대해 지원되는 모든 업그레이드를 수행하려면 컨트롤러 업그레이드를 수행하기 전에 이전 컨트롤러에 대해 bootarg를 설정해야 합니다.</block>
   <block id="724bf3ae18d86521a5b9d77a13fcfddb" category="list-text">AFF C80 를 참조하십시오</block>
   <block id="bf35733b2711515e1aa7614ca7dd1ef0" category="list-text">AFF A50, AFF A20, AFF A30</block>
   <block id="b1a7d02f89c62c97fedf60bb09caa4bc" category="list-text">AFF C30, AFF C60</block>
   <block id="55aa8632230fb0a23186560320c2411c" category="inline-link-macro">업그레이드를 위해 시스템을 준비합니다</block>
-  <block id="05c6aa6eca73dc8505cf4bcf7e51677a" category="paragraph">ONTAP 9.15.1 이상 버전에서 도입된 시스템을 업그레이드할 때는 이전 컨트롤러에서 bootarg를 설정해야<block ref="ee06f9ce95f0e4407845e7566ca3219e" prefix=" " category="inline-code"></block> 합니다. 그러나 특정 업그레이드 경로에서는 bootarg를 대신 설정해야<block ref="547c6b727c1ad89e0e0a9fab4efaf59d" prefix=" " category="inline-code"></block> 합니다.</block>
   <block id="ffe782ee595f504f732429ce74813c9c" category="paragraph">다음 표를 사용하여 특정 업그레이드 조합에 대해 설정해야 하는 부트카를 결정합니다.</block>
   <block id="9a5481a4499f03b428516e1e655b2247" category="cell">업그레이드 대상...</block>
   <block id="2960c7c521e801666250bc33502b1481" category="cell">bootarg 설정...</block>
@@ -12842,7 +12837,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1587ade3a80eae494164e86cb2dd5734" category="cell">AFF A150에서 AFF A20까지</block>
   <block id="66d5b6c0a5d29009937264288b2bed0e" category="cell">AFF A220에서 AFF A20까지</block>
   <block id="3ea751f5e7ad018c7a1c4ebe22608ee6" category="cell"><block ref="ee06f9ce95f0e4407845e7566ca3219e" prefix="" category="inline-code"></block></block>
-  <block id="4e154455580c2924ab538f717efce366" category="section-title">단계 2: 이전 컨트롤러에 필요한 부트아그를 설정합니다</block>
   <block id="31bb07ea477e7a663bf099ca3ed9b374" category="inline-xref">설정할 부트문자를 결정합니다</block>
   <block id="b0eddbd28deec4566b9a1e2f57d34c8f" category="list-text">업그레이드 조합에 필요한 bootarg를 설정합니다. 의 테이블을 사용하여 <block ref="092a73eeb155f2a0de79637a5ae185e0" category="inline-xref-macro-rx"></block>설정해야 하는 부트아그를 이미 확인했습니다.</block>
   <block id="ee06f9ce95f0e4407845e7566ca3219e" category="open-title">hw.cxgbe.toe_keepalive_disable을 선택합니다</block>
@@ -13002,7 +12996,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="95a0dc0cefe38a8a65f4b4857599a767" category="paragraph"><block ref="7540bef2d37c83ab15db307604964774" category="inline-link-macro-rx"></block>..</block>
   <block id="471b1d5bf7b9020a821b9612fad3ac61" category="summary">ONTAP 9.15.1 이상에서 도입된 시스템을 업그레이드하려면 업그레이드를 진행하기 전에 bootarg를 설정해야 합니다.</block>
   <block id="867034ce824c06d2ae20a2782eada4c4" category="list-text">AFF A70, AFF A90, AFF A1K</block>
-  <block id="e13c96308702af19fbafc3aa4886ae41" category="admonition">나열된 시스템으로 업그레이드하는 경우 업그레이드를 수행하기 전에 * 기존 시스템에 필요한 부트마크를 * 설정해야 합니다. 다른 모든 업그레이드의 경우 이 작업을 건너뛰고 로 바로 이동할 수 있습니다 <block ref="7316c75eb3c5ee7c2327a2b6a0fcc53b" category="inline-link-macro-rx"></block>.</block>
   <block id="f05c544454e5ae504161071bcf104914" category="list-text">업그레이드 조합에 필요한 bootarg를 설정합니다. 의 테이블을 사용하여 <block ref="4e6a8a5f8b225717259653d744f685bb" category="inline-xref-macro-rx"></block>설정해야 하는 부트아그를 이미 확인했습니다.</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">다음 단계</block>
   <block id="9a24b7f06d5ef108e1e9e3a9b9635840" category="paragraph"><block ref="7316c75eb3c5ee7c2327a2b6a0fcc53b" category="inline-link-macro-rx"></block>..</block>
@@ -13014,7 +13007,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="15d63e3040229aa69f2bacf54450c8aa" category="paragraph">파일의 압축을 풀 필요가<block ref="24f58b52875ae0cf9e2f71f5f4715aba" prefix=" " category="inline-code"></block> 없습니다.</block>
   <block id="553c80eee3874db37c74026e9cd54f1c" category="paragraph"><block ref="669980a1306854f119900d6a8876f53d" category="inline-link-macro-rx"></block>..</block>
   <block id="1134c88b3e27b3208779089225a7548e" category="summary">MetroCluster IP 컨트롤러 업그레이드를 시작하기 전에 업그레이드 조합이 지원되는지 확인해야 합니다.</block>
-  <block id="3bd44928438eecd88373e90938479338" category="list-text">참고 4: IOM 모듈이 이전 컨트롤러를 외부 SAS 쉘프로 변환해야 합니다. 지원되는 IOM 모듈은 을 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="fd82efb2b9fc7033a2ee19efb493d464" category="inline-link-macro">업그레이드 또는 새로 고침 방법을 선택합니다</block>
   <block id="cbbc95c0b1d7c5d8feea0d31eafa9a28" category="paragraph">추가 절차는 을 <block ref="1547bd533de8078ec6c6f72dc3468122" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="a397b8fc1d64d0e666558911201a9d53" category="inline-link-macro">이 업그레이드 절차를 사용하기 위한 요구 사항</block>
@@ -13413,13 +13405,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2077cee62d2dc819ca10d6e3f6a4f59b" category="list-text">참고 2: 이러한 조합을 사용하려면 ONTAP 9.13.1 이상(또는 플랫폼에서 지원되는 최소 ONTAP 버전)이 필요합니다.</block>
   <block id="9bc3cb19080afd7c3475f6c80b5ee013" category="paragraph">AFF A150, AFF A20, FAS2750, AFF A220, FAS500f, AFF C250, FAS8200, FAS50, AFF A300 C30, AFF A400 A30, AFF A250, AFF, AFF A320, FAS8300, AFF C400, AFF 및 FAS8700 시스템에 대한 확장 조합을 검토합니다.</block>
   <block id="99032e371bac241eac644b68481b2c7c" category="paragraph">AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, FAS9500, AFF A900, AFF A800 C80, FAS90, AFF A90 및 AFF A1K 시스템에 대한 확장 조합을 검토합니다.</block>
-  <block id="1f33c4b21d6c848bec5712e27807c50a" category="paragraph">이 작업은 * AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A20, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템으로 업그레이드할 때만 필요합니다.</block>
   <block id="63856cfb46890240aad0d97a958b298b" category="paragraph">다음 표는 두 그룹으로 나뉘어 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="e94f3a81af196da788fa0f158f9d57fc" category="sidebar">Active IQ Unified Manager 및 System Manager를 사용하여 추가 구성 및 모니터링을 수행하는 방법에 대해 알아보십시오</block>
-  <block id="d7aa339b18c7637dfafa2ace54386b6c" category="admonition">업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에 필요한 bootarg를 설정해야 합니다.</block>
   <block id="ac37738788377720cfa00ec2fd76c841" category="list-text">두 사이트에서 하나의 노드를 중지하고 HA 파트너가 노드의 스토리지 인수를 수행하도록 합니다.</block>
   <block id="0fd6026f96835994e1e5d178235825d6" category="list-text">업그레이드할 DR 그룹 또는 DR 그룹의 모든 노드에 대해 이 단계를 반복합니다.</block>
-  <block id="29a7afcbdc44731ef5db6482e263bc76" category="paragraph">ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하려면 업그레이드를 시작하기 전에 이전 컨트롤러에서 부트아그를 설정해야 합니다.</block>
   <block id="ffb8d6643ebe516c638a6ca5b500299d" category="list-text">업그레이드 중인 DR 그룹의 4개 노드 모두에 대해 이 단계를 반복합니다.</block>
   <block id="d91bce8efd531c677e67c52eb81908cc" category="doc">MetroCluster 유지 관리에 대해 자세히 알아보십시오</block>
   <block id="8f618269f9967b96ce33544121035a9a" category="paragraph">MetroCluster 유지 보수 작업을 준비하는 방법과 구성에 맞는 올바른 유지 보수 절차를 선택하는 방법에 대해 알아봅니다.</block>
@@ -13680,7 +13669,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="90700c1e50cb21bc8204f5e8e63ff08f" category="inline-image-macro">AFF 및 FAS 업그레이드 조합 그룹 1을 보여줍니다.</block>
   <block id="2b3092608ec3c36288b967b8d2e51cd0" category="paragraph"><block ref="2b3092608ec3c36288b967b8d2e51cd0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c86a11671a0682bdfafd478847f74282" category="inline-image-macro">AFF 및 FAS 업그레이드 조합 그룹 2를 보여줍니다.</block>
-  <block id="51cfa502e93acea429147cf299cd152c" category="paragraph"><block ref="51cfa502e93acea429147cf299cd152c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7ffbff14d15222d12cd1d90edd7e729d" category="sidebar">NVIDIA SN2100 스위치를 구성합니다</block>
   <block id="96a5ba855b4ee3dba60ecf722a706b29" category="sidebar">CSHM 파일을 설치합니다</block>
   <block id="eb4b6887e705dad904287c0e3641b25e" category="sidebar">MetroCluster IP 스위치 상태 모니터링</block>
@@ -14149,11 +14137,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ba5335bcde9d44f534e3d1f52ca0bc09" category="paragraph">다음 단계에서는 4노드 MetroCluster 구성의 FibreBridge 7500N에 대한 구역 지정 섹션에 설명된 구역 지정을 사용합니다.</block>
   <block id="ebcbebb3418f0f51f4443340ff325a84" category="list-text">케이블링 중에 IOM12 모듈 기반 스택을 별도의 SAS 포트에 연결되어 있는 한 동일한 브리지에 연결합니다.</block>
   <block id="11824150050e29484950961f3f0906e9" category="paragraph"><block ref="fb3f1acbe91ec35c5f5605a9b6d4efef" category="inline-xref-macro-rx"></block></block>
-  <block id="317e4f171d10313b7d9f57b9ee71c757" category="paragraph"><block ref="317e4f171d10313b7d9f57b9ee71c757" category="inline-image-macro-rx" type="image"></block></block>
   <block id="eaf2dec7a97ec668369075c4f3865b63" category="paragraph">ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하는 경우 일반적으로 업그레이드를 시작하기 전에 이전 컨트롤러에 bootarg를 설정해야 합니다.</block>
   <block id="c845c22e49c5544061c5d10f7d34b798" category="admonition">업그레이드 조합이 영향을 받는 경우, 성공적인 업그레이드를 위해 모든 이전 컨트롤러에 bootarg를 설정해야 합니다.  업그레이드 조합에 bootarg 설정이 필요한지, 그리고 조합에 맞는 올바른 bootarg를 설정하는 방법을 확인하려면 이 섹션의 정보를 주의 깊게 검토하세요.</block>
   <block id="97009239e0cfec412eecee57adec7fbb" category="section-title">1단계: 이전 컨트롤러에 bootarg를 설정해야 하는지 확인</block>
-  <block id="4562de78a80791e72df05ddefb3bd680" category="paragraph">업그레이드를 시작하기 전에 필수 bootarg를 설정해야 하는지 확인하려면 다음 정보를 사용하세요.</block>
   <block id="61cf51d7e6639bbabc9b0e1161cf9d1a" category="list-text">다음 시스템에 지원되는 업그레이드를 위해서는 달리 명시되지 않는 한 이전 컨트롤러에 bootarg를 설정해야 합니다.</block>
   <block id="8279d52ff386b78e641d51f228ca0759" category="list-text">업그레이드가 다음 조합 중 하나인 경우 이전 컨트롤러에 bootarg를 설정할 필요가 *없습니다*.</block>
   <block id="a208bde2bbdb812d3731f4621c803c41" category="list-text">AFF A70 시스템에서 AFF A90 시스템으로</block>
@@ -14164,9 +14150,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="50bb0724e98833a5ad53f4aca5baebaf" category="paragraph">AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 대한 기타 모든 업그레이드</block>
   <block id="9cd6725fb8f6020f90629ee4847213aa" category="paragraph">*참고:* AFF A70 에서 AFF A90 시스템으로, 또는 FAS70에서 FAS90 시스템으로 업그레이드하는 경우 bootarg를 설정할 필요가 없습니다.</block>
   <block id="7a8f8d0a76afd2956fbc911927b76065" category="section-title">3단계: 이전 컨트롤러에 필요한 bootarg 설정</block>
-  <block id="ada21e32b58b8c3670abec0c9bd43b39" category="paragraph">업그레이드 조합에 필요한 bootarg를 확인한 후, 다음 단계에 따라 이전 컨트롤러에 bootarg를 설정합니다.  이 작업은 영향을 받는 업그레이드에만 필요합니다.</block>
   <block id="5c60cc2ba2a9eb0236f0d3ba52d42179" category="admonition">업그레이드를 시작하기 전에 두 사이트의 모든 이전 노드에서 bootarg를 설정해야 합니다.</block>
-  <block id="51e9ae39fa32c368d27f8e565c6a0512" category="cell">AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A30, AFF C30, AFF C60 또는 FAS50 시스템에 대한 기타 모든 지원 업그레이드</block>
   <block id="9f0a4554064856ae78dbf1c08bc876ce" category="doc">MetroCluster 구성에서 DR 그룹 제거</block>
   <block id="2f5075fd2401e26a07990d72f3087874" category="paragraph">ONTAP 9.8부터 8노드 MetroCluster 구성에서 재해 복구(DR) 그룹을 제거하여 4노드 MetroCluster 구성을 생성할 수 있습니다.</block>
   <block id="73ac4183b96cb40ebb14a9dc72a13298" category="admonition">이러한 단계는 전환 및 시스템 새로 고침 워크플로우 동안 사용됩니다.</block>
@@ -14527,4 +14511,24 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="deaa86cf36be952b15db4ccf35d9a39d" category="list-text">다른 모든 플랫폼에서 지원되는 최소 ISL 링크 속도는 10Gbps입니다.</block>
   <block id="e8c32d7ccca6662808649d7c3e536c38" category="list-text">유지보수 모드에 있는 노드에서 로컬 및 원격 스토리지가 보이는지 확인하십시오:</block>
   <block id="613654d6d797f748d730bca666bd5f45" category="list-text">새 펌웨어 버전이 솔루션과 호환되는지 확인하십시오. 자세한 내용은 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="6d590dae977ef221f9c84c254e46f83f" category="paragraph">MetroCluster FlexGroup 볼륨에 대한 SnapMirror 클라우드 지원</block>
+  <block id="241800f8494edf500ad950d6dc737a4f" category="paragraph">SnapMirror 클라우드는 MetroCluster 구성의 FlexGroup 볼륨에 대한 백업 및 복원 작업을 지원합니다.</block>
+  <block id="9fba9b738ffb50e00e660628b4e18f5a" category="inline-link-macro">ONTAP SnapMirror를 사용하여 클라우드에 데이터 백업</block>
+  <block id="18b24a167aecf15b34fd1d9c3134070d" category="paragraph"><block ref="18b24a167aecf15b34fd1d9c3134070d" category="inline-link-macro-rx"></block></block>
+  <block id="d1deb46a10dc3123edfe76c7a47cbee1" category="paragraph">ONTAP 9.18.1GA</block>
+  <block id="38fc12d8890f30afa1b180ca8bd43d52" category="paragraph"><block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 사용한 MetroCluster IP 컨트롤러 업그레이드에 대해 새로 지원되는 업그레이드 조합</block>
+  <block id="04b6e0caeafa8afd1fddb03f2837eb91" category="paragraph"><block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 사용하여 MetroCluster IP 구성에서 AFF A70을 AFF A90 시스템으로 또는 FAS70을 FAS90 시스템으로 업그레이드하는 기능에 대한 지원이 추가되었습니다.</block>
+  <block id="7c876b2b1c29ab7cbf4dd35f76fe9601" category="paragraph"><block ref="7c876b2b1c29ab7cbf4dd35f76fe9601" category="inline-link-macro-rx"></block></block>
+  <block id="b4043feb827ed258b03c0dc9d5c7e979" category="list-text">참고 4: 통합 시스템(동일한 섀시의 디스크 및 컨트롤러)을 업그레이드하려면 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체해야 합니다.</block>
+  <block id="4232872ec24791a771e26762eb9729a1" category="paragraph"><block ref="4232872ec24791a771e26762eb9729a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="20d22f3415d5c154c703babbfee40553" category="paragraph">업그레이드를 시작하기 전에 다음 정보를 사용하여 이전 컨트롤러에 bootarg를 설정해야 하는지 확인하십시오.</block>
+  <block id="f7dad78d22aba2309c18549bb2e1990e" category="paragraph">업그레이드 조합에 필요한 bootarg를 확인한 후에는 이전 컨트롤러에서 bootarg를 설정하는 단계를 따르십시오.</block>
+  <block id="15a3efc45ba755dedf588ac88bf541a6" category="list-text">AFF A250에서 AFF A30 시스템으로</block>
+  <block id="13fa7ab37c8f78945a0ca14da0aa4198" category="list-text">AFF C250에서 AFF C30 시스템으로</block>
+  <block id="61ec242ab28e21649a7ba4c3bc6010f3" category="list-text">AFF A70에서 AFF A90 시스템으로</block>
+  <block id="5b0b4899478dc191f6732af89e9c726a" category="admonition">업그레이드에 bootarg를 설정할 필요가 없는 경우 이 작업을 건너뛰고 <block ref="7316c75eb3c5ee7c2327a2b6a0fcc53b" category="inline-link-macro-rx"></block>로 바로 이동할 수 있습니다.</block>
+  <block id="f8823620823bdbe70425ce033ac49ff9" category="list-text">참고 3: 통합 시스템(동일한 섀시의 디스크 및 컨트롤러)을 업그레이드하려면 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체해야 합니다.</block>
+  <block id="3e72f6e14914c8788932c9e928d6b32b" category="list-text">참고 4: 기존 컨트롤러를 외부 SAS 셸프로 변환하려면 IOM 모듈이 필요합니다. 지원되는 IOM 모듈은 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="ba0ea850ad143cf2644fe04fa6c67417" category="list-text">참고 5: ONTAP 9.18.1GA 이상이 필요합니다.</block>
+  <block id="c57a703687b0f21729f368950b7a5618" category="paragraph"><block ref="c57a703687b0f21729f368950b7a5618" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

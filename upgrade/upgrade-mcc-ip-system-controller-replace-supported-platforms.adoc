@@ -44,8 +44,9 @@ MetroCluster IP 컨트롤러 업그레이드를 시작하기 전에 업그레이
 
 * 참고 1: 컨트롤러 업그레이드는 ONTAP 9.13.1 이상을 실행하는 시스템에서 지원됩니다.
 * 참고 2: 컨트롤러 업그레이드가 완료될 때까지 대상 플랫폼에 내부 드라이브를 가질 수 없습니다. 업그레이드 후에 내부 드라이브를 추가할 수 있습니다.
-* 참고 3: 컨트롤러 모듈을 교체해야 합니다.
-* 참고 4: IOM 모듈이 이전 컨트롤러를 외부 SAS 쉘프로 변환해야 합니다. 지원되는 IOM 모듈은 을 link:https://hwu.netapp.com/["Hardware Universe"^]참조하십시오.
+* 참고 3: 통합 시스템(동일한 섀시의 디스크 및 컨트롤러)을 업그레이드하려면 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체해야 합니다.
+* 참고 4: 기존 컨트롤러를 외부 SAS 셸프로 변환하려면 IOM 모듈이 필요합니다. 지원되는 IOM 모듈은 link:https://hwu.netapp.com/["Hardware Universe"^]을 참조하십시오.
+* 참고 5: ONTAP 9.18.1GA 이상이 필요합니다.
 
 
 [role="tabbed-block"]
@@ -61,7 +62,7 @@ image:../media/assisted-group-1.png["AFF 및 FAS 업그레이드 조합 그룹 1
 --
 AFF C60, AFF A50, FAS70, FAS9000, AFF A700, AFF A70, AFF C800, AFF, AFF A90, AFF A900, AFF A800 C80, FAS90, FAS9500 및 AFF A1K 시스템으로의 업그레이드에 대해 지원되는 조합을 검토합니다.
 
-image:../media/assisted-group-2-updated.png["AFF 및 FAS 업그레이드 조합 그룹 2를 보여줍니다."]
+image:../media/assisted-group-2-a70-a90-updated.png["AFF 및 FAS 업그레이드 조합 그룹 2를 보여줍니다."]
 
 --
 ====
