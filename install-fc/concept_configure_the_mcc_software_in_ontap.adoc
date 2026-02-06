@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: configure, configuring, metrocluster, software, ontap 
 summary: 노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 
 ---
-= ONTAP에서 MetroCluster 소프트웨어 구성
+= ONTAP에서 MetroCluster FC 소프트웨어 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-노드 레벨 구성 및 노드 구성을 포함하여 ONTAP의 MetroCluster 구성에서 각 노드를 두 사이트로 설정해야 합니다. 또한 두 사이트 간에 MetroCluster 관계를 구현해야 합니다.
+ONTAP의 MetroCluster FC 구성에서 각 노드를 설정해야 합니다. 여기에는 노드 수준 구성과 두 사이트로의 노드 구성이 포함됩니다. 또한 두 사이트 간의 MetroCluster 관계를 구현해야 합니다.
 
 image::../media/workflow_high_level_node_and_cluster_configuration_software.gif[상위 레벨 노드 및 클러스터 구성을 위한 워크플로]
 
@@ -89,7 +89,7 @@ image::../media/workflow_high_level_node_and_cluster_configuration_software.gif[
  a| 
 클러스터 이름입니다
 
-이 설명서에 사용된 예: site_a
+이 절차에서 사용되는 예: site_a
  a| 
 
 
@@ -132,7 +132,7 @@ DNS 이름 서버
  a| 
 노드 1
 
-이 설명서에 사용된 예: controller_a_1
+이 절차에서 사용되는 예: controller_a_1
  a| 
  a| 
  a| 
@@ -145,7 +145,7 @@ DNS 이름 서버
 
 2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 필요하지 않습니다.
 
-이 설명서에 사용된 예: controller_a_2
+이 절차에서 사용되는 예: controller_a_2
  a| 
  a| 
  a| 
@@ -388,7 +388,7 @@ HTTP, HTTPS 또는 SMTP
  a| 
 클러스터 이름입니다
 
-본 가이드에 사용된 예: site_B
+이 절차에서 사용된 예: site_B
  a| 
 
 
@@ -431,7 +431,7 @@ DNS 이름 서버
  a| 
 노드 1
 
-이 설명서에 사용된 예: controller_B_1
+이 절차에서 사용된 예: controller_B_1
  a| 
  a| 
  a| 
@@ -444,7 +444,7 @@ DNS 이름 서버
 
 2노드 MetroCluster 구성에는 필요하지 않습니다(각 사이트에 1개 노드).
 
-이 설명서에 사용된 예: controller_B_2
+이 절차에서 사용된 예: controller_B_2
  a| 
  a| 
  a| 
@@ -2509,6 +2509,7 @@ DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들�
 * 시스템에 여러 드라이브 유형(이기종 스토리지)이 있는 경우 올바른 드라이브 유형을 선택할 수 있는 방법을 이해해야 합니다.
 * 드라이브는 특정 노드에 의해 소유되며, 애그리게이트를 생성할 경우, 애그리게이트에 있는 모든 드라이브는 동일한 노드에 의해 소유되어야 하며, 이 노드는 해당 애그리게이트의 홈 노드가 됩니다.
 * 애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다. 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["디스크 및 애그리게이트 관리"^].
+* 애그리게이트 이름은 MetroCluster 사이트 전체에서 고유해야 합니다. 즉, 사이트 A와 사이트 B에 동일한 이름을 가진 두 개의 서로 다른 애그리게이트를 생성할 수 없습니다.
 
 
 .단계

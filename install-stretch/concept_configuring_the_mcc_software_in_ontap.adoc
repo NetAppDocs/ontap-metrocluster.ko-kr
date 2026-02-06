@@ -1734,6 +1734,7 @@ DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들�
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디스크 및 애그리게이트 관리"^]
 
+* 애그리게이트 이름은 MetroCluster 사이트 전체에서 고유해야 합니다. 즉, 사이트 A와 사이트 B에 동일한 이름을 가진 두 개의 서로 다른 애그리게이트를 생성할 수 없습니다.
 
 
 .단계

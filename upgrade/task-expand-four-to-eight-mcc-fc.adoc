@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html 
+permalink: upgrade/task-expand-four-to-eight-mcc-fc.html 
 sidebar: sidebar 
 keywords: metrocluster, upgrade, create, mirrored, data, aggregate, node 
 summary: DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다. 

@@ -203,7 +203,7 @@ entries:
       - title: MetroCluster 구성을 구현합니다
         url: "/upgrade/task_implement_the_mcc_configuration_mcc_refresh_mcc_expansion.html"
       - title: 각 노드에 미러링된 데이터 애그리게이트를 생성합니다
-        url: "/upgrade/task_create_a_mirrored_data_aggregate_on_each_node_mcc.html"
+        url: "/upgrade/task-expand-four-to-eight-mcc-fc.html"
       - title: 상태 모니터링을 위해 FC-to-SAS 브리지를 구성합니다
         url: "/upgrade/task_configure_the_fc_to_sas_bridges_for_health_monitor.html"
       - title: MetroCluster 구성에서 메타데이터 볼륨 이동

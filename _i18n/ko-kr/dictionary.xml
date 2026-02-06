@@ -1229,7 +1229,6 @@
   <block id="3fe0e4eee6f53345fea5fefaa6f51acc" category="section-title">MetroCluster 구성 구현</block>
   <block id="76bb4d86387f4661cfb490b693944c2c" category="paragraph">MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster configure' 명령을 실행해야 합니다.</block>
   <block id="cd7c123576d74dffad372d35977b2234" category="list-text">각 클러스터에 루트가 아닌 미러링된 데이터 Aggregate가 2개 이상 있어야 합니다.</block>
-  <block id="a09517d85950406142abe0b5f1a98a2e" category="paragraph">스토리지 aggregate show 명령을 사용하여 이를 확인할 수 있습니다.</block>
   <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-xref">1단계</block>
   <block id="9ea79dc17a6b01f7950f89175d68862a" category="paragraph">모든 노드에서 'MetroCluster configure' 명령을 한 번 실행하여 MetroCluster 설정을 활성화한다. 각 사이트나 노드에서 명령을 실행할 필요가 없으며 명령을 실행하기로 선택한 노드나 사이트는 중요하지 않습니다.</block>
   <block id="d7f15f09df4ff19cfec06353603aa12d" category="paragraph">MetroCluster configure 명령은 두 클러스터 각각에서 가장 낮은 시스템 ID를 갖는 두 노드를 DR(재해 복구) 파트너로 자동 페어링합니다. 4노드 MetroCluster 구성에는 DR 파트너 쌍이 2개 있습니다. 두 번째 DR 쌍은 시스템 ID가 더 높은 두 노드에서 생성됩니다.</block>
@@ -1238,7 +1237,6 @@
   <block id="5a886364f7be07108a866a1dbf84580e" category="paragraph">데이터 애그리게이트가 여러 개 있습니다</block>
   <block id="eb4d985f7e803275c39a27eca837d150" category="paragraph">단일 미러링 데이터 애그리게이트</block>
   <block id="ea04e5f210548abce0038ee281135006" category="list-text">노드의 프롬프트에서 고급 권한 레벨로 변경합니다.</block>
-  <block id="794714ece855897a8f048ab85dcccd86" category="paragraph">'MetroCluster configure-allow-with-one-aggregate TRUE node-name'</block>
   <block id="47ff2890d02071b25bb35b0427bd6fbe" category="inline-link-macro">MetroCluster 구성에서 메타데이터 볼륨 이동</block>
   <block id="f85d453a151727b424ea32911c308179" category="paragraph">모범 사례는 데이터 애그리게이트를 여러 개 사용하는 것입니다. 첫 번째 DR 그룹에 애그리게이트만 있고 하나의 애그리게이트로 DR 그룹을 추가하려면 메타데이터 볼륨을 단일 데이터 애그리게이트로 이동해야 합니다. 이 절차에 대한 자세한 내용은 을 참조하십시오 <block ref="bf3d05f18b73f1c62d283d02a0c83e7a" category="inline-link-macro-rx"></block>.</block>
   <block id="a0015e0604e545ee6945f1fa8fdce38f" category="paragraph">다음 명령을 실행하면 "controller_a_1"이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 설정됩니다.</block>
@@ -3902,7 +3900,6 @@
   <block id="af0e7b523338f1f736bf918304b175fe" category="paragraph">클러스터의 각 노드에 대해 관리 IP 주소, 네트워크 마스크 및 기본 게이트웨이가 필요합니다.</block>
   <block id="a85b22fe65b9e8fef1530964d6b1e3ab" category="cell">네트워크 마스크</block>
   <block id="8e4b6c1e6f2cb144899e15555526ad29" category="paragraph">노드 2. 2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 필요하지 않습니다.</block>
-  <block id="1ccec885efe14190b68ea60168729b15" category="paragraph">이 설명서에 사용된 예: controller_a_2</block>
   <block id="457b5e1bf03afbd29fcfeafe25b17b46" category="section-title">사이트 A 클러스터 피어링을 위한 LIF 및 포트</block>
   <block id="b83f62c1b8d28ab60dfdf3f2be00e6bd" category="paragraph">클러스터의 각 노드에 대해 네트워크 마스크와 기본 게이트웨이를 포함하여 2개의 인터클러스터 LIF의 IP 주소가 필요합니다. 인터클러스터 LIF는 클러스터를 피어로 사용하는 데 사용됩니다.</block>
   <block id="2e00b3f890ab085173dcb5fc224c2328" category="cell">인터클러스터 LIF의 IP 주소입니다</block>
@@ -3932,7 +3929,6 @@
   <block id="a5902c9bf3ac2ea1b8435d858c7d3a94" category="section-title">사이트 B 클러스터 생성 정보</block>
   <block id="8072672014690af266505818a59ad49a" category="section-title">사이트 B 노드 정보</block>
   <block id="7e14186eba13c28295a0b6d2427e0529" category="paragraph">노드 2. 2노드 MetroCluster 구성에는 필요하지 않습니다(각 사이트에 1개 노드).</block>
-  <block id="7f92c2e38c8b2f1d9d424f284d8b974e" category="paragraph">이 설명서에 사용된 예: controller_B_2</block>
   <block id="6f126fa7932b6b060d8301f099d74d18" category="section-title">사이트 B 클러스터 피어링을 위한 LIF 및 포트</block>
   <block id="5b3864552eeb932b0d36514ae2ad1a25" category="section-title">사이트 B 시간 서버 정보</block>
   <block id="a4e6e7ad65f785b47dc3bb3846e4c758" category="paragraph">문제 해결 및 유지 관리를 위해 각 노드의 서비스 프로세서(SP)에 대한 액세스를 설정해야 하며, 이때 각 노드에 대해 다음 네트워크 정보가 필요합니다.</block>
@@ -4055,7 +4051,6 @@
   <block id="a51a9fa7ea4ed8f7d2d312630ac5f093" category="list-text">사이트 A:+'MetroCluster show'에서 구성을 확인합니다</block>
   <block id="7ded485b7ebcebc3bd6f05399892bc0d" category="section-title">MetroCluster 구성에서 SNMPv3 구성</block>
   <block id="aad314edd91dd520fd86444157d56f66" category="paragraph">스위치와 ONTAP 시스템의 인증 및 개인 정보 보호 프로토콜은 동일해야 합니다.</block>
-  <block id="b2ac2c4a8a523e04a6c0ddb23069d5cf" category="paragraph">ONTAP는 현재 AES-128 및 AES-256 암호화를 지원합니다.</block>
   <block id="e96826849500e7c6adab84f1693eb72c" category="list-text">컨트롤러 프롬프트에서 각 스위치에 대한 SNMP 사용자를 생성합니다.</block>
   <block id="df5566493ce43130608af35ff9c2f4d8" category="paragraph">'보안 로그인 생성'</block>
   <block id="eaddf5b42a6f6933693578764fd14443" category="list-text">현장에서 필요에 따라 다음 프롬프트에 응답합니다.</block>
@@ -4066,7 +4061,6 @@
   <block id="34d50950463bd9deb8050c6afe5d8652" category="paragraph">'보안 로그인 쇼'</block>
   <block id="00045154249cbebb0c448b3f16b85947" category="list-text">스위치 프롬프트에서 스위치에 SNMPv3을 구성합니다.</block>
   <block id="8877f60294cec4f344b4ffc0df4449c3" category="paragraph">'snmpconfig--set SNMPv3'을 선택합니다</block>
-  <block id="766c26974a4c90ad9b490830ebb9d74a" category="paragraph">이 예제에서는 읽기 전용 사용자를 구성하는 방법을 보여 줍니다. 필요한 경우 RW 사용자를 조정할 수 있습니다. 또한 사용하지 않는 계정에 대한 암호를 설정하여 계정을 보호하고 ONTAP 릴리스에서 제공되는 최상의 암호화를 사용해야 합니다.</block>
   <block id="b650107d3033a6cbfd9eec73b7b79ab2" category="list-text">사이트에서 필요에 따라 나머지 스위치 사용자의 암호화 및 암호를 구성합니다.</block>
   <block id="c3ba99ea78fe878c8116f93f8bc6caea" category="paragraph">9.8 이전의 ONTAP 버전을 실행하는 시스템에서 FC-to-SAS 브리지가 구성에 포함된 경우 MetroCluster 구성에서 FC-to-SAS 브리지를 모니터링하기 위한 몇 가지 특수 구성 단계를 수행해야 합니다.</block>
   <block id="6c004e557097d04e25499f1d1a527295" category="paragraph">ONTAP 9.5 이상</block>
@@ -7887,18 +7881,12 @@
   <block id="ba74c8ae297d88d9b15c264fd7f8d827" category="paragraph">관리 1</block>
   <block id="aa2429c6203ca20dbf19609d2c4b96c7" category="paragraph">관리 2</block>
   <block id="0dbae4d42c7a0db53e2eb32adee12892" category="paragraph">클러스터 이름입니다</block>
-  <block id="a67eabd25a14e4d0c90e1d8b28411988" category="paragraph">이 설명서에 사용된 예: site_a</block>
-  <block id="b4d7baf41cc0c5cafe8cdf28d3c7d4a9" category="paragraph">이 설명서에 사용된 예: controller_a_1</block>
   <block id="253cbf6337d0d7ac43c9c1b1eac5790a" category="paragraph">노드 2</block>
   <block id="30cb34cdda07b18f5f18a14a97f5b6c6" category="paragraph">2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 필요하지 않습니다.</block>
   <block id="2ddeb191957d309760a14e2f4353284d" category="paragraph">노드 2 IC LIF 1</block>
   <block id="f5507f270d90478e3aff8d9e8b61a8cc" category="paragraph">2노드 MetroCluster 구성에는 필요하지 않습니다(각 사이트에 1개 노드).</block>
-  <block id="2dbf0641a33d566e3e841975208de0ae" category="paragraph">노드 2 IC LIF 2노드 MetroCluster 구성에 필요하지 않습니다(각 사이트에 노드 1개).</block>
   <block id="7943526b8cee7f099dbecfda7ab6075b" category="section-title">사이트 B 스위치 정보(스위치 클러스터)</block>
   <block id="f8d79c79841817997fa985a802f8fe91" category="paragraph">시스템에 케이블을 연결할 때는 각 클러스터 스위치에 대한 호스트 이름과 관리 IP 주소가 필요합니다. 스위치가 없는 2노드 클러스터를 사용하거나 2노드 MetroCluster 구성(각 사이트에 1개 노드)을 사용하는 경우에는 이 정보가 필요하지 않습니다.</block>
-  <block id="2eef5c9469dc2ce9cbe3c71dabc6f13e" category="paragraph">사용된 예: site_B</block>
-  <block id="b72239aa6dab42301b66b43e2f099b73" category="paragraph">사용된 예: controller_B_1</block>
-  <block id="5a824bb09d91d3c1fd4e6c54c0023c1b" category="paragraph">사용된 예: controller_B_2</block>
   <block id="782e54b0ba0da8311c22531d4ba4ee23" category="paragraph">노드 2 IC LIF 2</block>
   <block id="9c7d24fa70f73a1fe4ee0bc58f0d443b" category="paragraph">노드 2(컨트롤러_B_2)</block>
   <block id="4a94c7ab81b2c8ac93e5e9e84c29b30c" category="paragraph">클러스터의 노드를 HA 쌍으로 구성합니다</block>
@@ -7936,44 +7924,23 @@
   <block id="6000e2c75843867ed6ce64823481e000" category="paragraph">디스크 쉘프 6(쉘프_B_4_4)</block>
   <block id="e9bbaf304559b73edee9fc8ff30c1f60" category="paragraph">디스크 쉘프 7(쉘프_A_4_2)</block>
   <block id="f00cb83aeac0f163b4df0421aac97b3a" category="paragraph">디스크 쉘프 8(쉘프_A_4_4)</block>
-  <block id="0d02db028459671974f0cd5ab64607ed" category="list-text">필요한 경우 '디스크 할당' 명령을 사용하여 연결된 디스크 셸프의 디스크를 적절한 풀에 명시적으로 할당합니다.</block>
-  <block id="8768bb4842d961c867a1ac749cb45725" category="paragraph">명령에서 와일드카드를 사용하면 하나의 명령으로 디스크 쉘프의 모든 디스크를 할당할 수 있습니다. 'storage show disk--x' 명령을 사용하여 각 디스크의 디스크 쉘프 ID와 베이를 식별할 수 있습니다.</block>
-  <block id="a03c39da2d1b1ed17db1d6007949ef4e" category="paragraph">Disk assign-shelf local-switch-name: shelf-name.port-p pool</block>
-  <block id="72f3c55c79c5c3713292f0ab302f417d" category="paragraph">'Disk assign-shelf local-switch-nameshelf-name-p pool'</block>
-  <block id="42ec1151bc3506b679e500df023c1328" category="paragraph">Disk assign-shelf-name-p pool</block>
   <block id="5b3b3befc8a90dad61024595c4cace3e" category="list-text">첫 번째 노드에서 체계적으로 각 쉘프의 디스크 절반을 풀 0에 할당하고 나머지 절반은 HA 파트너의 풀 0에 할당합니다.</block>
-  <block id="de5e78d1adbb2b4fcd10925ec03863f6" category="paragraph">디스크 이름 -p pool -n 디스크 수 -디스크 할당</block>
   <block id="07bc435bec5058b71ef961e81ee33a7c" category="list-text">로컬 사이트의 두 번째 노드에 대해 이 프로세스를 반복하여 각 쉘프의 디스크 절반을 풀 1에 체계적으로 할당하고 나머지 절반은 HA 파트너의 풀 1에 할당합니다.</block>
   <block id="7500666b9c58ee4ff02426972c6492db" category="paragraph">디스크-디스크-이름-p 풀'입니다</block>
   <block id="9240741eb15c91445a4b51a6edb97945" category="list-text">원격 사이트의 첫 번째 노드에서 각 쉘프의 디스크 절반을 풀 0에 체계적으로 할당하며 다른 절반은 HA 파트너의 풀 0에 할당합니다.</block>
-  <block id="e45fb1f6a3be35cf34e0645a5dba1b2b" category="list-text">유지보수 모드를 종료합니다</block>
   <block id="a0c589f804ecfbaea2c0711fc5b01500" category="cell">디스크 쉘프(예: 이름)...</block>
   <block id="b011ef75febefb6802f448c8f557a86e" category="list-text">필요한 경우 disk assign 명령을 사용하여 연결된 디스크 쉘프의 디스크를 적절한 풀에 명시적으로 할당할 수 있습니다.</block>
   <block id="d62104b14c9d01be53e30302968da071" category="list-text">사이트 A의 노드에서 체계적으로 로컬 디스크 쉘프를 풀 0에 할당하고 원격 디스크 쉘프를 풀 1에 할당합니다.</block>
-  <block id="d85cfd1622f01917e3e145291df3c635" category="paragraph">Disk assign-shelf disk_shelf_name-p pool'입니다</block>
   <block id="71c0737f02cd1b953ecdde530bf520ff" category="list-text">원격 사이트(사이트 B)의 노드에서 로컬 디스크 쉘프를 풀 0에 체계적으로 할당하고 원격 디스크 쉘프를 풀 1에 할당합니다.</block>
   <block id="a7fbdb6c8e7d959be4d5a89782a63dc8" category="list-text">각 디스크의 디스크 쉘프 ID 및 베이를 표시합니다.</block>
   <block id="23d8ab4e8486ac34b4198e32edee8347" category="section-title">유지보수 모드에서 구성요소의 HA 상태 확인 및 구성</block>
-  <block id="1d256cd4005056aea7773d889c3d6827" category="paragraph">MetroCluster 구성에서 스토리지 시스템을 구성할 때는 컨트롤러 모듈 및 섀시 구성 요소의 고가용성(HA) 상태가 MCC 또는 MCC-2n인지 확인해야 구성 요소가 제대로 부팅됩니다.</block>
-  <block id="5c6c610b9df037c3c93893e9123552e5" category="paragraph">이 작업은 공장에서 입고된 시스템에는 필요하지 않습니다.</block>
-  <block id="52d6900f00a9806f77cb3a2c8f52cd66" category="paragraph">HA-config 수정 컨트롤러 MCC</block>
-  <block id="35b229745aacd4fd8cb650c9ec363a36" category="paragraph">HA-config 수정 컨트롤러 MCC-2n</block>
-  <block id="d68e680c0ad920bf3b70363718aa8c5b" category="paragraph">HA-config modify controller mcip</block>
-  <block id="529252ae610752213411fe31905fb1bd" category="paragraph">HA-config 섀시 MCC를 수정합니다</block>
-  <block id="6f949e06526d6c6a8f1c9ab8bb85fcea" category="paragraph">HA-config 섀시 MCC-2n을 수정합니다</block>
-  <block id="e2f29383f427c1bb29ab03d5c0b0ea17" category="paragraph">HA-config modify 섀시 mcip</block>
   <block id="a557db64e7a1a7811ee58be8f70a14b6" category="list-text">노드를 ONTAP로 부팅합니다.</block>
   <block id="a9e993f3d21d2cbe38c03108e316d551" category="paragraph">각 컨트롤러 모듈에 ONTAP를 설정해야 합니다.</block>
   <block id="6ac13e0a4727f000a91d0d6ee9e79705" category="paragraph">새 컨트롤러를 netboot에 연결해야 하는 경우 를 참조하십시오<block ref="b34364dcfcca19b16f474eb17e5220c7" category="inline-link-rx"></block> MetroCluster 업그레이드, 전환 및 확장 가이드 _.</block>
   <block id="0b39c5cb4b3f3f49373baeeadf7dc123" category="paragraph">2노드 MetroCluster 구성에서는 각 클러스터에서 노드를 부팅하고 클러스터 설정 마법사를 종료한 다음, 클러스터 설정 명령을 사용하여 노드를 단일 노드 클러스터로 구성해야 합니다.</block>
-  <block id="1b8e8c7488b5a9cb01bbce47b4cbfd12" category="paragraph">ONTAP 설정에 대한 자세한 내용은 _ 소프트웨어 설치 안내서 _ 를 참조하십시오</block>
   <block id="4931c10e912b9e2bedd73db57677efb5" category="paragraph">노드가 부팅된 다음 콘솔에서 클러스터 설정 마법사가 시작되어 AutoSupport가 자동으로 활성화됨을 알립니다.</block>
   <block id="67aabab9f492ee92f6763017f38bfe8c" category="list-text">Enter를 눌러 시스템 기본값을 그대로 사용하거나 no를 입력하여 값을 입력한 다음 Enter 키를 누릅니다.</block>
-  <block id="aca85a1555dedfa21c22fb9087fd8fbb" category="list-text">프롬프트에 따라 클러스터 설정 마법사를 완료합니다. Enter 키를 눌러 기본값을 적용하거나 값을 직접 입력한 다음 Enter 키를 누릅니다.</block>
-  <block id="08f652038f1a179808212e2f8e4590e3" category="list-text">클러스터 설정 마법사를 완료하고 종료한 후 클러스터가 활성 상태이고 첫 번째 노드가 정상 상태인지 확인합니다.</block>
   <block id="11fec51b6a709a671a0bad7bd4d6055a" category="paragraph">admin SVM 또는 node SVM에 대해 입력한 설정을 변경해야 하는 경우 클러스터 설정 명령을 사용하여 클러스터 설정 마법사에 액세스할 수 있습니다.</block>
-  <block id="1a9dbc3089b2c22ecdefe28bf423258a" category="inline-link">소프트웨어 설정</block>
-  <block id="49fd6eac557fd3205a3431ae072641b8" category="paragraph"><block ref="49fd6eac557fd3205a3431ae072641b8" category="inline-link-rx"></block></block>
   <block id="6ba05c3635c2380101c6d1694ffb9f1b" category="section-title">8노드 또는 4노드 MetroCluster 구성에서 ONTAP 설정</block>
   <block id="f2fd2ba8ba98fa6a5271b09f2670f5aa" category="paragraph">각 노드를 부팅하면 System Setup 도구를 실행하여 기본 노드 및 클러스터 구성을 수행할 것인지 묻는 메시지가 표시됩니다. 클러스터를 구성한 후 ONTAP CLI로 돌아가 애그리게이트를 생성하고 MetroCluster 구성을 생성합니다.</block>
   <block id="ea94abcfd04f40c5f7c228b4462b253f" category="paragraph">이 작업은 네이티브 NetApp 스토리지를 사용하는 8노드 또는 4노드 MetroCluster 구성에 사용됩니다.</block>
@@ -7985,37 +7952,17 @@
   <block id="8de6d8ea3f7806bbd46e1924769d5f95" category="paragraph">다음 예에서는 cluster_A에 대한 출력을 보여 줍니다.</block>
   <block id="db0013ead6feda0925dab5a74c8650a1" category="list-text">스위치가 없는 2노드 클러스터(클러스터 인터커넥트 스위치가 없는 클러스터)를 생성하는 경우 스위치가 없는 클러스터 네트워킹 모드를 활성화합니다.</block>
   <block id="f94c0b2723507c24f643c398936ddbaa" category="paragraph">고급 모드로 계속하라는 메시지가 나타나면 y를 응답할 수 있습니다. 고급 모드 프롬프트가 나타납니다(*&gt;).</block>
-  <block id="54ae43b8b32e733a05527e814b7d8de1" category="list-text">스위치가 없는 클러스터 모드 활성화: 'network options switchless-cluster modify -enabled true</block>
   <block id="14f809e80015cc5e4cca6e9ac5bb0e1d" category="list-text">초기 부팅 후 시스템 콘솔에 나타나는 정보에 따라 System Setup 도구를 실행합니다.</block>
   <block id="a1f9b3aabd3dc01bacdfe7bc09462c04" category="list-text">시스템 설정 툴을 사용하여 각 노드를 구성하고 클러스터를 생성할 수 있지만 애그리게이트를 생성하지 마십시오.</block>
   <block id="c67b6fe4fa472bf0e23c71468611a210" category="admonition">이후 작업에서 미러링된 애그리게이트를 생성할 수 있습니다.</block>
   <block id="6713a57dac43fec925dae196654210ba" category="paragraph"><block ref="6713a57dac43fec925dae196654210ba" category="inline-link-macro-rx"></block></block>
   <block id="180b8063135f5150a5856ecf0f5f28ef" category="paragraph"><block ref="180b8063135f5150a5856ecf0f5f28ef" category="inline-link-macro-rx"></block></block>
-  <block id="e06bf301ea32fa4d6464e6e0c1c31818" category="paragraph">'network interface failover-groups create-vserver system_SVM-failover-group failover_group-targets physical_or_logical_ports'</block>
-  <block id="240381aac72e018a5c9749db4ada23d1" category="paragraph">다음 예에서는 시스템 SVMcluster01의 페일오버 그룹 intercluster01에 포트 ""e0e"" 및 ""e0f""를 할당합니다.</block>
-  <block id="45affadac35f4e36d8abb4cc94eb9e6e" category="paragraph">다음 예에서는 페일오버 그룹 intercluster01에 인터클러스터 LIF ""cluster01_icl01" 및 ""cluster01_icl02""를 생성합니다.</block>
-  <block id="91ea7a38a1266389c4424c356e68d0f1" category="paragraph">+ 다음 예제는 SVM ""e0e"" 포트에 대한 인터클러스터 LIF ""cluster01_icl01"" 및 ""cluster01_icl02""가 ""e0f"" 포트로 페일오버된다는 것을 보여줍니다.</block>
-  <block id="ce2034e3e322f8406cf6ca46f905c9fb" category="paragraph">'network interface create-vserver system_SVM-lif LIF_name-service-policy default-인터클러스터-home-node node -home-port port port port-address port_ip-netmask netmask'</block>
-  <block id="5234664df25823d24e2779ea23a2aea1" category="paragraph">'network interface create-vserver system_SVM-lif LIF_name-role-home-node -home-node -home-port port port-address port_ip-netmask netmask'</block>
-  <block id="29c7a215dd6ee71543010039c946511e" category="paragraph">다음 예에서는 ""e0c" 포트에 대한 인터클러스터 LIF ""cluster01_icl01"" 및 ""cluster01_icl02""가 ""e0d"" 포트로 페일오버되는 것을 보여줍니다.</block>
-  <block id="a2a790f1b66195c582363f3ddaad4198" category="paragraph">"클러스터 피어 생성 - 생성 - 패스프레이즈 - 오퍼 - 만료 MM/DD/YYYY HH:MM:SS|1...7일|1...168시간 - 피어 - addrs peer_LIF_IPs - IPSpace IPSpace</block>
   <block id="5568705314477e94eb7c24806ca7b453" category="paragraph">'클러스터 피어 생성 - 피어-addrs peer_LIF_IPs - IPSpace IPSpace'</block>
-  <block id="a159211d3c11db71dc6ba0af4f65258e" category="list-text">클러스터 피어 관계가 'cluster peer show-instance'로 생성되었는지 확인합니다</block>
-  <block id="38ec41a2df2c968e5e4f7d0369bd7ff3" category="paragraph">클러스터 피어 생성 명령을 사용하여 로컬 클러스터와 원격 클러스터 간의 피어링 관계에 대한 요청을 시작할 수 있습니다. 로컬 클러스터에서 피어 관계를 요청한 후에는 원격 클러스터에서 클러스터 피어 생성을 실행하여 관계를 수락할 수 있습니다.</block>
-  <block id="f351a65c74a8a4f1061627e2b4aa5026" category="paragraph">'Storage aggregate modify – aggregate aggr_name -raidtype raid4'를 선택합니다</block>
   <block id="7229c2240727fa0976a719ef2950e038" category="paragraph">'스토리지 애그리게이트 미러 aggr_name'</block>
-  <block id="be99b27fc7d6edf127381655525e4155" category="list-text">애그리게이트 이름은 MetroCluster 구성을 계획할 때 지정한 명명 규칙에 따라야 합니다. 을 참조하십시오<block ref="46a180d322a34c1f2719942dadd3e4fb" category="inline-link-rx"></block>.</block>
   <block id="095878b2b9ceb6ee18550854864bc080" category="list-text">스토리지 Aggregate create-mirror true 명령을 사용하여 애그리게이트를 생성합니다.</block>
-  <block id="184f9da9dc438e19cd9cecb2175ad4c5" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에서 생성되도록 하려면 -node 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정합니다.</block>
-  <block id="d9bd86ef926208fe90e170b165fc17ad" category="admonition">지원되는 최소 구성에서는 드라이브 수가 제한되어 있으므로, 디스크 RAID-DP Aggregate 3개를 만들 수 있도록 force-small-aggregate 옵션을 사용해야 합니다.</block>
-  <block id="33f2ae7558982e7313c9f99b4a9180d8" category="paragraph">'Storage aggregate show-status-aggregate aggregate-name'을 선택합니다</block>
   <block id="b25308b36735da11e4a37c52a93d5b81" category="inline-link-macro">ONTAP에서 MetroCluster 소프트웨어를 구성합니다</block>
-  <block id="0a2884dde8bcccd27a62adc735d32316" category="admonition">미러링된 단일 데이터 애그리게이트를 사용하려면 의 1단계를 참조하십시오 <block ref="38d510a4fa3d22240b8943da6055e4df" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="8c5e3ad1d44826cc667d071df3606d74" category="paragraph">컨트롤러 및 섀시의 ha-config 상태는 "cc"여야 합니다.</block>
   <block id="a9694210aee07751d2c398edcb8235e6" category="paragraph">MetroCluster configure node-name</block>
-  <block id="87a0372b66bbde5d80a11c1c7ebc30db" category="list-text">다음과 같이 -allow-with-one-aggregate true 매개 변수를 사용하여 MetroCluster를 구성합니다.</block>
   <block id="c1720ee15ca6b853bdb55d81deac3213" category="paragraph">다음 명령을 실행하면 controller_a_1이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 설정됩니다.</block>
-  <block id="2a89c3d80528b6491c00ce0f75c43860" category="paragraph">파이버 채널(FC) 스위치 구성에 따라 IOD(In-Order Delivery) 또는 Food(Out-of-Order Delivery)를 구성해야 합니다. FC 스위치가 IOD용으로 구성된 경우 IOD에 대해 ONTAP 소프트웨어를 구성해야 합니다. 마찬가지로 FC 스위치가 유드에 대해 구성된 경우 유드에 대해 ONTAP를 구성해야 합니다.</block>
   <block id="8698590793be75e8ed64cdf02f1947bb" category="list-text">IOD 또는 프레임 유목(Good)을 작동하도록 ONTAP를 구성합니다.</block>
   <block id="56c4cc733f4aa42d513f8ae8dc7be89b" category="list-text">기본적으로 프레임의 IOD는 ONTAP에서 활성화됩니다. 구성 세부 정보를 확인하려면:</block>
   <block id="d5cca01c587441940cbf9506abe67c60" category="list-text">고급 모드 진입:</block>
@@ -8023,13 +7970,10 @@
   <block id="a10883945c82dd773336721614913845" category="list-text">프레임 유목(Good)을 구성하려면 각 노드에서 다음 단계를 수행해야 합니다.</block>
   <block id="214f6d964c1923698862576e1de7ed1a" category="list-text">MetroCluster 구성 설정을 확인합니다.</block>
   <block id="ac054e502f25f5713b21dda9c908f901" category="list-text">노드 " mcc4-B1 " 및 노드 " mcc4-B2 "에서 양호:</block>
-  <block id="00d8a967aae192561db3b04fc12aaf7a" category="paragraph">'MetroCluster interconnect adapter modify -node node name -is-ood-enabled true'</block>
-  <block id="721af9da2b28dbf4cf6b943cba7d482c" category="paragraph">RO 액세스가 필요한 경우, "" User (ro):"" 다음에 "snmpv3user"를 지정하십시오(예:</block>
   <block id="b8faea2432f5d49678ba72e9e265fe05" category="section-title">상태 모니터링을 위한 MetroCluster 구성 요소 구성</block>
   <block id="19db8c18601831a8ea2a7591d6f878f0" category="paragraph">MetroCluster 구성에서 구성 요소를 모니터링하기 전에 몇 가지 특수 구성 단계를 수행해야 합니다.</block>
   <block id="48b362592ae748a2b4676d1e63b57fca" category="paragraph">이러한 작업은 FC-to-SAS 브리지가 있는 시스템에만 적용됩니다.</block>
   <block id="ea7f8a0fa7f1d7f464025ba86a6284cd" category="list-text">다른 소스의 간섭을 방지하려면 전용 네트워크에 브리지 및 노드 관리 LIF를 배치해야 합니다.</block>
-  <block id="7271fe2deb2377f6fe3e360239e1a3ff" category="list-text">상태 모니터링을 위한 전용 네트워크를 사용하는 경우 각 노드에는 해당 전용 네트워크에 노드 관리 LIF가 있어야 합니다.</block>
   <block id="9245afe84f46306a811d61036f2f5698" category="section-title">상태 모니터링을 위해 MetroCluster FC 스위치 구성</block>
   <block id="6d8346a61b76a8b57a9dd1d8b8188d3f" category="paragraph">패브릭 연결 MetroCluster 구성에서는 FC 스위치를 모니터링하기 위한 몇 가지 추가 구성 단계를 수행해야 합니다.</block>
   <block id="2699745f7ba3417d015d2b62691bd3b8" category="list-text">각 MetroCluster 노드에 IP 주소가 있는 스위치를 추가합니다.</block>
@@ -8042,8 +7986,6 @@
   <block id="50e478be3ad6133f3ef6186d04be268e" category="paragraph">다음 예에서는 제공된 명령을 사용하여 MetroCluster FC 스위치가 구성되었는지 확인합니다.</block>
   <block id="2cb2270e802d872bc52174cef7168741" category="paragraph">스위치의 WWN(Worldwide Name)이 표시되면 ONTAP 상태 모니터가 FC 스위치에 연결 및 모니터링할 수 있습니다.</block>
   <block id="5b40bcb2b8f219e462b2be259c9f9ca0" category="paragraph">9.8 이전의 ONTAP 버전을 실행하는 시스템에서는 MetroCluster 구성에서 FC-SAS 브리지를 모니터링하기 위한 몇 가지 특수 구성 단계를 수행해야 합니다.</block>
-  <block id="2e520a1b682a16f2dd769ccc659bb91f" category="paragraph">스토리지 브리지 추가 주소 0.0.0.0-대역내 이름 브리지명-이름별 관리</block>
-  <block id="619f93caa0c27ba9b6068c4c105a7868" category="paragraph">스토리지 브리지 주소 브리지-IP-주소-이름 브리지-이름</block>
   <block id="1fc888e4b44a770160a429e97648d3ee" category="paragraph">4노드 MetroCluster 구성이 있는 경우 MetroCluster 구성에서 로컬 HA 쌍의 작동을 확인해야 합니다. 2노드 구성에는 이 작업이 필요하지 않습니다.</block>
   <block id="225a700989ad161efc2f148c77ec5bf3" category="paragraph">2노드 MetroCluster 구성은 로컬 HA 쌍으로 구성되지 않으며 이 작업은 적용되지 않습니다.</block>
   <block id="164ea1acde6be5cb0ff69c4fdefe662d" category="paragraph">이 작업의 예에는 표준 명명 규칙이 사용됩니다.</block>
@@ -8061,12 +8003,7 @@
   <block id="f4f91b70141dc9efb919484e27a495c8" category="list-text">스토리지 페일오버가 정상 상태로 복구되었는지 확인합니다.</block>
   <block id="6c434084469e8a6d440ef80517f081d2" category="list-text">controller_a_2에서 controller_a_1을 인수하는 데 앞서 설명한 하위 단계를 반복합니다.</block>
   <block id="3b82e46bb2d614a665de9e2c8b9c5e7c" category="list-text">cluster_B에서 위의 단계를 반복합니다</block>
-  <block id="14a8fc6fe6b58444388acfef6a176529" category="inline-link">구성 백업 관리</block>
-  <block id="6c0e4fd4b7e2ef11d891ac59729c5f3e" category="inline-link">클러스터 관리</block>
-  <block id="3d324eced25a10d4e6f55d473d59805b" category="paragraph"><block ref="3d324eced25a10d4e6f55d473d59805b" category="inline-link-rx"></block></block>
   <block id="289895aab699c5956a58644cc2118b0c" category="section-title">사이트 B에 대한 IP 네트워크 정보 워크시트입니다</block>
-  <block id="9de6a3d21baa3d2477fcc28e8859e959" category="paragraph">본 가이드에 사용된 예: site_B</block>
-  <block id="f841368b0e6e89de1f7f957dad84a039" category="paragraph">이 설명서에 사용된 예: controller_B_1</block>
   <block id="9cd42a5631953faa458518cebea26463" category="paragraph">사이트 A * 의 디스크 쉘프</block>
   <block id="aa5e90893b7f412ef5c52dd995d1a238" category="paragraph">* 사이트 B의 디스크 쉘프 *</block>
   <block id="60e70e31928f915722e922383e40f330" category="list-text">필요한 경우 연결된 디스크 쉘프의 디스크를 적절한 풀에 명시적으로 할당합니다.</block>
@@ -9764,8 +9701,6 @@
   <block id="e2090ebbf2ac14963bfb6c9602cbc750" category="paragraph">이 절차에서 사용되는 예: site_a</block>
   <block id="49ed603bb0e65ebf6cbe5de7d5a6e0c6" category="paragraph">이 절차에서 사용되는 예: controller_a_1</block>
   <block id="4e0ca507efddc63c28aeb3319df00d5d" category="paragraph">이 절차에서 사용되는 예: controller_a_2</block>
-  <block id="d483490d3082f02c6057abcd983c34e6" category="list-text">에서 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다<block ref="218502de673c582fbc556024d0b3de54" category="inline-link-rx"></block></block>
-  <block id="f1573b913aebef18602249e23e196f67" category="paragraph"><block ref="09965663397032e7c8c3dcc98b9deca2" category="inline-link-rx"></block> 추가 정보를 포함합니다.</block>
   <block id="3b60cd7b393721dca2be281ca53a4351" category="paragraph">ONTAP 9.2부터는 다음과 같은 경우에 ISL 공유를 사용할 수 있습니다.</block>
   <block id="8adae693d3240e468a2042cfca460ce7" category="inline-link">NetApp MetroCluster 솔루션 아키텍처 및 설계, TR-4705</block>
   <block id="2afcc48289d48527e519adacbd3a8bce" category="paragraph"><block ref="2afcc48289d48527e519adacbd3a8bce" category="inline-link-rx"></block></block>
@@ -10278,10 +10213,6 @@
   <block id="66dfac56c9206023b345746e3fd92eae" category="section-title">[[다운로드 및 설치]] NVIDIA RCF 파일을 다운로드하여 설치합니다</block>
   <block id="3f710cadb0123c693533da68aaf5b596" category="paragraph-title">다음 단계</block>
   <block id="0fcee5126250d77f3f33a330fd9c5a17" category="paragraph">ISL 포트로 추가할 포트에 SFP를 삽입합니다. 이러한 포트가 에 나열되어 있는지 확인합니다 <block ref="5488151483f7e2bfe24758bbbb4d6f40" category="inline-link-macro-rx"></block> 추가할 스위치입니다.</block>
-  <block id="4b18b6ffcae5c35c0fd047b621fdb59e" category="section-title">사이트 A nbsp;AutoSupport 정보</block>
-  <block id="ed68524d33cb83b7bc35eb3921cd5e50" category="section-title">사이트 A nbsp;SP 정보</block>
-  <block id="75cb9d2c8e6c492546bef17abe8e5a69" category="section-title">사이트 B nbsp;AutoSupport 정보</block>
-  <block id="336d72b5902fa5007c0f1b27db5d4cb7" category="section-title">사이트 B nbsp;SP 정보</block>
   <block id="0ab984d91ab0a037bdf692bf0e73c349" category="paragraph-title">중요</block>
   <block id="c6e21fae72937c189cf8456f90c8f3a5" category="section-title">사이트 A nbsp;AutoSupport 정보</block>
   <block id="9416a5cc051e7f0bc3db126192f4a9c8" category="section-title">사이트 A nbsp;SP 정보</block>
@@ -11581,8 +11512,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="00395061ba5a721f2a906e4ac75f9fde" category="inline-link-macro">MetroCluster 구성에서 FabricPool에 대한 오브젝트 저장소를 설정합니다</block>
   <block id="e0e300856a5e4a2a419fdf0d5fb20e62" category="admonition">애그리게이트를 구성하기 전에 에 설명된 대로 오브젝트 저장소를 설정해야 합니다 <block ref="bf6f1feb5dfb0381998cf99478ab26ea" category="inline-link-macro-rx"></block>.</block>
   <block id="39998026607048d04a8bc09fac18fa8f" category="paragraph">ONTAP 9.11.1부터 <block ref="7a1a77fa3bd3a175233cd6cdfe493836" category="inline-link-macro-rx"></block> MetroCluster 구성에서 지원됩니다.</block>
-  <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link-macro">HA 쌍 관리</block>
-  <block id="fc0b22bb38f11521c03de86c56643d5d" category="paragraph"><block ref="fc0b22bb38f11521c03de86c56643d5d" category="inline-link-macro-rx"></block></block>
   <block id="0f87578f11104e3d1178b1b6a73f5684" category="paragraph"><block ref="0f87578f11104e3d1178b1b6a73f5684" category="inline-link-macro-rx"></block></block>
   <block id="3973235e869d719328cf4b37e59562e5" category="paragraph"><block ref="3973235e869d719328cf4b37e59562e5" category="inline-link-macro-rx"></block></block>
   <block id="c5d34bb560e327e8975a1da2f0e0c0fe" category="cell"><block ref="c5d34bb560e327e8975a1da2f0e0c0fe" category="inline-link-macro-rx"></block></block>
@@ -14229,7 +14158,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6a322d79cc829cae0de4701dc672ffca" category="image-alt">각 스위치에 이중 ISL 구성이 있는 FCIP 포트를 보여주는 다이어그램</block>
   <block id="d0c92c7c34253959ed1ec5127a53af0a" category="image-alt">Workflow FC에서 SAS 브리지로의 설치 및 구성</block>
   <block id="74a4dfe29ccc8cc96b410e9b0a5d1c1b" category="image-alt">여러 SAS3 스택이 있는 FibreBridge를 위한 MetroCluster 케이블링</block>
-  <block id="91808658b22ba7487b8c09753a426fbe" category="image-alt">ONTAP 의 워크플로우 상위 레벨 노드 및 클러스터 구성</block>
   <block id="42ceaa81d7a1ae07decd6672f9c77b45" category="image-alt">MetroCluster 레이어 2 네트워크 구성</block>
   <block id="9abaaa939f8a0df07de4dc260378e835" category="image-alt">MetroCluster 레이어 3 백엔드 네트워크 구성</block>
   <block id="623fd1b20a7dbd0dcbc1a35f2641d584" category="image-alt">MetroCluster 트래픽에 NetApp 검증 Cisco 스위치를 사용할 때 필요한 설정</block>
@@ -14531,4 +14459,14 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3e72f6e14914c8788932c9e928d6b32b" category="list-text">참고 4: 기존 컨트롤러를 외부 SAS 셸프로 변환하려면 IOM 모듈이 필요합니다. 지원되는 IOM 모듈은 <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="ba0ea850ad143cf2644fe04fa6c67417" category="list-text">참고 5: ONTAP 9.18.1GA 이상이 필요합니다.</block>
   <block id="c57a703687b0f21729f368950b7a5618" category="paragraph"><block ref="c57a703687b0f21729f368950b7a5618" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ae5ea867d279a95654ecca471767e6af" category="list-text">시스템에 여러 드라이브 유형(이기종 스토리지)이 있는 경우 올바른 드라이브 유형이 선택되었는지 확인하는 방법을 이해해야 합니다.</block>
+  <block id="5ff5ba1e734a1c6acf560244a4167653" category="list-text">애그리게이트 이름은 MetroCluster 사이트 전체에서 고유해야 합니다. 즉, 사이트 A와 사이트 B에 동일한 이름을 가진 두 개의 서로 다른 애그리게이트를 생성할 수 없습니다.</block>
+  <block id="c4feaf0c81d09c76b61f0eca4a4fda38" category="admonition">최적의 스토리지 성능과 가용성을 위해 미러링된 애그리게이트에는 최소 20%의 여유 공간을 확보하는 것이 좋습니다. 미러링되지 않은 애그리게이트의 경우 10%를 권장하지만, 추가 10%의 공간은 파일 시스템에서 증분 변경 사항을 저장하는 데 사용할 수 있습니다. ONTAP의 copy-on-write 스냅샷 기반 아키텍처로 인해 증분 변경 사항이 미러링된 애그리게이트의 공간 사용량을 증가시킵니다. 이러한 모범 사례를 준수하지 않으면 성능에 부정적인 영향을 미칠 수 있습니다.</block>
+  <block id="ca62b4409e0debbfd43445111440710d" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 애그리게이트를 생성할 수 있습니다. 애그리게이트가 특정 노드에 생성되었는지 확인하려면 <block ref="13f7dbdfe17d26284f31a4eac8e056e8" prefix=" " category="inline-code"></block> 매개변수를 사용하거나 해당 노드가 소유한 드라이브를 지정하십시오.</block>
+  <block id="0c9650faa23cd2f874557f75db0b04f3" category="doc">ONTAP에서 MetroCluster FC 소프트웨어 구성</block>
+  <block id="4f967023ad75f6a54cb36abaf26a7048" category="paragraph">ONTAP의 MetroCluster FC 구성에서 각 노드를 설정해야 합니다. 여기에는 노드 수준 구성과 두 사이트로의 노드 구성이 포함됩니다. 또한 두 사이트 간의 MetroCluster 관계를 구현해야 합니다.</block>
+  <block id="445fc242bee9ea016b8ec73c9a312fcb" category="paragraph">이 절차에서 사용된 예: site_B</block>
+  <block id="55417ec59fd4af1a5afffacb42333c5a" category="paragraph">이 절차에서 사용된 예: controller_B_1</block>
+  <block id="1acb751c22e164e9d61c762caf509e82" category="paragraph">이 절차에서 사용된 예: controller_B_2</block>
+  <block id="eccb3ce2fe6ad5d172a57438aae17dae" category="doc">각 MetroCluster FC 노드에 미러링된 데이터 애그리게이트를 생성합니다</block>
 </blocks>

@@ -281,6 +281,10 @@ link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자
 +
 노드당 단일 미러링된 데이터 애그리게이트를 사용하는 4노드 MetroCluster 구성에서는 사이트에 24개의 디스크가 필요합니다.
 
++
+
+NOTE: 애그리게이트 이름은 MetroCluster 사이트 전체에서 고유해야 합니다. 즉, 사이트 A와 사이트 B에 동일한 이름을 가진 두 개의 서로 다른 애그리게이트를 생성할 수 없습니다.
+
 
 
 지원되는 최소 구성에서는 각 풀에 다음과 같은 드라이브 레이아웃이 있습니다.
