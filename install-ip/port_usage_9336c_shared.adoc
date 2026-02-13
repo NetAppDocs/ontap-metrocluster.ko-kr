@@ -17,7 +17,7 @@ MetroCluster IP 구성에서 포트 사용은 스위치 모델 및 플랫폼 유
 
 * 이 섹션의 표는 최소한 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결할 때 사용되는 36포트 Cisco 9336C-FX2 스위치에 대한 것입니다.
 +
-NS224 스토리지를 연결하지 않는 36포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. link:port_usage_3232c_9336c.html["Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"] .
+36포트 Cisco 9336C-FX2 스위치를 보유하고 있고 NS224 스토리지를 스위치에 연결할 계획이 없다면 link:port_usage_3232c_9336c.html["Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"]에 있는 표를 사용하십시오.
 
 +
 12포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. link:port-usage-9336c-fx-2-12-port.html["12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당"] .
@@ -26,7 +26,7 @@ NS224 스토리지를 연결하지 않는 36포트 Cisco 9336C-FX2 스위치가 
 
 NOTE: 12포트 Cisco 9336C-FX2 스위치는 NS224 셸프를 MetroCluster 스위치에 연결하는 것을 지원하지 않습니다.
 
-* NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 MetroCluster 구성 또는 DR 그룹은 최대 두 개까지만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결해야 합니다. 스위치에 연결된 NS224 셸프를 연결하지 않는 플랫폼만 두 번째 MetroCluster 구성 또는 두 번째 DR 그룹으로 연결할 수 있습니다.
+* NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹은 NS224 쉘프를 MetroCluster 스위치에 연결해야 합니다. MetroCluster 구성 또는 DR 그룹 중 하나가 NS224 쉘프를 지원하지 않는 시스템인 경우 두 번째 MetroCluster 구성 또는 DR 그룹으로만 연결할 수 있습니다.
 +
 두 번째 MetroCluster 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하지 않으면 다음을 따르십시오. <<tables_not_connecting_ns224,스위치 부착 NS224 선반을 연결하지 않는 컨트롤러용 케이블링 테이블>> .
 
