@@ -26,11 +26,15 @@ summary: '이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토
 * ISL의 토폴로지는 동일해야 합니다. 예를 들어, 모두 직접 링크여야 하거나 구성에서 WDM을 사용하는 경우 모두 WDM을 사용해야 합니다.
 * 필요한 최소 ISL 속도는 플랫폼 모델에 따라 다릅니다.
 +
-** ONTAP 9.18.1 버전부터 MetroCluster IP 백엔드 포트 속도가 100G인 플랫폼은 최소 100Gbps의 ISL 링크 속도가 필요합니다. 다른 ISL 속도를 사용하려면 기능 변경 요청(FPVR)이 필요합니다. FPVR을 제출하려면 NetApp 영업팀에 문의하십시오.
+** ONTAP 9.18.1부터 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼은 최소 ISL 링크 속도 100Gbps가 필요합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 NetApp 영업 팀에 문의하십시오.
++
+
+CAUTION: 현재 100Gbps ISL 요구 사항을 충족하지 않는 플랫폼의 ONTAP 9.18.1 이상 버전으로의 업그레이드는 차단되지 않으며 진행할 수 있습니다. 그러나 NetApp은 예상되는 성능 및 가용성 수준을 유지하기 위해 고객이 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.
+
 ** 다른 모든 플랫폼에서 지원되는 최소 ISL 링크 속도는 10Gbps입니다.
 
 
-* Fabric당 10Gbps ISL 포트가 하나 이상 있어야 합니다.
+* 패브릭당 최소 1개의 10Gbps ISL 포트가 있어야 합니다.
 
 
 
