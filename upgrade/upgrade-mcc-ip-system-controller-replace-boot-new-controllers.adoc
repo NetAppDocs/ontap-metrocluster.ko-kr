@@ -40,6 +40,16 @@ summary: 부팅 메뉴에서 컨트롤러를 재부팅하여 컨트롤러 플래
 +
 `setenv bootarg.kmip.init.interface <interface-id>`
 
+. partner-sysid가 올바른지 확인하십시오.
++
+'printenv partner-sysid
+
++
+partner-sysid가 올바르지 않으면 다음을 설정합니다.
+
++
+`setenv partner-sysid <partner-sysID>`
+
 . 부팅 메뉴를 표시합니다.
 +
 boot_ontap 메뉴
@@ -86,6 +96,20 @@ Rebooting to load the restored env file...
 ----
 +
 옵션 ""6"" 후 재부팅 중 하나가 진행되는 동안 확인 메시지가 표시됩니다 `Override system ID? {y|n}` 나타납니다. 를 입력합니다 `y`.
+
+.  `LOADER`프롬프트에서 bootarg 값을 확인하고 필요에 따라 값을 업데이트합니다.
++
+link:upgrade-mcc-ip-system-controller-replace-apply-rcf-set-bootarg.html#set-the-metrocluster-ip-bootarg-variables["MetroCluster IP bootarg 변수를 설정합니다"]의 단계를 사용합니다.
+
+. partner-sysid가 올바른지 확인하십시오.
++
+'printenv partner-sysid
+
++
+partner-sysid가 올바르지 않으면 다음을 설정합니다.
+
++
+`setenv partner-sysid <partner-sysID>`
 
 . 루트 암호화를 사용하는 경우 키 관리 구성에 대해 부팅 메뉴 옵션을 다시 선택합니다.
 +
@@ -143,7 +167,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-003BDFCD-58
 
 .. 인터클러스터 LIF를 호스팅할 물리적 포트를 해당 브로드캐스트 도메인에 추가합니다.
 .. 새 물리적 포트를 홈 포트로 사용하도록 인터클러스터 LIF를 수정합니다.
-.. 인터클러스터 LIF가 가동된 후 클러스터 피어 상태를 확인하고 필요에 따라 클러스터 피어링을 다시 설정합니다.
+.. 클러스터 간 LIF가 활성화되면 클러스터 피어 상태를 확인하고 필요에 따라 클러스터 피어링을 다시 설정하십시오.
 +
 클러스터 피어링을 다시 구성해야 할 수 있습니다.
 

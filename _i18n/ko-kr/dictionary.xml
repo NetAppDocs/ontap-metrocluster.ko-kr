@@ -10521,7 +10521,6 @@
   <block id="338b3842cbe6f0ae991509f38e7d0cca" category="list-text">새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.</block>
   <block id="c38f34e2c50bf5ed2113077f8269019c" category="list-text">타겟 플랫폼 제한이 MetroCluster 제한보다 낮은 경우 새 노드를 추가하기 전에 MetroCluster를 타겟 플랫폼 제한값 이하로 재구성해야 합니다.</block>
   <block id="49782ec67fb4809f5d138aa07412fd9d" category="list-text">이 표의 조합은 일반 또는 영구 8노드 구성에만 적용됩니다.</block>
-  <block id="ea95591996a43e78cc0b5f96cb4d8f1c" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 * 적용되지 않습니다 *.</block>
   <block id="08d29117f113494cf7bd34ddc0d0a7e0" category="doc">IP 스위치를 교체하거나 기존 MetroCluster IP 스위치 사용을 변경합니다</block>
   <block id="2454620eb6c11598ab9b657181cc0f55" category="paragraph">장애가 발생한 스위치를 교체하거나, 스위치를 업그레이드 또는 다운그레이드하거나, 기존 MetroCluster IP 스위치를 변경해야 할 수 있습니다.</block>
   <block id="057120c40cd4c9c1a072526b368d97f4" category="paragraph">이 절차에서는 다음 변환을 지원합니다.</block>
@@ -13670,7 +13669,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="67f1cdced842853dcaa748f1574de4a2" category="inline-link-macro">12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
   <block id="38f841f1e9d996375153a7c10a011d16" category="paragraph">12포트 Cisco 9336C-FX2 스위치가 있는 경우 다음 표를 사용하십시오. <block ref="ce9e67085330d921aaa0fff0495dc70b" category="inline-link-macro-rx"></block> .</block>
   <block id="674e97a0c22c1388979c98f80b98f4b5" category="inline-xref">스위치 부착 NS224 선반을 연결하지 않는 컨트롤러용 케이블링 테이블</block>
-  <block id="93a0ba86005851fcdd55129adf1c0b46" category="paragraph">두 번째 MetroCluster 또는 DR 그룹이 NS224 셸프를 MetroCluster 스위치에 연결하지 않으면 다음을 따르십시오. <block ref="b9dbe6880b7454d3bcbbe8f7d7793db4" category="inline-xref-macro-rx"></block> .</block>
   <block id="b3e24b8d0d23855e43550444290c1574" category="list-text">MetroCluster 포트 그룹(MetroCluster 1, MetroCluster 2 등)을 추적합니다. 이 정보는 이 구성 절차의 뒷부분에서 설명하는 대로 RcfFileGenerator 도구를 사용할 때 필요합니다.</block>
   <block id="b8b3268e24f1bc7df35cfea685b9683b" category="paragraph">두 개 이상의 MetroCluster 구성을 스위치에 케이블로 연결할 경우, 해당 표에 따라 각 MetroCluster를 케이블로 연결합니다. 예를 들어, FAS2750과 AFF A700을 같은 스위치에 케이블로 연결하는 경우, FAS2750은 표 1의 "MetroCluster 1"에 따라, AFF A700은 표 2의 "MetroCluster 2" 또는 "MetroCluster 3"에 따라 케이블로 연결합니다. FAS2750과 AFF A700을 "MetroCluster 1"로 물리적으로 연결할 수 없습니다.</block>
   <block id="663e9f366c9d01f8e5aae5c69a84c421" category="paragraph">8노드 구성의 경우 위에 설명된 것과 동일한 방법을 사용합니다. 보조 MetroCluster 대신 4노드 DR 그룹을 추가로 케이블로 연결합니다.</block>
@@ -14464,9 +14462,38 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="eccb3ce2fe6ad5d172a57438aae17dae" category="doc">각 MetroCluster FC 노드에 미러링된 데이터 애그리게이트를 생성합니다</block>
   <block id="b5fd13a9bac03ffc7e9ccde70adc8242" category="doc">MetroCluster IP 구성을 위한 ONTAP Mediator 설치 요구 사항</block>
   <block id="e5287e41bb7b528f560b85847eb683be" category="paragraph">36포트 Cisco 9336C-FX2 스위치를 보유하고 있고 NS224 스토리지를 스위치에 연결할 계획이 없다면 <block ref="5e1610ecd3627713f0895c655a667651" category="inline-link-macro-rx"></block>에 있는 표를 사용하십시오.</block>
-  <block id="096faa4efe64cfbabf158d3e14db33d7" category="list-text">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹은 NS224 쉘프를 MetroCluster 스위치에 연결해야 합니다. MetroCluster 구성 또는 DR 그룹 중 하나가 NS224 쉘프를 지원하지 않는 시스템인 경우 두 번째 MetroCluster 구성 또는 DR 그룹으로만 연결할 수 있습니다.</block>
   <block id="b68398936049bd282794c33831e2aea9" category="paragraph">MetroCluster IP 구성에서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 사용한 AFF A70에서 AFF A90 및 FAS70에서 FAS90 시스템 업그레이드 지원.</block>
   <block id="2cc15add30dea4377769b3b77d052707" category="list-text">ONTAP 9.18.1부터 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼은 최소 ISL 링크 속도 100Gbps가 필요합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 NetApp 영업 팀에 문의하십시오.</block>
   <block id="2691309e1710cb6a0083f4722ac33e8d" category="admonition">현재 100Gbps ISL 요구 사항을 충족하지 않는 플랫폼의 ONTAP 9.18.1 이상 버전으로의 업그레이드는 차단되지 않으며 진행할 수 있습니다. 그러나 NetApp은 예상되는 성능 및 가용성 수준을 유지하기 위해 고객이 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.</block>
   <block id="2424b4c07e55bece1d1a95007a6782a8" category="list-text">패브릭당 최소 1개의 10Gbps ISL 포트가 있어야 합니다.</block>
+  <block id="925adb23a78386992d24bff6e6e1b4e2" category="list-text">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹은 NS224 쉘프를 MetroCluster 스위치에 연결해야 합니다.</block>
+  <block id="13baaedd5f262910c30e90b130030634" category="paragraph">MetroCluster 구성이나 DR 그룹 중 하나에서 NS224 쉘프가 MetroCluster 스위치에 연결되지 않는 경우 <block ref="b9dbe6880b7454d3bcbbe8f7d7793db4" category="inline-xref-macro-rx"></block>를 따르십시오.</block>
+  <block id="2b4028f1ab41ecd91ee89bedc51fffa6" category="list-text">스위치 연결 NS224 스토리지를 지원하지 않는 일반 MetroCluster 구성을 확장하고 스위치 연결 NS224 스토리지가 있는 MetroCluster 구성을 추가하려는 경우 다음 정보를 검토하십시오.</block>
+  <block id="3db561d9980a9a0ff52dc6f6b5be80fb" category="list-text"><block ref="46a459674905c476821f71bc8486a4ba" category="inline-link-macro-rx"></block> 도구에서 먼저 스위치에 연결된 NS224 스토리지를 지원하는 플랫폼을 선택한 다음 스위치에 연결된 NS224 스토리지를 지원하지 않는 플랫폼을 선택해야 합니다.</block>
+  <block id="88ecaca9811ed8ee2d07d6be6c37393b" category="paragraph">즉, 새 구성에 대한 RCF를 생성할 때 RcfFileGenerator 도구에서 플랫폼을 다음 순서대로 선택해야 할 수도 있습니다.</block>
+  <block id="e1560ebf4cdefb3656321c70615b070a" category="list-text">*두 번째 드롭다운 필드*에서 스위치에 연결된 NS224 스토리지를 지원하는 플랫폼을 선택하십시오.</block>
+  <block id="6671def4e7da861590fb38e5fc66314e" category="list-text">*첫 번째 드롭다운 필드*에서 스위치 연결 NS224 스토리지를 지원하지 않는 플랫폼을 선택합니다.</block>
+  <block id="ddbce4d78273fadb6714307de4be2067" category="doc">MetroCluster IP 구성에서 기본 ONTAP Mediator 메일박스 시간 초과를 늘립니다</block>
+  <block id="2782611b81a323af0ab55dcdc0bed9b0" category="paragraph">MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 디스크에 액세스할 수 있으며, 기본 연결 시간 초과는 10초(5초 후 1회 재시도 포함)입니다. ONTAP 버전 및 환경에 따라 Mediator 지원 비상 스위치오버(MAUSO) 중단을 방지하기 위해 메일박스 시간 초과를 최대 60초까지 늘릴 수 있습니다.</block>
+  <block id="dc2661dcef8886857b7dbbc6bea4baa5" category="paragraph">NetApp에서는 네트워크 이중화 프로토콜(예: HSRP 또는 VRRP), 루프 방지 프로토콜(예: STP)을 사용하거나 환경의 네트워크 지연 시간이 기본 시간 초과인 10초를 초과하는 경우 기본 사서함 연결 시간 초과를 늘리는 것이 좋습니다.</block>
+  <block id="5989de7ef1290d3b1851ce9197407a9a" category="paragraph">장애 발생 시간, 즉 MetroCluster IP 노드가 ONTAP Mediator에 다시 연결되는 데 걸리는 시간을 평가해야 합니다. 연결 시간이 10초를 초과하는 경우, 타임아웃 값을 MetroCluster IP 노드가 다시 연결되는 데 걸리는 시간보다 몇 초 더 길게 설정해야 합니다.</block>
+  <block id="96da1e735aedafb1dcf6dc852a630b69" category="paragraph">각 사이트에서 연결이 독립적으로 유지되고 한 사이트의 장애가 정상 사이트에서 ONTAP Mediator로의 연결에 영향을 미치지 않는 경우 기본값인 10초로 충분하며 mailbox timeout을 변경해서는 안 됩니다.</block>
+  <block id="d7960d10ef798af16bf54c0dcc02e80b" category="list-text">다음 ONTAP 버전에서는 ONTAP Mediator 사서함 시간 초과 증가를 지원합니다.</block>
+  <block id="123f02f9538b2fc159c78abd1e853311" category="list-text">ONTAP 9.18.1GA 이상</block>
+  <block id="a49f67215d7a6a3f09571abddad1d41c" category="list-text">ONTAP 9.17.1P3 또는 ONTAP 9.17.1의 이후 패치 릴리스</block>
+  <block id="6b33f2be2b796fc142d718a21fd6a8ff" category="list-text">ONTAP 9.16.1P10 또는 ONTAP 9.16.1의 이후 패치 릴리스</block>
+  <block id="9fe94930ff0a57045423e79a5e25449a" category="list-text">ONTAP 9.15.1P16 또는 ONTAP 9.15.1의 이후 패치 릴리스</block>
+  <block id="4d04adddbc72295aa68205bbc8f6786c" category="list-text">사서함 시간 초과 증가는 ONTAP Mediator의 모든 버전에서 지원됩니다.</block>
+  <block id="24603857f2efae5cf55e16b55938b6b5" category="list-text">타임아웃 값의 지원 범위는 10초에서 60초까지입니다. 범위를 벗어난 값을 지정하면 ONTAP에서 자동으로 기본값인 10초로 되돌립니다.</block>
+  <block id="e4cb371c390096f714ceed8442047927" category="list-text">MetroCluster 노드가 ONTAP Mediator에 다시 연결하는 데 10초 이상 걸리는 경우, 노드가 연결하는 데 걸리는 시간보다 몇 초 더 길게 타임아웃 값을 설정해야 합니다.</block>
+  <block id="a55d539df04c511897b2f380e0ac7016" category="inline-link-macro">NetApp 기술 자료 문서: 네트워크 지연 시간이 10초를 초과하는 환경에서 Mediator Mailbox Timeout을 늘리는 방법</block>
+  <block id="19bdf8ebd14921517ed1d7a25d8a75ea" category="list-text">기본 ONTAP Mediator 사서함 시간 초과를 늘리려면 <block ref="62f56fc028db49a6a2d1454ab4af167a" category="inline-link-macro-rx"></block>을(를) 참조하십시오</block>
+  <block id="9fc7fb3687729fad941f1ef4dbe24e25" category="inline-link-macro">ONTAP Mediator가 MetroCluster IP 구성에서 계획되지 않은 자동 전환을 지원하는 방법에 대해 자세히 알아보세요.</block>
+  <block id="36cd1be7aa7565ea1576f3aac82e7ad3" category="paragraph"><block ref="36cd1be7aa7565ea1576f3aac82e7ad3" category="inline-link-macro-rx"></block></block>
+  <block id="f8a1c16bdd95a9caf5d835623891bbb2" category="list-text">이 표의 플랫폼 조합은 전환 또는 새로 고침 절차를 사용하는 경우 적용되지 *않습니다*.</block>
+  <block id="28e3056e4a107de00bb911453b54b512" category="list-text">partner-sysid가 올바른지 확인하십시오.</block>
+  <block id="a7c6b23966d68e108e7f06035568671e" category="paragraph"><block ref="c2cec781ec7263394dd955380787b572" category="inline-link-macro-rx"></block>의 단계를 사용합니다.</block>
+  <block id="33e1bc7f8120f8d7e792eda1953f5c0d" category="list-text">partner-sysid가 올바른지 확인하십시오.</block>
+  <block id="d9e511ce59427a6a6f5e2d82b3caa85c" category="list-text">클러스터 간 LIF가 활성화되면 클러스터 피어 상태를 확인하고 필요에 따라 클러스터 피어링을 다시 설정하십시오.</block>
+  <block id="9aadb95a414b8c0423f92f9ec9df69d8" category="sidebar">기본 ONTAP Mediator 사서함 시간 제한을 늘립니다</block>
 </blocks>

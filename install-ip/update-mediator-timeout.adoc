@@ -1,0 +1,42 @@
+---
+permalink: install-ip/update-mediator-timeout.html 
+sidebar: sidebar 
+keywords: ontap, metrocluster, mediator, timeout, settings, change, update, default, value 
+summary:  
+---
+= MetroCluster IP 구성에서 기본 ONTAP Mediator 메일박스 시간 초과를 늘립니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 디스크에 액세스할 수 있으며, 기본 연결 시간 초과는 10초(5초 후 1회 재시도 포함)입니다. ONTAP 버전 및 환경에 따라 Mediator 지원 비상 스위치오버(MAUSO) 중단을 방지하기 위해 메일박스 시간 초과를 최대 60초까지 늘릴 수 있습니다.
+
+NetApp에서는 네트워크 이중화 프로토콜(예: HSRP 또는 VRRP), 루프 방지 프로토콜(예: STP)을 사용하거나 환경의 네트워크 지연 시간이 기본 시간 초과인 10초를 초과하는 경우 기본 사서함 연결 시간 초과를 늘리는 것이 좋습니다.
+
+.시작하기 전에
+장애 발생 시간, 즉 MetroCluster IP 노드가 ONTAP Mediator에 다시 연결되는 데 걸리는 시간을 평가해야 합니다. 연결 시간이 10초를 초과하는 경우, 타임아웃 값을 MetroCluster IP 노드가 다시 연결되는 데 걸리는 시간보다 몇 초 더 길게 설정해야 합니다.
+
+각 사이트에서 연결이 독립적으로 유지되고 한 사이트의 장애가 정상 사이트에서 ONTAP Mediator로의 연결에 영향을 미치지 않는 경우 기본값인 10초로 충분하며 mailbox timeout을 변경해서는 안 됩니다.
+
+.이 작업에 대해
+* 다음 ONTAP 버전에서는 ONTAP Mediator 사서함 시간 초과 증가를 지원합니다.
++
+** ONTAP 9.18.1GA 이상
+** ONTAP 9.17.1P3 또는 ONTAP 9.17.1의 이후 패치 릴리스
+** ONTAP 9.16.1P10 또는 ONTAP 9.16.1의 이후 패치 릴리스
+** ONTAP 9.15.1P16 또는 ONTAP 9.15.1의 이후 패치 릴리스
+
+
+* 사서함 시간 초과 증가는 ONTAP Mediator의 모든 버전에서 지원됩니다.
+* 타임아웃 값의 지원 범위는 10초에서 60초까지입니다. 범위를 벗어난 값을 지정하면 ONTAP에서 자동으로 기본값인 10초로 되돌립니다.
+* MetroCluster 노드가 ONTAP Mediator에 다시 연결하는 데 10초 이상 걸리는 경우, 노드가 연결하는 데 걸리는 시간보다 몇 초 더 길게 타임아웃 값을 설정해야 합니다.
+
+
+.단계
+. 기본 ONTAP Mediator 사서함 시간 초과를 늘리려면 link:https://kb.netapp.com/on-prem/ontap/mc/MC-KBs/How_to_Increase_Mediator_Mailbox_Timeout_for_environments_where_network_latency_exceeds_10_seconds["NetApp 기술 자료 문서: 네트워크 지연 시간이 10초를 초과하는 환경에서 Mediator Mailbox Timeout을 늘리는 방법"^]을(를) 참조하십시오
+
+
+.관련 정보
+link:concept-ontap-mediator-supports-automatic-unplanned-switchover.html["ONTAP Mediator가 MetroCluster IP 구성에서 계획되지 않은 자동 전환을 지원하는 방법에 대해 자세히 알아보세요."]

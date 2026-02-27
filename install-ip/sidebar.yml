@@ -145,6 +145,8 @@ entries:
     url: "/install-ip/task_connecting_mcc_to_different_mediator_instance.html"
   - title: ONTAP Mediator가 자동 계획되지 않은 전환을 지원하는 방식
     url: "/install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html"
+  - title: 기본 ONTAP Mediator 사서함 시간 제한을 늘립니다
+    url: "/install-ip/update-mediator-timeout.html"
   - title: System Manger를 사용하여 ONTAP Mediator 관리
     url: "/install-ip/task-sm-mediator.html"
 - title: MetroCluster 구성을 테스트하는 중입니다
