@@ -11149,7 +11149,6 @@
   <block id="f530740ac9e609fc21d073ac7a1005eb" category="list-text">COS 5를 설정합니다</block>
   <block id="905698c568b08ffae010badfede2c3d9" category="list-text">선택 사항: 20Gbps로 속도 조정</block>
   <block id="6f9086eed365c3a2db1521fa98bb7fad" category="list-text">iSCSI 트래픽 분류:</block>
-  <block id="bfee253ff06448698780744ab1762cba" category="list-text">일치: TCP 포트 62500, 소스, 대상 또는 둘 다</block>
   <block id="b6b4cd52ee0814cd111c7646f3ec71cf" category="list-text">선택적 일치: COS 4</block>
   <block id="bc0161255c709f2bfdb09ade9fbc1364" category="list-text">선택적 일치: DSCP 32</block>
   <block id="18b58e1c9302e2acb18218c02c62dab7" category="list-text">DSCP 32를 설정합니다</block>
@@ -14475,7 +14474,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6671def4e7da861590fb38e5fc66314e" category="list-text">*첫 번째 드롭다운 필드*에서 스위치 연결 NS224 스토리지를 지원하지 않는 플랫폼을 선택합니다.</block>
   <block id="ddbce4d78273fadb6714307de4be2067" category="doc">MetroCluster IP 구성에서 기본 ONTAP Mediator 메일박스 시간 초과를 늘립니다</block>
   <block id="2782611b81a323af0ab55dcdc0bed9b0" category="paragraph">MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 디스크에 액세스할 수 있으며, 기본 연결 시간 초과는 10초(5초 후 1회 재시도 포함)입니다. ONTAP 버전 및 환경에 따라 Mediator 지원 비상 스위치오버(MAUSO) 중단을 방지하기 위해 메일박스 시간 초과를 최대 60초까지 늘릴 수 있습니다.</block>
-  <block id="dc2661dcef8886857b7dbbc6bea4baa5" category="paragraph">NetApp에서는 네트워크 이중화 프로토콜(예: HSRP 또는 VRRP), 루프 방지 프로토콜(예: STP)을 사용하거나 환경의 네트워크 지연 시간이 기본 시간 초과인 10초를 초과하는 경우 기본 사서함 연결 시간 초과를 늘리는 것이 좋습니다.</block>
   <block id="5989de7ef1290d3b1851ce9197407a9a" category="paragraph">장애 발생 시간, 즉 MetroCluster IP 노드가 ONTAP Mediator에 다시 연결되는 데 걸리는 시간을 평가해야 합니다. 연결 시간이 10초를 초과하는 경우, 타임아웃 값을 MetroCluster IP 노드가 다시 연결되는 데 걸리는 시간보다 몇 초 더 길게 설정해야 합니다.</block>
   <block id="96da1e735aedafb1dcf6dc852a630b69" category="paragraph">각 사이트에서 연결이 독립적으로 유지되고 한 사이트의 장애가 정상 사이트에서 ONTAP Mediator로의 연결에 영향을 미치지 않는 경우 기본값인 10초로 충분하며 mailbox timeout을 변경해서는 안 됩니다.</block>
   <block id="d7960d10ef798af16bf54c0dcc02e80b" category="list-text">다음 ONTAP 버전에서는 ONTAP Mediator 사서함 시간 초과 증가를 지원합니다.</block>
@@ -14496,4 +14494,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="33e1bc7f8120f8d7e792eda1953f5c0d" category="list-text">partner-sysid가 올바른지 확인하십시오.</block>
   <block id="d9e511ce59427a6a6f5e2d82b3caa85c" category="list-text">클러스터 간 LIF가 활성화되면 클러스터 피어 상태를 확인하고 필요에 따라 클러스터 피어링을 다시 설정하십시오.</block>
   <block id="9aadb95a414b8c0423f92f9ec9df69d8" category="sidebar">기본 ONTAP Mediator 사서함 시간 제한을 늘립니다</block>
+  <block id="27a4277d57a9c4676312c7a5013a9b75" category="list-text">일치: TCP 포트 65200, 소스, 대상 또는 둘 다</block>
+  <block id="e2bba64dd4e20eb5cd27b969fbf8dbce" category="paragraph">NetApp에서는 다음 중 하나라도 환경에 해당되는 경우 기본 사서함 연결 시간 제한을 늘릴 것을 권장합니다.</block>
+  <block id="d57bb94baa67d066f16fc9fc5b6def7e" category="list-text">네트워크 이중화 프로토콜(예: HSRP 또는 VRRP)이나 루프 방지 프로토콜(예: STP)을 사용하고 있습니다.</block>
+  <block id="29c1e5df7e26dbc34a0230732d8e3a0c" category="list-text">네트워크 재수렴 시간(예: 라우팅 프로토콜 안정화 또는 재선출 후 HSRP/VRRP 활성화)은 기본 시간 초과인 10초를 초과할 수 있습니다.</block>
 </blocks>
