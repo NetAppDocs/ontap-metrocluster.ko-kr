@@ -5459,7 +5459,6 @@
   <block id="8385ca59dee772c25d8029fd40151e4e" category="admonition">스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.</block>
   <block id="220d6c1bfe741784a72c631856e0b298" category="list-text">각 스위치에 대해 이전 단계를 반복합니다.</block>
   <block id="f323ad60392fa7c75997f3419493d6c3" category="summary">유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster IP 구성 및 모든 장비의 전원을 꺼야 합니다.</block>
-  <block id="5c79413a4833df0080080fe8fe2e7c15" category="doc">전체 MetroCluster IP 구성의 전원을 끕니다</block>
   <block id="5a862a97aa2605f3cbb2987eba34c9a9" category="list-text">MetroCluster 구성 및 운영 모드가 정상인지 확인합니다. '* MetroCluster show * '</block>
   <block id="33e5d783a7a408bca6f492d5b41c67ce" category="list-text">'* MetroCluster interconnect show*' 명령을 실행합니다</block>
   <block id="759da41f709a8b2d27d40a936e349031" category="list-text">MetroCluster 노드 중 하나에 다음 명령을 입력하여 디스크 연결을 확인합니다. + " * run local sysconfig -v * "</block>
@@ -5473,10 +5472,8 @@
   <block id="32f7947faaa0b39c98413d31ab51eae6" category="list-text">'* MetroCluster configuration-settings interface show * ' 명령을 실행합니다</block>
   <block id="37458c869049da196f1df7bf07fb1855" category="list-text">필요한 경우 AUSO 실패 도메인을 로 수정하여 AUSO를 비활성화합니다</block>
   <block id="41b2f3ef63acb5f586f26ec3300768fe" category="paragraph">'* auso-disabled*'</block>
-  <block id="b31a46a4ba6004f2ed3fd6632565a448" category="admonition">MetroCluster IP 구성에서 AUSO 장애 도메인은 ONTAP 중재자로 구성을 구성하지 않는 한 이미 'auso-disabled'로 설정되어 있습니다.</block>
   <block id="2021d03f97e8529efb1b76bbd7c4a674" category="list-text">명령을 사용하여 변경 사항을 확인합니다</block>
   <block id="183cbc2c0b8779013e355a482aba5c4d" category="paragraph">``MetroCluster 오퍼레이션 쇼 *’</block>
-  <block id="f30bf82bc8eafa66c54fa40dcf42ea44" category="paragraph">' * halt * '</block>
   <block id="a58d52a12cc22d2e3c3b60974ce27273" category="list-text">현장에서 다음 장비의 전원을 끕니다.</block>
   <block id="c74361f8919e393c4955920ffabda5b7" category="list-text">MetroCluster IP 스위치</block>
   <block id="2817c308965584631c0d98d1640317ca" category="list-text">스토리지 쉘프</block>
@@ -11063,7 +11060,6 @@
   <block id="b6c12395a961cf95058c6e4d4412ac09" category="paragraph">다음 표에는 MetroCluster 호환 스위치를 위한 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다. 표에 따라 스위치 포트 모드를 구성해야 합니다.</block>
   <block id="8c425f952493015588fb91113b5b2dd8" category="summary">이 섹션에서는 모든 MetroCluster IP 구성 및 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에 대한 요구 사항을 다룹니다.</block>
   <block id="422a6c8c8d23cb29ed822adac0da8cd9" category="paragraph">모든 MetroCluster IP 구성과 네트워크 토폴로지에서 MetroCluster 트래픽을 전달하는 ISL(Inter-Switch Link)에는 특정 요구 사항이 있습니다. 이러한 요구 사항은 고객 스위치 간에 ISL이 직접 또는 공유되는지 여부에 관계없이 MetroCluster 트래픽을 전달하는 모든 ISL에 적용됩니다.</block>
-  <block id="a5c426f5b72cbfd96a6dec4a6e3046d2" category="paragraph">다음은 모든 MetroCluster IP 구성의 ISL에 적용됩니다.</block>
   <block id="f2fe3be43c081827bf52c1013416d414" category="list-text">두 Fabric의 ISL 수는 동일해야 합니다.</block>
   <block id="baf55d93093b54950152b6be3f9bfec2" category="list-text">하나의 Fabric에 있는 ISL은 모두 속도와 길이가 같아야 합니다.</block>
   <block id="4b00dc01ca120693f1539bf736f11069" category="list-text">두 패브릭의 ISL은 속도와 길이가 같아야 합니다.</block>
@@ -11074,7 +11070,6 @@
   <block id="22380478e64b8062eb70d91ccdd67ce7" category="list-text">패킷 손실은 0.01% 이하여야 합니다. 최대 패킷 손실은 MetroCluster 노드 사이의 경로에 있는 모든 링크의 모든 손실과 로컬 MetroCluster IP 인터페이스의 손실을 합한 것입니다.</block>
   <block id="0b2575167b6e71da84f0682066aa5c0d" category="list-text">지원되는 지터 값은 왕복 3ms(단방향: 1.5ms)입니다.</block>
   <block id="b1bbb8c0e7431a301e05959762cb6be0" category="list-text">네트워크는 트래픽의 마이크로버스트와 급증에 관계없이 MetroCluster 트래픽에 필요한 SLA 대역폭을 할당하고 유지해야 합니다.</block>
-  <block id="db5dfb006abd3b92e48ae138fe185ffb" category="list-text">ONTAP 9.7 이상을 사용하는 경우 두 사이트 간의 중간 네트워크는 MetroCluster IP 구성을 위해 최소 4.5Gbps의 대역폭을 제공해야 합니다.</block>
   <block id="8feeeb8c24b7a524af9a025841262932" category="section-title">트랜시버 및 케이블 고려 사항</block>
   <block id="667735c31f9e3d4e69adccaa68e87206" category="paragraph">장비 공급업체가 지원하는 모든 SFP 또는 QSFP는 MetroCluster ISL에 대해 지원됩니다. NetApp 또는 장비 공급업체에서 제공하는 SFP 및 QSFP는 스위치 및 스위치 펌웨어에서 지원해야 합니다.</block>
   <block id="887966b0ad45d1598b4a9517835a9477" category="paragraph">컨트롤러를 스위치 및 로컬 클러스터 ISL에 연결할 때는 NetApp에서 제공하는 트랜시버 및 케이블을 MetroCluster와 함께 사용해야 합니다.</block>
@@ -14462,7 +14457,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b5fd13a9bac03ffc7e9ccde70adc8242" category="doc">MetroCluster IP 구성을 위한 ONTAP Mediator 설치 요구 사항</block>
   <block id="e5287e41bb7b528f560b85847eb683be" category="paragraph">36포트 Cisco 9336C-FX2 스위치를 보유하고 있고 NS224 스토리지를 스위치에 연결할 계획이 없다면 <block ref="5e1610ecd3627713f0895c655a667651" category="inline-link-macro-rx"></block>에 있는 표를 사용하십시오.</block>
   <block id="b68398936049bd282794c33831e2aea9" category="paragraph">MetroCluster IP 구성에서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 사용한 AFF A70에서 AFF A90 및 FAS70에서 FAS90 시스템 업그레이드 지원.</block>
-  <block id="2cc15add30dea4377769b3b77d052707" category="list-text">ONTAP 9.18.1부터 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼은 최소 ISL 링크 속도 100Gbps가 필요합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Product Variance Request)이 필요합니다. FPVR을 제출하려면 NetApp 영업 팀에 문의하십시오.</block>
   <block id="2691309e1710cb6a0083f4722ac33e8d" category="admonition">현재 100Gbps ISL 요구 사항을 충족하지 않는 플랫폼의 ONTAP 9.18.1 이상 버전으로의 업그레이드는 차단되지 않으며 진행할 수 있습니다. 그러나 NetApp은 예상되는 성능 및 가용성 수준을 유지하기 위해 고객이 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.</block>
   <block id="2424b4c07e55bece1d1a95007a6782a8" category="list-text">패브릭당 최소 1개의 10Gbps ISL 포트가 있어야 합니다.</block>
   <block id="925adb23a78386992d24bff6e6e1b4e2" category="list-text">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹은 NS224 쉘프를 MetroCluster 스위치에 연결해야 합니다.</block>
@@ -14498,4 +14492,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="e2bba64dd4e20eb5cd27b969fbf8dbce" category="paragraph">NetApp에서는 다음 중 하나라도 환경에 해당되는 경우 기본 사서함 연결 시간 제한을 늘릴 것을 권장합니다.</block>
   <block id="d57bb94baa67d066f16fc9fc5b6def7e" category="list-text">네트워크 이중화 프로토콜(예: HSRP 또는 VRRP)이나 루프 방지 프로토콜(예: STP)을 사용하고 있습니다.</block>
   <block id="29c1e5df7e26dbc34a0230732d8e3a0c" category="list-text">네트워크 재수렴 시간(예: 라우팅 프로토콜 안정화 또는 재선출 후 HSRP/VRRP 활성화)은 기본 시간 초과인 10초를 초과할 수 있습니다.</block>
+  <block id="fdee122f655bcc29473b91ef1ae580b7" category="paragraph">이러한 요구 사항은 모든 MetroCluster IP 구성의 ISL에 적용됩니다.</block>
+  <block id="c3dce11df95ca3b74ddf51996b7b87e2" category="list-text">ONTAP 9.18.1부터 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼은 최소 100Gbps의 ISL 링크 속도가 필요합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Policy Variance Request)이 필요합니다. FPVR을 제출하려면 NetApp 영업 팀에 문의하십시오.</block>
+  <block id="3f6fd3cf871a70252cd684eb0d12b602" category="paragraph">유지보수 또는 이전 작업을 시작하기 전에 전체 MetroCluster IP 구성과 모든 장비의 전원을 끄십시오.</block>
+  <block id="a79e1c21f0beaf2ed51b7aec418f4f70" category="list-text">양쪽 사이트에서 MetroCluster 구성을 확인하십시오.</block>
+  <block id="108a4ad72df5c318a77dad90928d8770" category="admonition">MetroCluster IP 구성에서 ONTAP Mediator를 사용하는 구성이 아닌 경우 AUSO 장애 도메인은 이미 'auso-disabled'로 설정되어 있습니다.</block>
+  <block id="6ba9661e38afca32fe30fec08ca5c4ab" category="list-text">두 사이트의 노드를 중지합니다.</block>
 </blocks>
