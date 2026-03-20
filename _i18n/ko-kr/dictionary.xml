@@ -14498,4 +14498,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a79e1c21f0beaf2ed51b7aec418f4f70" category="list-text">양쪽 사이트에서 MetroCluster 구성을 확인하십시오.</block>
   <block id="108a4ad72df5c318a77dad90928d8770" category="admonition">MetroCluster IP 구성에서 ONTAP Mediator를 사용하는 구성이 아닌 경우 AUSO 장애 도메인은 이미 'auso-disabled'로 설정되어 있습니다.</block>
   <block id="6ba9661e38afca32fe30fec08ca5c4ab" category="list-text">두 사이트의 노드를 중지합니다.</block>
+  <block id="f759ce596ef74c921d7bddaf277a11c8" category="paragraph">*참고:* 25GbE 속도를 사용하려면 MAM1Q00A-QSA28 트랜시버 어댑터가 필요합니다.</block>
 </blocks>
