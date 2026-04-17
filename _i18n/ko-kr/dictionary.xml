@@ -2078,7 +2078,6 @@
   <block id="91271938ac44f690cd5a064a6a92425f" category="paragraph">각 클러스터 LIF는 홈에 대해 TRUE로 표시되고 상태 관리자/작업 이 UP/UP로 표시되어야 합니다</block>
   <block id="e74ba48b87be882bffe68906351b713a" category="list-text">모든 클러스터 LIF에서 자동 복구가 설정되었는지 확인합니다.</block>
   <block id="e4490c39e3c7c690b2b28793dd430b44" category="paragraph">'network interface show-vserver Cluster-fields auto-revert'</block>
-  <block id="0bc247e1fb33acc5636986c990aa1e9a" category="section-title">모니터링 응용 프로그램에서 구성 제거</block>
   <block id="ae81bff40f90f640ae14eb37aaf345ea" category="paragraph">전환을 시작할 수 있는 MetroCluster Tiebreaker 소프트웨어, ONTAP 중재자 또는 기타 타사 애플리케이션(예: ClusterLion)을 사용하여 기존 구성을 모니터링하는 경우 업그레이드하기 전에 모니터링 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.</block>
   <block id="dbdccf881e62a812392682de3b418def" category="list-text">전환을 시작할 수 있는 Tiebreaker, 중재자 또는 기타 소프트웨어에서 기존 MetroCluster 구성을 제거합니다.</block>
   <block id="7fc17decf9554a362d80ff8052528439" category="cell">사용 중인 경우...</block>
@@ -2130,7 +2129,6 @@
   <block id="3f95b2ea711d433e26a8b5eb63bbd17a" category="paragraph">'Storage aggregate mirror-aggregate aggr0_node_A_1 - new'</block>
   <block id="2494cf3ea6304f13d911614b50a2449f" category="admonition">각 MetroCluster IP 노드에서 이 단계를 완료해야 합니다.</block>
   <block id="4fbb06a55d361d0cd8cf430f9a799e67" category="list-text">루트 애그리게이트가 미러링되었는지 확인:</block>
-  <block id="6c46e592d5f16891d3a16e5f364e031b" category="section-title">새 노드 추가 완료</block>
   <block id="756f29d7bcbe7decf6b979c0706fc9a1" category="paragraph">새 DR 그룹을 MetroCluster 구성에 통합하고 새 노드에 미러링된 데이터 애그리게이트를 생성해야 합니다.</block>
   <block id="b24de9180a5deb759a394eebcd1a0305" category="list-text">각 새 MetroCluster 노드에서 미러링된 데이터 애그리게이트를 생성합니다.</block>
   <block id="7062dd7205e5ed0cba84efd4203bc9cc" category="paragraph">다음 예에서는 node_A_1-new에 Aggregate를 생성하는 방법을 보여 줍니다.</block>
@@ -12544,10 +12542,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="be4fd0012ddc006ea303591c9df6f76d" category="paragraph"><block ref="39b06b9a26b49c3db6d9409a6abaa9d8" prefix="" category="inline-code"></block></block>
   <block id="9e1d9b9e8b88355df08194559af6865a" category="summary">스위치오버 중에는 특정 작업을 수행하지 않아야 합니다.</block>
   <block id="fa33dcb38c0cd6e15dd757f1ef3072ee" category="doc">MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다</block>
-  <block id="5722cde27dfa05f795a5466b6d0859c9" category="paragraph">시스템이 전환 중일 때는 특정 작업을 수행하지 않아야 합니다. 시스템 전환 시 제한된 작업에 대해 알아봅니다.</block>
-  <block id="b72a4837907e7fef0771c42da901c811" category="section-title">스위치오버 시 작업이 제한됩니다</block>
-  <block id="1b5f91752d52b3bac4319cf07ea0efb8" category="paragraph">다음 작업은 시스템이 전환 중일 때 지원되지 않습니다.</block>
-  <block id="272c8dfc8e0821088d85ed5d0fe037a8" category="list-text">Aggregate 및 볼륨 생성 또는 삭제</block>
   <block id="d825dd35fde2fe33a56ef95c52f545a0" category="list-text">SVM 생성 또는 삭제</block>
   <block id="8c120d60e412429a6f43b748c02dc233" category="list-text">LIF 생성 또는 삭제</block>
   <block id="9cc6607cba1650bc799439425f9b085e" category="list-text">디스크 추가 또는 제거(복구 절차의 일부로 디스크를 교체하는 경우에만 해당)</block>
@@ -13435,7 +13429,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4e4facc560c88d40d47ce2b1369d5552" category="doc">MetroCluster IP 스위치에서 로그 수집 구성</block>
   <block id="d5a5c9619599da12d87af6daeab1ece6" category="paragraph">MetroCluster IP 구성에서는 디버깅 목적으로 스위치 로그를 수집하도록 로그 수집을 구성할 수 있습니다.</block>
   <block id="7c51c84110459cf460a444094be133c4" category="admonition">Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클러스터에 대해 새로운 사용자가 필요합니다. 예를 들어, MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4는 모두 스위치에 별도의 사용자를 구성해야 합니다. 동일한 사용자에 대해 여러 개의 SSH 키를 사용하는 것은 지원되지 않습니다.</block>
-  <block id="8ac20e3719b6b58e94e5a4385e87b52e" category="paragraph">이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다. 이 절차는 수집을 설정하고, 자세한 * 지원 * 로그를 요청하며, AutoSupport에서 수집하는 * 주기적 * 데이터의 시간별 수집을 활성화하는 과정을 안내합니다.</block>
   <block id="2ded3ff3862adfc6f54d2a2f3ebf1147" category="paragraph">* 참고: * FIPS 모드를 활성화한 경우 다음을 완료해야 합니다.</block>
   <block id="81f0d5b127adfd87f50ce10bc85e1e65" category="list-text">공급업체의 지침에 따라 스위치에서 SSH 키를 다시 생성합니다.</block>
   <block id="a60a00967db7342947b326a8f7618f52" category="list-text">를 사용하여 ONTAP에서 SSH 키를 재생성합니다<block ref="c079360670e0f4f9441a54ac1d262788" prefix=" " category="inline-code"></block></block>
@@ -14499,4 +14492,15 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="108a4ad72df5c318a77dad90928d8770" category="admonition">MetroCluster IP 구성에서 ONTAP Mediator를 사용하는 구성이 아닌 경우 AUSO 장애 도메인은 이미 'auso-disabled'로 설정되어 있습니다.</block>
   <block id="6ba9661e38afca32fe30fec08ca5c4ab" category="list-text">두 사이트의 노드를 중지합니다.</block>
   <block id="f759ce596ef74c921d7bddaf277a11c8" category="paragraph">*참고:* 25GbE 속도를 사용하려면 MAM1Q00A-QSA28 트랜시버 어댑터가 필요합니다.</block>
+  <block id="316fa55db721e45107647fc0de79704f" category="paragraph">이더넷 스위치 상태 모니터링(CSHM)은 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위해 스위치 로그를 수집하는 역할을 합니다. 이 절차에서는 수집 설정, 상세 *Support* 로그 요청, 그리고 AutoSupport에서 수집하는 *Periodic* 데이터의 시간별 수집을 활성화하는 프로세스를 안내합니다.</block>
+  <block id="4526d2820ba573572df0eafdc557014c" category="paragraph">시스템이 전환되는 동안 NetApp에서는 특정 작업을 수행하지 않도록 권장합니다.</block>
+  <block id="6efa43350457e5d9dbe5d6c555eb32f9" category="paragraph">시스템이 전환 중일 때는 다음과 같은 작업을 권장하지 않으며, NetApp 지원팀의 안내에 따라서만 수행해야 합니다.</block>
+  <block id="9ea78d85c08becd89d5d23daef8687fa" category="list-text">애그리게이트 생성 또는 삭제</block>
+  <block id="56f10876ae2bed5f3da63c125772429f" category="list-text">볼륨 생성 또는 삭제(암호화된 볼륨 포함)</block>
+  <block id="6e05136dba32fad75bd64f601602c77e" category="section-title">모니터링 애플리케이션에서 구성을 제거합니다</block>
+  <block id="a8b426026583d79d39676c969bdc3456" category="section-title">새 컨트롤러 모듈 준비</block>
+  <block id="af8fde2f19f4ba506d9bb950533f5776" category="list-text">유지보수 모드에서 halt 명령을 실행하여 유지보수 모드를 종료합니다.</block>
+  <block id="b8bbebbdaa85ea395d4339565372cafe" category="list-text">시스템을 부팅하고 클러스터 설정으로 이동하십시오.</block>
+  <block id="e219586e70791b35867f7d4dc343163f" category="section-title">클러스터 간 LIF를 구성하고, MetroCluster 인터페이스를 생성하고, 루트 애그리게이트를 미러링합니다.</block>
+  <block id="8780af330d271744603135da4ae91fd9" category="section-title">새 노드 추가를 완료합니다</block>
 </blocks>
