@@ -263,3 +263,6 @@ NOTE: 잘못된 MySQL root 패스워드를 입력하면 Tiebreaker 소프트웨�
 
 .관련 정보
 https://mysupport.netapp.com/site/["NetApp 지원"^]
+
+.다음 단계
+link:configure-tb-workflow.html["MetroCluster Tiebreaker 소프트웨어 구성"]

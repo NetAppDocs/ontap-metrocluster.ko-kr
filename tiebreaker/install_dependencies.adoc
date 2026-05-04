@@ -882,3 +882,6 @@ UNIT FILE          State
 mariadb.service    enabled
 ----
 
+
+.다음 단계
+link:install_tiebreaker_package.html["소프트웨어 패키지를 설치합니다"]

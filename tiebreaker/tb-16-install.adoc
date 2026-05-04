@@ -19,6 +19,9 @@ summary: 호스트 Linux 운영 체제에서 새 설치 또는 tiebreaker 1.6으
 
 
 
+NOTE: Tiebreaker 1.6 이상 버전을 설치한 후에는 link:concept_configuring_the_tiebreaker_software.html#import-certificates-tb17["인증서 가져오기"] 끊김 없는 모니터링을 활성화해야 합니다.
+
+
 
 == Tiebreaker 1.6P1을(를) 설치하거나 업그레이드합니다
 
@@ -1393,3 +1396,6 @@ Cleaning up / removing...
 --
 ====
 
+
+.다음 단계
+Tiebreaker를 성공적으로 설치 또는 업그레이드한 후 link:configure-tb-workflow.html["MetroCluster Tiebreaker 소프트웨어를 구성합니다"] MetroCluster 구성을 추가하고 필요한 인증서를 가져오십시오.

@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: tiebreaker/configure-tb-workflow.html 
+keywords: configure, tiebreaker, workflow, software, metrocluster, snmp, monitor, configuration 
+summary: Tiebreaker 소프트웨어를 설치한 후에는 MetroCluster 구성을 추가하고, SNMP 설정을 구성하고, MetroCluster 환경 모니터링을 시작할 수 있습니다. 
+---
+= MetroCluster Tiebreaker 구성 워크플로
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tiebreaker 소프트웨어를 설치한 후에는 MetroCluster 구성을 추가하고, SNMP 설정을 구성하고, MetroCluster 환경 모니터링을 시작할 수 있습니다.
+
+.이 워크플로 정보
+이 워크플로를 사용하여 설치 후 Tiebreaker 소프트웨어를 구성할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:concept_configuring_the_tiebreaker_software.html["Tiebreaker 소프트웨어를 구성합니다"]
+[role="quick-margin-para"]
+Tiebreaker 소프트웨어에 MetroCluster 구성을 추가하고, 인증서를 가져오고, 모니터링 설정을 구성합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"]link:task_configure_snmp_setts_for_tiebreaker_software.html["MetroCluster Tiebreaker 소프트웨어의 SNMP 설정을 구성합니다"]
+[role="quick-margin-para"]
+Tiebreaker 소프트웨어가 MetroCluster 이벤트에 대한 SNMP 알림을 보낼 수 있도록 SNMP 설정을 구성하십시오.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"]link:concept_monitoring_the_mcc_configuration.html["MetroCluster 구성을 모니터링합니다"]
+[role="quick-margin-para"]
+Tiebreaker 소프트웨어를 사용하여 MetroCluster 구성 상태를 모니터링하고, SNMP 이벤트를 확인하고, AutoSupport 설정을 관리할 수 있습니다.

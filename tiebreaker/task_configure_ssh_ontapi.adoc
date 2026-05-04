@@ -23,3 +23,6 @@ ONTAP API 및 SSH에 대한 관리자 액세스를 구성할 수 있습니다.
 NOTE: link:https://docs.netapp.com/us-en/ontap/concepts/administrator-authentication-rbac-concept.html["관리자 인증 및 RBAC"^] 구현되었습니다.
 
 
+
+.다음 단계
+link:install_dependencies.html["종속 항목을 설치합니다"].

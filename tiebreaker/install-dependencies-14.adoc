@@ -605,3 +605,6 @@ mariadb.service    enabled
 
 ----
 
+
+.다음 단계
+link:install-tiebreaker-package-14.html["소프트웨어 패키지를 설치합니다"]

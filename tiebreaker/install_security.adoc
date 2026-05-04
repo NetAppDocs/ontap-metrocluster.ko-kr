@@ -124,7 +124,7 @@ NOTE: Tiebreaker 설치 중에 지정하는 사용자 계정에는 이러한 모
 
 * 데이터베이스 암호화를 사용합니다
 +
-** 저장 데이터 암호화가 지원됩니다.link:https://mariadb.com/docs/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview["유휴 데이터 암호화에 대해 자세히 알아보십시오"^]
+** 저장 데이터 암호화가 지원됩니다.link:https://mariadb.com/docs/server/security/encryption/data-at-rest-encryption/data-at-rest-encryption-tde-fundamentals["유휴 데이터 암호화에 대해 자세히 알아보십시오"^]
 ** 전송 중인 데이터는 암호화되지 않습니다. 사용 중인 데이터는 로컬 "socks" 파일 연결을 사용합니다.
 ** MariaDB에 대한 FIPS 규정 준수 -- 데이터베이스에서 FIPS 규정 준수를 활성화할 필요는 없습니다. FIPS 호환 모드에서 호스트를 설치해도 충분합니다.
 +
@@ -155,3 +155,6 @@ link:https://mariadb.com/docs/server/security/securing-mariadb["MariaDB 보안"^
 link:https://developer.hashicorp.com/vault/tutorials/operations/production-hardening/["생산 강화"^]
 
 
+
+.다음 단계
+link:install-choose-procedure.html["설치 절차를 선택합니다"] Tiebreaker를 설치 또는 업그레이드합니다.

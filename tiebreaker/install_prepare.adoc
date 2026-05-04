@@ -119,3 +119,8 @@ Red Hat Enterprise Linux 8.1 - 8.7:
 
 
 
+
+.다음 단계
+* Tiebreaker 1.5 이상 버전을 설치하거나 업그레이드하는 경우 link:install_security.html["Tiebreaker 호스트 및 데이터베이스 설치를 보호합니다"].
+* Tiebreaker 1.4를 설치하거나 업그레이드하는 경우 link:install-dependencies-14.html["MetroCluster Tiebreaker 1.4 종속성 설치"].
+
