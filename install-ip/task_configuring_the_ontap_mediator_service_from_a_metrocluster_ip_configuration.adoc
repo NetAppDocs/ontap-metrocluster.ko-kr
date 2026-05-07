@@ -28,219 +28,62 @@ CAUTION: ONTAP 9.12.1부터 MetroCluster IP 구성에서 MetroCluster 자동 강
 
 .이 작업에 대해
 * 이 작업은 기본적으로 예상치 못한 자동 전환을 활성화합니다.
-* MetroCluster IP 구성의 모든 노드에 있는 ONTAP 인터페이스에서 이 작업을 수행할 수 있습니다.
-* ONTAP 9.18.1 및 ONTAP Mediator 1.11 버전부터 iSCSI로 구성된 단일 ONTAP Mediator 인스턴스는 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다. ONTAP 9.17.1 및 ONTAP Mediator 1.10 이하 버전에서는 iSCSI로 구성된 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.
-* ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 iSCSI 및 HTTPS를 지원하거나 HTTPS만 지원하는 ONTAP Mediator를 설치할 수 있습니다. HTTPS만 지원하도록 ONTAP Mediator를 설치한 경우 iSCSI를 사용하여 Mediator를 구성할 수 없습니다.
-* 명령어에서 `-type` 매개변수를 지정하지 않으면 `metrocluster configuration-settings mediator add` 기본 iSCSI 프로토콜이 사용됩니다.
-* ONTAP Mediator를 HTTPS로 구성하는 경우, 하나의 ONTAP Mediator 인스턴스는 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. ONTAP Mediator가 HTTPS로 구성된 경우 여러 MetroCluster IP 구성을 동시에 모니터링하는 것은 지원되지 않습니다.
-* 여러 MetroCluster IP 구성을 모니터링하기 위해 HTTPS로 구성된 ONTAP Mediator가 필요한 경우 각 MetroCluster IP 구성에 대해 별도의 ONTAP Mediator 인스턴스를 구성해야 합니다. MetroCluster IP에 대해 HTTPS로 ONTAP Mediator를 구성하기 전에 MetroCluster IP 환경에 대한 요구 사항을 신중하게 평가해야 합니다.
-* 하나의 ONTAP Mediator 인스턴스를 사용하여 여러 MetroCluster IP 구성을 모니터링하려면 HTTPS 대신 iSCSI를 사용하여 ONTAP Mediator를 구성해야 합니다.
+* 이 작업은 MetroCluster IP 구성의 모든 노드에 있는 ONTAP 인터페이스에서 수행할 수 있습니다.
+* ONTAP 9.18.1 및 ONTAP Mediator 1.11 버전부터 단일 ONTAP Mediator 인스턴스에서 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다. 이전 버전에서는 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있었습니다.
 
 
+.단계
+. ONTAP 에 ONTAP Mediator를 추가합니다.  단계는 IPv4 주소를 사용할지 IPv6 주소를 사용할지에 따라 달라집니다.
++
+[NOTE]
+====
+** IPv6를 사용하려면 ONTAP 9.18.1 이상 및 ONTAP Mediator 1.11 이상을 실행해야 합니다.
+** 클러스터에서 IPv6를 활성화하면 나중에 비활성화할 수 없습니다.
+
+
+====
++
 [role="tabbed-block"]
 ====
-.HTTPS로 ONTAP Mediator 구성
+.IPv4 사용
 --
-ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 MetroCluster IP 구성에서 통신에 HTTPS를 사용하는 ONTAP Mediator를 구성할 수 있습니다.
-
-.단계
-. ONTAP Mediator Linux VM/호스트 소프트웨어 설치 위치에서 ONTAP Mediator CA 인증서를 찾으십시오.
+.. 다음 명령을 실행하여 ONTAP Mediator를 추가합니다.
 +
-`[root@ontap-mediator ~] cd /opt/netapp/lib/ontap_mediator/ontap_mediator/server_config`
+`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ip_address>`
 
 +
-다음 예와 유사한 출력이 표시됩니다.
 
-+
-[listing]
-----
-1-ontap-mediator.rules  intermediate.crt   make_self_signed_certs.sh      ontap_mediator_server_chain.crt  ontap_mediator.user_config.yaml  root_ca.crt
-config_migration        intermediate.key   netapp_sudoers                 ontap_mediator_server.crt        openssl_ca.cnf                   root_ca.key
-config.pyc              intermediate.srl   ontap_mediator.config.yaml     ontap_mediator_server.csr        openssl_intermediate.cnf
-__init__.pyc            logging.conf.yaml  ontap_mediator.constants.yaml  ontap_mediator_server.key        openssl_server.cnf
-----
-. 루트 CA 인증서의 내용을 표시합니다.
-+
-`[root@ontap-mediator ~] cat root_ca.crt`
-
-+
-[listing]
-----
------BEGIN CERTIFICATE-----
-<certificate_value>
------END CERTIFICATE-----
-----
-. 중간 CA 인증서의 내용을 표시합니다.
-+
-`[root@ontap-mediator ~] cat intermediate.crt`
-
-+
-[listing]
-----
------BEGIN CERTIFICATE-----
-<certificate_value>
------END CERTIFICATE-----
-----
-. 사이트 A에 루트 및 중간 CA 인증서를 설치합니다.
-+
-.. 루트 CA 인증서를 설치합니다.
-+
-`security certificate install -type server-ca -vserver <vserver_name>`
-
-+
-메시지가 나타나면 다음 예시와 같이 `root_ca.crt`을(를) 입력하십시오.
-
-+
-[listing]
-----
-cluster_A::*> security certificate install -type server-ca -vserver cluster_A
-
-Enter certificate: Press <Enter> when done
-
------BEGIN CERTIFICATE-----
-<certificate_value>
------END CERTIFICATE-----
-
-You should keep a copy of the CA-signed digital certificate for future
-reference.
-
-The installed certificate's CA and serial number for reference:
-CA: ONTAP Mediator CA
-serial: <serial_value>
-
-The certificate's generated name for reference: ONTAPMediatorCA
-
-cluster_A::*>
-
-----
+NOTE: Mediator 관리자 사용자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.
 
 
-. 중간 CA 인증서를 설치합니다.
-+
-`security certificate install -type server-ca -vserver <vserver_name>`
 
-+
-메시지가 나타나면 다음 예시와 같이 `intermediate.crt`을(를) 입력하십시오.
-
-+
-[listing]
-----
-cluster_A::*> security certificate install -type server-ca -vserver cluster_A
-
-Enter certificate: Press <Enter> when done
-
------BEGIN CERTIFICATE-----
-<certificate_value>
------END CERTIFICATE-----
-
-You should keep a copy of the CA-signed digital certificate for future
-reference.
-
-The installed certificate's CA and serial number for reference:
-CA: ONTAP Mediator CA
-serial: <serial_value>
-
-The certificate's generated name for reference: ONTAPMediatorCA
-
-cluster_A::*>
-
-----
-. 이전 단계를 반복하여 사이트 B에 루트 및 중간 CA 인증서를 설치합니다.
-. 생성된 인증서 이름을 사용하여 설치된 자체 서명 CA 인증서를 확인하십시오.
-+
-`security certificate show -common-name <common_name>`
-
-+
-다음 예와 유사한 출력이 표시됩니다.
-
-+
-[listing]
-----
-security certificate show -common-name ONTAPMediatorCA
-Vserver    Serial Number      Certificate Name                     Type
----------- ---------------    ------------------------------------ ------------
-cluster_A  <serial_value>     ONTAPMediatorCA                      server-ca
-    Certificate Authority: ONTAP Mediator CA
-          Expiration Date: Thu Nov 28 05:26:07 2030
-
-cluster_A  <serial_value>    ONTAPMediatorCA                       server-ca
-    Certificate Authority: ONTAP Mediator CA
-          Expiration Date: Thu Nov 28 05:26:07 2030
-
-2 entries were displayed.
-----
-. ONTAP 에 ONTAP Mediator를 추가합니다.  단계는 IPv4 주소를 사용할지 IPv6 주소를 사용할지에 따라 달라집니다.
-+
-[NOTE]
-====
-** IPv6를 사용하려면 ONTAP 9.18.1 이상 및 ONTAP Mediator 1.11 이상을 실행해야 합니다.
-** 클러스터에서 IPv6를 활성화하면 나중에 비활성화할 수 없습니다.
-
-
-====
-+
-.. IPv6를 사용하려면 다음 단계를 완료하십시오.
-+
-IPv4를 사용하려면 <<https_ipv4_step8b,IPv4 단계>>(으)로 건너뛰세요.
-
-+
-... 두 클러스터에서 다음 명령을 실행합니다.
+--
+.IPv6 사용
+--
+.. 두 클러스터에서 다음 명령을 실행합니다.
 +
 `network options ipv6 modify -enabled true`
 
-... 4개 노드 모두에서 IPv6 주소를 사용하여 node-mgmt IP 주소를 구성합니다.
-... ONTAP 중재자를 추가합니다.
+.. 4개 노드 모두에서 IPv6 주소를 사용하여 node-mgmt IP 주소를 구성합니다.
+.. ONTAP 중재자를 추가합니다.
 +
-`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ipv6_ip_address> -type https-mediator`
-
-+
-
-NOTE: 안내 메시지가 나타나면 Mediator 관리자 사용자 이름과 비밀번호를 입력하십시오.
-
-
-
-.. [[https_ipv4_step8b]]IPv4를 사용하려면 다음 단계를 완료하십시오.
-+
-... ONTAP 중재자를 추가합니다.
-+
-`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ip_address> -type https-mediator`
+`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ipv6_ip_address>`
 
 +
 
-NOTE: 안내 메시지가 나타나면 Mediator 관리자 사용자 이름과 비밀번호를 입력하십시오.
+NOTE: Mediator 관리자 사용자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.
 
 
 
-
-
-. 연결 상태와 ONTAP Mediator 유형을 확인하십시오.
-+
-`metrocluster configuration-settings mediator show`
-
-+
-다음 예와 유사한 출력이 표시됩니다.
-
-+
-[listing]
-----
-cluster_A::*> metrocluster configuration-settings mediator show
-        Mediator IP     Port    Type              Node                    Configuration Connection
-                                                  Status                  Status
-        --------------- ------- ----------------- ----------------------- ------------- -----------
-        10.101.101.101
-                        31784   https-mediator    cluster1_node_01        true          true
-                                                  cluster1_node_02        true          true
-                                                  cluster2_node_01        true          true
-                                                  cluster2_node_02        true          true
-----
-+
-.. 자동 전환 기능이 활성화되어 있는지 확인합니다.
+--
+====
+. 자동 전환 기능이 활성화되어 있는지 확인합니다.
 +
 MetroCluster 쇼
 
-.. 중재자가 실행되고 있는지 확인합니다.
+. 중재자가 실행되고 있는지 확인합니다.
 +
-... 중재자 가상 디스크를 표시합니다.
+.. 중재자 가상 디스크를 표시합니다.
 +
 '스토리지 디스크 표시 컨테이너 유형 중재자
 
@@ -255,101 +98,7 @@ MetroCluster 쇼
  NET-1.7                   -     -   - VMDISK  mediator    -         node_B_2
  NET-1.8                   -     -   - VMDISK  mediator    -         node_A_1
 ....
-... AUSO(Automatic Unplanned Switchover) 장애 도메인의 상태를 확인합니다.
-+
-MetroCluster 쇼
-
-+
-
-NOTE: 다음 출력 예는 ONTAP 9.13.1 이상에 적용됩니다. ONTAP 9.12.1 이하 버전의 경우 AUSO 오류 도메인 상태는 이어야 합니다 `auso-on-cluster-disaster`.
-
-+
-[listing]
-----
-cluster_A::> metrocluster show
-Cluster                   Entry Name          State
-------------------------- ------------------- -----------
-Local: cluster_A         Configuration state configured
-                          Mode                normal
-                          AUSO Failure Domain auso-on-dr-group-disaster
-Remote: cluster_B         Configuration state configured
-                          Mode                normal
-                          AUSO Failure Domain auso-on-dr-group-disaster
-----
-
-
-
-
-
-
---
-.iSCSI를 사용하여 ONTAP Mediator 구성
---
-.단계
-. ONTAP 에 ONTAP Mediator를 추가합니다.  단계는 IPv4 주소를 사용할지 IPv6 주소를 사용할지에 따라 달라집니다.
-+
-[NOTE]
-====
-** IPv6를 사용하려면 ONTAP 9.18.1 이상 및 ONTAP Mediator 1.11 이상을 실행해야 합니다.
-** 클러스터에서 IPv6를 활성화하면 나중에 비활성화할 수 없습니다.
-
-
-====
-+
-.. IPv6를 사용하려면 다음 단계를 완료하십시오.
-+
-IPv4를 사용하려면 <<iscsi_ipv4_step8b,IPv4 단계>>(으)로 건너뛰세요.
-
-+
-... 두 클러스터에서 다음 명령을 실행합니다.
-+
-`network options ipv6 modify -enabled true`
-
-... 4개 노드 모두에서 IPv6 주소를 사용하여 node-mgmt IP 주소를 구성합니다.
-... ONTAP 중재자를 추가합니다.
-+
-`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ipv6_ip_address> -type iscsi-mediator`
-
-+
-
-NOTE: 안내 메시지가 나타나면 Mediator 관리자 사용자 이름과 비밀번호를 입력하십시오.
-
-
-
-.. [[iscsi_ipv4_step8b]]IPv4를 사용하려면 다음 단계를 완료하십시오.
-+
-... ONTAP 중재자를 추가합니다.
-+
-`metrocluster configuration-settings mediator add -mediator-address <mediator_host_ip_address> -type iscsi-mediator`
-
-+
-
-NOTE: 안내 메시지가 나타나면 Mediator 관리자 사용자 이름과 비밀번호를 입력하십시오.
-
-
-
-.. 자동 전환 기능이 활성화되어 있는지 확인합니다.
-+
-MetroCluster 쇼
-
-.. 중재자가 실행되고 있는지 확인합니다.
-+
-... 중재자 가상 디스크를 표시합니다.
-+
-'스토리지 디스크 표시 컨테이너 유형 중재자
-
-+
-....
- cluster_A::> storage disk show -container-type mediator
-                        Usable           Disk    Container   Container
- Disk                   Size Shelf Bay Type    Type        Name      Owner
- ---------------- ---------- ----- --- ------- ----------- --------- --------
- NET-1.5                   -     -   - VMDISK  mediator    -         node_A_2
- NET-1.6                   -     -   - VMDISK  mediator    -         node_B_1
- NET-1.7                   -     -   - VMDISK  mediator    -         node_B_2
- NET-1.8                   -     -   - VMDISK  mediator    -         node_A_1
-....
-... 권한 모드를 고급으로 설정합니다.
+.. 권한 모드를 고급으로 설정합니다.
 +
 진일진일보한 것
 
@@ -357,7 +106,7 @@ MetroCluster 쇼
 ....
  cluster_A::> set advanced
 ....
-... 중재자 라고 표시된 이니시에이터를 표시합니다.
+.. 중재자 라고 표시된 이니시에이터를 표시합니다.
 +
 '스토리지 iSCSI - 이니시에이터 표시 레이블 중재자'
 
@@ -375,7 +124,7 @@ MetroCluster 쇼
       mailbox
            mediator 1.1.1.1       iqn.2012-05.local:mailbox.target.6616cd3f-9ef1-11e9-aada-00a098ccf5d8:a05e1ffb-9ef1-11e9-8f68-00a098cbca9e:1 up/up
 ....
-... AUSO(Automatic Unplanned Switchover) 장애 도메인의 상태를 확인합니다.
+.. AUSO(Automatic Unplanned Switchover) 장애 도메인의 상태를 확인합니다.
 +
 MetroCluster 쇼
 
@@ -398,9 +147,19 @@ Remote: cluster_B         Configuration state configured
 ----
 
 
+. 선택적으로 MetroCluster 자동 강제 전환을 구성할 수 있습니다.
++
+다음 명령은 고급 권한 수준에서만 사용할 수 있습니다.
 
++
 
+IMPORTANT: 이 명령을 사용하기 전에 link:concept-ontap-mediator-supports-automatic-unplanned-switchover.html#mauso-9-12-1["MetroCluster 자동 강제 적용 시 위험 및 제한 사항"]을(를) 검토하십시오.
 
++
+`metrocluster modify -allow-auto-forced-switchover true`
 
---
-====
++
+....
+cluster_A::*> metrocluster modify -allow-auto-forced-switchover true
+....
+
