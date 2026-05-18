@@ -14507,39 +14507,64 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c42f4f6a3afab85eadf7182136f86159" category="paragraph">cluster_B에서 다음 명령을 실행합니다.</block>
   <block id="29bf21eb413a03bb7bc5f794a7cf8c1a" category="paragraph"><block ref="cffe1374633319381a16ddd247851dc5" prefix="" category="inline-code"></block></block>
   <block id="aa9e0907bac12bc372803051430c32c6" category="sidebar">타이브레이커 구성 워크플로우</block>
-  <block id="8fe5d17841821de914d5209eef34ab37" category="list-text">ONTAP 9.18.1 및 ONTAP Mediator 1.11 버전부터 단일 ONTAP Mediator 인스턴스에서 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다. 이전 버전에서는 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있었습니다.</block>
-  <block id="652f10975e44b79de998287113035fac" category="section-title">ONTAP Mediator의 방화벽 요구 사항</block>
-  <block id="671e00f956495c99ae5aae5896e8542a" category="paragraph">ONTAP Mediator는 특정 서비스와 통신하기 위해 여러 포트를 사용합니다.</block>
-  <block id="861ef6676813cbc81369ee701ae73269" category="paragraph">타사 방화벽을 사용 중인 경우:</block>
-  <block id="041f3a27fe8b40cc213210949eb4f036" category="list-text">HTTPS 액세스가 활성화되어 있어야 합니다.</block>
-  <block id="8b8101ed71d5bd32d2f9d4de05e470c1" category="list-text">포트 31784와 3260에 대한 액세스를 허용하도록 구성해야 합니다.</block>
-  <block id="cc1e6f116b4b45ffde821f0aef59e030" category="paragraph">기본 Red Hat 또는 CentOS 방화벽을 사용하는 경우 Mediator 설치 중에 방화벽이 자동으로 구성됩니다.</block>
-  <block id="43119522ff803c1f1fa88bdbaffe20b7" category="list-text">iSCSI 포트는 MetroCluster IP 구성에서만 필요합니다.</block>
-  <block id="d247a27201590148c4ea6bf493729fd1" category="list-text">22/tcp 포트는 정상 작동에는 필요하지 않지만 유지보수를 위해 일시적으로 활성화하고 유지보수 세션이 완료되면 비활성화할 수 있습니다.</block>
-  <block id="02674a4ef33e11c879283629996c8ff8" category="cell">방향</block>
-  <block id="c5df47f9068f6d11f238ec77908abf18" category="paragraph">22/tcp</block>
-  <block id="6c7e3200049198face0d2648e9d1a27d" category="paragraph">인바운드</block>
-  <block id="58dc7db50a2e11a9de9e6cc092c59d4d" category="paragraph">ONTAP Mediator</block>
-  <block id="348d25e332990b97eda5823a9561cd76" category="paragraph">SSH/ONTAP Mediator 관리</block>
-  <block id="5946d090ccc9cc4eb9c55cf3e9e8d35a" category="paragraph">31784/tcp</block>
-  <block id="5f41d8cf5282355fa3aefb7176c3f60e" category="paragraph">cluster-mgmt 및 node-mgmt LIF</block>
-  <block id="47c5e6a166f9432ff96681fa2a62c791" category="paragraph">ONTAP Mediator 웹 서버</block>
-  <block id="8cf15eeaee2b3382338ecab30027c48b" category="paragraph">REST API(HTTPS)</block>
-  <block id="5395ab3ceab5345ee4a1117e436bec89" category="paragraph">3260/tcp</block>
-  <block id="adcf0c2ac79e72965c57c716ea214337" category="paragraph">노드 관리 LIF</block>
-  <block id="1c44912242a1c1688be9805f25a62dbd" category="paragraph">ONTAP Mediator iSCSI 타겟</block>
-  <block id="a3993ea912c0ecd6926aed69b72fd59a" category="paragraph">사서함용 iSCSI 데이터 연결</block>
-  <block id="ada003c5d7b06ea1b392045334928823" category="list-text">이 작업은 MetroCluster IP 구성의 모든 노드에 있는 ONTAP 인터페이스에서 수행할 수 있습니다.</block>
-  <block id="3b84df93f9af27f6e1ffc9a619bab72d" category="open-title">IPv4 사용</block>
-  <block id="a1c25aeecadb66052deb23e0403a5921" category="list-text">다음 명령을 실행하여 ONTAP Mediator를 추가합니다.</block>
-  <block id="43af59b9fd4e41413d9a6f0348be897c" category="paragraph"><block ref="d795c90e620cf7aa453d5e920147531a" prefix="" category="inline-code"></block></block>
-  <block id="6abf1e89985863ce5f318d51791232d7" category="admonition">Mediator 관리자 사용자 계정의 사용자 이름과 암호를 입력하라는 메시지가 표시됩니다.</block>
-  <block id="5be30efa94af9b795d71ee2d7b145d2b" category="open-title">IPv6 사용</block>
-  <block id="3bd8e4fdfb5d625cdaa4c9ff27e8ce16" category="paragraph"><block ref="26623cc20cef21441276d0bbf177cf0e" prefix="" category="inline-code"></block></block>
-  <block id="1d2738c61f2ddb3b312cabca3378259b" category="list-text">선택적으로 MetroCluster 자동 강제 전환을 구성할 수 있습니다.</block>
-  <block id="09bb2a0904755eb985fc0c00a8eaeb29" category="paragraph">다음 명령은 고급 권한 수준에서만 사용할 수 있습니다.</block>
-  <block id="6627a26235928f19183374e55b041466" category="admonition">이 명령을 사용하기 전에 <block ref="b36331871b99d608d499593ef0805d3b" category="inline-link-macro-rx"></block>을(를) 검토하십시오.</block>
-  <block id="626946adf45b7bb7ff18b4ffcb520404" category="paragraph"><block ref="c3c9b152afaa4bfa0aa390b3e2063a6d" prefix="" category="inline-code"></block></block>
-  <block id="66e992bd34634b96ff376561bcfc2e28" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 ONTAP Mediator가 MetroCluster 구성에서 제거되었는지 확인하십시오.</block>
-  <block id="1d32dacc20fe1feb077659fd0bebdc03" category="list-text">시스템을 사용하여 HTTP 서버에 액세스할 수 있는지 확인하십시오.</block>
+  <block id="a5d67e5f005807bbd4e62ed129a259ce" category="list-text">ONTAP 9.19.1 및 ONTAP Mediator 1.12 버전부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator를 구성할 수 있습니다. ONTAP Mediator를 HTTPS로 구성하면 ONTAP Mediator 인스턴스당 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. 자세한 내용은 <block ref="fb70fb2de5d85ae7e6c4e86202287fd7" category="inline-xref-macro-rx"></block>을 참조하세요.</block>
+  <block id="f7709b306d9f954e054f6c2c41684b09" category="list-text">ONTAP 9.18.1 및 ONTAP Mediator 1.11 버전부터 iSCSI로 구성된 단일 ONTAP Mediator 인스턴스는 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다. ONTAP 9.17.1 및 ONTAP Mediator 1.10 이하 버전에서는 iSCSI로 구성된 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
+  <block id="ff2e8285b2705731a1dbc046ff579939" category="section-title">ONTAP Mediator에 사용할 통신 프로토콜을 선택하십시오</block>
+  <block id="2988e38df3c50f205b083a96b48e66b2" category="paragraph">기본적으로 MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 LUN에 액세스합니다. ONTAP Mediator는 iSCSI를 제공하기 위해 SCST 패키지에 의존합니다. iSCSI 세션은 난독화된 시스템 생성 사전 공유 키를 사용하는 CHAP(Challenge Handshake Authentication Protocol)를 사용하여 인증되지만 완전히 암호화되지는 않습니다.</block>
+  <block id="a04438ec01124e8d15738c27a00348bf" category="paragraph">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator 인스턴스를 구성할 수 있습니다. HTTPS는 SSL/TLS를 사용하여 전체 세션을 암호화하는 안전한 통신 프로토콜로, iSCSI에 비해 보안이 강화되었습니다.</block>
+  <block id="b42fb506e0a277ccd2615b75bb8a3a5c" category="paragraph">CLI를 사용하여 HTTPS를 사용하는 ONTAP Mediator만 구성할 수 있습니다. System Manager는 지원되지 않습니다.</block>
+  <block id="2044beabf4d1eb2b2680bc62daa3aab5" category="list-text">ONTAP Mediator를 HTTPS로 구성하는 경우, 하나의 ONTAP Mediator 인스턴스는 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. 여러 MetroCluster IP 구성을 동시에 모니터링하는 것은 지원되지 않습니다.</block>
+  <block id="32b706cbb06a2ceca20fffcd66e9ae41" category="list-text">여러 MetroCluster IP 구성을 모니터링하기 위해 HTTPS로 구성된 ONTAP Mediator가 필요한 경우 각 MetroCluster IP 구성에 대해 별도의 ONTAP Mediator 인스턴스를 구성해야 합니다. MetroCluster IP에 대해 HTTPS로 ONTAP Mediator를 구성하기 전에 MetroCluster IP 환경에 대한 요구 사항을 신중하게 평가해야 합니다.</block>
+  <block id="71888cafc5f37e89171c789646f08323" category="list-text">하나의 ONTAP Mediator 인스턴스를 사용하여 여러 MetroCluster IP 구성을 모니터링하려면 HTTPS 대신 iSCSI를 사용하여 ONTAP Mediator를 구성해야 합니다.</block>
+  <block id="aee8b11880bbfda9a19f6b5c0201bb10" category="inline-link-macro">ONTAP Mediator의 HTTPS 및 iSCSI 설치 옵션</block>
+  <block id="d587f9cd6611c03a53aad3b1f8481b7e" category="paragraph">자세한 내용은 <block ref="a82349e7909b6ff560747d8c59eb3903" category="inline-link-macro-rx"></block>을 참조하세요.</block>
+  <block id="510858af4fd5ff2fdd1d6ee4023ce87b" category="admonition">HTTPS를 사용하는 ONTAP Mediator는 CLI를 통해서만 구성할 수 있습니다. System Manager는 지원되지 않습니다. 자세한 내용은 <block ref="3f8b2848d40ea77bb348f699b2b131f7" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="51b6fc28895a5ae5d8e89c18d1098c46" category="list-text">MetroCluster IP 구성의 모든 노드에 있는 ONTAP 인터페이스에서 이 작업을 수행할 수 있습니다.</block>
+  <block id="91544ad1eb81a9d4f37c7f015a80a6e3" category="list-text">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 iSCSI 및 HTTPS를 지원하거나 HTTPS만 지원하는 ONTAP Mediator를 설치할 수 있습니다. HTTPS만 지원하도록 ONTAP Mediator를 설치한 경우 iSCSI를 사용하여 Mediator를 구성할 수 없습니다.</block>
+  <block id="ea27c86a804da95f3ba467f50f563b54" category="list-text">명령어에서<block ref="e863b9251fab0007712da0204a3a3b3a" prefix=" " category="inline-code"></block> 매개변수를 지정하지 않으면<block ref="a5c98f88638af0e80910bbd237827b45" prefix=" " category="inline-code"></block> 기본 iSCSI 프로토콜이 사용됩니다.</block>
+  <block id="ca23eb5b9e4d3b2edb3057850d7f6dc6" category="list-text">ONTAP Mediator를 HTTPS로 구성하는 경우, 하나의 ONTAP Mediator 인스턴스는 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. ONTAP Mediator가 HTTPS로 구성된 경우 여러 MetroCluster IP 구성을 동시에 모니터링하는 것은 지원되지 않습니다.</block>
+  <block id="aaf4e1ef74980c88980c89174b2471f8" category="open-title">HTTPS로 ONTAP Mediator 구성</block>
+  <block id="b82b51c4febccc1c60b46f5674c43ea7" category="paragraph">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 MetroCluster IP 구성에서 통신에 HTTPS를 사용하는 ONTAP Mediator를 구성할 수 있습니다.</block>
+  <block id="55c1e4c6be6d4ebab5e4e6cf15e4fd9b" category="list-text">ONTAP Mediator Linux VM/호스트 소프트웨어 설치 위치에서 ONTAP Mediator CA 인증서를 찾으십시오.</block>
+  <block id="7a5a944de040740f750467ebc0f17a8a" category="paragraph"><block ref="d677bbb71b1fdb151c8d70e933aba3a1" prefix="" category="inline-code"></block></block>
+  <block id="3a3389ef589dfce02feb77c9c8bf0726" category="paragraph">다음 예와 유사한 출력이 표시됩니다.</block>
+  <block id="b97911ef5fcd41efb817213468703205" category="list-text">루트 CA 인증서의 내용을 표시합니다.</block>
+  <block id="fd97d31e28b5c5367e3f353d2e9ea565" category="paragraph"><block ref="a09412b56a28268b0ec453dc5cfeb352" prefix="" category="inline-code"></block></block>
+  <block id="55121e1eb4c09466d87157094bd2545d" category="list-text">중간 CA 인증서의 내용을 표시합니다.</block>
+  <block id="1fd4db587a439bc32f919dd2e9c61b39" category="paragraph"><block ref="f32289f9e31af7d30a94e854507ada72" prefix="" category="inline-code"></block></block>
+  <block id="530aa1bd46514fb04ada0265db839e83" category="list-text">사이트 A에 루트 및 중간 CA 인증서를 설치합니다.</block>
+  <block id="554a9540893fc63789c68ebf1376b9e8" category="list-text">루트 CA 인증서를 설치합니다.</block>
+  <block id="c1903f34c2c9e715057cf73b16f2e75f" category="paragraph"><block ref="67104263ef1e355feed51336b7e5fdbd" prefix="" category="inline-code"></block></block>
+  <block id="16c4c36006af8cd099a6bfb1364de1fd" category="paragraph">메시지가 나타나면 다음 예시와 같이<block ref="f93035d1d7d45fa37bc8cf1cd447ea1b" prefix=" " category="inline-code"></block>을(를) 입력하십시오.</block>
+  <block id="ae6454463418e5e356512dcfb467c962" category="list-text">중간 CA 인증서를 설치합니다.</block>
+  <block id="087ec917b89867d5105348f5c16a23f1" category="paragraph">메시지가 나타나면 다음 예시와 같이<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>을(를) 입력하십시오.</block>
+  <block id="ffa74f1a81a9b3e69ef03ab618ebcea8" category="list-text">이전 단계를 반복하여 사이트 B에 루트 및 중간 CA 인증서를 설치합니다.</block>
+  <block id="0fb599846ed1523eef46b3dca1b1a069" category="list-text">생성된 인증서 이름을 사용하여 설치된 자체 서명 CA 인증서를 확인하십시오.</block>
+  <block id="3447d3eba94102c9e3aff0563fb31448" category="paragraph"><block ref="fa5262302153776ec7a187b845e22f58" prefix="" category="inline-code"></block></block>
+  <block id="ec4614458785fa38f909658cc6bb1da4" category="list-text">IPv6를 사용하려면 다음 단계를 완료하십시오.</block>
+  <block id="20d48e16073fce67ac693bdef043a953" category="inline-xref">IPv4 단계</block>
+  <block id="319b2d72dd62ee426ca38380174d3445" category="paragraph">IPv4를 사용하려면 <block ref="90d24dd0999de952f6f5ad89fb16dd01" category="inline-xref-macro-rx"></block>(으)로 건너뛰세요.</block>
+  <block id="e6daf910689628f9c2693a0ec6f2ce5c" category="paragraph"><block ref="5bfcd02fed1431defc4c246dfc69087b" prefix="" category="inline-code"></block></block>
+  <block id="d76f2d31f0e43e6f004eebd192e24ad2" category="admonition">안내 메시지가 나타나면 Mediator 관리자 사용자 이름과 비밀번호를 입력하십시오.</block>
+  <block id="a6c9953a2aa30a595220f741a3cbd326" category="list-text">[[https_ipv4_step8b]]IPv4를 사용하려면 다음 단계를 완료하십시오.</block>
+  <block id="d45a5e5d92195c97828ff13b2cf4de2b" category="paragraph"><block ref="a6cbe544e4367143c9a74f2aafc579a9" prefix="" category="inline-code"></block></block>
+  <block id="edc8830ccfb6f842867fffc6b91e1b52" category="list-text">연결 상태와 ONTAP Mediator 유형을 확인하십시오.</block>
+  <block id="6565d638aa54fb406c4917545a3ea516" category="open-title">iSCSI를 사용하여 ONTAP Mediator 구성</block>
+  <block id="a9e4aaa97adb9a8c72bbad764334de92" category="paragraph">IPv4를 사용하려면 <block ref="26f38bdd786a061dee1469f5a1a13b84" category="inline-xref-macro-rx"></block>(으)로 건너뛰세요.</block>
+  <block id="3f993cc8b18e021088dfb9ef18d11fe0" category="paragraph"><block ref="4b4e102481046af10cb9c4c3be5ee5ee" prefix="" category="inline-code"></block></block>
+  <block id="25d4ec4186f9c80f499c4da9f1c8da4b" category="list-text">[[iscsi_ipv4_step8b]]IPv4를 사용하려면 다음 단계를 완료하십시오.</block>
+  <block id="d91f2fc690450eda1fcbe852bb0ffd1c" category="paragraph"><block ref="4282169a696138b577af8bb34ac8a986" prefix="" category="inline-code"></block></block>
+  <block id="7f738965d65030be10f534fdca685038" category="list-text">통신에 HTTPS를 사용하는 ONTAP Mediator를 사용하는 경우 ONTAP Mediator를 제거한 후 CA 인증서를 삭제하십시오.</block>
+  <block id="da1d29c5911e7e0ca5ce39a226730b6f" category="list-text">설치된 CA 인증서를 표시합니다.</block>
+  <block id="4b43cf1241752b974db3638bbfbd49bd" category="paragraph"><block ref="43dd1597b4ffa22df49c597e3cd4a1a0" prefix="" category="inline-code"></block></block>
+  <block id="ac72ad192350c8692ad11a2681eef942" category="list-text">설치된 루트 및 중간 인증서를 제거합니다.</block>
+  <block id="7d6607e9c937dd738b2bffb79ba0c9d2" category="paragraph"><block ref="1c863783d5099971ebc3db3d3ad995a7" prefix="" category="inline-code"></block></block>
+  <block id="41dde0734ba4df0eb1bc2446fcd0f56c" category="paragraph"><block ref="2e0cdb2639c7a3d958f9576ceaa2b3a1" prefix="" category="inline-code"></block></block>
+  <block id="ffda33d0c6be847a8128046010ba3a6f" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 ONTAP Mediator가 MetroCluster 구성에서 제거되었는지 확인하십시오.</block>
+  <block id="df021024c5380d4c45805acb611a88ce" category="admonition">이 작업은 iSCSI로 구성된 ONTAP Mediator에만 적용됩니다. 이 작업은 HTTPS를 사용하는 ONTAP Mediator에는 적용되지 않습니다.</block>
+  <block id="e93b921aee6849e1c62a6629697d16e7" category="paragraph">ONTAP Mediator 1.12는 MetroCluster IP 구성에서 HTTPS를 사용하여 통신하는 ONTAP Mediator 구성을 지원합니다. HTTPS는 SSL/TLS를 사용하여 전체 세션을 암호화함으로써 보안을 강화합니다. HTTPS 프로토콜만 사용하는 ONTAP Mediator를 설치하도록 선택할 수 있습니다. 이 설치 방법을 사용하는 경우 SCST 패키지는 설치되지 않습니다. HTTPS 프로토콜만 사용하는 ONTAP Mediator 설치에 대한 자세한 내용은 <block ref="a82349e7909b6ff560747d8c59eb3903" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
+  <block id="835c8a143366575f451949402f3b6bae" category="inline-link-macro">ONTAP Mediator에서 iSCSI 및 HTTPS 프로토콜에 대해 자세히 알아보십시오.</block>
+  <block id="ab84d029506bbf94968a8439506e5c7f" category="paragraph"><block ref="386c9422b8a78bb2663b14ec5cff7d1e" category="inline-link-macro-rx"></block>.</block>
+  <block id="ea7f38fbe84ac28be0f7c90cca730a69" category="paragraph">ONTAP 9.19.1</block>
+  <block id="65e78b09746a9ca4025a1c248d42a1bb" category="list-text">시스템을 사용하여 HTTP 서버에 액세스할 수 있는지 확인하십시오.</block>
 </blocks>

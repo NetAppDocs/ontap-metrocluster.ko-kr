@@ -13,6 +13,9 @@ summary:
 [role="lead"]
 MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 디스크에 액세스할 수 있으며, 기본 연결 시간 초과는 10초(5초 후 1회 재시도 포함)입니다. ONTAP 버전 및 환경에 따라 Mediator 지원 비상 스위치오버(MAUSO) 중단을 방지하기 위해 메일박스 시간 초과를 최대 60초까지 늘릴 수 있습니다.
 
+
+NOTE: 이 작업은 iSCSI로 구성된 ONTAP Mediator에만 적용됩니다. 이 작업은 HTTPS를 사용하는 ONTAP Mediator에는 적용되지 않습니다.
+
 NetApp에서는 다음 중 하나라도 환경에 해당되는 경우 기본 사서함 연결 시간 제한을 늘릴 것을 권장합니다.
 
 * 네트워크 이중화 프로토콜(예: HSRP 또는 VRRP)이나 루프 방지 프로토콜(예: STP)을 사용하고 있습니다.

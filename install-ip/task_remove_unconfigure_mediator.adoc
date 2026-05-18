@@ -42,6 +42,21 @@ There are no entries matching your query.
 ....
 
 
+. 통신에 HTTPS를 사용하는 ONTAP Mediator를 사용하는 경우 ONTAP Mediator를 제거한 후 CA 인증서를 삭제하십시오.
++
+.. 설치된 CA 인증서를 표시합니다.
++
+`security certificate show -common-name ONTAPMediatorCA`
+
+.. 설치된 루트 및 중간 인증서를 제거합니다.
++
+`security certificate delete -vserver cluster-A -common-name ONTAPMediatorCA -cert-name <root_certificate_name> -type server-ca -ca "ONTAP Mediator CA"`
+
++
+`security certificate delete -vserver cluster-A -common-name ONTAPMediatorCA -cert-name <intermediate_certificate_name> -type server-ca -ca "ONTAP Mediator CA"`
+
+
+
 . 두 클러스터 모두에서 다음 명령을 실행하여 ONTAP Mediator가 MetroCluster 구성에서 제거되었는지 확인하십시오.
 +
 .. `metrocluster configuration-settings mediator show`
@@ -52,15 +67,6 @@ There are no entries matching your query.
 [listing]
 ----
 This table is currently empty.
-----
-.. '스토리지 iSCSI - 이니시에이터 표시 레이블 중재자'
-+
-* 예 *
-
-+
-[listing]
-----
-There are no entries matching your query.
 ----
 
 
