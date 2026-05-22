@@ -79,7 +79,7 @@ entries:
       entries:
       - title: 기본 설정을 구성합니다
         url: "/install-ip/task_switch_config_cisco.html"
-      - title: Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다
+      - title: Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다(선택 사항)
         url: "/install-ip/task_switch_config_cisco_macsec.html"
     - title: NVIDIA IP 스위치를 구성합니다
       entries:

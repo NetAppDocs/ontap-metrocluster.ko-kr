@@ -82,7 +82,6 @@
   <block id="d0848afd8553c34945705222a97a4553" category="paragraph">다음과 유사한 출력이 표시됩니다.</block>
   <block id="8ba14fdefa2d1c4e74a7235016d36d36" category="list-text">스위치를 다시 로드하십시오.</block>
   <block id="1f80196ab142297bfad1ce7658281aa4" category="section-title">Cisco 9336C 스위치에서 MACsec 암호화 구성</block>
-  <block id="c2cd808fc4b0d9e71ea89cc518cef164" category="paragraph">사이트 간에 실행되는 WAN ISL 포트에서만 MACsec 암호화를 구성해야 합니다. 올바른 RCF 파일을 적용한 후 MACsec을 구성해야 합니다.</block>
   <block id="2450cd43f02dcf045350e5a9b43f76b1" category="section-title">MACsec에 대한 라이센스 요구 사항</block>
   <block id="0418d9f007ef5e24de29d631a49631c2" category="inline-link">Cisco NX-OS 라이센스 가이드 를 참조하십시오</block>
   <block id="4fc9e5c26af40c28636daa3983c7f130" category="paragraph">MACsec에는 보안 라이센스가 필요합니다. Cisco NX-OS 라이센스 체계에 대한 전체 설명 및 라이센스 취득 및 적용 방법은 을 참조하십시오<block ref="d01700f99ea627187c1abef586c83faa" category="inline-link-rx"></block></block>
@@ -9295,7 +9294,6 @@
   <block id="3700479db1ca373108cb6b0236f8ca95" category="sidebar">Broadcom IP 스위치를 구성합니다</block>
   <block id="bc2027184e27075969cdcd60662c6642" category="sidebar">Cisco IP 스위치를 구성합니다</block>
   <block id="84a335bc70808c0497de1c62a99aaf43" category="sidebar">기본 설정을 구성합니다</block>
-  <block id="175313fe612a432e5a51082817a697f1" category="sidebar">Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다</block>
   <block id="41aa5998b40e00d8eb4f7bb40bb2bc22" category="sidebar">필요한 정보를 수집합니다</block>
   <block id="4497ab40f5579cccfc00e6aed35cdae9" category="sidebar">구성 요소의 ha-config 상태를 확인합니다</block>
   <block id="aa9c71b40476a8ccda9213b9a9416d55" category="sidebar">클러스터를 MetroCluster 구성으로 구성합니다</block>
@@ -11959,7 +11957,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="601779c42f052b558b7ac9443d399420" category="list-text">플랫폼 모델이 VLAN ID를 지원하고(참조) 기본 VLAN ID를 사용하지 않는 경우 VLAN ID를 확인해야 <block ref="05a2d2a273433dceaaaa95abd8b74c34" category="inline-xref-macro-rx"></block>합니다.</block>
   <block id="99d8e07cf22b54bf1c4fe9ecde3bd413" category="list-text">인터페이스가 기본 VLAN을 사용하고 있거나 플랫폼 모델이 VLAN ID를 사용하지 않는 경우( 참조 <block ref="05a2d2a273433dceaaaa95abd8b74c34" category="inline-xref-macro-rx"></block>) _vlan-id_는 필요하지 않습니다.</block>
   <block id="26c0375297253dbcc942fe30cefa7b4b" category="paragraph">인터페이스 생성 중에만 VLAN을 지정할 수 있습니다. 기본 VLAN 10 및 20 또는 101에서 4096 사이의 VLAN(또는 스위치 공급업체에서 지원하는 수 중 더 작은 수)을 구성할 수 있습니다. MetroCluster 인터페이스를 생성한 후에는 VLAN ID를 변경할 수 없습니다.</block>
-  <block id="3faee78823aa7a1dc8ffca46972f6fb2" category="image-alt">에는 MetroCluster 호환 스위치의 플랫폼별 네트워크 속도 및 스위치 포트 모드가 나와 있습니다.</block>
   <block id="c189be7568f7fe77db4a889353024935" category="admonition">RCF 파일 버전은 파일을 생성하는 데 사용되는 RCFfilegenerator 도구의 버전과 다릅니다. 예를 들어 RCFfilegenerator v1.6c를 사용하여 RCF 파일 버전 2.00을 생성할 수 있습니다.</block>
   <block id="a796207f93572cbc190249400ba34b9b" category="paragraph"><block ref="08689ca588d2fd5d0e0a12366a8cd0a6" prefix="" category="inline-code"></block></block>
   <block id="fc902c4c5eb117926b80fc3a1066d5f9" category="paragraph"><block ref="31e96f11307c41bb11d8a37f3c919979" prefix="" category="inline-code"></block></block>
@@ -13112,8 +13109,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="84b4abdd3b2327d529014e09c966c735" category="doc">Active IQ Unified Manager 및 ONTAP System Manager를 사용하여 구성 및 모니터링을 수행할 수 있습니다</block>
   <block id="8f331b9c0fe948d4d36e636ae3c61443" category="summary">각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다.</block>
   <block id="3053e08077bad755ce68edce5863f6eb" category="paragraph">각 클러스터에는 노드와 클라이언트 간의 시간을 동기화하기 위해 자체 NTP(Network Time Protocol) 서버가 필요합니다.</block>
-  <block id="eff6a3df3a68a6652b79b0a81ba75dda" category="list-text">AFF A30, AFF C30, AFF C60 및 FAS50 시스템은 25Gbps 네트워크 속도를 지원하기 위해 컨트롤러의 카드에 QSFP-SFP+ 어댑터가 필요합니다.</block>
-  <block id="8f8d75e3465f8e6ca35857c6cf19f63e" category="paragraph"><block ref="8f8d75e3465f8e6ca35857c6cf19f63e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f7bbc76208ab5ade611be3b207fc4964" category="paragraph">내부 파티션은 4개의 동일한 그룹(분기)으로 나뉩니다. 각 분기는 자동으로 별도의 풀에 할당됩니다. 외부 쉘프의 드라이브는 4개의 동일한 그룹(분기)으로 분류됩니다. 각 분기 쉘프는 별도의 풀에 자동으로 할당됩니다.</block>
   <block id="951ecdd1fc2eee9520c3a6959e6b80fd" category="section-title">FAS50 시스템의 디스크 할당</block>
   <block id="eac1566268bcf590649d38dfbbc071d8" category="paragraph">AFF A30, AFF C30, AFF C60, FAS50</block>
@@ -13992,7 +13987,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ab58575dfc3a4cf3868291f7e29fd682" category="doc">MetroCluster IP 구성에서 컨트롤러 및 섀시 구성 요소의 HA 구성 상태를 확인하세요.</block>
   <block id="0dd4375e97dbbfc0461527e6636a4e50" category="doc">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 Broadcom IP 스위치 구성</block>
   <block id="2305966fe63ba176ab9feddd6e84701f" category="doc">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 Cisco IP 스위치 구성</block>
-  <block id="9edb945b46e8338b6c604c62787c3031" category="doc">MetroCluster IP 사이트의 Cisco 9336C 스위치에서 MACsec 암호화 구성</block>
   <block id="e0e912999bb427a16c869c97ad908030" category="doc">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 NVIDIA IP SN2100 스위치 구성</block>
   <block id="25849b8ea5119a6ccbe0ef06d8e35773" category="doc">MetroCluster IP 구성에 대한 ONTAP 노드 전환 테스트</block>
   <block id="f42ec02236cb8b0134435967892ad733" category="paragraph"><block ref="f42ec02236cb8b0134435967892ad733" category="inline-link-macro-rx"></block></block>
@@ -14567,4 +14561,29 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ab84d029506bbf94968a8439506e5c7f" category="paragraph"><block ref="386c9422b8a78bb2663b14ec5cff7d1e" category="inline-link-macro-rx"></block>.</block>
   <block id="ea7f38fbe84ac28be0f7c90cca730a69" category="paragraph">ONTAP 9.19.1</block>
   <block id="65e78b09746a9ca4025a1c248d42a1bb" category="list-text">시스템을 사용하여 HTTP 서버에 액세스할 수 있는지 확인하십시오.</block>
+  <block id="b91a26ac8a9beeea2dbb082ebcc79563" category="list-text">AFF A30, AFF C30, AFF C60 및 FAS50 시스템은 25Gbps 네트워크 속도를 지원하기 위해 컨트롤러 카드에 QSFP-to-SFP 어댑터가 필요합니다.</block>
+  <block id="68ce146fd9ae3ad96c5895b1c1869059" category="cell">네트워크 속도(Gbps)</block>
+  <block id="0ec1914fce58a6a4d1748f3ace018fa1" category="cell">스위치 포트 모드</block>
+  <block id="9903737bdb8c33503d4677b804a93bb3" category="paragraph">100Gbps</block>
+  <block id="95059acbec372eb955f1645409c0b72a" category="paragraph">FAS9000 또는 AFF A700에서 PCM을 업그레이드할 때 40Gbps</block>
+  <block id="4c75fbf9fcb941c4555168045960e7ff" category="paragraph">트렁크 모드</block>
+  <block id="e0d8a184e851ebead0da8ef2d160d077" category="paragraph">AFF C800</block>
+  <block id="fd395a2e4925de0736e72f97908d353b" category="paragraph">ASA C800</block>
+  <block id="dffbd09beb5f8e9746ed2e56e4ff77c5" category="paragraph">ASA A800</block>
+  <block id="538b0a5f377e4a7e386a3066041545ed" category="paragraph">40Gbps 또는 100Gbps</block>
+  <block id="5ab83f35784f154d55ea7ab58c8e503b" category="paragraph">액세스 모드</block>
+  <block id="3dd0fd41a169501d96e8394596995cea" category="paragraph">40Gbps</block>
+  <block id="8be061f2ffd8e5438d395c1e9844b4ff" category="paragraph">ASA C400</block>
+  <block id="1ceb5497eb752c50389a2c579cff9567" category="paragraph">25Gbps</block>
+  <block id="5c4d47ba596f06f53b9aa793345127dd" category="paragraph">AFF C250</block>
+  <block id="efb7d807a9229170619783564ab9a186" category="paragraph">ASA C250</block>
+  <block id="58bdeb56c4a59fe27bedb60d1f1b8b90" category="paragraph">ASA A250</block>
+  <block id="0814a528a6e09bdfa454da4598d03b6a" category="paragraph">ASA A150</block>
+  <block id="2731fea24095aa687c94c583e42e365a" category="paragraph">25Gbps 또는 100Gbps</block>
+  <block id="d9bafc03fd0d1ef7bcb8fe6362c07354" category="summary">필요한 경우 사이트 간에 실행되는 WAN ISL 포트에만 MACsec 암호화를 구성하십시오. MACsec 암호화를 사용하도록 선택한 경우 올바른 RCF 파일을 적용한 후 구성하십시오.</block>
+  <block id="0876f65fb1fd364053810f3b546f4ae5" category="doc">MetroCluster IP 사이트의 Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다(선택 사항)</block>
+  <block id="800b8e21fdc6520b5affd604f6034398" category="paragraph">필요한 경우 사이트 간에 실행되는 WAN ISL 포트에서 MACsec 암호화를 구성할 수 있습니다. MACsec 암호화를 사용하도록 선택한 경우 올바른 RCF 파일을 적용한 후 구성해야 합니다.</block>
+  <block id="3b1fc3e7f78026e75788d28bc49ca81d" category="list-text">MACsec 암호화는 사이트 간에 실행되는 WAN ISL 포트에만 적용할 수 있습니다.</block>
+  <block id="68bddd16e24ef3e862d1cb8ff822ad2a" category="list-text">Cisco 9336C 스위치를 구성할 때 MACsec 암호화 구성은 선택 사항입니다.</block>
+  <block id="95c3b415a470d1839fa2fedd54783abb" category="sidebar">Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다(선택 사항)</block>
 </blocks>
