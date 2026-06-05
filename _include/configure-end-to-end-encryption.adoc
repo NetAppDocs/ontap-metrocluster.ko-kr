@@ -103,7 +103,7 @@ system health alert show
 +
 [source, cli]
 ----
-security key-manager external show-status
+security key-manager external show
 ----
 . 각 DR 그룹에 대해 엔드 투 엔드 암호화 활성화:
 +
@@ -217,7 +217,7 @@ system health alert show
 +
 [source, cli]
 ----
-security key-manager external show-status
+security key-manager external show
 ----
 . 각 DR 그룹에서 종단간 암호화 사용 안 함:
 +

@@ -263,31 +263,99 @@ dr-group-id cluster    node          node-systemid dr-partner-systemid
 ** 'ucadmin 쇼'
 
 
-. 루트 볼륨이 암호화된 경우 키 관리자에 사용되는 암호를 수집하여 저장합니다.
+. MetroCluster 노드가 관리 SVM(클러스터)용 외부 키 관리자로 구성된 경우 키 서버 정보를 안전한 위치에 복사하십시오. 온보드 키 관리자가 구성된 경우 백업 정보와 암호를 안전한 위치에 복사하십시오.
 +
-보안 키 관리자 백업 쇼
-
-. MetroCluster 노드가 볼륨 또는 애그리게이트에 암호화를 사용하는 경우 키 및 암호 문구를 복사합니다.
-+
-자세한 내용은 를 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"^].
-
-+
-.. Onboard Key Manager가 구성된 경우:
+[role="tabbed-block"]
+====
+.온보드 키 관리자
+--
+.. Onboard Key Manager 백업을 표시하려면 다음 명령을 실행하십시오.
 +
 보안 키 관리자 온보드 쇼 백업
 
 +
-나중에 업그레이드 절차에서 암호가 필요합니다.
-
-.. 엔터프라이즈 키 관리(KMIP)를 구성한 경우 다음 명령을 실행하십시오.
-+
-'보안 키 관리자 외부 쇼 인스턴스'
+업그레이드 절차 후반부에는 최신 Onboard Key Manager 암호도 필요합니다.
 
 +
-보안 키 관리자 키 쿼리
+자세한 내용은 를 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1677AE0A-FEF7-45FA-8616-885AA3283BCF.html["온보드 키 관리 정보를 수동으로 백업합니다"].
 
 
 
+--
+.외부 키 관리자
+--
+절차 후반부에 키 관리자 구성을 복원하는 데 필요한 외부 키 관리 정보를 수집하십시오.
+
+.. 관리자 SVM(클러스터)의 이름을 표시합니다.
++
+`vserver show -type admin`
+
++
+이 예에서 admin SVM 이름은 cluster_B입니다.
+
++
+[listing]
+----
+cluster_B::*> vserver show -type admin
+                               Admin      Operational Root
+Vserver     Type    Subtype    State      State       Volume     Aggregate
+----------- ------- ---------- ---------- ----------- ---------- ----------
+cluster_B
+            admin   -          -          -           -          -
+----
+.. 관리 SVM(클러스터)에 구성된 외부 키 관리자와 연결된 기본 키 서버의 주소 및 포트 번호를 확인합니다.
++
+[NOTE]
+====
+*** 관리자 SVM은 최대 4개의 기본 키 서버를 가질 수 있지만 절차 후반부에서 키 관리 구성을 복원할 때는 기본 키 서버 중 하나의 포트 번호와 주소만 필요합니다.
+*** 선택한 기본 키 서버에 연결된 사용자 이름과 암호가 있는 경우 복구 프로세스를 위해 해당 정보도 필요합니다.
+
+
+====
++
+`security key-manager external show -instance -vserver <admin_svm_name>`
+
++
+[listing]
+----
+cluster_B::> security key-manager external show -instance -vserver cluster_B
+
+                  Vserver: cluster_B
+       Client Certificate: NTAPKM_C
+   Server CA Certificates: NTAPKM_I, NTAPKM_R
+       Primary Key Server: 172.18.27.34:12014
+                  Timeout: 25
+                 Username:
+              Policy name: -
+    Secondary Key Servers: -
+    Create/Remove Timeout: 10
+
+----
+.. ONTAP 9.16.1 이상을 실행 중인 경우 admin SVM의 키 저장소 UUID를 확인하십시오.
++
+`security key-manager show-key-store -vserver <admin_svm_name> -fields uuid`
+
++
+[listing]
+----
+cluster_B::*>  security key-manager show-key-store -vserver cluster_B -fields uuid
+vserver         uuid
+--------------- ------------------------------------
+cluster_B        f281aa55-d635-11f0-93bc-005056bb68f2
+
+cluster_B::*
+----
+.. 수집한 정보를 안전한 장소에 보관하여 절차 후반에 사용하세요. 이제 다음과 같은 정보를 수집했어야 합니다.
++
+*** admin SVM의 기본 키 서버 중 하나의 포트 번호 및 주소입니다
+*** 선택한 기본 키 서버와 연결된 사용자 이름 및 암호(있는 경우)
+*** 관리 SVM의 키 저장소 UUID(ONTAP 9.16.1 이상에서 필요)
+
+
+
+
+--
+====
 . 구성 정보 수집을 마친 후 작업을 다시 시작합니다.
 +
 시스템 컨트롤러 교체 재개
