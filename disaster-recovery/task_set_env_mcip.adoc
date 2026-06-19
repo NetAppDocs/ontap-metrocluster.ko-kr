@@ -563,7 +563,7 @@ setenv bootarg.mcc.pri_partner_uuid DR-partner-node-UUID
 
 setenv bootarg.mcc.aux_partner_uuid DR-aux-partner-node-UUID
 
-setenv bootarg.mcc_iscsi.node_uuid local-node-UUID`
+setenv bootarg.mcc_iscsi.node_uuid local-node-UUID
 ....
 +
 .. node_a_1에서 UUID를 설정합니다.

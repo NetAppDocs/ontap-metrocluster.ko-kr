@@ -676,6 +676,6 @@ node_A_2_data02_unmirrored
                                                                    normal
 node_A_2_root
            707.7GB   34.27GB   95% online       1 node_A_2       raid_dp,
-                                                                   resyncing
+                                                                   normal
 ----
 
