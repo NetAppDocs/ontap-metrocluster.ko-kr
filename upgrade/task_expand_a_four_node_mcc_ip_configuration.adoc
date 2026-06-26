@@ -1197,6 +1197,10 @@ cluster_A::>
 ----
 . MetroCluster configuration-settings connection show( 구성 설정 연결 표시) 가 올바르게 연결되었는지 확인합니다
 +
+
+NOTE: The `metrocluster configuration-settings connection show` 명령어의 출력 결과는 플랫폼 모델에 따라 다를 수 있습니다. 예를 들어, 일부 플랫폼에서는 HA 파트너 관련 항목이 출력에 표시되지 않을 수 있습니다.
+
++
 [listing]
 ----
 cluster_A::> metrocluster configuration-settings connection show

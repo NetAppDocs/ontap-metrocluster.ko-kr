@@ -14579,4 +14579,5 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="caf6332dea07cf4b950c8d71d7e45e42" category="list-text">루트 볼륨 암호화를 사용하는 경우, 사용 중인 ONTAP 버전에 따라 키 관리 구성에 대한 부팅 메뉴 옵션을 선택하거나 부팅 메뉴 명령을 다시 실행합니다.</block>
   <block id="b0fbf352a8f099c3b53b0641730683b8" category="paragraph">키 관리자 유형에 따라 첫 번째 부팅 메뉴 프롬프트에서 "`10`" 옵션 또는 "`11`" 옵션을 선택한 다음 <block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block> 옵션을 선택하여 복구 절차를 수행하십시오. 노드를 완전히 부팅하려면 "`1`" 옵션(정상 부팅)을 선택하여 복구 절차를 반복해야 할 수도 있습니다.</block>
   <block id="ded8f2620d58acfd69775bc49e48b168" category="list-text">admin SVM에서 암호화가 활성화된 경우 키 관리 구성에 적합한 명령을 사용하여 키를 복원합니다.</block>
+  <block id="594c07221c5565837dffd5ce4580e7bb" category="admonition">The<block ref="e7acb1ae14be0e5233d619851263fdae" prefix=" " category="inline-code"></block> 명령어의 출력 결과는 플랫폼 모델에 따라 다를 수 있습니다. 예를 들어, 일부 플랫폼에서는 HA 파트너 관련 항목이 출력에 표시되지 않을 수 있습니다.</block>
 </blocks>
