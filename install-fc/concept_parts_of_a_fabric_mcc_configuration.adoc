@@ -15,6 +15,7 @@ MetroCluster 구성을 계획할 때 하드웨어 구성 요소 및 상호 연�
 
 
 
+[[disaster-recovery-dr-groups]]
 == DR(재해 복구) 그룹
 
 Fabric MetroCluster 구성은 MetroCluster 구성의 노드 수에 따라 1개 또는 2개의 DR 그룹으로 구성됩니다. 각 DR 그룹은 4개의 노드로 구성됩니다.
@@ -33,6 +34,7 @@ image::../media/mcc_dr_groups_4_node.gif[MetroCluster DR 그룹 4개 노드]
 
 
 
+[[key-hardware-elements]]
 == 주요 하드웨어 요소
 
 MetroCluster 구성에는 다음과 같은 주요 하드웨어 요소가 포함됩니다.
@@ -57,6 +59,7 @@ FC 스위치는 두 사이트 간에 장거리 백본 ISL을 제공합니다. FC
 
 
 
+[[eight-node-fabric-metrocluster-configuration]]
 == 8노드 패브릭 MetroCluster 구성
 
 8노드 구성은 지리적으로 분산된 사이트에 각각 하나씩, 2개의 클러스터로 구성됩니다. Cluster_A는 첫 번째 MetroCluster 사이트에 있습니다. Cluster_B는 두 번째 MetroCluster 사이트에 있습니다. 각 사이트에는 1개의 SAS 스토리지 스택이 있습니다. 추가 스토리지 스택은 지원되지만 각 사이트에는 하나만 표시됩니다. HA 쌍이 클러스터 인터커넥트 스위치 없이 스위치가 없는 클러스터로 구성됩니다. 스위치 구성은 지원되지만 표시되지 않습니다.
@@ -79,6 +82,7 @@ SVM 구성은 클러스터 피어링 네트워크를 통해 복제
 
 
 
+[[four-node-fabric-metrocluster-configuration]]
 == 4노드 패브릭 MetroCluster 구성
 
 다음 그림에서는 4노드 Fabric MetroCluster 구성의 단순한 뷰를 보여 줍니다. 일부 연결의 경우, 단일 선은 구성 요소 간의 여러 중복 연결을 나타냅니다. 데이터 및 관리 네트워크 연결이 표시되지 않습니다.
@@ -91,6 +95,7 @@ image::../media/mcc_hardware_architecture_cluster_a_with_7500n.gif[FibreBridge 7
 
 
 
+[[two-node-fabric-metrocluster-configuration]]
 == 2노드 패브릭 MetroCluster 구성
 
 다음 그림에서는 2노드 Fabric MetroCluster 구성의 단순한 뷰를 보여 줍니다. 일부 연결의 경우, 단일 선은 구성 요소 간의 여러 중복 연결을 나타냅니다. 데이터 및 관리 네트워크 연결이 표시되지 않습니다.

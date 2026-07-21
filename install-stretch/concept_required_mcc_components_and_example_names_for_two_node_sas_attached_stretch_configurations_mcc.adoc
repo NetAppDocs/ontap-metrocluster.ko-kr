@@ -15,6 +15,7 @@ MetroCluster 구성에는 다양한 하드웨어 구성요소가 필요합니다
 
 
 
+[[supported-software-and-hardware]]
 == 지원되는 소프트웨어 및 하드웨어
 
 MetroCluster FC 구성의 경우 하드웨어 및 소프트웨어가 지원되어야 합니다.
@@ -25,12 +26,14 @@ AFF 시스템을 사용하는 경우 MetroCluster 구성의 모든 컨트롤러 
 
 
 
+[[hardware-redundancy-in-the-metrocluster-configuration]]
 == MetroCluster 구성의 하드웨어 이중화
 
 MetroCluster 구성의 하드웨어 이중화 때문에 각 사이트에 두 가지 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.
 
 
 
+[[two-single-node-ontap-clusters]]
 == 2개의 단일 노드 ONTAP 클러스터
 
 SAS 연결 스트레치 MetroCluster 구성에는 2개의 단일 노드 ONTAP 클러스터가 필요합니다.
@@ -45,6 +48,7 @@ SAS 연결 스트레치 MetroCluster 구성에는 2개의 단일 노드 ONTAP �
 
 
 
+[[two-storage-controller-modules]]
 == 스토리지 컨트롤러 모듈 2개
 
 SAS 연결 스트레치 MetroCluster 구성에는 스토리지 컨트롤러 모듈 2개가 필요합니다.
@@ -74,6 +78,7 @@ SAS 연결 스트레치 MetroCluster 구성에는 스토리지 컨트롤러 모�
 
 
 
+[[at-least-four-sas-disk-shelves-recommended]]
 == SAS 디스크 쉘프 4개 이상(권장)
 
 SAS 연결 스트레치 MetroCluster 구성에는 최소 2개의 SAS 디스크 쉘프가 필요합니다. 4개의 SAS 디스크 쉘프가 권장됩니다.

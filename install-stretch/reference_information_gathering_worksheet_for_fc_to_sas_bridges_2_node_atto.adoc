@@ -15,6 +15,7 @@ MetroCluster 사이트를 구성하기 전에 필요한 구성 정보를 수집�
 
 
 
+[[site-a-fc-to-sas-bridge-1-fcbridgea1a]]
 == 사이트 A, FC-to-SAS 브리지 1(FC_bridge_A_1a)
 
 각 SAS 스택에는 FC-to-SAS 브리지가 2개 이상 필요합니다.
@@ -46,6 +47,7 @@ bridge_a_1a 암호
 |===
 
 
+[[site-a-fc-to-sas-bridge-2-fcbridgea1b]]
 == 사이트 A, FC-to-SAS 브리지 2(FC_bridge_A_1b)
 
 각 SAS 스택에는 FC-to-SAS 브리지가 2개 이상 필요합니다.
@@ -77,6 +79,7 @@ bridge_a_1b 암호
 |===
 
 
+[[site-b-fc-to-sas-bridge-1-fcbridgeb1a]]
 == 사이트 B, FC-to-SAS 브리지 1(FC_bridge_B_1a)
 
 각 SAS 스택에는 FC-to-SAS 브리지가 2개 이상 필요합니다.
@@ -108,6 +111,7 @@ bridge_B_1a 암호
 |===
 
 
+[[site-b-fc-to-sas-bridge-2-fcbridgeb1b]]
 == 사이트 B, FC-to-SAS 브리지 2(FC_bridge_B_1b)
 
 각 SAS 스택에는 FC-to-SAS 브리지가 2개 이상 필요합니다.

@@ -25,6 +25,7 @@ ONTAP 9.9.1부터 MetroCluster IP 구성은 IP 라우팅(계층 3) 백엔드 연
 ====
 
 
+[[isl-requirements-for-layer-2-and-layer-3-networks]]
 == 계층 2 및 계층 3 네트워크의 ISL 요구 사항
 
 다음은 계층 2 및 계층 3 네트워크에 적용됩니다.
@@ -56,6 +57,7 @@ MPLS(Multiprotocol Label Switching) 링크와 같은 링크 공유 서비스는 
 
 
 
+[[considerations-for-layer-2-networks]]
 == 계층 2 네트워크에 대한 고려 사항
 
 MetroCluster 백엔드 스위치가 고객 네트워크에 연결됩니다.
@@ -97,6 +99,7 @@ NOTE: 위에 나열된 시스템은 VLAN 100 이하를 사용하여 구성할 �
 
 
 
+[[considerations-for-layer-3-networks]]
 == 계층 3 네트워크에 대한 고려 사항
 
 MetroCluster 백엔드 스위치는 라우팅된 IP 네트워크에 직접 연결됩니다(다음 간단한 예에 표시된 것처럼). 또는 다른 개입 스위치를 통해 연결됩니다.
@@ -132,6 +135,7 @@ MetroCluster 환경은 에 설명된 대로 표준 MetroCluster IP 구성으로 
 
 
 
+[[required-settings-for-intermediate-switches]]
 == 중간 스위치에 필요한 설정입니다
 
 MetroCluster 트래픽이 중간 네트워크에서 ISL을 통과하는 경우 중간 스위치의 구성을 통해 MetroCluster 트래픽(RDMA 및 스토리지)이 MetroCluster 사이트 간 전체 경로에서 필요한 서비스 수준을 충족하는지 확인해야 합니다.

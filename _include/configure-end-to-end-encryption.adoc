@@ -39,6 +39,7 @@ ONTAP 9.15.1
 
 
 
+[[enable-end-to-end-encryption]]
 == 엔드 투 엔드 암호화 지원
 
 종단 간 암호화를 활성화하려면 다음 단계를 수행하십시오.
@@ -152,6 +153,7 @@ dr-group-id cluster    node      configuration-state is-encryption-enabled
 
 
 
+[[disable-end-to-end-encryption]]
 == 종단간 암호화를 비활성화합니다
 
 종단 간 암호화를 비활성화하려면 다음 단계를 수행하십시오.

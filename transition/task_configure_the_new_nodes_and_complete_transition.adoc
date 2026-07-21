@@ -15,6 +15,7 @@ summary: 새 노드가 추가되면 전환 단계를 완료하고 MetroCluster I
 
 
 
+[[configuring-the-metrocluster-ip-nodes-and-disabling-transition]]
 == MetroCluster IP 노드 구성 및 전환 비활성화
 
 MetroCluster IP 연결을 구현하고, MetroCluster 구성을 새로 고치고, 전환 모드를 비활성화해야 합니다.
@@ -208,6 +209,7 @@ MetroCluster 전환 비활성화
 
 
 
+[[setting-up-data-lifs-on-the-new-nodes]]
 == 새 노드에서 데이터 LIF 설정
 
 새 노드인 node_A_2-IP 및 node_B_2-IP에 데이터 LIF를 구성해야 합니다.
@@ -271,6 +273,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
+[[bringing-up-the-svms]]
 == SVM을 가져오는 중입니다
 
 LIF 구성의 변경 사항으로 인해 새 노드에서 SVM을 다시 시작해야 합니다.
@@ -297,6 +300,7 @@ LIF 구성의 변경 사항으로 인해 새 노드에서 SVM을 다시 시작�
 
 
 
+[[moving-a-system-volume-to-the-new-nodes]]
 == 시스템 볼륨을 새 노드로 이동
 
 복원력을 향상시키려면 시스템 볼륨을 컨트롤러 노드_A_1-IP에서 컨트롤러 노드_A_2-IP로, 노드_B_1-IP에서 노드_B_2-IP로 이동해야 합니다. 시스템 볼륨의 대상 노드에 미러링된 애그리게이트를 생성해야 합니다.

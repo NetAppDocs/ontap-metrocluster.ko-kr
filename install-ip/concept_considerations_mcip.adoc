@@ -15,6 +15,7 @@ summary: 컨트롤러가 원격 스토리지에 액세스하는 방법과 MetroC
 
 
 
+[[access-to-remote-storage-in-metrocluster-ip-configurations]]
 == MetroCluster IP 구성에서 원격 스토리지에 액세스
 
 MetroCluster IP 구성에서 로컬 컨트롤러가 원격 스토리지 풀에 도달하는 유일한 방법은 원격 컨트롤러를 사용하는 것입니다. IP 스위치는 컨트롤러의 이더넷 포트에 연결되며 디스크 쉘프에 직접 연결되지 않습니다. 조종기가 다운된 경우 로컬 컨트롤러가 원격 스토리지 풀에 도달할 수 없습니다.
@@ -23,6 +24,7 @@ MetroCluster IP 구성에서 로컬 컨트롤러가 원격 스토리지 풀에 �
 
 
 
+[[metrocluster-ip-addresses]]
 == MetroCluster IP 주소입니다
 
 MetroCluster IP 주소 및 인터페이스가 MetroCluster IP 구성에서 구현되는 방식과 관련 요구 사항을 숙지해야 합니다.
@@ -140,6 +142,7 @@ MetroCluster IP 인터페이스 2
 |===
 
 
+[[characteristics-of-metrocluster-ip-interfaces]]
 == MetroCluster IP 인터페이스의 특성
 
 MetroCluster IP 인터페이스는 MetroCluster IP 구성에 따라 다릅니다. 다른 ONTAP 인터페이스 유형과는 다른 특성을 가지고 있습니다.

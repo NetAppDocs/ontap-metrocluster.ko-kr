@@ -15,6 +15,7 @@ summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위�
 
 
 
+[[enhancements]]
 == 향상된 기능
 
 [cols="25,75"]
@@ -70,6 +71,7 @@ summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위�
 |===
 
 
+[[os-support-matrix]]
 == OS 지원 매트릭스
 
 다음 표는 타이브레이커 버전별로 지원되는 운영 체제를 나타냅니다.

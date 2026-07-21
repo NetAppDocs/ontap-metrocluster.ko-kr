@@ -15,6 +15,7 @@ MetroCluster FC 구성을 계획할 때 반드시 필요한 하드웨어 및 소
 
 
 
+[[supported-software-and-hardware]]
 == 지원되는 소프트웨어 및 하드웨어
 
 MetroCluster FC 구성의 경우 하드웨어 및 소프트웨어가 지원되어야 합니다.
@@ -28,12 +29,14 @@ NOTE: MetroCluster 스토리지 스위치에서는 장파 SFP가 지원되지 �
 
 
 
+[[hardware-redundancy-in-the-metrocluster-fc-configuration]]
 == MetroCluster FC 구성의 하드웨어 이중화
 
 MetroCluster FC 구성의 하드웨어 이중화 때문에 각 사이트에는 2개의 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.
 
 
 
+[[requirement-for-two-ontap-clusters]]
 == 2개의 ONTAP 클러스터 필요
 
 패브릭 연결 MetroCluster FC 구성에는 각 MetroCluster 사이트에 하나씩 있는 2개의 ONTAP 클러스터가 필요합니다.
@@ -48,6 +51,7 @@ MetroCluster FC 구성의 하드웨어 이중화 때문에 각 사이트에는 2
 
 
 
+[[requirement-for-four-fc-switches]]
 == FC 스위치 4개 필요
 
 패브릭 연결 MetroCluster FC 구성에는 4개의 FC 스위치(지원되는 Brocade 또는 Cisco 모델)가 필요합니다.
@@ -58,6 +62,7 @@ MetroCluster FC 구성의 하드웨어 이중화 때문에 각 사이트에는 2
 
 
 
+[[requirement-for-two-four-or-eight-controller-modules]]
 == 2개, 4개 또는 8개의 컨트롤러 모듈에 대한 요구사항
 
 패브릭 연결 MetroCluster FC 구성에는 2개, 4개 또는 8개의 컨트롤러 모듈이 필요합니다.
@@ -91,6 +96,7 @@ MetroCluster FC 구성의 하드웨어 이중화 때문에 각 사이트에는 2
 
 
 
+[[requirement-for-four-cluster-interconnect-switches]]
 == 4개의 클러스터 인터커넥트 스위치에 대한 요구사항
 
 패브릭 연결 MetroCluster FC 구성에는 클러스터 인터커넥트 스위치 4개가 필요합니다(스위치가 없는 2노드 클러스터를 사용하지 않는 경우).
@@ -99,6 +105,7 @@ MetroCluster FC 구성의 하드웨어 이중화 때문에 각 사이트에는 2
 
 
 
+[[requirement-for-fc-to-sas-bridges]]
 == FC-to-SAS 브릿지 요구 사항
 
 패브릭 연결 MetroCluster FC 구성에서는 SAS 쉘프의 각 스택 그룹에 대해 한 쌍의 FC-SAS 브리지가 필요합니다.
@@ -115,6 +122,7 @@ NOTE: FiberBridge 6500N 브리지는 ONTAP 9.8 이상을 실행하는 구성에�
 
 
 
+[[pool-and-drive-requirements-minimum-supported]]
 == 풀 및 드라이브 요구 사항(최소 지원)
 
 쉘프당 디스크 소유권을 허용하려면 SAS 디스크 쉘프 8개(각 사이트에 쉘프 4개)가 권장됩니다.
@@ -144,6 +152,7 @@ MetroCluster 구성은 RAID-DP 및 RAID4를 지원합니다.
 
 
 
+[[drive-location-considerations-for-partially-populated-shelves]]
 == 부분적으로 채워진 셸프에 대한 드라이브 위치 고려 사항
 
 절반으로 채워진 쉘프를 사용하는 경우(24-드라이브 쉘프의 드라이브 12개) 드라이브 자동 할당을 올바로 위해서는 드라이브가 슬롯 0-5 및 18-23에 있어야 합니다.
@@ -152,6 +161,7 @@ MetroCluster 구성은 RAID-DP 및 RAID4를 지원합니다.
 
 
 
+[[bridge-naming-conventions]]
 == 브리지 명명 규칙
 
 브리지는 다음 이름 지정을 사용합니다.

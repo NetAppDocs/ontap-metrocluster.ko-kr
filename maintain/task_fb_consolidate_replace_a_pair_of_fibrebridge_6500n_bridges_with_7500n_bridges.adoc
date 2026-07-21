@@ -34,6 +34,7 @@ link:task_replace_a_sle_fc_to_sas_bridge.html["단일 FC-to-SAS 브릿지 교체
 
 
 
+[[verifying-storage-connectivity]]
 == 스토리지 접속을 확인하는 중입니다
 
 브리지를 교체하기 전에 브리지 및 스토리지 연결을 확인해야 합니다. 명령 출력에 익숙해질 경우 구성을 변경한 후 나중에 연결을 확인할 수 있습니다.
@@ -99,6 +100,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 
 
 
+[[hot-swapping-fibrebridge-6500n-bridges-to-create-a-pair-of-fibrebridge-7600n-or-7500n-bridges]]
 == FiberBridge 6500N 브리지를 핫 스왑하여 FiberBridge 7600N 또는 7500N 브리지 쌍을 생성합니다
 
 FiberBridge 7600N 또는 7500N 브리지 쌍을 사용하여 구성을 만들려면 브리지를 한 번에 하나씩 교체하고 올바른 케이블 연결 절차를 따라야 합니다. 새 케이블은 원래 케이블과 다릅니다.
@@ -248,6 +250,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 
 
 
+[[cabling-the-bridge-sas-ports-when-consolidating-storage-behind-fibrebridge-7600n-or-7500n-bridges]]
 == FiberBridge 7600N 또는 7500N 브리지 뒤에 스토리지를 통합할 때 브리지 SAS 포트에 케이블 연결
 
 사용 가능한 SAS 포트가 있는 단일 쌍의 FiberBridge 7600N 또는 7500N 브리지 뒤에 여러 SAS 스토리지 스택을 통합하는 경우, 상단 및 하단 SAS 케이블을 새 브리지로 이동해야 합니다.
@@ -357,12 +360,14 @@ image::../media/consolidation_sas_bottom_connection_4_stacks.gif[4개 스택을 
 
 
 
+[[updating-zoning-when-adding-fibrebridge-7600n-or-7500n-bridges-to-a-configuration]]
 == FiberBridge 7600N 또는 7500N 브리지를 구성에 추가할 때 조닝을 업데이트하는 중입니다
 
 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 교체하고 FiberBridge 7600N 또는 7500N 브리지의 두 FC 포트를 모두 사용하는 경우 조닝을 변경해야 합니다. 필요한 변경 사항은 ONTAP 9.1 또는 9.1 이상 버전을 실행 중인지 여부에 따라 다릅니다.
 
 
 
+[[updating-zoning-when-adding-fibrebridge-7500n-bridges-to-a-configuration-prior-to-ontap-9-1]]
 === FiberBridge 7500N 브리지를 구성에 추가할 때 조닝 업데이트(Zoning)(ONTAP 9.1 이전)
 
 FiberBridge 6500N 브리지를 FiberBridge 7500N 브리지로 교체하고 FiberBridge 7500N 브리지에서 두 FC 포트를 모두 사용하는 경우 조닝을 변경해야 합니다. 각 존에는 이니시에이터 포트가 4개 이상 있을 수 없습니다. 사용하는 조닝은 ONTAP 9.1 이전 버전 또는 9.1 이상을 실행 중인지 여부에 따라 다릅니다
@@ -483,6 +488,7 @@ image::../media/zoning_consolidation_site_a_after.gif[FibreBridge 변경 후 사
 
 
 
+[[updating-zoning-when-adding-fibrebridge-7600n-or-7500n-bridges-to-a-configuration-ontap-9-1-and-later]]
 === FiberBridge 7600N 또는 7500N 브리지를 구성에 추가할 때 조닝 업데이트(Zoning)(ONTAP 9.1 이상)
 
 FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 교체하고 FiberBridge 7600N 또는 7500N 브리지의 두 FC 포트를 모두 사용하는 경우 조닝을 변경해야 합니다. 각 존에는 이니시에이터 포트가 4개 이상 있을 수 없습니다.
@@ -509,6 +515,7 @@ FiberBridge 6500N 브리지를 FiberBridge 7600N 또는 7500N 브리지로 교�
 
 
 
+[[cabling-the-second-bridge-fc-port-when-adding-fibrebridge-7600n-or-7500n-bridges-to-a-configuration]]
 == FiberBridge 7600N 또는 7500N 브리지를 구성에 추가할 때 두 번째 브리지 FC 포트 케이블 연결
 
 스토리지 스택에 대한 다중 경로를 제공하기 위해 FiberBridge 7600N 또는 7500N 브리지를 구성에 추가할 때 각 FiberBridge 7600N 또는 7500N 브리지의 두 번째 FC 포트에 케이블을 연결할 수 있습니다.
@@ -582,6 +589,7 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 
 
 
+[[disabling-unused-sas-ports-on-the-fc-to-sas-bridges]]
 == FC-to-SAS 브리지에서 사용하지 않는 SAS 포트 비활성화
 
 브리지의 케이블을 변경한 후에는 FC-to-SAS 브리지에서 사용되지 않는 SAS 포트를 비활성화해야 미사용 포트와 관련된 상태 모니터 경고를 피할 수 있습니다.

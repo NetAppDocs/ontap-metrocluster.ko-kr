@@ -10,6 +10,7 @@ summary: 계획된 유지보수 작업 또는 재해 발생 시 MetroCluster 전
 
 
 
+[[perform-switchover-healing-and-switchback]]
 == 전환, 복구, 스위치백을 수행합니다
 
 [role="lead"]

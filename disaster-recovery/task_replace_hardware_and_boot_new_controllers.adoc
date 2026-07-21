@@ -15,6 +15,7 @@ summary: 하드웨어 구성 요소를 교체해야 하는 경우 개별 하드�
 
 
 
+[[replace-hardware-at-the-disaster-site]]
 == 재해 사이트에서 하드웨어를 교체합니다
 
 .시작하기 전에
@@ -134,6 +135,7 @@ link:http://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설
 
 
 
+[[determine-the-system-ids-and-vlan-ids-of-the-old-controller-modules]]
 == 이전 컨트롤러 모듈의 시스템 ID 및 VLAN ID를 확인합니다
 
 재해 사이트에서 모든 하드웨어를 교체한 후 교체한 컨트롤러 모듈의 시스템 ID를 확인해야 합니다. 디스크를 새 컨트롤러 모듈에 재할당할 때 이전 시스템 ID가 필요합니다. 시스템이 AFF A220, AFF A250, AFF A400, AFF A800, FAS2750인 경우 FAS8300 또는 FAS8700 모델 FAS8700 모델에서는 MetroCluster IP 인터페이스에서 사용하는 VLAN ID도 결정해야 합니다.
@@ -328,6 +330,7 @@ Node_A_2 Node_A_1 HA      enabled  online
 
 
 
+[[isolate-replacement-drives-from-the-surviving-site-metrocluster-ip-configurations]]
 == 정상 사이트에서 교체 드라이브 격리(MetroCluster IP 구성)
 
 남아 있는 노드에서 MetroCluster iSCSI 이니시에이터 접속을 끊어 교체 드라이브를 격리해야 합니다.
@@ -367,6 +370,7 @@ site_B::*> storage iscsi-initiator disconnect -node node_B_2 -label *
 
 
 
+[[clear-the-configuration-on-a-controller-module]]
 == 컨트롤러 모듈의 구성을 지웁니다
 
 MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
@@ -406,6 +410,7 @@ boot_ontap 메뉴
 
 
 
+[[netboot-the-new-controller-modules]]
 == 새 컨트롤러 모듈을 NetBoot합니다
 
 새 컨트롤러 모듈의 ONTAP 버전이 남아 있는 컨트롤러 모듈의 버전과 다른 경우 새 컨트롤러 모듈을 netboot 해야 합니다.
@@ -486,6 +491,7 @@ NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해
 
 
 
+[[determine-the-system-ids-of-the-replacement-controller-modules]]
 == 교체 컨트롤러 모듈의 시스템 ID를 확인합니다
 
 재해 사이트에서 모든 하드웨어를 교체한 후 새로 설치된 스토리지 컨트롤러 모듈 또는 모듈의 시스템 ID를 확인해야 합니다.
@@ -626,6 +632,7 @@ NOTE: 2노드 MetroCluster 구성에는 이 단계가 필요하지 않습니다.
 
 
 
+[[verify-the-ha-config-state-of-components]]
 == 구성 요소의 ha-config 상태를 확인합니다
 
 MetroCluster 구성에서 컨트롤러 모듈 및 섀시 구성 요소의 ha-config 상태는 "MCC" 또는 "MCC-2n"으로 설정해야 제대로 부팅됩니다.
@@ -732,6 +739,7 @@ ha-config modify chassis mccip.(섀시 mcip 수정
 
 
 
+[[determine-if-end-to-end-encryption-was-enabled-on-the-original-systems]]
 == 원래 시스템에서 엔드 투 엔드 암호화가 활성화되었는지 확인합니다
 
 원래 시스템이 종단 간 암호화에 맞게 구성되었는지 확인해야 합니다.

@@ -18,10 +18,12 @@ NOTE: Cisco 9132T의 경우 다음을 참조하세요. link:cisco-9132t-fc-port-
 
 
 
+[[shelf-configurations-using-fibrebridge-7500n-or-7600n-using-both-fc-ports-fc1-and-fc2]]
 == FC 포트(FC1 및 FC2)를 모두 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 === MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Cisco 스위치(9132T 제외)에서 FibreBridge 7500N 또는 7600N 브리지와 두 개의 FC 포트(FC1 및 FC2)를 사용하는 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -332,6 +334,7 @@ FC2
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 === MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Cisco 스위치(9132T 제외)에서 FibreBridge 7500N 또는 7600N과 두 개의 FC 포트(FC1 및 FC2)를 사용하는 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 케이블링 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -642,10 +645,12 @@ FC2
 |===
 
 
+[[shelf-configurations-using-fibrebridge-7500n-or-7600n-using-one-fc-port-fc1-or-fc2-only]]
 == FC 포트(FC1 또는 FC2)를 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 === MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Cisco 스위치(9132T 제외)에서 FC 포트 1개(FC1 또는 FC2)를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 참조 구성 파일(RCF)은 FibreBridge 브리지에서 FC 포트 1개를 지원하지 않으므로 백엔드 파이버 채널 스위치를 수동으로 구성해야 합니다.
@@ -952,6 +957,7 @@ Bridge_x_8b
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 === MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Cisco 스위치(9132T 제외)에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.

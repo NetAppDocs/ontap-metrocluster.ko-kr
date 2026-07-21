@@ -28,6 +28,7 @@ image::../media/workflow_bridge_installation_and_configuration.gif[Workflow FC�
 
 
 
+[[in-band-management-of-the-fc-to-sas-bridges]]
 == FC-to-SAS 브리지의 대역 내 관리
 
 FiberBridge 7500N 또는 7600N 브리지가 있는 ONTAP 9.5부터 브리지의 _ 대역내 관리 _ 가 브리지의 IP 관리 대신 지원됩니다. ONTAP 9.8부터는 대역외 관리가 사용되지 않습니다.
@@ -51,6 +52,7 @@ NOTE: IP 액세스가 비활성화된 대역내 관리를 사용하면 브리지
 
 
 
+[[fibrebridge-7600n-and-7500n-bridge-limits-and-attachment-rules]]
 == FiberBridge 7600N 및 7500N 브리지 제한 및 연결 규칙
 
 FiberBridge 7600N 및 7500N 브리지 부착 시 제한 사항 및 고려 사항을 검토합니다.
@@ -89,6 +91,7 @@ FiberBridge 7600N 및 7500N 브리지 부착 시 제한 사항 및 고려 사항
 |===
 
 
+[[prepare-for-the-installation]]
 == 설치를 준비합니다
 
 새 MetroCluster 시스템의 일부로 브리지를 설치할 준비가 되면 브리지의 설치 및 구성 요구 사항을 충족하는 등 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 기타 요구사항으로는 필요한 문서 다운로드, ATTO Quicknav 유틸리티 및 브리지 펌웨어 등이 있습니다.
@@ -142,6 +145,7 @@ ATTO FibreBridge 설명 페이지에 제공된 링크를 사용하면 ATTO 웹 �
 
 
 
+[[install-the-fc-to-sas-bridge-and-sas-shelves]]
 == FC-to-SAS 브리지 및 SAS 쉘프를 설치합니다
 
 시스템이 ""설치 준비""의 모든 요구 사항을 충족하는지 확인한 후 새 시스템을 설치할 수 있습니다.
@@ -175,6 +179,7 @@ NOTE: MetroCluster 구성의 SAS 쉘프는 ACP 케이블 연결을 지원하지 
 
 
 
+[[enable-ip-port-access-on-the-fibrebridge-7600n-bridge-if-necessary]]
 === 필요한 경우 FiberBridge 7600N 브리지에서 IP 포트 액세스를 활성화합니다
 
 9.5 이전 버전의 ONTAP를 사용 중이거나 텔넷 또는 기타 IP 포트 프로토콜 및 서비스(FTP, ExpressNAV, ICMP 또는 Quicknav)를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.
@@ -235,6 +240,7 @@ SNMP는 별도의 enable 명령을 필요로 하는 유일한 프로토콜입니
 
 
 
+[[configure-the-fc-to-sas-bridges]]
 === FC-to-SAS 브리지를 구성합니다
 
 FC-to-SAS 브릿지의 모델을 케이블로 연결하기 전에 FiberBridge 소프트웨어에서 설정을 구성해야 합니다.
@@ -488,6 +494,7 @@ link:../maintain/index.html["MetroCluster 부품 유지 관리"]
 
 
 
+[[cable-a-fibrebridge-7600n-or-7500n-bridge-with-disk-shelves-using-iom12-modules]]
 === IOM12 모듈을 사용하여 디스크 쉘프와 FibreBridge 7600N 또는 7500N 브리지를 케이블로 연결합니다
 
 브리지를 구성한 후 새 시스템의 케이블 연결을 시작할 수 있습니다.
@@ -533,6 +540,7 @@ image::../media/mcc_cabling_bridge_and_sas3_stack_with_7500n_and_multiple_stacks
 
 
 
+[[verify-bridge-connectivity-and-cabling-the-bridge-fc-ports]]
 === 브리지 FC 포트의 연결 및 케이블 연결을 확인합니다
 
 각 브리지가 모든 디스크 드라이브를 감지할 수 있는지 확인한 다음 각 브리지를 로컬 FC 스위치에 케이블로 연결해야 합니다.
@@ -639,6 +647,7 @@ link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.htm
 
 
 
+[[secure-or-unsecure-the-fibrebridge-bridge]]
 == FiberBridge 브리지를 고정하거나 고정하지 않습니다
 
 ONTAP 9.5부터 브리지에서 안전하지 않을 수 있는 이더넷 프로토콜을 쉽게 비활성화하여 브리지를 보호할 수 있습니다. 이렇게 하면 브리지의 이더넷 포트가 비활성화됩니다. 이더넷 액세스를 다시 설정할 수도 있습니다.

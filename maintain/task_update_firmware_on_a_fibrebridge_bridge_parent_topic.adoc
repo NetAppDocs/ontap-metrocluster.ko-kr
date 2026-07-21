@@ -18,6 +18,7 @@ link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화�
 
 
 
+[[updating-firmware-on-fibrebridge-7600n-or-7500n-bridges-on-configurations-running-ontap-9-4-and-later]]
 == ONTAP 9.4 이상을 실행하는 구성에서 FiberBridge 7600N 또는 7500N 브리지에서 펌웨어 업데이트
 
 FiberBridge 브리지의 펌웨어를 업데이트하여 최신 기능을 사용하거나 가능한 문제를 해결해야 할 수 있습니다. 이 절차는 ONTAP 9.4 이상을 실행하는 구성에서 FiberBridge 7600N 또는 7500N 브리지에 사용해야 합니다.

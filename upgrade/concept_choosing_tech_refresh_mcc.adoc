@@ -15,6 +15,7 @@ summary: 사용하는 업데이트 절차는 플랫폼 모델, 업그레이드 �
 
 
 
+[[supported-metrocluster-ip-tech-refresh-combinations]]
 == 지원되는 MetroCluster IP 기술 업데이트 조합
 
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
@@ -26,6 +27,7 @@ summary: 사용하는 업데이트 절차는 플랫폼 모델, 업그레이드 �
 
 
 
+[[supported-aff-and-fas-metrocluster-ip-tech-refresh-combinations]]
 === 지원되는 AFF 및 FAS MetroCluster IP 기술 업데이트 조합
 
 다음 표는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다. 테이블은 두 그룹으로 나뉩니다.
@@ -58,6 +60,7 @@ image:../media/tech-refresh-ip-group-2-updated.png["AFF 및 FAS 그룹 2 플랫�
 ====
 
 
+[[supported-asa-metrocluster-ip-tech-refresh-combinations]]
 === 지원되는 ASA MetroCluster IP 기술 업데이트 조합
 
 다음 표는 MetroCluster IP 구성에서 ASA 시스템을 새로 고치는 데 지원되는 플랫폼 조합을 보여 줍니다.
@@ -66,6 +69,7 @@ image::../media/mcc-ip-techrefresh-asa-9161.png[MetroCluster IP ASA 기술 업�
 
 
 
+[[supported-metrocluster-fc-tech-refresh-combinations]]
 == 지원되는 MetroCluster FC 기술 업데이트 조합
 
 * 새 로드를 추가하기 전에 기술 업데이트 절차를 완료해야 합니다.
@@ -77,6 +81,7 @@ image::../media/mcc-ip-techrefresh-asa-9161.png[MetroCluster IP ASA 기술 업�
 
 
 
+[[supported-aff-and-fas-metrocluster-fc-tech-refresh-combinations]]
 === 지원되는 AFF 및 FAS MetroCluster FC 기술 업데이트 조합
 
 다음 표는 MetroCluster FC 구성에서 AFF 또는 FAS 시스템을 업데이트하기 위해 지원되는 플랫폼 조합을 보여줍니다.
@@ -85,6 +90,7 @@ image::../media/metrocluster_fc_tech_refresh.png[MetroCluster FC 기술 업데�
 
 
 
+[[supported-asa-metrocluster-fc-tech-refresh-combinations]]
 === 지원되는 ASA MetroCluster FC 기술 업데이트 조합
 
 다음 표는 MetroCluster FC 구성에서 ASA 시스템을 업데이트하기 위해 지원되는 플랫폼 조합을 보여줍니다.
@@ -107,6 +113,7 @@ image::../media/metrocluster_fc_tech_refresh.png[MetroCluster FC 기술 업데�
 |===
 
 
+[[choose-a-refresh-procedure]]
 == 새로 고침 절차를 선택합니다
 
 다음 표에서 구성에 대한 새로 고침 절차를 선택합니다.

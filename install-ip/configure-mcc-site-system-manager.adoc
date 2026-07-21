@@ -27,6 +27,7 @@ ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 
 
 
 
+[[configure-the-connection-between-clusters]]
 == 클러스터 간 연결을 구성합니다
 
 .단계

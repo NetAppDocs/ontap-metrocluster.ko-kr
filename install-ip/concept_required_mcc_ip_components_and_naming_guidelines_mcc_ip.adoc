@@ -15,6 +15,7 @@ MetroCluster IP 구성에 필요한 하드웨어 및 소프트웨어 구성 요�
 
 
 
+[[supported-software-and-hardware]]
 == 지원되는 소프트웨어 및 하드웨어
 
 MetroCluster IP 구성을 위해서는 하드웨어 및 소프트웨어가 지원되어야 합니다.
@@ -25,12 +26,14 @@ AFF 시스템을 사용하는 경우 MetroCluster 구성의 모든 컨트롤러 
 
 
 
+[[hardware-redundancy-requirements-in-a-metrocluster-ip-configuration]]
 == MetroCluster IP 구성의 하드웨어 이중화 요구 사항
 
 MetroCluster IP 구성의 하드웨어 이중화 때문에 각 사이트에 두 개의 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.
 
 
 
+[[ontap-cluster-requirements-in-a-metrocluster-ip-configuration]]
 == MetroCluster IP 구성의 ONTAP 클러스터 요구 사항
 
 MetroCluster IP 구성에는 각 MetroCluster 사이트에 하나씩 2개의 ONTAP 클러스터가 필요합니다.
@@ -45,6 +48,7 @@ MetroCluster IP 구성에는 각 MetroCluster 사이트에 하나씩 2개의 ONT
 
 
 
+[[ip-switch-requirements-in-a-metrocluster-ip-configuration]]
 == MetroCluster IP 구성의 IP 스위치 요구 사항
 
 MetroCluster IP 구성에는 4개의 IP 스위치가 필요합니다. 4개의 스위치는 MetroCluster IP 구성의 각 클러스터 간에 ISL을 제공하는 2개의 스위치 스토리지 패브릭을 형성합니다.
@@ -71,6 +75,7 @@ MetroCluster IP 구성에는 4개의 IP 스위치가 필요합니다. 4개의 �
 
 
 
+[[controller-module-requirements-in-a-metrocluster-ip-configuration]]
 == MetroCluster IP 구성의 컨트롤러 모듈 요구 사항
 
 MetroCluster IP 구성에는 4개 또는 8개의 컨트롤러 모듈이 필요합니다.
@@ -89,6 +94,7 @@ FAS 시스템의 기존 MetroCluster IP 구성을 ONTAP 9.4로 업그레이드�
 
 
 
+[[example-names]]
 === 예제 이름
 
 다음 예제 이름이 설명서에 사용되었습니다.
@@ -109,6 +115,7 @@ FAS 시스템의 기존 MetroCluster IP 구성을 ONTAP 9.4로 업그레이드�
 
 
 
+[[gigabit-ethernet-adapter-requirements-in-a-metrocluster-ip-configuration]]
 == MetroCluster IP 구성의 기가비트 이더넷 어댑터 요구 사항
 
 MetroCluster IP 구성은 MetroCluster IP Fabric에 사용되는 IP 스위치에 대한 IP 인터페이스에 40/100Gbps 또는 10/25Gbps 이더넷 어댑터를 사용합니다.
@@ -274,6 +281,7 @@ link:concept_considerations_drive_assignment.html["MetroCluster IP 구성의 자
 
 
 
+[[pool-and-drive-requirements-minimum-supported]]
 == 풀 및 드라이브 요구 사항(최소 지원)
 
 4노드 MetroCluster IP 구성에서는 각 사이트에서 최소 구성을 수행해야 합니다.
@@ -305,6 +313,7 @@ NOTE: ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 �
 
 
 
+[[drive-location-considerations-for-partially-populated-shelves]]
 == 부분적으로 채워진 셸프에 대한 드라이브 위치 고려 사항
 
 절반으로 채워진 쉘프를 사용하는 경우(24-드라이브 쉘프의 드라이브 12개) 드라이브 자동 할당을 올바로 위해서는 드라이브가 슬롯 0-5 및 18-23에 있어야 합니다.
@@ -313,6 +322,7 @@ NOTE: ONTAP 9.4부터 MetroCluster IP 구성에서는 자동 디스크 할당 �
 
 
 
+[[drive-location-considerations-for-aff-a800-internal-drives]]
 == AFF A800 내부 드라이브의 드라이브 위치 고려 사항
 
 ADP 기능을 올바르게 구현하려면 AFF A800 시스템 디스크 슬롯을 4등분하여 디스크를 대칭적으로 장착해야 합니다.

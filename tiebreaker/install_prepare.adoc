@@ -15,6 +15,7 @@ summary: 타이브레이커 소프트웨어를 설치하고 구성하기 전에 
 
 
 
+[[software-requirements]]
 == 소프트웨어 요구 사항
 
 설치하는 타이브레이커 버전에 따라 다음 소프트웨어 요구 사항을 충족해야 합니다.
@@ -101,6 +102,7 @@ Red Hat Enterprise Linux 8.1 - 8.7:
 |===
 
 
+[[additional-requirements]]
 == 추가 요구 사항
 
 다음과 같은 추가 요구사항을 알고 있어야 합니다.

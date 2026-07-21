@@ -15,6 +15,7 @@ summary: 스토리지 컨트롤러는 스토리지 미디어와 상호 간에 �
 
 
 
+[[before-you-begin-any-procedure-in-this-document]]
 == 이 문서의 절차를 시작하기 전에
 
 이 작업을 완료하기 전에 다음과 같은 전반적인 요구 사항을 충족해야 합니다.
@@ -31,6 +32,7 @@ IMT에서 스토리지 솔루션 필드를 사용하여 MetroCluster 솔루션�
 
 
 
+[[about-this-task]]
 == 이 작업에 대해
 
 * 노드 및 컨트롤러라는 용어는 같은 의미로 사용됩니다.

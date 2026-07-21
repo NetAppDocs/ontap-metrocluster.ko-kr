@@ -21,6 +21,7 @@ summary: '재해 사이트의 장비가 필수 유지 관리 또는 교체를 �
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -35,6 +36,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[healing-the-configuration-in-a-metrocluster-configuration]]
 == MetroCluster 구성에서 구성을 복구합니다
 
 MetroCluster FC 구성에서는 복구 작업을 특정 순서로 수행하여 전환 후 MetroCluster 기능을 복원합니다.
@@ -57,6 +59,7 @@ MetroCluster IP 구성에서는 전환 후 복구 작업이 자동으로 시작�
 
 
 
+[[healing-the-data-aggregates]]
 === 데이터 애그리게이트 복구
 
 재해 사이트의 하드웨어를 복구 및 교체한 후에는 데이터 애그리게이트를 치유해야 합니다. 이 프로세스는 데이터 애그리게이트를 재동기화하여 정상적인 작동을 위해 복구되는 재해 사이트를 준비합니다. 루트 애그리게이트를 복구하기 전에 데이터 애그리게이트를 치유해야 합니다.
@@ -124,6 +127,7 @@ aggr_b2   227.1GB  227.1GB   0%    online  0      mcc1-a2      raid_dp, mirrored
 
 
 
+[[healing-the-root-aggregates-after-a-disaster]]
 === 재해 발생 후 루트 애그리게이트를 복구
 
 데이터 애그리게이트가 복구되면 스위치백 작업 준비를 위해 루트 애그리게이트를 치유해야 합니다.
@@ -164,6 +168,7 @@ mcc1A::> metrocluster operation show
 
 
 
+[[verifying-that-your-system-is-ready-for-a-switchback]]
 == 시스템 스위치백을 수행할 준비가 되었는지 확인합니다
 
 시스템이 이미 스위치오버 상태인 경우 '-simulate' 옵션을 사용하여 스위치백 작업 결과를 미리 볼 수 있습니다.
@@ -241,6 +246,7 @@ MetroCluster 스위치백 시뮬레이션
 
 
 
+[[example-of-verification-results]]
 === 확인 결과의 예
 
 다음 예에서는 스위치백 작업의 성공적인 검증을 보여 줍니다.
@@ -272,6 +278,7 @@ Job ID Name                 Vserver    Node           State
 ----
 
 
+[[performing-a-switchback]]
 == 스위치백을 수행합니다
 
 MetroCluster 구성을 복구한 후 MetroCluster 스위치백 작업을 수행할 수 있습니다. MetroCluster 스위치백 작업을 수행하면 재해 사이트의 동기식 소스 스토리지 가상 머신(SVM)이 활성화되어 로컬 디스크 풀에서 데이터를 제공하는 구성을 정상 운영 상태로 되돌릴 수 있습니다.
@@ -372,6 +379,7 @@ ONTAP 8.3에서는 MetroCluster 스위치백 작업 후 손실된 SnapMirror 구
 
 
 
+[[verifying-a-successful-switchback]]
 == 스위치백을 성공적으로 확인하는 중입니다
 
 스위치백을 수행한 후 모든 애그리게이트 및 SVM(스토리지 가상 머신)이 온라인 상태로 전환되었는지 확인할 수 있습니다.
@@ -469,6 +477,7 @@ MetroCluster 동작쇼
 
 
 
+[[deleting-stale-aggregate-listings-after-switchback]]
 == 스위치백 후 오래된 애그리게이트 목록을 삭제하는 중입니다
 
 스위치백 후 일부 환경에서는 _stale_aggregate가 있을 수 있습니다. 오래된 애그리게이트는 ONTAP에서 제거되었지만, 해당 정보가 디스크에 기록된 애그리게이트입니다. 오래된 애그리게이트는 'nodes지옥aggr status -r' 명령으로 표시되지만 'storage aggregate show' 명령은 표시되지 않습니다. 이러한 레코드가 더 이상 나타나지 않도록 삭제할 수 있습니다.

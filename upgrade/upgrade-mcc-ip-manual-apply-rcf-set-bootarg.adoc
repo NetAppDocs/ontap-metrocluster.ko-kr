@@ -15,6 +15,7 @@ summary: 새 플랫폼의 스위치 RCF 파일을 업데이트하고 컨트롤�
 
 
 
+[[update-the-switch-rcfs-to-accommodate-the-new-platforms]]
 == 새 플랫폼을 수용하도록 스위치 RCF를 업데이트합니다
 
 새 플랫폼 모델을 지원하는 구성으로 스위치를 업데이트해야 합니다.
@@ -49,6 +50,7 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 
 
 
+[[set-the-metrocluster-ip-bootarg-variables]]
 == MetroCluster IP bootarg 변수를 설정합니다
 
 새 컨트롤러 모듈에서 특정 MetroCluster IP bootarg 값을 구성해야 합니다. bootarg 값은 이전 컨트롤러 모듈에 구성된 값과 일치해야 합니다.

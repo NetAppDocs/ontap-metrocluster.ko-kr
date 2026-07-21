@@ -138,6 +138,7 @@ Group Cluster Node               State          Mirroring Mode
 
 
 
+[[reset-the-boot-recoveryreset-the-bootrecovery-and-rdbcorrupt-bootargs]]
 === [[Reset-the-boot-recovery]] boot_recovery와 RDB_corrupt boots를 재설정합니다
 
 [role="lead"]

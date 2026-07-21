@@ -130,6 +130,7 @@ NOTE: 속도 제한을 사용할 경우 트래픽이 손실되지 않고 * 형�
 
 
 
+[[examples-for-configuring-switch-ports-connecting-the-metrocluster-controller]]
 == MetroCluster 컨트롤러를 연결하는 스위치 포트를 구성하는 예
 
 제공된 명령은 Cisco NX3232 또는 Cisco NX9336 스위치에 대해 유효합니다. 명령은 스위치 유형에 따라 다릅니다.
@@ -157,6 +158,7 @@ The load balancing policy should be set so that order is preserved.
 ----
 
 
+[[examples-for-configuring-classification]]
 == 분류 구성에 대한 예
 
 RDMA 및 iSCSI 트래픽을 적절한 클래스에 매핑하도록 액세스 및 클래스 맵을 구성해야 합니다.
@@ -223,6 +225,7 @@ class type queuing c-out-8q-q-default
 ----
 
 
+[[examples-for-configuring-the-node-ports]]
 == 노드 포트를 구성하는 예
 
 노드 포트를 브레이크아웃 모드로 구성해야 할 수도 있습니다. 다음 예에서 포트 25 및 26은 4 x 25Gbps 브레이크아웃 모드로 구성됩니다.
@@ -272,6 +275,7 @@ fec off
 ----
 
 
+[[examples-of-configuration-of-isl-ports-throughout-the-network]]
 == 네트워크를 통한 ISL 포트 구성의 예
 
 MetroCluster 호환 스위치는 MetroCluster 인터페이스를 직접 연결하는 중급 스위치로 간주됩니다. MetroCluster 호환 스위치에서 MetroCluster 트래픽을 전달하는 ISL 포트는 중간 스위치의 ISL 포트와 동일한 방식으로 구성해야 합니다. 을 참조하십시오 link:concept-considerations-layer-2-layer-3.html#required-settings-for-intermediate-switches["중간 스위치에 필요한 설정"] 지침 및 예를 참조하십시오.

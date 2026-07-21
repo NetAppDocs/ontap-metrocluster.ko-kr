@@ -27,10 +27,12 @@ MetroCluster 사이트는 2개의 클러스터로 구성됩니다. 일반적으�
 
 
 
+[[assign-a-node-management-ip-address]]
 == 노드 관리 IP 주소를 할당합니다
 
 
 
+[[windows-system]]
 === Windows 시스템
 
 Windows 컴퓨터를 컨트롤러와 동일한 서브넷에 연결해야 합니다. 이렇게 하면 노드 관리 IP 주소가 시스템에 자동으로 할당됩니다.
@@ -42,6 +44,7 @@ Windows 컴퓨터를 컨트롤러와 동일한 서브넷에 연결해야 합니�
 
 
 
+[[other-systems]]
 === 기타 시스템
 
 클러스터의 노드 중 하나에 대한 노드 관리 IP 주소를 구성해야 합니다. 이 노드 관리 IP 주소를 사용하여 클러스터 설정 마법사를 시작할 수 있습니다.
@@ -50,6 +53,7 @@ Windows 컴퓨터를 컨트롤러와 동일한 서브넷에 연결해야 합니�
 
 
 
+[[initialize-and-configure-the-cluster]]
 == 클러스터를 초기화하고 구성합니다
 
 클러스터에 대한 관리 암호를 설정하고 클러스터 관리 및 노드 관리 네트워크를 설정하여 클러스터를 초기화합니다. 또한 DNS(도메인 이름 서버)와 같은 서비스를 구성하여 호스트 이름을 확인하고 NTP 서버를 구성하여 시간을 동기화할 수도 있습니다.
@@ -76,6 +80,7 @@ Submit * 을 클릭하면 클러스터가 생성 및 구성될 때까지 기다�
 
 
 
+[[configure-ontap-on-a-new-cluster-video]]
 == 새 클러스터 비디오에서 ONTAP를 구성합니다
 
 video::PiX41bospbQ[youtube,width=848,height=480]

@@ -18,6 +18,7 @@ NOTE: 전환 및 스위치백 절차는 MetroCluster IP 구성에 대해서만 �
 
 
 
+[[overview-of-switchover-and-switchback]]
 == 스위치오버 및 스위치백 개요
 
 전환은 다음 두 가지 경우에 발생할 수 있습니다.
@@ -45,6 +46,8 @@ NOTE: 전환 및 스위치백 절차는 MetroCluster IP 구성에 대해서만 �
 
 
 
+[[use-system-manager-in-ontap-9-6-or-9-7-for-switchover-and-switchback]]
+[[sm97-sosb]]
 == ONTAP 9.6 또는 9.7에서 시스템 관리자를 사용하여 전환 및 스위치백을 수행할 수 있습니다
 
 .단계
@@ -71,10 +74,13 @@ System Manager는 협상된 전환이 가능한지 여부를 확인합니다.
 
 
 
+[[use-system-manager-in-ontap-9-8-or-later-for-switchover-and-switchback]]
+[[sm98-sosb]]
 == ONTAP 9.8 이상에서 System Manager를 사용하여 전환 및 스위치백을 수행합니다
 
 
 
+[[perform-a-planned-switchover-ontap-9-8-or-later]]
 === 계획된 스위치오버 수행(ONTAP 9.8 이상)
 
 .단계
@@ -94,6 +100,7 @@ NOTE: 스위치백을 수행하기 전에는 원격 클러스터를 데이터 �
 
 
 
+[[perform-an-unplanned-switchover-ontap-9-8-or-later]]
 === 계획되지 않은 전환 수행(ONTAP 9.8 이상)
 
 계획되지 않은 스위치오버는 ONTAP에서 자동으로 시작할 수 있습니다. ONTAP에서 스위치백 필요 여부를 확인할 수 없는 경우 여전히 실행 중인 MetroCluster 사이트의 시스템 관리자가 다음 단계를 수행하여 스위치오버를 시작합니다.
@@ -121,6 +128,7 @@ NOTE: 원격 클러스터가 온라인으로 전환된 후에는 스위치백을
 
 
 
+[[perform-a-switchback-ontap-9-8-or-later]]
 === 스위치백 수행(ONTAP 9.8 이상)
 
 .시작하기 전에

@@ -13,6 +13,7 @@ CSHM(이더넷 스위치 상태 모니터)은 검색한 스위치를 자동으�
 
 
 
+[[confirm-monitoring-of-the-connected-ethernet-switches]]
 == 연결된 이더넷 스위치의 모니터링을 확인합니다
 
 .이 작업에 대해
@@ -33,6 +34,7 @@ system switch ethernet show
 ====
 
 
+[[confirm-firmware-and-rcf-versions-are-up-to-date]]
 == 펌웨어 및 RCF 버전이 최신 버전인지 확인합니다
 
 스위치에서 지원되는 최신 펌웨어를 실행하고 있고 호환되는 참조 구성 파일(RCF)이 적용되었는지 확인합니다. 자세한 내용은 를 https://mysupport.netapp.com/site/downloads["NetApp 지원 다운로드 페이지"^]참조하십시오.
@@ -50,6 +52,7 @@ NOTE: SNMPv3을 사용하도록 구성하는 방법에 대한 자세한 내용�
 
 
 
+[[confirm-management-network-connection]]
 == 관리 네트워크 연결을 확인합니다
 
 스위치의 관리 포트가 관리 네트워크에 연결되어 있는지 확인합니다.

@@ -32,6 +32,7 @@ MetroCluster IP 컨트롤러 업그레이드를 시작하기 전에 업그레이
 
 
 
+[[supported-aff-and-fas-metrocluster-ip-controller-upgrades]]
 == AFF 및 FAS MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
 
 다음 표는 두 그룹으로 나뉘어 "system controller replace" 명령을 사용하여 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 업그레이드하기 위해 지원되는 플랫폼 조합을 보여줍니다.
@@ -68,6 +69,7 @@ image:../media/assisted-group-2-a70-a90-updated.png["AFF 및 FAS 업그레이드
 ====
 
 
+[[supported-asa-metrocluster-ip-controller-upgrades]]
 == ASA MetroCluster IP 컨트롤러 업그레이드가 지원됩니다
 
 ASA 시스템에서는 명령을 사용하여 컨트롤러를 업그레이드할 `system controller replace` 수 없습니다.

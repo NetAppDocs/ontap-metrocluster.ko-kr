@@ -15,6 +15,7 @@ summary: 전환 프로세스를 시작하기 전에 구성이 요구사항을 �
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -29,6 +30,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[general-requirements-for-disruptive-fc-to-ip-transition]]
 == FC-to-IP 전환을 중단하기 위한 일반 요구사항
 
 기존 MetroCluster FC 구성은 다음 요구사항을 충족해야 합니다.
@@ -52,12 +54,14 @@ link:../install-stretch/concept_considerations_differences.html["스트레치 Me
 
 
 
+[[drive-shelf-reuse-and-drive-requirements-for-disruptive-fc-to-ip-transition]]
 == FC-to-IP로 전환할 때 드라이브 쉘프를 재사용하고 요구사항을 고려해야 합니다
 
 스토리지 쉘프에서 적절한 스페어 드라이브와 루트 애그리게이트 공간을 확보해야 합니다.
 
 
 
+[[reusing-the-existing-storage-shelves]]
 === 기존 스토리지 쉘프 재사용
 
 이 절차를 사용할 경우 기존 스토리지 쉘프는 새 구성에서 사용할 수 있도록 유지됩니다. node_A_1-FC 및 node_B_1-FC를 제거하면 기존 드라이브 셸프가 cluster_A의 node_1-IP 및 node_A_2-IP와 cluster_B_1-IP 및 cluster_B_2-IP에 연결됩니다
@@ -74,6 +78,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
+[[storage-requirements-for-the-additional-controllers]]
 === 추가 컨트롤러를 위한 스토리지 요구 사항입니다
 
 구성이 2노드에서 4노드 배열로 변경되므로 필요한 경우 2개의 추가 컨트롤러(node_A_2-IP 및 node_B_2-IP)를 수용하기 위해 추가 스토리지를 추가해야 합니다.
@@ -106,6 +111,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
+[[workflow-for-disruptive-transition]]
 == 운영 중단을 야기하는 전환 워크플로우
 
 성공적인 전환을 위해서는 특정 워크플로우를 따라야 합니다.
@@ -116,6 +122,7 @@ image::../media/workflow_2n_transition_bsaic.png[2노드 전환을 위한 워크
 
 
 
+[[mapping-ports-from-the-metrocluster-fc-nodes-to-the-metrocluster-ip-nodes]]
 == MetroCluster FC 노드의 포트를 MetroCluster IP 노드로 매핑
 
 MetroCluster FC 노드의 포트 및 LIF 구성을 조정하여 MetroCluster IP 노드를 대체할 IP 노드의 구성과 호환되도록 해야 합니다.
@@ -566,6 +573,7 @@ node_B_1-IP의 열에서 새 컨트롤러 모듈의 물리적 포트를 추가�
 
 
 
+[[preparing-the-metrocluster-ip-controllers]]
 == MetroCluster IP 컨트롤러 준비
 
 새로운 MetroCluster IP 노드 4개를 준비하고 올바른 ONTAP 버전을 설치해야 합니다.
@@ -687,6 +695,7 @@ boot_ontap 메뉴
 
 
 
+[[verifying-the-health-of-the-metrocluster-fc-configuration]]
 == MetroCluster FC 구성의 상태 확인
 
 전환을 수행하기 전에 MetroCluster FC 구성의 상태와 연결을 확인해야 합니다
@@ -734,6 +743,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[removing-the-existing-configuration-from-the-tiebreaker-or-other-monitoring-software]]
 == Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성 제거
 
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)을 사용하여 기존 구성을 모니터링하는 경우, 전환 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.

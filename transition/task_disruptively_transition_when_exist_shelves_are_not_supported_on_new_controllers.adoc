@@ -25,6 +25,7 @@ ONTAP 9.8부터 2노드 MetroCluster FC 구성을 중단 없이 전환하고 기
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -39,6 +40,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[requirements-for-transition-when-shelves-are-not-supported-on-the-new-nodes]]
 == 새로운 노드에서 쉘프가 지원되지 않는 경우의 전환 요구사항
 
 전환 프로세스를 시작하기 전에 구성이 요구사항을 충족하는지 확인해야 합니다.
@@ -87,6 +89,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 
 
+[[workflow-for-disruptive-transition-when-shelves-are-not-supported-by-new-controllers]]
 == 새로운 컨트롤러가 쉘프를 지원하지 않을 경우 운영 중단 전환을 위한 워크플로우
 
 기존 쉘프 모델이 새 플랫폼 모델에서 지원되지 않는 경우 새 쉘프를 이전 구성에 연결하고, 데이터를 새 쉘프로 이동한 다음, 새 구성으로 전환해야 합니다.
@@ -97,6 +100,7 @@ image::../media/workflow_2n_transition_old_shelves_not_supported.png[기존 선�
 
 
 
+[[preparing-the-new-controller-modules]]
 == 새 컨트롤러 모듈 준비
 
 새 컨트롤러 모듈과 새 스토리지 쉘프의 구성 및 디스크 소유권을 지워야 합니다.
@@ -108,6 +112,7 @@ image::../media/workflow_2n_transition_old_shelves_not_supported.png[기존 선�
 
 
 
+[[attaching-the-new-disk-shelves-to-the-existing-metrocluster-fc-controllers]]
 == 기존 MetroCluster FC 컨트롤러에 새 디스크 쉘프 연결
 
 MetroCluster IP 구성으로 전환하기 전에 기존 컨트롤러 모듈에 새 드라이브 쉘프를 연결해야 합니다.
@@ -136,6 +141,7 @@ image::../media/transition_2n_unsupported_old_new_shelves_to_old_controllers.png
 
 
 
+[[migrate-root-aggregates-and-move-data-to-the-new-disk-shelves]]
 == 루트 애그리게이트를 마이그레이션하여 데이터를 새 디스크 쉘프로 이동합니다
 
 루트 애그리게이트를 이전 드라이브 쉘프에서 MetroCluster IP 노드에서 사용할 새 드라이브 쉘프로 이동해야 합니다.
@@ -490,6 +496,7 @@ MetroCluster 체크 쇼
 
 
 
+[[transitioning-the-configuration]]
 == 구성을 전환하는 중입니다
 
 자세한 전환 절차를 따라야 합니다.

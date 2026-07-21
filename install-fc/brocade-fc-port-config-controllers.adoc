@@ -25,6 +25,7 @@ Brocade FC 스위치를 컨트롤러에 케이블로 연결하는 데 필요한 
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 == MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Brocade 스위치의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 컨트롤러 구성을 보여줍니다.
@@ -543,6 +544,7 @@ HBA 포트 d
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 == MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Brocade 스위치의 MetroCluster 2 또는 DR 그룹 2에서 지원되는 컨트롤러 구성을 보여줍니다.
@@ -1061,6 +1063,7 @@ HBA 포트 d
 |===
 
 
+[[metrocluster-3-or-dr-group-3]]
 == MetroCluster 3 또는 DR 그룹 3
 
 다음 표는 Brocade 스위치의 MetroCluster 3 또는 DR 그룹 3에서 지원되는 컨트롤러 구성을 보여줍니다.
@@ -1339,6 +1342,7 @@ HBA 포트 d
 |===
 
 
+[[metrocluster-4-or-dr-group-4]]
 == MetroCluster 4 또는 DR 그룹 4
 
 다음 표는 Brocade 스위치의 MetroCluster 4 또는 DR 그룹 4에서 지원되는 컨트롤러 구성을 보여줍니다.

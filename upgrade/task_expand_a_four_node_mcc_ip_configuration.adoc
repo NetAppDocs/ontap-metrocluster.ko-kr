@@ -103,6 +103,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -117,6 +118,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[example-naming-in-this-procedure]]
 == 이 절차의 이름 지정 예
 
 이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다.
@@ -154,6 +156,7 @@ dr_group_2 - 신규
 |===
 
 
+[[supported-platform-combinations-when-adding-a-second-dr-group]]
 == 두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합
 
 다음 표에서는 8노드 MetroCluster IP 구성에서 지원되는 플랫폼 조합을 보여 줍니다.
@@ -169,6 +172,7 @@ dr_group_2 - 신규
 ====
 
 
+[[supported-aff-and-fas-metrocluster-ip-expansion-combinations]]
 === 지원되는 AFF 및 FAS MetroCluster IP 확장 조합
 
 다음 표에서는 MetroCluster IP 구성에서 AFF 또는 FAS 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여 줍니다. 테이블은 두 그룹으로 나뉩니다.
@@ -202,6 +206,7 @@ image:../media/expand-ip-group-2-updated.png["MetroCluster IP의 AFF 및 FAS 그
 ====
 
 
+[[supported-asa-metrocluster-ip-expansion-combinations]]
 === 지원되는 ASA MetroCluster IP 확장 조합
 
 다음 표는 MetroCluster IP 구성에서 ASA 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.
@@ -210,6 +215,7 @@ image::../media/8node_comb_ip_asa.png[8노드 구성을 위한 플랫폼 조합]
 
 
 
+[[send-a-custom-autosupport-message-prior-to-maintenance]]
 == 유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다
 
 유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
@@ -240,6 +246,7 @@ image::../media/8node_comb_ip_asa.png[8노드 구성을 위한 플랫폼 조합]
 
 
 
+[[considerations-for-vlans-when-adding-a-new-dr-group]]
 == 새 DR 그룹을 추가할 때 VLAN에 대한 고려 사항
 
 * MetroCluster IP 구성을 확장할 때 다음 VLAN 고려 사항이 적용됩니다.
@@ -305,6 +312,7 @@ image::../media/8node_comb_ip_asa.png[8노드 구성을 위한 플랫폼 조합]
 
 
 
+[[verify-the-health-of-the-metrocluster-configuration]]
 == MetroCluster 구성의 상태를 확인합니다
 
 확장을 수행하기 전에 MetroCluster 구성의 상태 및 연결을 확인해야 합니다.
@@ -442,6 +450,7 @@ cluster_A::>
 
 
 
+[[remove-the-configuration-from-monitoring-applications]]
 == 모니터링 애플리케이션에서 구성을 제거합니다
 
 전환을 시작할 수 있는 MetroCluster Tiebreaker 소프트웨어, ONTAP 중재자 또는 기타 타사 애플리케이션(예: ClusterLion)을 사용하여 기존 구성을 모니터링하는 경우 업그레이드하기 전에 모니터링 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
@@ -486,6 +495,7 @@ ONTAP 프롬프트에서 다음 명령을 실행합니다.
 
 
 
+[[prepare-the-new-controller-modules]]
 == 새 컨트롤러 모듈 준비
 
 4개의 새 MetroCluster 노드를 준비하고 올바른 ONTAP 버전을 설치해야 합니다.
@@ -535,6 +545,7 @@ ONTAP 프롬프트에서 다음 명령을 실행합니다.
 
 
 
+[[upgrade-rcf-files]]
 == RCF 파일을 업그레이드합니다
 
 새로운 스위치 펌웨어를 설치하는 경우 RCF 파일을 업그레이드하기 전에 스위치 펌웨어를 설치해야 합니다.
@@ -621,6 +632,7 @@ NOTE: L2 공유 또는 L3 네트워크 구성이 있는 경우 중간/고객 스
 
 
 
+[[join-the-new-nodes-to-the-clusters]]
 == 새 노드를 클러스터에 가입합니다
 
 4개의 새 MetroCluster IP 노드를 기존 MetroCluster 구성에 추가해야 합니다.
@@ -704,6 +716,7 @@ Do you want to use this configuration? {yes, no} [yes]: yes
 
 
 
+[[configure-intercluster-lifs-for-cluster-peering]]
 == 클러스터 피어링을 위한 인터클러스터 LIF 구성
 
 MetroCluster 파트너 클러스터 간 통신에 사용되는 포트에 대한 인터클러스터 LIF를 생성해야 합니다. 데이터 트래픽도 있는 전용 포트 또는 포트를 사용할 수 있습니다.
@@ -979,6 +992,7 @@ cluster01
 ====
 
 
+[[create-the-metrocluster-interfaces-and-mirror-root-aggregates]]
 == MetroCluster 인터페이스와 미러 루트 애그리게이트를 생성합니다
 
 새로운 MetroCluster IP 노드에 MetroCluster 인터페이스를 생성하고 루트 애그리게이트를 미러링해야 합니다.
@@ -1432,6 +1446,7 @@ aggr_data_a2
 
 
 
+[[finalize-the-addition-of-the-new-nodes]]
 == 새 노드 추가를 완료합니다
 
 새 DR 그룹을 MetroCluster 구성에 통합하고 새 노드에 미러링된 데이터 애그리게이트를 생성해야 합니다.

@@ -15,6 +15,7 @@ Tiebreaker 소프트웨어를 설치한 후 MetroCluster 구성을 추가 또는
 
 
 
+[[launch-the-tiebreaker-software-cli]]
 == Tiebreaker 소프트웨어 CLI를 실행합니다.
 
 Tiebreaker 소프트웨어를 설치한 후 소프트웨어를 구성하려면 CLI를 시작해야 합니다.
@@ -28,6 +29,7 @@ Tiebreaker 소프트웨어를 설치한 후 소프트웨어를 구성하려면 C
 
 
 
+[[add-metrocluster-configurations]]
 == MetroCluster 구성 추가
 
 NetApp MetroCluster Tiebreaker 소프트웨어를 설치한 후 한 번에 하나씩 더 많은 MetroCluster 구성을 추가할 수 있습니다.
@@ -169,6 +171,8 @@ link:concept_risks_and_limitation_of_using_mcc_tiebreaker_in_active_mode.html["�
 
 
 
+[[import-certificates]]
+[[import-certificates-tb17]]
 == 수입증명서
 
 Tiebreaker 1.6 이상에서 원활한 모니터링을 활성화하려면 ONTAP 에서 서버 SSL(Secure Sockets Layer) 인증서, 중간 인증서(있는 경우), 루트 인증서를 Java Virtual Machine(JVM)의 키 저장소로 가져와야 합니다.
@@ -349,6 +353,7 @@ Successfully triggered Switchover Simulation. Please check the status of the Swi
 ====
 
 
+[[commands-for-modifying-metrocluster-tiebreaker-configurations]]
 == MetroCluster Tiebreaker 구성을 수정하는 명령입니다
 
 설정을 변경해야 할 때마다 MetroCluster 구성을 수정할 수 있습니다.
@@ -448,6 +453,7 @@ update-mctb-password(업데이트-mctb-암호)
 |===
 
 
+[[remove-metrocluster-configurations]]
 == MetroCluster 구성을 제거합니다
 
 MetroCluster 구성을 더 이상 모니터링하지 않으려는 경우 Tiebreaker 소프트웨어에서 모니터링하는 MetroCluster 구성을 제거할 수 있습니다.

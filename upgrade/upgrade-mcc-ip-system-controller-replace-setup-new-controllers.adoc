@@ -15,6 +15,7 @@ summary: 컨트롤러를 넷부팅하기 전에 새 컨트롤러를 설정하여
 
 
 
+[[set-up-the-new-controllers]]
 == 새 컨트롤러를 설정합니다
 
 새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.
@@ -114,6 +115,7 @@ https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시�
 
 
 
+[[netboot-the-new-controllers]]
 == 새 컨트롤러를 netboot합니다
 
 새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
@@ -172,6 +174,7 @@ NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해
 
 
 
+[[clear-the-configuration-on-a-controller-module]]
 == 컨트롤러 모듈의 구성을 지웁니다
 
 MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.

@@ -38,6 +38,7 @@ image::../media/mcc_dr_groups_8_node.gif[확장 후 8개 노드로 구성된 Met
 
 
 
+[[supported-platform-combinations-when-adding-a-second-dr-group]]
 == 두 번째 DR 그룹을 추가할 때 지원되는 플랫폼 조합
 
 다음 표는 8노드 MetroCluster FC 구성에서 지원되는 플랫폼 조합을 보여줍니다.

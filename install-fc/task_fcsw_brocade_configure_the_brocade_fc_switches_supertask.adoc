@@ -66,6 +66,7 @@ Metro-E는 Metro 거리 또는 일부 TDM(Time-Division Multiplexing), MPLS(Mult
 
 
 
+[[review-brocade-license-requirements]]
 == Brocade 라이선스 요구 사항 검토
 
 MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다.
@@ -104,6 +105,7 @@ Enterprise 라이센스에는 Brocade Network Advisor 및 추가 포트 라이�
 
 
 
+[[set-the-brocade-fc-switch-values-to-factory-defaults]]
 == Brocade FC 스위치 값을 공장 기본값으로 설정
 
 성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 또한 각 스위치에 고유한 이름을 할당해야 합니다.
@@ -325,6 +327,7 @@ FC_switch_B_1:admin> reboot
 
 
 
+[[configure-basic-switch-settings]]
 == 기본 스위치 설정 구성
 
 Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.
@@ -649,6 +652,7 @@ FC_switch_B_1:admin> switchcfgpersistentenable
 
 
 
+[[configure-basic-switch-settings-on-a-brocade-dcx-8510-8-switch]]
 == Brocade DCX 8510-8 스위치에서 기본 스위치 설정 구성
 
 Brocade 스위치에 대해 도메인 ID를 비롯한 기본 글로벌 설정을 구성해야 합니다.
@@ -749,6 +753,7 @@ link:concept_prepare_for_the_mcc_installation.html["Brocade DCX 8510-8 스위치
 
 
 
+[[configure-e-ports-on-brocade-fc-switches-using-fc-ports]]
 == FC 포트를 사용하여 Brocade FC 스위치에서 E-포트 구성
 
 ISL(Inter-Switch Link)이 FC 포트를 사용하여 구성되는 Brocade 스위치의 경우 ISL을 연결하는 각 스위치 패브릭의 스위치 포트를 구성해야 합니다. 이러한 ISL 포트를 E-포트라고도 합니다.
@@ -1252,6 +1257,7 @@ link:concept_port_assignments_for_fc_switches_when_using_ontap_9_1_and_later.htm
 
 
 
+[[configuring-10-gbps-ve-ports-on-brocade-fc-7840-switches]]
 == Brocade FC 7840 스위치에서 10Gbps VE 포트 구성
 
 ISL에 FCIP를 사용하는 10Gbps VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.
@@ -1408,6 +1414,7 @@ FC_switch_A_1:root> portshow fcipcircuit all
 
 
 
+[[configure-40-gbps-ve-ports-on-brocade-7810-and-7840-fc-switches]]
 == Brocade 7810 및 7840 FC 스위치에서 40Gbps VE 포트 구성
 
 ISL에 FCIP를 사용하는 두 개의 40GbE VE 포트를 사용하는 경우 각 포트에 IP 인터페이스를 생성하고 각 터널에서 FCIP 터널과 회로를 구성해야 합니다.
@@ -1561,6 +1568,7 @@ FC_switch_A_1:root> portshow fcipcircuit all
 
 
 
+[[configure-the-non-e-ports-on-the-brocade-switch]]
 == Brocade 스위치에서 비 E-포트 구성
 
 FC 스위치에서 E 포트가 아닌 포트를 구성해야 합니다. MetroCluster 구성에서는 스위치를 HBA 이니시에이터, FC-VI 상호 연결 및 FC-SAS 브리지에 연결하는 포트를 사용합니다. 이러한 단계는 각 포트에 대해 수행해야 합니다.
@@ -1651,6 +1659,7 @@ Non-DFE                             ..  ..  ..  ..  ..  ..  ..  ..  ..
 
 
 
+[[configure-compression-on-isl-ports-on-a-brocade-g620-switch]]
 == Brocade G620 스위치의 ISL 포트에 압축 구성
 
 Brocade G620 스위치를 사용하고 ISL에서 압축을 설정하는 경우 스위치의 각 E-포트에서 구성해야 합니다.
@@ -1713,12 +1722,14 @@ Port   Configured    Active   Configured   Active  Speed
 ----
 
 
+[[configure-zoning-on-brocade-fc-switches]]
 == Brocade FC 스위치에서 구역 설정 구성
 
 스위치 포트를 별도의 영역에 할당하여 컨트롤러 및 스토리지 트래픽을 분리해야 합니다.
 
 
 
+[[zone-the-fc-vi-ports]]
 === FC-VI 포트 구역 지정
 
 MetroCluster의 각 DR 그룹에 대해 컨트롤러-컨트롤러 트래픽을 허용하는 FC-VI 연결을 위해 두 개의 존을 구성해야 합니다. 이러한 존에는 컨트롤러 모듈 FC-VI 포트에 연결되는 FC 스위치 포트가 포함되어 있습니다. 이러한 영역은 QoS(서비스 품질) 존입니다.
@@ -1937,6 +1948,7 @@ QOSH2_MC1_FAB_2_FCVI(6520)
 |===
 
 
+[[zone-fibrebridge-7500n-or-7600n-bridges-using-one-fc-port]]
 === 하나의 FC 포트를 사용하는 Zone FibreBridge 7500N 또는 7600N 브리지
 
 FC 포트 2개 중 하나만 사용하여 FiberBridge 7500N 또는 7600N 브리지를 사용하는 경우 브리지 포트에 대한 스토리지 존을 생성해야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.
@@ -2380,6 +2392,7 @@ a 또는 b
 |===
 
 
+[[zone-fibrebridge-7500n-bridges-using-both-fc-ports]]
 === 두 FC 포트를 모두 사용하는 Zone FibreBridge 7500N 브리지
 
 FiberBridge 7500N 브리지를 두 FC 포트와 함께 사용하는 경우 브리지 포트에 대한 스토리지 영역을 만들어야 합니다. 영역을 구성하기 전에 영역 및 관련 포트를 이해해야 합니다.
@@ -4269,6 +4282,7 @@ MC1_INIT_GRP_2_SITE_B_STK_GRP_2_BOT_FC2
 |===
 
 
+[[zone-the-brocade-fc-switches]]
 === Brocade FC 스위치 구역 지정
 
 FC-VI 포트 영역과 스토리지 포트 영역을 구분하여 컨트롤러 및 스토리지 트래픽을 별도의 영역에 스위치 포트를 할당해야 합니다.
@@ -4388,6 +4402,7 @@ zone: MC1_INIT_GRP_1_SITE_A_STK_GRP_1_TOP_FC1
 
 
 
+[[set-isl-encryption-on-brocade-6510-or-g620-switches]]
 == Brocade 6510 또는 G620 스위치에 ISL 암호화 설정
 
 Brocade 6510 또는 G620 스위치의 경우 ISL 연결에서 Brocade 암호화 기능을 선택적으로 사용할 수 있습니다. 암호화 기능을 사용하려면 MetroCluster 구성의 각 스위치에 대해 추가 구성 단계를 수행해야 합니다.
@@ -4407,6 +4422,7 @@ NOTE: Brocade G620 스위치에서 ISL 암호화 지원은 ONTAP 9.4 이상에�
 
 
 
+[[disable-virtual-fabric]]
 === 가상 패브릭 비활성화
 
 ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 스위치에서 가상 패브릭을 모두 비활성화해야 합니다.
@@ -4421,6 +4437,7 @@ ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 �
 
 
 
+[[set-the-payload]]
 === 페이로드를 설정합니다
 
 가상 패브릭을 비활성화한 후 Fabric의 두 스위치에서 페이로드나 데이터 필드 크기를 설정해야 합니다.
@@ -4448,6 +4465,7 @@ ISL 암호화를 설정하려면 MetroCluster 구성에서 사용 중인 4개 �
 
 
 
+[[set-the-authentication-policy]]
 === 인증 정책을 설정합니다
 
 인증 정책과 관련 매개 변수를 설정해야 합니다.
@@ -4541,6 +4559,7 @@ Auth Policy is set to ON
 
 
 
+[[enable-isl-encryption-on-brocade-switches]]
 === Brocade 스위치에서 ISL 암호화를 설정합니다
 
 인증 정책과 인증 암호를 설정한 후 포트에서 ISL 암호화를 사용하도록 설정해야 인증 정책이 적용됩니다.

@@ -18,10 +18,12 @@ NOTE: Brocade 7810 스위치는 하나의 DR 그룹만 지원합니다.
 
 
 
+[[shelf-configurations-using-fibrebridge-7500n-or-7600n-bridges-using-both-fc-ports-fc1-and-fc2]]
 == FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지를 사용한 선반 구성
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 === MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -219,6 +221,7 @@ FC2
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 === MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -416,6 +419,7 @@ FC2
 |===
 
 
+[[metrocluster-3-or-dr-group-3]]
 === MetroCluster 3 또는 DR 그룹 3
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 3 또는 DR 그룹 3에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -530,6 +534,7 @@ FC2
 |===
 
 
+[[metrocluster-4-or-dr-group-4]]
 === MetroCluster 4 또는 DR 그룹 4
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 4 또는 DR 그룹 4에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -644,10 +649,12 @@ FC2
 |===
 
 
+[[shelf-configurations-using-fibrebridge-7500n-or-7600n-using-one-fc-port-fc1-or-fc2-only]]
 == FC 포트(FC1 또는 FC2)를 사용하는 FiberBridge 7500N 또는 7600N을 사용하는 쉘프 구성
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 === MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Brocade 스위치에서 FibreBridge 7500N 또는 7600N과 FC 포트(FC1 또는 FC2) 하나만 사용하는 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -840,6 +847,7 @@ Bridge_x_4b
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 === MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -1032,6 +1040,7 @@ Bridge_x_4b
 |===
 
 
+[[metrocluster-3-or-dr-group-3]]
 === MetroCluster 3 또는 DR 그룹 3
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 3 또는 DR 그룹 3에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -1142,6 +1151,7 @@ Bridge_x_4b
 |===
 
 
+[[metrocluster-4-or-dr-group-4]]
 === MetroCluster 4 또는 DR 그룹 4
 
 다음 표는 Brocade 스위치에서 FC 포트(FC1 또는 FC2) 하나를 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 4 또는 DR 그룹 4에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.

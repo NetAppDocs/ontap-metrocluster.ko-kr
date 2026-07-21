@@ -15,6 +15,7 @@ summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 �
 
 
 
+[[reset-the-switch-reset-the-nvidia-ip-sn2100-switch-to-factory-defaults]]
 == [[Reset-the-switch]] NVIDIA IP SN2100 스위치를 출하 시 기본값으로 재설정합니다
 
 다음 방법 중 하나를 선택하여 스위치를 공장 출하시 기본 설정으로 재설정할 수 있습니다.
@@ -25,6 +26,7 @@ summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 �
 
 
 
+[[rcf-file-optionreset-the-switch-using-the-rcf-file-option]]
 === [[RCF-FILE-OPTION]] RCF 파일 옵션을 사용하여 스위치를 재설정합니다
 
 새 RCF 구성을 설치하기 전에 NVIDIA 스위치 설정을 되돌려야 합니다.
@@ -112,6 +114,7 @@ RCF 파일을 적용하기 전에 스위치가 재설정되고 관리 네트워�
 
 
 
+[[cumulus-install-option-download-and-install-the-cumulus-software]]
 === [[Cumulus-install-option]] Cumulus 소프트웨어를 다운로드하고 설치합니다
 
 .이 작업에 대해
@@ -297,6 +300,7 @@ cumulus@cumulus:~$ sudo reboot
 
 
 
+[[download-and-installdownload-and-install-the-nvidia-rcf-files]]
 == [[다운로드 및 설치]] NVIDIA RCF 파일을 다운로드하여 설치합니다
 
 스위치 RCF 파일을 생성하고 MetroCluster IP 구성의 각 스위치에 설치해야 합니다.
@@ -406,6 +410,7 @@ NOTE: 여러 스위치 포트에 대해 DAC 옵션을 설정하면 스위치를 
 
 
 
+[[set-forward-error-correction-for-systems-using-25-gbps-connectivity]]
 == 25Gbps 연결을 사용하는 시스템에 대해 Forward Error Correction(전달 오류 수정)을 설정합니다
 
 25Gbps 연결을 사용하여 시스템을 구성한 경우 RCF를 적용한 후 FEC(Forward Error Correction) 매개변수를 OFF(꺼짐)로 수동으로 설정합니다. RCF는 이 설정을 적용하지 않습니다.
@@ -426,6 +431,7 @@ NOTE: 여러 스위치 포트에 대해 DAC 옵션을 설정하면 스위치를 
 
 
 
+[[set-the-switch-port-speed-for-the-metrocluster-ip-interfaces]]
 == MetroCluster IP 인터페이스의 스위치 포트 속도를 설정합니다
 
 .이 작업에 대해
@@ -475,6 +481,7 @@ cumulus@Switch-A-1:mgmt:~$
 
 
 
+[[disable-unused-isl-ports-and-port-channels]]
 == 사용되지 않는 ISL 포트 및 포트 채널을 비활성화합니다
 
 불필요한 상태 경고를 방지하기 위해 사용하지 않는 ISL 포트 및 포트 채널을 비활성화하는 것이 좋습니다 NetApp. 각 포트 또는 포트 채널을 개별적으로 사용하지 않도록 설정해야 하며 명령에서 여러 포트 또는 포트 범위를 지정할 수 없습니다.

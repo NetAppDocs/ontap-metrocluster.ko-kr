@@ -15,6 +15,7 @@ MetroCluster 구성에서 각 FC 스위치 패브릭에 필요한 ISL 수를 결
 
 
 
+[[isl-sharing-considerations-ontap-9-2]]
 == ISL 공유 고려 사항(ONTAP 9.2)
 
 ONTAP 9.2부터는 다음과 같은 경우에 ISL 공유를 사용할 수 있습니다.
@@ -47,6 +48,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 
 
+[[platform-specific-isl-considerations]]
 == 플랫폼별 ISL 고려 사항
 
 권장 ISL 수는 플랫폼 모델에 따라 다릅니다. 다음 표에서는 플랫폼 모델별 각 패브릭의 ISL 요구 사항을 보여 줍니다. 각 ISL의 용량이 16Gbps라고 가정합니다.

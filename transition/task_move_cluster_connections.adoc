@@ -15,6 +15,7 @@ MetroCluster FC 구성의 클러스터 인터페이스를 IP 스위치로 이동
 
 
 
+[[step-1-move-the-cluster-connections-on-the-metrocluster-fc-nodes]]
 == 1단계: MetroCluster FC 노드에서 클러스터 연결 이동
 
 MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동합니다. 수행하는 단계는 기존 IP 스위치를 사용하는지 또는 새 IP 스위치를 사용하는지에 따라 달라집니다.
@@ -25,6 +26,7 @@ MetroCluster FC 노드의 클러스터 연결을 IP 스위치로 이동합니다
 
 
 
+[[which-connections-to-move]]
 === 이동할 연결입니다
 
 다음 작업은 컨트롤러 모듈이 클러스터 연결에 두 개의 포트를 사용한다고 가정합니다. 일부 컨트롤러 모듈 모델은 클러스터 연결에 4개 이상의 포트를 사용합니다. 이 예에서는 포트를 두 그룹으로 나누어 두 그룹 간에 포트를 번갈아 사용합니다.
@@ -155,6 +157,7 @@ FC 노드의 로컬 클러스터 인터페이스입니다
 |===
 
 
+[[move-the-local-cluster-connections-when-using-new-ip-switches]]
 === 새 IP 스위치를 사용할 때 로컬 클러스터 연결을 이동합니다.
 
 새로운 IP 스위치를 사용하는 경우 기존 MetroCluster FC 노드의 클러스터 연결을 물리적으로 새 스위치로 이동합니다.
@@ -278,6 +281,7 @@ cluster_A::*>
 
 
 
+[[move-the-local-cluster-connections-when-reusing-existing-ip-switches]]
 === 기존 IP 스위치를 재사용할 때 로컬 클러스터 연결을 이동합니다.
 
 기존 IP 스위치를 재사용하는 경우 펌웨어를 업데이트하고 올바른 참조 구성 파일(RCF)로 스위치를 재구성하고 한 번에 한 스위치씩 연결을 올바른 포트로 이동합니다.
@@ -409,6 +413,7 @@ Cluster-A::*>
 
 
 
+[[step-2-verify-that-the-cluster-connections-are-moved-and-the-cluster-is-healthy]]
 == 2단계: 클러스터 연결이 이동되었고 클러스터가 정상인지 확인합니다.
 
 적절한 연결이 있는지 확인하고 구성이 전환 프로세스를 진행할 준비가 되었는지 확인하려면 클러스터 연결이 올바르게 이동되었는지, 클러스터 스위치가 인식되었는지, 클러스터가 정상인지 확인하세요.

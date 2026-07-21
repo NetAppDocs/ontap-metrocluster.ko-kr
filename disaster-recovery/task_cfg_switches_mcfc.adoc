@@ -18,6 +18,7 @@ link:../install-fc/concept_port_assignments_for_fc_switches_when_using_ontap_9_1
 
 
 
+[[configuring-a-brocade-fc-switch-after-site-disaster]]
 == 사이트 재해 후 Brocade FC 스위치 구성
 
 이 Brocade 관련 절차를 사용하여 교체 스위치를 구성하고 ISL 포트를 활성화해야 합니다.
@@ -142,6 +143,7 @@ Index Port Address Media Speed State  Proto
 
 
 
+[[configuring-a-cisco-fc-switch-after-site-disaster]]
 == 사이트 재해 후 Cisco FC 스위치 구성
 
 Cisco 관련 절차를 사용하여 교체 스위치를 구성하고 ISL 포트를 활성화해야 합니다.

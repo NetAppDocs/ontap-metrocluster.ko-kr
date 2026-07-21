@@ -25,6 +25,7 @@ summary:
 
 
 
+[[preparing-to-hot-add-a-stack-of-sas-disk-shelves-and-bridges]]
 == SAS 디스크 쉘프 및 브리지 스택 핫추가 준비
 
 SAS 디스크 쉘프 스택과 브리지 쌍을 핫 애드할 준비를 하려면 디스크 드라이브 및 디스크 쉘프 펌웨어와 문서를 다운로드해야 합니다.
@@ -124,6 +125,7 @@ NetApp에서 제공하는 참조 구성 파일을 사용하는 경우 모든 포
 
 
 
+[[hot-adding-a-stack-of-sas-disk-shelves-and-bridges]]
 == SAS 디스크 쉘프 및 브리지 스택 핫 추가
 
 SAS 디스크 쉘프 및 브리지 스택을 핫 추가할 수 있어 브리지 용량을 늘릴 수 있습니다.

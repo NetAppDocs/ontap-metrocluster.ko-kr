@@ -17,6 +17,7 @@ MetroCluster은 미러링을 통해 클러스터의 데이터를 보호합니다
 
 
 
+[[how-eight-and-four-node-metrocluster-configurations-provide-local-failover-and-switchover]]
 == 8노드 및 4노드 MetroCluster 구성이 로컬 페일오버 및 전환을 제공하는 방법
 
 8노드 및 4노드 MetroCluster 구성으로 로컬 레벨 및 클러스터 레벨 모두에서 데이터를 보호합니다. MetroCluster 구성을 설정하는 경우 MetroCluster 구성이 데이터를 어떻게 보호하는지 알아야 합니다.
@@ -25,6 +26,7 @@ MetroCluster 구성은 물리적으로 분리된 두 개의 미러링된 클러�
 
 
 
+[[how-local-ha-data-protection-works-in-a-metrocluster-configuration]]
 === MetroCluster 구성에서 로컬 HA 데이터 보호의 작동 방식
 
 MetroCluster 구성에서 HA 쌍이 작동하는 방식을 이해해야 합니다.
@@ -40,12 +42,14 @@ link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용
 
 
 
+[[how-metrocluster-configurations-provide-data-and-configuration-replication]]
 == MetroCluster 구성에서 데이터 및 구성 복제를 제공하는 방법
 
 MetroCluster 구성에서는 다양한 ONTAP 기능을 사용하여 두 MetroCluster 사이트 간에 동기식 데이터 및 구성 복제를 제공합니다.
 
 
 
+[[configuration-protection-with-the-configuration-replication-service]]
 === 구성 복제 서비스를 통한 구성 보호
 
 CRS(ONTAP 구성 복제 서비스)는 DR 파트너에 정보를 자동으로 복제하여 MetroCluster 구성을 보호합니다.
@@ -56,6 +60,7 @@ CRS에서는 로컬 노드 구성을 파트너 클러스터의 DR 파트너에 �
 
 
 
+[[replication-of-svms-during-metrocluster-operations]]
 === MetroCluster 운영 중에 SVM 복제
 
 ONTAP CRS(구성 복제 서비스)는 SVM에 속한 데이터 볼륨의 이중화 데이터 서버 구성 및 미러링을 제공합니다. 스위치오버가 발생하면 소스 SVM이 중단되며 정상적인 클러스터에 있는 타겟 SVM이 활성화됩니다.
@@ -111,6 +116,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["시�
 
 
 
+[[how-metrocluster-configurations-use-syncmirror-to-provide-data-redundancy]]
 === MetroCluster 구성에서 SyncMirror를 사용하여 데이터 이중화를 제공하는 방법
 
 SyncMirror 기능을 사용하는 미러링된 애그리게이트는 데이터 이중화를 제공하며 소스 및 타겟 SVM(스토리지 가상 머신)이 소유한 볼륨을 포함합니다. 데이터는 파트너 클러스터의 디스크 풀에 복제됩니다. 미러링되지 않은 애그리게이트도 지원됩니다.
@@ -167,6 +173,7 @@ image::../media/mcc_mirroring_of_pools.gif[스토리지 풀의 MetroCluster 미�
 
 
 
+[[how-nvram-or-nvmem-cache-mirroring-and-dynamic-mirroring-work-in-metrocluster-configurations]]
 === NVRAM 또는 NVMEM 캐시 미러링 및 동적 미러링이 MetroCluster 구성에서 작동하는 방식
 
 스토리지 컨트롤러의 비휘발성 메모리(플랫폼 모델에 따라 NVRAM 또는 NVMEM)는 로컬 HA 파트너에 로컬로 미러링되며 파트너 사이트의 원격 DR(재해 복구) 파트너에 원격으로 미러링됩니다. 로컬 페일오버 또는 스위치오버가 발생하는 경우 이 구성을 사용하면 비휘발성 캐시의 데이터를 보존할 수 있습니다.
@@ -226,6 +233,7 @@ image::../media/mcc_nvram_mirroring_example_dynamic_dr_aux.gif[DR 보조 기능�
 
 
 
+[[types-of-disasters-and-recovery-methods]]
 == 재해 유형 및 복구 방법
 
 MetroCluster 구성을 사용하여 적절하게 대응할 수 있도록 다양한 유형의 장애 및 재해에 대해 잘 알아야 합니다.
@@ -287,6 +295,7 @@ NOTE: AUSO(자동 비계획 전환)는 MetroCluster IP 구성에서 지원되지
 |===
 
 
+[[how-an-eight-node-or-four-node-metrocluster-configuration-provides-nondisruptive-operations]]
 == 8노드 또는 4노드 MetroCluster 구성에서 무중단 운영을 제공하는 방법
 
 단일 노드에만 문제가 발생하는 경우 로컬 HA 쌍 내의 페일오버 및 기브백은 무중단 운영을 지원합니다. 이 경우 MetroCluster 구성에 원격 사이트로 전환할 필요가 없습니다.
@@ -301,6 +310,7 @@ link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용
 
 
 
+[[switchover-and-switchback-during-metrocluster-transition]]
 === MetroCluster 전환 중 스위치오버 및 스위치백
 
 MetroCluster FC-to-IP 전환에는 MetroCluster IP 노드 및 IP 스위치를 기존 MetroCluster FC 구성에 추가한 다음 MetroCluster FC 노드를 폐기하는 작업이 포함됩니다. 전환 프로세스의 단계에 따라 MetroCluster 전환, 복구 및 스위치백 작업에서 서로 다른 워크플로우를 사용합니다.
@@ -309,6 +319,7 @@ MetroCluster FC-to-IP 전환에는 MetroCluster IP 노드 및 IP 스위치를 �
 
 
 
+[[consequences-of-local-failover-after-switchover]]
 === 스위치오버 후 로컬 페일오버의 결과
 
 MetroCluster 전환이 발생하고 정상적인 사이트에서 문제가 발생하는 경우 로컬 페일오버를 통해 무중단 운영을 계속할 수 있습니다. 하지만 시스템이 중복 구성에 더 이상 없으므로 위험합니다.
@@ -317,6 +328,7 @@ MetroCluster 전환이 발생하고 정상적인 사이트에서 문제가 발�
 
 
 
+[[how-a-two-node-metrocluster-configuration-provides-nondisruptive-operations]]
 == 2노드 MetroCluster 구성으로 무중단 운영을 제공하는 방법
 
 두 사이트 중 하나에서 패닉이 발생하여 문제가 발생하는 경우 MetroCluster 전환을 통해 무중단 운영이 계속 수행됩니다. 정전 시 노드 및 스토리지에 모두 영향을 미치면 절체가 자동으로 수행되지 않고 MetroCluster switchover 명령이 실행될 때까지 운영이 중단됩니다.
@@ -330,6 +342,7 @@ link:concept_understanding_mcc_data_protection_and_disaster_recovery.html["Metro
 
 
 
+[[overview-of-the-switchover-process]]
 == 전환 프로세스 개요
 
 MetroCluster 전환 작업을 사용하면 소스 클러스터에서 원격 사이트로 스토리지 및 클라이언트 액세스를 이동하여 재해 발생 후 서비스를 즉시 재개할 수 있습니다. 어떤 변화가 예상되는지, 전환이 발생할 경우 어떤 작업을 수행해야 하는지 알고 있어야 합니다.
@@ -360,6 +373,7 @@ NOTE: 이 절차는 다른 사이트가 안정적이고 오프라인으로 전�
 
 
 
+[[availability-of-commands-during-switchover]]
 === 전환 중 명령의 가용성
 
 다음 표에는 전환 중 명령을 사용할 수 있는 상태가 나와 있습니다.
@@ -480,6 +494,7 @@ SVM은 생성할 수 없습니다.
 |===
 
 
+[[differences-in-switchover-between-metrocluster-fc-and-ip-configurations]]
 === MetroCluster FC와 IP 구성 간 전환 차이점
 
 MetroCluster IP 구성에서는 원격 디스크가 iSCSI 타겟 역할을 하는 원격 DR 파트너 노드를 통해 액세스되므로 전환 작업에서 원격 노드가 다운될 때 원격 디스크에 액세스할 수 없습니다. 그 결과 MetroCluster FC 구성의 차이가 발생합니다.
@@ -493,6 +508,7 @@ NOTE: MetroCluster IP 구성에서 미러링되지 않은 애그리게이트를 
 
 
 
+[[disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration]]
 === 4노드 MetroCluster 구성에서 HA 테이크오버 및 MetroCluster 스위치오버 중에 디스크 소유권이 변경됩니다
 
 고가용성 및 MetroCluster 작업 중에 디스크 소유권이 일시적으로 변경됩니다. 시스템이 어떤 노드가 어떤 디스크를 소유하고 있는지 추적하는 방법을 알면 도움이 됩니다.
@@ -628,6 +644,7 @@ HA 기브백 및 DR 스위치백 후, 모든 노드가 완전히 작동합니다
 |===
 
 
+[[considerations-when-using-unmirrored-aggregates]]
 === 미러링되지 않은 애그리게이트를 사용할 때의 고려 사항
 
 구성에 미러링되지 않은 애그리게이트가 포함된 경우, 전환 작업 후 잠재적 액세스 문제를 알고 있어야 합니다.
@@ -666,6 +683,7 @@ LUN은 미러링되지 않은 애그리게이트에 있어서는 안 됩니다. 
 
 
 
+[[automatic-unplanned-switchover-in-metrocluster-fc-configurations]]
 === MetroCluster FC 구성에서 계획되지 않은 자동 스위치오버
 
 MetroCluster FC 구성에서 사이트 전체 컨트롤러 장애가 무중단 운영을 제공하지 못할 경우 특정 시나리오에서 자동 계획되지 않은 스위치오버(AUSO)를 트리거할 수 있습니다. 필요한 경우 AUSO를 비활성화할 수 있습니다.
@@ -734,18 +752,21 @@ link:task_perform_switchover_for_tests_or_maintenance.html["테스트 또는 유
 
 
 
+[[mediator-assisted-automatic-unplanned-switchover-in-metrocluster-ip-configurations]]
 === MetroCluster IP 구성에서 중재자를 통한 자동 비계획 전환
 
 link:../install-ip/concept-ontap-mediator-supports-automatic-unplanned-switchover.html["ONTAP mediator가 MetroCluster IP 구성에서 예기치 않은 자동 전환을 지원하는 방법에 대해 알아보십시오"].
 
 
 
+[[what-happens-during-healing-metrocluster-fc-configurations]]
 == 복구 중 수행되는 작업(MetroCluster FC 구성)
 
 MetroCluster FC 구성에서 복구 중에 미러링된 애그리게이트의 재동기화는 스위치백을 위해 복구된 재해 사이트의 노드를 준비하는 단계별 프로세스에서 수행됩니다. 계획된 이벤트이므로 각 단계를 완벽하게 제어하여 다운타임을 최소화할 수 있습니다. 복구는 스토리지 및 컨트롤러 구성 요소에서 발생하는 2단계 프로세스입니다.
 
 
 
+[[data-aggregate-healing]]
 === 데이터 애그리게이트 복구
 
 재해 사이트에서 문제가 해결된 후 스토리지 복구 단계를 시작합니다.
@@ -764,6 +785,7 @@ link:../manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html["구
 
 
 
+[[root-aggregate-healing]]
 === 루트 애그리게이트 복구
 
 애그리게이트를 동기화한 후, CFO 애그리게이트 및 루트 애그리게이트를 각 DR 파트너에게 제공하여 컨트롤러 복구 단계를 시작합니다.
@@ -772,12 +794,14 @@ link:../manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html["구
 
 
 
+[[what-happens-during-healing-metrocluster-ip-configurations]]
 == 복구 중 수행되는 작업(MetroCluster IP 구성)
 
 MetroCluster IP 구성에서 복구를 수행하는 동안, 복구된 재해 사이트에서 스위치백을 준비할 수 있도록 단계적으로 미러링된 애그리게이트를 재동기화할 수 있습니다. 계획된 이벤트이므로 각 단계를 완벽하게 제어하여 다운타임을 최소화할 수 있습니다. 복구는 스토리지 및 컨트롤러 구성 요소에서 발생하는 2단계 프로세스입니다.
 
 
 
+[[differences-with-metrocluster-fc-configurations]]
 === MetroCluster FC 구성의 차이점
 
 MetroCluster IP 구성에서는 복구 작업을 수행하기 전에 재해 사이트 클러스터의 노드를 부팅해야 합니다.
@@ -788,6 +812,7 @@ MetroCluster IP 구성에서는 복구 작업을 수행하기 전에 재해 사�
 
 
 
+[[data-aggregate-healing]]
 === 데이터 애그리게이트 복구
 
 재해 사이트에서 문제가 해결된 후 스토리지 복구 단계를 시작합니다.
@@ -806,6 +831,7 @@ link:../manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html["구
 
 
 
+[[root-aggregate-healing]]
 === 루트 애그리게이트 복구
 
 애그리게이트가 동기화된 후에는 루트 애그리게이트 복구 단계를 수행할 수 있습니다. MetroCluster IP 구성에서 이 단계는 애그리게이트가 복구되었음을 확인합니다.
@@ -814,12 +840,14 @@ link:../manage/task_verifiy_that_your_system_is_ready_for_a_switchover.html["구
 
 
 
+[[automatic-healing-of-aggregates-on-metrocluster-ip-configurations-after-switchover]]
 == 전환 후 MetroCluster IP 구성에서 애그리게이트 자동 복구
 
 ONTAP 9.5부터 MetroCluster IP 구성에서 협상된 전환 작업 중에 복구가 자동화됩니다. ONTAP 9.6부터 예정되지 않은 스위치오버 후 자동 복구가 지원됩니다. 이렇게 하면 MetroCluster 환원 명령을 실행할 필요가 없어집니다.
 
 
 
+[[automatic-healing-after-negotiated-switchover-beginning-with-ontap-9-5]]
 === 협상된 전환 후 자동 복구(ONTAP 9.5부터 시작)
 
 협상된 전환(forced-on-disaster true 옵션 없이 실행되는 스위치오버 명령)을 수행한 후 자동 복구 기능은 시스템을 정상 작동 상태로 되돌리는 데 필요한 단계를 단순화합니다. 자동 복구 기능이 있는 시스템에서는 전환 후에 다음이 발생합니다.
@@ -843,6 +871,7 @@ image::../media/mcc_so_sb_with_autoheal.gif[자동 복구를 통한 MetroCluster
 
 
 
+[[automatic-healing-after-unscheduled-switchover-beginning-with-ontap-9-6]]
 === 예정되지 않은 스위치오버 후 자동 복구(ONTAP 9.6부터 시작)
 
 MetroCluster 9.6부터 시작되는 ONTAP IP 구성에서 예정되지 않은 스위치오버 후 자동 복구가 지원됩니다. 예정되지 않은 절체는 '-forced-on-disaster true' 옵션을 사용하여 'witchover' 명령을 실행하는 스위치오버입니다.
@@ -869,12 +898,14 @@ image::../media/mcc_uso_with_autoheal.gif[자동 복구를 통한 MetroCluster �
 
 
 
+[[if-automatic-healing-fails]]
 === 자동 복구 실패 시
 
 어떤 이유로든 자동 복구 작업이 실패하면 ONTAP 9.6 이전의 ONTAP 버전에서 했던 것처럼 'MetroCluster 환원' 명령을 수동으로 실행해야 합니다. MetroCluster operation show와 MetroCluster operation history show-instance 명령을 사용하여 복구 상태를 모니터링하고 장애 원인을 확인할 수 있습니다.
 
 
 
+[[creating-svms-for-a-metrocluster-configuration]]
 == MetroCluster 구성을 위한 SVM 생성
 
 MetroCluster 구성을 위한 SVM을 생성하여 MetroCluster 구성을 위해 설정된 클러스터에서 동기식 재해 복구 및 높은 데이터 가용성을 제공할 수 있습니다.
@@ -959,6 +990,7 @@ MetroCluster 구성을 위한 SVM은 루트 볼륨 크기 1GB로 생성됩니다
 
 
 
+[[what-happens-during-a-switchback]]
 == 스위치백 도중 수행되는 작업
 
 재해 사이트가 복구되고 애그리게이트가 복구되면 MetroCluster 스위치백 프로세스가 재해 복구 사이트에서 홈 클러스터로 스토리지 및 클라이언트 액세스를 반환합니다.

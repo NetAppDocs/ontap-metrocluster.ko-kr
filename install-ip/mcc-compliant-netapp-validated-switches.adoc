@@ -15,6 +15,7 @@ summary: 이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요�
 
 
 
+[[netapp-validated-switches]]
 == NetApp의 검증된 스위치
 
 스위치는 다음 요구사항을 충족할 경우 NetApp에서 검증했습니다.
@@ -29,6 +30,7 @@ summary: 이 섹션에서는 MetroCluster 구성과 네트워크가 모든 요�
 
 
 
+[[metrocluster-compliant-switches]]
 == MetroCluster 규정 준수 스위치
 
 MetroCluster 준수 스위치는 NetApp 검증이 되지 않았지만 특정 요구사항 및 구성 지침을 충족할 경우 MetroCluster IP 구성에서 사용할 수 있습니다.

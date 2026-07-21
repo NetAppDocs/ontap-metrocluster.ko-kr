@@ -15,6 +15,7 @@ summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroClus
 
 
 
+[[supported-platform-combinations]]
 == 지원되는 플랫폼 조합
 
 * 지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  link:concept_choosing_controller_upgrade_mcc.html#supported-metrocluster-fc-controller-upgrades["컨트롤러 업그레이드 절차를 선택합니다"].
@@ -24,6 +25,7 @@ summary: 안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroClus
 
 
 
+[[about-this-task]]
 == 이 작업에 대해
 
 * 이 절차는 컨트롤러 업그레이드에만 사용할 수 있습니다.
@@ -79,6 +81,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -93,6 +96,8 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[prepare-for-the-upgrade]]
+[[fc_controller_replace_prepare]]
 == 업그레이드를 준비합니다
 
 컨트롤러 업그레이드를 준비하려면 시스템 사전 점검을 수행하고 구성 정보를 수집해야 합니다.
@@ -139,6 +144,7 @@ Node-A-1    Failed         MetroCluster check failed. Reason : MCC check showed 
 
 
 
+[[gather-information-before-the-upgrade]]
 === 업그레이드하기 전에 정보를 수집합니다
 
 업그레이드하기 전에 루트 볼륨이 암호화된 경우 백업 키 및 기타 정보를 수집하여 이전에 암호화된 루트 볼륨으로 새 컨트롤러를 부팅해야 합니다.
@@ -327,6 +333,7 @@ cluster_B::*
 
 
 
+[[remove-the-existing-configuration-from-the-tiebreaker-or-other-monitoring-software]]
 === Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
 
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)으로 기존 구성을 모니터링하는 경우, 이전 컨트롤러를 교체하기 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
@@ -341,6 +348,7 @@ cluster_B::*
 
 
 
+[[replace-the-old-controllers-and-boot-up-the-new-controllers]]
 == 이전 컨트롤러를 교체하고 새 컨트롤러를 부팅합니다
 
 정보를 수집하고 작업을 재개한 후에는 전환 작업을 계속 진행합니다.
@@ -353,6 +361,7 @@ cluster_B::*
 
 
 
+[[prepare-the-network-configuration-of-the-old-controllers]]
 === 이전 컨트롤러의 네트워크 구성을 준비합니다
 
 새로운 컨트롤러에서 네트워킹이 완전히 다시 시작되도록 하려면 LIF를 공통 포트로 이동한 다음 이전 컨트롤러의 네트워킹 구성을 제거해야 합니다.
@@ -454,6 +463,7 @@ network port ifgrp remove-port -node node1 -ifgrp a1a -port e0d
 
 
 
+[[set-up-the-new-controllers]]
 === 새 컨트롤러를 설정합니다
 
 새 컨트롤러를 랙에 장착하고 케이블을 연결해야 합니다.
@@ -484,6 +494,7 @@ https://docs.netapp.com/platstor/index.jsp["ONTAP 하드웨어 시스템 설명�
 
 
 
+[[netboot-the-new-controllers]]
 === 새 컨트롤러를 netboot합니다
 
 새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
@@ -556,6 +567,7 @@ NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해
 
 
 
+[[clear-the-configuration-on-a-controller-module]]
 === 컨트롤러 모듈의 구성을 지웁니다
 
 MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
@@ -595,6 +607,7 @@ boot_ontap 메뉴
 
 
 
+[[restore-the-hba-configuration]]
 === HBA 구성을 복구합니다
 
 컨트롤러 모듈에 있는 HBA 카드의 존재 여부와 구성에 따라 사이트 용도에 맞게 HBA 카드를 올바르게 구성해야 합니다.
@@ -676,6 +689,7 @@ fcadmin 쇼
 
 
 
+[[reassign-root-aggregate-disks]]
 === 루트 애그리게이트 디스크를 재할당합니다
 
 앞에서 수집한 'sids'를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
@@ -791,6 +805,7 @@ aggr0_node_b_1-root        online      raid_dp, aggr    root, nosnap=on,
 
 
 
+[[boot-up-the-new-controllers]]
 === 새 컨트롤러를 부팅합니다
 
 컨트롤러 플래시 이미지를 업데이트하려면 부팅 메뉴에서 컨트롤러를 재부팅해야 합니다. 암호화가 구성된 경우 추가 단계가 필요합니다.
@@ -1004,6 +1019,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
+[[complete-the-upgrade]]
 == 업그레이드를 완료합니다
 
 자동화 작업은 검증 시스템 검사를 실행한 다음 일시 중지하여 네트워크 연결 상태를 확인할 수 있습니다. 확인 후 리소스 다시 찾기 단계가 시작되고 자동화 작업이 사이트 A에서 스위치백을 실행하고 업그레이드 후 확인 시 일시 중지됩니다. 자동화 작업을 다시 시작하면 업그레이드 후 검사가 수행되고 오류가 발견되지 않으면 업그레이드가 완료된 것으로 표시됩니다.
@@ -1031,6 +1047,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
+[[upgrade-the-nodes-on-clustera]]
 == cluster_A에서 노드를 업그레이드합니다
 
 사이트 A에서 cluster_A의 노드를 업그레이드하려면 업그레이드 작업을 반복해야 합니다
@@ -1044,6 +1061,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-DBC9DEE2-EA
 
 
 
+[[restoring-tiebreaker-monitoring]]
 === Tiebreaker 모니터링 복원 중
 
 이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.

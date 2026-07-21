@@ -15,6 +15,7 @@ summary: 컨트롤러 모듈을 업그레이드한 후 컨트롤러 업그레이
 
 
 
+[[check-the-health-of-the-metrocluster-configuration]]
 == MetroCluster 구성의 상태를 확인합니다
 
 컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.
@@ -57,6 +58,7 @@ MetroCluster 체크 쇼
 
 
 
+[[upgrade-the-nodes-on-clustera]]
 == cluster_A에서 노드를 업그레이드합니다
 
 사이트 A에서 cluster_A의 노드를 업그레이드하려면 업그레이드 작업을 반복해야 합니다
@@ -70,6 +72,7 @@ MetroCluster 체크 쇼
 
 
 
+[[re-add-the-internal-drives-to-the-new-controller]]
 == 새 컨트롤러에 내부 드라이브를 다시 추가합니다.
 
 외장 드라이브만 있는 시스템에서 외장 드라이브와 내장 드라이브(동일한 섀시에 디스크와 컨트롤러가 있는 시스템)가 있는 시스템으로 업그레이드한 경우, 새 시스템의 내장 슬롯에서 제거했거나 장착 해제했던 디스크를 추가하거나 다시 장착할 수 있습니다. 두 사이트 모두 업그레이드가 완료되고 클러스터가 정상 상태이면 언제든지 이 작업을 수행할 수 있습니다.
@@ -81,6 +84,7 @@ NOTE: 이 작업은 특정 업그레이드 조합에만 적용됩니다. 자세�
 
 
 
+[[restore-tiebreaker-or-mediator-monitoring]]
 == Tiebreaker 또는 중재자 모니터링을 복원합니다
 
 MetroCluster 구성 업그레이드를 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다.
@@ -116,6 +120,7 @@ link:../install-ip/concept_mediator_requirements.html["MetroCluster IP 구성에
 
 
 
+[[send-a-custom-autosupport-message-after-maintenance]]
 == 유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다
 
 업그레이드를 완료한 후에는 유지 보수 종료를 알리는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.
@@ -131,6 +136,7 @@ link:../install-ip/concept_mediator_requirements.html["MetroCluster IP 구성에
 
 
 
+[[configure-end-to-end-encryption]]
 == 엔드 투 엔드 암호화 구성
 
 시스템에서 지원되는 경우, nvlog 및 스토리지 복제 데이터와 같은 백엔드 트래픽을 MetroCluster IP 사이트 간에 암호화할 수 있습니다. 을 참조하십시오 link:../maintain/task-configure-encryption.html["엔드 투 엔드 암호화 구성"] 를 참조하십시오.

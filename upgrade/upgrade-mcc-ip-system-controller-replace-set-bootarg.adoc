@@ -18,6 +18,7 @@ NOTE: 업그레이드 조합이 영향을 받는 경우, 성공적인 업그레�
 
 
 
+[[step-1-determine-whether-you-need-to-set-a-bootarg-on-the-old-controllers]]
 == 1단계: 이전 컨트롤러에 bootarg를 설정해야 하는지 확인
 
 업그레이드를 시작하기 전에 다음 정보를 사용하여 이전 컨트롤러에 bootarg를 설정해야 하는지 확인하십시오.
@@ -45,12 +46,14 @@ CAUTION: 업그레이드에 bootarg를 설정할 필요가 없는 경우 이 작
 
 
 
+[[step-2-determine-the-bootarg-you-need-to-set-on-the-old-controllers]]
 == 2단계: 이전 컨트롤러에 설정해야 하는 bootarg를 결정합니다.
 
 영향을 받는 대부분의 업그레이드에는 다음을 설정해야 합니다. `hw.cxgbe.toe_keepalive_disable` 이전 컨트롤러의 bootarg.  그러나 특정 업그레이드 경로에서는 다음을 설정해야 합니다. `bootarg.siw.interop_enabled` 대신 bootarg를 사용하세요.
 
 다음 표를 사용하여 특정 업그레이드 조합에 대해 설정해야 하는 부트카를 결정합니다.
 
+[[upgrade_paths_bootarg_assisted]]
 [cols="2*"]
 |===
 | 업그레이드 대상... | bootarg 설정... 
@@ -76,6 +79,7 @@ AFF A70, AFF A90, AFF A1K, FAS70, FAS90, AFF C80, AFF A50, AFF A30, AFF C30, AFF
 |===
 
 
+[[step-3-set-the-required-bootarg-on-the-old-controllers]]
 == 3단계: 이전 컨트롤러에 필요한 bootarg 설정
 
 업그레이드 조합에 필요한 bootarg를 확인한 후에는 이전 컨트롤러에서 bootarg를 설정하는 단계를 따르십시오.

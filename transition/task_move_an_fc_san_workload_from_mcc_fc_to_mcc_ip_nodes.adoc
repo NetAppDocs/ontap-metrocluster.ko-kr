@@ -15,6 +15,7 @@ MetroCluster FC에서 IP 노드로 무중단 전환하는 경우 FC SAN 호스�
 
 
 
+[[move-an-fc-san-workload-from-metrocluster-fc-to-metrocluster-ip-nodes]]
 == FC SAN 워크로드를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다
 
 .단계

@@ -13,6 +13,7 @@ summary: '대부분의 경우 이더넷 스위치는 ONTAP에 의해 자동으�
 
 
 
+[[create-a-switch-entry-so-that-ontap-can-monitor-it]]
 == ONTAP에서 모니터링할 수 있도록 스위치 항목을 만듭니다
 
 .이 작업에 대해
@@ -26,6 +27,7 @@ system switch ethernet create -device DeviceName -address 1.2.3.4 -snmp-version 
 
 
 
+[[disable-monitoring-without-deleting-the-switch]]
 == 스위치를 삭제하지 않고 모니터링을 비활성화합니다
 
 특정 스위치에 대한 모니터링을 일시 중지하거나 중지하지만 향후 모니터링을 위해 유지하려는 경우 `is-monitoring-enabled-admim` 매개 변수를 삭제하는 대신 매개 변수를 수정합니다.
@@ -40,6 +42,7 @@ system switch ethernet modify -device DeviceName -is-monitoring-enabled-admin fa
 
 
 
+[[remove-a-switch-you-no-longer-need]]
 == 더 이상 필요하지 않은 스위치를 제거합니다
 
  `system switch ethernet delete`연결이 끊겼거나 더 이상 필요하지 않은 스위치를 삭제하는 데 사용합니다.

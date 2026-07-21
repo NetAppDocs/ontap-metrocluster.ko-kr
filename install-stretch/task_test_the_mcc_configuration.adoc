@@ -15,6 +15,7 @@ summary: 오류 시나리오를 테스트하여 MetroCluster 구성이 올바르
 
 
 
+[[verifying-negotiated-switchover]]
 == 협상된 전환을 확인하는 중입니다
 
 협상된(계획된) 전환 작업을 테스트하여 중단 없는 데이터 가용성을 확인할 수 있습니다.
@@ -111,6 +112,7 @@ cluster_A::> metrocluster operation show
 
 
 
+[[verifying-healing-and-manual-switchback]]
 == 복구 및 수동 스위치백을 확인하는 중입니다
 
 협상된 전환 후 클러스터를 원래 데이터 센터로 다시 전환하여 복구 및 수동 스위치백 작업을 테스트하여 데이터 가용성이 영향을 받지 않는지(SMB 및 Solaris FC 구성은 제외) 확인할 수 있습니다.
@@ -239,6 +241,7 @@ cluster_A::> metrocluster operation show
 
 
 
+[[loss-of-a-single-fc-to-sas-bridge]]
 == 단일 FC-to-SAS 브리지의 손실
 
 단일 FC-to-SAS 브리지의 장애를 테스트하여 단일 장애 지점이 없는지 확인할 수 있습니다.
@@ -293,6 +296,7 @@ Disk             Error Type        Error Text
 
 
 
+[[verifying-operation-after-power-line-disruption]]
 == 전력선 작업 중단 후 작동 확인
 
 PDU의 장애에 대한 MetroCluster 구성 응답을 테스트할 수 있습니다.
@@ -347,6 +351,7 @@ Power               Critical condition is detected in storage shelf power supply
 
 
 
+[[verifying-operation-after-loss-of-a-single-storage-shelf]]
 == 단일 스토리지 쉘프 손실 후 작업 확인
 
 단일 스토리지 쉘프의 장애를 테스트하여 단일 장애 지점이 없는지 확인할 수 있습니다.

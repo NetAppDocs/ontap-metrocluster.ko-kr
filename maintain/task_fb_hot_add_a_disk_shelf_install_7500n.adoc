@@ -15,6 +15,8 @@ summary: 성능을 저하시키지 않고 스토리지를 증가하려는 경우
 
 
 
+[[step-1-prepare-to-hot-add-a-sas-disk-shelf]]
+[[prepare_to_hot_add_disk]]
 == 1단계: SAS 디스크 쉘프를 핫 추가할 준비를 합니다
 
 SAS 디스크 쉘프의 핫 추가를 준비하려면 디스크 드라이브 및 디스크 쉘프 펌웨어와 함께 문서를 다운로드해야 합니다.
@@ -61,6 +63,8 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["NetApp
 
 
 
+[[step-2-hot-add-a-disk-shelf]]
+[[step_2_hot_add_shelf]]
 == 2단계: 디스크 쉘프를 핫 추가
 
 다음 절차를 사용하여 디스크 쉘프를 스택에 핫 추가합니다.

@@ -23,6 +23,7 @@ NOTE: Tiebreaker 1.6 이상 버전을 설치한 후에는 link:concept_configuri
 
 
 
+[[install-or-upgrade-to-tiebreaker-1-6p1]]
 == Tiebreaker 1.6P1을(를) 설치하거나 업그레이드합니다
 
 Tiebreaker 1.6P1을 설치하거나 Tiebreaker 1.6, 1.5 또는 1.4에서 Tiebreaker 1.6P1로 업그레이드할 수 있습니다.
@@ -771,6 +772,7 @@ Cleaning up / removing...
 
 
 
+[[install-or-upgrade-to-tiebreaker-1-6]]
 == Tiebreaker 1.6를 설치하거나 업그레이드합니다
 
 Tiebreaker 1.6을 설치하거나 Tiebreaker 1.5 또는 1.4에서 Tiebreaker 1.6으로 업그레이드할 수 있습니다.

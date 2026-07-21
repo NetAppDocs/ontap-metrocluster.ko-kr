@@ -81,6 +81,7 @@ link:task_recover_from_a_multi_controller_and_or_storage_failure.html["멀티 �
 |===
 
 
+[[controller-module-failure-scenarios-during-metrocluster-installation]]
 == MetroCluster 설치 중 컨트롤러 모듈 장애 시나리오
 
 MetroCluster 구성 절차 중 컨트롤러 모듈 오류에 대응하는 방법은 에 따라 다릅니다 `metrocluster configure` 명령이 완료되었습니다.
@@ -95,6 +96,7 @@ NOTE: 의 단계를 수행해야 합니다 link:https://docs.netapp.com/us-en/on
 
 
 
+[[controller-module-failure-scenarios-during-metrocluster-fc-to-ip-transition]]
 == MetroCluster FC-to-IP 전환 중 컨트롤러 모듈 장애 시나리오
 
 복구 절차는 전환 중에 사이트 장애가 발생할 경우 사용할 수 있습니다. 그러나 구성이 안정적인 혼합 구성인 경우에만 사용할 수 있으며 FC DR 그룹 및 IP DR 그룹이 모두 완전히 구성되어 있습니다. 'MetroCluster node show' 명령의 출력은 8개 노드를 모두 포함하는 두 DR 그룹을 모두 표시해야 합니다.
@@ -104,6 +106,7 @@ IMPORTANT: 노드를 추가하거나 제거하는 중에 전환 중에 장애가
 
 
 
+[[controller-module-failure-scenarios-in-eight-node-metrocluster-configurations]]
 == 8노드 MetroCluster 구성의 컨트롤러 모듈 장애 시나리오
 
 실패 시나리오:
@@ -116,6 +119,7 @@ IMPORTANT: 노드를 추가하거나 제거하는 중에 전환 중에 장애가
 
 
 
+[[single-controller-module-failures-in-a-single-dr-group]]
 === 단일 DR 그룹에서 단일 컨트롤러 모듈 장애 발생
 
 이 경우 장애는 HA 쌍으로 제한됩니다.
@@ -138,6 +142,7 @@ image::../media/mcc_dr_groups_8_node_with_a_single_controller_failure.gif[단일
 
 
 
+[[two-controller-module-failures-in-a-single-dr-group]]
 === 단일 DR 그룹에서 2개의 컨트롤러 모듈 장애 발생
 
 이 경우 장애가 발생하면 전환이 필요합니다. 멀티 컨트롤러 모듈 장애 복구 절차를 사용할 수 있습니다.
@@ -150,6 +155,7 @@ image::../media/mcc_dr_groups_8_node_with_a_multi_controller_failure.gif[다중 
 
 
 
+[[single-controller-module-failures-in-separate-dr-groups]]
 === 별도의 DR 그룹에서 단일 컨트롤러 모듈 장애 발생
 
 이 경우 장애는 별도의 HA 쌍으로 제한됩니다.
@@ -171,6 +177,7 @@ image::../media/mcc_dr_groups_8_node_with_two_single_controller_failures.gif[2�
 
 
 
+[[three-controller-module-failures-spread-across-the-dr-groups]]
 === 3개의 컨트롤러 모듈 장애가 DR 그룹 전체에 분산됩니다
 
 이 경우 장애가 발생하면 전환이 필요합니다. DR 그룹 1에 대해 다중 컨트롤러 모듈 장애 복구 절차를 사용할 수 있습니다.
@@ -185,6 +192,7 @@ image::../media/mcc_dr_groups_8_node_with_a_3_controller_failure.gif[3개의 컨
 
 
 
+[[controller-module-failure-scenarios-in-two-node-metrocluster-configurations]]
 == 2노드 MetroCluster 구성의 컨트롤러 모듈 장애 시나리오
 
 사용하는 절차는 장애 정도에 따라 다릅니다.

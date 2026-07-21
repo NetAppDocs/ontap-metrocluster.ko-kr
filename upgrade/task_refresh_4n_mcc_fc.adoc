@@ -25,6 +25,7 @@ summary: '구성을 8노드 구성으로 확장한 다음 이전의 DR\(재해 �
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -39,6 +40,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[perform-the-refresh-procedure]]
 == 새로 고침 절차를 수행합니다
 
 다음 단계를 사용하여 MetroCluster FC 구성을 업데이트합니다.

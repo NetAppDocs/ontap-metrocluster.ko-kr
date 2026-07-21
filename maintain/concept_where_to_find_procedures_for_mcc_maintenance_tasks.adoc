@@ -15,6 +15,7 @@ MetroCluster 유지 보수 작업을 준비하는 방법과 구성에 맞는 올
 
 
 
+[[prepare-for-maintenance-tasks]]
 == 유지 관리 작업을 준비합니다
 
 유지보수 절차를 수행하기 전에 의 정보를 link:enable-console-logging-before-maintenance.html["MetroCluster 유지 보수를 준비합니다"]검토하십시오.
@@ -24,6 +25,7 @@ NOTE: 유지 관리 작업을 수행하기 전에 콘솔 로깅을 활성화하�
 
 
 
+[[maintenance-procedures-for-different-types-of-metrocluster-configurations]]
 == 다양한 유형의 MetroCluster 구성에 대한 유지 관리 절차
 
 * MetroCluster IP 구성을 사용하는 경우 의 절차를 link:task-modify-ip-netmask-properties.html["MetroCluster IP 구성에 대한 유지 관리 절차"]검토하십시오.
@@ -33,6 +35,7 @@ NOTE: 유지 관리 작업을 수행하기 전에 콘솔 로깅을 활성화하�
 
 
 
+[[all-other-maintenance-procedures]]
 == 기타 모든 유지보수 절차
 
 다음 표에는 위에 나열된 세 섹션에 없는 MetroCluster 유지 보수 관련 절차에 대한 링크가 나와 있습니다.

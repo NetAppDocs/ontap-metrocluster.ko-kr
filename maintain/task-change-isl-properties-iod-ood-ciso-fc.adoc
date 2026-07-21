@@ -15,6 +15,7 @@ Cisco FC 스위치에서 ISL(Inter-Switch Link)을 추가하고, ISL 속도를 �
 
 
 
+[[add-isls-to-a-cisco-fc-switch]]
 == Cisco FC 스위치에 ISL 추가
 
 예를 들어 더 빠른 컨트롤러 또는 더 빠른 스위치를 추가하거나 업그레이드하는 것과 같이 하드웨어를 추가하거나 업그레이드하는 경우 스위치에 ISL을 추가해야 할 수 있습니다.
@@ -79,6 +80,7 @@ Fabric의 두 스위치에서 다음 단계를 수행하여 ISL 접속을 확인
 
 
 
+[[change-isl-port-speeds-on-a-cisco-fc-switch]]
 == Cisco FC 스위치에서 ISL 포트 속도를 변경합니다
 
 스위치에서 ISL 포트의 속도를 변경하여 ISL의 품질을 향상시킬 수 있습니다. 예를 들어, 더 먼 거리를 이동하는 ISL의 속도를 낮출 수 있습니다.
@@ -159,12 +161,14 @@ NOTE: 포트 속도는 16 = 16,000Gbps, 8 = 8,000Gbps, 4 = 4,000Gbps입니다.
 
 
 
+[[reconfigure-the-vsan-to-guarantee-iod-or-ood-of-frames]]
 == VSAN을 재구성하여 IOD 또는 충분한 프레임 구성을 보장합니다
 
 표준 IOD 설정을 권장합니다. 필요한 경우에만 Zood를 재구성해야 합니다.
 
 
 
+[[reconfigure-iod]]
 === IOD를 재구성합니다
 
 프레임의 IOD를 재구성하려면 다음 단계를 수행하십시오.
@@ -227,6 +231,7 @@ FC_switch_B_1# copy running-config startup-config
 
 
 
+[[reconfigure-ood]]
 === 후드를 재구성합니다
 
 프레임의 후드를 재구성하려면 다음 단계를 수행하십시오.

@@ -25,6 +25,7 @@ ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 
 
 
 
+[[perform-the-peering-process-from-site-a]]
 == 사이트 A에서 피어링 프로세스를 수행합니다
 
 이 프로세스는 사이트 A의 시스템 관리자가 수행합니다
@@ -45,6 +46,7 @@ ONTAP 9.8부터 System Manager를 사용하여 MetroCluster IP 구성 작업을 
 
 
 
+[[perform-the-peering-process-from-site-b]]
 == 사이트 B에서 피어링 프로세스를 수행합니다
 
 이 프로세스는 사이트 B의 시스템 관리자가 수행합니다

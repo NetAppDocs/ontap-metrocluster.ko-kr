@@ -15,6 +15,7 @@ summary: 기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확�
 
 
 
+[[update-the-metrocluster-switch-rcfs-before-upgrading-controllers]]
 == 컨트롤러를 업그레이드하기 전에 MetroCluster 스위치 RCF를 업데이트합니다
 
 컨트롤러를 업그레이드하기 전에 기존 플랫폼 및 새 플랫폼 모델에 따라 MetroCluster 스위치 RCF(참조 구성 파일)를 업데이트해야 할 수 있습니다.
@@ -115,6 +116,7 @@ NOTE: 스위치는 다음과 같은 순서로 업데이트해야 합니다. swit
 
 
 
+[[map-ports-from-the-old-nodes-to-the-new-nodes]]
 == 이전 노드의 포트를 새 노드로 매핑합니다
 
 node_A_1-old의 물리적 포트가 node_A_1-new의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 이렇게 하면 node_A_1-new가 업그레이드 후 클러스터의 다른 노드 및 네트워크와 통신할 수 있습니다.
@@ -304,6 +306,7 @@ e0c 및 e0d가 일치하는 포트입니다. 구성을 변경할 필요는 없�
 
 
 
+[[netboot-the-new-controllers]]
 == 새 컨트롤러를 netboot합니다
 
 새 노드를 설치한 후에는 Netboot를 사용하여 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
@@ -386,6 +389,7 @@ NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해
 
 
 
+[[clear-the-configuration-on-a-controller-module]]
 == 컨트롤러 모듈의 구성을 지웁니다
 
 MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.
@@ -425,6 +429,7 @@ boot_ontap 메뉴
 
 
 
+[[verify-metrocluster-health-before-site-upgrade]]
 == 사이트 업그레이드 전에 MetroCluster 상태를 확인하십시오
 
 업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결성을 확인합니다.
@@ -501,6 +506,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[gather-information-before-the-upgrade]]
 == 업그레이드하기 전에 정보를 수집합니다
 
 업그레이드하기 전에 각 노드에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
@@ -737,6 +743,7 @@ dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-sy
 
 
 
+[[remove-mediator-or-tiebreaker-monitoring]]
 == 중재자 또는 타이차단기 모니터링을 제거합니다
 
 플랫폼을 업그레이드하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.
@@ -780,6 +787,7 @@ ONTAP 프롬프트에서 다음 명령을 실행합니다.
 
 
 
+[[send-a-custom-autosupport-message-prior-to-maintenance]]
 == 유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다
 
 유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.

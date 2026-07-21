@@ -15,6 +15,7 @@ MetroCluster Tiebreaker 소프트웨어는 MetroCluster 구성 상태를 모니�
 
 
 
+[[configuring-autosupport]]
 == AutoSupport 구성
 
 기본적으로 AutoSupport 메시지는 Tiebreaker 소프트웨어 설치 후 1주일 후에 NetApp에 전송됩니다. AutoSupport 알림을 트리거하는 이벤트에는 Tiebreaker 소프트웨어 패닉, MetroCluster 구성에서 재해 조건 감지 또는 알 수 없는 MetroCluster 구성 상태가 포함됩니다.
@@ -130,6 +131,7 @@ Autosupport configuration deleted successfully.
 
 
 
+[[snmp-events-and-traps]]
 === SNMP 이벤트 및 트랩
 
 NetApp MetroCluster Tiebreaker 소프트웨어는 SNMP 트랩을 사용하여 중요한 이벤트를 알립니다. 이러한 트랩은 NetApp MIB 파일의 일부입니다. 각 트랩에는 트랩 이름, 심각도, 영향 수준, 타임스탬프 및 메시지와 같은 정보가 포함되어 있습니다.
@@ -187,6 +189,7 @@ SNMP 테스트 트랩
 |===
 
 
+[[displaying-the-status-of-monitoring-operations]]
 == 모니터링 작업의 상태를 표시합니다
 
 MetroCluster 구성에 대한 모니터링 작업의 전체 상태를 표시할 수 있습니다.
@@ -286,6 +289,7 @@ MetroCluster: cluster_B
 
 
 
+[[displaying-metrocluster-configuration-information]]
 == MetroCluster 구성 정보 표시
 
 Tiebreaker 소프트웨어에서 모든 MetroCluster 구성 인스턴스의 모니터 이름 및 IP 주소를 표시할 수 있습니다.
@@ -309,6 +313,7 @@ MetroCluster: North America
 
 
 
+[[creating-dump-files]]
 == 덤프 파일을 생성하는 중입니다
 
 디버깅을 위해 전체 상태를 덤프 파일에 저장합니다.
@@ -329,6 +334,7 @@ MetroCluster Tiebreaker status successfully dumped in file /var/log/netapp/mcctb
 
 
 
+[[disable-tiebreaker-observer-mode]]
 == 타이브레이커 관찰 모드 비활성화
 
 Tiebreaker 소프트웨어의 관찰자 모드를 비활성화하면 사이트 장애가 감지된 후 자동으로 전환이 시작됩니다.

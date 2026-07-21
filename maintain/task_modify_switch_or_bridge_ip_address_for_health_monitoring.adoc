@@ -19,6 +19,7 @@ MetroCluster FC 백엔드 스위치 및 ATTO 브리지의 IP 주소를 수정한
 
 
 
+[[modify-a-switch-ip-address]]
 == 스위치 IP 주소를 수정합니다
 
 MetroCluster FC 백엔드 스위치의 이전 상태 모니터링 IP 주소를 교체합니다.
@@ -54,6 +55,7 @@ MetroCluster FC 백엔드 스위치의 이전 상태 모니터링 IP 주소를 �
 
 
 
+[[modify-an-atto-bridge-ip-address]]
 == ATTO 브리지 IP 주소를 수정합니다
 
 ATTO 브리지의 기존 상태 모니터링 IP 주소를 교체합니다.

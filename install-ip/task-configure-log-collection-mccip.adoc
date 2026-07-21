@@ -29,6 +29,7 @@ CAUTION: Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클�
 ====
 
 
+[[before-you-begin]]
 == 시작하기 전에
 
 * 사용자가 스위치 명령에 액세스할 수 있어야 `show` 합니다. 이러한 사용자를 사용할 수 없는 경우 새 사용자를 만들고 사용자에게 필요한 권한을 부여합니다.
@@ -47,6 +48,7 @@ CAUTION: Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클�
 
 
 
+[[steps]]
 == 단계
 
 [role="tabbed-block"]

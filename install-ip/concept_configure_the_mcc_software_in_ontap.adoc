@@ -19,6 +19,7 @@ image::../media/workflow_mcc_ip_high_level_node_and_cluster_configuration_softwa
 
 
 
+[[configure-eight-node-metrocluster-ip-configurations]]
 == 8노드 MetroCluster IP 구성 구성
 
 8노드 MetroCluster 구성은 2개의 DR 그룹으로 구성됩니다. 첫 번째 DR 그룹을 구성하려면 이 섹션의 작업을 완료하세요. 첫 번째 DR 그룹을 구성한 후 다음 단계를 따르세요. link:../upgrade/task_expand_a_four_node_mcc_ip_configuration.html["4노드 MetroCluster IP 구성을 8노드 구성으로 확장"] .

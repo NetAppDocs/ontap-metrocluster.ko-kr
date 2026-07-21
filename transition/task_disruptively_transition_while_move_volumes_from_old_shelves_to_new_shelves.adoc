@@ -26,6 +26,7 @@ ONTAP 9.8부터 2노드 MetroCluster FC 구성을 4노드 MetroCluster IP 구성
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -40,6 +41,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[requirements-for-transition-when-retiring-old-shelves]]
 == 기존 쉘프를 폐기할 때 필요한 전환 요구 사항
 
 전환 프로세스를 시작하기 전에 기존 MetroCluster FC 구성이 요구사항을 충족하는지 확인해야 합니다.
@@ -88,6 +90,7 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
+[[workflow-for-disruptive-transition-when-moving-data-and-retiring-old-storage-shelves]]
 == 데이터를 이동하고 오래된 스토리지 쉘프를 폐기할 때 시스템 중단을 야기하는 전환 워크플로우
 
 성공적인 전환을 위해서는 특정 워크플로우를 따라야 합니다.
@@ -98,6 +101,7 @@ image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[전환 중
 
 
 
+[[transitioning-the-configuration]]
 == 구성을 전환하는 중입니다
 
 자세한 전환 절차를 따라야 합니다.
@@ -136,6 +140,7 @@ image::../media/workflow_2n_transition_moving_data_to_new_shelves.png[전환 중
 
 
 
+[[migrating-the-root-aggregates]]
 == 루트 애그리게이트 마이그레이션
 
 전환이 완료되면 MetroCluster FC 구성에서 남은 기존 루트 애그리게이트를 MetroCluster IP 구성의 새 쉘프로 마이그레이션할 수 있습니다.
@@ -183,6 +188,7 @@ storage aggregate show 명령을 사용하여 애그리게이트의 동기화 �
 
 
 
+[[migrating-the-data-aggregates]]
 == 데이터 애그리게이트 마이그레이션
 
 새 쉘프에서 데이터 애그리게이트를 생성하고 볼륨 이동을 사용하여 데이터 볼륨을 이전 쉘프에서 새 쉘프의 애그리게이트로 전송합니다.
@@ -195,6 +201,7 @@ http://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/GUID-
 
 
 
+[[retiring-shelves-moved-from-nodea1-fc-and-nodea2-fc]]
 == 폐기 쉘프가 node_A_1-FC 및 node_A_2-FC에서 이동되었습니다
 
 기존 스토리지 쉘프를 원래 MetroCluster FC 구성에서 제거합니다. 이 쉘프는 원래 노드_A_1-FC 및 노드_A_2-FC에 의해 소유되었습니다.
@@ -274,6 +281,7 @@ cluster_B::>
 
 
 
+[[completing-transition]]
 == 전이를 완료하는 중입니다
 
 이전 컨트롤러 모듈을 제거한 상태에서 전환 프로세스를 완료할 수 있습니다.

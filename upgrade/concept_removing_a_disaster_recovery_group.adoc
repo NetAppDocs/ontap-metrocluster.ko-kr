@@ -18,6 +18,7 @@ NOTE: 전환 및 시스템 새로 고침 워크플로 중에 이러한 단계를
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -32,6 +33,7 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[remove-the-dr-group-nodes-from-each-cluster]]
 == 각 클러스터에서 DR 그룹 노드를 제거합니다.
 
 이 절차는 ONTAP 9.8부터 지원됩니다.  ONTAP 9.7 이하 버전을 실행하는 시스템의 경우 기술 자료 문서를 참조하세요.link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_remove_a_DR-Group_from_a_MetroCluster["MetroCluster 구성에서 DR 그룹을 제거하는 방법"^] .

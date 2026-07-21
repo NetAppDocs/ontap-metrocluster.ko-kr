@@ -15,12 +15,14 @@ MetroCluster Tiebreaker 1.5 이상을 실행하는 구성의 경우 호스트 OS
 
 
 
+[[secure-the-host]]
 == 호스트를 보호합니다
 
 다음 지침은 Tiebreaker 소프트웨어가 설치된 호스트를 고정하는 방법을 보여줍니다.
 
 
 
+[[user-management-recommendations]]
 === 사용자 관리 권장 사항
 
 * "루트" 사용자의 액세스를 제한합니다.
@@ -52,6 +54,7 @@ NOTE: 이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 
 
 
 
+[[baseline-host-security-recommendations]]
 === 기본 호스트 보안 권장 사항
 
 * 디스크 암호화를 사용합니다
@@ -101,6 +104,7 @@ NOTE: OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 �
 
 
 
+[[secure-the-database-installation]]
 == 데이터베이스 설치를 보호합니다
 
 다음 지침은 MariaDB 10.x 데이터베이스 설치를 보호하고 강화하는 방법을 보여줍니다.

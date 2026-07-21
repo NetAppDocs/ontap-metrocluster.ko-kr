@@ -15,9 +15,22 @@ ONTAP Mediator 지원을 위한 새로운 MetroCluster IP 기능과 향상된 �
 
 ONTAP Mediator의 각 릴리스에 대한 기능 및 향상된 기능에 대한 자세한 내용은 다음을 참조하세요.link:https://docs.netapp.com/us-en/ontap/mediator/whats-new-concept.html["ONTAP Mediator의 새로운 기능"^] .
 
-[cols="4,2"]
+[cols="4,1"]
 |===
 | ONTAP 중재자 기능 | 처음부터 사용할 수 있습니다 
+
+
+ a| 
+ONTAP Mediator 1.12.1부터 HTTPS로 구성된 단일 ONTAP Mediator 인스턴스는 다음 구성을 동시에 모니터링할 수 있습니다.
+
+* 최소 8개의 CPU 코어 및 최소 16GB의 RAM이 있는 호스트에 설치된 경우, 최대 10개의 4노드 또는 5개의 8노드 MetroCluster IP 구성이 가능합니다.
+* 2코어 CPU가 있는 호스트 OS에 설치된 경우, 4노드 MetroCluster IP 구성 하나와 SnapMirror 활성 동기화 피어 관계 하나.
+
+
+link:../install-ip/concept_mediator_requirements.html#mediator-multiple-mccip["ONTAP Mediator에서 여러 MetroCluster IP 구성을 지원하는 방법에 대해 자세히 알아보세요."].
+ a| 
+ONTAP 9.19.1
+
 
 
  a| 

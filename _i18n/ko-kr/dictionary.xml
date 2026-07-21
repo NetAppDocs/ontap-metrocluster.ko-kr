@@ -12067,7 +12067,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8e30d2803b603d7bc1c9f3584b57c881" category="section-title">기타 지원되는 모든 MetroCluster IP 컨트롤러 업그레이드</block>
   <block id="17c7cb78cf2f2286d3034a3959bc800e" category="paragraph">이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.</block>
   <block id="8430e377fbc83f194587bd875ac99b4b" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 수동으로 업그레이드하기 위해 지원되는 플랫폼 조합을 보여 줍니다.</block>
-  <block id="0ef5c60e365bf027441cd538ad7f03c9" category="paragraph"><block ref="0ef5c60e365bf027441cd538ad7f03c9" category="inline-link-rx"></block></block>
   <block id="218202ab36e31b93dc4b302be0cb5ac3" category="paragraph">NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.</block>
   <block id="7a15fb36e18a42514f358533c9af4dae" category="list-text">유지 관리 중에는 AutoSupport를 활성화된 상태로 둡니다.</block>
   <block id="a6c9ebf435ce24dbca32935db32b4e35" category="list-text">유지 관리 전후에 유지 관리 AutoSupport 메시지를 트리거하여 유지 관리 활동 기간 동안 케이스 생성을 비활성화합니다.</block>
@@ -14460,22 +14459,15 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c42f4f6a3afab85eadf7182136f86159" category="paragraph">cluster_B에서 다음 명령을 실행합니다.</block>
   <block id="29bf21eb413a03bb7bc5f794a7cf8c1a" category="paragraph"><block ref="cffe1374633319381a16ddd247851dc5" prefix="" category="inline-code"></block></block>
   <block id="aa9e0907bac12bc372803051430c32c6" category="sidebar">타이브레이커 구성 워크플로우</block>
-  <block id="a5d67e5f005807bbd4e62ed129a259ce" category="list-text">ONTAP 9.19.1 및 ONTAP Mediator 1.12 버전부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator를 구성할 수 있습니다. ONTAP Mediator를 HTTPS로 구성하면 ONTAP Mediator 인스턴스당 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. 자세한 내용은 <block ref="fb70fb2de5d85ae7e6c4e86202287fd7" category="inline-xref-macro-rx"></block>을 참조하세요.</block>
-  <block id="f7709b306d9f954e054f6c2c41684b09" category="list-text">ONTAP 9.18.1 및 ONTAP Mediator 1.11 버전부터 iSCSI로 구성된 단일 ONTAP Mediator 인스턴스는 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다. ONTAP 9.17.1 및 ONTAP Mediator 1.10 이하 버전에서는 iSCSI로 구성된 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
   <block id="ff2e8285b2705731a1dbc046ff579939" category="section-title">ONTAP Mediator에 사용할 통신 프로토콜을 선택하십시오</block>
   <block id="2988e38df3c50f205b083a96b48e66b2" category="paragraph">기본적으로 MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 LUN에 액세스합니다. ONTAP Mediator는 iSCSI를 제공하기 위해 SCST 패키지에 의존합니다. iSCSI 세션은 난독화된 시스템 생성 사전 공유 키를 사용하는 CHAP(Challenge Handshake Authentication Protocol)를 사용하여 인증되지만 완전히 암호화되지는 않습니다.</block>
   <block id="a04438ec01124e8d15738c27a00348bf" category="paragraph">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator 인스턴스를 구성할 수 있습니다. HTTPS는 SSL/TLS를 사용하여 전체 세션을 암호화하는 안전한 통신 프로토콜로, iSCSI에 비해 보안이 강화되었습니다.</block>
   <block id="b42fb506e0a277ccd2615b75bb8a3a5c" category="paragraph">CLI를 사용하여 HTTPS를 사용하는 ONTAP Mediator만 구성할 수 있습니다. System Manager는 지원되지 않습니다.</block>
-  <block id="2044beabf4d1eb2b2680bc62daa3aab5" category="list-text">ONTAP Mediator를 HTTPS로 구성하는 경우, 하나의 ONTAP Mediator 인스턴스는 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. 여러 MetroCluster IP 구성을 동시에 모니터링하는 것은 지원되지 않습니다.</block>
-  <block id="32b706cbb06a2ceca20fffcd66e9ae41" category="list-text">여러 MetroCluster IP 구성을 모니터링하기 위해 HTTPS로 구성된 ONTAP Mediator가 필요한 경우 각 MetroCluster IP 구성에 대해 별도의 ONTAP Mediator 인스턴스를 구성해야 합니다. MetroCluster IP에 대해 HTTPS로 ONTAP Mediator를 구성하기 전에 MetroCluster IP 환경에 대한 요구 사항을 신중하게 평가해야 합니다.</block>
-  <block id="71888cafc5f37e89171c789646f08323" category="list-text">하나의 ONTAP Mediator 인스턴스를 사용하여 여러 MetroCluster IP 구성을 모니터링하려면 HTTPS 대신 iSCSI를 사용하여 ONTAP Mediator를 구성해야 합니다.</block>
   <block id="aee8b11880bbfda9a19f6b5c0201bb10" category="inline-link-macro">ONTAP Mediator의 HTTPS 및 iSCSI 설치 옵션</block>
-  <block id="d587f9cd6611c03a53aad3b1f8481b7e" category="paragraph">자세한 내용은 <block ref="a82349e7909b6ff560747d8c59eb3903" category="inline-link-macro-rx"></block>을 참조하세요.</block>
   <block id="510858af4fd5ff2fdd1d6ee4023ce87b" category="admonition">HTTPS를 사용하는 ONTAP Mediator는 CLI를 통해서만 구성할 수 있습니다. System Manager는 지원되지 않습니다. 자세한 내용은 <block ref="3f8b2848d40ea77bb348f699b2b131f7" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="51b6fc28895a5ae5d8e89c18d1098c46" category="list-text">MetroCluster IP 구성의 모든 노드에 있는 ONTAP 인터페이스에서 이 작업을 수행할 수 있습니다.</block>
   <block id="91544ad1eb81a9d4f37c7f015a80a6e3" category="list-text">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 iSCSI 및 HTTPS를 지원하거나 HTTPS만 지원하는 ONTAP Mediator를 설치할 수 있습니다. HTTPS만 지원하도록 ONTAP Mediator를 설치한 경우 iSCSI를 사용하여 Mediator를 구성할 수 없습니다.</block>
   <block id="ea27c86a804da95f3ba467f50f563b54" category="list-text">명령어에서<block ref="e863b9251fab0007712da0204a3a3b3a" prefix=" " category="inline-code"></block> 매개변수를 지정하지 않으면<block ref="a5c98f88638af0e80910bbd237827b45" prefix=" " category="inline-code"></block> 기본 iSCSI 프로토콜이 사용됩니다.</block>
-  <block id="ca23eb5b9e4d3b2edb3057850d7f6dc6" category="list-text">ONTAP Mediator를 HTTPS로 구성하는 경우, 하나의 ONTAP Mediator 인스턴스는 하나의 MetroCluster IP 구성만 모니터링할 수 있습니다. ONTAP Mediator가 HTTPS로 구성된 경우 여러 MetroCluster IP 구성을 동시에 모니터링하는 것은 지원되지 않습니다.</block>
   <block id="aaf4e1ef74980c88980c89174b2471f8" category="open-title">HTTPS로 ONTAP Mediator 구성</block>
   <block id="b82b51c4febccc1c60b46f5674c43ea7" category="paragraph">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 MetroCluster IP 구성에서 통신에 HTTPS를 사용하는 ONTAP Mediator를 구성할 수 있습니다.</block>
   <block id="55c1e4c6be6d4ebab5e4e6cf15e4fd9b" category="list-text">ONTAP Mediator Linux VM/호스트 소프트웨어 설치 위치에서 ONTAP Mediator CA 인증서를 찾으십시오.</block>
@@ -14609,4 +14601,41 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8d540b15dac9bee2f802b66dc16a6a0b" category="paragraph">자세한 내용은 <block ref="36bbe754bd1c078bf3bb1818fc549f54" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
   <block id="f5092147d9fdb4405ffa0ded1187160b" category="section-title">구형 플랫폼 모델을 추가할 때 중요한 정보</block>
   <block id="de340c0f1f6d36d5e5b0117bb6d6e359" category="admonition">4노드 FC에서 8노드 IP로 전환하는 경우, 두 번째 DR 그룹을 추가하기 전에 4노드 FC에서 8노드 IP로의 RCF를 적용할 수 있습니다. 4노드 FC에서 4노드 IP로의 RCF를 먼저 적용할 필요는 없습니다.</block>
+  <block id="e446b7aa15d19fb426155674878c63fb" category="list-text">ONTAP 9.19.1 및 ONTAP Mediator 1.12 버전부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator를 구성할 수 있습니다. 자세한 내용은 <block ref="fb70fb2de5d85ae7e6c4e86202287fd7" category="inline-xref-macro-rx"></block>을 참조하십시오.</block>
+  <block id="9f26b34d7871bca369159b44ab27880d" category="paragraph">ONTAP Mediator는 iSCSI와 HTTPS를 모두 지원하거나 HTTPS만 지원하도록 설치할 수 있습니다. 자세한 내용은 <block ref="a82349e7909b6ff560747d8c59eb3903" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="2730c7709b8ac3af8d089b14ec12b8b3" category="paragraph">ONTAP Mediator는 iSCSI 또는 HTTPS로 구성할 수 있으며, 둘 다 동시에 사용할 수는 없습니다. 배포 환경에서 프로토콜을 혼합하여 사용하는 것은 지원되지 않습니다.</block>
+  <block id="fe22847581eb5d6a05ddb7f8a50a61f5" category="paragraph">여러 MetroCluster IP 구성을 모니터링하기 위한 지원은 iSCSI 또는 HTTPS용 ONTAP Mediator를 구성하는지 여부에 따라 달라집니다. 자세한 내용은 <block ref="946d16160b4c150a172b373dca588f20" category="inline-xref-macro-rx"></block>을 참조하십시오.</block>
+  <block id="c2cbdc82e4189820757400b0b29fe4e3" category="section-title">ONTAP Mediator를 사용하여 여러 MetroCluster IP 구성을 모니터링합니다</block>
+  <block id="e8284dca37d44983bb657d721bd91191" category="paragraph">ONTAP Mediator는 여러 MetroCluster IP 구성을 동시에 모니터링하는 데 사용할 수 있습니다. 지원 여부는 ONTAP Mediator를 iSCSI 또는 HTTPS로 구성하는지에 따라 달라집니다.</block>
+  <block id="3db1373250546e0e6c50a7f44b42c314" category="section-title">HTTPS로 구성된 ONTAP Mediator</block>
+  <block id="90d6ab53063cebbd88b7ed1e0ab122ba" category="paragraph">ONTAP 9.19.1 및 ONTAP Mediator 1.12 버전부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator 인스턴스를 구성할 수 있습니다. 이 섹션에서는 하나의 HTTPS ONTAP Mediator 인스턴스를 사용하여 여러 구성을 모니터링하는 방법에 대한 지원을 설명합니다.</block>
+  <block id="b83a2bb33fe76cd61071d411833a0ba3" category="admonition">이 섹션에 설명된 제한 사항을 초과하여 여러 HTTPS ONTAP Mediator 인스턴스를 추가하려는 시도는 지원되지 않습니다.</block>
+  <block id="4515cc5d413a867b1672b5f59f97a672" category="paragraph-title">여러 MetroCluster IP 구성 모니터링</block>
+  <block id="aa5f8705e757646b73450042203bacca" category="paragraph">HTTPS로 구성된 ONTAP Mediator는 여러 MetroCluster IP 구성을 모니터링하는 데 다음과 같은 기능을 지원합니다. 지원 여부는 ONTAP Mediator 버전, 호스트 운영 체제 사양, 그리고 MetroCluster IP 구성이 4노드인지 8노드인지에 따라 달라집니다.</block>
+  <block id="c5c31e0edabd430de173af2cac963c86" category="cell">ONTAP Mediator 버전</block>
+  <block id="f7b3d755e62a464bc12708244776f2e9" category="cell">호스트 운영 체제 요구 사항</block>
+  <block id="577cc0467087c489fee42539bacf45a2" category="cell">4노드 MetroCluster IP 구성</block>
+  <block id="e7eb66881eadc8e95972705861c7eeb7" category="cell">8노드 MetroCluster IP 구성</block>
+  <block id="b12cb2f95b2516af000240d2ebc65c26" category="cell">1.12</block>
+  <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">해당 없음</block>
+  <block id="49573f0607b120e551193b0b57aa2da2" category="cell">1.12.1 이상</block>
+  <block id="041501b796740edeb754bd8dc37104be" category="cell">CPU 코어가 8개 미만이고 RAM이 8GB 이상인 호스트</block>
+  <block id="97504429d428f1e2ce3f8c53683d267c" category="cell">최소 8개의 CPU 코어와 최소 16GB의 RAM을 갖춘 호스트</block>
+  <block id="61071a15a124f334297605cfb6bc24f5" category="paragraph-title">MetroCluster IP 및 SnapMirror 활성 동기화 구성 모니터링</block>
+  <block id="af53f36b47fffc1a50967c39534911fd" category="paragraph">ONTAP 9.19.1 및 ONTAP Mediator 1.12부터 동일한 ONTAP Mediator 인스턴스를 사용하여 4노드 MetroCluster IP 구성과 SnapMirror 액티브 동기화 클러스터 피어 관계를 동시에 모니터링할 수 있습니다. 구성은 다음 요구 사항을 충족해야 합니다.</block>
+  <block id="3c648448bc26feaa6fe698ce93250b22" category="list-text">ONTAP Mediator 1.12.1 이상 버전이 2코어 CPU를 탑재한 호스트 OS에 설치되어 있습니다.</block>
+  <block id="fe190c90799e5b4b20ff7e381b268855" category="list-text">ONTAP Mediator 인스턴스는 HTTPS 프로토콜로 구성됩니다.</block>
+  <block id="1ee5b212a9f13259be28ddfee09570a4" category="admonition">동일한 ONTAP Mediator 인스턴스를 사용하여 4노드 MetroCluster IP 구성 하나와 SnapMirror 활성 동기화 피어 관계 하나만 모니터링할 수 있습니다.</block>
+  <block id="eb9f146fc1b0b4bc5e3804fa7d20b1a5" category="inline-link-macro">ONTAP SnapMirror active sync에 대해 알아봅니다</block>
+  <block id="254ca2419a10bd0b92c643c14ffde0ac" category="paragraph"><block ref="a4306837dc17e0b89acee99e58330137" category="inline-link-macro-rx"></block>.</block>
+  <block id="0c57822a455dab09c1eb511497a36845" category="section-title">iSCSI로 구성된 ONTAP Mediator</block>
+  <block id="ae12a2067fba1c1b4e50593b69f419ab" category="list-text">ONTAP 9.18.1 및 ONTAP Mediator 1.11 버전부터 iSCSI로 구성된 단일 ONTAP Mediator 인스턴스는 최대 10개의 MetroCluster 구성을 동시에 관리할 수 있습니다.</block>
+  <block id="dfef9e39dc544e0585c324307903abf8" category="list-text">ONTAP 9.17.1 및 ONTAP Mediator 1.10 이하 버전에서는 iSCSI로 구성된 ONTAP Mediator가 최대 5개의 MetroCluster 구성을 동시에 지원할 수 있습니다.</block>
+  <block id="18e51e03dcd599f0c2447939e41a4d77" category="list-text">단일 ONTAP Mediator 인스턴스를 사용하여 여러 MetroCluster IP 구성을 모니터링하는 기능은 ONTAP Mediator를 HTTPS 또는 iSCSI로 구성하는지에 따라 달라집니다. 자세한 내용은 <block ref="a33d207d610307ee71f91f9d61e36ba7" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="14efa24c1616ebd9f707ef3a4db33c39" category="paragraph"><block ref="14efa24c1616ebd9f707ef3a4db33c39" category="inline-link-rx"></block></block>
+  <block id="2c2377c673f182b04f910cbffb651ccb" category="paragraph">ONTAP Mediator 1.12.1부터 HTTPS로 구성된 단일 ONTAP Mediator 인스턴스는 다음 구성을 동시에 모니터링할 수 있습니다.</block>
+  <block id="aaa726d9cedf6c639641890ef798fe00" category="list-text">최소 8개의 CPU 코어 및 최소 16GB의 RAM이 있는 호스트에 설치된 경우, 최대 10개의 4노드 또는 5개의 8노드 MetroCluster IP 구성이 가능합니다.</block>
+  <block id="fec849fc6a76787dab045fcdba41b004" category="list-text">2코어 CPU가 있는 호스트 OS에 설치된 경우, 4노드 MetroCluster IP 구성 하나와 SnapMirror 활성 동기화 피어 관계 하나.</block>
+  <block id="1241530f686624169cbc6250a94efe3b" category="inline-link-macro">ONTAP Mediator에서 여러 MetroCluster IP 구성을 지원하는 방법에 대해 자세히 알아보세요.</block>
+  <block id="93b7a44949c3dc9c153b4a0b58a89938" category="paragraph"><block ref="ec2190c64ae13bbd66508ccf14a8aee4" category="inline-link-macro-rx"></block>.</block>
 </blocks>

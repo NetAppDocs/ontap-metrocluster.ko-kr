@@ -21,6 +21,7 @@ MetroCluster 노드를 FC에서 IP로 전환한 후 iSCSI 호스트 연결을 �
 
 
 
+[[step-1-set-up-new-iscsi-connections]]
 == 1단계: 새 iSCSI 연결을 설정합니다
 
 iSCSI 연결을 이동하려면 새 노드에 대한 새 iSCSI 연결을 설정합니다.
@@ -184,6 +185,7 @@ size=2.0G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_han
 ----
 
 
+[[step-2-add-the-new-nodes-as-reporting-nodes]]
 == 2단계: 새 노드를 보고 노드로 추가합니다
 
 새 노드에 대한 연결을 설정한 후 새 노드를 보고 노드로 추가합니다.
@@ -373,6 +375,7 @@ up        secondary  sdah    host5        iscsi_lf__n3_p1_
 
 
 
+[[step-3-remove-reporting-nodes-and-rescan-paths]]
 == 3단계: 보고 노드를 제거하고 경로를 다시 검색합니다
 
 보고 노드를 제거하고 경로를 다시 검색해야 합니다.

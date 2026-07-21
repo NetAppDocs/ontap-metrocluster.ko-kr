@@ -18,6 +18,7 @@ summary: 클러스터를 피어로 사용하고, 루트 애그리게이트를 �
 
 
 
+[[disabling-automatic-drive-assignment-if-doing-manual-assignment-in-ontap-9-4]]
 == 자동 드라이브 할당 비활성화(ONTAP 9.4에서 수동 할당을 수행하는 경우)
 
 ONTAP 9.4에서 MetroCluster IP 구성의 사이트당 외부 스토리지 쉘프가 4개 미만인 경우 모든 노드에서 자동 드라이브 할당을 해제하고 드라이브를 수동으로 할당해야 합니다.
@@ -39,6 +40,7 @@ link:concept_considerations_drive_assignment.html["ONTAP 9.4 이상의 자동 �
 
 
 
+[[verifying-drive-assignment-of-pool-0-drives]]
 == 풀 0 드라이브의 드라이브 할당을 확인하는 중입니다
 
 원격 드라이브가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
@@ -153,6 +155,7 @@ cluster_B::>
 
 
 
+[[peering-the-clusters]]
 == 클러스터 피어링
 
 MetroCluster 구성의 클러스터는 서로 통신하고 MetroCluster 재해 복구에 필요한 데이터 미러링을 수행할 수 있도록 피어 관계에 있어야 합니다.
@@ -166,12 +169,14 @@ link:concept_considerations_peering.html#considerations-when-sharing-data-ports[
 
 
 
+[[configuring-intercluster-lifs-for-cluster-peering]]
 == 클러스터 피어링을 위한 인터클러스터 LIF 구성
 
 MetroCluster 파트너 클러스터 간 통신에 사용되는 포트에 대한 인터클러스터 LIF를 생성해야 합니다. 데이터 트래픽도 있는 전용 포트 또는 포트를 사용할 수 있습니다.
 
 
 
+[[configuring-intercluster-lifs-on-dedicated-ports]]
 === 전용 포트에 대한 인터클러스터 LIF 구성
 
 전용 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 일반적으로 복제 트래픽에 사용할 수 있는 대역폭이 증가합니다.
@@ -386,6 +391,7 @@ link:concept_considerations_peering.html#considerations-when-using-dedicated-por
 
 
 
+[[configuring-intercluster-lifs-on-shared-data-ports]]
 === 공유 데이터 포트에 대한 인터클러스터 LIF 구성
 
 데이터 네트워크와 공유하는 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 이렇게 하면 인터클러스터 네트워킹에 필요한 포트 수가 줄어듭니다.
@@ -527,6 +533,7 @@ link:concept_considerations_peering.html#considerations-when-sharing-data-ports[
 
 
 
+[[creating-a-cluster-peer-relationship]]
 == 클러스터 피어 관계 생성
 
 클러스터 피어 생성 명령을 사용하여 로컬 클러스터와 원격 클러스터 간에 피어 관계를 생성할 수 있습니다. 피어 관계가 생성된 후 원격 클러스터에서 클러스터 피어 생성을 실행하여 로컬 클러스터에 인증할 수 있습니다.
@@ -650,6 +657,7 @@ cluster01-02
 
 
 
+[[creating-the-dr-group]]
 == DR 그룹 생성
 
 클러스터 간에 DR(재해 복구) 그룹 관계를 생성해야 합니다.
@@ -718,6 +726,7 @@ Cluster_A::> metrocluster configuration-settings dr-group create -partner-cluste
 
 
 
+[[configuring-and-connecting-the-metrocluster-ip-interfaces]]
 == MetroCluster IP 인터페이스 구성 및 연결
 
 각 노드의 스토리지 및 비휘발성 캐시의 복제에 사용되는 MetroCluster IP 인터페이스를 구성해야 합니다. 그런 다음 MetroCluster IP 인터페이스를 사용하여 연결을 설정합니다. 이렇게 하면 스토리지 복제에 대한 iSCSI 연결이 생성됩니다.
@@ -1282,6 +1291,7 @@ cluster_B::>
 
 
 
+[[verifying-or-manually-performing-pool-1-drives-assignment]]
 == 풀 1 드라이브 할당을 확인하거나 수동으로 수행합니다
 
 스토리지 구성에 따라 풀 1 드라이브 할당을 확인하거나 MetroCluster IP 구성의 각 노드에 대해 풀 1에 드라이브를 수동으로 할당해야 합니다. 사용하는 절차는 사용 중인 ONTAP 버전에 따라 다릅니다.
@@ -1321,6 +1331,7 @@ cluster_B::>
 |===
 
 
+[[verifying-disk-assignment-for-pool-1-disks]]
 === 풀 1 디스크에 대한 디스크 할당을 확인하는 중입니다
 
 원격 디스크가 노드에 표시되고 올바르게 할당되었는지 확인해야 합니다.
@@ -1523,6 +1534,7 @@ cluster_A::>
 
 
 
+[[manually-assigning-drives-for-pool-1-ontap-9-4-or-later]]
 === 풀 1에 드라이브 수동 할당(ONTAP 9.4 이상)
 
 시스템이 출하 시 사전 구성되어 있지 않고 자동 드라이브 할당 요구 사항을 충족하지 않는 경우 원격 풀 1 드라이브를 수동으로 할당해야 합니다.
@@ -1611,6 +1623,7 @@ cluster_A::>
 
 
 
+[[manually-assigning-disks-for-pool-1-ontap-9-3]]
 === 풀 1에 대해 수동으로 디스크 할당(ONTAP 9.3)
 
 각 노드에 대해 디스크 쉘프가 3개 이상 있는 경우 ONTAP의 자동 할당 기능을 사용하여 원격(pool1) 디스크를 자동으로 할당합니다.
@@ -1729,6 +1742,7 @@ cluster_A::>
 
 
 
+[[enabling-automatic-drive-assignment-in-ontap-9-4]]
 == ONTAP 9.4에서 자동 드라이브 할당을 활성화합니다
 
 .이 작업에 대해
@@ -1748,6 +1762,7 @@ MetroCluster IP 구성의 모든 노드에서 이 명령을 실행해야 합니�
 
 
 
+[[mirroring-the-root-aggregates]]
 == 루트 애그리게이트를 미러링합니다
 
 루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다.
@@ -1784,6 +1799,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["논�
 
 
 
+[[creating-a-mirrored-data-aggregate-on-each-node]]
 == 각 노드에서 미러링된 데이터 애그리게이트 생성
 
 DR 그룹의 각 노드에 미러링된 데이터 애그리게이트를 만들어야 합니다.
@@ -1853,6 +1869,7 @@ cluster_A::> storage aggregate create aggr1_node_A_1 -diskcount 10 -node node_A_
 
 
 
+[[implementing-the-metrocluster-configuration]]
 == MetroCluster 구성 구현
 
 MetroCluster 구성에서 데이터 보호를 시작하려면 'MetroCluster configure' 명령을 실행해야 합니다.
@@ -2012,12 +2029,14 @@ Remote: cluster_A         Configuration state configured
 
 
 
+[[configuring-the-second-dr-group-in-an-eight-node-configuration]]
 == 8노드 구성에서 두 번째 DR 그룹 구성
 
 이전 작업을 반복하여 두 번째 DR 그룹의 노드를 구성합니다.
 
 
 
+[[creating-unmirrored-data-aggregates]]
 == 미러링되지 않은 데이터 애그리게이트를 생성합니다
 
 선택적으로 MetroCluster 구성에서 제공되는 이중 미러링이 필요하지 않은 데이터에 대해 미러링되지 않은 데이터 애그리게이트를 만들 수 있습니다.
@@ -2117,6 +2136,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["디�
 
 
 
+[[checking-the-metrocluster-configuration]]
 == MetroCluster 구성 확인
 
 MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다.
@@ -2257,6 +2277,7 @@ link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트�
 
 
 
+[[completing-ontap-configuration]]
 == ONTAP 구성을 완료하는 중입니다
 
 MetroCluster 구성을 구성, 설정 및 점검한 후에는 필요에 따라 SVM, 네트워크 인터페이스 및 기타 ONTAP 기능을 추가하여 클러스터 구성을 완료할 수 있습니다.

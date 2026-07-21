@@ -59,6 +59,7 @@ https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
 
 
 
+[[cisco-switch-license-requirements]]
 == Cisco 스위치 라이센스 요구 사항
 
 패브릭 연결 MetroCluster 구성의 Cisco 스위치에는 특정 기능 기반 라이센스가 필요할 수 있습니다. 이 라이센스를 사용하면 스위치에서 QoS 또는 장거리 모드 크레딧과 같은 기능을 사용할 수 있습니다. MetroCluster 구성의 4개 스위치 모두에 필요한 기능 기반 라이센스를 설치해야 합니다.
@@ -89,6 +90,7 @@ NOTE: Cisco MDS 9250i 스위치에는 고정 1/10 GbE IP 스토리지 서비스 
 
 
 
+[[setting-the-cisco-fc-switch-to-factory-defaults]]
 == Cisco FC 스위치를 공장 출하 시 기본값으로 설정
 
 성공적인 구성을 위해서는 스위치를 공장 출하 시 기본값으로 설정해야 합니다. 이렇게 하면 스위치가 클린 구성에서 시작됩니다.
@@ -137,6 +139,7 @@ FC_Switch_B_1# write erase
 ----
 
 
+[[configure-the-cisco-fc-switch-basic-settings-and-community-string]]
 == Cisco FC 스위치 기본 설정 및 커뮤니티 문자열을 구성합니다
 
 '셋업' 명령이나 'reload' 명령어를 실행한 후 기본 설정을 지정해야 한다.
@@ -185,6 +188,7 @@ FC_switch_B_1# setup
 
 
 
+[[acquiring-licenses-for-ports]]
 == 포트에 대한 라이센스를 획득하는 중입니다
 
 연속 포트 범위에서 Cisco 스위치 라이센스를 사용할 필요가 없습니다. 대신 사용되는 특정 포트에 대한 라이센스를 취득하고 사용하지 않는 포트에서 라이센스를 제거할 수 있습니다.
@@ -249,6 +253,7 @@ interface_interface-name _
 
 
 
+[[removing-and-acquiring-a-license-on-a-port]]
 === 포트에서 라이센스 제거 및 취득
 
 이 예에서는 포트 FC1/2, 포트 FC1/1에서 라이센스가 제거되고 포트 FC1/1에서 라이센스가 획득되는 것을 보여 줍니다.
@@ -288,6 +293,7 @@ Switch_A_1# show port-resources module 1
 ----
 
 
+[[enabling-ports-in-a-cisco-mds-9148-or-9148s-switch]]
 == Cisco MDS 9148 또는 9148S 스위치에서 포트 활성화
 
 Cisco MDS 9148 또는 9148S 스위치의 경우 MetroCluster 구성에 필요한 포트를 수동으로 활성화해야 합니다.
@@ -342,6 +348,7 @@ switch(config-if)# end
 
 
 
+[[configuring-the-f-ports-on-a-cisco-fc-switch]]
 == Cisco FC 스위치에서 F 포트 구성
 
 FC 스위치에서 F 포트를 구성해야 합니다.
@@ -422,6 +429,7 @@ FC_switch_B_1# copy running-config startup-config
 ----
 
 
+[[assigning-buffer-to-buffer-credits-to-f-ports-in-the-same-port-group-as-the-isl]]
 == ISL과 동일한 포트 그룹의 F 포트에 버퍼 대 버퍼 크레딧을 할당합니다
 
 ISL과 동일한 포트 그룹에 있는 경우 F 포트에 버퍼 대 버퍼 크레딧을 할당해야 합니다. 포트에 필요한 버퍼 대 버퍼 크레딧이 없으면 ISL이 작동하지 않을 수 있습니다.
@@ -540,6 +548,7 @@ fc1/39                                      1        8.0 dedicated
 ----
 
 
+[[creating-and-configuring-vsans-on-cisco-fc-switches]]
 == Cisco FC 스위치에서 VSAN 생성 및 구성
 
 MetroCluster 구성에서 각 FC 스위치의 스토리지 포트에 대해 FC-VI 포트에 대한 VSAN과 VSAN을 생성해야 합니다.
@@ -935,6 +944,7 @@ FC_switch_B_1# copy running-config startup-config
 
 
 
+[[configuring-e-ports]]
 == E-port 구성
 
 ISL(E-Port)을 연결하는 스위치 포트를 구성해야 합니다.
@@ -949,6 +959,8 @@ ISL(E-Port)을 연결하는 스위치 포트를 구성해야 합니다.
 
 
 
+[[configuring-the-e-ports-on-the-cisco-fc-switch]]
+[[config-e-ports-cisco-fc]]
 === Cisco FC 스위치에서 E-포트 구성
 
 ISL(Inter-Switch Link)을 연결하는 FC 스위치 포트를 구성해야 합니다.
@@ -1188,6 +1200,8 @@ FC 스위치에 케이블을 연결할 때 지정된 포트 할당을 사용하�
 
 
 
+[[configuring-fcip-ports-for-a-single-isl-on-cisco-9250i-fc-switches]]
+[[config-fcip-ports-single-isl-cisco-9250i]]
 === Cisco 9250i FC 스위치에서 단일 ISL에 대한 FCIP 포트 구성
 
 FCIP 프로파일과 인터페이스를 생성한 다음 이를 IPStorage1/1GbE 인터페이스에 할당하여 ISL(E-port)을 연결하는 FCIP 스위치 포트를 구성해야 합니다.
@@ -1597,6 +1611,8 @@ FC_switch_B_1# copy running-config startup-config
 
 
 
+[[configuring-fcip-ports-for-a-dual-isl-on-cisco-9250i-fc-switches]]
+[[config-fcip-ports-dual-isl-cisco-9250i]]
 === Cisco 9250i FC 스위치의 이중 ISL용 FCIP 포트 구성
 
 FCIP 프로파일과 인터페이스를 생성한 다음 IPStorage1/1 및 IPStorage1/2 GbE 인터페이스에 할당하여 ISL(E-Port)을 연결하는 FCIP 스위치 포트를 구성해야 합니다.
@@ -1614,6 +1630,7 @@ image::../media/fcip_ports_dual_isl.gif[각 스위치에 이중 ISL 구성이 �
 * <<fabric2_table>>
 
 
+[[fabric1_table]]
 * 패브릭 1 프로파일 구성 표 *
 
 |===
@@ -1761,6 +1778,7 @@ b. b. b. b. b. b/3223
 20
 
 |===
+[[fabric2_table]]
 * 패브릭 2 프로파일 구성 표 *
 
 |===
@@ -2411,6 +2429,7 @@ exit
 ----
 
 
+[[configuring-zoning-on-a-cisco-fc-switch]]
 == Cisco FC 스위치에서 조닝 구성
 
 스위치 포트를 별도의 영역에 할당하여 스토리지(HBA) 및 컨트롤러(FC-VI) 트래픽을 격리해야 합니다.
@@ -2689,6 +2708,7 @@ FC_switch_A_1# copy running-config startup-config
 
 
 
+[[ensuring-the-fc-switch-configuration-is-saved]]
 == FC 스위치 구성이 저장되었는지 확인합니다
 
 모든 스위치에서 FC 스위치 구성이 시작 구성에 저장되었는지 확인해야 합니다.

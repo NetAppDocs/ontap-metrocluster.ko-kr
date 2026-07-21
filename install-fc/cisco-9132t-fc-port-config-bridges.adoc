@@ -18,6 +18,7 @@ NOTE: 1xLEM 모듈이 있는 Cisco 9132T 스위치를 사용하면 브리지 스
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 == MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Cisco 9132T 스위치에서 FC 포트(FC1과 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 1 또는 DR 그룹 1에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.
@@ -147,6 +148,7 @@ LEM1-12
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 == MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Cisco 9132T 스위치에서 FC 포트(FC1 및 FC2)를 모두 사용하는 FibreBridge 7500N 또는 7600N 브리지에 대해 MetroCluster 2 또는 DR 그룹 2에서 지원되는 셸프 구성을 보여줍니다. 이 구성 표를 사용할 때는 다음 사항에 유의해야 합니다.

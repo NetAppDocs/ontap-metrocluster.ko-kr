@@ -15,6 +15,7 @@ MetroCluster 구성을 계획할 때 필수 및 지원되는 하드웨어 및 �
 
 
 
+[[supported-software-and-hardware]]
 == 지원되는 소프트웨어 및 하드웨어
 
 MetroCluster FC 구성의 경우 하드웨어 및 소프트웨어가 지원되어야 합니다.
@@ -25,12 +26,14 @@ AFF 시스템을 사용하는 경우 MetroCluster 구성의 모든 컨트롤러 
 
 
 
+[[hardware-redundancy-in-the-metrocluster-configuration]]
 == MetroCluster 구성의 하드웨어 이중화
 
 MetroCluster 구성의 하드웨어 이중화 때문에 각 사이트에는 두 개의 구성 요소가 있습니다. 사이트는 문자 A와 B를 임의로 할당하며, 개별 구성 요소에는 숫자 1과 2가 임의로 할당됩니다.
 
 
 
+[[requirement-for-two-single-node-ontap-clusters]]
 == 2개의 단일 노드 ONTAP 클러스터 요구사항
 
 브리지 연결 확장 MetroCluster 구성에는 2개의 단일 노드 ONTAP 클러스터가 필요합니다.
@@ -45,6 +48,7 @@ MetroCluster 구성의 하드웨어 이중화 때문에 각 사이트에는 두 
 
 
 
+[[requirement-for-two-storage-controller-modules]]
 == 스토리지 컨트롤러 모듈 2개 필요
 
 브리지 연결 스트레치 MetroCluster 구성에는 스토리지 컨트롤러 모듈 2개가 필요합니다.
@@ -76,6 +80,7 @@ MetroCluster 구성의 하드웨어 이중화 때문에 각 사이트에는 두 
 
 
 
+[[requirement-for-fc-to-sas-bridges]]
 == FC-to-SAS 브릿지 요구 사항
 
 브리지 연결 스트레치 MetroCluster 구성에는 각 사이트에 2개 이상의 FC-SAS 브리지가 필요합니다.
@@ -113,6 +118,7 @@ NOTE: FiberBridge 6500N 브리지는 ONTAP 9.8 이상을 실행하는 구성에�
 
 
 
+[[requirement-for-at-least-four-sas-shelves-recommended]]
 == SAS 쉘프 4개 이상 필요(권장)
 
 브리지 연결 확장 MetroCluster 구성에는 최소 2개의 SAS 쉘프가 필요합니다. 그러나 각 사이트에서는 총 4개의 SAS 쉘프에 대해 디스크 소유권을 허용하도록 쉘프 2개를 권장합니다.

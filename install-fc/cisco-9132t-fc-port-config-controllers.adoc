@@ -20,6 +20,7 @@ NOTE: 8노드 구성의 경우 RCF가 제공되지 않기 때문에 수동으로
 
 
 
+[[metrocluster-1-or-dr-group-1]]
 == MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Cisco 9132T 스위치의 MetroCluster 1 또는 DR 그룹 1에 지원되는 컨트롤러 구성을 보여줍니다. 이 구성 표를 사용할 때 다음 사항에 유의해야 합니다.
@@ -349,6 +350,7 @@ LEM1-8
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 == MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Cisco 9132T 스위치의 MetroCluster 2 또는 DR 그룹 2에 지원되는 Cisco 9132T 컨트롤러 구성을 보여줍니다. 이 구성 표를 사용할 때 다음 사항에 유의해야 합니다.

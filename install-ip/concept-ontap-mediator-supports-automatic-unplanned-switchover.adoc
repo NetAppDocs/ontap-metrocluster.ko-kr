@@ -16,6 +16,7 @@ ONTAP Mediator는 MetroCluster IP 노드의 상태 정보를 저장하는 사서
 
 NOTE: MAUSO는 MetroCluster FC 구성에서 지원되지 않습니다.
 
+[[default_scenarios]]
 절체가 필요한 사이트 장애를 감지하면 절체가 적절한지 확인하고, 적절한 경우 절체를 수행한다. 기본적으로 MAUSO는 다음 시나리오에서 시작됩니다.
 
 * 각 노드의 비휘발성 캐시에 대한 SyncMirror 미러링 및 DR 미러링이 모두 작동하고 캐시 및 미러가 장애 시 동기화됩니다.

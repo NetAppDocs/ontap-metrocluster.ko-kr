@@ -17,6 +17,7 @@ ONTAP 기능은 전환 시 파트너의 데이터를 원활하게 지원하는 �
 
 
 
+[[licensing-considerations]]
 == 라이센스 고려 사항
 
 * 두 사이트 모두 동일한 사이트 라이센스 기능에 대해 라이센스를 받아야 합니다.
@@ -25,6 +26,7 @@ ONTAP 기능은 전환 시 파트너의 데이터를 원활하게 지원하는 �
 
 
 
+[[snapmirror-consideration]]
 == SnapMirror 고려사항
 
 * SnapMirror SVM 재해 복구는 ONTAP 9.5 이상의 버전을 실행 중인 MetroCluster 구성에서만 지원됩니다.
@@ -32,6 +34,7 @@ ONTAP 기능은 전환 시 파트너의 데이터를 원활하게 지원하는 �
 
 
 
+[[metrocluster-operations-in-ontap-system-manager]]
 == ONTAP 시스템 관리자의 MetroCluster 작업
 
 ONTAP 버전에 따라 ONTAP System Manager를 사용하여 일부 MetroCluster 관련 작업을 수행할 수 있습니다.
@@ -40,12 +43,14 @@ ONTAP 버전에 따라 ONTAP System Manager를 사용하여 일부 MetroCluster 
 
 
 
+[[flexcache-support-in-a-metrocluster-configuration]]
 == MetroCluster 구성에서 FlexCache 지원
 
 ONTAP 9.7부터 MetroCluster 볼륨은 FlexCache 구성에서 지원됩니다. 스위치오버 또는 스위치백 작업 후 수동 재시행을 위한 요구 사항을 숙지해야 합니다.
 
 
 
+[[svm-repeering-after-switchover-when-flexcache-origin-and-cache-are-within-the-same-metrocluster-site]]
 === FlexCache 오리진 및 캐시가 동일한 MetroCluster 사이트 내에 있을 때 스위치오버 후 SVM이 자동으로 수행됩니다
 
 협상된 또는 계획되지 않은 전환 후 클러스터 내의 모든 SVM FlexCache 피어링 관계를 수동으로 구성해야 합니다.
@@ -56,6 +61,7 @@ ONTAP 9.7부터 MetroCluster 볼륨은 FlexCache 구성에서 지원됩니다. �
 
 
 
+[[svm-repeering-after-switchover-or-switchback-when-a-flexcache-destination-is-on-a-third-cluster-and-in-disconnected-mode]]
 === FlexCache 대상이 세 번째 클러스터에 있고 연결되지 않은 모드일 때 스위치오버 또는 스위치백 후 SVM이 자동으로 수행됩니다
 
 MetroCluster 구성 외부에서 클러스터에 대한 FlexCache 관계의 경우 전환 중에 관련 클러스터가 연결 끊김 모드에 있는 경우 전환 후에 항상 피어링을 수동으로 재구성해야 합니다.
@@ -75,6 +81,7 @@ link:https://docs.netapp.com/us-en/ontap/flexcache/index.html["CLI를 사용한 
 
 
 
+[[fabricpool-support-in-metrocluster-configurations]]
 == MetroCluster 구성에서 FabricPool 지원
 
 ONTAP 구성은 MetroCluster 9.7부터 FabricPool 스토리지 계층을 지원합니다.
@@ -83,6 +90,7 @@ FabricPool 사용에 대한 일반적인 내용은 을 참조하십시오 https:
 
 
 
+[[considerations-when-using-fabricpools]]
 === FabricPool을 사용할 때의 고려 사항
 
 * 클러스터에는 용량 제한이 일치하는 FabricPool 라이센스가 있어야 합니다.
@@ -99,6 +107,7 @@ link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html["SVM 데이터 �
 
 
 
+[[configuring-an-aggregate-for-use-in-a-mirrored-fabricpool]]
 === 미러링된 FabricPool에서 사용하도록 애그리게이트 구성
 
 
@@ -125,12 +134,14 @@ FabricPool에서 사용할 Aggregate를 구성하려면 다음을 수행합니�
 
 
 
+[[flexgroup-support-in-metrocluster-configurations]]
 == MetroCluster 구성에서 FlexGroup 지원
 
 ONTAP 9.6 MetroCluster 구성부터 FlexGroup 볼륨을 지원합니다.
 
 
 
+[[job-schedules-in-a-metrocluster-configuration]]
 == MetroCluster 구성의 작업 스케줄
 
 ONTAP 9.3 이상에서는 사용자가 생성한 작업 일정이 MetroCluster 구성의 클러스터 간에 자동으로 복제됩니다. 클러스터에서 작업 일정을 생성, 수정 또는 삭제하면 CRS(구성 복제 서비스)를 사용하여 파트너 클러스터에서 동일한 일정이 자동으로 생성됩니다.
@@ -140,6 +151,7 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 
 
 
+[[cluster-peering-from-the-metrocluster-site-to-a-third-cluster]]
 == MetroCluster 사이트에서 세 번째 클러스터로 피어링
 
 피어링 구성은 복제되지 않으므로, MetroCluster 구성의 클러스터 중 하나를 해당 구성 외부의 세 번째 클러스터로 피어링하는 경우 파트너 MetroCluster 클러스터에서 피어링을 구성해야 합니다. 이는 절체가 발생하는 경우에도 피어링을 유지할 수 있도록 하기 위한 것입니다.
@@ -148,12 +160,14 @@ NOTE: 시스템에서 생성한 일정은 복제되지 않으며, 두 클러스�
 
 
 
+[[ldap-client-configuration-replication-in-a-metrocluster-configuration]]
 == MetroCluster 구성에서 LDAP 클라이언트 구성 복제
 
 로컬 클러스터의 SVM(스토리지 가상 시스템)에서 생성된 LDAP 클라이언트 구성이 원격 클러스터의 파트너 데이터 SVM에 복제됩니다. 예를 들어, LDAP 클라이언트 구성이 로컬 클러스터의 관리 SVM에서 생성된 경우 원격 클러스터의 모든 관리 데이터 SVM에 복제됩니다. 이 MetroCluster 기능은 의도적이므로 LDAP 클라이언트 구성이 원격 클러스터의 모든 파트너 SVM에서 활성화됩니다.
 
 
 
+[[networking-and-lif-creation-guidelines-for-metrocluster-configurations]]
 == MetroCluster 구성에 대한 네트워킹 및 LIF 생성 지침입니다
 
 MetroCluster 구성에서 LIF를 생성 및 복제하는 방법을 알고 있어야 합니다. 또한 네트워크를 구성할 때 올바른 결정을 내릴 수 있도록 일관성 요구 사항에 대해서도 알아야 합니다.
@@ -169,6 +183,7 @@ link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#lif-rep
 
 
 
+[[ipspace-object-replication-and-subnet-configuration-requirements]]
 === IPSpace 객체 복제 및 서브넷 구성 요구 사항
 
 파트너 클러스터로 IPspace 객체를 복제하고 MetroCluster 구성에서 서브넷 및 IPv6를 구성하기 위한 요구사항을 알고 있어야 합니다.
@@ -230,6 +245,7 @@ link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#lif-rep
 
 
 
+[[requirements-for-lif-creation-in-a-metrocluster-configuration]]
 === MetroCluster 구성에서 LIF 생성을 위한 요구사항
 
 MetroCluster 구성에서 네트워크를 구성할 때 LIF를 생성하기 위한 요구 사항을 숙지해야 합니다.
@@ -257,6 +273,7 @@ link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#lif-rep
 
 
 
+[[lif-replication-and-placement-requirements-and-issues]]
 === LIF 복제 및 배치 요구사항 및 문제
 
 MetroCluster 구성의 LIF 복제 요구사항을 알고 있어야 합니다. 또한 복제된 LIF가 파트너 클러스터에 배치된 방식을 알아야 하며, LIF 복제 또는 LIF 배치에 장애가 발생할 경우 발생하는 문제를 알아야 합니다.
@@ -360,6 +377,7 @@ link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#require
 
 
 
+[[volume-creation-on-a-root-aggregate]]
 === 루트 애그리게이트에 볼륨 생성
 
 이 시스템에서는 MetroCluster 구성에서 노드의 루트 애그리게이트(CFO의 HA 정책을 통한 애그리게이트)에 새 볼륨을 생성할 수 없습니다.
@@ -368,6 +386,7 @@ link:concept_considerations_when_using_ontap_in_a_mcc_configuration.html#require
 
 
 
+[[svm-disaster-recovery-in-a-metrocluster-configuration]]
 == MetroCluster 구성에서 SVM 재해 복구
 
 ONTAP 9.5부터 MetroCluster 구성의 활성 SVM(스토리지 가상 시스템)을 SnapMirror SVM 재해 복구 기능에서 소스로 사용할 수 있습니다. 대상 SVM은 MetroCluster 구성 외부의 세 번째 클러스터에 있어야 합니다.
@@ -406,6 +425,7 @@ image::../media/svm_dr_image_2.gif[전환 후 SVM 업데이트]
 
 
 
+[[svm-resynchronization-at-a-disaster-recovery-site]]
 === 재해 복구 사이트에서 SVM 재동기화
 
 재동기화 중에 MetroCluster 구성의 SVM(스토리지 가상 시스템) DR(재해 복구) 소스가 MetroCluster가 아닌 사이트의 대상 SVM에서 복원됩니다.
@@ -433,12 +453,14 @@ image::../media/svm_dr_resynchronization.gif[SVM 재해 복구 재동기화]
 
 
 
+[[output-for-the-storage-aggregate-plex-show-command-is-indeterminate-after-a-metrocluster-switchover]]
 == 스토리지 애그리게이트 plex show 명령의 출력은 MetroCluster 스위치오버 후 결정되지 않습니다
 
 MetroCluster 스위치오버 후 스토리지 aggregate plex show 명령을 실행하면 전환된 루트 애그리게이트의 Plex0 상태가 불확정되며 실패한 것으로 표시됩니다. 이 시간 동안 전환된 루트는 업데이트되지 않습니다. 이 플렉의 실제 상태는 MetroCluster 복구 단계 이후에만 확인할 수 있습니다.
 
 
 
+[[modifying-volumes-to-set-the-nvfail-flag-in-case-of-switchover]]
 == 전환 시 NVFAIL 플래그를 설정하도록 볼륨을 수정합니다
 
 MetroCluster 전환 시 볼륨에 NVFAIL 플래그가 설정되도록 볼륨을 수정할 수 있습니다. NVFAIL 플래그로 인해 볼륨이 수정에서 해제됩니다. 이는 전환 후 볼륨에 대한 커밋된 쓰기가 손실된 것처럼 처리해야 하는 볼륨에 필요합니다.

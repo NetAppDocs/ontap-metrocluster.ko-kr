@@ -15,6 +15,7 @@ MetroCluster IP 구성을 계획할 때 하드웨어 구성 요소 및 상호 �
 
 
 
+[[key-hardware-elements]]
 == 주요 하드웨어 요소
 
 MetroCluster IP 구성에는 다음과 같은 주요 하드웨어 요소가 포함됩니다.
@@ -45,6 +46,7 @@ image::../media/mcc_ip_hardware_architecture_mcc_ip.gif[MetroCluster IP 하드�
 
 
 
+[[disaster-recovery-dr-groups]]
 == DR(재해 복구) 그룹
 
 MetroCluster IP 구성은 4개 노드로 구성된 DR 그룹 1개로 구성됩니다.
@@ -55,6 +57,7 @@ image::../media/mcc_dr_groups_4_node.gif[4노드 구성의 MetroCluster DR 그�
 
 
 
+[[illustration-of-the-local-ha-pairs-in-a-metrocluster-configuration]]
 == MetroCluster 구성의 로컬 HA 쌍 그림
 
 각 MetroCluster 사이트는 HA 쌍으로 구성된 스토리지 컨트롤러로 구성됩니다. 따라서 하나의 스토리지 컨트롤러에 장애가 발생할 경우 로컬 HA 파트너가 이를 대신 처리할 수 있도록 로컬 이중화가 가능합니다. 이러한 장애는 MetroCluster 전환 작업 없이 처리할 수 있습니다.
@@ -68,6 +71,7 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-concepts/home.html["
 
 
 
+[[illustration-of-the-metrocluster-ip-and-cluster-interconnect-network]]
 == MetroCluster IP 및 클러스터 인터커넥트 네트워크의 그림
 
 ONTAP 클러스터에는 일반적으로 클러스터 인터커넥트 네트워크가 포함되어 있어 클러스터 내의 노드 간 트래픽을 처리합니다. MetroCluster IP 구성에서 이 네트워크는 MetroCluster 사이트 간에 데이터 복제 트래픽을 전송하는 데에도 사용됩니다.
@@ -89,6 +93,7 @@ link:concept_considerations_mcip.html["MetroCluster IP 구성을 위한 고려 �
 
 
 
+[[illustration-of-the-cluster-peering-network]]
 == 클러스터 피어링 네트워크의 그림
 
 MetroCluster 구성의 두 클러스터는 고객 제공 클러스터 피어링 네트워크를 통해 들여다봅니다. 클러스터 피어링을 사용하면 사이트 간에 SVM(Storage Virtual Machine, 이전의 SVM)을 동기식 미러링할 수 있습니다.

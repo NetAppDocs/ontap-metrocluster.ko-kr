@@ -15,6 +15,7 @@ MetroCluster FC 플랫폼과 스위치 지원의 새로운 기능을 알아보�
 
 
 
+[[platform-support]]
 == 플랫폼 지원
 
 [cols="2*"]
@@ -51,6 +52,7 @@ ONTAP 9.5 를 참조하십시오
 |===
 
 
+[[switch-support]]
 == 스위치 지원
 
 [cols="2*"]

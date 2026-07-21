@@ -21,18 +21,21 @@ summary: 사용하는 업그레이드 절차는 플랫폼 모델에 따라 다�
 
 
 
+[[supported-controller-upgrades]]
 == 컨트롤러 업그레이드를 지원했습니다
 
 지원되는 MetroCluster IP 및 FC 컨트롤러 업그레이드 조합에 대해 알아보십시오.
 
 
 
+[[supported-metrocluster-ip-controller-upgrades-using-system-controller-replace-commands]]
 === "system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러 업그레이드를 지원했습니다
 
 지원되는 플랫폼에 대해서는 의 표를 link:task_upgrade_controllers_system_control_commands_in_a_four_node_mcc_ip.html["스위치오버 및 스위치백을 사용하여 4노드 MetroCluster IP 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.13.1 이상)으로 컨트롤러 업그레이드"] 참조하십시오.
 
 
 
+[[all-other-supported-metrocluster-ip-controller-upgrades]]
 === 기타 지원되는 모든 MetroCluster IP 컨트롤러 업그레이드
 
 이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.
@@ -99,6 +102,7 @@ image:../media/mcc-ip-upgrade-asa-comb-9161.png["에는 ASA 지원 MetroCluster 
 
 
 
+[[supported-metrocluster-fc-controller-upgrades]]
 === 지원되는 MetroCluster FC 컨트롤러 업그레이드
 
 이 섹션의 MetroCluster 컨트롤러 업그레이드 표에서 * 소스 * 플랫폼을 찾습니다. 소스 * 플랫폼 행과 * 대상 * 플랫폼 열의 교차점이 비어 있으면 업그레이드가 지원되지 않습니다.
@@ -168,6 +172,7 @@ image::../media/metrocluster_fc_upgrade_table_aff_fas.png[MetroCluster FC 컨트
 
 
 
+[[choose-a-procedure-that-uses-the-switchover-and-switchback-process]]
 == 스위치오버 및 스위치백 프로세스를 사용하는 절차를 선택합니다
 
 지원되는 업그레이드 조합을 검토한 후 구성에 맞는 올바른 컨트롤러 업그레이드 절차를 선택하십시오.
@@ -246,6 +251,7 @@ link:task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback
 |===
 
 
+[[choosing-a-procedure-using-aggregate-relocation]]
 == 집계 재배치를 사용하여 프로시저 선택
 
 ARL 기반 컨트롤러 업그레이드 절차에서는 애그리게이트 재배치 작업을 사용하여 데이터를 이전 구성에서 업그레이드된 새 구성으로 중단 없이 이동할 수 있습니다.

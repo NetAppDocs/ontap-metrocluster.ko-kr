@@ -15,6 +15,7 @@ summary: 드라이브 또는 쉘프 모듈을 교체해야 하는 경우, 먼저
 
 
 
+[[identification-of-local-and-remote-shelves]]
 == 로컬 및 원격 쉘프 식별
 
 MetroCluster 사이트에서 쉘프 정보를 볼 때 모든 원격 드라이브는 가상 iSCSI 호스트 어댑터인 0m에 있습니다. 즉, 드라이브가 MetroCluster IP 인터페이스를 통해 액세스됩니다. 다른 모든 드라이브는 로컬입니다.
@@ -32,6 +33,7 @@ https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-sas3-service/home.ht
 
 
 
+[[example-of-sysconfig-a-output]]
 == sysconfig-A 출력의 예
 
 다음 예에서는 sysconfig -a 명령을 사용하여 MetroCluster IP 구성의 노드에 있는 디바이스를 표시합니다. 이 노드에는 다음과 같은 셸프 및 디바이스가 연결되어 있습니다.

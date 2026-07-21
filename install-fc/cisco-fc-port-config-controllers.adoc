@@ -24,6 +24,7 @@ Cisco 9124V, 9148S, 9148V, 9250i 및 9396S FC 스위치를 컨트롤러에 케�
 ====
 
 
+[[metrocluster-1-or-dr-group-1]]
 == MetroCluster 1 또는 DR 그룹 1
 
 다음 표는 Cisco 스위치(9132T 제외)의 MetroCluster 1 또는 DR 그룹 1에서 지원되는 컨트롤러 구성을 보여줍니다.
@@ -446,6 +447,7 @@ HBA 포트 d
 |===
 
 
+[[metrocluster-2-or-dr-group-2]]
 == MetroCluster 2 또는 DR 그룹 2
 
 다음 표는 Cisco 스위치(9132T 제외)의 MetroCluster 2 또는 DR 그룹 2에서 지원되는 컨트롤러 구성을 보여줍니다.

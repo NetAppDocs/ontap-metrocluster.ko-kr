@@ -21,6 +21,7 @@ image::power-on-off-data-center.gif[유지 관리를 위해 MetroCluster 구성�
 
 
 
+[[power-off-a-metrocluster-site]]
 == MetroCluster 사이트의 전원을 끕니다
 
 현장 유지 보수 또는 재배치를 시작하려면 먼저 사이트 및 모든 장비의 전원을 꺼야 합니다.
@@ -267,6 +268,7 @@ NOTE: Cluster_A에 원격 디스크가 있는 모든 플렉스에 대해 이 단
 
 
 
+[[relocating-the-powered-off-site-of-the-metrocluster]]
 == MetroCluster의 전원이 꺼진 사이트 재배치
 
 사이트의 전원이 꺼진 후 유지 관리 작업을 시작할 수 있습니다. 이 절차는 MetroCluster 구성 요소가 동일한 데이터 센터 내에서 재배치되거나 다른 데이터 센터로 재배치되는 경우에도 동일합니다.
@@ -297,6 +299,7 @@ NOTE: 링크가 올바르게 구성되고 안정적인 경우에만 계속해야
 
 
 
+[[powering-on-the-metrocluster-configuration-and-returning-to-normal-operation]]
 == MetroCluster 구성 전원을 켜고 정상 작동 상태로 돌아갑니다
 
 유지 관리가 완료되거나 사이트를 이동한 후에는 사이트의 전원을 켜고 MetroCluster 구성을 다시 설정해야 합니다.

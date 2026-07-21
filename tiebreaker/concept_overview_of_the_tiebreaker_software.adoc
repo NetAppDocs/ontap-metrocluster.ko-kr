@@ -15,6 +15,7 @@ NetApp MetroCluster Tiebreaker 소프트웨어가 무엇인지, MetroCluster 그
 
 
 
+[[detecting-failures-with-netapp-metrocluster-tiebreaker-software]]
 == NetApp MetroCluster Tiebreaker 소프트웨어로 오류 감지
 
 두 클러스터를 모니터링하고 세 번째 사이트에서 클러스터 간 연결 상태를 모니터링하려는 경우에만 Tiebreaker 소프트웨어가 필요합니다. Tiebreaker 소프트웨어는 세 번째 사이트의 Linux 호스트에 상주하며, 클러스터의 각 파트너가 사이트 간 링크가 다운될 때 ISL 장애를 사이트 장애와 구분할 수 있도록 합니다.
@@ -25,12 +26,14 @@ Tiebreaker 소프트웨어는 최대 15개의 MetroCluster 구성을 동시에 �
 
 
 
+[[how-the-tiebreaker-software-detects-site-failures]]
 == Tiebreaker 소프트웨어가 사이트 장애를 감지하는 방식
 
 NetApp MetroCluster Tiebreaker 소프트웨어는 MetroCluster 구성과 클러스터에서 노드의 내성을 확인하여 사이트 장애가 발생했는지 판단합니다. Tiebreaker 소프트웨어는 특정 조건에서 경고를 트리거합니다.
 
 
 
+[[components-monitored-by-the-tiebreaker-software]]
 === Tiebreaker 소프트웨어를 통해 모니터링되는 구성 요소입니다
 
 Tiebreaker 소프트웨어는 노드 관리 LIF와 클러스터 관리 LIF에 대한 다중 경로를 통해 이중 연결을 설정하고, 둘 다 IP 네트워크에서 호스팅되는 클러스터 관리 LIF를 설정하여 MetroCluster 구성의 각 컨트롤러를 모니터링합니다.
@@ -49,6 +52,7 @@ NOTE: 정상적인 클러스터가 FC(NV 상호 연결 및 스토리지) 및 인
 
 
 
+[[failure-scenarios-during-which-tiebreaker-software-triggers-an-alert]]
 === Tiebreaker 소프트웨어가 알림을 트리거하는 실패 시나리오
 
 Tiebreaker 소프트웨어는 재해 사이트의 클러스터(모든 노드)가 다운되거나 연결할 수 없을 때 경고를 트리거하고 나머지 사이트의 클러스터에 ""AllLinksSegiven" 상태가 표시됩니다.
@@ -68,12 +72,14 @@ link:concept_risks_and_limitation_of_using_mcc_tiebreaker_in_active_mode.html["�
 
 
 
+[[how-the-tiebreaker-software-detects-intersite-connectivity-failures]]
 == Tiebreaker 소프트웨어가 사이트 간 연결 장애를 감지하는 방식
 
 MetroCluster Tiebreaker 소프트웨어는 사이트 간 연결이 모두 끊어지면 알려줍니다.
 
 
 
+[[types-of-network-paths]]
 === 네트워크 경로의 유형입니다
 
 구성에 따라 MetroCluster 구성의 두 클러스터 간에는 세 가지 유형의 네트워크 경로가 있습니다.
@@ -94,12 +100,14 @@ MetroCluster Tiebreaker 소프트웨어는 사이트 간 연결이 모두 끊어
 
 
 
+[[monitoring-intersite-connectivity]]
 === 사이트 간 연결 모니터링
 
 Tiebreaker 소프트웨어는 노드에서 사이트 간 연결 상태를 정기적으로 검색합니다. NV 상호 연결 연결이 끊어지고 인터클러스터 피어링이 핑에 응답하지 않는 경우 클러스터는 사이트를 격리하고 Tiebreaker 소프트웨어는 경고를 ""AllLinksSegan""으로 트리거합니다. 클러스터에서 ""AllLinksSegan"" 상태를 식별하고 다른 클러스터에 연결할 수 없는 경우 Tiebreaker 소프트웨어는 경고를 "disaster"로 트리거합니다.
 
 
 
+[[how-different-disaster-types-affect-tiebreaker-software-detection-time]]
 == 다양한 재해 유형이 Tiebreaker 소프트웨어 감지 시간에 미치는 영향
 
 MetroCluster Tiebreaker 소프트웨어를 사용하면 재해 복구 계획을 보다 효과적으로 수립할 수 있습니다. 이번에는 디스터 감지 시간이다. MetroCluster Tiebreaker 소프트웨어는 재해 발생 시점으로부터 30초 이내에 사이트 재해를 감지하고 재해 복구 작업을 트리거하여 사용자에게 재해에 대해 알립니다.
@@ -114,12 +122,14 @@ MetroCluster Tiebreaker 소프트웨어를 사용하면 재해 복구 계획을 
 
 
 
+[[power-loss]]
 === 전원 손실
 
 Tiebreaker 소프트웨어는 노드 작동이 중지되면 알림을 즉시 트리거합니다. 전원이 손실되면 인터클러스터 피어링, NV 상호 연결망 및 메일박스 디스크와 같은 모든 연결과 업데이트가 중지됩니다. 클러스터에 연결할 수 없는 시간, 재해 감지 및 기본 5초의 자동 시간을 포함하여 트리거 사이의 시간은 30초를 초과하지 않아야 합니다.
 
 
 
+[[panic]]
 === 패닉
 
 MetroCluster FC 구성에서 Tiebreaker 소프트웨어는 사이트 간 NV 상호 연결 연결이 다운되고 나머지 사이트는 ""AllLinksSeged"" 상태를 나타낼 때 경고를 트리거합니다. 코어 덤프 프로세스가 완료된 후에만 발생합니다. 이 시나리오에서는 클러스터에 연결할 수 없게 되는 클러스터와 재해 감지 사이에 걸리는 시간이 코어 덤프 프로세스에 걸리는 시간과 같거나 더 길어질 수 있습니다. 대부분의 경우 감지 시간은 30초 이상입니다.
@@ -128,18 +138,21 @@ MetroCluster FC 구성에서 Tiebreaker 소프트웨어는 사이트 간 NV 상�
 
 
 
+[[halt-or-reboot]]
 === 중지 또는 재부팅
 
 Tiebreaker 소프트웨어는 노드가 다운되고 나머지 사이트가 ""AllLinksSegiven"" 상태를 나타낼 때만 경고를 트리거합니다. 클러스터 간에 연결할 수 없고 재해 감지 시간이 30초 이상 걸릴 수 있습니다. 이 시나리오에서는 재해 사이트 노드가 종료되는 데 걸리는 시간에 따라 재해 감지 시간이 달라집니다.
 
 
 
+[[loss-of-fc-switches-at-the-disaster-site-fabric-attached-metrocluster-configuration]]
 === 재해 사이트에서 FC 스위치 손실(패브릭 연결 MetroCluster 구성)
 
 Tiebreaker 소프트웨어는 노드 작동이 중지되면 알림을 트리거합니다. FC 스위치가 손실되면 노드에서 디스크에 대한 경로를 약 30초 동안 복구하려고 시도합니다. 이 시간 동안 노드는 피어링 네트워크에서 작동 및 응답합니다. 두 FC 스위치가 모두 다운되어 디스크 경로를 복구할 수 없는 경우, 노드는 MultiDiskFailure 오류를 발생시키고 중단시킵니다. FC 스위치 장애와 노드에서 다중디스크 장애 오류가 발생한 횟수 사이에 걸리는 시간은 약 30초입니다. 이 추가 30초를 재해 감지 시간에 추가해야 합니다.
 
 
 
+[[about-the-tiebreaker-cli-and-man-pages]]
 == Tiebreaker CLI 및 man 페이지에 대한 정보를 제공합니다
 
 Tiebreaker CLI는 Tiebreaker 소프트웨어를 원격으로 구성하고 MetroCluster 구성을 모니터링할 수 있는 명령을 제공합니다.

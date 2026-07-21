@@ -18,6 +18,7 @@ CAUTION: *컨트롤러를 업그레이드할 때마다 이 절차를 설명된 �
 
 
 
+[[platforms-supported-by-this-procedure]]
 == 이 절차에서 지원하는 플랫폼
 
 * 플랫폼은 ONTAP 9.8 이상을 실행해야 합니다.
@@ -34,6 +35,7 @@ CAUTION: *컨트롤러를 업그레이드할 때마다 이 절차를 설명된 �
 
 
 
+[[requirements]]
 == 요구 사항
 
 * 이 절차는 MetroCluster IP 구성의 컨트롤러 모듈에 적용됩니다.

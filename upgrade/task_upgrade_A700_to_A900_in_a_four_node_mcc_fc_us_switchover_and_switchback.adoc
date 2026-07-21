@@ -102,6 +102,7 @@ https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^]
 
 
 
+[[enable-console-logging]]
 == 콘솔 로깅을 활성화합니다
 
 NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하고 이 절차를 수행할 때 다음 작업을 수행할 것을 적극 권장합니다.
@@ -116,18 +117,21 @@ NetApp은 사용 중인 장치에서 콘솔 로깅을 사용하도록 설정하�
 
 
 
+[[prepare-for-the-upgrade]]
 == 업그레이드를 준비합니다
 
 기존 MetroCluster 구성을 변경하기 전에 구성 상태를 확인하고, RCF 파일 및 케이블을 AFF A900 또는 FAS9000 패브릭 MetroCluster 구성에 필요한 새로운 포트 연결 토폴로지에 맞게 변경하고, 기타 작업을 수행해야 합니다.
 
 
 
+[[clear-slot-7-on-the-aff-a700-controller]]
 == AFF A700 컨트롤러에서 슬롯 7을 지웁니다
 
 AFF A900 또는 FAS9500에서 MetroCluster를 구성하려면 슬롯 5와 7에서 FC-VI 카드 전체에 8개의 FC-VI 포트가 필요합니다. 업그레이드를 시작하기 전에 AFF A700 또는 FAS9000의 슬롯 7에 카드가 있는 경우 해당 카드를 클러스터의 모든 노드에 대한 다른 슬롯으로 이동해야 합니다.
 
 
 
+[[verify-the-health-of-the-metrocluster-configuration]]
 === MetroCluster 구성의 상태를 확인합니다
 
 AFF A900 또는 FAS9500 패브릭 MetroCluster 구성의 RCF 파일 및 케이블을 업데이트하기 전에 구성의 상태와 연결을 확인해야 합니다.
@@ -219,6 +223,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[update-the-fabric-switch-rcf-files]]
 === 패브릭 스위치 RCF 파일을 업데이트합니다
 
 AFF A900 또는 FAS9500 패브릭 MetroCluster에는 AFF A700에 필요한 단일 4포트 FC-VI 어댑터와 비교하여 노드당 2개의 4포트 FC-VI 어댑터가 필요합니다. AFF A900 또는 FAS9500 컨트롤러로 컨트롤러 업그레이드를 시작하기 전에 AFF A900 또는 FAS9500 연결 토폴로지를 지원하도록 패브릭 스위치 RCF 파일을 수정해야 합니다.
@@ -249,6 +254,7 @@ MetroCluster 상호 연결 미러 쇼
 
 
 
+[[verify-the-health-of-the-metrocluster-configuration-after-the-rcf-file-update]]
 === RCF 파일 업데이트 후 MetroCluster 구성의 상태를 확인합니다
 
 업그레이드를 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.
@@ -337,6 +343,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[map-ports-from-the-aff-a700-or-fas9000-nodes-to-the-aff-a900-or-fas9500-nodes]]
 === AFF A700 또는 FAS9000 노드의 포트를 AFF A900 또는 FAS9500 노드에 매핑합니다
 
 컨트롤러 업그레이드 프로세스 중에는 이 절차에서 설명하는 연결만 변경해야 합니다.
@@ -345,6 +352,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp
 
 
 
+[[gather-information-before-the-upgrade]]
 === 업그레이드하기 전에 정보를 수집합니다
 
 업그레이드하기 전에 이전 노드 각각에 대한 정보를 수집하고, 필요한 경우 네트워크 브로드캐스트 도메인을 조정하고, VLAN 및 인터페이스 그룹을 제거하고, 암호화 정보를 수집해야 합니다.
@@ -508,6 +516,7 @@ cluster_B::*
 
 
 
+[[remove-the-existing-configuration-from-the-tiebreaker-or-other-monitoring-software]]
 === Tiebreaker 또는 기타 모니터링 소프트웨어에서 기존 구성을 제거합니다
 
 전환을 시작할 수 있는 MetroCluster Tiebreaker 구성 또는 기타 타사 애플리케이션(예: ClusterLion)을 사용하여 기존 구성을 모니터링하는 경우, 전환 전에 Tiebreaker 또는 다른 소프트웨어에서 MetroCluster 구성을 제거해야 합니다.
@@ -525,6 +534,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#remove-metro
 
 
 
+[[send-a-custom-autosupport-message-prior-to-maintenance]]
 === 유지 관리 전에 사용자 지정 AutoSupport 메시지를 보냅니다
 
 유지보수를 수행하기 전에 AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지보수 진행 중임을 알려야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.
@@ -552,6 +562,7 @@ link:../tiebreaker/concept_configuring_the_tiebreaker_software.html#remove-metro
 
 
 
+[[switch-over-the-metrocluster-configuration]]
 == MetroCluster 구성을 전환합니다
 
 site_B의 플랫폼을 업그레이드할 수 있도록 구성을 site_A로 전환해야 합니다.
@@ -631,6 +642,7 @@ cluster_A::> metrocluster operation show
 
 
 
+[[remove-the-aff-a700-or-fas9000-controller-module-and-nvs-at-siteb]]
 == site_B에서 AFF A700 또는 FAS9000 컨트롤러 모듈 및 NVS를 제거합니다
 
 구성에서 이전 컨트롤러를 제거해야 합니다.
@@ -648,10 +660,12 @@ cluster_A::> metrocluster operation show
 
 
 
+[[remove-the-controller-module-and-nvs-from-both-nodes-at-siteb]]
 == site_B의 두 노드에서 컨트롤러 모듈과 NVS를 제거합니다
 
 
 
+[[remove-the-aff-a700-or-fas9000-controller-module]]
 === AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다
 
 다음 절차를 사용하여 AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다.
@@ -680,6 +694,7 @@ image:../media/drw_9500_remove_PCM.png["컨트롤러"]
 
 
 
+[[remove-the-aff-a700-or-fas9000-nvs-module]]
 === AFF A700 또는 FAS9000 NVS 모듈을 제거합니다
 
 다음 절차를 사용하여 AFF A700 또는 FAS9000 NVS 모듈을 제거할 수 있습니다.
@@ -717,6 +732,7 @@ image:../media/drw_a900_move-remove_NVRAM_module.png["NVS 모듈"]
 ====
 
 
+[[install-the-aff-a900-or-fas9500-nvs-and-controller-module]]
 == AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치합니다
 
 Site_B의 두 노드에 있는 업그레이드 키트에서 AFF A900 또는 FAS9500 NVS 및 컨트롤러 모듈을 설치해야 합니다 코어 덤프 장치를 AFF A700 또는 FAS9000 NVS 모듈에서 AFF A900 또는 FAS9500 NVS 모듈로 이동하지 마십시오.
@@ -726,6 +742,7 @@ Site_B의 두 노드에 있는 업그레이드 키트에서 AFF A900 또는 FAS9
 
 
 
+[[install-the-aff-a900-or-fas9500-nvs]]
 === AFF A900 또는 FAS9500 NVS를 설치합니다
 
 다음 절차에 따라 site_B에서 두 노드의 슬롯 6에 AFF A900 또는 FAS9500 NVS를 설치합니다
@@ -749,6 +766,7 @@ image:../media/drw_a900_move-remove_NVRAM_module.png["NVS 모듈"]
 
 
 
+[[install-the-aff-a900-or-fas9500-controller-module]]
 === AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다
 
 다음 절차에 따라 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.
@@ -787,6 +805,7 @@ image:../media/drw_9500_remove_PCM.png["컨트롤러"]
 
 
 
+[[netboot-the-nodes-at-siteb]]
 === site_B에서 노드를 netboot 합니다
 
 AFF A900 또는 FAS9500 컨트롤러 모듈과 NVS를 바꾼 후에는 AFF A900 또는 FAS9500 노드를 netboot에 설치하고 클러스터에서 실행 중인 것과 동일한 ONTAP 버전 및 패치 수준을 설치해야 합니다. 네트워크 부팅이란 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가해야 합니다.
@@ -880,6 +899,7 @@ NOTE: 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해
 
 
 
+[[restore-the-hba-configuration]]
 === HBA 구성을 복구합니다
 
 컨트롤러 모듈에 있는 HBA 카드의 존재 여부와 구성에 따라 사이트 용도에 맞게 HBA 카드를 올바르게 구성해야 합니다.
@@ -929,6 +949,7 @@ FC 이니시에이터
 
 
 
+[[set-the-ha-state-on-the-new-controllers-and-chassis]]
 === 새 컨트롤러 및 섀시에서 HA 상태를 설정합니다
 
 컨트롤러 및 섀시의 HA 상태를 확인하고, 필요한 경우 시스템 구성에 맞게 상태를 업데이트해야 합니다.
@@ -993,6 +1014,7 @@ Controller HA configuration: mcc
 
 
 
+[[set-the-ha-state-on-the-new-controllers-and-chassis]]
 === 새 컨트롤러 및 섀시에서 HA 상태를 설정합니다
 
 컨트롤러 및 섀시의 HA 상태를 확인하고, 필요한 경우 시스템 구성에 맞게 상태를 업데이트해야 합니다.
@@ -1054,6 +1076,7 @@ ha-config modify chassis MCC-2n
 
 
 
+[[reassign-root-aggregate-disks]]
 === 루트 애그리게이트 디스크를 재할당합니다
 
 앞에서 수집한 sysids를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 다시 할당합니다
@@ -1163,6 +1186,7 @@ aggr0_node_b_1-root    online      raid_dp, aggr    root, nosnap=on,
 
 
 
+[[boot-up-the-new-controllers]]
 === 새 컨트롤러를 부팅합니다
 
 컨트롤러 플래시 이미지를 업데이트하려면 부팅 메뉴에서 컨트롤러를 재부팅해야 합니다. 암호화가 구성된 경우 추가 단계가 필요합니다.
@@ -1344,6 +1368,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+[[verify-lif-configuration]]
 === LIF 구성을 확인합니다
 
 스위치백 이전에 LIF가 적절한 노드/포트에서 호스팅되었는지 확인합니다. 다음 단계를 수행해야 합니다
@@ -1379,6 +1404,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+[[switch-back-the-metrocluster-configuration]]
 == MetroCluster 구성을 다시 전환합니다
 
 새 컨트롤러를 구성한 후 MetroCluster 구성을 다시 전환하여 구성을 정상 작동 상태로 되돌립니다.
@@ -1442,6 +1468,7 @@ Remote: cluster_A         Configuration state configured
 
 
 
+[[check-the-health-of-the-metrocluster-configuration]]
 == MetroCluster 구성의 상태를 확인합니다
 
 컨트롤러 모듈을 업그레이드한 후 MetroCluster 구성 상태를 확인해야 합니다.
@@ -1481,6 +1508,7 @@ Cluster_A:: node_A_1 (non-overridable veto): DR partner NVLog mirroring is not o
 
 
 
+[[upgrade-the-nodes-on-sitea]]
 == site_a의 노드를 업그레이드합니다
 
 site_A에서 업그레이드 작업을 반복해야 합니다
@@ -1494,6 +1522,7 @@ site_A에서 업그레이드 작업을 반복해야 합니다
 
 
 
+[[send-a-custom-autosupport-message-after-maintenance]]
 == 유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다
 
 업그레이드를 완료한 후에는 유지 보수 종료를 알리는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.
@@ -1512,6 +1541,7 @@ site_A에서 업그레이드 작업을 반복해야 합니다
 
 
 
+[[restore-tiebreaker-monitoring]]
 == Tiebreaker 모니터링을 복원합니다
 
 이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.
