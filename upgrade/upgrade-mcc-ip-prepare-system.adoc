@@ -749,6 +749,10 @@ dr-group-id cluster     node     node-systemid ha-partner-systemid dr-partner-sy
 플랫폼을 업그레이드하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.
 
 .단계
+. 고급 권한 레벨로 변경:
++
+세트 프리빌리지 고급
+
 . 다음 명령의 출력을 수집합니다.
 +
 'Storage iSCSI-initiator show'를 선택합니다

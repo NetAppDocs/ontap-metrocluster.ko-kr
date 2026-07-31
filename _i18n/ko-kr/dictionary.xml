@@ -3949,7 +3949,6 @@
   <block id="6e3e824a90910b9e25e5e78ce4c4cdd8" category="section-title">2노드 MetroCluster 구성에서 ONTAP 설정</block>
   <block id="4c286a4533c555f62039858a256b6e7f" category="paragraph">2노드 MetroCluster 구성에서는 각 클러스터에서 노드를 부팅하고 클러스터 설정 마법사를 종료한 다음 'cluster setup' 명령을 사용하여 노드를 단일 노드 클러스터로 구성해야 합니다.</block>
   <block id="3d97e23b9e037dc67358be022977af8f" category="paragraph">이 작업은 네이티브 NetApp 스토리지를 사용하는 2노드 MetroCluster 구성에 사용됩니다.</block>
-  <block id="81d86459e5a3e2353ad75db0c4cc1230" category="paragraph">ONTAP 설정에 대한 자세한 내용은 를 참조하십시오 <block ref="b344da29565aaa689911ef5c966296ae" category="inline-link-macro-rx"></block></block>
   <block id="65ed7b3de2c8dfe1b7246d59c4b26a4f" category="list-text">첫 번째 노드의 전원을 켭니다.</block>
   <block id="53f541e3adb858602815a998339e0b0c" category="admonition">DR(재해 복구) 사이트의 노드에서 이 단계를 반복해야 합니다.</block>
   <block id="a86def5a14c2c7501e8a41235fe02fce" category="paragraph">노드가 부팅되면 콘솔에서 클러스터 설정 마법사가 시작되어 AutoSupport가 자동으로 활성화됨을 알립니다.</block>
@@ -3991,7 +3990,6 @@
   <block id="a3d215bb3f9760ff7a4cb7905f1b8906" category="paragraph"><block ref="a3d215bb3f9760ff7a4cb7905f1b8906" category="inline-link-rx"></block></block>
   <block id="aae922509d585e09b8265f6641b4acf2" category="list-text">이 옵션에 대한 자세한 내용은 스토리지 집계 생성 man 페이지를 참조하십시오.</block>
   <block id="ec6bc1ed17c7180a0e6765b2317d7458" category="paragraph">* 주의 *: MetroCluster FC 구성에서는 애그리게이트의 원격 디스크에 액세스할 수 있는 경우에만 미러링되지 않은 애그리게이트가 전환 후 온라인 상태가 됩니다. ISL에 장애가 발생하면 로컬 노드가 미러링되지 않은 원격 디스크의 데이터를 액세스할 수 없습니다. Aggregate에 장애가 발생하면 로컬 노드가 재부팅될 수 있습니다.</block>
-  <block id="10b3d9338ce3b44f2aaa4dffc12e92d4" category="list-text">를 클릭합니다 <block ref="eb0cf332a63028d1b0cd8a746301e53a" category="inline-link-macro-rx"></block> Aggregate 미러링에 대한 자세한 내용은 에 나와 있습니다.</block>
   <block id="a15ff2e13d2d5de2d8e756fdca682ed8" category="paragraph">추가 데이터 애그리게이트는 미러링할 수도, 미러링되지 않은 데이터일 수도 있습니다.</block>
   <block id="948c6064329c7f835d6e6f774987479b" category="paragraph">애그리게이트 유형을 확인합니다.</block>
   <block id="0204308ea13f5505c1b50d4ca42dded5" category="inline-link-macro">ONTAP에서 MCC 소프트웨어를 구성합니다</block>
@@ -4023,7 +4021,6 @@
   <block id="361772e9851772534036695f2c569190" category="paragraph">폴링 간격 때문에 모든 데이터를 반영하는 데 15분 정도 걸릴 수 있습니다. ONTAP 상태 모니터는 '상태' 열의 값이 '정상'이고 WWN(월드와이드 이름) 등의 정보가 표시되면 브리지와 연결하고 모니터링할 수 있습니다.</block>
   <block id="c0aba19592ccfed38799730fe622ca35" category="list-text">더 자세한 결과 표시:</block>
   <block id="e36a6837628a0758c6b3c069f31a53c0" category="inline-link-macro">재해에 복구합니다</block>
-  <block id="5af69ae57a9a4e104da0dc7bf9b476fe" category="paragraph">를 클릭합니다 <block ref="717caad659837ead96fd39bedd8a12bf" category="inline-link-macro-rx"></block> 구성 백업 관리 섹션에 대한 추가 정보가 포함되어 있습니다.</block>
   <block id="ba09a762470f462f66de565149da671e" category="summary">2노드 MetroCluster SAS 연결 구성에서는 스토리지 컨트롤러가 SAS 케이블을 통해 스토리지에 직접 연결되는 2개의 단일 노드 클러스터를 포함하여 여러 부품이 필요합니다.</block>
   <block id="682ba0abaad6793ecc8615228c146375" category="doc">2노드 SAS 연결 스트레치 MetroCluster 구성의 일부</block>
   <block id="090182ab3424eee2fbfc86e2a955ec1d" category="paragraph">스토리지 컨트롤러는 SAS 케이블을 사용하여 스토리지에 직접 연결합니다.</block>
@@ -7697,7 +7694,6 @@
   <block id="96abca7d26e25e3dd2faae287630e78c" category="section-title">LIF는 전환 후 액세스할 수 없습니다</block>
   <block id="db43757844d85d41cafc08a227fd080a" category="paragraph">소스 및 DR 노드의 FC 타겟 포트가 연결되는 FC 스위치 패브릭에서 변경된 경우 DR 파트너에 저장된 FC LIF가 전환 작업 후 호스트에 액세스할 수 없게 될 수 있습니다.</block>
   <block id="9f8ef3593c4eb0694f41b278eb124810" category="paragraph">LIF의 호스트 연결을 확인하기 위해 FC 스위치 패브릭에서 변경한 후에는 소스 및 DR 노드에서 'MetroCluster check lif repair-placement' 명령을 실행해야 합니다. 스위치 패브릭이 변경되면 LIF가 DR 파트너 노드의 서로 다른 타겟 FC 포트에 배치될 수 있습니다.</block>
-  <block id="9f1e892e838f85f0b4330fcfad0f245a" category="paragraph">의 ""SVM 구성 복제" 섹션을 참조하십시오 <block ref="eedeed859392052ace3070cab5bd7d76" category="inline-link-macro-rx"></block> SVM DR 관계 구성에 대한 자세한 내용은 를 참조하십시오.</block>
   <block id="5249dbc8eb004a9fbac1419d22d7bcd0" category="section-title">"storage aggregate plex show" 명령의 출력은 MetroCluster 전환 후 결정되지 않습니다</block>
   <block id="b3597a38069ce88bd5e71904ddba930d" category="paragraph">MetroCluster 절체 후 'Storage aggregate plex show' 명령을 실행하면 전환된 루트 애그리게이트의 Plex0 상태가 불확정되며 "failed"로 표시됩니다. 이 시간 동안 전환된 루트는 업데이트되지 않습니다. 이 플렉의 실제 상태는 MetroCluster 복구 단계 이후에만 확인할 수 있습니다.</block>
   <block id="15036251faefea85ea9b6ffa4f283c29" category="list-text">"vol-dr-force-nvfail" 매개 변수를 "on"으로 설정하여 스위치오버 시 NVFAIL을 트리거하도록 MetroCluster 구성 활성화:</block>
@@ -9703,7 +9699,6 @@
   <block id="344fc0c43530ccad90a38944b632b1e4" category="list-text">설정 모드 종료: '종료</block>
   <block id="9c0c1022f821ad4ee9fd20c2731bc6f1" category="list-text">문제 해결을 지원하기 위해 각 MetroCluster DR 그룹 내의 각 SAS 디스크 쉘프에 대해 고유한 쉘프 ID를 적극 권장합니다.</block>
   <block id="6bec966647e1b9c8a03ddd277c8fe864" category="inline-link-macro">부품 반품 및 앰프, 교체</block>
-  <block id="844f223d5d27d9ea92473e2d258ee969" category="list-text">부품을 교체한 후 키트와 함께 제공된 RMA 지침에 따라 오류가 발생한 부품을 NetApp에 반환합니다. 를 참조하십시오 <block ref="af64d870205b209887217377e716cd40" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
   <block id="a6bcf63661955f7af02bb69a2cd4d604" category="section-title">기존 구성에 쉘프 추가</block>
   <block id="9d8f122e284d64a31d50c5040fe4f338" category="section-title">이동할 연결입니다</block>
   <block id="508763c5ecfa3096ab25520f14c971f5" category="paragraph">에 설명된 포트를 사용합니다 <block ref="10769c5348734bed7e40370eea435ab1" category="inline-xref-macro-rx"></block>.</block>
@@ -10514,7 +10509,6 @@
   <block id="4ceec7a3943b4f4acd458ca89a818798" category="list-text">로컬 클러스터 ISL 케이블 연결</block>
   <block id="10fb2fd01be021da5cbd6629a96e24a6" category="list-text">로컬 클러스터 인터페이스가 스위치에 연결되지 * 않은 경우:</block>
   <block id="446e9d64184ff722494a9a706bbd9d06" category="inline-link-macro">스위치 NetApp 클러스터 환경으로 마이그레이션</block>
-  <block id="76424713bb30c73c77e02fc03d7bfa54" category="list-text">를 사용합니다 <block ref="54de1f7ba3b725e8a672244eb3963d64" category="inline-link-macro-rx"></block> 스위치가 없는 클러스터를 스위치가 없는 클러스터로 변환하는 절차입니다. 에 표시된 포트를 사용합니다 <block ref="69c250b2ff0cdf92dd9f1322bce627cf" category="inline-link-macro-rx"></block> 또는 RCF 케이블 연결 파일을 사용하여 로컬 클러스터 인터페이스를 연결합니다.</block>
   <block id="ef28ede8698d6b9355079c76d077c08d" category="list-text">MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <block ref="78909af09fbcfe8c1bea7d5cc8b7674c" category="inline-xref-macro-rx"></block>.</block>
   <block id="15bac38a5276c64284cc172e6de7c1f3" category="list-text">선택적으로 NS224 쉘프를 이동합니다.</block>
   <block id="13c9917203c8c2e988a75ac2cf246dcd" category="paragraph">NS224 셸프를 MetroCluster IP 스위치에 연결하지 않는 MetroCluster IP 구성을 재구성할 경우 적절한 절차에 따라 NS224 셸프를 추가하거나 이동합니다.</block>
@@ -11351,7 +11345,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="453251ed281496384c5feb5900cc31ba" category="paragraph">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
   <block id="3929d13da5d4b97eff76f8a6ec8c5501" category="list-text">에 액세스합니다 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.</block>
   <block id="94416aa661a92cc8d67b1bd6459ef472" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster FC 업그레이드 표를 참조하십시오  <block ref="9595cfad5a4deb04d4a443245fae3f76" category="inline-link-macro-rx"></block>.</block>
-  <block id="332fe4e638c485c04f214b0a13747f6d" category="list-text">이 절차를 사용하면 통계청 기반의 자동 스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. ARL(Aggregate Relocation)을 사용하여 컨트롤러 업그레이드를 수행하려면 을 참조하십시오 <block ref="0fe967effd4f0eaf84576f897dbfd368" category="inline-link-macro-rx"></block>. 통계청 기반의 자동화 절차를 사용하는 것이 좋습니다.</block>
   <block id="0b22fb8d0feec85055f45c8c4a298766" category="list-text">절차를 계속하라는 메시지가 나타나면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.</block>
   <block id="84ea00dba7c6a1cf0426e58385307e4f" category="paragraph"><block ref="5b9047ebb0d87499d679fd69fbda42cf" prefix="" category="inline-code"></block></block>
   <block id="b57c06e6dad65cb8a7fb01050706349f" category="paragraph">ONTAP System Manager를 사용하여 웹 브라우저에서 클러스터 관리 IP 주소(\https://172.17.12.153).</block>
@@ -11790,7 +11783,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="83b4bda1bf654ac13c4188c2487240ab" category="paragraph">다음 표는 MetroCluster FC 구성에서 ASA 시스템을 확장할 때 지원되는 플랫폼 조합을 보여줍니다.</block>
   <block id="afe02acc345f4f57d38f2922dbfb2be3" category="cell">8노드 DR 그룹 1</block>
   <block id="561e0dbd4b4b1343ca844c5058cb54e9" category="cell">8노드 DR 그룹 2</block>
-  <block id="2653fa879e50e7b880dab8fa2e3967ae" category="paragraph">다음 표에서는 8노드 MetroCluster IP 구성에서 지원되는 플랫폼 조합을 보여 줍니다.</block>
   <block id="573cf4c0aff376944ba2b059e8c7e9c2" category="paragraph-title">지원되는 AFF 및 FAS MetroCluster IP 확장 조합</block>
   <block id="b1705b27cbcba17a6877fcb4c39148d9" category="paragraph-title">지원되는 ASA MetroCluster IP 확장 조합</block>
   <block id="466ce3655b07eea61b5dbce58f9e9824" category="paragraph">다음 표는 MetroCluster IP 구성에서 ASA 시스템을 확장하는 데 지원되는 플랫폼 조합을 보여줍니다.</block>
@@ -12833,7 +12825,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="badf169d1e3a98e87ec699a27e36973e" category="inline-link-macro">새 컨트롤러를 설정하고 NetBoot합니다</block>
   <block id="ef981c1c63c22e1055257ab17c228d0d" category="paragraph"><block ref="31bf2e2f0c56e7a2af110bee4998f2d7" category="inline-link-macro-rx"></block>..</block>
   <block id="2d6c2faa1510a1abbf511186d036a809" category="paragraph">이전 시스템 ID는 에서 식별되었습니다. <block ref="aacd1fc1f619acd6603cbd45ee223ad9" category="inline-link-macro-rx"></block></block>
-  <block id="b81de37a349498d964469c412909f544" category="list-text">다른 모든 연결을 새 컨트롤러 모듈(FC-VI, 스토리지, 클러스터 인터커넥트 등)에 연결합니다.</block>
   <block id="c030f6772f3af36940b46d4c256dc6c7" category="paragraph">명령 출력에는 새 컨트롤러 모듈의 시스템 ID(1574774970)가 표시됩니다. 그러나 루트 애그리게이트 디스크는 여전히 이전 시스템 ID(4068741254)가 소유합니다. 이 예에서는 MetroCluster 구성에서 다른 노드가 소유한 드라이브는 표시하지 않습니다.</block>
   <block id="cd3645f6babaf4e4c1171003b3d056f5" category="admonition">MetroCluster IP 시스템이 고급 디스크 파티셔닝을 사용하여 구성된 경우 명령을 실행하여 DR 파트너 시스템 ID를 포함해야<block ref="1d9572d24113365244a97e4cb81d5a77" prefix=" " category="inline-code"></block> 합니다.</block>
   <block id="ef5358bea095b88966697d1cef9aca78" category="paragraph"><block ref="92e7e14dad7d6c754e49f694366186c6" category="inline-link-macro-rx"></block>..</block>
@@ -13272,7 +13263,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="47c5dc57c727f22af1ac884b3169ca06" category="paragraph">8노드 MetroCluster 구성 지원</block>
   <block id="61c5b898fb73fa93fc5e839741da576e" category="paragraph">영구 8노드 클러스터는 IP 및 패브릭 연결 MetroCluster 구성으로 지원됩니다.</block>
   <block id="0f58a32a1bffeb9bb247bbf5ce1a2f3f" category="paragraph"><block ref="0f58a32a1bffeb9bb247bbf5ce1a2f3f" category="inline-link-rx"></block></block>
-  <block id="62e327d2b6ddff400e7d504d270e8f37" category="paragraph"><block ref="62e327d2b6ddff400e7d504d270e8f37" category="inline-link-macro-rx"></block></block>
   <block id="97c5969afb75d5f5fcf94bd41d9aa879" category="list-text">MetroCluster IP 구성을 위한 모범 사례.</block>
   <block id="f14613b83e9dfb7ecf4d15a3e8d4ce71" category="section-title">ONTAP Mediator 재구성(MetroCluster IP 구성)</block>
   <block id="16b859a14f691774ca3d8870b4291e5a" category="paragraph">ONTAP Mediator로 구성된 MetroCluster IP 구성이 있는 경우 ONTAP Mediator와의 연결을 제거하고 다시 구성해야 합니다.</block>
@@ -13352,15 +13342,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4e4facc560c88d40d47ce2b1369d5552" category="doc">MetroCluster IP 스위치에서 로그 수집 구성</block>
   <block id="d5a5c9619599da12d87af6daeab1ece6" category="paragraph">MetroCluster IP 구성에서는 디버깅 목적으로 스위치 로그를 수집하도록 로그 수집을 구성할 수 있습니다.</block>
   <block id="7c51c84110459cf460a444094be133c4" category="admonition">Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클러스터에 대해 새로운 사용자가 필요합니다. 예를 들어, MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4는 모두 스위치에 별도의 사용자를 구성해야 합니다. 동일한 사용자에 대해 여러 개의 SSH 키를 사용하는 것은 지원되지 않습니다.</block>
-  <block id="2ded3ff3862adfc6f54d2a2f3ebf1147" category="paragraph">* 참고: * FIPS 모드를 활성화한 경우 다음을 완료해야 합니다.</block>
   <block id="81f0d5b127adfd87f50ce10bc85e1e65" category="list-text">공급업체의 지침에 따라 스위치에서 SSH 키를 다시 생성합니다.</block>
-  <block id="a60a00967db7342947b326a8f7618f52" category="list-text">를 사용하여 ONTAP에서 SSH 키를 재생성합니다<block ref="c079360670e0f4f9441a54ac1d262788" prefix=" " category="inline-code"></block></block>
-  <block id="fe85427bc017f31f0f2b913e65e8d888" category="list-text"><block ref="36ac3c1f3bae8142b5d110fb906ba03e" prefix=" " category="inline-code"></block>명령을 사용하여 로그 수집 설정 루틴을 다시 실행하십시오</block>
-  <block id="ca243f374acfb56a77236e0d30935f7f" category="list-text">사용자가 스위치 명령에 액세스할 수 있어야<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> 합니다. 이러한 사용자를 사용할 수 없는 경우 새 사용자를 만들고 사용자에게 필요한 권한을 부여합니다.</block>
-  <block id="8d36506446d5ad8477c75d9150e6528f" category="list-text">스위치에 대해 스위치 상태 모니터링을 활성화해야 합니다. 이를 확인하려면 다음을 확인하세요. <block ref="83bb5774e6e4dc96959b12bfa4334f18" prefix=" " category="inline-code"></block> 필드는 출력에서 *true*로 설정됩니다. <block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="40b03f9635c63b20aade0ff8145eafb8" category="list-text">Broadcom 및 Cisco 스위치를 사용한 로그 수집:</block>
-  <block id="60f743043272b873831b17c5e7290445" category="list-text">로그 수집이 활성화된 상태에서 각 클러스터 설정에 대해 스위치에 새 사용자를 생성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.</block>
-  <block id="c1433b541d8d99faed86a93460cb0bad" category="list-text">NVIDIA 스위치를 사용한 지원 로그 수집의 경우<block ref="c85737d6a0d20328583b59ea7320a5ef" prefix=" " category="inline-code"></block> 암호를 제공하지 않고 명령을 실행할 수 있는 _user_ 로그 수집이 허용되어야 합니다. 이 사용을 허용하려면 다음 명령을 실행합니다.</block>
   <block id="a0379ee208b1ca86b0ce11e60c0e73eb" category="paragraph"><block ref="83e3f80a08612b0113ac48e3b9a3432e" prefix="" category="inline-code"></block></block>
   <block id="4b96de8aec25594d2021f91d86aa38cb" category="open-title">ONTAP 9.15.1 이상</block>
   <block id="09a5c8e72e479c23dfcdb0045312203a" category="list-text">로그 수집을 설정하려면 각 스위치에 대해 다음 명령을 실행합니다. 로그 수집을 위해 스위치 이름, 사용자 이름 및 암호를 입력하라는 메시지가 표시됩니다.</block>
@@ -14115,8 +14098,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="7d75b765033881d6427904f346b2af70" category="image-alt">협상된 전환 및 스위치백을 수행하기 위한 워크플로</block>
   <block id="a9df5c35dc8d16b1357b057f348b9b78" category="paragraph">다음 지침은 ONTAP 9.15.1 이전에 출시된 플랫폼인 이전 플랫폼 모델을 ONTAP 9.15.1 이상에서 출시된 최신 플랫폼 모델이 포함된 기존 MetroCluster 구성에 추가해야 하는 흔하지 않은 시나리오를 위한 것입니다.  8노드 FC에서 IP로 전환하는 경우, 첫 번째 FC DR 그룹을 ONTAP 9.15.1 이상에서 도입된 플랫폼 모델로 전환했고 두 번째 DR 그룹을 ONTAP 9.15.1 이전에 도입된 플랫폼으로 전환할 계획이라면 이 지침이 적용됩니다.</block>
   <block id="c8efd71f5dfcaa3170cfb9e870570d0c" category="paragraph">기존 MetroCluster 구성에 *공유 클러스터/HA 포트*( ONTAP 9.15.1 이상에서 출시된 플랫폼)를 사용하는 플랫폼이 포함된 경우, 구성의 모든 노드를 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상으로 업그레이드하지 않고는 *공유 MetroCluster/HA 포트*( ONTAP 9.15.1 이전에 출시된 플랫폼)를 사용하는 플랫폼을 추가할 수 없습니다.</block>
-  <block id="bbd4f8afd941a4f9092590e529ea65aa" category="paragraph">*공유/ MetroCluster HA 포트*를 사용하는 이전 플랫폼 모델을 *공유 클러스터/HA 포트*를 사용하는 최신 플랫폼 모델이 포함된 MetroCluster 에 추가하는 것은 흔하지 않은 시나리오이며 대부분의 조합에는 영향을 미치지 않습니다.</block>
-  <block id="08d2b7abcd5b6aa419d380eb2e816dae" category="paragraph">다음 표를 사용하여 해당 조합이 영향을 받는지 확인하세요.  기존 플랫폼이 첫 번째 열에 나열되어 있고, 구성에 추가하려는 플랫폼이 두 번째 열에 나열되어 있는 경우, 새 DR 그룹을 추가하려면 구성의 모든 노드가 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상을 실행해야 합니다.</block>
   <block id="21c46632ec731f4be55ce4557663e507" category="image-alt">기존 선반에 4개의 새로운 IP 노드로 전환</block>
   <block id="1e0490b479cfe90476d9225ca238cf02" category="image-alt">2노드 전환을 위한 워크플로</block>
   <block id="305b5ad24ea95dd1803f299dea23021d" category="image-alt">DR 그룹 1의 전환 FC 노드</block>
@@ -14219,7 +14200,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="10d1ab0c8cf052d4ea0d37de04e41090" category="paragraph">ONTAP 9.18.1부터 Flash Cache는 MetroCluster IP 구성을 위한 FAS50 시스템에서 지원됩니다.</block>
   <block id="6b3168d94d2d3e334f52748aea390dba" category="list-text">내부 선반에 Flash Cache 드라이브가 있는 경우 데이터 집계와 루트 집계를 모두 가질 수 없습니다.</block>
   <block id="653607d5d7d3af18614ca6042833ed8a" category="list-text">슬롯 0과 23은 플래시 캐시 드라이브에 사용됩니다.</block>
-  <block id="8e61d02677cd63addf1b7c325e4f7ac0" category="list-text">외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다<block ref="a28575c3c82c68e34920359e77fd18f4" category="inline-link-macro-rx"></block> .</block>
   <block id="da0670d9828b0c4a39fd70e8176cd286" category="paragraph">36개 드라이브(12개 내부 드라이브 및 24개 외부 드라이브 - 외부 셸프에 데이터 집계, 내부 셸프에 루트 집계)</block>
   <block id="13825b1621d2d8ab9420fd458a556917" category="paragraph">내부 드라이브는 4개의 동일한 그룹(4분의 1)으로 나뉩니다.  각 분기는 자동으로 별도의 풀에 할당됩니다.  외부 선반의 드라이브는 4개의 동일한 그룹(4분의 1)으로 나뉩니다.  각 4분의 1 선반은 자동으로 별도의 풀에 할당됩니다.</block>
   <block id="fcbd19b726fdd6160dfe2ab43f285a55" category="paragraph">*참고사항:*</block>
@@ -14395,7 +14375,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="108a4ad72df5c318a77dad90928d8770" category="admonition">MetroCluster IP 구성에서 ONTAP Mediator를 사용하는 구성이 아닌 경우 AUSO 장애 도메인은 이미 'auso-disabled'로 설정되어 있습니다.</block>
   <block id="6ba9661e38afca32fe30fec08ca5c4ab" category="list-text">두 사이트의 노드를 중지합니다.</block>
   <block id="f759ce596ef74c921d7bddaf277a11c8" category="paragraph">*참고:* 25GbE 속도를 사용하려면 MAM1Q00A-QSA28 트랜시버 어댑터가 필요합니다.</block>
-  <block id="316fa55db721e45107647fc0de79704f" category="paragraph">이더넷 스위치 상태 모니터링(CSHM)은 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위해 스위치 로그를 수집하는 역할을 합니다. 이 절차에서는 수집 설정, 상세 *Support* 로그 요청, 그리고 AutoSupport에서 수집하는 *Periodic* 데이터의 시간별 수집을 활성화하는 프로세스를 안내합니다.</block>
   <block id="4526d2820ba573572df0eafdc557014c" category="paragraph">시스템이 전환되는 동안 NetApp에서는 특정 작업을 수행하지 않도록 권장합니다.</block>
   <block id="6efa43350457e5d9dbe5d6c555eb32f9" category="paragraph">시스템이 전환 중일 때는 다음과 같은 작업을 권장하지 않으며, NetApp 지원팀의 안내에 따라서만 수행해야 합니다.</block>
   <block id="9ea78d85c08becd89d5d23daef8687fa" category="list-text">애그리게이트 생성 또는 삭제</block>
@@ -14638,4 +14617,28 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="fec849fc6a76787dab045fcdba41b004" category="list-text">2코어 CPU가 있는 호스트 OS에 설치된 경우, 4노드 MetroCluster IP 구성 하나와 SnapMirror 활성 동기화 피어 관계 하나.</block>
   <block id="1241530f686624169cbc6250a94efe3b" category="inline-link-macro">ONTAP Mediator에서 여러 MetroCluster IP 구성을 지원하는 방법에 대해 자세히 알아보세요.</block>
   <block id="93b7a44949c3dc9c153b4a0b58a89938" category="paragraph"><block ref="ec2190c64ae13bbd66508ccf14a8aee4" category="inline-link-macro-rx"></block>.</block>
+  <block id="92f612fac880d74199e14effbb3e97a8" category="paragraph">SVM DR 관계 구성에 대한 자세한 내용은 <block ref="14176889f381a7d61946d7924735d77a" category="inline-link-macro-rx"></block>의 "`Replicating the SVM configuration`" 섹션을 참조하십시오.</block>
+  <block id="c3a86c1ff4ba299946058dc2a774ad3c" category="list-text">FIPS 모드를 사용하는 경우 로그 수집을 설정하기 전에 다음 단계를 완료하십시오.</block>
+  <block id="4484a5c96839b02a9c71b4af57881dc1" category="list-text">ONTAP에서 <block ref="c079360670e0f4f9441a54ac1d262788" prefix=" " category="inline-code"></block>을(를) 사용하여 SSH 키를 재생성합니다.</block>
+  <block id="51857e580cc9df32af288c0f2ec0c2d8" category="list-text"><block ref="36ac3c1f3bae8142b5d110fb906ba03e" prefix=" " category="inline-code"></block> 명령을 사용하여 로그 수집 설정을 다시 실행하십시오.</block>
+  <block id="bffa1a3361b2e88e5c9862c25f21dfae" category="list-text">스위치<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> 명령에 접근할 수 있어야 합니다. 접근 권한이 없다면 새 스위치 사용자를 생성하고 필요한 권한을 부여하십시오.</block>
+  <block id="36a0cebcb564d852dfd0f969cfd4b30f" category="list-text">스위치에 대해 스위치 상태 모니터링이 활성화되어 있어야 합니다. <block ref="83bb5774e6e4dc96959b12bfa4334f18" prefix=" " category="inline-code"></block> 필드가 <block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> 출력에서 *true*로 설정되어 있는지 확인하십시오.</block>
+  <block id="faa5843ec4ddc65bc98113178a2bc37e" category="list-text">로그 수집이 활성화된 각 클러스터에 대해 새 스위치 사용자를 생성하십시오. 이러한 스위치는 동일한 사용자에 대해 여러 개의 SSH 키를 지원하지 않으므로, 설정을 다시 실행하면 기존 SSH 키가 덮어쓰여집니다.</block>
+  <block id="67d16ab92d6c3dc53d71cf57bd013db0" category="list-text">NVIDIA 스위치를 사용한 지원 로그 수집을 위해서는 로그 수집 사용자가 암호 없이 <block ref="c85737d6a0d20328583b59ea7320a5ef" prefix=" " category="inline-code"></block> 명령을 실행할 수 있어야 합니다. 이를 허용하려면 다음을 실행하십시오.</block>
+  <block id="b0cab81835967ac01314d22080d536c0" category="paragraph">사용 중인 ONTAP 버전에 따라 단계를 따라 로그 수집을 설정하고, 주기적인 데이터 수집을 활성화하고, 필요에 따라 온디맨드 지원 로그를 요청하십시오.</block>
+  <block id="2e14aa157ad73372d9cc2f65b91796cd" category="paragraph">이 작업을 수행하려면 FTP, TFTP, SFTP, HTTP 또는 SCP 등의 파일 전송 소프트웨어를 사용하여 파일을 스위치로 복사해야 합니다.</block>
+  <block id="424f0fb38562d43c2b61beeaa601e9a0" category="paragraph">ONTAP 설정에 대한 일반적인 정보는 <block ref="95a2ad6fc516d3f7074e7d260643f587" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="1232a165e8a7370740154d534f06f767" category="list-text"><block ref="a65430c79af53447a6078bbb1ffdf593" category="inline-link-macro-rx"></block>에는 미러링 애그리게이트에 대한 자세한 정보가 포함되어 있습니다.</block>
+  <block id="915a6a364deb20dbae913ca1a6a54884" category="paragraph">이 <block ref="3318585afd9a80331d69c814ca32c976" category="inline-link-macro-rx"></block> 에는 _구성 백업 관리_ 섹션에 추가 정보가 포함되어 있습니다.</block>
+  <block id="ebb6d8f55979a61b08c5f6bec68dc9e9" category="list-text">부품을 교체한 후에는 키트에 동봉된 RMA 지침에 따라 고장난 부품을 NetApp으로 반송하십시오. 자세한 내용은 <block ref="fce425f03b6e5bb936dcc3474dfd00b8" category="inline-link-macro-rx"></block> 페이지를 참조하십시오.</block>
+  <block id="1133e231fd95d23cf0b090a2ae023a0a" category="list-text"><block ref="2a7c1099f37ae8bcd871fa3a433d3da5" category="inline-link-macro-rx"></block> 절차를 사용하여 스위치가 없는 클러스터를 스위치가 있는 클러스터로 변환하십시오. <block ref="69c250b2ff0cdf92dd9f1322bce627cf" category="inline-link-macro-rx"></block> 또는 RCF 케이블링 파일에 표시된 포트를 사용하여 로컬 클러스터 인터페이스를 연결하십시오.</block>
+  <block id="020765b53f5b5a9bae58be6efb0832b7" category="paragraph">다음 표를 사용하여 구성에 문제가 발생하는지 확인하십시오. 기존 플랫폼이 첫 번째 열에 있고 구성에 추가하려는 플랫폼이 두 번째 열에 있는 경우, 새 DR 그룹을 추가하려면 구성의 모든 노드에서 ONTAP 9.15.1P11 또는 ONTAP 9.16.1P4 이상(플랫폼에서 지원하는 ONTAP 버전에 따라 다름)을 실행해야 합니다.</block>
+  <block id="2da16daf711c30ffdccfb00d9124ff3e" category="list-text">*공유 MetroCluster/HA 포트*를 사용하는 구형 플랫폼 모델을 *공유 클러스터/HA 포트*를 사용하는 최신 플랫폼 모델이 포함된 MetroCluster에 추가하는 것은 흔하지 않은 시나리오이며 대부분의 조합에는 영향을 미치지 않습니다.</block>
+  <block id="9036e4a551e4d8f9c140b331b643bda7" category="inline-link-macro">지원되는 플랫폼 조합</block>
+  <block id="5fef73d29b96ab699c1eb38940de2810" category="list-text">이 표는 *공유 MetroCluster/HA 포트* 및 *공유 클러스터/HA 포트*를 사용하는 모든 플랫폼 모델을 보여줍니다. 모든 조합이 이 절차에서 지원되는 것은 아닙니다. 전환 조합이 지원되는지 확인하려면 <block ref="8d843f5fbaa6ab545e8dd5557634fad6" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="6f77dec9774bb68016b5a89bc584139f" category="list-text">이 표는 *공유 MetroCluster/HA 포트* 및 *공유 클러스터/HA 포트*를 사용하는 모든 플랫폼 모델을 보여줍니다. 모든 조합이 이 절차에서 지원되는 것은 아닙니다. 확장 조합이 지원되는지 확인하려면 <block ref="9823e60a325d02fc2db15489ab93bf24" category="inline-xref-macro-rx"></block>을 참조하십시오.</block>
+  <block id="94fd46a40c73a3bf69fc419517ec0c3c" category="paragraph">다음 표는 8노드 MetroCluster IP 구성에 대해 지원되는 플랫폼 조합을 보여줍니다.</block>
+  <block id="2a24c722355bf7db1679e018b746b7b0" category="list-text">이 표는 *공유 MetroCluster/HA 포트* 및 *공유 클러스터/HA 포트*를 사용하는 모든 플랫폼 모델을 보여줍니다. 모든 조합이 이 절차에서 지원되는 것은 아닙니다. 새로 고침 조합이 지원되는지 확인하려면 <block ref="69c5d8418076cf16192dc8b27a9666cd" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="04fa61126d631fa1cb66d18aff511858" category="list-text">이 절차를 사용하여 NSO 기반 자동 전환 및 스위치백을 사용하는 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. 애그리게이트 재배치(ARL)를 사용하여 컨트롤러를 업그레이드하려면 <block ref="2dcc0fc2978fe358e486022a4ab03dca" category="inline-link-macro-rx"></block>을 참조하십시오. NSO 기반 자동 절차를 사용하는 것이 좋습니다.</block>
+  <block id="f7f3cd01961c53f33c89b788147d8de3" category="list-text">기존 컨트롤러에서 분리했던 모든 연결부를 새 컨트롤러 모듈에 다시 연결하십시오.</block>
 </blocks>

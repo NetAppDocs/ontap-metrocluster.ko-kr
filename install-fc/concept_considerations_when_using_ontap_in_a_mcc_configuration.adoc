@@ -457,7 +457,7 @@ image::../media/svm_dr_image_2.gif[전환 후 SVM 재해 복구]
 
 
 
-의 ""SVM 구성 복제" 섹션을 참조하십시오 link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html["CLI를 통한 데이터 보호"] SVM DR 관계 구성에 대한 자세한 내용은 를 참조하십시오.
+SVM DR 관계 구성에 대한 자세한 내용은 link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html["CLI를 통한 데이터 보호"^]의 "`Replicating the SVM configuration`" 섹션을 참조하십시오.
 
 
 

@@ -218,7 +218,7 @@ NOTE: 관리 인터페이스(사용하는 경우)를 제외하고 새 스위치�
 
 .. 로컬 클러스터 인터페이스가 스위치에 연결되지 * 않은 경우:
 +
-... 를 사용합니다 link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched.html["스위치 NetApp 클러스터 환경으로 마이그레이션"] 스위치가 없는 클러스터를 스위치가 없는 클러스터로 변환하는 절차입니다. 에 표시된 포트를 사용합니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"] 또는 RCF 케이블 연결 파일을 사용하여 로컬 클러스터 인터페이스를 연결합니다.
+... link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched.html["스위치 NetApp 클러스터 환경으로 마이그레이션"^] 절차를 사용하여 스위치가 없는 클러스터를 스위치가 있는 클러스터로 변환하십시오. link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"] 또는 RCF 케이블링 파일에 표시된 포트를 사용하여 로컬 클러스터 인터페이스를 연결하십시오.
 
 
 

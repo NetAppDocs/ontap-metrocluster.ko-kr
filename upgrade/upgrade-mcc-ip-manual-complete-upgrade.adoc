@@ -38,6 +38,9 @@ MetroCluster 체크 쇼
 +
 .. MetroCluster IP 연결을 확인합니다.
 +
+세트 프리빌리지 고급
+
++
 'Storage iSCSI-initiator show'를 선택합니다
 
 .. 노드가 작동 중인지 확인합니다.

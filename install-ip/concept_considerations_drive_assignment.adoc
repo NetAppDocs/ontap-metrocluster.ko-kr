@@ -882,7 +882,7 @@ ONTAP 9.18.1부터 Flash Cache는 MetroCluster IP 구성을 위한 FAS50 시스�
 ====
 * 내부 선반에 Flash Cache 드라이브가 있는 경우 데이터 집계와 루트 집계를 모두 가질 수 없습니다.
 * 슬롯 0과 23은 플래시 캐시 드라이브에 사용됩니다.
-* 외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다link:https://docs.netapp.com/us-en/ontap/disks-aggregates/remove-ownership-disk-task.html["디스크에서 ONTAP 소유권 제거"] .
+* 외부 디스크 선반을 재사용하는 경우 컨트롤러에 연결하기 전에 외부 디스크 선반의 디스크 소유권이 제거되었는지 확인하세요. 참조하다link:https://docs.netapp.com/us-en/ontap/disks-aggregates/remove-ownership-disk-task.html["디스크에서 ONTAP 소유권 제거"^] .
 
 
 ====

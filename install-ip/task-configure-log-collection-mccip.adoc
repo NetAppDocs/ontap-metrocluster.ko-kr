@@ -14,42 +14,30 @@ MetroCluster IP 구성에서는 디버깅 목적으로 스위치 로그를 수�
 
 CAUTION: Broadcom 및 Cisco 스위치에서는 로그 수집을 위해 각 클러스터에 대해 새로운 사용자가 필요합니다. 예를 들어, MetroCluster 1, MetroCluster 2, MetroCluster 3, MetroCluster 4는 모두 스위치에 별도의 사용자를 구성해야 합니다. 동일한 사용자에 대해 여러 개의 SSH 키를 사용하는 것은 지원되지 않습니다.
 
-.이 작업에 대해
-이더넷 스위치 상태 모니터링(CSHM)은 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위해 스위치 로그를 수집하는 역할을 합니다. 이 절차에서는 수집 설정, 상세 *Support* 로그 요청, 그리고 AutoSupport에서 수집하는 *Periodic* 데이터의 시간별 수집을 활성화하는 프로세스를 안내합니다.
-
-* 참고: * FIPS 모드를 활성화한 경우 다음을 완료해야 합니다.
-
-[NOTE]
-====
-. 공급업체의 지침에 따라 스위치에서 SSH 키를 다시 생성합니다.
-. 를 사용하여 ONTAP에서 SSH 키를 재생성합니다 `debug system regenerate-systemshell-key-pair`
-.  `system switch ethernet log setup-password`명령을 사용하여 로그 수집 설정 루틴을 다시 실행하십시오
+.시작하기 전에
+* FIPS 모드를 사용하는 경우 로그 수집을 설정하기 전에 다음 단계를 완료하십시오.
++
+.. 공급업체의 지침에 따라 스위치에서 SSH 키를 다시 생성합니다.
+.. ONTAP에서  `debug system regenerate-systemshell-key-pair`을(를) 사용하여 SSH 키를 재생성합니다.
+..  `system switch ethernet log setup-password` 명령을 사용하여 로그 수집 설정을 다시 실행하십시오.
 
 
-====
-
-
-[[before-you-begin]]
-== 시작하기 전에
-
-* 사용자가 스위치 명령에 액세스할 수 있어야 `show` 합니다. 이러한 사용자를 사용할 수 없는 경우 새 사용자를 만들고 사용자에게 필요한 권한을 부여합니다.
-* 스위치에 대해 스위치 상태 모니터링을 활성화해야 합니다. 이를 확인하려면 다음을 확인하세요.  `Is Monitored:` 필드는 출력에서 *true*로 설정됩니다.  `system switch ethernet show` 명령.
+* 스위치 `show` 명령에 접근할 수 있어야 합니다. 접근 권한이 없다면 새 스위치 사용자를 생성하고 필요한 권한을 부여하십시오.
+* 스위치에 대해 스위치 상태 모니터링이 활성화되어 있어야 합니다.  `Is Monitored:` 필드가  `system switch ethernet show` 출력에서 *true*로 설정되어 있는지 확인하십시오.
 * Broadcom 및 Cisco 스위치를 사용한 로그 수집:
 +
 ** 로컬 사용자는 네트워크 관리자 권한이 있어야 합니다.
-** 로그 수집이 활성화된 상태에서 각 클러스터 설정에 대해 스위치에 새 사용자를 생성해야 합니다. 이러한 스위치는 동일한 사용자에 대해 여러 SSH 키를 지원하지 않습니다. 수행된 추가 로그 수집 설정은 사용자의 기존 SSH 키를 덮어씁니다.
+** 로그 수집이 활성화된 각 클러스터에 대해 새 스위치 사용자를 생성하십시오. 이러한 스위치는 동일한 사용자에 대해 여러 개의 SSH 키를 지원하지 않으므로, 설정을 다시 실행하면 기존 SSH 키가 덮어쓰여집니다.
 
 
-* NVIDIA 스위치를 사용한 지원 로그 수집의 경우 `cl-support` 암호를 제공하지 않고 명령을 실행할 수 있는 _user_ 로그 수집이 허용되어야 합니다. 이 사용을 허용하려면 다음 명령을 실행합니다.
+* NVIDIA 스위치를 사용한 지원 로그 수집을 위해서는 로그 수집 사용자가 암호 없이  `cl-support` 명령을 실행할 수 있어야 합니다. 이를 허용하려면 다음을 실행하십시오.
 +
 `echo '_<user>_ ALL = NOPASSWD: /usr/cumulus/bin/cl-support' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
 
 
 
-
-
-[[steps]]
-== 단계
+.단계
+사용 중인 ONTAP 버전에 따라 단계를 따라 로그 수집을 설정하고, 주기적인 데이터 수집을 활성화하고, 필요에 따라 온디맨드 지원 로그를 요청하십시오.
 
 [role="tabbed-block"]
 ====
