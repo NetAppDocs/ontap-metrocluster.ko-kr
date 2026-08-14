@@ -174,7 +174,7 @@ DEPRECATED-Community String or SNMPv3 Username: -
 --
 .Cisco 스위치
 --
-Cisco 9336C-FX2 스위치에서 SNMPv3 사용자 이름 SNMPv3_user 구성:
+Cisco Nexus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.
 
 * 인증 없음 * 의 경우:
 +
@@ -331,7 +331,7 @@ cluster1::*>
 --
 .엔비디아 - CL 5.4.0
 --
-CLI 5.4.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.
+NVIDIA Cumulus 스위치(CL 5.4.0 실행 중)에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.
 
 * 인증 없음 * 의 경우:
 +
@@ -525,9 +525,9 @@ DEPRECATED-Community String or SNMPv3 Username: -
 
 
 --
-.엔비디아 - CL 5.11.0
+.NVIDIA - CL 5.11.0+
 --
-CLI 5.11.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.
+CLI 5.11.0 이상을 실행하는 NVIDIA Cumulus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.
 
 * 인증 없음 * 의 경우:
 +

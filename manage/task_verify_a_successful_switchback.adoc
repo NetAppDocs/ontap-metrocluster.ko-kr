@@ -87,6 +87,55 @@ vs1a           data    sync-source
 'MetroCluster operation show' 명령의 출력에서 제시된 픽스를 수행한다.
 
 |===
+. 두 클러스터 간의 전환이 정상적으로 작동하는지 확인하려면 다음 점검 사항을 수행하십시오.
++
+.. DR 클러스터에서 정상 클러스터에서 DR 클러스터로의 전환이 가능한지 확인합니다.
++
+'MetroCluster switchover-simulate
+
+.. 정상 작동하는 클러스터에서 DR 클러스터에서 정상 작동하는 클러스터로의 전환이 가능한지 확인합니다.
++
+'MetroCluster switchover-simulate
+
+.. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::*> metrocluster check run
+----
++
+작업은 백그라운드에서 실행됩니다.
+
+.. 를 누릅니다 `metrocluster check run` 작업이 완료되면 다음을 실행합니다.
++
+MetroCluster 체크 쇼
+
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+cluster_A:::*> metrocluster check show
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+clusters            ok
+connections         ok
+volumes             ok
+7 entries were displayed.
+----
++
+
+NOTE: MetroCluster FC 환경에서는 'connections' 항목이 명령 출력에서 "not-applicable"으로 표시되어야 합니다.
 
 
-반대 방향으로 스위치백을 수행하려면 이전 섹션을 반복해야 합니다. site_A가 site_B의 전환을 수행하는 경우 site_B가 site_A의 전환을 수행합니다
+
+

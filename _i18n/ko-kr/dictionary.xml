@@ -13312,12 +13312,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8379e83fc1ad68bfb1ad877f1b7fda6b" category="list-text">ONTAP 측에서 SNMPv3 사용자를 설정합니다.</block>
   <block id="6b9f542dd155c40aa5e4484b5ff61711" category="list-text">새로운 SNMPv3 사용자와 함께 모니터링하도록 CSHM을 구성합니다.</block>
   <block id="f1d85c8d2abe8fba947527035ed0f381" category="list-text">CSHM 폴링 기간을 기다린 후 이더넷 스위치의 일련 번호가 채워졌는지 확인하세요.</block>
-  <block id="0fdfed50bdfb7a964741d7f6016dd332" category="paragraph">Cisco 9336C-FX2 스위치에서 SNMPv3 사용자 이름 SNMPv3_user 구성:</block>
   <block id="d4d693d9dd779d0daf149c2e448b60b2" category="list-text">새로 생성된 SNMPv3 사용자로 쿼리할 일련 번호가 CSHM 폴링 기간이 완료된 후 이전 단계에서 자세히 설명한 일련 번호와 동일한지 확인합니다.</block>
   <block id="05918726f836c344025fecbcf0275f1b" category="open-title">엔비디아 - CL 5.4.0</block>
-  <block id="c19095c0c8945d1d4e4e73ec7a11354c" category="paragraph">CLI 5.4.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
-  <block id="cd12738ab621b27db86ca1b02e9d118c" category="open-title">엔비디아 - CL 5.11.0</block>
-  <block id="1d478fc1ce1613a790d5d77707c188f6" category="paragraph">CLI 5.11.0을 실행하는 NVIDIA SN2100 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
   <block id="8ae4eeaa7baed19106cc30ea02483c5e" category="paragraph">이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다.</block>
   <block id="4ae61f4d1ec2f0efafd8ee4274e49ccf" category="section-title">MetroCluster IP 구성에서 CSHM을 구성하기 위한 중요 참고 사항</block>
   <block id="b38569be2d36a20e8902840c1ea976fe" category="paragraph">이 섹션에서는 Cisco, Broadcom 및 NVIDIA SN2100 스위치에서 SNMPv3를 구성하고 로그를 수집하는 일반적인 단계를 설명합니다. MetroCluster IP 구성에서 지원되는 스위치 펌웨어 버전에 대한 단계를 따라야 합니다 . <block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block> 지원되는 펌웨어 버전을 확인하세요.</block>
@@ -14641,4 +14637,15 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2a24c722355bf7db1679e018b746b7b0" category="list-text">이 표는 *공유 MetroCluster/HA 포트* 및 *공유 클러스터/HA 포트*를 사용하는 모든 플랫폼 모델을 보여줍니다. 모든 조합이 이 절차에서 지원되는 것은 아닙니다. 새로 고침 조합이 지원되는지 확인하려면 <block ref="69c5d8418076cf16192dc8b27a9666cd" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="04fa61126d631fa1cb66d18aff511858" category="list-text">이 절차를 사용하여 NSO 기반 자동 전환 및 스위치백을 사용하는 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드할 수 있습니다. 애그리게이트 재배치(ARL)를 사용하여 컨트롤러를 업그레이드하려면 <block ref="2dcc0fc2978fe358e486022a4ab03dca" category="inline-link-macro-rx"></block>을 참조하십시오. NSO 기반 자동 절차를 사용하는 것이 좋습니다.</block>
   <block id="f7f3cd01961c53f33c89b788147d8de3" category="list-text">기존 컨트롤러에서 분리했던 모든 연결부를 새 컨트롤러 모듈에 다시 연결하십시오.</block>
+  <block id="2fb65189695e9496f507ebb44d5b6cb6" category="paragraph">스위치백을 수행하기 전에 LIF가 적절한 노드와 포트에서 호스팅되는지 확인하십시오.</block>
+  <block id="542e234aa223d3b0ecca11dacf8e46ed" category="list-text">스위치백을 수행하기 전에 LIF가 적절한 노드와 포트에서 호스팅되는지 확인하십시오.</block>
+  <block id="3dcbbe108abc6bdf7036466d9fe35058" category="admonition">스위치백을 수행하기 전에 새 노드에서 데이터 LIF의 위치가 올바른지 확인해야 합니다. 구성을 스위치백하면 ONTAP에서 LIF가 사용하는 홈 포트에서 트래픽을 재개하려고 시도합니다. 홈 포트와 스위치 포트 및 VLAN 간의 연결이 올바르지 않으면 I/O 오류가 발생할 수 있습니다. LIF를 올바른 노드 또는 포트에 배치하는 데 문제가 발생하면 스위치백을 진행하지 말고 NetApp 기술 지원에 문의하십시오.</block>
+  <block id="108f2a315310ceff812cf39f143ca95b" category="list-text">두 클러스터 간의 전환이 정상적으로 작동하는지 확인하려면 다음 점검 사항을 수행하십시오.</block>
+  <block id="59a93fe50b25a85e88bed38108e0196c" category="list-text">DR 클러스터에서 정상 클러스터에서 DR 클러스터로의 전환이 가능한지 확인합니다.</block>
+  <block id="59ded25db2e6cefacbcb41c378e0b709" category="list-text">정상 작동하는 클러스터에서 DR 클러스터에서 정상 작동하는 클러스터로의 전환이 가능한지 확인합니다.</block>
+  <block id="2c7ea164e9295a29d20e890710cfcc1d" category="admonition">MetroCluster FC 환경에서는 'connections' 항목이 명령 출력에서 "not-applicable"으로 표시되어야 합니다.</block>
+  <block id="706bc34d657098e3dcd81db43d280c53" category="paragraph">Cisco Nexus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
+  <block id="5a523817621c85574dfcbf0b11c07075" category="paragraph">NVIDIA Cumulus 스위치(CL 5.4.0 실행 중)에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.</block>
+  <block id="4451c276144ff12f4a59bad51c0a1181" category="open-title">NVIDIA - CL 5.11.0+</block>
+  <block id="d1f08b7bd68bdc79984e047bc1939c5d" category="paragraph">CLI 5.11.0 이상을 실행하는 NVIDIA Cumulus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.</block>
 </blocks>
