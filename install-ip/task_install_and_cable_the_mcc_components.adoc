@@ -4,16 +4,44 @@ sidebar: sidebar
 keywords: ip, switch, configuring 
 summary: 백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 
 ---
-= 올바른 MetroCluster IP 스위치 구성 절차를 선택하세요
+= MetroCluster IP 스위치 구성에 대해 알아보십시오.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 따라야 할 절차는 스위치 공급업체에 따라 다릅니다.
+IP 스위치를 구성하여 백엔드 MetroCluster IP 연결을 제공해야 합니다. 구성 절차는 스위치 공급업체와 MetroCluster IP를 새로 설치하는 과정의 일부로 스위치를 구성하는지, 아니면 다른 절차의 일부로 구성하는지에 따라 다릅니다.
+
+
+
+[[fresh-metrocluster-ip-installation]]
+== 새로운 MetroCluster IP 설치
+
+MetroCluster IP를 새로 설치하는 경우, 스위치 공급업체에 따라 스위치 구성 절차를 선택하십시오.
 
 * link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
 * link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]
 * link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP 스위치를 구성합니다"]
+
+
+
+
+[[switch-replacement-and-rcf-or-firmware-updates]]
+== 스위치 교체 및 RCF 또는 펌웨어 업데이트
+
+스위치 교체 또는 업그레이드와 같은 다른 MetroCluster IP 절차의 일환으로 스위치 펌웨어, 참조 구성 파일(RCF) 또는 둘 다를 업데이트해야 할 수 있습니다. 이러한 경우 IP 스위치를 구성하기 전에 클러스터 LIF를 이동해야 합니다. 이러한 시나리오에 대한 주요 단계는 다음과 같습니다.
+
+
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다.
+
+. link:../install-ip/switch-move-cluster-lifs.html["클러스터 LIF 이동"]
+. 클러스터 LIF를 파트너 스위치로 이동한 후 스위치 공급업체의 표준 구성 절차를 따를 수 있습니다.
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]
+** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP 스위치를 구성합니다"]
+
+
+. 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 link:../install-ip/switch-move-cluster-lifs.html["클러스터 LIF 이동"]부터 시작하여 동일한 단계를 반복해야 합니다.
 

@@ -155,6 +155,7 @@ volumes             ok
 
 
 
+. link:../install-ip/switch-move-cluster-lifs.html["클러스터 LIF 이동"] 업그레이드를 시작하기 전에.
 . 첫 번째 스위치에 소프트웨어를 설치합니다.
 +
 
@@ -169,6 +170,10 @@ NOTE: 스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, swit
 ** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-cumulus-software["NVIDIA SN2100 스위치 Cumulus 소프트웨어를 다운로드하고 설치합니다"]
 
 
-. 각 스위치에 대해 이전 단계를 반복합니다.
+. 각 스위치에 대해 이전 단계를 반복하십시오.
++
+
+NOTE: 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. link:../install-ip/task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."]을 참조하십시오.
+
 . 반복합니다 <<step_1_fw_upgrade,1단계>> 구성 상태를 확인합니다.
 

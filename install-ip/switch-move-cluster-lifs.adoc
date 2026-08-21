@@ -1,0 +1,329 @@
+---
+permalink: install-ip/switch-move-cluster-lifs.html 
+sidebar: sidebar 
+keywords: ip, switch, configuring, configure, factory defaults, cisco, MACsec encryption, 9336C, 9336, forward error correction, fec 
+summary: '스위치 펌웨어 또는 참조 구성 파일(RCF)을 업데이트할 때, 업그레이드 중에 클러스터 운영이 중단되지 않도록 클러스터 LIF를 파트너 스위치로 이동합니다.' 
+---
+= MetroCluster IP 스위치 교체, RCF 변경 또는 펌웨어 업데이트 전에 클러스터 LIF 이동
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster IP 스위치를 교체하거나 스위치 펌웨어 또는 참조 구성 파일(RCF)을 변경할 경우, 클러스터 운영을 중단 없이 지속하려면 클러스터 LIF를 파트너 스위치로 이동해야 합니다.
+
+.이 작업에 대해
+* 스위치 펌웨어를 업그레이드 또는 다운그레이드하거나, 스위치 RCF를 교체하거나, IP 스위치를 교체하기 전에 이 작업을 반드시 수행해야 합니다.
++
+
+NOTE: 스위치를 처음 구성하는 경우, 스위치를 교체하는 경우가 아니라면 이 작업을 건너뛸 수 있습니다.
+
+* 이 작업에서는 ONTAP 명령과 스위치 명령을 모두 사용해야 합니다. 별도의 지시가 없는 한 ONTAP 명령을 사용합니다.
+* 이 절차에서 사용된 예시에서는 IP_switch_A_1을 업그레이드하므로 클러스터 LIF를 IP_switch_A_2로 마이그레이션해야 합니다.
+* 이 절차에 나오는 명령 출력 예시는 Cisco 스위치의 세부 정보를 보여줍니다. 출력 결과는 사용하시는 스위치 모델 및 제조사에 따라 다를 수 있습니다.
+
+
+.단계
+. 각 노드에서 클러스터 스위치에 연결된 클러스터 포트를 표시합니다.
++
+네트워크 디바이스 발견 쇼
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> network device-discovery show
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------  ----------------
+node_A_2/cdp
+            e10b   IP_switch_A_2
+                                             Ethernet1/18      N9K-C9336C-FX2
+            e2a    IP_switch_A_1
+                                             Ethernet1/18      N9K-C9336C-FX2
+            e4a    IP_switch_A_1
+                                             Ethernet1/2       N9K-C9336C-FX2
+            e4b    IP_switch_A_2
+                                             Ethernet1/2       N9K-C9336C-FX2
+            e5b    IP_switch_A_1
+                                             Ethernet1/10      N9K-C9336C-FX2
+            e7b    IP_switch_A_2
+                                             Ethernet1/10      N9K-C9336C-FX2
+            e9a    local_network_switch
+                                             Ethernet1/5       N9K-C9372PX
+            e9b    local_network_switch
+                                             Ethernet1/6       N9K-C9372PX
+node_A_2/lldp
+            e0M    mgmt_switch (00:08:2f:16:8e:02)
+                                             Eth121/1/1        -
+            e10b   IP_switch_A_2 (cc:90:70:e8:73:a0)
+                                             Ethernet1/18      -
+            e2a    IP_switch_A_1 (cc:90:70:e8:50:48)
+                                             Ethernet1/18      -
+            e5b    IP_switch_A_1 (cc:90:70:e8:50:28)
+                                             Ethernet1/10      -
+            e7b    IP_switch_A_2 (cc:90:70:e8:73:80)
+                                             Ethernet1/10      -
+            e9a    local_network_switch (88:f0:31:86:fe:a8)
+                                             Ethernet1/5       -
+            e9b    local_network_switch (88:f0:31:86:fe:a9)
+                                             Ethernet1/6       -
+node_A_1/cdp
+            e10b   IP_switch_A_2
+                                             Ethernet1/17      N9K-C9336C-FX2
+            e2a    IP_switch_A_1
+                                             Ethernet1/17      N9K-C9336C-FX2
+            e4a    IP_switch_A_1
+                                             Ethernet1/1       N9K-C9336C-FX2
+            e4b    IP_switch_A_2
+                                             Ethernet1/1       N9K-C9336C-FX2
+            e5b    IP_switch_A_1
+                                             Ethernet1/9       N9K-C9336C-FX2
+            e7b    IP_switch_A_2
+                                             Ethernet1/9       N9K-C9336C-FX2
+            e9a    local_network_switch
+                                             Ethernet1/3       N9K-C9372PX
+            e9b    local_network_switch
+                                             Ethernet1/4       N9K-C9372PX
+node_A_1/lldp
+            e0M    mgmt_switch (00:08:2f:16:8e:03)
+                                             Eth121/1/2        -
+            e10b   IP_switch_A_2 (cc:90:70:e8:73:9c)
+                                             Ethernet1/17      -
+            e2a    IP_switch_A_1 (cc:90:70:e8:50:44)
+                                             Ethernet1/17      -
+            e5b    IP_switch_A_1 (cc:90:70:e8:50:24)
+                                             Ethernet1/9       -
+            e7b    IP_switch_A_2 (cc:90:70:e8:73:7c)
+                                             Ethernet1/9       -
+            e9a    local_network_switch (88:f0:31:86:fe:a6)
+                                             Ethernet1/3       -
+            e9b    local_network_switch (88:f0:31:86:fe:a7)
+                                             Ethernet1/4       -
+30 entries were displayed.
+----
+====
+. 각 클러스터 포트의 관리 및 운영 상태를 확인하십시오.
++
+.. 클러스터의 모든 포트가 정상 상태로 작동 중인지 확인하십시오.
++
+`network port show -role cluster`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> network port show -role cluster
+
+Node: node_A_1
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e4a       Cluster      Cluster          up   9000  auto/40000 healthy  false
+e4b       Cluster      Cluster          up   9000  auto/40000 healthy  false
+
+Node: node_A_2
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e4a       Cluster      Cluster          up   9000  auto/40000 healthy  false
+e4b       Cluster      Cluster          up   9000  auto/40000 healthy  false
+4 entries were displayed.
+----
+====
+.. 모든 클러스터 인터페이스(LIF)가 홈 포트에 있는지 확인합니다.
++
+`network interface show -role cluster`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> network interface show -role cluster
+            Logical        Status     Network            Current       Current Is
+Vserver     Interface      Admin/Oper Address/Mask       Node          Port    Home
+----------- -------------- ---------- ------------------ ------------- ------- ----
+Cluster
+            node_A_1_clus1 up/up      101.101.101.88/18  node_A_1      e4a     true
+            node_A_1_clus2 up/up      101.101.101.93/18  node_A_1      e4b     true
+            node_A_2_clus1 up/up      101.101.101.96/18  node_A_2      e4a     true
+            node_A_2_clus2 up/up      101.101.101.97/18  node_A_2      e4b     true
+4 entries were displayed.
+
+cluster_A::*>
+----
+====
+.. 클러스터에 두 클러스터 스위치에 대한 정보가 모두 표시되는지 확인하십시오.
++
+`system switch ethernet show -is-monitoring-enabled-operational true`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> system switch ethernet show -is-monitoring-enabled-operational true
+Switch                      Type               Address          Model
+--------------------------- ------------------ ---------------- ---------------
+IP_switch_A_1               cluster-network    10.231.7.251     N9K-C9336C-FX2
+     Serial Number: FDO26020KLJ
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.5(4)
+    Version Source: CDP/ISDP
+
+IP_switch_A_2               cluster-network    10.231.7.252     N9K-C9336C-FX2
+     Serial Number: FDO26020KGL
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.5(4)
+    Version Source: CDP/ISDP
+
+2 entries were displayed.
+
+cluster_A::*>
+----
+====
+
+
+. 클러스터 LIF에서 자동 복원 기능을 비활성화하십시오. 그러면 클러스터 LIF가 파트너 클러스터 스위치로 페일오버되고, 대상 스위치에서 업그레이드 절차를 수행하는 동안 해당 상태를 유지합니다.
++
+
+NOTE: 두 번째 패브릭을 업그레이드하는 경우 이 단계를 건너뛰고 <<shut-down-ports,4단계>>로 이동할 수 있습니다.
+
++
+`network interface modify -vserver Cluster -lif * -auto-revert false`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> network interface modify -vserver Cluster -lif * -auto-revert false
+
+Warning: Disabling the auto-revert feature of the cluster logical interface may
+         effect the availability of your cluster network. Are you sure you want
+         to continue? {y|n}: y
+
+Warning: Changes to a cluster LIF can affect the health of the Cluster. Are you
+         sure you want to continue? {y|n}: y
+4 entries were modified.
+----
+====
+. [[shut-down-ports]]클러스터 스위치 IP_switch_A1에서 노드의 클러스터 포트에 연결된 포트를 종료합니다.
++
+[role="tabbed-block"]
+====
+.Cisco의
+--
+[listing]
+----
+IP_switch_A_1(config)# sh int eth1/1,eth1/2 brief
+
+--------------------------------------------------------------------------------
+Ethernet        VLAN    Type Mode   Status  Reason                 Speed     Port
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1          101     eth  access up      none                      40G(D) --
+Eth1/2          101     eth  access up      none                      40G(D) --
+IP_switch_A_1(config)#
+IP_switch_A_1(config)# int eth1/1,eth1/2
+IP_switch_A_1(config-if-range)# shut
+IP_switch_A_1(config-if-range)#
+----
+--
+.Broadcom의
+--
+[listing]
+----
+IP_switch_A1(config)# interface eth1/1/1-2,eth1/7-8
+IP_switch_A1(config-if-range)# shutdown
+----
+--
+.NVIDIA
+--
+.. 클러스터 인터페이스를 표시합니다.
++
+[listing]
+----
+cumulus@IP_switch_A_1:mgmt:~$ nv show interface
+Interface    Admin Status  Oper Status  Speed  MTU    Type      Remote Host     Remote Port  Summary
+-----------  ------------  -----------  -----  -----  --------  --------------  -----------  ---------
+swp1         up            up           100G   9216   swp       cluster1         e1a
+----
+.. 클러스터 인터페이스 포트를 종료합니다.
++
+[listing]
+----
+sudo python3 <RCF_name> runCmd swp1 state down
+----
+
+
+--
+====
+. [[verify_cluster_lif_migration]] 클러스터 LIF가 클러스터 스위치 IP_switch_A2의 포트로 마이그레이션되었는지 확인합니다. 몇 초 정도 소요될 수 있습니다.
++
+`network interface show -role cluster`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> network interface show -role cluster
+            Logical        Status     Network            Current       Current Is
+Vserver     Interface      Admin/Oper Address/Mask       Node          Port    Home
+----------- -------------- ---------- ------------------ ------------- ------- ----
+Cluster
+            node_A_1_clus1 up/up      101.101.101.88/18  node_A_1      e4b     false
+            node_A_1_clus2 up/up      101.101.101.93/18  node_A_1      e4b     true
+            node_A_2_clus1 up/up      101.101.101.96/18  node_A_2      e4b     false
+            node_A_2_clus2 up/up      101.101.101.97/18  node_A_2      e4b     true
+4 entries were displayed.
+----
+====
+. 클러스터가 정상 상태인지 확인합니다.
++
+'클러스터 쇼'
+
++
+.예제 표시
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster_A::*> cluster show
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------  ------------
+node_A_1             true    true          false
+node_A_2             true    true          false
+2 entries were displayed.
+----
+====
+
+
+.작업을 마친 후
+클러스터 LIF가 파트너 스위치로 이동되면 스위치 공급업체의 표준 구성 절차에 따라 목표 펌웨어 또는 RCF 버전으로 업그레이드를 완료할 수 있습니다.
+
+* link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
+* link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]
+* link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP 스위치를 구성합니다"]
+
+
+
+NOTE: 첫 번째 패브릭에서 스위치를 구성한 후에는 두 번째 패브릭에서 클러스터 LIF를 이동하기 위해 동일한 단계를 반복해야 합니다.

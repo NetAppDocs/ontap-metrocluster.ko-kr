@@ -424,10 +424,6 @@ Remote: cluster_A         Configuration state configured
 +
 'MetroCluster config-replication resync-status show'를 선택합니다
 
-. SnapMirror 또는 SnapVault 구성을 다시 설정합니다.
-+
-ONTAP 8.3에서는 MetroCluster 스위치백 작업 후 손실된 SnapMirror 구성을 수동으로 재설정해야 합니다. ONTAP 9.0 이상에서는 관계가 자동으로 다시 설정됩니다.
-
 
 
 

@@ -21,7 +21,7 @@ ISL 연결을 보장하려면 두 스위치 모두에서 모든 단계를 완료
 다음 절차에서는 스위치 포트 Eth1/24/1에 연결된 10Gb ISL을 스위치 포트 17 및 18에 연결된 두 개의 100-Gb ISL으로 교체하는 것으로 가정합니다.
 
 
-NOTE: NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우 ISL을 변경하려면 새 RCF 파일이 필요할 수 있습니다. 현재 및 새 ISL 속도가 40Gbps 및 100Gbps인 경우에는 새 RCF 파일이 필요하지 않습니다. ISL 속도의 다른 모든 변경 사항에는 새 RCF 파일이 필요합니다. 예를 들어 ISL 속도를 40Gbps에서 100Gbps로 변경하는 경우 새 RCF 파일이 필요하지 않지만 ISL 속도를 10Gbps에서 40Gbps로 변경하려면 새 RCF 파일이 필요합니다.
+NOTE: NS224 쉘프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우, ISL을 변경하려면 새 참조 구성 파일(RCF)이 필요할 수 있습니다.  현재 및 새 ISL 속도가 각각 40Gbps와 100Gbps인 경우에는 새 RCF가 필요하지 않습니다.  그 외의 모든 ISL 속도 변경에는 새 RCF가 필요합니다.  예를 들어, ISL 속도를 40Gbps에서 100Gbps로 변경하는 경우에는 새 RCF가 필요하지 않지만, 10Gbps에서 40Gbps로 변경하는 경우에는 새 RCF가 필요합니다.
 
 .시작하기 전에
 의 * 스위치 * 섹션을 참조하십시오 link:https://hwu.netapp.com/["NetApp Hardware Universe를 참조하십시오"^] 지원되는 트랜시버를 확인합니다.
@@ -59,7 +59,7 @@ switch_B_1#
 . 필요에 따라 ISL 포트를 변경합니다.
 +
 
-NOTE: NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우 RCF 파일을 업그레이드하고 새 ISL 포트에 대한 새 구성을 적용해야 하는 경우, 의 단계를 따릅니다 link:task_upgrade_rcf_files_on_mcc_ip_switches.html["MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다."]
+NOTE: NS224 쉘프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하고 있고, RCF를 업그레이드하고 새 ISL 포트에 새 구성을 적용해야 하는 경우 다음 단계를 따르십시오. link:task_upgrade_rcf_files_on_mcc_ip_switches.html["MetroCluster IP 스위치의 RCF를 업그레이드하십시오."]
 
 +
 [cols="30,70"]

@@ -51,7 +51,6 @@
   <block id="ac3aa4d9a92093f6bd699c4806c9e9ae" category="list-text">스위치 소프트웨어가 설치되어 있는지 확인합니다</block>
   <block id="1aa8373a0298a0a1429ac4238b72a2d0" category="paragraph">다음 예는 출력을 보여줍니다.</block>
   <block id="15035122b1bddd8c3fe67b67b0705420" category="list-text">MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.</block>
-  <block id="11a5f8de5dc8fd3561b2b849e4277433" category="section-title">Cisco IP RCF 파일 다운로드 및 설치</block>
   <block id="ea0d999dd84d8036206106a29fbde270" category="paragraph">RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.</block>
   <block id="bbc155fb2b111bf61c4f5ff892915e6b" category="cell">스위치</block>
   <block id="ce03f8603301ea51b9ff5d168605b3a2" category="cell">RCF 파일</block>
@@ -1897,9 +1896,6 @@
   <block id="17df4fd49850915af19920e401bb115e" category="list-text">Tiebreaker CLI monitor dump-status 명령을 사용하여 모든 MetroCluster 구성의 전체 상태에 대한 덤프 파일을 생성합니다.</block>
   <block id="fe2474eef36644b3afa9a1943fe28539" category="paragraph">다음 예에서는 /var/log/netapp/mctb/metrocluster-tiebreaker-status.xml 덤프 파일이 성공적으로 생성되었음을 보여 줍니다.</block>
   <block id="f13350a82ffb5e406781c64809e8f8a8" category="summary">새로운 노드를 수용하기 위해 조닝을 재구성하려면 RCF 파일을 적용해야 합니다.</block>
-  <block id="6a82c384f85f037d7996beaa2d1d7d15" category="list-text">구성에 사용할 RCF 파일을 찾습니다.</block>
-  <block id="c0b2ef0c7e8bedc314010fcbe929e544" category="paragraph">RCF 파일은 8노드 구성에 사용해야 하며 스위치 모델에 맞게 사용해야 합니다.</block>
-  <block id="93db71f559f17fb1c146361893f3ff36" category="list-text">RCF 파일을 다운로드 페이지의 지침에 따라 적용하고 ISL 설정을 필요에 따라 조정합니다.</block>
   <block id="b862528f72ea6d2ddcdf03d59e55fa27" category="list-text">스위치 구성이 저장되었는지 확인합니다.</block>
   <block id="9566c6febae9d51d50e73e64dbd10cfe" category="list-text">FC 스위치를 재부팅합니다.</block>
   <block id="cc421f36cbb2a622eb7463c75215237e" category="list-text">이전에 생성한 케이블링 레이아웃을 사용하여 기존 브리지와 새로운 FC-SAS 브릿지를 FC 스위치에 케이블로 연결합니다.</block>
@@ -4268,12 +4264,10 @@
   <block id="8d05d7bd3136c1c3d27ce612d1642b55" category="paragraph">전환 프로세스는 테스트 및 유지 관리 중에 무중단 운영을 제공하는 것 외에도 단일 명령으로 사이트 장애로부터 복구할 수 있습니다.</block>
   <block id="46244e26ed027de3f7dac5055551ea67" category="list-text">스위치백 작업을 수행하기 전에 이전의 모든 구성 변경을 완료해야 합니다.</block>
   <block id="2af1ec41c7e7b07f4cdb56cb47d4ebe4" category="paragraph">이는 협상된 전환 또는 스위치백 작업으로 인한 경쟁을 피하기 위한 것입니다.</block>
-  <block id="ca776b7a0f214042bab6636ff7235436" category="admonition">SnapMirror 및 SnapVault 구성은 자동으로 삭제됩니다.</block>
   <block id="7adfea65bac9026340a67e4c4fbc6cf1" category="paragraph">MetroCluster switchover 명령은 MetroCluster 구성에서 모든 DR 그룹의 노드를 전환합니다. 예를 들어, 8노드 MetroCluster 구성에서는 두 DR 그룹 모두에서 노드를 전환합니다.</block>
   <block id="03d462e9dc47820c368c2d67f464784a" category="paragraph">MetroCluster 전환 - 강제 재해 발생 시 진실</block>
   <block id="7e2e7baa90ed02c71ec0c1aff8c2f52f" category="list-text">전환을 계속하라는 메시지가 나타나면 y를 선택합니다.</block>
   <block id="37a919d754d5135e54d0f9a3243827d8" category="paragraph">스위치오버가 거부되면 '- override-vetoes' 옵션을 사용하여 'MetroCluster switchover-forced-on-disaster true' 명령을 재실행할 수 있습니다. 이 옵션 매개변수를 사용하는 경우 시스템은 전환을 방해하는 모든 소프트 트레인을 재정의합니다.</block>
-  <block id="8e2df6a076ab8c2df47dff186e779dab" category="paragraph">SnapMirror 관계는 스위치오버 이후 다시 설정해야 합니다.</block>
   <block id="3f98066376e4f19519c40bfdf06de035" category="paragraph">MetroCluster 절체 후 'Storage aggregate plex show' 명령을 실행하면 전환된 루트 애그리게이트의 Plex0 상태가 불확정되어 failed로 표시됩니다. 이 시간 동안 전환된 루트는 업데이트되지 않습니다. 이 플렉의 실제 상태는 MetroCluster 복구 단계 이후에만 확인할 수 있습니다.</block>
   <block id="d6a9edee99b1378b66a7ba99d5c24c06" category="section-title">스위치오버 후 NVFAIL 상태의 볼륨 액세스</block>
   <block id="bee520709a401df5d0c77fa01981bb69" category="paragraph">스위치오버 후에는 볼륨 수정 명령의 `-in-nvfailed-state ' 매개 변수를 재설정하여 클라이언트 데이터 액세스 제한을 제거하여 NVFAIL 상태를 지워야 합니다.</block>
@@ -4742,7 +4736,6 @@
   <block id="838e866ece9701e5a58755a132b144d0" category="paragraph">스위치백을 완료하는 데 시간이 오래 걸리는 경우 고급 권한 수준에서 다음 명령을 사용하여 진행 중인 기준선의 상태를 확인할 수 있습니다.</block>
   <block id="eca7334e4ced3e1626aa264456a4abf0" category="paragraph">'MetroCluster config-replication resync-status show'를 선택합니다</block>
   <block id="bebab338ce208a8365444e4ebe4efe11" category="list-text">SnapMirror 또는 SnapVault 구성을 다시 설정합니다.</block>
-  <block id="6414d473dfb2c6598f8118312a0cc177" category="paragraph">ONTAP 8.3에서는 MetroCluster 스위치백 작업 후 손실된 SnapMirror 구성을 수동으로 재설정해야 합니다. ONTAP 9.0 이상에서는 관계가 자동으로 다시 설정됩니다.</block>
   <block id="a9ca4c629c1e46669a8bc18624424d68" category="section-title">스위치백을 성공적으로 확인하는 중입니다</block>
   <block id="6a4974bedd0009da69e6a878e12b82bd" category="paragraph">스위치백을 수행한 후 모든 애그리게이트 및 SVM(스토리지 가상 머신)이 온라인 상태로 전환되었는지 확인할 수 있습니다.</block>
   <block id="3579c4d393b95e31540a220033fd8ed1" category="list-text">전환된 데이터 애그리게이트가 다시 전환되는지 확인합니다.</block>
@@ -5409,7 +5402,6 @@
   <block id="ab09caec1407f77495e6c20853fcfd75" category="list-text">구성 상태를 확인합니다.</block>
   <block id="a755a72f514254c41e2fe4747c117fd7" category="list-text">첫 번째 스위치에 소프트웨어를 설치합니다.</block>
   <block id="8385ca59dee772c25d8029fd40151e4e" category="admonition">스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, switch_B_1, switch_A_2, switch_B_2 순서로 설치해야 합니다.</block>
-  <block id="220d6c1bfe741784a72c631856e0b298" category="list-text">각 스위치에 대해 이전 단계를 반복합니다.</block>
   <block id="f323ad60392fa7c75997f3419493d6c3" category="summary">유지보수 또는 재배치를 시작하려면 먼저 전체 MetroCluster IP 구성 및 모든 장비의 전원을 꺼야 합니다.</block>
   <block id="5a862a97aa2605f3cbb2987eba34c9a9" category="list-text">MetroCluster 구성 및 운영 모드가 정상인지 확인합니다. '* MetroCluster show * '</block>
   <block id="33e5d783a7a408bca6f492d5b41c67ce" category="list-text">'* MetroCluster interconnect show*' 명령을 실행합니다</block>
@@ -5883,16 +5875,11 @@
   <block id="710901068f4fe1b91098c01cad492485" category="list-text">'* 시스템 상태 경고 표시*'라는 상태 경고가 없는지 확인하십시오</block>
   <block id="180431da60034ff0cf49d352448c4cbe" category="list-text">설치하기 전에 새 스위치를 구성합니다.</block>
   <block id="3d498d8c3038973579898c766829437a" category="admonition">스위치를 업그레이드하거나 다운그레이드하는 경우 네트워크의 모든 스위치를 구성해야 합니다.</block>
-  <block id="0c0a905fe7b3d34fc7c66142e87fa36d" category="inline-link-macro">MetroCluster IP 설치 및 구성</block>
-  <block id="bd411d4fdabe28e7276d566979ec2b21" category="paragraph">의 _ IP 스위치 구성 _ 섹션에 나와 있는 단계를 따릅니다 <block ref="6ca94d3c62e2aa037b337bfb7e2a3c37" category="inline-link-macro-rx"></block></block>
   <block id="e569faada464fba9f3dbbdbda211c148" category="paragraph">스위치_A_1,_A_2,_B_1 또는 _B_2에 올바른 RCF 파일을 적용하십시오. 새 스위치가 이전 스위치와 동일한 경우 동일한 RCF 파일을 적용해야 합니다.</block>
   <block id="21d70434879bc17385bedbe3b2231480" category="paragraph">스위치를 업그레이드하거나 다운그레이드하는 경우 새 스위치에 지원되는 최신 RCF 파일을 적용하십시오.</block>
   <block id="140f85d0d849f4cdeb15f3576a478d27" category="list-text">port show 명령을 실행하여 네트워크 포트에 대한 정보를 봅니다.</block>
   <block id="664180a50093532dd9d44b1e80f40b72" category="paragraph">'* 네트워크 포트 쇼 * '</block>
   <block id="39ef49ece238860759e8870c2160120a" category="list-text">스위치 또는 스위치의 전원을 켭니다.</block>
-  <block id="a2ff4a69c8e810edbb5274ee75363ce0" category="paragraph">새 스위치가 동일한 경우 새 스위치의 전원을 켭니다. 스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켭니다. 이 구성은 두 번째 네트워크가 업데이트될 때까지 각 사이트에 있는 두 개의 서로 다른 스위치로 작동할 수 있습니다.</block>
-  <block id="4d7ea7c5860513bb0b675638d55fcd77" category="paragraph">첫 번째 네트워크에서 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 몇 가지 경고가 표시될 수 있습니다.</block>
-  <block id="c997b3e19c99644bd488baf3bfa8890d" category="admonition">네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 모든 단계를 반복합니다.</block>
   <block id="84a71a9e63ead8784cd365088a3be8c4" category="cell">ISL 포트</block>
   <block id="e5fe800fef736c2c8af1453a59683d3c" category="summary">Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드하려면 Brocade 관련 명령을 사용하여 스위치를 비활성화하고 펌웨어 변경을 수행 및 확인하고 스위치를 재부팅 및 다시 활성화해야 합니다.</block>
   <block id="db6e0c8057b108f77da141b83e047b8d" category="paragraph">펌웨어 업그레이드 또는 다운그레이드 중에는 스위치 패브릭을 사용할 수 없으며 MetroCluster 구성은 두 번째 Fabric에 의존하여 작업을 계속합니다.</block>
@@ -7671,12 +7658,7 @@
   <block id="93b4c54527bd19b6e0c8b5146ea23761" category="paragraph">스토리지 디스크 show-container-type unassigned</block>
   <block id="26c467a24332bb8d92780a3eb059ce38" category="summary">RCF\(참조 구성\) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
   <block id="4fbbc0ce852ccef3a7adceb0f9bc2c27" category="doc">Brocade FC 스위치 RCF 파일 다운로드</block>
-  <block id="b5909b79c9831ace5a37a88ecc8d8221" category="paragraph">RCF(Reference Configuration) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
-  <block id="d2bd72e53c2a5d47d1f0bb05a3b47e86" category="paragraph">이러한 RCF 파일을 사용하려면 시스템에서 ONTAP 9.1 이상을 실행해야 하며 ONTAP 9.1 이상에 대해 포트 레이아웃을 사용해야 합니다.</block>
-  <block id="842acf8263038e7278a435d288defafa" category="list-text">Brocade RCF 다운로드 페이지의 RCF 파일 표를 참조하여 구성의 각 스위치에 대한 올바른 RCF 파일을 식별합니다.</block>
-  <block id="d7a31e24d4a31d091e030bcf962857a2" category="paragraph">RCF 파일은 올바른 스위치에 적용해야 합니다.</block>
   <block id="28a95a083b2cfe8b9ffb5bddf7064e7b" category="inline-link">MetroCluster RCF 다운로드</block>
-  <block id="827782113c613dee6a1aabc786e39335" category="list-text">에서 스위치용 RCF 파일을 다운로드합니다<block ref="7a2a5b3ce34e84b17e1e6ffcc479aaa8" category="inline-link-rx"></block> 페이지.</block>
   <block id="af833d07deb3fe26ff9462cdf18f37ab" category="paragraph">파일은 스위치로 전송할 수 있는 위치에 배치해야 합니다. 2스위치 패브릭을 구성하는 4개의 스위치마다 별도의 파일이 있습니다.</block>
   <block id="6141173db52bd750748a18081d69700e" category="list-text">구성의 각 스위치에 대해 이 단계를 반복합니다.</block>
   <block id="8dc21fc84b0da6d36b0ff79fb6495c7b" category="paragraph">예를 들어 SVM "VS1"(캐시) 및 "VS2"(원본)은 site_A에 있습니다 이러한 SVM을 자세히 들여다보았습니다.</block>
@@ -8131,7 +8113,6 @@
   <block id="3943df800bc20bb77a1a12e989c29d6f" category="doc">Cisco FC RCF 파일 다운로드 및 설치</block>
   <block id="96d44db22d3fd08538feb9a1879238ff" category="paragraph">이 작업을 수행하려면 FTP, TFTP(Trivial File Transfer Protocol), SFTP 또는 SCP(Secure Copy Protocol)와 같은 파일 전송 소프트웨어가 필요합니다.</block>
   <block id="8aeaab0b1ea6e8bd8d15f02b7e031b5f" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 Cisco FC 스위치에서 반복해야 합니다.</block>
-  <block id="d217c29c9e353e853ad6e00612eccbf6" category="paragraph">RCF 파일은 MetroCluster 패브릭 구성에서 4개 스위치당 하나씩 4개의 RCF 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.</block>
   <block id="45bce2352f23696f88ef367611555697" category="paragraph">fc_switch_a_1</block>
   <block id="1aece110a2933cbd949f7e3f9cd6c03f" category="paragraph">'NX3232_v1.80_Switch-A1.txt'</block>
   <block id="64db32115adc878f224bfb1155c96c92" category="paragraph">fc_switch_a_2</block>
@@ -8141,11 +8122,7 @@
   <block id="a3a3a7dd149d92b01df3157c6762c67e" category="paragraph">fc_switch_B_2</block>
   <block id="a323e2cf1a28908546cf8fa814adbd2a" category="paragraph">'NX3232_v1.80_Switch-B2.txt'</block>
   <block id="12e8011a69d75e50d0c2e6c31c958c7d" category="inline-link">MetroCluster RCF 다운로드 페이지</block>
-  <block id="6c3c4e2f6a6fa289f415cc08715f355e" category="list-text">에서 Cisco FC RCF 파일을 다운로드합니다<block ref="47f7dd3b2352c1e61640eee11f081c5a" category="inline-link-rx"></block>.</block>
-  <block id="19a6d9ed6294004d8d6991040db238ff" category="list-text">RCF 파일을 스위치에 복사합니다.</block>
   <block id="e9d934746596f9e64a832bbfa5698daa" category="paragraph">'복사 sftp://__root@ftp-server-ip-address/tftpboot/switch-specific-RCF__bootflash:vrf management'</block>
-  <block id="4d5890e7ea6dcdaf056d3131f9a1f60f" category="paragraph">이 예에서는 NX3232_v1.80_Switch-A1.txt의 RCF 파일이 SFTP 서버(10.10.99.99)에서 로컬 bootflash로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치해야 하는 RCF 파일의 파일 이름을 사용해야 합니다.</block>
-  <block id="f86146750d5caee0dd0ee6f541390137" category="list-text">각 스위치에서 RCF 파일이 각 스위치의 'bootflash' 디렉토리에 있는지 확인합니다.</block>
   <block id="e98444d7d3279149fb170762eaa09685" category="paragraph">bootflash: __switch-specific-RCF__.txt running-config를 복사합니다</block>
   <block id="c283e6d33e5ab7ba05309d0bdb85144e" category="summary">MetroCluster 구성에서 스위치에 대한 특정 라이센스가 필요합니다. 이 라이센스는 4개의 스위치에 모두 설치해야 합니다.</block>
   <block id="020376a3fd370a6b9dfc23a3f92f2cba" category="paragraph">MetroCluster 구성에는 다음과 같은 Brocade 라이센스 요구 사항이 있습니다.</block>
@@ -9458,7 +9435,6 @@
   <block id="be66634f5c72a17ac1efdaa2b09a1da6" category="paragraph"><block ref="be66634f5c72a17ac1efdaa2b09a1da6" category="inline-link-macro-rx"></block></block>
   <block id="2f4dfa9b4c405812623b1a34ea79a216" category="list-text">모든 MetroCluster 정보</block>
   <block id="7abce9dabe03b4e216be9445267a37a1" category="paragraph"><block ref="7abce9dabe03b4e216be9445267a37a1" category="inline-link-rx"></block></block>
-  <block id="61eb859904ba2d6f08ea80ad772e9aba" category="paragraph">FC 스위치 포트 사용은 에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 참조 구성 파일(RCFs)을 사용할 수 있도록 합니다.</block>
   <block id="408d7b2d5acc0ee56e5deef74d263b2e" category="list-text">의 절차를 사용합니다 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block> 이전에 생성한 케이블 연결 레이아웃을 사용하여 기존 및 새 컨트롤러에서 FC-VI 포트를 케이블로 연결합니다.</block>
   <block id="6abf8fcf1209a0e61a34ee20748a726e" category="paragraph">Substep b에 나와 있는 클러스터 네트워크 스위치의 포트에 각 컨트롤러의 클러스터 포트를 연결합니다</block>
   <block id="a8307b4c5fa271005a1338d5b405ca1f" category="paragraph">ONTAP 9.9.1부터 MetroCluster IP 구성에 새 노드 4개를 두 번째 DR 그룹으로 추가할 수 있습니다. 그러면 8노드 MetroCluster 구성이 생성됩니다.</block>
@@ -9688,7 +9664,6 @@
   <block id="2ab9c070f5e78bc6f7809e89ecd023eb" category="admonition">MetroCluster configure-refresh true를 * 하지 않고 MetroCluster configure를 실행해야 합니다</block>
   <block id="5382d2282494796171738f35b9361ab8" category="admonition">이 명령은 MPLS 태그와 같은 패킷 헤더(dmac, smac, etype)를 사용하기 위해 중간 스위치에 필요할 수 있습니다.</block>
   <block id="bb7076dff2fa5f0d308e776f5006e07e" category="section-title">MACsec 구성을 확인하는 중입니다</block>
-  <block id="ffe1f559bee6f65df8232945e7f1517d" category="section-title">25Gbps 연결을 사용하는 시스템에 대한 Forward Error Correction 설정</block>
   <block id="250b5ed5389f4260b31c4ede97dea809" category="paragraph">이 작업은 25Gbps 연결을 사용하는 플랫폼에만 적용됩니다.</block>
   <block id="44ebc7deaba92b772a9bf569e1c8ca12" category="list-text">FAS 8200</block>
   <block id="78e08a3638b519a59d38434c6f124b1a" category="list-text">FAS 500f</block>
@@ -9759,7 +9734,6 @@
   <block id="2e5c6d46dc39a1cc71a6f41b56106221" category="list-text">SSH 서비스(원격 지원 에이전트)</block>
   <block id="4c20f2b5dfebba1daad521c7b3ab4c3b" category="paragraph">구성 마법사를 완료하면 스위치가 재부팅됩니다.</block>
   <block id="5582507cb9f874f57ac6bf62db65d371" category="doc">스위치를 재구성하고 재구성하십시오</block>
-  <block id="6647147ed73881ba6516c57ac1b5fe4a" category="paragraph">RCF 파일을 사용하여 스위치를 구성할 수 없는 경우 스위치를 수동으로 구성해야 합니다. 참조:</block>
   <block id="71620bedc8491865816460c55b3cde98" category="list-text"><block ref="71620bedc8491865816460c55b3cde98" category="inline-link-macro-rx"></block></block>
   <block id="3a8190b24d904ae352e54f8a0a3df0bb" category="list-text"><block ref="3a8190b24d904ae352e54f8a0a3df0bb" category="inline-link-macro-rx"></block></block>
   <block id="bee24b783e44923012afab506584e701" category="list-text">SSH 서비스(RSA)</block>
@@ -9905,13 +9879,7 @@
   <block id="44d9da525f678322921a73864bd0b924" category="paragraph">RcfFileGenerator 버전 1.4a부터 '쓰기 지우기'를 수행할 필요 없이 Cisco IP 스위치의 스위치 구성을 변경(업그레이드, 다운그레이드 또는 교체)할 수 있는 새로운 옵션이 있습니다.</block>
   <block id="0d98f6fd87f88cd68844ee1450081b43" category="paragraph">구성이 다음 요구 사항을 충족하는 경우 이 방법을 사용할 수 있습니다.</block>
   <block id="cf5d82da1dbb504eeff51105d1c22631" category="list-text">표준 RCF 구성이 적용됩니다.</block>
-  <block id="6b20882c651017ff72189d2d3ffa3c80" category="list-text">를 클릭합니다<block ref="c52b4d12f68853a25c52576697c6b2b5" category="inline-link-rx"></block> 동일한 버전 및 구성(플랫폼, VLAN)으로 적용된 동일한 RCF 파일을 생성할 수 있어야 합니다.</block>
-  <block id="c37890f623a8fcecb93e9309d3462a5a" category="list-text">NetApp은 적용된 RCF 파일을 특수 구성으로 제공하지 않았습니다.</block>
-  <block id="3ff3eb13919d98b8bc5b485dcf074e8a" category="list-text">RCF 파일을 적용하기 전에 변경하지 않았습니다.</block>
-  <block id="22bfd0bc1ef7b5ec6b0c3d09a25173dd" category="list-text">현재 RCF 파일을 적용하기 전에 스위치를 출하 시 기본값으로 재설정하는 단계를 따랐습니다.</block>
   <block id="bdda45d6734a620758197fdb8292141f" category="list-text">RCF가 적용된 후 스위치(포트) 구성이 변경되지 않았습니다.</block>
-  <block id="7db0739314c77bc294505bdbb23e67b7" category="paragraph">이러한 요구 사항을 충족하지 않으면 RCF 파일을 생성할 때 생성되는 CleanUpFiles를 사용할 수 없습니다. 그러나 이 함수를 사용하여 제네릭 CleanUpFiles를 만들 수 있습니다. 이 메서드를 사용하는 정리는 'show running-config'의 출력에서 파생되며 가장 좋은 방법입니다.</block>
-  <block id="0e0fe23e527e37b417182290ff6ed374" category="list-text">현재 RCF 파일 버전과 사용할 포트 및 VLAN을 확인합니다. 'ip_switch_a_1#show banner motd'</block>
   <block id="e020d7382ce2a21b56ea6460a45b49c2" category="admonition">4개 스위치 모두에서 이 정보를 얻고 다음 정보 표를 완료해야 합니다.</block>
   <block id="2b6ad2a040294d5c6d9cd85338614383" category="paragraph">이 출력에서 다음 두 표에 표시된 정보를 수집해야 합니다.</block>
   <block id="f144e7b7cc102698f980f9982e2a5e1d" category="cell">일반 정보</block>
@@ -9942,15 +9910,8 @@
   <block id="140f6969d5213fd0ece03148e62e461e" category="cell">159</block>
   <block id="c0e190d8267e36708f955d7ab048990d" category="cell">219</block>
   <block id="cfa0860e83a4c3a763a7e62d825349f7" category="cell">259</block>
-  <block id="92b3853ab8f28c919e230db814cc7d3c" category="list-text">[[Create-RCF-files-and-CleanUpFiles-or-create-generic-CleanUpFiles]] RCF 파일과 CleanUpFiles를 만들거나 현재 구성에 대한 일반 CleanUpFiles를 만듭니다.</block>
   <block id="8f1cf5ff45cd4e25f9add94959779152" category="paragraph">구성이 필수 구성 요소에 설명된 요구 사항을 충족하는 경우 * 옵션 1 * 을 선택합니다. 구성이 필수 구성 요소에 설명된 요구 사항을 충족하지 * 않는 경우 * 옵션 2 * 를 선택합니다.</block>
-  <block id="08593dc75ce732119b98a7568c2bf0f8" category="open-title">옵션 1: RCF 파일 및 CleanUpFiles를 생성합니다</block>
   <block id="257583b315f4448eaa8b40d0996d314d" category="paragraph">구성이 요구 사항을 충족하는 경우 이 절차를 사용합니다.</block>
-  <block id="5c4f1865e4bc1d73184e237f9959c388" category="list-text">RcfFileGenerator 1.4a 이상 버전을 사용하여 1단계에서 검색한 정보를 사용하여 RCF 파일을 생성합니다. RcfFileGenerator의 새 버전은 일부 구성을 되돌리고 새 RCF 구성을 적용하기 위해 스위치를 준비하는 데 사용할 수 있는 CleanUpFiles의 추가 세트를 만듭니다.</block>
-  <block id="65f306707f97b0e6528c632443da6ffa" category="list-text">배너 motd를 현재 적용된 RCF 파일과 비교합니다. 플랫폼 유형, 스위치 유형, 포트 및 VLAN 사용은 동일해야 합니다.</block>
-  <block id="eeca5f39015a896c3fd153b273497470" category="admonition">RCF 파일과 동일한 버전에서 CleanUpFiles를 사용해야 하며 정확히 동일한 구성을 사용해야 합니다. CleanUpFile을 사용하면 작동하지 않으며 스위치를 완전히 재설정해야 할 수도 있습니다.</block>
-  <block id="f7f6e369dd85b855e692642fc45404d1" category="admonition">RCF 파일이 생성되는 ONTAP 버전은 관련이 없습니다. RCF 파일 버전만 중요합니다.</block>
-  <block id="5ac0010e09da0a19568a51f509b47c9e" category="admonition">RCF 파일(동일한 버전도 포함)은 더 적은 수의 또는 더 많은 플랫폼을 나열할 수 있습니다. 플랫폼이 목록에 있는지 확인합니다.</block>
   <block id="b801f2818024b60718ab5b68f7b2eb23" category="open-title">옵션 2: 일반 CleanUpFiles를 만듭니다</block>
   <block id="4863f68e17407624559d4ea8f5de6e15" category="paragraph">구성이 모든 요구 사항을 충족하지 * 않는 경우 이 절차를 사용하십시오.</block>
   <block id="fb1067b2548231b6038213796f92b520" category="list-text">각 스위치에서 show running-config의 출력을 조회한다.</block>
@@ -9960,17 +9921,8 @@
   <block id="3dcf0272d83a4c69033ee60eb75d9580" category="list-text">하단 창의 출력을 텍스트 파일로 복사합니다(이 파일은 CleanUpFile입니다).</block>
   <block id="03486ffd0acf93e60ea6875d70823cbf" category="list-text">구성의 모든 스위치에 대해 c, d, e 단계를 반복합니다.</block>
   <block id="250543158aeade1deea5f13bbe9c80b5" category="paragraph">이 절차를 마치면 각 스위치마다 하나씩 4개의 텍스트 파일이 있어야 합니다. 이러한 파일은 옵션 1을 사용하여 만들 수 있는 CleanUpFiles 와 같은 방법으로 사용할 수 있습니다.</block>
-  <block id="222b8c1d4cb1f6af18d4f87ae8a60226" category="list-text">[[Create-the-new-RCF-files-for-the-new-configuration]] 새 구성을 위해 '새로운' RCF 파일을 생성합니다. 각 ONTAP 및 RCF 파일 버전을 선택하는 경우를 제외하고 이전 단계에서 파일을 생성한 것과 동일한 방식으로 이러한 파일을 생성합니다.</block>
-  <block id="a7d33b18445fe3decdb0f90d8636fbc1" category="paragraph">이 단계를 완료한 후에는 각각 12개의 파일로 구성된 두 세트의 RCF 파일이 있어야 합니다.</block>
   <block id="6999307e181dd9c4d01a65b848b47fd3" category="list-text">파일을 bootflash에 다운로드합니다.</block>
-  <block id="6b3a86257ee5d114600528fa7f5c7bf4" category="inline-xref">RCF 파일 및 CleanUpFiles를 생성하거나 현재 구성을 위한 일반 CleanUpFiles를 생성합니다</block>
-  <block id="0f23428de5fb7b85f84bc0371d73292e" category="list-text">에서 만든 CleanUpFiles를 다운로드합니다 <block ref="c8340163884f51bb133b6171f43e6a09" category="inline-xref-macro-rx"></block></block>
-  <block id="72f2778a0cd9028b2b314aa743b0dedb" category="admonition">이 CleanUpFile은 현재 적용된 RCF 파일용으로, 업그레이드하려는 새 RCF에 대해서는 * 적용되지 않습니다 *.</block>
   <block id="1c4d6db343dcde2655f5a2b6fb6a4fc1" category="paragraph">스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.81_Switch-A1.txt'</block>
-  <block id="63a80dfd5cc3c6944330a9e459d8284b" category="inline-xref">새 구성을 위해 '새로운' RCF 파일을 생성합니다.</block>
-  <block id="c3f65a7773b44ccd20e3e511f5993d75" category="list-text">에서 생성한 '새로운' RCF 파일을 다운로드합니다 <block ref="59c54752a2fb487390ef8f9f21a2c752" category="inline-xref-macro-rx"></block></block>
-  <block id="17e0fefcaf2813560ada5ff7d65a8d95" category="paragraph">Switch-A1:'NX9336_v1.90_Switch-A1.txt'의 RCF 파일 예</block>
-  <block id="9bfdc1d8656a6a994323ae166f7f7201" category="list-text">에서 만든 CleanUpFiles를 다운로드합니다 <block ref="59c54752a2fb487390ef8f9f21a2c752" category="inline-xref-macro-rx"></block> 이 단계는 선택 사항입니다. 나중에 파일을 사용하여 스위치 구성을 업데이트할 수 있습니다. 현재 적용된 설정과 일치합니다.</block>
   <block id="4dfd3caa3db27470042b1db1ab3290bd" category="paragraph">스위치의 CleanUpFile 예 - A1:'Cleanup_NX9336_v1.90_Switch-A1.txt'</block>
   <block id="e22c8d95bd31d52b85280c2595f839cf" category="admonition">올바른(일치) RCF 버전을 사용하려면 CleanUpFile을 사용해야 합니다. CleanUpFile을 다른 RCF 버전 또는 다른 구성에 사용하는 경우 구성 정리가 올바르게 작동하지 않을 수 있습니다.</block>
   <block id="432b7619f02e011863c5b9e1c9903161" category="paragraph">다음 예제에서는 세 개의 파일을 bootflash에 복사합니다.</block>
@@ -9988,9 +9940,6 @@
   <block id="319961110e1d1f6c900b9f842e20c81a" category="list-text">서비스 정책이 구성되지 않았습니다</block>
   <block id="00f4ac9296724f6455056845c09f6cea" category="list-text">구성된 포트 프로파일이 없습니다</block>
   <block id="459722fc0d9b873b0459e6cc0213fe45" category="list-text">모든 이더넷 인터페이스(mgmt0 구성은 표시하지 않고 VLAN 1만 구성해야 함)</block>
-  <block id="a7c1dc82620aa47d13a5325a92e48b8b" category="paragraph">위 항목 중 하나라도 구성되어 있다면 새로운 RCF 파일 구성을 적용하지 못할 수 있습니다. 그러나 실행 중인 구성을 시작 구성에 저장하지 않고 * 스위치를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.</block>
-  <block id="b96e894aca032efb6ce18c3fee836f2e" category="list-text">RCF 파일을 적용하고 포트가 온라인 상태인지 확인합니다.</block>
-  <block id="57eec47f7c1d3f7c578a164a838dcb88" category="list-text">RCF 파일을 적용합니다.</block>
   <block id="94f2f59cf614fa38bf778db2f227f97f" category="list-text">구성을 적용한 후 클러스터 및 MetroCluster 포트가 다음 명령 중 하나인 '인터페이스 요약 보기', 'CDP 인접 항목 표시' 또는 '이웃 표시' 중 하나로 온라인 상태인지 확인합니다</block>
   <block id="36654f0d51aef3cf2ff1ad8320086412" category="admonition">로컬 클러스터의 VLAN을 변경하고 사이트에서 첫 번째 스위치를 업그레이드한 경우, 이전 구성과 새 구성의 VLAN이 일치하지 않기 때문에 클러스터 상태 모니터링 시 상태가 '정상'으로 보고되지 않을 수 있습니다. 두 번째 스위치가 업데이트된 후 상태가 정상 상태로 돌아가야 합니다.</block>
   <block id="d83d3a40a56d46ffaf1367b944bbd493" category="paragraph">구성이 올바르게 적용되지 않거나 구성을 유지하지 않으려면 실행 중인 구성을 시작 구성에 저장하지 않고 스위치 * 를 다시 로드하여 이전 구성으로 되돌릴 수 있습니다. 이전 구성이 스위치에 나타납니다.</block>
@@ -10498,7 +10447,6 @@
   <block id="9c77ce4749e7ce4cb8afcbc4ebd4e32e" category="list-text"><block ref="9c77ce4749e7ce4cb8afcbc4ebd4e32e" category="inline-link-macro-rx"></block></block>
   <block id="45cb34f2cec27064a29ed6e3a54a294f" category="list-text"><block ref="45cb34f2cec27064a29ed6e3a54a294f" category="inline-link-macro-rx"></block></block>
   <block id="3a14a65fbfc927e7fc3c51dcb8d932f8" category="list-text">스위치에 케이블을 연결합니다.</block>
-  <block id="e864e1a0a83c248ec6705eecbb75a2e4" category="paragraph">의 _ IP 스위치 케이블 연결 _ 섹션에 나와 있는 단계를 수행할 수 있습니다 <block ref="69c250b2ff0cdf92dd9f1322bce627cf" category="inline-link-macro-rx"></block>.</block>
   <block id="abba6801f76a30e62f42a339319d8046" category="paragraph">스위치를 다음과 같은 순서로 케이블로 연결합니다(필요한 경우).</block>
   <block id="eed332b6efe7c74f805fd4d57a6089fa" category="list-text">원격 사이트에 ISL 케이블 연결</block>
   <block id="c78a73a52795719f0a6c0e4e534be9ef" category="list-text">MetroCluster IP 인터페이스에 케이블을 연결합니다.</block>
@@ -10922,9 +10870,6 @@
   <block id="7c05cd1434f77b09211b33f0e3df8f7e" category="list-text">의 모든 단계를 수행합니다<block ref="6f9da97248de99650a607f2ab8f8c4c5" category="inline-link-rx"></block>.</block>
   <block id="175bbe9b6bd074e923b41baad3944299" category="paragraph"><block ref="175bbe9b6bd074e923b41baad3944299" category="inline-link-macro-rx"></block></block>
   <block id="1af1c128bcb15febcfeae67428ab0606" category="paragraph">Cisco IP 스위치에서 ISL 포트를 추가, 제거 또는 변경해야 할 수 있습니다. 전용 ISL 포트를 공유 ISL 포트로 변환하거나 Cisco IP 스위치에서 ISL 포트의 속도를 변경할 수 있습니다.</block>
-  <block id="9ef8b8de2a46a8cdf8b96e3433081f97" category="admonition">NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우 ISL을 변경하려면 새 RCF 파일이 필요할 수 있습니다. 현재 및 새 ISL 속도가 40Gbps 및 100Gbps인 경우에는 새 RCF 파일이 필요하지 않습니다. ISL 속도의 다른 모든 변경 사항에는 새 RCF 파일이 필요합니다. 예를 들어 ISL 속도를 40Gbps에서 100Gbps로 변경하는 경우 새 RCF 파일이 필요하지 않지만 ISL 속도를 10Gbps에서 40Gbps로 변경하려면 새 RCF 파일이 필요합니다.</block>
-  <block id="e5a44346ea08417f9c1bb13c971ef4b4" category="inline-link-macro">MetroCluster IP 스위치에서 RCF 파일을 업그레이드합니다.</block>
-  <block id="6780acd09b7544d9829b3c8c782e7228" category="admonition">NS224 셸프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우 RCF 파일을 업그레이드하고 새 ISL 포트에 대한 새 구성을 적용해야 하는 경우, 의 단계를 따릅니다 <block ref="06d2583ef923bd1ae27cd7aa8a48f582" category="inline-link-macro-rx"></block></block>
   <block id="4f8a3836e9b2b61340340f61f8a1d944" category="list-text">ISL과 ISL의 포트 채널이 두 스위치 간에 설정되었는지 확인합니다.</block>
   <block id="f1ba48098d6a9078f5a1ba8e0141de5b" category="paragraph"><block ref="d975a431de1e74582bd6e6f677a19ad0" prefix="" category="inline-code"></block></block>
   <block id="61f7733093f25bb223a42607ca2406c1" category="list-text">Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다.</block>
@@ -10937,7 +10882,6 @@
   <block id="37c5a21bd601c49050ac3301b684599c" category="list-text">Cisco 9336C-FX2 스위치에는 RCF에서 이름이 다른 두 가지 다른 스위치 스토리지 유형이 있습니다. 다음 표를 참조하여 구성에 맞는 Cisco 9336C-FX2 스토리지 유형을 확인하십시오.</block>
   <block id="df31753dd5a463d7868062b7d85b4e56" category="cell">다음 스토리지를 연결하는 경우...</block>
   <block id="d78b539282fbd3ab71c056420e27d11d" category="cell">Cisco 9336C-FX2 스토리지 유형 선택...</block>
-  <block id="b2e9c77dc19c02cc79d1cec1f3ee2fc0" category="cell">샘플 RCF 파일 배너/MOTD</block>
   <block id="4123b977475c9c4828f585782db5cb61" category="list-text">SAS 쉘프 직접 연결</block>
   <block id="e8ea5873a1121ec729327255bcb20d9a" category="list-text">NVMe 쉘프 직접 연결</block>
   <block id="415f7c0e4d1c31bd8bc9a1c226589d04" category="list-text">NVMe 쉘프는 전용 스토리지 스위치에 연결됩니다</block>
@@ -12045,7 +11989,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f411a218519aacec5088cc5a3d23eb64" category="paragraph">이전 시스템 ID와 새 시스템 ID는 에서 식별되었습니다. <block ref="372daca62ea6308294fd70c00fcc8af2" category="inline-link-macro-rx"></block></block>
   <block id="04e334293a29a0fcdf98b56004e27edc" category="section-title">MetroCluster 준수 스위치와 NetApp 검증 스위치 비교</block>
   <block id="5c5c34d5e7843e9424f3ca2380ae18ea" category="list-text"><block ref="5c5c34d5e7843e9424f3ca2380ae18ea" category="inline-link-macro-rx"></block></block>
-  <block id="910d0f6661c3968f4e7402c808d31b3f" category="list-text"><block ref="910d0f6661c3968f4e7402c808d31b3f" category="inline-link-macro-rx"></block></block>
   <block id="740c0d0f6d37afa212fad2bd272a4212" category="list-text">Tiebreaker 1.6은 SNMPv3만 지원합니다.</block>
   <block id="a98720fe58fe46f2a22c59d172b69fbf" category="list-text">Tiebreaker 1.5 및 1.4가 SNMPv1 및 SNMPv3를 지원하지만 NetApp에서는 최적의 보안을 위해 SNMPv3를 구성할 것을 적극 권장합니다.</block>
   <block id="c93871f59c253b2d1ca21a1ce2a00ff8" category="paragraph"><block ref="5ef546c28db0706808d8d451d5a71029" prefix=" " category="inline-code"></block>명령 응답은 실행 중인 Tiebreaker 버전에 따라 다릅니다.</block>
@@ -13003,10 +12946,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="6402d49dd52ac4a97e3a5b5df13a2b01" category="paragraph">명령 출력에서 RCF 버전을 나타내는 줄을 찾습니다. 예를 들어, Cisco 스위치의 다음 출력은 RCF 버전이 "'v1.80'"임을 나타냅니다.</block>
   <block id="372302cd9a52d50f8bbec355aa5caad3" category="list-text">특정 ONTAP 버전, 스위치 및 플랫폼에 대해 지원되는 파일을 확인하려면 를 <block ref="3d323bfcd2e7c90d6e420b3bfd1a01ed" category="inline-link-macro-rx"></block>사용합니다. 가지고 있거나 업그레이드하려는 구성에 대한 RCF를 생성할 수 있는 경우 지원됩니다.</block>
   <block id="5892dc73aeb0908038bb8e9380fb53c4" category="section-title">스위치 펌웨어를 업그레이드합니다</block>
-  <block id="28abab10271202d2140cfed5d173dff5" category="paragraph">MetroCluster IP 스위치에서 RCF(참조 구성 파일) 파일을 업그레이드해야 할 수 있습니다. 예를 들어, 스위치에서 실행 중인 RCF 버전이 ONTAP 버전, 스위치 펌웨어 버전 또는 둘 다에서 지원되지 않는 경우</block>
   <block id="463c4e9c177d926f8a70723419e27185" category="inline-link-macro">RCF가 지원되는지 확인합니다</block>
   <block id="31e4a45ff8bf040780bcaeea92eaf273" category="list-text">RCF를 업그레이드하기 전에<block ref="0cb16fc2594f35c2b9b081a93af72ead" category="inline-link-macro-rx"></block>.</block>
-  <block id="72d26e3e5a2756a67ae4a487db269cd2" category="list-text">이 절차는 RCF 파일이 업그레이드된 스위치의 트래픽을 중단시킵니다. 새 RCF 파일이 적용되면 트래픽이 재개됩니다.</block>
   <block id="085e87b6ec813d01dd3f597186e26f1e" category="list-text">업그레이드 대상 시스템에서 * 공유 클러스터/HA 포트 * 를 사용하는 경우 MetroCluster IP 인터페이스에서 지원되는 IP 주소를 사용하고 있는지 확인하십시오.</block>
   <block id="11f90eb1d0dccabe5ea84d5795fc2ef7" category="paragraph">다음 정보를 사용하여 새 시스템에서 공유 클러스터/HA 포트를 사용하는지 여부를 확인하십시오.</block>
   <block id="fb1ce5d087cc4c4bd39c43bc3af7058b" category="admonition">MetroCluster 인터페이스가 169.254.17.x 또는 169.254.18.x IP 주소로 구성된 경우 * 공유 클러스터/HA 포트 * 를 사용하는 시스템으로의 업그레이드는 지원되지 않습니다.</block>
@@ -13655,8 +13596,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2fc694052b4d0c9fddb171c279d9ff41" category="section-title">거울이 없는 골재에 보관 선반을 추가합니다.</block>
   <block id="340ee9c6b389308075f20882f44ee863" category="paragraph">선반을 추가하고 MetroCluster IP 구성에서 미러링되지 않은 집계에 사용하려는 경우 다음을 수행해야 합니다.</block>
   <block id="fb945b959f6754639fad6c6e9e9469b9" category="list-text">로컬 사용자는 네트워크 관리자 권한이 있어야 합니다.</block>
-  <block id="5ea27988b4071e332e850721389e951a" category="doc">올바른 MetroCluster IP 스위치 구성 절차를 선택하세요</block>
-  <block id="b9b3d7865c01f9cccab728c6d2bb7296" category="paragraph">백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 따라야 할 절차는 스위치 공급업체에 따라 다릅니다.</block>
   <block id="528aafe8fc362d0088ddcc230e89b62a" category="doc">여러 MetroCluster IP 구성에서 포트 테이블을 사용하는 방법</block>
   <block id="760419501f92fb637e39b91dbfd2ea18" category="summary">저장 컨트롤러가 저장 선반에 연결되는 방식에 따라 올바른 설치 절차를 선택해야 합니다.</block>
   <block id="ef78e28e8b4e7855b7b5095e4cbd705a" category="paragraph">ONTAP 9.15.1부터 지원되는 시스템에서 종단 간 암호화를 구성하여 MetroCluster IP 구성의 사이트 간 백엔드 트래픽(예: NVlog 및 스토리지 복제 데이터)을 암호화할 수 있습니다.</block>
@@ -14648,4 +14587,131 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5a523817621c85574dfcbf0b11c07075" category="paragraph">NVIDIA Cumulus 스위치(CL 5.4.0 실행 중)에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.</block>
   <block id="4451c276144ff12f4a59bad51c0a1181" category="open-title">NVIDIA - CL 5.11.0+</block>
   <block id="d1f08b7bd68bdc79984e047bc1939c5d" category="paragraph">CLI 5.11.0 이상을 실행하는 NVIDIA Cumulus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.</block>
+  <block id="5c70de9aa6fac7d71c4ddfb2d31ae25a" category="list-text">새로운 참조 구성 파일(RCF)을 적용할 수 있도록 IP 스위치를 준비합니다.</block>
+  <block id="cf638fa08203ce9c082e7eecde22e20f" category="paragraph">MetroCluster 패브릭 구성의 각 스위치에 참조 구성 파일(RCF)을 다운로드해야 합니다.</block>
+  <block id="91cd9003fc7afacd92d0952d1578d48b" category="paragraph">MetroCluster 패브릭 구성에 있는 4개의 스위치 각각에 대해 하나씩, 총 4개의 RCF가 있습니다. 사용 중인 스위치 모델에 맞는 올바른 RCF를 사용해야 합니다.</block>
+  <block id="6dcb15f9fb489afb93f692b6b7755f84" category="cell">RCF</block>
+  <block id="2132fe352bf4bb487eaf6927cffd6982" category="list-text">Cisco FC RCF 파일을<block ref="47f7dd3b2352c1e61640eee11f081c5a" category="inline-link-rx"></block>에서 다운로드하십시오.</block>
+  <block id="39313cc2f6093990d3dca3755297c44e" category="list-text">RCF를 스위치에 복사합니다.</block>
+  <block id="8ca2fa0cdf859df18fecce8122036812" category="list-text">RCF를 첫 번째 스위치에 복사합니다.</block>
+  <block id="99eaec47ed0f56f87ba6c6f107b1d555" category="paragraph">이 예시에서는 <block ref="334910bbc7198eea40a5718a09788dc1" prefix=" " category="inline-code"></block> RCF가 <block ref="f8a554bd262c1f2aca6545aab6fbbd47" prefix=" " category="inline-code"></block>의 SFTP 서버에서 로컬 부트플래시로 복사됩니다. TFTP/SFTP 서버의 IP 주소와 설치하려는 RCF의 파일 이름을 사용해야 합니다.</block>
+  <block id="2130b5577be1c5b0ecb66a86e0e62b98" category="list-text">나머지 세 스위치 각각에 대해 이전 하위 단계를 반복하고, 일치하는 RCF를 해당 스위치에 복사해야 합니다.</block>
+  <block id="9c2d39ef52a63a0bca259adc5598a991" category="list-text">각 스위치의 <block ref="67b5ed08894c07eba0af4a7a7247711e" prefix=" " category="inline-code"></block> 디렉터리에 RCF가 있는지 각 스위치에서 확인하십시오.</block>
+  <block id="31809c76013c1e869215736e65c76cff" category="list-text">각 스위치의 로컬 부트플래시에서 실행 중인 구성으로 일치하는 RCF를 복사합니다.</block>
+  <block id="9eca16f5df5b1dbd9bc66d21738825d6" category="list-text">각 스위치의 실행 중인 구성에서 시작 구성으로 RCF를 복사합니다.</block>
+  <block id="29ecb75ab42ddd669cd0f6e92a58cc6b" category="paragraph">이러한 RCF를 사용하려면 시스템에 ONTAP 9.1 이상 버전이 설치되어 있어야 하며, ONTAP 9.1 이상 버전의 포트 레이아웃을 사용해야 합니다.</block>
+  <block id="3503c9d859a9eb3fcbd234a3d5c9a363" category="list-text">Brocade RCF 다운로드 페이지의 RCF 표를 참조하여 구성의 각 스위치에 맞는 올바른 RCF를 확인하십시오.</block>
+  <block id="4171a03473af7f6456c08cdeebe281de" category="paragraph">RCF는 올바른 스위치에 적용해야 합니다.</block>
+  <block id="02d4864774f054081d5b074fdab94cda" category="list-text">해당 <block ref="7a2a5b3ce34e84b17e1e6ffcc479aaa8" category="inline-link-rx"></block> 페이지에서 스위치용 RCF 파일을 다운로드하십시오.</block>
+  <block id="5bed49e108466e37517b3a12ea075d7a" category="summary">스위치 펌웨어 또는 참조 구성 파일(RCF)을 업데이트할 때, 업그레이드 중에 클러스터 운영이 중단되지 않도록 클러스터 LIF를 파트너 스위치로 이동합니다.</block>
+  <block id="9b2826e036ff82834f75a0e7a44282ed" category="doc">MetroCluster IP 스위치 교체, RCF 변경 또는 펌웨어 업데이트 전에 클러스터 LIF 이동</block>
+  <block id="ba817507ff742e4351352b3d698de081" category="paragraph">MetroCluster IP 스위치를 교체하거나 스위치 펌웨어 또는 참조 구성 파일(RCF)을 변경할 경우, 클러스터 운영을 중단 없이 지속하려면 클러스터 LIF를 파트너 스위치로 이동해야 합니다.</block>
+  <block id="b418b4fad97ed4823768d59cc9628c62" category="list-text">스위치 펌웨어를 업그레이드 또는 다운그레이드하거나, 스위치 RCF를 교체하거나, IP 스위치를 교체하기 전에 이 작업을 반드시 수행해야 합니다.</block>
+  <block id="f6ab7b470572966bac3482a56c334dfc" category="admonition">스위치를 처음 구성하는 경우, 스위치를 교체하는 경우가 아니라면 이 작업을 건너뛸 수 있습니다.</block>
+  <block id="a95f710d416a28711f7057a66ef327d5" category="list-text">이 작업에서는 ONTAP 명령과 스위치 명령을 모두 사용해야 합니다. 별도의 지시가 없는 한 ONTAP 명령을 사용합니다.</block>
+  <block id="652d64acba0f102d37b42ef27f23f740" category="list-text">이 절차에서 사용된 예시에서는 IP_switch_A_1을 업그레이드하므로 클러스터 LIF를 IP_switch_A_2로 마이그레이션해야 합니다.</block>
+  <block id="83b73f0ed3a170e10c1e7afb1f2de22f" category="list-text">이 절차에 나오는 명령 출력 예시는 Cisco 스위치의 세부 정보를 보여줍니다. 출력 결과는 사용하시는 스위치 모델 및 제조사에 따라 다를 수 있습니다.</block>
+  <block id="c06b2e93c970fd796fa3b646ea0c91e7" category="list-text">각 노드에서 클러스터 스위치에 연결된 클러스터 포트를 표시합니다.</block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">예제 표시</block>
+  <block id="1b75649d1b9ec0a73e309fd9b384b32a" category="list-text">각 클러스터 포트의 관리 및 운영 상태를 확인하십시오.</block>
+  <block id="a8a837b1d24982d8fd8c7b71b0da1a7a" category="list-text">클러스터의 모든 포트가 정상 상태로 작동 중인지 확인하십시오.</block>
+  <block id="1998c6d3154f5a2c373da0aeca0fd3ff" category="paragraph"><block ref="856f897c52a15ad9c779d1f7b82c2593" prefix="" category="inline-code"></block></block>
+  <block id="d9fb568577d38aa5ca1f9412c1a4e107" category="list-text">모든 클러스터 인터페이스(LIF)가 홈 포트에 있는지 확인합니다.</block>
+  <block id="a2d27af8ce0592e36b8a208c0cb93d3e" category="paragraph"><block ref="fb5130635551fff679ab6d902eaff8d9" prefix="" category="inline-code"></block></block>
+  <block id="98f234e93ec030ce67a050ab46bd6ee6" category="list-text">클러스터에 두 클러스터 스위치에 대한 정보가 모두 표시되는지 확인하십시오.</block>
+  <block id="798dfbe36e04e65261e623680213b38d" category="paragraph"><block ref="c57378c3b3bb81c6b42a2b31a30ddda7" prefix="" category="inline-code"></block></block>
+  <block id="aa831e5ed3cf3569aacf417dc10d9847" category="list-text">클러스터 LIF에서 자동 복원 기능을 비활성화하십시오. 그러면 클러스터 LIF가 파트너 클러스터 스위치로 페일오버되고, 대상 스위치에서 업그레이드 절차를 수행하는 동안 해당 상태를 유지합니다.</block>
+  <block id="684818f9d30d8e8936a73d9c92c51cfe" category="admonition">두 번째 패브릭을 업그레이드하는 경우 이 단계를 건너뛰고 <block ref="327988adbe3e93c3ffe0ff2abeb91411" category="inline-xref-macro-rx"></block>로 이동할 수 있습니다.</block>
+  <block id="b1046cdb57cd97fe9c20f711ba08bed8" category="paragraph"><block ref="76be4589a0f314371f336c42f473092c" prefix="" category="inline-code"></block></block>
+  <block id="6f80841cf0831aea5bbcbeaff818df5a" category="list-text">[[shut-down-ports]]클러스터 스위치 IP_switch_A1에서 노드의 클러스터 포트에 연결된 포트를 종료합니다.</block>
+  <block id="a2fe9051fe051f819bd739ef3e340377" category="open-title">NVIDIA</block>
+  <block id="3dc2e7033e76926da5578cb873563ec1" category="list-text">클러스터 인터페이스를 표시합니다.</block>
+  <block id="640aabb1d4c1c1f949a0a35374202d42" category="list-text">클러스터 인터페이스 포트를 종료합니다.</block>
+  <block id="506cbd48c08948901f7b3d2fcf241e24" category="list-text">[[verify_cluster_lif_migration]] 클러스터 LIF가 클러스터 스위치 IP_switch_A2의 포트로 마이그레이션되었는지 확인합니다. 몇 초 정도 소요될 수 있습니다.</block>
+  <block id="af4fb0eecc11b6a91b245e052b6c0a20" category="paragraph">클러스터 LIF가 파트너 스위치로 이동되면 스위치 공급업체의 표준 구성 절차에 따라 목표 펌웨어 또는 RCF 버전으로 업그레이드를 완료할 수 있습니다.</block>
+  <block id="86e838bf9c0847e26da95e5f1fb7811d" category="admonition">첫 번째 패브릭에서 스위치를 구성한 후에는 두 번째 패브릭에서 클러스터 LIF를 이동하기 위해 동일한 단계를 반복해야 합니다.</block>
+  <block id="ea73d8af7135d7d225784b371375310f" category="doc">MetroCluster IP 스위치 구성에 대해 알아보십시오.</block>
+  <block id="b398c546b361af58bcc92050d70db2b4" category="paragraph">IP 스위치를 구성하여 백엔드 MetroCluster IP 연결을 제공해야 합니다. 구성 절차는 스위치 공급업체와 MetroCluster IP를 새로 설치하는 과정의 일부로 스위치를 구성하는지, 아니면 다른 절차의 일부로 구성하는지에 따라 다릅니다.</block>
+  <block id="92e541a9c70ad67c77b89e2d969764ce" category="section-title">새로운 MetroCluster IP 설치</block>
+  <block id="66ae00fed61743cbd269595ede42450e" category="paragraph">MetroCluster IP를 새로 설치하는 경우, 스위치 공급업체에 따라 스위치 구성 절차를 선택하십시오.</block>
+  <block id="7a6a9c61a00d805db560ab9153141683" category="section-title">스위치 교체 및 RCF 또는 펌웨어 업데이트</block>
+  <block id="3a5ca636d042ba14163790e15fb14b39" category="paragraph">스위치 교체 또는 업그레이드와 같은 다른 MetroCluster IP 절차의 일환으로 스위치 펌웨어, 참조 구성 파일(RCF) 또는 둘 다를 업데이트해야 할 수 있습니다. 이러한 경우 IP 스위치를 구성하기 전에 클러스터 LIF를 이동해야 합니다. 이러한 시나리오에 대한 주요 단계는 다음과 같습니다.</block>
+  <block id="c45b5cac6c505399616694a0b7c6c04d" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다.</block>
+  <block id="032e6e8ef98f5ba6f14159f917ab3e15" category="inline-link-macro">클러스터 LIF 이동</block>
+  <block id="b0e11f8bc3115af6f46ef95760b7108a" category="list-text"><block ref="b0e11f8bc3115af6f46ef95760b7108a" category="inline-link-macro-rx"></block></block>
+  <block id="c7d46afd534f9d0360e5628b1907f177" category="list-text">클러스터 LIF를 파트너 스위치로 이동한 후 스위치 공급업체의 표준 구성 절차를 따를 수 있습니다.</block>
+  <block id="3702fa9bc5c3f18bbbeed6b44a352090" category="list-text">첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 <block ref="b0e11f8bc3115af6f46ef95760b7108a" category="inline-link-macro-rx"></block>부터 시작하여 동일한 단계를 반복해야 합니다.</block>
+  <block id="0d748d04c15c51dc82adaafb202380f8" category="list-text">스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. <block ref="9ce2e245234110ff72cc16bc02886cc0" category="inline-link-macro-rx"></block>.</block>
+  <block id="852176ba820381370f520dbeca56dbfa" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 클러스터 LIF를 이동해야 하는 절차가 있는 경우, 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. <block ref="9ce2e245234110ff72cc16bc02886cc0" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="cec0c4ac2074d499d97d20ee0fde64ef" category="list-text">클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인하십시오.</block>
+  <block id="a28cce9c0e3ab8ac431128996388bcfd" category="admonition">클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인해야 합니다.</block>
+  <block id="7a7d7054decebaeb3dba2307d6555fb9" category="list-text">자동 복원 기능이 활성화되어 있지 않은 경우, 모든 클러스터 LIF를 수정하여 자동 복원 기능을 활성화하십시오.</block>
+  <block id="861865437c84fdf002bbc9c73fb2554f" category="admonition">스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 수행하는 경우 <block ref="ff2aaf62543af58cd0f5c49e7e04cef2" category="inline-link-macro-rx"></block> 단계의 일부로 자동 되돌리기를 비활성화했을 수 있습니다.</block>
+  <block id="90563211213c93906ee730f25ee9143e" category="list-text">자동 되돌리기 기능을 다시 활성화합니다.</block>
+  <block id="2c70d9b6ebd85a5ee2fff0f363a115ac" category="paragraph"><block ref="bf3c84eda3ab699c2564d177a409447a" prefix="" category="inline-code"></block></block>
+  <block id="268d66b259b50e25cbef3d39885d450f" category="paragraph"><block ref="d4a4086e7952a80201c11ae52219be46" prefix="" category="inline-code"></block></block>
+  <block id="8ed8ddf647d2420b5b9cfef94d1e66ca" category="paragraph">LIF가 홈 포트로 되돌아갈 때까지 몇 분 정도 기다립니다.</block>
+  <block id="9c01e65c2e65b640d8118fe54781309e" category="list-text">모든 LIF가 홈 포트에 있는지 확인하십시오.</block>
+  <block id="052bf57f898d3892d0551c66dc793e8b" category="list-text">MetroCluster 노드의 상태를 확인합니다.</block>
+  <block id="53c1dca890ccf51d340a7239987710a8" category="list-text">지원되는 스위치 소프트웨어 버전을 사용해야 합니다. 을 참조하십시오.<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block></block>
+  <block id="fdb08440fb03aec95dda7df506525f73" category="list-text">MetroCluster IP 구성의 나머지 3개 IP 스위치에서 이전 단계를 반복합니다.</block>
+  <block id="0a87ee4fa6163be20e6bf1d980e5a277" category="paragraph">참조 구성 파일(RCF)을 올바르게 생성하려면 포트 테이블의 정보를 사용하는 방법을 이해해야 합니다.</block>
+  <block id="350ebdbb66bf03c8efc403678120e39d" category="admonition">NS224 쉘프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하는 경우, ISL을 변경하려면 새 참조 구성 파일(RCF)이 필요할 수 있습니다.  현재 및 새 ISL 속도가 각각 40Gbps와 100Gbps인 경우에는 새 RCF가 필요하지 않습니다.  그 외의 모든 ISL 속도 변경에는 새 RCF가 필요합니다.  예를 들어, ISL 속도를 40Gbps에서 100Gbps로 변경하는 경우에는 새 RCF가 필요하지 않지만, 10Gbps에서 40Gbps로 변경하는 경우에는 새 RCF가 필요합니다.</block>
+  <block id="6c5a911225660b72c17cb2db5923a54a" category="inline-link-macro">MetroCluster IP 스위치의 RCF를 업그레이드하십시오.</block>
+  <block id="69cb6427980eccf80b5d0c17f1aab875" category="admonition">NS224 쉘프를 연결하는 공유 구성에서 Cisco 9336C-FX2 스위치를 사용하고 있고, RCF를 업그레이드하고 새 ISL 포트에 새 구성을 적용해야 하는 경우 다음 단계를 따르십시오. <block ref="c3ee1b38b8c2251d663b314073e9cd8a" category="inline-link-macro-rx"></block></block>
+  <block id="8707fdff465b4f0541eaf591583954a7" category="list-text"><block ref="b0e11f8bc3115af6f46ef95760b7108a" category="inline-link-macro-rx"></block>.</block>
+  <block id="856a04ccf59d2820da6a47984fbd3ea0" category="admonition">스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. <block ref="5f804b3f3e9acee141e0ae306b7a6f59" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="8dc1f99634c85a613352ad949b508cf1" category="paragraph"><block ref="7176836221733e9bf6fcbaccc1aa9ffd" category="inline-link-macro-rx"></block>의 단계를 따를 수 있습니다.</block>
+  <block id="0d35a64434c5cb583e6703803b6a3251" category="paragraph">새 스위치가 기존 스위치와 동일한 경우 새 스위치의 전원을 켜십시오.  스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켜십시오.  두 번째 패브릭이 업데이트될 때까지 각 사이트에서 서로 다른 두 개의 스위치를 사용하여 구성을 운영할 수 있습니다.</block>
+  <block id="acc1856da35d6d8c04024997f2eb6084" category="paragraph">첫 번째 패브릭의 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 경고가 표시될 수 있습니다.</block>
+  <block id="73d919208b85f9e19c80b7413d6e453e" category="admonition">패브릭을 업그레이드하거나 다운그레이드하는 경우, 두 번째 패브릭에 대해서도 모든 단계를 반복하십시오.</block>
+  <block id="73117420b1d3da1446aeff431e81d9c6" category="list-text"><block ref="b0e11f8bc3115af6f46ef95760b7108a" category="inline-link-macro-rx"></block> 업그레이드를 시작하기 전에.</block>
+  <block id="19bc1d3a8e5db6fb9ca5ed1d6e53ad7f" category="list-text">각 스위치에 대해 이전 단계를 반복하십시오.</block>
+  <block id="31bbe12313f1a40b18eaa501279a0be3" category="admonition">첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. <block ref="5f804b3f3e9acee141e0ae306b7a6f59" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="b0eaff36df906302d61d2a732f0bd280" category="paragraph">Cisco IP 스위치에서 참조 구성 파일(RCF)을 업그레이드해야 할 수 있습니다. 예를 들어, ONTAP 업그레이드 또는 스위치 펌웨어 업그레이드에는 모두 새 RCF가 필요합니다.</block>
+  <block id="9a6efb0d6ef62b264d464f9318c33ea5" category="cell">RCF 배너/MOTD 샘플</block>
+  <block id="270442fca75eb1d9b0a0f7fbda94ec91" category="list-text">The<block ref="c52b4d12f68853a25c52576697c6b2b5" category="inline-link-rx"></block>은(는) 동일한 버전 및 구성(플랫폼, VLAN)으로 적용된 것과 동일한 RCF를 생성할 수 있어야 합니다.</block>
+  <block id="9841cae1f3cd8f3083a447c8f51118b2" category="list-text">적용된 RCF는 특정 구성을 위해 NetApp에서 제공한 것이 아닙니다.</block>
+  <block id="9ec3c03b2e25d0fd885e119b26a47209" category="list-text">RCF는 적용 전에 변경되지 않았습니다.</block>
+  <block id="7d4a576e62d8fa25121aba113311ce11" category="list-text">현재 RCF를 적용하기 전에 스위치를 공장 초기 설정으로 재설정하는 단계를 완료했습니다.</block>
+  <block id="4f9ef492ce457924cabecc16236a4c41" category="paragraph">이러한 요구 사항을 충족하지 못하면 RCF 생성 시 생성되는 CleanUpFiles를 사용할 수 없습니다. 하지만 해당 함수를 활용하여 일반적인 CleanUpFiles를 생성할 수 있습니다. 이 방법을 사용한 정리는 <block ref="d064a73c32d00bf384204782a696a298" prefix=" " category="inline-code"></block>의 출력에서 파생되며 모범 사례입니다.</block>
+  <block id="385e6272a2260d5d2074d187f64c13d0" category="list-text">현재 RCF 버전과 사용 중인 포트 및 VLAN을 확인하십시오.<block ref="9b0b071cbeedb9bb40e134702701197f" prefix=" " category="inline-code"></block></block>
+  <block id="31a1a5eb41a54f193dee4fcd85f62f3c" category="cell">RCF 버전</block>
+  <block id="d2c73fd480128bba9ad18b2cc35e088a" category="list-text">[[Create-RCF-files-and-CleanUpFiles-or-create-generic-CleanUpFiles]] 현재 구성에 대한 RCF 및 CleanUpFiles를 생성하거나 일반 CleanUpFiles를 생성합니다.</block>
+  <block id="2d3daa23f8c1124a7f51b396b2c83599" category="open-title">옵션 1: RCF 및 CleanUpFiles 생성</block>
+  <block id="09a9232d68d132ce906d6729982e29da" category="list-text">RcfFileGenerator 1.4a(또는 이후 버전)를 사용하여 1단계에서 가져온 정보로 RCF를 생성하십시오. 새 버전의 RcfFileGenerator는 일부 구성을 되돌리고 새 RCF 구성을 적용하도록 스위치를 준비하는 데 사용할 수 있는 추가 CleanUpFiles 세트를 생성합니다.</block>
+  <block id="e978980bdc9465fa0544fbecc209d5f7" category="list-text">배너 MOTD를 현재 적용된 RCF와 비교하십시오. 플랫폼 유형, 스위치 유형, 포트 및 VLAN 사용 여부가 동일해야 합니다.</block>
+  <block id="cbf0859eba1f468560501286f96bce70" category="admonition">RCF와 동일한 버전의 CleanUpFiles를 사용해야 하며, 정확히 동일한 구성이어야 합니다. 임의의 CleanUpFile을 사용하면 작동하지 않으며, 스위치를 완전히 재설정해야 할 수도 있습니다.</block>
+  <block id="bf8da3127630e1672d896214577b32f3" category="admonition">RCF가 생성된 ONTAP 버전은 중요하지 않습니다. 중요한 것은 RCF 버전뿐입니다.</block>
+  <block id="b542d9b58edaa8b0bd2dd3ae2b80c0a7" category="admonition">RCF 파일(동일한 버전이라도)에는 나열된 플랫폼 수가 다를 수 있습니다. 사용하시는 플랫폼이 목록에 있는지 확인하십시오.</block>
+  <block id="b79f0a153ad93b9722d2cdc284bd859f" category="list-text">[[Create-the-new-RCF-files-for-the-new-configuration]] 새 구성에 대한 '새' RCF를 생성합니다. 이전 단계에서 파일을 생성한 것과 동일한 방식으로 이 파일을 생성하되, 해당 ONTAP 및 RCF 버전을 선택하십시오.</block>
+  <block id="0b172d151494b14e7fdff735f6e210c6" category="paragraph">이 단계를 완료하면 각각 12개의 파일로 구성된 두 세트의 RCF 파일이 생성됩니다.</block>
+  <block id="39da313cd3d2efd5a85461c6b18b0e9a" category="inline-xref">RCF 및 CleanUpFiles를 생성하거나 현재 구성에 대한 일반 CleanUpFiles를 생성합니다</block>
+  <block id="b34bc751b388df2a26c3d747fe1f39cf" category="list-text"><block ref="bce5d5db6b460239ddd9d2efeebaa897" category="inline-xref-macro-rx"></block>에서 생성한 CleanUpFiles를 다운로드합니다.</block>
+  <block id="e57c406545eb94b55e46fd490e3dcc6f" category="admonition">이 CleanUpFile은 현재 적용된 RCF용이며, 업그레이드하려는 새 RCF용이 아닙니다.</block>
+  <block id="a1fa8ef8fe9fe6945d9a481c566faf1a" category="inline-xref">새 구성에 대한 '새' RCF를 생성합니다.</block>
+  <block id="0e19bf9641c612dddacde2528d12e17c" category="list-text">에서 생성한 '새' RCF를 다운로드합니다. <block ref="97f3ac22394457ab69892174bef80b4e" category="inline-xref-macro-rx"></block></block>
+  <block id="19e2eaf9177ade8d5a63d99d3fa7e5e4" category="paragraph">Switch-A1에 대한 RCF 예시:<block ref="fcb7173e7a2e786c277b7ad6470af002" prefix=" " category="inline-code"></block></block>
+  <block id="d72478cb233a7ba8b75d8a2c92a6a6c1" category="list-text"><block ref="97f3ac22394457ab69892174bef80b4e" category="inline-xref-macro-rx"></block>에서 생성한 CleanUpFiles를 다운로드합니다. 이 단계는 선택 사항이며, 나중에 스위치 구성을 업데이트하는 데 이 파일을 사용할 수 있습니다. 이 파일은 현재 적용된 구성과 일치합니다.</block>
+  <block id="b4fb6ce79e810065e4af4b50b355268c" category="paragraph">위 항목 중 하나라도 구성되어 있는 경우 새 RCF 구성을 적용하지 못할 수 있습니다. 하지만 실행 중인 구성을 시작 구성에 저장하지 *않고* 스위치를 다시 로드하면 이전 구성으로 되돌릴 수 있습니다. 스위치는 이전 구성으로 시작됩니다.</block>
+  <block id="39a59a7f698d76b6c515d442d496fc20" category="list-text">RCF를 적용하고 포트가 온라인 상태인지 확인하십시오.</block>
+  <block id="b4ff3823ad51690657517a6cc43f5bbc" category="list-text">RCF를 적용합니다.</block>
+  <block id="92dce1ba931a31f563746a7fc012ede0" category="list-text">클러스터의 모든 LIF를 수정하여 자동 되돌리기 기능을 활성화하십시오.</block>
+  <block id="7506fa2af11ba55ddb93c46406818219" category="paragraph">MetroCluster IP 스위치에서 참조 구성 파일(RCF)을 업그레이드해야 할 수 있습니다. 예를 들어, 스위치에서 실행 중인 RCF 버전이 ONTAP 버전, 스위치 펌웨어 버전 또는 이 두 가지 모두에서 지원되지 않는 경우입니다.</block>
+  <block id="0fd7975d8fcd31db8559ed95a3a7ca29" category="list-text">새로운 스위치 펌웨어를 설치하는 경우, RCF를 업그레이드하기 전에 스위치 펌웨어를 먼저 설치해야 합니다.</block>
+  <block id="5b6e304706a21e319010fab102707c79" category="list-text">이 절차는 RCF 업그레이드가 진행되는 스위치의 트래픽을 일시적으로 중단합니다. 새 RCF가 적용되면 트래픽이 다시 시작됩니다.</block>
+  <block id="ef79769a9b12c47ca8e0242e864b2c02" category="list-text">스위치 제조사에 따라 IP RCF를 다운로드하여 설치하십시오.</block>
+  <block id="0a7486debceb3d7717c123eee7f53e26" category="inline-link-macro">Broadcom IP RCF를 다운로드하고 설치합니다.</block>
+  <block id="91d44de3771ac094a8fc8ef949f447f1" category="list-text"><block ref="91d44de3771ac094a8fc8ef949f447f1" category="inline-link-macro-rx"></block></block>
+  <block id="e78e0be76deac39685c069c02b9c59b8" category="paragraph">새 노드를 수용하도록 조닝을 재구성하려면 참조 구성 파일(RCF)을 적용해야 합니다.</block>
+  <block id="b60b2b518843eb58af59ce647217c844" category="paragraph">RCF를 사용하여 스위치를 구성할 수 없는 경우 수동으로 스위치를 구성해야 합니다. 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="880c5e16abd9dabbb6ec7c79be346e14" category="list-text">구성에 맞는 RCF를 찾습니다.</block>
+  <block id="f78893de7c74e6fe864a719bc7efc19e" category="paragraph">스위치 모델과 일치하는 8노드 구성용 RCF를 사용해야 합니다.</block>
+  <block id="59f3d762e99b09ec1becaca961e395a1" category="list-text">다운로드 페이지의 지침에 따라 RCF를 적용하고 필요에 따라 ISL 설정을 조정하십시오.</block>
+  <block id="0cd61c4c88f15a8971607489f9b6d653" category="paragraph">RCF를 사용하려면 FC 스위치 포트 사용량이 <block ref="a9f150ef34b7953b6119f5ac779097fe" category="inline-link-macro-rx"></block>에 설명된 MetroCluster 8노드 사용량과 일치해야 합니다.</block>
+  <block id="eabc5692452c984a6976e8e815a16418" category="admonition">부팅 메뉴 옵션을 실행할 때<block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block>, MetroCluster 부팅 인수 값을 재설정해야 할 수 있습니다. <block ref="34d15be42555000516d0cc6b7f35d1c4" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
+  <block id="74babbf42b11f149a7a363757d584c3b" category="admonition">부팅 메뉴 옵션을 실행할 때<block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block>, MetroCluster 부팅 인수 값을 재설정해야 할 수 있습니다. <block ref="06c3fdcb6cd8d64a7d2e8bffb99c9b80" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
+  <block id="b8c3014a64ccb52cfe10dc2bcccd245f" category="admonition">부팅 메뉴 옵션을 실행할 때<block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block>, MetroCluster 부팅 인수 값을 재설정해야 할 수 있습니다. <block ref="c2cec781ec7263394dd955380787b572" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="9a3f31a7018cf62078b2f2f088863f9b" category="sidebar">MetroCluster IP 스위치 구성에 대해 알아보십시오.</block>
+  <block id="96e6a3f92b027e80b14698a7b22b316f" category="sidebar">클러스터 LIF 이동</block>
 </blocks>

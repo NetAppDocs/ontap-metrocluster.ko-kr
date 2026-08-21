@@ -48,6 +48,7 @@ NOTE: RCF 파일을 적용하는 동안 발생하는 다른 모든 구성 변경
 * MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
 * 직렬 콘솔 연결을 사용하여 스위치에 연결해야 합니다.
 * 이 작업은 관리 네트워크의 구성을 재설정합니다.
+* 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."].
 
 
 .단계
@@ -128,6 +129,7 @@ Cumulus 이미지를 적용하여 스위치를 완전히 재설정하려면 다�
 NOTE: Cumulus Linux 설치에 대한 자세한 내용은 를 참조하십시오 link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-overview-sn2100-cluster.html#initial-configuration-overview["NVIDIA SN2100 스위치의 설치 및 구성 개요"^]
 
 * 명령에 대한 'SUDO'에 대한 루트 암호가 있어야 합니다.
+* 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."].
 
 
 .단계
@@ -314,10 +316,14 @@ cumulus@cumulus:~$ sudo reboot
 
 NOTE: 스위치를 재설정한 후 RCF 파일을 적용하기 전에 추가 구성을 수행할 경우 이 절차를 사용할 수 없습니다.
 
+* 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."].
 
 
 .이 작업에 대해
 MetroCluster IP 구성(새 설치) 또는 교체 스위치(스위치 교체)의 각 IP 스위치에 대해 이러한 단계를 반복해야 합니다.
+
+
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 클러스터 LIF를 이동해야 하는 절차가 있는 경우, 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."]을 참조하십시오.
 
 QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.
 
@@ -405,6 +411,81 @@ cumulus@IP_switch_A_1:mgmt:~$
 +
 
 NOTE: 여러 스위치 포트에 대해 DAC 옵션을 설정하면 스위치를 한 번만 재부팅하면 됩니다.
+
+. 클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인하십시오.
++
+'network interface show-vserver Cluster-fields auto-revert'
+
++
+
+CAUTION: 클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인해야 합니다.
+
+. 자동 복원 기능이 활성화되어 있지 않은 경우, 모든 클러스터 LIF를 수정하여 자동 복원 기능을 활성화하십시오.
++
+
+NOTE: 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 수행하는 경우 link:switch-move-cluster-lifs.html["클러스터 LIF 이동"] 단계의 일부로 자동 되돌리기를 비활성화했을 수 있습니다.
+
++
+.. 자동 되돌리기 기능을 다시 활성화합니다.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
+
++
+[listing]
+----
+cluster_A::*> network interface modify -vserver Cluster -lif * -auto-revert true
+
+Warning: Changes to a cluster LIF can affect the health of the Cluster. Are you
+         sure you want to continue? {y|n}: y
+4 entries were modified.
+
+cluster_A::*>
+----
+.. 현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.
++
+`network interface revert -vserver Cluster -lif *`
+
++
+LIF가 홈 포트로 되돌아갈 때까지 몇 분 정도 기다립니다.
+
+.. 모든 LIF가 홈 포트에 있는지 확인하십시오.
++
+[listing]
+----
+cluster_A::*> network interface show -role cluster
+            Logical        Status     Network            Current       Current Is
+Vserver     Interface      Admin/Oper Address/Mask       Node          Port    Home
+----------- -------------- ---------- ------------------ ------------- ------- ----
+Cluster
+            node_A_1_clus1 up/up      192.168.204.88/18  node_A_1      e4a     true
+            node_A_1_clus2 up/up      192.168.204.93/18  node_A_1      e4b     true
+            node_A_2_clus1 up/up      192.168.204.96/18  node_A_2      e4a     true
+            node_A_2_clus2 up/up      192.168.204.97/18  node_A_2      e4b     true
+4 entries were displayed.
+----
+.. MetroCluster 노드의 상태를 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::*> metrocluster node show
+
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1           configured     enabled   normal
+              node_A_2           configured     enabled   normal
+      cluster_B
+              node_B_1           configured     enabled   normal
+              node_B_2           configured     enabled   normal
+4 entries were displayed.
+
+cluster_A::*>
+----
+
 
 
 

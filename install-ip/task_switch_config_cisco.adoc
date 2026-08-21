@@ -18,7 +18,7 @@ summary: 클러스터 인터커넥트 및 백엔드 MetroCluster IP 연결에 �
 
 
 
-[[resetting-the-cisco-ip-switch-to-factory-defaults]]
+[[reset-the-cisco-ip-switch-to-factory-defaults]]
 == Cisco IP 스위치를 출하 시 기본값으로 재설정합니다
 
 RCF 파일을 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구성을 수행해야 합니다. 이전 설치가 실패한 후 동일한 RCF 파일을 다시 설치하거나 새 버전의 RCF 파일을 설치하려는 경우 이 절차가 필요합니다.
@@ -27,6 +27,7 @@ RCF 파일을 설치하기 전에 Cisco 스위치 구성을 지우고 기본 구
 * MetroCluster IP 구성의 각 IP 스위치에서 이 단계를 반복해야 합니다.
 * 직렬 콘솔을 사용하여 스위치에 연결해야 합니다.
 * 이 작업은 관리 네트워크의 구성을 재설정합니다.
+* 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."].
 
 
 .단계
@@ -169,19 +170,17 @@ IP_switch_A_1#
 
 
 
-[[downloading-and-installing-the-cisco-switch-nx-os-software]]
-== Cisco 스위치 NX-OS 소프트웨어 다운로드 및 설치
+[[download-and-install-the-cisco-switch-nx-os-software]]
+== Cisco 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다
 
 MetroCluster IP 구성의 각 스위치에 스위치 운영 체제 파일과 RCF 파일을 다운로드해야 합니다.
 
 .이 작업에 대해
 이 작업을 수행하려면 FTP, TFTP, SFTP, HTTP 또는 SCP 등의 파일 전송 소프트웨어를 사용하여 파일을 스위치로 복사해야 합니다.
 
-이러한 단계는 MetroCluster IP 구성의 각 IP 스위치에서 반복해야 합니다.
+* 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."].
+* 지원되는 스위치 소프트웨어 버전을 사용해야 합니다. 을 참조하십시오. https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
-지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
-
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
 
 .단계
 . 지원되는 NX-OS 소프트웨어 파일을 다운로드합니다.
@@ -424,29 +423,106 @@ Module 1 EPLD upgrade is successful.
 +
 `show version module 1 epld`
 
-. MetroCluster IP 구성의 나머지 3개 IP 스위치에 대해 이 단계를 반복합니다.
+. MetroCluster IP 구성의 나머지 3개 IP 스위치에서 이전 단계를 반복합니다.
++
+
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 클러스터 LIF를 이동해야 하는 절차가 있는 경우, 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."]을 참조하십시오.
+
+. 클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인하십시오.
++
+'network interface show-vserver Cluster-fields auto-revert'
+
++
+
+CAUTION: 클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인해야 합니다.
+
+. 자동 복원 기능이 활성화되어 있지 않은 경우, 모든 클러스터 LIF를 수정하여 자동 복원 기능을 활성화하십시오.
++
+
+NOTE: 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 수행하는 경우 link:switch-move-cluster-lifs.html["클러스터 LIF 이동"] 단계의 일부로 자동 되돌리기를 비활성화했을 수 있습니다.
+
++
+.. 자동 되돌리기 기능을 다시 활성화합니다.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
+
++
+[listing]
+----
+cluster_A::*> network interface modify -vserver Cluster -lif * -auto-revert true
+
+Warning: Changes to a cluster LIF can affect the health of the Cluster. Are you
+         sure you want to continue? {y|n}: y
+4 entries were modified.
+
+cluster_A::*>
+----
+.. 현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.
++
+`network interface revert -vserver Cluster -lif *`
+
++
+LIF가 홈 포트로 되돌아갈 때까지 몇 분 정도 기다립니다.
+
+.. 모든 LIF가 홈 포트에 있는지 확인하십시오.
++
+[listing]
+----
+cluster_A::*> network interface show -role cluster
+            Logical        Status     Network            Current       Current Is
+Vserver     Interface      Admin/Oper Address/Mask       Node          Port    Home
+----------- -------------- ---------- ------------------ ------------- ------- ----
+Cluster
+            node_A_1_clus1 up/up      192.168.204.88/18  node_A_1      e4a     true
+            node_A_1_clus2 up/up      192.168.204.93/18  node_A_1      e4b     true
+            node_A_2_clus1 up/up      192.168.204.96/18  node_A_2      e4a     true
+            node_A_2_clus2 up/up      192.168.204.97/18  node_A_2      e4b     true
+4 entries were displayed.
+----
+.. MetroCluster 노드의 상태를 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::*> metrocluster node show
+
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1           configured     enabled   normal
+              node_A_2           configured     enabled   normal
+      cluster_B
+              node_B_1           configured     enabled   normal
+              node_B_2           configured     enabled   normal
+4 entries were displayed.
+
+cluster_A::*>
+----
 
 
 
 
-[[downloading-and-installing-the-cisco-ip-rcf-files]]
-== Cisco IP RCF 파일 다운로드 및 설치
+
+
+[[download-and-install-the-cisco-ip-rcf-files]]
+== Cisco IP RCF 파일을 다운로드하고 설치합니다
 
 MetroCluster IP 구성의 각 스위치에 RCF 파일을 생성하고 설치해야 합니다.
 
 .이 작업에 대해
 이 작업을 수행하려면 FTP, TFTP, SFTP, HTTP 또는 SCP 등의 파일 전송 소프트웨어를 사용하여 파일을 스위치로 복사해야 합니다.
 
-이러한 단계는 MetroCluster IP 구성의 각 IP 스위치에서 반복해야 합니다.
+* 이러한 단계는 MetroCluster IP 구성의 각 IP 스위치에서 반복해야 합니다.
+* 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 사용하는 경우, 중단 없는 클러스터 운영을 위해 클러스터 LIF를 파트너 스위치로 이동해야 하는지 확인하십시오. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."].
+* 지원되는 스위치 소프트웨어 버전을 사용해야 합니다. 을 참조하십시오. https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
+* QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.
 
-지원되는 스위치 소프트웨어 버전을 사용해야 합니다.
 
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"]
-
-QSFP-SFP+ 어댑터를 사용하는 경우 ISL 포트를 브레이크아웃 속도 모드 대신 기본 속도 모드로 구성해야 할 수 있습니다. ISL 포트 속도 모드를 확인하려면 스위치 공급업체의 설명서를 참조하십시오.
-
-RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.
-
+* RCF 파일은 MetroCluster IP 구성의 4개 스위치당 하나씩 4개의 파일로 구성됩니다. 사용 중인 스위치 모델에 적합한 RCF 파일을 사용해야 합니다.
++
 |===
 
 
@@ -480,6 +556,8 @@ IP_SWITCH_B_2
 NX3232_v1.80_Switch-B2.txt
 
 |===
+
+
 .단계
 . MetroCluster IP에 대한 Cisco RCF 파일을 생성합니다.
 +
@@ -605,12 +683,91 @@ IP_switch-A-1# copy running-config startup-config
 IP_switch_A_1# reload
 ----
 . MetroCluster IP 구성의 다른 3개 스위치에 대해 이전 단계를 반복합니다.
++
+
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 클러스터 LIF를 이동해야 하는 절차가 있는 경우, 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. link:task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."]을 참조하십시오.
+
+. 클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인하십시오.
++
+'network interface show-vserver Cluster-fields auto-revert'
+
++
+
+CAUTION: 클러스터 LIF에 대해 자동 복원 기능이 활성화되어 있는지 확인해야 합니다.
+
+. 자동 복원 기능이 활성화되어 있지 않은 경우, 모든 클러스터 LIF를 수정하여 자동 복원 기능을 활성화하십시오.
++
+
+NOTE: 스위치 교체 또는 업그레이드 등 다른 절차의 일부로 이러한 단계를 수행하는 경우 link:switch-move-cluster-lifs.html["클러스터 LIF 이동"] 단계의 일부로 자동 되돌리기를 비활성화했을 수 있습니다.
+
++
+.. 자동 되돌리기 기능을 다시 활성화합니다.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
+
++
+[listing]
+----
+cluster_A::*> network interface modify -vserver Cluster -lif * -auto-revert true
+
+Warning: Changes to a cluster LIF can affect the health of the Cluster. Are you
+         sure you want to continue? {y|n}: y
+4 entries were modified.
+
+cluster_A::*>
+----
+.. 현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.
++
+`network interface revert -vserver Cluster -lif *`
+
++
+LIF가 홈 포트로 되돌아갈 때까지 몇 분 정도 기다립니다.
+
+.. 모든 LIF가 홈 포트에 있는지 확인하십시오.
++
+[listing]
+----
+cluster_A::*> network interface show -role cluster
+            Logical        Status     Network            Current       Current Is
+Vserver     Interface      Admin/Oper Address/Mask       Node          Port    Home
+----------- -------------- ---------- ------------------ ------------- ------- ----
+Cluster
+            node_A_1_clus1 up/up      192.168.204.88/18  node_A_1      e4a     true
+            node_A_1_clus2 up/up      192.168.204.93/18  node_A_1      e4b     true
+            node_A_2_clus1 up/up      192.168.204.96/18  node_A_2      e4a     true
+            node_A_2_clus2 up/up      192.168.204.97/18  node_A_2      e4b     true
+4 entries were displayed.
+----
+.. MetroCluster 노드의 상태를 확인합니다.
++
+'MetroCluster node show'
+
++
+[listing]
+----
+cluster_A::*> metrocluster node show
+
+DR                               Configuration  DR
+Group Cluster Node               State          Mirroring Mode
+----- ------- ------------------ -------------- --------- --------------------
+1     cluster_A
+              node_A_1           configured     enabled   normal
+              node_A_2           configured     enabled   normal
+      cluster_B
+              node_B_1           configured     enabled   normal
+              node_B_2           configured     enabled   normal
+4 entries were displayed.
+
+cluster_A::*>
+----
 
 
 
 
-[[setting-forward-error-correction-for-systems-using-25-gbps-connectivity]]
-== 25Gbps 연결을 사용하는 시스템에 대한 Forward Error Correction 설정
+
+
+[[set-forward-error-correction-for-systems-using-25-gbps-connectivity]]
+== 25Gbps 연결을 사용하는 시스템에 대해 Forward Error Correction(전달 오류 수정)을 설정합니다
 
 시스템이 25Gbps 연결을 사용하여 구성된 경우 RCF 파일을 적용한 후 FEC(Forward Error Correction) 매개변수를 수동으로 OFF로 설정해야 합니다. RCF 파일은 이 설정을 적용하지 않습니다.
 

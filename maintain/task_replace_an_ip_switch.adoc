@@ -129,13 +129,19 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 NOTE: 스위치를 업그레이드하거나 다운그레이드하는 경우 네트워크의 모든 스위치를 구성해야 합니다.
 
 +
-의 _ IP 스위치 구성 _ 섹션에 나와 있는 단계를 따릅니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"]
+스위치 공급업체의 단계를 따르십시오.
 
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]
+** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP 스위치를 구성합니다"]
 +
 스위치_A_1,_A_2,_B_1 또는 _B_2에 올바른 RCF 파일을 적용하십시오. 새 스위치가 이전 스위치와 동일한 경우 동일한 RCF 파일을 적용해야 합니다.
 
 +
 스위치를 업그레이드하거나 다운그레이드하는 경우 새 스위치에 지원되는 최신 RCF 파일을 적용하십시오.
+
+
 
 . port show 명령을 실행하여 네트워크 포트에 대한 정보를 봅니다.
 +
@@ -148,6 +154,11 @@ NOTE: 스위치를 업그레이드하거나 다운그레이드하는 경우 네�
 ----
 network interface modify -vserver <vserver_name> -lif <lif_name> -auto-revert false
 ----
+.. link:../install-ip/switch-move-cluster-lifs.html["클러스터 LIF 이동"].
++
+
+NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. link:../install-ip/task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."]을 참조하십시오.
+
 
 
 . [[Existing_step4]] 이전 스위치에서 연결을 끊습니다.
@@ -190,7 +201,7 @@ NOTE: 관리 인터페이스(사용하는 경우)를 제외하고 새 스위치�
 
 . 스위치에 케이블을 연결합니다.
 +
-의 _ IP 스위치 케이블 연결 _ 섹션에 나와 있는 단계를 수행할 수 있습니다 link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/using_rcf_generator.html["MetroCluster IP 설치 및 구성"].
+link:../install-ip/using_rcf_generator.html["MetroCluster IP 스위치에 케이블을 연결합니다"]의 단계를 따를 수 있습니다.
 
 +
 스위치를 다음과 같은 순서로 케이블로 연결합니다(필요한 경우).
@@ -225,15 +236,15 @@ NOTE: 관리 인터페이스(사용하는 경우)를 제외하고 새 스위치�
 
 . 스위치 또는 스위치의 전원을 켭니다.
 +
-새 스위치가 동일한 경우 새 스위치의 전원을 켭니다. 스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켭니다. 이 구성은 두 번째 네트워크가 업데이트될 때까지 각 사이트에 있는 두 개의 서로 다른 스위치로 작동할 수 있습니다.
+새 스위치가 기존 스위치와 동일한 경우 새 스위치의 전원을 켜십시오.  스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켜십시오.  두 번째 패브릭이 업데이트될 때까지 각 사이트에서 서로 다른 두 개의 스위치를 사용하여 구성을 운영할 수 있습니다.
 
 . MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <<all_step1,1단계>>.
 +
-첫 번째 네트워크에서 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 몇 가지 경고가 표시될 수 있습니다.
+첫 번째 패브릭의 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 경고가 표시될 수 있습니다.
 
 +
 
-NOTE: 네트워크를 업그레이드하거나 다운그레이드하는 경우 두 번째 네트워크에 대해 모든 단계를 반복합니다.
+NOTE: 패브릭을 업그레이드하거나 다운그레이드하는 경우, 두 번째 패브릭에 대해서도 모든 단계를 반복하십시오.
 
 . 자동 되돌리기 기능을 다시 사용하도록 모든 클러스터 LIF를 수정합니다.
 +
