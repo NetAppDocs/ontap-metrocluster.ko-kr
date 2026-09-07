@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, installing, fc-to-sas, fc, sas, bridges, disk, shelves, atto, fibrebridge 
 summary: 구성에 새 스토리지를 추가할 때 ATTO FiberBridge 브리지 및 SAS 디스크 쉘프를 설치하고 케이블을 연결합니다. 
 ---
-= FC-to-SAS 브릿지와 SAS 디스크 쉘프를 설치합니다
+= MetroCluster FC 구성에서 FC-to-SAS 브리지 및 SAS 디스크 쉘프 설치
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

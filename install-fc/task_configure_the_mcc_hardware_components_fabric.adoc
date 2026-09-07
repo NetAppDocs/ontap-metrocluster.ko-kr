@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, fabric, installation, cable, configuration 
 summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 
 ---
-= 패브릭 연결 MetroCluster 구성 케이블링
+= 패브릭 연결 MetroCluster 구성에 케이블을 연결합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

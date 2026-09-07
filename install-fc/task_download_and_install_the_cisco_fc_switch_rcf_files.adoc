@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, fabric, installation, download, install, cisco, fc, rcf, files 
 summary: RCF 파일은 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다. 
 ---
-= Cisco FC RCF 파일 다운로드 및 설치
+= Cisco FC 스위치 RCF 파일을 MetroCluster FC 구성에서 다운로드하고 설치합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

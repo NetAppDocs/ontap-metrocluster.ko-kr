@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip, switch, configuring 
 summary: 백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다. 
 ---
-= MetroCluster IP 스위치 구성에 대해 알아보십시오.
+= MetroCluster IP용 스위치 구성 워크플로
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

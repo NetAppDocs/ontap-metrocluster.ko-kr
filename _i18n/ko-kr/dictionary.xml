@@ -7621,7 +7621,6 @@
   <block id="26a54024c23fd925658f9c07af7f45f3" category="doc">8노드 또는 4노드 구성으로 클러스터 인터커넥트 케이블 연결</block>
   <block id="a5a5f58f8b4f49c67db8ac8769e18a9e" category="paragraph">2노드 MetroCluster 구성에는 이 작업이 필요하지 않습니다.</block>
   <block id="eb952ac83e127d9e9c609c32989ebbf0" category="list-text">클러스터 인터커넥트를 한 컨트롤러 모듈에서 다른 컨트롤러 모듈로 케이블로 연결하거나, 클러스터 인터커넥트 스위치를 각 컨트롤러 모듈에서 스위치로 사용하는 경우</block>
-  <block id="3951cf3a9a587c843554ac26e7752f92" category="doc">FC 스위치 및 FC-to-SAS 브리지에 대한 구성 워크시트</block>
   <block id="373ea37ba723150abb88f58c48ffcdae" category="paragraph">MetroCluster 사이트를 구성하기 전에 다음 워크시트를 사용하여 사이트 정보를 기록할 수 있습니다.</block>
   <block id="371aac449125501b960a40e2f00f6a08" category="inline-link-macro">사이트 A 워크시트</block>
   <block id="79b482a227e1595f7ab841ee8be94f5a" category="paragraph"><block ref="79b482a227e1595f7ab841ee8be94f5a" category="inline-link-macro-rx"></block></block>
@@ -7657,7 +7656,6 @@
   <block id="a1350ff79863130a11a81a4223c96e8c" category="inline-link-macro">패브릭 연결 MetroCluster 구성 케이블링</block>
   <block id="93b4c54527bd19b6e0c8b5146ea23761" category="paragraph">스토리지 디스크 show-container-type unassigned</block>
   <block id="26c467a24332bb8d92780a3eb059ce38" category="summary">RCF\(참조 구성\) 파일을 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
-  <block id="4fbbc0ce852ccef3a7adceb0f9bc2c27" category="doc">Brocade FC 스위치 RCF 파일 다운로드</block>
   <block id="28a95a083b2cfe8b9ffb5bddf7064e7b" category="inline-link">MetroCluster RCF 다운로드</block>
   <block id="af833d07deb3fe26ff9462cdf18f37ab" category="paragraph">파일은 스위치로 전송할 수 있는 위치에 배치해야 합니다. 2스위치 패브릭을 구성하는 4개의 스위치마다 별도의 파일이 있습니다.</block>
   <block id="6141173db52bd750748a18081d69700e" category="list-text">구성의 각 스위치에 대해 이 단계를 반복합니다.</block>
@@ -7793,7 +7791,6 @@
   <block id="347d1a24edd39c6b694a17cc073652b1" category="summary">FC-VI 포트 및 HBA\(호스트 버스 어댑터\)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="c1e58eae0c6e51d54fa87f2ad6f0eb1c" category="paragraph">FC-VI 포트 및 HBA(호스트 버스 어댑터)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="91e18356a7709afa40abb10b89a17636" category="summary">FC 스위치 패브릭을 활성화하고 스위치 및 디바이스가 올바르게 작동하는지 확인해야 합니다.</block>
-  <block id="812485d2987632a33cf46fd5403f564d" category="doc">스위치 패브릭을 재설정하고 작업을 확인합니다</block>
   <block id="c941b5c4cf46259dd41b222aa38a58f3" category="paragraph">'스치치치프트PersistentEnable'</block>
   <block id="21f54be83889ba54c8cee60b4b4b417e" category="paragraph">이 명령을 사용할 수 없는 경우 "FastBoot" 명령을 실행한 후 스위치가 사용 가능 상태여야 합니다.</block>
   <block id="3cf3eae7898bc6f0eec737e6a68a9cec" category="list-text">다음 예에서는 FC_SWITCH_A_1에서 실행된 명령을 보여 줍니다.</block>
@@ -7993,9 +7990,7 @@
   <block id="02ee20582f5402cb93dc58e4e8522d9e" category="paragraph">이파드쇼</block>
   <block id="3992d3498e9be76c791c721bcb2d8537" category="paragraph">필요한 경우 다음 명령을 사용하여 IP 주소를 설정할 수 있습니다.</block>
   <block id="d0e78c5e743c815456279dd55c90df7d" category="paragraph">'ipAddrSet'입니다</block>
-  <block id="e68271ab52464fb615c82825f7290749" category="doc">MetroCluster 설치 준비</block>
   <block id="02ca90cf930919983e9f269e2f296903" category="summary">스위치 구성 프로세스를 단순화하려는 경우 특정 구성에 대한 전체 스위치 설정을 제공하는 참조 구성 파일을 다운로드하여 적용할 수 있습니다.</block>
-  <block id="fe06ef95469ff46d2dfa949e93a079d0" category="doc">구성 파일을 실행하여 FC 스위치 구성</block>
   <block id="fcb4142ffdb8bfcc1710889b0ed529d6" category="paragraph">참조 구성 파일(RCFs)은 8 ISL을 사용하는 구성을 지원하지 않습니다. 8개의 ISL을 사용하는 경우 스위치를 수동으로 구성해야 합니다.</block>
   <block id="3d1d2171594b743d57aea4950c25e08d" category="paragraph">RCF는 2노드, 4노드 및 8노드 MetroCluster 구성에 적용됩니다. 이러한 파일은 기본적으로 IOD(In-Order Delivery)를 위해 패브릭을 구성합니다.</block>
   <block id="ebac59afd8758611eb5f58946397378e" category="paragraph">RCF 다운로드 페이지는 다양한 스위치 모델에서 지원하는 노드 수를 나타냅니다.</block>
@@ -8003,7 +7998,6 @@
   <block id="0617e4d07d12b0af8212c27b7e1c91bc" category="cell">* FC 스위치에 연결... *</block>
   <block id="7194695af22d9907d88793ccd2044dec" category="cell">* 스위치 포트에 연결합니다... *</block>
   <block id="a3661db3c5039bc04c7fae548c92950e" category="summary">MetroCluster 패브릭 구성의 각 스위치에 스위치 운영 체제 파일 및 RCF 파일을 다운로드해야 합니다.</block>
-  <block id="bfa98b16040a9e239a71e4da0eb6a7b1" category="doc">Cisco FC 스위치 NX-OS 소프트웨어 다운로드 및 설치</block>
   <block id="fff6b95b10852166fc3f382ad27c765d" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 FC 스위치에서 반복해야 합니다.</block>
   <block id="c25ab44b50d7096a2ad90bccd3cd2c9b" category="admonition">표시된 출력은 Cisco IP 스위치용으로 표시되지만 Cisco FC 스위치에도 적용할 수 있습니다.</block>
   <block id="ed2bdca812d4a492e40bce0bf250aea0" category="inline-link">Cisco 다운로드 페이지</block>
@@ -8110,7 +8104,6 @@
   <block id="11be15880eab3352c16856fa1475d4db" category="list-text"><block ref="11be15880eab3352c16856fa1475d4db" category="inline-link-macro-rx"></block></block>
   <block id="29ad4be139be5b3e7f2133bef476991d" category="list-text"><block ref="29ad4be139be5b3e7f2133bef476991d" category="inline-link-macro-rx"></block></block>
   <block id="0366d9269d29429c70a416504b9933a6" category="summary">RCF 파일은 MetroCluster 패브릭 구성의 각 스위치에 다운로드해야 합니다.</block>
-  <block id="3943df800bc20bb77a1a12e989c29d6f" category="doc">Cisco FC RCF 파일 다운로드 및 설치</block>
   <block id="96d44db22d3fd08538feb9a1879238ff" category="paragraph">이 작업을 수행하려면 FTP, TFTP(Trivial File Transfer Protocol), SFTP 또는 SCP(Secure Copy Protocol)와 같은 파일 전송 소프트웨어가 필요합니다.</block>
   <block id="8aeaab0b1ea6e8bd8d15f02b7e031b5f" category="paragraph">이러한 단계는 MetroCluster 패브릭 구성의 각 Cisco FC 스위치에서 반복해야 합니다.</block>
   <block id="45bce2352f23696f88ef367611555697" category="paragraph">fc_switch_a_1</block>
@@ -8137,7 +8130,6 @@
   <block id="8d4727f84fc5ba727eb23a4ce93c87c2" category="list-text">MetroCluster IP 구성 및 작동에 대한 기술적 개요</block>
   <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="paragraph">Active IQ 디지털 자문 문서</block>
   <block id="7e853595389f6b90dc22efe3da872888" category="summary">8노드 또는 4노드 MetroCluster 구성이 있고 HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우 컨트롤러 간 HA 인터커넥트에 케이블을 연결해야 합니다.</block>
-  <block id="82107984563a4d014cd48345b86ec376" category="doc">HA 인터커넥트 케이블 연결</block>
   <block id="c1c364c532b2c947b4b100558d68dfe9" category="list-text">이 작업은 2노드 MetroCluster 구성에는 적용되지 않습니다.</block>
   <block id="e92a4b2abadfb9a6a4c24279d1fd0c9e" category="list-text">HA 쌍 내의 스토리지 컨트롤러가 별도의 섀시에 있는 경우에만 HA 인터커넥트를 케이블로 연결해야 합니다.</block>
   <block id="a388feae2b92607c4dbe4b46ac748344" category="paragraph">일부 스토리지 컨트롤러 모델은 단일 섀시에서 2개의 컨트롤러를 지원하며, 이 경우 내부 HA 인터커넥트를 사용합니다.</block>
@@ -8186,7 +8178,6 @@
   <block id="8d3eb4cb77ea2bbd21bb7417b5cacaca" category="paragraph">브리지 쌍 내의 브리지. 한 쌍의 브리지는 특정 스택 그룹에 연결됩니다.</block>
   <block id="f7957f4fad1ef92794a3f4763851bc70" category="paragraph">a 또는 b</block>
   <block id="5482b27fb601c9d5069a7533e0dd1b02" category="summary">Brocade FC 스위치를 구성할 때 특정 구성에 대한 전체 스위치 설정을 제공하는 스위치 구성 파일을 설치할 수 있습니다.</block>
-  <block id="c2a1b1aaf420fd5fc4e694faa94de89f" category="doc">Brocade FC 스위치 RCF 파일 설치</block>
   <block id="2d6424f21b7898ba895ef0e70f5c13c8" category="list-text">다운로드 및 구성 프로세스를 시작합니다.</block>
   <block id="3ef73a7a519c5b4a03c363a138b097eb" category="paragraph">'configDownload'</block>
   <block id="d304e0e1a0c74d4f29c7bf97c9e6c845" category="paragraph">다음 예에 표시된 것처럼 프롬프트에 응답합니다.</block>
@@ -8248,7 +8239,6 @@
   <block id="6de9fb8b7b5d44322728235b0d0a7791" category="summary">8노드 또는 4노드 MetroCluster 구성에서는 각 사이트가 1개 또는 2개의 HA 쌍으로 구성된 스토리지 컨트롤러로 구성됩니다. 따라서 하나의 스토리지 컨트롤러에 장애가 발생할 경우 로컬 HA 파트너가 이를 대신 처리할 수 있도록 로컬 이중화가 가능합니다. 이러한 장애는 MetroCluster 전환 작업 없이 처리할 수 있습니다.</block>
   <block id="40d4b0790c7c1d827412f3a79c31612b" category="list-text">테이크오버가 발생한 후에는 장애가 발생한 노드나 파트너 노드에 대한 표준 시간대 설정을 수정할 수 없습니다.</block>
   <block id="26e412e124f0e9c78b247288bfd03abd" category="list-text">MetroCluster FC 구성의 각 클러스터에는 해당 MetroCluster 사이트의 노드, FC 스위치 및 FC-to-SAS 브리지에서 사용하는 자체 NTP 서버 또는 서버가 있어야 합니다.</block>
-  <block id="7cd3fb6e6f6deaf7b1a2916711a6b7e0" category="inline-link-macro">Cisco FC 스위치를 수동으로 구성합니다</block>
   <block id="69e92926786e575346dbd083b8dec2f2" category="paragraph"><block ref="69e92926786e575346dbd083b8dec2f2" category="inline-link-macro-rx"></block></block>
   <block id="7beedda8cb5d2fb431ddb232b7ee7fe0" category="summary">MetroCluster 구성의 모든 노드 또는 DR\(재해 복구 그룹의 모든 노드에서 MetroCluster 구성을 제거할 수 있습니다.</block>
   <block id="0e08aa01426827fb0ba8dd3c64010d0e" category="paragraph">MetroCluster 구성에서 각 Brocade 스위치 패브릭을 구성해야 합니다.</block>
@@ -8751,7 +8741,6 @@
   <block id="8bd0cd6715687fc71d09455137c040b9" category="paragraph"><block ref="8bd0cd6715687fc71d09455137c040b9" category="inline-link-macro-rx"></block></block>
   <block id="2cc78fe607addfc425964003bfef4c37" category="paragraph"><block ref="2cc78fe607addfc425964003bfef4c37" category="inline-link-macro-rx"></block></block>
   <block id="4028a8e16d4b841012a85c08963c7c51" category="paragraph">'스치치치프트PersistentDisable'을 선택합니다</block>
-  <block id="7bff7ee71aa08abe16552f96511c6124" category="doc">Cisco FC 스위치를 출하 시 기본값으로 재설정합니다</block>
   <block id="da490e4cad45c10def878a2b7c965b5e" category="list-text">기존 구성 지우기: + `* 쓰기 지우기 * '</block>
   <block id="4eec5768b0acba2b883e4b34537af3c1" category="list-text">스위치 소프트웨어를 다시 로드합니다: + " * reload * "</block>
   <block id="6ca513baf7b251864842229b25190fb8" category="paragraph">시스템이 재부팅되고 구성 마법사가 시작됩니다. 부팅 중에 Auto Provisioning 중단 메시지가 표시된 후 정상 설치를 계속하면(예/아니요) [n] "* yes*"로 응답하여 계속 진행해야 합니다.</block>
@@ -9216,7 +9205,6 @@
   <block id="529a2302cffad8d858ddf8cfd8a1235a" category="paragraph">이 작업은 두 스위치 Fabric 모두에 대해 수행해야 합니다.</block>
   <block id="bf626de442bc8fa734370a57351ba540" category="list-text">구성 및 스위치 모델에 해당하는 표의 케이블을 사용하여 각 사이트의 FC 스위치를 모든 ISL에 연결합니다.</block>
   <block id="cf9793806e6e4a04213f68a860b2fd56" category="summary">Cisco FC 스위치를 구성하려면 스위치 설정을 초기 기본값으로 재설정하고 스위치 소프트웨어를 설치한 다음 특정 구성에 대한 전체 스위치 설정을 제공하는 참조 구성\(RCF\) 파일을 다운로드하여 적용해야 합니다.</block>
-  <block id="64fb3fc78b6d09b80f739c2efaebdd9d" category="doc">RCF 파일을 사용하여 Cisco FC 스위치 구성</block>
   <block id="02043b3a3b802db01041709dec8e7509" category="paragraph">Cisco FC 스위치를 구성하려면 스위치 설정을 초기 기본값으로 재설정하고 스위치 소프트웨어를 설치한 다음, 특정 구성에 대한 전체 스위치 설정을 제공하는 RCF(Reference Configuration) 파일을 다운로드하여 적용해야 합니다.</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
@@ -9750,7 +9738,6 @@
   <block id="dd6721b9055a32492dda0434480da44d" category="admonition">다운로드 후 RCF 파일을 수정할 수 없습니다.</block>
   <block id="03b9eedf57c55a2eb9b4feaa990c85f6" category="list-text">MetroCluster IP용 RcfFileGenerator를 사용하여 구성에 대한 RCF 파일을 생성합니다.</block>
   <block id="52ad3b024ecc6eae02e8415cef1140ba" category="summary">백엔드 MetroCluster IP 연결을 제공하도록 IP 스위치를 구성해야 합니다.</block>
-  <block id="9e93b10c56fcff9e0d1564e5ad629c03" category="doc">스위치 구성</block>
   <block id="d5d6932337b2af2eda1bd96fd5aa3832" category="inline-link-macro">MetroCluster 구성에서 DR 그룹을 제거하는 방법</block>
   <block id="240e83062f934da5c217268779ad19cc" category="inline-link-macro">기존 FAS8020 또는 AFF8020 노드에서 FCVI 연결이 사용되는 경우 컨트롤러 업그레이드에서는 포트 1c 및 1d를 사용합니다.</block>
   <block id="7d52f2b0abe5122410e02b6a1f5063c2" category="admonition">원래 또는 새로운 플랫폼이 FC-VI 모드에서 포트 1c 및 1d를 사용하는 FAS8020 또는 AFF8020 시스템인 경우 기술 자료 문서를 참조하십시오 <block ref="932e72f00053653311064be7a28a435b" category="inline-link-macro-rx"></block></block>
@@ -13596,7 +13583,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2fc694052b4d0c9fddb171c279d9ff41" category="section-title">거울이 없는 골재에 보관 선반을 추가합니다.</block>
   <block id="340ee9c6b389308075f20882f44ee863" category="paragraph">선반을 추가하고 MetroCluster IP 구성에서 미러링되지 않은 집계에 사용하려는 경우 다음을 수행해야 합니다.</block>
   <block id="fb945b959f6754639fad6c6e9e9469b9" category="list-text">로컬 사용자는 네트워크 관리자 권한이 있어야 합니다.</block>
-  <block id="528aafe8fc362d0088ddcc230e89b62a" category="doc">여러 MetroCluster IP 구성에서 포트 테이블을 사용하는 방법</block>
   <block id="760419501f92fb637e39b91dbfd2ea18" category="summary">저장 컨트롤러가 저장 선반에 연결되는 방식에 따라 올바른 설치 절차를 선택해야 합니다.</block>
   <block id="ef78e28e8b4e7855b7b5095e4cbd705a" category="paragraph">ONTAP 9.15.1부터 지원되는 시스템에서 종단 간 암호화를 구성하여 MetroCluster IP 구성의 사이트 간 백엔드 트래픽(예: NVlog 및 스토리지 복제 데이터)을 암호화할 수 있습니다.</block>
   <block id="ea1ad38d91c2e87ef2e9571bd55654fd" category="paragraph">ONTAP 9.17.1</block>
@@ -13812,38 +13798,24 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="84f770462160a31f1ba2c884f8e0555a" category="paragraph">RHEL 8.1 - 8.7</block>
   <block id="c87ad80aa9b7535cd96adb63053df8e1" category="paragraph">RHEL 7 - 7.9</block>
   <block id="8aa7a546946c5216ef6f7e346a69e1cd" category="list-text">Cisco 9124V 및 9250i 스위치는 8노드 MetroCluster 구성에서 지원되지 않습니다.</block>
-  <block id="146abb7706950bf3054ea3b94f4da40f" category="doc">MetroCluster IP 구성에서 추가 구성 및 모니터링을 위해 Active IQ Unified Manager 및 ONTAP System Manager를 사용하세요.</block>
   <block id="aea22b5efcf4554ce4a5146b1d0a6491" category="doc">MetroCluster IP 스위치 구성 예</block>
-  <block id="d4cfcb7ec7961c0fd8a4604944203d01" category="doc">공유 계층 2 또는 계층 3 네트워크에서 MetroCluster IP 구성을 배포하기 위한 요구 사항</block>
   <block id="e298e39648374a4391dccee04c624b21" category="doc">MetroCluster IP 구성 네트워크 토폴로지 예</block>
   <block id="51fe6e5a5459107a19c58c3f06e3c756" category="doc">MetroCluster 호환 스위치에 대한 ONTAP 플랫폼별 네트워크 속도 및 스위치 포트 모드</block>
-  <block id="b68fbbbff0362cb61c56d54001278a62" category="doc">ONTAP Mediator가 MetroCluster IP 구성에서 자동 계획되지 않은 전환을 지원하는 방법</block>
-  <block id="de12131483b433ac8506b7d654027975" category="doc">MetroCluster 호환 스위치에 대한 요구 사항 및 제한 사항</block>
-  <block id="dbbd0d3a920fcce3e934fa0740097c19" category="doc">MetroCluster IP 구성의 ISL(Inter-Switch Links)에 대한 요구 사항</block>
-  <block id="e7a6b008ef2ebf568f593e71d5f62762" category="doc">MetroCluster IP 구성에서 ONTAP 노드 및 클러스터 설정</block>
   <block id="c6929b82d09d520230d3410f013a4beb" category="doc">ONTAP MetroCluster 구성 지원 매트릭스</block>
   <block id="a2e3b015ada3007372f3890d911b3685" category="doc">MetroCluster IP 구성을 위한 방화벽 포트 요구 사항</block>
-  <block id="1bcaecfd01f4e5a2ce59bf09e79ab95f" category="doc">MetroCluster IP 구성에서 가상 IP 및 Border Gateway Protocol을 사용하는 방법에 대해 알아보세요.</block>
   <block id="75ab17da123365d00f2ec499305169d8" category="doc">원격 스토리지 및 MetroCluster IP 구성에 대해 알아보세요</block>
   <block id="1d4d3b05fa1ffe4d168028cb764f168a" category="doc">MetroCluster IP 구성에서 클러스터 피어링에 대한 요구 사항</block>
-  <block id="a6fa9144699b7827d36eaf11a183930c" category="doc">MetroCluster IP 구성을 사용한 ONTAP 작업에 대한 요구 사항 및 고려 사항</block>
-  <block id="5450af98b7b980559b29b88b2f4d9081" category="doc">MetroCluster IP 구성에서 하드웨어 구성 요소 상호 연결에 대해 알아보세요.</block>
   <block id="e35a81d68844a7f93fe7fbde3c4d71b9" category="doc">필수 MetroCluster IP 구성 구성 요소 및 명명 규칙</block>
   <block id="028572c8152de9abdd6ce9b7fec1fec7" category="doc">MetroCluster IP 스위치의 상태를 모니터링하기 위해 SNMPv3 구성</block>
   <block id="63ede7390ebddcb1a19c634b663be885" category="doc">ONTAP 시스템 관리자를 사용하여 MetroCluster IP 사이트 구성</block>
   <block id="d5df0ed1fddd51c59b0d672a06332803" category="doc">MetroCluster IP 설치 워크플로</block>
-  <block id="efea1e79a08808b857314cb52744fd91" category="doc">MetroCluster IP 구성의 NetApp 검증 및 MetroCluster 호환 스위치</block>
   <block id="81f48308d9009b082bbfb2492185ce99" category="doc">MetroCluster IP 구성을 위한 스위치 간 링크 요구 사항</block>
   <block id="f0668925279d53112795bb2ac4afc864" category="doc">MetroCluster IP 구성의 12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
   <block id="27399dcd320ca6d758e2655c39a8e386" category="doc">MetroCluster IP 구성의 Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당</block>
   <block id="60f2042ee9b23bda52c2e2a535331331" category="doc">MetroCluster IP 구성의 Cisco 3232C 또는 36포트 Cisco 9336C 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="0f1e80279fa5e850716c918391c80377" category="doc">MetroCluster IP 구성에서 NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="e4c70a9015773e7bbf7ec65d1e61fdd4" category="doc">MetroCluster IP 구성에서 Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당</block>
-  <block id="dbe2e4d199c297c30d26156121b218b7" category="doc">MetroCluster IP 구성에서 NVIDIA 지원 SN2100 IP 스위치에 대한 플랫폼 포트 할당</block>
   <block id="48d2b86e5ac14fbcf8457bec5a32528c" category="doc">MetroCluster IP에 대한 추가 정보를 찾을 수 있는 곳</block>
   <block id="72456fb865518b277c5bd9ff404c6c1e" category="doc">ONTAP 시스템 관리자를 사용하여 MetroCluster IP 피어링 설정</block>
   <block id="535fa0516d99c874e893ea2540a883dc" category="doc">ONTAP 시스템 관리자를 사용하여 MetroCluster IP 사이트 설정</block>
-  <block id="79d7b5a3dc6fd6411bb1e291b0258a63" category="doc">NVIDIA SN2100 MetroCluster IP 스위치용 이더넷 스위치 상태 모니터 구성 파일을 설치합니다.</block>
   <block id="d002b21a9bb49ec04f8c827e7da7610c" category="doc">MetroCluster IP 구성에서 System Manager를 사용하여 ONTAP Mediator를 관리합니다.</block>
   <block id="bf6de3ccb8c1b2675fa3ccbeade06fac" category="doc">MetroCluster IP 구성에서 NTP를 사용하여 시스템 시간 동기화</block>
   <block id="d741ad2153b77425c5d8d691d6d553ea" category="doc">MetroCluster IP 구성에서 ONTAP 컨트롤러 모듈 포트에 케이블 연결</block>
@@ -13853,18 +13825,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="inline-link-macro">ONTAP 하드웨어 시스템 문서</block>
   <block id="88ed37ac250ee3beac8ec4fa33e61947" category="paragraph">플랫폼 모델에 대한 _설치 및 설정_ 지침에 따라 _하드웨어 설치_ 단계를 따르세요.<block ref="b47a46dde65b6bc6493c260104f2cc8b" category="inline-link-macro-rx"></block> .</block>
   <block id="1e081ec0ca51d9b688cc6a1f9ee68bb3" category="doc">MetroCluster IP 구성에서 ONTAP Mediator 제거</block>
-  <block id="7bc9181dba7c0dfc8183916770110ea4" category="doc">MetroCluster IP 구성에서 풀 0에 드라이브를 수동으로 할당합니다.</block>
   <block id="fbbeae672f07ddb0455e7a97fd37d0a5" category="doc">MetroCluster IP 구성에서 ONTAP 클러스터 구성</block>
-  <block id="bad53acae4762678f018dfab43337e54" category="doc">MetroCluster IP 구성을 위한 MetroCluster Tiebreaker 또는 ONTAP Mediator 설정</block>
-  <block id="f6fde6b6a8ce6e2cab09a84313608ce8" category="doc">ONTAP 표준 클러스터와 MetroCluster 구성을 비교하세요</block>
   <block id="fb0099fb742a3391412388bd9c4f1162" category="doc">MetroCluster IP 구성에 필요한 정보를 수집하세요.</block>
-  <block id="e45bfa5ec7a407ec06cb5bfe23f8f7da" category="doc">MetroCluster IP 구성에서 클러스터 구성 파일 백업</block>
-  <block id="a1bf5f42e538d33da7e9a54c7485046b" category="doc">MetroCluster IP 구성을 설정하기 전에 컨트롤러 모듈에서 시스템 기본값을 복원합니다.</block>
   <block id="2a84cc9d50c6126c589d195dfabdaaa2" category="doc">MetroCluster IP 구성에서 ONTAP 노드 설정</block>
-  <block id="ab58575dfc3a4cf3868291f7e29fd682" category="doc">MetroCluster IP 구성에서 컨트롤러 및 섀시 구성 요소의 HA 구성 상태를 확인하세요.</block>
-  <block id="0dd4375e97dbbfc0461527e6636a4e50" category="doc">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 Broadcom IP 스위치 구성</block>
-  <block id="2305966fe63ba176ab9feddd6e84701f" category="doc">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 Cisco IP 스위치 구성</block>
-  <block id="e0e912999bb427a16c869c97ad908030" category="doc">클러스터 상호 연결 및 백엔드 MetroCluster IP 연결을 위해 NVIDIA IP SN2100 스위치 구성</block>
   <block id="25849b8ea5119a6ccbe0ef06d8e35773" category="doc">MetroCluster IP 구성에 대한 ONTAP 노드 전환 테스트</block>
   <block id="f42ec02236cb8b0134435967892ad733" category="paragraph"><block ref="f42ec02236cb8b0134435967892ad733" category="inline-link-macro-rx"></block></block>
   <block id="929f699475d2ee16cffb5df619460281" category="list-text">하드웨어 오류(예: 정전)가 없습니다.</block>
@@ -14125,7 +14088,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d134f3e8bbc2dfac90ce02f2d628c649" category="list-text">Onboard Key Manager를 사용하는 경우 새 노드를 추가한 클러스터에서 다음 단계를 수행하세요.</block>
   <block id="87f7e23221d5cdfbe745a1b00fcf1068" category="list-text">키 관리자 구성을 동기화합니다.</block>
   <block id="65ce095af1b3ce283b41ed1ff6456ed9" category="list-text">메시지가 표시되면 Onboard Key Manager 암호를 입력하세요.</block>
-  <block id="2105de6863814cadf13f4a5adf30bcf8" category="doc">자동 드라이브 할당 및 ADP 시스템에 대한 MetroCluster IP 요구 사항</block>
   <block id="8407092afa5cdc22ea9a94ffac556a37" category="paragraph">MetroCluster IP 구성에서 ADP를 사용할 때 다음 사항을 알고 있어야 합니다.</block>
   <block id="a88e04c5993ff7e8b685db2d115453a3" category="paragraph">표를 사용하기 전에 다음 요구 사항을 검토하세요.</block>
   <block id="28b8efa498ff52a7274720a8171ce1d8" category="list-text">지원되는 드라이브의 최대 수와 기타 지침에 대한 MetroCluster 제한을 충족해야 합니다. 를 참조하세요<block ref="ed4326c3351d8ac0e334b8b4d9b37c82" category="inline-link-rx"></block> .</block>
@@ -14277,7 +14239,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="88ecaca9811ed8ee2d07d6be6c37393b" category="paragraph">즉, 새 구성에 대한 RCF를 생성할 때 RcfFileGenerator 도구에서 플랫폼을 다음 순서대로 선택해야 할 수도 있습니다.</block>
   <block id="e1560ebf4cdefb3656321c70615b070a" category="list-text">*두 번째 드롭다운 필드*에서 스위치에 연결된 NS224 스토리지를 지원하는 플랫폼을 선택하십시오.</block>
   <block id="6671def4e7da861590fb38e5fc66314e" category="list-text">*첫 번째 드롭다운 필드*에서 스위치 연결 NS224 스토리지를 지원하지 않는 플랫폼을 선택합니다.</block>
-  <block id="ddbce4d78273fadb6714307de4be2067" category="doc">MetroCluster IP 구성에서 기본 ONTAP Mediator 메일박스 시간 초과를 늘립니다</block>
   <block id="2782611b81a323af0ab55dcdc0bed9b0" category="paragraph">MetroCluster IP 노드는 iSCSI 세션을 사용하여 ONTAP Mediator 메일박스 디스크에 액세스할 수 있으며, 기본 연결 시간 초과는 10초(5초 후 1회 재시도 포함)입니다. ONTAP 버전 및 환경에 따라 Mediator 지원 비상 스위치오버(MAUSO) 중단을 방지하기 위해 메일박스 시간 초과를 최대 60초까지 늘릴 수 있습니다.</block>
   <block id="5989de7ef1290d3b1851ce9197407a9a" category="paragraph">장애 발생 시간, 즉 MetroCluster IP 노드가 ONTAP Mediator에 다시 연결되는 데 걸리는 시간을 평가해야 합니다. 연결 시간이 10초를 초과하는 경우, 타임아웃 값을 MetroCluster IP 노드가 다시 연결되는 데 걸리는 시간보다 몇 초 더 길게 설정해야 합니다.</block>
   <block id="96da1e735aedafb1dcf6dc852a630b69" category="paragraph">각 사이트에서 연결이 독립적으로 유지되고 한 사이트의 장애가 정상 사이트에서 ONTAP Mediator로의 연결에 영향을 미치지 않는 경우 기본값인 10초로 충분하며 mailbox timeout을 변경해서는 안 됩니다.</block>
@@ -14445,7 +14406,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="0814a528a6e09bdfa454da4598d03b6a" category="paragraph">ASA A150</block>
   <block id="2731fea24095aa687c94c583e42e365a" category="paragraph">25Gbps 또는 100Gbps</block>
   <block id="d9bafc03fd0d1ef7bcb8fe6362c07354" category="summary">필요한 경우 사이트 간에 실행되는 WAN ISL 포트에만 MACsec 암호화를 구성하십시오. MACsec 암호화를 사용하도록 선택한 경우 올바른 RCF 파일을 적용한 후 구성하십시오.</block>
-  <block id="0876f65fb1fd364053810f3b546f4ae5" category="doc">MetroCluster IP 사이트의 Cisco 9336C 스위치에서 MACsec 암호화를 구성합니다(선택 사항)</block>
   <block id="800b8e21fdc6520b5affd604f6034398" category="paragraph">필요한 경우 사이트 간에 실행되는 WAN ISL 포트에서 MACsec 암호화를 구성할 수 있습니다. MACsec 암호화를 사용하도록 선택한 경우 올바른 RCF 파일을 적용한 후 구성해야 합니다.</block>
   <block id="3b1fc3e7f78026e75788d28bc49ca81d" category="list-text">MACsec 암호화는 사이트 간에 실행되는 WAN ISL 포트에만 적용할 수 있습니다.</block>
   <block id="68bddd16e24ef3e862d1cb8ff822ad2a" category="list-text">Cisco 9336C 스위치를 구성할 때 MACsec 암호화 구성은 선택 사항입니다.</block>
@@ -14604,7 +14564,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4171a03473af7f6456c08cdeebe281de" category="paragraph">RCF는 올바른 스위치에 적용해야 합니다.</block>
   <block id="02d4864774f054081d5b074fdab94cda" category="list-text">해당 <block ref="7a2a5b3ce34e84b17e1e6ffcc479aaa8" category="inline-link-rx"></block> 페이지에서 스위치용 RCF 파일을 다운로드하십시오.</block>
   <block id="5bed49e108466e37517b3a12ea075d7a" category="summary">스위치 펌웨어 또는 참조 구성 파일(RCF)을 업데이트할 때, 업그레이드 중에 클러스터 운영이 중단되지 않도록 클러스터 LIF를 파트너 스위치로 이동합니다.</block>
-  <block id="9b2826e036ff82834f75a0e7a44282ed" category="doc">MetroCluster IP 스위치 교체, RCF 변경 또는 펌웨어 업데이트 전에 클러스터 LIF 이동</block>
   <block id="ba817507ff742e4351352b3d698de081" category="paragraph">MetroCluster IP 스위치를 교체하거나 스위치 펌웨어 또는 참조 구성 파일(RCF)을 변경할 경우, 클러스터 운영을 중단 없이 지속하려면 클러스터 LIF를 파트너 스위치로 이동해야 합니다.</block>
   <block id="b418b4fad97ed4823768d59cc9628c62" category="list-text">스위치 펌웨어를 업그레이드 또는 다운그레이드하거나, 스위치 RCF를 교체하거나, IP 스위치를 교체하기 전에 이 작업을 반드시 수행해야 합니다.</block>
   <block id="f6ab7b470572966bac3482a56c334dfc" category="admonition">스위치를 처음 구성하는 경우, 스위치를 교체하는 경우가 아니라면 이 작업을 건너뛸 수 있습니다.</block>
@@ -14714,4 +14673,74 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b8c3014a64ccb52cfe10dc2bcccd245f" category="admonition">부팅 메뉴 옵션을 실행할 때<block ref="1679091c5a880faf6fb5e6087eb1b2dc" prefix=" " category="inline-code"></block>, MetroCluster 부팅 인수 값을 재설정해야 할 수 있습니다. <block ref="c2cec781ec7263394dd955380787b572" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="9a3f31a7018cf62078b2f2f088863f9b" category="sidebar">MetroCluster IP 스위치 구성에 대해 알아보십시오.</block>
   <block id="96e6a3f92b027e80b14698a7b22b316f" category="sidebar">클러스터 LIF 이동</block>
+  <block id="6ff582b0ae729d11778a35e29e20960a" category="doc">MetroCluster FC의 FC 스위치 구성</block>
+  <block id="363f8ed3d058d1824c0203afa81919be" category="doc">Active IQ Unified Manager와 ONTAP System Manager를 사용하여 MetroCluster FC 구성 모니터링</block>
+  <block id="815f7fd3a598585a8f4cf0ada87285ab" category="doc">MetroCluster FC 구성에서 클러스터 피어링 네트워크 그림</block>
+  <block id="50cbf17f4755b524c55b6c9b7ad58a8f" category="doc">MetroCluster FC 구성에서 Brocade DCX 8510-8 스위치를 사용하기 위한 요구사항</block>
+  <block id="9b796eab75f7b1c95ebf4daae4c897e7" category="doc">MetroCluster FC 구성의 가상 IP 및 BGP</block>
+  <block id="4081d682b535180c161b223266b467ed" category="doc">MetroCluster FC 구성의 ISL 요구사항</block>
+  <block id="ae9a01424a2f5eb88f7ed2bd58ed893b" category="doc">MetroCluster FC 구성에서의 클러스터 피어링 요구사항</block>
+  <block id="b0612b02ff23ba8a2c2e61bb83ebe67a" category="doc">MetroCluster FC 구성의 미러링되지 않은 애그리게이트</block>
+  <block id="6040e7a8c9621d594d9b9f238209b0ab" category="doc">ONTAP MetroCluster 구성 시 고려 사항</block>
+  <block id="f38043ab9f34b68e3463d7b1fb38b361" category="doc">MetroCluster FC 구성의 이중화 FC-to-SAS 브리지 그림</block>
+  <block id="e3dd1a90c13a22d51e73cec3e510f688" category="doc">MetroCluster FC 구성의 로컬 HA 쌍 그림</block>
+  <block id="dff9dc7617c0b722a258b6e77d1f3726" category="doc">두 개의 이니시에이터 포트를 사용하는 MetroCluster FC 시스템의 포트 할당</block>
+  <block id="05585309d52edd75bfe06dd78ae82f9e" category="doc">MetroCluster FC 설치 준비</block>
+  <block id="fb45e1fe4b65e4d3f577f1313e3192ff" category="doc">MetroCluster FC 구성의 이중 스위치 패브릭</block>
+  <block id="07fea3e7242e3b7feb95daab8ac382f1" category="doc">MetroCluster FC 구성을 위한 TDM/WDM 요구사항</block>
+  <block id="05098029b983a3408b44325185438949" category="doc">RCF 파일을 사용하여 Cisco MetroCluster FC 스위치를 구성합니다</block>
+  <block id="76438cbc2291f6d0b6a5155d9952e6a8" category="doc">MetroCluster FC 설치 워크플로</block>
+  <block id="5fd61de5dd5b6d796a4f4d8bccbbbe9f" category="doc">MetroCluster FC 스위치 및 FC-to-SAS 브리지용 구성 워크시트</block>
+  <block id="7e175f581dd885fe7ee193e78b5ac58b" category="doc">MetroCluster에 대한 추가 정보를 찾을 수 있는 위치</block>
+  <block id="1b28c0687ece4b4bc3fd21ceaef683c4" category="doc">8노드 또는 4노드 MetroCluster FC 구성에서 클러스터 인터커넥트 케이블 연결</block>
+  <block id="94f22949b4ac454b2c1b46c82a7a9360" category="doc">MetroCluster FC 구성에서 클러스터 피어링 연결 케이블 연결</block>
+  <block id="12d29f6ef769d9827ff0fbae6c9ae8ef" category="doc">케이블 컨트롤러 모듈 FC-VI 및 HBA 포트를 MetroCluster FC 스위치에 연결합니다.</block>
+  <block id="8026f4ec611bd118ac269a01492de7eb" category="doc">HA 인터커넥트를 MetroCluster FC 구성에 케이블로 연결합니다</block>
+  <block id="aaa5c9b8858e5d0e6662b2456ce875a7" category="doc">MetroCluster FC 사이트 간 ISL 케이블 연결</block>
+  <block id="f524fb27981b728db058331580747fa9" category="doc">MetroCluster FC 구성에서 관리 및 데이터 연결 케이블 연결</block>
+  <block id="fb67e9a3985fd88e6ec3c17af42c7c9f" category="doc">FAS8020 시스템의 MetroCluster FC 구성에서 X1132A-R6 4중 포트 카드에 대한 FC-VI 포트 구성</block>
+  <block id="c820136efafeb14232a7bb0ecdc3a5e7" category="doc">Cisco FC 스위치 RCF 파일을 MetroCluster FC 구성에서 다운로드하고 설치합니다</block>
+  <block id="c8c019807a214ed01c2fd3737fb66653" category="doc">Cisco FC 스위치 NX-OS 소프트웨어를 MetroCluster FC 구성에서 다운로드하고 설치합니다</block>
+  <block id="c107653dfa4a6cb420e91b134316934d" category="doc">MetroCluster FC 구성에서 Brocade FC 스위치 RCF 파일 다운로드</block>
+  <block id="dd1861d8b8089cce9bcd65dcd9ef90fd" category="doc">Brocade FC 스위치를 MetroCluster FC 구성에서 수동으로 구성합니다</block>
+  <block id="f94ef2b75d467a78aa84ce1bb33652ce" category="doc">MetroCluster FC 구성에서 Cisco 스위치를 수동으로 구성합니다</block>
+  <block id="6a6da24da3fa4ff67dafeb9d87d9bb82" category="doc">MetroCluster FC 구성에서 FC 스위치 구성</block>
+  <block id="fbeac99c1940e86ea53691da26e16aba" category="doc">RCF를 사용하여 MetroCluster FC 스위치를 구성합니다</block>
+  <block id="1e53200e2bde9fd5a7c07ac8f5113781" category="doc">MetroCluster FC 스위치 패브릭을 다시 활성화하고 작동을 확인합니다.</block>
+  <block id="673e8727c55ac5d36e4061912da38e7d" category="doc">MetroCluster FC 구성에서 FC-to-SAS 브리지 및 SAS 디스크 쉘프 설치</block>
+  <block id="1b6b8ad2d32c11d213c91b42df59504b" category="doc">MetroCluster FC 구성에서 Brocade FC 스위치 RCF 파일을 설치합니다</block>
+  <block id="1dee6fb030f3706cd70f3b48dccd2685" category="doc">MetroCluster FC 구성의 하드웨어 구성요소를 랙에 장착합니다</block>
+  <block id="db52be1cbdb1d82ada11ff8be3137788" category="doc">MetroCluster FC 구성에서 Brocade FC 스위치를 공장 기본값으로 재설정합니다</block>
+  <block id="c32071fa24e24f6bbbd88991876e93b3" category="doc">MetroCluster FC 구성에서 Cisco FC 스위치를 공장 기본값으로 재설정</block>
+  <block id="f34f24a8fd0f97aee1e485370d40c622" category="doc">NTP를 사용하여 MetroCluster FC 구성에서 시스템 시간을 동기화합니다</block>
+  <block id="c0e51bd4b913e7e3b32a2cc1ebc1c321" category="doc">MetroCluster 공유 레이어 2 및 레이어 3 네트워크에 대한 MetroCluster IP 요구 사항</block>
+  <block id="48596b9855b161c0fdcfc7b5380b949d" category="doc">MetroCluster IP 구성에서 자동 비계획 전환을 위한 ONTAP Mediator 지원에 대해 알아보십시오.</block>
+  <block id="039b0363f3084ff2de7060aab7c3d18a" category="doc">MetroCluster 호환 스위치용 MetroCluster IP 요구사항</block>
+  <block id="d69f6b409c5b63ff806471226105fb08" category="doc">MetroCluster IP ISL 요구 사항</block>
+  <block id="68e8e530485adbd939e02abfcbf2b921" category="doc">MetroCluster IP 노드 및 클러스터 구성 워크플로</block>
+  <block id="ebcaa8570b46d60714f133ed625b3b98" category="doc">MetroCluster IP 드라이브 할당 및 ADP 요구 사항</block>
+  <block id="6926015de12c3197f4a0496403e9cde1" category="doc">MetroCluster IP 구성의 가상 IP 및 BGP에 대해 알아봅니다</block>
+  <block id="607dc4b1fcfbd228c83e24422ac8f123" category="doc">MetroCluster IP 구성 제거</block>
+  <block id="e374cabe2afbaac1909841cd1012a94c" category="doc">MetroCluster IP 구성에서의 ONTAP 운영 요구사항</block>
+  <block id="d00a37ec3ed10fdae786e846d6202c4b" category="doc">MetroCluster IP 하드웨어 구성 요소에 대해 알아봅니다</block>
+  <block id="80912cc1e5476db748420db1e0a28016" category="doc">MetroCluster IP 구성을 위한 추가 관리 툴에 대해 알아보십시오</block>
+  <block id="c8375b50501a97bc27bc3b6bc67d4f09" category="doc">MetroCluster IP 구성을 위한 스위치 규정 준수 요구사항</block>
+  <block id="9273588da9a6272994f1e27930548949" category="doc">NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치의 MetroCluster IP 구성에 대한 플랫폼 포트 할당</block>
+  <block id="42c46f91d3f244390a44e37864ce9683" category="doc">Broadcom 지원 BES-53248 스위치의 MetroCluster IP 구성에 대한 플랫폼 포트 할당</block>
+  <block id="44ace228b2eb030d54fecba30dd1a868" category="doc">NVIDIA SN2100 스위치의 MetroCluster IP 구성을 위한 플랫폼 포트 할당</block>
+  <block id="51440f859949d5811d109b8d1c100400" category="doc">MetroCluster IP 구성에서 스위치, RCF 또는 펌웨어 변경 전에 클러스터 LIF 이동</block>
+  <block id="5a4e415e369e28ea14ea5533cfae711b" category="doc">NVIDIA SN2100 MetroCluster IP 스위치용 CSHM 파일 설치</block>
+  <block id="d4f664f68579fcf672c8bfe170cc8ff2" category="doc">MetroCluster IP용 스위치 구성 워크플로</block>
+  <block id="c50f56c09d84c1d8cfc45599d5bdcd70" category="doc">MetroCluster IP 구성에서 드라이브를 풀 0에 수동으로 할당합니다</block>
+  <block id="9872c95ac28beb2bfd4bb4ebea72af8a" category="doc">MetroCluster IP 구성을 위한 Tiebreaker 또는 ONTAP Mediator를 설정하십시오.</block>
+  <block id="aad9040f71394a60adf48583621d682c" category="doc">표준 ONTAP 클러스터와 MetroCluster 구성 비교</block>
+  <block id="74e6920026ebf568d91aa90735ffd30d" category="doc">MetroCluster IP 구성에서 클러스터 구성 파일 백업</block>
+  <block id="769705109cb0057f5bdda6b61a2e4b7d" category="doc">MetroCluster IP 구성의 컨트롤러 모듈에서 시스템 기본값 복원</block>
+  <block id="2edb35e72ce63a7d658086db6e466029" category="doc">MetroCluster IP 구성에서 HA 구성 상태를 확인합니다</block>
+  <block id="184cf2b415ba792df10221adf1b58314" category="doc">MetroCluster IP 구성을 위한 Broadcom IP 스위치 구성</block>
+  <block id="4e59deff206fc6dd1da05e5e92df6d57" category="doc">MetroCluster IP 구성을 위한 Cisco IP 스위치 구성</block>
+  <block id="7755f44a0cc80ad6e3eaa79c1a79b257" category="doc">MetroCluster IP의 Cisco 9336C 스위치에서 MACsec 암호화 구성</block>
+  <block id="edb9b445f13c3e9e05b61cc6e0b3efdc" category="doc">MetroCluster IP 구성을 위한 NVIDIA IP SN2100 스위치 구성</block>
+  <block id="20e757ff864b6acd14ec41e7165a63f9" category="doc">MetroCluster IP 구성에서 ONTAP Mediator 사서함 타임아웃을 늘립니다.</block>
+  <block id="f081a35160d006cd5323e0740d06220e" category="doc">MetroCluster IP 구성을 위한 포트 테이블</block>
 </blocks>

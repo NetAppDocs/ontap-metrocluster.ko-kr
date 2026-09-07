@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ontap, metrocluster, mediator, timeout, settings, change, update, default, value 
 summary:  
 ---
-= MetroCluster IP 구성에서 기본 ONTAP Mediator 메일박스 시간 초과를 늘립니다
+= MetroCluster IP 구성에서 ONTAP Mediator 사서함 타임아웃을 늘립니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

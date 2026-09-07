@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, fabric, installation, configure, brocade, switches, cisco 
 summary:  
 ---
-= FC 스위치 구성 개요
+= MetroCluster FC의 FC 스위치 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

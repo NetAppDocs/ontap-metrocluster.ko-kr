@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip, switch, configuring, configure, factory defaults, cisco, MACsec encryption, 9336C, 9336, forward error correction, fec 
 summary: '스위치 펌웨어 또는 참조 구성 파일(RCF)을 업데이트할 때, 업그레이드 중에 클러스터 운영이 중단되지 않도록 클러스터 LIF를 파트너 스위치로 이동합니다.' 
 ---
-= MetroCluster IP 스위치 교체, RCF 변경 또는 펌웨어 업데이트 전에 클러스터 LIF 이동
+= MetroCluster IP 구성에서 스위치, RCF 또는 펌웨어 변경 전에 클러스터 LIF 이동
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
