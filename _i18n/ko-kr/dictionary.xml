@@ -3187,15 +3187,9 @@
   <block id="504d065328326a8677a260e4447bea63" category="paragraph">부팅 장치가 다시 포맷되어 구성 데이터를 복원해야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.</block>
   <block id="f02a9a7436db38c9278de96d8940fedc" category="list-text">아래 메시지가 표시되면 yes를 선택합니다. 그러면 클러스터 구성원을 포함한 중요한 시스템 구성이 삭제됩니다. 경고: 인계된 HA 노드에서 이 옵션을 실행하지 마십시오. 계속 하고 싶으세요</block>
   <block id="e3dcb6e98d703b4041ac7a4b6d40412e" category="list-text">부팅 메뉴에서 유지보수 모드로 전환하려면 옵션 '5'를 선택합니다. 유지보수 모드에서 노드가 중지되고 명령 프롬프트 ' *&gt;'가 나타날 때까지 프롬프트에 '예'를 입력합니다.</block>
-  <block id="9c70e72e74a5beec346c7fba9e09ac77" category="list-text">노드를 정지시킵니다. 노드를 정지시켜야 합니다.</block>
-  <block id="a9c684b6388493b28c8bae9224fcb530" category="list-text">각 노드에서 시스템 날짜, 시간 및 시간대를 '날짜 표시'로 확인합니다</block>
-  <block id="19940e0e663b8b77ef5ae9bed0adc639" category="list-text">필요한 경우 UTC 또는 그리니치 표준시(GMT):'날짜 설정&lt;mm/dd/yyyy&gt;'으로 날짜를 설정합니다</block>
-  <block id="17cd34e04880fa15bf7da7bdee12d187" category="list-text">노드를 유지보수 모드로 다시 부팅하여 구성 변경 사항이 적용되도록 합니다. 즉, boot_ONTAP maint가 적용됩니다</block>
   <block id="92864f4a1e3e8b31f329dde898c399e7" category="list-text">변경한 사항이 적용되었으며 ucadmin이 온라인으로 FC 이니시에이터 포트를 표시하는지 확인합니다.</block>
   <block id="9be73b3dd95d39ff15e33b30275709d3" category="cell">이 유형의 HBA가 있는 경우…</block>
   <block id="8ad2992d6c032a4514706c63ee5d4d1b" category="cell">이 명령 사용…</block>
-  <block id="6f991264f748ca5e72084279b6293fcc" category="list-text">ha-config mode: ha-config show를 확인합니다</block>
-  <block id="351a906b91969bd3f60ac4f7ef2b51fe" category="list-text">다음 출력이 있는지 확인합니다.</block>
   <block id="ee4c38ecc362bac1e7f1567f237e818c" category="list-text">시스템을 중지하고 "Loader(로더)" 프롬프트에서 유지보수 모드로 부팅합니다.</block>
   <block id="1ecb0dfe9a0842837109d6fe31c0a171" category="list-text">node_B_1-A700이 소유한 디스크를 표시합니다.</block>
   <block id="241f0ee84bd4513482899f61a24c6961" category="paragraph">예제 출력은 새 컨트롤러 모듈(1574774970)의 시스템 ID를 보여 줍니다. 그러나 루트 애그리게이트 디스크는 여전히 이전 시스템 ID(4068741254)가 소유합니다. 이 예는 MetroCluster 구성에서 다른 노드가 소유한 드라이브를 표시하지 않습니다.</block>
@@ -10810,7 +10804,6 @@
   <block id="16d9a40603d44eea561b00730eec3d91" category="paragraph">ONTAP 9.12.1 이상</block>
   <block id="4951fe611f97b799b2abaf7474848aa1" category="inline-link-macro">OS 지원 매트릭스 를 참조하십시오</block>
   <block id="30177b72c8d5a1bab13142ff42dfc513" category="paragraph">을 참조하십시오 <block ref="9f4435e7cf286b329f02bc934ba0dd4b" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="e27eee16ff4c1ce2072fea31052ce7d5" category="paragraph">없음. 종속성은 설치와 함께 번들로 제공됩니다.</block>
   <block id="4a558332080902b1daf6c9eb900f075a" category="summary">사용하는 타이브레이커 설치 절차는 설치하는 타이브레이커의 버전에 따라 다릅니다.</block>
   <block id="686cbe9ae98dac9e3c34fe747bedda27" category="doc">설치 절차를 선택합니다</block>
   <block id="de537937e28d6ff9bfed73c24f238620" category="paragraph">타이브레이커 1.6</block>
@@ -14743,4 +14736,23 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="edb9b445f13c3e9e05b61cc6e0b3efdc" category="doc">MetroCluster IP 구성을 위한 NVIDIA IP SN2100 스위치 구성</block>
   <block id="20e757ff864b6acd14ec41e7165a63f9" category="doc">MetroCluster IP 구성에서 ONTAP Mediator 사서함 타임아웃을 늘립니다.</block>
   <block id="f081a35160d006cd5323e0740d06220e" category="doc">MetroCluster IP 구성을 위한 포트 테이블</block>
+  <block id="e0ff38f1490ce2495524f7429045ad81" category="inline-link-macro">기술 자료 문서 "백엔드 스위치 교체 중 클러스터 및 HA 통신 문제"</block>
+  <block id="93c539486532bcd2c15f294efff69106" category="admonition">AFF A220, AFF A250 또는 FAS2750 플랫폼에서 스위치 교체를 수행해야 하는 경우 <block ref="3468e696d0ad9ec4d429e1b845c952a7" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
+  <block id="fe4617c4a015a1feba78882255c11625" category="paragraph">X60134A 네트워크 인터페이스 카드를 사용하는 플랫폼에서는 혼합 링크 속도가 지원되지 않습니다. 플랫폼이 영향을 받는지 확인하려면<block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="5f0a2538bca6fe75656437edc2b047c7" category="inline-link-macro">기술 자료 문서 "100G link not coming online during MetroCluster back-end switch replacement"</block>
+  <block id="657f971f966b2ce2da53f2f9bf9abb4b" category="paragraph">영향을 받는 플랫폼에서 25G 포트를 사용하는 스위치를 100G 포트를 사용하는 새 스위치로 교체하는 경우(예: AFF A50 플랫폼에서 BES-53248 스위치를 Cisco 9336C 스위치로 교체하는 경우) 다음을 참조하십시오. <block ref="6b31e2facf5f0ecbaec230ff30732341" category="inline-link-macro-rx"></block></block>
+  <block id="2c949cfd6a2e8390ab22577d8fcb8862" category="paragraph">해당 사항 없음. OpenJDK 19.0.2가 설치에 포함되어 있습니다.</block>
+  <block id="cbf667b7a6abb8a525741cdc92045f34" category="paragraph">모든 구성 요소의 HA 상태는 <block ref="f46f944e351f8b92e40c3308318738a3" prefix=" " category="inline-code"></block>이어야 합니다.</block>
+  <block id="de63ff438cd7316a835d354fccfe0c46" category="list-text">각 노드에서 시스템 날짜, 시간 및 시간대를 확인하십시오.</block>
+  <block id="3e72511c09e554faf49052f79d627689" category="paragraph"><block ref="7e17e2b336dbdd66c2f45405573b53de" prefix="" category="inline-code"></block></block>
+  <block id="1bf5eb31de796d79cb8b6dfd332d4bb6" category="list-text">필요한 경우 날짜를 UTC 또는 그리니치 표준시(GMT)로 설정하십시오.</block>
+  <block id="833ce90830a0406f310191c0da1f76da" category="paragraph"><block ref="ce2b665b5815a9c7e13cdb6fc96a5a98" prefix="" category="inline-code"></block></block>
+  <block id="b6d433a7d610fd177455bd83030adfbf" category="list-text">부팅 환경 프롬프트에서 다음 명령을 사용하여 시간을 확인하십시오.</block>
+  <block id="667f3a6a11750e110d0c1442d2aa20e7" category="paragraph"><block ref="33f065aac47385ce7b7c4bc5d49f430b" prefix="" category="inline-code"></block></block>
+  <block id="3cc2598fed5ed84edf9cf18c5a8293c6" category="list-text">필요한 경우 시간을 UTC 또는 GMT로 설정하십시오.</block>
+  <block id="25a249a3cdba620e6eba67639be13589" category="paragraph"><block ref="aa979bf34f52b205295408bd829f28b6" prefix="" category="inline-code"></block></block>
+  <block id="e02ed2f754f906507b04045b6d64c6a8" category="list-text">설정을 저장합니다:</block>
+  <block id="be169689a01b80888d8e5aa7db10c6e9" category="list-text">환경 변수를 수집합니다.</block>
+  <block id="c464415fe9040cd42442afd5413727d2" category="list-text">ha-config 모드를 확인하십시오.</block>
+  <block id="bb903f8039d8d74f0348f46c24a33392" category="paragraph">출력 결과는 다음 예시와 유사해야 합니다.</block>
 </blocks>

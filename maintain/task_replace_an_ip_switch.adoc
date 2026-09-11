@@ -13,11 +13,21 @@ summary: '장애가 발생한 스위치를 교체하거나 스위치를 업그�
 [role="lead"]
 장애가 발생한 스위치를 교체하거나, 스위치를 업그레이드 또는 다운그레이드하거나, 기존 MetroCluster IP 스위치를 변경해야 할 수 있습니다.
 
+
+CAUTION: AFF A220, AFF A250 또는 FAS2750 플랫폼에서 스위치 교체를 수행해야 하는 경우 link:https://kb.netapp.com/on-prem/ontap/mc/MC-KBs/Cluster_and_HA_communication_issues_during_back-end_switch_replacement["기술 자료 문서 "백엔드 스위치 교체 중 클러스터 및 HA 통신 문제""^]을(를) 참조하십시오.
+
 .이 작업에 대해
 이 절차는 NetApp 검증 스위치를 사용하는 경우에 적용됩니다. MetroCluster 호환 스위치를 사용하는 경우 스위치 공급업체를 참조하십시오.
 
 link:enable-console-logging-before-maintenance.html["콘솔 로깅을 활성화합니다"] 이 작업을 수행하기 전에
 
+[NOTE]
+====
+X60134A 네트워크 인터페이스 카드를 사용하는 플랫폼에서는 혼합 링크 속도가 지원되지 않습니다. 플랫폼이 영향을 받는지 확인하려면 https://hwu.netapp.com/["Hardware Universe"^]을 참조하십시오.
+
+영향을 받는 플랫폼에서 25G 포트를 사용하는 스위치를 100G 포트를 사용하는 새 스위치로 교체하는 경우(예: AFF A50 플랫폼에서 BES-53248 스위치를 Cisco 9336C 스위치로 교체하는 경우) 다음을 참조하십시오. link:https://kb.netapp.com/on-prem/ontap/mc/MC-KBs/100G_link_not_coming_online_during_MetroCluster_back-end_switch_replacement?caseId=2010523490["기술 자료 문서 "100G link not coming online during MetroCluster back-end switch replacement""^]
+
+====
 이 절차에서는 다음 변환을 지원합니다.
 
 * 스위치 공급업체, 유형 또는 둘 다를 변경합니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다(스위치 업그레이드 또는 다운그레이드).
