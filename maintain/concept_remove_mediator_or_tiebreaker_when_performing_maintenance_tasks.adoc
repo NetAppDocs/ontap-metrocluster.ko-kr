@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, maintenance, service, tiebreaker, mediator, ontap mediator 
 summary: Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다 
 ---
-= 유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다
+= MetroCluster 유지보수 전에 ONTAP Mediator 또는 Tiebreaker를 제거하십시오.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

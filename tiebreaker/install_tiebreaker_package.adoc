@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
 summary: 호스트 Linux 운영 체제에서 새로 설치하거나 tiebreaker 1.5로 업그레이드하여 MetroCluster 구성을 모니터링합니다. 
 ---
-= Tiebreaker 1.5를 설치하거나 업그레이드합니다
+= MetroCluster Tiebreaker 1.5 설치 또는 업그레이드
 :allow-uri-read: 
 
 

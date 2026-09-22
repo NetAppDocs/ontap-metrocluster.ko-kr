@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, ip, configuration, switchback, operation 
 summary: 교체된 IP 스위치를 구성해야 합니다. 
 ---
-= IP 스위치 구성(MetroCluster IP 구성)
+= MetroCluster IP 구성에서 IP 스위치를 구성합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

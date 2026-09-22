@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: heal, data, aggregate, completing, complete, maintenance, test, process, resynchronize, prepare, disaster, operation, root, negotiate, switchover 
 summary: 유지보수 또는 테스트를 완료한 후에는 데이터 애그리게이트를 치료해야 합니다. 이 프로세스는 데이터 애그리게이트를 재동기화하여 정상적인 작동을 위해 재해 사이트를 준비합니다. 루트 애그리게이트를 복구하기 전에 데이터 애그리게이트를 치유해야 합니다. 
 ---
-= 협상된 전환 후 데이터 애그리게이트를 복구
+= 스위치오버 후 MetroCluster 데이터 애그리게이트 복구
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

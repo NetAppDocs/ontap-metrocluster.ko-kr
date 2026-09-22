@@ -16,7 +16,7 @@ Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니�
 .이 워크플로 정보
 이 워크플로를 사용하여 Tiebreaker 소프트웨어를 설치하거나 업그레이드할 수 있습니다.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:install_prepare.html["타이브레이커 소프트웨어 설치를 준비합니다"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:install_prepare.html["MetroCluster Tiebreaker 설치 요구 사항"]
 [role="quick-margin-para"]
 타이브레이커 소프트웨어를 설치하고 구성하기 전에 시스템이 특정 요구 사항을 충족하는지 확인하십시오.
 

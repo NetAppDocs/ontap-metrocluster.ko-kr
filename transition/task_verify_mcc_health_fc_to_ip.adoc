@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Verifying the health of the MetroCluster configuration, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
 summary: 전환을 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다. 
 ---
-= MetroCluster 구성 상태 확인
+= MetroCluster 구성의 상태를 확인합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

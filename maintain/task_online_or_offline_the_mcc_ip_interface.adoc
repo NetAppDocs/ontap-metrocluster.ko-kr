@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, service, online, offline, ip, interface port 
 summary: 유지 관리를 수행할 때 MetroCluster IP 인터페이스 포트를 중지해야 할 수 있습니다. 
 ---
-= 온라인 또는 오프라인 MetroCluster IP 인터페이스 포트
+= MetroCluster IP 구성에서 인터페이스 포트를 온라인 또는 오프라인 상태로 전환합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

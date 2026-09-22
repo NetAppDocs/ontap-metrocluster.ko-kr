@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: completing, complete, transition, metrocluster, configuration, resume, monitor, tiebreaker, mediator, utility, restoring, restore 
 summary: MetroCluster 구성 전환을 완료한 후 Tiebreaker 또는 중재자 유틸리티를 사용하여 모니터링을 재개할 수 있습니다. 
 ---
-= Tiebreaker 또는 중재자 모니터링 복원
+= MetroCluster에 대한 Tiebreaker 또는 Mediator 모니터링 복원
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

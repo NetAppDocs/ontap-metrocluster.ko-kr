@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, enable, autosupport, logging, maintenance, service,ip, switch, replacement, rename 
 summary: 유지 관리 작업을 수행하기 전에 장치에서 콘솔 로깅을 사용하도록 설정합니다. 
 ---
-= 유지 관리 작업을 수행하기 전에 콘솔 로깅을 사용하도록 설정합니다
+= MetroCluster 유지 관리 전에 콘솔 로깅을 활성화합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

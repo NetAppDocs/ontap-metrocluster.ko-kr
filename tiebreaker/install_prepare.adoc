@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
 summary: 타이브레이커 소프트웨어를 설치하고 구성하기 전에 시스템이 특정 요구 사항을 충족하는지 확인해야 합니다. 
 ---
-= 타이브레이커 소프트웨어 설치를 준비합니다
+= MetroCluster Tiebreaker 설치 요구 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -123,6 +123,6 @@ Red Hat Enterprise Linux 8.1 - 8.7:
 
 
 .다음 단계
-* Tiebreaker 1.5 이상 버전을 설치하거나 업그레이드하는 경우 link:install_security.html["Tiebreaker 호스트 및 데이터베이스 설치를 보호합니다"].
+* Tiebreaker 1.5 이상 버전을 설치하거나 업그레이드하는 경우 link:install_security.html["MetroCluster Tiebreaker 호스트 및 데이터베이스 설치 보안"].
 * Tiebreaker 1.4를 설치하거나 업그레이드하는 경우 link:install-dependencies-14.html["MetroCluster Tiebreaker 1.4 종속성 설치"].
 

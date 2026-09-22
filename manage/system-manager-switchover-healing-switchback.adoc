@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: switchover, perform, switchback, system, manager, operation, restore, metrocluster, functionality, ip, configuration 
 summary: 스위치오버 후에는 MetroCluster 기능을 복원하기 위해 특정한 복구 작업을 수행해야 합니다. 
 ---
-= 시스템 관리자를 사용하여 전환 및 스위치백 수행(MetroCluster IP 구성만 해당)
+= System Manager를 사용하여 MetroCluster IP 구성에서 전환 및 스위치백 수행
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

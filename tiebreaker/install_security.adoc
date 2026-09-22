@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, tiebreaker, software, monitor, capabilities, capability, cluster, storage, environment, snmp, notification, event, node, connectivity, issue, site, disaster, system, install, upgrade, upgrading, software, dependencies, dependency, package, ntp, requirements, requirements for tiebreaker, tiebreaker requirements, mysql, mariadb, autostart, database 
 summary: Tiebreaker 소프트웨어는 클러스터 스토리지 환경을 위한 모니터링 기능을 제공합니다. 또한 노드 연결 문제 및 사이트 재해가 발생할 경우 SNMP 알림을 보냅니다. 
 ---
-= Tiebreaker 호스트 및 데이터베이스 설치를 보호합니다
+= MetroCluster Tiebreaker 호스트 및 데이터베이스 설치 보안
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -161,4 +161,4 @@ link:https://developer.hashicorp.com/vault/tutorials/operations/production-harde
 
 
 .다음 단계
-link:install-choose-procedure.html["설치 절차를 선택합니다"] Tiebreaker를 설치 또는 업그레이드합니다.
+link:install-choose-procedure.html["MetroCluster Tiebreaker 설치 절차를 선택하십시오."] Tiebreaker를 설치 또는 업그레이드합니다.

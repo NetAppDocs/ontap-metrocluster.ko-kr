@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: transition, cluster connections 
 summary: 모든 요구 사항을 검토하고 전환을 준비한 후 전환 절차를 수행합니다. 각 작업을 순서대로 수행해야 하며, 다음 작업으로 이동하기 전에 각 작업의 모든 단계를 완료해야 합니다. 지시가 있을 때까지 새 컨트롤러 또는 스토리지 쉘프를 기존 구성에 연결하면 안 됩니다. 
 ---
-= 로컬 클러스터 연결을 이동합니다
+= MetroCluster FC-to-IP 전환에서 로컬 클러스터 연결을 이동합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

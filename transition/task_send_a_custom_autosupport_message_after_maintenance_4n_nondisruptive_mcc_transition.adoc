@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, completing, transition, autosupport, message, indicating, indicate, maintenance, automatic, case, creation, resume, send 
 summary: 전환을 완료한 후 유지 관리 완료를 나타내는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다. 
 ---
-= 유지 관리 후 사용자 지정 AutoSupport 메시지 보내기
+= MetroCluster 유지보수 후 사용자 정의 AutoSupport 메시지 전송
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

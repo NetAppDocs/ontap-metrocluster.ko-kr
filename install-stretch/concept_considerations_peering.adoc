@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, peer, peering, ports, cluster, connectivity 
 summary: MetroCluster 피어링 관계를 구성하기 위한 사전 요구 사항과 지침을 숙지해야 합니다. 
 ---
-= 클러스터 피어링
+= 확장형 MetroCluster 구성에서의 클러스터 피어링
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Transitioning from MetroCluster FC to MetroCluster IP configurations, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
 summary: 새로운 MetroCluster IP 노드 4개를 준비하고 올바른 ONTAP 버전을 설치해야 합니다. 
 ---
-= MetroCluster IP 컨트롤러 준비
+= MetroCluster IP 컨트롤러를 준비합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

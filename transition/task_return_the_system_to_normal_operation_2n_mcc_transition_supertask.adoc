@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: perform, final, configuration, return, metrocluster, normal, operation, system, verify, assign, drive, transition, install, license, module, complete, completing, node, send, custom, autosupport, message, maintenance 
 summary: 최종 구성 단계를 수행하고 MetroCluster 구성을 정상 작동 상태로 되돌리십시오. 
 ---
-= 시스템을 정상 작동 상태로 되돌리기
+= MetroCluster 시스템을 정상 작동 상태로 되돌리십시오.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

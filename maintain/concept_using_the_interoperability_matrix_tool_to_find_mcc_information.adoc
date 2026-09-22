@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, service, interoperability, matrix, tool, information 
 summary: MetroCluster 구성을 설정할 때 상호 운용성 툴을 사용하여 지원되는 소프트웨어 및 하드웨어 버전을 사용할 수 있습니다. 
 ---
-= 상호 운용성 매트릭스 툴을 사용하여 MetroCluster 정보 찾기
+= MetroCluster 구성을 위한 상호 운용성 매트릭스 툴
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

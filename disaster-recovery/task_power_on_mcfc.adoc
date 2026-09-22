@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: power, sas, storage, direct, attached, configuration, fabric 
 summary: 스위치백을 준비할 준비가 되면 재해 사이트에서 MetroCluster 구성 요소의 전원을 켭니다. 
 ---
-= 재해 사이트에서 장비 전원 켜기
+= 재해 사이트의 장비를 MetroCluster 구성으로 전원을 켭니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

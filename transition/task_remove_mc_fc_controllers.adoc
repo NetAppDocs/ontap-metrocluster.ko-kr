@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Generating and applying RCFs to the new IP switches, review, requirement, preparing, prepare, transition, perform, procedure, order, completing, complete, step, task, moving, move, controller, storage, shelves, shelf, exist, configuration, direct, metrocluster, fc, ip, verify, health, removing, remove, tiebreaker, monitor, software, generating, generate, apply, rcf, switch, controller, configure, prepare, preparing 
 summary: 전환을 위한 구성을 준비하려면 새 노드를 기존 MetroCluster 구성에 추가한 다음 데이터를 새 노드로 이동합니다. 
 ---
-= MetroCluster FC 컨트롤러 분리
+= MetroCluster FC 컨트롤러를 분리합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

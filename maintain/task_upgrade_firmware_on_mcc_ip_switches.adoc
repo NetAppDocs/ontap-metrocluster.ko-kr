@@ -166,7 +166,7 @@ NOTE: 스위치에 스위치 소프트웨어를 설치하려면 switch_A_1, swit
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-switch-efos-software["Broadcom 스위치 EFOS 소프트웨어를 다운로드하고 설치합니다"]
-** link:../install-ip/task_switch_config_cisco.html#downloading-and-installing-the-cisco-switch-nx-os-software["Cisco 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#download-and-install-the-cisco-switch-nx-os-software["Cisco 스위치 NX-OS 소프트웨어를 다운로드하고 설치합니다"]
 ** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-cumulus-software["NVIDIA SN2100 스위치 Cumulus 소프트웨어를 다운로드하고 설치합니다"]
 
 

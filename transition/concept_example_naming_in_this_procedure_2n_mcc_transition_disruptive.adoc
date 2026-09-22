@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: procedure, example, name, identify, dr, group, node, switch, involve, naming 
 summary: 이 절차에서는 전체 예제 이름을 사용하여 관련된 DR 그룹, 노드 및 스위치를 식별합니다. 
 ---
-= 이 절차의 이름 지정 예
+= 2노드 MetroCluster FC-to-IP 전환을 위한 명명 예시
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, service, change, fc, switch 
 summary: 'FC 스위치의 공급업체를 변경하거나(Cisco에서 Brocade로, 또는 그 반대) 스위치 모델을 변경하거나, 둘 다 변경해야 할 수 있습니다.' 
 ---
-= FC 스위치의 공급업체 또는 모델을 변경합니다
+= MetroCluster FC 구성에서 FC 스위치의 공급업체 또는 모델 변경
 :allow-uri-read: 
 
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, stretch, installation, cable, two, node, sas, attached, configuration 
 summary: MetroCluster 구성 요소는 두 지리적 사이트에서 물리적으로 설치, 케이블 연결 및 구성해야 합니다. 
 ---
-= 2노드 SAS 연결 스트레치 MetroCluster 구성의 케이블 연결
+= 2노드 SAS 연결 스트레치 MetroCluster 구성에 케이블을 연결합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

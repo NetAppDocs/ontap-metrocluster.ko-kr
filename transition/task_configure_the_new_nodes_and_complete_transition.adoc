@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: node, complete, transition, configure, metrocluster, ip, node, configuring, disabling, disable, data, set, up, lif, bring, svm, moving, move, system, volume 
 summary: 새 노드가 추가되면 전환 단계를 완료하고 MetroCluster IP 노드를 구성해야 합니다. 
 ---
-= 새 노드 구성 및 전환 완료
+= 새로운 MetroCluster IP 노드를 구성하고 전환을 완료합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

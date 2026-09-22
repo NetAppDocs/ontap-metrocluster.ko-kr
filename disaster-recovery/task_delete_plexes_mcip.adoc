@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deleting, delete, fail, plex, own 
 summary: 재해 사이트에서 디스크 쉘프 및 MetroCluster IP 스위치 구성 요소의 전원을 켭니다. 
 ---
-= 작동 중인 사이트에서 소유하는 실패한 플렉스를 삭제하는 중(MetroCluster IP 구성)
+= MetroCluster IP 구성에서 생존 사이트가 소유한 장애가 발생한 플렉스를 삭제합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

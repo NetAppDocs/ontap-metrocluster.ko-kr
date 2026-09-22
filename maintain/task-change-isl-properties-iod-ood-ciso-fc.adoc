@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, maintain, service, change, isl, properties, isl, ports, iod, ood,configuration, cisco, switch 
 summary: 'Cisco FC 스위치에서 ISL(Inter-Switch Link)을 추가하고, ISL 속도를 변경하고, IOD(In-Order Delivery) 또는 ORD(Out-Of-Order) 설정을 재구성할 수 있습니다.' 
 ---
-= Cisco FC 스위치에서 ISL 속성 및 IOD/UP 구성을 변경합니다
+= Cisco FC 스위치에서 ISL 속성 및 IOD/OOD 구성을 변경합니다. MetroCluster FC 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

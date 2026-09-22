@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: heal, aggregate, preparation, switchback, operation, configuration, metrocluster, ip, ontap 
 summary: 스위치백 작업을 준비하기 위해 애그리게이트를 치유해야 합니다. 
 ---
-= MetroCluster IP 구성에서 구성 복구(ONTAP 9.4 이하)
+= 이전 ONTAP 릴리스의 MetroCluster IP 구성 복구
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

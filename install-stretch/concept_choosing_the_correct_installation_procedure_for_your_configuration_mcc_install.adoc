@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, stretch, installation, correct, procedure, configuration 
 summary: 저장 컨트롤러가 저장 선반에 연결되는 방식에 따라 올바른 설치 절차를 선택해야 합니다. 
 ---
-= 구성에 맞는 올바른 설치 절차를 선택합니다
+= 확장형 MetroCluster 구성 설치 절차
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
