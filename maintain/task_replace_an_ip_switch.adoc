@@ -256,15 +256,23 @@ link:../install-ip/using_rcf_generator.html["MetroCluster IP 스위치에 케이
 
 NOTE: 패브릭을 업그레이드하거나 다운그레이드하는 경우, 두 번째 패브릭에 대해서도 모든 단계를 반복하십시오.
 
-. 자동 되돌리기 기능을 다시 사용하도록 모든 클러스터 LIF를 수정합니다.
+. 클러스터의 모든 LIF를 홈 포트로 되돌립니다.
++
+
+CAUTION: 업데이트가 필요한 모든 스위치에 대해 이전 단계를 완료할 때까지 클러스터 LIF를 홈 포트로 되돌리지 마십시오.
+
++
+.. 자동 되돌리기 기능을 다시 사용하도록 모든 클러스터 LIF를 수정합니다.
 +
 [source, cli]
 ----
 network interface modify -vserver <vserver_name> -lif <lif_name> -auto-revert true
 ----
-. 현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.
+.. 현재 홈 포트에 연결되어 있지 않은 모든 클러스터 LIF를 수동으로 홈 포트로 되돌립니다.
 +
-`network interface revert -vserver * -lif *`
+`network interface revert -vserver Cluster -lif *`
+
+
 
 . 선택적으로 NS224 쉘프를 이동합니다.
 +

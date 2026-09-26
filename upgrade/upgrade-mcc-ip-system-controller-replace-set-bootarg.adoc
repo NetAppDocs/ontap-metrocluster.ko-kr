@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
 summary: ONTAP 9.15.1 이상에서 도입된 시스템을 업그레이드하려면 업그레이드를 진행하기 전에 bootarg를 설정해야 합니다. 
 ---
-= 필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 MetroCluster IP 업그레이드)
+= MetroCluster IP 컨트롤러 업그레이드에 필요한 부트 인수를 설정하십시오.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

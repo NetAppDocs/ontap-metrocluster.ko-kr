@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, boot, existing, controller, module 
 summary: 기존 컨트롤러 모듈을 ONTAP로 부팅해야 합니다. 
 ---
-= 기존 컨트롤러 모듈 부팅
+= 기존 MetroCluster FC 컨트롤러 모듈을 부팅합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

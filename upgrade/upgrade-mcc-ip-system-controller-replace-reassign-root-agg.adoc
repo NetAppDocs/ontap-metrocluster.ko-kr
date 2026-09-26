@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
 summary: 앞에서 수집한 시스템 ID를 사용하여 루트 애그리게이트 디스크를 새 컨트롤러 모듈에 재할당합니다. 
 ---
-= 루트 집계 디스크를 새 MetroCluster IP 컨트롤러 모듈에 재할당합니다
+= 루트 애그리게이트 디스크를 새 MetroCluster IP 컨트롤러에 다시 할당합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

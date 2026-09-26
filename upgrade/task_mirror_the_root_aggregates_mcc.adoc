@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, mirror, root, aggregate 
 summary: 루트 애그리게이트를 미러링하여 데이터를 보호해야 합니다. 
 ---
-= 루트 애그리게이트를 미러링합니다
+= MetroCluster FC 구성에서 루트 애그리게이트를 미러링합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

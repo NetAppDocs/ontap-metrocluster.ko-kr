@@ -173,7 +173,7 @@ entries:
   - title: MetroCluster 구성의 상태를 확인합니다
     url: "/upgrade/task_verify_the_health_of_the_mcc_configuration.html"
   - title: Config Advisor에서 MetroCluster 구성 오류를 확인합니다
-    url: "/upgrade/task_check_for_mcc_configuration_errors_with_config_advisor.html"
+    url: "/upgrade/task_check_for_mcc_configuration_errors_with_config_advisor_before.html"
   - title: MetroCluster 구성에 노드를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
     url: "/upgrade/task_send_a_custom_autosupport_message_before_add_nodes_to_the_mcc_configuration.html"
   - title: 새 노드의 스위치 패브릭을 재설정하고 존(zone)합니다
@@ -185,7 +185,7 @@ entries:
   - title: 새 컨트롤러에서 ONTAP를 구성합니다
     entries:
     - title: 컨트롤러 모듈의 구성을 지웁니다
-      url: "/upgrade/task_clear_the_configuration_on_a_controller_module_mcc.html"
+      url: "/upgrade/task-clear-configuration-controller-four-node.html"
     - title: AFF 시스템에서 디스크 소유권을 할당합니다
       url: "/upgrade/task_assign_disk_ownership_in_aff_systems_mcc.html"
     - title: 비 AFF 시스템에서 디스크 소유권을 할당합니다

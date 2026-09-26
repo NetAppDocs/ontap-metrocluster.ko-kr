@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, expansion, method 
 summary: 사용하는 확장 절차는 MetroCluster 구성 유형과 ONTAP 버전에 따라 다릅니다. 
 ---
-= 확장 절차를 선택합니다
+= MetroCluster 확장 절차를 선택하십시오
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

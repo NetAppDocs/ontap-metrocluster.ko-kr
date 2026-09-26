@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, configure, intercluster, lif, dedicated, ports, shared 
 summary: 전용 또는 공유 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다. 
 ---
-= 인터클러스터 LIF를 구성합니다
+= 4노드에서 8노드로 MetroCluster FC를 확장하는 동안 인터클러스터 LIF 구성
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-전용 및 공유 포트에 대한 인터클러스터 LIF를 구성하는 방법에 대해 알아보십시오.
+4노드에서 8노드로 MetroCluster FC를 확장하는 동안 전용 포트와 공유 포트에서 인터클러스터 LIF를 구성하는 방법을 알아보십시오.
 
 [role="tabbed-block"]
 ====

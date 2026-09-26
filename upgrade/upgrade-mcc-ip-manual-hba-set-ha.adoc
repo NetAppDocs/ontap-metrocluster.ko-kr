@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, controllers, switchover, switchback, ip, configuration, net, boot, root, aggregate, system, commands, mcc 
 summary: 컨트롤러 모듈에서 HBA 카드를 구성하고 컨트롤러 및 섀시의 HA 상태를 확인 및 설정합니다. 
 ---
-= HBA 구성을 복구하고 MetroCluster IP 컨트롤러 및 섀시의 HA 상태를 설정합니다
+= MetroCluster IP 컨트롤러의 HBA 구성 복구 및 HA 상태 설정
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

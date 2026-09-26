@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, choose, upgrade, refresh, method 
 summary: 사용하는 업그레이드 또는 업데이트 절차는 플랫폼 모델, 업그레이드 범위 및 MetroCluster 구성 유형에 따라 다릅니다. 
 ---
-= 여기서 컨트롤러 업그레이드, 시스템 업데이트 또는 확장 중 하나를 선택합니다
+= MetroCluster 업그레이드, 시스템 리프레시 또는 확장 방법을 선택하십시오
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

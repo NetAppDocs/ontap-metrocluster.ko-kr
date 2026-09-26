@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, restart, svm 
 summary: MetroCluster 구성을 확장한 후 SVM을 다시 시작해야 합니다. 
 ---
-= SVM을 재시작합니다
+= MetroCluster FC 확장 후 SVM 재시작
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

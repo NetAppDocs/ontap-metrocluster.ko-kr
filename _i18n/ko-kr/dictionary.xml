@@ -1915,7 +1915,6 @@
   <block id="ca796e22edd5cbe9d11ee3f044346937" category="paragraph">다른 DR 그룹에서 사용하는 스토리지를 볼 수 없습니다.</block>
   <block id="861aef8b303072bebd86d1508a27e0a1" category="list-text">이 프로세스의 시작 부분으로 돌아가서 두 번째 스위치 패브릭을 다시 연결합니다.</block>
   <block id="fe8753414a23e1c716c38aa34fa7dc0b" category="summary">모든 데이터가 디스크에 기록되었는지 확인하려면 기존 컨트롤러 모듈을 완전히 종료해야 합니다. 또한 전원 공급 장치를 분리해야 합니다.</block>
-  <block id="c65b1410262920c54336649d340cf8db" category="doc">기존 컨트롤러 모듈 종료</block>
   <block id="0b470950da6c0a97ec3f2005c12e48cb" category="admonition">NVRAM 또는 NVMEM에서 작성되지 않은 데이터의 손실을 방지하려면 시스템 구성요소를 교체하기 전에 시스템을 완전히 종료해야 합니다.</block>
   <block id="192be3850da5f8f6f36f9c637a13cc65" category="list-text">기존 컨트롤러 모듈 프롬프트에서 노드를 중단합니다.</block>
   <block id="a0f166275a301177f6c2068f95dcace7" category="paragraph">현지에 대한 억제는 진실한 것입니다</block>
@@ -1941,7 +1940,6 @@
   <block id="1a19a64f583970049a90e38276e4d459" category="list-text">MetroCluster 구성의 두 사이트에서 MetroCluster 구성을 확인합니다.</block>
   <block id="9c04a1314d36b0b92db99654757f37c2" category="list-text">사이트 B:+'MetroCluster show'의 구성을 확인합니다</block>
   <block id="4ffde570a3cb5b347089285f86958195" category="summary">NetApp 기술 지원 팀에 유지보수 진행 중임을 알리는 AutoSupport 메시지를 발행해야 합니다. 유지 관리가 진행 중임을 기술 지원 부서에 알리는 것은 운영 중단이 발생했다는 가정 하에 사례가 열리지 않도록 방지합니다.</block>
-  <block id="07af2bf7709c2fecb5919d2f8d1a3e18" category="doc">MetroCluster 구성에 노드를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="68e6b44b3a749a5a92b3130b283a8d5c" category="paragraph">이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.</block>
   <block id="1c9d1344f345d75257134d6c79df3402" category="list-text">Site_A에서 클러스터에 로그인합니다</block>
   <block id="ee4b431a595989bb32df666099e34bf8" category="list-text">유지 관리의 시작을 나타내는 AutoSupport 메시지를 호출합니다.</block>
@@ -1960,7 +1958,6 @@
   <block id="1d3bd99dc4d12eba418aa32c0e69ed77" category="paragraph">하구성 수정 새시 MCC</block>
   <block id="91815ef3813bb758babf1c11a5114e45" category="list-text">다른 대체 노드에서 이 단계를 반복합니다.</block>
   <block id="7688820ac2546dab890c57bd3ec0f334" category="summary">구성을 8노드 구성으로 확장한 다음 이전의 DR\(재해 복구\) 그룹을 제거하여 4노드 MetroCluster 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.</block>
-  <block id="76f5c0ad19e3d42c56b6ba3174176fe1" category="doc">4노드 MetroCluster FC 구성 업데이트</block>
   <block id="ae20966b5600e8ca93f94853f5c5fb45" category="paragraph">구성을 8노드 구성으로 확장한 다음 이전의 DR(재해 복구) 그룹을 제거하여 4노드 MetroCluster 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="97544c597d5047c89f8d806033395de8" category="paragraph">"이전 노드"에 대한 참조는 바꾸려는 노드를 의미합니다.</block>
   <block id="c07217a12145454189c265ecf5f40173" category="list-text">이전 노드에서 정보를 수집합니다.</block>
@@ -1976,7 +1973,6 @@
   <block id="54c28d1cf3d720cc9297f6c3da2658be" category="inline-link-macro">재해 복구 그룹 제거</block>
   <block id="f8d577c9976367a6e41d78a00f8aacaf" category="paragraph">이전 DR 그룹(DR 그룹 1)을 제거한 후 다음 이미지와 같이 구성이 나타납니다.</block>
   <block id="2629484c812e864cba4938a84b1d7271" category="summary">섀시에 새 컨트롤러 모듈을 물리적으로 설치한 다음 케이블을 연결해야 합니다.</block>
-  <block id="e06c32def93f754432d67e40cc7bdb62" category="doc">새 컨트롤러 모듈 설치 및 케이블 연결</block>
   <block id="11927ea1b82ae05c35c1f1d5c4441652" category="list-text">시스템에 I/O 확장 모듈(IOXM)이 있고 단일 섀시 HA 쌍을 생성하는 경우, IOXM을 분리하고 케이블을 분리해야 합니다.</block>
   <block id="024ffec62416c999ed4f91a4b1784fcd" category="paragraph">그런 다음 새 컨트롤러 모듈에 빈 베이를 사용할 수 있습니다. 하지만 새 구성에는 IOXM이 제공하는 추가 I/O가 포함되지 않습니다.</block>
   <block id="681171c5ba221c71d0bdb77ad5ec2710" category="list-text">새 컨트롤러 모듈을 물리적으로 설치하고 필요한 경우 추가 팬을 설치합니다.</block>
@@ -2274,7 +2270,6 @@
   <block id="35c6a54d16dbc8107b1b047469f11486" category="paragraph">"http://__web_server_ip/path_to_web-accessible_directory/ontap-version___image.tgz`</block>
   <block id="721c36a45f3a645f3bd8e17576537355" category="list-text">해당하는 경우 사용자 이름과 암호를 입력하거나 Enter 키를 눌러 계속합니다.</block>
   <block id="15e148fc4b52c094ee57889a642d7cb8" category="list-text">다음과 유사한 프롬프트가 나타나면 '* y*'를 입력하여 재부팅합니다.</block>
-  <block id="9d288331dcbf3df246af2a35300324d8" category="section-title">컨트롤러 모듈의 구성 지우기</block>
   <block id="a5fdb9326ad2e31e2935d19209d70143" category="paragraph">MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 기존 구성을 지워야 합니다.</block>
   <block id="70dbb49a6cbad96a6befa2a87cf2c5ce" category="paragraph">세트 기본값</block>
   <block id="9e3a2189ad08237fac40cc74ecf0cb68" category="list-text">환경 저장:</block>
@@ -2534,10 +2529,8 @@
   <block id="a00b322f5fbb0ab63d64eb15f5fd23e9" category="paragraph">업그레이드를 완료한 후에는 유지 보수 종료를 알리는 AutoSupport 메시지를 보내야 자동 케이스 생성이 재개됩니다.</block>
   <block id="9553eead12b025935c7e52654c9fb212" category="list-text">자동 지원 케이스 생성을 재개하려면 유지 관리가 완료되었음을 나타내는 AutoSupport 메시지를 보냅니다.</block>
   <block id="38327b7824e5a35266d03145c15c04f9" category="list-text">'system node AutoSupport invoke -node * -type all-message maINT=end' 명령을 실행합니다</block>
-  <block id="f14857e5bc0d17b964ddec1059e6c698" category="doc">MetroCluster 구성에 노드를 추가하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="f87f81c47e934db057be5853753c7d35" category="paragraph">유지보수 윈도우 시간(main유지보수-window-in-hours) 매개변수는 유지보수 윈도우의 길이를 지정하며 최대 72시간을 지정할 수 있습니다. 시간이 경과하기 전에 유지 관리를 완료한 경우 다음 명령을 실행하여 유지 보수 기간이 종료되었음을 나타낼 수 있습니다.</block>
   <block id="0d77268e3447e99f6c69301ff9fc9533" category="summary">netboot 서버를 준비할 준비가 되면 NetApp Support 사이트에서 netboot 서버로 올바른 ONTAP netboot 이미지를 다운로드하고 IP 주소를 메모해야 합니다.</block>
-  <block id="4e4117a464f9bc2997037337f35db8e4" category="doc">이미지를 다운로드하기 위해 netboot 서버를 준비하는 중입니다</block>
   <block id="1b7c1e026899136afbc81c3a69724681" category="list-text">새 컨트롤러 모듈을 추가하기 전과 추가한 후에 시스템에서 HTTP 서버에 액세스할 수 있어야 합니다.</block>
   <block id="87094b6ac7f37a3f621f9b5bbf4268ef" category="list-text">플랫폼과 ONTAP 버전에 필요한 시스템 파일을 다운로드하려면 NetApp Support 사이트에 액세스할 수 있어야 합니다.</block>
   <block id="4cd5e3b4b0994a0dfd5836b82b34981f" category="paragraph"><block ref="4cd5e3b4b0994a0dfd5836b82b34981f" category="inline-link-rx"></block></block>
@@ -2556,7 +2549,6 @@
   <block id="b73423aee4baa8b2e3981087f56b1924" category="paragraph">이 주소는 이 절차의 후반부에서 '_ip-address-of-existing controller_'로 참조됩니다.</block>
   <block id="e55d5b2636e0726a99f7d5e4158359bb" category="list-text">IP 주소에 연결할 수 있는지 확인하기 위해 기존 컨트롤러의 IP 주소(_IP-address-of-existing controller_)를 ping합니다.</block>
   <block id="5cffeffd7092dc5e03f8af98b64d61d6" category="summary">새 컨트롤러 모듈의 FC-VI 포트와 HBA\(호스트 버스 어댑터\)는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
-  <block id="52b86a073bf9ac18b54bb7fb93dbeb18" category="doc">새 컨트롤러 모듈의 FC-VI 및 HBA 포트를 FC 스위치에 케이블로 연결합니다</block>
   <block id="f6065aa4b898691ab4eb065db8775ac0" category="paragraph">새 컨트롤러 모듈의 FC-VI 포트와 HBA(호스트 버스 어댑터)는 사이트 FC 스위치에 케이블로 연결되어야 합니다.</block>
   <block id="0f0db6d55e9bbb84af3413a7e8b1da70" category="list-text">구성 및 스위치 모델에 대한 표를 사용하여 FC-VI 포트 및 HBA 포트에 케이블을 연결합니다.</block>
   <block id="8db12a7f598538a4f3273d8beec78fa9" category="inline-link-macro">이니시에이터 포트 2개를 사용하는 시스템의 포트 할당</block>
@@ -2566,10 +2558,8 @@
   <block id="58dd89a9fc4f2484510b0081e39ba581" category="paragraph">'network interface create-vserver system_SVM-lif LIF_name-role-home-node-home-port port port-address port_ip-netmask netmask-failover-group failover_group'</block>
   <block id="1456cda5fcdd4ba6dc58aaeb75ae33ca" category="paragraph">다음 예에서는 SVM "e0e" 포트에 대한 인터클러스터 LIF "cluster01_icl01" 및 "cluster01_icl02"가 "e0f" 포트로 페일오버된다는 것을 보여 줍니다.</block>
   <block id="88577472afb219c41162d2707cb8cbaf" category="summary">기존 컨트롤러 모듈을 ONTAP로 부팅해야 합니다.</block>
-  <block id="c7747038c0f1377c3bfb0e109164ae36" category="doc">기존 컨트롤러 모듈 부팅</block>
   <block id="4dd312d890939484a0937bcf2da10578" category="list-text">LOADER 프롬프트에서 기존 컨트롤러 모듈을 ONTAP로 부팅합니다.</block>
   <block id="5fbd751582280f91ce87e1e3091600a6" category="summary">새 컨트롤러 모듈을 설치하기 전에 클러스터 포트가 새 컨트롤러 모듈과 클러스터 통신을 제공할 수 있도록 기존 컨트롤러 모듈에 클러스터 포트를 구성해야 합니다.</block>
-  <block id="0cee66e2a9015b2699c62369e0e932d9" category="doc">기존 컨트롤러 모듈에서 클러스터 포트를 준비합니다</block>
   <block id="eb97bd7738a2e49c0128943fae2ec5de" category="paragraph">스위치가 없는 2노드 클러스터를 생성하는 경우(클러스터 네트워크 스위치 없음), 스위치가 없는 클러스터 네트워킹 모드를 활성화해야 합니다.</block>
   <block id="fe80ac998af50b061220368247fabb21" category="list-text">노드의 클러스터 포트로 사용해야 하는 포트를 확인합니다.</block>
   <block id="da160308e3b4b4a80bf1b72b5bdbedb8" category="inline-link">Hardware Universe</block>
@@ -2593,7 +2583,6 @@
   <block id="ad2fe5bd0b1ed16a69e3bb29b59b4ba0" category="paragraph">'network options switchless-cluster modify -enabled true'</block>
   <block id="9b093ed5af987195e9be73a81b45ccfb" category="admonition">스위치가 없는 2노드 클러스터 시스템의 기존 노드에 대한 클러스터 인터페이스 생성은 새 컨트롤러 모듈의 netboot를 통해 클러스터 설정이 완료된 후에 완료됩니다.</block>
   <block id="c305ce21377f146200c5e9ef13536599" category="summary">안내식 자동 MetroCluster 전환 작업을 통해 4노드 MetroCluster FC 구성에 대해 무중단 컨트롤러 업그레이드를 수행할 수 있습니다.</block>
-  <block id="66c25daffc009801ab74d25814bedafb" category="paragraph">안내식 자동 MetroCluster 전환 작업을 사용하여 4노드 MetroCluster FC 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
   <block id="b33f40e27c2c4b0024c1160808166b4d" category="list-text">이 절차는 컨트롤러 업그레이드에만 사용할 수 있습니다.</block>
   <block id="9b7868adf853e7eebe0da1408c6ccd24" category="paragraph">스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소는 동시에 업그레이드할 수 없습니다.</block>
   <block id="6cd89c0a24f678f7acedd8c76ccac487" category="list-text">이 절차는 4노드 MetroCluster FC 구성의 컨트롤러 모듈에 적용됩니다.</block>
@@ -2719,17 +2708,14 @@
   <block id="b7e5b55538476224f8195437bdd6b155" category="section-title">Tiebreaker 모니터링 복원 중</block>
   <block id="cf01be10c4ad6c0e087f2447c096712d" category="paragraph">이전에 Tiebreaker 소프트웨어를 통해 모니터링하도록 MetroCluster 구성을 구성한 경우 Tiebreaker 연결을 복원할 수 있습니다.</block>
   <block id="caf5a8c5111f5b0928fbdb96c1e8b81a" category="summary">FC 스위치 조닝은 새로운 컨트롤러 연결을 수용해야 합니다. NetApp에서 제공한 참조 구성 파일\(RCFs\)을 사용하여 스위치를 구성한 경우 조닝이 사전 구성되지만 변경할 필요는 없습니다.</block>
-  <block id="aa7634a6c4e974b52faf565e007e1b60" category="doc">패브릭 연결 MetroCluster 구성에 컨트롤러 모듈을 추가할 때 새 컨트롤러 포트에 대한 조닝(zoning)입니다</block>
   <block id="f1671ac439417f75927f98ad97323bf7" category="paragraph">FC 스위치 조닝은 새로운 컨트롤러 연결을 수용해야 합니다. NetApp에서 제공한 참조 구성 파일(RCFs)을 사용하여 스위치를 구성한 경우 조닝이 사전 구성이므로 변경할 필요가 없습니다.</block>
   <block id="993ee07ce81369a525c01b07d1c3022c" category="summary">2노드 구성에서 4노드 구성으로 확장할 경우 MetroCluster 구성을 새로 고쳐야 합니다.</block>
-  <block id="70b26a454b25ef7e3123d5ceffffcf4b" category="doc">새 컨트롤러로 MetroCluster 구성 새로 고침</block>
   <block id="1514ec98bd0ec43c51b0b996699982f5" category="list-text">고급 권한 모드: + 'Set-Privilege advanced'로 진입합니다</block>
   <block id="fbdbda1197db9a4b073e80ef21cec4df" category="list-text">MetroCluster 설정 새로 고침: + 'MetroCluster configure-refresh true-allow-with-one-aggregate true'</block>
   <block id="f3d8b77f77547ea25d097f549a9adf9a" category="paragraph">다음 명령을 실행하면 controller_a_1이 포함된 DR 그룹의 모든 노드에서 MetroCluster 구성이 새로 고쳐집니다.</block>
   <block id="bc55ef554c9ae099d7f3795835354533" category="list-text">DR 관계가 올바르게 생성되었는지 확인:</block>
   <block id="1141557b40192333044f6ea89329a3b1" category="paragraph">'MetroCluster node show-fields dr-cluster, dr-auxiliary, node-object-limit, automatic-USO, ha-partner, dr-partner'</block>
   <block id="780864490b171ee37c989f91c94e4987" category="summary">MetroCluster 구성을 확장하는 경우 기존 컨트롤러 모듈과 새 컨트롤러 모듈의 ha-config 설정을 업데이트해야 합니다. 또한 새 컨트롤러 모듈의 시스템 ID도 확인해야 합니다.</block>
-  <block id="42d274ad148eaa63474a2e722577dc11" category="doc">기존 및 새 컨트롤러 모듈의 ha-config 설정 변경</block>
   <block id="d995ff2c2ae18fbf74b51a7969e7486d" category="paragraph">이 작업은 기존 및 새 컨트롤러 모듈의 유지보수 모드에서 수행됩니다.</block>
   <block id="7d01b1ce55bfb0cc228fdd5b0845e946" category="list-text">기존 컨트롤러 모듈의 ha-config 설정을 변경합니다.</block>
   <block id="d7491052e7af3534a8091dd41fd085cf" category="list-text">기존 컨트롤러 모듈 및 섀시의 ha-config 설정을 표시합니다.</block>
@@ -2838,7 +2824,6 @@
   <block id="1d3a92008f392950faeb257ca2a9e106" category="paragraph">이 작업에서는 스위치백 작업을 수행하여 MetroCluster 구성을 정상 작동 상태로 되돌려 줍니다. site_a의 노드가 아직 업그레이드를 기다리고 있습니다.</block>
   <block id="4e13d70ad15aa48ae9a770aa54dd268d" category="paragraph">출력이 '정상'으로 표시되면 스위치백 작업이 완료된 것입니다.</block>
   <block id="95b65883f84353940114b168cc4a2fb7" category="summary">netboot를 통해 새 컨트롤러 모듈 구성을 완료하기 전에 디스크를 할당해야 합니다.</block>
-  <block id="1ebf9d232c6a6c71ae4c747bbcbc12a6" category="doc">새 컨트롤러 모듈에 디스크 할당</block>
   <block id="8e0924168893ae55cb4d00ab91a2d08e" category="paragraph">기존 애그리게이트에 포함되어 있지 않은 충분한 스페어, 할당되지 않은 디스크 또는 할당 디스크가 있는지 확인해야 합니다.</block>
   <block id="0e39bfe27a396b037056cf83358adc7b" category="paragraph"><block ref="0e39bfe27a396b037056cf83358adc7b" category="inline-link-macro-rx"></block></block>
   <block id="d2ce3eba89b160c4ba6fed76343b58bc" category="paragraph">이러한 단계는 기존 컨트롤러 모듈에 대해 수행됩니다.</block>
@@ -2858,7 +2843,6 @@
   <block id="dd85c3d7d3adaed9956e1da9f117ac8b" category="list-text">Config Advisor를 실행하고, 도구의 출력을 검토하고, 출력에서 권장 사항을 따라 발견된 문제를 해결합니다.</block>
   <block id="cbd00cb1e3956c7b77e9a26286ae68a5" category="paragraph">클러스터 관리 인터페이스에서 클러스터에 로그인한 경우 클러스터의 모든 노드에 대해 애그리게이트를 생성할 수 있습니다. Aggregate가 특정 노드에 생성되었는지 확인하려면 '-node' 매개 변수를 사용하거나 해당 노드가 소유하는 드라이브를 지정해야 합니다.</block>
   <block id="3db118c57a32eeadafa348accaf1b303" category="summary">MetroCluster 구성에 컨트롤러를 추가할 때 데이터 보호를 제공하려면 루트 애그리게이트를 미러링해야 합니다.</block>
-  <block id="47383a1b5f4ca911eeac439508e5ce41" category="doc">새 컨트롤러의 루트 애그리게이트를 미러링합니다</block>
   <block id="3e7cdad2c836355d7d9e7434ef0039f1" category="paragraph">이 작업은 새 컨트롤러 모듈에서 수행해야 합니다.</block>
   <block id="bda90126d7fab2c2ab178ad2f19829f6" category="summary">표준 \(node-locked\) 라이센스가 필요한 모든 ONTAP 서비스에 대해 새 컨트롤러 모듈에 대한 라이센스를 추가해야 합니다. 표준 라이센스가 있는 기능을 사용하려면 클러스터의 각 노드에 해당 기능에 대한 자체 키가 있어야 합니다.</block>
   <block id="2712c3cca63f22b4763d42ca7bf86de7" category="doc">새 컨트롤러 모듈에 대한 라이센스 설치</block>
@@ -2870,7 +2854,6 @@
   <block id="20ddcb4ab055c5c617f1c025424029d3" category="paragraph">license_key_ 는 길이가 28자리입니다.</block>
   <block id="60da9a265bc4a7751e78320152a60b69" category="list-text">필요한 각 표준(노드 잠김) 라이센스에 대해 이 단계를 반복합니다.</block>
   <block id="6a196eaaaf5706d9ce20b734bb2a4c2b" category="summary">각 사이트에 새 컨트롤러 모듈을 추가하여 각 사이트에 HA 쌍을 생성해야 합니다. 이는 각 사이트에서 올바른 순서로 수행해야 하는 하드웨어 및 소프트웨어 변경 사항을 모두 포함하는 다단계 프로세스입니다.</block>
-  <block id="d3256498545f94492ffa6db4eb64e092" category="doc">각 클러스터에 새 컨트롤러 모듈 추가</block>
   <block id="952acb04a2bebb1048783e052052fcca" category="list-text">업그레이드 키트의 일부로 NetApp으로부터 새 컨트롤러 모듈을 받아야 합니다.</block>
   <block id="039dca449d2e1b30a0e89da9337e2213" category="paragraph">새 컨트롤러 모듈의 PCIe 카드가 호환되고 새 컨트롤러 모듈에서 지원되는지 확인해야 합니다.</block>
   <block id="4d1fb0cf943e1317ae1ae30ac559e572" category="list-text">단일 섀시 HA 쌍(두 컨트롤러 모듈이 동일한 섀시에 상주하는 HA 쌍)으로 업그레이드할 경우 시스템이 새 컨트롤러 모듈에 사용할 수 있는 빈 슬롯이 있어야 합니다.</block>
@@ -2887,12 +2870,9 @@
   <block id="bc7aab32c224c2ee49642086c4c9aa59" category="list-text">이 절차는 ONTAP 9.8 이상을 실행하는 시스템에서 지원됩니다.</block>
   <block id="3e47f65a0c143cd4a51a7540fd2001fa" category="list-text">다음 명령을 실행합니다. +'시스템 노드 AutoSupport invoke -node * -type all -message "MAINT=10h Upgrading_old-model_to_new-model"_"</block>
   <block id="79de9fa3497efd5f7c2e2f6a6682e5cd" category="summary">AutoSupport 메시지를 발행하여 NetApp 기술 지원 팀에 유지 관리가 완료되었음을 알려야 합니다.</block>
-  <block id="195ffc9776ee62387ded9a109c150447" category="doc">MetroCluster 구성에 노드를 추가한 후에 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="049ca5eec54de1a662d5929abfae80b1" category="list-text">유지 관리의 종료를 나타내는 AutoSupport 메시지를 호출합니다.</block>
   <block id="6d212900b72ecc3ea28faeef719a987e" category="summary">새 노드의 장비는 랙에 설치해야 합니다.</block>
-  <block id="448b6a1ae7f7f1277a02fda9c0f9fd58" category="doc">새 장비를 랙에 장착</block>
   <block id="3a3fe29bce41cc439cab768ef6c51ea0" category="summary">기존 컨트롤러 모듈에서 모드를 설정하려면 스토리지 페일오버 수정 명령을 사용해야 합니다. 모드 값은 나중에 컨트롤러 모듈을 재부팅한 이후에 활성화됩니다.</block>
-  <block id="b6982e2513cfb04d6a59fdcd3b023101" category="doc">기존 컨트롤러 모듈에서 HA 모드를 설정합니다</block>
   <block id="63913131852a8828687463e2ffb0a661" category="list-text">모드를 HA로 설정합니다.</block>
   <block id="4ff338dfa9c708184ca953f6ba724584" category="paragraph">'Storage failover modify -mode ha-node_existing_node_name_'</block>
   <block id="3c0d1e1f00418201fc22f92ffeea2a6f" category="summary">ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언트에 무중단 서비스를 제공하는 동시에 파트너 클러스터의 컨트롤러 모듈을 업그레이드할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
@@ -3036,7 +3016,6 @@
   <block id="4a73711f675c6d654d190ca9589e5da1" category="section-title">Tiebreaker 또는 중재자 모니터링을 복원합니다</block>
   <block id="26eeb9c2ed8ad703fd7436c1c5091b0b" category="section-title">유지 관리 후 사용자 지정 AutoSupport 메시지를 보냅니다</block>
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="summary">새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.</block>
-  <block id="fd1f71815b5abfc5d58a282353d2ba84" category="doc">새 케이블 연결 레이아웃 결정</block>
   <block id="6485f9afbf9c5f34e988054e67e3b142" category="paragraph">이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.</block>
   <block id="19df577c80891b37cfa2f1b29c518f6e" category="paragraph">8노드 구성에는 2개의 4노드 DR 그룹으로 구성된 8개 노드가 포함됩니다.</block>
   <block id="50c188ed93e1182ae7f08e39dbbb2ec5" category="list-text">두 클러스터 모두에서 이 단계를 수행해야 합니다.</block>
@@ -3061,7 +3040,6 @@
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph">군산하수정-구성 진실</block>
   <block id="8917e80351843363583600f118c2fa84" category="list-text">이전 컨트롤러 모듈 및 스토리지 쉘프를 중지하고 전원을 끄고 분리합니다.</block>
   <block id="1ad92a7ca654c056085b209325047d52" category="summary">컨트롤러 모듈을 기존 MetroCluster 구성에 추가할 때 새 컨트롤러 모듈에 netboot와 ONTAP 운영 체제를 설치하기 위한 특정 단계를 수행해야 합니다.</block>
-  <block id="384da33b4cbd603222724ebbf50d094a" category="doc">새 컨트롤러 모듈에서 ONTAP를 Netbooting 및 설정합니다</block>
   <block id="6522f3f0b1fdd13f8d8169102bb74c28" category="list-text">이 작업은 새 컨트롤러 모듈의 LOADER 프롬프트에서 시작됩니다.</block>
   <block id="1a7a5933b421fbe41401d8fc6bee6183" category="list-text">이 작업에는 디스크 초기화가 포함됩니다.</block>
   <block id="6fb95d556e9f154f208a9006b31a0c57" category="paragraph">디스크를 초기화하는 데 필요한 시간은 디스크 크기에 따라 다릅니다.</block>
@@ -3123,7 +3101,6 @@
   <block id="80324bf101110a5af7fb1c96368ec7bf" category="list-text">이 절차는 사이트당 1시간 이상 소요될 수 있으며, 디스크 초기화 및 새 노드 netbooting 등의 작업에 시간이 추가로 소요됩니다.</block>
   <block id="329e2202b67234724674932873a0bd94" category="paragraph">디스크를 초기화하는 시간은 디스크 크기에 따라 다릅니다.</block>
   <block id="073faa4c73cacc88495fc9350385c303" category="list-text">이 절차에서는 다음 워크플로를 사용합니다.</block>
-  <block id="8a51355d335889c9ddb7276ab9a129ab" category="paragraph">MetroCluster 스위치오버 운영을 사용하면 파트너 클러스터의 컨트롤러 모듈이 업그레이드되는 동안 클라이언트에 무중단 서비스를 제공할 수 있습니다. 이 절차의 일부로 다른 구성요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
   <block id="b93e6d7c2789cd393ddbb5ccdfac4676" category="paragraph">스토리지 쉘프 또는 스위치와 같은 구성의 다른 구성요소를 동시에 업그레이드할 수는 없습니다.</block>
   <block id="0dc490dd8b5efdca7b88c08cca2f094e" category="list-text">ONTAP 9.10.1 이상에서는 4개 및 8개 노드 구성이 지원됩니다.</block>
   <block id="4917ae881b859c002a74dd97a85dc1a1" category="admonition">AFF A900 시스템은 ONTAP 9.10.1 이상에서만 지원됩니다.</block>
@@ -3212,7 +3189,6 @@
   <block id="aef044e8d9907a55ceb4a933de45cc66" category="paragraph">작업을 수행할 때 사이트와 노드에 대한 모든 예제 참조는 반전됩니다. 예를 들어, 사이트_A에서 스위치오버로 예제를 제공할 경우 Site_B에서 전환합니다</block>
   <block id="641ef094fd6e3f18fc8a62270dc2b543" category="section-title">Tiebreaker 모니터링을 복원합니다</block>
   <block id="31c65a2058e5394cf4f67afa9634685a" category="summary">새 컨트롤러를 클러스터에 연결하려면 각 새 컨트롤러 모듈을 부팅하고 ONTAP 클러스터 설정 마법사를 사용하여 클러스터가 결합될 것을 식별해야 합니다.</block>
-  <block id="c97ffd8c62ff7f9d8c843c6e65672330" category="doc">새 컨트롤러를 부팅하고 클러스터에 가입합니다</block>
   <block id="2e296e5ecea65075de45f381533dc47d" category="paragraph">이 작업을 수행하기 전에 서비스 프로세서를 구성하지 않아야 합니다.</block>
   <block id="2238a54f1b4ff094935ad3dd0c8e3822" category="paragraph">이 작업은 MetroCluster 구성의 두 클러스터에 있는 각각의 새 컨트롤러에 대해 수행해야 합니다.</block>
   <block id="e34ba975c040f0be96016a884d817053" category="list-text">아직 수행하지 않은 경우 각 노드의 전원을 켜고 완전히 부팅하십시오.</block>
@@ -3239,13 +3215,11 @@
   <block id="f20ec4a663953b8413f93cdcbc65817b" category="paragraph">고급 모드로 계속 진행하고 고급 모드 프롬프트(*&gt;)를 보려면 "* y*"로 응답해야 합니다.</block>
   <block id="9eacad39f32dfb7a1a6d5e468b030290" category="list-text">simulate parameter:+'MetroCluster switchover-simulate'로 switchover 동작을 수행한다</block>
   <block id="b0223eb63d90d053234b82e3aab3578f" category="summary">패브릭의 FC 스위치에서 기존 컨트롤러 모듈을 분리해야 합니다.</block>
-  <block id="885bcd82f73e0085b7bef0b02fbae9ab" category="doc">패브릭에서 기존 DR 그룹 연결 끊기</block>
   <block id="dae73f4efc19df59fc64a7e73e05a617" category="list-text">기존 컨트롤러 모듈을 유지 보수 중인 스위치 패브릭에 연결하는 HBA 포트를 비활성화합니다.</block>
   <block id="955880d2c90799dfc7d399125affbb1c" category="paragraph">'Storage port disable-node_node-name_-port_port-number_'</block>
   <block id="694290c25a244f58ab505874661e84b7" category="list-text">로컬 FC 스위치에서 기존 컨트롤러 모듈의 HBA, FC-VI 및 ATTO 브리지에 대한 포트에서 케이블을 제거합니다.</block>
   <block id="d8a793fcd41c059cecfec311c4831598" category="paragraph">케이블을 다시 연결할 때 쉽게 식별할 수 있도록 케이블에 레이블을 지정해야 합니다. ISL 포트만 케이블로 연결되어 있어야 합니다.</block>
   <block id="3b889d3c5322b48147e7fc9ac55e9c53" category="summary">MetroCluster 구성에 새 컨트롤러 모듈을 추가한 후에는 두 컨트롤러 모듈에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 별도로 활성화해야 합니다.</block>
-  <block id="cfd8867a9479bfcf51fef02d25bc1930" category="doc">두 컨트롤러 모듈 모두에서 스토리지 페일오버를 사용하도록 설정하고 클러스터 HA를 사용하도록 설정합니다</block>
   <block id="ccdc8d88c83bcf7dad7c92cbf781eee7" category="paragraph">MetroCluster 설정은 MetroCluster configure -refresh true 명령을 사용하여 이전에 새로 고쳐져야 합니다.</block>
   <block id="e074d49409c03ef0a3c2592157c3f85f" category="list-text">스토리지 페일오버 활성화:</block>
   <block id="37d9b5b23b30561e670f4a6ddda14a95" category="paragraph">'Storage failover modify -enabled true-node_existing-node-name _'</block>
@@ -3254,7 +3228,6 @@
   <block id="db434f95b1bfefab72a059aaaa54ccfd" category="list-text">클러스터 HA 활성화:</block>
   <block id="c728cd2eb28f6dd9bcef71aa2d0888e9" category="paragraph">2개의 노드만 포함하고 스토리지 페일오버에서 제공되는 HA와 다른 경우 클러스터에서 클러스터 고가용성(HA)을 구성해야 합니다.</block>
   <block id="71552d252d208c0142b1ed2ce8951b06" category="summary">기존 컨트롤러 모듈과 새 컨트롤러 모듈의 전원을 켜면 로더 프롬프트가 표시됩니다.</block>
-  <block id="ee7374ec7fd19ba02336ce3e2359f57e" category="doc">두 컨트롤러 모듈의 전원을 켜고 로더 프롬프트를 표시합니다</block>
   <block id="fe99e3f55f6f4b47e223767bb8009489" category="paragraph">구성 단계를 사용하여 컨트롤러 모듈의 전원을 켜고 부팅 프로세스를 중단합니다.</block>
   <block id="f3d045d8e52283bb060515c31566087f" category="cell">컨트롤러 모듈이 다음과 같은 경우</block>
   <block id="a72f1b5068d76ead1aa4b9eb39955498" category="paragraph">동일한 섀시 내</block>
@@ -3285,16 +3258,13 @@
   <block id="9aa100213ac06e4996c83aafb9f55bca" category="paragraph">폴링 간격 때문에 모든 데이터가 반영되는 데 15분 정도 걸릴 수 있습니다. ONTAP 상태 모니터는 "상태" 열의 값이 "확인"이고 WWN(Worldwide Name)과 같은 기타 정보가 표시되는 경우 브리지에 연결하고 모니터링할 수 있습니다.</block>
   <block id="bb9db66136ab8a41a65cc419b36be80d" category="paragraph">다음 예는 FC-to-SAS 브리지가 구성된 경우를 보여줍니다.</block>
   <block id="7ecc1bdad9ef5a9d1921fae2612d70b5" category="summary">파트너 사이트의 클러스터와 연결이 되도록 새 컨트롤러 모듈을 클러스터 피어링 네트워크에 케이블로 연결해야 합니다.</block>
-  <block id="cd6c42f22b0649cda62803cd1b11f14a" category="doc">새 컨트롤러 모듈의 클러스터 피어링 연결에 케이블 연결</block>
   <block id="14ac4530bc2bbdb5e1f11a09cb300909" category="summary">두 컨트롤러 모듈 모두에서 HA 쌍을 형성할 수 있도록 파트너 시스템 ID를 설정해야 합니다.</block>
-  <block id="3036fdc134f447cfcf1702b55526a925" category="doc">두 컨트롤러 모듈에 대한 파트너 시스템 ID 설정</block>
   <block id="6c313b7512ac803ef9c45f962cc8e8ff" category="paragraph">이 작업은 LOADER 프롬프트에서 두 컨트롤러 모듈을 모두 사용하여 수행됩니다.</block>
   <block id="a973a04246ed386a29184edcb15d32c4" category="list-text">기존 컨트롤러 모듈에서 파트너 시스템 ID를 새 컨트롤러 모듈의 ID로 설정합니다.</block>
   <block id="43de0767f9174a53083becb427ee5902" category="paragraph">'setenv PARTNER-sysid_of_new_controller_'</block>
   <block id="c420545579329d31f0ab6368d89cb454" category="list-text">새 컨트롤러 모듈에서 파트너 시스템 ID를 기존 컨트롤러 모듈의 ID로 설정합니다.</block>
   <block id="89f1ff2375d86ec697867899f17d2149" category="paragraph">'setenv partner-sysid_of_existing_controller_'</block>
   <block id="8d6ff276cbe7c1327bc29f95e89536f9" category="summary">기존 컨트롤러를 식별하고 이러한 컨트롤러 간의 DR(재해 복구) 관계, 컨트롤러가 정상 모드이고 애그리게이트가 미러링되는지 확인해야 합니다.</block>
-  <block id="49b388dfb89609b843d9a9109622e00c" category="doc">MetroCluster 구성 상태를 확인하는 중입니다</block>
   <block id="6228e10459ae3618158c27f3c69d26f3" category="paragraph">기존 컨트롤러를 식별하고 이러한 컨트롤러 간의 DR(재해 복구) 관계, 컨트롤러가 정상 모드이고 애그리게이트가 미러링되는지 확인해야 합니다.</block>
   <block id="365b7d53b7c48c8da54af3049c0cd911" category="list-text">구성의 모든 노드에서 MetroCluster 구성에 있는 노드의 세부 정보를 표시합니다.</block>
   <block id="f701f89f7ca2ae6b3b4586149d7f51e3" category="paragraph">'MetroCluster node show-fields node, dr-partner, dr-partner-systemid'를 참조하십시오</block>
@@ -3304,7 +3274,6 @@
   <block id="7283128d41b0f2c5bcce7fbaf3cae22c" category="list-text">MetroCluster 구성에서 각 노드의 애그리게이트 상태를 확인합니다.</block>
   <block id="224cf26f1f556319905e555894318f36" category="paragraph">다음 출력에서는 cluster_a의 애그리게이트가 온라인 상태이고 미러링되었음을 보여 줍니다.</block>
   <block id="3b59fd703f187a0c59caedf30eb0cbc5" category="summary">MetroCluster 구성을 확장한 후 SVM을 다시 시작해야 합니다.</block>
-  <block id="1555904e898acf7948dfb256ef10c7c9" category="doc">SVM을 재시작합니다</block>
   <block id="111e11006eff2640b4f1e2b27efc3fd9" category="list-text">재시작해야 하는 SVM 식별:</block>
   <block id="4cc234ad300b0d15a1fb43b5b2744c3e" category="paragraph">'MetroCluster vserver show'</block>
   <block id="c700b47ab9116496011db734f6404dd5" category="paragraph">이 명령은 두 MetroCluster 클러스터 모두에 SVM을 표시합니다.</block>
@@ -3314,7 +3283,6 @@
   <block id="003d4c88d3a6666307952509d7a271d0" category="paragraph">'vserver start-vserver_SVM_name_-force true'</block>
   <block id="6b3e18c08a7344859a02ff8a5941d003" category="list-text">SVM이 정상 상태인지 확인합니다.</block>
   <block id="175b4615309fbb0113d1f10dd724be3b" category="summary">컨트롤러 모듈을 추가한 후 새 컨트롤러 모듈에 최신 펌웨어를 설치하여 컨트롤러 모듈이 ONTAP에서 올바르게 작동하도록 해야 합니다.</block>
-  <block id="1ceab89bdd9eda8c54a6352619858553" category="doc">컨트롤러 모듈 추가 후 펌웨어 설치</block>
   <block id="add4e5506b41bc939c6b3189a12a2303" category="list-text">시스템에 맞는 최신 버전의 펌웨어를 다운로드하고 새 펌웨어 다운로드 및 설치 지침을 따릅니다.</block>
   <block id="c4b8ea60feaa4bfbad5cf35fa307b871" category="inline-link">NetApp 다운로드: 시스템 펌웨어 및 진단</block>
   <block id="9122e8b1c0b033e688f4fadc21f1fec8" category="paragraph"><block ref="9122e8b1c0b033e688f4fadc21f1fec8" category="inline-link-rx"></block></block>
@@ -9949,7 +9917,6 @@
   <block id="fb66ffdb7a65b64035629ded64b78faf" category="sidebar">NVIDIA IP 스위치를 구성합니다</block>
   <block id="344184862169747549deee4b87dc1cf2" category="section-title">지원되는 플랫폼 조합</block>
   <block id="96235e4cabe659a051590175116c1e60" category="paragraph">을 참조하십시오<block ref="2c4f45f6db308a425e052afade2ba656" category="inline-link-rx"></block> 을 참조하십시오.</block>
-  <block id="339aff0aa186e93b68d974842b334cfa" category="doc">여기서 컨트롤러 업그레이드, 시스템 업데이트 또는 확장 중 하나를 선택합니다</block>
   <block id="0fa722347ab16c39e7070989619c6d3a" category="list-text">컨트롤러 업그레이드 절차는 컨트롤러 모듈에만 적용됩니다. 컨트롤러가 새 컨트롤러 모델로 교체됩니다.</block>
   <block id="d54a35a8f37af3fbffcb482b7998215b" category="list-text">확장 절차를 사용하면 컨트롤러 및 쉘프를 제거하지 않고 MetroCluster 구성에 추가할 수 있습니다.</block>
   <block id="855a42fae714160495a9f9f355ec5d3e" category="paragraph">사용하는 절차는 MetroCluster 유형과 기존 컨트롤러의 수에 따라 다릅니다.</block>
@@ -10069,7 +10036,6 @@
   <block id="c5785d86411f0791086e0d729d92ea59" category="paragraph"><block ref="c5785d86411f0791086e0d729d92ea59" category="inline-link-rx"></block></block>
   <block id="549e0180633c51bff766e9cab2aff418" category="paragraph"><block ref="549e0180633c51bff766e9cab2aff418" category="inline-link-rx"></block></block>
   <block id="64902df2f40b54af9303ee162076af7e" category="summary">사용하는 확장 절차는 MetroCluster 구성 유형과 ONTAP 버전에 따라 다릅니다.</block>
-  <block id="1183f26be758aca1cf3787bcad5b2010" category="doc">확장 절차를 선택합니다</block>
   <block id="81d18a4a40082c66f7427c3072b68b70" category="paragraph">확장 절차에는 MetroCluster 구성에 새 컨트롤러 및 스토리지를 추가하는 작업이 포함됩니다. 확장은 각 사이트에 짝수 개의 컨트롤러를 유지해야 하며 사용하는 절차는 원래 MetroCluster 구성의 노드 수에 따라 다릅니다.</block>
   <block id="191defc94e935558055aed94783f83cd" category="cell">확장 방법</block>
   <block id="1524ad20c3fd28d8be25c8ad8d2fc9d2" category="paragraph">방법: 2노드 MetroCluster FC를 4개로 확장합니다</block>
@@ -11949,7 +11915,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="2f92d909a1337c9b15582940d470ab00" category="list-text">시스템의 모든 구성 요소가 정상입니다.</block>
   <block id="7a8e384268b9400de9a6ef3a88bdf329" category="paragraph">이 작업을 수행하기 전에 장치에서 콘솔 로깅을 활성화하십시오.</block>
   <block id="7e850954ab384102f5d4e5df99c6d067" category="summary">전용 또는 공유 포트에 대한 인터클러스터 LIF를 구성할 수 있습니다.</block>
-  <block id="ccee519a1fcde58f406284ffad2387a9" category="paragraph">전용 및 공유 포트에 대한 인터클러스터 LIF를 구성하는 방법에 대해 알아보십시오.</block>
   <block id="50165fcf3d7c35a722bd224b3bf13c54" category="paragraph">전용 포트에 대한 인터클러스터 LIF를 구성하여 복제 트래픽에 사용 가능한 대역폭을 늘릴 수 있습니다.</block>
   <block id="fd16b3ea934ba7646ac0406aa7920e8e" category="paragraph"><block ref="cbfe237569042c016ace79222e8d1dc9" prefix="" category="inline-code"></block></block>
   <block id="bc67b6197fe081f8d788efcd57f33aa4" category="paragraph"><block ref="321305800246910a9b8518ff256b173e" prefix="" category="inline-code"></block></block>
@@ -12488,7 +12453,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f31a964269837fa383f7baad3584db47" category="inline-link-macro">필요한 bootarg 설정(9.15.1 이상 버전에서 도입된 시스템으로의 업그레이드용)</block>
   <block id="df1a5689b1950da5f94321b90393b1dc" category="paragraph">의 정보를 <block ref="2498528fe56bae6c8b4f34c34587ac02" category="inline-link-macro-rx"></block>검토하여 기존 시스템에서 필수 부트아그를 설정해야 하는지 확인합니다.</block>
   <block id="b665e6673f7c6f79f5b7bd74d4529fc0" category="summary">컨트롤러 모듈에서 HBA 카드를 구성하고 컨트롤러 및 섀시의 HA 상태를 확인 및 설정합니다.</block>
-  <block id="c3aa9da1524917943d5c4fc825572ad8" category="doc">HBA 구성을 복구하고 MetroCluster IP 컨트롤러 및 섀시의 HA 상태를 설정합니다</block>
   <block id="e8235ba5b8b549fdd6b720227b5486f3" category="paragraph">컨트롤러 모듈에 있는 HBA 카드의 존재 여부 및 구성에 따라 사이트에 맞게 HBA 카드를 올바르게 구성해야 합니다.</block>
   <block id="cb2b2de240ea8ecebe1a6f6aee92c043" category="list-text">유지 관리 모드에서 시스템의 모든 HBA에 대한 설정을 구성합니다.</block>
   <block id="dd14766d881405d86219496a398759b4" category="list-text">노드를 유지 관리 모드로 다시 부팅하여 구성 변경 사항을 적용합니다.</block>
@@ -12507,7 +12471,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="05a68831292c395345439b837ba5dc6c" category="inline-link-macro">새 컨트롤러를 부팅하고 LIF 구성을 복원합니다</block>
   <block id="51fd44c59805171ee429c9a8a7467789" category="paragraph"><block ref="52d0c98e53a297315b347a6378a8bd50" category="inline-link-macro-rx"></block>..</block>
   <block id="092dbfab1a4385bfef7e3b497957bdd4" category="summary">컨트롤러 업그레이드를 수행하기 전에 시스템이 모든 요구 사항을 충족하는지 확인하십시오.</block>
-  <block id="19ad3c72e2594ceb9c300eb26b1ca5b6" category="doc">이 MetroCluster IP 업그레이드 절차를 사용하기 위한 요구 사항입니다</block>
   <block id="a874d121d30ef8578b609fd6d3c977dd" category="paragraph">컨트롤러 업그레이드를 수행하기 전에 시스템이 모든 요구사항을 충족하는지 확인하십시오.</block>
   <block id="9dce7419ee3cb74caefd7c2519d4d0c2" category="list-text">지원되는 플랫폼 업그레이드 조합에 대한 자세한 내용은 의 MetroCluster IP 업그레이드 표를 참조하십시오<block ref="a934c7831e4c0e5d9741460d2b55f4b9" category="inline-link-macro-rx"></block>.</block>
   <block id="171bdebca93ae21307df67a82a60faeb" category="list-text">MetroCluster IP 시스템이 두 사이트에서 동일한 ONTAP 버전을 실행해야 합니다.</block>
@@ -12517,7 +12480,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="85ba24554ef457741ae00adfb30303f5" category="list-text">시스템에서 사용하도록 설정되어 있는 <block ref="7a9d12e6dbd7c75c145032be8c2b8549" category="inline-link-macro-rx"></block>경우 업그레이드를 수행하기 전에</block>
   <block id="3d8c3985ef8f7b9c50308a5dfab923c4" category="paragraph"><block ref="f85c62a3a981a8b83a61b1dc7959165b" category="inline-link-macro-rx"></block>..</block>
   <block id="ed1dd620ec6ed4baac7e1208e4a9d25d" category="summary">ONTAP 9.15.1 이상에서 도입된 시스템으로 업그레이드하려면 먼저 부트마크를 설정해야 컨트롤러 업그레이드를 진행할 수 있습니다.</block>
-  <block id="496db1855de52190cc06d85f972a650b" category="doc">필요한 bootarg 설정(ONTAP 9.15.1 이상에서 도입된 시스템으로 MetroCluster IP 업그레이드)</block>
   <block id="724bf3ae18d86521a5b9d77a13fcfddb" category="list-text">AFF C80 를 참조하십시오</block>
   <block id="bf35733b2711515e1aa7614ca7dd1ef0" category="list-text">AFF A50, AFF A20, AFF A30</block>
   <block id="b1a7d02f89c62c97fedf60bb09caa4bc" category="list-text">AFF C30, AFF C60</block>
@@ -12591,7 +12553,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5d77b80fe38db1f45d5d09f27dcd0e59" category="list-text">node_B_1-old 및 node_B_2-old에서 스토리지 및 네트워크 접속을 끊습니다. 케이블을 새 노드에 다시 연결할 수 있도록 케이블에 레이블을 지정합니다.</block>
   <block id="babccc809b9a10912d9d8a4de927ba3c" category="paragraph"><block ref="0c4ac37e524073d6c973003f56f3fc6c" category="inline-link-macro-rx"></block>..</block>
   <block id="26574f9e2197dc37d66e8e0dad63c6ca" category="summary">ONTAP 9.8부터 MetroCluster 스위치오버 운영을 사용하여 클라이언트에 무중단 서비스를 제공하는 동시에 파트너 클러스터의 컨트롤러 모듈을 업그레이드할 수 있습니다.</block>
-  <block id="8958d0af9b9ce2023eb6669c72fdac02" category="doc">스위치백 및 스위치백을 사용한 MetroCluster IP 컨트롤러 업그레이드를 위한 워크플로우(ONTAP 9.8 이상)</block>
   <block id="5e37747995982979fde1e791f10c1ccd" category="paragraph">이 워크플로우를 사용하여 ONTAP 9.8 이상을 실행하는 시스템에서 스위치오버 및 스위치백을 사용하여 MetroCluster IP 컨트롤러를 업그레이드할 수 있습니다.</block>
   <block id="82107b1d3adefdea392b36f7697a120d" category="inline-link-macro">업그레이드 준비</block>
   <block id="c240e88598326f9699f8db139f25d673" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="bdad88c10e021b717a14ac2abd1ce700" category="inline-link-macro-rx"></block></block>
@@ -12701,8 +12662,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="cbbc95c0b1d7c5d8feea0d31eafa9a28" category="paragraph">추가 절차는 을 <block ref="1547bd533de8078ec6c6f72dc3468122" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="a397b8fc1d64d0e666558911201a9d53" category="inline-link-macro">이 업그레이드 절차를 사용하기 위한 요구 사항</block>
   <block id="97fd50265456f865138d015468645cb7" category="paragraph">를 검토합니다. <block ref="b26a80311d05e322b17b954a108f547a" category="inline-link-macro-rx"></block></block>
-  <block id="e716ba8afd7707b81c0012ca2d240899" category="doc">"system controller replace" 명령을 사용하여 MetroCluster IP 컨트롤러를 업그레이드하기 위한 워크플로(ONTAP 9.13.1 이상)</block>
-  <block id="c5b6e762a71a6bb5ff91cfa8e00a4f28" category="paragraph">이 안내된 자동화된 MetroCluster 스위치오버 작업을 사용하여 ONTAP 9.13.1 이후 버전을 실행하는 4노드 MetroCluster IP 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 이 절차의 일부로 다른 구성 요소(예: 스토리지 쉘프 또는 스위치)를 업그레이드할 수 없습니다.</block>
   <block id="6bae23f4c16096f75936d03d366e6ca8" category="paragraph">이 워크플로우를 사용하여 명령으로 스위치오버 및 스위치백을 사용하여 ONTAP 9.13.1 이상을 실행하는 MetroCluster IP 컨트롤러를 업그레이드할 수<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 있습니다.</block>
   <block id="95f189c9c3198eedfd091c1c5a66a3ef" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="9f3c427d5d3af6ef2473cbb7eb6963ff" category="inline-link-macro-rx"></block></block>
   <block id="fd59b1a35af432acc6cfe409da3cdc0b" category="paragraph">지원되는 업그레이드 조합 및 요구사항을 검토하고 필요한 작업을 완료하여 컨트롤러 업그레이드를 준비합니다. 자동 컨트롤러 업그레이드 프로세스는 사용자가 구성 정보를 수집하고 기존 모니터링 소프트웨어를 제거하기 전에 일련의 사전 점검으로 시작됩니다.</block>
@@ -13447,7 +13406,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="8758d509fe3fbac15620de0ba380f93d" category="list-text">이 단계를 반복하여 cluster_a의 노드를 로 업그레이드합니다.<block ref="0e6ccb461a8e4072917a7db8187a2ba6" category="inline-link-macro-rx"></block></block>
   <block id="d6841746fb065917e2837a0dda6d27b5" category="paragraph">이 절차를 반복하면 클러스터와 노드에 대한 모든 예제 참조가 반전됩니다. 예를 들어, cluster_A에서 스위치오버로 예제를 제공할 경우 cluster_B에서 스위치오버합니다</block>
   <block id="cbc2197d8e356cefd5c16b0e6b12733b" category="list-text">다음 단계를 사용하세요. <block ref="903dcdb9cff1ed237b5a384a8899e234" category="inline-link-rx"></block> _MetroCluster Tiebreaker 설치 및 구성_에서.</block>
-  <block id="86c26e1621d0bd8e2c4210c81fd2b539" category="doc">스위치오버 및 스위치백을 사용하여 4노드 MetroCluster FC 구성에서 "시스템 컨트롤러 교체" 명령(ONTAP 9.10.1 이상)으로 컨트롤러 업그레이드</block>
   <block id="eeda2a8f0828294ad51fab60acf4c866" category="paragraph">추가 절차는 을 <block ref="8cbfebe03d7025df7187c11c17a18941" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="7767fca1c0d3e02d34e1f2ec3fef20ef" category="list-text">사이트 B의 컨트롤러를 교체하려면 사이트 A에서 다음 명령을 실행하세요.</block>
   <block id="00799101d1f09c8fafcefe8296b49d8f" category="list-text">한 사이트의 컨트롤러를 이미 교체한 후 다른 사이트에서 이 절차를 반복하면 각 사이트의 노드 간 불일치로 인해 오류가 발생합니다. 이는 두 사이트의 플랫폼 모델이 서로 다를 때 예상되는 현상입니다.</block>
@@ -14048,7 +14006,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="42f362146dbe8748970967efe562f3c8" category="sidebar">MetroCluster IP 구성을 위한 ONTAP Mediator 구성</block>
   <block id="9ac9cffddfe08e79e2955f5af452fef4" category="sidebar">MetroCluster 스트레치 설치 준비</block>
   <block id="b023032dbbcf1a80203228bb95af2a1d" category="list-text">현재 홈 포트에 없는 모든 클러스터 LIF를 홈 포트로 되돌립니다.</block>
-  <block id="b4ebcf376ab05c920671af65b7daaf8c" category="paragraph"><block ref="985591930e85610706940dd82967bd61" prefix="" category="inline-code"></block></block>
   <block id="4154034eef64dfe94bce158c1c207659" category="doc">MetroCluster IP에 대한 ONTAP Mediator 지원의 새로운 기능</block>
   <block id="f0dceba3fe3c3556e6c20da7fc8c7520" category="paragraph">ONTAP Mediator 지원을 위한 새로운 MetroCluster IP 기능과 향상된 기능에 대해 알아보세요.</block>
   <block id="25deb3b52bcb888e53232afb4a495c12" category="sidebar">MetroCluster IP에 대한 ONTAP Mediator 지원의 새로운 기능</block>
@@ -14838,4 +14795,81 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="30e48ae2246201137a6fd8989ce0eb22" category="doc">MetroCluster 유지보수 후 사용자 정의 AutoSupport 메시지 전송</block>
   <block id="c03207d74bddb6a35beb369c3d096c72" category="cell">선반 및 각 선반의 디스크 개수, 플래시 저장 장치 세부 정보, 메모리, NVRAM 및 네트워크 카드</block>
   <block id="d1d510353351f908c66cbab5e768bff6" category="list-text"><block ref="d1d510353351f908c66cbab5e768bff6" category="inline-link-macro-rx"></block></block>
+  <block id="bfd951b1f47bb24762c08b34d658cb61" category="list-text">클러스터의 모든 LIF를 홈 포트로 되돌립니다.</block>
+  <block id="a9bbd392f09c568e4564d56526122bae" category="admonition">업데이트가 필요한 모든 스위치에 대해 이전 단계를 완료할 때까지 클러스터 LIF를 홈 포트로 되돌리지 마십시오.</block>
+  <block id="b1db6910025ed7ea73075a61a7064a85" category="list-text">현재 홈 포트에 연결되어 있지 않은 모든 클러스터 LIF를 수동으로 홈 포트로 되돌립니다.</block>
+  <block id="724f861df9399a40fdd8f69601ca67f4" category="doc">MetroCluster 업그레이드, 시스템 리프레시 또는 확장 방법을 선택하십시오</block>
+  <block id="dd8281fa0c355546f3d472cff82c1e57" category="doc">MetroCluster 컨트롤러 업그레이드 절차를 선택하십시오</block>
+  <block id="ef991ef98f292eeb6b4b6c72258ab93d" category="doc">MetroCluster 확장 절차를 선택하십시오</block>
+  <block id="68f1669fdeb7f35298f0a2ed28f5de24" category="doc">MetroCluster 시스템 새로 고침 절차를 선택하십시오</block>
+  <block id="d348bc6b73d3fd1e1b7437d170afccef" category="doc">추가 MetroCluster 문서 자료</block>
+  <block id="519e6100b48117eb28538a7bf113f2c0" category="doc">4노드 MetroCluster FC 확장 중에 컨트롤러 모듈의 구성을 초기화합니다</block>
+  <block id="babfc76688ca6c502d2c9cb2506cf6fe" category="doc">4노드에서 8노드로 MetroCluster FC를 확장하는 동안 인터클러스터 LIF 구성</block>
+  <block id="a0d1626d5a6c449976b90784e441b9ec" category="paragraph">4노드에서 8노드로 MetroCluster FC를 확장하는 동안 전용 포트와 공유 포트에서 인터클러스터 LIF를 구성하는 방법을 알아보십시오.</block>
+  <block id="422a9f4448c9173fa4698e7bff17874c" category="doc">2노드에서 4노드 MetroCluster FC 확장 시 인터클러스터 LIF 구성</block>
+  <block id="0ee3666a5ae8cfabe667417e1b731920" category="paragraph">2노드에서 4노드로 MetroCluster FC를 확장하는 동안 전용 포트와 공유 포트에서 인터클러스터 LIF를 구성하는 방법을 알아보십시오.</block>
+  <block id="1c4e4773cde6f76db929eca8fd17f509" category="doc">4노드 MetroCluster FC 확장 전에 콘솔 로깅 활성화</block>
+  <block id="2709b1b362225d3c0463f8faaf41d622" category="doc">2노드 MetroCluster FC 확장 전에 콘솔 로깅을 활성화합니다.</block>
+  <block id="1b5832ff4d40fe0514e82b58d551aed6" category="doc">각 MetroCluster FC 클러스터에 새 컨트롤러 모듈을 추가합니다.</block>
+  <block id="77f84d15761e260cfdc6c31170c68cc3" category="doc">MetroCluster FC 스위치의 케이블을 다시 연결하고 재구성합니다.</block>
+  <block id="ab757597d49096f847cd07875446cb9b" category="doc">MetroCluster FC 구성에서 AFF 시스템의 디스크 소유권 할당</block>
+  <block id="0f4e56cd88c37bc318be9a4add757a06" category="doc">MetroCluster FC 구성에서 non-AFF 시스템의 디스크 소유권 할당</block>
+  <block id="29dc2d6c8ae068066bceab1d8a0d3961" category="doc">새로운 MetroCluster FC 컨트롤러 모듈에 디스크를 할당합니다.</block>
+  <block id="2e57cbcf52df778e60b821c1aac27910" category="doc">기존 MetroCluster FC 컨트롤러 모듈을 부팅합니다.</block>
+  <block id="63a9964cc9781d31a15d840d4acc861b" category="doc">새 컨트롤러를 부팅하고 MetroCluster FC 클러스터에 연결합니다</block>
+  <block id="9eba3af44618bc477b818601373a9096" category="doc">MetroCluster FC 클러스터 피어링을 위해 새 컨트롤러 모듈을 케이블로 연결하십시오.</block>
+  <block id="a0e454bedc987178e3ed29c1e5093a86" category="doc">FC-VI 및 HBA 포트를 MetroCluster FC 스위치에 케이블로 연결합니다</block>
+  <block id="513f7bf4e0371ee2336ee2ef23e21c29" category="doc">기존 및 신규 MetroCluster FC 컨트롤러의 ha-config 설정 변경</block>
+  <block id="f8a744afc2345eec0a8e97858a33b844" category="doc">MetroCluster FC 확장 후 Config Advisor를 사용하여 MetroCluster 구성 오류를 확인합니다.</block>
+  <block id="1a93df4cf5137f137866654db5d3cd01" category="paragraph">MetroCluster FC 확장을 완료한 후에 NetApp 지원 사이트에서 Config Advisor 툴을 다운로드하여 일반적인 구성 오류를 확인할 수 있습니다.</block>
+  <block id="a01a1afa3b049a2d73d3348c7693ed0e" category="doc">MetroCluster FC 확장 전에 Config Advisor로 MetroCluster 구성 오류 확인</block>
+  <block id="1497a71ab59c8ab1135f3a0ce6dd41eb" category="doc">MetroCluster FC 구성 확인</block>
+  <block id="d92329b7a54ccdcec0a080fb6a0a22c7" category="doc">2노드 MetroCluster FC 확장 중에 컨트롤러 모듈의 구성 초기화</block>
+  <block id="060cb31d65dcad8017d91b77ef8a370d" category="doc">상태 모니터링을 위해 MetroCluster FC-to-SAS 브리지 구성</block>
+  <block id="22401a1e837fb96895ed71e1a6a3a12a" category="doc">MetroCluster FC 구성에서 미러링되지 않은 데이터 애그리게이트 생성</block>
+  <block id="031886c7fefabd72212f416f8ad55e9a" category="doc">MetroCluster FC 확장을 위한 새로운 케이블 배치도를 결정합니다.</block>
+  <block id="5e552a2a6196e348bac6d255ebbd8239" category="doc">기존 MetroCluster FC DR 그룹을 패브릭에서 연결 해제합니다</block>
+  <block id="99a6cb9f39f5436a1d6eaa8c1e35dce4" category="doc">MetroCluster FC 컨트롤러 모듈에서 스토리지 페일오버 및 클러스터 HA 활성화</block>
+  <block id="2c2da7600c3cd363d717ce6d0224e24f" category="doc">MetroCluster FC 구성의 기존 컨트롤러 모듈에서 HA 모드 설정</block>
+  <block id="563ad35ea3f098853d086e56c205212f" category="doc">MetroCluster FC 구성 구현</block>
+  <block id="bc63c14fc3caaefa7fe69bf6819691e6" category="doc">MetroCluster FC 구성에 새 컨트롤러 모듈을 설치하고 케이블을 연결합니다</block>
+  <block id="41d885e33e39dbafe85e6778bfaba037" category="doc">MetroCluster FC 구성에서 컨트롤러 모듈을 추가한 후 펌웨어를 설치합니다</block>
+  <block id="bfcb371c660a38bdb19109b14d85a15c" category="doc">MetroCluster FC 구성에서 새 컨트롤러 모듈용 라이선스 설치</block>
+  <block id="c22ec20b3d9e0e4914afa1f2a284c2b9" category="doc">MetroCluster FC 구성에서 루트 애그리게이트를 미러링합니다.</block>
+  <block id="025c888719d37d7fe66ef7d6179f2b36" category="doc">MetroCluster FC 구성의 새 컨트롤러에서 루트 애그리게이트를 미러링합니다.</block>
+  <block id="94d5124746188d6fa8e5192f204291bd" category="doc">새 컨트롤러 모듈에서 ONTAP를 netboot하고 MetroCluster FC 구성으로 설정합니다</block>
+  <block id="42318f03701154f7fee7f8ad365075dd" category="doc">MetroCluster FC 구성에서 컨트롤러 모듈의 전원을 켭니다</block>
+  <block id="642bfb1e525cc9f011724b317e45aae3" category="doc">기존 MetroCluster FC 컨트롤러 모듈에서 클러스터 포트를 준비합니다.</block>
+  <block id="bce82fc417a7bcd477789cf43981f039" category="doc">MetroCluster FC 클러스터에 새 컨트롤러 모듈을 추가할 준비를 하십시오.</block>
+  <block id="d2e30312c1377d97d06f017706fb7809" category="doc">MetroCluster FC 구성에서 넷부트 서버를 준비합니다</block>
+  <block id="6b247089d8073b9abbd953e1eb75011a" category="doc">MetroCluster FC 확장을 위한 새 장비를 랙에 설치합니다</block>
+  <block id="5cb33bcccbf069c83701371b54cc9b84" category="doc">4노드 또는 8노드 MetroCluster IP 구성 새로 고침</block>
+  <block id="00f895d1db3e7f8c5e03f0a326126be5" category="doc">새로운 컨트롤러로 MetroCluster FC 구성 새로 고침</block>
+  <block id="26965466a8b3aefbba29dc5c86637424" category="doc">MetroCluster FC 확장 후 SVM 재시작</block>
+  <block id="9a0dee0bdc09cb349c7666e9514b46e9" category="doc">4노드에서 8노드로 MetroCluster FC 확장 후 사용자 정의 AutoSupport 메시지 전송</block>
+  <block id="807f23d357cf4f82b7e128db5500987c" category="doc">4노드에서 8노드로의 MetroCluster FC 확장 전에 사용자 정의 AutoSupport 메시지 전송</block>
+  <block id="fb8c149f6f5e8f93945a15685d4b627c" category="doc">2노드에서 4노드로의 MetroCluster FC 확장 전에 맞춤형 AutoSupport 메시지를 전송하십시오.</block>
+  <block id="82f1613506eb9fac80edf5f84b2a862e" category="doc">MetroCluster FC 확장 중에 두 컨트롤러 모듈 모두에 대한 파트너 시스템 ID를 설정합니다</block>
+  <block id="cccc18b58488b1014e00ca6a098d0b49" category="doc">MetroCluster FC 확장 중에 기존 컨트롤러 모듈을 종료합니다</block>
+  <block id="51be0262baf64ceadaabd86274b9fe22" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster FC 구성에서 AFF A700을 AFF A900으로 또는 FAS9000을 FAS9500으로 업그레이드합니다</block>
+  <block id="5a43cd7e8e207fca8160968dd99b7798" category="paragraph">ONTAP 9.10.1 버전부터는 MetroCluster 전환 작업을 사용하여 파트너 클러스터의 컨트롤러 모듈 업그레이드 중에도 클라이언트에 중단 없는 서비스를 제공할 수 있습니다. 스토리지 셸프 또는 스위치 등 다른 구성 요소는 이 절차에서 업그레이드할 수 없습니다.</block>
+  <block id="06f4e50ac4ace36fdb6653f631797d0b" category="doc">스위치오버 및 스위치백을 사용하여 MetroCluster IP 구성에서 AFF A700을 AFF A900으로 또는 FAS9000을 FAS9500으로 업그레이드합니다</block>
+  <block id="573629180c62da3a97d26ac9eebfdb31" category="paragraph">ONTAP 9.10.1 버전부터는 MetroCluster 전환 작업을 사용하여 파트너 클러스터의 컨트롤러 모듈 업그레이드 중에도 클라이언트에 중단 없는 서비스를 제공할 수 있습니다. 스토리지 셸프 또는 스위치 등의 다른 구성 요소는 이 절차의 일부로 업그레이드할 수 없습니다.</block>
+  <block id="900a1c095b88cd549b09181a05ef73a7" category="doc">시스템 컨트롤러 교체를 사용하여 4노드 MetroCluster FC 구성에서 컨트롤러를 업그레이드합니다</block>
+  <block id="e628d99c7e9fb7310378f205a58b9afe" category="paragraph">ONTAP 9.10.1부터 이 가이드 방식의 자동화된 MetroCluster 스위치오버 절차를 사용하여 <block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 통해 4노드 MetroCluster FC 구성에서 무중단 컨트롤러 업그레이드를 수행할 수 있습니다. 스토리지 쉘프 또는 스위치 등 기타 구성요소는 이 절차의 일부로 업그레이드할 수 없습니다.</block>
+  <block id="ca85d7acb7d02bd42055b6d379aaa11a" category="doc">MetroCluster FC 구성에서 전환, 복구 및 스위치백 확인</block>
+  <block id="9f965861adae66e8b84a2782197aa1c9" category="doc">MetroCluster FC 구성에서 구성 요소의 ha-config 상태를 확인합니다</block>
+  <block id="fc0844ebf8e0cdf56554fa83831968af" category="doc">MetroCluster FC 구성의 상태를 확인합니다</block>
+  <block id="18f768eac1ccd0579320ce8970d7288b" category="doc">2노드 MetroCluster FC 구성 상태를 확인합니다</block>
+  <block id="7dd5f873ed79173585bb7ae5ff72cc1d" category="doc">패브릭 연결 MetroCluster 구성에서 새 컨트롤러 포트를 조닝합니다</block>
+  <block id="d8bed4555cd06ccced191987f928f52c" category="doc">MetroCluster IP 컨트롤러의 HBA 구성 복구 및 HA 상태 설정</block>
+  <block id="26324d76cf923fbb869c0331c7587103" category="doc">MetroCluster IP 컨트롤러 업그레이드 요구 사항</block>
+  <block id="c1ad4a9ff37c0e62dd476984df9cb0ae" category="doc">MetroCluster IP 컨트롤러 업그레이드에 필요한 부트 인수를 설정하십시오.</block>
+  <block id="bac6d95b1f915ff3ed493573c8f67363" category="doc">MetroCluster IP 컨트롤러 업그레이드 워크플로(스위치오버 및 스위치백 사용)</block>
+  <block id="876d02c219ba682b17d664e407fe0a39" category="doc">루트 애그리게이트 디스크를 새 MetroCluster IP 컨트롤러에 다시 할당합니다.</block>
+  <block id="8ea787380cf0fe775f123818be962e2a" category="doc">MetroCluster IP 컨트롤러 업그레이드 요구 사항</block>
+  <block id="6439a9d44aa51bf2f13b1fd36dd8c02e" category="doc">새로운 MetroCluster IP 컨트롤러에서 HBA 구성을 복원하고 HA 상태를 설정합니다</block>
+  <block id="1ccefdf93fe55bc446f1b6e99fbe9845" category="doc">시스템 컨트롤러 교체를 사용하여 지원되는 MetroCluster IP 컨트롤러 업그레이드</block>
+  <block id="0036cea7d8ac4a59c7e9634dacc4db95" category="doc">MetroCluster IP 컨트롤러 업그레이드 워크플로(system controller replace 사용)</block>
+  <block id="4c56afcefbd66060fd1bbdf30dd00b24" category="paragraph">ONTAP 9.13.1 버전부터는 이 안내형 자동 MetroCluster 전환 절차를 사용하여 4노드 MetroCluster IP 구성에서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 통해 중단 없이 컨트롤러를 업그레이드할 수 있습니다. 스토리지 셸프 또는 스위치와 같은 다른 구성 요소는 이 절차의 일부로 업그레이드할 수 없습니다.</block>
 </blocks>

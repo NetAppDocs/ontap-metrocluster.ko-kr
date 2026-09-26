@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, console, logging, devices, maintenance, autosupport, cli, 
 summary: 장치에서 콘솔 로깅을 활성화합니다. 
 ---
-= 콘솔 로깅을 활성화합니다
+= 4노드 MetroCluster FC 확장 전에 콘솔 로깅 활성화
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

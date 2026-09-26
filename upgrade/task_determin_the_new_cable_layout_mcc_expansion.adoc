@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: metrocluster, upgrade, determine, new, cabling, layout 
 summary: 새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다. 
 ---
-= 새 케이블 연결 레이아웃 결정
+= MetroCluster FC 확장을 위한 새로운 케이블 배치도를 결정합니다.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

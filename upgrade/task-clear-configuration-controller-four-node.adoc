@@ -1,10 +1,10 @@
 ---
-permalink: upgrade/task_clear_the_configuration_on_a_controller_module_mcc.html 
+permalink: upgrade/task-clear-configuration-controller-four-node.html 
 sidebar: sidebar 
 keywords: metrocluster, upgrade, clear, configuration, controller, module 
 summary: MetroCluster 구성에서 새 컨트롤러 모듈을 사용하기 전에 구성을 지워야 합니다. 
 ---
-= 2노드 MetroCluster FC 확장 중에 컨트롤러 모듈의 구성 초기화
+= 4노드 MetroCluster FC 확장 중에 컨트롤러 모듈의 구성을 초기화합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
