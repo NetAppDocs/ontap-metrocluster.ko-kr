@@ -2,7 +2,7 @@
 permalink: upgrade/task_refresh_4n_mcc_fc.html 
 sidebar: sidebar 
 keywords: metrocluster, upgrade, refresh, four, node, fc, configuration 
-summary: '구성을 8노드 구성으로 확장한 다음 이전의 DR\(재해 복구\) 그룹을 제거하여 4노드 MetroCluster 구성에서 컨트롤러 및 스토리지를 업그레이드할 수 있습니다.' 
+summary: '4노드 MetroCluster 구성을 8노드로 확장한 다음 기존 재해 복구(DR) 그룹을 제거하여 컨트롤러와 스토리지를 업그레이드할 수 있습니다.' 
 ---
 = 4노드 MetroCluster FC 구성을 업데이트합니다
 :allow-uri-read: 

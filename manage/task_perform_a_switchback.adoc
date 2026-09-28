@@ -2,7 +2,7 @@
 permalink: manage/task_perform_a_switchback.html 
 sidebar: sidebar 
 keywords: metrocluster, configuration, switchback, operation, return, operating, operate, state, sync-source, storage, virtual, machine, svm, disaster, site, active, serving, local, disk, pool, perform 
-summary: 'MetroCluster 구성을 복구한 후 MetroCluster 스위치백 작업을 수행할 수 있습니다. MetroCluster 스위치백 작업을 수행하면 구성이 재해 사이트의 SVM(동기화 소스 스토리지 가상 머신) 및 로컬 디스크 풀에서 데이터를 제공하는 정상 운영 상태로 돌아갑니다.' 
+summary: MetroCluster 구성을 복구한 후 스위치백 작업을 수행하여 재해 사이트의 동기화 소스 SVM이 활성화되어 데이터를 제공하는 정상 작동 상태로 되돌리십시오. 
 ---
 = MetroCluster 스위치백을 수행하십시오
 :allow-uri-read: 

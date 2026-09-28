@@ -2,7 +2,7 @@
 permalink: install-fc/task_cable_the_controller_module_s_fc_vi_hba_ports_to_the_fc_switches_controller_to_fc_sw.html 
 sidebar: sidebar 
 keywords: metrocluster, fabric, installation, cable, new, controller, module, fc, vi, hba, ports, fc, switches, mcc 
-summary: 'FC-VI 포트 및 HBA\(호스트 버스 어댑터\)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.' 
+summary: 'FC-VI 포트 및 HBA(호스트 버스 어댑터)는 MetroCluster 구성의 각 컨트롤러 모듈에 있는 사이트 FC 스위치에 케이블로 연결되어야 합니다.' 
 ---
 = 케이블 컨트롤러 모듈 FC-VI 및 HBA 포트를 MetroCluster FC 스위치에 연결합니다.
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: upgrade/task_check_the_mcc_configuration.html 
 sidebar: sidebar 
 keywords: metrocluster, upgrade, check, configuration 
-summary: 'MetroCluster 설정의 구성 요소와 관계가 올바르게 작동하는지 확인할 수 있습니다. 초기 구성 후 MetroCluster 구성을 변경한 후 확인해야 합니다. 또한 협상된 \(계획된\) 스위치오버 또는 스위치백 작업을 수행하기 전에 확인해야 합니다.' 
+summary: 초기 설정 후, 변경 후, 그리고 협상된 스위치오버 또는 스위치백 전에 MetroCluster 구성의 구성 요소와 관계가 올바르게 작동하는지 확인하십시오. 
 ---
 = MetroCluster FC 구성 확인
 :allow-uri-read: 

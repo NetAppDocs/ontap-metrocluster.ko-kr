@@ -2,7 +2,7 @@
 permalink: maintain/task_enable_ip_port_access_on_the_fibrebridge_7600n_bridge_guides.html 
 sidebar: sidebar 
 keywords: metrocluster, maintain, service, enable, ip, port, access, fibrebridge, bridge 
-summary: '9.5 이전 버전의 ONTAP를 사용하고 있거나 텔넷이나 기타 IP 포트 프로토콜 및 서비스를 사용하여 FiberBridge 7600N 브리지에 대한 대역외 액세스를 사용하려는 경우\(FTP, ExpressNAV, ICMP 또는 Quicknav\) 콘솔 포트를 통해 액세스 서비스를 활성화할 수 있습니다.' 
+summary: ONTAP 버전 9.5 이전인 경우 또는 텔넷이나 다른 IP 포트 프로토콜을 사용하여 FibreBridge 7600N 브리지에 대역 외 액세스가 필요한 경우 콘솔 포트를 통해 액세스 서비스를 활성화하십시오. 
 ---
 = FibreBridge 7600N 브리지의 IP 포트 액세스를 MetroCluster FC 구성에서 활성화합니다
 :allow-uri-read: 

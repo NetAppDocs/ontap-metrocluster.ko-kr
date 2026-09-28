@@ -2,7 +2,7 @@
 permalink: maintain/task_replace_an_ip_switch.html 
 sidebar: sidebar 
 keywords: metrocluster, maintain, service, replace, ip, switch 
-summary: '장애가 발생한 스위치를 교체하거나 스위치를 업그레이드 또는 다운그레이드해야 할 수 있습니다. 새 스위치는 스위치에 장애가 발생한 경우 이전 스위치와 같을 수도 있고 스위치 유형을 변경할 수도 있습니다. \(스위치를 업그레이드하거나 다운그레이드할 수도 있습니다.\)' 
+summary: 고장난 스위치를 교체하거나, 스위치를 업그레이드 또는 다운그레이드해야 할 수도 있습니다. 새 스위치는 기존 스위치와 동일한 제품으로 교체할 수도 있고, 스위치 종류를 변경할 수도 있습니다. 
 ---
 = MetroCluster IP 구성에서 스위치 교체 또는 용도 변경
 :allow-uri-read: 
