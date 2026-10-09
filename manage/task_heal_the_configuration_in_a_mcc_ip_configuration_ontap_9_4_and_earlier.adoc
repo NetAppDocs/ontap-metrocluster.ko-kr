@@ -33,17 +33,10 @@ NOTE: ONTAP 9.5를 실행하는 MetroCluster IP 시스템에서는 복구가 자
 +
 LOADER 프롬프트가 표시되면 boot_ONTAP 명령을 실행합니다.
 
-. 루트 애그리게이트 복구 단계 'MetroCluster 환원 루트 애그리게이트'를 수행합니다
+. 데이터 애그리게이트 수정:
 +
-[listing]
-----
-cluster_A::> metrocluster heal root-aggregates
-[Job 137] Job succeeded: Heal Root-Aggregates is successful
-----
-+
-치유가 거부되면 -override-vetoes 매개 변수를 사용하여 MetroCluster 환원 루트 애그리게이트 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+'MetroCluster 환원 어애그리게이트'
 
-. 애그리게이트를 재동기화하십시오. 'MetroCluster 환원 Aggregate'입니다
 +
 [listing]
 ----
@@ -51,9 +44,22 @@ cluster_A::> metrocluster heal aggregates
 [Job 137] Job succeeded: Heal Aggregates is successful
 ----
 +
-치유가 거부되면 -override-vetoes 매개 변수를 사용하여 MetroCluster 환원 명령을 다시 실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+치유가 거부되면 '--override-vetoes' 매개 변수를 사용하여 MetroCluster 환원 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
 
-. 정상 클러스터에서 MetroCluster operation show 명령을 실행하여 환원 작업이 완료되었는지 확인합니다.
+. 루트 애그리게이트 수정:
++
+'MetroCluster 환원 루트 집계'
+
++
+[listing]
+----
+cluster_A::> metrocluster heal root-aggregates
+[Job 137] Job succeeded: Heal Root-Aggregates is successful
+----
++
+복구가 거부된 경우,  `metrocluster heal root-aggregates` 명령을  `--override-vetoes` 매개변수와 함께 재실행하는 옵션이 있습니다. 이 선택적 매개변수를 사용하면 시스템이 복구 작업을 방해하는 소프트 거부권을 재정의합니다.
+
+. 정상 클러스터에서 'MetroCluster operation show' 명령을 실행하여 환원 작업이 완료되었는지 확인합니다.
 +
 [listing]
 ----

@@ -4878,9 +4878,6 @@
   <block id="e6ea9c211a28aa2fd08ca4c33bde1a3a" category="paragraph">이 절차는 MetroCluster FC 구성의 복구 절차와 다릅니다.</block>
   <block id="fefbe2a25c6583c6382a79b56d9fc9e5" category="list-text">전환된 사이트에서 각 컨트롤러 모듈의 전원을 켜고 완전히 부팅되도록 합니다.</block>
   <block id="2c44dd72e553ab42c9a3642d87709030" category="paragraph">LOADER 프롬프트가 표시되면 boot_ONTAP 명령을 실행합니다.</block>
-  <block id="1d0415c5e0e974a2381be627c371d147" category="list-text">루트 애그리게이트 복구 단계 'MetroCluster 환원 루트 애그리게이트'를 수행합니다</block>
-  <block id="1a43b1ad1bbf852be8c5710b4f5ef455" category="paragraph">치유가 거부되면 -override-vetoes 매개 변수를 사용하여 MetroCluster 환원 루트 애그리게이트 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.</block>
-  <block id="7daa5669ffe1b1fb33c5efc49e3ec7da" category="list-text">애그리게이트를 재동기화하십시오. 'MetroCluster 환원 Aggregate'입니다</block>
   <block id="69b16444af6fe44d06937e09a977a3c1" category="list-text">정상 클러스터에서 MetroCluster operation show 명령을 실행하여 환원 작업이 완료되었는지 확인합니다.</block>
   <block id="8d6872689c871ea9898773acb2b42987" category="summary">volume modify 명령의 -nvfail 매개 변수를 사용하면 시스템이 부팅 중이거나 전환 작업 후 ONTAP에서 NVRAM(Nonvolatile RAM)의 불일치를 감지할 수 있습니다. 또한 볼륨을 수동으로 복구할 수 있을 때까지 데이터 액세스 및 수정으로부터 시스템을 경고 및 보호합니다.</block>
   <block id="92b52a76064d441f71b18a5a7d9ebfd5" category="paragraph">'volume modify' 명령의 '-nvfail' 매개 변수를 사용하면 시스템이 부팅 중이거나 전환 작업 후 ONTAP에서 NVRAM(Nonvolatile RAM) 불일치를 감지할 수 있습니다. 또한 볼륨을 수동으로 복구할 수 있을 때까지 데이터 액세스 및 수정으로부터 시스템을 경고 및 보호합니다.</block>
@@ -11943,7 +11940,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d419812c67afb77388be54f4cb41eb86" category="paragraph">노드의 프롬프트에서<block ref="d972f8bbe9b04d39b8b96b699cf921e9" prefix=" " category="inline-code"></block> 매개 변수를 사용하여 MetroCluster를 구성합니다.</block>
   <block id="3635681631407e08104ac78c0039ed70" category="paragraph"><block ref="0825cd88596408a485ffc279f70b9da9" prefix="" category="inline-code"></block></block>
   <block id="753303bac17f77fab4f01ca22a7ff80e" category="list-text">고급 권한 모드에서 MDV_CRS 볼륨을 이동합니다.</block>
-  <block id="4e934a5efc9ac0d78daef92737cd79bf" category="paragraph">4노드 MetroCluster 구성을 영구적인 8노드 구성으로 확장하는 경우 MDV 볼륨 중 하나를 새 DR 그룹으로 이동해야 합니다.</block>
   <block id="dbe62ccc612e92f8dc68e42a4661fecb" category="paragraph">컨트롤러 모듈 및 섀시의 HA 상태가 잘못된 경우 노드를 다시 초기화하지 않고 MetroCluster을 구성할 수 없습니다. 이 절차를 사용하여 설정을 수정한 후 다음 절차 중 하나를 사용하여 시스템을 초기화해야 합니다.</block>
   <block id="73fa02989b9da1f069817272869a683b" category="inline-link-macro">시스템 기본값을 복원하고 컨트롤러 모듈에서 HBA 유형을 구성합니다</block>
   <block id="20e47a9aa4ad4f6197046707d54204fc" category="list-text">MetroCluster FC 구성에서 의 단계를 <block ref="61b5232c30227f4608eee40560fc97c5" category="inline-link-macro-rx"></block>따릅니다.</block>
@@ -14866,4 +14862,15 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="c86a7aa614f734c9fdfa06956e64bc4e" category="summary">표준(노드 고정) 라이선스가 필요한 모든 ONTAP 서비스에 대해 새 컨트롤러 모듈의 라이선스를 추가해야 하며, 각 노드마다 별도의 키가 필요합니다.</block>
   <block id="ce1691500a09d5ae00b18feeaec042a3" category="summary">4노드 MetroCluster 구성을 8노드로 확장한 다음 기존 재해 복구(DR) 그룹을 제거하여 컨트롤러와 스토리지를 업그레이드할 수 있습니다.</block>
   <block id="ca586a63a242059b7c620a6612b3b1cd" category="summary">FC 스위치 영역 설정은 새 컨트롤러 연결을 수용해야 합니다. NetApp에서 제공하는 RCF 파일을 사용한 경우 영역 설정이 미리 구성되어 있으므로 변경할 필요가 없습니다.</block>
+  <block id="96b5d6e36488b6c8d38e6d78526764d4" category="list-text">ISL 스위치 포트를 오프라인으로 전환하십시오. 스위치 유형에 맞는 절차를 선택하십시오.</block>
+  <block id="f4c94feb070a7a98b69f2e822eab8e2e" category="paragraph">다음 절차는 사용하지 않는 ISL 포트를 비활성화하는 방법을 보여줍니다. 이 절차의 일부로 동일한 명령을 사용하여 모든 활성 ISL 포트를 비활성화할 수도 있습니다.</block>
+  <block id="6e2ed72bc15efe53ae194cf46426820d" category="inline-link-macro">Cisco IP 스위치에서 ISL 포트를 비활성화합니다</block>
+  <block id="b68699b521dd6b456cb9cc8f8249c23c" category="list-text"><block ref="b68699b521dd6b456cb9cc8f8249c23c" category="inline-link-macro-rx"></block></block>
+  <block id="0ee6df083625297ae68c3b90cb68e1bf" category="inline-link-macro">Broadcom IP 스위치에서 ISL 포트를 비활성화합니다</block>
+  <block id="46a11231ed98416cf64e89c82eab7106" category="list-text"><block ref="46a11231ed98416cf64e89c82eab7106" category="inline-link-macro-rx"></block></block>
+  <block id="f1989a46107ca7e314518f6697ac0e45" category="inline-link-macro">NVIDIA IP 스위치에서 ISL 포트를 비활성화합니다.</block>
+  <block id="6a94a0f0d01dfd850c57c84609b996c1" category="list-text"><block ref="6a94a0f0d01dfd850c57c84609b996c1" category="inline-link-macro-rx"></block></block>
+  <block id="dbf8c386b8c209a8a104209f4811beb1" category="paragraph">복구가 거부된 경우, <block ref="4fc02dad333b99cda95cb4d63f746057" prefix=" " category="inline-code"></block> 명령을 <block ref="5b8353fafaa1c451a58b0b87dede3fc0" prefix=" " category="inline-code"></block> 매개변수와 함께 재실행하는 옵션이 있습니다. 이 선택적 매개변수를 사용하면 시스템이 복구 작업을 방해하는 소프트 거부권을 재정의합니다.</block>
+  <block id="2501b01a945a3eabd573e54654793648" category="paragraph">사이트당 단일 미러링된 데이터 애그리게이트가 있는 경우 두 MDV 볼륨을 모두 이 단일 애그리게이트로 이동하십시오. 미러링된 데이터 애그리게이트가 두 개 이상인 경우 각 MDV 볼륨을 서로 다른 애그리게이트로 이동하십시오. 확장(4노드 또는 8노드 구성으로)이 성공적으로 완료되면 각 MetroCluster IP 사이트에는 두 개의 MDV 볼륨이 포함됩니다.</block>
+  <block id="6bd55190cc0a65555cf13d5cf60edc77" category="paragraph">4노드 MetroCluster 구성을 영구적인 8노드 구성으로 확장하는 경우, MDV 볼륨 중 하나를 새 DR 그룹의 미러링된 애그리게이트로 이동해야 합니다. 이동하는 MDV 볼륨의 접미사가<block ref="3254fb5b504a92168380bac219fc29ca" prefix=" " category="inline-code"></block>인지 또는<block ref="b0ba49340c52b617d8bb5e0f66b8e6dc" prefix=" " category="inline-code"></block>인지는 중요하지 않습니다.</block>
 </blocks>

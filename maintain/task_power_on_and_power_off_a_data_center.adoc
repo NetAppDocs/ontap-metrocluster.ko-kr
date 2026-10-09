@@ -249,7 +249,16 @@ NOTE: Cluster_A에 원격 디스크가 있는 모든 플렉스에 대해 이 단
 
 
 
-. 스위치 유형에 따라 ISL 스위치 포트를 지속적으로 오프라인 상태로 전환합니다.
+. ISL 스위치 포트를 오프라인으로 전환하십시오. 스위치 유형에 맞는 절차를 선택하십시오.
++
+다음 절차는 사용하지 않는 ISL 포트를 비활성화하는 방법을 보여줍니다. 이 절차의 일부로 동일한 명령을 사용하여 모든 활성 ISL 포트를 비활성화할 수도 있습니다.
+
++
+** link:../install-ip/task_switch_config_cisco.html#disable-unused-isl-ports-and-port-channels["Cisco IP 스위치에서 ISL 포트를 비활성화합니다"]
+** link:../install-ip/task_switch_config_broadcom.html#disable-unused-isl-ports-and-port-channels["Broadcom IP 스위치에서 ISL 포트를 비활성화합니다"]
+** link:../install-ip/task_switch_config_nvidia.html#disable-unused-isl-ports-and-port-channels["NVIDIA IP 스위치에서 ISL 포트를 비활성화합니다."]
+
+
 . 각 노드에서 다음 명령을 실행하여 노드를 중지합니다.
 +
 `node halt -inhibit-takeover true -skip-lif-migration true -node <node-name>`
