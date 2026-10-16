@@ -26,7 +26,7 @@ site_a의 컨트롤러가 업그레이드되면 site_a의 스위치가 업그레
 
 +
 ** link:../install-ip/task_switch_config_broadcom.html#downloading-and-installing-the-broadcom-rcf-files["Broadcom RCFs를 다운로드하여 설치합니다"]
-** link:../install-ip/task_switch_config_cisco.html#download-and-installing-the-cisco-ip-rcf-files["Cisco IP RCF를 다운로드하여 설치합니다"]
+** link:../install-ip/task_switch_config_cisco.html#download-and-install-the-cisco-ip-rcf-files["Cisco IP RCF를 다운로드하여 설치합니다"]
 ** link:../install-ip/task_switch_config_nvidia.html#download-and-install-the-nvidia-rcf-files["NVIDIA IP RCF를 다운로드하여 설치합니다"]
 
 

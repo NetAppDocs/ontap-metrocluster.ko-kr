@@ -18,7 +18,7 @@ FC 스위치의 공급업체를 Cisco에서 Brocade로 변경하거나 그 반�
 
 
 .단계
-. [[STEP_1, 1단계]] 구성의 상태를 확인합니다.
+. [[step_1]]구성 상태를 확인합니다.
 +
 .. MetroCluster가 각 클러스터에서 정상 모드로 구성되어 있는지 확인합니다. (* MetroCluster show *
 +
@@ -91,6 +91,6 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 
 
 . 스위치 전원을 켭니다.
-. MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <<1단계>>.
+. <<step_1,1단계>>을(를) 반복하여 MetroCluster 구성이 정상인지 확인합니다.
 . 구성의 두 번째 Fabric에 대해 1단계부터 7단계까지 반복합니다.
 
