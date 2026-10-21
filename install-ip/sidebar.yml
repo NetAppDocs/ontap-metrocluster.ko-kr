@@ -2,7 +2,7 @@
 section: install-ip
 title: MetroCluster IP 구성을 설치합니다
 entries:
-- title: 개요
+- title: 설치 워크플로우
   url: "/install-ip/index.html"
 - title: MetroCluster 설치를 준비합니다
   pdf-filename: MetroCluster IP 설치 준비
@@ -105,7 +105,7 @@ entries:
   entries:
   - title: CLI를 사용하여 MetroCluster 소프트웨어를 구성합니다
     entries:
-    - title: 개요
+    - title: ONTAP에서 MetroCluster 소프트웨어를 구성하는 방법에 대해 알아보십시오.
       url: "/install-ip/concept_configure_the_mcc_software_in_ontap.html"
     - title: 필요한 정보를 수집합니다
       url: "/install-ip/task_sw_config_gather_info.html"
@@ -137,7 +137,7 @@ entries:
       url: "/install-ip/configure-mcc-site-system-manager.html"
 - title: 계획되지 않은 자동 전환을 위해 ONTAP Mediator 구성
   entries:
-  - title: ONTAP Mediator 설치 준비
+  - title: ONTAP Mediator 구성 준비
     url: "/install-ip/concept_mediator_requirements.html"
   - title: MetroCluster IP 구성을 위한 ONTAP Mediator 구성
     url: "/install-ip/task_configuring_the_ontap_mediator_service_from_a_metrocluster_ip_configuration.html"

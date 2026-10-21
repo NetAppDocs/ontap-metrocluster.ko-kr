@@ -9715,7 +9715,6 @@
   <block id="b05dfe32ff54f216e31f69b3bcf35430" category="paragraph">'* no vsan_vsan-num_suspend * '</block>
   <block id="59bf52ba61a46286e679847925ce1f3c" category="paragraph">예: * 'no vsan 10 suspend</block>
   <block id="32a9706efc49910d5f907e98994d74f1" category="paragraph">``MetroCluster 쇼 *’</block>
-  <block id="b88bf0c809fffc695990879900c60d29" category="paragraph">환경은 특정 요구 사항을 충족해야 합니다.</block>
   <block id="a624bf1cb8ea6541888d2e3bfed29f37" category="paragraph">다음 요구 사항은 하나의 DR 그룹(재해 복구 그룹)에 적용됩니다. 에 대해 자세히 알아보십시오 <block ref="0244a225d1215475caa277f136d50b4a" category="inline-link-macro-rx"></block>.</block>
   <block id="9f6204fe619ab6c1e9a1fcd03de81cb5" category="paragraph">ONTAP 중재자와 각 사이트 간의 연결은 두 개의 개별 장애 도메인이어야 합니다.</block>
   <block id="ceeccb67c4ca8801e51075063d898307" category="paragraph">최대 지연 시간이 75ms(RTT) 미만입니다.</block>
@@ -13062,7 +13061,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="df091e4083ea919fc3a0a8939d1edf09" category="paragraph">ONTAP Mediator를 업그레이드하는 경우 Linux 버전 요구 사항을 충족해야 하며 업그레이드 지침을 따라야 합니다.</block>
   <block id="2a3e7adab0cb4c934f05558fd4b11142" category="list-text">ONTAP Mediator는 바로 이전 버전에서 현재 버전으로 업그레이드할 수 있습니다.</block>
   <block id="931e10d7f833f6006078c296b8f49e42" category="inline-link-macro">ONTAP Mediator 설치 또는 업그레이드</block>
-  <block id="e4fc8483908a1fd217bb07557b043e20" category="paragraph"><block ref="e4fc8483908a1fd217bb07557b043e20" category="inline-link-macro-rx"></block></block>
   <block id="c2f5dea80e3ceaa485bfe3b7ffaf114f" category="paragraph">*참고:* e5a 및 e7a 포트는 클러스터 간 LIF에만 사용할 수 있습니다. 이 포트는 데이터 LIF에 사용할 수 없습니다.</block>
   <block id="dfcad5a3f6729276e992c858459078cf" category="paragraph">MetroCluster 구성은 RAID-DP, RAID4, RAID-TEC를 지원합니다.</block>
   <block id="c452f245605b541913c8927f2fb39f4b" category="inline-link-macro">자동 드라이브 할당 및 ADP 시스템에 대한 고려 사항</block>
@@ -13960,7 +13958,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a5ae27866152c64d13caa7491b407c4f" category="list-text">ONTAP 중재자를 추가합니다.</block>
   <block id="6ed3fcc536a033a1e0dbf1249734de16" category="paragraph">MetroCluster FC 플랫폼과 스위치 지원의 새로운 기능을 알아보세요.</block>
   <block id="7f29812fdda9b63b5432343e48888f3e" category="inline-link-macro">ONTAP Mediator의 새로운 기능</block>
-  <block id="ddb6a6aeab3697bf98a9f8ec6246d66d" category="paragraph">ONTAP Mediator의 각 릴리스에 대한 기능 및 향상된 기능에 대한 자세한 내용은 다음을 참조하세요.<block ref="e9f46c418b00d5917fe7eb2e94490962" category="inline-link-macro-rx"></block> .</block>
   <block id="0812efe70fdb78c8000d6ba26954775e" category="paragraph">IPv6는 MetroCluster IP 구성의 ONTAP Mediator 1.11 이상에서 지원됩니다.</block>
   <block id="f2048d473088527114dc19a006677413" category="paragraph"><block ref="f2048d473088527114dc19a006677413" category="inline-link-macro-rx"></block></block>
   <block id="e48e73e576f724fd4213ab1eca7edb4a" category="paragraph">ONTAP 9.18.1</block>
@@ -14071,7 +14068,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="55417ec59fd4af1a5afffacb42333c5a" category="paragraph">이 절차에서 사용된 예: controller_B_1</block>
   <block id="1acb751c22e164e9d61c762caf509e82" category="paragraph">이 절차에서 사용된 예: controller_B_2</block>
   <block id="eccb3ce2fe6ad5d172a57438aae17dae" category="doc">각 MetroCluster FC 노드에 미러링된 데이터 애그리게이트를 생성합니다</block>
-  <block id="b5fd13a9bac03ffc7e9ccde70adc8242" category="doc">MetroCluster IP 구성을 위한 ONTAP Mediator 설치 요구 사항</block>
   <block id="e5287e41bb7b528f560b85847eb683be" category="paragraph">36포트 Cisco 9336C-FX2 스위치를 보유하고 있고 NS224 스토리지를 스위치에 연결할 계획이 없다면 <block ref="5e1610ecd3627713f0895c655a667651" category="inline-link-macro-rx"></block>에 있는 표를 사용하십시오.</block>
   <block id="b68398936049bd282794c33831e2aea9" category="paragraph">MetroCluster IP 구성에서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 사용한 AFF A70에서 AFF A90 및 FAS70에서 FAS90 시스템 업그레이드 지원.</block>
   <block id="2691309e1710cb6a0083f4722ac33e8d" category="admonition">현재 100Gbps ISL 요구 사항을 충족하지 않는 플랫폼의 ONTAP 9.18.1 이상 버전으로의 업그레이드는 차단되지 않으며 진행할 수 있습니다. 그러나 NetApp은 예상되는 성능 및 가용성 수준을 유지하기 위해 고객이 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.</block>
@@ -14224,7 +14220,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="41dde0734ba4df0eb1bc2446fcd0f56c" category="paragraph"><block ref="2e0cdb2639c7a3d958f9576ceaa2b3a1" prefix="" category="inline-code"></block></block>
   <block id="ffda33d0c6be847a8128046010ba3a6f" category="list-text">두 클러스터 모두에서 다음 명령을 실행하여 ONTAP Mediator가 MetroCluster 구성에서 제거되었는지 확인하십시오.</block>
   <block id="df021024c5380d4c45805acb611a88ce" category="admonition">이 작업은 iSCSI로 구성된 ONTAP Mediator에만 적용됩니다. 이 작업은 HTTPS를 사용하는 ONTAP Mediator에는 적용되지 않습니다.</block>
-  <block id="e93b921aee6849e1c62a6629697d16e7" category="paragraph">ONTAP Mediator 1.12는 MetroCluster IP 구성에서 HTTPS를 사용하여 통신하는 ONTAP Mediator 구성을 지원합니다. HTTPS는 SSL/TLS를 사용하여 전체 세션을 암호화함으로써 보안을 강화합니다. HTTPS 프로토콜만 사용하는 ONTAP Mediator를 설치하도록 선택할 수 있습니다. 이 설치 방법을 사용하는 경우 SCST 패키지는 설치되지 않습니다. HTTPS 프로토콜만 사용하는 ONTAP Mediator 설치에 대한 자세한 내용은 <block ref="a82349e7909b6ff560747d8c59eb3903" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
   <block id="835c8a143366575f451949402f3b6bae" category="inline-link-macro">ONTAP Mediator에서 iSCSI 및 HTTPS 프로토콜에 대해 자세히 알아보십시오.</block>
   <block id="ab84d029506bbf94968a8439506e5c7f" category="paragraph"><block ref="386c9422b8a78bb2663b14ec5cff7d1e" category="inline-link-macro-rx"></block>.</block>
   <block id="ea7f38fbe84ac28be0f7c90cca730a69" category="paragraph">ONTAP 9.19.1</block>
@@ -14317,7 +14312,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f5092147d9fdb4405ffa0ded1187160b" category="section-title">구형 플랫폼 모델을 추가할 때 중요한 정보</block>
   <block id="de340c0f1f6d36d5e5b0117bb6d6e359" category="admonition">4노드 FC에서 8노드 IP로 전환하는 경우, 두 번째 DR 그룹을 추가하기 전에 4노드 FC에서 8노드 IP로의 RCF를 적용할 수 있습니다. 4노드 FC에서 4노드 IP로의 RCF를 먼저 적용할 필요는 없습니다.</block>
   <block id="e446b7aa15d19fb426155674878c63fb" category="list-text">ONTAP 9.19.1 및 ONTAP Mediator 1.12 버전부터 iSCSI 대신 HTTPS를 사용하여 통신하는 ONTAP Mediator를 구성할 수 있습니다. 자세한 내용은 <block ref="fb70fb2de5d85ae7e6c4e86202287fd7" category="inline-xref-macro-rx"></block>을 참조하십시오.</block>
-  <block id="9f26b34d7871bca369159b44ab27880d" category="paragraph">ONTAP Mediator는 iSCSI와 HTTPS를 모두 지원하거나 HTTPS만 지원하도록 설치할 수 있습니다. 자세한 내용은 <block ref="a82349e7909b6ff560747d8c59eb3903" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="2730c7709b8ac3af8d089b14ec12b8b3" category="paragraph">ONTAP Mediator는 iSCSI 또는 HTTPS로 구성할 수 있으며, 둘 다 동시에 사용할 수는 없습니다. 배포 환경에서 프로토콜을 혼합하여 사용하는 것은 지원되지 않습니다.</block>
   <block id="fe22847581eb5d6a05ddb7f8a50a61f5" category="paragraph">여러 MetroCluster IP 구성을 모니터링하기 위한 지원은 iSCSI 또는 HTTPS용 ONTAP Mediator를 구성하는지 여부에 따라 달라집니다. 자세한 내용은 <block ref="946d16160b4c150a172b373dca588f20" category="inline-xref-macro-rx"></block>을 참조하십시오.</block>
   <block id="c2cbdc82e4189820757400b0b29fe4e3" category="section-title">ONTAP Mediator를 사용하여 여러 MetroCluster IP 구성을 모니터링합니다</block>
@@ -14876,4 +14870,13 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ede59518e087cd94a05f8667d5654efc" category="list-text">FAS 시스템을 FAS 시스템에, 또는 AFF A-Series를 AFF A-Series에 추가할 수 있습니다.</block>
   <block id="91b0e1726a138b2c425045cdba0bdc83" category="list-text">AFF A-Series에는 FAS 시스템을 추가할 수 없으며, AFF C-Series에는 AFF A-Series를 추가할 수 없습니다.</block>
   <block id="274e643167d886697821940a9eae3ef3" category="list-text">시스템 확장을 수행할 때는 기존 플랫폼 유형과 새 플랫폼 유형이 *반드시* 일치해야 합니다:</block>
+  <block id="6d6a8959fe8be022411cbc238fac0307" category="doc">MetroCluster IP 구성을 위한 ONTAP Mediator 구성 요구 사항</block>
+  <block id="f625c842c2b84a9996443c378f40b4d2" category="paragraph">MetroCluster IP 구성에서 ONTAP Mediator를 구성하려면 환경이 특정 요구 사항을 충족해야 합니다.</block>
+  <block id="9a608ce32ab7de631be98c1f40c29177" category="paragraph">ONTAP Mediator는 iSCSI와 HTTPS를 모두 지원하거나 HTTPS만 지원하도록 설치할 수 있습니다. 자세한 내용은 <block ref="b01c25df8caeed30ae2730b34801c824" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="4f2aa567d4485ce75b86d4e84a623069" category="paragraph"><block ref="4f2aa567d4485ce75b86d4e84a623069" category="inline-link-macro-rx"></block></block>
+  <block id="55efe72d62cc9682f4d490549849173c" category="paragraph">ONTAP Mediator의 각 릴리스에 대한 기능 및 개선 사항에 대한 자세한 내용은 <block ref="c3587bc25259fc56e7642234ed2f205f" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
+  <block id="51300df13686481de730af7df4ff3faf" category="paragraph">ONTAP Mediator 1.12는 MetroCluster IP 구성에서 HTTPS를 사용하여 통신하는 ONTAP Mediator 구성을 지원합니다. HTTPS는 SSL/TLS를 사용하여 전체 세션을 암호화함으로써 보안을 강화합니다. HTTPS 프로토콜만 사용하는 ONTAP Mediator를 설치하도록 선택할 수 있습니다. 이 설치 방법을 사용하는 경우 SCST 패키지는 설치되지 않습니다. HTTPS 프로토콜만 사용하는 ONTAP Mediator 설치에 대한 자세한 내용은 <block ref="b01c25df8caeed30ae2730b34801c824" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
+  <block id="706c1d4933d296d42d61b064f4e637ae" category="sidebar">설치 워크플로우</block>
+  <block id="8f817e2a0df7ced319cdc0dd9031e535" category="sidebar">ONTAP에서 MetroCluster 소프트웨어를 구성하는 방법에 대해 알아보십시오.</block>
+  <block id="b60d2ca38a2a217c2f194613ae620303" category="sidebar">ONTAP Mediator 구성 준비</block>
 </blocks>
