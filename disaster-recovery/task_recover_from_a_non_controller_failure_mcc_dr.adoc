@@ -2,7 +2,7 @@
 permalink: disaster-recovery/task_recover_from_a_non_controller_failure_mcc_dr.html 
 sidebar: sidebar 
 keywords: equipment, disaster, site, undergone, require, maintenance, replacement, controller, replace, process, metrocluster, configuration, data, aggregate, switchback, operation, recover, non-controller, failure, heal, configuration, metrocluster, fc, data, aggregate, root, disaster, verify, system, switchback, verification, result, perform, successful, delete, deleting, stale, listing 
-summary: '재해 사이트의 장비가 필수 유지 관리 또는 교체를 완료했으나 컨트롤러가 교체되지 않은 경우 MetroCluster 구성을 완전히 이중화된 상태로 되돌리는 프로세스를 시작할 수 있습니다. 여기에는 구성(먼저 데이터 애그리게이트 및 루트 애그리게이트)을 복구한 다음 스위치백 작업을 수행하는 작업이 포함됩니다.' 
+summary: 컨트롤러 이외의 장애 발생 후 MetroCluster 구성을 복구하고 스위치백 작업을 수행하여 정상적인 완전 이중화 작동으로 복귀합니다. 
 ---
 = MetroCluster 구성에서 비컨트롤러 장애로부터 복구
 :allow-uri-read: 
@@ -45,10 +45,7 @@ MetroCluster IP 구성에서는 전환 후 복구 작업이 자동으로 시작�
 
 .시작하기 전에
 * 전환을 수행해야 하며 정상적인 사이트에서 데이터를 제공해야 합니다.
-* 재해 사이트의 노드를 중단하거나 전원을 끈 상태로 두어야 합니다.
-+
-복구 프로세스 중에 완전히 부팅하면 안 됩니다.
-
+* 패브릭 연결형 및 스트레치형 MetroCluster 구성에서 재해 발생 지점의 노드는 정지되거나 전원이 꺼진 상태로 유지되어야 합니다. 복구 과정 동안 노드를 완전히 부팅해서는 안 됩니다.
 * 재해 사이트의 스토리지에 액세스할 수 있어야 합니다(쉘프 켜기, 기능, 액세스 가능).
 * 패브릭 연결 MetroCluster 구성에서는 ISL(Inter-Switch Link)이 작동 중이어야 합니다.
 * 4노드 MetroCluster 구성에서는 장애가 있는 사이트의 노드가 HA 페일오버 상태가 아니어야 합니다(모든 노드가 각 HA 쌍에 대해 작동 및 실행 중이어야 함).
@@ -65,7 +62,7 @@ MetroCluster IP 구성에서는 전환 후 복구 작업이 자동으로 시작�
 재해 사이트의 하드웨어를 복구 및 교체한 후에는 데이터 애그리게이트를 치유해야 합니다. 이 프로세스는 데이터 애그리게이트를 재동기화하여 정상적인 작동을 위해 복구되는 재해 사이트를 준비합니다. 루트 애그리게이트를 복구하기 전에 데이터 애그리게이트를 치유해야 합니다.
 
 .이 작업에 대해
-다음 예에서는 스위치오버 애그리게이트를 온라인으로 전환하는 강제 전환을 보여 줍니다. 원격 클러스터의 모든 구성 업데이트가 로컬 클러스터로 복제됩니다. 이 절차의 일부로 재해 사이트에서 스토리지의 전원을 켜지만 재해 사이트의 컨트롤러 모듈에 전원을 공급해서는 안 되며 전원을 공급해서는 안 됩니다.
+다음 예는 강제 전환을 보여줍니다. 이 경우 전환된 애그리게이트를 온라인 상태로 전환합니다. 원격 클러스터의 모든 구성 업데이트는 로컬 클러스터로 성공적으로 복제됩니다. 이 절차의 일부로 재해 사이트의 스토리지 전원을 켜지만, 패브릭 연결 또는 스트레치 MetroCluster 구성에서 재해 사이트의 컨트롤러 모듈 전원을 켜지 않으며 켜서도 안 됩니다.
 
 .단계
 . 전환이 완료되었는지 확인:
@@ -93,7 +90,7 @@ controller_A_1::> metrocluster heal -phase aggregates
 [Job 130] Job succeeded: Heal Aggregates is successful.
 ----
 +
-치유가 거부되면 '--override-vetoes' 매개 변수를 사용하여 MetroCluster 환원 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+복구가 거부된 경우, 복구 작업을 방해하는 소프트 거부권을 재정의하기 위해 `metrocluster heal` 명령을 `--override-vetoes` 매개 변수와 함께 다시 실행할 수 있습니다.
 
 . 작업이 완료되었는지 확인합니다.
 +
@@ -147,7 +144,7 @@ mcc1A::> metrocluster heal -phase root-aggregates
 [Job 137] Job succeeded: Heal Root Aggregates is successful
 ----
 +
-치유가 거부되면 '--override-vetoes' 매개 변수를 사용하여 MetroCluster 환원 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.
+복구가 거부된 경우, 복구 작업을 방해하는 소프트 거부권을 재정의하기 위해 `metrocluster heal` 명령을 `--override-vetoes` 매개 변수와 함께 다시 실행할 수 있습니다.
 
 . 대상 클러스터에서 다음 명령을 실행하여 환원 작업이 완료되었는지 확인합니다.
 +
@@ -217,7 +214,7 @@ mcc1A::> metrocluster operation show
 
 
 
-CAUTION: 스위치백을 수행하기 전에 새 노드에서 데이터 LIF의 위치가 올바른지 확인해야 합니다. 구성을 스위치백하면 ONTAP에서 LIF가 사용하는 홈 포트에서 트래픽을 재개하려고 시도합니다. 홈 포트와 스위치 포트 및 VLAN 간의 연결이 올바르지 않으면 I/O 오류가 발생할 수 있습니다. LIF를 올바른 노드 또는 포트에 배치하는 데 문제가 발생하면 스위치백을 진행하지 말고 NetApp 기술 지원에 문의하십시오.
+CAUTION: 스위치백을 수행하기 전에 새 노드에서 데이터 LIF의 위치가 올바른지 확인해야 합니다. 구성을 스위치백할 때 ONTAP은 LIF에서 사용하는 홈 포트에서 트래픽을 재개하려고 시도합니다. 홈 포트와 스위치 포트 및 VLAN 간의 연결이 올바르지 않으면 I/O 오류가 발생할 수 있습니다. LIF를 올바른 노드 또는 포트에 배치하는 데 문제가 발생하면 스위치백을 진행하지 말고 NetApp 기술 지원에 문의하십시오.
 
 
 
@@ -567,7 +564,7 @@ volumes             ok
 ----
 +
 
-NOTE: MetroCluster FC 환경에서는 'connections' 항목이 명령 출력에서 "not-applicable"으로 표시되어야 합니다.
+NOTE: MetroCluster FC 환경에서는 명령 출력에서 "connections"가 "not-applicable"로 표시되어야 합니다.
 
 
 

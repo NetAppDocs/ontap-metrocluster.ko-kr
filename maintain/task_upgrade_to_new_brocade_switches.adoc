@@ -76,6 +76,10 @@ image::../media/brocade_upgr_to_g620_replaced_b_1.gif[Brocade B1을 교체하여
 
 
 . 새 스위치를 켜고 부팅하십시오.
+. 스위치 프롬프트로 돌아가 스위치 펌웨어 버전을 확인합니다.
++
+'firmwareswHow'입니다
+
 . 다음 절차 중 하나를 사용하여 Brocade FC 스위치를 구성합니다.
 +
 link:../install-fc/task_reset_the_brocade_fc_switch_to_factory_defaults.html["RCF 파일을 사용하여 Brocade FC 스위치를 구성합니다"]
@@ -143,16 +147,6 @@ slot 0: FC Host Adapter 0g (QLogic 8324 rev. 2, N-port, <UP>)**<=== Initiator po
 		.
 		.
 ----
-. 스위치 프롬프트로 돌아가 스위치 펌웨어 버전을 확인합니다.
-+
-'firmwareswHow'입니다
-
-+
-스위치는 지원되는 최신 펌웨어를 실행해야 합니다.
-
-+
-https://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"]
-
 . 스위치오버 작업 시뮬레이션:
 +
 .. 노드 프롬프트에서 고급 권한 수준(+'et-Privilege advanced')으로 변경합니다

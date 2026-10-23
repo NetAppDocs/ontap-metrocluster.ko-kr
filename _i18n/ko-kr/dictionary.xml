@@ -4626,7 +4626,6 @@
   <block id="40559a80c4883cc1d1e0a5d13f64e904" category="paragraph">먼저 데이터 애그리게이트 및 루트 애그리게이트에 대해 복구 작업을 수행해야 합니다.</block>
   <block id="5f9bbce01bd9d804a2f72650092a1d3b" category="section-title">데이터 애그리게이트 복구</block>
   <block id="e941c3bfcac66cf5cb47b9d65004602f" category="paragraph">재해 사이트의 하드웨어를 복구 및 교체한 후에는 데이터 애그리게이트를 치유해야 합니다. 이 프로세스는 데이터 애그리게이트를 재동기화하여 정상적인 작동을 위해 복구되는 재해 사이트를 준비합니다. 루트 애그리게이트를 복구하기 전에 데이터 애그리게이트를 치유해야 합니다.</block>
-  <block id="0605e801ab1d6a8b30acc6dda60b61a8" category="paragraph">다음 예에서는 스위치오버 애그리게이트를 온라인으로 전환하는 강제 전환을 보여 줍니다. 원격 클러스터의 모든 구성 업데이트가 로컬 클러스터로 복제됩니다. 이 절차의 일부로 재해 사이트에서 스토리지의 전원을 켜지만 재해 사이트의 컨트롤러 모듈에 전원을 공급해서는 안 되며 전원을 공급해서는 안 됩니다.</block>
   <block id="b2a58abb9aa1ce46e4162ec28d9e8484" category="list-text">전환이 완료되었는지 확인:</block>
   <block id="7db001ac93912b8966d9e8ddec02a225" category="list-text">나머지 클러스터에서 다음 명령을 실행하여 데이터 애그리게이트를 재동기화합니다.</block>
   <block id="b9d3fabfc03b80ebe4821d8d711c4a5b" category="paragraph">치유가 거부되면 '--override-vetoes' 매개 변수를 사용하여 MetroCluster 환원 명령을 재실행할 수 있습니다. 이 선택적 매개 변수를 사용하는 경우 시스템은 복구 작업을 방지하는 모든 소프트 베인을 재정의합니다.</block>
@@ -14373,7 +14372,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="f7f3cd01961c53f33c89b788147d8de3" category="list-text">기존 컨트롤러에서 분리했던 모든 연결부를 새 컨트롤러 모듈에 다시 연결하십시오.</block>
   <block id="2fb65189695e9496f507ebb44d5b6cb6" category="paragraph">스위치백을 수행하기 전에 LIF가 적절한 노드와 포트에서 호스팅되는지 확인하십시오.</block>
   <block id="542e234aa223d3b0ecca11dacf8e46ed" category="list-text">스위치백을 수행하기 전에 LIF가 적절한 노드와 포트에서 호스팅되는지 확인하십시오.</block>
-  <block id="3dcbbe108abc6bdf7036466d9fe35058" category="admonition">스위치백을 수행하기 전에 새 노드에서 데이터 LIF의 위치가 올바른지 확인해야 합니다. 구성을 스위치백하면 ONTAP에서 LIF가 사용하는 홈 포트에서 트래픽을 재개하려고 시도합니다. 홈 포트와 스위치 포트 및 VLAN 간의 연결이 올바르지 않으면 I/O 오류가 발생할 수 있습니다. LIF를 올바른 노드 또는 포트에 배치하는 데 문제가 발생하면 스위치백을 진행하지 말고 NetApp 기술 지원에 문의하십시오.</block>
   <block id="108f2a315310ceff812cf39f143ca95b" category="list-text">두 클러스터 간의 전환이 정상적으로 작동하는지 확인하려면 다음 점검 사항을 수행하십시오.</block>
   <block id="59a93fe50b25a85e88bed38108e0196c" category="list-text">DR 클러스터에서 정상 클러스터에서 DR 클러스터로의 전환이 가능한지 확인합니다.</block>
   <block id="59ded25db2e6cefacbcb41c378e0b709" category="list-text">정상 작동하는 클러스터에서 DR 클러스터에서 정상 작동하는 클러스터로의 전환이 가능한지 확인합니다.</block>
@@ -14879,4 +14877,10 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="706c1d4933d296d42d61b064f4e637ae" category="sidebar">설치 워크플로우</block>
   <block id="8f817e2a0df7ced319cdc0dd9031e535" category="sidebar">ONTAP에서 MetroCluster 소프트웨어를 구성하는 방법에 대해 알아보십시오.</block>
   <block id="b60d2ca38a2a217c2f194613ae620303" category="sidebar">ONTAP Mediator 구성 준비</block>
+  <block id="48787bff378672c516633e53e78867b8" category="summary">컨트롤러 이외의 장애 발생 후 MetroCluster 구성을 복구하고 스위치백 작업을 수행하여 정상적인 완전 이중화 작동으로 복귀합니다.</block>
+  <block id="3e2ce732c0b76ab6255c0b49aa925eab" category="list-text">패브릭 연결형 및 스트레치형 MetroCluster 구성에서 재해 발생 지점의 노드는 정지되거나 전원이 꺼진 상태로 유지되어야 합니다. 복구 과정 동안 노드를 완전히 부팅해서는 안 됩니다.</block>
+  <block id="376deeb1de4a09a5382d17ea2768b1e9" category="paragraph">다음 예는 강제 전환을 보여줍니다. 이 경우 전환된 애그리게이트를 온라인 상태로 전환합니다. 원격 클러스터의 모든 구성 업데이트는 로컬 클러스터로 성공적으로 복제됩니다. 이 절차의 일부로 재해 사이트의 스토리지 전원을 켜지만, 패브릭 연결 또는 스트레치 MetroCluster 구성에서 재해 사이트의 컨트롤러 모듈 전원을 켜지 않으며 켜서도 안 됩니다.</block>
+  <block id="756bb9840619872518b56de349470f31" category="paragraph">복구가 거부된 경우, 복구 작업을 방해하는 소프트 거부권을 재정의하기 위해<block ref="c85b4996143a93edc62c1214c1b80d15" prefix=" " category="inline-code"></block> 명령을<block ref="5b8353fafaa1c451a58b0b87dede3fc0" prefix=" " category="inline-code"></block> 매개 변수와 함께 다시 실행할 수 있습니다.</block>
+  <block id="4510065cdf938bdc660bae11b415e4ca" category="admonition">스위치백을 수행하기 전에 새 노드에서 데이터 LIF의 위치가 올바른지 확인해야 합니다. 구성을 스위치백할 때 ONTAP은 LIF에서 사용하는 홈 포트에서 트래픽을 재개하려고 시도합니다. 홈 포트와 스위치 포트 및 VLAN 간의 연결이 올바르지 않으면 I/O 오류가 발생할 수 있습니다. LIF를 올바른 노드 또는 포트에 배치하는 데 문제가 발생하면 스위치백을 진행하지 말고 NetApp 기술 지원에 문의하십시오.</block>
+  <block id="ded79adea8538afbad271b9f9dc6c6e2" category="admonition">MetroCluster FC 환경에서는 명령 출력에서 "connections"가 "not-applicable"로 표시되어야 합니다.</block>
 </blocks>
