@@ -24,14 +24,14 @@ indexpage:
       url: "/install-ip/concept_mediator_requirements.html"
   - title: 유지 관리
     links:
-    - title: FC 스위치
-      url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html"
-    - title: IP 스위치
-      url: "/maintain/task_replace_an_ip_switch.html"
-    - title: ATTO 브리지
+    - title: MetroCluster 유지 관리에 대해 자세히 알아보십시오
+      url: "/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html"
+    - title: FC-to-SAS 브리지 유지 관리
       url: "/maintain/concept_using_fibrebridge_7600n_bridges_in_mcc_configurations.html"
-    - title: 드라이브 쉘프
-      url: "/maintain/index.html"
+    - title: FC 스위치 유지 관리 및 교체
+      url: "/maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html"
+    - title: IP 스위치 유지 보수 및 교체
+      url: "/maintain/task_replace_an_ip_switch.html"
   - title: RCF 파일
     links:
     - title: MetroCluster RCF 파일

@@ -66,7 +66,7 @@ link:../disaster-recovery/concept_dr_workflow.html["MetroCluster 관리 및 재�
 
 
  a| 
-link:../maintain/index.html["MetroCluster 부품 유지 관리"]
+link:../maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster 유지 관리"]
  a| 
 * MetroCluster FC 구성의 유지 관리 지침
 * FC-to-SAS 브리지 및 FC 스위치에 대한 하드웨어 교체 또는 업그레이드 및 펌웨어 업그레이드 절차

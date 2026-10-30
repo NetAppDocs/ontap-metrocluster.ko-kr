@@ -75,7 +75,7 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_consideratio
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/maintain/index.html["MetroCluster 구성 요소를 유지보수하십시오"]
+https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster 유지 관리"]
  a| 
 * MetroCluster 구성 유지 관리 지침
 * FC-to-SAS 브리지 및 FC 스위치에 대한 하드웨어 교체 또는 업그레이드 및 펌웨어 업그레이드 절차

@@ -68,17 +68,24 @@ https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_consideratio
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["MetroCluster 관리 및 재해 복구"]
+link:../manage/task_perform_switchover_for_tests_or_maintenance.html["테스트 또는 유지 관리를 위한 스위치오버 수행"]
+ a| 
+* 전환, 복구, 스위치백
+
+
+
+
+ a| 
+link:../manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html["MetroCluster 데이터 보호 및 재해 복구 이해"]
  a| 
 * MetroCluster 구성 이해
-* 전환, 복구, 스위치백
 * 재해 복구
 
 
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-metrocluster/maintain/index.html["MetroCluster 구성 요소를 유지보수하십시오"]
+https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster 유지 관리"]
  a| 
 * MetroCluster FC 구성의 유지 관리 지침
 * FC-to-SAS 브리지 및 FC 스위치에 대한 하드웨어 교체 또는 업그레이드 및 펌웨어 업그레이드 절차

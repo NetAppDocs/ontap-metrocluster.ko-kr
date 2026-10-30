@@ -3507,7 +3507,7 @@ link:https://docs.netapp.com/us-en/ontap/cloud/high-availability-concept.html["�
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
 .단계
-. 에 나와 있는 협상된 전환, 복구 및 스위치백에 대한 절차를 사용합니다 https://docs.netapp.com/us-en/ontap-metrocluster/manage/index.html["재해에 복구합니다"].
+. link:../manage/task_perform_switchover_for_tests_or_maintenance.html["테스트 또는 유지 관리를 위한 스위치오버 수행"]에 언급된 협상된 스위치오버, 복구 및 스위치백 절차를 사용하십시오.
 
 
 

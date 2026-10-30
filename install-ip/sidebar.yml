@@ -53,20 +53,10 @@ entries:
     url: "/install-ip/task_rack_hw_components.html"
   - title: MetroCluster IP 스위치에 케이블을 연결합니다
     entries:
-    - title: RcfFileGenerator 도구 또는 여러 MetroCluster 구성에서 포트 테이블을 사용하는 방법
+    - title: MetroCluster IP 스위치 케이블 연결에 대해 알아보십시오.
       url: "/install-ip/using_rcf_generator.html"
-    - title: Cisco 3132Q-V 스위치에 대한 플랫폼 포트 할당
-      url: "/install-ip/port_usage_3132q.html"
-    - title: Cisco 3232C 또는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
-      url: "/install-ip/port_usage_3232c_9336c.html"
-    - title: 12포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
-      url: "/install-ip/port-usage-9336c-fx-2-12-port.html"
-    - title: NS224 스토리지를 연결하는 36포트 Cisco 9336C-FX2 스위치에 대한 플랫폼 포트 할당
-      url: "/install-ip/port_usage_9336c_shared.html"
-    - title: Broadcom 지원 BES-53248 IP 스위치에 대한 플랫폼 포트 할당
-      url: "/install-ip/port_usage_bes53248.html"
-    - title: NVIDIA 지원 SN2100 IP 스위치를 위한 플랫폼 포트 할당
-      url: "/install-ip/port_usage_sn2100.html"
+    - title: MetoCluster IP 스위치 케이블 연결
+      url: "/install-ip/cable-mcc-ip-switches.html"
   - title: 컨트롤러 데이터 및 관리 포트에 케이블을 연결합니다
     url: "/install-ip/task_cable_other_connections.html"
   - title: MetroCluster IP 스위치를 구성합니다

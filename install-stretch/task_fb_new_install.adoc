@@ -488,7 +488,7 @@ SAS Port B has been disabled.
 |===
 . MetroCluster 구성을 완료한 후 'flashimages' 명령을 사용하여 FiberBridge 펌웨어 버전을 확인하고 브리지가 지원되는 최신 버전을 사용하지 않는 경우 구성의 모든 브리지에서 펌웨어를 업데이트합니다.
 +
-link:../maintain/index.html["MetroCluster 부품 유지 관리"]
+link:../maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster 유지 관리"]
 
 
 

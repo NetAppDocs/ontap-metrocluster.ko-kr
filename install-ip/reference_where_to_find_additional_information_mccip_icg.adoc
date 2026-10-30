@@ -57,7 +57,7 @@ link:../install-stretch/concept_considerations_differences.html["스트레치 Me
 
 
  a| 
-link:../manage/index.html["MetroCluster 관리"]
+link:../manage/task_perform_switchover_for_tests_or_maintenance.html["테스트 또는 유지 관리를 위한 스위치오버 수행"]
  a| 
 * MetroCluster 구성 이해
 * 전환, 복구, 스위치백
@@ -76,7 +76,7 @@ link:../disaster-recovery/concept_dr_workflow.html["재해 복구"]
 
 
  a| 
-link:../maintain/index.html["MetroCluster 유지 관리"]
+link:../maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster 유지 관리"]
  a| 
 * MetroCluster FC 구성의 유지 관리 지침
 * FC-to-SAS 브리지 및 FC 스위치에 대한 하드웨어 교체 또는 업그레이드 및 펌웨어 업그레이드 절차

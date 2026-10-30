@@ -130,9 +130,108 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 .. '* 시스템 상태 경고 표시*'라는 상태 경고가 없는지 확인하십시오
 
 
+. MetroCluster IP 구성에 MetroCluster IP 스위치에 연결된 NVMe 셸프가 있는 경우 다음 명령을 실행하여 셸프 상태를 확인하십시오.
++
+.. 쉘프 상태를 표시합니다:
++
+`storage shelf show`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing]
+----
+cluster_A::> storage shelf show
+                                                        Module  Operational
+       Shelf Name Shelf ID Serial Number   Model        Type    Status
+----------------- -------- --------------- ------------ ------- -----------
+              1.0        0 952123456789    NS224NSM100  NSM100  Normal
+              1.2        0 952987654321    NS224NSM100  NSM100  Normal
+cluster_A::>
+----
+====
+.. 스위치에 연결된 NVMe 셸프의 셸프 연결을 표시합니다:
++
+`storage shelf show -shelf <shelf_name> -connectivity`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing]
+----
+cluster_A::> storage shelf show -shelf 1.0 -connectivity
+            Shelf Name: 1.0
+             Stack ID: 1
+             Shelf ID: 0
+            Shelf UID: 00:00:00:00:00:00:00:00
+        Serial Number: 952123456789
+          Module Type: NSM100
+                Model: NS224NSM100
+         Shelf Vendor: NETAPP
+           Disk Count: 24
+      Connection Type: NVMe
+          Shelf State: Online
+               Status: Normal
+Paths:
+
+Controller         Initiator Initiator Side Switch Port Target Side Switch Port    Target Port        TPGN
+------------------ --------- -------------------------- -------------------------- ------------------ ------
+cluster_A-01       0x        -                          0x                         05000005abff0000   67
+cluster_A-02       0x        -                          0x                         030f0005abff0000   44
+
+cluster_A::>
+----
+====
+.. 필요한 경우 원격 장치(MetroCluster 스위치) 이름을 수집하십시오:
++
+.예제 표시
+[%collapsible]
+====
+[listing]
+----
+cluster_A::> storage shelf port show -fields remote-device
+
+shelf id remote-device
+----- -- -------------
+1.0   0  IP_switch_A_1
+1.0   1  IP_switch_B_1
+1.0   2  IP_switch_A_2
+1.0   3  IP_switch_B_2
+4 entries were displayed
+----
+====
+.. 스위치에 연결된 NVMe 셸프의 셸프 포트 연결을 표시하십시오:
++
+`storage shelf port show -remote-device <switch name>`
+
++
+.예제 표시
+[%collapsible]
+====
+[listing]
+----
+cluster_A::> storage shelf port show -remote-device IP_switch_A_1
+
+Shelf ID Module State        Internal?
+----- -- ------ ------------ ---------
+1.0
+       1 A      connected    false
+       3 B      connected    false
+1.2
+       1 A      connected    false
+       3 B      connected    false
+4 entries were displayed.
+
+cluster_A::>
+----
+====
+
+
 . 설치하기 전에 새 스위치를 구성합니다.
 +
-기존 스위치를 재사용하는 경우 로 이동합니다 <<existing_step4,4단계>>.
+기존 스위치를 재사용하는 경우 <<existing_disconnect,기존 스위치에서 연결을 해제하는 단계>>(으)로 진행하십시오.
 
 +
 
@@ -142,36 +241,23 @@ NOTE: 스위치를 업그레이드하거나 다운그레이드하는 경우 네�
 스위치 공급업체의 단계를 따르십시오.
 
 +
-** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
-** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]
-** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP 스위치를 구성합니다"]
-+
 스위치_A_1,_A_2,_B_1 또는 _B_2에 올바른 RCF 파일을 적용하십시오. 새 스위치가 이전 스위치와 동일한 경우 동일한 RCF 파일을 적용해야 합니다.
 
 +
 스위치를 업그레이드하거나 다운그레이드하는 경우 새 스위치에 지원되는 최신 RCF 파일을 적용하십시오.
 
++
+** link:../install-ip/task_switch_config_broadcom.html["Broadcom IP 스위치를 구성합니다"]
+** link:../install-ip/task_switch_config_cisco.html["Cisco IP 스위치를 구성합니다"]
+** link:../install-ip/task_switch_config_nvidia.html["NVIDIA IP 스위치를 구성합니다"]
 
 
-. port show 명령을 실행하여 네트워크 포트에 대한 정보를 봅니다.
-+
-'* 네트워크 포트 쇼 * '
-
-+
-.. 자동 되돌리기를 사용하지 않도록 모든 클러스터 LIF 수정:
-+
-[source, cli]
-----
-network interface modify -vserver <vserver_name> -lif <lif_name> -auto-revert false
-----
-.. link:../install-ip/switch-move-cluster-lifs.html["클러스터 LIF 이동"].
+. link:../install-ip/switch-move-cluster-lifs.html["클러스터 LIF 이동"].
 +
 
 NOTE: 스위치는 Switch_A_1, Switch_B_1, Switch_A_2, Switch_B_2 순서로 업데이트해야 합니다. 첫 번째 패브릭(Switch_A_1, Switch_B_1)의 스위치를 구성한 후에는 두 번째 패브릭(Switch_A_2, Switch_B_2)에서 클러스터 LIF를 이동하는 단계를 반복해야 합니다. link:../install-ip/task_install_and_cable_the_mcc_components.html["MetroCluster IP 스위치 구성에 대해 알아보십시오."]을 참조하십시오.
 
-
-
-. [[Existing_step4]] 이전 스위치에서 연결을 끊습니다.
+. [[existing_disconnect]]기존 스위치와의 연결을 해제합니다.
 +
 
 NOTE: 이전 구성과 새 구성에서 동일한 포트를 사용하지 않는 연결만 연결을 끊을 수 있습니다. 새 스위치를 사용하는 경우 모든 연결을 끊어야 합니다.
@@ -191,13 +277,13 @@ NOTE: 이전 구성과 새 구성에서 동일한 포트를 사용하지 않는 
 
 . 새 스위치를 사용하는 경우 이전 스위치를 끄고 케이블을 분리한 다음 기존 스위치를 물리적으로 분리합니다.
 +
-기존 스위치를 재사용하는 경우 로 이동합니다 <<existing_step6,6단계>>.
+기존 스위치를 재사용하는 경우 <<existing_configure,기존 스위치를 구성하는 단계>>(으)로 진행하십시오.
 
 +
 
 NOTE: 관리 인터페이스(사용하는 경우)를 제외하고 새 스위치에 케이블을 연결하지 * 마십시오.
 
-. [[Existing_step6]] 기존 스위치를 구성합니다.
+. [[existing_configure]]기존 스위치를 구성합니다.
 +
 스위치를 이미 사전 구성한 경우 이 단계를 건너뛸 수 있습니다.
 
@@ -224,11 +310,19 @@ link:../install-ip/using_rcf_generator.html["MetroCluster IP 스위치에 케이
 [NOTE]
 ====
 *** 스위치 유형이 다른 경우 사용된 포트는 이전 스위치의 포트와 다를 수 있습니다. 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL에 케이블을 연결하지 * 마십시오. 두 번째 네트워크의 스위치를 업그레이드 또는 다운그레이드하는 경우 로컬 ISL과 한 사이트의 두 스위치가 동일한 유형과 케이블인 경우에만 로컬 ISL에 케이블을 연결하십시오.
-*** Switch-A1 및 Switch-B1을 업그레이드하는 경우 Switch-A2 및 Switch-B2에 대해 1단계에서 6단계까지 수행해야 합니다.
 
 
 ====
 
+
+. 스위치 또는 스위치의 전원을 켭니다.
++
+새 스위치가 기존 스위치와 동일한 경우 새 스위치의 전원을 켜십시오. 스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켜십시오.
+
+. 첫 번째 패브릭(Switch_A_1 및 Switch_B_1)을 업데이트한 후 두 번째 패브릭(Switch_A_2 및 Switch_B_2)에 대해 이전 단계를 반복하십시오.
++
+
+NOTE: 고장난 스위치를 동일한 유형의 스위치로 교체하는 경우, 고장난 스위치만 업데이트하면 되며 두 번째 패브릭에 대해 동일한 단계를 반복할 필요가 없습니다.
 
 . 로컬 클러스터 케이블 연결을 마칩니다.
 +
@@ -244,18 +338,7 @@ link:../install-ip/using_rcf_generator.html["MetroCluster IP 스위치에 케이
 
 
 
-. 스위치 또는 스위치의 전원을 켭니다.
-+
-새 스위치가 기존 스위치와 동일한 경우 새 스위치의 전원을 켜십시오.  스위치를 업그레이드하거나 다운그레이드하는 경우 두 스위치의 전원을 모두 켜십시오.  두 번째 패브릭이 업데이트될 때까지 각 사이트에서 서로 다른 두 개의 스위치를 사용하여 구성을 운영할 수 있습니다.
-
 . MetroCluster 구성이 정상인지 확인하려면 이 과정을 반복합니다 <<all_step1,1단계>>.
-+
-첫 번째 패브릭의 스위치를 업그레이드하거나 다운그레이드하는 경우 로컬 클러스터링과 관련된 경고가 표시될 수 있습니다.
-
-+
-
-NOTE: 패브릭을 업그레이드하거나 다운그레이드하는 경우, 두 번째 패브릭에 대해서도 모든 단계를 반복하십시오.
-
 . 클러스터의 모든 LIF를 홈 포트로 되돌립니다.
 +
 
@@ -285,3 +368,6 @@ NS224 셸프를 MetroCluster IP 스위치에 연결하지 않는 MetroCluster IP
 
 
 
+
+.작업을 마친 후
+link:../install-ip/task-configure-log-collection-mccip.html["MetroCluster IP 스위치에서 로그 수집 구성"]

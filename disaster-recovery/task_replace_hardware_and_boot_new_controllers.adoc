@@ -40,7 +40,7 @@ MetroCluster FC 구성의 FC 스위치
 .. 새 스위치를 장착하십시오.
 .. ISL 링크에 케이블을 연결합니다. 지금은 FC 스위치의 전원을 켤 수 없습니다.
 
-| link:../maintain/index.html["MetroCluster 부품 유지 관리"] 
+| link:../maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster 부품 유지 관리"] 
 
 
  a| 

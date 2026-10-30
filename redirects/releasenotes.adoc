@@ -1,0 +1,8 @@
+---
+permalink: releasenotes.html 
+redirect: ontap-metrocluster/releasenotes/mcc-new-features.html 
+---
+= 
+:allow-uri-read: 
+
+

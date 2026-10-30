@@ -140,6 +140,10 @@ e4b       Cluster      Cluster          up   9000  auto/40000 healthy  false
 ====
 .. 모든 클러스터 인터페이스(LIF)가 홈 포트에 있는지 확인합니다.
 +
+
+NOTE: 첫 번째 패브릭의 스위치를 이미 업데이트한 후 두 번째 패브릭의 스위치에 대해 이 절차를 반복하는 경우 이 단계를 건너뛸 수 있습니다.
+
++
 `network interface show -role cluster`
 
 +
@@ -192,6 +196,50 @@ IP_switch_A_2               cluster-network    10.231.7.252     N9K-C9336C-FX2
     Version Source: CDP/ISDP
 
 2 entries were displayed.
+
+cluster_A::*>
+----
+====
+.. MetroCluster IP 연결을 확인합니다.
++
+세트 프리빌리지 고급
+
++
+'Storage iSCSI-initiator show'를 선택합니다
+
++
+.예제 표시
+[%collapsible]
+====
+[listing]
+----
+cluster_A::*> storage iscsi-initiator show
+                                                                       Status
+Node Type Label    Target Portal      Target Name                      Admin/Op
+---- ---- -------- ------------------ -------------------------------- --------
+cluster_A-01
+     dr_auxiliary
+          mccip-aux-a-initiator 172.16.1.104:65200 iqn.2016-06.com.company:aux1a1b2c up/up
+          mccip-aux-a-initiator2 172.16.1.104:65200 iqn.2016-07.com.company:aux1a1b2c up/up
+          mccip-aux-b-initiator 172.16.2.104:65200 iqn.2016-06.com.company:aux1a1b2c up/up
+          mccip-aux-b-initiator2 172.16.2.104:65200 iqn.2016-07.com.company:aux1a1b2c up/up
+     dr_partner
+          mccip-pri-a-initiator 172.16.1.103:65200 iqn.2016-06.com.company:pri1d4e5f up/up
+          mccip-pri-a-initiator2 172.16.1.103:65200 iqn.2016-07.com.company:pri1d4e5f up/up
+          mccip-pri-b-initiator 172.16.2.103:65200 iqn.2016-06.com.company:pri1d4e5f up/up
+          mccip-pri-b-initiator2 172.16.2.103:65200 iqn.2016-07.com.company:pri1d4e5f up/up
+cluster_A-02
+     dr_auxiliary
+          mccip-aux-a-initiator 172.16.1.103:65200 iqn.2016-06.com.company:aux1d4e5f up/up
+          mccip-aux-a-initiator2 172.16.1.103:65200 iqn.2016-07.com.company:aux1d4e5f up/up
+          mccip-aux-b-initiator 172.16.2.103:65200 iqn.2016-06.com.company:aux1d4e5f up/up
+          mccip-aux-b-initiator2 172.16.2.103:65200 iqn.2016-07.com.company:aux1d4e5f up/up
+     dr_partner
+          mccip-pri-a-initiator 172.16.1.104:65200 iqn.2016-06.com.company:pri1a1b2c up/up
+          mccip-pri-a-initiator2 172.16.1.104:65200 iqn.2016-07.com.company:pri1a1b2c up/up
+          mccip-pri-b-initiator 172.16.2.104:65200 iqn.2016-06.com.company:pri1a1b2c up/up
+          mccip-pri-b-initiator2 172.16.2.104:65200 iqn.2016-07.com.company:pri1a1b2c up/up
+18 entries were displayed.
 
 cluster_A::*>
 ----
