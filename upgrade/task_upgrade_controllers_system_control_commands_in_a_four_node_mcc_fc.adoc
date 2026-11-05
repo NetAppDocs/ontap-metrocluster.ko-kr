@@ -360,6 +360,9 @@ cluster_B::*
 전환을 시작하기 전에 자동화 작업이 일시 중지되므로 사이트 B에서 모든 LIF가 ""가동""인지 수동으로 확인할 수 있습니다 필요한 경우 'down'인 LIF를 'up'으로 가져가 'system controller replace resume' 명령을 사용하여 자동화 작업을 다시 시작합니다.
 
 
+NOTE: 전환 작업을 수행하기 전에 link:../manage/switchover-limitations.html["MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다"]을(를) 검토하십시오.
+
+
 
 [[prepare-the-network-configuration-of-the-old-controllers]]
 === 이전 컨트롤러의 네트워크 구성을 준비합니다

@@ -2936,12 +2936,24 @@ mcc4-b2      mlx4_0          IB      Up     false     192.0.2.10  	ib2b
 스위치와 ONTAP 시스템의 인증 및 개인 정보 보호 프로토콜은 동일해야 합니다.
 
 .이 작업에 대해
-ONTAP는 현재 개인 정보 보호(암호화)를 위해 AES-128을, 인증을 위해 SHA-256을 지원합니다.
+* ONTAP 9.20.1부터 ONTAP은 SNMP 인증에 SHA-512를 지원합니다.
+* ONTAP은 SNMP 인증 및 암호화를 위해 다음 프로토콜을 지원합니다:
++
+** 개인 정보 보호(암호화): AES-128
+** 인증:
++
+*** SHA-512 (ONTAP 9.20.1부터)
+*** SHA-256
+
+
+
+
+
 
 [CAUTION]
 ====
-* Fabric OS 10.x 이상 버전에서 Brocade는 SNMP 인증에 SHA-512만 지원합니다. ONTAP는 현재 SHA-512를 지원하지 않으며, SHA-256만 지원합니다.
-* MetroCluster FC 스위치가 Fabric OS 10.x 이상 버전을 실행 중인 경우 SNMP를 구성할 수 없으며 해당 스위치를 ONTAP 상태 모니터링에 추가할 수 없습니다. 스위치 펌웨어를 다운그레이드하려면 link:../maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html["Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다"]의 단계를 따르십시오.
+* Fabric OS 10.x 이상 버전에서 Brocade는 SNMP 인증에 SHA-512만 지원합니다.
+* 9.20.1 이전의 ONTAP 버전을 실행 중이고 MetroCluster FC 스위치가 Fabric OS 10.x 이상을 실행 중인 경우, SNMP를 구성할 수 없으며 해당 스위치를 ONTAP 상태 모니터링에 추가할 수 없습니다. 스위치 펌웨어를 다운그레이드하려면 link:../maintain/task_upgrade_or_downgrad_the_firmware_on_a_brocade_fc_switch_mcc.html["Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이드합니다"]의 단계를 따르십시오.
 
 
 ====
@@ -2961,12 +2973,15 @@ Controller_A_1::> security login create -user-or-group-name snmpv3user -applicat
 NOTE: EngineID의 경우 *ENTER*를 눌러 기본값을 지정합니다.
 
 +
+다음 출력은 예시일 뿐이며, 사용 환경에서 지원되는 설정을 선택해야 합니다.
+
++
 [listing]
 ----
 
 Enter the authoritative entity's EngineID [remote EngineID]:
 
-Which authentication protocol do you want to choose (none, md5, sha, sha2-256) [none]: sha
+Which authentication protocol do you want to choose (none, md5, sha, sha2-256, sha512) [none]: sha512
 
 Enter the authentication protocol password (minimum 8 characters long):
 

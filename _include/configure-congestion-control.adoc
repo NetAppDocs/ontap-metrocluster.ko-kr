@@ -1,0 +1,171 @@
+= 혼잡 제어 활성화
+:allow-uri-read: 
+
+
+ONTAP 9.20.1부터 MetroCluster IP 구성에서 WAN ISL(Inter-Switch Link) 혼잡 제어를 활성화할 수 있습니다. 이를 통해 10Gbps, 25Gbps 또는 40Gbps 등 낮은 대역폭이나 혼합 대역폭으로 실행되는 ISL을 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼과 함께 사용할 수 있습니다.
+
+100Gbps 어댑터에서 생성된 복제 트래픽은 링크 속도가 더 낮은 ISL을 초과하여 스위치 버퍼 압력, PAUSE 백프레셔, 패킷 손실 및 잠재적인 복제 불안정성을 유발할 수 있습니다. WAN ISL 혼잡 제어는 ISL 대역폭과 노드 수를 사용하여 아웃바운드 처리량 상한값을 계산함으로써 이러한 문제를 해결합니다. 이 상한값은 아웃바운드 처리량 임계값 역할을 하여 상호 연결 전송 트래픽을 제어합니다. 측정된 아웃바운드 처리량이 계산된 상한값을 초과하면 전송이 거부되어 상호 연결 네트워크에서 아웃바운드 처리량 임계값이 적용됩니다.
+
+
+CAUTION: WAN ISL 혼잡 제어를 구성한다고 해서 더 낮은 대역폭 ISL을 사용할 때 발생할 수 있는 성능 문제가 발생하지 않는다는 보장은 *없습니다*. NetApp은 최적의 성능을 위해 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.
+
+.이 작업에 대해
+* MetroCluster IP 구성은 ONTAP 9.20.1 이상을 실행해야 합니다.
+* WAN ISL 혼잡 제어는 기본적으로 비활성화되어 있으며 명시적으로 활성화해야 합니다.
+* 다음과 같은 상황에서는 NetApp 지원팀에 문의하여 이 기능을 구성해야 합니다:
++
+** 해당 기능을 활성화하거나 새로 고침할 때 ISL 정보를 자동으로 가져올 수 없는 경우
+** 만약 두 개의 4노드 MetroCluster IP 구성이 동일한 스위치에 연결되어 있다면
+** 해당 기능을 활성화한 후 계산된 상한값을 수정해야 하는 경우
+
+
+* 혼잡 제어를 활성화한 후 토폴로지가 변경되면 새로운 상한값을 계산하기 위해 혼잡 제어 구성을 새로 고쳐야 합니다. 예를 들어, ISL의 개수 또는 속도가 변경되거나 MetroCluster IP 구성에 새 노드를 추가하는 경우입니다.
+* 각 사이트는 독립적으로 상한값을 계산합니다. 로컬 사이트에서  `metrocluster interconnect congestion-control enable` 명령을 실행하면 다음과 같은 작업이 수행됩니다:
++
+** 로컬 사이트가 상한을 준비하고 계산합니다.
+** 파트너 사이트는 명령이 실행되는 로컬 사이트와는 별도로 상한값을 준비하고 계산합니다. 기술적으로 가능성은 낮지만, 로컬 사이트와 파트너 사이트에서 서로 다른 상한값이 계산될 수 있습니다. 이는 예상되는 동작이며 오류나 잘못된 구성을 의미하는 것은 아닙니다.
+** 각 사이트는 계산된 값을 원하는 상태로 기록하고, 커널은 이를 적용합니다.
+
+
+* WAN ISL 혼잡 제어는 활성화되면 자동으로 작동합니다.
+
+
+
+
+[[enable-congestion-control]]
+== 혼잡 제어 활성화
+
+WAN ISL 혼잡 제어를 활성화하려면 로컬 클러스터에서 다음 단계를 완료하십시오.
+
+
+CAUTION: 동일한 스위치에 연결된 두 개의 4노드 MetroCluster IP 구성이 있는 경우, 이 기능을 활성화하려면 NetApp 지원팀에 문의하십시오.
+
+.단계
+. cluster_A에서 WAN ISL 혼잡 제어를 활성화합니다:
++
+[source, cli]
+----
+metrocluster interconnect congestion-control enable
+----
++
+명령 실행 중  `MCC_CC_ISL_INFO_UNAVAILABLE` 오류가 발생하면 ISL 정보를 자동으로 가져올 수 없으므로 NetApp 지원팀에 문의하여 이 기능을 활성화해야 합니다.
+
+. WAN ISL 혼잡 제어가 활성화되어 있는지 확인하십시오:
++
+[source, cli]
+----
+metrocluster interconnect congestion-control show
+----
++
+[listing]
+----
+cluster_A::> metrocluster interconnect congestion-control show
+
+Node            Enabled Ceiling (MiB/s)
+--------------- ------- ---------------
+cluster_A-01    true    1250
+cluster_A-02    true    1250
+2 entries were displayed.
+----
+
+
+
+NOTE: 이 기능을 활성화한 후 계산된 상한값을 수정해야 하는 경우 NetApp 지원팀에 문의하십시오.
+
+
+
+[[refresh-congestion-control]]
+== 혼잡 제어 새로 고침
+
+WAN ISL 혼잡 제어 구성을 새로 고치려면 로컬 클러스터에서 다음 단계를 완료하십시오. ISL의 개수나 속도가 변경되거나 MetroCluster IP 구성에 새 노드가 추가되는 등 토폴로지가 변경될 때마다 혼잡 제어 구성을 새로 고쳐야 합니다.
+
+.단계
+. cluster_A에서 WAN ISL 혼잡 제어 구성을 새로 고치십시오.
++
+[source, cli]
+----
+metrocluster interconnect congestion-control refresh
+----
++
+ONTAP은 현재 네트워크 상태를 기반으로 새로운 상한값을 계산하고 자동으로 적용합니다.
+
++
+명령이  `MCC_CC_ISL_INFO_UNAVAILABLE` 오류로 인해 실패하면 ISL 정보를 자동으로 가져올 수 없으므로 NetApp 지원팀에 문의하여 구성을 새로 고쳐야 합니다.
+
+
+
+
+
+[[monitor-wan-isl-congestion-control-activity]]
+== WAN ISL 혼잡 제어 활동을 모니터링합니다
+
+다음 명령어를 사용하여 혼잡 제어가 예상대로 작동하는지 확인할 수 있습니다:
+
+[source, cli]
+----
+metrocluster interconnect congestion-control show
+----
+활성화된 경우 출력은 다음 예와 유사해야 합니다:
+
+[listing]
+----
+cluster_A::> metrocluster interconnect congestion-control show
+
+Node            Enabled Ceiling (MiB/s)
+--------------- ------- ---------------
+cluster_A-01    true    1250
+cluster_A-02    true    1250
+2 entries were displayed.
+----
+ `-instance` 매개변수를 사용하여 각 노드에 대한 더 자세한 정보를 볼 수도 있습니다:
+
+[source, cli]
+----
+metrocluster interconnect congestion-control show -instance
+----
+[listing]
+----
+cluster_A::> metrocluster interconnect congestion-control show -instance
+
+                        Node Name: cluster_A-01
+       Congestion Control Enabled: true
+       Throughput Ceiling (MiB/s): 1250
+
+                        Node Name: cluster_A-02
+       Congestion Control Enabled: true
+       Throughput Ceiling (MiB/s): 1250
+2 entries were displayed.
+----
+
+
+[[disable-congestion-control]]
+== 혼잡 제어 비활성화
+
+.단계
+. cluster_A에서 WAN ISL 혼잡 제어를 비활성화합니다:
++
+[source, cli]
+----
+metrocluster interconnect congestion-control disable
+----
+. 해당 기능이 비활성화되어 있는지 확인하십시오:
++
+[source, cli]
+----
+metrocluster interconnect congestion-control show
+----
++
+출력 결과는 다음 예시와 유사해야 합니다.
+
++
+[listing]
+----
+cluster_A::> metrocluster interconnect congestion-control show
+
+Node            Enabled Ceiling (MiB/s)
+--------------- ------- ---------------
+cluster_A-01    false   -
+cluster_A-02    false   -
+2 entries were displayed.
+----
+

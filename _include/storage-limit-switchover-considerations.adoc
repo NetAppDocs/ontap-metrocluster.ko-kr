@@ -1,0 +1,23 @@
+= 
+:allow-uri-read: 
+
+
+ONTAP 9.20.1부터 MetroCluster IP 구성의 일부인 SVM에 대해 스토리지 제한을 구성할 수 있습니다.
+
+
+CAUTION: MetroCluster 구성이  https://hwu.netapp.com/["Hardware Universe"^]에 나열된 플랫폼 제한을 초과하지 않도록 해야 합니다.
+
+* 정상 작동 중(전환 중이 아닌 경우)에는 *동기화 소스 SVM*에서만 스토리지 제한 구성을 변경할 수 있습니다. *동기화 대상 SVM*에서는 스토리지 제한을 활성화, 비활성화 또는 수정할 수 없습니다.
+* 전환 과정 중에는 *동기화 대상 SVM*에 다음과 같은 제한 사항이 적용됩니다:
++
+**  `vserver modify -storage-limit` 명령어를 사용하여 동기화 대상 SVM의 스토리지 제한을 활성화 또는 비활성화할 수 없습니다. 즉, 값을 0에서 0이 아닌 값으로 변경하거나 0이 아닌 값에서 0으로 변경할 수 없습니다. 다음 오류가 발생하며 명령이 실패합니다:
++
+`This operation is not permitted on a Vserver that is configured as the destination of a MetroCluster Vserver relationship`
+
+** 여전히 스토리지 제한을 0이 아닌 한 값에서 다른 값으로(예: 100TB에서 200TB로) 변경할 수 있습니다. 이 새로운 값은 스위치백 후에도 유지됩니다.
+** 저장 용량 제한을 활성화 또는 비활성화하려면 스위치백이 완료될 때까지 기다린 후 *동기화 소스 SVM*에서 변경하십시오. 그러면 해당 값이 동기화 대상 SVM으로 복제됩니다.
+
+
+
+
+자세한 내용은 link:https://docs.netapp.com/us-en/ontap/volumes/manage-svm-capacity.html["ONTAP SVM 용량 관리"^]을(를) 참조하십시오

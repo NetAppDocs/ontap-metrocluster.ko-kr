@@ -16,9 +16,9 @@ Brocade FC 스위치에서 펌웨어를 업그레이드하거나 다운그레이
 .시작하기 전에
 이 절차를 사용하기 전에 다음 정보를 주의 깊게 검토하십시오.
 
-* Fabric OS 10.x부터 Brocade는 SNMP 인증에 SHA-512만 지원합니다. ONTAP는 현재 SHA-512를 지원하지 않으며, SHA-256만 지원합니다.
+* ONTAP 9.20.1부터 ONTAP은 SNMP 인증에 SHA-512를 지원합니다. Fabric OS 10.x 이상에서 Brocade는 SNMP 인증에 SHA-512만 지원합니다.
 +
-MetroCluster FC 스위치 펌웨어를 Fabric OS 10.x로 업그레이드하면 ONTAP에서 SNMP 모니터링 가시성이 손실됩니다. 이로 인해 문제 해결 시 위험이 증가하고 사전 예방적 알림 기능이 상실됩니다.
+9.20.1 이전의 ONTAP 버전을 실행 중이고 MetroCluster FC 스위치 펌웨어를 Fabric OS 10.x로 업그레이드하는 경우, ONTAP에서의 SNMP 모니터링 가시성이 손실됩니다. 이로 인해 문제 해결 시 위험이 증가하고 사전 예방적 알림 기능을 사용할 수 없게 됩니다.
 
 +
 Fabric OS 10.x로 업그레이드하거나 이전 버전으로 다운그레이드하는 경우, link:https://techdocs.broadcom.com/us/en/fibre-channel-networking/fabric-os/fabric-os-software-upgrade/10-0-x/Upgrading-and-Downgrading-Firmware/v24512876.html["Brocade Fabric OS 소프트웨어 업그레이드 가이드, 10.0.x - 업그레이드 또는 다운그레이드 필수 조건"^]에 명시된 필수 작업을 수행해야 합니다.

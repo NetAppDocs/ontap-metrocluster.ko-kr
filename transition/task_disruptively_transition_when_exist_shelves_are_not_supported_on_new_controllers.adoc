@@ -149,6 +149,9 @@ image::../media/transition_2n_unsupported_old_new_shelves_to_old_controllers.png
 .이 작업에 대해
 이 작업은 기존 노드(node_A_1-FC 및 node_B_1-FC)에서 전환 전에 수행됩니다.
 
+
+NOTE: 전환 작업을 수행하기 전에 link:../manage/switchover-limitations.html["MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다"]을(를) 검토하십시오.
+
 .단계
 . 컨트롤러 노드_B_1-FC에서 협상된 전환 수행:
 +

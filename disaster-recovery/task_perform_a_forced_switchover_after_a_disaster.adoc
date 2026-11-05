@@ -55,6 +55,9 @@ summary: 재해가 발생한 경우, 안전한 지속적인 데이터 서비스�
 .이 작업에 대해
 MetroCluster switchover 명령은 MetroCluster 구성에서 모든 DR 그룹의 노드를 전환합니다. 예를 들어, 8노드 MetroCluster 구성에서는 두 DR 그룹 모두에서 노드를 전환합니다.
 
+
+NOTE: 전환 작업을 수행하기 전에 link:../manage/switchover-limitations.html["MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다"]을(를) 검토하십시오.
+
 .단계
 . 작동 중인 사이트에서 다음 명령을 실행하여 전환을 수행합니다.
 +

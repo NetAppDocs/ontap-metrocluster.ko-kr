@@ -24,6 +24,9 @@ summary: 사이트_B의 플랫폼을 업그레이드할 수 있도록 구성을 
 
 image::../media/mcc_upgrade_cluster_a_in_switchover.png[에는 cluster_A가 업그레이드 준비 상태이고 cluster_B가 전환 중임을 보여 줍니다]
 
+
+NOTE: 전환 작업을 수행하기 전에 link:../manage/switchover-limitations.html["MetroCluster 구성이 스위치오버 상태일 때 제한 사항이 있습니다"]을(를) 검토하십시오.
+
 .단계
 . site_B의 노드를 업그레이드할 수 있도록 MetroCluster 구성을 site_A로 전환합니다.
 +

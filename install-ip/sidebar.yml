@@ -23,7 +23,7 @@ entries:
       url: "/install-ip/overview-isl-requirements.html"
     - title: NetApp의 검증된 MetroCluster 호환 스위치
       url: "/install-ip/mcc-compliant-netapp-validated-switches.html"
-    - title: ISL에 대한 고려 사항
+    - title: ISL 요구사항
       url: "/install-ip/concept-requirements-isls.html"
     - title: 공유 계층 2 또는 계층 3 네트워크에서 MetroCluster를 배포할 때 고려해야 할 사항
       url: "/install-ip/concept-considerations-layer-2-layer-3.html"
@@ -111,6 +111,8 @@ entries:
       url: "/install-ip/task_sw_config_setup_ontap.html"
     - title: 클러스터를 MetroCluster 구성으로 구성합니다
       url: "/install-ip/task_sw_config_configure_clusters.html"
+    - title: WAN ISL 혼잡 제어를 구성합니다
+      url: "/install-ip/mcc-congestion-control.html"
     - title: 엔드 투 엔드 암호화 구성
       url: "/install-ip/task-configure-end-to-end-encryption.html"
     - title: MetroCluster Tiebreaker 또는 ONTAP 중재자 소프트웨어를 구성합니다

@@ -11,7 +11,7 @@ summary: 전환을 수행하기 전에 MetroCluster 구성의 상태와 연결�
 
 
 [role="lead"]
-전환을 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다
+전환을 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다.
 
 . ONTAP에서 MetroCluster 구성 작동을 확인합니다.
 +

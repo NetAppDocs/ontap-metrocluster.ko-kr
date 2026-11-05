@@ -136,4 +136,5 @@ Po10         1       eth  trunk  up      none                                a-1
 Po11         1       eth  trunk  up      none                                a-100G(D)  lacp
 ----
 . 패브릭 2에 대해 이 절차를 반복합니다.
+. MetroCluster IP 구성에 WAN ISL 혼잡 제어가 활성화되어 있는 경우 다음을 수행해야 합니다link:mcc-congestion-control.html#refresh-congestion-control["WAN ISL 혼잡 제어 구성 새로 고침"].
 

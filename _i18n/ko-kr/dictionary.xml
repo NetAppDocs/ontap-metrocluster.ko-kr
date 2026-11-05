@@ -2010,7 +2010,6 @@
   <block id="626b3d2c42e820bd7603e0a6c34ff781" category="paragraph">시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="84e33342856c02e8a00ad96f47bd4d9f" category="list-text">파트너 클러스터에서 명령을 반복합니다.</block>
   <block id="4e5a537b8c607f643edade164e02faa8" category="section-title">MetroCluster 구성 상태 확인</block>
-  <block id="7e309551053b69f5958f1afe31e831e8" category="paragraph">전환을 수행하기 전에 MetroCluster 구성의 상태와 연결을 확인해야 합니다</block>
   <block id="46ab1094509f05c492019af70dffd16d" category="list-text">ONTAP에서 MetroCluster 구성 작동을 확인합니다.</block>
   <block id="ec11092b67907b66d4042a24bc8b71b3" category="list-text">시스템에 다중 경로 가 있는지 확인합니다.</block>
   <block id="bb8ad4609bcc62e85b4c9841b8d5f950" category="paragraph">'node run-node_node-name_sysconfig-a'</block>
@@ -4892,7 +4891,6 @@
   <block id="c369341ccc89aad1e1569332438aa1e5" category="list-text">2노드 MetroCluster 구성의 경우 사이트 간에 ONTAP 버전이 일치하지 않으면 업그레이드 중에 새 SnapMirror 관계를 생성할 수 없습니다.</block>
   <block id="32a4cec6ab545198e79242b4efb511f3" category="list-text">4노드 MetroCluster 구성의 경우 사이트 간에 일치하지 않는 버전의 ONTAP는 지원되지 않습니다.</block>
   <block id="ad1d6bb21f0b5685cee7adcfd5ad6868" category="paragraph">복구 사이트에서 스위치백 작업을 수행하는 데 몇 시간이 걸릴 수 있습니다.</block>
-  <block id="00d5e4814bf92d74ea337d68dfb3deb1" category="paragraph">MetroCluster switchover 명령은 MetroCluster 구성의 모든 DR 그룹에 있는 노드로 전환합니다. 예를 들어, 8노드 MetroCluster 구성에서는 두 DR 그룹 모두에서 노드를 전환합니다.</block>
   <block id="1182d19c2133592c2e9e582dd47980d0" category="paragraph">협상된 전환을 준비 및 실행하는 동안 클러스터의 구성을 변경하거나 테이크오버 또는 반환 작업을 수행하지 않아야 합니다.</block>
   <block id="5ce38fe28491ec25ef9ecbb7fe504c76" category="paragraph">MetroCluster FC 구성의 경우:</block>
   <block id="987bd14ccee814faff14f7fac931ab4d" category="list-text">MetroCluster check run, MetroCluster check show 및 MetroCluster check config-replication show 명령을 사용하여 진행 중이거나 보류 중인 구성 업데이트가 없는지 확인하십시오. 사이트에서 작동 중인 명령을 실행합니다.</block>
@@ -9407,7 +9405,6 @@
   <block id="411fd118744e7bc163c41845c9fedb88" category="paragraph">'스토리지 페일오버 반환</block>
   <block id="c9616da62905adb15396b653b4d8475b" category="paragraph">클러스터 피어링을 다시 구성해야 할 수 있습니다.</block>
   <block id="6feea37f7c9ba85a19752c43872c3438" category="inline-link-macro">유지보수 작업을 수행하기 전에 ONTAP 중재자 또는 Tiebreaker 모니터링을 제거합니다</block>
-  <block id="c53469c0e05ec04d4c7bf601859fd9fb" category="admonition">유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.<block ref="a0ba112c9c0ab9c29c24131f966b9b69" category="inline-link-macro-rx"></block></block>
   <block id="5713f2c18fca6cff15f3222aca93a2a6" category="summary">Tiebreaker 또는 중재자 모니터링 소프트웨어를 사용하는 구성에는 유지보수 전에 소프트웨어가 구성되지 않아야 합니다</block>
   <block id="4a397091a3693a57176ee396010387ca" category="paragraph">유지보수 작업을 수행하기 전에 Tiebreaker 또는 중재자 유틸리티를 사용하여 MetroCluster 구성을 모니터링하는 경우 모니터링을 제거해야 합니다.</block>
   <block id="65e494c11bd4a371acff4afdb4808d87" category="paragraph">유지보수 작업으로는 컨트롤러 플랫폼 업그레이드, ONTAP 업그레이드, 협상된 전환 및 스위치백 수행이 있습니다.</block>
@@ -11208,7 +11205,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="a6c37e682cfc0729046dd2e498ad461c" category="list-text"><block ref="ef78584b865ab255d612a5aa6725b10d" category="inline-xref-macro-rx"></block></block>
   <block id="4d8d9056b62fc01f5cd3f0898c551fde" category="section-title">플랫폼 지원</block>
   <block id="9b6c50e7cbf80c446a0078ceb63104d0" category="section-title">스위치 지원</block>
-  <block id="9342c35c4399c8e6faf7c07d8bae26c5" category="paragraph">ONTAP MetroCluster 구성에 영향을 주는 알려진 문제, 제한 사항 및 업그레이드 주의 사항에 대한 자세한 내용은 를 참조하십시오<block ref="6e7f74aa9001f0524a965144f528bbc2" category="inline-link-rx"></block>. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.</block>
   <block id="ab67c4c2b9b0f6070e68d79d3a0b6c63" category="cell">ONTAP 중재자 기능</block>
   <block id="5793a46a4020e2b9d210afaa14008d67" category="paragraph">환경 종료 시 중재자 지원 자동 계획되지 않은 전환(MAUSO)이 지원됩니다.</block>
   <block id="de09b0e8b75c62ac84c620713e05647b" category="paragraph">공유 스토리지 스위치를 사용하여 MetroCluster FC에서 MetroCluster IP 구성으로 중단 없이 전환할 수 있습니다.</block>
@@ -13668,7 +13664,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="1acb751c22e164e9d61c762caf509e82" category="paragraph">이 절차에서 사용된 예: controller_B_2</block>
   <block id="eccb3ce2fe6ad5d172a57438aae17dae" category="doc">각 MetroCluster FC 노드에 미러링된 데이터 애그리게이트를 생성합니다</block>
   <block id="b68398936049bd282794c33831e2aea9" category="paragraph">MetroCluster IP 구성에서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 사용한 AFF A70에서 AFF A90 및 FAS70에서 FAS90 시스템 업그레이드 지원.</block>
-  <block id="2691309e1710cb6a0083f4722ac33e8d" category="admonition">현재 100Gbps ISL 요구 사항을 충족하지 않는 플랫폼의 ONTAP 9.18.1 이상 버전으로의 업그레이드는 차단되지 않으며 진행할 수 있습니다. 그러나 NetApp은 예상되는 성능 및 가용성 수준을 유지하기 위해 고객이 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.</block>
   <block id="2424b4c07e55bece1d1a95007a6782a8" category="list-text">패브릭당 최소 1개의 10Gbps ISL 포트가 있어야 합니다.</block>
   <block id="925adb23a78386992d24bff6e6e1b4e2" category="list-text">NS224 스토리지를 연결하는 Cisco 9336C-FX2 스위치를 케이블로 연결할 때 최대 2개의 MetroCluster 구성 또는 DR 그룹만 사용할 수 있습니다. 최소 하나의 MetroCluster 구성 또는 DR 그룹은 NS224 쉘프를 MetroCluster 스위치에 연결해야 합니다.</block>
   <block id="2b4028f1ab41ecd91ee89bedc51fffa6" category="list-text">스위치 연결 NS224 스토리지를 지원하지 않는 일반 MetroCluster 구성을 확장하고 스위치 연결 NS224 스토리지가 있는 MetroCluster 구성을 추가하려는 경우 다음 정보를 검토하십시오.</block>
@@ -13699,7 +13694,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d57bb94baa67d066f16fc9fc5b6def7e" category="list-text">네트워크 이중화 프로토콜(예: HSRP 또는 VRRP)이나 루프 방지 프로토콜(예: STP)을 사용하고 있습니다.</block>
   <block id="29c1e5df7e26dbc34a0230732d8e3a0c" category="list-text">네트워크 재수렴 시간(예: 라우팅 프로토콜 안정화 또는 재선출 후 HSRP/VRRP 활성화)은 기본 시간 초과인 10초를 초과할 수 있습니다.</block>
   <block id="fdee122f655bcc29473b91ef1ae580b7" category="paragraph">이러한 요구 사항은 모든 MetroCluster IP 구성의 ISL에 적용됩니다.</block>
-  <block id="c3dce11df95ca3b74ddf51996b7b87e2" category="list-text">ONTAP 9.18.1부터 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼은 최소 100Gbps의 ISL 링크 속도가 필요합니다. 다른 ISL 속도를 사용하려면 FPVR(Feature Policy Variance Request)이 필요합니다. FPVR을 제출하려면 NetApp 영업 팀에 문의하십시오.</block>
   <block id="3f6fd3cf871a70252cd684eb0d12b602" category="paragraph">유지보수 또는 이전 작업을 시작하기 전에 전체 MetroCluster IP 구성과 모든 장비의 전원을 끄십시오.</block>
   <block id="a79e1c21f0beaf2ed51b7aec418f4f70" category="list-text">양쪽 사이트에서 MetroCluster 구성을 확인하십시오.</block>
   <block id="108a4ad72df5c318a77dad90928d8770" category="admonition">MetroCluster IP 구성에서 ONTAP Mediator를 사용하는 구성이 아닌 경우 AUSO 장애 도메인은 이미 'auso-disabled'로 설정되어 있습니다.</block>
@@ -13873,14 +13867,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="ded8f2620d58acfd69775bc49e48b168" category="list-text">admin SVM에서 암호화가 활성화된 경우 키 관리 구성에 적합한 명령을 사용하여 키를 복원합니다.</block>
   <block id="594c07221c5565837dffd5ce4580e7bb" category="admonition">The<block ref="e7acb1ae14be0e5233d619851263fdae" prefix=" " category="inline-code"></block> 명령어의 출력 결과는 플랫폼 모델에 따라 다를 수 있습니다. 예를 들어, 일부 플랫폼에서는 HA 파트너 관련 항목이 출력에 표시되지 않을 수 있습니다.</block>
   <block id="2348f32e5e421ab4ef22af7e7810041e" category="section-title">MetroCluster FC 구성에서 SNMPv3 구성하기</block>
-  <block id="f72f4581559ba331ae5b793ab29d815a" category="paragraph">ONTAP는 현재 개인 정보 보호(암호화)를 위해 AES-128을, 인증을 위해 SHA-256을 지원합니다.</block>
-  <block id="44a800928beee85aed0fba3a92f2408a" category="list-text">Fabric OS 10.x 이상 버전에서 Brocade는 SNMP 인증에 SHA-512만 지원합니다. ONTAP는 현재 SHA-512를 지원하지 않으며, SHA-256만 지원합니다.</block>
-  <block id="f02ccf6c395105226a61800f93771185" category="list-text">MetroCluster FC 스위치가 Fabric OS 10.x 이상 버전을 실행 중인 경우 SNMP를 구성할 수 없으며 해당 스위치를 ONTAP 상태 모니터링에 추가할 수 없습니다. 스위치 펌웨어를 다운그레이드하려면 <block ref="ceeb82cfdbafdefa3498267033925b4d" category="inline-link-macro-rx"></block>의 단계를 따르십시오.</block>
   <block id="0555d71723e207adf1d26aacd23fca99" category="open-title">Brocade 스위치(FOS 9.x)</block>
   <block id="52f25e0e1d7123b8e60a485a2591101f" category="paragraph">Fabric OS 9.0.1부터 Brocade 스위치의 상태 모니터링에 SNMPv2는 지원되지 않으며, 대신 SNMPv3을 사용해야 합니다. SNMPv3을 사용하는 경우, 다음 섹션으로 진행하기 전에 ONTAP에서 SNMPv3을 구성해야 합니다. 자세한 내용은 <block ref="bccdc4729d6354379109b6753bfdc947" category="inline-xref-macro-rx"></block>을 참조하십시오.</block>
   <block id="eede7d7d2eb026eb4a46711feb940141" category="paragraph">이 절차를 사용하기 전에 다음 정보를 주의 깊게 검토하십시오.</block>
-  <block id="8e0da5650cc19161382006e7a36b91eb" category="list-text">Fabric OS 10.x부터 Brocade는 SNMP 인증에 SHA-512만 지원합니다. ONTAP는 현재 SHA-512를 지원하지 않으며, SHA-256만 지원합니다.</block>
-  <block id="f56c2e751b109490bad7e0eaedf3c300" category="paragraph">MetroCluster FC 스위치 펌웨어를 Fabric OS 10.x로 업그레이드하면 ONTAP에서 SNMP 모니터링 가시성이 손실됩니다. 이로 인해 문제 해결 시 위험이 증가하고 사전 예방적 알림 기능이 상실됩니다.</block>
   <block id="fded9116e1c7860c9efc9c570fc2b5fb" category="inline-link-macro">Brocade Fabric OS 소프트웨어 업그레이드 가이드, 10.0.x - 업그레이드 또는 다운그레이드 필수 조건</block>
   <block id="e28259c7fcba5a4f4ea8558015e892ff" category="paragraph">Fabric OS 10.x로 업그레이드하거나 이전 버전으로 다운그레이드하는 경우, <block ref="4c794930872c13dd5a27bee89c2df646" category="inline-link-macro-rx"></block>에 명시된 필수 작업을 수행해야 합니다.</block>
   <block id="51730b95b3cfe613db659073f7d3e446" category="admonition">Fabric OS 10.x 이상 버전으로 업그레이드하거나 다운그레이드하기 전에 이러한 제한 사항을 신중하게 고려해야 합니다.</block>
@@ -14515,4 +14504,99 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="4362ba43074608918c83408e89d7c0ff" category="list-text">Cisco 또는 Broadcom MetroCluster IP 스위치의 펌웨어를 업그레이드하는 경우, 업그레이드를 진행하기 전에 현재 스위치 구성의 사본을 저장할 수 있습니다.</block>
   <block id="b85394c1aa7243bdf5cf7a0f05d8f93f" category="admonition">펌웨어 업그레이드 후 RCF를 업그레이드하기 위해 스위치를 재설정해야 하는 워크플로인 경우, 재설정 시 저장된 스위치 구성이 지워지므로 이 단계를 건너뛸 수 있습니다.</block>
   <block id="498ba59acaecdd7d242002ff07605b27" category="sidebar">MetoCluster IP 스위치 케이블 연결</block>
+  <block id="42d6c69f73be9acd69b8654e26ea10ff" category="doc">혼잡 제어 활성화</block>
+  <block id="ac677683e5498286ab397739377f391a" category="paragraph">ONTAP 9.20.1부터 MetroCluster IP 구성에서 WAN ISL(Inter-Switch Link) 혼잡 제어를 활성화할 수 있습니다. 이를 통해 10Gbps, 25Gbps 또는 40Gbps 등 낮은 대역폭이나 혼합 대역폭으로 실행되는 ISL을 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼과 함께 사용할 수 있습니다.</block>
+  <block id="e5f5bcd84c8aa4d510436c6df8309e92" category="paragraph">100Gbps 어댑터에서 생성된 복제 트래픽은 링크 속도가 더 낮은 ISL을 초과하여 스위치 버퍼 압력, PAUSE 백프레셔, 패킷 손실 및 잠재적인 복제 불안정성을 유발할 수 있습니다. WAN ISL 혼잡 제어는 ISL 대역폭과 노드 수를 사용하여 아웃바운드 처리량 상한값을 계산함으로써 이러한 문제를 해결합니다. 이 상한값은 아웃바운드 처리량 임계값 역할을 하여 상호 연결 전송 트래픽을 제어합니다. 측정된 아웃바운드 처리량이 계산된 상한값을 초과하면 전송이 거부되어 상호 연결 네트워크에서 아웃바운드 처리량 임계값이 적용됩니다.</block>
+  <block id="f89aef79a9f93b502888c8d69a840492" category="admonition">WAN ISL 혼잡 제어를 구성한다고 해서 더 낮은 대역폭 ISL을 사용할 때 발생할 수 있는 성능 문제가 발생하지 않는다는 보장은 *없습니다*. NetApp은 최적의 성능을 위해 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.</block>
+  <block id="cbbe1fb74164a6c0ba99af4db32293a0" category="list-text">MetroCluster IP 구성은 ONTAP 9.20.1 이상을 실행해야 합니다.</block>
+  <block id="0c8c25e1dd674f15d2130675d5417381" category="list-text">WAN ISL 혼잡 제어는 기본적으로 비활성화되어 있으며 명시적으로 활성화해야 합니다.</block>
+  <block id="9208bc23b61f79106b05413807d297de" category="list-text">다음과 같은 상황에서는 NetApp 지원팀에 문의하여 이 기능을 구성해야 합니다:</block>
+  <block id="c19cab19cba469dc00d3971eb9f9eb9e" category="list-text">해당 기능을 활성화하거나 새로 고침할 때 ISL 정보를 자동으로 가져올 수 없는 경우</block>
+  <block id="1a3a0bc0d36172a1abb8548453f1757c" category="list-text">만약 두 개의 4노드 MetroCluster IP 구성이 동일한 스위치에 연결되어 있다면</block>
+  <block id="1c4ddfddbafc38e158559ea23f2d5487" category="list-text">해당 기능을 활성화한 후 계산된 상한값을 수정해야 하는 경우</block>
+  <block id="fe6af216498295e8662984c5da1d8b80" category="list-text">혼잡 제어를 활성화한 후 토폴로지가 변경되면 새로운 상한값을 계산하기 위해 혼잡 제어 구성을 새로 고쳐야 합니다. 예를 들어, ISL의 개수 또는 속도가 변경되거나 MetroCluster IP 구성에 새 노드를 추가하는 경우입니다.</block>
+  <block id="8237932ad843b383ee715fce0e65619f" category="list-text">각 사이트는 독립적으로 상한값을 계산합니다. 로컬 사이트에서 <block ref="1d256562c41ab1797590dea25540292f" prefix=" " category="inline-code"></block> 명령을 실행하면 다음과 같은 작업이 수행됩니다:</block>
+  <block id="466d71f85df722213fba611dd91643d9" category="list-text">로컬 사이트가 상한을 준비하고 계산합니다.</block>
+  <block id="44decfd683d51a563b21d871f714bd4d" category="list-text">파트너 사이트는 명령이 실행되는 로컬 사이트와는 별도로 상한값을 준비하고 계산합니다. 기술적으로 가능성은 낮지만, 로컬 사이트와 파트너 사이트에서 서로 다른 상한값이 계산될 수 있습니다. 이는 예상되는 동작이며 오류나 잘못된 구성을 의미하는 것은 아닙니다.</block>
+  <block id="58ecc4d4634e8ce4eb540ecc56b4f2a8" category="list-text">각 사이트는 계산된 값을 원하는 상태로 기록하고, 커널은 이를 적용합니다.</block>
+  <block id="5885c21f775ac55e4c54186fb78ad3a0" category="list-text">WAN ISL 혼잡 제어는 활성화되면 자동으로 작동합니다.</block>
+  <block id="a7429ef620032fd78de314c9a2afedb7" category="paragraph">WAN ISL 혼잡 제어를 활성화하려면 로컬 클러스터에서 다음 단계를 완료하십시오.</block>
+  <block id="9f925ac4a83b17361c09ea44b716231d" category="admonition">동일한 스위치에 연결된 두 개의 4노드 MetroCluster IP 구성이 있는 경우, 이 기능을 활성화하려면 NetApp 지원팀에 문의하십시오.</block>
+  <block id="dcbe9371e3861ca7104b3f3c1dc93c26" category="list-text">cluster_A에서 WAN ISL 혼잡 제어를 활성화합니다:</block>
+  <block id="5e9d3a4332ca40cf6eabe0f4c7eb1dec" category="paragraph">명령 실행 중 <block ref="a818d7aa56b14e06775c6e446527f287" prefix=" " category="inline-code"></block> 오류가 발생하면 ISL 정보를 자동으로 가져올 수 없으므로 NetApp 지원팀에 문의하여 이 기능을 활성화해야 합니다.</block>
+  <block id="64bb552b833a58c5718373650dcfdf64" category="list-text">WAN ISL 혼잡 제어가 활성화되어 있는지 확인하십시오:</block>
+  <block id="2e21647120066b53d2ddc013382e8fca" category="admonition">이 기능을 활성화한 후 계산된 상한값을 수정해야 하는 경우 NetApp 지원팀에 문의하십시오.</block>
+  <block id="d8e5597c89866d787f9d9a3ae299a7dc" category="section-title">혼잡 제어 새로 고침</block>
+  <block id="223bdbb5f58c1f1e6bd8d25eb985d9b2" category="paragraph">WAN ISL 혼잡 제어 구성을 새로 고치려면 로컬 클러스터에서 다음 단계를 완료하십시오. ISL의 개수나 속도가 변경되거나 MetroCluster IP 구성에 새 노드가 추가되는 등 토폴로지가 변경될 때마다 혼잡 제어 구성을 새로 고쳐야 합니다.</block>
+  <block id="a2df9680124d6f922e3d4f62d6b072a2" category="list-text">cluster_A에서 WAN ISL 혼잡 제어 구성을 새로 고치십시오.</block>
+  <block id="f24196a3aa1f7c6123d550e329f8cac2" category="paragraph">ONTAP은 현재 네트워크 상태를 기반으로 새로운 상한값을 계산하고 자동으로 적용합니다.</block>
+  <block id="65839adcf23750a6d4d1050f1d84c33a" category="paragraph">명령이 <block ref="a818d7aa56b14e06775c6e446527f287" prefix=" " category="inline-code"></block> 오류로 인해 실패하면 ISL 정보를 자동으로 가져올 수 없으므로 NetApp 지원팀에 문의하여 구성을 새로 고쳐야 합니다.</block>
+  <block id="4af4a301876c0e722116c96aa495409e" category="section-title">WAN ISL 혼잡 제어 활동을 모니터링합니다</block>
+  <block id="229ecca4b12e280681e8f799b3d79ec5" category="paragraph">다음 명령어를 사용하여 혼잡 제어가 예상대로 작동하는지 확인할 수 있습니다:</block>
+  <block id="416e975ff8dd076399b5fbf84af09dbf" category="paragraph">활성화된 경우 출력은 다음 예와 유사해야 합니다:</block>
+  <block id="d7e7e606ef57a5a7e59a394475e148d0" category="paragraph"><block ref="7aef5f885a9c89afe8ef4563814d1889" prefix=" " category="inline-code"></block> 매개변수를 사용하여 각 노드에 대한 더 자세한 정보를 볼 수도 있습니다:</block>
+  <block id="91e256e81aff3105a5227b4ca623466f" category="section-title">혼잡 제어 비활성화</block>
+  <block id="ff9f5f43077677b58ad3f21a4206baf3" category="list-text">cluster_A에서 WAN ISL 혼잡 제어를 비활성화합니다:</block>
+  <block id="49a1a9e0d8ca26f09b1a1879db22ca48" category="list-text">해당 기능이 비활성화되어 있는지 확인하십시오:</block>
+  <block id="32713216432104a5d3f3331914536fc1" category="paragraph">ONTAP 9.20.1부터 MetroCluster IP 구성의 일부인 SVM에 대해 스토리지 제한을 구성할 수 있습니다.</block>
+  <block id="d03c58f3a7451c865a64f7b82b747190" category="admonition">MetroCluster 구성이 <block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block>에 나열된 플랫폼 제한을 초과하지 않도록 해야 합니다.</block>
+  <block id="ea430f8dc6fe3d5456ffd33dc0543091" category="list-text">정상 작동 중(전환 중이 아닌 경우)에는 *동기화 소스 SVM*에서만 스토리지 제한 구성을 변경할 수 있습니다. *동기화 대상 SVM*에서는 스토리지 제한을 활성화, 비활성화 또는 수정할 수 없습니다.</block>
+  <block id="79e25b02d395b307562edcae496c7e1c" category="list-text">전환 과정 중에는 *동기화 대상 SVM*에 다음과 같은 제한 사항이 적용됩니다:</block>
+  <block id="eb1f005479417d95bb569fdc7104708a" category="list-text"><block ref="038438dd68ee9e64810ea3e86265a863" prefix=" " category="inline-code"></block> 명령어를 사용하여 동기화 대상 SVM의 스토리지 제한을 활성화 또는 비활성화할 수 없습니다. 즉, 값을 0에서 0이 아닌 값으로 변경하거나 0이 아닌 값에서 0으로 변경할 수 없습니다. 다음 오류가 발생하며 명령이 실패합니다:</block>
+  <block id="edc1a8d2b0af9a4ef6b7b06e9b8ba457" category="paragraph"><block ref="bec05c498707d99dc469c6fe4aa41116" prefix="" category="inline-code"></block></block>
+  <block id="7c6c7030dd038a78b5993adecd6d738c" category="list-text">여전히 스토리지 제한을 0이 아닌 한 값에서 다른 값으로(예: 100TB에서 200TB로) 변경할 수 있습니다. 이 새로운 값은 스위치백 후에도 유지됩니다.</block>
+  <block id="227f62935717c2fdacc24719e921dc11" category="list-text">저장 용량 제한을 활성화 또는 비활성화하려면 스위치백이 완료될 때까지 기다린 후 *동기화 소스 SVM*에서 변경하십시오. 그러면 해당 값이 동기화 대상 SVM으로 복제됩니다.</block>
+  <block id="9082fbfdd5c6b8aed5a4e6065fa3efee" category="inline-link-macro">ONTAP SVM 용량 관리</block>
+  <block id="73f937dcfb7b849185d76ad70e485bc8" category="paragraph">자세한 내용은 <block ref="8ed0219013bd2b19380552e82b55b200" category="inline-link-macro-rx"></block>을(를) 참조하십시오</block>
+  <block id="9db6f037a95538082d20874b21ae8a0d" category="admonition">전환 작업을 수행하기 전에 <block ref="dd499f6612b24bcbd1afefc17b1b675f" category="inline-link-macro-rx"></block>을(를) 검토하십시오.</block>
+  <block id="21ff733b82400d85a5c9ee97a837d734" category="list-text">ONTAP 9.20.1부터 ONTAP은 SNMP 인증에 SHA-512를 지원합니다.</block>
+  <block id="65d56fd22812ff023aa1c1a87f75b424" category="list-text">ONTAP은 SNMP 인증 및 암호화를 위해 다음 프로토콜을 지원합니다:</block>
+  <block id="687eddb609350d2638553fa4a4dd8884" category="list-text">개인 정보 보호(암호화): AES-128</block>
+  <block id="bf65efba49839f3e43b6f7d82340861d" category="list-text">인증:</block>
+  <block id="536544d639c91bc6f68cba4a470f0927" category="list-text">SHA-512 (ONTAP 9.20.1부터)</block>
+  <block id="7dcd62e00bddef0a9ef76c9e135e7abb" category="list-text">SHA-256</block>
+  <block id="90dfdba73e7624d99fcb38a1e3473d19" category="list-text">Fabric OS 10.x 이상 버전에서 Brocade는 SNMP 인증에 SHA-512만 지원합니다.</block>
+  <block id="77672775e13e51068da7b29fe5a76957" category="list-text">9.20.1 이전의 ONTAP 버전을 실행 중이고 MetroCluster FC 스위치가 Fabric OS 10.x 이상을 실행 중인 경우, SNMP를 구성할 수 없으며 해당 스위치를 ONTAP 상태 모니터링에 추가할 수 없습니다. 스위치 펌웨어를 다운그레이드하려면 <block ref="ceeb82cfdbafdefa3498267033925b4d" category="inline-link-macro-rx"></block>의 단계를 따르십시오.</block>
+  <block id="00375bb828a3a7af8001182c5540913c" category="paragraph">다음 출력은 예시일 뿐이며, 사용 환경에서 지원되는 설정을 선택해야 합니다.</block>
+  <block id="84b0254762caaf1fa9e4740914691c3c" category="inline-link-macro">WAN ISL 혼잡 제어를 구성합니다</block>
+  <block id="72862f4131007b0ecf0862fe7a609c82" category="list-text">ONTAP 9.20.1부터 MetroCluster IP 구성에서 WAN 스위치 간 링크(ISL) 혼잡 제어를 활성화하여 10Gbps, 25Gbps 또는 40Gbps 등 낮은 대역폭이나 혼합 대역폭으로 실행되는 ISL을 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼과 함께 사용할 수 있습니다. 자세한 내용은 <block ref="462005b2032e79d5709834d981cb3c47" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="ae3a08b13a76ca7fcaef3877b97f945d" category="list-text">ONTAP 9.18.1 및 ONTAP 9.19.1에서 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼은 최소 100Gbps의 ISL 링크 속도가 필요합니다. 이러한 ONTAP 버전을 실행하는 해당 플랫폼에서 다른 ISL 속도를 사용하려면 기능 정책 변경 요청(FPVR)을 제출해야 합니다. FPVR을 제출하려면 NetApp 영업팀에 문의하십시오.</block>
+  <block id="0c26d830b12fdeab820d395993553d8c" category="admonition">현재 100Gbps ISL 요구 사항을 충족하지 않는 플랫폼의 ONTAP 소프트웨어 업그레이드는 차단되지 않으며 진행할 수 있습니다. 그러나 NetApp은 예상되는 성능 및 가용성 수준을 유지하기 위해 고객이 100Gbps ISL 연결로 전환할 것을 강력히 권장합니다.</block>
+  <block id="6f0bd889ddce327cdae550d46bff38e2" category="section-title">MetroCluster IP 구성에서의 SVM 스토리지 제한 지원</block>
+  <block id="e7042c041415edd25de8ec2bd84cb395" category="summary">ONTAP 9.20.1부터 100Gbps 네트워크 어댑터를 사용하는 MetroCluster IP 구성은 10Gbps, 25Gbps 또는 40Gbps 등 더 낮거나 혼합된 대역폭으로 실행되는 스위치 간 링크(ISL)를 통해 연결할 수 있습니다.</block>
+  <block id="0af25433a3eca71d2bc083866d8450a4" category="doc">MetroCluster IP WAN ISL 혼잡 제어 구성</block>
+  <block id="8eba2d7f997c4a6536c84ace10559941" category="inline-link-macro">WAN ISL 혼잡 제어 구성 새로 고침</block>
+  <block id="fe1939e8417a00a5d761222ceeb4eb18" category="list-text">MetroCluster IP 구성에 WAN ISL 혼잡 제어가 활성화되어 있는 경우 다음을 수행해야 합니다<block ref="a3e50b695c7be010ff9602926c301dfa" category="inline-link-macro-rx"></block>.</block>
+  <block id="9a22d1a02e83923e0ed781cd518dd9dd" category="list-text">ONTAP 9.20.1부터 ONTAP은 SNMP 인증에 SHA-512를 지원합니다. Fabric OS 10.x 이상에서 Brocade는 SNMP 인증에 SHA-512만 지원합니다.</block>
+  <block id="c6e1f0f269fd9416c2e70509aeaff3b6" category="paragraph">9.20.1 이전의 ONTAP 버전을 실행 중이고 MetroCluster FC 스위치 펌웨어를 Fabric OS 10.x로 업그레이드하는 경우, ONTAP에서의 SNMP 모니터링 가시성이 손실됩니다. 이로 인해 문제 해결 시 위험이 증가하고 사전 예방적 알림 기능을 사용할 수 없게 됩니다.</block>
+  <block id="d81f4037f57e4f3a923789db8df28228" category="paragraph"><block ref="038438dd68ee9e64810ea3e86265a863" prefix="" category="inline-code"></block></block>
+  <block id="fe16a63103d069b69ab7edd2017d9781" category="paragraph">MetroCluster 전환 중에 스토리지 제한을 활성화 또는 비활성화할 때 다음과 같은 제한 사항이 적용됩니다:</block>
+  <block id="68c2cd78b3272547591a73a643ecd0f7" category="list-text">동기화 대상 SVM에서는 <block ref="038438dd68ee9e64810ea3e86265a863" prefix=" " category="inline-code"></block> 명령을 사용하여 스토리지 제한을 활성화 또는 비활성화할 수 없습니다. 즉, 값을 0에서 0이 아닌 값으로 변경하거나 0이 아닌 값에서 0으로 변경할 수 없습니다. 명령은 다음과 같은 오류와 함께 실패합니다:</block>
+  <block id="4f30dfd5367fcca4a4e5e32ca9f55de2" category="section-title">스위치오버 시 SVM 스토리지 제한 변경</block>
+  <block id="c31b617f055e6c28e11672f9cde4797d" category="list-text">협상된 전환을 수행하기 전에 <block ref="5db317e8a025f1d24915c64b6f90e87f" category="inline-link-macro-rx"></block>을(를) 검토하십시오.</block>
+  <block id="1d8dc9c824a7bb73d2b1c553fee271cb" category="admonition">유지 관리 작업을 수행하기 전에 MetroCluster 구성이 Tiebreaker 또는 Mediator 유틸리티로 모니터링되는 경우 모니터링을 제거해야 합니다. <block ref="a0ba112c9c0ab9c29c24131f966b9b69" category="inline-link-macro-rx"></block>.</block>
+  <block id="b23e8b5e63c2d90cb50253a71c85d603" category="paragraph">스위치백을 수행하기 전에 다음 요구 사항을 검토하십시오:</block>
+  <block id="4ba77248133e309ee5f1f6d49d8a0851" category="summary">각 ONTAP 9 릴리스의 새롭고 향상된 MetroCluster 기능에 대해 알아보십시오.</block>
+  <block id="4ed9c60eb652c76a2c1af593596b0038" category="paragraph">ONTAP MetroCluster 구성에 영향을 미치는 알려진 문제, 제한 사항 및 업그레이드 주의 사항에 대한 자세한 내용은 <block ref="6e7f74aa9001f0524a965144f528bbc2" category="inline-link-rx"></block>를 참조하십시오. 릴리스 노트에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.</block>
+  <block id="e4839506a4dd27a41c8ec4a400576e42" category="paragraph">SNMPv3 인증을 위한 SHA-512 지원</block>
+  <block id="b9ba1e1b6edd182e2a330867dda77cdb" category="paragraph">ONTAP은 MetroCluster 스위치에서 SNMPv3 인증을 위해 SHA-512를 지원합니다.</block>
+  <block id="fa864467d02b35efb5b48d7a1226e621" category="paragraph">ONTAP 9.20.1</block>
+  <block id="3d66d3aa02a315fbb23a1bac20850dfa" category="paragraph">MetroCluster IP의 WAN ISL 혼잡 제어 지원</block>
+  <block id="47dfa75e3225963c05d7f2d37c76a7c9" category="paragraph">MetroCluster IP 구성에서 WAN 스위치 간 링크(ISL) 혼잡 제어를 활성화하면 10Gbps, 25Gbps 또는 40Gbps 등 더 낮거나 혼합된 대역폭으로 실행되는 ISL을 MetroCluster IP 백엔드 포트 속도가 100Gbps인 플랫폼과 함께 사용할 수 있습니다.</block>
+  <block id="a307c2278fbc8e4cb23921a0f82b3d20" category="inline-link-macro">MetroCluster IP 구성에서 혼잡 제어 구성</block>
+  <block id="4a7163ded041350eb386235d11c66576" category="paragraph"><block ref="4a7163ded041350eb386235d11c66576" category="inline-link-macro-rx"></block></block>
+  <block id="3dfbc4abcd2dc5223baa3e713d268629" category="paragraph">MetroCluster의 SnapMirror S3 지원</block>
+  <block id="e787ce2a42059e5bafb5b86e85a320d9" category="paragraph">SnapMirror S3 관계를 MetroCluster 구성에서 생성하여 스위치오버 및 스위치백 시에도 활성 사이트에서 계속 사용 가능하고 재개되도록 할 수 있습니다.</block>
+  <block id="4a60b7fef4a95c6a69819ec1105f7cbc" category="inline-link-macro">SnapMirror S3에 대해 자세히 알아보세요.</block>
+  <block id="60f020c83ec4be87cd942917cbf527fd" category="paragraph"><block ref="60f020c83ec4be87cd942917cbf527fd" category="inline-link-macro-rx"></block></block>
+  <block id="3f85a822280c700a358c8d4b09ac0917" category="paragraph">ONTAP S3 버킷 수명 주기 관리에 대한 MetroCluster 지원</block>
+  <block id="49819d508ad6d5fbf96df43937292b87" category="paragraph">MetroCluster 구성에서 기본 S3 버킷에 대한 ONTAP S3 버킷 수명 주기 관리 규칙을 생성할 수 있습니다.</block>
+  <block id="ff1c4451ae73de7655c2635dffe868fb" category="inline-link">ONTAP S3 버킷 수명 주기 관리 규칙을 생성합니다</block>
+  <block id="d6837f6be46a885f34bcefc1a964e5ee" category="paragraph"><block ref="d6837f6be46a885f34bcefc1a964e5ee" category="inline-link-rx"></block></block>
+  <block id="97eda9c538679f681ab334965088e974" category="paragraph">ONTAP SVM 용량 제한에 대한 MetroCluster IP 지원</block>
+  <block id="128922b8a646dde62f70fcbd94afb280" category="paragraph">MetroCluster IP 구성의 일부인 SVM에 대해 스토리지 제한을 구성할 수 있습니다.</block>
+  <block id="43f2553b95ee26a6e9f0fa1b40212bd9" category="inline-link">ONTAP SVM 용량 제한 관리</block>
+  <block id="ddfa7b0fce9c19992d2518f83e5178bd" category="paragraph"><block ref="ddfa7b0fce9c19992d2518f83e5178bd" category="inline-link-rx"></block></block>
+  <block id="2cad3e9201231f96baf0aecb159146b8" category="list-text">MetroCluster IP 구성에 WAN ISL 혼잡 제어가 활성화되어 있는 경우 다음을 수행해야 합니다<block ref="84e4437719ed2680822f1999f770e8a1" category="inline-link-macro-rx"></block>.</block>
+  <block id="4ddce8b1a7285d62eebe8f187b9294d6" category="sidebar">ISL 요구사항</block>
 </blocks>

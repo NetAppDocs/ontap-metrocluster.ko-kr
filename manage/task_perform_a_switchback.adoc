@@ -13,6 +13,9 @@ summary: MetroCluster 구성을 복구한 후 스위치백 작업을 수행하�
 [role="lead"]
 MetroCluster 구성을 복구한 후 MetroCluster 스위치백 작업을 수행할 수 있습니다. MetroCluster 스위치백 작업을 수행하면 재해 사이트의 동기식 소스 스토리지 가상 머신(SVM)이 활성화되어 로컬 디스크 풀에서 데이터를 제공하는 구성을 정상 운영 상태로 되돌릴 수 있습니다.
 
+.이 작업에 대해
+스위치백을 수행하기 전에 다음 요구 사항을 검토하십시오:
+
 * 재해 클러스터가 정상적으로 작동하는 클러스터로 전환되어야 합니다.
 * 데이터 및 루트 애그리게이트에 대해 복구를 수행해야 합니다.
 * 정상적인 클러스터 노드는 HA 페일오버 상태가 아니어야 합니다(모든 노드가 각 HA 쌍에 대해 작동 및 실행 중이어야 함).
@@ -20,8 +23,10 @@ MetroCluster 구성을 복구한 후 MetroCluster 스위치백 작업을 수행�
 * 루트 애그리게이트는 미러링해야 합니다.
 * ISL(Inter-Switch Link)이 온라인 상태여야 합니다.
 * 필요한 라이센스는 시스템에 설치해야 합니다.
-+
-.. 모든 노드가 활성화된 상태(MetroCluster node show)에 있는지 확인합니다
+
+
+.단계
+. 모든 노드가 활성화된 상태(MetroCluster node show)에 있는지 확인합니다
 +
 다음 예제에서는 enabled 상태의 노드를 표시합니다.
 
@@ -41,10 +46,10 @@ Group Cluster Node        State          Mirroring Mode
               node_B_2    configured     enabled   waiting for switchback recovery
 4 entries were displayed.
 ----
-.. 모든 SVM에서 재동기화가 완료되었는지 확인합니다. 'MetroCluster vserver show'
-.. 복구 작업에 의해 수행되는 자동 LIF 마이그레이션이 'MetroCluster check lif show'에 성공적으로 완료되었는지 확인합니다
-.. 시뮬레이션된 스위치백을 수행하여 시스템이 준비되었는지 확인합니다. 'MetroCluster 스위치백 - 시뮬레이션'
-.. 구성을 확인합니다.
+. 모든 SVM에서 재동기화가 완료되었는지 확인합니다. 'MetroCluster vserver show'
+. 복구 작업에 의해 수행되는 자동 LIF 마이그레이션이 'MetroCluster check lif show'에 성공적으로 완료되었는지 확인합니다
+. 시뮬레이션된 스위치백을 수행하여 시스템이 준비되었는지 확인합니다. 'MetroCluster 스위치백 - 시뮬레이션'
+. 구성을 확인합니다.
 +
 'MetroCluster check run
 
@@ -76,8 +81,8 @@ clusters            ok
 connections         ok
 6 entries were displayed.
 ----
-.. 정상적인 클러스터에 있는 모든 노드에서 MetroCluster 스위치백 명령을 실행하여 스위치백을 수행합니다. MetroCluster 스위치백
-.. 스위치백 동작 진행상황 MetroCluster show를 확인한다
+. 정상적인 클러스터에 있는 모든 노드에서 MetroCluster 스위치백 명령을 실행하여 스위치백을 수행합니다. MetroCluster 스위치백
+. 스위치백 동작 진행상황 MetroCluster show를 확인한다
 +
 출력에 대기 중인 스위치백 이 표시되면 스위치백 작업이 계속 진행 중입니다.
 
@@ -112,7 +117,5 @@ Remote: cluster_A         Configuration state configured
 ----
 +
 스위치백을 완료하는 데 시간이 오래 걸리는 경우 'MetroCluster config-replication resync resync-status show' 명령을 사용하여 진행 중인 기준선의 상태를 확인할 수 있습니다. 이 명령은 고급 권한 수준에 있습니다.
-
-
 
 
