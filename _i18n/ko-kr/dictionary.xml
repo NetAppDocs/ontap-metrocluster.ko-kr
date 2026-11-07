@@ -12733,11 +12733,8 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="b00500f501ccb5c8ab2313d810b6ff29" category="list-text">AES/DES 암호화를 사용하는 * MD5/SHA 인증 *:</block>
   <block id="ce23d8cb44ce288570eb2dcc49f1f2f7" category="paragraph">다음 명령을 실행하면 ONTAP 측에서 SNMPv3 사용자 이름이 구성됩니다.</block>
   <block id="760c6e9b6b587e6f977e0e7116b69f45" category="paragraph">다음 명령을 실행하면 CSHM에서 SNMPv3 사용자 이름이 설정됩니다.</block>
-  <block id="d3280214c17ea96ca13a6e79765d0b3c" category="list-text">인증 및 암호화를 사용하도록 스위치에서 SNMPv3 사용자를 설정합니다.</block>
   <block id="8379e83fc1ad68bfb1ad877f1b7fda6b" category="list-text">ONTAP 측에서 SNMPv3 사용자를 설정합니다.</block>
   <block id="6b9f542dd155c40aa5e4484b5ff61711" category="list-text">새로운 SNMPv3 사용자와 함께 모니터링하도록 CSHM을 구성합니다.</block>
-  <block id="f1d85c8d2abe8fba947527035ed0f381" category="list-text">CSHM 폴링 기간을 기다린 후 이더넷 스위치의 일련 번호가 채워졌는지 확인하세요.</block>
-  <block id="d4d693d9dd779d0daf149c2e448b60b2" category="list-text">새로 생성된 SNMPv3 사용자로 쿼리할 일련 번호가 CSHM 폴링 기간이 완료된 후 이전 단계에서 자세히 설명한 일련 번호와 동일한지 확인합니다.</block>
   <block id="05918726f836c344025fecbcf0275f1b" category="open-title">엔비디아 - CL 5.4.0</block>
   <block id="8ae4eeaa7baed19106cc30ea02483c5e" category="paragraph">이더넷 스위치 상태 모니터(CSHM)는 클러스터 및 스토리지 네트워크 스위치의 작동 상태를 확인하고 디버깅을 위한 스위치 로그를 수집하는 역할을 담당합니다.</block>
   <block id="4ae61f4d1ec2f0efafd8ee4274e49ccf" category="section-title">MetroCluster IP 구성에서 CSHM을 구성하기 위한 중요 참고 사항</block>
@@ -13960,10 +13957,7 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="59a93fe50b25a85e88bed38108e0196c" category="list-text">DR 클러스터에서 정상 클러스터에서 DR 클러스터로의 전환이 가능한지 확인합니다.</block>
   <block id="59ded25db2e6cefacbcb41c378e0b709" category="list-text">정상 작동하는 클러스터에서 DR 클러스터에서 정상 작동하는 클러스터로의 전환이 가능한지 확인합니다.</block>
   <block id="2c7ea164e9295a29d20e890710cfcc1d" category="admonition">MetroCluster FC 환경에서는 'connections' 항목이 명령 출력에서 "not-applicable"으로 표시되어야 합니다.</block>
-  <block id="706bc34d657098e3dcd81db43d280c53" category="paragraph">Cisco Nexus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성합니다.</block>
-  <block id="5a523817621c85574dfcbf0b11c07075" category="paragraph">NVIDIA Cumulus 스위치(CL 5.4.0 실행 중)에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.</block>
   <block id="4451c276144ff12f4a59bad51c0a1181" category="open-title">NVIDIA - CL 5.11.0+</block>
-  <block id="d1f08b7bd68bdc79984e047bc1939c5d" category="paragraph">CLI 5.11.0 이상을 실행하는 NVIDIA Cumulus 스위치에서 SNMPv3 사용자 이름 SNMPv3_USER를 구성하십시오.</block>
   <block id="5c70de9aa6fac7d71c4ddfb2d31ae25a" category="list-text">새로운 참조 구성 파일(RCF)을 적용할 수 있도록 IP 스위치를 준비합니다.</block>
   <block id="cf638fa08203ce9c082e7eecde22e20f" category="paragraph">MetroCluster 패브릭 구성의 각 스위치에 참조 구성 파일(RCF)을 다운로드해야 합니다.</block>
   <block id="91cd9003fc7afacd92d0952d1578d48b" category="paragraph">MetroCluster 패브릭 구성에 있는 4개의 스위치 각각에 대해 하나씩, 총 4개의 RCF가 있습니다. 사용 중인 스위치 모델에 맞는 올바른 RCF를 사용해야 합니다.</block>
@@ -14592,11 +14586,26 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="3f85a822280c700a358c8d4b09ac0917" category="paragraph">ONTAP S3 버킷 수명 주기 관리에 대한 MetroCluster 지원</block>
   <block id="49819d508ad6d5fbf96df43937292b87" category="paragraph">MetroCluster 구성에서 기본 S3 버킷에 대한 ONTAP S3 버킷 수명 주기 관리 규칙을 생성할 수 있습니다.</block>
   <block id="ff1c4451ae73de7655c2635dffe868fb" category="inline-link">ONTAP S3 버킷 수명 주기 관리 규칙을 생성합니다</block>
-  <block id="d6837f6be46a885f34bcefc1a964e5ee" category="paragraph"><block ref="d6837f6be46a885f34bcefc1a964e5ee" category="inline-link-rx"></block></block>
   <block id="97eda9c538679f681ab334965088e974" category="paragraph">ONTAP SVM 용량 제한에 대한 MetroCluster IP 지원</block>
   <block id="128922b8a646dde62f70fcbd94afb280" category="paragraph">MetroCluster IP 구성의 일부인 SVM에 대해 스토리지 제한을 구성할 수 있습니다.</block>
   <block id="43f2553b95ee26a6e9f0fa1b40212bd9" category="inline-link">ONTAP SVM 용량 제한 관리</block>
   <block id="ddfa7b0fce9c19992d2518f83e5178bd" category="paragraph"><block ref="ddfa7b0fce9c19992d2518f83e5178bd" category="inline-link-rx"></block></block>
   <block id="2cad3e9201231f96baf0aecb159146b8" category="list-text">MetroCluster IP 구성에 WAN ISL 혼잡 제어가 활성화되어 있는 경우 다음을 수행해야 합니다<block ref="84e4437719ed2680822f1999f770e8a1" category="inline-link-macro-rx"></block>.</block>
   <block id="4ddce8b1a7285d62eebe8f187b9294d6" category="sidebar">ISL 요구사항</block>
+  <block id="e6fb84558de7078767b104ca13b55d79" category="admonition">ONTAP 9.20.1 버전부터 Broadcom 스위치에서 SHA-512 인증을 구성할 수 있습니다.</block>
+  <block id="3dbb7476f9c2ebc70cf21948afa0cd9d" category="list-text">*MD5/SHA/SHA-512 인증*의 경우:</block>
+  <block id="4fc1797aada9784a0d12d54fd394cd62" category="list-text">*AES/DES 암호화를 사용하는 MD5/SHA/SHA-512 인증*의 경우:</block>
+  <block id="c4ee5379f9ca6f1a0a5bf5cad388ada5" category="list-title">예시 단계</block>
+  <block id="1dae6f6450cde6628715c8de87b21a2a" category="list-text">SHA 인증 및 AES-128 암호화를 사용하도록 스위치에서 SNMPv3 사용자를 설정합니다:</block>
+  <block id="df714ebd186f65d53f3ec7b187fc3f1d" category="list-text">CSHM 폴링 기간이 지난 후 "모니터링하지 않는 이유"가 "없음"으로 설정되어 있는지 확인하십시오.</block>
+  <block id="1ca543b8df71f7fea0988934cb5fbbdb" category="paragraph">Cisco Nexus 스위치에서 SNMPv3 사용자 이름을<block ref="1d01e49b925b678020532b8f0e9ee3fa" prefix=" " category="inline-code"></block> 구성합니다.</block>
+  <block id="66192d10cca900d3c24ad9104d86b9e4" category="admonition">ONTAP 9.20.1 버전부터 Cisco 스위치에서 SHA-512 또는 SHA-256 인증을 구성할 수 있습니다.</block>
+  <block id="aa1770478094ea74329bcba08e9a34b7" category="list-text">*MD5/SHA/SHA-256/SHA-512 인증*의 경우:</block>
+  <block id="cf4344df088f1ec77d17a3dae71447b4" category="list-text">*AES/DES 암호화를 사용하는 MD5/SHA/SHA-256/SHA-512 인증*의 경우:</block>
+  <block id="48dbdd390fa480b5eda78d1e7f0d3b54" category="paragraph">CL 5.4.0을 실행하는 NVIDIA Cumulus 스위치에서 SNMPv3 사용자 이름<block ref="1d01e49b925b678020532b8f0e9ee3fa" prefix=" " category="inline-code"></block>을 구성하십시오:</block>
+  <block id="7ef0886eac0b0f59b0747fa52398c0c3" category="paragraph">CLI 5.11.0 이상을 실행하는 NVIDIA Cumulus 스위치에서 SNMPv3 사용자 이름<block ref="1d01e49b925b678020532b8f0e9ee3fa" prefix=" " category="inline-code"></block> 구성:</block>
+  <block id="9328157334dc4a57cb65e0b9c3d128e4" category="list-text"><block ref="9328157334dc4a57cb65e0b9c3d128e4" category="inline-link-macro-rx"></block></block>
+  <block id="d767cb0daa2b9f99d4df03c9aab82dcf" category="inline-link-macro">MetroCluster FC 구성에서 SNMPv3 구성</block>
+  <block id="03566696538cfda6a95b84d024de7471" category="list-text"><block ref="03566696538cfda6a95b84d024de7471" category="inline-link-macro-rx"></block></block>
+  <block id="b764b19381cd7173232f5f43720ae5ab" category="paragraph"><block ref="b764b19381cd7173232f5f43720ae5ab" category="inline-link-rx"></block></block>
 </blocks>

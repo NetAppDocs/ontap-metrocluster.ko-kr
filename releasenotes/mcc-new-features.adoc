@@ -24,6 +24,10 @@ ONTAP MetroCluster 구성에 영향을 미치는 알려진 문제, 제한 사항
 SNMPv3 인증을 위한 SHA-512 지원
  a| 
 ONTAP은 MetroCluster 스위치에서 SNMPv3 인증을 위해 SHA-512를 지원합니다.
+
+* link:../install-ip/config-snmpv3.html["MetroCluster IP 스위치의 상태를 모니터링하기 위해 SNMPv3 구성"]
+* link:../install-fc/concept_configure_the_mcc_software_in_ontap.html#snmpv3-mcc-fc["MetroCluster FC 구성에서 SNMPv3 구성"]
+
  a| 
 ONTAP 9.20.1
 
@@ -56,7 +60,7 @@ ONTAP S3 버킷 수명 주기 관리에 대한 MetroCluster 지원
  a| 
 MetroCluster 구성에서 기본 S3 버킷에 대한 ONTAP S3 버킷 수명 주기 관리 규칙을 생성할 수 있습니다.
 
-https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-lifecycle-rule-task.html["ONTAP S3 버킷 수명 주기 관리 규칙을 생성합니다"]
+https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-lifecycle-rule-task.html["ONTAP S3 버킷 수명 주기 관리 규칙을 생성합니다"^]
  a| 
 ONTAP 9.20.1
 
