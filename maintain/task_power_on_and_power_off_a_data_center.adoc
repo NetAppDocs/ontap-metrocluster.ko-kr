@@ -218,10 +218,6 @@ Node_B_1 및 Node_B_2
  a| 
 노드_B_1_aggr1/plex0
 
-노드_B_1_aggr0/plex0
-
-노드_B_2_aggr0/plex0
-
 노드_B_2_aggr1/plex0
 
 
@@ -241,11 +237,11 @@ Node_B_1 및 Node_B_2
 +
 [listing]
 ----
-storage aggregate plex offline -aggregate Node_B_1_aggr0 -plex plex0
+storage aggregate plex offline -aggregate Node_B_1_aggr1 -plex plex0
 ----
 +
 
-NOTE: Cluster_A에 원격 디스크가 있는 모든 플렉스에 대해 이 단계를 수행하십시오
+NOTE: Cluster_B 루트 애그리게이트(aggr0)의 플렉스를 오프라인으로 이동하지 마십시오.
 
 
 

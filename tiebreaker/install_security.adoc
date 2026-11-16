@@ -46,12 +46,6 @@ NOTE: 이 그룹의 구성원이 아닌 사용자는 Tiebreaker 소프트웨어 
 
 
 
-.관련 정보
-* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/["Red Hat Enterprise Linux 8 제품 설명서"^]
-* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/["Red Hat Enterprise Linux 9 제품 설명서"^]
-* link:https://docs.rockylinux.org["Rocky Linux 제품 설명서"^]
-
-
 
 
 [[baseline-host-security-recommendations]]
@@ -96,12 +90,6 @@ NOTE: OpenJDK 19 는 시작 시 호스트가 FIPS 모드로 설치되었는지 �
 
 
 
-.관련 정보
-* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/["Red Hat Enterprise Linux 8 제품 설명서"^]
-* link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/["Red Hat Enterprise Linux 9 제품 설명서"^]
-* link:https://docs.rockylinux.org["Rocky Linux 제품 설명서"^]
-
-
 
 
 [[secure-the-database-installation]]
@@ -143,6 +131,7 @@ NOTE: Tiebreaker 소프트웨어를 설치하기 전에 암호화 설정을 활�
 
 
 .관련 정보
+* link:https://docs.rockylinux.org["Rocky Linux 제품 설명서"^]
 * 데이터베이스 사용자 관리
 +
 link:https://dev.mysql.com/doc/refman/8.0/en/access-control.html["액세스 제어 및 계정 관리"^]

@@ -10588,10 +10588,6 @@
   <block id="4f8a3836e9b2b61340340f61f8a1d944" category="list-text">ISL과 ISL의 포트 채널이 두 스위치 간에 설정되었는지 확인합니다.</block>
   <block id="f1ba48098d6a9078f5a1ba8e0141de5b" category="paragraph"><block ref="d975a431de1e74582bd6e6f677a19ad0" prefix="" category="inline-code"></block></block>
   <block id="61f7733093f25bb223a42607ca2406c1" category="list-text">Tiebreaker 소프트웨어를 설치 및 관리하기 위해 루트 액세스로 권한을 상승시킬 수 있는 사용자를 사용할 수 있습니다.</block>
-  <block id="88b4165ca48e72ba667b9778d007aaad" category="inline-link-macro">Red Hat Enterprise Linux 8 제품 설명서</block>
-  <block id="a984325f757f454ac079ec671b9324d6" category="list-text"><block ref="a984325f757f454ac079ec671b9324d6" category="inline-link-macro-rx"></block></block>
-  <block id="ff7401ad1796e3298f03e4bd7f3432f0" category="inline-link-macro">Red Hat Enterprise Linux 9 제품 설명서</block>
-  <block id="9208e559efedea4d185e467a4ad4e657" category="list-text"><block ref="9208e559efedea4d185e467a4ad4e657" category="inline-link-macro-rx"></block></block>
   <block id="c5de0a644266fc0016715f94fa5fe1e3" category="list-text">다단계 인증(MFA)은 관리자가 사용자 이름 및 암호 이상을 사용하여 자신을 식별하도록 요구함으로써 조직의 보안을 강화합니다. 중요하지만 사용자 이름과 암호는 무차별 대입 공격에 취약하며 타사가 도난 당할 수 있습니다.</block>
   <block id="6de657c388054d5bb983a1d1351b1f89" category="list-text">Red Hat Enterprise Linux 8은 사용자가 계정 또는 Linux 호스트에 성공적으로 인증하기 위해 두 개 이상의 정보를 제공해야 하는 MFA를 제공합니다. 추가 정보는 SMS 또는 Google Authenticator, Twilio Authy 또는 FreeOTP와 같은 앱의 자격 증명이나 SMS를 통해 휴대 전화로 전송되는 일회용 비밀번호일 수 있습니다.</block>
   <block id="37c5a21bd601c49050ac3301b684599c" category="list-text">Cisco 9336C-FX2 스위치에는 RCF에서 이름이 다른 두 가지 다른 스위치 스토리지 유형이 있습니다. 다음 표를 참조하여 구성에 맞는 Cisco 9336C-FX2 스토리지 유형을 확인하십시오.</block>
@@ -10934,7 +10930,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="5f4eaac69c780a3f8ab154192e4a1a26" category="paragraph">노드의 전원을 켭니다.</block>
   <block id="2900f8420dafccee0a2692e48506c6cb" category="open-title">LOADER 프롬프트에 노드가 있는 경우:</block>
   <block id="796bd1c27d5eea106367802d9fd5bd0e" category="paragraph">다음 명령을 실행합니다.<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block></block>
-  <block id="4129cca17421055c633ccbc72f65d61f" category="list-text">노드 부팅이 완료된 후 루트 애그리게이트가 미러링되는지 확인합니다.</block>
   <block id="9abd59a18f57d6cb4282adb209f8b563" category="list-text">SAS 디스크 쉘프 스택에 연결되는 FiberBridge 7600N 브리지 2개를 사용할 수 있습니다.</block>
   <block id="fc35f0bbf60965f7ec34001ad687a3f3" category="list-text">SAS 디스크 쉘프 스택에 FibreBridge 7500N 브리지 1개와 FibreBridge 7600N 브리지 1개를 연결할 수 있습니다.</block>
   <block id="3ed94c5d90da7ee057d27e4a111e2d56" category="list-text">ATTO 브리지의 전원을 끄고 브리지에 연결된 전원 케이블을 제거합니다.</block>
@@ -12918,7 +12913,6 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="eb10fb6e54a620d06a2f18c1a660ffe4" category="paragraph"><block ref="10736eb62e72d120f2dcaa0fe0b7666f" prefix="" category="inline-code"></block></block>
   <block id="b78dcdf12c052d8955dc51b3b3b7b105" category="list-text">거울을 다시 만들어 거울 관계를 재설정합니다.</block>
   <block id="e6534782a81c039714b69e68abd6dd24" category="open-title">Plex가 오프라인인 경우:</block>
-  <block id="5bf31f2147933b41528417b67db14d59" category="paragraph">플렉스 온라인:</block>
   <block id="db0df63b9e668f95fb18ff3a3c311c03" category="paragraph"><block ref="abdcc012bb91335575fa83e50f5bd9f2" prefix="" category="inline-code"></block></block>
   <block id="173d04d1482af7bc613216daa9c54d3b" category="open-title">두 플렉스가 모두 존재하는 경우:</block>
   <block id="0cb322072bf2ca0a4a593635bde1f36d" category="paragraph">이 절차에서는 스위치에서 SNMPv3를 구성하는 일반적인 단계를 보여줍니다. 나열된 일부 스위치 펌웨어 버전은 MetroCluster IP 구성에서 지원되지 않을 수 있습니다.</block>
@@ -14608,4 +14602,9 @@ NetApp 검증 스위치를 사용하지 않는 모든 MetroCluster 구성에 적
   <block id="d767cb0daa2b9f99d4df03c9aab82dcf" category="inline-link-macro">MetroCluster FC 구성에서 SNMPv3 구성</block>
   <block id="03566696538cfda6a95b84d024de7471" category="list-text"><block ref="03566696538cfda6a95b84d024de7471" category="inline-link-macro-rx"></block></block>
   <block id="b764b19381cd7173232f5f43720ae5ab" category="paragraph"><block ref="b764b19381cd7173232f5f43720ae5ab" category="inline-link-rx"></block></block>
+  <block id="0fd554e2bd5c77028a0e4b9cf23cb355" category="list-text">노드 부팅이 완료되면 루트 및 데이터 애그리게이트가 미러링되었는지 확인하십시오.</block>
+  <block id="deeb3685d767fe055d8e7a311a05a358" category="list-text">재해 현장에서 루트 애그리게이트 플렉스를 확인하십시오:</block>
+  <block id="d32d5b0eb401273883444ec479100a71" category="paragraph">루트 애그리게이트 플렉스가 오프라인 상태인 경우, 재해 현장에서 해당 플렉스를 온라인 상태로 전환하십시오:</block>
+  <block id="f85fb61bc25eb6f45e4c0694af0df745" category="list-text">남아있는 사이트에서 오프라인 상태인 모든 플렉스를 온라인으로 전환합니다:</block>
+  <block id="b909d0d71a62c66cc30531dbb7405c49" category="admonition">Cluster_B 루트 애그리게이트(aggr0)의 플렉스를 오프라인으로 이동하지 마십시오.</block>
 </blocks>
